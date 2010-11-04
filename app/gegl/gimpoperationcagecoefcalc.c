@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-gegl-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gegl-buffer-iterator.h>
 end_include
 
@@ -31,6 +25,12 @@ begin_include
 include|#
 directive|include
 file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimp-gegl-types.h"
 end_include
 
 begin_include

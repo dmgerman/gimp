@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-gegl-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gegl-buffer-iterator.h>
 end_include
 
@@ -37,6 +31,12 @@ begin_include
 include|#
 directive|include
 file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimp-gegl-types.h"
 end_include
 
 begin_include
@@ -1970,7 +1970,7 @@ block|}
 else|else
 block|{
 comment|/* we cut the triangle in 4 sub-triangle and treat it recursively */
-comment|/*      *       /\      *      /__\      *     /\  /\      *    /__\/__\      *      */
+comment|/*        *       /\        *      /__\        *     /\  /\        *    /__\/__\        *        */
 name|GimpVector2
 name|pm1_d
 decl_stmt|,

@@ -12,7 +12,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpconfig/gimpconfig.h"
 end_include
 
 begin_include
@@ -83,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299244320103
+DECL|enum|__anon279e2ec60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

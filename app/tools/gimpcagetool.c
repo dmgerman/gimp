@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpmath/gimpmath.h"
 end_include
 
@@ -54,19 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tools-enums.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimptoolcontrol.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/core-types.h"
+file|"base/tile-manager.h"
 end_include
 
 begin_include
@@ -85,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpchannel.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpdrawable.h"
 end_include
 
 begin_include
@@ -126,13 +114,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpprojection.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpprogress.h"
+file|"gegl/gimpcageconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimphelp-ids.h"
 end_include
 
 begin_include
@@ -156,18 +156,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/tile-manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimphelp-ids.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcagetool.h"
 end_include
 
@@ -180,18 +168,22 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-intl.h"
+file|"gimptoolcontrol.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|<stdio.h>
+file|"gimp-intl.h"
 end_include
 
-begin_comment
-comment|/*static gboolean     gimp_cage_tool_initialize     (GimpTool    *tool,                                                    GimpDisplay *display,                                                    GError     **error);*/
-end_comment
+begin_define
+DECL|macro|HANDLE_SIZE
+define|#
+directive|define
+name|HANDLE_SIZE
+value|25
+end_define
 
 begin_function_decl
 specifier|static
@@ -412,6 +404,18 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|void
+name|gimp_cage_tool_draw
+parameter_list|(
+name|GimpDrawTool
+modifier|*
+name|draw_tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|gint
 name|gimp_cage_tool_is_on_handle
 parameter_list|(
@@ -438,18 +442,6 @@ name|y
 parameter_list|,
 name|gint
 name|handle_size
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_cage_tool_draw
-parameter_list|(
-name|GimpDrawTool
-modifier|*
-name|draw_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -595,14 +587,6 @@ name|parent_class
 value|gimp_cage_tool_parent_class
 end_define
 
-begin_define
-DECL|macro|HANDLE_SIZE
-define|#
-directive|define
-name|HANDLE_SIZE
-value|25
-end_define
-
 begin_function
 name|void
 name|gimp_cage_tool_register
@@ -621,16 +605,12 @@ call|)
 argument_list|(
 name|GIMP_TYPE_CAGE_TOOL
 argument_list|,
-comment|/* Tool type */
 name|GIMP_TYPE_CAGE_OPTIONS
 argument_list|,
-comment|/*Tool options type*/
 name|gimp_cage_options_gui
 argument_list|,
-comment|/*Tool opions gui*/
 literal|0
 argument_list|,
-comment|/*context_props*/
 literal|"gimp-cage-tool"
 argument_list|,
 name|_
@@ -706,7 +686,6 @@ name|finalize
 operator|=
 name|gimp_cage_tool_finalize
 expr_stmt|;
-comment|/*tool_class->initialize          = gimp_cage_tool_initialize;*/
 name|tool_class
 operator|->
 name|button_press
@@ -835,10 +814,6 @@ literal|0
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*static gboolean gimp_cage_tool_initialize (GimpTool    *tool,                            GimpDisplay *display,                            GError     **error) {   GimpCageTool *cage_tool = GIMP_CAGE_TOOL (tool);    return GIMP_TOOL_CLASS (parent_class)->initialize(tool, display, error); }*/
-end_comment
 
 begin_function
 specifier|static
@@ -1087,7 +1062,7 @@ name|cage_complete
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/*Setting up cage offset to convert the cage point coords to drawable coords*/
+comment|/* Setting up cage offset to convert the cage point coords to    * drawable coords    */
 name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
@@ -1230,7 +1205,6 @@ name|idle_id
 operator|=
 literal|0
 expr_stmt|;
-comment|/*Stop preview update for now*/
 block|}
 name|gimp_cage_tool_process
 argument_list|(
@@ -1239,7 +1213,6 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-comment|/*RUN IT BABY*/
 block|}
 return|return
 name|TRUE
@@ -1714,7 +1687,7 @@ name|ct
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* user is clicking on the first handle, we close the cage and    * switch to deform mode*/
+comment|/* user is clicking on the first handle, we close the cage and    * switch to deform mode    */
 if|if
 condition|(
 name|ct
@@ -2116,10 +2089,6 @@ block|}
 block|}
 end_function
 
-begin_comment
-comment|/**  * gimp_cage_tool_draw:  * @draw_tool:  *  * Draw the tool on the canvas.  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -2180,9 +2149,7 @@ name|cage_vertice_number
 operator|<=
 literal|0
 condition|)
-block|{
 return|return;
-block|}
 if|if
 condition|(
 name|options
@@ -2191,23 +2158,19 @@ name|cage_mode
 operator|==
 name|GIMP_CAGE_MODE_CAGE_CHANGE
 condition|)
-block|{
 name|vertices
 operator|=
 name|config
 operator|->
 name|cage_vertices
 expr_stmt|;
-block|}
 else|else
-block|{
 name|vertices
 operator|=
 name|config
 operator|->
 name|cage_vertices_d
 expr_stmt|;
-block|}
 comment|/*gimp_draw_tool_add_lines (draw_tool,                              vertices,                              config->cage_vertice_number,                              FALSE);*/
 if|if
 condition|(
@@ -2404,12 +2367,10 @@ name|i
 operator|==
 name|on_handle
 condition|)
-block|{
 name|handle
 operator|=
 name|GIMP_HANDLE_FILLED_CIRCLE
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|i
@@ -2705,11 +2666,9 @@ operator|*
 name|handle_size
 operator|)
 condition|)
-block|{
 return|return
 name|i
 return|;
-block|}
 block|}
 return|return
 operator|-

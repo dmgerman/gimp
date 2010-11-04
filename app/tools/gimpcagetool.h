@@ -28,12 +28,6 @@ directive|include
 file|"libgimpmath/gimpvector.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gegl/gimpcageconfig.h"
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_CAGE_TOOL
 define|#
@@ -109,20 +103,20 @@ value|(GIMP_CAGE_OPTIONS (gimp_tool_get_options (GIMP_TOOL (t))))
 end_define
 
 begin_typedef
-DECL|typedef|GimpCageToolClass
-typedef|typedef
-name|struct
-name|_GimpCageToolClass
-name|GimpCageToolClass
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpCageTool
 typedef|typedef
 name|struct
 name|_GimpCageTool
 name|GimpCageTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpCageToolClass
+typedef|typedef
+name|struct
+name|_GimpCageToolClass
+name|GimpCageToolClass
 typedef|;
 end_typedef
 

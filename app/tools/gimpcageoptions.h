@@ -22,12 +22,6 @@ directive|include
 file|"tools/gimptransformoptions.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimpbase/gimpbase.h"
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_CAGE_OPTIONS
 define|#
@@ -92,20 +86,20 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_CAGE_OPTIONS, GimpCageOptions
 end_define
 
 begin_typedef
-DECL|typedef|GimpCageOptionsClass
-typedef|typedef
-name|struct
-name|_GimpCageOptionsClass
-name|GimpCageOptionsClass
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpCageOptions
 typedef|typedef
 name|struct
 name|_GimpCageOptions
 name|GimpCageOptions
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpCageOptionsClass
+typedef|typedef
+name|struct
+name|_GimpCageOptionsClass
+name|GimpCageOptionsClass
 typedef|;
 end_typedef
 

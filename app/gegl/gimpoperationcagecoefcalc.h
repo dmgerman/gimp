@@ -30,7 +30,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a6feb10103
+DECL|enum|__anon2c731b960103
 block|{
 DECL|enumerator|GIMP_OPERATION_CAGE_COEF_CALC_PROP_0
 name|GIMP_OPERATION_CAGE_COEF_CALC_PROP_0

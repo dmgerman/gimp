@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  *   * gimpcageconfig.c  * Copyright (C) 2010 Michael MurÃ©<batolettre@gmail.com>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  *  * gimpcageconfig.c  * Copyright (C) 2010 Michael MurÃ©<batolettre@gmail.com>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpmodule/gimpmodule.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpmath/gimpmath.h"
 end_include
 
@@ -48,65 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpmath/gimpmathtypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/tools-enums.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpmath/gimpvector.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcageconfig.h"
 end_include
 
-begin_macro
-name|G_DEFINE_TYPE_WITH_CODE
-argument_list|(
-argument|GimpCageConfig
-argument_list|,
-argument|gimp_cage_config
-argument_list|,
-argument|GIMP_TYPE_IMAGE_MAP_CONFIG
-argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 NULL)
-argument_list|)
-end_macro
-
-begin_define
-DECL|macro|parent_class
-define|#
-directive|define
-name|parent_class
-value|gimp_cage_config_parent_class
-end_define
+begin_comment
+comment|/*#define DEBUG_CAGE */
+end_comment
 
 begin_define
 DECL|macro|N_ITEMS_PER_ALLOC
@@ -207,9 +148,27 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*#define DEBUG_CAGE */
-end_comment
+begin_macro
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpCageConfig,gimp_cage_config,GIMP_TYPE_IMAGE_MAP_CONFIG,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,NULL))
+name|G_DEFINE_TYPE_WITH_CODE
+argument_list|(
+argument|GimpCageConfig
+argument_list|,
+argument|gimp_cage_config
+argument_list|,
+argument|GIMP_TYPE_IMAGE_MAP_CONFIG
+argument_list|,
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 NULL)
+argument_list|)
+end_macro
+
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
+name|parent_class
+value|gimp_cage_config_parent_class
+end_define
 
 begin_ifdef
 ifdef|#
@@ -220,7 +179,6 @@ end_ifdef
 begin_function
 specifier|static
 name|void
-DECL|function|print_cage (GimpCageConfig * gcc)
 name|print_cage
 parameter_list|(
 name|GimpCageConfig
@@ -448,7 +406,7 @@ name|self
 operator|->
 name|cage_vertices
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|GimpVector2
 argument_list|,
@@ -461,7 +419,7 @@ name|self
 operator|->
 name|cage_vertices_d
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|GimpVector2
 argument_list|,
@@ -474,7 +432,7 @@ name|self
 operator|->
 name|scaling_factor
 operator|=
-name|g_malloc
+name|g_malloc0
 argument_list|(
 name|self
 operator|->
@@ -490,7 +448,7 @@ name|self
 operator|->
 name|normal_d
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|GimpVector2
 argument_list|,
@@ -647,6 +605,10 @@ break|break;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_cage_config_add_cage_point:  * @gcc: the cage config  * @x: x value of the new point  * @y: y value of the new point  *  * Add a new point in the polygon of the cage, and make allocation if needed.  * Point is added in both source and destination cage  */
+end_comment
 
 begin_function
 name|void
@@ -856,6 +818,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_cage_config_remove_last_cage_point:  * @gcc: the cage config  *  * Remove the last point of the cage, in both source and destination cage  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_cage_config_remove_last_cage_point (GimpCageConfig * gcc)
@@ -899,6 +865,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_cage_config_move_cage_point:  * @gcc: the cage config  * @mode: the actual mode of the cage, GIMP_CAGE_MODE_CAGE_CHANGE or GIMP_CAGE_MODE_DEFORM  * @point_number: the point of the cage to move  * @x: new x value  * @y: new y value  *  * Move a point of the source or destination cage, according to the  * cage mode provided  */
+end_comment
 
 begin_function
 name|void
@@ -1038,6 +1008,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_cage_config_get_bounding_box:  * @gcc: the cage config  *  * Compute the bounding box of the destination cage  *  * Returns: the bounding box of the destination cage, as a GeglRectangle  */
+end_comment
+
 begin_function
 name|GeglRectangle
 DECL|function|gimp_cage_config_get_bounding_box (GimpCageConfig * gcc)
@@ -1048,15 +1022,15 @@ modifier|*
 name|gcc
 parameter_list|)
 block|{
-name|gint
-name|i
-decl_stmt|;
 name|GeglRectangle
 name|bounding_box
 init|=
 block|{
 literal|0
 block|, }
+decl_stmt|;
+name|gint
+name|i
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -1267,6 +1241,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_cage_config_reverse_cage:  * @gcc: the cage config  *  * When using non-simple cage (like a cage in 8), user may want to  * manually inverse inside and outside of the cage. This function  * reverse the cage  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_cage_config_reverse_cage (GimpCageConfig * gcc)
@@ -1277,11 +1255,11 @@ modifier|*
 name|gcc
 parameter_list|)
 block|{
-name|gint
-name|i
-decl_stmt|;
 name|GimpVector2
 name|temp
+decl_stmt|;
+name|gint
+name|i
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -1411,6 +1389,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_cage_config_reverse_cage_if_needed:  * @gcc: the cage config  *  * Since the cage need to be defined counter-clockwise to have the  * topological inside in the actual 'physical' inside of the cage,  * this function compute if the cage is clockwise or not, and reverse  * the cage if needed.  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_cage_config_reverse_cage_if_needed (GimpCageConfig * gcc)
@@ -1440,7 +1422,7 @@ operator|=
 literal|0.0
 expr_stmt|;
 comment|/* this is a bit crappy, but should works most of the case */
-comment|/* we do the sum of the projection of each point to the previous segment, and see the final sign */
+comment|/* we do the sum of the projection of each point to the previous      segment, and see the final sign */
 for|for
 control|(
 name|i
@@ -1576,6 +1558,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_cage_config_point_inside:  * @gcc: the cage config  * @x: x coordinate of the point to test  * @y: y coordinate of the point to test  *  * Check if the given point is inside the cage. This test is done in  * the regard of the topological inside of the cage.  *  * Returns: TRUE if the point is inside, FALSE if not.  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -1587,9 +1573,6 @@ modifier|*
 name|gcc
 parameter_list|)
 block|{
-name|gint
-name|i
-decl_stmt|;
 name|GimpVector2
 name|edge
 decl_stmt|;
@@ -1597,6 +1580,9 @@ name|gdouble
 name|length
 decl_stmt|,
 name|length_d
+decl_stmt|;
+name|gint
+name|i
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -1734,11 +1720,11 @@ modifier|*
 name|gcc
 parameter_list|)
 block|{
-name|gint
-name|i
-decl_stmt|;
 name|GimpVector2
 name|normal
+decl_stmt|;
+name|gint
+name|i
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -1827,23 +1813,19 @@ name|gfloat
 name|y
 parameter_list|)
 block|{
-name|gint
-name|i
-decl_stmt|,
-name|j
+name|GimpVector2
+modifier|*
+name|cv
 decl_stmt|;
 name|gboolean
 name|inside
 init|=
 name|FALSE
 decl_stmt|;
-name|GimpVector2
-modifier|*
-name|cv
-init|=
-name|gcc
-operator|->
-name|cage_vertices
+name|gint
+name|i
+decl_stmt|,
+name|j
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -1854,6 +1836,12 @@ argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
+expr_stmt|;
+name|cv
+operator|=
+name|gcc
+operator|->
+name|cage_vertices
 expr_stmt|;
 for|for
 control|(
