@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"tools/gimptransformoptions.h"
+file|"core/gimptooloptions.h"
 end_include
 
 begin_define
@@ -109,7 +109,7 @@ struct|struct
 name|_GimpCageOptions
 block|{
 DECL|member|parent_instance
-name|GimpTransformOptions
+name|GimpToolOptions
 name|parent_instance
 decl_stmt|;
 DECL|member|cage_mode

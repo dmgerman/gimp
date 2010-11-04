@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279e2ec60103
+DECL|enum|__anon2ade2d880103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -157,14 +157,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpCageOptions,gimp_cage_options,GIMP_TYPE_TRANSFORM_OPTIONS)
+DECL|function|G_DEFINE_TYPE (GimpCageOptions,gimp_cage_options,GIMP_TYPE_TOOL_OPTIONS)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpCageOptions
 argument_list|,
 argument|gimp_cage_options
 argument_list|,
-argument|GIMP_TYPE_TRANSFORM_OPTIONS
+argument|GIMP_TYPE_TOOL_OPTIONS
 argument_list|)
 end_macro
 
@@ -252,7 +252,7 @@ name|GimpCageOptions
 modifier|*
 name|options
 parameter_list|)
-block|{  }
+block|{ }
 end_function
 
 begin_function
