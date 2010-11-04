@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpconfig/gimpconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -43,36 +37,6 @@ begin_include
 include|#
 directive|include
 file|"tools-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpcoreconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimptoolinfo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpwidgets-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcagetool.h"
 end_include
 
 begin_include
@@ -95,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ade2d880103
+DECL|enum|__anon2b9933cf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
