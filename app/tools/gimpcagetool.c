@@ -72,19 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp-transform-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpchannel.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpdrawable-operation.h"
 end_include
 
 begin_include
