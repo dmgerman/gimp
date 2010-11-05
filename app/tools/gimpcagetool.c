@@ -2539,11 +2539,12 @@ if|if
 condition|(
 name|dist
 operator|<=
-operator|(
+name|SQR
+argument_list|(
 name|handle_size
-operator|*
-name|handle_size
-operator|)
+operator|/
+literal|2
+argument_list|)
 condition|)
 return|return
 name|i
