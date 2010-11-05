@@ -210,7 +210,7 @@ name|operation_class
 operator|->
 name|name
 operator|=
-literal|"gimp:cage_coef_calc"
+literal|"gimp:cage-coef-calc"
 expr_stmt|;
 name|operation_class
 operator|->
@@ -307,7 +307,7 @@ name|GimpOperationCageCoefCalc
 modifier|*
 name|self
 parameter_list|)
-block|{  }
+block|{ }
 end_function
 
 begin_function

@@ -2856,7 +2856,7 @@ name|gegl
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gimp:cage_coef_calc"
+literal|"gimp:cage-coef-calc"
 argument_list|,
 literal|"config"
 argument_list|,
@@ -3059,7 +3059,7 @@ name|parent
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gimp:cage_transform"
+literal|"gimp:cage-transform"
 argument_list|,
 literal|"config"
 argument_list|,

@@ -339,12 +339,11 @@ name|finalize
 operator|=
 name|gimp_operation_cage_transform_finalize
 expr_stmt|;
-comment|/* FIXME: wrong categories and name, to appears in the gegl tool */
 name|operation_class
 operator|->
 name|name
 operator|=
-literal|"gimp:cage_transform"
+literal|"gimp:cage-transform"
 expr_stmt|;
 name|operation_class
 operator|->
