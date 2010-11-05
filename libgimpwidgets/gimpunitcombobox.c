@@ -165,7 +165,7 @@ name|cell
 argument_list|,
 literal|"text"
 argument_list|,
-name|GIMP_UNIT_STORE_UNIT_PLURAL
+name|GIMP_UNIT_STORE_UNIT_LONG_FORMAT
 argument_list|,
 name|NULL
 argument_list|)
@@ -272,7 +272,7 @@ name|cell
 argument_list|,
 literal|"text"
 argument_list|,
-name|GIMP_UNIT_STORE_UNIT_ABBREVIATION
+name|GIMP_UNIT_STORE_UNIT_SHORT_FORMAT
 argument_list|,
 name|NULL
 argument_list|)
