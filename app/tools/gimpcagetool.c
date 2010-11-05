@@ -980,8 +980,7 @@ name|cursor_position
 operator|.
 name|x
 operator|=
-operator|-
-literal|1000
+name|G_MINDOUBLE
 expr_stmt|;
 name|ct
 operator|->
@@ -989,8 +988,7 @@ name|cursor_position
 operator|.
 name|y
 operator|=
-operator|-
-literal|1000
+name|G_MINDOUBLE
 expr_stmt|;
 name|ct
 operator|->
@@ -2118,8 +2116,7 @@ name|cursor_position
 operator|.
 name|x
 operator|!=
-operator|-
-literal|1000
+name|G_MINDOUBLE
 condition|)
 block|{
 name|gimp_draw_tool_add_line
