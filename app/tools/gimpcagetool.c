@@ -729,7 +729,7 @@ literal|0
 expr_stmt|;
 name|self
 operator|->
-name|handle_moved
+name|moving_handle
 operator|=
 operator|-
 literal|1
@@ -994,7 +994,7 @@ literal|1000
 expr_stmt|;
 name|ct
 operator|->
-name|handle_moved
+name|moving_handle
 operator|=
 operator|-
 literal|1
@@ -1256,7 +1256,7 @@ if|if
 condition|(
 name|ct
 operator|->
-name|handle_moved
+name|moving_handle
 operator|>=
 literal|0
 condition|)
@@ -1271,7 +1271,7 @@ name|cage_mode
 argument_list|,
 name|ct
 operator|->
-name|handle_moved
+name|moving_handle
 argument_list|,
 name|coords
 operator|->
@@ -1534,14 +1534,14 @@ if|if
 condition|(
 name|ct
 operator|->
-name|handle_moved
+name|moving_handle
 operator|<
 literal|0
 condition|)
 block|{
 name|ct
 operator|->
-name|handle_moved
+name|moving_handle
 operator|=
 name|gimp_cage_tool_is_on_handle
 argument_list|(
@@ -1574,7 +1574,7 @@ if|if
 condition|(
 name|ct
 operator|->
-name|handle_moved
+name|moving_handle
 operator|<
 literal|0
 operator|&&
@@ -1611,7 +1611,7 @@ if|if
 condition|(
 name|ct
 operator|->
-name|handle_moved
+name|moving_handle
 operator|==
 literal|0
 operator|&&
@@ -1724,7 +1724,7 @@ name|coef
 operator|&&
 name|ct
 operator|->
-name|handle_moved
+name|moving_handle
 operator|>
 operator|-
 literal|1
@@ -1868,7 +1868,7 @@ expr_stmt|;
 block|}
 name|ct
 operator|->
-name|handle_moved
+name|moving_handle
 operator|=
 operator|-
 literal|1

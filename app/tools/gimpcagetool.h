@@ -138,9 +138,9 @@ DECL|member|cursor_position
 name|GimpVector2
 name|cursor_position
 decl_stmt|;
-DECL|member|handle_moved
+DECL|member|moving_handle
 name|gint
-name|handle_moved
+name|moving_handle
 decl_stmt|;
 DECL|member|cage_complete
 name|gboolean
