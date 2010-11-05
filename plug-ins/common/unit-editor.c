@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbef3ed0103
+DECL|enum|__anon2c4029600103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -111,7 +111,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbef3ed0208
+DECL|struct|__anon2c4029600208
 block|{
 DECL|member|title
 specifier|const
@@ -2496,9 +2496,12 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
-name|gtk_tree_view_get_vadjustment
+name|gtk_scrollable_get_vadjustment
+argument_list|(
+name|GTK_SCROLLABLE
 argument_list|(
 name|tv
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
@@ -2657,9 +2660,12 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
-name|gtk_tree_view_get_vadjustment
+name|gtk_scrollable_get_vadjustment
+argument_list|(
+name|GTK_SCROLLABLE
 argument_list|(
 name|tv
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
