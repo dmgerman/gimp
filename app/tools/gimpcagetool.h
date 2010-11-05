@@ -134,9 +134,13 @@ name|GimpCageConfig
 modifier|*
 name|config
 decl_stmt|;
-DECL|member|cursor_position
-name|GimpVector2
-name|cursor_position
+DECL|member|cursor_x
+name|gdouble
+name|cursor_x
+decl_stmt|;
+DECL|member|cursor_y
+name|gdouble
+name|cursor_y
 decl_stmt|;
 DECL|member|moving_handle
 name|gint
