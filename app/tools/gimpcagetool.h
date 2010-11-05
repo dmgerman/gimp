@@ -161,10 +161,6 @@ name|GeglNode
 modifier|*
 name|node_preview
 decl_stmt|;
-DECL|member|idle_id
-name|guint
-name|idle_id
-decl_stmt|;
 block|}
 struct|;
 end_struct
