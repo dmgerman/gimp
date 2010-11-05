@@ -925,15 +925,6 @@ argument_list|(
 name|ct
 argument_list|)
 decl_stmt|;
-name|GimpDrawTool
-modifier|*
-name|draw_tool
-init|=
-name|GIMP_DRAW_TOOL
-argument_list|(
-name|tool
-argument_list|)
-decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -1083,7 +1074,10 @@ name|off_y
 expr_stmt|;
 name|gimp_draw_tool_start
 argument_list|(
-name|draw_tool
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|ct
+argument_list|)
 argument_list|,
 name|display
 argument_list|)
