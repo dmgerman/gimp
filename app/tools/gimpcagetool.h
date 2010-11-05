@@ -142,6 +142,10 @@ DECL|member|cursor_y
 name|gdouble
 name|cursor_y
 decl_stmt|;
+DECL|member|hovering_handle
+name|gint
+name|hovering_handle
+decl_stmt|;
 DECL|member|moving_handle
 name|gint
 name|moving_handle
