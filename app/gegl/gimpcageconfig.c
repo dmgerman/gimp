@@ -217,7 +217,7 @@ name|i
 operator|<
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 condition|;
 name|i
 operator|++
@@ -391,13 +391,13 @@ parameter_list|)
 block|{
 name|self
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 operator|=
 literal|0
 expr_stmt|;
 name|self
 operator|->
-name|cage_vertices_max
+name|max_cage_vertices
 operator|=
 literal|50
 expr_stmt|;
@@ -412,7 +412,7 @@ name|GimpVector2
 argument_list|,
 name|self
 operator|->
-name|cage_vertices_max
+name|max_cage_vertices
 argument_list|)
 expr_stmt|;
 name|self
@@ -425,7 +425,7 @@ name|GimpVector2
 argument_list|,
 name|self
 operator|->
-name|cage_vertices_max
+name|max_cage_vertices
 argument_list|)
 expr_stmt|;
 name|self
@@ -436,7 +436,7 @@ name|g_malloc0
 argument_list|(
 name|self
 operator|->
-name|cage_vertices_max
+name|max_cage_vertices
 operator|*
 sizeof|sizeof
 argument_list|(
@@ -454,7 +454,7 @@ name|GimpVector2
 argument_list|,
 name|self
 operator|->
-name|cage_vertices_max
+name|max_cage_vertices
 argument_list|)
 expr_stmt|;
 block|}
@@ -639,16 +639,16 @@ if|if
 condition|(
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 operator|>=
 name|gcc
 operator|->
-name|cage_vertices_max
+name|max_cage_vertices
 condition|)
 block|{
 name|gcc
 operator|->
-name|cage_vertices_max
+name|max_cage_vertices
 operator|+=
 name|N_ITEMS_PER_ALLOC
 expr_stmt|;
@@ -666,7 +666,7 @@ name|cage_vertices
 argument_list|,
 name|gcc
 operator|->
-name|cage_vertices_max
+name|max_cage_vertices
 argument_list|)
 expr_stmt|;
 name|gcc
@@ -683,7 +683,7 @@ name|cage_vertices_d
 argument_list|,
 name|gcc
 operator|->
-name|cage_vertices_max
+name|max_cage_vertices
 argument_list|)
 expr_stmt|;
 name|gcc
@@ -698,7 +698,7 @@ name|scaling_factor
 argument_list|,
 name|gcc
 operator|->
-name|cage_vertices_max
+name|max_cage_vertices
 operator|*
 sizeof|sizeof
 argument_list|(
@@ -720,7 +720,7 @@ name|normal_d
 argument_list|,
 name|gcc
 operator|->
-name|cage_vertices_max
+name|max_cage_vertices
 argument_list|)
 expr_stmt|;
 block|}
@@ -730,7 +730,7 @@ name|cage_vertices
 index|[
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 index|]
 operator|.
 name|x
@@ -749,7 +749,7 @@ name|cage_vertices
 index|[
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 index|]
 operator|.
 name|y
@@ -768,7 +768,7 @@ name|cage_vertices_d
 index|[
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 index|]
 operator|.
 name|x
@@ -787,7 +787,7 @@ name|cage_vertices_d
 index|[
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 index|]
 operator|.
 name|y
@@ -802,7 +802,7 @@ name|offset_y
 expr_stmt|;
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 operator|++
 expr_stmt|;
 name|gimp_cage_config_compute_scaling_factor
@@ -844,13 +844,13 @@ if|if
 condition|(
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 operator|>=
 literal|1
 condition|)
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 operator|--
 expr_stmt|;
 name|gimp_cage_config_compute_scaling_factor
@@ -906,7 +906,7 @@ name|point_number
 operator|<
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -1046,7 +1046,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 operator|>=
 literal|0
 argument_list|,
@@ -1101,7 +1101,7 @@ name|i
 operator|<
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 condition|;
 name|i
 operator|++
@@ -1279,7 +1279,7 @@ name|i
 operator|<
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 operator|/
 literal|2
 condition|;
@@ -1309,7 +1309,7 @@ name|cage_vertices
 index|[
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 operator|-
 name|i
 operator|-
@@ -1322,7 +1322,7 @@ name|cage_vertices
 index|[
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 operator|-
 name|i
 operator|-
@@ -1353,7 +1353,7 @@ name|cage_vertices_d
 index|[
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 operator|-
 name|i
 operator|-
@@ -1366,7 +1366,7 @@ name|cage_vertices_d
 index|[
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 operator|-
 name|i
 operator|-
@@ -1433,7 +1433,7 @@ name|i
 operator|<
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 condition|;
 name|i
 operator|++
@@ -1472,7 +1472,7 @@ operator|)
 operator|%
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 index|]
 expr_stmt|;
 name|P3
@@ -1489,7 +1489,7 @@ operator|)
 operator|%
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 index|]
 expr_stmt|;
 name|z
@@ -1602,7 +1602,7 @@ name|i
 operator|<
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 condition|;
 name|i
 operator|++
@@ -1634,7 +1634,7 @@ operator|)
 operator|%
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 index|]
 argument_list|)
 expr_stmt|;
@@ -1672,7 +1672,7 @@ operator|)
 operator|%
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 index|]
 argument_list|)
 expr_stmt|;
@@ -1744,7 +1744,7 @@ name|i
 operator|<
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 condition|;
 name|i
 operator|++
@@ -1768,7 +1768,7 @@ operator|)
 operator|%
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 index|]
 argument_list|,
 operator|&
@@ -1853,7 +1853,7 @@ name|j
 operator|=
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 operator|-
 literal|1
 init|;
@@ -1861,7 +1861,7 @@ name|i
 operator|<
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 condition|;
 name|j
 operator|=

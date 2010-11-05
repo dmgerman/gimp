@@ -1680,7 +1680,7 @@ literal|0
 operator|&&
 name|config
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 operator|>
 literal|2
 operator|&&
@@ -2123,11 +2123,14 @@ name|GimpVector2
 modifier|*
 name|vertices
 decl_stmt|;
+name|gint
+name|n_vertices
+decl_stmt|;
 if|if
 condition|(
 name|config
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 operator|<=
 literal|0
 condition|)
@@ -2153,7 +2156,13 @@ name|config
 operator|->
 name|cage_vertices_d
 expr_stmt|;
-comment|/*gimp_draw_tool_add_lines (draw_tool,                              vertices,                              config->cage_vertice_number,                              FALSE);*/
+name|n_vertices
+operator|=
+name|config
+operator|->
+name|n_cage_vertices
+expr_stmt|;
+comment|/*gimp_draw_tool_add_lines (draw_tool,                              vertices,                              config->n_cage_vertices,                              FALSE);*/
 if|if
 condition|(
 operator|!
@@ -2177,9 +2186,7 @@ name|draw_tool
 argument_list|,
 name|vertices
 index|[
-name|config
-operator|->
-name|cage_vertice_number
+name|n_vertices
 operator|-
 literal|1
 index|]
@@ -2194,9 +2201,7 @@ name|offset_x
 argument_list|,
 name|vertices
 index|[
-name|config
-operator|->
-name|cage_vertice_number
+name|n_vertices
 operator|-
 literal|1
 index|]
@@ -2231,9 +2236,7 @@ name|draw_tool
 argument_list|,
 name|vertices
 index|[
-name|config
-operator|->
-name|cage_vertice_number
+name|n_vertices
 operator|-
 literal|1
 index|]
@@ -2248,9 +2251,7 @@ name|offset_x
 argument_list|,
 name|vertices
 index|[
-name|config
-operator|->
-name|cage_vertice_number
+name|n_vertices
 operator|-
 literal|1
 index|]
@@ -2330,9 +2331,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|config
-operator|->
-name|cage_vertice_number
+name|n_vertices
 condition|;
 name|i
 operator|++
@@ -2523,7 +2522,7 @@ if|if
 condition|(
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 operator|==
 literal|0
 condition|)
@@ -2541,7 +2540,7 @@ name|i
 operator|<
 name|gcc
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 condition|;
 name|i
 operator|++
@@ -2822,7 +2821,7 @@ argument_list|)
 argument_list|,
 name|config
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 operator|*
 literal|2
 argument_list|)

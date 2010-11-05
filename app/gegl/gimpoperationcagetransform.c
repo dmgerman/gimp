@@ -737,7 +737,7 @@ literal|2
 operator|*
 name|config
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2329,7 +2329,7 @@ name|cvn
 init|=
 name|config
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 decl_stmt|;
 name|Babl
 modifier|*
@@ -2381,7 +2381,7 @@ name|g_malloc
 argument_list|(
 name|config
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 operator|*
 literal|2
 operator|*

@@ -358,7 +358,7 @@ literal|2
 operator|*
 name|config
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -778,7 +778,7 @@ literal|2
 operator|*
 name|config
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 argument_list|)
 decl_stmt|;
 name|GeglBufferIterator
@@ -884,7 +884,7 @@ name|j
 operator|<
 name|config
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 condition|;
 name|j
 operator|++
@@ -949,7 +949,7 @@ operator|)
 operator|%
 name|config
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 index|]
 expr_stmt|;
 name|p
@@ -1170,7 +1170,7 @@ name|j
 operator|+
 name|config
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 index|]
 operator|=
 operator|(
@@ -1228,7 +1228,7 @@ name|j
 operator|+
 name|config
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 index|]
 argument_list|)
 condition|)
@@ -1239,7 +1239,7 @@ name|j
 operator|+
 name|config
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 index|]
 operator|=
 literal|0.0
@@ -1307,7 +1307,7 @@ operator|)
 operator|%
 name|config
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 index|]
 operator|-=
 operator|(
@@ -1347,7 +1347,7 @@ literal|2
 operator|*
 name|config
 operator|->
-name|cage_vertice_number
+name|n_cage_vertices
 expr_stmt|;
 comment|/* update x and y coordinates */
 name|x

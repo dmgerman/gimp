@@ -103,16 +103,16 @@ DECL|member|parent_instance
 name|GimpImageMapConfig
 name|parent_instance
 decl_stmt|;
-DECL|member|cage_vertice_number
+DECL|member|n_cage_vertices
 name|gint
-name|cage_vertice_number
+name|n_cage_vertices
 decl_stmt|;
-comment|/* number of vertices used by the cage */
-DECL|member|cage_vertices_max
+comment|/* vertices used by the cage */
+DECL|member|max_cage_vertices
 name|gint
-name|cage_vertices_max
+name|max_cage_vertices
 decl_stmt|;
-comment|/* number of vertices allocated in memory */
+comment|/* vertices allocated        */
 DECL|member|offset_x
 name|gint
 name|offset_x
@@ -132,7 +132,7 @@ name|GimpVector2
 modifier|*
 name|cage_vertices_d
 decl_stmt|;
-comment|/* cage after deformation */
+comment|/* cage after deformation  */
 DECL|member|scaling_factor
 name|gdouble
 modifier|*
