@@ -116,7 +116,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b99b7bf0103
+DECL|enum|__anon28830aaf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1799,7 +1799,7 @@ name|resolution_unit
 argument_list|,
 name|_
 argument_list|(
-literal|"pixels/%a"
+literal|"pixels/%s"
 argument_list|)
 argument_list|,
 name|FALSE
