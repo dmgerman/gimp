@@ -253,6 +253,11 @@ DECL|member|old_trans_info
 name|TransInfo
 name|old_trans_info
 decl_stmt|;
+comment|/*  for resetting everything          */
+DECL|member|prev_trans_info
+name|TransInfo
+name|prev_trans_info
+decl_stmt|;
 comment|/*  for cancelling a drag operation   */
 DECL|member|original
 name|TileManager
