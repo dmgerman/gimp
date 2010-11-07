@@ -1818,12 +1818,6 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* get rid of preview artifacts left outside the drawable's area */
-name|gimp_transform_tool_expose_preview
-argument_list|(
-name|tr_tool
-argument_list|)
-expr_stmt|;
 comment|/*  Restore the previous transformation info  */
 for|for
 control|(
@@ -1866,6 +1860,12 @@ argument_list|(
 name|tr_tool
 argument_list|,
 name|display
+argument_list|)
+expr_stmt|;
+comment|/* get rid of preview artifacts left outside the drawable's area */
+name|gimp_transform_tool_expose_preview
+argument_list|(
+name|tr_tool
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
@@ -8287,7 +8287,7 @@ operator|->
 name|display
 argument_list|)
 expr_stmt|;
-comment|/* update preview */
+comment|/* get rid of preview artifacts left outside the drawable's area */
 name|gimp_transform_tool_expose_preview
 argument_list|(
 name|tr_tool
