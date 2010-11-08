@@ -160,19 +160,6 @@ DECL|macro|EPSILON
 comment|/* move distance after which we do a box-select */
 end_comment
 
-begin_define
-DECL|macro|MARKER_WIDTH
-define|#
-directive|define
-name|MARKER_WIDTH
-value|5
-end_define
-
-begin_comment
-DECL|macro|MARKER_WIDTH
-comment|/* size (in pixels) of the square handles */
-end_comment
-
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -2953,9 +2940,9 @@ name|x
 argument_list|,
 name|y
 argument_list|,
-name|MARKER_WIDTH
+name|GIMP_TOOL_HANDLE_SIZE_SMALL
 argument_list|,
-name|MARKER_WIDTH
+name|GIMP_TOOL_HANDLE_SIZE_SMALL
 argument_list|,
 name|GIMP_HANDLE_ANCHOR_NORTH_WEST
 argument_list|)
@@ -2972,9 +2959,9 @@ name|w
 argument_list|,
 name|y
 argument_list|,
-name|MARKER_WIDTH
+name|GIMP_TOOL_HANDLE_SIZE_SMALL
 argument_list|,
-name|MARKER_WIDTH
+name|GIMP_TOOL_HANDLE_SIZE_SMALL
 argument_list|,
 name|GIMP_HANDLE_ANCHOR_NORTH_EAST
 argument_list|)
@@ -2991,9 +2978,9 @@ name|y
 operator|+
 name|h
 argument_list|,
-name|MARKER_WIDTH
+name|GIMP_TOOL_HANDLE_SIZE_SMALL
 argument_list|,
-name|MARKER_WIDTH
+name|GIMP_TOOL_HANDLE_SIZE_SMALL
 argument_list|,
 name|GIMP_HANDLE_ANCHOR_SOUTH_WEST
 argument_list|)
@@ -3012,9 +2999,9 @@ name|y
 operator|+
 name|h
 argument_list|,
-name|MARKER_WIDTH
+name|GIMP_TOOL_HANDLE_SIZE_SMALL
 argument_list|,
-name|MARKER_WIDTH
+name|GIMP_TOOL_HANDLE_SIZE_SMALL
 argument_list|,
 name|GIMP_HANDLE_ANCHOR_SOUTH_EAST
 argument_list|)
@@ -3101,9 +3088,9 @@ name|x
 argument_list|,
 name|h
 argument_list|,
-name|MARKER_WIDTH
+name|GIMP_TOOL_HANDLE_SIZE_SMALL
 argument_list|,
-name|MARKER_WIDTH
+name|GIMP_TOOL_HANDLE_SIZE_SMALL
 argument_list|,
 name|GIMP_HANDLE_ANCHOR_SOUTH
 argument_list|)
@@ -3118,9 +3105,9 @@ name|x
 argument_list|,
 literal|0
 argument_list|,
-name|MARKER_WIDTH
+name|GIMP_TOOL_HANDLE_SIZE_SMALL
 argument_list|,
-name|MARKER_WIDTH
+name|GIMP_TOOL_HANDLE_SIZE_SMALL
 argument_list|,
 name|GIMP_HANDLE_ANCHOR_NORTH
 argument_list|)
@@ -3153,9 +3140,9 @@ name|w
 argument_list|,
 name|y
 argument_list|,
-name|MARKER_WIDTH
+name|GIMP_TOOL_HANDLE_SIZE_SMALL
 argument_list|,
-name|MARKER_WIDTH
+name|GIMP_TOOL_HANDLE_SIZE_SMALL
 argument_list|,
 name|GIMP_HANDLE_ANCHOR_EAST
 argument_list|)
@@ -3170,9 +3157,9 @@ literal|0
 argument_list|,
 name|y
 argument_list|,
-name|MARKER_WIDTH
+name|GIMP_TOOL_HANDLE_SIZE_SMALL
 argument_list|,
-name|MARKER_WIDTH
+name|GIMP_TOOL_HANDLE_SIZE_SMALL
 argument_list|,
 name|GIMP_HANDLE_ANCHOR_WEST
 argument_list|)

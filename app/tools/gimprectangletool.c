@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa3149b0103
+DECL|enum|__anon297625050103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -235,14 +235,6 @@ value|45
 end_define
 
 begin_define
-DECL|macro|CENTER_CROSS_SIZE
-define|#
-directive|define
-name|CENTER_CROSS_SIZE
-value|7
-end_define
-
-begin_define
 DECL|macro|SQRT5
 define|#
 directive|define
@@ -253,7 +245,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aa3149b0203
+DECL|enum|__anon297625050203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -296,7 +288,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aa3149b0303
+DECL|enum|__anon297625050303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -5931,9 +5923,9 @@ operator|)
 operator|/
 literal|2.0
 argument_list|,
-name|CENTER_CROSS_SIZE
+name|GIMP_TOOL_HANDLE_SIZE_SMALL
 argument_list|,
-name|CENTER_CROSS_SIZE
+name|GIMP_TOOL_HANDLE_SIZE_SMALL
 argument_list|,
 name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)

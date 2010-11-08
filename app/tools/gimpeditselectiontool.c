@@ -217,14 +217,6 @@ name|ARROW_VELOCITY
 value|25
 end_define
 
-begin_define
-DECL|macro|CENTER_CROSS_SIZE
-define|#
-directive|define
-name|CENTER_CROSS_SIZE
-value|7
-end_define
-
 begin_typedef
 DECL|struct|_GimpEditSelectionTool
 typedef|typedef
@@ -3785,9 +3777,9 @@ name|edit_select
 operator|->
 name|cumly
 argument_list|,
-name|CENTER_CROSS_SIZE
+name|GIMP_TOOL_HANDLE_SIZE_SMALL
 argument_list|,
-name|CENTER_CROSS_SIZE
+name|GIMP_TOOL_HANDLE_SIZE_SMALL
 argument_list|,
 name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)

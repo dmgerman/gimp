@@ -47,6 +47,14 @@ value|25
 end_define
 
 begin_define
+DECL|macro|GIMP_TOOL_HANDLE_SIZE_SMALL
+define|#
+directive|define
+name|GIMP_TOOL_HANDLE_SIZE_SMALL
+value|7
+end_define
+
+begin_define
 DECL|macro|GIMP_TYPE_DRAW_TOOL
 define|#
 directive|define
