@@ -153,14 +153,6 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_define
-DECL|macro|HANDLE_SIZE
-define|#
-directive|define
-name|HANDLE_SIZE
-value|15
-end_define
-
 begin_function_decl
 specifier|static
 name|GObject
@@ -3026,9 +3018,9 @@ name|y
 operator|+
 name|off_y
 argument_list|,
-name|HANDLE_SIZE
+name|GIMP_TOOL_HANDLE_SIZE_CROSS
 argument_list|,
-name|HANDLE_SIZE
+name|GIMP_TOOL_HANDLE_SIZE_CROSS
 argument_list|,
 name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
@@ -3056,9 +3048,9 @@ name|y
 operator|+
 name|off_y
 argument_list|,
-name|HANDLE_SIZE
+name|GIMP_TOOL_HANDLE_SIZE_CROSS
 argument_list|,
-name|HANDLE_SIZE
+name|GIMP_TOOL_HANDLE_SIZE_CROSS
 argument_list|,
 name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)

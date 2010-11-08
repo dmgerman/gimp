@@ -238,14 +238,6 @@ file|"gimp-intl.h"
 end_include
 
 begin_define
-DECL|macro|HANDLE_SIZE
-define|#
-directive|define
-name|HANDLE_SIZE
-value|25
-end_define
-
-begin_define
 DECL|macro|MIN_HANDLE_SIZE
 define|#
 directive|define
@@ -1065,13 +1057,13 @@ name|tr_tool
 operator|->
 name|handle_w
 operator|=
-name|HANDLE_SIZE
+name|GIMP_TOOL_HANDLE_SIZE_LARGE
 expr_stmt|;
 name|tr_tool
 operator|->
 name|handle_h
 operator|=
-name|HANDLE_SIZE
+name|GIMP_TOOL_HANDLE_SIZE_LARGE
 expr_stmt|;
 name|tr_tool
 operator|->
@@ -7488,7 +7480,7 @@ literal|3
 argument_list|,
 name|MIN_HANDLE_SIZE
 argument_list|,
-name|HANDLE_SIZE
+name|GIMP_TOOL_HANDLE_SIZE_LARGE
 argument_list|)
 expr_stmt|;
 name|tr_tool
@@ -7507,7 +7499,7 @@ literal|3
 argument_list|,
 name|MIN_HANDLE_SIZE
 argument_list|,
-name|HANDLE_SIZE
+name|GIMP_TOOL_HANDLE_SIZE_LARGE
 argument_list|)
 expr_stmt|;
 block|}

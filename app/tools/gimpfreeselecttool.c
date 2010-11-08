@@ -124,19 +124,11 @@ file|"gimp-intl.h"
 end_include
 
 begin_define
-DECL|macro|HANDLE_SIZE
-define|#
-directive|define
-name|HANDLE_SIZE
-value|13
-end_define
-
-begin_define
 DECL|macro|POINT_GRAB_THRESHOLD_SQ
 define|#
 directive|define
 name|POINT_GRAB_THRESHOLD_SQ
-value|SQR(HANDLE_SIZE / 2)
+value|SQR (GIMP_TOOL_HANDLE_SIZE_CIRCLE / 2)
 end_define
 
 begin_define
@@ -144,7 +136,7 @@ DECL|macro|POINT_SHOW_THRESHOLD_SQ
 define|#
 directive|define
 name|POINT_SHOW_THRESHOLD_SQ
-value|SQR(HANDLE_SIZE * 7)
+value|SQR (GIMP_TOOL_HANDLE_SIZE_CIRCLE * 7)
 end_define
 
 begin_define
@@ -186,7 +178,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8311830108
+DECL|struct|__anon28ee290e0108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -5568,9 +5560,9 @@ name|point
 operator|->
 name|y
 argument_list|,
-name|HANDLE_SIZE
+name|GIMP_TOOL_HANDLE_SIZE_CIRCLE
 argument_list|,
-name|HANDLE_SIZE
+name|GIMP_TOOL_HANDLE_SIZE_CIRCLE
 argument_list|,
 name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)

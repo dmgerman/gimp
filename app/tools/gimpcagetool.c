@@ -165,14 +165,6 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_define
-DECL|macro|HANDLE_SIZE
-define|#
-directive|define
-name|HANDLE_SIZE
-value|25
-end_define
-
 begin_function_decl
 specifier|static
 name|void
@@ -1363,7 +1355,7 @@ name|coords
 operator|->
 name|y
 argument_list|,
-name|HANDLE_SIZE
+name|GIMP_TOOL_HANDLE_SIZE_CIRCLE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_pause
@@ -2349,9 +2341,9 @@ name|config
 operator|->
 name|offset_y
 argument_list|,
-name|HANDLE_SIZE
+name|GIMP_TOOL_HANDLE_SIZE_CIRCLE
 argument_list|,
-name|HANDLE_SIZE
+name|GIMP_TOOL_HANDLE_SIZE_CIRCLE
 argument_list|,
 name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)

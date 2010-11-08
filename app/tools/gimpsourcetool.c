@@ -87,14 +87,6 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_define
-DECL|macro|TARGET_SIZE
-define|#
-directive|define
-name|TARGET_SIZE
-value|15
-end_define
-
 begin_function_decl
 specifier|static
 name|gboolean
@@ -1586,9 +1578,9 @@ name|src_y
 operator|+
 name|off_y
 argument_list|,
-name|TARGET_SIZE
+name|GIMP_TOOL_HANDLE_SIZE_CROSS
 argument_list|,
-name|TARGET_SIZE
+name|GIMP_TOOL_HANDLE_SIZE_CROSS
 argument_list|,
 name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
