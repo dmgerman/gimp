@@ -592,7 +592,6 @@ if|if
 condition|(
 name|progress
 condition|)
-block|{
 name|gimp_progress_set_value
 argument_list|(
 name|progress
@@ -600,22 +599,6 @@ argument_list|,
 name|value
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: this needs to move to GimpProgress, it seems the          * introduction of client-side windows has somehow changed          * things, so calling gdk_window_process_updates() is not          * enough any longer.          */
-while|while
-condition|(
-name|g_main_context_pending
-argument_list|(
-name|NULL
-argument_list|)
-condition|)
-name|g_main_context_iteration
-argument_list|(
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-block|}
 name|g_object_unref
 argument_list|(
 name|processor
