@@ -104,7 +104,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4fceb60108
+DECL|struct|__anon277d6c070108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -238,7 +238,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4fceb60208
+DECL|struct|__anon277d6c070208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -296,7 +296,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4fceb60308
+DECL|struct|__anon277d6c070308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -323,7 +323,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4fceb60408
+DECL|struct|__anon277d6c070408
 block|{
 DECL|member|npixel
 name|gint
@@ -1855,6 +1855,11 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|xwdcolmap
+argument_list|)
+expr_stmt|;
 name|fclose
 argument_list|(
 name|ifp
@@ -1897,6 +1902,11 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|xwdcolmap
+argument_list|)
+expr_stmt|;
 name|fclose
 argument_list|(
 name|ifp
@@ -1931,6 +1941,11 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|xwdcolmap
+argument_list|)
+expr_stmt|;
 name|fclose
 argument_list|(
 name|ifp
@@ -1963,6 +1978,11 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|xwdcolmap
 argument_list|)
 expr_stmt|;
 name|fclose

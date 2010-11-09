@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd5c9e00108
+DECL|struct|__anon29323f450108
 block|{
 DECL|member|file_name
 name|gchar
@@ -3223,6 +3223,11 @@ argument_list|(
 literal|"unhandled drawable type (%d)"
 argument_list|,
 name|drawable_type
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
 argument_list|)
 expr_stmt|;
 return|return

@@ -1932,6 +1932,11 @@ literal|"255"
 argument_list|)
 condition|)
 block|{
+name|fclose
+argument_list|(
+name|f
+argument_list|)
+expr_stmt|;
 name|g_printerr
 argument_list|(
 literal|"ppm_load: File \"%s\" not valid PPM/PGM? (line=\"%s\")%c\n"

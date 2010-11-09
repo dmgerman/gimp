@@ -72,7 +72,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8d32290108
+DECL|struct|__anon2bfe0d2a0108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -817,6 +817,11 @@ name|g_strerror
 argument_list|(
 name|errno
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|palloc
 argument_list|)
 expr_stmt|;
 return|return

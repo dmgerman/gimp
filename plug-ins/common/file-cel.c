@@ -1479,6 +1479,11 @@ literal|"Can't create a new image"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1

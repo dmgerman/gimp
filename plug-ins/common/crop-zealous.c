@@ -959,6 +959,16 @@ literal|"Nothing to crop."
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|killrows
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|killcols
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 name|destrow

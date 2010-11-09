@@ -3985,6 +3985,11 @@ argument_list|(
 name|fp
 argument_list|)
 expr_stmt|;
+name|fractalexplorer_free
+argument_list|(
+name|fractalexplorer
+argument_list|)
+expr_stmt|;
 return|return
 name|NULL
 return|;
@@ -4017,6 +4022,11 @@ expr_stmt|;
 name|fclose
 argument_list|(
 name|fp
+argument_list|)
+expr_stmt|;
+name|fractalexplorer_free
+argument_list|(
+name|fractalexplorer
 argument_list|)
 expr_stmt|;
 return|return

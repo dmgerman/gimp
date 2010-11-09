@@ -210,7 +210,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c726e970108
+DECL|struct|__anon29c52bb90108
 block|{
 DECL|member|filename
 name|gchar
@@ -2360,6 +2360,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|g_free
+argument_list|(
+name|filename_copy
+argument_list|)
+expr_stmt|;
 return|return
 name|ext
 return|;

@@ -664,7 +664,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd500170108
+DECL|struct|__anon2a0c39070108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -718,7 +718,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd500170208
+DECL|struct|__anon2a0c39070208
 block|{
 DECL|member|y
 name|gint32
@@ -3848,6 +3848,11 @@ name|g_strerror
 argument_list|(
 name|errno
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|l_fp
 argument_list|)
 expr_stmt|;
 return|return

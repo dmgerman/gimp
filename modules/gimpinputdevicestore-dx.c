@@ -100,7 +100,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c053d2e0103
+DECL|enum|__anon2c550c2e0103
 block|{
 DECL|enumerator|COLUMN_GUID
 name|COLUMN_GUID
@@ -119,7 +119,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c053d2e0203
+DECL|enum|__anon2c550c2e0203
 block|{
 DECL|enumerator|DEVICE_ADDED
 name|DEVICE_ADDED
@@ -1390,9 +1390,16 @@ argument_list|)
 operator|)
 argument_list|)
 condition|)
+block|{
+name|g_free
+argument_list|(
+name|guidstring
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
+block|}
 if|if
 condition|(
 name|FAILED
@@ -1430,6 +1437,11 @@ name|g_win32_error_message
 argument_list|(
 name|hresult
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|guidstring
 argument_list|)
 expr_stmt|;
 return|return
@@ -1471,6 +1483,11 @@ name|g_win32_error_message
 argument_list|(
 name|hresult
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|guidstring
 argument_list|)
 expr_stmt|;
 return|return

@@ -2159,6 +2159,11 @@ argument_list|(
 name|tmpname
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|f
+argument_list|)
+expr_stmt|;
 operator|*
 name|status
 operator|=

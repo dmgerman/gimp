@@ -4776,6 +4776,11 @@ operator|&
 name|info
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|entries
+argument_list|)
+expr_stmt|;
 name|fclose
 argument_list|(
 name|fp

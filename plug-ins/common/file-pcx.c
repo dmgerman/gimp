@@ -1027,7 +1027,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon286db9c60108
+DECL|struct|__anon2b634f740108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1104,7 +1104,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon286db9c60208
+DECL|struct|__anon2b634f740208
 specifier|static
 struct|struct
 block|{
@@ -1575,6 +1575,11 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fd
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -1611,6 +1616,11 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fd
 argument_list|)
 expr_stmt|;
 return|return
@@ -1696,6 +1706,11 @@ argument_list|,
 name|width
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fd
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -1726,6 +1741,11 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fd
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -1752,6 +1772,11 @@ name|_
 argument_list|(
 literal|"Invalid number of bytes per line in PCX header"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fd
 argument_list|)
 expr_stmt|;
 return|return
@@ -1781,6 +1806,11 @@ argument_list|,
 name|width
 argument_list|,
 name|height
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fd
 argument_list|)
 expr_stmt|;
 return|return
@@ -2153,6 +2183,11 @@ literal|"Unusual PCX flavour, giving up"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fd
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -2192,6 +2227,11 @@ argument_list|,
 name|width
 argument_list|,
 name|height
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fd
 argument_list|)
 expr_stmt|;
 name|g_free

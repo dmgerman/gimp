@@ -347,6 +347,11 @@ argument_list|,
 name|error
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|str
+argument_list|)
+expr_stmt|;
 return|return
 name|NULL
 return|;
@@ -980,6 +985,11 @@ argument_list|,
 name|errno
 argument_list|,
 name|error
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|utf16_str
 argument_list|)
 expr_stmt|;
 return|return

@@ -819,6 +819,11 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fd
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1

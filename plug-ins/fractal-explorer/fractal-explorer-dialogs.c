@@ -9365,6 +9365,11 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 if|if
@@ -9390,6 +9395,11 @@ name|filename
 argument_list|)
 argument_list|,
 name|line_no
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
 argument_list|)
 expr_stmt|;
 return|return;

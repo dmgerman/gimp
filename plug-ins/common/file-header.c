@@ -1348,6 +1348,16 @@ argument_list|,
 name|drawable_type
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;

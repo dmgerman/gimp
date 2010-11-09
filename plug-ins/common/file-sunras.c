@@ -127,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a05da400108
+DECL|struct|__anon2ad857210108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -216,7 +216,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a05da400208
+DECL|struct|__anon2ad857210208
 block|{
 DECL|member|val
 name|gint
@@ -822,7 +822,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a05da400308
+DECL|struct|__anon2ad857210308
 block|{
 DECL|member|rle
 name|gboolean
@@ -1918,6 +1918,11 @@ expr_stmt|;
 name|fclose
 argument_list|(
 name|ifp
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|suncolmap
 argument_list|)
 expr_stmt|;
 return|return

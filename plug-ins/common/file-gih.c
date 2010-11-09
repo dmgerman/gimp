@@ -197,7 +197,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2761b7a00108
+DECL|struct|__anon29f662e00108
 block|{
 DECL|member|spacing
 name|guint
@@ -273,7 +273,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761b7a00208
+DECL|struct|__anon29f662e00208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -2458,6 +2458,11 @@ argument_list|,
 name|bh
 operator|.
 name|bytes
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|name
 argument_list|)
 expr_stmt|;
 return|return

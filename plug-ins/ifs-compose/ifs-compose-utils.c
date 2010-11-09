@@ -42,7 +42,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fdb4420108
+DECL|struct|__anon2a17f1320108
 block|{
 DECL|member|point
 name|GdkPoint
@@ -1358,6 +1358,11 @@ operator|->
 name|npoints
 operator|=
 name|num_new
+expr_stmt|;
+name|g_free
+argument_list|(
+name|sort_points
+argument_list|)
 expr_stmt|;
 return|return
 name|new_poly
