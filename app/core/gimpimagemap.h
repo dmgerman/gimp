@@ -213,17 +213,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|gboolean
-name|gimp_image_map_is_busy
-parameter_list|(
-name|GimpImageMap
-modifier|*
-name|image_map
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif

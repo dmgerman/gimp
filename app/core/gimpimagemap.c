@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c70753c0103
+DECL|enum|__anon278e35530103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -2584,33 +2584,6 @@ operator|->
 name|y
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-name|gboolean
-DECL|function|gimp_image_map_is_busy (GimpImageMap * image_map)
-name|gimp_image_map_is_busy
-parameter_list|(
-name|GimpImageMap
-modifier|*
-name|image_map
-parameter_list|)
-block|{
-if|if
-condition|(
-name|image_map
-operator|->
-name|idle_id
-operator|>
-literal|0
-condition|)
-return|return
-name|TRUE
-return|;
-return|return
-name|FALSE
-return|;
 block|}
 end_function
 
