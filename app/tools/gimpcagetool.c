@@ -1619,6 +1619,18 @@ argument_list|,
 name|drawable
 argument_list|)
 expr_stmt|;
+name|gimp_tool_push_status
+argument_list|(
+name|tool
+argument_list|,
+name|display
+argument_list|,
+name|_
+argument_list|(
+literal|"Press ENTER to commit the transform"
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 elseif|else
