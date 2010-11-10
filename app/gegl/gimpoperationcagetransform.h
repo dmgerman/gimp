@@ -28,22 +28,6 @@ directive|include
 file|<operation/gegl-operation-composer.h>
 end_include
 
-begin_enum
-enum|enum
-DECL|enum|__anon2bc157a70103
-block|{
-DECL|enumerator|GIMP_OPERATION_CAGE_TRANSFORM_PROP_0
-name|GIMP_OPERATION_CAGE_TRANSFORM_PROP_0
-block|,
-DECL|enumerator|GIMP_OPERATION_CAGE_TRANSFORM_PROP_CONFIG
-name|GIMP_OPERATION_CAGE_TRANSFORM_PROP_CONFIG
-block|,
-DECL|enumerator|GIMP_OPERATION_CAGE_TRANSFORM_PROP_FILL
-name|GIMP_OPERATION_CAGE_TRANSFORM_PROP_FILL
-block|}
-enum|;
-end_enum
-
 begin_define
 DECL|macro|GIMP_TYPE_OPERATION_CAGE_TRANSFORM
 define|#

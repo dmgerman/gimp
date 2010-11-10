@@ -51,6 +51,22 @@ directive|include
 file|"gimpcageconfig.h"
 end_include
 
+begin_enum
+enum|enum
+DECL|enum|__anon2977f72d0103
+block|{
+DECL|enumerator|PROP_0
+name|PROP_0
+block|,
+DECL|enumerator|PROP_CONFIG
+name|PROP_CONFIG
+block|,
+DECL|enumerator|PROP_FILL
+name|PROP_FILL
+block|}
+enum|;
+end_enum
+
 begin_function_decl
 specifier|static
 name|void
@@ -397,7 +413,7 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|GIMP_OPERATION_CAGE_TRANSFORM_PROP_CONFIG
+name|PROP_CONFIG
 argument_list|,
 name|g_param_spec_object
 argument_list|(
@@ -419,11 +435,11 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|GIMP_OPERATION_CAGE_TRANSFORM_PROP_FILL
+name|PROP_FILL
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
-literal|"fill_plain_color"
+literal|"fill-plain-color"
 argument_list|,
 literal|"Blocking render"
 argument_list|,
@@ -557,7 +573,7 @@ name|property_id
 condition|)
 block|{
 case|case
-name|GIMP_OPERATION_CAGE_TRANSFORM_PROP_CONFIG
+name|PROP_CONFIG
 case|:
 name|g_value_set_object
 argument_list|(
@@ -570,7 +586,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_OPERATION_CAGE_TRANSFORM_PROP_FILL
+name|PROP_FILL
 case|:
 name|g_value_set_boolean
 argument_list|(
@@ -635,7 +651,7 @@ name|property_id
 condition|)
 block|{
 case|case
-name|GIMP_OPERATION_CAGE_TRANSFORM_PROP_CONFIG
+name|PROP_CONFIG
 case|:
 if|if
 condition|(
@@ -661,7 +677,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_OPERATION_CAGE_TRANSFORM_PROP_FILL
+name|PROP_FILL
 case|:
 name|self
 operator|->
