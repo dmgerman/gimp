@@ -1531,9 +1531,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|state
-operator|&
-name|GDK_BUTTON3_MASK
+name|release_type
+operator|==
+name|GIMP_BUTTON_RELEASE_CANCEL
 condition|)
 block|{
 comment|/* operation canceled, do nothing */
