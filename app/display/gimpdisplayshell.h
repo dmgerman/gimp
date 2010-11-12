@@ -714,12 +714,6 @@ DECL|member|button_press_before_focus
 name|gboolean
 name|button_press_before_focus
 decl_stmt|;
-DECL|member|highlight
-name|GdkRectangle
-modifier|*
-name|highlight
-decl_stmt|;
-comment|/* in image coordinates, can be NULL   */
 DECL|member|mask
 name|GimpDrawable
 modifier|*

@@ -317,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291af1d70103
+DECL|enum|__anon29b2dcbc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -345,7 +345,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291af1d70203
+DECL|enum|__anon29b2dcbc0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3261,29 +3261,6 @@ expr_stmt|;
 name|shell
 operator|->
 name|checkerboard
-operator|=
-name|NULL
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|shell
-operator|->
-name|highlight
-condition|)
-block|{
-name|g_slice_free
-argument_list|(
-name|GdkRectangle
-argument_list|,
-name|shell
-operator|->
-name|highlight
-argument_list|)
-expr_stmt|;
-name|shell
-operator|->
-name|highlight
 operator|=
 name|NULL
 expr_stmt|;
@@ -7194,6 +7171,13 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_canvas_item_begin_change
+argument_list|(
+name|shell
+operator|->
+name|passe_partout
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|highlight
@@ -7261,6 +7245,13 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_canvas_item_end_change
+argument_list|(
+name|shell
+operator|->
+name|passe_partout
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
