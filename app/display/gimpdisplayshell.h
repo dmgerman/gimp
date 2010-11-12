@@ -494,6 +494,12 @@ modifier|*
 name|canvas_item
 decl_stmt|;
 comment|/*  items drawn on the canvas          */
+DECL|member|passe_partout
+name|GimpCanvasItem
+modifier|*
+name|passe_partout
+decl_stmt|;
+comment|/*  item for the highlight             */
 DECL|member|vectors
 name|GimpCanvasItem
 modifier|*
