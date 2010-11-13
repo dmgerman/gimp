@@ -202,6 +202,15 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_canvas_item_set_visible
+argument_list|(
+name|shell
+operator|->
+name|grid
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|g_object_set
 argument_list|(
 name|shell
