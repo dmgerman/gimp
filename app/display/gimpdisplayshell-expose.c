@@ -140,6 +140,17 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gtk_widget_get_realized
+argument_list|(
+name|shell
+operator|->
+name|canvas
+argument_list|)
+condition|)
+return|return;
 ifdef|#
 directive|ifdef
 name|USE_CAIRO_REGION
