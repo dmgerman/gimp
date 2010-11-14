@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcanvasitem.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayshell.h"
 end_include
 
