@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2756de2c0103
+DECL|enum|__anon298955bb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -310,7 +310,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_INK_BLOB_TYPE
 argument_list|,
-name|GIMP_INK_BLOB_TYPE_ELLIPSE
+name|GIMP_INK_BLOB_TYPE_CIRCLE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
@@ -1369,7 +1369,7 @@ name|type
 condition|)
 block|{
 case|case
-name|GIMP_INK_BLOB_TYPE_ELLIPSE
+name|GIMP_INK_BLOB_TYPE_CIRCLE
 case|:
 name|function
 operator|=

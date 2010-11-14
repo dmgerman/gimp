@@ -68,7 +68,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2561440103
+DECL|enum|__anon2b42c93f0103
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -107,7 +107,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c2561440203
+DECL|enum|__anon2b42c93f0203
 block|{
 DECL|enumerator|GIMP_PERSPECTIVE_CLONE_MODE_ADJUST
 name|GIMP_PERSPECTIVE_CLONE_MODE_ADJUST
@@ -144,7 +144,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c2561440303
+DECL|enum|__anon2b42c93f0303
 block|{
 DECL|enumerator|GIMP_SOURCE_ALIGN_NO
 name|GIMP_SOURCE_ALIGN_NO
@@ -188,7 +188,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2561440403
+DECL|enum|__anon2b42c93f0403
 block|{
 DECL|enumerator|GIMP_BLUR_CONVOLVE
 name|GIMP_BLUR_CONVOLVE
@@ -229,10 +229,10 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c2561440503
+DECL|enum|__anon2b42c93f0503
 block|{
-DECL|enumerator|GIMP_INK_BLOB_TYPE_ELLIPSE
-name|GIMP_INK_BLOB_TYPE_ELLIPSE
+DECL|enumerator|GIMP_INK_BLOB_TYPE_CIRCLE
+name|GIMP_INK_BLOB_TYPE_CIRCLE
 block|,
 DECL|enumerator|GIMP_INK_BLOB_TYPE_SQUARE
 name|GIMP_INK_BLOB_TYPE_SQUARE
@@ -253,7 +253,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip, pdb-skip>*/
-DECL|enum|__anon2c2561440603
+DECL|enum|__anon2b42c93f0603
 block|{
 DECL|enumerator|GIMP_PAINT_STATE_INIT
 name|GIMP_PAINT_STATE_INIT

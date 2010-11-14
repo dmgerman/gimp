@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0bbe890103
+DECL|enum|__anon28b8cf840103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -298,7 +298,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_INK_BLOB_TYPE
 argument_list|,
-name|GIMP_INK_BLOB_TYPE_ELLIPSE
+name|GIMP_INK_BLOB_TYPE_CIRCLE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)

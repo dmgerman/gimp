@@ -593,11 +593,11 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_INK_BLOB_TYPE_ELLIPSE
+name|GIMP_INK_BLOB_TYPE_CIRCLE
 block|,
-literal|"GIMP_INK_BLOB_TYPE_ELLIPSE"
+literal|"GIMP_INK_BLOB_TYPE_CIRCLE"
 block|,
-literal|"ellipse"
+literal|"circle"
 block|}
 block|,
 block|{
@@ -633,9 +633,9 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_INK_BLOB_TYPE_ELLIPSE
+name|GIMP_INK_BLOB_TYPE_CIRCLE
 block|,
-literal|"GIMP_INK_BLOB_TYPE_ELLIPSE"
+literal|"GIMP_INK_BLOB_TYPE_CIRCLE"
 block|,
 name|NULL
 block|}

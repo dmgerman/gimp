@@ -1798,7 +1798,7 @@ name|blob_type
 condition|)
 block|{
 case|case
-name|GIMP_INK_BLOB_TYPE_ELLIPSE
+name|GIMP_INK_BLOB_TYPE_CIRCLE
 case|:
 name|blob_function
 operator|=
@@ -1886,7 +1886,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8494a50103
+DECL|enum|__anon28bf316a0103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START
