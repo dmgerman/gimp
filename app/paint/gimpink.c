@@ -232,7 +232,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|Blob
+name|GimpBlob
 modifier|*
 name|ink_pen_ellipse
 parameter_list|(
@@ -266,7 +266,7 @@ specifier|static
 name|void
 name|render_blob
 parameter_list|(
-name|Blob
+name|GimpBlob
 modifier|*
 name|blob
 parameter_list|,
@@ -624,7 +624,7 @@ name|ink
 operator|->
 name|start_blob
 operator|=
-name|blob_duplicate
+name|gimp_blob_duplicate
 argument_list|(
 name|ink
 operator|->
@@ -726,7 +726,7 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-name|blob_bounds
+name|gimp_blob_bounds
 argument_list|(
 name|ink
 operator|->
@@ -991,13 +991,13 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|Blob
+name|GimpBlob
 modifier|*
 name|blob_union
 init|=
 name|NULL
 decl_stmt|;
-name|Blob
+name|GimpBlob
 modifier|*
 name|blob_to_render
 decl_stmt|;
@@ -1080,7 +1080,7 @@ name|ink
 operator|->
 name|start_blob
 operator|=
-name|blob_duplicate
+name|gimp_blob_duplicate
 argument_list|(
 name|ink
 operator|->
@@ -1096,7 +1096,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|Blob
+name|GimpBlob
 modifier|*
 name|blob
 init|=
@@ -1133,7 +1133,7 @@ argument_list|)
 decl_stmt|;
 name|blob_union
 operator|=
-name|blob_convex_union
+name|gimp_blob_convex_union
 argument_list|(
 name|ink
 operator|->
@@ -1394,7 +1394,7 @@ end_function
 
 begin_function
 specifier|static
-name|Blob
+name|GimpBlob
 modifier|*
 DECL|function|ink_pen_ellipse (GimpInkOptions * options,gdouble x_center,gdouble y_center,gdouble pressure,gdouble xtilt,gdouble ytilt,gdouble velocity)
 name|ink_pen_ellipse
@@ -1422,7 +1422,7 @@ name|gdouble
 name|velocity
 parameter_list|)
 block|{
-name|BlobFunc
+name|GimpBlobFunc
 name|blob_function
 decl_stmt|;
 name|gdouble
@@ -1802,7 +1802,7 @@ name|GIMP_INK_BLOB_TYPE_CIRCLE
 case|:
 name|blob_function
 operator|=
-name|blob_ellipse
+name|gimp_blob_ellipse
 expr_stmt|;
 break|break;
 case|case
@@ -1810,7 +1810,7 @@ name|GIMP_INK_BLOB_TYPE_SQUARE
 case|:
 name|blob_function
 operator|=
-name|blob_square
+name|gimp_blob_square
 expr_stmt|;
 break|break;
 case|case
@@ -1818,7 +1818,7 @@ name|GIMP_INK_BLOB_TYPE_DIAMOND
 case|:
 name|blob_function
 operator|=
-name|blob_diamond
+name|gimp_blob_diamond
 expr_stmt|;
 break|break;
 default|default:
@@ -1886,7 +1886,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bf316a0103
+DECL|enum|__anon2c00827a0103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START
@@ -2100,10 +2100,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|render_blob_line (Blob * blob,guchar * dest,gint x,gint y,gint width)
+DECL|function|render_blob_line (GimpBlob * blob,guchar * dest,gint x,gint y,gint width)
 name|render_blob_line
 parameter_list|(
-name|Blob
+name|GimpBlob
 modifier|*
 name|blob
 parameter_list|,
@@ -2644,10 +2644,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|render_blob (Blob * blob,PixelRegion * dest)
+DECL|function|render_blob (GimpBlob * blob,PixelRegion * dest)
 name|render_blob
 parameter_list|(
-name|Blob
+name|GimpBlob
 modifier|*
 name|blob
 parameter_list|,

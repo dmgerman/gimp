@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27fd0e050103
+DECL|enum|__anon2b7b3ca40103
 block|{
 DECL|enumerator|EDGE_NONE
 name|EDGE_NONE
@@ -68,9 +68,9 @@ end_comment
 
 begin_function_decl
 specifier|static
-name|Blob
+name|GimpBlob
 modifier|*
-name|blob_new
+name|gimp_blob_new
 parameter_list|(
 name|gint
 name|y
@@ -84,9 +84,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|blob_fill
+name|gimp_blob_fill
 parameter_list|(
-name|Blob
+name|GimpBlob
 modifier|*
 name|b
 parameter_list|,
@@ -100,9 +100,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|blob_make_convex
+name|gimp_blob_make_convex
 parameter_list|(
-name|Blob
+name|GimpBlob
 modifier|*
 name|b
 parameter_list|,
@@ -120,7 +120,7 @@ literal|0
 end_if
 
 begin_endif
-unit|static void   blob_line_add_pixel (Blob     *b,                                    gint      x,                                    gint      y); static void   blob_line           (Blob     *b,                                    gint      x0,                                    gint      y0,                                    gint      x1,                                    gint      y1);
+unit|static void       gimp_blob_line_add_pixel (GimpBlob *b,                                             gint      x,                                             gint      y); static void       gimp_blob_line           (GimpBlob *b,                                             gint      x0,                                             gint      y0,                                             gint      x1,                                             gint      y1);
 endif|#
 directive|endif
 end_endif
@@ -134,20 +134,20 @@ comment|/* Return blob for the given (convex) polygon  */
 end_comment
 
 begin_function
-name|Blob
+name|GimpBlob
 modifier|*
-DECL|function|blob_polygon (BlobPoint * points,gint npoints)
-name|blob_polygon
+DECL|function|gimp_blob_polygon (GimpBlobPoint * points,gint n_points)
+name|gimp_blob_polygon
 parameter_list|(
-name|BlobPoint
+name|GimpBlobPoint
 modifier|*
 name|points
 parameter_list|,
 name|gint
-name|npoints
+name|n_points
 parameter_list|)
 block|{
-name|Blob
+name|GimpBlob
 modifier|*
 name|result
 decl_stmt|;
@@ -195,7 +195,7 @@ literal|1
 init|;
 name|i
 operator|<
-name|npoints
+name|n_points
 condition|;
 name|i
 operator|++
@@ -244,7 +244,7 @@ expr_stmt|;
 block|}
 name|result
 operator|=
-name|blob_new
+name|gimp_blob_new
 argument_list|(
 name|ymin
 argument_list|,
@@ -268,7 +268,7 @@ argument_list|)
 expr_stmt|;
 name|im1
 operator|=
-name|npoints
+name|n_points
 operator|-
 literal|1
 expr_stmt|;
@@ -285,7 +285,7 @@ control|(
 init|;
 name|i
 operator|<
-name|npoints
+name|n_points
 condition|;
 name|i
 operator|++
@@ -547,14 +547,14 @@ if|if
 condition|(
 name|ip1
 operator|==
-name|npoints
+name|n_points
 condition|)
 name|ip1
 operator|=
 literal|0
 expr_stmt|;
 block|}
-name|blob_fill
+name|gimp_blob_fill
 argument_list|(
 name|result
 argument_list|,
@@ -577,10 +577,10 @@ comment|/* Scan convert a square specified by _offsets_ of major and minor  * ax
 end_comment
 
 begin_function
-name|Blob
+name|GimpBlob
 modifier|*
-DECL|function|blob_square (gdouble xc,gdouble yc,gdouble xp,gdouble yp,gdouble xq,gdouble yq)
-name|blob_square
+DECL|function|gimp_blob_square (gdouble xc,gdouble yc,gdouble xp,gdouble yp,gdouble xq,gdouble yq)
+name|gimp_blob_square
 parameter_list|(
 name|gdouble
 name|xc
@@ -601,7 +601,7 @@ name|gdouble
 name|yq
 parameter_list|)
 block|{
-name|BlobPoint
+name|GimpBlobPoint
 name|points
 index|[
 literal|4
@@ -737,7 +737,7 @@ operator|+
 name|yq
 expr_stmt|;
 return|return
-name|blob_polygon
+name|gimp_blob_polygon
 argument_list|(
 name|points
 argument_list|,
@@ -752,10 +752,10 @@ comment|/* Scan convert a diamond specified by _offsets_ of major and minor  * a
 end_comment
 
 begin_function
-name|Blob
+name|GimpBlob
 modifier|*
-DECL|function|blob_diamond (gdouble xc,gdouble yc,gdouble xp,gdouble yp,gdouble xq,gdouble yq)
-name|blob_diamond
+DECL|function|gimp_blob_diamond (gdouble xc,gdouble yc,gdouble xp,gdouble yp,gdouble xq,gdouble yq)
+name|gimp_blob_diamond
 parameter_list|(
 name|gdouble
 name|xc
@@ -776,7 +776,7 @@ name|gdouble
 name|yq
 parameter_list|)
 block|{
-name|BlobPoint
+name|GimpBlobPoint
 name|points
 index|[
 literal|4
@@ -896,7 +896,7 @@ operator|+
 name|yq
 expr_stmt|;
 return|return
-name|blob_polygon
+name|gimp_blob_polygon
 argument_list|(
 name|points
 argument_list|,
@@ -968,10 +968,10 @@ comment|/* Scan convert an ellipse specified by _offsets_ of major and  * minor 
 end_comment
 
 begin_function
-name|Blob
+name|GimpBlob
 modifier|*
-DECL|function|blob_ellipse (gdouble xc,gdouble yc,gdouble xp,gdouble yp,gdouble xq,gdouble yq)
-name|blob_ellipse
+DECL|function|gimp_blob_ellipse (gdouble xc,gdouble yc,gdouble xp,gdouble yp,gdouble xq,gdouble yq)
+name|gimp_blob_ellipse
 parameter_list|(
 name|gdouble
 name|xc
@@ -992,7 +992,7 @@ name|gdouble
 name|yq
 parameter_list|)
 block|{
-name|Blob
+name|GimpBlob
 modifier|*
 name|result
 decl_stmt|;
@@ -1144,7 +1144,7 @@ argument_list|)
 expr_stmt|;
 name|result
 operator|=
-name|blob_new
+name|gimp_blob_new
 argument_list|(
 name|miny
 argument_list|,
@@ -1541,7 +1541,7 @@ block|}
 block|}
 block|}
 comment|/* Now fill in missing points */
-name|blob_fill
+name|gimp_blob_fill
 argument_list|(
 name|result
 argument_list|,
@@ -1561,10 +1561,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|blob_bounds (Blob * b,gint * x,gint * y,gint * width,gint * height)
-name|blob_bounds
+DECL|function|gimp_blob_bounds (GimpBlob * b,gint * x,gint * y,gint * width,gint * height)
+name|gimp_blob_bounds
 parameter_list|(
-name|Blob
+name|GimpBlob
 modifier|*
 name|b
 parameter_list|,
@@ -1788,21 +1788,21 @@ block|}
 end_function
 
 begin_function
-name|Blob
+name|GimpBlob
 modifier|*
-DECL|function|blob_convex_union (Blob * b1,Blob * b2)
-name|blob_convex_union
+DECL|function|gimp_blob_convex_union (GimpBlob * b1,GimpBlob * b2)
+name|gimp_blob_convex_union
 parameter_list|(
-name|Blob
+name|GimpBlob
 modifier|*
 name|b1
 parameter_list|,
-name|Blob
+name|GimpBlob
 modifier|*
 name|b2
 parameter_list|)
 block|{
-name|Blob
+name|GimpBlob
 modifier|*
 name|result
 decl_stmt|;
@@ -1834,7 +1834,7 @@ argument_list|)
 expr_stmt|;
 name|result
 operator|=
-name|blob_new
+name|gimp_blob_new
 argument_list|(
 name|y
 argument_list|,
@@ -2161,7 +2161,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|blob_make_convex
+name|gimp_blob_make_convex
 argument_list|(
 name|result
 argument_list|,
@@ -2180,12 +2180,12 @@ block|}
 end_function
 
 begin_function
-name|Blob
+name|GimpBlob
 modifier|*
-DECL|function|blob_duplicate (Blob * b)
-name|blob_duplicate
+DECL|function|gimp_blob_duplicate (GimpBlob * b)
+name|gimp_blob_duplicate
 parameter_list|(
-name|Blob
+name|GimpBlob
 modifier|*
 name|b
 parameter_list|)
@@ -2206,12 +2206,12 @@ name|b
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|Blob
+name|GimpBlob
 argument_list|)
 operator|+
 sizeof|sizeof
 argument_list|(
-name|BlobSpan
+name|GimpBlobSpan
 argument_list|)
 operator|*
 operator|(
@@ -2233,7 +2233,7 @@ literal|0
 end_if
 
 begin_endif
-unit|void blob_dump (Blob *b) {   gint i,j;    for (i = 0; i< b->height; i++)     {       for (j = 0; j< b->data[i].left; j++)         putchar (' ');        for (j = b->data[i].left; j<= b->data[i].right; j++)         putchar ('*');        putchar ('\n');     } }
+unit|void gimp_blob_dump (GimpBlob *b) {   gint i,j;    for (i = 0; i< b->height; i++)     {       for (j = 0; j< b->data[i].left; j++)         putchar (' ');        for (j = b->data[i].left; j<= b->data[i].right; j++)         putchar ('*');        putchar ('\n');     } }
 endif|#
 directive|endif
 end_endif
@@ -2244,10 +2244,10 @@ end_comment
 
 begin_function
 specifier|static
-name|Blob
+name|GimpBlob
 modifier|*
-DECL|function|blob_new (gint y,gint height)
-name|blob_new
+DECL|function|gimp_blob_new (gint y,gint height)
+name|gimp_blob_new
 parameter_list|(
 name|gint
 name|y
@@ -2256,7 +2256,7 @@ name|gint
 name|height
 parameter_list|)
 block|{
-name|Blob
+name|GimpBlob
 modifier|*
 name|result
 decl_stmt|;
@@ -2266,12 +2266,12 @@ name|g_malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
-name|Blob
+name|GimpBlob
 argument_list|)
 operator|+
 sizeof|sizeof
 argument_list|(
-name|BlobSpan
+name|GimpBlobSpan
 argument_list|)
 operator|*
 operator|(
@@ -2302,10 +2302,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|blob_fill (Blob * b,EdgeType * present)
-name|blob_fill
+DECL|function|gimp_blob_fill (GimpBlob * b,EdgeType * present)
+name|gimp_blob_fill
 parameter_list|(
-name|Blob
+name|GimpBlob
 modifier|*
 name|b
 parameter_list|,
@@ -3070,10 +3070,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|blob_make_convex (Blob * b,EdgeType * present)
-name|blob_make_convex
+DECL|function|gimp_blob_make_convex (GimpBlob * b,EdgeType * present)
+name|gimp_blob_make_convex
 parameter_list|(
-name|Blob
+name|GimpBlob
 modifier|*
 name|b
 parameter_list|,
@@ -3607,7 +3607,7 @@ operator|=
 name|i
 expr_stmt|;
 block|}
-name|blob_fill
+name|gimp_blob_fill
 argument_list|(
 name|b
 argument_list|,
@@ -3624,7 +3624,7 @@ literal|0
 end_if
 
 begin_comment
-unit|static void blob_line_add_pixel (Blob *b,                      gint  x,                      gint  y) {   if (b->data[y - b->y].left> b->data[y - b->y].right)     {       b->data[y - b->y].left = b->data[y - b->y].right = x;     }   else     {       b->data[y - b->y].left  = MIN (b->data[y - b->y].left,  x);       b->data[y - b->y].right = MAX (b->data[y - b->y].right, x);     } }  static void blob_line (Blob *b,            gint  x0,            gint  y0,            gint  x1,            gint  y1) {   gint dx, dy, d;   gint incrE, incrNE;   gint x, y;    gint xstep = 1;   gint ystep = 1;    dx = x1 - x0;   dy = y1 - y0;    if (dx< 0)     {       dx = -dx;       xstep = -1;     }    if (dy< 0)     {       dy = -dy;       ystep = -1;     }
+unit|static void gimp_blob_line_add_pixel (GimpBlob *b,                           gint      x,                           gint      y) {   if (b->data[y - b->y].left> b->data[y - b->y].right)     {       b->data[y - b->y].left = b->data[y - b->y].right = x;     }   else     {       b->data[y - b->y].left  = MIN (b->data[y - b->y].left,  x);       b->data[y - b->y].right = MAX (b->data[y - b->y].right, x);     } }  static void gimp_blob_line (GimpBlob *b,                 gint      x0,                 gint      y0,                 gint      x1,                 gint      y1) {   gint dx, dy, d;   gint incrE, incrNE;   gint x, y;    gint xstep = 1;   gint ystep = 1;    dx = x1 - x0;   dy = y1 - y0;    if (dx< 0)     {       dx = -dx;       xstep = -1;     }    if (dy< 0)     {       dy = -dy;       ystep = -1;     }
 comment|/*  for (y = y0; y != y1 + ystep ; y += ystep)     {       b->data[y-b->y].left = 0;       b->data[y-b->y].right = -1;       }*/
 end_comment
 
@@ -3644,7 +3644,7 @@ comment|/* increment used for move to NE */
 end_comment
 
 begin_comment
-unit|blob_line_add_pixel (b, x, y);        while (x != x1)         {           if (d<= 0)             {               d += incrE;               x += xstep;             }           else             {               d += incrNE;               x += xstep;               y += ystep;             }            blob_line_add_pixel (b, x, y);         }     }   else     {       d = 2 * dx - dy;
+unit|gimp_blob_line_add_pixel (b, x, y);        while (x != x1)         {           if (d<= 0)             {               d += incrE;               x += xstep;             }           else             {               d += incrNE;               x += xstep;               y += ystep;             }            gimp_blob_line_add_pixel (b, x, y);         }     }   else     {       d = 2 * dx - dy;
 comment|/* initial value of d */
 end_comment
 
@@ -3659,7 +3659,7 @@ comment|/* increment used for move to NE */
 end_comment
 
 begin_endif
-unit|blob_line_add_pixel (b, x, y);        while (y != y1)         {           if (d<= 0)             {               d += incrE;               y += ystep;             }           else             {               d += incrNE;               x += xstep;               y += ystep;             }            blob_line_add_pixel (b, x, y);         }     } }
+unit|gimp_blob_line_add_pixel (b, x, y);        while (y != y1)         {           if (d<= 0)             {               d += incrE;               y += ystep;             }           else             {               d += incrNE;               x += xstep;               y += ystep;             }            gimp_blob_line_add_pixel (b, x, y);         }     } }
 endif|#
 directive|endif
 end_endif

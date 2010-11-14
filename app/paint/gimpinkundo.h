@@ -104,7 +104,7 @@ name|GimpPaintCoreUndo
 name|parent_instance
 decl_stmt|;
 DECL|member|last_blob
-name|Blob
+name|GimpBlob
 modifier|*
 name|last_blob
 decl_stmt|;

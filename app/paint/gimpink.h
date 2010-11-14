@@ -110,19 +110,19 @@ name|GimpPaintCore
 name|parent_instance
 decl_stmt|;
 DECL|member|start_blob
-name|Blob
+name|GimpBlob
 modifier|*
 name|start_blob
 decl_stmt|;
 comment|/*  starting blob (for undo)       */
 DECL|member|cur_blob
-name|Blob
+name|GimpBlob
 modifier|*
 name|cur_blob
 decl_stmt|;
 comment|/*  current blob                   */
 DECL|member|last_blob
-name|Blob
+name|GimpBlob
 modifier|*
 name|last_blob
 decl_stmt|;

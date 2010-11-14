@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298955bb0103
+DECL|enum|__anon29646d090103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1349,14 +1349,14 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
-name|Blob
+name|GimpBlob
 modifier|*
 name|blob
 decl_stmt|;
-name|BlobFunc
+name|GimpBlobFunc
 name|function
 init|=
-name|blob_ellipse
+name|gimp_blob_ellipse
 decl_stmt|;
 name|gint
 name|i
@@ -1373,7 +1373,7 @@ name|GIMP_INK_BLOB_TYPE_CIRCLE
 case|:
 name|function
 operator|=
-name|blob_ellipse
+name|gimp_blob_ellipse
 expr_stmt|;
 break|break;
 case|case
@@ -1381,7 +1381,7 @@ name|GIMP_INK_BLOB_TYPE_SQUARE
 case|:
 name|function
 operator|=
-name|blob_square
+name|gimp_blob_square
 expr_stmt|;
 break|break;
 case|case
@@ -1389,7 +1389,7 @@ name|GIMP_INK_BLOB_TYPE_DIAMOND
 case|:
 name|function
 operator|=
-name|blob_diamond
+name|gimp_blob_diamond
 expr_stmt|;
 break|break;
 block|}

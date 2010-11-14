@@ -17,40 +17,40 @@ name|__GIMP_INK_BLOB_H__
 end_define
 
 begin_typedef
-DECL|typedef|BlobPoint
+DECL|typedef|GimpBlobPoint
 typedef|typedef
 name|struct
-name|_BlobPoint
-name|BlobPoint
+name|_GimpBlobPoint
+name|GimpBlobPoint
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|BlobSpan
+DECL|typedef|GimpBlobSpan
 typedef|typedef
 name|struct
-name|_BlobSpan
-name|BlobSpan
+name|_GimpBlobSpan
+name|GimpBlobSpan
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|Blob
+DECL|typedef|GimpBlob
 typedef|typedef
 name|struct
-name|_Blob
-name|Blob
+name|_GimpBlob
+name|GimpBlob
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|BlobFunc
+DECL|typedef|GimpBlobFunc
 typedef|typedef
-name|Blob
+name|GimpBlob
 modifier|*
 function_decl|(
 modifier|*
-name|BlobFunc
+name|GimpBlobFunc
 function_decl|)
 parameter_list|(
 name|gdouble
@@ -75,9 +75,9 @@ function_decl|;
 end_typedef
 
 begin_struct
-DECL|struct|_BlobPoint
+DECL|struct|_GimpBlobPoint
 struct|struct
-name|_BlobPoint
+name|_GimpBlobPoint
 block|{
 DECL|member|x
 name|gint
@@ -92,9 +92,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_BlobSpan
+DECL|struct|_GimpBlobSpan
 struct|struct
-name|_BlobSpan
+name|_GimpBlobSpan
 block|{
 DECL|member|left
 name|gint
@@ -109,9 +109,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_Blob
+DECL|struct|_GimpBlob
 struct|struct
-name|_Blob
+name|_GimpBlob
 block|{
 DECL|member|y
 name|gint
@@ -122,7 +122,7 @@ name|gint
 name|height
 decl_stmt|;
 DECL|member|data
-name|BlobSpan
+name|GimpBlobSpan
 name|data
 index|[
 literal|1
@@ -133,24 +133,24 @@ struct|;
 end_struct
 
 begin_function_decl
-name|Blob
+name|GimpBlob
 modifier|*
-name|blob_polygon
+name|gimp_blob_polygon
 parameter_list|(
-name|BlobPoint
+name|GimpBlobPoint
 modifier|*
 name|points
 parameter_list|,
 name|gint
-name|npoints
+name|n_points
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Blob
+name|GimpBlob
 modifier|*
-name|blob_square
+name|gimp_blob_square
 parameter_list|(
 name|gdouble
 name|xc
@@ -174,9 +174,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Blob
+name|GimpBlob
 modifier|*
-name|blob_diamond
+name|gimp_blob_diamond
 parameter_list|(
 name|gdouble
 name|xc
@@ -200,9 +200,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Blob
+name|GimpBlob
 modifier|*
-name|blob_ellipse
+name|gimp_blob_ellipse
 parameter_list|(
 name|gdouble
 name|xc
@@ -227,9 +227,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|blob_bounds
+name|gimp_blob_bounds
 parameter_list|(
-name|Blob
+name|GimpBlob
 modifier|*
 name|b
 parameter_list|,
@@ -253,15 +253,15 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Blob
+name|GimpBlob
 modifier|*
-name|blob_convex_union
+name|gimp_blob_convex_union
 parameter_list|(
-name|Blob
+name|GimpBlob
 modifier|*
 name|b1
 parameter_list|,
-name|Blob
+name|GimpBlob
 modifier|*
 name|b2
 parameter_list|)
@@ -269,11 +269,11 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Blob
+name|GimpBlob
 modifier|*
-name|blob_duplicate
+name|gimp_blob_duplicate
 parameter_list|(
-name|Blob
+name|GimpBlob
 modifier|*
 name|b
 parameter_list|)

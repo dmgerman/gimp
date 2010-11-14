@@ -268,7 +268,7 @@ name|ink_undo
 operator|->
 name|last_blob
 operator|=
-name|blob_duplicate
+name|gimp_blob_duplicate
 argument_list|(
 name|ink
 operator|->
@@ -346,7 +346,7 @@ operator|->
 name|paint_core
 argument_list|)
 decl_stmt|;
-name|Blob
+name|GimpBlob
 modifier|*
 name|tmp_blob
 decl_stmt|;
