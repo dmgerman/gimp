@@ -203,6 +203,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gdouble
+name|gimp_coords_direction
+parameter_list|(
+specifier|const
+name|GimpCoords
+modifier|*
+name|a
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|b
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
