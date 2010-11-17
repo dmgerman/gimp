@@ -831,6 +831,9 @@ operator|->
 name|direction
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|USE_MOTION_INERTIA
 comment|/* High speed -> less smooth*/
 name|inertia_factor
 operator|*=
@@ -1151,6 +1154,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+endif|#
+directive|endif
 comment|/* do event fill for devices that do not provide enough events*/
 if|if
 condition|(
