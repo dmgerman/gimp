@@ -168,7 +168,22 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_overlay_child_size_request
+name|gimp_overlay_child_get_preferred_width
+parameter_list|(
+name|GimpOverlayBox
+modifier|*
+name|box
+parameter_list|,
+name|GimpOverlayChild
+modifier|*
+name|child
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_overlay_child_get_preferred_height
 parameter_list|(
 name|GimpOverlayBox
 modifier|*
