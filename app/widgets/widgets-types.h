@@ -1209,6 +1209,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpToolPalette
+typedef|typedef
+name|struct
+name|_GimpToolPalette
+name|GimpToolPalette
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpTranslationStore
 typedef|typedef
 name|struct
