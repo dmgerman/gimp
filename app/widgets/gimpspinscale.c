@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b66eecc0103
+DECL|enum|__anon295c60b60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1113,6 +1113,22 @@ argument_list|,
 literal|2
 argument_list|,
 literal|2
+argument_list|)
+expr_stmt|;
+name|gdk_cairo_set_source_color
+argument_list|(
+name|cr
+argument_list|,
+operator|&
+name|style
+operator|->
+name|text
+index|[
+name|gtk_widget_get_state
+argument_list|(
+name|widget
+argument_list|)
+index|]
 argument_list|)
 expr_stmt|;
 name|layout
