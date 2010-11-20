@@ -23,6 +23,10 @@ parameter_list|(
 name|GimpToolbox
 modifier|*
 name|toolbox
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|vbox
 parameter_list|)
 function_decl|;
 end_function_decl

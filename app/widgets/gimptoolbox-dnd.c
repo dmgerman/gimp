@@ -292,12 +292,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_toolbox_dnd_init (GimpToolbox * toolbox)
+DECL|function|gimp_toolbox_dnd_init (GimpToolbox * toolbox,GtkWidget * vbox)
 name|gimp_toolbox_dnd_init
 parameter_list|(
 name|GimpToolbox
 modifier|*
 name|toolbox
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|vbox
 parameter_list|)
 block|{
 name|GimpContext
@@ -311,6 +315,14 @@ argument_list|(
 name|GIMP_IS_TOOLBOX
 argument_list|(
 name|toolbox
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GTK_IS_BOX
+argument_list|(
+name|vbox
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -355,10 +367,7 @@ expr_stmt|;
 comment|/* Before caling any dnd helper functions, setup the drag    * destination manually since we want to handle all drag events    * manually, otherwise we would not be able to give the drag handler    * a chance to handle drag events    */
 name|gtk_drag_dest_set
 argument_list|(
-name|gimp_toolbox_get_vbox
-argument_list|(
-name|toolbox
-argument_list|)
+name|vbox
 argument_list|,
 literal|0
 argument_list|,
@@ -373,10 +382,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_dnd_uri_list_dest_add
 argument_list|(
-name|gimp_toolbox_get_vbox
-argument_list|(
-name|toolbox
-argument_list|)
+name|vbox
 argument_list|,
 name|gimp_toolbox_drop_uri_list
 argument_list|,
@@ -385,10 +391,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_dnd_viewable_dest_add
 argument_list|(
-name|gimp_toolbox_get_vbox
-argument_list|(
-name|toolbox
-argument_list|)
+name|vbox
 argument_list|,
 name|GIMP_TYPE_LAYER
 argument_list|,
@@ -399,10 +402,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_dnd_viewable_dest_add
 argument_list|(
-name|gimp_toolbox_get_vbox
-argument_list|(
-name|toolbox
-argument_list|)
+name|vbox
 argument_list|,
 name|GIMP_TYPE_LAYER_MASK
 argument_list|,
@@ -413,10 +413,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_dnd_viewable_dest_add
 argument_list|(
-name|gimp_toolbox_get_vbox
-argument_list|(
-name|toolbox
-argument_list|)
+name|vbox
 argument_list|,
 name|GIMP_TYPE_CHANNEL
 argument_list|,
@@ -427,10 +424,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_dnd_viewable_dest_add
 argument_list|(
-name|gimp_toolbox_get_vbox
-argument_list|(
-name|toolbox
-argument_list|)
+name|vbox
 argument_list|,
 name|GIMP_TYPE_TOOL_INFO
 argument_list|,
@@ -441,10 +435,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_dnd_viewable_dest_add
 argument_list|(
-name|gimp_toolbox_get_vbox
-argument_list|(
-name|toolbox
-argument_list|)
+name|vbox
 argument_list|,
 name|GIMP_TYPE_BUFFER
 argument_list|,
@@ -455,10 +446,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_dnd_component_dest_add
 argument_list|(
-name|gimp_toolbox_get_vbox
-argument_list|(
-name|toolbox
-argument_list|)
+name|vbox
 argument_list|,
 name|gimp_toolbox_drop_component
 argument_list|,
@@ -467,10 +455,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_dnd_pixbuf_dest_add
 argument_list|(
-name|gimp_toolbox_get_vbox
-argument_list|(
-name|toolbox
-argument_list|)
+name|vbox
 argument_list|,
 name|gimp_toolbox_drop_pixbuf
 argument_list|,
