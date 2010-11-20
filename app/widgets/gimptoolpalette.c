@@ -109,7 +109,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b041d330103
+DECL|enum|__anon2b02e9ff0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -347,7 +347,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_tool_palette_button_toggled
+name|gimp_tool_palette_tool_button_toggled
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -363,7 +363,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_tool_palette_button_press
+name|gimp_tool_palette_tool_button_press
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -880,7 +880,7 @@ literal|"toggled"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_tool_palette_button_toggled
+name|gimp_tool_palette_tool_button_toggled
 argument_list|)
 argument_list|,
 name|object
@@ -900,7 +900,7 @@ literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_tool_palette_button_press
+name|gimp_tool_palette_tool_button_press
 argument_list|)
 argument_list|,
 name|object
@@ -1984,7 +1984,7 @@ name|g_signal_handlers_block_by_func
 argument_list|(
 name|tool_button
 argument_list|,
-name|gimp_tool_palette_button_toggled
+name|gimp_tool_palette_tool_button_toggled
 argument_list|,
 name|palette
 argument_list|)
@@ -2003,7 +2003,7 @@ name|g_signal_handlers_unblock_by_func
 argument_list|(
 name|tool_button
 argument_list|,
-name|gimp_tool_palette_button_toggled
+name|gimp_tool_palette_tool_button_toggled
 argument_list|,
 name|palette
 argument_list|)
@@ -2125,8 +2125,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_palette_button_toggled (GtkWidget * widget,GimpToolPalette * palette)
-name|gimp_tool_palette_button_toggled
+DECL|function|gimp_tool_palette_tool_button_toggled (GtkWidget * widget,GimpToolPalette * palette)
+name|gimp_tool_palette_tool_button_toggled
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2187,8 +2187,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_tool_palette_button_press (GtkWidget * widget,GdkEventButton * event,GimpToolPalette * palette)
-name|gimp_tool_palette_button_press
+DECL|function|gimp_tool_palette_tool_button_press (GtkWidget * widget,GdkEventButton * event,GimpToolPalette * palette)
+name|gimp_tool_palette_tool_button_press
 parameter_list|(
 name|GtkWidget
 modifier|*
