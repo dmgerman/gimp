@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29014f6c0103
+DECL|enum|__anon2c7649950103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1765,6 +1765,16 @@ name|GimpDeviceInfo
 modifier|*
 name|device_info
 decl_stmt|;
+if|if
+condition|(
+name|gdk_device_get_source
+argument_list|(
+name|device
+argument_list|)
+operator|==
+name|GDK_SOURCE_KEYBOARD
+condition|)
+return|return;
 name|display
 operator|=
 name|gdk_device_manager_get_display
