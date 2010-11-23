@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4d16a20103
+DECL|enum|__anon28d6724f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1361,19 +1361,12 @@ control|)
 if|if
 condition|(
 operator|!
-operator|(
-operator|(
-name|GdkDevice
-operator|*
-operator|)
-operator|(
+name|gdk_device_get_has_cursor
+argument_list|(
 name|list
 operator|->
 name|data
-operator|)
-operator|)
-operator|->
-name|has_cursor
+argument_list|)
 condition|)
 break|break;
 name|g_list_free
