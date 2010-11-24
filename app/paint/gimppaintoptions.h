@@ -62,10 +62,6 @@ DECL|struct|_GimpFadeOptions
 struct|struct
 name|_GimpFadeOptions
 block|{
-DECL|member|use_fade
-name|gboolean
-name|use_fade
-decl_stmt|;
 DECL|member|fade_reverse
 name|gboolean
 name|fade_reverse
@@ -108,10 +104,6 @@ DECL|struct|_GimpGradientOptions
 struct|struct
 name|_GimpGradientOptions
 block|{
-DECL|member|use_gradient
-name|gboolean
-name|use_gradient
-decl_stmt|;
 DECL|member|gradient_reverse
 name|gboolean
 name|gradient_reverse
@@ -233,6 +225,10 @@ decl_stmt|;
 DECL|member|hard
 name|gboolean
 name|hard
+decl_stmt|;
+DECL|member|dynamics_expanded
+name|gboolean
+name|dynamics_expanded
 decl_stmt|;
 DECL|member|fade_options
 name|GimpFadeOptions
