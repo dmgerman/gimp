@@ -2374,7 +2374,7 @@ name|layout
 operator|->
 name|extents
 operator|.
-name|x
+name|y
 operator|=
 literal|0
 expr_stmt|;
