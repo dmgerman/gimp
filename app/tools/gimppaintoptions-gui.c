@@ -638,7 +638,7 @@ name|button
 operator|=
 name|gimp_stock_button_new
 argument_list|(
-name|GTK_STOCK_REFRESH
+name|GIMP_STOCK_RESET
 argument_list|,
 name|NULL
 argument_list|)
@@ -666,7 +666,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 argument_list|,
-name|GTK_STOCK_REFRESH
+name|GIMP_STOCK_RESET
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
@@ -704,6 +704,18 @@ name|gimp_paint_options_gui_reset_size
 argument_list|)
 argument_list|,
 name|options
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|button
+argument_list|,
+name|_
+argument_list|(
+literal|"Reset size to brush's native size"
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|scale
