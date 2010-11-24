@@ -133,7 +133,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon294000d80103
+DECL|enum|__anon28010b360103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1051,7 +1051,7 @@ name|keys
 operator|=
 name|g_renew
 argument_list|(
-name|GdkDeviceKey
+name|GimpDeviceKey
 argument_list|,
 name|info
 operator|->
@@ -1076,7 +1076,7 @@ name|n_keys
 operator|*
 sizeof|sizeof
 argument_list|(
-name|GdkDeviceKey
+name|GimpDeviceKey
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2303,7 +2303,7 @@ name|keys
 operator|=
 name|g_renew
 argument_list|(
-name|GdkDeviceKey
+name|GimpDeviceKey
 argument_list|,
 name|info
 operator|->
@@ -2328,7 +2328,7 @@ name|n_keys
 operator|*
 sizeof|sizeof
 argument_list|(
-name|GdkDeviceKey
+name|GimpDeviceKey
 argument_list|)
 argument_list|)
 expr_stmt|;
