@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b528c750108
+DECL|struct|__anon297e882c0108
 block|{
 DECL|member|period
 name|gint
@@ -846,6 +846,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|run_mode
@@ -907,7 +912,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b528c750208
+DECL|struct|__anon297e882c0208
 block|{
 DECL|member|pft
 name|GimpPixelFetcher
