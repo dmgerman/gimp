@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-transform-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpchannel-select.h"
 end_include
 
@@ -72,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp-transform-utils.h"
+file|"core/gimperror.h"
 end_include
 
 begin_include
@@ -155,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9951790103
+DECL|enum|__anon2b422d980103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -2530,7 +2536,6 @@ name|retval
 init|=
 name|FALSE
 decl_stmt|;
-comment|/*  return successfully on an empty path, there's nothing to stroke  */
 if|if
 condition|(
 operator|!
@@ -2538,9 +2543,25 @@ name|vectors
 operator|->
 name|strokes
 condition|)
+block|{
+name|g_set_error_literal
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_ERROR
+argument_list|,
+name|GIMP_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"Not enough points to stroke"
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
-name|TRUE
+name|FALSE
 return|;
+block|}
 switch|switch
 condition|(
 name|stroke_options
@@ -2551,6 +2572,8 @@ block|{
 case|case
 name|GIMP_STROKE_METHOD_LIBART
 case|:
+name|retval
+operator|=
 name|gimp_drawable_stroke_vectors
 argument_list|(
 name|drawable
@@ -2560,11 +2583,9 @@ argument_list|,
 name|vectors
 argument_list|,
 name|push_undo
+argument_list|,
+name|error
 argument_list|)
-expr_stmt|;
-name|retval
-operator|=
-name|TRUE
 expr_stmt|;
 break|break;
 case|case

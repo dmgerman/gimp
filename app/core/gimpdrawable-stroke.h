@@ -81,7 +81,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_drawable_fill_vectors
 parameter_list|(
 name|GimpDrawable
@@ -98,12 +98,17 @@ name|vectors
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_drawable_stroke_vectors
 parameter_list|(
 name|GimpDrawable
@@ -120,6 +125,11 @@ name|vectors
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
