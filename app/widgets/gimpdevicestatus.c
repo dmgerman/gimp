@@ -144,7 +144,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7f34640103
+DECL|enum|__anon29aaf4250103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1289,17 +1289,6 @@ argument_list|,
 name|CELL_SIZE
 argument_list|)
 expr_stmt|;
-name|GIMP_VIEW
-argument_list|(
-name|entry
-operator|->
-name|tool
-argument_list|)
-operator|->
-name|clickable
-operator|=
-name|TRUE
-expr_stmt|;
 name|gtk_table_attach
 argument_list|(
 name|GTK_TABLE
@@ -1335,22 +1324,6 @@ argument_list|(
 name|entry
 operator|->
 name|tool
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|entry
-operator|->
-name|tool
-argument_list|,
-literal|"clicked"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gimp_device_status_view_clicked
-argument_list|)
-argument_list|,
-literal|"gimp-tool-list|gimp-tool-grid"
 argument_list|)
 expr_stmt|;
 comment|/*  the foreground color  */
