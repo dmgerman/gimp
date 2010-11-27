@@ -1905,7 +1905,7 @@ name|svg_size
 argument_list|,
 name|TRUE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|GIMP_IMAGE_ACTIVE_PARENT
 argument_list|,

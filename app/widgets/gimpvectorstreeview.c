@@ -948,7 +948,7 @@ name|svg_data_len
 argument_list|,
 name|TRUE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|parent
 argument_list|,
