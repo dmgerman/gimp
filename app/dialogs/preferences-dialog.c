@@ -9454,7 +9454,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c03e6110108
+DECL|struct|__anon2b5da0ac0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10326,18 +10326,6 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|,
-literal|"set_sensitive"
-argument_list|,
-name|label
-argument_list|)
-expr_stmt|;
-name|g_object_set_data
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
 literal|"inverse_sensitive"
 argument_list|,
 name|entry
@@ -10621,7 +10609,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c03e6110208
+DECL|struct|__anon2b5da0ac0208
 block|{
 DECL|member|label
 specifier|const
@@ -11733,7 +11721,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c03e6110308
+DECL|struct|__anon2b5da0ac0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11888,7 +11876,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c03e6110408
+DECL|struct|__anon2b5da0ac0408
 block|{
 DECL|member|tree_label
 specifier|const
