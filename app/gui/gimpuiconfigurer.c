@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell-appearance.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpimagewindow.h"
 end_include
 
@@ -95,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9e82c40103
+DECL|enum|__anon27d4ac190103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -827,6 +833,12 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
+comment|/* Make sure the shell looks right in this mode */
+name|gimp_display_shell_appearance_update
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function
@@ -1071,6 +1083,10 @@ modifier|*
 name|source_image_window
 parameter_list|)
 block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 comment|/* The last display shell remains in its window */
 while|while
 condition|(
@@ -1082,17 +1098,9 @@ operator|>
 literal|1
 condition|)
 block|{
-name|GimpDisplayShell
-modifier|*
-name|shell
-init|=
-name|NULL
-decl_stmt|;
 name|GimpImageWindow
 modifier|*
 name|new_image_window
-init|=
-name|NULL
 decl_stmt|;
 comment|/* Create a new image window */
 name|new_image_window
@@ -1169,7 +1177,32 @@ name|new_image_window
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* Make sure the shell looks right in this mode */
+name|gimp_display_shell_appearance_update
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 block|}
+comment|/* Make sure the shell remaining in the original window looks right */
+name|shell
+operator|=
+name|gimp_image_window_get_shell
+argument_list|(
+name|source_image_window
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|shell
+condition|)
+name|gimp_display_shell_appearance_update
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1307,14 +1340,60 @@ operator|->
 name|data
 argument_list|)
 decl_stmt|;
-comment|/* Don't move stuff to itself */
+comment|/* Don't move stuff to itself, but update its appearance */
 if|if
 condition|(
 name|image_window
 operator|==
 name|uber_image_window
 condition|)
+block|{
+name|gint
+name|n_shells
+init|=
+name|gimp_image_window_get_n_shells
+argument_list|(
+name|image_window
+argument_list|)
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|n_shells
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
+name|shell
+operator|=
+name|gimp_image_window_get_shell
+argument_list|(
+name|image_window
+argument_list|,
+name|i
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_appearance_update
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+block|}
 continue|continue;
+block|}
 comment|/* Put the displays in the rest of the image windows into        * the uber image window        */
 name|gimp_ui_configurer_move_shells
 argument_list|(
