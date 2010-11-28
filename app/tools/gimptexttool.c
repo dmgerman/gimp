@@ -609,6 +609,7 @@ name|GimpTextLayer
 modifier|*
 name|layer
 parameter_list|,
+specifier|const
 name|GParamSpec
 modifier|*
 name|pspec
@@ -629,6 +630,7 @@ name|GimpText
 modifier|*
 name|text
 parameter_list|,
+specifier|const
 name|GParamSpec
 modifier|*
 name|pspec
@@ -649,6 +651,7 @@ name|GimpText
 modifier|*
 name|text
 parameter_list|,
+specifier|const
 name|GParamSpec
 modifier|*
 name|pspec
@@ -4216,7 +4219,7 @@ name|text_tool
 operator|->
 name|layer
 argument_list|,
-literal|"notify::modified"
+literal|"notify"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4235,13 +4238,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_tool_layer_notify (GimpTextLayer * layer,GParamSpec * pspec,GimpTextTool * text_tool)
+DECL|function|gimp_text_tool_layer_notify (GimpTextLayer * layer,const GParamSpec * pspec,GimpTextTool * text_tool)
 name|gimp_text_tool_layer_notify
 parameter_list|(
 name|GimpTextLayer
 modifier|*
 name|layer
 parameter_list|,
+specifier|const
 name|GParamSpec
 modifier|*
 name|pspec
@@ -4250,6 +4254,19 @@ name|GimpTextTool
 modifier|*
 name|text_tool
 parameter_list|)
+block|{
+if|if
+condition|(
+operator|!
+name|strcmp
+argument_list|(
+name|pspec
+operator|->
+name|name
+argument_list|,
+literal|"modified"
+argument_list|)
+condition|)
 block|{
 if|if
 condition|(
@@ -4275,18 +4292,59 @@ name|display
 argument_list|)
 expr_stmt|;
 block|}
+elseif|else
+if|if
+condition|(
+operator|!
+name|strcmp
+argument_list|(
+name|pspec
+operator|->
+name|name
+argument_list|,
+literal|"text"
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+operator|!
+name|layer
+operator|->
+name|text
+condition|)
+name|gimp_tool_control
+argument_list|(
+name|GIMP_TOOL
+argument_list|(
+name|text_tool
+argument_list|)
+argument_list|,
+name|GIMP_TOOL_ACTION_HALT
+argument_list|,
+name|GIMP_TOOL
+argument_list|(
+name|text_tool
+argument_list|)
+operator|->
+name|display
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_tool_proxy_notify (GimpText * text,GParamSpec * pspec,GimpTextTool * text_tool)
+DECL|function|gimp_text_tool_proxy_notify (GimpText * text,const GParamSpec * pspec,GimpTextTool * text_tool)
 name|gimp_text_tool_proxy_notify
 parameter_list|(
 name|GimpText
 modifier|*
 name|text
 parameter_list|,
+specifier|const
 name|GParamSpec
 modifier|*
 name|pspec
@@ -4332,6 +4390,9 @@ name|text_tool
 operator|->
 name|pending
 argument_list|,
+operator|(
+name|gpointer
+operator|)
 name|pspec
 argument_list|)
 expr_stmt|;
@@ -4373,13 +4434,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_tool_text_notify (GimpText * text,GParamSpec * pspec,GimpTextTool * text_tool)
+DECL|function|gimp_text_tool_text_notify (GimpText * text,const GParamSpec * pspec,GimpTextTool * text_tool)
 name|gimp_text_tool_text_notify
 parameter_list|(
 name|GimpText
 modifier|*
 name|text
 parameter_list|,
+specifier|const
 name|GParamSpec
 modifier|*
 name|pspec
