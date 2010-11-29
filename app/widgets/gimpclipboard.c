@@ -2312,6 +2312,10 @@ operator|++
 control|)
 name|g_free
 argument_list|(
+operator|(
+name|gchar
+operator|*
+operator|)
 name|gimp_clip
 operator|->
 name|target_entries
@@ -2346,6 +2350,10 @@ operator|++
 control|)
 name|g_free
 argument_list|(
+operator|(
+name|gchar
+operator|*
+operator|)
 name|gimp_clip
 operator|->
 name|svg_target_entries
@@ -2380,6 +2388,10 @@ operator|++
 control|)
 name|g_free
 argument_list|(
+operator|(
+name|gchar
+operator|*
+operator|)
 name|gimp_clip
 operator|->
 name|curve_target_entries
