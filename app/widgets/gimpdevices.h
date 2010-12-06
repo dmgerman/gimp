@@ -124,6 +124,25 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_devices_check_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkEvent
+modifier|*
+name|event
+parameter_list|,
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_devices_check_change
 parameter_list|(
 name|Gimp
