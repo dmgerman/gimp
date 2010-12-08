@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd155850103
+DECL|enum|__anon2c07c96c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3069,8 +3069,7 @@ name|geometry
 operator|.
 name|base_height
 operator|=
-operator|-
-literal|1
+literal|0
 expr_stmt|;
 name|geometry
 operator|.
@@ -3082,7 +3081,6 @@ name|geometry
 operator|.
 name|height_inc
 operator|=
-operator|-
 literal|1
 expr_stmt|;
 name|gtk_window_set_geometry_hints
