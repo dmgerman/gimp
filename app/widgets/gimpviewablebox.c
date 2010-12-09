@@ -2167,14 +2167,14 @@ literal|1
 argument_list|)
 expr_stmt|;
 comment|/*  set a silly smally size request on the entry to disable    *  GtkEntry's minimal width of 150 pixels.    */
-name|gtk_widget_set_size_request
+name|gtk_entry_set_width_chars
+argument_list|(
+name|GTK_ENTRY
 argument_list|(
 name|entry
+argument_list|)
 argument_list|,
-literal|10
-argument_list|,
-operator|-
-literal|1
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
