@@ -97,7 +97,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4db59e0103
+DECL|enum|__anon2c9040d50103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -110,7 +110,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4db59e0203
+DECL|enum|__anon2c9040d50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3389,18 +3389,19 @@ block|}
 else|else
 block|{
 return|return
-operator|-
-name|strcmp
+name|gimp_object_name_collate
 argument_list|(
-name|gimp_object_get_name
-argument_list|(
+operator|(
+name|GimpObject
+operator|*
+operator|)
 name|a
-argument_list|)
 argument_list|,
-name|gimp_object_get_name
-argument_list|(
+operator|(
+name|GimpObject
+operator|*
+operator|)
 name|b
-argument_list|)
 argument_list|)
 return|;
 block|}
