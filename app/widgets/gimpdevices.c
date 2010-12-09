@@ -763,16 +763,6 @@ argument_list|(
 name|filename
 argument_list|)
 expr_stmt|;
-name|gimp_list_reverse
-argument_list|(
-name|GIMP_LIST
-argument_list|(
-name|manager
-operator|->
-name|device_info_list
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_context_copy_properties
 argument_list|(
 name|GIMP_CONTEXT
