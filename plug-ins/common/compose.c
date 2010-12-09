@@ -100,10 +100,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c76ce10108
+DECL|struct|__anon2c054b160108
 block|{
 union|union
-DECL|union|__anon29c76ce1020a
+DECL|union|__anon2c054b16020a
 block|{
 DECL|member|ID
 name|gint32
@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c76ce10308
+DECL|struct|__anon2c054b160308
 block|{
 DECL|member|babl_name
 specifier|const
@@ -187,7 +187,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c76ce10408
+DECL|struct|__anon2c054b160408
 block|{
 DECL|member|babl_model
 specifier|const
@@ -1009,7 +1009,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c76ce10508
+DECL|struct|__anon2c054b160508
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1049,7 +1049,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c76ce10608
+DECL|struct|__anon2c054b160608
 block|{
 DECL|member|width
 DECL|member|height
@@ -5331,15 +5331,13 @@ name|combo
 expr_stmt|;
 name|ico
 operator|=
-name|gtk_widget_render_icon
+name|gtk_widget_render_icon_pixbuf
 argument_list|(
 name|dialog
 argument_list|,
 name|GIMP_ICON_CHANNEL_GRAY
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|model

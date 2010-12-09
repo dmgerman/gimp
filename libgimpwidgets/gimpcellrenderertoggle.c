@@ -47,7 +47,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af5d1530103
+DECL|enum|__anon296e08270103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -60,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af5d1530203
+DECL|enum|__anon296e08270203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1968,7 +1968,7 @@ name|toggle
 operator|->
 name|pixbuf
 operator|=
-name|gtk_widget_render_icon
+name|gtk_widget_render_icon_pixbuf
 argument_list|(
 name|widget
 argument_list|,
@@ -1979,8 +1979,6 @@ argument_list|,
 name|toggle
 operator|->
 name|stock_size
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
