@@ -97,7 +97,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a7e33e0103
+DECL|enum|__anon2c4db59e0103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -110,7 +110,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a7e33e0203
+DECL|enum|__anon2c4db59e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2358,8 +2358,6 @@ name|g_object_set_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|info
-operator|->
 name|device
 argument_list|)
 argument_list|,
