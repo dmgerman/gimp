@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon279e1ac80103
+DECL|enum|__anon2b0922080103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -52,7 +52,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon279e1ac80203
+DECL|enum|__anon2b0922080203
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
@@ -1219,11 +1219,11 @@ modifier|*
 name|cr
 parameter_list|)
 block|{
-name|GtkStyle
+name|GtkStyleContext
 modifier|*
-name|style
+name|context
 init|=
-name|gtk_widget_get_style
+name|gtk_widget_get_style_context
 argument_list|(
 name|widget
 argument_list|)
@@ -1251,6 +1251,9 @@ index|]
 decl_stmt|;
 name|GimpChainPosition
 name|position
+decl_stmt|;
+name|GdkRGBA
+name|color
 decl_stmt|;
 name|gtk_widget_get_allocation
 argument_list|(
@@ -1738,17 +1741,22 @@ argument_list|,
 name|CAIRO_LINE_CAP_BUTT
 argument_list|)
 expr_stmt|;
-name|gdk_cairo_set_source_color
+name|gtk_style_context_get_color
+argument_list|(
+name|context
+argument_list|,
+literal|0
+argument_list|,
+operator|&
+name|color
+argument_list|)
+expr_stmt|;
+name|gdk_cairo_set_source_rgba
 argument_list|(
 name|cr
 argument_list|,
 operator|&
-name|style
-operator|->
-name|fg
-index|[
-name|GTK_STATE_NORMAL
-index|]
+name|color
 argument_list|)
 expr_stmt|;
 name|cairo_stroke
