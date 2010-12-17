@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a5da440103
+DECL|enum|__anon2b0bec8f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a5da440203
+DECL|enum|__anon2b0bec8f0203
 block|{
 DECL|enumerator|DATA_WRITTEN
 name|DATA_WRITTEN
@@ -638,6 +638,12 @@ argument_list|(
 name|operation
 argument_list|)
 decl_stmt|;
+specifier|static
+name|GStaticMutex
+name|mutex
+init|=
+name|G_STATIC_MUTEX_INIT
+decl_stmt|;
 specifier|const
 name|Babl
 modifier|*
@@ -767,6 +773,13 @@ name|rowstride
 argument_list|)
 expr_stmt|;
 block|}
+name|g_static_mutex_lock
+argument_list|(
+operator|&
+name|mutex
+argument_list|)
+expr_stmt|;
+comment|/* a lock here serializes all fired signals, this emit gets called from    * different worker threads, but the main loop will be blocked by GEGL    * when it happens    */
 name|g_signal_emit
 argument_list|(
 name|operation
@@ -779,6 +792,12 @@ argument_list|,
 literal|0
 argument_list|,
 name|result
+argument_list|)
+expr_stmt|;
+name|g_static_mutex_unlock
+argument_list|(
+operator|&
+name|mutex
 argument_list|)
 expr_stmt|;
 return|return
