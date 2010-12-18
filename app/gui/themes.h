@@ -93,22 +93,6 @@ name|G_GNUC_NULL_TERMINATED
 decl_stmt|;
 end_decl_stmt
 
-begin_function_decl
-name|void
-name|themes_apply_theme
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|theme_name
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif

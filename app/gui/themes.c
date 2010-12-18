@@ -82,6 +82,23 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
+name|themes_apply_theme
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|theme_name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|themes_directories_foreach
 parameter_list|(
 specifier|const
@@ -661,7 +678,12 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*  private functions  */
+end_comment
+
 begin_function
+specifier|static
 name|void
 DECL|function|themes_apply_theme (Gimp * gimp,const gchar * theme_name)
 name|themes_apply_theme
@@ -896,10 +918,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*  private functions  */
-end_comment
 
 begin_function
 specifier|static
