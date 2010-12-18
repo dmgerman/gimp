@@ -110,6 +110,10 @@ name|gdouble
 name|angle
 decl_stmt|;
 comment|/*<  private>*/
+DECL|member|in_handle
+name|gboolean
+name|in_handle
+decl_stmt|;
 DECL|member|active
 name|gboolean
 name|active
