@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b15db710103
+DECL|enum|__anon2b444c140103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -357,13 +357,6 @@ argument_list|(
 name|widget
 argument_list|,
 name|GIMP_CANVAS_EVENT_MASK
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_extension_events
-argument_list|(
-name|widget
-argument_list|,
-name|GDK_EXTENSION_EVENTS_ALL
 argument_list|)
 expr_stmt|;
 block|}
