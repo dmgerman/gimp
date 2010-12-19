@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d7bca90103
+DECL|enum|__anon288b43a10103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -159,7 +159,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d7bca90203
+DECL|enum|__anon288b43a10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1562,13 +1562,7 @@ block|{
 name|GeglNode
 modifier|*
 name|input
-decl_stmt|;
-name|GeglNode
-modifier|*
-name|output
-decl_stmt|;
-name|input
-operator|=
+init|=
 name|gegl_node_get_input_proxy
 argument_list|(
 name|item
@@ -1577,9 +1571,11 @@ name|node
 argument_list|,
 literal|"input"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|GeglNode
+modifier|*
 name|output
-operator|=
+init|=
 name|gegl_node_get_output_proxy
 argument_list|(
 name|item
@@ -1588,7 +1584,7 @@ name|node
 argument_list|,
 literal|"output"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gegl_node_connect_to
 argument_list|(
 name|input
