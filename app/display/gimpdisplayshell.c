@@ -150,6 +150,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdevices.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -317,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b2dcbc0103
+DECL|enum|__anon28902e870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -345,7 +351,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b2dcbc0203
+DECL|enum|__anon28902e870203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2175,23 +2181,30 @@ argument_list|,
 name|GIMP_HELP_IMAGE_WINDOW_RULER
 argument_list|)
 expr_stmt|;
-comment|/*  Workaround for GTK+ Wintab bug on Windows when creating guides by    *  dragging from the rulers. See bug #168516.    */
-name|gtk_widget_set_extension_events
+name|gimp_devices_add_widget
 argument_list|(
+name|shell
+operator|->
+name|display
+operator|->
+name|gimp
+argument_list|,
 name|shell
 operator|->
 name|hrule
-argument_list|,
-name|GDK_EXTENSION_EVENTS_ALL
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_extension_events
+name|gimp_devices_add_widget
 argument_list|(
 name|shell
 operator|->
-name|vrule
+name|display
+operator|->
+name|gimp
 argument_list|,
-name|GDK_EXTENSION_EVENTS_ALL
+name|shell
+operator|->
+name|vrule
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
