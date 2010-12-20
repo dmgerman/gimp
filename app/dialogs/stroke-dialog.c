@@ -696,7 +696,7 @@ argument_list|,
 name|PANGO_WEIGHT_BOLD
 argument_list|)
 expr_stmt|;
-name|gtk_widget_modify_font
+name|gtk_widget_override_font
 argument_list|(
 name|gtk_bin_get_child
 argument_list|(
@@ -709,7 +709,7 @@ argument_list|,
 name|font_desc
 argument_list|)
 expr_stmt|;
-name|gtk_widget_modify_font
+name|gtk_widget_override_font
 argument_list|(
 name|gtk_bin_get_child
 argument_list|(
