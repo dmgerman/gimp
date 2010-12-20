@@ -71,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1809490103
+DECL|enum|__anon2bad1a460103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -87,7 +87,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1809490203
+DECL|enum|__anon2bad1a460203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -134,7 +134,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1809490303
+DECL|enum|__anon2bad1a460303
 block|{
 DECL|enumerator|PARSE_VALID
 name|PARSE_VALID
@@ -153,7 +153,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1809490408
+DECL|struct|__anon2bad1a460408
 block|{
 comment|/* The current number pair displayed in the widget. */
 DECL|member|left_number
@@ -2126,9 +2126,13 @@ argument_list|(
 name|entry
 argument_list|)
 decl_stmt|;
-name|GtkRcStyle
+name|PangoContext
 modifier|*
-name|rc_style
+name|context
+decl_stmt|;
+name|PangoFontDescription
+modifier|*
+name|font_desc
 decl_stmt|;
 if|if
 condition|(
@@ -2139,32 +2143,6 @@ operator|==
 name|italic
 condition|)
 return|return;
-name|rc_style
-operator|=
-name|gtk_widget_get_modifier_style
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|entry
-argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|rc_style
-operator|->
-name|font_desc
-condition|)
-block|{
-name|PangoContext
-modifier|*
-name|context
-decl_stmt|;
-name|PangoFontDescription
-modifier|*
-name|font_desc
-decl_stmt|;
 name|context
 operator|=
 name|gtk_widget_get_pango_context
@@ -2182,8 +2160,6 @@ argument_list|(
 name|context
 argument_list|)
 expr_stmt|;
-name|rc_style
-operator|->
 name|font_desc
 operator|=
 name|pango_font_description_copy
@@ -2191,11 +2167,8 @@ argument_list|(
 name|font_desc
 argument_list|)
 expr_stmt|;
-block|}
 name|pango_font_description_set_style
 argument_list|(
-name|rc_style
-operator|->
 name|font_desc
 argument_list|,
 name|italic
@@ -2205,14 +2178,19 @@ else|:
 name|PANGO_STYLE_NORMAL
 argument_list|)
 expr_stmt|;
-name|gtk_widget_modify_style
+name|gtk_widget_override_font
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|entry
 argument_list|)
 argument_list|,
-name|rc_style
+name|font_desc
+argument_list|)
+expr_stmt|;
+name|pango_font_description_free
+argument_list|(
+name|font_desc
 argument_list|)
 expr_stmt|;
 name|gtk_entry_set_icon_sensitive
