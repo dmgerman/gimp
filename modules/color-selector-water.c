@@ -703,16 +703,6 @@ operator||
 name|GDK_PROXIMITY_OUT_MASK
 argument_list|)
 expr_stmt|;
-comment|/* The following call enables tracking and processing of extension    * events for the drawing area    */
-name|gtk_widget_set_extension_events
-argument_list|(
-name|water
-operator|->
-name|area
-argument_list|,
-name|GDK_EXTENSION_EVENTS_ALL
-argument_list|)
-expr_stmt|;
 name|gtk_widget_grab_focus
 argument_list|(
 name|water
