@@ -181,7 +181,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2741f15f0103
+DECL|enum|__anon2bc931bd0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -194,7 +194,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2741f15f0203
+DECL|enum|__anon2bc931bd0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -380,13 +380,13 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_color_button_state_changed
+name|gimp_color_button_state_flags_changed
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkStateType
+name|GtkStateFlags
 name|prev_state
 parameter_list|)
 function_decl|;
@@ -831,9 +831,9 @@ name|gimp_color_button_button_press
 expr_stmt|;
 name|widget_class
 operator|->
-name|state_changed
+name|state_flags_changed
 operator|=
-name|gimp_color_button_state_changed
+name|gimp_color_button_state_flags_changed
 expr_stmt|;
 name|button_class
 operator|->
@@ -1899,15 +1899,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_button_state_changed (GtkWidget * widget,GtkStateType prev_state)
-name|gimp_color_button_state_changed
+DECL|function|gimp_color_button_state_flags_changed (GtkWidget * widget,GtkStateFlags previous_state)
+name|gimp_color_button_state_flags_changed
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkStateType
-name|prev_state
+name|GtkStateFlags
+name|previous_state
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1950,18 +1950,18 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|state_changed
+name|state_flags_changed
 condition|)
 name|GTK_WIDGET_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|state_changed
+name|state_flags_changed
 argument_list|(
 name|widget
 argument_list|,
-name|prev_state
+name|previous_state
 argument_list|)
 expr_stmt|;
 block|}

@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2757d7b90103
+DECL|enum|__anon295ab4df0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -98,7 +98,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2757d7b90203
+DECL|enum|__anon295ab4df0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -248,13 +248,13 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_color_area_state_changed
+name|gimp_color_area_state_flags_changed
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkStateType
+name|GtkStateFlags
 name|previous_state
 parameter_list|)
 function_decl|;
@@ -583,9 +583,9 @@ name|gimp_color_area_size_allocate
 expr_stmt|;
 name|widget_class
 operator|->
-name|state_changed
+name|state_flags_changed
 operator|=
-name|gimp_color_area_state_changed
+name|gimp_color_area_state_flags_changed
 expr_stmt|;
 name|widget_class
 operator|->
@@ -1260,29 +1260,33 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_area_state_changed (GtkWidget * widget,GtkStateType previous_state)
-name|gimp_color_area_state_changed
+DECL|function|gimp_color_area_state_flags_changed (GtkWidget * widget,GtkStateFlags previous_state)
+name|gimp_color_area_state_flags_changed
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkStateType
+name|GtkStateFlags
 name|previous_state
 parameter_list|)
 block|{
 if|if
 condition|(
-name|gtk_widget_get_state
+operator|(
+name|gtk_widget_get_state_flags
 argument_list|(
 name|widget
 argument_list|)
-operator|==
-name|GTK_STATE_INSENSITIVE
-operator|||
+operator|&
+name|GTK_STATE_FLAG_INSENSITIVE
+operator|)
+operator|!=
+operator|(
 name|previous_state
-operator|==
-name|GTK_STATE_INSENSITIVE
+operator|&
+name|GTK_STATE_FLAG_INSENSITIVE
+operator|)
 condition|)
 block|{
 name|GIMP_COLOR_AREA
@@ -1302,14 +1306,14 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|state_changed
+name|state_flags_changed
 condition|)
 name|GTK_WIDGET_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|state_changed
+name|state_flags_changed
 argument_list|(
 name|widget
 argument_list|,
