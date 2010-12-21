@@ -134,15 +134,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_frame_style_set
+name|gimp_frame_style_updated
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GtkStyle
-modifier|*
-name|previous
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -274,9 +270,9 @@ name|gimp_frame_size_allocate
 expr_stmt|;
 name|widget_class
 operator|->
-name|style_set
+name|style_updated
 operator|=
-name|gimp_frame_style_set
+name|gimp_frame_style_updated
 expr_stmt|;
 name|widget_class
 operator|->
@@ -997,18 +993,24 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_frame_style_set (GtkWidget * widget,GtkStyle * previous)
-name|gimp_frame_style_set
+DECL|function|gimp_frame_style_updated (GtkWidget * widget)
+name|gimp_frame_style_updated
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GtkStyle
-modifier|*
-name|previous
 parameter_list|)
 block|{
+name|GTK_WIDGET_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|style_updated
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
 comment|/*  font changes invalidate the indentation  */
 name|g_object_set_data
 argument_list|(

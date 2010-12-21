@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon296910be0103
+DECL|enum|__anon274c32f70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -108,7 +108,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296910be0208
+DECL|struct|__anon274c32f70208
 block|{
 DECL|member|orientation
 name|GtkOrientation
@@ -191,7 +191,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296910be0308
+DECL|struct|__anon274c32f70308
 block|{
 DECL|member|ruler_scale
 specifier|const
@@ -609,15 +609,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_ruler_style_set
+name|gimp_ruler_style_updated
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GtkStyle
-modifier|*
-name|prev_style
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -873,9 +869,9 @@ name|gimp_ruler_size_allocate
 expr_stmt|;
 name|widget_class
 operator|->
-name|style_set
+name|style_updated
 operator|=
-name|gimp_ruler_style_set
+name|gimp_ruler_style_updated
 expr_stmt|;
 name|widget_class
 operator|->
@@ -3537,16 +3533,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_ruler_style_set (GtkWidget * widget,GtkStyle * prev_style)
-name|gimp_ruler_style_set
+DECL|function|gimp_ruler_style_updated (GtkWidget * widget)
+name|gimp_ruler_style_updated
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GtkStyle
-modifier|*
-name|prev_style
 parameter_list|)
 block|{
 name|GimpRulerPrivate
@@ -3563,11 +3555,9 @@ argument_list|(
 name|gimp_ruler_parent_class
 argument_list|)
 operator|->
-name|style_set
+name|style_updated
 argument_list|(
 name|widget
-argument_list|,
-name|prev_style
 argument_list|)
 expr_stmt|;
 name|gtk_widget_style_get
