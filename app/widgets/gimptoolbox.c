@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c953abe0103
+DECL|enum|__anon276fe1b60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2379,13 +2379,12 @@ name|context
 argument_list|,
 name|dropped
 argument_list|,
-operator|(
+name|gdk_drag_context_get_selected_action
+argument_list|(
 name|context
-operator|->
-name|action
+argument_list|)
 operator|==
 name|GDK_ACTION_MOVE
-operator|)
 argument_list|,
 name|time
 argument_list|)
