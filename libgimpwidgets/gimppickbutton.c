@@ -104,7 +104,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0b56ca0103
+DECL|enum|__anon278ea38d0103
 block|{
 DECL|enumerator|COLOR_PICKED
 name|COLOR_PICKED
@@ -344,7 +344,7 @@ operator|->
 name|cursor
 condition|)
 block|{
-name|gdk_cursor_unref
+name|g_object_unref
 argument_list|(
 name|button
 operator|->

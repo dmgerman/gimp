@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bff41170108
+DECL|struct|__anon29d62b510108
 block|{
 DECL|member|hscr_policy
 name|GtkPolicyType
@@ -1056,7 +1056,7 @@ operator|->
 name|cursor_move
 condition|)
 block|{
-name|gdk_cursor_unref
+name|g_object_unref
 argument_list|(
 name|preview
 operator|->
@@ -1642,7 +1642,7 @@ name|area
 argument_list|)
 expr_stmt|;
 block|}
-name|gdk_cursor_unref
+name|g_object_unref
 argument_list|(
 name|cursor
 argument_list|)
@@ -2779,7 +2779,7 @@ operator|->
 name|time
 argument_list|)
 expr_stmt|;
-name|gdk_cursor_unref
+name|g_object_unref
 argument_list|(
 name|cursor
 argument_list|)

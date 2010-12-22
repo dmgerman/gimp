@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0c9f210103
+DECL|enum|__anon27f80a650103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -80,7 +80,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0c9f210203
+DECL|enum|__anon27f80a650203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0c9f210308
+DECL|struct|__anon27f80a650308
 block|{
 DECL|member|controls
 name|GtkWidget
@@ -1683,7 +1683,7 @@ operator|->
 name|cursor_busy
 condition|)
 block|{
-name|gdk_cursor_unref
+name|g_object_unref
 argument_list|(
 name|preview
 operator|->
@@ -2906,7 +2906,7 @@ name|preview
 operator|->
 name|default_cursor
 condition|)
-name|gdk_cursor_unref
+name|g_object_unref
 argument_list|(
 name|preview
 operator|->
@@ -2917,7 +2917,7 @@ if|if
 condition|(
 name|cursor
 condition|)
-name|gdk_cursor_ref
+name|g_object_ref
 argument_list|(
 name|cursor
 argument_list|)
