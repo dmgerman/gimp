@@ -383,7 +383,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5a727d0103
+DECL|enum|__anon2ad2b9c00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -516,7 +516,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5a727d0208
+DECL|struct|__anon2ad2b9c00208
 block|{
 DECL|member|canvas_x
 name|gint
@@ -726,15 +726,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_window_style_set
+name|gimp_image_window_style_updated
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GtkStyle
-modifier|*
-name|prev_style
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1396,9 +1392,9 @@ name|gimp_image_window_window_state_event
 expr_stmt|;
 name|widget_class
 operator|->
-name|style_set
+name|style_updated
 operator|=
-name|gimp_image_window_style_set
+name|gimp_image_window_style_updated
 expr_stmt|;
 name|window_class
 operator|->
@@ -3335,16 +3331,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_window_style_set (GtkWidget * widget,GtkStyle * prev_style)
-name|gimp_image_window_style_set
+DECL|function|gimp_image_window_style_updated (GtkWidget * widget)
+name|gimp_image_window_style_updated
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GtkStyle
-modifier|*
-name|prev_style
 parameter_list|)
 block|{
 name|GimpImageWindow
@@ -3404,11 +3396,9 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|style_set
+name|style_updated
 argument_list|(
 name|widget
-argument_list|,
-name|prev_style
 argument_list|)
 expr_stmt|;
 if|if

@@ -270,15 +270,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_statusbar_style_set
+name|gimp_statusbar_style_updated
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GtkStyle
-modifier|*
-name|prev_style
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -286,15 +282,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_statusbar_hbox_style_set
+name|gimp_statusbar_hbox_style_updated
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GtkStyle
-modifier|*
-name|prev_style
 parameter_list|,
 name|GimpStatusbar
 modifier|*
@@ -852,9 +844,9 @@ name|gimp_statusbar_screen_changed
 expr_stmt|;
 name|widget_class
 operator|->
-name|style_set
+name|style_updated
 operator|=
-name|gimp_statusbar_style_set
+name|gimp_statusbar_style_updated
 expr_stmt|;
 block|}
 end_function
@@ -1102,11 +1094,11 @@ name|g_signal_connect_after
 argument_list|(
 name|hbox
 argument_list|,
-literal|"style-set"
+literal|"style-updated"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_statusbar_hbox_style_set
+name|gimp_statusbar_hbox_style_updated
 argument_list|)
 argument_list|,
 name|statusbar
@@ -1970,16 +1962,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_statusbar_style_set (GtkWidget * widget,GtkStyle * prev_style)
-name|gimp_statusbar_style_set
+DECL|function|gimp_statusbar_style_updated (GtkWidget * widget)
+name|gimp_statusbar_style_updated
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GtkStyle
-modifier|*
-name|prev_style
 parameter_list|)
 block|{
 name|GimpStatusbar
@@ -1996,11 +1984,9 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|style_set
+name|style_updated
 argument_list|(
 name|widget
-argument_list|,
-name|prev_style
 argument_list|)
 expr_stmt|;
 name|g_clear_pointer
@@ -2019,16 +2005,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_statusbar_hbox_style_set (GtkWidget * widget,GtkStyle * prev_style,GimpStatusbar * statusbar)
-name|gimp_statusbar_hbox_style_set
+DECL|function|gimp_statusbar_hbox_style_updated (GtkWidget * widget,GimpStatusbar * statusbar)
+name|gimp_statusbar_hbox_style_updated
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GtkStyle
-modifier|*
-name|prev_style
 parameter_list|,
 name|GimpStatusbar
 modifier|*

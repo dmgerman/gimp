@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b444c140103
+DECL|enum|__anon27dce2290103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -150,15 +150,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_canvas_style_set
+name|gimp_canvas_style_updated
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GtkStyle
-modifier|*
-name|prev_style
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -278,9 +274,9 @@ name|gimp_canvas_unrealize
 expr_stmt|;
 name|widget_class
 operator|->
-name|style_set
+name|style_updated
 operator|=
-name|gimp_canvas_style_set
+name|gimp_canvas_style_updated
 expr_stmt|;
 name|widget_class
 operator|->
@@ -536,16 +532,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_canvas_style_set (GtkWidget * widget,GtkStyle * prev_style)
-name|gimp_canvas_style_set
+DECL|function|gimp_canvas_style_updated (GtkWidget * widget)
+name|gimp_canvas_style_updated
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GtkStyle
-modifier|*
-name|prev_style
 parameter_list|)
 block|{
 name|GimpCanvas
@@ -562,11 +554,9 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|style_set
+name|style_updated
 argument_list|(
 name|widget
-argument_list|,
-name|prev_style
 argument_list|)
 expr_stmt|;
 name|g_clear_object
