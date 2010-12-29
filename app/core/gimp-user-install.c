@@ -196,7 +196,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29797d2b0103
+DECL|enum|__anon27cbce200103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -215,7 +215,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29797d2b0208
+DECL|struct|__anon27cbce200208
 block|{
 DECL|member|name
 specifier|const
@@ -234,7 +234,7 @@ index|[]
 init|=
 block|{
 block|{
-literal|"gtkrc"
+literal|"gimp.css"
 block|,
 name|USER_INSTALL_COPY
 block|}
@@ -3339,6 +3339,15 @@ argument_list|(
 name|basename
 argument_list|,
 literal|"toolrc"
+argument_list|)
+operator|==
+literal|0
+operator|||
+name|strcmp
+argument_list|(
+name|basename
+argument_list|,
+literal|"gtkrc"
 argument_list|)
 operator|==
 literal|0
