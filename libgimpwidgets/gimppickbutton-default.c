@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppickbutton-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpwidgetsutils.h"
 end_include
 
@@ -662,6 +668,8 @@ name|gtk_widget_get_display
 argument_list|(
 name|button
 operator|->
+name|priv
+operator|->
 name|grab_widget
 argument_list|)
 decl_stmt|;
@@ -688,6 +696,8 @@ expr_stmt|;
 name|gtk_grab_remove
 argument_list|(
 name|button
+operator|->
+name|priv
 operator|->
 name|grab_widget
 argument_list|)
@@ -1129,9 +1139,13 @@ condition|(
 operator|!
 name|button
 operator|->
+name|priv
+operator|->
 name|cursor
 condition|)
 name|button
+operator|->
+name|priv
 operator|->
 name|cursor
 operator|=
@@ -1151,10 +1165,14 @@ condition|(
 operator|!
 name|button
 operator|->
+name|priv
+operator|->
 name|grab_widget
 condition|)
 block|{
 name|button
+operator|->
+name|priv
 operator|->
 name|grab_widget
 operator|=
@@ -1164,6 +1182,8 @@ expr_stmt|;
 name|gtk_widget_add_events
 argument_list|(
 name|button
+operator|->
+name|priv
 operator|->
 name|grab_widget
 argument_list|,
@@ -1178,6 +1198,8 @@ name|gtk_widget_show
 argument_list|(
 name|button
 operator|->
+name|priv
+operator|->
 name|grab_widget
 argument_list|)
 expr_stmt|;
@@ -1185,6 +1207,8 @@ block|}
 name|widget
 operator|=
 name|button
+operator|->
+name|priv
 operator|->
 name|grab_widget
 expr_stmt|;
@@ -1237,6 +1261,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|button
+operator|->
+name|priv
 operator|->
 name|cursor
 argument_list|,

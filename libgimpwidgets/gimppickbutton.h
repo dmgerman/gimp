@@ -111,6 +111,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PICK_BUTTON, GimpPickButtonCl
 end_define
 
 begin_typedef
+DECL|typedef|GimpPickButtonPrivate
+typedef|typedef
+name|struct
+name|_GimpPickButtonPrivate
+name|GimpPickButtonPrivate
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPickButtonClass
 typedef|typedef
 name|struct
@@ -128,16 +137,10 @@ DECL|member|parent_instance
 name|GtkButton
 name|parent_instance
 decl_stmt|;
-comment|/*< private>*/
-DECL|member|cursor
-name|GdkCursor
+DECL|member|priv
+name|GimpPickButtonPrivate
 modifier|*
-name|cursor
-decl_stmt|;
-DECL|member|grab_widget
-name|GtkWidget
-modifier|*
-name|grab_widget
+name|priv
 decl_stmt|;
 block|}
 struct|;

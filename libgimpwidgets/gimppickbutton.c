@@ -75,6 +75,12 @@ directive|include
 file|"gimppickbutton-kwin.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimppickbutton-private.h"
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -104,7 +110,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon278ea38d0103
+DECL|enum|__anon277090030103
 block|{
 DECL|enumerator|COLOR_PICKED
 name|COLOR_PICKED
@@ -256,6 +262,16 @@ name|color_picked
 operator|=
 name|NULL
 expr_stmt|;
+name|g_type_class_add_private
+argument_list|(
+name|object_class
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|GimpPickButtonPrivate
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -274,6 +290,19 @@ name|GtkWidget
 modifier|*
 name|image
 decl_stmt|;
+name|button
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|button
+argument_list|,
+name|GIMP_TYPE_PICK_BUTTON
+argument_list|,
+name|GimpPickButtonPrivate
+argument_list|)
+expr_stmt|;
 name|image
 operator|=
 name|gtk_image_new_from_icon_name
@@ -341,6 +370,8 @@ if|if
 condition|(
 name|button
 operator|->
+name|priv
+operator|->
 name|cursor
 condition|)
 block|{
@@ -348,10 +379,14 @@ name|g_object_unref
 argument_list|(
 name|button
 operator|->
+name|priv
+operator|->
 name|cursor
 argument_list|)
 expr_stmt|;
 name|button
+operator|->
+name|priv
 operator|->
 name|cursor
 operator|=
@@ -362,6 +397,8 @@ if|if
 condition|(
 name|button
 operator|->
+name|priv
+operator|->
 name|grab_widget
 condition|)
 block|{
@@ -369,10 +406,14 @@ name|gtk_widget_destroy
 argument_list|(
 name|button
 operator|->
+name|priv
+operator|->
 name|grab_widget
 argument_list|)
 expr_stmt|;
 name|button
+operator|->
+name|priv
 operator|->
 name|grab_widget
 operator|=

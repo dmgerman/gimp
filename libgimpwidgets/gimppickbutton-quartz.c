@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppickbutton-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppickbutton-quartz.h"
 end_include
 
