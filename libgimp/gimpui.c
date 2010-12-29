@@ -508,9 +508,6 @@ index|]
 expr_stmt|;
 endif|#
 directive|endif
-name|gimp_ui_fix_pixbuf_style
-argument_list|()
-expr_stmt|;
 name|gimp_ui_initialized
 operator|=
 name|TRUE
