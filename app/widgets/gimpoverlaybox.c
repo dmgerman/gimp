@@ -705,9 +705,9 @@ argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
-name|gtk_style_set_background
+name|gtk_style_context_set_background
 argument_list|(
-name|gtk_widget_get_style
+name|gtk_widget_get_style_context
 argument_list|(
 name|widget
 argument_list|)
@@ -716,8 +716,6 @@ name|gtk_widget_get_window
 argument_list|(
 name|widget
 argument_list|)
-argument_list|,
-name|GTK_STATE_NORMAL
 argument_list|)
 expr_stmt|;
 for|for
