@@ -21,12 +21,6 @@ directive|include
 file|<gegl.h>
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GSEAL_ENABLE
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -101,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291e77d40103
+DECL|enum|__anon275ba64c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -117,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291e77d40203
+DECL|enum|__anon275ba64c0203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2256,7 +2250,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291e77d40308
+DECL|struct|__anon275ba64c0308
 block|{
 DECL|member|x
 name|guint
@@ -3817,14 +3811,17 @@ block|{
 name|GtkWidget
 modifier|*
 name|menu_item
-init|=
+decl_stmt|;
+name|menu_item
+operator|=
+name|gtk_menu_shell_get_selected_item
+argument_list|(
 name|GTK_MENU_SHELL
 argument_list|(
 name|widget
 argument_list|)
-operator|->
-name|active_menu_item
-decl_stmt|;
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
