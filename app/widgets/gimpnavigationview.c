@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon294215700103
+DECL|enum|__anon2a0fbb660103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -881,7 +881,7 @@ argument_list|,
 name|GDK_CURRENT_TIME
 argument_list|)
 expr_stmt|;
-name|gdk_cursor_unref
+name|g_object_unref
 argument_list|(
 name|cursor
 argument_list|)
@@ -1015,7 +1015,7 @@ argument_list|,
 name|cursor
 argument_list|)
 expr_stmt|;
-name|gdk_cursor_unref
+name|g_object_unref
 argument_list|(
 name|cursor
 argument_list|)
@@ -1431,7 +1431,7 @@ argument_list|,
 name|cursor
 argument_list|)
 expr_stmt|;
-name|gdk_cursor_unref
+name|g_object_unref
 argument_list|(
 name|cursor
 argument_list|)

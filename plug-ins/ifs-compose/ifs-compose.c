@@ -138,7 +138,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c8787cb0103
+DECL|enum|__anon2ae26dee0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c8787cb0203
+DECL|enum|__anon2ae26dee0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8787cb0308
+DECL|struct|__anon2ae26dee0308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -200,7 +200,7 @@ name|guint
 name|timeout_id
 decl_stmt|;
 union|union
-DECL|union|__anon2c8787cb040a
+DECL|union|__anon2ae26dee040a
 block|{
 DECL|member|d
 name|gdouble
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8787cb0508
+DECL|struct|__anon2ae26dee0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -255,7 +255,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8787cb0608
+DECL|struct|__anon2ae26dee0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -290,7 +290,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8787cb0708
+DECL|struct|__anon2ae26dee0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -326,7 +326,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8787cb0808
+DECL|struct|__anon2ae26dee0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -388,7 +388,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8787cb0908
+DECL|struct|__anon2ae26dee0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -537,7 +537,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8787cb0a08
+DECL|struct|__anon2ae26dee0a08
 block|{
 DECL|member|run
 name|gboolean
@@ -7633,7 +7633,7 @@ argument_list|,
 name|cursor
 argument_list|)
 expr_stmt|;
-name|gdk_cursor_unref
+name|g_object_unref
 argument_list|(
 name|cursor
 argument_list|)

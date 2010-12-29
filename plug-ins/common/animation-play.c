@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1899bf0103
+DECL|enum|__anon2999a7610103
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -98,7 +98,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1899bf0208
+DECL|struct|__anon2999a7610208
 block|{
 DECL|member|duration_index
 name|gint
@@ -125,7 +125,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1899bf0308
+DECL|struct|__anon2999a7610308
 block|{
 DECL|member|x
 DECL|member|y
@@ -4484,7 +4484,7 @@ argument_list|,
 name|cursor
 argument_list|)
 expr_stmt|;
-name|gdk_cursor_unref
+name|g_object_unref
 argument_list|(
 name|cursor
 argument_list|)

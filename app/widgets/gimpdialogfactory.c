@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e363d30103
+DECL|enum|__anon2a1d45540103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -5522,7 +5522,7 @@ if|if
 condition|(
 name|cursor
 condition|)
-name|gdk_cursor_unref
+name|g_object_unref
 argument_list|(
 name|cursor
 argument_list|)
@@ -5569,7 +5569,7 @@ if|if
 condition|(
 name|cursor
 condition|)
-name|gdk_cursor_unref
+name|g_object_unref
 argument_list|(
 name|cursor
 argument_list|)

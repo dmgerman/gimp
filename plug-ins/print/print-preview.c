@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2913406e0103
+DECL|enum|__anon27973a5d0103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -978,7 +978,7 @@ name|preview
 operator|->
 name|cursor
 condition|)
-name|gdk_cursor_unref
+name|g_object_unref
 argument_list|(
 name|preview
 operator|->
@@ -1418,7 +1418,7 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
-name|gdk_cursor_unref
+name|g_object_unref
 argument_list|(
 name|cursor
 argument_list|)

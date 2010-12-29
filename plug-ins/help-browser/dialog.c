@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b63cb140108
+DECL|struct|__anon29ff57b90108
 block|{
 DECL|member|width
 name|gint
@@ -136,7 +136,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b63cb140203
+DECL|enum|__anon29ff57b90203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -4353,7 +4353,7 @@ condition|(
 name|busy_cursor
 condition|)
 block|{
-name|gdk_cursor_unref
+name|g_object_unref
 argument_list|(
 name|busy_cursor
 argument_list|)

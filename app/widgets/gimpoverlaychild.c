@@ -754,7 +754,7 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gdk_cursor_unref
+name|g_object_unref
 argument_list|(
 name|attributes
 operator|.
