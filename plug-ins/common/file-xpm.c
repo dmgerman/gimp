@@ -32,7 +32,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gdkconfig.h>
+file|<gdk/gdk.h>
 end_include
 
 begin_comment
@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a40d5260108
+DECL|struct|__anon2ba7be5d0108
 block|{
 DECL|member|threshold
 name|gint
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a40d5260208
+DECL|struct|__anon2ba7be5d0208
 block|{
 DECL|member|r
 name|guchar
