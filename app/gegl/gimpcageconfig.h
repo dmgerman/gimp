@@ -121,27 +121,10 @@ DECL|member|offset_y
 name|gint
 name|offset_y
 decl_stmt|;
-DECL|member|cage_vertices
-name|GimpVector2
+DECL|member|cage_points
+name|GimpCagePoint
 modifier|*
-name|cage_vertices
-decl_stmt|;
-comment|/* cage before deformation */
-DECL|member|cage_vertices_d
-name|GimpVector2
-modifier|*
-name|cage_vertices_d
-decl_stmt|;
-comment|/* cage after deformation  */
-DECL|member|scaling_factor
-name|gdouble
-modifier|*
-name|scaling_factor
-decl_stmt|;
-DECL|member|normal_d
-name|GimpVector2
-modifier|*
-name|normal_d
+name|cage_points
 decl_stmt|;
 block|}
 struct|;
@@ -272,32 +255,26 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpVector2
+name|GimpCagePoint
 modifier|*
-name|gimp_cage_config_get_cage_point
+name|gimp_cage_config_get_cage_points
 parameter_list|(
 name|GimpCageConfig
 modifier|*
 name|gcc
-parameter_list|,
-name|GimpCageMode
-name|mode
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_cage_config_commit_cage_point
+name|gimp_cage_config_commit_cage_points
 parameter_list|(
 name|GimpCageConfig
 modifier|*
 name|gcc
 parameter_list|,
-name|GimpCageMode
-name|mode
-parameter_list|,
-name|GimpVector2
+name|GimpCagePoint
 modifier|*
 name|points
 parameter_list|)

@@ -169,7 +169,7 @@ modifier|*
 name|image_map
 decl_stmt|;
 DECL|member|cage_backup
-name|GimpVector2
+name|GimpCagePoint
 modifier|*
 name|cage_backup
 decl_stmt|;
