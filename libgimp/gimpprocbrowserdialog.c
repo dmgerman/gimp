@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a1344f0103
+DECL|enum|__anon27420baf0103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -110,7 +110,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a1344f0203
+DECL|enum|__anon27420baf0203
 block|{
 DECL|enumerator|SEARCH_TYPE_ALL
 name|SEARCH_TYPE_ALL
@@ -143,7 +143,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a1344f0303
+DECL|enum|__anon27420baf0303
 block|{
 DECL|enumerator|COLUMN_PROC_NAME
 name|COLUMN_PROC_NAME
@@ -554,14 +554,15 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gimp_browser_get_left_vbox
+argument_list|(
 name|GIMP_BROWSER
 argument_list|(
 name|dialog
 operator|->
 name|browser
 argument_list|)
-operator|->
-name|left_vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|scrolled_window
@@ -711,14 +712,15 @@ name|parent
 operator|=
 name|gtk_widget_get_parent
 argument_list|(
+name|gimp_browser_get_right_vbox
+argument_list|(
 name|GIMP_BROWSER
 argument_list|(
 name|dialog
 operator|->
 name|browser
 argument_list|)
-operator|->
-name|right_vbox
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|parent
@@ -1330,14 +1332,9 @@ literal|"No matches"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_label_set_text
-argument_list|(
-name|GTK_LABEL
+name|gimp_browser_set_search_summary
 argument_list|(
 name|browser
-operator|->
-name|count_label
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -1800,14 +1797,9 @@ expr_stmt|;
 break|break;
 block|}
 block|}
-name|gtk_label_set_text
-argument_list|(
-name|GTK_LABEL
+name|gimp_browser_set_search_summary
 argument_list|(
 name|browser
-operator|->
-name|count_label
-argument_list|)
 argument_list|,
 name|str
 argument_list|)

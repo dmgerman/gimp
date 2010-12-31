@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad53c520103
+DECL|enum|__anon2b04652d0103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad53c520203
+DECL|enum|__anon2b04652d0203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -152,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad53c520308
+DECL|struct|__anon2b04652d0308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -183,7 +183,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad53c520408
+DECL|struct|__anon2b04652d0408
 block|{
 DECL|member|menu
 name|gchar
@@ -1388,14 +1388,9 @@ expr_stmt|;
 break|break;
 block|}
 block|}
-name|gtk_label_set_text
-argument_list|(
-name|GTK_LABEL
+name|gimp_browser_set_search_summary
 argument_list|(
 name|gimp_browser
-operator|->
-name|count_label
-argument_list|)
 argument_list|,
 name|str
 argument_list|)
@@ -2250,14 +2245,15 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gimp_browser_get_left_vbox
+argument_list|(
 name|GIMP_BROWSER
 argument_list|(
 name|browser
 operator|->
 name|browser
 argument_list|)
-operator|->
-name|left_vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|notebook
@@ -2892,14 +2888,15 @@ name|parent
 operator|=
 name|gtk_widget_get_parent
 argument_list|(
+name|gimp_browser_get_right_vbox
+argument_list|(
 name|GIMP_BROWSER
 argument_list|(
 name|browser
 operator|->
 name|browser
 argument_list|)
-operator|->
-name|right_vbox
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|parent
