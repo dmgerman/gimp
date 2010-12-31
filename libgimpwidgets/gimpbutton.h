@@ -132,11 +132,6 @@ DECL|member|parent_instance
 name|GtkButton
 name|parent_instance
 decl_stmt|;
-comment|/*< private>*/
-DECL|member|press_state
-name|GdkModifierType
-name|press_state
-decl_stmt|;
 block|}
 struct|;
 end_struct
