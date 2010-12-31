@@ -138,30 +138,6 @@ DECL|member|parent_instance
 name|GimpButton
 name|parent_instance
 decl_stmt|;
-DECL|member|title
-name|gchar
-modifier|*
-name|title
-decl_stmt|;
-DECL|member|continuous_update
-name|gboolean
-name|continuous_update
-decl_stmt|;
-DECL|member|color_area
-name|GtkWidget
-modifier|*
-name|color_area
-decl_stmt|;
-DECL|member|dialog
-name|GtkWidget
-modifier|*
-name|dialog
-decl_stmt|;
-comment|/*< private>*/
-DECL|member|popup_menu
-name|gpointer
-name|popup_menu
-decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -202,6 +178,16 @@ name|button
 parameter_list|)
 function_decl|;
 comment|/* Padding for future expansion */
+DECL|member|_gimp_reserved1
+name|void
+function_decl|(
+modifier|*
+name|_gimp_reserved1
+function_decl|)
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
 DECL|member|_gimp_reserved2
 name|void
 function_decl|(
