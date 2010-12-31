@@ -108,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd4c62f0108
+DECL|struct|__anon2b967a710108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -3424,12 +3424,13 @@ argument_list|)
 expr_stmt|;
 name|gimp_help_set_help_data
 argument_list|(
+name|gimp_chain_button_get_button
+argument_list|(
 name|GIMP_CHAIN_BUTTON
 argument_list|(
 name|constrain
 argument_list|)
-operator|->
-name|button
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
