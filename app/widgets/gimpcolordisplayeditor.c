@@ -99,7 +99,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdad2da0103
+DECL|enum|__anon2c1bdbba0103
 block|{
 DECL|enumerator|SRC_COLUMN_NAME
 name|SRC_COLUMN_NAME
@@ -118,7 +118,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdad2da0203
+DECL|enum|__anon2c1bdbba0203
 block|{
 DECL|enumerator|DEST_COLUMN_ENABLED
 name|DEST_COLUMN_ENABLED
@@ -1935,9 +1935,10 @@ for|for
 control|(
 name|list
 operator|=
+name|gimp_color_display_stack_get_filters
+argument_list|(
 name|stack
-operator|->
-name|filters
+argument_list|)
 init|;
 name|list
 condition|;
@@ -3217,6 +3218,15 @@ operator|==
 name|display2
 condition|)
 block|{
+name|GList
+modifier|*
+name|filters
+init|=
+name|gimp_color_display_stack_get_filters
+argument_list|(
+name|stack
+argument_list|)
+decl_stmt|;
 name|GtkTreePath
 modifier|*
 name|path
@@ -3272,8 +3282,6 @@ name|position
 operator|==
 name|g_list_length
 argument_list|(
-name|stack
-operator|->
 name|filters
 argument_list|)
 operator|-
@@ -3671,6 +3679,17 @@ name|iter
 argument_list|)
 condition|)
 block|{
+name|GList
+modifier|*
+name|filters
+init|=
+name|gimp_color_display_stack_get_filters
+argument_list|(
+name|editor
+operator|->
+name|stack
+argument_list|)
+decl_stmt|;
 name|GtkTreePath
 modifier|*
 name|path
@@ -3711,10 +3730,6 @@ operator|<
 operator|(
 name|g_list_length
 argument_list|(
-name|editor
-operator|->
-name|stack
-operator|->
 name|filters
 argument_list|)
 operator|-

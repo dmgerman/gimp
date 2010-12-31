@@ -132,11 +132,6 @@ DECL|member|parent_instance
 name|GObject
 name|parent_instance
 decl_stmt|;
-DECL|member|filters
-name|GList
-modifier|*
-name|filters
-decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -305,6 +300,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GList
+modifier|*
+name|gimp_color_display_stack_get_filters
+parameter_list|(
+name|GimpColorDisplayStack
+modifier|*
+name|stack
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_color_display_stack_add
 parameter_list|(
@@ -408,7 +415,7 @@ end_function_decl
 begin_macro
 name|GIMP_DEPRECATED_FOR
 argument_list|(
-argument|gimp_color_display_stack_convert_buffer
+argument|gimp_color_display_stack_convert_surface
 argument_list|)
 end_macro
 
