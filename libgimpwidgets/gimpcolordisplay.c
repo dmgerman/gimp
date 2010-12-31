@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd315a80103
+DECL|enum|__anon2925f7d60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd315a80203
+DECL|enum|__anon2925f7d60203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -100,10 +100,23 @@ enum|;
 end_enum
 
 begin_typedef
+DECL|typedef|GimpColorDisplayPrivate
 typedef|typedef
+name|struct
+name|_GimpColorDisplayPrivate
+name|GimpColorDisplayPrivate
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpColorDisplayPrivate
 struct|struct
-DECL|struct|__anon2bd315a80308
+name|_GimpColorDisplayPrivate
 block|{
+DECL|member|enabled
+name|gboolean
+name|enabled
+decl_stmt|;
 DECL|member|config
 name|GimpColorConfig
 modifier|*
@@ -114,21 +127,19 @@ name|GimpColorManaged
 modifier|*
 name|managed
 decl_stmt|;
-DECL|typedef|GimpColorDisplayPrivate
 block|}
-name|GimpColorDisplayPrivate
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_define
-DECL|macro|GIMP_COLOR_DISPLAY_GET_PRIVATE (obj)
+DECL|macro|GET_PRIVATE (obj)
 define|#
 directive|define
-name|GIMP_COLOR_DISPLAY_GET_PRIVATE
+name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_PRIVATE ((obj), GIMP_TYPE_COLOR_DISPLAY, GimpColorDisplayPrivate))
+value|(G_TYPE_INSTANCE_GET_PRIVATE ((obj), \                                                        GIMP_TYPE_COLOR_DISPLAY, \                                                        GimpColorDisplayPrivate))
 end_define
 
 begin_function_decl
@@ -313,16 +324,6 @@ name|get_property
 operator|=
 name|gimp_color_display_get_property
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpColorDisplayPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -495,6 +496,16 @@ name|changed
 operator|=
 name|NULL
 expr_stmt|;
+name|g_type_class_add_private
+argument_list|(
+name|object_class
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|GimpColorDisplayPrivate
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -509,7 +520,16 @@ modifier|*
 name|display
 parameter_list|)
 block|{
+name|GimpColorDisplayPrivate
+modifier|*
+name|private
+init|=
+name|GET_PRIVATE
+argument_list|(
 name|display
+argument_list|)
+decl_stmt|;
+name|private
 operator|->
 name|enabled
 operator|=
@@ -566,7 +586,7 @@ name|GimpColorDisplayPrivate
 modifier|*
 name|private
 init|=
-name|GIMP_COLOR_DISPLAY_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|object
 argument_list|)
@@ -680,6 +700,15 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
+name|GimpColorDisplayPrivate
+modifier|*
+name|private
+init|=
+name|GET_PRIVATE
+argument_list|(
+name|object
+argument_list|)
+decl_stmt|;
 switch|switch
 condition|(
 name|property_id
@@ -688,7 +717,7 @@ block|{
 case|case
 name|PROP_ENABLED
 case|:
-name|display
+name|private
 operator|->
 name|enabled
 operator|=
@@ -763,11 +792,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpColorDisplay
+name|GimpColorDisplayPrivate
 modifier|*
-name|display
+name|private
 init|=
-name|GIMP_COLOR_DISPLAY
+name|GET_PRIVATE
 argument_list|(
 name|object
 argument_list|)
@@ -784,7 +813,7 @@ name|g_value_set_boolean
 argument_list|(
 name|value
 argument_list|,
-name|display
+name|private
 operator|->
 name|enabled
 argument_list|)
@@ -797,10 +826,7 @@ name|g_value_set_object
 argument_list|(
 name|value
 argument_list|,
-name|GIMP_COLOR_DISPLAY_GET_PRIVATE
-argument_list|(
-name|display
-argument_list|)
+name|private
 operator|->
 name|config
 argument_list|)
@@ -813,10 +839,7 @@ name|g_value_set_object
 argument_list|(
 name|value
 argument_list|,
-name|GIMP_COLOR_DISPLAY_GET_PRIVATE
-argument_list|(
-name|display
-argument_list|)
+name|private
 operator|->
 name|managed
 argument_list|)
@@ -856,7 +879,7 @@ name|GimpColorDisplayPrivate
 modifier|*
 name|private
 init|=
-name|GIMP_COLOR_DISPLAY_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|display
 argument_list|)
@@ -923,7 +946,7 @@ name|GimpColorDisplayPrivate
 modifier|*
 name|private
 init|=
-name|GIMP_COLOR_DISPLAY_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|display
 argument_list|)
@@ -1064,21 +1087,19 @@ block|{
 name|GimpColorDisplayPrivate
 modifier|*
 name|private
-decl_stmt|;
-name|private
-operator|=
-name|GIMP_COLOR_DISPLAY_GET_PRIVATE
+init|=
+name|GET_PRIVATE
 argument_list|(
 name|display
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|g_object_set
 argument_list|(
 name|clone
 argument_list|,
 literal|"enabled"
 argument_list|,
-name|display
+name|private
 operator|->
 name|enabled
 argument_list|,
@@ -1133,6 +1154,10 @@ modifier|*
 name|area
 parameter_list|)
 block|{
+name|GimpColorDisplayPrivate
+modifier|*
+name|private
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_COLOR_DISPLAY
@@ -1149,9 +1174,16 @@ name|buffer
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|private
+operator|=
+name|GET_PRIVATE
+argument_list|(
+name|display
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
-name|display
+name|private
 operator|->
 name|enabled
 operator|&&
@@ -1199,6 +1231,10 @@ modifier|*
 name|surface
 parameter_list|)
 block|{
+name|GimpColorDisplayPrivate
+modifier|*
+name|private
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_COLOR_DISPLAY
@@ -1224,9 +1260,16 @@ operator|==
 name|CAIRO_SURFACE_TYPE_IMAGE
 argument_list|)
 expr_stmt|;
+name|private
+operator|=
+name|GET_PRIVATE
+argument_list|(
+name|display
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
-name|display
+name|private
 operator|->
 name|enabled
 operator|&&
@@ -1294,6 +1337,10 @@ name|gint
 name|bpl
 parameter_list|)
 block|{
+name|GimpColorDisplayPrivate
+modifier|*
+name|private
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_COLOR_DISPLAY
@@ -1302,10 +1349,17 @@ name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|private
+operator|=
+name|GET_PRIVATE
+argument_list|(
+name|display
+argument_list|)
+expr_stmt|;
 comment|/*  implementing the convert method is deprecated    */
 if|if
 condition|(
-name|display
+name|private
 operator|->
 name|enabled
 operator|&&
@@ -1660,6 +1714,10 @@ name|gboolean
 name|enabled
 parameter_list|)
 block|{
+name|GimpColorDisplayPrivate
+modifier|*
+name|private
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_COLOR_DISPLAY
@@ -1668,11 +1726,18 @@ name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|private
+operator|=
+name|GET_PRIVATE
+argument_list|(
+name|display
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|enabled
 operator|!=
-name|display
+name|private
 operator|->
 name|enabled
 condition|)
@@ -1713,7 +1778,10 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
+name|GET_PRIVATE
+argument_list|(
 name|display
+argument_list|)
 operator|->
 name|enabled
 return|;
@@ -1746,7 +1814,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_COLOR_DISPLAY_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|display
 argument_list|)
@@ -1782,7 +1850,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_COLOR_DISPLAY_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|display
 argument_list|)

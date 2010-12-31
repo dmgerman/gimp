@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af470870103
+DECL|enum|__anon2aa824650103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -1352,9 +1352,10 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|gimp_color_display_get_enabled
+argument_list|(
 name|display
-operator|->
-name|enabled
+argument_list|)
 condition|)
 name|gimp_color_display_stack_changed
 argument_list|(
