@@ -128,10 +128,6 @@ DECL|member|parent_instance
 name|GtkEntry
 name|parent_instance
 decl_stmt|;
-DECL|member|color
-name|GimpRGB
-name|color
-decl_stmt|;
 block|}
 struct|;
 end_struct
