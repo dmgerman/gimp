@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc1d0290103
+DECL|enum|__anon29654e070103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -165,7 +165,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc1d0290203
+DECL|enum|__anon29654e070203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -178,7 +178,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc1d0290303
+DECL|enum|__anon29654e070303
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -767,14 +767,15 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
+name|gimp_color_notebook_get_notebook
+argument_list|(
 name|GIMP_COLOR_NOTEBOOK
 argument_list|(
 name|selection
 operator|->
 name|notebook
 argument_list|)
-operator|->
-name|notebook
+argument_list|)
 argument_list|,
 literal|"switch-page"
 argument_list|,
@@ -2154,17 +2155,26 @@ operator|->
 name|notebook
 argument_list|)
 decl_stmt|;
+name|GimpColorSelector
+modifier|*
+name|current
+decl_stmt|;
 name|gboolean
 name|sensitive
 decl_stmt|;
+name|current
+operator|=
+name|gimp_color_notebook_get_current_selector
+argument_list|(
+name|notebook
+argument_list|)
+expr_stmt|;
 name|sensitive
 operator|=
 operator|(
 name|GIMP_COLOR_SELECTOR_GET_CLASS
 argument_list|(
-name|notebook
-operator|->
-name|cur_page
+name|current
 argument_list|)
 operator|->
 name|set_channel

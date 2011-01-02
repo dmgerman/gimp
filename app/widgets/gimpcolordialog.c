@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b8adbb0103
+DECL|enum|__anon2b311f030103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1356,6 +1356,10 @@ name|GimpColorNotebook
 modifier|*
 name|notebook
 decl_stmt|;
+name|GimpColorSelector
+modifier|*
+name|current
+decl_stmt|;
 name|notebook
 operator|=
 name|GIMP_COLOR_NOTEBOOK
@@ -1370,13 +1374,18 @@ operator|->
 name|notebook
 argument_list|)
 expr_stmt|;
+name|current
+operator|=
+name|gimp_color_notebook_get_current_selector
+argument_list|(
+name|notebook
+argument_list|)
+expr_stmt|;
 name|help_id
 operator|=
 name|GIMP_COLOR_SELECTOR_GET_CLASS
 argument_list|(
-name|notebook
-operator|->
-name|cur_page
+name|current
 argument_list|)
 operator|->
 name|help_id
