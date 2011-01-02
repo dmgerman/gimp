@@ -1087,6 +1087,10 @@ DECL|member|edge_scaling_factor
 name|gdouble
 name|edge_scaling_factor
 decl_stmt|;
+DECL|member|selected
+name|gboolean
+name|selected
+decl_stmt|;
 block|}
 struct|;
 end_struct
