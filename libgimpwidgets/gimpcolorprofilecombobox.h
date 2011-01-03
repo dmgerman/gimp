@@ -128,11 +128,6 @@ DECL|member|parent_instance
 name|GtkComboBox
 name|parent_instance
 decl_stmt|;
-DECL|member|dialog
-name|GtkWidget
-modifier|*
-name|dialog
-decl_stmt|;
 block|}
 struct|;
 end_struct
