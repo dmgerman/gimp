@@ -218,7 +218,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c480d550103
+DECL|enum|__anon27c2e8250103
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -347,7 +347,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c480d550203
+DECL|enum|__anon27c2e8250203
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -494,7 +494,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c480d550303
+DECL|enum|__anon27c2e8250303
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -599,7 +599,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c480d550403
+DECL|enum|__anon27c2e8250403
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -697,7 +697,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c480d550508
+DECL|struct|__anon27c2e8250508
 block|{
 DECL|member|function
 name|gint
@@ -770,7 +770,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c480d550608
+DECL|struct|__anon27c2e8250608
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1592,7 +1592,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c480d550708
+DECL|struct|__anon27c2e8250708
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -10039,15 +10039,6 @@ modifier|*
 name|data
 parameter_list|)
 block|{
-name|GtkStyle
-modifier|*
-name|style
-init|=
-name|gtk_widget_get_style
-argument_list|(
-name|widget
-argument_list|)
-decl_stmt|;
 name|gint
 name|x
 decl_stmt|,
@@ -10271,14 +10262,15 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gdk_cairo_set_source_color
+name|cairo_set_source_rgb
 argument_list|(
 name|cr
 argument_list|,
-operator|&
-name|style
-operator|->
-name|white
+literal|1.0
+argument_list|,
+literal|1.0
+argument_list|,
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|cairo_stroke
@@ -10373,14 +10365,15 @@ name|y
 argument_list|)
 expr_stmt|;
 block|}
-name|gdk_cairo_set_source_color
+name|cairo_set_source_rgb
 argument_list|(
 name|cr
 argument_list|,
-operator|&
-name|style
-operator|->
-name|black
+literal|0.0
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|cairo_stroke
