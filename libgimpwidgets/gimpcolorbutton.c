@@ -181,7 +181,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b558140103
+DECL|enum|__anon2bc79c370103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -194,7 +194,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b558140203
+DECL|enum|__anon2bc79c370203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3064,7 +3064,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|button
+name|priv
 operator|->
 name|color_area
 condition|)
@@ -3072,7 +3072,7 @@ name|gimp_color_area_set_color_config
 argument_list|(
 name|GIMP_COLOR_AREA
 argument_list|(
-name|button
+name|priv
 operator|->
 name|color_area
 argument_list|)
@@ -3664,6 +3664,14 @@ name|gpointer
 name|help_data
 parameter_list|)
 block|{
+name|GimpColorButton
+modifier|*
+name|button
+decl_stmt|;
+name|GimpColorButtonPrivate
+modifier|*
+name|priv
+decl_stmt|;
 name|GimpColorSelection
 modifier|*
 name|selection
@@ -3695,18 +3703,23 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
-name|notebook
+name|selection
 operator|=
-name|GIMP_COLOR_NOTEBOOK
-argument_list|(
 name|GIMP_COLOR_SELECTION
 argument_list|(
 name|priv
 operator|->
 name|selection
 argument_list|)
-operator|->
+expr_stmt|;
 name|notebook
+operator|=
+name|GIMP_COLOR_NOTEBOOK
+argument_list|(
+name|gimp_color_selection_get_notebook
+argument_list|(
+name|selection
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|current

@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b311f030103
+DECL|enum|__anon2a39784e0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -558,14 +558,15 @@ name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gimp_color_selection_get_right_vbox
+argument_list|(
 name|GIMP_COLOR_SELECTION
 argument_list|(
 name|dialog
 operator|->
 name|selection
 argument_list|)
-operator|->
-name|right_vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|hbox
@@ -1364,14 +1365,15 @@ name|notebook
 operator|=
 name|GIMP_COLOR_NOTEBOOK
 argument_list|(
+name|gimp_color_selection_get_notebook
+argument_list|(
 name|GIMP_COLOR_SELECTION
 argument_list|(
 name|dialog
 operator|->
 name|selection
 argument_list|)
-operator|->
-name|notebook
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|current
