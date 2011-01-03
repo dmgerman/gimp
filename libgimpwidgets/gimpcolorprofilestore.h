@@ -128,11 +128,6 @@ DECL|member|parent_instance
 name|GtkListStore
 name|parent_instance
 decl_stmt|;
-DECL|member|history
-name|gchar
-modifier|*
-name|history
-decl_stmt|;
 block|}
 struct|;
 end_struct
