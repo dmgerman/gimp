@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ea7e2e0103
+DECL|enum|__anon2afc2f080103
 block|{
 DECL|enumerator|TEXT_CHANGED
 name|TEXT_CHANGED
@@ -1264,7 +1264,7 @@ argument_list|(
 name|font_name
 argument_list|)
 expr_stmt|;
-name|gtk_widget_modify_font
+name|gtk_widget_override_font
 argument_list|(
 name|editor
 operator|->
@@ -1391,7 +1391,7 @@ operator|->
 name|font_name
 argument_list|)
 expr_stmt|;
-name|gtk_widget_modify_font
+name|gtk_widget_override_font
 argument_list|(
 name|editor
 operator|->
