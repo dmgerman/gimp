@@ -296,7 +296,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/* range->update_policy     = GTK_UPDATE_DELAYED; */
 name|gtk_range_set_flippable
 argument_list|(
 name|GTK_RANGE
