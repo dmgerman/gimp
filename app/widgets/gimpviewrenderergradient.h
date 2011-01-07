@@ -159,9 +159,6 @@ name|left
 parameter_list|,
 name|gdouble
 name|right
-parameter_list|,
-name|gboolean
-name|instant_update
 parameter_list|)
 function_decl|;
 end_function_decl

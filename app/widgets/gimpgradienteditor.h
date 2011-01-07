@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278230cd0103
+DECL|enum|__anon292ac8020103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -179,11 +179,6 @@ DECL|member|scroll_data
 name|GtkObject
 modifier|*
 name|scroll_data
-decl_stmt|;
-comment|/*  Instant update  */
-DECL|member|instant_update
-name|gboolean
-name|instant_update
 decl_stmt|;
 comment|/*  Color dialog  */
 DECL|member|color_dialog

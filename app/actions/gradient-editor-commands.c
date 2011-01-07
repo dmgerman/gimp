@@ -328,9 +328,7 @@ name|control_sel_l
 operator|->
 name|left_color
 argument_list|,
-name|editor
-operator|->
-name|instant_update
+name|TRUE
 argument_list|,
 name|TRUE
 argument_list|)
@@ -953,9 +951,7 @@ name|control_sel_l
 operator|->
 name|right_color
 argument_list|,
-name|editor
-operator|->
-name|instant_update
+name|TRUE
 argument_list|,
 name|TRUE
 argument_list|)

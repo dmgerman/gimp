@@ -784,7 +784,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_view_renderer_gradient_set_offsets (GimpViewRendererGradient * renderer,gdouble left,gdouble right,gboolean instant_update)
+DECL|function|gimp_view_renderer_gradient_set_offsets (GimpViewRendererGradient * renderer,gdouble left,gdouble right)
 name|gimp_view_renderer_gradient_set_offsets
 parameter_list|(
 name|GimpViewRendererGradient
@@ -796,9 +796,6 @@ name|left
 parameter_list|,
 name|gdouble
 name|right
-parameter_list|,
-name|gboolean
-name|instant_update
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -859,18 +856,6 @@ operator|=
 name|right
 expr_stmt|;
 name|gimp_view_renderer_invalidate
-argument_list|(
-name|GIMP_VIEW_RENDERER
-argument_list|(
-name|renderer
-argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|instant_update
-condition|)
-name|gimp_view_renderer_update
 argument_list|(
 name|GIMP_VIEW_RENDERER
 argument_list|(
