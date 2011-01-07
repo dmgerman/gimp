@@ -1000,16 +1000,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_range_set_update_policy
-argument_list|(
-name|GTK_RANGE
-argument_list|(
-name|slider
-argument_list|)
-argument_list|,
-name|GTK_UPDATE_CONTINUOUS
-argument_list|)
-expr_stmt|;
 name|gtk_widget_set_size_request
 argument_list|(
 name|slider
