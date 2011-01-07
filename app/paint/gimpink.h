@@ -133,11 +133,6 @@ modifier|*
 name|last_blob
 decl_stmt|;
 comment|/*  blob for last cursor position  */
-DECL|member|queue
-name|GimpCircularQueue
-modifier|*
-name|queue
-decl_stmt|;
 block|}
 struct|;
 end_struct

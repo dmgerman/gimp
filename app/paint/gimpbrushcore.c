@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdf90e50103
+DECL|enum|__anon29b49a0e0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -2163,21 +2163,19 @@ if|if
 condition|(
 name|paint_core
 operator|->
-name|smoothing_history
+name|stroke_buffer
 condition|)
 block|{
 name|current_coords
 operator|=
-name|gimp_paint_options_get_smoothed_coords
+name|gimp_paint_core_get_smoothed_coords
 argument_list|(
+name|paint_core
+argument_list|,
 name|paint_options
 argument_list|,
 operator|&
 name|current_coords
-argument_list|,
-name|paint_core
-operator|->
-name|smoothing_history
 argument_list|)
 expr_stmt|;
 name|gimp_paint_core_set_current_coords

@@ -1704,7 +1704,7 @@ literal|"use-smoothing"
 argument_list|,
 name|_
 argument_list|(
-literal|"Apply Smoothing"
+literal|"Smooth stroke"
 argument_list|)
 argument_list|,
 name|table
@@ -1716,7 +1716,7 @@ name|gimp_prop_scale_entry_new
 argument_list|(
 name|config
 argument_list|,
-literal|"smoothing-history"
+literal|"smoothing-quality"
 argument_list|,
 name|GTK_TABLE
 argument_list|(
