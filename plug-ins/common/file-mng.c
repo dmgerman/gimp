@@ -241,7 +241,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28be0b7e0103
+DECL|enum|__anon2a486b560103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -260,7 +260,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28be0b7e0203
+DECL|enum|__anon2a486b560203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -5498,16 +5498,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_range_set_update_policy
-argument_list|(
-name|GTK_RANGE
-argument_list|(
-name|scale
-argument_list|)
-argument_list|,
-name|GTK_UPDATE_DELAYED
-argument_list|)
-expr_stmt|;
 name|gimp_table_attach_aligned
 argument_list|(
 name|GTK_TABLE
@@ -5624,16 +5614,6 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_range_set_update_policy
-argument_list|(
-name|GTK_RANGE
-argument_list|(
-name|scale
-argument_list|)
-argument_list|,
-name|GTK_UPDATE_DELAYED
-argument_list|)
-expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
 name|scale
@@ -5742,16 +5722,6 @@ name|scale
 argument_list|)
 argument_list|,
 literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_range_set_update_policy
-argument_list|(
-name|GTK_RANGE
-argument_list|(
-name|scale
-argument_list|)
-argument_list|,
-name|GTK_UPDATE_DELAYED
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive

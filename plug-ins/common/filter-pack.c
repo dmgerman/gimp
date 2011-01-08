@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c66fb7e0108
+DECL|struct|__anon27de3e070108
 block|{
 DECL|member|run
 name|gboolean
@@ -121,7 +121,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c66fb7e0208
+DECL|struct|__anon27de3e070208
 block|{
 DECL|member|width
 name|gint
@@ -155,7 +155,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c66fb7e0303
+DECL|enum|__anon27de3e070303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -176,7 +176,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c66fb7e0403
+DECL|enum|__anon27de3e070403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -208,7 +208,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c66fb7e0503
+DECL|enum|__anon27de3e070503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -227,7 +227,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c66fb7e0603
+DECL|enum|__anon27de3e070603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -255,7 +255,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c66fb7e0703
+DECL|enum|__anon27de3e070703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -274,7 +274,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c66fb7e0808
+DECL|struct|__anon27de3e070808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -305,7 +305,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c66fb7e0908
+DECL|struct|__anon27de3e070908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -402,7 +402,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c66fb7e0a08
+DECL|struct|__anon27de3e070a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -1284,7 +1284,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c66fb7e0b08
+DECL|struct|__anon27de3e070b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -7486,16 +7486,6 @@ argument_list|,
 name|GTK_POS_TOP
 argument_list|)
 expr_stmt|;
-name|gtk_range_set_update_policy
-argument_list|(
-name|GTK_RANGE
-argument_list|(
-name|scale
-argument_list|)
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -7667,16 +7657,6 @@ name|scale
 argument_list|)
 argument_list|,
 name|GTK_POS_TOP
-argument_list|)
-expr_stmt|;
-name|gtk_range_set_update_policy
-argument_list|(
-name|GTK_RANGE
-argument_list|(
-name|scale
-argument_list|)
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
