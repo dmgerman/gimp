@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b28a3ab0103
+DECL|enum|__anon2be34b0b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -364,14 +364,19 @@ modifier|*
 name|dialog
 parameter_list|)
 block|{
-name|gtk_dialog_set_has_separator
+comment|/* remove this once we depend on gtk 2.22 (where it defaults to FALSE) */
+name|g_object_set
 argument_list|(
-name|GTK_DIALOG
+name|G_OBJECT
 argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
+literal|"has-separator"
+argument_list|,
 name|FALSE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -1589,7 +1594,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b28a3ab0208
+DECL|struct|__anon2be34b0b0208
 block|{
 DECL|member|dialog
 name|GtkDialog
