@@ -28,12 +28,6 @@ directive|include
 file|"gimpink-blob.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimppaintoptions.h"
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_INK
 define|#

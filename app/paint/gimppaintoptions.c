@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9d9b2e0103
+DECL|enum|__anon2b8d5ebe0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -915,7 +915,7 @@ literal|1000.0
 argument_list|,
 name|DEFAULT_SMOOTHING_FACTOR
 argument_list|,
-comment|/* Max velocity is set at 3.                                                                            * Allowing for smoothing factor to be                                                                            * less than velcoty results in numeric                                                                            * instablility */
+comment|/* Max velocity is set at 3.                                     * Allowing for smoothing factor to be                                     * less than velcoty results in numeric                                     * instablility */
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;

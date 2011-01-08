@@ -28,16 +28,6 @@ directive|include
 file|"core/gimpobject.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimppaintoptions.h"
-end_include
-
-begin_comment
-comment|/* GimpCircularQueue */
-end_comment
-
 begin_define
 DECL|macro|GIMP_TYPE_PAINT_CORE
 define|#

@@ -1900,7 +1900,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2df7cb0103
+DECL|enum|__anon28a40a9e0103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START

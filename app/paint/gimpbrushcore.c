@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b49a0e0103
+DECL|enum|__anon275d47d10103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH

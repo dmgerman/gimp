@@ -151,7 +151,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f6a26a0103
+DECL|enum|__anon28f9188a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1407,8 +1407,6 @@ condition|(
 name|core
 operator|->
 name|stroke_buffer
-operator|!=
-name|NULL
 condition|)
 block|{
 name|g_array_free
@@ -5371,8 +5369,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|gimp_paint_core_get_smoothed_coords (GimpPaintCore * core,GimpPaintOptions * paint_options,const GimpCoords * original_coords)
 name|GimpCoords
+DECL|function|gimp_paint_core_get_smoothed_coords (GimpPaintCore * core,GimpPaintOptions * paint_options,const GimpCoords * original_coords)
 name|gimp_paint_core_get_smoothed_coords
 parameter_list|(
 name|GimpPaintCore
@@ -5418,7 +5416,7 @@ operator|>
 literal|0
 condition|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|guint
