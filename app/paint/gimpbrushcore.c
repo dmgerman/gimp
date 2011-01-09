@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon275d47d10103
+DECL|enum|__anon28c890820103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -2159,34 +2159,6 @@ operator|&
 name|current_coords
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|paint_core
-operator|->
-name|stroke_buffer
-condition|)
-block|{
-name|current_coords
-operator|=
-name|gimp_paint_core_get_smoothed_coords
-argument_list|(
-name|paint_core
-argument_list|,
-name|paint_options
-argument_list|,
-operator|&
-name|current_coords
-argument_list|)
-expr_stmt|;
-name|gimp_paint_core_set_current_coords
-argument_list|(
-name|paint_core
-argument_list|,
-operator|&
-name|current_coords
-argument_list|)
-expr_stmt|;
-block|}
 comment|/*Zero sized brushes are unfit for interpolate,    * so we just let paint core fail onits own    **/
 if|if
 condition|(

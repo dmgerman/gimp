@@ -850,26 +850,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|GimpCoords
-name|gimp_paint_core_get_smoothed_coords
-parameter_list|(
-name|GimpPaintCore
-modifier|*
-name|core
-parameter_list|,
-name|GimpPaintOptions
-modifier|*
-name|paint_options
-parameter_list|,
-specifier|const
-name|GimpCoords
-modifier|*
-name|original_coords
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
