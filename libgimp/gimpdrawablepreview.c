@@ -70,7 +70,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9ce6a00103
+DECL|enum|__anon29f3c46f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -87,7 +87,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9ce6a00208
+DECL|struct|__anon29f3c46f0208
 block|{
 DECL|member|drawable_ID
 name|gint32
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9ce6a00308
+DECL|struct|__anon29f3c46f0308
 block|{
 DECL|member|x
 name|gint
@@ -208,15 +208,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_drawable_preview_style_set
+name|gimp_drawable_preview_style_updated
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GtkStyle
-modifier|*
-name|prev_style
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -398,9 +394,9 @@ name|gimp_drawable_preview_set_property
 expr_stmt|;
 name|widget_class
 operator|->
-name|style_set
+name|style_updated
 operator|=
-name|gimp_drawable_preview_style_set
+name|gimp_drawable_preview_style_updated
 expr_stmt|;
 name|preview_class
 operator|->
@@ -906,16 +902,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_preview_style_set (GtkWidget * widget,GtkStyle * prev_style)
-name|gimp_drawable_preview_style_set
+DECL|function|gimp_drawable_preview_style_updated (GtkWidget * widget)
+name|gimp_drawable_preview_style_updated
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GtkStyle
-modifier|*
-name|prev_style
 parameter_list|)
 block|{
 name|GimpPreview
@@ -927,6 +919,23 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GTK_WIDGET_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|style_updated
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|preview
+operator|->
+name|area
+condition|)
+block|{
 name|gint
 name|width
 init|=
@@ -952,27 +961,6 @@ decl_stmt|;
 name|gint
 name|size
 decl_stmt|;
-if|if
-condition|(
-name|GTK_WIDGET_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|style_set
-condition|)
-name|GTK_WIDGET_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|style_set
-argument_list|(
-name|widget
-argument_list|,
-name|prev_style
-argument_list|)
-expr_stmt|;
 name|gtk_widget_style_get
 argument_list|(
 name|widget
@@ -1009,6 +997,7 @@ name|size
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

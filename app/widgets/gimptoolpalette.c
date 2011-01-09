@@ -257,15 +257,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_tool_palette_style_set
+name|gimp_tool_palette_style_updated
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GtkStyle
-modifier|*
-name|previous_style
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -461,9 +457,9 @@ name|gimp_tool_palette_height_for_width
 expr_stmt|;
 name|widget_class
 operator|->
-name|style_set
+name|style_updated
 operator|=
-name|gimp_tool_palette_style_set
+name|gimp_tool_palette_style_updated
 expr_stmt|;
 name|widget_class
 operator|->
@@ -920,16 +916,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_palette_style_set (GtkWidget * widget,GtkStyle * previous_style)
-name|gimp_tool_palette_style_set
+DECL|function|gimp_tool_palette_style_updated (GtkWidget * widget)
+name|gimp_tool_palette_style_updated
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GtkStyle
-modifier|*
-name|previous_style
 parameter_list|)
 block|{
 name|GimpToolPalettePrivate
@@ -957,11 +949,9 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|style_set
+name|style_updated
 argument_list|(
 name|widget
-argument_list|,
-name|previous_style
 argument_list|)
 expr_stmt|;
 if|if

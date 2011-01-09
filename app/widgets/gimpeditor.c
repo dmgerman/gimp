@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7280790103
+DECL|enum|__anon2c8aa6810103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -286,15 +286,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_editor_style_set
+name|gimp_editor_style_updated
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GtkStyle
-modifier|*
-name|prev_style
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -501,9 +497,9 @@ name|gimp_editor_get_property
 expr_stmt|;
 name|widget_class
 operator|->
-name|style_set
+name|style_updated
 operator|=
-name|gimp_editor_style_set
+name|gimp_editor_style_updated
 expr_stmt|;
 name|g_object_class_install_property
 argument_list|(
@@ -1389,16 +1385,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_editor_style_set (GtkWidget * widget,GtkStyle * prev_style)
-name|gimp_editor_style_set
+DECL|function|gimp_editor_style_updated (GtkWidget * widget)
+name|gimp_editor_style_updated
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GtkStyle
-modifier|*
-name|prev_style
 parameter_list|)
 block|{
 name|GimpEditor
@@ -1421,11 +1413,9 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|style_set
+name|style_updated
 argument_list|(
 name|widget
-argument_list|,
-name|prev_style
 argument_list|)
 expr_stmt|;
 if|if
@@ -2371,7 +2361,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7280790208
+DECL|struct|__anon2c8aa6810208
 block|{
 DECL|member|mod_mask
 name|GdkModifierType
