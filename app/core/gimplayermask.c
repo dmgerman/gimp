@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7f35260103
+DECL|enum|__anon29ae79340103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -1034,11 +1034,20 @@ name|gimp_image_undo_push_layer_mask_apply
 argument_list|(
 name|image
 argument_list|,
+name|apply
+condition|?
 name|C_
 argument_list|(
 literal|"undo-type"
 argument_list|,
-literal|"Apply Layer Mask"
+literal|"Enable Layer Mask"
+argument_list|)
+else|:
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Disable Layer Mask"
 argument_list|)
 argument_list|,
 name|layer_mask
