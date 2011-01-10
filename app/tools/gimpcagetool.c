@@ -563,7 +563,7 @@ directive|define
 name|parent_class
 value|gimp_cage_tool_parent_class
 expr|enum
-DECL|enum|__anon2c1c7d7a0103
+DECL|enum|__anon28f0f8cd0103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -2201,6 +2201,10 @@ name|coords
 operator|->
 name|x
 argument_list|)
+operator|-
+name|ct
+operator|->
+name|offset_x
 block|,
 name|MIN
 argument_list|(
@@ -2212,6 +2216,10 @@ name|coords
 operator|->
 name|y
 argument_list|)
+operator|-
+name|ct
+operator|->
+name|offset_y
 block|,
 name|abs
 argument_list|(
