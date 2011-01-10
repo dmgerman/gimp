@@ -164,6 +164,16 @@ name|gdouble
 name|movement_start_y
 decl_stmt|;
 comment|/* Where the movement started */
+DECL|member|selection_start_x
+name|gdouble
+name|selection_start_x
+decl_stmt|;
+comment|/* Where the selection started */
+DECL|member|selection_start_y
+name|gdouble
+name|selection_start_y
+decl_stmt|;
+comment|/* Where the selection started */
 DECL|member|hovering_handle
 name|gint
 name|hovering_handle
