@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fbba9a0103
+DECL|enum|__anon28b6c79f0103
 block|{
 DECL|enumerator|POP
 name|POP
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fbba9a0203
+DECL|enum|__anon28b6c79f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -133,19 +133,12 @@ end_enum
 
 begin_function_decl
 specifier|static
+name|void
+name|gimp_undo_constructed
+parameter_list|(
 name|GObject
 modifier|*
-name|gimp_undo_constructor
-parameter_list|(
-name|GType
-name|type
-parameter_list|,
-name|guint
-name|n_params
-parameter_list|,
-name|GObjectConstructParam
-modifier|*
-name|params
+name|object
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -485,9 +478,9 @@ argument_list|)
 expr_stmt|;
 name|object_class
 operator|->
-name|constructor
+name|constructed
 operator|=
-name|gimp_undo_constructor
+name|gimp_undo_constructed
 expr_stmt|;
 name|object_class
 operator|->
@@ -665,49 +658,39 @@ end_function
 
 begin_function
 specifier|static
-name|GObject
-modifier|*
-DECL|function|gimp_undo_constructor (GType type,guint n_params,GObjectConstructParam * params)
-name|gimp_undo_constructor
+name|void
+DECL|function|gimp_undo_constructed (GObject * object)
+name|gimp_undo_constructed
 parameter_list|(
-name|GType
-name|type
-parameter_list|,
-name|guint
-name|n_params
-parameter_list|,
-name|GObjectConstructParam
-modifier|*
-name|params
-parameter_list|)
-block|{
 name|GObject
 modifier|*
 name|object
-decl_stmt|;
+parameter_list|)
+block|{
 name|GimpUndo
 modifier|*
 name|undo
-decl_stmt|;
+init|=
+name|GIMP_UNDO
+argument_list|(
 name|object
-operator|=
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|constructor
+name|constructed
+condition|)
+name|G_OBJECT_CLASS
 argument_list|(
-name|type
-argument_list|,
-name|n_params
-argument_list|,
-name|params
+name|parent_class
 argument_list|)
-expr_stmt|;
-name|undo
-operator|=
-name|GIMP_UNDO
+operator|->
+name|constructed
 argument_list|(
 name|object
 argument_list|)
@@ -722,9 +705,6 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return
-name|object
-return|;
 block|}
 end_function
 

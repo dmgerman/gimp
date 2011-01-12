@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd394410103
+DECL|enum|__anon2ad60a2d0103
 block|{
 DECL|enumerator|TAG_COUNT_CHANGED
 name|TAG_COUNT_CHANGED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd394410203
+DECL|enum|__anon2ad60a2d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -106,19 +106,12 @@ end_typedef
 
 begin_function_decl
 specifier|static
+name|void
+name|gimp_filtered_container_constructed
+parameter_list|(
 name|GObject
 modifier|*
-name|gimp_filtered_container_constructor
-parameter_list|(
-name|GType
-name|type
-parameter_list|,
-name|guint
-name|n_construct_params
-parameter_list|,
-name|GObjectConstructParam
-modifier|*
-name|construct_params
+name|object
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -449,9 +442,9 @@ argument_list|)
 decl_stmt|;
 name|g_object_class
 operator|->
-name|constructor
+name|constructed
 operator|=
-name|gimp_filtered_container_constructor
+name|gimp_filtered_container_constructed
 expr_stmt|;
 name|g_object_class
 operator|->
@@ -581,49 +574,39 @@ end_function
 
 begin_function
 specifier|static
-name|GObject
-modifier|*
-DECL|function|gimp_filtered_container_constructor (GType type,guint n_construct_params,GObjectConstructParam * construct_params)
-name|gimp_filtered_container_constructor
+name|void
+DECL|function|gimp_filtered_container_constructed (GObject * object)
+name|gimp_filtered_container_constructed
 parameter_list|(
-name|GType
-name|type
-parameter_list|,
-name|guint
-name|n_construct_params
-parameter_list|,
-name|GObjectConstructParam
-modifier|*
-name|construct_params
-parameter_list|)
-block|{
 name|GObject
 modifier|*
 name|object
-decl_stmt|;
+parameter_list|)
+block|{
 name|GimpFilteredContainer
 modifier|*
 name|filtered_container
-decl_stmt|;
+init|=
+name|GIMP_FILTERED_CONTAINER
+argument_list|(
 name|object
-operator|=
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|constructor
+name|constructed
+condition|)
+name|G_OBJECT_CLASS
 argument_list|(
-name|type
-argument_list|,
-name|n_construct_params
-argument_list|,
-name|construct_params
+name|parent_class
 argument_list|)
-expr_stmt|;
-name|filtered_container
-operator|=
-name|GIMP_FILTERED_CONTAINER
+operator|->
+name|constructed
 argument_list|(
 name|object
 argument_list|)
@@ -664,9 +647,6 @@ argument_list|(
 name|filtered_container
 argument_list|)
 expr_stmt|;
-return|return
-name|object
-return|;
 block|}
 end_function
 
