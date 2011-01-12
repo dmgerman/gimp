@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b15258b0103
+DECL|enum|__anon28dca73a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -52,7 +52,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b15258b0203
+DECL|enum|__anon28dca73a0203
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
@@ -65,19 +65,12 @@ end_enum
 
 begin_function_decl
 specifier|static
+name|void
+name|gimp_chain_button_constructed
+parameter_list|(
 name|GObject
 modifier|*
-name|gimp_chain_button_constructor
-parameter_list|(
-name|GType
-name|type
-parameter_list|,
-name|guint
-name|n_params
-parameter_list|,
-name|GObjectConstructParam
-modifier|*
-name|params
+name|object
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -249,9 +242,9 @@ argument_list|)
 decl_stmt|;
 name|object_class
 operator|->
-name|constructor
+name|constructed
 operator|=
-name|gimp_chain_button_constructor
+name|gimp_chain_button_constructed
 expr_stmt|;
 name|object_class
 operator|->
@@ -424,49 +417,39 @@ end_function
 
 begin_function
 specifier|static
-name|GObject
-modifier|*
-DECL|function|gimp_chain_button_constructor (GType type,guint n_params,GObjectConstructParam * params)
-name|gimp_chain_button_constructor
+name|void
+DECL|function|gimp_chain_button_constructed (GObject * object)
+name|gimp_chain_button_constructed
 parameter_list|(
-name|GType
-name|type
-parameter_list|,
-name|guint
-name|n_params
-parameter_list|,
-name|GObjectConstructParam
-modifier|*
-name|params
-parameter_list|)
-block|{
 name|GObject
 modifier|*
 name|object
-decl_stmt|;
+parameter_list|)
+block|{
 name|GimpChainButton
 modifier|*
 name|button
-decl_stmt|;
+init|=
+name|GIMP_CHAIN_BUTTON
+argument_list|(
 name|object
-operator|=
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|constructor
+name|constructed
+condition|)
+name|G_OBJECT_CLASS
 argument_list|(
-name|type
-argument_list|,
-name|n_params
-argument_list|,
-name|params
+name|parent_class
 argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|GIMP_CHAIN_BUTTON
+operator|->
+name|constructed
 argument_list|(
 name|object
 argument_list|)
@@ -698,9 +681,6 @@ operator|->
 name|line2
 argument_list|)
 expr_stmt|;
-return|return
-name|object
-return|;
 block|}
 end_function
 
