@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27598e0c0103
+DECL|enum|__anon2c826f110103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -941,8 +941,6 @@ block|,
 literal|"output"
 block|,
 literal|"programming"
-block|,
-literal|"render"
 block|,
 literal|"transform"
 block|,
