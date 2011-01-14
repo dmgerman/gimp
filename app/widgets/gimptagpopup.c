@@ -159,7 +159,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2822320103
+DECL|enum|__anon29ada6850103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -194,19 +194,12 @@ end_struct
 
 begin_function_decl
 specifier|static
+name|void
+name|gimp_tag_popup_constructed
+parameter_list|(
 name|GObject
 modifier|*
-name|gimp_tag_popup_constructor
-parameter_list|(
-name|GType
-name|type
-parameter_list|,
-name|guint
-name|n_construct_params
-parameter_list|,
-name|GObjectConstructParam
-modifier|*
-name|construct_params
+name|object
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -630,9 +623,9 @@ argument_list|)
 decl_stmt|;
 name|object_class
 operator|->
-name|constructor
+name|constructed
 operator|=
-name|gimp_tag_popup_constructor
+name|gimp_tag_popup_constructed
 expr_stmt|;
 name|object_class
 operator|->
@@ -908,29 +901,23 @@ end_function
 
 begin_function
 specifier|static
-name|GObject
-modifier|*
-DECL|function|gimp_tag_popup_constructor (GType type,guint n_construct_params,GObjectConstructParam * construct_params)
-name|gimp_tag_popup_constructor
+name|void
+DECL|function|gimp_tag_popup_constructed (GObject * object)
+name|gimp_tag_popup_constructed
 parameter_list|(
-name|GType
-name|type
-parameter_list|,
-name|guint
-name|n_construct_params
-parameter_list|,
-name|GObjectConstructParam
-modifier|*
-name|construct_params
-parameter_list|)
-block|{
 name|GObject
 modifier|*
 name|object
-decl_stmt|;
+parameter_list|)
+block|{
 name|GimpTagPopup
 modifier|*
 name|popup
+init|=
+name|GIMP_TAG_POPUP
+argument_list|(
+name|object
+argument_list|)
 decl_stmt|;
 name|GimpFilteredContainer
 modifier|*
@@ -1010,25 +997,21 @@ name|GdkRectangle
 name|popup_rect
 decl_stmt|;
 comment|/* best popup rect in screen coordinates */
-name|object
-operator|=
+if|if
+condition|(
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|constructor
+name|constructed
+condition|)
+name|G_OBJECT_CLASS
 argument_list|(
-name|type
-argument_list|,
-name|n_construct_params
-argument_list|,
-name|construct_params
+name|parent_class
 argument_list|)
-expr_stmt|;
-name|popup
-operator|=
-name|GIMP_TAG_POPUP
+operator|->
+name|constructed
 argument_list|(
 name|object
 argument_list|)
@@ -1799,9 +1782,6 @@ operator|.
 name|height
 argument_list|)
 expr_stmt|;
-return|return
-name|object
-return|;
 block|}
 end_function
 

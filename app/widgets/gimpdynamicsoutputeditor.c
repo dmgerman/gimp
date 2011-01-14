@@ -81,7 +81,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon275ff9b30103
+DECL|enum|__anon29ab4b2b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275ff9b30203
+DECL|enum|__anon29ab4b2b0203
 block|{
 DECL|enumerator|INPUT_COLUMN_INDEX
 name|INPUT_COLUMN_INDEX
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275ff9b30303
+DECL|enum|__anon29ab4b2b0303
 block|{
 DECL|enumerator|INPUT_PRESSURE
 name|INPUT_PRESSURE
@@ -209,19 +209,12 @@ end_define
 
 begin_function_decl
 specifier|static
+name|void
+name|gimp_dynamics_output_editor_constructed
+parameter_list|(
 name|GObject
 modifier|*
-name|gimp_dynamics_output_editor_constructor
-parameter_list|(
-name|GType
-name|type
-parameter_list|,
-name|guint
-name|n_params
-parameter_list|,
-name|GObjectConstructParam
-modifier|*
-name|params
+name|object
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -432,9 +425,9 @@ argument_list|)
 decl_stmt|;
 name|object_class
 operator|->
-name|constructor
+name|constructed
 operator|=
-name|gimp_dynamics_output_editor_constructor
+name|gimp_dynamics_output_editor_constructed
 expr_stmt|;
 name|object_class
 operator|->
@@ -525,26 +518,15 @@ end_function
 
 begin_function
 specifier|static
-name|GObject
-modifier|*
-DECL|function|gimp_dynamics_output_editor_constructor (GType type,guint n_params,GObjectConstructParam * params)
-name|gimp_dynamics_output_editor_constructor
+name|void
+DECL|function|gimp_dynamics_output_editor_constructed (GObject * object)
+name|gimp_dynamics_output_editor_constructed
 parameter_list|(
-name|GType
-name|type
-parameter_list|,
-name|guint
-name|n_params
-parameter_list|,
-name|GObjectConstructParam
-modifier|*
-name|params
-parameter_list|)
-block|{
 name|GObject
 modifier|*
 name|object
-decl_stmt|;
+parameter_list|)
+block|{
 name|GimpDynamicsOutputEditor
 modifier|*
 name|editor
@@ -576,22 +558,6 @@ block|{
 literal|0
 block|}
 decl_stmt|;
-name|object
-operator|=
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructor
-argument_list|(
-name|type
-argument_list|,
-name|n_params
-argument_list|,
-name|params
-argument_list|)
-expr_stmt|;
 name|editor
 operator|=
 name|GIMP_DYNAMICS_OUTPUT_EDITOR
@@ -602,6 +568,25 @@ expr_stmt|;
 name|private
 operator|=
 name|GIMP_DYNAMICS_OUTPUT_EDITOR_GET_PRIVATE
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|G_OBJECT_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|constructed
+condition|)
+name|G_OBJECT_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|constructed
 argument_list|(
 name|object
 argument_list|)
@@ -1173,9 +1158,6 @@ argument_list|,
 name|editor
 argument_list|)
 expr_stmt|;
-return|return
-name|object
-return|;
 block|}
 end_function
 
