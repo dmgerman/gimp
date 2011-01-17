@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b786ef00103
+DECL|enum|__anon2965997f0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -96,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b786ef00203
+DECL|enum|__anon2965997f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2321,6 +2321,59 @@ argument_list|,
 name|angle
 argument_list|,
 name|hardness
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|gdouble
+DECL|function|gimp_brush_clamp_scale (GimpBrush * brush,gdouble scale)
+name|gimp_brush_clamp_scale
+parameter_list|(
+name|GimpBrush
+modifier|*
+name|brush
+parameter_list|,
+name|gdouble
+name|scale
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_BRUSH
+argument_list|(
+name|brush
+argument_list|)
+argument_list|,
+literal|1.0
+argument_list|)
+expr_stmt|;
+comment|/* ensure that the final brush mask remains>= 0.5 pixel along both axes */
+return|return
+name|MAX
+argument_list|(
+literal|0.5
+operator|/
+operator|(
+name|gfloat
+operator|)
+name|MIN
+argument_list|(
+name|brush
+operator|->
+name|mask
+operator|->
+name|width
+argument_list|,
+name|brush
+operator|->
+name|mask
+operator|->
+name|height
+argument_list|)
+argument_list|,
+name|scale
 argument_list|)
 return|;
 block|}
