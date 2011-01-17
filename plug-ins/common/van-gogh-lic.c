@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIC 0.14 -- image filter plug-in for GIMP  * Copyright (C) 1996 Tom Bech  *  * E-mail: tomb@gimp.org  * You can contact the original GIMP authors at gimp@xcf.berkeley.edu  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  *  * In other words, you can't sue me for whatever happens while using this ;)  *  * Changes (post 0.10):  * -> 0.11: Fixed a bug in the convolution kernels (Tom).  * -> 0.12: Added Quartic's bilinear interpolation stuff (Tom).  * -> 0.13 Changed some UI stuff causing trouble with the 0.60 release, added  *         the (GIMP) tags and changed random() calls to rand() (Tom)  * -> 0.14 Ported to 0.99.11 (Tom)  *  * This plug-in implements the Line Integral Convolution (LIC) as described in  * Cabral et al. "Imaging vector fields using line integral convolution" in the  * Proceedings of ACM SIGGRAPH 93. Publ. by ACM, New York, NY, USA. p. 263-270.  * (See http://www8.cs.umu.se/kurser/TDBD13/VT00/extra/p263-cabral.pdf)  * noise function is practically ripped as is :)  *  * Some of the code is based on code by Steinar Haugen (thanks!), the Perlin  */
+comment|/* LIC 0.14 -- image filter plug-in for GIMP  * Copyright (C) 1996 Tom Bech  *  * E-mail: tomb@gimp.org  * You can contact the original GIMP authors at gimp@xcf.berkeley.edu  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  *  * In other words, you can't sue me for whatever happens while using this ;)  *  * Changes (post 0.10):  * -> 0.11: Fixed a bug in the convolution kernels (Tom).  * -> 0.12: Added Quartic's bilinear interpolation stuff (Tom).  * -> 0.13 Changed some UI stuff causing trouble with the 0.60 release, added  *         the (GIMP) tags and changed random() calls to rand() (Tom)  * -> 0.14 Ported to 0.99.11 (Tom)  *  * This plug-in implements the Line Integral Convolution (LIC) as described in  * Cabral et al. "Imaging vector fields using line integral convolution" in the  * Proceedings of ACM SIGGRAPH 93. Publ. by ACM, New York, NY, USA. p. 263-270.  * (See http://www8.cs.umu.se/kurser/TDBD13/VT00/extra/p263-cabral.pdf)  *  * Some of the code is based on code by Steinar Haugen (thanks!), the Perlin  * noise function is practically ripped as is :)  */
 end_comment
 
 begin_include
@@ -79,7 +79,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d034f80103
+DECL|enum|__anon27c8f1060103
 block|{
 DECL|enumerator|LIC_HUE
 name|LIC_HUE
@@ -127,7 +127,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d034f80208
+DECL|struct|__anon27c8f1060208
 block|{
 DECL|member|filtlen
 name|gdouble
