@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288e7f680103
+DECL|enum|__anon2b2af1d30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4118,6 +4118,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+comment|/* no selection */
 block|{
 name|GtkTextIter
 name|cursor
