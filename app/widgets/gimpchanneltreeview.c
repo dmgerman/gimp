@@ -609,15 +609,6 @@ modifier|*
 name|object
 parameter_list|)
 block|{
-name|GimpEditor
-modifier|*
-name|editor
-init|=
-name|GIMP_EDITOR
-argument_list|(
-name|object
-argument_list|)
-decl_stmt|;
 name|GimpChannelTreeView
 modifier|*
 name|view
