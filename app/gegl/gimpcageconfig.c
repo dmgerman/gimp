@@ -229,7 +229,7 @@ control|)
 block|{
 name|printf
 argument_list|(
-literal|"cgx: %.0f    cgy: %.0f    cvdx: %.0f    cvdy: %.0f  sf: %.2f  normx: %.2f  normy: %.2f\n"
+literal|"cgx: %.0f    cgy: %.0f    cvdx: %.0f    cvdy: %.0f  sf: %.2f  normx: %.2f  normy: %.2f %s\n"
 argument_list|,
 name|gcc
 operator|->
@@ -369,6 +369,23 @@ operator|.
 name|edge_normal
 operator|.
 name|y
+argument_list|,
+operator|(
+operator|(
+name|gcc
+operator|->
+name|cage_points
+index|[
+name|i
+index|]
+operator|.
+name|selected
+operator|)
+condition|?
+literal|"S"
+else|:
+literal|"NS"
+operator|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -391,6 +408,19 @@ argument_list|,
 name|bounding_box
 operator|.
 name|height
+argument_list|)
+expr_stmt|;
+name|printf
+argument_list|(
+literal|"disp x: %f  disp y: %f\n"
+argument_list|,
+name|gcc
+operator|->
+name|displacement_x
+argument_list|,
+name|gcc
+operator|->
+name|displacement_y
 argument_list|)
 expr_stmt|;
 name|printf
@@ -1325,7 +1355,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_cage_config_get_bounding_box:  * @gcc: the cage config  *  * Compute the bounding box of the destination cage  *  * Returns: the bounding box of the destination cage, as a GeglRectangle  */
+comment|/**  * gimp_cage_config_get_bounding_box:  * @gcc: the cage config  *  * Compute the bounding box of the source cage  *  * Returns: the bounding box of the source cage, as a GeglRectangle  */
 end_comment
 
 begin_function

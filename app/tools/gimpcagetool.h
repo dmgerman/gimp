@@ -190,6 +190,29 @@ modifier|*
 name|coef
 decl_stmt|;
 comment|/* Gegl where the coefficient of the transformation are stored */
+DECL|member|dirty_coef
+name|gboolean
+name|dirty_coef
+decl_stmt|;
+comment|/* Indicate if the coef are still valid */
+DECL|member|render_node
+name|GeglNode
+modifier|*
+name|render_node
+decl_stmt|;
+comment|/* Gegl node graph to render the transfromation */
+DECL|member|cage_node
+name|GeglNode
+modifier|*
+name|cage_node
+decl_stmt|;
+comment|/* Gegl node that compute the cage transform */
+DECL|member|coef_node
+name|GeglNode
+modifier|*
+name|coef_node
+decl_stmt|;
+comment|/* Gegl node that read in the coef buffer */
 DECL|member|tool_state
 name|gint
 name|tool_state
