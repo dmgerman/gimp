@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278e35530103
+DECL|enum|__anon29c24fa20103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1587,7 +1587,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|gegl_node_get_pad
+name|gegl_node_has_pad
 argument_list|(
 name|image_map
 operator|->
@@ -1596,7 +1596,7 @@ argument_list|,
 literal|"input"
 argument_list|)
 operator|&&
-name|gegl_node_get_pad
+name|gegl_node_has_pad
 argument_list|(
 name|image_map
 operator|->
@@ -1632,7 +1632,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|gegl_node_get_pad
+name|gegl_node_has_pad
 argument_list|(
 name|image_map
 operator|->
