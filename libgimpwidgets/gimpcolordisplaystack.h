@@ -339,6 +339,27 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_color_display_stack_convert_surface
+parameter_list|(
+name|GimpColorDisplayStack
+modifier|*
+name|stack
+parameter_list|,
+name|cairo_surface_t
+modifier|*
+name|surface
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
+
+begin_function_decl
+name|void
 name|gimp_color_display_stack_convert
 parameter_list|(
 name|GimpColorDisplayStack
@@ -363,6 +384,11 @@ name|bpl
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_macro
 name|G_END_DECLS

@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b5a1300103
+DECL|enum|__anon27b575590103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b5a1300203
+DECL|enum|__anon27b575590203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -102,7 +102,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b5a1300308
+DECL|struct|__anon27b575590308
 block|{
 DECL|member|config
 name|GimpColorConfig
@@ -444,6 +444,12 @@ expr_stmt|;
 name|klass
 operator|->
 name|clone
+operator|=
+name|NULL
+expr_stmt|;
+name|klass
+operator|->
+name|convert_surface
 operator|=
 name|NULL
 expr_stmt|;
@@ -1108,6 +1114,93 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_color_display_convert_surface:  * @display: a #GimpColorDisplay  * @surface: a #cairo_image_surface_t of type ARGB32  *  * Converts all pixels in @surface.  *  * Since: GIMP 2.8  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_color_display_convert_surface (GimpColorDisplay * display,cairo_surface_t * surface)
+name|gimp_color_display_convert_surface
+parameter_list|(
+name|GimpColorDisplay
+modifier|*
+name|display
+parameter_list|,
+name|cairo_surface_t
+modifier|*
+name|surface
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_COLOR_DISPLAY
+argument_list|(
+name|display
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|surface
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|cairo_surface_get_type
+argument_list|(
+name|surface
+argument_list|)
+operator|==
+name|CAIRO_SURFACE_TYPE_IMAGE
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|display
+operator|->
+name|enabled
+operator|&&
+name|GIMP_COLOR_DISPLAY_GET_CLASS
+argument_list|(
+name|display
+argument_list|)
+operator|->
+name|convert_surface
+condition|)
+block|{
+name|cairo_surface_flush
+argument_list|(
+name|surface
+argument_list|)
+expr_stmt|;
+name|GIMP_COLOR_DISPLAY_GET_CLASS
+argument_list|(
+name|display
+argument_list|)
+operator|->
+name|convert_surface
+argument_list|(
+name|display
+argument_list|,
+name|surface
+argument_list|)
+expr_stmt|;
+name|cairo_surface_mark_dirty
+argument_list|(
+name|surface
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_color_display_convert:  * @display: a #GimpColorDisplay  * @buf: the pixel buffer to convert  * @width: the width of the buffer  * @height: the height of the buffer  * @bpp: the number of bytes per pixel  * @bpl: the buffer's rowstride  *  * Converts all pixels in @buf.  *  * Deprecated: GIMP 2.8: Use gimp_color_display_convert_surface() instead.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_color_display_convert (GimpColorDisplay * display,guchar * buf,gint width,gint height,gint bpp,gint bpl)
@@ -1142,6 +1235,7 @@ name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/*  implementing the convert method is deprecated    */
 if|if
 condition|(
 name|display
