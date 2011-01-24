@@ -24,16 +24,19 @@ comment|/**  * SECTION: gimpimageselect  * @title: gimpimageselect  * @short_des
 end_comment
 
 begin_comment
-comment|/**  * gimp_image_select_color:  * @image_ID: The affected image.  * @drawable_ID: The affected drawable.  * @color: The color to select.  * @threshold: Threshold in intensity levels.  * @operation: The selection operation.  * @sample_merged: Use the composite image, not the drawable.  * @select_transparent: Whether to consider transparent pixels for selection. If TRUE, transparency is considered as a unique selectable color.  * @select_criterion: The criterion used to determine color similarity. SELECT_CRITERION_COMPOSITE is the standard choice.  *  * Create a selection by selecting all pixels (in the specified  * drawable) with the same (or similar) color to that specified.  *  * This tool creates a selection over the specified image. A by-color  * selection is determined by the supplied color under the constraints  * of the specified threshold. Essentially, all pixels (in the  * drawable) that have color sufficiently close to the specified color  * (as determined by the threshold value) are included in the  * selection. To select transparent regions, the color specified must  * also have minimum alpha. If the 'sample-merged' parameter is TRUE,  * the data of the composite image will be used instead of that for the  * specified drawable. This is equivalent to sampling for colors after  * merging all visible layers. In the case of a merged sampling, the  * supplied drawable is ignored.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_select_color:  * @image_ID: The affected image.  * @operation: The selection operation.  * @drawable_ID: The affected drawable.  * @color: The color to select.  * @threshold: Threshold in intensity levels.  * @sample_merged: Use the composite image, not the drawable.  * @select_transparent: Whether to consider transparent pixels for selection. If TRUE, transparency is considered as a unique selectable color.  * @select_criterion: The criterion used to determine color similarity. SELECT_CRITERION_COMPOSITE is the standard choice.  *  * Create a selection by selecting all pixels (in the specified  * drawable) with the same (or similar) color to that specified.  *  * This tool creates a selection over the specified image. A by-color  * selection is determined by the supplied color under the constraints  * of the specified threshold. Essentially, all pixels (in the  * drawable) that have color sufficiently close to the specified color  * (as determined by the threshold value) are included in the  * selection. To select transparent regions, the color specified must  * also have minimum alpha. If the 'sample-merged' parameter is TRUE,  * the data of the composite image will be used instead of that for the  * specified drawable. This is equivalent to sampling for colors after  * merging all visible layers. In the case of a merged sampling, the  * supplied drawable is ignored.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_select_color (gint32 image_ID,gint32 drawable_ID,const GimpRGB * color,gint threshold,GimpChannelOps operation,gboolean sample_merged,gboolean select_transparent,GimpSelectCriterion select_criterion)
+DECL|function|gimp_image_select_color (gint32 image_ID,GimpChannelOps operation,gint32 drawable_ID,const GimpRGB * color,gint threshold,gboolean sample_merged,gboolean select_transparent,GimpSelectCriterion select_criterion)
 name|gimp_image_select_color
 parameter_list|(
 name|gint32
 name|image_ID
+parameter_list|,
+name|GimpChannelOps
+name|operation
 parameter_list|,
 name|gint32
 name|drawable_ID
@@ -45,9 +48,6 @@ name|color
 parameter_list|,
 name|gint
 name|threshold
-parameter_list|,
-name|GimpChannelOps
-name|operation
 parameter_list|,
 name|gboolean
 name|sample_merged
@@ -84,6 +84,10 @@ name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_ID
 argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|operation
+argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
 name|drawable_ID
@@ -95,10 +99,6 @@ argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
 name|threshold
-argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|operation
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -142,16 +142,19 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_select_ellipse:  * @image_ID: The image.  * @x: x coordinate of upper-left corner of ellipse bounding box.  * @y: y coordinate of upper-left corner of ellipse bounding box.  * @width: The width of the ellipse.  * @height: The height of the ellipse.  * @operation: The selection operation.  *  * Create an elliptical selection over the specified image.  *  * This tool creates an elliptical selection over the specified image.  * The elliptical region can be either added to, subtracted from, or  * replace the contents of the previous selection mask.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_select_ellipse:  * @image_ID: The image.  * @operation: The selection operation.  * @x: x coordinate of upper-left corner of ellipse bounding box.  * @y: y coordinate of upper-left corner of ellipse bounding box.  * @width: The width of the ellipse.  * @height: The height of the ellipse.  *  * Create an elliptical selection over the specified image.  *  * This tool creates an elliptical selection over the specified image.  * The elliptical region can be either added to, subtracted from, or  * replace the contents of the previous selection mask.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_select_ellipse (gint32 image_ID,gdouble x,gdouble y,gdouble width,gdouble height,GimpChannelOps operation)
+DECL|function|gimp_image_select_ellipse (gint32 image_ID,GimpChannelOps operation,gdouble x,gdouble y,gdouble width,gdouble height)
 name|gimp_image_select_ellipse
 parameter_list|(
 name|gint32
 name|image_ID
+parameter_list|,
+name|GimpChannelOps
+name|operation
 parameter_list|,
 name|gdouble
 name|x
@@ -164,9 +167,6 @@ name|width
 parameter_list|,
 name|gdouble
 name|height
-parameter_list|,
-name|GimpChannelOps
-name|operation
 parameter_list|)
 block|{
 name|GimpParam
@@ -194,6 +194,10 @@ name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_ID
 argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|operation
+argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
 name|x
@@ -209,10 +213,6 @@ argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
 name|height
-argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|operation
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
@@ -244,16 +244,19 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_select_polygon:  * @image_ID: The image.  * @num_segs: Number of points (count 1 coordinate as two points).  * @segs: Array of points: { p1.x, p1.y, p2.x, p2.y, ..., pn.x, pn.y}.  * @operation: The selection operation.  *  * Create a polygonal selection over the specified image.  *  * This tool creates a polygonal selection over the specified image.  * The polygonal region can be either added to, subtracted from, or  * replace the contents of the previous selection mask. The polygon is  * specified through an array of floating point numbers and its length.  * The length of array must be 2n, where n is the number of points.  * Each point is defined by 2 floating point values which correspond to  * the x and y coordinates. If the final point does not connect to the  * starting point, a connecting segment is automatically added.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_select_polygon:  * @image_ID: The image.  * @operation: The selection operation.  * @num_segs: Number of points (count 1 coordinate as two points).  * @segs: Array of points: { p1.x, p1.y, p2.x, p2.y, ..., pn.x, pn.y}.  *  * Create a polygonal selection over the specified image.  *  * This tool creates a polygonal selection over the specified image.  * The polygonal region can be either added to, subtracted from, or  * replace the contents of the previous selection mask. The polygon is  * specified through an array of floating point numbers and its length.  * The length of array must be 2n, where n is the number of points.  * Each point is defined by 2 floating point values which correspond to  * the x and y coordinates. If the final point does not connect to the  * starting point, a connecting segment is automatically added.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_select_polygon (gint32 image_ID,gint num_segs,const gdouble * segs,GimpChannelOps operation)
+DECL|function|gimp_image_select_polygon (gint32 image_ID,GimpChannelOps operation,gint num_segs,const gdouble * segs)
 name|gimp_image_select_polygon
 parameter_list|(
 name|gint32
 name|image_ID
+parameter_list|,
+name|GimpChannelOps
+name|operation
 parameter_list|,
 name|gint
 name|num_segs
@@ -262,9 +265,6 @@ specifier|const
 name|gdouble
 modifier|*
 name|segs
-parameter_list|,
-name|GimpChannelOps
-name|operation
 parameter_list|)
 block|{
 name|GimpParam
@@ -294,15 +294,15 @@ name|image_ID
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
+name|operation
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
 name|num_segs
 argument_list|,
 name|GIMP_PDB_FLOATARRAY
 argument_list|,
 name|segs
-argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|operation
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
@@ -334,16 +334,19 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_select_fuzzy:  * @image_ID: The affected image.  * @drawable_ID: The affected drawable.  * @x: x coordinate of initial seed fill point: (image coordinates).  * @y: y coordinate of initial seed fill point: (image coordinates).  * @threshold: Threshold in intensity levels.  * @operation: The selection operation.  * @sample_merged: Use the composite image, not the drawable.  * @select_transparent: Whether to consider transparent pixels for selection. If TRUE, transparency is considered as a unique selectable color.  * @select_criterion: The criterion used to determine color similarity. SELECT_CRITERION_COMPOSITE is the standard choice.  *  * Create a fuzzy selection starting at the specified coordinates on  * the specified drawable.  *  * This tool creates a fuzzy selection over the specified image. A  * fuzzy selection is determined by a seed fill under the constraints  * of the specified threshold. Essentially, the color at the specified  * coordinates (in the drawable) is measured and the selection expands  * outwards from that point to any adjacent pixels which are not  * significantly different (as determined by the threshold value). This  * process continues until no more expansion is possible. If  * antialiasing is turned on, the final selection mask will contain  * intermediate values based on close misses to the threshold bar at  * pixels along the seed fill boundary. If the 'sample-merged'  * parameter is TRUE, the data of the composite image will be used  * instead of that for the specified drawable. This is equivalent to  * sampling for colors after merging all visible layers. In the case of  * a merged sampling, the supplied drawable is ignored. If the sample  * is merged, the specified coordinates are relative to the image  * origin; otherwise, they are relative to the drawable's origin.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_select_fuzzy:  * @image_ID: The affected image.  * @operation: The selection operation.  * @drawable_ID: The affected drawable.  * @x: x coordinate of initial seed fill point: (image coordinates).  * @y: y coordinate of initial seed fill point: (image coordinates).  * @threshold: Threshold in intensity levels.  * @sample_merged: Use the composite image, not the drawable.  * @select_transparent: Whether to consider transparent pixels for selection. If TRUE, transparency is considered as a unique selectable color.  * @select_criterion: The criterion used to determine color similarity. SELECT_CRITERION_COMPOSITE is the standard choice.  *  * Create a fuzzy selection starting at the specified coordinates on  * the specified drawable.  *  * This tool creates a fuzzy selection over the specified image. A  * fuzzy selection is determined by a seed fill under the constraints  * of the specified threshold. Essentially, the color at the specified  * coordinates (in the drawable) is measured and the selection expands  * outwards from that point to any adjacent pixels which are not  * significantly different (as determined by the threshold value). This  * process continues until no more expansion is possible. If  * antialiasing is turned on, the final selection mask will contain  * intermediate values based on close misses to the threshold bar at  * pixels along the seed fill boundary. If the 'sample-merged'  * parameter is TRUE, the data of the composite image will be used  * instead of that for the specified drawable. This is equivalent to  * sampling for colors after merging all visible layers. In the case of  * a merged sampling, the supplied drawable is ignored. If the sample  * is merged, the specified coordinates are relative to the image  * origin; otherwise, they are relative to the drawable's origin.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_select_fuzzy (gint32 image_ID,gint32 drawable_ID,gdouble x,gdouble y,gint threshold,GimpChannelOps operation,gboolean sample_merged,gboolean select_transparent,GimpSelectCriterion select_criterion)
+DECL|function|gimp_image_select_fuzzy (gint32 image_ID,GimpChannelOps operation,gint32 drawable_ID,gdouble x,gdouble y,gint threshold,gboolean sample_merged,gboolean select_transparent,GimpSelectCriterion select_criterion)
 name|gimp_image_select_fuzzy
 parameter_list|(
 name|gint32
 name|image_ID
+parameter_list|,
+name|GimpChannelOps
+name|operation
 parameter_list|,
 name|gint32
 name|drawable_ID
@@ -356,9 +359,6 @@ name|y
 parameter_list|,
 name|gint
 name|threshold
-parameter_list|,
-name|GimpChannelOps
-name|operation
 parameter_list|,
 name|gboolean
 name|sample_merged
@@ -395,6 +395,10 @@ name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_ID
 argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|operation
+argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
 name|drawable_ID
@@ -410,10 +414,6 @@ argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
 name|threshold
-argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|operation
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -457,16 +457,19 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_select_rectangle:  * @image_ID: The image.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @width: The width of the rectangle.  * @height: The height of the rectangle.  * @operation: The selection operation.  *  * Create a rectangular selection over the specified image;  *  * This tool creates a rectangular selection over the specified image.  * The rectangular region can be either added to, subtracted from, or  * replace the contents of the previous selection mask.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_select_rectangle:  * @image_ID: The image.  * @operation: The selection operation.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @width: The width of the rectangle.  * @height: The height of the rectangle.  *  * Create a rectangular selection over the specified image;  *  * This tool creates a rectangular selection over the specified image.  * The rectangular region can be either added to, subtracted from, or  * replace the contents of the previous selection mask.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_select_rectangle (gint32 image_ID,gdouble x,gdouble y,gdouble width,gdouble height,GimpChannelOps operation)
+DECL|function|gimp_image_select_rectangle (gint32 image_ID,GimpChannelOps operation,gdouble x,gdouble y,gdouble width,gdouble height)
 name|gimp_image_select_rectangle
 parameter_list|(
 name|gint32
 name|image_ID
+parameter_list|,
+name|GimpChannelOps
+name|operation
 parameter_list|,
 name|gdouble
 name|x
@@ -479,9 +482,6 @@ name|width
 parameter_list|,
 name|gdouble
 name|height
-parameter_list|,
-name|GimpChannelOps
-name|operation
 parameter_list|)
 block|{
 name|GimpParam
@@ -509,6 +509,10 @@ name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_ID
 argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|operation
+argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
 name|x
@@ -524,10 +528,6 @@ argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
 name|height
-argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|operation
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
@@ -559,16 +559,19 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_select_round_rectangle:  * @image_ID: The image.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @width: The width of the rectangle.  * @height: The height of the rectangle.  * @corner_radius_x: The corner radius in X direction.  * @corner_radius_y: The corner radius in Y direction.  * @operation: The selection operation.  *  * Create a rectangular selection with round corners over the specified  * image;  *  * This tool creates a rectangular selection with round corners over  * the specified image. The rectangular region can be either added to,  * subtracted from, or replace the contents of the previous selection  * mask.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_select_round_rectangle:  * @image_ID: The image.  * @operation: The selection operation.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @width: The width of the rectangle.  * @height: The height of the rectangle.  * @corner_radius_x: The corner radius in X direction.  * @corner_radius_y: The corner radius in Y direction.  *  * Create a rectangular selection with round corners over the specified  * image;  *  * This tool creates a rectangular selection with round corners over  * the specified image. The rectangular region can be either added to,  * subtracted from, or replace the contents of the previous selection  * mask.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_select_round_rectangle (gint32 image_ID,gdouble x,gdouble y,gdouble width,gdouble height,gdouble corner_radius_x,gdouble corner_radius_y,GimpChannelOps operation)
+DECL|function|gimp_image_select_round_rectangle (gint32 image_ID,GimpChannelOps operation,gdouble x,gdouble y,gdouble width,gdouble height,gdouble corner_radius_x,gdouble corner_radius_y)
 name|gimp_image_select_round_rectangle
 parameter_list|(
 name|gint32
 name|image_ID
+parameter_list|,
+name|GimpChannelOps
+name|operation
 parameter_list|,
 name|gdouble
 name|x
@@ -587,9 +590,6 @@ name|corner_radius_x
 parameter_list|,
 name|gdouble
 name|corner_radius_y
-parameter_list|,
-name|GimpChannelOps
-name|operation
 parameter_list|)
 block|{
 name|GimpParam
@@ -617,6 +617,10 @@ name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_ID
 argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|operation
+argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
 name|x
@@ -640,10 +644,6 @@ argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
 name|corner_radius_y
-argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|operation
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
@@ -675,22 +675,22 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_select_item:  * @image_ID: The image.  * @item_ID: The item to render to the selection.  * @operation: The desired operation with current selection.  *  * Transforms the specified item into a selection  *  * This procedure renders the item's outline into the current selection  * of the image the item belongs to. What exactly the item's outline is  * depends on the item type: for layers, it's the layer's alpha  * channel, for vectors the vector's shape.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_select_item:  * @image_ID: The image.  * @operation: The desired operation with current selection.  * @item_ID: The item to render to the selection.  *  * Transforms the specified item into a selection  *  * This procedure renders the item's outline into the current selection  * of the image the item belongs to. What exactly the item's outline is  * depends on the item type: for layers, it's the layer's alpha  * channel, for vectors the vector's shape.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_select_item (gint32 image_ID,gint32 item_ID,GimpChannelOps operation)
+DECL|function|gimp_image_select_item (gint32 image_ID,GimpChannelOps operation,gint32 item_ID)
 name|gimp_image_select_item
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|gint32
-name|item_ID
-parameter_list|,
 name|GimpChannelOps
 name|operation
+parameter_list|,
+name|gint32
+name|item_ID
 parameter_list|)
 block|{
 name|GimpParam
@@ -718,13 +718,13 @@ name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_PDB_ITEM
-argument_list|,
-name|item_ID
-argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
 name|operation
+argument_list|,
+name|GIMP_PDB_ITEM
+argument_list|,
+name|item_ID
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)

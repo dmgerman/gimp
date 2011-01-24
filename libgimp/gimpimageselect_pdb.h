@@ -29,6 +29,9 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+name|GimpChannelOps
+name|operation
+parameter_list|,
 name|gint32
 name|drawable_ID
 parameter_list|,
@@ -39,9 +42,6 @@ name|color
 parameter_list|,
 name|gint
 name|threshold
-parameter_list|,
-name|GimpChannelOps
-name|operation
 parameter_list|,
 name|gboolean
 name|sample_merged
@@ -62,6 +62,9 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+name|GimpChannelOps
+name|operation
+parameter_list|,
 name|gdouble
 name|x
 parameter_list|,
@@ -73,9 +76,6 @@ name|width
 parameter_list|,
 name|gdouble
 name|height
-parameter_list|,
-name|GimpChannelOps
-name|operation
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -87,6 +87,9 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+name|GimpChannelOps
+name|operation
+parameter_list|,
 name|gint
 name|num_segs
 parameter_list|,
@@ -94,9 +97,6 @@ specifier|const
 name|gdouble
 modifier|*
 name|segs
-parameter_list|,
-name|GimpChannelOps
-name|operation
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -107,6 +107,9 @@ name|gimp_image_select_fuzzy
 parameter_list|(
 name|gint32
 name|image_ID
+parameter_list|,
+name|GimpChannelOps
+name|operation
 parameter_list|,
 name|gint32
 name|drawable_ID
@@ -119,9 +122,6 @@ name|y
 parameter_list|,
 name|gint
 name|threshold
-parameter_list|,
-name|GimpChannelOps
-name|operation
 parameter_list|,
 name|gboolean
 name|sample_merged
@@ -142,6 +142,9 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+name|GimpChannelOps
+name|operation
+parameter_list|,
 name|gdouble
 name|x
 parameter_list|,
@@ -153,9 +156,6 @@ name|width
 parameter_list|,
 name|gdouble
 name|height
-parameter_list|,
-name|GimpChannelOps
-name|operation
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -166,6 +166,9 @@ name|gimp_image_select_round_rectangle
 parameter_list|(
 name|gint32
 name|image_ID
+parameter_list|,
+name|GimpChannelOps
+name|operation
 parameter_list|,
 name|gdouble
 name|x
@@ -184,9 +187,6 @@ name|corner_radius_x
 parameter_list|,
 name|gdouble
 name|corner_radius_y
-parameter_list|,
-name|GimpChannelOps
-name|operation
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -198,11 +198,11 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|gint32
-name|item_ID
-parameter_list|,
 name|GimpChannelOps
 name|operation
+parameter_list|,
+name|gint32
+name|item_ID
 parameter_list|)
 function_decl|;
 end_function_decl

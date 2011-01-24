@@ -43,7 +43,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon27a633ec0108
+DECL|struct|__anon277e4bcc0108
 typedef|typedef
 struct|struct
 block|{
@@ -3192,11 +3192,11 @@ operator|->
 name|ID
 argument_list|)
 argument_list|,
+name|operation
+argument_list|,
 name|self
 operator|->
 name|ID
-argument_list|,
-name|operation
 argument_list|)
 expr_stmt|;
 name|gimp_context_pop
