@@ -1954,7 +1954,7 @@ literal|"gimp-image-select-ellipse"
 argument_list|,
 literal|"Create an elliptical selection over the specified image."
 argument_list|,
-literal|"This tool creates an elliptical selection over the specified image. The elliptical region can be either added to, subtracted from, or replace the contents of the previous selection mask."
+literal|"This tool creates an elliptical selection over the specified image. The elliptical region can be either added to, subtracted from, or replace the contents of the previous selection mask. This prodecure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -2135,7 +2135,7 @@ literal|"gimp-image-select-polygon"
 argument_list|,
 literal|"Create a polygonal selection over the specified image."
 argument_list|,
-literal|"This tool creates a polygonal selection over the specified image. The polygonal region can be either added to, subtracted from, or replace the contents of the previous selection mask. The polygon is specified through an array of floating point numbers and its length. The length of array must be 2n, where n is the number of points. Each point is defined by 2 floating point values which correspond to the x and y coordinates. If the final point does not connect to the starting point, a connecting segment is automatically added."
+literal|"This tool creates a polygonal selection over the specified image. The polygonal region can be either added to, subtracted from, or replace the contents of the previous selection mask. The polygon is specified through an array of floating point numbers and its length. The length of array must be 2n, where n is the number of points. Each point is defined by 2 floating point values which correspond to the x and y coordinates. If the final point does not connect to the starting point, a connecting segment is automatically added. This prodecure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -2502,7 +2502,7 @@ literal|"gimp-image-select-rectangle"
 argument_list|,
 literal|"Create a rectangular selection over the specified image;"
 argument_list|,
-literal|"This tool creates a rectangular selection over the specified image. The rectangular region can be either added to, subtracted from, or replace the contents of the previous selection mask."
+literal|"This tool creates a rectangular selection over the specified image. The rectangular region can be either added to, subtracted from, or replace the contents of the previous selection mask. This prodecure is affected by the following context setters: 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -2683,7 +2683,7 @@ literal|"gimp-image-select-round-rectangle"
 argument_list|,
 literal|"Create a rectangular selection with round corners over the specified image;"
 argument_list|,
-literal|"This tool creates a rectangular selection with round corners over the specified image. The rectangular region can be either added to, subtracted from, or replace the contents of the previous selection mask."
+literal|"This tool creates a rectangular selection with round corners over the specified image. The rectangular region can be either added to, subtracted from, or replace the contents of the previous selection mask. This prodecure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
 argument_list|,
 literal|"Martin Nordholts"
 argument_list|,
@@ -2908,7 +2908,7 @@ literal|"gimp-image-select-item"
 argument_list|,
 literal|"Transforms the specified item into a selection"
 argument_list|,
-literal|"This procedure renders the item's outline into the current selection of the image the item belongs to. What exactly the item's outline is depends on the item type: for layers, it's the layer's alpha channel, for vectors the vector's shape."
+literal|"This procedure renders the item's outline into the current selection of the image the item belongs to. What exactly the item's outline is depends on the item type: for layers, it's the layer's alpha channel, for vectors the vector's shape. This prodecure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

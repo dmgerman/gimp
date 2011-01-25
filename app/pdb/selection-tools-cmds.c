@@ -2682,17 +2682,17 @@ name|procedure
 argument_list|,
 literal|"gimp-ellipse-select"
 argument_list|,
-literal|"Create an elliptical selection over the specified image."
+literal|"Deprecated: Use 'gimp-image-select-ellipse' instead."
 argument_list|,
-literal|"This tool creates an elliptical selection over the specified image. The elliptical region can be either added to, subtracted from, or replace the contents of the previous selection mask. If antialiasing is turned on, the edges of the elliptical region will contain intermediate values which give the appearance of a sharper, less pixelized edge. This should be set as TRUE most of the time. If the feather option is enabled, the resulting selection is blurred before combining. The blur is a gaussian blur with the specified feather radius."
+literal|"Deprecated: Use 'gimp-image-select-ellipse' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-image-select-ellipse"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -2921,17 +2921,17 @@ name|procedure
 argument_list|,
 literal|"gimp-free-select"
 argument_list|,
-literal|"Create a polygonal selection over the specified image."
+literal|"Deprecated: Use 'gimp-image-select-polygon' instead."
 argument_list|,
-literal|"This tool creates a polygonal selection over the specified image. The polygonal region can be either added to, subtracted from, or replace the contents of the previous selection mask. The polygon is specified through an array of floating point numbers and its length. The length of array must be 2n, where n is the number of points. Each point is defined by 2 floating point values which correspond to the x and y coordinates. If the final point does not connect to the starting point, a connecting segment is automatically added. If the feather option is enabled, the resulting selection is blurred before combining. The blur is a gaussian blur with the specified feather radius."
+literal|"Deprecated: Use 'gimp-image-select-polygon' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-image-select-polygon"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -3640,17 +3640,17 @@ name|procedure
 argument_list|,
 literal|"gimp-rect-select"
 argument_list|,
-literal|"Create a rectangular selection over the specified image;"
+literal|"Deprecated: Use 'gimp-image-select-rectangle' instead."
 argument_list|,
-literal|"This tool creates a rectangular selection over the specified image. The rectangular region can be either added to, subtracted from, or replace the contents of the previous selection mask. If the feather option is enabled, the resulting selection is blurred before combining. The blur is a gaussian blur with the specified feather radius."
+literal|"Deprecated: Use 'gimp-image-select-rectangle' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-image-select-rectangle"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -3861,9 +3861,9 @@ name|procedure
 argument_list|,
 literal|"gimp-round-rect-select"
 argument_list|,
-literal|"Create a rectangular selection with round corners over the specified image;"
+literal|"Deprecated: Use 'gimp-image-select-round-rectangle' instead."
 argument_list|,
-literal|"This tool creates a rectangular selection with round corners over the specified image. The rectangular region can be either added to, subtracted from, or replace the contents of the previous selection mask. If the feather option is enabled, the resulting selection is blurred before combining. The blur is a gaussian blur with the specified feather radius."
+literal|"Deprecated: Use 'gimp-image-select-round-rectangle' instead."
 argument_list|,
 literal|"Martin Nordholts"
 argument_list|,
@@ -3871,7 +3871,7 @@ literal|"Martin Nordholts"
 argument_list|,
 literal|"2006"
 argument_list|,
-name|NULL
+literal|"gimp-image-select-round-rectangle"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

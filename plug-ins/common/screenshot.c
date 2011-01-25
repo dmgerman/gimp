@@ -331,7 +331,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0a3f6f0103
+DECL|enum|__anon28b15d410103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -350,7 +350,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0a3f6f0208
+DECL|struct|__anon28b15d410208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -2927,9 +2927,11 @@ name|i
 operator|++
 control|)
 block|{
-name|gimp_rect_select
+name|gimp_image_select_rectangle
 argument_list|(
 name|image
+argument_list|,
+name|GIMP_CHANNEL_OP_ADD
 argument_list|,
 name|rects
 index|[
@@ -2958,12 +2960,6 @@ name|i
 index|]
 operator|.
 name|height
-argument_list|,
-name|GIMP_CHANNEL_OP_ADD
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 block|}

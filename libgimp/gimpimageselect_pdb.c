@@ -142,7 +142,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_select_ellipse:  * @image_ID: The image.  * @operation: The selection operation.  * @x: x coordinate of upper-left corner of ellipse bounding box.  * @y: y coordinate of upper-left corner of ellipse bounding box.  * @width: The width of the ellipse.  * @height: The height of the ellipse.  *  * Create an elliptical selection over the specified image.  *  * This tool creates an elliptical selection over the specified image.  * The elliptical region can be either added to, subtracted from, or  * replace the contents of the previous selection mask.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_select_ellipse:  * @image_ID: The image.  * @operation: The selection operation.  * @x: x coordinate of upper-left corner of ellipse bounding box.  * @y: y coordinate of upper-left corner of ellipse bounding box.  * @width: The width of the ellipse.  * @height: The height of the ellipse.  *  * Create an elliptical selection over the specified image.  *  * This tool creates an elliptical selection over the specified image.  * The elliptical region can be either added to, subtracted from, or  * replace the contents of the previous selection mask. This prodecure  * is affected by the following context setters:  * gimp_context_set_antialias(), gimp_context_set_feather(),  * gimp_context_set_feather_radius().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -244,7 +244,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_select_polygon:  * @image_ID: The image.  * @operation: The selection operation.  * @num_segs: Number of points (count 1 coordinate as two points).  * @segs: Array of points: { p1.x, p1.y, p2.x, p2.y, ..., pn.x, pn.y}.  *  * Create a polygonal selection over the specified image.  *  * This tool creates a polygonal selection over the specified image.  * The polygonal region can be either added to, subtracted from, or  * replace the contents of the previous selection mask. The polygon is  * specified through an array of floating point numbers and its length.  * The length of array must be 2n, where n is the number of points.  * Each point is defined by 2 floating point values which correspond to  * the x and y coordinates. If the final point does not connect to the  * starting point, a connecting segment is automatically added.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_select_polygon:  * @image_ID: The image.  * @operation: The selection operation.  * @num_segs: Number of points (count 1 coordinate as two points).  * @segs: Array of points: { p1.x, p1.y, p2.x, p2.y, ..., pn.x, pn.y}.  *  * Create a polygonal selection over the specified image.  *  * This tool creates a polygonal selection over the specified image.  * The polygonal region can be either added to, subtracted from, or  * replace the contents of the previous selection mask. The polygon is  * specified through an array of floating point numbers and its length.  * The length of array must be 2n, where n is the number of points.  * Each point is defined by 2 floating point values which correspond to  * the x and y coordinates. If the final point does not connect to the  * starting point, a connecting segment is automatically added. This  * prodecure is affected by the following context setters:  * gimp_context_set_antialias(), gimp_context_set_feather(),  * gimp_context_set_feather_radius().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -457,7 +457,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_select_rectangle:  * @image_ID: The image.  * @operation: The selection operation.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @width: The width of the rectangle.  * @height: The height of the rectangle.  *  * Create a rectangular selection over the specified image;  *  * This tool creates a rectangular selection over the specified image.  * The rectangular region can be either added to, subtracted from, or  * replace the contents of the previous selection mask.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_select_rectangle:  * @image_ID: The image.  * @operation: The selection operation.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @width: The width of the rectangle.  * @height: The height of the rectangle.  *  * Create a rectangular selection over the specified image;  *  * This tool creates a rectangular selection over the specified image.  * The rectangular region can be either added to, subtracted from, or  * replace the contents of the previous selection mask. This prodecure  * is affected by the following context setters:  * gimp_context_set_feather(), gimp_context_set_feather_radius().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -559,7 +559,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_select_round_rectangle:  * @image_ID: The image.  * @operation: The selection operation.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @width: The width of the rectangle.  * @height: The height of the rectangle.  * @corner_radius_x: The corner radius in X direction.  * @corner_radius_y: The corner radius in Y direction.  *  * Create a rectangular selection with round corners over the specified  * image;  *  * This tool creates a rectangular selection with round corners over  * the specified image. The rectangular region can be either added to,  * subtracted from, or replace the contents of the previous selection  * mask.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_select_round_rectangle:  * @image_ID: The image.  * @operation: The selection operation.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @width: The width of the rectangle.  * @height: The height of the rectangle.  * @corner_radius_x: The corner radius in X direction.  * @corner_radius_y: The corner radius in Y direction.  *  * Create a rectangular selection with round corners over the specified  * image;  *  * This tool creates a rectangular selection with round corners over  * the specified image. The rectangular region can be either added to,  * subtracted from, or replace the contents of the previous selection  * mask. This prodecure is affected by the following context setters:  * gimp_context_set_antialias(), gimp_context_set_feather(),  * gimp_context_set_feather_radius().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -675,7 +675,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_select_item:  * @image_ID: The image.  * @operation: The desired operation with current selection.  * @item_ID: The item to render to the selection.  *  * Transforms the specified item into a selection  *  * This procedure renders the item's outline into the current selection  * of the image the item belongs to. What exactly the item's outline is  * depends on the item type: for layers, it's the layer's alpha  * channel, for vectors the vector's shape.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_select_item:  * @image_ID: The image.  * @operation: The desired operation with current selection.  * @item_ID: The item to render to the selection.  *  * Transforms the specified item into a selection  *  * This procedure renders the item's outline into the current selection  * of the image the item belongs to. What exactly the item's outline is  * depends on the item type: for layers, it's the layer's alpha  * channel, for vectors the vector's shape. This prodecure is affected  * by the following context setters: gimp_context_set_antialias(),  * gimp_context_set_feather(), gimp_context_set_feather_radius().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
