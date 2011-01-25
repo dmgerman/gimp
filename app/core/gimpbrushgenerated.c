@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5064fd0103
+DECL|enum|__anon2b0be85a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1149,7 +1149,7 @@ if|if
 condition|(
 name|aspect_ratio
 operator|==
-literal|1.0
+literal|0.0
 condition|)
 block|{
 name|ratio
@@ -1165,7 +1165,12 @@ name|ratio
 operator|=
 name|MIN
 argument_list|(
+name|fabs
+argument_list|(
 name|aspect_ratio
+argument_list|)
+operator|+
+literal|1
 argument_list|,
 literal|20
 argument_list|)
@@ -1173,22 +1178,11 @@ expr_stmt|;
 comment|/* Since generated brushes are symmetric the dont have input        * for aspect ratios< 1.0. its same as rotate by 90 degrees and        * 1 / ratio. So we fix the input up for this case.   */
 if|if
 condition|(
-name|ratio
+name|aspect_ratio
 operator|<
-literal|1.0
+literal|0.0
 condition|)
 block|{
-name|ratio
-operator|=
-name|MIN
-argument_list|(
-literal|1.0
-operator|/
-name|ratio
-argument_list|,
-literal|20
-argument_list|)
-expr_stmt|;
 name|angle
 operator|=
 name|angle
@@ -1307,7 +1301,7 @@ if|if
 condition|(
 name|aspect_ratio
 operator|==
-literal|1.0
+literal|0.0
 condition|)
 block|{
 name|ratio
@@ -1323,7 +1317,12 @@ name|ratio
 operator|=
 name|MIN
 argument_list|(
+name|fabs
+argument_list|(
 name|aspect_ratio
+argument_list|)
+operator|+
+literal|1
 argument_list|,
 literal|20
 argument_list|)
@@ -1331,22 +1330,11 @@ expr_stmt|;
 comment|/* Since generated brushes are symmetric the dont have input        * for aspect ratios< 1.0. its same as rotate by 90 degrees and        * 1 / ratio. So we fix the input up for this case.   */
 if|if
 condition|(
-name|ratio
+name|aspect_ratio
 operator|<
-literal|1.0
+literal|0.0
 condition|)
 block|{
-name|ratio
-operator|=
-name|MIN
-argument_list|(
-literal|1.0
-operator|/
-name|ratio
-argument_list|,
-literal|20
-argument_list|)
-expr_stmt|;
 name|angle
 operator|=
 name|angle

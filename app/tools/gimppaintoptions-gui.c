@@ -2069,7 +2069,7 @@ name|paint_options
 argument_list|,
 literal|"brush-aspect-ratio"
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 name|NULL
 argument_list|)
