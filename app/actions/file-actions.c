@@ -1185,7 +1185,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|export_to
+name|export
 init|=
 name|NULL
 decl_stmt|;
@@ -1218,7 +1218,7 @@ argument_list|,
 name|GIMP_FILE_IMPORT_SOURCE_URI_KEY
 argument_list|)
 expr_stmt|;
-name|export_to
+name|export
 operator|=
 name|g_object_get_data
 argument_list|(
@@ -1227,7 +1227,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|GIMP_FILE_EXPORT_TO_URI_KEY
+name|GIMP_FILE_EXPORT_URI_KEY
 argument_list|)
 expr_stmt|;
 block|}
@@ -1315,14 +1315,14 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"file-export-to"
 argument_list|,
-name|export_to
+name|export
 argument_list|)
 expr_stmt|;
 name|SET_VISIBLE
 argument_list|(
 literal|"file-export-to"
 argument_list|,
-name|export_to
+name|export
 operator|||
 operator|!
 name|show_overwrite
@@ -1360,7 +1360,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|export_to
+name|export
 condition|)
 block|{
 name|gchar
@@ -1374,7 +1374,7 @@ argument_list|(
 literal|"Export to %s"
 argument_list|)
 argument_list|,
-name|export_to
+name|export
 argument_list|)
 decl_stmt|;
 name|gimp_action_group_set_action_label

@@ -1970,7 +1970,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|GIMP_FILE_EXPORT_TO_URI_KEY
+name|GIMP_FILE_EXPORT_URI_KEY
 argument_list|)
 operator|!=
 name|NULL

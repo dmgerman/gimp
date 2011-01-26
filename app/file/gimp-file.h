@@ -65,14 +65,6 @@ value|"gimp-file-save-a-copy-uri"
 end_define
 
 begin_define
-DECL|macro|GIMP_FILE_EXPORT_TO_URI_KEY
-define|#
-directive|define
-name|GIMP_FILE_EXPORT_TO_URI_KEY
-value|"gimp-file-export-to-uri"
-end_define
-
-begin_define
 DECL|macro|GIMP_FILE_IMPORT_SOURCE_URI_KEY
 define|#
 directive|define
