@@ -828,24 +828,11 @@ argument_list|)
 condition|)
 block|{
 comment|/* Remember the import source */
-name|g_object_set_data_full
-argument_list|(
-name|G_OBJECT
+name|gimp_image_set_imported_uri
 argument_list|(
 name|image
-argument_list|)
 argument_list|,
-name|GIMP_FILE_IMPORT_SOURCE_URI_KEY
-argument_list|,
-name|g_strdup
-argument_list|(
 name|uri
-argument_list|)
-argument_list|,
-operator|(
-name|GDestroyNotify
-operator|)
-name|g_free
 argument_list|)
 expr_stmt|;
 comment|/* We shall treat this file as an Untitled file */
