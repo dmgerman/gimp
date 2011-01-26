@@ -312,7 +312,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be590020103
+DECL|enum|__anon2a10832c0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -406,7 +406,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be590020203
+DECL|enum|__anon2a10832c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6463,6 +6463,29 @@ block|}
 end_function
 
 begin_comment
+comment|/**  * gimp_image_get_untitled_string:  *  * Returns: The (translated) "Untitled" string for newly created  * images.  **/
+end_comment
+
+begin_function
+specifier|const
+name|gchar
+modifier|*
+DECL|function|gimp_image_get_string_untitled (void)
+name|gimp_image_get_string_untitled
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|_
+argument_list|(
+literal|"Untitled"
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_image_get_uri_or_untitled:  * @image: A #GimpImage.  *  * Get the URI of the XCF image, or "Untitled" if there is no URI.  *  * Returns: The URI, or "Untitled".  **/
 end_comment
 
@@ -6506,10 +6529,8 @@ name|uri
 condition|?
 name|uri
 else|:
-name|_
-argument_list|(
-literal|"Untitled"
-argument_list|)
+name|gimp_image_get_string_untitled
+argument_list|()
 return|;
 block|}
 end_function
