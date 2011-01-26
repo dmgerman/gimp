@@ -2321,12 +2321,11 @@ name|name_uri
 condition|)
 name|name_uri
 operator|=
-name|gimp_image_get_uri
+name|gimp_image_get_uri_or_untitled
 argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-comment|/* Untitled */
 comment|/* Priority of default type/extension for Save:        *        *   1. Type of last Save        *   2. .xcf (which we don't explicitly append)        */
 name|ext_uri
 operator|=
@@ -2499,12 +2498,11 @@ name|name_uri
 condition|)
 name|name_uri
 operator|=
-name|gimp_image_get_uri
+name|gimp_image_get_uri_or_untitled
 argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-comment|/* Untitled */
 comment|/* Priority of default type/extension for Export:        *        *   1. Type of last Export        *   3. Type of latest Export of any document        *   2. .png        */
 name|ext_uri
 operator|=

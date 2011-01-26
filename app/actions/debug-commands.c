@@ -1383,7 +1383,7 @@ literal|"%s GEGL graph"
 argument_list|,
 name|file_utils_uri_display_name
 argument_list|(
-name|gimp_image_get_uri
+name|gimp_image_get_uri_or_untitled
 argument_list|(
 name|source_image
 argument_list|)

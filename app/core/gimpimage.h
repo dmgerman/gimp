@@ -763,7 +763,7 @@ begin_function_decl
 specifier|const
 name|gchar
 modifier|*
-name|gimp_image_get_uri
+name|gimp_image_get_uri_or_untitled
 parameter_list|(
 specifier|const
 name|GimpImage
