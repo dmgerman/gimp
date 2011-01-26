@@ -1411,12 +1411,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_object_set_name
-argument_list|(
-name|GIMP_OBJECT
+name|gimp_image_set_uri
 argument_list|(
 name|new_image
-argument_list|)
 argument_list|,
 name|new_name
 argument_list|)

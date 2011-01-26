@@ -836,12 +836,9 @@ name|uri
 argument_list|)
 expr_stmt|;
 comment|/* We shall treat this file as an Untitled file */
-name|gimp_object_set_name
-argument_list|(
-name|GIMP_OBJECT
+name|gimp_image_set_uri
 argument_list|(
 name|image
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2342,12 +2339,9 @@ if|if
 condition|(
 name|as_new
 condition|)
-name|gimp_object_set_name
-argument_list|(
-name|GIMP_OBJECT
+name|gimp_image_set_uri
 argument_list|(
 name|image
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
