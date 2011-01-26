@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon277fc2d00103
+DECL|enum|__anon2aaaa53d0103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -1154,7 +1154,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_display_stack_convert:  * @display: a #GimpColorDisplayStack  * @buf: the pixel buffer to convert  * @width: the width of the buffer  * @height: the height of the buffer  * @bpp: the number of bytes per pixel  * @bpl: the buffer's rowstride  *  * Converts all pixels in @buf.  *  * Deprecated: GIMP 2.8: Use gimp_color_display_stack_convert_surface() instead.  **/
+comment|/**  * gimp_color_display_stack_convert:  * @stack: a #GimpColorDisplayStack  * @buf: the pixel buffer to convert  * @width: the width of the buffer  * @height: the height of the buffer  * @bpp: the number of bytes per pixel  * @bpl: the buffer's rowstride  *  * Converts all pixels in @buf.  *  * Deprecated: GIMP 2.8: Use gimp_color_display_stack_convert_surface() instead.  **/
 end_comment
 
 begin_function
