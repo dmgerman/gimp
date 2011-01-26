@@ -704,7 +704,7 @@ literal|"gimp-image-source-uri"
 argument_list|,
 name|g_strdup
 argument_list|(
-name|gimp_object_get_name
+name|gimp_image_get_uri
 argument_list|(
 name|image
 argument_list|)

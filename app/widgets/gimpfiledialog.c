@@ -2186,7 +2186,7 @@ name|dir_uri
 condition|)
 name|dir_uri
 operator|=
-name|gimp_object_get_name
+name|gimp_image_get_uri
 argument_list|(
 name|image
 argument_list|)
@@ -2275,7 +2275,7 @@ name|name_uri
 condition|)
 name|name_uri
 operator|=
-name|gimp_object_get_name
+name|gimp_image_get_uri
 argument_list|(
 name|image
 argument_list|)
@@ -2329,7 +2329,7 @@ expr_stmt|;
 comment|/* Priority of default type/extension for Save:        *        *   1. Type of last Save        *   2. .xcf (which we don't explicitly append)        */
 name|ext_uri
 operator|=
-name|gimp_object_get_name
+name|gimp_image_get_uri
 argument_list|(
 name|image
 argument_list|)
@@ -2401,7 +2401,7 @@ name|dir_uri
 condition|)
 name|dir_uri
 operator|=
-name|gimp_object_get_name
+name|gimp_image_get_uri
 argument_list|(
 name|image
 argument_list|)
@@ -2469,7 +2469,7 @@ name|name_uri
 condition|)
 name|name_uri
 operator|=
-name|gimp_object_get_name
+name|gimp_image_get_uri
 argument_list|(
 name|image
 argument_list|)

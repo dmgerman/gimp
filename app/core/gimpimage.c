@@ -312,7 +312,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon295a53b00103
+DECL|enum|__anon2be590020103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -406,7 +406,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon295a53b00203
+DECL|enum|__anon2be590020203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6496,7 +6496,7 @@ argument_list|)
 expr_stmt|;
 name|uri
 operator|=
-name|gimp_object_get_name
+name|gimp_image_get_uri
 argument_list|(
 name|image
 argument_list|)
@@ -6509,6 +6509,42 @@ else|:
 name|_
 argument_list|(
 literal|"Untitled"
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_image_get_uri:  * @image: A #GimpImage.  *  * Get the URI of the XCF image, or NULL if there is no URI.  *  * Returns: The URI, or NULL.  **/
+end_comment
+
+begin_function
+specifier|const
+name|gchar
+modifier|*
+DECL|function|gimp_image_get_uri (const GimpImage * image)
+name|gimp_image_get_uri
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|gimp_object_get_name
+argument_list|(
+name|image
 argument_list|)
 return|;
 block|}
@@ -6606,7 +6642,7 @@ argument_list|)
 expr_stmt|;
 name|uri
 operator|=
-name|gimp_object_get_name
+name|gimp_image_get_uri
 argument_list|(
 name|image
 argument_list|)

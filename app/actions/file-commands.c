@@ -864,7 +864,7 @@ condition|)
 return|return;
 name|uri
 operator|=
-name|gimp_object_get_name
+name|gimp_image_get_uri
 argument_list|(
 name|image
 argument_list|)
@@ -1335,7 +1335,7 @@ argument_list|)
 expr_stmt|;
 name|uri
 operator|=
-name|gimp_object_get_name
+name|gimp_image_get_uri
 argument_list|(
 name|image
 argument_list|)
@@ -1831,7 +1831,7 @@ name|image
 condition|)
 name|uri
 operator|=
-name|gimp_object_get_name
+name|gimp_image_get_uri
 argument_list|(
 name|image
 argument_list|)
@@ -2490,7 +2490,7 @@ name|NULL
 decl_stmt|;
 name|uri
 operator|=
-name|gimp_object_get_name
+name|gimp_image_get_uri
 argument_list|(
 name|old_image
 argument_list|)
