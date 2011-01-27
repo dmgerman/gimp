@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5351b10103
+DECL|enum|__anon2b6460200103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -245,7 +245,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5351b10203
+DECL|enum|__anon2b6460200203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -288,7 +288,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5351b10303
+DECL|enum|__anon2b6460200303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -2884,11 +2884,6 @@ break|break;
 case|case
 name|GIMP_TOOL_ACTION_RESUME
 case|:
-name|gimp_rectangle_tool_update_highlight
-argument_list|(
-name|rect_tool
-argument_list|)
-expr_stmt|;
 comment|/* When highlightning is on, the shell gets paused/unpaused which means we        * will get here, but we only want to recalculate handle sizes when the        * zoom has changed.        */
 if|if
 condition|(
