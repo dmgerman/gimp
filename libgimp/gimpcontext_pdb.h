@@ -377,6 +377,25 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpSelectCriterion
+name|gimp_context_get_sample_criterion
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_context_set_sample_criterion
+parameter_list|(
+name|GimpSelectCriterion
+name|sample_criterion
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpInterpolationType
 name|gimp_context_get_interpolation
 parameter_list|(

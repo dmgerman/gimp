@@ -132,6 +132,10 @@ DECL|member|sample_merged
 name|gboolean
 name|sample_merged
 decl_stmt|;
+DECL|member|sample_criterion
+name|GimpSelectCriterion
+name|sample_criterion
+decl_stmt|;
 DECL|member|interpolation
 name|GimpInterpolationType
 name|interpolation

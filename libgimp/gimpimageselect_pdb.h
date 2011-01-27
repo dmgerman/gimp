@@ -45,9 +45,6 @@ name|threshold
 parameter_list|,
 name|gboolean
 name|select_transparent
-parameter_list|,
-name|GimpSelectCriterion
-name|select_criterion
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -122,9 +119,6 @@ name|threshold
 parameter_list|,
 name|gboolean
 name|select_transparent
-parameter_list|,
-name|GimpSelectCriterion
-name|select_criterion
 parameter_list|)
 function_decl|;
 end_function_decl
