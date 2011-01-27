@@ -128,6 +128,10 @@ DECL|member|feather_radius_y
 name|gdouble
 name|feather_radius_y
 decl_stmt|;
+DECL|member|sample_merged
+name|gboolean
+name|sample_merged
+decl_stmt|;
 DECL|member|interpolation
 name|GimpInterpolationType
 name|interpolation

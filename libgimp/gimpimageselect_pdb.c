@@ -24,12 +24,12 @@ comment|/**  * SECTION: gimpimageselect  * @title: gimpimageselect  * @short_des
 end_comment
 
 begin_comment
-comment|/**  * gimp_image_select_color:  * @image_ID: The affected image.  * @operation: The selection operation.  * @drawable_ID: The affected drawable.  * @color: The color to select.  * @threshold: Threshold in intensity levels.  * @sample_merged: Use the composite image, not the drawable.  * @select_transparent: Whether to consider transparent pixels for selection. If TRUE, transparency is considered as a unique selectable color.  * @select_criterion: The criterion used to determine color similarity. SELECT_CRITERION_COMPOSITE is the standard choice.  *  * Create a selection by selecting all pixels (in the specified  * drawable) with the same (or similar) color to that specified.  *  * This tool creates a selection over the specified image. A by-color  * selection is determined by the supplied color under the constraints  * of the specified threshold. Essentially, all pixels (in the  * drawable) that have color sufficiently close to the specified color  * (as determined by the threshold value) are included in the  * selection. To select transparent regions, the color specified must  * also have minimum alpha. If the 'sample-merged' parameter is TRUE,  * the data of the composite image will be used instead of that for the  * specified drawable. This is equivalent to sampling for colors after  * merging all visible layers. In the case of a merged sampling, the  * supplied drawable is ignored.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_select_color:  * @image_ID: The affected image.  * @operation: The selection operation.  * @drawable_ID: The affected drawable.  * @color: The color to select.  * @threshold: Threshold in intensity levels.  * @select_transparent: Whether to consider transparent pixels for selection. If TRUE, transparency is considered as a unique selectable color.  * @select_criterion: The criterion used to determine color similarity. SELECT_CRITERION_COMPOSITE is the standard choice.  *  * Create a selection by selecting all pixels (in the specified  * drawable) with the same (or similar) color to that specified.  *  * This tool creates a selection over the specified image. A by-color  * selection is determined by the supplied color under the constraints  * of the specified threshold. Essentially, all pixels (in the  * drawable) that have color sufficiently close to the specified color  * (as determined by the threshold value) are included in the  * selection. To select transparent regions, the color specified must  * also have minimum alpha. This prodecure is affected by the following  * context setters: gimp_context_set_antialias(),  * gimp_context_set_feather(), gimp_context_set_feather_radius(),  * gimp_context_set_sample_merged(). In the case of a merged sampling,  * the supplied drawable is ignored.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_select_color (gint32 image_ID,GimpChannelOps operation,gint32 drawable_ID,const GimpRGB * color,gint threshold,gboolean sample_merged,gboolean select_transparent,GimpSelectCriterion select_criterion)
+DECL|function|gimp_image_select_color (gint32 image_ID,GimpChannelOps operation,gint32 drawable_ID,const GimpRGB * color,gint threshold,gboolean select_transparent,GimpSelectCriterion select_criterion)
 name|gimp_image_select_color
 parameter_list|(
 name|gint32
@@ -48,9 +48,6 @@ name|color
 parameter_list|,
 name|gint
 name|threshold
-parameter_list|,
-name|gboolean
-name|sample_merged
 parameter_list|,
 name|gboolean
 name|select_transparent
@@ -99,10 +96,6 @@ argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
 name|threshold
-argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|sample_merged
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -334,12 +327,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_select_fuzzy:  * @image_ID: The affected image.  * @operation: The selection operation.  * @drawable_ID: The affected drawable.  * @x: x coordinate of initial seed fill point: (image coordinates).  * @y: y coordinate of initial seed fill point: (image coordinates).  * @threshold: Threshold in intensity levels.  * @sample_merged: Use the composite image, not the drawable.  * @select_transparent: Whether to consider transparent pixels for selection. If TRUE, transparency is considered as a unique selectable color.  * @select_criterion: The criterion used to determine color similarity. SELECT_CRITERION_COMPOSITE is the standard choice.  *  * Create a fuzzy selection starting at the specified coordinates on  * the specified drawable.  *  * This tool creates a fuzzy selection over the specified image. A  * fuzzy selection is determined by a seed fill under the constraints  * of the specified threshold. Essentially, the color at the specified  * coordinates (in the drawable) is measured and the selection expands  * outwards from that point to any adjacent pixels which are not  * significantly different (as determined by the threshold value). This  * process continues until no more expansion is possible. If  * antialiasing is turned on, the final selection mask will contain  * intermediate values based on close misses to the threshold bar at  * pixels along the seed fill boundary. If the 'sample-merged'  * parameter is TRUE, the data of the composite image will be used  * instead of that for the specified drawable. This is equivalent to  * sampling for colors after merging all visible layers. In the case of  * a merged sampling, the supplied drawable is ignored. If the sample  * is merged, the specified coordinates are relative to the image  * origin; otherwise, they are relative to the drawable's origin.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_select_fuzzy:  * @image_ID: The affected image.  * @operation: The selection operation.  * @drawable_ID: The affected drawable.  * @x: x coordinate of initial seed fill point: (image coordinates).  * @y: y coordinate of initial seed fill point: (image coordinates).  * @threshold: Threshold in intensity levels.  * @select_transparent: Whether to consider transparent pixels for selection. If TRUE, transparency is considered as a unique selectable color.  * @select_criterion: The criterion used to determine color similarity. SELECT_CRITERION_COMPOSITE is the standard choice.  *  * Create a fuzzy selection starting at the specified coordinates on  * the specified drawable.  *  * This tool creates a fuzzy selection over the specified image. A  * fuzzy selection is determined by a seed fill under the constraints  * of the specified threshold. Essentially, the color at the specified  * coordinates (in the drawable) is measured and the selection expands  * outwards from that point to any adjacent pixels which are not  * significantly different (as determined by the threshold value). This  * process continues until no more expansion is possible. If  * antialiasing is turned on, the final selection mask will contain  * intermediate values based on close misses to the threshold bar at  * pixels along the seed fill boundary. This prodecure is affected by  * the following context setters: gimp_context_set_antialias(),  * gimp_context_set_feather(), gimp_context_set_feather_radius(),  * gimp_context_set_sample_merged(). In the case of a merged sampling,  * the supplied drawable is ignored. If the sample is merged, the  * specified coordinates are relative to the image origin; otherwise,  * they are relative to the drawable's origin.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_select_fuzzy (gint32 image_ID,GimpChannelOps operation,gint32 drawable_ID,gdouble x,gdouble y,gint threshold,gboolean sample_merged,gboolean select_transparent,GimpSelectCriterion select_criterion)
+DECL|function|gimp_image_select_fuzzy (gint32 image_ID,GimpChannelOps operation,gint32 drawable_ID,gdouble x,gdouble y,gint threshold,gboolean select_transparent,GimpSelectCriterion select_criterion)
 name|gimp_image_select_fuzzy
 parameter_list|(
 name|gint32
@@ -359,9 +352,6 @@ name|y
 parameter_list|,
 name|gint
 name|threshold
-parameter_list|,
-name|gboolean
-name|sample_merged
 parameter_list|,
 name|gboolean
 name|select_transparent
@@ -414,10 +404,6 @@ argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
 name|threshold
-argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|sample_merged
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,

@@ -160,9 +160,6 @@ name|gint32
 name|threshold
 decl_stmt|;
 name|gboolean
-name|sample_merged
-decl_stmt|;
-name|gboolean
 name|select_transparent
 decl_stmt|;
 name|gint32
@@ -238,7 +235,7 @@ literal|4
 index|]
 argument_list|)
 expr_stmt|;
-name|sample_merged
+name|select_transparent
 operator|=
 name|g_value_get_boolean
 argument_list|(
@@ -251,9 +248,9 @@ literal|5
 index|]
 argument_list|)
 expr_stmt|;
-name|select_transparent
+name|select_criterion
 operator|=
-name|g_value_get_boolean
+name|g_value_get_enum
 argument_list|(
 operator|&
 name|args
@@ -264,26 +261,24 @@ literal|6
 index|]
 argument_list|)
 expr_stmt|;
-name|select_criterion
-operator|=
-name|g_value_get_enum
-argument_list|(
-operator|&
-name|args
-operator|->
-name|values
-index|[
-literal|7
-index|]
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|success
 condition|)
 block|{
+name|GimpPDBContext
+modifier|*
+name|pdb_context
+init|=
+name|GIMP_PDB_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
+name|pdb_context
+operator|->
 name|sample_merged
 operator|||
 name|gimp_pdb_item_is_attached
@@ -301,15 +296,6 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|GimpPDBContext
-modifier|*
-name|pdb_context
-init|=
-name|GIMP_PDB_CONTEXT
-argument_list|(
-name|context
-argument_list|)
-decl_stmt|;
 name|gimp_channel_select_by_color
 argument_list|(
 name|gimp_image_get_mask
@@ -319,6 +305,8 @@ argument_list|)
 argument_list|,
 name|drawable
 argument_list|,
+name|pdb_context
+operator|->
 name|sample_merged
 argument_list|,
 operator|&
@@ -837,9 +825,6 @@ name|gint32
 name|threshold
 decl_stmt|;
 name|gboolean
-name|sample_merged
-decl_stmt|;
-name|gboolean
 name|select_transparent
 decl_stmt|;
 name|gint32
@@ -927,7 +912,7 @@ literal|5
 index|]
 argument_list|)
 expr_stmt|;
-name|sample_merged
+name|select_transparent
 operator|=
 name|g_value_get_boolean
 argument_list|(
@@ -940,9 +925,9 @@ literal|6
 index|]
 argument_list|)
 expr_stmt|;
-name|select_transparent
+name|select_criterion
 operator|=
-name|g_value_get_boolean
+name|g_value_get_enum
 argument_list|(
 operator|&
 name|args
@@ -953,26 +938,24 @@ literal|7
 index|]
 argument_list|)
 expr_stmt|;
-name|select_criterion
-operator|=
-name|g_value_get_enum
-argument_list|(
-operator|&
-name|args
-operator|->
-name|values
-index|[
-literal|8
-index|]
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|success
 condition|)
 block|{
+name|GimpPDBContext
+modifier|*
+name|pdb_context
+init|=
+name|GIMP_PDB_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
+name|pdb_context
+operator|->
 name|sample_merged
 operator|||
 name|gimp_pdb_item_is_attached
@@ -990,15 +973,6 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|GimpPDBContext
-modifier|*
-name|pdb_context
-init|=
-name|GIMP_PDB_CONTEXT
-argument_list|(
-name|context
-argument_list|)
-decl_stmt|;
 name|gimp_channel_select_fuzzy
 argument_list|(
 name|gimp_image_get_mask
@@ -1008,6 +982,8 @@ argument_list|)
 argument_list|,
 name|drawable
 argument_list|,
+name|pdb_context
+operator|->
 name|sample_merged
 argument_list|,
 name|x
@@ -1743,7 +1719,7 @@ literal|"gimp-image-select-color"
 argument_list|,
 literal|"Create a selection by selecting all pixels (in the specified drawable) with the same (or similar) color to that specified."
 argument_list|,
-literal|"This tool creates a selection over the specified image. A by-color selection is determined by the supplied color under the constraints of the specified threshold. Essentially, all pixels (in the drawable) that have color sufficiently close to the specified color (as determined by the threshold value) are included in the selection. To select transparent regions, the color specified must also have minimum alpha. If the 'sample-merged' parameter is TRUE, the data of the composite image will be used instead of that for the specified drawable. This is equivalent to sampling for colors after merging all visible layers. In the case of a merged sampling, the supplied drawable is ignored."
+literal|"This tool creates a selection over the specified image. A by-color selection is determined by the supplied color under the constraints of the specified threshold. Essentially, all pixels (in the drawable) that have color sufficiently close to the specified color (as determined by the threshold value) are included in the selection. To select transparent regions, the color specified must also have minimum alpha. This prodecure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius', 'gimp-context-set-sample-merged'. In the case of a merged sampling, the supplied drawable is ignored."
 argument_list|,
 literal|"David Gowers"
 argument_list|,
@@ -1855,24 +1831,6 @@ argument_list|,
 literal|255
 argument_list|,
 literal|0
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|g_param_spec_boolean
-argument_list|(
-literal|"sample-merged"
-argument_list|,
-literal|"sample merged"
-argument_list|,
-literal|"Use the composite image, not the drawable"
-argument_list|,
-name|FALSE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -2264,8 +2222,8 @@ literal|"gimp-image-select-fuzzy"
 argument_list|,
 literal|"Create a fuzzy selection starting at the specified coordinates on the specified drawable."
 argument_list|,
-literal|"This tool creates a fuzzy selection over the specified image. A fuzzy selection is determined by a seed fill under the constraints of the specified threshold. Essentially, the color at the specified coordinates (in the drawable) is measured and the selection expands outwards from that point to any adjacent pixels which are not significantly different (as determined by the threshold value). This process continues until no more expansion is possible. If antialiasing is turned on, the final selection mask will contain intermediate values based on close misses to the threshold bar at pixels along the seed fill boundary. If the 'sample-merged' parameter is TRUE, the data of the composite image will be used instead of that for the specified drawable. This is equivalent to sampling for colors after merging all visible layers. In the case of a merged sampling, the supplied drawable is ignored. If the sample is merged, the specified coordinates are relative to the image origin; otherwise,"
-literal|"they are relative to the drawable's origin."
+literal|"This tool creates a fuzzy selection over the specified image. A fuzzy selection is determined by a seed fill under the constraints of the specified threshold. Essentially, the color at the specified coordinates (in the drawable) is measured and the selection expands outwards from that point to any adjacent pixels which are not significantly different (as determined by the threshold value). This process continues until no more expansion is possible. If antialiasing is turned on, the final selection mask will contain intermediate values based on close misses to the threshold bar at pixels along the seed fill boundary. This prodecure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius', 'gimp-context-set-sample-merged'. In the case of a merged sampling, the supplied drawable is ignored. If the sample is merged, the specified coordinates are relative to the image origin; otherwise, they are relative to"
+literal|"the drawable's origin."
 argument_list|,
 literal|"David Gowers"
 argument_list|,
@@ -2403,24 +2361,6 @@ argument_list|,
 literal|255
 argument_list|,
 literal|0
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|g_param_spec_boolean
-argument_list|(
-literal|"sample-merged"
-argument_list|,
-literal|"sample merged"
-argument_list|,
-literal|"Use the composite image, not the drawable"
-argument_list|,
-name|FALSE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

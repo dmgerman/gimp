@@ -44,9 +44,6 @@ name|gint
 name|threshold
 parameter_list|,
 name|gboolean
-name|sample_merged
-parameter_list|,
-name|gboolean
 name|select_transparent
 parameter_list|,
 name|GimpSelectCriterion
@@ -122,9 +119,6 @@ name|y
 parameter_list|,
 name|gint
 name|threshold
-parameter_list|,
-name|gboolean
-name|sample_merged
 parameter_list|,
 name|gboolean
 name|select_transparent
