@@ -93,10 +93,24 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_comment
+comment|/* The first authors are the creators, don't shuffle them */
+end_comment
+
+begin_define
+DECL|macro|START_INDEX
+define|#
+directive|define
+name|START_INDEX
+value|(G_N_ELEMENTS (creators) - 1
+comment|/*NULL*/
+value|)
+end_define
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275645000108
+DECL|struct|__anon279864ee0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -964,12 +978,6 @@ index|]
 operator|=
 name|i
 expr_stmt|;
-comment|/* here we rely on the authors array having Peter and Spencer first */
-DECL|macro|START_INDEX
-define|#
-directive|define
-name|START_INDEX
-value|2
 for|for
 control|(
 name|i
@@ -1044,9 +1052,6 @@ name|t
 expr_stmt|;
 block|}
 block|}
-undef|#
-directive|undef
-name|START_INDEX
 name|g_rand_free
 argument_list|(
 name|gr
