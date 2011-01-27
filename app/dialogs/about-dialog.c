@@ -94,7 +94,7 @@ file|"gimp-intl.h"
 end_include
 
 begin_comment
-comment|/* The first authors are the creators, don't shuffle them */
+comment|/* The first authors are the creators and maintainers, don't shuffle  * them  */
 end_comment
 
 begin_define
@@ -102,7 +102,9 @@ DECL|macro|START_INDEX
 define|#
 directive|define
 name|START_INDEX
-value|(G_N_ELEMENTS (creators) - 1
+value|(G_N_ELEMENTS (creators)    - 1
+comment|/*NULL*/
+value|+ \                      G_N_ELEMENTS (maintainers) - 1
 comment|/*NULL*/
 value|)
 end_define
@@ -110,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279864ee0108
+DECL|struct|__anon28fd7faf0108
 block|{
 DECL|member|dialog
 name|GtkWidget
