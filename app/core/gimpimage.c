@@ -312,7 +312,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c54465d0103
+DECL|enum|__anon2a2f8d2b0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -406,7 +406,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c54465d0203
+DECL|enum|__anon2a2f8d2b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -13965,7 +13965,7 @@ argument_list|(
 name|layer
 argument_list|)
 decl_stmt|;
-comment|/*  if the layer came from the undo stack, reset the mask's "removed" state  */
+comment|/*  if the layer came from the undo stack,        *  reset the mask's "removed" state        */
 if|if
 condition|(
 name|gimp_item_is_removed
@@ -13976,14 +13976,13 @@ name|mask
 argument_list|)
 argument_list|)
 condition|)
+name|gimp_item_unset_removed
+argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|mask
 argument_list|)
-operator|->
-name|removed
-operator|=
-name|FALSE
+argument_list|)
 expr_stmt|;
 block|}
 return|return

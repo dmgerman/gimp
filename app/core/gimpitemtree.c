@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0843870103
+DECL|enum|__anon27b651d20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1779,11 +1779,10 @@ argument_list|(
 name|item
 argument_list|)
 condition|)
+name|gimp_item_unset_removed
+argument_list|(
 name|item
-operator|->
-name|removed
-operator|=
-name|FALSE
+argument_list|)
 expr_stmt|;
 block|}
 end_function

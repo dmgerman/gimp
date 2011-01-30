@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ef8bc00103
+DECL|enum|__anon27ea66110103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -159,7 +159,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ef8bc00203
+DECL|enum|__anon27ea66110203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -264,13 +264,13 @@ range|:
 literal|1
 decl_stmt|;
 comment|/*  content editability      */
-if|#
-directive|if
-literal|0
-block|guint             removed : 1;
+DECL|member|removed
+name|guint
+name|removed
+range|:
+literal|1
+decl_stmt|;
 comment|/*  removed from the image?  */
-endif|#
-directive|endif
 DECL|member|node
 name|GeglNode
 modifier|*
@@ -1261,7 +1261,7 @@ name|lock_content
 operator|=
 name|FALSE
 expr_stmt|;
-name|item
+name|private
 operator|->
 name|removed
 operator|=
@@ -2584,7 +2584,10 @@ name|item
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|GET_PRIVATE
+argument_list|(
 name|item
+argument_list|)
 operator|->
 name|removed
 operator|=
@@ -2657,10 +2660,55 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
+name|GET_PRIVATE
+argument_list|(
 name|item
+argument_list|)
 operator|->
 name|removed
 return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_item_unset_removed:  * @item: a #GimpItem which was on the undo stack  *  * Unsets an item's "removed" state. This function is called when an  * item was on the undo stack and is added back to its parent  * container during and undo or redo. It must never be called from  * anywhere else.  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_item_unset_removed (GimpItem * item)
+name|gimp_item_unset_removed
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_ITEM
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|gimp_item_is_removed
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|GET_PRIVATE
+argument_list|(
+name|item
+argument_list|)
+operator|->
+name|removed
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 end_function
 

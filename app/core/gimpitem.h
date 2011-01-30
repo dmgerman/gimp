@@ -117,13 +117,6 @@ decl_stmt|,
 name|height
 decl_stmt|;
 comment|/*  size in pixels           */
-DECL|member|removed
-name|guint
-name|removed
-range|:
-literal|1
-decl_stmt|;
-comment|/*  removed from the image?  */
 block|}
 struct|;
 end_struct
@@ -659,6 +652,17 @@ name|gboolean
 name|gimp_item_is_removed
 parameter_list|(
 specifier|const
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_item_unset_removed
+parameter_list|(
 name|GimpItem
 modifier|*
 name|item
