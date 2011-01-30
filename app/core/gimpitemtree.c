@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b55c45a0103
+DECL|enum|__anon2b0843870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1770,6 +1770,20 @@ argument_list|)
 argument_list|,
 name|position
 argument_list|)
+expr_stmt|;
+comment|/*  if the item came from the undo stack, reset its "removed" state  */
+if|if
+condition|(
+name|gimp_item_is_removed
+argument_list|(
+name|item
+argument_list|)
+condition|)
+name|item
+operator|->
+name|removed
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 end_function

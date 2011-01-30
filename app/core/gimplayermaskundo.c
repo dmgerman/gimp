@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a16d0180103
+DECL|enum|__anon29eae3df0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -687,17 +687,6 @@ name|FALSE
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
-name|GIMP_ITEM
-argument_list|(
-name|layer_mask_undo
-operator|->
-name|layer_mask
-argument_list|)
-operator|->
-name|removed
-operator|=
-name|FALSE
 expr_stmt|;
 block|}
 block|}
