@@ -103,22 +103,6 @@ DECL|member|parent_instance
 name|GimpViewable
 name|parent_instance
 decl_stmt|;
-DECL|member|ID
-name|gint
-name|ID
-decl_stmt|;
-comment|/*  provides a unique ID     */
-DECL|member|tattoo
-name|guint32
-name|tattoo
-decl_stmt|;
-comment|/*  provides a permanent ID  */
-DECL|member|image
-name|GimpImage
-modifier|*
-name|image
-decl_stmt|;
-comment|/*  item owner               */
 DECL|member|parasites
 name|GimpParasiteList
 modifier|*
@@ -133,35 +117,6 @@ decl_stmt|,
 name|height
 decl_stmt|;
 comment|/*  size in pixels           */
-DECL|member|offset_x
-DECL|member|offset_y
-name|gint
-name|offset_x
-decl_stmt|,
-name|offset_y
-decl_stmt|;
-comment|/*  pixel offset in image    */
-DECL|member|visible
-name|guint
-name|visible
-range|:
-literal|1
-decl_stmt|;
-comment|/*  control visibility       */
-DECL|member|linked
-name|guint
-name|linked
-range|:
-literal|1
-decl_stmt|;
-comment|/*  control linkage          */
-DECL|member|lock_content
-name|guint
-name|lock_content
-range|:
-literal|1
-decl_stmt|;
-comment|/*  content editability      */
 DECL|member|removed
 name|guint
 name|removed
@@ -169,18 +124,6 @@ range|:
 literal|1
 decl_stmt|;
 comment|/*  removed from the image?  */
-DECL|member|node
-name|GeglNode
-modifier|*
-name|node
-decl_stmt|;
-comment|/*  the GEGL node to plug                                             into the graph           */
-DECL|member|offset_node
-name|GeglNode
-modifier|*
-name|offset_node
-decl_stmt|;
-comment|/*  the offset as a node     */
 block|}
 struct|;
 end_struct
