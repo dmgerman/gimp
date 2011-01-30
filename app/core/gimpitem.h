@@ -1420,6 +1420,21 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_item_replace_item
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|,
+name|GimpItem
+modifier|*
+name|replace
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_item_parasite_attach
 parameter_list|(
 name|GimpItem
