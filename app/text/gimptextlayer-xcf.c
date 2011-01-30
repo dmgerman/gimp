@@ -81,7 +81,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e4ae770103
+DECL|enum|__anon29ca01d40103
 block|{
 DECL|enumerator|TEXT_LAYER_XCF_NONE
 name|TEXT_LAYER_XCF_NONE
@@ -379,16 +379,17 @@ argument_list|(
 name|text
 argument_list|)
 decl_stmt|;
-name|gimp_parasite_list_add
+comment|/*  Don't push an undo because the parasite only exists temporarily        *  while the text layer is saved to XCF.        */
+name|gimp_item_parasite_attach
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
-operator|->
-name|parasites
 argument_list|,
 name|parasite
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

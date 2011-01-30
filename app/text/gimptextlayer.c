@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275fd1b60103
+DECL|enum|__anon2bc19b790103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2063,7 +2063,7 @@ modifier|*
 name|layer
 parameter_list|)
 block|{
-comment|/*   If the text layer was created from a parasite, it's time to    *   remove that parasite now.    */
+comment|/*  If the text layer was created from a parasite, it's time to    *  remove that parasite now.    */
 if|if
 condition|(
 name|layer
@@ -2071,18 +2071,19 @@ operator|->
 name|text_parasite
 condition|)
 block|{
-name|gimp_parasite_list_remove
+comment|/*  Don't push an undo because the parasite only exists temporarily        *  while the text layer is loaded from XCF.        */
+name|gimp_item_parasite_detach
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
-operator|->
-name|parasites
 argument_list|,
 name|layer
 operator|->
 name|text_parasite
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|layer

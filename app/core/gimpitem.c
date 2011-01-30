@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c177d210103
+DECL|enum|__anon29c6dde30103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -159,7 +159,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c177d210203
+DECL|enum|__anon29c6dde30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6074,7 +6074,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_parasite_attach (GimpItem * item,const GimpParasite * parasite)
+DECL|function|gimp_item_parasite_attach (GimpItem * item,const GimpParasite * parasite,gboolean push_undo)
 name|gimp_item_parasite_attach
 parameter_list|(
 name|GimpItem
@@ -6085,6 +6085,9 @@ specifier|const
 name|GimpParasite
 modifier|*
 name|parasite
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|GimpParasite
@@ -6113,10 +6116,19 @@ name|parasite
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|gimp_item_is_attached
 argument_list|(
 name|item
 argument_list|)
+condition|)
+name|push_undo
+operator|=
+name|FALSE
+expr_stmt|;
+if|if
+condition|(
+name|push_undo
 condition|)
 block|{
 comment|/*  only set the dirty bit manually if we can be saved and the new        *  parasite differs from the current one and we aren't undoable        */
@@ -6307,7 +6319,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_parasite_detach (GimpItem * item,const gchar * name)
+DECL|function|gimp_item_parasite_detach (GimpItem * item,const gchar * name,gboolean push_undo)
 name|gimp_item_parasite_detach
 parameter_list|(
 name|GimpItem
@@ -6318,6 +6330,9 @@ specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 specifier|const
@@ -6357,6 +6372,23 @@ operator|!
 name|parasite
 condition|)
 return|return;
+if|if
+condition|(
+operator|!
+name|gimp_item_is_attached
+argument_list|(
+name|item
+argument_list|)
+condition|)
+name|push_undo
+operator|=
+name|FALSE
+expr_stmt|;
+if|if
+condition|(
+name|push_undo
+condition|)
+block|{
 if|if
 condition|(
 name|gimp_parasite_is_undoable
@@ -6410,6 +6442,7 @@ literal|"Remove Parasite from Item"
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|gimp_parasite_list_remove
 argument_list|(

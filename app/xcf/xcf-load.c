@@ -3297,6 +3297,8 @@ name|layer
 argument_list|)
 argument_list|,
 name|p
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_parasite_free
@@ -4076,6 +4078,8 @@ name|channel
 argument_list|)
 argument_list|,
 name|p
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_parasite_free
@@ -7762,6 +7766,8 @@ name|vectors
 argument_list|)
 argument_list|,
 name|parasite
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_parasite_free

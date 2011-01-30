@@ -1249,6 +1249,8 @@ argument_list|(
 name|item
 argument_list|,
 name|parasite
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1356,6 +1358,8 @@ argument_list|(
 name|item
 argument_list|,
 name|name
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1767,6 +1771,8 @@ name|drawable
 argument_list|)
 argument_list|,
 name|parasite
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1877,6 +1883,8 @@ name|drawable
 argument_list|)
 argument_list|,
 name|name
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2291,6 +2299,8 @@ name|vectors
 argument_list|)
 argument_list|,
 name|parasite
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2401,6 +2411,8 @@ name|vectors
 argument_list|)
 argument_list|,
 name|name
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
