@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0de7430103
+DECL|enum|__anon29faff090103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -159,7 +159,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0de7430203
+DECL|enum|__anon29faff090203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6297,6 +6297,32 @@ argument_list|,
 name|gimp_object_get_name
 argument_list|(
 name|replace
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|private
+operator|->
+name|ID
+condition|)
+name|g_hash_table_remove
+argument_list|(
+name|gimp_item_get_image
+argument_list|(
+name|item
+argument_list|)
+operator|->
+name|gimp
+operator|->
+name|item_table
+argument_list|,
+name|GINT_TO_POINTER
+argument_list|(
+name|gimp_item_get_ID
+argument_list|(
+name|item
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
