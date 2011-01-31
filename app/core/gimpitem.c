@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1596400103
+DECL|enum|__anon2a0de7430103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -159,7 +159,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1596400203
+DECL|enum|__anon2a0de7430203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6366,6 +6366,13 @@ argument_list|(
 name|replace
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|private
+operator|->
+name|parasites
 argument_list|)
 expr_stmt|;
 name|private
