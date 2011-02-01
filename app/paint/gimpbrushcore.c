@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297f85dd0103
+DECL|enum|__anon2c498a030103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -4590,10 +4590,18 @@ literal|0.0
 condition|)
 name|aspect_ratio
 operator|=
+operator|(
 name|gimp_brush_generated_get_aspect_ratio
 argument_list|(
 name|generated_brush
 argument_list|)
+operator|-
+literal|1
+operator|)
+operator|/
+literal|19.0
+operator|*
+literal|20.0
 expr_stmt|;
 block|}
 name|height

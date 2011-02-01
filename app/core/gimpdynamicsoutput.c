@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e3c85a0103
+DECL|enum|__anon29b726330103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2219,27 +2219,6 @@ name|tilt_curve
 argument_list|,
 name|tilt_value
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|fabs
-argument_list|(
-name|coords
-operator|->
-name|xtilt
-argument_list|)
-operator|>
-name|fabs
-argument_list|(
-name|coords
-operator|->
-name|ytilt
-argument_list|)
-condition|)
-name|sign
-operator|=
-operator|-
-literal|1.0
 expr_stmt|;
 name|total
 operator|+=
