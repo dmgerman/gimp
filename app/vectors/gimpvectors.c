@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba669830103
+DECL|enum|__anon2c63d0040103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -2841,23 +2841,15 @@ argument_list|)
 expr_stmt|;
 name|vectors
 operator|=
-name|g_object_new
+name|GIMP_VECTORS
+argument_list|(
+name|gimp_item_new
 argument_list|(
 name|GIMP_TYPE_VECTORS
 argument_list|,
-literal|"image"
-argument_list|,
 name|image
 argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_item_configure
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|vectors
-argument_list|)
+name|name
 argument_list|,
 literal|0
 argument_list|,
@@ -2872,8 +2864,7 @@ name|gimp_image_get_height
 argument_list|(
 name|image
 argument_list|)
-argument_list|,
-name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

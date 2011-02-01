@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b99cc630103
+DECL|enum|__anon288d40a50103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -201,7 +201,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b99cc630203
+DECL|enum|__anon288d40a50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4790,23 +4790,15 @@ argument_list|)
 expr_stmt|;
 name|layer
 operator|=
-name|g_object_new
+name|GIMP_LAYER
+argument_list|(
+name|gimp_drawable_new
 argument_list|(
 name|GIMP_TYPE_LAYER
 argument_list|,
-literal|"image"
-argument_list|,
 name|image
 argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_drawable_configure
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
+name|name
 argument_list|,
 literal|0
 argument_list|,
@@ -4817,8 +4809,7 @@ argument_list|,
 name|height
 argument_list|,
 name|type
-argument_list|,
-name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|opacity
