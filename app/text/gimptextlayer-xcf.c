@@ -81,7 +81,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ca01d40103
+DECL|enum|__anon2976c3e40103
 block|{
 DECL|enumerator|TEXT_LAYER_XCF_NONE
 name|TEXT_LAYER_XCF_NONE
@@ -552,6 +552,16 @@ operator|=
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_TEXT_LAYER
+argument_list|,
+literal|"image"
+argument_list|,
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
