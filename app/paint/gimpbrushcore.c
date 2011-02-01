@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c498a030103
+DECL|enum|__anon2bd46f1a0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -4626,11 +4626,19 @@ block|{
 name|scale_x
 operator|=
 name|scale
-operator|/
+operator|*
+operator|(
+literal|1.0
+operator|-
+operator|(
 name|fabs
 argument_list|(
 name|aspect_ratio
 argument_list|)
+operator|/
+literal|20.0
+operator|)
+operator|)
 expr_stmt|;
 name|scale_y
 operator|=
@@ -4652,8 +4660,16 @@ expr_stmt|;
 name|scale_y
 operator|=
 name|scale
-operator|/
+operator|*
+operator|(
+literal|1.0
+operator|-
+operator|(
 name|aspect_ratio
+operator|/
+literal|20.0
+operator|)
+operator|)
 expr_stmt|;
 block|}
 if|if
