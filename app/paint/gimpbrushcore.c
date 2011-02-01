@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd46f1a0103
+DECL|enum|__anon276aed450103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -4193,19 +4193,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|(
 name|scale
 operator|>
 literal|0.0
-operator|)
-operator|&&
-operator|(
-name|paint_options
-operator|->
-name|brush_aspect_ratio
-operator|!=
-literal|0.0
-operator|)
 condition|)
 block|{
 name|scale
