@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc19b790103
+DECL|enum|__anon288123810103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1530,6 +1530,10 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_TEXT_LAYER
 argument_list|,
+literal|"image"
+argument_list|,
+name|image
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -1539,8 +1543,6 @@ name|GIMP_DRAWABLE
 argument_list|(
 name|layer
 argument_list|)
-argument_list|,
-name|image
 argument_list|,
 literal|0
 argument_list|,

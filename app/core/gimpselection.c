@@ -2253,6 +2253,10 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_SELECTION
 argument_list|,
+literal|"image"
+argument_list|,
+name|image
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -2262,8 +2266,6 @@ name|GIMP_DRAWABLE
 argument_list|(
 name|channel
 argument_list|)
-argument_list|,
-name|image
 argument_list|,
 literal|0
 argument_list|,

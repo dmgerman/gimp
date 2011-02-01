@@ -223,7 +223,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c96ea180103
+DECL|enum|__anon2bb9a1c30103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1857,11 +1857,6 @@ expr_stmt|;
 name|gimp_drawable_configure
 argument_list|(
 name|new_drawable
-argument_list|,
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
 argument_list|,
 name|offset_x
 argument_list|,
@@ -5188,16 +5183,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_configure (GimpDrawable * drawable,GimpImage * image,gint offset_x,gint offset_y,gint width,gint height,GimpImageType type,const gchar * name)
+DECL|function|gimp_drawable_configure (GimpDrawable * drawable,gint offset_x,gint offset_y,gint width,gint height,GimpImageType type,const gchar * name)
 name|gimp_drawable_configure
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
-parameter_list|,
-name|GimpImage
-modifier|*
-name|image
 parameter_list|,
 name|gint
 name|offset_x
@@ -5230,14 +5221,6 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_IMAGE
-argument_list|(
-name|image
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
 name|width
 operator|>
 literal|0
@@ -5253,8 +5236,6 @@ name|GIMP_ITEM
 argument_list|(
 name|drawable
 argument_list|)
-argument_list|,
-name|image
 argument_list|,
 name|offset_x
 argument_list|,

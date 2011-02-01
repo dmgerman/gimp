@@ -513,10 +513,6 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpImage
-modifier|*
-name|image
-parameter_list|,
 name|gint
 name|offset_x
 parameter_list|,

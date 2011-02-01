@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2900430d0103
+DECL|enum|__anon2acf95de0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -7614,6 +7614,10 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_CHANNEL
 argument_list|,
+literal|"image"
+argument_list|,
+name|image
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -7623,8 +7627,6 @@ name|GIMP_DRAWABLE
 argument_list|(
 name|channel
 argument_list|)
-argument_list|,
-name|image
 argument_list|,
 literal|0
 argument_list|,

@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ae79340103
+DECL|enum|__anon2b1d1bc60103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -768,6 +768,10 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_LAYER_MASK
 argument_list|,
+literal|"image"
+argument_list|,
+name|image
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -777,8 +781,6 @@ name|GIMP_DRAWABLE
 argument_list|(
 name|layer_mask
 argument_list|)
-argument_list|,
-name|image
 argument_list|,
 literal|0
 argument_list|,
