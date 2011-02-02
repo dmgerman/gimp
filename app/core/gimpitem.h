@@ -174,6 +174,18 @@ name|item
 parameter_list|)
 function_decl|;
 comment|/*  virtual functions  */
+DECL|member|unset_removed
+name|void
+function_decl|(
+modifier|*
+name|unset_removed
+function_decl|)
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+function_decl|;
 DECL|member|is_attached
 name|gboolean
 function_decl|(
