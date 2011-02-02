@@ -713,7 +713,7 @@ name|FALSE
 argument_list|)
 condition|)
 block|{
-comment|/* Save was successful, now store the URI in a couple of            * places            */
+comment|/* Save was successful, now store the URI in a couple of            * places that depend on it being the user that made a            * save. Lower-level URI management is handled in            * file_save()            */
 if|if
 condition|(
 name|dialog
@@ -736,7 +736,6 @@ name|dialog
 operator|->
 name|export
 condition|)
-block|{
 name|g_object_set_data_full
 argument_list|(
 name|G_OBJECT
@@ -761,19 +760,7 @@ operator|)
 name|g_free
 argument_list|)
 expr_stmt|;
-comment|/* Forget the import source when we save. We interpret a                * save as that the user is not interested in being able                * to quickly export back to the original any longer                */
-name|gimp_image_set_imported_uri
-argument_list|(
-name|dialog
-operator|->
-name|image
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-block|}
 else|else
-block|{
 name|g_object_set_data_full
 argument_list|(
 name|G_OBJECT
@@ -798,17 +785,6 @@ operator|)
 name|g_free
 argument_list|)
 expr_stmt|;
-comment|/* Remeber the last entered Export URI for the image. We                * only need to do this explicitly when exporting. It                * happens implicitly when saving since the GimpObject name                * of a GimpImage is the last-save URI                */
-name|gimp_image_set_exported_uri
-argument_list|(
-name|dialog
-operator|->
-name|image
-argument_list|,
-name|uri
-argument_list|)
-expr_stmt|;
-block|}
 comment|/*  make sure the menus are updated with the keys we've just set  */
 name|gimp_image_flush
 argument_list|(
