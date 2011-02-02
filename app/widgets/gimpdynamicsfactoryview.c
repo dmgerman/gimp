@@ -233,17 +233,6 @@ argument_list|(
 name|factory_view
 argument_list|)
 expr_stmt|;
-name|gtk_widget_hide
-argument_list|(
-name|gimp_data_factory_view_get_duplicate_button
-argument_list|(
-name|GIMP_DATA_FACTORY_VIEW
-argument_list|(
-name|factory_view
-argument_list|)
-argument_list|)
-argument_list|)
-expr_stmt|;
 return|return
 name|GTK_WIDGET
 argument_list|(
