@@ -2463,12 +2463,13 @@ argument_list|(
 name|layer
 argument_list|)
 condition|)
+name|gimp_group_layer_get_projection
+argument_list|(
 name|GIMP_GROUP_LAYER
 argument_list|(
 name|layer
 argument_list|)
-operator|->
-name|projection
+argument_list|)
 operator|->
 name|use_gegl
 operator|=
