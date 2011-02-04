@@ -107,6 +107,10 @@ DECL|member|interpolation_type
 name|GimpInterpolationType
 name|interpolation_type
 decl_stmt|;
+DECL|member|default_threshold
+name|gint
+name|default_threshold
+decl_stmt|;
 DECL|member|plug_in_path
 name|gchar
 modifier|*
