@@ -40,9 +40,6 @@ name|GimpRGB
 modifier|*
 name|color
 parameter_list|,
-name|gint
-name|threshold
-parameter_list|,
 name|gboolean
 name|select_transparent
 parameter_list|)
@@ -113,9 +110,6 @@ name|x
 parameter_list|,
 name|gdouble
 name|y
-parameter_list|,
-name|gint
-name|threshold
 parameter_list|,
 name|gboolean
 name|select_transparent

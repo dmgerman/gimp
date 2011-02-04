@@ -156,9 +156,6 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
-name|gint32
-name|threshold
-decl_stmt|;
 name|gboolean
 name|select_transparent
 decl_stmt|;
@@ -219,19 +216,6 @@ operator|&
 name|color
 argument_list|)
 expr_stmt|;
-name|threshold
-operator|=
-name|g_value_get_int
-argument_list|(
-operator|&
-name|args
-operator|->
-name|values
-index|[
-literal|4
-index|]
-argument_list|)
-expr_stmt|;
 name|select_transparent
 operator|=
 name|g_value_get_boolean
@@ -241,7 +225,7 @@ name|args
 operator|->
 name|values
 index|[
-literal|5
+literal|4
 index|]
 argument_list|)
 expr_stmt|;
@@ -296,7 +280,16 @@ argument_list|,
 operator|&
 name|color
 argument_list|,
-name|threshold
+call|(
+name|gint
+call|)
+argument_list|(
+name|pdb_context
+operator|->
+name|sample_threshold
+operator|*
+literal|255.99
+argument_list|)
 argument_list|,
 name|select_transparent
 argument_list|,
@@ -807,9 +800,6 @@ decl_stmt|;
 name|gdouble
 name|y
 decl_stmt|;
-name|gint32
-name|threshold
-decl_stmt|;
 name|gboolean
 name|select_transparent
 decl_stmt|;
@@ -882,19 +872,6 @@ literal|4
 index|]
 argument_list|)
 expr_stmt|;
-name|threshold
-operator|=
-name|g_value_get_int
-argument_list|(
-operator|&
-name|args
-operator|->
-name|values
-index|[
-literal|5
-index|]
-argument_list|)
-expr_stmt|;
 name|select_transparent
 operator|=
 name|g_value_get_boolean
@@ -904,7 +881,7 @@ name|args
 operator|->
 name|values
 index|[
-literal|6
+literal|5
 index|]
 argument_list|)
 expr_stmt|;
@@ -960,7 +937,16 @@ name|x
 argument_list|,
 name|y
 argument_list|,
-name|threshold
+call|(
+name|gint
+call|)
+argument_list|(
+name|pdb_context
+operator|->
+name|sample_threshold
+operator|*
+literal|255.99
+argument_list|)
 argument_list|,
 name|select_transparent
 argument_list|,
@@ -1691,7 +1677,7 @@ literal|"gimp-image-select-color"
 argument_list|,
 literal|"Create a selection by selecting all pixels (in the specified drawable) with the same (or similar) color to that specified."
 argument_list|,
-literal|"This tool creates a selection over the specified image. A by-color selection is determined by the supplied color under the constraints of the specified threshold. Essentially, all pixels (in the drawable) that have color sufficiently close to the specified color (as determined by the threshold value) are included in the selection. To select transparent regions, the color specified must also have minimum alpha. This prodecure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius', 'gimp-context-set-sample-merged', 'gimp-context-set-sample-criterion'. In the case of a merged sampling, the supplied drawable is ignored."
+literal|"This tool creates a selection over the specified image. A by-color selection is determined by the supplied color under the constraints of the current context settings. Essentially, all pixels (in the drawable) that have color sufficiently close to the specified color (as determined by the threshold and criterion context values) are included in the selection. To select transparent regions, the color specified must also have minimum alpha. This prodecure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius', 'gimp-context-set-sample-merged', 'gimp-context-set-sample-criterion', 'gimp-context-set-sample-threshold'. In the case of a merged sampling, the supplied drawable is ignored."
 argument_list|,
 literal|"David Gowers"
 argument_list|,
@@ -1781,28 +1767,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|NULL
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|gimp_param_spec_int32
-argument_list|(
-literal|"threshold"
-argument_list|,
-literal|"threshold"
-argument_list|,
-literal|"Threshold in intensity levels"
-argument_list|,
-literal|0
-argument_list|,
-literal|255
-argument_list|,
-literal|0
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -2174,8 +2138,8 @@ literal|"gimp-image-select-fuzzy"
 argument_list|,
 literal|"Create a fuzzy selection starting at the specified coordinates on the specified drawable."
 argument_list|,
-literal|"This tool creates a fuzzy selection over the specified image. A fuzzy selection is determined by a seed fill under the constraints of the specified threshold. Essentially, the color at the specified coordinates (in the drawable) is measured and the selection expands outwards from that point to any adjacent pixels which are not significantly different (as determined by the threshold value). This process continues until no more expansion is possible. If antialiasing is turned on, the final selection mask will contain intermediate values based on close misses to the threshold bar at pixels along the seed fill boundary. This prodecure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius', 'gimp-context-set-sample-merged', 'gimp-context-set-sample-criterion'. In the case of a merged sampling, the supplied drawable is ignored. If the sample is merged, the specified coordinates are relative to the image"
-literal|"origin; otherwise, they are relative to the drawable's origin."
+literal|"This tool creates a fuzzy selection over the specified image. A fuzzy selection is determined by a seed fill under the constraints of the current context settings. Essentially, the color at the specified coordinates (in the drawable) is measured and the selection expands outwards from that point to any adjacent pixels which are not significantly different (as determined by the threshold and criterion context settings). This process continues until no more expansion is possible. If antialiasing is turned on, the final selection mask will contain intermediate values based on close misses to the threshold bar at pixels along the seed fill boundary. This prodecure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius', 'gimp-context-set-sample-merged', 'gimp-context-set-sample-criterion', 'gimp-context-set-sample-threshold'. In the case of a merged sampling, the supplied drawable is ignored. If the"
+literal|"sample is merged, the specified coordinates are relative to the image origin; otherwise, they are relative to the drawable's origin."
 argument_list|,
 literal|"David Gowers"
 argument_list|,
@@ -2289,28 +2253,6 @@ operator|-
 name|G_MAXDOUBLE
 argument_list|,
 name|G_MAXDOUBLE
-argument_list|,
-literal|0
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|gimp_param_spec_int32
-argument_list|(
-literal|"threshold"
-argument_list|,
-literal|"threshold"
-argument_list|,
-literal|"Threshold in intensity levels"
-argument_list|,
-literal|0
-argument_list|,
-literal|255
 argument_list|,
 literal|0
 argument_list|,
