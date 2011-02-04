@@ -39,9 +39,6 @@ specifier|const
 name|GimpRGB
 modifier|*
 name|color
-parameter_list|,
-name|gboolean
-name|select_transparent
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -110,9 +107,6 @@ name|x
 parameter_list|,
 name|gdouble
 name|y
-parameter_list|,
-name|gboolean
-name|select_transparent
 parameter_list|)
 function_decl|;
 end_function_decl

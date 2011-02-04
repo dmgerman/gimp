@@ -156,9 +156,6 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
-name|gboolean
-name|select_transparent
-decl_stmt|;
 name|image
 operator|=
 name|gimp_value_get_image
@@ -214,19 +211,6 @@ index|]
 argument_list|,
 operator|&
 name|color
-argument_list|)
-expr_stmt|;
-name|select_transparent
-operator|=
-name|g_value_get_boolean
-argument_list|(
-operator|&
-name|args
-operator|->
-name|values
-index|[
-literal|4
-index|]
 argument_list|)
 expr_stmt|;
 if|if
@@ -291,7 +275,9 @@ operator|*
 literal|255.99
 argument_list|)
 argument_list|,
-name|select_transparent
+name|pdb_context
+operator|->
+name|sample_transparent
 argument_list|,
 name|pdb_context
 operator|->
@@ -800,9 +786,6 @@ decl_stmt|;
 name|gdouble
 name|y
 decl_stmt|;
-name|gboolean
-name|select_transparent
-decl_stmt|;
 name|image
 operator|=
 name|gimp_value_get_image
@@ -872,19 +855,6 @@ literal|4
 index|]
 argument_list|)
 expr_stmt|;
-name|select_transparent
-operator|=
-name|g_value_get_boolean
-argument_list|(
-operator|&
-name|args
-operator|->
-name|values
-index|[
-literal|5
-index|]
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|success
@@ -948,7 +918,9 @@ operator|*
 literal|255.99
 argument_list|)
 argument_list|,
-name|select_transparent
+name|pdb_context
+operator|->
+name|sample_transparent
 argument_list|,
 name|pdb_context
 operator|->
@@ -1677,7 +1649,7 @@ literal|"gimp-image-select-color"
 argument_list|,
 literal|"Create a selection by selecting all pixels (in the specified drawable) with the same (or similar) color to that specified."
 argument_list|,
-literal|"This tool creates a selection over the specified image. A by-color selection is determined by the supplied color under the constraints of the current context settings. Essentially, all pixels (in the drawable) that have color sufficiently close to the specified color (as determined by the threshold and criterion context values) are included in the selection. To select transparent regions, the color specified must also have minimum alpha. This prodecure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius', 'gimp-context-set-sample-merged', 'gimp-context-set-sample-criterion', 'gimp-context-set-sample-threshold'. In the case of a merged sampling, the supplied drawable is ignored."
+literal|"This tool creates a selection over the specified image. A by-color selection is determined by the supplied color under the constraints of the current context settings. Essentially, all pixels (in the drawable) that have color sufficiently close to the specified color (as determined by the threshold and criterion context values) are included in the selection. To select transparent regions, the color specified must also have minimum alpha. This prodecure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius', 'gimp-context-set-sample-merged', 'gimp-context-set-sample-criterion', 'gimp-context-set-sample-threshold', 'gimp-context-set-sample-transparent'. In the case of a merged sampling, the supplied drawable is ignored."
 argument_list|,
 literal|"David Gowers"
 argument_list|,
@@ -1767,24 +1739,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|NULL
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|g_param_spec_boolean
-argument_list|(
-literal|"select-transparent"
-argument_list|,
-literal|"select transparent"
-argument_list|,
-literal|"Whether to consider transparent pixels for selection. If TRUE, transparency is considered as a unique selectable color."
-argument_list|,
-name|FALSE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -2255,24 +2209,6 @@ argument_list|,
 name|G_MAXDOUBLE
 argument_list|,
 literal|0
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|g_param_spec_boolean
-argument_list|(
-literal|"select-transparent"
-argument_list|,
-literal|"select transparent"
-argument_list|,
-literal|"Whether to consider transparent pixels for selection. If TRUE, transparency is considered as a unique selectable color."
-argument_list|,
-name|FALSE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
