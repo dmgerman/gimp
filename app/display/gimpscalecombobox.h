@@ -27,16 +27,6 @@ literal|23
 operator|,
 literal|1
 argument_list|)
-operator|&&
-operator|!
-name|GTK_CHECK_VERSION
-argument_list|(
-literal|2
-operator|,
-literal|24
-operator|,
-literal|0
-argument_list|)
 end_if
 
 begin_undef
