@@ -700,11 +700,6 @@ argument_list|,
 name|widget
 argument_list|)
 expr_stmt|;
-name|gtk_widget_style_attach
-argument_list|(
-name|widget
-argument_list|)
-expr_stmt|;
 name|gtk_style_context_set_background
 argument_list|(
 name|gtk_widget_get_style_context
