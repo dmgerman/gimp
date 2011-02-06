@@ -2018,7 +2018,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon28c366110108
+DECL|struct|__anon29b5cc7f0108
 block|{
 DECL|member|modifiers
 name|GdkModifierType
@@ -3007,13 +3007,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_window_get_native:  * @window: a #GtkWindow  *  * This function is used to pass a window handle to plug-ins so that  * they can set their dialog windows transient to the parent window.  *  * Return value: a native window handle of the window's #GdkWindow or 0  *               if the window isn't realized yet  */
+comment|/**  * gimp_window_get_native_id:  * @window: a #GtkWindow  *  * This function is used to pass a window handle to plug-ins so that  * they can set their dialog windows transient to the parent window.  *  * Return value: a native window ID of the window's #GdkWindow or 0  *               if the window isn't realized yet  */
 end_comment
 
 begin_function
-name|GdkNativeWindow
-DECL|function|gimp_window_get_native (GtkWindow * window)
-name|gimp_window_get_native
+name|guint32
+DECL|function|gimp_window_get_native_id (GtkWindow * window)
+name|gimp_window_get_native_id
 parameter_list|(
 name|GtkWindow
 modifier|*
@@ -3042,9 +3042,6 @@ warning|gimp_window_get_native() unimplementable for the target windowing system
 endif|#
 directive|endif
 return|return
-operator|(
-name|GdkNativeWindow
-operator|)
 literal|0
 return|;
 endif|#
@@ -3065,9 +3062,6 @@ argument_list|)
 argument_list|)
 condition|)
 return|return
-operator|(
-name|GdkNativeWindow
-operator|)
 name|GDK_WINDOW_HWND
 argument_list|(
 name|gtk_widget_get_window
@@ -3111,9 +3105,6 @@ return|;
 endif|#
 directive|endif
 return|return
-operator|(
-name|GdkNativeWindow
-operator|)
 literal|0
 return|;
 block|}

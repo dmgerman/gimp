@@ -665,9 +665,9 @@ end_function
 
 begin_function
 specifier|static
-name|GdkNativeWindow
-DECL|function|gimp_window_get_native (GtkWindow * window)
-name|gimp_window_get_native
+name|guint32
+DECL|function|gimp_window_get_native_id (GtkWindow * window)
+name|gimp_window_get_native_id
 parameter_list|(
 name|GtkWindow
 modifier|*
@@ -802,10 +802,7 @@ name|toplevel
 argument_list|)
 condition|)
 return|return
-operator|(
-name|guint32
-operator|)
-name|gimp_window_get_native
+name|gimp_window_get_native_id
 argument_list|(
 name|GTK_WINDOW
 argument_list|(

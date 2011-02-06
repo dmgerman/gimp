@@ -177,11 +177,11 @@ modifier|*
 name|progress
 parameter_list|)
 function_decl|;
-DECL|member|get_window
+DECL|member|get_window_id
 name|guint32
 function_decl|(
 modifier|*
-name|get_window
+name|get_window_id
 function_decl|)
 parameter_list|(
 name|GimpProgress
@@ -341,7 +341,7 @@ end_function_decl
 
 begin_function_decl
 name|guint32
-name|gimp_progress_get_window
+name|gimp_progress_get_window_id
 parameter_list|(
 name|GimpProgress
 modifier|*

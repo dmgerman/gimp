@@ -246,11 +246,11 @@ modifier|*
 name|display
 parameter_list|)
 function_decl|;
-DECL|member|display_get_window
+DECL|member|display_get_window_id
 name|guint32
 function_decl|(
 modifier|*
-name|display_get_window
+name|display_get_window_id
 function_decl|)
 parameter_list|(
 name|GimpObject
@@ -564,7 +564,7 @@ end_function_decl
 
 begin_function_decl
 name|guint32
-name|gimp_get_display_window
+name|gimp_get_display_window_id
 parameter_list|(
 name|Gimp
 modifier|*

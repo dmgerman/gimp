@@ -492,7 +492,7 @@ operator|=
 operator|(
 name|gint32
 operator|)
-name|gimp_get_display_window
+name|gimp_get_display_window_id
 argument_list|(
 name|gimp
 argument_list|,

@@ -362,8 +362,8 @@ end_function
 begin_function
 specifier|static
 name|guint32
-DECL|function|gimp_display_shell_progress_get_window (GimpProgress * progress)
-name|gimp_display_shell_progress_get_window
+DECL|function|gimp_display_shell_progress_get_window_id (GimpProgress * progress)
+name|gimp_display_shell_progress_get_window_id
 parameter_list|(
 name|GimpProgress
 modifier|*
@@ -390,10 +390,7 @@ name|toplevel
 argument_list|)
 condition|)
 return|return
-operator|(
-name|guint32
-operator|)
-name|gimp_window_get_native
+name|gimp_window_get_native_id
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -578,9 +575,9 @@ name|gimp_display_shell_progress_pulse
 expr_stmt|;
 name|iface
 operator|->
-name|get_window
+name|get_window_id
 operator|=
-name|gimp_display_shell_progress_get_window
+name|gimp_display_shell_progress_get_window_id
 expr_stmt|;
 name|iface
 operator|->

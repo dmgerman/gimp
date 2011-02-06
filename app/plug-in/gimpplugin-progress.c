@@ -790,8 +790,8 @@ end_function
 
 begin_function
 name|guint32
-DECL|function|gimp_plug_in_progress_get_window (GimpPlugIn * plug_in)
-name|gimp_plug_in_progress_get_window
+DECL|function|gimp_plug_in_progress_get_window_id (GimpPlugIn * plug_in)
+name|gimp_plug_in_progress_get_window_id
 parameter_list|(
 name|GimpPlugIn
 modifier|*
@@ -826,7 +826,7 @@ operator|->
 name|progress
 condition|)
 return|return
-name|gimp_progress_get_window
+name|gimp_progress_get_window_id
 argument_list|(
 name|proc_frame
 operator|->
