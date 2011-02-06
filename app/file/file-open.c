@@ -1683,6 +1683,11 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|basename
+argument_list|)
+expr_stmt|;
 block|}
 name|gimp_create_display
 argument_list|(
