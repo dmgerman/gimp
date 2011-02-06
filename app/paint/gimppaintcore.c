@@ -151,7 +151,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4c00ac0103
+DECL|enum|__anon2a19a7360103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5435,14 +5435,6 @@ name|core
 operator|->
 name|stroke_buffer
 decl_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_PAINT_CORE
-argument_list|(
-name|core
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|core
@@ -5452,7 +5444,7 @@ operator|==
 name|NULL
 condition|)
 return|return;
-comment|/*Paint core has not initalized yet*/
+comment|/* Paint core has not initalized yet */
 if|if
 condition|(
 name|smoothing_options
@@ -5517,7 +5509,7 @@ operator|<
 literal|2
 condition|)
 return|return;
-comment|/*Just dont bother, nothing to do*/
+comment|/* Just dont bother, nothing to do */
 name|coords
 operator|->
 name|x
