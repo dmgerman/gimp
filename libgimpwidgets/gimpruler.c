@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a90b6da0103
+DECL|enum|__anon2c10d54e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -100,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a90b6da0208
+DECL|struct|__anon2c10d54e0208
 block|{
 DECL|member|orientation
 name|GtkOrientation
@@ -175,7 +175,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a90b6da0308
+DECL|struct|__anon2c10d54e0308
 block|{
 DECL|member|ruler_scale
 specifier|const
@@ -1708,6 +1708,8 @@ operator|&
 name|widget_y
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
 name|gtk_widget_translate_coordinates
 argument_list|(
 name|widget
@@ -1727,7 +1729,8 @@ argument_list|,
 operator|&
 name|ruler_y
 argument_list|)
-expr_stmt|;
+condition|)
+block|{
 name|gimp_ruler_update_position
 argument_list|(
 name|ruler
@@ -1737,6 +1740,7 @@ argument_list|,
 name|ruler_y
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|FALSE
 return|;
