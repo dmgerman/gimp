@@ -359,6 +359,26 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_get_style_color
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|property_name
+parameter_list|,
+name|GdkRGBA
+modifier|*
+name|color
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_window_set_hint
 parameter_list|(
