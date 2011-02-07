@@ -3,6 +3,10 @@ begin_comment
 comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995-1999 Spencer Kimball and Peter Mattis  *  * gimpunit.c  * Copyright (C) 1999-2000 Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
+begin_comment
+comment|/* This file contains the definition of the size unit objects. The  * factor of the units is relative to inches (which have a factor of 1).  */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -52,7 +56,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9cd3a80108
+DECL|struct|__anon2b8e31f90108
 block|{
 DECL|member|delete_on_exit
 name|gboolean
