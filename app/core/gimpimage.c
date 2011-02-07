@@ -340,7 +340,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a818880103
+DECL|enum|__anon2a4c9e300103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -434,7 +434,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a818880203
+DECL|enum|__anon2a4c9e300203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -15377,6 +15377,11 @@ argument_list|,
 name|active_channel
 argument_list|)
 expr_stmt|;
+name|g_object_ref
+argument_list|(
+name|channel
+argument_list|)
+expr_stmt|;
 name|new_active
 operator|=
 name|GIMP_CHANNEL
@@ -15424,6 +15429,11 @@ name|image
 argument_list|)
 expr_stmt|;
 block|}
+name|g_object_unref
+argument_list|(
+name|channel
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|undo_group
@@ -15687,6 +15697,11 @@ argument_list|,
 name|active_vectors
 argument_list|)
 expr_stmt|;
+name|g_object_ref
+argument_list|(
+name|vectors
+argument_list|)
+expr_stmt|;
 name|new_active
 operator|=
 name|GIMP_VECTORS
@@ -15720,6 +15735,11 @@ argument_list|(
 name|image
 argument_list|,
 name|new_active
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|vectors
 argument_list|)
 expr_stmt|;
 block|}
