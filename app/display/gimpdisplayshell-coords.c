@@ -243,35 +243,6 @@ name|last_coords
 operator|.
 name|pressure
 expr_stmt|;
-comment|/* Try to detect a pen lift */
-if|if
-condition|(
-operator|(
-name|delta_time
-operator|<
-literal|50
-operator|)
-operator|&&
-operator|(
-name|fabs
-argument_list|(
-name|delta_pressure
-argument_list|)
-operator|>
-literal|0.04
-operator|)
-operator|&&
-operator|(
-name|delta_pressure
-operator|<
-literal|0.0
-operator|)
-condition|)
-block|{
-return|return
-name|FALSE
-return|;
-block|}
 if|if
 condition|(
 name|shell
@@ -1232,10 +1203,10 @@ expr_stmt|;
 block|}
 ifdef|#
 directive|ifdef
-name|VERBOSE
+name|EVENT_VERBOSE
 name|g_printerr
 argument_list|(
-literal|"DIST: %f, DT:%f, Vel:%f, Press:%f,smooth_dd:%f, sf %f\n"
+literal|"DIST: %f, DT:%f, Vel:%f, Press:%f,smooth_dd:%f, POS: (%f, %f)\n"
 argument_list|,
 name|distance
 argument_list|,
@@ -1255,7 +1226,13 @@ name|distance
 operator|-
 name|dist
 argument_list|,
-name|inertia_factor
+name|coords
+operator|->
+name|x
+argument_list|,
+name|coords
+operator|->
+name|y
 argument_list|)
 expr_stmt|;
 endif|#
