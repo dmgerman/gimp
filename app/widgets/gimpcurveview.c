@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b30fa730103
+DECL|enum|__anon2c92c9570103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -135,7 +135,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b30fa730203
+DECL|enum|__anon2c92c9570203
 block|{
 DECL|enumerator|CUT_CLIPBOARD
 name|CUT_CLIPBOARD
@@ -155,7 +155,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b30fa730308
+DECL|struct|__anon2c92c9570308
 block|{
 DECL|member|curve
 name|GimpCurve
@@ -2179,18 +2179,6 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|gtk_style_context_save
-argument_list|(
-name|style
-argument_list|)
-expr_stmt|;
-name|gtk_style_context_add_class
-argument_list|(
-name|style
-argument_list|,
-name|GTK_STYLE_CLASS_ENTRY
-argument_list|)
-expr_stmt|;
 name|gtk_widget_get_allocation
 argument_list|(
 name|widget
@@ -3470,11 +3458,6 @@ literal|0.6
 argument_list|)
 expr_stmt|;
 block|}
-name|gtk_style_context_restore
-argument_list|(
-name|style
-argument_list|)
-expr_stmt|;
 return|return
 name|FALSE
 return|;
