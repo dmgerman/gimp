@@ -124,7 +124,7 @@ modifier|*
 name|insensitive_item_attr
 decl_stmt|;
 DECL|member|selected_item_color
-name|GdkColor
+name|GdkRGBA
 name|selected_item_color
 decl_stmt|;
 block|}

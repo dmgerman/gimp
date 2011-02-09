@@ -165,7 +165,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0368a50103
+DECL|enum|__anon2bf6e9bc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3415,7 +3415,7 @@ operator|==
 name|GTK_STATE_SELECTED
 condition|)
 block|{
-name|gdk_cairo_set_source_color
+name|gdk_cairo_set_source_rgba
 argument_list|(
 name|cr
 argument_list|,
