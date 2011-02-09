@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib/gstdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -274,7 +280,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a34bb8c0108
+DECL|struct|__anon2c7e6a650108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -848,6 +854,11 @@ operator|==
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_unlink
+argument_list|(
+name|save_filename
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -995,6 +1006,11 @@ argument_list|,
 operator|==
 argument_list|,
 name|save_uri
+argument_list|)
+expr_stmt|;
+name|g_unlink
+argument_list|(
+name|save_filename
 argument_list|)
 expr_stmt|;
 block|}
