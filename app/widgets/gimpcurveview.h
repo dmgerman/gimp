@@ -114,6 +114,11 @@ name|GimpCurve
 modifier|*
 name|curve
 decl_stmt|;
+DECL|member|curve_color
+name|GimpRGB
+modifier|*
+name|curve_color
+decl_stmt|;
 DECL|member|bg_curves
 name|GList
 modifier|*
@@ -285,6 +290,11 @@ parameter_list|,
 name|GimpCurve
 modifier|*
 name|curve
+parameter_list|,
+specifier|const
+name|GimpRGB
+modifier|*
+name|color
 parameter_list|)
 function_decl|;
 end_function_decl

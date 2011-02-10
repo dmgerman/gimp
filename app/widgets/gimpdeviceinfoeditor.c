@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon276a101d0103
+DECL|enum|__anon29915f400103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon276a101d0203
+DECL|enum|__anon29915f400203
 block|{
 DECL|enumerator|AXIS_COLUMN_INDEX
 name|AXIS_COLUMN_INDEX
@@ -107,7 +107,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon276a101d0303
+DECL|enum|__anon29915f400303
 block|{
 DECL|enumerator|INPUT_COLUMN_INDEX
 name|INPUT_COLUMN_INDEX
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon276a101d0403
+DECL|enum|__anon29915f400403
 block|{
 DECL|enumerator|KEY_COLUMN_INDEX
 name|KEY_COLUMN_INDEX
@@ -1945,6 +1945,8 @@ name|view
 argument_list|)
 argument_list|,
 name|curve
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|hbox

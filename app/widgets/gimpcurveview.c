@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets-types.h"
 end_include
 
@@ -83,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e177ee0103
+DECL|enum|__anon294271b70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e177ee0203
+DECL|enum|__anon294271b70203
 block|{
 DECL|enumerator|CUT_CLIPBOARD
 name|CUT_CLIPBOARD
@@ -125,7 +131,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e177ee0308
+DECL|struct|__anon294271b70308
 block|{
 DECL|member|curve
 name|GimpCurve
@@ -1010,6 +1016,8 @@ decl_stmt|;
 name|gimp_curve_view_set_curve
 argument_list|(
 name|view
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -2295,6 +2303,22 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  Draw the curve  */
+if|if
+condition|(
+name|view
+operator|->
+name|curve_color
+condition|)
+name|gimp_cairo_set_source_rgb
+argument_list|(
+name|cr
+argument_list|,
+name|view
+operator|->
+name|curve_color
+argument_list|)
+expr_stmt|;
+else|else
 name|gdk_cairo_set_source_color
 argument_list|(
 name|cr
@@ -4849,7 +4873,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_curve_view_set_curve (GimpCurveView * view,GimpCurve * curve)
+DECL|function|gimp_curve_view_set_curve (GimpCurveView * view,GimpCurve * curve,const GimpRGB * color)
 name|gimp_curve_view_set_curve
 parameter_list|(
 name|GimpCurveView
@@ -4859,6 +4883,11 @@ parameter_list|,
 name|GimpCurve
 modifier|*
 name|curve
+parameter_list|,
+specifier|const
+name|GimpRGB
+modifier|*
+name|color
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -4953,6 +4982,44 @@ name|view
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|view
+operator|->
+name|curve_color
+condition|)
+name|g_free
+argument_list|(
+name|view
+operator|->
+name|curve_color
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|color
+condition|)
+name|view
+operator|->
+name|curve_color
+operator|=
+name|g_memdup
+argument_list|(
+name|color
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|GimpRGB
+argument_list|)
+argument_list|)
+expr_stmt|;
+else|else
+name|view
+operator|->
+name|curve_color
+operator|=
+name|NULL
+expr_stmt|;
 name|gtk_widget_queue_draw
 argument_list|(
 name|GTK_WIDGET

@@ -81,7 +81,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2782ac5c0103
+DECL|enum|__anon2a8d9ee60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2782ac5c0203
+DECL|enum|__anon2a8d9ee60203
 block|{
 DECL|enumerator|INPUT_COLUMN_INDEX
 name|INPUT_COLUMN_INDEX
@@ -116,7 +116,7 @@ end_enum
 
 begin_struct
 struct|struct
-DECL|struct|__anon2782ac5c0308
+DECL|struct|__anon2a8d9ee60308
 block|{
 DECL|member|use_property
 specifier|const
@@ -223,7 +223,7 @@ block|,
 block|{
 literal|1.0
 block|,
-literal|1.0
+literal|0.5
 block|,
 literal|0.0
 block|,
@@ -1616,6 +1616,8 @@ name|curve_view
 argument_list|)
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_curve_view_remove_all_backgrounds
@@ -1698,6 +1700,14 @@ name|curve_view
 argument_list|)
 argument_list|,
 name|input_curve
+argument_list|,
+operator|&
+name|inputs
+index|[
+name|i
+index|]
+operator|.
+name|color
 argument_list|)
 expr_stmt|;
 name|private
