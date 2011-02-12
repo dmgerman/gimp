@@ -554,7 +554,7 @@ literal|"use-palette"
 argument_list|,
 name|_
 argument_list|(
-literal|"Apply stored pallete"
+literal|"Apply stored palette"
 argument_list|)
 argument_list|)
 expr_stmt|;
