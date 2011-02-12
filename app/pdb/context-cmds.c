@@ -6558,7 +6558,7 @@ literal|"gimp-context-set-antialias"
 argument_list|,
 literal|"Set the antialias setting."
 argument_list|,
-literal|"This procedure modifies the antialias setting. If antialiasing is turned on, the edges of selected region will contain intermediate values which give the appearance of a sharper, less pixelized edge. This should be set as TRUE most of the time unless a binary-only selection is wanted. This settings affects the following procedures: The entire gimp-image-select-foo group of procedures."
+literal|"This procedure modifies the antialias setting. If antialiasing is turned on, the edges of selected region will contain intermediate values which give the appearance of a sharper, less pixelized edge. This should be set as TRUE most of the time unless a binary-only selection is wanted. This settings affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-ellipse', 'gimp-image-select-polygon', 'gimp-image-select-fuzzy', 'gimp-image-select-round-rectangle', 'gimp-image-select-item'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -6692,7 +6692,7 @@ literal|"gimp-context-set-feather"
 argument_list|,
 literal|"Set the feather setting."
 argument_list|,
-literal|"This procedure modifies the feather setting. If the feather option is enabled, selections will be blurred before combining. The blur is a gaussian blur; its radii can be controlled using 'gimp-context-set-feather-radius'. This settings affects the following procedures: The entire gimp-image-select-foo group of procedures."
+literal|"This procedure modifies the feather setting. If the feather option is enabled, selections will be blurred before combining. The blur is a gaussian blur; its radii can be controlled using 'gimp-context-set-feather-radius'. This setting affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-ellipse', 'gimp-image-select-polygon', 'gimp-image-select-fuzzy', 'gimp-image-select-rectangle', 'gimp-image-select-round-rectangle', 'gimp-image-select-item'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -6852,7 +6852,7 @@ literal|"gimp-context-set-feather-radius"
 argument_list|,
 literal|"Set the feather radius setting."
 argument_list|,
-literal|"This procedure modifies the feather radius setting. This settings affects the following procedures: The entire gimp-image-select-foo group of procedures."
+literal|"This procedure modifies the feather radius setting. This setting affects the all procedures that are affected by 'gimp-context-set-feather'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -7704,7 +7704,7 @@ literal|"gimp-context-set-interpolation"
 argument_list|,
 literal|"Set the interpolation type."
 argument_list|,
-literal|"This procedure modifies the interpolation setting. It affects the following procedures: all transform procedures which can produce sub-pixel results, 'gimp-image-scale', 'gimp-layer-scale'."
+literal|"This procedure modifies the interpolation setting. This setting affects affects the following procedures: 'gimp-item-transform-flip', 'gimp-item-transform-perspective', 'gimp-item-transform-rotate', 'gimp-item-transform-scale', 'gimp-item-transform-shear', 'gimp-item-transform-2d', 'gimp-item-transform-matrix', 'gimp-image-scale', 'gimp-layer-scale'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -7842,7 +7842,7 @@ literal|"gimp-context-set-transform-direction"
 argument_list|,
 literal|"Set the transform direction."
 argument_list|,
-literal|"This procedure modifies the transform direction setting."
+literal|"This procedure modifies the transform direction setting. This setting affects affects the following procedures: 'gimp-item-transform-flip', 'gimp-item-transform-perspective', 'gimp-item-transform-rotate', 'gimp-item-transform-scale', 'gimp-item-transform-shear', 'gimp-item-transform-2d', 'gimp-item-transform-matrix'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -7980,7 +7980,7 @@ literal|"gimp-context-set-transform-resize"
 argument_list|,
 literal|"Set the transform resize type."
 argument_list|,
-literal|"This procedure modifies the transform resize setting. When transforming pixels, if the result of a transform operation has a different size than the original area, this setting determines how the resulting area is sized."
+literal|"This procedure modifies the transform resize setting. When transforming pixels, if the result of a transform operation has a different size than the original area, this setting determines how the resulting area is sized. This setting affects affects the following procedures: 'gimp-item-transform-flip', 'gimp-item-transform-flip-simple', 'gimp-item-transform-perspective', 'gimp-item-transform-rotate', 'gimp-item-transform-rotate-simple', 'gimp-item-transform-scale', 'gimp-item-transform-shear', 'gimp-item-transform-2d', 'gimp-item-transform-matrix'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -8120,7 +8120,7 @@ literal|"gimp-context-set-transform-recursion"
 argument_list|,
 literal|"Set the transform supersampling recursion."
 argument_list|,
-literal|"This procedure modifies the transform supersampling recursion level setting. Whether or not a transformation does supersampling is determined by the interplolation type. The recursion level defaults to 3, which is a nice default value."
+literal|"This procedure modifies the transform supersampling recursion level setting. Whether or not a transformation does supersampling is determined by the interplolation type. The recursion level defaults to 3, which is a nice default value. This setting affects affects the following procedures: 'gimp-item-transform-flip', 'gimp-item-transform-perspective', 'gimp-item-transform-rotate', 'gimp-item-transform-scale', 'gimp-item-transform-shear', 'gimp-item-transform-2d', 'gimp-item-transform-matrix'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

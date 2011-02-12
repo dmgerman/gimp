@@ -1955,7 +1955,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_antialias:  * @antialias: The antialias setting.  *  * Set the antialias setting.  *  * This procedure modifies the antialias setting. If antialiasing is  * turned on, the edges of selected region will contain intermediate  * values which give the appearance of a sharper, less pixelized edge.  * This should be set as TRUE most of the time unless a binary-only  * selection is wanted. This settings affects the following procedures:  * The entire gimp-image-select-foo group of procedures.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_antialias:  * @antialias: The antialias setting.  *  * Set the antialias setting.  *  * This procedure modifies the antialias setting. If antialiasing is  * turned on, the edges of selected region will contain intermediate  * values which give the appearance of a sharper, less pixelized edge.  * This should be set as TRUE most of the time unless a binary-only  * selection is wanted. This settings affects the following procedures:  * gimp_image_select_color(), gimp_image_select_ellipse(),  * gimp_image_select_polygon(), gimp_image_select_fuzzy(),  * gimp_image_select_round_rectangle(), gimp_image_select_item().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -2095,7 +2095,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_feather:  * @feather: The feather setting.  *  * Set the feather setting.  *  * This procedure modifies the feather setting. If the feather option  * is enabled, selections will be blurred before combining. The blur is  * a gaussian blur; its radii can be controlled using  * gimp_context_set_feather_radius(). This settings affects the  * following procedures: The entire gimp-image-select-foo group of  * procedures.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_feather:  * @feather: The feather setting.  *  * Set the feather setting.  *  * This procedure modifies the feather setting. If the feather option  * is enabled, selections will be blurred before combining. The blur is  * a gaussian blur; its radii can be controlled using  * gimp_context_set_feather_radius(). This setting affects the  * following procedures: gimp_image_select_color(),  * gimp_image_select_ellipse(), gimp_image_select_polygon(),  * gimp_image_select_fuzzy(), gimp_image_select_rectangle(),  * gimp_image_select_round_rectangle(), gimp_image_select_item().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -2270,7 +2270,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_feather_radius:  * @feather_radius_x: The horizontal feather radius.  * @feather_radius_y: The vertical feather radius.  *  * Set the feather radius setting.  *  * This procedure modifies the feather radius setting. This settings  * affects the following procedures: The entire gimp-image-select-foo  * group of procedures.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_feather_radius:  * @feather_radius_x: The horizontal feather radius.  * @feather_radius_y: The vertical feather radius.  *  * Set the feather radius setting.  *  * This procedure modifies the feather radius setting. This setting  * affects the all procedures that are affected by  * gimp_context_set_feather().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -3117,7 +3117,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_interpolation:  * @interpolation: The interpolation type.  *  * Set the interpolation type.  *  * This procedure modifies the interpolation setting. It affects the  * following procedures: all transform procedures which can produce  * sub-pixel results, gimp_image_scale(), gimp_layer_scale().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_interpolation:  * @interpolation: The interpolation type.  *  * Set the interpolation type.  *  * This procedure modifies the interpolation setting. This setting  * affects affects the following procedures:  * gimp_item_transform_flip(), gimp_item_transform_perspective(),  * gimp_item_transform_rotate(), gimp_item_transform_scale(),  * gimp_item_transform_shear(), gimp_item_transform_2d(),  * gimp_item_transform_matrix(), gimp_image_scale(),  * gimp_layer_scale().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -3257,7 +3257,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_transform_direction:  * @transform_direction: The transform direction.  *  * Set the transform direction.  *  * This procedure modifies the transform direction setting.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_transform_direction:  * @transform_direction: The transform direction.  *  * Set the transform direction.  *  * This procedure modifies the transform direction setting. This  * setting affects affects the following procedures:  * gimp_item_transform_flip(), gimp_item_transform_perspective(),  * gimp_item_transform_rotate(), gimp_item_transform_scale(),  * gimp_item_transform_shear(), gimp_item_transform_2d(),  * gimp_item_transform_matrix().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -3397,7 +3397,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_transform_resize:  * @transform_resize: The transform resize type.  *  * Set the transform resize type.  *  * This procedure modifies the transform resize setting. When  * transforming pixels, if the result of a transform operation has a  * different size than the original area, this setting determines how  * the resulting area is sized.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_transform_resize:  * @transform_resize: The transform resize type.  *  * Set the transform resize type.  *  * This procedure modifies the transform resize setting. When  * transforming pixels, if the result of a transform operation has a  * different size than the original area, this setting determines how  * the resulting area is sized. This setting affects affects the  * following procedures: gimp_item_transform_flip(),  * gimp_item_transform_flip_simple(),  * gimp_item_transform_perspective(), gimp_item_transform_rotate(),  * gimp_item_transform_rotate_simple(), gimp_item_transform_scale(),  * gimp_item_transform_shear(), gimp_item_transform_2d(),  * gimp_item_transform_matrix().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -3537,7 +3537,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_transform_recursion:  * @transform_recursion: The transform recursion level.  *  * Set the transform supersampling recursion.  *  * This procedure modifies the transform supersampling recursion level  * setting. Whether or not a transformation does supersampling is  * determined by the interplolation type. The recursion level defaults  * to 3, which is a nice default value.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_transform_recursion:  * @transform_recursion: The transform recursion level.  *  * Set the transform supersampling recursion.  *  * This procedure modifies the transform supersampling recursion level  * setting. Whether or not a transformation does supersampling is  * determined by the interplolation type. The recursion level defaults  * to 3, which is a nice default value. This setting affects affects  * the following procedures: gimp_item_transform_flip(),  * gimp_item_transform_perspective(), gimp_item_transform_rotate(),  * gimp_item_transform_scale(), gimp_item_transform_shear(),  * gimp_item_transform_2d(), gimp_item_transform_matrix().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
