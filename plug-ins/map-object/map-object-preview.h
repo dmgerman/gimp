@@ -76,10 +76,16 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|draw_preview_image
+name|gboolean
+name|preview_expose
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkEventExpose
+modifier|*
+name|eevent
 parameter_list|)
 function_decl|;
 end_function_decl

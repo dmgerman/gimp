@@ -74,7 +74,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ca22140108
+DECL|struct|__anon28ebe2f90108
 block|{
 DECL|member|x
 DECL|member|y
@@ -1792,11 +1792,17 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|draw_preview_image (void)
-name|draw_preview_image
+name|gboolean
+DECL|function|preview_expose (GtkWidget * widget,GdkEventExpose * eevent)
+name|preview_expose
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkEventExpose
+modifier|*
+name|eevent
 parameter_list|)
 block|{
 name|gint
@@ -1819,10 +1825,9 @@ name|cr
 operator|=
 name|gdk_cairo_create
 argument_list|(
-name|gtk_widget_get_window
-argument_list|(
-name|previewarea
-argument_list|)
+name|eevent
+operator|->
+name|window
 argument_list|)
 expr_stmt|;
 name|color
@@ -1937,6 +1942,9 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 
