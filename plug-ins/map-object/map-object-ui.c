@@ -517,7 +517,7 @@ name|lightsource
 operator|.
 name|position
 operator|.
-name|x
+name|y
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func

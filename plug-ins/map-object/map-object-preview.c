@@ -74,7 +74,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dfd6b80108
+DECL|struct|__anon2ad411820108
 block|{
 DECL|member|x
 DECL|member|y
