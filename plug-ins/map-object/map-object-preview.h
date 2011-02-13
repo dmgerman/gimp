@@ -68,25 +68,9 @@ end_comment
 
 begin_function_decl
 name|void
-name|compute_preview
+name|compute_preview_image
 parameter_list|(
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|,
-name|gint
-name|w
-parameter_list|,
-name|gint
-name|h
-parameter_list|,
-name|gint
-name|pw
-parameter_list|,
-name|gint
-name|ph
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -95,8 +79,7 @@ begin_function_decl
 name|void
 name|draw_preview_image
 parameter_list|(
-name|gint
-name|docompute
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
