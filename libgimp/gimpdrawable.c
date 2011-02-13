@@ -1540,7 +1540,7 @@ name|success
 decl_stmt|;
 name|success
 operator|=
-name|gimp_item_parasite_attach
+name|gimp_item_attach_parasite
 argument_list|(
 name|drawable_ID
 argument_list|,

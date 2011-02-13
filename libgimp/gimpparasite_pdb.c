@@ -818,409 +818,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_parasite_find:  * @item_ID: The item.  * @name: The name of the parasite to find.  *  * Look up a parasite in an item  *  * Finds and returns the parasite that is attached to an item.  *  * Returns: The found parasite.  *  * Since: GIMP 2.8  **/
-end_comment
-
-begin_function
-name|GimpParasite
-modifier|*
-DECL|function|gimp_item_parasite_find (gint32 item_ID,const gchar * name)
-name|gimp_item_parasite_find
-parameter_list|(
-name|gint32
-name|item_ID
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|name
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|GimpParasite
-modifier|*
-name|parasite
-init|=
-name|NULL
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp-item-parasite-find"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_ITEM
-argument_list|,
-name|item_ID
-argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
-name|name
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-condition|)
-name|parasite
-operator|=
-name|gimp_parasite_copy
-argument_list|(
-operator|&
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_parasite
-argument_list|)
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|parasite
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_item_parasite_attach:  * @item_ID: The item.  * @parasite: The parasite to attach to the item.  *  * Add a parasite to an item.  *  * This procedure attaches a parasite to an item. It has no return  * values.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_item_parasite_attach (gint32 item_ID,const GimpParasite * parasite)
-name|gimp_item_parasite_attach
-parameter_list|(
-name|gint32
-name|item_ID
-parameter_list|,
-specifier|const
-name|GimpParasite
-modifier|*
-name|parasite
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gboolean
-name|success
-init|=
-name|TRUE
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp-item-parasite-attach"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_ITEM
-argument_list|,
-name|item_ID
-argument_list|,
-name|GIMP_PDB_PARASITE
-argument_list|,
-name|parasite
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-name|success
-operator|=
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|success
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_item_parasite_detach:  * @item_ID: The item.  * @name: The name of the parasite to detach from the item.  *  * Removes a parasite from an item.  *  * This procedure detaches a parasite from an item. It has no return  * values.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_item_parasite_detach (gint32 item_ID,const gchar * name)
-name|gimp_item_parasite_detach
-parameter_list|(
-name|gint32
-name|item_ID
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|name
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gboolean
-name|success
-init|=
-name|TRUE
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp-item-parasite-detach"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_ITEM
-argument_list|,
-name|item_ID
-argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
-name|name
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-name|success
-operator|=
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|success
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_item_parasite_list:  * @item_ID: The item.  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * List all parasites.  *  * Returns a list of all parasites currently attached the an item.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_item_parasite_list (gint32 item_ID,gint * num_parasites,gchar *** parasites)
-name|gimp_item_parasite_list
-parameter_list|(
-name|gint32
-name|item_ID
-parameter_list|,
-name|gint
-modifier|*
-name|num_parasites
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-modifier|*
-name|parasites
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gboolean
-name|success
-init|=
-name|TRUE
-decl_stmt|;
-name|gint
-name|i
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp-item-parasite-list"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_ITEM
-argument_list|,
-name|item_ID
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-operator|*
-name|num_parasites
-operator|=
-literal|0
-expr_stmt|;
-operator|*
-name|parasites
-operator|=
-name|NULL
-expr_stmt|;
-name|success
-operator|=
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-expr_stmt|;
-if|if
-condition|(
-name|success
-condition|)
-block|{
-operator|*
-name|num_parasites
-operator|=
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-operator|*
-name|parasites
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-operator|*
-name|num_parasites
-argument_list|)
-expr_stmt|;
-for|for
-control|(
-name|i
-operator|=
-literal|0
-init|;
-name|i
-operator|<
-operator|*
-name|num_parasites
-condition|;
-name|i
-operator|++
-control|)
-operator|(
-operator|*
-name|parasites
-operator|)
-index|[
-name|i
-index|]
-operator|=
-name|g_strdup
-argument_list|(
-name|return_vals
-index|[
-literal|2
-index|]
-operator|.
-name|data
-operator|.
-name|d_stringarray
-index|[
-name|i
-index|]
-argument_list|)
-expr_stmt|;
-block|}
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|success
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_drawable_parasite_find:  * @drawable_ID: The drawable.  * @name: The name of the parasite to find.  *  * Deprecated: Use gimp_item_parasite_find() instead.  *  * Returns: The found parasite.  **/
+comment|/**  * gimp_drawable_parasite_find:  * @drawable_ID: The drawable.  * @name: The name of the parasite to find.  *  * Deprecated: Use gimp_item_find_parasite() instead.  *  * Returns: The found parasite.  **/
 end_comment
 
 begin_function
@@ -1313,7 +911,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_parasite_attach:  * @drawable_ID: The drawable.  * @parasite: The parasite to attach to a drawable.  *  * Deprecated: Use gimp_item_parasite_attach() instead.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_drawable_parasite_attach:  * @drawable_ID: The drawable.  * @parasite: The parasite to attach to a drawable.  *  * Deprecated: Use gimp_item_attach_parasite() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1389,7 +987,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_parasite_detach:  * @drawable_ID: The drawable.  * @name: The name of the parasite to detach from a drawable.  *  * Deprecated: Use gimp_item_parasite_detach() instead.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_drawable_parasite_detach:  * @drawable_ID: The drawable.  * @name: The name of the parasite to detach from a drawable.  *  * Deprecated: Use gimp_item_detach_parasite() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1465,7 +1063,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_parasite_list:  * @drawable_ID: The drawable.  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * Deprecated: Use gimp_item_parasite_list() instead.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_drawable_parasite_list:  * @drawable_ID: The drawable.  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * Deprecated: Use gimp_item_list_parasites() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1622,7 +1220,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_parasite_find:  * @vectors_ID: The vectors object.  * @name: The name of the parasite to find.  *  * Deprecated: Use gimp_item_parasite_find() instead.  *  * Returns: The found parasite.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_vectors_parasite_find:  * @vectors_ID: The vectors object.  * @name: The name of the parasite to find.  *  * Deprecated: Use gimp_item_find_parasite() instead.  *  * Returns: The found parasite.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1715,7 +1313,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_parasite_attach:  * @vectors_ID: The vectors object.  * @parasite: The parasite to attach to a vectors object.  *  * Deprecated: Use gimp_item_parasite_attach() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_vectors_parasite_attach:  * @vectors_ID: The vectors object.  * @parasite: The parasite to attach to a vectors object.  *  * Deprecated: Use gimp_item_attach__parasite() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1791,7 +1389,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_parasite_detach:  * @vectors_ID: The vectors object.  * @name: The name of the parasite to detach from a vectors object.  *  * Deprecated: Use gimp_item_parasite_detach() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_vectors_parasite_detach:  * @vectors_ID: The vectors object.  * @name: The name of the parasite to detach from a vectors object.  *  * Deprecated: Use gimp_item_detach_parasite() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1867,7 +1465,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_parasite_list:  * @vectors_ID: The vectors object.  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * Deprecated: Use gimp_item_parasite_list() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_vectors_parasite_list:  * @vectors_ID: The vectors object.  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * Deprecated: Use gimp_item_list_parasites() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function

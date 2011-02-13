@@ -2949,7 +2949,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_item_parasite_attach
+name|gimp_item_attach_parasite
 argument_list|(
 name|gfig_context
 operator|->
@@ -3015,7 +3015,7 @@ name|gfig
 decl_stmt|;
 name|parasite
 operator|=
-name|gimp_item_parasite_find
+name|gimp_item_find_parasite
 argument_list|(
 name|gfig_context
 operator|->
