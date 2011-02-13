@@ -369,7 +369,7 @@ name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
 operator|&
 name|error
