@@ -3108,17 +3108,17 @@ name|procedure
 argument_list|,
 literal|"gimp-fuzzy-select"
 argument_list|,
-literal|"Deprecated: Use 'gimp-image-select-fuzzy' instead."
+literal|"Deprecated: Use 'gimp-image-select-contiguous-color' instead."
 argument_list|,
-literal|"Deprecated: Use 'gimp-image-select-fuzzy' instead."
-argument_list|,
-literal|""
+literal|"Deprecated: Use 'gimp-image-select-contiguous-color' instead."
 argument_list|,
 literal|""
 argument_list|,
 literal|""
 argument_list|,
-literal|"gimp-image-select-fuzzy"
+literal|""
+argument_list|,
+literal|"gimp-image-select-contiguous-color"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -3343,9 +3343,9 @@ name|procedure
 argument_list|,
 literal|"gimp-fuzzy-select-full"
 argument_list|,
-literal|"Deprecated: Use 'gimp-image-select-fuzzy' instead."
+literal|"Deprecated: Use 'gimp-image-select-contiguous-color' instead."
 argument_list|,
-literal|"Deprecated: Use 'gimp-image-select-fuzzy' instead."
+literal|"Deprecated: Use 'gimp-image-select-contiguous-color' instead."
 argument_list|,
 literal|"David Gowers"
 argument_list|,
@@ -3353,7 +3353,7 @@ literal|"David Gowers"
 argument_list|,
 literal|"2006"
 argument_list|,
-literal|"gimp-image-select-fuzzy"
+literal|"gimp-image-select-contiguous-color"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

@@ -1955,7 +1955,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_antialias:  * @antialias: The antialias setting.  *  * Set the antialias setting.  *  * This procedure modifies the antialias setting. If antialiasing is  * turned on, the edges of selected region will contain intermediate  * values which give the appearance of a sharper, less pixelized edge.  * This should be set as TRUE most of the time unless a binary-only  * selection is wanted. This settings affects the following procedures:  * gimp_image_select_color(), gimp_image_select_ellipse(),  * gimp_image_select_polygon(), gimp_image_select_fuzzy(),  * gimp_image_select_round_rectangle(), gimp_image_select_item().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_antialias:  * @antialias: The antialias setting.  *  * Set the antialias setting.  *  * This procedure modifies the antialias setting. If antialiasing is  * turned on, the edges of selected region will contain intermediate  * values which give the appearance of a sharper, less pixelized edge.  * This should be set as TRUE most of the time unless a binary-only  * selection is wanted. This settings affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color(),  * gimp_image_select_round_rectangle(), gimp_image_select_ellipse(),  * gimp_image_select_polygon(), gimp_image_select_item().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -2095,7 +2095,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_feather:  * @feather: The feather setting.  *  * Set the feather setting.  *  * This procedure modifies the feather setting. If the feather option  * is enabled, selections will be blurred before combining. The blur is  * a gaussian blur; its radii can be controlled using  * gimp_context_set_feather_radius(). This setting affects the  * following procedures: gimp_image_select_color(),  * gimp_image_select_ellipse(), gimp_image_select_polygon(),  * gimp_image_select_fuzzy(), gimp_image_select_rectangle(),  * gimp_image_select_round_rectangle(), gimp_image_select_item().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_feather:  * @feather: The feather setting.  *  * Set the feather setting.  *  * This procedure modifies the feather setting. If the feather option  * is enabled, selections will be blurred before combining. The blur is  * a gaussian blur; its radii can be controlled using  * gimp_context_set_feather_radius(). This setting affects the  * following procedures: gimp_image_select_color(),  * gimp_image_select_contiguous_color(), gimp_image_select_rectangle(),  * gimp_image_select_round_rectangle(), gimp_image_select_ellipse(),  * gimp_image_select_polygon(), gimp_image_select_item().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -2417,7 +2417,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_sample_merged:  * @sample_merged: The sample merged setting.  *  * Set the sample merged setting.  *  * This procedure modifies the sample merged setting. If an operation  * depends on the colors of the pixels present in a drawable, like when  * doing a seed fill, this setting controls whether the pixel data from  * the specified drawable is used ('sample-merged' is FALSE), or the  * pixel data from the composite image ('sample-merged' is TRUE. This  * is equivalent to sampling for colors after merging all visible  * layers). This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_fuzzy().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_sample_merged:  * @sample_merged: The sample merged setting.  *  * Set the sample merged setting.  *  * This procedure modifies the sample merged setting. If an operation  * depends on the colors of the pixels present in a drawable, like when  * doing a seed fill, this setting controls whether the pixel data from  * the specified drawable is used ('sample-merged' is FALSE), or the  * pixel data from the composite image ('sample-merged' is TRUE. This  * is equivalent to sampling for colors after merging all visible  * layers). This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -2557,7 +2557,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_sample_criterion:  * @sample_criterion: The sample criterion setting.  *  * Set the sample criterion setting.  *  * This procedure modifies the sample criterion setting. If an  * operation depends on the colors of the pixels present in a drawable,  * like when doing a seed fill, this setting controls how color  * similarity is determined. SELECT_CRITERION_COMPOSITE is the default  * value. This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_fuzzy().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_sample_criterion:  * @sample_criterion: The sample criterion setting.  *  * Set the sample criterion setting.  *  * This procedure modifies the sample criterion setting. If an  * operation depends on the colors of the pixels present in a drawable,  * like when doing a seed fill, this setting controls how color  * similarity is determined. SELECT_CRITERION_COMPOSITE is the default  * value. This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -2697,7 +2697,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_sample_threshold:  * @sample_threshold: The sample threshold setting.  *  * Set the sample threshold setting.  *  * This procedure modifies the sample threshold setting. If an  * operation depends on the colors of the pixels present in a drawable,  * like when doing a seed fill, this setting controls what is  * \"sufficiently close\" to be considered a similar color. If the  * sample threshold has not been set explicitly, the default threshold  * set in gimprc will be used. This setting affects the following  * procedures: gimp_image_select_color(), gimp_image_select_fuzzy().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_sample_threshold:  * @sample_threshold: The sample threshold setting.  *  * Set the sample threshold setting.  *  * This procedure modifies the sample threshold setting. If an  * operation depends on the colors of the pixels present in a drawable,  * like when doing a seed fill, this setting controls what is  * \"sufficiently close\" to be considered a similar color. If the  * sample threshold has not been set explicitly, the default threshold  * set in gimprc will be used. This setting affects the following  * procedures: gimp_image_select_color(),  * gimp_image_select_contiguous_color().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -2977,7 +2977,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_sample_transparent:  * @sample_transparent: The sample transparent setting.  *  * Set the sample transparent setting.  *  * This procedure modifies the sample transparent setting. If an  * operation depends on the colors of the pixels present in a drawable,  * like when doing a seed fill, this setting controls whether  * transparency is considered to be a unique selectable color. When  * this setting is TRUE, transparent areas can be selected or filled.  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_fuzzy().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_sample_transparent:  * @sample_transparent: The sample transparent setting.  *  * Set the sample transparent setting.  *  * This procedure modifies the sample transparent setting. If an  * operation depends on the colors of the pixels present in a drawable,  * like when doing a seed fill, this setting controls whether  * transparency is considered to be a unique selectable color. When  * this setting is TRUE, transparent areas can be selected or filled.  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function

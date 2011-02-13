@@ -533,7 +533,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_fuzzy_select:  * @drawable_ID: The affected drawable.  * @x: x coordinate of initial seed fill point: (image coordinates).  * @y: y coordinate of initial seed fill point: (image coordinates).  * @threshold: Threshold in intensity levels.  * @operation: The selection operation.  * @antialias: Antialiasing.  * @feather: Feather option for selections.  * @feather_radius: Radius for feather operation.  * @sample_merged: Use the composite image, not the drawable.  *  * Deprecated: Use gimp_image_select_fuzzy() instead.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_fuzzy_select:  * @drawable_ID: The affected drawable.  * @x: x coordinate of initial seed fill point: (image coordinates).  * @y: y coordinate of initial seed fill point: (image coordinates).  * @threshold: Threshold in intensity levels.  * @operation: The selection operation.  * @antialias: Antialiasing.  * @feather: Feather option for selections.  * @feather_radius: Radius for feather operation.  * @sample_merged: Use the composite image, not the drawable.  *  * Deprecated: Use gimp_image_select_contiguous_color() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -656,7 +656,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_fuzzy_select_full:  * @drawable_ID: The affected drawable.  * @x: x coordinate of initial seed fill point: (image coordinates).  * @y: y coordinate of initial seed fill point: (image coordinates).  * @threshold: Threshold in intensity levels.  * @operation: The selection operation.  * @antialias: Antialiasing.  * @feather: Feather option for selections.  * @feather_radius_x: Radius for feather operation in X direction.  * @feather_radius_y: Radius for feather operation in Y direction.  * @sample_merged: Use the composite image, not the drawable.  * @select_transparent: Whether to consider transparent pixels for selection. If TRUE, transparency is considered as a unique selectable color.  * @select_criterion: The criterion used to determine color similarity. SELECT_CRITERION_COMPOSITE is the standard choice.  *  * Deprecated: Use gimp_image_select_fuzzy() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_fuzzy_select_full:  * @drawable_ID: The affected drawable.  * @x: x coordinate of initial seed fill point: (image coordinates).  * @y: y coordinate of initial seed fill point: (image coordinates).  * @threshold: Threshold in intensity levels.  * @operation: The selection operation.  * @antialias: Antialiasing.  * @feather: Feather option for selections.  * @feather_radius_x: Radius for feather operation in X direction.  * @feather_radius_y: Radius for feather operation in Y direction.  * @sample_merged: Use the composite image, not the drawable.  * @select_transparent: Whether to consider transparent pixels for selection. If TRUE, transparency is considered as a unique selectable color.  * @select_criterion: The criterion used to determine color similarity. SELECT_CRITERION_COMPOSITE is the standard choice.  *  * Deprecated: Use gimp_image_select_contiguous_color() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
