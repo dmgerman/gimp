@@ -92,6 +92,21 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
+name|gint
+name|preview_rgb_stride
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|cairo_surface_t
+modifier|*
+name|preview_surface
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
 name|glong
 name|maxcounter
 decl_stmt|,

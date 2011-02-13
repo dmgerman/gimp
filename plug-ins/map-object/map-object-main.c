@@ -328,9 +328,9 @@ name|FALSE
 expr_stmt|;
 name|mapvals
 operator|.
-name|showgrid
+name|livepreview
 operator|=
-name|FALSE
+name|TRUE
 expr_stmt|;
 name|mapvals
 operator|.
