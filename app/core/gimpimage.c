@@ -340,7 +340,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4c9e300103
+DECL|enum|__anon2bd23b510103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -434,7 +434,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4c9e300203
+DECL|enum|__anon2bd23b510203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -14681,6 +14681,19 @@ condition|(
 name|layer
 operator|==
 name|active_layer
+operator|||
+name|gimp_viewable_is_ancestor
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|,
+name|GIMP_VIEWABLE
+argument_list|(
+name|active_layer
+argument_list|)
+argument_list|)
 condition|)
 block|{
 name|gimp_image_set_active_layer
@@ -15409,6 +15422,19 @@ condition|(
 name|channel
 operator|==
 name|active_channel
+operator|||
+name|gimp_viewable_is_ancestor
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|channel
+argument_list|)
+argument_list|,
+name|GIMP_VIEWABLE
+argument_list|(
+name|active_channel
+argument_list|)
+argument_list|)
 condition|)
 block|{
 if|if
@@ -15729,7 +15755,21 @@ condition|(
 name|vectors
 operator|==
 name|active_vectors
+operator|||
+name|gimp_viewable_is_ancestor
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|vectors
+argument_list|)
+argument_list|,
+name|GIMP_VIEWABLE
+argument_list|(
+name|active_vectors
+argument_list|)
+argument_list|)
 condition|)
+block|{
 name|gimp_image_set_active_vectors
 argument_list|(
 name|image
@@ -15737,6 +15777,7 @@ argument_list|,
 name|new_active
 argument_list|)
 expr_stmt|;
+block|}
 name|g_object_unref
 argument_list|(
 name|vectors
