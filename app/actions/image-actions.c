@@ -1261,9 +1261,6 @@ argument_list|,
 name|image
 operator|&&
 operator|!
-name|fs
-operator|&&
-operator|!
 name|aux
 operator|&&
 name|lp
@@ -1274,9 +1271,6 @@ argument_list|(
 literal|"image-flatten"
 argument_list|,
 name|image
-operator|&&
-operator|!
-name|fs
 operator|&&
 operator|!
 name|aux
