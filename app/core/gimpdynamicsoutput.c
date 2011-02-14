@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b726330103
+DECL|enum|__anon2ad6ab750103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2136,8 +2136,8 @@ operator|)
 operator|&&
 operator|(
 name|direction
-operator|<
-literal|0.0
+operator|<=
+literal|1.0
 operator|)
 operator|)
 operator|||
@@ -2260,8 +2260,8 @@ operator|)
 operator|&&
 operator|(
 name|wheel
-operator|<
-literal|0.0
+operator|<=
+literal|1.0
 operator|)
 operator|)
 operator|||
