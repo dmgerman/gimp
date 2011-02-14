@@ -49,6 +49,10 @@ DECL|member|merge_type
 name|GimpMergeType
 name|merge_type
 decl_stmt|;
+DECL|member|merge_active_group
+name|gboolean
+name|merge_active_group
+decl_stmt|;
 DECL|member|discard_invisible
 name|gboolean
 name|discard_invisible
@@ -76,6 +80,9 @@ name|parent
 parameter_list|,
 name|GimpMergeType
 name|merge_type
+parameter_list|,
+name|gboolean
+name|merge_active_group
 parameter_list|,
 name|gboolean
 name|discard_invisible

@@ -228,7 +228,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290652360108
+DECL|struct|__anon27a7f95b0108
 block|{
 DECL|member|context
 name|GimpContext
@@ -397,6 +397,16 @@ name|GimpMergeType
 name|image_merge_layers_type
 init|=
 name|GIMP_EXPAND_AS_NECESSARY
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|image_merge_layers_merge_active_group
+specifier|static
+name|gboolean
+name|image_merge_layers_merge_active_group
+init|=
+name|TRUE
 decl_stmt|;
 end_decl_stmt
 
@@ -1804,6 +1814,8 @@ name|widget
 argument_list|,
 name|image_merge_layers_type
 argument_list|,
+name|image_merge_layers_merge_active_group
+argument_list|,
 name|image_merge_layers_discard_invisible
 argument_list|)
 expr_stmt|;
@@ -2683,6 +2695,12 @@ name|dialog
 operator|->
 name|merge_type
 expr_stmt|;
+name|image_merge_layers_merge_active_group
+operator|=
+name|dialog
+operator|->
+name|merge_active_group
+expr_stmt|;
 name|image_merge_layers_discard_invisible
 operator|=
 name|dialog
@@ -2700,6 +2718,8 @@ operator|->
 name|context
 argument_list|,
 name|image_merge_layers_type
+argument_list|,
+name|image_merge_layers_merge_active_group
 argument_list|,
 name|image_merge_layers_discard_invisible
 argument_list|)

@@ -2019,6 +2019,8 @@ argument_list|,
 name|GIMP_CLIP_TO_IMAGE
 argument_list|,
 name|FALSE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|layers

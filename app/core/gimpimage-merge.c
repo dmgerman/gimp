@@ -194,7 +194,7 @@ end_comment
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_merge_visible_layers (GimpImage * image,GimpContext * context,GimpMergeType merge_type,gboolean discard_invisible)
+DECL|function|gimp_image_merge_visible_layers (GimpImage * image,GimpContext * context,GimpMergeType merge_type,gboolean merge_active_group,gboolean discard_invisible)
 name|gimp_image_merge_visible_layers
 parameter_list|(
 name|GimpImage
@@ -209,13 +209,12 @@ name|GimpMergeType
 name|merge_type
 parameter_list|,
 name|gboolean
+name|merge_active_group
+parameter_list|,
+name|gboolean
 name|discard_invisible
 parameter_list|)
 block|{
-name|GimpLayer
-modifier|*
-name|active_layer
-decl_stmt|;
 name|GimpContainer
 modifier|*
 name|container
@@ -256,14 +255,21 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|merge_active_group
+condition|)
+block|{
+name|GimpLayer
+modifier|*
 name|active_layer
-operator|=
+init|=
 name|gimp_image_get_active_layer
 argument_list|(
 name|image
 argument_list|)
-expr_stmt|;
-comment|/*  if the active layer is the floating selection, get the underlying    *  drawable, but only if it is a layer    */
+decl_stmt|;
+comment|/*  if the active layer is the floating selection, get the        *  underlying drawable, but only if it is a layer        */
 if|if
 condition|(
 name|active_layer
@@ -322,6 +328,17 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|container
+operator|=
+name|gimp_image_get_layers
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+block|}
 for|for
 control|(
 name|list
