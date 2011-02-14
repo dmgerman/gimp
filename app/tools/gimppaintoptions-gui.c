@@ -1117,6 +1117,17 @@ name|frame
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*  the "smooth stroke" options  */
+if|if
+condition|(
+name|g_type_is_a
+argument_list|(
+name|tool_type
+argument_list|,
+name|GIMP_TYPE_PAINT_TOOL
+argument_list|)
+condition|)
+block|{
 name|frame
 operator|=
 name|smoothing_options_gui
@@ -1147,6 +1158,7 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  the "incremental" toggle  */
 if|if
 condition|(
