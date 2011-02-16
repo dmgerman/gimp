@@ -1389,16 +1389,16 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|preview_expose (GtkWidget * widget,GdkEventExpose * eevent)
-name|preview_expose
+DECL|function|preview_draw (GtkWidget * widget,cairo_t * cr)
+name|preview_draw
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEventExpose
+name|cairo_t
 modifier|*
-name|eevent
+name|cr
 parameter_list|)
 block|{
 name|gint
@@ -1410,19 +1410,6 @@ name|pw
 decl_stmt|,
 name|ph
 decl_stmt|;
-name|cairo_t
-modifier|*
-name|cr
-decl_stmt|;
-name|cr
-operator|=
-name|gdk_cairo_create
-argument_list|(
-name|eevent
-operator|->
-name|window
-argument_list|)
-expr_stmt|;
 name|pw
 operator|=
 name|PREVIEW_WIDTH
@@ -1458,24 +1445,6 @@ name|ph
 operator|)
 operator|/
 literal|2
-expr_stmt|;
-if|if
-condition|(
-name|pw
-operator|!=
-name|PREVIEW_WIDTH
-operator|||
-name|ph
-operator|!=
-name|PREVIEW_HEIGHT
-condition|)
-name|gdk_window_clear
-argument_list|(
-name|gtk_widget_get_window
-argument_list|(
-name|previewarea
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|cairo_set_source_surface
 argument_list|(
@@ -1543,11 +1512,6 @@ argument_list|,
 name|pw
 argument_list|,
 name|ph
-argument_list|)
-expr_stmt|;
-name|cairo_destroy
-argument_list|(
-name|cr
 argument_list|)
 expr_stmt|;
 return|return

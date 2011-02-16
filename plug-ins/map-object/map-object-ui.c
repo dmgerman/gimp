@@ -7291,11 +7291,11 @@ name|g_signal_connect
 argument_list|(
 name|previewarea
 argument_list|,
-literal|"expose-event"
+literal|"draw"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|preview_expose
+name|preview_draw
 argument_list|)
 argument_list|,
 name|previewarea
