@@ -447,7 +447,7 @@ name|g_signal_handlers_block_by_func
 argument_list|(
 name|xadj
 argument_list|,
-name|gimp_double_adjustment_update
+name|double_adjustment_update
 argument_list|,
 operator|&
 name|mapvals
@@ -479,7 +479,7 @@ name|g_signal_handlers_unblock_by_func
 argument_list|(
 name|xadj
 argument_list|,
-name|gimp_double_adjustment_update
+name|double_adjustment_update
 argument_list|,
 operator|&
 name|mapvals
@@ -495,7 +495,7 @@ name|g_signal_handlers_block_by_func
 argument_list|(
 name|yadj
 argument_list|,
-name|gimp_double_adjustment_update
+name|double_adjustment_update
 argument_list|,
 operator|&
 name|mapvals
@@ -527,7 +527,7 @@ name|g_signal_handlers_unblock_by_func
 argument_list|(
 name|yadj
 argument_list|,
-name|gimp_double_adjustment_update
+name|double_adjustment_update
 argument_list|,
 operator|&
 name|mapvals
@@ -543,7 +543,7 @@ name|g_signal_handlers_block_by_func
 argument_list|(
 name|zadj
 argument_list|,
-name|gimp_double_adjustment_update
+name|double_adjustment_update
 argument_list|,
 operator|&
 name|mapvals
@@ -575,7 +575,7 @@ name|g_signal_handlers_unblock_by_func
 argument_list|(
 name|zadj
 argument_list|,
-name|gimp_double_adjustment_update
+name|double_adjustment_update
 argument_list|,
 operator|&
 name|mapvals
@@ -738,6 +738,7 @@ name|mapvals
 operator|.
 name|livepreview
 condition|)
+block|{
 name|compute_preview_image
 argument_list|()
 expr_stmt|;
@@ -746,6 +747,7 @@ argument_list|(
 name|previewarea
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -2296,7 +2298,7 @@ literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|double_adjustment_update
+name|gimp_double_adjustment_update
 argument_list|)
 argument_list|,
 operator|&
@@ -7326,7 +7328,67 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Update previe_w live"
+literal|"Show _wireframe"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_toggle_button_set_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|toggle
+argument_list|)
+argument_list|,
+name|mapvals
+operator|.
+name|showgrid
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|toggle
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|toggle
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|toggle
+argument_list|,
+literal|"toggled"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|toggle_update
+argument_list|)
+argument_list|,
+operator|&
+name|mapvals
+operator|.
+name|showgrid
+argument_list|)
+expr_stmt|;
+name|toggle
+operator|=
+name|gtk_check_button_new_with_mnemonic
+argument_list|(
+name|_
+argument_list|(
+literal|"Update preview _live"
 argument_list|)
 argument_list|)
 expr_stmt|;

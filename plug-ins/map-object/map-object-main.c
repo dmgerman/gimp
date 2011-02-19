@@ -336,6 +336,12 @@ name|mapvals
 operator|.
 name|livepreview
 operator|=
+name|FALSE
+expr_stmt|;
+name|mapvals
+operator|.
+name|showgrid
+operator|=
 name|TRUE
 expr_stmt|;
 name|mapvals
