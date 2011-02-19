@@ -680,6 +680,14 @@ name|gboolean
 name|size_allocate_from_configure_event
 decl_stmt|;
 comment|/*  the state of gimp_display_shell_tool_events()  */
+DECL|member|pointer_grabbed
+name|gboolean
+name|pointer_grabbed
+decl_stmt|;
+DECL|member|keyboard_grabbed
+name|gboolean
+name|keyboard_grabbed
+decl_stmt|;
 DECL|member|space_pressed
 name|gboolean
 name|space_pressed
