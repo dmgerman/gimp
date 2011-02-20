@@ -503,8 +503,20 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|gboolean
+name|gimp_display_shell_flush_event_queue
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|void
-name|gimp_display_shell_process_tool_event_queue
+name|gimp_display_shell_process_event_queue
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
@@ -5250,7 +5262,7 @@ name|time
 argument_list|)
 condition|)
 block|{
-name|gimp_display_shell_process_tool_event_queue
+name|gimp_display_shell_process_event_queue
 argument_list|(
 name|shell
 argument_list|,
@@ -5314,7 +5326,7 @@ name|time
 argument_list|)
 condition|)
 block|{
-name|gimp_display_shell_process_tool_event_queue
+name|gimp_display_shell_process_event_queue
 argument_list|(
 name|shell
 argument_list|,
@@ -6954,7 +6966,7 @@ operator|&
 name|last_coords
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_process_tool_event_queue
+name|gimp_display_shell_process_event_queue
 argument_list|(
 name|shell
 argument_list|,
@@ -6982,8 +6994,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_process_tool_event_queue (GimpDisplayShell * shell,GdkModifierType state,guint32 time)
-name|gimp_display_shell_process_tool_event_queue
+DECL|function|gimp_display_shell_process_event_queue (GimpDisplayShell * shell,GdkModifierType state,guint32 time)
+name|gimp_display_shell_process_event_queue
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
