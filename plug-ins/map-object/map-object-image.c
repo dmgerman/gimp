@@ -199,6 +199,7 @@ DECL|variable|width
 DECL|variable|height
 DECL|variable|in_channels
 DECL|variable|out_channels
+DECL|variable|image_id
 name|gint
 name|imgtype
 decl_stmt|,
@@ -209,6 +210,8 @@ decl_stmt|,
 name|in_channels
 decl_stmt|,
 name|out_channels
+decl_stmt|,
+name|image_id
 decl_stmt|;
 end_decl_stmt
 

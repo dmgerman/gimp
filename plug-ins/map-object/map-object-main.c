@@ -316,6 +316,12 @@ name|FALSE
 expr_stmt|;
 name|mapvals
 operator|.
+name|create_new_layer
+operator|=
+name|FALSE
+expr_stmt|;
+name|mapvals
+operator|.
 name|transparent_background
 operator|=
 name|FALSE
@@ -1145,6 +1151,17 @@ argument_list|()
 expr_stmt|;
 comment|/* Get the specified drawable */
 comment|/* ========================== */
+name|image_id
+operator|=
+name|param
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
 name|drawable
 operator|=
 name|gimp_drawable_get
@@ -1242,7 +1259,7 @@ if|if
 condition|(
 name|nparams
 operator|!=
-literal|49
+literal|50
 condition|)
 block|{
 name|status
@@ -1747,6 +1764,22 @@ name|d_int32
 expr_stmt|;
 name|mapvals
 operator|.
+name|create_new_layer
+operator|=
+operator|(
+name|gint
+operator|)
+name|param
+index|[
+literal|34
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|mapvals
+operator|.
 name|transparent_background
 operator|=
 operator|(
@@ -1867,7 +1900,7 @@ index|]
 operator|=
 name|param
 index|[
-literal|41
+literal|42
 operator|+
 name|i
 index|]
@@ -1898,7 +1931,7 @@ index|]
 operator|=
 name|param
 index|[
-literal|47
+literal|48
 operator|+
 name|i
 index|]

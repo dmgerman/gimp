@@ -128,6 +128,8 @@ decl_stmt|,
 name|in_channels
 decl_stmt|,
 name|out_channels
+decl_stmt|,
+name|image_id
 decl_stmt|;
 end_decl_stmt
 
