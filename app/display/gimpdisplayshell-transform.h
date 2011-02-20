@@ -18,7 +18,7 @@ end_define
 
 begin_function_decl
 name|void
-name|gimp_display_shell_transform_coordinate
+name|gimp_display_shell_transform_coords
 parameter_list|(
 specifier|const
 name|GimpDisplayShell
@@ -39,7 +39,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_untransform_coordinate
+name|gimp_display_shell_untransform_coords
 parameter_list|(
 specifier|const
 name|GimpDisplayShell

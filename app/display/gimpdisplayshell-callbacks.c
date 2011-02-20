@@ -2680,7 +2680,7 @@ modifier|*
 name|active_tool
 decl_stmt|;
 comment|/*  GimpCoords passed to tools are ALWAYS in image coordinates  */
-name|gimp_display_shell_untransform_coordinate
+name|gimp_display_shell_untransform_coords
 argument_list|(
 name|shell
 argument_list|,

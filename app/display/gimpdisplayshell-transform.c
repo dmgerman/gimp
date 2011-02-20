@@ -76,13 +76,13 @@ file|"gimpdisplayshell-transform.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_display_shell_transform_coordinate:  * @shell:          a #GimpDisplayShell  * @image_coords:   image coordinates  * @display_coords: returns the corresponding display coordinates  *  * Transforms from image coordinates to display coordinates, so that  * objects can be rendered at the correct points on the display.  **/
+comment|/**  * gimp_display_shell_transform_coords:  * @shell:          a #GimpDisplayShell  * @image_coords:   image coordinates  * @display_coords: returns the corresponding display coordinates  *  * Transforms from image coordinates to display coordinates, so that  * objects can be rendered at the correct points on the display.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_transform_coordinate (const GimpDisplayShell * shell,const GimpCoords * image_coords,GimpCoords * display_coords)
-name|gimp_display_shell_transform_coordinate
+DECL|function|gimp_display_shell_transform_coords (const GimpDisplayShell * shell,const GimpCoords * image_coords,GimpCoords * display_coords)
+name|gimp_display_shell_transform_coords
 parameter_list|(
 specifier|const
 name|GimpDisplayShell
@@ -173,13 +173,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_untransform_coordinate:  * @shell:          a #GimpDisplayShell  * @display_coords: display coordinates  * @image_coords:   returns the corresponding image coordinates  *  * Transforms from display coordinates to image coordinates, so that  * points on the display can be mapped to points in the image.  **/
+comment|/**  * gimp_display_shell_untransform_coords:  * @shell:          a #GimpDisplayShell  * @display_coords: display coordinates  * @image_coords:   returns the corresponding image coordinates  *  * Transforms from display coordinates to image coordinates, so that  * points on the display can be mapped to points in the image.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_untransform_coordinate (const GimpDisplayShell * shell,const GimpCoords * display_coords,GimpCoords * image_coords)
-name|gimp_display_shell_untransform_coordinate
+DECL|function|gimp_display_shell_untransform_coords (const GimpDisplayShell * shell,const GimpCoords * display_coords,GimpCoords * image_coords)
+name|gimp_display_shell_untransform_coords
 parameter_list|(
 specifier|const
 name|GimpDisplayShell
