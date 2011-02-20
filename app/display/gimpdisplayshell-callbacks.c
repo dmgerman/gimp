@@ -2924,10 +2924,6 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
-name|GdkDisplay
-modifier|*
-name|gdk_display
-decl_stmt|;
 name|GimpCoords
 name|display_coords
 decl_stmt|;
@@ -3071,7 +3067,6 @@ condition|(
 operator|!
 name|image
 condition|)
-block|{
 return|return
 name|gimp_display_shell_canvas_no_image_events
 argument_list|(
@@ -3082,14 +3077,6 @@ argument_list|,
 name|shell
 argument_list|)
 return|;
-block|}
-name|gdk_display
-operator|=
-name|gtk_widget_get_display
-argument_list|(
-name|canvas
-argument_list|)
-expr_stmt|;
 comment|/*  Find out what device the event occurred upon  */
 if|if
 condition|(
@@ -3674,6 +3661,15 @@ operator|)
 operator|)
 condition|)
 block|{
+name|GdkDisplay
+modifier|*
+name|gdk_display
+init|=
+name|gtk_widget_get_display
+argument_list|(
+name|canvas
+argument_list|)
+decl_stmt|;
 comment|/*  don't request motion hins for XInput devices because                  *  the wacom driver is known to report crappy hints                  *  (#6901) --mitch                  */
 if|if
 condition|(
