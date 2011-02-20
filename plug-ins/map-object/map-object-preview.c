@@ -133,6 +133,10 @@ specifier|static
 name|void
 name|draw_light_marker
 parameter_list|(
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
 name|gint
 name|xpos
 parameter_list|,
@@ -187,8 +191,48 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
+name|draw_wireframe
+parameter_list|(
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
+name|gint
+name|startx
+parameter_list|,
+name|gint
+name|starty
+parameter_list|,
+name|gint
+name|pw
+parameter_list|,
+name|gint
+name|ph
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|draw_preview_wireframe
+parameter_list|(
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|draw_wireframe_plane
 parameter_list|(
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
 name|gint
 name|startx
 parameter_list|,
@@ -209,6 +253,10 @@ specifier|static
 name|void
 name|draw_wireframe_sphere
 parameter_list|(
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
 name|gint
 name|startx
 parameter_list|,
@@ -229,6 +277,10 @@ specifier|static
 name|void
 name|draw_wireframe_box
 parameter_list|(
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
 name|gint
 name|startx
 parameter_list|,
@@ -249,6 +301,10 @@ specifier|static
 name|void
 name|draw_wireframe_cylinder
 parameter_list|(
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
 name|gint
 name|startx
 parameter_list|,
@@ -895,9 +951,13 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|draw_light_marker (gint xpos,gint ypos)
+DECL|function|draw_light_marker (cairo_t * cr,gint xpos,gint ypos)
 name|draw_light_marker
 parameter_list|(
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
 name|gint
 name|xpos
 parameter_list|,
@@ -907,10 +967,6 @@ parameter_list|)
 block|{
 name|GdkColor
 name|color
-decl_stmt|;
-name|cairo_t
-modifier|*
-name|cr
 decl_stmt|;
 name|gint
 name|pw
@@ -967,16 +1023,6 @@ name|ph
 operator|)
 operator|/
 literal|2
-expr_stmt|;
-name|cr
-operator|=
-name|gdk_cairo_create
-argument_list|(
-name|gtk_widget_get_window
-argument_list|(
-name|previewarea
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|cairo_set_line_width
 argument_list|(
@@ -1041,20 +1087,19 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
-name|cairo_destroy
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|draw_lights (gint startx,gint starty,gint pw,gint ph)
+DECL|function|draw_lights (cairo_t * cr,gint startx,gint starty,gint pw,gint ph)
 name|draw_lights
 parameter_list|(
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
 name|gint
 name|startx
 parameter_list|,
@@ -1142,6 +1187,8 @@ condition|)
 block|{
 name|draw_light_marker
 argument_list|(
+name|cr
+argument_list|,
 name|xpos
 argument_list|,
 name|ypos
@@ -1509,6 +1556,11 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
+name|cairo_reset_clip
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|mapvals
@@ -1516,10 +1568,19 @@ operator|.
 name|showgrid
 condition|)
 name|draw_preview_wireframe
-argument_list|()
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
+name|cairo_reset_clip
+argument_list|(
+name|cr
+argument_list|)
 expr_stmt|;
 name|draw_lights
 argument_list|(
+name|cr
+argument_list|,
 name|startx
 argument_list|,
 name|starty
@@ -1554,10 +1615,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|draw_preview_wireframe (void)
+DECL|function|draw_preview_wireframe (cairo_t * cr)
 name|draw_preview_wireframe
 parameter_list|(
-name|void
+name|cairo_t
+modifier|*
+name|cr
 parameter_list|)
 block|{
 name|gint
@@ -1607,6 +1670,8 @@ literal|2
 expr_stmt|;
 name|draw_wireframe
 argument_list|(
+name|cr
+argument_list|,
 name|startx
 argument_list|,
 name|starty
@@ -1633,9 +1698,13 @@ end_comment
 
 begin_function
 name|void
-DECL|function|draw_wireframe (gint startx,gint starty,gint pw,gint ph)
+DECL|function|draw_wireframe (cairo_t * cr,gint startx,gint starty,gint pw,gint ph)
 name|draw_wireframe
 parameter_list|(
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
 name|gint
 name|startx
 parameter_list|,
@@ -1649,6 +1718,17 @@ name|gint
 name|ph
 parameter_list|)
 block|{
+name|cairo_set_source_rgb
+argument_list|(
+name|cr
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|mapvals
@@ -1661,6 +1741,8 @@ name|MAP_PLANE
 case|:
 name|draw_wireframe_plane
 argument_list|(
+name|cr
+argument_list|,
 name|startx
 argument_list|,
 name|starty
@@ -1676,6 +1758,8 @@ name|MAP_SPHERE
 case|:
 name|draw_wireframe_sphere
 argument_list|(
+name|cr
+argument_list|,
 name|startx
 argument_list|,
 name|starty
@@ -1691,6 +1775,8 @@ name|MAP_BOX
 case|:
 name|draw_wireframe_box
 argument_list|(
+name|cr
+argument_list|,
 name|startx
 argument_list|,
 name|starty
@@ -1706,6 +1792,8 @@ name|MAP_CYLINDER
 case|:
 name|draw_wireframe_cylinder
 argument_list|(
+name|cr
+argument_list|,
 name|startx
 argument_list|,
 name|starty
@@ -1723,9 +1811,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_wireframe_plane (gint startx,gint starty,gint pw,gint ph)
+DECL|function|draw_wireframe_plane (cairo_t * cr,gint startx,gint starty,gint pw,gint ph)
 name|draw_wireframe_plane
 parameter_list|(
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
 name|gint
 name|startx
 parameter_list|,
@@ -1778,20 +1870,6 @@ name|cy2
 decl_stmt|,
 name|fac
 decl_stmt|;
-name|cairo_t
-modifier|*
-name|cr
-decl_stmt|;
-name|cr
-operator|=
-name|gdk_cairo_create
-argument_list|(
-name|gtk_widget_get_window
-argument_list|(
-name|previewarea
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|cairo_rectangle
 argument_list|(
 name|cr
@@ -2293,20 +2371,19 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
-name|cairo_destroy
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|draw_wireframe_sphere (gint startx,gint starty,gint pw,gint ph)
+DECL|function|draw_wireframe_sphere (cairo_t * cr,gint startx,gint starty,gint pw,gint ph)
 name|draw_wireframe_sphere
 parameter_list|(
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
 name|gint
 name|startx
 parameter_list|,
@@ -2356,20 +2433,6 @@ name|cx2
 decl_stmt|,
 name|cy2
 decl_stmt|;
-name|cairo_t
-modifier|*
-name|cr
-decl_stmt|;
-name|cr
-operator|=
-name|gdk_cairo_create
-argument_list|(
-name|gtk_widget_get_window
-argument_list|(
-name|previewarea
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|cairo_rectangle
 argument_list|(
 name|cr
@@ -3242,11 +3305,6 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
-name|cairo_destroy
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -3386,9 +3444,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_wireframe_box (gint startx,gint starty,gint pw,gint ph)
+DECL|function|draw_wireframe_box (cairo_t * cr,gint startx,gint starty,gint pw,gint ph)
 name|draw_wireframe_box
 parameter_list|(
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
 name|gint
 name|startx
 parameter_list|,
@@ -3424,20 +3486,6 @@ name|cx2
 decl_stmt|,
 name|cy2
 decl_stmt|;
-name|cairo_t
-modifier|*
-name|cr
-decl_stmt|;
-name|cr
-operator|=
-name|gdk_cairo_create
-argument_list|(
-name|gtk_widget_get_window
-argument_list|(
-name|previewarea
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|cairo_rectangle
 argument_list|(
 name|cr
@@ -4144,20 +4192,19 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
-name|cairo_destroy
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|draw_wireframe_cylinder (gint startx,gint starty,gint pw,gint ph)
+DECL|function|draw_wireframe_cylinder (cairo_t * cr,gint startx,gint starty,gint pw,gint ph)
 name|draw_wireframe_cylinder
 parameter_list|(
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
 name|gint
 name|startx
 parameter_list|,
@@ -4207,20 +4254,6 @@ name|l
 decl_stmt|,
 name|angle
 decl_stmt|;
-name|cairo_t
-modifier|*
-name|cr
-decl_stmt|;
-name|cr
-operator|=
-name|gdk_cairo_create
-argument_list|(
-name|gtk_widget_get_window
-argument_list|(
-name|previewarea
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|cairo_rectangle
 argument_list|(
 name|cr
@@ -4664,11 +4697,6 @@ literal|1.0
 argument_list|)
 expr_stmt|;
 name|cairo_stroke
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
-name|cairo_destroy
 argument_list|(
 name|cr
 argument_list|)
