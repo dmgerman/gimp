@@ -81,7 +81,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_transform_coordinate (const GimpDisplayShell * shell,GimpCoords * image_coords,GimpCoords * display_coords)
+DECL|function|gimp_display_shell_transform_coordinate (const GimpDisplayShell * shell,const GimpCoords * image_coords,GimpCoords * display_coords)
 name|gimp_display_shell_transform_coordinate
 parameter_list|(
 specifier|const
@@ -89,6 +89,7 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|image_coords
@@ -177,7 +178,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_untransform_coordinate (const GimpDisplayShell * shell,GimpCoords * display_coords,GimpCoords * image_coords)
+DECL|function|gimp_display_shell_untransform_coordinate (const GimpDisplayShell * shell,const GimpCoords * display_coords,GimpCoords * image_coords)
 name|gimp_display_shell_untransform_coordinate
 parameter_list|(
 specifier|const
@@ -185,6 +186,7 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|display_coords

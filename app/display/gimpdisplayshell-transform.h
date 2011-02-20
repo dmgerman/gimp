@@ -25,6 +25,7 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|image_coords
@@ -45,6 +46,7 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|display_coords
