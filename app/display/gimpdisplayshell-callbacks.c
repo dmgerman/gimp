@@ -2927,7 +2927,7 @@ name|proximity
 operator|=
 name|FALSE
 expr_stmt|;
-name|gimp_display_shell_clear_cursor
+name|gimp_display_shell_clear_software_cursor
 argument_list|(
 name|shell
 argument_list|)
@@ -2997,7 +2997,7 @@ name|proximity
 operator|=
 name|FALSE
 expr_stmt|;
-name|gimp_display_shell_clear_cursor
+name|gimp_display_shell_clear_software_cursor
 argument_list|(
 name|shell
 argument_list|)
@@ -6203,7 +6203,7 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_update_cursor
+name|gimp_display_shell_update_software_cursor
 argument_list|(
 name|shell
 argument_list|,

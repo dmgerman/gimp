@@ -16,6 +16,10 @@ directive|define
 name|__GIMP_DISPLAY_SHELL_CURSOR_H__
 end_define
 
+begin_comment
+comment|/*  functions dealing with the normal windowing system cursor  */
+end_comment
+
 begin_function_decl
 name|void
 name|gimp_display_shell_set_cursor
@@ -72,9 +76,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  functions dealing with the software cursor that is drawn to the  *  canvas by GIMP  */
+end_comment
+
 begin_function_decl
 name|void
-name|gimp_display_shell_update_cursor
+name|gimp_display_shell_update_software_cursor
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
@@ -100,7 +108,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_clear_cursor
+name|gimp_display_shell_clear_software_cursor
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
