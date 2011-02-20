@@ -2053,7 +2053,7 @@ comment|/* ======================= */
 end_comment
 
 begin_comment
-comment|/* static HVect V3_Add (HVect v1, 	HVect v2) {   static HVect v = {0, 0, 0, 0};   v.x = v1.x+v2.x; v.y = v1.y+v2.y; v.z = v1.z+v2.z;   return (v); } */
+comment|/* static HVect V3_Add (HVect v1,         HVect v2) {   static HVect v = {0, 0, 0, 0};   v.x = v1.x+v2.x; v.y = v1.y+v2.y; v.z = v1.z+v2.z;   return (v); } */
 end_comment
 
 begin_comment
@@ -2144,7 +2144,7 @@ comment|/* ========================================= */
 end_comment
 
 begin_comment
-comment|/* static HVect V3_Bisect (HVect v0, 	   HVect v1) {   HVect v = {0, 0, 0, 0};   double Nv;    v = V3_Add(v0, v1);   Nv = V3_Norm(v);   if (Nv< 1.0e-5) v = V3_(0, 0, 1);   else v = V3_Scale(v, 1/sqrt(Nv));   return (v); } */
+comment|/* static HVect V3_Bisect (HVect v0,            HVect v1) {   HVect v = {0, 0, 0, 0};   double Nv;    v = V3_Add(v0, v1);   Nv = V3_Norm(v);   if (Nv< 1.0e-5) v = V3_(0, 0, 1);   else v = V3_Scale(v, 1/sqrt(Nv));   return (v); } */
 end_comment
 
 begin_comment
@@ -2207,7 +2207,7 @@ comment|/* ============================= */
 end_comment
 
 begin_comment
-comment|/* static HVect V3_Cross (HVect v1, 	  HVect v2) {   static HVect v = {0, 0, 0, 0};   v.x = v1.y*v2.z-v1.z*v2.y;   v.y = v1.z*v2.x-v1.x*v2.z;   v.z = v1.x*v2.y-v1.y*v2.x;   return (v); } */
+comment|/* static HVect V3_Cross (HVect v1,           HVect v2) {   static HVect v = {0, 0, 0, 0};   v.x = v1.y*v2.z-v1.z*v2.y;   v.y = v1.z*v2.x-v1.x*v2.z;   v.z = v1.x*v2.y-v1.y*v2.x;   return (v); } */
 end_comment
 
 begin_function

@@ -1504,7 +1504,7 @@ operator|-
 literal|1.0
 operator|)
 expr_stmt|;
-comment|/*                ArcBall_Mouse(pos);                 ArcBall_Update();                 ArcBall_Values(&a,&b,&c);                 Alpha+=RadToDeg(-a);                 Beta+RadToDeg(-b);                 Gamma+=RadToDeg(-c);                 if (Alpha>180) Alpha-=360;                 if (Alpha<-180) Alpha+=360;                 if (Beta>180) Beta-=360;                 if (Beta<-180) Beta+=360;                 if (Gamma>180) Gamma-=360;                 if (Gamma<-180) Gamma+=360;             	  UpdateAngleSliders(); */
+comment|/*                ArcBall_Mouse(pos);                 ArcBall_Update();                 ArcBall_Values(&a,&b,&c);                 Alpha+=RadToDeg(-a);                 Beta+RadToDeg(-b);                 Gamma+=RadToDeg(-c);                 if (Alpha>180) Alpha-=360;                 if (Alpha<-180) Alpha+=360;                 if (Beta>180) Beta-=360;                 if (Beta<-180) Beta+=360;                 if (Gamma>180) Gamma-=360;                 if (Gamma<-180) Gamma+=360;                       UpdateAngleSliders(); */
 block|}
 block|}
 break|break;
