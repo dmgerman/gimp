@@ -1205,6 +1205,11 @@ operator|=
 name|image_id
 expr_stmt|;
 block|}
+name|gimp_image_undo_group_start
+argument_list|(
+name|new_image_id
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|mapvals
@@ -1533,6 +1538,11 @@ name|output_drawable
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_image_undo_group_end
+argument_list|(
+name|new_image_id
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
