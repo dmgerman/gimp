@@ -30,13 +30,9 @@ begin_function_decl
 name|void
 name|draw_sash
 parameter_list|(
-name|GdkWindow
+name|cairo_t
 modifier|*
-name|window
-parameter_list|,
-name|GdkGC
-modifier|*
-name|gc
+name|cr
 parameter_list|,
 name|gint
 name|x

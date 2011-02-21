@@ -119,13 +119,9 @@ name|Object_t
 modifier|*
 name|obj
 parameter_list|,
-name|GdkWindow
+name|cairo_t
 modifier|*
-name|window
-parameter_list|,
-name|GdkGC
-modifier|*
-name|gc
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -139,13 +135,9 @@ name|Object_t
 modifier|*
 name|obj
 parameter_list|,
-name|GdkWindow
+name|cairo_t
 modifier|*
-name|window
-parameter_list|,
-name|GdkGC
-modifier|*
-name|gc
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -656,20 +648,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|circle_draw (Object_t * obj,GdkWindow * window,GdkGC * gc)
+DECL|function|circle_draw (Object_t * obj,cairo_t * cr)
 name|circle_draw
 parameter_list|(
 name|Object_t
 modifier|*
 name|obj
 parameter_list|,
-name|GdkWindow
+name|cairo_t
 modifier|*
-name|window
-parameter_list|,
-name|GdkGC
-modifier|*
-name|gc
+name|cr
 parameter_list|)
 block|{
 name|Circle_t
@@ -683,11 +671,7 @@ argument_list|)
 decl_stmt|;
 name|draw_circle
 argument_list|(
-name|window
-argument_list|,
-name|gc
-argument_list|,
-name|FALSE
+name|cr
 argument_list|,
 name|circle
 operator|->
@@ -708,20 +692,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|circle_draw_sashes (Object_t * obj,GdkWindow * window,GdkGC * gc)
+DECL|function|circle_draw_sashes (Object_t * obj,cairo_t * cr)
 name|circle_draw_sashes
 parameter_list|(
 name|Object_t
 modifier|*
 name|obj
 parameter_list|,
-name|GdkWindow
+name|cairo_t
 modifier|*
-name|window
-parameter_list|,
-name|GdkGC
-modifier|*
-name|gc
+name|cr
 parameter_list|)
 block|{
 name|Circle_t
@@ -735,9 +715,7 @@ argument_list|)
 decl_stmt|;
 name|draw_sash
 argument_list|(
-name|window
-argument_list|,
-name|gc
+name|cr
 argument_list|,
 name|circle
 operator|->
@@ -758,9 +736,7 @@ argument_list|)
 expr_stmt|;
 name|draw_sash
 argument_list|(
-name|window
-argument_list|,
-name|gc
+name|cr
 argument_list|,
 name|circle
 operator|->
@@ -781,9 +757,7 @@ argument_list|)
 expr_stmt|;
 name|draw_sash
 argument_list|(
-name|window
-argument_list|,
-name|gc
+name|cr
 argument_list|,
 name|circle
 operator|->
@@ -804,9 +778,7 @@ argument_list|)
 expr_stmt|;
 name|draw_sash
 argument_list|(
-name|window
-argument_list|,
-name|gc
+name|cr
 argument_list|,
 name|circle
 operator|->
@@ -1307,7 +1279,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon275fe4150108
+DECL|struct|__anon2b3e3e0e0108
 typedef|typedef
 struct|struct
 block|{

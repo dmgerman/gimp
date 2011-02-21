@@ -273,13 +273,9 @@ name|Object_t
 modifier|*
 name|obj
 parameter_list|,
-name|GdkWindow
+name|cairo_t
 modifier|*
-name|window
-parameter_list|,
-name|GdkGC
-modifier|*
-name|gc
+name|cr
 parameter_list|)
 function_decl|;
 DECL|member|draw_sashes
@@ -293,13 +289,9 @@ name|Object_t
 modifier|*
 name|obj
 parameter_list|,
-name|GdkWindow
+name|cairo_t
 modifier|*
-name|window
-parameter_list|,
-name|GdkGC
-modifier|*
-name|gc
+name|cr
 parameter_list|)
 function_decl|;
 DECL|member|near_sash
@@ -635,9 +627,9 @@ name|Object_t
 modifier|*
 name|obj
 parameter_list|,
-name|GdkWindow
+name|cairo_t
 modifier|*
-name|window
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1016,7 +1008,7 @@ value|((obj)->class->get_stock_icon_name())
 end_define
 
 begin_typedef
-DECL|struct|__anon2c462a030108
+DECL|struct|__anon2b81cffd0108
 typedef|typedef
 struct|struct
 block|{
@@ -1120,7 +1112,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2c462a030208
+DECL|struct|__anon2b81cffd0208
 typedef|typedef
 struct|struct
 block|{
@@ -1335,9 +1327,9 @@ name|ObjectList_t
 modifier|*
 name|list
 parameter_list|,
-name|GdkWindow
+name|cairo_t
 modifier|*
-name|window
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1350,9 +1342,9 @@ name|ObjectList_t
 modifier|*
 name|list
 parameter_list|,
-name|GdkWindow
+name|cairo_t
 modifier|*
-name|window
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl

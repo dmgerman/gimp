@@ -29,9 +29,15 @@ begin_function_decl
 name|void
 name|draw_grid
 parameter_list|(
-name|GtkWidget
+name|cairo_t
 modifier|*
-name|preview
+name|cr
+parameter_list|,
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|height
 parameter_list|)
 function_decl|;
 end_function_decl
