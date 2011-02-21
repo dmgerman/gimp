@@ -51,7 +51,7 @@ value|"imagemap"
 end_define
 
 begin_typedef
-DECL|enum|__anon2bd2d01a0103
+DECL|enum|__anon297211130103
 DECL|enumerator|NCSA
 DECL|enumerator|CERN
 DECL|enumerator|CSIM
@@ -70,7 +70,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bd2d01a0208
+DECL|struct|__anon297211130208
 typedef|typedef
 struct|struct
 block|{

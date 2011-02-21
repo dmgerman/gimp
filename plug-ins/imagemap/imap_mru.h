@@ -31,7 +31,7 @@ value|4
 end_define
 
 begin_typedef
-DECL|struct|__anon288f3c280108
+DECL|struct|__anon29e2775e0108
 typedef|typedef
 struct|struct
 block|{

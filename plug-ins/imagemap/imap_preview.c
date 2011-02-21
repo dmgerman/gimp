@@ -62,7 +62,7 @@ DECL|macro|PREVIEW_MASK
 define|#
 directive|define
 name|PREVIEW_MASK
-value|(GDK_EXPOSURE_MASK       | \ 		       GDK_POINTER_MOTION_MASK | \                        GDK_BUTTON_PRESS_MASK   | \ 		       GDK_BUTTON_RELEASE_MASK | \ 		       GDK_BUTTON_MOTION_MASK  | \ 		       GDK_KEY_PRESS_MASK      | \ 		       GDK_KEY_RELEASE_MASK    | \ 		       GDK_ENTER_NOTIFY_MASK   | \ 		       GDK_LEAVE_NOTIFY_MASK)
+value|(GDK_EXPOSURE_MASK       | \                        GDK_POINTER_MOTION_MASK | \                        GDK_BUTTON_PRESS_MASK   | \                        GDK_BUTTON_RELEASE_MASK | \                        GDK_BUTTON_MOTION_MASK  | \                        GDK_KEY_PRESS_MASK      | \                        GDK_KEY_RELEASE_MASK    | \                        GDK_ENTER_NOTIFY_MASK   | \                        GDK_LEAVE_NOTIFY_MASK)
 end_define
 
 begin_define
@@ -74,7 +74,7 @@ value|400
 end_define
 
 begin_comment
-comment|/*====================================================================== 		Preview Rendering Util routine =======================================================================*/
+comment|/*======================================================================                 Preview Rendering Util routine =======================================================================*/
 end_comment
 
 begin_define

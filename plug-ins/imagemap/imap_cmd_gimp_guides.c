@@ -70,7 +70,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2a3c6d4c0108
+DECL|struct|__anon292b1c270108
 typedef|typedef
 struct|struct
 block|{
@@ -1220,7 +1220,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2a3c6d4c0208
+DECL|struct|__anon292b1c270208
 typedef|typedef
 struct|struct
 block|{

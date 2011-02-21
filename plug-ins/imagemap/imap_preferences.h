@@ -23,7 +23,7 @@ file|"imap_default_dialog.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon277c159e0108
+DECL|struct|__anon2ac1f0e80108
 typedef|typedef
 struct|struct
 block|{
@@ -50,7 +50,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon277c159e0208
+DECL|struct|__anon2ac1f0e80208
 typedef|typedef
 struct|struct
 block|{
