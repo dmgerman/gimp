@@ -286,12 +286,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpprogress.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimptagcache.h"
 end_include
 
@@ -327,7 +321,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288b613c0103
+DECL|enum|__anon27a4aa190103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
