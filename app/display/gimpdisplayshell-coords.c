@@ -119,7 +119,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_display_shell_eval_event:  * @shell:  * @coords:  * @inertia_factor:  * @time:  *  * This function evaluates the event to decide if the change is  * big enough to need handling and returns FALSE, if change is less  * than set filter level taking a whole lot of load off any draw tools  * that have no use for these events anyway. If the event is  * seen fit at first look, it is evaluated for speed and smoothed.  * Due to lousy time resolution of events pretty strong smoothing is  * applied to timestamps for sensible speed result. This function is  * also ideal for other event adjustment like pressure curve or  * calculating other derived dynamics factors like angular velocity  * calculation from tilt values, to allow for even more dynamic  * brushes. Calculated distance to last event is stored in GimpCoords  * because its a sideproduct of velocity calculation and is currently  * calculated in each tool. If they were to use this distance, more  * resouces on recalculating the same value would be saved.  *  * Return value:  **/
+comment|/**  * gimp_display_shell_eval_event:  * @shell:  * @coords:  * @inertia_factor:  * @time:  *  * This function evaluates the event to decide if the change is big  * enough to need handling and returns FALSE, if change is less than  * set filter level taking a whole lot of load off any draw tools that  * have no use for these events anyway. If the event is seen fit at  * first look, it is evaluated for speed and smoothed.  Due to lousy  * time resolution of events pretty strong smoothing is applied to  * timestamps for sensible speed result. This function is also ideal  * for other event adjustment like pressure curve or calculating other  * derived dynamics factors like angular velocity calculation from  * tilt values, to allow for even more dynamic brushes. Calculated  * distance to last event is stored in GimpCoords because its a  * sideproduct of velocity calculation and is currently calculated in  * each tool. If they were to use this distance, more resouces on  * recalculating the same value would be saved.  *  * Return value:  **/
 end_comment
 
 begin_function
@@ -181,7 +181,7 @@ operator|>
 literal|0
 operator|)
 decl_stmt|;
-comment|/* Smoothing causes problems with cursor tracking    * when zoomed above screen resolution so we need to supress it.    */
+comment|/*  Smoothing causes problems with cursor tracking when zoomed above    *  screen resolution so we need to supress it.    */
 if|if
 condition|(
 name|shell
@@ -235,7 +235,7 @@ operator|==
 literal|0
 condition|)
 block|{
-comment|/* First pair is invalid to do any velocity calculation,        * so we apply a constant value.        */
+comment|/*  First pair is invalid to do any velocity calculation, so we        *  apply a constant value.        */
 name|coords
 operator|->
 name|velocity
@@ -281,7 +281,7 @@ name|coords
 operator|->
 name|y
 expr_stmt|;
-comment|/* Events with distances less than the screen resolution are not        * worth handling.        */
+comment|/*  Events with distances less than the screen resolution are        *  not worth handling.        */
 name|filter
 operator|=
 name|MIN
@@ -337,7 +337,7 @@ name|delta_y
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* If even smoothed time resolution does not allow to guess for speed,        * use last velocity.        */
+comment|/*  If even smoothed time resolution does not allow to guess for        *  speed, use last velocity.        */
 if|if
 condition|(
 name|delta_time
@@ -358,7 +358,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* We need to calculate the velocity in screen coordinates            * for human interaction            */
+comment|/*  We need to calculate the velocity in screen coordinates            *  for human interaction            */
 name|gdouble
 name|screen_distance
 init|=
@@ -761,7 +761,7 @@ operator|->
 name|direction
 argument_list|)
 expr_stmt|;
-comment|/* do event fill for devices that do not provide enough events*/
+comment|/* do event fill for devices that do not provide enough events */
 if|if
 condition|(
 name|distance
@@ -819,14 +819,12 @@ name|shell
 operator|->
 name|event_delay
 condition|)
-block|{
 name|shell
 operator|->
 name|event_delay
 operator|=
 name|FALSE
 expr_stmt|;
-block|}
 name|gimp_display_shell_push_event_history
 argument_list|(
 name|shell
@@ -1005,7 +1003,7 @@ name|len
 operator|-
 literal|1
 decl_stmt|;
-comment|/* Note that there must be exactly one event in buffer or bad things    * can happen. This should never get called under other circumstances.    */
+comment|/* Note that there must be exactly one event in buffer or bad things    * can happen. This should never get called under other    * circumstances.    */
 name|ret_coords
 operator|=
 name|g_array_new

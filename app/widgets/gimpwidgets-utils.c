@@ -2018,7 +2018,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon29e4e9790108
+DECL|struct|__anon28b902b20108
 block|{
 DECL|member|modifiers
 name|GdkModifierType
@@ -4047,7 +4047,6 @@ name|FALSE
 comment|/*present*/
 argument_list|)
 expr_stmt|;
-comment|/* Create the dock */
 name|ui_manager
 operator|=
 name|gimp_dock_window_get_ui_manager
@@ -4088,8 +4087,6 @@ if|if
 condition|(
 name|dock
 condition|)
-block|{
-comment|/* Put the dock in the dock window */
 name|gimp_dock_window_add_dock
 argument_list|(
 name|GIMP_DOCK_WINDOW
@@ -4106,7 +4103,6 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|dock
 return|;

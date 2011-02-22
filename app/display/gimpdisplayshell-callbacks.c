@@ -6879,10 +6879,15 @@ block|}
 end_function
 
 begin_comment
+comment|/*  private functions  */
+end_comment
+
+begin_comment
 comment|/* Event delay timeout handler& generic event flusher */
 end_comment
 
 begin_function
+specifier|static
 name|gboolean
 DECL|function|gimp_display_shell_flush_event_queue (GimpDisplayShell * shell)
 name|gimp_display_shell_flush_event_queue
@@ -6986,10 +6991,6 @@ name|FALSE
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/*  private functions  */
-end_comment
 
 begin_function
 specifier|static
