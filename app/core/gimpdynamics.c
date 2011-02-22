@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9e210b0103
+DECL|enum|__anon29a526e40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -352,6 +352,12 @@ name|dispatch_properties_changed
 operator|=
 name|gimp_dynamics_dispatch_properties_changed
 expr_stmt|;
+name|viewable_class
+operator|->
+name|default_stock_id
+operator|=
+literal|"gimp-dynamics"
+expr_stmt|;
 name|data_class
 operator|->
 name|save
@@ -369,12 +375,6 @@ operator|->
 name|duplicate
 operator|=
 name|gimp_dynamics_duplicate
-expr_stmt|;
-name|viewable_class
-operator|->
-name|default_stock_id
-operator|=
-literal|"gimp-dynamics"
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
 argument_list|(
