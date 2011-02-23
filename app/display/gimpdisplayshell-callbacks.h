@@ -143,7 +143,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_display_shell_nav_button_press
+name|gimp_display_shell_navigation_button_press
 parameter_list|(
 name|GtkWidget
 modifier|*

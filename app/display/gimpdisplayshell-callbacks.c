@@ -148,7 +148,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|gimp_display_shell_vscrollbar_update
+name|gimp_display_shell_vadjustment_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -164,7 +164,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_display_shell_hscrollbar_update
+name|gimp_display_shell_hadjustment_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -180,7 +180,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_display_shell_vscrollbar_update_range
+name|gimp_display_shell_vscrollbar_change_value
 parameter_list|(
 name|GtkRange
 modifier|*
@@ -202,7 +202,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_display_shell_hscrollbar_update_range
+name|gimp_display_shell_hscrollbar_change_value
 parameter_list|(
 name|GtkRange
 modifier|*
@@ -354,7 +354,7 @@ literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_display_shell_hscrollbar_update
+name|gimp_display_shell_hadjustment_changed
 argument_list|)
 argument_list|,
 name|shell
@@ -370,7 +370,7 @@ literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_display_shell_vscrollbar_update
+name|gimp_display_shell_vadjustment_changed
 argument_list|)
 argument_list|,
 name|shell
@@ -386,7 +386,7 @@ literal|"change-value"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_display_shell_hscrollbar_update_range
+name|gimp_display_shell_hscrollbar_change_value
 argument_list|)
 argument_list|,
 name|shell
@@ -402,7 +402,7 @@ literal|"change-value"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_display_shell_vscrollbar_update_range
+name|gimp_display_shell_vscrollbar_change_value
 argument_list|)
 argument_list|,
 name|shell
@@ -1291,8 +1291,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_display_shell_nav_button_press (GtkWidget * widget,GdkEventButton * bevent,GimpDisplayShell * shell)
-name|gimp_display_shell_nav_button_press
+DECL|function|gimp_display_shell_navigation_button_press (GtkWidget * widget,GdkEventButton * bevent,GimpDisplayShell * shell)
+name|gimp_display_shell_navigation_button_press
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1368,8 +1368,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_vscrollbar_update (GtkAdjustment * adjustment,GimpDisplayShell * shell)
-name|gimp_display_shell_vscrollbar_update
+DECL|function|gimp_display_shell_vadjustment_changed (GtkAdjustment * adjustment,GimpDisplayShell * shell)
+name|gimp_display_shell_vadjustment_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -1380,7 +1380,7 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
-comment|/* If we are panning with mouse, scrollbars are to be ignored    * or they will cause jitter in motion    */
+comment|/*  If we are panning with mouse, scrollbars are to be ignored or    *  they will cause jitter in motion    */
 if|if
 condition|(
 operator|!
@@ -1410,8 +1410,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_hscrollbar_update (GtkAdjustment * adjustment,GimpDisplayShell * shell)
-name|gimp_display_shell_hscrollbar_update
+DECL|function|gimp_display_shell_hadjustment_changed (GtkAdjustment * adjustment,GimpDisplayShell * shell)
+name|gimp_display_shell_hadjustment_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -1422,7 +1422,7 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
-comment|/* If we are panning with mouse, scrollbars are to be ignored    * or they will cause jitter in motion    */
+comment|/* If we are panning with mouse, scrollbars are to be ignored or    * they will cause jitter in motion    */
 if|if
 condition|(
 operator|!
@@ -1452,8 +1452,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_display_shell_hscrollbar_update_range (GtkRange * range,GtkScrollType scroll,gdouble value,GimpDisplayShell * shell)
-name|gimp_display_shell_hscrollbar_update_range
+DECL|function|gimp_display_shell_hscrollbar_change_value (GtkRange * range,GtkScrollType scroll,gdouble value,GimpDisplayShell * shell)
+name|gimp_display_shell_hscrollbar_change_value
 parameter_list|(
 name|GtkRange
 modifier|*
@@ -1540,8 +1540,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_display_shell_vscrollbar_update_range (GtkRange * range,GtkScrollType scroll,gdouble value,GimpDisplayShell * shell)
-name|gimp_display_shell_vscrollbar_update_range
+DECL|function|gimp_display_shell_vscrollbar_change_value (GtkRange * range,GtkScrollType scroll,gdouble value,GimpDisplayShell * shell)
+name|gimp_display_shell_vscrollbar_change_value
 parameter_list|(
 name|GtkRange
 modifier|*
