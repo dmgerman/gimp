@@ -2800,7 +2800,9 @@ name|_map_info
 operator|.
 name|map_format
 operator|=
-name|CSIM
+name|_preferences
+operator|.
+name|default_map_type
 expr_stmt|;
 name|_map_info
 operator|.
@@ -5760,9 +5762,6 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|clear_map_info
-argument_list|()
-expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|dlg
@@ -5774,6 +5773,9 @@ name|mru_create
 argument_list|()
 expr_stmt|;
 name|init_preferences
+argument_list|()
+expr_stmt|;
+name|clear_map_info
 argument_list|()
 expr_stmt|;
 if|if
