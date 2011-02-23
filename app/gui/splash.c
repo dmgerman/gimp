@@ -94,7 +94,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3290c70108
+DECL|struct|__anon29f9e8a80108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -120,7 +120,7 @@ modifier|*
 name|progress
 decl_stmt|;
 DECL|member|color
-name|GdkColor
+name|GdkRGBA
 name|color
 decl_stmt|;
 DECL|member|upper
@@ -271,9 +271,9 @@ name|GdkPixbuf
 modifier|*
 name|pixbuf
 parameter_list|,
-name|GdkColor
+name|GdkRGBA
 modifier|*
-name|color
+name|rgba
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1289,7 +1289,7 @@ modifier|*
 name|splash
 parameter_list|)
 block|{
-name|gdk_cairo_set_source_color
+name|gdk_cairo_set_source_rgba
 argument_list|(
 name|cr
 argument_list|,
@@ -1777,7 +1777,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|splash_average_text_area (GimpSplash * splash,GdkPixbuf * pixbuf,GdkColor * color)
+DECL|function|splash_average_text_area (GimpSplash * splash,GdkPixbuf * pixbuf,GdkRGBA * color)
 name|splash_average_text_area
 parameter_list|(
 name|GimpSplash
@@ -1788,7 +1788,7 @@ name|GdkPixbuf
 modifier|*
 name|pixbuf
 parameter_list|,
-name|GdkColor
+name|GdkRGBA
 modifier|*
 name|color
 parameter_list|)
@@ -2119,6 +2119,14 @@ literal|8
 operator||
 name|luminance
 operator|)
+operator|/
+literal|255.0
+expr_stmt|;
+name|color
+operator|->
+name|alpha
+operator|=
+literal|1.0
 expr_stmt|;
 block|}
 end_function
