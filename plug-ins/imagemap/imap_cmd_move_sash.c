@@ -57,6 +57,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|move_sash_command_redo
+parameter_list|(
+name|Command_t
+modifier|*
+name|command
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_decl_stmt
 DECL|variable|move_sash_command_class
 specifier|static
@@ -71,14 +83,13 @@ block|,
 name|NULL
 comment|/*undo*/
 block|,
-name|NULL
-comment|/*redo*/
+name|move_sash_command_redo
 block|}
 decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon298f5db20108
+DECL|struct|__anon29ac0c610108
 typedef|typedef
 struct|struct
 block|{
@@ -589,6 +600,21 @@ expr_stmt|;
 return|return
 name|CMD_APPEND
 return|;
+block|}
+end_function
+
+begin_function
+DECL|function|move_sash_command_redo (Command_t * command)
+specifier|static
+name|void
+name|move_sash_command_redo
+parameter_list|(
+name|Command_t
+modifier|*
+name|command
+parameter_list|)
+block|{
+comment|/* do nothing, but avoid running execute again which will break event handling */
 block|}
 end_function
 
