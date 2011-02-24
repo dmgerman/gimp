@@ -485,6 +485,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|const
+name|gchar
+modifier|*
+name|gimp_print_event
+parameter_list|(
+specifier|const
+name|GdkEvent
+modifier|*
+name|event
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
