@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bf2b2b0108
+DECL|struct|__anon29c637630108
 block|{
 DECL|member|run
 name|gboolean
@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bf2b2b0208
+DECL|struct|__anon29c637630208
 block|{
 DECL|member|width
 name|gint
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29bf2b2b0303
+DECL|enum|__anon29c637630303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -184,7 +184,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bf2b2b0403
+DECL|enum|__anon29c637630403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -216,7 +216,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bf2b2b0503
+DECL|enum|__anon29c637630503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -235,7 +235,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bf2b2b0603
+DECL|enum|__anon29c637630603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -263,7 +263,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bf2b2b0703
+DECL|enum|__anon29c637630703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -282,7 +282,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bf2b2b0808
+DECL|struct|__anon29c637630808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -313,7 +313,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bf2b2b0908
+DECL|struct|__anon29c637630908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bf2b2b0a08
+DECL|struct|__anon29c637630a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -787,6 +787,26 @@ name|void
 name|update_range_labels
 parameter_list|(
 name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gboolean
+name|fp_range_draw
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
+name|FPValues
+modifier|*
+name|current
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1292,7 +1312,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29bf2b2b0b08
+DECL|struct|__anon29c637630b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -7288,6 +7308,23 @@ name|AW
 operator|.
 name|aliasing_graph
 argument_list|,
+literal|"draw"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|fp_range_draw
+argument_list|)
+argument_list|,
+operator|&
+name|fpvals
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|AW
+operator|.
+name|aliasing_graph
+argument_list|,
 literal|"event"
 argument_list|,
 name|G_CALLBACK
@@ -7703,20 +7740,20 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|slider_erase (GdkWindow * window,int xpos)
+DECL|function|slider_erase (GtkWidget * widget,int xpos)
 name|slider_erase
 parameter_list|(
-name|GdkWindow
+name|GtkWidget
 modifier|*
-name|window
+name|widget
 parameter_list|,
 name|int
 name|xpos
 parameter_list|)
 block|{
-name|gdk_window_clear_area
+name|gtk_widget_queue_draw_area
 argument_list|(
-name|window
+name|widget
 argument_list|,
 name|MARGIN
 operator|+
@@ -7855,13 +7892,21 @@ end_function
 
 begin_function
 specifier|static
-name|void
-DECL|function|draw_it (GtkWidget * widget)
-name|draw_it
+name|gboolean
+DECL|function|fp_range_draw (GtkWidget * widget,cairo_t * cr,FPValues * current)
+name|fp_range_draw
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
+name|FPValues
+modifier|*
+name|current
 parameter_list|)
 block|{
 name|GtkStyle
@@ -7873,20 +7918,6 @@ argument_list|(
 name|AW
 operator|.
 name|aliasing_graph
-argument_list|)
-decl_stmt|;
-name|cairo_t
-modifier|*
-name|cr
-init|=
-name|gdk_cairo_create
-argument_list|(
-name|gtk_widget_get_window
-argument_list|(
-name|AW
-operator|.
-name|aliasing_graph
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|cairo_translate
@@ -7977,11 +8008,9 @@ operator|.
 name|offset
 argument_list|)
 expr_stmt|;
-name|cairo_destroy
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 
@@ -8036,15 +8065,6 @@ operator|->
 name|type
 condition|)
 block|{
-case|case
-name|GDK_EXPOSE
-case|:
-name|draw_it
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-break|break;
 case|case
 name|GDK_BUTTON_PRESS
 case|:
@@ -8173,12 +8193,9 @@ name|offset
 expr_stmt|;
 name|slider_erase
 argument_list|(
-name|gtk_widget_get_window
-argument_list|(
 name|AW
 operator|.
 name|aliasing_graph
-argument_list|)
 argument_list|,
 operator|*
 name|new
@@ -8192,9 +8209,9 @@ operator|->
 name|x
 expr_stmt|;
 block|}
-name|draw_it
+name|gtk_widget_queue_draw
 argument_list|(
-name|NULL
+name|widget
 argument_list|)
 expr_stmt|;
 name|fp_range_preview_spill
@@ -8260,12 +8277,9 @@ condition|)
 block|{
 name|slider_erase
 argument_list|(
-name|gtk_widget_get_window
-argument_list|(
 name|AW
 operator|.
 name|aliasing_graph
-argument_list|)
 argument_list|,
 operator|*
 name|new
@@ -8276,9 +8290,9 @@ name|new
 operator|=
 name|x
 expr_stmt|;
-name|draw_it
+name|gtk_widget_queue_draw
 argument_list|(
-name|NULL
+name|widget
 argument_list|)
 expr_stmt|;
 name|fp_range_preview_spill
