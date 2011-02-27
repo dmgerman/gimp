@@ -4480,7 +4480,7 @@ name|width
 argument_list|,
 name|text
 operator|->
-name|unit
+name|box_unit
 argument_list|,
 name|xres
 argument_list|)
@@ -4493,7 +4493,7 @@ name|height
 argument_list|,
 name|text
 operator|->
-name|unit
+name|box_unit
 argument_list|,
 name|yres
 argument_list|)
