@@ -1303,11 +1303,15 @@ condition|)
 return|return
 name|TRUE
 return|;
+name|gimp_display_shell_proximity_in
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 name|update_sw_cursor
 operator|=
 name|TRUE
 expr_stmt|;
-comment|/*  proximity_in() is called in MOTION_NOTIFY  */
 name|tool_manager_oper_update_active
 argument_list|(
 name|gimp
@@ -1377,7 +1381,11 @@ break|break;
 case|case
 name|GDK_PROXIMITY_IN
 case|:
-comment|/*  proximity_in() is called in MOTION_NOTIFY  */
+name|gimp_display_shell_proximity_in
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 name|tool_manager_oper_update_active
 argument_list|(
 name|gimp
@@ -2844,22 +2852,15 @@ argument_list|(
 name|mevent
 argument_list|)
 expr_stmt|;
-name|update_sw_cursor
-operator|=
-name|TRUE
-expr_stmt|;
 comment|/*  call proximity_in() here because the pointer might already          *  be in proximity when the canvas starts to receive events,          *  like when a new image has been created into an empty          *  display          */
-if|if
-condition|(
-operator|!
-name|shell
-operator|->
-name|proximity
-condition|)
 name|gimp_display_shell_proximity_in
 argument_list|(
 name|shell
 argument_list|)
+expr_stmt|;
+name|update_sw_cursor
+operator|=
+name|TRUE
 expr_stmt|;
 if|if
 condition|(
@@ -4501,6 +4502,14 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
+if|if
+condition|(
+operator|!
+name|shell
+operator|->
+name|proximity
+condition|)
+block|{
 name|shell
 operator|->
 name|proximity
@@ -4512,6 +4521,7 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -4526,6 +4536,13 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
+if|if
+condition|(
+name|shell
+operator|->
+name|proximity
+condition|)
+block|{
 name|shell
 operator|->
 name|proximity
@@ -4537,6 +4554,7 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
