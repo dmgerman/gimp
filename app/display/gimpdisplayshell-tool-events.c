@@ -1155,6 +1155,20 @@ argument_list|,
 name|shell
 argument_list|)
 return|;
+name|GIMP_LOG
+argument_list|(
+name|TOOL_EVENTS
+argument_list|,
+literal|"event (display %p): %s"
+argument_list|,
+name|display
+argument_list|,
+name|gimp_print_event
+argument_list|(
+name|event
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  Find out what device the event occurred upon  */
 if|if
 condition|(
@@ -1233,20 +1247,6 @@ name|state
 argument_list|)
 expr_stmt|;
 block|}
-name|GIMP_LOG
-argument_list|(
-name|TOOL_EVENTS
-argument_list|,
-literal|"event (display %p): %s"
-argument_list|,
-name|display
-argument_list|,
-name|gimp_print_event
-argument_list|(
-name|event
-argument_list|)
-argument_list|)
-expr_stmt|;
 switch|switch
 condition|(
 name|event
@@ -1470,7 +1470,7 @@ else|else
 block|{
 if|if
 condition|(
-name|G_LIKELY
+name|G_UNLIKELY
 argument_list|(
 name|gtk_widget_has_focus
 argument_list|(
