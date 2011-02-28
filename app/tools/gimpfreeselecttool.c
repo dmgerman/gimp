@@ -178,7 +178,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfa781e0108
+DECL|struct|__anon27b713e70108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -4564,6 +4564,13 @@ condition|)
 block|{
 return|return;
 block|}
+name|gimp_tool_control_activate
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|)
+expr_stmt|;
 name|gimp_draw_tool_pause
 argument_list|(
 name|draw_tool
@@ -4740,6 +4747,13 @@ operator|!=
 name|display
 condition|)
 return|return;
+name|gimp_tool_control_halt
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|)
+expr_stmt|;
 name|gimp_draw_tool_pause
 argument_list|(
 name|GIMP_DRAW_TOOL
