@@ -39,6 +39,15 @@ comment|/*  input devices& controllers  */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpDeviceManager
+typedef|typedef
+name|struct
+name|_GimpDeviceManager
+name|GimpDeviceManager
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDeviceInfo
 typedef|typedef
 name|struct

@@ -16,22 +16,6 @@ directive|define
 name|__GIMP_DEVICES_H__
 end_define
 
-begin_typedef
-DECL|typedef|GimpDeviceChangeNotify
-typedef|typedef
-name|void
-function_decl|(
-modifier|*
-name|GimpDeviceChangeNotify
-function_decl|)
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|)
-function_decl|;
-end_typedef
-
 begin_function_decl
 name|void
 name|gimp_devices_init
@@ -39,9 +23,6 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GimpDeviceChangeNotify
-name|callback
 parameter_list|)
 function_decl|;
 end_function_decl
