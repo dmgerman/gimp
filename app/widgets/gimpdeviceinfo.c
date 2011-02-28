@@ -97,7 +97,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ee7b960103
+DECL|enum|__anon294532bf0103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -110,7 +110,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ee7b960203
+DECL|enum|__anon294532bf0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2555,6 +2555,21 @@ name|GIMP_OBJECT
 argument_list|(
 name|info
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|info
+argument_list|)
+argument_list|,
+literal|"device"
+argument_list|)
+expr_stmt|;
+name|gimp_device_info_changed
+argument_list|(
+name|info
 argument_list|)
 expr_stmt|;
 block|}
