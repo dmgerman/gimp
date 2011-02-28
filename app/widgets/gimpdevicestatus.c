@@ -150,7 +150,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa6ed850103
+DECL|enum|__anon296cd6e50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1116,6 +1116,12 @@ expr_stmt|;
 comment|/*  the device name  */
 if|if
 condition|(
+name|device_info
+operator|->
+name|display
+operator|==
+name|NULL
+operator|||
 name|device_info
 operator|->
 name|display
