@@ -80,21 +80,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpContainer
+name|GimpDeviceManager
 modifier|*
-name|gimp_devices_get_list
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpDeviceInfo
-modifier|*
-name|gimp_devices_get_current
+name|gimp_devices_get_manager
 parameter_list|(
 name|Gimp
 modifier|*
