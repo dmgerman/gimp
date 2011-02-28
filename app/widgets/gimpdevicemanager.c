@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3595d50103
+DECL|enum|__anon2891990e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -407,21 +407,7 @@ name|GimpDeviceManager
 modifier|*
 name|manager
 parameter_list|)
-block|{
-name|gimp_list_set_sort_func
-argument_list|(
-name|GIMP_LIST
-argument_list|(
-name|manager
-argument_list|)
-argument_list|,
-operator|(
-name|GCompareFunc
-operator|)
-name|gimp_device_info_compare
-argument_list|)
-expr_stmt|;
-block|}
+block|{ }
 end_function
 
 begin_function
@@ -830,6 +816,10 @@ argument_list|,
 literal|"unique-names"
 argument_list|,
 name|FALSE
+argument_list|,
+literal|"sort-func"
+argument_list|,
+name|gimp_device_info_compare
 argument_list|,
 name|NULL
 argument_list|)
