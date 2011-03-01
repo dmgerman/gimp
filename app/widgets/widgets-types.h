@@ -1038,6 +1038,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpIconPicker
+typedef|typedef
+name|struct
+name|_GimpIconPicker
+name|GimpIconPicker
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpImageCommentEditor
 typedef|typedef
 name|struct
