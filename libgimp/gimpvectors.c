@@ -283,7 +283,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_parasite_find:  * @vectors_ID: The vectors object.  * @name: The name of the parasite to find.  *  * Deprecated: Use gimp_item_find_parasite() instead.  *  * Returns: The found parasite.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_vectors_parasite_find:  * @vectors_ID: The vectors object.  * @name: The name of the parasite to find.  *  * Deprecated: Use gimp_item_get_parasite() instead.  *  * Returns: The found parasite.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -302,7 +302,7 @@ name|name
 parameter_list|)
 block|{
 return|return
-name|gimp_item_find_parasite
+name|gimp_item_get_parasite
 argument_list|(
 name|vectors_ID
 argument_list|,
@@ -393,15 +393,21 @@ modifier|*
 name|parasites
 parameter_list|)
 block|{
-return|return
-name|gimp_item_list_parasites
+operator|*
+name|parasites
+operator|=
+name|gimp_item_get_parasite_list
 argument_list|(
 name|vectors_ID
 argument_list|,
 name|num_parasites
-argument_list|,
-name|parasites
 argument_list|)
+expr_stmt|;
+return|return
+operator|*
+name|parasites
+operator|!=
+name|NULL
 return|;
 block|}
 end_function

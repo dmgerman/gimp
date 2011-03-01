@@ -788,7 +788,7 @@ name|pdb_type_quark
 condition|)
 block|{
 struct|struct
-DECL|struct|__anon2c410ca70108
+DECL|struct|__anon2934cdc80108
 block|{
 DECL|member|g_type
 name|GType
@@ -1102,7 +1102,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c410ca70208
+DECL|struct|__anon2934cdc80208
 block|{
 DECL|member|old_name
 specifier|const
@@ -1565,7 +1565,7 @@ block|,
 block|{
 literal|"gimp-drawable-parasite-find"
 block|,
-literal|"gimp-item-find-parasite"
+literal|"gimp-item-get-parasite"
 block|}
 block|,
 block|{
@@ -1583,7 +1583,7 @@ block|,
 block|{
 literal|"gimp-drawable-parasite-list"
 block|,
-literal|"gimp-item-list-parasites"
+literal|"gimp-item-get-parasite-list"
 block|}
 block|,
 block|{
@@ -1727,7 +1727,7 @@ block|,
 block|{
 literal|"gimp-vectors-parasite-find"
 block|,
-literal|"gimp-item-find-parasite"
+literal|"gimp-item-get-parasite"
 block|}
 block|,
 block|{
@@ -1745,7 +1745,7 @@ block|,
 block|{
 literal|"gimp-vectors-parasite-list"
 block|,
-literal|"gimp-item-list-parasites"
+literal|"gimp-item-get-parasite-list"
 block|}
 block|}
 struct|;

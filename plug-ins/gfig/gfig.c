@@ -3015,7 +3015,7 @@ name|gfig
 decl_stmt|;
 name|parasite
 operator|=
-name|gimp_item_find_parasite
+name|gimp_item_get_parasite
 argument_list|(
 name|gfig_context
 operator|->

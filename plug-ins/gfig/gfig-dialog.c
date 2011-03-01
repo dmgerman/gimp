@@ -424,7 +424,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290ba34a0108
+DECL|struct|__anon295676670108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -1020,7 +1020,7 @@ literal|1
 expr_stmt|;
 name|parasite
 operator|=
-name|gimp_item_find_parasite
+name|gimp_item_get_parasite
 argument_list|(
 name|gfig_context
 operator|->

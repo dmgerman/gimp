@@ -2000,14 +2000,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_find_parasite:  * @item_ID: The item.  * @name: The name of the parasite to find.  *  * Look up a parasite in an item  *  * Finds and returns the parasite that is attached to an item.  *  * Returns: The found parasite.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_get_parasite:  * @item_ID: The item.  * @name: The name of the parasite to find.  *  * Look up a parasite in an item  *  * Finds and returns the parasite that is attached to an item.  *  * Returns: The found parasite.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
 name|GimpParasite
 modifier|*
-DECL|function|gimp_item_find_parasite (gint32 item_ID,const gchar * name)
-name|gimp_item_find_parasite
+DECL|function|gimp_item_get_parasite (gint32 item_ID,const gchar * name)
+name|gimp_item_get_parasite
 parameter_list|(
 name|gint32
 name|item_ID
@@ -2035,7 +2035,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp-item-find-parasite"
+literal|"gimp-item-get-parasite"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2093,13 +2093,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_list_parasites:  * @item_ID: The item.  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * List all parasites.  *  * Returns a list of all parasites currently attached the an item.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_get_parasite_list:  * @item_ID: The item.  * @num_parasites: The number of attached parasites.  *  * List all parasites.  *  * Returns a list of all parasites currently attached the an item.  *  * Returns: The names of currently attached parasites.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
-name|gboolean
-DECL|function|gimp_item_list_parasites (gint32 item_ID,gint * num_parasites,gchar *** parasites)
-name|gimp_item_list_parasites
+name|gchar
+modifier|*
+modifier|*
+DECL|function|gimp_item_get_parasite_list (gint32 item_ID,gint * num_parasites)
+name|gimp_item_get_parasite_list
 parameter_list|(
 name|gint32
 name|item_ID
@@ -2107,12 +2109,6 @@ parameter_list|,
 name|gint
 modifier|*
 name|num_parasites
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-modifier|*
-name|parasites
 parameter_list|)
 block|{
 name|GimpParam
@@ -2122,10 +2118,12 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|gboolean
-name|success
+name|gchar
+modifier|*
+modifier|*
+name|parasites
 init|=
-name|TRUE
+name|NULL
 decl_stmt|;
 name|gint
 name|i
@@ -2134,7 +2132,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp-item-list-parasites"
+literal|"gimp-item-get-parasite-list"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2151,13 +2149,8 @@ name|num_parasites
 operator|=
 literal|0
 expr_stmt|;
-operator|*
-name|parasites
-operator|=
-name|NULL
-expr_stmt|;
-name|success
-operator|=
+if|if
+condition|(
 name|return_vals
 index|[
 literal|0
@@ -2168,10 +2161,6 @@ operator|.
 name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
-expr_stmt|;
-if|if
-condition|(
-name|success
 condition|)
 block|{
 operator|*
@@ -2186,7 +2175,6 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-operator|*
 name|parasites
 operator|=
 name|g_new
@@ -2212,10 +2200,7 @@ condition|;
 name|i
 operator|++
 control|)
-operator|(
-operator|*
 name|parasites
-operator|)
 index|[
 name|i
 index|]
@@ -2244,7 +2229,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|success
+name|parasites
 return|;
 block|}
 end_function

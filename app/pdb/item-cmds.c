@@ -3164,8 +3164,8 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|item_find_parasite_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
-name|item_find_parasite_invoker
+DECL|function|item_get_parasite_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
+name|item_get_parasite_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -3316,8 +3316,8 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|item_list_parasites_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
-name|item_list_parasites_invoker
+DECL|function|item_get_parasite_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
+name|item_get_parasite_list_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -5733,12 +5733,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-item-find-parasite    */
+comment|/*    * gimp-item-get-parasite    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|item_find_parasite_invoker
+name|item_get_parasite_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -5748,14 +5748,14 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-item-find-parasite"
+literal|"gimp-item-get-parasite"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-item-find-parasite"
+literal|"gimp-item-get-parasite"
 argument_list|,
 literal|"Look up a parasite in an item"
 argument_list|,
@@ -5844,12 +5844,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-item-list-parasites    */
+comment|/*    * gimp-item-get-parasite-list    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|item_list_parasites_invoker
+name|item_get_parasite_list_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -5859,14 +5859,14 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-item-list-parasites"
+literal|"gimp-item-get-parasite-list"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-item-list-parasites"
+literal|"gimp-item-get-parasite-list"
 argument_list|,
 literal|"List all parasites."
 argument_list|,

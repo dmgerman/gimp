@@ -308,7 +308,7 @@ end_function_decl
 begin_function_decl
 name|GimpParasite
 modifier|*
-name|gimp_item_find_parasite
+name|gimp_item_get_parasite
 parameter_list|(
 name|gint32
 name|item_ID
@@ -322,8 +322,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
-name|gimp_item_list_parasites
+name|gchar
+modifier|*
+modifier|*
+name|gimp_item_get_parasite_list
 parameter_list|(
 name|gint32
 name|item_ID
@@ -331,12 +333,6 @@ parameter_list|,
 name|gint
 modifier|*
 name|num_parasites
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-modifier|*
-name|parasites
 parameter_list|)
 function_decl|;
 end_function_decl

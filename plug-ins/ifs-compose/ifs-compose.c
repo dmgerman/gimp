@@ -130,7 +130,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b0067c0103
+DECL|enum|__anon2b3baeaa0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b0067c0203
+DECL|enum|__anon2b3baeaa0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -166,7 +166,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b0067c0308
+DECL|struct|__anon2b3baeaa0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -188,7 +188,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon29b0067c040a
+DECL|union|__anon2b3baeaa040a
 block|{
 DECL|member|d
 name|gdouble
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b0067c0508
+DECL|struct|__anon2b3baeaa0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b0067c0608
+DECL|struct|__anon2b3baeaa0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -278,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b0067c0708
+DECL|struct|__anon2b3baeaa0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -314,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b0067c0808
+DECL|struct|__anon2b3baeaa0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -376,7 +376,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b0067c0908
+DECL|struct|__anon2b3baeaa0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -525,7 +525,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b0067c0a08
+DECL|struct|__anon2b3baeaa0a08
 block|{
 DECL|member|run
 name|gboolean
@@ -1653,7 +1653,7 @@ case|:
 comment|/*  Possibly retrieve data; first look for a parasite -        *  if not found, fall back to global values        */
 name|parasite
 operator|=
-name|gimp_item_find_parasite
+name|gimp_item_get_parasite
 argument_list|(
 name|drawable
 operator|->
