@@ -140,7 +140,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd430ba0108
+DECL|struct|__anon2c18b8d00108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -656,14 +656,15 @@ name|entry
 operator|=
 name|GIMP_SIZE_ENTRY
 argument_list|(
+name|gimp_template_editor_get_size_se
+argument_list|(
 name|GIMP_TEMPLATE_EDITOR
 argument_list|(
 name|dialog
 operator|->
 name|editor
 argument_list|)
-operator|->
-name|size_se
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_activates_default
