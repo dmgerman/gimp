@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c08543d0103
+DECL|enum|__anon29aacb300103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -812,6 +812,13 @@ condition|(
 name|private
 operator|->
 name|path
+operator|&&
+name|gtk_widget_get_realized
+argument_list|(
+name|shell
+operator|->
+name|canvas
+argument_list|)
 condition|)
 block|{
 name|cairo_t
