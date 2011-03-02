@@ -423,13 +423,14 @@ name|comment
 operator|=
 name|g_strdup
 argument_list|(
+name|gimp_template_get_comment
+argument_list|(
 name|gimp
 operator|->
 name|config
 operator|->
 name|default_image
-operator|->
-name|comment
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|return_vals
