@@ -1383,7 +1383,7 @@ literal|"%s GEGL graph"
 argument_list|,
 name|file_utils_uri_display_name
 argument_list|(
-name|gimp_image_get_uri
+name|gimp_image_get_uri_or_untitled
 argument_list|(
 name|source_image
 argument_list|)
@@ -1411,12 +1411,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_object_set_name
-argument_list|(
-name|GIMP_OBJECT
+name|gimp_image_set_uri
 argument_list|(
 name|new_image
-argument_list|)
 argument_list|,
 name|new_name
 argument_list|)

@@ -53,10 +53,9 @@ end_comment
 
 begin_function_decl
 name|void
-name|draw_preview_image
+name|preview_compute
 parameter_list|(
-name|gboolean
-name|recompute
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -83,6 +82,21 @@ parameter_list|,
 name|GdkEvent
 modifier|*
 name|event
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|preview_expose
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|area
+parameter_list|,
+name|GdkEventExpose
+modifier|*
+name|eevent
 parameter_list|)
 function_decl|;
 end_function_decl

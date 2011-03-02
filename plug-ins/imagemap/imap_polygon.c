@@ -151,13 +151,9 @@ name|Object_t
 modifier|*
 name|obj
 parameter_list|,
-name|GdkWindow
+name|cairo_t
 modifier|*
-name|window
-parameter_list|,
-name|GdkGC
-modifier|*
-name|gc
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -171,13 +167,9 @@ name|Object_t
 modifier|*
 name|obj
 parameter_list|,
-name|GdkWindow
+name|cairo_t
 modifier|*
-name|window
-parameter_list|,
-name|GdkGC
-modifier|*
-name|gc
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -829,20 +821,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|polygon_draw (Object_t * obj,GdkWindow * window,GdkGC * gc)
+DECL|function|polygon_draw (Object_t * obj,cairo_t * cr)
 name|polygon_draw
 parameter_list|(
 name|Object_t
 modifier|*
 name|obj
 parameter_list|,
-name|GdkWindow
+name|cairo_t
 modifier|*
-name|window
-parameter_list|,
-name|GdkGC
-modifier|*
-name|gc
+name|cr
 parameter_list|)
 block|{
 name|Polygon_t
@@ -856,9 +844,7 @@ argument_list|)
 decl_stmt|;
 name|draw_polygon
 argument_list|(
-name|window
-argument_list|,
-name|gc
+name|cr
 argument_list|,
 name|polygon
 operator|->
@@ -871,20 +857,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|polygon_draw_sashes (Object_t * obj,GdkWindow * window,GdkGC * gc)
+DECL|function|polygon_draw_sashes (Object_t * obj,cairo_t * cr)
 name|polygon_draw_sashes
 parameter_list|(
 name|Object_t
 modifier|*
 name|obj
 parameter_list|,
-name|GdkWindow
+name|cairo_t
 modifier|*
-name|window
-parameter_list|,
-name|GdkGC
-modifier|*
-name|gc
+name|cr
 parameter_list|)
 block|{
 name|Polygon_t
@@ -931,9 +913,7 @@ name|data
 decl_stmt|;
 name|draw_sash
 argument_list|(
-name|window
-argument_list|,
-name|gc
+name|cr
 argument_list|,
 name|point
 operator|->
@@ -1678,7 +1658,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29e83df30108
+DECL|struct|__anon2b1b658a0108
 typedef|typedef
 struct|struct
 block|{

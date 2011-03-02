@@ -149,6 +149,7 @@ modifier|*
 name|display
 parameter_list|)
 function_decl|;
+comment|/*  implementing the GimpColorDisplay::convert method is deprecated     */
 DECL|member|convert
 name|void
 function_decl|(
@@ -253,17 +254,23 @@ name|gchar
 modifier|*
 name|stock_id
 decl_stmt|;
-comment|/* Padding for future expansion */
-DECL|member|_gimp_reserved2
+DECL|member|convert_surface
 name|void
 function_decl|(
 modifier|*
-name|_gimp_reserved2
+name|convert_surface
 function_decl|)
 parameter_list|(
-name|void
+name|GimpColorDisplay
+modifier|*
+name|display
+parameter_list|,
+name|cairo_surface_t
+modifier|*
+name|surface
 parameter_list|)
 function_decl|;
+comment|/* Padding for future expansion */
 DECL|member|_gimp_reserved3
 name|void
 function_decl|(
@@ -334,6 +341,27 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_color_display_convert_surface
+parameter_list|(
+name|GimpColorDisplay
+modifier|*
+name|display
+parameter_list|,
+name|cairo_surface_t
+modifier|*
+name|surface
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
+
+begin_function_decl
+name|void
 name|gimp_color_display_convert
 parameter_list|(
 name|GimpColorDisplay
@@ -358,6 +386,11 @@ name|bpl
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function_decl
 name|void

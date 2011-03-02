@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib/gstdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
@@ -601,7 +607,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29013b770108
+DECL|struct|__anon2a9d48230108
 block|{
 DECL|member|avoid_sizeof_zero
 name|gint
@@ -1095,11 +1101,6 @@ argument_list|,
 name|uri
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|uri
-argument_list|)
-expr_stmt|;
 comment|/* Assert on the loaded file. If success, it means that there is no    * significant information loss when we wrote the image to a file    * and loaded it again    */
 name|gimp_assert_mainimage
 argument_list|(
@@ -1110,6 +1111,16 @@ argument_list|,
 name|compat_paths
 argument_list|,
 name|use_gimp_2_8_features
+argument_list|)
+expr_stmt|;
+name|g_unlink
+argument_list|(
+name|uri
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|uri
 argument_list|)
 expr_stmt|;
 block|}

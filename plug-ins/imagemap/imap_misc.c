@@ -71,16 +71,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|draw_sash (GdkWindow * window,GdkGC * gc,gint x,gint y)
+DECL|function|draw_sash (cairo_t * cr,gint x,gint y)
 name|draw_sash
 parameter_list|(
-name|GdkWindow
+name|cairo_t
 modifier|*
-name|window
-parameter_list|,
-name|GdkGC
-modifier|*
-name|gc
+name|cr
 parameter_list|,
 name|gint
 name|x
@@ -91,9 +87,7 @@ parameter_list|)
 block|{
 name|draw_rectangle
 argument_list|(
-name|window
-argument_list|,
-name|gc
+name|cr
 argument_list|,
 name|TRUE
 argument_list|,

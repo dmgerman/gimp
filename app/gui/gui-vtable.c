@@ -466,7 +466,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|guint32
-name|gui_display_get_window
+name|gui_display_get_window_id
 parameter_list|(
 name|GimpObject
 modifier|*
@@ -827,9 +827,9 @@ name|gimp
 operator|->
 name|gui
 operator|.
-name|display_get_window
+name|display_get_window_id
 operator|=
-name|gui_display_get_window
+name|gui_display_get_window_id
 expr_stmt|;
 name|gimp
 operator|->
@@ -1437,8 +1437,8 @@ end_function
 begin_function
 specifier|static
 name|guint32
-DECL|function|gui_display_get_window (GimpObject * display)
-name|gui_display_get_window
+DECL|function|gui_display_get_window_id (GimpObject * display)
+name|gui_display_get_window_id
 parameter_list|(
 name|GimpObject
 modifier|*
@@ -1488,10 +1488,7 @@ name|toplevel
 argument_list|)
 condition|)
 return|return
-operator|(
-name|guint32
-operator|)
-name|gimp_window_get_native
+name|gimp_window_get_native_id
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -2188,16 +2185,16 @@ name|progress
 condition|)
 block|{
 name|guint32
-name|window
+name|window_id
 init|=
-name|gimp_progress_get_window
+name|gimp_progress_get_window_id
 argument_list|(
 name|progress
 argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|window
+name|window_id
 condition|)
 name|gimp_window_set_transient_for
 argument_list|(
@@ -2206,7 +2203,7 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-name|window
+name|window_id
 argument_list|)
 expr_stmt|;
 block|}

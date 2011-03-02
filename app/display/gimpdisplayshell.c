@@ -288,6 +288,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-tool-events.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-transform.h"
 end_include
 
@@ -323,7 +329,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2958a20a0103
+DECL|enum|__anon2b14828d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -351,7 +357,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2958a20a0203
+DECL|enum|__anon2b14828d0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2698,7 +2704,7 @@ literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_display_shell_nav_button_press
+name|gimp_display_shell_navigation_button_press
 argument_list|)
 argument_list|,
 name|shell

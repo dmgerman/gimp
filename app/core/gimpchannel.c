@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2900430d0103
+DECL|enum|__anon28d9944b0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -7610,21 +7610,15 @@ argument_list|)
 expr_stmt|;
 name|channel
 operator|=
-name|g_object_new
+name|GIMP_CHANNEL
+argument_list|(
+name|gimp_drawable_new
 argument_list|(
 name|GIMP_TYPE_CHANNEL
 argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_drawable_configure
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|channel
-argument_list|)
-argument_list|,
 name|image
+argument_list|,
+name|name
 argument_list|,
 literal|0
 argument_list|,
@@ -7635,8 +7629,7 @@ argument_list|,
 name|height
 argument_list|,
 name|GIMP_GRAY_IMAGE
-argument_list|,
-name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

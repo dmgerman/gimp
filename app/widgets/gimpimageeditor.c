@@ -274,6 +274,7 @@ name|editor
 operator|->
 name|context
 condition|)
+block|{
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|editor
@@ -285,6 +286,14 @@ argument_list|,
 name|editor
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|editor
+operator|->
+name|context
+argument_list|)
+expr_stmt|;
+block|}
 name|editor
 operator|->
 name|context
@@ -296,6 +305,13 @@ condition|(
 name|context
 condition|)
 block|{
+name|g_object_ref
+argument_list|(
+name|editor
+operator|->
+name|context
+argument_list|)
+expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
 name|context

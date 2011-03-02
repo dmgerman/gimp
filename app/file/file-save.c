@@ -566,6 +566,14 @@ argument_list|,
 name|file_proc
 argument_list|)
 expr_stmt|;
+comment|/* Forget the import source when we save. We interpret a            * save as that the user is not interested in being able            * to quickly export back to the original any longer            */
+name|gimp_image_set_imported_uri
+argument_list|(
+name|image
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_image_clean_all
 argument_list|(
 name|image
@@ -578,6 +586,14 @@ condition|(
 name|export
 condition|)
 block|{
+comment|/* Remeber the last entered Export URI for the image. We            * only need to do this explicitly when exporting. It            * happens implicitly when saving since the GimpObject name            * of a GimpImage is the last-save URI            */
+name|gimp_image_set_exported_uri
+argument_list|(
+name|image
+argument_list|,
+name|uri
+argument_list|)
+expr_stmt|;
 name|gimp_image_export_clean_all
 argument_list|(
 name|image

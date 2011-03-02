@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2965997f0103
+DECL|enum|__anon2b773f670103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -96,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2965997f0203
+DECL|enum|__anon2b773f670203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1146,7 +1146,7 @@ name|brush
 argument_list|,
 name|scale
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.0
 argument_list|,
@@ -1187,7 +1187,7 @@ name|brush
 argument_list|,
 name|scale
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.0
 argument_list|,
@@ -2000,13 +2000,6 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|aspect_ratio
-operator|>
-literal|0.0
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
 name|width
 operator|!=
 name|NULL
@@ -2030,7 +2023,7 @@ operator|&&
 operator|(
 name|aspect_ratio
 operator|==
-literal|1.0
+literal|0.0
 operator|)
 operator|&&
 operator|(
@@ -2139,15 +2132,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|aspect_ratio
-operator|>
-literal|0.0
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|(
@@ -2159,7 +2143,7 @@ operator|&&
 operator|(
 name|aspect_ratio
 operator|==
-literal|1.0
+literal|0.0
 operator|)
 operator|&&
 operator|(
@@ -2259,15 +2243,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|aspect_ratio
-operator|>
-literal|0.0
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|(
@@ -2279,7 +2254,7 @@ operator|&&
 operator|(
 name|aspect_ratio
 operator|==
-literal|1.0
+literal|0.0
 operator|)
 operator|&&
 operator|(

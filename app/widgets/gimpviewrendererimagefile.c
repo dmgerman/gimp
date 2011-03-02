@@ -549,6 +549,15 @@ argument_list|(
 name|screen
 argument_list|)
 decl_stmt|;
+name|GimpThumbnail
+modifier|*
+name|thumbnail
+init|=
+name|gimp_imagefile_get_thumbnail
+argument_list|(
+name|imagefile
+argument_list|)
+decl_stmt|;
 name|GdkPixbuf
 modifier|*
 name|pixbuf
@@ -690,8 +699,6 @@ condition|(
 operator|!
 name|pixbuf
 operator|&&
-name|imagefile
-operator|->
 name|thumbnail
 operator|->
 name|image_mimetype
@@ -701,8 +708,6 @@ name|pixbuf
 operator|=
 name|get_icon_for_mime_type
 argument_list|(
-name|imagefile
-operator|->
 name|thumbnail
 operator|->
 name|image_mimetype
@@ -726,8 +731,6 @@ name|GTK_STOCK_FILE
 decl_stmt|;
 if|if
 condition|(
-name|imagefile
-operator|->
 name|thumbnail
 operator|->
 name|image_state

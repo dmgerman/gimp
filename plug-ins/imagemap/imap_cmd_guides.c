@@ -58,7 +58,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2c06ff870108
+DECL|struct|__anon28da7a740108
 typedef|typedef
 struct|struct
 block|{
@@ -1572,7 +1572,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c06ff870208
+DECL|struct|__anon28da7a740208
 typedef|typedef
 struct|struct
 block|{

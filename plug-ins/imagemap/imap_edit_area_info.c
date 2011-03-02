@@ -2368,7 +2368,7 @@ argument_list|(
 name|param
 argument_list|)
 condition|)
-name|redraw_preview
+name|preview_redraw
 argument_list|()
 expr_stmt|;
 block|}
@@ -2533,7 +2533,7 @@ if|if
 condition|(
 name|changed
 condition|)
-name|redraw_preview
+name|preview_redraw
 argument_list|()
 expr_stmt|;
 block|}

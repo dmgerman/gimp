@@ -84,7 +84,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c6b4a720108
+DECL|struct|__anon28c1b61f0108
 typedef|typedef
 struct|struct
 block|{
@@ -315,7 +315,7 @@ operator|->
 name|edge
 expr_stmt|;
 block|}
-name|redraw_preview
+name|preview_redraw
 argument_list|()
 expr_stmt|;
 return|return
@@ -388,7 +388,7 @@ argument_list|,
 name|p
 argument_list|)
 expr_stmt|;
-name|redraw_preview
+name|preview_redraw
 argument_list|()
 expr_stmt|;
 comment|/* Fix me! */

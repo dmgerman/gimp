@@ -9240,9 +9240,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-to-selection"
 argument_list|,
-literal|"Deprecated: Use 'gimp-item-to-selection' instead."
+literal|"Deprecated: Use 'gimp-image-select-item' instead."
 argument_list|,
-literal|"Deprecated: Use 'gimp-item-to-selection' instead."
+literal|"Deprecated: Use 'gimp-image-select-item' instead."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -9250,7 +9250,7 @@ literal|"Simon Budig"
 argument_list|,
 literal|"2006"
 argument_list|,
-literal|"gimp-item-to-selection"
+literal|"gimp-image-select-item"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

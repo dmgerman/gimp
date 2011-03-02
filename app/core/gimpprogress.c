@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb07d160103
+DECL|enum|__anon2c1d257a0103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -630,8 +630,8 @@ end_function
 
 begin_function
 name|guint32
-DECL|function|gimp_progress_get_window (GimpProgress * progress)
-name|gimp_progress_get_window
+DECL|function|gimp_progress_get_window_id (GimpProgress * progress)
+name|gimp_progress_get_window_id
 parameter_list|(
 name|GimpProgress
 modifier|*
@@ -663,12 +663,12 @@ if|if
 condition|(
 name|progress_iface
 operator|->
-name|get_window
+name|get_window_id
 condition|)
 return|return
 name|progress_iface
 operator|->
-name|get_window
+name|get_window_id
 argument_list|(
 name|progress
 argument_list|)

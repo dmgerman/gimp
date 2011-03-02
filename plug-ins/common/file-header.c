@@ -587,6 +587,8 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|data
+init|=
+name|NULL
 decl_stmt|;
 name|guchar
 modifier|*

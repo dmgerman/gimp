@@ -144,12 +144,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplayshell-callbacks.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayshell-close.h"
 end_include
 
@@ -157,6 +151,12 @@ begin_include
 include|#
 directive|include
 file|"gimpdisplayshell-scroll.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdisplayshell-tool-events.h"
 end_include
 
 begin_include
@@ -207,7 +207,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29653ecf0103
+DECL|enum|__anon27d4df8f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -320,7 +320,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29653ecf0208
+DECL|struct|__anon27d4df8f0208
 block|{
 DECL|member|window
 name|GimpImageWindow
@@ -1523,6 +1523,18 @@ name|notebook
 operator|=
 name|gtk_notebook_new
 argument_list|()
+expr_stmt|;
+name|gtk_notebook_set_scrollable
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|private
+operator|->
+name|notebook
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
 expr_stmt|;
 name|gtk_notebook_set_show_border
 argument_list|(

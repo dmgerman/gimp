@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b0f9ea0103
+DECL|enum|__anon274a3a330103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1021,6 +1021,11 @@ name|view
 argument_list|)
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|model
+condition|)
+block|{
 name|GtkTreeIter
 modifier|*
 name|iter
@@ -1080,6 +1085,10 @@ return|return
 name|iter
 return|;
 block|}
+return|return
+name|NULL
+return|;
+block|}
 end_function
 
 begin_function
@@ -1112,6 +1121,11 @@ name|view
 argument_list|)
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|model
+condition|)
+block|{
 name|GtkTreeIter
 modifier|*
 name|iter
@@ -1156,6 +1170,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
 end_function
 
 begin_function
@@ -1191,6 +1206,10 @@ name|view
 argument_list|)
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|model
+condition|)
 name|gimp_container_tree_store_reorder_item
 argument_list|(
 name|GIMP_CONTAINER_TREE_STORE
@@ -1238,6 +1257,10 @@ name|view
 argument_list|)
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|model
+condition|)
 name|gimp_container_tree_store_rename_item
 argument_list|(
 name|GIMP_CONTAINER_TREE_STORE
@@ -1280,6 +1303,17 @@ argument_list|(
 name|view
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|gtk_combo_box_get_model
+argument_list|(
+name|GTK_COMBO_BOX
+argument_list|(
+name|view
+argument_list|)
+argument_list|)
+condition|)
+block|{
 name|GtkTreeIter
 modifier|*
 name|iter
@@ -1328,6 +1362,7 @@ argument_list|,
 name|view
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|TRUE
 return|;
@@ -1357,6 +1392,10 @@ name|view
 argument_list|)
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|model
+condition|)
 name|gimp_container_tree_store_clear_items
 argument_list|(
 name|GIMP_CONTAINER_TREE_STORE
@@ -1408,6 +1447,10 @@ name|view
 argument_list|)
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|model
+condition|)
 name|gimp_container_tree_store_set_view_size
 argument_list|(
 name|GIMP_CONTAINER_TREE_STORE

@@ -2835,6 +2835,10 @@ argument_list|,
 name|sample_point
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|item
+condition|)
 name|g_object_set
 argument_list|(
 name|item
@@ -2941,6 +2945,10 @@ argument_list|,
 name|sample_point
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|item
+condition|)
 name|g_object_set
 argument_list|(
 name|item

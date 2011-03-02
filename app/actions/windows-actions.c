@@ -1145,7 +1145,7 @@ name|title
 decl_stmt|;
 name|uri
 operator|=
-name|gimp_image_get_uri
+name|gimp_image_get_uri_or_untitled
 argument_list|(
 name|image
 argument_list|)

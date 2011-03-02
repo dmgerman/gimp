@@ -100,7 +100,7 @@ DECL|macro|DEFAULT_BRUSH_ASPECT_RATIO
 define|#
 directive|define
 name|DEFAULT_BRUSH_ASPECT_RATIO
-value|1.0
+value|0.0
 end_define
 
 begin_define
@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8d5ebe0103
+DECL|enum|__anon29b432d30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -523,9 +523,10 @@ argument_list|(
 literal|"Brush Aspect Ratio"
 argument_list|)
 argument_list|,
-literal|0.01
+operator|-
+literal|20.0
 argument_list|,
-literal|10.0
+literal|20.0
 argument_list|,
 name|DEFAULT_BRUSH_ASPECT_RATIO
 argument_list|,

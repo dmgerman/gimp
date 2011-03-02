@@ -167,6 +167,20 @@ DECL|member|parent_class
 name|GimpContainerBoxClass
 name|parent_class
 decl_stmt|;
+comment|/* signals */
+DECL|member|edit_name
+name|void
+function_decl|(
+modifier|*
+name|edit_name
+function_decl|)
+parameter_list|(
+name|GimpContainerTreeView
+modifier|*
+name|tree_view
+parameter_list|)
+function_decl|;
+comment|/* virtual functions */
 DECL|member|drop_possible
 name|gboolean
 function_decl|(

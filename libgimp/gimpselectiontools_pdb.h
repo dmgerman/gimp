@@ -23,6 +23,9 @@ end_define
 begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
 name|gboolean
 name|gimp_by_color_select
 parameter_list|(
@@ -311,6 +314,15 @@ name|feather_radius_y
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DISABLE_DEPRECATED */
+end_comment
 
 begin_macro
 name|G_END_DECLS

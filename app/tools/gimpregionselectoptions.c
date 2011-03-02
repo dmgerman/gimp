@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpguiconfig.h"
+file|"config/gimpcoreconfig.h"
 end_include
 
 begin_include
@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2760b7b80103
+DECL|enum|__anon290a6e9c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -565,8 +565,6 @@ argument_list|)
 operator|->
 name|default_value
 operator|=
-name|GIMP_GUI_CONFIG
-argument_list|(
 name|tool_options
 operator|->
 name|tool_info
@@ -574,7 +572,6 @@ operator|->
 name|gimp
 operator|->
 name|config
-argument_list|)
 operator|->
 name|default_threshold
 expr_stmt|;

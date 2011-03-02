@@ -286,12 +286,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpprogress.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimptagcache.h"
 end_include
 
@@ -327,7 +321,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288b613c0103
+DECL|enum|__anon29b501800103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -4641,15 +4635,18 @@ specifier|const
 name|gchar
 modifier|*
 name|comment
-init|=
+decl_stmt|;
+name|comment
+operator|=
+name|gimp_template_get_comment
+argument_list|(
 name|gimp
 operator|->
 name|config
 operator|->
 name|default_image
-operator|->
-name|comment
-decl_stmt|;
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|comment

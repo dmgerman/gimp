@@ -23,7 +23,7 @@ file|"imap_default_dialog.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon277c159e0108
+DECL|struct|__anon28b5dc420108
 typedef|typedef
 struct|struct
 block|{
@@ -43,6 +43,14 @@ DECL|member|selected_bg
 name|GdkColor
 name|selected_bg
 decl_stmt|;
+DECL|member|interactive_bg
+name|GdkColor
+name|interactive_bg
+decl_stmt|;
+DECL|member|interactive_fg
+name|GdkColor
+name|interactive_fg
+decl_stmt|;
 DECL|typedef|ColorSelData_t
 block|}
 name|ColorSelData_t
@@ -50,7 +58,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon277c159e0208
+DECL|struct|__anon28b5dc420208
 typedef|typedef
 struct|struct
 block|{
@@ -101,16 +109,6 @@ decl_stmt|;
 DECL|member|colors
 name|ColorSelData_t
 name|colors
-decl_stmt|;
-DECL|member|normal_gc
-name|GdkGC
-modifier|*
-name|normal_gc
-decl_stmt|;
-DECL|member|selected_gc
-name|GdkGC
-modifier|*
-name|selected_gc
 decl_stmt|;
 DECL|typedef|PreferencesData_t
 block|}

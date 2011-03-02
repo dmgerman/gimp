@@ -201,7 +201,7 @@ name|gimp
 operator|->
 name|gui
 operator|.
-name|display_get_window
+name|display_get_window_id
 operator|=
 name|NULL
 expr_stmt|;
@@ -1197,8 +1197,8 @@ end_function
 
 begin_function
 name|guint32
-DECL|function|gimp_get_display_window (Gimp * gimp,GimpObject * display)
-name|gimp_get_display_window
+DECL|function|gimp_get_display_window_id (Gimp * gimp,GimpObject * display)
+name|gimp_get_display_window_id
 parameter_list|(
 name|Gimp
 modifier|*
@@ -1237,14 +1237,14 @@ name|gimp
 operator|->
 name|gui
 operator|.
-name|display_get_window
+name|display_get_window_id
 condition|)
 return|return
 name|gimp
 operator|->
 name|gui
 operator|.
-name|display_get_window
+name|display_get_window_id
 argument_list|(
 name|display
 argument_list|)

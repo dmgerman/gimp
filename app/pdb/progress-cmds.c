@@ -720,7 +720,7 @@ name|no_interface
 condition|)
 name|window
 operator|=
-name|gimp_plug_in_progress_get_window
+name|gimp_plug_in_progress_get_window_id
 argument_list|(
 name|plug_in
 argument_list|)

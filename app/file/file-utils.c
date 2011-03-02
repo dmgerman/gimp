@@ -1618,7 +1618,7 @@ argument_list|)
 expr_stmt|;
 name|image_uri
 operator|=
-name|gimp_object_get_name
+name|gimp_image_get_uri
 argument_list|(
 name|image
 argument_list|)

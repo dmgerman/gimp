@@ -356,8 +356,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_update_cursor (GimpDisplayShell * shell,GimpCursorPrecision precision,gint display_x,gint display_y,gdouble image_x,gdouble image_y)
-name|gimp_display_shell_update_cursor
+DECL|function|gimp_display_shell_update_software_cursor (GimpDisplayShell * shell,GimpCursorPrecision precision,gint display_x,gint display_y,gdouble image_x,gdouble image_y)
+name|gimp_display_shell_update_software_cursor
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
@@ -603,8 +603,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_clear_cursor (GimpDisplayShell * shell)
-name|gimp_display_shell_clear_cursor
+DECL|function|gimp_display_shell_clear_software_cursor (GimpDisplayShell * shell)
+name|gimp_display_shell_clear_software_cursor
 parameter_list|(
 name|GimpDisplayShell
 modifier|*

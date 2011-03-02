@@ -320,8 +320,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GdkNativeWindow
-name|gimp_window_get_native
+name|guint32
+name|gimp_window_get_native_id
 parameter_list|(
 name|GtkWindow
 modifier|*
@@ -481,6 +481,20 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|const
+name|gchar
+modifier|*
+name|gimp_print_event
+parameter_list|(
+specifier|const
+name|GdkEvent
+modifier|*
+name|event
 parameter_list|)
 function_decl|;
 end_function_decl

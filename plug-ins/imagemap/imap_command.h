@@ -58,7 +58,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29b53c1f0103
+DECL|enum|__anon2971e1f60103
 DECL|enumerator|CMD_APPEND
 DECL|enumerator|CMD_DESTRUCT
 DECL|enumerator|CMD_IGNORE
@@ -191,7 +191,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29b53c1f0208
+DECL|struct|__anon2971e1f60208
 typedef|typedef
 struct|struct
 block|{
@@ -210,7 +210,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29b53c1f0308
+DECL|struct|__anon2971e1f60308
 typedef|typedef
 struct|struct
 block|{

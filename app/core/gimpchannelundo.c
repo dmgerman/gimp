@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bae92fd0103
+DECL|enum|__anon28a755f30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -777,15 +777,6 @@ name|prev_position
 argument_list|,
 name|FALSE
 argument_list|)
-expr_stmt|;
-name|GIMP_ITEM
-argument_list|(
-name|channel
-argument_list|)
-operator|->
-name|removed
-operator|=
-name|FALSE
 expr_stmt|;
 block|}
 block|}

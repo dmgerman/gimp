@@ -141,13 +141,9 @@ name|Object_t
 modifier|*
 name|obj
 parameter_list|,
-name|GdkWindow
+name|cairo_t
 modifier|*
-name|window
-parameter_list|,
-name|GdkGC
-modifier|*
-name|gc
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -161,13 +157,9 @@ name|Object_t
 modifier|*
 name|obj
 parameter_list|,
-name|GdkWindow
+name|cairo_t
 modifier|*
-name|window
-parameter_list|,
-name|GdkGC
-modifier|*
-name|gc
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -537,16 +529,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_any_rectangle (GdkWindow * window,GdkGC * gc,gint x,gint y,gint w,gint h)
+DECL|function|draw_any_rectangle (cairo_t * cr,gint x,gint y,gint w,gint h)
 name|draw_any_rectangle
 parameter_list|(
-name|GdkWindow
+name|cairo_t
 modifier|*
-name|window
-parameter_list|,
-name|GdkGC
-modifier|*
-name|gc
+name|cr
 parameter_list|,
 name|gint
 name|x
@@ -597,9 +585,7 @@ expr_stmt|;
 block|}
 name|draw_rectangle
 argument_list|(
-name|window
-argument_list|,
-name|gc
+name|cr
 argument_list|,
 name|FALSE
 argument_list|,
@@ -868,20 +854,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|rectangle_draw (Object_t * obj,GdkWindow * window,GdkGC * gc)
+DECL|function|rectangle_draw (Object_t * obj,cairo_t * cr)
 name|rectangle_draw
 parameter_list|(
 name|Object_t
 modifier|*
 name|obj
 parameter_list|,
-name|GdkWindow
+name|cairo_t
 modifier|*
-name|window
-parameter_list|,
-name|GdkGC
-modifier|*
-name|gc
+name|cr
 parameter_list|)
 block|{
 name|Rectangle_t
@@ -895,9 +877,7 @@ argument_list|)
 decl_stmt|;
 name|draw_any_rectangle
 argument_list|(
-name|window
-argument_list|,
-name|gc
+name|cr
 argument_list|,
 name|rectangle
 operator|->
@@ -922,20 +902,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|rectangle_draw_sashes (Object_t * obj,GdkWindow * window,GdkGC * gc)
+DECL|function|rectangle_draw_sashes (Object_t * obj,cairo_t * cr)
 name|rectangle_draw_sashes
 parameter_list|(
 name|Object_t
 modifier|*
 name|obj
 parameter_list|,
-name|GdkWindow
+name|cairo_t
 modifier|*
-name|window
-parameter_list|,
-name|GdkGC
-modifier|*
-name|gc
+name|cr
 parameter_list|)
 block|{
 name|Rectangle_t
@@ -949,9 +925,7 @@ argument_list|)
 decl_stmt|;
 name|draw_sash
 argument_list|(
-name|window
-argument_list|,
-name|gc
+name|cr
 argument_list|,
 name|rectangle
 operator|->
@@ -964,9 +938,7 @@ argument_list|)
 expr_stmt|;
 name|draw_sash
 argument_list|(
-name|window
-argument_list|,
-name|gc
+name|cr
 argument_list|,
 name|rectangle
 operator|->
@@ -985,9 +957,7 @@ argument_list|)
 expr_stmt|;
 name|draw_sash
 argument_list|(
-name|window
-argument_list|,
-name|gc
+name|cr
 argument_list|,
 name|rectangle
 operator|->
@@ -1004,9 +974,7 @@ argument_list|)
 expr_stmt|;
 name|draw_sash
 argument_list|(
-name|window
-argument_list|,
-name|gc
+name|cr
 argument_list|,
 name|rectangle
 operator|->
@@ -1025,9 +993,7 @@ argument_list|)
 expr_stmt|;
 name|draw_sash
 argument_list|(
-name|window
-argument_list|,
-name|gc
+name|cr
 argument_list|,
 name|rectangle
 operator|->
@@ -1050,9 +1016,7 @@ argument_list|)
 expr_stmt|;
 name|draw_sash
 argument_list|(
-name|window
-argument_list|,
-name|gc
+name|cr
 argument_list|,
 name|rectangle
 operator|->
@@ -1069,9 +1033,7 @@ argument_list|)
 expr_stmt|;
 name|draw_sash
 argument_list|(
-name|window
-argument_list|,
-name|gc
+name|cr
 argument_list|,
 name|rectangle
 operator|->
@@ -1094,9 +1056,7 @@ argument_list|)
 expr_stmt|;
 name|draw_sash
 argument_list|(
-name|window
-argument_list|,
-name|gc
+name|cr
 argument_list|,
 name|rectangle
 operator|->
@@ -1953,7 +1913,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c6cd75e0108
+DECL|struct|__anon27a68d190108
 typedef|typedef
 struct|struct
 block|{

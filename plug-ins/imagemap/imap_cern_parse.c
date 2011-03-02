@@ -1703,7 +1703,7 @@ parameter_list|,
 name|Count
 parameter_list|)
 define|\
-value|do					\ 	{					\ 	  YYSIZE_T yyi;				\ 	  for (yyi = 0; yyi< (Count); yyi++)	\ 	    (To)[yyi] = (From)[yyi];		\ 	}					\       while (YYID (0))
+value|do                                        \         {                                       \           YYSIZE_T yyi;                         \           for (yyi = 0; yyi< (Count); yyi++)   \             (To)[yyi] = (From)[yyi];            \         }                                       \       while (YYID (0))
 end_define
 
 begin_endif
@@ -1729,7 +1729,7 @@ parameter_list|(
 name|Stack
 parameter_list|)
 define|\
-value|do									\       {									\ 	YYSIZE_T yynewbytes;						\ 	YYCOPY (&yyptr->Stack, Stack, yysize);				\ 	Stack =&yyptr->Stack;						\ 	yynewbytes = yystacksize * sizeof (*Stack) + YYSTACK_GAP_MAXIMUM; \ 	yyptr += yynewbytes / sizeof (*yyptr);				\       }									\     while (YYID (0))
+value|do                                                                  \       {                                                                 \         YYSIZE_T yynewbytes;                                            \         YYCOPY (&yyptr->Stack, Stack, yysize);                          \         Stack =&yyptr->Stack;                                          \         yynewbytes = yystacksize * sizeof (*Stack) + YYSTACK_GAP_MAXIMUM; \         yyptr += yynewbytes / sizeof (*yyptr);                          \       }                                                                 \     while (YYID (0))
 end_define
 
 begin_endif
@@ -3789,7 +3789,7 @@ parameter_list|,
 name|Value
 parameter_list|)
 define|\
-value|do								\   if (yychar == YYEMPTY&& yylen == 1)				\     {								\       yychar = (Token);						\       yylval = (Value);						\       yytoken = YYTRANSLATE (yychar);				\       YYPOPSTACK (1);						\       goto yybackup;						\     }								\   else								\     {								\       yyerror (YY_("syntax error: cannot back up")); \       YYERROR;							\     }								\ while (YYID (0))
+value|do                                                              \   if (yychar == YYEMPTY&& yylen == 1)                          \     {                                                           \       yychar = (Token);                                         \       yylval = (Value);                                         \       yytoken = YYTRANSLATE (yychar);                           \       YYPOPSTACK (1);                                           \       goto yybackup;                                            \     }                                                           \   else                                                          \     {                                                           \       yyerror (YY_("syntax error: cannot back up")); \       YYERROR;                                                  \     }                                                           \ while (YYID (0))
 end_define
 
 begin_define
@@ -3844,7 +3844,7 @@ parameter_list|,
 name|N
 parameter_list|)
 define|\
-value|do									\       if (YYID (N))                                                    \ 	{								\ 	  (Current).first_line   = YYRHSLOC (Rhs, 1).first_line;	\ 	  (Current).first_column = YYRHSLOC (Rhs, 1).first_column;	\ 	  (Current).last_line    = YYRHSLOC (Rhs, N).last_line;		\ 	  (Current).last_column  = YYRHSLOC (Rhs, N).last_column;	\ 	}								\       else								\ 	{								\ 	  (Current).first_line   = (Current).last_line   =		\ 	    YYRHSLOC (Rhs, 0).last_line;				\ 	  (Current).first_column = (Current).last_column =		\ 	    YYRHSLOC (Rhs, 0).last_column;				\ 	}								\     while (YYID (0))
+value|do                                                                  \       if (YYID (N))                                                    \         {                                                               \           (Current).first_line   = YYRHSLOC (Rhs, 1).first_line;        \           (Current).first_column = YYRHSLOC (Rhs, 1).first_column;      \           (Current).last_line    = YYRHSLOC (Rhs, N).last_line;         \           (Current).last_column  = YYRHSLOC (Rhs, N).last_column;       \         }                                                               \       else                                                              \         {                                                               \           (Current).first_line   = (Current).last_line   =              \             YYRHSLOC (Rhs, 0).last_line;                                \           (Current).first_column = (Current).last_column =              \             YYRHSLOC (Rhs, 0).last_column;                              \         }                                                               \     while (YYID (0))
 end_define
 
 begin_endif
@@ -3879,7 +3879,7 @@ parameter_list|,
 name|Loc
 parameter_list|)
 define|\
-value|fprintf (File, "%d.%d-%d.%d",			\ 	      (Loc).first_line, (Loc).first_column,	\ 	      (Loc).last_line,  (Loc).last_column)
+value|fprintf (File, "%d.%d-%d.%d",                      \               (Loc).first_line, (Loc).first_column,     \               (Loc).last_line,  (Loc).last_column)
 end_define
 
 begin_else
@@ -3994,7 +3994,7 @@ parameter_list|(
 name|Args
 parameter_list|)
 define|\
-value|do {						\   if (yydebug)					\     YYFPRINTF Args;				\ } while (YYID (0))
+value|do {                                            \   if (yydebug)                                  \     YYFPRINTF Args;                             \ } while (YYID (0))
 end_define
 
 begin_define
@@ -4012,7 +4012,7 @@ parameter_list|,
 name|Location
 parameter_list|)
 define|\
-value|do {									  \   if (yydebug)								  \     {									  \       YYFPRINTF (stderr, "%s ", Title);					  \       yy_symbol_print (stderr,						  \ 		  Type, Value); \       YYFPRINTF (stderr, "\n");						  \     }									  \ } while (YYID (0))
+value|do {                                                                      \   if (yydebug)                                                            \     {                                                                     \       YYFPRINTF (stderr, "%s ", Title);                                   \       yy_symbol_print (stderr,                                            \                   Type, Value); \       YYFPRINTF (stderr, "\n");                                           \     }                                                                     \ } while (YYID (0))
 end_define
 
 begin_comment
@@ -4357,7 +4357,7 @@ parameter_list|,
 name|Top
 parameter_list|)
 define|\
-value|do {								\   if (yydebug)							\     yy_stack_print ((Bottom), (Top));				\ } while (YYID (0))
+value|do {                                                            \   if (yydebug)                                                  \     yy_stack_print ((Bottom), (Top));                           \ } while (YYID (0))
 end_define
 
 begin_comment
@@ -4525,7 +4525,7 @@ parameter_list|(
 name|Rule
 parameter_list|)
 define|\
-value|do {					\   if (yydebug)				\     yy_reduce_print (yyvsp, Rule); \ } while (YYID (0))
+value|do {                                    \   if (yydebug)                          \     yy_reduce_print (yyvsp, Rule); \ } while (YYID (0))
 end_define
 
 begin_comment
@@ -5147,7 +5147,7 @@ name|yysize_overflow
 init|=
 literal|0
 decl_stmt|;
-DECL|enum|__anon2b79f6f80103
+DECL|enum|__anon27b52ff70103
 DECL|enumerator|YYERROR_VERBOSE_ARGS_MAXIMUM
 enum|enum
 block|{
@@ -5170,7 +5170,7 @@ decl_stmt|;
 if|#
 directive|if
 literal|0
-comment|/* This is so xgettext sees the translatable formats that are 	 constructed on the fly.  */
+comment|/* This is so xgettext sees the translatable formats that are          constructed on the fly.  */
 block|YY_("syntax error, unexpected %s");       YY_("syntax error, unexpected %s, expecting %s");       YY_("syntax error, unexpected %s, expecting %s or %s");       YY_("syntax error, unexpected %s, expecting %s or %s or %s");       YY_("syntax error, unexpected %s, expecting %s or %s or %s or %s");
 endif|#
 directive|endif
@@ -5241,7 +5241,7 @@ name|yyprefix
 init|=
 name|yyexpecting
 decl_stmt|;
-comment|/* Start YYX at -YYN if negative to avoid negative indexes in 	 YYCHECK.  */
+comment|/* Start YYX at -YYN if negative to avoid negative indexes in          YYCHECK.  */
 name|int
 name|yyxbegin
 init|=
@@ -5446,7 +5446,7 @@ condition|(
 name|yyresult
 condition|)
 block|{
-comment|/* Avoid sprintf, as that infringes on the user's name space. 	     Don't have undefined behavior even if the translation 	     produced a string with the wrong number of "%s"s.  */
+comment|/* Avoid sprintf, as that infringes on the user's name space.              Don't have undefined behavior even if the translation              produced a string with the wrong number of "%s"s.  */
 name|char
 modifier|*
 name|yyp
@@ -6074,7 +6074,7 @@ ifdef|#
 directive|ifdef
 name|yyoverflow
 block|{
-comment|/* Give user a chance to reallocate the stack.  Use copies of 	   these so that the&'s don't force the real ones into 	   memory.  */
+comment|/* Give user a chance to reallocate the stack.  Use copies of            these so that the&'s don't force the real ones into            memory.  */
 name|YYSTYPE
 modifier|*
 name|yyvs1
@@ -6087,7 +6087,7 @@ name|yyss1
 init|=
 name|yyss
 decl_stmt|;
-comment|/* Each stack pointer address is followed by the size of the 	   data in use in that stack, in bytes.  This used to be a 	   conditional around just the two extra args, but that might 	   be undefined if yyoverflow is a macro.  */
+comment|/* Each stack pointer address is followed by the size of the            data in use in that stack, in bytes.  This used to be a            conditional around just the two extra args, but that might            be undefined if yyoverflow is a macro.  */
 name|yyoverflow
 argument_list|(
 name|YY_
@@ -6967,7 +6967,7 @@ line|#
 directive|line
 number|117
 file|"imap_cern.y"
-block|{ 		}
+block|{                 }
 break|break;
 case|case
 literal|17
@@ -7492,7 +7492,7 @@ operator|==
 literal|3
 condition|)
 block|{
-comment|/* If just tried and failed to reuse look-ahead token after an 	 error, discard it.  */
+comment|/* If just tried and failed to reuse look-ahead token after an          error, discard it.  */
 if|if
 condition|(
 name|yychar

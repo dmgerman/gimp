@@ -804,7 +804,7 @@ name|gchar
 modifier|*
 name|uri
 init|=
-name|gimp_image_get_uri
+name|gimp_image_get_uri_or_untitled
 argument_list|(
 name|image
 argument_list|)
@@ -1879,17 +1879,12 @@ literal|0
 decl_stmt|;
 name|source
 operator|=
-name|g_object_get_data
-argument_list|(
-name|G_OBJECT
+name|gimp_image_get_imported_uri
 argument_list|(
 name|image
 argument_list|)
-argument_list|,
-name|GIMP_FILE_IMPORT_SOURCE_URI_KEY
-argument_list|)
 expr_stmt|;
-comment|/* Note that as soon as the image is saved, it is not considered    * imported any longer (GIMP_FILE_IMPORT_SOURCE_URI_KEY is set to    * NULL)    */
+comment|/* Note that as soon as the image is saved, it is not considered    * imported any longer (gimp_image_set_imported_uri (image, NULL) is    * called)    */
 name|is_imported
 operator|=
 operator|(
@@ -1963,14 +1958,9 @@ decl_stmt|;
 name|is_exported
 operator|=
 operator|(
-name|g_object_get_data
-argument_list|(
-name|G_OBJECT
+name|gimp_image_get_exported_uri
 argument_list|(
 name|image
-argument_list|)
-argument_list|,
-name|GIMP_FILE_EXPORT_TO_URI_KEY
 argument_list|)
 operator|!=
 name|NULL

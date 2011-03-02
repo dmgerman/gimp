@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b44f4620103
+DECL|enum|__anon27b651d20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1771,6 +1771,19 @@ argument_list|,
 name|position
 argument_list|)
 expr_stmt|;
+comment|/*  if the item came from the undo stack, reset its "removed" state  */
+if|if
+condition|(
+name|gimp_item_is_removed
+argument_list|(
+name|item
+argument_list|)
+condition|)
+name|gimp_item_unset_removed
+argument_list|(
+name|item
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -2474,9 +2487,10 @@ name|push_undo
 condition|)
 name|gimp_image_undo_push_item_rename
 argument_list|(
+name|gimp_item_get_image
+argument_list|(
 name|item
-operator|->
-name|image
+argument_list|)
 argument_list|,
 name|undo_desc
 argument_list|,

@@ -116,7 +116,7 @@ end_function_decl
 
 begin_function_decl
 name|guint32
-name|gimp_plug_in_progress_get_window
+name|gimp_plug_in_progress_get_window_id
 parameter_list|(
 name|GimpPlugIn
 modifier|*

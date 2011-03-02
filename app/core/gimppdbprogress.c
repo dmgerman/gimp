@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299766710103
+DECL|enum|__anon2b979e5a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -292,7 +292,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|guint32
-name|gimp_pdb_progress_progress_get_window
+name|gimp_pdb_progress_progress_get_window_id
 parameter_list|(
 name|GimpProgress
 modifier|*
@@ -631,9 +631,9 @@ name|gimp_pdb_progress_progress_pulse
 expr_stmt|;
 name|iface
 operator|->
-name|get_window
+name|get_window_id
 operator|=
-name|gimp_pdb_progress_progress_get_window
+name|gimp_pdb_progress_progress_get_window_id
 expr_stmt|;
 block|}
 end_function
@@ -1472,8 +1472,8 @@ end_function
 begin_function
 specifier|static
 name|guint32
-DECL|function|gimp_pdb_progress_progress_get_window (GimpProgress * progress)
-name|gimp_pdb_progress_progress_get_window
+DECL|function|gimp_pdb_progress_progress_get_window_id (GimpProgress * progress)
+name|gimp_pdb_progress_progress_get_window_id
 parameter_list|(
 name|GimpProgress
 modifier|*

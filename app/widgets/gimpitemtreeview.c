@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb88e580103
+DECL|enum|__anon292098670103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -3318,7 +3318,7 @@ if|if
 condition|(
 name|drop_pos
 operator|==
-name|GTK_TREE_VIEW_DROP_AFTER
+name|GTK_TREE_VIEW_DROP_INTO_OR_AFTER
 condition|)
 block|{
 name|GimpContainer
@@ -3351,6 +3351,18 @@ name|index
 operator|++
 expr_stmt|;
 block|}
+block|}
+elseif|else
+if|if
+condition|(
+name|drop_pos
+operator|==
+name|GTK_TREE_VIEW_DROP_AFTER
+condition|)
+block|{
+name|index
+operator|++
+expr_stmt|;
 block|}
 block|}
 return|return

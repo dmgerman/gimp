@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdevicemanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdevices.h"
 end_include
 
@@ -107,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b814e850103
+DECL|enum|__anon2ad40cfb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1006,11 +1012,14 @@ argument_list|)
 expr_stmt|;
 name|devices
 operator|=
-name|gimp_devices_get_list
+name|GIMP_CONTAINER
+argument_list|(
+name|gimp_devices_get_manager
 argument_list|(
 name|private
 operator|->
 name|gimp
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  connect to "remove" before the container view does so we can get    *  the notebook child stored in its model    */
@@ -1148,14 +1157,19 @@ decl_stmt|;
 name|GimpContainer
 modifier|*
 name|devices
-init|=
-name|gimp_devices_get_list
+decl_stmt|;
+name|devices
+operator|=
+name|GIMP_CONTAINER
+argument_list|(
+name|gimp_devices_get_manager
 argument_list|(
 name|private
 operator|->
 name|gimp
 argument_list|)
-decl_stmt|;
+argument_list|)
+expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|devices
@@ -1972,11 +1986,14 @@ name|devices
 decl_stmt|;
 name|devices
 operator|=
-name|gimp_devices_get_list
+name|GIMP_CONTAINER
+argument_list|(
+name|gimp_devices_get_manager
 argument_list|(
 name|private
 operator|->
 name|gimp
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_container_remove

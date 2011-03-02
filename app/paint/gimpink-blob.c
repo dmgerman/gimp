@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b82fe80103
+DECL|enum|__anon2bb1de4c0103
 block|{
 DECL|enumerator|EDGE_NONE
 name|EDGE_NONE
@@ -939,7 +939,7 @@ value|(ELLIPSE_SHIFT + TABLE_SHIFT)
 end_define
 
 begin_comment
-comment|/*  * The choose of this values limits the maximal image_size to  * 16384 x 16384 pixels. The values will overflow as soon as  * x or y> INT_MAX / (1<< (ELLIPSE_SHIFT + TABLE_SHIFT)) / SUBSAMPLE  *  * Alternatively the code could be change the code as follows:  *  *   xc_base = floor (xc)  *   xc_shift = 0.5 + (xc - xc_base) * (1<< TOTAL_SHIFT);  *  *    gint x = xc_base + (xc_shift + c * xp_shift + s * xq_shift +  *             (1<< (TOTAL_SHIFT - 1)))>> TOTAL_SHIFT;  *  * which would change the limit from the image to the ellipse size  */
+comment|/*  * The choose of this values limits the maximal image_size to  * 16384 x 16384 pixels. The values will overflow as soon as  * x or y> INT_MAX / (1<< (ELLIPSE_SHIFT + TABLE_SHIFT)) / SUBSAMPLE  *  * Alternatively the code could be change the code as follows:  *  *   xc_base = floor (xc)  *   xc_shift = 0.5 + (xc - xc_base) * (1<< TOTAL_SHIFT);  *  *    gint x = xc_base + (xc_shift + c * xp_shift + s * xq_shift +  *             (1<< (TOTAL_SHIFT - 1)))>> TOTAL_SHIFT;  *  * which would change the limit from the image to the ellipse size  *  * Update: this change was done, and now there apparently is a limit  * on the ellipse size. I'm too lazy to fully understand what's going  * on here and simply leave this comment here for  * documentation. --Mitch  */
 end_comment
 
 begin_decl_stmt
@@ -1033,6 +1033,11 @@ name|gint
 name|xq_shift
 decl_stmt|,
 name|yq_shift
+decl_stmt|;
+name|gint
+name|xc_base
+decl_stmt|,
+name|yc_base
 decl_stmt|;
 if|if
 condition|(
@@ -1166,6 +1171,20 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
+name|xc_base
+operator|=
+name|floor
+argument_list|(
+name|xc
+argument_list|)
+expr_stmt|;
+name|yc_base
+operator|=
+name|floor
+argument_list|(
+name|yc
+argument_list|)
+expr_stmt|;
 comment|/* Figure out a step that will draw most of the points */
 name|r1
 operator|=
@@ -1231,7 +1250,11 @@ name|xc_shift
 operator|=
 literal|0.5
 operator|+
+operator|(
 name|xc
+operator|-
+name|xc_base
+operator|)
 operator|*
 operator|(
 literal|1
@@ -1243,7 +1266,11 @@ name|yc_shift
 operator|=
 literal|0.5
 operator|+
+operator|(
 name|yc
+operator|-
+name|yc_base
+operator|)
 operator|*
 operator|(
 literal|1
@@ -1344,6 +1371,7 @@ name|gint
 name|x
 init|=
 operator|(
+operator|(
 name|xc_shift
 operator|+
 name|c
@@ -1366,10 +1394,14 @@ operator|)
 operator|)
 operator|>>
 name|TOTAL_SHIFT
+operator|)
+operator|+
+name|xc_base
 decl_stmt|;
 name|gint
 name|y
 init|=
+operator|(
 operator|(
 operator|(
 name|yc_shift
@@ -1395,6 +1427,9 @@ operator|)
 operator|>>
 name|TOTAL_SHIFT
 operator|)
+operator|)
+operator|+
+name|yc_base
 operator|-
 name|result
 operator|->

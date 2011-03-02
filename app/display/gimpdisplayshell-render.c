@@ -610,15 +610,26 @@ name|g_assert_not_reached
 argument_list|()
 expr_stmt|;
 block|}
-comment|/*  apply filters to the rendered projection  */
-if|#
-directive|if
-literal|0
-block|if (shell->filter_stack)     gimp_color_display_stack_convert (shell->filter_stack,                                       shell->render_buf,                                       w, h,                                       3,                                       3 * GIMP_DISPLAY_RENDER_BUF_WIDTH);
-endif|#
-directive|endif
 name|cairo_surface_mark_dirty
 argument_list|(
+name|shell
+operator|->
+name|render_surface
+argument_list|)
+expr_stmt|;
+comment|/*  apply filters to the rendered projection  */
+if|if
+condition|(
+name|shell
+operator|->
+name|filter_stack
+condition|)
+name|gimp_color_display_stack_convert_surface
+argument_list|(
+name|shell
+operator|->
+name|filter_stack
+argument_list|,
 name|shell
 operator|->
 name|render_surface

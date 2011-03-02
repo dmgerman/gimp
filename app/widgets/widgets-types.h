@@ -39,6 +39,15 @@ comment|/*  input devices& controllers  */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpDeviceManager
+typedef|typedef
+name|struct
+name|_GimpDeviceManager
+name|GimpDeviceManager
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDeviceInfo
 typedef|typedef
 name|struct
@@ -1025,6 +1034,15 @@ typedef|typedef
 name|struct
 name|_GimpHistogramView
 name|GimpHistogramView
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpIconPicker
+typedef|typedef
+name|struct
+name|_GimpIconPicker
+name|GimpIconPicker
 typedef|;
 end_typedef
 

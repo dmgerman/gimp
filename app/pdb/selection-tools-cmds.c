@@ -2204,17 +2204,17 @@ name|procedure
 argument_list|,
 literal|"gimp-by-color-select"
 argument_list|,
-literal|"Create a selection by selecting all pixels (in the specified drawable) with the same (or similar) color to that specified."
+literal|"Deprecated: Use 'gimp-image-select-color' instead."
 argument_list|,
-literal|"This tool creates a selection over the specified image. A by-color selection is determined by the supplied color under the constraints of the specified threshold. Essentially, all pixels (in the drawable) that have color sufficiently close to the specified color (as determined by the threshold value) are included in the selection. The antialiasing parameter allows the final selection mask to contain intermediate values based on close misses to the threshold bar. Feathering can be enabled optionally and is controlled with the 'feather-radius' parameter. If the 'sample-merged' parameter is TRUE, the data of the composite image will be used instead of that for the specified drawable. This is equivalent to sampling for colors after merging all visible layers. In the case of a merged sampling, the supplied drawable is ignored."
+literal|"Deprecated: Use 'gimp-image-select-color' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-image-select-color"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -2413,9 +2413,9 @@ name|procedure
 argument_list|,
 literal|"gimp-by-color-select-full"
 argument_list|,
-literal|"Create a selection by selecting all pixels (in the specified drawable) with the same (or similar) color to that specified."
+literal|"Deprecated: Use 'gimp-image-select-color' instead."
 argument_list|,
-literal|"This tool creates a selection over the specified image. A by-color selection is determined by the supplied color under the constraints of the specified threshold. Essentially, all pixels (in the drawable) that have color sufficiently close to the specified color (as determined by the threshold value) are included in the selection. To select transparent regions, the color specified must also have minimum alpha. The antialiasing parameter allows the final selection mask to contain intermediate values based on close misses to the threshold bar. Feathering can be enabled optionally and is controlled with the 'feather-radius' parameter. If the 'sample-merged' parameter is TRUE, the data of the composite image will be used instead of that for the specified drawable. This is equivalent to sampling for colors after merging all visible layers. In the case of a merged sampling, the supplied drawable is ignored."
+literal|"Deprecated: Use 'gimp-image-select-color' instead."
 argument_list|,
 literal|"David Gowers"
 argument_list|,
@@ -2423,7 +2423,7 @@ literal|"David Gowers"
 argument_list|,
 literal|"2006"
 argument_list|,
-name|NULL
+literal|"gimp-image-select-color"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -2682,17 +2682,17 @@ name|procedure
 argument_list|,
 literal|"gimp-ellipse-select"
 argument_list|,
-literal|"Create an elliptical selection over the specified image."
+literal|"Deprecated: Use 'gimp-image-select-ellipse' instead."
 argument_list|,
-literal|"This tool creates an elliptical selection over the specified image. The elliptical region can be either added to, subtracted from, or replace the contents of the previous selection mask. If antialiasing is turned on, the edges of the elliptical region will contain intermediate values which give the appearance of a sharper, less pixelized edge. This should be set as TRUE most of the time. If the feather option is enabled, the resulting selection is blurred before combining. The blur is a gaussian blur with the specified feather radius."
+literal|"Deprecated: Use 'gimp-image-select-ellipse' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-image-select-ellipse"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -2921,17 +2921,17 @@ name|procedure
 argument_list|,
 literal|"gimp-free-select"
 argument_list|,
-literal|"Create a polygonal selection over the specified image."
+literal|"Deprecated: Use 'gimp-image-select-polygon' instead."
 argument_list|,
-literal|"This tool creates a polygonal selection over the specified image. The polygonal region can be either added to, subtracted from, or replace the contents of the previous selection mask. The polygon is specified through an array of floating point numbers and its length. The length of array must be 2n, where n is the number of points. Each point is defined by 2 floating point values which correspond to the x and y coordinates. If the final point does not connect to the starting point, a connecting segment is automatically added. If the feather option is enabled, the resulting selection is blurred before combining. The blur is a gaussian blur with the specified feather radius."
+literal|"Deprecated: Use 'gimp-image-select-polygon' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-image-select-polygon"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -3108,18 +3108,17 @@ name|procedure
 argument_list|,
 literal|"gimp-fuzzy-select"
 argument_list|,
-literal|"Create a fuzzy selection starting at the specified coordinates on the specified drawable."
+literal|"Deprecated: Use 'gimp-image-select-contiguous-color' instead."
 argument_list|,
-literal|"This tool creates a fuzzy selection over the specified image. A fuzzy selection is determined by a seed fill under the constraints of the specified threshold. Essentially, the color at the specified coordinates (in the drawable) is measured and the selection expands outwards from that point to any adjacent pixels which are not significantly different (as determined by the threshold value). This process continues until no more expansion is possible. The antialiasing parameter allows the final selection mask to contain intermediate values based on close misses to the threshold bar at pixels along the seed fill boundary. Feathering can be enabled optionally and is controlled with the 'feather-radius' paramter. If the 'sample-merged' parameter is TRUE, the data of the composite image will be used instead of that for the specified drawable. This is equivalent to sampling for colors after merging all visible layers. In the case of a merged sampling, the supplied drawable is ignored. If"
-literal|"the sample is merged, the specified coordinates are relative to the image origin; otherwise, they are relative to the drawable's origin."
+literal|"Deprecated: Use 'gimp-image-select-contiguous-color' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-image-select-contiguous-color"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -3344,10 +3343,9 @@ name|procedure
 argument_list|,
 literal|"gimp-fuzzy-select-full"
 argument_list|,
-literal|"Create a fuzzy selection starting at the specified coordinates on the specified drawable."
+literal|"Deprecated: Use 'gimp-image-select-contiguous-color' instead."
 argument_list|,
-literal|"This tool creates a fuzzy selection over the specified image. A fuzzy selection is determined by a seed fill under the constraints of the specified threshold. Essentially, the color at the specified coordinates (in the drawable) is measured and the selection expands outwards from that point to any adjacent pixels which are not significantly different (as determined by the threshold value). This process continues until no more expansion is possible. The antialiasing parameter allows the final selection mask to contain intermediate values based on close misses to the threshold bar at pixels along the seed fill boundary. Feathering can be enabled optionally and is controlled with the 'feather-radius' paramter. If the 'sample-merged' parameter is TRUE, the data of the composite image will be used instead of that for the specified drawable. This is equivalent to sampling for colors after merging all visible layers. In the case of a merged sampling, the supplied drawable is ignored. If"
-literal|"the sample is merged, the specified coordinates are relative to the image origin; otherwise, they are relative to the drawable's origin."
+literal|"Deprecated: Use 'gimp-image-select-contiguous-color' instead."
 argument_list|,
 literal|"David Gowers"
 argument_list|,
@@ -3355,7 +3353,7 @@ literal|"David Gowers"
 argument_list|,
 literal|"2006"
 argument_list|,
-name|NULL
+literal|"gimp-image-select-contiguous-color"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -3640,17 +3638,17 @@ name|procedure
 argument_list|,
 literal|"gimp-rect-select"
 argument_list|,
-literal|"Create a rectangular selection over the specified image;"
+literal|"Deprecated: Use 'gimp-image-select-rectangle' instead."
 argument_list|,
-literal|"This tool creates a rectangular selection over the specified image. The rectangular region can be either added to, subtracted from, or replace the contents of the previous selection mask. If the feather option is enabled, the resulting selection is blurred before combining. The blur is a gaussian blur with the specified feather radius."
+literal|"Deprecated: Use 'gimp-image-select-rectangle' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-image-select-rectangle"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -3861,9 +3859,9 @@ name|procedure
 argument_list|,
 literal|"gimp-round-rect-select"
 argument_list|,
-literal|"Create a rectangular selection with round corners over the specified image;"
+literal|"Deprecated: Use 'gimp-image-select-round-rectangle' instead."
 argument_list|,
-literal|"This tool creates a rectangular selection with round corners over the specified image. The rectangular region can be either added to, subtracted from, or replace the contents of the previous selection mask. If the feather option is enabled, the resulting selection is blurred before combining. The blur is a gaussian blur with the specified feather radius."
+literal|"Deprecated: Use 'gimp-image-select-round-rectangle' instead."
 argument_list|,
 literal|"Martin Nordholts"
 argument_list|,
@@ -3871,7 +3869,7 @@ literal|"Martin Nordholts"
 argument_list|,
 literal|"2006"
 argument_list|,
-name|NULL
+literal|"gimp-image-select-round-rectangle"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

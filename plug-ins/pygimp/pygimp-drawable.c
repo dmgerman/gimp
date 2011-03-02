@@ -1046,7 +1046,7 @@ return|;
 return|return
 name|pygimp_parasite_new
 argument_list|(
-name|gimp_item_parasite_find
+name|gimp_item_find_parasite
 argument_list|(
 name|self
 operator|->
@@ -1101,7 +1101,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|gimp_item_parasite_attach
+name|gimp_item_attach_parasite
 argument_list|(
 name|self
 operator|->
@@ -1335,7 +1335,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|gimp_item_parasite_detach
+name|gimp_item_detach_parasite
 argument_list|(
 name|self
 operator|->
@@ -1395,7 +1395,7 @@ name|parasites
 decl_stmt|;
 if|if
 condition|(
-name|gimp_item_parasite_list
+name|gimp_item_list_parasites
 argument_list|(
 name|self
 operator|->
