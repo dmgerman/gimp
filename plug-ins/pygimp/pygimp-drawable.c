@@ -1046,7 +1046,7 @@ return|;
 return|return
 name|pygimp_parasite_new
 argument_list|(
-name|gimp_item_find_parasite
+name|gimp_item_get_parasite
 argument_list|(
 name|self
 operator|->
@@ -1393,9 +1393,9 @@ modifier|*
 modifier|*
 name|parasites
 decl_stmt|;
-if|if
-condition|(
-name|gimp_item_list_parasites
+name|parasites
+operator|=
+name|gimp_item_get_parasite_list
 argument_list|(
 name|self
 operator|->
@@ -1403,10 +1403,11 @@ name|ID
 argument_list|,
 operator|&
 name|num_parasites
-argument_list|,
-operator|&
-name|parasites
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|parasites
 condition|)
 block|{
 name|PyObject
