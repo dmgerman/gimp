@@ -4705,7 +4705,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-layer-mask"
 argument_list|,
-name|g_object_ref
+name|g_object_ref_sink
 argument_list|(
 name|layer_mask
 argument_list|)
@@ -4714,11 +4714,6 @@ operator|(
 name|GDestroyNotify
 operator|)
 name|g_object_unref
-argument_list|)
-expr_stmt|;
-name|g_object_ref_sink
-argument_list|(
-name|layer_mask
 argument_list|)
 expr_stmt|;
 block|}
