@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279d7bc90103
+DECL|enum|__anon2907e62a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1306,6 +1306,10 @@ argument_list|)
 operator|->
 name|dynamics
 decl_stmt|;
+name|GimpDynamicsOutput
+modifier|*
+name|opacity_output
+decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -1355,6 +1359,15 @@ decl_stmt|;
 name|gdouble
 name|opacity
 decl_stmt|;
+name|opacity_output
+operator|=
+name|gimp_dynamics_get_output
+argument_list|(
+name|dynamics
+argument_list|,
+name|GIMP_DYNAMICS_OUTPUT_OPACITY
+argument_list|)
+expr_stmt|;
 name|fade_point
 operator|=
 name|gimp_paint_options_get_fade
@@ -1372,8 +1385,6 @@ name|opacity
 operator|=
 name|gimp_dynamics_output_get_linear_value
 argument_list|(
-name|dynamics
-operator|->
 name|opacity_output
 argument_list|,
 name|coords

@@ -1706,6 +1706,10 @@ argument_list|)
 operator|->
 name|dynamics
 decl_stmt|;
+name|GimpDynamicsOutput
+modifier|*
+name|hardness_output
+decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -1748,6 +1752,15 @@ decl_stmt|;
 name|gdouble
 name|hardness
 decl_stmt|;
+name|hardness_output
+operator|=
+name|gimp_dynamics_get_output
+argument_list|(
+name|dynamics
+argument_list|,
+name|GIMP_DYNAMICS_OUTPUT_HARDNESS
+argument_list|)
+expr_stmt|;
 name|fade_point
 operator|=
 name|gimp_paint_options_get_fade
@@ -1765,8 +1778,6 @@ name|hardness
 operator|=
 name|gimp_dynamics_output_get_linear_value
 argument_list|(
-name|dynamics
-operator|->
 name|hardness_output
 argument_list|,
 name|coords
