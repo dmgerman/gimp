@@ -340,7 +340,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6f381a0103
+DECL|enum|__anon29c71a150103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -434,7 +434,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6f381a0203
+DECL|enum|__anon29c71a150203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -14685,6 +14685,9 @@ block|}
 elseif|else
 if|if
 condition|(
+name|active_layer
+operator|&&
+operator|(
 name|layer
 operator|==
 name|active_layer
@@ -14701,6 +14704,7 @@ argument_list|(
 name|active_layer
 argument_list|)
 argument_list|)
+operator|)
 condition|)
 block|{
 name|gimp_image_set_active_layer
@@ -15426,6 +15430,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|active_channel
+operator|&&
+operator|(
 name|channel
 operator|==
 name|active_channel
@@ -15442,6 +15449,7 @@ argument_list|(
 name|active_channel
 argument_list|)
 argument_list|)
+operator|)
 condition|)
 block|{
 if|if
@@ -15759,6 +15767,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|active_vectors
+operator|&&
+operator|(
 name|vectors
 operator|==
 name|active_vectors
@@ -15775,6 +15786,7 @@ argument_list|(
 name|active_vectors
 argument_list|)
 argument_list|)
+operator|)
 condition|)
 block|{
 name|gimp_image_set_active_vectors
