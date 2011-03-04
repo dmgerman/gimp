@@ -351,7 +351,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291aaed50108
+DECL|struct|__anon2b1a0efa0108
 block|{
 DECL|member|name
 specifier|const
@@ -611,7 +611,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291aaed50208
+DECL|struct|__anon2b1a0efa0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -684,7 +684,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291aaed50308
+DECL|struct|__anon2b1a0efa0308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -714,7 +714,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291aaed50408
+DECL|struct|__anon2b1a0efa0408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -821,7 +821,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291aaed50508
+DECL|struct|__anon2b1a0efa0508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -986,7 +986,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291aaed50608
+DECL|struct|__anon2b1a0efa0608
 block|{
 DECL|member|name
 specifier|const
@@ -4877,9 +4877,9 @@ argument_list|,
 literal|12
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|gtk_dialog_get_content_area
 argument_list|(
@@ -4891,6 +4891,12 @@ argument_list|)
 argument_list|)
 argument_list|,
 name|paned
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -7068,7 +7074,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291aaed50708
+DECL|struct|__anon2b1a0efa0708
 block|{
 DECL|member|index
 name|gint

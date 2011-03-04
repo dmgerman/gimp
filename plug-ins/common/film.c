@@ -100,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d57ca70108
+DECL|struct|__anon29af46200108
 block|{
 DECL|member|film_height
 name|gint
@@ -204,7 +204,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d57ca70208
+DECL|struct|__anon29af46200208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -6198,9 +6198,9 @@ argument_list|,
 literal|12
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|gtk_dialog_get_content_area
 argument_list|(
@@ -6212,6 +6212,12 @@ argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

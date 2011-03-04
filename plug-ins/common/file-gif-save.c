@@ -127,7 +127,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d3e9310103
+DECL|enum|__anon292459930103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -140,7 +140,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d3e9310203
+DECL|enum|__anon292459930203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -157,7 +157,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d3e9310308
+DECL|struct|__anon292459930308
 block|{
 DECL|member|interlace
 name|gint
@@ -4476,9 +4476,9 @@ name|ui_file
 argument_list|)
 expr_stmt|;
 comment|/* Main vbox */
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|gimp_export_dialog_get_content_area
 argument_list|(
@@ -4495,6 +4495,12 @@ argument_list|,
 literal|"main-vbox"
 argument_list|)
 argument_list|)
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 comment|/*  regular gif parameter settings  */

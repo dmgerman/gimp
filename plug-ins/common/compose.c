@@ -76,10 +76,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27842b340108
+DECL|struct|__anon2b8bd8050108
 block|{
 union|union
-DECL|union|__anon27842b34020a
+DECL|union|__anon2b8bd805020a
 block|{
 DECL|member|ID
 name|gint32
@@ -654,7 +654,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27842b340308
+DECL|struct|__anon2b8bd8050308
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1193,7 +1193,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27842b340408
+DECL|struct|__anon2b8bd8050408
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1233,7 +1233,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27842b340508
+DECL|struct|__anon2b8bd8050508
 block|{
 DECL|member|width
 DECL|member|height
@@ -7670,9 +7670,9 @@ argument_list|,
 literal|12
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|gtk_dialog_get_content_area
 argument_list|(
@@ -7684,6 +7684,12 @@ argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

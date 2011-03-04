@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b69cf7f0103
+DECL|enum|__anon2b4ed2700103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -104,7 +104,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b69cf7f0203
+DECL|enum|__anon2b4ed2700203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -196,7 +196,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b69cf7f0308
+DECL|struct|__anon2b4ed2700308
 block|{
 DECL|member|params
 name|PluginParams
@@ -216,7 +216,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b69cf7f0408
+DECL|struct|__anon2b4ed2700408
 block|{
 DECL|member|x0
 name|gint
@@ -597,7 +597,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b69cf7f0508
+DECL|struct|__anon2b4ed2700508
 block|{
 DECL|member|tile_width_adj
 name|GtkObject
@@ -1053,9 +1053,9 @@ argument_list|,
 literal|12
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|gtk_dialog_get_content_area
 argument_list|(
@@ -1067,6 +1067,12 @@ argument_list|)
 argument_list|)
 argument_list|,
 name|main_hbox
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

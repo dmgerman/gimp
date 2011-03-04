@@ -82,7 +82,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f8b69a0103
+DECL|enum|__anon2ad5ba690103
 block|{
 DECL|enumerator|RGB_565
 name|RGB_565
@@ -110,7 +110,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28f8b69a0208
+DECL|struct|__anon2ad5ba690208
 block|{
 DECL|member|rgb_format
 name|RGBMode
@@ -4176,9 +4176,9 @@ argument_list|,
 literal|12
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|gimp_export_dialog_get_content_area
 argument_list|(
@@ -4187,6 +4187,12 @@ argument_list|)
 argument_list|)
 argument_list|,
 name|vbox_main
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

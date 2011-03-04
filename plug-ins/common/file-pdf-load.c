@@ -91,7 +91,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d45a500108
+DECL|struct|__anon2c666bd30108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -125,7 +125,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d45a500208
+DECL|struct|__anon2c666bd30208
 block|{
 DECL|member|n_pages
 name|gint
@@ -681,7 +681,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d45a500303
+DECL|enum|__anon2c666bd30303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -2761,7 +2761,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d45a500408
+DECL|struct|__anon2c666bd30408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -2786,7 +2786,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d45a500508
+DECL|struct|__anon2c666bd30508
 block|{
 DECL|member|selector
 name|GimpPageSelector
@@ -3107,9 +3107,9 @@ argument_list|,
 literal|12
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|gtk_dialog_get_content_area
 argument_list|(
@@ -3121,6 +3121,12 @@ argument_list|)
 argument_list|)
 argument_list|,
 name|vbox
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

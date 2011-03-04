@@ -46,7 +46,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c3bdb30103
+DECL|enum|__anon2bad383e0103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -62,7 +62,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c3bdb30208
+DECL|struct|__anon2bad383e0208
 block|{
 DECL|member|amplitude
 name|gdouble
@@ -1061,9 +1061,9 @@ argument_list|,
 literal|12
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|gtk_dialog_get_content_area
 argument_list|(
@@ -1075,6 +1075,12 @@ argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

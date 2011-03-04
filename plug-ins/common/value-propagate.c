@@ -709,7 +709,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292f7f3d0108
+DECL|struct|__anon273c59750108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -870,7 +870,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292f7f3d0208
+DECL|struct|__anon273c59750208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -4066,7 +4066,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292f7f3d0308
+DECL|struct|__anon273c59750308
 block|{
 DECL|member|min_modified
 name|gshort
@@ -5836,9 +5836,9 @@ argument_list|,
 literal|12
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|gtk_dialog_get_content_area
 argument_list|(
@@ -5850,6 +5850,12 @@ argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

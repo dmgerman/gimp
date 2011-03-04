@@ -107,7 +107,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ec9af00103
+DECL|enum|__anon2b9e1ca10103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ec9af00203
+DECL|enum|__anon2b9e1ca10203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -158,7 +158,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ec9af00308
+DECL|struct|__anon2b9e1ca10308
 block|{
 DECL|member|name
 specifier|const
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ec9af00408
+DECL|struct|__anon2b9e1ca10408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -5739,9 +5739,9 @@ argument_list|,
 literal|12
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|gtk_dialog_get_content_area
 argument_list|(
@@ -5753,6 +5753,12 @@ argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

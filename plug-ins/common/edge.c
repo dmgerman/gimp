@@ -69,7 +69,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29db66730103
+DECL|enum|__anon28a3df510103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -95,7 +95,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29db66730208
+DECL|struct|__anon28a3df510208
 block|{
 DECL|member|amount
 name|gdouble
@@ -3168,9 +3168,9 @@ argument_list|,
 literal|12
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|gtk_dialog_get_content_area
 argument_list|(
@@ -3182,6 +3182,12 @@ argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
