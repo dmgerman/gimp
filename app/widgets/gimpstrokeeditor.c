@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b413e870103
+DECL|enum|__anon27b236f70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1717,9 +1717,10 @@ name|iter
 argument_list|,
 name|GIMP_INT_STORE_USER_DATA
 argument_list|,
+name|gimp_stroke_options_get_dash_info
+argument_list|(
 name|options
-operator|->
-name|dash_info
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1822,9 +1823,10 @@ name|iter
 argument_list|,
 name|GIMP_INT_STORE_USER_DATA
 argument_list|,
+name|gimp_stroke_options_get_dash_info
+argument_list|(
 name|options
-operator|->
-name|dash_info
+argument_list|)
 argument_list|,
 operator|-
 literal|1

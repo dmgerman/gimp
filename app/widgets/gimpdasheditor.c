@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2791d2840103
+DECL|enum|__anon2b2cc1650103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2128,6 +2128,10 @@ modifier|*
 name|editor
 parameter_list|)
 block|{
+name|GArray
+modifier|*
+name|dash_info
+decl_stmt|;
 if|if
 condition|(
 name|editor
@@ -2161,12 +2165,17 @@ name|editor
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_dash_pattern_fill_segments
+name|dash_info
+operator|=
+name|gimp_stroke_options_get_dash_info
 argument_list|(
 name|editor
 operator|->
 name|stroke_options
-operator|->
+argument_list|)
+expr_stmt|;
+name|gimp_dash_pattern_fill_segments
+argument_list|(
 name|dash_info
 argument_list|,
 name|editor

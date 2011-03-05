@@ -726,9 +726,10 @@ name|gtk_widget_set_sensitive
 argument_list|(
 name|stroke_editor
 argument_list|,
+name|gimp_stroke_options_get_method
+argument_list|(
 name|options
-operator|->
-name|method
+argument_list|)
 operator|==
 name|GIMP_STROKE_METHOD_LIBART
 argument_list|)
@@ -853,9 +854,10 @@ name|gtk_widget_set_sensitive
 argument_list|(
 name|vbox
 argument_list|,
+name|gimp_stroke_options_get_method
+argument_list|(
 name|options
-operator|->
-name|method
+argument_list|)
 operator|==
 name|GIMP_STROKE_METHOD_PAINT_CORE
 argument_list|)
