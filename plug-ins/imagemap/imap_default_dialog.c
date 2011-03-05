@@ -693,9 +693,9 @@ argument_list|,
 literal|6
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|dialog
 operator|->
@@ -703,6 +703,12 @@ name|vbox
 argument_list|)
 argument_list|,
 name|table
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

@@ -87,7 +87,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3b4f7a0103
+DECL|enum|__anon2c98d1470103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3b4f7a0203
+DECL|enum|__anon2c98d1470203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -121,7 +121,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3b4f7a0308
+DECL|struct|__anon2c98d1470308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3b4f7a0408
+DECL|struct|__anon2c98d1470408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3b4f7a0508
+DECL|struct|__anon2c98d1470508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -3544,14 +3544,20 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
 name|preview
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3669,14 +3675,20 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
 name|vbox
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

@@ -1649,7 +1649,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6539aa0103
+DECL|enum|__anon28b91aab0103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX
@@ -2692,14 +2692,20 @@ argument_list|(
 name|store
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
 name|iconview
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_icon_view_set_selection_mode

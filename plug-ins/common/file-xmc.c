@@ -312,7 +312,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2babd37e0108
+DECL|struct|__anon2b9f5c860108
 block|{
 DECL|member|crop
 name|gboolean
@@ -843,7 +843,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2babd37e0208
+DECL|struct|__anon2b9f5c860208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -5902,14 +5902,20 @@ argument_list|,
 name|GTK_WRAP_WORD
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|box
 argument_list|)
 argument_list|,
 name|tmpwidget
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -9224,7 +9230,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2babd37e0308
+DECL|struct|__anon2b9f5c860308
 block|{
 DECL|member|size
 name|guint32
