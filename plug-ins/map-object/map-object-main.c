@@ -1194,7 +1194,7 @@ comment|/* Possibly retrieve data */
 comment|/* ====================== */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_map_object"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|mapvals
@@ -1265,7 +1265,7 @@ if|if
 condition|(
 name|nparams
 operator|!=
-literal|50
+literal|49
 condition|)
 block|{
 name|status
@@ -1770,22 +1770,6 @@ name|d_int32
 expr_stmt|;
 name|mapvals
 operator|.
-name|create_new_layer
-operator|=
-operator|(
-name|gint
-operator|)
-name|param
-index|[
-literal|34
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-name|mapvals
-operator|.
 name|transparent_background
 operator|=
 operator|(
@@ -1906,7 +1890,7 @@ index|]
 operator|=
 name|param
 index|[
-literal|42
+literal|41
 operator|+
 name|i
 index|]
@@ -1937,7 +1921,7 @@ index|]
 operator|=
 name|param
 index|[
-literal|48
+literal|47
 operator|+
 name|i
 index|]
