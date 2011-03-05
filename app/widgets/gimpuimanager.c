@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275ba64c0103
+DECL|enum|__anon2882382f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275ba64c0203
+DECL|enum|__anon2882382f0203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2250,7 +2250,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275ba64c0308
+DECL|struct|__anon2882382f0308
 block|{
 DECL|member|x
 name|guint
@@ -3184,6 +3184,14 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|GdkDeviceManager
+modifier|*
+name|device_manager
+decl_stmt|;
+name|GdkDevice
+modifier|*
+name|device
+decl_stmt|;
 name|GdkScreen
 modifier|*
 name|screen
@@ -3233,15 +3241,26 @@ name|data
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gdk_display_get_pointer
+name|device_manager
+operator|=
+name|gdk_display_get_device_manager
 argument_list|(
 name|gtk_widget_get_display
-argument_list|(
-name|GTK_WIDGET
 argument_list|(
 name|data
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|device
+operator|=
+name|gdk_device_manager_get_client_pointer
+argument_list|(
+name|device_manager
+argument_list|)
+expr_stmt|;
+name|gdk_device_get_position
+argument_list|(
+name|device
 argument_list|,
 operator|&
 name|screen
@@ -3251,8 +3270,6 @@ name|pointer_x
 argument_list|,
 operator|&
 name|pointer_y
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|monitor
