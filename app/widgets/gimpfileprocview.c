@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2891fcbc0103
+DECL|enum|__anon2757d0df0103
 block|{
 DECL|enumerator|COLUMN_PROC
 name|COLUMN_PROC
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2891fcbc0203
+DECL|enum|__anon2757d0df0203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -262,25 +262,16 @@ operator|->
 name|meta_extensions
 condition|)
 block|{
-name|g_list_foreach
+name|g_list_free_full
 argument_list|(
 name|view
 operator|->
 name|meta_extensions
 argument_list|,
 operator|(
-name|GFunc
+name|GDestroyNotify
 operator|)
 name|g_free
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_list_free
-argument_list|(
-name|view
-operator|->
-name|meta_extensions
 argument_list|)
 expr_stmt|;
 name|view

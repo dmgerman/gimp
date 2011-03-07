@@ -661,25 +661,16 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* we're done with the plug-in-defs */
-name|g_slist_foreach
+name|g_slist_free_full
 argument_list|(
 name|manager
 operator|->
 name|plug_in_defs
 argument_list|,
 operator|(
-name|GFunc
+name|GDestroyNotify
 operator|)
 name|g_object_unref
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_slist_free
-argument_list|(
-name|manager
-operator|->
-name|plug_in_defs
 argument_list|)
 expr_stmt|;
 name|manager

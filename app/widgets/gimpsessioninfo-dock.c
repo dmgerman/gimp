@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276024a60103
+DECL|enum|__anon2ae461740103
 block|{
 DECL|enumerator|SESSION_INFO_BOOK
 name|SESSION_INFO_BOOK
@@ -180,25 +180,16 @@ operator|->
 name|books
 condition|)
 block|{
-name|g_list_foreach
+name|g_list_free_full
 argument_list|(
 name|dock_info
 operator|->
 name|books
 argument_list|,
 operator|(
-name|GFunc
+name|GDestroyNotify
 operator|)
 name|gimp_session_info_book_free
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_list_free
-argument_list|(
-name|dock_info
-operator|->
-name|books
 argument_list|)
 expr_stmt|;
 name|dock_info

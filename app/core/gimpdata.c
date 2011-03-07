@@ -117,7 +117,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b436d9a0103
+DECL|enum|__anon27b06bcf0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -130,7 +130,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b436d9a0203
+DECL|enum|__anon27b06bcf0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -998,25 +998,16 @@ operator|->
 name|tags
 condition|)
 block|{
-name|g_list_foreach
+name|g_list_free_full
 argument_list|(
 name|private
 operator|->
 name|tags
 argument_list|,
 operator|(
-name|GFunc
+name|GDestroyNotify
 operator|)
 name|g_object_unref
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_list_free
-argument_list|(
-name|private
-operator|->
-name|tags
 argument_list|)
 expr_stmt|;
 name|private

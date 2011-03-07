@@ -558,27 +558,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
-name|void
-DECL|function|my_g_free (gpointer data,gpointer userdata)
-name|my_g_free
-parameter_list|(
-name|gpointer
-name|data
-parameter_list|,
-name|gpointer
-name|userdata
-parameter_list|)
-block|{
-name|g_free
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
 name|void
 DECL|function|free_parsepath_cache (void)
 name|free_parsepath_cache
@@ -593,18 +572,14 @@ operator|!=
 name|NULL
 condition|)
 return|return;
-name|g_list_foreach
+name|g_list_free_full
 argument_list|(
 name|parsepath_cached_path
 argument_list|,
-name|my_g_free
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_list_free
-argument_list|(
-name|parsepath_cached_path
+operator|(
+name|GDestroyNotify
+operator|)
+name|g_free
 argument_list|)
 expr_stmt|;
 name|parsepath_cached_path

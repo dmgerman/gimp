@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8b26520108
+DECL|struct|__anon2b96ca590108
 block|{
 DECL|member|script
 name|SFScript
@@ -403,22 +403,15 @@ operator|)
 name|script_fu_menu_compare
 argument_list|)
 expr_stmt|;
-name|g_list_foreach
+comment|/*  Install and nuke the list of menu entries  */
+name|g_list_free_full
 argument_list|(
 name|script_menu_list
 argument_list|,
 operator|(
-name|GFunc
+name|GDestroyNotify
 operator|)
 name|script_fu_install_menu
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-comment|/*  Now we are done with the list of menu entries  */
-name|g_list_free
-argument_list|(
-name|script_menu_list
 argument_list|)
 expr_stmt|;
 name|script_menu_list
@@ -4011,7 +4004,7 @@ block|{
 comment|/*  for backward compatibility, we fiddle with some menu paths  */
 specifier|const
 struct|struct
-DECL|struct|__anon2c8b26520208
+DECL|struct|__anon2b96ca590208
 block|{
 DECL|member|old
 specifier|const

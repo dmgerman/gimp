@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29abeea90103
+DECL|enum|__anon28a6a9cc0103
 block|{
 DECL|enumerator|REGISTER_PROCEDURE
 name|REGISTER_PROCEDURE
@@ -1819,25 +1819,16 @@ if|if
 condition|(
 name|value
 condition|)
-block|{
-name|g_list_foreach
+name|g_list_free_full
 argument_list|(
 name|value
 argument_list|,
 operator|(
-name|GFunc
+name|GDestroyNotify
 operator|)
 name|g_object_unref
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
-name|g_list_free
-argument_list|(
-name|value
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 

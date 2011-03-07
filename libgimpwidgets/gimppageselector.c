@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af0a1370103
+DECL|enum|__anon27b332930103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -85,7 +85,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af0a1370203
+DECL|enum|__anon27b332930203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -101,7 +101,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af0a1370303
+DECL|enum|__anon27b332930303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -121,7 +121,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af0a1370408
+DECL|struct|__anon27b332930408
 block|{
 DECL|member|n_pages
 name|gint
@@ -3509,21 +3509,14 @@ argument_list|,
 name|gimp_page_selector_int_compare
 argument_list|)
 expr_stmt|;
-name|g_list_foreach
+name|g_list_free_full
 argument_list|(
 name|selected
 argument_list|,
 operator|(
-name|GFunc
+name|GDestroyNotify
 operator|)
 name|gtk_tree_path_free
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_list_free
-argument_list|(
-name|selected
 argument_list|)
 expr_stmt|;
 return|return
@@ -4137,21 +4130,14 @@ argument_list|(
 name|selected
 argument_list|)
 expr_stmt|;
-name|g_list_foreach
+name|g_list_free_full
 argument_list|(
 name|selected
 argument_list|,
 operator|(
-name|GFunc
+name|GDestroyNotify
 operator|)
 name|gtk_tree_path_free
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_list_free
-argument_list|(
-name|selected
 argument_list|)
 expr_stmt|;
 if|if

@@ -551,25 +551,16 @@ modifier|*
 name|polygon
 parameter_list|)
 block|{
-name|g_list_foreach
+name|g_list_free_full
 argument_list|(
 name|polygon
 operator|->
 name|points
 argument_list|,
 operator|(
-name|GFunc
+name|GDestroyNotify
 operator|)
 name|g_free
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_list_free
-argument_list|(
-name|polygon
-operator|->
-name|points
 argument_list|)
 expr_stmt|;
 name|polygon
@@ -1658,7 +1649,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b1b658a0108
+DECL|struct|__anon29f6e6290108
 typedef|typedef
 struct|struct
 block|{

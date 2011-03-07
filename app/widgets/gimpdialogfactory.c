@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297d58350103
+DECL|enum|__anon2b6f4fc80103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -689,7 +689,7 @@ operator|->
 name|session_infos
 condition|)
 block|{
-name|g_list_foreach
+name|g_list_free_full
 argument_list|(
 name|factory
 operator|->
@@ -698,20 +698,9 @@ operator|->
 name|session_infos
 argument_list|,
 operator|(
-name|GFunc
+name|GDestroyNotify
 operator|)
 name|g_object_unref
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_list_free
-argument_list|(
-name|factory
-operator|->
-name|p
-operator|->
-name|session_infos
 argument_list|)
 expr_stmt|;
 name|factory

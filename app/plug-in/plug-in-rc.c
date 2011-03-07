@@ -247,7 +247,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2add59bb0103
+DECL|enum|__anon273a99470103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -856,21 +856,14 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
-name|g_slist_foreach
+name|g_slist_free_full
 argument_list|(
 name|plug_in_defs
 argument_list|,
 operator|(
-name|GFunc
+name|GDestroyNotify
 operator|)
 name|g_object_unref
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_slist_free
-argument_list|(
-name|plug_in_defs
 argument_list|)
 expr_stmt|;
 name|plug_in_defs

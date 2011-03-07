@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28be146a0103
+DECL|enum|__anon2b9c4f680103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -566,21 +566,14 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|g_slist_foreach
+name|g_slist_free_full
 argument_list|(
 name|stock_list
 argument_list|,
 operator|(
-name|GFunc
+name|GDestroyNotify
 operator|)
 name|g_free
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_slist_free
-argument_list|(
-name|stock_list
 argument_list|)
 expr_stmt|;
 name|button

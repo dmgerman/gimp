@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c0751c0103
+DECL|enum|__anon2a3182dd0103
 block|{
 DECL|enumerator|SESSION_INFO_DOCKABLE_LOCKED
 name|SESSION_INFO_DOCKABLE_LOCKED
@@ -161,25 +161,16 @@ operator|->
 name|aux_info
 condition|)
 block|{
-name|g_list_foreach
+name|g_list_free_full
 argument_list|(
 name|info
 operator|->
 name|aux_info
 argument_list|,
 operator|(
-name|GFunc
+name|GDestroyNotify
 operator|)
 name|gimp_session_info_aux_free
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_list_free
-argument_list|(
-name|info
-operator|->
-name|aux_info
 argument_list|)
 expr_stmt|;
 name|info

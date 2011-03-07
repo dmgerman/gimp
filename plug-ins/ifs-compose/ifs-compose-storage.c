@@ -38,7 +38,7 @@ file|"ifs-compose.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2adecd8a0103
+DECL|enum|__anon2bd3a1a50103
 enum|enum
 block|{
 DECL|enumerator|TOKEN_INVALID
@@ -124,7 +124,7 @@ end_enum
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2adecd8a0208
+DECL|struct|__anon2bd3a1a50208
 block|{
 DECL|member|name
 specifier|const
@@ -1383,21 +1383,14 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|g_list_foreach
+name|g_list_free_full
 argument_list|(
 name|el_list
 argument_list|,
 operator|(
-name|GFunc
+name|GDestroyNotify
 operator|)
 name|g_free
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_list_free
-argument_list|(
-name|el_list
 argument_list|)
 expr_stmt|;
 return|return

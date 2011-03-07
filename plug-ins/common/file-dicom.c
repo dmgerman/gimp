@@ -3118,7 +3118,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274773790108
+DECL|struct|__anon27fb61700108
 block|{
 DECL|member|group_word
 name|guint16
@@ -3393,20 +3393,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * dicom_element_done:  * @data: pointer to a DICOMELEMENT structure which is to be destroyed.  * @user_data: unused.  *  * Destroys the DICOMELEMENT passed as @data **/
+comment|/**  * dicom_element_done:  * @data: pointer to a DICOMELEMENT structure which is to be destroyed.  *  * Destroys the DICOMELEMENT passed as @data **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|dicom_element_done (gpointer data,gpointer user_data)
+DECL|function|dicom_element_done (gpointer data)
 name|dicom_element_done
 parameter_list|(
 name|gpointer
 name|data
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 block|{
 if|if
@@ -3463,22 +3460,13 @@ if|if
 condition|(
 name|elements
 condition|)
-block|{
-name|g_slist_foreach
+name|g_slist_free_full
 argument_list|(
 name|elements
 argument_list|,
 name|dicom_element_done
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
-name|g_slist_free
-argument_list|(
-name|elements
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -5506,7 +5494,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-DECL|struct|__anon274773790208
+DECL|struct|__anon27fb61700208
 struct|struct
 block|{
 DECL|member|DICOM
@@ -5634,7 +5622,7 @@ modifier|*
 name|elements
 parameter_list|)
 block|{
-DECL|struct|__anon274773790308
+DECL|struct|__anon27fb61700308
 struct|struct
 block|{
 DECL|member|DICOM

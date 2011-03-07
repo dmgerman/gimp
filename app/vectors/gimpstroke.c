@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a8c51480103
+DECL|enum|__anon2993454a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1466,25 +1466,16 @@ operator|->
 name|anchors
 condition|)
 block|{
-name|g_list_foreach
+name|g_list_free_full
 argument_list|(
 name|stroke
 operator|->
 name|anchors
 argument_list|,
 operator|(
-name|GFunc
+name|GDestroyNotify
 operator|)
 name|gimp_anchor_free
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_list_free
-argument_list|(
-name|stroke
-operator|->
-name|anchors
 argument_list|)
 expr_stmt|;
 name|stroke

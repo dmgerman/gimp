@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b8ec710108
+DECL|struct|__anon278ef04a0108
 block|{
 DECL|member|width
 name|gint
@@ -142,7 +142,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b8ec710203
+DECL|enum|__anon278ef04a0203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -1729,21 +1729,14 @@ argument_list|,
 name|list
 argument_list|)
 expr_stmt|;
-name|g_list_foreach
+name|g_list_free_full
 argument_list|(
 name|list
 argument_list|,
 operator|(
-name|GFunc
+name|GDestroyNotify
 operator|)
 name|g_object_unref
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_list_free
-argument_list|(
-name|list
 argument_list|)
 expr_stmt|;
 block|}

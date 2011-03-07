@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2c34a10103
+DECL|enum|__anon278fb3ce0103
 block|{
 DECL|enumerator|TAG_SEARCH_NONE
 name|TAG_SEARCH_NONE
@@ -132,7 +132,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2c34a10203
+DECL|enum|__anon278fb3ce0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1028,25 +1028,16 @@ operator|->
 name|recent_list
 condition|)
 block|{
-name|g_list_foreach
+name|g_list_free_full
 argument_list|(
 name|entry
 operator|->
 name|recent_list
 argument_list|,
 operator|(
-name|GFunc
+name|GDestroyNotify
 operator|)
 name|g_free
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_list_free
-argument_list|(
-name|entry
-operator|->
-name|recent_list
 argument_list|)
 expr_stmt|;
 name|entry

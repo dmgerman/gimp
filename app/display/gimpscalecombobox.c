@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af1eb540103
+DECL|enum|__anon29590b140103
 block|{
 DECL|enumerator|COLUMN_SCALE
 name|COLUMN_SCALE
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af1eb540203
+DECL|enum|__anon29590b140203
 block|{
 DECL|enumerator|ENTRY_ACTIVATED
 name|ENTRY_ACTIVATED
@@ -684,25 +684,16 @@ operator|->
 name|mru
 condition|)
 block|{
-name|g_list_foreach
+name|g_list_free_full
 argument_list|(
 name|combo_box
 operator|->
 name|mru
 argument_list|,
 operator|(
-name|GFunc
+name|GDestroyNotify
 operator|)
 name|gtk_tree_row_reference_free
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_list_free
-argument_list|(
-name|combo_box
-operator|->
-name|mru
 argument_list|)
 expr_stmt|;
 name|combo_box

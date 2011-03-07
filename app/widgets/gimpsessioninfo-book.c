@@ -75,7 +75,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a2f2250103
+DECL|enum|__anon28d18cf00103
 block|{
 DECL|enumerator|SESSION_INFO_BOOK_POSITION
 name|SESSION_INFO_BOOK_POSITION
@@ -135,25 +135,16 @@ operator|->
 name|dockables
 condition|)
 block|{
-name|g_list_foreach
+name|g_list_free_full
 argument_list|(
 name|info
 operator|->
 name|dockables
 argument_list|,
 operator|(
-name|GFunc
+name|GDestroyNotify
 operator|)
 name|gimp_session_info_dockable_free
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_list_free
-argument_list|(
-name|info
-operator|->
-name|dockables
 argument_list|)
 expr_stmt|;
 name|info
