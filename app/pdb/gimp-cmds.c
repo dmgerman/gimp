@@ -314,8 +314,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|register_misc_procs (GimpPDB * pdb)
-name|register_misc_procs
+DECL|function|register_gimp_procs (GimpPDB * pdb)
+name|register_gimp_procs
 parameter_list|(
 name|GimpPDB
 modifier|*

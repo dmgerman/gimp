@@ -139,6 +139,11 @@ argument_list|(
 name|pdb
 argument_list|)
 expr_stmt|;
+name|register_gimp_procs
+argument_list|(
+name|pdb
+argument_list|)
+expr_stmt|;
 name|register_gimprc_procs
 argument_list|(
 name|pdb
@@ -200,11 +205,6 @@ name|pdb
 argument_list|)
 expr_stmt|;
 name|register_message_procs
-argument_list|(
-name|pdb
-argument_list|)
-expr_stmt|;
-name|register_misc_procs
 argument_list|(
 name|pdb
 argument_list|)

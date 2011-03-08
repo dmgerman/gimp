@@ -23,6 +23,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|<libgimp/gimp_pdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpbrush_pdb.h>
 end_include
 
@@ -192,12 +198,6 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpmessage_pdb.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpmisc_pdb.h>
 end_include
 
 begin_include
