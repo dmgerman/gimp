@@ -2840,7 +2840,7 @@ return|;
 return|return
 name|pygimp_parasite_new
 argument_list|(
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|self
 operator|->
@@ -2895,7 +2895,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|self
 operator|->
@@ -3039,7 +3039,7 @@ argument_list|)
 expr_stmt|;
 name|success
 operator|=
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|self
 operator|->
@@ -3126,7 +3126,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|gimp_image_parasite_detach
+name|gimp_image_detach_parasite
 argument_list|(
 name|self
 operator|->
@@ -3184,9 +3184,9 @@ modifier|*
 modifier|*
 name|parasites
 decl_stmt|;
-if|if
-condition|(
-name|gimp_image_parasite_list
+name|parasites
+operator|=
+name|gimp_image_get_parasite_list
 argument_list|(
 name|self
 operator|->
@@ -3194,10 +3194,11 @@ name|ID
 argument_list|,
 operator|&
 name|num_parasites
-argument_list|,
-operator|&
-name|parasites
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|parasites
 condition|)
 block|{
 name|PyObject

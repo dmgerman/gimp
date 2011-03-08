@@ -121,7 +121,7 @@ name|GimpParasite
 modifier|*
 name|parasite
 init|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|image_ID
 argument_list|,

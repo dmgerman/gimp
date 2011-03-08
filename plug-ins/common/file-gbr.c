@@ -165,7 +165,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ea1e110108
+DECL|struct|__anon2767bed00108
 block|{
 DECL|member|description
 name|gchar
@@ -894,7 +894,7 @@ break|break;
 block|}
 name|parasite
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -1163,7 +1163,7 @@ operator|.
 name|description
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -1178,7 +1178,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_image_parasite_detach
+name|gimp_image_detach_parasite
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -2240,7 +2240,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon29ea1e11020a
+DECL|union|__anon2767bed0020a
 block|{
 DECL|member|u
 name|guint16
@@ -2432,7 +2432,7 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image_ID
 argument_list|,

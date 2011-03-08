@@ -935,7 +935,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27fb9caa0108
+DECL|struct|__anon2ade4f3d0108
 block|{
 DECL|member|Width
 name|guint
@@ -979,7 +979,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27fb9caa0208
+DECL|struct|__anon2ade4f3d0208
 block|{
 DECL|member|transparent
 name|gint
@@ -1980,7 +1980,7 @@ condition|(
 operator|!
 name|thumbnail
 condition|)
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image_ID
 argument_list|,

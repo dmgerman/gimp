@@ -107,7 +107,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9e1ca10103
+DECL|enum|__anon2948a5570103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9e1ca10203
+DECL|enum|__anon2948a5570203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -158,7 +158,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9e1ca10308
+DECL|struct|__anon2948a5570308
 block|{
 DECL|member|name
 specifier|const
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9e1ca10408
+DECL|struct|__anon2948a5570408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -3028,7 +3028,7 @@ argument_list|)
 expr_stmt|;
 name|parasite
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|image
 argument_list|,
@@ -3297,7 +3297,7 @@ argument_list|(
 name|file
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image
 argument_list|,
@@ -3321,7 +3321,7 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_detach
+name|gimp_image_detach_parasite
 argument_list|(
 name|image
 argument_list|,
@@ -3329,7 +3329,7 @@ literal|"icc-profile"
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_image_parasite_detach
+name|gimp_image_detach_parasite
 argument_list|(
 name|image
 argument_list|,

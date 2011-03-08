@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0b01040108
+DECL|struct|__anon28e48fbb0108
 block|{
 DECL|member|file_name
 name|gchar
@@ -594,7 +594,7 @@ operator|)
 expr_stmt|;
 name|parasite
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|image_ID
 argument_list|,
@@ -735,7 +735,7 @@ literal|0
 index|]
 condition|)
 block|{
-name|gimp_image_parasite_detach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image_ID
 argument_list|,
@@ -767,7 +767,7 @@ operator|.
 name|comment
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image_ID
 argument_list|,

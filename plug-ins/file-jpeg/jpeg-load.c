@@ -1117,7 +1117,7 @@ operator|->
 name|str
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image_ID
 argument_list|,
@@ -1408,7 +1408,7 @@ argument_list|,
 name|profile
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image_ID
 argument_list|,
@@ -1901,7 +1901,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af5922d0108
+DECL|struct|__anon2c5ec6720108
 block|{
 DECL|member|pub
 name|struct

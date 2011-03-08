@@ -127,7 +127,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon292459930103
+DECL|enum|__anon2a9d89bc0103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -140,7 +140,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon292459930203
+DECL|enum|__anon2a9d89bc0203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -157,7 +157,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292459930308
+DECL|struct|__anon2a9d89bc0308
 block|{
 DECL|member|interlace
 name|gint
@@ -2624,7 +2624,7 @@ operator|)
 name|globalcomment
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -4588,7 +4588,7 @@ directive|ifdef
 name|FACEHUGGERS
 name|GIF2_CMNT
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|image_ID
 argument_list|,

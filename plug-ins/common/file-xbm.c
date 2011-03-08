@@ -1455,7 +1455,7 @@ block|{
 comment|/* Get the parasites */
 name|parasite
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|image_ID
 argument_list|,
@@ -1518,7 +1518,7 @@ expr_stmt|;
 block|}
 name|parasite
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|image_ID
 argument_list|,
@@ -3250,7 +3250,7 @@ operator|)
 name|comment
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image_ID
 argument_list|,
@@ -3346,7 +3346,7 @@ argument_list|(
 name|str
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image_ID
 argument_list|,

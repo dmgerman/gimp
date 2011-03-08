@@ -147,7 +147,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275ce5130108
+DECL|struct|__anon29bff0b10108
 block|{
 DECL|member|compression
 name|gint
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275ce5130208
+DECL|struct|__anon29bff0b10208
 block|{
 DECL|member|ID
 name|gint32
@@ -839,7 +839,7 @@ break|break;
 block|}
 name|parasite
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|orig_image
 argument_list|,
@@ -891,7 +891,7 @@ argument_list|)
 expr_stmt|;
 name|parasite
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|orig_image
 argument_list|,
@@ -1110,7 +1110,7 @@ argument_list|)
 expr_stmt|;
 name|parasite
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|orig_image
 argument_list|,
@@ -3662,7 +3662,7 @@ argument_list|,
 name|image_comment
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|orig_image
 argument_list|,
@@ -3694,7 +3694,7 @@ name|icc_profile
 decl_stmt|;
 name|parasite
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|orig_image
 argument_list|,

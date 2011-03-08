@@ -1080,7 +1080,7 @@ expr_stmt|;
 comment|/* if there is already a metadata parasite, load it */
 name|parasite
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|image_ID
 argument_list|,
@@ -1795,7 +1795,7 @@ operator|->
 name|str
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image_ID
 argument_list|,

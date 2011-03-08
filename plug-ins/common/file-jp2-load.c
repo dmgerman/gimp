@@ -1911,7 +1911,7 @@ argument_list|,
 name|jas_iccile
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image_ID
 argument_list|,

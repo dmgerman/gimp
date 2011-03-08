@@ -276,7 +276,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b967f90108
+DECL|struct|__anon2a8c7a010108
 block|{
 DECL|member|cinfo
 name|struct
@@ -356,7 +356,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b967f90208
+DECL|struct|__anon2a8c7a010208
 block|{
 DECL|member|run
 name|gboolean
@@ -2483,7 +2483,7 @@ block|{
 comment|/* FIXME: temporary hack until the right thing is done by a library */
 name|parasite
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -2619,7 +2619,7 @@ block|}
 comment|/* Step 4.3: store the color profile if there is one */
 name|parasite
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -6560,7 +6560,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b967f90308
+DECL|struct|__anon2a8c7a010308
 block|{
 DECL|member|pub
 name|struct

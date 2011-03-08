@@ -5756,6 +5756,7 @@ name|color_mode
 operator|!=
 name|PSD_DUOTONE
 condition|)
+block|{
 name|gimp_image_set_colormap
 argument_list|(
 name|image_id
@@ -5769,6 +5770,7 @@ operator|->
 name|color_map_entries
 argument_list|)
 expr_stmt|;
+block|}
 else|else
 block|{
 comment|/* Add parasite for Duotone color data */
@@ -5798,7 +5800,7 @@ operator|->
 name|color_map
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image_id
 argument_list|,

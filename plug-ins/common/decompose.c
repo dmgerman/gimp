@@ -969,7 +969,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4c21810108
+DECL|struct|__anon2b16c98e0108
 block|{
 DECL|member|type
 specifier|const
@@ -1682,7 +1682,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4c21810208
+DECL|struct|__anon2b16c98e0208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -2571,7 +2571,7 @@ operator|->
 name|str
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image_ID_extract
 index|[

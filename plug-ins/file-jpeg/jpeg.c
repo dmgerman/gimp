@@ -1241,7 +1241,7 @@ name|NULL
 expr_stmt|;
 name|parasite
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -1276,7 +1276,7 @@ expr_stmt|;
 block|}
 name|parasite
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -1599,7 +1599,7 @@ expr_stmt|;
 comment|/* load up the previously used values (if file was saved once) */
 name|parasite
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -1935,7 +1935,7 @@ name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 comment|/* pw - now we need to change the defaults to be whatever            * was used to save this image.  Dump the old parasites            * and add new ones. */
-name|gimp_image_parasite_detach
+name|gimp_image_detach_parasite
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -1970,7 +1970,7 @@ argument_list|,
 name|image_comment
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -1983,7 +1983,7 @@ name|parasite
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_image_parasite_detach
+name|gimp_image_detach_parasite
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -2007,7 +2007,7 @@ operator|&
 name|jsvals
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|orig_image_ID
 argument_list|,

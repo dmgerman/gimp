@@ -1248,7 +1248,7 @@ argument_list|)
 expr_stmt|;
 name|success
 operator|=
-name|gimp_image_parasite_attach
+name|gimp_item_attach_parasite
 argument_list|(
 name|self
 operator|->

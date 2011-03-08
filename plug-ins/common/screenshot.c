@@ -331,7 +331,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b15d410103
+DECL|enum|__anon2a42caa60103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -350,7 +350,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b15d410208
+DECL|struct|__anon2a42caa60208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -3113,7 +3113,7 @@ argument_list|,
 name|comment
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image
 argument_list|,

@@ -1074,7 +1074,7 @@ operator|*
 operator|)
 name|user_data
 decl_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 operator|*
 name|image_ID
@@ -3118,7 +3118,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fb61700108
+DECL|struct|__anon29a537c50108
 block|{
 DECL|member|group_word
 name|guint16
@@ -3743,15 +3743,14 @@ name|count
 init|=
 literal|0
 decl_stmt|;
-name|gimp_image_parasite_list
+name|parasites
+operator|=
+name|gimp_image_get_parasite_list
 argument_list|(
 name|image_ID
 argument_list|,
 operator|&
 name|count
-argument_list|,
-operator|&
-name|parasites
 argument_list|)
 expr_stmt|;
 if|if
@@ -3799,7 +3798,7 @@ condition|)
 block|{
 name|parasite
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|image_ID
 argument_list|,
@@ -5494,7 +5493,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-DECL|struct|__anon27fb61700208
+DECL|struct|__anon29a537c50208
 struct|struct
 block|{
 DECL|member|DICOM
@@ -5622,7 +5621,7 @@ modifier|*
 name|elements
 parameter_list|)
 block|{
-DECL|struct|__anon27fb61700308
+DECL|struct|__anon29a537c50308
 struct|struct
 block|{
 DECL|member|DICOM

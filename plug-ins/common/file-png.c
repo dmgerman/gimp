@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bff78cc0108
+DECL|struct|__anon2a2bb1b30108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bff78cc0208
+DECL|struct|__anon2a2bb1b30208
 block|{
 DECL|member|run
 name|gboolean
@@ -2882,7 +2882,7 @@ argument_list|,
 name|buf
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image
 argument_list|,
@@ -3737,7 +3737,7 @@ argument_list|,
 name|comment
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image
 argument_list|,
@@ -3816,7 +3816,7 @@ argument_list|,
 name|profile
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image
 argument_list|,
@@ -3880,7 +3880,7 @@ argument_list|,
 name|tmp
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image
 argument_list|,
@@ -4319,7 +4319,7 @@ literal|0
 decl_stmt|;
 name|parasite
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -4975,7 +4975,7 @@ name|DEFAULT_GAMMA
 decl_stmt|;
 name|parasite
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -5206,7 +5206,7 @@ name|NULL
 decl_stmt|;
 name|profile_parasite
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -5222,7 +5222,7 @@ name|GimpParasite
 modifier|*
 name|parasite
 init|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -6967,7 +6967,7 @@ expr_stmt|;
 comment|/* Comment toggle */
 name|parasite
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|image_ID
 argument_list|,

@@ -1686,7 +1686,7 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image_id
 argument_list|,
@@ -1855,7 +1855,7 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image_id
 argument_list|,
@@ -3162,7 +3162,7 @@ argument_list|,
 name|caption
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image_id
 argument_list|,
@@ -3585,7 +3585,7 @@ argument_list|,
 name|iptc_buf
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image_id
 argument_list|,
@@ -3661,7 +3661,7 @@ argument_list|,
 name|res_data
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image_id
 argument_list|,
@@ -4922,7 +4922,7 @@ argument_list|,
 name|icc_profile
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image_id
 argument_list|,
@@ -5944,7 +5944,7 @@ argument_list|,
 name|exif_buf
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image_id
 argument_list|,
@@ -6020,7 +6020,7 @@ argument_list|,
 name|res_data
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image_id
 argument_list|,

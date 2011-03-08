@@ -76,10 +76,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8bd8050108
+DECL|struct|__anon29f6d2630108
 block|{
 union|union
-DECL|union|__anon2b8bd805020a
+DECL|union|__anon29f6d263020a
 block|{
 DECL|member|ID
 name|gint32
@@ -654,7 +654,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8bd8050308
+DECL|struct|__anon29f6d2630308
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1193,7 +1193,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8bd8050408
+DECL|struct|__anon29f6d2630408
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1233,7 +1233,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8bd8050508
+DECL|struct|__anon29f6d2630508
 block|{
 DECL|member|width
 DECL|member|height
@@ -2030,7 +2030,7 @@ name|GimpParasite
 modifier|*
 name|parasite
 init|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|param
 index|[

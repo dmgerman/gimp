@@ -312,7 +312,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f5c860108
+DECL|struct|__anon2c36dfee0108
 block|{
 DECL|member|crop
 name|gboolean
@@ -843,7 +843,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b9f5c860208
+DECL|struct|__anon2c36dfee0208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -7682,7 +7682,7 @@ name|i
 operator|++
 control|)
 block|{
-name|gimp_image_parasite_detach
+name|gimp_image_detach_parasite
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -8420,7 +8420,7 @@ argument_list|)
 expr_stmt|;
 name|parasite
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|image_ID
 argument_list|,
@@ -8523,7 +8523,7 @@ condition|)
 block|{
 name|ret
 operator|=
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image_ID
 argument_list|,
@@ -8588,7 +8588,7 @@ argument_list|)
 expr_stmt|;
 name|parasite
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|image_ID
 argument_list|,
@@ -8744,7 +8744,7 @@ condition|)
 block|{
 name|ret
 operator|=
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image_ID
 argument_list|,
@@ -8800,7 +8800,7 @@ argument_list|)
 expr_stmt|;
 name|parasite
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|image_ID
 argument_list|,
@@ -9230,7 +9230,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2b9f5c860308
+DECL|struct|__anon2c36dfee0308
 block|{
 DECL|member|size
 name|guint32

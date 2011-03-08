@@ -127,7 +127,7 @@ argument_list|,
 name|exif_buf
 argument_list|)
 expr_stmt|;
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image_ID
 argument_list|,
@@ -214,7 +214,7 @@ name|GimpParasite
 modifier|*
 name|parasite
 init|=
-name|gimp_image_parasite_find
+name|gimp_image_get_parasite
 argument_list|(
 name|image_ID
 argument_list|,
