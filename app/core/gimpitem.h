@@ -103,14 +103,6 @@ DECL|member|parent_instance
 name|GimpViewable
 name|parent_instance
 decl_stmt|;
-DECL|member|width
-DECL|member|height
-name|gint
-name|width
-decl_stmt|,
-name|height
-decl_stmt|;
-comment|/*  size in pixels           */
 block|}
 struct|;
 end_struct
