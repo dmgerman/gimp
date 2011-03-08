@@ -903,7 +903,7 @@ operator|/
 literal|2
 expr_stmt|;
 block|}
-name|gimp_view_renderer_render_surface
+name|gimp_view_renderer_render_temp_buf
 argument_list|(
 name|renderer
 argument_list|,
@@ -939,7 +939,7 @@ operator|->
 name|viewable
 argument_list|)
 expr_stmt|;
-name|gimp_view_renderer_default_render_stock
+name|gimp_view_renderer_render_stock
 argument_list|(
 name|renderer
 argument_list|,

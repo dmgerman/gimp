@@ -225,7 +225,7 @@ if|if
 condition|(
 name|stock_id
 condition|)
-name|gimp_view_renderer_default_render_stock
+name|gimp_view_renderer_render_stock
 argument_list|(
 name|renderer
 argument_list|,

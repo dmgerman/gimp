@@ -258,7 +258,7 @@ operator|->
 name|viewable
 argument_list|)
 decl_stmt|;
-name|gimp_view_renderer_default_render_stock
+name|gimp_view_renderer_render_stock
 argument_list|(
 name|renderer
 argument_list|,

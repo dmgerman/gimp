@@ -388,7 +388,7 @@ operator|->
 name|is_popup
 condition|)
 block|{
-name|gimp_view_renderer_render_surface
+name|gimp_view_renderer_render_temp_buf
 argument_list|(
 name|renderer
 argument_list|,
@@ -439,7 +439,7 @@ expr_stmt|;
 block|}
 return|return;
 block|}
-name|gimp_view_renderer_render_surface
+name|gimp_view_renderer_render_temp_buf
 argument_list|(
 name|renderer
 argument_list|,
@@ -643,7 +643,7 @@ operator|)
 operator|/
 literal|2
 expr_stmt|;
-name|gimp_view_renderer_render_surface
+name|gimp_view_renderer_render_temp_buf
 argument_list|(
 name|renderer
 argument_list|,
