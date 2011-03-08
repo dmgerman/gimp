@@ -149,21 +149,6 @@ DECL|member|parent_instance
 name|GimpObject
 name|parent_instance
 decl_stmt|;
-comment|/*<  private>*/
-DECL|member|stock_id
-name|gchar
-modifier|*
-name|stock_id
-decl_stmt|;
-DECL|member|freeze_count
-name|gint
-name|freeze_count
-decl_stmt|;
-DECL|member|parent
-name|GimpViewable
-modifier|*
-name|parent
-decl_stmt|;
 block|}
 struct|;
 end_struct
