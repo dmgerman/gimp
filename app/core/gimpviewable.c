@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b046a530103
+DECL|enum|__anon2a30710a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b046a530203
+DECL|enum|__anon2a30710a0203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -157,7 +157,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|viewable
 parameter_list|)
-value|G_TYPE_INSTANCE_GET_PRIVATE (viewable, \                                                        GIMP_TYPE_VIEWABLE, \                                                        GimpViewablePrivate)
+value|G_TYPE_INSTANCE_GET_PRIVATE (viewable, \                                                            GIMP_TYPE_VIEWABLE, \                                                            GimpViewablePrivate)
 end_define
 
 begin_function_decl
