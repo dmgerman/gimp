@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e48fbb0108
+DECL|struct|__anon29bc76ad0108
 block|{
 DECL|member|file_name
 name|gchar
@@ -735,7 +735,7 @@ literal|0
 index|]
 condition|)
 block|{
-name|gimp_image_attach_parasite
+name|gimp_image_detach_parasite
 argument_list|(
 name|image_ID
 argument_list|,
