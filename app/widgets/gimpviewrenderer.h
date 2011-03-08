@@ -576,10 +576,6 @@ name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
 name|TempBuf
 modifier|*
 name|temp_buf

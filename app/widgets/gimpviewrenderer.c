@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1cb8570103
+DECL|enum|__anon2b07e7630103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3026,8 +3026,6 @@ name|gimp_view_renderer_default_render_surface
 argument_list|(
 name|renderer
 argument_list|,
-name|widget
-argument_list|,
 name|temp_buf
 argument_list|)
 expr_stmt|;
@@ -3105,16 +3103,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_view_renderer_default_render_surface (GimpViewRenderer * renderer,GtkWidget * widget,TempBuf * temp_buf)
+DECL|function|gimp_view_renderer_default_render_surface (GimpViewRenderer * renderer,TempBuf * temp_buf)
 name|gimp_view_renderer_default_render_surface
 parameter_list|(
 name|GimpViewRenderer
 modifier|*
 name|renderer
-parameter_list|,
-name|GtkWidget
-modifier|*
-name|widget
 parameter_list|,
 name|TempBuf
 modifier|*
@@ -3126,14 +3120,6 @@ argument_list|(
 name|GIMP_IS_VIEW_RENDERER
 argument_list|(
 name|renderer
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|GTK_IS_WIDGET
-argument_list|(
-name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
