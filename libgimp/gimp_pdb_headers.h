@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-2003 Peter Mattis and Spencer Kimball  *  * gimp_pdb.h  *  * This library is free software: you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 3 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library.  If not, see  *<http://www.gnu.org/licenses/>.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-2003 Peter Mattis and Spencer Kimball  *  * gimp_pdb_headers.h  *  * This library is free software: you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 3 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library.  If not, see  *<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_comment
@@ -10,14 +10,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_PDB_H__
+name|__GIMP_PDB_HEADERS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_PDB_H__
+DECL|macro|__GIMP_PDB_HEADERS_H__
 define|#
 directive|define
-name|__GIMP_PDB_H__
+name|__GIMP_PDB_HEADERS_H__
 end_define
 
 begin_include
@@ -326,7 +326,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_PDB_H__ */
+comment|/* __GIMP_PDB_HEADERS_H__ */
 end_comment
 
 end_unit
