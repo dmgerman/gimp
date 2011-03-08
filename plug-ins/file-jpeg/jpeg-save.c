@@ -276,7 +276,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8c7a010108
+DECL|struct|__anon28dac5260108
 block|{
 DECL|member|cinfo
 name|struct
@@ -356,7 +356,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8c7a010208
+DECL|struct|__anon28dac5260208
 block|{
 DECL|member|run
 name|gboolean
@@ -5826,7 +5826,7 @@ directive|endif
 comment|/* HAVE_EXIF */
 name|parasite
 operator|=
-name|gimp_parasite_find
+name|gimp_get_parasite
 argument_list|(
 name|JPEG_DEFAULTS_PARASITE
 argument_list|)
@@ -6049,7 +6049,7 @@ argument_list|,
 name|def_str
 argument_list|)
 expr_stmt|;
-name|gimp_parasite_attach
+name|gimp_attach_parasite
 argument_list|(
 name|parasite
 argument_list|)
@@ -6560,7 +6560,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8c7a010308
+DECL|struct|__anon28dac5260308
 block|{
 DECL|member|pub
 name|struct

@@ -933,7 +933,7 @@ condition|)
 return|return;
 name|parasite
 operator|=
-name|gimp_parasite_find
+name|gimp_get_parasite
 argument_list|(
 name|JPEG_EXIF_ROTATE_PARASITE
 argument_list|)
@@ -1581,7 +1581,7 @@ argument_list|,
 name|str
 argument_list|)
 expr_stmt|;
-name|gimp_parasite_attach
+name|gimp_attach_parasite
 argument_list|(
 name|parasite
 argument_list|)

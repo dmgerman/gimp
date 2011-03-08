@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2bb1b30108
+DECL|struct|__anon299003f80108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2bb1b30208
+DECL|struct|__anon299003f80208
 block|{
 DECL|member|run
 name|gboolean
@@ -7207,7 +7207,7 @@ name|parasite
 decl_stmt|;
 name|parasite
 operator|=
-name|gimp_parasite_find
+name|gimp_get_parasite
 argument_list|(
 name|PNG_DEFAULTS_PARASITE
 argument_list|)
@@ -7423,7 +7423,7 @@ argument_list|,
 name|def_str
 argument_list|)
 expr_stmt|;
-name|gimp_parasite_attach
+name|gimp_attach_parasite
 argument_list|(
 name|parasite
 argument_list|)

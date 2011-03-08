@@ -2065,7 +2065,7 @@ index|[
 literal|255
 index|]
 decl_stmt|;
-comment|/* all elements are retrievable using gimp_parasite_list() */
+comment|/* all elements are retrievable using gimp_get_parasite_list() */
 name|g_snprintf
 argument_list|(
 name|pname
@@ -3118,7 +3118,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a537c50108
+DECL|struct|__anon297f83020108
 block|{
 DECL|member|group_word
 name|guint16
@@ -5493,7 +5493,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-DECL|struct|__anon29a537c50208
+DECL|struct|__anon297f83020208
 struct|struct
 block|{
 DECL|member|DICOM
@@ -5621,7 +5621,7 @@ modifier|*
 name|elements
 parameter_list|)
 block|{
-DECL|struct|__anon29a537c50308
+DECL|struct|__anon297f83020308
 struct|struct
 block|{
 DECL|member|DICOM

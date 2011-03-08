@@ -411,17 +411,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|register_parasite_procs
-parameter_list|(
-name|GimpPDB
-modifier|*
-name|pdb
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|register_paths_procs
 parameter_list|(
 name|GimpPDB

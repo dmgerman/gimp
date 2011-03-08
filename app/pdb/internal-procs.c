@@ -229,11 +229,6 @@ argument_list|(
 name|pdb
 argument_list|)
 expr_stmt|;
-name|register_parasite_procs
-argument_list|(
-name|pdb
-argument_list|)
-expr_stmt|;
 name|register_paths_procs
 argument_list|(
 name|pdb

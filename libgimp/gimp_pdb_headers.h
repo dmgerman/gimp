@@ -227,12 +227,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpparasite_pdb.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimppaths_pdb.h>
 end_include
 
