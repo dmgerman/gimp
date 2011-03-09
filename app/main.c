@@ -1101,7 +1101,7 @@ literal|"debug-handlers"
 block|,
 literal|0
 block|,
-name|G_OPTION_FLAG_NO_ARG
+literal|0
 block|,
 name|G_OPTION_ARG_NONE
 block|,
