@@ -207,7 +207,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d4df8f0103
+DECL|enum|__anon2b09e32d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -320,7 +320,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d4df8f0208
+DECL|struct|__anon2b09e32d0208
 block|{
 DECL|member|window
 name|GimpImageWindow
@@ -4354,12 +4354,6 @@ init|=
 operator|-
 literal|1
 decl_stmt|;
-name|PosCorrectionData
-modifier|*
-name|data
-init|=
-name|NULL
-decl_stmt|;
 name|gimp_display_shell_transform_xy
 argument_list|(
 name|shell
@@ -4375,6 +4369,8 @@ operator|&
 name|image_origin_shell_y
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
 name|gtk_widget_translate_coordinates
 argument_list|(
 name|GTK_WIDGET
@@ -4399,16 +4395,19 @@ argument_list|,
 operator|&
 name|image_origin_window_y
 argument_list|)
-expr_stmt|;
+condition|)
+block|{
+name|PosCorrectionData
+modifier|*
 name|data
-operator|=
+init|=
 name|g_new0
 argument_list|(
 name|PosCorrectionData
 argument_list|,
 literal|1
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|data
 operator|->
 name|window
@@ -4448,6 +4447,7 @@ argument_list|,
 name|G_CONNECT_AFTER
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
