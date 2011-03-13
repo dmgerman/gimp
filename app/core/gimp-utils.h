@@ -317,26 +317,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpObject
-modifier|*
-name|gimp_container_get_neighbor_of_active
-parameter_list|(
-name|GimpContainer
-modifier|*
-name|container
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
-name|GimpObject
-modifier|*
-name|active
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gchar
 modifier|*
 name|gimp_markup_extract_text

@@ -594,6 +594,24 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpObject
+modifier|*
+name|gimp_container_get_neighbor_of
+parameter_list|(
+specifier|const
+name|GimpContainer
+modifier|*
+name|container
+parameter_list|,
+specifier|const
+name|GimpObject
+modifier|*
+name|object
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 modifier|*
