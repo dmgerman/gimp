@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2af1d30103
+DECL|enum|__anon2c7155900103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -231,6 +231,11 @@ specifier|const
 name|gchar
 modifier|*
 name|stock_id
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|tooltip
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -771,6 +776,20 @@ operator|->
 name|font_entry
 argument_list|)
 expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|editor
+operator|->
+name|font_entry
+argument_list|,
+name|_
+argument_list|(
+literal|"Change font of selected text"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|editor
 operator|->
 name|size_adjustment
@@ -937,6 +956,20 @@ argument_list|(
 name|editor
 operator|->
 name|color_button
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|editor
+operator|->
+name|color_button
+argument_list|,
+name|_
+argument_list|(
+literal|"Change color of selected text"
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -1465,6 +1498,11 @@ operator|->
 name|bold_tag
 argument_list|,
 name|GTK_STOCK_BOLD
+argument_list|,
+name|_
+argument_list|(
+literal|"Bold"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_text_style_editor_create_toggle
@@ -1478,6 +1516,11 @@ operator|->
 name|italic_tag
 argument_list|,
 name|GTK_STOCK_ITALIC
+argument_list|,
+name|_
+argument_list|(
+literal|"Italic"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_text_style_editor_create_toggle
@@ -1491,6 +1534,11 @@ operator|->
 name|underline_tag
 argument_list|,
 name|GTK_STOCK_UNDERLINE
+argument_list|,
+name|_
+argument_list|(
+literal|"Underline"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_text_style_editor_create_toggle
@@ -1504,6 +1552,11 @@ operator|->
 name|strikethrough_tag
 argument_list|,
 name|GTK_STOCK_STRIKETHROUGH
+argument_list|,
+name|_
+argument_list|(
+literal|"Strikethrough"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect_data
@@ -2240,7 +2293,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_text_style_editor_create_toggle (GimpTextStyleEditor * editor,GtkTextTag * tag,const gchar * stock_id)
+DECL|function|gimp_text_style_editor_create_toggle (GimpTextStyleEditor * editor,GtkTextTag * tag,const gchar * stock_id,const gchar * tooltip)
 name|gimp_text_style_editor_create_toggle
 parameter_list|(
 name|GimpTextStyleEditor
@@ -2255,6 +2308,11 @@ specifier|const
 name|gchar
 modifier|*
 name|stock_id
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|tooltip
 parameter_list|)
 block|{
 name|GtkWidget
@@ -2298,6 +2356,15 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|toggle
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|toggle
+argument_list|,
+name|tooltip
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|editor
