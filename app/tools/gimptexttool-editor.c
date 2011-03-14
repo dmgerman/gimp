@@ -965,12 +965,6 @@ argument_list|,
 literal|12
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|gimp_overlay_box_set_child_angle (GIMP_OVERLAY_BOX (shell->canvas),                                         text_tool->style_overlay,                                         0.5);
-endif|#
-directive|endif
 if|if
 condition|(
 name|text_tool
