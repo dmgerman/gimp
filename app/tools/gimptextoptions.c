@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276152730103
+DECL|enum|__anon2c486c6c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1829,7 +1829,7 @@ name|FALSE
 argument_list|,
 literal|"font-size-unit"
 argument_list|,
-literal|"%a"
+literal|"%p"
 argument_list|,
 name|GIMP_SIZE_ENTRY_UPDATE_SIZE
 argument_list|,
