@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"dialogs/dialogs.h"
 end_include
 
@@ -869,14 +875,9 @@ argument_list|)
 expr_stmt|;
 name|action_name
 operator|=
-name|g_strdup_printf
-argument_list|(
-literal|"windows-display-%04d"
-argument_list|,
-name|gimp_display_get_ID
+name|gimp_display_get_action_name
 argument_list|(
 name|display
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|action_path
