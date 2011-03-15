@@ -112,11 +112,6 @@ DECL|member|parent_instance
 name|GimpItem
 name|parent_instance
 decl_stmt|;
-DECL|member|bytes
-name|gint
-name|bytes
-decl_stmt|;
-comment|/* bytes per pixel                */
 DECL|member|type
 name|GimpImageType
 name|type

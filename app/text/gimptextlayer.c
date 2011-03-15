@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295b5e520103
+DECL|enum|__anon293620560103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2257,9 +2257,10 @@ name|width
 argument_list|,
 name|height
 argument_list|,
+name|gimp_drawable_bytes
+argument_list|(
 name|drawable
-operator|->
-name|bytes
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|gimp_drawable_set_tiles

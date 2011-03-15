@@ -3535,15 +3535,6 @@ name|type
 operator|=
 name|new_type
 expr_stmt|;
-name|drawable
-operator|->
-name|bytes
-operator|=
-name|GIMP_IMAGE_TYPE_BYTES
-argument_list|(
-name|new_type
-argument_list|)
-expr_stmt|;
 name|gimp_projectable_structure_changed
 argument_list|(
 name|GIMP_PROJECTABLE

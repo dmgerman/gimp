@@ -81,7 +81,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2976c3e40103
+DECL|enum|__anon28d1367b0103
 block|{
 DECL|enumerator|TEXT_LAYER_XCF_NONE
 name|TEXT_LAYER_XCF_NONE
@@ -610,18 +610,6 @@ operator|->
 name|tiles
 operator|=
 name|NULL
-expr_stmt|;
-name|drawable
-operator|->
-name|bytes
-operator|=
-name|gimp_drawable_bytes
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|drawable
 operator|->

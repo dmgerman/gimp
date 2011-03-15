@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e6b48e0103
+DECL|enum|__anon288d74d40103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -3076,18 +3076,21 @@ decl_stmt|;
 name|TileManager
 modifier|*
 name|new_tiles
-init|=
+decl_stmt|;
+name|new_tiles
+operator|=
 name|tile_manager_new
 argument_list|(
 name|new_width
 argument_list|,
 name|new_height
 argument_list|,
+name|gimp_drawable_bytes
+argument_list|(
 name|drawable
-operator|->
-name|bytes
 argument_list|)
-decl_stmt|;
+argument_list|)
+expr_stmt|;
 name|gimp_drawable_set_tiles_full
 argument_list|(
 name|drawable
