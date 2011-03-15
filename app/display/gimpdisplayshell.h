@@ -213,7 +213,6 @@ DECL|member|parent_instance
 name|GtkBox
 name|parent_instance
 decl_stmt|;
-comment|/* --- cacheline 2 boundary (128 bytes) was 20 bytes ago --- */
 DECL|member|display
 name|GimpDisplay
 modifier|*
@@ -259,7 +258,6 @@ name|gboolean
 name|snap_to_vectors
 decl_stmt|;
 comment|/*  should the active path be snapped  */
-comment|/* --- cacheline 3 boundary (192 bytes) --- */
 DECL|member|unit
 name|GimpUnit
 name|unit
@@ -314,7 +312,6 @@ DECL|member|y_dest_inc
 name|gint
 name|y_dest_inc
 decl_stmt|;
-comment|/* --- cacheline 4 boundary (256 bytes) --- */
 DECL|member|zoom
 name|GimpZoomModel
 modifier|*
@@ -364,7 +361,6 @@ DECL|member|last_motion_distance
 name|gdouble
 name|last_motion_distance
 decl_stmt|;
-comment|/* --- cacheline 5 boundary (320 bytes) --- */
 DECL|member|last_coords
 name|GimpCoords
 name|last_coords
