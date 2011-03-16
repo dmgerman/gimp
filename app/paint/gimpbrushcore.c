@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29eb95240103
+DECL|enum|__anon28acff620103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -1469,6 +1469,8 @@ name|gimp_paint_core_get_current_coords
 argument_list|(
 name|paint_core
 argument_list|,
+name|paint_options
+argument_list|,
 operator|&
 name|current_coords
 argument_list|)
@@ -2154,6 +2156,8 @@ expr_stmt|;
 name|gimp_paint_core_get_current_coords
 argument_list|(
 name|paint_core
+argument_list|,
+name|paint_options
 argument_list|,
 operator|&
 name|current_coords

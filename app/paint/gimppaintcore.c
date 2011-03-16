@@ -151,7 +151,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a19a7360103
+DECL|enum|__anon2adc93020103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2603,12 +2603,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_paint_core_get_current_coords (GimpPaintCore * core,GimpCoords * coords)
+DECL|function|gimp_paint_core_get_current_coords (GimpPaintCore * core,GimpPaintOptions * paint_options,GimpCoords * coords)
 name|gimp_paint_core_get_current_coords
 parameter_list|(
 name|GimpPaintCore
 modifier|*
 name|core
+parameter_list|,
+name|GimpPaintOptions
+modifier|*
+name|paint_options
 parameter_list|,
 name|GimpCoords
 modifier|*
@@ -2636,6 +2640,15 @@ operator|=
 name|core
 operator|->
 name|cur_coords
+expr_stmt|;
+name|gimp_paint_core_smooth_coords
+argument_list|(
+name|core
+argument_list|,
+name|paint_options
+argument_list|,
+name|coords
+argument_list|)
 expr_stmt|;
 block|}
 end_function

@@ -573,6 +573,10 @@ name|GimpPaintCore
 modifier|*
 name|core
 parameter_list|,
+name|GimpPaintOptions
+modifier|*
+name|paint_options
+parameter_list|,
 name|GimpCoords
 modifier|*
 name|coords
