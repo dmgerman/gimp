@@ -223,7 +223,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aaf51740103
+DECL|enum|__anon28a405250103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1841,23 +1841,6 @@ decl_stmt|;
 name|PixelRegion
 name|destPR
 decl_stmt|;
-name|gint
-name|offset_x
-decl_stmt|;
-name|gint
-name|offset_y
-decl_stmt|;
-name|gimp_item_get_offset
-argument_list|(
-name|item
-argument_list|,
-operator|&
-name|offset_x
-argument_list|,
-operator|&
-name|offset_y
-argument_list|)
-expr_stmt|;
 name|new_drawable
 operator|->
 name|private
