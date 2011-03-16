@@ -3392,6 +3392,8 @@ argument_list|(
 name|group
 argument_list|)
 operator|->
+name|private
+operator|->
 name|type
 operator|=
 name|gimp_drawable_type

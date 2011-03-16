@@ -112,11 +112,6 @@ DECL|member|parent_instance
 name|GimpItem
 name|parent_instance
 decl_stmt|;
-DECL|member|type
-name|GimpImageType
-name|type
-decl_stmt|;
-comment|/* type of drawable               */
 DECL|member|private
 name|GimpDrawablePrivate
 modifier|*

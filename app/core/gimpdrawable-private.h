@@ -21,6 +21,11 @@ DECL|struct|_GimpDrawablePrivate
 struct|struct
 name|_GimpDrawablePrivate
 block|{
+DECL|member|type
+name|GimpImageType
+name|type
+decl_stmt|;
+comment|/* type of drawable        */
 DECL|member|tiles
 name|TileManager
 modifier|*

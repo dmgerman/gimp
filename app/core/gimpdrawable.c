@@ -223,7 +223,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c80eed80103
+DECL|enum|__anon2aaf51740103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1132,6 +1132,8 @@ argument_list|)
 expr_stmt|;
 name|drawable
 operator|->
+name|private
+operator|->
 name|type
 operator|=
 operator|-
@@ -1858,6 +1860,8 @@ argument_list|)
 expr_stmt|;
 name|new_drawable
 operator|->
+name|private
+operator|->
 name|type
 operator|=
 name|image_type
@@ -1897,11 +1901,9 @@ argument_list|(
 name|new_item
 argument_list|)
 argument_list|,
-name|GIMP_IMAGE_TYPE_BYTES
+name|gimp_drawable_bytes
 argument_list|(
 name|new_drawable
-operator|->
-name|type
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2026,11 +2028,9 @@ name|new_width
 argument_list|,
 name|new_height
 argument_list|,
-name|GIMP_IMAGE_TYPE_BYTES
+name|gimp_drawable_bytes
 argument_list|(
 name|drawable
-operator|->
-name|type
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2429,11 +2429,9 @@ name|new_width
 argument_list|,
 name|new_height
 argument_list|,
-name|GIMP_IMAGE_TYPE_BYTES
+name|gimp_drawable_bytes
 argument_list|(
 name|drawable
-operator|->
-name|type
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3490,6 +3488,8 @@ operator|=
 name|tiles
 expr_stmt|;
 name|drawable
+operator|->
+name|private
 operator|->
 name|type
 operator|=
@@ -5252,6 +5252,8 @@ argument_list|)
 expr_stmt|;
 name|drawable
 operator|->
+name|private
+operator|->
 name|type
 operator|=
 name|image_type
@@ -5268,11 +5270,9 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|GIMP_IMAGE_TYPE_BYTES
+name|gimp_drawable_bytes
 argument_list|(
 name|drawable
-operator|->
-name|type
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7596,6 +7596,8 @@ expr_stmt|;
 return|return
 name|drawable
 operator|->
+name|private
+operator|->
 name|type
 return|;
 block|}
@@ -7794,6 +7796,8 @@ return|return
 name|GIMP_IMAGE_TYPE_BYTES
 argument_list|(
 name|drawable
+operator|->
+name|private
 operator|->
 name|type
 argument_list|)

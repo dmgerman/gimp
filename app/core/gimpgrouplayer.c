@@ -66,6 +66,16 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdrawable-private.h"
+end_include
+
+begin_comment
+comment|/* eek */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"gimpdrawablestack.h"
 end_include
 
@@ -3530,6 +3540,8 @@ argument_list|)
 expr_stmt|;
 comment|/*  FIXME: find a better way to do this: need to set the drawable's    *  type to the new values so the projection will create its tiles    *  with the right depth    */
 name|drawable
+operator|->
+name|private
 operator|->
 name|type
 operator|=
