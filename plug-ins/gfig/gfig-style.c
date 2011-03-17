@@ -655,7 +655,7 @@ argument_list|(
 name|fmt_str
 argument_list|)
 argument_list|,
-literal|"%%%lds %%%lds %%%lds %%%lds"
+literal|"%%%ds %%%ds %%%ds %%%ds"
 argument_list|,
 sizeof|sizeof
 argument_list|(

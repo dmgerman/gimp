@@ -6847,7 +6847,7 @@ argument_list|(
 name|fmt_str
 argument_list|)
 argument_list|,
-literal|" Position: %%%lds %%%lds %%%lds"
+literal|" Position: %%%ds %%%ds %%%ds"
 argument_list|,
 sizeof|sizeof
 argument_list|(
@@ -6935,7 +6935,7 @@ argument_list|(
 name|fmt_str
 argument_list|)
 argument_list|,
-literal|" Direction: %%%lds %%%lds %%%lds"
+literal|" Direction: %%%ds %%%ds %%%ds"
 argument_list|,
 sizeof|sizeof
 argument_list|(
@@ -7023,7 +7023,7 @@ argument_list|(
 name|fmt_str
 argument_list|)
 argument_list|,
-literal|" Color: %%%lds %%%lds %%%lds"
+literal|" Color: %%%ds %%%ds %%%ds"
 argument_list|,
 sizeof|sizeof
 argument_list|(
@@ -7119,7 +7119,7 @@ argument_list|(
 name|fmt_str
 argument_list|)
 argument_list|,
-literal|" Intensity: %%%lds"
+literal|" Intensity: %%%ds"
 argument_list|,
 sizeof|sizeof
 argument_list|(
