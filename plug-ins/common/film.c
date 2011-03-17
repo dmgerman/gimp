@@ -100,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29af46200108
+DECL|struct|__anon2b02959a0108
 block|{
 DECL|member|film_height
 name|gint
@@ -204,7 +204,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29af46200208
+DECL|struct|__anon2b02959a0208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -2070,7 +2070,7 @@ argument_list|(
 name|image_ID_tmp
 argument_list|)
 operator|!=
-name|GIMP_RGB_IMAGE
+name|GIMP_RGB
 condition|)
 name|gimp_image_convert_rgb
 argument_list|(
