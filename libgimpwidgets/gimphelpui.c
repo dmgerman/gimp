@@ -46,8 +46,18 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1a93bd0103
+DECL|enum|__anon2782ae520103
 block|{
+DECL|enumerator|GIMP_WIDGET_HELP_TOOLTIP
+name|GIMP_WIDGET_HELP_TOOLTIP
+init|=
+name|GTK_WIDGET_HELP_TOOLTIP
+block|,
+DECL|enumerator|GIMP_WIDGET_HELP_WHATS_THIS
+name|GIMP_WIDGET_HELP_WHATS_THIS
+init|=
+name|GTK_WIDGET_HELP_WHATS_THIS
+block|,
 DECL|enumerator|GIMP_WIDGET_HELP_TYPE_HELP
 name|GIMP_WIDGET_HELP_TYPE_HELP
 init|=
@@ -680,7 +690,7 @@ name|gimp_help_callback
 argument_list|(
 name|widget
 argument_list|,
-name|GTK_WIDGET_HELP_WHATS_THIS
+name|GIMP_WIDGET_HELP_WHATS_THIS
 argument_list|,
 name|NULL
 argument_list|)
@@ -909,7 +919,7 @@ return|return
 name|TRUE
 return|;
 case|case
-name|GTK_WIDGET_HELP_WHATS_THIS
+name|GIMP_WIDGET_HELP_WHATS_THIS
 case|:
 name|g_idle_add
 argument_list|(
