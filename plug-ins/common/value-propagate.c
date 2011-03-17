@@ -334,7 +334,7 @@ specifier|static
 name|void
 name|set_value
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 parameter_list|,
 name|int
 parameter_list|,
@@ -358,7 +358,7 @@ specifier|static
 name|void
 name|initialize_white
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 parameter_list|,
 name|int
 parameter_list|,
@@ -380,7 +380,7 @@ specifier|static
 name|void
 name|propagate_white
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 parameter_list|,
 name|int
 parameter_list|,
@@ -404,7 +404,7 @@ specifier|static
 name|void
 name|initialize_black
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 parameter_list|,
 name|int
 parameter_list|,
@@ -426,7 +426,7 @@ specifier|static
 name|void
 name|propagate_black
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 parameter_list|,
 name|int
 parameter_list|,
@@ -450,7 +450,7 @@ specifier|static
 name|void
 name|initialize_middle
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 parameter_list|,
 name|int
 parameter_list|,
@@ -472,7 +472,7 @@ specifier|static
 name|void
 name|propagate_middle
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 parameter_list|,
 name|int
 parameter_list|,
@@ -496,7 +496,7 @@ specifier|static
 name|void
 name|set_middle_to_peak
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 parameter_list|,
 name|int
 parameter_list|,
@@ -520,7 +520,7 @@ specifier|static
 name|void
 name|set_foreground_to_peak
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 parameter_list|,
 name|int
 parameter_list|,
@@ -544,7 +544,7 @@ specifier|static
 name|void
 name|initialize_foreground
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 parameter_list|,
 name|int
 parameter_list|,
@@ -566,7 +566,7 @@ specifier|static
 name|void
 name|initialize_background
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 parameter_list|,
 name|int
 parameter_list|,
@@ -588,7 +588,7 @@ specifier|static
 name|void
 name|propagate_a_color
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 parameter_list|,
 name|int
 parameter_list|,
@@ -612,7 +612,7 @@ specifier|static
 name|void
 name|propagate_opaque
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 parameter_list|,
 name|int
 parameter_list|,
@@ -636,7 +636,7 @@ specifier|static
 name|void
 name|propagate_transparent
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 parameter_list|,
 name|int
 parameter_list|,
@@ -709,7 +709,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273c59750108
+DECL|struct|__anon29f398450108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -870,7 +870,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273c59750208
+DECL|struct|__anon29f398450208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -888,7 +888,7 @@ modifier|*
 name|initializer
 function_decl|)
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 parameter_list|,
 name|gint
 parameter_list|,
@@ -909,7 +909,7 @@ modifier|*
 name|updater
 function_decl|)
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 parameter_list|,
 name|gint
 parameter_list|,
@@ -932,7 +932,7 @@ modifier|*
 name|finalizer
 function_decl|)
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 parameter_list|,
 name|gint
 parameter_list|,
@@ -2059,7 +2059,7 @@ modifier|*
 name|preview
 parameter_list|)
 block|{
-name|GimpImageBaseType
+name|GimpImageType
 name|dtype
 decl_stmt|;
 name|ModeParam
@@ -3152,10 +3152,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|set_value (GimpImageBaseType dtype,gint bytes,guchar * best,guchar * here,guchar * dest,void * tmp)
+DECL|function|set_value (GimpImageType dtype,gint bytes,guchar * best,guchar * here,guchar * dest,void * tmp)
 name|set_value
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 name|dtype
 parameter_list|,
 name|gint
@@ -3464,10 +3464,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|initialize_white (GimpImageBaseType dtype,gint bytes,guchar * best,guchar * here,void ** tmp)
+DECL|function|initialize_white (GimpImageType dtype,gint bytes,guchar * best,guchar * here,void ** tmp)
 name|initialize_white
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 name|dtype
 parameter_list|,
 name|gint
@@ -3590,10 +3590,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|propagate_white (GimpImageBaseType dtype,gint bytes,guchar * orig,guchar * here,guchar * best,void * tmp)
+DECL|function|propagate_white (GimpImageType dtype,gint bytes,guchar * orig,guchar * here,guchar * best,void * tmp)
 name|propagate_white
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 name|dtype
 parameter_list|,
 name|gint
@@ -3763,10 +3763,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|initialize_black (GimpImageBaseType dtype,gint channels,guchar * best,guchar * here,void ** tmp)
+DECL|function|initialize_black (GimpImageType dtype,gint channels,guchar * best,guchar * here,void ** tmp)
 name|initialize_black
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 name|dtype
 parameter_list|,
 name|gint
@@ -3891,10 +3891,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|propagate_black (GimpImageBaseType image_type,gint channels,guchar * orig,guchar * here,guchar * best,void * tmp)
+DECL|function|propagate_black (GimpImageType image_type,gint channels,guchar * orig,guchar * here,guchar * best,void * tmp)
 name|propagate_black
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 name|image_type
 parameter_list|,
 name|gint
@@ -4066,7 +4066,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273c59750308
+DECL|struct|__anon29f398450308
 block|{
 DECL|member|min_modified
 name|gshort
@@ -4111,10 +4111,10 @@ end_typedef
 begin_function
 specifier|static
 name|void
-DECL|function|initialize_middle (GimpImageBaseType image_type,gint channels,guchar * best,guchar * here,void ** tmp)
+DECL|function|initialize_middle (GimpImageType image_type,gint channels,guchar * best,guchar * here,void ** tmp)
 name|initialize_middle
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 name|image_type
 parameter_list|,
 name|gint
@@ -4311,10 +4311,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|propagate_middle (GimpImageBaseType image_type,gint channels,guchar * orig,guchar * here,guchar * best,void * tmp)
+DECL|function|propagate_middle (GimpImageType image_type,gint channels,guchar * orig,guchar * here,guchar * best,void * tmp)
 name|propagate_middle
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 name|image_type
 parameter_list|,
 name|gint
@@ -4607,10 +4607,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|set_middle_to_peak (GimpImageBaseType image_type,gint channels,guchar * here,guchar * best,guchar * dest,void * tmp)
+DECL|function|set_middle_to_peak (GimpImageType image_type,gint channels,guchar * here,guchar * best,guchar * dest,void * tmp)
 name|set_middle_to_peak
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 name|image_type
 parameter_list|,
 name|gint
@@ -4912,10 +4912,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|set_foreground_to_peak (GimpImageBaseType image_type,gint channels,guchar * here,guchar * best,guchar * dest,void * tmp)
+DECL|function|set_foreground_to_peak (GimpImageType image_type,gint channels,guchar * here,guchar * best,guchar * dest,void * tmp)
 name|set_foreground_to_peak
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 name|image_type
 parameter_list|,
 name|gint
@@ -5145,10 +5145,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|initialize_foreground (GimpImageBaseType image_type,gint channels,guchar * here,guchar * best,void ** tmp)
+DECL|function|initialize_foreground (GimpImageType image_type,gint channels,guchar * here,guchar * best,void ** tmp)
 name|initialize_foreground
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 name|image_type
 parameter_list|,
 name|gint
@@ -5243,10 +5243,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|initialize_background (GimpImageBaseType image_type,gint channels,guchar * here,guchar * best,void ** tmp)
+DECL|function|initialize_background (GimpImageType image_type,gint channels,guchar * here,guchar * best,void ** tmp)
 name|initialize_background
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 name|image_type
 parameter_list|,
 name|gint
@@ -5341,10 +5341,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|propagate_a_color (GimpImageBaseType image_type,gint channels,guchar * orig,guchar * here,guchar * best,void * tmp)
+DECL|function|propagate_a_color (GimpImageType image_type,gint channels,guchar * orig,guchar * here,guchar * best,void * tmp)
 name|propagate_a_color
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 name|image_type
 parameter_list|,
 name|gint
@@ -5463,10 +5463,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|propagate_opaque (GimpImageBaseType image_type,gint channels,guchar * orig,guchar * here,guchar * best,void * tmp)
+DECL|function|propagate_opaque (GimpImageType image_type,gint channels,guchar * orig,guchar * here,guchar * best,void * tmp)
 name|propagate_opaque
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 name|image_type
 parameter_list|,
 name|gint
@@ -5581,10 +5581,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|propagate_transparent (GimpImageBaseType image_type,gint channels,guchar * orig,guchar * here,guchar * best,void * tmp)
+DECL|function|propagate_transparent (GimpImageType image_type,gint channels,guchar * orig,guchar * here,guchar * best,void * tmp)
 name|propagate_transparent
 parameter_list|(
-name|GimpImageBaseType
+name|GimpImageType
 name|image_type
 parameter_list|,
 name|gint
