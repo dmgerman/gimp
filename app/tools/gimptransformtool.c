@@ -5239,28 +5239,6 @@ name|progress
 argument_list|)
 expr_stmt|;
 block|}
-switch|switch
-condition|(
-name|options
-operator|->
-name|type
-condition|)
-block|{
-case|case
-name|GIMP_TRANSFORM_TYPE_LAYER
-case|:
-case|case
-name|GIMP_TRANSFORM_TYPE_SELECTION
-case|:
-block|{
-name|GimpTransformResize
-name|clip_result
-init|=
-name|options
-operator|->
-name|clip
-decl_stmt|;
-comment|/*  always clip the selction and unfloated channels          *  so they keep their size          */
 if|if
 condition|(
 name|tr_tool
@@ -5268,6 +5246,15 @@ operator|->
 name|original
 condition|)
 block|{
+comment|/*  this happens when transforming a normal drawable or the        *  selection        */
+name|GimpTransformResize
+name|clip_result
+init|=
+name|options
+operator|->
+name|clip
+decl_stmt|;
+comment|/*  always clip the selction and unfloated channels        *  so they keep their size        */
 if|if
 condition|(
 name|GIMP_IS_CHANNEL
@@ -5326,11 +5313,9 @@ name|progress
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-break|break;
-case|case
-name|GIMP_TRANSFORM_TYPE_PATH
-case|:
+else|else
+block|{
+comment|/*  this happens for paths and layer groups  */
 name|gimp_item_transform
 argument_list|(
 name|active_item
@@ -5361,7 +5346,6 @@ argument_list|,
 name|progress
 argument_list|)
 expr_stmt|;
-break|break;
 block|}
 if|if
 condition|(
@@ -5692,6 +5676,19 @@ block|{
 case|case
 name|GIMP_TRANSFORM_TYPE_LAYER
 case|:
+if|if
+condition|(
+operator|!
+name|gimp_viewable_get_children
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|tool
+operator|->
+name|drawable
+argument_list|)
+argument_list|)
+condition|)
 name|tr_tool
 operator|->
 name|original
@@ -5742,12 +5739,6 @@ break|break;
 case|case
 name|GIMP_TRANSFORM_TYPE_PATH
 case|:
-name|tr_tool
-operator|->
-name|original
-operator|=
-name|NULL
-expr_stmt|;
 break|break;
 block|}
 comment|/*  Send the request for the transformation to the tool...    */

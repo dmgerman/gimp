@@ -642,15 +642,6 @@ argument_list|(
 name|trans_tool
 argument_list|)
 decl_stmt|;
-name|GimpTransformOptions
-modifier|*
-name|tr_options
-init|=
-name|GIMP_TRANSFORM_OPTIONS
-argument_list|(
-name|options
-argument_list|)
-decl_stmt|;
 name|GimpContext
 modifier|*
 name|context
@@ -812,25 +803,14 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
-switch|switch
-condition|(
-name|tr_options
-operator|->
-name|type
-condition|)
-block|{
-case|case
-name|GIMP_TRANSFORM_TYPE_LAYER
-case|:
-case|case
-name|GIMP_TRANSFORM_TYPE_SELECTION
-case|:
 if|if
 condition|(
 name|trans_tool
 operator|->
 name|original
 condition|)
+block|{
+comment|/*  this happens when transforming a normal drawable or the        *  selection        */
 name|ret
 operator|=
 name|gimp_drawable_transform_tiles_flip
@@ -855,10 +835,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-break|break;
-case|case
-name|GIMP_TRANSFORM_TYPE_PATH
-case|:
+block|}
+else|else
+block|{
+comment|/*  this happens for paths and layer groups  */
 name|gimp_item_flip
 argument_list|(
 name|active_item
@@ -874,7 +854,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-break|break;
 block|}
 return|return
 name|ret
