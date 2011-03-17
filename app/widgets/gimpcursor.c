@@ -996,6 +996,9 @@ if|if
 condition|(
 name|cursor_type
 operator|<=
+operator|(
+name|GimpCursorType
+operator|)
 name|GDK_LAST_CURSOR
 condition|)
 return|return
