@@ -1681,7 +1681,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fbc6230108
+DECL|struct|__anon2c3ee76d0108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -3921,6 +3921,17 @@ argument_list|,
 name|PangoAttrType
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|attr_type
+operator|==
+operator|-
+literal|1
+condition|)
+name|attr_type
+operator|=
+name|PANGO_ATTR_INVALID
+expr_stmt|;
 switch|switch
 condition|(
 name|attr_type
@@ -4207,10 +4218,6 @@ argument_list|,
 name|attr_type
 argument_list|)
 expr_stmt|;
-case|case
-operator|-
-literal|1
-case|:
 case|case
 name|PANGO_ATTR_INVALID
 case|:
