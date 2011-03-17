@@ -37,8 +37,9 @@ directive|include
 file|"ifs-compose.h"
 end_include
 
-begin_enum
-DECL|enum|__anon2bd3a1a50103
+begin_typedef
+DECL|enum|__anon27c96c580103
+typedef|typedef
 enum|enum
 block|{
 DECL|enumerator|TOKEN_INVALID
@@ -117,14 +118,16 @@ name|TOKEN_SIMPLE_COLOR
 block|,
 DECL|enumerator|TOKEN_PROB
 name|TOKEN_PROB
+DECL|typedef|IfsComposeToken
 block|}
-enum|;
-end_enum
+name|IfsComposeToken
+typedef|;
+end_typedef
 
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bd3a1a50208
+DECL|struct|__anon27c96c580208
 block|{
 DECL|member|name
 specifier|const
@@ -133,7 +136,7 @@ modifier|*
 name|name
 decl_stmt|;
 DECL|member|token
-name|gint
+name|IfsComposeToken
 name|token
 decl_stmt|;
 DECL|variable|symbols
@@ -597,6 +600,9 @@ condition|)
 block|{
 switch|switch
 condition|(
+operator|(
+name|IfsComposeToken
+operator|)
 name|token
 condition|)
 block|{
@@ -1130,6 +1136,9 @@ condition|)
 break|break;
 switch|switch
 condition|(
+operator|(
+name|IfsComposeToken
+operator|)
 name|token
 condition|)
 block|{
