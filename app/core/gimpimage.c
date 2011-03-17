@@ -340,7 +340,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon295acb160103
+DECL|enum|__anon29a3b0ae0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -434,7 +434,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon295acb160203
+DECL|enum|__anon29a3b0ae0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6787,6 +6787,16 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_image_get_imported_uri
+argument_list|(
+name|image
+argument_list|)
+operator|==
+name|uri
+condition|)
+return|return;
 name|g_object_set_data_full
 argument_list|(
 name|G_OBJECT
@@ -6837,6 +6847,16 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_image_get_exported_uri
+argument_list|(
+name|image
+argument_list|)
+operator|==
+name|uri
+condition|)
+return|return;
 name|g_object_set_data_full
 argument_list|(
 name|G_OBJECT
@@ -6887,6 +6907,16 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_image_get_save_a_copy_uri
+argument_list|(
+name|image
+argument_list|)
+operator|==
+name|uri
+condition|)
+return|return;
 name|g_object_set_data_full
 argument_list|(
 name|G_OBJECT
