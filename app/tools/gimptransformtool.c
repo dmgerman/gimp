@@ -620,7 +620,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_transform_tool_doit
+name|gimp_transform_tool_transform
 parameter_list|(
 name|GimpTransformTool
 modifier|*
@@ -5381,8 +5381,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_doit (GimpTransformTool * tr_tool,GimpDisplay * display)
-name|gimp_transform_tool_doit
+DECL|function|gimp_transform_tool_transform (GimpTransformTool * tr_tool,GimpDisplay * display)
+name|gimp_transform_tool_transform
 parameter_list|(
 name|GimpTransformTool
 modifier|*
@@ -8344,7 +8344,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_transform_tool_doit
+name|gimp_transform_tool_transform
 argument_list|(
 name|tr_tool
 argument_list|,
