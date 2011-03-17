@@ -795,9 +795,7 @@ name|z
 argument_list|)
 decl_stmt|;
 return|return
-call|(
-name|gpointer
-call|)
+name|GINT_TO_POINTER
 argument_list|(
 name|entry
 operator|!=
