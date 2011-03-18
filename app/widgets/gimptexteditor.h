@@ -167,6 +167,10 @@ name|GimpMenuFactory
 modifier|*
 name|menu_factory
 parameter_list|,
+name|GimpText
+modifier|*
+name|text
+parameter_list|,
 name|GimpTextBuffer
 modifier|*
 name|text_buffer

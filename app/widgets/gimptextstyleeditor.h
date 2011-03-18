@@ -107,6 +107,12 @@ name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
+DECL|member|text
+name|GimpText
+modifier|*
+name|text
+decl_stmt|;
+comment|/* read-only for default values */
 DECL|member|buffer
 name|GimpTextBuffer
 modifier|*
@@ -224,6 +230,10 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpText
+modifier|*
+name|text
 parameter_list|,
 name|GimpTextBuffer
 modifier|*

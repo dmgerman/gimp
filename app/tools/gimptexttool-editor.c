@@ -832,6 +832,10 @@ name|gimp
 argument_list|,
 name|text_tool
 operator|->
+name|proxy
+argument_list|,
+name|text_tool
+operator|->
 name|buffer
 argument_list|,
 name|gimp
@@ -4714,6 +4718,10 @@ name|_
 argument_list|(
 literal|"GIMP Text Editor"
 argument_list|)
+argument_list|,
+name|text_tool
+operator|->
+name|proxy
 argument_list|,
 name|text_tool
 operator|->

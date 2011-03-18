@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"text/gimptext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimphelp-ids.h"
 end_include
 
@@ -83,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5f6afc0103
+DECL|enum|__anon297a94fa0103
 block|{
 DECL|enumerator|TEXT_CHANGED
 name|TEXT_CHANGED
@@ -411,7 +417,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_text_editor_new (const gchar * title,GtkWindow * parent,Gimp * gimp,GimpMenuFactory * menu_factory,GimpTextBuffer * text_buffer,gdouble xres,gdouble yres)
+DECL|function|gimp_text_editor_new (const gchar * title,GtkWindow * parent,Gimp * gimp,GimpMenuFactory * menu_factory,GimpText * text,GimpTextBuffer * text_buffer,gdouble xres,gdouble yres)
 name|gimp_text_editor_new
 parameter_list|(
 specifier|const
@@ -430,6 +436,10 @@ parameter_list|,
 name|GimpMenuFactory
 modifier|*
 name|menu_factory
+parameter_list|,
+name|GimpText
+modifier|*
+name|text
 parameter_list|,
 name|GimpTextBuffer
 modifier|*
@@ -500,6 +510,16 @@ argument_list|(
 name|GIMP_IS_MENU_FACTORY
 argument_list|(
 name|menu_factory
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_TEXT
+argument_list|(
+name|text
 argument_list|)
 argument_list|,
 name|NULL
@@ -657,6 +677,8 @@ operator|=
 name|gimp_text_style_editor_new
 argument_list|(
 name|gimp
+argument_list|,
+name|text
 argument_list|,
 name|text_buffer
 argument_list|,

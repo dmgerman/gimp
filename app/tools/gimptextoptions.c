@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ca4b180103
+DECL|enum|__anon2bb8cecd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2784,7 +2784,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_text_options_editor_new (GtkWindow * parent,Gimp * gimp,GimpTextOptions * options,GimpMenuFactory * menu_factory,const gchar * title,GimpTextBuffer * text_buffer,gdouble xres,gdouble yres)
+DECL|function|gimp_text_options_editor_new (GtkWindow * parent,Gimp * gimp,GimpTextOptions * options,GimpMenuFactory * menu_factory,const gchar * title,GimpText * text,GimpTextBuffer * text_buffer,gdouble xres,gdouble yres)
 name|gimp_text_options_editor_new
 parameter_list|(
 name|GtkWindow
@@ -2807,6 +2807,10 @@ specifier|const
 name|gchar
 modifier|*
 name|title
+parameter_list|,
+name|GimpText
+modifier|*
+name|text
 parameter_list|,
 name|GimpTextBuffer
 modifier|*
@@ -2869,6 +2873,16 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_TEXT
+argument_list|(
+name|text
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|GIMP_IS_TEXT_BUFFER
 argument_list|(
 name|text_buffer
@@ -2888,6 +2902,8 @@ argument_list|,
 name|gimp
 argument_list|,
 name|menu_factory
+argument_list|,
+name|text
 argument_list|,
 name|text_buffer
 argument_list|,
