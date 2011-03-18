@@ -313,6 +313,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gdouble
+name|gimp_units_to_points
+parameter_list|(
+name|gdouble
+name|value
+parameter_list|,
+name|GimpUnit
+name|unit
+parameter_list|,
+name|gdouble
+name|resolution
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
