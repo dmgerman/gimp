@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpviewable.h"
 end_include
 
@@ -137,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275846990103
+DECL|enum|__anon27ca4b180103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2778,12 +2784,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_text_options_editor_new (GtkWindow * parent,GimpTextOptions * options,GimpMenuFactory * menu_factory,const gchar * title,GimpTextBuffer * text_buffer)
+DECL|function|gimp_text_options_editor_new (GtkWindow * parent,Gimp * gimp,GimpTextOptions * options,GimpMenuFactory * menu_factory,const gchar * title,GimpTextBuffer * text_buffer,gdouble xres,gdouble yres)
 name|gimp_text_options_editor_new
 parameter_list|(
 name|GtkWindow
 modifier|*
 name|parent
+parameter_list|,
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|,
 name|GimpTextOptions
 modifier|*
@@ -2801,6 +2811,12 @@ parameter_list|,
 name|GimpTextBuffer
 modifier|*
 name|text_buffer
+parameter_list|,
+name|gdouble
+name|xres
+parameter_list|,
+name|gdouble
+name|yres
 parameter_list|)
 block|{
 name|GtkWidget
@@ -2812,6 +2828,16 @@ name|gchar
 modifier|*
 name|font_name
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_TEXT_OPTIONS
@@ -2859,9 +2885,15 @@ name|title
 argument_list|,
 name|parent
 argument_list|,
+name|gimp
+argument_list|,
 name|menu_factory
 argument_list|,
 name|text_buffer
+argument_list|,
+name|xres
+argument_list|,
+name|yres
 argument_list|)
 expr_stmt|;
 name|font_name
