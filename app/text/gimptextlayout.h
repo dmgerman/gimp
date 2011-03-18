@@ -87,9 +87,11 @@ name|GimpText
 modifier|*
 name|text
 parameter_list|,
-name|GimpImage
-modifier|*
-name|image
+name|gdouble
+name|xres
+parameter_list|,
+name|gdouble
+name|yres
 parameter_list|)
 function_decl|;
 end_function_decl

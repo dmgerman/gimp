@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293620560103
+DECL|enum|__anon296be01e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2128,6 +2128,12 @@ name|GimpTextLayout
 modifier|*
 name|layout
 decl_stmt|;
+name|gdouble
+name|xres
+decl_stmt|;
+name|gdouble
+name|yres
+decl_stmt|;
 name|gint
 name|width
 decl_stmt|;
@@ -2198,6 +2204,17 @@ return|return
 name|FALSE
 return|;
 block|}
+name|gimp_image_get_resolution
+argument_list|(
+name|image
+argument_list|,
+operator|&
+name|xres
+argument_list|,
+operator|&
+name|yres
+argument_list|)
+expr_stmt|;
 name|layout
 operator|=
 name|gimp_text_layout_new
@@ -2206,7 +2223,9 @@ name|layer
 operator|->
 name|text
 argument_list|,
-name|image
+name|xres
+argument_list|,
+name|yres
 argument_list|)
 expr_stmt|;
 name|g_object_freeze_notify

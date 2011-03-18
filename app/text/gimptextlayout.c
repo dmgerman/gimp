@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimptext.h"
 end_include
 
@@ -345,16 +339,18 @@ end_function
 begin_function
 name|GimpTextLayout
 modifier|*
-DECL|function|gimp_text_layout_new (GimpText * text,GimpImage * image)
+DECL|function|gimp_text_layout_new (GimpText * text,gdouble xres,gdouble yres)
 name|gimp_text_layout_new
 parameter_list|(
 name|GimpText
 modifier|*
 name|text
 parameter_list|,
-name|GimpImage
-modifier|*
-name|image
+name|gdouble
+name|xres
+parameter_list|,
+name|gdouble
+name|yres
 parameter_list|)
 block|{
 name|GimpTextLayout
@@ -374,11 +370,6 @@ name|alignment
 init|=
 name|PANGO_ALIGN_LEFT
 decl_stmt|;
-name|gdouble
-name|xres
-decl_stmt|,
-name|yres
-decl_stmt|;
 name|gint
 name|size
 decl_stmt|;
@@ -387,16 +378,6 @@ argument_list|(
 name|GIMP_IS_TEXT
 argument_list|(
 name|text
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_IMAGE
-argument_list|(
-name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -418,17 +399,6 @@ operator|!=
 name|NULL
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_image_get_resolution
-argument_list|(
-name|image
-argument_list|,
-operator|&
-name|xres
-argument_list|,
-operator|&
-name|yres
 argument_list|)
 expr_stmt|;
 name|size
