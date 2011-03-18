@@ -12273,7 +12273,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2c8023e70103
+DECL|enum|__anon288909ba0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -22070,6 +22070,16 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|pointer
+name|y
+init|=
+name|cadr
+argument_list|(
+name|sc
+operator|->
+name|args
+argument_list|)
+decl_stmt|;
 comment|/* This 'if' is an R5RS compatability fix. */
 if|if
 condition|(
@@ -22099,16 +22109,6 @@ literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|pointer
-name|y
-init|=
-name|cadr
-argument_list|(
-name|sc
-operator|->
-name|args
-argument_list|)
-decl_stmt|;
 name|s_return
 argument_list|(
 name|sc
@@ -30095,7 +30095,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2c8023e70208
+DECL|struct|__anon288909ba0208
 specifier|static
 struct|struct
 block|{
@@ -30330,7 +30330,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2c8023e70308
+DECL|struct|__anon288909ba0308
 typedef|typedef
 struct|struct
 block|{
