@@ -80,10 +80,6 @@ directive|include
 file|<glib/gstdio.h>
 end_include
 
-begin_comment
-comment|/* FIXME: #undef GTK_DISABLE_DEPRECATED */
-end_comment
-
 begin_undef
 undef|#
 directive|undef
@@ -260,7 +256,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c124f70103
+DECL|enum|__anon27ceb5330103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -460,7 +456,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c124f70203
+DECL|enum|__anon27ceb5330203
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -520,7 +516,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c124f70303
+DECL|enum|__anon27ceb5330303
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -550,7 +546,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c124f70403
+DECL|enum|__anon27ceb5330403
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -572,7 +568,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c124f70503
+DECL|enum|__anon27ceb5330503
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -592,7 +588,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c124f70603
+DECL|enum|__anon27ceb5330603
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -627,7 +623,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c124f70703
+DECL|enum|__anon27ceb5330703
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -752,7 +748,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c124f70808
+DECL|struct|__anon27ceb5330808
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -788,7 +784,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c124f70908
+DECL|struct|__anon27ceb5330908
 block|{
 DECL|member|int_val1
 name|gint32
@@ -837,7 +833,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c124f70a08
+DECL|struct|__anon27ceb5330a08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -874,7 +870,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c124f70b08
+DECL|struct|__anon27ceb5330b08
 block|{
 DECL|member|path_type
 name|gint32
@@ -924,7 +920,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c124f70c08
+DECL|struct|__anon27ceb5330c08
 block|{
 DECL|member|active_channel
 name|gint
@@ -998,7 +994,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c124f70d08
+DECL|struct|__anon27ceb5330d08
 block|{
 DECL|member|active_layer
 name|gint
@@ -1083,7 +1079,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c124f70e08
+DECL|struct|__anon27ceb5330e08
 block|{
 DECL|member|position
 name|gint32
@@ -1107,7 +1103,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c124f70f08
+DECL|struct|__anon27ceb5330f08
 block|{
 DECL|member|version
 name|gchar
@@ -6048,19 +6044,20 @@ name|l_num_parasites
 init|=
 literal|0
 decl_stmt|;
-if|if
-condition|(
-operator|!
-name|gimp_drawable_parasite_list
+name|l_parasite_names
+operator|=
+name|gimp_item_get_parasite_list
 argument_list|(
 name|drawable_id
 argument_list|,
 operator|&
 name|l_num_parasites
-argument_list|,
-operator|&
-name|l_parasite_names
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|l_parasite_names
 condition|)
 return|return;
 for|for
@@ -6079,7 +6076,7 @@ control|)
 block|{
 name|l_parasite
 operator|=
-name|gimp_drawable_parasite_find
+name|gimp_item_get_parasite
 argument_list|(
 name|drawable_id
 argument_list|,
@@ -6308,7 +6305,7 @@ name|int_val1
 operator|=
 name|p_invert
 argument_list|(
-name|gimp_drawable_get_visible
+name|gimp_item_get_visible
 argument_list|(
 name|layer_id
 argument_list|)
@@ -6330,7 +6327,7 @@ name|l_param
 operator|.
 name|int_val1
 operator|=
-name|gimp_drawable_get_linked
+name|gimp_item_get_linked
 argument_list|(
 name|layer_id
 argument_list|)
@@ -6470,7 +6467,7 @@ name|l_param
 operator|.
 name|int_val1
 operator|=
-name|gimp_drawable_get_tattoo
+name|gimp_item_get_tattoo
 argument_list|(
 name|layer_id
 argument_list|)
@@ -6491,7 +6488,7 @@ name|l_param
 operator|.
 name|string_val
 operator|=
-name|gimp_drawable_get_name
+name|gimp_item_get_name
 argument_list|(
 name|layer_id
 argument_list|)
@@ -6699,7 +6696,7 @@ name|int_val1
 operator|=
 name|p_invert
 argument_list|(
-name|gimp_drawable_get_visible
+name|gimp_item_get_visible
 argument_list|(
 name|channel_id
 argument_list|)
@@ -6830,7 +6827,7 @@ name|l_param
 operator|.
 name|int_val1
 operator|=
-name|gimp_drawable_get_tattoo
+name|gimp_item_get_tattoo
 argument_list|(
 name|channel_id
 argument_list|)
@@ -6851,7 +6848,7 @@ name|l_param
 operator|.
 name|string_val
 operator|=
-name|gimp_drawable_get_name
+name|gimp_item_get_name
 argument_list|(
 name|channel_id
 argument_list|)
@@ -11333,7 +11330,7 @@ operator|.
 name|name
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_parasite_attach
+name|gimp_item_attach_parasite
 argument_list|(
 name|gimp_obj_id
 argument_list|,
@@ -14729,7 +14726,7 @@ operator|->
 name|offy
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_set_visible
+name|gimp_item_set_visible
 argument_list|(
 name|l_layer_id
 argument_list|,
@@ -14738,7 +14735,7 @@ operator|->
 name|visible
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_set_linked
+name|gimp_item_set_linked
 argument_list|(
 name|l_layer_id
 argument_list|,
@@ -14765,7 +14762,7 @@ operator|>=
 literal|0
 condition|)
 block|{
-name|gimp_drawable_set_tattoo
+name|gimp_item_set_tattoo
 argument_list|(
 name|l_layer_id
 argument_list|,
@@ -14954,7 +14951,7 @@ operator|>=
 literal|0
 condition|)
 block|{
-name|gimp_drawable_set_tattoo
+name|gimp_item_set_tattoo
 argument_list|(
 name|l_channel_id
 argument_list|,
@@ -15147,7 +15144,7 @@ operator|>=
 literal|0
 condition|)
 block|{
-name|gimp_drawable_set_tattoo
+name|gimp_item_set_tattoo
 argument_list|(
 name|l_channel_id
 argument_list|,
@@ -15188,7 +15185,7 @@ name|l_channel_id
 argument_list|)
 expr_stmt|;
 comment|/* delete the channel after load into selection */
-name|gimp_drawable_delete
+name|gimp_item_delete
 argument_list|(
 name|l_channel_id
 argument_list|)
@@ -15210,7 +15207,7 @@ literal|0
 argument_list|)
 expr_stmt|;
 comment|/* adjust offsets and other channelproperties */
-name|gimp_drawable_set_visible
+name|gimp_item_set_visible
 argument_list|(
 name|l_channel_id
 argument_list|,
