@@ -52,12 +52,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdynamicsoutput.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimppaintinfo.h"
 end_include
 
@@ -2259,6 +2253,13 @@ argument_list|,
 literal|"brush-size"
 argument_list|,
 name|brush_size
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_object_set
+argument_list|(
+name|options
 argument_list|,
 literal|"type"
 argument_list|,
