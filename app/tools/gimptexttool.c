@@ -3104,6 +3104,10 @@ block|}
 else|else
 block|{
 comment|/* If the text buffer has no selection, draw the text cursor */
+name|GimpCanvasItem
+modifier|*
+name|item
+decl_stmt|;
 name|PangoRectangle
 name|cursor_rect
 decl_stmt|;
@@ -3167,6 +3171,8 @@ name|width
 operator|!=
 literal|0
 expr_stmt|;
+name|item
+operator|=
 name|gimp_draw_tool_add_text_cursor
 argument_list|(
 name|draw_tool
@@ -3175,6 +3181,13 @@ operator|&
 name|cursor_rect
 argument_list|,
 name|overwrite
+argument_list|)
+expr_stmt|;
+name|gimp_canvas_item_set_highlight
+argument_list|(
+name|item
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
