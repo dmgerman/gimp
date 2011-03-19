@@ -3470,6 +3470,11 @@ argument_list|,
 name|user_dynamics
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|pdb_dynamics
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 name|success
