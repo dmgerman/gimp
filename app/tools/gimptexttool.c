@@ -3268,6 +3268,16 @@ argument_list|(
 name|draw_tool
 argument_list|)
 expr_stmt|;
+name|gimp_canvas_item_set_highlight
+argument_list|(
+name|GIMP_CANVAS_ITEM
+argument_list|(
+name|fill_group
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gtk_text_buffer_get_selection_bounds
 argument_list|(
 name|buffer
