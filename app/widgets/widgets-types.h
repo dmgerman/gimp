@@ -751,15 +751,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpToolDialog
-typedef|typedef
-name|struct
-name|_GimpToolDialog
-name|GimpToolDialog
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpViewableDialog
 typedef|typedef
 name|struct

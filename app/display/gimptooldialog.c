@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets-types.h"
+file|"display-types.h"
 end_include
 
 begin_include
@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdialogfactory.h"
+file|"widgets/gimpdialogfactory.h"
 end_include
 
 begin_include
