@@ -830,12 +830,10 @@ name|picker_tool
 operator|->
 name|dialog
 condition|)
-block|{
 name|shift_mod
 operator|=
 name|GDK_SHIFT_MASK
 expr_stmt|;
-block|}
 switch|switch
 condition|(
 name|options
@@ -1122,6 +1120,10 @@ argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|content_area
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|hbox
 decl_stmt|;
 name|GtkWidget
@@ -1150,8 +1152,12 @@ name|tool
 operator|->
 name|tool_info
 argument_list|,
-name|NULL
-comment|/* tool->display->shell */
+name|gimp_display_get_shell
+argument_list|(
+name|tool
+operator|->
+name|display
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -1218,6 +1224,18 @@ argument_list|,
 name|picker_tool
 argument_list|)
 expr_stmt|;
+name|content_area
+operator|=
+name|gtk_dialog_get_content_area
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|picker_tool
+operator|->
+name|dialog
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|hbox
 operator|=
 name|gtk_hbox_new
@@ -1241,15 +1259,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|gtk_dialog_get_content_area
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|picker_tool
-operator|->
-name|dialog
-argument_list|)
-argument_list|)
+name|content_area
 argument_list|)
 argument_list|,
 name|hbox
@@ -1589,6 +1599,7 @@ argument_list|,
 name|color_index
 argument_list|)
 expr_stmt|;
+comment|/*  don't use gtk_window_present() because it would focus the dialog  */
 if|if
 condition|(
 name|gtk_widget_get_visible
