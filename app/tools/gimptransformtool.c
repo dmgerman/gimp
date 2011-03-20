@@ -7915,8 +7915,12 @@ name|gimp_tool_dialog_new
 argument_list|(
 name|tool_info
 argument_list|,
-name|NULL
-comment|/* tool->display->shell */
+name|gimp_display_get_shell
+argument_list|(
+name|tool
+operator|->
+name|display
+argument_list|)
 argument_list|,
 name|tool_info
 operator|->
@@ -8106,6 +8110,21 @@ argument_list|,
 name|GIMP_CONTEXT
 argument_list|(
 name|options
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_tool_dialog_set_shell
+argument_list|(
+name|GIMP_TOOL_DIALOG
+argument_list|(
+name|tr_tool
+operator|->
+name|dialog
+argument_list|)
+argument_list|,
+name|gimp_display_get_shell
+argument_list|(
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;

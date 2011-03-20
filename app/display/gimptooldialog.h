@@ -126,9 +126,9 @@ name|GimpToolInfo
 operator|*
 name|tool_info
 argument_list|,
-name|GtkWidget
+name|GimpDisplayShell
 operator|*
-name|parent
+name|shell
 argument_list|,
 specifier|const
 name|gchar
@@ -140,6 +140,21 @@ argument_list|)
 name|G_GNUC_NULL_TERMINATED
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|void
+name|gimp_tool_dialog_set_shell
+parameter_list|(
+name|GimpToolDialog
+modifier|*
+name|tool_dialog
+parameter_list|,
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#

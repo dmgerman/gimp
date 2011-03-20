@@ -1393,6 +1393,7 @@ name|measure
 operator|->
 name|dialog
 condition|)
+block|{
 name|gimp_viewable_dialog_set_viewable
 argument_list|(
 name|GIMP_VIEWABLE_DIALOG
@@ -1413,6 +1414,19 @@ name|options
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_tool_dialog_set_shell
+argument_list|(
+name|GIMP_TOOL_DIALOG
+argument_list|(
+name|measure
+operator|->
+name|dialog
+argument_list|)
+argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -4596,8 +4610,12 @@ name|tool
 operator|->
 name|tool_info
 argument_list|,
-name|NULL
-comment|/* tool->display->shell */
+name|gimp_display_get_shell
+argument_list|(
+name|tool
+operator|->
+name|display
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
