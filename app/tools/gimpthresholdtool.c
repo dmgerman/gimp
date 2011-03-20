@@ -387,7 +387,7 @@ name|gimp_threshold_tool_initialize
 expr_stmt|;
 name|im_tool_class
 operator|->
-name|shell_desc
+name|dialog_desc
 operator|=
 name|_
 argument_list|(

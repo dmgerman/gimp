@@ -506,7 +506,7 @@ name|gimp_brightness_contrast_tool_motion
 expr_stmt|;
 name|im_tool_class
 operator|->
-name|shell_desc
+name|dialog_desc
 operator|=
 name|_
 argument_list|(

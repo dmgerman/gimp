@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c826f110103
+DECL|enum|__anon2be04c3b0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -396,7 +396,7 @@ name|gimp_gegl_tool_initialize
 expr_stmt|;
 name|im_tool_class
 operator|->
-name|shell_desc
+name|dialog_desc
 operator|=
 name|_
 argument_list|(

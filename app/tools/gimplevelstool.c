@@ -790,7 +790,7 @@ name|gimp_levels_tool_color_picked
 expr_stmt|;
 name|im_tool_class
 operator|->
-name|shell_desc
+name|dialog_desc
 operator|=
 name|_
 argument_list|(
@@ -3666,7 +3666,7 @@ name|g_signal_connect
 argument_list|(
 name|image_map_tool
 operator|->
-name|shell
+name|dialog
 argument_list|,
 literal|"unmap"
 argument_list|,

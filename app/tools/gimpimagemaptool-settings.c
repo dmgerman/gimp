@@ -738,7 +738,7 @@ name|G_OBJECT
 argument_list|(
 name|tool
 operator|->
-name|shell
+name|dialog
 argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
@@ -864,7 +864,7 @@ name|G_OBJECT
 argument_list|(
 name|tool
 operator|->
-name|shell
+name|dialog
 argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR

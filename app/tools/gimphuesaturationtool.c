@@ -481,7 +481,7 @@ name|gimp_hue_saturation_tool_initialize
 expr_stmt|;
 name|im_tool_class
 operator|->
-name|shell_desc
+name|dialog_desc
 operator|=
 name|_
 argument_list|(
@@ -976,7 +976,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2a3ed2180108
+DECL|struct|__anon28fa8a960108
 block|{
 DECL|member|label
 specifier|const

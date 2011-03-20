@@ -152,10 +152,10 @@ DECL|member|overlay
 name|gboolean
 name|overlay
 decl_stmt|;
-DECL|member|shell
+DECL|member|dialog
 name|GtkWidget
 modifier|*
-name|shell
+name|dialog
 decl_stmt|;
 DECL|member|main_vbox
 name|GtkWidget
@@ -185,11 +185,11 @@ DECL|member|parent_class
 name|GimpColorToolClass
 name|parent_class
 decl_stmt|;
-DECL|member|shell_desc
+DECL|member|dialog_desc
 specifier|const
 name|gchar
 modifier|*
-name|shell_desc
+name|dialog_desc
 decl_stmt|;
 DECL|member|settings_name
 specifier|const
