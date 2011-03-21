@@ -16,29 +16,31 @@ directive|define
 name|__GIMP_XMP_MODEL_WIDGET_H__
 end_define
 
-begin_decl_stmt
+begin_macro
 name|G_BEGIN_DECLS
-name|enum
-DECL|enum|__anon27a28b290103
-type|{
+end_macro
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2b9c67d80103
+block|{
 DECL|enumerator|GIMP_XMP_MODEL_WIDGET_PROP_0
 name|GIMP_XMP_MODEL_WIDGET_PROP_0
-decl_stmt|,
+block|,
 DECL|enumerator|GIMP_XMP_MODEL_WIDGET_PROP_SCHEMA_URI
 name|GIMP_XMP_MODEL_WIDGET_PROP_SCHEMA_URI
-decl_stmt|,
+block|,
 DECL|enumerator|GIMP_XMP_MODEL_WIDGET_PROP_PROPERTY_NAME
 name|GIMP_XMP_MODEL_WIDGET_PROP_PROPERTY_NAME
-decl_stmt|,
+block|,
 DECL|enumerator|GIMP_XMP_MODEL_WIDGET_PROP_XMPMODEL
 name|GIMP_XMP_MODEL_WIDGET_PROP_XMPMODEL
-end_decl_stmt
-
-begin_empty_stmt
-DECL|variable|GimpXmpModelWidgetProp
-unit|} GimpXmpModelWidgetProp
-empty_stmt|;
-end_empty_stmt
+DECL|typedef|GimpXmpModelWidgetProp
+block|}
+name|GimpXmpModelWidgetProp
+typedef|;
+end_typedef
 
 begin_define
 DECL|macro|GIMP_TYPE_XMP_MODEL_WIDGET
