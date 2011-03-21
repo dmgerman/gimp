@@ -5784,7 +5784,7 @@ argument_list|(
 literal|"Preferences"
 argument_list|)
 argument_list|,
-literal|"preferences"
+literal|"gimp-preferences"
 argument_list|,
 name|NULL
 argument_list|,
@@ -9456,7 +9456,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2a1c2abd0108
+DECL|struct|__anon2c03108c0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10611,7 +10611,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a1c2abd0208
+DECL|struct|__anon2c03108c0208
 block|{
 DECL|member|label
 specifier|const
@@ -11723,7 +11723,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a1c2abd0308
+DECL|struct|__anon2c03108c0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11878,7 +11878,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a1c2abd0408
+DECL|struct|__anon2c03108c0408
 block|{
 DECL|member|tree_label
 specifier|const
