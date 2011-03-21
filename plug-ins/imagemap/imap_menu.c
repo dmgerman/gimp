@@ -851,7 +851,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Move to Front"
+literal|"Move Area to Front"
 argument_list|)
 block|,
 name|do_move_to_front
@@ -868,7 +868,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Send to Back"
+literal|"Move Area to Bottom"
 argument_list|)
 block|,
 name|do_send_to_back
