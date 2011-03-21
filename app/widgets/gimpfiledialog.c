@@ -131,7 +131,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297a28b30103
+DECL|enum|__anon2b1e56e50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3638,6 +3638,18 @@ operator|=
 name|gtk_expander_new_with_mnemonic
 argument_list|(
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_expander_set_resize_toplevel
+argument_list|(
+name|GTK_EXPANDER
+argument_list|(
+name|dialog
+operator|->
+name|proc_expander
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_file_dialog_add_extra_widget
