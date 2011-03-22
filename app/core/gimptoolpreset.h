@@ -180,7 +180,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|name
+name|unused
 parameter_list|)
 function_decl|;
 end_function_decl

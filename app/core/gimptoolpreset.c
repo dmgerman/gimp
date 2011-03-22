@@ -133,7 +133,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon274b2aef0103
+DECL|enum|__anon2c30905d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1436,7 +1436,7 @@ end_comment
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_tool_preset_new (GimpContext * context,const gchar * name)
+DECL|function|gimp_tool_preset_new (GimpContext * context,const gchar * unused)
 name|gimp_tool_preset_new
 parameter_list|(
 name|GimpContext
@@ -1446,7 +1446,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|name
+name|unused
 parameter_list|)
 block|{
 name|GimpToolInfo
@@ -1464,27 +1464,6 @@ name|GIMP_IS_CONTEXT
 argument_list|(
 name|context
 argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|name
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|name
-index|[
-literal|0
-index|]
-operator|!=
-literal|'\0'
 argument_list|,
 name|NULL
 argument_list|)
@@ -1522,7 +1501,9 @@ name|GIMP_TYPE_TOOL_PRESET
 argument_list|,
 literal|"name"
 argument_list|,
-name|name
+name|tool_info
+operator|->
+name|blurb
 argument_list|,
 literal|"stock-id"
 argument_list|,
