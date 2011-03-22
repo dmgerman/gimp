@@ -98,7 +98,7 @@ name|GtkEntry
 name|parent_instance
 decl_stmt|;
 DECL|member|container
-name|GimpFilteredContainer
+name|GimpTaggedContainer
 modifier|*
 name|container
 decl_stmt|;
@@ -187,7 +187,7 @@ name|GtkWidget
 modifier|*
 name|gimp_tag_entry_new
 parameter_list|(
-name|GimpFilteredContainer
+name|GimpTaggedContainer
 modifier|*
 name|container
 parameter_list|,

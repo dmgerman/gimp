@@ -248,6 +248,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpTaggedContainer
+typedef|typedef
+name|struct
+name|_GimpTaggedContainer
+name|GimpTaggedContainer
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpToolPresets
 typedef|typedef
 name|struct

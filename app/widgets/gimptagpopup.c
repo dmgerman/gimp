@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpfilteredcontainer.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimptag.h"
 end_include
 
@@ -61,6 +55,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimptagged.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimptaggedcontainer.h"
 end_include
 
 begin_include
@@ -159,7 +159,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ada6850103
+DECL|enum|__anon276c17df0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -919,7 +919,7 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|GimpFilteredContainer
+name|GimpTaggedContainer
 modifier|*
 name|container
 decl_stmt|;
@@ -4567,7 +4567,7 @@ operator|==
 name|GIMP_TAG_ENTRY_MODE_QUERY
 condition|)
 block|{
-name|GimpFilteredContainer
+name|GimpTaggedContainer
 modifier|*
 name|container
 decl_stmt|;

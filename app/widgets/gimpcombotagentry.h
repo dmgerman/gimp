@@ -164,7 +164,7 @@ name|GtkWidget
 modifier|*
 name|gimp_combo_tag_entry_new
 parameter_list|(
-name|GimpFilteredContainer
+name|GimpTaggedContainer
 modifier|*
 name|container
 parameter_list|,

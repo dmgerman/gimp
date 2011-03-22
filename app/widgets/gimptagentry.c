@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpfilteredcontainer.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimptag.h"
 end_include
 
@@ -67,6 +61,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimptagged.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimptaggedcontainer.h"
 end_include
 
 begin_include
@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a44598f0103
+DECL|enum|__anon2919856a0103
 block|{
 DECL|enumerator|TAG_SEARCH_NONE
 name|TAG_SEARCH_NONE
@@ -132,7 +132,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a44598f0203
+DECL|enum|__anon2919856a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -742,11 +742,11 @@ name|g_param_spec_object
 argument_list|(
 literal|"container"
 argument_list|,
-literal|"Filtered container"
+literal|"Tagged container"
 argument_list|,
-literal|"The Filtered container"
+literal|"The Tagged container"
 argument_list|,
-name|GIMP_TYPE_FILTERED_CONTAINER
+name|GIMP_TYPE_TAGGED_CONTAINER
 argument_list|,
 name|G_PARAM_CONSTRUCT_ONLY
 operator||
@@ -1310,16 +1310,16 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_entry_new:  * @container: a #GimpFilteredContainer object  * @mode:      #GimpTagEntryMode to work in.  *  * #GimpTagEntry is a widget which can query and assign tags to tagged objects.  * When operating in query mode, @container is kept up to date with  * tags selected. When operating in assignment mode, tags are assigned to  * objects selected and visible in @container.  *  * Return value: a new GimpTagEntry widget.  **/
+comment|/**  * gimp_tag_entry_new:  * @container: a #GimpTaggedContainer object  * @mode:      #GimpTagEntryMode to work in.  *  * #GimpTagEntry is a widget which can query and assign tags to tagged objects.  * When operating in query mode, @container is kept up to date with  * tags selected. When operating in assignment mode, tags are assigned to  * objects selected and visible in @container.  *  * Return value: a new GimpTagEntry widget.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_tag_entry_new (GimpFilteredContainer * container,GimpTagEntryMode mode)
+DECL|function|gimp_tag_entry_new (GimpTaggedContainer * container,GimpTagEntryMode mode)
 name|gimp_tag_entry_new
 parameter_list|(
-name|GimpFilteredContainer
+name|GimpTaggedContainer
 modifier|*
 name|container
 parameter_list|,
@@ -1329,7 +1329,7 @@ parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_FILTERED_CONTAINER
+name|GIMP_IS_TAGGED_CONTAINER
 argument_list|(
 name|container
 argument_list|)
@@ -2536,9 +2536,9 @@ argument_list|(
 name|parsed_tags
 argument_list|)
 expr_stmt|;
-name|gimp_filtered_container_set_filter
+name|gimp_tagged_container_set_filter
 argument_list|(
-name|GIMP_FILTERED_CONTAINER
+name|GIMP_TAGGED_CONTAINER
 argument_list|(
 name|entry
 operator|->

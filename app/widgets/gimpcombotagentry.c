@@ -36,19 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpfilteredcontainer.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpviewable.h"
 end_include
 
 begin_include
@@ -61,6 +49,18 @@ begin_include
 include|#
 directive|include
 file|"core/gimptagged.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimptaggedcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpviewable.h"
 end_include
 
 begin_include
@@ -180,7 +180,7 @@ specifier|static
 name|void
 name|gimp_combo_tag_entry_tag_count_changed
 parameter_list|(
-name|GimpFilteredContainer
+name|GimpTaggedContainer
 modifier|*
 name|container
 parameter_list|,
@@ -1078,16 +1078,16 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_combo_tag_entry_new:  * @container: a filtered container to be used.  * @mode:      tag entry mode to work in.  *  * Creates a new #GimpComboTagEntry widget which extends #GimpTagEntry by  * adding ability to pick tags using popup window (similar to combo box).  *  * Return value: a new #GimpComboTagEntry widget.  **/
+comment|/**  * gimp_combo_tag_entry_new:  * @container: a tagged container to be used.  * @mode:      tag entry mode to work in.  *  * Creates a new #GimpComboTagEntry widget which extends #GimpTagEntry by  * adding ability to pick tags using popup window (similar to combo box).  *  * Return value: a new #GimpComboTagEntry widget.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_combo_tag_entry_new (GimpFilteredContainer * container,GimpTagEntryMode mode)
+DECL|function|gimp_combo_tag_entry_new (GimpTaggedContainer * container,GimpTagEntryMode mode)
 name|gimp_combo_tag_entry_new
 parameter_list|(
-name|GimpFilteredContainer
+name|GimpTaggedContainer
 modifier|*
 name|container
 parameter_list|,
@@ -1097,7 +1097,7 @@ parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_FILTERED_CONTAINER
+name|GIMP_IS_TAGGED_CONTAINER
 argument_list|(
 name|container
 argument_list|)
@@ -1162,7 +1162,7 @@ operator|->
 name|popup
 condition|)
 block|{
-name|GimpFilteredContainer
+name|GimpTaggedContainer
 modifier|*
 name|container
 init|=
@@ -1178,7 +1178,7 @@ name|tag_count
 decl_stmt|;
 name|tag_count
 operator|=
-name|gimp_filtered_container_get_tag_count
+name|gimp_tagged_container_get_tag_count
 argument_list|(
 name|container
 argument_list|)
@@ -1283,10 +1283,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_combo_tag_entry_tag_count_changed (GimpFilteredContainer * container,gint tag_count,GimpComboTagEntry * entry)
+DECL|function|gimp_combo_tag_entry_tag_count_changed (GimpTaggedContainer * container,gint tag_count,GimpComboTagEntry * entry)
 name|gimp_combo_tag_entry_tag_count_changed
 parameter_list|(
-name|GimpFilteredContainer
+name|GimpTaggedContainer
 modifier|*
 name|container
 parameter_list|,

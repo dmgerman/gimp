@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpfilteredcontainer.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimplist.h"
 end_include
 
@@ -85,6 +79,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpmarshal.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimptaggedcontainer.h"
 end_include
 
 begin_include
@@ -163,10 +163,10 @@ name|GimpDataFactory
 modifier|*
 name|factory
 decl_stmt|;
-DECL|member|tag_filtered_container
+DECL|member|tagged_container
 name|GimpContainer
 modifier|*
-name|tag_filtered_container
+name|tagged_container
 decl_stmt|;
 DECL|member|query_tag_entry
 name|GtkWidget
@@ -389,7 +389,7 @@ name|view
 operator|->
 name|priv
 operator|->
-name|tag_filtered_container
+name|tagged_container
 operator|=
 name|NULL
 expr_stmt|;
@@ -486,7 +486,7 @@ name|factory_view
 operator|->
 name|priv
 operator|->
-name|tag_filtered_container
+name|tagged_container
 condition|)
 block|{
 name|g_object_unref
@@ -495,14 +495,14 @@ name|factory_view
 operator|->
 name|priv
 operator|->
-name|tag_filtered_container
+name|tagged_container
 argument_list|)
 expr_stmt|;
 name|factory_view
 operator|->
 name|priv
 operator|->
-name|tag_filtered_container
+name|tagged_container
 operator|=
 name|NULL
 expr_stmt|;
@@ -937,9 +937,9 @@ name|factory_view
 operator|->
 name|priv
 operator|->
-name|tag_filtered_container
+name|tagged_container
 operator|=
-name|gimp_filtered_container_new
+name|gimp_tagged_container_new
 argument_list|(
 name|gimp_data_factory_get_container
 argument_list|(
@@ -968,7 +968,7 @@ name|factory_view
 operator|->
 name|priv
 operator|->
-name|tag_filtered_container
+name|tagged_container
 argument_list|,
 name|context
 argument_list|,
@@ -1236,13 +1236,13 @@ name|query_tag_entry
 operator|=
 name|gimp_combo_tag_entry_new
 argument_list|(
-name|GIMP_FILTERED_CONTAINER
+name|GIMP_TAGGED_CONTAINER
 argument_list|(
 name|factory_view
 operator|->
 name|priv
 operator|->
-name|tag_filtered_container
+name|tagged_container
 argument_list|)
 argument_list|,
 name|GIMP_TAG_ENTRY_MODE_QUERY
@@ -1306,13 +1306,13 @@ name|assign_tag_entry
 operator|=
 name|gimp_combo_tag_entry_new
 argument_list|(
-name|GIMP_FILTERED_CONTAINER
+name|GIMP_TAGGED_CONTAINER
 argument_list|(
 name|factory_view
 operator|->
 name|priv
 operator|->
-name|tag_filtered_container
+name|tagged_container
 argument_list|)
 argument_list|,
 name|GIMP_TAG_ENTRY_MODE_ASSIGN
