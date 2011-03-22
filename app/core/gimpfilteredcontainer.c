@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad60a2d0103
+DECL|enum|__anon27a2761e0103
 block|{
 DECL|enumerator|TAG_COUNT_CHANGED
 name|TAG_COUNT_CHANGED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad60a2d0203
+DECL|enum|__anon27a2761e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1829,10 +1829,7 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|tagged
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|gimp_filtered_container_tag_added
-argument_list|)
 argument_list|,
 name|filtered_container
 argument_list|)
@@ -1841,10 +1838,7 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|tagged
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|gimp_filtered_container_tag_removed
-argument_list|)
 argument_list|,
 name|filtered_container
 argument_list|)
@@ -2089,7 +2083,7 @@ block|{ }
 end_function
 
 begin_comment
-comment|/**  * gimp_filtered_container_get_tag_count:  * @container:  a #GimpFilteredContainer object.  *  * Get number of distinct tags that are currently assigned to all objects  * in the container. The count is independent of currently used filter, it  * is provided for all available objects (ie. empty filter).  *  * Return value: number of distinct tags assigned to all objects in the  * container.  **/
+comment|/**  * gimp_filtered_container_get_tag_count:  * @container:  a #GimpFilteredContainer object.  *  * Get number of distinct tags that are currently assigned to all  * objects in the container. The count is independent of currently  * used filter, it is provided for all available objects (ie. empty  * filter).  *  * Return value: number of distinct tags assigned to all objects in the  *               container.  **/
 end_comment
 
 begin_function
