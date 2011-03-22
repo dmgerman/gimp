@@ -68,14 +68,14 @@ name|h
 decl_stmt|;
 comment|/* width and height of region */
 DECL|member|dirty
-name|gint
+name|guint
 name|dirty
 range|:
 literal|1
 decl_stmt|;
 comment|/* will this region be dirtied? */
 DECL|member|shadow
-name|gint
+name|guint
 name|shadow
 range|:
 literal|1
