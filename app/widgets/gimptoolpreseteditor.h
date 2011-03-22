@@ -108,6 +108,16 @@ name|GimpToolPreset
 modifier|*
 name|tool_preset_model
 decl_stmt|;
+DECL|member|tool_icon
+name|GtkWidget
+modifier|*
+name|tool_icon
+decl_stmt|;
+DECL|member|tool_label
+name|GtkWidget
+modifier|*
+name|tool_label
+decl_stmt|;
 block|}
 struct|;
 end_struct
