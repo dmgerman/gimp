@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimplist.h"
+file|"gimpfilteredcontainer.h"
 end_include
 
 begin_define
@@ -100,7 +100,7 @@ struct|struct
 name|_GimpTaggedContainer
 block|{
 DECL|member|parent_instance
-name|GimpList
+name|GimpFilteredContainer
 name|parent_instance
 decl_stmt|;
 DECL|member|src_container
@@ -132,7 +132,7 @@ struct|struct
 name|_GimpTaggedContainerClass
 block|{
 DECL|member|parent_class
-name|GimpListClass
+name|GimpFilteredContainerClass
 name|parent_class
 decl_stmt|;
 DECL|member|tag_count_changed
