@@ -31,6 +31,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmathtypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpmath/gimpvector.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"base/base-types.h"
 end_include
 
@@ -898,6 +910,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpCagePoint
+typedef|typedef
+name|struct
+name|_GimpCagePoint
+name|GimpCagePoint
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpCoords
 typedef|typedef
 name|struct
@@ -1044,6 +1065,35 @@ end_typedef
 begin_comment
 comment|/*  structs  */
 end_comment
+
+begin_struct
+DECL|struct|_GimpCagePoint
+struct|struct
+name|_GimpCagePoint
+block|{
+DECL|member|src_point
+name|GimpVector2
+name|src_point
+decl_stmt|;
+DECL|member|dest_point
+name|GimpVector2
+name|dest_point
+decl_stmt|;
+DECL|member|edge_normal
+name|GimpVector2
+name|edge_normal
+decl_stmt|;
+DECL|member|edge_scaling_factor
+name|gdouble
+name|edge_scaling_factor
+decl_stmt|;
+DECL|member|selected
+name|gboolean
+name|selected
+decl_stmt|;
+block|}
+struct|;
+end_struct
 
 begin_struct
 DECL|struct|_GimpCoords

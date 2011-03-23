@@ -134,36 +134,96 @@ name|GimpCageConfig
 modifier|*
 name|config
 decl_stmt|;
+DECL|member|offset_x
+name|gint
+name|offset_x
+decl_stmt|;
+comment|/* used to convert the cage point coords */
+DECL|member|offset_y
+name|gint
+name|offset_y
+decl_stmt|;
+comment|/* to drawable coords */
 DECL|member|cursor_x
 name|gdouble
 name|cursor_x
 decl_stmt|;
+comment|/* Hold the cursor x position */
 DECL|member|cursor_y
 name|gdouble
 name|cursor_y
 decl_stmt|;
+comment|/* Hold the cursor y position */
+DECL|member|movement_start_x
+name|gdouble
+name|movement_start_x
+decl_stmt|;
+comment|/* Where the movement started */
+DECL|member|movement_start_y
+name|gdouble
+name|movement_start_y
+decl_stmt|;
+comment|/* Where the movement started */
+DECL|member|selection_start_x
+name|gdouble
+name|selection_start_x
+decl_stmt|;
+comment|/* Where the selection started */
+DECL|member|selection_start_y
+name|gdouble
+name|selection_start_y
+decl_stmt|;
+comment|/* Where the selection started */
 DECL|member|hovering_handle
 name|gint
 name|hovering_handle
 decl_stmt|;
-DECL|member|moving_handle
-name|gint
-name|moving_handle
-decl_stmt|;
+comment|/* Handle which the cursor is above */
 DECL|member|cage_complete
 name|gboolean
 name|cage_complete
 decl_stmt|;
+comment|/* Cage closed or not */
 DECL|member|coef
 name|GeglBuffer
 modifier|*
 name|coef
 decl_stmt|;
+comment|/* Gegl where the coefficient of the transformation are stored */
+DECL|member|dirty_coef
+name|gboolean
+name|dirty_coef
+decl_stmt|;
+comment|/* Indicate if the coef are still valid */
+DECL|member|render_node
+name|GeglNode
+modifier|*
+name|render_node
+decl_stmt|;
+comment|/* Gegl node graph to render the transfromation */
+DECL|member|cage_node
+name|GeglNode
+modifier|*
+name|cage_node
+decl_stmt|;
+comment|/* Gegl node that compute the cage transform */
+DECL|member|coef_node
+name|GeglNode
+modifier|*
+name|coef_node
+decl_stmt|;
+comment|/* Gegl node that read in the coef buffer */
+DECL|member|tool_state
+name|gint
+name|tool_state
+decl_stmt|;
+comment|/* Current state in statemachine */
 DECL|member|image_map
 name|GimpImageMap
 modifier|*
 name|image_map
 decl_stmt|;
+comment|/* For preview */
 block|}
 struct|;
 end_struct
