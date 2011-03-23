@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b4fbd10103
+DECL|enum|__anon2b1807c50103
 block|{
 DECL|enumerator|TAG_COUNT_CHANGED
 name|TAG_COUNT_CHANGED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b4fbd10203
+DECL|enum|__anon2b1807c50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -978,15 +978,12 @@ end_comment
 begin_function
 name|GimpContainer
 modifier|*
-DECL|function|gimp_tagged_container_new (GimpContainer * src_container,GCompareFunc sort_func)
+DECL|function|gimp_tagged_container_new (GimpContainer * src_container)
 name|gimp_tagged_container_new
 parameter_list|(
 name|GimpContainer
 modifier|*
 name|src_container
-parameter_list|,
-name|GCompareFunc
-name|sort_func
 parameter_list|)
 block|{
 name|GimpTaggedContainer
@@ -996,9 +993,12 @@ decl_stmt|;
 name|GType
 name|children_type
 decl_stmt|;
+name|GCompareFunc
+name|sort_func
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_CONTAINER
+name|GIMP_IS_LIST
 argument_list|(
 name|src_container
 argument_list|)
@@ -1012,6 +1012,15 @@ name|gimp_container_get_children_type
 argument_list|(
 name|src_container
 argument_list|)
+expr_stmt|;
+name|sort_func
+operator|=
+name|GIMP_LIST
+argument_list|(
+name|src_container
+argument_list|)
+operator|->
+name|sort_func
 expr_stmt|;
 name|tagged_container
 operator|=

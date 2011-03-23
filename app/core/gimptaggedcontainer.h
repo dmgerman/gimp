@@ -132,7 +132,7 @@ struct|struct
 name|_GimpTaggedContainerClass
 block|{
 DECL|member|parent_class
-name|GimpContainerClass
+name|GimpListClass
 name|parent_class
 decl_stmt|;
 DECL|member|tag_count_changed
@@ -172,9 +172,6 @@ parameter_list|(
 name|GimpContainer
 modifier|*
 name|src_container
-parameter_list|,
-name|GCompareFunc
-name|sort_func
 parameter_list|)
 function_decl|;
 end_function_decl

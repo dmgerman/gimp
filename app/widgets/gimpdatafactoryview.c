@@ -945,11 +945,6 @@ name|gimp_data_factory_get_container
 argument_list|(
 name|factory
 argument_list|)
-argument_list|,
-operator|(
-name|GCompareFunc
-operator|)
-name|gimp_data_compare
 argument_list|)
 expr_stmt|;
 if|if
