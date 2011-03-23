@@ -189,6 +189,37 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_enum
+enum|enum
+DECL|enum|__anon27ce46990103
+block|{
+DECL|enumerator|CAGE_STATE_INIT
+name|CAGE_STATE_INIT
+block|,
+DECL|enumerator|CAGE_STATE_WAIT
+name|CAGE_STATE_WAIT
+block|,
+DECL|enumerator|CAGE_STATE_MOVE_HANDLE
+name|CAGE_STATE_MOVE_HANDLE
+block|,
+DECL|enumerator|CAGE_STATE_SELECTING
+name|CAGE_STATE_SELECTING
+block|,
+DECL|enumerator|CAGE_STATE_CLOSING
+name|CAGE_STATE_CLOSING
+block|,
+DECL|enumerator|DEFORM_STATE_WAIT
+name|DEFORM_STATE_WAIT
+block|,
+DECL|enumerator|DEFORM_STATE_MOVE_HANDLE
+name|DEFORM_STATE_MOVE_HANDLE
+block|,
+DECL|enumerator|DEFORM_STATE_SELECTING
+name|DEFORM_STATE_SELECTING
+block|}
+enum|;
+end_enum
+
 begin_function_decl
 specifier|static
 name|void
@@ -564,53 +595,28 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpCageTool,gimp_cage_tool,GIMP_TYPE_DRAW_TOOL)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpCageTool
+argument|GimpCageTool
 argument_list|,
-name|gimp_cage_tool
+argument|gimp_cage_tool
 argument_list|,
-name|GIMP_TYPE_DRAW_TOOL
+argument|GIMP_TYPE_DRAW_TOOL
 argument_list|)
+end_macro
+
+begin_define
 DECL|macro|parent_class
 define|#
 directive|define
 name|parent_class
 value|gimp_cage_tool_parent_class
-expr|enum
-DECL|enum|__anon2b53826a0103
-block|{
-DECL|enumerator|CAGE_STATE_INIT
-name|CAGE_STATE_INIT
-block|,
-DECL|enumerator|CAGE_STATE_WAIT
-name|CAGE_STATE_WAIT
-block|,
-DECL|enumerator|CAGE_STATE_MOVE_HANDLE
-name|CAGE_STATE_MOVE_HANDLE
-block|,
-DECL|enumerator|CAGE_STATE_SELECTING
-name|CAGE_STATE_SELECTING
-block|,
-DECL|enumerator|CAGE_STATE_CLOSING
-name|CAGE_STATE_CLOSING
-block|,
-DECL|enumerator|DEFORM_STATE_WAIT
-name|DEFORM_STATE_WAIT
-block|,
-DECL|enumerator|DEFORM_STATE_MOVE_HANDLE
-name|DEFORM_STATE_MOVE_HANDLE
-block|,
-DECL|enumerator|DEFORM_STATE_SELECTING
-name|DEFORM_STATE_SELECTING
-block|}
-expr_stmt|;
-end_expr_stmt
+end_define
 
 begin_function
 name|void
-DECL|function|gimp_cage_tool_register (GimpToolRegisterCallback callback,gpointer data)
 name|gimp_cage_tool_register
 parameter_list|(
 name|GimpToolRegisterCallback
@@ -1323,8 +1329,8 @@ name|mode
 operator|==
 name|GIMP_CAGE_MODE_DEFORM
 condition|)
-comment|/* switch to deform mode */
 block|{
+comment|/* switch to deform mode */
 name|ct
 operator|->
 name|cage_complete
@@ -1439,8 +1445,8 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-comment|/* switch to edit mode */
 block|{
+comment|/* switch to edit mode */
 name|gimp_image_map_clear
 argument_list|(
 name|ct
@@ -2027,7 +2033,7 @@ block|{
 case|case
 name|CAGE_STATE_INIT
 case|:
-comment|/* No handle yet, we add the first one and swith the tool to moving handle state. */
+comment|/* No handle yet, we add the first one and swith the tool to          * moving handle state.          */
 name|gimp_cage_config_add_cage_point
 argument_list|(
 name|ct
@@ -2086,8 +2092,8 @@ operator|==
 operator|-
 literal|1
 condition|)
-comment|/* User clicked on the background, we add a new handle and move it */
 block|{
+comment|/* User clicked on the background, we add a new handle                  * and move it                  */
 name|gimp_cage_config_add_cage_point
 argument_list|(
 name|ct
@@ -2147,8 +2153,8 @@ name|n_cage_vertices
 operator|>
 literal|2
 condition|)
-comment|/* User clicked on the first handle, we wait for release for closing the cage and switching to deform if possible */
 block|{
+comment|/* User clicked on the first handle, we wait for                  * release for closing the cage and switching to                  * deform if possible                  */
 name|gimp_cage_config_select_point
 argument_list|(
 name|ct
@@ -2171,16 +2177,16 @@ name|handle
 operator|>
 literal|0
 condition|)
-comment|/* User clicked on a handle, so we move it */
 block|{
+comment|/* User clicked on a handle, so we move it */
 if|if
 condition|(
 name|state
 operator|&
 name|GDK_SHIFT_MASK
 condition|)
-comment|/* Multiple selection */
 block|{
+comment|/* Multiple selection */
 name|gimp_cage_config_toggle_point_selection
 argument_list|(
 name|ct
@@ -2192,8 +2198,8 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-comment|/* New selection */
 block|{
+comment|/* New selection */
 if|if
 condition|(
 operator|!
@@ -2229,8 +2235,8 @@ expr_stmt|;
 block|}
 block|}
 else|else
-comment|/* Cage already closed */
 block|{
+comment|/* Cage already closed */
 if|if
 condition|(
 name|handle
@@ -2238,8 +2244,8 @@ operator|==
 operator|-
 literal|1
 condition|)
-comment|/* User clicked on the background, we start a rubber band selection */
 block|{
+comment|/* User clicked on the background, we start a rubber                  * band selection                  */
 name|ct
 operator|->
 name|selection_start_x
@@ -2269,16 +2275,16 @@ name|handle
 operator|>=
 literal|0
 condition|)
-comment|/* User clicked on a handle, so we move it */
 block|{
+comment|/* User clicked on a handle, so we move it */
 if|if
 condition|(
 name|state
 operator|&
 name|GDK_SHIFT_MASK
 condition|)
-comment|/* Multiple selection */
 block|{
+comment|/* Multiple selection */
 name|gimp_cage_config_toggle_point_selection
 argument_list|(
 name|ct
@@ -2290,8 +2296,8 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-comment|/* New selection */
 block|{
+comment|/* New selection */
 if|if
 condition|(
 operator|!
@@ -2337,8 +2343,8 @@ operator|==
 operator|-
 literal|1
 condition|)
-comment|/* User clicked on the background, we start a rubber band selection */
 block|{
+comment|/* User clicked on the background, we start a rubber band              * selection              */
 name|ct
 operator|->
 name|selection_start_x
@@ -2368,16 +2374,16 @@ name|handle
 operator|>=
 literal|0
 condition|)
-comment|/* User clicked on a handle, so we move it */
 block|{
+comment|/* User clicked on a handle, so we move it */
 if|if
 condition|(
 name|state
 operator|&
 name|GDK_SHIFT_MASK
 condition|)
-comment|/* Multiple selection */
 block|{
+comment|/* Multiple selection */
 name|gimp_cage_config_toggle_point_selection
 argument_list|(
 name|ct
@@ -2389,8 +2395,8 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-comment|/* New selection */
 block|{
+comment|/* New selection */
 if|if
 condition|(
 operator|!
@@ -2489,8 +2495,8 @@ name|state
 operator|&
 name|GDK_BUTTON3_MASK
 condition|)
-comment|/* Cancelling */
 block|{
+comment|/* Cancelling */
 switch|switch
 condition|(
 name|ct
@@ -2570,8 +2576,8 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-comment|/* Normal release */
 block|{
+comment|/* Normal release */
 switch|switch
 condition|(
 name|ct
@@ -3048,7 +3054,9 @@ condition|)
 block|{
 name|GimpVector2
 name|last_point
-init|=
+decl_stmt|;
+name|last_point
+operator|=
 name|gimp_cage_config_get_point_coordinate
 argument_list|(
 name|ct
@@ -3061,7 +3069,7 @@ name|n_vertices
 operator|-
 literal|1
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool

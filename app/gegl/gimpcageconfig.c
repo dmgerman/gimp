@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-gegl-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpconfig/gimpconfig.h"
 end_include
 
@@ -37,6 +31,12 @@ begin_include
 include|#
 directive|include
 file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimp-gegl-types.h"
 end_include
 
 begin_include
@@ -227,7 +227,7 @@ name|i
 operator|++
 control|)
 block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"cgx: %.0f    cgy: %.0f    cvdx: %.0f    cvdy: %.0f  sf: %.2f  normx: %.2f  normy: %.2f %s\n"
 argument_list|,
@@ -389,7 +389,7 @@ operator|)
 argument_list|)
 expr_stmt|;
 block|}
-name|printf
+name|g_printerr
 argument_list|(
 literal|"bounding box: x: %d  y: %d  width: %d  height: %d\n"
 argument_list|,
@@ -410,7 +410,7 @@ operator|.
 name|height
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_printerr
 argument_list|(
 literal|"disp x: %f  disp y: %f\n"
 argument_list|,
@@ -423,7 +423,7 @@ operator|->
 name|displacement_y
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_printerr
 argument_list|(
 literal|"done\n"
 argument_list|)
