@@ -165,7 +165,7 @@ modifier|*
 name|paint_info
 decl_stmt|;
 DECL|member|presets
-name|GimpToolPresets
+name|GimpContainer
 modifier|*
 name|presets
 decl_stmt|;

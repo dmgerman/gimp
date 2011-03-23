@@ -256,15 +256,6 @@ name|GimpTaggedContainer
 typedef|;
 end_typedef
 
-begin_typedef
-DECL|typedef|GimpToolPresets
-typedef|typedef
-name|struct
-name|_GimpToolPresets
-name|GimpToolPresets
-typedef|;
-end_typedef
-
 begin_comment
 comment|/*  not really a container  */
 end_comment

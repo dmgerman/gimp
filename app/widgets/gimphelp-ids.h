@@ -2902,11 +2902,11 @@ value|"gimp-tool-options-restore"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_TOOL_OPTIONS_RENAME
+DECL|macro|GIMP_HELP_TOOL_OPTIONS_EDIT
 define|#
 directive|define
-name|GIMP_HELP_TOOL_OPTIONS_RENAME
-value|"gimp-tool-options-rename"
+name|GIMP_HELP_TOOL_OPTIONS_EDIT
+value|"gimp-tool-options-edit"
 end_define
 
 begin_define

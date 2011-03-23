@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimplist.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
@@ -73,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimptooloptions.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimptoolpresets.h"
 end_include
 
 begin_include
@@ -1300,21 +1300,6 @@ name|g_object_ref_sink
 argument_list|(
 name|options_gui
 argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|tool_info
-operator|->
-name|presets
-condition|)
-name|gimp_tool_presets_load
-argument_list|(
-name|tool_info
-operator|->
-name|presets
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}

@@ -105,11 +105,6 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
 name|help_id
 parameter_list|,
 name|GimpContainer
@@ -154,7 +149,7 @@ name|GIMP_HELP_TOOL_OPTIONS_DIALOG
 block|}
 block|,
 block|{
-literal|"tool-options-save-menu"
+literal|"tool-options-save-preset-menu"
 block|,
 name|GTK_STOCK_SAVE
 block|,
@@ -162,7 +157,7 @@ name|NC_
 argument_list|(
 literal|"tool-options-action"
 argument_list|,
-literal|"_Save Options To"
+literal|"_Save Tool Preset"
 argument_list|)
 block|,
 literal|""
@@ -175,7 +170,7 @@ name|GIMP_HELP_TOOL_OPTIONS_SAVE
 block|}
 block|,
 block|{
-literal|"tool-options-restore-menu"
+literal|"tool-options-restore-preset-menu"
 block|,
 name|GTK_STOCK_REVERT_TO_SAVED
 block|,
@@ -183,7 +178,7 @@ name|NC_
 argument_list|(
 literal|"tool-options-action"
 argument_list|,
-literal|"_Restore Options From"
+literal|"_Restore Tool Preset"
 argument_list|)
 block|,
 literal|""
@@ -196,7 +191,7 @@ name|GIMP_HELP_TOOL_OPTIONS_RESTORE
 block|}
 block|,
 block|{
-literal|"tool-options-rename-menu"
+literal|"tool-options-edit-preset-menu"
 block|,
 name|GTK_STOCK_EDIT
 block|,
@@ -204,7 +199,7 @@ name|NC_
 argument_list|(
 literal|"tool-options-action"
 argument_list|,
-literal|"Re_name Saved Options"
+literal|"E_dit Tool Preset"
 argument_list|)
 block|,
 name|NULL
@@ -213,11 +208,11 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_TOOL_OPTIONS_RENAME
+name|GIMP_HELP_TOOL_OPTIONS_EDIT
 block|}
 block|,
 block|{
-literal|"tool-options-delete-menu"
+literal|"tool-options-delete-preset-menu"
 block|,
 name|GTK_STOCK_DELETE
 block|,
@@ -225,7 +220,7 @@ name|NC_
 argument_list|(
 literal|"tool-options-action"
 argument_list|,
-literal|"_Delete Saved Options"
+literal|"_Delete Tool Preset"
 argument_list|)
 block|,
 literal|""
@@ -238,7 +233,7 @@ name|GIMP_HELP_TOOL_OPTIONS_DELETE
 block|}
 block|,
 block|{
-literal|"tool-options-save-new"
+literal|"tool-options-save-new-preset"
 block|,
 name|GTK_STOCK_NEW
 block|,
@@ -246,7 +241,7 @@ name|NC_
 argument_list|(
 literal|"tool-options-action"
 argument_list|,
-literal|"_New Entry..."
+literal|"_New Tool Preset..."
 argument_list|)
 block|,
 literal|""
@@ -255,7 +250,7 @@ name|NULL
 block|,
 name|G_CALLBACK
 argument_list|(
-name|tool_options_save_new_cmd_callback
+name|tool_options_save_new_preset_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_TOOL_OPTIONS_SAVE
@@ -380,21 +375,21 @@ argument_list|)
 expr_stmt|;
 name|SET_HIDE_EMPTY
 argument_list|(
-literal|"tool-options-restore-menu"
+literal|"tool-options-restore-preset-menu"
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
 name|SET_HIDE_EMPTY
 argument_list|(
-literal|"tool-options-rename-menu"
+literal|"tool-options-edit-preset-menu"
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
 name|SET_HIDE_EMPTY
 argument_list|(
-literal|"tool-options-delete-menu"
+literal|"tool-options-delete-preset-menu"
 argument_list|,
 name|FALSE
 argument_list|)
@@ -437,7 +432,7 @@ argument_list|)
 decl_stmt|;
 name|SET_VISIBLE
 argument_list|(
-literal|"tool-options-save-menu"
+literal|"tool-options-save-preset-menu"
 argument_list|,
 name|tool_info
 operator|->
@@ -446,7 +441,7 @@ argument_list|)
 expr_stmt|;
 name|SET_VISIBLE
 argument_list|(
-literal|"tool-options-restore-menu"
+literal|"tool-options-restore-preset-menu"
 argument_list|,
 name|tool_info
 operator|->
@@ -455,7 +450,7 @@ argument_list|)
 expr_stmt|;
 name|SET_VISIBLE
 argument_list|(
-literal|"tool-options-rename-menu"
+literal|"tool-options-edit-preset-menu"
 argument_list|,
 name|tool_info
 operator|->
@@ -464,7 +459,7 @@ argument_list|)
 expr_stmt|;
 name|SET_VISIBLE
 argument_list|(
-literal|"tool-options-delete-menu"
+literal|"tool-options-delete-preset-menu"
 argument_list|,
 name|tool_info
 operator|->
@@ -475,92 +470,72 @@ name|tool_options_actions_update_presets
 argument_list|(
 name|group
 argument_list|,
-literal|"tool-options-save-"
+literal|"tool-options-save-preset"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|tool_options_save_to_cmd_callback
+name|tool_options_save_preset_cmd_callback
 argument_list|)
-argument_list|,
-name|GTK_STOCK_SAVE
 argument_list|,
 name|GIMP_HELP_TOOL_OPTIONS_SAVE
 argument_list|,
-name|GIMP_CONTAINER
-argument_list|(
 name|tool_info
 operator|->
 name|presets
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|tool_options_actions_update_presets
 argument_list|(
 name|group
 argument_list|,
-literal|"tool-options-restore-"
+literal|"tool-options-restore-preset"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|tool_options_restore_from_cmd_callback
+name|tool_options_restore_preset_cmd_callback
 argument_list|)
-argument_list|,
-name|GTK_STOCK_REVERT_TO_SAVED
 argument_list|,
 name|GIMP_HELP_TOOL_OPTIONS_RESTORE
 argument_list|,
-name|GIMP_CONTAINER
-argument_list|(
 name|tool_info
 operator|->
 name|presets
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|tool_options_actions_update_presets
 argument_list|(
 name|group
 argument_list|,
-literal|"tool-options-rename-"
+literal|"tool-options-edit-preset"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|tool_options_rename_saved_cmd_callback
+name|tool_options_edit_preset_cmd_callback
 argument_list|)
 argument_list|,
-name|GTK_STOCK_EDIT
+name|GIMP_HELP_TOOL_OPTIONS_EDIT
 argument_list|,
-name|GIMP_HELP_TOOL_OPTIONS_RENAME
-argument_list|,
-name|GIMP_CONTAINER
-argument_list|(
 name|tool_info
 operator|->
 name|presets
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|tool_options_actions_update_presets
 argument_list|(
 name|group
 argument_list|,
-literal|"tool-options-delete-"
+literal|"tool-options-delete-preset"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|tool_options_delete_saved_cmd_callback
+name|tool_options_delete_preset_cmd_callback
 argument_list|)
-argument_list|,
-name|GTK_STOCK_DELETE
 argument_list|,
 name|GIMP_HELP_TOOL_OPTIONS_DELETE
 argument_list|,
-name|GIMP_CONTAINER
-argument_list|(
 name|tool_info
 operator|->
 name|presets
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -573,7 +548,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|tool_options_actions_update_presets (GimpActionGroup * group,const gchar * action_prefix,GCallback callback,const gchar * stock_id,const gchar * help_id,GimpContainer * presets)
+DECL|function|tool_options_actions_update_presets (GimpActionGroup * group,const gchar * action_prefix,GCallback callback,const gchar * help_id,GimpContainer * presets)
 name|tool_options_actions_update_presets
 parameter_list|(
 name|GimpActionGroup
@@ -587,11 +562,6 @@ name|action_prefix
 parameter_list|,
 name|GCallback
 name|callback
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|stock_id
 parameter_list|,
 specifier|const
 name|gchar
@@ -638,7 +608,7 @@ name|action_name
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s%03d"
+literal|"%s-%03d"
 argument_list|,
 name|action_prefix
 argument_list|,
@@ -708,12 +678,6 @@ name|NULL
 expr_stmt|;
 name|entry
 operator|.
-name|stock_id
-operator|=
-name|stock_id
-expr_stmt|;
-name|entry
-operator|.
 name|label
 operator|=
 name|NULL
@@ -776,7 +740,7 @@ name|i
 operator|++
 control|)
 block|{
-name|GimpToolOptions
+name|GimpObject
 modifier|*
 name|options
 init|=
@@ -790,7 +754,7 @@ name|name
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s%03d"
+literal|"%s-%03d"
 argument_list|,
 name|action_prefix
 argument_list|,
@@ -804,6 +768,18 @@ operator|=
 name|gimp_object_get_name
 argument_list|(
 name|options
+argument_list|)
+expr_stmt|;
+name|entry
+operator|.
+name|stock_id
+operator|=
+name|gimp_viewable_get_stock_id
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|options
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|entry

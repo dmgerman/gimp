@@ -18,7 +18,7 @@ end_define
 
 begin_function_decl
 name|void
-name|tool_options_save_new_cmd_callback
+name|tool_options_save_new_preset_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -32,24 +32,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tool_options_save_to_cmd_callback
-parameter_list|(
-name|GtkAction
-modifier|*
-name|action
-parameter_list|,
-name|gint
-name|value
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|tool_options_restore_from_cmd_callback
+name|tool_options_save_preset_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -66,7 +49,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tool_options_rename_saved_cmd_callback
+name|tool_options_restore_preset_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -83,7 +66,24 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tool_options_delete_saved_cmd_callback
+name|tool_options_edit_preset_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gint
+name|value
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|tool_options_delete_preset_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
