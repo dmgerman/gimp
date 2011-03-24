@@ -6847,7 +6847,13 @@ argument_list|(
 name|fmt_str
 argument_list|)
 argument_list|,
-literal|" Position: %%%zus %%%zus %%%zus"
+literal|" Position: %%%"
+name|G_GSIZE_FORMAT
+literal|"s %%%"
+name|G_GSIZE_FORMAT
+literal|"s %%%"
+name|G_GSIZE_FORMAT
+literal|"s"
 argument_list|,
 sizeof|sizeof
 argument_list|(
@@ -6935,7 +6941,13 @@ argument_list|(
 name|fmt_str
 argument_list|)
 argument_list|,
-literal|" Direction: %%%zus %%%zus %%%zus"
+literal|" Direction: %%%"
+name|G_GSIZE_FORMAT
+literal|"s %%%"
+name|G_GSIZE_FORMAT
+literal|"s %%%"
+name|G_GSIZE_FORMAT
+literal|"s"
 argument_list|,
 sizeof|sizeof
 argument_list|(
@@ -7023,7 +7035,13 @@ argument_list|(
 name|fmt_str
 argument_list|)
 argument_list|,
-literal|" Color: %%%zus %%%zus %%%zus"
+literal|" Color: %%%"
+name|G_GSIZE_FORMAT
+literal|"s %%%"
+name|G_GSIZE_FORMAT
+literal|"s %%%"
+name|G_GSIZE_FORMAT
+literal|"s"
 argument_list|,
 sizeof|sizeof
 argument_list|(
@@ -7119,7 +7137,9 @@ argument_list|(
 name|fmt_str
 argument_list|)
 argument_list|,
-literal|" Intensity: %%%zus"
+literal|" Intensity: %%%"
+name|G_GSIZE_FORMAT
+literal|"s"
 argument_list|,
 sizeof|sizeof
 argument_list|(

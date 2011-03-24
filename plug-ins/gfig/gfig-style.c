@@ -655,7 +655,18 @@ argument_list|(
 name|fmt_str
 argument_list|)
 argument_list|,
-literal|"%%%zus %%%zus %%%zus %%%zus"
+literal|"%%%"
+name|G_GSIZE_FORMAT
+literal|"s"
+literal|" %%%"
+name|G_GSIZE_FORMAT
+literal|"s"
+literal|" %%%"
+name|G_GSIZE_FORMAT
+literal|"s"
+literal|" %%%"
+name|G_GSIZE_FORMAT
+literal|"s"
 argument_list|,
 sizeof|sizeof
 argument_list|(
