@@ -103,11 +103,6 @@ DECL|member|parent_instance
 name|GimpFilteredContainer
 name|parent_instance
 decl_stmt|;
-DECL|member|src_container
-name|GimpContainer
-modifier|*
-name|src_container
-decl_stmt|;
 DECL|member|filter
 name|GList
 modifier|*
