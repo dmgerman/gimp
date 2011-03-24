@@ -151,9 +151,9 @@ DECL|member|has_invalid_tags
 name|gboolean
 name|has_invalid_tags
 decl_stmt|;
-DECL|member|tag_query_pending
-name|gboolean
-name|tag_query_pending
+DECL|member|tag_query_idle_id
+name|guint
+name|tag_query_idle_id
 decl_stmt|;
 block|}
 struct|;
