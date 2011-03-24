@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294777d00103
+DECL|enum|__anon28a4a7160103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -225,6 +225,10 @@ parameter_list|,
 name|gfloat
 modifier|*
 name|coef
+parameter_list|,
+name|Babl
+modifier|*
+name|format_coef
 parameter_list|,
 name|GeglBuffer
 modifier|*
@@ -839,6 +843,10 @@ name|gfloat
 modifier|*
 name|coef
 decl_stmt|;
+name|Babl
+modifier|*
+name|format_coef
+decl_stmt|;
 name|GimpVector2
 name|plain_color
 decl_stmt|;
@@ -863,6 +871,13 @@ argument_list|,
 name|NULL
 argument_list|,
 name|GEGL_BUFFER_WRITE
+argument_list|)
+expr_stmt|;
+name|cage_bb
+operator|=
+name|gimp_cage_config_get_bounding_box
+argument_list|(
+name|config
 argument_list|)
 expr_stmt|;
 name|plain_color
@@ -1045,14 +1060,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/* compute, reverse and interpolate the transformation */
-name|cage_bb
-operator|=
-name|gimp_cage_config_get_bounding_box
-argument_list|(
-name|config
-argument_list|)
-expr_stmt|;
+comment|/* pre-allocate memory outside of the loop */
 name|coords
 operator|=
 name|g_slice_alloc
@@ -1081,6 +1089,23 @@ name|gfloat
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|format_coef
+operator|=
+name|babl_format_n
+argument_list|(
+name|babl_type
+argument_list|(
+literal|"float"
+argument_list|)
+argument_list|,
+literal|2
+operator|*
+name|config
+operator|->
+name|n_cage_vertices
+argument_list|)
+expr_stmt|;
+comment|/* compute, reverse and interpolate the transformation */
 for|for
 control|(
 name|x
@@ -1175,6 +1200,8 @@ name|config
 argument_list|,
 name|coef
 argument_list|,
+name|format_coef
+argument_list|,
 name|aux_buf
 argument_list|,
 name|p3_s
@@ -1187,6 +1214,8 @@ argument_list|(
 name|config
 argument_list|,
 name|coef
+argument_list|,
+name|format_coef
 argument_list|,
 name|aux_buf
 argument_list|,
@@ -1257,6 +1286,8 @@ name|config
 argument_list|,
 name|coef
 argument_list|,
+name|format_coef
+argument_list|,
 name|aux_buf
 argument_list|,
 name|p3_s
@@ -1269,6 +1300,8 @@ argument_list|(
 name|config
 argument_list|,
 name|coef
+argument_list|,
+name|format_coef
 argument_list|,
 name|aux_buf
 argument_list|,
@@ -2351,7 +2384,7 @@ end_function
 begin_function
 specifier|static
 name|GimpVector2
-DECL|function|gimp_cage_transform_compute_destination (GimpCageConfig * config,gfloat * coef,GeglBuffer * coef_buf,GimpVector2 coords)
+DECL|function|gimp_cage_transform_compute_destination (GimpCageConfig * config,gfloat * coef,Babl * format_coef,GeglBuffer * coef_buf,GimpVector2 coords)
 name|gimp_cage_transform_compute_destination
 parameter_list|(
 name|GimpCageConfig
@@ -2361,6 +2394,10 @@ parameter_list|,
 name|gfloat
 modifier|*
 name|coef
+parameter_list|,
+name|Babl
+modifier|*
+name|format_coef
 parameter_list|,
 name|GeglBuffer
 modifier|*
@@ -2387,22 +2424,6 @@ init|=
 name|config
 operator|->
 name|n_cage_vertices
-decl_stmt|;
-name|Babl
-modifier|*
-name|format_coef
-init|=
-name|babl_format_n
-argument_list|(
-name|babl_type
-argument_list|(
-literal|"float"
-argument_list|)
-argument_list|,
-literal|2
-operator|*
-name|cvn
-argument_list|)
 decl_stmt|;
 name|gint
 name|i
