@@ -199,6 +199,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|context
+operator|==
+name|NULL
+operator|||
 name|GIMP_IS_CONTEXT
 argument_list|(
 name|context
@@ -541,10 +545,7 @@ name|context
 argument_list|,
 name|gimp_container_get_children_type
 argument_list|(
-name|gimp_data_factory_get_container
-argument_list|(
-name|factory
-argument_list|)
+name|container
 argument_list|)
 argument_list|,
 name|new_active
