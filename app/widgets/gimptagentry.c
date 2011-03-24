@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c77988f0103
+DECL|enum|__anon2a0c59650103
 block|{
 DECL|enumerator|TAG_SEARCH_NONE
 name|TAG_SEARCH_NONE
@@ -132,7 +132,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c77988f0203
+DECL|enum|__anon2a0c59650203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2563,6 +2563,16 @@ name|container
 argument_list|)
 argument_list|,
 name|query_list
+argument_list|)
+expr_stmt|;
+name|g_list_free_full
+argument_list|(
+name|query_list
+argument_list|,
+operator|(
+name|GDestroyNotify
+operator|)
+name|gimp_tag_or_null_unref
 argument_list|)
 expr_stmt|;
 if|if

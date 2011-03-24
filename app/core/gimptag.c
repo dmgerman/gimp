@@ -934,5 +934,77 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_tag_or_null_ref:  * @tag: a #GimpTag  *  * A simple wrapper around g_object_ref() that silently accepts #NULL.  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_tag_or_null_ref (GimpTag * tag_or_null)
+name|gimp_tag_or_null_ref
+parameter_list|(
+name|GimpTag
+modifier|*
+name|tag_or_null
+parameter_list|)
+block|{
+if|if
+condition|(
+name|tag_or_null
+condition|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_TAG
+argument_list|(
+name|tag_or_null
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_ref
+argument_list|(
+name|tag_or_null
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_tag_or_null_unref:  * @tag: a #GimpTag  *  * A simple wrapper around g_object_unref() that silently accepts #NULL.  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_tag_or_null_unref (GimpTag * tag_or_null)
+name|gimp_tag_or_null_unref
+parameter_list|(
+name|GimpTag
+modifier|*
+name|tag_or_null
+parameter_list|)
+block|{
+if|if
+condition|(
+name|tag_or_null
+condition|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_TAG
+argument_list|(
+name|tag_or_null
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|tag_or_null
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
 end_unit
 

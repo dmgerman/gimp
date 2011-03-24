@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbb37070103
+DECL|enum|__anon2989473d0103
 block|{
 DECL|enumerator|TAG_COUNT_CHANGED
 name|TAG_COUNT_CHANGED
@@ -451,6 +451,32 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|tagged_container
+operator|->
+name|filter
+condition|)
+block|{
+name|g_list_free_full
+argument_list|(
+name|tagged_container
+operator|->
+name|filter
+argument_list|,
+operator|(
+name|GDestroyNotify
+operator|)
+name|gimp_tag_or_null_unref
+argument_list|)
+expr_stmt|;
+name|tagged_container
+operator|->
+name|filter
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|tagged_container
@@ -923,7 +949,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tagged_container_set_filter:  * @tagged_container: a #GimpTaggedContainer object.  * @tags:               list of #GimpTag objects.  *  * Sets list of tags to be used for filtering. Only objects which have  * all of the tags assigned match filtering criteria.  **/
+comment|/**  * gimp_tagged_container_set_filter:  * @tagged_container: a #GimpTaggedContainer object.  * @tags:             list of #GimpTag objects.  *  * Sets list of tags to be used for filtering. Only objects which have  * all of the tags assigned match filtering criteria.  **/
 end_comment
 
 begin_function
@@ -940,6 +966,10 @@ modifier|*
 name|tags
 parameter_list|)
 block|{
+name|GList
+modifier|*
+name|new_filter
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_TAGGED_CONTAINER
@@ -948,6 +978,47 @@ name|tagged_container
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|tags
+condition|)
+block|{
+name|GList
+modifier|*
+name|list
+decl_stmt|;
+for|for
+control|(
+name|list
+operator|=
+name|tags
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|g_list_next
+argument_list|(
+name|list
+argument_list|)
+control|)
+name|g_return_if_fail
+argument_list|(
+name|list
+operator|->
+name|data
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_TAG
+argument_list|(
+name|list
+operator|->
+name|data
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 operator|!
@@ -971,11 +1042,43 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*  ref new tags first, they could be the same as the old ones  */
+name|new_filter
+operator|=
+name|g_list_copy
+argument_list|(
+name|tags
+argument_list|)
+expr_stmt|;
+name|g_list_foreach
+argument_list|(
+name|new_filter
+argument_list|,
+operator|(
+name|GFunc
+operator|)
+name|gimp_tag_or_null_ref
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_list_free_full
+argument_list|(
+name|tagged_container
+operator|->
+name|filter
+argument_list|,
+operator|(
+name|GDestroyNotify
+operator|)
+name|gimp_tag_or_null_unref
+argument_list|)
+expr_stmt|;
 name|tagged_container
 operator|->
 name|filter
 operator|=
-name|tags
+name|new_filter
 expr_stmt|;
 if|if
 condition|(
@@ -1004,7 +1107,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tagged_container_get_filter:  * @tagged_container: a #GimpTaggedContainer object.  *  * Returns current tag filter. Tag filter is a list of GimpTag objects, which  * must be contained by each object matching filter criteria.  *  * Return value: a list of GimpTag objects used as filter. This value should  * not be modified or freed.  **/
+comment|/**  * gimp_tagged_container_get_filter:  * @tagged_container: a #GimpTaggedContainer object.  *  * Returns current tag filter. Tag filter is a list of GimpTag objects, which  * must be contained by each object matching filter criteria.  *  * Return value: a list of GimpTag objects used as filter. This value should  *               not be modified or freed.  **/
 end_comment
 
 begin_function
