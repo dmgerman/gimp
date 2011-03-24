@@ -275,6 +275,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_tagged_has_tag
+parameter_list|(
+name|GimpTagged
+modifier|*
+name|tagged
+parameter_list|,
+name|GimpTag
+modifier|*
+name|tag
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
