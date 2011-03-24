@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9028310103
+DECL|enum|__anon2bbb37070103
 block|{
 DECL|enumerator|TAG_COUNT_CHANGED
 name|TAG_COUNT_CHANGED
@@ -834,7 +834,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tagged_container_new:  * @src_container: container to be filtered.  *  * Creates a new #GimpTaggedContainer object which creates filtered  * data view of #GimpTagged objects. It filters @src_container for objects  * containing all of the filtering tags. Syncronization with @src_container  * data is performed automatically.  *  * Return value: a new #GimpTaggedContainer object.  **/
+comment|/**  * gimp_tagged_container_new:  * @src_container: container to be filtered.  *  * Creates a new #GimpTaggedContainer object which creates filtered  * data view of #GimpTagged objects. It filters @src_container for  * objects containing all of the filtering tags. Syncronization with  * @src_container data is performed automatically.  *  * Return value: a new #GimpTaggedContainer object.  **/
 end_comment
 
 begin_function
@@ -923,7 +923,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tagged_container_set_filter:  * @tagged_container: a #GimpTaggedContainer object.  * @tags:               list of #GimpTag objects.  *  * Sets list of tags to be used for filtering. Only objects which have all of  * the tags assigned match filtering criteria.  **/
+comment|/**  * gimp_tagged_container_set_filter:  * @tagged_container: a #GimpTaggedContainer object.  * @tags:               list of #GimpTag objects.  *  * Sets list of tags to be used for filtering. Only objects which have  * all of the tags assigned match filtering criteria.  **/
 end_comment
 
 begin_function
@@ -970,12 +970,27 @@ name|tagged_container
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|tagged_container
 operator|->
 name|filter
 operator|=
 name|tags
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp_container_frozen
+argument_list|(
+name|GIMP_FILTERED_CONTAINER
+argument_list|(
+name|tagged_container
+argument_list|)
+operator|->
+name|src_container
+argument_list|)
+condition|)
+block|{
 name|gimp_tagged_container_src_thaw
 argument_list|(
 name|GIMP_FILTERED_CONTAINER
@@ -1059,10 +1074,6 @@ name|filter_tags
 argument_list|)
 control|)
 block|{
-name|GList
-modifier|*
-name|object_tags
-decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -1076,50 +1087,20 @@ return|return
 name|FALSE
 return|;
 block|}
-for|for
-control|(
-name|object_tags
-operator|=
-name|gimp_tagged_get_tags
+if|if
+condition|(
+operator|!
+name|gimp_tagged_has_tag
 argument_list|(
 name|GIMP_TAGGED
 argument_list|(
 name|object
 argument_list|)
-argument_list|)
-init|;
-name|object_tags
-condition|;
-name|object_tags
-operator|=
-name|g_list_next
-argument_list|(
-name|object_tags
-argument_list|)
-control|)
-block|{
-if|if
-condition|(
-name|gimp_tag_equals
-argument_list|(
-name|object_tags
-operator|->
-name|data
 argument_list|,
 name|filter_tags
 operator|->
 name|data
 argument_list|)
-condition|)
-block|{
-comment|/* found match for the tag */
-break|break;
-block|}
-block|}
-if|if
-condition|(
-operator|!
-name|object_tags
 condition|)
 block|{
 comment|/* match for the tag was not found.            * since query is of type AND, it whole fails.            */
