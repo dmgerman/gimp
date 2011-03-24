@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa2fb940103
+DECL|enum|__anon294777d00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -221,6 +221,10 @@ parameter_list|(
 name|GimpCageConfig
 modifier|*
 name|config
+parameter_list|,
+name|gfloat
+modifier|*
+name|coef
 parameter_list|,
 name|GeglBuffer
 modifier|*
@@ -831,6 +835,10 @@ name|gfloat
 modifier|*
 name|coords
 decl_stmt|;
+name|gfloat
+modifier|*
+name|coef
+decl_stmt|;
 name|GimpVector2
 name|plain_color
 decl_stmt|;
@@ -1057,6 +1065,22 @@ name|gfloat
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|coef
+operator|=
+name|g_malloc
+argument_list|(
+name|config
+operator|->
+name|n_cage_vertices
+operator|*
+literal|2
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gfloat
+argument_list|)
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|x
@@ -1149,6 +1173,8 @@ name|gimp_cage_transform_compute_destination
 argument_list|(
 name|config
 argument_list|,
+name|coef
+argument_list|,
 name|aux_buf
 argument_list|,
 name|p3_s
@@ -1159,6 +1185,8 @@ operator|=
 name|gimp_cage_transform_compute_destination
 argument_list|(
 name|config
+argument_list|,
+name|coef
 argument_list|,
 name|aux_buf
 argument_list|,
@@ -1227,6 +1255,8 @@ name|gimp_cage_transform_compute_destination
 argument_list|(
 name|config
 argument_list|,
+name|coef
+argument_list|,
 name|aux_buf
 argument_list|,
 name|p3_s
@@ -1237,6 +1267,8 @@ operator|=
 name|gimp_cage_transform_compute_destination
 argument_list|(
 name|config
+argument_list|,
+name|coef
 argument_list|,
 name|aux_buf
 argument_list|,
@@ -1308,6 +1340,11 @@ expr_stmt|;
 block|}
 block|}
 block|}
+name|g_free
+argument_list|(
+name|coef
+argument_list|)
+expr_stmt|;
 name|g_slice_free1
 argument_list|(
 literal|2
@@ -2314,12 +2351,16 @@ end_function
 begin_function
 specifier|static
 name|GimpVector2
-DECL|function|gimp_cage_transform_compute_destination (GimpCageConfig * config,GeglBuffer * coef_buf,GimpVector2 coords)
+DECL|function|gimp_cage_transform_compute_destination (GimpCageConfig * config,gfloat * coef,GeglBuffer * coef_buf,GimpVector2 coords)
 name|gimp_cage_transform_compute_destination
 parameter_list|(
 name|GimpCageConfig
 modifier|*
 name|config
+parameter_list|,
+name|gfloat
+modifier|*
+name|coef
 parameter_list|,
 name|GeglBuffer
 modifier|*
@@ -2329,10 +2370,6 @@ name|GimpVector2
 name|coords
 parameter_list|)
 block|{
-name|gfloat
-modifier|*
-name|coef
-decl_stmt|;
 name|gdouble
 name|pos_x
 decl_stmt|,
@@ -2397,22 +2434,6 @@ operator|=
 name|coords
 operator|.
 name|y
-expr_stmt|;
-name|coef
-operator|=
-name|g_malloc
-argument_list|(
-name|config
-operator|->
-name|n_cage_vertices
-operator|*
-literal|2
-operator|*
-sizeof|sizeof
-argument_list|(
-name|gfloat
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|gegl_buffer_get
 argument_list|(
@@ -2573,11 +2594,6 @@ operator|.
 name|y
 operator|=
 name|pos_y
-expr_stmt|;
-name|g_free
-argument_list|(
-name|coef
-argument_list|)
 expr_stmt|;
 return|return
 name|result
