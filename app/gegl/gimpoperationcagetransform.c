@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a4a7160103
+DECL|enum|__anon2bd203650103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2530,21 +2530,6 @@ name|dest_point
 operator|.
 name|y
 expr_stmt|;
-block|}
-for|for
-control|(
-name|i
-operator|=
-literal|0
-init|;
-name|i
-operator|<
-name|cvn
-condition|;
-name|i
-operator|++
-control|)
-block|{
 name|pos_x
 operator|+=
 name|coef
