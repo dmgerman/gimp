@@ -2239,17 +2239,17 @@ name|procedure
 argument_list|,
 literal|"gimp-flip"
 argument_list|,
-literal|"Deprecated: Use 'gimp-drawable-transform-flip-simple' instead."
+literal|"Deprecated: Use 'gimp-item-transform-flip-simple' instead."
 argument_list|,
-literal|"Deprecated: Use 'gimp-drawable-transform-flip-simple' instead."
-argument_list|,
-literal|""
+literal|"Deprecated: Use 'gimp-item-transform-flip-simple' instead."
 argument_list|,
 literal|""
 argument_list|,
 literal|""
 argument_list|,
-literal|"gimp-drawable-transform-flip-simple"
+literal|""
+argument_list|,
+literal|"gimp-item-transform-flip-simple"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -2367,17 +2367,17 @@ name|procedure
 argument_list|,
 literal|"gimp-perspective"
 argument_list|,
-literal|"Deprecated: Use 'gimp-drawable-transform-perspective-default' instead."
+literal|"Deprecated: Use 'gimp-item-transform-perspective' instead."
 argument_list|,
-literal|"Deprecated: Use 'gimp-drawable-transform-perspective-default' instead."
-argument_list|,
-literal|""
+literal|"Deprecated: Use 'gimp-item-transform-perspective' instead."
 argument_list|,
 literal|""
 argument_list|,
 literal|""
 argument_list|,
-literal|"gimp-drawable-transform-perspective-default"
+literal|""
+argument_list|,
+literal|"gimp-item-transform-perspective"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -2662,17 +2662,17 @@ name|procedure
 argument_list|,
 literal|"gimp-rotate"
 argument_list|,
-literal|"Deprecated: Use 'gimp-drawable-transform-rotate-default' instead."
+literal|"Deprecated: Use 'gimp-item-transform-rotate' instead."
 argument_list|,
-literal|"Deprecated: Use 'gimp-drawable-transform-rotate-default' instead."
-argument_list|,
-literal|""
+literal|"Deprecated: Use 'gimp-item-transform-rotate' instead."
 argument_list|,
 literal|""
 argument_list|,
 literal|""
 argument_list|,
-literal|"gimp-drawable-transform-rotate-default"
+literal|""
+argument_list|,
+literal|"gimp-item-transform-rotate"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -2796,17 +2796,17 @@ name|procedure
 argument_list|,
 literal|"gimp-scale"
 argument_list|,
-literal|"Deprecated: Use 'gimp-drawable-transform-scale-default' instead."
+literal|"Deprecated: Use 'gimp-item-transform-scale' instead."
 argument_list|,
-literal|"Deprecated: Use 'gimp-drawable-transform-scale-default' instead."
-argument_list|,
-literal|""
+literal|"Deprecated: Use 'gimp-item-transform-scale' instead."
 argument_list|,
 literal|""
 argument_list|,
 literal|""
 argument_list|,
-literal|"gimp-drawable-transform-scale-default"
+literal|""
+argument_list|,
+literal|"gimp-item-transform-scale"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -2999,17 +2999,17 @@ name|procedure
 argument_list|,
 literal|"gimp-shear"
 argument_list|,
-literal|"Deprecated: Use 'gimp-drawable-transform-shear-default' instead."
+literal|"Deprecated: Use 'gimp-item-transform-shear' instead."
 argument_list|,
-literal|"Deprecated: Use 'gimp-drawable-transform-shear-default' instead."
-argument_list|,
-literal|""
+literal|"Deprecated: Use 'gimp-item-transform-shear' instead."
 argument_list|,
 literal|""
 argument_list|,
 literal|""
 argument_list|,
-literal|"gimp-drawable-transform-shear-default"
+literal|""
+argument_list|,
+literal|"gimp-item-transform-shear"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -3168,17 +3168,17 @@ name|procedure
 argument_list|,
 literal|"gimp-transform-2d"
 argument_list|,
-literal|"Deprecated: Use 'gimp-drawable-transform-2d-default' instead."
+literal|"Deprecated: Use 'gimp-item-transform-2d' instead."
 argument_list|,
-literal|"Deprecated: Use 'gimp-drawable-transform-2d-default' instead."
-argument_list|,
-literal|""
+literal|"Deprecated: Use 'gimp-item-transform-2d' instead."
 argument_list|,
 literal|""
 argument_list|,
 literal|""
 argument_list|,
-literal|"gimp-drawable-transform-2d-default"
+literal|""
+argument_list|,
+literal|"gimp-item-transform-2d"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
