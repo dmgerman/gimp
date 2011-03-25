@@ -880,11 +880,6 @@ name|display
 argument_list|)
 condition|)
 block|{
-name|gimp_display_shell_pause
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|gimp_display_shell_is_double_buffered
@@ -1047,11 +1042,6 @@ argument_list|(
 name|eevent
 operator|->
 name|window
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_resume
-argument_list|(
-name|shell
 argument_list|)
 expr_stmt|;
 block|}
