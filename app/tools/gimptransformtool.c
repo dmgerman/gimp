@@ -5113,7 +5113,7 @@ name|gimp_progress_start
 argument_list|(
 name|GIMP_PROGRESS
 argument_list|(
-name|display
+name|tool
 argument_list|)
 argument_list|,
 name|tr_tool
