@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpprojection.h"
 end_include
 
@@ -167,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fa14c90103
+DECL|enum|__anon29cee9120103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -3639,6 +3645,10 @@ name|ct
 operator|->
 name|config
 decl_stmt|;
+name|GimpProgress
+modifier|*
+name|progress
+decl_stmt|;
 name|Babl
 modifier|*
 name|format
@@ -3666,19 +3676,21 @@ decl_stmt|;
 name|gdouble
 name|value
 decl_stmt|;
-name|gimp_tool_progress_start
+name|progress
+operator|=
+name|gimp_progress_start
 argument_list|(
-name|GIMP_TOOL
+name|GIMP_PROGRESS
 argument_list|(
 name|ct
 argument_list|)
 argument_list|,
-name|display
-argument_list|,
 name|_
 argument_list|(
-literal|"Coefficient computation..."
+literal|"Coefficient computation"
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -3795,23 +3807,25 @@ name|value
 argument_list|)
 condition|)
 block|{
-name|gimp_tool_progress_set_value
+if|if
+condition|(
+name|progress
+condition|)
+name|gimp_progress_set_value
 argument_list|(
-name|GIMP_TOOL
-argument_list|(
-name|ct
-argument_list|)
+name|progress
 argument_list|,
 name|value
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_tool_progress_end
+if|if
+condition|(
+name|progress
+condition|)
+name|gimp_progress_end
 argument_list|(
-name|GIMP_TOOL
-argument_list|(
-name|ct
-argument_list|)
+name|progress
 argument_list|)
 expr_stmt|;
 name|gegl_processor_destroy
