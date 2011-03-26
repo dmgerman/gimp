@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6f4fc80103
+DECL|enum|__anon2bef00510103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -2894,8 +2894,8 @@ if|if
 condition|(
 name|entry
 condition|)
-comment|/* dialog is a toplevel (but not a GimpDockWindow) or a GimpDockable */
 block|{
+comment|/* dialog is a toplevel (but not a GimpDockWindow) or a GimpDockable */
 name|GIMP_LOG
 argument_list|(
 name|DIALOG_FACTORY
