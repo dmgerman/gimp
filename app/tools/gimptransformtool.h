@@ -293,12 +293,6 @@ modifier|*
 name|grid_coords
 decl_stmt|;
 comment|/*  x and y coordinates of the grid                                     *  endpoints (a total of (ngx+ngy)*2                                     *  coordinate pairs)                                     */
-DECL|member|tgrid_coords
-name|gdouble
-modifier|*
-name|tgrid_coords
-decl_stmt|;
-comment|/*  transformed grid_coords           */
 DECL|member|type
 name|GimpTransformType
 name|type
