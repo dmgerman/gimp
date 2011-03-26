@@ -635,7 +635,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_transform_region (GimpPickable * pickable,GimpContext * context,TileManager * orig_tiles,PixelRegion * destPR,gint dest_x1,gint dest_y1,gint dest_x2,gint dest_y2,const GimpMatrix3 * matrix,GimpInterpolationType interpolation_type,gint recursion_level,GimpProgress * progress)
+DECL|function|gimp_transform_region (GimpPickable * pickable,GimpContext * context,TileManager * orig_tiles,gint orig_offset_x,gint orig_offset_y,PixelRegion * destPR,gint dest_x1,gint dest_y1,gint dest_x2,gint dest_y2,const GimpMatrix3 * matrix,GimpInterpolationType interpolation_type,gint recursion_level,GimpProgress * progress)
 name|gimp_transform_region
 parameter_list|(
 name|GimpPickable
@@ -649,6 +649,12 @@ parameter_list|,
 name|TileManager
 modifier|*
 name|orig_tiles
+parameter_list|,
+name|gint
+name|orig_offset_x
+parameter_list|,
+name|gint
+name|orig_offset_y
 parameter_list|,
 name|PixelRegion
 modifier|*
@@ -715,16 +721,13 @@ name|pickable
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|tile_manager_get_offsets
-argument_list|(
-name|orig_tiles
-argument_list|,
-operator|&
 name|u1
-argument_list|,
-operator|&
+operator|=
+name|orig_offset_x
+expr_stmt|;
 name|v1
-argument_list|)
+operator|=
+name|orig_offset_y
 expr_stmt|;
 name|u2
 operator|=

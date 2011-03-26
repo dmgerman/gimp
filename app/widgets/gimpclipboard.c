@@ -1229,6 +1229,10 @@ name|_
 argument_list|(
 literal|"Clipboard"
 argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|g_object_unref

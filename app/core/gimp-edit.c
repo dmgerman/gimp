@@ -2131,6 +2131,12 @@ name|TileManager
 modifier|*
 name|tiles
 decl_stmt|;
+name|gint
+name|offset_x
+decl_stmt|;
+name|gint
+name|offset_y
+decl_stmt|;
 if|if
 condition|(
 name|cut_pixels
@@ -2172,6 +2178,12 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+operator|&
+name|offset_x
+argument_list|,
+operator|&
+name|offset_y
+argument_list|,
 name|error
 argument_list|)
 expr_stmt|;
@@ -2201,6 +2213,10 @@ name|_
 argument_list|(
 literal|"Global Buffer"
 argument_list|)
+argument_list|,
+name|offset_x
+argument_list|,
+name|offset_y
 argument_list|,
 name|FALSE
 argument_list|)

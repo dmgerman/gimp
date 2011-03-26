@@ -265,6 +265,14 @@ modifier|*
 name|original
 decl_stmt|;
 comment|/*  pointer to original tiles         */
+DECL|member|original_offset_x
+name|gint
+name|original_offset_x
+decl_stmt|;
+DECL|member|original_offset_y
+name|gint
+name|original_offset_y
+decl_stmt|;
 DECL|member|function
 name|TransformAction
 name|function
@@ -450,6 +458,14 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|,
+name|gint
+modifier|*
+name|new_offset_x
+parameter_list|,
+name|gint
+modifier|*
+name|new_offset_y
 parameter_list|)
 function_decl|;
 block|}

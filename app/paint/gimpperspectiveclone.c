@@ -1615,15 +1615,6 @@ argument_list|,
 name|bytes
 argument_list|)
 expr_stmt|;
-name|tile_manager_set_offsets
-argument_list|(
-name|orig_tiles
-argument_list|,
-name|xmin
-argument_list|,
-name|ymin
-argument_list|)
-expr_stmt|;
 name|pixel_region_init
 argument_list|(
 operator|&
@@ -1741,6 +1732,10 @@ name|paint_options
 argument_list|)
 argument_list|,
 name|orig_tiles
+argument_list|,
+name|xmin
+argument_list|,
+name|ymin
 argument_list|,
 operator|&
 name|destPR

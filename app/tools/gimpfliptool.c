@@ -181,6 +181,14 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|,
+name|gint
+modifier|*
+name|new_offset_x
+parameter_list|,
+name|gint
+modifier|*
+name|new_offset_y
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -611,7 +619,7 @@ begin_function
 specifier|static
 name|TileManager
 modifier|*
-DECL|function|gimp_flip_tool_transform (GimpTransformTool * trans_tool,GimpItem * active_item,GimpDisplay * display)
+DECL|function|gimp_flip_tool_transform (GimpTransformTool * trans_tool,GimpItem * active_item,GimpDisplay * display,gint * new_offset_x,gint * new_offset_y)
 name|gimp_flip_tool_transform
 parameter_list|(
 name|GimpTransformTool
@@ -625,6 +633,14 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|,
+name|gint
+modifier|*
+name|new_offset_x
+parameter_list|,
+name|gint
+modifier|*
+name|new_offset_y
 parameter_list|)
 block|{
 name|GimpFlipOptions
@@ -771,6 +787,14 @@ name|trans_tool
 operator|->
 name|original
 argument_list|,
+name|trans_tool
+operator|->
+name|original_offset_x
+argument_list|,
+name|trans_tool
+operator|->
+name|original_offset_y
+argument_list|,
 name|options
 operator|->
 name|flip_type
@@ -778,6 +802,10 @@ argument_list|,
 name|axis
 argument_list|,
 name|FALSE
+argument_list|,
+name|new_offset_x
+argument_list|,
+name|new_offset_y
 argument_list|)
 expr_stmt|;
 block|}

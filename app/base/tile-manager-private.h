@@ -26,14 +26,6 @@ name|gint
 name|ref_count
 decl_stmt|;
 comment|/*  reference counter                    */
-DECL|member|x
-DECL|member|y
-name|gint
-name|x
-decl_stmt|,
-name|y
-decl_stmt|;
-comment|/*  tile manager offsets                 */
 DECL|member|width
 name|gint
 name|width

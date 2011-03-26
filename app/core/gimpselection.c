@@ -2675,7 +2675,7 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_selection_extract (GimpSelection * selection,GimpPickable * pickable,GimpContext * context,gboolean cut_image,gboolean keep_indexed,gboolean add_alpha,GError ** error)
+DECL|function|gimp_selection_extract (GimpSelection * selection,GimpPickable * pickable,GimpContext * context,gboolean cut_image,gboolean keep_indexed,gboolean add_alpha,gint * offset_x,gint * offset_y,GError ** error)
 name|gimp_selection_extract
 parameter_list|(
 name|GimpSelection
@@ -2698,6 +2698,14 @@ name|keep_indexed
 parameter_list|,
 name|gboolean
 name|add_alpha
+parameter_list|,
+name|gint
+modifier|*
+name|offset_x
+parameter_list|,
+name|gint
+modifier|*
+name|offset_y
 parameter_list|,
 name|GError
 modifier|*
@@ -3147,19 +3155,6 @@ argument_list|,
 name|bytes
 argument_list|)
 expr_stmt|;
-name|tile_manager_set_offsets
-argument_list|(
-name|tiles
-argument_list|,
-name|x1
-operator|+
-name|off_x
-argument_list|,
-name|y1
-operator|+
-name|off_y
-argument_list|)
-expr_stmt|;
 comment|/* configure the pixel regions  */
 name|pixel_region_init
 argument_list|(
@@ -3467,6 +3462,20 @@ expr_stmt|;
 block|}
 block|}
 block|}
+operator|*
+name|offset_x
+operator|=
+name|x1
+operator|+
+name|off_x
+expr_stmt|;
+operator|*
+name|offset_y
+operator|=
+name|y1
+operator|+
+name|off_y
+expr_stmt|;
 return|return
 name|tiles
 return|;
@@ -3684,6 +3693,12 @@ name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
+operator|&
+name|x1
+argument_list|,
+operator|&
+name|y1
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -3725,17 +3740,6 @@ name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 comment|/*  Set the offsets  */
-name|tile_manager_get_offsets
-argument_list|(
-name|tiles
-argument_list|,
-operator|&
-name|x1
-argument_list|,
-operator|&
-name|y1
-argument_list|)
-expr_stmt|;
 name|gimp_item_set_offset
 argument_list|(
 name|GIMP_ITEM

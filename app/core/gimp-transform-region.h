@@ -32,6 +32,12 @@ name|TileManager
 modifier|*
 name|orig_tiles
 parameter_list|,
+name|gint
+name|orig_offset_x
+parameter_list|,
+name|gint
+name|orig_offset_y
+parameter_list|,
 name|PixelRegion
 modifier|*
 name|destPR

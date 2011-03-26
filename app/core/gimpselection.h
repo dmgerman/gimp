@@ -227,6 +227,14 @@ parameter_list|,
 name|gboolean
 name|add_alpha
 parameter_list|,
+name|gint
+modifier|*
+name|offset_x
+parameter_list|,
+name|gint
+modifier|*
+name|offset_y
+parameter_list|,
 name|GError
 modifier|*
 modifier|*

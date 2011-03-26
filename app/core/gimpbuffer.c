@@ -789,7 +789,7 @@ end_function
 begin_function
 name|GimpBuffer
 modifier|*
-DECL|function|gimp_buffer_new (TileManager * tiles,const gchar * name,gboolean copy_pixels)
+DECL|function|gimp_buffer_new (TileManager * tiles,const gchar * name,gint offset_x,gint offset_y,gboolean copy_pixels)
 name|gimp_buffer_new
 parameter_list|(
 name|TileManager
@@ -800,6 +800,12 @@ specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|,
+name|gint
+name|offset_x
+parameter_list|,
+name|gint
+name|offset_y
 parameter_list|,
 name|gboolean
 name|copy_pixels
@@ -882,6 +888,18 @@ argument_list|(
 name|tiles
 argument_list|)
 expr_stmt|;
+name|buffer
+operator|->
+name|offset_x
+operator|=
+name|offset_x
+expr_stmt|;
+name|buffer
+operator|->
+name|offset_y
+operator|=
+name|offset_y
+expr_stmt|;
 return|return
 name|buffer
 return|;
@@ -891,7 +909,7 @@ end_function
 begin_function
 name|GimpBuffer
 modifier|*
-DECL|function|gimp_buffer_new_from_pixbuf (GdkPixbuf * pixbuf,const gchar * name)
+DECL|function|gimp_buffer_new_from_pixbuf (GdkPixbuf * pixbuf,const gchar * name,gint offset_x,gint offset_y)
 name|gimp_buffer_new_from_pixbuf
 parameter_list|(
 name|GdkPixbuf
@@ -902,6 +920,12 @@ specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|,
+name|gint
+name|offset_x
+parameter_list|,
+name|gint
+name|offset_y
 parameter_list|)
 block|{
 name|GimpBuffer
@@ -1057,6 +1081,10 @@ argument_list|(
 name|tiles
 argument_list|,
 name|name
+argument_list|,
+name|offset_x
+argument_list|,
+name|offset_y
 argument_list|,
 name|FALSE
 argument_list|)
