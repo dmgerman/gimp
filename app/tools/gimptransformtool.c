@@ -5688,6 +5688,10 @@ operator|&
 name|new_offset_y
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|orig_tiles
+condition|)
 name|tile_manager_unref
 argument_list|(
 name|orig_tiles
