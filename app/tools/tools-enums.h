@@ -41,7 +41,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2772aa770103
+DECL|enum|__anon2b61161f0103
 block|{
 DECL|enumerator|GIMP_BUTTON_PRESS_NORMAL
 name|GIMP_BUTTON_PRESS_NORMAL
@@ -78,7 +78,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2772aa770203
+DECL|enum|__anon2b61161f0203
 block|{
 DECL|enumerator|GIMP_BUTTON_RELEASE_NORMAL
 name|GIMP_BUTTON_RELEASE_NORMAL
@@ -118,7 +118,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2772aa770303
+DECL|enum|__anon2b61161f0303
 block|{
 DECL|enumerator|GIMP_RECTANGLE_GUIDE_NONE
 name|GIMP_RECTANGLE_GUIDE_NONE
@@ -170,7 +170,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2772aa770403
+DECL|enum|__anon2b61161f0403
 block|{
 DECL|enumerator|GIMP_RECTANGLE_CONSTRAIN_NONE
 name|GIMP_RECTANGLE_CONSTRAIN_NONE
@@ -207,7 +207,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2772aa770503
+DECL|enum|__anon2b61161f0503
 block|{
 DECL|enumerator|GIMP_RECTANGLE_PRECISION_INT
 name|GIMP_RECTANGLE_PRECISION_INT
@@ -241,7 +241,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2772aa770603
+DECL|enum|__anon2b61161f0603
 block|{
 DECL|enumerator|GIMP_RECTANGLE_TOOL_FIXED_ASPECT
 name|GIMP_RECTANGLE_TOOL_FIXED_ASPECT
@@ -286,7 +286,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2772aa770703
+DECL|enum|__anon2b61161f0703
 block|{
 DECL|enumerator|GIMP_RECT_SELECT_MODE_FREE
 name|GIMP_RECT_SELECT_MODE_FREE
@@ -326,7 +326,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2772aa770803
+DECL|enum|__anon2b61161f0803
 block|{
 DECL|enumerator|GIMP_TRANSFORM_TYPE_LAYER
 name|GIMP_TRANSFORM_TYPE_LAYER
@@ -366,7 +366,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2772aa770903
+DECL|enum|__anon2b61161f0903
 block|{
 DECL|enumerator|GIMP_TRANSFORM_PREVIEW_TYPE_OUTLINE
 name|GIMP_TRANSFORM_PREVIEW_TYPE_OUTLINE
@@ -410,7 +410,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2772aa770a03
+DECL|enum|__anon2b61161f0a03
 block|{
 DECL|enumerator|GIMP_TRANSFORM_GRID_TYPE_N_LINES
 name|GIMP_TRANSFORM_GRID_TYPE_N_LINES
@@ -446,7 +446,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2772aa770b03
+DECL|enum|__anon2b61161f0b03
 block|{
 DECL|enumerator|GIMP_VECTOR_MODE_DESIGN
 name|GIMP_VECTOR_MODE_DESIGN
@@ -486,7 +486,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2772aa770c03
+DECL|enum|__anon2b61161f0c03
 block|{
 DECL|enumerator|GIMP_TOOL_ACTION_PAUSE
 name|GIMP_TOOL_ACTION_PAUSE
@@ -510,7 +510,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2772aa770d03
+DECL|enum|__anon2b61161f0d03
 block|{
 DECL|enumerator|SELECTION_SELECT
 name|SELECTION_SELECT
@@ -540,7 +540,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2772aa770e03
+DECL|enum|__anon2b61161f0e03
 block|{
 DECL|enumerator|GIMP_TRANSLATE_MODE_VECTORS
 name|GIMP_TRANSLATE_MODE_VECTORS
@@ -579,7 +579,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2772aa770f03
+DECL|enum|__anon2b61161f0f03
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT
@@ -592,62 +592,6 @@ name|GIMP_MOTION_MODE_COMPRESS
 DECL|typedef|GimpMotionMode
 block|}
 name|GimpMotionMode
-typedef|;
-end_typedef
-
-begin_comment
-comment|/*  Possible transform functions  */
-end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< skip>*/
-DECL|enum|__anon2772aa771003
-block|{
-DECL|enumerator|TRANSFORM_CREATING
-name|TRANSFORM_CREATING
-block|,
-DECL|enumerator|TRANSFORM_HANDLE_NONE
-name|TRANSFORM_HANDLE_NONE
-block|,
-DECL|enumerator|TRANSFORM_HANDLE_NW
-name|TRANSFORM_HANDLE_NW
-block|,
-comment|/* north west */
-DECL|enumerator|TRANSFORM_HANDLE_NE
-name|TRANSFORM_HANDLE_NE
-block|,
-comment|/* north east */
-DECL|enumerator|TRANSFORM_HANDLE_SW
-name|TRANSFORM_HANDLE_SW
-block|,
-comment|/* south west */
-DECL|enumerator|TRANSFORM_HANDLE_SE
-name|TRANSFORM_HANDLE_SE
-block|,
-comment|/* south east */
-DECL|enumerator|TRANSFORM_HANDLE_N
-name|TRANSFORM_HANDLE_N
-block|,
-comment|/* north      */
-DECL|enumerator|TRANSFORM_HANDLE_S
-name|TRANSFORM_HANDLE_S
-block|,
-comment|/* south      */
-DECL|enumerator|TRANSFORM_HANDLE_E
-name|TRANSFORM_HANDLE_E
-block|,
-comment|/* east       */
-DECL|enumerator|TRANSFORM_HANDLE_W
-name|TRANSFORM_HANDLE_W
-block|,
-comment|/* west       */
-DECL|enumerator|TRANSFORM_HANDLE_CENTER
-name|TRANSFORM_HANDLE_CENTER
-DECL|typedef|TransformAction
-block|}
-name|TransformAction
 typedef|;
 end_typedef
 

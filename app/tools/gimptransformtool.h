@@ -37,6 +37,57 @@ value|8
 end_define
 
 begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon28c70c980103
+block|{
+DECL|enumerator|TRANSFORM_CREATING
+name|TRANSFORM_CREATING
+block|,
+DECL|enumerator|TRANSFORM_HANDLE_NONE
+name|TRANSFORM_HANDLE_NONE
+block|,
+DECL|enumerator|TRANSFORM_HANDLE_NW
+name|TRANSFORM_HANDLE_NW
+block|,
+comment|/* north west */
+DECL|enumerator|TRANSFORM_HANDLE_NE
+name|TRANSFORM_HANDLE_NE
+block|,
+comment|/* north east */
+DECL|enumerator|TRANSFORM_HANDLE_SW
+name|TRANSFORM_HANDLE_SW
+block|,
+comment|/* south west */
+DECL|enumerator|TRANSFORM_HANDLE_SE
+name|TRANSFORM_HANDLE_SE
+block|,
+comment|/* south east */
+DECL|enumerator|TRANSFORM_HANDLE_N
+name|TRANSFORM_HANDLE_N
+block|,
+comment|/* north      */
+DECL|enumerator|TRANSFORM_HANDLE_S
+name|TRANSFORM_HANDLE_S
+block|,
+comment|/* south      */
+DECL|enumerator|TRANSFORM_HANDLE_E
+name|TRANSFORM_HANDLE_E
+block|,
+comment|/* east       */
+DECL|enumerator|TRANSFORM_HANDLE_W
+name|TRANSFORM_HANDLE_W
+block|,
+comment|/* west       */
+DECL|enumerator|TRANSFORM_HANDLE_CENTER
+name|TRANSFORM_HANDLE_CENTER
+DECL|typedef|TransformAction
+block|}
+name|TransformAction
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|TransInfo
 typedef|typedef
 name|gdouble
