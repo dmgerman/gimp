@@ -139,16 +139,6 @@ DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
-DECL|member|startx
-name|gdouble
-name|startx
-decl_stmt|;
-comment|/*  starting x coord                  */
-DECL|member|starty
-name|gdouble
-name|starty
-decl_stmt|;
-comment|/*  starting y coord                  */
 DECL|member|curx
 name|gdouble
 name|curx
@@ -169,11 +159,6 @@ name|gdouble
 name|lasty
 decl_stmt|;
 comment|/*  last y coord                      */
-DECL|member|state
-name|GdkModifierType
-name|state
-decl_stmt|;
-comment|/*  state of buttons and keys         */
 DECL|member|x1
 DECL|member|y1
 name|gint

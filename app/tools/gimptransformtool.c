@@ -1679,10 +1679,6 @@ name|tr_tool
 operator|->
 name|lastx
 operator|=
-name|tr_tool
-operator|->
-name|startx
-operator|=
 name|coords
 operator|->
 name|x
@@ -1690,10 +1686,6 @@ expr_stmt|;
 name|tr_tool
 operator|->
 name|lasty
-operator|=
-name|tr_tool
-operator|->
-name|starty
 operator|=
 name|coords
 operator|->
@@ -1981,12 +1973,6 @@ operator|=
 name|coords
 operator|->
 name|y
-expr_stmt|;
-name|tr_tool
-operator|->
-name|state
-operator|=
-name|state
 expr_stmt|;
 comment|/*  recalculate the tool's transformation matrix  */
 name|tr_tool_class
