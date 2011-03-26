@@ -223,7 +223,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fa9ec40103
+DECL|enum|__anon287ba66d0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2952,7 +2952,7 @@ name|drawable
 argument_list|,
 name|tiles
 argument_list|,
-name|new_off_y
+name|new_off_x
 argument_list|,
 name|new_off_y
 argument_list|,
