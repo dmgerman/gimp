@@ -259,20 +259,6 @@ name|TransInfo
 name|prev_trans_info
 decl_stmt|;
 comment|/*  for cancelling a drag operation   */
-DECL|member|original
-name|TileManager
-modifier|*
-name|original
-decl_stmt|;
-comment|/*  pointer to original tiles         */
-DECL|member|original_offset_x
-name|gint
-name|original_offset_x
-decl_stmt|;
-DECL|member|original_offset_y
-name|gint
-name|original_offset_y
-decl_stmt|;
 DECL|member|function
 name|TransformAction
 name|function
@@ -458,6 +444,16 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|,
+name|TileManager
+modifier|*
+name|orig_tiles
+parameter_list|,
+name|gint
+name|orig_offset_x
+parameter_list|,
+name|gint
+name|orig_offset_y
 parameter_list|,
 name|gint
 modifier|*

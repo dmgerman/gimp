@@ -182,6 +182,16 @@ name|GimpDisplay
 modifier|*
 name|display
 parameter_list|,
+name|TileManager
+modifier|*
+name|orig_tiles
+parameter_list|,
+name|gint
+name|orig_offset_x
+parameter_list|,
+name|gint
+name|orig_offset_y
+parameter_list|,
 name|gint
 modifier|*
 name|new_offset_x
@@ -619,7 +629,7 @@ begin_function
 specifier|static
 name|TileManager
 modifier|*
-DECL|function|gimp_flip_tool_transform (GimpTransformTool * trans_tool,GimpItem * active_item,GimpDisplay * display,gint * new_offset_x,gint * new_offset_y)
+DECL|function|gimp_flip_tool_transform (GimpTransformTool * trans_tool,GimpItem * active_item,GimpDisplay * display,TileManager * orig_tiles,gint orig_offset_x,gint orig_offset_y,gint * new_offset_x,gint * new_offset_y)
 name|gimp_flip_tool_transform
 parameter_list|(
 name|GimpTransformTool
@@ -633,6 +643,16 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|,
+name|TileManager
+modifier|*
+name|orig_tiles
+parameter_list|,
+name|gint
+name|orig_offset_x
+parameter_list|,
+name|gint
+name|orig_offset_y
 parameter_list|,
 name|gint
 modifier|*
@@ -766,9 +786,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|trans_tool
-operator|->
-name|original
+name|orig_tiles
 condition|)
 block|{
 comment|/*  this happens when transforming a normal drawable or the        *  selection        */
@@ -783,17 +801,11 @@ argument_list|)
 argument_list|,
 name|context
 argument_list|,
-name|trans_tool
-operator|->
-name|original
+name|orig_tiles
 argument_list|,
-name|trans_tool
-operator|->
-name|original_offset_x
+name|orig_offset_x
 argument_list|,
-name|trans_tool
-operator|->
-name|original_offset_y
+name|orig_offset_y
 argument_list|,
 name|options
 operator|->
