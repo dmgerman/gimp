@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290aaf120103
+DECL|enum|__anon2b9e4f800103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2609,9 +2609,6 @@ name|pos_x
 decl_stmt|,
 name|pos_y
 decl_stmt|;
-name|GeglRectangle
-name|rect
-decl_stmt|;
 name|GimpVector2
 name|result
 decl_stmt|;
@@ -2624,6 +2621,36 @@ name|n_cage_vertices
 decl_stmt|;
 name|gint
 name|i
+decl_stmt|;
+comment|/* When Gegl bug #645810 will be solved, this should be a good optimisation */
+ifdef|#
+directive|ifdef
+name|GEGL_BUG_645810_SOLVED
+name|gegl_buffer_sample
+argument_list|(
+name|coef_buf
+argument_list|,
+name|coords
+operator|.
+name|x
+argument_list|,
+name|coords
+operator|.
+name|y
+argument_list|,
+literal|1.0
+argument_list|,
+name|coef
+argument_list|,
+name|format_coef
+argument_list|,
+name|GEGL_INTERPOLATION_LANCZOS
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
+name|GeglRectangle
+name|rect
 decl_stmt|;
 name|rect
 operator|.
@@ -2669,6 +2696,8 @@ argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|pos_x
 operator|=
 literal|0
