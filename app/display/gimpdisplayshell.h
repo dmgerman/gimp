@@ -671,10 +671,6 @@ DECL|member|zoom_on_resize
 name|gboolean
 name|zoom_on_resize
 decl_stmt|;
-DECL|member|show_transform_preview
-name|gboolean
-name|show_transform_preview
-decl_stmt|;
 DECL|member|size_allocate_from_configure_event
 name|gboolean
 name|size_allocate_from_configure_event

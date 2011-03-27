@@ -1907,11 +1907,6 @@ operator|->
 name|display
 argument_list|)
 expr_stmt|;
-name|gimp_transform_tool_expose_preview
-argument_list|(
-name|tr_tool
-argument_list|)
-expr_stmt|;
 name|gimp_draw_tool_resume
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -2041,11 +2036,6 @@ name|tr_tool
 argument_list|)
 operator|->
 name|display
-argument_list|)
-expr_stmt|;
-name|gimp_transform_tool_expose_preview
-argument_list|(
-name|tr_tool
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume

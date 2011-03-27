@@ -39,7 +39,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c70c980103
+DECL|enum|__anon2c4e2ae70103
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -519,17 +519,6 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_transform_tool_expose_preview
-parameter_list|(
-name|GimpTransformTool
-modifier|*
-name|tr_tool
 parameter_list|)
 function_decl|;
 end_function_decl
