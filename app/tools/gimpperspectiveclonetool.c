@@ -117,7 +117,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2773b61b0103
+DECL|enum|__anon27db04320103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -3023,7 +3023,16 @@ argument_list|(
 name|draw_tool
 argument_list|)
 expr_stmt|;
-comment|/*  draw the tool handles  */
+comment|/*  draw the tool handles only when they can be used  */
+if|if
+condition|(
+name|options
+operator|->
+name|clone_mode
+operator|==
+name|GIMP_PERSPECTIVE_CLONE_MODE_ADJUST
+condition|)
+block|{
 name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
@@ -3108,6 +3117,7 @@ argument_list|,
 name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|GIMP_CLONE_OPTIONS
@@ -3414,6 +3424,14 @@ operator|->
 name|core
 argument_list|)
 expr_stmt|;
+name|gimp_draw_tool_pause
+argument_list|(
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|clone_tool
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|options
@@ -3494,6 +3512,14 @@ name|display
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_draw_tool_resume
+argument_list|(
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|clone_tool
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
