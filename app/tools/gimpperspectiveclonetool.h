@@ -146,16 +146,6 @@ DECL|member|src_y
 name|gint
 name|src_y
 decl_stmt|;
-DECL|member|startx
-name|gdouble
-name|startx
-decl_stmt|;
-comment|/*  starting x coord                 */
-DECL|member|starty
-name|gdouble
-name|starty
-decl_stmt|;
-comment|/*  starting y coord                 */
 DECL|member|curx
 name|gdouble
 name|curx
@@ -176,11 +166,6 @@ name|gdouble
 name|lasty
 decl_stmt|;
 comment|/*  last y coord                     */
-DECL|member|state
-name|GdkModifierType
-name|state
-decl_stmt|;
-comment|/*  state of buttons and keys        */
 DECL|member|transform
 name|GimpMatrix3
 name|transform
@@ -248,27 +233,11 @@ name|tcx
 decl_stmt|,
 name|tcy
 decl_stmt|;
-DECL|member|use_grid
-name|gboolean
-name|use_grid
-decl_stmt|;
-comment|/*  does the tool use the grid       */
-DECL|member|use_handles
-name|gboolean
-name|use_handles
-decl_stmt|;
-comment|/*  uses the corner handles          */
 DECL|member|function
 name|TransformAction
 name|function
 decl_stmt|;
 comment|/*  current tool activity            */
-comment|/*gint            ngx, ngy;*/
-comment|/*  number of grid lines in original                                    *  x and y directions                                    */
-comment|/*gdouble        *grid_coords;*/
-comment|/*  x and y coordinates of the grid                                    *  endpoints (a total of (ngx+ngy)*2                                    *  coordinate pairs)                                   */
-comment|/*gdouble        *tgrid_coords;*/
-comment|/*  transformed grid_coords          */
 block|}
 struct|;
 end_struct

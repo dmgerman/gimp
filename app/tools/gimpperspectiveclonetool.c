@@ -129,7 +129,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be7abf50103
+DECL|enum|__anon2ba583af0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -461,10 +461,6 @@ parameter_list|(
 name|GimpPerspectiveCloneTool
 modifier|*
 name|clone_tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -472,15 +468,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_perspective_clone_tool_recalc
+name|gimp_perspective_clone_tool_recalc_matrix
 parameter_list|(
 name|GimpPerspectiveCloneTool
 modifier|*
 name|clone_tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -756,24 +748,6 @@ operator|->
 name|transform
 argument_list|)
 expr_stmt|;
-name|clone_tool
-operator|->
-name|use_grid
-operator|=
-name|FALSE
-expr_stmt|;
-name|clone_tool
-operator|->
-name|use_handles
-operator|=
-name|TRUE
-expr_stmt|;
-if|#
-directive|if
-literal|0
-block|clone_tool->ngx          = 0;   clone_tool->ngy          = 0;   clone_tool->grid_coords  = NULL;   clone_tool->tgrid_coords = NULL;
-endif|#
-directive|endif
 block|}
 end_function
 
@@ -963,16 +937,12 @@ expr_stmt|;
 name|gimp_perspective_clone_tool_prepare
 argument_list|(
 name|clone_tool
-argument_list|,
-name|display
 argument_list|)
 expr_stmt|;
 comment|/*  Recalculate the transform tool  */
-name|gimp_perspective_clone_tool_recalc
+name|gimp_perspective_clone_tool_recalc_matrix
 argument_list|(
 name|clone_tool
-argument_list|,
-name|display
 argument_list|)
 expr_stmt|;
 comment|/*  start drawing the bounding box and handles...  */
@@ -1213,11 +1183,9 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-name|gimp_perspective_clone_tool_recalc
+name|gimp_perspective_clone_tool_recalc_matrix
 argument_list|(
 name|clone_tool
-argument_list|,
-name|display
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1436,10 +1404,6 @@ name|clone_tool
 operator|->
 name|lastx
 operator|=
-name|clone_tool
-operator|->
-name|startx
-operator|=
 name|coords
 operator|->
 name|x
@@ -1447,10 +1411,6 @@ expr_stmt|;
 name|clone_tool
 operator|->
 name|lasty
-operator|=
-name|clone_tool
-operator|->
-name|starty
 operator|=
 name|coords
 operator|->
@@ -1673,16 +1633,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_perspective_clone_tool_prepare (GimpPerspectiveCloneTool * clone_tool,GimpDisplay * display)
+DECL|function|gimp_perspective_clone_tool_prepare (GimpPerspectiveCloneTool * clone_tool)
 name|gimp_perspective_clone_tool_prepare
 parameter_list|(
 name|GimpPerspectiveCloneTool
 modifier|*
 name|clone_tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 block|{
 name|clone_tool
@@ -1779,26 +1735,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_perspective_clone_tool_recalc (GimpPerspectiveCloneTool * clone_tool,GimpDisplay * display)
-name|gimp_perspective_clone_tool_recalc
+DECL|function|gimp_perspective_clone_tool_recalc_matrix (GimpPerspectiveCloneTool * clone_tool)
+name|gimp_perspective_clone_tool_recalc_matrix
 parameter_list|(
 name|GimpPerspectiveCloneTool
 modifier|*
 name|clone_tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_DISPLAY
-argument_list|(
-name|display
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_matrix3_identity
 argument_list|(
 operator|&
@@ -1991,7 +1935,6 @@ operator|->
 name|function
 operator|==
 name|TRANSFORM_CREATING
-comment|/*|| ! tr_tool->use_grid*/
 condition|)
 return|return;
 name|gimp_draw_tool_pause
@@ -2017,12 +1960,6 @@ operator|=
 name|coords
 operator|->
 name|y
-expr_stmt|;
-name|clone_tool
-operator|->
-name|state
-operator|=
-name|state
 expr_stmt|;
 comment|/*  recalculate the tool's transformation matrix  */
 name|diff_x
@@ -2143,11 +2080,9 @@ break|break;
 default|default:
 break|break;
 block|}
-name|gimp_perspective_clone_tool_recalc
+name|gimp_perspective_clone_tool_recalc_matrix
 argument_list|(
 name|clone_tool
-argument_list|,
-name|display
 argument_list|)
 expr_stmt|;
 name|clone_tool
@@ -2366,13 +2301,6 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|clone_tool
-operator|->
-name|use_handles
-condition|)
-block|{
 switch|switch
 condition|(
 name|clone_tool
@@ -2418,7 +2346,6 @@ operator|=
 name|GIMP_CURSOR_CROSSHAIR_SMALL
 expr_stmt|;
 break|break;
-block|}
 block|}
 block|}
 else|else
@@ -2604,6 +2531,12 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
+name|gdouble
+name|closest_dist
+decl_stmt|;
+name|gdouble
+name|dist
+decl_stmt|;
 name|clone_tool
 operator|->
 name|function
@@ -2619,19 +2552,6 @@ operator|->
 name|display
 condition|)
 return|return;
-if|if
-condition|(
-name|clone_tool
-operator|->
-name|use_handles
-condition|)
-block|{
-name|gdouble
-name|closest_dist
-decl_stmt|;
-name|gdouble
-name|dist
-decl_stmt|;
 name|dist
 operator|=
 name|gimp_draw_tool_calc_distance_square
@@ -2795,7 +2715,6 @@ name|function
 operator|=
 name|TRANSFORM_HANDLE_SE
 expr_stmt|;
-block|}
 block|}
 block|}
 else|else
@@ -3038,6 +2957,10 @@ name|GimpPerspectiveCloneOptions
 modifier|*
 name|options
 decl_stmt|;
+name|GimpCanvasGroup
+modifier|*
+name|stroke_group
+decl_stmt|;
 name|options
 operator|=
 name|GIMP_PERSPECTIVE_CLONE_TOOL_GET_OPTIONS
@@ -3045,17 +2968,6 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|clone_tool
-operator|->
-name|use_handles
-condition|)
-block|{
-name|GimpCanvasGroup
-modifier|*
-name|stroke_group
-decl_stmt|;
 name|stroke_group
 operator|=
 name|gimp_draw_tool_add_stroke_group
@@ -3245,7 +3157,6 @@ argument_list|,
 name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|GIMP_CLONE_OPTIONS
@@ -3448,12 +3359,6 @@ operator|->
 name|ty4
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|gimp_matrix3_transform_point (&tr_tool->transform,                                 tr_tool->cx, tr_tool->cy,&tr_tool->tcx,&tr_tool->tcy);    if (tr_tool->grid_coords&& tr_tool->tgrid_coords)     {       gint i, k;       gint gci;        gci = 0;       k   = (tr_tool->ngx + tr_tool->ngy) * 2;        for (i = 0; i< k; i++)         {           gimp_matrix3_transform_point (&tr_tool->transform,                                         tr_tool->grid_coords[gci],                                         tr_tool->grid_coords[gci + 1],&tr_tool->tgrid_coords[gci],&tr_tool->tgrid_coords[gci + 1]);           gci += 2;         }     }
-endif|#
-directive|endif
 block|}
 end_function
 
