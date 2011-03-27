@@ -93,6 +93,18 @@ block|}
 struct|;
 end_struct
 
+begin_comment
+comment|/*****************/
+end_comment
+
+begin_comment
+comment|/*  GimpMatrix2  */
+end_comment
+
+begin_comment
+comment|/*****************/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_MATRIX2
 define|#
@@ -205,6 +217,107 @@ parameter_list|,
 name|GimpMatrix2
 modifier|*
 name|matrix2
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*****************/
+end_comment
+
+begin_comment
+comment|/*  GimpMatrix3  */
+end_comment
+
+begin_comment
+comment|/*****************/
+end_comment
+
+begin_define
+DECL|macro|GIMP_TYPE_MATRIX3
+define|#
+directive|define
+name|GIMP_TYPE_MATRIX3
+value|(gimp_matrix3_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUE_HOLDS_MATRIX3 (value)
+define|#
+directive|define
+name|GIMP_VALUE_HOLDS_MATRIX3
+parameter_list|(
+name|value
+parameter_list|)
+value|(G_TYPE_CHECK_VALUE_TYPE ((value), GIMP_TYPE_MATRIX3))
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_matrix3_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_define
+DECL|macro|GIMP_TYPE_PARAM_MATRIX3
+define|#
+directive|define
+name|GIMP_TYPE_PARAM_MATRIX3
+value|(gimp_param_matrix3_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_PARAM_SPEC_MATRIX3 (pspec)
+define|#
+directive|define
+name|GIMP_IS_PARAM_SPEC_MATRIX3
+parameter_list|(
+name|pspec
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_MATRIX3))
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_param_matrix3_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
+name|GParamSpec
+modifier|*
+name|gimp_param_spec_matrix3
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|nick
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|blurb
+parameter_list|,
+specifier|const
+name|GimpMatrix3
+modifier|*
+name|default_value
+parameter_list|,
+name|GParamFlags
+name|flags
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -437,6 +550,18 @@ name|newy
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*****************/
+end_comment
+
+begin_comment
+comment|/*  GimpMatrix4  */
+end_comment
+
+begin_comment
+comment|/*****************/
+end_comment
 
 begin_function_decl
 name|void
