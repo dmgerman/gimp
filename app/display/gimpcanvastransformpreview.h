@@ -19,16 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|"tools/tools-types.h"
-end_include
-
-begin_comment
-comment|/* eek */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|"gimpcanvasitem.h"
 end_include
 
