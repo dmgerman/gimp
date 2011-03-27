@@ -148,7 +148,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_perspective_tool_recalc
+name|gimp_perspective_tool_recalc_matrix
 parameter_list|(
 name|GimpTransformTool
 modifier|*
@@ -271,9 +271,9 @@ name|gimp_perspective_tool_motion
 expr_stmt|;
 name|trans_class
 operator|->
-name|recalc
+name|recalc_matrix
 operator|=
-name|gimp_perspective_tool_recalc
+name|gimp_perspective_tool_recalc_matrix
 expr_stmt|;
 block|}
 end_function
@@ -1038,8 +1038,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_perspective_tool_recalc (GimpTransformTool * tr_tool)
-name|gimp_perspective_tool_recalc
+DECL|function|gimp_perspective_tool_recalc_matrix (GimpTransformTool * tr_tool)
+name|gimp_perspective_tool_recalc_matrix
 parameter_list|(
 name|GimpTransformTool
 modifier|*

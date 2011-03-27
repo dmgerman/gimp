@@ -232,7 +232,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_rotate_tool_recalc
+name|gimp_rotate_tool_recalc_matrix
 parameter_list|(
 name|GimpTransformTool
 modifier|*
@@ -409,9 +409,9 @@ name|gimp_rotate_tool_motion
 expr_stmt|;
 name|trans_class
 operator|->
-name|recalc
+name|recalc_matrix
 operator|=
-name|gimp_rotate_tool_recalc
+name|gimp_rotate_tool_recalc_matrix
 expr_stmt|;
 block|}
 end_function
@@ -1746,8 +1746,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rotate_tool_recalc (GimpTransformTool * tr_tool)
-name|gimp_rotate_tool_recalc
+DECL|function|gimp_rotate_tool_recalc_matrix (GimpTransformTool * tr_tool)
+name|gimp_rotate_tool_recalc_matrix
 parameter_list|(
 name|GimpTransformTool
 modifier|*
@@ -1882,7 +1882,7 @@ index|]
 operator|=
 name|value
 expr_stmt|;
-name|gimp_transform_tool_recalc
+name|gimp_transform_tool_recalc_matrix
 argument_list|(
 name|tr_tool
 argument_list|)
@@ -2006,7 +2006,7 @@ name|cy
 operator|=
 name|cy
 expr_stmt|;
-name|gimp_transform_tool_recalc
+name|gimp_transform_tool_recalc_matrix
 argument_list|(
 name|tr_tool
 argument_list|)

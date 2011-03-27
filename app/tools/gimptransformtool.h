@@ -39,7 +39,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c3ebec0103
+DECL|enum|__anon29fb8dde0103
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -423,11 +423,11 @@ modifier|*
 name|tool
 parameter_list|)
 function_decl|;
-DECL|member|recalc
+DECL|member|recalc_matrix
 name|void
 function_decl|(
 modifier|*
-name|recalc
+name|recalc_matrix
 function_decl|)
 parameter_list|(
 name|GimpTransformTool
@@ -486,7 +486,7 @@ end_decl_stmt
 
 begin_function_decl
 name|void
-name|gimp_transform_tool_recalc
+name|gimp_transform_tool_recalc_matrix
 parameter_list|(
 name|GimpTransformTool
 modifier|*

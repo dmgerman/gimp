@@ -886,7 +886,7 @@ name|NULL
 expr_stmt|;
 name|klass
 operator|->
-name|recalc
+name|recalc_matrix
 operator|=
 name|NULL
 expr_stmt|;
@@ -1332,7 +1332,7 @@ name|display
 argument_list|)
 expr_stmt|;
 comment|/*  Recalculate the transform tool  */
-name|gimp_transform_tool_recalc
+name|gimp_transform_tool_recalc_matrix
 argument_list|(
 name|tr_tool
 argument_list|)
@@ -1451,7 +1451,7 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-name|gimp_transform_tool_recalc
+name|gimp_transform_tool_recalc_matrix
 argument_list|(
 name|tr_tool
 argument_list|)
@@ -1732,7 +1732,7 @@ name|display
 argument_list|)
 expr_stmt|;
 comment|/*  recalculate the tool's transformation matrix  */
-name|gimp_transform_tool_recalc
+name|gimp_transform_tool_recalc_matrix
 argument_list|(
 name|tr_tool
 argument_list|)
@@ -1856,7 +1856,7 @@ argument_list|(
 name|tr_tool
 argument_list|)
 expr_stmt|;
-name|gimp_transform_tool_recalc
+name|gimp_transform_tool_recalc_matrix
 argument_list|(
 name|tr_tool
 argument_list|)
@@ -3040,7 +3040,7 @@ name|display
 argument_list|)
 expr_stmt|;
 comment|/*  recalculate the tool's transformation matrix  */
-name|gimp_transform_tool_recalc
+name|gimp_transform_tool_recalc_matrix
 argument_list|(
 name|tr_tool
 argument_list|)
@@ -6728,8 +6728,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_transform_tool_recalc (GimpTransformTool * tr_tool)
-name|gimp_transform_tool_recalc
+DECL|function|gimp_transform_tool_recalc_matrix (GimpTransformTool * tr_tool)
+name|gimp_transform_tool_recalc_matrix
 parameter_list|(
 name|GimpTransformTool
 modifier|*
@@ -6751,14 +6751,14 @@ argument_list|(
 name|tr_tool
 argument_list|)
 operator|->
-name|recalc
+name|recalc_matrix
 condition|)
 name|GIMP_TRANSFORM_TOOL_GET_CLASS
 argument_list|(
 name|tr_tool
 argument_list|)
 operator|->
-name|recalc
+name|recalc_matrix
 argument_list|(
 name|tr_tool
 argument_list|)
@@ -6875,7 +6875,7 @@ name|display
 argument_list|)
 expr_stmt|;
 comment|/*  recalculate the tool's transformation matrix  */
-name|gimp_transform_tool_recalc
+name|gimp_transform_tool_recalc_matrix
 argument_list|(
 name|tr_tool
 argument_list|)
