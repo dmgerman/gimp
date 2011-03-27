@@ -39,7 +39,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fb8dde0103
+DECL|enum|__anon2be48ef40103
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -344,6 +344,16 @@ modifier|*
 name|grid_coords
 decl_stmt|;
 comment|/*  x and y coordinates of the grid                                     *  endpoints (a total of (ngx+ngy)*2                                     *  coordinate pairs)                                     */
+DECL|member|handles
+name|GimpCanvasItem
+modifier|*
+name|handles
+index|[
+name|TRANSFORM_HANDLE_CENTER
+operator|+
+literal|1
+index|]
+decl_stmt|;
 DECL|member|undo_desc
 specifier|const
 name|gchar
