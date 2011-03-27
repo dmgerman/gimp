@@ -178,6 +178,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_transform_options_show_preview
+parameter_list|(
+name|GimpTransformOptions
+modifier|*
+name|options
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
