@@ -573,10 +573,6 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
-parameter_list|,
 name|TileManager
 modifier|*
 name|orig_tiles
@@ -1339,8 +1335,6 @@ comment|/*  Recalculate the transform tool  */
 name|gimp_transform_tool_recalc
 argument_list|(
 name|tr_tool
-argument_list|,
-name|display
 argument_list|)
 expr_stmt|;
 comment|/*  start drawing the bounding box and handles...  */
@@ -1460,8 +1454,6 @@ expr_stmt|;
 name|gimp_transform_tool_recalc
 argument_list|(
 name|tr_tool
-argument_list|,
-name|display
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1743,8 +1735,6 @@ comment|/*  recalculate the tool's transformation matrix  */
 name|gimp_transform_tool_recalc
 argument_list|(
 name|tr_tool
-argument_list|,
-name|display
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
@@ -1864,15 +1854,11 @@ operator|->
 name|motion
 argument_list|(
 name|tr_tool
-argument_list|,
-name|display
 argument_list|)
 expr_stmt|;
 name|gimp_transform_tool_recalc
 argument_list|(
 name|tr_tool
-argument_list|,
-name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -3057,10 +3043,6 @@ comment|/*  recalculate the tool's transformation matrix  */
 name|gimp_transform_tool_recalc
 argument_list|(
 name|tr_tool
-argument_list|,
-name|tool
-operator|->
-name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -4562,7 +4544,7 @@ begin_function
 specifier|static
 name|TileManager
 modifier|*
-DECL|function|gimp_transform_tool_real_transform (GimpTransformTool * tr_tool,GimpItem * active_item,GimpDisplay * display,TileManager * orig_tiles,gint orig_offset_x,gint orig_offset_y,gint * new_offset_x,gint * new_offset_y)
+DECL|function|gimp_transform_tool_real_transform (GimpTransformTool * tr_tool,GimpItem * active_item,TileManager * orig_tiles,gint orig_offset_x,gint orig_offset_y,gint * new_offset_x,gint * new_offset_y)
 name|gimp_transform_tool_real_transform
 parameter_list|(
 name|GimpTransformTool
@@ -4572,10 +4554,6 @@ parameter_list|,
 name|GimpItem
 modifier|*
 name|active_item
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|,
 name|TileManager
 modifier|*
@@ -5088,15 +5066,6 @@ operator|->
 name|undo_desc
 argument_list|)
 expr_stmt|;
-name|tool
-operator|->
-name|drawable
-operator|=
-name|gimp_image_get_active_drawable
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
 switch|switch
 condition|(
 name|options
@@ -5195,8 +5164,6 @@ argument_list|(
 name|tr_tool
 argument_list|,
 name|active_item
-argument_list|,
-name|display
 argument_list|,
 name|orig_tiles
 argument_list|,
@@ -6754,8 +6721,6 @@ operator|->
 name|prepare
 argument_list|(
 name|tr_tool
-argument_list|,
-name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -6763,16 +6728,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_transform_tool_recalc (GimpTransformTool * tr_tool,GimpDisplay * display)
+DECL|function|gimp_transform_tool_recalc (GimpTransformTool * tr_tool)
 name|gimp_transform_tool_recalc
 parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -6780,14 +6741,6 @@ argument_list|(
 name|GIMP_IS_TRANSFORM_TOOL
 argument_list|(
 name|tr_tool
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_DISPLAY
-argument_list|(
-name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6808,8 +6761,6 @@ operator|->
 name|recalc
 argument_list|(
 name|tr_tool
-argument_list|,
-name|display
 argument_list|)
 expr_stmt|;
 name|gimp_transform_tool_transform_bounding_box
@@ -6927,10 +6878,6 @@ comment|/*  recalculate the tool's transformation matrix  */
 name|gimp_transform_tool_recalc
 argument_list|(
 name|tr_tool
-argument_list|,
-name|tool
-operator|->
-name|display
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume

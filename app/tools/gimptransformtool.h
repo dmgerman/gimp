@@ -39,7 +39,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291c26230103
+DECL|enum|__anon27c3ebec0103
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -409,10 +409,6 @@ parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 function_decl|;
 DECL|member|motion
@@ -425,10 +421,6 @@ parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 function_decl|;
 DECL|member|recalc
@@ -441,10 +433,6 @@ parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 function_decl|;
 DECL|member|transform
@@ -462,10 +450,6 @@ parameter_list|,
 name|GimpItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|,
 name|TileManager
 modifier|*
@@ -507,10 +491,6 @@ parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 function_decl|;
 end_function_decl

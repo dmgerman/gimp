@@ -147,10 +147,6 @@ parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -163,10 +159,6 @@ parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -179,10 +171,6 @@ parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -525,16 +513,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_scale_tool_prepare (GimpTransformTool * tr_tool,GimpDisplay * display)
+DECL|function|gimp_scale_tool_prepare (GimpTransformTool * tr_tool)
 name|gimp_scale_tool_prepare
 parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 block|{
 name|GimpScaleTool
@@ -554,6 +538,17 @@ name|GIMP_TRANSFORM_TOOL_GET_OPTIONS
 argument_list|(
 name|tr_tool
 argument_list|)
+decl_stmt|;
+name|GimpDisplay
+modifier|*
+name|display
+init|=
+name|GIMP_TOOL
+argument_list|(
+name|tr_tool
+argument_list|)
+operator|->
+name|display
 decl_stmt|;
 name|gdouble
 name|xres
@@ -779,16 +774,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_scale_tool_motion (GimpTransformTool * tr_tool,GimpDisplay * display)
+DECL|function|gimp_scale_tool_motion (GimpTransformTool * tr_tool)
 name|gimp_scale_tool_motion
 parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 block|{
 name|GimpTransformOptions
@@ -1362,16 +1353,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_scale_tool_recalc (GimpTransformTool * tr_tool,GimpDisplay * display)
+DECL|function|gimp_scale_tool_recalc (GimpTransformTool * tr_tool)
 name|gimp_scale_tool_recalc
 parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 block|{
 name|gimp_matrix3_identity
@@ -1635,13 +1622,6 @@ expr_stmt|;
 name|gimp_transform_tool_recalc
 argument_list|(
 name|tr_tool
-argument_list|,
-name|GIMP_TOOL
-argument_list|(
-name|tr_tool
-argument_list|)
-operator|->
-name|display
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume

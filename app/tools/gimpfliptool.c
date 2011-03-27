@@ -178,10 +178,6 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
-parameter_list|,
 name|TileManager
 modifier|*
 name|orig_tiles
@@ -629,7 +625,7 @@ begin_function
 specifier|static
 name|TileManager
 modifier|*
-DECL|function|gimp_flip_tool_transform (GimpTransformTool * trans_tool,GimpItem * active_item,GimpDisplay * display,TileManager * orig_tiles,gint orig_offset_x,gint orig_offset_y,gint * new_offset_x,gint * new_offset_y)
+DECL|function|gimp_flip_tool_transform (GimpTransformTool * trans_tool,GimpItem * active_item,TileManager * orig_tiles,gint orig_offset_x,gint orig_offset_y,gint * new_offset_x,gint * new_offset_y)
 name|gimp_flip_tool_transform
 parameter_list|(
 name|GimpTransformTool
@@ -639,10 +635,6 @@ parameter_list|,
 name|GimpItem
 modifier|*
 name|active_item
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|,
 name|TileManager
 modifier|*

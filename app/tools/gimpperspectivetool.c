@@ -129,10 +129,6 @@ parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -145,10 +141,6 @@ parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -161,10 +153,6 @@ parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -711,16 +699,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_perspective_tool_prepare (GimpTransformTool * tr_tool,GimpDisplay * display)
+DECL|function|gimp_perspective_tool_prepare (GimpTransformTool * tr_tool)
 name|gimp_perspective_tool_prepare
 parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 block|{
 name|tr_tool
@@ -841,16 +825,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_perspective_tool_motion (GimpTransformTool * transform_tool,GimpDisplay * display)
+DECL|function|gimp_perspective_tool_motion (GimpTransformTool * transform_tool)
 name|gimp_perspective_tool_motion
 parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|transform_tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 block|{
 name|gdouble
@@ -1058,16 +1038,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_perspective_tool_recalc (GimpTransformTool * tr_tool,GimpDisplay * display)
+DECL|function|gimp_perspective_tool_recalc (GimpTransformTool * tr_tool)
 name|gimp_perspective_tool_recalc
 parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 block|{
 name|gimp_matrix3_identity
