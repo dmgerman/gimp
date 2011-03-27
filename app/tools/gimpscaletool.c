@@ -112,6 +112,41 @@ file|"gimp-intl.h"
 end_include
 
 begin_comment
+comment|/*  index into trans_info array  */
+end_comment
+
+begin_enum
+enum|enum
+DECL|enum|__anon2a0eeeec0103
+block|{
+DECL|enumerator|X0
+name|X0
+block|,
+DECL|enumerator|Y0
+name|Y0
+block|,
+DECL|enumerator|X1
+name|X1
+block|,
+DECL|enumerator|Y1
+name|Y1
+block|,
+DECL|enumerator|X2
+name|X2
+block|,
+DECL|enumerator|Y2
+name|Y2
+block|,
+DECL|enumerator|X3
+name|X3
+block|,
+DECL|enumerator|Y3
+name|Y3
+block|}
+enum|;
+end_enum
+
+begin_comment
 comment|/*  local function prototypes  */
 end_comment
 

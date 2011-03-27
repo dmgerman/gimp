@@ -79,29 +79,21 @@ begin_comment
 comment|/*  index into trans_info array  */
 end_comment
 
-begin_define
-DECL|macro|HORZ_OR_VERT
-define|#
-directive|define
+begin_enum
+enum|enum
+DECL|enum|__anon29249b120103
+block|{
+DECL|enumerator|HORZ_OR_VERT
 name|HORZ_OR_VERT
-value|0
-end_define
-
-begin_define
-DECL|macro|XSHEAR
-define|#
-directive|define
+block|,
+DECL|enumerator|XSHEAR
 name|XSHEAR
-value|1
-end_define
-
-begin_define
-DECL|macro|YSHEAR
-define|#
-directive|define
+block|,
+DECL|enumerator|YSHEAR
 name|YSHEAR
-value|2
-end_define
+block|}
+enum|;
+end_enum
 
 begin_comment
 comment|/*  the minimum movement before direction of shear can be determined (pixels) */
