@@ -1242,6 +1242,7 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
+comment|/*  Inizialize the tool-specific trans_info, and adjust the        *  tool dialog        */
 name|gimp_transform_tool_prepare
 argument_list|(
 name|tr_tool
@@ -3040,6 +3041,36 @@ operator|->
 name|display
 argument_list|)
 decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|G_N_ELEMENTS
+argument_list|(
+name|tr_tool
+operator|->
+name|handles
+argument_list|)
+condition|;
+name|i
+operator|++
+control|)
+name|tr_tool
+operator|->
+name|handles
+index|[
+name|i
+index|]
+operator|=
+name|NULL
+expr_stmt|;
 if|if
 condition|(
 name|tr_tool
@@ -3921,9 +3952,6 @@ decl_stmt|;
 name|gint
 name|num_segs_out
 decl_stmt|;
-name|gint
-name|i
-decl_stmt|;
 name|gimp_channel_boundary
 argument_list|(
 name|gimp_image_get_mask
@@ -4633,7 +4661,7 @@ condition|(
 name|orig_tiles
 condition|)
 block|{
-comment|/*  this happens when transforming a normal drawable or the        *  selection        */
+comment|/*  this happens when transforming a selection cut out of a        *  normal drawable, or the selection        */
 name|GimpTransformResize
 name|clip_result
 init|=
@@ -4706,7 +4734,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/*  this happens for paths and layer groups  */
+comment|/*  this happens for entire drawables, paths and layer groups  */
 name|gimp_item_transform
 argument_list|(
 name|active_item
@@ -5266,7 +5294,7 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-comment|/*  We're done dirtying the image, and would like to be restarted    *  if the image gets dirty while the tool exists    */
+comment|/*  We're done dirtying the image, and would like to be restarted if    *  the image gets dirty while the tool exists    */
 name|gimp_tool_control_set_preserve
 argument_list|(
 name|tool
