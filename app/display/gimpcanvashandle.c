@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297f08790103
+DECL|enum|__anon2b8893350103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1567,10 +1567,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_canvas_handle_set_position (GimpCanvasHandle * handle,gdouble x,gdouble y)
+DECL|function|gimp_canvas_handle_set_position (GimpCanvasItem * handle,gdouble x,gdouble y)
 name|gimp_canvas_handle_set_position
 parameter_list|(
-name|GimpCanvasHandle
+name|GimpCanvasItem
 modifier|*
 name|handle
 parameter_list|,
@@ -1591,10 +1591,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_canvas_item_begin_change
 argument_list|(
-name|GIMP_CANVAS_ITEM
-argument_list|(
 name|handle
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_set
@@ -1614,10 +1611,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_canvas_item_end_change
 argument_list|(
-name|GIMP_CANVAS_ITEM
-argument_list|(
 name|handle
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1625,10 +1619,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_canvas_handle_set_angles (GimpCanvasHandle * handle,gdouble start_angle,gdouble slice_angle)
+DECL|function|gimp_canvas_handle_set_angles (GimpCanvasItem * handle,gdouble start_angle,gdouble slice_angle)
 name|gimp_canvas_handle_set_angles
 parameter_list|(
-name|GimpCanvasHandle
+name|GimpCanvasItem
 modifier|*
 name|handle
 parameter_list|,
@@ -1649,10 +1643,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_canvas_item_begin_change
 argument_list|(
-name|GIMP_CANVAS_ITEM
-argument_list|(
 name|handle
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_set
@@ -1672,10 +1663,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_canvas_item_end_change
 argument_list|(
-name|GIMP_CANVAS_ITEM
-argument_list|(
 name|handle
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -1667,12 +1667,9 @@ condition|)
 block|{
 name|gimp_canvas_line_set
 argument_list|(
-name|GIMP_CANVAS_LINE
-argument_list|(
 name|blend_tool
 operator|->
 name|line
-argument_list|)
 argument_list|,
 name|blend_tool
 operator|->
@@ -1693,12 +1690,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_canvas_handle_set_position
 argument_list|(
-name|GIMP_CANVAS_HANDLE
-argument_list|(
 name|blend_tool
 operator|->
 name|end_handle
-argument_list|)
 argument_list|,
 name|blend_tool
 operator|->

@@ -3168,10 +3168,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_canvas_handle_set_angles
 argument_list|(
-name|GIMP_CANVAS_HANDLE
-argument_list|(
 name|item
-argument_list|)
 argument_list|,
 name|angle1
 argument_list|,

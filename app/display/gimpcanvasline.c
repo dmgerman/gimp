@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c130c6f0103
+DECL|enum|__anon27b645b10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1074,10 +1074,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_canvas_line_set (GimpCanvasLine * line,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
+DECL|function|gimp_canvas_line_set (GimpCanvasItem * line,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
 name|gimp_canvas_line_set
 parameter_list|(
-name|GimpCanvasLine
+name|GimpCanvasItem
 modifier|*
 name|line
 parameter_list|,
@@ -1104,10 +1104,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_canvas_item_begin_change
 argument_list|(
-name|GIMP_CANVAS_ITEM
-argument_list|(
 name|line
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_set
@@ -1135,10 +1132,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_canvas_item_end_change
 argument_list|(
-name|GIMP_CANVAS_ITEM
-argument_list|(
 name|line
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

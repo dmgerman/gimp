@@ -173,7 +173,7 @@ begin_function_decl
 name|void
 name|gimp_canvas_handle_set_position
 parameter_list|(
-name|GimpCanvasHandle
+name|GimpCanvasItem
 modifier|*
 name|handle
 parameter_list|,
@@ -190,7 +190,7 @@ begin_function_decl
 name|void
 name|gimp_canvas_handle_set_angles
 parameter_list|(
-name|GimpCanvasHandle
+name|GimpCanvasItem
 modifier|*
 name|handle
 parameter_list|,

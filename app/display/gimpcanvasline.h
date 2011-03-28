@@ -167,7 +167,7 @@ begin_function_decl
 name|void
 name|gimp_canvas_line_set
 parameter_list|(
-name|GimpCanvasLine
+name|GimpCanvasItem
 modifier|*
 name|line
 parameter_list|,
