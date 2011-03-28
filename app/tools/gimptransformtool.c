@@ -238,6 +238,14 @@ file|"gimp-intl.h"
 end_include
 
 begin_define
+DECL|macro|RESPONSE_RESET
+define|#
+directive|define
+name|RESPONSE_RESET
+value|1
+end_define
+
+begin_define
 DECL|macro|MIN_HANDLE_SIZE
 define|#
 directive|define
@@ -1232,7 +1240,7 @@ argument_list|(
 name|tr_tool
 argument_list|)
 expr_stmt|;
-comment|/*  Find the transform bounds for some tools (like scale,        *  perspective) that actually need the bounds for        *  initializing        */
+comment|/*  Find the transform bounds for some tools (like scale,        *  perspective) that actually need the bounds for initializing        */
 name|gimp_transform_tool_bounds
 argument_list|(
 name|tr_tool
@@ -1572,7 +1580,7 @@ name|tr_tool
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  Restore the previous transformation info  */
+comment|/*  Store current trans_info  */
 for|for
 control|(
 name|i
@@ -1611,7 +1619,7 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  Restore the previous transformation info  */
+comment|/*  Restore the previous trans_info  */
 for|for
 control|(
 name|i
@@ -1707,10 +1715,6 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|GimpTransformToolClass
-modifier|*
-name|tr_tool_class
-decl_stmt|;
 comment|/*  if we are creating, there is nothing to be done so exit.  */
 if|if
 condition|(
@@ -1751,21 +1755,20 @@ operator|->
 name|y
 expr_stmt|;
 comment|/*  recalculate the tool's transformation matrix  */
-name|tr_tool_class
-operator|=
+if|if
+condition|(
 name|GIMP_TRANSFORM_TOOL_GET_CLASS
 argument_list|(
 name|tr_tool
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|tr_tool_class
 operator|->
 name|motion
 condition|)
 block|{
-name|tr_tool_class
+name|GIMP_TRANSFORM_TOOL_GET_CLASS
+argument_list|(
+name|tr_tool
+argument_list|)
 operator|->
 name|motion
 argument_list|(
@@ -1804,14 +1807,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_define
-DECL|macro|RESPONSE_RESET
-define|#
-directive|define
-name|RESPONSE_RESET
-value|1
-end_define
 
 begin_function
 specifier|static
@@ -2885,15 +2880,6 @@ operator|->
 name|use_grid
 condition|)
 block|{
-if|if
-condition|(
-name|tr_tool
-operator|->
-name|function
-operator|!=
-name|TRANSFORM_CREATING
-condition|)
-block|{
 name|gimp_draw_tool_pause
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -2902,7 +2888,6 @@ name|tr_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 operator|!
@@ -2980,6 +2965,7 @@ argument_list|(
 name|tr_tool
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_draw_tool_resume
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -2988,7 +2974,6 @@ name|tr_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 if|if
 condition|(
