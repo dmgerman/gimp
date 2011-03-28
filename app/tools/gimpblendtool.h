@@ -163,6 +163,21 @@ name|gdouble
 name|mouse_y
 decl_stmt|;
 comment|/*  pointer y coord   */
+DECL|member|start_handle
+name|GimpCanvasItem
+modifier|*
+name|start_handle
+decl_stmt|;
+DECL|member|line
+name|GimpCanvasItem
+modifier|*
+name|line
+decl_stmt|;
+DECL|member|end_handle
+name|GimpCanvasItem
+modifier|*
+name|end_handle
+decl_stmt|;
 block|}
 struct|;
 end_struct

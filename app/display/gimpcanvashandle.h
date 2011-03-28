@@ -171,6 +171,23 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_canvas_handle_set_position
+parameter_list|(
+name|GimpCanvasHandle
+modifier|*
+name|handle
+parameter_list|,
+name|gdouble
+name|x
+parameter_list|,
+name|gdouble
+name|y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_canvas_handle_set_angles
 parameter_list|(
 name|GimpCanvasHandle
