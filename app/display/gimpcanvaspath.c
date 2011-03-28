@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29aacb300103
+DECL|enum|__anon2b8cf8ca0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1146,7 +1146,7 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_canvas_path_new (GimpDisplayShell * shell,const GimpBezierDesc * path,gboolean filled,gboolean path_style)
+DECL|function|gimp_canvas_path_new (GimpDisplayShell * shell,const GimpBezierDesc * bezier,gboolean filled,gboolean path_style)
 name|gimp_canvas_path_new
 parameter_list|(
 name|GimpDisplayShell
@@ -1156,7 +1156,7 @@ parameter_list|,
 specifier|const
 name|GimpBezierDesc
 modifier|*
-name|path
+name|bezier
 parameter_list|,
 name|gboolean
 name|filled
@@ -1186,7 +1186,7 @@ name|shell
 argument_list|,
 literal|"path"
 argument_list|,
-name|path
+name|bezier
 argument_list|,
 literal|"filled"
 argument_list|,
@@ -1199,6 +1199,53 @@ argument_list|,
 name|NULL
 argument_list|)
 return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_canvas_path_set (GimpCanvasItem * path,const GimpBezierDesc * bezier)
+name|gimp_canvas_path_set
+parameter_list|(
+name|GimpCanvasItem
+modifier|*
+name|path
+parameter_list|,
+specifier|const
+name|GimpBezierDesc
+modifier|*
+name|bezier
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CANVAS_PATH
+argument_list|(
+name|path
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_canvas_item_begin_change
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
+name|g_object_set
+argument_list|(
+name|path
+argument_list|,
+literal|"path"
+argument_list|,
+name|bezier
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_canvas_item_end_change
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

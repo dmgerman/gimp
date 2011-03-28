@@ -163,6 +163,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_canvas_sample_point_set
+parameter_list|(
+name|GimpCanvasItem
+modifier|*
+name|sample_point
+parameter_list|,
+name|gdouble
+name|x
+parameter_list|,
+name|gdouble
+name|y
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

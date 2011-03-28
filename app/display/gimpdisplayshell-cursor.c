@@ -434,14 +434,11 @@ operator|->
 name|cursor
 argument_list|)
 expr_stmt|;
-name|gimp_canvas_cursor_set_coords
-argument_list|(
-name|GIMP_CANVAS_CURSOR
+name|gimp_canvas_cursor_set
 argument_list|(
 name|shell
 operator|->
 name|cursor
-argument_list|)
 argument_list|,
 name|display_x
 argument_list|,

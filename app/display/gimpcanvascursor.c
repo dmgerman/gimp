@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b55657c0103
+DECL|enum|__anon275040600103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -803,10 +803,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_canvas_cursor_set_coords (GimpCanvasCursor * cursor,gdouble x,gdouble y)
-name|gimp_canvas_cursor_set_coords
+DECL|function|gimp_canvas_cursor_set (GimpCanvasItem * cursor,gdouble x,gdouble y)
+name|gimp_canvas_cursor_set
 parameter_list|(
-name|GimpCanvasCursor
+name|GimpCanvasItem
 modifier|*
 name|cursor
 parameter_list|,
@@ -853,10 +853,7 @@ condition|)
 block|{
 name|gimp_canvas_item_begin_change
 argument_list|(
-name|GIMP_CANVAS_ITEM
-argument_list|(
 name|cursor
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_set
@@ -876,10 +873,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_canvas_item_end_change
 argument_list|(
-name|GIMP_CANVAS_ITEM
-argument_list|(
 name|cursor
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

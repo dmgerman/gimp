@@ -153,9 +153,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_canvas_cursor_set_coords
+name|gimp_canvas_cursor_set
 parameter_list|(
-name|GimpCanvasCursor
+name|GimpCanvasItem
 modifier|*
 name|cursor
 parameter_list|,

@@ -160,6 +160,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_canvas_guide_set
+parameter_list|(
+name|GimpCanvasItem
+modifier|*
+name|guide
+parameter_list|,
+name|GimpOrientationType
+name|orientation
+parameter_list|,
+name|gint
+name|position
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
