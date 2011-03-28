@@ -139,6 +139,11 @@ decl_stmt|,
 name|h
 decl_stmt|;
 comment|/*  width and height            */
+DECL|member|rectangle
+name|GimpCanvasItem
+modifier|*
+name|rectangle
+decl_stmt|;
 block|}
 struct|;
 end_struct
