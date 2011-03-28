@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294462b30103
+DECL|enum|__anon2beee42a0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -221,6 +221,14 @@ name|gboolean
 name|status_help
 decl_stmt|;
 comment|/*  help is currently in s.bar */
+DECL|member|handles
+name|GimpCanvasItem
+modifier|*
+name|handles
+index|[
+literal|3
+index|]
+decl_stmt|;
 DECL|member|dialog
 name|GtkWidget
 modifier|*
