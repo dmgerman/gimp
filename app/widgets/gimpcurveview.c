@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bddd1d20103
+DECL|enum|__anon2a2f03e30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bddd1d20203
+DECL|enum|__anon2a2f03e30203
 block|{
 DECL|enumerator|CUT_CLIPBOARD
 name|CUT_CLIPBOARD
@@ -131,7 +131,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bddd1d20308
+DECL|struct|__anon2a2f03e30308
 block|{
 DECL|member|curve
 name|GimpCurve
@@ -4331,7 +4331,7 @@ name|keyval
 condition|)
 block|{
 case|case
-name|GDK_Left
+name|GDK_KEY_Left
 case|:
 for|for
 control|(
@@ -4386,7 +4386,7 @@ block|}
 block|}
 break|break;
 case|case
-name|GDK_Right
+name|GDK_KEY_Right
 case|:
 for|for
 control|(
@@ -4443,7 +4443,7 @@ block|}
 block|}
 break|break;
 case|case
-name|GDK_Up
+name|GDK_KEY_Up
 case|:
 if|if
 condition|(
@@ -4499,7 +4499,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GDK_Down
+name|GDK_KEY_Down
 case|:
 if|if
 condition|(
@@ -4555,7 +4555,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GDK_Delete
+name|GDK_KEY_Delete
 case|:
 name|gimp_curve_delete_point
 argument_list|(

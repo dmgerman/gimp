@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gdk/gdkkeysyms.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
@@ -280,7 +274,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7e6a650108
+DECL|struct|__anon297344dd0108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int

@@ -274,7 +274,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d8ba7a0108
+DECL|struct|__anon2ab9c99c0108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -1585,7 +1585,7 @@ argument_list|(
 name|shell
 argument_list|)
 argument_list|,
-name|GDK_Return
+name|GDK_KEY_Return
 argument_list|)
 expr_stmt|;
 name|gimp_test_run_mainloop_until_idle

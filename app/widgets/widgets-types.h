@@ -296,6 +296,22 @@ name|GDK_KEY_minus
 value|GDK_minus
 end_define
 
+begin_define
+DECL|macro|GDK_KEY_Delete
+define|#
+directive|define
+name|GDK_KEY_Delete
+value|GDK_Delete
+end_define
+
+begin_define
+DECL|macro|GDK_KEY_plus
+define|#
+directive|define
+name|GDK_KEY_plus
+value|GDK_plus
+end_define
+
 begin_endif
 endif|#
 directive|endif

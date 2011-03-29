@@ -280,7 +280,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4a03e70108
+DECL|struct|__anon2afa8a090108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -1008,7 +1008,7 @@ argument_list|(
 name|window
 argument_list|)
 argument_list|,
-name|GDK_plus
+name|GDK_KEY_plus
 argument_list|)
 expr_stmt|;
 name|gimp_test_run_mainloop_until_idle
@@ -1039,7 +1039,7 @@ operator|->
 name|zoom
 argument_list|)
 expr_stmt|;
-comment|/* First of all make sure a zoom happend at all. If this assert    * fails, it means that the zoom didn't happen. Possible causes:    *    *  * gdk_test_simulate_key() failed to map 'GDK_plus' to the proper    *    'plus' X keysym, probably because it is mapped to a keycode    *    with modifiers like 'shift'. Run "xmodmap -pk | grep plus" to    *    find out. Make sure 'plus' is the first keysym for the given    *    keycode. If not, use "xmodmap<keycode> = plus" to correct it.    */
+comment|/* First of all make sure a zoom happend at all. If this assert    * fails, it means that the zoom didn't happen. Possible causes:    *    *  * gdk_test_simulate_key() failed to map 'GDK_KEY_plus' to the proper    *    'plus' X keysym, probably because it is mapped to a keycode    *    with modifiers like 'shift'. Run "xmodmap -pk | grep plus" to    *    find out. Make sure 'plus' is the first keysym for the given    *    keycode. If not, use "xmodmap<keycode> = plus" to correct it.    */
 name|g_assert_cmpfloat
 argument_list|(
 name|fabs
