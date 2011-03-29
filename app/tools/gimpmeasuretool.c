@@ -804,13 +804,6 @@ decl_stmt|;
 comment|/*  if we are changing displays, pop the statusbar of the old one  */
 if|if
 condition|(
-name|gimp_tool_control_is_active
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|)
-operator|&&
 name|display
 operator|!=
 name|tool
@@ -818,6 +811,12 @@ operator|->
 name|display
 condition|)
 block|{
+if|if
+condition|(
+name|tool
+operator|->
+name|display
+condition|)
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
@@ -850,13 +849,6 @@ name|y
 expr_stmt|;
 if|if
 condition|(
-name|gimp_tool_control_is_active
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|)
-operator|&&
 name|display
 operator|==
 name|tool
@@ -1174,14 +1166,14 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_tool_control_is_active
+name|gimp_draw_tool_is_active
 argument_list|(
-name|tool
-operator|->
-name|control
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|measure
+argument_list|)
 argument_list|)
 condition|)
-block|{
 name|gimp_draw_tool_stop
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -1236,14 +1228,6 @@ index|]
 operator|=
 literal|0.0
 expr_stmt|;
-name|gimp_measure_tool_dialog_update
-argument_list|(
-name|measure
-argument_list|,
-name|display
-argument_list|)
-expr_stmt|;
-block|}
 comment|/*  set the first point and go into ADDING mode  */
 name|measure
 operator|->
@@ -1296,36 +1280,18 @@ name|display
 operator|=
 name|display
 expr_stmt|;
-if|if
-condition|(
-name|gimp_tool_control_is_active
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|)
-condition|)
-block|{
 name|gimp_tool_replace_status
 argument_list|(
 name|tool
 argument_list|,
 name|display
 argument_list|,
-literal|" "
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|gimp_tool_control_activate
+name|_
 argument_list|(
-name|tool
-operator|->
-name|control
+literal|"Drag to create a line"
+argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 name|gimp_draw_tool_start
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -1337,6 +1303,13 @@ name|display
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_tool_control_activate
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|)
+expr_stmt|;
 comment|/*  create the info window if necessary  */
 if|if
 condition|(
@@ -1427,6 +1400,13 @@ argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
+name|gimp_measure_tool_dialog_update
+argument_list|(
+name|measure
+argument_list|,
+name|display
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function
@@ -1474,6 +1454,13 @@ operator|->
 name|function
 operator|=
 name|FINISHED
+expr_stmt|;
+name|gimp_tool_control_halt
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -1548,7 +1535,7 @@ name|coords
 operator|->
 name|y
 expr_stmt|;
-comment|/*    *  A few comments here, because this routine looks quite weird at first ...    *    *  The goal is to keep point 0, called the start point, to be    *  always the one in the middle or, if there are only two points,    *  the one that is fixed.  The angle is then always measured at    *  this point.    */
+comment|/*  A few comments here, because this routine looks quite weird at first ...    *    *  The goal is to keep point 0, called the start point, to be    *  always the one in the middle or, if there are only two points,    *  the one that is fixed.  The angle is then always measured at    *  this point.    */
 switch|switch
 condition|(
 name|measure
@@ -1574,7 +1561,7 @@ break|break;
 case|case
 literal|1
 case|:
-comment|/*  we are adding to the end point,                      make it the new start point  */
+comment|/*  we are adding to the end point, make it the new start point  */
 name|tmp
 operator|=
 name|measure
@@ -1643,7 +1630,7 @@ break|break;
 case|case
 literal|2
 case|:
-comment|/*  we are adding to the third point,                      make it the new start point  */
+comment|/*  we are adding to the third point, make it the new start point  */
 name|measure
 operator|->
 name|x
@@ -1735,11 +1722,11 @@ name|function
 operator|=
 name|MOVING
 expr_stmt|;
-comment|/*  no, don't break here!  */
+comment|/*  don't break here!  */
 case|case
 name|MOVING
 case|:
-comment|/*  if we are moving the start point and only have two,           make it the end point  */
+comment|/*  if we are moving the start point and only have two, make it        *  the end point        */
 if|if
 condition|(
 name|measure
@@ -1826,17 +1813,13 @@ operator|=
 literal|1
 expr_stmt|;
 block|}
-name|i
-operator|=
-name|measure
-operator|->
-name|point
-expr_stmt|;
 name|measure
 operator|->
 name|x
 index|[
-name|i
+name|measure
+operator|->
+name|point
 index|]
 operator|=
 name|ROUND
@@ -1850,7 +1833,9 @@ name|measure
 operator|->
 name|y
 index|[
-name|i
+name|measure
+operator|->
+name|point
 index|]
 operator|=
 name|ROUND
@@ -1874,7 +1859,9 @@ name|measure
 operator|->
 name|x
 index|[
-name|i
+name|measure
+operator|->
+name|point
 index|]
 decl_stmt|;
 name|gdouble
@@ -1884,7 +1871,9 @@ name|measure
 operator|->
 name|y
 index|[
-name|i
+name|measure
+operator|->
+name|point
 index|]
 decl_stmt|;
 name|gimp_constrain_line
@@ -1916,7 +1905,9 @@ name|measure
 operator|->
 name|x
 index|[
-name|i
+name|measure
+operator|->
+name|point
 index|]
 operator|=
 name|ROUND
@@ -1928,7 +1919,9 @@ name|measure
 operator|->
 name|y
 index|[
-name|i
+name|measure
+operator|->
+name|point
 index|]
 operator|=
 name|ROUND
@@ -2306,13 +2299,6 @@ name|i
 decl_stmt|;
 if|if
 condition|(
-name|gimp_tool_control_is_active
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|)
-operator|&&
 name|tool
 operator|->
 name|display
@@ -2850,13 +2836,6 @@ name|GIMP_CURSOR_MODIFIER_NONE
 decl_stmt|;
 if|if
 condition|(
-name|gimp_tool_control_is_active
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|)
-operator|&&
 name|tool
 operator|->
 name|display
@@ -3291,6 +3270,40 @@ if|if
 condition|(
 name|measure
 operator|->
+name|point
+operator|!=
+operator|-
+literal|1
+operator|&&
+name|measure
+operator|->
+name|handles
+index|[
+name|measure
+operator|->
+name|point
+index|]
+condition|)
+block|{
+name|gimp_canvas_item_set_highlight
+argument_list|(
+name|measure
+operator|->
+name|handles
+index|[
+name|measure
+operator|->
+name|point
+index|]
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|measure
+operator|->
 name|num_points
 operator|>
 literal|1
@@ -3621,6 +3634,12 @@ name|tool
 operator|->
 name|control
 argument_list|)
+expr_stmt|;
+name|tool
+operator|->
+name|display
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 end_function
