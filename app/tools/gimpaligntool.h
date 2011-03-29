@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298dc8f80103
+DECL|enum|__anon2ae695680103
 block|{
 DECL|enumerator|ALIGN_TOOL_IDLE
 name|ALIGN_TOOL_IDLE
@@ -170,22 +170,18 @@ name|GList
 modifier|*
 name|selected_objects
 decl_stmt|;
-DECL|member|align_type
-name|GimpAlignmentType
-name|align_type
-decl_stmt|;
-DECL|member|x0
-DECL|member|y0
 DECL|member|x1
 DECL|member|y1
+DECL|member|x2
+DECL|member|y2
 name|gint
-name|x0
-decl_stmt|,
-name|y0
-decl_stmt|,
 name|x1
 decl_stmt|,
 name|y1
+decl_stmt|,
+name|x2
+decl_stmt|,
+name|y2
 decl_stmt|;
 comment|/* rubber-band rectangle */
 DECL|member|set_reference
