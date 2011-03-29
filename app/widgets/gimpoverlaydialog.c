@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d8ad780103
+DECL|enum|__anon2b2be4d90103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -362,7 +362,7 @@ argument_list|(
 name|klass
 argument_list|)
 argument_list|,
-name|GDK_Escape
+name|GDK_KEY_Escape
 argument_list|,
 literal|0
 argument_list|,

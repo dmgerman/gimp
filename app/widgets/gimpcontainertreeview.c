@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28da34c00103
+DECL|enum|__anon2c86134f0103
 block|{
 DECL|enumerator|EDIT_NAME
 name|EDIT_NAME
@@ -729,7 +729,7 @@ name|gtk_binding_entry_add_signal
 argument_list|(
 name|binding_set
 argument_list|,
-name|GDK_F2
+name|GDK_KEY_F2
 argument_list|,
 literal|0
 argument_list|,

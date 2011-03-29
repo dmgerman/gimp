@@ -178,7 +178,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b713e70108
+DECL|struct|__anon29a427ec0108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -4986,7 +4986,7 @@ name|keyval
 condition|)
 block|{
 case|case
-name|GDK_BackSpace
+name|GDK_KEY_BackSpace
 case|:
 name|gimp_free_select_tool_remove_last_segment
 argument_list|(
@@ -4997,13 +4997,13 @@ return|return
 name|TRUE
 return|;
 case|case
-name|GDK_Return
+name|GDK_KEY_Return
 case|:
 case|case
-name|GDK_KP_Enter
+name|GDK_KEY_KP_Enter
 case|:
 case|case
-name|GDK_ISO_Enter
+name|GDK_KEY_ISO_Enter
 case|:
 name|gimp_free_select_tool_commit
 argument_list|(
@@ -5016,7 +5016,7 @@ return|return
 name|TRUE
 return|;
 case|case
-name|GDK_Escape
+name|GDK_KEY_Escape
 case|:
 name|gimp_free_select_tool_halt
 argument_list|(

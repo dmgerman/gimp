@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0c59650103
+DECL|enum|__anon29e257750103
 block|{
 DECL|enumerator|TAG_SEARCH_NONE
 name|TAG_SEARCH_NONE
@@ -132,7 +132,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0c59650203
+DECL|enum|__anon29e257750203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5465,13 +5465,13 @@ name|keyval
 condition|)
 block|{
 case|case
-name|GDK_Tab
+name|GDK_KEY_Tab
 case|:
 case|case
-name|GDK_KP_Tab
+name|GDK_KEY_KP_Tab
 case|:
 case|case
-name|GDK_ISO_Left_Tab
+name|GDK_KEY_ISO_Left_Tab
 case|:
 comment|/*  allow to leave the widget with Ctrl+Tab  */
 if|if
@@ -5538,7 +5538,7 @@ return|return
 name|TRUE
 return|;
 case|case
-name|GDK_Return
+name|GDK_KEY_Return
 case|:
 name|gimp_tag_entry_commit_tags
 argument_list|(
@@ -5547,7 +5547,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GDK_Left
+name|GDK_KEY_Left
 case|:
 name|gimp_tag_entry_previous_tag
 argument_list|(
@@ -5570,7 +5570,7 @@ return|return
 name|TRUE
 return|;
 case|case
-name|GDK_Right
+name|GDK_KEY_Right
 case|:
 name|gimp_tag_entry_next_tag
 argument_list|(
@@ -5593,7 +5593,7 @@ return|return
 name|TRUE
 return|;
 case|case
-name|GDK_BackSpace
+name|GDK_KEY_BackSpace
 case|:
 block|{
 name|gint
@@ -5658,7 +5658,7 @@ block|}
 block|}
 break|break;
 case|case
-name|GDK_Delete
+name|GDK_KEY_Delete
 case|:
 block|{
 name|gint
@@ -5723,10 +5723,10 @@ block|}
 block|}
 break|break;
 case|case
-name|GDK_Up
+name|GDK_KEY_Up
 case|:
 case|case
-name|GDK_Down
+name|GDK_KEY_Down
 case|:
 if|if
 condition|(
@@ -5778,7 +5778,7 @@ name|event
 operator|->
 name|keyval
 operator|==
-name|GDK_Up
+name|GDK_KEY_Up
 condition|)
 block|{
 name|recent_item

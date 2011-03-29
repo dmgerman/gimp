@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5c9dc80103
+DECL|enum|__anon2a224e260103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -579,7 +579,7 @@ name|gtk_binding_entry_add_signal
 argument_list|(
 name|binding_set
 argument_list|,
-name|GDK_Home
+name|GDK_KEY_Home
 argument_list|,
 literal|0
 argument_list|,
@@ -601,7 +601,7 @@ name|gtk_binding_entry_add_signal
 argument_list|(
 name|binding_set
 argument_list|,
-name|GDK_End
+name|GDK_KEY_End
 argument_list|,
 literal|0
 argument_list|,
@@ -622,7 +622,7 @@ name|gtk_binding_entry_add_signal
 argument_list|(
 name|binding_set
 argument_list|,
-name|GDK_Page_Up
+name|GDK_KEY_Page_Up
 argument_list|,
 literal|0
 argument_list|,
@@ -644,7 +644,7 @@ name|gtk_binding_entry_add_signal
 argument_list|(
 name|binding_set
 argument_list|,
-name|GDK_Page_Down
+name|GDK_KEY_Page_Down
 argument_list|,
 literal|0
 argument_list|,

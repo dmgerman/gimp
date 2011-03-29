@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ea02b20103
+DECL|enum|__anon28dcafc60103
 block|{
 DECL|enumerator|CHANGE_SIZE
 name|CHANGE_SIZE
@@ -390,7 +390,7 @@ name|gtk_binding_entry_add_signal
 argument_list|(
 name|binding_set
 argument_list|,
-name|GDK_plus
+name|GDK_KEY_plus
 argument_list|,
 name|GDK_MOD1_MASK
 argument_list|,
@@ -407,7 +407,7 @@ name|gtk_binding_entry_add_signal
 argument_list|(
 name|binding_set
 argument_list|,
-name|GDK_minus
+name|GDK_KEY_minus
 argument_list|,
 name|GDK_MOD1_MASK
 argument_list|,
@@ -425,7 +425,7 @@ name|gtk_binding_entry_add_signal
 argument_list|(
 name|binding_set
 argument_list|,
-name|GDK_Up
+name|GDK_KEY_Up
 argument_list|,
 name|GDK_MOD1_MASK
 argument_list|,
@@ -442,7 +442,7 @@ name|gtk_binding_entry_add_signal
 argument_list|(
 name|binding_set
 argument_list|,
-name|GDK_Down
+name|GDK_KEY_Down
 argument_list|,
 name|GDK_MOD1_MASK
 argument_list|,
@@ -460,7 +460,7 @@ name|gtk_binding_entry_add_signal
 argument_list|(
 name|binding_set
 argument_list|,
-name|GDK_Left
+name|GDK_KEY_Left
 argument_list|,
 name|GDK_MOD1_MASK
 argument_list|,
@@ -478,7 +478,7 @@ name|gtk_binding_entry_add_signal
 argument_list|(
 name|binding_set
 argument_list|,
-name|GDK_Right
+name|GDK_KEY_Right
 argument_list|,
 name|GDK_MOD1_MASK
 argument_list|,

@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c859140103
+DECL|enum|__anon28b28b180103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -1557,7 +1557,7 @@ name|keyval
 condition|)
 block|{
 case|case
-name|GDK_Up
+name|GDK_KEY_Up
 case|:
 name|scroll_y
 operator|=
@@ -1566,7 +1566,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|GDK_Left
+name|GDK_KEY_Left
 case|:
 name|scroll_x
 operator|=
@@ -1575,7 +1575,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|GDK_Right
+name|GDK_KEY_Right
 case|:
 name|scroll_x
 operator|=
@@ -1583,7 +1583,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|GDK_Down
+name|GDK_KEY_Down
 case|:
 name|scroll_y
 operator|=

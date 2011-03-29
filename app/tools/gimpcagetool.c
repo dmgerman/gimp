@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e8ca280103
+DECL|enum|__anon2b70ef3b0103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -1560,7 +1560,7 @@ name|keyval
 condition|)
 block|{
 case|case
-name|GDK_BackSpace
+name|GDK_KEY_BackSpace
 case|:
 if|if
 condition|(
@@ -1584,13 +1584,13 @@ return|return
 name|TRUE
 return|;
 case|case
-name|GDK_Return
+name|GDK_KEY_Return
 case|:
 case|case
-name|GDK_KP_Enter
+name|GDK_KEY_KP_Enter
 case|:
 case|case
-name|GDK_ISO_Enter
+name|GDK_KEY_ISO_Enter
 case|:
 if|if
 condition|(
@@ -1657,7 +1657,7 @@ return|return
 name|TRUE
 return|;
 case|case
-name|GDK_Escape
+name|GDK_KEY_Escape
 case|:
 name|gimp_cage_tool_halt
 argument_list|(

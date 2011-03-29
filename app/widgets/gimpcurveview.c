@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294271b70103
+DECL|enum|__anon2bddd1d20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon294271b70203
+DECL|enum|__anon2bddd1d20203
 block|{
 DECL|enumerator|CUT_CLIPBOARD
 name|CUT_CLIPBOARD
@@ -131,7 +131,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294271b70308
+DECL|struct|__anon2bddd1d20308
 block|{
 DECL|member|curve
 name|GimpCurve
@@ -760,7 +760,7 @@ name|gtk_binding_entry_add_signal
 argument_list|(
 name|binding_set
 argument_list|,
-name|GDK_x
+name|GDK_KEY_x
 argument_list|,
 name|GDK_CONTROL_MASK
 argument_list|,
@@ -773,7 +773,7 @@ name|gtk_binding_entry_add_signal
 argument_list|(
 name|binding_set
 argument_list|,
-name|GDK_c
+name|GDK_KEY_c
 argument_list|,
 name|GDK_CONTROL_MASK
 argument_list|,
@@ -786,7 +786,7 @@ name|gtk_binding_entry_add_signal
 argument_list|(
 name|binding_set
 argument_list|,
-name|GDK_v
+name|GDK_KEY_v
 argument_list|,
 name|GDK_CONTROL_MASK
 argument_list|,

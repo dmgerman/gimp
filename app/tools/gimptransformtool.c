@@ -1857,13 +1857,13 @@ name|keyval
 condition|)
 block|{
 case|case
-name|GDK_Return
+name|GDK_KEY_Return
 case|:
 case|case
-name|GDK_KP_Enter
+name|GDK_KEY_KP_Enter
 case|:
 case|case
-name|GDK_ISO_Enter
+name|GDK_KEY_ISO_Enter
 case|:
 name|gimp_transform_tool_response
 argument_list|(
@@ -1878,7 +1878,7 @@ return|return
 name|TRUE
 return|;
 case|case
-name|GDK_BackSpace
+name|GDK_KEY_BackSpace
 case|:
 name|gimp_transform_tool_response
 argument_list|(
@@ -1893,7 +1893,7 @@ return|return
 name|TRUE
 return|;
 case|case
-name|GDK_Escape
+name|GDK_KEY_Escape
 case|:
 name|gimp_transform_tool_response
 argument_list|(

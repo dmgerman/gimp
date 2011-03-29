@@ -2083,7 +2083,7 @@ name|keyval
 condition|)
 block|{
 case|case
-name|GDK_Escape
+name|GDK_KEY_Escape
 case|:
 name|gimp_measure_tool_halt
 argument_list|(

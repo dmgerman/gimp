@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gdk/gdkkeysyms.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -101,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f6295f0103
+DECL|enum|__anon2b1bb8f80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

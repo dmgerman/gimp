@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29590b140103
+DECL|enum|__anon27e9c7810103
 block|{
 DECL|enumerator|COLUMN_SCALE
 name|COLUMN_SCALE
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29590b140203
+DECL|enum|__anon27e9c7810203
 block|{
 DECL|enumerator|ENTRY_ACTIVATED
 name|ENTRY_ACTIVATED
@@ -1264,7 +1264,7 @@ name|event
 operator|->
 name|keyval
 operator|==
-name|GDK_Escape
+name|GDK_KEY_Escape
 condition|)
 block|{
 name|gimp_scale_combo_box_set_scale
@@ -1298,19 +1298,19 @@ name|event
 operator|->
 name|keyval
 operator|==
-name|GDK_Tab
+name|GDK_KEY_Tab
 operator|||
 name|event
 operator|->
 name|keyval
 operator|==
-name|GDK_KP_Tab
+name|GDK_KEY_KP_Tab
 operator|||
 name|event
 operator|->
 name|keyval
 operator|==
-name|GDK_ISO_Left_Tab
+name|GDK_KEY_ISO_Left_Tab
 condition|)
 block|{
 name|gimp_scale_combo_box_entry_activate

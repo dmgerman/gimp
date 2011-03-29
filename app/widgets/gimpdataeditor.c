@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad51d950103
+DECL|enum|__anon27dc22c90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2286,7 +2286,7 @@ name|kevent
 operator|->
 name|keyval
 operator|==
-name|GDK_Escape
+name|GDK_KEY_Escape
 condition|)
 block|{
 name|gtk_entry_set_text

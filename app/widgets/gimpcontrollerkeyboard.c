@@ -182,7 +182,7 @@ index|[]
 init|=
 block|{
 block|{
-name|GDK_Up
+name|GDK_KEY_Up
 block|,
 name|GDK_MOD1_MASK
 operator||
@@ -199,7 +199,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Up
+name|GDK_KEY_Up
 block|,
 name|GDK_MOD1_MASK
 operator||
@@ -214,7 +214,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Up
+name|GDK_KEY_Up
 block|,
 name|GDK_MOD1_MASK
 operator||
@@ -229,7 +229,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Up
+name|GDK_KEY_Up
 block|,
 name|GDK_CONTROL_MASK
 operator||
@@ -244,7 +244,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Up
+name|GDK_KEY_Up
 block|,
 name|GDK_MOD1_MASK
 block|,
@@ -257,7 +257,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Up
+name|GDK_KEY_Up
 block|,
 name|GDK_CONTROL_MASK
 block|,
@@ -270,7 +270,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Up
+name|GDK_KEY_Up
 block|,
 name|GDK_SHIFT_MASK
 block|,
@@ -283,7 +283,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Up
+name|GDK_KEY_Up
 block|,
 literal|0
 block|,
@@ -296,7 +296,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Down
+name|GDK_KEY_Down
 block|,
 name|GDK_MOD1_MASK
 operator||
@@ -313,7 +313,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Down
+name|GDK_KEY_Down
 block|,
 name|GDK_MOD1_MASK
 operator||
@@ -328,7 +328,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Down
+name|GDK_KEY_Down
 block|,
 name|GDK_MOD1_MASK
 operator||
@@ -343,7 +343,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Down
+name|GDK_KEY_Down
 block|,
 name|GDK_CONTROL_MASK
 operator||
@@ -358,7 +358,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Down
+name|GDK_KEY_Down
 block|,
 name|GDK_MOD1_MASK
 block|,
@@ -371,7 +371,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Down
+name|GDK_KEY_Down
 block|,
 name|GDK_CONTROL_MASK
 block|,
@@ -384,7 +384,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Down
+name|GDK_KEY_Down
 block|,
 name|GDK_SHIFT_MASK
 block|,
@@ -397,7 +397,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Down
+name|GDK_KEY_Down
 block|,
 literal|0
 block|,
@@ -410,7 +410,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Left
+name|GDK_KEY_Left
 block|,
 name|GDK_MOD1_MASK
 operator||
@@ -427,7 +427,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Left
+name|GDK_KEY_Left
 block|,
 name|GDK_MOD1_MASK
 operator||
@@ -442,7 +442,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Left
+name|GDK_KEY_Left
 block|,
 name|GDK_MOD1_MASK
 operator||
@@ -457,7 +457,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Left
+name|GDK_KEY_Left
 block|,
 name|GDK_CONTROL_MASK
 operator||
@@ -472,7 +472,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Left
+name|GDK_KEY_Left
 block|,
 name|GDK_MOD1_MASK
 block|,
@@ -485,7 +485,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Left
+name|GDK_KEY_Left
 block|,
 name|GDK_CONTROL_MASK
 block|,
@@ -498,7 +498,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Left
+name|GDK_KEY_Left
 block|,
 name|GDK_SHIFT_MASK
 block|,
@@ -511,7 +511,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Left
+name|GDK_KEY_Left
 block|,
 literal|0
 block|,
@@ -524,7 +524,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Right
+name|GDK_KEY_Right
 block|,
 name|GDK_MOD1_MASK
 operator||
@@ -541,7 +541,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Right
+name|GDK_KEY_Right
 block|,
 name|GDK_MOD1_MASK
 operator||
@@ -556,7 +556,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Right
+name|GDK_KEY_Right
 block|,
 name|GDK_MOD1_MASK
 operator||
@@ -571,7 +571,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Right
+name|GDK_KEY_Right
 block|,
 name|GDK_CONTROL_MASK
 operator||
@@ -586,7 +586,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Right
+name|GDK_KEY_Right
 block|,
 name|GDK_MOD1_MASK
 block|,
@@ -599,7 +599,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Right
+name|GDK_KEY_Right
 block|,
 name|GDK_CONTROL_MASK
 block|,
@@ -612,7 +612,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Right
+name|GDK_KEY_Right
 block|,
 name|GDK_SHIFT_MASK
 block|,
@@ -625,7 +625,7 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GDK_Right
+name|GDK_KEY_Right
 block|,
 literal|0
 block|,

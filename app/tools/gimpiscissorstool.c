@@ -4478,13 +4478,13 @@ name|keyval
 condition|)
 block|{
 case|case
-name|GDK_Return
+name|GDK_KEY_Return
 case|:
 case|case
-name|GDK_KP_Enter
+name|GDK_KEY_KP_Enter
 case|:
 case|case
-name|GDK_ISO_Enter
+name|GDK_KEY_ISO_Enter
 case|:
 if|if
 condition|(
@@ -4512,7 +4512,7 @@ return|return
 name|FALSE
 return|;
 case|case
-name|GDK_Escape
+name|GDK_KEY_Escape
 case|:
 name|gimp_tool_control
 argument_list|(

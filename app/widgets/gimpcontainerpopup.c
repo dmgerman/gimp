@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be5ac5c0103
+DECL|enum|__anon2c8b221d0103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -452,7 +452,7 @@ name|gtk_binding_entry_add_signal
 argument_list|(
 name|binding_set
 argument_list|,
-name|GDK_Escape
+name|GDK_KEY_Escape
 argument_list|,
 literal|0
 argument_list|,
@@ -465,7 +465,7 @@ name|gtk_binding_entry_add_signal
 argument_list|(
 name|binding_set
 argument_list|,
-name|GDK_Return
+name|GDK_KEY_Return
 argument_list|,
 literal|0
 argument_list|,
@@ -478,7 +478,7 @@ name|gtk_binding_entry_add_signal
 argument_list|(
 name|binding_set
 argument_list|,
-name|GDK_KP_Enter
+name|GDK_KEY_KP_Enter
 argument_list|,
 literal|0
 argument_list|,
@@ -491,7 +491,7 @@ name|gtk_binding_entry_add_signal
 argument_list|(
 name|binding_set
 argument_list|,
-name|GDK_ISO_Enter
+name|GDK_KEY_ISO_Enter
 argument_list|,
 literal|0
 argument_list|,
@@ -504,7 +504,7 @@ name|gtk_binding_entry_add_signal
 argument_list|(
 name|binding_set
 argument_list|,
-name|GDK_space
+name|GDK_KEY_space
 argument_list|,
 literal|0
 argument_list|,
@@ -517,7 +517,7 @@ name|gtk_binding_entry_add_signal
 argument_list|(
 name|binding_set
 argument_list|,
-name|GDK_KP_Space
+name|GDK_KEY_KP_Space
 argument_list|,
 literal|0
 argument_list|,

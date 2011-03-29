@@ -111,7 +111,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2790d4390103
+DECL|enum|__anon29e064860103
 block|{
 DECL|enumerator|ANGLE
 name|ANGLE
@@ -541,7 +541,7 @@ name|keyval
 condition|)
 block|{
 case|case
-name|GDK_Up
+name|GDK_KEY_Up
 case|:
 name|gtk_spin_button_spin
 argument_list|(
@@ -556,7 +556,7 @@ return|return
 name|TRUE
 return|;
 case|case
-name|GDK_Down
+name|GDK_KEY_Down
 case|:
 name|gtk_spin_button_spin
 argument_list|(
@@ -571,7 +571,7 @@ return|return
 name|TRUE
 return|;
 case|case
-name|GDK_Left
+name|GDK_KEY_Left
 case|:
 name|gtk_spin_button_spin
 argument_list|(
@@ -586,7 +586,7 @@ return|return
 name|TRUE
 return|;
 case|case
-name|GDK_Right
+name|GDK_KEY_Right
 case|:
 name|gtk_spin_button_spin
 argument_list|(

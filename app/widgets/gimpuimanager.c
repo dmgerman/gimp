@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4675ad0103
+DECL|enum|__anon28f53ee70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4675ad0203
+DECL|enum|__anon28f53ee70203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2172,7 +2172,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4675ad0308
+DECL|struct|__anon28f53ee70308
 block|{
 DECL|member|x
 name|guint
@@ -3956,7 +3956,7 @@ name|kevent
 operator|->
 name|keyval
 operator|!=
-name|GDK_F1
+name|GDK_KEY_F1
 condition|)
 block|{
 if|if

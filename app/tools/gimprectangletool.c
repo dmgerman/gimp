@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a47354b0103
+DECL|enum|__anon29b305910103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -245,7 +245,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a47354b0203
+DECL|enum|__anon29b305910203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -288,7 +288,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a47354b0303
+DECL|enum|__anon29b305910303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -4832,7 +4832,7 @@ name|keyval
 condition|)
 block|{
 case|case
-name|GDK_Up
+name|GDK_KEY_Up
 case|:
 name|dy
 operator|=
@@ -4841,7 +4841,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|GDK_Left
+name|GDK_KEY_Left
 case|:
 name|dx
 operator|=
@@ -4850,7 +4850,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|GDK_Right
+name|GDK_KEY_Right
 case|:
 name|dx
 operator|=
@@ -4858,7 +4858,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|GDK_Down
+name|GDK_KEY_Down
 case|:
 name|dy
 operator|=
@@ -4866,13 +4866,13 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|GDK_Return
+name|GDK_KEY_Return
 case|:
 case|case
-name|GDK_KP_Enter
+name|GDK_KEY_KP_Enter
 case|:
 case|case
-name|GDK_ISO_Enter
+name|GDK_KEY_ISO_Enter
 case|:
 if|if
 condition|(
@@ -4890,7 +4890,7 @@ return|return
 name|TRUE
 return|;
 case|case
-name|GDK_Escape
+name|GDK_KEY_Escape
 case|:
 name|gimp_rectangle_tool_cancel
 argument_list|(
