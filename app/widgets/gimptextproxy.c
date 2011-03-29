@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpmarshal.h"
 end_include
 
@@ -35,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dcafc60103
+DECL|enum|__anon295987770103
 block|{
 DECL|enumerator|CHANGE_SIZE
 name|CHANGE_SIZE
