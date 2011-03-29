@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c4c2d50103
+DECL|enum|__anon2beee42a0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -228,10 +228,6 @@ name|handles
 index|[
 literal|3
 index|]
-decl_stmt|;
-DECL|member|active_handle
-name|gint
-name|active_handle
 decl_stmt|;
 DECL|member|dialog
 name|GtkWidget
