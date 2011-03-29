@@ -36,6 +36,25 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpLayer
+modifier|*
+name|gimp_image_pick_layer_by_bounds
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpTextLayer
 modifier|*
 name|gimp_image_pick_text_layer
