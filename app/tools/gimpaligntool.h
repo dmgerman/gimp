@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2901eff80103
+DECL|enum|__anon298dc8f80103
 block|{
 DECL|enumerator|ALIGN_TOOL_IDLE
 name|ALIGN_TOOL_IDLE
@@ -124,11 +124,14 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_ALIGN_TOOL, GimpAlignToolClas
 end_define
 
 begin_define
-DECL|macro|ALIGN_TOOL_NUM_BUTTONS
+DECL|macro|GIMP_ALIGN_TOOL_GET_OPTIONS (t)
 define|#
 directive|define
-name|ALIGN_TOOL_NUM_BUTTONS
-value|12
+name|GIMP_ALIGN_TOOL_GET_OPTIONS
+parameter_list|(
+name|t
+parameter_list|)
+value|(GIMP_ALIGN_OPTIONS (gimp_tool_get_options (GIMP_TOOL (t))))
 end_define
 
 begin_typedef
@@ -158,19 +161,6 @@ DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
-DECL|member|controls
-name|GtkWidget
-modifier|*
-name|controls
-decl_stmt|;
-DECL|member|button
-name|GtkWidget
-modifier|*
-name|button
-index|[
-name|ALIGN_TOOL_NUM_BUTTONS
-index|]
-decl_stmt|;
 DECL|member|function
 name|GimpAlignToolFunction
 name|function
@@ -183,28 +173,6 @@ decl_stmt|;
 DECL|member|align_type
 name|GimpAlignmentType
 name|align_type
-decl_stmt|;
-DECL|member|align_reference_type
-name|GimpAlignReferenceType
-name|align_reference_type
-decl_stmt|;
-DECL|member|horz_offset
-name|gdouble
-name|horz_offset
-decl_stmt|;
-DECL|member|vert_offset
-name|gdouble
-name|vert_offset
-decl_stmt|;
-DECL|member|horz_offset_adjustment
-name|GtkAdjustment
-modifier|*
-name|horz_offset_adjustment
-decl_stmt|;
-DECL|member|vert_offset_adjustment
-name|GtkAdjustment
-modifier|*
-name|vert_offset_adjustment
 decl_stmt|;
 DECL|member|x0
 DECL|member|y0
