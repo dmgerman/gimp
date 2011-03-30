@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2a1a6f0108
+DECL|struct|__anon2a9d01530108
 block|{
 DECL|member|width
 name|gint
@@ -1696,16 +1696,6 @@ argument_list|(
 name|draw_tool
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|gimp_tool_control_is_active
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|)
-condition|)
 name|gimp_tool_control_activate
 argument_list|(
 name|tool
