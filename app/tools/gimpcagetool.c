@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b70ef3b0103
+DECL|enum|__anon2afbe3a30103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -866,24 +866,6 @@ name|image_map
 operator|=
 name|NULL
 expr_stmt|;
-name|gimp_tool_control_set_wants_click
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|gimp_tool_control_set_tool_cursor
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|,
-name|GIMP_TOOL_CURSOR_PERSPECTIVE
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1036,13 +1018,6 @@ decl_stmt|;
 name|gimp_cage_tool_halt
 argument_list|(
 name|ct
-argument_list|)
-expr_stmt|;
-name|gimp_tool_control_activate
-argument_list|(
-name|tool
-operator|->
-name|control
 argument_list|)
 expr_stmt|;
 name|tool
@@ -1986,6 +1961,13 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_activate
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|ct
@@ -2495,6 +2477,13 @@ name|GIMP_DRAW_TOOL
 argument_list|(
 name|ct
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_tool_control_halt
+argument_list|(
+name|tool
+operator|->
+name|control
 argument_list|)
 expr_stmt|;
 if|if
