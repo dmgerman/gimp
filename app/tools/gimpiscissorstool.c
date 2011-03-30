@@ -1777,16 +1777,6 @@ expr_stmt|;
 comment|/*  If the tool was being used in another image...reset it  */
 if|if
 condition|(
-name|gimp_tool_control_is_active
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|)
-condition|)
-block|{
-if|if
-condition|(
 name|display
 operator|!=
 name|tool
@@ -1807,6 +1797,7 @@ argument_list|(
 name|iscissors
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_tool_control_activate
 argument_list|(
 name|tool
@@ -1814,18 +1805,6 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-block|}
-block|}
-else|else
-block|{
-name|gimp_tool_control_activate
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|)
-expr_stmt|;
-block|}
 name|tool
 operator|->
 name|display
@@ -2446,6 +2425,13 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
+name|gimp_tool_control_halt
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|)
+expr_stmt|;
 comment|/* Make sure X didn't skip the button release event -- as it's known    * to do    */
 if|if
 condition|(
@@ -4577,13 +4563,6 @@ name|display
 argument_list|)
 decl_stmt|;
 comment|/*  Undraw the curve  */
-name|gimp_tool_control_halt
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|)
-expr_stmt|;
 name|iscissors
 operator|->
 name|draw
