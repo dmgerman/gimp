@@ -995,6 +995,13 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_activate
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|)
+expr_stmt|;
 name|gimp_rectangle_tool_button_press
 argument_list|(
 name|tool
@@ -1065,6 +1072,13 @@ argument_list|,
 name|release_type
 argument_list|,
 name|display
+argument_list|)
+expr_stmt|;
+name|gimp_tool_control_halt
+argument_list|(
+name|tool
+operator|->
+name|control
 argument_list|)
 expr_stmt|;
 block|}

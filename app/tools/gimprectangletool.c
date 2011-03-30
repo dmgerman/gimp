@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfed4a30103
+DECL|enum|__anon28a632370103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -245,7 +245,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bfed4a30203
+DECL|enum|__anon28a632370203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -288,7 +288,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bfed4a30303
+DECL|enum|__anon28a632370303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -3016,13 +3016,6 @@ argument_list|(
 name|draw_tool
 argument_list|)
 expr_stmt|;
-name|gimp_tool_control_activate
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|)
-expr_stmt|;
 name|GIMP_LOG
 argument_list|(
 name|RECTANGLE_TOOL
@@ -3438,13 +3431,6 @@ name|GIMP_DRAW_TOOL
 argument_list|(
 name|tool
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_tool_control_halt
-argument_list|(
-name|tool
-operator|->
-name|control
 argument_list|)
 expr_stmt|;
 name|GIMP_LOG
