@@ -1153,13 +1153,6 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|gimp_tool_control_pause
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|)
-expr_stmt|;
 name|bc_tool
 operator|->
 name|dx
@@ -1228,13 +1221,6 @@ operator|/
 literal|127.0
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_tool_control_resume
-argument_list|(
-name|tool
-operator|->
-name|control
 argument_list|)
 expr_stmt|;
 block|}
