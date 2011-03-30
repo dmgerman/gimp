@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fd7faf0108
+DECL|struct|__anon2b6743ee0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -389,7 +389,7 @@ name|GTK_TYPE_ABOUT_DIALOG
 argument_list|,
 literal|"role"
 argument_list|,
-literal|"about-dialog"
+literal|"gimp-about"
 argument_list|,
 literal|"window-position"
 argument_list|,
