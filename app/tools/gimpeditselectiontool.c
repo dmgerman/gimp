@@ -1942,6 +1942,13 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_halt
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|)
+expr_stmt|;
 comment|/*  Stop and free the selection core  */
 name|gimp_draw_tool_stop
 argument_list|(
