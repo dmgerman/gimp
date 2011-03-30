@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afbe3a30103
+DECL|enum|__anon27e5cfb00103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -2488,9 +2488,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|state
-operator|&
-name|GDK_BUTTON3_MASK
+name|release_type
+operator|==
+name|GIMP_BUTTON_RELEASE_CANCEL
 condition|)
 block|{
 comment|/* Cancelling */
@@ -2598,6 +2598,12 @@ operator|->
 name|config
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|release_type
+operator|==
+name|GIMP_BUTTON_RELEASE_CLICK
+condition|)
 name|g_object_set
 argument_list|(
 name|options
