@@ -60,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e5d3e80108
+DECL|struct|__anon2c6d52750108
 block|{
 DECL|member|url
 name|char
@@ -1466,7 +1466,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Width `%d' is too small. Clamped to 32."
+literal|"Width '%d' is too small. Clamped to 32."
 argument_list|,
 name|webpagevals
 operator|.
@@ -1492,7 +1492,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Width `%d' is too large. Clamped to 8192."
+literal|"Width '%d' is too large. Clamped to 8192."
 argument_list|,
 name|webpagevals
 operator|.
@@ -1594,7 +1594,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Downloading webpage `%s'"
+literal|"Downloading webpage '%s'"
 argument_list|)
 argument_list|,
 name|webpagevals
@@ -1640,7 +1640,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Transferring webpage image for `%s'"
+literal|"Transferring webpage image for '%s'"
 argument_list|)
 argument_list|,
 name|webpagevals
