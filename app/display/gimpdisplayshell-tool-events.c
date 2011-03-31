@@ -2173,10 +2173,10 @@ name|display
 argument_list|)
 expr_stmt|;
 block|}
-name|return_val
-operator|=
+comment|/*  don't update the cursor again on double click  */
+return|return
 name|TRUE
-expr_stmt|;
+return|;
 block|}
 break|break;
 case|case
@@ -2255,10 +2255,10 @@ name|display
 argument_list|)
 expr_stmt|;
 block|}
-name|return_val
-operator|=
+comment|/*  don't update the cursor again on triple click  */
+return|return
 name|TRUE
-expr_stmt|;
+return|;
 block|}
 break|break;
 case|case
