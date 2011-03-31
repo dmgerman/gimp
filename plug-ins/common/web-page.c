@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Webpage plug-in.  * Copyright (C) 2011 Mukund Sivaraman<muks@banu.com>.  * Portions are copyright of the author of the  * file-open-location-dialog.c code.  *  * TODO:  * - Add progress bar  * - Set GIMP as user agent  */
+comment|/* Webpage plug-in.  * Copyright (C) 2011 Mukund Sivaraman<muks@banu.com>.  * Portions are copyright of the author of the  * file-open-location-dialog.c code.  *  * TODO:  * - Add progress bar  * - Add a font scale combo: default, larger, smaller etc.  * - Try adding http:// itself if it was not provided  * - Save/restore URL and width  * - Set GIMP as user agent  */
 end_comment
 
 begin_include
@@ -60,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad168c70108
+DECL|struct|__anon276696220108
 block|{
 DECL|member|url
 name|char
