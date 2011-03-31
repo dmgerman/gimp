@@ -62,13 +62,13 @@ DECL|macro|MAX_URL_LEN
 define|#
 directive|define
 name|MAX_URL_LEN
-value|256
+value|1024
 end_define
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be254180108
+DECL|struct|__anon29920c6f0108
 block|{
 DECL|member|url
 name|char
@@ -96,7 +96,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be254180208
+DECL|struct|__anon29920c6f0208
 block|{
 DECL|member|url
 name|char
