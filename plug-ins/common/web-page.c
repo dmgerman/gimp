@@ -60,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8c33240108
+DECL|struct|__anon2a9c05620108
 block|{
 DECL|member|url
 name|char
@@ -1452,7 +1452,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Downloading webpage '%s'"
+literal|"Downloading webpage `%s'"
 argument_list|)
 argument_list|,
 name|webpagevals
@@ -1498,7 +1498,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Transferring webpage image for '%s'"
+literal|"Transferring webpage image for `%s'"
 argument_list|)
 argument_list|,
 name|webpagevals
