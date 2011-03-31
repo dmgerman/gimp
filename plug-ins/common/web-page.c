@@ -60,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9fe2260108
+DECL|struct|__anon2b8c33240108
 block|{
 DECL|member|url
 name|char
@@ -220,7 +220,7 @@ literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{
-name|GIMP_PDB_INT32
+name|GIMP_PDB_STRING
 block|,
 literal|"url"
 block|,
