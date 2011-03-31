@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Webpage plug-in.  * Copyright (C) 2011 Mukund Sivaraman<muks@banu.com>.  * Portions are copyright of the author of the  * file-open-location-dialog.c code.  *  * TODO:  * - Add progress bar  * - Report failures when loading URLs  * - Add a font scale combo: default, larger, smaller etc.  * - Save/restore URL and width  * - Set GIMP as user agent  */
+comment|/* Webpage plug-in.  * Copyright (C) 2011 Mukund Sivaraman<muks@banu.com>.  * Portions are copyright of the author of the  * file-open-location-dialog.c code.  *  * TODO:  * - Report failures when loading URLs  * - Add a font scale combo: default, larger, smaller etc.  * - Save/restore URL and width  * - Set GIMP as user agent  */
 end_comment
 
 begin_include
@@ -60,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb0ff270108
+DECL|struct|__anon2c0953c00108
 block|{
 DECL|member|url
 name|char
@@ -1099,6 +1099,47 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|notify_progress_cb (WebKitWebView * view,GParamSpec * pspec,gpointer user_data)
+name|notify_progress_cb
+parameter_list|(
+name|WebKitWebView
+modifier|*
+name|view
+parameter_list|,
+name|GParamSpec
+modifier|*
+name|pspec
+parameter_list|,
+name|gpointer
+name|user_data
+parameter_list|)
+block|{
+name|gdouble
+name|progress
+decl_stmt|;
+name|g_object_get
+argument_list|(
+name|view
+argument_list|,
+literal|"progress"
+argument_list|,
+operator|&
+name|progress
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_progress_update
+argument_list|(
+name|progress
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
 DECL|function|load_finished_cb (WebKitWebView * view,WebKitWebFrame * frame,gpointer user_data)
 name|load_finished_cb
 parameter_list|(
@@ -1361,6 +1402,20 @@ name|g_signal_connect
 argument_list|(
 name|view
 argument_list|,
+literal|"notify::progress"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|notify_progress_cb
+argument_list|)
+argument_list|,
+name|window
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|view
+argument_list|,
 literal|"load-finished"
 argument_list|,
 name|G_CALLBACK
@@ -1369,6 +1424,18 @@ name|load_finished_cb
 argument_list|)
 argument_list|,
 name|window
+argument_list|)
+expr_stmt|;
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Downloading webpage '%s'"
+argument_list|)
+argument_list|,
+name|webpagevals
+operator|.
+name|url
 argument_list|)
 expr_stmt|;
 name|webkit_web_view_open
@@ -1405,12 +1472,16 @@ decl_stmt|;
 name|gint32
 name|layer
 decl_stmt|;
-name|gimp_progress_init
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Preparing webpage"
+literal|"Transferring webpage image for '%s'"
 argument_list|)
+argument_list|,
+name|webpagevals
+operator|.
+name|url
 argument_list|)
 expr_stmt|;
 name|width
