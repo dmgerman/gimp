@@ -424,7 +424,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0b38ce0108
+DECL|struct|__anon2b809bb40108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -542,6 +542,21 @@ init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+specifier|static
+name|void
+name|gfig_destroy
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -1330,7 +1345,7 @@ literal|"destroy"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gtk_main_quit
+name|gfig_destroy
 argument_list|)
 argument_list|,
 name|NULL
@@ -2697,6 +2712,35 @@ comment|/* FIXME */
 return|return
 name|TRUE
 return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gfig_destroy (GtkWidget * widget,gpointer data)
+name|gfig_destroy
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|gfig_response
+argument_list|(
+name|widget
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|gtk_main_quit
+argument_list|()
+expr_stmt|;
 block|}
 end_function
 
