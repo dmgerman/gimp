@@ -60,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c09118f0108
+DECL|struct|__anon2bb0ff270108
 block|{
 DECL|member|url
 name|char
