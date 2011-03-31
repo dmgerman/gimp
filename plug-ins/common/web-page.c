@@ -60,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279445f60108
+DECL|struct|__anon27e5d3e80108
 block|{
 DECL|member|url
 name|char
@@ -1713,11 +1713,6 @@ literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_enable
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
-name|gimp_image_clean_all
 argument_list|(
 name|image
 argument_list|)
