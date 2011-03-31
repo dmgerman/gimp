@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0bd2a60108
+DECL|struct|__anon2be254180108
 block|{
 DECL|member|url
 name|char
@@ -96,7 +96,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0bd2a60208
+DECL|struct|__anon2be254180208
 block|{
 DECL|member|url
 name|char
