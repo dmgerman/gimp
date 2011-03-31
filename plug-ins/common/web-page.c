@@ -60,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fb864e0108
+DECL|struct|__anon28eaba0e0108
 block|{
 DECL|member|url
 name|char
@@ -573,8 +573,13 @@ name|GtkWidget
 modifier|*
 name|entry
 decl_stmt|;
-name|gboolean
+name|gint
 name|status
+decl_stmt|;
+name|gboolean
+name|ret
+init|=
+name|FALSE
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
@@ -932,6 +937,10 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|ret
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 name|gtk_widget_destroy
 argument_list|(
@@ -939,7 +948,7 @@ name|dialog
 argument_list|)
 expr_stmt|;
 return|return
-name|status
+name|ret
 return|;
 block|}
 end_function
