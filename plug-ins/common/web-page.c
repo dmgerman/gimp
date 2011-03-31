@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Webpage plug-in.  * Copyright (C) 2011 Mukund Sivaraman<muks@banu.com>.  * Portions are copyright of the author of the  * file-open-location-dialog.c code.  *  * TODO:  * - Add progress bar  * - Add a font scale combo: default, larger, smaller etc.  * - Try adding http:// itself if it was not provided  * - Save/restore URL and width  * - Set GIMP as user agent  */
+comment|/* Webpage plug-in.  * Copyright (C) 2011 Mukund Sivaraman<muks@banu.com>.  * Portions are copyright of the author of the  * file-open-location-dialog.c code.  *  * TODO:  * - Add progress bar  * - Add a font scale combo: default, larger, smaller etc.  * - Save/restore URL and width  * - Set GIMP as user agent  */
 end_comment
 
 begin_include
@@ -60,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276696220108
+DECL|struct|__anon27b5231f0108
 block|{
 DECL|member|url
 name|char
@@ -1162,6 +1162,10 @@ name|GtkWidget
 modifier|*
 name|view
 decl_stmt|;
+name|gchar
+modifier|*
+name|scheme
+decl_stmt|;
 if|if
 condition|(
 operator|(
@@ -1193,6 +1197,58 @@ operator|-
 literal|1
 return|;
 block|}
+name|scheme
+operator|=
+name|g_uri_parse_scheme
+argument_list|(
+name|webpagevals
+operator|.
+name|url
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|scheme
+condition|)
+block|{
+name|char
+modifier|*
+name|url
+decl_stmt|;
+comment|/* If we were not given a well-formed URL, make one. */
+name|url
+operator|=
+name|g_strconcat
+argument_list|(
+literal|"http://"
+argument_list|,
+name|webpagevals
+operator|.
+name|url
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|webpagevals
+operator|.
+name|url
+argument_list|)
+expr_stmt|;
+name|webpagevals
+operator|.
+name|url
+operator|=
+name|url
+expr_stmt|;
+block|}
+name|g_free
+argument_list|(
+name|scheme
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|webpagevals
