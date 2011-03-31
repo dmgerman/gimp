@@ -123,6 +123,10 @@ DECL|member|parent_instance
 name|GimpBrushTool
 name|parent_instance
 decl_stmt|;
+DECL|member|toggled
+name|gboolean
+name|toggled
+decl_stmt|;
 block|}
 struct|;
 end_struct
