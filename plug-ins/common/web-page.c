@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Webpage plug-in.  * Copyright (C) 2011 Mukund Sivaraman<muks@banu.com>.  * Portions are copyright of the author of the  * file-open-location-dialog.c code.  *  * TODO:  * - Add a font scale combo: default, larger, smaller etc.  * - Set GIMP as user agent  */
+comment|/* Webpage plug-in.  * Copyright (C) 2011 Mukund Sivaraman<muks@banu.com>.  * Portions are copyright of the author of the  * file-open-location-dialog.c code.  *  * TODO:  * - Add a font scale combo: default, larger, smaller etc.  */
 end_comment
 
 begin_include
@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a5c3850108
+DECL|struct|__anon2acff7f80108
 block|{
 DECL|member|url
 name|char
@@ -96,7 +96,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a5c3850208
+DECL|struct|__anon2acff7f80208
 block|{
 DECL|member|url
 name|char
@@ -1451,6 +1451,18 @@ name|GtkWidget
 modifier|*
 name|view
 decl_stmt|;
+name|WebKitWebSettings
+modifier|*
+name|settings
+decl_stmt|;
+name|char
+modifier|*
+name|ua_old
+decl_stmt|;
+name|char
+modifier|*
+name|ua
+decl_stmt|;
 if|if
 condition|(
 name|webpixbuf
@@ -1665,6 +1677,61 @@ name|window
 argument_list|)
 argument_list|,
 name|view
+argument_list|)
+expr_stmt|;
+comment|/* Append "GIMP/<GIMP_VERSION>" to the user agent string */
+name|settings
+operator|=
+name|webkit_web_view_get_settings
+argument_list|(
+name|WEBKIT_WEB_VIEW
+argument_list|(
+name|view
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_get
+argument_list|(
+name|settings
+argument_list|,
+literal|"user-agent"
+argument_list|,
+operator|&
+name|ua_old
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|ua
+operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"%s GIMP/%s"
+argument_list|,
+name|ua_old
+argument_list|,
+name|GIMP_VERSION
+argument_list|)
+expr_stmt|;
+name|g_object_set
+argument_list|(
+name|settings
+argument_list|,
+literal|"user-agent"
+argument_list|,
+name|ua
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|ua_old
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|ua
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
