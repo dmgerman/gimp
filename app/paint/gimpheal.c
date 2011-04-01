@@ -2283,7 +2283,7 @@ argument_list|,
 name|paint_area_height
 argument_list|)
 expr_stmt|;
-comment|/* check that srcPR, tempPR, destPR, and mask_buf are the same size */
+comment|/* check that srcPR, tempPR and destPR are the same size and tempPR is inside of layer */
 if|if
 condition|(
 operator|(
@@ -2327,23 +2327,19 @@ name|h
 operator|)
 operator|||
 operator|(
-name|srcPR
-operator|->
-name|h
-operator|!=
-name|mask_buf
-operator|->
-name|height
+name|tempPR
+operator|.
+name|w
+operator|<=
+literal|0
 operator|)
 operator|||
 operator|(
-name|srcPR
-operator|->
-name|w
-operator|!=
-name|mask_buf
-operator|->
-name|width
+name|tempPR
+operator|.
+name|h
+operator|<=
+literal|0
 operator|)
 condition|)
 block|{
