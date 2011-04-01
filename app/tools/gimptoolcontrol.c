@@ -383,7 +383,7 @@ argument_list|)
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|GIMP_UNSTABLE
+name|STRICT_TOOL_CHECKS
 name|g_return_if_fail
 argument_list|(
 name|control
@@ -424,7 +424,7 @@ argument_list|)
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|GIMP_UNSTABLE
+name|STRICT_TOOL_CHECKS
 name|g_return_if_fail
 argument_list|(
 name|control
