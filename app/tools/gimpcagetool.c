@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289aaad60103
+DECL|enum|__anon27deaa250103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -1648,6 +1648,30 @@ name|GDK_KEY_ISO_Enter
 case|:
 if|if
 condition|(
+operator|!
+name|ct
+operator|->
+name|cage_complete
+condition|)
+block|{
+name|g_object_set
+argument_list|(
+name|gimp_tool_get_options
+argument_list|(
+name|tool
+argument_list|)
+argument_list|,
+literal|"cage-mode"
+argument_list|,
+name|GIMP_CAGE_MODE_DEFORM
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
 name|ct
 operator|->
 name|tool_state
@@ -1701,8 +1725,17 @@ name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control
+argument_list|(
+name|tool
+argument_list|,
+name|GIMP_TOOL_ACTION_HALT
+argument_list|,
+name|display
+argument_list|)
+expr_stmt|;
 block|}
-comment|/* don't break */
+break|break;
 case|case
 name|GDK_KEY_Escape
 case|:
@@ -3116,7 +3149,7 @@ argument_list|,
 name|stroke_group
 argument_list|)
 expr_stmt|;
-comment|/* If needed, draw ligne to the cursor. */
+comment|/* If needed, draw line to the cursor. */
 if|if
 condition|(
 operator|!
