@@ -178,7 +178,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bba1e350108
+DECL|struct|__anon2c24445c0108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -5450,6 +5450,13 @@ operator|!=
 operator|-
 literal|1
 condition|)
+block|{
+name|GimpCanvasItem
+modifier|*
+name|item
+decl_stmt|;
+name|item
+operator|=
 name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
@@ -5471,6 +5478,20 @@ argument_list|,
 name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|dist
+operator|<
+name|POINT_GRAB_THRESHOLD_SQ
+condition|)
+name|gimp_canvas_item_set_highlight
+argument_list|(
+name|item
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 if|if
