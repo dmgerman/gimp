@@ -569,6 +569,41 @@ name|drawable_rotate_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;
+DECL|macro|SET_ALWAYS_SHOW_IMAGE (action,show)
+define|#
+directive|define
+name|SET_ALWAYS_SHOW_IMAGE
+parameter_list|(
+name|action
+parameter_list|,
+name|show
+parameter_list|)
+define|\
+value|gimp_action_group_set_action_always_show_image (group, action, show)
+name|SET_ALWAYS_SHOW_IMAGE
+argument_list|(
+literal|"drawable-rotate-90"
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|SET_ALWAYS_SHOW_IMAGE
+argument_list|(
+literal|"drawable-rotate-180"
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|SET_ALWAYS_SHOW_IMAGE
+argument_list|(
+literal|"drawable-rotate-270"
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+undef|#
+directive|undef
+name|SET_ALWAYS_SHOW_IMAGE
 block|}
 end_function
 
