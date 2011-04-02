@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b55ccee0103
+DECL|enum|__anon2877bfaf0103
 block|{
 DECL|enumerator|NO_ACTION
 name|NO_ACTION
@@ -49,52 +49,13 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/*  The possible drawing states...  */
-end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2b55ccee0203
-block|{
-DECL|enumerator|DRAW_NOTHING
-name|DRAW_NOTHING
-init|=
-literal|0x0
-block|,
-DECL|enumerator|DRAW_CURRENT_SEED
-name|DRAW_CURRENT_SEED
-init|=
-literal|0x1
-block|,
-DECL|enumerator|DRAW_CURVE
-name|DRAW_CURVE
-init|=
-literal|0x2
-block|,
-DECL|enumerator|DRAW_ACTIVE_CURVE
-name|DRAW_ACTIVE_CURVE
-init|=
-literal|0x4
-block|,
-DECL|enumerator|DRAW_LIVEWIRE
-name|DRAW_LIVEWIRE
-init|=
-literal|0x8
-DECL|typedef|IscissorsDraw
-block|}
-name|IscissorsDraw
-typedef|;
-end_typedef
-
-begin_comment
 comment|/*  For oper_update& cursor_update  */
 end_comment
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b55ccee0303
+DECL|enum|__anon2877bfaf0203
 block|{
 DECL|enumerator|ISCISSORS_OP_NONE
 name|ISCISSORS_OP_NONE
@@ -302,11 +263,6 @@ name|IscissorsState
 name|state
 decl_stmt|;
 comment|/*  state of iscissors                    */
-DECL|member|draw
-name|IscissorsDraw
-name|draw
-decl_stmt|;
-comment|/*  items to draw on a draw request       */
 comment|/* XXX might be useful */
 DECL|member|mask
 name|GimpChannel
