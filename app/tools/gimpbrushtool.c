@@ -618,7 +618,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+name|g_signal_connect_object
 argument_list|(
 name|paint_tool
 operator|->
@@ -632,6 +632,8 @@ name|gimp_brush_tool_set_brush
 argument_list|)
 argument_list|,
 name|brush_tool
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}

@@ -462,7 +462,6 @@ operator|&
 name|color
 argument_list|)
 return|;
-else|else
 return|return
 name|NULL
 return|;

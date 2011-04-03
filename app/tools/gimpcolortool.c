@@ -199,7 +199,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a533dca0103
+DECL|enum|__anon2b8cb4b90103
 block|{
 DECL|enumerator|PICKED
 name|PICKED

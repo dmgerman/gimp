@@ -632,12 +632,6 @@ argument_list|(
 name|align_tool
 argument_list|)
 decl_stmt|;
-name|align_tool
-operator|->
-name|function
-operator|=
-name|ALIGN_TOOL_IDLE
-expr_stmt|;
 name|gimp_tool_control_set_snap_to
 argument_list|(
 name|tool
@@ -664,6 +658,12 @@ name|control
 argument_list|,
 name|GIMP_TOOL_CURSOR_MOVE
 argument_list|)
+expr_stmt|;
+name|align_tool
+operator|->
+name|function
+operator|=
+name|ALIGN_TOOL_IDLE
 expr_stmt|;
 block|}
 end_function
