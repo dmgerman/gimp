@@ -133,7 +133,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon279504690103
+DECL|enum|__anon2c30905d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -658,26 +658,6 @@ name|preset
 operator|->
 name|gimp
 argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/*  initialize the tool options with sane default values, so that if    *  deserializing wants to set non-existant brushe, pattern etc.,    *  the previously set default object will be used instead.    */
-name|gimp_context_copy_properties
-argument_list|(
-name|gimp_get_user_context
-argument_list|(
-name|preset
-operator|->
-name|gimp
-argument_list|)
-argument_list|,
-name|GIMP_CONTEXT
-argument_list|(
-name|preset
-operator|->
-name|tool_options
-argument_list|)
-argument_list|,
-name|GIMP_CONTEXT_ALL_PROPS_MASK
 argument_list|)
 expr_stmt|;
 block|}
