@@ -171,10 +171,10 @@ name|GimpCanvasItem
 modifier|*
 name|sample_point
 parameter_list|,
-name|gdouble
+name|gint
 name|x
 parameter_list|,
-name|gdouble
+name|gint
 name|y
 parameter_list|)
 function_decl|;
