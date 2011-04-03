@@ -199,7 +199,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8cb4b90103
+DECL|enum|__anon27b6d5ae0103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -442,6 +442,7 @@ parameter_list|,
 name|GimpImageType
 name|sample_type
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -2387,7 +2388,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_tool_real_picked (GimpColorTool * color_tool,GimpColorPickState pick_state,GimpImageType sample_type,GimpRGB * color,gint color_index)
+DECL|function|gimp_color_tool_real_picked (GimpColorTool * color_tool,GimpColorPickState pick_state,GimpImageType sample_type,const GimpRGB * color,gint color_index)
 name|gimp_color_tool_real_picked
 parameter_list|(
 name|GimpColorTool
@@ -2400,6 +2401,7 @@ parameter_list|,
 name|GimpImageType
 name|sample_type
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color

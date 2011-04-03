@@ -214,6 +214,7 @@ parameter_list|,
 name|GimpImageType
 name|sample_type
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
