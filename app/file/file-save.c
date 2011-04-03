@@ -594,6 +594,14 @@ argument_list|,
 name|uri
 argument_list|)
 expr_stmt|;
+comment|/* An image can not be considered both exported and imported            * at the same time, so stop consider it as imported now            * that we consider it exported.            */
+name|gimp_image_set_imported_uri
+argument_list|(
+name|image
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_image_export_clean_all
 argument_list|(
 name|image
