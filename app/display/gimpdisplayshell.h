@@ -714,10 +714,6 @@ DECL|member|scroll_info
 name|gpointer
 name|scroll_info
 decl_stmt|;
-DECL|member|button_press_before_focus
-name|gboolean
-name|button_press_before_focus
-decl_stmt|;
 DECL|member|mask
 name|GimpDrawable
 modifier|*

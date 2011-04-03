@@ -1493,13 +1493,13 @@ argument_list|,
 name|G_STRFUNC
 argument_list|)
 expr_stmt|;
-comment|/*  press modifier keys when the canvas gets the focus              *              *  in "click to focus" mode, we did this on BUTTON_PRESS, so              *  do it here only if button_press_before_focus is FALSE              */
+comment|/*  press modifier keys when the canvas gets the focus              *              *  in "click to focus" mode, we did this on BUTTON_PRESS, so              *  do it here only if the mouse is not grabbed (which happens              *  on BUTTON_PRESS.              */
 if|if
 condition|(
 operator|!
 name|shell
 operator|->
-name|button_press_before_focus
+name|pointer_grabbed
 condition|)
 block|{
 name|gimp_display_shell_update_focus
@@ -1532,13 +1532,6 @@ literal|"%s: FOCUS_OUT but canvas has focus"
 argument_list|,
 name|G_STRFUNC
 argument_list|)
-expr_stmt|;
-comment|/*  reset it here to be prepared for the next              *  FOCUS_IN / BUTTON_PRESS confusion              */
-name|shell
-operator|->
-name|button_press_before_focus
-operator|=
-name|FALSE
 expr_stmt|;
 comment|/*  release modifier keys when the canvas loses the focus  */
 name|tool_manager_focus_display_active
@@ -1602,17 +1595,7 @@ argument_list|(
 name|canvas
 argument_list|)
 expr_stmt|;
-comment|/*  if the toplevel window didn't have focus, the above          *  gtk_widget_grab_focus() didn't set the canvas' HAS_FOCUS          *  flags, so check for it here again.          *          *  this happens in "click to focus" mode.          */
-if|if
-condition|(
-operator|!
-name|gtk_widget_has_focus
-argument_list|(
-name|canvas
-argument_list|)
-condition|)
-block|{
-comment|/*  do the things a FOCUS_IN event would do and set a flag              *  preventing it from doing the same.              */
+comment|/*  if the toplevel window didn't have focus, the above          *  gtk_widget_grab_focus() didn't set the canvas' HAS_FOCUS          *  flags, and didn't trigger a FOCUS_IN, but the tool needs          *  to be set up correctly regardless, so simply do the          *  same things here, it's safe to do them redundantly.          */
 name|gimp_display_shell_update_focus
 argument_list|(
 name|shell
@@ -1638,24 +1621,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|shell
-operator|->
-name|button_press_before_focus
-operator|=
-name|TRUE
-expr_stmt|;
-comment|/*  we expect a FOCUS_IN event to follow, but can't rely              *  on it, so force one              */
-name|gdk_window_focus
-argument_list|(
-name|gtk_widget_get_window
-argument_list|(
-name|canvas
-argument_list|)
-argument_list|,
-name|time
-argument_list|)
-expr_stmt|;
-block|}
 comment|/*  ignore new mouse events  */
 if|if
 condition|(
@@ -4136,7 +4101,6 @@ if|if
 condition|(
 name|tool_info
 condition|)
-block|{
 name|gimp_context_set_tool
 argument_list|(
 name|gimp_get_user_context
@@ -4149,19 +4113,6 @@ argument_list|,
 name|tool_info
 argument_list|)
 expr_stmt|;
-comment|/*  make sure the newly created tool has the right state                */
-name|gimp_display_shell_update_focus
-argument_list|(
-name|shell
-argument_list|,
-name|NULL
-argument_list|,
-name|event
-operator|->
-name|state
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 name|active_tool
 operator|=
@@ -4177,17 +4128,6 @@ condition|(
 name|active_tool
 condition|)
 block|{
-if|if
-condition|(
-operator|!
-name|gtk_widget_has_focus
-argument_list|(
-name|shell
-operator|->
-name|canvas
-argument_list|)
-condition|)
-block|{
 name|gimp_display_shell_update_focus
 argument_list|(
 name|shell
@@ -4199,33 +4139,6 @@ operator|->
 name|state
 argument_list|)
 expr_stmt|;
-name|shell
-operator|->
-name|button_press_before_focus
-operator|=
-name|TRUE
-expr_stmt|;
-comment|/*  we expect a FOCUS_IN event to follow, but can't rely                *  on it, so force one                */
-name|gdk_window_focus
-argument_list|(
-name|gtk_widget_get_window
-argument_list|(
-name|shell
-operator|->
-name|canvas
-argument_list|)
-argument_list|,
-name|gdk_event_get_time
-argument_list|(
-operator|(
-name|GdkEvent
-operator|*
-operator|)
-name|event
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|gimp_display_shell_pointer_grab
