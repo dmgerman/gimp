@@ -347,6 +347,9 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+name|gboolean
+name|focus_in
+parameter_list|,
 specifier|const
 name|GimpCoords
 modifier|*
@@ -1290,6 +1293,8 @@ name|gimp_display_shell_update_focus
 argument_list|(
 name|shell
 argument_list|,
+name|TRUE
+argument_list|,
 operator|&
 name|image_coords
 argument_list|,
@@ -1506,6 +1511,8 @@ name|gimp_display_shell_update_focus
 argument_list|(
 name|shell
 argument_list|,
+name|TRUE
+argument_list|,
 operator|&
 name|image_coords
 argument_list|,
@@ -1534,27 +1541,16 @@ name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 comment|/*  release modifier keys when the canvas loses the focus  */
-name|tool_manager_focus_display_active
+name|gimp_display_shell_update_focus
 argument_list|(
-name|gimp
+name|shell
 argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|tool_manager_oper_update_active
-argument_list|(
-name|gimp
+name|FALSE
 argument_list|,
 operator|&
 name|image_coords
 argument_list|,
 literal|0
-argument_list|,
-name|shell
-operator|->
-name|proximity
-argument_list|,
-name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1599,6 +1595,8 @@ comment|/*  if the toplevel window didn't have focus, the above          *  gtk_
 name|gimp_display_shell_update_focus
 argument_list|(
 name|shell
+argument_list|,
+name|TRUE
 argument_list|,
 operator|&
 name|image_coords
@@ -2306,6 +2304,8 @@ comment|/*  update the tool's modifier state because it didn't get              
 name|gimp_display_shell_update_focus
 argument_list|(
 name|shell
+argument_list|,
+name|TRUE
 argument_list|,
 operator|&
 name|image_coords
@@ -4132,6 +4132,8 @@ name|gimp_display_shell_update_focus
 argument_list|(
 name|shell
 argument_list|,
+name|TRUE
+argument_list|,
 name|NULL
 argument_list|,
 name|event
@@ -4833,6 +4835,8 @@ name|gimp_display_shell_update_focus
 argument_list|(
 name|shell
 argument_list|,
+name|TRUE
+argument_list|,
 name|NULL
 argument_list|,
 name|state
@@ -4962,6 +4966,8 @@ name|gimp_display_shell_update_focus
 argument_list|(
 name|shell
 argument_list|,
+name|TRUE
+argument_list|,
 name|NULL
 argument_list|,
 name|state
@@ -4995,12 +5001,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_update_focus (GimpDisplayShell * shell,const GimpCoords * image_coords,GdkModifierType state)
+DECL|function|gimp_display_shell_update_focus (GimpDisplayShell * shell,gboolean focus_in,const GimpCoords * image_coords,GdkModifierType state)
 name|gimp_display_shell_update_focus
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
+parameter_list|,
+name|gboolean
+name|focus_in
 parameter_list|,
 specifier|const
 name|GimpCoords
@@ -5022,6 +5031,11 @@ operator|->
 name|display
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|focus_in
+condition|)
+block|{
 name|tool_manager_focus_display_active
 argument_list|(
 name|gimp
@@ -5042,6 +5056,17 @@ operator|->
 name|display
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|tool_manager_focus_display_active
+argument_list|(
+name|gimp
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|image_coords
@@ -5435,6 +5460,8 @@ comment|/*  make sure the newly created tool has the right state  */
 name|gimp_display_shell_update_focus
 argument_list|(
 name|shell
+argument_list|,
+name|TRUE
 argument_list|,
 name|image_coords
 argument_list|,
