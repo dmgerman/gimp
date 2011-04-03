@@ -135,6 +135,11 @@ DECL|member|subdivisions
 name|gint
 name|subdivisions
 decl_stmt|;
+DECL|member|grab_device
+name|GdkDevice
+modifier|*
+name|grab_device
+decl_stmt|;
 block|}
 struct|;
 end_struct
