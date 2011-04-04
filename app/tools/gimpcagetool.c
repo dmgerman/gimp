@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcf24350103
+DECL|enum|__anon28d7c80d0103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -1501,34 +1501,22 @@ block|}
 else|else
 block|{
 comment|/* switch to edit mode */
-if|if
-condition|(
-name|ct
-operator|->
-name|image_map
-condition|)
-block|{
-name|gimp_image_map_abort
+name|gimp_image_map_clear
 argument_list|(
 name|ct
 operator|->
 name|image_map
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|gimp_cage_tool_image_map_flush
 argument_list|(
 name|ct
 operator|->
 name|image_map
+argument_list|,
+name|tool
 argument_list|)
 expr_stmt|;
-name|ct
-operator|->
-name|image_map
-operator|=
-name|NULL
-expr_stmt|;
-block|}
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
