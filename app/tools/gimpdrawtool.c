@@ -2608,7 +2608,7 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_draw_tool_add_path (GimpDrawTool * draw_tool,const GimpBezierDesc * desc)
+DECL|function|gimp_draw_tool_add_path (GimpDrawTool * draw_tool,const GimpBezierDesc * desc,gdouble x,gdouble y)
 name|gimp_draw_tool_add_path
 parameter_list|(
 name|GimpDrawTool
@@ -2619,6 +2619,12 @@ specifier|const
 name|GimpBezierDesc
 modifier|*
 name|desc
+parameter_list|,
+name|gdouble
+name|x
+parameter_list|,
+name|gdouble
+name|y
 parameter_list|)
 block|{
 name|GimpCanvasItem
@@ -2656,6 +2662,10 @@ name|display
 argument_list|)
 argument_list|,
 name|desc
+argument_list|,
+name|x
+argument_list|,
+name|y
 argument_list|,
 name|FALSE
 argument_list|,

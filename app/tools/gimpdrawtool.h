@@ -705,6 +705,12 @@ specifier|const
 name|GimpBezierDesc
 modifier|*
 name|desc
+parameter_list|,
+name|gdouble
+name|x
+parameter_list|,
+name|gdouble
+name|y
 parameter_list|)
 function_decl|;
 end_function_decl

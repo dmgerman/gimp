@@ -153,6 +153,12 @@ name|GimpBezierDesc
 modifier|*
 name|bezier
 parameter_list|,
+name|gdouble
+name|x
+parameter_list|,
+name|gdouble
+name|y
+parameter_list|,
 name|gboolean
 name|filled
 parameter_list|,

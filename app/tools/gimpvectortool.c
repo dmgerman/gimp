@@ -5215,6 +5215,10 @@ name|gimp_vectors_get_bezier
 argument_list|(
 name|vectors
 argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 for|for

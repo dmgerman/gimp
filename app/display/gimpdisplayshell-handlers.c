@@ -3660,6 +3660,10 @@ argument_list|(
 name|vectors
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
