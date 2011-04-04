@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpbezierdesc.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpchannel-select.h"
 end_include
 
@@ -132,12 +138,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbezierdesc.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpstroke.h"
 end_include
 
@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b04beb0103
+DECL|enum|__anon2b1c6fcb0103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE

@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpbezierdesc.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcoords.h"
 end_include
 
@@ -49,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"gimpanchor.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpbezierdesc.h"
 end_include
 
 begin_include

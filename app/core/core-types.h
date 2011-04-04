@@ -972,6 +972,43 @@ typedef|;
 end_typedef
 
 begin_comment
+comment|/* The following hack is made so that we can reuse the definition  * the cairo definition of cairo_path_t without having to translate  * between our own version of a bezier description and cairos version.  *  * to avoid having to include<cairo.h> in each and every file  * including this file we only use the "real" definition when cairo.h  * already has been included and use something else.  *  * Note that if you really want to work with GimpBezierDesc (except just  * passing pointers to it around) you also need to include<cairo.h>.  */
+end_comment
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|CAIRO_VERSION
+end_ifdef
+
+begin_typedef
+DECL|typedef|GimpBezierDesc
+typedef|typedef
+name|cairo_path_t
+name|GimpBezierDesc
+typedef|;
+end_typedef
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_typedef
+DECL|typedef|GimpBezierDesc
+typedef|typedef
+name|void
+modifier|*
+name|GimpBezierDesc
+typedef|;
+end_typedef
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
 comment|/*  functions  */
 end_comment
 

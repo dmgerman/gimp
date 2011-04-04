@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpparamspecs.h"
+file|"core/gimpbezierdesc.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"vectors/gimpbezierdesc.h"
+file|"core/gimpparamspecs.h"
 end_include
 
 begin_include
@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8cf8ca0103
+DECL|enum|__anon29ec8de00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
