@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad52f460103
+DECL|enum|__anon2b97c39a0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -96,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad52f460203
+DECL|enum|__anon2b97c39a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2281,6 +2281,45 @@ name|angle
 argument_list|,
 name|hardness
 argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|GimpBezierDesc
+modifier|*
+DECL|function|gimp_brush_transform_boundary (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gdouble hardness)
+name|gimp_brush_transform_boundary
+parameter_list|(
+name|GimpBrush
+modifier|*
+name|brush
+parameter_list|,
+name|gdouble
+name|scale
+parameter_list|,
+name|gdouble
+name|aspect_ratio
+parameter_list|,
+name|gdouble
+name|angle
+parameter_list|,
+name|gdouble
+name|hardness
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_BRUSH
+argument_list|(
+name|brush
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|NULL
 return|;
 block|}
 end_function

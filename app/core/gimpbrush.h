@@ -274,6 +274,31 @@ name|gdouble
 name|hardness
 parameter_list|)
 function_decl|;
+DECL|member|transform_boundary
+name|GimpBezierDesc
+modifier|*
+function_decl|(
+modifier|*
+name|transform_boundary
+function_decl|)
+parameter_list|(
+name|GimpBrush
+modifier|*
+name|brush
+parameter_list|,
+name|gdouble
+name|scale
+parameter_list|,
+name|gdouble
+name|aspect_ratio
+parameter_list|,
+name|gdouble
+name|angle
+parameter_list|,
+name|gdouble
+name|hardness
+parameter_list|)
+function_decl|;
 comment|/*  signals  */
 DECL|member|spacing_changed
 name|void
@@ -374,7 +399,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Gets width and height of a transformed mask of the brush, for provided parameters. */
+comment|/* Gets width and height of a transformed mask of the brush, for  * provided parameters.  */
 end_comment
 
 begin_function_decl
@@ -433,6 +458,30 @@ begin_function_decl
 name|TempBuf
 modifier|*
 name|gimp_brush_transform_pixmap
+parameter_list|(
+name|GimpBrush
+modifier|*
+name|brush
+parameter_list|,
+name|gdouble
+name|scale
+parameter_list|,
+name|gdouble
+name|aspect_ratio
+parameter_list|,
+name|gdouble
+name|angle
+parameter_list|,
+name|gdouble
+name|hardness
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpBezierDesc
+modifier|*
+name|gimp_brush_transform_boundary
 parameter_list|(
 name|GimpBrush
 modifier|*
