@@ -297,6 +297,14 @@ name|angle
 parameter_list|,
 name|gdouble
 name|hardness
+parameter_list|,
+name|gint
+modifier|*
+name|width
+parameter_list|,
+name|gint
+modifier|*
+name|height
 parameter_list|)
 function_decl|;
 comment|/*  signals  */
@@ -498,6 +506,14 @@ name|angle
 parameter_list|,
 name|gdouble
 name|hardness
+parameter_list|,
+name|gint
+modifier|*
+name|width
+parameter_list|,
+name|gint
+modifier|*
+name|height
 parameter_list|)
 function_decl|;
 end_function_decl

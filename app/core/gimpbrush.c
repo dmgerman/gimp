@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpbrush-boundary.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpbrush-load.h"
 end_include
 
@@ -83,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b97c39a0103
+DECL|enum|__anon2acde9990103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -96,7 +102,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b97c39a0203
+DECL|enum|__anon2acde9990203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -526,6 +532,12 @@ operator|->
 name|transform_pixmap
 operator|=
 name|gimp_brush_real_transform_pixmap
+expr_stmt|;
+name|klass
+operator|->
+name|transform_boundary
+operator|=
+name|gimp_brush_real_transform_boundary
 expr_stmt|;
 name|klass
 operator|->
@@ -2288,7 +2300,7 @@ end_function
 begin_function
 name|GimpBezierDesc
 modifier|*
-DECL|function|gimp_brush_transform_boundary (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gdouble hardness)
+DECL|function|gimp_brush_transform_boundary (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gdouble hardness,gint * width,gint * height)
 name|gimp_brush_transform_boundary
 parameter_list|(
 name|GimpBrush
@@ -2306,6 +2318,14 @@ name|angle
 parameter_list|,
 name|gdouble
 name|hardness
+parameter_list|,
+name|gint
+modifier|*
+name|width
+parameter_list|,
+name|gint
+modifier|*
+name|height
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -2318,8 +2338,55 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-return|return
+name|g_return_val_if_fail
+argument_list|(
+name|scale
+operator|>
+literal|0.0
+argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|width
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|height
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|GIMP_BRUSH_GET_CLASS
+argument_list|(
+name|brush
+argument_list|)
+operator|->
+name|transform_boundary
+argument_list|(
+name|brush
+argument_list|,
+name|scale
+argument_list|,
+name|aspect_ratio
+argument_list|,
+name|angle
+argument_list|,
+name|hardness
+argument_list|,
+name|width
+argument_list|,
+name|height
+argument_list|)
 return|;
 block|}
 end_function
