@@ -199,7 +199,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b6d5ae0103
+DECL|enum|__anon2b2ddfcc0103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -890,6 +890,17 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp_draw_tool_is_active
+argument_list|(
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
+argument_list|)
+condition|)
 name|gimp_draw_tool_start
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -1778,20 +1789,13 @@ condition|)
 block|{
 name|gint
 name|snap_distance
-decl_stmt|;
-name|snap_distance
-operator|=
-name|GIMP_DISPLAY_CONFIG
-argument_list|(
+init|=
 name|display
 operator|->
-name|gimp
-operator|->
 name|config
-argument_list|)
 operator|->
 name|snap_distance
-expr_stmt|;
+decl_stmt|;
 name|sample_point
 operator|=
 name|gimp_image_find_sample_point
@@ -2260,16 +2264,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|GIMP_DRAW_TOOL_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|draw
-argument_list|(
-name|draw_tool
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

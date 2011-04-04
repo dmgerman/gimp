@@ -985,6 +985,17 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp_draw_tool_is_active
+argument_list|(
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
+argument_list|)
+condition|)
 name|gimp_draw_tool_start
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -2432,7 +2443,6 @@ operator|&&
 name|proximity
 condition|)
 block|{
-specifier|const
 name|gint
 name|snap_distance
 init|=
