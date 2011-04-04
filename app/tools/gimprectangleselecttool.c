@@ -766,11 +766,6 @@ name|get_property
 operator|=
 name|gimp_rectangle_tool_get_property
 expr_stmt|;
-name|gimp_rectangle_tool_install_properties
-argument_list|(
-name|object_class
-argument_list|)
-expr_stmt|;
 name|tool_class
 operator|->
 name|control
@@ -830,6 +825,11 @@ operator|->
 name|select
 operator|=
 name|gimp_rectangle_select_tool_real_select
+expr_stmt|;
+name|gimp_rectangle_tool_install_properties
+argument_list|(
+name|object_class
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -1661,7 +1661,7 @@ name|display
 argument_list|)
 condition|)
 block|{
-comment|/* In some cases we want to finnish the rectangle select tool        * and hand over responsability to the selection tool        */
+comment|/* In some cases we want to finish the rectangle select tool        * and hand over responsability to the selection tool        */
 name|gimp_rectangle_tool_execute
 argument_list|(
 name|rectangle

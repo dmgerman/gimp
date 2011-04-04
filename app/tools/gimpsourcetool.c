@@ -575,21 +575,6 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-comment|/*  chain up early so the draw tool can undraw the source marker    *  while we still know about source drawable and display    */
-name|GIMP_TOOL_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|control
-argument_list|(
-name|tool
-argument_list|,
-name|action
-argument_list|,
-name|display
-argument_list|)
-expr_stmt|;
 switch|switch
 condition|(
 name|action
@@ -629,6 +614,20 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+name|GIMP_TOOL_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|control
+argument_list|(
+name|tool
+argument_list|,
+name|action
+argument_list|,
+name|display
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

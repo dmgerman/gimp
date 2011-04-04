@@ -178,7 +178,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c24445c0108
+DECL|struct|__anon2c8373880108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index

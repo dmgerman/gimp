@@ -140,10 +140,6 @@ name|parent_class
 value|gimp_ellipse_select_tool_parent_class
 end_define
 
-begin_comment
-comment|/*  public functions  */
-end_comment
-
 begin_function
 name|void
 name|gimp_ellipse_select_tool_register
@@ -198,10 +194,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*  private functions  */
-end_comment
 
 begin_function
 specifier|static

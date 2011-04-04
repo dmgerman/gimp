@@ -99,7 +99,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2744a9d80103
+DECL|enum|__anon2a20c6520103
 block|{
 DECL|enumerator|X0
 name|X0

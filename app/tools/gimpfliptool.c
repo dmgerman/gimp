@@ -781,7 +781,7 @@ condition|(
 name|orig_tiles
 condition|)
 block|{
-comment|/*  this happens when transforming a normal drawable or the        *  selection        */
+comment|/*  this happens when transforming a selection cut out of a        *  normal drawable, or the selection        */
 name|ret
 operator|=
 name|gimp_drawable_transform_tiles_flip
@@ -815,7 +815,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/*  this happens for paths and layer groups  */
+comment|/*  this happens for entire drawables, paths and layer groups  */
 name|gimp_item_flip
 argument_list|(
 name|active_item

@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be04c3b0103
+DECL|enum|__anon27da435f0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -914,11 +914,6 @@ modifier|*
 name|categories_str
 parameter_list|)
 block|{
-name|gchar
-modifier|*
-modifier|*
-name|categories
-decl_stmt|;
 specifier|static
 specifier|const
 name|gchar
@@ -970,6 +965,11 @@ literal|"gimp-"
 block|,
 literal|"gimp:"
 block|}
+decl_stmt|;
+name|gchar
+modifier|*
+modifier|*
+name|categories
 decl_stmt|;
 name|gint
 name|i
@@ -1071,7 +1071,8 @@ operator|++
 control|)
 if|if
 condition|(
-name|g_str_equal
+operator|!
+name|strcmp
 argument_list|(
 name|categories
 index|[

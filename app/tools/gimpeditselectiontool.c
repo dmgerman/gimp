@@ -218,8 +218,25 @@ value|25
 end_define
 
 begin_typedef
-DECL|struct|_GimpEditSelectionTool
+DECL|typedef|GimpEditSelectionTool
 typedef|typedef
+name|struct
+name|_GimpEditSelectionTool
+name|GimpEditSelectionTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpEditSelectionToolClass
+typedef|typedef
+name|struct
+name|_GimpEditSelectionToolClass
+name|GimpEditSelectionToolClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpEditSelectionTool
 struct|struct
 name|_GimpEditSelectionTool
 block|{
@@ -332,15 +349,12 @@ decl_stmt|,
 name|last_y
 decl_stmt|;
 comment|/*  Previous coords sent to _motion   */
-DECL|typedef|GimpEditSelectionTool
 block|}
-name|GimpEditSelectionTool
-typedef|;
-end_typedef
+struct|;
+end_struct
 
-begin_typedef
+begin_struct
 DECL|struct|_GimpEditSelectionToolClass
-typedef|typedef
 struct|struct
 name|_GimpEditSelectionToolClass
 block|{
@@ -348,11 +362,9 @@ DECL|member|parent_class
 name|GimpDrawToolClass
 name|parent_class
 decl_stmt|;
-DECL|typedef|GimpEditSelectionToolClass
 block|}
-name|GimpEditSelectionToolClass
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_function_decl
 specifier|static
