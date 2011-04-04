@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297911870108
+DECL|struct|__anon29a868570108
 block|{
 DECL|member|url
 name|char
@@ -110,7 +110,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297911870208
+DECL|struct|__anon29a868570208
 block|{
 DECL|member|url
 name|char
@@ -783,6 +783,10 @@ name|GtkWidget
 modifier|*
 name|entry
 decl_stmt|;
+name|GtkSizeGroup
+modifier|*
+name|sizegroup
+decl_stmt|;
 name|GtkObject
 modifier|*
 name|adjustment
@@ -1112,6 +1116,13 @@ argument_list|(
 name|entry
 argument_list|)
 expr_stmt|;
+name|sizegroup
+operator|=
+name|gtk_size_group_new
+argument_list|(
+name|GTK_SIZE_GROUP_HORIZONTAL
+argument_list|)
+expr_stmt|;
 comment|/* Width */
 name|hbox
 operator|=
@@ -1151,6 +1162,13 @@ name|_
 argument_list|(
 literal|"Width (pixels):"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_size_group_add_widget
+argument_list|(
+name|sizegroup
+argument_list|,
+name|label
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -1272,6 +1290,13 @@ name|_
 argument_list|(
 literal|"Font size:"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_size_group_add_widget
+argument_list|(
+name|sizegroup
+argument_list|,
+name|label
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -1460,6 +1485,11 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|combo
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|sizegroup
 argument_list|)
 expr_stmt|;
 name|status
