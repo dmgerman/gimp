@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2942a3140103
+DECL|enum|__anon2c6ea5d60103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -1276,6 +1276,13 @@ argument_list|,
 name|gimp_brush_core_invalidate_cache
 argument_list|,
 name|core
+argument_list|)
+expr_stmt|;
+name|gimp_brush_end_use
+argument_list|(
+name|core
+operator|->
+name|main_brush
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -3806,6 +3813,13 @@ argument_list|,
 name|core
 argument_list|)
 expr_stmt|;
+name|gimp_brush_end_use
+argument_list|(
+name|core
+operator|->
+name|main_brush
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|core
@@ -3834,6 +3848,13 @@ name|main_brush
 condition|)
 block|{
 name|g_object_ref
+argument_list|(
+name|core
+operator|->
+name|main_brush
+argument_list|)
+expr_stmt|;
+name|gimp_brush_start_use
 argument_list|(
 name|core
 operator|->

@@ -136,6 +136,11 @@ name|GimpVector2
 name|y_axis
 decl_stmt|;
 comment|/*  for calculating brush spacing  */
+DECL|member|use_count
+name|gint
+name|use_count
+decl_stmt|;
+comment|/*  for keeping the caches alive   */
 block|}
 struct|;
 end_struct
@@ -580,6 +585,28 @@ name|brush
 parameter_list|,
 name|gint
 name|spacing
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_brush_start_use
+parameter_list|(
+name|GimpBrush
+modifier|*
+name|brush
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_brush_end_use
+parameter_list|(
+name|GimpBrush
+modifier|*
+name|brush
 parameter_list|)
 function_decl|;
 end_function_decl
