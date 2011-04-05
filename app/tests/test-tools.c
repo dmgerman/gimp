@@ -84,13 +84,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell-callbacks.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplayshell-scale.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplayshell-callbacks.h"
+file|"display/gimpdisplayshell-tool-events.h"
 end_include
 
 begin_include
@@ -274,7 +280,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab9c99c0108
+DECL|struct|__anon2c02d09b0108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
