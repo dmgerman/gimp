@@ -1578,9 +1578,10 @@ end_function
 begin_function
 name|guchar
 modifier|*
-DECL|function|temp_buf_get_data (TempBuf * buf)
+DECL|function|temp_buf_get_data (const TempBuf * buf)
 name|temp_buf_get_data
 parameter_list|(
+specifier|const
 name|TempBuf
 modifier|*
 name|buf

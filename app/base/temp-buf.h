@@ -207,6 +207,7 @@ name|guchar
 modifier|*
 name|temp_buf_get_data
 parameter_list|(
+specifier|const
 name|TempBuf
 modifier|*
 name|buf
