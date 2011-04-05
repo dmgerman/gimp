@@ -1112,7 +1112,7 @@ while|while
 condition|(
 name|pipe
 operator|->
-name|nbrushes
+name|n_brushes
 operator|<
 name|num_of_brushes
 condition|)
@@ -1123,7 +1123,7 @@ name|brushes
 index|[
 name|pipe
 operator|->
-name|nbrushes
+name|n_brushes
 index|]
 operator|=
 name|gimp_brush_load_brush
@@ -1145,7 +1145,7 @@ name|brushes
 index|[
 name|pipe
 operator|->
-name|nbrushes
+name|n_brushes
 index|]
 condition|)
 block|{
@@ -1159,7 +1159,7 @@ name|brushes
 index|[
 name|pipe
 operator|->
-name|nbrushes
+name|n_brushes
 index|]
 argument_list|)
 argument_list|,
@@ -1205,7 +1205,7 @@ return|;
 block|}
 name|pipe
 operator|->
-name|nbrushes
+name|n_brushes
 operator|++
 expr_stmt|;
 block|}

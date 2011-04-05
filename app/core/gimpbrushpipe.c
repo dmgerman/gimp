@@ -284,7 +284,7 @@ name|NULL
 expr_stmt|;
 name|pipe
 operator|->
-name|nbrushes
+name|n_brushes
 operator|=
 literal|0
 expr_stmt|;
@@ -391,7 +391,7 @@ name|i
 operator|<
 name|pipe
 operator|->
-name|nbrushes
+name|n_brushes
 condition|;
 name|i
 operator|++
@@ -569,7 +569,7 @@ name|i
 operator|<
 name|pipe
 operator|->
-name|nbrushes
+name|n_brushes
 condition|;
 name|i
 operator|++
@@ -697,7 +697,7 @@ if|if
 condition|(
 name|pipe
 operator|->
-name|nbrushes
+name|n_brushes
 operator|==
 literal|1
 condition|)
@@ -1032,7 +1032,7 @@ literal|0
 argument_list|,
 name|pipe
 operator|->
-name|nbrushes
+name|n_brushes
 operator|-
 literal|1
 argument_list|)
@@ -1096,7 +1096,7 @@ if|if
 condition|(
 name|pipe
 operator|->
-name|nbrushes
+name|n_brushes
 operator|==
 literal|1
 condition|)

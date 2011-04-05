@@ -547,7 +547,7 @@ name|pipe_animation_index
 operator|>=
 name|brush_pipe
 operator|->
-name|nbrushes
+name|n_brushes
 condition|)
 name|renderbrush
 operator|->
