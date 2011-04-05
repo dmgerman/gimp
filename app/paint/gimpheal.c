@@ -275,6 +275,7 @@ name|PixelRegion
 modifier|*
 name|srcPR
 parameter_list|,
+specifier|const
 name|TempBuf
 modifier|*
 name|mask_buf
@@ -1489,7 +1490,7 @@ begin_function
 specifier|static
 name|PixelRegion
 modifier|*
-DECL|function|gimp_heal_region (PixelRegion * tempPR,PixelRegion * srcPR,TempBuf * mask_buf)
+DECL|function|gimp_heal_region (PixelRegion * tempPR,PixelRegion * srcPR,const TempBuf * mask_buf)
 name|gimp_heal_region
 parameter_list|(
 name|PixelRegion
@@ -1500,6 +1501,7 @@ name|PixelRegion
 modifier|*
 name|srcPR
 parameter_list|,
+specifier|const
 name|TempBuf
 modifier|*
 name|mask_buf
@@ -1742,6 +1744,7 @@ decl_stmt|;
 name|GimpImageType
 name|src_type
 decl_stmt|;
+specifier|const
 name|TempBuf
 modifier|*
 name|mask_buf

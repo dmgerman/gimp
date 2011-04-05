@@ -87,6 +87,7 @@ name|gdouble
 name|hardness
 parameter_list|)
 block|{
+specifier|const
 name|TempBuf
 modifier|*
 name|mask
@@ -126,6 +127,10 @@ argument_list|(
 operator|&
 name|maskPR
 argument_list|,
+operator|(
+name|TempBuf
+operator|*
+operator|)
 name|mask
 argument_list|,
 literal|0
@@ -166,11 +171,6 @@ literal|0
 argument_list|,
 operator|&
 name|n_bound_segs
-argument_list|)
-expr_stmt|;
-name|temp_buf_free
-argument_list|(
-name|mask
 argument_list|)
 expr_stmt|;
 if|if

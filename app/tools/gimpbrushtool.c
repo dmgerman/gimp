@@ -1295,6 +1295,7 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 decl_stmt|;
+specifier|const
 name|GimpBezierDesc
 modifier|*
 name|boundary
@@ -1524,15 +1525,6 @@ name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|boundary
-condition|)
-name|gimp_bezier_desc_free
-argument_list|(
-name|boundary
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

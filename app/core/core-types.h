@@ -375,6 +375,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpBrushCache
+typedef|typedef
+name|struct
+name|_GimpBrushCache
+name|GimpBrushCache
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpBrushClipboard
 typedef|typedef
 name|struct

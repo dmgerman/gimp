@@ -141,6 +141,21 @@ name|gint
 name|use_count
 decl_stmt|;
 comment|/*  for keeping the caches alive   */
+DECL|member|mask_cache
+name|GimpBrushCache
+modifier|*
+name|mask_cache
+decl_stmt|;
+DECL|member|pixmap_cache
+name|GimpBrushCache
+modifier|*
+name|pixmap_cache
+decl_stmt|;
+DECL|member|boundary_cache
+name|GimpBrushCache
+modifier|*
+name|boundary_cache
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -444,6 +459,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|TempBuf
 modifier|*
 name|gimp_brush_transform_mask
@@ -468,6 +484,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|TempBuf
 modifier|*
 name|gimp_brush_transform_pixmap
@@ -492,6 +509,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|GimpBezierDesc
 modifier|*
 name|gimp_brush_transform_boundary
