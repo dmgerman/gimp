@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d7c80d0103
+DECL|enum|__anon27ec9ac20103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -4392,6 +4392,18 @@ operator|->
 name|coef
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+comment|/* This just unref buffer, since gegl_node_get add a refcount on it */
+if|if
+condition|(
+name|buffer
+condition|)
+block|{
+name|gegl_buffer_destroy
+argument_list|(
+name|buffer
 argument_list|)
 expr_stmt|;
 block|}
