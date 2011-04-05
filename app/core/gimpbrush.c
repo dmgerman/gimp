@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acde9990103
+DECL|enum|__anon28a4d3e50103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -102,7 +102,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acde9990203
+DECL|enum|__anon28a4d3e50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2587,9 +2587,16 @@ name|spacing
 operator|=
 name|spacing
 expr_stmt|;
-name|gimp_brush_spacing_changed
+name|g_signal_emit
 argument_list|(
 name|brush
+argument_list|,
+name|brush_signals
+index|[
+name|SPACING_CHANGED
+index|]
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|g_object_notify
@@ -2603,39 +2610,6 @@ literal|"spacing"
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|gimp_brush_spacing_changed (GimpBrush * brush)
-name|gimp_brush_spacing_changed
-parameter_list|(
-name|GimpBrush
-modifier|*
-name|brush
-parameter_list|)
-block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_BRUSH
-argument_list|(
-name|brush
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_signal_emit
-argument_list|(
-name|brush
-argument_list|,
-name|brush_signals
-index|[
-name|SPACING_CHANGED
-index|]
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
