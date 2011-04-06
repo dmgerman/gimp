@@ -1812,6 +1812,15 @@ operator|/
 literal|2.0
 expr_stmt|;
 block|}
+name|tool_manager_push_tool
+argument_list|(
+name|display
+operator|->
+name|gimp
+argument_list|,
+name|tool
+argument_list|)
+expr_stmt|;
 name|gimp_tool_control_activate
 argument_list|(
 name|tool
@@ -1824,15 +1833,6 @@ operator|->
 name|display
 operator|=
 name|display
-expr_stmt|;
-name|tool_manager_push_tool
-argument_list|(
-name|display
-operator|->
-name|gimp
-argument_list|,
-name|tool
-argument_list|)
 expr_stmt|;
 comment|/*  pause the current selection  */
 name|gimp_display_shell_selection_pause
