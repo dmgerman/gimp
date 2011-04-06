@@ -873,11 +873,6 @@ define|#
 directive|define
 name|GIMP_STOCK_CONTROLLER_MIDI
 value|"gimp-controller-midi"
-DECL|macro|GIMP_STOCK_CONTROLLER_MOUSE
-define|#
-directive|define
-name|GIMP_STOCK_CONTROLLER_MOUSE
-value|"gimp-controller-mouse"
 DECL|macro|GIMP_STOCK_CONTROLLER_WHEEL
 define|#
 directive|define
@@ -1075,6 +1070,11 @@ define|#
 directive|define
 name|GIMP_STOCK_PATTERN
 value|GIMP_STOCK_TOOL_BUCKET_FILL
+DECL|macro|GIMP_STOCK_CONTROLLER_MOUSE
+define|#
+directive|define
+name|GIMP_STOCK_CONTROLLER_MOUSE
+value|GIMP_STOCK_CURSOR
 name|void
 name|gimp_stock_init
 parameter_list|(
