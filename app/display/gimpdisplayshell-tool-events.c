@@ -2226,9 +2226,10 @@ name|GDK_BUTTON1_MASK
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|shell
 operator|->
-name|scrolling
+name|pointer_grabbed
 condition|)
 return|return
 name|TRUE
