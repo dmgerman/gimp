@@ -367,16 +367,6 @@ name|guint32
 name|window
 parameter_list|)
 block|{
-if|#
-directive|if
-name|GTK_CHECK_VERSION
-argument_list|(
-literal|2
-operator|,
-literal|24
-operator|,
-literal|0
-argument_list|)
 ifdef|#
 directive|ifdef
 name|GDK_WINDOWING_X11
@@ -405,26 +395,6 @@ argument_list|)
 return|;
 endif|#
 directive|endif
-else|#
-directive|else
-comment|/* ! GTK_CHECK_VERSION (2, 24, 0) */
-ifndef|#
-directive|ifndef
-name|GDK_NATIVE_WINDOW_POINTER
-return|return
-name|gdk_window_foreign_new_for_display
-argument_list|(
-name|gdk_display_get_default
-argument_list|()
-argument_list|,
-name|window
-argument_list|)
-return|;
-endif|#
-directive|endif
-endif|#
-directive|endif
-comment|/* GTK_CHECK_VERSION (2, 24, 0) */
 return|return
 name|NULL
 return|;
