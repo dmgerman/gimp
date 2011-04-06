@@ -3662,6 +3662,14 @@ value|"gimp-controller-midi"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_CONTROLLER_MOUSE
+define|#
+directive|define
+name|GIMP_HELP_CONTROLLER_MOUSE
+value|"gimp-controller-mouse"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_CONTROLLER_WHEEL
 define|#
 directive|define

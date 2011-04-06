@@ -97,6 +97,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontrollermouse.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontrollerwheel.h"
 end_include
 
@@ -156,7 +162,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a01c310103
+DECL|enum|__anon29bd0c3f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -169,7 +175,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a01c310203
+DECL|enum|__anon29bd0c3f0203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -2272,6 +2278,49 @@ argument_list|(
 literal|"There can only be one active wheel "
 literal|"controller.\n\n"
 literal|"You already have a wheel controller in "
+literal|"your list of active controllers."
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
+elseif|else
+if|if
+condition|(
+name|list
+operator|->
+name|src_gtype
+operator|==
+name|GIMP_TYPE_CONTROLLER_MOUSE
+operator|&&
+name|gimp_controllers_get_mouse
+argument_list|(
+name|list
+operator|->
+name|gimp
+argument_list|)
+operator|!=
+name|NULL
+condition|)
+block|{
+name|gimp_message_literal
+argument_list|(
+name|list
+operator|->
+name|gimp
+argument_list|,
+name|G_OBJECT
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_WARNING
+argument_list|,
+name|_
+argument_list|(
+literal|"There can only be one active mouse "
+literal|"controller.\n\n"
+literal|"You already have a mouse controller in "
 literal|"your list of active controllers."
 argument_list|)
 argument_list|)

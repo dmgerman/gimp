@@ -358,6 +358,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpControllerMouse
+typedef|typedef
+name|struct
+name|_GimpControllerMouse
+name|GimpControllerMouse
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpControllerWheel
 typedef|typedef
 name|struct
