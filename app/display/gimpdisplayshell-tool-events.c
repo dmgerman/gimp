@@ -334,6 +334,11 @@ parameter_list|,
 name|GdkEvent
 modifier|*
 name|event
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|image_coords
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1498,15 +1503,17 @@ argument_list|,
 name|G_STRFUNC
 argument_list|)
 expr_stmt|;
-comment|/*  press modifier keys when the canvas gets the focus              *              *  in "click to focus" mode, we did this on BUTTON_PRESS, so              *  do it here only if the mouse is not grabbed (which happens              *  on BUTTON_PRESS.              */
+comment|/*  ignore any focus changes while we have a grab  */
 if|if
 condition|(
-operator|!
 name|shell
 operator|->
 name|pointer_grabbed
 condition|)
-block|{
+return|return
+name|TRUE
+return|;
+comment|/*   press modifier keys when the canvas gets the focus  */
 name|gimp_display_shell_update_focus
 argument_list|(
 name|shell
@@ -1519,7 +1526,6 @@ argument_list|,
 name|state
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 else|else
 block|{
@@ -1540,6 +1546,16 @@ argument_list|,
 name|G_STRFUNC
 argument_list|)
 expr_stmt|;
+comment|/*  ignore any focus changes while we have a grab  */
+if|if
+condition|(
+name|shell
+operator|->
+name|pointer_grabbed
+condition|)
+return|return
+name|TRUE
+return|;
 comment|/*  release modifier keys when the canvas loses the focus  */
 name|gimp_display_shell_update_focus
 argument_list|(
@@ -2301,6 +2317,13 @@ expr_stmt|;
 block|}
 block|}
 comment|/*  update the tool's modifier state because it didn't get              *  key events while BUTTON1 was down              */
+if|if
+condition|(
+name|gtk_widget_has_focus
+argument_list|(
+name|canvas
+argument_list|)
+condition|)
 name|gimp_display_shell_update_focus
 argument_list|(
 name|shell
@@ -2311,6 +2334,19 @@ operator|&
 name|image_coords
 argument_list|,
 name|state
+argument_list|)
+expr_stmt|;
+else|else
+name|gimp_display_shell_update_focus
+argument_list|(
+name|shell
+argument_list|,
+name|FALSE
+argument_list|,
+operator|&
+name|image_coords
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_grab_remove
@@ -2329,6 +2365,9 @@ argument_list|(
 name|shell
 argument_list|,
 name|event
+argument_list|,
+operator|&
+name|image_coords
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3817,6 +3856,8 @@ argument_list|(
 name|shell
 argument_list|,
 name|event
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|return_val
@@ -4857,7 +4898,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_space_released (GimpDisplayShell * shell,GdkEvent * event)
+DECL|function|gimp_display_shell_space_released (GimpDisplayShell * shell,GdkEvent * event,const GimpCoords * image_coords)
 name|gimp_display_shell_space_released
 parameter_list|(
 name|GimpDisplayShell
@@ -4867,6 +4908,11 @@ parameter_list|,
 name|GdkEvent
 modifier|*
 name|event
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|image_coords
 parameter_list|)
 block|{
 name|Gimp
@@ -4928,9 +4974,6 @@ case|case
 name|GIMP_SPACE_BAR_ACTION_MOVE
 case|:
 block|{
-name|GdkModifierType
-name|state
-decl_stmt|;
 name|gimp_context_set_tool
 argument_list|(
 name|gimp_get_user_context
@@ -4954,6 +4997,19 @@ name|space_shaded_tool
 operator|=
 name|NULL
 expr_stmt|;
+if|if
+condition|(
+name|gtk_widget_has_focus
+argument_list|(
+name|shell
+operator|->
+name|canvas
+argument_list|)
+condition|)
+block|{
+name|GdkModifierType
+name|state
+decl_stmt|;
 name|gdk_event_get_state
 argument_list|(
 name|event
@@ -4968,11 +5024,26 @@ name|shell
 argument_list|,
 name|TRUE
 argument_list|,
-name|NULL
+name|image_coords
 argument_list|,
 name|state
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|gimp_display_shell_update_focus
+argument_list|(
+name|shell
+argument_list|,
+name|FALSE
+argument_list|,
+name|image_coords
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 break|break;
 block|}
