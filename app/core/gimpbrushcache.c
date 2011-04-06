@@ -30,12 +30,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-log.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2d62990103
+DECL|enum|__anon2ba83a9f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -641,6 +647,12 @@ operator|==
 name|hardness
 condition|)
 block|{
+if|if
+condition|(
+name|gimp_log_flags
+operator|&
+name|GIMP_LOG_BRUSH_CACHE
+condition|)
 name|g_printerr
 argument_list|(
 literal|"%c"
@@ -659,6 +671,12 @@ operator|->
 name|last_data
 return|;
 block|}
+if|if
+condition|(
+name|gimp_log_flags
+operator|&
+name|GIMP_LOG_BRUSH_CACHE
+condition|)
 name|g_printerr
 argument_list|(
 literal|"%c"
