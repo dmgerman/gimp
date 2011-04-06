@@ -928,19 +928,16 @@ block|}
 block|}
 end_function
 
-begin_function_decl
+begin_function
 specifier|static
 name|void
+DECL|function|gimp_controller_mouse_constructed (GObject * object)
 name|gimp_controller_mouse_constructed
 parameter_list|(
 name|GObject
 modifier|*
 name|object
 parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_block
 block|{
 if|if
 condition|(
@@ -983,7 +980,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-end_block
+end_function
 
 begin_function
 specifier|static
