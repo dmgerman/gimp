@@ -280,7 +280,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c02d09b0108
+DECL|struct|__anon29a0243f0108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -717,12 +717,9 @@ name|GdkDisplay
 modifier|*
 name|display
 init|=
-name|gdk_drawable_get_display
-argument_list|(
-name|GDK_DRAWABLE
+name|gdk_window_get_display
 argument_list|(
 name|window
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|g_assert
@@ -899,12 +896,9 @@ name|GdkDisplay
 modifier|*
 name|display
 init|=
-name|gdk_drawable_get_display
-argument_list|(
-name|GDK_DRAWABLE
+name|gdk_window_get_display
 argument_list|(
 name|window
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|event
