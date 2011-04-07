@@ -1649,7 +1649,7 @@ literal|"gimp-image-select-color"
 argument_list|,
 literal|"Create a selection by selecting all pixels (in the specified drawable) with the same (or similar) color to that specified."
 argument_list|,
-literal|"This tool creates a selection over the specified image. A by-color selection is determined by the supplied color under the constraints of the current context settings. Essentially, all pixels (in the drawable) that have color sufficiently close to the specified color (as determined by the threshold and criterion context values) are included in the selection. To select transparent regions, the color specified must also have minimum alpha. This prodecure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius', 'gimp-context-set-sample-merged', 'gimp-context-set-sample-criterion', 'gimp-context-set-sample-threshold', 'gimp-context-set-sample-transparent'. In the case of a merged sampling, the supplied drawable is ignored."
+literal|"This tool creates a selection over the specified image. A by-color selection is determined by the supplied color under the constraints of the current context settings. Essentially, all pixels (in the drawable) that have color sufficiently close to the specified color (as determined by the threshold and criterion context values) are included in the selection. To select transparent regions, the color specified must also have minimum alpha. This procedure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius', 'gimp-context-set-sample-merged', 'gimp-context-set-sample-criterion', 'gimp-context-set-sample-threshold', 'gimp-context-set-sample-transparent'. In the case of a merged sampling, the supplied drawable is ignored."
 argument_list|,
 literal|"David Gowers"
 argument_list|,
@@ -1782,7 +1782,7 @@ literal|"gimp-image-select-contiguous-color"
 argument_list|,
 literal|"Create a selection by selecting all pixels around specified coordinates with the same (or similar) color to that at the coordinates."
 argument_list|,
-literal|"This tool creates a contiguous selection over the specified image. A contiguous color selection is determined by a seed fill under the constraints of the current context settings. Essentially, the color at the specified coordinates (in the drawable) is measured and the selection expands outwards from that point to any adjacent pixels which are not significantly different (as determined by the threshold and criterion context settings). This process continues until no more expansion is possible. If antialiasing is turned on, the final selection mask will contain intermediate values based on close misses to the threshold bar at pixels along the seed fill boundary. This prodecure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius', 'gimp-context-set-sample-merged', 'gimp-context-set-sample-criterion', 'gimp-context-set-sample-threshold', 'gimp-context-set-sample-transparent'. In the case of a merged"
+literal|"This tool creates a contiguous selection over the specified image. A contiguous color selection is determined by a seed fill under the constraints of the current context settings. Essentially, the color at the specified coordinates (in the drawable) is measured and the selection expands outwards from that point to any adjacent pixels which are not significantly different (as determined by the threshold and criterion context settings). This process continues until no more expansion is possible. If antialiasing is turned on, the final selection mask will contain intermediate values based on close misses to the threshold bar at pixels along the seed fill boundary. This procedure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius', 'gimp-context-set-sample-merged', 'gimp-context-set-sample-criterion', 'gimp-context-set-sample-threshold', 'gimp-context-set-sample-transparent'. In the case of a merged"
 literal|"sampling, the supplied drawable is ignored. If the sample is merged, the specified coordinates are relative to the image origin; otherwise, they are relative to the drawable's origin."
 argument_list|,
 literal|"David Gowers"
@@ -1942,7 +1942,7 @@ literal|"gimp-image-select-rectangle"
 argument_list|,
 literal|"Create a rectangular selection over the specified image;"
 argument_list|,
-literal|"This tool creates a rectangular selection over the specified image. The rectangular region can be either added to, subtracted from, or replace the contents of the previous selection mask. This prodecure is affected by the following context setters: 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
+literal|"This tool creates a rectangular selection over the specified image. The rectangular region can be either added to, subtracted from, or replace the contents of the previous selection mask. This procedure is affected by the following context setters: 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -2123,7 +2123,7 @@ literal|"gimp-image-select-round-rectangle"
 argument_list|,
 literal|"Create a rectangular selection with round corners over the specified image;"
 argument_list|,
-literal|"This tool creates a rectangular selection with round corners over the specified image. The rectangular region can be either added to, subtracted from, or replace the contents of the previous selection mask. This prodecure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
+literal|"This tool creates a rectangular selection with round corners over the specified image. The rectangular region can be either added to, subtracted from, or replace the contents of the previous selection mask. This procedure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
 argument_list|,
 literal|"Martin Nordholts"
 argument_list|,
@@ -2348,7 +2348,7 @@ literal|"gimp-image-select-ellipse"
 argument_list|,
 literal|"Create an elliptical selection over the specified image."
 argument_list|,
-literal|"This tool creates an elliptical selection over the specified image. The elliptical region can be either added to, subtracted from, or replace the contents of the previous selection mask. This prodecure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
+literal|"This tool creates an elliptical selection over the specified image. The elliptical region can be either added to, subtracted from, or replace the contents of the previous selection mask. This procedure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -2529,7 +2529,7 @@ literal|"gimp-image-select-polygon"
 argument_list|,
 literal|"Create a polygonal selection over the specified image."
 argument_list|,
-literal|"This tool creates a polygonal selection over the specified image. The polygonal region can be either added to, subtracted from, or replace the contents of the previous selection mask. The polygon is specified through an array of floating point numbers and its length. The length of array must be 2n, where n is the number of points. Each point is defined by 2 floating point values which correspond to the x and y coordinates. If the final point does not connect to the starting point, a connecting segment is automatically added. This prodecure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
+literal|"This tool creates a polygonal selection over the specified image. The polygonal region can be either added to, subtracted from, or replace the contents of the previous selection mask. The polygon is specified through an array of floating point numbers and its length. The length of array must be 2n, where n is the number of points. Each point is defined by 2 floating point values which correspond to the x and y coordinates. If the final point does not connect to the starting point, a connecting segment is automatically added. This procedure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -2658,7 +2658,7 @@ literal|"gimp-image-select-item"
 argument_list|,
 literal|"Transforms the specified item into a selection"
 argument_list|,
-literal|"This procedure renders the item's outline into the current selection of the image the item belongs to. What exactly the item's outline is depends on the item type: for layers, it's the layer's alpha channel, for vectors the vector's shape. This prodecure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
+literal|"This procedure renders the item's outline into the current selection of the image the item belongs to. What exactly the item's outline is depends on the item type: for layers, it's the layer's alpha channel, for vectors the vector's shape. This procedure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
