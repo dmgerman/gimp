@@ -154,6 +154,11 @@ specifier|const
 name|gchar
 modifier|*
 name|dialog_tooltip
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|editor_id
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -188,6 +193,22 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
+name|gimp_viewable_box_edit_clicked
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GimpViewableButton
+modifier|*
+name|button
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|gimp_gradient_box_reverse_notify
 parameter_list|(
 name|GObject
@@ -213,7 +234,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|brush_box_new (GimpContainer * container,GimpContext * context,const gchar * label,gint spacing,GimpViewType view_type,GimpViewSize view_size)
+DECL|function|brush_box_new (GimpContainer * container,GimpContext * context,const gchar * label,gint spacing,GimpViewType view_type,GimpViewSize view_size,const gchar * editor_id)
 name|brush_box_new
 parameter_list|(
 name|GimpContainer
@@ -237,6 +258,11 @@ name|view_type
 parameter_list|,
 name|GimpViewSize
 name|view_size
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|editor_id
 parameter_list|)
 block|{
 if|if
@@ -280,6 +306,8 @@ name|_
 argument_list|(
 literal|"Open the brush selection dialog"
 argument_list|)
+argument_list|,
+name|editor_id
 argument_list|)
 return|;
 block|}
@@ -346,6 +374,8 @@ argument_list|,
 name|GIMP_VIEW_TYPE_GRID
 argument_list|,
 name|GIMP_VIEW_SIZE_SMALL
+argument_list|,
+name|NULL
 argument_list|)
 return|;
 block|}
@@ -354,7 +384,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_prop_brush_box_new (GimpContainer * container,GimpContext * context,const gchar * label,gint spacing,const gchar * view_type_prop,const gchar * view_size_prop)
+DECL|function|gimp_prop_brush_box_new (GimpContainer * container,GimpContext * context,const gchar * label,gint spacing,const gchar * view_type_prop,const gchar * view_size_prop,const gchar * editor_id)
 name|gimp_prop_brush_box_new
 parameter_list|(
 name|GimpContainer
@@ -382,6 +412,11 @@ specifier|const
 name|gchar
 modifier|*
 name|view_size_prop
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|editor_id
 parameter_list|)
 block|{
 name|GimpViewType
@@ -447,6 +482,8 @@ argument_list|,
 name|view_type
 argument_list|,
 name|view_size
+argument_list|,
+name|editor_id
 argument_list|)
 argument_list|,
 name|context
@@ -467,7 +504,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|dynamics_box_new (GimpContainer * container,GimpContext * context,const gchar * label,gint spacing,GimpViewSize view_size)
+DECL|function|dynamics_box_new (GimpContainer * container,GimpContext * context,const gchar * label,gint spacing,GimpViewSize view_size,const gchar * editor_id)
 name|dynamics_box_new
 parameter_list|(
 name|GimpContainer
@@ -488,6 +525,11 @@ name|spacing
 parameter_list|,
 name|GimpViewSize
 name|view_size
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|editor_id
 parameter_list|)
 block|{
 if|if
@@ -531,6 +573,8 @@ name|_
 argument_list|(
 literal|"Open the dynamics selection dialog"
 argument_list|)
+argument_list|,
+name|editor_id
 argument_list|)
 return|;
 block|}
@@ -595,6 +639,8 @@ argument_list|,
 name|spacing
 argument_list|,
 name|GIMP_VIEW_SIZE_SMALL
+argument_list|,
+name|NULL
 argument_list|)
 return|;
 block|}
@@ -603,7 +649,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_prop_dynamics_box_new (GimpContainer * container,GimpContext * context,const gchar * label,gint spacing,const gchar * view_type_prop,const gchar * view_size_prop)
+DECL|function|gimp_prop_dynamics_box_new (GimpContainer * container,GimpContext * context,const gchar * label,gint spacing,const gchar * view_type_prop,const gchar * view_size_prop,const gchar * editor_id)
 name|gimp_prop_dynamics_box_new
 parameter_list|(
 name|GimpContainer
@@ -631,6 +677,11 @@ specifier|const
 name|gchar
 modifier|*
 name|view_size_prop
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|editor_id
 parameter_list|)
 block|{
 name|GimpViewType
@@ -694,6 +745,8 @@ argument_list|,
 name|spacing
 argument_list|,
 name|view_size
+argument_list|,
+name|editor_id
 argument_list|)
 argument_list|,
 name|context
@@ -781,6 +834,8 @@ name|_
 argument_list|(
 literal|"Open the pattern selection dialog"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 return|;
 block|}
@@ -968,7 +1023,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gradient_box_new (GimpContainer * container,GimpContext * context,const gchar * label,gint spacing,GimpViewType view_type,GimpViewSize view_size,const gchar * reverse_prop)
+DECL|function|gradient_box_new (GimpContainer * container,GimpContext * context,const gchar * label,gint spacing,GimpViewType view_type,GimpViewSize view_size,const gchar * reverse_prop,const gchar * editor_id)
 name|gradient_box_new
 parameter_list|(
 name|GimpContainer
@@ -997,6 +1052,11 @@ specifier|const
 name|gchar
 modifier|*
 name|reverse_prop
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|editor_id
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1053,6 +1113,8 @@ name|_
 argument_list|(
 literal|"Open the gradient selection dialog"
 argument_list|)
+argument_list|,
+name|editor_id
 argument_list|)
 expr_stmt|;
 name|children
@@ -1092,6 +1154,10 @@ condition|)
 block|{
 name|GtkWidget
 modifier|*
+name|vbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|toggle
 decl_stmt|;
 name|GtkWidget
@@ -1106,6 +1172,36 @@ name|gchar
 modifier|*
 name|signal_name
 decl_stmt|;
+name|vbox
+operator|=
+name|gtk_vbox_new
+argument_list|(
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|hbox
+argument_list|)
+argument_list|,
+name|vbox
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|vbox
+argument_list|)
+expr_stmt|;
 name|toggle
 operator|=
 name|gimp_prop_check_button_new
@@ -1120,11 +1216,21 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_toggle_button_set_mode
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|toggle
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|hbox
+name|vbox
 argument_list|)
 argument_list|,
 name|toggle
@@ -1160,6 +1266,18 @@ argument_list|(
 name|GIMP_STOCK_FLIP_HORIZONTAL
 argument_list|,
 name|GTK_ICON_SIZE_MENU
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+literal|0.5
+argument_list|,
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -1312,6 +1430,8 @@ argument_list|,
 name|GIMP_VIEW_SIZE_LARGE
 argument_list|,
 name|reverse_prop
+argument_list|,
+name|NULL
 argument_list|)
 return|;
 block|}
@@ -1320,7 +1440,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_prop_gradient_box_new (GimpContainer * container,GimpContext * context,const gchar * label,gint spacing,const gchar * view_type_prop,const gchar * view_size_prop,const gchar * reverse_prop)
+DECL|function|gimp_prop_gradient_box_new (GimpContainer * container,GimpContext * context,const gchar * label,gint spacing,const gchar * view_type_prop,const gchar * view_size_prop,const gchar * reverse_prop,const gchar * editor_id)
 name|gimp_prop_gradient_box_new
 parameter_list|(
 name|GimpContainer
@@ -1353,6 +1473,11 @@ specifier|const
 name|gchar
 modifier|*
 name|reverse_prop
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|editor_id
 parameter_list|)
 block|{
 name|GimpViewType
@@ -1420,6 +1545,8 @@ argument_list|,
 name|view_size
 argument_list|,
 name|reverse_prop
+argument_list|,
+name|editor_id
 argument_list|)
 argument_list|,
 name|context
@@ -1440,7 +1567,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|palette_box_new (GimpContainer * container,GimpContext * context,const gchar * label,gint spacing,GimpViewType view_type,GimpViewSize view_size)
+DECL|function|palette_box_new (GimpContainer * container,GimpContext * context,const gchar * label,gint spacing,GimpViewType view_type,GimpViewSize view_size,const gchar * editor_id)
 name|palette_box_new
 parameter_list|(
 name|GimpContainer
@@ -1464,6 +1591,11 @@ name|view_type
 parameter_list|,
 name|GimpViewSize
 name|view_size
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|editor_id
 parameter_list|)
 block|{
 if|if
@@ -1507,6 +1639,8 @@ name|_
 argument_list|(
 literal|"Open the palette selection dialog"
 argument_list|)
+argument_list|,
+name|editor_id
 argument_list|)
 return|;
 block|}
@@ -1573,6 +1707,8 @@ argument_list|,
 name|GIMP_VIEW_TYPE_LIST
 argument_list|,
 name|GIMP_VIEW_SIZE_MEDIUM
+argument_list|,
+name|NULL
 argument_list|)
 return|;
 block|}
@@ -1581,7 +1717,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_prop_palette_box_new (GimpContainer * container,GimpContext * context,const gchar * label,gint spacing,const gchar * view_type_prop,const gchar * view_size_prop)
+DECL|function|gimp_prop_palette_box_new (GimpContainer * container,GimpContext * context,const gchar * label,gint spacing,const gchar * view_type_prop,const gchar * view_size_prop,const gchar * editor_id)
 name|gimp_prop_palette_box_new
 parameter_list|(
 name|GimpContainer
@@ -1609,6 +1745,11 @@ specifier|const
 name|gchar
 modifier|*
 name|view_size_prop
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|editor_id
 parameter_list|)
 block|{
 name|GimpViewType
@@ -1674,6 +1815,8 @@ argument_list|,
 name|view_type
 argument_list|,
 name|view_size
+argument_list|,
+name|editor_id
 argument_list|)
 argument_list|,
 name|context
@@ -1758,6 +1901,8 @@ name|_
 argument_list|(
 literal|"Open the font selection dialog"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 return|;
 block|}
@@ -1945,7 +2090,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_viewable_box_new (GimpContainer * container,GimpContext * context,const gchar * label,gint spacing,GimpViewType view_type,GimpViewType button_view_size,GimpViewSize view_size,const gchar * dialog_identifier,const gchar * dialog_stock_id,const gchar * dialog_tooltip)
+DECL|function|gimp_viewable_box_new (GimpContainer * container,GimpContext * context,const gchar * label,gint spacing,GimpViewType view_type,GimpViewType button_view_size,GimpViewSize view_size,const gchar * dialog_identifier,const gchar * dialog_stock_id,const gchar * dialog_tooltip,const gchar * editor_id)
 name|gimp_viewable_box_new
 parameter_list|(
 name|GimpContainer
@@ -1987,6 +2132,11 @@ specifier|const
 name|gchar
 modifier|*
 name|dialog_tooltip
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|editor_id
 parameter_list|)
 block|{
 name|GtkWidget
@@ -2202,6 +2352,160 @@ argument_list|(
 name|entry
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|editor_id
+condition|)
+block|{
+name|GtkWidget
+modifier|*
+name|edit_vbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|edit_button
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|image
+decl_stmt|;
+name|edit_vbox
+operator|=
+name|gtk_vbox_new
+argument_list|(
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_end
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|hbox
+argument_list|)
+argument_list|,
+name|edit_vbox
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|edit_vbox
+argument_list|)
+expr_stmt|;
+name|edit_button
+operator|=
+name|gtk_button_new
+argument_list|()
+expr_stmt|;
+name|gtk_button_set_relief
+argument_list|(
+name|GTK_BUTTON
+argument_list|(
+name|edit_button
+argument_list|)
+argument_list|,
+name|GTK_RELIEF_NONE
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_end
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|edit_vbox
+argument_list|)
+argument_list|,
+name|edit_button
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|edit_button
+argument_list|)
+expr_stmt|;
+name|image
+operator|=
+name|gtk_image_new_from_stock
+argument_list|(
+name|GIMP_STOCK_EDIT
+argument_list|,
+name|GTK_ICON_SIZE_BUTTON
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+literal|0.5
+argument_list|,
+literal|1.0
+argument_list|)
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|edit_button
+argument_list|)
+argument_list|,
+name|image
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+name|g_object_set_data_full
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+literal|"gimp-viewable-box-editor"
+argument_list|,
+name|g_strdup
+argument_list|(
+name|editor_id
+argument_list|)
+argument_list|,
+operator|(
+name|GDestroyNotify
+operator|)
+name|g_free
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|edit_button
+argument_list|,
+literal|"clicked"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_viewable_box_edit_clicked
+argument_list|)
+argument_list|,
+name|button
+argument_list|)
+expr_stmt|;
+block|}
 return|return
 name|hbox
 return|;
@@ -2285,6 +2589,56 @@ expr_stmt|;
 return|return
 name|box
 return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_viewable_box_edit_clicked (GtkWidget * widget,GimpViewableButton * button)
+name|gimp_viewable_box_edit_clicked
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GimpViewableButton
+modifier|*
+name|button
+parameter_list|)
+block|{
+specifier|const
+name|gchar
+modifier|*
+name|editor_id
+init|=
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+literal|"gimp-viewable-box-editor"
+argument_list|)
+decl_stmt|;
+name|gimp_dialog_factory_dialog_raise
+argument_list|(
+name|button
+operator|->
+name|dialog_factory
+argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+name|editor_id
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

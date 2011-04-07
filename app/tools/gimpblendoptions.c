@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abd970b0103
+DECL|enum|__anon288feb3a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -720,6 +720,8 @@ argument_list|,
 literal|"gradient-view-size"
 argument_list|,
 literal|"gradient-reverse"
+argument_list|,
+literal|"gimp-gradient-editor"
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

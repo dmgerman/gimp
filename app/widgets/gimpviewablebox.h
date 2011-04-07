@@ -70,6 +70,11 @@ specifier|const
 name|gchar
 modifier|*
 name|view_size_prop
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|editor_id
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -128,6 +133,11 @@ specifier|const
 name|gchar
 modifier|*
 name|view_size_prop
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|editor_id
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -254,6 +264,11 @@ specifier|const
 name|gchar
 modifier|*
 name|reverse_prop
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|editor_id
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -312,6 +327,11 @@ specifier|const
 name|gchar
 modifier|*
 name|view_size_prop
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|editor_id
 parameter_list|)
 function_decl|;
 end_function_decl

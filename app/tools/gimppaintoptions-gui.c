@@ -524,6 +524,8 @@ argument_list|,
 literal|"brush-view-type"
 argument_list|,
 literal|"brush-view-size"
+argument_list|,
+literal|"gimp-brush-editor"
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1033,6 +1035,8 @@ argument_list|,
 literal|"dynamics-view-type"
 argument_list|,
 literal|"dynamics-view-size"
+argument_list|,
+literal|"gimp-dynamics-editor"
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1746,6 +1750,8 @@ argument_list|,
 literal|"gradient-view-size"
 argument_list|,
 literal|"gradient-reverse"
+argument_list|,
+literal|"gimp-gradient-editor"
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
