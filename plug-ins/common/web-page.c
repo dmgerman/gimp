@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c988b680108
+DECL|struct|__anon2c102d7d0108
 block|{
 DECL|member|url
 name|char
@@ -110,7 +110,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c988b680208
+DECL|struct|__anon2c102d7d0208
 block|{
 DECL|member|url
 name|char
@@ -2225,6 +2225,11 @@ argument_list|(
 name|window
 argument_list|)
 expr_stmt|;
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|webpagevals
@@ -2340,6 +2345,11 @@ operator|.
 name|pixbuf
 operator|=
 name|NULL
+expr_stmt|;
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
 expr_stmt|;
 block|}
 return|return
