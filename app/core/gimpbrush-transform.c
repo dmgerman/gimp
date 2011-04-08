@@ -18,25 +18,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpmath/gimpmath.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpbrush.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpbrush-transform.h"
+file|"core-types.h"
 end_include
 
 begin_include
@@ -56,6 +44,26 @@ include|#
 directive|include
 file|"paint-funcs/paint-funcs.h"
 end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpbrush.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpbrush-transform.h"
+end_include
+
+begin_define
+DECL|macro|MAX_BLUR_KERNEL
+define|#
+directive|define
+name|MAX_BLUR_KERNEL
+value|15
+end_define
 
 begin_comment
 comment|/*  local function prototypes  */
@@ -140,14 +148,6 @@ name|hardness
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_define
-DECL|macro|MAX_BLUR_KERNEL
-define|#
-directive|define
-name|MAX_BLUR_KERNEL
-value|15
-end_define
 
 begin_comment
 comment|/*  public functions  */
@@ -2768,13 +2768,13 @@ name|gint
 name|len
 parameter_list|)
 block|{
-name|int
-name|i
-decl_stmt|;
 name|gfloat
 name|total
 init|=
 literal|0
+decl_stmt|;
+name|gint
+name|i
 decl_stmt|;
 for|for
 control|(
@@ -2818,9 +2818,6 @@ name|gint
 name|len
 parameter_list|)
 block|{
-name|int
-name|i
-decl_stmt|;
 name|gint
 name|half_point
 init|=
@@ -2834,6 +2831,9 @@ literal|2
 operator|)
 operator|+
 literal|1
+decl_stmt|;
+name|gint
+name|i
 decl_stmt|;
 for|for
 control|(
@@ -2897,6 +2897,7 @@ block|{
 name|gint
 name|kernel_size
 init|=
+operator|(
 name|MIN
 argument_list|(
 name|MAX_BLUR_KERNEL
@@ -2932,8 +2933,9 @@ argument_list|,
 name|height
 argument_list|)
 operator|)
+operator|)
 decl_stmt|;
-comment|/*Kernel size must be odd*/
+comment|/* Kernel size must be odd */
 if|if
 condition|(
 name|kernel_size
