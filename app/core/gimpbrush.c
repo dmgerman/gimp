@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad0c0880103
+DECL|enum|__anon297934890103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -120,7 +120,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad0c0880203
+DECL|enum|__anon297934890203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2810,6 +2810,11 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
+comment|/*  while the brush mask is always at least 1x1 pixels, its        *  outline can correctly be NULL        *        *  FIXME: make the cache handle NULL things when it is        *         properly implemented        */
+if|if
+condition|(
+name|boundary
+condition|)
 name|gimp_brush_cache_add
 argument_list|(
 name|brush
