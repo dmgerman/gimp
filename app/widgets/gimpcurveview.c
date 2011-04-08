@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2f03e30103
+DECL|enum|__anon2bc30f500103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2f03e30203
+DECL|enum|__anon2bc30f500203
 block|{
 DECL|enumerator|CUT_CLIPBOARD
 name|CUT_CLIPBOARD
@@ -131,7 +131,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2f03e30308
+DECL|struct|__anon2bc30f500308
 block|{
 DECL|member|curve
 name|GimpCurve
@@ -4121,6 +4121,28 @@ name|x1
 operator|)
 operator|)
 decl_stmt|;
+name|xpos
+operator|=
+name|CLAMP
+argument_list|(
+name|xpos
+argument_list|,
+literal|0.0
+argument_list|,
+literal|1.0
+argument_list|)
+expr_stmt|;
+name|ypos
+operator|=
+name|CLAMP
+argument_list|(
+name|ypos
+argument_list|,
+literal|0.0
+argument_list|,
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|gimp_curve_set_curve
 argument_list|(
 name|curve
