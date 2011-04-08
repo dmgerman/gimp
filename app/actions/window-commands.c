@@ -109,7 +109,6 @@ argument_list|(
 name|widget
 argument_list|)
 condition|)
-empty_stmt|;
 block|{
 name|GdkEvent
 modifier|*

@@ -43,7 +43,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2bb92c140108
+DECL|struct|__anon2c25ef930108
 typedef|typedef
 struct|struct
 block|{
@@ -2542,7 +2542,6 @@ operator|&
 name|closed
 argument_list|)
 condition|)
-empty_stmt|;
 return|return
 operator|-
 literal|1
