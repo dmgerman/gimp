@@ -42,6 +42,15 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_context_set_defaults
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_context_list_paint_methods
 parameter_list|(
 name|gint
