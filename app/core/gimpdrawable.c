@@ -223,7 +223,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon287ba66d0103
+DECL|enum|__anon2c4b337f0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2017,9 +2017,14 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
 name|GIMP_TIMER_START
 argument_list|()
 expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 name|gimp_use_gegl
@@ -2220,11 +2225,16 @@ name|progress
 argument_list|)
 expr_stmt|;
 block|}
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
 name|GIMP_TIMER_END
 argument_list|(
 literal|"scaling"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|gimp_drawable_set_tiles_full
 argument_list|(
 name|drawable
