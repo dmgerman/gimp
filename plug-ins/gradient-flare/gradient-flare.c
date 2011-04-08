@@ -151,6 +151,14 @@ value|"gradient-flare"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-gradient-flare"
+end_define
+
+begin_define
 DECL|macro|GRADIENT_NAME_MAX
 define|#
 directive|define
@@ -352,7 +360,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon273c496f0103
+DECL|enum|__anon275b9a400103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -379,7 +387,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon273c496f0203
+DECL|enum|__anon275b9a400203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -400,7 +408,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273c496f0308
+DECL|struct|__anon275b9a400308
 block|{
 DECL|member|name
 name|gchar
@@ -541,7 +549,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273c496f0408
+DECL|struct|__anon275b9a400408
 block|{
 DECL|member|fp
 name|FILE
@@ -561,7 +569,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon273c496f0503
+DECL|enum|__anon275b9a400503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -589,7 +597,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273c496f0608
+DECL|struct|__anon275b9a400608
 block|{
 DECL|member|init
 name|gint
@@ -611,7 +619,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon273c496f0708
+DECL|struct|__anon275b9a400708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -690,7 +698,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273c496f0808
+DECL|struct|__anon275b9a400808
 block|{
 DECL|member|init
 name|gint
@@ -760,7 +768,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273c496f0908
+DECL|struct|__anon275b9a400908
 block|{
 DECL|member|x0
 name|gdouble
@@ -787,7 +795,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273c496f0a08
+DECL|struct|__anon275b9a400a08
 block|{
 DECL|member|init
 name|gint
@@ -957,7 +965,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273c496f0b08
+DECL|struct|__anon275b9a400b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -984,7 +992,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273c496f0c08
+DECL|struct|__anon275b9a400c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1225,7 +1233,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273c496f0d08
+DECL|struct|__anon275b9a400d08
 block|{
 DECL|member|tag
 name|gint
@@ -1302,7 +1310,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273c496f0e08
+DECL|struct|__anon275b9a400e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -8507,7 +8515,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon273c496f0f08
+DECL|struct|__anon275b9a400f08
 block|{
 DECL|member|values
 name|guchar
@@ -11577,7 +11585,7 @@ argument_list|(
 literal|"Gradient Flare"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,
@@ -14460,7 +14468,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon273c496f1008
+DECL|struct|__anon275b9a401008
 block|{
 DECL|member|label
 specifier|const
@@ -16021,7 +16029,7 @@ argument_list|(
 literal|"Gradient Flare Editor"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|GTK_WIDGET
 argument_list|(

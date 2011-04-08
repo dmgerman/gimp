@@ -58,6 +58,14 @@ value|"photocopy"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-photocopy"
+end_define
+
+begin_define
 DECL|macro|TILE_CACHE_SIZE
 define|#
 directive|define
@@ -84,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291f40a70108
+DECL|struct|__anon289e31310108
 block|{
 DECL|member|mask_radius
 name|gdouble
@@ -4540,7 +4548,7 @@ argument_list|(
 literal|"Photocopy"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

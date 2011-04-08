@@ -58,6 +58,14 @@ value|"displace"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-displace"
+end_define
+
+begin_define
 DECL|macro|ENTRY_WIDTH
 define|#
 directive|define
@@ -76,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b436da70103
+DECL|enum|__anon279fbd240103
 block|{
 DECL|enumerator|CARTESIAN_MODE
 name|CARTESIAN_MODE
@@ -96,7 +104,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b436da70208
+DECL|struct|__anon279fbd240208
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -1145,7 +1153,7 @@ argument_list|(
 literal|"Displace"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

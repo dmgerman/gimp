@@ -48,6 +48,14 @@ value|"alien-map"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-alien-map"
+end_define
+
+begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
@@ -70,7 +78,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d61bd80103
+DECL|enum|__anon2b31f07c0103
 block|{
 DECL|enumerator|RGB_MODEL
 name|RGB_MODEL
@@ -94,7 +102,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d61bd80208
+DECL|struct|__anon2b31f07c0208
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -1851,7 +1859,7 @@ argument_list|(
 literal|"Alien Map"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

@@ -66,6 +66,14 @@ value|"sphere-designer"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-sphere-designer"
+end_define
+
+begin_define
 DECL|macro|RESPONSE_RESET
 define|#
 directive|define
@@ -214,7 +222,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c01c7a80103
+DECL|enum|__anon2785ea400103
 block|{
 DECL|enumerator|TRIANGLE
 name|TRIANGLE
@@ -239,7 +247,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c01c7a80203
+DECL|enum|__anon2785ea400203
 block|{
 DECL|enumerator|SOLID
 name|SOLID
@@ -288,7 +296,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c01c7a80303
+DECL|enum|__anon2785ea400303
 block|{
 DECL|enumerator|PERSPECTIVE
 name|PERSPECTIVE
@@ -304,7 +312,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c01c7a80403
+DECL|enum|__anon2785ea400403
 block|{
 DECL|enumerator|FOG
 name|FOG
@@ -314,7 +322,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c01c7a80503
+DECL|enum|__anon2785ea400503
 block|{
 DECL|enumerator|TYPE
 name|TYPE
@@ -367,7 +375,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c01c7a80608
+DECL|struct|__anon2785ea400608
 block|{
 DECL|member|xsize
 DECL|member|ysize
@@ -390,7 +398,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c01c7a80708
+DECL|struct|__anon2785ea400708
 block|{
 DECL|member|numcol
 name|gshort
@@ -419,7 +427,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c01c7a80808
+DECL|struct|__anon2785ea400808
 block|{
 DECL|member|majtype
 name|gint
@@ -514,7 +522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c01c7a80908
+DECL|struct|__anon2785ea400908
 block|{
 DECL|member|type
 name|gshort
@@ -541,7 +549,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c01c7a80a08
+DECL|struct|__anon2785ea400a08
 block|{
 DECL|member|type
 name|gshort
@@ -582,7 +590,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c01c7a80b08
+DECL|struct|__anon2785ea400b08
 block|{
 DECL|member|com
 name|common
@@ -607,7 +615,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c01c7a80c08
+DECL|struct|__anon2785ea400c08
 block|{
 DECL|member|com
 name|common
@@ -633,7 +641,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c01c7a80d08
+DECL|struct|__anon2785ea400d08
 block|{
 DECL|member|com
 name|common
@@ -656,7 +664,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c01c7a80e08
+DECL|struct|__anon2785ea400e08
 block|{
 DECL|member|com
 name|common
@@ -681,7 +689,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c01c7a80f08
+DECL|struct|__anon2785ea400f08
 block|{
 DECL|member|com
 name|common
@@ -704,7 +712,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c01c7a81008
+DECL|struct|__anon2785ea401008
 block|{
 DECL|member|com
 name|common
@@ -727,7 +735,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c01c7a81108
+DECL|struct|__anon2785ea401108
 block|{
 DECL|member|v1
 DECL|member|v2
@@ -753,7 +761,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2c01c7a8120a
+DECL|union|__anon2785ea40120a
 block|{
 DECL|member|com
 name|common
@@ -14690,7 +14698,7 @@ argument_list|(
 literal|"Sphere Designer"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

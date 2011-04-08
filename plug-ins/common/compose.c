@@ -73,13 +73,21 @@ name|PLUG_IN_BINARY
 value|"compose"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-compose"
+end_define
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f6d2630108
+DECL|struct|__anon279448550108
 block|{
 union|union
-DECL|union|__anon29f6d263020a
+DECL|union|__anon27944855020a
 block|{
 DECL|member|ID
 name|gint32
@@ -654,7 +662,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f6d2630308
+DECL|struct|__anon279448550308
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1193,7 +1201,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f6d2630408
+DECL|struct|__anon279448550408
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1233,7 +1241,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f6d2630508
+DECL|struct|__anon279448550508
 block|{
 DECL|member|width
 DECL|member|height
@@ -7593,7 +7601,7 @@ argument_list|(
 literal|"Compose"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

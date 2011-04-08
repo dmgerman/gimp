@@ -35,6 +35,14 @@ name|PLUG_IN_BINARY
 value|"file-jpeg"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-jpeg"
+end_define
+
 begin_comment
 comment|/* headers used in some APPn markers */
 end_comment
@@ -93,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b507d360103
+DECL|enum|__anon2af7ba080103
 block|{
 DECL|enumerator|JPEG_SUPSAMPLING_2x2_1x1_1x1
 name|JPEG_SUPSAMPLING_2x2_1x1_1x1

@@ -50,6 +50,14 @@ value|"unit-editor"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-unit-editor"
+end_define
+
+begin_define
 DECL|macro|RESPONSE_REFRESH
 define|#
 directive|define
@@ -59,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29da75490103
+DECL|enum|__anon278f37960103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -103,7 +111,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29da75490208
+DECL|struct|__anon278f37960208
 block|{
 DECL|member|title
 specifier|const
@@ -752,7 +760,7 @@ argument_list|(
 literal|"Add a New Unit"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|main_dialog
 argument_list|,
@@ -1811,7 +1819,7 @@ argument_list|(
 literal|"Unit Editor"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

@@ -52,6 +52,14 @@ value|"whirl-pinch"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-whirl-pinch"
+end_define
+
+begin_define
 DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
@@ -78,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2fcae50108
+DECL|struct|__anon29f23ba80108
 block|{
 DECL|member|whirl
 name|gdouble
@@ -2106,7 +2114,7 @@ argument_list|(
 literal|"Whirl and Pinch"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

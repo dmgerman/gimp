@@ -56,6 +56,14 @@ value|"filter-pack"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-filter-pack"
+end_define
+
+begin_define
 DECL|macro|MAX_PREVIEW_SIZE
 define|#
 directive|define
@@ -106,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27de3e070108
+DECL|struct|__anon2bbc1cbc0108
 block|{
 DECL|member|run
 name|gboolean
@@ -121,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27de3e070208
+DECL|struct|__anon2bbc1cbc0208
 block|{
 DECL|member|width
 name|gint
@@ -155,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27de3e070303
+DECL|enum|__anon2bbc1cbc0303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -176,7 +184,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27de3e070403
+DECL|enum|__anon2bbc1cbc0403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -208,7 +216,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27de3e070503
+DECL|enum|__anon2bbc1cbc0503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -227,7 +235,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27de3e070603
+DECL|enum|__anon2bbc1cbc0603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -255,7 +263,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27de3e070703
+DECL|enum|__anon2bbc1cbc0703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -274,7 +282,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27de3e070808
+DECL|struct|__anon2bbc1cbc0808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -305,7 +313,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27de3e070908
+DECL|struct|__anon2bbc1cbc0908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -402,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27de3e070a08
+DECL|struct|__anon2bbc1cbc0a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -1284,7 +1292,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27de3e070b08
+DECL|struct|__anon2bbc1cbc0b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -6209,7 +6217,7 @@ argument_list|(
 literal|"Filter Pack Simulation"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

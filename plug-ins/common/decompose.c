@@ -107,6 +107,14 @@ name|PLUG_IN_BINARY
 value|"decompose"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-decompose"
+end_define
+
 begin_comment
 comment|/* Declare local functions  */
 end_comment
@@ -969,7 +977,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b16c98e0108
+DECL|struct|__anon2a0ee8910108
 block|{
 DECL|member|type
 specifier|const
@@ -1682,7 +1690,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b16c98e0208
+DECL|struct|__anon2a0ee8910208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -8114,7 +8122,7 @@ argument_list|(
 literal|"Decompose"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

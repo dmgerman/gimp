@@ -53,6 +53,14 @@ name|PLUG_IN_BINARY
 value|"flarefx"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-flarefx"
+end_define
+
 begin_comment
 comment|/* --- Typedefs --- */
 end_comment
@@ -60,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2963acc50108
+DECL|struct|__anon2b21d2c20108
 block|{
 DECL|member|posx
 name|gint
@@ -111,7 +119,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2963acc50208
+DECL|struct|__anon2b21d2c20208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -1125,7 +1133,7 @@ argument_list|(
 literal|"Lens Flare"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

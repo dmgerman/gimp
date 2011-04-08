@@ -86,6 +86,14 @@ value|"sample-colorize"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-sample-colorize"
+end_define
+
+begin_define
 DECL|macro|NUMBER_IN_ARGS
 define|#
 directive|define
@@ -341,7 +349,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289100d70108
+DECL|struct|__anon2c8a18040108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -410,7 +418,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289100d70208
+DECL|struct|__anon2c8a18040208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -518,7 +526,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289100d70308
+DECL|struct|__anon2c8a18040308
 block|{
 DECL|member|color
 name|guchar
@@ -547,7 +555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289100d70408
+DECL|struct|__anon2c8a18040408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -574,7 +582,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289100d70508
+DECL|struct|__anon2c8a18040508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -5967,7 +5975,7 @@ argument_list|(
 literal|"Sample Colorize"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

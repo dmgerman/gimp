@@ -1826,7 +1826,7 @@ argument_list|(
 literal|"Size Map Editor"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|gtk_widget_get_toplevel
 argument_list|(

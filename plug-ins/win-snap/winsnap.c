@@ -129,6 +129,14 @@ name|PLUG_IN_BINARY
 value|"win-snap"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-win-snap"
+end_define
+
 begin_comment
 comment|/*  * Application definitions  */
 end_comment
@@ -351,7 +359,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c4ebbed0108
+DECL|struct|__anon2ae8507b0108
 typedef|typedef
 struct|struct
 block|{
@@ -398,7 +406,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c4ebbed0208
+DECL|struct|__anon2ae8507b0208
 typedef|typedef
 struct|struct
 block|{
@@ -2833,7 +2841,7 @@ name|gimp_dialog_new
 argument_list|(
 name|PLUG_IN_PRINT_NAME
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

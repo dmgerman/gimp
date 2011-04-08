@@ -80,6 +80,14 @@ value|"curve-bend"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-curve-bend"
+end_define
+
+begin_define
 DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
@@ -664,7 +672,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5d0a2d0108
+DECL|struct|__anon29e66e910108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -718,7 +726,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5d0a2d0208
+DECL|struct|__anon29e66e910208
 block|{
 DECL|member|y
 name|gint32
@@ -5573,7 +5581,7 @@ argument_list|(
 literal|"Curve Bend"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

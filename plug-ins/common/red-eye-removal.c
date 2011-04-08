@@ -185,6 +185,14 @@ name|PLUG_IN_BINARY
 value|"red-eye-removal"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-red-eye-removal"
+end_define
+
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
 specifier|const
@@ -385,7 +393,7 @@ argument_list|(
 literal|"Red Eye Removal"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

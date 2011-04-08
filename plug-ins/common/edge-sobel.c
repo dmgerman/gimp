@@ -63,10 +63,18 @@ name|PLUG_IN_BINARY
 value|"edge-sobel"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-edge-sobel"
+end_define
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d3d6280108
+DECL|struct|__anon27f17cfe0108
 block|{
 DECL|member|horizontal
 name|gboolean
@@ -784,7 +792,7 @@ argument_list|(
 literal|"Sobel Edge Detection"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

@@ -20,6 +20,14 @@ value|"fractal-trace"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-fractal-trace"
+end_define
+
+begin_define
 DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
@@ -184,7 +192,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon29fd64660103
+DECL|enum|__anon2911c94f0103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -204,7 +212,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fd64660208
+DECL|struct|__anon2911c94f0208
 block|{
 DECL|member|x1
 name|gdouble
@@ -411,7 +419,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fd64660308
+DECL|struct|__anon2911c94f0308
 block|{
 DECL|member|x1
 name|gint
@@ -454,7 +462,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fd64660408
+DECL|struct|__anon2911c94f0408
 block|{
 DECL|member|width
 name|gint
@@ -1009,7 +1017,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fd64660508
+DECL|struct|__anon2911c94f0508
 block|{
 DECL|member|r
 name|guchar
@@ -2914,7 +2922,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fd64660608
+DECL|struct|__anon2911c94f0608
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -3876,7 +3884,7 @@ argument_list|(
 literal|"Fractal Trace"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

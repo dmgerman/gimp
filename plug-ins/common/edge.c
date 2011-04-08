@@ -60,6 +60,14 @@ value|"edge"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-edge"
+end_define
+
+begin_define
 DECL|macro|TILE_CACHE_SIZE
 define|#
 directive|define
@@ -69,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a3df510103
+DECL|enum|__anon299e88240103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -95,7 +103,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a3df510208
+DECL|struct|__anon299e88240208
 block|{
 DECL|member|amount
 name|gdouble
@@ -3105,7 +3113,7 @@ argument_list|(
 literal|"Edge Detection"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

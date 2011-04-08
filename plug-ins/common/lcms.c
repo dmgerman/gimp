@@ -58,6 +58,14 @@ value|"lcms"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-lcms"
+end_define
+
+begin_define
 DECL|macro|PLUG_IN_PROC_SET
 define|#
 directive|define
@@ -107,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2948a5570103
+DECL|enum|__anon294ace9d0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -129,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2948a5570203
+DECL|enum|__anon294ace9d0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -158,7 +166,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2948a5570308
+DECL|struct|__anon294ace9d0308
 block|{
 DECL|member|name
 specifier|const
@@ -180,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2948a5570408
+DECL|struct|__anon294ace9d0408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -4738,7 +4746,7 @@ argument_list|(
 literal|"Convert to RGB working space?"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,
@@ -5665,7 +5673,7 @@ argument_list|(
 literal|"Assign ICC Color Profile"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

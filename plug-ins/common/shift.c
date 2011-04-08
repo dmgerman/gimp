@@ -48,6 +48,14 @@ value|"shift"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-shift"
+end_define
+
+begin_define
 DECL|macro|SPIN_BUTTON_WIDTH
 define|#
 directive|define
@@ -82,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299b51050108
+DECL|struct|__anon2a33e7220108
 block|{
 DECL|member|shift_amount
 name|gint
@@ -1327,7 +1335,7 @@ argument_list|(
 literal|"Shift"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

@@ -58,6 +58,14 @@ value|"web-page"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-web-page"
+end_define
+
+begin_define
 DECL|macro|MAX_URL_LEN
 define|#
 directive|define
@@ -68,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c102d7d0108
+DECL|struct|__anon276a8a0c0108
 block|{
 DECL|member|url
 name|char
@@ -110,7 +118,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c102d7d0208
+DECL|struct|__anon276a8a0c0208
 block|{
 DECL|member|url
 name|char
@@ -826,7 +834,7 @@ argument_list|(
 literal|"Create from webpage"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

@@ -66,6 +66,14 @@ value|"bumpmap"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-bumpmap"
+end_define
+
+begin_define
 DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
@@ -87,7 +95,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c98d1470103
+DECL|enum|__anon2b431b060103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -105,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c98d1470203
+DECL|enum|__anon2b431b060203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -121,7 +129,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c98d1470308
+DECL|struct|__anon2b431b060308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -180,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c98d1470408
+DECL|struct|__anon2b431b060408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -225,7 +233,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c98d1470508
+DECL|struct|__anon2b431b060508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -3381,7 +3389,7 @@ argument_list|(
 literal|"Bump Map"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

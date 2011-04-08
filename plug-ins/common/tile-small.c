@@ -53,6 +53,14 @@ name|PLUG_IN_BINARY
 value|"tile-small"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-tile-small"
+end_define
+
 begin_comment
 comment|/***** Magic numbers *****/
 end_comment
@@ -112,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b6c47d0108
+DECL|struct|__anon2c6501690108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -495,7 +503,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b6c47d0203
+DECL|enum|__anon2c6501690203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -514,7 +522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b6c47d0308
+DECL|struct|__anon2c6501690308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -585,7 +593,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b6c47d0408
+DECL|struct|__anon2c6501690408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -1335,7 +1343,7 @@ argument_list|(
 literal|"Small Tiles"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

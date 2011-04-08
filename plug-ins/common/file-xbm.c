@@ -81,6 +81,14 @@ name|PLUG_IN_BINARY
 value|"file-xbm"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-xbm"
+end_define
+
 begin_comment
 comment|/* Wear your GIMP with pride! */
 end_comment

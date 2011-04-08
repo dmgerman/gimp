@@ -55,6 +55,14 @@ name|PLUG_IN_BINARY
 value|"file-header"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-header"
+end_define
+
 begin_comment
 comment|/* Declare some local functions.  */
 end_comment

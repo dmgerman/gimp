@@ -98,10 +98,18 @@ name|PLUG_IN_BINARY
 value|"file-tga"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-tga"
+end_define
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27674db60103
+DECL|enum|__anon27a480fa0103
 block|{
 DECL|enumerator|ORIGIN_TOP_LEFT
 name|ORIGIN_TOP_LEFT

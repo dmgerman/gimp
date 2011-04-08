@@ -56,6 +56,14 @@ value|"convolution-matrix"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-convolution-matrix"
+end_define
+
+begin_define
 DECL|macro|RESPONSE_RESET
 define|#
 directive|define
@@ -156,7 +164,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ced8110103
+DECL|enum|__anon2c48b5f80103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -381,7 +389,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ced8110208
+DECL|struct|__anon2c48b5f80208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -862,7 +870,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon29ced8110308
+DECL|struct|__anon2c48b5f80308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -4192,7 +4200,7 @@ argument_list|(
 literal|"Convolution Matrix"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

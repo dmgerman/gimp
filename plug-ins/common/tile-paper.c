@@ -61,6 +61,14 @@ name|PLUG_IN_BINARY
 value|"tile-paper"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-tile-paper"
+end_define
+
 begin_comment
 comment|/*===========================================================================*/
 end_comment
@@ -76,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4ed2700103
+DECL|enum|__anon2b566a430103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -104,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4ed2700203
+DECL|enum|__anon2b566a430203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -196,7 +204,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b4ed2700308
+DECL|struct|__anon2b566a430308
 block|{
 DECL|member|params
 name|PluginParams
@@ -216,7 +224,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b4ed2700408
+DECL|struct|__anon2b566a430408
 block|{
 DECL|member|x0
 name|gint
@@ -597,7 +605,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b4ed2700508
+DECL|struct|__anon2b566a430508
 block|{
 DECL|member|tile_width_adj
 name|GtkObject
@@ -990,7 +998,7 @@ argument_list|(
 literal|"Paper Tile"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

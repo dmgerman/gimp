@@ -189,7 +189,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c38961d0108
+DECL|struct|__anon2a46738d0108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -2526,7 +2526,7 @@ argument_list|(
 literal|"Image Properties"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

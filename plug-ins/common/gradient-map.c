@@ -56,6 +56,14 @@ value|"gradient-map"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-gradient-map"
+end_define
+
+begin_define
 DECL|macro|NSAMPLES
 define|#
 directive|define
@@ -77,7 +85,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fa638f0103
+DECL|enum|__anon27cb88510103
 block|{
 DECL|enumerator|GRADIENT_MODE
 name|GRADIENT_MODE
@@ -622,7 +630,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fa638f0208
+DECL|struct|__anon27cb88510208
 block|{
 DECL|member|samples
 name|guchar

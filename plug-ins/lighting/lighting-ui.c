@@ -5246,7 +5246,7 @@ argument_list|(
 literal|"Lighting Effects"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

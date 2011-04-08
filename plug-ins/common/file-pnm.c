@@ -180,6 +180,14 @@ name|PLUG_IN_BINARY
 value|"file-pnm"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-pnm"
+end_define
+
 begin_comment
 comment|/* Declare local data types  */
 end_comment
@@ -358,7 +366,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af1a6e80108
+DECL|struct|__anon2b0ea7f70108
 block|{
 DECL|member|raw
 name|gint

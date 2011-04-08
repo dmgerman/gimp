@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0c7d7e0108
+DECL|struct|__anon2c5a6c1a0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -791,7 +791,7 @@ name|gimp_dialog_new
 argument_list|(
 name|title
 argument_list|,
-literal|"script-fu"
+literal|"gimp-script-fu"
 argument_list|,
 name|NULL
 argument_list|,

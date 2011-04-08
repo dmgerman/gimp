@@ -43,6 +43,14 @@ name|PLUG_IN_BINARY
 value|"border-average"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-border-average"
+end_define
+
 begin_comment
 comment|/* Declare local functions.  */
 end_comment
@@ -711,7 +719,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon28a58b9b0108
+DECL|struct|__anon29faf4790108
 typedef|typedef
 struct|struct
 block|{
@@ -1530,7 +1538,7 @@ argument_list|(
 literal|"Borderaverage"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

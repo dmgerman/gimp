@@ -44,6 +44,14 @@ value|"checkerboard"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-checkerboard"
+end_define
+
+begin_define
 DECL|macro|SPIN_BUTTON_WIDTH
 define|#
 directive|define
@@ -629,7 +637,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b609f000108
+DECL|struct|__anon28b8c6f30108
 block|{
 DECL|member|fg
 name|guchar
@@ -1318,7 +1326,7 @@ argument_list|(
 literal|"Checkerboard"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

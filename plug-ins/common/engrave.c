@@ -48,6 +48,14 @@ value|"engrave"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-engrave"
+end_define
+
+begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
@@ -66,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f95050108
+DECL|struct|__anon27d1fc230108
 block|{
 DECL|member|height
 name|gint
@@ -717,7 +725,7 @@ argument_list|(
 literal|"Engrave"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,
@@ -1178,7 +1186,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f95050208
+DECL|struct|__anon27d1fc230208
 block|{
 DECL|member|x
 DECL|member|y

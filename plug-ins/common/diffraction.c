@@ -43,6 +43,14 @@ name|PLUG_IN_BINARY
 value|"diffraction"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-diffraction"
+end_define
+
 begin_comment
 comment|/***** Magic numbers *****/
 end_comment
@@ -110,7 +118,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd311b50108
+DECL|struct|__anon29d870910108
 block|{
 DECL|member|lam_r
 name|gdouble
@@ -169,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd311b50208
+DECL|struct|__anon29d870910208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -1123,7 +1131,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2bd311b50308
+DECL|struct|__anon29d870910308
 typedef|typedef
 struct|struct
 block|{
@@ -1876,7 +1884,7 @@ argument_list|(
 literal|"Diffraction Patterns"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

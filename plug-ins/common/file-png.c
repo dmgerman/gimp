@@ -116,6 +116,14 @@ value|"file-png"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-png"
+end_define
+
+begin_define
 DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
@@ -154,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299003f80108
+DECL|struct|__anon2b804eab0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299003f80208
+DECL|struct|__anon2b804eab0208
 block|{
 DECL|member|run
 name|gboolean

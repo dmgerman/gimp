@@ -43,6 +43,14 @@ name|PLUG_IN_BINARY
 value|"blur-gauss-selective"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-blur-gauss-selective"
+end_define
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -106,7 +114,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c517d590108
+DECL|struct|__anon2adf85d50108
 block|{
 DECL|member|radius
 name|gdouble
@@ -781,7 +789,7 @@ argument_list|(
 literal|"Selective Gaussian Blur"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

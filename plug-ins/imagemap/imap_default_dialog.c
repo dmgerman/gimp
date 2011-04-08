@@ -305,7 +305,7 @@ name|gimp_dialog_new
 argument_list|(
 name|title
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|get_dialog
 argument_list|()

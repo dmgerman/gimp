@@ -144,10 +144,18 @@ name|PLUG_IN_BINARY
 value|"file-tiff-save"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-tiff-save"
+end_define
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bff0b10108
+DECL|struct|__anon289c3efd0108
 block|{
 DECL|member|compression
 name|gint
@@ -170,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bff0b10208
+DECL|struct|__anon289c3efd0208
 block|{
 DECL|member|ID
 name|gint32

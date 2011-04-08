@@ -162,10 +162,18 @@ name|PLUG_IN_BINARY
 value|"file-gbr"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-gbr"
+end_define
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2767bed00108
+DECL|struct|__anon2ab8b1bf0108
 block|{
 DECL|member|description
 name|gchar
@@ -2240,7 +2248,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2767bed0020a
+DECL|union|__anon2ab8b1bf020a
 block|{
 DECL|member|u
 name|guint16

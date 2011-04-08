@@ -113,6 +113,14 @@ value|"newsprint"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-newsprint"
+end_define
+
+begin_define
 DECL|macro|TILE_CACHE_SIZE
 define|#
 directive|define
@@ -351,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c23ef870108
+DECL|struct|__anon2bd3d6c60108
 block|{
 DECL|member|name
 specifier|const
@@ -611,7 +619,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c23ef870208
+DECL|struct|__anon2bd3d6c60208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -684,7 +692,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c23ef870308
+DECL|struct|__anon2bd3d6c60308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -714,7 +722,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c23ef870408
+DECL|struct|__anon2bd3d6c60408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -821,7 +829,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c23ef870508
+DECL|struct|__anon2bd3d6c60508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -986,7 +994,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c23ef870608
+DECL|struct|__anon2bd3d6c60608
 block|{
 DECL|member|name
 specifier|const
@@ -4818,7 +4826,7 @@ argument_list|(
 literal|"Newsprint"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,
@@ -7080,7 +7088,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c23ef870708
+DECL|struct|__anon2bd3d6c60708
 block|{
 DECL|member|index
 name|gint

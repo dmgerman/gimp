@@ -50,6 +50,14 @@ value|"cubism"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-cubism"
+end_define
+
+begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
@@ -100,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c1c9270108
+DECL|struct|__anon28ee20a40108
 block|{
 DECL|member|npts
 name|gint
@@ -122,7 +130,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c1c9270208
+DECL|struct|__anon28ee20a40208
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -978,7 +986,7 @@ argument_list|(
 literal|"Cubism"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

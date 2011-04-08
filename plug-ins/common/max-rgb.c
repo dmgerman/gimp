@@ -43,6 +43,14 @@ name|PLUG_IN_BINARY
 value|"max-rgb"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-max-rgb"
+end_define
+
 begin_function_decl
 specifier|static
 name|void
@@ -136,7 +144,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon291ffbb50103
+DECL|enum|__anon28b3ccf30103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -154,7 +162,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291ffbb50208
+DECL|struct|__anon28b3ccf30208
 block|{
 DECL|member|max_p
 name|gint
@@ -523,7 +531,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291ffbb50308
+DECL|struct|__anon28b3ccf30308
 block|{
 DECL|member|init_value
 name|gint
@@ -1001,7 +1009,7 @@ argument_list|(
 literal|"Maximum RGB Value"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

@@ -112,6 +112,14 @@ name|PLUG_IN_BINARY
 value|"metadata"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-metadata"
+end_define
+
 begin_endif
 endif|#
 directive|endif

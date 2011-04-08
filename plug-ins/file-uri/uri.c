@@ -102,6 +102,14 @@ name|PLUG_IN_BINARY
 value|"file-uri"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-uri"
+end_define
+
 begin_function_decl
 specifier|static
 name|void

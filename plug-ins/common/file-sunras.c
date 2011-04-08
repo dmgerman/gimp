@@ -77,6 +77,14 @@ name|PLUG_IN_BINARY
 value|"file-sunras"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-sunras"
+end_define
+
 begin_typedef
 DECL|typedef|FILE
 typedef|typedef
@@ -127,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad857210108
+DECL|struct|__anon27a9151c0108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -216,7 +224,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad857210208
+DECL|struct|__anon27a9151c0208
 block|{
 DECL|member|val
 name|gint
@@ -822,7 +830,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad857210308
+DECL|struct|__anon27a9151c0308
 block|{
 DECL|member|rle
 name|gboolean

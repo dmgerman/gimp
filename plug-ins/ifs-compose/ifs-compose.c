@@ -127,10 +127,18 @@ name|PLUG_IN_BINARY
 value|"ifs-compose"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-ifs-compose"
+end_define
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3baeaa0103
+DECL|enum|__anon297304500103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -150,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3baeaa0203
+DECL|enum|__anon297304500203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -166,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3baeaa0308
+DECL|struct|__anon297304500308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -188,7 +196,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2b3baeaa040a
+DECL|union|__anon29730450040a
 block|{
 DECL|member|d
 name|gdouble
@@ -213,7 +221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3baeaa0508
+DECL|struct|__anon297304500508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -243,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3baeaa0608
+DECL|struct|__anon297304500608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -278,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3baeaa0708
+DECL|struct|__anon297304500708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -314,7 +322,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3baeaa0808
+DECL|struct|__anon297304500808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -376,7 +384,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3baeaa0908
+DECL|struct|__anon297304500908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -525,7 +533,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3baeaa0a08
+DECL|struct|__anon297304500a08
 block|{
 DECL|member|run
 name|gboolean
@@ -4035,7 +4043,7 @@ argument_list|(
 literal|"IFS Fractal"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,
@@ -5880,7 +5888,7 @@ argument_list|(
 literal|"IFS Fractal Render Options"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|parent
 argument_list|,

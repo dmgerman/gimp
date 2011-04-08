@@ -50,6 +50,14 @@ value|"contrast-retinex"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-contrast-retinex"
+end_define
+
+begin_define
 DECL|macro|MAX_RETINEX_SCALES
 define|#
 directive|define
@@ -92,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3547140108
+DECL|struct|__anon2bec876a0108
 block|{
 DECL|member|scale
 name|gint
@@ -119,7 +127,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3547140203
+DECL|enum|__anon2bec876a0203
 block|{
 DECL|enumerator|filter_uniform
 name|filter_uniform
@@ -177,7 +185,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3547140308
+DECL|struct|__anon2bec876a0308
 block|{
 DECL|member|N
 name|gint
@@ -1030,7 +1038,7 @@ argument_list|(
 literal|"Retinex Image Enhancement"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

@@ -76,10 +76,18 @@ name|PLUG_IN_BINARY
 value|"van-gogh-lic"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-van-gogh-lic"
+end_define
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b07b7820103
+DECL|enum|__anon2b8c9f1b0103
 block|{
 DECL|enumerator|LIC_HUE
 name|LIC_HUE
@@ -127,7 +135,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b07b7820208
+DECL|struct|__anon2b8c9f1b0208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -2926,7 +2934,7 @@ argument_list|(
 literal|"Van Gogh (LIC)"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

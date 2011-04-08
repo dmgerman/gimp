@@ -68,8 +68,16 @@ name|PLUG_IN_BINARY
 value|"maze"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-maze"
+end_define
+
 begin_typedef
-DECL|enum|__anon294793510103
+DECL|enum|__anon295cda560103
 typedef|typedef
 enum|enum
 block|{
@@ -85,7 +93,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon294793510208
+DECL|struct|__anon295cda560208
 typedef|typedef
 struct|struct
 block|{

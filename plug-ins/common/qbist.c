@@ -163,6 +163,14 @@ value|"qbist"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-qbist"
+end_define
+
+begin_define
 DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
@@ -192,7 +200,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2760146d0103
+DECL|enum|__anon29d732f60103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -237,7 +245,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2760146d0208
+DECL|struct|__anon29d732f60208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -276,7 +284,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2760146d0308
+DECL|struct|__anon29d732f60308
 block|{
 DECL|member|info
 name|ExpInfo
@@ -4210,7 +4218,7 @@ argument_list|(
 literal|"G-Qbist"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

@@ -239,6 +239,14 @@ value|"file-ps"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-ps"
+end_define
+
+begin_define
 DECL|macro|STR_LENGTH
 define|#
 directive|define
@@ -289,7 +297,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc2e0df0108
+DECL|struct|__anon2ba36ec90108
 block|{
 DECL|member|resolution
 name|guint
@@ -400,7 +408,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc2e0df0208
+DECL|struct|__anon2ba36ec90208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1031,7 +1039,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc2e0df0308
+DECL|struct|__anon2ba36ec90308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1900,7 +1908,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc2e0df0408
+DECL|struct|__anon2ba36ec90408
 block|{
 DECL|member|eol
 name|long
@@ -14613,7 +14621,7 @@ argument_list|(
 literal|"Import from PostScript"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

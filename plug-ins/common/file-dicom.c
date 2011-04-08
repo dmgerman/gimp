@@ -79,6 +79,14 @@ name|PLUG_IN_BINARY
 value|"file-dicom"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-dicom"
+end_define
+
 begin_comment
 comment|/* A lot of Dicom images are wrongly encoded. By guessing the endian  * we can get around this problem.  */
 end_comment
@@ -3118,7 +3126,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297f83020108
+DECL|struct|__anon2790328d0108
 block|{
 DECL|member|group_word
 name|guint16
@@ -5493,7 +5501,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-DECL|struct|__anon297f83020208
+DECL|struct|__anon2790328d0208
 struct|struct
 block|{
 DECL|member|DICOM
@@ -5621,7 +5629,7 @@ modifier|*
 name|elements
 parameter_list|)
 block|{
-DECL|struct|__anon297f83020308
+DECL|struct|__anon2790328d0308
 struct|struct
 block|{
 DECL|member|DICOM

@@ -232,6 +232,14 @@ value|"file-mng"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-mng"
+end_define
+
+begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
@@ -241,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a105d550103
+DECL|enum|__anon28ecd98f0103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -260,7 +268,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a105d550203
+DECL|enum|__anon28ecd98f0203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE

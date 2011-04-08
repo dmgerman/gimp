@@ -48,6 +48,14 @@ value|"video"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-video"
+end_define
+
+begin_define
 DECL|macro|MAX_PATTERNS
 define|#
 directive|define
@@ -60905,7 +60913,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8ccd5f0108
+DECL|struct|__anon2c0c09910108
 block|{
 DECL|member|pattern_number
 name|gint
@@ -62072,7 +62080,7 @@ argument_list|(
 literal|"Video"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

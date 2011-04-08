@@ -56,6 +56,14 @@ value|"wind"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-wind"
+end_define
+
+begin_define
 DECL|macro|COMPARE_WIDTH
 define|#
 directive|define
@@ -106,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29908b5a0103
+DECL|enum|__anon2b3c157f0103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -122,7 +130,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29908b5a0203
+DECL|enum|__anon2b3c157f0203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -138,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29908b5a0303
+DECL|enum|__anon2b3c157f0303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -3788,7 +3796,7 @@ argument_list|(
 literal|"Wind"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

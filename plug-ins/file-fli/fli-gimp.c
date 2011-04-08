@@ -87,6 +87,14 @@ name|PLUG_IN_BINARY
 value|"file-fli"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-fli"
+end_define
+
 begin_function_decl
 specifier|static
 name|void
@@ -3549,7 +3557,7 @@ argument_list|(
 literal|"GFLI 1.3 - Load framestack"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

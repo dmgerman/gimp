@@ -73,6 +73,14 @@ name|PLUG_IN_BINARY
 value|"file-pcx"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-pcx"
+end_define
+
 begin_comment
 comment|/* Declare local functions.  */
 end_comment
@@ -1027,7 +1035,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2978cccf0108
+DECL|struct|__anon2bbf9ccd0108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1104,7 +1112,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon2978cccf0208
+DECL|struct|__anon2bbf9ccd0208
 specifier|static
 struct|struct
 block|{

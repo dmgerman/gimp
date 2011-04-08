@@ -44,6 +44,14 @@ value|"align-layers"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-align-layers"
+end_define
+
+begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
@@ -53,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b1d9b50103
+DECL|enum|__anon2b3fe5540103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -75,7 +83,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b1d9b50203
+DECL|enum|__anon2b3fe5540203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -91,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b1d9b50303
+DECL|enum|__anon2b3fe5540303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -113,7 +121,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b1d9b50403
+DECL|enum|__anon2b3fe5540403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -237,7 +245,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b1d9b50508
+DECL|struct|__anon2b3fe5540508
 block|{
 DECL|member|h_style
 name|gint
@@ -1559,7 +1567,7 @@ argument_list|(
 literal|"Align Visible Layers"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

@@ -37,6 +37,14 @@ value|"map-object"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-map-object"
+end_define
+
+begin_define
 DECL|macro|TILE_CACHE_SIZE
 define|#
 directive|define
@@ -55,7 +63,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4afc470103
+DECL|enum|__anon29c7d4050103
 block|{
 DECL|enumerator|POINT_LIGHT
 name|POINT_LIGHT
@@ -74,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4afc470203
+DECL|enum|__anon29c7d4050203
 block|{
 DECL|enumerator|MAP_PLANE
 name|MAP_PLANE
@@ -104,7 +112,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4afc470308
+DECL|struct|__anon29c7d4050308
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -139,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4afc470408
+DECL|struct|__anon29c7d4050408
 block|{
 DECL|member|type
 name|LightType
@@ -170,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4afc470508
+DECL|struct|__anon29c7d4050508
 block|{
 DECL|member|viewpoint
 DECL|member|firstaxis

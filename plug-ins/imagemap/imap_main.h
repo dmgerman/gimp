@@ -56,8 +56,16 @@ name|PLUG_IN_BINARY
 value|"imagemap"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-imagemap"
+end_define
+
 begin_typedef
-DECL|enum|__anon27f59ae20103
+DECL|enum|__anon2b9f6aca0103
 DECL|enumerator|NCSA
 DECL|enumerator|CERN
 DECL|enumerator|CSIM
@@ -76,7 +84,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27f59ae20208
+DECL|struct|__anon2b9f6aca0208
 typedef|typedef
 struct|struct
 block|{

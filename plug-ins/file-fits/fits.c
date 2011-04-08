@@ -79,6 +79,14 @@ name|PLUG_IN_BINARY
 value|"file-fits"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-fits"
+end_define
+
 begin_comment
 comment|/* Load info */
 end_comment
@@ -86,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bef4b150108
+DECL|struct|__anon2b7a25410108
 block|{
 DECL|member|replace
 name|gint
@@ -4455,7 +4463,7 @@ argument_list|(
 literal|"Load FITS File"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

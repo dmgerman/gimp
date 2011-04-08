@@ -62,6 +62,14 @@ value|"plugin-browser"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-plugin-browser"
+end_define
+
+begin_define
 DECL|macro|DBL_LIST_WIDTH
 define|#
 directive|define
@@ -87,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb0cc270103
+DECL|enum|__anon2c3850eb0103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -115,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb0cc270203
+DECL|enum|__anon2c3850eb0203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -144,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb0cc270308
+DECL|struct|__anon2c3850eb0308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -175,7 +183,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb0cc270408
+DECL|struct|__anon2c3850eb0408
 block|{
 DECL|member|menu
 name|gchar
@@ -2199,7 +2207,7 @@ argument_list|(
 literal|"Plug-In Browser"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

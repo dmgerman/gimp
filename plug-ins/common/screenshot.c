@@ -287,6 +287,14 @@ name|PLUG_IN_BINARY
 value|"screenshot"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-screenshot"
+end_define
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -331,7 +339,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd259300103
+DECL|enum|__anon294fe6370103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -350,7 +358,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd259300208
+DECL|struct|__anon294fe6370208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -4316,7 +4324,7 @@ argument_list|(
 literal|"Screenshot"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

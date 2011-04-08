@@ -47,6 +47,14 @@ name|PLUG_IN_BINARY
 value|"lens-apply"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-lens-apply"
+end_define
+
 begin_comment
 comment|/* Declare local functions.  */
 end_comment
@@ -145,7 +153,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9a96140108
+DECL|struct|__anon2c4a09df0108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -1729,7 +1737,7 @@ argument_list|(
 literal|"Lens Effect"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

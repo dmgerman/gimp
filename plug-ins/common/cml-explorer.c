@@ -76,6 +76,14 @@ value|"cml-explorer"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-cml-explorer"
+end_define
+
+begin_define
 DECL|macro|VALS
 define|#
 directive|define
@@ -210,7 +218,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b66f2b0103
+DECL|enum|__anon2ad5e8190103
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -339,7 +347,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b66f2b0203
+DECL|enum|__anon2ad5e8190203
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -484,7 +492,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b66f2b0303
+DECL|enum|__anon2ad5e8190303
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -589,7 +597,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b66f2b0403
+DECL|enum|__anon2ad5e8190403
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -687,7 +695,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b66f2b0508
+DECL|struct|__anon2ad5e8190508
 block|{
 DECL|member|function
 name|gint
@@ -760,7 +768,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b66f2b0608
+DECL|struct|__anon2ad5e8190608
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1582,7 +1590,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b66f2b0708
+DECL|struct|__anon2ad5e8190708
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -6546,7 +6554,7 @@ argument_list|(
 literal|"Coupled-Map-Lattice Explorer"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,
@@ -10463,7 +10471,7 @@ argument_list|(
 literal|"Graph of the Current Settings"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|gtk_widget_get_toplevel
 argument_list|(

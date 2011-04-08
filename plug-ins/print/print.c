@@ -72,6 +72,14 @@ value|"print"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-print"
+end_define
+
+begin_define
 DECL|macro|PRINT_PROC_NAME
 define|#
 directive|define

@@ -469,7 +469,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a985d790108
+DECL|struct|__anon2b86e2310108
 block|{
 DECL|member|command
 name|gchar
@@ -493,7 +493,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a985d790208
+DECL|struct|__anon2b86e2310208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -527,7 +527,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2a985d79030a
+DECL|union|__anon2b86e231030a
 block|{
 DECL|member|family
 name|sa_family_t
@@ -3105,7 +3105,7 @@ argument_list|(
 literal|"Script-Fu Server Options"
 argument_list|)
 argument_list|,
-literal|"script-fu"
+literal|"gimp-script-fu"
 argument_list|,
 name|NULL
 argument_list|,

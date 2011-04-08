@@ -53,6 +53,14 @@ name|PLUG_IN_BINARY
 value|"apply-canvas"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-apply-canvas"
+end_define
+
 begin_decl_stmt
 DECL|variable|sdata
 specifier|static
@@ -40883,7 +40891,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon289ecd610103
+DECL|enum|__anon29a7a52d0103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40903,7 +40911,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289ecd610208
+DECL|struct|__anon29a7a52d0208
 block|{
 DECL|member|direction
 name|gint
@@ -41577,7 +41585,7 @@ argument_list|(
 literal|"Apply Canvas"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

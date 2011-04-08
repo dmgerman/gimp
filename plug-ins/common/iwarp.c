@@ -54,6 +54,14 @@ value|"iwarp"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-iwarp"
+end_define
+
+begin_define
 DECL|macro|RESPONSE_RESET
 define|#
 directive|define
@@ -88,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b979080103
+DECL|enum|__anon292d893e0103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -116,7 +124,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b979080208
+DECL|struct|__anon292d893e0208
 block|{
 DECL|member|run
 name|gboolean
@@ -131,7 +139,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b979080308
+DECL|struct|__anon292d893e0308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -6702,7 +6710,7 @@ argument_list|(
 literal|"IWarp"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

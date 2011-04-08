@@ -44,6 +44,14 @@ value|"colorify"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-colorify"
+end_define
+
+begin_define
 DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
@@ -145,7 +153,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2893bd350108
+DECL|struct|__anon2b3965d10108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -1073,7 +1081,7 @@ argument_list|(
 literal|"Colorify"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

@@ -37,6 +37,14 @@ value|"lighting"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-lighting"
+end_define
+
+begin_define
 DECL|macro|TILE_CACHE_SIZE
 define|#
 directive|define
@@ -63,7 +71,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8a23800103
+DECL|enum|__anon27ccb02d0103
 block|{
 DECL|enumerator|POINT_LIGHT
 name|POINT_LIGHT
@@ -84,7 +92,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8a23800203
+DECL|enum|__anon27ccb02d0203
 block|{
 DECL|enumerator|LINEAR_MAP
 name|LINEAR_MAP
@@ -103,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8a23800303
+DECL|enum|__anon27ccb02d0303
 block|{
 DECL|enumerator|IMAGE_BUMP
 name|IMAGE_BUMP
@@ -117,7 +125,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8a23800408
+DECL|struct|__anon27ccb02d0408
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -156,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8a23800508
+DECL|struct|__anon27ccb02d0508
 block|{
 DECL|member|type
 name|LightType
@@ -191,7 +199,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8a23800608
+DECL|struct|__anon27ccb02d0608
 block|{
 DECL|member|drawable_id
 name|gint32

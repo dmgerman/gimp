@@ -81,10 +81,18 @@ name|PLUG_IN_BINARY
 value|"blur-gauss"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-blur-gauss"
+end_define
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276c84260103
+DECL|enum|__anon2b6188d40103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -100,7 +108,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276c84260208
+DECL|struct|__anon2b6188d40208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -1758,7 +1766,7 @@ argument_list|(
 literal|"Gaussian Blur"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

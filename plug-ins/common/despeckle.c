@@ -54,6 +54,14 @@ value|"despeckle"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-despeckle"
+end_define
+
+begin_define
 DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
@@ -168,7 +176,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b67838d0108
+DECL|struct|__anon2bd422790108
 block|{
 DECL|member|elems
 specifier|const
@@ -196,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b67838d0208
+DECL|struct|__anon2bd422790208
 block|{
 DECL|member|elems
 name|gint
@@ -1517,7 +1525,7 @@ argument_list|(
 literal|"Despeckle"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

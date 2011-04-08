@@ -80,6 +80,14 @@ value|"value-propagate"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-value-propagate"
+end_define
+
+begin_define
 DECL|macro|PLUG_IN_IMAGE_TYPES
 define|#
 directive|define
@@ -709,7 +717,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f398450108
+DECL|struct|__anon2ac5b7120108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -870,7 +878,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f398450208
+DECL|struct|__anon2ac5b7120208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -4066,7 +4074,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f398450308
+DECL|struct|__anon2ac5b7120308
 block|{
 DECL|member|min_modified
 name|gshort
@@ -5773,7 +5781,7 @@ argument_list|(
 literal|"Value Propagate"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

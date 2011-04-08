@@ -122,6 +122,14 @@ value|"file-raw"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-raw"
+end_define
+
+begin_define
 DECL|macro|PREVIEW_SIZE
 define|#
 directive|define
@@ -132,7 +140,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a1bad60103
+DECL|enum|__anon29861d2d0103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -166,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a1bad60203
+DECL|enum|__anon29861d2d0203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -184,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a1bad60308
+DECL|struct|__anon29861d2d0308
 block|{
 DECL|member|file_offset
 name|gint32
@@ -225,7 +233,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a1bad60408
+DECL|struct|__anon29861d2d0408
 block|{
 DECL|member|fp
 name|FILE
@@ -5040,7 +5048,7 @@ argument_list|(
 literal|"Load Image from Raw Data"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

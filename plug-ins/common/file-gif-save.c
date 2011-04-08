@@ -89,6 +89,14 @@ name|PLUG_IN_BINARY
 value|"file-gif-save"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-gif-save"
+end_define
+
 begin_comment
 comment|/* Define only one of these to determine which kind of gif's you would like.  * GIF_UN means use uncompressed gifs.  These will be large, but no  * patent problems.  * GIF_RLE uses Run-length-encoding, which should not be covered by the  * patent, but this is not legal advice.  */
 end_comment
@@ -127,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9d89bc0103
+DECL|enum|__anon28e7a8b30103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -140,7 +148,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9d89bc0203
+DECL|enum|__anon28e7a8b30203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -157,7 +165,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9d89bc0308
+DECL|struct|__anon28e7a8b30308
 block|{
 DECL|member|interlace
 name|gint

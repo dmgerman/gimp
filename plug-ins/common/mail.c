@@ -207,10 +207,18 @@ name|PLUG_IN_BINARY
 value|"mail"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-mail"
+end_define
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8a97ad0108
+DECL|struct|__anon27563b630108
 block|{
 DECL|member|filename
 name|gchar
@@ -1401,7 +1409,7 @@ argument_list|(
 literal|"Send by Email"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

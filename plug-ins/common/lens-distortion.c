@@ -50,6 +50,14 @@ value|"lens-distortion"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-lens-distortion"
+end_define
+
+begin_define
 DECL|macro|RESPONSE_RESET
 define|#
 directive|define
@@ -68,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3020810108
+DECL|struct|__anon2b27c6820108
 block|{
 DECL|member|centre_x
 name|gdouble
@@ -103,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3020810208
+DECL|struct|__anon2b27c6820208
 block|{
 DECL|member|normallise_radius_sq
 name|gdouble
@@ -2113,7 +2121,7 @@ argument_list|(
 literal|"Lens Distortion"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

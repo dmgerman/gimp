@@ -175,6 +175,14 @@ value|"file-gih"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-gih"
+end_define
+
+begin_define
 DECL|macro|DUMMY_PATTERN_NAME
 define|#
 directive|define
@@ -197,7 +205,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b8aab630108
+DECL|struct|__anon2b57092f0108
 block|{
 DECL|member|spacing
 name|guint
@@ -273,7 +281,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8aab630208
+DECL|struct|__anon2b57092f0208
 block|{
 DECL|member|orientation
 name|GimpOrientationType

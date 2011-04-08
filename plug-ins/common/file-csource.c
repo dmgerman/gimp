@@ -61,10 +61,18 @@ name|PLUG_IN_BINARY
 value|"file-csource"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-csource"
+end_define
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bc76ad0108
+DECL|struct|__anon28a5aaaa0108
 block|{
 DECL|member|file_name
 name|gchar

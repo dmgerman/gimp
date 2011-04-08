@@ -51,6 +51,14 @@ name|PLUG_IN_BINARY
 value|"sinus"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-sinus"
+end_define
+
 begin_comment
 comment|/*  * This structure is used for persistent data.  */
 end_comment
@@ -137,7 +145,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b1e0f30108
+DECL|struct|__anon2bc907a30108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -246,7 +254,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b1e0f30208
+DECL|struct|__anon2bc907a30208
 block|{
 DECL|member|height
 DECL|member|width
@@ -328,7 +336,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b1e0f30308
+DECL|struct|__anon2bc907a30308
 block|{
 DECL|member|width
 name|gint
@@ -3450,7 +3458,7 @@ argument_list|(
 literal|"Sinus"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

@@ -77,6 +77,14 @@ name|PLUG_IN_BINARY
 value|"file-xwd"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-xwd"
+end_define
+
 begin_typedef
 DECL|typedef|L_CARD32
 typedef|typedef
@@ -104,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277d6c070108
+DECL|struct|__anon2957bfea0108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -238,7 +246,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277d6c070208
+DECL|struct|__anon2957bfea0208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -296,7 +304,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277d6c070308
+DECL|struct|__anon2957bfea0308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -323,7 +331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277d6c070408
+DECL|struct|__anon2957bfea0408
 block|{
 DECL|member|npixel
 name|gint

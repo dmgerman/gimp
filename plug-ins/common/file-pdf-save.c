@@ -78,6 +78,14 @@ value|"file-pdf-save"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-pdf-save"
+end_define
+
+begin_define
 DECL|macro|DATA_OPTIMIZE
 define|#
 directive|define
@@ -138,7 +146,7 @@ value|FALSE
 end_define
 
 begin_typedef
-DECL|struct|__anon27745e000108
+DECL|struct|__anon275f99520108
 typedef|typedef
 struct|struct
 block|{
@@ -161,7 +169,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27745e000208
+DECL|struct|__anon275f99520208
 typedef|typedef
 struct|struct
 block|{
@@ -190,7 +198,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27745e000308
+DECL|struct|__anon275f99520308
 typedef|typedef
 struct|struct
 block|{
@@ -210,7 +218,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon27745e000403
+DECL|enum|__anon275f99520403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -229,7 +237,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon27745e000508
+DECL|struct|__anon275f99520508
 typedef|typedef
 struct|struct
 block|{
@@ -2519,7 +2527,7 @@ name|gimp_export_dialog_new
 argument_list|(
 literal|"PDF"
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|SAVE_PROC
 argument_list|)
@@ -2829,7 +2837,7 @@ name|gimp_export_dialog_new
 argument_list|(
 literal|"PDF"
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|SAVE_MULTI_PROC
 argument_list|)

@@ -62,6 +62,14 @@ value|"channel-mixer"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-channel-mixer"
+end_define
+
+begin_define
 DECL|macro|CM_LINE_SIZE
 define|#
 directive|define
@@ -72,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c995950103
+DECL|enum|__anon2b1566660103
 block|{
 DECL|enumerator|CM_RED_CHANNEL
 name|CM_RED_CHANNEL
@@ -91,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c995950208
+DECL|struct|__anon2b1566660208
 block|{
 DECL|member|red_gain
 name|gdouble
@@ -114,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c995950308
+DECL|struct|__anon2b1566660308
 block|{
 DECL|member|red
 name|CmChannelType
@@ -2288,7 +2296,7 @@ argument_list|(
 literal|"Channel Mixer"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

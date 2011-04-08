@@ -140,6 +140,14 @@ value|"file-xpm"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-xpm"
+end_define
+
+begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
@@ -154,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2890fa4a0108
+DECL|struct|__anon28fc04070108
 block|{
 DECL|member|threshold
 name|gint
@@ -169,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2890fa4a0208
+DECL|struct|__anon28fc04070208
 block|{
 DECL|member|r
 name|guchar

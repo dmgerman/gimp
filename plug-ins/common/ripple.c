@@ -54,6 +54,14 @@ value|"ripple"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-ripple"
+end_define
+
+begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
@@ -112,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ef3a9f0108
+DECL|struct|__anon2980967a0108
 block|{
 DECL|member|period
 name|gint
@@ -912,7 +920,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ef3a9f0208
+DECL|struct|__anon2980967a0208
 block|{
 DECL|member|pft
 name|GimpPixelFetcher
@@ -2046,7 +2054,7 @@ argument_list|(
 literal|"Ripple"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

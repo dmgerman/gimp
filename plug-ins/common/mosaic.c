@@ -54,6 +54,14 @@ value|"mosaic"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-mosaic"
+end_define
+
+begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
@@ -112,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af361c30103
+DECL|enum|__anon298f2ab00103
 block|{
 DECL|enumerator|SQUARES
 name|SQUARES
@@ -174,7 +182,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af361c30208
+DECL|struct|__anon298f2ab00208
 block|{
 DECL|member|x
 DECL|member|y
@@ -192,7 +200,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af361c30308
+DECL|struct|__anon298f2ab00308
 block|{
 DECL|member|npts
 name|guint
@@ -214,7 +222,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af361c30408
+DECL|struct|__anon298f2ab00408
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -243,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af361c30508
+DECL|struct|__anon298f2ab00508
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -2648,7 +2656,7 @@ argument_list|(
 literal|"Mosaic"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

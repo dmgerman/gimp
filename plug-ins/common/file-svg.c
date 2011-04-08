@@ -84,6 +84,14 @@ value|"file-svg"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-svg"
+end_define
+
+begin_define
 DECL|macro|SVG_VERSION
 define|#
 directive|define
@@ -118,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c5ef6d0108
+DECL|struct|__anon2b55cb820108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -3163,7 +3171,7 @@ argument_list|(
 literal|"Render Scalable Vector Graphics"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

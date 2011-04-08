@@ -70,6 +70,14 @@ value|"pixelize"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-pixelize"
+end_define
+
+begin_define
 DECL|macro|TILE_CACHE_SIZE
 define|#
 directive|define
@@ -96,7 +104,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a64c5b0108
+DECL|struct|__anon29dfe77f0108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -115,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a64c5b0208
+DECL|struct|__anon29dfe77f0208
 block|{
 DECL|member|x
 DECL|member|y
@@ -1012,7 +1020,7 @@ argument_list|(
 literal|"Pixelize"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

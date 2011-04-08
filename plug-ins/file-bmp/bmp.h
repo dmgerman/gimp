@@ -41,6 +41,14 @@ value|"file-bmp"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-bmp"
+end_define
+
+begin_define
 DECL|macro|MAXCOLORS
 define|#
 directive|define

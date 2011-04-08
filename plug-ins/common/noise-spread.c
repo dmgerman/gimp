@@ -44,6 +44,14 @@ value|"noise-spread"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-noise-spread"
+end_define
+
+begin_define
 DECL|macro|TILE_CACHE_SIZE
 define|#
 directive|define
@@ -54,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275906b80108
+DECL|struct|__anon28ca9c0a0108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -677,7 +685,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275906b80208
+DECL|struct|__anon28ca9c0a0208
 block|{
 DECL|member|pft
 name|GimpPixelFetcher
@@ -1361,7 +1369,7 @@ argument_list|(
 literal|"Spread"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

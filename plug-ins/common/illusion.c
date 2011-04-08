@@ -50,6 +50,14 @@ value|"illusion"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-illusion"
+end_define
+
+begin_define
 DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
@@ -140,7 +148,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27578b730108
+DECL|struct|__anon290dd4db0108
 block|{
 DECL|member|division
 name|gint32
@@ -625,7 +633,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon27578b730208
+DECL|struct|__anon290dd4db0208
 typedef|typedef
 struct|struct
 block|{
@@ -1604,7 +1612,7 @@ argument_list|(
 literal|"Illusion"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

@@ -61,10 +61,18 @@ name|PLUG_IN_BINARY
 value|"hot"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-hot"
+end_define
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0e94f40108
+DECL|struct|__anon2b0466860108
 block|{
 DECL|member|image
 name|gint32
@@ -95,7 +103,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0e94f40203
+DECL|enum|__anon2b0466860203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -114,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0e94f40303
+DECL|enum|__anon2b0466860303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -159,7 +167,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon2b0e94f40408
+DECL|struct|__anon2b0466860408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -2380,7 +2388,7 @@ argument_list|(
 literal|"Hot"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,

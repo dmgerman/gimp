@@ -136,10 +136,18 @@ name|PLUG_IN_BINARY
 value|"file-tiff-load"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-tiff-load"
+end_define
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293ca4c70108
+DECL|struct|__anon297a103e0108
 block|{
 DECL|member|compression
 name|gint
@@ -162,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293ca4c70208
+DECL|struct|__anon297a103e0208
 block|{
 DECL|member|ID
 name|gint32
@@ -196,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293ca4c70308
+DECL|struct|__anon297a103e0308
 block|{
 DECL|member|o_pages
 name|gint
@@ -1718,7 +1726,7 @@ argument_list|(
 literal|"Import from TIFF"
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
+name|PLUG_IN_ROLE
 argument_list|,
 name|NULL
 argument_list|,
