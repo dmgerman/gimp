@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* ----- Known Layer Resource Block Types -----   All layer resources not otherwise handled, including unknown types   are dropped with a warning.   * Adjustment layer IDs *   PSD_LADJ_LEVEL          "levl"    Drop Layer  * Adjustment layer - levels (PS4) *   PSD_LADJ_CURVE          "curv"    Drop Layer  * Adjustment layer - curves (PS4) *   PSD_LADJ_BRIGHTNESS     "brit"    Drop Layer  * Adjustment layer - brightness contrast (PS4) *   PSD_LADJ_BALANCE        "blnc"    Drop Layer  * Adjustment layer - color balance (PS4) *   PSD_LADJ_BLACK_WHITE    "blwh"    Drop Layer  * Adjustment layer - black& white (PS10) *   PSD_LADJ_HUE            "hue "    Drop Layer  * Adjustment layer - old hue saturation (PS4) *   PSD_LADJ_HUE2           "hue2"    Drop Layer  * Adjustment layer - hue saturation (PS5) *   PSD_LADJ_SELECTIVE      "selc"    Drop Layer  * Adjustment layer - selective color (PS4) *   PSD_LADJ_MIXER          "mixr"    Drop Layer  * Adjustment layer - channel mixer (PS9) *   PSD_LADJ_GRAD_MAP       "grdm"    Drop Layer  * Adjustment layer - gradient map (PS9) *   PSD_LADJ_PHOTO_FILT     "phfl"    Drop Layer  * Adjustment layer - photo filter (PS9) *   PSD_LADJ_EXPOSURE       "expA"    Drop Layer  * Adjustment layer - exposure (PS10) *   PSD_LADJ_INVERT         "nvrt"    Drop Layer  * Adjustment layer - invert (PS4) *   PSD_LADJ_THRESHOLD      "thrs"    Drop Layer  * Adjustment layer - threshold (PS4) *   PSD_LADJ_POSTERIZE      "post"    Drop Layer  * Adjustment layer - posterize (PS4) *   * Fill Layer IDs *   PSD_LFIL_SOLID          "SoCo"        -       * Solid color sheet setting (PS6) *   PSD_LFIL_PATTERN        "PtFl"        -       * Pattern fill setting (PS6) *   PSD_LFIL_GRADIENT       "GdFl"        -       * Gradient fill setting (PS6) *   * Effects Layer IDs *   PSD_LFX_FX              "lrFX"        -       * Effects layer info (PS5) *   PSD_LFX_FX2             "lfx2"        -       * Object based effects layer info (PS6) *   * Type Tool Layers *   PSD_LTYP_TYPE           "tySh"        -       * Type tool layer (PS5) *   PSD_LTYP_TYPE2          "TySh"        -       * Type tool object setting (PS6) *   * Layer Properties *   PSD_LPRP_UNICODE        "luni"     Loaded     * Unicode layer name (PS5) *   PSD_LPRP_SOURCE         "lnsr"     Loaded     * Layer name source setting (PS6) *   PSD_LPRP_ID             "lyid"     Loaded     * Layer ID (PS5) *   PSD_LPRP_BLEND_CLIP     "clbl"        -       * Blend clipping elements (PS6) *   PSD_LPRP_BLEND_INT      "infx"        -       * Blend interior elements (PS6) *   PSD_LPRP_KNOCKOUT       "knko"        -       * Knockout setting (PS6) *   PSD_LPRP_PROTECT        "lspf"        -       * Protected setting (PS6) *   PSD_LPRP_COLOR          "lclr"        -       * Sheet color setting (PS6) *   PSD_LPRP_REF_POINT      "fxrp"        -       * Reference point (PS6) *   * Vector mask *   PSD_LMSK_VMASK          "vmsk"        -       * Vector mask setting (PS6) *   * Parasites *   PSD_LPAR_ANNOTATE       "Anno"        -       * Annotation (PS6) *   * Other *   PSD_LOTH_PATTERN        "Patt"        -       * Patterns (PS6) *   PSD_LOTH_GRADIENT       "grdm"        -       * Gradient settings (PS6) *   PSD_LOTH_SECTION        "lsct"    Drop Layer  * Section divider setting (PS6) (Layer Groups) *   PSD_LOTH_RESTRICT       "brst"        -       * Channel blending restirction setting (PS6) *   PSD_LOTH_FOREIGN_FX     "ffxi"        -       * Foreign effect ID (PS6) *   PSD_LOTH_PATT_DATA      "shpa"        -       * Pattern data (PS6) *   PSD_LOTH_META_DATA      "shmd"        -       * Meta data setting (PS6) *   PSD_LOTH_LAYER_DATA     "layr"        -       * Layer data (PS6) *   * Effects layer resource IDs *   PSD_LFX_COMMON          "cmnS"        -       * Effects layer - common state (PS5) *   PSD_LFX_DROP_SDW        "dsdw"        -       * Effects layer - drop shadow (PS5) *   PSD_LFX_INNER_SDW       "isdw"        -       * Effects layer - inner shadow (PS5) *   PSD_LFX_OUTER_GLW       "oglw"        -       * Effects layer - outer glow (PS5) *   PSD_LFX_INNER_GLW       "iglw"        -       * Effects layer - inner glow (PS5) *   PSD_LFX_BEVEL           "bevl"        -       * Effects layer - bevel (PS5) * */
+comment|/* ----- Known Layer Resource Block Types -----   All layer resources not otherwise handled, including unknown types   are dropped with a warning.   * Adjustment layer IDs *   PSD_LADJ_LEVEL          "levl"    Drop Layer  * Adjustment layer - levels (PS4) *   PSD_LADJ_CURVE          "curv"    Drop Layer  * Adjustment layer - curves (PS4) *   PSD_LADJ_BRIGHTNESS     "brit"    Drop Layer  * Adjustment layer - brightness contrast (PS4) *   PSD_LADJ_BALANCE        "blnc"    Drop Layer  * Adjustment layer - color balance (PS4) *   PSD_LADJ_BLACK_WHITE    "blwh"    Drop Layer  * Adjustment layer - black& white (PS10) *   PSD_LADJ_HUE            "hue "    Drop Layer  * Adjustment layer - old hue saturation (PS4) *   PSD_LADJ_HUE2           "hue2"    Drop Layer  * Adjustment layer - hue saturation (PS5) *   PSD_LADJ_SELECTIVE      "selc"    Drop Layer  * Adjustment layer - selective color (PS4) *   PSD_LADJ_MIXER          "mixr"    Drop Layer  * Adjustment layer - channel mixer (PS9) *   PSD_LADJ_GRAD_MAP       "grdm"    Drop Layer  * Adjustment layer - gradient map (PS9) *   PSD_LADJ_PHOTO_FILT     "phfl"    Drop Layer  * Adjustment layer - photo filter (PS9) *   PSD_LADJ_EXPOSURE       "expA"    Drop Layer  * Adjustment layer - exposure (PS10) *   PSD_LADJ_INVERT         "nvrt"    Drop Layer  * Adjustment layer - invert (PS4) *   PSD_LADJ_THRESHOLD      "thrs"    Drop Layer  * Adjustment layer - threshold (PS4) *   PSD_LADJ_POSTERIZE      "post"    Drop Layer  * Adjustment layer - posterize (PS4) *   * Fill Layer IDs *   PSD_LFIL_SOLID          "SoCo"        -       * Solid color sheet setting (PS6) *   PSD_LFIL_PATTERN        "PtFl"        -       * Pattern fill setting (PS6) *   PSD_LFIL_GRADIENT       "GdFl"        -       * Gradient fill setting (PS6) *   * Effects Layer IDs *   PSD_LFX_FX              "lrFX"        -       * Effects layer info (PS5) *   PSD_LFX_FX2             "lfx2"        -       * Object based effects layer info (PS6) *   * Type Tool Layers *   PSD_LTYP_TYPE           "tySh"        -       * Type tool layer (PS5) *   PSD_LTYP_TYPE2          "TySh"        -       * Type tool object setting (PS6) *   * Layer Properties *   PSD_LPRP_UNICODE        "luni"     Loaded     * Unicode layer name (PS5) *   PSD_LPRP_SOURCE         "lnsr"     Loaded     * Layer name source setting (PS6) *   PSD_LPRP_ID             "lyid"     Loaded     * Layer ID (PS5) *   PSD_LPRP_BLEND_CLIP     "clbl"        -       * Blend clipping elements (PS6) *   PSD_LPRP_BLEND_INT      "infx"        -       * Blend interior elements (PS6) *   PSD_LPRP_KNOCKOUT       "knko"        -       * Knockout setting (PS6) *   PSD_LPRP_PROTECT        "lspf"        -       * Protected setting (PS6) *   PSD_LPRP_COLOR          "lclr"        -       * Sheet color setting (PS6) *   PSD_LPRP_REF_POINT      "fxrp"        -       * Reference point (PS6) *   * Vector mask *   PSD_LMSK_VMASK          "vmsk"        -       * Vector mask setting (PS6) *   * Parasites *   PSD_LPAR_ANNOTATE       "Anno"        -       * Annotation (PS6) *   * Other *   PSD_LOTH_PATTERN        "Patt"        -       * Patterns (PS6) *   PSD_LOTH_GRADIENT       "grdm"        -       * Gradient settings (PS6) *   PSD_LOTH_SECTION        "lsct"     Loaded     * Section divider setting (PS6) (Layer Groups) *   PSD_LOTH_RESTRICT       "brst"        -       * Channel blending restriction setting (PS6) *   PSD_LOTH_FOREIGN_FX     "ffxi"        -       * Foreign effect ID (PS6) *   PSD_LOTH_PATT_DATA      "shpa"        -       * Pattern data (PS6) *   PSD_LOTH_META_DATA      "shmd"        -       * Meta data setting (PS6) *   PSD_LOTH_LAYER_DATA     "layr"        -       * Layer data (PS6) *   * Effects layer resource IDs *   PSD_LFX_COMMON          "cmnS"        -       * Effects layer - common state (PS5) *   PSD_LFX_DROP_SDW        "dsdw"        -       * Effects layer - drop shadow (PS5) *   PSD_LFX_INNER_SDW       "isdw"        -       * Effects layer - inner shadow (PS5) *   PSD_LFX_OUTER_GLW       "oglw"        -       * Effects layer - outer glow (PS5) *   PSD_LFX_INNER_GLW       "iglw"        -       * Effects layer - inner glow (PS5) *   PSD_LFX_BEVEL           "bevl"        -       * Effects layer - bevel (PS5) * */
 end_comment
 
 begin_include
@@ -1862,13 +1862,7 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-comment|/* Load adjustment layer */
-specifier|static
-name|gboolean
-name|msg_flag
-init|=
-name|FALSE
-decl_stmt|;
+comment|/* Load layer group& type information    * Type 0: not a group    * Type 1: Open folder    * Type 2: Closed folder    * Type 3: End of most recent group */
 name|guint32
 name|type
 decl_stmt|;
@@ -1937,59 +1931,11 @@ argument_list|,
 name|type
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|type
-operator|==
-literal|1
-operator|||
-comment|/* Layer group start - open folder */
-name|type
-operator|==
-literal|2
-condition|)
-comment|/* Layer group start - closed folder */
-block|{
 name|lyr_a
 operator|->
-name|drop
+name|group_type
 operator|=
-name|TRUE
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|msg_flag
-operator|&&
-name|CONVERSION_WARNINGS
-condition|)
-block|{
-name|g_message
-argument_list|(
-literal|"Warning:\n"
-literal|"The image file contains layer groups. "
-literal|"These are not supported by the GIMP and will "
-literal|"be dropped."
-argument_list|)
-expr_stmt|;
-name|msg_flag
-operator|=
-name|TRUE
-expr_stmt|;
-block|}
-block|}
-if|if
-condition|(
 name|type
-operator|==
-literal|3
-condition|)
-comment|/* End of layer group - hidden in UI */
-name|lyr_a
-operator|->
-name|drop
-operator|=
-name|TRUE
 expr_stmt|;
 return|return
 literal|0
