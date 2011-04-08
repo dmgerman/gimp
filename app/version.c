@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<cairo.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<fontconfig/fontconfig.h>
 end_include
 
@@ -31,6 +37,12 @@ begin_include
 include|#
 directive|include
 file|<pango/pangoft2.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
 begin_include
@@ -247,6 +259,23 @@ argument_list|,
 name|glib_micro_version
 argument_list|)
 expr_stmt|;
+name|gimp_show_library_version
+argument_list|(
+literal|"GdkPixbuf"
+argument_list|,
+name|GDK_PIXBUF_MAJOR
+argument_list|,
+name|GDK_PIXBUF_MINOR
+argument_list|,
+name|GDK_PIXBUF_MICRO
+argument_list|,
+name|gdk_pixbuf_major_version
+argument_list|,
+name|gdk_pixbuf_minor_version
+argument_list|,
+name|gdk_pixbuf_micro_version
+argument_list|)
+expr_stmt|;
 ifndef|#
 directive|ifndef
 name|GIMP_CONSOLE_COMPILATION
@@ -327,6 +356,26 @@ name|FcGetVersion
 argument_list|()
 operator|%
 literal|100
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+name|_
+argument_list|(
+literal|"using %s version %s (compiled against version %s)"
+argument_list|)
+argument_list|,
+literal|"Cairo"
+argument_list|,
+name|cairo_version_string
+argument_list|()
+argument_list|,
+name|CAIRO_VERSION_STRING
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"\n"
 argument_list|)
 expr_stmt|;
 block|}
