@@ -329,7 +329,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275b2d770103
+DECL|enum|__anon2aafae3a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -357,7 +357,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275b2d770203
+DECL|enum|__anon2aafae3a0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5460,6 +5460,16 @@ name|statusbar
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/*  so wilber doesn't flicker  */
+name|gtk_widget_set_double_buffered
+argument_list|(
+name|shell
+operator|->
+name|canvas
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_expose_full
 argument_list|(
 name|shell
@@ -5674,6 +5684,16 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+comment|/*  we double buffer image drawing manually  */
+name|gtk_widget_set_double_buffered
+argument_list|(
+name|shell
+operator|->
+name|canvas
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|shell
