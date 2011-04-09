@@ -50,12 +50,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|wilber_extents_known
+DECL|variable|wilber_cairo_path
 specifier|static
-name|gboolean
-name|wilber_extents_known
+name|cairo_path_t
+modifier|*
+name|wilber_cairo_path
 init|=
-name|FALSE
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -153,11 +154,11 @@ operator|-
 name|wilber_y1
 argument_list|)
 expr_stmt|;
-name|wilber_parse_path_data
+name|cairo_append_path
 argument_list|(
 name|cr
 argument_list|,
-name|wilber_path
+name|wilber_cairo_path
 argument_list|)
 expr_stmt|;
 name|cairo_restore
@@ -222,7 +223,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|wilber_extents_known
+name|wilber_cairo_path
 condition|)
 block|{
 name|cairo_save
@@ -261,14 +262,17 @@ operator|&
 name|wilber_y2
 argument_list|)
 expr_stmt|;
-name|cairo_restore
+name|wilber_cairo_path
+operator|=
+name|cairo_copy_path
 argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
-name|wilber_extents_known
-operator|=
-name|TRUE
+name|cairo_restore
+argument_list|(
+name|cr
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -301,7 +305,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299b974e0108
+DECL|struct|__anon27c4b90c0108
 block|{
 DECL|member|cr
 name|cairo_t
