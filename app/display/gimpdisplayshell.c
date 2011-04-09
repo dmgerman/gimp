@@ -329,7 +329,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afbe3510103
+DECL|enum|__anon275b2d770103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -357,7 +357,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afbe3510203
+DECL|enum|__anon275b2d770203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2135,6 +2135,35 @@ name|gimp_display_shell_vruler_button_press
 argument_list|)
 argument_list|,
 name|shell
+argument_list|)
+expr_stmt|;
+comment|/*  set the rulers as track widgets for each other, so we don't end up    *  with one ruler wrongly being stuck a few pixels off while we are    *  hovering the other    */
+name|gimp_ruler_add_track_widget
+argument_list|(
+name|GIMP_RULER
+argument_list|(
+name|shell
+operator|->
+name|hrule
+argument_list|)
+argument_list|,
+name|shell
+operator|->
+name|vrule
+argument_list|)
+expr_stmt|;
+name|gimp_ruler_add_track_widget
+argument_list|(
+name|GIMP_RULER
+argument_list|(
+name|shell
+operator|->
+name|vrule
+argument_list|)
+argument_list|,
+name|shell
+operator|->
+name|hrule
 argument_list|)
 expr_stmt|;
 name|gimp_help_set_help_data
