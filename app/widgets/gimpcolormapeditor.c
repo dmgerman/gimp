@@ -2603,12 +2603,13 @@ argument_list|)
 expr_stmt|;
 name|gimp_ui_manager_activate_action
 argument_list|(
+name|gimp_editor_get_ui_manager
+argument_list|(
 name|GIMP_EDITOR
 argument_list|(
 name|editor
 argument_list|)
-operator|->
-name|ui_manager
+argument_list|)
 argument_list|,
 literal|"colormap"
 argument_list|,
