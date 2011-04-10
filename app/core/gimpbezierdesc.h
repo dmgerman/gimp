@@ -76,6 +76,23 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_bezier_desc_translate
+parameter_list|(
+name|GimpBezierDesc
+modifier|*
+name|desc
+parameter_list|,
+name|gdouble
+name|offset_x
+parameter_list|,
+name|gdouble
+name|offset_y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpBezierDesc
 modifier|*
 name|gimp_bezier_desc_copy

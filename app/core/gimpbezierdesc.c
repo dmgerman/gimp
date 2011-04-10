@@ -146,7 +146,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|add_polyline (GArray * path_data,const GimpVector2 * points,guint n_points)
+DECL|function|add_polyline (GArray * path_data,const GimpVector2 * points,gint n_points,gboolean closed)
 name|add_polyline
 parameter_list|(
 name|GArray
@@ -158,8 +158,11 @@ name|GimpVector2
 modifier|*
 name|points
 parameter_list|,
-name|guint
+name|gint
 name|n_points
+parameter_list|,
+name|gboolean
+name|closed
 parameter_list|)
 block|{
 name|GimpVector2
@@ -294,7 +297,12 @@ index|]
 expr_stmt|;
 block|}
 block|}
-comment|/* close the polyline */
+comment|/* close the polyline when needed */
+if|if
+condition|(
+name|closed
+condition|)
+block|{
 name|pd
 operator|.
 name|header
@@ -318,6 +326,7 @@ argument_list|,
 name|pd
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -570,6 +579,8 @@ argument_list|,
 name|points
 argument_list|,
 name|n_points
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|n_points
@@ -645,6 +656,78 @@ operator|->
 name|len
 argument_list|)
 return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_bezier_desc_translate (GimpBezierDesc * desc,gdouble offset_x,gdouble offset_y)
+name|gimp_bezier_desc_translate
+parameter_list|(
+name|GimpBezierDesc
+modifier|*
+name|desc
+parameter_list|,
+name|gdouble
+name|offset_x
+parameter_list|,
+name|gdouble
+name|offset_y
+parameter_list|)
+block|{
+name|gint
+name|i
+decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|desc
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|desc
+operator|->
+name|num_data
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|desc
+operator|->
+name|data
+index|[
+name|i
+index|]
+operator|.
+name|point
+operator|.
+name|x
+operator|+=
+name|offset_x
+expr_stmt|;
+name|desc
+operator|->
+name|data
+index|[
+name|i
+index|]
+operator|.
+name|point
+operator|.
+name|y
+operator|+=
+name|offset_y
+expr_stmt|;
+block|}
 block|}
 end_function
 
