@@ -98,6 +98,22 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_scan_convert_add_bezier
+parameter_list|(
+name|GimpScanConvert
+modifier|*
+name|sc
+parameter_list|,
+specifier|const
+name|GimpBezierDesc
+modifier|*
+name|bezier
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_scan_convert_stroke
 parameter_list|(
 name|GimpScanConvert
