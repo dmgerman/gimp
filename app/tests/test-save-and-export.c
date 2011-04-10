@@ -274,7 +274,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29123a1d0108
+DECL|struct|__anon2bf7ae500108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -548,6 +548,16 @@ argument_list|,
 literal|"desktop/64x64/gimp.png"
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_assert
+argument_list|(
+name|g_file_test
+argument_list|(
+name|filename
+argument_list|,
+name|G_FILE_TEST_EXISTS
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|uri
