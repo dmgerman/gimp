@@ -977,7 +977,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0ee8910108
+DECL|struct|__anon2c5142600108
 block|{
 DECL|member|type
 specifier|const
@@ -1690,7 +1690,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0ee8910208
+DECL|struct|__anon2c5142600208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -3468,6 +3468,11 @@ name|height
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|src

@@ -657,6 +657,11 @@ name|output_height
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 comment|/* Step 7: Finish decompression */
 name|jpeg_finish_decompress
 argument_list|(
@@ -1277,6 +1282,11 @@ name|output_height
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 comment|/* Step 7: Finish decompression */
 name|jpeg_finish_decompress
 argument_list|(
@@ -1896,6 +1906,11 @@ name|output_height
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 comment|/* Step 7: Finish decompression */
 name|jpeg_finish_decompress
 argument_list|(
@@ -2798,6 +2813,11 @@ name|image_height
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 comment|/* Step 6: Finish compression */
 name|jpeg_finish_compress
 argument_list|(

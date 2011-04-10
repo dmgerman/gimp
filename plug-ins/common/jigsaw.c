@@ -60,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0e306b0103
+DECL|enum|__anon2c95fec10103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -76,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0e306b0203
+DECL|enum|__anon2c95fec10203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -3237,6 +3237,11 @@ name|gimp_quit
 argument_list|()
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|globals

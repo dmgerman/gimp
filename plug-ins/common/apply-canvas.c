@@ -40891,7 +40891,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a7a52d0103
+DECL|enum|__anon295cf3060103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40911,7 +40911,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a7a52d0208
+DECL|struct|__anon295cf3060208
 block|{
 DECL|member|direction
 name|gint
@@ -42776,6 +42776,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 comment|/*  update the textured region  */
 name|gimp_drawable_flush
 argument_list|(

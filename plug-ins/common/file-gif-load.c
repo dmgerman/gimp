@@ -935,7 +935,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ade4f3d0108
+DECL|struct|__anon27dcd2210108
 block|{
 DECL|member|Width
 name|guint
@@ -979,7 +979,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ade4f3d0208
+DECL|struct|__anon27dcd2210208
 block|{
 DECL|member|transparent
 name|gint
@@ -4927,6 +4927,11 @@ condition|)
 name|g_print
 argument_list|(
 literal|"GIF: too much input data, ignoring extra...\n"
+argument_list|)
+expr_stmt|;
+name|gimp_progress_update
+argument_list|(
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_init

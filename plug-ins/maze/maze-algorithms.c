@@ -1682,6 +1682,11 @@ name|max_progress
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|g_slist_free
 argument_list|(
 name|front_cells
@@ -2385,6 +2390,11 @@ name|max_progress
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|g_slist_free
 argument_list|(
 name|front_cells

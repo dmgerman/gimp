@@ -140,7 +140,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29861d2d0103
+DECL|enum|__anon2966aee00103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29861d2d0203
+DECL|enum|__anon2966aee00203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -192,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29861d2d0308
+DECL|struct|__anon2966aee00308
 block|{
 DECL|member|file_offset
 name|gint32
@@ -233,7 +233,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29861d2d0408
+DECL|struct|__anon2966aee00408
 block|{
 DECL|member|fp
 name|FILE
@@ -2204,6 +2204,11 @@ name|image_height
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|row

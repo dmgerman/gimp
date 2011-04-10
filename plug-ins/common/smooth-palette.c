@@ -308,7 +308,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c3fd17b0108
+DECL|struct|__anon27a2b9b10108
 block|{
 DECL|member|width
 name|gint
@@ -1718,6 +1718,11 @@ name|len
 expr_stmt|;
 block|}
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|memcpy
 argument_list|(
 name|pal

@@ -672,7 +672,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e66e910108
+DECL|struct|__anon29f21f800108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -726,7 +726,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e66e910208
+DECL|struct|__anon29f21f800208
 block|{
 DECL|member|y
 name|gint32
@@ -16323,6 +16323,11 @@ block|}
 block|}
 block|}
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|last_arr

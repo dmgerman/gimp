@@ -108,7 +108,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c86a26b0108
+DECL|struct|__anon2afabd770108
 block|{
 DECL|member|film_height
 name|gint
@@ -212,7 +212,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c86a26b0208
+DECL|struct|__anon2afabd770208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -2323,6 +2323,11 @@ name|image_ID_tmp
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|gimp_image_flatten
 argument_list|(
 name|image_ID_dst

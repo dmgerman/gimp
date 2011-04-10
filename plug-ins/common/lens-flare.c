@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b21d2c20108
+DECL|struct|__anon2c2850040108
 block|{
 DECL|member|posx
 name|gint
@@ -119,7 +119,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b21d2c20208
+DECL|struct|__anon2c2850040208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -2133,6 +2133,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 comment|/*  update the textured region  */
 name|gimp_drawable_flush
 argument_list|(

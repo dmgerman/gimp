@@ -153,7 +153,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4a09df0108
+DECL|struct|__anon2c21e8420108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -1608,6 +1608,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|gimp_pixel_rgn_set_rect
 argument_list|(
 operator|&

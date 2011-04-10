@@ -155,7 +155,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon29b1aef30108
+DECL|struct|__anon27603e290108
 block|{
 DECL|member|randomize
 name|gint
@@ -1540,6 +1540,11 @@ argument_list|,
 literal|4
 argument_list|,
 name|gimp_progress_update
+argument_list|)
+expr_stmt|;
+name|gimp_progress_update
+argument_list|(
+literal|1.0
 argument_list|)
 expr_stmt|;
 comment|/* update destination */

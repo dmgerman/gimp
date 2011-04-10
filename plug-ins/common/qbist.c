@@ -200,7 +200,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d732f60103
+DECL|enum|__anon2a3cc0e60103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -245,7 +245,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d732f60208
+DECL|struct|__anon2a3cc0e60208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -284,7 +284,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d732f60308
+DECL|struct|__anon2a3cc0e60308
 block|{
 DECL|member|info
 name|ExpInfo
@@ -2852,6 +2852,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|gimp_drawable_flush
 argument_list|(
 name|drawable

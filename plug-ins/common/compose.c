@@ -84,10 +84,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279448550108
+DECL|struct|__anon2c6f527d0108
 block|{
 union|union
-DECL|union|__anon27944855020a
+DECL|union|__anon2c6f527d020a
 block|{
 DECL|member|ID
 name|gint32
@@ -662,7 +662,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279448550308
+DECL|struct|__anon2c6f527d0308
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1201,7 +1201,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279448550408
+DECL|struct|__anon2c6f527d0408
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1241,7 +1241,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279448550508
+DECL|struct|__anon2c6f527d0508
 block|{
 DECL|member|width
 DECL|member|height
@@ -3930,6 +3930,11 @@ name|height
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|j

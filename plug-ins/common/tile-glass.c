@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a53b920108
+DECL|struct|__anon2b682d640108
 block|{
 DECL|member|xblock
 name|gint
@@ -92,7 +92,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a53b920208
+DECL|struct|__anon2b682d640208
 block|{
 DECL|member|gval
 name|GlassValues
@@ -2007,6 +2007,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|gimp_drawable_flush
 argument_list|(
 name|drawable

@@ -1747,6 +1747,11 @@ literal|8
 expr_stmt|;
 block|}
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 comment|/*    * Do the last n rows (count always> 0)    */
 name|gimp_pixel_rgn_set_rect
 argument_list|(
@@ -2373,7 +2378,11 @@ name|height
 argument_list|)
 expr_stmt|;
 block|}
-empty_stmt|;
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 comment|/*    * Done with the file...    */
 name|sgiClose
 argument_list|(

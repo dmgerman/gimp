@@ -92,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6188d40103
+DECL|enum|__anon27dadffc0103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -108,7 +108,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6188d40208
+DECL|struct|__anon27dadffc0208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -6408,6 +6408,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 comment|/*  merge the shadow, update the drawable  */
 name|gimp_drawable_flush
 argument_list|(

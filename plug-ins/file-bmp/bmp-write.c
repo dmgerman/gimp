@@ -82,7 +82,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5725330103
+DECL|enum|__anon2c394b7a0103
 block|{
 DECL|enumerator|RGB_565
 name|RGB_565
@@ -110,7 +110,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b5725330208
+DECL|struct|__anon2c394b7a0208
 block|{
 DECL|member|rgb_format
 name|RGBMode
@@ -4049,7 +4049,7 @@ block|}
 block|}
 name|gimp_progress_update
 argument_list|(
-literal|1
+literal|1.0
 argument_list|)
 expr_stmt|;
 block|}

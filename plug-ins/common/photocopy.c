@@ -92,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289e31310108
+DECL|struct|__anon2c6274f40108
 block|{
 DECL|member|mask_radius
 name|gdouble
@@ -3165,6 +3165,11 @@ operator|!
 name|preview
 condition|)
 block|{
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 comment|/*  merge the shadow, update the drawable  */
 name|gimp_drawable_flush
 argument_list|(

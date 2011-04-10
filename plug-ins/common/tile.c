@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2149720108
+DECL|struct|__anon2b3093270108
 block|{
 DECL|member|new_width
 name|gint
@@ -1332,6 +1332,11 @@ expr_stmt|;
 block|}
 block|}
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
 name|new_layer

@@ -360,7 +360,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275b9a400103
+DECL|enum|__anon27562c4d0103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -387,7 +387,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275b9a400203
+DECL|enum|__anon27562c4d0203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -408,7 +408,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275b9a400308
+DECL|struct|__anon27562c4d0308
 block|{
 DECL|member|name
 name|gchar
@@ -549,7 +549,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275b9a400408
+DECL|struct|__anon27562c4d0408
 block|{
 DECL|member|fp
 name|FILE
@@ -569,7 +569,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275b9a400503
+DECL|enum|__anon27562c4d0503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -597,7 +597,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275b9a400608
+DECL|struct|__anon27562c4d0608
 block|{
 DECL|member|init
 name|gint
@@ -619,7 +619,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon275b9a400708
+DECL|struct|__anon27562c4d0708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -698,7 +698,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275b9a400808
+DECL|struct|__anon27562c4d0808
 block|{
 DECL|member|init
 name|gint
@@ -768,7 +768,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275b9a400908
+DECL|struct|__anon27562c4d0908
 block|{
 DECL|member|x0
 name|gdouble
@@ -795,7 +795,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275b9a400a08
+DECL|struct|__anon27562c4d0a08
 block|{
 DECL|member|init
 name|gint
@@ -965,7 +965,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275b9a400b08
+DECL|struct|__anon27562c4d0b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -992,7 +992,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275b9a400c08
+DECL|struct|__anon27562c4d0c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1233,7 +1233,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275b9a400d08
+DECL|struct|__anon27562c4d0d08
 block|{
 DECL|member|tag
 name|gint
@@ -1310,7 +1310,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275b9a400e08
+DECL|struct|__anon27562c4d0e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -4756,6 +4756,11 @@ expr_stmt|;
 else|else
 name|plugin_do_non_asupsample
 argument_list|()
+expr_stmt|;
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
 expr_stmt|;
 comment|/* Clean up */
 name|calc_deinit
@@ -8515,7 +8520,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon275b9a400f08
+DECL|struct|__anon27562c4d0f08
 block|{
 DECL|member|values
 name|guchar
@@ -14468,7 +14473,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon275b9a401008
+DECL|struct|__anon27562c4d1008
 block|{
 DECL|member|label
 specifier|const

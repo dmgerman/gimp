@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d1fc230108
+DECL|struct|__anon2ae8e5980108
 block|{
 DECL|member|height
 name|gint
@@ -1186,7 +1186,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d1fc230208
+DECL|struct|__anon2ae8e5980208
 block|{
 DECL|member|x
 DECL|member|y
@@ -1664,6 +1664,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|gimp_drawable_flush
 argument_list|(
 name|drawable

@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279fbd240103
+DECL|enum|__anon2bbfeb240103
 block|{
 DECL|enumerator|CARTESIAN_MODE
 name|CARTESIAN_MODE
@@ -104,7 +104,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279fbd240208
+DECL|struct|__anon2bbfeb240208
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -3510,6 +3510,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 comment|/*  update the region  */
 name|gimp_drawable_flush
 argument_list|(

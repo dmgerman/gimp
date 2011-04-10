@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7a25410108
+DECL|struct|__anon2758bc720108
 block|{
 DECL|member|replace
 name|gint
@@ -2936,6 +2936,11 @@ name|linebuf
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|data
@@ -3654,6 +3659,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|nbytes
 operator|=
 name|nbytes
@@ -4346,6 +4356,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|nbytes
 operator|=
 name|nbytes

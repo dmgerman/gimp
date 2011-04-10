@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f17cfe0108
+DECL|struct|__anon2ab2147c0108
 block|{
 DECL|member|horizontal
 name|gboolean
@@ -2129,6 +2129,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 comment|/*  update the sobeled region  */
 name|gimp_drawable_flush
 argument_list|(

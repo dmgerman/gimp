@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a33e7220108
+DECL|struct|__anon27e984a10108
 block|{
 DECL|member|shift_amount
 name|gint
@@ -1231,6 +1231,11 @@ operator|!
 name|preview
 condition|)
 block|{
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 comment|/*  update the region  */
 name|gimp_drawable_flush
 argument_list|(

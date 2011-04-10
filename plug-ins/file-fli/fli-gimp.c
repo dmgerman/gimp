@@ -2332,6 +2332,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|gimp_image_set_colormap
 argument_list|(
 name|image_id
@@ -3440,6 +3445,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 comment|/*    * finish fli    */
 name|fli_write_header
 argument_list|(

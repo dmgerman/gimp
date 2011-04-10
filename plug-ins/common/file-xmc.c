@@ -320,7 +320,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289cd9d00108
+DECL|struct|__anon2c1908e80108
 block|{
 DECL|member|crop
 name|gboolean
@@ -851,7 +851,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon289cd9d00208
+DECL|struct|__anon2c1908e80208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -3123,6 +3123,11 @@ name|nimage
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 comment|/* free temporary buffer */
 name|g_free
 argument_list|(
@@ -7371,6 +7376,11 @@ name|nimage
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 comment|/*    * comment parsing    */
 name|commentsp
 operator|=
@@ -9238,7 +9248,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon289cd9d00308
+DECL|struct|__anon2c1908e80308
 block|{
 DECL|member|size
 name|guint32

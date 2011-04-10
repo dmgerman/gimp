@@ -297,7 +297,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba36ec90108
+DECL|struct|__anon2b5341220108
 block|{
 DECL|member|resolution
 name|guint
@@ -408,7 +408,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba36ec90208
+DECL|struct|__anon2b5341220208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1039,7 +1039,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba36ec90308
+DECL|struct|__anon2b5341220308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1908,7 +1908,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba36ec90408
+DECL|struct|__anon2b5341220408
 block|{
 DECL|member|eol
 name|long
@@ -9330,6 +9330,11 @@ condition|)
 break|break;
 block|}
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|data
@@ -11570,6 +11575,11 @@ name|height
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|fprintf
 argument_list|(
 name|ofp
@@ -12001,6 +12011,11 @@ name|height
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|level2
@@ -12662,6 +12677,11 @@ name|height
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|level2
@@ -13555,6 +13575,11 @@ name|height
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|ps_end_data
 argument_list|(
 name|ofp
@@ -14222,6 +14247,11 @@ name|height
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|ps_end_data
 argument_list|(
 name|ofp

@@ -135,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e7a8b30103
+DECL|enum|__anon2b1ce8180103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -148,7 +148,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e7a8b30203
+DECL|enum|__anon2b1ce8180203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -165,7 +165,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e7a8b30308
+DECL|struct|__anon2b1ce8180308
 block|{
 DECL|member|interlace
 name|gint
@@ -3748,6 +3748,11 @@ argument_list|,
 name|offset_x
 argument_list|,
 name|offset_y
+argument_list|)
+expr_stmt|;
+name|gimp_progress_update
+argument_list|(
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_detach

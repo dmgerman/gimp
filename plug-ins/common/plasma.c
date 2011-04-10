@@ -96,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278bbe570108
+DECL|struct|__anon28a50e0f0108
 block|{
 DECL|member|seed
 name|guint32
@@ -1519,6 +1519,15 @@ name|depth
 operator|++
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|pft
+condition|)
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 block|}
 name|end_plasma
 argument_list|(

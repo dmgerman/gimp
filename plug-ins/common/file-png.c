@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b804eab0108
+DECL|struct|__anon29224a300108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b804eab0208
+DECL|struct|__anon29224a300208
 block|{
 DECL|member|run
 name|gboolean
@@ -5824,6 +5824,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|png_write_end
 argument_list|(
 name|pp

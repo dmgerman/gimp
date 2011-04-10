@@ -2917,6 +2917,11 @@ operator|+=
 name|scanlines
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|data
@@ -3126,7 +3131,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2790328d0108
+DECL|struct|__anon2bdacd0a0108
 block|{
 DECL|member|group_word
 name|guint16
@@ -5501,7 +5506,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-DECL|struct|__anon2790328d0208
+DECL|struct|__anon2bdacd0a0208
 struct|struct
 block|{
 DECL|member|DICOM
@@ -5629,7 +5634,7 @@ modifier|*
 name|elements
 parameter_list|)
 block|{
-DECL|struct|__anon2790328d0308
+DECL|struct|__anon2bdacd0a0308
 struct|struct
 block|{
 DECL|member|DICOM

@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2748edd30108
+DECL|struct|__anon28d9b1ca0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -2363,6 +2363,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 comment|/*  now, merge horizontal and vertical into a magnitude  */
 name|gimp_pixel_rgn_init
 argument_list|(

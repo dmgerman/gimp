@@ -114,7 +114,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adf85d50108
+DECL|struct|__anon299b5fe20108
 block|{
 DECL|member|radius
 name|gdouble
@@ -3069,6 +3069,11 @@ argument_list|,
 name|maxdelta
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|gimp_progress_update
+argument_list|(
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_init

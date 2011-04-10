@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f23ba80108
+DECL|struct|__anon293d06700108
 block|{
 DECL|member|whirl
 name|gdouble
@@ -1770,6 +1770,11 @@ name|max_progress
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|gimp_pixel_fetcher_destroy
 argument_list|(
 name|pft

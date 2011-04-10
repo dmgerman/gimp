@@ -145,7 +145,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc907a30108
+DECL|struct|__anon2977956f0108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -254,7 +254,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc907a30208
+DECL|struct|__anon2977956f0208
 block|{
 DECL|member|height
 DECL|member|width
@@ -336,7 +336,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc907a30308
+DECL|struct|__anon2977956f0308
 block|{
 DECL|member|width
 name|gint
@@ -2419,6 +2419,11 @@ name|max_progress
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|gimp_drawable_flush
 argument_list|(
 name|drawable

@@ -1524,6 +1524,11 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 comment|/* Update the region */
 comment|/* ================= */
 name|gimp_drawable_flush

@@ -349,7 +349,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8a18040108
+DECL|struct|__anon297a054e0108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -418,7 +418,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8a18040208
+DECL|struct|__anon297a054e0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -526,7 +526,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8a18040308
+DECL|struct|__anon297a054e0308
 block|{
 DECL|member|color
 name|guchar
@@ -555,7 +555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8a18040408
+DECL|struct|__anon297a054e0408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -582,7 +582,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8a18040508
+DECL|struct|__anon297a054e0508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -13186,6 +13186,15 @@ expr_stmt|;
 block|}
 block|}
 block|}
+if|if
+condition|(
+name|g_show_progress
+condition|)
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|g_Sdebug

@@ -91,7 +91,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0b12130103
+DECL|enum|__anon2c0156e10103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -111,7 +111,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0b12130208
+DECL|struct|__anon2c0156e10208
 block|{
 DECL|member|amount
 name|gdouble
@@ -4155,6 +4155,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 comment|/*  update the region  */
 name|gimp_drawable_flush
 argument_list|(
@@ -6362,6 +6367,11 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* for (row..) */
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 comment|/*  update the region  */
 name|gimp_drawable_flush
 argument_list|(
@@ -8808,6 +8818,11 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* for pr */
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|tile

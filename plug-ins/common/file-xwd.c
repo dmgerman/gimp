@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2957bfea0108
+DECL|struct|__anon28ff50910108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -246,7 +246,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2957bfea0208
+DECL|struct|__anon28ff50910208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -304,7 +304,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2957bfea0308
+DECL|struct|__anon28ff50910308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -331,7 +331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2957bfea0408
+DECL|struct|__anon28ff50910408
 block|{
 DECL|member|npixel
 name|gint
@@ -2250,6 +2250,11 @@ expr_stmt|;
 block|}
 break|break;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|fclose
 argument_list|(
 name|ifp
@@ -2519,6 +2524,11 @@ else|else
 name|retval
 operator|=
 name|FALSE
+expr_stmt|;
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
 expr_stmt|;
 name|fclose
 argument_list|(
