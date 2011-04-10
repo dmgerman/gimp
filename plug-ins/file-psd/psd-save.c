@@ -3046,6 +3046,10 @@ name|gboolean
 name|ActiveLayerPresent
 decl_stmt|;
 comment|/* TRUE if there's an active layer */
+name|GimpParasite
+modifier|*
+name|parasite
+decl_stmt|;
 name|glong
 name|eof_pos
 decl_stmt|;
@@ -3900,6 +3904,88 @@ name|gint16
 argument_list|)
 argument_list|)
 decl_stmt|;
+block|}
+comment|/* --------------- Write ICC profile data ------------------- */
+name|parasite
+operator|=
+name|gimp_image_get_parasite
+argument_list|(
+name|image_id
+argument_list|,
+literal|"icc-profile"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|parasite
+condition|)
+block|{
+name|gint32
+name|profile_length
+init|=
+name|gimp_parasite_data_size
+argument_list|(
+name|parasite
+argument_list|)
+decl_stmt|;
+name|xfwrite
+argument_list|(
+name|fd
+argument_list|,
+literal|"8BIM"
+argument_list|,
+literal|4
+argument_list|,
+literal|"imageresources signature"
+argument_list|)
+expr_stmt|;
+name|write_gint16
+argument_list|(
+name|fd
+argument_list|,
+literal|0x040f
+argument_list|,
+literal|"0x040f Id"
+argument_list|)
+expr_stmt|;
+name|write_gint16
+argument_list|(
+name|fd
+argument_list|,
+literal|0
+argument_list|,
+literal|"Id name"
+argument_list|)
+expr_stmt|;
+comment|/* Set to null string (two zeros) */
+name|write_gint32
+argument_list|(
+name|fd
+argument_list|,
+name|profile_length
+argument_list|,
+literal|"0x040f resource size"
+argument_list|)
+expr_stmt|;
+name|xfwrite
+argument_list|(
+name|fd
+argument_list|,
+name|gimp_parasite_data
+argument_list|(
+name|parasite
+argument_list|)
+argument_list|,
+name|profile_length
+argument_list|,
+literal|"ICC profile"
+argument_list|)
+expr_stmt|;
+name|gimp_parasite_free
+argument_list|(
+name|parasite
+argument_list|)
+expr_stmt|;
 block|}
 comment|/* --------------- Write Total Section Length --------------- */
 name|eof_pos
