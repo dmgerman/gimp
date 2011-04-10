@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be3b5c80103
+DECL|enum|__anon2a0688940103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -572,17 +572,13 @@ condition|(
 name|region
 condition|)
 block|{
-name|GdkRectangle
+name|cairo_rectangle_int_t
 name|rectangle
 decl_stmt|;
 name|cairo_region_get_extents
 argument_list|(
 name|region
 argument_list|,
-operator|(
-name|cairo_rectangle_int_t
-operator|*
-operator|)
 operator|&
 name|rectangle
 argument_list|)
@@ -637,10 +633,6 @@ name|cairo_region_union_rectangle
 argument_list|(
 name|region
 argument_list|,
-operator|(
-name|cairo_rectangle_int_t
-operator|*
-operator|)
 operator|&
 name|rectangle
 argument_list|)

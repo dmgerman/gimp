@@ -187,7 +187,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd5e2af0103
+DECL|enum|__anon2b6f4b1f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1222,7 +1222,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_canvas_transform_preview_transform (GimpCanvasItem * item,GimpDisplayShell * shell,GdkRectangle * extents)
+DECL|function|gimp_canvas_transform_preview_transform (GimpCanvasItem * item,GimpDisplayShell * shell,cairo_rectangle_int_t * extents)
 name|gimp_canvas_transform_preview_transform
 parameter_list|(
 name|GimpCanvasItem
@@ -1233,7 +1233,7 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
-name|GdkRectangle
+name|cairo_rectangle_int_t
 modifier|*
 name|extents
 parameter_list|)
@@ -2247,7 +2247,7 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
-name|GdkRectangle
+name|cairo_rectangle_int_t
 name|rectangle
 decl_stmt|;
 if|if
@@ -2265,10 +2265,6 @@ condition|)
 return|return
 name|cairo_region_create_rectangle
 argument_list|(
-operator|(
-name|cairo_rectangle_int_t
-operator|*
-operator|)
 operator|&
 name|rectangle
 argument_list|)

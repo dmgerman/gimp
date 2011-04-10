@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ff255e0103
+DECL|enum|__anon27e069180103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1021,7 +1021,7 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
-name|GdkRectangle
+name|cairo_rectangle_int_t
 name|rectangle
 decl_stmt|;
 name|gdouble
@@ -1139,10 +1139,6 @@ expr_stmt|;
 return|return
 name|cairo_region_create_rectangle
 argument_list|(
-operator|(
-name|cairo_rectangle_int_t
-operator|*
-operator|)
 operator|&
 name|rectangle
 argument_list|)
