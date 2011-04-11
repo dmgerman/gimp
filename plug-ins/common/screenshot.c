@@ -339,7 +339,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2998a6200103
+DECL|enum|__anon28c5b4930103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -358,7 +358,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2998a6200208
+DECL|struct|__anon28c5b4930208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -477,7 +477,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GdkNativeWindow
+name|guint32
 name|select_window
 parameter_list|(
 name|GdkScreen
@@ -1240,7 +1240,7 @@ end_ifdef
 
 begin_function
 specifier|static
-name|GdkNativeWindow
+name|guint32
 DECL|function|select_window_x11 (GdkScreen * screen)
 name|select_window_x11
 parameter_list|(
@@ -2402,7 +2402,7 @@ end_ifdef
 
 begin_function
 specifier|static
-name|GdkNativeWindow
+name|guint32
 DECL|function|select_window_win32 (GdkScreen * screen)
 name|select_window_win32
 parameter_list|(
@@ -2443,7 +2443,7 @@ end_endif
 
 begin_function
 specifier|static
-name|GdkNativeWindow
+name|guint32
 DECL|function|select_window (GdkScreen * screen)
 name|select_window
 parameter_list|(
@@ -3632,6 +3632,53 @@ directive|endif
 block|}
 end_function
 
+begin_function
+specifier|static
+name|GdkWindow
+modifier|*
+DECL|function|get_foreign_window (GdkDisplay * display,guint32 window)
+name|get_foreign_window
+parameter_list|(
+name|GdkDisplay
+modifier|*
+name|display
+parameter_list|,
+name|guint32
+name|window
+parameter_list|)
+block|{
+ifdef|#
+directive|ifdef
+name|GDK_WINDOWING_X11
+return|return
+name|gdk_x11_window_foreign_new_for_display
+argument_list|(
+name|display
+argument_list|,
+name|window
+argument_list|)
+return|;
+endif|#
+directive|endif
+ifdef|#
+directive|ifdef
+name|GDK_WINDOWING_WIN32
+return|return
+name|gdk_win32_window_foreign_new_for_display
+argument_list|(
+name|display
+argument_list|,
+name|window
+argument_list|)
+return|;
+endif|#
+directive|endif
+return|return
+name|NULL
+return|;
+block|}
+end_function
+
 begin_comment
 comment|/* The main Screenshot function */
 end_comment
@@ -3833,7 +3880,7 @@ else|else
 block|{
 name|window
 operator|=
-name|gdk_window_foreign_new_for_display
+name|get_foreign_window
 argument_list|(
 name|display
 argument_list|,
