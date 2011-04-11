@@ -339,7 +339,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c5b4930103
+DECL|enum|__anon2a587fc00103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -358,7 +358,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c5b4930208
+DECL|struct|__anon2a587fc00208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -2493,14 +2493,14 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|window_get_utf8_property (GdkDisplay * display,GdkNativeWindow window,const gchar * name)
+DECL|function|window_get_utf8_property (GdkDisplay * display,guint32 window,const gchar * name)
 name|window_get_utf8_property
 parameter_list|(
 name|GdkDisplay
 modifier|*
 name|display
 parameter_list|,
-name|GdkNativeWindow
+name|guint32
 name|window
 parameter_list|,
 specifier|const
@@ -2674,14 +2674,14 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|window_get_title (GdkDisplay * display,GdkNativeWindow window)
+DECL|function|window_get_title (GdkDisplay * display,guint window)
 name|window_get_title
 parameter_list|(
 name|GdkDisplay
 modifier|*
 name|display
 parameter_list|,
-name|GdkNativeWindow
+name|guint
 name|window
 parameter_list|)
 block|{
@@ -2732,14 +2732,14 @@ begin_function
 specifier|static
 name|GdkRegion
 modifier|*
-DECL|function|window_get_shape (GdkScreen * screen,GdkNativeWindow window)
+DECL|function|window_get_shape (GdkScreen * screen,guint32 window)
 name|window_get_shape
 parameter_list|(
 name|GdkScreen
 modifier|*
 name|screen
 parameter_list|,
-name|GdkNativeWindow
+name|guint32
 name|window
 parameter_list|)
 block|{
