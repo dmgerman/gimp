@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon295ab9b90103
+DECL|enum|__anon2c8a1f610103
 block|{
 DECL|enumerator|COLOR_PICKED
 name|COLOR_PICKED
@@ -915,7 +915,7 @@ name|event
 operator|->
 name|keyval
 operator|==
-name|GDK_Escape
+name|GDK_KEY_Escape
 condition|)
 block|{
 name|gimp_pick_button_shutdown

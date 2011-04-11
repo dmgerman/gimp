@@ -46,7 +46,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2782ae520103
+DECL|enum|__anon27c9f7db0103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TOOLTIP
 name|GIMP_WIDGET_HELP_TOOLTIP
@@ -426,7 +426,7 @@ name|gtk_binding_entry_add_signal
 argument_list|(
 name|binding_set
 argument_list|,
-name|GDK_F1
+name|GDK_KEY_F1
 argument_list|,
 literal|0
 argument_list|,
@@ -443,7 +443,7 @@ name|gtk_binding_entry_add_signal
 argument_list|(
 name|binding_set
 argument_list|,
-name|GDK_KP_F1
+name|GDK_KEY_KP_F1
 argument_list|,
 literal|0
 argument_list|,
@@ -1567,7 +1567,7 @@ name|kevent
 operator|->
 name|keyval
 operator|==
-name|GDK_Escape
+name|GDK_KEY_Escape
 condition|)
 block|{
 name|GdkDisplay

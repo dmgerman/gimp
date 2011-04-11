@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1afad30108
+DECL|struct|__anon2bf7aed30108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -151,7 +151,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1afad30203
+DECL|enum|__anon2bf7aed30203
 block|{
 DECL|enumerator|RESPONSE_CLEAR
 name|RESPONSE_CLEAR
@@ -2335,13 +2335,13 @@ name|keyval
 condition|)
 block|{
 case|case
-name|GDK_Return
+name|GDK_KEY_Return
 case|:
 case|case
-name|GDK_KP_Enter
+name|GDK_KEY_KP_Enter
 case|:
 case|case
-name|GDK_ISO_Enter
+name|GDK_KEY_ISO_Enter
 case|:
 if|if
 condition|(
@@ -2666,10 +2666,10 @@ name|TRUE
 return|;
 break|break;
 case|case
-name|GDK_KP_Up
+name|GDK_KEY_KP_Up
 case|:
 case|case
-name|GDK_Up
+name|GDK_KEY_Up
 case|:
 name|direction
 operator|=
@@ -2678,10 +2678,10 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|GDK_KP_Down
+name|GDK_KEY_KP_Down
 case|:
 case|case
-name|GDK_Down
+name|GDK_KEY_Down
 case|:
 name|direction
 operator|=
@@ -2689,10 +2689,10 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|GDK_P
+name|GDK_KEY_P
 case|:
 case|case
-name|GDK_p
+name|GDK_KEY_p
 case|:
 if|if
 condition|(
@@ -2709,10 +2709,10 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|GDK_N
+name|GDK_KEY_N
 case|:
 case|case
-name|GDK_n
+name|GDK_KEY_n
 case|:
 if|if
 condition|(

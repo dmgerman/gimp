@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278ef04a0108
+DECL|struct|__anon2bffc6bb0108
 block|{
 DECL|member|width
 name|gint
@@ -142,7 +142,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon278ef04a0203
+DECL|enum|__anon2bffc6bb0203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -4549,7 +4549,7 @@ name|event
 operator|->
 name|keyval
 operator|==
-name|GDK_slash
+name|GDK_KEY_slash
 condition|)
 block|{
 name|GtkAction
@@ -5149,7 +5149,7 @@ name|keyval
 condition|)
 block|{
 case|case
-name|GDK_Escape
+name|GDK_KEY_Escape
 case|:
 name|gtk_widget_hide
 argument_list|(
@@ -5168,13 +5168,13 @@ return|return
 name|TRUE
 return|;
 case|case
-name|GDK_Return
+name|GDK_KEY_Return
 case|:
 case|case
-name|GDK_KP_Enter
+name|GDK_KEY_KP_Enter
 case|:
 case|case
-name|GDK_ISO_Enter
+name|GDK_KEY_ISO_Enter
 case|:
 name|search
 argument_list|(

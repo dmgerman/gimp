@@ -4665,16 +4665,16 @@ name|_keyval
 condition|)
 block|{
 case|case
-name|GDK_Left
+name|GDK_KEY_Left
 case|:
 case|case
-name|GDK_Right
+name|GDK_KEY_Right
 case|:
 case|case
-name|GDK_Up
+name|GDK_KEY_Up
 case|:
 case|case
-name|GDK_Down
+name|GDK_KEY_Down
 case|:
 name|command_list_add
 argument_list|(
@@ -4768,7 +4768,7 @@ name|keyval
 condition|)
 block|{
 case|case
-name|GDK_Left
+name|GDK_KEY_Left
 case|:
 if|if
 condition|(
@@ -4801,7 +4801,7 @@ name|TRUE
 expr_stmt|;
 break|break;
 case|case
-name|GDK_Right
+name|GDK_KEY_Right
 case|:
 if|if
 condition|(
@@ -4832,7 +4832,7 @@ name|TRUE
 expr_stmt|;
 break|break;
 case|case
-name|GDK_Up
+name|GDK_KEY_Up
 case|:
 if|if
 condition|(
@@ -4865,7 +4865,7 @@ name|TRUE
 expr_stmt|;
 break|break;
 case|case
-name|GDK_Down
+name|GDK_KEY_Down
 case|:
 if|if
 condition|(
@@ -4896,7 +4896,7 @@ name|TRUE
 expr_stmt|;
 break|break;
 case|case
-name|GDK_Tab
+name|GDK_KEY_Tab
 case|:
 if|if
 condition|(

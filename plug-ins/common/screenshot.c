@@ -339,7 +339,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294fe6370103
+DECL|enum|__anon2998a6200103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -358,7 +358,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294fe6370208
+DECL|struct|__anon2998a6200208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -1578,7 +1578,7 @@ name|gdk_keymap_get_entries_for_keyval
 argument_list|(
 name|NULL
 argument_list|,
-name|GDK_Escape
+name|GDK_KEY_Escape
 argument_list|,
 operator|&
 name|keys
@@ -2219,7 +2219,7 @@ index|[
 name|i
 index|]
 operator|==
-name|GDK_Escape
+name|GDK_KEY_Escape
 condition|)
 name|cancel
 operator|=

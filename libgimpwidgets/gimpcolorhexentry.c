@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c26cb190103
+DECL|enum|__anon297fa0170103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c26cb190203
+DECL|enum|__anon297fa0170203
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -757,19 +757,19 @@ name|kevent
 operator|->
 name|keyval
 operator|!=
-name|GDK_Return
+name|GDK_KEY_Return
 operator|&&
 name|kevent
 operator|->
 name|keyval
 operator|!=
-name|GDK_KP_Enter
+name|GDK_KEY_KP_Enter
 operator|&&
 name|kevent
 operator|->
 name|keyval
 operator|!=
-name|GDK_ISO_Enter
+name|GDK_KEY_ISO_Enter
 condition|)
 break|break;
 comment|/*  else fall through  */
