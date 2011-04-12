@@ -609,7 +609,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_brush_start_use
+name|gimp_brush_begin_use
 parameter_list|(
 name|GimpBrush
 modifier|*

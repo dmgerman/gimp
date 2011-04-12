@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af1b8dc0103
+DECL|enum|__anon278418690103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -3763,7 +3763,7 @@ operator|->
 name|main_brush
 argument_list|)
 expr_stmt|;
-name|gimp_brush_start_use
+name|gimp_brush_begin_use
 argument_list|(
 name|core
 operator|->
