@@ -117,7 +117,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b06bcf0103
+DECL|enum|__anon2b71814b0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -130,7 +130,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b06bcf0203
+DECL|enum|__anon2b71814b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2829,6 +2829,11 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+name|g_strstrip
+argument_list|(
+name|safename
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|safename
@@ -2861,15 +2866,10 @@ operator|++
 control|)
 if|if
 condition|(
-name|safename
-index|[
-name|i
-index|]
-operator|==
-name|G_DIR_SEPARATOR
-operator|||
-name|g_ascii_isspace
+name|strchr
 argument_list|(
+literal|"\\/*?\"`'<>{}|\n\t ;:$^&"
+argument_list|,
 name|safename
 index|[
 name|i
