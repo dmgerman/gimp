@@ -25,6 +25,12 @@ directive|include
 file|<libgimp/gimp.h>
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GDK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -72,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295705330103
+DECL|enum|__anon292c000d0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -730,7 +736,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295705330208
+DECL|struct|__anon292c000d0208
 block|{
 DECL|member|x
 DECL|member|y

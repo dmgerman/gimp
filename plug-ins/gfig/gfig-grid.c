@@ -21,6 +21,18 @@ directive|include
 file|<libgimp/gimp.h>
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GDK_DISABLE_DEPRECATED
+end_undef
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpui.h>
+end_include
+
 begin_include
 include|#
 directive|include
@@ -203,7 +215,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297cd23f0108
+DECL|struct|__anon2b41c8650108
 block|{
 DECL|member|product
 name|gint

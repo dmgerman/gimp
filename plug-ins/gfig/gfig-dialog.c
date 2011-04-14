@@ -73,6 +73,12 @@ directive|include
 file|<libgimp/gimp.h>
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GDK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -424,7 +430,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a6d5350108
+DECL|struct|__anon274ea3150108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment

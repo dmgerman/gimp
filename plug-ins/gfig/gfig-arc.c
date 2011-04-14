@@ -21,6 +21,12 @@ directive|include
 file|<stdlib.h>
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GDK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
