@@ -6962,7 +6962,7 @@ literal|"gimp-context-set-feather-radius"
 argument_list|,
 literal|"Set the feather radius setting."
 argument_list|,
-literal|"This procedure modifies the feather radius setting. This setting affects the all procedures that are affected by 'gimp-context-set-feather'."
+literal|"This procedure modifies the feather radius setting. This setting affects all procedures that are affected by 'gimp-context-set-feather'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
