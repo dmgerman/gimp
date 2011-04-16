@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc1545b0103
+DECL|enum|__anon2c40f3320103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2612,9 +2612,6 @@ name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|STRICT_TOOL_CHECKS
 name|g_return_if_fail
 argument_list|(
 name|gimp_tool_control_is_active
@@ -2627,8 +2624,6 @@ operator|==
 name|TRUE
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|g_object_ref
 argument_list|(
 name|tool
@@ -2745,9 +2740,6 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|STRICT_TOOL_CHECKS
 name|g_warn_if_fail
 argument_list|(
 name|gimp_tool_control_is_active
@@ -2760,8 +2752,6 @@ operator|==
 name|FALSE
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 if|if
 condition|(
 name|tool
@@ -2771,9 +2761,6 @@ operator|!=
 literal|0
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|STRICT_TOOL_CHECKS
 name|gimp_tool_control_activate
 argument_list|(
 name|tool
@@ -2781,8 +2768,6 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|gimp_tool_set_active_modifier_state
 argument_list|(
 name|tool
@@ -2792,9 +2777,6 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|STRICT_TOOL_CHECKS
 name|gimp_tool_control_halt
 argument_list|(
 name|tool
@@ -2802,8 +2784,6 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 block|}
 name|tool
 operator|->
@@ -2951,9 +2931,6 @@ name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|STRICT_TOOL_CHECKS
 name|g_return_if_fail
 argument_list|(
 name|gimp_tool_control_is_active
@@ -2966,8 +2943,6 @@ operator|==
 name|FALSE
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|GIMP_LOG
 argument_list|(
 name|TOOL_FOCUS
@@ -3008,9 +2983,6 @@ operator|!=
 literal|0
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|STRICT_TOOL_CHECKS
 name|gimp_tool_control_activate
 argument_list|(
 name|tool
@@ -3018,8 +2990,6 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|gimp_tool_set_active_modifier_state
 argument_list|(
 name|tool
@@ -3031,9 +3001,6 @@ operator|->
 name|focus_display
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|STRICT_TOOL_CHECKS
 name|gimp_tool_control_halt
 argument_list|(
 name|tool
@@ -3041,8 +3008,6 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 block|}
 if|if
 condition|(
@@ -3123,9 +3088,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|STRICT_TOOL_CHECKS
 name|g_return_val_if_fail
 argument_list|(
 name|gimp_tool_control_is_active
@@ -3140,8 +3102,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 return|return
 name|GIMP_TOOL_GET_CLASS
 argument_list|(
@@ -3209,9 +3169,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|STRICT_TOOL_CHECKS
 name|g_return_val_if_fail
 argument_list|(
 name|gimp_tool_control_is_active
@@ -3226,8 +3183,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 return|return
 name|GIMP_TOOL_GET_CLASS
 argument_list|(
@@ -3349,9 +3304,6 @@ name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|STRICT_TOOL_CHECKS
 name|g_return_if_fail
 argument_list|(
 name|gimp_tool_control_is_active
@@ -3364,8 +3316,6 @@ operator|==
 name|FALSE
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|GIMP_LOG
 argument_list|(
 name|TOOL_FOCUS
@@ -3619,9 +3569,6 @@ name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|STRICT_TOOL_CHECKS
 name|g_return_if_fail
 argument_list|(
 name|gimp_tool_control_is_active
@@ -3634,8 +3581,6 @@ operator|==
 name|TRUE
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|GIMP_LOG
 argument_list|(
 name|TOOL_FOCUS
@@ -3960,9 +3905,6 @@ name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|STRICT_TOOL_CHECKS
 name|g_return_if_fail
 argument_list|(
 name|gimp_tool_control_is_active
@@ -3975,8 +3917,6 @@ operator|==
 name|FALSE
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|GIMP_TOOL_GET_CLASS
 argument_list|(
 name|tool
@@ -4081,9 +4021,6 @@ name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|STRICT_TOOL_CHECKS
 name|g_return_if_fail
 argument_list|(
 name|gimp_tool_control_is_active
@@ -4096,8 +4033,6 @@ operator|==
 name|FALSE
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|GIMP_TOOL_GET_CLASS
 argument_list|(
 name|tool

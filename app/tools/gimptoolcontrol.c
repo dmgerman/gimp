@@ -381,9 +381,6 @@ name|control
 argument_list|)
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|STRICT_TOOL_CHECKS
 name|g_return_if_fail
 argument_list|(
 name|control
@@ -393,8 +390,6 @@ operator|==
 name|FALSE
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|control
 operator|->
 name|active
@@ -422,9 +417,6 @@ name|control
 argument_list|)
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|STRICT_TOOL_CHECKS
 name|g_return_if_fail
 argument_list|(
 name|control
@@ -434,8 +426,6 @@ operator|==
 name|TRUE
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|control
 operator|->
 name|active
@@ -515,6 +505,15 @@ name|GIMP_IS_TOOL_CONTROL
 argument_list|(
 name|control
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|control
+operator|->
+name|paused_count
+operator|>
+literal|0
 argument_list|)
 expr_stmt|;
 name|control

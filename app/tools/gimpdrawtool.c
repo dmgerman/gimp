@@ -944,9 +944,6 @@ name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|STRICT_TOOL_CHECKS
 name|g_return_if_fail
 argument_list|(
 name|gimp_draw_tool_is_active
@@ -957,15 +954,6 @@ operator|==
 name|FALSE
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
-name|gimp_draw_tool_stop
-argument_list|(
-name|draw_tool
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 name|draw_tool
 operator|->
 name|display
@@ -998,9 +986,6 @@ name|draw_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|STRICT_TOOL_CHECKS
 name|g_return_if_fail
 argument_list|(
 name|gimp_draw_tool_is_active
@@ -1011,8 +996,6 @@ operator|==
 name|TRUE
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|gimp_draw_tool_undraw
 argument_list|(
 name|draw_tool

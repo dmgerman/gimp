@@ -23,14 +23,6 @@ file|"core/gimpobject.h"
 end_include
 
 begin_define
-DECL|macro|STRICT_TOOL_CHECKS
-define|#
-directive|define
-name|STRICT_TOOL_CHECKS
-value|1
-end_define
-
-begin_define
 DECL|macro|GIMP_TYPE_TOOL
 define|#
 directive|define
