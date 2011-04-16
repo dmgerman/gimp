@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2950c1290103
+DECL|enum|__anon289181c10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -169,7 +169,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2950c1290203
+DECL|enum|__anon289181c10203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -1930,6 +1930,15 @@ break|break;
 case|case
 name|PROP_HINTING
 case|:
+comment|/* interpret "hinting" only if "hint-style" has its default        * value, so we don't overwrite a serialized new hint-style with        * a compat "hinting" that is only there for old GIMP versions        */
+if|if
+condition|(
+name|text
+operator|->
+name|hint_style
+operator|==
+name|GIMP_TEXT_HINT_STYLE_MEDIUM
+condition|)
 name|text
 operator|->
 name|hint_style
