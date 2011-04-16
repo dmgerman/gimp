@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f1c4cb0103
+DECL|enum|__anon290fc3dd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -55,7 +55,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f1c4cb0203
+DECL|enum|__anon290fc3dd0203
 block|{
 DECL|enumerator|TARGET_NUMBER
 name|TARGET_NUMBER
@@ -490,7 +490,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_spin_button_set_numeric
 argument_list|(
-name|GTK_ENTRY
+name|GTK_SPIN_BUTTON
 argument_list|(
 name|scale
 argument_list|)
