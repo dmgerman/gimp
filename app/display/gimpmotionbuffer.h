@@ -103,15 +103,15 @@ DECL|member|parent_instance
 name|GimpObject
 name|parent_instance
 decl_stmt|;
+DECL|member|last_read_motion_time
+name|guint32
+name|last_read_motion_time
+decl_stmt|;
 DECL|member|last_motion_time
 name|guint32
 name|last_motion_time
 decl_stmt|;
 comment|/*  previous time of a forwarded motion event  */
-DECL|member|last_read_motion_time
-name|guint32
-name|last_read_motion_time
-decl_stmt|;
 DECL|member|last_motion_delta_time
 name|gdouble
 name|last_motion_delta_time

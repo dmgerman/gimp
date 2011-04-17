@@ -101,7 +101,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bca45cb0103
+DECL|enum|__anon2bd41fa20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bca45cb0203
+DECL|enum|__anon2bd41fa20203
 block|{
 DECL|enumerator|MOTION
 name|MOTION
@@ -716,6 +716,13 @@ operator|>
 literal|0.0
 operator|)
 decl_stmt|;
+comment|/*  the last_read_motion_time most be set unconditionally, so set    *  it early    */
+name|buffer
+operator|->
+name|last_read_motion_time
+operator|=
+name|time
+expr_stmt|;
 comment|/*  Smoothing causes problems with cursor tracking when zoomed above    *  screen resolution so we need to supress it.    */
 if|if
 condition|(
@@ -1402,12 +1409,6 @@ argument_list|,
 operator|*
 name|coords
 argument_list|)
-expr_stmt|;
-name|buffer
-operator|->
-name|last_read_motion_time
-operator|=
-name|time
 expr_stmt|;
 name|buffer
 operator|->
