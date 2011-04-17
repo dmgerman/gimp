@@ -292,7 +292,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|void
 name|gimp_motion_buffer_flush_event_queue
 parameter_list|(
 name|GimpMotionBuffer
