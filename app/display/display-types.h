@@ -74,6 +74,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpMotionBuffer
+typedef|typedef
+name|struct
+name|_GimpMotionBuffer
+name|GimpMotionBuffer
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpImageWindow
 typedef|typedef
 name|struct
