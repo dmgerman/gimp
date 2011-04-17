@@ -247,11 +247,18 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_motion_buffer_eval_event
+name|gimp_motion_buffer_motion_event
 parameter_list|(
 name|GimpMotionBuffer
 modifier|*
 name|buffer
+parameter_list|,
+name|GimpCoords
+modifier|*
+name|coords
+parameter_list|,
+name|guint32
+name|time
 parameter_list|,
 name|gdouble
 name|scale_x
@@ -259,15 +266,8 @@ parameter_list|,
 name|gdouble
 name|scale_y
 parameter_list|,
-name|GimpCoords
-modifier|*
-name|coords
-parameter_list|,
 name|gboolean
 name|event_fill
-parameter_list|,
-name|guint32
-name|time
 parameter_list|)
 function_decl|;
 end_function_decl
