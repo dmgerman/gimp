@@ -101,7 +101,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ecb4580103
+DECL|enum|__anon2bbe31450103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ecb4580203
+DECL|enum|__anon2bbe31450203
 block|{
 DECL|enumerator|MOTION
 name|MOTION
@@ -477,6 +477,27 @@ if|if
 condition|(
 name|buffer
 operator|->
+name|event_delay_timeout
+condition|)
+block|{
+name|g_source_remove
+argument_list|(
+name|buffer
+operator|->
+name|event_delay_timeout
+argument_list|)
+expr_stmt|;
+name|buffer
+operator|->
+name|event_delay_timeout
+operator|=
+literal|0
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|buffer
+operator|->
 name|event_history
 condition|)
 block|{
@@ -725,19 +746,23 @@ name|distance
 init|=
 literal|1.0
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_MOTION_BUFFER
 argument_list|(
 name|buffer
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|coords
 operator|!=
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  the last_read_motion_time most be set unconditionally, so set    *  it early    */
