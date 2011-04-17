@@ -101,7 +101,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2fae240103
+DECL|enum|__anon27f8feeb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2fae240203
+DECL|enum|__anon27f8feeb0203
 block|{
 DECL|enumerator|MOTION
 name|MOTION
@@ -798,11 +798,11 @@ name|filter
 operator|=
 name|MIN
 argument_list|(
-literal|1
+literal|1.0
 operator|/
 name|scale_x
 argument_list|,
-literal|1
+literal|1.0
 operator|/
 name|scale_y
 argument_list|)
@@ -825,9 +825,11 @@ argument_list|)
 operator|<
 name|filter
 condition|)
+block|{
 return|return
 name|FALSE
 return|;
+block|}
 name|distance
 operator|=
 name|dist
@@ -1142,20 +1144,10 @@ name|direction
 expr_stmt|;
 if|if
 condition|(
-operator|(
-name|fabs
-argument_list|(
-name|delta_dir
-argument_list|)
-operator|>
-literal|0.5
-operator|)
-operator|&&
-operator|(
 name|delta_dir
 operator|<
-literal|0.0
-operator|)
+operator|-
+literal|0.5
 condition|)
 block|{
 name|coords
@@ -1186,20 +1178,9 @@ block|}
 elseif|else
 if|if
 condition|(
-operator|(
-name|fabs
-argument_list|(
 name|delta_dir
-argument_list|)
 operator|>
 literal|0.5
-operator|)
-operator|&&
-operator|(
-name|delta_dir
-operator|>
-literal|0.0
-operator|)
 condition|)
 block|{
 name|coords
