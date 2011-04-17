@@ -19,12 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpvector.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdata.h"
 end_include
 
