@@ -231,8 +231,8 @@ name|GimpCoords
 modifier|*
 name|coords
 parameter_list|,
-name|gdouble
-name|inertia_factor
+name|gboolean
+name|event_fill
 parameter_list|,
 name|guint32
 name|time

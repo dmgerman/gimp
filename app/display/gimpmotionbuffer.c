@@ -101,7 +101,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd41fa20103
+DECL|enum|__anon2c5f67930103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd41fa20203
+DECL|enum|__anon2c5f67930203
 block|{
 DECL|enumerator|MOTION
 name|MOTION
@@ -653,7 +653,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_motion_buffer_eval_event (GimpMotionBuffer * buffer,gdouble scale_x,gdouble scale_y,GimpCoords * coords,gdouble inertia_factor,guint32 time)
+DECL|function|gimp_motion_buffer_eval_event (GimpMotionBuffer * buffer,gdouble scale_x,gdouble scale_y,GimpCoords * coords,gboolean event_fill,guint32 time)
 name|gimp_motion_buffer_eval_event
 parameter_list|(
 name|GimpMotionBuffer
@@ -670,8 +670,8 @@ name|GimpCoords
 modifier|*
 name|coords
 parameter_list|,
-name|gdouble
-name|inertia_factor
+name|gboolean
+name|event_fill
 parameter_list|,
 name|guint32
 name|time
@@ -707,15 +707,6 @@ name|distance
 init|=
 literal|1.0
 decl_stmt|;
-name|gboolean
-name|event_fill
-init|=
-operator|(
-name|inertia_factor
-operator|>
-literal|0.0
-operator|)
-decl_stmt|;
 comment|/*  the last_read_motion_time most be set unconditionally, so set    *  it early    */
 name|buffer
 operator|->
@@ -723,23 +714,6 @@ name|last_read_motion_time
 operator|=
 name|time
 expr_stmt|;
-comment|/*  Smoothing causes problems with cursor tracking when zoomed above    *  screen resolution so we need to supress it.    */
-if|if
-condition|(
-name|scale_x
-operator|>
-literal|1.0
-operator|||
-name|scale_y
-operator|>
-literal|1.0
-condition|)
-block|{
-name|inertia_factor
-operator|=
-literal|0.0
-expr_stmt|;
-block|}
 name|delta_time
 operator|=
 operator|(

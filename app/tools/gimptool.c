@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c40f3320103
+DECL|enum|__anon2ace20e60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -864,12 +864,6 @@ operator|->
 name|button_press_state
 operator|=
 literal|0
-expr_stmt|;
-name|tool
-operator|->
-name|max_coord_smooth
-operator|=
-literal|0.0
 expr_stmt|;
 block|}
 end_function

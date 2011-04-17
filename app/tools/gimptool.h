@@ -141,10 +141,6 @@ modifier|*
 name|drawable
 decl_stmt|;
 comment|/*  pointer to the tool's current drawable */
-DECL|member|max_coord_smooth
-name|gdouble
-name|max_coord_smooth
-decl_stmt|;
 comment|/*  private state of gimp_tool_set_focus_display() and    *  gimp_tool_set_[active_]modifier_state()    */
 DECL|member|focus_display
 name|GimpDisplay

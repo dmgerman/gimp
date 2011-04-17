@@ -2775,6 +2775,11 @@ name|compressed_motion
 init|=
 name|NULL
 decl_stmt|;
+name|GimpMotionMode
+name|motion_mode
+init|=
+name|GIMP_MOTION_MODE_EXACT
+decl_stmt|;
 name|GimpTool
 modifier|*
 name|active_tool
@@ -2797,22 +2802,26 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|shell
-operator|->
-name|scrolling
-operator|||
-operator|(
 name|active_tool
-operator|&&
+condition|)
+name|motion_mode
+operator|=
 name|gimp_tool_control_get_motion_mode
 argument_list|(
 name|active_tool
 operator|->
 name|control
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|shell
+operator|->
+name|scrolling
+operator|||
+name|motion_mode
 operator|==
 name|GIMP_MOTION_MODE_COMPRESS
-operator|)
 condition|)
 block|{
 name|compressed_motion
@@ -3058,16 +3067,9 @@ block|}
 comment|/* gdk_device_get_history() has several quirks. First is                  * that events with borderline timestamps at both ends                  * are included. Because of that we need to add 1 to                  * lower border. The second is due to poor X event                  * resolution. We need to do -1 to ensure that the                  * amount of events between timestamps is final or                  * risk loosing some.                  */
 if|if
 condition|(
-operator|(
-name|gimp_tool_control_get_motion_mode
-argument_list|(
-name|active_tool
-operator|->
-name|control
-argument_list|)
+name|motion_mode
 operator|==
 name|GIMP_MOTION_MODE_EXACT
-operator|)
 operator|&&
 name|shell
 operator|->
@@ -3194,9 +3196,7 @@ argument_list|,
 operator|&
 name|image_coords
 argument_list|,
-name|active_tool
-operator|->
-name|max_coord_smooth
+name|TRUE
 argument_list|,
 name|history_events
 index|[
@@ -3242,6 +3242,15 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|gboolean
+name|event_fill
+init|=
+operator|(
+name|motion_mode
+operator|==
+name|GIMP_MOTION_MODE_EXACT
+operator|)
+decl_stmt|;
 comment|/* Early removal of useless events saves CPU time.                      */
 if|if
 condition|(
@@ -3262,9 +3271,7 @@ argument_list|,
 operator|&
 name|image_coords
 argument_list|,
-name|active_tool
-operator|->
-name|max_coord_smooth
+name|event_fill
 argument_list|,
 name|time
 argument_list|)
@@ -3299,7 +3306,7 @@ operator|)
 operator|)
 condition|)
 block|{
-comment|/* Early removal of useless events saves CPU time.              * Smoothing is 0.0 here for coasting.              */
+comment|/* Early removal of useless events saves CPU time.              * Pass event_fill = FALSE since we are only hovering.              */
 if|if
 condition|(
 name|gimp_motion_buffer_eval_event
@@ -3319,7 +3326,7 @@ argument_list|,
 operator|&
 name|image_coords
 argument_list|,
-literal|0.0
+name|FALSE
 argument_list|,
 name|time
 argument_list|)
