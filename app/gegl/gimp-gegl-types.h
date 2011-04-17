@@ -87,15 +87,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpOperationCagePreview
-typedef|typedef
-name|struct
-name|_GimpOperationCagePreview
-name|GimpOperationCagePreview
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpOperationCageTransform
 typedef|typedef
 name|struct
@@ -483,6 +474,19 @@ typedef|typedef
 name|struct
 name|_GimpThresholdConfig
 name|GimpThresholdConfig
+typedef|;
+end_typedef
+
+begin_comment
+comment|/*  non-object types  */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpCagePoint
+typedef|typedef
+name|struct
+name|_GimpCagePoint
+name|GimpCagePoint
 typedef|;
 end_typedef
 
