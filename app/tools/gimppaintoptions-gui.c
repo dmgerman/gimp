@@ -614,7 +614,7 @@ argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
-literal|500.0
+literal|1000.0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
