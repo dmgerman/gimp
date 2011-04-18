@@ -101,7 +101,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2934b3ab0103
+DECL|enum|__anon2a3212f70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2934b3ab0203
+DECL|enum|__anon2a3212f70203
 block|{
 DECL|enumerator|STROKE
 name|STROKE
@@ -1639,8 +1639,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_motion_buffer_process_stroke (GimpMotionBuffer * buffer,GdkModifierType state,guint32 time)
-name|gimp_motion_buffer_process_stroke
+DECL|function|gimp_motion_buffer_request_stroke (GimpMotionBuffer * buffer,GdkModifierType state,guint32 time)
+name|gimp_motion_buffer_request_stroke
 parameter_list|(
 name|GimpMotionBuffer
 modifier|*
@@ -1795,8 +1795,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_motion_buffer_process_hover (GimpMotionBuffer * buffer,GdkModifierType state,gboolean proximity)
-name|gimp_motion_buffer_process_hover
+DECL|function|gimp_motion_buffer_request_hover (GimpMotionBuffer * buffer,GdkModifierType state,gboolean proximity)
+name|gimp_motion_buffer_request_hover
 parameter_list|(
 name|GimpMotionBuffer
 modifier|*
@@ -2188,7 +2188,7 @@ operator|&
 name|last_coords
 argument_list|)
 expr_stmt|;
-name|gimp_motion_buffer_process_stroke
+name|gimp_motion_buffer_request_stroke
 argument_list|(
 name|buffer
 argument_list|,

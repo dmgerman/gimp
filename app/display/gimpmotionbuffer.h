@@ -297,7 +297,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_motion_buffer_process_stroke
+name|gimp_motion_buffer_request_stroke
 parameter_list|(
 name|GimpMotionBuffer
 modifier|*
@@ -314,7 +314,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_motion_buffer_process_hover
+name|gimp_motion_buffer_request_hover
 parameter_list|(
 name|GimpMotionBuffer
 modifier|*

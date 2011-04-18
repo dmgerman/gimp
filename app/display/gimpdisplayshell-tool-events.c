@@ -3172,7 +3172,7 @@ name|TRUE
 argument_list|)
 condition|)
 block|{
-name|gimp_motion_buffer_process_stroke
+name|gimp_motion_buffer_request_stroke
 argument_list|(
 name|shell
 operator|->
@@ -3235,7 +3235,7 @@ name|event_fill
 argument_list|)
 condition|)
 block|{
-name|gimp_motion_buffer_process_stroke
+name|gimp_motion_buffer_request_stroke
 argument_list|(
 name|shell
 operator|->
@@ -3292,7 +3292,7 @@ name|FALSE
 argument_list|)
 condition|)
 block|{
-name|gimp_motion_buffer_process_hover
+name|gimp_motion_buffer_request_hover
 argument_list|(
 name|shell
 operator|->
