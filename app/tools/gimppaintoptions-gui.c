@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpspinscale.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpviewablebox.h"
 end_include
 
@@ -597,6 +603,18 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|2
+argument_list|)
+expr_stmt|;
+name|gimp_spin_scale_set_scale_limits
+argument_list|(
+name|GIMP_SPIN_SCALE
+argument_list|(
+name|scale
+argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+literal|500.0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
