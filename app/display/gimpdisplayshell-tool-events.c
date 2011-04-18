@@ -2986,6 +2986,9 @@ decl_stmt|;
 name|gint
 name|n_history_events
 decl_stmt|;
+name|guint32
+name|last_motion_time
+decl_stmt|;
 comment|/*  if the first mouse button is down, check for automatic                  *  scrolling...                  */
 if|if
 condition|(
@@ -3038,7 +3041,16 @@ name|mevent
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* gdk_device_get_history() has several quirks. First is                  * that events with borderline timestamps at both ends                  * are included. Because of that we need to add 1 to                  * lower border. The second is due to poor X event                  * resolution. We need to do -1 to ensure that the                  * amount of events between timestamps is final or                  * risk loosing some.                  */
+comment|/* gdk_device_get_history() has several quirks. First                  * is that events with borderline timestamps at both                  * ends are included. Because of that we need to add 1                  * to lower border. The second is due to poor X event                  * resolution. We need to do -1 to ensure that the                  * amount of events between timestamps is final or                  * risk loosing some.                  */
+name|last_motion_time
+operator|=
+name|gimp_motion_buffer_get_last_motion_time
+argument_list|(
+name|shell
+operator|->
+name|motion_buffer
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|motion_mode
@@ -3063,11 +3075,7 @@ name|mevent
 operator|->
 name|window
 argument_list|,
-name|shell
-operator|->
-name|motion_buffer
-operator|->
-name|last_read_motion_time
+name|last_motion_time
 operator|+
 literal|1
 argument_list|,

@@ -101,7 +101,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3212f70103
+DECL|enum|__anon2c52cafb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3212f70203
+DECL|enum|__anon2c52cafb0203
 block|{
 DECL|enumerator|STROKE
 name|STROKE
@@ -1633,6 +1633,34 @@ name|distance
 expr_stmt|;
 return|return
 name|TRUE
+return|;
+block|}
+end_function
+
+begin_function
+name|guint32
+DECL|function|gimp_motion_buffer_get_last_motion_time (GimpMotionBuffer * buffer)
+name|gimp_motion_buffer_get_last_motion_time
+parameter_list|(
+name|GimpMotionBuffer
+modifier|*
+name|buffer
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_MOTION_BUFFER
+argument_list|(
+name|buffer
+argument_list|)
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+return|return
+name|buffer
+operator|->
+name|last_read_motion_time
 return|;
 block|}
 end_function

@@ -296,6 +296,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|guint32
+name|gimp_motion_buffer_get_last_motion_time
+parameter_list|(
+name|GimpMotionBuffer
+modifier|*
+name|buffer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_motion_buffer_request_stroke
 parameter_list|(
