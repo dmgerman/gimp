@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2ccd9a0103
+DECL|enum|__anon2abb26240103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -363,7 +363,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2ccd9a0203
+DECL|enum|__anon2abb26240203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1271,11 +1271,27 @@ name|shell
 operator|->
 name|motion_buffer
 argument_list|,
-literal|"motion"
+literal|"stroke"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_display_shell_buffer_motion
+name|gimp_display_shell_buffer_stroke
+argument_list|)
+argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|shell
+operator|->
+name|motion_buffer
+argument_list|,
+literal|"hover"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_display_shell_buffer_hover
 argument_list|)
 argument_list|,
 name|shell
