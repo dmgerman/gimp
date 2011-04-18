@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5547680103
+DECL|enum|__anon2c8133d70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -55,7 +55,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5547680203
+DECL|enum|__anon2c8133d70203
 block|{
 DECL|enumerator|TARGET_NUMBER
 name|TARGET_NUMBER
@@ -1523,12 +1523,8 @@ decl_stmt|;
 name|step
 operator|=
 operator|(
-operator|(
 name|upper
 operator|-
-name|lower
-operator|)
-operator|+
 name|lower
 operator|)
 operator|/
