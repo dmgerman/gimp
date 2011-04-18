@@ -166,7 +166,7 @@ struct|struct
 name|_GimpMotionBufferClass
 block|{
 DECL|member|parent_class
-name|GtkBoxClass
+name|GimpObjectClass
 name|parent_class
 decl_stmt|;
 DECL|member|stroke
