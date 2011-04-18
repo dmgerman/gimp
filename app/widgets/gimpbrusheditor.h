@@ -108,10 +108,10 @@ name|GtkWidget
 modifier|*
 name|shape_group
 decl_stmt|;
-DECL|member|options_table
+DECL|member|options_box
 name|GtkWidget
 modifier|*
-name|options_table
+name|options_box
 decl_stmt|;
 DECL|member|radius_data
 name|GtkAdjustment
