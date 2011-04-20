@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a962740103
+DECL|enum|__anon28f4e57f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -564,7 +564,10 @@ name|PROP_APPLICATION_MODE
 argument_list|,
 literal|"application-mode"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Override opacity set for the tool when painting over same place"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_PAINT_APPLICATION_MODE
 argument_list|,
@@ -581,7 +584,10 @@ name|PROP_HARD
 argument_list|,
 literal|"hard"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Ignore fuzzyness of the current brush"
+argument_list|)
 argument_list|,
 name|DEFAULT_HARD
 argument_list|,
@@ -596,7 +602,10 @@ name|PROP_USE_JITTER
 argument_list|,
 literal|"use-jitter"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Scatter brush as you paint"
+argument_list|)
 argument_list|,
 name|DEFAULT_USE_JITTER
 argument_list|,
@@ -611,7 +620,10 @@ name|PROP_JITTER_AMOUNT
 argument_list|,
 literal|"jitter-amount"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Distance of scattering"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -645,7 +657,10 @@ name|PROP_FADE_LENGTH
 argument_list|,
 literal|"fade-length"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Distance over which strokes fade out"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -683,7 +698,10 @@ name|PROP_FADE_REVERSE
 argument_list|,
 literal|"fade-reverse"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Reverse direction of fading"
+argument_list|)
 argument_list|,
 name|DEFAULT_FADE_REVERSE
 argument_list|,
@@ -698,7 +716,10 @@ name|PROP_FADE_REPEAT
 argument_list|,
 literal|"fade-repeat"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"How fade is repeated as you paint"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_REPEAT_MODE
 argument_list|,
@@ -874,7 +895,10 @@ name|PROP_USE_SMOOTHING
 argument_list|,
 literal|"use-smoothing"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Paint smoother strokes"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
@@ -889,7 +913,10 @@ name|PROP_SMOOTHING_QUALITY
 argument_list|,
 literal|"smoothing-quality"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Depth of smoothing"
+argument_list|)
 argument_list|,
 literal|1
 argument_list|,
@@ -908,7 +935,10 @@ name|PROP_SMOOTHING_FACTOR
 argument_list|,
 literal|"smoothing-factor"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Gravity of the pen"
+argument_list|)
 argument_list|,
 literal|3.0
 argument_list|,
