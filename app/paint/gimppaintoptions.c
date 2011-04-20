@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f4e57f0103
+DECL|enum|__anon275d50690103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -566,7 +566,7 @@ literal|"application-mode"
 argument_list|,
 name|_
 argument_list|(
-literal|"Override opacity set for the tool when painting over same place"
+literal|"Every stamp has its own opacity"
 argument_list|)
 argument_list|,
 name|GIMP_TYPE_PAINT_APPLICATION_MODE
