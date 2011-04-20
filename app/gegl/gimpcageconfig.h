@@ -132,16 +132,11 @@ DECL|member|parent_instance
 name|GimpImageMapConfig
 name|parent_instance
 decl_stmt|;
-DECL|member|n_cage_vertices
-name|gint
-name|n_cage_vertices
+DECL|member|cage_points
+name|GArray
+modifier|*
+name|cage_points
 decl_stmt|;
-comment|/* vertices used by the cage */
-DECL|member|max_cage_vertices
-name|gint
-name|max_cage_vertices
-decl_stmt|;
-comment|/* vertices allocated        */
 DECL|member|displacement_x
 name|gdouble
 name|displacement_x
@@ -155,11 +150,6 @@ name|GimpCageMode
 name|cage_mode
 decl_stmt|;
 comment|/* Cage mode, used to commit displacement */
-DECL|member|cage_points
-name|GimpCagePoint
-modifier|*
-name|cage_points
-decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -186,6 +176,17 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|guint
+name|gimp_cage_config_get_n_points
+parameter_list|(
+name|GimpCageConfig
+modifier|*
+name|gcc
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void
@@ -393,6 +394,20 @@ parameter_list|(
 name|GimpCageConfig
 modifier|*
 name|gcc
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_cage_config_point_is_selected
+parameter_list|(
+name|GimpCageConfig
+modifier|*
+name|gcc
+parameter_list|,
+name|gint
+name|point_number
 parameter_list|)
 function_decl|;
 end_function_decl
