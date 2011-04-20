@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c836ebf0103
+DECL|enum|__anon2ab28b690103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -226,7 +226,7 @@ name|PROP_CONTIGUOUS
 argument_list|,
 literal|"contiguous"
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Select a single contiguous area"
 argument_list|)
@@ -244,7 +244,11 @@ name|PROP_BACKGROUND
 argument_list|,
 literal|"background"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Paint over areas to mark color values for "
+literal|"inclusion or exclusion from selection"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
@@ -259,7 +263,7 @@ name|PROP_STROKE_WIDTH
 argument_list|,
 literal|"stroke-width"
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Size of the brush used for refinements"
 argument_list|)
@@ -281,7 +285,7 @@ name|PROP_SMOOTHNESS
 argument_list|,
 literal|"smoothness"
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Smaller values give a more accurate "
 literal|"selection border but may introduce holes "
@@ -305,7 +309,10 @@ name|PROP_MASK_COLOR
 argument_list|,
 literal|"mask-color"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Color of selection preview mask"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_CHANNEL_TYPE
 argument_list|,
@@ -337,7 +344,7 @@ name|PROP_SENSITIVITY_L
 argument_list|,
 literal|"sensitivity-l"
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Sensitivity for brightness component"
 argument_list|)
@@ -359,7 +366,7 @@ name|PROP_SENSITIVITY_A
 argument_list|,
 literal|"sensitivity-a"
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Sensitivity for red/green component"
 argument_list|)
@@ -381,7 +388,7 @@ name|PROP_SENSITIVITY_B
 argument_list|,
 literal|"sensitivity-b"
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Sensitivity for yellow/blue component"
 argument_list|)

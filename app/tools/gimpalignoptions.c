@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a160da0103
+DECL|enum|__anon2a0e290d0103
 block|{
 DECL|enumerator|ALIGN_BUTTON_CLICKED
 name|ALIGN_BUTTON_CLICKED
@@ -78,7 +78,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a160da0203
+DECL|enum|__anon2a0e290d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -257,7 +257,10 @@ name|PROP_ALIGN_REFERENCE
 argument_list|,
 literal|"align-reference"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Reference image object a layer will be aligned on"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_ALIGN_REFERENCE_TYPE
 argument_list|,
@@ -274,7 +277,10 @@ name|PROP_OFFSET_X
 argument_list|,
 literal|"offset-x"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Horizontal offset for distrubution"
+argument_list|)
 argument_list|,
 operator|-
 name|GIMP_MAX_IMAGE_SIZE
@@ -294,7 +300,10 @@ name|PROP_OFFSET_Y
 argument_list|,
 literal|"offset-y"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Vertical offset for distrubution"
+argument_list|)
 argument_list|,
 operator|-
 name|GIMP_MAX_IMAGE_SIZE

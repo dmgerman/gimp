@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29387c4a0103
+DECL|enum|__anon2beeed480103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -224,7 +224,11 @@ name|PROP_AUTO_RESIZE
 argument_list|,
 literal|"auto-resize"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Resize image window to accomodate "
+literal|"new zoom level"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
@@ -239,7 +243,10 @@ name|PROP_ZOOM_TYPE
 argument_list|,
 literal|"zoom-type"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Direction of magnification"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_ZOOM_TYPE
 argument_list|,

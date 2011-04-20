@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af463920103
+DECL|enum|__anon2c8121900103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -176,7 +176,11 @@ name|PROP_INTERACTIVE
 argument_list|,
 literal|"interactive"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Display future selection segment "
+literal|"as you drag a control node"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
