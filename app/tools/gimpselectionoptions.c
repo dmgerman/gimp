@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b9dbf10103
+DECL|enum|__anon2b9b1a4a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -226,7 +226,10 @@ name|PROP_FEATHER
 argument_list|,
 literal|"feather"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Enable feathering of selection edges"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
@@ -241,7 +244,10 @@ name|PROP_FEATHER_RADIUS
 argument_list|,
 literal|"feather-radius"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Radius of feathering"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,

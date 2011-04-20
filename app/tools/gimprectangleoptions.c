@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2791c5f00103
+DECL|enum|__anon2c36f2820103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -304,7 +304,11 @@ literal|"auto-shrink"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Automatically shrink to the nearest "
+literal|"rectangular shape in a layer"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
@@ -348,7 +352,10 @@ literal|"guide"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Composition guides such as rule of thirds"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_RECTANGLE_GUIDE
 argument_list|,
@@ -370,7 +377,10 @@ literal|"x"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"X coordinate of top left corner"
+argument_list|)
 argument_list|,
 operator|-
 name|GIMP_MAX_IMAGE_SIZE
@@ -395,7 +405,10 @@ literal|"y"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Y coordinate of top left corner"
+argument_list|)
 argument_list|,
 operator|-
 name|GIMP_MAX_IMAGE_SIZE
@@ -420,7 +433,10 @@ literal|"width"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Width of selection"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -444,7 +460,10 @@ literal|"height"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Height of selection"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -468,7 +487,10 @@ literal|"position-unit"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Unit of top left corner coordinate"
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|,
@@ -492,7 +514,10 @@ literal|"size-unit"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Unit of selection size"
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|,
@@ -516,7 +541,11 @@ literal|"fixed-rule-active"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Enable lock of aspect ratio, "
+literal|"width, height or size"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
@@ -536,7 +565,10 @@ literal|"fixed-rule"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Choose what has to be locked"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_RECTANGLE_TOOL_FIXED_RULE
 argument_list|,
@@ -558,7 +590,10 @@ literal|"desired-fixed-width"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Custom fixed width"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -582,7 +617,10 @@ literal|"desired-fixed-height"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Custom fixed height"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -858,7 +896,10 @@ literal|"fixed-unit"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Unit of fixed width, height or size"
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|,
@@ -882,7 +923,10 @@ literal|"fixed-center"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Expand selection from center outwards"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,

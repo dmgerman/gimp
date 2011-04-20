@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278ff41b0103
+DECL|enum|__anon29fbd20f0103
 block|{
 DECL|enumerator|PROP_ROUND_CORNERS
 name|PROP_ROUND_CORNERS
@@ -193,7 +193,10 @@ name|GIMP_RECTANGLE_OPTIONS_PROP_HIGHLIGHT
 argument_list|,
 literal|"highlight"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Dim everything outside selection"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
@@ -208,7 +211,10 @@ name|PROP_ROUND_CORNERS
 argument_list|,
 literal|"round-corners"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Round corners of selection"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
@@ -223,7 +229,10 @@ name|PROP_CORNER_RADIUS
 argument_list|,
 literal|"corner-radius"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Radius of rounding in pixels"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,

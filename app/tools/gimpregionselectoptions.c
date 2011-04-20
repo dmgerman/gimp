@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290a6e9c0103
+DECL|enum|__anon2b3a66020103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -295,7 +295,10 @@ name|PROP_SELECT_CRITERION
 argument_list|,
 literal|"select-criterion"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Selection criterion"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_SELECT_CRITERION
 argument_list|,
