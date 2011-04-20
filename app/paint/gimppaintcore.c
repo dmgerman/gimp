@@ -151,7 +151,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2adc93020103
+DECL|enum|__anon2bf3429e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1245,6 +1245,18 @@ name|time
 argument_list|)
 condition|)
 block|{
+name|gimp_paint_core_smooth_coords
+argument_list|(
+name|core
+argument_list|,
+name|paint_options
+argument_list|,
+operator|&
+name|core
+operator|->
+name|cur_coords
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|paint_state
@@ -1278,18 +1290,6 @@ operator|.
 name|y
 expr_stmt|;
 block|}
-name|gimp_paint_core_smooth_coords
-argument_list|(
-name|core
-argument_list|,
-name|paint_options
-argument_list|,
-operator|&
-name|core
-operator|->
-name|cur_coords
-argument_list|)
-expr_stmt|;
 name|core_class
 operator|->
 name|paint
