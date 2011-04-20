@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297205ad0103
+DECL|enum|__anon29b314d00103
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -2238,6 +2238,36 @@ operator|->
 name|p
 operator|->
 name|paned_vbox
+return|;
+block|}
+end_function
+
+begin_function
+name|gint
+DECL|function|gimp_dock_get_id (GimpDock * dock)
+name|gimp_dock_get_id
+parameter_list|(
+name|GimpDock
+modifier|*
+name|dock
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DOCK
+argument_list|(
+name|dock
+argument_list|)
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+return|return
+name|dock
+operator|->
+name|p
+operator|->
+name|ID
 return|;
 block|}
 end_function
