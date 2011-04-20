@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
 begin_include
@@ -146,6 +146,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimppatternselect.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimppixbuf.h>
 end_include
 
 begin_include

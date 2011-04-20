@@ -91,12 +91,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimppixbuf.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimpprocbrowserdialog.h>
 end_include
 
