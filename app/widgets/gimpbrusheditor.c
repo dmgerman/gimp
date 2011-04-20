@@ -563,7 +563,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Spahe:"
+literal|"Shape:"
 argument_list|)
 argument_list|)
 expr_stmt|;
