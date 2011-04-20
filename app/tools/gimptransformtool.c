@@ -1537,6 +1537,13 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|gimp_tool_control_halt
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|)
+expr_stmt|;
 comment|/*  if we are creating, there is nothing to be done...exit  */
 if|if
 condition|(
@@ -1673,13 +1680,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_tool_control_halt
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
