@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3b71090103
+DECL|enum|__anon2be429810103
 block|{
 DECL|enumerator|SESSION_INFO_BOOK
 name|SESSION_INFO_BOOK
@@ -98,13 +98,13 @@ end_comment
 begin_function
 name|GimpSessionInfoDock
 modifier|*
-DECL|function|gimp_session_info_dock_new (const gchar * identifier)
+DECL|function|gimp_session_info_dock_new (const gchar * dock_type)
 name|gimp_session_info_dock_new
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|identifier
+name|dock_type
 parameter_list|)
 block|{
 name|GimpSessionInfoDock
@@ -122,11 +122,11 @@ argument_list|)
 expr_stmt|;
 name|dock_info
 operator|->
-name|identifier
+name|dock_type
 operator|=
 name|g_strdup
 argument_list|(
-name|identifier
+name|dock_type
 argument_list|)
 expr_stmt|;
 return|return
@@ -156,19 +156,19 @@ if|if
 condition|(
 name|dock_info
 operator|->
-name|identifier
+name|dock_type
 condition|)
 block|{
 name|g_free
 argument_list|(
 name|dock_info
 operator|->
-name|identifier
+name|dock_type
 argument_list|)
 expr_stmt|;
 name|dock_info
 operator|->
-name|identifier
+name|dock_type
 operator|=
 name|NULL
 expr_stmt|;
@@ -247,7 +247,7 @@ name|writer
 argument_list|,
 name|dock_info
 operator|->
-name|identifier
+name|dock_type
 argument_list|)
 expr_stmt|;
 for|for
@@ -286,7 +286,7 @@ end_function
 
 begin_function
 name|GTokenType
-DECL|function|gimp_session_info_dock_deserialize (GScanner * scanner,gint scope,GimpSessionInfoDock ** dock_info,const gchar * identifier)
+DECL|function|gimp_session_info_dock_deserialize (GScanner * scanner,gint scope,GimpSessionInfoDock ** dock_info,const gchar * dock_type)
 name|gimp_session_info_dock_deserialize
 parameter_list|(
 name|GScanner
@@ -304,7 +304,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|identifier
+name|dock_type
 parameter_list|)
 block|{
 name|GTokenType
@@ -347,7 +347,7 @@ name|dock_info
 operator|=
 name|gimp_session_info_dock_new
 argument_list|(
-name|identifier
+name|dock_type
 argument_list|)
 expr_stmt|;
 name|token
@@ -693,7 +693,7 @@ name|ui_manager
 argument_list|,
 name|dock_info
 operator|->
-name|identifier
+name|dock_type
 argument_list|,
 operator|-
 literal|1

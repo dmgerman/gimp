@@ -25,11 +25,11 @@ DECL|struct|_GimpSessionInfoDock
 struct|struct
 name|_GimpSessionInfoDock
 block|{
-comment|/* Identifier written to/read from sessionrc */
-DECL|member|identifier
+comment|/* Type of dock, written to/read from sessionrc. E.g. 'gimp-dock' or    * 'gimp-toolbox'    */
+DECL|member|dock_type
 name|gchar
 modifier|*
-name|identifier
+name|dock_type
 decl_stmt|;
 comment|/*  list of GimpSessionInfoBook  */
 DECL|member|books
@@ -49,7 +49,7 @@ parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|identifier
+name|dock_type
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -99,7 +99,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|identifier
+name|dock_type
 parameter_list|)
 function_decl|;
 end_function_decl

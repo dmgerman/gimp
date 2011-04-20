@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba82cfa0103
+DECL|enum|__anon29cf1a4d0103
 block|{
 DECL|enumerator|SESSION_INFO_FACTORY_ENTRY
 name|SESSION_INFO_FACTORY_ENTRY
@@ -1370,7 +1370,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|identifier
+name|dock_type
 init|=
 name|NULL
 decl_stmt|;
@@ -1418,14 +1418,14 @@ operator|==
 literal|0
 condition|)
 block|{
-name|identifier
+name|dock_type
 operator|=
 literal|"gimp-toolbox"
 expr_stmt|;
 block|}
 else|else
 block|{
-name|identifier
+name|dock_type
 operator|=
 operator|(
 operator|(
@@ -1469,7 +1469,7 @@ argument_list|,
 operator|&
 name|dock_info
 argument_list|,
-name|identifier
+name|dock_type
 argument_list|)
 expr_stmt|;
 if|if
