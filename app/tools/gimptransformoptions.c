@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb542d70103
+DECL|enum|__anon27a77ce10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -320,7 +320,10 @@ name|PROP_DIRECTION
 argument_list|,
 literal|"direction"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Direction of transformation"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_TRANSFORM_DIRECTION
 argument_list|,
@@ -337,7 +340,10 @@ name|PROP_INTERPOLATION
 argument_list|,
 literal|"interpolation"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Interpolation method"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_INTERPOLATION_TYPE
 argument_list|,
@@ -354,7 +360,10 @@ name|PROP_CLIP
 argument_list|,
 literal|"clip"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"How to clip..."
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_TRANSFORM_RESIZE
 argument_list|,
@@ -371,7 +380,10 @@ name|PROP_PREVIEW_TYPE
 argument_list|,
 literal|"preview-type"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"How to render preview"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_TRANSFORM_PREVIEW_TYPE
 argument_list|,
@@ -388,7 +400,10 @@ name|PROP_PREVIEW_OPACITY
 argument_list|,
 literal|"preview-opacity"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Preview opacity"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -407,7 +422,10 @@ name|PROP_GRID_TYPE
 argument_list|,
 literal|"grid-type"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"How to define grid settings"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_TRANSFORM_GRID_TYPE
 argument_list|,
@@ -424,7 +442,10 @@ name|PROP_GRID_SIZE
 argument_list|,
 literal|"grid-size"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Size of a grid cell"
+argument_list|)
 argument_list|,
 literal|1
 argument_list|,
@@ -443,7 +464,10 @@ name|PROP_CONSTRAIN
 argument_list|,
 literal|"constrain"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Limit rotation step to 15 degrees"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,

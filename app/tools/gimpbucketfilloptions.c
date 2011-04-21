@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2001c90103
+DECL|enum|__anon28be146b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -280,7 +280,10 @@ name|PROP_FILL_MODE
 argument_list|,
 literal|"fill-mode"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"What to fill a selection or a layer with"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_BUCKET_FILL_MODE
 argument_list|,
@@ -297,7 +300,10 @@ name|PROP_FILL_SELECTION
 argument_list|,
 literal|"fill-selection"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Which area will be filled"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
@@ -372,7 +378,10 @@ name|PROP_FILL_CRITERION
 argument_list|,
 literal|"fill-criterion"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"What to use for calculating an area to fill"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_SELECT_CRITERION
 argument_list|,

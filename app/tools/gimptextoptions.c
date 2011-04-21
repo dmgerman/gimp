@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb8cecd0103
+DECL|enum|__anon276f02940103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -446,7 +446,10 @@ name|PROP_UNIT
 argument_list|,
 literal|"font-size-unit"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Font size unit"
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|,
@@ -465,7 +468,10 @@ name|PROP_FONT_SIZE
 argument_list|,
 literal|"font-size"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Font size"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -563,7 +569,10 @@ name|PROP_JUSTIFICATION
 argument_list|,
 literal|"justify"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Text alignment"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_TEXT_JUSTIFICATION
 argument_list|,
@@ -657,7 +666,8 @@ literal|"box-mode"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Text box resize mode"
+literal|"Whether text flows into rectangular shape or"
+literal|"moves into a new line when you press Enter"
 argument_list|)
 argument_list|,
 name|GIMP_TYPE_TEXT_BOX_MODE

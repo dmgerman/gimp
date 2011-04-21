@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e82b2f0103
+DECL|enum|__anon27f279630103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -168,7 +168,10 @@ name|PROP_FLIP_TYPE
 argument_list|,
 literal|"flip-type"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Direction of flipping"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_ORIENTATION_TYPE
 argument_list|,
