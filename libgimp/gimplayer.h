@@ -106,12 +106,6 @@ modifier|*
 name|surface
 parameter_list|,
 name|gdouble
-name|opacity
-parameter_list|,
-name|GimpLayerModeEffects
-name|mode
-parameter_list|,
-name|gdouble
 name|progress_start
 parameter_list|,
 name|gdouble

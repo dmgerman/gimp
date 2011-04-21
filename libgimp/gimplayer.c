@@ -531,12 +531,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_surface:  * @image_ID:        The RGB image to which to add the layer.  * @name:            The layer name.  * @cairo_surface_t: A Cairo image surface.  * @opacity:         The layer opacity.  * @mode:            The layer combination mode.  * @progress_start:  start of progress  * @progress_end:    end of progress  *  * Create a new layer from a #cairo_surface_t.  *  * This procedure creates a new layer from the given  * #cairo_surface_t. The image has to be an RGB image and just like  * with gimp_layer_new() you will still need to add the layer to it.  *  * If you pass @progress_end> @progress_start to this function,  * gimp_progress_update() will be called for. You have to call  * gimp_progress_init() beforehand then.  *  * Returns: The newly created layer.  *  * Since: GIMP 2.8  */
+comment|/**  * gimp_layer_new_from_surface:  * @image_ID:        The RGB image to which to add the layer.  * @name:            The layer name.  * @cairo_surface_t: A Cairo image surface.  * @progress_start:  start of progress  * @progress_end:    end of progress  *  * Create a new layer from a #cairo_surface_t.  *  * This procedure creates a new layer from the given  * #cairo_surface_t. The image has to be an RGB image and just like  * with gimp_layer_new() you will still need to add the layer to it.  *  * If you pass @progress_end> @progress_start to this function,  * gimp_progress_update() will be called for. You have to call  * gimp_progress_init() beforehand then.  *  * Returns: The newly created layer.  *  * Since: GIMP 2.8  */
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_layer_new_from_surface (gint32 image_ID,const gchar * name,cairo_surface_t * surface,gdouble opacity,GimpLayerModeEffects mode,gdouble progress_start,gdouble progress_end)
+DECL|function|gimp_layer_new_from_surface (gint32 image_ID,const gchar * name,cairo_surface_t * surface,gdouble progress_start,gdouble progress_end)
 name|gimp_layer_new_from_surface
 parameter_list|(
 name|gint32
@@ -550,12 +550,6 @@ parameter_list|,
 name|cairo_surface_t
 modifier|*
 name|surface
-parameter_list|,
-name|gdouble
-name|opacity
-parameter_list|,
-name|GimpLayerModeEffects
-name|mode
 parameter_list|,
 name|gdouble
 name|progress_start
@@ -716,9 +710,9 @@ name|GIMP_RGB_IMAGE
 else|:
 name|GIMP_RGBA_IMAGE
 argument_list|,
-name|opacity
+literal|100.0
 argument_list|,
-name|mode
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 if|if
