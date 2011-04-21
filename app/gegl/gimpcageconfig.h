@@ -251,6 +251,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_cage_config_remove_selected_points
+parameter_list|(
+name|GimpCageConfig
+modifier|*
+name|gcc
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpVector2
 name|gimp_cage_config_get_point_coordinate
 parameter_list|(
