@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b314d00103
+DECL|enum|__anon2a0cd1ce0103
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -2269,6 +2269,38 @@ name|p
 operator|->
 name|ID
 return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_dock_set_id (GimpDock * dock,gint ID)
+name|gimp_dock_set_id
+parameter_list|(
+name|GimpDock
+modifier|*
+name|dock
+parameter_list|,
+name|gint
+name|ID
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DOCK
+argument_list|(
+name|dock
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|dock
+operator|->
+name|p
+operator|->
+name|ID
+operator|=
+name|ID
+expr_stmt|;
 block|}
 end_function
 

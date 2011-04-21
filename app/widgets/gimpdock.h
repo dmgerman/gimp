@@ -420,6 +420,20 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_dock_set_id
+parameter_list|(
+name|GimpDock
+modifier|*
+name|dock
+parameter_list|,
+name|gint
+name|ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_dock_add
 parameter_list|(
 name|GimpDock
