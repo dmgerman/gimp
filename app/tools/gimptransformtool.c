@@ -4652,6 +4652,8 @@ decl_stmt|;
 name|TileManager
 modifier|*
 name|orig_tiles
+init|=
+name|NULL
 decl_stmt|;
 name|gint
 name|orig_offset_x
