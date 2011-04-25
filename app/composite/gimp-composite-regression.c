@@ -1705,18 +1705,14 @@ end_comment
 
 begin_function
 name|double
-DECL|function|gimp_composite_regression_time_function (gulong iterations,void (* func)(),GimpCompositeContext * ctx)
+DECL|function|gimp_composite_regression_time_function (gulong iterations,GimpCompositeRegressionFunc func,GimpCompositeContext * ctx)
 name|gimp_composite_regression_time_function
 parameter_list|(
 name|gulong
 name|iterations
 parameter_list|,
-name|void
-function_decl|(
-modifier|*
+name|GimpCompositeRegressionFunc
 name|func
-function_decl|)
-parameter_list|()
 parameter_list|,
 name|GimpCompositeContext
 modifier|*
