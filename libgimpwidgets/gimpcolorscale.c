@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f0cd100103
+DECL|enum|__anon2959a3720103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3608,6 +3608,16 @@ index|[
 literal|2
 index|]
 expr_stmt|;
+name|l
+index|[
+literal|2
+index|]
+operator|=
+name|light
+index|[
+literal|3
+index|]
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -3639,6 +3649,16 @@ operator|=
 name|dark
 index|[
 literal|2
+index|]
+expr_stmt|;
+name|l
+index|[
+literal|3
+index|]
+operator|=
+name|dark
+index|[
+literal|3
 index|]
 expr_stmt|;
 block|}
