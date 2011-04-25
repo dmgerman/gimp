@@ -320,7 +320,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1908e80108
+DECL|struct|__anon28c561bb0108
 block|{
 DECL|member|crop
 name|gboolean
@@ -851,7 +851,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c1908e80208
+DECL|struct|__anon28c561bb0208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -3122,6 +3122,16 @@ operator|->
 name|nimage
 argument_list|)
 expr_stmt|;
+name|gimp_drawable_flush
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
+name|gimp_drawable_detach
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 block|}
 name|gimp_progress_update
 argument_list|(
@@ -3245,19 +3255,8 @@ argument_list|(
 name|fp
 argument_list|)
 expr_stmt|;
-comment|/*    * Update the display...    */
 name|gimp_progress_end
 argument_list|()
-expr_stmt|;
-name|gimp_drawable_flush
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
-name|gimp_drawable_detach
-argument_list|(
-name|drawable
-argument_list|)
 expr_stmt|;
 return|return
 name|image_ID
@@ -9248,7 +9247,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2c1908e80308
+DECL|struct|__anon28c561bb0308
 block|{
 DECL|member|size
 name|guint32
