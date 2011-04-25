@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3b08460108
+DECL|struct|__anon2b140c530108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3b08460208
+DECL|struct|__anon2b140c530208
 block|{
 DECL|member|run
 name|gboolean
@@ -4407,11 +4407,17 @@ name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
+ifndef|#
+directive|ifndef
+name|PNG_iTXt_SUPPORTED
 name|gsize
 name|text_length
 init|=
 literal|0
 decl_stmt|;
+endif|#
+directive|endif
+comment|/* PNG_iTXt_SUPPORTED */
 name|parasite
 operator|=
 name|gimp_image_get_parasite
