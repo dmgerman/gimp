@@ -419,6 +419,15 @@ name|flex_uint32_t
 typedef|;
 end_typedef
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* ! C99 */
+end_comment
+
 begin_comment
 comment|/* Limits of integral types. */
 end_comment
@@ -593,15 +602,6 @@ begin_endif
 endif|#
 directive|endif
 end_endif
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* ! C99 */
-end_comment
 
 begin_endif
 endif|#
@@ -811,29 +811,6 @@ directive|ifndef
 name|YY_BUF_SIZE
 end_ifndef
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__ia64__
-end_ifdef
-
-begin_comment
-comment|/* On IA-64, the buffer size is 16k, not 8k.  * Moreover, YY_BUF_SIZE is 2*YY_READ_BUF_SIZE in the general case.  * Ditto for the __ia64__ case accordingly.  */
-end_comment
-
-begin_define
-DECL|macro|YY_BUF_SIZE
-define|#
-directive|define
-name|YY_BUF_SIZE
-value|32768
-end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
 begin_define
 DECL|macro|YY_BUF_SIZE
 define|#
@@ -841,15 +818,6 @@ directive|define
 name|YY_BUF_SIZE
 value|16384
 end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __ia64__ */
-end_comment
 
 begin_endif
 endif|#
@@ -961,11 +929,11 @@ parameter_list|(
 name|n
 parameter_list|)
 define|\
-value|do \                 { \
+value|do \ 		{ \
 comment|/* Undo effects of setting up cern_text. */
-value|\         int yyless_macro_arg = (n); \         YY_LESS_LINENO(yyless_macro_arg);\                 *yy_cp = (yy_hold_char); \                 YY_RESTORE_YY_MORE_OFFSET \                 (yy_c_buf_p) = yy_cp = yy_bp + yyless_macro_arg - YY_MORE_ADJ; \                 YY_DO_BEFORE_ACTION;
+value|\         int yyless_macro_arg = (n); \         YY_LESS_LINENO(yyless_macro_arg);\ 		*yy_cp = (yy_hold_char); \ 		YY_RESTORE_YY_MORE_OFFSET \ 		(yy_c_buf_p) = yy_cp = yy_bp + yyless_macro_arg - YY_MORE_ADJ; \ 		YY_DO_BEFORE_ACTION;
 comment|/* set up cern_text again */
-value|\                 } \         while ( 0 )
+value|\ 		} \ 	while ( 0 )
 end_define
 
 begin_define
@@ -1040,27 +1008,27 @@ modifier|*
 name|yy_buf_pos
 decl_stmt|;
 comment|/* current position in input buffer */
-comment|/* Size of input buffer in bytes, not including room for EOB          * characters.          */
+comment|/* Size of input buffer in bytes, not including room for EOB 	 * characters. 	 */
 DECL|member|yy_buf_size
 name|yy_size_t
 name|yy_buf_size
 decl_stmt|;
-comment|/* Number of characters read into yy_ch_buf, not including EOB          * characters.          */
+comment|/* Number of characters read into yy_ch_buf, not including EOB 	 * characters. 	 */
 DECL|member|yy_n_chars
 name|int
 name|yy_n_chars
 decl_stmt|;
-comment|/* Whether we "own" the buffer - i.e., we know we created it,          * and can realloc() it to grow it, and should free() it to          * delete it.          */
+comment|/* Whether we "own" the buffer - i.e., we know we created it, 	 * and can realloc() it to grow it, and should free() it to 	 * delete it. 	 */
 DECL|member|yy_is_our_buffer
 name|int
 name|yy_is_our_buffer
 decl_stmt|;
-comment|/* Whether this is an "interactive" input source; if so, and          * if we're using stdio for input, then we want to use getc()          * instead of fread(), to make sure we stop fetching input after          * each newline.          */
+comment|/* Whether this is an "interactive" input source; if so, and 	 * if we're using stdio for input, then we want to use getc() 	 * instead of fread(), to make sure we stop fetching input after 	 * each newline. 	 */
 DECL|member|yy_is_interactive
 name|int
 name|yy_is_interactive
 decl_stmt|;
-comment|/* Whether we're considered to be at the beginning of a line.          * If so, '^' rules will be active on the next match, otherwise          * not.          */
+comment|/* Whether we're considered to be at the beginning of a line. 	 * If so, '^' rules will be active on the next match, otherwise 	 * not. 	 */
 DECL|member|yy_at_bol
 name|int
 name|yy_at_bol
@@ -1075,7 +1043,7 @@ name|int
 name|yy_bs_column
 decl_stmt|;
 comment|/**< The column count. */
-comment|/* Whether to try to fill the input buffer when we reach the          * end of it.          */
+comment|/* Whether to try to fill the input buffer when we reach the 	 * end of it. 	 */
 DECL|member|yy_fill_buffer
 name|int
 name|yy_fill_buffer
@@ -1094,7 +1062,7 @@ define|#
 directive|define
 name|YY_BUFFER_NORMAL
 value|1
-comment|/* When an EOF's been seen but there's still some text to process          * then we mark the buffer as YY_EOF_PENDING, to indicate that we          * shouldn't try reading from the input source any more.  We might          * still have a bunch of tokens to match, though, because of          * possible backing-up.          *          * When we actually see the EOF, we change the status to "new"          * (via cern_restart()), so that the user can continue scanning by          * just pointing cern_in at a new input file.          */
+comment|/* When an EOF's been seen but there's still some text to process 	 * then we mark the buffer as YY_EOF_PENDING, to indicate that we 	 * shouldn't try reading from the input source any more.  We might 	 * still have a bunch of tokens to match, though, because of 	 * possible backing-up. 	 * 	 * When we actually see the EOF, we change the status to "new" 	 * (via cern_restart()), so that the user can continue scanning by 	 * just pointing cern_in at a new input file. 	 */
 DECL|macro|YY_BUFFER_EOF_PENDING
 define|#
 directive|define
@@ -1488,7 +1456,7 @@ parameter_list|(
 name|is_interactive
 parameter_list|)
 define|\
-value|{ \         if ( ! YY_CURRENT_BUFFER ){ \         cern_ensure_buffer_stack (); \                 YY_CURRENT_BUFFER_LVALUE =    \             cern__create_buffer(cern_in,YY_BUF_SIZE ); \         } \         YY_CURRENT_BUFFER_LVALUE->yy_is_interactive = is_interactive; \         }
+value|{ \ 	if ( ! YY_CURRENT_BUFFER ){ \         cern_ensure_buffer_stack (); \ 		YY_CURRENT_BUFFER_LVALUE =    \             cern__create_buffer(cern_in,YY_BUF_SIZE ); \ 	} \ 	YY_CURRENT_BUFFER_LVALUE->yy_is_interactive = is_interactive; \ 	}
 end_define
 
 begin_define
@@ -1500,7 +1468,7 @@ parameter_list|(
 name|at_bol
 parameter_list|)
 define|\
-value|{ \         if ( ! YY_CURRENT_BUFFER ){\         cern_ensure_buffer_stack (); \                 YY_CURRENT_BUFFER_LVALUE =    \             cern__create_buffer(cern_in,YY_BUF_SIZE ); \         } \         YY_CURRENT_BUFFER_LVALUE->yy_at_bol = at_bol; \         }
+value|{ \ 	if ( ! YY_CURRENT_BUFFER ){\         cern_ensure_buffer_stack (); \ 		YY_CURRENT_BUFFER_LVALUE =    \             cern__create_buffer(cern_in,YY_BUF_SIZE ); \ 	} \ 	YY_CURRENT_BUFFER_LVALUE->yy_at_bol = at_bol; \ 	}
 end_define
 
 begin_define
@@ -1661,7 +1629,7 @@ define|#
 directive|define
 name|YY_DO_BEFORE_ACTION
 define|\
-value|(yytext_ptr) = yy_bp; \         cern_leng = (size_t) (yy_cp - yy_bp); \         (yy_hold_char) = *yy_cp; \         *yy_cp = '\0'; \         (yy_c_buf_p) = yy_cp;
+value|(yytext_ptr) = yy_bp; \ 	cern_leng = (size_t) (yy_cp - yy_bp); \ 	(yy_hold_char) = *yy_cp; \ 	*yy_cp = '\0'; \ 	(yy_c_buf_p) = yy_cp;
 end_define
 
 begin_define
@@ -4565,7 +4533,7 @@ end_comment
 begin_line
 line|#
 directive|line
-number|624
+number|615
 file|"<stdout>"
 end_line
 
@@ -4941,29 +4909,6 @@ directive|ifndef
 name|YY_READ_BUF_SIZE
 end_ifndef
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__ia64__
-end_ifdef
-
-begin_comment
-comment|/* On IA-64, the buffer size is 16k, not 8k */
-end_comment
-
-begin_define
-DECL|macro|YY_READ_BUF_SIZE
-define|#
-directive|define
-name|YY_READ_BUF_SIZE
-value|16384
-end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
 begin_define
 DECL|macro|YY_READ_BUF_SIZE
 define|#
@@ -4971,15 +4916,6 @@ directive|define
 name|YY_READ_BUF_SIZE
 value|8192
 end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __ia64__ */
-end_comment
 
 begin_endif
 endif|#
@@ -5036,7 +4972,7 @@ parameter_list|,
 name|max_size
 parameter_list|)
 define|\
-value|if ( YY_CURRENT_BUFFER_LVALUE->yy_is_interactive ) \                 { \                 int c = '*'; \                 size_t n; \                 for ( n = 0; n< max_size&& \                              (c = getc( cern_in )) != EOF&& c != '\n'; ++n ) \                         buf[n] = (char) c; \                 if ( c == '\n' ) \                         buf[n++] = (char) c; \                 if ( c == EOF&& ferror( cern_in ) ) \                         YY_FATAL_ERROR( "input in flex scanner failed" ); \                 result = n; \                 } \         else \                 { \                 errno=0; \                 while ( (result = fread(buf, 1, max_size, cern_in))==0&& ferror(cern_in)) \                         { \                         if( errno != EINTR) \                                 { \                                 YY_FATAL_ERROR( "input in flex scanner failed" ); \                                 break; \                                 } \                         errno=0; \                         clearerr(cern_in); \                         } \                 }\ \  #endif
+value|if ( YY_CURRENT_BUFFER_LVALUE->yy_is_interactive ) \ 		{ \ 		int c = '*'; \ 		unsigned n; \ 		for ( n = 0; n< max_size&& \ 			     (c = getc( cern_in )) != EOF&& c != '\n'; ++n ) \ 			buf[n] = (char) c; \ 		if ( c == '\n' ) \ 			buf[n++] = (char) c; \ 		if ( c == EOF&& ferror( cern_in ) ) \ 			YY_FATAL_ERROR( "input in flex scanner failed" ); \ 		result = n; \ 		} \ 	else \ 		{ \ 		errno=0; \ 		while ( (result = fread(buf, 1, max_size, cern_in))==0&& ferror(cern_in)) \ 			{ \ 			if( errno != EINTR) \ 				{ \ 				YY_FATAL_ERROR( "input in flex scanner failed" ); \ 				break; \ 				} \ 			errno=0; \ 			clearerr(cern_in); \ 			} \ 		}\ \  #endif
 end_define
 
 begin_comment
@@ -5251,7 +5187,7 @@ number|44
 file|"imap_cern.l"
 line|#
 directive|line
-number|815
+number|801
 file|"<stdout>"
 if|if
 condition|(
@@ -5349,7 +5285,7 @@ operator|(
 name|yy_hold_char
 operator|)
 expr_stmt|;
-comment|/* yy_bp points to the position in yy_ch_buf of the start of                  * the current run.                  */
+comment|/* yy_bp points to the position in yy_ch_buf of the start of 		 * the current run. 		 */
 name|yy_bp
 operator|=
 name|yy_cp
@@ -5812,7 +5748,7 @@ decl_stmt|;
 name|YY_BREAK
 line|#
 directive|line
-number|992
+number|978
 file|"<stdout>"
 case|case
 name|YY_STATE_EOF
@@ -5869,7 +5805,7 @@ operator|==
 name|YY_BUFFER_NEW
 condition|)
 block|{
-comment|/* We're scanning a new file or input source.  It's                          * possible that this happened because the user                          * just pointed cern_in at a new source and called                          * cern_lex().  If so, then we have to assure                          * consistency between YY_CURRENT_BUFFER and our                          * globals.  Here is the right place to do so, because                          * this is the first action (other than possibly a                          * back-up) that will match for the new input source.                          */
+comment|/* We're scanning a new file or input source.  It's 			 * possible that this happened because the user 			 * just pointed cern_in at a new source and called 			 * cern_lex().  If so, then we have to assure 			 * consistency between YY_CURRENT_BUFFER and our 			 * globals.  Here is the right place to do so, because 			 * this is the first action (other than possibly a 			 * back-up) that will match for the new input source. 			 */
 operator|(
 name|yy_n_chars
 operator|)
@@ -5891,7 +5827,7 @@ operator|=
 name|YY_BUFFER_NORMAL
 expr_stmt|;
 block|}
-comment|/* Note that here we test for yy_c_buf_p "<=" to the position                  * of the first EOB in the buffer, since yy_c_buf_p will                  * already have been incremented past the NUL character                  * (since all states make transitions on EOB to the                  * end-of-buffer state).  Contrast this with the test                  * in input().                  */
+comment|/* Note that here we test for yy_c_buf_p "<=" to the position 		 * of the first EOB in the buffer, since yy_c_buf_p will 		 * already have been incremented past the NUL character 		 * (since all states make transitions on EOB to the 		 * end-of-buffer state).  Contrast this with the test 		 * in input(). 		 */
 if|if
 condition|(
 operator|(
@@ -5929,7 +5865,7 @@ operator|=
 name|yy_get_previous_state
 argument_list|(  )
 expr_stmt|;
-comment|/* Okay, we're now positioned to make the NUL                          * transition.  We couldn't have                          * yy_get_previous_state() go ahead and do it                          * for us because it doesn't know how to deal                          * with the possibility of jamming (and we don't                          * want to build jamming into it because then it                          * will run more slowly).                          */
+comment|/* Okay, we're now positioned to make the NUL 			 * transition.  We couldn't have 			 * yy_get_previous_state() go ahead and do it 			 * for us because it doesn't know how to deal 			 * with the possibility of jamming (and we don't 			 * want to build jamming into it because then it 			 * will run more slowly). 			 */
 name|yy_next_state
 operator|=
 name|yy_try_NUL_trans
@@ -6002,7 +5938,7 @@ name|cern_wrap
 argument_list|( )
 condition|)
 block|{
-comment|/* Note: because we've taken care in                                          * yy_get_next_buffer() to have set up                                          * cern_text, we can now set up                                          * yy_c_buf_p so that if some total                                          * hoser (like flex itself) wants to                                          * call the scanner after we return the                                          * YY_NULL, it'll still work - another                                          * YY_NULL will get returned.                                          */
+comment|/* Note: because we've taken care in 					 * yy_get_next_buffer() to have set up 					 * cern_text, we can now set up 					 * yy_c_buf_p so that if some total 					 * hoser (like flex itself) wants to 					 * call the scanner after we return the 					 * YY_NULL, it'll still work - another 					 * YY_NULL will get returned. 					 */
 operator|(
 name|yy_c_buf_p
 operator|)
@@ -6133,7 +6069,7 @@ comment|/* end of cern_lex */
 end_comment
 
 begin_comment
-comment|/* yy_get_next_buffer - try to read in a new buffer  *  * Returns a code representing an action:  *      EOB_ACT_LAST_MATCH -  *      EOB_ACT_CONTINUE_SCAN - continue scanning from current position  *      EOB_ACT_END_OF_FILE - end of file  */
+comment|/* yy_get_next_buffer - try to read in a new buffer  *  * Returns a code representing an action:  *	EOB_ACT_LAST_MATCH -  *	EOB_ACT_CONTINUE_SCAN - continue scanning from current position  *	EOB_ACT_END_OF_FILE - end of file  */
 end_comment
 
 begin_function
@@ -6220,14 +6156,14 @@ operator|==
 literal|1
 condition|)
 block|{
-comment|/* We matched a single character, the EOB, so                          * treat this as a final EOF.                          */
+comment|/* We matched a single character, the EOB, so 			 * treat this as a final EOF. 			 */
 return|return
 name|EOB_ACT_END_OF_FILE
 return|;
 block|}
 else|else
 block|{
-comment|/* We matched some text prior to the EOB, first                          * process it.                          */
+comment|/* We matched some text prior to the EOB, first 			 * process it. 			 */
 return|return
 name|EOB_ACT_LAST_MATCH
 return|;
@@ -6285,7 +6221,7 @@ name|yy_buffer_status
 operator|==
 name|YY_BUFFER_EOF_PENDING
 condition|)
-comment|/* don't do the read, it's not guaranteed to return an EOF,                  * just force an EOF                  */
+comment|/* don't do the read, it's not guaranteed to return an EOF, 		 * just force an EOF 		 */
 name|YY_CURRENT_BUFFER_LVALUE
 operator|->
 name|yy_n_chars
@@ -6809,7 +6745,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* yy_try_NUL_trans - try to make a transition on the NUL character  *  * synopsis  *      next_state = yy_try_NUL_trans( current_state );  */
+comment|/* yy_try_NUL_trans - try to make a transition on the NUL character  *  * synopsis  *	next_state = yy_try_NUL_trans( current_state );  */
 end_comment
 
 begin_function
@@ -7176,7 +7112,7 @@ operator|==
 name|YY_END_OF_BUFFER_CHAR
 condition|)
 block|{
-comment|/* yy_c_buf_p now points to the character we want to return.                  * If this occurs *before* the EOB characters, then it's a                  * valid NUL; if not, then we've hit the end of the buffer.                  */
+comment|/* yy_c_buf_p now points to the character we want to return. 		 * If this occurs *before* the EOB characters, then it's a 		 * valid NUL; if not, then we've hit the end of the buffer. 		 */
 if|if
 condition|(
 operator|(
@@ -7229,7 +7165,7 @@ block|{
 case|case
 name|EOB_ACT_LAST_MATCH
 case|:
-comment|/* This happens because yy_g_n_b()                                          * sees that we've accumulated a                                          * token and flags that we need to                                          * try matching the token before                                          * proceeding.  But for input(),                                          * there's no matching to consider.                                          * So convert the EOB_ACT_LAST_MATCH                                          * to EOB_ACT_END_OF_FILE.                                          */
+comment|/* This happens because yy_g_n_b() 					 * sees that we've accumulated a 					 * token and flags that we need to 					 * try matching the token before 					 * proceeding.  But for input(), 					 * there's no matching to consider. 					 * So convert the EOB_ACT_LAST_MATCH 					 * to EOB_ACT_END_OF_FILE. 					 */
 comment|/* Reset buffer status. */
 name|cern_restart
 argument_list|(
@@ -7396,7 +7332,7 @@ name|YY_BUFFER_STATE
 name|new_buffer
 parameter_list|)
 block|{
-comment|/* TODO. We should be able to replace this entire function body          * with          *              cern_pop_buffer_state();          *              cern_push_buffer_state(new_buffer);      */
+comment|/* TODO. We should be able to replace this entire function body 	 * with 	 *		cern_pop_buffer_state(); 	 *		cern_push_buffer_state(new_buffer);      */
 name|cern_ensure_buffer_stack
 argument_list|()
 expr_stmt|;
@@ -7446,7 +7382,7 @@ expr_stmt|;
 name|cern__load_buffer_state
 argument_list|( )
 expr_stmt|;
-comment|/* We don't actually know whether we did this switch during          * EOF (cern_wrap()) processing, but the only time this flag          * is looked at is after cern_wrap() is called, so it's safe          * to go ahead and always set it.          */
+comment|/* We don't actually know whether we did this switch during 	 * EOF (cern_wrap()) processing, but the only time this flag 	 * is looked at is after cern_wrap() is called, so it's safe 	 * to go ahead and always set it. 	 */
 operator|(
 name|yy_did_buffer_switch_on_eof
 operator|)
@@ -7553,7 +7489,7 @@ name|yy_buf_size
 operator|=
 name|size
 expr_stmt|;
-comment|/* yy_ch_buf has to be 2 characters longer than the size given because          * we need to put in 2 end-of-buffer characters.          */
+comment|/* yy_ch_buf has to be 2 characters longer than the size given because 	 * we need to put in 2 end-of-buffer characters. 	 */
 name|b
 operator|->
 name|yy_ch_buf
@@ -7802,7 +7738,7 @@ name|yy_n_chars
 operator|=
 literal|0
 expr_stmt|;
-comment|/* We always need two end-of-buffer characters.  The first causes          * a transition to the end-of-buffer state.  The second causes          * a jam in that state.          */
+comment|/* We always need two end-of-buffer characters.  The first causes 	 * a transition to the end-of-buffer state.  The second causes 	 * a jam in that state. 	 */
 name|b
 operator|->
 name|yy_ch_buf
@@ -8022,7 +7958,7 @@ name|yy_buffer_stack
 operator|)
 condition|)
 block|{
-comment|/* First allocation is just for 2 elements, since we don't know if this                  * scanner will even need a stack. We use 2 instead of 1 to avoid an                  * immediate realloc on the next call.          */
+comment|/* First allocation is just for 2 elements, since we don't know if this 		 * scanner will even need a stack. We use 2 instead of 1 to avoid an 		 * immediate realloc on the next call.          */
 name|num_to_alloc
 operator|=
 literal|1
@@ -8370,7 +8306,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Setup the input buffer state to scan the given bytes. The next call to cern_lex() will  * scan from a @e copy of @a bytes.  * @param yybytes the byte buffer to scan  * @param _yybytes_len the number of bytes in the buffer pointed to by @a bytes.  *   * @return the newly allocated buffer state object.  */
+comment|/** Setup the input buffer state to scan the given bytes. The next call to cern_lex() will  * scan from a @e copy of @a bytes.  * @param bytes the byte buffer to scan  * @param len the number of bytes in the buffer pointed to by @a bytes.  *   * @return the newly allocated buffer state object.  */
 end_comment
 
 begin_function
@@ -8484,7 +8420,7 @@ argument_list|(
 literal|"bad buffer in cern__scan_bytes()"
 argument_list|)
 expr_stmt|;
-comment|/* It's okay to grow etc. this buffer, and we should throw it          * away when we're done.          */
+comment|/* It's okay to grow etc. this buffer, and we should throw it 	 * away when we're done. 	 */
 name|b
 operator|->
 name|yy_is_our_buffer
@@ -8567,9 +8503,9 @@ parameter_list|(
 name|n
 parameter_list|)
 define|\
-value|do \                 { \
+value|do \ 		{ \
 comment|/* Undo effects of setting up cern_text. */
-value|\         int yyless_macro_arg = (n); \         YY_LESS_LINENO(yyless_macro_arg);\                 cern_text[cern_leng] = (yy_hold_char); \                 (yy_c_buf_p) = cern_text + yyless_macro_arg; \                 (yy_hold_char) = *(yy_c_buf_p); \                 *(yy_c_buf_p) = '\0'; \                 cern_leng = yyless_macro_arg; \                 } \         while ( 0 )
+value|\         int yyless_macro_arg = (n); \         YY_LESS_LINENO(yyless_macro_arg);\ 		cern_text[cern_leng] = (yy_hold_char); \ 		(yy_c_buf_p) = cern_text + yyless_macro_arg; \ 		(yy_hold_char) = *(yy_c_buf_p); \ 		*(yy_c_buf_p) = '\0'; \ 		cern_leng = yyless_macro_arg; \ 		} \ 	while ( 0 )
 end_define
 
 begin_comment
@@ -9050,7 +8986,7 @@ name|yy_size_t
 name|size
 parameter_list|)
 block|{
-comment|/* The cast to (char *) in the following accommodates both          * implementations that use char* generic pointers, and those          * that use void* generic pointers.  It works with the latter          * because both ANSI C and C++ allow castless assignment from          * any pointer type to void*, and deal with argument conversions          * as though doing an assignment.          */
+comment|/* The cast to (char *) in the following accommodates both 	 * implementations that use char* generic pointers, and those 	 * that use void* generic pointers.  It works with the latter 	 * because both ANSI C and C++ allow castless assignment from 	 * any pointer type to void*, and deal with argument conversions 	 * as though doing an assignment. 	 */
 return|return
 operator|(
 name|void
