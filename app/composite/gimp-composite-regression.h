@@ -19,7 +19,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275bd61a0108
+DECL|struct|__anon287b10820108
 block|{
 DECL|member|v
 name|guint8
@@ -34,7 +34,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275bd61a0208
+DECL|struct|__anon287b10820208
 block|{
 DECL|member|v
 name|guint8
@@ -53,7 +53,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275bd61a0308
+DECL|struct|__anon287b10820308
 block|{
 DECL|member|r
 name|guint8
@@ -76,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275bd61a0408
+DECL|struct|__anon287b10820408
 block|{
 DECL|member|r
 name|guint8
@@ -109,7 +109,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275bd61a0508
+DECL|struct|__anon287b10820508
 block|{
 DECL|member|v
 name|guint16
@@ -124,7 +124,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275bd61a0608
+DECL|struct|__anon287b10820608
 block|{
 DECL|member|v
 name|guint16
@@ -143,7 +143,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275bd61a0708
+DECL|struct|__anon287b10820708
 block|{
 DECL|member|r
 name|guint16
@@ -166,7 +166,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275bd61a0808
+DECL|struct|__anon287b10820808
 block|{
 DECL|member|r
 name|guint16
@@ -204,7 +204,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275bd61a0908
+DECL|struct|__anon287b10820908
 block|{
 DECL|member|v
 name|guint32
@@ -219,7 +219,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275bd61a0a08
+DECL|struct|__anon287b10820a08
 block|{
 DECL|member|v
 name|guint32
@@ -238,7 +238,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275bd61a0b08
+DECL|struct|__anon287b10820b08
 block|{
 DECL|member|r
 name|guint32
@@ -261,7 +261,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275bd61a0c08
+DECL|struct|__anon287b10820c08
 block|{
 DECL|member|r
 name|guint32
