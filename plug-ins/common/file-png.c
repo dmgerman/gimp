@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e349160108
+DECL|struct|__anon29f468cb0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e349160208
+DECL|struct|__anon29f468cb0208
 block|{
 DECL|member|run
 name|gboolean
@@ -4436,6 +4436,9 @@ decl_stmt|;
 name|int
 name|bit_depth
 decl_stmt|;
+name|png_colorp
+name|palette
+decl_stmt|;
 name|guchar
 name|remap
 index|[
@@ -4846,12 +4849,8 @@ name|color_type
 operator|=
 name|PNG_COLOR_TYPE_PALETTE
 expr_stmt|;
-name|png_set_PLTE
-argument_list|(
-name|pp
-argument_list|,
-name|info
-argument_list|,
+name|palette
+operator|=
 operator|(
 name|png_colorp
 operator|)
@@ -4862,6 +4861,14 @@ argument_list|,
 operator|&
 name|num_colors
 argument_list|)
+expr_stmt|;
+name|png_set_PLTE
+argument_list|(
+name|pp
+argument_list|,
+name|info
+argument_list|,
+name|palette
 argument_list|,
 name|num_colors
 argument_list|)
