@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cd026b0103
+DECL|enum|__anon2b8375860103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -268,7 +268,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cd026b0203
+DECL|enum|__anon2b8375860203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -1461,14 +1461,14 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|respin_cmap (png_structp png_ptr,png_infop png_info_ptr,guchar * remap,gint32 image_id,GimpDrawable * drawable,int * bit_depth)
+DECL|function|respin_cmap (png_structp pp,png_infop info,guchar * remap,gint32 image_id,GimpDrawable * drawable,int * bit_depth)
 name|respin_cmap
 parameter_list|(
 name|png_structp
-name|png_ptr
+name|pp
 parameter_list|,
 name|png_infop
-name|png_info_ptr
+name|info
 parameter_list|,
 name|guchar
 modifier|*
@@ -1678,9 +1678,9 @@ name|i
 decl_stmt|;
 name|png_set_tRNS
 argument_list|(
-name|png_ptr
+name|pp
 argument_list|,
-name|png_info_ptr
+name|info
 argument_list|,
 operator|(
 name|png_bytep
@@ -1780,9 +1780,9 @@ expr_stmt|;
 block|}
 name|png_set_PLTE
 argument_list|(
-name|png_ptr
+name|pp
 argument_list|,
-name|png_info_ptr
+name|info
 argument_list|,
 operator|(
 name|png_colorp
@@ -1819,9 +1819,9 @@ block|}
 block|}
 name|png_set_PLTE
 argument_list|(
-name|png_ptr
+name|pp
 argument_list|,
-name|png_info_ptr
+name|info
 argument_list|,
 operator|(
 name|png_colorp
