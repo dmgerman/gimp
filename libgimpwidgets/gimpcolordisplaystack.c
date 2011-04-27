@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e13a990103
+DECL|enum|__anon27a058d60103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -1070,7 +1070,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_display_stack_convert_surface:  * @surface: a #cairo_image_surface_t of type ARGB32  *  * Runs all the stack's filters on all pixels in @surface.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_color_display_stack_convert_surface:  * @stack: a #GimpColorDisplayStack  * @surface: a #cairo_image_surface_t of type ARGB32  *  * Runs all the stack's filters on all pixels in @surface.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
