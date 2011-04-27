@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f6732d0103
+DECL|enum|__anon2778e3390103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -201,7 +201,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f6732d0203
+DECL|enum|__anon2778e3390203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5069,6 +5069,21 @@ expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
+argument_list|(
+name|dest_image
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IMAGE_TYPE_BASE_TYPE
+argument_list|(
+name|type
+argument_list|)
+operator|==
+name|gimp_image_base_type
 argument_list|(
 name|dest_image
 argument_list|)
