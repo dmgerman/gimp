@@ -34,13 +34,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<glib-object.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpversion.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_ifdef
@@ -230,7 +230,7 @@ directive|endif
 end_endif
 
 begin_struct
-DECL|struct|__anon2a41107c0108
+DECL|struct|__anon2a2a9ced0108
 specifier|static
 struct|struct
 block|{
