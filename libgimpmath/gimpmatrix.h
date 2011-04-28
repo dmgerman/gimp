@@ -16,104 +16,17 @@ directive|define
 name|__GIMP_MATRIX_H__
 end_define
 
-begin_macro
+begin_decl_stmt
 name|G_BEGIN_DECLS
-end_macro
-
-begin_comment
 comment|/* For information look into the C source or the html documentation */
-end_comment
-
-begin_comment
-comment|/**  * GimpMatrix2  * @coeff: the coefficients  *  * A two by two matrix.  **/
-end_comment
-
-begin_struct
-DECL|struct|_GimpMatrix2
-struct|struct
-name|_GimpMatrix2
-block|{
-DECL|member|coeff
-name|gdouble
-name|coeff
-index|[
-literal|2
-index|]
-index|[
-literal|2
-index|]
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_comment
-comment|/**  * GimpMatrix3  * @coeff: the coefficients  *  * A three by three matrix.  **/
-end_comment
-
-begin_struct
-DECL|struct|_GimpMatrix3
-struct|struct
-name|_GimpMatrix3
-block|{
-DECL|member|coeff
-name|gdouble
-name|coeff
-index|[
-literal|3
-index|]
-index|[
-literal|3
-index|]
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_comment
-comment|/**  * GimpMatrix4  * @coeff: the coefficients  *  * A four by four matrix.  **/
-end_comment
-
-begin_struct
-DECL|struct|_GimpMatrix4
-struct|struct
-name|_GimpMatrix4
-block|{
-DECL|member|coeff
-name|gdouble
-name|coeff
-index|[
-literal|4
-index|]
-index|[
-literal|4
-index|]
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_comment
 comment|/*****************/
-end_comment
-
-begin_comment
 comment|/*  GimpMatrix2  */
-end_comment
-
-begin_comment
 comment|/*****************/
-end_comment
-
-begin_define
 DECL|macro|GIMP_TYPE_MATRIX2
 define|#
 directive|define
 name|GIMP_TYPE_MATRIX2
 value|(gimp_matrix2_get_type ())
-end_define
-
-begin_define
 DECL|macro|GIMP_VALUE_HOLDS_MATRIX2 (value)
 define|#
 directive|define
@@ -122,9 +35,6 @@ parameter_list|(
 name|value
 parameter_list|)
 value|(G_TYPE_CHECK_VALUE_TYPE ((value), GIMP_TYPE_MATRIX2))
-end_define
-
-begin_decl_stmt
 name|GType
 name|gimp_matrix2_get_type
 argument_list|(

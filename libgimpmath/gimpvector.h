@@ -16,92 +16,11 @@ directive|define
 name|__GIMP_VECTOR_H__
 end_define
 
-begin_macro
-name|G_BEGIN_DECLS
-end_macro
-
-begin_comment
-comment|/* For information look into the C source or the html documentation */
-end_comment
-
-begin_comment
-comment|/**  * GimpVector2:  * @x: the x axis  * @y: the y axis  *  * A two dimensional vector.  **/
-end_comment
-
-begin_struct
-DECL|struct|_GimpVector2
-struct|struct
-name|_GimpVector2
-block|{
-DECL|member|x
-DECL|member|y
-name|gdouble
-name|x
-decl_stmt|,
-name|y
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_comment
-comment|/**  * GimpVector3:  * @x: the x axis  * @y: the y axis  * @z: the z axis  *  * A three dimensional vector.  **/
-end_comment
-
-begin_struct
-DECL|struct|_GimpVector3
-struct|struct
-name|_GimpVector3
-block|{
-DECL|member|x
-DECL|member|y
-DECL|member|z
-name|gdouble
-name|x
-decl_stmt|,
-name|y
-decl_stmt|,
-name|z
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_comment
-comment|/**  * GimpVector4:  * @x: the x axis  * @y: the y axis  * @z: the z axis  * @w: the w axis  *  * A four dimensional vector.  **/
-end_comment
-
-begin_struct
-DECL|struct|_GimpVector4
-struct|struct
-name|_GimpVector4
-block|{
-DECL|member|x
-DECL|member|y
-DECL|member|z
-DECL|member|w
-name|gdouble
-name|x
-decl_stmt|,
-name|y
-decl_stmt|,
-name|z
-decl_stmt|,
-name|w
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_comment
-comment|/* Two dimensional vector functions */
-end_comment
-
-begin_comment
-comment|/* ================================ */
-end_comment
-
 begin_function_decl
+name|G_BEGIN_DECLS
+comment|/* For information look into the C source or the html documentation */
+comment|/* Two dimensional vector functions */
+comment|/* ================================ */
 name|GimpVector2
 name|gimp_vector2_new
 parameter_list|(
