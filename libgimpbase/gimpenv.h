@@ -33,14 +33,14 @@ end_endif
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMPENV_H__
+name|__GIMP_ENV_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMPENV_H__
+DECL|macro|__GIMP_ENV_H__
 define|#
 directive|define
-name|__GIMPENV_H__
+name|__GIMP_ENV_H__
 end_define
 
 begin_decl_stmt
@@ -51,7 +51,7 @@ directive|ifdef
 name|G_OS_WIN32
 ifdef|#
 directive|ifdef
-name|LIBGIMP_COMPILATION
+name|GIMP_BASE_COMPILATION
 DECL|macro|GIMPVAR
 define|#
 directive|define
@@ -59,14 +59,14 @@ name|GIMPVAR
 value|__declspec(dllexport)
 else|#
 directive|else
-comment|/* !LIBGIMP_COMPILATION */
+comment|/* !GIMP_BASE_COMPILATION */
 define|#
 directive|define
 name|GIMPVAR
 value|extern __declspec(dllimport)
 endif|#
 directive|endif
-comment|/* !LIBGIMP_COMPILATION */
+comment|/* !GIMP_BASE_COMPILATION */
 else|#
 directive|else
 comment|/* !G_OS_WIN32 */
@@ -301,7 +301,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMPENV_H__  */
+comment|/*  __GIMP_ENV_H__  */
 end_comment
 
 end_unit
