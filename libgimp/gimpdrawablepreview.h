@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_DRAWABLE_PREVIEW_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<libgimpwidgets/gimpscrolledpreview.h>
-end_include
-
 begin_macro
 name|G_BEGIN_DECLS
 end_macro
