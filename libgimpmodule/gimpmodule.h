@@ -22,6 +22,13 @@ directive|include
 file|<gmodule.h>
 end_include
 
+begin_define
+DECL|macro|__GIMP_MODULE_H_INSIDE__
+define|#
+directive|define
+name|__GIMP_MODULE_H_INSIDE__
+end_define
+
 begin_include
 include|#
 directive|include
@@ -33,6 +40,12 @@ include|#
 directive|include
 file|<libgimpmodule/gimpmoduledb.h>
 end_include
+
+begin_undef
+undef|#
+directive|undef
+name|__GIMP_MODULE_H_INSIDE__
+end_undef
 
 begin_macro
 name|G_BEGIN_DECLS
@@ -57,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bfdc3bf0103
+DECL|enum|__anon2936215f0103
 block|{
 DECL|enumerator|GIMP_MODULE_STATE_ERROR
 name|GIMP_MODULE_STATE_ERROR
@@ -97,7 +110,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bfdc3bf0203
+DECL|enum|__anon2936215f0203
 block|{
 DECL|enumerator|GIMP_MODULE_FAILED
 name|GIMP_MODULE_FAILED

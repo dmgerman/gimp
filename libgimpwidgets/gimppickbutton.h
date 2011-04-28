@@ -3,6 +3,33 @@ begin_comment
 comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimppickbutton.h  * Copyright (C) 2002 Michael Natterer<mitch@gimp.org>  *  * based on gtk-2-0/gtk/gtkcolorsel.c  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library.  If not, see  *<http://www.gnu.org/licenses/>.  */
 end_comment
 
+begin_if
+if|#
+directive|if
+operator|!
+name|defined
+argument_list|(
+name|__GIMP_WIDGETS_H_INSIDE__
+argument_list|)
+operator|&&
+operator|!
+name|defined
+argument_list|(
+name|GIMP_WIDGETS_COMPILATION
+argument_list|)
+end_if
+
+begin_error
+error|#
+directive|error
+literal|"Only<libgimpwidgets/gimpwidgets.h> can be included directly."
+end_error
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_ifndef
 ifndef|#
 directive|ifndef

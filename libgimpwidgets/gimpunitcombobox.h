@@ -3,6 +3,33 @@ begin_comment
 comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1999 Peter Mattis and Spencer Kimball  *  * gimpunitcombobox.h  * Copyright (C) 2004  Sven Neumann<sven@gimp.org>  *  * This library is free software: you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 3 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library.  If not, see  *<http://www.gnu.org/licenses/>.  */
 end_comment
 
+begin_if
+if|#
+directive|if
+operator|!
+name|defined
+argument_list|(
+name|__GIMP_WIDGETS_H_INSIDE__
+argument_list|)
+operator|&&
+operator|!
+name|defined
+argument_list|(
+name|GIMP_WIDGETS_COMPILATION
+argument_list|)
+end_if
+
+begin_error
+error|#
+directive|error
+literal|"Only<libgimpwidgets/gimpwidgets.h> can be included directly."
+end_error
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -15,6 +42,10 @@ define|#
 directive|define
 name|__GIMP_UNIT_COMBO_BOX_H__
 end_define
+
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
 begin_define
 DECL|macro|GIMP_TYPE_UNIT_COMBO_BOX
@@ -211,6 +242,10 @@ name|unit
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

@@ -7,6 +7,33 @@ begin_comment
 comment|/*  * This implements a widget derived from GtkTable that visualizes  * it's state with two different pixmaps showing a closed and a  * broken chain. It's intented to be used with the GimpSizeEntry  * widget. The usage is quite similar to the one the GtkToggleButton  * provides.  */
 end_comment
 
+begin_if
+if|#
+directive|if
+operator|!
+name|defined
+argument_list|(
+name|__GIMP_WIDGETS_H_INSIDE__
+argument_list|)
+operator|&&
+operator|!
+name|defined
+argument_list|(
+name|GIMP_WIDGETS_COMPILATION
+argument_list|)
+end_if
+
+begin_error
+error|#
+directive|error
+literal|"Only<libgimpwidgets/gimpwidgets.h> can be included directly."
+end_error
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_ifndef
 ifndef|#
 directive|ifndef

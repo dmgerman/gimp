@@ -7,6 +7,33 @@ begin_comment
 comment|/* This provides a button with a color preview. The preview  * can handle transparency by showing the checkerboard.  * On click, a color selector is opened, which is already  * fully functional wired to the preview button.  */
 end_comment
 
+begin_if
+if|#
+directive|if
+operator|!
+name|defined
+argument_list|(
+name|__GIMP_WIDGETS_H_INSIDE__
+argument_list|)
+operator|&&
+operator|!
+name|defined
+argument_list|(
+name|GIMP_WIDGETS_COMPILATION
+argument_list|)
+end_if
+
+begin_error
+error|#
+directive|error
+literal|"Only<libgimpwidgets/gimpwidgets.h> can be included directly."
+end_error
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_ifndef
 ifndef|#
 directive|ifndef

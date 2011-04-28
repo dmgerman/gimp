@@ -16,6 +16,13 @@ directive|define
 name|__GIMP_BASE_H__
 end_define
 
+begin_define
+DECL|macro|__GIMP_BASE_H_INSIDE__
+define|#
+directive|define
+name|__GIMP_BASE_H_INSIDE__
+end_define
+
 begin_include
 include|#
 directive|include
@@ -104,6 +111,12 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|__GIMP_BASE_H_INSIDE__
+end_undef
 
 begin_endif
 endif|#

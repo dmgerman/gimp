@@ -16,6 +16,13 @@ directive|define
 name|__GIMP_COLOR_H__
 end_define
 
+begin_define
+DECL|macro|__GIMP_COLOR_H_INSIDE__
+define|#
+directive|define
+name|__GIMP_COLOR_H_INSIDE__
+end_define
+
 begin_include
 include|#
 directive|include
@@ -69,6 +76,12 @@ include|#
 directive|include
 file|<libgimpcolor/gimprgb.h>
 end_include
+
+begin_undef
+undef|#
+directive|undef
+name|__GIMP_COLOR_H_INSIDE__
+end_undef
 
 begin_endif
 endif|#
