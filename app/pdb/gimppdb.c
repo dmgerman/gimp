@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpcolor/gimpcolor.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"pdb-types.h"
 end_include
 
@@ -113,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a6a9cc0103
+DECL|enum|__anon28a31db30103
 block|{
 DECL|enumerator|REGISTER_PROCEDURE
 name|REGISTER_PROCEDURE

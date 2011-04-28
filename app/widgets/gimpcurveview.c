@@ -30,13 +30,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpconfig/gimpconfig.h"
+file|"libgimpmath/gimpmath.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpmath.h"
+file|"libgimpcolor/gimpcolor.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpconfig/gimpconfig.h"
 end_include
 
 begin_include
@@ -89,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc30f500103
+DECL|enum|__anon2abb4d550103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +117,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc30f500203
+DECL|enum|__anon2abb4d550203
 block|{
 DECL|enumerator|CUT_CLIPBOARD
 name|CUT_CLIPBOARD
@@ -131,7 +137,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc30f500308
+DECL|struct|__anon2abb4d550308
 block|{
 DECL|member|curve
 name|GimpCurve

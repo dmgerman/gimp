@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<cairo.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -788,7 +794,7 @@ name|pdb_type_quark
 condition|)
 block|{
 struct|struct
-DECL|struct|__anon28b585d00108
+DECL|struct|__anon2a35e41a0108
 block|{
 DECL|member|g_type
 name|GType
@@ -1102,7 +1108,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28b585d00208
+DECL|struct|__anon2a35e41a0208
 block|{
 DECL|member|old_name
 specifier|const

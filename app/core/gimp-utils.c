@@ -53,6 +53,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|<cairo.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -264,7 +270,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8980b10108
+DECL|struct|__anon2ae314790108
 block|{
 DECL|member|func
 name|GimpMemsizeFunc

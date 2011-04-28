@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<cairo.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
@@ -42,31 +48,14 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpconfig/gimpconfig.h"
+file|"libgimpcolor/gimpcolor.h"
 end_include
-
-begin_define
-DECL|macro|GIMP_WIDGETS_COMPILATION
-define|#
-directive|define
-name|GIMP_WIDGETS_COMPILATION
-end_define
 
 begin_include
 include|#
 directive|include
-file|"libgimpwidgets/gimpcairo-utils.h"
+file|"libgimpconfig/gimpconfig.h"
 end_include
-
-begin_comment
-comment|/* eek */
-end_comment
-
-begin_undef
-undef|#
-directive|undef
-name|GIMP_WIDGETS_COMPILATION
-end_undef
 
 begin_include
 include|#
@@ -184,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274c67050103
+DECL|enum|__anon29c95b160103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

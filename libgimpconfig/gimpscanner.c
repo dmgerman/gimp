@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<cairo.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -70,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cb836a0108
+DECL|struct|__anon2c8ea1de0108
 block|{
 DECL|member|name
 name|gchar
@@ -1060,7 +1066,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cb836a0203
+DECL|enum|__anon2c8ea1de0203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB

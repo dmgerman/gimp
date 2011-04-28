@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<cairo.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -329,7 +335,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon291bba810103
+DECL|enum|__anon2bf6b8eb0103
 block|{
 DECL|enumerator|TEXT
 name|TEXT

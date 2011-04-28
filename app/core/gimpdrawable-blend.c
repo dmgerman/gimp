@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<cairo.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
@@ -132,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d70680108
+DECL|struct|__anon2c10e4a00108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -203,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d70680208
+DECL|struct|__anon2c10e4a00208
 block|{
 DECL|member|PR
 name|PixelRegion

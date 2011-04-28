@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpcolor/gimpcolor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpconfig/gimpconfig.h"
 end_include
 
@@ -162,7 +168,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e7ed2b0103
+DECL|enum|__anon2c63c6a10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

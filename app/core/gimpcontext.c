@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<cairo.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
@@ -1448,7 +1454,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acbafe70103
+DECL|enum|__anon2c2a3be40103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1462,7 +1468,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acbafe70203
+DECL|enum|__anon2c2a3be40203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0

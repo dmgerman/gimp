@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<cairo.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
@@ -84,7 +90,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d291200108
+DECL|struct|__anon2a2fc9ea0108
 block|{
 DECL|member|image
 name|GimpImage

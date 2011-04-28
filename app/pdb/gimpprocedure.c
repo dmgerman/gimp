@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpcolor/gimpcolor.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"pdb-types.h"
 end_include
 

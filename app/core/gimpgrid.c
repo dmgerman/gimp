@@ -15,9 +15,11 @@ directive|include
 file|<string.h>
 end_include
 
-begin_comment
-comment|/* strcmp */
-end_comment
+begin_include
+include|#
+directive|include
+file|<cairo.h>
+end_include
 
 begin_include
 include|#
@@ -63,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275b8cf80103
+DECL|enum|__anon2a44dd4e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

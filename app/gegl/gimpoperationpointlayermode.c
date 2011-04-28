@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<cairo.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl-plugin.h>
 end_include
 
@@ -217,7 +223,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf43f080103
+DECL|enum|__anon2a22d2780103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

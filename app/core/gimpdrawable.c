@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<cairo.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
@@ -223,7 +229,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4b337f0103
+DECL|enum|__anon2774ecf70103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE

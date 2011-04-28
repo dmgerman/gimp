@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<cairo.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -1176,7 +1182,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc7b260108
+DECL|struct|__anon2c4222730108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -1204,7 +1210,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc7b260208
+DECL|struct|__anon2c4222730208
 block|{
 DECL|member|offset
 name|gdouble
