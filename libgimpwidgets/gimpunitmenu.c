@@ -15,6 +15,16 @@ directive|undef
 name|GSEAL_ENABLE
 end_undef
 
+begin_comment
+comment|/* FIXME: #undef GTK_DISABLE_DEPRECATED */
+end_comment
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -60,6 +70,12 @@ end_undef
 begin_include
 include|#
 directive|include
+file|"gimpoldwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpunitmenu.h"
 end_include
 
@@ -75,7 +91,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon293e38650103
+DECL|enum|__anon2c0254eb0103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -88,7 +104,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293e38650203
+DECL|enum|__anon2c0254eb0203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
