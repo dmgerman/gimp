@@ -33,6 +33,10 @@ directive|include
 file|"gimpunitstore.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpunitcombobox  * @title: GimpUnitComboBox  * @short_description: A #GtkComboBox to select a #GimpUnit.  * @see_also: #GimpUnit, #GimpUnitStore  *  * #GimpUnitComboBox allows to select units stored in a #GimpUnitStore.  * It replaces the deprecated #GimpUnitMenu.  **/
+end_comment
+
 begin_function_decl
 specifier|static
 name|void
