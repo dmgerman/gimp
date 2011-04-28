@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_COLOR_PANEL_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"libgimpwidgets/gimpcolorbutton.h"
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_COLOR_PANEL
 define|#

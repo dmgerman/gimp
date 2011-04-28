@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_COLOR_SELECTOR_PALETTE_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"libgimpwidgets/gimpcolorselector.h"
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_COLOR_SELECTOR_PALETTE
 define|#

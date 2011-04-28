@@ -19,12 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpmatrix.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpclone.h"
 end_include
 

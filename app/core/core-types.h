@@ -37,12 +37,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpvector.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"base/base-types.h"
 end_include
 

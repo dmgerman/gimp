@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_PDB_DIALOG_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"libgimpwidgets/gimpdialog.h"
-end_include
-
 begin_macro
 name|G_BEGIN_DECLS
 end_macro

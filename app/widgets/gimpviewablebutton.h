@@ -16,16 +16,6 @@ directive|define
 name|__GIMP_VIEWABLE_BUTTON_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"libgimpwidgets/gimpbutton.h"
-end_include
-
-begin_macro
-name|G_BEGIN_DECLS
-end_macro
-
 begin_define
 DECL|macro|GIMP_TYPE_VIEWABLE_BUTTON
 define|#
@@ -281,10 +271,6 @@ name|view_size
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_macro
-name|G_END_DECLS
-end_macro
 
 begin_endif
 endif|#

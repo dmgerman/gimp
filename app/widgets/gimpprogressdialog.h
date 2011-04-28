@@ -16,16 +16,6 @@ directive|define
 name|__GIMP_PROGRESS_DIALOG_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"libgimpwidgets/gimpdialog.h"
-end_include
-
-begin_macro
-name|G_BEGIN_DECLS
-end_macro
-
 begin_define
 DECL|macro|GIMP_TYPE_PROGRESS_DIALOG
 define|#
@@ -148,10 +138,6 @@ name|void
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_macro
-name|G_END_DECLS
-end_macro
 
 begin_endif
 endif|#

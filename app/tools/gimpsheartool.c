@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -81,7 +87,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29249b120103
+DECL|enum|__anon27e03aa20103
 block|{
 DECL|enumerator|HORZ_OR_VERT
 name|HORZ_OR_VERT
