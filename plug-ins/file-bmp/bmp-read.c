@@ -38,19 +38,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gdk-pixbuf/gdk-pixbuf.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimppixbuf.h>
 end_include
 
 begin_include
