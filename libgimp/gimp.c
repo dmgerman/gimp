@@ -348,25 +348,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpbasetypes.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"libgimpbase/gimpbase-private.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpbase/gimpenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpbase/gimpparasite.h"
 end_include
 
 begin_include
@@ -432,7 +420,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4241f20103
+DECL|enum|__anon2b285d500103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID

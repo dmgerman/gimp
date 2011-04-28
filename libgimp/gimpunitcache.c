@@ -18,13 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpbasetypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpbase/gimpunit.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
@@ -52,7 +46,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c72b2c0108
+DECL|struct|__anon2ac3ea360108
 block|{
 DECL|member|factor
 name|gdouble
