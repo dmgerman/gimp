@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<cairo.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcolor.h"
 end_include
 
@@ -41,7 +47,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c63438e0108
+DECL|struct|__anon2ad2fe830108
 block|{
 DECL|member|str
 specifier|const
