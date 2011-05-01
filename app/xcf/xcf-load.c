@@ -7332,9 +7332,6 @@ name|GimpVectors
 modifier|*
 name|active_vectors
 decl_stmt|;
-name|guint32
-name|base
-decl_stmt|;
 ifdef|#
 directive|ifdef
 name|GIMP_XCF_PATH_DEBUG
@@ -7345,12 +7342,6 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-name|base
-operator|=
-name|info
-operator|->
-name|cp
-expr_stmt|;
 name|info
 operator|->
 name|cp

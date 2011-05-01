@@ -636,11 +636,6 @@ init|=
 name|FALSE
 decl_stmt|;
 name|gboolean
-name|is_gray
-init|=
-name|FALSE
-decl_stmt|;
-name|gboolean
 name|is_indexed
 init|=
 name|FALSE
@@ -714,13 +709,6 @@ decl_stmt|;
 name|is_rgb
 operator|=
 name|GIMP_IMAGE_TYPE_IS_RGB
-argument_list|(
-name|drawable_type
-argument_list|)
-expr_stmt|;
-name|is_gray
-operator|=
-name|GIMP_IMAGE_TYPE_IS_GRAY
 argument_list|(
 name|drawable_type
 argument_list|)

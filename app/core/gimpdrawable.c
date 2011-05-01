@@ -229,7 +229,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2774ecf70103
+DECL|enum|__anon2b2dc8c70103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -6459,10 +6459,6 @@ name|GimpItem
 modifier|*
 name|item
 decl_stmt|;
-name|GimpImage
-modifier|*
-name|image
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DRAWABLE
@@ -6496,13 +6492,6 @@ operator|=
 name|GIMP_ITEM
 argument_list|(
 name|drawable
-argument_list|)
-expr_stmt|;
-name|image
-operator|=
-name|gimp_item_get_image
-argument_list|(
-name|item
 argument_list|)
 expr_stmt|;
 if|if

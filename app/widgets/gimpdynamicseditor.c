@@ -1347,10 +1347,6 @@ name|GtkWidget
 modifier|*
 name|label
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|button
-decl_stmt|;
 name|gint
 name|column
 init|=
@@ -1412,8 +1408,6 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-name|button
-operator|=
 name|dynamics_check_button_new
 argument_list|(
 name|config
@@ -1430,8 +1424,6 @@ expr_stmt|;
 name|column
 operator|++
 expr_stmt|;
-name|button
-operator|=
 name|dynamics_check_button_new
 argument_list|(
 name|config
@@ -1448,8 +1440,6 @@ expr_stmt|;
 name|column
 operator|++
 expr_stmt|;
-name|button
-operator|=
 name|dynamics_check_button_new
 argument_list|(
 name|config
@@ -1466,8 +1456,6 @@ expr_stmt|;
 name|column
 operator|++
 expr_stmt|;
-name|button
-operator|=
 name|dynamics_check_button_new
 argument_list|(
 name|config
@@ -1484,8 +1472,6 @@ expr_stmt|;
 name|column
 operator|++
 expr_stmt|;
-name|button
-operator|=
 name|dynamics_check_button_new
 argument_list|(
 name|config
@@ -1502,8 +1488,6 @@ expr_stmt|;
 name|column
 operator|++
 expr_stmt|;
-name|button
-operator|=
 name|dynamics_check_button_new
 argument_list|(
 name|config
@@ -1520,8 +1504,6 @@ expr_stmt|;
 name|column
 operator|++
 expr_stmt|;
-name|button
-operator|=
 name|dynamics_check_button_new
 argument_list|(
 name|config

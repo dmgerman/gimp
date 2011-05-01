@@ -1721,10 +1721,6 @@ name|gboolean
 name|has_page
 parameter_list|)
 block|{
-name|GimpColorSelector
-modifier|*
-name|selector
-decl_stmt|;
 name|GList
 modifier|*
 name|list
@@ -1762,13 +1758,6 @@ name|GIMP_TYPE_COLOR_NOTEBOOK
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|selector
-operator|=
-name|GIMP_COLOR_SELECTOR
-argument_list|(
-name|notebook
 argument_list|)
 expr_stmt|;
 for|for

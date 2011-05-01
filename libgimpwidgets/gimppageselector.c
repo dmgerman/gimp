@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b332930103
+DECL|enum|__anon2c5b1b0b0103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -85,7 +85,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b332930203
+DECL|enum|__anon2c5b1b0b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -101,7 +101,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b332930303
+DECL|enum|__anon2c5b1b0b0303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -121,7 +121,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b332930408
+DECL|struct|__anon2c5b1b0b0408
 block|{
 DECL|member|n_pages
 name|gint
@@ -5002,17 +5002,10 @@ name|GdkPixbuf
 modifier|*
 name|pixbuf
 decl_stmt|;
-name|guchar
-modifier|*
-name|pixels
-decl_stmt|;
 name|gint
 name|frame_width
 decl_stmt|,
 name|frame_height
-decl_stmt|;
-name|gint
-name|row_stride
 decl_stmt|;
 name|gint
 name|target_width
@@ -5058,20 +5051,6 @@ argument_list|(
 name|pixbuf
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|row_stride
-operator|=
-name|gdk_pixbuf_get_rowstride
-argument_list|(
-name|pixbuf
-argument_list|)
-expr_stmt|;
-name|pixels
-operator|=
-name|gdk_pixbuf_get_pixels
-argument_list|(
-name|pixbuf
 argument_list|)
 expr_stmt|;
 name|target_width

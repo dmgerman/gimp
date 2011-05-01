@@ -72,10 +72,7 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GimpCurve
-modifier|*
-name|curve
-decl_stmt|;
+comment|/* GimpCurve *curve; */
 name|FILE
 modifier|*
 name|file
@@ -104,13 +101,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|curve
-operator|=
-name|GIMP_CURVE
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
+comment|/* curve = GIMP_CURVE (data); */
 name|file
 operator|=
 name|g_fopen

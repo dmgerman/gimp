@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0ca6e90108
+DECL|struct|__anon2a31223b0108
 block|{
 DECL|member|image
 name|GimpImage
@@ -242,10 +242,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|menu
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|label
 decl_stmt|;
 name|gchar
 modifier|*
@@ -625,8 +621,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|label
-operator|=
 name|gimp_table_attach_aligned
 argument_list|(
 name|GTK_TABLE

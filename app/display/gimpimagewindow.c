@@ -213,7 +213,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c77ef7c0103
+DECL|enum|__anon299a5a750103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -326,7 +326,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c77ef7c0208
+DECL|struct|__anon299a5a750208
 block|{
 DECL|member|window
 name|GimpImageWindow
@@ -3803,10 +3803,6 @@ name|gboolean
 name|grow_only
 parameter_list|)
 block|{
-name|GimpImageWindowPrivate
-modifier|*
-name|private
-decl_stmt|;
 name|GimpDisplayShell
 modifier|*
 name|active_shell
@@ -3863,13 +3859,6 @@ name|GIMP_IS_IMAGE_WINDOW
 argument_list|(
 name|window
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|private
-operator|=
-name|GIMP_IMAGE_WINDOW_GET_PRIVATE
-argument_list|(
-name|window
 argument_list|)
 expr_stmt|;
 if|if

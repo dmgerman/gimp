@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b6c79f0103
+DECL|enum|__anon27d843610103
 block|{
 DECL|enumerator|POP
 name|POP
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b6c79f0203
+DECL|enum|__anon27d843610203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2016,9 +2016,6 @@ modifier|*
 name|undo
 parameter_list|)
 block|{
-name|GimpUndoType
-name|type
-decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -2027,12 +2024,6 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|type
-operator|=
-name|undo
-operator|->
-name|undo_type
-expr_stmt|;
 switch|switch
 condition|(
 name|undo

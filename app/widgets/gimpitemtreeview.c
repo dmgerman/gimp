@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acecfb00103
+DECL|enum|__anon2afbfda90103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -2743,11 +2743,6 @@ decl_stmt|;
 name|gint
 name|button_spacing
 decl_stmt|;
-name|gboolean
-name|box_created
-init|=
-name|FALSE
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_ITEM_TREE_VIEW
@@ -2897,10 +2892,6 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
-name|box_created
-operator|=
-name|TRUE
-expr_stmt|;
 block|}
 if|if
 condition|(

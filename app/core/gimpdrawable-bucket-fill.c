@@ -182,10 +182,6 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GimpImage
-modifier|*
-name|image
-decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
@@ -240,16 +236,6 @@ operator|==
 name|NULL
 argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|image
-operator|=
-name|gimp_item_get_image
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|drawable
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

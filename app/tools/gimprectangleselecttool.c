@@ -2256,9 +2256,6 @@ modifier|*
 name|display
 parameter_list|)
 block|{
-name|GimpRectangleFunction
-name|function
-decl_stmt|;
 name|gimp_rectangle_tool_oper_update
 argument_list|(
 name|tool
@@ -2270,16 +2267,6 @@ argument_list|,
 name|proximity
 argument_list|,
 name|display
-argument_list|)
-expr_stmt|;
-name|function
-operator|=
-name|gimp_rectangle_tool_get_function
-argument_list|(
-name|GIMP_RECTANGLE_TOOL
-argument_list|(
-name|tool
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|GIMP_TOOL_CLASS

@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2be4d90103
+DECL|enum|__anon2920aa6d0103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -1069,11 +1069,7 @@ name|GtkWidget
 modifier|*
 name|dialog
 decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|stock_id
-decl_stmt|;
+comment|/* const gchar *stock_id; */
 name|va_list
 name|args
 decl_stmt|;
@@ -1087,16 +1083,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|stock_id
-operator|=
-name|gimp_viewable_get_stock_id
-argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
-name|tool_info
-argument_list|)
-argument_list|)
-expr_stmt|;
+comment|/* stock_id = gimp_viewable_get_stock_id (GIMP_VIEWABLE (tool_info)); */
 name|dialog
 operator|=
 name|g_object_new

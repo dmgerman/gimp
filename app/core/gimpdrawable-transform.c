@@ -287,10 +287,6 @@ modifier|*
 name|progress
 parameter_list|)
 block|{
-name|GimpImage
-modifier|*
-name|image
-decl_stmt|;
 name|PixelRegion
 name|destPR
 decl_stmt|;
@@ -405,16 +401,6 @@ name|progress
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|image
-operator|=
-name|gimp_item_get_image
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|drawable
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|m

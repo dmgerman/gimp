@@ -157,14 +157,7 @@ modifier|*
 name|object
 parameter_list|)
 block|{
-name|GimpImage
-modifier|*
-name|image
-decl_stmt|;
-name|GimpVectors
-modifier|*
-name|vectors
-decl_stmt|;
+comment|/* GimpVectors *vectors; */
 if|if
 condition|(
 name|G_OBJECT_CLASS
@@ -197,27 +190,7 @@ name|item
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|image
-operator|=
-name|GIMP_UNDO
-argument_list|(
-name|object
-argument_list|)
-operator|->
-name|image
-expr_stmt|;
-name|vectors
-operator|=
-name|GIMP_VECTORS
-argument_list|(
-name|GIMP_ITEM_UNDO
-argument_list|(
-name|object
-argument_list|)
-operator|->
-name|item
-argument_list|)
-expr_stmt|;
+comment|/* vectors = GIMP_VECTORS (GIMP_ITEM_UNDO (object)->item); */
 switch|switch
 condition|(
 name|GIMP_UNDO

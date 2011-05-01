@@ -138,10 +138,6 @@ name|GimpToolPresetFactoryView
 modifier|*
 name|factory_view
 decl_stmt|;
-name|GimpContainerEditor
-modifier|*
-name|editor
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DATA_FACTORY
@@ -226,13 +222,6 @@ return|return
 name|NULL
 return|;
 block|}
-name|editor
-operator|=
-name|GIMP_CONTAINER_EDITOR
-argument_list|(
-name|factory_view
-argument_list|)
-expr_stmt|;
 name|gtk_widget_hide
 argument_list|(
 name|gimp_data_factory_view_get_duplicate_button

@@ -1399,7 +1399,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2c508465010a
+DECL|union|__anon287cf2f3010a
 block|{
 DECL|member|u
 name|guint16
@@ -2898,9 +2898,6 @@ name|gint32
 name|brush_end
 decl_stmt|;
 name|gint32
-name|complement_to_4
-decl_stmt|;
-name|gint32
 name|next_brush
 decl_stmt|;
 name|gint32
@@ -2959,12 +2956,6 @@ literal|0
 condition|)
 name|brush_end
 operator|++
-expr_stmt|;
-name|complement_to_4
-operator|=
-name|brush_end
-operator|-
-name|brush_size
 expr_stmt|;
 name|next_brush
 operator|=

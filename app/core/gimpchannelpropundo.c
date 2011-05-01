@@ -172,10 +172,6 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|GimpImage
-modifier|*
-name|image
-decl_stmt|;
 name|GimpChannel
 modifier|*
 name|channel
@@ -211,15 +207,6 @@ operator|->
 name|item
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|image
-operator|=
-name|GIMP_UNDO
-argument_list|(
-name|object
-argument_list|)
-operator|->
-name|image
 expr_stmt|;
 name|channel
 operator|=

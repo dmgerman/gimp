@@ -176,10 +176,6 @@ modifier|*
 name|writer
 parameter_list|)
 block|{
-name|GObjectClass
-modifier|*
-name|klass
-decl_stmt|;
 name|GList
 modifier|*
 name|diff
@@ -226,13 +222,6 @@ name|compare
 argument_list|)
 argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|klass
-operator|=
-name|G_OBJECT_GET_CLASS
-argument_list|(
-name|config
 argument_list|)
 expr_stmt|;
 name|diff

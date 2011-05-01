@@ -1047,11 +1047,6 @@ init|=
 name|TRUE
 decl_stmt|;
 name|gboolean
-name|global_buf
-init|=
-name|FALSE
-decl_stmt|;
-name|gboolean
 name|visible
 init|=
 name|FALSE
@@ -1114,10 +1109,6 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|global_buf
-operator|=
-name|FALSE
 expr_stmt|;
 name|vectors
 operator|=

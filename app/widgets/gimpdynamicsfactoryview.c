@@ -138,10 +138,6 @@ name|GimpDynamicsFactoryView
 modifier|*
 name|factory_view
 decl_stmt|;
-name|GimpContainerEditor
-modifier|*
-name|editor
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DATA_FACTORY
@@ -226,13 +222,6 @@ return|return
 name|NULL
 return|;
 block|}
-name|editor
-operator|=
-name|GIMP_CONTAINER_EDITOR
-argument_list|(
-name|factory_view
-argument_list|)
-expr_stmt|;
 return|return
 name|GTK_WIDGET
 argument_list|(

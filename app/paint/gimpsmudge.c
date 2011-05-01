@@ -590,10 +590,6 @@ argument_list|(
 name|paint_core
 argument_list|)
 decl_stmt|;
-name|GimpImage
-modifier|*
-name|image
-decl_stmt|;
 name|TempBuf
 modifier|*
 name|area
@@ -613,16 +609,6 @@ name|w
 decl_stmt|,
 name|h
 decl_stmt|;
-name|image
-operator|=
-name|gimp_item_get_image
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|drawable
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|gimp_drawable_is_indexed

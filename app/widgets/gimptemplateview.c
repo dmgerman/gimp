@@ -605,10 +605,6 @@ name|GimpContainer
 modifier|*
 name|container
 decl_stmt|;
-name|GimpContext
-modifier|*
-name|context
-decl_stmt|;
 if|if
 condition|(
 name|GIMP_CONTAINER_EDITOR_CLASS
@@ -633,15 +629,6 @@ expr_stmt|;
 name|container
 operator|=
 name|gimp_container_view_get_container
-argument_list|(
-name|editor
-operator|->
-name|view
-argument_list|)
-expr_stmt|;
-name|context
-operator|=
-name|gimp_container_view_get_context
 argument_list|(
 name|editor
 operator|->
