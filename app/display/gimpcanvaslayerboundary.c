@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29eb0fa60103
+DECL|enum|__anon29e61b8a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -963,7 +963,7 @@ name|layer
 argument_list|,
 literal|"edit-mask"
 argument_list|,
-name|FALSE
+name|edit_mask
 argument_list|,
 name|NULL
 argument_list|)
