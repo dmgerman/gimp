@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c7369f0103
+DECL|enum|__anon2c9384fa0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -268,11 +268,7 @@ parameter_list|)
 block|{
 name|GimpForegroundSelectToolUndo
 modifier|*
-name|foreground_select_tool_undo
-decl_stmt|;
-name|GimpForegroundSelectTool
-modifier|*
-name|foreground_select_tool
+name|fg_select_tool_undo
 decl_stmt|;
 if|if
 condition|(
@@ -293,7 +289,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|foreground_select_tool_undo
+name|fg_select_tool_undo
 operator|=
 name|GIMP_FOREGROUND_SELECT_TOOL_UNDO
 argument_list|(
@@ -304,26 +300,17 @@ name|g_assert
 argument_list|(
 name|GIMP_IS_FOREGROUND_SELECT_TOOL
 argument_list|(
-name|foreground_select_tool_undo
+name|fg_select_tool_undo
 operator|->
 name|foreground_select_tool
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|foreground_select_tool
-operator|=
-name|GIMP_FOREGROUND_SELECT_TOOL
-argument_list|(
-name|foreground_select_tool_undo
-operator|->
-name|foreground_select_tool
 argument_list|)
 expr_stmt|;
 name|g_object_add_weak_pointer
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|foreground_select_tool_undo
+name|fg_select_tool_undo
 operator|->
 name|foreground_select_tool
 argument_list|)
@@ -332,7 +319,7 @@ operator|(
 name|gpointer
 operator|)
 operator|&
-name|foreground_select_tool_undo
+name|fg_select_tool_undo
 operator|->
 name|foreground_select_tool
 argument_list|)
@@ -365,7 +352,7 @@ parameter_list|)
 block|{
 name|GimpForegroundSelectToolUndo
 modifier|*
-name|foreground_select_tool_undo
+name|fg_select_tool_undo
 init|=
 name|GIMP_FOREGROUND_SELECT_TOOL_UNDO
 argument_list|(
@@ -380,7 +367,7 @@ block|{
 case|case
 name|PROP_FOREGROUND_SELECT_TOOL
 case|:
-name|foreground_select_tool_undo
+name|fg_select_tool_undo
 operator|->
 name|foreground_select_tool
 operator|=
@@ -429,7 +416,7 @@ parameter_list|)
 block|{
 name|GimpForegroundSelectToolUndo
 modifier|*
-name|foreground_select_tool_undo
+name|fg_select_tool_undo
 init|=
 name|GIMP_FOREGROUND_SELECT_TOOL_UNDO
 argument_list|(
@@ -448,7 +435,7 @@ name|g_value_set_object
 argument_list|(
 name|value
 argument_list|,
-name|foreground_select_tool_undo
+name|fg_select_tool_undo
 operator|->
 name|foreground_select_tool
 argument_list|)
@@ -520,7 +507,7 @@ parameter_list|)
 block|{
 name|GimpForegroundSelectToolUndo
 modifier|*
-name|foreground_select_tool_undo
+name|fg_select_tool_undo
 init|=
 name|GIMP_FOREGROUND_SELECT_TOOL_UNDO
 argument_list|(
@@ -529,7 +516,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|foreground_select_tool_undo
+name|fg_select_tool_undo
 operator|->
 name|foreground_select_tool
 condition|)
@@ -538,7 +525,7 @@ name|g_object_remove_weak_pointer
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|foreground_select_tool_undo
+name|fg_select_tool_undo
 operator|->
 name|foreground_select_tool
 argument_list|)
@@ -547,12 +534,12 @@ operator|(
 name|gpointer
 operator|)
 operator|&
-name|foreground_select_tool_undo
+name|fg_select_tool_undo
 operator|->
 name|foreground_select_tool
 argument_list|)
 expr_stmt|;
-name|foreground_select_tool_undo
+name|fg_select_tool_undo
 operator|->
 name|foreground_select_tool
 operator|=
