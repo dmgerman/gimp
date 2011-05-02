@@ -173,6 +173,11 @@ name|gint
 name|hovering_handle
 decl_stmt|;
 comment|/* Handle which the cursor is above */
+DECL|member|hovering_edge
+name|gint
+name|hovering_edge
+decl_stmt|;
+comment|/* Edge which the cursor is above */
 DECL|member|cage_complete
 name|gboolean
 name|cage_complete
