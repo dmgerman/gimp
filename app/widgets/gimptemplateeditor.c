@@ -104,7 +104,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf708720103
+DECL|enum|__anon2a19e1020103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2644,11 +2644,6 @@ name|GtkWidget
 modifier|*
 name|icon_picker
 decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|stock_id
-decl_stmt|;
 name|table
 operator|=
 name|gtk_table_new
@@ -2754,18 +2749,6 @@ argument_list|,
 literal|1
 argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|stock_id
-operator|=
-name|gimp_viewable_get_stock_id
-argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
-name|private
-operator|->
-name|template
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|icon_picker

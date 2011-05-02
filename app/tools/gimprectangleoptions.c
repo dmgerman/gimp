@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c36f2820103
+DECL|enum|__anon2c1ca0310103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -3988,21 +3988,10 @@ modifier|*
 name|history
 parameter_list|)
 block|{
-name|GimpRectangleOptionsPrivate
-modifier|*
-name|private
-decl_stmt|;
 name|GtkEntryCompletion
 modifier|*
 name|completion
 decl_stmt|;
-name|private
-operator|=
-name|GIMP_RECTANGLE_OPTIONS_GET_PRIVATE
-argument_list|(
-name|rectangle_options
-argument_list|)
-expr_stmt|;
 name|completion
 operator|=
 name|g_object_new
