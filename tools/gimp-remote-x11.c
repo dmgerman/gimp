@@ -432,7 +432,7 @@ argument_list|)
 expr_stmt|;
 name|result
 operator|=
-name|gdk_window_foreign_new_for_display
+name|gdk_x11_window_foreign_new_for_display
 argument_list|(
 name|display
 argument_list|,
