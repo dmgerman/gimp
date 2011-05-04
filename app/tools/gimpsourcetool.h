@@ -140,6 +140,16 @@ DECL|member|show_source_outline
 name|gboolean
 name|show_source_outline
 decl_stmt|;
+DECL|member|src_handle
+name|GimpCanvasItem
+modifier|*
+name|src_handle
+decl_stmt|;
+DECL|member|src_outline
+name|GimpCanvasItem
+modifier|*
+name|src_outline
+decl_stmt|;
 DECL|member|status_paint
 specifier|const
 name|gchar

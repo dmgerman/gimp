@@ -147,12 +147,17 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|void
-name|gimp_brush_tool_draw_brush
+name|GimpCanvasItem
+modifier|*
+name|gimp_brush_tool_create_outline
 parameter_list|(
 name|GimpBrushTool
 modifier|*
 name|brush_tool
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|display
 parameter_list|,
 name|gdouble
 name|x
