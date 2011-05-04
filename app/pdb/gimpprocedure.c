@@ -2482,6 +2482,36 @@ return|;
 block|}
 end_function
 
+begin_function
+name|gint
+DECL|function|gimp_procedure_name_compare (GimpProcedure * proc1,GimpProcedure * proc2)
+name|gimp_procedure_name_compare
+parameter_list|(
+name|GimpProcedure
+modifier|*
+name|proc1
+parameter_list|,
+name|GimpProcedure
+modifier|*
+name|proc2
+parameter_list|)
+block|{
+comment|/* Assume there always is a name, don't bother with NULL checks */
+return|return
+name|strcmp
+argument_list|(
+name|proc1
+operator|->
+name|original_name
+argument_list|,
+name|proc2
+operator|->
+name|original_name
+argument_list|)
+return|;
+block|}
+end_function
+
 begin_comment
 comment|/*  private functions  */
 end_comment
