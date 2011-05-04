@@ -162,8 +162,7 @@ name|GimpIdTable
 modifier|*
 name|id_table
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|)
 function_decl|;
@@ -180,8 +179,7 @@ parameter_list|,
 name|gint
 name|id
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|)
 function_decl|;
@@ -198,16 +196,14 @@ parameter_list|,
 name|gint
 name|id
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-modifier|*
+name|gpointer
 name|gimp_id_table_lookup
 parameter_list|(
 name|GimpIdTable

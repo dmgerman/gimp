@@ -375,15 +375,14 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_id_table_insert (GimpIdTable * id_table,void * data)
+DECL|function|gimp_id_table_insert (GimpIdTable * id_table,gpointer data)
 name|gimp_id_table_insert
 parameter_list|(
 name|GimpIdTable
 modifier|*
 name|id_table
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|)
 block|{
@@ -459,7 +458,7 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_id_table_insert_with_id (GimpIdTable * id_table,gint id,void * data)
+DECL|function|gimp_id_table_insert_with_id (GimpIdTable * id_table,gint id,gpointer data)
 name|gimp_id_table_insert_with_id
 parameter_list|(
 name|GimpIdTable
@@ -469,8 +468,7 @@ parameter_list|,
 name|gint
 name|id
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|)
 block|{
@@ -534,7 +532,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_id_table_replace (GimpIdTable * id_table,gint id,void * data)
+DECL|function|gimp_id_table_replace (GimpIdTable * id_table,gint id,gpointer data)
 name|gimp_id_table_replace
 parameter_list|(
 name|GimpIdTable
@@ -544,8 +542,7 @@ parameter_list|,
 name|gint
 name|id
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|)
 block|{
@@ -588,8 +585,7 @@ comment|/**  * gimp_id_table_lookup:  * @id_table: An #GimpIdTable  * @id: The I
 end_comment
 
 begin_function
-name|void
-modifier|*
+name|gpointer
 DECL|function|gimp_id_table_lookup (GimpIdTable * id_table,gint id)
 name|gimp_id_table_lookup
 parameter_list|(
