@@ -1628,6 +1628,13 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|source_tool
+operator|->
+name|src_outline
+condition|)
+block|{
 name|gimp_display_shell_add_item
 argument_list|(
 name|src_shell
@@ -1644,6 +1651,7 @@ operator|->
 name|src_outline
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
