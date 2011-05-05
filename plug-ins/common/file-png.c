@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f468cb0108
+DECL|struct|__anon273979660108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f468cb0208
+DECL|struct|__anon273979660208
 block|{
 DECL|member|run
 name|gboolean
@@ -5377,6 +5377,10 @@ argument_list|,
 name|pngvals
 operator|.
 name|interlaced
+condition|?
+name|PNG_INTERLACE_ADAM7
+else|:
+name|PNG_INTERLACE_NONE
 argument_list|,
 name|PNG_COMPRESSION_TYPE_BASE
 argument_list|,
