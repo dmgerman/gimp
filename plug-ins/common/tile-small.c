@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac6f3550108
+DECL|struct|__anon2b54e8160108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -503,7 +503,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac6f3550203
+DECL|enum|__anon2b54e8160203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -522,7 +522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac6f3550308
+DECL|struct|__anon2b54e8160308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -593,7 +593,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac6f3550408
+DECL|struct|__anon2b54e8160408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -4535,11 +4535,6 @@ name|col
 operator|++
 control|)
 block|{
-name|gint
-name|an_action
-decl_stmt|;
-name|an_action
-operator|=
 name|tiles_xy
 argument_list|(
 name|sel_width

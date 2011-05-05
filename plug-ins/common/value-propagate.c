@@ -717,7 +717,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac5b7120108
+DECL|struct|__anon2a59b6160108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -878,7 +878,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac5b7120208
+DECL|struct|__anon2a59b6160208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -4074,7 +4074,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac5b7120308
+DECL|struct|__anon2a59b6160308
 block|{
 DECL|member|min_modified
 name|gshort
@@ -4952,11 +4952,6 @@ init|=
 literal|0
 decl_stmt|;
 name|gint
-name|alpha
-init|=
-literal|0
-decl_stmt|;
-name|gint
 name|ch
 decl_stmt|;
 name|MiddlePacket
@@ -5054,10 +5049,6 @@ name|value_chs
 operator|=
 literal|3
 expr_stmt|;
-name|alpha
-operator|=
-literal|3
-expr_stmt|;
 break|break;
 case|case
 name|GIMP_GRAY_IMAGE
@@ -5071,10 +5062,6 @@ case|case
 name|GIMP_GRAYA_IMAGE
 case|:
 name|value_chs
-operator|=
-literal|1
-expr_stmt|;
-name|alpha
 operator|=
 literal|1
 expr_stmt|;

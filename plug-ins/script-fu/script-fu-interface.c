@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5a6c1a0108
+DECL|struct|__anon29ed6a9d0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -623,10 +623,6 @@ block|{
 name|GtkWidget
 modifier|*
 name|dialog
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|menu
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1231,10 +1227,6 @@ name|sfa_vectors
 expr_stmt|;
 break|break;
 default|default:
-name|menu
-operator|=
-name|NULL
-expr_stmt|;
 break|break;
 block|}
 name|gimp_int_combo_box_connect

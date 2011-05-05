@@ -892,8 +892,6 @@ name|gint
 name|rgn1_x
 decl_stmt|,
 name|rgn2_x
-decl_stmt|,
-name|off_x
 decl_stmt|;
 specifier|static
 name|gint
@@ -993,12 +991,6 @@ name|w
 operator|+
 name|wodd
 expr_stmt|;
-name|off_x
-operator|=
-name|w
-operator|+
-name|wodd
-expr_stmt|;
 block|}
 else|else
 block|{
@@ -1013,13 +1005,6 @@ expr_stmt|;
 name|rgn2_x
 operator|=
 name|x1
-expr_stmt|;
-name|off_x
-operator|=
-operator|-
-name|w
-operator|-
-name|wodd
 expr_stmt|;
 block|}
 name|asymmetry_correction

@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2758bc720108
+DECL|struct|__anon2949cdd20108
 block|{
 DECL|member|replace
 name|gint
@@ -3366,9 +3366,6 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GimpImageType
-name|drawable_type
-decl_stmt|;
 name|FITS_HDU_LIST
 modifier|*
 name|hdu
@@ -3376,13 +3373,6 @@ decl_stmt|;
 name|drawable
 operator|=
 name|gimp_drawable_get
-argument_list|(
-name|drawable_ID
-argument_list|)
-expr_stmt|;
-name|drawable_type
-operator|=
-name|gimp_drawable_type
 argument_list|(
 name|drawable_ID
 argument_list|)
@@ -3824,9 +3814,6 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GimpImageType
-name|drawable_type
-decl_stmt|;
 name|FITS_HDU_LIST
 modifier|*
 name|hdu
@@ -3855,13 +3842,6 @@ expr_stmt|;
 name|drawable
 operator|=
 name|gimp_drawable_get
-argument_list|(
-name|drawable_ID
-argument_list|)
-expr_stmt|;
-name|drawable_type
-operator|=
-name|gimp_drawable_type
 argument_list|(
 name|drawable_ID
 argument_list|)

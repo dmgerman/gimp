@@ -336,7 +336,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c24da170108
+DECL|struct|__anon2a0f15bb0108
 block|{
 DECL|member|sharpen_percent
 name|gint
@@ -956,9 +956,6 @@ name|gint
 name|y1
 decl_stmt|;
 name|gint
-name|x2
-decl_stmt|;
-name|gint
 name|y2
 decl_stmt|;
 name|gint
@@ -1024,12 +1021,6 @@ name|sel_height
 argument_list|)
 condition|)
 return|return;
-name|x2
-operator|=
-name|x1
-operator|+
-name|sel_width
-expr_stmt|;
 name|y2
 operator|=
 name|y1
