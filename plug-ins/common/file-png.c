@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28de6a5e0108
+DECL|struct|__anon2b7b5b940108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28de6a5e0208
+DECL|struct|__anon2b7b5b940208
 block|{
 DECL|member|run
 name|gboolean
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28de6a5e0308
+DECL|struct|__anon2b7b5b940308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -4795,7 +4795,7 @@ return|return
 name|FALSE
 return|;
 block|}
-comment|/* Set the image dimensions, bit depth, interlacing and compression */
+comment|/* Note: png_set_IHDR() must be called before any other png_set_*()      functions. */
 name|png_set_IHDR
 argument_list|(
 name|pp
