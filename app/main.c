@@ -1249,7 +1249,7 @@ name|gimp_option_dump_pdb_procedures_deprecated
 block|,
 name|N_
 argument_list|(
-literal|"Output a gimprc file with default settings"
+literal|"Output a sorted list of deprecated procedures in the PDB"
 argument_list|)
 block|,
 name|NULL
@@ -2615,13 +2615,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* Make sure to turn of on compatibility mode so deprecated    * procedure are included    */
+comment|/* Make sure to turn on compatibility mode so deprecated procedures    * are included    */
 name|gimp
 operator|->
 name|pdb_compat_mode
 operator|=
 name|GIMP_PDB_COMPAT_ON
 expr_stmt|;
+comment|/* Initialize the list of procedures */
 name|internal_procs_init
 argument_list|(
 name|gimp
@@ -2629,6 +2630,7 @@ operator|->
 name|pdb
 argument_list|)
 expr_stmt|;
+comment|/* Get deprecated procedures */
 name|deprecated_procs
 operator|=
 name|gimp_pdb_get_deprecated_procedures
