@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8375860103
+DECL|enum|__anon29353a490103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -268,7 +268,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8375860203
+DECL|enum|__anon29353a490203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -3655,17 +3655,13 @@ name|bit_depth
 argument_list|,
 name|color_type
 argument_list|,
-operator|(
 name|mng_data
 operator|.
 name|interlaced
-operator|==
-literal|0
 condition|?
-literal|0
+name|PNG_INTERLACE_ADAM7
 else|:
-literal|1
-operator|)
+name|PNG_INTERLACE_NONE
 argument_list|,
 name|PNG_COMPRESSION_TYPE_BASE
 argument_list|,
