@@ -426,7 +426,7 @@ decl_stmt|;
 name|CURLcode
 name|result
 decl_stmt|;
-name|gint
+name|glong
 name|response_code
 decl_stmt|;
 name|gimp_progress_init
@@ -653,7 +653,7 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Opening '%s' for reading resulted in HTTP "
-literal|"response code: %d"
+literal|"response code: %ld"
 argument_list|)
 argument_list|,
 name|uri
