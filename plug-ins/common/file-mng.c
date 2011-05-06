@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2961d1d10103
+DECL|enum|__anon2b0ba2700103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -268,7 +268,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2961d1d10203
+DECL|enum|__anon2b0ba2700203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
