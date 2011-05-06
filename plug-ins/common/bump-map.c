@@ -95,7 +95,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4eca870103
+DECL|enum|__anon27e82f860103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4eca870203
+DECL|enum|__anon27e82f860203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -129,7 +129,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4eca870308
+DECL|struct|__anon27e82f860308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4eca870408
+DECL|struct|__anon27e82f860408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -233,7 +233,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4eca870508
+DECL|struct|__anon27e82f860508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -1170,7 +1170,10 @@ operator|.
 name|d_drawable
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_mask_bounds
+if|if
+condition|(
+operator|!
+name|gimp_drawable_mask_intersect
 argument_list|(
 name|drawable
 operator|->
@@ -1183,22 +1186,25 @@ operator|&
 name|sel_y1
 argument_list|,
 operator|&
-name|sel_x2
+name|sel_width
 argument_list|,
 operator|&
-name|sel_y2
+name|sel_height
 argument_list|)
-expr_stmt|;
-name|sel_width
-operator|=
+condition|)
+block|{
+return|return;
+block|}
 name|sel_x2
-operator|-
+operator|=
+name|sel_width
+operator|+
 name|sel_x1
 expr_stmt|;
-name|sel_height
-operator|=
 name|sel_y2
-operator|-
+operator|=
+name|sel_height
+operator|+
 name|sel_y1
 expr_stmt|;
 name|img_bpp
