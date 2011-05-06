@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<float.h>
 end_include
 
@@ -3832,6 +3838,18 @@ name|improvement
 init|=
 name|FLT_MAX
 decl_stmt|;
+comment|/* FIXME: Initialize best_spline to zeroes. This is strictly not      necessary as best_spline is always set in the loop below. But the      compiler thinks it isn't and warns. Ideally, the code should be      rewritten such that best_spline and best_error are initialized with      the first values before the loop begins. */
+name|memset
+argument_list|(
+operator|&
+name|best_spline
+argument_list|,
+literal|0
+argument_list|,
+sizeof|sizeof
+name|best_spline
+argument_list|)
+expr_stmt|;
 comment|/*   LOG ("\nFitting with least squares:\n"); */
 comment|/* Phoenix reduces the number of points with a ``linear spline      technique''.  But for fitting letterforms, that is      inappropriate.  We want all the points we can get.  */
 comment|/* It makes no difference whether we first set the `t' values or      find the tangents.  This order makes the documentation a little      more coherent.  */
