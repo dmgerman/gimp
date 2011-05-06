@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274a0b470108
+DECL|struct|__anon27e8851f0108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -818,7 +818,7 @@ operator|->
 name|progress
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show_now
+name|gtk_widget_show
 argument_list|(
 name|splash
 operator|->
