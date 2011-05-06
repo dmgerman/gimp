@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7b5b940108
+DECL|struct|__anon2aab6efa0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7b5b940208
+DECL|struct|__anon2aab6efa0208
 block|{
 DECL|member|run
 name|gboolean
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7b5b940308
+DECL|struct|__anon2aab6efa0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -5689,7 +5689,7 @@ argument_list|,
 name|num
 argument_list|)
 expr_stmt|;
-comment|/*if we are with a RGBA image and have to pre-multiply the alpha channel */
+comment|/* If we are with a RGBA image and have to pre-multiply the              alpha channel */
 if|if
 condition|(
 name|bpp
