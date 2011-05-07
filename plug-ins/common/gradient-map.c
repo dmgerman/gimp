@@ -85,7 +85,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27cb88510103
+DECL|enum|__anon2c6dcc380103
 block|{
 DECL|enumerator|GRADIENT_MODE
 name|GRADIENT_MODE
@@ -630,7 +630,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cb88510208
+DECL|struct|__anon2c6dcc380208
 block|{
 DECL|member|samples
 name|guchar
@@ -975,6 +975,11 @@ name|n_f_samples
 argument_list|,
 operator|&
 name|f_samples
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|gradient_name
 argument_list|)
 expr_stmt|;
 name|bpp
