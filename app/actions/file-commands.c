@@ -1127,6 +1127,18 @@ operator|&&
 name|export_proc
 condition|)
 block|{
+name|char
+modifier|*
+name|uri_copy
+decl_stmt|;
+comment|/* The memory that 'uri' points to can be freed by                file_save_dialog_save_image(), when it eventually calls                gimp_image_set_imported_uri() to reset the imported uri,                resulting in garbage. So make a duplicate of it here. */
+name|uri_copy
+operator|=
+name|g_strdup
+argument_list|(
+name|uri
+argument_list|)
+expr_stmt|;
 name|saved
 operator|=
 name|file_save_dialog_save_image
@@ -1140,7 +1152,7 @@ name|gimp
 argument_list|,
 name|image
 argument_list|,
-name|uri
+name|uri_copy
 argument_list|,
 name|export_proc
 argument_list|,
@@ -1151,6 +1163,11 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|uri_copy
 argument_list|)
 expr_stmt|;
 block|}
