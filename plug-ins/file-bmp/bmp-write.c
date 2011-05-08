@@ -82,7 +82,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289fdf200103
+DECL|enum|__anon2b49cdbe0103
 block|{
 DECL|enumerator|RGB_565
 name|RGB_565
@@ -110,7 +110,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon289fdf200208
+DECL|struct|__anon2b49cdbe0208
 block|{
 DECL|member|rgb_format
 name|RGBMode
@@ -1419,22 +1419,25 @@ condition|)
 block|{
 if|if
 condition|(
-operator|!
 name|mask_info_size
-condition|)
-name|Bitmap_Head
-operator|.
-name|biCompr
-operator|=
+operator|>
 literal|0
-expr_stmt|;
-else|else
+condition|)
 name|Bitmap_Head
 operator|.
 name|biCompr
 operator|=
 literal|3
 expr_stmt|;
+comment|/* BI_BITFIELDS */
+else|else
+name|Bitmap_Head
+operator|.
+name|biCompr
+operator|=
+literal|0
+expr_stmt|;
+comment|/* BI_RGB */
 block|}
 elseif|else
 if|if
