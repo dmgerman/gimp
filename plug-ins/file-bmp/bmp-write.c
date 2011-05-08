@@ -82,7 +82,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294ad65d0103
+DECL|enum|__anon2b9257210103
 block|{
 DECL|enumerator|RGB_565
 name|RGB_565
@@ -110,7 +110,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon294ad65d0208
+DECL|struct|__anon2b9257210208
 block|{
 DECL|member|rgb_format
 name|RGBMode
@@ -2108,7 +2108,7 @@ name|mask_info_size
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Write V4 header colorspace fields */
+comment|/* Write V5 colorspace fields */
 comment|/* bV5CSType = LCS_sRGB */
 name|FromL
 argument_list|(
