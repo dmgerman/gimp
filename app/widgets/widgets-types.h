@@ -39,24 +39,6 @@ comment|/*  input devices& controllers  */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpDeviceManager
-typedef|typedef
-name|struct
-name|_GimpDeviceManager
-name|GimpDeviceManager
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpDeviceInfo
-typedef|typedef
-name|struct
-name|_GimpDeviceInfo
-name|GimpDeviceInfo
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpControllerInfo
 typedef|typedef
 name|struct
@@ -92,6 +74,24 @@ name|GimpControllerWheel
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpDeviceInfo
+typedef|typedef
+name|struct
+name|_GimpDeviceInfo
+name|GimpDeviceInfo
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpDeviceManager
+typedef|typedef
+name|struct
+name|_GimpDeviceManager
+name|GimpDeviceManager
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  docks  */
 end_comment
@@ -124,20 +124,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpMenuDock
+DECL|typedef|GimpDockable
 typedef|typedef
 name|struct
-name|_GimpMenuDock
-name|GimpMenuDock
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpToolbox
-typedef|typedef
-name|struct
-name|_GimpToolbox
-name|GimpToolbox
+name|_GimpDockable
+name|GimpDockable
 typedef|;
 end_typedef
 
@@ -147,15 +138,6 @@ typedef|typedef
 name|struct
 name|_GimpDockbook
 name|GimpDockbook
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpDockable
-typedef|typedef
-name|struct
-name|_GimpDockable
-name|GimpDockable
 typedef|;
 end_typedef
 
@@ -174,6 +156,15 @@ comment|/* dummy typedef */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpMenuDock
+typedef|typedef
+name|struct
+name|_GimpMenuDock
+name|GimpMenuDock
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPanedBox
 typedef|typedef
 name|struct
@@ -182,18 +173,18 @@ name|GimpPanedBox
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpToolbox
+typedef|typedef
+name|struct
+name|_GimpToolbox
+name|GimpToolbox
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  GimpEditor widgets  */
 end_comment
-
-begin_typedef
-DECL|typedef|GimpEditor
-typedef|typedef
-name|struct
-name|_GimpEditor
-name|GimpEditor
-typedef|;
-end_typedef
 
 begin_typedef
 DECL|typedef|GimpColorEditor
@@ -210,6 +201,15 @@ typedef|typedef
 name|struct
 name|_GimpDeviceStatus
 name|GimpDeviceStatus
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpEditor
+typedef|typedef
+name|struct
+name|_GimpEditor
+name|GimpEditor
 typedef|;
 end_typedef
 
@@ -236,20 +236,20 @@ comment|/*  GimpDataEditor widgets  */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpDataEditor
-typedef|typedef
-name|struct
-name|_GimpDataEditor
-name|GimpDataEditor
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpBrushEditor
 typedef|typedef
 name|struct
 name|_GimpBrushEditor
 name|GimpBrushEditor
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpDataEditor
+typedef|typedef
+name|struct
+name|_GimpDataEditor
+name|GimpDataEditor
 typedef|;
 end_typedef
 
@@ -294,15 +294,6 @@ comment|/*  GimpImageEditor widgets  */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpImageEditor
-typedef|typedef
-name|struct
-name|_GimpImageEditor
-name|GimpImageEditor
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpColormapEditor
 typedef|typedef
 name|struct
@@ -326,6 +317,15 @@ typedef|typedef
 name|struct
 name|_GimpHistogramEditor
 name|GimpHistogramEditor
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpImageEditor
+typedef|typedef
+name|struct
+name|_GimpImageEditor
+name|GimpImageEditor
 typedef|;
 end_typedef
 
@@ -361,18 +361,13 @@ comment|/*  GimpContainerView and its implementors  */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpContainerView
+DECL|typedef|GimpChannelTreeView
 typedef|typedef
 name|struct
-name|_GimpContainerView
-name|GimpContainerView
+name|_GimpChannelTreeView
+name|GimpChannelTreeView
 typedef|;
 end_typedef
-
-begin_comment
-DECL|typedef|GimpContainerView
-comment|/* dummy typedef */
-end_comment
 
 begin_typedef
 DECL|typedef|GimpContainerBox
@@ -438,13 +433,18 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpItemTreeView
+DECL|typedef|GimpContainerView
 typedef|typedef
 name|struct
-name|_GimpItemTreeView
-name|GimpItemTreeView
+name|_GimpContainerView
+name|GimpContainerView
 typedef|;
 end_typedef
+
+begin_comment
+DECL|typedef|GimpContainerView
+comment|/* dummy typedef */
+end_comment
 
 begin_typedef
 DECL|typedef|GimpDrawableTreeView
@@ -456,20 +456,20 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpItemTreeView
+typedef|typedef
+name|struct
+name|_GimpItemTreeView
+name|GimpItemTreeView
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpLayerTreeView
 typedef|typedef
 name|struct
 name|_GimpLayerTreeView
 name|GimpLayerTreeView
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpChannelTreeView
-typedef|typedef
-name|struct
-name|_GimpChannelTreeView
-name|GimpChannelTreeView
 typedef|;
 end_typedef
 
@@ -572,20 +572,20 @@ comment|/*  GimpDataFactoryView widgets  */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpDataFactoryView
-typedef|typedef
-name|struct
-name|_GimpDataFactoryView
-name|GimpDataFactoryView
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpBrushFactoryView
 typedef|typedef
 name|struct
 name|_GimpBrushFactoryView
 name|GimpBrushFactoryView
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpDataFactoryView
+typedef|typedef
+name|struct
+name|_GimpDataFactoryView
+name|GimpDataFactoryView
 typedef|;
 end_typedef
 
@@ -621,6 +621,15 @@ comment|/*  menus  */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpAction
+typedef|typedef
+name|struct
+name|_GimpAction
+name|GimpAction
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpActionFactory
 typedef|typedef
 name|struct
@@ -639,20 +648,20 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpAction
-typedef|typedef
-name|struct
-name|_GimpAction
-name|GimpAction
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpEnumAction
 typedef|typedef
 name|struct
 name|_GimpEnumAction
 name|GimpEnumAction
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpMenuFactory
+typedef|typedef
+name|struct
+name|_GimpMenuFactory
+name|GimpMenuFactory
 typedef|;
 end_typedef
 
@@ -671,15 +680,6 @@ typedef|typedef
 name|struct
 name|_GimpStringAction
 name|GimpStringAction
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpMenuFactory
-typedef|typedef
-name|struct
-name|_GimpMenuFactory
-name|GimpMenuFactory
 typedef|;
 end_typedef
 
@@ -773,20 +773,20 @@ comment|/*  GimpPdbDialog widgets  */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpPdbDialog
-typedef|typedef
-name|struct
-name|_GimpPdbDialog
-name|GimpPdbDialog
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpBrushSelect
 typedef|typedef
 name|struct
 name|_GimpBrushSelect
 name|GimpBrushSelect
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpFontSelect
+typedef|typedef
+name|struct
+name|_GimpFontSelect
+name|GimpFontSelect
 typedef|;
 end_typedef
 
@@ -818,11 +818,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpFontSelect
+DECL|typedef|GimpPdbDialog
 typedef|typedef
 name|struct
-name|_GimpFontSelect
-name|GimpFontSelect
+name|_GimpPdbDialog
+name|GimpPdbDialog
 typedef|;
 end_typedef
 
@@ -1258,11 +1258,11 @@ comment|/*  views  */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpView
+DECL|typedef|GimpNavigationView
 typedef|typedef
 name|struct
-name|_GimpView
-name|GimpView
+name|_GimpNavigationView
+name|GimpNavigationView
 typedef|;
 end_typedef
 
@@ -1276,11 +1276,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpNavigationView
+DECL|typedef|GimpView
 typedef|typedef
 name|struct
-name|_GimpNavigationView
-name|GimpNavigationView
+name|_GimpView
+name|GimpView
 typedef|;
 end_typedef
 
@@ -1334,24 +1334,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpViewRendererPalette
-typedef|typedef
-name|struct
-name|_GimpViewRendererPalette
-name|GimpViewRendererPalette
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpViewRendererLayer
-typedef|typedef
-name|struct
-name|_GimpViewRendererLayer
-name|GimpViewRendererLayer
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpViewRendererImage
 typedef|typedef
 name|struct
@@ -1366,6 +1348,24 @@ typedef|typedef
 name|struct
 name|_GimpViewRendererImagefile
 name|GimpViewRendererImagefile
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpViewRendererLayer
+typedef|typedef
+name|struct
+name|_GimpViewRendererLayer
+name|GimpViewRendererLayer
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpViewRendererPalette
+typedef|typedef
+name|struct
+name|_GimpViewRendererPalette
+name|GimpViewRendererPalette
 typedef|;
 end_typedef
 
@@ -1445,6 +1445,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpSessionInfoAux
+typedef|typedef
+name|struct
+name|_GimpSessionInfoAux
+name|GimpSessionInfoAux
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpSessionInfoBook
 typedef|typedef
 name|struct
@@ -1471,15 +1480,6 @@ name|GimpSessionInfoDockable
 typedef|;
 end_typedef
 
-begin_typedef
-DECL|typedef|GimpSessionInfoAux
-typedef|typedef
-name|struct
-name|_GimpSessionInfoAux
-name|GimpSessionInfoAux
-typedef|;
-end_typedef
-
 begin_comment
 comment|/*  structs  */
 end_comment
@@ -1494,11 +1494,20 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpToggleActionEntry
+DECL|typedef|GimpEnumActionEntry
 typedef|typedef
 name|struct
-name|_GimpToggleActionEntry
-name|GimpToggleActionEntry
+name|_GimpEnumActionEntry
+name|GimpEnumActionEntry
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpPlugInActionEntry
+typedef|typedef
+name|struct
+name|_GimpPlugInActionEntry
+name|GimpPlugInActionEntry
 typedef|;
 end_typedef
 
@@ -1512,15 +1521,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpEnumActionEntry
-typedef|typedef
-name|struct
-name|_GimpEnumActionEntry
-name|GimpEnumActionEntry
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpStringActionEntry
 typedef|typedef
 name|struct
@@ -1530,11 +1530,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpPlugInActionEntry
+DECL|typedef|GimpToggleActionEntry
 typedef|typedef
 name|struct
-name|_GimpPlugInActionEntry
-name|GimpPlugInActionEntry
+name|_GimpToggleActionEntry
+name|GimpToggleActionEntry
 typedef|;
 end_typedef
 
