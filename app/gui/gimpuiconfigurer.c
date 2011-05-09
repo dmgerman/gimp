@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdockcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdockwindow.h"
 end_include
 
@@ -101,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b434b5a0103
+DECL|enum|__anon2a1abf520103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -606,6 +612,12 @@ name|dock_window
 init|=
 name|NULL
 decl_stmt|;
+name|GimpDockContainer
+modifier|*
+name|dock_container
+init|=
+name|NULL
+decl_stmt|;
 name|GList
 modifier|*
 name|docks
@@ -638,13 +650,20 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
+name|dock_container
+operator|=
+name|GIMP_DOCK_CONTAINER
+argument_list|(
+name|dock_window
+argument_list|)
+expr_stmt|;
 name|docks
 operator|=
 name|g_list_copy
 argument_list|(
-name|gimp_dock_window_get_docks
+name|gimp_dock_container_get_docks
 argument_list|(
-name|dock_window
+name|dock_container
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -730,9 +749,9 @@ argument_list|)
 operator|&&
 name|g_list_length
 argument_list|(
-name|gimp_dock_window_get_docks
+name|gimp_dock_container_get_docks
 argument_list|(
-name|dock_window
+name|dock_container
 argument_list|)
 argument_list|)
 operator|==

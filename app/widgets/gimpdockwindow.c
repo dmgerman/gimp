@@ -130,6 +130,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdockcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdockwindow.h"
 end_include
 
@@ -221,7 +227,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad6411f0103
+DECL|enum|__anon274afc890103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -324,6 +330,18 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_dock_window_dock_container_iface_init
+parameter_list|(
+name|GimpDockContainerInterface
+modifier|*
+name|iface
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -436,6 +454,19 @@ parameter_list|,
 name|GdkEventAny
 modifier|*
 name|event
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|GList
+modifier|*
+name|gimp_dock_window_get_docks
+parameter_list|(
+name|GimpDockContainer
+modifier|*
+name|dock_container
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -628,14 +659,16 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpDockWindow,gimp_dock_window,GIMP_TYPE_WINDOW)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpDockWindow,gimp_dock_window,GIMP_TYPE_WINDOW,G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCK_CONTAINER,gimp_dock_window_dock_container_iface_init))
+name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpDockWindow
 argument_list|,
 argument|gimp_dock_window
 argument_list|,
 argument|GIMP_TYPE_WINDOW
+argument_list|,
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCK_CONTAINER,                                                 gimp_dock_window_dock_container_iface_init)
 argument_list|)
 end_macro
 
@@ -1008,6 +1041,26 @@ argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_dock_window_dock_container_iface_init (GimpDockContainerInterface * iface)
+name|gimp_dock_window_dock_container_iface_init
+parameter_list|(
+name|GimpDockContainerInterface
+modifier|*
+name|iface
+parameter_list|)
+block|{
+name|iface
+operator|->
+name|get_docks
+operator|=
+name|gimp_dock_window_get_docks
 expr_stmt|;
 block|}
 end_function
@@ -2843,6 +2896,56 @@ block|}
 end_function
 
 begin_comment
+comment|/**  * gimp_dock_window_get_docks:  *  * Get a list of docks in the dock window.  *  * Returns:  **/
+end_comment
+
+begin_function
+specifier|static
+name|GList
+modifier|*
+DECL|function|gimp_dock_window_get_docks (GimpDockContainer * dock_container)
+name|gimp_dock_window_get_docks
+parameter_list|(
+name|GimpDockContainer
+modifier|*
+name|dock_container
+parameter_list|)
+block|{
+name|GimpDockWindow
+modifier|*
+name|dock_window
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DOCK_WINDOW
+argument_list|(
+name|dock_container
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|dock_window
+operator|=
+name|GIMP_DOCK_WINDOW
+argument_list|(
+name|dock_container
+argument_list|)
+expr_stmt|;
+return|return
+name|gimp_dock_columns_get_docks
+argument_list|(
+name|dock_window
+operator|->
+name|p
+operator|->
+name|dock_columns
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_dock_window_should_add_to_recent:  * @dock_window:  *  * Returns: %FALSE if the dock window can be recreated with one  *          Windows menu item such as Windows->Toolbox or  *          Windows->Dockable Dialogs->Layers, %TRUE if not. It should  *          then be added to the list of recently closed docks.  **/
 end_comment
 
@@ -2860,17 +2963,22 @@ block|{
 name|GList
 modifier|*
 name|docks
-init|=
-name|gimp_dock_window_get_docks
-argument_list|(
-name|dock_window
-argument_list|)
 decl_stmt|;
 name|gboolean
 name|should_add
 init|=
 name|TRUE
 decl_stmt|;
+name|docks
+operator|=
+name|gimp_dock_container_get_docks
+argument_list|(
+name|GIMP_DOCK_CONTAINER
+argument_list|(
+name|dock_window
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|g_list_length
@@ -3196,9 +3304,12 @@ for|for
 control|(
 name|iter
 operator|=
-name|gimp_dock_window_get_docks
+name|gimp_dock_container_get_docks
+argument_list|(
+name|GIMP_DOCK_CONTAINER
 argument_list|(
 name|dock_window
+argument_list|)
 argument_list|)
 init|;
 name|iter
@@ -4090,44 +4201,6 @@ operator|->
 name|p
 operator|->
 name|dialog_factory
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_dock_window_get_docks:  * @dock_window:  *  * Get a list of docks in the dock window.  *  * Returns:  **/
-end_comment
-
-begin_function
-name|GList
-modifier|*
-DECL|function|gimp_dock_window_get_docks (GimpDockWindow * dock_window)
-name|gimp_dock_window_get_docks
-parameter_list|(
-name|GimpDockWindow
-modifier|*
-name|dock_window
-parameter_list|)
-block|{
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_DOCK_WINDOW
-argument_list|(
-name|dock_window
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-return|return
-name|gimp_dock_columns_get_docks
-argument_list|(
-name|dock_window
-operator|->
-name|p
-operator|->
-name|dock_columns
-argument_list|)
 return|;
 block|}
 end_function

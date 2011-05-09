@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdockcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -107,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cf1a4d0103
+DECL|enum|__anon28a42ba90103
 block|{
 DECL|enumerator|SESSION_INFO_FACTORY_ENTRY
 name|SESSION_INFO_FACTORY_ENTRY
@@ -3065,7 +3071,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GIMP_IS_DOCK_WINDOW
+name|GIMP_IS_DOCK_CONTAINER
 argument_list|(
 name|info
 operator|->
@@ -3075,6 +3081,19 @@ name|widget
 argument_list|)
 condition|)
 block|{
+name|GimpDockContainer
+modifier|*
+name|dock_container
+init|=
+name|GIMP_DOCK_CONTAINER
+argument_list|(
+name|info
+operator|->
+name|p
+operator|->
+name|widget
+argument_list|)
+decl_stmt|;
 name|GList
 modifier|*
 name|iter
@@ -3085,16 +3104,9 @@ for|for
 control|(
 name|iter
 operator|=
-name|gimp_dock_window_get_docks
+name|gimp_dock_container_get_docks
 argument_list|(
-name|GIMP_DOCK_WINDOW
-argument_list|(
-name|info
-operator|->
-name|p
-operator|->
-name|widget
-argument_list|)
+name|dock_container
 argument_list|)
 init|;
 name|iter

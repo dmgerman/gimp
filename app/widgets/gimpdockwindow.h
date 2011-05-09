@@ -258,18 +258,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GList
-modifier|*
-name|gimp_dock_window_get_docks
-parameter_list|(
-name|GimpDockWindow
-modifier|*
-name|dock_window
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gboolean
 name|gimp_dock_window_get_auto_follow_active
 parameter_list|(

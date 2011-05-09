@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdockcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdocked.h"
 end_include
 
@@ -280,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afa8a090108
+DECL|struct|__anon28d949440108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -2606,11 +2612,10 @@ block|{
 name|GimpDockWindow
 modifier|*
 name|dock_window
-init|=
-name|GIMP_DOCK_WINDOW
-argument_list|(
-name|object
-argument_list|)
+decl_stmt|;
+name|GimpDockContainer
+modifier|*
+name|dock_container
 decl_stmt|;
 if|if
 condition|(
@@ -2630,6 +2635,13 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
+name|dock_container
+operator|=
+name|GIMP_DOCK_CONTAINER
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
 return|return
 operator|(
 operator|!
@@ -2640,9 +2652,9 @@ argument_list|)
 operator|&&
 name|g_list_length
 argument_list|(
-name|gimp_dock_window_get_docks
+name|gimp_dock_container_get_docks
 argument_list|(
-name|dock_window
+name|dock_container
 argument_list|)
 argument_list|)
 operator|>
