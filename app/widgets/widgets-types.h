@@ -115,6 +115,20 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDockContainer
+typedef|typedef
+name|struct
+name|_GimpDockContainer
+name|GimpDockContainer
+typedef|;
+end_typedef
+
+begin_comment
+DECL|typedef|GimpDockContainer
+comment|/* dummy typedef */
+end_comment
+
+begin_typedef
 DECL|typedef|GimpDockWindow
 typedef|typedef
 name|struct
