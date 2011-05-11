@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276f02940103
+DECL|enum|__anon29c016a80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -688,8 +688,7 @@ argument_list|,
 name|N_
 argument_list|(
 literal|"Use an external editor window for text "
-literal|"entry, instead of direct-on-canvas "
-literal|"editing"
+literal|"entry"
 argument_list|)
 argument_list|,
 name|FALSE
