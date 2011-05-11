@@ -1672,7 +1672,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_menu_update:  * @widget: A #GimpUnitMenu.  * @data:   A pointer to a #GimpUnit variable which will store the unit menu's  *          value.  *  * This callback can set the number of decimal digits of an arbitrary number  * of #GtkSpinButton's. To use this functionality, attach the spinbuttons  * as list of data pointers attached with g_object_set_data() with the  * "set_digits" key.  *  * See gimp_toggle_button_sensitive_update() for a description of how  * to set up the list.  **/
+comment|/**  * gimp_unit_menu_update:  * @widget: A #GimpUnitMenu.  * @data:   A pointer to a #GimpUnit variable which will store the unit menu's  *          value.  *  * This callback can set the number of decimal digits of an arbitrary number  * of #GtkSpinButton's. To use this functionality, attach the spinbuttons  * as list of data pointers attached with g_object_set_data() with the  * "set_digits" key.  *  * See gimp_toggle_button_sensitive_update() for a description of how  * to set up the list.  *  * Deprecated: use #GimpUnitComboBox instead.  **/
 end_comment
 
 begin_function
