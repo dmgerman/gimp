@@ -143,6 +143,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_dock_container_get_docks:  * @container: A #GimpDockContainer  *  * Returns: A list of #GimpDock:s in the dock container. Free with  *          g_list_free() when done.  **/
+end_comment
+
 begin_function
 name|GList
 modifier|*

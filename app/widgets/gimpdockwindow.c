@@ -227,7 +227,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b585890103
+DECL|enum|__anon296bacd20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2928,10 +2928,6 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/**  * gimp_dock_window_get_docks:  *  * Get a list of docks in the dock window.  *  * Returns:  **/
-end_comment
-
 begin_function
 specifier|static
 name|GList
@@ -2966,6 +2962,8 @@ name|dock_container
 argument_list|)
 expr_stmt|;
 return|return
+name|g_list_copy
+argument_list|(
 name|gimp_dock_columns_get_docks
 argument_list|(
 name|dock_window
@@ -2973,6 +2971,7 @@ operator|->
 name|p
 operator|->
 name|dock_columns
+argument_list|)
 argument_list|)
 return|;
 block|}
@@ -3190,6 +3189,11 @@ name|FALSE
 expr_stmt|;
 block|}
 block|}
+name|g_list_free
+argument_list|(
+name|docks
+argument_list|)
+expr_stmt|;
 return|return
 name|should_add
 return|;
@@ -3424,13 +3428,17 @@ argument_list|)
 decl_stmt|;
 name|GList
 modifier|*
+name|docks
+init|=
+name|NULL
+decl_stmt|;
+name|GList
+modifier|*
 name|iter
 init|=
 name|NULL
 decl_stmt|;
-for|for
-control|(
-name|iter
+name|docks
 operator|=
 name|gimp_dock_container_get_docks
 argument_list|(
@@ -3439,6 +3447,12 @@ argument_list|(
 name|dock_window
 argument_list|)
 argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|iter
+operator|=
+name|docks
 init|;
 name|iter
 condition|;
@@ -3493,6 +3507,11 @@ name|GIMP_DOCK_COLUMN_SEPARATOR
 argument_list|)
 expr_stmt|;
 block|}
+name|g_list_free
+argument_list|(
+name|docks
+argument_list|)
+expr_stmt|;
 return|return
 name|g_string_free
 argument_list|(

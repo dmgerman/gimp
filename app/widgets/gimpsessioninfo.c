@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1177f90103
+DECL|enum|__anon2894af760103
 block|{
 DECL|enumerator|SESSION_INFO_FACTORY_ENTRY
 name|SESSION_INFO_FACTORY_ENTRY
@@ -3110,14 +3110,22 @@ name|iter
 init|=
 name|NULL
 decl_stmt|;
-for|for
-control|(
-name|iter
+name|GList
+modifier|*
+name|docks
+decl_stmt|;
+name|docks
 operator|=
 name|gimp_dock_container_get_docks
 argument_list|(
 name|dock_container
 argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|iter
+operator|=
+name|docks
 init|;
 name|iter
 condition|;
@@ -3161,6 +3169,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|g_list_free
+argument_list|(
+name|docks
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function
