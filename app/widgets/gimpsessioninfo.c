@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b19fc150103
+DECL|enum|__anon2a1177f90103
 block|{
 DECL|enumerator|SESSION_INFO_FACTORY_ENTRY
 name|SESSION_INFO_FACTORY_ENTRY
@@ -1849,6 +1849,11 @@ name|factory
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_object_ref
+argument_list|(
+name|info
+argument_list|)
+expr_stmt|;
 name|display
 operator|=
 name|gdk_display_get_default
@@ -2073,6 +2078,11 @@ name|GIMP_DOCK_WINDOW
 argument_list|(
 name|dialog
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|info
 argument_list|)
 expr_stmt|;
 block|}
