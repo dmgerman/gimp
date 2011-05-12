@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bef00510103
+DECL|enum|__anon28ed1cce0103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -2464,6 +2464,14 @@ name|factory
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_SESSION_INFO
+argument_list|(
+name|info
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* We want to append rather than prepend so that the serialized    * order in sessionrc remains the same    */
 name|factory
 operator|->
@@ -2479,7 +2487,10 @@ name|p
 operator|->
 name|session_infos
 argument_list|,
+name|g_object_ref
+argument_list|(
 name|info
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3152,20 +3163,15 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-name|factory
-operator|->
-name|p
-operator|->
-name|session_infos
-operator|=
-name|g_list_append
+name|gimp_dialog_factory_add_session_info
 argument_list|(
 name|factory
-operator|->
-name|p
-operator|->
-name|session_infos
 argument_list|,
+name|info
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|info
 argument_list|)
 expr_stmt|;

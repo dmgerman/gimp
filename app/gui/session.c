@@ -141,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2924673d0103
+DECL|enum|__anon27a58fd00103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -596,12 +596,12 @@ argument_list|,
 name|info
 argument_list|)
 expr_stmt|;
+block|}
 name|g_object_unref
 argument_list|(
 name|info
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 else|else
 block|{
