@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3182dd0103
+DECL|enum|__anon2bbaf5ee0103
 block|{
 DECL|enumerator|SESSION_INFO_DOCKABLE_LOCKED
 name|SESSION_INFO_DOCKABLE_LOCKED
@@ -1029,6 +1029,20 @@ condition|(
 name|dockable
 condition|)
 block|{
+comment|/*  gimp_dialog_factory_dockable_new() might return an already        *  existing singleton dockable, return NULL so our caller won't        *  try to add it to another dockbook        */
+if|if
+condition|(
+name|gimp_dockable_get_dockbook
+argument_list|(
+name|GIMP_DOCKABLE
+argument_list|(
+name|dockable
+argument_list|)
+argument_list|)
+condition|)
+return|return
+name|NULL
+return|;
 name|gimp_dockable_set_locked
 argument_list|(
 name|GIMP_DOCKABLE
