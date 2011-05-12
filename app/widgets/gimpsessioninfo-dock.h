@@ -117,7 +117,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|GimpDock
+modifier|*
 name|gimp_session_info_dock_restore
 parameter_list|(
 name|GimpSessionInfoDock
