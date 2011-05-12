@@ -75,7 +75,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d18cf00103
+DECL|enum|__anon2967488f0103
 block|{
 DECL|enumerator|SESSION_INFO_BOOK_POSITION
 name|SESSION_INFO_BOOK_POSITION
@@ -847,6 +847,11 @@ name|GList
 modifier|*
 name|pages
 decl_stmt|;
+name|gint
+name|n_dockables
+init|=
+literal|0
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|info
@@ -929,6 +934,7 @@ if|if
 condition|(
 name|dockable
 condition|)
+block|{
 name|gimp_dockbook_add
 argument_list|(
 name|GIMP_DOCKBOOK
@@ -942,6 +948,10 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+name|n_dockables
+operator|++
+expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
@@ -971,7 +981,13 @@ name|current_page
 argument_list|)
 expr_stmt|;
 block|}
-else|else
+elseif|else
+if|if
+condition|(
+name|n_dockables
+operator|>
+literal|1
+condition|)
 block|{
 name|gtk_notebook_set_current_page
 argument_list|(
@@ -984,6 +1000,7 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*  Return the dockbook even if no dockable could be restored    *  (n_dockables == 0) because otherwise we would have to remove it    *  from the dock right here, which could implicitly destroy the    *  dock and make catching restore errors much harder on higher    *  levels. Instead, we check for restored empty dockbooks in our    *  caller.    */
 return|return
 name|GIMP_DOCKBOOK
 argument_list|(
