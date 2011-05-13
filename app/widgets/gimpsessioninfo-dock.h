@@ -133,9 +133,9 @@ name|GdkScreen
 modifier|*
 name|screen
 parameter_list|,
-name|GimpDockWindow
+name|GimpDockContainer
 modifier|*
-name|dock_window
+name|dock_container
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b177d580103
+DECL|enum|__anon2b648d9f0103
 block|{
 DECL|enumerator|SESSION_INFO_FACTORY_ENTRY
 name|SESSION_INFO_FACTORY_ENTRY
@@ -2083,7 +2083,7 @@ name|factory
 argument_list|,
 name|screen
 argument_list|,
-name|GIMP_DOCK_WINDOW
+name|GIMP_DOCK_CONTAINER
 argument_list|(
 name|dialog
 argument_list|)

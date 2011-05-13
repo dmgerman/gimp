@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b436c200103
+DECL|enum|__anon2b3a6c1e0103
 block|{
 DECL|enumerator|SESSION_INFO_BOOK
 name|SESSION_INFO_BOOK
@@ -630,7 +630,7 @@ end_function
 begin_function
 name|GimpDock
 modifier|*
-DECL|function|gimp_session_info_dock_restore (GimpSessionInfoDock * dock_info,GimpDialogFactory * factory,GdkScreen * screen,GimpDockWindow * dock_window)
+DECL|function|gimp_session_info_dock_restore (GimpSessionInfoDock * dock_info,GimpDialogFactory * factory,GdkScreen * screen,GimpDockContainer * dock_container)
 name|gimp_session_info_dock_restore
 parameter_list|(
 name|GimpSessionInfoDock
@@ -645,20 +645,11 @@ name|GdkScreen
 modifier|*
 name|screen
 parameter_list|,
-name|GimpDockWindow
-modifier|*
-name|dock_window
-parameter_list|)
-block|{
 name|GimpDockContainer
 modifier|*
 name|dock_container
-init|=
-name|GIMP_DOCK_CONTAINER
-argument_list|(
-name|dock_window
-argument_list|)
-decl_stmt|;
+parameter_list|)
+block|{
 name|gint
 name|n_books
 init|=
