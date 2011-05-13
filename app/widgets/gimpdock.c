@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdockcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdockwindow.h"
 end_include
 
@@ -121,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon276d1cfc0103
+DECL|enum|__anon2c5a6ef10103
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -2005,7 +2011,7 @@ name|dock_columns
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Then GimpDockWindow */
+comment|/* Then GimpDockContainer */
 if|if
 condition|(
 operator|!
@@ -2025,13 +2031,24 @@ if|if
 condition|(
 name|dock_window
 condition|)
-name|ui_manager
-operator|=
-name|gimp_dock_window_get_ui_manager
+block|{
+name|GimpDockContainer
+modifier|*
+name|dock_container
+init|=
+name|GIMP_DOCK_CONTAINER
 argument_list|(
 name|dock_window
 argument_list|)
+decl_stmt|;
+name|ui_manager
+operator|=
+name|gimp_dock_container_get_ui_manager
+argument_list|(
+name|dock_container
+argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|ui_manager

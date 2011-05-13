@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdockcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdockwindow.h"
 end_include
 
@@ -206,7 +212,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ce46a80103
+DECL|enum|__anon2a184a2f0103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -4145,9 +4151,12 @@ if|if
 condition|(
 name|dock_window
 operator|&&
-name|gimp_dock_window_get_ui_manager
+name|gimp_dock_container_get_ui_manager
+argument_list|(
+name|GIMP_DOCK_CONTAINER
 argument_list|(
 name|dock_window
+argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -4173,17 +4182,28 @@ condition|(
 name|dialog_id
 condition|)
 block|{
+name|GimpDockContainer
+modifier|*
+name|dock_container
+decl_stmt|;
 name|GimpActionGroup
 modifier|*
 name|group
 decl_stmt|;
+name|dock_container
+operator|=
+name|GIMP_DOCK_CONTAINER
+argument_list|(
+name|dock_window
+argument_list|)
+expr_stmt|;
 name|group
 operator|=
 name|gimp_ui_manager_get_action_group
 argument_list|(
-name|gimp_dock_window_get_ui_manager
+name|gimp_dock_container_get_ui_manager
 argument_list|(
-name|dock_window
+name|dock_container
 argument_list|)
 argument_list|,
 literal|"dialogs"

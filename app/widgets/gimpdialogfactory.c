@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdockcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdockwindow.h"
 end_include
 
@@ -131,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ed1cce0103
+DECL|enum|__anon2c2d125c0103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -1747,6 +1753,10 @@ operator|==
 literal|0
 condition|)
 block|{
+name|GimpDockContainer
+modifier|*
+name|dock_container
+decl_stmt|;
 name|dock_window
 operator|=
 name|gimp_dialog_factory_dialog_new
@@ -1769,14 +1779,18 @@ comment|/*present*/
 argument_list|)
 expr_stmt|;
 comment|/* When we get a dock window, we also get a UI                * manager                */
-name|ui_manager
+name|dock_container
 operator|=
-name|gimp_dock_window_get_ui_manager
-argument_list|(
-name|GIMP_DOCK_WINDOW
+name|GIMP_DOCK_CONTAINER
 argument_list|(
 name|dock_window
 argument_list|)
+expr_stmt|;
+name|ui_manager
+operator|=
+name|gimp_dock_container_get_ui_manager
+argument_list|(
+name|dock_container
 argument_list|)
 expr_stmt|;
 block|}

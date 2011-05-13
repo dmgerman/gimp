@@ -222,18 +222,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpUIManager
-modifier|*
-name|gimp_dock_window_get_ui_manager
-parameter_list|(
-name|GimpDockWindow
-modifier|*
-name|dock_window
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|GimpContext
 modifier|*
 name|gimp_dock_window_get_context
