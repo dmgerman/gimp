@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27716c390103
+DECL|enum|__anon2b436c200103
 block|{
 DECL|enumerator|SESSION_INFO_BOOK
 name|SESSION_INFO_BOOK
@@ -736,20 +736,16 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Add the dock to the dock window immediately so the stuff in the    * dock has access to e.g. a dialog factory    */
-name|gimp_dock_window_add_dock
+name|gimp_dock_container_add_dock
 argument_list|(
-name|GIMP_DOCK_WINDOW
-argument_list|(
-name|dock_window
-argument_list|)
+name|dock_container
 argument_list|,
 name|GIMP_DOCK
 argument_list|(
 name|dock
 argument_list|)
 argument_list|,
-operator|-
-literal|1
+name|dock_info
 argument_list|)
 expr_stmt|;
 comment|/* Note that if it is a toolbox, we will get here even though we    * don't have any books    */
