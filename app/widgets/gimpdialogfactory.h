@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295bdb600103
+DECL|enum|__anon27ce10950103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -144,6 +144,11 @@ comment|/* If TRUE the visibility of the dialog is toggleable */
 DECL|member|hideable
 name|gboolean
 name|hideable
+decl_stmt|;
+comment|/* If TRUE the entry is for a GimpImageWindow, FALSE otherwise */
+DECL|member|image_window
+name|gboolean
+name|image_window
 decl_stmt|;
 comment|/* If TRUE the entry is for a dockable, FALSE otherwise */
 DECL|member|dockable
@@ -386,6 +391,9 @@ name|remember_if_open
 parameter_list|,
 name|gboolean
 name|hideable
+parameter_list|,
+name|gboolean
+name|image_window
 parameter_list|,
 name|gboolean
 name|dockable

@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2894af760103
+DECL|enum|__anon2b177d580103
 block|{
 DECL|enumerator|SESSION_INFO_FACTORY_ENTRY
 name|SESSION_INFO_FACTORY_ENTRY
@@ -1926,6 +1926,15 @@ operator|->
 name|factory_entry
 operator|->
 name|dockable
+operator|&&
+operator|!
+name|info
+operator|->
+name|p
+operator|->
+name|factory_entry
+operator|->
+name|image_window
 condition|)
 block|{
 name|GimpCoreConfig

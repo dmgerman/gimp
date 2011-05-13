@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2d125c0103
+DECL|enum|__anon2b6d9df30103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -1012,7 +1012,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dialog_factory_register_entry (GimpDialogFactory * factory,const gchar * identifier,const gchar * name,const gchar * blurb,const gchar * stock_id,const gchar * help_id,GimpDialogNewFunc new_func,gint view_size,gboolean singleton,gboolean session_managed,gboolean remember_size,gboolean remember_if_open,gboolean hideable,gboolean dockable)
+DECL|function|gimp_dialog_factory_register_entry (GimpDialogFactory * factory,const gchar * identifier,const gchar * name,const gchar * blurb,const gchar * stock_id,const gchar * help_id,GimpDialogNewFunc new_func,gint view_size,gboolean singleton,gboolean session_managed,gboolean remember_size,gboolean remember_if_open,gboolean hideable,gboolean image_window,gboolean dockable)
 name|gimp_dialog_factory_register_entry
 parameter_list|(
 name|GimpDialogFactory
@@ -1064,6 +1064,9 @@ name|remember_if_open
 parameter_list|,
 name|gboolean
 name|hideable
+parameter_list|,
+name|gboolean
+name|image_window
 parameter_list|,
 name|gboolean
 name|dockable
@@ -1197,6 +1200,16 @@ operator|->
 name|hideable
 operator|=
 name|hideable
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
+name|entry
+operator|->
+name|image_window
+operator|=
+name|image_window
 condition|?
 name|TRUE
 else|:

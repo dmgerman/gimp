@@ -159,15 +159,17 @@ comment|/* remember_if_open */
 value|, \     TRUE
 comment|/* hideable         */
 value|, \     FALSE
+comment|/* image_window     */
+value|, \     FALSE
 comment|/* dockable         */
 value|}
 end_define
 
 begin_define
-DECL|macro|FOREIGN_NOT_HIDEABLE (id,singleton,remember_size)
+DECL|macro|IMAGE_WINDOW (id,singleton,remember_size)
 define|#
 directive|define
-name|FOREIGN_NOT_HIDEABLE
+name|IMAGE_WINDOW
 parameter_list|(
 name|id
 parameter_list|,
@@ -200,6 +202,8 @@ value|, \     FALSE
 comment|/* remember_if_open */
 value|, \     FALSE
 comment|/* hideable         */
+value|, \     TRUE
+comment|/* image_window     */
 value|, \     FALSE
 comment|/* dockable         */
 value|}
@@ -246,6 +250,8 @@ value|, \     FALSE
 comment|/* remember_if_open */
 value|, \     TRUE
 comment|/* hideable         */
+value|, \     FALSE
+comment|/* image_window     */
 value|, \     FALSE
 comment|/* dockable         */
 value|}
@@ -298,6 +304,8 @@ value|, \     TRUE
 comment|/* remember_if_open */
 value|, \     TRUE
 comment|/* hideable         */
+value|, \     FALSE
+comment|/* image_window     */
 value|, \     TRUE
 comment|/* dockable         */
 value|}
@@ -339,6 +347,8 @@ comment|/* remember_if_open */
 value|, \     TRUE
 comment|/* hideable         */
 value|, \     FALSE
+comment|/* image_window     */
+value|, \     FALSE
 comment|/* dockable         */
 value|}
 end_define
@@ -378,6 +388,8 @@ value|, \     TRUE
 comment|/* remember_if_open */
 value|, \     TRUE
 comment|/* hideable         */
+value|, \     FALSE
+comment|/* image_window     */
 value|, \     FALSE
 comment|/* dockable         */
 value|}
@@ -426,6 +438,8 @@ value|,  \     TRUE
 comment|/* remember_if_open */
 value|,  \     TRUE
 comment|/* hideable         */
+value|,  \     FALSE
+comment|/* image_window     */
 value|,  \     TRUE
 comment|/* dockable         */
 value|}, \   { "gimp-"#id"-grid"
@@ -452,6 +466,8 @@ value|,  \     TRUE
 comment|/* remember_if_open */
 value|,  \     TRUE
 comment|/* hideable         */
+value|,  \     FALSE
+comment|/* image_window     */
 value|,  \     TRUE
 comment|/* dockable         */
 value|}
@@ -502,6 +518,8 @@ value|, \     TRUE
 comment|/* remember_if_open */
 value|, \     TRUE
 comment|/* hideable         */
+value|, \     FALSE
+comment|/* image_window     */
 value|, \     TRUE
 comment|/* dockable         */
 value|}
@@ -1620,7 +1638,7 @@ name|TRUE
 argument_list|)
 block|,
 comment|/*  image windows  */
-name|FOREIGN_NOT_HIDEABLE
+name|IMAGE_WINDOW
 argument_list|(
 literal|"gimp-empty-image-window"
 argument_list|,
@@ -1629,7 +1647,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 block|,
-name|FOREIGN_NOT_HIDEABLE
+name|IMAGE_WINDOW
 argument_list|(
 literal|"gimp-single-image-window"
 argument_list|,
@@ -1815,6 +1833,13 @@ name|i
 index|]
 operator|.
 name|hideable
+argument_list|,
+name|entries
+index|[
+name|i
+index|]
+operator|.
+name|image_window
 argument_list|,
 name|entries
 index|[
