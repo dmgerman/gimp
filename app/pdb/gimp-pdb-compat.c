@@ -794,7 +794,7 @@ name|pdb_type_quark
 condition|)
 block|{
 struct|struct
-DECL|struct|__anon2a35e41a0108
+DECL|struct|__anon2a2218a60108
 block|{
 DECL|member|g_type
 name|GType
@@ -903,6 +903,12 @@ block|{
 name|GIMP_TYPE_COLOR_ARRAY
 block|,
 name|GIMP_PDB_COLORARRAY
+block|}
+block|,
+block|{
+name|GIMP_TYPE_ITEM_ID
+block|,
+name|GIMP_PDB_ITEM
 block|}
 block|,
 block|{
@@ -1108,7 +1114,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a35e41a0208
+DECL|struct|__anon2a2218a60208
 block|{
 DECL|member|old_name
 specifier|const
