@@ -31,6 +31,11 @@ name|gchar
 modifier|*
 name|dock_type
 decl_stmt|;
+comment|/* What side this dock is in in single-window mode. Either    * GIMP_ARRANGE_LEFT, GIMP_ARRANGE_RIGHT or -1.    */
+DECL|member|side
+name|GimpAlignmentType
+name|side
+decl_stmt|;
 comment|/*  list of GimpSessionInfoBook  */
 DECL|member|books
 name|GList
