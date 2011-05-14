@@ -220,7 +220,7 @@ value|, \     TRUE
 comment|/* session_managed  */
 value|, \     remember_size
 comment|/* remember_size    */
-value|, \     FALSE
+value|, \     TRUE
 comment|/* remember_if_open */
 value|, \     FALSE
 comment|/* hideable         */

@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b93fe130103
+DECL|enum|__anon29b6e3060103
 block|{
 DECL|enumerator|SESSION_INFO_FACTORY_ENTRY
 name|SESSION_INFO_FACTORY_ENTRY
@@ -1945,7 +1945,17 @@ name|info
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* We expect expect there to always be docks. In sessionrc files    * from<= 2.6 not all dock window entries had dock entries, but we    * take care of that during sessionrc parsing    */
+if|if
+condition|(
+name|dialog
+operator|&&
+name|GIMP_IS_DOCK_CONTAINER
+argument_list|(
+name|dialog
+argument_list|)
+condition|)
+block|{
+comment|/* We expect expect there to always be docks. In sessionrc files        * from<= 2.6 not all dock window entries had dock entries, but we        * take care of that during sessionrc parsing        */
 for|for
 control|(
 name|iter
@@ -1985,6 +1995,7 @@ name|dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|g_object_unref
 argument_list|(
 name|info
