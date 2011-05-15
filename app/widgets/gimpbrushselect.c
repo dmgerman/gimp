@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0711f30103
+DECL|enum|__anon29eda9550103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1236,12 +1236,9 @@ argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|select
 operator|->
 name|opacity_data
-argument_list|)
 argument_list|,
 name|opacity
 operator|*

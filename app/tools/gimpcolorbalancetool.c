@@ -895,7 +895,7 @@ name|GtkWidget
 modifier|*
 name|spinbutton
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;
@@ -959,6 +959,11 @@ name|spinbutton
 operator|=
 name|gimp_spin_button_new
 argument_list|(
+operator|(
+name|GtkObject
+operator|*
+operator|*
+operator|)
 operator|&
 name|adj
 argument_list|,
@@ -984,10 +989,7 @@ name|slider
 operator|=
 name|gtk_hscale_new
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_scale_set_draw_value
@@ -1129,10 +1131,7 @@ name|spinbutton
 argument_list|)
 expr_stmt|;
 return|return
-name|GTK_ADJUSTMENT
-argument_list|(
 name|adj
-argument_list|)
 return|;
 block|}
 end_function

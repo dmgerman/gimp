@@ -1692,12 +1692,9 @@ name|hscale
 operator|=
 name|gtk_hscale_new
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|editor
 operator|->
 name|zoom_adjustment
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_range_set_update_policy
