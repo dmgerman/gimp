@@ -112,7 +112,7 @@ name|int
 name|max
 parameter_list|)
 block|{
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 init|=

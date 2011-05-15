@@ -93,7 +93,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|paper_relief_adjust
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|paper_relief_adjust
 init|=
@@ -104,7 +104,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|paper_scale_adjust
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|paper_scale_adjust
 init|=

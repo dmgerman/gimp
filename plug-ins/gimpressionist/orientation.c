@@ -66,7 +66,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|orient_num_adjust
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|orient_num_adjust
 init|=
@@ -77,7 +77,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|orient_first_adjust
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|orient_first_adjust
 init|=
@@ -88,7 +88,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|orient_last_adjust
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|orient_last_adjust
 init|=

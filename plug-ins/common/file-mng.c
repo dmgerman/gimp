@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae9fe1f0103
+DECL|enum|__anon275c00dc0103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -268,7 +268,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae9fe1f0203
+DECL|enum|__anon275c00dc0203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -5614,10 +5614,6 @@ argument_list|)
 expr_stmt|;
 name|scale_adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|mng_data
@@ -5733,10 +5729,6 @@ argument_list|)
 expr_stmt|;
 name|scale_adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|mng_data
@@ -5846,10 +5838,6 @@ argument_list|)
 expr_stmt|;
 name|scale_adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|mng_data
@@ -6130,10 +6118,6 @@ argument_list|)
 expr_stmt|;
 name|spinbutton_adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|mng_data

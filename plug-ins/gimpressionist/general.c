@@ -101,7 +101,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|general_dark_edge_adjust
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|general_dark_edge_adjust
 init|=
@@ -141,7 +141,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|general_shadow_adjust
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|general_shadow_adjust
 init|=
@@ -152,7 +152,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|general_shadow_depth
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|general_shadow_depth
 init|=
@@ -163,7 +163,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|general_shadow_blur
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|general_shadow_blur
 init|=
@@ -174,7 +174,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|dev_thresh_adjust
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|dev_thresh_adjust
 init|=

@@ -68,7 +68,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|colornoiseadjust
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|colornoiseadjust
 init|=

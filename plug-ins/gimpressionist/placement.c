@@ -79,7 +79,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|brush_density_adjust
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|brush_density_adjust
 init|=

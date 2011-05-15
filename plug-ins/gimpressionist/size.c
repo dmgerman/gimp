@@ -62,7 +62,7 @@ end_define
 begin_decl_stmt
 DECL|variable|sizenumadjust
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|sizenumadjust
 init|=
@@ -73,7 +73,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|sizefirstadjust
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|sizefirstadjust
 init|=
@@ -84,7 +84,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|sizelastadjust
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|sizelastadjust
 init|=
