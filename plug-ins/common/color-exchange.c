@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2744c6d20108
+DECL|struct|__anon2b2de9ba0108
 block|{
 DECL|member|from
 name|GimpRGB
@@ -3238,8 +3238,6 @@ name|x1
 decl_stmt|,
 name|y1
 decl_stmt|,
-name|x2
-decl_stmt|,
 name|y2
 decl_stmt|;
 name|gint
@@ -3307,12 +3305,6 @@ condition|)
 block|{
 return|return;
 block|}
-name|x2
-operator|=
-name|x1
-operator|+
-name|width
-expr_stmt|;
 name|y2
 operator|=
 name|y1

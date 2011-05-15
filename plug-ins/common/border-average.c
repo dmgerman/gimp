@@ -719,7 +719,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29faf4790108
+DECL|struct|__anon289b77290108
 typedef|typedef
 struct|struct
 block|{
@@ -854,12 +854,6 @@ modifier|*
 name|result
 parameter_list|)
 block|{
-name|gint
-name|width
-decl_stmt|;
-name|gint
-name|height
-decl_stmt|;
 name|gint
 name|x1
 decl_stmt|,
@@ -1066,18 +1060,6 @@ operator|=
 name|bucket_expo
 expr_stmt|;
 comment|/*  Get the size of the input image. (This will/must be the same    *  as the size of the output image.    */
-name|width
-operator|=
-name|drawable
-operator|->
-name|width
-expr_stmt|;
-name|height
-operator|=
-name|drawable
-operator|->
-name|height
-expr_stmt|;
 name|bytes
 operator|=
 name|drawable

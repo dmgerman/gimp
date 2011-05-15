@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28be59f80103
+DECL|enum|__anon2c11ec470103
 block|{
 DECL|enumerator|CURL_COLORS_FG_BG
 name|CURL_COLORS_FG_BG
@@ -108,7 +108,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28be59f80203
+DECL|enum|__anon2c11ec470203
 block|{
 DECL|enumerator|CURL_ORIENTATION_VERTICAL
 name|CURL_ORIENTATION_VERTICAL
@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28be59f80303
+DECL|enum|__anon2c11ec470303
 block|{
 DECL|enumerator|CURL_EDGE_LOWER_RIGHT
 name|CURL_EDGE_LOWER_RIGHT
@@ -217,7 +217,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28be59f80408
+DECL|struct|__anon2c11ec470408
 block|{
 DECL|member|colors
 name|CurlColors
@@ -3032,8 +3032,6 @@ name|gdouble
 name|intensity
 decl_stmt|,
 name|alpha
-decl_stmt|,
-name|beta
 decl_stmt|;
 name|GimpVector2
 name|v
@@ -3282,12 +3280,6 @@ operator|*
 name|dr_mag
 operator|)
 argument_list|)
-expr_stmt|;
-name|beta
-operator|=
-name|alpha
-operator|/
-literal|2
 expr_stmt|;
 comment|/* Init shade_curl */
 name|fore_grayval

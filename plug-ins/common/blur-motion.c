@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28defb1b0103
+DECL|enum|__anon2c377bd10103
 block|{
 DECL|enumerator|MBLUR_LINEAR
 name|MBLUR_LINEAR
@@ -108,7 +108,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28defb1b0208
+DECL|struct|__anon2c377bd10208
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -4497,10 +4497,6 @@ name|spinbutton
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|label
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|button
 decl_stmt|;
 name|GtkObject
@@ -5037,8 +5033,6 @@ operator|.
 name|center_x
 argument_list|)
 expr_stmt|;
-name|label
-operator|=
 name|gimp_size_entry_attach_label
 argument_list|(
 name|GIMP_SIZE_ENTRY
@@ -5086,8 +5080,6 @@ operator|.
 name|center_y
 argument_list|)
 expr_stmt|;
-name|label
-operator|=
 name|gimp_size_entry_attach_label
 argument_list|(
 name|GIMP_SIZE_ENTRY

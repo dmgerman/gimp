@@ -95,7 +95,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e82f860103
+DECL|enum|__anon2a5294110103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e82f860203
+DECL|enum|__anon2a5294110203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -129,7 +129,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e82f860308
+DECL|struct|__anon2a5294110308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e82f860408
+DECL|struct|__anon2a5294110408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -233,7 +233,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e82f860508
+DECL|struct|__anon2a5294110508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -5522,9 +5522,6 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|gint
-name|bytes
-decl_stmt|;
 name|gimp_preview_get_position
 argument_list|(
 name|preview
@@ -5546,12 +5543,6 @@ argument_list|,
 operator|&
 name|height
 argument_list|)
-expr_stmt|;
-name|bytes
-operator|=
-name|drawable
-operator|->
-name|bpp
 expr_stmt|;
 comment|/* Initialize source rows */
 name|gimp_pixel_rgn_init

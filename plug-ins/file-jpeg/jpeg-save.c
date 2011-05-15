@@ -276,7 +276,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dac5260108
+DECL|struct|__anon27709c260108
 block|{
 DECL|member|cinfo
 name|struct
@@ -356,7 +356,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dac5260208
+DECL|struct|__anon27709c260208
 block|{
 DECL|member|run
 name|gboolean
@@ -6560,7 +6560,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dac5260308
+DECL|struct|__anon27709c260308
 block|{
 DECL|member|pub
 name|struct
@@ -6804,11 +6804,6 @@ decl_stmt|;
 name|my_dest_ptr
 name|dest
 decl_stmt|;
-name|gboolean
-name|alpha
-init|=
-name|FALSE
-decl_stmt|;
 name|JSAMPROW
 name|scanline
 index|[
@@ -6912,10 +6907,6 @@ literal|4
 operator|)
 condition|)
 block|{
-name|alpha
-operator|=
-name|TRUE
-expr_stmt|;
 name|rbpp
 operator|=
 name|bpp

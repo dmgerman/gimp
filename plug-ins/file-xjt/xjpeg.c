@@ -736,9 +736,6 @@ name|GimpDrawable
 modifier|*
 name|l_drawable
 decl_stmt|;
-name|GimpImageType
-name|l_layer_type
-decl_stmt|;
 name|struct
 name|jpeg_decompress_struct
 name|cinfo
@@ -808,10 +805,6 @@ operator|.
 name|error_exit
 operator|=
 name|my_error_exit
-expr_stmt|;
-name|l_layer_type
-operator|=
-name|GIMP_GRAY_IMAGE
 expr_stmt|;
 comment|/* add alpha channel */
 name|gimp_layer_add_alpha

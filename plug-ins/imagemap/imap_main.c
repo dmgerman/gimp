@@ -5347,10 +5347,6 @@ name|GtkWidget
 modifier|*
 name|tools
 decl_stmt|;
-name|Menu_t
-modifier|*
-name|menu
-decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
@@ -5503,8 +5499,6 @@ name|init_stock_icons
 argument_list|()
 expr_stmt|;
 comment|/* Create menu */
-name|menu
-operator|=
 name|make_menu
 argument_list|(
 name|main_vbox

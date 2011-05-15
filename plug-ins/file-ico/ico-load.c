@@ -3261,9 +3261,6 @@ decl_stmt|;
 name|gint32
 name|image
 decl_stmt|;
-name|gint32
-name|layer
-decl_stmt|;
 name|guchar
 modifier|*
 name|buffer
@@ -3536,8 +3533,6 @@ name|i
 operator|++
 control|)
 block|{
-name|layer
-operator|=
 name|ico_load_layer
 argument_list|(
 name|fp
@@ -3616,9 +3611,6 @@ name|info
 decl_stmt|;
 name|gint32
 name|image
-decl_stmt|;
-name|gint32
-name|layer
 decl_stmt|;
 name|gint
 name|w
@@ -3935,8 +3927,6 @@ operator|*
 literal|4
 argument_list|)
 expr_stmt|;
-name|layer
-operator|=
 name|ico_load_layer
 argument_list|(
 name|fp
