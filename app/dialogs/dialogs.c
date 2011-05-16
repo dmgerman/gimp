@@ -1974,6 +1974,46 @@ block|}
 end_function
 
 begin_function
+specifier|static
+name|char
+modifier|*
+DECL|function|dialogs_get_dockrc_filepath (void)
+name|dialogs_get_dockrc_filepath
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+specifier|const
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
+name|filename
+operator|=
+name|g_getenv
+argument_list|(
+literal|"GIMP_TESTING_DOCKRC_NAME"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|filename
+condition|)
+name|filename
+operator|=
+literal|"dockrc"
+expr_stmt|;
+return|return
+name|gimp_personal_rc_file
+argument_list|(
+name|filename
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
 name|void
 DECL|function|dialogs_load_recent_docks (Gimp * gimp)
 name|dialogs_load_recent_docks
@@ -1983,9 +2023,9 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|gchar
+name|char
 modifier|*
-name|filename
+name|filepath
 decl_stmt|;
 name|GError
 modifier|*
@@ -2001,12 +2041,10 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|filename
+name|filepath
 operator|=
-name|gimp_personal_rc_file
-argument_list|(
-literal|"dockrc"
-argument_list|)
+name|dialogs_get_dockrc_filepath
+argument_list|()
 expr_stmt|;
 if|if
 condition|(
@@ -2020,7 +2058,7 @@ literal|"Parsing '%s'\n"
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|filename
+name|filepath
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2034,7 +2072,7 @@ argument_list|(
 name|global_recent_docks
 argument_list|)
 argument_list|,
-name|filename
+name|filepath
 argument_list|,
 name|NULL
 argument_list|,
@@ -2094,7 +2132,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|filename
+name|filepath
 argument_list|)
 expr_stmt|;
 block|}
@@ -2112,7 +2150,7 @@ parameter_list|)
 block|{
 name|gchar
 modifier|*
-name|filename
+name|filepath
 decl_stmt|;
 name|GError
 modifier|*
@@ -2128,12 +2166,10 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|filename
+name|filepath
 operator|=
-name|gimp_personal_rc_file
-argument_list|(
-literal|"dockrc"
-argument_list|)
+name|dialogs_get_dockrc_filepath
+argument_list|()
 expr_stmt|;
 if|if
 condition|(
@@ -2147,7 +2183,7 @@ literal|"Writing '%s'\n"
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|filename
+name|filepath
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2161,7 +2197,7 @@ argument_list|(
 name|global_recent_docks
 argument_list|)
 argument_list|,
-name|filename
+name|filepath
 argument_list|,
 literal|"recently closed docks"
 argument_list|,
@@ -2196,7 +2232,7 @@ expr_stmt|;
 block|}
 name|g_free
 argument_list|(
-name|filename
+name|filepath
 argument_list|)
 expr_stmt|;
 block|}
