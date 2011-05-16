@@ -29,7 +29,7 @@ file|<libgimp/gimp.h>
 end_include
 
 begin_typedef
-DECL|struct|__anon2af2d7990108
+DECL|struct|__anon2a28c19f0108
 typedef|typedef
 struct|struct
 block|{
@@ -39,13 +39,16 @@ name|gint32
 name|ID
 decl_stmt|;
 DECL|typedef|PyGimpImage
+DECL|typedef|PyGimpItem
 block|}
 name|PyGimpImage
+operator|,
+name|PyGimpItem
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2af2d7990208
+DECL|struct|__anon2a28c19f0208
 typedef|typedef
 struct|struct
 block|{
@@ -61,7 +64,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2af2d7990308
+DECL|struct|__anon2a28c19f0308
 typedef|typedef
 struct|struct
 block|{
@@ -88,7 +91,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2af2d7990408
+DECL|struct|__anon2a28c19f0408
 typedef|typedef
 struct|struct
 block|{
@@ -136,6 +139,23 @@ modifier|*
 function_decl|(
 modifier|*
 name|display_new
+function_decl|)
+parameter_list|(
+name|gint32
+name|ID
+parameter_list|)
+function_decl|;
+DECL|member|Item_Type
+name|PyTypeObject
+modifier|*
+name|Item_Type
+decl_stmt|;
+DECL|member|item_new
+name|PyObject
+modifier|*
+function_decl|(
+modifier|*
+name|item_new
 function_decl|)
 parameter_list|(
 name|gint32
@@ -301,6 +321,22 @@ define|#
 directive|define
 name|pygimp_display_new
 value|(_PyGimp_API->display_new)
+end_define
+
+begin_define
+DECL|macro|PyGimpItem_Type
+define|#
+directive|define
+name|PyGimpItem_Type
+value|(_PyGimp_API->Item_Type)
+end_define
+
+begin_define
+DECL|macro|pygimp_item_new
+define|#
+directive|define
+name|pygimp_item_new
+value|(_PyGimp_API->item_new)
 end_define
 
 begin_define

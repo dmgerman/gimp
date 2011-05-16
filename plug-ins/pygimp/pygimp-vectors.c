@@ -43,7 +43,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2c25ef930108
+DECL|struct|__anon27e9b7840108
 typedef|typedef
 struct|struct
 block|{
@@ -4729,11 +4729,8 @@ comment|/* tp_members */
 name|vectors_getsets
 block|,
 comment|/* tp_getset */
-operator|(
-name|PyTypeObject
-operator|*
-operator|)
-literal|0
+operator|&
+name|PyGimpItem_Type
 block|,
 comment|/* tp_base */
 operator|(

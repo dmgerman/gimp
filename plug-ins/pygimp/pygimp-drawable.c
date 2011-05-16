@@ -6758,11 +6758,8 @@ comment|/* tp_members */
 name|drw_getsets
 block|,
 comment|/* tp_getset */
-operator|(
-name|PyTypeObject
-operator|*
-operator|)
-literal|0
+operator|&
+name|PyGimpItem_Type
 block|,
 comment|/* tp_base */
 operator|(

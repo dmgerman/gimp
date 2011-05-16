@@ -302,6 +302,35 @@ end_function_decl
 begin_decl_stmt
 specifier|extern
 name|PyTypeObject
+name|PyGimpItem_Type
+decl_stmt|;
+end_decl_stmt
+
+begin_define
+DECL|macro|pygimp_item_check (v)
+define|#
+directive|define
+name|pygimp_item_check
+parameter_list|(
+name|v
+parameter_list|)
+value|(PyObject_TypeCheck(v,&PyGimpItem_Type))
+end_define
+
+begin_function_decl
+name|PyObject
+modifier|*
+name|pygimp_item_new
+parameter_list|(
+name|gint32
+name|ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_decl_stmt
+specifier|extern
+name|PyTypeObject
 name|PyGimpDrawable_Type
 decl_stmt|;
 end_decl_stmt
@@ -391,7 +420,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2c2d8bf40108
+DECL|struct|__anon2c3bc1910108
 typedef|typedef
 struct|struct
 block|{
@@ -448,7 +477,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2c2d8bf40208
+DECL|struct|__anon2c3bc1910208
 typedef|typedef
 struct|struct
 block|{
@@ -518,7 +547,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2c2d8bf40308
+DECL|struct|__anon2c3bc1910308
 typedef|typedef
 struct|struct
 block|{
@@ -608,7 +637,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c2d8bf40408
+DECL|struct|__anon2c3bc1910408
 typedef|typedef
 struct|struct
 block|{
