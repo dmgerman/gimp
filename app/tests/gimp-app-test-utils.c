@@ -88,10 +88,9 @@ file|"gimp-app-test-utils.h"
 end_include
 
 begin_function
-specifier|static
 name|void
-DECL|function|gimp_test_utils_set_env_to_subdir (const gchar * root_env_var,const gchar * subdir,const gchar * target_env_var)
-name|gimp_test_utils_set_env_to_subdir
+DECL|function|gimp_test_utils_set_env_to_subpath (const gchar * root_env_var,const gchar * subdir,const gchar * target_env_var)
+name|gimp_test_utils_set_env_to_subpath
 parameter_list|(
 specifier|const
 name|gchar
@@ -201,7 +200,7 @@ modifier|*
 name|subdir
 parameter_list|)
 block|{
-name|gimp_test_utils_set_env_to_subdir
+name|gimp_test_utils_set_env_to_subpath
 argument_list|(
 name|root_env_var
 argument_list|,
@@ -227,7 +226,7 @@ name|void
 parameter_list|)
 block|{
 comment|/* GIMP_TESTING_ABS_TOP_SRCDIR is set by the automake test runner,    * see Makefile.am    */
-name|gimp_test_utils_set_env_to_subdir
+name|gimp_test_utils_set_env_to_subpath
 argument_list|(
 literal|"GIMP_TESTING_ABS_TOP_SRCDIR"
 comment|/*root_env_var*/
