@@ -1689,6 +1689,8 @@ name|basename
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
 name|gimp_create_display
 argument_list|(
 name|image
@@ -1701,7 +1703,15 @@ name|GIMP_UNIT_PIXEL
 argument_list|,
 literal|1.0
 argument_list|)
+condition|)
+block|{
+comment|/*  the display owns the image now  */
+name|g_object_unref
+argument_list|(
+name|image
+argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 operator|!
@@ -1772,12 +1782,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/*  the display owns the image now  */
-name|g_object_unref
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
 comment|/*  announce that we opened this image  */
 name|gimp_image_opened
 argument_list|(
