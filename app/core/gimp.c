@@ -327,7 +327,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b124e80103
+DECL|enum|__anon278c96460103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -4062,7 +4062,15 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-comment|/*  initialize the list of gimp tool presets   */
+comment|/*  initialize the list of gimp tool presets if we have a GUI  */
+if|if
+condition|(
+operator|!
+name|gimp
+operator|->
+name|no_interface
+condition|)
+block|{
 name|status_callback
 argument_list|(
 name|NULL
@@ -4090,6 +4098,7 @@ operator|->
 name|no_data
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  initialize the template list  */
 name|status_callback
 argument_list|(
