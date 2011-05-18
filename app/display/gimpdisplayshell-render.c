@@ -1535,6 +1535,12 @@ name|h
 operator|=
 name|h
 expr_stmt|;
+comment|/* This function must be called before switching from drawing    * on the surface with cairo to drawing on it directly    */
+name|cairo_surface_flush
+argument_list|(
+name|dest
+argument_list|)
+expr_stmt|;
 name|info
 operator|->
 name|dest
