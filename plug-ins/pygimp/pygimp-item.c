@@ -59,6 +59,7 @@ file|<glib-object.h>
 end_include
 
 begin_function
+specifier|static
 name|PyObject
 modifier|*
 DECL|function|item_from_id (PyObject * not_used,PyObject * args)

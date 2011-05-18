@@ -64,6 +64,12 @@ directive|include
 file|<glib-object.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<glib/gprintf.h>
+end_include
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -92,7 +98,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b84bf030108
+DECL|struct|__anon295917e90108
 typedef|typedef
 struct|struct
 block|{
@@ -112,7 +118,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b84bf030208
+DECL|struct|__anon295917e90208
 typedef|typedef
 struct|struct
 block|{
@@ -1709,12 +1715,6 @@ name|x
 decl_stmt|,
 modifier|*
 name|y
-decl_stmt|,
-modifier|*
-name|w
-decl_stmt|,
-modifier|*
-name|h
 decl_stmt|;
 name|GimpParam
 modifier|*
