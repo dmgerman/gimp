@@ -48,13 +48,13 @@ parameter_list|(
 name|function
 parameter_list|)
 define|\
-value|g_test_add ("/gimp-session-2-8-compatibility-multi-window/" #function, \               GimpTestFixture, \               NULL, \               NULL, \               function, \               NULL);
+value|g_test_add ("/gimp-session-2-8-compatibility-single-window/" #function, \               GimpTestFixture, \               NULL, \               NULL, \               function, \               NULL);
 end_define
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c741bda0108
+DECL|struct|__anon2bd4735e0108
 block|{
 DECL|member|dummy
 name|int
@@ -67,7 +67,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * Tests that a single-window sessionrc in GIMP 2.8 format is loaded  * and written (thus also interpreted) like we expect.  **/
+comment|/**  * Tests that a multi-window sessionrc in GIMP 2.8 format is loaded  * and written (thus also interpreted) like we expect.  **/
 end_comment
 
 begin_function
@@ -86,15 +86,15 @@ parameter_list|)
 block|{
 name|gimp_test_session_load_and_write_session_files
 argument_list|(
-literal|"sessionrc-2-8-multi-window"
+literal|"sessionrc-2-8-single-window"
 argument_list|,
 literal|"dockrc-2-8"
 argument_list|,
-literal|"sessionrc-expected-multi-window"
+literal|"sessionrc-expected-single-window"
 argument_list|,
 literal|"dockrc-expected"
 argument_list|,
-name|FALSE
+name|TRUE
 comment|/*single_window_mode*/
 argument_list|)
 expr_stmt|;

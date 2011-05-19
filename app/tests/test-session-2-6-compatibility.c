@@ -54,7 +54,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0759360108
+DECL|struct|__anon2755a44d0108
 block|{
 DECL|member|dummy
 name|int
@@ -93,6 +93,9 @@ argument_list|,
 literal|"sessionrc-expected-2-6"
 argument_list|,
 literal|"dockrc-expected"
+argument_list|,
+name|FALSE
+comment|/*single_window_mode*/
 argument_list|)
 expr_stmt|;
 block|}

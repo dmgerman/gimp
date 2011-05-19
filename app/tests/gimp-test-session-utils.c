@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1a83980108
+DECL|struct|__anon2b86df1a0108
 block|{
 DECL|member|filename
 name|gchar
@@ -451,7 +451,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_test_session_load_and_write_session_files (const gchar * loaded_sessionrc,const gchar * loaded_dockrc,const gchar * expected_sessionrc,const gchar * expected_dockrc)
+DECL|function|gimp_test_session_load_and_write_session_files (const gchar * loaded_sessionrc,const gchar * loaded_dockrc,const gchar * expected_sessionrc,const gchar * expected_dockrc,gboolean single_window_mode)
 name|gimp_test_session_load_and_write_session_files
 parameter_list|(
 specifier|const
@@ -473,6 +473,9 @@ specifier|const
 name|gchar
 modifier|*
 name|expected_dockrc
+parameter_list|,
+name|gboolean
+name|single_window_mode
 parameter_list|)
 block|{
 name|Gimp
@@ -551,6 +554,12 @@ name|dockrc_filename
 init|=
 name|NULL
 decl_stmt|;
+name|gchar
+modifier|*
+name|gimprc_filename
+init|=
+name|NULL
+decl_stmt|;
 comment|/* Make sure to run this before we use any GIMP functions */
 name|gimp_test_utils_set_gimp2_directory
 argument_list|(
@@ -622,12 +631,39 @@ comment|/*overwrite*/
 argument_list|)
 expr_stmt|;
 comment|/* Start up GIMP */
+if|if
+condition|(
+name|single_window_mode
+condition|)
+block|{
+name|gimprc_filename
+operator|=
+name|g_build_filename
+argument_list|(
+name|g_getenv
+argument_list|(
+literal|"GIMP_TESTING_ABS_TOP_SRCDIR"
+argument_list|)
+argument_list|,
+literal|"app/tests/gimpdir/gimprc-single-window"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
 name|gimp
 operator|=
-name|gimp_init_for_gui_testing
+name|gimp_init_for_gui_testing_with_rc
 argument_list|(
 name|TRUE
 comment|/*show_gui*/
+argument_list|,
+name|gimprc_filename
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|gimprc_filename
 argument_list|)
 expr_stmt|;
 comment|/* Let the main loop run until idle to let things stabilize. This    * includes parsing sessionrc and dockrc    */

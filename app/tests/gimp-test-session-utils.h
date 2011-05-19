@@ -39,6 +39,9 @@ specifier|const
 name|gchar
 modifier|*
 name|expected_dockrc
+parameter_list|,
+name|gboolean
+name|single_window_mode
 parameter_list|)
 function_decl|;
 end_function_decl
