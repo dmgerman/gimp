@@ -81,7 +81,7 @@ DECL|macro|PG_DEBUG
 define|#
 directive|define
 name|PG_DEBUG
-value|2
+value|0
 end_define
 
 begin_endif
@@ -98,7 +98,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon295917e90108
+DECL|struct|__anon2c9089810108
 typedef|typedef
 struct|struct
 block|{
@@ -118,7 +118,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon295917e90208
+DECL|struct|__anon2c9089810208
 typedef|typedef
 struct|struct
 block|{
@@ -1922,6 +1922,11 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+name|PG_DEBUG
+operator|>
+literal|1
 name|g_printf
 argument_list|(
 literal|"param_from_tuple: type: %d, PDB_ITEM: %d\n"
@@ -1938,6 +1943,8 @@ argument_list|,
 name|GIMP_PDB_ITEM
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 switch|switch
 condition|(
 name|ptype
