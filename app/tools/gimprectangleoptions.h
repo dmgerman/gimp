@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae26ab00103
+DECL|enum|__anon2b55faf60103
 block|{
 DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_0
 name|GIMP_RECTANGLE_OPTIONS_PROP_0
@@ -225,7 +225,7 @@ name|gboolean
 name|highlight
 decl_stmt|;
 DECL|member|guide
-name|GimpRectangleGuide
+name|GimpGuidesType
 name|guide
 decl_stmt|;
 DECL|member|x

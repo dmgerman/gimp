@@ -41,7 +41,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b61161f0103
+DECL|enum|__anon298d57500103
 block|{
 DECL|enumerator|GIMP_BUTTON_PRESS_NORMAL
 name|GIMP_BUTTON_PRESS_NORMAL
@@ -78,7 +78,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b61161f0203
+DECL|enum|__anon298d57500203
 block|{
 DECL|enumerator|GIMP_BUTTON_RELEASE_NORMAL
 name|GIMP_BUTTON_RELEASE_NORMAL
@@ -94,58 +94,6 @@ name|GIMP_BUTTON_RELEASE_NO_MOTION
 DECL|typedef|GimpButtonReleaseType
 block|}
 name|GimpButtonReleaseType
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_TYPE_RECTANGLE_GUIDE
-define|#
-directive|define
-name|GIMP_TYPE_RECTANGLE_GUIDE
-value|(gimp_rectangle_guide_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_rectangle_guide_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2b61161f0303
-block|{
-DECL|enumerator|GIMP_RECTANGLE_GUIDE_NONE
-name|GIMP_RECTANGLE_GUIDE_NONE
-block|,
-comment|/*< desc="No guides">*/
-DECL|enumerator|GIMP_RECTANGLE_GUIDE_CENTER_LINES
-name|GIMP_RECTANGLE_GUIDE_CENTER_LINES
-block|,
-comment|/*< desc="Center lines">*/
-DECL|enumerator|GIMP_RECTANGLE_GUIDE_THIRDS
-name|GIMP_RECTANGLE_GUIDE_THIRDS
-block|,
-comment|/*< desc="Rule of thirds">*/
-DECL|enumerator|GIMP_RECTANGLE_GUIDE_FIFTHS
-name|GIMP_RECTANGLE_GUIDE_FIFTHS
-block|,
-comment|/*< desc="Rule of fifths">*/
-DECL|enumerator|GIMP_RECTANGLE_GUIDE_GOLDEN
-name|GIMP_RECTANGLE_GUIDE_GOLDEN
-block|,
-comment|/*< desc="Golden sections">*/
-DECL|enumerator|GIMP_RECTANGLE_GUIDE_DIAGONALS
-name|GIMP_RECTANGLE_GUIDE_DIAGONALS
-comment|/*< desc="Diagonal lines">*/
-DECL|typedef|GimpRectangleGuide
-block|}
-name|GimpRectangleGuide
 typedef|;
 end_typedef
 
@@ -170,7 +118,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b61161f0403
+DECL|enum|__anon298d57500303
 block|{
 DECL|enumerator|GIMP_RECTANGLE_CONSTRAIN_NONE
 name|GIMP_RECTANGLE_CONSTRAIN_NONE
@@ -207,7 +155,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b61161f0503
+DECL|enum|__anon298d57500403
 block|{
 DECL|enumerator|GIMP_RECTANGLE_PRECISION_INT
 name|GIMP_RECTANGLE_PRECISION_INT
@@ -241,7 +189,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b61161f0603
+DECL|enum|__anon298d57500503
 block|{
 DECL|enumerator|GIMP_RECTANGLE_TOOL_FIXED_ASPECT
 name|GIMP_RECTANGLE_TOOL_FIXED_ASPECT
@@ -286,7 +234,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b61161f0703
+DECL|enum|__anon298d57500603
 block|{
 DECL|enumerator|GIMP_RECT_SELECT_MODE_FREE
 name|GIMP_RECT_SELECT_MODE_FREE
@@ -326,7 +274,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b61161f0803
+DECL|enum|__anon298d57500703
 block|{
 DECL|enumerator|GIMP_TRANSFORM_TYPE_LAYER
 name|GIMP_TRANSFORM_TYPE_LAYER
@@ -366,7 +314,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b61161f0903
+DECL|enum|__anon298d57500803
 block|{
 DECL|enumerator|GIMP_TRANSFORM_PREVIEW_TYPE_OUTLINE
 name|GIMP_TRANSFORM_PREVIEW_TYPE_OUTLINE
@@ -410,7 +358,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b61161f0a03
+DECL|enum|__anon298d57500903
 block|{
 DECL|enumerator|GIMP_TRANSFORM_GRID_TYPE_N_LINES
 name|GIMP_TRANSFORM_GRID_TYPE_N_LINES
@@ -446,7 +394,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b61161f0b03
+DECL|enum|__anon298d57500a03
 block|{
 DECL|enumerator|GIMP_VECTOR_MODE_DESIGN
 name|GIMP_VECTOR_MODE_DESIGN
@@ -486,7 +434,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b61161f0c03
+DECL|enum|__anon298d57500b03
 block|{
 DECL|enumerator|GIMP_TOOL_ACTION_PAUSE
 name|GIMP_TOOL_ACTION_PAUSE
@@ -510,7 +458,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b61161f0d03
+DECL|enum|__anon298d57500c03
 block|{
 DECL|enumerator|SELECTION_SELECT
 name|SELECTION_SELECT
@@ -540,7 +488,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b61161f0e03
+DECL|enum|__anon298d57500d03
 block|{
 DECL|enumerator|GIMP_TRANSLATE_MODE_VECTORS
 name|GIMP_TRANSLATE_MODE_VECTORS
@@ -579,7 +527,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b61161f0f03
+DECL|enum|__anon298d57500e03
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT

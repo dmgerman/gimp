@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7964040103
+DECL|enum|__anon28a18eb00103
 block|{
 DECL|enumerator|GIMP_CURSOR_PRECISION_PIXEL_CENTER
 name|GIMP_CURSOR_PRECISION_PIXEL_CENTER
@@ -50,6 +50,58 @@ name|GIMP_CURSOR_PRECISION_SUBPIXEL
 DECL|typedef|GimpCursorPrecision
 block|}
 name|GimpCursorPrecision
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_GUIDES_TYPE
+define|#
+directive|define
+name|GIMP_TYPE_GUIDES_TYPE
+value|(gimp_guides_type_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_guides_type_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon28a18eb00203
+block|{
+DECL|enumerator|GIMP_GUIDES_NONE
+name|GIMP_GUIDES_NONE
+block|,
+comment|/*< desc="No guides">*/
+DECL|enumerator|GIMP_GUIDES_CENTER_LINES
+name|GIMP_GUIDES_CENTER_LINES
+block|,
+comment|/*< desc="Center lines">*/
+DECL|enumerator|GIMP_GUIDES_THIRDS
+name|GIMP_GUIDES_THIRDS
+block|,
+comment|/*< desc="Rule of thirds">*/
+DECL|enumerator|GIMP_GUIDES_FIFTHS
+name|GIMP_GUIDES_FIFTHS
+block|,
+comment|/*< desc="Rule of fifths">*/
+DECL|enumerator|GIMP_GUIDES_GOLDEN
+name|GIMP_GUIDES_GOLDEN
+block|,
+comment|/*< desc="Golden sections">*/
+DECL|enumerator|GIMP_GUIDES_DIAGONALS
+name|GIMP_GUIDES_DIAGONALS
+comment|/*< desc="Diagonal lines">*/
+DECL|typedef|GimpGuidesType
+block|}
+name|GimpGuidesType
 typedef|;
 end_typedef
 
@@ -74,7 +126,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7964040203
+DECL|enum|__anon28a18eb00303
 block|{
 DECL|enumerator|GIMP_HANDLE_SQUARE
 name|GIMP_HANDLE_SQUARE
@@ -117,7 +169,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7964040303
+DECL|enum|__anon28a18eb00403
 block|{
 DECL|enumerator|GIMP_HANDLE_ANCHOR_CENTER
 name|GIMP_HANDLE_ANCHOR_CENTER
@@ -172,7 +224,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7964040403
+DECL|enum|__anon28a18eb00503
 block|{
 comment|/* Make a best guess */
 DECL|enumerator|GIMP_ZOOM_FOCUS_BEST_GUESS

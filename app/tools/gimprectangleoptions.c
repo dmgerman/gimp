@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1ca0310103
+DECL|enum|__anon29d8aa320103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -357,9 +357,9 @@ argument_list|(
 literal|"Composition guides such as rule of thirds"
 argument_list|)
 argument_list|,
-name|GIMP_TYPE_RECTANGLE_GUIDE
+name|GIMP_TYPE_GUIDES_TYPE
 argument_list|,
-name|GIMP_RECTANGLE_GUIDE_NONE
+name|GIMP_GUIDES_NONE
 argument_list|,
 name|GIMP_CONFIG_PARAM_FLAGS
 operator||
