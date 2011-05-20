@@ -1977,8 +1977,8 @@ begin_function
 specifier|static
 name|char
 modifier|*
-DECL|function|dialogs_get_dockrc_filepath (void)
-name|dialogs_get_dockrc_filepath
+DECL|function|dialogs_get_dockrc_filename (void)
+name|dialogs_get_dockrc_filename
 parameter_list|(
 name|void
 parameter_list|)
@@ -1986,9 +1986,9 @@ block|{
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|basename
 decl_stmt|;
-name|filename
+name|basename
 operator|=
 name|g_getenv
 argument_list|(
@@ -1998,16 +1998,16 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|filename
+name|basename
 condition|)
-name|filename
+name|basename
 operator|=
 literal|"dockrc"
 expr_stmt|;
 return|return
 name|gimp_personal_rc_file
 argument_list|(
-name|filename
+name|basename
 argument_list|)
 return|;
 block|}
@@ -2023,9 +2023,9 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
-name|filepath
+name|filename
 decl_stmt|;
 name|GError
 modifier|*
@@ -2041,9 +2041,9 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|filepath
+name|filename
 operator|=
-name|dialogs_get_dockrc_filepath
+name|dialogs_get_dockrc_filename
 argument_list|()
 expr_stmt|;
 if|if
@@ -2058,7 +2058,7 @@ literal|"Parsing '%s'\n"
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|filepath
+name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2072,7 +2072,7 @@ argument_list|(
 name|global_recent_docks
 argument_list|)
 argument_list|,
-name|filepath
+name|filename
 argument_list|,
 name|NULL
 argument_list|,
@@ -2132,7 +2132,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|filepath
+name|filename
 argument_list|)
 expr_stmt|;
 block|}
@@ -2150,7 +2150,7 @@ parameter_list|)
 block|{
 name|gchar
 modifier|*
-name|filepath
+name|filename
 decl_stmt|;
 name|GError
 modifier|*
@@ -2166,9 +2166,9 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|filepath
+name|filename
 operator|=
-name|dialogs_get_dockrc_filepath
+name|dialogs_get_dockrc_filename
 argument_list|()
 expr_stmt|;
 if|if
@@ -2183,7 +2183,7 @@ literal|"Writing '%s'\n"
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|filepath
+name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2197,7 +2197,7 @@ argument_list|(
 name|global_recent_docks
 argument_list|)
 argument_list|,
-name|filepath
+name|filename
 argument_list|,
 literal|"recently closed docks"
 argument_list|,
@@ -2232,7 +2232,7 @@ expr_stmt|;
 block|}
 name|g_free
 argument_list|(
-name|filepath
+name|filename
 argument_list|)
 expr_stmt|;
 block|}
