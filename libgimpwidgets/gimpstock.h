@@ -547,6 +547,11 @@ define|#
 directive|define
 name|GIMP_STOCK_TOOL_UNIFIED_TRANSFORM
 value|"gimp-tool-unified-transform"
+DECL|macro|GIMP_STOCK_TOOL_WARP
+define|#
+directive|define
+name|GIMP_STOCK_TOOL_WARP
+value|"gimp-tool-warp"
 DECL|macro|GIMP_STOCK_TOOL_ZOOM
 define|#
 directive|define
