@@ -2126,6 +2126,14 @@ value|"gimp-tool-vectors"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TOOL_WARP
+define|#
+directive|define
+name|GIMP_HELP_TOOL_WARP
+value|"gimp-tool-warp"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TOOL_ZOOM
 define|#
 directive|define
