@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d9e6e50108
+DECL|struct|__anon2ae9638f0108
 block|{
 DECL|member|l
 name|gfloat
@@ -246,7 +246,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d9e6e50208
+DECL|struct|__anon2ae9638f0208
 block|{
 DECL|member|bgdist
 name|gfloat
@@ -4486,6 +4486,13 @@ operator|&
 name|SIOX_REFINEMENT_ADD_BACKGROUND
 condition|)
 block|{
+name|g_free
+argument_list|(
+name|state
+operator|->
+name|bgsig
+argument_list|)
+expr_stmt|;
 comment|/* Create color signature for the background */
 name|state
 operator|->
@@ -4559,6 +4566,13 @@ operator|&
 name|SIOX_REFINEMENT_ADD_FOREGROUND
 condition|)
 block|{
+name|g_free
+argument_list|(
+name|state
+operator|->
+name|fgsig
+argument_list|)
+expr_stmt|;
 comment|/* Create color signature for the foreground */
 name|state
 operator|->

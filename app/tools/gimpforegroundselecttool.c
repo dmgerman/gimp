@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad480c90108
+DECL|struct|__anon296235890108
 block|{
 DECL|member|width
 name|gint
@@ -3533,6 +3533,10 @@ block|}
 if|if
 condition|(
 name|refinement
+operator|&&
+name|fg_select
+operator|->
+name|strokes
 condition|)
 block|{
 name|fg_select
