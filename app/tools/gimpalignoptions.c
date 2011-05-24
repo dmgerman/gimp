@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0e290d0103
+DECL|enum|__anon2c4304060103
 block|{
 DECL|enumerator|ALIGN_BUTTON_CLICKED
 name|ALIGN_BUTTON_CLICKED
@@ -78,7 +78,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0e290d0203
+DECL|enum|__anon2c4304060203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -279,7 +279,7 @@ literal|"offset-x"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Horizontal offset for distrubution"
+literal|"Horizontal offset for distribution"
 argument_list|)
 argument_list|,
 operator|-
@@ -302,7 +302,7 @@ literal|"offset-y"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Vertical offset for distrubution"
+literal|"Vertical offset for distribution"
 argument_list|)
 argument_list|,
 operator|-
