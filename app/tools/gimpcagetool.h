@@ -188,7 +188,7 @@ name|GeglBuffer
 modifier|*
 name|coef
 decl_stmt|;
-comment|/* Gegl where the coefficient of the transformation are stored */
+comment|/* Gegl buffer where the coefficient of the transformation are stored */
 DECL|member|dirty_coef
 name|gboolean
 name|dirty_coef
