@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296235890108
+DECL|struct|__anon2b9401f60108
 block|{
 DECL|member|width
 name|gint
@@ -3441,6 +3441,18 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/* To compress close notify signals, the process is delayed by */
+end_comment
+
+begin_define
+DECL|macro|MINIMUM_DELAY
+define|#
+directive|define
+name|MINIMUM_DELAY
+value|300
+end_define
+
 begin_function
 specifier|static
 name|void
@@ -3562,9 +3574,11 @@ name|fg_select
 operator|->
 name|idle_id
 operator|=
-name|g_idle_add_full
+name|g_timeout_add_full
 argument_list|(
 name|G_PRIORITY_LOW
+argument_list|,
+name|MINIMUM_DELAY
 argument_list|,
 operator|(
 name|GSourceFunc
