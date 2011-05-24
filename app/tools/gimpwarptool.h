@@ -123,6 +123,30 @@ DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
+DECL|member|coords_buffer
+name|GeglBuffer
+modifier|*
+name|coords_buffer
+decl_stmt|;
+comment|/* Gegl buffer where coordinates are stored */
+DECL|member|coords_node
+name|GeglNode
+modifier|*
+name|coords_node
+decl_stmt|;
+comment|/* Gegl node that read in the coords buffer */
+DECL|member|render_node
+name|GeglNode
+modifier|*
+name|render_node
+decl_stmt|;
+comment|/* Gegl node graph to render the transfromation */
+DECL|member|image_map
+name|GimpImageMap
+modifier|*
+name|image_map
+decl_stmt|;
+comment|/* For preview */
 block|}
 struct|;
 end_struct
