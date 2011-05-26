@@ -269,6 +269,11 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
+name|cairo_new_path
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
 name|cairo_restore
 argument_list|(
 name|cr
@@ -305,7 +310,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c4b90c0108
+DECL|struct|__anon2a35d5250108
 block|{
 DECL|member|cr
 name|cairo_t
