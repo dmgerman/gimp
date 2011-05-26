@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4d04dd0103
+DECL|enum|__anon2c43867d0103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -4712,6 +4712,8 @@ block|{
 name|gimp_session_info_read_geometry
 argument_list|(
 name|session_info
+argument_list|,
+name|cevent
 argument_list|)
 expr_stmt|;
 name|GIMP_LOG

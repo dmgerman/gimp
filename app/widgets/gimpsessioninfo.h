@@ -195,6 +195,10 @@ parameter_list|(
 name|GimpSessionInfo
 modifier|*
 name|info
+parameter_list|,
+name|GdkEventConfigure
+modifier|*
+name|cevent
 parameter_list|)
 function_decl|;
 end_function_decl

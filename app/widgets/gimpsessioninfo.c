@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278d5dc80103
+DECL|enum|__anon2b93fe130103
 block|{
 DECL|enumerator|SESSION_INFO_FACTORY_ENTRY
 name|SESSION_INFO_FACTORY_ENTRY
@@ -2615,17 +2615,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_session_info_read_geometry:  * @info:  *  * Read geometry related information from the associated widget.  **/
+comment|/**  * gimp_session_info_read_geometry:  * @info:  A #GimpSessionInfo  * @cevent A #GdkEventConfigure. If set, use the size from here  *         instead of from the window allocation.  *  * Read geometry related information from the associated widget.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_session_info_read_geometry (GimpSessionInfo * info)
+DECL|function|gimp_session_info_read_geometry (GimpSessionInfo * info,GdkEventConfigure * cevent)
 name|gimp_session_info_read_geometry
 parameter_list|(
 name|GimpSessionInfo
 modifier|*
 name|info
+parameter_list|,
+name|GdkEventConfigure
+modifier|*
+name|cevent
 parameter_list|)
 block|{
 name|GdkWindow
@@ -2719,6 +2723,32 @@ name|info
 argument_list|)
 condition|)
 block|{
+name|int
+name|width
+decl_stmt|;
+name|int
+name|height
+decl_stmt|;
+if|if
+condition|(
+name|cevent
+condition|)
+block|{
+name|width
+operator|=
+name|cevent
+operator|->
+name|width
+expr_stmt|;
+name|height
+operator|=
+name|cevent
+operator|->
+name|height
+expr_stmt|;
+block|}
+else|else
+block|{
 name|GtkAllocation
 name|allocation
 decl_stmt|;
@@ -2734,14 +2764,25 @@ operator|&
 name|allocation
 argument_list|)
 expr_stmt|;
+name|width
+operator|=
+name|allocation
+operator|.
+name|width
+expr_stmt|;
+name|height
+operator|=
+name|allocation
+operator|.
+name|height
+expr_stmt|;
+block|}
 name|info
 operator|->
 name|p
 operator|->
 name|width
 operator|=
-name|allocation
-operator|.
 name|width
 expr_stmt|;
 name|info
@@ -2750,8 +2791,6 @@ name|p
 operator|->
 name|height
 operator|=
-name|allocation
-operator|.
 name|height
 expr_stmt|;
 block|}
@@ -2967,6 +3006,9 @@ expr_stmt|;
 name|gimp_session_info_read_geometry
 argument_list|(
 name|info
+argument_list|,
+name|NULL
+comment|/*cevent*/
 argument_list|)
 expr_stmt|;
 name|info
