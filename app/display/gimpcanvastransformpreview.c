@@ -193,7 +193,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd993660103
+DECL|enum|__anon290a3ecb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4258,6 +4258,11 @@ operator|!
 name|dx
 condition|)
 return|return;
+name|cairo_surface_flush
+argument_list|(
+name|area
+argument_list|)
+expr_stmt|;
 name|pptr
 operator|=
 operator|(
@@ -5185,6 +5190,11 @@ operator|=
 name|v
 operator|+
 name|mask_offy
+expr_stmt|;
+name|cairo_surface_flush
+argument_list|(
+name|area
+argument_list|)
 expr_stmt|;
 name|pptr
 operator|=
