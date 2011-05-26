@@ -595,7 +595,7 @@ literal|1
 comment|/*view_size*/
 argument_list|)
 expr_stmt|;
-comment|/* Press the focused widget, it should be the Ok button. It will    * take a while for the image to be created to loop for a while    */
+comment|/* Press the focused widget, it should be the Ok button. It will    * take a while for the image to be created so loop for a while    */
 name|gtk_widget_activate
 argument_list|(
 name|gtk_window_get_focus
