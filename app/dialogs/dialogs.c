@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpguiconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -90,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpsessioninfo-aux.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimptoolbox.h"
 end_include
 
@@ -103,6 +115,12 @@ begin_include
 include|#
 directive|include
 file|"dialogs-constructors.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimp-log.h"
 end_include
 
 begin_include
@@ -146,6 +164,8 @@ value|, \     NULL
 comment|/* help_id          */
 value|, \     NULL
 comment|/* new_func         */
+value|, \     dialogs_restore_dialog
+comment|/* restore_func     */
 value|, \     0
 comment|/* view_size        */
 value|, \     singleton
@@ -190,6 +210,8 @@ value|, \     NULL
 comment|/* help_id          */
 value|, \     NULL
 comment|/* new_func         */
+value|, \     NULL
+comment|/* restore_func     */
 value|, \     0
 comment|/* view_size        */
 value|, \     singleton
@@ -238,6 +260,8 @@ value|, \     NULL
 comment|/* help_id          */
 value|, \     new_func
 comment|/* new_func         */
+value|, \     dialogs_restore_dialog
+comment|/* restore_func     */
 value|, \     0
 comment|/* view_size        */
 value|, \     singleton
@@ -292,6 +316,8 @@ value|, \     help_id
 comment|/* help_id          */
 value|, \     new_func
 comment|/* new_func         */
+value|, \     NULL
+comment|/* restore_func     */
 value|, \     view_size
 comment|/* view_size        */
 value|, \     singleton
@@ -334,6 +360,8 @@ value|, \     NULL
 comment|/* help_id          */
 value|, \     new_func
 comment|/* new_func         */
+value|, \     dialogs_restore_dialog
+comment|/* restore_func     */
 value|, \     0
 comment|/* view_size        */
 value|, \     FALSE
@@ -376,6 +404,8 @@ value|, \     NULL
 comment|/* help_id          */
 value|, \     new_func
 comment|/* new_func         */
+value|, \     dialogs_restore_dialog
+comment|/* restore_func     */
 value|, \     0
 comment|/* view_size        */
 value|, \     FALSE
@@ -426,6 +456,8 @@ value|,  \     help_id
 comment|/* help_id          */
 value|,  \     dialogs_##id##_list_view_new
 comment|/* new_func         */
+value|,  \     NULL
+comment|/* restore_func     */
 value|,  \     view_size
 comment|/* view_size        */
 value|,  \     FALSE
@@ -454,6 +486,8 @@ value|,  \     help_id
 comment|/* help_id          */
 value|,  \     dialogs_##id##_grid_view_new
 comment|/* new_func         */
+value|,  \     NULL
+comment|/* restore_func     */
 value|,  \     view_size
 comment|/* view_size        */
 value|,  \     FALSE
@@ -506,6 +540,8 @@ value|, \     help_id
 comment|/* help_id          */
 value|, \     dialogs_##new_func##_list_view_new
 comment|/* new_func         */
+value|, \     NULL
+comment|/* restore_func     */
 value|, \     view_size
 comment|/* view_size        */
 value|, \     FALSE
@@ -524,6 +560,27 @@ value|, \     TRUE
 comment|/* dockable         */
 value|}
 end_define
+
+begin_function_decl
+specifier|static
+name|GtkWidget
+modifier|*
+name|dialogs_restore_dialog
+parameter_list|(
+name|GimpDialogFactory
+modifier|*
+name|factory
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|,
+name|GimpSessionInfo
+modifier|*
+name|info
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_decl_stmt
 DECL|variable|entries
@@ -1660,6 +1717,146 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
+comment|/**  * dialogs_restore_dialog:  * @factory:  * @screen:  * @info:  *  * Creates a top level widget based on the given session info object  * in which other widgets later can be be put, typically also restored  * from the same session info object.  *  * Returns:  **/
+end_comment
+
+begin_function
+specifier|static
+name|GtkWidget
+modifier|*
+DECL|function|dialogs_restore_dialog (GimpDialogFactory * factory,GdkScreen * screen,GimpSessionInfo * info)
+name|dialogs_restore_dialog
+parameter_list|(
+name|GimpDialogFactory
+modifier|*
+name|factory
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|,
+name|GimpSessionInfo
+modifier|*
+name|info
+parameter_list|)
+block|{
+name|GtkWidget
+modifier|*
+name|dialog
+decl_stmt|;
+name|GimpCoreConfig
+modifier|*
+name|config
+init|=
+name|gimp_dialog_factory_get_context
+argument_list|(
+name|factory
+argument_list|)
+operator|->
+name|gimp
+operator|->
+name|config
+decl_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|DIALOG_FACTORY
+argument_list|,
+literal|"restoring toplevel \"%s\" (info %p)"
+argument_list|,
+name|gimp_session_info_get_factory_entry
+argument_list|(
+name|info
+argument_list|)
+operator|->
+name|identifier
+argument_list|,
+name|info
+argument_list|)
+expr_stmt|;
+name|dialog
+operator|=
+name|gimp_dialog_factory_dialog_new
+argument_list|(
+name|factory
+argument_list|,
+name|screen
+argument_list|,
+name|NULL
+comment|/*ui_manager*/
+argument_list|,
+name|gimp_session_info_get_factory_entry
+argument_list|(
+name|info
+argument_list|)
+operator|->
+name|identifier
+argument_list|,
+name|gimp_session_info_get_factory_entry
+argument_list|(
+name|info
+argument_list|)
+operator|->
+name|view_size
+argument_list|,
+operator|!
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|config
+argument_list|)
+operator|->
+name|hide_docks
+argument_list|)
+expr_stmt|;
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|GIMP_DIALOG_VISIBILITY_KEY
+argument_list|,
+name|GINT_TO_POINTER
+argument_list|(
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|config
+argument_list|)
+operator|->
+name|hide_docks
+condition|?
+name|GIMP_DIALOG_VISIBILITY_HIDDEN
+else|:
+name|GIMP_DIALOG_VISIBILITY_VISIBLE
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|dialog
+operator|&&
+name|gimp_session_info_get_aux_info
+argument_list|(
+name|info
+argument_list|)
+condition|)
+name|gimp_session_info_aux_set_list
+argument_list|(
+name|dialog
+argument_list|,
+name|gimp_session_info_get_aux_info
+argument_list|(
+name|info
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|dialog
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/*  public functions  */
 end_comment
 
@@ -1791,6 +1988,13 @@ name|i
 index|]
 operator|.
 name|new_func
+argument_list|,
+name|entries
+index|[
+name|i
+index|]
+operator|.
+name|restore_func
 argument_list|,
 name|entries
 index|[

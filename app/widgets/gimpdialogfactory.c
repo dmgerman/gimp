@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6d9df30103
+DECL|enum|__anon2c4d04dd0103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -1012,7 +1012,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dialog_factory_register_entry (GimpDialogFactory * factory,const gchar * identifier,const gchar * name,const gchar * blurb,const gchar * stock_id,const gchar * help_id,GimpDialogNewFunc new_func,gint view_size,gboolean singleton,gboolean session_managed,gboolean remember_size,gboolean remember_if_open,gboolean hideable,gboolean image_window,gboolean dockable)
+DECL|function|gimp_dialog_factory_register_entry (GimpDialogFactory * factory,const gchar * identifier,const gchar * name,const gchar * blurb,const gchar * stock_id,const gchar * help_id,GimpDialogNewFunc new_func,GimpDialogRestoreFunc restore_func,gint view_size,gboolean singleton,gboolean session_managed,gboolean remember_size,gboolean remember_if_open,gboolean hideable,gboolean image_window,gboolean dockable)
 name|gimp_dialog_factory_register_entry
 parameter_list|(
 name|GimpDialogFactory
@@ -1046,6 +1046,9 @@ name|help_id
 parameter_list|,
 name|GimpDialogNewFunc
 name|new_func
+parameter_list|,
+name|GimpDialogRestoreFunc
+name|restore_func
 parameter_list|,
 name|gint
 name|view_size
@@ -1148,6 +1151,12 @@ operator|->
 name|new_func
 operator|=
 name|new_func
+expr_stmt|;
+name|entry
+operator|->
+name|restore_func
+operator|=
+name|restore_func
 expr_stmt|;
 name|entry
 operator|->

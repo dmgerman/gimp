@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ce10950103
+DECL|enum|__anon27ccc9350103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -119,6 +119,10 @@ decl_stmt|;
 DECL|member|new_func
 name|GimpDialogNewFunc
 name|new_func
+decl_stmt|;
+DECL|member|restore_func
+name|GimpDialogRestoreFunc
+name|restore_func
 decl_stmt|;
 DECL|member|view_size
 name|gint
@@ -373,6 +377,9 @@ name|help_id
 parameter_list|,
 name|GimpDialogNewFunc
 name|new_func
+parameter_list|,
+name|GimpDialogRestoreFunc
+name|restore_func
 parameter_list|,
 name|gint
 name|view_size
