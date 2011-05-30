@@ -341,6 +341,10 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/* The only reason we have "Tab" in the action entries below is to  * give away the hardcoded keyboard shortcut. If the user changes the  * shortcut to something else, both that shortcut and Tab will  * work. The reason we have the shortcut hardcoded is beccause  * gtk_accelerator_valid() returns FALSE for GDK_tab.  */
+end_comment
+
 begin_decl_stmt
 DECL|variable|windows_actions
 specifier|static
@@ -388,7 +392,65 @@ argument_list|,
 literal|"_Dockable Dialogs"
 argument_list|)
 block|}
-block|, }
+block|,
+block|{
+literal|"windows-show-display-next"
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"windows-action"
+argument_list|,
+literal|"Next Image"
+argument_list|)
+block|,
+literal|"<alt>Tab"
+block|,
+name|NC_
+argument_list|(
+literal|"windows-action"
+argument_list|,
+literal|"Switch to the next image"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|windows_show_display_next_cmd_callback
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"windows-show-display-previous"
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"windows-action"
+argument_list|,
+literal|"Previous Image"
+argument_list|)
+block|,
+literal|"<alt><shift>Tab"
+block|,
+name|NC_
+argument_list|(
+literal|"windows-action"
+argument_list|,
+literal|"Switch to the previous image"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|windows_show_display_previous_cmd_callback
+argument_list|)
+block|,
+name|NULL
+block|}
+block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -413,7 +475,6 @@ argument_list|,
 literal|"Hide Docks"
 argument_list|)
 block|,
-comment|/* The only reason we have Tab here is to give away the hardcoded      * keyboard shortcut. If the user changes the shortcut to      * something else, both that shortcut and Tab will work. The      * reason we have the shortcut hardcoded is beccause      * gtk_accelerator_valid() returns FALSE for GDK_tab.      */
 literal|"Tab"
 block|,
 name|NC_
