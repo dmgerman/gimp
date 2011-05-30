@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpsessionmanaged.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimptoolbox.h"
 end_include
 
@@ -1833,16 +1839,22 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|GIMP_IS_SESSION_MANAGED
+argument_list|(
 name|dialog
+argument_list|)
 operator|&&
 name|gimp_session_info_get_aux_info
 argument_list|(
 name|info
 argument_list|)
 condition|)
-name|gimp_session_info_aux_set_list
+name|gimp_session_managed_set_aux_info
+argument_list|(
+name|GIMP_SESSION_MANAGED
 argument_list|(
 name|dialog
+argument_list|)
 argument_list|,
 name|gimp_session_info_get_aux_info
 argument_list|(

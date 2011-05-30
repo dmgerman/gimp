@@ -1494,6 +1494,15 @@ name|GimpSessionInfoDockable
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpSessionManaged
+typedef|typedef
+name|struct
+name|_GimpSessionManaged
+name|GimpSessionManaged
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  structs  */
 end_comment
