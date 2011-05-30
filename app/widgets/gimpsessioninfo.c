@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b6e3060103
+DECL|enum|__anon28d7d3270103
 block|{
 DECL|enumerator|SESSION_INFO_FACTORY_ENTRY
 name|SESSION_INFO_FACTORY_ENTRY
@@ -1827,12 +1827,6 @@ name|screen
 init|=
 name|NULL
 decl_stmt|;
-name|GList
-modifier|*
-name|iter
-init|=
-name|NULL
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_SESSION_INFO
@@ -1947,14 +1941,16 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|dialog
-operator|&&
 name|GIMP_IS_DOCK_CONTAINER
 argument_list|(
 name|dialog
 argument_list|)
 condition|)
 block|{
+name|GList
+modifier|*
+name|iter
+decl_stmt|;
 comment|/* We expect expect there to always be docks. In sessionrc files        * from<= 2.6 not all dock window entries had dock entries, but we        * take care of that during sessionrc parsing        */
 for|for
 control|(
