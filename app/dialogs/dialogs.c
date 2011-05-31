@@ -48,6 +48,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -216,7 +228,7 @@ value|, \     NULL
 comment|/* help_id          */
 value|, \     NULL
 comment|/* new_func         */
-value|, \     NULL
+value|, \     dialogs_restore_window
 comment|/* restore_func     */
 value|, \     0
 comment|/* view_size        */
@@ -572,6 +584,27 @@ specifier|static
 name|GtkWidget
 modifier|*
 name|dialogs_restore_dialog
+parameter_list|(
+name|GimpDialogFactory
+modifier|*
+name|factory
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|,
+name|GimpSessionInfo
+modifier|*
+name|info
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|GtkWidget
+modifier|*
+name|dialogs_restore_window
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
@@ -1834,6 +1867,83 @@ condition|?
 name|GIMP_DIALOG_VISIBILITY_HIDDEN
 else|:
 name|GIMP_DIALOG_VISIBILITY_VISIBLE
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|dialog
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * dialogs_restore_window:  * @factory:  * @screen:  * @info:  *  * "restores" the image window. We don't really restore anything since  * the image window is created earlier, so we just look for and return  * the already-created image window.  *  * Returns:   **/
+end_comment
+
+begin_function
+specifier|static
+name|GtkWidget
+modifier|*
+DECL|function|dialogs_restore_window (GimpDialogFactory * factory,GdkScreen * screen,GimpSessionInfo * info)
+name|dialogs_restore_window
+parameter_list|(
+name|GimpDialogFactory
+modifier|*
+name|factory
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|,
+name|GimpSessionInfo
+modifier|*
+name|info
+parameter_list|)
+block|{
+comment|/* FIXME: We can't always use the empty display here */
+name|Gimp
+modifier|*
+name|gimp
+init|=
+name|gimp_dialog_factory_get_context
+argument_list|(
+name|factory
+argument_list|)
+operator|->
+name|gimp
+decl_stmt|;
+name|GimpDisplay
+modifier|*
+name|display
+init|=
+name|GIMP_DISPLAY
+argument_list|(
+name|gimp_get_empty_display
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+init|=
+name|gimp_display_get_shell
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|dialog
+decl_stmt|;
+name|dialog
+operator|=
+name|GTK_WIDGET
+argument_list|(
+name|gimp_display_shell_get_window
+argument_list|(
+name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
