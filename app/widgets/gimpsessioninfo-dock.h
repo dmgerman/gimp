@@ -36,6 +36,11 @@ DECL|member|side
 name|GimpAlignmentType
 name|side
 decl_stmt|;
+comment|/* GtkPaned position of this dock */
+DECL|member|position
+name|gint
+name|position
+decl_stmt|;
 comment|/*  list of GimpSessionInfoBook  */
 DECL|member|books
 name|GList

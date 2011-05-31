@@ -499,6 +499,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_session_write_position
+parameter_list|(
+name|GimpConfigWriter
+modifier|*
+name|writer
+parameter_list|,
+name|gint
+name|position
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
