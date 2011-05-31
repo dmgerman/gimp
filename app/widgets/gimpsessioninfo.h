@@ -230,18 +230,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GList
-modifier|*
-name|gimp_session_info_get_aux_info
-parameter_list|(
-name|GimpSessionInfo
-modifier|*
-name|info
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_session_info_clear_info
 parameter_list|(
