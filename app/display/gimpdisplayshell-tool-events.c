@@ -321,6 +321,7 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+specifier|const
 name|GdkEvent
 modifier|*
 name|event
@@ -337,6 +338,7 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+specifier|const
 name|GdkEvent
 modifier|*
 name|event
@@ -358,6 +360,7 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+specifier|const
 name|GdkEventKey
 modifier|*
 name|event
@@ -445,6 +448,7 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+specifier|const
 name|GdkEvent
 modifier|*
 name|event
@@ -4764,13 +4768,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_space_pressed (GimpDisplayShell * shell,GdkEvent * event)
+DECL|function|gimp_display_shell_space_pressed (GimpDisplayShell * shell,const GdkEvent * event)
 name|gimp_display_shell_space_pressed
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+specifier|const
 name|GdkEvent
 modifier|*
 name|event
@@ -4990,13 +4995,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_space_released (GimpDisplayShell * shell,GdkEvent * event,const GimpCoords * image_coords)
+DECL|function|gimp_display_shell_space_released (GimpDisplayShell * shell,const GdkEvent * event,const GimpCoords * image_coords)
 name|gimp_display_shell_space_released
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+specifier|const
 name|GdkEvent
 modifier|*
 name|event
@@ -5164,13 +5170,14 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_display_shell_tab_pressed (GimpDisplayShell * shell,GdkEventKey * kevent)
+DECL|function|gimp_display_shell_tab_pressed (GimpDisplayShell * shell,const GdkEventKey * kevent)
 name|gimp_display_shell_tab_pressed
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+specifier|const
 name|GdkEventKey
 modifier|*
 name|kevent
@@ -5820,13 +5827,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_get_event_coords (GimpDisplayShell * shell,GdkEvent * event,GimpCoords * display_coords,GdkModifierType * state,guint32 * time)
+DECL|function|gimp_display_shell_get_event_coords (GimpDisplayShell * shell,const GdkEvent * event,GimpCoords * display_coords,GdkModifierType * state,guint32 * time)
 name|gimp_display_shell_get_event_coords
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+specifier|const
 name|GdkEvent
 modifier|*
 name|event

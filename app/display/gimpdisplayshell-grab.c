@@ -59,13 +59,14 @@ end_include
 
 begin_function
 name|gboolean
-DECL|function|gimp_display_shell_pointer_grab (GimpDisplayShell * shell,GdkEvent * event,GdkEventMask event_mask)
+DECL|function|gimp_display_shell_pointer_grab (GimpDisplayShell * shell,const GdkEvent * event,GdkEventMask event_mask)
 name|gimp_display_shell_pointer_grab
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+specifier|const
 name|GdkEvent
 modifier|*
 name|event
@@ -230,13 +231,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_pointer_ungrab (GimpDisplayShell * shell,GdkEvent * event)
+DECL|function|gimp_display_shell_pointer_ungrab (GimpDisplayShell * shell,const GdkEvent * event)
 name|gimp_display_shell_pointer_ungrab
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+specifier|const
 name|GdkEvent
 modifier|*
 name|event
@@ -292,13 +294,14 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_display_shell_keyboard_grab (GimpDisplayShell * shell,GdkEvent * event)
+DECL|function|gimp_display_shell_keyboard_grab (GimpDisplayShell * shell,const GdkEvent * event)
 name|gimp_display_shell_keyboard_grab
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+specifier|const
 name|GdkEvent
 modifier|*
 name|event
@@ -390,13 +393,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_keyboard_ungrab (GimpDisplayShell * shell,GdkEvent * event)
+DECL|function|gimp_display_shell_keyboard_ungrab (GimpDisplayShell * shell,const GdkEvent * event)
 name|gimp_display_shell_keyboard_ungrab
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+specifier|const
 name|GdkEvent
 modifier|*
 name|event

@@ -28,6 +28,7 @@ name|GdkWindow
 modifier|*
 name|window
 parameter_list|,
+specifier|const
 name|GdkEvent
 modifier|*
 name|event
@@ -89,6 +90,7 @@ name|GdkWindow
 modifier|*
 name|window
 parameter_list|,
+specifier|const
 name|GdkEvent
 modifier|*
 name|event

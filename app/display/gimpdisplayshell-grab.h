@@ -24,6 +24,7 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+specifier|const
 name|GdkEvent
 modifier|*
 name|event
@@ -42,6 +43,7 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+specifier|const
 name|GdkEvent
 modifier|*
 name|event
@@ -57,6 +59,7 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+specifier|const
 name|GdkEvent
 modifier|*
 name|event
@@ -72,6 +75,7 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+specifier|const
 name|GdkEvent
 modifier|*
 name|event

@@ -50,7 +50,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_device_info_get_event_coords (GimpDeviceInfo * info,GdkWindow * window,GdkEvent * event,GimpCoords * coords)
+DECL|function|gimp_device_info_get_event_coords (GimpDeviceInfo * info,GdkWindow * window,const GdkEvent * event,GimpCoords * coords)
 name|gimp_device_info_get_event_coords
 parameter_list|(
 name|GimpDeviceInfo
@@ -61,6 +61,7 @@ name|GdkWindow
 modifier|*
 name|window
 parameter_list|,
+specifier|const
 name|GdkEvent
 modifier|*
 name|event
@@ -682,7 +683,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_device_info_get_event_state (GimpDeviceInfo * info,GdkWindow * window,GdkEvent * event,GdkModifierType * state)
+DECL|function|gimp_device_info_get_event_state (GimpDeviceInfo * info,GdkWindow * window,const GdkEvent * event,GdkModifierType * state)
 name|gimp_device_info_get_event_state
 parameter_list|(
 name|GimpDeviceInfo
@@ -693,6 +694,7 @@ name|GdkWindow
 modifier|*
 name|window
 parameter_list|,
+specifier|const
 name|GdkEvent
 modifier|*
 name|event
