@@ -123,6 +123,16 @@ DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
+DECL|member|cursor_x
+name|gdouble
+name|cursor_x
+decl_stmt|;
+comment|/* Hold the cursor x position */
+DECL|member|cursor_y
+name|gdouble
+name|cursor_y
+decl_stmt|;
+comment|/* Hold the cursor y position */
 DECL|member|coords_buffer
 name|GeglBuffer
 modifier|*
