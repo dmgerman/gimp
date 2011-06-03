@@ -1307,12 +1307,16 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_selection_tool_start_edit (GimpSelectionTool * sel_tool,const GimpCoords * coords)
+DECL|function|gimp_selection_tool_start_edit (GimpSelectionTool * sel_tool,GimpDisplay * display,const GimpCoords * coords)
 name|gimp_selection_tool_start_edit
 parameter_list|(
 name|GimpSelectionTool
 modifier|*
 name|sel_tool
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|display
 parameter_list|,
 specifier|const
 name|GimpCoords
@@ -1336,6 +1340,16 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|display
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|coords
 operator|!=
 name|NULL
@@ -1352,24 +1366,14 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_DISPLAY
-argument_list|(
-name|tool
-operator|->
-name|display
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
 name|gimp_tool_control_is_active
 argument_list|(
 name|tool
 operator|->
 name|control
 argument_list|)
+operator|==
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1388,8 +1392,6 @@ name|gimp_edit_selection_tool_start
 argument_list|(
 name|tool
 argument_list|,
-name|tool
-operator|->
 name|display
 argument_list|,
 name|coords
@@ -1409,8 +1411,6 @@ name|gimp_edit_selection_tool_start
 argument_list|(
 name|tool
 argument_list|,
-name|tool
-operator|->
 name|display
 argument_list|,
 name|coords
@@ -1430,8 +1430,6 @@ name|gimp_edit_selection_tool_start
 argument_list|(
 name|tool
 argument_list|,
-name|tool
-operator|->
 name|display
 argument_list|,
 name|coords
