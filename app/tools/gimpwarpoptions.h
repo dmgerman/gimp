@@ -112,6 +112,14 @@ DECL|member|parent_instance
 name|GimpToolOptions
 name|parent_instance
 decl_stmt|;
+DECL|member|effect_strength
+name|gdouble
+name|effect_strength
+decl_stmt|;
+DECL|member|effect_size
+name|gdouble
+name|effect_size
+decl_stmt|;
 block|}
 struct|;
 end_struct
