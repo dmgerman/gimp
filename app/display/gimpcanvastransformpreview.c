@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcanvas.h"
 end_include
 
@@ -132,40 +138,6 @@ value|((t) = (a) * (b) * (c) + 0x7F5B, \                            ((((t)>> 7) 
 end_define
 
 begin_define
-DECL|macro|MIN4 (a,b,c,d)
-define|#
-directive|define
-name|MIN4
-parameter_list|(
-name|a
-parameter_list|,
-name|b
-parameter_list|,
-name|c
-parameter_list|,
-name|d
-parameter_list|)
-value|MIN(MIN(a,b),MIN(c,d))
-end_define
-
-begin_define
-DECL|macro|MAX4 (a,b,c,d)
-define|#
-directive|define
-name|MAX4
-parameter_list|(
-name|a
-parameter_list|,
-name|b
-parameter_list|,
-name|c
-parameter_list|,
-name|d
-parameter_list|)
-value|MAX(MAX(a,b),MAX(c,d))
-end_define
-
-begin_define
 DECL|macro|MAX_SUB_COLS
 define|#
 directive|define
@@ -193,7 +165,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon290a3ecb0103
+DECL|enum|__anon2a0e8c840103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

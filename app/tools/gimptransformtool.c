@@ -150,6 +150,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"vectors/gimpvectors.h"
 end_include
 
@@ -245,40 +251,6 @@ define|#
 directive|define
 name|MIN_HANDLE_SIZE
 value|6
-end_define
-
-begin_define
-DECL|macro|MIN4 (a,b,c,d)
-define|#
-directive|define
-name|MIN4
-parameter_list|(
-name|a
-parameter_list|,
-name|b
-parameter_list|,
-name|c
-parameter_list|,
-name|d
-parameter_list|)
-value|MIN(MIN((a),(b)),MIN((c),(d)))
-end_define
-
-begin_define
-DECL|macro|MAX4 (a,b,c,d)
-define|#
-directive|define
-name|MAX4
-parameter_list|(
-name|a
-parameter_list|,
-name|b
-parameter_list|,
-name|c
-parameter_list|,
-name|d
-parameter_list|)
-value|MAX(MAX((a),(b)),MAX((c),(d)))
 end_define
 
 begin_function_decl

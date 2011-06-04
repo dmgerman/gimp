@@ -38,6 +38,40 @@ define|\
 value|g_printerr ("%s: " message " took %0.2f seconds\n", \               G_STRFUNC, g_timer_elapsed (_timer, NULL)); \   g_timer_destroy (_timer); }
 end_define
 
+begin_define
+DECL|macro|MIN4 (a,b,c,d)
+define|#
+directive|define
+name|MIN4
+parameter_list|(
+name|a
+parameter_list|,
+name|b
+parameter_list|,
+name|c
+parameter_list|,
+name|d
+parameter_list|)
+value|MIN (MIN ((a), (b)), MIN ((c), (d)))
+end_define
+
+begin_define
+DECL|macro|MAX4 (a,b,c,d)
+define|#
+directive|define
+name|MAX4
+parameter_list|(
+name|a
+parameter_list|,
+name|b
+parameter_list|,
+name|c
+parameter_list|,
+name|d
+parameter_list|)
+value|MAX (MAX ((a), (b)), MAX ((c), (d)))
+end_define
+
 begin_function_decl
 name|gint64
 name|gimp_g_type_instance_get_memsize

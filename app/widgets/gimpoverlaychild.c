@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpoverlaybox.h"
 end_include
 
@@ -2099,34 +2105,6 @@ operator|&
 name|y4
 argument_list|)
 expr_stmt|;
-DECL|macro|MIN4 (a,b,c,d)
-define|#
-directive|define
-name|MIN4
-parameter_list|(
-name|a
-parameter_list|,
-name|b
-parameter_list|,
-name|c
-parameter_list|,
-name|d
-parameter_list|)
-value|MIN(MIN((a),(b)),MIN((c),(d)))
-DECL|macro|MAX4 (a,b,c,d)
-define|#
-directive|define
-name|MAX4
-parameter_list|(
-name|a
-parameter_list|,
-name|b
-parameter_list|,
-name|c
-parameter_list|,
-name|d
-parameter_list|)
-value|MAX(MAX((a),(b)),MAX((c),(d)))
 name|bounds_box
 operator|->
 name|x

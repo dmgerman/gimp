@@ -33,6 +33,12 @@ directive|include
 file|"gimp-transform-resize.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-utils.h"
+end_include
+
 begin_if
 if|#
 directive|if
@@ -117,44 +123,10 @@ name|EPSILON
 value|0.00000001
 end_define
 
-begin_define
-DECL|macro|MIN4 (a,b,c,d)
-define|#
-directive|define
-name|MIN4
-parameter_list|(
-name|a
-parameter_list|,
-name|b
-parameter_list|,
-name|c
-parameter_list|,
-name|d
-parameter_list|)
-value|MIN(MIN((a),(b)),MIN((c),(d)))
-end_define
-
-begin_define
-DECL|macro|MAX4 (a,b,c,d)
-define|#
-directive|define
-name|MAX4
-parameter_list|(
-name|a
-parameter_list|,
-name|b
-parameter_list|,
-name|c
-parameter_list|,
-name|d
-parameter_list|)
-value|MAX(MAX((a),(b)),MAX((c),(d)))
-end_define
-
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0e10820108
+DECL|struct|__anon2801b9ff0108
 block|{
 DECL|member|x
 DECL|member|y
@@ -172,7 +144,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0e10820208
+DECL|struct|__anon2801b9ff0208
 block|{
 DECL|member|a
 DECL|member|b
