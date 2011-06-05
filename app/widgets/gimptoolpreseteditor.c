@@ -959,6 +959,10 @@ condition|(
 name|editor
 operator|->
 name|data
+operator|&&
+name|preset_editor
+operator|->
+name|tool_preset_model
 condition|)
 block|{
 name|GimpToolInfo
