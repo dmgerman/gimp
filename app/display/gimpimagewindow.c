@@ -261,7 +261,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cda38c0103
+DECL|enum|__anon2c558fc30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -374,7 +374,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cda38c0208
+DECL|struct|__anon2c558fc30208
 block|{
 DECL|member|window
 name|GimpImageWindow
@@ -3139,6 +3139,14 @@ modifier|*
 name|dock_info
 parameter_list|)
 block|{
+name|GimpImageWindow
+modifier|*
+name|window
+decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|active_shell
+decl_stmt|;
 name|GimpImageWindowPrivate
 modifier|*
 name|private
@@ -3151,11 +3159,18 @@ name|dock_container
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|window
+operator|=
+name|GIMP_IMAGE_WINDOW
+argument_list|(
+name|dock_container
+argument_list|)
+expr_stmt|;
 name|private
 operator|=
 name|GIMP_IMAGE_WINDOW_GET_PRIVATE
 argument_list|(
-name|dock_container
+name|window
 argument_list|)
 expr_stmt|;
 if|if
@@ -3203,6 +3218,22 @@ comment|/*index*/
 argument_list|)
 expr_stmt|;
 block|}
+name|active_shell
+operator|=
+name|gimp_image_window_get_active_shell
+argument_list|(
+name|window
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|active_shell
+condition|)
+name|gimp_display_shell_appearance_update
+argument_list|(
+name|active_shell
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
