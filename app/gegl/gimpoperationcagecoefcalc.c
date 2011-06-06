@@ -45,6 +45,12 @@ directive|include
 file|"gimpcageconfig.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -222,7 +228,10 @@ name|operation_class
 operator|->
 name|description
 operator|=
-literal|"GIMP cage transform coefficient calc"
+name|_
+argument_list|(
+literal|"Compute a set of coefficient buffer for the Gimp cage tool"
+argument_list|)
 expr_stmt|;
 name|operation_class
 operator|->
@@ -282,9 +291,15 @@ name|g_param_spec_object
 argument_list|(
 literal|"config"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Config"
+argument_list|)
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"A GimpCageConfig object, that define the transformation"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_CAGE_CONFIG
 argument_list|,

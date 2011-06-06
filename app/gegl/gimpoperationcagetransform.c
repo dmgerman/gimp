@@ -57,9 +57,15 @@ directive|include
 file|"gimpcageconfig.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon2c52a0ff0103
+DECL|enum|__anon28f784aa0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -388,7 +394,10 @@ name|operation_class
 operator|->
 name|description
 operator|=
-literal|"GIMP cage reverse transform"
+name|_
+argument_list|(
+literal|"Convert a set of coefficient buffer to a coordinate buffer for the Gimp cage tool"
+argument_list|)
 expr_stmt|;
 name|operation_class
 operator|->
@@ -436,9 +445,15 @@ name|g_param_spec_object
 argument_list|(
 literal|"config"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Config"
+argument_list|)
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"A GimpCageConfig object, that define the transformation"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_CAGE_CONFIG
 argument_list|,
@@ -458,9 +473,15 @@ name|g_param_spec_boolean
 argument_list|(
 literal|"fill-plain-color"
 argument_list|,
-literal|"Blocking render"
+name|_
+argument_list|(
+literal|"Fill with plain color"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Fill the original position of the cage with a plain color"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
