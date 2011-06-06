@@ -216,18 +216,20 @@ directive|ifndef
 name|GIMP_CONSOLE_COMPILATION
 end_ifndef
 
-begin_comment
-comment|/**  * gimp_init_for_gui_testing:  * @use_cpu_accel:  *  * Initializes a #Gimp instance for use in test cases that rely on GUI  * code to be initialized.  *  * Returns: The #Gimp instance.  **/
-end_comment
-
 begin_function
+specifier|static
 name|Gimp
 modifier|*
-DECL|function|gimp_init_for_gui_testing (gboolean show_gui)
-name|gimp_init_for_gui_testing
+DECL|function|gimp_init_for_gui_testing_internal (gboolean show_gui,const gchar * gimprc)
+name|gimp_init_for_gui_testing_internal
 parameter_list|(
 name|gboolean
 name|show_gui
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|gimprc
 parameter_list|)
 block|{
 name|GimpSessionInfoClass
@@ -308,7 +310,7 @@ name|gimp_load_config
 argument_list|(
 name|gimp
 argument_list|,
-name|NULL
+name|gimprc
 argument_list|,
 name|NULL
 argument_list|)
@@ -357,6 +359,61 @@ argument_list|)
 expr_stmt|;
 return|return
 name|gimp
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_init_for_gui_testing:  * @show_gui:  *  * Initializes a #Gimp instance for use in test cases that rely on GUI  * code to be initialized.  *  * Returns: The #Gimp instance.  **/
+end_comment
+
+begin_function
+name|Gimp
+modifier|*
+DECL|function|gimp_init_for_gui_testing (gboolean show_gui)
+name|gimp_init_for_gui_testing
+parameter_list|(
+name|gboolean
+name|show_gui
+parameter_list|)
+block|{
+return|return
+name|gimp_init_for_gui_testing_internal
+argument_list|(
+name|show_gui
+argument_list|,
+name|NULL
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_init_for_gui_testing:  * @show_gui:  * @gimprc:  *  * Like gimp_init_for_gui_testing(), but also allows a custom gimprc  * filename to be specified.  *  * Returns: The #Gimp instance.  **/
+end_comment
+
+begin_function
+name|Gimp
+modifier|*
+DECL|function|gimp_init_for_gui_testing_with_rc (gboolean show_gui,const gchar * gimprc)
+name|gimp_init_for_gui_testing_with_rc
+parameter_list|(
+name|gboolean
+name|show_gui
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|gimprc
+parameter_list|)
+block|{
+return|return
+name|gimp_init_for_gui_testing_internal
+argument_list|(
+name|show_gui
+argument_list|,
+name|gimprc
+argument_list|)
 return|;
 block|}
 end_function

@@ -38,6 +38,22 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|Gimp
+modifier|*
+name|gimp_init_for_gui_testing_with_rc
+parameter_list|(
+name|gboolean
+name|show_gui
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|gimprc
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_test_run_temp_mainloop
 parameter_list|(
