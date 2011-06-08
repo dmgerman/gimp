@@ -139,10 +139,16 @@ modifier|*
 name|coords_buffer
 decl_stmt|;
 comment|/* Gegl buffer where coordinates are stored */
-DECL|member|coords_node
+DECL|member|graph
 name|GeglNode
 modifier|*
-name|coords_node
+name|graph
+decl_stmt|;
+comment|/* Top level GeglNode. All others node are child of it */
+DECL|member|read_coords_buffer_node
+name|GeglNode
+modifier|*
+name|read_coords_buffer_node
 decl_stmt|;
 comment|/* Gegl node that read in the coords buffer */
 DECL|member|render_node
@@ -150,7 +156,12 @@ name|GeglNode
 modifier|*
 name|render_node
 decl_stmt|;
-comment|/* Gegl node graph to render the transfromation */
+comment|/* Gegl node to render the transformation */
+DECL|member|current_stroke
+name|GeglPath
+modifier|*
+name|current_stroke
+decl_stmt|;
 DECL|member|image_map
 name|GimpImageMap
 modifier|*
