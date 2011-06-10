@@ -284,7 +284,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7173af0108
+DECL|struct|__anon2bcfb9490108
 block|{
 DECL|member|cinfo
 name|struct
@@ -364,7 +364,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7173af0208
+DECL|struct|__anon2bcfb9490208
 block|{
 DECL|member|run
 name|gboolean
@@ -4931,28 +4931,28 @@ name|gimp_int_combo_box_new
 argument_list|(
 name|_
 argument_list|(
-literal|"1x1,1x1,1x1 (best quality)"
+literal|"4:4:4 (best quality)"
 argument_list|)
 argument_list|,
 name|JPEG_SUPSAMPLING_1x1_1x1_1x1
 argument_list|,
 name|_
 argument_list|(
-literal|"2x1,1x1,1x1 (4:2:2)"
+literal|"4:2:2 horizontal (chroma halved)"
 argument_list|)
 argument_list|,
 name|JPEG_SUPSAMPLING_2x1_1x1_1x1
 argument_list|,
 name|_
 argument_list|(
-literal|"1x2,1x1,1x1"
+literal|"4:2:2 vertical (chroma halved)"
 argument_list|)
 argument_list|,
 name|JPEG_SUPSAMPLING_1x2_1x1_1x1
 argument_list|,
 name|_
 argument_list|(
-literal|"2x2,1x1,1x1 (smallest file)"
+literal|"4:2:0 (chroma quartered)"
 argument_list|)
 argument_list|,
 name|JPEG_SUPSAMPLING_2x2_1x1_1x1
@@ -6570,7 +6570,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7173af0308
+DECL|struct|__anon2bcfb9490308
 block|{
 DECL|member|pub
 name|struct
