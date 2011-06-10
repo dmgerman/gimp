@@ -276,7 +276,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9e616b0108
+DECL|struct|__anon273e028d0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -356,7 +356,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9e616b0208
+DECL|struct|__anon273e028d0208
 block|{
 DECL|member|run
 name|gboolean
@@ -4023,7 +4023,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Frequency (rows):"
+literal|"Interval (MCU rows):"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6560,7 +6560,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9e616b0308
+DECL|struct|__anon273e028d0308
 block|{
 DECL|member|pub
 name|struct

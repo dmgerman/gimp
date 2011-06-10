@@ -506,7 +506,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"restart"
 block|,
-literal|"Frequency of restart markers (in rows, 0 = no restart markers)"
+literal|"Interval of restart markers (in MCU rows, 0 = no restart markers)"
 block|}
 block|,
 block|{
