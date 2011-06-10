@@ -206,7 +206,7 @@ DECL|macro|DEFAULT_SUBSMP
 define|#
 directive|define
 name|DEFAULT_SUBSMP
-value|JPEG_SUPSAMPLING_2x2_1x1_1x1
+value|JPEG_SUPSAMPLING_1x1_1x1_1x1
 end_define
 
 begin_define
@@ -276,7 +276,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27709c260108
+DECL|struct|__anon2afb39080108
 block|{
 DECL|member|cinfo
 name|struct
@@ -356,7 +356,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27709c260208
+DECL|struct|__anon2afb39080208
 block|{
 DECL|member|run
 name|gboolean
@@ -6560,7 +6560,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27709c260308
+DECL|struct|__anon2afb39080308
 block|{
 DECL|member|pub
 name|struct
