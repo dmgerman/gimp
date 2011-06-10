@@ -101,27 +101,27 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af7ba080103
+DECL|enum|__anon2a3e66a60103
 block|{
-DECL|enumerator|JPEG_SUPSAMPLING_2x2_1x1_1x1
-name|JPEG_SUPSAMPLING_2x2_1x1_1x1
+DECL|enumerator|JPEG_SUBSAMPLING_2x2_1x1_1x1
+name|JPEG_SUBSAMPLING_2x2_1x1_1x1
 init|=
 literal|0
 block|,
 comment|/* smallest file */
-DECL|enumerator|JPEG_SUPSAMPLING_2x1_1x1_1x1
-name|JPEG_SUPSAMPLING_2x1_1x1_1x1
+DECL|enumerator|JPEG_SUBSAMPLING_2x1_1x1_1x1
+name|JPEG_SUBSAMPLING_2x1_1x1_1x1
 init|=
 literal|1
 block|,
 comment|/* 4:2:2         */
-DECL|enumerator|JPEG_SUPSAMPLING_1x1_1x1_1x1
-name|JPEG_SUPSAMPLING_1x1_1x1_1x1
+DECL|enumerator|JPEG_SUBSAMPLING_1x1_1x1_1x1
+name|JPEG_SUBSAMPLING_1x1_1x1_1x1
 init|=
 literal|2
 block|,
-DECL|enumerator|JPEG_SUPSAMPLING_1x2_1x1_1x1
-name|JPEG_SUPSAMPLING_1x2_1x1_1x1
+DECL|enumerator|JPEG_SUBSAMPLING_1x2_1x1_1x1
+name|JPEG_SUBSAMPLING_1x2_1x1_1x1
 init|=
 literal|3
 DECL|typedef|JpegSubsampling

@@ -749,7 +749,7 @@ condition|)
 operator|*
 name|subsmp
 operator|=
-name|JPEG_SUPSAMPLING_1x1_1x1_1x1
+name|JPEG_SUBSAMPLING_1x1_1x1_1x1
 expr_stmt|;
 elseif|else
 if|if
@@ -771,7 +771,7 @@ condition|)
 operator|*
 name|subsmp
 operator|=
-name|JPEG_SUPSAMPLING_2x1_1x1_1x1
+name|JPEG_SUBSAMPLING_2x1_1x1_1x1
 expr_stmt|;
 elseif|else
 if|if
@@ -793,7 +793,7 @@ condition|)
 operator|*
 name|subsmp
 operator|=
-name|JPEG_SUPSAMPLING_1x2_1x1_1x1
+name|JPEG_SUBSAMPLING_1x2_1x1_1x1
 expr_stmt|;
 elseif|else
 if|if
@@ -815,7 +815,7 @@ condition|)
 operator|*
 name|subsmp
 operator|=
-name|JPEG_SUPSAMPLING_2x2_1x1_1x1
+name|JPEG_SUBSAMPLING_2x2_1x1_1x1
 expr_stmt|;
 block|}
 block|}

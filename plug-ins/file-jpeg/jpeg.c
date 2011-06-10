@@ -808,7 +808,7 @@ literal|0
 expr_stmt|;
 name|orig_subsmp
 operator|=
-name|JPEG_SUPSAMPLING_2x2_1x1_1x1
+name|JPEG_SUBSAMPLING_2x2_1x1_1x1
 expr_stmt|;
 name|num_quant_tables
 operator|=
@@ -1765,7 +1765,7 @@ if|if
 condition|(
 name|orig_subsmp
 operator|==
-name|JPEG_SUPSAMPLING_1x1_1x1_1x1
+name|JPEG_SUBSAMPLING_1x1_1x1_1x1
 operator|||
 operator|(
 operator|(
@@ -1779,7 +1779,7 @@ name|jsvals
 operator|.
 name|subsmp
 operator|==
-name|JPEG_SUPSAMPLING_1x1_1x1_1x1
+name|JPEG_SUBSAMPLING_1x1_1x1_1x1
 operator|)
 condition|)
 block|{

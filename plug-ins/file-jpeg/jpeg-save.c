@@ -206,7 +206,7 @@ DECL|macro|DEFAULT_SUBSMP
 define|#
 directive|define
 name|DEFAULT_SUBSMP
-value|JPEG_SUPSAMPLING_1x1_1x1_1x1
+value|JPEG_SUBSAMPLING_1x1_1x1_1x1
 end_define
 
 begin_define
@@ -284,7 +284,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcfb9490108
+DECL|struct|__anon29a04cf30108
 block|{
 DECL|member|cinfo
 name|struct
@@ -364,7 +364,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcfb9490208
+DECL|struct|__anon29a04cf30208
 block|{
 DECL|member|run
 name|gboolean
@@ -1648,7 +1648,7 @@ name|jsvals
 operator|.
 name|subsmp
 else|:
-name|JPEG_SUPSAMPLING_1x1_1x1_1x1
+name|JPEG_SUBSAMPLING_1x1_1x1_1x1
 operator|)
 expr_stmt|;
 comment|/*  smoothing is not supported with nonstandard sampling ratios  */
@@ -1656,11 +1656,11 @@ if|if
 condition|(
 name|subsampling
 operator|!=
-name|JPEG_SUPSAMPLING_2x1_1x1_1x1
+name|JPEG_SUBSAMPLING_2x1_1x1_1x1
 operator|&&
 name|subsampling
 operator|!=
-name|JPEG_SUPSAMPLING_1x2_1x1_1x1
+name|JPEG_SUBSAMPLING_1x2_1x1_1x1
 condition|)
 block|{
 name|cinfo
@@ -1699,7 +1699,7 @@ name|subsampling
 condition|)
 block|{
 case|case
-name|JPEG_SUPSAMPLING_2x2_1x1_1x1
+name|JPEG_SUBSAMPLING_2x2_1x1_1x1
 case|:
 default|default:
 name|cinfo
@@ -1770,7 +1770,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|JPEG_SUPSAMPLING_2x1_1x1_1x1
+name|JPEG_SUBSAMPLING_2x1_1x1_1x1
 case|:
 name|cinfo
 operator|.
@@ -1840,7 +1840,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|JPEG_SUPSAMPLING_1x1_1x1_1x1
+name|JPEG_SUBSAMPLING_1x1_1x1_1x1
 case|:
 name|cinfo
 operator|.
@@ -1910,7 +1910,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|JPEG_SUPSAMPLING_1x2_1x1_1x1
+name|JPEG_SUBSAMPLING_1x2_1x1_1x1
 case|:
 name|cinfo
 operator|.
@@ -4934,28 +4934,28 @@ argument_list|(
 literal|"4:4:4 (best quality)"
 argument_list|)
 argument_list|,
-name|JPEG_SUPSAMPLING_1x1_1x1_1x1
+name|JPEG_SUBSAMPLING_1x1_1x1_1x1
 argument_list|,
 name|_
 argument_list|(
 literal|"4:2:2 horizontal (chroma halved)"
 argument_list|)
 argument_list|,
-name|JPEG_SUPSAMPLING_2x1_1x1_1x1
+name|JPEG_SUBSAMPLING_2x1_1x1_1x1
 argument_list|,
 name|_
 argument_list|(
 literal|"4:2:2 vertical (chroma halved)"
 argument_list|)
 argument_list|,
-name|JPEG_SUPSAMPLING_1x2_1x1_1x1
+name|JPEG_SUBSAMPLING_1x2_1x1_1x1
 argument_list|,
 name|_
 argument_list|(
 literal|"4:2:0 (chroma quartered)"
 argument_list|)
 argument_list|,
-name|JPEG_SUPSAMPLING_2x2_1x1_1x1
+name|JPEG_SUBSAMPLING_2x2_1x1_1x1
 argument_list|,
 name|NULL
 argument_list|)
@@ -5058,7 +5058,7 @@ argument_list|(
 name|combo
 argument_list|)
 argument_list|,
-name|JPEG_SUPSAMPLING_1x1_1x1_1x1
+name|JPEG_SUBSAMPLING_1x1_1x1_1x1
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -6379,13 +6379,13 @@ name|jsvals
 operator|.
 name|subsmp
 operator|!=
-name|JPEG_SUPSAMPLING_2x1_1x1_1x1
+name|JPEG_SUBSAMPLING_2x1_1x1_1x1
 operator|&&
 name|jsvals
 operator|.
 name|subsmp
 operator|!=
-name|JPEG_SUPSAMPLING_1x2_1x1_1x1
+name|JPEG_SUBSAMPLING_1x2_1x1_1x1
 argument_list|)
 expr_stmt|;
 name|make_preview
@@ -6570,7 +6570,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcfb9490308
+DECL|struct|__anon29a04cf30308
 block|{
 DECL|member|pub
 name|struct
