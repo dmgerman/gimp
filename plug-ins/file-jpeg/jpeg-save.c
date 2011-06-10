@@ -190,7 +190,7 @@ DECL|macro|DEFAULT_PROGRESSIVE
 define|#
 directive|define
 name|DEFAULT_PROGRESSIVE
-value|FALSE
+value|TRUE
 end_define
 
 begin_define
@@ -276,7 +276,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ab5d520108
+DECL|struct|__anon2b9e616b0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -356,7 +356,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ab5d520208
+DECL|struct|__anon2b9e616b0208
 block|{
 DECL|member|run
 name|gboolean
@@ -6560,7 +6560,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ab5d520308
+DECL|struct|__anon2b9e616b0308
 block|{
 DECL|member|pub
 name|struct
