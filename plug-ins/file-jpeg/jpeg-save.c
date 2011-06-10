@@ -218,6 +218,14 @@ value|0
 end_define
 
 begin_define
+DECL|macro|DEFAULT_RESTART_MCU_ROWS
+define|#
+directive|define
+name|DEFAULT_RESTART_MCU_ROWS
+value|16
+end_define
+
+begin_define
 DECL|macro|DEFAULT_DCT
 define|#
 directive|define
@@ -276,7 +284,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273e028d0108
+DECL|struct|__anon2b7173af0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -356,7 +364,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273e028d0208
+DECL|struct|__anon2b7173af0208
 block|{
 DECL|member|run
 name|gboolean
@@ -4089,6 +4097,7 @@ operator|.
 name|scale_data
 argument_list|,
 operator|(
+operator|(
 name|jsvals
 operator|.
 name|restart
@@ -4096,11 +4105,12 @@ operator|==
 literal|0
 operator|)
 condition|?
-literal|1
+name|DEFAULT_RESTART_MCU_ROWS
 else|:
 name|jsvals
 operator|.
 name|restart
+operator|)
 argument_list|,
 literal|1.0
 argument_list|,
@@ -6560,7 +6570,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273e028d0308
+DECL|struct|__anon2b7173af0308
 block|{
 DECL|member|pub
 name|struct
