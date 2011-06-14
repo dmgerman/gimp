@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c43867d0103
+DECL|enum|__anon27a83a200103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -4942,11 +4942,6 @@ argument_list|(
 name|info
 argument_list|,
 name|factory
-argument_list|)
-expr_stmt|;
-name|gimp_session_info_clear_info
-argument_list|(
-name|info
 argument_list|)
 expr_stmt|;
 block|}

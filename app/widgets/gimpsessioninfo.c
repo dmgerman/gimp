@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a292faa0103
+DECL|enum|__anon298fffc40103
 block|{
 DECL|enumerator|SESSION_INFO_FACTORY_ENTRY
 name|SESSION_INFO_FACTORY_ENTRY
@@ -2099,6 +2099,11 @@ block|}
 block|}
 block|}
 block|}
+name|gimp_session_info_clear_info
+argument_list|(
+name|info
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|info

@@ -552,11 +552,6 @@ name|gimp_dialog_factory_get_singleton
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|gimp_session_info_clear_info
-argument_list|(
-name|info
-argument_list|)
-expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|info
