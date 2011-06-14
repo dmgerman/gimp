@@ -453,18 +453,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_endif
-unit|static void       gimp_warp_tool_act_on_coords      (GimpWarpTool          *wt,                                                      gint                   x,                                                      gint                   y);
-endif|#
-directive|endif
-end_endif
-
 begin_macro
 DECL|function|G_DEFINE_TYPE (GimpWarpTool,gimp_warp_tool,GIMP_TYPE_DRAW_TOOL)
 name|G_DEFINE_TYPE
@@ -1083,6 +1071,27 @@ argument_list|(
 name|y1
 operator|-
 name|y2
+argument_list|)
+expr_stmt|;
+name|printf
+argument_list|(
+literal|"Initialize coordinate buffer (%d,%d) at %d,%d\n"
+argument_list|,
+name|bbox
+operator|.
+name|width
+argument_list|,
+name|bbox
+operator|.
+name|height
+argument_list|,
+name|bbox
+operator|.
+name|x
+argument_list|,
+name|bbox
+operator|.
+name|y
 argument_list|)
 expr_stmt|;
 name|wt
@@ -2320,45 +2329,8 @@ argument_list|,
 literal|"aux"
 argument_list|)
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|last_op
-argument_list|)
-expr_stmt|;
 block|}
 end_function
-
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_comment
-unit|static void gimp_warp_tool_act_on_coords (GimpWarpTool *wt,                               gint x,                               gint y) {   GeglBufferIterator  *it;   Babl                *format;   GeglRectangle        area = {x - 30,                                y - 30,                                60,                                60};    format = babl_format_n (babl_type ("float"), 2);   it = gegl_buffer_iterator_new (wt->coords_buffer,&area, format, GEGL_BUFFER_READWRITE);    while (gegl_buffer_iterator_next (it))     {
-comment|/* iterate inside the roi */
-end_comment
-
-begin_comment
-unit|gint    n_pixels = it->length;       gfloat *coords   = it->data[0];        x = it->roi->x;
-comment|/* initial x         */
-end_comment
-
-begin_comment
-unit|y = it->roi->y;
-comment|/* and y coordinates */
-end_comment
-
-begin_comment
-unit|while (n_pixels--)         {           coords[0] += 2;           coords[1] += 2;            coords += 2;
-comment|/* update x and y coordinates */
-end_comment
-
-begin_endif
-unit|x++;           if (x>= (it->roi->x + it->roi->width))             {               x = it->roi->x;               y++;             }         }     } }
-endif|#
-directive|endif
-end_endif
 
 end_unit
 
