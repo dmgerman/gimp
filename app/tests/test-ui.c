@@ -286,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba0206b0108
+DECL|struct|__anon273c6f3f0108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -712,6 +712,9 @@ name|GIMP_DOCKABLE
 argument_list|(
 name|channel_dockable
 argument_list|)
+expr_stmt|;
+name|gimp_test_run_mainloop_until_idle
+argument_list|()
 expr_stmt|;
 comment|/* The channel dockable is the only dockable, it has enough space    * for the icon-blurb    */
 name|g_assert_cmpint
