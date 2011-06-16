@@ -98,7 +98,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c9089810108
+DECL|struct|__anon2aa70d530108
 typedef|typedef
 struct|struct
 block|{
@@ -118,7 +118,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c9089810208
+DECL|struct|__anon2aa70d530208
 typedef|typedef
 struct|struct
 block|{
@@ -529,6 +529,11 @@ name|value
 init|=
 name|NULL
 decl_stmt|;
+if|#
+directive|if
+name|PG_DEBUG
+operator|>
+literal|1
 name|g_printf
 argument_list|(
 literal|"param_to_tuple: type: %d, PDB_ITEM: %d\n"
@@ -543,6 +548,8 @@ argument_list|,
 name|GIMP_PDB_ITEM
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 switch|switch
 condition|(
 name|params
