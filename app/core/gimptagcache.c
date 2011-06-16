@@ -119,7 +119,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e5f5ea0103
+DECL|enum|__anon2c4b2a1d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -133,7 +133,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e5f5ea0208
+DECL|struct|__anon2c4b2a1d0208
 block|{
 DECL|member|identifier
 name|GQuark
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e5f5ea0308
+DECL|struct|__anon2c4b2a1d0308
 block|{
 DECL|member|records
 name|GArray
@@ -1333,7 +1333,7 @@ expr_stmt|;
 operator|*
 name|cache_records
 operator|=
-name|g_list_append
+name|g_list_prepend
 argument_list|(
 operator|*
 name|cache_records
@@ -1492,7 +1492,7 @@ argument_list|)
 expr_stmt|;
 name|saved_records
 operator|=
-name|g_list_append
+name|g_list_prepend
 argument_list|(
 name|saved_records
 argument_list|,
@@ -1540,6 +1540,13 @@ name|saved_records
 argument_list|)
 expr_stmt|;
 block|}
+name|saved_records
+operator|=
+name|g_list_reverse
+argument_list|(
+name|saved_records
+argument_list|)
+expr_stmt|;
 name|buf
 operator|=
 name|g_string_new
