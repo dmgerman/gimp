@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2ed92d0103
+DECL|enum|__anon2b4a39040103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -436,6 +436,10 @@ parameter_list|)
 block|{
 name|GtkTreeIter
 name|iter
+init|=
+block|{
+literal|0
+block|, }
 decl_stmt|;
 specifier|const
 name|gchar
