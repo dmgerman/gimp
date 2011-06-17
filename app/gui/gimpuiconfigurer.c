@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296fa1ad0103
+DECL|enum|__anon2b6790b20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -657,6 +657,20 @@ argument_list|(
 name|dock_window
 argument_list|)
 expr_stmt|;
+name|g_object_add_weak_pointer
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|dock_window
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+operator|&
+name|dock_window
+argument_list|)
+expr_stmt|;
 name|docks
 operator|=
 name|gimp_dock_container_get_docks
@@ -735,8 +749,25 @@ argument_list|(
 name|docks
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|dock_window
+condition|)
+name|g_object_remove_weak_pointer
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|dock_window
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+operator|&
+name|dock_window
+argument_list|)
+expr_stmt|;
 comment|/* Kill the window if removing the dock didn't destroy it        * already. This will be the case for the toolbox dock window        */
-comment|/* FIXME: We should solve this in a more elegant way, valgrind        * complains about invalid reads when the dock window already is        * destroyed        */
 if|if
 condition|(
 name|GTK_IS_WIDGET
