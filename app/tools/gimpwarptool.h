@@ -162,9 +162,13 @@ name|GeglPath
 modifier|*
 name|current_stroke
 decl_stmt|;
-DECL|member|timer
+DECL|member|stroke_timer
 name|guint
-name|timer
+name|stroke_timer
+decl_stmt|;
+DECL|member|preview_timer
+name|guint
+name|preview_timer
 decl_stmt|;
 DECL|member|image_map
 name|GimpImageMap
