@@ -172,6 +172,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GIcon
+modifier|*
+name|gimp_imagefile_get_gicon
+parameter_list|(
+name|GimpImagefile
+modifier|*
+name|imagefile
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_imagefile_set_mime_type
 parameter_list|(
