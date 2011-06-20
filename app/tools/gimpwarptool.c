@@ -1848,7 +1848,7 @@ name|wt
 operator|->
 name|current_stroke
 argument_list|,
-literal|'M'
+literal|'L'
 argument_list|,
 name|wt
 operator|->
