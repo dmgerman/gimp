@@ -2419,6 +2419,12 @@ literal|"operation"
 argument_list|,
 literal|"gimp:warp"
 argument_list|,
+literal|"behavior"
+argument_list|,
+name|options
+operator|->
+name|behavior
+argument_list|,
 literal|"strength"
 argument_list|,
 name|options

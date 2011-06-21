@@ -120,6 +120,10 @@ DECL|member|effect_size
 name|gdouble
 name|effect_size
 decl_stmt|;
+DECL|member|behavior
+name|GimpWarpBehavior
+name|behavior
+decl_stmt|;
 block|}
 struct|;
 end_struct
