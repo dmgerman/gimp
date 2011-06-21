@@ -25,6 +25,16 @@ directive|include
 file|<string.h>
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|G_DISABLE_DEPRECATED
+end_undef
+
+begin_comment
+comment|/* for G_CONST_RETURN used by rsvg */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -126,7 +136,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c03489e0108
+DECL|struct|__anon28b95f3e0108
 block|{
 DECL|member|resolution
 name|gdouble

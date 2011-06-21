@@ -13,6 +13,16 @@ directive|include
 file|"config.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|G_DISABLE_DEPRECATED
+end_undef
+
+begin_comment
+comment|/* for G_CONST_RETURN used by webkit */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -76,7 +86,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b92e9230108
+DECL|struct|__anon29a41ea40108
 block|{
 DECL|member|url
 name|char
@@ -118,7 +128,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b92e9230208
+DECL|struct|__anon29a41ea40208
 block|{
 DECL|member|url
 name|char
