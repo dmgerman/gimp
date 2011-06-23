@@ -103,7 +103,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b40b0fe0108
+DECL|struct|__anon2c42c7450108
 block|{
 DECL|member|code
 name|guint16
@@ -614,7 +614,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b40b0fe0203
+DECL|enum|__anon2c42c7450203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1086,7 +1086,7 @@ argument_list|)
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|HAVE_LIBHAL
+name|HAVE_LIBGUDEV
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -2159,7 +2159,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|linux_input_device_changed (ControllerLinuxInput * controller,const gchar * udi)
+DECL|function|linux_input_device_changed (ControllerLinuxInput * controller,const gchar * identifier)
 name|linux_input_device_changed
 parameter_list|(
 name|ControllerLinuxInput
@@ -2169,7 +2169,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|udi
+name|identifier
 parameter_list|)
 block|{
 if|if
@@ -2180,7 +2180,7 @@ name|device
 operator|&&
 name|strcmp
 argument_list|(
-name|udi
+name|identifier
 argument_list|,
 name|controller
 operator|->
@@ -2194,7 +2194,7 @@ name|linux_input_set_device
 argument_list|(
 name|controller
 argument_list|,
-name|udi
+name|identifier
 argument_list|)
 expr_stmt|;
 name|g_object_notify
