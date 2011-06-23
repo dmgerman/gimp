@@ -174,7 +174,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c083ca50103
+DECL|enum|__anon2c07b4280103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -193,7 +193,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c083ca50208
+DECL|struct|__anon2c07b4280208
 block|{
 DECL|member|name
 specifier|const
@@ -255,6 +255,12 @@ block|}
 block|,
 block|{
 literal|"patterns"
+block|,
+name|USER_INSTALL_MKDIR
+block|}
+block|,
+block|{
+literal|"tool-presets"
 block|,
 name|USER_INSTALL_MKDIR
 block|}
