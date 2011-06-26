@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acf2c920103
+DECL|enum|__anon28e992fa0103
 block|{
 DECL|enumerator|COLUMN_IDENTIFIER
 name|COLUMN_IDENTIFIER
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acf2c920203
+DECL|enum|__anon28e992fa0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -79,7 +79,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acf2c920303
+DECL|enum|__anon28e992fa0303
 block|{
 DECL|enumerator|DEVICE_ADDED
 name|DEVICE_ADDED
@@ -1030,6 +1030,11 @@ argument_list|(
 name|device
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|parent
+condition|)
+block|{
 specifier|const
 name|gchar
 modifier|*
@@ -1106,9 +1111,7 @@ argument_list|(
 name|parent
 argument_list|)
 expr_stmt|;
-return|return
-name|FALSE
-return|;
+block|}
 block|}
 block|}
 return|return
