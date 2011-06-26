@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bad17150103
+DECL|enum|__anon28f5ef210103
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -314,16 +314,6 @@ name|gboolean
 name|use_mid_handles
 decl_stmt|;
 comment|/*  use handles at midpoints of edges */
-DECL|member|handle_w
-name|gint
-name|handle_w
-decl_stmt|;
-comment|/*  handle width                      */
-DECL|member|handle_h
-name|gint
-name|handle_h
-decl_stmt|;
-comment|/*  handle height                     */
 DECL|member|ngx
 DECL|member|ngy
 name|gint
