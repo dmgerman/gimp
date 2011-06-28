@@ -633,7 +633,7 @@ name|NC_
 argument_list|(
 literal|"file-action"
 argument_list|,
-literal|"Overwrite"
+literal|"Over_write"
 argument_list|)
 block|,
 literal|""
@@ -1410,7 +1410,7 @@ name|file_actions_create_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Overwrite %s"
+literal|"Over_write %s"
 argument_list|)
 argument_list|,
 name|source
