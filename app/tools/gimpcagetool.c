@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c58274b0103
+DECL|enum|__anon2b3f133c0103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -498,10 +498,6 @@ parameter_list|(
 name|GimpCageTool
 modifier|*
 name|ct
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1472,10 +1468,6 @@ block|{
 name|gimp_cage_tool_compute_coef
 argument_list|(
 name|ct
-argument_list|,
-name|tool
-operator|->
-name|display
 argument_list|)
 expr_stmt|;
 name|gimp_cage_tool_render_node_update
@@ -4268,16 +4260,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_cage_tool_compute_coef (GimpCageTool * ct,GimpDisplay * display)
+DECL|function|gimp_cage_tool_compute_coef (GimpCageTool * ct)
 name|gimp_cage_tool_compute_coef
 parameter_list|(
 name|GimpCageTool
 modifier|*
 name|ct
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 block|{
 name|GimpCageConfig
