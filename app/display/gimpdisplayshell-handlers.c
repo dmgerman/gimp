@@ -3660,13 +3660,13 @@ argument_list|(
 name|vectors
 argument_list|)
 argument_list|,
+name|GIMP_PATH_STYLE_VECTORS
+argument_list|,
 literal|0
 argument_list|,
 literal|0
 argument_list|,
 name|FALSE
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_canvas_item_set_visible

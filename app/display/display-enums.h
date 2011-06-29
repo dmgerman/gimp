@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a18eb00103
+DECL|enum|__anon2a0ac3310103
 block|{
 DECL|enumerator|GIMP_CURSOR_PRECISION_PIXEL_CENTER
 name|GIMP_CURSOR_PRECISION_PIXEL_CENTER
@@ -74,7 +74,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a18eb00203
+DECL|enum|__anon2a0ac3310203
 block|{
 DECL|enumerator|GIMP_GUIDES_NONE
 name|GIMP_GUIDES_NONE
@@ -126,7 +126,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a18eb00303
+DECL|enum|__anon2a0ac3310303
 block|{
 DECL|enumerator|GIMP_HANDLE_SQUARE
 name|GIMP_HANDLE_SQUARE
@@ -169,7 +169,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a18eb00403
+DECL|enum|__anon2a0ac3310403
 block|{
 DECL|enumerator|GIMP_HANDLE_ANCHOR_CENTER
 name|GIMP_HANDLE_ANCHOR_CENTER
@@ -204,6 +204,45 @@ typedef|;
 end_typedef
 
 begin_define
+DECL|macro|GIMP_TYPE_PATH_STYLE
+define|#
+directive|define
+name|GIMP_TYPE_PATH_STYLE
+value|(gimp_path_style_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_path_style_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2a0ac3310503
+block|{
+DECL|enumerator|GIMP_PATH_STYLE_DEFAULT
+name|GIMP_PATH_STYLE_DEFAULT
+init|=
+literal|0
+block|,
+DECL|enumerator|GIMP_PATH_STYLE_VECTORS
+name|GIMP_PATH_STYLE_VECTORS
+block|,
+DECL|enumerator|GIMP_PATH_STYLE_OUTLINE
+name|GIMP_PATH_STYLE_OUTLINE
+DECL|typedef|GimpPathStyle
+block|}
+name|GimpPathStyle
+typedef|;
+end_typedef
+
+begin_define
 DECL|macro|GIMP_TYPE_ZOOM_FOCUS
 define|#
 directive|define
@@ -224,7 +263,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a18eb00503
+DECL|enum|__anon2a0ac3310603
 block|{
 comment|/* Make a best guess */
 DECL|enumerator|GIMP_ZOOM_FOCUS_BEST_GUESS
