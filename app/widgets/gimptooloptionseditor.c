@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3903f30103
+DECL|enum|__anon28f948380103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1899,6 +1899,15 @@ name|GtkWidget
 modifier|*
 name|options_gui
 decl_stmt|;
+comment|/* This will warn if tool info is changed to nothing.    * This seems to happen if starting in SWM with tool editor visible    * Maybe its normal, and the code should just be writen to    * handle this case, but someone smarter needs to take a look*/
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_TOOL_INFO
+argument_list|(
+name|tool_info
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|tool_info
@@ -2122,12 +2131,12 @@ operator|->
 name|help_id
 argument_list|)
 expr_stmt|;
-block|}
 name|gimp_tool_options_editor_presets_update
 argument_list|(
 name|editor
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|editor
