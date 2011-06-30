@@ -645,7 +645,7 @@ argument_list|,
 literal|"Export the image back to the imported file in the import format"
 argument_list|)
 block|,
-name|GIMP_SAVE_MODE_EXPORT_TO
+name|GIMP_SAVE_MODE_OVERWRITE
 block|,
 name|FALSE
 block|,
@@ -1313,15 +1313,13 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"file-export-to"
 argument_list|,
-name|export
+name|drawable
 argument_list|)
 expr_stmt|;
 name|SET_VISIBLE
 argument_list|(
 literal|"file-export-to"
 argument_list|,
-name|export
-operator|||
 operator|!
 name|show_overwrite
 argument_list|)
