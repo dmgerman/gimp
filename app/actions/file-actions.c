@@ -1276,8 +1276,6 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"file-save"
 argument_list|,
-name|image
-operator|&&
 name|drawable
 argument_list|)
 expr_stmt|;
@@ -1285,8 +1283,6 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"file-save-as"
 argument_list|,
-name|image
-operator|&&
 name|drawable
 argument_list|)
 expr_stmt|;
@@ -1294,8 +1290,6 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"file-save-a-copy"
 argument_list|,
-name|image
-operator|&&
 name|drawable
 argument_list|)
 expr_stmt|;
@@ -1350,8 +1344,6 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"file-export"
 argument_list|,
-name|image
-operator|&&
 name|drawable
 argument_list|)
 expr_stmt|;
