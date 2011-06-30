@@ -153,9 +153,6 @@ name|GimpBezierDesc
 modifier|*
 name|bezier
 parameter_list|,
-name|GimpPathStyle
-name|type
-parameter_list|,
 name|gdouble
 name|x
 parameter_list|,
@@ -164,6 +161,9 @@ name|y
 parameter_list|,
 name|gboolean
 name|filled
+parameter_list|,
+name|GimpPathStyle
+name|style
 parameter_list|)
 function_decl|;
 end_function_decl

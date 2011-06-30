@@ -1532,7 +1532,10 @@ name|cr
 argument_list|,
 name|dashes
 argument_list|,
-literal|2
+name|G_N_ELEMENTS
+argument_list|(
+name|dashes
+argument_list|)
 argument_list|,
 literal|0
 argument_list|)

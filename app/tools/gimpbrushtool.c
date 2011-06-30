@@ -1542,13 +1542,13 @@ name|shell
 argument_list|,
 name|boundary
 argument_list|,
-name|GIMP_PATH_STYLE_OUTLINE
-argument_list|,
 name|x
 argument_list|,
 name|y
 argument_list|,
 name|FALSE
+argument_list|,
+name|GIMP_PATH_STYLE_OUTLINE
 argument_list|)
 return|;
 block|}

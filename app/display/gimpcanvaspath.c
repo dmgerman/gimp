@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290e41000103
+DECL|enum|__anon2bb0f9320103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1325,7 +1325,7 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_canvas_path_new (GimpDisplayShell * shell,const GimpBezierDesc * bezier,GimpPathStyle path_style,gdouble x,gdouble y,gboolean filled)
+DECL|function|gimp_canvas_path_new (GimpDisplayShell * shell,const GimpBezierDesc * bezier,gdouble x,gdouble y,gboolean filled,GimpPathStyle style)
 name|gimp_canvas_path_new
 parameter_list|(
 name|GimpDisplayShell
@@ -1337,9 +1337,6 @@ name|GimpBezierDesc
 modifier|*
 name|bezier
 parameter_list|,
-name|GimpPathStyle
-name|path_style
-parameter_list|,
 name|gdouble
 name|x
 parameter_list|,
@@ -1348,6 +1345,9 @@ name|y
 parameter_list|,
 name|gboolean
 name|filled
+parameter_list|,
+name|GimpPathStyle
+name|style
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -1373,10 +1373,6 @@ literal|"path"
 argument_list|,
 name|bezier
 argument_list|,
-literal|"path-style"
-argument_list|,
-name|path_style
-argument_list|,
 literal|"x"
 argument_list|,
 name|x
@@ -1388,6 +1384,10 @@ argument_list|,
 literal|"filled"
 argument_list|,
 name|filled
+argument_list|,
+literal|"path-style"
+argument_list|,
+name|style
 argument_list|,
 name|NULL
 argument_list|)

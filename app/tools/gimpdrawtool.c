@@ -2732,13 +2732,13 @@ argument_list|)
 argument_list|,
 name|desc
 argument_list|,
-name|GIMP_PATH_STYLE_DEFAULT
-argument_list|,
 name|x
 argument_list|,
 name|y
 argument_list|,
 name|FALSE
+argument_list|,
+name|GIMP_PATH_STYLE_DEFAULT
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_item
