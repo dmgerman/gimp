@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d695050103
+DECL|enum|__anon296f22220103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -201,7 +201,7 @@ argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
-literal|100.0
+literal|10.0
 argument_list|,
 literal|1.0
 argument_list|,
@@ -551,7 +551,7 @@ argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
-literal|10.0
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
