@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2959ad590103
+DECL|enum|__anon2b78a8da0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -174,7 +174,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2959ad590203
+DECL|enum|__anon2b78a8da0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -8467,6 +8467,10 @@ name|retval
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_item_mask_intersect:  * @item:   a #GimpItem  * @x:      return location for x  * @y:      return location for y  * @width:  return location for the width  * @height: return location for the height  *  * Intersect the area of the @item and its image's selection mask.  * The computed area is the bounding box of he selection within the  * item.  **/
+end_comment
 
 begin_function
 name|gboolean
