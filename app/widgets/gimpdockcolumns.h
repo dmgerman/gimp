@@ -214,6 +214,25 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_dock_columns_prepare_dockbook
+parameter_list|(
+name|GimpDockColumns
+modifier|*
+name|dock_columns
+parameter_list|,
+name|gint
+name|dock_index
+parameter_list|,
+name|GtkWidget
+modifier|*
+modifier|*
+name|dockbook_p
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_dock_columns_remove_dock
 parameter_list|(
 name|GimpDockColumns
