@@ -286,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273c6f3f0108
+DECL|struct|__anon298803ba0108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -3070,6 +3070,17 @@ argument_list|,
 literal|"windows"
 argument_list|,
 literal|"windows-use-single-window-mode"
+argument_list|)
+expr_stmt|;
+name|gimp_test_run_mainloop_until_idle
+argument_list|()
+expr_stmt|;
+comment|/* Add a small sleep to let things stabilize */
+name|g_usleep
+argument_list|(
+literal|500
+operator|*
+literal|1000
 argument_list|)
 expr_stmt|;
 name|gimp_test_run_mainloop_until_idle
