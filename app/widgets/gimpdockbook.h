@@ -260,6 +260,26 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_dockbook_add_from_dialog_factory
+parameter_list|(
+name|GimpDockbook
+modifier|*
+name|dockbook
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|identifiers
+parameter_list|,
+name|gint
+name|position
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_dockbook_remove
 parameter_list|(
