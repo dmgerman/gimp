@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb0f9320103
+DECL|enum|__anon2894ebd60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1221,10 +1221,6 @@ argument_list|)
 decl_stmt|;
 name|gboolean
 name|active
-decl_stmt|;
-name|cairo_pattern_t
-modifier|*
-name|pattern
 decl_stmt|;
 switch|switch
 condition|(
