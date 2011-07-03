@@ -1900,7 +1900,6 @@ modifier|*
 name|info
 parameter_list|)
 block|{
-comment|/* FIXME: We can't always use the empty display here */
 name|Gimp
 modifier|*
 name|gimp
