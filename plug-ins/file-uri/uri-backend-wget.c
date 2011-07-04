@@ -517,7 +517,7 @@ name|DEBUG
 parameter_list|(
 name|x
 parameter_list|)
-value|if (debug) g_printerr (x)
+value|if (debug) g_printerr ("%s\n", x)
 name|close
 argument_list|(
 name|p
@@ -538,7 +538,7 @@ argument_list|,
 literal|"r"
 argument_list|)
 expr_stmt|;
-comment|/*  hardcoded and not-really-foolproof scanning of wget putput  */
+comment|/*  hardcoded and not-really-foolproof scanning of wget output  */
 name|wget_begin
 label|:
 comment|/* Eat any Location lines */
