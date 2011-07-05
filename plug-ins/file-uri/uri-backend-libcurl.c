@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<curl/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<curl/easy.h>
 end_include
 
