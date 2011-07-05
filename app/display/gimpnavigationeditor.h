@@ -158,6 +158,10 @@ name|GtkWidget
 modifier|*
 name|shrink_wrap_button
 decl_stmt|;
+DECL|member|scale_timeout
+name|guint
+name|scale_timeout
+decl_stmt|;
 block|}
 struct|;
 end_struct
