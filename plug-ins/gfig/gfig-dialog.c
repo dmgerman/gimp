@@ -259,6 +259,19 @@ name|OBJ_SELECT_EQ
 value|4
 end_define
 
+begin_define
+DECL|macro|UPDATE_DELAY
+define|#
+directive|define
+name|UPDATE_DELAY
+value|300
+end_define
+
+begin_comment
+DECL|macro|UPDATE_DELAY
+comment|/* From GtkRange in GTK+ 2.22 */
+end_comment
+
 begin_comment
 comment|/* Globals */
 end_comment
@@ -430,7 +443,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274ea3150108
+DECL|struct|__anon29891c3b0108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -535,6 +548,16 @@ specifier|static
 name|GtkWidget
 modifier|*
 name|fill_type_notebook
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|paint_timeout
+specifier|static
+name|guint
+name|paint_timeout
+init|=
+literal|0
 decl_stmt|;
 end_decl_stmt
 
@@ -5129,6 +5152,61 @@ end_function
 
 begin_function
 specifier|static
+name|gboolean
+DECL|function|gfig_paint_timeout (gpointer data)
+name|gfig_paint_timeout
+parameter_list|(
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|gfig_paint_callback
+argument_list|()
+expr_stmt|;
+name|paint_timeout
+operator|=
+literal|0
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gfig_paint_delayed (void)
+name|gfig_paint_delayed
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+name|paint_timeout
+condition|)
+name|g_source_remove
+argument_list|(
+name|paint_timeout
+argument_list|)
+expr_stmt|;
+name|paint_timeout
+operator|=
+name|g_timeout_add
+argument_list|(
+name|UPDATE_DELAY
+argument_list|,
+name|gfig_paint_timeout
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|void
 DECL|function|gfig_prefs_action_callback (GtkAction * widget,gpointer data)
 name|gfig_prefs_action_callback
@@ -5879,16 +5957,6 @@ argument_list|,
 name|GTK_POS_TOP
 argument_list|)
 expr_stmt|;
-name|gtk_range_set_update_policy
-argument_list|(
-name|GTK_RANGE
-argument_list|(
-name|scale
-argument_list|)
-argument_list|,
-name|GTK_UPDATE_DELAYED
-argument_list|)
-expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|scale_data
@@ -5914,7 +5982,7 @@ literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gfig_paint_callback
+name|gfig_paint_delayed
 argument_list|)
 argument_list|,
 name|NULL
