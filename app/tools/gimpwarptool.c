@@ -2375,6 +2375,12 @@ name|options
 operator|->
 name|effect_size
 argument_list|,
+literal|"hardness"
+argument_list|,
+name|options
+operator|->
+name|effect_hardness
+argument_list|,
 literal|"stroke"
 argument_list|,
 name|wt
