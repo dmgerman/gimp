@@ -1076,6 +1076,8 @@ specifier|const
 name|gchar
 modifier|*
 name|uri
+init|=
+name|NULL
 decl_stmt|;
 name|GimpPlugInProcedure
 modifier|*
