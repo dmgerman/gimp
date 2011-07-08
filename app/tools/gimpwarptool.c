@@ -1524,6 +1524,11 @@ operator|->
 name|y
 argument_list|)
 expr_stmt|;
+name|gimp_warp_tool_add_op
+argument_list|(
+name|wt
+argument_list|)
+expr_stmt|;
 name|wt
 operator|->
 name|stroke_timer
@@ -1547,11 +1552,6 @@ name|PREVIEW_PERIOD
 argument_list|,
 name|gimp_warp_tool_preview_timer
 argument_list|,
-name|wt
-argument_list|)
-expr_stmt|;
-name|gimp_warp_tool_add_op
-argument_list|(
 name|wt
 argument_list|)
 expr_stmt|;
@@ -1643,11 +1643,6 @@ name|current_stroke
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_warp_tool_preview_timer
-argument_list|(
-name|wt
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|release_type
@@ -1662,7 +1657,13 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-block|{     }
+block|{
+name|gimp_warp_tool_image_map_update
+argument_list|(
+name|wt
+argument_list|)
+expr_stmt|;
+block|}
 name|gimp_draw_tool_resume
 argument_list|(
 name|GIMP_DRAW_TOOL
