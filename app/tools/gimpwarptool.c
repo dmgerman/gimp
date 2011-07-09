@@ -2356,7 +2356,7 @@ name|graph
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gimp:warp"
+literal|"gegl:warp"
 argument_list|,
 literal|"behavior"
 argument_list|,
