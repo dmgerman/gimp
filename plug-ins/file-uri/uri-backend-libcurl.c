@@ -762,7 +762,9 @@ name|g_ascii_strncasecmp
 argument_list|(
 name|eff_url
 argument_list|,
-literal|"gopher://, 9"
+literal|"gopher://"
+argument_list|,
+literal|9
 argument_list|)
 condition|)
 block|{
