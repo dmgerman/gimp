@@ -176,7 +176,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2930ab860108
+DECL|struct|__anon2c2c83170108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -1766,7 +1766,7 @@ argument_list|)
 expr_stmt|;
 name|randomize_prepare_row
 argument_list|(
-name|dp
+name|sp
 argument_list|,
 name|cr
 argument_list|,
