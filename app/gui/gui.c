@@ -1781,7 +1781,7 @@ name|gimp_ui_manager_update
 argument_list|(
 name|image_ui_manager
 argument_list|,
-name|NULL
+name|gimp
 argument_list|)
 expr_stmt|;
 ifdef|#
