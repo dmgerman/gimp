@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6790b20103
+DECL|enum|__anon2b200bfe0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -246,6 +246,9 @@ parameter_list|,
 name|GimpDockColumns
 modifier|*
 name|dock_columns
+parameter_list|,
+name|GimpAlignmentType
+name|screen_side_destination
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -954,6 +957,8 @@ argument_list|(
 name|ui_configurer
 argument_list|,
 name|left_docks
+argument_list|,
+name|GIMP_ALIGN_LEFT
 argument_list|)
 expr_stmt|;
 name|gimp_ui_configurer_move_docks_to_window
@@ -961,19 +966,21 @@ argument_list|(
 name|ui_configurer
 argument_list|,
 name|right_docks
+argument_list|,
+name|GIMP_ALIGN_RIGHT
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_ui_configurer_move_docks_to_window:  * @dock_columns:  *  * Moves docks in @dock_columns into a new #GimpDockWindow.  * FIXME: Properly session manage  */
+comment|/**  * gimp_ui_configurer_move_docks_to_window:  * @dock_columns:  * @screen_side_destination: At what side of the screen the dock window  *                           should be put.  *  * Moves docks in @dock_columns into a new #GimpDockWindow and  * position it on the screen in a non-overlapping manner.  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_ui_configurer_move_docks_to_window (GimpUIConfigurer * ui_configurer,GimpDockColumns * dock_columns)
+DECL|function|gimp_ui_configurer_move_docks_to_window (GimpUIConfigurer * ui_configurer,GimpDockColumns * dock_columns,GimpAlignmentType screen_side_destination)
 name|gimp_ui_configurer_move_docks_to_window
 parameter_list|(
 name|GimpUIConfigurer
@@ -983,6 +990,9 @@ parameter_list|,
 name|GimpDockColumns
 modifier|*
 name|dock_columns
+parameter_list|,
+name|GimpAlignmentType
+name|screen_side_destination
 parameter_list|)
 block|{
 name|GdkScreen
@@ -1015,6 +1025,18 @@ name|iter
 init|=
 name|NULL
 decl_stmt|;
+name|gboolean
+name|contains_toolbox
+init|=
+name|FALSE
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|dock_window
+init|=
+name|NULL
+decl_stmt|;
+comment|/* Do we need a toolbox window? */
 for|for
 control|(
 name|iter
@@ -1041,13 +1063,22 @@ operator|->
 name|data
 argument_list|)
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|dock_window
-init|=
-name|NULL
-decl_stmt|;
-comment|/* Create a dock window to put the dock in. Checking for        * GIMP_IS_TOOLBOX() is kind of ugly but not a disaster. We need        * the dock window correctly configured if we create it for the        * toolbox        */
+if|if
+condition|(
+name|GIMP_IS_TOOLBOX
+argument_list|(
+name|dock
+argument_list|)
+condition|)
+block|{
+name|contains_toolbox
+operator|=
+name|FALSE
+expr_stmt|;
+break|break;
+block|}
+block|}
+comment|/* Create a dock window to put the dock in. Checking for    * GIMP_IS_TOOLBOX() is kind of ugly but not a disaster. We need    * the dock window correctly configured if we create it for the    * toolbox    */
 name|dock_window
 operator|=
 name|gimp_dialog_factory_dialog_new
@@ -1061,10 +1092,7 @@ name|NULL
 comment|/*ui_manager*/
 argument_list|,
 operator|(
-name|GIMP_IS_TOOLBOX
-argument_list|(
-name|dock
-argument_list|)
+name|contains_toolbox
 condition|?
 literal|"gimp-toolbox-window"
 else|:
@@ -1079,6 +1107,32 @@ name|FALSE
 comment|/*present*/
 argument_list|)
 expr_stmt|;
+for|for
+control|(
+name|iter
+operator|=
+name|docks
+init|;
+name|iter
+condition|;
+name|iter
+operator|=
+name|iter
+operator|->
+name|next
+control|)
+block|{
+name|GimpDock
+modifier|*
+name|dock
+init|=
+name|GIMP_DOCK
+argument_list|(
+name|iter
+operator|->
+name|data
+argument_list|)
+decl_stmt|;
 comment|/* Move the dock to the window */
 name|g_object_ref
 argument_list|(
@@ -1110,13 +1164,51 @@ argument_list|(
 name|dock
 argument_list|)
 expr_stmt|;
+block|}
+comment|/* Position the window */
+if|if
+condition|(
+name|screen_side_destination
+operator|==
+name|GIMP_ALIGN_LEFT
+condition|)
+name|gtk_window_parse_geometry
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dock_window
+argument_list|)
+argument_list|,
+literal|"+0+0"
+argument_list|)
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|screen_side_destination
+operator|==
+name|GIMP_ALIGN_RIGHT
+condition|)
+name|gtk_window_parse_geometry
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dock_window
+argument_list|)
+argument_list|,
+literal|"-0+0"
+argument_list|)
+expr_stmt|;
+else|else
+name|g_assert_not_reached
+argument_list|()
+expr_stmt|;
 comment|/* Don't forget to show the window */
 name|gtk_widget_show
 argument_list|(
 name|dock_window
 argument_list|)
 expr_stmt|;
-block|}
 name|g_list_free
 argument_list|(
 name|docks
