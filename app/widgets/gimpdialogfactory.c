@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a83a200103
+DECL|enum|__anon2b0a6bc80103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -5361,6 +5361,8 @@ argument_list|(
 name|display
 argument_list|,
 name|GIMP_CURSOR_FORMAT_BITMAP
+argument_list|,
+name|GIMP_HANDEDNESS_RIGHT
 argument_list|,
 name|GDK_WATCH
 argument_list|,

@@ -545,6 +545,11 @@ name|GimpCursorFormat
 name|cursor_format
 decl_stmt|;
 comment|/*  Currently used cursor format       */
+DECL|member|cursor_handedness
+name|GimpHandedness
+name|cursor_handedness
+decl_stmt|;
+comment|/*  Handedness for cursor display      */
 DECL|member|current_cursor
 name|GimpCursorType
 name|current_cursor
@@ -564,7 +569,7 @@ DECL|member|override_cursor
 name|GimpCursorType
 name|override_cursor
 decl_stmt|;
-comment|/*  Overriding cursor                 */
+comment|/*  Overriding cursor                  */
 DECL|member|using_override_cursor
 name|gboolean
 name|using_override_cursor

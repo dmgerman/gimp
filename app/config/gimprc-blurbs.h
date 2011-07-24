@@ -144,6 +144,15 @@ value|N_("Sets the type of mouse pointers to use.")
 end_define
 
 begin_define
+DECL|macro|CURSOR_HANDEDNESS_BLURB
+define|#
+directive|define
+name|CURSOR_HANDEDNESS_BLURB
+define|\
+value|N_("Sets the handedness for cursor positioning.")
+end_define
+
+begin_define
 DECL|macro|CURSOR_UPDATING_BLURB
 define|#
 directive|define

@@ -221,6 +221,10 @@ DECL|member|cursor_format
 name|GimpCursorFormat
 name|cursor_format
 decl_stmt|;
+DECL|member|cursor_handedness
+name|GimpHandedness
+name|cursor_handedness
+decl_stmt|;
 DECL|member|last_tip
 name|gint
 name|last_tip

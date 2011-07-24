@@ -9198,7 +9198,7 @@ name|table
 operator|=
 name|prefs_table_new
 argument_list|(
-literal|2
+literal|3
 argument_list|,
 name|GTK_CONTAINER
 argument_list|(
@@ -9254,6 +9254,31 @@ argument_list|,
 literal|1
 argument_list|,
 name|size_group
+argument_list|)
+expr_stmt|;
+name|prefs_enum_combo_box_add
+argument_list|(
+name|object
+argument_list|,
+literal|"cursor-handedness"
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|_
+argument_list|(
+literal|"Pointer _handedness:"
+argument_list|)
+argument_list|,
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|2
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -9448,7 +9473,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29e83efc0108
+DECL|struct|__anon2a1065170108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10605,7 +10630,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29e83efc0208
+DECL|struct|__anon2a1065170208
 block|{
 DECL|member|label
 specifier|const
@@ -11717,7 +11742,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29e83efc0308
+DECL|struct|__anon2a1065170308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11872,7 +11897,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29e83efc0408
+DECL|struct|__anon2a1065170408
 block|{
 DECL|member|tree_label
 specifier|const

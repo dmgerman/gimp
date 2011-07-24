@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abb26240103
+DECL|enum|__anon29354dcc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -363,7 +363,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abb26240203
+DECL|enum|__anon29354dcc0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1225,6 +1225,12 @@ operator|->
 name|cursor_format
 operator|=
 name|GIMP_CURSOR_FORMAT_BITMAP
+expr_stmt|;
+name|shell
+operator|->
+name|cursor_handedness
+operator|=
+name|GIMP_HANDEDNESS_RIGHT
 expr_stmt|;
 name|shell
 operator|->

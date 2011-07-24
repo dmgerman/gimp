@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b3d6910103
+DECL|enum|__anon29d6aef90103
 block|{
 DECL|enumerator|GIMP_CURSOR_MODE_TOOL_ICON
 name|GIMP_CURSOR_MODE_TOOL_ICON
@@ -77,7 +77,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b3d6910203
+DECL|enum|__anon29d6aef90203
 block|{
 DECL|enumerator|GIMP_CANVAS_PADDING_MODE_DEFAULT
 name|GIMP_CANVAS_PADDING_MODE_DEFAULT
@@ -128,7 +128,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b3d6910303
+DECL|enum|__anon29d6aef90303
 block|{
 DECL|enumerator|GIMP_SPACE_BAR_ACTION_NONE
 name|GIMP_SPACE_BAR_ACTION_NONE
@@ -168,7 +168,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b3d6910403
+DECL|enum|__anon29d6aef90403
 block|{
 DECL|enumerator|GIMP_ZOOM_QUALITY_LOW
 name|GIMP_ZOOM_QUALITY_LOW
@@ -204,7 +204,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b3d6910503
+DECL|enum|__anon29d6aef90503
 block|{
 DECL|enumerator|GIMP_HELP_BROWSER_GIMP
 name|GIMP_HELP_BROWSER_GIMP
@@ -240,7 +240,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b3d6910603
+DECL|enum|__anon29d6aef90603
 block|{
 DECL|enumerator|GIMP_WINDOW_HINT_NORMAL
 name|GIMP_WINDOW_HINT_NORMAL
@@ -280,7 +280,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b3d6910703
+DECL|enum|__anon29d6aef90703
 block|{
 DECL|enumerator|GIMP_CURSOR_FORMAT_BITMAP
 name|GIMP_CURSOR_FORMAT_BITMAP
@@ -292,6 +292,42 @@ comment|/*< desc="Fancy">*/
 DECL|typedef|GimpCursorFormat
 block|}
 name|GimpCursorFormat
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_HANDEDNESS
+define|#
+directive|define
+name|GIMP_TYPE_HANDEDNESS
+value|(gimp_handedness_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_handedness_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon29d6aef90803
+block|{
+DECL|enumerator|GIMP_HANDEDNESS_LEFT
+name|GIMP_HANDEDNESS_LEFT
+block|,
+comment|/*< desc="Left-handed">*/
+DECL|enumerator|GIMP_HANDEDNESS_RIGHT
+name|GIMP_HANDEDNESS_RIGHT
+comment|/*< desc="Right-handed">*/
+DECL|typedef|GimpHandedness
+block|}
+name|GimpHandedness
 typedef|;
 end_typedef
 
