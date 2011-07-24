@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c905f60103
+DECL|enum|__anon29ab61670103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1386,7 +1386,7 @@ name|config
 argument_list|,
 literal|"grid-type"
 argument_list|,
-name|GIMP_GUIDES_N_LINES
+name|GIMP_GUIDES_CENTER_LINES
 argument_list|,
 name|GIMP_GUIDES_SPACING
 argument_list|)
