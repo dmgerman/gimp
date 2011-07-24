@@ -2184,6 +2184,8 @@ argument_list|,
 name|height
 argument_list|,
 name|type
+argument_list|,
+literal|4
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_item

@@ -162,6 +162,9 @@ name|height
 parameter_list|,
 name|GimpGuidesType
 name|type
+parameter_list|,
+name|gint
+name|n_guides
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -188,6 +191,9 @@ name|height
 parameter_list|,
 name|GimpGuidesType
 name|type
+parameter_list|,
+name|gint
+name|n_guides
 parameter_list|)
 function_decl|;
 end_function_decl
