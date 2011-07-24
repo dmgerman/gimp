@@ -5664,10 +5664,10 @@ name|grid_type
 condition|)
 block|{
 case|case
-name|GIMP_TRANSFORM_GRID_TYPE_N_LINES
+name|GIMP_GUIDES_N_LINES
 case|:
 case|case
-name|GIMP_TRANSFORM_GRID_TYPE_SPACING
+name|GIMP_GUIDES_SPACING
 case|:
 block|{
 name|gint
@@ -5720,7 +5720,7 @@ name|options
 operator|->
 name|grid_type
 operator|==
-name|GIMP_TRANSFORM_GRID_TYPE_N_LINES
+name|GIMP_GUIDES_N_LINES
 condition|)
 block|{
 if|if
@@ -5786,7 +5786,7 @@ expr_stmt|;
 block|}
 block|}
 else|else
-comment|/* GIMP_TRANSFORM_GRID_TYPE_SPACING */
+comment|/* GIMP_GUIDES_SPACING */
 block|{
 name|gint
 name|grid_size

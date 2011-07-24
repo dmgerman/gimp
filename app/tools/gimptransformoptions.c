@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a77ce10103
+DECL|enum|__anon28c905f60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -427,9 +427,9 @@ argument_list|(
 literal|"How to define grid settings"
 argument_list|)
 argument_list|,
-name|GIMP_TYPE_TRANSFORM_GRID_TYPE
+name|GIMP_TYPE_GUIDES_TYPE
 argument_list|,
-name|GIMP_TRANSFORM_GRID_TYPE_N_LINES
+name|GIMP_GUIDES_N_LINES
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -1386,9 +1386,9 @@ name|config
 argument_list|,
 literal|"grid-type"
 argument_list|,
-literal|0
+name|GIMP_GUIDES_N_LINES
 argument_list|,
-literal|0
+name|GIMP_GUIDES_SPACING
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

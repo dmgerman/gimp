@@ -141,7 +141,7 @@ name|gdouble
 name|preview_opacity
 decl_stmt|;
 DECL|member|grid_type
-name|GimpTransformGridType
+name|GimpGuidesType
 name|grid_type
 decl_stmt|;
 DECL|member|grid_size
