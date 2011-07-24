@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f5ef210103
+DECL|enum|__anon2a3d4d920103
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -314,20 +314,6 @@ name|gboolean
 name|use_mid_handles
 decl_stmt|;
 comment|/*  use handles at midpoints of edges */
-DECL|member|ngx
-DECL|member|ngy
-name|gint
-name|ngx
-decl_stmt|,
-name|ngy
-decl_stmt|;
-comment|/*  number of grid lines in original                                     *  x and y directions                                     */
-DECL|member|grid_coords
-name|gdouble
-modifier|*
-name|grid_coords
-decl_stmt|;
-comment|/*  x and y coordinates of the grid                                     *  endpoints (a total of (ngx+ngy)*2                                     *  coordinate pairs)                                     */
 DECL|member|handles
 name|GimpCanvasItem
 modifier|*
