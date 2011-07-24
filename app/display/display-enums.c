@@ -234,6 +234,22 @@ literal|"diagonals"
 block|}
 block|,
 block|{
+name|GIMP_GUIDES_N_LINES
+block|,
+literal|"GIMP_GUIDES_N_LINES"
+block|,
+literal|"n-lines"
+block|}
+block|,
+block|{
+name|GIMP_GUIDES_SPACING
+block|,
+literal|"GIMP_GUIDES_SPACING"
+block|,
+literal|"spacing"
+block|}
+block|,
+block|{
 literal|0
 block|,
 name|NULL
@@ -322,6 +338,32 @@ argument_list|(
 literal|"guides-type"
 argument_list|,
 literal|"Diagonal lines"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_GUIDES_N_LINES
+block|,
+name|NC_
+argument_list|(
+literal|"guides-type"
+argument_list|,
+literal|"Number of lines"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_GUIDES_SPACING
+block|,
+name|NC_
+argument_list|(
+literal|"guides-type"
+argument_list|,
+literal|"Line spacing"
 argument_list|)
 block|,
 name|NULL

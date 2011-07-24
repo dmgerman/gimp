@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d8aa320103
+DECL|enum|__anon288129d10103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -3777,9 +3777,9 @@ name|config
 argument_list|,
 literal|"guide"
 argument_list|,
-literal|0
+name|GIMP_GUIDES_NONE
 argument_list|,
-literal|0
+name|GIMP_GUIDES_DIAGONALS
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
