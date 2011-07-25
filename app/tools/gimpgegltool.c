@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2e6a150103
+DECL|enum|__anon2c95f63c0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -966,6 +966,10 @@ block|,
 literal|"gegl:fill-path"
 block|,
 literal|"gegl:vector-stroke"
+block|,
+literal|"gegl:lens-correct"
+block|,
+literal|"gegl:hstack"
 block|,
 literal|"gimp-"
 block|,
