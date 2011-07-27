@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ab61670103
+DECL|enum|__anon2c7fcafb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -362,7 +362,7 @@ literal|"clip"
 argument_list|,
 name|N_
 argument_list|(
-literal|"How to clip..."
+literal|"How to clip"
 argument_list|)
 argument_list|,
 name|GIMP_TYPE_TRANSFORM_RESIZE
