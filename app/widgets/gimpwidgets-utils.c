@@ -1382,7 +1382,7 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|vbox
+name|box
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -1400,7 +1400,7 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|vbox
+name|box
 operator|=
 name|gtk_bin_get_child
 argument_list|(
@@ -1412,9 +1412,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GTK_IS_VBOX
+name|GTK_IS_BOX
 argument_list|(
-name|vbox
+name|box
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1422,7 +1422,7 @@ name|gimp_enum_radio_box_add
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox
+name|box
 argument_list|)
 argument_list|,
 name|widget
@@ -2008,7 +2008,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2b2bd9f70108
+DECL|struct|__anon2ac75cf00108
 block|{
 DECL|member|modifiers
 name|GdkModifierType

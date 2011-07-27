@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6743ee0108
+DECL|struct|__anon293ffc520108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -563,7 +563,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GTK_IS_VBOX
+name|GTK_IS_BOX
 argument_list|(
 name|children
 operator|->
@@ -591,7 +591,7 @@ block|}
 else|else
 name|g_warning
 argument_list|(
-literal|"%s: ooops, no vbox in this container?"
+literal|"%s: ooops, no box in this container?"
 argument_list|,
 name|G_STRLOC
 argument_list|)
