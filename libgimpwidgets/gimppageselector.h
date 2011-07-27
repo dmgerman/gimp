@@ -125,7 +125,7 @@ struct|struct
 name|_GimpPageSelector
 block|{
 DECL|member|parent_instance
-name|GtkVBox
+name|GtkBox
 name|parent_instance
 decl_stmt|;
 DECL|member|priv
@@ -142,7 +142,7 @@ struct|struct
 name|_GimpPageSelectorClass
 block|{
 DECL|member|parent_class
-name|GtkVBoxClass
+name|GtkBoxClass
 name|parent_class
 decl_stmt|;
 DECL|member|selection_changed

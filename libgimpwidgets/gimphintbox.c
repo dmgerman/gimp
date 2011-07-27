@@ -28,7 +28,7 @@ end_comment
 begin_typedef
 DECL|typedef|GimpHintBoxClass
 typedef|typedef
-name|GtkHBoxClass
+name|GtkBoxClass
 name|GimpHintBoxClass
 typedef|;
 end_typedef
@@ -36,10 +36,10 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297d54f00108
+DECL|struct|__anon28d8c4430108
 block|{
 DECL|member|parent_instance
-name|GtkHBox
+name|GtkBox
 name|parent_instance
 decl_stmt|;
 DECL|member|stock_id
@@ -71,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297d54f00203
+DECL|enum|__anon28d8c4430203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -157,14 +157,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpHintBox,gimp_hint_box,GTK_TYPE_HBOX)
+DECL|function|G_DEFINE_TYPE (GimpHintBox,gimp_hint_box,GTK_TYPE_BOX)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpHintBox
 argument_list|,
 argument|gimp_hint_box
 argument_list|,
-argument|GTK_TYPE_HBOX
+argument|GTK_TYPE_BOX
 argument_list|)
 end_macro
 
@@ -277,6 +277,16 @@ modifier|*
 name|box
 parameter_list|)
 block|{
+name|gtk_orientable_set_orientation
+argument_list|(
+name|GTK_ORIENTABLE
+argument_list|(
+name|box
+argument_list|)
+argument_list|,
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|)
+expr_stmt|;
 name|box
 operator|->
 name|stock_id

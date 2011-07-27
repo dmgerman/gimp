@@ -125,7 +125,7 @@ struct|struct
 name|_GimpMemsizeEntry
 block|{
 DECL|member|parent_instance
-name|GtkHBox
+name|GtkBox
 name|parent_instance
 decl_stmt|;
 comment|/*< private>*/
@@ -170,7 +170,7 @@ struct|struct
 name|_GimpMemsizeEntryClass
 block|{
 DECL|member|parent_class
-name|GtkHBoxClass
+name|GtkBoxClass
 name|parent_class
 decl_stmt|;
 DECL|member|value_changed

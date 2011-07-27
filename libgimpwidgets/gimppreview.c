@@ -61,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ebdef60103
+DECL|enum|__anon299ee9bf0103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -74,7 +74,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ebdef60203
+DECL|enum|__anon299ee9bf0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ebdef60308
+DECL|struct|__anon299ee9bf0308
 block|{
 DECL|member|controls
 name|GtkWidget
@@ -428,7 +428,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
-name|GtkVBoxClass
+name|GtkBoxClass
 modifier|*
 name|parent_class
 init|=
@@ -505,7 +505,7 @@ name|preview_type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GTK_TYPE_VBOX
+name|GTK_TYPE_BOX
 argument_list|,
 literal|"GimpPreview"
 argument_list|,
@@ -744,6 +744,16 @@ name|xalign
 init|=
 literal|0.0
 decl_stmt|;
+name|gtk_orientable_set_orientation
+argument_list|(
+name|GTK_ORIENTABLE
+argument_list|(
+name|preview
+argument_list|)
+argument_list|,
+name|GTK_ORIENTATION_VERTICAL
+argument_list|)
+expr_stmt|;
 name|gtk_box_set_homogeneous
 argument_list|(
 name|GTK_BOX

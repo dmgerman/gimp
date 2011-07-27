@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon288706730103
+DECL|enum|__anon2c1ca3450103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -79,7 +79,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon288706730203
+DECL|enum|__anon2c1ca3450203
 block|{
 DECL|enumerator|COLUMN_UTF8
 name|COLUMN_UTF8
@@ -203,7 +203,7 @@ argument|GimpPathEditor
 argument_list|,
 argument|gimp_path_editor
 argument_list|,
-argument|GTK_TYPE_VBOX
+argument|GTK_TYPE_BOX
 argument_list|)
 end_macro
 
@@ -381,6 +381,16 @@ operator|->
 name|num_items
 operator|=
 literal|0
+expr_stmt|;
+name|gtk_orientable_set_orientation
+argument_list|(
+name|GTK_ORIENTABLE
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
+name|GTK_ORIENTATION_VERTICAL
+argument_list|)
 expr_stmt|;
 name|editor
 operator|->

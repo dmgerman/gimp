@@ -129,7 +129,7 @@ struct|struct
 name|_GimpSelectButton
 block|{
 DECL|member|parent_instance
-name|GtkHBox
+name|GtkBox
 name|parent_instance
 decl_stmt|;
 DECL|member|temp_callback
@@ -148,7 +148,7 @@ struct|struct
 name|_GimpSelectButtonClass
 block|{
 DECL|member|parent_class
-name|GtkHBoxClass
+name|GtkBoxClass
 name|parent_class
 decl_stmt|;
 DECL|member|default_title

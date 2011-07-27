@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5b1b0b0103
+DECL|enum|__anon2c8b49da0103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -85,7 +85,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5b1b0b0203
+DECL|enum|__anon2c8b49da0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -101,7 +101,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5b1b0b0303
+DECL|enum|__anon2c8b49da0303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -121,7 +121,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5b1b0b0408
+DECL|struct|__anon2c8b49da0408
 block|{
 DECL|member|n_pages
 name|gint
@@ -425,7 +425,7 @@ argument|GimpPageSelector
 argument_list|,
 argument|gimp_page_selector
 argument_list|,
-argument|GTK_TYPE_VBOX
+argument|GTK_TYPE_BOX
 argument_list|)
 end_macro
 
@@ -738,6 +738,16 @@ operator|->
 name|target
 operator|=
 name|GIMP_PAGE_SELECTOR_TARGET_LAYERS
+expr_stmt|;
+name|gtk_orientable_set_orientation
+argument_list|(
+name|GTK_ORIENTABLE
+argument_list|(
+name|selector
+argument_list|)
+argument_list|,
+name|GTK_ORIENTATION_VERTICAL
+argument_list|)
 expr_stmt|;
 name|gtk_box_set_spacing
 argument_list|(

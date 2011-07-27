@@ -54,14 +54,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpSelectButton,gimp_select_button,GTK_TYPE_HBOX)
+DECL|function|G_DEFINE_TYPE (GimpSelectButton,gimp_select_button,GTK_TYPE_BOX)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpSelectButton
 argument_list|,
 argument|gimp_select_button
 argument_list|,
-argument|GTK_TYPE_HBOX
+argument|GTK_TYPE_BOX
 argument_list|)
 end_macro
 
@@ -104,6 +104,16 @@ modifier|*
 name|select_button
 parameter_list|)
 block|{
+name|gtk_orientable_set_orientation
+argument_list|(
+name|GTK_ORIENTABLE
+argument_list|(
+name|select_button
+argument_list|)
+argument_list|,
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|)
+expr_stmt|;
 name|select_button
 operator|->
 name|temp_callback

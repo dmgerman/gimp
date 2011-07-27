@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7795610103
+DECL|enum|__anon27dea36d0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -107,7 +107,7 @@ argument|GimpMemsizeEntry
 argument_list|,
 argument|gimp_memsize_entry
 argument_list|,
-argument|GTK_TYPE_HBOX
+argument|GTK_TYPE_BOX
 argument_list|)
 end_macro
 
@@ -213,6 +213,16 @@ modifier|*
 name|entry
 parameter_list|)
 block|{
+name|gtk_orientable_set_orientation
+argument_list|(
+name|GTK_ORIENTABLE
+argument_list|(
+name|entry
+argument_list|)
+argument_list|,
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|)
+expr_stmt|;
 name|gtk_box_set_spacing
 argument_list|(
 name|GTK_BOX

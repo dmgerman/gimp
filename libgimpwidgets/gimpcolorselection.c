@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c65d2bc0103
+DECL|enum|__anon2a4bf15e0103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -159,7 +159,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c65d2bc0203
+DECL|enum|__anon2a4bf15e0203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -172,7 +172,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c65d2bc0303
+DECL|enum|__anon2a4bf15e0303
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -375,7 +375,7 @@ argument|GimpColorSelection
 argument_list|,
 argument|gimp_color_selection
 argument_list|,
-argument|GTK_TYPE_VBOX
+argument|GTK_TYPE_BOX
 argument_list|)
 end_macro
 
@@ -542,6 +542,16 @@ operator|->
 name|show_alpha
 operator|=
 name|TRUE
+expr_stmt|;
+name|gtk_orientable_set_orientation
+argument_list|(
+name|GTK_ORIENTABLE
+argument_list|(
+name|selection
+argument_list|)
+argument_list|,
+name|GTK_ORIENTATION_VERTICAL
+argument_list|)
 expr_stmt|;
 name|gimp_rgba_set
 argument_list|(

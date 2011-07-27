@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cb060c0103
+DECL|enum|__anon292221280103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -151,7 +151,7 @@ argument|GimpFileEntry
 argument_list|,
 argument|gimp_file_entry
 argument_list|,
-argument|GTK_TYPE_HBOX
+argument|GTK_TYPE_BOX
 argument_list|)
 end_macro
 
@@ -285,6 +285,16 @@ operator|->
 name|file_exists
 operator|=
 name|NULL
+expr_stmt|;
+name|gtk_orientable_set_orientation
+argument_list|(
+name|GTK_ORIENTABLE
+argument_list|(
+name|entry
+argument_list|)
+argument_list|,
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|)
 expr_stmt|;
 name|gtk_box_set_spacing
 argument_list|(

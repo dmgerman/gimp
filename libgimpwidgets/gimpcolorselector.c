@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon276084d40103
+DECL|enum|__anon2c649b8b0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -72,7 +72,7 @@ argument|GimpColorSelector
 argument_list|,
 argument|gimp_color_selector
 argument_list|,
-argument|GTK_TYPE_VBOX
+argument|GTK_TYPE_BOX
 argument_list|)
 end_macro
 
@@ -280,6 +280,16 @@ operator|->
 name|show_alpha
 operator|=
 name|TRUE
+expr_stmt|;
+name|gtk_orientable_set_orientation
+argument_list|(
+name|GTK_ORIENTABLE
+argument_list|(
+name|selector
+argument_list|)
+argument_list|,
+name|GTK_ORIENTATION_VERTICAL
+argument_list|)
 expr_stmt|;
 name|gimp_rgba_set
 argument_list|(

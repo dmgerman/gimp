@@ -153,7 +153,7 @@ struct|struct
 name|_GimpColorSelector
 block|{
 DECL|member|parent_instance
-name|GtkVBox
+name|GtkBox
 name|parent_instance
 decl_stmt|;
 DECL|member|toggles_visible
@@ -190,7 +190,7 @@ struct|struct
 name|_GimpColorSelectorClass
 block|{
 DECL|member|parent_class
-name|GtkVBoxClass
+name|GtkBoxClass
 name|parent_class
 decl_stmt|;
 DECL|member|name

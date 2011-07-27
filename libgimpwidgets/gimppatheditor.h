@@ -129,7 +129,7 @@ struct|struct
 name|_GimpPathEditor
 block|{
 DECL|member|parent_instance
-name|GtkVBox
+name|GtkBox
 name|parent_instance
 decl_stmt|;
 DECL|member|upper_hbox
@@ -196,7 +196,7 @@ struct|struct
 name|_GimpPathEditorClass
 block|{
 DECL|member|parent_class
-name|GtkVBoxClass
+name|GtkBoxClass
 name|parent_class
 decl_stmt|;
 DECL|member|path_changed
