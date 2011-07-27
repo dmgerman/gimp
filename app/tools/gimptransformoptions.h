@@ -129,7 +129,7 @@ name|gint
 name|recursion_level
 decl_stmt|;
 DECL|member|clip
-name|gboolean
+name|GimpTransformResize
 name|clip
 decl_stmt|;
 DECL|member|preview_type
