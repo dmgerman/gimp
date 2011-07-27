@@ -132,9 +132,9 @@ DECL|member|clip
 name|GimpTransformResize
 name|clip
 decl_stmt|;
-DECL|member|preview_type
-name|GimpTransformPreviewType
-name|preview_type
+DECL|member|show_preview
+name|gboolean
+name|show_preview
 decl_stmt|;
 DECL|member|preview_opacity
 name|gdouble

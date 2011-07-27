@@ -41,7 +41,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af733e70103
+DECL|enum|__anon290859440103
 block|{
 DECL|enumerator|GIMP_BUTTON_PRESS_NORMAL
 name|GIMP_BUTTON_PRESS_NORMAL
@@ -78,7 +78,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af733e70203
+DECL|enum|__anon290859440203
 block|{
 DECL|enumerator|GIMP_BUTTON_RELEASE_NORMAL
 name|GIMP_BUTTON_RELEASE_NORMAL
@@ -118,7 +118,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af733e70303
+DECL|enum|__anon290859440303
 block|{
 DECL|enumerator|GIMP_RECTANGLE_CONSTRAIN_NONE
 name|GIMP_RECTANGLE_CONSTRAIN_NONE
@@ -155,7 +155,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af733e70403
+DECL|enum|__anon290859440403
 block|{
 DECL|enumerator|GIMP_RECTANGLE_PRECISION_INT
 name|GIMP_RECTANGLE_PRECISION_INT
@@ -189,7 +189,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af733e70503
+DECL|enum|__anon290859440503
 block|{
 DECL|enumerator|GIMP_RECTANGLE_TOOL_FIXED_ASPECT
 name|GIMP_RECTANGLE_TOOL_FIXED_ASPECT
@@ -234,7 +234,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af733e70603
+DECL|enum|__anon290859440603
 block|{
 DECL|enumerator|GIMP_RECT_SELECT_MODE_FREE
 name|GIMP_RECT_SELECT_MODE_FREE
@@ -274,7 +274,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af733e70703
+DECL|enum|__anon290859440703
 block|{
 DECL|enumerator|GIMP_TRANSFORM_TYPE_LAYER
 name|GIMP_TRANSFORM_TYPE_LAYER
@@ -290,50 +290,6 @@ comment|/*< desc="Path">*/
 DECL|typedef|GimpTransformType
 block|}
 name|GimpTransformType
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_TYPE_TRANSFORM_PREVIEW_TYPE
-define|#
-directive|define
-name|GIMP_TYPE_TRANSFORM_PREVIEW_TYPE
-value|(gimp_transform_preview_type_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_transform_preview_type_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2af733e70803
-block|{
-DECL|enumerator|GIMP_TRANSFORM_PREVIEW_TYPE_OUTLINE
-name|GIMP_TRANSFORM_PREVIEW_TYPE_OUTLINE
-block|,
-comment|/*< desc="Outline">*/
-DECL|enumerator|GIMP_TRANSFORM_PREVIEW_TYPE_GRID
-name|GIMP_TRANSFORM_PREVIEW_TYPE_GRID
-block|,
-comment|/*< desc="Grid">*/
-DECL|enumerator|GIMP_TRANSFORM_PREVIEW_TYPE_IMAGE
-name|GIMP_TRANSFORM_PREVIEW_TYPE_IMAGE
-block|,
-comment|/*< desc="Image">*/
-DECL|enumerator|GIMP_TRANSFORM_PREVIEW_TYPE_IMAGE_GRID
-name|GIMP_TRANSFORM_PREVIEW_TYPE_IMAGE_GRID
-comment|/*< desc="Image + Grid">*/
-DECL|typedef|GimpTransformPreviewType
-block|}
-name|GimpTransformPreviewType
 typedef|;
 end_typedef
 
@@ -358,7 +314,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af733e70903
+DECL|enum|__anon290859440803
 block|{
 DECL|enumerator|GIMP_VECTOR_MODE_DESIGN
 name|GIMP_VECTOR_MODE_DESIGN
@@ -398,7 +354,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af733e70a03
+DECL|enum|__anon290859440903
 block|{
 DECL|enumerator|GIMP_TOOL_ACTION_PAUSE
 name|GIMP_TOOL_ACTION_PAUSE
@@ -422,7 +378,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2af733e70b03
+DECL|enum|__anon290859440a03
 block|{
 DECL|enumerator|SELECTION_SELECT
 name|SELECTION_SELECT
@@ -452,7 +408,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2af733e70c03
+DECL|enum|__anon290859440b03
 block|{
 DECL|enumerator|GIMP_TRANSLATE_MODE_VECTORS
 name|GIMP_TRANSLATE_MODE_VECTORS
@@ -491,7 +447,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2af733e70d03
+DECL|enum|__anon290859440c03
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT
