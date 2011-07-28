@@ -153,7 +153,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c21e8420108
+DECL|struct|__anon2be486860108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -318,7 +318,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"<Image>/Filters/Light and Shadow/Glass"
+literal|"<Image>/Filters/Distorts"
 argument_list|)
 expr_stmt|;
 block|}
