@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b682d640108
+DECL|struct|__anon29251e860108
 block|{
 DECL|member|xblock
 name|gint
@@ -92,7 +92,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b682d640208
+DECL|struct|__anon29251e860208
 block|{
 DECL|member|gval
 name|GlassValues
@@ -376,7 +376,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"<Image>/Filters/Light and Shadow/Glass"
+literal|"<Image>/Filters/Artistic"
 argument_list|)
 expr_stmt|;
 block|}
