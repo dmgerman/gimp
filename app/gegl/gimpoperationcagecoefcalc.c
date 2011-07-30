@@ -230,7 +230,7 @@ name|description
 operator|=
 name|_
 argument_list|(
-literal|"Compute a set of coefficient buffer for the Gimp cage tool"
+literal|"Compute a set of coefficient buffer for the GIMP cage tool"
 argument_list|)
 expr_stmt|;
 name|operation_class

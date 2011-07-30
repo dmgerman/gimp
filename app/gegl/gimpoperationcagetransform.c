@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f784aa0103
+DECL|enum|__anon29a16a430103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -396,7 +396,7 @@ name|description
 operator|=
 name|_
 argument_list|(
-literal|"Convert a set of coefficient buffer to a coordinate buffer for the Gimp cage tool"
+literal|"Convert a set of coefficient buffer to a coordinate buffer for the GIMP cage tool"
 argument_list|)
 expr_stmt|;
 name|operation_class
