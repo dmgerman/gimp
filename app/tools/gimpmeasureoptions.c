@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e307820103
+DECL|enum|__anon2a238aa90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -164,7 +164,7 @@ literal|"use-info-window"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Open a floating dialog to view details"
+literal|"Open a floating dialog to view details "
 literal|"about measurements"
 argument_list|)
 argument_list|,
