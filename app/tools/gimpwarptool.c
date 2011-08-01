@@ -1196,12 +1196,12 @@ block|{
 case|case
 name|GDK_KEY_BackSpace
 case|:
-case|case
-name|GDK_KEY_Return
-case|:
 return|return
 name|TRUE
 return|;
+case|case
+name|GDK_KEY_Return
+case|:
 case|case
 name|GDK_KEY_KP_Enter
 case|:
