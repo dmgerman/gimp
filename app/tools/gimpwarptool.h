@@ -166,16 +166,16 @@ DECL|member|stroke_timer
 name|guint
 name|stroke_timer
 decl_stmt|;
-DECL|member|preview_timer
-name|guint
-name|preview_timer
-decl_stmt|;
 DECL|member|image_map
 name|GimpImageMap
 modifier|*
 name|image_map
 decl_stmt|;
 comment|/* For preview */
+DECL|member|last_region
+name|GeglRectangle
+name|last_region
+decl_stmt|;
 block|}
 struct|;
 end_struct
