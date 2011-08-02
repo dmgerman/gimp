@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3a807e0103
+DECL|enum|__anon2bee02a70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -202,11 +202,11 @@ argument_list|(
 literal|"Effect Strength"
 argument_list|)
 argument_list|,
-literal|0.0
-argument_list|,
-literal|10.0
-argument_list|,
 literal|1.0
+argument_list|,
+literal|100.0
+argument_list|,
+literal|50.0
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -590,11 +590,11 @@ argument_list|(
 literal|"Strength"
 argument_list|)
 argument_list|,
-literal|0.01
+literal|1
 argument_list|,
-literal|1.0
+literal|10
 argument_list|,
-literal|2
+literal|1
 argument_list|)
 expr_stmt|;
 name|gimp_spin_scale_set_scale_limits
@@ -604,9 +604,9 @@ argument_list|(
 name|strength
 argument_list|)
 argument_list|,
-literal|0.0
-argument_list|,
 literal|1.0
+argument_list|,
+literal|100.0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
