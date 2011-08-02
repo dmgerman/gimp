@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28be146b0103
+DECL|enum|__anon28e8cbe00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -186,26 +186,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|gimp_bucket_fill_options_notify
-parameter_list|(
-name|GimpBucketFillOptions
-modifier|*
-name|options
-parameter_list|,
-name|GParamSpec
-modifier|*
-name|pspec
-parameter_list|,
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_macro
 DECL|function|G_DEFINE_TYPE (GimpBucketFillOptions,gimp_bucket_fill_options,GIMP_TYPE_PAINT_OPTIONS)
 name|G_DEFINE_TYPE
@@ -280,10 +260,7 @@ name|PROP_FILL_MODE
 argument_list|,
 literal|"fill-mode"
 argument_list|,
-name|N_
-argument_list|(
-literal|"What to fill a selection or a layer with"
-argument_list|)
+name|NULL
 argument_list|,
 name|GIMP_TYPE_BUCKET_FILL_MODE
 argument_list|,
@@ -380,7 +357,7 @@ literal|"fill-criterion"
 argument_list|,
 name|N_
 argument_list|(
-literal|"What to use for calculating an area to fill"
+literal|"Criterion used for determining color similarity"
 argument_list|)
 argument_list|,
 name|GIMP_TYPE_SELECT_CRITERION
@@ -998,36 +975,19 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_sensitive
-argument_list|(
-name|frame
-argument_list|,
-operator|!
-name|GIMP_BUCKET_FILL_OPTIONS
-argument_list|(
-name|config
-argument_list|)
-operator|->
-name|fill_selection
-argument_list|)
-expr_stmt|;
-name|g_signal_connect_object
+name|g_object_bind_property
 argument_list|(
 name|config
 argument_list|,
-literal|"notify::fill-selection"
+literal|"fill-selection"
 argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gimp_bucket_fill_options_notify
-argument_list|)
-argument_list|,
-name|G_OBJECT
-argument_list|(
 name|frame
-argument_list|)
 argument_list|,
-literal|0
+literal|"sensitive"
+argument_list|,
+name|G_BINDING_SYNC_CREATE
+operator||
+name|G_BINDING_INVERT_BOOLEAN
 argument_list|)
 expr_stmt|;
 name|vbox2
@@ -1254,38 +1214,6 @@ expr_stmt|;
 return|return
 name|vbox
 return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_bucket_fill_options_notify (GimpBucketFillOptions * options,GParamSpec * pspec,GtkWidget * widget)
-name|gimp_bucket_fill_options_notify
-parameter_list|(
-name|GimpBucketFillOptions
-modifier|*
-name|options
-parameter_list|,
-name|GParamSpec
-modifier|*
-name|pspec
-parameter_list|,
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|)
-block|{
-name|gtk_widget_set_sensitive
-argument_list|(
-name|widget
-argument_list|,
-operator|!
-name|options
-operator|->
-name|fill_selection
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
