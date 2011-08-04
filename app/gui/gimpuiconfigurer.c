@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc3243f0103
+DECL|enum|__anon287c1f230103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1036,6 +1036,31 @@ name|dock_window
 init|=
 name|NULL
 decl_stmt|;
+name|GtkAllocation
+name|original_size
+init|=
+block|{
+literal|0
+block|,
+literal|0
+block|,
+literal|0
+block|,
+literal|0
+block|}
+decl_stmt|;
+comment|/* Remember the size so we can set the new dock window to the same    * size    */
+name|gtk_widget_get_allocation
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|dock_columns
+argument_list|)
+argument_list|,
+operator|&
+name|original_size
+argument_list|)
+expr_stmt|;
 comment|/* Do we need a toolbox window? */
 for|for
 control|(
@@ -1202,6 +1227,23 @@ expr_stmt|;
 else|else
 name|g_assert_not_reached
 argument_list|()
+expr_stmt|;
+comment|/* Try to keep the same size */
+name|gtk_window_set_default_size
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dock_window
+argument_list|)
+argument_list|,
+name|original_size
+operator|.
+name|width
+argument_list|,
+name|original_size
+operator|.
+name|height
+argument_list|)
 expr_stmt|;
 comment|/* Don't forget to show the window */
 name|gtk_widget_show
