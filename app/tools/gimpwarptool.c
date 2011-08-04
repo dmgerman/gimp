@@ -2612,6 +2612,13 @@ name|min_y
 operator|+
 name|size
 expr_stmt|;
+name|gimp_image_map_abort
+argument_list|(
+name|wt
+operator|->
+name|image_map
+argument_list|)
+expr_stmt|;
 name|gimp_image_map_apply_region
 argument_list|(
 name|wt
