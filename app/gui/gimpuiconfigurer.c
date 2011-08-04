@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c4ebea0103
+DECL|enum|__anon2c4df8870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1196,6 +1196,13 @@ block|,
 literal|0
 block|}
 decl_stmt|;
+comment|/* Are there docks to move at all? */
+if|if
+condition|(
+operator|!
+name|docks
+condition|)
+return|return;
 comment|/* Remember the size so we can set the new dock window to the same    * size    */
 name|gtk_widget_get_allocation
 argument_list|(
