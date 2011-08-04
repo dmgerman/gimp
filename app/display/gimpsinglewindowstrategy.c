@@ -231,6 +231,8 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|widget
+init|=
+name|NULL
 decl_stmt|;
 name|GimpImageWindow
 modifier|*
