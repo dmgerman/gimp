@@ -333,37 +333,6 @@ argument_list|(
 name|toolbox
 argument_list|)
 expr_stmt|;
-comment|/* We need to set this on the toolbox to make gimp-remote    * work. Remove this when we have gotten rid of gimp-remote.    */
-name|gtk_drag_dest_set
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|toolbox
-argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-name|NULL
-argument_list|,
-literal|0
-argument_list|,
-name|GDK_ACTION_COPY
-operator||
-name|GDK_ACTION_MOVE
-argument_list|)
-expr_stmt|;
-name|gimp_dnd_uri_list_dest_add
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|toolbox
-argument_list|)
-argument_list|,
-name|gimp_toolbox_drop_uri_list
-argument_list|,
-name|context
-argument_list|)
-expr_stmt|;
 comment|/* Before caling any dnd helper functions, setup the drag    * destination manually since we want to handle all drag events    * manually, otherwise we would not be able to give the drag handler    * a chance to handle drag events    */
 name|gtk_drag_dest_set
 argument_list|(
