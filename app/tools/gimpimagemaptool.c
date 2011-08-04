@@ -1278,14 +1278,12 @@ argument_list|(
 name|display_shell
 argument_list|)
 expr_stmt|;
+comment|/*  disabled for at least GIMP 2.8  */
 name|image_map_tool
 operator|->
 name|overlay
 operator|=
-name|gimp_image_window_get_fullscreen
-argument_list|(
-name|window
-argument_list|)
+name|FALSE
 expr_stmt|;
 if|if
 condition|(
