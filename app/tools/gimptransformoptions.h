@@ -152,6 +152,10 @@ DECL|member|constrain
 name|gboolean
 name|constrain
 decl_stmt|;
+DECL|member|alternate
+name|gboolean
+name|alternate
+decl_stmt|;
 block|}
 struct|;
 end_struct

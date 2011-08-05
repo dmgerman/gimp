@@ -810,6 +810,15 @@ argument_list|)
 block|,
 name|FOREIGN
 argument_list|(
+literal|"gimp-unified-transform-tool-dialog"
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|)
+block|,
+name|FOREIGN
+argument_list|(
 literal|"gimp-toolbox-color-dialog"
 argument_list|,
 name|TRUE

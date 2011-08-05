@@ -2014,6 +2014,14 @@ value|"gimp-tool-threshold"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TOOL_UNIFIED_TRANSFORM
+define|#
+directive|define
+name|GIMP_HELP_TOOL_UNIFIED_TRANSFORM
+value|"gimp-tool-unified-transform"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TOOL_VECTORS
 define|#
 directive|define

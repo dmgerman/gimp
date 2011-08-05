@@ -216,6 +216,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpunifiedtransformtool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptransformoptions.h"
 end_include
 
@@ -992,14 +998,6 @@ name|function
 operator|=
 name|TRANSFORM_CREATING
 expr_stmt|;
-name|gimp_matrix3_identity
-argument_list|(
-operator|&
-name|tr_tool
-operator|->
-name|transform
-argument_list|)
-expr_stmt|;
 name|tr_tool
 operator|->
 name|progress_text
@@ -1007,6 +1005,14 @@ operator|=
 name|_
 argument_list|(
 literal|"Transforming"
+argument_list|)
+expr_stmt|;
+name|gimp_matrix3_identity
+argument_list|(
+operator|&
+name|tr_tool
+operator|->
+name|transform
 argument_list|)
 expr_stmt|;
 block|}
@@ -2153,6 +2159,26 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|key
+operator|==
+name|GDK_MOD1_MASK
+condition|)
+name|g_object_set
+argument_list|(
+name|options
+argument_list|,
+literal|"alternate"
+argument_list|,
+operator|!
+name|options
+operator|->
+name|alternate
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -3004,6 +3030,16 @@ name|name
 argument_list|,
 literal|"constrain"
 argument_list|)
+operator|||
+operator|!
+name|strcmp
+argument_list|(
+name|pspec
+operator|->
+name|name
+argument_list|,
+literal|"alternate"
+argument_list|)
 condition|)
 block|{
 name|gimp_transform_tool_dialog_update
@@ -3145,6 +3181,11 @@ operator|->
 name|y2
 argument_list|,
 name|GIMP_IS_PERSPECTIVE_TOOL
+argument_list|(
+name|tr_tool
+argument_list|)
+operator|||
+name|GIMP_IS_UNIFIED_TRANSFORM_TOOL
 argument_list|(
 name|tr_tool
 argument_list|)
@@ -3567,7 +3608,10 @@ name|handle_w
 argument_list|,
 name|handle_h
 argument_list|)
+operator|*
+literal|2
 decl_stmt|;
+comment|/* so you can grab it from under the center handle */
 name|stroke_group
 operator|=
 name|gimp_draw_tool_add_stroke_group
@@ -5438,7 +5482,6 @@ operator|->
 name|ty4
 argument_list|)
 expr_stmt|;
-comment|/* don't transform these */
 name|gimp_matrix3_transform_point
 argument_list|(
 operator|&
@@ -5465,6 +5508,7 @@ operator|->
 name|tpy
 argument_list|)
 expr_stmt|;
+comment|/* don't transform these */
 name|tr_tool
 operator|->
 name|tpx

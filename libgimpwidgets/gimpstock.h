@@ -537,6 +537,11 @@ define|#
 directive|define
 name|GIMP_STOCK_TOOL_THRESHOLD
 value|"gimp-tool-threshold"
+DECL|macro|GIMP_STOCK_TOOL_UNIFIED_TRANSFORM
+define|#
+directive|define
+name|GIMP_STOCK_TOOL_UNIFIED_TRANSFORM
+value|"gimp-tool-unified-transform"
 DECL|macro|GIMP_STOCK_TOOL_ZOOM
 define|#
 directive|define

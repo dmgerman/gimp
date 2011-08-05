@@ -27,13 +27,13 @@ DECL|macro|TRANS_INFO_SIZE
 define|#
 directive|define
 name|TRANS_INFO_SIZE
-value|8
+value|10
 end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2b74160103
+DECL|enum|__anon2b5284f10103
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -209,6 +209,26 @@ name|gdouble
 name|lasty
 decl_stmt|;
 comment|/*  last y coord                      */
+DECL|member|previousx
+name|gdouble
+name|previousx
+decl_stmt|;
+comment|/*  previous x coord                  */
+DECL|member|previousy
+name|gdouble
+name|previousy
+decl_stmt|;
+comment|/*  previous y coord                  */
+DECL|member|mousex
+name|gdouble
+name|mousex
+decl_stmt|;
+comment|/*  x coord where mouse was clicked   */
+DECL|member|mousey
+name|gdouble
+name|mousey
+decl_stmt|;
+comment|/*  y coord where mouse was clicked   */
 DECL|member|x1
 DECL|member|y1
 name|gint

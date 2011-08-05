@@ -366,6 +366,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpunifiedtransformtool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpvectortool.h"
 end_include
 
@@ -540,6 +546,8 @@ block|,
 name|gimp_scale_tool_register
 block|,
 name|gimp_rotate_tool_register
+block|,
+name|gimp_unified_transform_tool_register
 block|,
 name|gimp_crop_tool_register
 block|,
