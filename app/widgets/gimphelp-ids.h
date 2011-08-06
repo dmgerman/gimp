@@ -2070,6 +2070,14 @@ value|"gimp-tool-scale"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TOOL_SEAMLESS_CLONE
+define|#
+directive|define
+name|GIMP_HELP_TOOL_SEAMLESS_CLONE
+value|"gimp-tool-seamless-clone"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TOOL_SHEAR
 define|#
 directive|define

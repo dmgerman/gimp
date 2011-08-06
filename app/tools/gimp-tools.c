@@ -342,6 +342,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpseamlessclonetool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpscaletool.h"
 end_include
 
@@ -533,6 +539,8 @@ block|,
 name|gimp_bucket_fill_tool_register
 block|,
 name|gimp_text_tool_register
+block|,
+name|gimp_seamless_clone_tool_register
 block|,
 comment|/*  transform tools  */
 name|gimp_cage_tool_register
