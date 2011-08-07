@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptoolpalette.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpuimanager.h"
 end_include
 
@@ -109,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf8eaa80103
+DECL|enum|__anon28f66d700103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
