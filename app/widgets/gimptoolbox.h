@@ -177,18 +177,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpDialogFactory
-modifier|*
-name|gimp_toolbox_get_dialog_factory
-parameter_list|(
-name|GimpToolbox
-modifier|*
-name|toolbox
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_toolbox_set_drag_handler
 parameter_list|(
