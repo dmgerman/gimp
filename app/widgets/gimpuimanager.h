@@ -129,6 +129,10 @@ name|GimpUIManagerClass
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * Among other things, is responsible for updating menu bars. A more  * appropriate name would perhaps be GimpMenubarManager.  */
+end_comment
+
 begin_struct
 DECL|struct|_GimpUIManager
 struct|struct
