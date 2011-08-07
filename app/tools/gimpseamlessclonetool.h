@@ -163,6 +163,38 @@ modifier|*
 name|image_map
 decl_stmt|;
 comment|/* The image map object which renders                                    * the live preview, and commits it                                    * when at the end */
+DECL|member|width
+DECL|member|height
+name|gint
+name|width
+decl_stmt|,
+name|height
+decl_stmt|;
+comment|/* The width and height of the paste.                                    * Needed for mouse hit detection */
+DECL|member|xoff
+DECL|member|yoff
+name|gint
+name|xoff
+decl_stmt|,
+name|yoff
+decl_stmt|;
+comment|/* The current offset of the paste */
+DECL|member|xoff_p
+DECL|member|yoff_p
+name|gint
+name|xoff_p
+decl_stmt|,
+name|yoff_p
+decl_stmt|;
+comment|/* The previous offset of the paste */
+DECL|member|xclick
+DECL|member|yclick
+name|gdouble
+name|xclick
+decl_stmt|,
+name|yclick
+decl_stmt|;
+comment|/* The image location of the last                                    * mouse click. To be used when the                                    * mouse is in motion, to recalculate                                    * the xoff and yoff values */
 block|}
 struct|;
 end_struct
@@ -202,6 +234,22 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_define
+DECL|macro|gimp_seamless_clone_tool_is_in_paste (sc,x0,y0)
+define|#
+directive|define
+name|gimp_seamless_clone_tool_is_in_paste
+parameter_list|(
+name|sc
+parameter_list|,
+name|x0
+parameter_list|,
+name|y0
+parameter_list|)
+define|\
+value|(   ((sc)->xoff<= (x0)&& (x0)< (sc)->xoff + (sc)->width)   \&& ((sc)->yoff<= (y0)&& (y0)< (sc)->yoff + (sc)->height)) \  #define gimp_seamless_clone_tool_is_in_paste_c(sc,coords)       \   gimp_seamless_clone_tool_is_in_paste((sc),(coords)->x,(coords)->y)
+end_define
 
 begin_endif
 endif|#

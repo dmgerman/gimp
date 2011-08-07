@@ -229,7 +229,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbfdd310103
+DECL|enum|__anon2a56bf2b0103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -786,6 +786,16 @@ argument_list|,
 name|GIMP_TOOL_CURSOR_MOVE
 argument_list|)
 expr_stmt|;
+comment|/* In order to achieve as much instant reponse as possible, only care    * about the location of the mouse at present (while it's being moved)    * and ignore motion events that happened while we were dealing with    * previous motion events */
+name|gimp_tool_control_set_motion_mode
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|GIMP_MOTION_MODE_COMPRESS
+argument_list|)
+expr_stmt|;
 name|self
 operator|->
 name|paste
@@ -921,6 +931,15 @@ break|break;
 case|case
 name|GIMP_TOOL_ACTION_HALT
 case|:
+comment|/* We only have what to stop if we are active on some display */
+if|if
+condition|(
+name|tool
+operator|->
+name|display
+operator|!=
+name|NULL
+condition|)
 name|gimp_seamless_clone_tool_stop
 argument_list|(
 name|sc
@@ -928,7 +947,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* When a tool Halts, it means it should finish completly. So set        * the display to NULL. Why? Not sure exactly, especially when the        * father classes also do it. But other tools do this, so reamin        * with this for now.        */
+comment|/* Now, mark that we have no display, so any needed initialization        * will happen on the next time a display is picked */
 name|tool
 operator|->
 name|display
@@ -1013,6 +1032,18 @@ decl_stmt|;
 name|gint
 name|off_y
 decl_stmt|;
+comment|/* First handle the paste - we need to make sure we have one in order    * to do anything else. */
+if|if
+condition|(
+name|sc
+operator|->
+name|paste
+operator|==
+name|NULL
+condition|)
+block|{
+comment|/* TODO: Call to preprocessing should be done here, along with a        * call to cache the paste. If there is no paste, prompt nicely        * for a message requesting the user to actually copy something to        * the clipboard */
+block|}
 comment|/* Free resources which are relevant only for the previous display */
 name|gimp_seamless_clone_tool_stop
 argument_list|(
@@ -1028,7 +1059,17 @@ name|display
 operator|=
 name|display
 expr_stmt|;
-comment|/* Create the image map for the current display? The answer is no!    * Create yourself once preprocessing is finished! */
+name|sc
+operator|->
+name|image_map
+operator|=
+name|gimp_seamless_clone_tool_create_image_map
+argument_list|(
+name|sc
+argument_list|,
+name|drawable
+argument_list|)
+expr_stmt|;
 comment|/* Now call the start method of the draw tool */
 name|gimp_draw_tool_start
 argument_list|(
@@ -1413,7 +1454,75 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* TODO: Modify data here */
+comment|/* There is nothing to do, unless we were actually moving a paste */
+if|if
+condition|(
+name|sc
+operator|->
+name|tool_state
+operator|==
+name|SC_STATE_RENDER_MOTION
+condition|)
+block|{
+name|gimp_draw_tool_pause
+argument_list|(
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|sc
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|sc
+operator|->
+name|xoff
+operator|=
+name|sc
+operator|->
+name|xoff_p
+operator|+
+call|(
+name|gint
+call|)
+argument_list|(
+name|coords
+operator|->
+name|x
+operator|-
+name|sc
+operator|->
+name|xclick
+argument_list|)
+expr_stmt|;
+name|sc
+operator|->
+name|yoff
+operator|=
+name|sc
+operator|->
+name|yoff_p
+operator|+
+call|(
+name|gint
+call|)
+argument_list|(
+name|coords
+operator|->
+name|y
+operator|-
+name|sc
+operator|->
+name|yclick
+argument_list|)
+expr_stmt|;
+name|gimp_draw_tool_resume
+argument_list|(
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* Done modifying data? If so, now restore the tool drawing */
 name|gimp_draw_tool_resume
 argument_list|(
@@ -1539,6 +1648,73 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|sc
+operator|->
+name|tool_state
+operator|==
+name|SC_STATE_RENDER_WAIT
+operator|&&
+name|gimp_seamless_clone_tool_is_in_paste_c
+argument_list|(
+name|sc
+argument_list|,
+name|coords
+argument_list|)
+condition|)
+block|{
+name|gimp_draw_tool_pause
+argument_list|(
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|sc
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/* Record previous location, in case the user cancel's the        * movement */
+name|sc
+operator|->
+name|xoff_p
+operator|=
+name|sc
+operator|->
+name|xoff
+expr_stmt|;
+name|sc
+operator|->
+name|yoff_p
+operator|=
+name|sc
+operator|->
+name|yoff
+expr_stmt|;
+comment|/* Record the mouse location, so that the dragging offset can be        * calculated */
+name|sc
+operator|->
+name|xclick
+operator|=
+name|coords
+operator|->
+name|x
+expr_stmt|;
+name|sc
+operator|->
+name|yclick
+operator|=
+name|coords
+operator|->
+name|y
+expr_stmt|;
+name|gimp_draw_tool_resume
+argument_list|(
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 name|sc_debug_fend
 argument_list|()
 expr_stmt|;
@@ -1585,15 +1761,16 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|GimpSeamlessCloneOptions
-modifier|*
-name|options
-init|=
-name|GIMP_SEAMLESS_CLONE_TOOL_GET_OPTIONS
-argument_list|(
+comment|/* There is nothing to do, unless we were actually moving a paste */
+if|if
+condition|(
 name|sc
-argument_list|)
-decl_stmt|;
+operator|->
+name|tool_state
+operator|==
+name|SC_STATE_RENDER_MOTION
+condition|)
+block|{
 name|gimp_draw_tool_pause
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -1609,11 +1786,67 @@ operator|==
 name|GIMP_BUTTON_RELEASE_CANCEL
 condition|)
 block|{
-comment|/* Cancelling */
+name|sc
+operator|->
+name|xoff
+operator|=
+name|sc
+operator|->
+name|xoff_p
+expr_stmt|;
+name|sc
+operator|->
+name|yoff
+operator|=
+name|sc
+operator|->
+name|yoff_p
+expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* Normal release */
+name|sc
+operator|->
+name|xoff
+operator|=
+name|sc
+operator|->
+name|xoff_p
+operator|+
+call|(
+name|gint
+call|)
+argument_list|(
+name|coords
+operator|->
+name|x
+operator|-
+name|sc
+operator|->
+name|xclick
+argument_list|)
+expr_stmt|;
+name|sc
+operator|->
+name|yoff
+operator|=
+name|sc
+operator|->
+name|yoff_p
+operator|+
+call|(
+name|gint
+call|)
+argument_list|(
+name|coords
+operator|->
+name|y
+operator|-
+name|sc
+operator|->
+name|yclick
+argument_list|)
+expr_stmt|;
 block|}
 name|gimp_draw_tool_resume
 argument_list|(
@@ -1623,11 +1856,16 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|sc_debug_fend
 argument_list|()
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/* Mouse cursor policy:  * - Always use the move cursor  * - While dragging the paste, use a move modified  * - Else, While hovering above it, display no modifier  * - Else, display a "bad" modifier  */
+end_comment
 
 begin_function
 specifier|static
@@ -1655,18 +1893,60 @@ block|{
 name|sc_debug_fstart
 argument_list|()
 expr_stmt|;
+name|GimpSeamlessCloneTool
+modifier|*
+name|sc
+init|=
+name|GIMP_SEAMLESS_CLONE_TOOL
+argument_list|(
+name|tool
+argument_list|)
+decl_stmt|;
 name|GimpCursorModifier
 name|modifier
 init|=
-name|GIMP_CURSOR_MODIFIER_PLUS
+name|GIMP_CURSOR_MODIFIER_BAD
 decl_stmt|;
+comment|/* Only update if the tool is actually active on some display */
 if|if
 condition|(
 name|tool
 operator|->
 name|display
 condition|)
-block|{     }
+block|{
+if|if
+condition|(
+name|sc
+operator|->
+name|tool_state
+operator|==
+name|SC_STATE_RENDER_MOTION
+condition|)
+name|modifier
+operator|=
+name|GIMP_CURSOR_MODIFIER_MOVE
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|sc
+operator|->
+name|tool_state
+operator|==
+name|SC_STATE_RENDER_WAIT
+operator|&&
+name|gimp_seamless_clone_tool_is_in_paste_c
+argument_list|(
+name|sc
+argument_list|,
+name|coords
+argument_list|)
+condition|)
+name|modified
+operator|=
+name|GIMP_CURSOR_MODIFIER_NONE
+expr_stmt|;
 name|gimp_tool_control_set_cursor_modifier
 argument_list|(
 name|tool
@@ -1676,6 +1956,7 @@ argument_list|,
 name|modifier
 argument_list|)
 expr_stmt|;
+block|}
 name|GIMP_TOOL_CLASS
 argument_list|(
 name|parent_class
@@ -1698,6 +1979,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/* Draw any required on canvas interaction. For now, this is kept empty.  * It's a place holder for the future of this tool, for some more  * advanced features that may be added later */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -1717,6 +2002,10 @@ argument_list|()
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/* This function creates a Gegl node graph of the composition which is  * needed to render the drawable. The graph should have an "input" pad  * which will receive the drawable on which the preview is applied, and  * it should also have an "output" pad to which the final result will be  * rendered */
+end_comment
 
 begin_function
 specifier|static
@@ -1758,6 +2047,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/* Create an image map to render the operation of the current tool with  * a preview on the given drawable */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -1776,6 +2069,7 @@ block|{
 name|sc_debug_fstart
 argument_list|()
 expr_stmt|;
+comment|/* FIrst, make sure we actually have the GEGL graph needed to render    * the operation's result */
 if|if
 condition|(
 operator|!
@@ -1798,7 +2092,7 @@ name|drawable
 argument_list|,
 name|_
 argument_list|(
-literal|"Cage transform"
+literal|"Seamless Clone"
 argument_list|)
 argument_list|,
 name|sc
@@ -1831,6 +2125,10 @@ argument_list|()
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/* Flush (Refresh) the image map preview */
+end_comment
 
 begin_function
 specifier|static
@@ -1881,6 +2179,10 @@ argument_list|()
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_seamless_clone_tool_image_map_update:  * @sc: A GimpSeamlessCloneTool to update  *  * This functions updates the image map preview displayed by a given  * GimpSeamlessCloneTool. The image_map must be initialized prior to the  * call to this function!  */
+end_comment
 
 begin_function
 specifier|static
@@ -1945,6 +2247,7 @@ decl_stmt|;
 name|GeglRectangle
 name|visible
 decl_stmt|;
+comment|/* Find out at which x,y is the top left corner of the currently    * displayed part */
 name|gimp_display_shell_untransform_viewport
 argument_list|(
 name|shell
@@ -1962,6 +2265,7 @@ operator|&
 name|h
 argument_list|)
 expr_stmt|;
+comment|/* Find out where is our drawable positioned */
 name|gimp_item_get_offset
 argument_list|(
 name|item
@@ -1973,6 +2277,7 @@ operator|&
 name|off_y
 argument_list|)
 expr_stmt|;
+comment|/* Create a rectangle from the intersection of the currently displayed    * part with the drawable */
 name|gimp_rectangle_intersect
 argument_list|(
 name|x
@@ -2018,6 +2323,7 @@ operator|.
 name|height
 argument_list|)
 expr_stmt|;
+comment|/* Since the image_map_apply function receives a rectangle describing    * where it should update the preview, and since that rectangle should    * be relative to the drawable's location, we now offset back by the    * drawable's offsetts. */
 name|visible
 operator|.
 name|x
@@ -2030,6 +2336,7 @@ name|y
 operator|-=
 name|off_y
 expr_stmt|;
+comment|/* Now update the image map and show this area */
 name|gimp_image_map_apply
 argument_list|(
 name|sc
