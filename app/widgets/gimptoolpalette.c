@@ -1830,6 +1830,18 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/* We only need to initialize tools once */
+name|g_signal_handlers_disconnect_by_func
+argument_list|(
+name|private
+operator|->
+name|toolbox
+argument_list|,
+name|gimp_tool_palette_initialize_tools
+argument_list|,
+name|palette
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
