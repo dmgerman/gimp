@@ -109,7 +109,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b02e9ff0103
+DECL|enum|__anon2bf8eaa80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1072,12 +1072,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|gimp_tool_palette_dnd_init (GIMP_TOOL_PALETTE (palette));
-endif|#
-directive|endif
 block|}
 end_function
 
