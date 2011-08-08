@@ -229,7 +229,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a56bf2b0103
+DECL|enum|__anon299fee160103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -653,9 +653,6 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
 name|GimpToolClass
 modifier|*
 name|tool_class
@@ -674,6 +671,9 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
+name|sc_debug_fstart
+argument_list|()
+expr_stmt|;
 name|tool_class
 operator|->
 name|options_notify
@@ -749,9 +749,6 @@ modifier|*
 name|self
 parameter_list|)
 block|{
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
 name|GimpTool
 modifier|*
 name|tool
@@ -761,6 +758,9 @@ argument_list|(
 name|self
 argument_list|)
 decl_stmt|;
+name|sc_debug_fstart
+argument_list|()
+expr_stmt|;
 comment|/* TODO: If we want our tool to be invalidated by something, enable    * the following line. Note that the enum of the dirty properties is    * GimpDirtyMask which is located under app/core/core-enums.h */
 comment|//  gimp_tool_control_set_dirty_mask  (tool->control,
 comment|//                                     GIMP_DIRTY_IMAGE           |
@@ -866,9 +866,6 @@ modifier|*
 name|display
 parameter_list|)
 block|{
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
 name|GimpSeamlessCloneTool
 modifier|*
 name|sc
@@ -878,6 +875,9 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
+name|sc_debug_fstart
+argument_list|()
+expr_stmt|;
 if|#
 directive|if
 name|SC_DEBUG
@@ -996,9 +996,6 @@ modifier|*
 name|display
 parameter_list|)
 block|{
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
 name|GimpTool
 modifier|*
 name|tool
@@ -1026,12 +1023,9 @@ argument_list|(
 name|image
 argument_list|)
 decl_stmt|;
-name|gint
-name|off_x
-decl_stmt|;
-name|gint
-name|off_y
-decl_stmt|;
+name|sc_debug_fstart
+argument_list|()
+expr_stmt|;
 comment|/* First handle the paste - we need to make sure we have one in order    * to do anything else. */
 if|if
 condition|(
@@ -1043,6 +1037,18 @@ name|NULL
 condition|)
 block|{
 comment|/* TODO: Call to preprocessing should be done here, along with a        * call to cache the paste. If there is no paste, prompt nicely        * for a message requesting the user to actually copy something to        * the clipboard */
+if|if
+condition|(
+name|sc
+operator|->
+name|paste
+operator|==
+name|NULL
+condition|)
+block|{
+comment|/* TODO: prompt for some error message */
+return|return;
+block|}
 block|}
 comment|/* Free resources which are relevant only for the previous display */
 name|gimp_seamless_clone_tool_stop
@@ -1059,10 +1065,7 @@ name|display
 operator|=
 name|display
 expr_stmt|;
-name|sc
-operator|->
-name|image_map
-operator|=
+comment|/* Initialize the image map preview */
 name|gimp_seamless_clone_tool_create_image_map
 argument_list|(
 name|sc
@@ -1307,18 +1310,10 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
+comment|// GimpSeamlessCloneTool *sc = GIMP_SEAMLESS_CLONE_TOOL (tool);
 name|sc_debug_fstart
 argument_list|()
 expr_stmt|;
-name|GimpSeamlessCloneTool
-modifier|*
-name|sc
-init|=
-name|GIMP_SEAMLESS_CLONE_TOOL
-argument_list|(
-name|tool
-argument_list|)
-decl_stmt|;
 name|GIMP_TOOL_CLASS
 argument_list|(
 name|parent_class
@@ -1389,12 +1384,12 @@ name|sc_debug_fstart
 argument_list|()
 expr_stmt|;
 comment|/* TODO: After checking the key code, return TRUE if the event was    * handled, or FALSE if not */
-return|return
-name|FALSE
-return|;
 name|sc_debug_fend
 argument_list|()
 expr_stmt|;
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 
@@ -1424,9 +1419,6 @@ modifier|*
 name|display
 parameter_list|)
 block|{
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
 name|GimpSeamlessCloneTool
 modifier|*
 name|sc
@@ -1436,15 +1428,9 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|GimpSeamlessCloneOptions
-modifier|*
-name|options
-init|=
-name|GIMP_SEAMLESS_CLONE_TOOL_GET_OPTIONS
-argument_list|(
-name|sc
-argument_list|)
-decl_stmt|;
+name|sc_debug_fstart
+argument_list|()
+expr_stmt|;
 comment|/* Pause the tool before modifying the tool data, so that drawing    * won't be done using data in intermidiate states */
 name|gimp_draw_tool_pause
 argument_list|(
@@ -1621,9 +1607,6 @@ modifier|*
 name|display
 parameter_list|)
 block|{
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
 name|GimpSeamlessCloneTool
 modifier|*
 name|sc
@@ -1633,6 +1616,9 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
+name|sc_debug_fstart
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|display
@@ -1749,9 +1735,6 @@ modifier|*
 name|display
 parameter_list|)
 block|{
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
 name|GimpSeamlessCloneTool
 modifier|*
 name|sc
@@ -1761,6 +1744,9 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
+name|sc_debug_fstart
+argument_list|()
+expr_stmt|;
 comment|/* There is nothing to do, unless we were actually moving a paste */
 if|if
 condition|(
@@ -1890,9 +1876,6 @@ modifier|*
 name|display
 parameter_list|)
 block|{
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
 name|GimpSeamlessCloneTool
 modifier|*
 name|sc
@@ -1907,6 +1890,9 @@ name|modifier
 init|=
 name|GIMP_CURSOR_MODIFIER_BAD
 decl_stmt|;
+name|sc_debug_fstart
+argument_list|()
+expr_stmt|;
 comment|/* Only update if the tool is actually active on some display */
 if|if
 condition|(
@@ -1943,7 +1929,7 @@ argument_list|,
 name|coords
 argument_list|)
 condition|)
-name|modified
+name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_NONE
 expr_stmt|;
@@ -2004,7 +1990,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* This function creates a Gegl node graph of the composition which is  * needed to render the drawable. The graph should have an "input" pad  * which will receive the drawable on which the preview is applied, and  * it should also have an "output" pad to which the final result will be  * rendered */
+comment|/**  * gimp_seamless_clone_tool_create_render_node:  * @sc: The GimpSeamlessCloneTool to intialize  *  * This function creates a Gegl node graph of the composition which is  * needed to render the drawable. The graph should have an "input" pad  * which will receive the drawable on which the preview is applied, and  * it should also have an "output" pad to which the final result will be  * rendered  */
 end_comment
 
 begin_function
@@ -2018,8 +2004,173 @@ modifier|*
 name|sc
 parameter_list|)
 block|{
+comment|/* Here is a textual description of the graph we are going to create:    *    *<input><- drawable    * +--+--------------------------+    * |  |output                    |    * |  |                          |    * |  |<buffer-sink><- paste |    * |  |       |output            |    * |  |       |                  |    * |  |       |input             |    * |  |<translate>            |    * |  |       |output            |    * |  |       |                  |    * |  |input  |aux               |    * |<seamless-paste>             |    * |    |output                  |    * |    |                        |    * |    |input                   |    * +----+------------------------+    *<output>    */
+name|GeglNode
+modifier|*
+name|node
+decl_stmt|;
+name|GeglNode
+modifier|*
+name|translate
+decl_stmt|,
+modifier|*
+name|op
+decl_stmt|,
+modifier|*
+name|paste
+decl_stmt|;
+name|GeglNode
+modifier|*
+name|input
+decl_stmt|,
+modifier|*
+name|output
+decl_stmt|;
 name|sc_debug_fstart
 argument_list|()
+expr_stmt|;
+name|node
+operator|=
+name|gegl_node_new
+argument_list|()
+expr_stmt|;
+name|input
+operator|=
+name|gegl_node_get_input_proxy
+argument_list|(
+name|node
+argument_list|,
+literal|"input"
+argument_list|)
+expr_stmt|;
+name|output
+operator|=
+name|gegl_node_get_output_proxy
+argument_list|(
+name|node
+argument_list|,
+literal|"output"
+argument_list|)
+expr_stmt|;
+name|paste
+operator|=
+name|gegl_node_new_child
+argument_list|(
+name|node
+argument_list|,
+literal|"operation"
+argument_list|,
+literal|"gegl:buffer-sink"
+argument_list|,
+literal|"buffer"
+argument_list|,
+name|sc
+operator|->
+name|paste
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|translate
+operator|=
+name|gegl_node_new_child
+argument_list|(
+name|node
+argument_list|,
+literal|"operation"
+argument_list|,
+literal|"gegl:translate"
+argument_list|,
+literal|"x"
+argument_list|,
+operator|(
+name|gdouble
+operator|)
+name|sc
+operator|->
+name|xoff
+argument_list|,
+literal|"y"
+argument_list|,
+operator|(
+name|gdouble
+operator|)
+name|sc
+operator|->
+name|yoff
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+comment|/* For now, avoid fancy stuff and use a nop passthrough op.    * Seamless-Clone operation would be integrated once the rest works.    * No need to introduce potential GEGL side bugs before we know the    * GIMP side works. */
+name|op
+operator|=
+name|gegl_node_new_child
+argument_list|(
+name|node
+argument_list|,
+literal|"operation"
+argument_list|,
+literal|"gegl:nop"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gegl_node_connect_to
+argument_list|(
+name|input
+argument_list|,
+literal|"output"
+argument_list|,
+name|op
+argument_list|,
+literal|"input"
+argument_list|)
+expr_stmt|;
+name|gegl_node_connect_to
+argument_list|(
+name|paste
+argument_list|,
+literal|"output"
+argument_list|,
+name|translate
+argument_list|,
+literal|"input"
+argument_list|)
+expr_stmt|;
+name|gegl_node_connect_to
+argument_list|(
+name|translate
+argument_list|,
+literal|"output"
+argument_list|,
+name|op
+argument_list|,
+literal|"aux"
+argument_list|)
+expr_stmt|;
+name|gegl_node_connect_to
+argument_list|(
+name|op
+argument_list|,
+literal|"output"
+argument_list|,
+name|output
+argument_list|,
+literal|"input"
+argument_list|)
+expr_stmt|;
+name|sc
+operator|->
+name|render_node
+operator|=
+name|node
+expr_stmt|;
+name|sc
+operator|->
+name|translate_node
+operator|=
+name|translate
 expr_stmt|;
 name|sc_debug_fend
 argument_list|()
@@ -2040,6 +2191,34 @@ parameter_list|)
 block|{
 name|sc_debug_fstart
 argument_list|()
+expr_stmt|;
+comment|/* The only thing to update right now, is the location of the paste */
+name|gegl_node_set
+argument_list|(
+name|sc
+operator|->
+name|translate_node
+argument_list|,
+literal|"x"
+argument_list|,
+operator|(
+name|gdouble
+operator|)
+name|sc
+operator|->
+name|xoff
+argument_list|,
+literal|"y"
+argument_list|,
+operator|(
+name|gdouble
+operator|)
+name|sc
+operator|->
+name|yoff
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|sc_debug_fend
 argument_list|()
@@ -2145,9 +2324,6 @@ modifier|*
 name|tool
 parameter_list|)
 block|{
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -2159,6 +2335,9 @@ operator|->
 name|display
 argument_list|)
 decl_stmt|;
+name|sc_debug_fstart
+argument_list|()
+expr_stmt|;
 name|gimp_projection_flush_now
 argument_list|(
 name|gimp_image_get_projection
@@ -2195,9 +2374,6 @@ modifier|*
 name|sc
 parameter_list|)
 block|{
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
 name|GimpTool
 modifier|*
 name|tool
@@ -2247,6 +2423,9 @@ decl_stmt|;
 name|GeglRectangle
 name|visible
 decl_stmt|;
+name|sc_debug_fstart
+argument_list|()
+expr_stmt|;
 comment|/* Find out at which x,y is the top left corner of the currently    * displayed part */
 name|gimp_display_shell_untransform_viewport
 argument_list|(
