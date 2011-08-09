@@ -291,15 +291,9 @@ name|g_param_spec_object
 argument_list|(
 literal|"config"
 argument_list|,
-name|_
-argument_list|(
 literal|"Config"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"A GimpCageConfig object, that define the transformation"
-argument_list|)
 argument_list|,
 name|GIMP_TYPE_CAGE_CONFIG
 argument_list|,

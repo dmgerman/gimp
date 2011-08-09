@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a16a430103
+DECL|enum|__anon2a35a7190103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -445,15 +445,9 @@ name|g_param_spec_object
 argument_list|(
 literal|"config"
 argument_list|,
-name|_
-argument_list|(
 literal|"Config"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"A GimpCageConfig object, that define the transformation"
-argument_list|)
 argument_list|,
 name|GIMP_TYPE_CAGE_CONFIG
 argument_list|,
