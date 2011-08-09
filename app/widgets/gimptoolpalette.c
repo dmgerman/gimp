@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimptoolpalette.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpuimanager.h"
 end_include
 
