@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c36d4bc0103
+DECL|enum|__anon2c3d5fdb0103
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -73,8 +73,13 @@ DECL|enumerator|TRANSFORM_HANDLE_W
 name|TRANSFORM_HANDLE_W
 block|,
 comment|/* west       */
+DECL|enumerator|TRANSFORM_HANDLE_PIVOT
+name|TRANSFORM_HANDLE_PIVOT
+block|,
+comment|/* pivot for rotation and scaling */
 DECL|enumerator|TRANSFORM_HANDLE_CENTER
 name|TRANSFORM_HANDLE_CENTER
+comment|/* for moving */
 DECL|typedef|TransformAction
 block|}
 name|TransformAction
@@ -227,7 +232,15 @@ name|cx
 decl_stmt|,
 name|cy
 decl_stmt|;
-comment|/*  center point (for rotation)       */
+comment|/*  center point (for moving)         */
+DECL|member|px
+DECL|member|py
+name|gdouble
+name|px
+decl_stmt|,
+name|py
+decl_stmt|;
+comment|/*  pivot point (for rotation)        */
 DECL|member|aspect
 name|gdouble
 name|aspect
@@ -268,6 +281,13 @@ name|gdouble
 name|tcx
 decl_stmt|,
 name|tcy
+decl_stmt|;
+DECL|member|tpx
+DECL|member|tpy
+name|gdouble
+name|tpx
+decl_stmt|,
+name|tpy
 decl_stmt|;
 DECL|member|transform
 name|GimpMatrix3
@@ -314,6 +334,11 @@ name|gboolean
 name|use_mid_handles
 decl_stmt|;
 comment|/*  use handles at midpoints of edges */
+DECL|member|use_pivot
+name|gboolean
+name|use_pivot
+decl_stmt|;
+comment|/*  use pivot point                   */
 DECL|member|handles
 name|GimpCanvasItem
 modifier|*
