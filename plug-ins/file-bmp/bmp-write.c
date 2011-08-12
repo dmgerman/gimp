@@ -82,7 +82,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9257210103
+DECL|enum|__anon29589d310103
 block|{
 DECL|enumerator|RGB_565
 name|RGB_565
@@ -110,15 +110,15 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b9257210208
+DECL|struct|__anon29589d310208
 block|{
 DECL|member|rgb_format
 name|RGBMode
 name|rgb_format
 decl_stmt|;
-DECL|member|encoded
+DECL|member|use_run_length_encoding
 name|gint
-name|encoded
+name|use_run_length_encoding
 decl_stmt|;
 DECL|variable|BMPSaveData
 block|}
@@ -166,7 +166,7 @@ name|gint
 name|height
 parameter_list|,
 name|gint
-name|encoded
+name|use_run_length_encoding
 parameter_list|,
 name|gint
 name|channels
@@ -934,10 +934,9 @@ name|g_assert_not_reached
 argument_list|()
 expr_stmt|;
 block|}
-comment|/* Perhaps someone wants RLE encoded Bitmaps */
 name|BMPSaveData
 operator|.
-name|encoded
+name|use_run_length_encoding
 operator|=
 literal|0
 expr_stmt|;
@@ -1413,7 +1412,7 @@ if|if
 condition|(
 name|BMPSaveData
 operator|.
-name|encoded
+name|use_run_length_encoding
 operator|==
 literal|0
 condition|)
@@ -2250,7 +2249,7 @@ name|rows
 argument_list|,
 name|BMPSaveData
 operator|.
-name|encoded
+name|use_run_length_encoding
 argument_list|,
 name|channels
 argument_list|,
@@ -2528,7 +2527,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|write_image (FILE * f,guchar * src,gint width,gint height,gint encoded,gint channels,gint bpp,gint spzeile,gint MapSize,RGBMode rgb_format)
+DECL|function|write_image (FILE * f,guchar * src,gint width,gint height,gint use_run_length_encoding,gint channels,gint bpp,gint spzeile,gint MapSize,RGBMode rgb_format)
 name|write_image
 parameter_list|(
 name|FILE
@@ -2546,7 +2545,7 @@ name|gint
 name|height
 parameter_list|,
 name|gint
-name|encoded
+name|use_run_length_encoding
 parameter_list|,
 name|gint
 name|channels
@@ -3181,7 +3180,7 @@ else|else
 block|{
 switch|switch
 condition|(
-name|encoded
+name|use_run_length_encoding
 condition|)
 comment|/* now it gets more difficult */
 block|{
@@ -4370,7 +4369,7 @@ argument_list|)
 argument_list|,
 name|BMPSaveData
 operator|.
-name|encoded
+name|use_run_length_encoding
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -4405,7 +4404,7 @@ argument_list|,
 operator|&
 name|BMPSaveData
 operator|.
-name|encoded
+name|use_run_length_encoding
 argument_list|)
 expr_stmt|;
 name|expander
