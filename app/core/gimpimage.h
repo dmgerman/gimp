@@ -814,6 +814,20 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
+name|gchar
+modifier|*
+name|gimp_image_get_any_uri
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_image_set_uri
 parameter_list|(
