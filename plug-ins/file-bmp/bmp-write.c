@@ -82,7 +82,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd11100103
+DECL|enum|__anon2be2e8420103
 block|{
 DECL|enumerator|RGB_565
 name|RGB_565
@@ -110,7 +110,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27dd11100208
+DECL|struct|__anon2be2e8420208
 block|{
 DECL|member|rgb_format
 name|RGBMode
@@ -119,6 +119,11 @@ decl_stmt|;
 DECL|member|use_run_length_encoding
 name|gint
 name|use_run_length_encoding
+decl_stmt|;
+comment|/* Weather or not to write BITMAPV5HEADER color space data */
+DECL|member|dont_write_color_space_data
+name|gint
+name|dont_write_color_space_data
 decl_stmt|;
 DECL|variable|BMPSaveData
 block|}
@@ -606,6 +611,9 @@ decl_stmt|;
 name|gint
 name|mask_info_size
 decl_stmt|;
+name|gint
+name|color_space_size
+decl_stmt|;
 name|guint32
 name|Mask
 index|[
@@ -937,6 +945,12 @@ block|}
 name|BMPSaveData
 operator|.
 name|use_run_length_encoding
+operator|=
+literal|0
+expr_stmt|;
+name|BMPSaveData
+operator|.
+name|dont_write_color_space_data
 operator|=
 literal|0
 expr_stmt|;
@@ -1328,10 +1342,26 @@ operator|)
 operator|*
 literal|4
 expr_stmt|;
+name|color_space_size
+operator|=
+literal|0
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|BMPSaveData
+operator|.
+name|dont_write_color_space_data
+condition|)
+name|color_space_size
+operator|=
+literal|68
+expr_stmt|;
 name|Bitmap_File_Head
 operator|.
 name|bfSize
 operator|=
+operator|(
 literal|0x36
 operator|+
 name|MapSize
@@ -1344,9 +1374,7 @@ operator|)
 operator|+
 name|mask_info_size
 operator|+
-operator|(
-literal|68
-comment|/* V5 color space */
+name|color_space_size
 operator|)
 expr_stmt|;
 name|Bitmap_File_Head
@@ -1365,13 +1393,15 @@ name|Bitmap_File_Head
 operator|.
 name|bfOffs
 operator|=
+operator|(
 literal|0x36
 operator|+
 name|MapSize
 operator|+
 name|mask_info_size
 operator|+
-literal|68
+name|color_space_size
+operator|)
 expr_stmt|;
 name|Bitmap_File_Head
 operator|.
@@ -1381,7 +1411,7 @@ literal|40
 operator|+
 name|mask_info_size
 operator|+
-literal|68
+name|color_space_size
 expr_stmt|;
 name|Bitmap_Head
 operator|.
@@ -2106,7 +2136,15 @@ name|mask_info_size
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Write V5 colorspace fields */
+if|if
+condition|(
+operator|!
+name|BMPSaveData
+operator|.
+name|dont_write_color_space_data
+condition|)
+block|{
+comment|/* Write V5 color space fields */
 comment|/* bV5CSType = LCS_sRGB */
 name|FromL
 argument_list|(
@@ -2232,9 +2270,10 @@ name|outfile
 argument_list|,
 name|puffer
 argument_list|,
-literal|68
+name|color_space_size
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* After that is done, we write the image ... */
 name|write_image
 argument_list|(
@@ -4266,6 +4305,7 @@ decl_stmt|;
 name|gboolean
 name|run
 decl_stmt|;
+comment|/* Dialog init */
 name|dialog
 operator|=
 name|gimp_export_dialog_new
@@ -4333,6 +4373,7 @@ argument_list|(
 name|vbox_main
 argument_list|)
 expr_stmt|;
+comment|/* Run-Length Encoded */
 name|toggle
 operator|=
 name|gtk_check_button_new_with_mnemonic
@@ -4406,6 +4447,149 @@ operator|.
 name|use_run_length_encoding
 argument_list|)
 expr_stmt|;
+comment|/* Compatibility Options */
+name|expander
+operator|=
+name|gtk_expander_new_with_mnemonic
+argument_list|(
+name|_
+argument_list|(
+literal|"Co_mpatibility Options"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox_main
+argument_list|)
+argument_list|,
+name|expander
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|expander
+argument_list|)
+expr_stmt|;
+name|vbox2
+operator|=
+name|gtk_vbox_new
+argument_list|(
+name|FALSE
+argument_list|,
+literal|12
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|,
+literal|12
+argument_list|)
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|expander
+argument_list|)
+argument_list|,
+name|vbox2
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|vbox2
+argument_list|)
+expr_stmt|;
+name|toggle
+operator|=
+name|gtk_check_button_new_with_mnemonic
+argument_list|(
+name|_
+argument_list|(
+literal|"_Do not write color space information"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|toggle
+argument_list|,
+name|_
+argument_list|(
+literal|"Some applications can not read BMP images that "
+literal|"include color space information. GIMP writes "
+literal|"color space information by default. Enabling "
+literal|"this option will cause GIMP to not write color "
+literal|"space information to the file."
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|,
+name|toggle
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_toggle_button_set_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|toggle
+argument_list|)
+argument_list|,
+name|BMPSaveData
+operator|.
+name|dont_write_color_space_data
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|toggle
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|toggle
+argument_list|,
+literal|"toggled"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_toggle_button_update
+argument_list|)
+argument_list|,
+operator|&
+name|BMPSaveData
+operator|.
+name|dont_write_color_space_data
+argument_list|)
+expr_stmt|;
+comment|/* Advanced Options */
 name|expander
 operator|=
 name|gtk_expander_new_with_mnemonic
@@ -5036,6 +5220,7 @@ name|RGBX_8888
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* Dialog show */
 name|gtk_widget_show
 argument_list|(
 name|dialog
