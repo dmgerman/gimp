@@ -82,7 +82,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29589d310103
+DECL|enum|__anon27dd11100103
 block|{
 DECL|enumerator|RGB_565
 name|RGB_565
@@ -110,7 +110,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29589d310208
+DECL|struct|__anon27dd11100208
 block|{
 DECL|member|rgb_format
 name|RGBMode
@@ -946,9 +946,8 @@ literal|0
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|interactive
-operator|&&
+operator|||
 name|lastvals
 condition|)
 block|{
