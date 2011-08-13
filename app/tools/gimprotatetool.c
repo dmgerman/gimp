@@ -111,7 +111,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27eada070103
+DECL|enum|__anon2974a8e50103
 block|{
 DECL|enumerator|ANGLE
 name|ANGLE
@@ -1951,6 +1951,11 @@ index|]
 operator|=
 name|value
 expr_stmt|;
+name|gimp_transform_tool_push_internal_undo
+argument_list|(
+name|tr_tool
+argument_list|)
+expr_stmt|;
 name|gimp_transform_tool_recalc_matrix
 argument_list|(
 name|tr_tool
@@ -2074,6 +2079,11 @@ operator|->
 name|py
 operator|=
 name|py
+expr_stmt|;
+name|gimp_transform_tool_push_internal_undo
+argument_list|(
+name|tr_tool
+argument_list|)
 expr_stmt|;
 name|gimp_transform_tool_recalc_matrix
 argument_list|(

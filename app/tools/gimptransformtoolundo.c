@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae4b53d0103
+DECL|enum|__anon2a321a680103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -349,9 +349,12 @@ index|[
 name|i
 index|]
 operator|=
+operator|(
+operator|*
 name|transform_tool
 operator|->
 name|old_trans_info
+operator|)
 index|[
 name|i
 index|]

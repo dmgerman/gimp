@@ -93,7 +93,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d144a50103
+DECL|enum|__anon2bd275c30103
 block|{
 DECL|enumerator|HORZ_OR_VERT
 name|HORZ_OR_VERT
@@ -1321,6 +1321,11 @@ index|]
 operator|=
 name|value
 expr_stmt|;
+name|gimp_transform_tool_push_internal_undo
+argument_list|(
+name|tr_tool
+argument_list|)
+expr_stmt|;
 name|gimp_transform_tool_recalc_matrix
 argument_list|(
 name|tr_tool
@@ -1409,6 +1414,11 @@ name|YSHEAR
 index|]
 operator|=
 name|value
+expr_stmt|;
+name|gimp_transform_tool_push_internal_undo
+argument_list|(
+name|tr_tool
+argument_list|)
 expr_stmt|;
 name|gimp_transform_tool_recalc_matrix
 argument_list|(

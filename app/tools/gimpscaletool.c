@@ -117,7 +117,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d696e60103
+DECL|enum|__anon2c1117760103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -1731,6 +1731,11 @@ name|Y0
 index|]
 operator|+
 name|height
+expr_stmt|;
+name|gimp_transform_tool_push_internal_undo
+argument_list|(
+name|tr_tool
+argument_list|)
 expr_stmt|;
 name|gimp_transform_tool_recalc_matrix
 argument_list|(

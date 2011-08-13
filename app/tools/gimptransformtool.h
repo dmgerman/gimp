@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3d5fdb0103
+DECL|enum|__anon2c2b74160103
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -301,14 +301,28 @@ decl_stmt|;
 comment|/*  transformation info               */
 DECL|member|old_trans_info
 name|TransInfo
+modifier|*
 name|old_trans_info
 decl_stmt|;
 comment|/*  for resetting everything          */
 DECL|member|prev_trans_info
 name|TransInfo
+modifier|*
 name|prev_trans_info
 decl_stmt|;
-comment|/*  for cancelling a drag operation   */
+comment|/*  the current finished state        */
+DECL|member|undo_list
+name|GList
+modifier|*
+name|undo_list
+decl_stmt|;
+comment|/*  list of all states,                                        head is current == prev_trans_info,                                        tail is original == old_trans_info*/
+DECL|member|redo_list
+name|GList
+modifier|*
+name|redo_list
+decl_stmt|;
+comment|/*  list of all undone states,                                        NULL when nothing undone */
 DECL|member|function
 name|TransformAction
 name|function
@@ -499,6 +513,17 @@ end_decl_stmt
 begin_function_decl
 name|void
 name|gimp_transform_tool_recalc_matrix
+parameter_list|(
+name|GimpTransformTool
+modifier|*
+name|tr_tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_transform_tool_push_internal_undo
 parameter_list|(
 name|GimpTransformTool
 modifier|*
