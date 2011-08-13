@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cff91e0103
+DECL|enum|__anon2acf92030103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2858,17 +2858,6 @@ operator|->
 name|got_motion_event
 operator|=
 name|TRUE
-expr_stmt|;
-name|gimp_tool_check_click_distance
-argument_list|(
-name|tool
-argument_list|,
-name|coords
-argument_list|,
-name|time
-argument_list|,
-name|display
-argument_list|)
 expr_stmt|;
 name|GIMP_TOOL_GET_CLASS
 argument_list|(
