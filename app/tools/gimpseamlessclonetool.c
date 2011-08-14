@@ -241,7 +241,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf14e030103
+DECL|enum|__anon28b4a1860103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -594,6 +594,7 @@ value|gimp_seamless_clone_tool_parent_class
 end_define
 
 begin_function
+specifier|static
 specifier|const
 name|gchar
 modifier|*
@@ -653,6 +654,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|sc_debug (GimpSeamlessCloneTool * sc)
 name|sc_debug
@@ -708,6 +710,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|sc_debug_coords (GimpSeamlessCloneTool * sc,const GimpCoords * c)
 name|sc_debug_coords
@@ -784,9 +787,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
 call|(
 modifier|*
 name|callback
@@ -828,9 +828,6 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|sc_debug_fend
-argument_list|()
-expr_stmt|;
 block|}
 end_function
 
@@ -863,9 +860,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
 name|tool_class
 operator|->
 name|options_notify
@@ -920,9 +914,6 @@ name|draw
 operator|=
 name|gimp_seamless_clone_tool_draw
 expr_stmt|;
-name|sc_debug_fend
-argument_list|()
-expr_stmt|;
 block|}
 end_function
 
@@ -950,9 +941,6 @@ argument_list|(
 name|self
 argument_list|)
 decl_stmt|;
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
 comment|/* TODO: If we want our tool to be invalidated by something, enable    * the following line. Note that the enum of the dirty properties is    * GimpDirtyMask which is located under app/core/core-enums.h */
 comment|//  gimp_tool_control_set_dirty_mask  (tool->control,
 comment|//                                     GIMP_DIRTY_IMAGE           |
@@ -1048,9 +1036,6 @@ name|height
 operator|=
 literal|0
 expr_stmt|;
-name|sc_debug_fend
-argument_list|()
-expr_stmt|;
 block|}
 end_function
 
@@ -1085,47 +1070,6 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
-if|#
-directive|if
-name|SC_DEBUG
-switch|switch
-condition|(
-name|action
-condition|)
-block|{
-case|case
-name|GIMP_TOOL_ACTION_PAUSE
-case|:
-name|g_debug
-argument_list|(
-literal|"sc_tool_control:: GIMP_TOOL_ACTION_PAUSE"
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|GIMP_TOOL_ACTION_RESUME
-case|:
-name|g_debug
-argument_list|(
-literal|"sc_tool_control:: GIMP_TOOL_ACTION_RESUME"
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|GIMP_TOOL_ACTION_HALT
-case|:
-name|g_debug
-argument_list|(
-literal|"sc_tool_control:: GIMP_TOOL_ACTION_HALT"
-argument_list|)
-expr_stmt|;
-break|break;
-block|}
-endif|#
-directive|endif
 switch|switch
 condition|(
 name|action
@@ -1180,9 +1124,6 @@ name|action
 argument_list|,
 name|display
 argument_list|)
-expr_stmt|;
-name|sc_debug_fend
-argument_list|()
 expr_stmt|;
 block|}
 end_function
@@ -1339,11 +1280,8 @@ argument_list|(
 name|processor
 argument_list|)
 expr_stmt|;
-name|tile_manager_unref
-argument_list|(
-name|tiles
-argument_list|)
-expr_stmt|;
+comment|/* gimp_buffer_get_tiles does not ref the tile manager before         * returning it, so unreffing it here will cause trouble. This         * should probably be fixed, carefully after finding all usages         * of that function         * TODO: Fixme         */
+comment|/* tile_manager_unref (tiles); */
 name|g_object_unref
 argument_list|(
 name|gegl
@@ -1407,9 +1345,6 @@ argument_list|(
 name|image
 argument_list|)
 decl_stmt|;
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
 comment|/* First handle the paste - we need to make sure we have one in order    * to do anything else. */
 if|if
 condition|(
@@ -1510,9 +1445,6 @@ name|tool_state
 operator|=
 name|SC_STATE_RENDER_WAIT
 expr_stmt|;
-name|sc_debug_fend
-argument_list|()
-expr_stmt|;
 block|}
 end_function
 
@@ -1534,21 +1466,6 @@ name|gboolean
 name|display_change_only
 parameter_list|)
 block|{
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
-name|sc_debug
-argument_list|(
-name|sc
-argument_list|)
-expr_stmt|;
-name|g_debug
-argument_list|(
-literal|"Display change only? %d"
-argument_list|,
-name|display_change_only
-argument_list|)
-expr_stmt|;
 comment|/* See if we actually have any reason to stop */
 if|if
 condition|(
@@ -1680,11 +1597,6 @@ operator|->
 name|image_map
 argument_list|)
 expr_stmt|;
-name|g_debug
-argument_list|(
-literal|"Image map aborted!"
-argument_list|)
-expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|sc
@@ -1723,11 +1635,6 @@ name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_debug
-argument_list|(
-literal|"Image view flushed!"
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 name|gimp_draw_tool_stop
@@ -1737,9 +1644,6 @@ argument_list|(
 name|sc
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|sc_debug_fend
-argument_list|()
 expr_stmt|;
 block|}
 end_function
@@ -1765,9 +1669,6 @@ name|pspec
 parameter_list|)
 block|{
 comment|// GimpSeamlessCloneTool *sc = GIMP_SEAMLESS_CLONE_TOOL (tool);
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
 name|GIMP_TOOL_CLASS
 argument_list|(
 name|parent_class
@@ -1809,9 +1710,6 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|sc_debug_fend
-argument_list|()
-expr_stmt|;
 block|}
 end_function
 
@@ -1834,13 +1732,112 @@ modifier|*
 name|display
 parameter_list|)
 block|{
-name|sc_debug_fstart
-argument_list|()
+name|GimpSeamlessCloneTool
+modifier|*
+name|sct
+init|=
+name|GIMP_SEAMLESS_CLONE_TOOL
+argument_list|(
+name|tool
+argument_list|)
+decl_stmt|;
+name|gboolean
+name|retval
+init|=
+name|TRUE
+decl_stmt|;
+if|if
+condition|(
+name|sct
+operator|->
+name|tool_state
+operator|==
+name|SC_STATE_RENDER_MOTION
+operator|||
+name|sct
+operator|->
+name|tool_state
+operator|==
+name|SC_STATE_RENDER_WAIT
+condition|)
+block|{
+switch|switch
+condition|(
+name|kevent
+operator|->
+name|keyval
+condition|)
+block|{
+case|case
+name|GDK_KEY_Return
+case|:
+case|case
+name|GDK_KEY_KP_Enter
+case|:
+case|case
+name|GDK_KEY_ISO_Enter
+case|:
+comment|// gimp_tool_control_set_preserve (tool->control, TRUE);
+name|gimp_image_map_commit
+argument_list|(
+name|sct
+operator|->
+name|image_map
+argument_list|)
 expr_stmt|;
-comment|/* TODO: After checking the key code, return TRUE if the event was    * handled, or FALSE if not */
-name|sc_debug_fend
-argument_list|()
+name|g_object_unref
+argument_list|(
+name|sct
+operator|->
+name|image_map
+argument_list|)
 expr_stmt|;
+name|sct
+operator|->
+name|image_map
+operator|=
+name|NULL
+expr_stmt|;
+comment|// gimp_tool_control_set_preserve (tool->control, FALSE);
+name|gimp_image_flush
+argument_list|(
+name|gimp_display_get_image
+argument_list|(
+name|display
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_seamless_clone_tool_control
+argument_list|(
+name|tool
+argument_list|,
+name|GIMP_TOOL_ACTION_HALT
+argument_list|,
+name|display
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|GDK_KEY_Escape
+case|:
+name|gimp_seamless_clone_tool_control
+argument_list|(
+name|tool
+argument_list|,
+name|GIMP_TOOL_ACTION_HALT
+argument_list|,
+name|display
+argument_list|)
+expr_stmt|;
+break|break;
+default|default:
+name|retval
+operator|=
+name|FALSE
+expr_stmt|;
+break|break;
+block|}
+block|}
 return|return
 name|FALSE
 return|;
@@ -1882,21 +1879,6 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
-name|sc_debug
-argument_list|(
-name|sc
-argument_list|)
-expr_stmt|;
-name|sc_debug_coords
-argument_list|(
-name|sc
-argument_list|,
-name|coords
-argument_list|)
-expr_stmt|;
 comment|/* Pause the tool before modifying the tool data, so that drawing    * won't be done using data in intermidiate states */
 name|gimp_draw_tool_pause
 argument_list|(
@@ -1994,9 +1976,6 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|sc_debug_fend
-argument_list|()
-expr_stmt|;
 block|}
 end_function
 
@@ -2026,27 +2005,6 @@ modifier|*
 name|display
 parameter_list|)
 block|{
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
-name|sc_debug
-argument_list|(
-name|GIMP_SEAMLESS_CLONE_TOOL
-argument_list|(
-name|tool
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|sc_debug_coords
-argument_list|(
-name|GIMP_SEAMLESS_CLONE_TOOL
-argument_list|(
-name|tool
-argument_list|)
-argument_list|,
-name|coords
-argument_list|)
-expr_stmt|;
 comment|/* Pause the tool before modifying the tool data, so that drawing    * won't be done using data in intermidiate states */
 name|gimp_draw_tool_pause
 argument_list|(
@@ -2065,9 +2023,6 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|sc_debug_fend
-argument_list|()
 expr_stmt|;
 block|}
 end_function
@@ -2110,21 +2065,6 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
-name|sc_debug
-argument_list|(
-name|sc
-argument_list|)
-expr_stmt|;
-name|sc_debug_coords
-argument_list|(
-name|sc
-argument_list|,
-name|coords
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|display
@@ -2263,9 +2203,6 @@ name|control
 argument_list|)
 expr_stmt|;
 block|}
-name|sc_debug_fend
-argument_list|()
-expr_stmt|;
 block|}
 end_function
 
@@ -2306,21 +2243,6 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
-name|sc_debug
-argument_list|(
-name|sc
-argument_list|)
-expr_stmt|;
-name|sc_debug_coords
-argument_list|(
-name|sc
-argument_list|,
-name|coords
-argument_list|)
-expr_stmt|;
 comment|/* There is nothing to do, unless we were actually moving a paste */
 if|if
 condition|(
@@ -2441,9 +2363,6 @@ operator|=
 name|SC_STATE_RENDER_WAIT
 expr_stmt|;
 block|}
-name|sc_debug_fend
-argument_list|()
-expr_stmt|;
 block|}
 end_function
 
@@ -2488,21 +2407,6 @@ name|modifier
 init|=
 name|GIMP_CURSOR_MODIFIER_BAD
 decl_stmt|;
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
-name|sc_debug
-argument_list|(
-name|sc
-argument_list|)
-expr_stmt|;
-name|sc_debug_coords
-argument_list|(
-name|sc
-argument_list|,
-name|coords
-argument_list|)
-expr_stmt|;
 comment|/* Only update if the tool is actually active on some display */
 if|if
 condition|(
@@ -2569,9 +2473,6 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-name|sc_debug_fend
-argument_list|()
-expr_stmt|;
 block|}
 end_function
 
@@ -2614,15 +2515,6 @@ operator|==
 name|SC_STATE_RENDER_MOTION
 condition|)
 block|{
-name|GimpCanvasGroup
-modifier|*
-name|stroke_group
-init|=
-name|gimp_draw_tool_add_stroke_group
-argument_list|(
-name|draw_tool
-argument_list|)
-decl_stmt|;
 name|gimp_draw_tool_add_rectangle
 argument_list|(
 name|draw_tool
@@ -2687,9 +2579,6 @@ decl_stmt|,
 modifier|*
 name|output
 decl_stmt|;
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
 name|node
 operator|=
 name|gegl_node_new
@@ -2833,9 +2722,6 @@ name|translate_node
 operator|=
 name|translate
 expr_stmt|;
-name|sc_debug_fend
-argument_list|()
-expr_stmt|;
 block|}
 end_function
 
@@ -2850,9 +2736,6 @@ modifier|*
 name|sc
 parameter_list|)
 block|{
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
 comment|/* The only thing to update right now, is the location of the paste */
 name|gegl_node_set
 argument_list|(
@@ -2881,9 +2764,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|sc_debug_fend
-argument_list|()
-expr_stmt|;
 block|}
 end_function
 
@@ -2906,10 +2786,7 @@ modifier|*
 name|drawable
 parameter_list|)
 block|{
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
-comment|/* FIrst, make sure we actually have the GEGL graph needed to render    * the operation's result */
+comment|/* First, make sure we actually have the GEGL graph needed to render    * the operation's result */
 if|if
 condition|(
 operator|!
@@ -2960,9 +2837,6 @@ argument_list|,
 name|sc
 argument_list|)
 expr_stmt|;
-name|sc_debug_fend
-argument_list|()
-expr_stmt|;
 block|}
 end_function
 
@@ -2996,9 +2870,6 @@ operator|->
 name|display
 argument_list|)
 decl_stmt|;
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
 name|gimp_projection_flush_now
 argument_list|(
 name|gimp_image_get_projection
@@ -3013,9 +2884,6 @@ name|tool
 operator|->
 name|display
 argument_list|)
-expr_stmt|;
-name|sc_debug_fend
-argument_list|()
 expr_stmt|;
 block|}
 end_function
@@ -3084,9 +2952,6 @@ decl_stmt|;
 name|GeglRectangle
 name|visible
 decl_stmt|;
-name|sc_debug_fstart
-argument_list|()
-expr_stmt|;
 comment|/* Find out at which x,y is the top left corner of the currently    * displayed part */
 name|gimp_display_shell_untransform_viewport
 argument_list|(
@@ -3186,9 +3051,6 @@ argument_list|,
 operator|&
 name|visible
 argument_list|)
-expr_stmt|;
-name|sc_debug_fend
-argument_list|()
 expr_stmt|;
 block|}
 end_function
