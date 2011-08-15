@@ -241,7 +241,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b4a1860103
+DECL|enum|__anon29540de00103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -1839,7 +1839,7 @@ break|break;
 block|}
 block|}
 return|return
-name|FALSE
+name|retval
 return|;
 block|}
 end_function
