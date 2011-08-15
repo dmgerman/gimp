@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2955d78e0103
+DECL|enum|__anon2acabca30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1295,6 +1295,8 @@ operator|->
 name|width
 operator|/
 literal|2
+operator|-
+literal|0.5
 argument_list|,
 name|y
 argument_list|)
@@ -1327,6 +1329,8 @@ operator|->
 name|height
 operator|/
 literal|2
+operator|-
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|_gimp_canvas_item_stroke
