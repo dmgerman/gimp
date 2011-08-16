@@ -140,6 +140,10 @@ name|gpointer
 name|mesh_cache
 decl_stmt|;
 comment|/* The interpolation mesh, and sampling                                   * lists - an abstract data structure                                   * returned by the preprocessing GEGL                                   * operation */
+DECL|member|abstract_cache
+name|gpointer
+name|abstract_cache
+decl_stmt|;
 DECL|member|render_node
 name|GeglNode
 modifier|*
