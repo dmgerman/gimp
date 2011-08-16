@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c016a80103
+DECL|enum|__anon295b06110103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -666,7 +666,7 @@ literal|"box-mode"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Whether text flows into rectangular shape or"
+literal|"Whether text flows into rectangular shape or "
 literal|"moves into a new line when you press Enter"
 argument_list|)
 argument_list|,
