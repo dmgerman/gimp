@@ -990,6 +990,16 @@ argument_list|(
 literal|"Couldn't create new image."
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|hformat
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|format
+argument_list|)
+expr_stmt|;
 return|return
 name|images
 return|;
