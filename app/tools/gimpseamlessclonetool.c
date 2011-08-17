@@ -241,7 +241,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4307b70103
+DECL|enum|__anon29ce0dc90103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -1290,6 +1290,17 @@ argument_list|,
 literal|"output"
 argument_list|,
 name|output
+argument_list|,
+literal|"input"
+argument_list|)
+expr_stmt|;
+name|gegl_node_connect_to
+argument_list|(
+name|input
+argument_list|,
+literal|"output"
+argument_list|,
+name|prepare
 argument_list|,
 literal|"input"
 argument_list|)
