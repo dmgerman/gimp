@@ -129,17 +129,6 @@ modifier|*
 name|paste
 decl_stmt|;
 comment|/* A buffer containing the original                                   * paste that will be used in the                                   * rendering process */
-DECL|member|tricache
-name|GeglBuffer
-modifier|*
-name|tricache
-decl_stmt|;
-comment|/* Gegl buffer where each pixel contains                                   * information to associate it with a                                   * triangle of the mesh */
-DECL|member|mesh_cache
-name|gpointer
-name|mesh_cache
-decl_stmt|;
-comment|/* The interpolation mesh, and sampling                                   * lists - an abstract data structure                                   * returned by the preprocessing GEGL                                   * operation */
 DECL|member|abstract_cache
 name|gpointer
 name|abstract_cache
@@ -150,12 +139,12 @@ modifier|*
 name|render_node
 decl_stmt|;
 comment|/* The parent of the Gegl graph that                                    * renders the seamless cloning */
-DECL|member|translate_node
+DECL|member|sc_node
 name|GeglNode
 modifier|*
-name|translate_node
+name|sc_node
 decl_stmt|;
-comment|/* A Gegl node to translate the paste                                    * when the user moves it */
+comment|/* A Gegl node to do the seamless                                    * cloning live with translation of                                    * the paste */
 DECL|member|tool_state
 name|gint
 name|tool_state
