@@ -230,7 +230,7 @@ name|NC_
 argument_list|(
 literal|"dynamics-action"
 argument_list|,
-literal|"_Refresh Dynamicss"
+literal|"_Refresh Dynamics"
 argument_list|)
 block|,
 literal|""
