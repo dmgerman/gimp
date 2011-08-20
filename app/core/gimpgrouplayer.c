@@ -184,6 +184,18 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
+name|gimp_pickable_iface_init
+parameter_list|(
+name|GimpPickableInterface
+modifier|*
+name|iface
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|gimp_group_layer_finalize
 parameter_list|(
 name|GObject
@@ -560,6 +572,24 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|gint
+name|gimp_group_layer_get_opacity_at
+parameter_list|(
+name|GimpPickable
+modifier|*
+name|pickable
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|void
 name|gimp_group_layer_child_add
 parameter_list|(
@@ -718,7 +748,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpGroupLayer,gimp_group_layer,GIMP_TYPE_LAYER,G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROJECTABLE,gimp_projectable_iface_init))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpGroupLayer,gimp_group_layer,GIMP_TYPE_LAYER,G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROJECTABLE,gimp_projectable_iface_init)G_IMPLEMENT_INTERFACE (GIMP_TYPE_PICKABLE,gimp_pickable_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpGroupLayer
@@ -727,7 +757,7 @@ argument|gimp_group_layer
 argument_list|,
 argument|GIMP_TYPE_LAYER
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROJECTABLE,                                                 gimp_projectable_iface_init)
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROJECTABLE,                                                 gimp_projectable_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_PICKABLE,                                                 gimp_pickable_iface_init)
 argument_list|)
 end_macro
 
@@ -1116,6 +1146,26 @@ operator|->
 name|get_channels
 operator|=
 name|NULL
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_pickable_iface_init (GimpPickableInterface * iface)
+name|gimp_pickable_iface_init
+parameter_list|(
+name|GimpPickableInterface
+modifier|*
+name|iface
+parameter_list|)
+block|{
+name|iface
+operator|->
+name|get_opacity_at
+operator|=
+name|gimp_group_layer_get_opacity_at
 expr_stmt|;
 block|}
 end_function
@@ -3806,6 +3856,30 @@ operator|->
 name|children
 argument_list|)
 argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gint
+DECL|function|gimp_group_layer_get_opacity_at (GimpPickable * pickable,gint x,gint y)
+name|gimp_group_layer_get_opacity_at
+parameter_list|(
+name|GimpPickable
+modifier|*
+name|pickable
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|)
+block|{
+comment|/* Only consider child layers as having content */
+return|return
+literal|0
 return|;
 block|}
 end_function

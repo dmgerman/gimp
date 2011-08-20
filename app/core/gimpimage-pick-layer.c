@@ -487,12 +487,6 @@ block|}
 elseif|else
 if|if
 condition|(
-operator|!
-name|GIMP_IS_GROUP_LAYER
-argument_list|(
-name|layer
-argument_list|)
-operator|&&
 name|gimp_pickable_get_opacity_at
 argument_list|(
 name|GIMP_PICKABLE
