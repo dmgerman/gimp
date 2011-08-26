@@ -2406,6 +2406,12 @@ argument|OP_APPEND
 argument_list|)
 end_macro
 
+begin_if
+if|#
+directive|if
+name|USE_PLIST
+end_if
+
 begin_macro
 name|_OP_DEF
 argument_list|(
@@ -2439,6 +2445,11 @@ argument_list|,
 argument|OP_GET
 argument_list|)
 end_macro
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_macro
 name|_OP_DEF
