@@ -80,7 +80,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298ed1b20108
+DECL|struct|__anon2b064ee70108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -2865,7 +2865,7 @@ name|spinbutton
 argument_list|,
 name|_
 argument_list|(
-literal|"The amount of cellpadding."
+literal|"The amount of cell padding."
 argument_list|)
 argument_list|,
 name|NULL
@@ -2947,7 +2947,7 @@ name|spinbutton
 argument_list|,
 name|_
 argument_list|(
-literal|"The amount of cellspacing."
+literal|"The amount of cell spacing."
 argument_list|)
 argument_list|,
 name|NULL

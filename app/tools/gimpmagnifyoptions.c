@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a6dddf0103
+DECL|enum|__anon29104b520103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -226,7 +226,7 @@ literal|"auto-resize"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Resize image window to accomodate "
+literal|"Resize image window to accommodate "
 literal|"new zoom level"
 argument_list|)
 argument_list|,

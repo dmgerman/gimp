@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297d4c500103
+DECL|enum|__anon27825f150103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -586,7 +586,7 @@ literal|"hard"
 argument_list|,
 name|_
 argument_list|(
-literal|"Ignore fuzzyness of the current brush"
+literal|"Ignore fuzziness of the current brush"
 argument_list|)
 argument_list|,
 name|DEFAULT_HARD

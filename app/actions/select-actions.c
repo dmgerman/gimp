@@ -293,7 +293,7 @@ name|NC_
 argument_list|(
 literal|"select-action"
 argument_list|,
-literal|"Remove fuzzyness from the selection"
+literal|"Remove fuzziness from the selection"
 argument_list|)
 block|,
 name|G_CALLBACK

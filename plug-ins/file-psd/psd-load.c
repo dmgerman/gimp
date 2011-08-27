@@ -1313,7 +1313,7 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"Not a valid photoshop document file"
+literal|"Not a valid Photoshop document file"
 argument_list|)
 argument_list|)
 expr_stmt|;

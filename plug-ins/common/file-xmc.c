@@ -320,7 +320,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c561bb0108
+DECL|struct|__anon2b3b20000108
 block|{
 DECL|member|crop
 name|gboolean
@@ -851,7 +851,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28c561bb0208
+DECL|struct|__anon2b3b20000208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -4616,7 +4616,7 @@ name|tmpwidget
 argument_list|,
 name|_
 argument_list|(
-literal|"Enter the X coordinate of the hot spot."
+literal|"Enter the X coordinate of the hot spot. "
 literal|"The origin is top left corner."
 argument_list|)
 argument_list|,
@@ -4746,7 +4746,7 @@ name|tmpwidget
 argument_list|,
 name|_
 argument_list|(
-literal|"Enter the Y coordinate of the hot spot."
+literal|"Enter the Y coordinate of the hot spot. "
 literal|"The origin is top left corner."
 argument_list|)
 argument_list|,
@@ -7629,10 +7629,10 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Your cursor was successfully saved but it contains one "
-literal|"or more frames which nominal size is not "
+literal|"or more frames whose nominal size is not "
 literal|"supported by gnome-appearance-properties.\n"
 literal|"You can satisfy it by checking \"Replace the size of all "
-literal|"frame...\" in save dialog, or Your cursor may not appear "
+literal|"frame...\" in the save dialog, or your cursor may not appear "
 literal|"in gnome-appearance-properties."
 argument_list|)
 argument_list|)
@@ -9247,7 +9247,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon28c561bb0308
+DECL|struct|__anon2b3b20000308
 block|{
 DECL|member|size
 name|guint32
