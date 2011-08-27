@@ -105,7 +105,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbf66790103
+DECL|enum|__anon297e8a940103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -190,6 +190,19 @@ begin_function_decl
 specifier|static
 name|void
 name|gimp_perspective_tool_recalc_matrix
+parameter_list|(
+name|GimpTransformTool
+modifier|*
+name|tr_tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gchar
+modifier|*
+name|gimp_perspective_tool_get_undo_desc
 parameter_list|(
 name|GimpTransformTool
 modifier|*
@@ -316,6 +329,12 @@ name|recalc_matrix
 operator|=
 name|gimp_perspective_tool_recalc_matrix
 expr_stmt|;
+name|trans_class
+operator|->
+name|get_undo_desc
+operator|=
+name|gimp_perspective_tool_get_undo_desc
+expr_stmt|;
 block|}
 end_function
 
@@ -355,17 +374,6 @@ operator|->
 name|control
 argument_list|,
 name|GIMP_TOOL_CURSOR_PERSPECTIVE
-argument_list|)
-expr_stmt|;
-name|tr_tool
-operator|->
-name|undo_desc
-operator|=
-name|C_
-argument_list|(
-literal|"command"
-argument_list|,
-literal|"Perspective"
 argument_list|)
 expr_stmt|;
 name|tr_tool
@@ -1193,6 +1201,32 @@ name|Y3
 index|]
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gchar
+modifier|*
+DECL|function|gimp_perspective_tool_get_undo_desc (GimpTransformTool * tr_tool)
+name|gimp_perspective_tool_get_undo_desc
+parameter_list|(
+name|GimpTransformTool
+modifier|*
+name|tr_tool
+parameter_list|)
+block|{
+return|return
+name|g_strdup
+argument_list|(
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Perspective"
+argument_list|)
+argument_list|)
+return|;
 block|}
 end_function
 
