@@ -12251,7 +12251,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon294fc3b80103
+DECL|enum|__anon2b4c26050103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -13785,6 +13785,53 @@ name|l
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* R5RS says there must be a '.' (unless 'e'?) */
+name|f
+operator|=
+name|strcspn
+argument_list|(
+name|p
+argument_list|,
+literal|".e"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|p
+index|[
+name|f
+index|]
+operator|==
+literal|0
+condition|)
+block|{
+name|p
+index|[
+name|f
+index|]
+operator|=
+literal|'.'
+expr_stmt|;
+comment|// not found, so add '.0' at the end
+name|p
+index|[
+name|f
+operator|+
+literal|1
+index|]
+operator|=
+literal|'0'
+expr_stmt|;
+name|p
+index|[
+name|f
+operator|+
+literal|2
+index|]
+operator|=
+literal|0
+expr_stmt|;
+block|}
 block|}
 block|}
 elseif|else
@@ -30071,7 +30118,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon294fc3b80208
+DECL|struct|__anon2b4c26050208
 specifier|static
 struct|struct
 block|{
@@ -30306,7 +30353,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon294fc3b80308
+DECL|struct|__anon2b4c26050308
 typedef|typedef
 struct|struct
 block|{
