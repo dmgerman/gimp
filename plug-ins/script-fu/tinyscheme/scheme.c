@@ -47,7 +47,6 @@ end_include
 
 begin_define
 DECL|macro|_SCHEME_SOURCE
-DECL|macro|_SCHEME_SOURCE
 define|#
 directive|define
 name|_SCHEME_SOURCE
@@ -94,7 +93,6 @@ name|WIN32
 end_ifdef
 
 begin_define
-DECL|macro|snprintf
 DECL|macro|snprintf
 define|#
 directive|define
@@ -192,7 +190,6 @@ end_if
 
 begin_decl_stmt
 DECL|variable|ts_output_handler
-DECL|variable|ts_output_handler
 specifier|static
 name|ts_output_func
 name|ts_output_handler
@@ -202,7 +199,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|ts_output_data
 DECL|variable|ts_output_data
 specifier|static
 name|gpointer
@@ -214,7 +210,6 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|ts_register_output_func (ts_output_func func,gpointer user_data)
 DECL|function|ts_register_output_func (ts_output_func func,gpointer user_data)
 name|ts_register_output_func
 parameter_list|(
@@ -242,7 +237,6 @@ end_comment
 
 begin_function
 name|void
-DECL|function|ts_output_string (TsOutputType type,const char * string,int len)
 DECL|function|ts_output_string (TsOutputType type,const char * string,int len)
 name|ts_output_string
 parameter_list|(
@@ -307,14 +301,12 @@ end_comment
 
 begin_define
 DECL|macro|INTERFACE
-DECL|macro|INTERFACE
 define|#
 directive|define
 name|INTERFACE
 end_define
 
 begin_define
-DECL|macro|TOK_EOF
 DECL|macro|TOK_EOF
 define|#
 directive|define
@@ -324,7 +316,6 @@ end_define
 
 begin_define
 DECL|macro|TOK_LPAREN
-DECL|macro|TOK_LPAREN
 define|#
 directive|define
 name|TOK_LPAREN
@@ -332,7 +323,6 @@ value|0
 end_define
 
 begin_define
-DECL|macro|TOK_RPAREN
 DECL|macro|TOK_RPAREN
 define|#
 directive|define
@@ -342,7 +332,6 @@ end_define
 
 begin_define
 DECL|macro|TOK_DOT
-DECL|macro|TOK_DOT
 define|#
 directive|define
 name|TOK_DOT
@@ -350,7 +339,6 @@ value|2
 end_define
 
 begin_define
-DECL|macro|TOK_ATOM
 DECL|macro|TOK_ATOM
 define|#
 directive|define
@@ -360,7 +348,6 @@ end_define
 
 begin_define
 DECL|macro|TOK_QUOTE
-DECL|macro|TOK_QUOTE
 define|#
 directive|define
 name|TOK_QUOTE
@@ -368,7 +355,6 @@ value|4
 end_define
 
 begin_define
-DECL|macro|TOK_COMMENT
 DECL|macro|TOK_COMMENT
 define|#
 directive|define
@@ -378,7 +364,6 @@ end_define
 
 begin_define
 DECL|macro|TOK_DQUOTE
-DECL|macro|TOK_DQUOTE
 define|#
 directive|define
 name|TOK_DQUOTE
@@ -386,7 +371,6 @@ value|6
 end_define
 
 begin_define
-DECL|macro|TOK_BQUOTE
 DECL|macro|TOK_BQUOTE
 define|#
 directive|define
@@ -396,7 +380,6 @@ end_define
 
 begin_define
 DECL|macro|TOK_COMMA
-DECL|macro|TOK_COMMA
 define|#
 directive|define
 name|TOK_COMMA
@@ -404,7 +387,6 @@ value|8
 end_define
 
 begin_define
-DECL|macro|TOK_ATMARK
 DECL|macro|TOK_ATMARK
 define|#
 directive|define
@@ -414,7 +396,6 @@ end_define
 
 begin_define
 DECL|macro|TOK_SHARP
-DECL|macro|TOK_SHARP
 define|#
 directive|define
 name|TOK_SHARP
@@ -422,7 +403,6 @@ value|10
 end_define
 
 begin_define
-DECL|macro|TOK_SHARP_CONST
 DECL|macro|TOK_SHARP_CONST
 define|#
 directive|define
@@ -432,7 +412,6 @@ end_define
 
 begin_define
 DECL|macro|TOK_VEC
-DECL|macro|TOK_VEC
 define|#
 directive|define
 name|TOK_VEC
@@ -441,7 +420,6 @@ end_define
 
 begin_define
 DECL|macro|TOK_USCORE
-DECL|macro|TOK_USCORE
 define|#
 directive|define
 name|TOK_USCORE
@@ -449,7 +427,6 @@ value|13
 end_define
 
 begin_define
-DECL|macro|BACKQUOTE
 DECL|macro|BACKQUOTE
 define|#
 directive|define
@@ -462,7 +439,6 @@ comment|/*  *  Basic memory allocation units  */
 end_comment
 
 begin_define
-DECL|macro|banner
 DECL|macro|banner
 define|#
 directive|define
@@ -484,7 +460,6 @@ end_include
 
 begin_define
 DECL|macro|stricmp
-DECL|macro|stricmp
 define|#
 directive|define
 name|stricmp
@@ -492,7 +467,6 @@ value|utf8_stricmp
 end_define
 
 begin_function
-DECL|function|utf8_stricmp (const char * s1,const char * s2)
 DECL|function|utf8_stricmp (const char * s1,const char * s2)
 specifier|static
 name|int
@@ -566,7 +540,6 @@ end_function
 
 begin_define
 DECL|macro|min (a,b)
-DECL|macro|min (a,b)
 define|#
 directive|define
 name|min
@@ -595,7 +568,6 @@ end_else
 
 begin_define
 DECL|macro|strlwr (s)
-DECL|macro|strlwr (s)
 define|#
 directive|define
 name|strlwr
@@ -618,7 +590,6 @@ end_ifndef
 
 begin_define
 DECL|macro|prompt
-DECL|macro|prompt
 define|#
 directive|define
 name|prompt
@@ -637,7 +608,6 @@ name|InitFile
 end_ifndef
 
 begin_define
-DECL|macro|InitFile
 DECL|macro|InitFile
 define|#
 directive|define
@@ -658,7 +628,6 @@ end_ifndef
 
 begin_define
 DECL|macro|FIRST_CELLSEGS
-DECL|macro|FIRST_CELLSEGS
 define|#
 directive|define
 name|FIRST_CELLSEGS
@@ -672,95 +641,79 @@ end_endif
 
 begin_enum
 DECL|enum|scheme_types
-DECL|enum|scheme_types
 enum|enum
 name|scheme_types
 block|{
-DECL|enumerator|T_STRING
 DECL|enumerator|T_STRING
 name|T_STRING
 init|=
 literal|1
 block|,
 DECL|enumerator|T_NUMBER
-DECL|enumerator|T_NUMBER
 name|T_NUMBER
 init|=
 literal|2
 block|,
-DECL|enumerator|T_SYMBOL
 DECL|enumerator|T_SYMBOL
 name|T_SYMBOL
 init|=
 literal|3
 block|,
 DECL|enumerator|T_PROC
-DECL|enumerator|T_PROC
 name|T_PROC
 init|=
 literal|4
 block|,
-DECL|enumerator|T_PAIR
 DECL|enumerator|T_PAIR
 name|T_PAIR
 init|=
 literal|5
 block|,
 DECL|enumerator|T_CLOSURE
-DECL|enumerator|T_CLOSURE
 name|T_CLOSURE
 init|=
 literal|6
 block|,
-DECL|enumerator|T_CONTINUATION
 DECL|enumerator|T_CONTINUATION
 name|T_CONTINUATION
 init|=
 literal|7
 block|,
 DECL|enumerator|T_FOREIGN
-DECL|enumerator|T_FOREIGN
 name|T_FOREIGN
 init|=
 literal|8
 block|,
-DECL|enumerator|T_CHARACTER
 DECL|enumerator|T_CHARACTER
 name|T_CHARACTER
 init|=
 literal|9
 block|,
 DECL|enumerator|T_PORT
-DECL|enumerator|T_PORT
 name|T_PORT
 init|=
 literal|10
 block|,
-DECL|enumerator|T_VECTOR
 DECL|enumerator|T_VECTOR
 name|T_VECTOR
 init|=
 literal|11
 block|,
 DECL|enumerator|T_MACRO
-DECL|enumerator|T_MACRO
 name|T_MACRO
 init|=
 literal|12
 block|,
-DECL|enumerator|T_PROMISE
 DECL|enumerator|T_PROMISE
 name|T_PROMISE
 init|=
 literal|13
 block|,
 DECL|enumerator|T_ENVIRONMENT
-DECL|enumerator|T_ENVIRONMENT
 name|T_ENVIRONMENT
 init|=
 literal|14
 block|,
-DECL|enumerator|T_LAST_SYSTEM_TYPE
 DECL|enumerator|T_LAST_SYSTEM_TYPE
 name|T_LAST_SYSTEM_TYPE
 init|=
@@ -775,7 +728,6 @@ end_comment
 
 begin_define
 DECL|macro|ADJ
-DECL|macro|ADJ
 define|#
 directive|define
 name|ADJ
@@ -783,7 +735,6 @@ value|32
 end_define
 
 begin_define
-DECL|macro|TYPE_BITS
 DECL|macro|TYPE_BITS
 define|#
 directive|define
@@ -793,7 +744,6 @@ end_define
 
 begin_define
 DECL|macro|T_MASKTYPE
-DECL|macro|T_MASKTYPE
 define|#
 directive|define
 name|T_MASKTYPE
@@ -802,12 +752,10 @@ end_define
 
 begin_comment
 DECL|macro|T_MASKTYPE
-DECL|macro|T_MASKTYPE
 comment|/* 0000000000011111 */
 end_comment
 
 begin_define
-DECL|macro|T_SYNTAX
 DECL|macro|T_SYNTAX
 define|#
 directive|define
@@ -817,12 +765,10 @@ end_define
 
 begin_comment
 DECL|macro|T_SYNTAX
-DECL|macro|T_SYNTAX
 comment|/* 0001000000000000 */
 end_comment
 
 begin_define
-DECL|macro|T_IMMUTABLE
 DECL|macro|T_IMMUTABLE
 define|#
 directive|define
@@ -832,12 +778,10 @@ end_define
 
 begin_comment
 DECL|macro|T_IMMUTABLE
-DECL|macro|T_IMMUTABLE
 comment|/* 0010000000000000 */
 end_comment
 
 begin_define
-DECL|macro|T_ATOM
 DECL|macro|T_ATOM
 define|#
 directive|define
@@ -847,18 +791,15 @@ end_define
 
 begin_comment
 DECL|macro|T_ATOM
-DECL|macro|T_ATOM
 comment|/* 0100000000000000 */
 end_comment
 
 begin_comment
 DECL|macro|T_ATOM
-DECL|macro|T_ATOM
 comment|/* only for gc */
 end_comment
 
 begin_define
-DECL|macro|CLRATOM
 DECL|macro|CLRATOM
 define|#
 directive|define
@@ -868,18 +809,15 @@ end_define
 
 begin_comment
 DECL|macro|CLRATOM
-DECL|macro|CLRATOM
 comment|/* 1011111111111111 */
 end_comment
 
 begin_comment
 DECL|macro|CLRATOM
-DECL|macro|CLRATOM
 comment|/* only for gc */
 end_comment
 
 begin_define
-DECL|macro|MARK
 DECL|macro|MARK
 define|#
 directive|define
@@ -889,12 +827,10 @@ end_define
 
 begin_comment
 DECL|macro|MARK
-DECL|macro|MARK
 comment|/* 1000000000000000 */
 end_comment
 
 begin_define
-DECL|macro|UNMARK
 DECL|macro|UNMARK
 define|#
 directive|define
@@ -903,7 +839,6 @@ value|32767
 end_define
 
 begin_comment
-DECL|macro|UNMARK
 DECL|macro|UNMARK
 comment|/* 0111111111111111 */
 end_comment
@@ -1111,7 +1046,6 @@ end_function_decl
 
 begin_function
 DECL|function|num_is_integer (pointer p)
-DECL|function|num_is_integer (pointer p)
 specifier|static
 name|INLINE
 name|int
@@ -1139,7 +1073,6 @@ end_function
 
 begin_decl_stmt
 DECL|variable|num_zero
-DECL|variable|num_zero
 specifier|static
 name|num
 name|num_zero
@@ -1147,7 +1080,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|num_one
 DECL|variable|num_one
 specifier|static
 name|num
@@ -1161,7 +1093,6 @@ end_comment
 
 begin_define
 DECL|macro|typeflag (p)
-DECL|macro|typeflag (p)
 define|#
 directive|define
 name|typeflag
@@ -1173,7 +1104,6 @@ end_define
 
 begin_define
 DECL|macro|type (p)
-DECL|macro|type (p)
 define|#
 directive|define
 name|type
@@ -1184,7 +1114,6 @@ value|(typeflag(p)&T_MASKTYPE)
 end_define
 
 begin_function
-DECL|function|is_string (pointer p)
 DECL|function|is_string (pointer p)
 name|INTERFACE
 name|INLINE
@@ -1210,7 +1139,6 @@ end_function
 
 begin_define
 DECL|macro|strvalue (p)
-DECL|macro|strvalue (p)
 define|#
 directive|define
 name|strvalue
@@ -1221,7 +1149,6 @@ value|((p)->_object._string._svalue)
 end_define
 
 begin_define
-DECL|macro|strlength (p)
 DECL|macro|strlength (p)
 define|#
 directive|define
@@ -1249,7 +1176,6 @@ function_decl|;
 end_function_decl
 
 begin_function
-DECL|function|is_vector (pointer p)
 DECL|function|is_vector (pointer p)
 name|INTERFACE
 name|INLINE
@@ -1323,7 +1249,6 @@ end_function_decl
 
 begin_function
 DECL|function|is_number (pointer p)
-DECL|function|is_number (pointer p)
 name|INTERFACE
 name|INLINE
 name|int
@@ -1347,7 +1272,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|is_integer (pointer p)
 DECL|function|is_integer (pointer p)
 name|INTERFACE
 name|INLINE
@@ -1380,7 +1304,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|is_real (pointer p)
 DECL|function|is_real (pointer p)
 name|INTERFACE
 name|INLINE
@@ -1415,7 +1338,6 @@ end_function
 
 begin_function
 DECL|function|is_character (pointer p)
-DECL|function|is_character (pointer p)
 name|INTERFACE
 name|INLINE
 name|int
@@ -1440,7 +1362,6 @@ end_function
 
 begin_function
 DECL|function|string_length (pointer p)
-DECL|function|string_length (pointer p)
 name|INTERFACE
 name|INLINE
 name|int
@@ -1460,7 +1381,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|string_value (pointer p)
 DECL|function|string_value (pointer p)
 name|INTERFACE
 name|INLINE
@@ -1482,7 +1402,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|nvalue (pointer p)
 DECL|function|nvalue (pointer p)
 name|INLINE
 name|num
@@ -1507,7 +1426,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|ivalue (pointer p)
 DECL|function|ivalue (pointer p)
 name|INTERFACE
 name|long
@@ -1556,7 +1474,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|rvalue (pointer p)
 DECL|function|rvalue (pointer p)
 name|INTERFACE
 name|double
@@ -1607,7 +1524,6 @@ end_function
 
 begin_define
 DECL|macro|ivalue_unchecked (p)
-DECL|macro|ivalue_unchecked (p)
 define|#
 directive|define
 name|ivalue_unchecked
@@ -1618,7 +1534,6 @@ value|((p)->_object._number.value.ivalue)
 end_define
 
 begin_define
-DECL|macro|rvalue_unchecked (p)
 DECL|macro|rvalue_unchecked (p)
 define|#
 directive|define
@@ -1631,7 +1546,6 @@ end_define
 
 begin_define
 DECL|macro|set_num_integer (p)
-DECL|macro|set_num_integer (p)
 define|#
 directive|define
 name|set_num_integer
@@ -1643,7 +1557,6 @@ end_define
 
 begin_define
 DECL|macro|set_num_real (p)
-DECL|macro|set_num_real (p)
 define|#
 directive|define
 name|set_num_real
@@ -1654,7 +1567,6 @@ value|(p)->_object._number.is_fixnum=0;
 end_define
 
 begin_function
-DECL|function|charvalue (pointer p)
 DECL|function|charvalue (pointer p)
 name|INTERFACE
 name|gunichar
@@ -1677,7 +1589,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|is_port (pointer p)
 DECL|function|is_port (pointer p)
 name|INTERFACE
 name|INLINE
@@ -1702,7 +1613,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|is_inport (pointer p)
 DECL|function|is_inport (pointer p)
 name|INTERFACE
 name|INLINE
@@ -1734,7 +1644,6 @@ end_function
 
 begin_function
 DECL|function|is_outport (pointer p)
-DECL|function|is_outport (pointer p)
 name|INTERFACE
 name|INLINE
 name|int
@@ -1765,7 +1674,6 @@ end_function
 
 begin_function
 DECL|function|is_pair (pointer p)
-DECL|function|is_pair (pointer p)
 name|INTERFACE
 name|INLINE
 name|int
@@ -1790,7 +1698,6 @@ end_function
 
 begin_define
 DECL|macro|car (p)
-DECL|macro|car (p)
 define|#
 directive|define
 name|car
@@ -1802,7 +1709,6 @@ end_define
 
 begin_define
 DECL|macro|cdr (p)
-DECL|macro|cdr (p)
 define|#
 directive|define
 name|cdr
@@ -1813,7 +1719,6 @@ value|((p)->_object._cons._cdr)
 end_define
 
 begin_function
-DECL|function|pair_car (pointer p)
 DECL|function|pair_car (pointer p)
 name|INTERFACE
 name|pointer
@@ -1834,7 +1739,6 @@ end_function
 
 begin_function
 DECL|function|pair_cdr (pointer p)
-DECL|function|pair_cdr (pointer p)
 name|INTERFACE
 name|pointer
 name|pair_cdr
@@ -1853,7 +1757,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|set_car (pointer p,pointer q)
 DECL|function|set_car (pointer p,pointer q)
 name|INTERFACE
 name|pointer
@@ -1879,7 +1782,6 @@ end_function
 
 begin_function
 DECL|function|set_cdr (pointer p,pointer q)
-DECL|function|set_cdr (pointer p,pointer q)
 name|INTERFACE
 name|pointer
 name|set_cdr
@@ -1904,7 +1806,6 @@ end_function
 
 begin_function
 DECL|function|is_symbol (pointer p)
-DECL|function|is_symbol (pointer p)
 name|INTERFACE
 name|INLINE
 name|int
@@ -1928,7 +1829,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|symname (pointer p)
 DECL|function|symname (pointer p)
 name|INTERFACE
 name|INLINE
@@ -1960,7 +1860,6 @@ end_if
 
 begin_function
 DECL|function|hasprop (pointer p)
-DECL|function|hasprop (pointer p)
 name|SCHEME_EXPORT
 name|INLINE
 name|int
@@ -1985,7 +1884,6 @@ end_function
 
 begin_define
 DECL|macro|symprop (p)
-DECL|macro|symprop (p)
 define|#
 directive|define
 name|symprop
@@ -2001,7 +1899,6 @@ directive|endif
 end_endif
 
 begin_function
-DECL|function|is_syntax (pointer p)
 DECL|function|is_syntax (pointer p)
 name|INTERFACE
 name|INLINE
@@ -2027,7 +1924,6 @@ end_function
 
 begin_function
 DECL|function|is_proc (pointer p)
-DECL|function|is_proc (pointer p)
 name|INTERFACE
 name|INLINE
 name|int
@@ -2051,7 +1947,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|is_foreign (pointer p)
 DECL|function|is_foreign (pointer p)
 name|INTERFACE
 name|INLINE
@@ -2077,7 +1972,6 @@ end_function
 
 begin_function
 DECL|function|syntaxname (pointer p)
-DECL|function|syntaxname (pointer p)
 name|INTERFACE
 name|INLINE
 name|char
@@ -2101,7 +1995,6 @@ block|}
 end_function
 
 begin_define
-DECL|macro|procnum (p)
 DECL|macro|procnum (p)
 define|#
 directive|define
@@ -2127,7 +2020,6 @@ end_function_decl
 
 begin_function
 DECL|function|is_closure (pointer p)
-DECL|function|is_closure (pointer p)
 name|INTERFACE
 name|INLINE
 name|int
@@ -2151,7 +2043,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|is_macro (pointer p)
 DECL|function|is_macro (pointer p)
 name|INTERFACE
 name|INLINE
@@ -2177,7 +2068,6 @@ end_function
 
 begin_function
 DECL|function|closure_code (pointer p)
-DECL|function|closure_code (pointer p)
 name|INTERFACE
 name|INLINE
 name|pointer
@@ -2198,7 +2088,6 @@ end_function
 
 begin_function
 DECL|function|closure_env (pointer p)
-DECL|function|closure_env (pointer p)
 name|INTERFACE
 name|INLINE
 name|pointer
@@ -2218,7 +2107,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|is_continuation (pointer p)
 DECL|function|is_continuation (pointer p)
 name|INTERFACE
 name|INLINE
@@ -2244,7 +2132,6 @@ end_function
 
 begin_define
 DECL|macro|cont_dump (p)
-DECL|macro|cont_dump (p)
 define|#
 directive|define
 name|cont_dump
@@ -2259,7 +2146,6 @@ comment|/* To do: promise should be forced ONCE only */
 end_comment
 
 begin_function
-DECL|function|is_promise (pointer p)
 DECL|function|is_promise (pointer p)
 name|INTERFACE
 name|INLINE
@@ -2285,7 +2171,6 @@ end_function
 
 begin_function
 DECL|function|is_environment (pointer p)
-DECL|function|is_environment (pointer p)
 name|INTERFACE
 name|INLINE
 name|int
@@ -2310,7 +2195,6 @@ end_function
 
 begin_define
 DECL|macro|setenvironment (p)
-DECL|macro|setenvironment (p)
 define|#
 directive|define
 name|setenvironment
@@ -2321,7 +2205,6 @@ value|typeflag(p) = T_ENVIRONMENT
 end_define
 
 begin_define
-DECL|macro|is_atom (p)
 DECL|macro|is_atom (p)
 define|#
 directive|define
@@ -2334,7 +2217,6 @@ end_define
 
 begin_define
 DECL|macro|setatom (p)
-DECL|macro|setatom (p)
 define|#
 directive|define
 name|setatom
@@ -2345,7 +2227,6 @@ value|typeflag(p) |= T_ATOM
 end_define
 
 begin_define
-DECL|macro|clratom (p)
 DECL|macro|clratom (p)
 define|#
 directive|define
@@ -2358,7 +2239,6 @@ end_define
 
 begin_define
 DECL|macro|is_mark (p)
-DECL|macro|is_mark (p)
 define|#
 directive|define
 name|is_mark
@@ -2369,7 +2249,6 @@ value|(typeflag(p)&MARK)
 end_define
 
 begin_define
-DECL|macro|setmark (p)
 DECL|macro|setmark (p)
 define|#
 directive|define
@@ -2382,7 +2261,6 @@ end_define
 
 begin_define
 DECL|macro|clrmark (p)
-DECL|macro|clrmark (p)
 define|#
 directive|define
 name|clrmark
@@ -2393,7 +2271,6 @@ value|typeflag(p)&= UNMARK
 end_define
 
 begin_function
-DECL|function|is_immutable (pointer p)
 DECL|function|is_immutable (pointer p)
 name|INTERFACE
 name|INLINE
@@ -2423,7 +2300,6 @@ end_comment
 
 begin_function
 DECL|function|setimmutable (pointer p)
-DECL|function|setimmutable (pointer p)
 name|INTERFACE
 name|INLINE
 name|void
@@ -2445,7 +2321,6 @@ end_function
 
 begin_define
 DECL|macro|caar (p)
-DECL|macro|caar (p)
 define|#
 directive|define
 name|caar
@@ -2456,7 +2331,6 @@ value|car(car(p))
 end_define
 
 begin_define
-DECL|macro|cadr (p)
 DECL|macro|cadr (p)
 define|#
 directive|define
@@ -2469,7 +2343,6 @@ end_define
 
 begin_define
 DECL|macro|cdar (p)
-DECL|macro|cdar (p)
 define|#
 directive|define
 name|cdar
@@ -2480,7 +2353,6 @@ value|cdr(car(p))
 end_define
 
 begin_define
-DECL|macro|cddr (p)
 DECL|macro|cddr (p)
 define|#
 directive|define
@@ -2493,7 +2365,6 @@ end_define
 
 begin_define
 DECL|macro|cadar (p)
-DECL|macro|cadar (p)
 define|#
 directive|define
 name|cadar
@@ -2504,7 +2375,6 @@ value|car(cdr(car(p)))
 end_define
 
 begin_define
-DECL|macro|caddr (p)
 DECL|macro|caddr (p)
 define|#
 directive|define
@@ -2517,7 +2387,6 @@ end_define
 
 begin_define
 DECL|macro|cdaar (p)
-DECL|macro|cdaar (p)
 define|#
 directive|define
 name|cdaar
@@ -2528,7 +2397,6 @@ value|cdr(car(car(p)))
 end_define
 
 begin_define
-DECL|macro|cadaar (p)
 DECL|macro|cadaar (p)
 define|#
 directive|define
@@ -2541,7 +2409,6 @@ end_define
 
 begin_define
 DECL|macro|cadddr (p)
-DECL|macro|cadddr (p)
 define|#
 directive|define
 name|cadddr
@@ -2552,7 +2419,6 @@ value|car(cdr(cdr(cdr(p))))
 end_define
 
 begin_define
-DECL|macro|cddddr (p)
 DECL|macro|cddddr (p)
 define|#
 directive|define
@@ -2570,7 +2436,6 @@ name|USE_CHAR_CLASSIFIERS
 end_if
 
 begin_function
-DECL|function|Cisalpha (gunichar c)
 DECL|function|Cisalpha (gunichar c)
 specifier|static
 name|INLINE
@@ -2592,7 +2457,6 @@ end_function
 
 begin_function
 DECL|function|Cisdigit (gunichar c)
-DECL|function|Cisdigit (gunichar c)
 specifier|static
 name|INLINE
 name|int
@@ -2612,7 +2476,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|Cisspace (gunichar c)
 DECL|function|Cisspace (gunichar c)
 specifier|static
 name|INLINE
@@ -2634,7 +2497,6 @@ end_function
 
 begin_function
 DECL|function|Cisupper (gunichar c)
-DECL|function|Cisupper (gunichar c)
 specifier|static
 name|INLINE
 name|int
@@ -2654,7 +2516,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|Cislower (gunichar c)
 DECL|function|Cislower (gunichar c)
 specifier|static
 name|INLINE
@@ -2686,7 +2547,6 @@ name|USE_ASCII_NAMES
 end_if
 
 begin_decl_stmt
-DECL|variable|charnames
 DECL|variable|charnames
 specifier|static
 specifier|const
@@ -2766,7 +2626,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|is_ascii_name (const char * name,int * pc)
 DECL|function|is_ascii_name (const char * name,int * pc)
 specifier|static
 name|int
@@ -2861,7 +2720,6 @@ comment|/* Number of bytes expected AFTER lead byte of UTF-8 character. */
 end_comment
 
 begin_decl_stmt
-DECL|variable|utf8_length
 DECL|variable|utf8_length
 specifier|static
 specifier|const
@@ -3980,7 +3838,6 @@ end_function_decl
 
 begin_define
 DECL|macro|num_ivalue (n)
-DECL|macro|num_ivalue (n)
 define|#
 directive|define
 name|num_ivalue
@@ -3992,7 +3849,6 @@ end_define
 
 begin_define
 DECL|macro|num_rvalue (n)
-DECL|macro|num_rvalue (n)
 define|#
 directive|define
 name|num_rvalue
@@ -4003,7 +3859,6 @@ value|(!n.is_fixnum?(n).value.rvalue:(double)(n).value.ivalue)
 end_define
 
 begin_function
-DECL|function|num_add (num a,num b)
 DECL|function|num_add (num a,num b)
 specifier|static
 name|num
@@ -4084,7 +3939,6 @@ end_function
 
 begin_function
 DECL|function|num_mul (num a,num b)
-DECL|function|num_mul (num a,num b)
 specifier|static
 name|num
 name|num_mul
@@ -4163,7 +4017,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|num_div (num a,num b)
 DECL|function|num_div (num a,num b)
 specifier|static
 name|num
@@ -4258,7 +4111,6 @@ end_function
 
 begin_function
 DECL|function|num_intdiv (num a,num b)
-DECL|function|num_intdiv (num a,num b)
 specifier|static
 name|num
 name|num_intdiv
@@ -4338,7 +4190,6 @@ end_function
 
 begin_function
 DECL|function|num_sub (num a,num b)
-DECL|function|num_sub (num a,num b)
 specifier|static
 name|num
 name|num_sub
@@ -4417,7 +4268,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|num_rem (num a,num b)
 DECL|function|num_rem (num a,num b)
 specifier|static
 name|num
@@ -4536,7 +4386,6 @@ end_function
 
 begin_function
 DECL|function|num_mod (num a,num b)
-DECL|function|num_mod (num a,num b)
 specifier|static
 name|num
 name|num_mod
@@ -4604,6 +4453,7 @@ name|res
 operator|+=
 name|e2
 expr_stmt|;
+block|}
 name|ret
 operator|.
 name|value
@@ -4616,6 +4466,10 @@ return|return
 name|ret
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|num_eq (num a,num b)
 specifier|static
 name|int
 name|num_eq
@@ -4680,6 +4534,10 @@ return|return
 name|ret
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|num_gt (num a,num b)
 specifier|static
 name|int
 name|num_gt
@@ -4744,6 +4602,10 @@ return|return
 name|ret
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|num_ge (num a,num b)
 specifier|static
 name|int
 name|num_ge
@@ -4765,6 +4627,10 @@ name|b
 argument_list|)
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|num_lt (num a,num b)
 specifier|static
 name|int
 name|num_lt
@@ -4829,6 +4695,10 @@ return|return
 name|ret
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|num_le (num a,num b)
 specifier|static
 name|int
 name|num_le
@@ -4850,10 +4720,20 @@ name|b
 argument_list|)
 return|;
 block|}
+end_function
+
+begin_if
 if|#
 directive|if
 name|USE_MATH
+end_if
+
+begin_comment
 comment|/* Round to nearest. Round to even if midway */
+end_comment
+
+begin_function
+DECL|function|round_per_R5RS (double x)
 specifier|static
 name|double
 name|round_per_R5RS
@@ -4942,8 +4822,15 @@ return|;
 block|}
 block|}
 block|}
+end_function
+
+begin_endif
 endif|#
 directive|endif
+end_endif
+
+begin_function
+DECL|function|is_zero_double (double x)
 specifier|static
 name|int
 name|is_zero_double
@@ -4963,6 +4850,10 @@ operator|-
 name|DBL_MIN
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|binary_decode (const char * s)
 specifier|static
 name|long
 name|binary_decode
@@ -5017,7 +4908,14 @@ return|return
 name|x
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* allocate new cell segment */
+end_comment
+
+begin_function
+DECL|function|alloc_cellseg (scheme * sc,int n)
 specifier|static
 name|int
 name|alloc_cellseg
@@ -5406,6 +5304,10 @@ return|return
 name|n
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|get_cell_x (scheme * sc,pointer a,pointer b)
 specifier|static
 name|INLINE
 name|pointer
@@ -5471,7 +5373,14 @@ name|b
 argument_list|)
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* get new cell.  parameter a, b is marked by gc. */
+end_comment
+
+begin_function
+DECL|function|_get_cell (scheme * sc,pointer a,pointer b)
 specifier|static
 name|pointer
 name|_get_cell
@@ -5610,7 +5519,14 @@ name|x
 operator|)
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* make sure that there is a given number of cells free */
+end_comment
+
+begin_function
+DECL|function|reserve_cells (scheme * sc,int n)
 specifier|static
 name|pointer
 name|reserve_cells
@@ -5725,6 +5641,10 @@ name|T
 operator|)
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|get_consecutive_cells (scheme * sc,int n)
 specifier|static
 name|pointer
 name|get_consecutive_cells
@@ -5871,6 +5791,10 @@ operator|->
 name|sink
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|count_consecutive_cells (pointer x,int needed)
 specifier|static
 name|int
 name|count_consecutive_cells
@@ -5923,6 +5847,10 @@ return|return
 name|n
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|find_consecutive_cells (scheme * sc,int n)
 specifier|static
 name|pointer
 name|find_consecutive_cells
@@ -6025,7 +5953,14 @@ operator|->
 name|NIL
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* To retain recent allocs before interpreter knows about them -    Tehom */
+end_comment
+
+begin_function
+DECL|function|push_recent_alloc (scheme * sc,pointer recent,pointer extra)
 specifier|static
 name|void
 name|push_recent_alloc
@@ -6091,6 +6026,10 @@ operator|=
 name|holder
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|get_cell (scheme * sc,pointer a,pointer b)
 specifier|static
 name|pointer
 name|get_cell
@@ -6156,6 +6095,10 @@ return|return
 name|cell
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|get_vector_object (scheme * sc,int len,pointer init)
 specifier|static
 name|pointer
 name|get_vector_object
@@ -6248,6 +6191,10 @@ return|return
 name|cells
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|ok_to_freely_gc (scheme * sc)
 specifier|static
 name|INLINE
 name|void
@@ -6270,10 +6217,17 @@ operator|->
 name|NIL
 expr_stmt|;
 block|}
+end_function
+
+begin_if
 if|#
 directive|if
 name|defined
 name|TSGRIND
+end_if
+
+begin_function
+DECL|function|check_cell_alloced (pointer p,int expect_alloced)
 specifier|static
 name|void
 name|check_cell_alloced
@@ -6327,6 +6281,10 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+end_function
+
+begin_function
+DECL|function|check_range_alloced (pointer p,int n,int expect_alloced)
 specifier|static
 name|void
 name|check_range_alloced
@@ -6372,10 +6330,23 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+end_function
+
+begin_endif
 endif|#
 directive|endif
+end_endif
+
+begin_comment
 comment|/* Medium level cell allocation */
+end_comment
+
+begin_comment
 comment|/* get new cons cell */
+end_comment
+
+begin_function
+DECL|function|_cons (scheme * sc,pointer a,pointer b,int immutable)
 name|pointer
 name|_cons
 parameter_list|(
@@ -6443,23 +6414,36 @@ name|x
 operator|)
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* ========== oblist implementation  ========== */
+end_comment
+
+begin_ifndef
 ifndef|#
 directive|ifndef
 name|USE_OBJECT_LIST
+end_ifndef
+
+begin_function_decl
 specifier|static
 name|int
 name|hash_fn
-argument_list|(
+parameter_list|(
 specifier|const
 name|char
-operator|*
+modifier|*
 name|key
-argument_list|,
+parameter_list|,
 name|int
 name|table_size
-argument_list|)
-decl_stmt|;
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function
+DECL|function|oblist_initial_value (scheme * sc)
 specifier|static
 name|pointer
 name|oblist_initial_value
@@ -6479,7 +6463,14 @@ argument_list|)
 return|;
 comment|/* probably should be bigger */
 block|}
+end_function
+
+begin_comment
 comment|/* returns the new symbol */
+end_comment
+
+begin_function
+DECL|function|oblist_add_by_name (scheme * sc,const char * name)
 specifier|static
 name|pointer
 name|oblist_add_by_name
@@ -6576,6 +6567,10 @@ return|return
 name|x
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|oblist_find_by_name (scheme * sc,const char * name)
 specifier|static
 name|INLINE
 name|pointer
@@ -6679,6 +6674,10 @@ operator|->
 name|NIL
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|oblist_all_symbols (scheme * sc)
 specifier|static
 name|pointer
 name|oblist_all_symbols
@@ -6764,8 +6763,15 @@ return|return
 name|ob_list
 return|;
 block|}
+end_function
+
+begin_else
 else|#
 directive|else
+end_else
+
+begin_function
+DECL|function|oblist_initial_value (scheme * sc)
 specifier|static
 name|pointer
 name|oblist_initial_value
@@ -6781,6 +6787,10 @@ operator|->
 name|NIL
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|oblist_find_by_name (scheme * sc,const char * name)
 specifier|static
 name|INLINE
 name|pointer
@@ -6862,7 +6872,14 @@ operator|->
 name|NIL
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* returns the new symbol */
+end_comment
+
+begin_function
+DECL|function|oblist_add_by_name (scheme * sc,const char * name)
 specifier|static
 name|pointer
 name|oblist_add_by_name
@@ -6932,6 +6949,10 @@ return|return
 name|x
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|oblist_all_symbols (scheme * sc)
 specifier|static
 name|pointer
 name|oblist_all_symbols
@@ -6947,8 +6968,15 @@ operator|->
 name|oblist
 return|;
 block|}
+end_function
+
+begin_endif
 endif|#
 directive|endif
+end_endif
+
+begin_function
+DECL|function|mk_port (scheme * sc,port * p)
 specifier|static
 name|pointer
 name|mk_port
@@ -7001,6 +7029,10 @@ name|x
 operator|)
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|mk_foreign_func (scheme * sc,foreign_func f)
 name|pointer
 name|mk_foreign_func
 parameter_list|(
@@ -7053,6 +7085,10 @@ name|x
 operator|)
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|mk_character (scheme * sc,gunichar c)
 name|INTERFACE
 name|pointer
 name|mk_character
@@ -7110,7 +7146,14 @@ name|x
 operator|)
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* get number atom (integer) */
+end_comment
+
+begin_function
+DECL|function|mk_integer (scheme * sc,long num)
 name|INTERFACE
 name|pointer
 name|mk_integer
@@ -7168,6 +7211,10 @@ name|x
 operator|)
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|mk_real (scheme * sc,double n)
 name|INTERFACE
 name|pointer
 name|mk_real
@@ -7225,6 +7272,10 @@ name|x
 operator|)
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|mk_number (scheme * sc,num n)
 specifier|static
 name|pointer
 name|mk_number
@@ -7273,6 +7324,10 @@ argument_list|)
 return|;
 block|}
 block|}
+end_function
+
+begin_function
+DECL|function|foreign_error (scheme * sc,const char * s,pointer a)
 name|pointer
 name|foreign_error
 parameter_list|(
@@ -7313,11 +7368,30 @@ operator|->
 name|T
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* char_cnt is length of string in chars. */
+end_comment
+
+begin_comment
 comment|/* str points to a NUL terminated string. */
+end_comment
+
+begin_comment
 comment|/* Only uses fill_char if str is NULL.    */
+end_comment
+
+begin_comment
 comment|/* This routine automatically adds 1 byte */
+end_comment
+
+begin_comment
 comment|/* to allow space for terminating NUL.    */
+end_comment
+
+begin_function
+DECL|function|store_string (scheme * sc,int char_cnt,const char * str,gunichar fill)
 specifier|static
 name|char
 modifier|*
@@ -7551,7 +7625,14 @@ name|q
 operator|)
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* get new string */
+end_comment
+
+begin_function
+DECL|function|mk_string (scheme * sc,const char * str)
 name|INTERFACE
 name|pointer
 name|mk_string
@@ -7583,8 +7664,18 @@ argument_list|)
 argument_list|)
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* str points to a NUL terminated string. */
+end_comment
+
+begin_comment
 comment|/* len is the length of str in characters */
+end_comment
+
+begin_function
+DECL|function|mk_counted_string (scheme * sc,const char * str,int len)
 name|INTERFACE
 name|pointer
 name|mk_counted_string
@@ -7658,7 +7749,14 @@ name|x
 operator|)
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* len is the length for the empty string in characters */
+end_comment
+
+begin_function
+DECL|function|mk_empty_string (scheme * sc,int len,gunichar fill)
 name|INTERFACE
 name|pointer
 name|mk_empty_string
@@ -7730,6 +7828,10 @@ name|x
 operator|)
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|mk_vector (scheme * sc,int len)
 name|INTERFACE
 specifier|static
 name|pointer
@@ -7756,6 +7858,10 @@ name|NIL
 argument_list|)
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|fill_vector (pointer vec,pointer obj)
 name|INTERFACE
 specifier|static
 name|void
@@ -7846,6 +7952,10 @@ name|obj
 expr_stmt|;
 block|}
 block|}
+end_function
+
+begin_function
+DECL|function|vector_elem (pointer vec,int ielem)
 name|INTERFACE
 specifier|static
 name|pointer
@@ -7899,6 +8009,10 @@ argument_list|)
 return|;
 block|}
 block|}
+end_function
+
+begin_function
+DECL|function|set_vector_elem (pointer vec,int ielem,pointer a)
 name|INTERFACE
 specifier|static
 name|pointer
@@ -7959,7 +8073,14 @@ name|a
 return|;
 block|}
 block|}
+end_function
+
+begin_comment
 comment|/* get new symbol */
+end_comment
+
+begin_function
+DECL|function|mk_symbol (scheme * sc,const char * name)
 name|INTERFACE
 name|pointer
 name|mk_symbol
@@ -8020,6 +8141,10 @@ operator|)
 return|;
 block|}
 block|}
+end_function
+
+begin_function
+DECL|function|gensym (scheme * sc)
 name|INTERFACE
 name|pointer
 name|gensym
@@ -8111,7 +8236,14 @@ operator|->
 name|NIL
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* make symbol or number atom from string */
+end_comment
+
+begin_function
+DECL|function|mk_atom (scheme * sc,char * q)
 specifier|static
 name|pointer
 name|mk_atom
@@ -8518,7 +8650,14 @@ argument_list|)
 operator|)
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* make constant */
+end_comment
+
+begin_function
+DECL|function|mk_sharp_const (scheme * sc,char * name)
 specifier|static
 name|pointer
 name|mk_sharp_const
@@ -8945,8 +9084,18 @@ name|NIL
 operator|)
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* ========== garbage collector ========== */
+end_comment
+
+begin_comment
 comment|/*--  *  We use algorithm E (Knuth, The Art of Computer Programming Vol.1,  *  sec. 2.3.5), the Schorr-Deutsch-Waite link-inversion algorithm,  *  for marking.  */
+end_comment
+
+begin_function
+DECL|function|mark (pointer a)
 specifier|static
 name|void
 name|mark
@@ -9201,7 +9350,14 @@ name|E6
 goto|;
 block|}
 block|}
+end_function
+
+begin_comment
 comment|/* garbage collection. parameter a, b is marked. */
+end_comment
+
+begin_function
+DECL|function|gc (scheme * sc,pointer a,pointer b)
 specifier|static
 name|void
 name|gc
@@ -9517,6 +9673,10 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+end_function
+
+begin_function
+DECL|function|finalize_cell (scheme * sc,pointer a)
 specifier|static
 name|void
 name|finalize_cell
@@ -9607,7 +9767,14 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+end_function
+
+begin_comment
 comment|/* ========== Routines for Reading ========== */
+end_comment
+
+begin_function
+DECL|function|file_push (scheme * sc,const char * fname)
 specifier|static
 name|int
 name|file_push
@@ -9800,6 +9967,10 @@ operator|!=
 literal|0
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|file_pop (scheme * sc)
 specifier|static
 name|void
 name|file_pop
@@ -9865,6 +10036,10 @@ name|file_i
 expr_stmt|;
 block|}
 block|}
+end_function
+
+begin_function
+DECL|function|file_interactive (scheme * sc)
 specifier|static
 name|int
 name|file_interactive
@@ -9909,6 +10084,10 @@ operator|&
 name|port_file
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|port_rep_from_filename (scheme * sc,const char * fn,int prop)
 specifier|static
 name|port
 modifier|*
@@ -10061,6 +10240,10 @@ return|return
 name|pt
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|port_from_filename (scheme * sc,const char * fn,int prop)
 specifier|static
 name|pointer
 name|port_from_filename
@@ -10115,6 +10298,10 @@ name|pt
 argument_list|)
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|port_rep_from_file (scheme * sc,FILE * f,int prop)
 specifier|static
 name|port
 modifier|*
@@ -10194,6 +10381,10 @@ return|return
 name|pt
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|port_from_file (scheme * sc,FILE * f,int prop)
 specifier|static
 name|pointer
 name|port_from_file
@@ -10247,6 +10438,10 @@ name|pt
 argument_list|)
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|port_rep_from_string (scheme * sc,char * start,char * past_the_end,int prop)
 specifier|static
 name|port
 modifier|*
@@ -10341,6 +10536,10 @@ return|return
 name|pt
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|port_from_string (scheme * sc,char * start,char * past_the_end,int prop)
 specifier|static
 name|pointer
 name|port_from_string
@@ -10400,12 +10599,18 @@ name|pt
 argument_list|)
 return|;
 block|}
-DECL|macro|BLOCK_SIZE
+end_function
+
+begin_define
 DECL|macro|BLOCK_SIZE
 define|#
 directive|define
 name|BLOCK_SIZE
 value|256
+end_define
+
+begin_function
+DECL|function|port_rep_from_scratch (scheme * sc)
 specifier|static
 name|port
 modifier|*
@@ -10539,6 +10744,10 @@ return|return
 name|pt
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|port_from_scratch (scheme * sc)
 specifier|static
 name|pointer
 name|port_from_scratch
@@ -10581,6 +10790,10 @@ name|pt
 argument_list|)
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|port_close (scheme * sc,pointer p,int flag)
 specifier|static
 name|void
 name|port_close
@@ -10698,7 +10911,14 @@ name|port_free
 expr_stmt|;
 block|}
 block|}
+end_function
+
+begin_comment
 comment|/* This routine will ignore byte sequences that are not valid UTF-8 */
+end_comment
+
+begin_function
+DECL|function|basic_inchar (port * pt)
 specifier|static
 name|gunichar
 name|basic_inchar
@@ -11040,7 +11260,14 @@ block|}
 comment|/* end of while (TRUE) */
 block|}
 block|}
+end_function
+
+begin_comment
 comment|/* get new character from input file */
+end_comment
+
+begin_function
+DECL|function|inchar (scheme * sc)
 specifier|static
 name|gunichar
 name|inchar
@@ -11158,7 +11385,14 @@ return|return
 name|c
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* back character to input buffer */
+end_comment
+
+begin_function
+DECL|function|backchar (scheme * sc,gunichar c)
 specifier|static
 name|void
 name|backchar
@@ -11305,6 +11539,10 @@ expr_stmt|;
 block|}
 block|}
 block|}
+end_function
+
+begin_function
+DECL|function|realloc_port_string (scheme * sc,port * p)
 specifier|static
 name|int
 name|realloc_port_string
@@ -11444,7 +11682,14 @@ literal|0
 return|;
 block|}
 block|}
+end_function
+
+begin_comment
 comment|/* len is number of UTF-8 characters in string pointed to by chars */
+end_comment
+
+begin_function
+DECL|function|putchars (scheme * sc,const char * chars,int char_cnt)
 specifier|static
 name|void
 name|putchars
@@ -11748,6 +11993,10 @@ expr_stmt|;
 block|}
 block|}
 block|}
+end_function
+
+begin_function
+DECL|function|putcharacter (scheme * sc,gunichar c)
 name|INTERFACE
 name|void
 name|putcharacter
@@ -11786,6 +12035,10 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|putstr (scheme * sc,const char * s)
 name|INTERFACE
 name|void
 name|putstr
@@ -11816,7 +12069,14 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_comment
 comment|/* read characters up to delimiter, but cater to character constants */
+end_comment
+
+begin_function
+DECL|function|readstr_upto (scheme * sc,char * delim)
 specifier|static
 name|char
 modifier|*
@@ -11955,7 +12215,14 @@ operator|->
 name|strbuff
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* read string expression "xxx...xxx" */
+end_comment
+
+begin_function
+DECL|function|readstrexp (scheme * sc)
 specifier|static
 name|pointer
 name|readstrexp
@@ -11984,14 +12251,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon28fdeaff0103
-DECL|enumerator|st_ok
-DECL|enumerator|st_bsl
-DECL|enumerator|st_x1
-DECL|enumerator|st_x2
-DECL|enumerator|st_oct1
-DECL|enumerator|st_oct2
-DECL|enum|__anon28fdeaff0403
+DECL|enum|__anon29fde9b60103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -12420,7 +12680,14 @@ break|break;
 block|}
 block|}
 block|}
+end_function
+
+begin_comment
 comment|/* check c is in chars */
+end_comment
+
+begin_function
+DECL|function|is_one_of (char * s,gunichar c)
 specifier|static
 name|INLINE
 name|int
@@ -12468,7 +12735,14 @@ literal|0
 operator|)
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* skip white characters */
+end_comment
+
+begin_function
+DECL|function|skipspace (scheme * sc)
 specifier|static
 name|INLINE
 name|int
@@ -12567,7 +12841,14 @@ name|EOF
 return|;
 block|}
 block|}
+end_function
+
+begin_comment
 comment|/* get token */
+end_comment
+
+begin_function
+DECL|function|token (scheme * sc)
 specifier|static
 name|int
 name|token
@@ -12995,8 +13276,13 @@ operator|)
 return|;
 block|}
 block|}
+end_function
+
+begin_comment
 comment|/* ========== Routines for Printing ========== */
-DECL|macro|ok_abbrev (x)
+end_comment
+
+begin_define
 DECL|macro|ok_abbrev (x)
 define|#
 directive|define
@@ -13005,6 +13291,10 @@ parameter_list|(
 name|x
 parameter_list|)
 value|(is_pair(x)&& cdr(x) == sc->NIL)
+end_define
+
+begin_function
+DECL|function|printslashstring (scheme * sc,char * p,int len)
 specifier|static
 name|void
 name|printslashstring
@@ -13266,7 +13556,14 @@ literal|'"'
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_comment
 comment|/* print atoms */
+end_comment
+
+begin_function
+DECL|function|printatom (scheme * sc,pointer l,int f)
 specifier|static
 name|void
 name|printatom
@@ -13314,7 +13611,14 @@ name|len
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_comment
 comment|/* Uses internal buffer unless string pointer is already available */
+end_comment
+
+begin_function
+DECL|function|atom2str (scheme * sc,pointer l,int f,char ** pp,int * plen)
 specifier|static
 name|void
 name|atom2str
@@ -13898,8 +14202,18 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_comment
 comment|/* ========== Routines for Evaluation Cycle ========== */
+end_comment
+
+begin_comment
 comment|/* make closure. c is code. e is environment */
+end_comment
+
+begin_function
+DECL|function|mk_closure (scheme * sc,pointer c,pointer e)
 specifier|static
 name|pointer
 name|mk_closure
@@ -13954,7 +14268,14 @@ name|x
 operator|)
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* make continuation. */
+end_comment
+
+begin_function
+DECL|function|mk_continuation (scheme * sc,pointer d)
 specifier|static
 name|pointer
 name|mk_continuation
@@ -14001,6 +14322,10 @@ name|x
 operator|)
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|list_star (scheme * sc,pointer d)
 specifier|static
 name|pointer
 name|list_star
@@ -14131,7 +14456,14 @@ return|return
 name|q
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* reverse list -- produce new list */
+end_comment
+
+begin_function
+DECL|function|reverse (scheme * sc,pointer a)
 specifier|static
 name|pointer
 name|reverse
@@ -14189,7 +14521,14 @@ name|p
 operator|)
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* reverse list --- in-place */
+end_comment
+
+begin_function
+DECL|function|reverse_in_place (scheme * sc,pointer term,pointer list)
 specifier|static
 name|pointer
 name|reverse_in_place
@@ -14254,7 +14593,14 @@ name|result
 operator|)
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* append list -- produce new list */
+end_comment
+
+begin_function
+DECL|function|append (scheme * sc,pointer a,pointer b)
 specifier|static
 name|pointer
 name|append
@@ -14334,7 +14680,14 @@ name|p
 operator|)
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* equivalence of atoms */
+end_comment
+
+begin_function
+DECL|function|eqv (pointer a,pointer b)
 name|int
 name|eqv
 parameter_list|(
@@ -14537,9 +14890,17 @@ operator|)
 return|;
 block|}
 block|}
+end_function
+
+begin_comment
 comment|/* true or false value macro */
+end_comment
+
+begin_comment
 comment|/* () is #t in R5RS */
-DECL|macro|is_true (p)
+end_comment
+
+begin_define
 DECL|macro|is_true (p)
 define|#
 directive|define
@@ -14548,7 +14909,9 @@ parameter_list|(
 name|p
 parameter_list|)
 value|((p) != sc->F)
-DECL|macro|is_false (p)
+end_define
+
+begin_define
 DECL|macro|is_false (p)
 define|#
 directive|define
@@ -14557,7 +14920,13 @@ parameter_list|(
 name|p
 parameter_list|)
 value|((p) == sc->F)
+end_define
+
+begin_comment
 comment|/* ========== Environment implementation  ========== */
+end_comment
+
+begin_if
 if|#
 directive|if
 operator|!
@@ -14571,6 +14940,10 @@ name|defined
 argument_list|(
 name|USE_OBJECT_LIST
 argument_list|)
+end_if
+
+begin_function
+DECL|function|hash_fn (const char * key,int table_size)
 specifier|static
 name|int
 name|hash_fn
@@ -14650,12 +15023,25 @@ operator|%
 name|table_size
 return|;
 block|}
+end_function
+
+begin_endif
 endif|#
 directive|endif
+end_endif
+
+begin_ifndef
 ifndef|#
 directive|ifndef
 name|USE_ALIST_ENV
+end_ifndef
+
+begin_comment
 comment|/*  * In this implementation, each frame of the environment may be  * a hash table: a vector of alists hashed by variable name.  * In practice, we use a vector only for the initial frame;  * subsequent frames are too small and transient for the lookup  * speed to out-weigh the cost of making a new vector.  */
+end_comment
+
+begin_function
+DECL|function|new_frame_in_env (scheme * sc,pointer old_env)
 specifier|static
 name|void
 name|new_frame_in_env
@@ -14721,6 +15107,10 @@ name|envir
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|new_slot_spec_in_env (scheme * sc,pointer env,pointer variable,pointer value)
 specifier|static
 name|INLINE
 name|void
@@ -14831,6 +15221,10 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+end_function
+
+begin_function
+DECL|function|find_slot_in_env (scheme * sc,pointer env,pointer hdl,int all)
 specifier|static
 name|pointer
 name|find_slot_in_env
@@ -15005,9 +15399,19 @@ operator|->
 name|NIL
 return|;
 block|}
+end_function
+
+begin_else
 else|#
 directive|else
+end_else
+
+begin_comment
 comment|/* USE_ALIST_ENV */
+end_comment
+
+begin_function
+DECL|function|new_frame_in_env (scheme * sc,pointer old_env)
 specifier|static
 name|INLINE
 name|void
@@ -15044,6 +15448,10 @@ name|envir
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|new_slot_spec_in_env (scheme * sc,pointer env,pointer variable,pointer value)
 specifier|static
 name|INLINE
 name|void
@@ -15088,6 +15496,10 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|find_slot_in_env (scheme * sc,pointer env,pointer hdl,int all)
 specifier|static
 name|pointer
 name|find_slot_in_env
@@ -15213,9 +15625,19 @@ operator|->
 name|NIL
 return|;
 block|}
+end_function
+
+begin_endif
 endif|#
 directive|endif
+end_endif
+
+begin_comment
 comment|/* USE_ALIST_ENV else */
+end_comment
+
+begin_function
+DECL|function|new_slot_in_env (scheme * sc,pointer variable,pointer value)
 specifier|static
 name|INLINE
 name|void
@@ -15246,6 +15668,10 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|set_slot_in_env (scheme * sc,pointer slot,pointer value)
 specifier|static
 name|INLINE
 name|void
@@ -15270,6 +15696,10 @@ operator|=
 name|value
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|slot_value_in_env (pointer slot)
 specifier|static
 name|INLINE
 name|pointer
@@ -15286,7 +15716,14 @@ name|slot
 argument_list|)
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* ========== Evaluation Cycle ========== */
+end_comment
+
+begin_function
+DECL|function|_Error_1 (scheme * sc,const char * s,pointer a)
 specifier|static
 name|pointer
 name|_Error_1
@@ -15662,7 +16099,9 @@ operator|->
 name|T
 return|;
 block|}
-DECL|macro|Error_1 (sc,s,a)
+end_function
+
+begin_define
 DECL|macro|Error_1 (sc,s,a)
 define|#
 directive|define
@@ -15675,7 +16114,9 @@ parameter_list|,
 name|a
 parameter_list|)
 value|return _Error_1(sc,s,a)
-DECL|macro|Error_0 (sc,s)
+end_define
+
+begin_define
 DECL|macro|Error_0 (sc,s)
 define|#
 directive|define
@@ -15686,20 +16127,29 @@ parameter_list|,
 name|s
 parameter_list|)
 value|return _Error_1(sc,s,0)
+end_define
+
+begin_comment
 comment|/* Too small to turn into function */
-DECL|macro|BEGIN
+end_comment
+
+begin_define
 DECL|macro|BEGIN
 define|#
 directive|define
 name|BEGIN
 value|do {
-DECL|macro|END
+end_define
+
+begin_define
 DECL|macro|END
 define|#
 directive|define
 name|END
 value|} while (0)
-DECL|macro|s_goto (sc,a)
+end_define
+
+begin_define
 DECL|macro|s_goto (sc,a)
 define|#
 directive|define
@@ -15710,7 +16160,9 @@ parameter_list|,
 name|a
 parameter_list|)
 value|BEGIN                                  \     sc->op = (int)(a);                                      \     return sc->T; END
-DECL|macro|s_return (sc,a)
+end_define
+
+begin_define
 DECL|macro|s_return (sc,a)
 define|#
 directive|define
@@ -15721,44 +16173,54 @@ parameter_list|,
 name|a
 parameter_list|)
 value|return _s_return(sc,a)
+end_define
+
+begin_ifndef
 ifndef|#
 directive|ifndef
 name|USE_SCHEME_STACK
+end_ifndef
+
+begin_comment
 comment|/* this structure holds all the interpreter's registers */
-DECL|struct|dump_stack_frame
+end_comment
+
+begin_struct
 DECL|struct|dump_stack_frame
 struct|struct
 name|dump_stack_frame
 block|{
-DECL|member|op
 DECL|member|op
 name|enum
 name|scheme_opcodes
 name|op
 decl_stmt|;
 DECL|member|args
-DECL|member|args
 name|pointer
 name|args
 decl_stmt|;
 DECL|member|envir
-DECL|member|envir
 name|pointer
 name|envir
 decl_stmt|;
-DECL|member|code
 DECL|member|code
 name|pointer
 name|code
 decl_stmt|;
 block|}
 struct|;
-DECL|macro|STACK_GROWTH
+end_struct
+
+begin_define
 DECL|macro|STACK_GROWTH
 define|#
 directive|define
 name|STACK_GROWTH
 value|3
+end_define
+
+begin_function
+DECL|function|s_save (scheme * sc,enum scheme_opcodes op,pointer args,pointer code)
 specifier|static
 name|void
 name|s_save
@@ -15885,6 +16347,10 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|_s_return (scheme * sc,pointer a)
 specifier|static
 name|pointer
 name|_s_return
@@ -15996,6 +16462,10 @@ operator|->
 name|T
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|dump_stack_reset (scheme * sc)
 specifier|static
 name|INLINE
 name|void
@@ -16017,6 +16487,10 @@ operator|)
 literal|0
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|dump_stack_initialize (scheme * sc)
 specifier|static
 name|INLINE
 name|void
@@ -16045,6 +16519,10 @@ name|sc
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|dump_stack_free (scheme * sc)
 specifier|static
 name|void
 name|dump_stack_free
@@ -16083,6 +16561,10 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|dump_stack_mark (scheme * sc)
 specifier|static
 name|INLINE
 name|void
@@ -16161,8 +16643,15 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+end_function
+
+begin_else
 else|#
 directive|else
+end_else
+
+begin_function
+DECL|function|dump_stack_reset (scheme * sc)
 specifier|static
 name|INLINE
 name|void
@@ -16182,6 +16671,10 @@ operator|->
 name|NIL
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|dump_stack_initialize (scheme * sc)
 specifier|static
 name|INLINE
 name|void
@@ -16198,6 +16691,10 @@ name|sc
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|dump_stack_free (scheme * sc)
 specifier|static
 name|void
 name|dump_stack_free
@@ -16216,6 +16713,10 @@ operator|->
 name|NIL
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|_s_return (scheme * sc,pointer a)
 specifier|static
 name|pointer
 name|_s_return
@@ -16315,6 +16816,10 @@ operator|->
 name|T
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|s_save (scheme * sc,enum scheme_opcodes op,pointer args,pointer code)
 specifier|static
 name|void
 name|s_save
@@ -16403,6 +16908,10 @@ name|dump
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|dump_stack_mark (scheme * sc)
 specifier|static
 name|INLINE
 name|void
@@ -16421,9 +16930,14 @@ name|dump
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_endif
 endif|#
 directive|endif
-DECL|macro|s_retbool (tf)
+end_endif
+
+begin_define
 DECL|macro|s_retbool (tf)
 define|#
 directive|define
@@ -16432,6 +16946,10 @@ parameter_list|(
 name|tf
 parameter_list|)
 value|s_return(sc,(tf) ? sc->T : sc->F)
+end_define
+
+begin_function
+DECL|function|opexe_0 (scheme * sc,enum scheme_opcodes op)
 specifier|static
 name|pointer
 name|opexe_0
@@ -19422,6 +19940,10 @@ operator|->
 name|T
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|opexe_1 (scheme * sc,enum scheme_opcodes op)
 specifier|static
 name|pointer
 name|opexe_1
@@ -21056,6 +21578,10 @@ operator|->
 name|T
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|opexe_2 (scheme * sc,enum scheme_opcodes op)
 specifier|static
 name|pointer
 name|opexe_2
@@ -24328,6 +24854,10 @@ operator|->
 name|T
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|is_list (scheme * sc,pointer a)
 specifier|static
 name|int
 name|is_list
@@ -24351,7 +24881,14 @@ operator|>=
 literal|0
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* Result is:    proper list: length    circular list: -1    not even a pair: -2    dotted list: -2 minus length before dot */
+end_comment
+
+begin_function
+DECL|function|list_length (scheme * sc,pointer p)
 name|int
 name|list_length
 parameter_list|(
@@ -24477,6 +25014,10 @@ return|;
 block|}
 block|}
 block|}
+end_function
+
+begin_function
+DECL|function|opexe_3 (scheme * sc,enum scheme_opcodes op)
 specifier|static
 name|pointer
 name|opexe_3
@@ -25200,6 +25741,10 @@ operator|->
 name|T
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|opexe_4 (scheme * sc,enum scheme_opcodes op)
 specifier|static
 name|pointer
 name|opexe_4
@@ -26931,6 +27476,10 @@ operator|->
 name|T
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|opexe_5 (scheme * sc,enum scheme_opcodes op)
 specifier|static
 name|pointer
 name|opexe_5
@@ -29077,6 +29626,10 @@ operator|->
 name|T
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|opexe_6 (scheme * sc,enum scheme_opcodes op)
 specifier|static
 name|pointer
 name|opexe_6
@@ -29439,7 +29992,9 @@ name|T
 return|;
 comment|/* NOTREACHED */
 block|}
-DECL|typedef|dispatch_func
+end_function
+
+begin_typedef
 DECL|typedef|dispatch_func
 typedef|typedef
 name|pointer
@@ -29455,7 +30010,9 @@ name|enum
 name|scheme_opcodes
 parameter_list|)
 function_decl|;
-DECL|typedef|test_predicate
+end_typedef
+
+begin_typedef
 DECL|typedef|test_predicate
 typedef|typedef
 name|int
@@ -29467,6 +30024,10 @@ parameter_list|(
 name|pointer
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_function
+DECL|function|is_any (pointer p)
 specifier|static
 name|int
 name|is_any
@@ -29479,6 +30040,10 @@ return|return
 literal|1
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|is_nonneg (pointer p)
 specifier|static
 name|int
 name|is_nonneg
@@ -29501,24 +30066,28 @@ operator|>=
 literal|0
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* Correspond carefully with following defines! */
-DECL|struct|__anon28fdeaff0208
-DECL|struct|__anon28fdeaff0508
+end_comment
+
+begin_struct
+DECL|struct|__anon29fde9b60208
 specifier|static
 struct|struct
 block|{
 DECL|member|fct
-DECL|member|fct
 name|test_predicate
 name|fct
 decl_stmt|;
-DECL|member|kind
 DECL|member|kind
 specifier|const
 name|char
 modifier|*
 name|kind
 decl_stmt|;
+DECL|variable|tests
 block|}
 name|tests
 index|[]
@@ -29616,146 +30185,177 @@ literal|"non-negative integer"
 block|}
 block|}
 struct|;
-DECL|macro|TST_NONE
+end_struct
+
+begin_define
 DECL|macro|TST_NONE
 define|#
 directive|define
 name|TST_NONE
 value|0
-DECL|macro|TST_ANY
+end_define
+
+begin_define
 DECL|macro|TST_ANY
 define|#
 directive|define
 name|TST_ANY
 value|"\001"
-DECL|macro|TST_STRING
+end_define
+
+begin_define
 DECL|macro|TST_STRING
 define|#
 directive|define
 name|TST_STRING
 value|"\002"
-DECL|macro|TST_SYMBOL
+end_define
+
+begin_define
 DECL|macro|TST_SYMBOL
 define|#
 directive|define
 name|TST_SYMBOL
 value|"\003"
-DECL|macro|TST_PORT
+end_define
+
+begin_define
 DECL|macro|TST_PORT
 define|#
 directive|define
 name|TST_PORT
 value|"\004"
-DECL|macro|TST_INPORT
+end_define
+
+begin_define
 DECL|macro|TST_INPORT
 define|#
 directive|define
 name|TST_INPORT
 value|"\005"
-DECL|macro|TST_OUTPORT
+end_define
+
+begin_define
 DECL|macro|TST_OUTPORT
 define|#
 directive|define
 name|TST_OUTPORT
 value|"\006"
-DECL|macro|TST_ENVIRONMENT
+end_define
+
+begin_define
 DECL|macro|TST_ENVIRONMENT
 define|#
 directive|define
 name|TST_ENVIRONMENT
 value|"\007"
-DECL|macro|TST_PAIR
+end_define
+
+begin_define
 DECL|macro|TST_PAIR
 define|#
 directive|define
 name|TST_PAIR
 value|"\010"
-DECL|macro|TST_LIST
+end_define
+
+begin_define
 DECL|macro|TST_LIST
 define|#
 directive|define
 name|TST_LIST
 value|"\011"
-DECL|macro|TST_CHAR
+end_define
+
+begin_define
 DECL|macro|TST_CHAR
 define|#
 directive|define
 name|TST_CHAR
 value|"\012"
-DECL|macro|TST_VECTOR
+end_define
+
+begin_define
 DECL|macro|TST_VECTOR
 define|#
 directive|define
 name|TST_VECTOR
 value|"\013"
-DECL|macro|TST_NUMBER
+end_define
+
+begin_define
 DECL|macro|TST_NUMBER
 define|#
 directive|define
 name|TST_NUMBER
 value|"\014"
-DECL|macro|TST_INTEGER
+end_define
+
+begin_define
 DECL|macro|TST_INTEGER
 define|#
 directive|define
 name|TST_INTEGER
 value|"\015"
-DECL|macro|TST_NATURAL
+end_define
+
+begin_define
 DECL|macro|TST_NATURAL
 define|#
 directive|define
 name|TST_NATURAL
 value|"\016"
-DECL|struct|__anon28fdeaff0308
-DECL|struct|__anon28fdeaff0608
+end_define
+
+begin_typedef
+DECL|struct|__anon29fde9b60308
 typedef|typedef
 struct|struct
 block|{
 DECL|member|func
-DECL|member|func
 name|dispatch_func
 name|func
 decl_stmt|;
-DECL|member|name
 DECL|member|name
 name|char
 modifier|*
 name|name
 decl_stmt|;
 DECL|member|min_arity
-DECL|member|min_arity
 name|int
 name|min_arity
 decl_stmt|;
 DECL|member|max_arity
-DECL|member|max_arity
 name|int
 name|max_arity
 decl_stmt|;
-DECL|member|arg_tests_encoding
 DECL|member|arg_tests_encoding
 name|char
 modifier|*
 name|arg_tests_encoding
 decl_stmt|;
 DECL|typedef|op_code_info
-DECL|typedef|op_code_info
 block|}
 name|op_code_info
 typedef|;
-DECL|macro|INF_ARG
+end_typedef
+
+begin_define
 DECL|macro|INF_ARG
 define|#
 directive|define
 name|INF_ARG
 value|0xffff
+end_define
+
+begin_decl_stmt
+DECL|variable|dispatch_table
 specifier|static
 name|op_code_info
 name|dispatch_table
 index|[]
 init|=
 block|{
-DECL|macro|_OP_DEF (A,B,C,D,E,OP)
 DECL|macro|_OP_DEF (A,B,C,D,E,OP)
 define|#
 directive|define
@@ -29782,6 +30382,10 @@ literal|0
 block|}
 block|}
 decl_stmt|;
+end_decl_stmt
+
+begin_function
+DECL|function|procname (pointer x)
 specifier|static
 specifier|const
 name|char
@@ -29828,7 +30432,14 @@ return|return
 name|name
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* kernel of this interpreter */
+end_comment
+
+begin_function
+DECL|function|Eval_Cycle (scheme * sc,enum scheme_opcodes op)
 specifier|static
 name|void
 name|Eval_Cycle
@@ -30239,7 +30850,14 @@ return|return;
 block|}
 block|}
 block|}
+end_function
+
+begin_comment
 comment|/* ========== Initialization of internal keywords ========== */
+end_comment
+
+begin_function
+DECL|function|assign_syntax (scheme * sc,char * name)
 specifier|static
 name|void
 name|assign_syntax
@@ -30273,6 +30891,10 @@ operator||=
 name|T_SYNTAX
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|assign_proc (scheme * sc,enum scheme_opcodes op,char * name)
 specifier|static
 name|void
 name|assign_proc
@@ -30323,6 +30945,10 @@ name|y
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|mk_proc (scheme * sc,enum scheme_opcodes op)
 specifier|static
 name|pointer
 name|mk_proc
@@ -30384,7 +31010,14 @@ return|return
 name|y
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/* Hard-coded for the given keywords. Remember to rewrite if more are added! */
+end_comment
+
+begin_function
+DECL|function|syntaxnum (pointer p)
 specifier|static
 name|int
 name|syntaxnum
@@ -30573,10 +31206,20 @@ return|;
 comment|/* cons-stream */
 block|}
 block|}
+end_function
+
+begin_comment
 comment|/* initialization of TinyScheme */
+end_comment
+
+begin_if
 if|#
 directive|if
 name|USE_INTERFACE
+end_if
+
+begin_function
+DECL|function|s_cons (scheme * sc,pointer a,pointer b)
 name|INTERFACE
 specifier|static
 name|pointer
@@ -30604,6 +31247,10 @@ name|b
 argument_list|)
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|s_immutable_cons (scheme * sc,pointer a,pointer b)
 name|INTERFACE
 specifier|static
 name|pointer
@@ -30631,6 +31278,10 @@ name|b
 argument_list|)
 return|;
 block|}
+end_function
+
+begin_decl_stmt
+DECL|variable|vtbl
 specifier|static
 name|struct
 name|scheme_interface
@@ -30752,8 +31403,15 @@ block|,
 name|scheme_load_string
 block|}
 decl_stmt|;
+end_decl_stmt
+
+begin_endif
 endif|#
 directive|endif
+end_endif
+
+begin_function
+DECL|function|scheme_init_new (void)
 name|scheme
 modifier|*
 name|scheme_init_new
@@ -30802,6 +31460,10 @@ name|sc
 return|;
 block|}
 block|}
+end_function
+
+begin_function
+DECL|function|scheme_init_new_custom_alloc (func_alloc malloc,func_dealloc free)
 name|scheme
 modifier|*
 name|scheme_init_new_custom_alloc
@@ -30858,6 +31520,10 @@ name|sc
 return|;
 block|}
 block|}
+end_function
+
+begin_function
+DECL|function|scheme_init (scheme * sc)
 name|int
 name|scheme_init
 parameter_list|(
@@ -30877,6 +31543,10 @@ name|free
 argument_list|)
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|scheme_init_custom_alloc (scheme * sc,func_alloc malloc,func_dealloc free)
 name|int
 name|scheme_init_custom_alloc
 parameter_list|(
@@ -31600,6 +32270,10 @@ operator|->
 name|no_memory
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|scheme_set_input_port_file (scheme * sc,FILE * fin)
 name|SCHEME_EXPORT
 name|void
 name|scheme_set_input_port_file
@@ -31627,6 +32301,10 @@ name|port_input
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|scheme_set_input_port_string (scheme * sc,char * start,char * past_the_end)
 name|void
 name|scheme_set_input_port_string
 parameter_list|(
@@ -31659,6 +32337,10 @@ name|port_input
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|scheme_set_output_port_file (scheme * sc,FILE * fout)
 name|SCHEME_EXPORT
 name|void
 name|scheme_set_output_port_file
@@ -31686,6 +32368,10 @@ name|port_output
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|scheme_set_output_port_string (scheme * sc,char * start,char * past_the_end)
 name|void
 name|scheme_set_output_port_string
 parameter_list|(
@@ -31718,6 +32404,10 @@ name|port_output
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|scheme_set_external_data (scheme * sc,void * p)
 name|void
 name|scheme_set_external_data
 parameter_list|(
@@ -31737,6 +32427,10 @@ operator|=
 name|p
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|scheme_deinit (scheme * sc)
 name|void
 name|scheme_deinit
 parameter_list|(
@@ -31999,6 +32693,10 @@ block|}
 endif|#
 directive|endif
 block|}
+end_function
+
+begin_function
+DECL|function|scheme_load_file (scheme * sc,FILE * fin)
 name|void
 name|scheme_load_file
 parameter_list|(
@@ -32021,6 +32719,10 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|scheme_load_named_file (scheme * sc,FILE * fin,const char * filename)
 name|void
 name|scheme_load_named_file
 parameter_list|(
@@ -32231,6 +32933,10 @@ literal|0
 expr_stmt|;
 block|}
 block|}
+end_function
+
+begin_function
+DECL|function|scheme_load_string (scheme * sc,const char * cmd)
 name|void
 name|scheme_load_string
 parameter_list|(
@@ -32422,6 +33128,10 @@ literal|0
 expr_stmt|;
 block|}
 block|}
+end_function
+
+begin_function
+DECL|function|scheme_define (scheme * sc,pointer envir,pointer symbol,pointer value)
 name|void
 name|scheme_define
 parameter_list|(
@@ -32489,10 +33199,17 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+end_function
+
+begin_if
 if|#
 directive|if
 operator|!
 name|STANDALONE
+end_if
+
+begin_function
+DECL|function|scheme_register_foreign_func (scheme * sc,scheme_registerable * sr)
 name|void
 name|scheme_register_foreign_func
 parameter_list|(
@@ -32533,6 +33250,10 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|scheme_register_foreign_func_list (scheme * sc,scheme_registerable * list,int count)
 name|void
 name|scheme_register_foreign_func_list
 parameter_list|(
@@ -32576,6 +33297,10 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+end_function
+
+begin_function
+DECL|function|scheme_apply0 (scheme * sc,const char * procname)
 name|pointer
 name|scheme_apply0
 parameter_list|(
@@ -32612,6 +33337,10 @@ argument_list|)
 argument_list|)
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|save_from_C_call (scheme * sc)
 specifier|static
 name|void
 name|save_from_C_call
@@ -32672,6 +33401,10 @@ name|sc
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+DECL|function|restore_from_C_call (scheme * sc)
 specifier|static
 name|void
 name|restore_from_C_call
@@ -32733,7 +33466,14 @@ name|c_nest
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_comment
 comment|/* "func" and "args" are assumed to be already eval'ed. */
+end_comment
+
+begin_function
+DECL|function|scheme_call (scheme * sc,pointer func,pointer args)
 name|pointer
 name|scheme_call
 parameter_list|(
@@ -32816,6 +33556,10 @@ operator|->
 name|value
 return|;
 block|}
+end_function
+
+begin_function
+DECL|function|scheme_eval (scheme * sc,pointer obj)
 name|pointer
 name|scheme_eval
 parameter_list|(
@@ -32889,12 +33633,24 @@ operator|->
 name|value
 return|;
 block|}
+end_function
+
+begin_endif
 endif|#
 directive|endif
+end_endif
+
+begin_comment
 comment|/* ========== Main ========== */
+end_comment
+
+begin_if
 if|#
 directive|if
 name|STANDALONE
+end_if
+
+begin_if
 if|#
 directive|if
 name|defined
@@ -32907,6 +33663,10 @@ name|defined
 argument_list|(
 name|OSX
 argument_list|)
+end_if
+
+begin_function
+DECL|function|main (int argc,char ** argv)
 name|int
 name|main
 parameter_list|(
@@ -32924,11 +33684,17 @@ operator|,
 extern|char **argv
 block|)
 function|;
+end_function
+
+begin_decl_stmt
 name|char
 modifier|*
 modifier|*
 name|argv
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 name|int
 name|argc
 init|=
@@ -32938,6 +33704,9 @@ operator|&
 name|argv
 argument_list|)
 decl_stmt|;
+end_decl_stmt
+
+begin_expr_stmt
 name|MacTS_main
 argument_list|(
 name|argc
@@ -32945,24 +33714,27 @@ argument_list|,
 name|argv
 argument_list|)
 expr_stmt|;
+end_expr_stmt
+
+begin_return
 return|return
 literal|0
 return|;
-block|}
-end_function
+end_return
 
-begin_function
-name|int
+begin_macro
+unit|} int
+DECL|function|MacTS_main (int argc,char ** argv)
 name|MacTS_main
-parameter_list|(
-name|int
-name|argc
-parameter_list|,
-name|char
-modifier|*
-modifier|*
-name|argv
-parameter_list|)
+argument_list|(
+argument|int argc
+argument_list|,
+argument|char **argv
+argument_list|)
+end_macro
+
+begin_block
+DECL|function|MacTS_main (int argc,char ** argv)
 block|{
 else|#
 directive|else
@@ -33493,7 +34265,7 @@ return|return
 name|retcode
 return|;
 block|}
-end_function
+end_block
 
 begin_endif
 endif|#
