@@ -51,7 +51,7 @@ directive|ifdef
 name|G_OS_WIN32
 ifdef|#
 directive|ifdef
-name|GIMP_BASE_COMPILATION
+name|__GIMP_ENV_C__
 DECL|macro|GIMPVAR
 define|#
 directive|define
@@ -59,14 +59,14 @@ name|GIMPVAR
 value|__declspec(dllexport)
 else|#
 directive|else
-comment|/* !GIMP_BASE_COMPILATION */
+comment|/* !__GIMP_ENV_C__ */
 define|#
 directive|define
 name|GIMPVAR
 value|extern __declspec(dllimport)
 endif|#
 directive|endif
-comment|/* !GIMP_BASE_COMPILATION */
+comment|/* !__GIMP_ENV_C__ */
 else|#
 directive|else
 comment|/* !G_OS_WIN32 */
