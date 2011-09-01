@@ -4811,6 +4811,12 @@ return|;
 block|}
 end_function
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_ISO_CODES
+end_ifdef
+
 begin_function
 specifier|static
 name|GtkWidget
@@ -4872,6 +4878,11 @@ name|combo
 return|;
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function
 specifier|static
@@ -9473,7 +9484,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2a1065170108
+DECL|struct|__anon292381a80108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10630,7 +10641,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a1065170208
+DECL|struct|__anon292381a80208
 block|{
 DECL|member|label
 specifier|const
@@ -11742,7 +11753,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a1065170308
+DECL|struct|__anon292381a80308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11897,7 +11908,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a1065170408
+DECL|struct|__anon292381a80408
 block|{
 DECL|member|tree_label
 specifier|const
