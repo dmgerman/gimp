@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295b06110103
+DECL|enum|__anon28f98ce40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1861,10 +1861,6 @@ name|box
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|label
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|spinbutton
 decl_stmt|;
 name|GtkWidget
@@ -2542,6 +2538,11 @@ comment|/*  Only add the language entry if the iso-codes package is available.  
 ifdef|#
 directive|ifdef
 name|HAVE_ISO_CODES
+block|{
+name|GtkWidget
+modifier|*
+name|label
+decl_stmt|;
 name|vbox
 operator|=
 name|gtk_vbox_new
@@ -2663,6 +2664,7 @@ argument_list|(
 name|entry
 argument_list|)
 expr_stmt|;
+block|}
 endif|#
 directive|endif
 return|return
