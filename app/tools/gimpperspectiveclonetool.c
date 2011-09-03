@@ -123,7 +123,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27605c500103
+DECL|enum|__anon276b571d0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -3504,7 +3504,17 @@ condition|(
 name|tool
 operator|->
 name|display
+operator|&&
+operator|!
+name|gimp_draw_tool_is_active
+argument_list|(
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|clone_tool
+argument_list|)
+argument_list|)
 condition|)
+block|{
 name|gimp_draw_tool_start
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -3517,6 +3527,7 @@ operator|->
 name|display
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|gimp_draw_tool_resume
 argument_list|(
