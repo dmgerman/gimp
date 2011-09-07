@@ -229,7 +229,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2dc8c70103
+DECL|enum|__anon2b79a1e10103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3048,7 +3048,7 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|gimp_drawable_get_tiles
 argument_list|(

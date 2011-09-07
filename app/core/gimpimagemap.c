@@ -99,7 +99,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b49b810103
+DECL|enum|__anon2c63a3150103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1166,7 +1166,7 @@ operator|+
 name|height
 condition|)
 block|{
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|image_map
 operator|->

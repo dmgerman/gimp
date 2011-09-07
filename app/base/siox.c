@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae9638f0108
+DECL|struct|__anon2a0b531e0108
 block|{
 DECL|member|l
 name|gfloat
@@ -246,7 +246,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae9638f0208
+DECL|struct|__anon2a0b531e0208
 block|{
 DECL|member|bgdist
 name|gfloat
@@ -2207,7 +2207,7 @@ name|oldx
 operator|=
 name|xx
 expr_stmt|;
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|mask
 argument_list|,
@@ -2257,7 +2257,7 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
-name|write_pixel_data_1
+name|tile_manager_write_pixel_data_1
 argument_list|(
 name|mask
 argument_list|,

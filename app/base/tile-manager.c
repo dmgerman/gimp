@@ -2877,8 +2877,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|read_pixel_data (TileManager * tm,gint x1,gint y1,gint x2,gint y2,guchar * buffer,guint stride)
-name|read_pixel_data
+DECL|function|tile_manager_read_pixel_data (TileManager * tm,gint x1,gint y1,gint x2,gint y2,guchar * buffer,guint stride)
+name|tile_manager_read_pixel_data
 parameter_list|(
 name|TileManager
 modifier|*
@@ -3124,8 +3124,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|write_pixel_data (TileManager * tm,gint x1,gint y1,gint x2,gint y2,const guchar * buffer,guint stride)
-name|write_pixel_data
+DECL|function|tile_manager_write_pixel_data (TileManager * tm,gint x1,gint y1,gint x2,gint y2,const guchar * buffer,guint stride)
+name|tile_manager_write_pixel_data
 parameter_list|(
 name|TileManager
 modifier|*
@@ -3372,8 +3372,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|read_pixel_data_1 (TileManager * tm,gint x,gint y,guchar * buffer)
-name|read_pixel_data_1
+DECL|function|tile_manager_read_pixel_data_1 (TileManager * tm,gint x,gint y,guchar * buffer)
+name|tile_manager_read_pixel_data_1
 parameter_list|(
 name|TileManager
 modifier|*
@@ -3554,8 +3554,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|write_pixel_data_1 (TileManager * tm,gint x,gint y,const guchar * buffer)
-name|write_pixel_data_1
+DECL|function|tile_manager_write_pixel_data_1 (TileManager * tm,gint x,gint y,const guchar * buffer)
+name|tile_manager_write_pixel_data_1
 parameter_list|(
 name|TileManager
 modifier|*

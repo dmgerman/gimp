@@ -1436,7 +1436,7 @@ operator|<
 name|v2
 condition|)
 block|{
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|orig_tiles
 argument_list|,
@@ -4598,7 +4598,7 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-comment|/*  fill the color with default values, since read_pixel_data_1    *  does nothing, when accesses are out of bounds.    */
+comment|/*  fill the color with default values, since    *  tile_manager_read_pixel_data_1 does nothing, when accesses are    *  out of bounds.    */
 for|for
 control|(
 name|i
@@ -4634,7 +4634,7 @@ operator|(
 name|bg_color
 operator|)
 expr_stmt|;
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|tm
 argument_list|,
@@ -4648,7 +4648,7 @@ literal|0
 index|]
 argument_list|)
 expr_stmt|;
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|tm
 argument_list|,
@@ -4662,7 +4662,7 @@ literal|2
 index|]
 argument_list|)
 expr_stmt|;
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|tm
 argument_list|,
@@ -4676,7 +4676,7 @@ literal|1
 index|]
 argument_list|)
 expr_stmt|;
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|tm
 argument_list|,

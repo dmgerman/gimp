@@ -5021,7 +5021,7 @@ name|y0
 operator|+
 literal|1
 decl_stmt|;
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|srcTM
 argument_list|,

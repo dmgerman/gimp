@@ -165,7 +165,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0e8c840103
+DECL|enum|__anon286c4e700103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4294,7 +4294,7 @@ name|dx
 operator|--
 condition|)
 block|{
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|tiles
 argument_list|,
@@ -4393,7 +4393,7 @@ decl_stmt|;
 name|guchar
 name|alpha
 decl_stmt|;
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|tiles
 argument_list|,
@@ -4492,7 +4492,7 @@ name|dx
 operator|--
 condition|)
 block|{
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|tiles
 argument_list|,
@@ -4561,7 +4561,7 @@ decl_stmt|;
 name|guchar
 name|alpha
 decl_stmt|;
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|tiles
 argument_list|,
@@ -4637,7 +4637,7 @@ name|dx
 operator|--
 condition|)
 block|{
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|tiles
 argument_list|,
@@ -4706,7 +4706,7 @@ decl_stmt|;
 name|guchar
 name|alpha
 decl_stmt|;
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|tiles
 argument_list|,
@@ -5244,7 +5244,7 @@ decl_stmt|;
 name|guchar
 name|alpha
 decl_stmt|;
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|tiles
 argument_list|,
@@ -5261,7 +5261,7 @@ argument_list|,
 name|pixel
 argument_list|)
 expr_stmt|;
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|masktiles
 argument_list|,
@@ -5380,7 +5380,7 @@ decl_stmt|;
 name|guchar
 name|alpha
 decl_stmt|;
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|tiles
 argument_list|,
@@ -5397,7 +5397,7 @@ argument_list|,
 name|pixel
 argument_list|)
 expr_stmt|;
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|masktiles
 argument_list|,
@@ -5514,7 +5514,7 @@ decl_stmt|;
 name|guchar
 name|alpha
 decl_stmt|;
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|tiles
 argument_list|,
@@ -5531,7 +5531,7 @@ argument_list|,
 name|pixel
 argument_list|)
 expr_stmt|;
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|masktiles
 argument_list|,
@@ -5620,7 +5620,7 @@ decl_stmt|;
 name|guchar
 name|alpha
 decl_stmt|;
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|tiles
 argument_list|,
@@ -5637,7 +5637,7 @@ argument_list|,
 name|pixel
 argument_list|)
 expr_stmt|;
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|masktiles
 argument_list|,
@@ -5731,7 +5731,7 @@ decl_stmt|;
 name|guchar
 name|alpha
 decl_stmt|;
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|tiles
 argument_list|,
@@ -5748,7 +5748,7 @@ argument_list|,
 name|pixel
 argument_list|)
 expr_stmt|;
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|masktiles
 argument_list|,
@@ -5837,7 +5837,7 @@ decl_stmt|;
 name|guchar
 name|alpha
 decl_stmt|;
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|tiles
 argument_list|,
@@ -5854,7 +5854,7 @@ argument_list|,
 name|pixel
 argument_list|)
 expr_stmt|;
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|masktiles
 argument_list|,

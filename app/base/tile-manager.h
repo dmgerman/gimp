@@ -426,7 +426,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|read_pixel_data
+name|tile_manager_read_pixel_data
 parameter_list|(
 name|TileManager
 modifier|*
@@ -456,7 +456,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|write_pixel_data
+name|tile_manager_write_pixel_data
 parameter_list|(
 name|TileManager
 modifier|*
@@ -491,7 +491,7 @@ end_comment
 
 begin_function_decl
 name|void
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 parameter_list|(
 name|TileManager
 modifier|*
@@ -512,7 +512,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|write_pixel_data_1
+name|tile_manager_write_pixel_data_1
 parameter_list|(
 name|TileManager
 modifier|*

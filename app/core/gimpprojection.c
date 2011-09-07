@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29916d7a0103
+DECL|enum|__anon29a253fd0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1268,7 +1268,7 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|read_pixel_data_1
+name|tile_manager_read_pixel_data_1
 argument_list|(
 name|tiles
 argument_list|,

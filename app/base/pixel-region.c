@@ -610,7 +610,7 @@ name|PR
 operator|->
 name|tiles
 condition|)
-name|read_pixel_data
+name|tile_manager_read_pixel_data
 argument_list|(
 name|PR
 operator|->
@@ -820,7 +820,7 @@ name|x
 operator|+
 name|w
 decl_stmt|;
-name|write_pixel_data
+name|tile_manager_write_pixel_data
 argument_list|(
 name|PR
 operator|->
@@ -1100,7 +1100,7 @@ name|PR
 operator|->
 name|bytes
 decl_stmt|;
-name|write_pixel_data
+name|tile_manager_write_pixel_data
 argument_list|(
 name|PR
 operator|->
