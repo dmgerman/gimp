@@ -1623,6 +1623,8 @@ operator|=
 name|shell
 operator|->
 name|x_dest_inc
+operator|>>
+name|level
 expr_stmt|;
 name|info
 operator|->
@@ -1631,8 +1633,6 @@ operator|=
 name|shell
 operator|->
 name|x_src_dec
-operator|<<
-name|level
 expr_stmt|;
 name|info
 operator|->
@@ -1689,6 +1689,8 @@ operator|=
 name|shell
 operator|->
 name|y_dest_inc
+operator|>>
+name|level
 expr_stmt|;
 name|info
 operator|->
@@ -1697,8 +1699,6 @@ operator|=
 name|shell
 operator|->
 name|y_src_dec
-operator|<<
-name|level
 expr_stmt|;
 name|info
 operator|->
