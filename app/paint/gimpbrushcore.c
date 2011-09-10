@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon278418690103
+DECL|enum|__anon2bd2f4570103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -3460,21 +3460,6 @@ name|coords
 argument_list|)
 expr_stmt|;
 block|}
-name|core
-operator|->
-name|scale
-operator|=
-name|gimp_brush_clamp_scale
-argument_list|(
-name|core
-operator|->
-name|main_brush
-argument_list|,
-name|core
-operator|->
-name|scale
-argument_list|)
-expr_stmt|;
 name|gimp_brush_transform_size
 argument_list|(
 name|core

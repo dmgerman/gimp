@@ -582,20 +582,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gdouble
-name|gimp_brush_clamp_scale
-parameter_list|(
-name|GimpBrush
-modifier|*
-name|brush
-parameter_list|,
-name|gdouble
-name|scale
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|TempBuf
 modifier|*
 name|gimp_brush_get_mask
