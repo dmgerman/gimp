@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd2f4570103
+DECL|enum|__anon29db8ff40103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -2757,11 +2757,9 @@ name|gint
 operator|)
 name|floor
 argument_list|(
-name|paint_core
-operator|->
-name|last_paint
+name|last_coords
 operator|.
-name|x
+name|y
 argument_list|)
 operator|&&
 name|y
@@ -2771,9 +2769,7 @@ name|gint
 operator|)
 name|floor
 argument_list|(
-name|paint_core
-operator|->
-name|last_paint
+name|last_coords
 operator|.
 name|y
 argument_list|)
@@ -3239,6 +3235,14 @@ operator|&
 name|current_coords
 argument_list|)
 expr_stmt|;
+name|gimp_paint_core_set_last_coords
+argument_list|(
+name|paint_core
+argument_list|,
+operator|&
+name|current_coords
+argument_list|)
+expr_stmt|;
 name|paint_core
 operator|->
 name|distance
@@ -3348,14 +3352,6 @@ operator|+
 name|delta_velocity
 expr_stmt|;
 name|gimp_paint_core_set_current_coords
-argument_list|(
-name|paint_core
-argument_list|,
-operator|&
-name|current_coords
-argument_list|)
-expr_stmt|;
-name|gimp_paint_core_set_last_coords
 argument_list|(
 name|paint_core
 argument_list|,
