@@ -519,6 +519,12 @@ decl_stmt|;
 name|GimpCoords
 name|last_coords
 decl_stmt|;
+name|GimpCoords
+name|current_coords
+init|=
+operator|*
+name|coords
+decl_stmt|;
 name|gimp_paint_core_get_last_coords
 argument_list|(
 name|paint_core
@@ -533,7 +539,8 @@ name|paint_core
 argument_list|,
 name|paint_options
 argument_list|,
-name|coords
+operator|&
+name|current_coords
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -546,16 +553,16 @@ name|GIMP_PAINT_STATE_INIT
 case|:
 if|if
 condition|(
-name|coords
-operator|->
+name|current_coords
+operator|.
 name|x
 operator|==
 name|last_coords
 operator|.
 name|x
 operator|&&
-name|coords
-operator|->
+name|current_coords
+operator|.
 name|y
 operator|==
 name|last_coords
@@ -653,7 +660,8 @@ name|drawable
 argument_list|,
 name|paint_options
 argument_list|,
-name|coords
+operator|&
+name|current_coords
 argument_list|,
 name|time
 argument_list|)
@@ -1895,7 +1903,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e30cc00103
+DECL|enum|__anon2ba621160103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START
