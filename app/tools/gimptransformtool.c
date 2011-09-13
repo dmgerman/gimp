@@ -1979,6 +1979,12 @@ operator|!=
 name|tool
 operator|->
 name|display
+operator|||
+name|draw_tool
+operator|->
+name|item
+operator|==
+name|NULL
 condition|)
 block|{
 name|gimp_transform_tool_set_function
