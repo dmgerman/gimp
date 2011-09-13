@@ -3169,7 +3169,7 @@ name|text
 decl_stmt|;
 name|size
 operator|=
-name|g_format_size_for_display
+name|g_format_size
 argument_list|(
 name|thumb
 operator|->

@@ -1213,7 +1213,7 @@ name|str
 decl_stmt|;
 name|str
 operator|=
-name|g_format_size_for_display
+name|g_format_size
 argument_list|(
 name|gimp_object_get_memsize
 argument_list|(

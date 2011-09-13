@@ -1327,7 +1327,7 @@ condition|)
 block|{
 name|memsize
 operator|=
-name|g_format_size_for_display
+name|g_format_size
 argument_list|(
 name|size
 argument_list|)
@@ -1460,7 +1460,7 @@ else|else
 block|{
 name|memsize
 operator|=
-name|g_format_size_for_display
+name|g_format_size
 argument_list|(
 name|kilobytes
 operator|*

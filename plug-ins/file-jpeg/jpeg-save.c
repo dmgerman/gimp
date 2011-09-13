@@ -301,7 +301,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ca1d2b0108
+DECL|struct|__anon2bde74070108
 block|{
 DECL|member|cinfo
 name|struct
@@ -381,7 +381,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ca1d2b0208
+DECL|struct|__anon2bde74070208
 block|{
 DECL|member|run
 name|gboolean
@@ -890,7 +890,7 @@ argument_list|)
 expr_stmt|;
 name|size_text
 operator|=
-name|g_format_size_for_display
+name|g_format_size
 argument_list|(
 name|buf
 operator|.
@@ -6596,7 +6596,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ca1d2b0308
+DECL|struct|__anon2bde74070308
 block|{
 DECL|member|pub
 name|struct

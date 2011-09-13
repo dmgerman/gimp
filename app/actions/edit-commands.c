@@ -620,7 +620,7 @@ name|guisize
 expr_stmt|;
 name|size
 operator|=
-name|g_format_size_for_display
+name|g_format_size
 argument_list|(
 name|memsize
 argument_list|)

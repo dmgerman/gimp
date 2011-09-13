@@ -104,7 +104,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3bb15d0103
+DECL|enum|__anon28acc5ea0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3321,7 +3321,7 @@ directive|ifdef
 name|ENABLE_MEMSIZE_LABEL
 name|text
 operator|=
-name|g_format_size_for_display
+name|g_format_size
 argument_list|(
 name|gimp_template_get_initial_size
 argument_list|(

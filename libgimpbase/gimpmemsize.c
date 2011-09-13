@@ -145,7 +145,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_memsize_serialize:  * @memsize: memory size in bytes  *  * Creates a string representation of a given memory size. This string  * can be parsed by gimp_memsize_deserialize() and can thus be used in  * config files. It should not be displayed to the user. If you need a  * nice human-readable string please use g_format_size_for_display().  *  * Return value: A newly allocated string representation of @memsize.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_memsize_serialize:  * @memsize: memory size in bytes  *  * Creates a string representation of a given memory size. This string  * can be parsed by gimp_memsize_deserialize() and can thus be used in  * config files. It should not be displayed to the user. If you need a  * nice human-readable string please use g_format_size().  *  * Return value: A newly allocated string representation of @memsize.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -439,7 +439,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_memsize_to_string:  * @memsize: A memory size in bytes.  *  * This function is deprecated! Use g_format_size_for_display() instead.  *  * Return value: A newly allocated human-readable, translated string.  **/
+comment|/**  * gimp_memsize_to_string:  * @memsize: A memory size in bytes.  *  * This function is deprecated! Use g_format_size() instead.  *  * Return value: A newly allocated human-readable, translated string.  **/
 end_comment
 
 begin_function
@@ -453,7 +453,7 @@ name|memsize
 parameter_list|)
 block|{
 return|return
-name|g_format_size_for_display
+name|g_format_size
 argument_list|(
 name|memsize
 argument_list|)

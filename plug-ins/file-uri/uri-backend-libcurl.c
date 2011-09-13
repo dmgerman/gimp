@@ -328,7 +328,7 @@ condition|)
 block|{
 name|memsize
 operator|=
-name|g_format_size_for_display
+name|g_format_size
 argument_list|(
 name|dltotal
 argument_list|)
@@ -355,7 +355,7 @@ else|else
 block|{
 name|memsize
 operator|=
-name|g_format_size_for_display
+name|g_format_size
 argument_list|(
 name|dlnow
 argument_list|)
