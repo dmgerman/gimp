@@ -1196,12 +1196,6 @@ argument_list|(
 name|PixelRegionIterator
 argument_list|)
 expr_stmt|;
-name|PRI
-operator|->
-name|dirty_tiles
-operator|=
-literal|1
-expr_stmt|;
 name|va_start
 argument_list|(
 name|ap
@@ -1447,7 +1441,6 @@ operator|->
 name|tiles
 condition|)
 block|{
-comment|/* only set the dirty flag if PRH->dirty_tiles == TRUE */
 name|tile_release
 argument_list|(
 name|PRH
@@ -1461,10 +1454,6 @@ operator|->
 name|PR
 operator|->
 name|dirty
-operator|&&
-name|PRI
-operator|->
-name|dirty_tiles
 argument_list|)
 expr_stmt|;
 name|PRH

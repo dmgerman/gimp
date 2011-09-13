@@ -134,10 +134,6 @@ name|GSList
 modifier|*
 name|pixel_regions
 decl_stmt|;
-DECL|member|dirty_tiles
-name|gint
-name|dirty_tiles
-decl_stmt|;
 DECL|member|region_width
 name|gint
 name|region_width
