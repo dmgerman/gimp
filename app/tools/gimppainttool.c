@@ -1720,6 +1720,16 @@ operator|=
 operator|*
 name|coords
 expr_stmt|;
+name|gimp_paint_core_smooth_coords
+argument_list|(
+name|core
+argument_list|,
+name|paint_options
+argument_list|,
+operator|&
+name|curr_coords
+argument_list|)
+expr_stmt|;
 name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM

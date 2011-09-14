@@ -816,10 +816,6 @@ argument_list|(
 name|airbrush
 argument_list|)
 argument_list|,
-name|airbrush
-operator|->
-name|paint_options
-argument_list|,
 operator|&
 name|coords
 argument_list|)
