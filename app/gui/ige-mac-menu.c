@@ -274,7 +274,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a568e070108
+DECL|struct|__anon2a0217a10108
 block|{
 DECL|member|menu
 name|MenuRef
@@ -445,7 +445,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a568e070208
+DECL|struct|__anon2a0217a10208
 block|{
 DECL|member|menu
 name|MenuRef
@@ -1143,7 +1143,7 @@ name|key
 operator|->
 name|accel_mods
 operator|&
-name|GDK_CONTROL_MASK
+name|GDK_META_MASK
 operator|)
 condition|)
 block|{
