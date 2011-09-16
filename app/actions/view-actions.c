@@ -321,7 +321,7 @@ argument_list|,
 literal|"_Close"
 argument_list|)
 block|,
-literal|"<control>W"
+literal|"<primary>W"
 block|,
 name|NC_
 argument_list|(
@@ -350,7 +350,7 @@ argument_list|,
 literal|"_Fit Image in Window"
 argument_list|)
 block|,
-literal|"<shift><control>J"
+literal|"<primary><shift>J"
 block|,
 name|NC_
 argument_list|(
@@ -495,7 +495,7 @@ argument_list|,
 literal|"Shrink _Wrap"
 argument_list|)
 block|,
-literal|"<control>J"
+literal|"<primary>J"
 block|,
 name|NC_
 argument_list|(
@@ -596,7 +596,7 @@ argument_list|,
 literal|"Show _Selection"
 argument_list|)
 block|,
-literal|"<control>T"
+literal|"<primary>T"
 block|,
 name|NC_
 argument_list|(
@@ -658,7 +658,7 @@ argument_list|,
 literal|"Show _Guides"
 argument_list|)
 block|,
-literal|"<control><shift>T"
+literal|"<primary><shift>T"
 block|,
 name|NC_
 argument_list|(
@@ -906,7 +906,7 @@ argument_list|,
 literal|"Show R_ulers"
 argument_list|)
 block|,
-literal|"<control><shift>R"
+literal|"<primary><shift>R"
 block|,
 name|NC_
 argument_list|(

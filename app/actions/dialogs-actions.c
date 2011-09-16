@@ -125,7 +125,7 @@ argument_list|,
 literal|"Tool_box"
 argument_list|)
 block|,
-literal|"<control>B"
+literal|"<primary>B"
 block|,
 name|NULL
 comment|/* set in dialogs_actions_update() */
@@ -199,7 +199,7 @@ argument_list|,
 literal|"_Layers"
 argument_list|)
 block|,
-literal|"<control>L"
+literal|"<primary>L"
 block|,
 name|NC_
 argument_list|(
@@ -485,7 +485,7 @@ argument_list|,
 literal|"_Brushes"
 argument_list|)
 block|,
-literal|"<control><shift>B"
+literal|"<primary><shift>B"
 block|,
 name|NC_
 argument_list|(
@@ -589,7 +589,7 @@ argument_list|,
 literal|"P_atterns"
 argument_list|)
 block|,
-literal|"<control><shift>P"
+literal|"<primary><shift>P"
 block|,
 name|NC_
 argument_list|(
@@ -615,7 +615,7 @@ argument_list|,
 literal|"_Gradients"
 argument_list|)
 block|,
-literal|"<control>G"
+literal|"<primary>G"
 block|,
 name|NC_
 argument_list|(

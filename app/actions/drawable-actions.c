@@ -201,7 +201,7 @@ argument_list|,
 literal|"_Offset..."
 argument_list|)
 block|,
-literal|"<control><shift>O"
+literal|"<primary><shift>O"
 block|,
 name|NC_
 argument_list|(

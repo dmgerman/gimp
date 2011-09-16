@@ -616,7 +616,7 @@ argument_list|,
 literal|"Re_peat Last"
 argument_list|)
 block|,
-literal|"<control>F"
+literal|"<primary>F"
 block|,
 name|NC_
 argument_list|(
@@ -644,7 +644,7 @@ argument_list|,
 literal|"R_e-Show Last"
 argument_list|)
 block|,
-literal|"<control><shift>F"
+literal|"<primary><shift>F"
 block|,
 name|NC_
 argument_list|(

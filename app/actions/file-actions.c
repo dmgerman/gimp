@@ -310,7 +310,7 @@ argument_list|,
 literal|"Op_en as Layers..."
 argument_list|)
 block|,
-literal|"<control><alt>O"
+literal|"<primary><alt>O"
 block|,
 name|NC_
 argument_list|(
@@ -426,7 +426,7 @@ argument_list|,
 literal|"Close all"
 argument_list|)
 block|,
-literal|"<shift><control>W"
+literal|"<primary><shift>W"
 block|,
 name|NC_
 argument_list|(
@@ -455,7 +455,7 @@ argument_list|,
 literal|"_Quit"
 argument_list|)
 block|,
-literal|"<control>Q"
+literal|"<primary>Q"
 block|,
 name|NC_
 argument_list|(
@@ -496,7 +496,7 @@ argument_list|,
 literal|"_Save"
 argument_list|)
 block|,
-literal|"<control>S"
+literal|"<primary>S"
 block|,
 name|NC_
 argument_list|(
@@ -524,7 +524,7 @@ argument_list|,
 literal|"Save _As..."
 argument_list|)
 block|,
-literal|"<control><shift>S"
+literal|"<primary><shift>S"
 block|,
 name|NC_
 argument_list|(
@@ -608,7 +608,7 @@ argument_list|,
 literal|"Export to"
 argument_list|)
 block|,
-literal|"<control>E"
+literal|"<primary>E"
 block|,
 name|NC_
 argument_list|(
@@ -664,7 +664,7 @@ argument_list|,
 literal|"Export..."
 argument_list|)
 block|,
-literal|"<control><shift>E"
+literal|"<primary><shift>E"
 block|,
 name|NC_
 argument_list|(
@@ -853,7 +853,7 @@ name|accelerator
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"<control>%d"
+literal|"<primary>%d"
 argument_list|,
 name|i
 operator|+
@@ -874,7 +874,7 @@ index|]
 operator|.
 name|accelerator
 operator|=
-literal|"<control>0"
+literal|"<primary>0"
 expr_stmt|;
 else|else
 name|entries

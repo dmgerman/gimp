@@ -1820,7 +1820,7 @@ name|GIMP_STOCK_TOOL_OPTIONS
 block|,
 literal|"Decrease Value 1 More"
 block|,
-literal|"<control>less"
+literal|"<primary>less"
 block|,
 name|NULL
 block|,
@@ -1838,7 +1838,7 @@ name|GIMP_STOCK_TOOL_OPTIONS
 block|,
 literal|"Increase Value 1 More"
 block|,
-literal|"<control>greater"
+literal|"<primary>greater"
 block|,
 name|NULL
 block|,

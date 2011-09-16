@@ -285,7 +285,7 @@ argument_list|,
 literal|"_New..."
 argument_list|)
 block|,
-literal|"<control>N"
+literal|"<primary>N"
 block|,
 name|NC_
 argument_list|(
@@ -488,7 +488,7 @@ argument_list|,
 literal|"_Duplicate"
 argument_list|)
 block|,
-literal|"<control>D"
+literal|"<primary>D"
 block|,
 name|NC_
 argument_list|(
@@ -517,7 +517,7 @@ argument_list|,
 literal|"Merge Visible _Layers..."
 argument_list|)
 block|,
-literal|"<control>M"
+literal|"<primary>M"
 block|,
 name|NC_
 argument_list|(

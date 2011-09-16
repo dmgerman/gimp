@@ -276,7 +276,7 @@ argument_list|,
 literal|"_Undo"
 argument_list|)
 block|,
-literal|"<control>Z"
+literal|"<primary>Z"
 block|,
 name|NC_
 argument_list|(
@@ -305,7 +305,7 @@ argument_list|,
 literal|"_Redo"
 argument_list|)
 block|,
-literal|"<control>Y"
+literal|"<primary>Y"
 block|,
 name|NC_
 argument_list|(
@@ -334,7 +334,7 @@ argument_list|,
 literal|"Strong Undo"
 argument_list|)
 block|,
-literal|"<control><shift>Z"
+literal|"<primary><shift>Z"
 block|,
 name|NC_
 argument_list|(
@@ -363,7 +363,7 @@ argument_list|,
 literal|"Strong Redo"
 argument_list|)
 block|,
-literal|"<control><shift>Y"
+literal|"<primary><shift>Y"
 block|,
 name|NC_
 argument_list|(
@@ -450,7 +450,7 @@ argument_list|,
 literal|"Cu_t"
 argument_list|)
 block|,
-literal|"<control>X"
+literal|"<primary>X"
 block|,
 name|NC_
 argument_list|(
@@ -479,7 +479,7 @@ argument_list|,
 literal|"_Copy"
 argument_list|)
 block|,
-literal|"<control>C"
+literal|"<primary>C"
 block|,
 name|NC_
 argument_list|(
@@ -509,7 +509,7 @@ argument_list|,
 literal|"Copy _Visible"
 argument_list|)
 block|,
-literal|"<control><shift>C"
+literal|"<primary><shift>C"
 block|,
 name|NC_
 argument_list|(
@@ -538,7 +538,7 @@ argument_list|,
 literal|"_Paste"
 argument_list|)
 block|,
-literal|"<control>V"
+literal|"<primary>V"
 block|,
 name|NC_
 argument_list|(
@@ -596,7 +596,7 @@ argument_list|,
 literal|"From _Clipboard"
 argument_list|)
 block|,
-literal|"<control><shift>V"
+literal|"<primary><shift>V"
 block|,
 name|NC_
 argument_list|(
@@ -841,7 +841,7 @@ argument_list|,
 literal|"Fill with _FG Color"
 argument_list|)
 block|,
-literal|"<control>comma"
+literal|"<primary>comma"
 block|,
 name|NC_
 argument_list|(
@@ -869,7 +869,7 @@ argument_list|,
 literal|"Fill with B_G Color"
 argument_list|)
 block|,
-literal|"<control>period"
+literal|"<primary>period"
 block|,
 name|NC_
 argument_list|(
@@ -897,7 +897,7 @@ argument_list|,
 literal|"Fill _with Pattern"
 argument_list|)
 block|,
-literal|"<control>semicolon"
+literal|"<primary>semicolon"
 block|,
 name|NC_
 argument_list|(

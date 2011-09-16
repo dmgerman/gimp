@@ -315,7 +315,7 @@ argument_list|,
 literal|"_New Layer..."
 argument_list|)
 block|,
-literal|"<control><shift>N"
+literal|"<primary><shift>N"
 block|,
 name|NC_
 argument_list|(
@@ -431,7 +431,7 @@ argument_list|,
 literal|"D_uplicate Layer"
 argument_list|)
 block|,
-literal|"<control><shift>D"
+literal|"<primary><shift>D"
 block|,
 name|NC_
 argument_list|(
@@ -605,7 +605,7 @@ argument_list|,
 literal|"_Anchor Layer"
 argument_list|)
 block|,
-literal|"<control>H"
+literal|"<primary>H"
 block|,
 name|NC_
 argument_list|(

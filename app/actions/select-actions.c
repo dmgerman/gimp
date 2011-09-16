@@ -142,7 +142,7 @@ argument_list|,
 literal|"_All"
 argument_list|)
 block|,
-literal|"<control>A"
+literal|"<primary>A"
 block|,
 name|NC_
 argument_list|(
@@ -171,7 +171,7 @@ argument_list|,
 literal|"_None"
 argument_list|)
 block|,
-literal|"<control><shift>A"
+literal|"<primary><shift>A"
 block|,
 name|NC_
 argument_list|(
@@ -200,7 +200,7 @@ argument_list|,
 literal|"_Invert"
 argument_list|)
 block|,
-literal|"<control>I"
+literal|"<primary>I"
 block|,
 name|NC_
 argument_list|(
@@ -229,7 +229,7 @@ argument_list|,
 literal|"_Float"
 argument_list|)
 block|,
-literal|"<control><shift>L"
+literal|"<primary><shift>L"
 block|,
 name|NC_
 argument_list|(
