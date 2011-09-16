@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpfont-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimptext.h"
 end_include
 
@@ -279,7 +273,7 @@ argument_list|)
 expr_stmt|;
 name|font
 operator|=
-name|gimp_font_util_pango_font_description_to_string
+name|pango_font_description_to_string
 argument_list|(
 name|desc
 argument_list|)
