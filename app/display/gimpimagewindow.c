@@ -273,7 +273,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae66e860103
+DECL|enum|__anon2bf8a37c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -386,7 +386,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae66e860208
+DECL|struct|__anon2bf8a37c0208
 block|{
 DECL|member|window
 name|GimpImageWindow
@@ -4756,6 +4756,12 @@ argument_list|(
 name|window
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|private
+operator|->
+name|menubar
+condition|)
 name|gtk_widget_set_visible
 argument_list|(
 name|private
@@ -4799,6 +4805,12 @@ argument_list|(
 name|window
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|private
+operator|->
+name|menubar
+condition|)
 return|return
 name|gtk_widget_get_visible
 argument_list|(
@@ -4806,6 +4818,9 @@ name|private
 operator|->
 name|menubar
 argument_list|)
+return|;
+return|return
+name|FALSE
 return|;
 block|}
 end_function
