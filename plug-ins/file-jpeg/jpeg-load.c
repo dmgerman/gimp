@@ -48,7 +48,7 @@ end_include
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 end_ifdef
 
 begin_include
@@ -63,7 +63,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* HAVE_EXIF */
+comment|/* HAVE_LIBEXIF */
 end_comment
 
 begin_ifdef
@@ -150,7 +150,7 @@ end_function_decl
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 end_ifdef
 
 begin_function_decl
@@ -888,7 +888,7 @@ literal|0
 decl_stmt|;
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 name|ExifData
 modifier|*
 name|exif_data
@@ -1062,7 +1062,7 @@ endif|#
 directive|endif
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 if|if
 condition|(
 operator|!
@@ -1094,7 +1094,7 @@ block|}
 block|}
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 if|if
 condition|(
 operator|!
@@ -1180,7 +1180,7 @@ expr_stmt|;
 block|}
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 comment|/* if we found any EXIF block, then attach the metadata to the image */
 if|if
 condition|(
@@ -1696,7 +1696,7 @@ argument_list|)
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 name|jpeg_exif_rotate_query
 argument_list|(
 name|image_ID
@@ -1851,7 +1851,7 @@ end_function
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 end_ifdef
 
 begin_function
@@ -1985,7 +1985,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* HAVE_EXIF */
+comment|/* HAVE_LIBEXIF */
 end_comment
 
 begin_comment
@@ -2076,13 +2076,13 @@ end_function
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 end_ifdef
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b4f3390108
+DECL|struct|__anon289029bd0108
 block|{
 DECL|member|pub
 name|struct
@@ -3291,7 +3291,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* HAVE_EXIF */
+comment|/* HAVE_LIBEXIF */
 end_comment
 
 begin_function

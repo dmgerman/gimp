@@ -52,7 +52,7 @@ end_include
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 end_ifdef
 
 begin_include
@@ -67,7 +67,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* HAVE_EXIF */
+comment|/* HAVE_LIBEXIF */
 end_comment
 
 begin_ifdef
@@ -5508,7 +5508,7 @@ block|{
 comment|/* Load EXIF data block */
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 name|ExifData
 modifier|*
 name|exif_data
@@ -5551,7 +5551,7 @@ name|name
 decl_stmt|;
 endif|#
 directive|endif
-comment|/* HAVE_EXIF */
+comment|/* HAVE_LIBEXIF */
 name|GimpParasite
 modifier|*
 name|parasite
@@ -5620,7 +5620,7 @@ return|;
 block|}
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 comment|/* Add JPEG header& trailer to the TIFF Exif data held in PSD      resource to allow us to use libexif to serialize the data      in the same manner as the JPEG load.   */
 name|jpeg_len
 operator|=
@@ -6039,7 +6039,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-comment|/* HAVE_EXIF */
+comment|/* HAVE_LIBEXIF */
 name|g_free
 argument_list|(
 name|res_data

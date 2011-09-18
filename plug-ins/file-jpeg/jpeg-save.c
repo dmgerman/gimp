@@ -83,7 +83,7 @@ end_include
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 end_ifdef
 
 begin_include
@@ -98,7 +98,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* HAVE_EXIF */
+comment|/* HAVE_LIBEXIF */
 end_comment
 
 begin_include
@@ -284,7 +284,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a04cf30108
+DECL|struct|__anon2b8db32e0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -364,7 +364,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a04cf30208
+DECL|struct|__anon2b8db32e0208
 block|{
 DECL|member|run
 name|gboolean
@@ -559,7 +559,7 @@ end_function_decl
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 end_ifdef
 
 begin_function_decl
@@ -590,7 +590,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* HAVE_EXIF */
+comment|/* HAVE_LIBEXIF */
 end_comment
 
 begin_decl_stmt
@@ -2140,7 +2140,7 @@ argument_list|)
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 comment|/* Create the thumbnail JPEG in a buffer */
 if|if
 condition|(
@@ -2432,7 +2432,7 @@ expr_stmt|;
 block|}
 endif|#
 directive|endif
-comment|/* HAVE_EXIF */
+comment|/* HAVE_LIBEXIF */
 comment|/* Step 4.1: Write the comment out - pw */
 if|if
 condition|(
@@ -4447,7 +4447,7 @@ argument_list|)
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 name|pg
 operator|.
 name|save_exif
@@ -4637,7 +4637,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-comment|/* HAVE_EXIF */
+comment|/* HAVE_LIBEXIF */
 comment|/* XMP metadata */
 name|pg
 operator|.
@@ -5814,7 +5814,7 @@ name|DEFAULT_USE_ORIG_QUALITY
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 if|if
 condition|(
 name|exif_data
@@ -5833,7 +5833,7 @@ name|TRUE
 expr_stmt|;
 endif|#
 directive|endif
-comment|/* HAVE_EXIF */
+comment|/* HAVE_LIBEXIF */
 name|parasite
 operator|=
 name|gimp_get_parasite
@@ -6126,7 +6126,7 @@ argument_list|)
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 name|SET_ACTIVE_BTTN
 argument_list|(
 name|save_exif
@@ -6532,7 +6532,7 @@ end_function
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 end_ifdef
 
 begin_decl_stmt
@@ -6570,7 +6570,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a04cf30308
+DECL|struct|__anon2b8db32e0308
 block|{
 DECL|member|pub
 name|struct
@@ -7449,7 +7449,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* HAVE_EXIF */
+comment|/* HAVE_LIBEXIF */
 end_comment
 
 end_unit

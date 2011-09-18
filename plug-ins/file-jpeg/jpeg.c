@@ -42,7 +42,7 @@ end_include
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 end_ifdef
 
 begin_include
@@ -57,7 +57,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* HAVE_EXIF */
+comment|/* HAVE_LIBEXIF */
 end_comment
 
 begin_include
@@ -233,7 +233,7 @@ end_decl_stmt
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 end_ifdef
 
 begin_decl_stmt
@@ -338,7 +338,7 @@ block|}
 decl_stmt|;
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 specifier|static
 specifier|const
 name|GimpParamDef
@@ -397,7 +397,7 @@ block|}
 decl_stmt|;
 endif|#
 directive|endif
-comment|/* HAVE_EXIF */
+comment|/* HAVE_LIBEXIF */
 specifier|static
 specifier|const
 name|GimpParamDef
@@ -576,7 +576,7 @@ argument_list|)
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 name|gimp_install_procedure
 argument_list|(
 name|LOAD_THUMB_PROC
@@ -621,7 +621,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-comment|/* HAVE_EXIF */
+comment|/* HAVE_LIBEXIF */
 name|gimp_install_procedure
 argument_list|(
 name|SAVE_PROC
@@ -921,7 +921,7 @@ block|}
 block|}
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 elseif|else
 if|if
 condition|(
@@ -1074,7 +1074,7 @@ block|}
 block|}
 endif|#
 directive|endif
-comment|/* HAVE_EXIF */
+comment|/* HAVE_LIBEXIF */
 elseif|else
 if|if
 condition|(
@@ -1300,7 +1300,7 @@ expr_stmt|;
 block|}
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 name|exif_data
 operator|=
 name|gimp_metadata_generate_exif
@@ -1321,7 +1321,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-comment|/* HAVE_EXIF */
+comment|/* HAVE_LIBEXIF */
 name|load_save_defaults
 argument_list|()
 expr_stmt|;

@@ -40,7 +40,7 @@ end_include
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 end_ifdef
 
 begin_include
@@ -55,7 +55,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* HAVE_EXIF */
+comment|/* HAVE_LIBEXIF */
 end_comment
 
 begin_include

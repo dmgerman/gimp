@@ -101,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3e66a60103
+DECL|enum|__anon2959c9360103
 block|{
 DECL|enumerator|JPEG_SUBSAMPLING_2x2_1x1_1x1
 name|JPEG_SUBSAMPLING_2x2_1x1_1x1
@@ -255,7 +255,7 @@ end_function_decl
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|HAVE_EXIF
+name|HAVE_LIBEXIF
 end_ifdef
 
 begin_decl_stmt
@@ -365,7 +365,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* HAVE_EXIF */
+comment|/* HAVE_LIBEXIF */
 end_comment
 
 end_unit
