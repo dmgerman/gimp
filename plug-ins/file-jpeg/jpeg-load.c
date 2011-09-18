@@ -337,11 +337,16 @@ name|start
 decl_stmt|,
 name|end
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|HAVE_LIBEXIF
 name|gint
 name|orientation
 init|=
 literal|0
 decl_stmt|;
+endif|#
+directive|endif
 ifdef|#
 directive|ifdef
 name|HAVE_LCMS
@@ -2099,7 +2104,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275a8f0c0108
+DECL|struct|__anon2a1805e20108
 block|{
 DECL|member|pub
 name|struct
