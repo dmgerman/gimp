@@ -3,6 +3,19 @@ begin_comment
 comment|/* jpeg-icc.h  *  * This code was originally copied from the jpegicc tool as found in  * the lcms source code. This code comes with the following copyright  * notice:  *  * Little cms  * Copyright (C) 1998-2004 Marti Maria  *  *  Permission is hereby granted, free of charge, to any person  *  obtaining a copy of this software and associated documentation  *  files (the "Software"), to deal in the Software without  *  restriction, including without limitation the rights to use, copy,  *  modify, merge, publish, distribute, sublicense, and/or sell copies  *  of the Software, and to permit persons to whom the Software is  *  furnished to do so, subject to the following conditions:  *  * The above copyright notice and this permission notice shall be  *  included in all copies or substantial portions of the Software.  */
 end_comment
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|__JPEG_ICC_H__
+end_ifndef
+
+begin_define
+DECL|macro|__JPEG_ICC_H__
+define|#
+directive|define
+name|__JPEG_ICC_H__
+end_define
+
 begin_function_decl
 name|void
 name|jpeg_icc_write_profile
@@ -43,6 +56,15 @@ name|icc_data_len
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* __JPEG_ICC_H__ */
+end_comment
 
 end_unit
 

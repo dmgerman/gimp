@@ -7,6 +7,19 @@ begin_comment
 comment|/*  * EXIF-handling code for the metadata library.  */
 end_comment
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|__GIMP_EXIF_H__
+end_ifndef
+
+begin_define
+DECL|macro|__GIMP_EXIF_H__
+define|#
+directive|define
+name|__GIMP_EXIF_H__
+end_define
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -85,6 +98,15 @@ end_endif
 
 begin_comment
 comment|/* HAVE_LIBEXIF */
+end_comment
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* __GIMP_EXIF_H__ */
 end_comment
 
 end_unit
