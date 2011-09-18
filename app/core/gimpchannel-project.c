@@ -206,10 +206,10 @@ else|else
 block|{
 name|initial_region
 argument_list|(
-name|projPR
-argument_list|,
 operator|&
 name|srcPR
+argument_list|,
+name|projPR
 argument_list|,
 name|NULL
 argument_list|,
