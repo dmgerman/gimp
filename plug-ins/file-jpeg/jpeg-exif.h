@@ -16,12 +16,6 @@ directive|define
 name|__JPEG_EXIF_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_LIBEXIF
-end_ifdef
-
 begin_decl_stmt
 specifier|extern
 name|ExifData
@@ -122,15 +116,6 @@ name|orientation
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* HAVE_LIBEXIF */
-end_comment
 
 begin_endif
 endif|#

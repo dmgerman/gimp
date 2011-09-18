@@ -43,12 +43,6 @@ directive|include
 file|<jerror.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_LIBEXIF
-end_ifdef
-
 begin_include
 include|#
 directive|include
@@ -1846,15 +1840,6 @@ operator|)
 return|;
 block|}
 end_function
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* HAVE_LIBEXIF */
-end_comment
 
 end_unit
 

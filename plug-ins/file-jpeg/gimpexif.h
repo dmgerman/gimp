@@ -20,12 +20,6 @@ directive|define
 name|__GIMP_EXIF_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_LIBEXIF
-end_ifdef
-
 begin_function_decl
 name|void
 name|gimp_metadata_store_exif
@@ -90,15 +84,6 @@ name|tag
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* HAVE_LIBEXIF */
-end_comment
 
 begin_endif
 endif|#
