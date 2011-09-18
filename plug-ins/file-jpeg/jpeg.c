@@ -114,16 +114,16 @@ directive|include
 file|"jpeg-exif.h"
 end_include
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_include
 include|#
 directive|include
 file|"gimpexif.h"
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/* Declare local functions.  */

@@ -104,12 +104,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpexif.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"jpeg.h"
 end_include
 
@@ -141,6 +135,12 @@ begin_include
 include|#
 directive|include
 file|"jpeg-exif.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpexif.h"
 end_include
 
 begin_endif
@@ -2104,7 +2104,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1805e20108
+DECL|struct|__anon2b73aa9d0108
 block|{
 DECL|member|pub
 name|struct
