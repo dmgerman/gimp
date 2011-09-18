@@ -149,6 +149,23 @@ directive|include
 file|"jpeg-settings.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_LIBEXIF
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|"jpeg-exif.h"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_define
 DECL|macro|SCALE_WIDTH
 define|#
@@ -284,7 +301,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8db32e0108
+DECL|struct|__anon28fe2f230108
 block|{
 DECL|member|cinfo
 name|struct
@@ -364,7 +381,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8db32e0208
+DECL|struct|__anon28fe2f230208
 block|{
 DECL|member|run
 name|gboolean
@@ -6570,7 +6587,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8db32e0308
+DECL|struct|__anon28fe2f230308
 block|{
 DECL|member|pub
 name|struct

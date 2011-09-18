@@ -131,6 +131,23 @@ directive|include
 file|"jpeg-load.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_LIBEXIF
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|"jpeg-exif.h"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_function_decl
 specifier|static
 name|void
@@ -2082,7 +2099,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289029bd0108
+DECL|struct|__anon275a8f0c0108
 block|{
 DECL|member|pub
 name|struct

@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"jpeg-exif.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpexif.h"
 end_include
 

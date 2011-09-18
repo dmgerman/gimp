@@ -102,6 +102,23 @@ directive|include
 file|"jpeg-save.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_LIBEXIF
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|"jpeg-exif.h"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
