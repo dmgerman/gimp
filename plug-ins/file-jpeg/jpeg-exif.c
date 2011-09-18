@@ -67,14 +67,6 @@ directive|include
 file|<libexif/exif-utils.h>
 end_include
 
-begin_define
-DECL|macro|EXIF_HEADER_SIZE
-define|#
-directive|define
-name|EXIF_HEADER_SIZE
-value|8
-end_define
-
 begin_include
 include|#
 directive|include
