@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a224e260103
+DECL|enum|__anon2b45a3440103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -3086,16 +3086,14 @@ modifier|*
 name|grid_view
 parameter_list|)
 block|{
-switch|switch
+if|if
 condition|(
+name|gimp_button_event_triggers_context_menu
+argument_list|(
 name|bevent
-operator|->
-name|button
+argument_list|)
 condition|)
 block|{
-case|case
-literal|3
-case|:
 name|gimp_editor_popup_menu
 argument_list|(
 name|GIMP_EDITOR
@@ -3108,9 +3106,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-break|break;
-default|default:
-break|break;
 block|}
 return|return
 name|TRUE

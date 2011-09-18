@@ -1657,7 +1657,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2908c9c30103
+DECL|enum|__anon2b21382e0103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX
@@ -2242,17 +2242,10 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|gimp_button_event_triggers_context_menu
+argument_list|(
 name|event
-operator|->
-name|button
-operator|==
-literal|3
-operator|&&
-name|event
-operator|->
-name|type
-operator|==
-name|GDK_BUTTON_PRESS
+argument_list|)
 condition|)
 return|return
 name|remap_popup_menu

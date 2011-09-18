@@ -122,7 +122,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae7ad600108
+DECL|struct|__anon2b4b0cbc0108
 block|{
 DECL|member|width
 name|gint
@@ -152,7 +152,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae7ad600203
+DECL|enum|__anon2b4b0cbc0203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -4512,17 +4512,10 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|gimp_button_event_triggers_context_menu
+argument_list|(
 name|event
-operator|->
-name|button
-operator|==
-literal|3
-operator|&&
-name|event
-operator|->
-name|type
-operator|==
-name|GDK_BUTTON_PRESS
+argument_list|)
 condition|)
 return|return
 name|view_popup_menu

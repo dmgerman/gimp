@@ -351,11 +351,10 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|gimp_button_event_triggers_context_menu
+argument_list|(
 name|bevent
-operator|->
-name|button
-operator|==
-literal|3
+argument_list|)
 condition|)
 block|{
 name|GimpColorButton

@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display-types.h"
 end_include
 
@@ -930,11 +936,10 @@ name|event
 decl_stmt|;
 if|if
 condition|(
+name|gimp_button_event_triggers_context_menu
+argument_list|(
 name|bevent
-operator|->
-name|button
-operator|==
-literal|3
+argument_list|)
 condition|)
 block|{
 name|gimp_ui_manager_ui_popup
@@ -1900,6 +1905,7 @@ name|y
 argument_list|)
 expr_stmt|;
 break|break;
+comment|/* FIXME: use gimp_button_event_triggers_context_menu() */
 case|case
 literal|3
 case|:
