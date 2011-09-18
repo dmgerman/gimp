@@ -13,14 +13,6 @@ directive|ifdef
 name|HAVE_LIBEXIF
 end_ifdef
 
-begin_define
-DECL|macro|EXIF_HEADER_SIZE
-define|#
-directive|define
-name|EXIF_HEADER_SIZE
-value|8
-end_define
-
 begin_function_decl
 name|void
 name|gimp_metadata_store_exif
