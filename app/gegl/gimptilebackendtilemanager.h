@@ -153,7 +153,9 @@ name|GeglTileBackend
 modifier|*
 name|gimp_tile_backend_tile_manager_new
 parameter_list|(
-name|void
+name|TileManager
+modifier|*
+name|tm
 parameter_list|)
 function_decl|;
 end_function_decl
