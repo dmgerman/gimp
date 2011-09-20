@@ -677,6 +677,8 @@ name|gimp_vector_options_gui
 argument_list|,
 name|GIMP_PAINT_OPTIONS_CONTEXT_MASK
 operator||
+name|GIMP_CONTEXT_PATTERN_MASK
+operator||
 name|GIMP_CONTEXT_GRADIENT_MASK
 argument_list|,
 comment|/* for stroking */
