@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4304060103
+DECL|enum|__anon2c424e380103
 block|{
 DECL|enumerator|ALIGN_BUTTON_CLICKED
 name|ALIGN_BUTTON_CLICKED
@@ -78,7 +78,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4304060203
+DECL|enum|__anon2c424e380203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -776,10 +776,7 @@ name|gimp_help_set_help_data
 argument_list|(
 name|button
 argument_list|,
-name|_
-argument_list|(
-literal|"Align left edge of target"
-argument_list|)
+name|tooltip
 argument_list|,
 name|NULL
 argument_list|)
