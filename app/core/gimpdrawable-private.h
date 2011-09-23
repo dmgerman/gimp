@@ -48,6 +48,11 @@ name|GeglNode
 modifier|*
 name|tile_source_node
 decl_stmt|;
+DECL|member|floating_selection
+name|GimpLayer
+modifier|*
+name|floating_selection
+decl_stmt|;
 DECL|member|fs_crop_node
 name|GeglNode
 modifier|*

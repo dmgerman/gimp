@@ -352,7 +352,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c069fc60103
+DECL|enum|__anon2a09a7010103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -446,7 +446,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c069fc60203
+DECL|enum|__anon2a09a7010203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -14397,7 +14397,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_has_floating_sel
+name|gimp_drawable_get_floating_sel
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -14445,9 +14445,12 @@ name|gimp_image_remove_layer
 argument_list|(
 name|image
 argument_list|,
-name|gimp_image_get_floating_selection
+name|gimp_drawable_get_floating_sel
 argument_list|(
-name|image
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
 argument_list|)
 argument_list|,
 name|TRUE
@@ -14493,8 +14496,6 @@ name|gimp_layer_get_floating_sel_drawable
 argument_list|(
 name|layer
 argument_list|)
-argument_list|,
-name|layer
 argument_list|)
 expr_stmt|;
 block|}
@@ -15318,7 +15319,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_has_floating_sel
+name|gimp_drawable_get_floating_sel
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -15366,9 +15367,12 @@ name|gimp_image_remove_layer
 argument_list|(
 name|image
 argument_list|,
-name|gimp_image_get_floating_selection
+name|gimp_drawable_get_floating_sel
 argument_list|(
-name|image
+name|GIMP_DRAWABLE
+argument_list|(
+name|channel
+argument_list|)
 argument_list|)
 argument_list|,
 name|TRUE

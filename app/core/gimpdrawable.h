@@ -1072,8 +1072,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
-name|gimp_drawable_has_floating_sel
+specifier|const
+name|guchar
+modifier|*
+name|gimp_drawable_get_colormap
 parameter_list|(
 specifier|const
 name|GimpDrawable
@@ -1084,10 +1086,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|const
-name|guchar
+name|GimpLayer
 modifier|*
-name|gimp_drawable_get_colormap
+name|gimp_drawable_get_floating_sel
 parameter_list|(
 specifier|const
 name|GimpDrawable
@@ -1119,10 +1120,6 @@ parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
-parameter_list|,
-name|GimpLayer
-modifier|*
-name|floating_sel
 parameter_list|)
 function_decl|;
 end_function_decl

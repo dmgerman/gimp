@@ -487,8 +487,6 @@ name|gimp_layer_get_floating_sel_drawable
 argument_list|(
 name|layer
 argument_list|)
-argument_list|,
-name|layer
 argument_list|)
 expr_stmt|;
 name|gimp_layer_set_floating_sel_drawable
