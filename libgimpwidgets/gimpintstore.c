@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ce11220103
+DECL|enum|__anon27f167050103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -59,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ce11220208
+DECL|struct|__anon27f167050208
 block|{
 DECL|member|user_data_type
 name|GType
@@ -808,6 +808,7 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
+comment|/* This string appears in an empty menu as in                        * "nothing selected and nothing to select"                        */
 name|GIMP_INT_STORE_LABEL
 argument_list|,
 operator|(
