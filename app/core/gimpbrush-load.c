@@ -754,9 +754,19 @@ name|GIMP_DATA_ERROR
 argument_list|,
 name|GIMP_DATA_ERROR_READ
 argument_list|,
-name|_
+name|ngettext
 argument_list|(
+literal|"Could not read %d byte from '%s': %s"
+argument_list|,
 literal|"Could not read %d bytes from '%s': %s"
+argument_list|,
+operator|(
+name|gint
+operator|)
+sizeof|sizeof
+argument_list|(
+name|header
+argument_list|)
 argument_list|)
 argument_list|,
 operator|(
@@ -1399,7 +1409,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon287cf2f3010a
+DECL|union|__anon2b9cd3d1010a
 block|{
 DECL|member|u
 name|guint16

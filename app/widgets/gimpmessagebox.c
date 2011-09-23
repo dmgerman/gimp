@@ -55,7 +55,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdc61110103
+DECL|enum|__anon2ab32d520103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1700,37 +1700,24 @@ operator|->
 name|repeat
 operator|++
 expr_stmt|;
-if|if
-condition|(
-name|box
-operator|->
-name|repeat
-operator|>
-literal|1
-condition|)
 name|message
 operator|=
 name|g_strdup_printf
 argument_list|(
-name|_
+name|ngettext
 argument_list|(
+literal|"Message repeated once."
+argument_list|,
 literal|"Message repeated %d times."
-argument_list|)
 argument_list|,
 name|box
 operator|->
 name|repeat
 argument_list|)
-expr_stmt|;
-else|else
-name|message
-operator|=
-name|g_strdup
-argument_list|(
-name|_
-argument_list|(
-literal|"Message repeated once."
-argument_list|)
+argument_list|,
+name|box
+operator|->
+name|repeat
 argument_list|)
 expr_stmt|;
 if|if
