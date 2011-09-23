@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abb65c90103
+DECL|enum|__anon2b179f930103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -201,7 +201,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abb65c90203
+DECL|enum|__anon2b179f930203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1851,6 +1851,16 @@ argument_list|(
 name|layer
 argument_list|)
 decl_stmt|;
+comment|/* only detach if this is actually the drawable's fs because the        * layer might be on the undo stack and not attached to anyhing        */
+if|if
+condition|(
+name|gimp_drawable_get_floating_sel
+argument_list|(
+name|fs_drawable
+argument_list|)
+operator|==
+name|layer
+condition|)
 name|gimp_drawable_detach_floating_sel
 argument_list|(
 name|fs_drawable
