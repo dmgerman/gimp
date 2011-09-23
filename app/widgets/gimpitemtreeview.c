@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2966929a0103
+DECL|enum|__anon2c5a8e7a0103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -2838,9 +2838,9 @@ name|priv
 operator|->
 name|options_box
 operator|=
-name|gtk_box_new
+name|gtk_vbox_new
 argument_list|(
-name|GTK_ORIENTATION_VERTICAL
+name|FALSE
 argument_list|,
 name|content_spacing
 argument_list|)
@@ -2945,9 +2945,9 @@ name|FALSE
 decl_stmt|;
 name|hbox
 operator|=
-name|gtk_box_new
+name|gtk_hbox_new
 argument_list|(
-name|GTK_ORIENTATION_HORIZONTAL
+name|FALSE
 argument_list|,
 name|button_spacing
 argument_list|)
@@ -3175,9 +3175,9 @@ name|priv
 operator|->
 name|lock_box
 operator|=
-name|gtk_box_new
+name|gtk_hbox_new
 argument_list|(
-name|GTK_ORIENTATION_HORIZONTAL
+name|FALSE
 argument_list|,
 name|button_spacing
 argument_list|)
