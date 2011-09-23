@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1a7b790103
+DECL|enum|__anon2abb65c90103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -201,7 +201,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1a7b790203
+DECL|enum|__anon2abb65c90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3593,6 +3593,11 @@ name|GeglNode
 modifier|*
 name|mode_node
 decl_stmt|;
+name|gboolean
+name|source_node_hijacked
+init|=
+name|FALSE
+decl_stmt|;
 name|node
 operator|=
 name|GIMP_ITEM_CLASS
@@ -3612,6 +3617,23 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+comment|/* if the source node already has a parent, we are a floating    * selection and the source node has been hijacked by the fs'    * drawable    */
+if|if
+condition|(
+name|gegl_node_get_parent
+argument_list|(
+name|source
+argument_list|)
+condition|)
+name|source_node_hijacked
+operator|=
+name|TRUE
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|source_node_hijacked
+condition|)
 name|gegl_node_add_child
 argument_list|(
 name|node
@@ -3649,6 +3671,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|source_node_hijacked
+condition|)
 name|gegl_node_connect_to
 argument_list|(
 name|source
