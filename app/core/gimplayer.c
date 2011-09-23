@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2778e3390103
+DECL|enum|__anon2b1a7b790103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -201,7 +201,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2778e3390203
+DECL|enum|__anon2b1a7b790203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1834,6 +1834,29 @@ argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_layer_is_floating_sel
+argument_list|(
+name|layer
+argument_list|)
+condition|)
+block|{
+name|GimpDrawable
+modifier|*
+name|fs_drawable
+init|=
+name|gimp_layer_get_floating_sel_drawable
+argument_list|(
+name|layer
+argument_list|)
+decl_stmt|;
+name|gimp_drawable_detach_floating_sel
+argument_list|(
+name|fs_drawable
+argument_list|)
+expr_stmt|;
+block|}
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
