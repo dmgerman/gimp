@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b5643c0103
+DECL|enum|__anon293f28aa0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -939,14 +939,12 @@ argument_list|,
 name|editor
 argument_list|)
 expr_stmt|;
-comment|/* Set insensitive because revert buttons are not yet implemented */
-name|gtk_widget_set_sensitive
+comment|/* Hide because revert buttons are not yet implemented */
+name|gtk_widget_hide
 argument_list|(
 name|editor
 operator|->
 name|revert_button
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
