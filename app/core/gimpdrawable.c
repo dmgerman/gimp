@@ -229,7 +229,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d48e0d0103
+DECL|enum|__anon2b5537db0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -5056,7 +5056,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|off_y
+name|off_x
 argument_list|,
 name|off_y
 argument_list|,
