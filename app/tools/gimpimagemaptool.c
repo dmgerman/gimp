@@ -184,12 +184,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpimagewindow.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimptooldialog.h"
 end_include
 
@@ -1248,10 +1242,6 @@ name|GimpImageMapToolClass
 modifier|*
 name|klass
 decl_stmt|;
-name|GimpImageWindow
-modifier|*
-name|window
-decl_stmt|;
 name|GtkWidget
 modifier|*
 name|dialog
@@ -1269,13 +1259,6 @@ operator|=
 name|GIMP_IMAGE_MAP_TOOL_GET_CLASS
 argument_list|(
 name|image_map_tool
-argument_list|)
-expr_stmt|;
-name|window
-operator|=
-name|gimp_display_shell_get_window
-argument_list|(
-name|display_shell
 argument_list|)
 expr_stmt|;
 comment|/*  disabled for at least GIMP 2.8  */
