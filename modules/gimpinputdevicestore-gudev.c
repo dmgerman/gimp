@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e992fa0103
+DECL|enum|__anon29e2c74d0103
 block|{
 DECL|enumerator|COLUMN_IDENTIFIER
 name|COLUMN_IDENTIFIER
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e992fa0203
+DECL|enum|__anon29e2c74d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -79,7 +79,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e992fa0303
+DECL|enum|__anon29e2c74d0303
 block|{
 DECL|enumerator|DEVICE_ADDED
 name|DEVICE_ADDED
@@ -1152,6 +1152,11 @@ name|iter
 decl_stmt|;
 if|if
 condition|(
+name|name
+condition|)
+block|{
+if|if
+condition|(
 name|gimp_input_device_store_lookup
 argument_list|(
 name|store
@@ -1191,6 +1196,7 @@ expr_stmt|;
 return|return
 name|TRUE
 return|;
+block|}
 block|}
 return|return
 name|FALSE
