@@ -15,6 +15,16 @@ directive|include
 file|<string.h>
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|G_DISABLE_DEPRECATED
+end_undef
+
+begin_comment
+comment|/* GStaticMutex */
+end_comment
+
 begin_include
 include|#
 directive|include

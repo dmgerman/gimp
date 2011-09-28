@@ -15,6 +15,16 @@ directive|include
 file|<string.h>
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|G_DISABLE_DEPRECATED
+end_undef
+
+begin_comment
+comment|/* GStaticMutex */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -65,7 +75,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0bec8f0103
+DECL|enum|__anon27965c400103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +91,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0bec8f0203
+DECL|enum|__anon27965c400203
 block|{
 DECL|enumerator|DATA_WRITTEN
 name|DATA_WRITTEN
