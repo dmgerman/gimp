@@ -3166,6 +3166,14 @@ value|"gimp-prefs-folders-fonts"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_PREFS_FOLDERS_TOOL_PRESETS
+define|#
+directive|define
+name|GIMP_HELP_PREFS_FOLDERS_TOOL_PRESETS
+value|"gimp-prefs-folders-tool-presets"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_PREFS_FOLDERS_PLUG_INS
 define|#
 directive|define

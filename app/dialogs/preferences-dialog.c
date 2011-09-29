@@ -9484,7 +9484,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon292381a80108
+DECL|struct|__anon2997b6010108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10641,7 +10641,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon292381a80208
+DECL|struct|__anon2997b6010208
 block|{
 DECL|member|label
 specifier|const
@@ -11753,7 +11753,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon292381a80308
+DECL|struct|__anon2997b6010308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11908,7 +11908,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon292381a80408
+DECL|struct|__anon2997b6010408
 block|{
 DECL|member|tree_label
 specifier|const
@@ -12105,6 +12105,31 @@ block|,
 literal|"font-path"
 block|,
 name|NULL
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"Tool Presets"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"Tool Preset Folders"
+argument_list|)
+block|,
+literal|"folders-tool-presets"
+block|,
+name|GIMP_HELP_PREFS_FOLDERS_TOOL_PRESETS
+block|,
+name|N_
+argument_list|(
+literal|"Select Tool Preset Folders"
+argument_list|)
+block|,
+literal|"tool-preset-path"
+block|,
+literal|"tool-preset-path-writable"
 block|}
 block|,
 block|{
