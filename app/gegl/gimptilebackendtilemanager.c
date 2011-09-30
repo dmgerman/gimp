@@ -51,6 +51,20 @@ directive|include
 file|"gimptilebackendtilemanager.h"
 end_include
 
+begin_struct
+DECL|struct|_GimpTileBackendTileManagerPrivate
+struct|struct
+name|_GimpTileBackendTileManagerPrivate
+block|{
+DECL|member|entries
+name|GHashTable
+modifier|*
+name|entries
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
 begin_typedef
 DECL|typedef|RamEntry
 typedef|typedef
@@ -378,6 +392,16 @@ name|set_property
 operator|=
 name|gimp_tile_backend_tile_manager_set_property
 expr_stmt|;
+name|g_type_class_add_private
+argument_list|(
+name|klass
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|GimpTileBackendTileManagerPrivate
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -401,6 +425,19 @@ argument_list|(
 name|backend
 argument_list|)
 decl_stmt|;
+name|backend
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|backend
+argument_list|,
+name|GIMP_TYPE_TILE_BACKEND_TILE_MANAGER
+argument_list|,
+name|GimpTileBackendTileManagerPrivate
+argument_list|)
+expr_stmt|;
 name|source
 operator|->
 name|command
@@ -408,6 +445,8 @@ operator|=
 name|gimp_tile_backend_tile_manager_command
 expr_stmt|;
 name|backend
+operator|->
+name|priv
 operator|->
 name|entries
 operator|=
@@ -444,6 +483,8 @@ decl_stmt|;
 name|g_hash_table_unref
 argument_list|(
 name|backend
+operator|->
+name|priv
 operator|->
 name|entries
 argument_list|)
@@ -705,6 +746,8 @@ expr_stmt|;
 name|g_hash_table_insert
 argument_list|(
 name|backend_tm
+operator|->
+name|priv
 operator|->
 name|entries
 argument_list|,
@@ -974,6 +1017,8 @@ return|return
 name|g_hash_table_lookup
 argument_list|(
 name|self
+operator|->
+name|priv
 operator|->
 name|entries
 argument_list|,
@@ -1625,6 +1670,8 @@ expr_stmt|;
 name|g_hash_table_remove
 argument_list|(
 name|ram
+operator|->
+name|priv
 operator|->
 name|entries
 argument_list|,

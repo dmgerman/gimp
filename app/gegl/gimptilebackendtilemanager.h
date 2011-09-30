@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gegl-buffer-backend.h"
+file|<gegl-buffer-backend.h>
 end_include
 
 begin_macro
@@ -90,20 +90,20 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_TILE_BACKEND_TILE_MANAGER, G
 end_define
 
 begin_typedef
-DECL|typedef|GimpTileBackendTileManager
-typedef|typedef
-name|struct
-name|_GimpTileBackendTileManager
-name|GimpTileBackendTileManager
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpTileBackendTileManagerClass
 typedef|typedef
 name|struct
 name|_GimpTileBackendTileManagerClass
 name|GimpTileBackendTileManagerClass
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpTileBackendTileManagerPrivate
+typedef|typedef
+name|struct
+name|_GimpTileBackendTileManagerPrivate
+name|GimpTileBackendTileManagerPrivate
 typedef|;
 end_typedef
 
@@ -116,10 +116,10 @@ DECL|member|parent_instance
 name|GeglTileBackend
 name|parent_instance
 decl_stmt|;
-DECL|member|entries
-name|GHashTable
+DECL|member|priv
+name|GimpTileBackendTileManagerPrivate
 modifier|*
-name|entries
+name|priv
 decl_stmt|;
 block|}
 struct|;
