@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29220afe0103
+DECL|enum|__anon2c774c720103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_PROTANOPIA
 name|COLORBLIND_DEFICIENCY_PROTANOPIA
@@ -351,7 +351,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon29220afe0203
+DECL|enum|__anon2c774c720203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1858,9 +1858,9 @@ name|combo
 decl_stmt|;
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|6
 argument_list|)

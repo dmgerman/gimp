@@ -168,7 +168,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c63c6a10103
+DECL|enum|__anon2969f2ea0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -828,9 +828,9 @@ name|spinbutton
 decl_stmt|;
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|6
 argument_list|)

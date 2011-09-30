@@ -822,9 +822,9 @@ name|NULL
 return|;
 name|vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|12
 argument_list|)
@@ -2026,7 +2026,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b94b990108
+DECL|struct|__anon2915104b0108
 block|{
 DECL|member|data
 name|guchar
@@ -2045,7 +2045,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b94b990203
+DECL|enum|__anon2915104b0203
 block|{
 DECL|enumerator|openReadSpool
 name|openReadSpool
