@@ -138,7 +138,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon29802deb0103
+DECL|enum|__anon27ce84200103
 block|{
 DECL|enumerator|PATTERN_SET
 name|PATTERN_SET
@@ -151,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29802deb0203
+DECL|enum|__anon27ce84200203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2377,9 +2377,9 @@ argument_list|()
 expr_stmt|;
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|6
 argument_list|)

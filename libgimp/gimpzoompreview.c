@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4d9a560103
+DECL|enum|__anon2c2e55650103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4d9a560208
+DECL|struct|__anon2c2e55650208
 block|{
 DECL|member|update
 name|gboolean
@@ -2931,9 +2931,9 @@ argument_list|)
 expr_stmt|;
 name|button_bar
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|2
 argument_list|)

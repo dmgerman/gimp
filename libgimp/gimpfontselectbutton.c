@@ -107,7 +107,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon298ddd810103
+DECL|enum|__anon2a100c1a0103
 block|{
 DECL|enumerator|FONT_SET
 name|FONT_SET
@@ -120,7 +120,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon298ddd810203
+DECL|enum|__anon2a100c1a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1350,9 +1350,9 @@ argument_list|()
 expr_stmt|;
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|4
 argument_list|)
