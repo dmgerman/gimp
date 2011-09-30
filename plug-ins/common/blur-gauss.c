@@ -92,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c82d660103
+DECL|enum|__anon29fc75910103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -108,7 +108,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c82d660208
+DECL|struct|__anon29fc75910208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -1812,9 +1812,9 @@ argument_list|)
 expr_stmt|;
 name|main_vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|12
 argument_list|)
@@ -1888,9 +1888,9 @@ argument_list|)
 expr_stmt|;
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|12
 argument_list|)

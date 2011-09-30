@@ -148,7 +148,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290dd4db0108
+DECL|struct|__anon2889c00e0108
 block|{
 DECL|member|division
 name|gint32
@@ -633,7 +633,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon290dd4db0208
+DECL|struct|__anon2889c00e0208
 typedef|typedef
 struct|struct
 block|{
@@ -1658,9 +1658,9 @@ argument_list|)
 expr_stmt|;
 name|main_vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|12
 argument_list|)

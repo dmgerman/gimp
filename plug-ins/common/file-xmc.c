@@ -320,7 +320,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3b20000108
+DECL|struct|__anon2a2b7ba40108
 block|{
 DECL|member|crop
 name|gboolean
@@ -851,7 +851,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b3b20000208
+DECL|struct|__anon2a2b7ba40208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -5111,9 +5111,9 @@ comment|/*    * delay    */
 comment|/* spin button */
 name|box
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|6
 argument_list|)
@@ -9247,7 +9247,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2b3b20000308
+DECL|struct|__anon2a2b7ba40308
 block|{
 DECL|member|size
 name|guint32

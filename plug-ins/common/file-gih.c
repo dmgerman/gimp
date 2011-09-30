@@ -205,7 +205,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b57092f0108
+DECL|struct|__anon298f7c5d0108
 block|{
 DECL|member|spacing
 name|guint
@@ -281,7 +281,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b57092f0208
+DECL|struct|__anon298f7c5d0208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -4117,9 +4117,9 @@ expr_stmt|;
 comment|/*    * Cell size: __ x __ pixels    */
 name|box
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|4
 argument_list|)
@@ -4546,9 +4546,9 @@ expr_stmt|;
 comment|/*    * Display as: __ rows x __ cols    */
 name|box
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|0
 argument_list|)

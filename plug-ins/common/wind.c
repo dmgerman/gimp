@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1a8ae90103
+DECL|enum|__anon28b7e78b0103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -130,7 +130,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1a8ae90203
+DECL|enum|__anon28b7e78b0203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -146,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1a8ae90303
+DECL|enum|__anon28b7e78b0303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -3852,9 +3852,9 @@ argument_list|)
 expr_stmt|;
 name|main_vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|12
 argument_list|)

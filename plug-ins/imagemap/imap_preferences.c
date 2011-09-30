@@ -94,7 +94,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2b55e4ec0108
+DECL|struct|__anon29ed03080108
 typedef|typedef
 struct|struct
 block|{
@@ -1902,9 +1902,9 @@ name|vbox
 decl_stmt|;
 name|vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|1
 argument_list|)
@@ -2073,9 +2073,9 @@ argument_list|)
 expr_stmt|;
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|1
 argument_list|)

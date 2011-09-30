@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimpwidgets.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_commands.h"
 end_include
 
@@ -1649,7 +1655,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29f6e6290108
+DECL|struct|__anon2c2ea6bb0108
 typedef|typedef
 struct|struct
 block|{
@@ -2649,9 +2655,9 @@ name|column
 decl_stmt|;
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|12
 argument_list|)

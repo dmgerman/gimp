@@ -146,7 +146,7 @@ value|FALSE
 end_define
 
 begin_typedef
-DECL|struct|__anon275f99520108
+DECL|struct|__anon2a189b0b0108
 typedef|typedef
 struct|struct
 block|{
@@ -169,7 +169,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon275f99520208
+DECL|struct|__anon2a189b0b0208
 typedef|typedef
 struct|struct
 block|{
@@ -198,7 +198,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon275f99520308
+DECL|struct|__anon2a189b0b0308
 typedef|typedef
 struct|struct
 block|{
@@ -218,7 +218,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon275f99520403
+DECL|enum|__anon2a189b0b0403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -237,7 +237,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon275f99520508
+DECL|struct|__anon2a189b0b0508
 typedef|typedef
 struct|struct
 block|{
@@ -2534,9 +2534,9 @@ argument_list|)
 expr_stmt|;
 name|vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|12
 argument_list|)
@@ -2844,9 +2844,9 @@ argument_list|)
 expr_stmt|;
 name|vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|10
 argument_list|)
@@ -2882,9 +2882,9 @@ argument_list|)
 expr_stmt|;
 name|file_hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|5
 argument_list|)
@@ -3195,9 +3195,9 @@ argument_list|)
 expr_stmt|;
 name|h_box
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|5
 argument_list|)

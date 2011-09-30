@@ -62,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ca9c0a0108
+DECL|struct|__anon276d23a80108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -685,7 +685,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ca9c0a0208
+DECL|struct|__anon276d23a80208
 block|{
 DECL|member|pft
 name|GimpPixelFetcher
@@ -1415,9 +1415,9 @@ argument_list|)
 expr_stmt|;
 name|main_vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|12
 argument_list|)

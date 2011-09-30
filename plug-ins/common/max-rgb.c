@@ -144,7 +144,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b3ccf30103
+DECL|enum|__anon29a345f10103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -162,7 +162,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b3ccf30208
+DECL|struct|__anon29a345f10208
 block|{
 DECL|member|max_p
 name|gint
@@ -531,7 +531,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b3ccf30308
+DECL|struct|__anon29a345f10308
 block|{
 DECL|member|init_value
 name|gint
@@ -1055,9 +1055,9 @@ argument_list|)
 expr_stmt|;
 name|main_vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|12
 argument_list|)

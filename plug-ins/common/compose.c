@@ -84,10 +84,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6f527d0108
+DECL|struct|__anon2797036b0108
 block|{
 union|union
-DECL|union|__anon2c6f527d020a
+DECL|union|__anon2797036b020a
 block|{
 DECL|member|ID
 name|gint32
@@ -662,7 +662,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6f527d0308
+DECL|struct|__anon2797036b0308
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1201,7 +1201,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6f527d0408
+DECL|struct|__anon2797036b0408
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1241,7 +1241,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6f527d0508
+DECL|struct|__anon2797036b0508
 block|{
 DECL|member|width
 DECL|member|height
@@ -7666,9 +7666,9 @@ argument_list|)
 expr_stmt|;
 name|main_vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|12
 argument_list|)
@@ -7744,9 +7744,9 @@ argument_list|)
 expr_stmt|;
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|6
 argument_list|)
@@ -7994,9 +7994,9 @@ argument_list|)
 expr_stmt|;
 name|vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|6
 argument_list|)
@@ -8111,9 +8111,9 @@ name|ico
 decl_stmt|;
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|6
 argument_list|)

@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a98cd720108
+DECL|struct|__anon297f02bf0108
 block|{
 DECL|member|period
 name|gint
@@ -920,7 +920,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a98cd720208
+DECL|struct|__anon297f02bf0208
 block|{
 DECL|member|pft
 name|GimpPixelFetcher
@@ -2101,9 +2101,9 @@ expr_stmt|;
 comment|/*  The main vbox  */
 name|main_vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|12
 argument_list|)
@@ -2285,9 +2285,9 @@ argument_list|)
 expr_stmt|;
 name|toggle_vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|6
 argument_list|)

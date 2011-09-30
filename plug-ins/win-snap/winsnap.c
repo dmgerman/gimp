@@ -359,7 +359,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ae8507b0108
+DECL|struct|__anon2b29a35c0108
 typedef|typedef
 struct|struct
 block|{
@@ -406,7 +406,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ae8507b0208
+DECL|struct|__anon2b29a35c0208
 typedef|typedef
 struct|struct
 block|{
@@ -2882,9 +2882,9 @@ argument_list|)
 expr_stmt|;
 name|vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|12
 argument_list|)
@@ -3101,9 +3101,9 @@ expr_stmt|;
 comment|/* with delay */
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|6
 argument_list|)

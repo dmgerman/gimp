@@ -84,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bab94a20103
+DECL|enum|__anon27591da20103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bab94a20203
+DECL|enum|__anon27591da20203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -204,7 +204,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bab94a20308
+DECL|struct|__anon27591da20308
 block|{
 DECL|member|params
 name|PluginParams
@@ -224,7 +224,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bab94a20408
+DECL|struct|__anon27591da20408
 block|{
 DECL|member|x0
 name|gint
@@ -605,7 +605,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bab94a20508
+DECL|struct|__anon27591da20508
 block|{
 DECL|member|tile_width_adj
 name|GtkObject
@@ -1044,9 +1044,9 @@ argument_list|)
 expr_stmt|;
 name|main_hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|12
 argument_list|)
@@ -1091,9 +1091,9 @@ expr_stmt|;
 comment|/* Left */
 name|vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|12
 argument_list|)
@@ -1669,9 +1669,9 @@ expr_stmt|;
 comment|/* Right */
 name|vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|12
 argument_list|)

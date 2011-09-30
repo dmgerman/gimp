@@ -717,7 +717,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a59b6160108
+DECL|struct|__anon2b087f1f0108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -878,7 +878,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a59b6160208
+DECL|struct|__anon2b087f1f0208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -4074,7 +4074,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a59b6160308
+DECL|struct|__anon2b087f1f0308
 block|{
 DECL|member|min_modified
 name|gshort
@@ -5814,9 +5814,9 @@ argument_list|)
 expr_stmt|;
 name|main_vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|12
 argument_list|)
@@ -5904,9 +5904,9 @@ argument_list|)
 expr_stmt|;
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|12
 argument_list|)
@@ -5966,9 +5966,9 @@ argument_list|)
 expr_stmt|;
 name|toggle_vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|2
 argument_list|)

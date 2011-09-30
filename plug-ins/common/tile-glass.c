@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29251e860108
+DECL|struct|__anon2b1f48a00108
 block|{
 DECL|member|xblock
 name|gint
@@ -92,7 +92,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29251e860208
+DECL|struct|__anon2b1f48a00208
 block|{
 DECL|member|gval
 name|GlassValues
@@ -863,9 +863,9 @@ argument_list|)
 expr_stmt|;
 name|main_vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|12
 argument_list|)

@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae8e5980108
+DECL|struct|__anon299d261c0108
 block|{
 DECL|member|height
 name|gint
@@ -771,9 +771,9 @@ argument_list|)
 expr_stmt|;
 name|main_vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|12
 argument_list|)
@@ -1186,7 +1186,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae8e5980208
+DECL|struct|__anon299d261c0208
 block|{
 DECL|member|x
 DECL|member|y

@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298f2ab00103
+DECL|enum|__anon27b14fac0103
 block|{
 DECL|enumerator|SQUARES
 name|SQUARES
@@ -182,7 +182,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298f2ab00208
+DECL|struct|__anon27b14fac0208
 block|{
 DECL|member|x
 DECL|member|y
@@ -200,7 +200,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298f2ab00308
+DECL|struct|__anon27b14fac0308
 block|{
 DECL|member|npts
 name|guint
@@ -222,7 +222,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298f2ab00408
+DECL|struct|__anon27b14fac0408
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298f2ab00508
+DECL|struct|__anon27b14fac0508
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -2702,9 +2702,9 @@ argument_list|)
 expr_stmt|;
 name|main_vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|12
 argument_list|)
@@ -2794,9 +2794,9 @@ expr_stmt|;
 comment|/*  The hbox -- splits the scripts and the info vbox  */
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|12
 argument_list|)
@@ -3450,9 +3450,9 @@ expr_stmt|;
 comment|/*  the vertical box and its toggle buttons  */
 name|vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|6
 argument_list|)

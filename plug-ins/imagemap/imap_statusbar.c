@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimpwidgets.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_statusbar.h"
 end_include
 
@@ -74,9 +80,9 @@ name|iconw
 decl_stmt|;
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|1
 argument_list|)

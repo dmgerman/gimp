@@ -54,7 +54,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9cca050103
+DECL|enum|__anon2ac367a70103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -70,7 +70,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9cca050208
+DECL|struct|__anon2ac367a70208
 block|{
 DECL|member|amplitude
 name|gdouble
@@ -1052,9 +1052,9 @@ argument_list|)
 expr_stmt|;
 name|main_vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|12
 argument_list|)

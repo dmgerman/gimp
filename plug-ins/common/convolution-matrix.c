@@ -164,7 +164,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c407df40103
+DECL|enum|__anon28d981500103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -389,7 +389,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c407df40208
+DECL|struct|__anon28d981500208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -870,7 +870,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c407df40308
+DECL|struct|__anon28d981500308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -4257,9 +4257,9 @@ argument_list|)
 expr_stmt|;
 name|main_vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|12
 argument_list|)
@@ -4347,9 +4347,9 @@ argument_list|)
 expr_stmt|;
 name|main_hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|12
 argument_list|)
@@ -4377,9 +4377,9 @@ argument_list|)
 operator|,
 name|vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|12
 argument_list|)
@@ -4428,9 +4428,9 @@ argument_list|)
 expr_stmt|;
 name|inbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|12
 argument_list|)
@@ -4628,9 +4628,9 @@ argument_list|)
 expr_stmt|;
 name|box
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|6
 argument_list|)
@@ -5008,9 +5008,9 @@ argument_list|)
 expr_stmt|;
 name|box
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|6
 argument_list|)
@@ -5191,9 +5191,9 @@ argument_list|)
 expr_stmt|;
 name|inbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|12
 argument_list|)
@@ -5242,9 +5242,9 @@ argument_list|)
 expr_stmt|;
 name|box
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|2
 argument_list|)
@@ -5402,9 +5402,9 @@ argument_list|)
 expr_stmt|;
 name|box
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|2
 argument_list|)
