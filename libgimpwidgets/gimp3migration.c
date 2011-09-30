@@ -66,5 +66,33 @@ return|;
 block|}
 end_function
 
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|gtk_button_box_new (GtkOrientation orientation)
+name|gtk_button_box_new
+parameter_list|(
+name|GtkOrientation
+name|orientation
+parameter_list|)
+block|{
+if|if
+condition|(
+name|orientation
+operator|==
+name|GTK_ORIENTATION_HORIZONTAL
+condition|)
+return|return
+name|gtk_hbutton_box_new
+argument_list|()
+return|;
+else|else
+return|return
+name|gtk_vbutton_box_new
+argument_list|()
+return|;
+block|}
+end_function
+
 end_unit
 

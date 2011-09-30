@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2920aa6d0103
+DECL|enum|__anon294919be0103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -389,8 +389,10 @@ name|dialog
 operator|->
 name|action_area
 operator|=
-name|gtk_hbutton_box_new
-argument_list|()
+name|gtk_button_box_new
+argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|)
 expr_stmt|;
 name|gtk_button_box_set_layout
 argument_list|(

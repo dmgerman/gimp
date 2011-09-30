@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275cbdc50108
+DECL|struct|__anon2b6325680108
 block|{
 DECL|member|name
 specifier|const
@@ -619,7 +619,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275cbdc50208
+DECL|struct|__anon2b6325680208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -692,7 +692,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275cbdc50308
+DECL|struct|__anon2b6325680308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -722,7 +722,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275cbdc50408
+DECL|struct|__anon2b6325680408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -829,7 +829,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275cbdc50508
+DECL|struct|__anon2b6325680508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -994,7 +994,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275cbdc50608
+DECL|struct|__anon2b6325680608
 block|{
 DECL|member|name
 specifier|const
@@ -6110,8 +6110,10 @@ expr_stmt|;
 comment|/* channel lock& factory defaults button */
 name|hbox
 operator|=
-name|gtk_hbutton_box_new
-argument_list|()
+name|gtk_button_box_new
+argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|)
 expr_stmt|;
 name|gtk_box_set_spacing
 argument_list|(
@@ -7088,7 +7090,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275cbdc50708
+DECL|struct|__anon2b6325680708
 block|{
 DECL|member|index
 name|gint

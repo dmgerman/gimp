@@ -146,7 +146,7 @@ value|FALSE
 end_define
 
 begin_typedef
-DECL|struct|__anon2a189b0b0108
+DECL|struct|__anon2894d4730108
 typedef|typedef
 struct|struct
 block|{
@@ -169,7 +169,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a189b0b0208
+DECL|struct|__anon2894d4730208
 typedef|typedef
 struct|struct
 block|{
@@ -198,7 +198,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a189b0b0308
+DECL|struct|__anon2894d4730308
 typedef|typedef
 struct|struct
 block|{
@@ -218,7 +218,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2a189b0b0403
+DECL|enum|__anon2894d4730403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -237,7 +237,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2a189b0b0508
+DECL|struct|__anon2894d4730508
 typedef|typedef
 struct|struct
 block|{
@@ -3141,8 +3141,10 @@ argument_list|)
 expr_stmt|;
 name|h_but_box
 operator|=
-name|gtk_hbutton_box_new
-argument_list|()
+name|gtk_button_box_new
+argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|)
 expr_stmt|;
 name|gtk_button_box_set_layout
 argument_list|(

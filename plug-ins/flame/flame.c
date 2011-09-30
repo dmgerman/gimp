@@ -155,7 +155,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2790ce2f0108
+DECL|struct|__anon2ae3cf270108
 block|{
 DECL|member|randomize
 name|gint
@@ -4920,8 +4920,10 @@ argument_list|)
 expr_stmt|;
 name|vbbox
 operator|=
-name|gtk_vbutton_box_new
-argument_list|()
+name|gtk_button_box_new
+argument_list|(
+name|GTK_ORIENTATION_VERTICAL
+argument_list|)
 expr_stmt|;
 name|gtk_box_set_homogeneous
 argument_list|(

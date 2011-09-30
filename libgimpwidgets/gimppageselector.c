@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp3migration.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
@@ -69,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon290ceca40103
+DECL|enum|__anon28c40c940103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -85,7 +91,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon290ceca40203
+DECL|enum|__anon28c40c940203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -101,7 +107,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon290ceca40303
+DECL|enum|__anon28c40c940303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -121,7 +127,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290ceca40408
+DECL|struct|__anon28c40c940408
 block|{
 DECL|member|n_pages
 name|gint
@@ -1062,8 +1068,10 @@ argument_list|)
 expr_stmt|;
 name|hbbox
 operator|=
-name|gtk_hbutton_box_new
-argument_list|()
+name|gtk_button_box_new
+argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
