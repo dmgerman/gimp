@@ -45,6 +45,12 @@ directive|include
 file|"gimphelpui.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp3migration.h"
+end_include
+
 begin_comment
 comment|/**  * SECTION: gimpenumwidgets  * @title: GimpEnumWidgets  * @short_description: A set of utility functions to create widgets  *                     based on enums.  *  * A set of utility functions to create widgets based on enums.  **/
 end_comment
@@ -203,9 +209,9 @@ argument_list|)
 expr_stmt|;
 name|vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|1
 argument_list|)
@@ -819,9 +825,9 @@ argument_list|)
 expr_stmt|;
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|0
 argument_list|)

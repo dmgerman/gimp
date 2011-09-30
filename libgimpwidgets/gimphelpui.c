@@ -46,7 +46,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c9f7db0103
+DECL|enum|__anon2bab7acd0103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TOOLTIP
 name|GIMP_WIDGET_HELP_TOOLTIP
@@ -1109,9 +1109,9 @@ name|FALSE
 return|;
 name|vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|12
 argument_list|)

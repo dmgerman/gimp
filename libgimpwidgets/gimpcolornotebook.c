@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp3migration.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
@@ -1533,9 +1539,9 @@ argument_list|)
 expr_stmt|;
 name|menu_widget
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|4
 argument_list|)

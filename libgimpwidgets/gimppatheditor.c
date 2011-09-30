@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp3migration.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
@@ -63,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1ca3450103
+DECL|enum|__anon2a1fa1d60103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -79,7 +85,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1ca3450203
+DECL|enum|__anon2a1fa1d60203
 block|{
 DECL|enumerator|COLUMN_UTF8
 name|COLUMN_UTF8
@@ -396,9 +402,9 @@ name|editor
 operator|->
 name|upper_hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|2
 argument_list|)
@@ -430,11 +436,21 @@ argument_list|)
 expr_stmt|;
 name|button_box
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|TRUE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_box_set_homogeneous
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|button_box
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

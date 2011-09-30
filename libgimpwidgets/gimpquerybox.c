@@ -606,9 +606,9 @@ argument_list|)
 expr_stmt|;
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|12
 argument_list|)
@@ -691,9 +691,9 @@ name|query_box
 operator|->
 name|vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|12
 argument_list|)

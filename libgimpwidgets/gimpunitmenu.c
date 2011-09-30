@@ -91,7 +91,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0254eb0103
+DECL|enum|__anon2bb21ab10103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -104,7 +104,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0254eb0203
+DECL|enum|__anon2bb21ab10203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -1890,9 +1890,9 @@ expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|0
 argument_list|)

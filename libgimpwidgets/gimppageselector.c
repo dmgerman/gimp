@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8b49da0103
+DECL|enum|__anon290ceca40103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -85,7 +85,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8b49da0203
+DECL|enum|__anon290ceca40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -101,7 +101,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8b49da0303
+DECL|enum|__anon290ceca40303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -121,7 +121,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8b49da0408
+DECL|struct|__anon290ceca40408
 block|{
 DECL|member|n_pages
 name|gint
@@ -762,9 +762,9 @@ expr_stmt|;
 comment|/*  Pages  */
 name|vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|2
 argument_list|)
@@ -1032,9 +1032,9 @@ expr_stmt|;
 comment|/*  Select all button& range entry  */
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|6
 argument_list|)
@@ -1253,9 +1253,9 @@ expr_stmt|;
 comment|/*  Target combo  */
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|6
 argument_list|)

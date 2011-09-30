@@ -61,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon299ee9bf0103
+DECL|enum|__anon2b0bc0610103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -74,7 +74,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299ee9bf0203
+DECL|enum|__anon2b0bc0610203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299ee9bf0308
+DECL|struct|__anon2b0bc0610308
 block|{
 DECL|member|controls
 name|GtkWidget
@@ -1200,9 +1200,9 @@ name|priv
 operator|->
 name|controls
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|6
 argument_list|)

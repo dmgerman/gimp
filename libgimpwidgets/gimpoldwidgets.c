@@ -67,6 +67,12 @@ directive|include
 file|"gimpunitmenu.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp3migration.h"
+end_include
+
 begin_comment
 comment|/**  * SECTION: gimpoldwidgets  * @title: GimpOldWidgets  * @short_description: Old API that is still available but declared  *                     as deprecated.  * @see_also: #GimpIntComboBox  *  * These functions are not defined if you #define GIMP_DISABLE_DEPRECATED.  **/
 end_comment
@@ -1565,9 +1571,9 @@ argument_list|)
 expr_stmt|;
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|0
 argument_list|)
