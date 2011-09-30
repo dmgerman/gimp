@@ -301,7 +301,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27966ee60108
+DECL|struct|__anon28ca1d2b0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -381,7 +381,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27966ee60208
+DECL|struct|__anon28ca1d2b0208
 block|{
 DECL|member|run
 name|gboolean
@@ -5890,7 +5890,7 @@ name|sscanf
 argument_list|(
 name|def_str
 argument_list|,
-literal|"%lf %lf %d %d %d %d %d %d %d %d %d %d"
+literal|"%lf %lf %d %d %d %d %d %d %d %d %d %d %d"
 argument_list|,
 operator|&
 name|tmpvals
@@ -5949,6 +5949,11 @@ operator|&
 name|tmpvals
 operator|.
 name|save_xmp
+argument_list|,
+operator|&
+name|tmpvals
+operator|.
+name|use_orig_quality
 argument_list|)
 expr_stmt|;
 name|tmpvals
@@ -6006,7 +6011,7 @@ name|def_str
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%lf %lf %d %d %d %d %d %d %d %d %d %d"
+literal|"%lf %lf %d %d %d %d %d %d %d %d %d %d %d"
 argument_list|,
 name|jsvals
 operator|.
@@ -6058,6 +6063,10 @@ argument_list|,
 name|jsvals
 operator|.
 name|save_xmp
+argument_list|,
+name|jsvals
+operator|.
+name|use_orig_quality
 argument_list|)
 expr_stmt|;
 name|parasite
@@ -6587,7 +6596,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27966ee60308
+DECL|struct|__anon28ca1d2b0308
 block|{
 DECL|member|pub
 name|struct
