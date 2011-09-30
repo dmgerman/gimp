@@ -601,13 +601,13 @@ parameter_list|(
 name|function
 parameter_list|)
 define|\
-value|g_test_add ("/gimp-xcf/" #function, \               GimpTestFixture, \               NULL, \               NULL, \               function, \               NULL);
+value|g_test_add ("/gimp-xcf/" #function, \               GimpTestFixture, \               gimp, \               NULL, \               function, \               NULL);
 end_define
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9d48230108
+DECL|struct|__anon293f34830108
 block|{
 DECL|member|avoid_sizeof_zero
 name|gint
@@ -641,6 +641,10 @@ specifier|static
 name|void
 name|gimp_write_and_read_file
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|gboolean
 name|with_unusual_stuff
 parameter_list|,
@@ -659,6 +663,10 @@ name|GimpImage
 modifier|*
 name|gimp_create_mainimage
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|gboolean
 name|with_unusual_stuff
 parameter_list|,
@@ -692,17 +700,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|gimp
-specifier|static
-name|Gimp
-modifier|*
-name|gimp
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/**  * write_and_read_gimp_2_6_format:  * @fixture:  * @data:  *  * Do a write and read test on a file that could as well be  * constructed with GIMP 2.6.  **/
 end_comment
@@ -721,8 +718,19 @@ name|gconstpointer
 name|data
 parameter_list|)
 block|{
+name|Gimp
+modifier|*
+name|gimp
+init|=
+name|GIMP
+argument_list|(
+name|data
+argument_list|)
+decl_stmt|;
 name|gimp_write_and_read_file
 argument_list|(
+name|gimp
+argument_list|,
 name|FALSE
 comment|/*with_unusual_stuff*/
 argument_list|,
@@ -754,8 +762,19 @@ name|gconstpointer
 name|data
 parameter_list|)
 block|{
+name|Gimp
+modifier|*
+name|gimp
+init|=
+name|GIMP
+argument_list|(
+name|data
+argument_list|)
+decl_stmt|;
 name|gimp_write_and_read_file
 argument_list|(
+name|gimp
+argument_list|,
 name|TRUE
 comment|/*with_unusual_stuff*/
 argument_list|,
@@ -787,6 +806,15 @@ name|gconstpointer
 name|data
 parameter_list|)
 block|{
+name|Gimp
+modifier|*
+name|gimp
+init|=
+name|GIMP
+argument_list|(
+name|data
+argument_list|)
+decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -858,8 +886,19 @@ name|gconstpointer
 name|data
 parameter_list|)
 block|{
+name|Gimp
+modifier|*
+name|gimp
+init|=
+name|GIMP
+argument_list|(
+name|data
+argument_list|)
+decl_stmt|;
 name|gimp_write_and_read_file
 argument_list|(
+name|gimp
+argument_list|,
 name|FALSE
 comment|/*with_unusual_stuff*/
 argument_list|,
@@ -972,9 +1011,13 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_write_and_read_file (gboolean with_unusual_stuff,gboolean compat_paths,gboolean use_gimp_2_8_features)
+DECL|function|gimp_write_and_read_file (Gimp * gimp,gboolean with_unusual_stuff,gboolean compat_paths,gboolean use_gimp_2_8_features)
 name|gimp_write_and_read_file
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|gboolean
 name|with_unusual_stuff
 parameter_list|,
@@ -1014,6 +1057,8 @@ name|image
 operator|=
 name|gimp_create_mainimage
 argument_list|(
+name|gimp
+argument_list|,
 name|with_unusual_stuff
 argument_list|,
 name|compat_paths
@@ -1134,9 +1179,13 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|gimp_create_mainimage (gboolean with_unusual_stuff,gboolean compat_paths,gboolean use_gimp_2_8_features)
+DECL|function|gimp_create_mainimage (Gimp * gimp,gboolean with_unusual_stuff,gboolean compat_paths,gboolean use_gimp_2_8_features)
 name|gimp_create_mainimage
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|gboolean
 name|with_unusual_stuff
 parameter_list|,
@@ -3283,6 +3332,10 @@ modifier|*
 name|argv
 parameter_list|)
 block|{
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
 name|int
 name|result
 decl_stmt|;

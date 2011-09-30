@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a35a5000108
+DECL|struct|__anon2afa24c10108
 block|{
 DECL|member|image
 name|GimpImage
@@ -141,17 +141,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|gimp
-specifier|static
-name|Gimp
-modifier|*
-name|gimp
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/**  * gimp_test_image_setup:  * @fixture:  * @data:  *  * Test fixture setup for a single image.  **/
 end_comment
@@ -170,6 +159,15 @@ name|gconstpointer
 name|data
 parameter_list|)
 block|{
+name|Gimp
+modifier|*
+name|gimp
+init|=
+name|GIMP
+argument_list|(
+name|data
+argument_list|)
+decl_stmt|;
 name|fixture
 operator|->
 name|image
@@ -234,6 +232,15 @@ name|gconstpointer
 name|data
 parameter_list|)
 block|{
+name|Gimp
+modifier|*
+name|gimp
+init|=
+name|GIMP
+argument_list|(
+name|data
+argument_list|)
+decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -636,6 +643,10 @@ modifier|*
 name|argv
 parameter_list|)
 block|{
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
 name|int
 name|result
 decl_stmt|;
