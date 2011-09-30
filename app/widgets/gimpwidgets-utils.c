@@ -860,9 +860,9 @@ name|GtkWidget
 modifier|*
 name|hbox
 init|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|0
 argument_list|)
@@ -1050,9 +1050,9 @@ name|hbox
 decl_stmt|;
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|0
 argument_list|)
@@ -1148,9 +1148,9 @@ argument_list|)
 expr_stmt|;
 name|spacer
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|0
 argument_list|)
@@ -2008,7 +2008,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2ac75cf00108
+DECL|struct|__anon27d43f060108
 block|{
 DECL|member|modifiers
 name|GdkModifierType

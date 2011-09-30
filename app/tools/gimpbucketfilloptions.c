@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e8cbe00103
+DECL|enum|__anon291e2fe10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -992,9 +992,9 @@ argument_list|)
 expr_stmt|;
 name|vbox2
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|0
 argument_list|)

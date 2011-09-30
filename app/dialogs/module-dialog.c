@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b3807d0103
+DECL|enum|__anon28b0881a0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -98,7 +98,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b3807d0203
+DECL|enum|__anon28b0881a0203
 block|{
 DECL|enumerator|INFO_AUTHOR
 name|INFO_AUTHOR
@@ -124,7 +124,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b3807d0308
+DECL|struct|__anon28b0881a0308
 block|{
 DECL|member|gimp
 name|Gimp
@@ -479,9 +479,9 @@ argument_list|)
 expr_stmt|;
 name|vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|12
 argument_list|)
@@ -832,9 +832,9 @@ name|dialog
 operator|->
 name|error_box
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|6
 argument_list|)

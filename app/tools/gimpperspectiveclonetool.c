@@ -123,7 +123,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon276b571d0103
+DECL|enum|__anon2c3db4b90103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -3599,9 +3599,9 @@ name|combo
 decl_stmt|;
 name|vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|6
 argument_list|)

@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7c30380103
+DECL|enum|__anon27e06fc90103
 block|{
 DECL|enumerator|FILE_DIALOG_SETUP
 name|FILE_DIALOG_SETUP
@@ -120,7 +120,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7c30380203
+DECL|enum|__anon27e06fc90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1154,11 +1154,21 @@ argument_list|)
 expr_stmt|;
 name|hbox2
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|TRUE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_box_set_homogeneous
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|hbox2
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

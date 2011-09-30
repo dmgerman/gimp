@@ -273,7 +273,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf8a37c0103
+DECL|enum|__anon28c7a1350103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -386,7 +386,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf8a37c0208
+DECL|struct|__anon28c7a1350208
 block|{
 DECL|member|window
 name|GimpImageWindow
@@ -1463,9 +1463,9 @@ name|private
 operator|->
 name|main_vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|0
 argument_list|)
@@ -1611,9 +1611,9 @@ name|private
 operator|->
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|0
 argument_list|)
@@ -7397,9 +7397,9 @@ name|gtk_image
 decl_stmt|;
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|2
 argument_list|)

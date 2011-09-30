@@ -1663,9 +1663,9 @@ expr_stmt|;
 comment|/*  The option menu for selecting channels  */
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|6
 argument_list|)
@@ -1934,9 +1934,9 @@ argument_list|)
 expr_stmt|;
 name|vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|2
 argument_list|)
@@ -1996,9 +1996,9 @@ argument_list|)
 expr_stmt|;
 name|vbox2
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|0
 argument_list|)
@@ -2086,9 +2086,9 @@ argument_list|)
 expr_stmt|;
 name|vbox3
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|0
 argument_list|)
@@ -2411,9 +2411,9 @@ expr_stmt|;
 comment|/*  Horizontal box for input levels spinbuttons  */
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|6
 argument_list|)
@@ -2442,9 +2442,9 @@ expr_stmt|;
 comment|/*  low input spin  */
 name|hbox2
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|2
 argument_list|)
@@ -2749,9 +2749,9 @@ expr_stmt|;
 comment|/*  high input spin  */
 name|hbox2
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|2
 argument_list|)
@@ -2936,9 +2936,9 @@ argument_list|)
 expr_stmt|;
 name|vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|4
 argument_list|)
@@ -2998,9 +2998,9 @@ argument_list|)
 expr_stmt|;
 name|vbox2
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|0
 argument_list|)
@@ -3204,9 +3204,9 @@ expr_stmt|;
 comment|/*  Horizontal box for levels spin widgets  */
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|6
 argument_list|)
@@ -3458,9 +3458,9 @@ argument_list|)
 expr_stmt|;
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|6
 argument_list|)
@@ -3482,9 +3482,9 @@ argument_list|)
 expr_stmt|;
 name|hbbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|6
 argument_list|)

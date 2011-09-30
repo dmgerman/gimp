@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c95f63c0103
+DECL|enum|__anon2b1fc0370103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -1386,9 +1386,9 @@ expr_stmt|;
 comment|/*  The operation combo box  */
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|6
 argument_list|)

@@ -150,7 +150,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6276090103
+DECL|enum|__anon2c99dcdf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -480,9 +480,9 @@ name|status
 operator|->
 name|vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|0
 argument_list|)
@@ -1047,9 +1047,9 @@ argument_list|)
 expr_stmt|;
 name|vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|4
 argument_list|)
@@ -1200,9 +1200,9 @@ expr_stmt|;
 comment|/*  the row of properties  */
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|4
 argument_list|)

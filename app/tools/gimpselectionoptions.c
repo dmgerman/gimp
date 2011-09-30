@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9b1a4a0103
+DECL|enum|__anon2c8322a40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -616,9 +616,9 @@ name|i
 decl_stmt|;
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|2
 argument_list|)

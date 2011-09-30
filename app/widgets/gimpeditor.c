@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fc46df0103
+DECL|enum|__anon2a0a8ba60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2295,7 +2295,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fc46df0208
+DECL|struct|__anon2a0a8ba60208
 block|{
 DECL|member|mod_mask
 name|GdkModifierType
@@ -3473,11 +3473,25 @@ name|priv
 operator|->
 name|button_box
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|TRUE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 name|button_spacing
+argument_list|)
+expr_stmt|;
+name|gtk_box_set_homogeneous
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|editor
+operator|->
+name|priv
+operator|->
+name|button_box
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end

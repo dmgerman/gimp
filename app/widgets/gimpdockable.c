@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aef981d0103
+DECL|enum|__anon298c37b20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1962,9 +1962,9 @@ name|GIMP_TAB_STYLE_PREVIEW_BLURB
 case|:
 name|tab_widget
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 name|dnd
 condition|?

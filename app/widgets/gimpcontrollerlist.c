@@ -162,7 +162,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bd0c3f0103
+DECL|enum|__anon291ecc210103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -175,7 +175,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bd0c3f0203
+DECL|enum|__anon291ecc210203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -613,9 +613,9 @@ name|hbox
 operator|=
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|6
 argument_list|)
@@ -995,11 +995,21 @@ expr_stmt|;
 block|}
 name|vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|TRUE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_box_set_homogeneous
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

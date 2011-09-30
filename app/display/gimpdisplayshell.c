@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0d08dd0103
+DECL|enum|__anon297d6c050103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -363,7 +363,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0d08dd0203
+DECL|enum|__anon297d6c050203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1680,9 +1680,9 @@ comment|/*  first, set up the container hierarchy  *****************************
 comment|/*  a hbox for the inner_table and the vertical scrollbar  */
 name|upper_hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|0
 argument_list|)
@@ -1768,9 +1768,9 @@ expr_stmt|;
 comment|/*  the vbox containing the color button and the vertical scrollbar  */
 name|right_vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|1
 argument_list|)
@@ -1799,9 +1799,9 @@ expr_stmt|;
 comment|/*  the hbox containing the quickmask button, vertical scrollbar and    *  the navigation button    */
 name|lower_hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|1
 argument_list|)

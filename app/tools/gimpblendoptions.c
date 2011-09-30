@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288feb3a0103
+DECL|enum|__anon2af972bf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1006,9 +1006,9 @@ expr_stmt|;
 comment|/*  supersampling options  */
 name|vbox2
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|2
 argument_list|)

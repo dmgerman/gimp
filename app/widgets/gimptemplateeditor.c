@@ -104,7 +104,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a19e1020103
+DECL|enum|__anon2c3bb15d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -867,9 +867,9 @@ expr_stmt|;
 comment|/*  create the sizeentry which keeps it all together  */
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|0
 argument_list|)
@@ -1095,9 +1095,9 @@ argument_list|)
 expr_stmt|;
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|12
 argument_list|)
@@ -1127,11 +1127,11 @@ argument_list|)
 expr_stmt|;
 name|vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-literal|0
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
-name|FALSE
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1209,11 +1209,11 @@ argument_list|)
 expr_stmt|;
 name|vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-literal|2
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
-name|FALSE
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1796,9 +1796,9 @@ expr_stmt|;
 comment|/*  the resolution sizeentry  */
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|0
 argument_list|)

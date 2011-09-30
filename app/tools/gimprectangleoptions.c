@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288129d10103
+DECL|enum|__anon2c6194140103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -2517,9 +2517,9 @@ expr_stmt|;
 comment|/*  title  */
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|4
 argument_list|)
@@ -2600,9 +2600,9 @@ expr_stmt|;
 comment|/*  content  */
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|4
 argument_list|)
@@ -2895,9 +2895,9 @@ expr_stmt|;
 comment|/* Setup frame title widgets */
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|2
 argument_list|)
@@ -3017,9 +3017,9 @@ expr_stmt|;
 comment|/* Setup frame content */
 name|vbox2
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|0
 argument_list|)
@@ -3051,9 +3051,9 @@ name|private
 operator|->
 name|fixed_aspect_hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|2
 argument_list|)
@@ -3437,9 +3437,9 @@ name|private
 operator|->
 name|fixed_size_hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|2
 argument_list|)

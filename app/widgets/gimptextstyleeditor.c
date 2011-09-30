@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c77fb10103
+DECL|enum|__anon2b1433cf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -779,9 +779,9 @@ name|editor
 operator|->
 name|upper_hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|2
 argument_list|)
@@ -966,9 +966,9 @@ name|editor
 operator|->
 name|lower_hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|2
 argument_list|)

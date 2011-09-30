@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5a6ef10103
+DECL|enum|__anon297e72fa0103
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -660,9 +660,9 @@ name|p
 operator|->
 name|temp_vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|0
 argument_list|)
@@ -694,9 +694,9 @@ name|p
 operator|->
 name|main_vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|0
 argument_list|)
