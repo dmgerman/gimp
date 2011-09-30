@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf593bd0108
+DECL|struct|__anon2c087b880108
 block|{
 DECL|member|quality
 name|gdouble
@@ -140,7 +140,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|load_save_defaults
+name|load_defaults
 parameter_list|(
 name|void
 parameter_list|)

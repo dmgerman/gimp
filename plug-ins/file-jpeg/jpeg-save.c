@@ -301,7 +301,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299cf3af0108
+DECL|struct|__anon27966ee60108
 block|{
 DECL|member|cinfo
 name|struct
@@ -381,7 +381,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299cf3af0208
+DECL|struct|__anon27966ee60208
 block|{
 DECL|member|run
 name|gboolean
@@ -5728,8 +5728,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|load_save_defaults (void)
-name|load_save_defaults
+DECL|function|load_defaults (void)
+name|load_defaults
 parameter_list|(
 name|void
 parameter_list|)
@@ -6109,7 +6109,7 @@ name|GtkAdjustment
 modifier|*
 name|restart_markers
 decl_stmt|;
-name|load_save_defaults
+name|load_defaults
 argument_list|()
 expr_stmt|;
 DECL|macro|SET_ACTIVE_BTTN (field)
@@ -6587,7 +6587,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299cf3af0308
+DECL|struct|__anon27966ee60308
 block|{
 DECL|member|pub
 name|struct

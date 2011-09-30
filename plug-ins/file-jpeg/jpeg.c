@@ -1339,7 +1339,7 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* HAVE_LIBEXIF */
-name|load_save_defaults
+name|load_defaults
 argument_list|()
 expr_stmt|;
 switch|switch
