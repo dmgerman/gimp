@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b788ea70103
+DECL|enum|__anon28f6c18c0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -237,7 +237,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b788ea70203
+DECL|enum|__anon28f6c18c0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -280,7 +280,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b788ea70303
+DECL|enum|__anon28f6c18c0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -3661,7 +3661,7 @@ operator|==
 name|GIMP_RECTANGLE_TOOL_DEAD
 condition|)
 break|break;
-comment|/* Suppresed, don't execute yet!*/
+comment|/* Suppresed, don't execute yet! But commit any changes setup made.*/
 if|if
 condition|(
 name|private
@@ -3674,6 +3674,11 @@ operator|->
 name|suppress_execute
 operator|=
 name|FALSE
+expr_stmt|;
+name|gimp_rectangle_tool_rectangle_change_complete
+argument_list|(
+name|rect_tool
+argument_list|)
 expr_stmt|;
 break|break;
 block|}
