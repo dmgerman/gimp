@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294638930103
+DECL|enum|__anon27cec8120103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -736,7 +736,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294638930208
+DECL|struct|__anon27cec8120208
 block|{
 DECL|member|x
 DECL|member|y
@@ -1269,8 +1269,12 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|gimp_button_event_triggers_context_menu
+name|gdk_event_triggers_context_menu
 argument_list|(
+operator|(
+name|GdkEvent
+operator|*
+operator|)
 name|event
 argument_list|)
 condition|)

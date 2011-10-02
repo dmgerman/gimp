@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b56662b0103
+DECL|enum|__anon27a53ca50103
 block|{
 DECL|enumerator|COLUMN_CHANNEL
 name|COLUMN_CHANNEL
@@ -2062,8 +2062,12 @@ name|channel
 expr_stmt|;
 if|if
 condition|(
-name|gimp_button_event_triggers_context_menu
+name|gdk_event_triggers_context_menu
 argument_list|(
+operator|(
+name|GdkEvent
+operator|*
+operator|)
 name|bevent
 argument_list|)
 condition|)

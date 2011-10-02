@@ -138,7 +138,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b56a1740103
+DECL|enum|__anon2b846ce00103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b56a1740203
+DECL|enum|__anon2b846ce00203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b56a1740308
+DECL|struct|__anon2b846ce00308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -200,7 +200,7 @@ name|guint
 name|timeout_id
 decl_stmt|;
 union|union
-DECL|union|__anon2b56a174040a
+DECL|union|__anon2b846ce0040a
 block|{
 DECL|member|d
 name|gdouble
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b56a1740508
+DECL|struct|__anon2b846ce00508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -255,7 +255,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b56a1740608
+DECL|struct|__anon2b846ce00608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -290,7 +290,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b56a1740708
+DECL|struct|__anon2b846ce00708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -326,7 +326,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b56a1740808
+DECL|struct|__anon2b846ce00808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -388,7 +388,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b56a1740908
+DECL|struct|__anon2b846ce00908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -537,7 +537,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b56a1740a08
+DECL|struct|__anon2b846ce00a08
 block|{
 DECL|member|run
 name|gboolean
@@ -8254,8 +8254,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_button_event_triggers_context_menu
+name|gdk_event_triggers_context_menu
 argument_list|(
+operator|(
+name|GdkEvent
+operator|*
+operator|)
 name|event
 argument_list|)
 condition|)

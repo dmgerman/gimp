@@ -78,17 +78,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpwidgets.h"
+file|"gimpwidgets-private.h"
 end_include
-
-begin_comment
-comment|/* remove in 3.0 */
-end_comment
 
 begin_include
 include|#
 directive|include
-file|"gimpwidgets-private.h"
+file|"gimp3migration.h"
 end_include
 
 begin_include
@@ -173,7 +169,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e7a1790103
+DECL|enum|__anon2b55b0b20103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -186,7 +182,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e7a1790203
+DECL|enum|__anon2b55b0b20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1732,8 +1728,12 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|gimp_button_event_triggers_context_menu
+name|gdk_event_triggers_context_menu
 argument_list|(
+operator|(
+name|GdkEvent
+operator|*
+operator|)
 name|bevent
 argument_list|)
 condition|)

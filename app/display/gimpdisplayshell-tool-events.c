@@ -936,8 +936,12 @@ name|event
 decl_stmt|;
 if|if
 condition|(
-name|gimp_button_event_triggers_context_menu
+name|gdk_event_triggers_context_menu
 argument_list|(
+operator|(
+name|GdkEvent
+operator|*
+operator|)
 name|bevent
 argument_list|)
 condition|)
@@ -1905,7 +1909,7 @@ name|y
 argument_list|)
 expr_stmt|;
 break|break;
-comment|/* FIXME: use gimp_button_event_triggers_context_menu() */
+comment|/* FIXME: use gdk_event_triggers_context_menu() */
 case|case
 literal|3
 case|:

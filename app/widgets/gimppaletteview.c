@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbf9f050103
+DECL|enum|__anon2a2c89ea0103
 block|{
 DECL|enumerator|ENTRY_CLICKED
 name|ENTRY_CLICKED
@@ -964,8 +964,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_button_event_triggers_context_menu
+name|gdk_event_triggers_context_menu
 argument_list|(
+operator|(
+name|GdkEvent
+operator|*
+operator|)
 name|bevent
 argument_list|)
 condition|)

@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289da3820103
+DECL|enum|__anon2a0251540103
 block|{
 DECL|enumerator|SET_VIEWABLE
 name|SET_VIEWABLE
@@ -1907,8 +1907,12 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_button_event_triggers_context_menu
+name|gdk_event_triggers_context_menu
 argument_list|(
+operator|(
+name|GdkEvent
+operator|*
+operator|)
 name|bevent
 argument_list|)
 condition|)

@@ -1781,8 +1781,12 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|gimp_button_event_triggers_context_menu
+name|gdk_event_triggers_context_menu
 argument_list|(
+operator|(
+name|GdkEvent
+operator|*
+operator|)
 name|event
 argument_list|)
 condition|)
