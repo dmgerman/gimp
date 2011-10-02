@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6325680108
+DECL|struct|__anon2badcd410108
 block|{
 DECL|member|name
 specifier|const
@@ -619,7 +619,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6325680208
+DECL|struct|__anon2badcd410208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -692,7 +692,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6325680308
+DECL|struct|__anon2badcd410308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -722,7 +722,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6325680408
+DECL|struct|__anon2badcd410408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -829,7 +829,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6325680508
+DECL|struct|__anon2badcd410508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -994,7 +994,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6325680608
+DECL|struct|__anon2badcd410608
 block|{
 DECL|member|name
 specifier|const
@@ -4872,8 +4872,10 @@ argument_list|)
 expr_stmt|;
 name|paned
 operator|=
-name|gtk_hpaned_new
-argument_list|()
+name|gtk_paned_new
+argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
 argument_list|(
@@ -7090,7 +7092,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6325680708
+DECL|struct|__anon2badcd410708
 block|{
 DECL|member|index
 name|gint

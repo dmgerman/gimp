@@ -97,6 +97,34 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
+DECL|function|gtk_paned_new (GtkOrientation orientation)
+name|gtk_paned_new
+parameter_list|(
+name|GtkOrientation
+name|orientation
+parameter_list|)
+block|{
+if|if
+condition|(
+name|orientation
+operator|==
+name|GTK_ORIENTATION_HORIZONTAL
+condition|)
+return|return
+name|gtk_hpaned_new
+argument_list|()
+return|;
+else|else
+return|return
+name|gtk_vpaned_new
+argument_list|()
+return|;
+block|}
+end_function
+
+begin_function
+name|GtkWidget
+modifier|*
 DECL|function|gtk_scale_new (GtkOrientation orientation,GtkAdjustment * adjustment)
 name|gtk_scale_new
 parameter_list|(

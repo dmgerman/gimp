@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297eea4f0103
+DECL|enum|__anon2a0b69030103
 block|{
 DECL|enumerator|SRC_COLUMN_NAME
 name|SRC_COLUMN_NAME
@@ -82,7 +82,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297eea4f0203
+DECL|enum|__anon2a0b69030203
 block|{
 DECL|enumerator|DEST_COLUMN_ENABLED
 name|DEST_COLUMN_ENABLED
@@ -452,8 +452,10 @@ argument_list|)
 expr_stmt|;
 name|paned
 operator|=
-name|gtk_vpaned_new
-argument_list|()
+name|gtk_paned_new
+argument_list|(
+name|GTK_ORIENTATION_VERTICAL
+argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(

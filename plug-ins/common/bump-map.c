@@ -95,7 +95,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a324bf00103
+DECL|enum|__anon27829f040103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a324bf00203
+DECL|enum|__anon27829f040203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -129,7 +129,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a324bf00308
+DECL|struct|__anon27829f040308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a324bf00408
+DECL|struct|__anon27829f040408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -233,7 +233,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a324bf00508
+DECL|struct|__anon27829f040508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -3446,8 +3446,10 @@ argument_list|)
 expr_stmt|;
 name|paned
 operator|=
-name|gtk_hpaned_new
-argument_list|()
+name|gtk_paned_new
+argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
 argument_list|(

@@ -122,7 +122,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f819850108
+DECL|struct|__anon297e90640108
 block|{
 DECL|member|width
 name|gint
@@ -152,7 +152,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f819850203
+DECL|enum|__anon297e90640203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -1181,8 +1181,10 @@ expr_stmt|;
 comment|/*  the horizontal paned  */
 name|paned
 operator|=
-name|gtk_hpaned_new
-argument_list|()
+name|gtk_paned_new
+argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
