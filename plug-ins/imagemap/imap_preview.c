@@ -2709,8 +2709,10 @@ argument_list|)
 expr_stmt|;
 name|scrollbar
 operator|=
-name|gtk_hscrollbar_new
+name|gtk_scrollbar_new
 argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|,
 name|hadj
 argument_list|)
 expr_stmt|;
@@ -2751,8 +2753,10 @@ argument_list|)
 expr_stmt|;
 name|scrollbar
 operator|=
-name|gtk_vscrollbar_new
+name|gtk_scrollbar_new
 argument_list|(
+name|GTK_ORIENTATION_VERTICAL
+argument_list|,
 name|vadj
 argument_list|)
 expr_stmt|;

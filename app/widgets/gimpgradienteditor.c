@@ -1568,8 +1568,10 @@ name|editor
 operator|->
 name|scrollbar
 operator|=
-name|gtk_hscrollbar_new
+name|gtk_scrollbar_new
 argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|,
 name|editor
 operator|->
 name|scroll_data

@@ -24,13 +24,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpwidgets.h"
+file|"gimpwidgetstypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppreviewarea.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimpscrolledpreview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpstock.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimp3migration.h"
 end_include
 
 begin_include
@@ -54,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29da93350108
+DECL|struct|__anon2c6cb7f60108
 block|{
 DECL|member|hscr_policy
 name|GtkPolicyType
@@ -495,7 +513,7 @@ name|GtkWidget
 modifier|*
 name|image
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;
@@ -553,6 +571,8 @@ comment|/* we are frozen during init */
 comment|/*  scrollbars  */
 name|adj
 operator|=
+name|GTK_ADJUSTMENT
+argument_list|(
 name|gtk_adjustment_new
 argument_list|(
 literal|0
@@ -584,6 +604,7 @@ argument_list|)
 operator|->
 name|width
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
@@ -603,12 +624,11 @@ name|preview
 operator|->
 name|hscr
 operator|=
-name|gtk_hscrollbar_new
+name|gtk_scrollbar_new
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|,
 name|adj
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -648,6 +668,8 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
+name|GTK_ADJUSTMENT
+argument_list|(
 name|gtk_adjustment_new
 argument_list|(
 literal|0
@@ -679,6 +701,7 @@ argument_list|)
 operator|->
 name|height
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
@@ -698,12 +721,11 @@ name|preview
 operator|->
 name|vscr
 operator|=
-name|gtk_vscrollbar_new
+name|gtk_scrollbar_new
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
+name|GTK_ORIENTATION_VERTICAL
+argument_list|,
 name|adj
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach

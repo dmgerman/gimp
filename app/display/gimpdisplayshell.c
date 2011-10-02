@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297d6c050103
+DECL|enum|__anon2b9a0cc80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -363,7 +363,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297d6c050203
+DECL|enum|__anon2b9a0cc80203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1855,8 +1855,10 @@ name|shell
 operator|->
 name|hsb
 operator|=
-name|gtk_hscrollbar_new
+name|gtk_scrollbar_new
 argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|,
 name|shell
 operator|->
 name|hsbdata
@@ -1898,8 +1900,10 @@ name|shell
 operator|->
 name|vsb
 operator|=
-name|gtk_vscrollbar_new
+name|gtk_scrollbar_new
 argument_list|(
+name|GTK_ORIENTATION_VERTICAL
+argument_list|,
 name|shell
 operator|->
 name|vsbdata

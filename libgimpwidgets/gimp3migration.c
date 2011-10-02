@@ -94,5 +94,41 @@ return|;
 block|}
 end_function
 
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|gtk_scrollbar_new (GtkOrientation orientation,GtkAdjustment * adjustment)
+name|gtk_scrollbar_new
+parameter_list|(
+name|GtkOrientation
+name|orientation
+parameter_list|,
+name|GtkAdjustment
+modifier|*
+name|adjustment
+parameter_list|)
+block|{
+if|if
+condition|(
+name|orientation
+operator|==
+name|GTK_ORIENTATION_HORIZONTAL
+condition|)
+return|return
+name|gtk_hscrollbar_new
+argument_list|(
+name|adjustment
+argument_list|)
+return|;
+else|else
+return|return
+name|gtk_vscrollbar_new
+argument_list|(
+name|adjustment
+argument_list|)
+return|;
+block|}
+end_function
+
 end_unit
 
