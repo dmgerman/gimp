@@ -1100,8 +1100,10 @@ argument_list|)
 expr_stmt|;
 name|separator
 operator|=
-name|gtk_vseparator_new
-argument_list|()
+name|gtk_separator_new
+argument_list|(
+name|GTK_ORIENTATION_VERTICAL
+argument_list|)
 expr_stmt|;
 name|gtk_table_attach
 argument_list|(
