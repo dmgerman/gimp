@@ -713,8 +713,10 @@ else|else
 block|{
 name|scale
 operator|=
-name|gtk_hscale_new
+name|gtk_scale_new
 argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|,
 name|GTK_ADJUSTMENT
 argument_list|(
 name|adjustment

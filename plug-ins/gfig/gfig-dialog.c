@@ -443,7 +443,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3e425c0108
+DECL|struct|__anon2b9a6a3b0108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -5200,7 +5200,7 @@ name|GtkWidget
 modifier|*
 name|scale
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|scale_data
 decl_stmt|;
@@ -5868,6 +5868,10 @@ argument_list|)
 expr_stmt|;
 name|scale_data
 operator|=
+operator|(
+name|GtkAdjustment
+operator|*
+operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|selopt
@@ -5887,12 +5891,11 @@ argument_list|)
 expr_stmt|;
 name|scale
 operator|=
-name|gtk_hscale_new
+name|gtk_scale_new
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|,
 name|scale_data
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_scale_set_value_pos

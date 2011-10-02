@@ -447,7 +447,7 @@ name|GtkWidget
 modifier|*
 name|frame
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;
@@ -623,6 +623,8 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
+name|GTK_ADJUSTMENT
+argument_list|(
 name|gtk_adjustment_new
 argument_list|(
 literal|200.0
@@ -643,6 +645,7 @@ literal|1.0
 argument_list|,
 literal|0.0
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
@@ -660,12 +663,11 @@ argument_list|)
 expr_stmt|;
 name|scale
 operator|=
-name|gtk_vscale_new
+name|gtk_scale_new
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
+name|GTK_ORIENTATION_VERTICAL
+argument_list|,
 name|adj
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_scale_set_digits

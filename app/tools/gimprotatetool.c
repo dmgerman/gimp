@@ -111,7 +111,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8052ae0103
+DECL|enum|__anon2b31d79b0103
 block|{
 DECL|enumerator|ANGLE
 name|ANGLE
@@ -851,8 +851,10 @@ argument_list|)
 expr_stmt|;
 name|scale
 operator|=
-name|gtk_hscale_new
+name|gtk_scale_new
 argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|,
 name|rotate
 operator|->
 name|angle_adj

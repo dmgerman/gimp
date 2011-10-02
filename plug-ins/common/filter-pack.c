@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2744cd900108
+DECL|struct|__anon289bbf290108
 block|{
 DECL|member|run
 name|gboolean
@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2744cd900208
+DECL|struct|__anon289bbf290208
 block|{
 DECL|member|width
 name|gint
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2744cd900303
+DECL|enum|__anon289bbf290303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -184,7 +184,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2744cd900403
+DECL|enum|__anon289bbf290403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -216,7 +216,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2744cd900503
+DECL|enum|__anon289bbf290503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -235,7 +235,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2744cd900603
+DECL|enum|__anon289bbf290603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -263,7 +263,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2744cd900703
+DECL|enum|__anon289bbf290703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -282,7 +282,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2744cd900808
+DECL|struct|__anon289bbf290808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -313,7 +313,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2744cd900908
+DECL|struct|__anon289bbf290908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2744cd900a08
+DECL|struct|__anon289bbf290a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -1292,7 +1292,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2744cd900b08
+DECL|struct|__anon289bbf290b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -3359,7 +3359,7 @@ decl_stmt|,
 modifier|*
 name|scale
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|data
 decl_stmt|;
@@ -3404,6 +3404,10 @@ argument_list|)
 expr_stmt|;
 name|data
 operator|=
+operator|(
+name|GtkAdjustment
+operator|*
+operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|fpvals
@@ -3427,12 +3431,11 @@ name|roughness_scale
 operator|=
 name|scale
 operator|=
-name|gtk_hscale_new
+name|gtk_scale_new
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|,
 name|data
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_size_request
@@ -6739,7 +6742,7 @@ decl_stmt|,
 modifier|*
 name|hbox
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|smoothnessData
 decl_stmt|;
@@ -7433,6 +7436,10 @@ expr_stmt|;
 block|}
 name|smoothnessData
 operator|=
+operator|(
+name|GtkAdjustment
+operator|*
+operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|fpvals
@@ -7456,12 +7463,11 @@ name|aliasing_scale
 operator|=
 name|scale
 operator|=
-name|gtk_hscale_new
+name|gtk_scale_new
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|,
 name|smoothnessData
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_size_request
@@ -7590,6 +7596,10 @@ argument_list|)
 expr_stmt|;
 name|smoothnessData
 operator|=
+operator|(
+name|GtkAdjustment
+operator|*
+operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|fpvals
@@ -7613,12 +7623,11 @@ name|preview_size_scale
 operator|=
 name|scale
 operator|=
-name|gtk_hscale_new
+name|gtk_scale_new
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|,
 name|smoothnessData
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

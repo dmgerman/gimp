@@ -145,7 +145,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|smvectprevbrightadjust
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|smvectprevbrightadjust
 init|=
@@ -156,7 +156,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|sizadjust
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|sizadjust
 init|=
@@ -167,7 +167,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|smstradjust
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|smstradjust
 init|=
@@ -178,7 +178,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|smstrexpadjust
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|smstrexpadjust
 init|=
@@ -260,10 +260,7 @@ name|smvector
 argument_list|,
 name|gtk_adjustment_get_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|smstrexpadjust
-argument_list|)
 argument_list|)
 argument_list|,
 name|gtk_toggle_button_get_active
@@ -661,10 +658,7 @@ literal|1.0
 operator|-
 name|gtk_adjustment_get_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|smvectprevbrightadjust
-argument_list|)
 argument_list|)
 operator|/
 literal|100.0
@@ -1015,10 +1009,7 @@ name|TRUE
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|sizadjust
-argument_list|)
 argument_list|,
 name|smvector
 index|[
@@ -1030,10 +1021,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|smstradjust
-argument_list|)
 argument_list|,
 name|smvector
 index|[
@@ -1445,10 +1433,7 @@ name|siz
 operator|=
 name|gtk_adjustment_get_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|sizadjust
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|updatesmvectorprev
@@ -1490,10 +1475,7 @@ name|str
 operator|=
 name|gtk_adjustment_get_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|smstradjust
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|updatesmvectorprev
@@ -1605,10 +1587,7 @@ name|size_strength_exponent
 operator|=
 name|gtk_adjustment_get_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|smstrexpadjust
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|pcvals
@@ -1759,7 +1738,7 @@ literal|0
 end_if
 
 begin_endif
-unit|static void update_sizemap_dialog (void) {   if (smwindow)     {       initsmvectors ();        gtk_adjustment_set_value (GTK_ADJUSTMENT (smstrexpadjust),                                 pcvals.size_strength_exponent);       gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (size_voronoi),                                     pcvals.size_voronoi);        updatesmvectorprev ();       updatesmpreviewprev ();     } }
+unit|static void update_sizemap_dialog (void) {   if (smwindow)     {       initsmvectors ();        gtk_adjustment_set_value (smstrexpadjust, pcvals.size_strength_exponent);       gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (size_voronoi),                                     pcvals.size_voronoi);        updatesmvectorprev ();       updatesmpreviewprev ();     } }
 endif|#
 directive|endif
 end_endif
@@ -2123,6 +2102,10 @@ argument_list|)
 expr_stmt|;
 name|smvectprevbrightadjust
 operator|=
+operator|(
+name|GtkAdjustment
+operator|*
+operator|)
 name|gtk_adjustment_new
 argument_list|(
 literal|50.0
@@ -2140,12 +2123,11 @@ argument_list|)
 expr_stmt|;
 name|tmpw
 operator|=
-name|gtk_vscale_new
+name|gtk_scale_new
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
+name|GTK_ORIENTATION_VERTICAL
+argument_list|,
 name|smvectprevbrightadjust
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_scale_set_draw_value
@@ -2617,6 +2599,10 @@ argument_list|)
 expr_stmt|;
 name|sizadjust
 operator|=
+operator|(
+name|GtkAdjustment
+operator|*
+operator|)
 name|gimp_scale_entry_new
 argument_list|(
 name|GTK_TABLE
@@ -2679,6 +2665,10 @@ argument_list|)
 expr_stmt|;
 name|smstradjust
 operator|=
+operator|(
+name|GtkAdjustment
+operator|*
+operator|)
 name|gimp_scale_entry_new
 argument_list|(
 name|GTK_TABLE
@@ -2741,6 +2731,10 @@ argument_list|)
 expr_stmt|;
 name|smstrexpadjust
 operator|=
+operator|(
+name|GtkAdjustment
+operator|*
+operator|)
 name|gimp_scale_entry_new
 argument_list|(
 name|GTK_TABLE

@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2a43c10103
+DECL|enum|__anon288eee2c0103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -268,7 +268,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2a43c10203
+DECL|enum|__anon288eee2c0203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -4873,7 +4873,7 @@ name|GtkWidget
 modifier|*
 name|scale
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|scale_adj
 decl_stmt|;
@@ -4881,7 +4881,7 @@ name|GtkWidget
 modifier|*
 name|spinbutton
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|spinbutton_adj
 decl_stmt|;
@@ -5567,6 +5567,10 @@ argument_list|)
 expr_stmt|;
 name|scale_adj
 operator|=
+operator|(
+name|GtkAdjustment
+operator|*
+operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|mng_data
@@ -5586,12 +5590,11 @@ argument_list|)
 expr_stmt|;
 name|scale
 operator|=
-name|gtk_hscale_new
+name|gtk_scale_new
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|,
 name|scale_adj
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_size_request
@@ -5683,6 +5686,10 @@ argument_list|)
 expr_stmt|;
 name|scale_adj
 operator|=
+operator|(
+name|GtkAdjustment
+operator|*
+operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|mng_data
@@ -5702,12 +5709,11 @@ argument_list|)
 expr_stmt|;
 name|scale
 operator|=
-name|gtk_hscale_new
+name|gtk_scale_new
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|,
 name|scale_adj
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_size_request
@@ -5793,6 +5799,10 @@ argument_list|)
 expr_stmt|;
 name|scale_adj
 operator|=
+operator|(
+name|GtkAdjustment
+operator|*
+operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|mng_data
@@ -5812,12 +5822,11 @@ argument_list|)
 expr_stmt|;
 name|scale
 operator|=
-name|gtk_hscale_new
+name|gtk_scale_new
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|,
 name|scale_adj
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_size_request
@@ -6076,6 +6085,11 @@ name|spinbutton
 operator|=
 name|gimp_spin_button_new
 argument_list|(
+operator|(
+name|GtkObject
+operator|*
+operator|*
+operator|)
 operator|&
 name|spinbutton_adj
 argument_list|,
