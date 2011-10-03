@@ -40891,7 +40891,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b76c0d30103
+DECL|enum|__anon2bcd02e60103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40911,7 +40911,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b76c0d30208
+DECL|struct|__anon2bcd02e60208
 block|{
 DECL|member|direction
 name|gint
@@ -42365,10 +42365,6 @@ break|break;
 block|}
 comment|/*  Loop through the rows */
 name|rrow
-operator|=
-literal|0
-expr_stmt|;
-name|rcol
 operator|=
 literal|0
 expr_stmt|;
