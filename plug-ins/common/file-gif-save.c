@@ -135,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfa82c30103
+DECL|enum|__anon29dbbd730103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -148,7 +148,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfa82c30203
+DECL|enum|__anon29dbbd730203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -165,7 +165,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfa82c30308
+DECL|struct|__anon29dbbd730308
 block|{
 DECL|member|interlace
 name|gint
@@ -5626,11 +5626,6 @@ name|get_pixel
 parameter_list|)
 block|{
 name|int
-name|RWidth
-decl_stmt|,
-name|RHeight
-decl_stmt|;
-name|int
 name|LeftOfs
 decl_stmt|,
 name|TopOfs
@@ -5650,14 +5645,10 @@ literal|1
 operator|<<
 name|BitsPerPixel
 expr_stmt|;
-name|RWidth
-operator|=
 name|Width
 operator|=
 name|GWidth
 expr_stmt|;
-name|RHeight
-operator|=
 name|Height
 operator|=
 name|GHeight
