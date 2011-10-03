@@ -91,7 +91,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb093860103
+DECL|enum|__anon2bcea87c0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -111,7 +111,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb093860208
+DECL|struct|__anon2bcea87c0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -7123,11 +7123,6 @@ init|=
 literal|0
 decl_stmt|;
 name|gint
-name|ym_alpha
-init|=
-literal|0
-decl_stmt|;
-name|gint
 name|mmag_alpha
 init|=
 literal|0
@@ -7400,19 +7395,6 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|gimp_drawable_has_alpha
-argument_list|(
-name|map_y
-operator|->
-name|drawable_id
-argument_list|)
-condition|)
-name|ym_alpha
-operator|=
-literal|1
 expr_stmt|;
 name|ym_bytes
 operator|=
