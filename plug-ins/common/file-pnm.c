@@ -366,7 +366,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0ea7f70108
+DECL|struct|__anon29f653aa0108
 block|{
 DECL|member|raw
 name|gint
@@ -4912,11 +4912,10 @@ expr_stmt|;
 comment|/* write out magic number */
 if|if
 condition|(
+operator|!
 name|psvals
 operator|.
 name|raw
-operator|==
-name|FALSE
 condition|)
 block|{
 if|if
@@ -5057,15 +5056,7 @@ return|;
 block|}
 block|}
 block|}
-elseif|else
-if|if
-condition|(
-name|psvals
-operator|.
-name|raw
-operator|==
-name|TRUE
-condition|)
+else|else
 block|{
 if|if
 condition|(
