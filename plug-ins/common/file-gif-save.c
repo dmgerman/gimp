@@ -135,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29dbbd730103
+DECL|enum|__anon2797ca140103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -148,7 +148,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29dbbd730203
+DECL|enum|__anon2797ca140203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -165,7 +165,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29dbbd730308
+DECL|struct|__anon2797ca140308
 block|{
 DECL|member|interlace
 name|gint
@@ -5631,9 +5631,6 @@ decl_stmt|,
 name|TopOfs
 decl_stmt|;
 name|int
-name|Resolution
-decl_stmt|;
-name|int
 name|ColorMapSize
 decl_stmt|;
 name|int
@@ -5658,10 +5655,6 @@ operator|=
 name|TopOfs
 operator|=
 literal|0
-expr_stmt|;
-name|Resolution
-operator|=
-name|BitsPerPixel
 expr_stmt|;
 comment|/*    * Calculate number of bits we are expecting    */
 name|CountDown
