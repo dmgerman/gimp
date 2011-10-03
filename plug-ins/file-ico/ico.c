@@ -496,9 +496,6 @@ index|[
 literal|4
 index|]
 decl_stmt|;
-name|gint32
-name|image_ID
-decl_stmt|;
 name|GimpRunMode
 name|run_mode
 decl_stmt|;
@@ -607,6 +604,9 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
+name|gint32
+name|image_ID
+decl_stmt|;
 name|image_ID
 operator|=
 name|ico_load_image
@@ -850,6 +850,9 @@ block|{
 name|gchar
 modifier|*
 name|file_name
+decl_stmt|;
+name|gint32
+name|image_ID
 decl_stmt|;
 name|image_ID
 operator|=
