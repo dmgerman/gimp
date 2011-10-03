@@ -6270,9 +6270,6 @@ decl_stmt|;
 name|gboolean
 name|closed
 decl_stmt|;
-name|gboolean
-name|fill
-decl_stmt|;
 comment|/* Load path data from image resources 2000-2998 */
 name|IFDBG
 argument_list|(
@@ -6368,11 +6365,6 @@ operator|-
 literal|1
 return|;
 block|}
-else|else
-name|fill
-operator|=
-name|FALSE
-expr_stmt|;
 if|if
 condition|(
 name|fseek
@@ -6521,10 +6513,6 @@ operator|==
 name|PSD_PATH_FILL_RULE
 condition|)
 block|{
-name|fill
-operator|=
-name|FALSE
-expr_stmt|;
 if|if
 condition|(
 name|fseek
@@ -6599,16 +6587,6 @@ operator|-
 literal|1
 return|;
 block|}
-if|if
-condition|(
-name|init_fill
-operator|!=
-literal|0
-condition|)
-name|fill
-operator|=
-name|TRUE
-expr_stmt|;
 if|if
 condition|(
 name|fseek
