@@ -21673,8 +21673,6 @@ parameter_list|)
 block|{
 name|gboolean
 name|has_alpha1
-decl_stmt|,
-name|has_alpha2
 decl_stmt|;
 name|guint
 name|i
@@ -21697,8 +21695,6 @@ name|COMBINE_INDEXED_INDEXED
 case|:
 name|has_alpha1
 operator|=
-name|has_alpha2
-operator|=
 name|FALSE
 expr_stmt|;
 break|break;
@@ -21712,10 +21708,6 @@ name|has_alpha1
 operator|=
 name|TRUE
 expr_stmt|;
-name|has_alpha2
-operator|=
-name|FALSE
-expr_stmt|;
 break|break;
 case|case
 name|COMBINE_INTEN_INTEN_A
@@ -21727,10 +21719,6 @@ name|has_alpha1
 operator|=
 name|FALSE
 expr_stmt|;
-name|has_alpha2
-operator|=
-name|TRUE
-expr_stmt|;
 break|break;
 case|case
 name|COMBINE_INTEN_A_INTEN_A
@@ -21740,15 +21728,11 @@ name|COMBINE_INDEXED_A_INDEXED_A
 case|:
 name|has_alpha1
 operator|=
-name|has_alpha2
-operator|=
 name|TRUE
 expr_stmt|;
 break|break;
 default|default:
 name|has_alpha1
-operator|=
-name|has_alpha2
 operator|=
 name|FALSE
 expr_stmt|;
