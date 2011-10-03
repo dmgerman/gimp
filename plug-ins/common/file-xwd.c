@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff50910108
+DECL|struct|__anon2a8bc8680108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -246,7 +246,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff50910208
+DECL|struct|__anon2a8bc8680208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -304,7 +304,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff50910308
+DECL|struct|__anon2a8bc8680308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -331,7 +331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff50910408
+DECL|struct|__anon2a8bc8680408
 block|{
 DECL|member|npixel
 name|gint
@@ -11204,9 +11204,6 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GimpImageType
-name|drawable_type
-decl_stmt|;
 ifdef|#
 directive|ifdef
 name|XWD_DEBUG
@@ -11220,13 +11217,6 @@ directive|endif
 name|drawable
 operator|=
 name|gimp_drawable_get
-argument_list|(
-name|drawable_ID
-argument_list|)
-expr_stmt|;
-name|drawable_type
-operator|=
-name|gimp_drawable_type
 argument_list|(
 name|drawable_ID
 argument_list|)
