@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297387d40103
+DECL|enum|__anon2ace92010103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297387d40203
+DECL|enum|__anon2ace92010203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -152,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297387d40308
+DECL|struct|__anon2ace92010308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -183,7 +183,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297387d40408
+DECL|struct|__anon2ace92010408
 block|{
 DECL|member|menu
 name|gchar
@@ -996,7 +996,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-specifier|const
 name|gchar
 modifier|*
 name|leaf_ptr
@@ -1051,6 +1050,11 @@ name|leaf_ptr
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|leaf_ptr
 argument_list|)
 expr_stmt|;
 block|}
