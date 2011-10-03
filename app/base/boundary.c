@@ -3910,11 +3910,6 @@ name|maxdist
 operator|=
 literal|0
 expr_stmt|;
-name|maxdist_idx
-operator|=
-operator|-
-literal|1
-expr_stmt|;
 if|if
 condition|(
 name|segs
@@ -4013,10 +4008,6 @@ block|{
 name|maxdist
 operator|=
 name|dist
-expr_stmt|;
-name|maxdist_idx
-operator|=
-name|i
 expr_stmt|;
 block|}
 block|}
@@ -4128,10 +4119,6 @@ block|{
 name|maxdist
 operator|=
 name|dist
-expr_stmt|;
-name|maxdist_idx
-operator|=
-name|i
 expr_stmt|;
 block|}
 block|}
