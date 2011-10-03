@@ -146,7 +146,7 @@ value|FALSE
 end_define
 
 begin_typedef
-DECL|struct|__anon2894d4730108
+DECL|struct|__anon28a6dcab0108
 typedef|typedef
 struct|struct
 block|{
@@ -169,7 +169,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2894d4730208
+DECL|struct|__anon28a6dcab0208
 typedef|typedef
 struct|struct
 block|{
@@ -198,7 +198,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2894d4730308
+DECL|struct|__anon28a6dcab0308
 typedef|typedef
 struct|struct
 block|{
@@ -218,7 +218,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2894d4730403
+DECL|enum|__anon28a6dcab0403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -237,7 +237,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2894d4730508
+DECL|struct|__anon28a6dcab0508
 typedef|typedef
 struct|struct
 block|{
@@ -4430,9 +4430,6 @@ decl_stmt|;
 name|gint
 name|bpp
 decl_stmt|;
-name|gint32
-name|drawable_id
-decl_stmt|;
 name|GimpPixelRgn
 name|region
 decl_stmt|;
@@ -4454,12 +4451,6 @@ decl_stmt|;
 name|gboolean
 name|indexed
 decl_stmt|;
-name|drawable_id
-operator|=
-name|drawable
-operator|->
-name|drawable_id
-expr_stmt|;
 name|width
 operator|=
 name|drawable
