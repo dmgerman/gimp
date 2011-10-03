@@ -404,9 +404,6 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-name|GimpRunMode
-name|run_mode
-decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
@@ -416,17 +413,6 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
-name|run_mode
-operator|=
-name|param
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
