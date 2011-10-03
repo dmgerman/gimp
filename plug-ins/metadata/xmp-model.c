@@ -117,7 +117,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d9c1cb0103
+DECL|enum|__anon28b9f7890103
 block|{
 DECL|enumerator|PROPERTY_CHANGED
 name|PROPERTY_CHANGED
@@ -2183,11 +2183,6 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|ns_prefix
-decl_stmt|;
 name|XMPProperty
 modifier|*
 name|property
@@ -2243,12 +2238,6 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|ns_prefix
-operator|=
-name|schema
-operator|->
-name|prefix
-expr_stmt|;
 name|property
 operator|=
 name|NULL
@@ -2345,7 +2334,9 @@ name|g_print
 argument_list|(
 literal|"\t%s:%s = \"%s\"\n"
 argument_list|,
-name|ns_prefix
+name|schema
+operator|->
+name|prefix
 argument_list|,
 name|name
 argument_list|,
