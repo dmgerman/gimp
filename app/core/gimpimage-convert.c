@@ -407,7 +407,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2ae861de0103
+DECL|enum|__anon2aea5ebb0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1448,7 +1448,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae861de0208
+DECL|struct|__anon2aea5ebb0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1691,7 +1691,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae861de0308
+DECL|struct|__anon2aea5ebb0308
 block|{
 DECL|member|used_count
 name|signed
@@ -6704,10 +6704,6 @@ name|axisType
 name|longest_ax
 init|=
 name|AXIS_UNDEF
-decl_stmt|,
-name|longest_ax2
-init|=
-name|AXIS_UNDEF
 decl_stmt|;
 name|int
 name|longest_length
@@ -6733,10 +6729,6 @@ name|longest_length2
 operator|=
 name|longest_length
 expr_stmt|;
-name|longest_ax2
-operator|=
-name|longest_ax
-expr_stmt|;
 name|longest_length
 operator|=
 name|dist0
@@ -6758,10 +6750,6 @@ name|longest_length2
 operator|=
 name|dist0
 expr_stmt|;
-name|longest_ax2
-operator|=
-name|AXIS_RED
-expr_stmt|;
 block|}
 if|if
 condition|(
@@ -6773,10 +6761,6 @@ block|{
 name|longest_length2
 operator|=
 name|longest_length
-expr_stmt|;
-name|longest_ax2
-operator|=
-name|longest_ax
 expr_stmt|;
 name|longest_length
 operator|=
@@ -6799,10 +6783,6 @@ name|longest_length2
 operator|=
 name|dist1
 expr_stmt|;
-name|longest_ax2
-operator|=
-name|AXIS_GREEN
-expr_stmt|;
 block|}
 if|if
 condition|(
@@ -6814,10 +6794,6 @@ block|{
 name|longest_length2
 operator|=
 name|longest_length
-expr_stmt|;
-name|longest_ax2
-operator|=
-name|longest_ax
 expr_stmt|;
 name|longest_length
 operator|=
@@ -6839,10 +6815,6 @@ block|{
 name|longest_length2
 operator|=
 name|dist2
-expr_stmt|;
-name|longest_ax2
-operator|=
-name|AXIS_BLUE
 expr_stmt|;
 block|}
 if|if
