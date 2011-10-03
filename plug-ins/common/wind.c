@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b7e78b0103
+DECL|enum|__anon2be513250103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -130,7 +130,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b7e78b0203
+DECL|enum|__anon2be513250203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -146,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b7e78b0303
+DECL|enum|__anon2be513250303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -1105,8 +1105,6 @@ block|{
 name|gint
 name|x1
 decl_stmt|,
-name|x2
-decl_stmt|,
 name|y1
 decl_stmt|,
 name|y2
@@ -1179,12 +1177,6 @@ operator|&
 name|height
 argument_list|)
 expr_stmt|;
-name|x2
-operator|=
-name|x1
-operator|+
-name|width
-expr_stmt|;
 name|y2
 operator|=
 name|y1
@@ -1236,12 +1228,6 @@ argument_list|(
 literal|"Rendering blast"
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|x2
-operator|=
-name|x1
-operator|+
-name|width
 expr_stmt|;
 name|y2
 operator|=
@@ -1712,8 +1698,6 @@ name|x1
 decl_stmt|,
 name|y1
 decl_stmt|,
-name|x2
-decl_stmt|,
 name|y2
 decl_stmt|;
 name|bytes
@@ -1748,12 +1732,6 @@ argument_list|,
 operator|&
 name|height
 argument_list|)
-expr_stmt|;
-name|x2
-operator|=
-name|x1
-operator|+
-name|width
 expr_stmt|;
 name|y2
 operator|=
@@ -1806,12 +1784,6 @@ argument_list|(
 literal|"Rendering wind"
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|x2
-operator|=
-name|x1
-operator|+
-name|width
 expr_stmt|;
 name|y2
 operator|=
