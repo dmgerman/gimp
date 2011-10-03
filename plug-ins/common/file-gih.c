@@ -205,7 +205,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon298f7c5d0108
+DECL|struct|__anon29aabbf10108
 block|{
 DECL|member|spacing
 name|guint
@@ -281,7 +281,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298f7c5d0208
+DECL|struct|__anon29aabbf10208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -1741,9 +1741,6 @@ name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
 name|gint
-name|version_extra
-decl_stmt|;
-name|gint
 name|bn_size
 decl_stmt|;
 name|GimpImageType
@@ -1880,11 +1877,6 @@ operator|.
 name|spacing
 argument_list|)
 expr_stmt|;
-comment|/* How much extra to add to the header seek - 1 needs a bit more */
-name|version_extra
-operator|=
-literal|0
-expr_stmt|;
 if|if
 condition|(
 name|bh
@@ -1911,10 +1903,6 @@ literal|8
 argument_list|,
 name|SEEK_CUR
 argument_list|)
-expr_stmt|;
-name|version_extra
-operator|=
-literal|8
 expr_stmt|;
 block|}
 comment|/* Version 1 didn't know about magic either */
