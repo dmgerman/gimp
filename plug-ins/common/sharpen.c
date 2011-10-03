@@ -336,7 +336,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6b004c0108
+DECL|struct|__anon2c820b0a0108
 block|{
 DECL|member|sharpen_percent
 name|gint
@@ -2251,6 +2251,14 @@ operator|=
 name|rgba_filter
 expr_stmt|;
 break|break;
+default|default:
+name|g_error
+argument_list|(
+literal|"Programmer stupidity error: img_bpp is %d\n"
+argument_list|,
+name|img_bpp
+argument_list|)
+expr_stmt|;
 block|}
 comment|/*    * Sharpen...    */
 name|memcpy
