@@ -499,9 +499,6 @@ decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
-name|gint32
-name|drawable_ID
-decl_stmt|;
 name|GimpRunMode
 name|run_mode
 decl_stmt|;
@@ -859,17 +856,6 @@ operator|=
 name|param
 index|[
 literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-name|drawable_ID
-operator|=
-name|param
-index|[
-literal|2
 index|]
 operator|.
 name|data
