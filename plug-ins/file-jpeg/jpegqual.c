@@ -267,7 +267,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fda2b40108
+DECL|struct|__anon28c8ece30108
 block|{
 DECL|member|hash
 specifier|const
@@ -6441,7 +6441,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fda2b40208
+DECL|struct|__anon28c8ece30208
 block|{
 DECL|member|hashval
 name|guint32
@@ -8541,7 +8541,7 @@ condition|)
 block|{
 name|g_print
 argument_list|(
-literal|"  {\n    /* %s */\n    \"?\", \"?\",\n    %hd, %hd,\n    %d,\n"
+literal|"  {\n    /* %s */\n    \"?\", \"?\",\n    %d, %d,\n    %d,\n"
 argument_list|,
 name|filename
 argument_list|,
@@ -9167,7 +9167,7 @@ comment|/* FIXME */
 name|g_print
 argument_list|(
 literal|"    \"?\", \"? (hash %x)\",\n"
-literal|"    %hd, %hd,\n    %d,\n"
+literal|"    %d, %d,\n    %d,\n"
 argument_list|,
 name|table_data
 operator|->
