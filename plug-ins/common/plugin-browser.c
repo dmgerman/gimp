@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3850eb0103
+DECL|enum|__anon297387d40103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3850eb0203
+DECL|enum|__anon297387d40203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -152,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3850eb0308
+DECL|struct|__anon297387d40308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -183,7 +183,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3850eb0408
+DECL|struct|__anon297387d40408
 block|{
 DECL|member|menu
 name|gchar
@@ -873,11 +873,6 @@ name|gchar
 modifier|*
 name|str_ptr
 decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|leaf_ptr
-decl_stmt|;
 name|GtkTreeStore
 modifier|*
 name|tree_store
@@ -971,10 +966,6 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|leaf_ptr
-operator|=
-name|mpath
-expr_stmt|;
 name|gtk_tree_store_append
 argument_list|(
 name|tree_store
@@ -1005,6 +996,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|leaf_ptr
+decl_stmt|;
 name|leaf_ptr
 operator|=
 name|g_strdup
@@ -1114,10 +1110,6 @@ name|gchar
 modifier|*
 name|tmp_ptr
 decl_stmt|;
-name|gchar
-modifier|*
-name|leaf_ptr
-decl_stmt|;
 name|GtkTreeIter
 name|parent
 decl_stmt|,
@@ -1160,15 +1152,6 @@ expr_stmt|;
 return|return;
 comment|/* No node */
 block|}
-name|leaf_ptr
-operator|=
-name|g_strdup
-argument_list|(
-name|str_ptr
-operator|+
-literal|1
-argument_list|)
-expr_stmt|;
 operator|*
 name|str_ptr
 operator|=
@@ -1273,11 +1256,6 @@ name|pinfo
 argument_list|,
 operator|-
 literal|1
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|leaf_ptr
 argument_list|)
 expr_stmt|;
 block|}
