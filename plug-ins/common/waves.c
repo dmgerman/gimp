@@ -54,7 +54,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac367a70103
+DECL|enum|__anon2bf2330f0103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -70,7 +70,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac367a70208
+DECL|struct|__anon2bf2330f0208
 block|{
 DECL|member|amplitude
 name|gdouble
@@ -1924,12 +1924,6 @@ name|yhsiz
 decl_stmt|;
 comment|/* Half size of selection */
 name|gdouble
-name|radius
-decl_stmt|,
-name|radius2
-decl_stmt|;
-comment|/* Radius and radius^2 */
-name|gdouble
 name|amnt
 decl_stmt|,
 name|d
@@ -2101,21 +2095,6 @@ operator|=
 literal|1.0
 expr_stmt|;
 block|}
-name|radius
-operator|=
-name|MAX
-argument_list|(
-name|xhsiz
-argument_list|,
-name|yhsiz
-argument_list|)
-expr_stmt|;
-name|radius2
-operator|=
-name|radius
-operator|*
-name|radius
-expr_stmt|;
 comment|/* Wave the image! */
 name|dst
 operator|+=
