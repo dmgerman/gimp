@@ -122,7 +122,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3c25780108
+DECL|struct|__anon2b8a942c0108
 block|{
 DECL|member|width
 name|gint
@@ -152,7 +152,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3c25780203
+DECL|enum|__anon2b8a942c0203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -831,10 +831,6 @@ name|GtkWidget
 modifier|*
 name|scrolled
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|button
-decl_stmt|;
 name|GtkToolItem
 modifier|*
 name|item
@@ -1167,15 +1163,6 @@ argument_list|(
 name|item
 argument_list|,
 name|TRUE
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gtk_ui_manager_get_widget
-argument_list|(
-name|ui_manager
-argument_list|,
-literal|"/help-browser-toolbar/website"
 argument_list|)
 expr_stmt|;
 comment|/*  the horizontal paned  */
