@@ -758,10 +758,6 @@ operator|&
 name|m
 argument_list|)
 expr_stmt|;
-name|alpha
-operator|=
-literal|0
-expr_stmt|;
 comment|/*  turn interpolation off for simple transformations (e.g. rot90)  */
 if|if
 condition|(
