@@ -135,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c65bb3a0103
+DECL|enum|__anon293807760103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -148,7 +148,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c65bb3a0203
+DECL|enum|__anon293807760203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -165,7 +165,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c65bb3a0308
+DECL|struct|__anon293807760308
 block|{
 DECL|member|interlace
 name|gint
@@ -5386,9 +5386,6 @@ name|int
 name|ColorMapSize
 decl_stmt|;
 name|int
-name|InitCodeSize
-decl_stmt|;
-name|int
 name|i
 decl_stmt|;
 name|ColorMapSize
@@ -5436,22 +5433,6 @@ comment|/*    * Indicate which pass we are on (if interlace)    */
 name|Pass
 operator|=
 literal|0
-expr_stmt|;
-comment|/*    * The initial code size    */
-if|if
-condition|(
-name|BitsPerPixel
-operator|<=
-literal|1
-condition|)
-name|InitCodeSize
-operator|=
-literal|2
-expr_stmt|;
-else|else
-name|InitCodeSize
-operator|=
-name|BitsPerPixel
 expr_stmt|;
 comment|/*    * Set up the current x and y position    */
 name|curx
@@ -5633,9 +5614,6 @@ decl_stmt|;
 name|int
 name|ColorMapSize
 decl_stmt|;
-name|int
-name|InitCodeSize
-decl_stmt|;
 name|ColorMapSize
 operator|=
 literal|1
@@ -5673,22 +5651,6 @@ comment|/*    * Indicate which pass we are on (if interlace)    */
 name|Pass
 operator|=
 literal|0
-expr_stmt|;
-comment|/*    * The initial code size    */
-if|if
-condition|(
-name|BitsPerPixel
-operator|<=
-literal|1
-condition|)
-name|InitCodeSize
-operator|=
-literal|2
-expr_stmt|;
-else|else
-name|InitCodeSize
-operator|=
-name|BitsPerPixel
 expr_stmt|;
 comment|/*    * Set up the current x and y position    */
 name|curx
