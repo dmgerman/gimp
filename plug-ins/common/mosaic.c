@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c750ef90103
+DECL|enum|__anon28f978f50103
 block|{
 DECL|enumerator|SQUARES
 name|SQUARES
@@ -182,7 +182,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c750ef90208
+DECL|struct|__anon28f978f50208
 block|{
 DECL|member|x
 DECL|member|y
@@ -200,7 +200,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c750ef90308
+DECL|struct|__anon28f978f50308
 block|{
 DECL|member|npts
 name|guint
@@ -222,7 +222,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c750ef90408
+DECL|struct|__anon28f978f50408
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c750ef90508
+DECL|struct|__anon28f978f50508
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -2163,9 +2163,6 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|gint
-name|alpha
-decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
@@ -2444,14 +2441,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-name|alpha
-operator|=
-name|drawable
-operator|->
-name|bpp
-operator|-
-literal|1
-expr_stmt|;
 name|light_x
 operator|=
 operator|-
