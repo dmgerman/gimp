@@ -506,8 +506,6 @@ operator|->
 name|load_inhibit
 condition|)
 block|{
-name|str
-operator|=
 name|g_string_append_c
 argument_list|(
 name|str
@@ -515,8 +513,6 @@ argument_list|,
 name|G_SEARCHPATH_SEPARATOR
 argument_list|)
 expr_stmt|;
-name|str
-operator|=
 name|g_string_append
 argument_list|(
 name|str
