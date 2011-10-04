@@ -200,7 +200,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a04a0a40103
+DECL|enum|__anon294f0ebe0103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -245,7 +245,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a04a0a40208
+DECL|struct|__anon294f0ebe0208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -284,7 +284,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a04a0a40308
+DECL|struct|__anon294f0ebe0308
 block|{
 DECL|member|info
 name|ExpInfo
@@ -2397,8 +2397,6 @@ decl_stmt|,
 name|img_width
 decl_stmt|,
 name|img_bpp
-decl_stmt|,
-name|img_has_alpha
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -2503,15 +2501,6 @@ expr_stmt|;
 name|img_bpp
 operator|=
 name|gimp_drawable_bpp
-argument_list|(
-name|drawable
-operator|->
-name|drawable_id
-argument_list|)
-expr_stmt|;
-name|img_has_alpha
-operator|=
-name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 operator|->
