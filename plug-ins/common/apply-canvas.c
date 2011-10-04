@@ -40891,7 +40891,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcd02e60103
+DECL|enum|__anon2c01bf450103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40911,7 +40911,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcd02e60208
+DECL|struct|__anon2c01bf450208
 block|{
 DECL|member|direction
 name|gint
@@ -42071,8 +42071,6 @@ name|x1
 decl_stmt|,
 name|y1
 decl_stmt|,
-name|x2
-decl_stmt|,
 name|y2
 decl_stmt|,
 name|varde
@@ -42120,12 +42118,6 @@ operator|&
 name|height
 argument_list|)
 expr_stmt|;
-name|x2
-operator|=
-name|x1
-operator|+
-name|width
-expr_stmt|;
 name|y2
 operator|=
 name|y1
@@ -42159,12 +42151,6 @@ name|height
 argument_list|)
 condition|)
 return|return;
-name|x2
-operator|=
-name|x1
-operator|+
-name|width
-expr_stmt|;
 name|y2
 operator|=
 name|y1
