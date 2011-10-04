@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a29f530108
+DECL|struct|__anon2990d8a80108
 block|{
 DECL|member|file_name
 name|gchar
@@ -1682,9 +1682,6 @@ modifier|*
 name|s_uint_8
 decl_stmt|,
 modifier|*
-name|s_uint_32
-decl_stmt|,
-modifier|*
 name|s_uint
 decl_stmt|,
 modifier|*
@@ -2356,10 +2353,6 @@ name|s_uint_8
 operator|=
 literal|"guint8 "
 expr_stmt|;
-name|s_uint_32
-operator|=
-literal|"guint32"
-expr_stmt|;
 name|s_uint
 operator|=
 literal|"guint  "
@@ -2385,10 +2378,6 @@ block|{
 name|s_uint_8
 operator|=
 literal|"unsigned char"
-expr_stmt|;
-name|s_uint_32
-operator|=
-literal|"unsigned int "
 expr_stmt|;
 name|s_uint
 operator|=
@@ -2419,10 +2408,6 @@ name|s_uint_8
 operator|=
 literal|"guint8"
 expr_stmt|;
-name|s_uint_32
-operator|=
-literal|"guint32"
-expr_stmt|;
 name|s_uint
 operator|=
 literal|"guint"
@@ -2442,10 +2427,6 @@ block|{
 name|s_uint_8
 operator|=
 literal|"unsigned char"
-expr_stmt|;
-name|s_uint_32
-operator|=
-literal|"unsigned int"
 expr_stmt|;
 name|s_uint
 operator|=
