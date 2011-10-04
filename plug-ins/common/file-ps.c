@@ -297,7 +297,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27efbf630108
+DECL|struct|__anon2999e8d70108
 block|{
 DECL|member|resolution
 name|guint
@@ -408,7 +408,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27efbf630208
+DECL|struct|__anon2999e8d70208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1039,7 +1039,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27efbf630308
+DECL|struct|__anon2999e8d70308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1908,7 +1908,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27efbf630408
+DECL|struct|__anon2999e8d70408
 block|{
 DECL|member|eol
 name|long
@@ -9546,8 +9546,6 @@ name|ury
 decl_stmt|;
 name|double
 name|x_scale
-decl_stmt|,
-name|y_scale
 decl_stmt|;
 name|double
 name|width_inch
@@ -9988,13 +9986,6 @@ operator|=
 literal|72.0
 operator|*
 name|width_inch
-expr_stmt|;
-name|y_scale
-operator|=
-operator|-
-literal|72.0
-operator|*
-name|height_inch
 expr_stmt|;
 break|break;
 case|case
