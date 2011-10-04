@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7458a90108
+DECL|struct|__anon2b0b84bd0108
 block|{
 DECL|member|centre_x
 name|gdouble
@@ -111,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7458a90208
+DECL|struct|__anon2b0b84bd0208
 block|{
 DECL|member|normallise_radius_sq
 name|gdouble
@@ -467,9 +467,6 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
-name|image_ID
-decl_stmt|;
 name|GimpRGB
 name|background
 decl_stmt|;
@@ -486,17 +483,6 @@ operator|=
 name|param
 index|[
 literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-name|image_ID
-operator|=
-name|param
-index|[
-literal|1
 index|]
 operator|.
 name|data
