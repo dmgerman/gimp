@@ -164,7 +164,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d981500103
+DECL|enum|__anon2c816a880103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -389,7 +389,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d981500208
+DECL|struct|__anon2c816a880208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -870,7 +870,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon28d981500308
+DECL|struct|__anon2c816a880308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -2165,9 +2165,6 @@ name|alphasum
 init|=
 literal|0
 decl_stmt|;
-name|gfloat
-name|temp
-decl_stmt|;
 name|gint
 name|x
 decl_stmt|,
@@ -2214,19 +2211,6 @@ condition|;
 name|x
 operator|++
 control|)
-block|{
-name|temp
-operator|=
-name|config
-operator|.
-name|matrix
-index|[
-name|x
-index|]
-index|[
-name|y
-index|]
-expr_stmt|;
 name|matrixsum
 operator|+=
 name|ABS
@@ -2242,7 +2226,6 @@ name|y
 index|]
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|alpha_channel
 operator|=
@@ -2277,8 +2260,9 @@ name|x
 operator|++
 control|)
 block|{
+name|gfloat
 name|temp
-operator|=
+init|=
 name|config
 operator|.
 name|matrix
@@ -2288,7 +2272,7 @@ index|]
 index|[
 name|y
 index|]
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|channel
