@@ -91,7 +91,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcea87c0103
+DECL|enum|__anon2be8e4000103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -111,7 +111,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcea87c0208
+DECL|struct|__anon2be8e4000208
 block|{
 DECL|member|amount
 name|gdouble
@@ -6582,9 +6582,6 @@ name|gint
 name|height
 decl_stmt|;
 name|gint
-name|bytes
-decl_stmt|;
-name|gint
 name|orig_image_id
 decl_stmt|;
 name|gint
@@ -6692,12 +6689,6 @@ operator|=
 name|orig_draw
 operator|->
 name|height
-expr_stmt|;
-name|bytes
-operator|=
-name|orig_draw
-operator|->
-name|bpp
 expr_stmt|;
 name|image_type
 operator|=
