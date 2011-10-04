@@ -1657,7 +1657,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c80230b0108
+DECL|struct|__anon2c0ab57b0108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -1909,10 +1909,6 @@ operator|->
 name|last_x
 condition|)
 block|{
-name|new_y
-operator|=
-name|new_x
-expr_stmt|;
 name|gimp_size_entry_set_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
@@ -1954,10 +1950,6 @@ operator|->
 name|last_y
 condition|)
 block|{
-name|new_x
-operator|=
-name|new_y
-expr_stmt|;
 name|gimp_size_entry_set_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
