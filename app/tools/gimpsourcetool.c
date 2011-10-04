@@ -1344,8 +1344,10 @@ name|display
 argument_list|,
 literal|"%s%s%s"
 argument_list|,
-name|gimp_get_mod_name_control
-argument_list|()
+name|gimp_get_mod_string
+argument_list|(
+name|GDK_CONTROL_MASK
+argument_list|)
 argument_list|,
 name|gimp_get_mod_separator
 argument_list|()
