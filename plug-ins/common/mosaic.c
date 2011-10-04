@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f978f50103
+DECL|enum|__anon28a1e4830103
 block|{
 DECL|enumerator|SQUARES
 name|SQUARES
@@ -182,7 +182,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f978f50208
+DECL|struct|__anon28a1e4830208
 block|{
 DECL|member|x
 DECL|member|y
@@ -200,7 +200,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f978f50308
+DECL|struct|__anon28a1e4830308
 block|{
 DECL|member|npts
 name|guint
@@ -222,7 +222,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f978f50408
+DECL|struct|__anon28a1e4830408
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f978f50508
+DECL|struct|__anon28a1e4830508
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -3916,9 +3916,6 @@ name|GimpPixelRgn
 name|dest_rgn
 decl_stmt|;
 name|gint
-name|bytes
-decl_stmt|;
-name|gint
 name|i
 decl_stmt|,
 name|j
@@ -3946,12 +3943,6 @@ decl_stmt|;
 name|gint
 name|ith_row
 decl_stmt|;
-name|bytes
-operator|=
-name|drawable
-operator|->
-name|bpp
-expr_stmt|;
 comment|/*  allocate the gradient maps  */
 name|h_grad
 operator|=
