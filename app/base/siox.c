@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0b531e0108
+DECL|struct|__anon2bc6ed180108
 block|{
 DECL|member|l
 name|gfloat
@@ -246,7 +246,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0b531e0208
+DECL|struct|__anon2bc6ed180208
 block|{
 DECL|member|bgdist
 name|gfloat
@@ -3474,12 +3474,6 @@ name|progress_data
 argument_list|,
 literal|0.0
 argument_list|)
-expr_stmt|;
-name|total
-operator|=
-name|width
-operator|*
-name|height
 expr_stmt|;
 if|if
 condition|(
