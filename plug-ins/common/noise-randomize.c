@@ -176,7 +176,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eea1960108
+DECL|struct|__anon27cddd380108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -1465,8 +1465,6 @@ name|cnt
 decl_stmt|;
 name|gint
 name|has_alpha
-decl_stmt|,
-name|ind
 decl_stmt|;
 name|gint
 name|i
@@ -1819,10 +1817,6 @@ expr_stmt|;
 name|d
 operator|=
 name|dest
-expr_stmt|;
-name|ind
-operator|=
-literal|0
 expr_stmt|;
 for|for
 control|(
