@@ -3666,11 +3666,6 @@ index|]
 operator|/
 literal|255.0
 expr_stmt|;
-name|h
-operator|=
-literal|0.0
-expr_stmt|;
-comment|/* Shut up -Wall */
 if|if
 condition|(
 name|red
