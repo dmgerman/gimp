@@ -230,7 +230,7 @@ directive|endif
 end_endif
 
 begin_struct
-DECL|struct|__anon27fad5600108
+DECL|struct|__anon2b2af4b10108
 specifier|static
 struct|struct
 block|{
@@ -2488,7 +2488,7 @@ literal|"share"
 argument_list|,
 literal|"gimp"
 argument_list|,
-name|GIMP_API_VERSION
+name|GIMP_PLUGIN_VERSION
 argument_list|,
 literal|"scripts"
 argument_list|,
