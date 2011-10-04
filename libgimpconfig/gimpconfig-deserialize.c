@@ -1337,10 +1337,6 @@ name|G_TOKEN_FLOAT
 expr_stmt|;
 break|break;
 default|default:
-name|token
-operator|=
-name|G_TOKEN_NONE
-expr_stmt|;
 name|g_assert_not_reached
 argument_list|()
 expr_stmt|;
