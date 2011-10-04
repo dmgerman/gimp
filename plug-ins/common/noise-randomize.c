@@ -176,7 +176,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cddd380108
+DECL|struct|__anon2bf8d64a0108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -1464,9 +1464,6 @@ name|gint
 name|cnt
 decl_stmt|;
 name|gint
-name|has_alpha
-decl_stmt|;
-name|gint
 name|i
 decl_stmt|,
 name|j
@@ -1556,15 +1553,6 @@ operator|=
 name|drawable
 operator|->
 name|bpp
-expr_stmt|;
-name|has_alpha
-operator|=
-name|gimp_drawable_has_alpha
-argument_list|(
-name|drawable
-operator|->
-name|drawable_id
-argument_list|)
 expr_stmt|;
 comment|/*    *  allocate row buffers    */
 name|prev_row
