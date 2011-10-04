@@ -230,7 +230,7 @@ directive|endif
 end_endif
 
 begin_struct
-DECL|struct|__anon2a2a9ced0108
+DECL|struct|__anon2c0c4edf0108
 specifier|static
 struct|struct
 block|{
@@ -2572,7 +2572,7 @@ directive|endif
 return|return
 name|g_strdup_printf
 argument_list|(
-literal|"%s%cshare%cgimp%c%d.%d%cscripts"
+literal|"%s%cshare%cgimp%c%s%cscripts"
 argument_list|,
 name|get_runtime_prefix
 argument_list|(
@@ -2585,9 +2585,7 @@ name|slash
 argument_list|,
 name|slash
 argument_list|,
-name|GIMP_MAJOR_VERSION
-argument_list|,
-name|GIMP_MINOR_VERSION
+name|GIMP_API_VERSION
 argument_list|,
 name|slash
 argument_list|)
