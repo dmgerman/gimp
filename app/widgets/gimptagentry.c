@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets-types.h"
 end_include
 
@@ -114,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f5bf000103
+DECL|enum|__anon2aac60940103
 block|{
 DECL|enumerator|TAG_SEARCH_NONE
 name|TAG_SEARCH_NONE
@@ -132,7 +138,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f5bf000203
+DECL|enum|__anon2aac60940203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5352,9 +5358,21 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GdkModifierType
+name|extend_mask
+decl_stmt|;
 name|guchar
 name|c
 decl_stmt|;
+name|extend_mask
+operator|=
+name|gtk_widget_get_modifier_mask
+argument_list|(
+name|widget
+argument_list|,
+name|GDK_MODIFIER_INTENT_EXTEND_SELECTION
+argument_list|)
+expr_stmt|;
 name|c
 operator|=
 name|gdk_keyval_to_unicode
@@ -5487,7 +5505,7 @@ name|event
 operator|->
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|extend_mask
 operator|)
 condition|?
 name|TRUE
@@ -5510,7 +5528,7 @@ name|event
 operator|->
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|extend_mask
 operator|)
 condition|?
 name|TRUE
