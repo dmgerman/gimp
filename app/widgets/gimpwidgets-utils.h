@@ -171,17 +171,6 @@ begin_function_decl
 specifier|const
 name|gchar
 modifier|*
-name|gimp_get_mod_separator
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|const
-name|gchar
-modifier|*
 name|gimp_get_mod_string
 parameter_list|(
 name|GdkModifierType
