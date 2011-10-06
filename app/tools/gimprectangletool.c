@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f6c18c0103
+DECL|enum|__anon2a4f590d0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -237,7 +237,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f6c18c0203
+DECL|enum|__anon2a4f590d0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -280,7 +280,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f6c18c0303
+DECL|enum|__anon2a4f590d0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -10251,10 +10251,6 @@ decl_stmt|;
 name|gboolean
 name|rect_rubber_banding_func
 decl_stmt|;
-name|rect_rubber_banding_func
-operator|=
-name|FALSE
-expr_stmt|;
 name|private
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
