@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29139ace0103
+DECL|enum|__anon2b9caa0b0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -237,7 +237,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29139ace0203
+DECL|enum|__anon2b9caa0b0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -280,7 +280,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29139ace0303
+DECL|enum|__anon2b9caa0b0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -496,11 +496,6 @@ decl_stmt|;
 DECL|member|suppress_updates
 name|gint
 name|suppress_updates
-decl_stmt|;
-comment|/* Supress execute for one mouse release, needed to prevent single click create&commit */
-DECL|member|suppress_execute
-name|gboolean
-name|suppress_execute
 decl_stmt|;
 block|}
 struct|;
@@ -2990,12 +2985,6 @@ operator|->
 name|y
 argument_list|)
 expr_stmt|;
-name|private
-operator|->
-name|suppress_execute
-operator|=
-name|FALSE
-expr_stmt|;
 if|if
 condition|(
 name|display
@@ -3174,13 +3163,6 @@ comment|/* Remember that this rectangle was created from scratch. */
 name|private
 operator|->
 name|is_new
-operator|=
-name|TRUE
-expr_stmt|;
-comment|/*Suppress execute on release for the creating click*/
-name|private
-operator|->
-name|suppress_execute
 operator|=
 name|TRUE
 expr_stmt|;
@@ -3661,22 +3643,6 @@ operator|==
 name|GIMP_RECTANGLE_TOOL_DEAD
 condition|)
 break|break;
-comment|/* Suppresed, don't execute yet!*/
-if|if
-condition|(
-name|private
-operator|->
-name|suppress_execute
-condition|)
-block|{
-name|private
-operator|->
-name|suppress_execute
-operator|=
-name|FALSE
-expr_stmt|;
-break|break;
-block|}
 if|if
 condition|(
 name|gimp_rectangle_tool_execute
