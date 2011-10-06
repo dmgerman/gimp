@@ -317,7 +317,8 @@ name|GDK_SHIFT_MASK
 argument_list|,
 literal|"documents-file-open-dialog"
 argument_list|,
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 argument_list|,
 name|NULL
 argument_list|)
@@ -413,7 +414,8 @@ name|GDK_SHIFT_MASK
 argument_list|,
 literal|"documents-remove-dangling"
 argument_list|,
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 argument_list|,
 name|NULL
 argument_list|)

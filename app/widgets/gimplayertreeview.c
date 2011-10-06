@@ -186,6 +186,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -2248,7 +2254,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0d188f0108
+DECL|struct|__anon2aa87b3e0108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2642,7 +2648,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0d188f0208
+DECL|struct|__anon2aa87b3e0208
 block|{
 DECL|member|mask_column
 name|gint
@@ -5803,7 +5809,8 @@ if|if
 condition|(
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 condition|)
 name|gimp_action_group_set_action_active
 argument_list|(

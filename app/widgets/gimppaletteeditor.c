@@ -1288,7 +1288,8 @@ literal|"palette-editor-new-color-fg"
 argument_list|,
 literal|"palette-editor-new-color-bg"
 argument_list|,
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 argument_list|,
 name|NULL
 argument_list|)
@@ -2846,7 +2847,8 @@ if|if
 condition|(
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 condition|)
 name|gimp_context_set_background
 argument_list|(
