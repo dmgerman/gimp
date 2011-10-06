@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0f952b0108
+DECL|struct|__anon2bcde4e60108
 block|{
 DECL|member|scale
 name|gint
@@ -127,7 +127,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0f952b0203
+DECL|enum|__anon2bcde4e60203
 block|{
 DECL|enumerator|filter_uniform
 name|filter_uniform
@@ -185,7 +185,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0f952b0308
+DECL|struct|__anon2bcde4e60308
 block|{
 DECL|member|N
 name|gint
@@ -2805,9 +2805,6 @@ name|gint
 name|size
 decl_stmt|;
 name|gint
-name|pos
-decl_stmt|;
-name|gint
 name|channel
 decl_stmt|;
 name|guchar
@@ -3062,10 +3059,6 @@ operator|.
 name|nscales
 expr_stmt|;
 comment|/*     The recursive filtering algorithm needs different coefficients according     to the selected scale (~ = standard deviation of Gaussian).    */
-name|pos
-operator|=
-literal|0
-expr_stmt|;
 for|for
 control|(
 name|channel
@@ -3080,6 +3073,9 @@ name|channel
 operator|++
 control|)
 block|{
+name|gint
+name|pos
+decl_stmt|;
 for|for
 control|(
 name|i
