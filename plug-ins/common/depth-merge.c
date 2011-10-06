@@ -6421,10 +6421,6 @@ name|sourceBpp
 index|]
 operator|)
 expr_stmt|;
-name|sourceBufferPos
-operator|=
-name|sourceBufferRow
-expr_stmt|;
 name|reducedRowBufferPos
 operator|=
 name|reducedRowBuffer
