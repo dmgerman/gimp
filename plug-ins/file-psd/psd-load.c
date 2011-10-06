@@ -9289,9 +9289,6 @@ decl_stmt|;
 name|guint32
 name|block_start
 decl_stmt|;
-name|guint32
-name|block_end
-decl_stmt|;
 name|block_start
 operator|=
 name|img_a
@@ -9303,12 +9300,6 @@ operator|=
 name|img_a
 operator|->
 name|merged_image_len
-expr_stmt|;
-name|block_end
-operator|=
-name|block_start
-operator|+
-name|block_len
 expr_stmt|;
 name|fseek
 argument_list|(
