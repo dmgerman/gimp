@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a1e4830103
+DECL|enum|__anon2ae8d6e90103
 block|{
 DECL|enumerator|SQUARES
 name|SQUARES
@@ -182,7 +182,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a1e4830208
+DECL|struct|__anon2ae8d6e90208
 block|{
 DECL|member|x
 DECL|member|y
@@ -200,7 +200,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a1e4830308
+DECL|struct|__anon2ae8d6e90308
 block|{
 DECL|member|npts
 name|guint
@@ -222,7 +222,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a1e4830408
+DECL|struct|__anon2ae8d6e90408
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a1e4830508
+DECL|struct|__anon2ae8d6e90508
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -7724,8 +7724,6 @@ parameter_list|)
 block|{
 name|gint
 name|width
-decl_stmt|,
-name|height
 decl_stmt|;
 name|gint
 name|i
@@ -7773,12 +7771,6 @@ operator|=
 name|x2
 operator|-
 name|x1
-expr_stmt|;
-name|height
-operator|=
-name|y2
-operator|-
-name|y1
 expr_stmt|;
 name|size
 operator|=
