@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b926b250103
+DECL|enum|__anon2af571e80103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -103,7 +103,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b926b250208
+DECL|struct|__anon2af571e80208
 block|{
 DECL|member|amount
 name|gdouble
@@ -890,11 +890,6 @@ index|[
 literal|4
 index|]
 decl_stmt|;
-name|glong
-name|width
-decl_stmt|,
-name|height
-decl_stmt|;
 name|gint
 name|alpha
 decl_stmt|;
@@ -976,24 +971,6 @@ name|x2
 argument_list|,
 operator|&
 name|y2
-argument_list|)
-expr_stmt|;
-name|width
-operator|=
-name|gimp_drawable_width
-argument_list|(
-name|drawable
-operator|->
-name|drawable_id
-argument_list|)
-expr_stmt|;
-name|height
-operator|=
-name|gimp_drawable_height
-argument_list|(
-name|drawable
-operator|->
-name|drawable_id
 argument_list|)
 expr_stmt|;
 name|alpha
