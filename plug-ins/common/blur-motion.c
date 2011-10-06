@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a99d1850103
+DECL|enum|__anon2b0540f80103
 block|{
 DECL|enumerator|MBLUR_LINEAR
 name|MBLUR_LINEAR
@@ -108,7 +108,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a99d1850208
+DECL|struct|__anon2b0540f80208
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -1188,10 +1188,6 @@ name|y
 decl_stmt|,
 name|i
 decl_stmt|,
-name|xx
-decl_stmt|,
-name|yy
-decl_stmt|,
 name|n
 decl_stmt|;
 name|gint
@@ -1522,6 +1518,11 @@ name|x
 operator|++
 control|)
 block|{
+name|gint
+name|xx
+decl_stmt|,
+name|yy
+decl_stmt|;
 name|xx
 operator|=
 name|x
@@ -2033,10 +2034,6 @@ name|theta
 decl_stmt|,
 name|r
 decl_stmt|,
-name|xx
-decl_stmt|,
-name|yy
-decl_stmt|,
 name|xr
 decl_stmt|,
 name|yr
@@ -2056,14 +2053,6 @@ decl_stmt|,
 name|dy
 decl_stmt|;
 comment|/* initialize */
-name|xx
-operator|=
-literal|0.0
-expr_stmt|;
-name|yy
-operator|=
-literal|0.0
-expr_stmt|;
 name|center_x
 operator|=
 name|mbvals
@@ -2227,6 +2216,16 @@ name|x
 operator|++
 control|)
 block|{
+name|gdouble
+name|xx
+init|=
+literal|0.0
+decl_stmt|;
+name|gdouble
+name|yy
+init|=
+literal|0.0
+decl_stmt|;
 name|xr
 operator|=
 operator|(
@@ -3086,11 +3085,6 @@ decl_stmt|,
 name|yy_end
 decl_stmt|;
 name|gdouble
-name|xx
-decl_stmt|,
-name|yy
-decl_stmt|;
-name|gdouble
 name|dxx
 decl_stmt|,
 name|dyy
@@ -3119,14 +3113,6 @@ decl_stmt|,
 name|drawable_y2
 decl_stmt|;
 comment|/* initialize */
-name|xx
-operator|=
-literal|0.0
-expr_stmt|;
-name|yy
-operator|=
-literal|0.0
-expr_stmt|;
 name|center_x
 operator|=
 name|mbvals
@@ -3362,6 +3348,11 @@ name|x
 operator|++
 control|)
 block|{
+name|gdouble
+name|xx
+decl_stmt|,
+name|yy
+decl_stmt|;
 for|for
 control|(
 name|c
