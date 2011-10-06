@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon296af3980103
+DECL|enum|__anon2b926b250103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -103,7 +103,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296af3980208
+DECL|struct|__anon2b926b250208
 block|{
 DECL|member|amount
 name|gdouble
@@ -919,9 +919,6 @@ decl_stmt|,
 name|y2
 decl_stmt|;
 name|gint
-name|maxval
-decl_stmt|;
-name|gint
 name|cur_progress
 decl_stmt|;
 name|gint
@@ -1023,10 +1020,6 @@ name|has_alpha
 condition|)
 name|alpha
 operator|--
-expr_stmt|;
-name|maxval
-operator|=
-literal|255
 expr_stmt|;
 name|cur_progress
 operator|=
