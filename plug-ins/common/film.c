@@ -108,7 +108,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dbafe80108
+DECL|struct|__anon2a9f2cfb0108
 block|{
 DECL|member|film_height
 name|gint
@@ -212,7 +212,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dbafe80208
+DECL|struct|__anon2a9f2cfb0208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -1402,8 +1402,6 @@ name|gint
 name|width
 decl_stmt|,
 name|height
-decl_stmt|,
-name|tile_height
 decl_stmt|;
 name|guchar
 modifier|*
@@ -1534,11 +1532,6 @@ name|filmvals
 operator|.
 name|film_color
 argument_list|)
-expr_stmt|;
-name|tile_height
-operator|=
-name|gimp_tile_height
-argument_list|()
 expr_stmt|;
 if|if
 condition|(
