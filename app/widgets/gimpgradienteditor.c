@@ -3609,7 +3609,8 @@ name|mevent
 operator|->
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 operator|)
 condition|?
 name|GIMP_COLOR_PICK_MODE_BACKGROUND
@@ -3714,7 +3715,8 @@ name|bevent
 operator|->
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 operator|)
 condition|?
 name|GIMP_COLOR_PICK_MODE_BACKGROUND
@@ -3914,7 +3916,8 @@ name|bevent
 operator|->
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 operator|)
 condition|?
 name|GIMP_COLOR_PICK_MODE_BACKGROUND
@@ -5233,16 +5236,13 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"%s%sDrag: move& compress"
+literal|"%s-Drag: move& compress"
 argument_list|)
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
 name|GDK_SHIFT_MASK
 argument_list|)
-argument_list|,
-name|gimp_get_mod_separator
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|gradient_editor_set_hint
@@ -5275,16 +5275,13 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"%s%sClick: extend selection"
+literal|"%s-Click: extend selection"
 argument_list|)
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
 name|GDK_SHIFT_MASK
 argument_list|)
-argument_list|,
-name|gimp_get_mod_separator
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|gradient_editor_set_hint
@@ -5318,16 +5315,13 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"%s%sClick: extend selection"
+literal|"%s-Click: extend selection"
 argument_list|)
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
 name|GDK_SHIFT_MASK
 argument_list|)
-argument_list|,
-name|gimp_get_mod_separator
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|gradient_editor_set_hint
@@ -5362,16 +5356,13 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"%s%sClick: extend selection"
+literal|"%s-Click: extend selection"
 argument_list|)
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
 name|GDK_SHIFT_MASK
 argument_list|)
-argument_list|,
-name|gimp_get_mod_separator
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|gradient_editor_set_hint
@@ -5421,16 +5412,13 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"%s%sClick: extend selection"
+literal|"%s-Click: extend selection"
 argument_list|)
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
 name|GDK_SHIFT_MASK
 argument_list|)
-argument_list|,
-name|gimp_get_mod_separator
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|str2
@@ -5439,16 +5427,13 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"%s%sDrag: move& compress"
+literal|"%s-Drag: move& compress"
 argument_list|)
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
 name|GDK_SHIFT_MASK
 argument_list|)
-argument_list|,
-name|gimp_get_mod_separator
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|gradient_editor_set_hint
