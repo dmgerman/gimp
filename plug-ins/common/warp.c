@@ -91,7 +91,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be8e4000103
+DECL|enum|__anon290a2b410103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -111,7 +111,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be8e4000208
+DECL|struct|__anon290a2b410208
 block|{
 DECL|member|amount
 name|gdouble
@@ -7109,11 +7109,6 @@ name|dy
 decl_stmt|;
 comment|/* X and Y Displacement, integer from GRAY map */
 name|gint
-name|xm_alpha
-init|=
-literal|0
-decl_stmt|;
-name|gint
 name|mmag_alpha
 init|=
 literal|0
@@ -7336,19 +7331,6 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|gimp_drawable_has_alpha
-argument_list|(
-name|map_x
-operator|->
-name|drawable_id
-argument_list|)
-condition|)
-name|xm_alpha
-operator|=
-literal|1
 expr_stmt|;
 name|xm_bytes
 operator|=
