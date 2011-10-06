@@ -1064,8 +1064,6 @@ name|operation
 operator|=
 name|gimp_modifiers_to_channel_op
 argument_list|(
-name|widget
-argument_list|,
 name|bevent
 operator|->
 name|state

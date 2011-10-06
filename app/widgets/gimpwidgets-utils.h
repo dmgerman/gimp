@@ -225,10 +225,6 @@ begin_function_decl
 name|GimpChannelOps
 name|gimp_modifiers_to_channel_op
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
 name|GdkModifierType
 name|modifiers
 parameter_list|)

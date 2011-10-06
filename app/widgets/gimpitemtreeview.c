@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298d7fea0103
+DECL|enum|__anon27a5c2d80103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -5997,19 +5997,12 @@ argument_list|)
 decl_stmt|;
 name|GimpChannelOps
 name|op
-decl_stmt|;
-name|op
-operator|=
+init|=
 name|gimp_modifiers_to_channel_op
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|item_view
-argument_list|)
-argument_list|,
 name|state
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_item_to_selection
 argument_list|(
 name|item
