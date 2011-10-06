@@ -63,6 +63,12 @@ directive|include
 file|"gimpviewrenderer.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpwidgets-utils.h"
+end_include
+
 begin_define
 DECL|macro|BORDER_WIDTH
 define|#
@@ -73,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d1cc250103
+DECL|enum|__anon287f43630103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -1173,7 +1179,8 @@ name|sevent
 operator|->
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 condition|)
 block|{
 switch|switch

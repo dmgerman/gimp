@@ -2554,7 +2554,8 @@ if|if
 condition|(
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 condition|)
 block|{
 switch|switch
