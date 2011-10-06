@@ -147,7 +147,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277926070108
+DECL|struct|__anon2b191ce50108
 block|{
 DECL|member|compression
 name|gint
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277926070208
+DECL|struct|__anon2b191ce50208
 block|{
 DECL|member|ID
 name|gint32
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277926070308
+DECL|struct|__anon2b191ce50308
 block|{
 DECL|member|o_pages
 name|gint
@@ -420,9 +420,6 @@ name|channel
 parameter_list|,
 name|gushort
 name|bps
-parameter_list|,
-name|gushort
-name|photomet
 parameter_list|,
 name|gint
 name|startcol
@@ -6206,8 +6203,6 @@ name|channel
 argument_list|,
 name|bps
 argument_list|,
-name|photomet
-argument_list|,
 name|y
 argument_list|,
 literal|0
@@ -8893,7 +8888,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|read_separate (const guchar * source,channel_data * channel,gushort bps,gushort photomet,gint startrow,gint startcol,gint rows,gint cols,gboolean alpha,gint extra,gint sample)
+DECL|function|read_separate (const guchar * source,channel_data * channel,gushort bps,gint startrow,gint startcol,gint rows,gint cols,gboolean alpha,gint extra,gint sample)
 name|read_separate
 parameter_list|(
 specifier|const
@@ -8907,9 +8902,6 @@ name|channel
 parameter_list|,
 name|gushort
 name|bps
-parameter_list|,
-name|gushort
-name|photomet
 parameter_list|,
 name|gint
 name|startrow
@@ -8988,14 +8980,11 @@ name|drawable
 operator|->
 name|bpp
 condition|)
-block|{
 name|c
 operator|=
 literal|0
 expr_stmt|;
-block|}
 else|else
-block|{
 name|c
 operator|=
 operator|(
@@ -9013,11 +9002,6 @@ operator|)
 operator|+
 literal|4
 expr_stmt|;
-name|photomet
-operator|=
-name|PHOTOMETRIC_MINISBLACK
-expr_stmt|;
-block|}
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
