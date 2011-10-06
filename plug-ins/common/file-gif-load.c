@@ -935,7 +935,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c8ab6b70108
+DECL|struct|__anon2908175e0108
 block|{
 DECL|member|Width
 name|guint
@@ -979,7 +979,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c8ab6b70208
+DECL|struct|__anon2908175e0208
 block|{
 DECL|member|transparent
 name|gint
@@ -2181,10 +2181,15 @@ index|[
 literal|256
 index|]
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|GIFDEBUG
 name|gchar
 modifier|*
 name|str
 decl_stmt|;
+endif|#
+directive|endif
 switch|switch
 condition|(
 name|label
@@ -2194,10 +2199,15 @@ case|case
 literal|0x01
 case|:
 comment|/* Plain Text Extension */
+ifdef|#
+directive|ifdef
+name|GIFDEBUG
 name|str
 operator|=
 literal|"Plain Text Extension"
 expr_stmt|;
+endif|#
+directive|endif
 ifdef|#
 directive|ifdef
 name|notdef
@@ -2372,19 +2382,29 @@ case|case
 literal|0xff
 case|:
 comment|/* Application Extension */
+ifdef|#
+directive|ifdef
+name|GIFDEBUG
 name|str
 operator|=
 literal|"Application Extension"
 expr_stmt|;
+endif|#
+directive|endif
 break|break;
 case|case
 literal|0xfe
 case|:
 comment|/* Comment Extension */
+ifdef|#
+directive|ifdef
+name|GIFDEBUG
 name|str
 operator|=
 literal|"Comment Extension"
 expr_stmt|;
+endif|#
+directive|endif
 while|while
 condition|(
 name|GetDataBlock
@@ -2461,10 +2481,15 @@ case|case
 literal|0xf9
 case|:
 comment|/* Graphic Control Extension */
+ifdef|#
+directive|ifdef
+name|GIFDEBUG
 name|str
 operator|=
 literal|"Graphic Control Extension"
 expr_stmt|;
+endif|#
+directive|endif
 operator|(
 name|void
 operator|)
@@ -2577,6 +2602,9 @@ name|FALSE
 return|;
 break|break;
 default|default:
+ifdef|#
+directive|ifdef
+name|GIFDEBUG
 name|str
 operator|=
 operator|(
@@ -2585,6 +2613,8 @@ operator|*
 operator|)
 name|buf
 expr_stmt|;
+endif|#
+directive|endif
 name|sprintf
 argument_list|(
 operator|(
