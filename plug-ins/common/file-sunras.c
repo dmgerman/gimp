@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3f63d70108
+DECL|struct|__anon2a111cd80108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -224,7 +224,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3f63d70208
+DECL|struct|__anon2a111cd80208
 block|{
 DECL|member|val
 name|gint
@@ -830,7 +830,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3f63d70308
+DECL|struct|__anon2a111cd80308
 block|{
 DECL|member|rle
 name|gboolean
@@ -6649,9 +6649,6 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GimpImageType
-name|drawable_type
-decl_stmt|;
 name|WRITE_FUN
 modifier|*
 name|write_fun
@@ -6659,13 +6656,6 @@ decl_stmt|;
 name|drawable
 operator|=
 name|gimp_drawable_get
-argument_list|(
-name|drawable_ID
-argument_list|)
-expr_stmt|;
-name|drawable_type
-operator|=
-name|gimp_drawable_type
 argument_list|(
 name|drawable_ID
 argument_list|)
