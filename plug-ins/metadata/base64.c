@@ -886,9 +886,6 @@ decl_stmt|;
 name|gint
 name|n
 decl_stmt|;
-name|gint
-name|bits
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|src_b64
@@ -914,10 +911,6 @@ operator|=
 literal|0
 expr_stmt|;
 name|n
-operator|=
-literal|0
-expr_stmt|;
-name|bits
 operator|=
 literal|0
 expr_stmt|;
@@ -948,6 +941,9 @@ name|src_size
 operator|--
 control|)
 block|{
+name|gint
+name|bits
+decl_stmt|;
 name|bits
 operator|=
 name|base64_6bits
