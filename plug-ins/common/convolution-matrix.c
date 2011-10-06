@@ -164,7 +164,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c816a880103
+DECL|enum|__anon2c7716050103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -389,7 +389,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c816a880208
+DECL|struct|__anon2c7716050208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -870,7 +870,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c816a880308
+DECL|struct|__anon2c7716050308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -3632,11 +3632,6 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|gboolean
-name|valid
-init|=
-name|FALSE
-decl_stmt|;
 name|gfloat
 name|sum
 init|=
@@ -3668,7 +3663,6 @@ condition|;
 name|x
 operator|++
 control|)
-block|{
 name|sum
 operator|+=
 name|config
@@ -3681,25 +3675,6 @@ index|[
 name|y
 index|]
 expr_stmt|;
-if|if
-condition|(
-name|config
-operator|.
-name|matrix
-index|[
-name|x
-index|]
-index|[
-name|y
-index|]
-operator|!=
-literal|0.0
-condition|)
-name|valid
-operator|=
-name|TRUE
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|config
