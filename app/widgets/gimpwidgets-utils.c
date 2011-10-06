@@ -1860,6 +1860,13 @@ argument_list|,
 name|g_int_equal
 argument_list|)
 expr_stmt|;
+name|modifiers
+operator|=
+name|gimp_replace_virtual_modifiers
+argument_list|(
+name|modifiers
+argument_list|)
+expr_stmt|;
 name|label
 operator|=
 name|g_hash_table_lookup

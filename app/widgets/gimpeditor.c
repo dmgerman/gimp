@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d6aa680103
+DECL|enum|__anon2b5cedb40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2295,7 +2295,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d6aa680208
+DECL|struct|__anon2b5cedb40208
 block|{
 DECL|member|mod_mask
 name|GdkModifierType
@@ -2804,10 +2804,7 @@ name|ext
 operator|->
 name|mod_mask
 operator|=
-name|gimp_replace_virtual_modifiers
-argument_list|(
 name|mod_mask
-argument_list|)
 expr_stmt|;
 name|ext
 operator|->

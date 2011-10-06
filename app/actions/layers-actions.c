@@ -1856,13 +1856,6 @@ name|gchar
 modifier|*
 name|new_hint
 decl_stmt|;
-name|modifiers
-operator|=
-name|gimp_replace_virtual_modifiers
-argument_list|(
-name|modifiers
-argument_list|)
-expr_stmt|;
 name|old_hint
 operator|=
 name|gimp_action_group_get_action_tooltip

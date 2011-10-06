@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8636930103
+DECL|enum|__anon2bf833c90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -557,10 +557,7 @@ block|}
 return|return
 name|gimp_get_mod_string
 argument_list|(
-name|gimp_replace_virtual_modifiers
-argument_list|(
 name|modifiers
-argument_list|)
 argument_list|)
 return|;
 block|}
