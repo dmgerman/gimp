@@ -658,7 +658,8 @@ if|if
 condition|(
 name|key
 operator|==
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 condition|)
 block|{
 switch|switch
@@ -749,6 +750,14 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
+name|GdkModifierType
+name|toggle_mask
+decl_stmt|;
+name|toggle_mask
+operator|=
+name|gimp_get_toggle_behavior_mask
+argument_list|()
+expr_stmt|;
 name|GIMP_COLOR_TOOL
 argument_list|(
 name|tool
@@ -843,7 +852,7 @@ argument_list|,
 operator|(
 name|shift_mod
 operator||
-name|GDK_CONTROL_MASK
+name|toggle_mask
 operator|)
 operator|&
 operator|~
@@ -873,7 +882,7 @@ argument_list|,
 operator|(
 name|shift_mod
 operator||
-name|GDK_CONTROL_MASK
+name|toggle_mask
 operator|)
 operator|&
 operator|~

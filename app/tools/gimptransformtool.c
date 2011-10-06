@@ -174,6 +174,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpcanvasgroup.h"
 end_include
 
@@ -1904,7 +1910,8 @@ if|if
 condition|(
 name|key
 operator|==
-name|GDK_CONTROL_MASK
+name|gimp_get_constrain_behavior_mask
+argument_list|()
 condition|)
 name|g_object_set
 argument_list|(

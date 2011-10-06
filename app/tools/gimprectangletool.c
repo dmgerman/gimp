@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpcanvasgroup.h"
 end_include
 
@@ -179,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bce17dd0103
+DECL|enum|__anon2bffa8820103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -237,7 +243,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bce17dd0203
+DECL|enum|__anon2bffa8820203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -280,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bce17dd0303
+DECL|enum|__anon2bffa8820303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -4290,7 +4296,8 @@ if|if
 condition|(
 name|key
 operator|==
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 condition|)
 block|{
 name|g_object_set

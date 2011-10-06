@@ -871,12 +871,18 @@ operator|-
 literal|1
 condition|)
 block|{
+name|GdkModifierType
+name|toggle_mask
+init|=
+name|gimp_get_toggle_behavior_mask
+argument_list|()
+decl_stmt|;
 if|if
 condition|(
 name|state
 operator|&
 operator|(
-name|GDK_CONTROL_MASK
+name|toggle_mask
 operator||
 name|GDK_MOD1_MASK
 operator|)
@@ -894,7 +900,7 @@ operator|(
 operator|(
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+name|toggle_mask
 operator|)
 operator|&&
 operator|(
@@ -1853,7 +1859,8 @@ if|if
 condition|(
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+name|gimp_get_constrain_behavior_mask
+argument_list|()
 condition|)
 block|{
 name|gdouble
@@ -2148,7 +2155,8 @@ if|if
 condition|(
 name|key
 operator|==
-name|GDK_CONTROL_MASK
+name|gimp_get_constrain_behavior_mask
+argument_list|()
 operator|&&
 name|measure
 operator|->
@@ -2354,6 +2362,12 @@ name|y
 argument_list|)
 condition|)
 block|{
+name|GdkModifierType
+name|toggle_mask
+init|=
+name|gimp_get_toggle_behavior_mask
+argument_list|()
+decl_stmt|;
 name|point
 operator|=
 name|i
@@ -2362,7 +2376,7 @@ if|if
 condition|(
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+name|toggle_mask
 condition|)
 block|{
 if|if
@@ -2459,7 +2473,7 @@ literal|"Click to place a "
 literal|"vertical guide"
 argument_list|)
 argument_list|,
-name|GDK_CONTROL_MASK
+name|toggle_mask
 operator|&
 operator|~
 name|state
@@ -2532,7 +2546,7 @@ literal|"new point"
 argument_list|)
 argument_list|,
 operator|(
-name|GDK_CONTROL_MASK
+name|toggle_mask
 operator||
 name|GDK_MOD1_MASK
 operator|)
@@ -2583,7 +2597,7 @@ argument_list|,
 operator|(
 name|GDK_SHIFT_MASK
 operator||
-name|GDK_CONTROL_MASK
+name|toggle_mask
 operator||
 name|GDK_MOD1_MASK
 operator|)
@@ -2858,11 +2872,17 @@ operator|-
 literal|1
 condition|)
 block|{
+name|GdkModifierType
+name|toggle_mask
+init|=
+name|gimp_get_toggle_behavior_mask
+argument_list|()
+decl_stmt|;
 if|if
 condition|(
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+name|toggle_mask
 condition|)
 block|{
 if|if

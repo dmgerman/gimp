@@ -156,6 +156,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -1268,7 +1274,8 @@ if|if
 condition|(
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 condition|)
 block|{
 name|gint
@@ -1522,7 +1529,8 @@ if|if
 condition|(
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 condition|)
 block|{
 name|mode

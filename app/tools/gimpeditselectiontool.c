@@ -144,6 +144,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -2943,13 +2949,16 @@ name|edit_select
 operator|->
 name|constrain
 operator|=
+operator|(
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+name|gimp_get_constrain_behavior_mask
+argument_list|()
 condition|?
 name|TRUE
 else|:
 name|FALSE
+operator|)
 expr_stmt|;
 comment|/* If we didn't came here due to a mouse release, immediately update    * the position of the thing we move.    */
 if|if
@@ -4354,7 +4363,8 @@ name|kevent
 operator|->
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 condition|)
 name|translate_type
 operator|=

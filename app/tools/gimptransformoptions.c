@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292c1b190103
+DECL|enum|__anon28a4c55b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1462,6 +1462,14 @@ name|gchar
 modifier|*
 name|label
 decl_stmt|;
+name|GdkModifierType
+name|constrain_mask
+decl_stmt|;
+name|constrain_mask
+operator|=
+name|gimp_get_constrain_behavior_mask
+argument_list|()
+expr_stmt|;
 name|label
 operator|=
 name|g_strdup_printf
@@ -1470,7 +1478,7 @@ name|constrain
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
-name|GDK_CONTROL_MASK
+name|constrain_mask
 argument_list|)
 argument_list|)
 expr_stmt|;

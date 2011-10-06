@@ -385,13 +385,21 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
+name|GdkModifierType
+name|toggle_mask
+decl_stmt|;
+name|toggle_mask
+operator|=
+name|gimp_get_toggle_behavior_mask
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 operator|(
 operator|(
 name|key
 operator|==
-name|GDK_CONTROL_MASK
+name|toggle_mask
 operator|)
 operator|&&
 operator|!
@@ -427,7 +435,7 @@ operator|!
 operator|(
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+name|toggle_mask
 operator|)
 operator|)
 condition|)
@@ -755,6 +763,14 @@ name|gchar
 modifier|*
 name|str
 decl_stmt|;
+name|GdkModifierType
+name|toggle_mask
+decl_stmt|;
+name|toggle_mask
+operator|=
+name|gimp_get_toggle_behavior_mask
+argument_list|()
+expr_stmt|;
 comment|/*  the type radio box  */
 name|str
 operator|=
@@ -767,7 +783,7 @@ argument_list|)
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
-name|GDK_CONTROL_MASK
+name|toggle_mask
 argument_list|)
 argument_list|)
 expr_stmt|;

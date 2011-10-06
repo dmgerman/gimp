@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29104b520103
+DECL|enum|__anon2bf982450103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -531,6 +531,14 @@ name|gchar
 modifier|*
 name|str
 decl_stmt|;
+name|GdkModifierType
+name|toggle_mask
+decl_stmt|;
+name|toggle_mask
+operator|=
+name|gimp_get_toggle_behavior_mask
+argument_list|()
+expr_stmt|;
 comment|/*  the auto_resize toggle button  */
 name|button
 operator|=
@@ -579,7 +587,7 @@ argument_list|)
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
-name|GDK_CONTROL_MASK
+name|toggle_mask
 argument_list|)
 argument_list|)
 expr_stmt|;

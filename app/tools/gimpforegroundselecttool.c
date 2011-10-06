@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -144,7 +150,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9401f60108
+DECL|struct|__anon29ed1dfc0108
 block|{
 DECL|member|width
 name|gint
@@ -1306,7 +1312,8 @@ if|if
 condition|(
 name|key
 operator|==
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 condition|)
 block|{
 name|GimpForegroundSelectOptions

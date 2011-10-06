@@ -208,7 +208,7 @@ DECL|macro|INSDEL_MASK
 define|#
 directive|define
 name|INSDEL_MASK
-value|GDK_CONTROL_MASK
+value|gimp_get_toggle_behavior_mask ()
 end_define
 
 begin_comment
@@ -3196,7 +3196,8 @@ name|kevent
 operator|->
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 condition|)
 name|pixels
 operator|=
@@ -4589,6 +4590,12 @@ operator|!=
 name|GIMP_VECTOR_MODE_EDIT
 condition|)
 block|{
+name|GdkModifierType
+name|toggle_mask
+init|=
+name|gimp_get_toggle_behavior_mask
+argument_list|()
+decl_stmt|;
 name|status
 operator|=
 name|gimp_suggest_modifiers
@@ -4599,7 +4606,7 @@ literal|"Click-Drag to move the "
 literal|"anchor around"
 argument_list|)
 argument_list|,
-name|GDK_CONTROL_MASK
+name|toggle_mask
 operator|&
 operator|~
 name|state
@@ -7173,11 +7180,6 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|GimpChannelOps
-name|operation
-init|=
-name|GIMP_CHANNEL_OP_REPLACE
-decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -7198,42 +7200,6 @@ name|vectors
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|state
-operator|&
-name|GDK_SHIFT_MASK
-condition|)
-block|{
-if|if
-condition|(
-name|state
-operator|&
-name|GDK_CONTROL_MASK
-condition|)
-name|operation
-operator|=
-name|GIMP_CHANNEL_OP_INTERSECT
-expr_stmt|;
-else|else
-name|operation
-operator|=
-name|GIMP_CHANNEL_OP_ADD
-expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|state
-operator|&
-name|GDK_CONTROL_MASK
-condition|)
-block|{
-name|operation
-operator|=
-name|GIMP_CHANNEL_OP_SUBTRACT
-expr_stmt|;
-block|}
 name|gimp_item_to_selection
 argument_list|(
 name|GIMP_ITEM
@@ -7243,7 +7209,10 @@ operator|->
 name|vectors
 argument_list|)
 argument_list|,
-name|operation
+name|gimp_modifiers_to_channel_op
+argument_list|(
+name|state
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|,

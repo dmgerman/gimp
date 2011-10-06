@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpcanvasgroup.h"
 end_include
 
@@ -178,7 +184,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f94c00108
+DECL|struct|__anon29def22a0108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -4820,11 +4826,14 @@ name|constrain_angle
 operator|=
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+operator|(
+name|gimp_get_constrain_behavior_mask
+argument_list|()
 condition|?
 name|TRUE
 else|:
 name|FALSE
+operator|)
 expr_stmt|;
 name|priv
 operator|->
@@ -4927,11 +4936,14 @@ name|constrain_angle
 operator|=
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+operator|(
+name|gimp_get_constrain_behavior_mask
+argument_list|()
 condition|?
 name|TRUE
 else|:
 name|FALSE
+operator|)
 expr_stmt|;
 comment|/* If we didn't came here due to a mouse release, immediately update    * the position of the thing we move.    */
 if|if

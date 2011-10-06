@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpcanvasitem.h"
 end_include
 
@@ -2272,7 +2278,8 @@ name|GDK_MOD1_MASK
 operator|||
 name|key
 operator|==
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 condition|)
 block|{
 name|GimpTransformType
@@ -2299,7 +2306,8 @@ operator|&
 operator|(
 name|GDK_MOD1_MASK
 operator||
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 operator|)
 operator|)
 condition|)
@@ -2326,7 +2334,8 @@ operator|&
 operator|(
 name|GDK_MOD1_MASK
 operator||
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 operator|)
 operator|)
 condition|)
@@ -2357,7 +2366,8 @@ if|if
 condition|(
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 condition|)
 block|{
 name|button_type

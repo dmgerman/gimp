@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275826cd0103
+DECL|enum|__anon2c3df5460103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -576,7 +576,8 @@ name|next
 operator|->
 name|data
 argument_list|,
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -629,19 +630,23 @@ argument_list|)
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
-name|GDK_SHIFT_MASK
+name|gimp_get_extend_selection_mask
+argument_list|()
 argument_list|)
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
-name|GDK_CONTROL_MASK
+name|gimp_get_modify_selection_mask
+argument_list|()
 argument_list|)
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
-name|GDK_SHIFT_MASK
+name|gimp_get_extend_selection_mask
+argument_list|()
 operator||
-name|GDK_CONTROL_MASK
+name|gimp_get_modify_selection_mask
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;

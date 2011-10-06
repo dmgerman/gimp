@@ -1011,9 +1011,17 @@ argument_list|(
 name|display
 argument_list|)
 decl_stmt|;
+name|GdkModifierType
+name|extend_mask
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|extend_mask
+operator|=
+name|gimp_get_extend_selection_mask
+argument_list|()
+expr_stmt|;
 name|gimp_draw_tool_pause
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -1068,7 +1076,7 @@ operator|!
 operator|(
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|extend_mask
 operator|)
 condition|)
 comment|/* start a new list */
@@ -1302,11 +1310,7 @@ operator|!
 operator|(
 name|state
 operator|&
-operator|(
-name|GDK_SHIFT_MASK
-operator||
-name|GDK_CONTROL_MASK
-operator|)
+name|extend_mask
 operator|)
 condition|)
 name|align_tool
@@ -1805,14 +1809,17 @@ decl_stmt|;
 name|add
 operator|=
 operator|(
+operator|(
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|gimp_get_extend_selection_mask
+argument_list|()
 operator|)
 operator|&&
 name|align_tool
 operator|->
 name|selected_objects
+operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -2032,7 +2039,8 @@ if|if
 condition|(
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|gimp_get_extend_selection_mask
+argument_list|()
 condition|)
 name|modifier
 operator|=
@@ -2167,6 +2175,14 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
+name|GdkModifierType
+name|extend_mask
+decl_stmt|;
+name|extend_mask
+operator|=
+name|gimp_get_extend_selection_mask
+argument_list|()
+expr_stmt|;
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
@@ -2196,7 +2212,7 @@ block|{
 comment|/* no need to suggest Shift if nothing is selected */
 name|state
 operator||=
-name|GDK_SHIFT_MASK
+name|extend_mask
 expr_stmt|;
 block|}
 switch|switch
@@ -2220,7 +2236,7 @@ literal|"or Click-Drag to pick several "
 literal|"layers"
 argument_list|)
 argument_list|,
-name|GDK_SHIFT_MASK
+name|extend_mask
 operator|&
 operator|~
 name|state
@@ -2246,7 +2262,7 @@ literal|"Click to pick this layer as "
 literal|"first item"
 argument_list|)
 argument_list|,
-name|GDK_SHIFT_MASK
+name|extend_mask
 operator|&
 operator|~
 name|state
@@ -2286,7 +2302,7 @@ literal|"Click to pick this guide as "
 literal|"first item"
 argument_list|)
 argument_list|,
-name|GDK_SHIFT_MASK
+name|extend_mask
 operator|&
 operator|~
 name|state
@@ -2326,7 +2342,7 @@ literal|"Click to pick this path as "
 literal|"first item"
 argument_list|)
 argument_list|,
-name|GDK_SHIFT_MASK
+name|extend_mask
 operator|&
 operator|~
 name|state

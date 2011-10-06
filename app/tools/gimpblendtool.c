@@ -1291,7 +1291,8 @@ if|if
 condition|(
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+name|gimp_get_constrain_behavior_mask
+argument_list|()
 condition|)
 block|{
 name|gimp_constrain_line
@@ -1395,7 +1396,8 @@ if|if
 condition|(
 name|key
 operator|==
-name|GDK_CONTROL_MASK
+name|gimp_get_constrain_behavior_mask
+argument_list|()
 condition|)
 block|{
 name|blend_tool
@@ -1790,15 +1792,14 @@ argument_list|(
 literal|""
 argument_list|,
 operator|(
-operator|(
-name|GDK_CONTROL_MASK
+name|gimp_get_constrain_behavior_mask
+argument_list|()
 operator||
 name|GDK_MOD1_MASK
 operator|)
 operator|&
 operator|~
 name|state
-operator|)
 argument_list|,
 name|NULL
 argument_list|,

@@ -1275,6 +1275,18 @@ operator|->
 name|draw_line
 condition|)
 block|{
+name|gboolean
+name|constrain
+init|=
+operator|(
+name|state
+operator|&
+name|gimp_get_constrain_behavior_mask
+argument_list|()
+operator|)
+operator|!=
+literal|0
+decl_stmt|;
 comment|/*  If shift is down and this is not the first paint        *  stroke, then draw a line from the last coords to the pointer        */
 name|core
 operator|->
@@ -1290,13 +1302,7 @@ name|core
 argument_list|,
 name|paint_options
 argument_list|,
-operator|(
-name|state
-operator|&
-name|GDK_CONTROL_MASK
-operator|)
-operator|!=
-literal|0
+name|constrain
 argument_list|)
 expr_stmt|;
 block|}
@@ -1866,7 +1872,8 @@ if|if
 condition|(
 name|key
 operator|!=
-name|GDK_CONTROL_MASK
+name|gimp_get_constrain_behavior_mask
+argument_list|()
 condition|)
 return|return;
 if|if
@@ -2377,6 +2384,12 @@ operator|&&
 name|proximity
 condition|)
 block|{
+name|gboolean
+name|constrain_mask
+init|=
+name|gimp_get_constrain_behavior_mask
+argument_list|()
+decl_stmt|;
 if|if
 condition|(
 name|display
@@ -2455,7 +2468,7 @@ argument_list|,
 operator|(
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+name|constrain_mask
 operator|)
 operator|!=
 literal|0
@@ -2497,7 +2510,7 @@ name|paint_tool
 operator|->
 name|status_line
 argument_list|,
-name|GDK_CONTROL_MASK
+name|constrain_mask
 operator|&
 operator|~
 name|state
@@ -2683,7 +2696,7 @@ name|NULL
 condition|)
 name|modifiers
 operator||=
-name|GDK_CONTROL_MASK
+name|constrain_mask
 expr_stmt|;
 comment|/* suggest drawing lines only after the first point is set            */
 if|if
