@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ea28aa0103
+DECL|enum|__anon2af589dd0103
 block|{
 DECL|enumerator|EDIT_NAME
 name|EDIT_NAME
@@ -4618,6 +4618,8 @@ operator||
 name|GDK_CONTROL_MASK
 operator||
 name|GDK_MOD1_MASK
+operator||
+name|GDK_MOD2_MASK
 operator|)
 operator|)
 operator|==
