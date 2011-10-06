@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c52c19e0108
+DECL|struct|__anon2c49e0d20108
 block|{
 DECL|member|angle
 name|gint
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c52c19e0208
+DECL|struct|__anon2c49e0d20208
 block|{
 DECL|member|ID
 name|gint32
@@ -884,11 +884,6 @@ decl_stmt|,
 modifier|*
 name|dest_row
 decl_stmt|;
-comment|/* initialize */
-name|row
-operator|=
-literal|0
-expr_stmt|;
 comment|/* Get the size of the input drawable. */
 name|width
 operator|=
