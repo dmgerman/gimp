@@ -323,6 +323,9 @@ argument_list|(
 name|window
 argument_list|)
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|GIMP_UNSTABLE
 name|show_menu
 operator|=
 operator|(
@@ -334,15 +337,15 @@ operator|>
 literal|1
 operator|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_UNSTABLE
+else|#
+directive|else
 name|show_menu
 operator|=
 name|TRUE
 expr_stmt|;
 endif|#
 directive|endif
+comment|/* !GIMP_UNSTABLE */
 if|if
 condition|(
 operator|!
