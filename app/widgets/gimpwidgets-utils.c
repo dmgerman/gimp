@@ -2102,11 +2102,13 @@ name|num_msgs
 operator|++
 expr_stmt|;
 block|}
+comment|/* FIXME: using toggle_behavior_mask is such a hack. The fact that    * it happens to do the right thing on all platforms doesn't make it    * any better.    */
 if|if
 condition|(
 name|modifiers
 operator|&
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 condition|)
 block|{
 if|if
@@ -2130,7 +2132,8 @@ name|control_format
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2146,7 +2149,8 @@ index|]
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
-name|GDK_CONTROL_MASK
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 argument_list|)
 argument_list|,
 name|BUF_SIZE
