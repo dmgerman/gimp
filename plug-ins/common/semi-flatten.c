@@ -269,9 +269,6 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
-name|image_ID
-decl_stmt|;
 name|GimpPDBStatusType
 name|status
 init|=
@@ -338,17 +335,6 @@ name|data
 operator|.
 name|d_drawable
 argument_list|)
-expr_stmt|;
-name|image_ID
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
 expr_stmt|;
 if|if
 condition|(
