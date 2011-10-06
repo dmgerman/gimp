@@ -33,7 +33,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f6b3430103
+DECL|enum|__anon297f76f70103
 block|{
 DECL|enumerator|EXTENDED_CLICKED
 name|EXTENDED_CLICKED
@@ -365,6 +365,8 @@ operator||
 name|GDK_CONTROL_MASK
 operator||
 name|GDK_MOD1_MASK
+operator||
+name|GDK_MOD2_MASK
 operator|)
 condition|)
 block|{
