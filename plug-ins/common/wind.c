@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be513250103
+DECL|enum|__anon2c6384cb0103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -130,7 +130,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be513250203
+DECL|enum|__anon2c6384cb0203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -146,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be513250303
+DECL|enum|__anon2c6384cb0303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -1557,10 +1557,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|marker
-operator|=
-literal|0
-expr_stmt|;
 block|}
 block|}
 name|g_free
