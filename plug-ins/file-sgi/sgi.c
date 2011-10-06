@@ -1935,10 +1935,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|zsize
-operator|=
-literal|0
-expr_stmt|;
 switch|switch
 condition|(
 name|gimp_drawable_type
