@@ -1361,15 +1361,12 @@ name|tool
 argument_list|,
 name|display
 argument_list|,
-literal|"%s%s%s"
+literal|"%s-%s"
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
 name|toggle_mask
 argument_list|)
-argument_list|,
-name|gimp_get_mod_separator
-argument_list|()
 argument_list|,
 name|source_tool
 operator|->

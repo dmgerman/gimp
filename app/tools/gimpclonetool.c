@@ -273,6 +273,7 @@ argument_list|(
 literal|"Click to clone"
 argument_list|)
 expr_stmt|;
+comment|/* Translators: the translation of "Click" must be the first word */
 name|source_tool
 operator|->
 name|status_set_source
