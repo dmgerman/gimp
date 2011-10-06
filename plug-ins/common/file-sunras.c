@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290cd5990108
+DECL|struct|__anon2a3f63d70108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -224,7 +224,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290cd5990208
+DECL|struct|__anon2a3f63d70208
 block|{
 DECL|member|val
 name|gint
@@ -830,7 +830,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290cd5990308
+DECL|struct|__anon2a3f63d70308
 block|{
 DECL|member|rle
 name|gboolean
@@ -4040,17 +4040,7 @@ literal|0
 init|;
 name|j
 operator|<
-sizeof|sizeof
-argument_list|(
-name|L_SUNFILEHEADER
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|sunhdr
-operator|->
-name|l_ras_magic
-argument_list|)
+name|hdr_entries
 condition|;
 name|j
 operator|++
