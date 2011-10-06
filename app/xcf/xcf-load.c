@@ -6205,17 +6205,6 @@ condition|)
 return|return
 name|TRUE
 return|;
-name|data
-operator|=
-name|tile_data_pointer
-argument_list|(
-name|tile
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
 name|bpp
 operator|=
 name|tile_bpp
