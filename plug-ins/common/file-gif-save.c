@@ -135,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon293807760103
+DECL|enum|__anon29b528020103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -148,7 +148,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293807760203
+DECL|enum|__anon29b528020203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -165,7 +165,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293807760308
+DECL|struct|__anon29b528020308
 block|{
 DECL|member|interlace
 name|gint
@@ -5611,15 +5611,6 @@ name|LeftOfs
 decl_stmt|,
 name|TopOfs
 decl_stmt|;
-name|int
-name|ColorMapSize
-decl_stmt|;
-name|ColorMapSize
-operator|=
-literal|1
-operator|<<
-name|BitsPerPixel
-expr_stmt|;
 name|Width
 operator|=
 name|GWidth
@@ -5820,20 +5811,11 @@ name|int
 name|Resolution
 decl_stmt|;
 name|int
-name|ColorMapSize
-decl_stmt|;
-name|int
 name|InitCodeSize
 decl_stmt|;
 name|Interlace
 operator|=
 name|GInterlace
-expr_stmt|;
-name|ColorMapSize
-operator|=
-literal|1
-operator|<<
-name|BitsPerPixel
 expr_stmt|;
 name|Width
 operator|=
@@ -5991,7 +5973,7 @@ if|#
 directive|if
 literal|0
 comment|/***************************/
-block|Interlace = GInterlace;   ColorMapSize = 1<< BitsPerPixel;   Width = GWidth;   Height = GHeight;   LeftOfs = TopOfs = 0;   Resolution = BitsPerPixel;    CountDown = (long) Width *(long) Height;   Pass = 0;
+block|Interlace = GInterlace;   Width = GWidth;   Height = GHeight;   LeftOfs = TopOfs = 0;   Resolution = BitsPerPixel;    CountDown = (long) Width *(long) Height;   Pass = 0;
 comment|/*    * The initial code size    */
 block|if (BitsPerPixel<= 1)     InitCodeSize = 2;   else     InitCodeSize = BitsPerPixel;
 comment|/*    * Set up the current x and y position    */
