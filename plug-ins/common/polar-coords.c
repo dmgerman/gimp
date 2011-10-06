@@ -109,7 +109,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d740690108
+DECL|struct|__anon28a53cd40108
 block|{
 DECL|member|circle
 name|gdouble
@@ -1460,10 +1460,6 @@ name|y2
 decl_stmt|;
 comment|/* initialize */
 name|phi
-operator|=
-literal|0.0
-expr_stmt|;
-name|r
 operator|=
 literal|0.0
 expr_stmt|;
