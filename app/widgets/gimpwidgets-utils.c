@@ -2560,6 +2560,36 @@ return|;
 block|}
 end_function
 
+begin_function
+name|GdkModifierType
+DECL|function|gimp_get_constrain_behavior_mask (void)
+name|gimp_get_constrain_behavior_mask
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|GdkDisplay
+modifier|*
+name|display
+init|=
+name|gdk_display_get_default
+argument_list|()
+decl_stmt|;
+comment|/* use the modify selection modifier */
+return|return
+name|gdk_keymap_get_modifier_mask
+argument_list|(
+name|gdk_keymap_get_for_display
+argument_list|(
+name|display
+argument_list|)
+argument_list|,
+name|GDK_MODIFIER_INTENT_MODIFY_SELECTION
+argument_list|)
+return|;
+block|}
+end_function
+
 begin_comment
 comment|/**  * gimp_get_screen_resolution:  * @screen: a #GdkScreen or %NULL  * @xres: returns the horizontal screen resolution (in dpi)  * @yres: returns the vertical screen resolution (in dpi)  *  * Retrieves the screen resolution from GDK. If @screen is %NULL, the  * default screen is used.  **/
 end_comment
