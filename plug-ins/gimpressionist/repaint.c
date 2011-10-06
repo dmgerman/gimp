@@ -2296,11 +2296,6 @@ init|=
 name|NULL
 decl_stmt|;
 name|int
-name|step
-init|=
-literal|1
-decl_stmt|;
-name|int
 name|progstep
 decl_stmt|;
 specifier|static
@@ -5133,14 +5128,10 @@ operator|/
 name|maxbrushheight
 argument_list|)
 expr_stmt|;
-name|step
-operator|=
-name|i
-expr_stmt|;
 if|#
 directive|if
 literal|0
-block|g_printerr("step=%d i=%d\n", step, i);
+block|g_printerr("i=%d\n", i);
 endif|#
 directive|endif
 block|}
