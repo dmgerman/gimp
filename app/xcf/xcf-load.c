@@ -4670,6 +4670,13 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|gboolean
+name|expanded
+init|=
+name|group_layer_flags
+operator|&
+name|XCF_GROUP_ITEM_EXPANDED
+decl_stmt|;
 name|gimp_viewable_set_expanded
 argument_list|(
 name|GIMP_VIEWABLE
@@ -4677,9 +4684,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|group_layer_flags
-operator|!=
-literal|0
+name|expanded
 argument_list|)
 expr_stmt|;
 block|}

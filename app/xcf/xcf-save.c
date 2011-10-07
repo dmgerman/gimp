@@ -2343,6 +2343,10 @@ block|{
 name|gint32
 name|flags
 init|=
+literal|0
+decl_stmt|;
+if|if
+condition|(
 name|gimp_viewable_get_expanded
 argument_list|(
 name|GIMP_VIEWABLE
@@ -2350,7 +2354,11 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
-decl_stmt|;
+condition|)
+name|flags
+operator||=
+name|XCF_GROUP_ITEM_EXPANDED
+expr_stmt|;
 name|xcf_check_error
 argument_list|(
 name|xcf_save_prop
@@ -6942,7 +6950,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1c85e70108
+DECL|struct|__anon29eb08f50108
 block|{
 DECL|member|info
 name|XcfInfo
