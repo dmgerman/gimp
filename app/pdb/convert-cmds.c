@@ -787,6 +787,14 @@ condition|)
 block|{
 if|if
 condition|(
+name|width
+operator|==
+literal|0
+operator|||
+name|height
+operator|==
+literal|0
+operator|||
 name|matrix_length
 operator|==
 name|width
