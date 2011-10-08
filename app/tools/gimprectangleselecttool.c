@@ -1609,13 +1609,6 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-name|function
-operator|=
-name|gimp_rectangle_tool_get_function
-argument_list|(
-name|rectangle
-argument_list|)
-expr_stmt|;
 name|priv
 operator|->
 name|saved_show_selection
