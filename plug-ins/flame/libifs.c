@@ -4970,6 +4970,9 @@ block|{
 name|double
 name|r
 decl_stmt|;
+name|double
+name|rh_time
+decl_stmt|;
 name|INTERP
 argument_list|(
 name|xform
@@ -5142,14 +5145,8 @@ operator|.
 name|c
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-literal|1
-condition|)
-block|{
-name|double
 name|rh_time
-init|=
+operator|=
 name|time
 operator|*
 literal|2
@@ -5161,7 +5158,7 @@ literal|60.0
 operator|*
 literal|30.0
 operator|)
-decl_stmt|;
+expr_stmt|;
 comment|/* apply pulse factor. */
 name|r
 operator|=
@@ -5388,7 +5385,6 @@ argument_list|(
 name|tt
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 comment|/* for i */
