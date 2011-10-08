@@ -4093,16 +4093,6 @@ modifier|*
 name|start
 decl_stmt|;
 comment|/* Starting position of a row in channel_data */
-name|gint32
-name|channel_length
-decl_stmt|;
-comment|/* Total channel's length */
-name|channel_length
-operator|=
-name|channel_cols
-operator|*
-name|channel_rows
-expr_stmt|;
 comment|/* For every row in the channel */
 name|len
 operator|=
