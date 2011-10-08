@@ -4747,12 +4747,6 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-name|listneighbor
-operator|=
-name|listneighbor
-operator|->
-name|prev
-expr_stmt|;
 block|}
 elseif|else
 if|if
@@ -4773,12 +4767,6 @@ block|{
 name|loose_end
 operator|=
 literal|1
-expr_stmt|;
-name|listneighbor
-operator|=
-name|listneighbor
-operator|->
-name|next
 expr_stmt|;
 block|}
 block|}
