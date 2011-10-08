@@ -91,7 +91,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon290a2b410103
+DECL|enum|__anon29f9551b0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -111,7 +111,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290a2b410208
+DECL|struct|__anon29f9551b0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -4635,8 +4635,6 @@ name|scale_vec_y
 decl_stmt|;
 comment|/* fixed vector X,Y component scaling factors */
 name|gint
-name|has_alpha
-decl_stmt|,
 name|ind
 decl_stmt|;
 comment|/* ----------------------------------------------------------------------- */
@@ -4731,15 +4729,6 @@ operator|=
 name|drawable
 operator|->
 name|bpp
-expr_stmt|;
-name|has_alpha
-operator|=
-name|gimp_drawable_has_alpha
-argument_list|(
-name|drawable
-operator|->
-name|drawable_id
-argument_list|)
 expr_stmt|;
 comment|/* -- Add two layers: X and Y Displacement vectors -- */
 comment|/* -- I'm using a RGB  drawable and using the first two bytes for a         16-bit pixel value. This is either clever, or a kluge,         depending on your point of view.  */
