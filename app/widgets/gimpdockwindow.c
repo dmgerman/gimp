@@ -233,7 +233,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2894a3150103
+DECL|enum|__anon2c86e7f40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3548,12 +3548,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|g_list_length
-argument_list|(
+operator|!
 name|docks
-argument_list|)
-operator|<
-literal|1
 condition|)
 block|{
 name|should_add

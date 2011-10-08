@@ -240,12 +240,9 @@ name|window
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|g_list_length
-argument_list|(
 name|windows
-argument_list|)
-operator|>
-literal|0
+operator|!=
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
