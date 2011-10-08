@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2993454a0103
+DECL|enum|__anon2c52e0b30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5558,15 +5558,6 @@ decl_stmt|;
 name|num_anchors
 operator|=
 name|g_list_length
-argument_list|(
-name|stroke
-operator|->
-name|anchors
-argument_list|)
-expr_stmt|;
-name|list
-operator|=
-name|g_list_first
 argument_list|(
 name|stroke
 operator|->
