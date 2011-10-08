@@ -176,7 +176,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b68bb0108
+DECL|struct|__anon2bae43520108
 block|{
 DECL|member|elems
 specifier|const
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b68bb0208
+DECL|struct|__anon2bae43520208
 block|{
 DECL|member|elems
 name|gint
@@ -3441,9 +3441,7 @@ decl_stmt|,
 name|y
 decl_stmt|;
 name|gint
-name|input_radius
-init|=
-name|radius
+name|adapt_radius
 decl_stmt|;
 name|gint
 name|pos
@@ -3496,6 +3494,10 @@ literal|"Despeckle"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|adapt_radius
+operator|=
+name|radius
+expr_stmt|;
 for|for
 control|(
 name|y
@@ -3522,7 +3524,7 @@ literal|0
 argument_list|,
 name|y
 operator|-
-name|radius
+name|adapt_radius
 argument_list|)
 expr_stmt|;
 name|ymax
@@ -3535,7 +3537,7 @@ literal|1
 argument_list|,
 name|y
 operator|+
-name|radius
+name|adapt_radius
 argument_list|)
 expr_stmt|;
 name|xmin
@@ -3546,7 +3548,7 @@ literal|0
 argument_list|,
 name|x
 operator|-
-name|radius
+name|adapt_radius
 argument_list|)
 expr_stmt|;
 name|xmax
@@ -3559,7 +3561,7 @@ literal|1
 argument_list|,
 name|x
 operator|+
-name|radius
+name|adapt_radius
 argument_list|)
 expr_stmt|;
 name|hist0
@@ -3659,10 +3661,10 @@ literal|0
 argument_list|,
 name|y
 operator|-
-name|radius
+name|adapt_radius
 argument_list|)
 expr_stmt|;
-comment|/* update ymin, ymax when radius changed (FILTER_ADAPTIVE) */
+comment|/* update ymin, ymax when adapt_radius changed (FILTER_ADAPTIVE) */
 name|ymax
 operator|=
 name|MIN
@@ -3673,7 +3675,7 @@ literal|1
 argument_list|,
 name|y
 operator|+
-name|radius
+name|adapt_radius
 argument_list|)
 expr_stmt|;
 name|xmin
@@ -3684,7 +3686,7 @@ literal|0
 argument_list|,
 name|x
 operator|-
-name|radius
+name|adapt_radius
 argument_list|)
 expr_stmt|;
 name|xmax
@@ -3697,7 +3699,7 @@ literal|1
 argument_list|,
 name|x
 operator|+
-name|radius
+name|adapt_radius
 argument_list|)
 expr_stmt|;
 name|update_histogram
@@ -3820,32 +3822,32 @@ if|if
 condition|(
 name|hist0
 operator|>=
-name|radius
+name|adapt_radius
 operator|||
 name|hist255
 operator|>=
-name|radius
+name|adapt_radius
 condition|)
 block|{
 if|if
 condition|(
-name|radius
+name|adapt_radius
 operator|<
-name|input_radius
-condition|)
 name|radius
+condition|)
+name|adapt_radius
 operator|++
 expr_stmt|;
 block|}
 elseif|else
 if|if
 condition|(
-name|radius
+name|adapt_radius
 operator|>
 literal|1
 condition|)
 block|{
-name|radius
+name|adapt_radius
 operator|--
 expr_stmt|;
 block|}
