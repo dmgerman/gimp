@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0a6bc80103
+DECL|enum|__anon29d8f88c0103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -2240,10 +2240,6 @@ block|}
 if|if
 condition|(
 name|present
-operator|&&
-name|toplevel
-operator|!=
-name|NULL
 operator|&&
 name|GTK_IS_WINDOW
 argument_list|(
