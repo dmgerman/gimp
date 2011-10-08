@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2beedc4b0108
+DECL|struct|__anon296994600108
 block|{
 DECL|member|alpha
 name|gdouble
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2beedc4b0203
+DECL|enum|__anon296994600203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -193,7 +193,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-specifier|inline
 name|gint
 name|nlfiltInit
 parameter_list|(
@@ -211,7 +210,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-specifier|inline
 name|void
 name|nlfiltRow
 parameter_list|(
@@ -1033,7 +1031,6 @@ end_comment
 
 begin_function
 specifier|static
-specifier|inline
 name|void
 DECL|function|nlfiltRow (guchar * srclast,guchar * srcthis,guchar * srcnext,guchar * dst,gint width,gint bpp,gint filtno)
 name|nlfiltRow
@@ -1464,7 +1461,6 @@ end_comment
 
 begin_function
 specifier|static
-specifier|inline
 name|gint
 DECL|function|nlfiltInit (gdouble alpha,gdouble radius,FilterType filter)
 name|nlfiltInit
