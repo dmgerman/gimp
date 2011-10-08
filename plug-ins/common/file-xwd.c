@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4354170108
+DECL|struct|__anon27c61b300108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -246,7 +246,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4354170208
+DECL|struct|__anon27c61b300208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -304,7 +304,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4354170308
+DECL|struct|__anon27c61b300308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -331,7 +331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4354170408
+DECL|struct|__anon27c61b300408
 block|{
 DECL|member|npixel
 name|gint
@@ -8315,8 +8315,6 @@ name|xwdhdr
 operator|->
 name|l_ncolors
 expr_stmt|;
-name|ncols
-operator|=
 name|set_pixelmap
 argument_list|(
 name|ncols
@@ -9705,8 +9703,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|ncols
-operator|=
 name|set_pixelmap
 argument_list|(
 name|ncols
