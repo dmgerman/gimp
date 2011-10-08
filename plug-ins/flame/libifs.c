@@ -5257,10 +5257,6 @@ name|r
 expr_stmt|;
 block|}
 comment|/* apply wiggle factor */
-name|r
-operator|=
-literal|0.0
-expr_stmt|;
 for|for
 control|(
 name|j
