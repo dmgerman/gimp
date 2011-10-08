@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be22c500108
+DECL|struct|__anon2beedc4b0108
 block|{
 DECL|member|alpha
 name|gdouble
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be22c500203
+DECL|enum|__anon2beedc4b0203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -1086,10 +1086,6 @@ decl_stmt|,
 modifier|*
 name|orend
 decl_stmt|;
-name|or
-operator|=
-name|dst
-expr_stmt|;
 name|orend
 operator|=
 name|dst
