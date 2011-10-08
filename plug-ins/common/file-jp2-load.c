@@ -379,9 +379,6 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-name|GimpRunMode
-name|run_mode
-decl_stmt|;
 name|GimpPDBStatusType
 name|status
 init|=
@@ -396,17 +393,6 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
-name|run_mode
-operator|=
-name|param
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
