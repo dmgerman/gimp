@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpmenufactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptagentry.h"
 end_include
 
@@ -155,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdd0bcb0103
+DECL|enum|__anon2c1b7cf60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -903,7 +909,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_data_factory_view_new (GimpViewType view_type,GimpDataFactory * factory,GimpContext * context,gint view_size,gint view_border_width,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_identifier,const gchar * action_group)
+DECL|function|gimp_data_factory_view_new (GimpViewType view_type,GimpDataFactory * factory,GimpContext * context,gint view_size,gint view_border_width,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_path,const gchar * action_group)
 name|gimp_data_factory_view_new
 parameter_list|(
 name|GimpViewType
@@ -935,7 +941,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|ui_identifier
+name|ui_path
 parameter_list|,
 specifier|const
 name|gchar
@@ -993,6 +999,20 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|menu_factory
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_MENU_FACTORY
+argument_list|(
+name|menu_factory
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|factory_view
 operator|=
 name|g_object_new
@@ -1019,6 +1039,18 @@ literal|"view-border-width"
 argument_list|,
 name|view_border_width
 argument_list|,
+literal|"menu-factory"
+argument_list|,
+name|menu_factory
+argument_list|,
+literal|"menu-identifier"
+argument_list|,
+name|menu_identifier
+argument_list|,
+literal|"ui-path"
+argument_list|,
+name|ui_path
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -1028,12 +1060,6 @@ operator|!
 name|gimp_data_factory_view_construct
 argument_list|(
 name|factory_view
-argument_list|,
-name|menu_factory
-argument_list|,
-name|menu_identifier
-argument_list|,
-name|ui_identifier
 argument_list|,
 name|action_group
 argument_list|)
@@ -1263,26 +1289,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_data_factory_view_construct (GimpDataFactoryView * factory_view,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_identifier,const gchar * action_group)
+DECL|function|gimp_data_factory_view_construct (GimpDataFactoryView * factory_view,const gchar * action_group)
 name|gimp_data_factory_view_construct
 parameter_list|(
 name|GimpDataFactoryView
 modifier|*
 name|factory_view
-parameter_list|,
-name|GimpMenuFactory
-modifier|*
-name|menu_factory
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|menu_identifier
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|ui_identifier
 parameter_list|,
 specifier|const
 name|gchar
@@ -1308,28 +1320,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|gimp_container_editor_construct
-argument_list|(
-name|GIMP_CONTAINER_EDITOR
-argument_list|(
-name|factory_view
-argument_list|)
-argument_list|,
-name|menu_factory
-argument_list|,
-name|menu_identifier
-argument_list|,
-name|ui_identifier
-argument_list|)
-condition|)
-block|{
-return|return
-name|FALSE
-return|;
-block|}
 name|editor
 operator|=
 name|GIMP_CONTAINER_EDITOR

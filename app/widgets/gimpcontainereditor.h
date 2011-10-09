@@ -216,35 +216,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  protected  */
-end_comment
-
-begin_function_decl
-name|gboolean
-name|gimp_container_editor_construct
-parameter_list|(
-name|GimpContainerEditor
-modifier|*
-name|editor
-parameter_list|,
-name|GimpMenuFactory
-modifier|*
-name|menu_factory
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|menu_identifier
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|ui_path
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif

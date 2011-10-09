@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d5fbd00103
+DECL|enum|__anon277b70180103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -2222,19 +2222,6 @@ argument_list|,
 name|popup
 operator|->
 name|view_border_width
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_container_editor_construct
-argument_list|(
-name|popup
-operator|->
-name|editor
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 name|NULL
 argument_list|)
