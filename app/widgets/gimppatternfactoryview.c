@@ -184,6 +184,10 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_PATTERN_FACTORY_VIEW
 argument_list|,
+literal|"data-factory"
+argument_list|,
+name|factory
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -198,8 +202,6 @@ name|factory_view
 argument_list|)
 argument_list|,
 name|view_type
-argument_list|,
-name|factory
 argument_list|,
 name|context
 argument_list|,

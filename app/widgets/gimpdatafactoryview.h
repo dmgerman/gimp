@@ -276,10 +276,6 @@ parameter_list|,
 name|GimpViewType
 name|view_type
 parameter_list|,
-name|GimpDataFactory
-modifier|*
-name|factory
-parameter_list|,
 name|GimpContext
 modifier|*
 name|context
