@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af589dd0103
+DECL|enum|__anon27a1e4db0103
 block|{
 DECL|enumerator|EDIT_NAME
 name|EDIT_NAME
@@ -4606,24 +4606,14 @@ condition|(
 operator|!
 name|toggled_cell
 operator|&&
-operator|(
+operator|!
 operator|(
 name|bevent
 operator|->
 name|state
 operator|&
-operator|(
-name|GDK_SHIFT_MASK
-operator||
-name|GDK_CONTROL_MASK
-operator||
-name|GDK_MOD1_MASK
-operator||
-name|GDK_MOD2_MASK
-operator|)
-operator|)
-operator|==
-literal|0
+name|gimp_get_all_modifiers_mask
+argument_list|()
 operator|)
 condition|)
 block|{
