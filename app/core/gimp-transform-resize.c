@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a0fd750108
+DECL|struct|__anon2b6f24dd0108
 block|{
 DECL|member|x
 DECL|member|y
@@ -144,7 +144,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a0fd750208
+DECL|struct|__anon2b6f24dd0208
 block|{
 DECL|member|a
 DECL|member|b
@@ -1792,7 +1792,7 @@ argument_list|)
 expr_stmt|;
 name|g_warning
 argument_list|(
-literal|"no rectangle found by algorith, no cropping done"
+literal|"no rectangle found by algorithm, no cropping done"
 argument_list|)
 expr_stmt|;
 return|return;
