@@ -390,7 +390,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool-preset-actions.h"
+file|"tool-presets-actions.h"
 end_include
 
 begin_include
@@ -788,7 +788,7 @@ name|gradients_actions_update
 block|}
 block|,
 block|{
-literal|"tool-preset"
+literal|"tool-presets"
 block|,
 name|N_
 argument_list|(
@@ -797,9 +797,9 @@ argument_list|)
 block|,
 name|GIMP_STOCK_TOOL_PRESET
 block|,
-name|tool_preset_actions_setup
+name|tool_presets_actions_setup
 block|,
-name|tool_preset_actions_update
+name|tool_presets_actions_update
 block|}
 block|,
 block|{

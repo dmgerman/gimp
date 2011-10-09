@@ -6,19 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__TOOL_PRESET_ACTIONS_H__
+name|__TOOL_PRESETS_ACTIONS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__TOOL_PRESET_ACTIONS_H__
+DECL|macro|__TOOL_PRESETS_ACTIONS_H__
 define|#
 directive|define
-name|__TOOL_PRESET_ACTIONS_H__
+name|__TOOL_PRESETS_ACTIONS_H__
 end_define
 
 begin_function_decl
 name|void
-name|tool_preset_actions_setup
+name|tool_presets_actions_setup
 parameter_list|(
 name|GimpActionGroup
 modifier|*
@@ -29,7 +29,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tool_preset_actions_update
+name|tool_presets_actions_update
 parameter_list|(
 name|GimpActionGroup
 modifier|*

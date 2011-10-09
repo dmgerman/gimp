@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool-preset-actions.h"
+file|"tool-presets-actions.h"
 end_include
 
 begin_include
@@ -88,24 +88,24 @@ file|"gimp-intl.h"
 end_include
 
 begin_decl_stmt
-DECL|variable|tool_preset_actions
+DECL|variable|tool_presets_actions
 specifier|static
 specifier|const
 name|GimpActionEntry
-name|tool_preset_actions
+name|tool_presets_actions
 index|[]
 init|=
 block|{
 block|{
-literal|"tool-preset-popup"
+literal|"tool-presets-popup"
 block|,
 name|GIMP_STOCK_TOOL_PRESET
 block|,
 name|NC_
 argument_list|(
-literal|"tool-preset-action"
+literal|"tool-presets-action"
 argument_list|,
-literal|"Tool Preset Menu"
+literal|"Tool Presets Menu"
 argument_list|)
 block|,
 name|NULL
@@ -118,13 +118,13 @@ name|GIMP_HELP_TOOL_PRESET_DIALOG
 block|}
 block|,
 block|{
-literal|"tool-preset-new"
+literal|"tool-presets-new"
 block|,
 name|GTK_STOCK_NEW
 block|,
 name|NC_
 argument_list|(
-literal|"tool-preset-action"
+literal|"tool-presets-action"
 argument_list|,
 literal|"_New Tool Preset"
 argument_list|)
@@ -133,7 +133,7 @@ literal|""
 block|,
 name|NC_
 argument_list|(
-literal|"tool-preset-action"
+literal|"tool-presets-action"
 argument_list|,
 literal|"Create a new tool preset"
 argument_list|)
@@ -147,13 +147,13 @@ name|GIMP_HELP_TOOL_PRESET_NEW
 block|}
 block|,
 block|{
-literal|"tool-preset-duplicate"
+literal|"tool-presets-duplicate"
 block|,
 name|GIMP_STOCK_DUPLICATE
 block|,
 name|NC_
 argument_list|(
-literal|"tool-preset-action"
+literal|"tool-presets-action"
 argument_list|,
 literal|"D_uplicate Tool Preset"
 argument_list|)
@@ -162,7 +162,7 @@ name|NULL
 block|,
 name|NC_
 argument_list|(
-literal|"tool-preset-action"
+literal|"tool-presets-action"
 argument_list|,
 literal|"Duplicate this tool preset"
 argument_list|)
@@ -176,13 +176,13 @@ name|GIMP_HELP_TOOL_PRESET_DUPLICATE
 block|}
 block|,
 block|{
-literal|"tool-preset-copy-location"
+literal|"tool-presets-copy-location"
 block|,
 name|GTK_STOCK_COPY
 block|,
 name|NC_
 argument_list|(
-literal|"tool-preset-action"
+literal|"tool-presets-action"
 argument_list|,
 literal|"Copy Tool Preset _Location"
 argument_list|)
@@ -191,7 +191,7 @@ literal|""
 block|,
 name|NC_
 argument_list|(
-literal|"tool-preset-action"
+literal|"tool-presets-action"
 argument_list|,
 literal|"Copy tool preset file location to clipboard"
 argument_list|)
@@ -205,13 +205,13 @@ name|GIMP_HELP_TOOL_PRESET_COPY_LOCATION
 block|}
 block|,
 block|{
-literal|"tool-preset-delete"
+literal|"tool-presets-delete"
 block|,
 name|GTK_STOCK_DELETE
 block|,
 name|NC_
 argument_list|(
-literal|"tool-preset-action"
+literal|"tool-presets-action"
 argument_list|,
 literal|"_Delete Tool Preset"
 argument_list|)
@@ -220,7 +220,7 @@ literal|""
 block|,
 name|NC_
 argument_list|(
-literal|"tool-preset-action"
+literal|"tool-presets-action"
 argument_list|,
 literal|"Delete this tool preset"
 argument_list|)
@@ -234,13 +234,13 @@ name|GIMP_HELP_TOOL_PRESET_DELETE
 block|}
 block|,
 block|{
-literal|"tool-preset-refresh"
+literal|"tool-presets-refresh"
 block|,
 name|GTK_STOCK_REFRESH
 block|,
 name|NC_
 argument_list|(
-literal|"tool-preset-action"
+literal|"tool-presets-action"
 argument_list|,
 literal|"_Refresh Tool Presets"
 argument_list|)
@@ -249,7 +249,7 @@ literal|""
 block|,
 name|NC_
 argument_list|(
-literal|"tool-preset-action"
+literal|"tool-presets-action"
 argument_list|,
 literal|"Refresh tool presets"
 argument_list|)
@@ -266,22 +266,22 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|tool_preset_edit_actions
+DECL|variable|tool_presets_edit_actions
 specifier|static
 specifier|const
 name|GimpStringActionEntry
-name|tool_preset_edit_actions
+name|tool_presets_edit_actions
 index|[]
 init|=
 block|{
 block|{
-literal|"tool-preset-edit"
+literal|"tool-presets-edit"
 block|,
 name|GTK_STOCK_EDIT
 block|,
 name|NC_
 argument_list|(
-literal|"tool-preset-action"
+literal|"tool-presets-action"
 argument_list|,
 literal|"_Edit Tool Preset..."
 argument_list|)
@@ -290,7 +290,7 @@ name|NULL
 block|,
 name|NC_
 argument_list|(
-literal|"tool-preset-action"
+literal|"tool-presets-action"
 argument_list|,
 literal|"Edit this tool preset"
 argument_list|)
@@ -305,8 +305,8 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|tool_preset_actions_setup (GimpActionGroup * group)
-name|tool_preset_actions_setup
+DECL|function|tool_presets_actions_setup (GimpActionGroup * group)
+name|tool_presets_actions_setup
 parameter_list|(
 name|GimpActionGroup
 modifier|*
@@ -317,13 +317,13 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
-literal|"tool-preset-action"
+literal|"tool-presets-action"
 argument_list|,
-name|tool_preset_actions
+name|tool_presets_actions
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
-name|tool_preset_actions
+name|tool_presets_actions
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -331,13 +331,13 @@ name|gimp_action_group_add_string_actions
 argument_list|(
 name|group
 argument_list|,
-literal|"tool-preset-action"
+literal|"tool-presets-action"
 argument_list|,
-name|tool_preset_edit_actions
+name|tool_presets_edit_actions
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
-name|tool_preset_edit_actions
+name|tool_presets_edit_actions
 argument_list|)
 argument_list|,
 name|G_CALLBACK
@@ -351,8 +351,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_preset_actions_update (GimpActionGroup * group,gpointer user_data)
-name|tool_preset_actions_update
+DECL|function|tool_presets_actions_update (GimpActionGroup * group,gpointer user_data)
+name|tool_presets_actions_update
 parameter_list|(
 name|GimpActionGroup
 modifier|*
@@ -436,14 +436,14 @@ define|\
 value|gimp_action_group_set_action_sensitive (group, action, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-literal|"tool-preset-edit"
+literal|"tool-presets-edit"
 argument_list|,
 name|tool_preset
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"tool-preset-duplicate"
+literal|"tool-presets-duplicate"
 argument_list|,
 name|tool_preset
 operator|&&
@@ -457,7 +457,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"tool-preset-copy-location"
+literal|"tool-presets-copy-location"
 argument_list|,
 name|tool_preset
 operator|&&
@@ -466,7 +466,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"tool-preset-delete"
+literal|"tool-presets-delete"
 argument_list|,
 name|tool_preset
 operator|&&

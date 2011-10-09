@@ -230,11 +230,11 @@ name|menu_factory
 argument_list|,
 literal|"menu-identifier"
 argument_list|,
-literal|"<ToolPreset>"
+literal|"<ToolPresets>"
 argument_list|,
 literal|"ui-path"
 argument_list|,
-literal|"/tool-preset-popup"
+literal|"/tool-presets-popup"
 argument_list|,
 name|NULL
 argument_list|)
@@ -249,7 +249,7 @@ argument_list|(
 name|factory_view
 argument_list|)
 argument_list|,
-literal|"tool-preset"
+literal|"tool-presets"
 argument_list|)
 condition|)
 block|{

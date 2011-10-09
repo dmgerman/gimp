@@ -1415,7 +1415,7 @@ name|manager
 operator|->
 name|name
 argument_list|,
-literal|"<ToolPreset>"
+literal|"<ToolPresets>"
 argument_list|)
 condition|)
 block|{
@@ -1423,7 +1423,7 @@ name|plug_in_menus_add_proc
 argument_list|(
 name|manager
 argument_list|,
-literal|"/tool-preset-popup"
+literal|"/tool-presets-popup"
 argument_list|,
 name|plug_in_proc
 argument_list|,
