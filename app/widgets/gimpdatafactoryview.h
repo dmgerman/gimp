@@ -273,13 +273,6 @@ name|GimpDataFactoryView
 modifier|*
 name|factory_view
 parameter_list|,
-name|GimpViewType
-name|view_type
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
 name|gint
 name|view_size
 parameter_list|,

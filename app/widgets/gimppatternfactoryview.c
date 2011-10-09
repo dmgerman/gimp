@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcontainer.h"
+file|"core/gimpcontext.h"
 end_include
 
 begin_include
@@ -43,12 +43,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpviewable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcontainerview.h"
 end_include
 
 begin_include
@@ -154,6 +148,16 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|view_size
 operator|>
 literal|0
@@ -184,9 +188,17 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_PATTERN_FACTORY_VIEW
 argument_list|,
+literal|"view-type"
+argument_list|,
+name|view_type
+argument_list|,
 literal|"data-factory"
 argument_list|,
 name|factory
+argument_list|,
+literal|"context"
+argument_list|,
+name|context
 argument_list|,
 name|NULL
 argument_list|)
@@ -200,10 +212,6 @@ name|GIMP_DATA_FACTORY_VIEW
 argument_list|(
 name|factory_view
 argument_list|)
-argument_list|,
-name|view_type
-argument_list|,
-name|context
 argument_list|,
 name|view_size
 argument_list|,

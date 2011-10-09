@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpcontainereditor.h  * Copyright (C) 2001 Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpcontainereditor.h  * Copyright (C) 2001-2011 Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_ifndef
@@ -80,6 +80,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_CONTAINER_EDITOR, GimpContain
 end_define
 
 begin_typedef
+DECL|typedef|GimpContainerEditorPrivate
+typedef|typedef
+name|struct
+name|_GimpContainerEditorPrivate
+name|GimpContainerEditorPrivate
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpContainerEditorClass
 typedef|typedef
 name|struct
@@ -101,6 +110,11 @@ DECL|member|view
 name|GimpContainerView
 modifier|*
 name|view
+decl_stmt|;
+DECL|member|priv
+name|GimpContainerEditorPrivate
+modifier|*
+name|priv
 decl_stmt|;
 block|}
 struct|;
@@ -213,17 +227,6 @@ parameter_list|(
 name|GimpContainerEditor
 modifier|*
 name|editor
-parameter_list|,
-name|GimpViewType
-name|view_type
-parameter_list|,
-name|GimpContainer
-modifier|*
-name|container
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
 parameter_list|,
 name|gint
 name|view_size
