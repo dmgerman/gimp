@@ -27,13 +27,19 @@ directive|include
 file|"gimpbutton.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp3migration.h"
+end_include
+
 begin_comment
 comment|/**  * SECTION: gimpbutton  * @title: GimpButton  * @short_description: A #GtkButton with a little extra functionality.  *  * #GimpButton adds an extra signal to the #GtkButton widget that  * allows to distinguish a normal click from a click that was  * performed with modifier keys pressed.  **/
 end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon297f76f70103
+DECL|enum|__anon2b9d131e0103
 block|{
 DECL|enumerator|EXTENDED_CLICKED
 name|EXTENDED_CLICKED
@@ -366,7 +372,35 @@ name|GDK_CONTROL_MASK
 operator||
 name|GDK_MOD1_MASK
 operator||
-name|GDK_MOD2_MASK
+name|gtk_widget_get_modifier_mask
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+name|GDK_MODIFIER_INTENT_PRIMARY_ACCELERATOR
+argument_list|)
+operator||
+name|gtk_widget_get_modifier_mask
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+name|GDK_MODIFIER_INTENT_EXTEND_SELECTION
+argument_list|)
+operator||
+name|gtk_widget_get_modifier_mask
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+name|GDK_MODIFIER_INTENT_MODIFY_SELECTION
+argument_list|)
 operator|)
 condition|)
 block|{
