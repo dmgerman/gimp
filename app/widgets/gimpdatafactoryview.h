@@ -273,12 +273,6 @@ name|GimpDataFactoryView
 modifier|*
 name|factory_view
 parameter_list|,
-name|gint
-name|view_size
-parameter_list|,
-name|gint
-name|view_border_width
-parameter_list|,
 name|GimpMenuFactory
 modifier|*
 name|menu_factory

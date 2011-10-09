@@ -184,6 +184,14 @@ literal|"context"
 argument_list|,
 name|context
 argument_list|,
+literal|"view-size"
+argument_list|,
+name|view_size
+argument_list|,
+literal|"view-border-width"
+argument_list|,
+name|view_border_width
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -196,10 +204,6 @@ name|GIMP_DATA_FACTORY_VIEW
 argument_list|(
 name|factory_view
 argument_list|)
-argument_list|,
-name|view_size
-argument_list|,
-name|view_border_width
 argument_list|,
 name|menu_factory
 argument_list|,

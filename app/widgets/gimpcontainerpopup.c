@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5d07f10103
+DECL|enum|__anon28d5fbd00103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -2211,6 +2211,18 @@ name|popup
 operator|->
 name|context
 argument_list|,
+literal|"view-size"
+argument_list|,
+name|popup
+operator|->
+name|view_size
+argument_list|,
+literal|"view-border-width"
+argument_list|,
+name|popup
+operator|->
+name|view_border_width
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -2219,14 +2231,6 @@ argument_list|(
 name|popup
 operator|->
 name|editor
-argument_list|,
-name|popup
-operator|->
-name|view_size
-argument_list|,
-name|popup
-operator|->
-name|view_border_width
 argument_list|,
 name|NULL
 argument_list|,
