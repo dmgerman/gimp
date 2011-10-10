@@ -2048,10 +2048,6 @@ name|alpha_offset
 operator|=
 literal|0
 expr_stmt|;
-name|has_alpha
-operator|=
-literal|0
-expr_stmt|;
 name|src
 operator|=
 name|NULL
