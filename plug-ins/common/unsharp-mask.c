@@ -84,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299b48030108
+DECL|struct|__anon27e0a4b40108
 block|{
 DECL|member|radius
 name|gdouble
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299b48030208
+DECL|struct|__anon27e0a4b40208
 block|{
 DECL|member|run
 name|gboolean
@@ -1456,11 +1456,6 @@ name|bpp
 parameter_list|)
 block|{
 specifier|const
-name|gdouble
-modifier|*
-name|cmatrix_p
-decl_stmt|;
-specifier|const
 name|guchar
 modifier|*
 name|src_p
@@ -1812,10 +1807,6 @@ name|sum
 init|=
 literal|0
 decl_stmt|;
-name|cmatrix_p
-operator|=
-name|cmatrix
-expr_stmt|;
 name|src_p1
 operator|=
 name|src_p
