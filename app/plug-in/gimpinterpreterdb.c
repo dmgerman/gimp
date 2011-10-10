@@ -2152,12 +2152,6 @@ name|GHashTable
 modifier|*
 name|extensions
 decl_stmt|;
-name|list
-operator|=
-name|db
-operator|->
-name|magics
-expr_stmt|;
 for|for
 control|(
 name|list
