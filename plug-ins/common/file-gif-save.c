@@ -135,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b528020103
+DECL|enum|__anon2c9466000103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -148,7 +148,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b528020203
+DECL|enum|__anon2c9466000203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -165,7 +165,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b528020308
+DECL|struct|__anon2c9466000308
 block|{
 DECL|member|interlace
 name|gint
@@ -5375,11 +5375,6 @@ decl_stmt|,
 name|RHeight
 decl_stmt|;
 name|int
-name|LeftOfs
-decl_stmt|,
-name|TopOfs
-decl_stmt|;
-name|int
 name|Resolution
 decl_stmt|;
 name|int
@@ -5405,12 +5400,6 @@ operator|=
 name|Height
 operator|=
 name|GHeight
-expr_stmt|;
-name|LeftOfs
-operator|=
-name|TopOfs
-operator|=
-literal|0
 expr_stmt|;
 name|Resolution
 operator|=
@@ -5606,11 +5595,6 @@ name|ifunptr
 name|get_pixel
 parameter_list|)
 block|{
-name|int
-name|LeftOfs
-decl_stmt|,
-name|TopOfs
-decl_stmt|;
 name|Width
 operator|=
 name|GWidth
@@ -5618,12 +5602,6 @@ expr_stmt|;
 name|Height
 operator|=
 name|GHeight
-expr_stmt|;
-name|LeftOfs
-operator|=
-name|TopOfs
-operator|=
-literal|0
 expr_stmt|;
 comment|/*    * Calculate number of bits we are expecting    */
 name|CountDown
