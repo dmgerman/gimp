@@ -672,7 +672,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bce88570108
+DECL|struct|__anon27b0c8be0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -726,7 +726,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bce88570208
+DECL|struct|__anon27b0c8be0208
 block|{
 DECL|member|y
 name|gint32
@@ -11012,10 +11012,6 @@ decl_stmt|;
 name|GdkCursorType
 name|new_type
 decl_stmt|;
-name|GdkEventButton
-modifier|*
-name|bevent
-decl_stmt|;
 name|GdkEventMotion
 modifier|*
 name|mevent
@@ -11280,14 +11276,6 @@ break|break;
 case|case
 name|GDK_BUTTON_PRESS
 case|:
-name|bevent
-operator|=
-operator|(
-name|GdkEventButton
-operator|*
-operator|)
-name|event
-expr_stmt|;
 name|new_type
 operator|=
 name|GDK_TCROSS
