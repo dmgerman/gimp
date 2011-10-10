@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0d0bcf0108
+DECL|struct|__anon296167a70108
 block|{
 DECL|member|radius
 name|gdouble
@@ -2748,9 +2748,6 @@ name|b0n
 decl_stmt|,
 name|b1n
 decl_stmt|;
-name|gdouble
-name|div
-decl_stmt|;
 comment|/* coefficients for Gaussian 1st derivative filter */
 name|a0
 operator|=
@@ -2841,18 +2838,7 @@ name|b1
 operator|/
 name|std_dev
 expr_stmt|;
-name|div
-operator|=
-name|sqrt
-argument_list|(
-literal|2
-operator|*
-name|G_PI
-argument_list|)
-operator|*
-name|std_dev
-expr_stmt|;
-comment|/*   a0 = a0 / div;   a1 = a1 / div;   c0 = c0 / div;   c1 = c1 / div;   */
+comment|/*   gdouble div;   div = sqrt (2 * G_PI) * std_dev;   a0 = a0 / div;   a1 = a1 / div;   c0 = c0 / div;   c1 = c1 / div;   */
 name|n_p
 index|[
 literal|4
