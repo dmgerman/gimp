@@ -34,7 +34,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0da8660103
+DECL|enum|__anon28c0658b0103
 block|{
 DECL|enumerator|URI_UNKNOWN
 name|URI_UNKNOWN
@@ -406,12 +406,6 @@ init|=
 literal|0
 decl_stmt|;
 comment|/* no of chars to be inserted between them */
-name|gint
-name|path_offset
-init|=
-operator|-
-literal|1
-decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
@@ -619,10 +613,6 @@ operator|-
 name|part
 expr_stmt|;
 block|}
-name|path_offset
-operator|=
-name|base_cnt
-expr_stmt|;
 if|if
 condition|(
 name|uri_type
