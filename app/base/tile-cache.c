@@ -100,7 +100,7 @@ end_typedef
 begin_decl_stmt
 DECL|variable|cur_cache_size
 specifier|static
-name|gulong
+name|guint64
 name|cur_cache_size
 init|=
 literal|0
@@ -110,7 +110,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|max_cache_size
 specifier|static
-name|gulong
+name|guint64
 name|max_cache_size
 init|=
 literal|0
@@ -120,7 +120,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|cur_cache_dirty
 specifier|static
-name|gulong
+name|guint64
 name|cur_cache_dirty
 init|=
 literal|0
@@ -359,10 +359,10 @@ end_endif
 
 begin_function
 name|void
-DECL|function|tile_cache_init (gulong tile_cache_size)
+DECL|function|tile_cache_init (guint64 tile_cache_size)
 name|tile_cache_init
 parameter_list|(
-name|gulong
+name|guint64
 name|tile_cache_size
 parameter_list|)
 block|{
@@ -874,10 +874,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tile_cache_set_size (gulong cache_size)
+DECL|function|tile_cache_set_size (guint64 cache_size)
 name|tile_cache_set_size
 parameter_list|(
-name|gulong
+name|guint64
 name|cache_size
 parameter_list|)
 block|{
@@ -1407,17 +1407,17 @@ name|Tile
 modifier|*
 name|t
 decl_stmt|;
-name|gulong
+name|guint64
 name|local_size
 init|=
 literal|0
 decl_stmt|;
-name|gulong
+name|guint64
 name|local_dirty
 init|=
 literal|0
 decl_stmt|;
-name|gulong
+name|guint64
 name|acc
 init|=
 literal|0
@@ -1467,7 +1467,11 @@ name|cur_cache_size
 condition|)
 name|g_printerr
 argument_list|(
-literal|"\nCache size mismatch: running=%lu, tested=%lu\n"
+literal|"\nCache size mismatch: running=%"
+name|G_GUINT64_FORMAT
+literal|", tested=%"
+name|G_GUINT64_FORMAT
+literal|"\n"
 argument_list|,
 name|cur_cache_size
 argument_list|,
@@ -1482,7 +1486,11 @@ name|cur_cache_dirty
 condition|)
 name|g_printerr
 argument_list|(
-literal|"\nCache dirty mismatch: running=%lu, tested=%lu\n"
+literal|"\nCache dirty mismatch: running=%"
+name|G_GUINT64_FORMAT
+literal|", tested=%"
+name|G_GUINT64_FORMAT
+literal|"\n"
 argument_list|,
 name|cur_cache_dirty
 argument_list|,
@@ -1527,7 +1535,11 @@ name|local_dirty
 condition|)
 name|g_printerr
 argument_list|(
-literal|"\nDirty scan follower mismatch: running=%lu, tested=%lu\n"
+literal|"\nDirty scan follower mismatch: running=%"
+name|G_GUINT64_FORMAT
+literal|", tested=%"
+name|G_GUINT64_FORMAT
+literal|"\n"
 argument_list|,
 name|acc
 argument_list|,

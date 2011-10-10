@@ -20,7 +20,7 @@ begin_function_decl
 name|void
 name|tile_cache_init
 parameter_list|(
-name|gulong
+name|guint64
 name|cache_size
 parameter_list|)
 function_decl|;
@@ -39,7 +39,7 @@ begin_function_decl
 name|void
 name|tile_cache_set_size
 parameter_list|(
-name|gulong
+name|guint64
 name|cache_size
 parameter_list|)
 function_decl|;
