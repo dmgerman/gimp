@@ -339,7 +339,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289338fb0103
+DECL|enum|__anon28b084870103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -358,7 +358,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289338fb0208
+DECL|struct|__anon28b084870208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -3035,11 +3035,6 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|gboolean
-name|status
-decl_stmt|;
-name|status
-operator|=
 name|gimp_progress_init
 argument_list|(
 name|_
