@@ -91,7 +91,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f9551b0103
+DECL|enum|__anon2943b40a0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -111,7 +111,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f9551b0208
+DECL|struct|__anon2943b40a0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -4634,9 +4634,6 @@ decl_stmt|,
 name|scale_vec_y
 decl_stmt|;
 comment|/* fixed vector X,Y component scaling factors */
-name|gint
-name|ind
-decl_stmt|;
 comment|/* ----------------------------------------------------------------------- */
 if|if
 condition|(
@@ -5596,10 +5593,6 @@ expr_stmt|;
 name|dy
 operator|=
 name|desty
-expr_stmt|;
-name|ind
-operator|=
-literal|0
 expr_stmt|;
 for|for
 control|(
