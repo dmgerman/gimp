@@ -304,10 +304,6 @@ name|window
 argument_list|)
 condition|)
 block|{
-name|GdkDisplay
-modifier|*
-name|display
-decl_stmt|;
 name|GdkScreen
 modifier|*
 name|screen
@@ -316,6 +312,14 @@ name|gchar
 modifier|*
 name|screen_name
 decl_stmt|;
+ifndef|#
+directive|ifndef
+name|GIMP_UNSTABLE
+block|{
+name|GdkDisplay
+modifier|*
+name|display
+decl_stmt|;
 name|display
 operator|=
 name|gtk_widget_get_display
@@ -323,9 +327,6 @@ argument_list|(
 name|window
 argument_list|)
 expr_stmt|;
-ifndef|#
-directive|ifndef
-name|GIMP_UNSTABLE
 name|show_menu
 operator|=
 operator|(
@@ -337,6 +338,7 @@ operator|>
 literal|1
 operator|)
 expr_stmt|;
+block|}
 else|#
 directive|else
 name|show_menu
