@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dc81580108
+DECL|struct|__anon2bb1e05a0108
 block|{
 DECL|member|independent
 name|gboolean
@@ -115,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dc81580208
+DECL|struct|__anon2bb1e05a0208
 block|{
 DECL|member|channels
 name|gint
@@ -2664,10 +2664,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpDrawable
-modifier|*
-name|drawable
-decl_stmt|;
 name|gint
 name|n
 decl_stmt|;
@@ -2676,18 +2672,6 @@ argument_list|(
 name|adjustment
 argument_list|,
 name|data
-argument_list|)
-expr_stmt|;
-name|drawable
-operator|=
-name|g_object_get_data
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|adjustment
-argument_list|)
-argument_list|,
-literal|"drawable"
 argument_list|)
 expr_stmt|;
 if|if
