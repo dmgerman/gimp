@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ace92010103
+DECL|enum|__anon29611b360103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ace92010203
+DECL|enum|__anon29611b360203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -152,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ace92010308
+DECL|struct|__anon29611b360308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -183,7 +183,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ace92010408
+DECL|struct|__anon29611b360408
 block|{
 DECL|member|menu
 name|gchar
@@ -519,20 +519,6 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-name|GimpRunMode
-name|run_mode
-decl_stmt|;
-name|run_mode
-operator|=
-name|param
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
