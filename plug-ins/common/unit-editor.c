@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon278f37960103
+DECL|enum|__anon2a1867530103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -111,7 +111,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278f37960208
+DECL|struct|__anon2a1867530208
 block|{
 DECL|member|title
 specifier|const
@@ -611,20 +611,6 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-name|GimpRunMode
-name|run_mode
-decl_stmt|;
-name|run_mode
-operator|=
-name|param
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
