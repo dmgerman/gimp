@@ -91,7 +91,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2943b40a0103
+DECL|enum|__anon276e1dd20103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -111,7 +111,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2943b40a0208
+DECL|struct|__anon276e1dd20208
 block|{
 DECL|member|amount
 name|gdouble
@@ -6564,12 +6564,6 @@ name|gint
 name|height
 decl_stmt|;
 name|gint
-name|orig_image_id
-decl_stmt|;
-name|gint
-name|image_type
-decl_stmt|;
-name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -6672,15 +6666,6 @@ name|orig_draw
 operator|->
 name|height
 expr_stmt|;
-name|image_type
-operator|=
-name|gimp_drawable_type
-argument_list|(
-name|orig_draw
-operator|->
-name|drawable_id
-argument_list|)
-expr_stmt|;
 comment|/* generate x,y differential images (arrays) */
 name|diff
 argument_list|(
@@ -6705,15 +6690,6 @@ operator|=
 name|gimp_drawable_get
 argument_list|(
 name|ydlayer
-argument_list|)
-expr_stmt|;
-name|orig_image_id
-operator|=
-name|gimp_item_get_image
-argument_list|(
-name|orig_draw
-operator|->
-name|drawable_id
 argument_list|)
 expr_stmt|;
 for|for
