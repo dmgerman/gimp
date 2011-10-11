@@ -147,7 +147,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b191ce50108
+DECL|struct|__anon2ad143e30108
 block|{
 DECL|member|compression
 name|gint
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b191ce50208
+DECL|struct|__anon2ad143e30208
 block|{
 DECL|member|ID
 name|gint32
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b191ce50308
+DECL|struct|__anon2ad143e30308
 block|{
 DECL|member|o_pages
 name|gint
@@ -2164,9 +2164,6 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|gint
-name|ilayer
-decl_stmt|;
 name|gboolean
 name|worst_case
 init|=
@@ -2247,10 +2244,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* We will loop through the all pages in case of multipage TIFF      and load every page as a separate layer. */
-name|ilayer
-operator|=
-literal|0
-expr_stmt|;
 for|for
 control|(
 name|li
@@ -2267,6 +2260,9 @@ name|li
 operator|++
 control|)
 block|{
+name|gint
+name|ilayer
+decl_stmt|;
 name|TIFFSetDirectory
 argument_list|(
 name|tif
