@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277369870108
+DECL|struct|__anon2880fa150108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277369870208
+DECL|struct|__anon2880fa150208
 block|{
 DECL|member|run
 name|gboolean
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277369870308
+DECL|struct|__anon2880fa150308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -2217,10 +2217,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  * 'load_image()' - Load a PNG image into a new image window.  */
-end_comment
-
 begin_function
 specifier|static
 name|int
@@ -2266,6 +2262,10 @@ literal|8
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/*  * 'load_image()' - Load a PNG image into a new image window.  */
+end_comment
 
 begin_function
 specifier|static
