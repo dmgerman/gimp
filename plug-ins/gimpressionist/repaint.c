@@ -2172,8 +2172,6 @@ name|g
 decl_stmt|,
 name|b
 decl_stmt|,
-name|n
-decl_stmt|,
 name|h
 decl_stmt|,
 name|i
@@ -5365,6 +5363,9 @@ name|i
 operator|--
 control|)
 block|{
+name|int
+name|n
+decl_stmt|;
 if|if
 condition|(
 name|i
@@ -5660,8 +5661,6 @@ literal|128
 condition|)
 continue|continue;
 block|}
-name|n
-operator|=
 name|sn
 operator|=
 name|on
