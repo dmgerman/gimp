@@ -265,9 +265,6 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-name|GimpRunMode
-name|run_mode
-decl_stmt|;
 name|GimpPDBStatusType
 name|status
 decl_stmt|;
@@ -286,17 +283,6 @@ operator|*
 name|return_vals
 operator|=
 name|values
-expr_stmt|;
-name|run_mode
-operator|=
-name|param
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
 expr_stmt|;
 name|status
 operator|=
