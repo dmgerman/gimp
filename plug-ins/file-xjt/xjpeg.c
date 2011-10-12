@@ -253,10 +253,6 @@ name|error_exit
 operator|=
 name|my_error_exit
 expr_stmt|;
-name|l_layer_type
-operator|=
-name|GIMP_GRAY_IMAGE
-expr_stmt|;
 if|if
 condition|(
 operator|(
