@@ -2040,10 +2040,6 @@ name|guchar
 specifier|volatile
 name|l_alpha_sum
 decl_stmt|;
-name|alpha_offset
-operator|=
-literal|0
-expr_stmt|;
 name|src
 operator|=
 name|NULL
