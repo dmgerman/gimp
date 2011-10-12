@@ -320,7 +320,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2b7ba40108
+DECL|struct|__anon2b9465220108
 block|{
 DECL|member|crop
 name|gboolean
@@ -851,7 +851,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a2b7ba40208
+DECL|struct|__anon2b9465220208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -2536,12 +2536,6 @@ modifier|*
 name|tmppixel
 decl_stmt|;
 comment|/* pixel data (guchar * bpp = guint32) */
-comment|/* initialize image here, thus avoiding compiler warnings */
-name|image_ID
-operator|=
-operator|-
-literal|1
-expr_stmt|;
 comment|/*    * Open the file and check it is a valid X cursor    */
 name|fp
 operator|=
@@ -9247,7 +9241,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2a2b7ba40308
+DECL|struct|__anon2b9465220308
 block|{
 DECL|member|size
 name|guint32
