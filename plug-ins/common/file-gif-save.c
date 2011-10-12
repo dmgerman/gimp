@@ -135,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9466000103
+DECL|enum|__anon2b0296cf0103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -148,7 +148,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9466000203
+DECL|enum|__anon2b0296cf0203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -165,7 +165,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9466000308
+DECL|struct|__anon2b0296cf0308
 block|{
 DECL|member|interlace
 name|gint
@@ -5786,9 +5786,6 @@ decl_stmt|,
 name|TopOfs
 decl_stmt|;
 name|int
-name|Resolution
-decl_stmt|;
-name|int
 name|InitCodeSize
 decl_stmt|;
 name|Interlace
@@ -5816,10 +5813,6 @@ operator|(
 name|int
 operator|)
 name|offset_y
-expr_stmt|;
-name|Resolution
-operator|=
-name|BitsPerPixel
 expr_stmt|;
 comment|/*    * Calculate number of bits we are expecting    */
 name|CountDown
@@ -5951,7 +5944,7 @@ if|#
 directive|if
 literal|0
 comment|/***************************/
-block|Interlace = GInterlace;   Width = GWidth;   Height = GHeight;   LeftOfs = TopOfs = 0;   Resolution = BitsPerPixel;    CountDown = (long) Width *(long) Height;   Pass = 0;
+block|Interlace = GInterlace;   Width = GWidth;   Height = GHeight;   LeftOfs = TopOfs = 0;    CountDown = (long) Width *(long) Height;   Pass = 0;
 comment|/*    * The initial code size    */
 block|if (BitsPerPixel<= 1)     InitCodeSize = 2;   else     InitCodeSize = BitsPerPixel;
 comment|/*    * Set up the current x and y position    */
