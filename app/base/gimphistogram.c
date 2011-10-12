@@ -2653,12 +2653,6 @@ name|region
 operator|->
 name|h
 expr_stmt|;
-name|w
-operator|=
-name|region
-operator|->
-name|w
-expr_stmt|;
 if|if
 condition|(
 name|mask
