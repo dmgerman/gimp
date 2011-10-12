@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275348a20108
+DECL|struct|__anon27b3c2a40108
 block|{
 DECL|member|data
 name|PrintData
@@ -127,7 +127,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon275348a20203
+DECL|enum|__anon27b3c2a40203
 block|{
 DECL|enumerator|BOTTOM
 name|BOTTOM
@@ -4196,10 +4196,6 @@ modifier|*
 name|info
 parameter_list|)
 block|{
-name|GtkPageSetup
-modifier|*
-name|setup
-decl_stmt|;
 name|PrintData
 modifier|*
 name|data
@@ -4220,15 +4216,6 @@ decl_stmt|;
 name|gdouble
 name|y
 decl_stmt|;
-name|setup
-operator|=
-name|gtk_print_operation_get_default_page_setup
-argument_list|(
-name|data
-operator|->
-name|operation
-argument_list|)
-expr_stmt|;
 name|print_size_info_get_page_dimensions
 argument_list|(
 name|info
