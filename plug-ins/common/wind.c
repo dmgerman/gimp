@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6384cb0103
+DECL|enum|__anon27b1ca290103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -130,7 +130,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6384cb0203
+DECL|enum|__anon27b1ca290203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -146,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6384cb0303
+DECL|enum|__anon27b1ca290303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -2479,9 +2479,6 @@ name|target_colour_A
 init|=
 literal|0
 decl_stmt|;
-name|gdouble
-name|bleed_length_max
-decl_stmt|;
 name|gint
 name|bleed_variation
 decl_stmt|;
@@ -2583,6 +2580,9 @@ operator|)
 argument_list|)
 condition|)
 block|{
+name|gdouble
+name|bleed_length_max
+decl_stmt|;
 comment|/* we have found an edge, do bleeding */
 name|sbi
 operator|=
@@ -2635,10 +2635,6 @@ name|sbi
 operator|+
 literal|2
 index|]
-expr_stmt|;
-name|bleed_length_max
-operator|=
-name|strength
 expr_stmt|;
 if|if
 condition|(
