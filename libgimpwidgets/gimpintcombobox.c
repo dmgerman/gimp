@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf02e0e0103
+DECL|enum|__anon2901c4a90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -59,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf02e0e0208
+DECL|struct|__anon2901c4a90208
 block|{
 DECL|member|pixbuf_renderer
 name|GtkCellRenderer
@@ -344,13 +344,6 @@ expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|store
-argument_list|)
-expr_stmt|;
-name|priv
-operator|=
-name|GIMP_INT_COMBO_BOX_GET_PRIVATE
-argument_list|(
-name|combo_box
 argument_list|)
 expr_stmt|;
 name|priv
