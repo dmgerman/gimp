@@ -2243,9 +2243,6 @@ name|density
 decl_stmt|,
 name|bgamma
 decl_stmt|;
-name|double
-name|thissum
-decl_stmt|;
 name|int
 name|max_progress
 decl_stmt|;
@@ -2889,13 +2886,6 @@ name|brush
 operator|=
 operator|&
 name|brushes
-index|[
-literal|0
-index|]
-expr_stmt|;
-name|thissum
-operator|=
-name|brushes_sum
 index|[
 literal|0
 index|]
@@ -5365,6 +5355,9 @@ control|)
 block|{
 name|int
 name|n
+decl_stmt|;
+name|double
+name|thissum
 decl_stmt|;
 if|if
 condition|(
