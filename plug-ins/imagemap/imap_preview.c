@@ -224,9 +224,6 @@ modifier|*
 name|dest_buffer
 decl_stmt|,
 modifier|*
-name|src
-decl_stmt|,
-modifier|*
 name|dest
 decl_stmt|;
 name|gint
@@ -381,10 +378,6 @@ argument_list|,
 name|dwidth
 argument_list|)
 expr_stmt|;
-name|src
-operator|=
-name|src_row
-expr_stmt|;
 for|for
 control|(
 name|col
@@ -399,6 +392,10 @@ name|col
 operator|++
 control|)
 block|{
+name|guchar
+modifier|*
+name|src
+decl_stmt|;
 name|src
 operator|=
 operator|&
