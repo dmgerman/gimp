@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f967450108
+DECL|struct|__anon2c6536f30108
 block|{
 DECL|member|threshold
 name|gint
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f967450208
+DECL|struct|__anon2c6536f30208
 block|{
 DECL|member|r
 name|guchar
@@ -2598,20 +2598,18 @@ block|{
 name|rgbkey
 modifier|*
 name|key
-decl_stmt|;
-name|guchar
-name|a
-decl_stmt|;
-comment|/* get pixel data */
-name|key
-operator|=
+init|=
 name|g_new
 argument_list|(
 name|rgbkey
 argument_list|,
 literal|1
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|guchar
+name|a
+decl_stmt|;
+comment|/* get pixel data */
 name|key
 operator|->
 name|r
@@ -2755,6 +2753,15 @@ argument_list|,
 name|key
 argument_list|,
 name|indexno
+argument_list|)
+expr_stmt|;
+name|key
+operator|=
+name|g_new
+argument_list|(
+name|rgbkey
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 block|}
