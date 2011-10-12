@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae8d6e90103
+DECL|enum|__anon2a96ba8b0103
 block|{
 DECL|enumerator|SQUARES
 name|SQUARES
@@ -182,7 +182,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae8d6e90208
+DECL|struct|__anon2a96ba8b0208
 block|{
 DECL|member|x
 DECL|member|y
@@ -200,7 +200,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae8d6e90308
+DECL|struct|__anon2a96ba8b0308
 block|{
 DECL|member|npts
 name|guint
@@ -222,7 +222,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae8d6e90408
+DECL|struct|__anon2a96ba8b0408
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae8d6e90508
+DECL|struct|__anon2a96ba8b0508
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -8300,16 +8300,6 @@ name|pr
 argument_list|)
 control|)
 block|{
-name|size
-operator|=
-name|src_rgn
-operator|.
-name|w
-operator|*
-name|src_rgn
-operator|.
-name|h
-expr_stmt|;
 name|dest
 operator|=
 name|src_rgn
