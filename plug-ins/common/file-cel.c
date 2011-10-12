@@ -2416,10 +2416,6 @@ name|colours
 operator|=
 literal|16
 expr_stmt|;
-name|bpp
-operator|=
-literal|12
-expr_stmt|;
 name|fseek
 argument_list|(
 name|fp
