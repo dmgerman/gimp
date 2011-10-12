@@ -69,7 +69,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b938d6f0108
+DECL|struct|__anon28e54c120108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -3134,10 +3134,6 @@ argument_list|,
 operator|&
 name|export_action_flatten
 argument_list|)
-expr_stmt|;
-name|added_flatten
-operator|=
-name|TRUE
 expr_stmt|;
 block|}
 block|}
