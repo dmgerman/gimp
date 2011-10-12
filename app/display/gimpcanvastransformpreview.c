@@ -165,7 +165,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b19fd90103
+DECL|enum|__anon2b65d4f90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6012,10 +6012,6 @@ name|dest
 operator|!=
 name|NULL
 argument_list|)
-expr_stmt|;
-name|b
-operator|=
-literal|0
 expr_stmt|;
 name|errorterm
 operator|=
