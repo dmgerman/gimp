@@ -1016,9 +1016,6 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|gint32
-name|image_ID
-decl_stmt|;
 name|GimpRunMode
 name|run_mode
 decl_stmt|;
@@ -1097,17 +1094,6 @@ name|data
 operator|.
 name|d_drawable
 argument_list|)
-expr_stmt|;
-name|image_ID
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
 expr_stmt|;
 name|gimp_drawable_mask_bounds
 argument_list|(
