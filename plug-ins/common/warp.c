@@ -91,7 +91,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc32b0d0103
+DECL|enum|__anon28f07a4b0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -111,7 +111,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc32b0d0208
+DECL|struct|__anon28f07a4b0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -6932,12 +6932,6 @@ init|=
 operator|-
 literal|1
 decl_stmt|;
-name|gint
-name|dmap_bytes
-init|=
-operator|-
-literal|1
-decl_stmt|;
 name|guchar
 modifier|*
 name|destrow
@@ -7145,12 +7139,6 @@ expr_stmt|;
 name|dest_bytes
 operator|=
 name|draw
-operator|->
-name|bpp
-expr_stmt|;
-name|dmap_bytes
-operator|=
-name|map_x
 operator|->
 name|bpp
 expr_stmt|;
