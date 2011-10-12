@@ -1408,9 +1408,6 @@ decl_stmt|;
 name|guint32
 name|element_length
 decl_stmt|;
-name|guint32
-name|ctx_ul
-decl_stmt|;
 name|guint16
 name|ctx_us
 decl_stmt|;
@@ -1854,15 +1851,6 @@ expr_stmt|;
 continue|continue;
 block|}
 comment|/* Some special casts that are used below */
-name|ctx_ul
-operator|=
-operator|*
-operator|(
-name|guint32
-operator|*
-operator|)
-name|value
-expr_stmt|;
 name|ctx_us
 operator|=
 operator|*
@@ -3131,7 +3119,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdacd0a0108
+DECL|struct|__anon2c52eb890108
 block|{
 DECL|member|group_word
 name|guint16
@@ -5506,7 +5494,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-DECL|struct|__anon2bdacd0a0208
+DECL|struct|__anon2c52eb890208
 struct|struct
 block|{
 DECL|member|DICOM
@@ -5634,7 +5622,7 @@ modifier|*
 name|elements
 parameter_list|)
 block|{
-DECL|struct|__anon2bdacd0a0308
+DECL|struct|__anon2c52eb890308
 struct|struct
 block|{
 DECL|member|DICOM
