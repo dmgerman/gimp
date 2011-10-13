@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ab4ac10108
+DECL|struct|__anon2a4441520108
 block|{
 DECL|member|height
 name|gint
@@ -1186,7 +1186,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ab4ac10208
+DECL|struct|__anon2a4441520208
 block|{
 DECL|member|x
 DECL|member|y
@@ -1760,6 +1760,21 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+operator|(
+name|num_channels
+operator|==
+literal|1
+operator|)
+operator|||
+operator|(
+name|num_channels
+operator|==
+literal|3
+operator|)
+argument_list|)
+expr_stmt|;
 comment|/*     Since there's so many nested FOR's,     put a few of them here...   */
 name|rowstride
 operator|=
@@ -1940,9 +1955,9 @@ name|count
 expr_stmt|;
 if|if
 condition|(
-name|bpp
-operator|<
-literal|3
+name|num_channels
+operator|==
+literal|1
 condition|)
 name|inten
 operator|=
