@@ -186,6 +186,15 @@ decl_stmt|;
 name|gint
 name|cnt
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|render_func
+operator|!=
+name|NULL
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 comment|/* Get offsets for corners */
 name|dx1
 operator|=
