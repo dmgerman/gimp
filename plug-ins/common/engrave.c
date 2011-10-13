@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299d261c0108
+DECL|struct|__anon28ab4ac10108
 block|{
 DECL|member|height
 name|gint
@@ -210,7 +210,7 @@ name|gint
 name|bpp
 parameter_list|,
 name|gint
-name|color_n
+name|num_channels
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1186,7 +1186,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299d261c0208
+DECL|struct|__anon28ab4ac10208
 block|{
 DECL|member|x
 DECL|member|y
@@ -1253,7 +1253,7 @@ decl_stmt|;
 name|gint
 name|bpp
 decl_stmt|,
-name|color_n
+name|num_channels
 decl_stmt|;
 name|gint
 name|x1
@@ -1410,7 +1410,7 @@ name|drawable
 operator|->
 name|bpp
 expr_stmt|;
-name|color_n
+name|num_channels
 operator|=
 operator|(
 name|gimp_drawable_is_rgb
@@ -1579,7 +1579,7 @@ name|limit
 argument_list|,
 name|bpp
 argument_list|,
-name|color_n
+name|num_channels
 argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_set_rect
@@ -1709,7 +1709,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|engrave_sub (gint height,gint limit,gint bpp,gint color_n)
+DECL|function|engrave_sub (gint height,gint limit,gint bpp,gint num_channels)
 name|engrave_sub
 parameter_list|(
 name|gint
@@ -1722,7 +1722,7 @@ name|gint
 name|bpp
 parameter_list|,
 name|gint
-name|color_n
+name|num_channels
 parameter_list|)
 block|{
 name|glong
@@ -1731,7 +1731,7 @@ index|[
 literal|3
 index|]
 decl_stmt|;
-comment|/* color_n<= 3 */
+comment|/* num_channels<= 3 */
 name|gint
 name|y
 decl_stmt|,
@@ -1829,7 +1829,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|color_n
+name|num_channels
 condition|;
 name|i
 operator|++
@@ -1888,7 +1888,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|color_n
+name|num_channels
 condition|;
 name|i
 operator|++
@@ -1926,7 +1926,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|color_n
+name|num_channels
 condition|;
 name|i
 operator|++
@@ -2062,7 +2062,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|color_n
+name|num_channels
 condition|;
 name|i
 operator|++
