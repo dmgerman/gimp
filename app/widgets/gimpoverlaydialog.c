@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7fc9dc0103
+DECL|enum|__anon2895ed000103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -673,6 +673,14 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|child
+init|=
+name|gtk_bin_get_child
+argument_list|(
+name|GTK_BIN
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
 decl_stmt|;
 name|GtkRequisition
 name|action_requisition
@@ -682,13 +690,7 @@ name|child_allocation
 init|=
 block|{
 literal|0
-block|,
-literal|0
-block|,
-literal|0
-block|,
-literal|0
-block|}
+block|, }
 decl_stmt|;
 name|GtkAllocation
 name|action_allocation
@@ -718,16 +720,6 @@ name|action_area
 argument_list|,
 operator|&
 name|action_requisition
-argument_list|)
-expr_stmt|;
-name|child
-operator|=
-name|gtk_bin_get_child
-argument_list|(
-name|GTK_BIN
-argument_list|(
-name|widget
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
