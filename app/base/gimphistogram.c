@@ -1945,7 +1945,7 @@ operator|=
 literal|1
 init|;
 name|i
-operator|<
+operator|<=
 name|maxval
 condition|;
 name|i
