@@ -48,23 +48,8 @@ parameter_list|(
 name|function
 parameter_list|)
 define|\
-value|g_test_add ("/gimp-session-2-8-compatibility-multi-window/" #function, \               GimpTestFixture, \               NULL, \               NULL, \               function, \               NULL);
+value|g_test_add_func ("/gimp-session-2-8-compatibility-multi-window/" #function, \                    function);
 end_define
-
-begin_typedef
-typedef|typedef
-struct|struct
-DECL|struct|__anon2c741bda0108
-block|{
-DECL|member|dummy
-name|int
-name|dummy
-decl_stmt|;
-DECL|typedef|GimpTestFixture
-block|}
-name|GimpTestFixture
-typedef|;
-end_typedef
 
 begin_comment
 comment|/**  * Tests that a single-window sessionrc in GIMP 2.8 format is loaded  * and written (thus also interpreted) like we expect.  **/
@@ -73,15 +58,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|read_and_write_session_files (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|read_and_write_session_files (void)
 name|read_and_write_session_files
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
-name|gconstpointer
-name|data
+name|void
 parameter_list|)
 block|{
 name|gimp_test_session_load_and_write_session_files

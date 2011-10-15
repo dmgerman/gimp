@@ -601,23 +601,8 @@ parameter_list|(
 name|function
 parameter_list|)
 define|\
-value|g_test_add ("/gimp-xcf/" #function, \               GimpTestFixture, \               gimp, \               NULL, \               function, \               NULL);
+value|g_test_add_data_func ("/gimp-xcf/" #function, gimp, function);
 end_define
-
-begin_typedef
-typedef|typedef
-struct|struct
-DECL|struct|__anon293f34830108
-block|{
-DECL|member|avoid_sizeof_zero
-name|gint
-name|avoid_sizeof_zero
-decl_stmt|;
-DECL|typedef|GimpTestFixture
-block|}
-name|GimpTestFixture
-typedef|;
-end_typedef
 
 begin_function_decl
 name|GimpImage
@@ -701,19 +686,15 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * write_and_read_gimp_2_6_format:  * @fixture:  * @data:  *  * Do a write and read test on a file that could as well be  * constructed with GIMP 2.6.  **/
+comment|/**  * write_and_read_gimp_2_6_format:  * @data:  *  * Do a write and read test on a file that could as well be  * constructed with GIMP 2.6.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|write_and_read_gimp_2_6_format (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|write_and_read_gimp_2_6_format (gconstpointer data)
 name|write_and_read_gimp_2_6_format
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)
@@ -745,19 +726,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * write_and_read_gimp_2_6_format_unusual:  * @fixture:  * @data:  *  * Do a write and read test on a file that could as well be  * constructed with GIMP 2.6, and make it unusual, like compatible  * vectors and with a floating selection.  **/
+comment|/**  * write_and_read_gimp_2_6_format_unusual:  * @data:  *  * Do a write and read test on a file that could as well be  * constructed with GIMP 2.6, and make it unusual, like compatible  * vectors and with a floating selection.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|write_and_read_gimp_2_6_format_unusual (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|write_and_read_gimp_2_6_format_unusual (gconstpointer data)
 name|write_and_read_gimp_2_6_format_unusual
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)
@@ -789,19 +766,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * load_gimp_2_6_file:  * @fixture:  * @data:  *  * Loads a file created with GIMP 2.6 and makes sure it loaded as  * expected.  **/
+comment|/**  * load_gimp_2_6_file:  * @data:  *  * Loads a file created with GIMP 2.6 and makes sure it loaded as  * expected.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|load_gimp_2_6_file (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|load_gimp_2_6_file (gconstpointer data)
 name|load_gimp_2_6_file
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)
@@ -869,19 +842,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * write_and_read_gimp_2_8_format:  * @fixture:  * @data:  *  * Writes an XCF file that uses GIMP 2.8 features such as layer  * groups, then reads the file and make sure no relevant information  * was lost.  **/
+comment|/**  * write_and_read_gimp_2_8_format:  * @data:  *  * Writes an XCF file that uses GIMP 2.8 features such as layer  * groups, then reads the file and make sure no relevant information  * was lost.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|write_and_read_gimp_2_8_format (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|write_and_read_gimp_2_8_format (gconstpointer data)
 name|write_and_read_gimp_2_8_format
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)

@@ -78,23 +78,8 @@ parameter_list|(
 name|function
 parameter_list|)
 define|\
-value|g_test_add ("/gimptilebackendtilemanager/" #function, \               GimpTestFixture, \               NULL, \               NULL, \               function, \               NULL);
+value|g_test_add_func ("/gimptilebackendtilemanager/" #function, function);
 end_define
-
-begin_typedef
-typedef|typedef
-struct|struct
-DECL|struct|__anon28d9474e0108
-block|{
-DECL|member|avoid_sizeof_zero
-name|gint
-name|avoid_sizeof_zero
-decl_stmt|;
-DECL|typedef|GimpTestFixture
-block|}
-name|GimpTestFixture
-typedef|;
-end_typedef
 
 begin_comment
 comment|/**  * basic_usage:  * @fixture:  * @data:  *  * Test basic usage.  **/
@@ -103,15 +88,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|basic_usage (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|basic_usage (void)
 name|basic_usage
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
-name|gconstpointer
-name|data
+name|void
 parameter_list|)
 block|{
 name|GeglRectangle

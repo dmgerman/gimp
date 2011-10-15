@@ -252,7 +252,7 @@ parameter_list|(
 name|function
 parameter_list|)
 define|\
-value|g_test_add ("/gimp-save-and-export/" #function, \               GimpTestFixture, \               gimp, \               NULL, \               function, \               NULL);
+value|g_test_add_data_func ("/gimp-save-and-export/" #function, gimp, function);
 end_define
 
 begin_typedef
@@ -271,35 +271,16 @@ parameter_list|)
 function_decl|;
 end_typedef
 
-begin_typedef
-typedef|typedef
-struct|struct
-DECL|struct|__anon2bf7ae500108
-block|{
-DECL|member|avoid_sizeof_zero
-name|int
-name|avoid_sizeof_zero
-decl_stmt|;
-DECL|typedef|GimpTestFixture
-block|}
-name|GimpTestFixture
-typedef|;
-end_typedef
-
 begin_comment
-comment|/**  * new_file_has_no_uris:  * @fixture:  * @data:  *  * Tests that the URIs are correct for a newly created image.  **/
+comment|/**  * new_file_has_no_uris:  * @data:  *  * Tests that the URIs are correct for a newly created image.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|new_file_has_no_uris (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|new_file_has_no_uris (gconstpointer data)
 name|new_file_has_no_uris
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)
@@ -356,19 +337,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * opened_xcf_file_uris:  * @fixture:  * @data:  *  * Tests that GimpImage URIs are correct for an XCF file that has just  * been opened.  **/
+comment|/**  * opened_xcf_file_uris:  * @data:  *  * Tests that GimpImage URIs are correct for an XCF file that has just  * been opened.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|opened_xcf_file_uris (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|opened_xcf_file_uris (gconstpointer data)
 name|opened_xcf_file_uris
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)
@@ -495,19 +472,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * imported_file_uris:  * @fixture:  * @data:  *  * Tests that URIs are correct for an imported image.  **/
+comment|/**  * imported_file_uris:  * @data:  *  * Tests that URIs are correct for an imported image.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|imported_file_uris (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|imported_file_uris (gconstpointer data)
 name|imported_file_uris
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)
@@ -643,19 +616,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * saved_imported_file_uris:  * @fixture:  * @data:  *  * Tests that the URIs are correct for an image that has been imported  * and then saved.  **/
+comment|/**  * saved_imported_file_uris:  * @data:  *  * Tests that the URIs are correct for an image that has been imported  * and then saved.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|saved_imported_file_uris (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|saved_imported_file_uris (gconstpointer data)
 name|saved_imported_file_uris
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)
@@ -867,19 +836,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * new_file_has_no_uris:  * @fixture:  * @data:  *  * Tests that the URIs for an exported, newly created file are  * correct.  **/
+comment|/**  * new_file_has_no_uris:  * @data:  *  * Tests that the URIs for an exported, newly created file are  * correct.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|exported_file_uris (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|exported_file_uris (gconstpointer data)
 name|exported_file_uris
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)
@@ -1021,19 +986,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * clear_import_uri_after_export:  * @fixture:  * @data:  *  * Tests that after a XCF file that was imported has been exported,  * the import URI is cleared. An image can not be considered both  * imported and exported at the same time.  **/
+comment|/**  * clear_import_uri_after_export:  * @data:  *  * Tests that after a XCF file that was imported has been exported,  * the import URI is cleared. An image can not be considered both  * imported and exported at the same time.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|clear_import_uri_after_export (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|clear_import_uri_after_export (gconstpointer data)
 name|clear_import_uri_after_export
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)

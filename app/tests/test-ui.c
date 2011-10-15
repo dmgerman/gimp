@@ -252,7 +252,7 @@ parameter_list|(
 name|function
 parameter_list|)
 define|\
-value|g_test_add ("/gimp-ui/" #function, \               GimpTestFixture, \               gimp, \               NULL, \               function, \               NULL);
+value|g_test_add_data_func ("/gimp-ui/" #function, gimp, function);
 end_define
 
 begin_comment
@@ -281,21 +281,6 @@ modifier|*
 name|object
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-struct|struct
-DECL|struct|__anon298803ba0108
-block|{
-DECL|member|avoid_sizeof_zero
-name|int
-name|avoid_sizeof_zero
-decl_stmt|;
-DECL|typedef|GimpTestFixture
-block|}
-name|GimpTestFixture
-typedef|;
 end_typedef
 
 begin_function_decl
@@ -399,19 +384,15 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * tool_options_editor_updates:  * @fixture:  * @data:  *  * Makes sure that the tool options editor is updated when the tool  * changes.  **/
+comment|/**  * tool_options_editor_updates:  * @data:  *  * Makes sure that the tool options editor is updated when the tool  * changes.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|tool_options_editor_updates (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|tool_options_editor_updates (gconstpointer data)
 name|tool_options_editor_updates
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)
@@ -671,13 +652,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|automatic_tab_style (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|automatic_tab_style (gconstpointer data)
 name|automatic_tab_style
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)
@@ -815,13 +792,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|create_new_image_via_dialog (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|create_new_image_via_dialog (gconstpointer data)
 name|create_new_image_via_dialog
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)
@@ -902,13 +875,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|keyboard_zoom_focus (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|keyboard_zoom_focus (gconstpointer data)
 name|keyboard_zoom_focus
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)
@@ -1107,19 +1076,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * alt_click_is_layer_to_selection:  * @fixture:  * @data:  *  * Makes sure that we can alt-click on a layer to do  * layer-to-selection. Also makes sure that the layer clicked on is  * not set as the active layer.  **/
+comment|/**  * alt_click_is_layer_to_selection:  * @data:  *  * Makes sure that we can alt-click on a layer to do  * layer-to-selection. Also makes sure that the layer clicked on is  * not set as the active layer.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|alt_click_is_layer_to_selection (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|alt_click_is_layer_to_selection (gconstpointer data)
 name|alt_click_is_layer_to_selection
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)
@@ -1347,13 +1312,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|restore_recently_closed_multi_column_dock (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|restore_recently_closed_multi_column_dock (gconstpointer data)
 name|restore_recently_closed_multi_column_dock
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)
@@ -1513,19 +1474,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * tab_toggle_dont_change_dock_window_position:  * @fixture:  * @data:  *  * Makes sure that when dock windows are hidden with Tab and shown  * again, their positions and sizes are not changed. We don't really  * use Tab though, we only simulate its effect.  **/
+comment|/**  * tab_toggle_dont_change_dock_window_position:  * @data:  *  * Makes sure that when dock windows are hidden with Tab and shown  * again, their positions and sizes are not changed. We don't really  * use Tab though, we only simulate its effect.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|tab_toggle_dont_change_dock_window_position (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|tab_toggle_dont_change_dock_window_position (gconstpointer data)
 name|tab_toggle_dont_change_dock_window_position
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)
@@ -1803,13 +1760,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|switch_to_single_window_mode (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|switch_to_single_window_mode (gconstpointer data)
 name|switch_to_single_window_mode
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)
@@ -2058,13 +2011,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|hide_docks_in_single_window_mode (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|hide_docks_in_single_window_mode (gconstpointer data)
 name|hide_docks_in_single_window_mode
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)
@@ -2089,13 +2038,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|show_docks_in_single_window_mode (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|show_docks_in_single_window_mode (gconstpointer data)
 name|show_docks_in_single_window_mode
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)
@@ -2120,13 +2065,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|switch_back_to_multi_window_mode (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|switch_back_to_multi_window_mode (gconstpointer data)
 name|switch_back_to_multi_window_mode
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)
@@ -2152,13 +2093,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|close_image (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|close_image (gconstpointer data)
 name|close_image
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)
@@ -2236,19 +2173,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * repeatedly_switch_window_mode:  * @fixture:  * @data:  *  * Makes sure that the size of the image window is properly handled  * when repeatedly switching between window modes.  **/
+comment|/**  * repeatedly_switch_window_mode:  * @data:  *  * Makes sure that the size of the image window is properly handled  * when repeatedly switching between window modes.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|repeatedly_switch_window_mode (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|repeatedly_switch_window_mode (gconstpointer data)
 name|repeatedly_switch_window_mode
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)
@@ -2466,19 +2399,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * window_roles:  * @fixture:  * @data:  *  * Makes sure that different windows have the right roles specified.  **/
+comment|/**  * window_roles:  * @data:  *  * Makes sure that different windows have the right roles specified.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|window_roles (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|window_roles (gconstpointer data)
 name|window_roles
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)
@@ -2592,13 +2521,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|paintbrush_is_standard_tool (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|paintbrush_is_standard_tool (gconstpointer data)
 name|paintbrush_is_standard_tool
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)

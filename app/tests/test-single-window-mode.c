@@ -228,7 +228,7 @@ parameter_list|(
 name|function
 parameter_list|)
 define|\
-value|g_test_add ("/gimp-single-window-mode/" #function, \               GimpTestFixture, \               gimp, \               NULL, \               function, \               NULL);
+value|g_test_add_data_func ("/gimp-single-window-mode/" #function, gimp, function);
 end_define
 
 begin_comment
@@ -243,35 +243,16 @@ name|GIMP_PAUSE
 value|(g_usleep (20 * 1000 * 1000))
 end_define
 
-begin_typedef
-typedef|typedef
-struct|struct
-DECL|struct|__anon2be375bc0108
-block|{
-DECL|member|avoid_sizeof_zero
-name|int
-name|avoid_sizeof_zero
-decl_stmt|;
-DECL|typedef|GimpTestFixture
-block|}
-name|GimpTestFixture
-typedef|;
-end_typedef
-
 begin_comment
-comment|/**  * new_dockable_not_in_new_window:  * @fixture:  * @data:  *  * Test that in single-window mode, new dockables are not put in new  * windows (they should end up in the single image window).  **/
+comment|/**  * new_dockable_not_in_new_window:  * @data:  *  * Test that in single-window mode, new dockables are not put in new  * windows (they should end up in the single image window).  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|new_dockable_not_in_new_window (GimpTestFixture * fixture,gconstpointer data)
+DECL|function|new_dockable_not_in_new_window (gconstpointer data)
 name|new_dockable_not_in_new_window
 parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
 name|gconstpointer
 name|data
 parameter_list|)
