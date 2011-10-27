@@ -115,7 +115,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3355b20103
+DECL|enum|__anon29551ec30103
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3355b20208
+DECL|struct|__anon29551ec30208
 block|{
 DECL|member|depth
 name|gint
@@ -4302,7 +4302,7 @@ name|len
 decl_stmt|,
 name|max_size
 decl_stmt|;
-name|gchar
+name|guchar
 modifier|*
 name|decoded
 decl_stmt|;
@@ -4439,11 +4439,15 @@ argument_list|,
 name|XMP_PTYPE_ALT_THUMBS
 argument_list|,
 operator|(
-name|char
+name|gchar
 operator|*
 operator|)
 name|size_p
 argument_list|,
+operator|(
+name|gchar
+operator|*
+operator|)
 name|decoded
 argument_list|)
 expr_stmt|;
