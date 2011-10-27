@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29611b360103
+DECL|enum|__anon28a7087a0103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29611b360203
+DECL|enum|__anon28a7087a0203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -152,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29611b360308
+DECL|struct|__anon28a7087a0308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -183,7 +183,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29611b360408
+DECL|struct|__anon28a7087a0408
 block|{
 DECL|member|menu
 name|gchar
@@ -1087,13 +1087,6 @@ parameter_list|)
 block|{
 name|gchar
 modifier|*
-name|labels
-index|[
-literal|3
-index|]
-decl_stmt|;
-name|gchar
-modifier|*
 name|str_ptr
 decl_stmt|;
 name|gchar
@@ -1156,38 +1149,6 @@ name|tmp_ptr
 argument_list|,
 operator|&
 name|parent
-argument_list|)
-expr_stmt|;
-comment|/* Last was a leaf */
-comment|/*   printf("found leaf %s parent = %p\n",leaf_ptr,parent); */
-name|labels
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
-argument_list|(
-name|name
-argument_list|)
-expr_stmt|;
-name|labels
-index|[
-literal|1
-index|]
-operator|=
-name|g_strdup
-argument_list|(
-name|xtimestr
-argument_list|)
-expr_stmt|;
-name|labels
-index|[
-literal|2
-index|]
-operator|=
-name|g_strdup
-argument_list|(
-name|types_str
 argument_list|)
 expr_stmt|;
 name|tree_store
