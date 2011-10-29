@@ -160,6 +160,11 @@ DECL|member|transform_recursion
 name|gint
 name|transform_recursion
 decl_stmt|;
+DECL|member|paint_options_list
+name|GimpContainer
+modifier|*
+name|paint_options_list
+decl_stmt|;
 block|}
 struct|;
 end_struct
