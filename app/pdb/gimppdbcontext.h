@@ -211,6 +211,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GimpPaintOptions
+modifier|*
+name|gimp_pdb_context_get_paint_options
+parameter_list|(
+name|GimpPDBContext
+modifier|*
+name|context
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
