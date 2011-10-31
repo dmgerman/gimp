@@ -158,6 +158,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|register_dynamics_procs
+parameter_list|(
+name|GimpPDB
+modifier|*
+name|pdb
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|register_edit_procs
 parameter_list|(
 name|GimpPDB

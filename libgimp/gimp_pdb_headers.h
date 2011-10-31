@@ -122,6 +122,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpdynamics_pdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpedit_pdb.h>
 end_include
 
