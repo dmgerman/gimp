@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a9f0850108
+DECL|struct|__anon29a0fd750108
 block|{
 DECL|member|x
 DECL|member|y
@@ -144,7 +144,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a9f0850208
+DECL|struct|__anon29a0fd750208
 block|{
 DECL|member|a
 DECL|member|b
@@ -1356,7 +1356,7 @@ literal|1
 init|;
 name|i
 operator|<
-literal|4
+literal|3
 condition|;
 name|i
 operator|++
@@ -1472,8 +1472,10 @@ name|theta
 operator|=
 name|atan2
 argument_list|(
+operator|-
 name|sy
 argument_list|,
+operator|-
 name|sx
 argument_list|)
 expr_stmt|;
