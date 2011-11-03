@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpdynamics  * @title: gimpdynamics  * @short_description: Operations related to dynamics.  *  * Operations related to dynamics.  **/
+comment|/**  * SECTION: gimpdynamics  * @title: gimpdynamics  * @short_description: Operations related to paint dynamics.  *  * Operations related to paint dynamics.  **/
 end_comment
 
 begin_comment
