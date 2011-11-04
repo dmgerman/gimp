@@ -574,6 +574,11 @@ argument_list|,
 name|blob_box
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|size_group
+argument_list|)
+expr_stmt|;
 comment|/* Blob editor */
 name|frame
 operator|=
