@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae2f2280103
+DECL|enum|__anon2a419d880103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -341,7 +341,7 @@ name|object_class
 argument_list|,
 name|PROP_SAMPLE_CRITERION
 argument_list|,
-literal|"sample-crterion"
+literal|"sample-criterion"
 argument_list|,
 name|NULL
 argument_list|,
