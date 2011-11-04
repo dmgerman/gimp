@@ -616,6 +616,7 @@ if|if
 condition|(
 name|info
 condition|)
+block|{
 name|pixbuf
 operator|=
 name|gtk_icon_info_load_icon
@@ -625,6 +626,12 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gtk_icon_info_free
+argument_list|(
+name|info
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 if|if
