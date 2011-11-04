@@ -223,7 +223,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a22d2780103
+DECL|enum|__anon2907da360103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -483,6 +483,11 @@ name|i
 index|]
 operator|=
 name|g_rand_int
+argument_list|(
+name|rand
+argument_list|)
+expr_stmt|;
+name|g_rand_free
 argument_list|(
 name|rand
 argument_list|)
