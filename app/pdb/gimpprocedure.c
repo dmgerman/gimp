@@ -2265,12 +2265,7 @@ index|]
 operator|=
 name|pspec
 expr_stmt|;
-name|g_param_spec_ref
-argument_list|(
-name|pspec
-argument_list|)
-expr_stmt|;
-name|g_param_spec_sink
+name|g_param_spec_ref_sink
 argument_list|(
 name|pspec
 argument_list|)
@@ -2344,12 +2339,7 @@ index|]
 operator|=
 name|pspec
 expr_stmt|;
-name|g_param_spec_ref
-argument_list|(
-name|pspec
-argument_list|)
-expr_stmt|;
-name|g_param_spec_sink
+name|g_param_spec_ref_sink
 argument_list|(
 name|pspec
 argument_list|)
