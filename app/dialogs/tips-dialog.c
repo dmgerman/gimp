@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1b42aa0103
+DECL|enum|__anon27974c160103
 block|{
 DECL|enumerator|RESPONSE_PREVIOUS
 name|RESPONSE_PREVIOUS
@@ -425,19 +425,19 @@ if|if
 condition|(
 name|config
 operator|->
-name|last_tip
+name|last_tip_shown
 operator|>=
 name|tips_count
 operator|||
 name|config
 operator|->
-name|last_tip
+name|last_tip_shown
 operator|<
 literal|0
 condition|)
 name|config
 operator|->
-name|last_tip
+name|last_tip_shown
 operator|=
 literal|0
 expr_stmt|;
@@ -449,7 +449,7 @@ name|tips
 argument_list|,
 name|config
 operator|->
-name|last_tip
+name|last_tip_shown
 argument_list|)
 expr_stmt|;
 if|if
@@ -948,7 +948,7 @@ block|{
 comment|/* the last-shown-tip is saved in sessionrc */
 name|config
 operator|->
-name|last_tip
+name|last_tip_shown
 operator|=
 name|g_list_position
 argument_list|(
