@@ -206,6 +206,21 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_scanner_parse_boolean
+parameter_list|(
+name|GScanner
+modifier|*
+name|scanner
+parameter_list|,
+name|gboolean
+modifier|*
+name|dest
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_scanner_parse_color
 parameter_list|(
 name|GScanner
