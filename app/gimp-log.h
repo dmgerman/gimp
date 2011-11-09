@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b53885b0103
+DECL|enum|__anon2bed72140103
 block|{
 DECL|enumerator|GIMP_LOG_TOOL_EVENTS
 name|GIMP_LOG_TOOL_EVENTS
@@ -179,6 +179,9 @@ begin_function_decl
 name|void
 name|gimp_log
 parameter_list|(
+name|GimpLogFlags
+name|flags
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -186,11 +189,6 @@ name|function
 parameter_list|,
 name|gint
 name|line
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|domain
 parameter_list|,
 specifier|const
 name|gchar
@@ -215,6 +213,9 @@ begin_function_decl
 name|void
 name|gimp_logv
 parameter_list|(
+name|GimpLogFlags
+name|flags
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -222,11 +223,6 @@ name|function
 parameter_list|,
 name|gint
 name|line
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|domain
 parameter_list|,
 specifier|const
 name|gchar
@@ -256,7 +252,7 @@ parameter_list|,
 modifier|...
 parameter_list|)
 define|\
-value|G_STMT_START { \         if (gimp_log_flags& GIMP_LOG_##type) \           gimp_log (G_STRFUNC, __LINE__, #type, __VA_ARGS__); \         } G_STMT_END
+value|G_STMT_START { \         if (gimp_log_flags& GIMP_LOG_##type) \           gimp_log (GIMP_LOG_##type, G_STRFUNC, __LINE__, __VA_ARGS__);       \         } G_STMT_END
 end_define
 
 begin_elif
@@ -280,7 +276,7 @@ name|format
 modifier|...
 parameter_list|)
 define|\
-value|G_STMT_START { \         if (gimp_log_flags& GIMP_LOG_##type) \           gimp_log (G_STRFUNC, __LINE__, #type, format); \         } G_STMT_END
+value|G_STMT_START { \         if (gimp_log_flags& GIMP_LOG_##type) \           gimp_log (GIMP_LOG_##type, G_STRFUNC, __LINE__, format);  \         } G_STMT_END
 end_define
 
 begin_else
@@ -508,11 +504,11 @@ name|flags
 condition|)
 name|gimp_logv
 argument_list|(
+name|type
+argument_list|,
 literal|""
 argument_list|,
 literal|0
-argument_list|,
-literal|""
 argument_list|,
 name|format
 argument_list|,
