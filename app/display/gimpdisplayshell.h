@@ -466,6 +466,12 @@ modifier|*
 name|passe_partout
 decl_stmt|;
 comment|/*  item for the highlight             */
+DECL|member|preview_items
+name|GimpCanvasItem
+modifier|*
+name|preview_items
+decl_stmt|;
+comment|/*  item for previews                  */
 DECL|member|vectors
 name|GimpCanvasItem
 modifier|*
