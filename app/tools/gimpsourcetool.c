@@ -1593,7 +1593,7 @@ operator|->
 name|src_outline
 condition|)
 block|{
-name|gimp_display_shell_remove_item
+name|gimp_display_shell_remove_tool_item
 argument_list|(
 name|src_shell
 argument_list|,
@@ -1653,7 +1653,7 @@ operator|->
 name|src_outline
 condition|)
 block|{
-name|gimp_display_shell_add_item
+name|gimp_display_shell_add_tool_item
 argument_list|(
 name|src_shell
 argument_list|,
@@ -1708,7 +1708,7 @@ argument_list|,
 name|GIMP_TOOL_HANDLE_SIZE_CROSS
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_add_item
+name|gimp_display_shell_add_tool_item
 argument_list|(
 name|src_shell
 argument_list|,
@@ -1802,7 +1802,7 @@ operator|->
 name|src_handle
 condition|)
 block|{
-name|gimp_display_shell_remove_item
+name|gimp_display_shell_remove_tool_item
 argument_list|(
 name|src_shell
 argument_list|,
@@ -1825,7 +1825,7 @@ operator|->
 name|src_outline
 condition|)
 block|{
-name|gimp_display_shell_remove_item
+name|gimp_display_shell_remove_tool_item
 argument_list|(
 name|src_shell
 argument_list|,

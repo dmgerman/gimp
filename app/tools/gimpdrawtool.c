@@ -838,7 +838,7 @@ operator|->
 name|display
 argument_list|)
 decl_stmt|;
-name|gimp_display_shell_add_item
+name|gimp_display_shell_add_tool_item
 argument_list|(
 name|shell
 argument_list|,
@@ -885,7 +885,7 @@ operator|->
 name|display
 argument_list|)
 decl_stmt|;
-name|gimp_display_shell_remove_item
+name|gimp_display_shell_remove_tool_item
 argument_list|(
 name|shell
 argument_list|,

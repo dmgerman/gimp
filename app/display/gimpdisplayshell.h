@@ -496,6 +496,12 @@ modifier|*
 name|layer_boundary
 decl_stmt|;
 comment|/*  item for the layer boundary        */
+DECL|member|tool_items
+name|GimpCanvasItem
+modifier|*
+name|tool_items
+decl_stmt|;
+comment|/*  tools items, below the cursor      */
 DECL|member|cursor
 name|GimpCanvasItem
 modifier|*
