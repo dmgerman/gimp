@@ -1972,8 +1972,10 @@ name|light_type_combo
 operator|=
 name|gimp_int_combo_box_new
 argument_list|(
-name|_
+name|C_
 argument_list|(
+literal|"light-source"
+argument_list|,
 literal|"None"
 argument_list|)
 argument_list|,
@@ -1993,7 +1995,7 @@ argument_list|)
 argument_list|,
 name|POINT_LIGHT
 argument_list|,
-comment|/* _("Spot"),     SPOT_LIGHT, */
+comment|/* _("Spot"),               SPOT_LIGHT, */
 name|NULL
 argument_list|)
 expr_stmt|;

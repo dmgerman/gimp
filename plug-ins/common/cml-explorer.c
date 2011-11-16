@@ -218,7 +218,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon298f1e590103
+DECL|enum|__anon2bf8d5420103
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -347,7 +347,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon298f1e590203
+DECL|enum|__anon2bf8d5420203
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -412,8 +412,10 @@ name|COMP_NUM_VALUES
 index|]
 init|=
 block|{
-name|N_
+name|NC_
 argument_list|(
+literal|"cml-composition"
+argument_list|,
 literal|"None"
 argument_list|)
 block|,
@@ -492,7 +494,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon298f1e590303
+DECL|enum|__anon2bf8d5420303
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -597,7 +599,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon298f1e590403
+DECL|enum|__anon2bf8d5420403
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -695,7 +697,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298f1e590508
+DECL|struct|__anon2bf8d5420508
 block|{
 DECL|member|function
 name|gint
@@ -768,7 +770,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298f1e590608
+DECL|struct|__anon2bf8d5420608
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1590,7 +1592,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298f1e590708
+DECL|struct|__anon2bf8d5420708
 block|{
 DECL|member|widget
 name|GtkWidget

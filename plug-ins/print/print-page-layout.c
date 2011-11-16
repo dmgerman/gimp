@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b3c2a40108
+DECL|struct|__anon27a83de70108
 block|{
 DECL|member|data
 name|PrintData
@@ -127,7 +127,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b3c2a40203
+DECL|enum|__anon27a83de70203
 block|{
 DECL|enumerator|BOTTOM
 name|BOTTOM
@@ -2609,8 +2609,10 @@ name|combo
 operator|=
 name|gimp_int_combo_box_new
 argument_list|(
-name|_
+name|C_
 argument_list|(
+literal|"center-mode"
+argument_list|,
 literal|"None"
 argument_list|)
 argument_list|,

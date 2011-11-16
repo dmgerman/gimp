@@ -61,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3fe5540103
+DECL|enum|__anon2b7648380103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -83,7 +83,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3fe5540203
+DECL|enum|__anon2b7648380203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3fe5540303
+DECL|enum|__anon2b7648380303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -121,7 +121,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3fe5540403
+DECL|enum|__anon2b7648380403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -245,7 +245,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3fe5540508
+DECL|struct|__anon2b7648380508
 block|{
 DECL|member|h_style
 name|gint
@@ -1683,8 +1683,10 @@ name|combo
 operator|=
 name|gimp_int_combo_box_new
 argument_list|(
-name|_
+name|C_
 argument_list|(
+literal|"align-style"
+argument_list|,
 literal|"None"
 argument_list|)
 argument_list|,
@@ -1865,8 +1867,10 @@ name|combo
 operator|=
 name|gimp_int_combo_box_new
 argument_list|(
-name|_
+name|C_
 argument_list|(
+literal|"align-style"
+argument_list|,
 literal|"None"
 argument_list|)
 argument_list|,

@@ -297,7 +297,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b86bb5f0108
+DECL|struct|__anon27b4ea160108
 block|{
 DECL|member|resolution
 name|guint
@@ -408,7 +408,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b86bb5f0208
+DECL|struct|__anon27b4ea160208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1039,7 +1039,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b86bb5f0308
+DECL|struct|__anon27b4ea160308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1908,7 +1908,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b86bb5f0408
+DECL|struct|__anon27b4ea160408
 block|{
 DECL|member|eol
 name|long
@@ -15510,8 +15510,10 @@ name|plvals
 operator|.
 name|textalpha
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"antialiasing"
+argument_list|,
 literal|"None"
 argument_list|)
 argument_list|,
@@ -15586,8 +15588,10 @@ name|plvals
 operator|.
 name|graphicsalpha
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"antialiasing"
+argument_list|,
 literal|"None"
 argument_list|)
 argument_list|,

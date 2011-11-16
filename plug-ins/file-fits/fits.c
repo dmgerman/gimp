@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275851940108
+DECL|struct|__anon29ce91900108
 block|{
 DECL|member|replace
 name|gint
@@ -4717,8 +4717,10 @@ name|plvals
 operator|.
 name|compose
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"composing"
+argument_list|,
 literal|"None"
 argument_list|)
 argument_list|,

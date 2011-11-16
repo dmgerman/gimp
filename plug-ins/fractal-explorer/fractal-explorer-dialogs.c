@@ -5024,8 +5024,10 @@ index|[
 name|COSINUS
 index|]
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"color-function"
+argument_list|,
 literal|"None"
 argument_list|)
 argument_list|,
@@ -5261,8 +5263,10 @@ index|[
 name|COSINUS
 index|]
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"color-function"
+argument_list|,
 literal|"None"
 argument_list|)
 argument_list|,
@@ -5498,8 +5502,10 @@ index|[
 name|COSINUS
 index|]
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"color-function"
+argument_list|,
 literal|"None"
 argument_list|)
 argument_list|,
