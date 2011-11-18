@@ -1857,6 +1857,10 @@ name|src_container
 operator|=
 name|container
 expr_stmt|;
+if|if
+condition|(
+name|src_container
+condition|)
 name|src_index
 operator|=
 name|gimp_container_get_child_index
