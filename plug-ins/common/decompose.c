@@ -977,7 +977,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd373e0108
+DECL|struct|__anon289466ff0108
 block|{
 DECL|member|type
 specifier|const
@@ -1690,7 +1690,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd373e0208
+DECL|struct|__anon289466ff0208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -2630,6 +2630,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_end
+argument_list|()
+expr_stmt|;
 block|}
 name|values
 index|[
