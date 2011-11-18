@@ -5202,6 +5202,12 @@ if|if
 condition|(
 operator|!
 name|vectors
+operator|||
+operator|!
+name|gimp_vectors_get_bezier
+argument_list|(
+name|vectors
+argument_list|)
 condition|)
 return|return;
 comment|/* the stroke itself */
