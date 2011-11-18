@@ -99,7 +99,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cf8a310108
+DECL|struct|__anon273a1fd70108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -133,7 +133,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cf8a310208
+DECL|struct|__anon273a1fd70208
 block|{
 DECL|member|n_pages
 name|gint
@@ -708,7 +708,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cf8a310303
+DECL|enum|__anon273a1fd70303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -3711,7 +3711,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cf8a310408
+DECL|struct|__anon273a1fd70408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -3736,7 +3736,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cf8a310508
+DECL|struct|__anon273a1fd70508
 block|{
 DECL|member|selector
 name|GimpPageSelector
@@ -5387,6 +5387,27 @@ name|model
 argument_list|)
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_object_set
+argument_list|(
+name|model
+argument_list|,
+literal|"short-format"
+argument_list|,
+name|_
+argument_list|(
+literal|"pixels/%a"
+argument_list|)
+argument_list|,
+literal|"long-format"
+argument_list|,
+name|_
+argument_list|(
+literal|"pixels/%a"
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_unit_combo_box_set_active
