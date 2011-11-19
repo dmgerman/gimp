@@ -448,7 +448,7 @@ DECL|macro|GLIB_REQUIRED_MICRO
 define|#
 directive|define
 name|GLIB_REQUIRED_MICRO
-value|1
+value|8
 specifier|const
 name|gchar
 modifier|*
@@ -616,12 +616,12 @@ DECL|macro|PANGO_REQUIRED_MINOR
 define|#
 directive|define
 name|PANGO_REQUIRED_MINOR
-value|22
+value|29
 DECL|macro|PANGO_REQUIRED_MICRO
 define|#
 directive|define
 name|PANGO_REQUIRED_MICRO
-value|0
+value|4
 specifier|const
 name|gchar
 modifier|*
@@ -1031,12 +1031,12 @@ DECL|macro|GDK_PIXBUF_REQUIRED_MINOR
 define|#
 directive|define
 name|GDK_PIXBUF_REQUIRED_MINOR
-value|22
+value|24
 DECL|macro|GDK_PIXBUF_REQUIRED_MICRO
 define|#
 directive|define
 name|GDK_PIXBUF_REQUIRED_MICRO
-value|1
+value|0
 if|if
 condition|(
 operator|!
@@ -1134,7 +1134,7 @@ DECL|macro|BABL_REQUIRED_MICRO
 define|#
 directive|define
 name|BABL_REQUIRED_MICRO
-value|4
+value|6
 name|babl_get_version
 argument_list|(
 operator|&
@@ -1244,7 +1244,7 @@ DECL|macro|GEGL_REQUIRED_MICRO
 define|#
 directive|define
 name|GEGL_REQUIRED_MICRO
-value|6
+value|8
 name|gegl_get_version
 argument_list|(
 operator|&
