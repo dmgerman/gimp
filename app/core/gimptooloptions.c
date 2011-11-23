@@ -115,7 +115,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0c1d970103
+DECL|enum|__anon28ec0daf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -128,6 +128,18 @@ name|PROP_TOOL_INFO
 block|}
 enum|;
 end_enum
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_tool_options_config_iface_init
+parameter_list|(
+name|GimpConfigInterface
+modifier|*
+name|iface
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -203,6 +215,18 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
+name|gimp_tool_options_config_reset
+parameter_list|(
+name|GimpConfig
+modifier|*
+name|config
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|gimp_tool_options_tool_notify
 parameter_list|(
 name|GimpToolOptions
@@ -217,14 +241,16 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpToolOptions,gimp_tool_options,GIMP_TYPE_CONTEXT)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpToolOptions,gimp_tool_options,GIMP_TYPE_CONTEXT,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,gimp_tool_options_config_iface_init))
+name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpToolOptions
 argument_list|,
 argument|gimp_tool_options
 argument_list|,
 argument|GIMP_TYPE_CONTEXT
+argument_list|,
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 gimp_tool_options_config_iface_init)
 argument_list|)
 end_macro
 
@@ -341,6 +367,26 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_tool_options_config_iface_init (GimpConfigInterface * iface)
+name|gimp_tool_options_config_iface_init
+parameter_list|(
+name|GimpConfigInterface
+modifier|*
+name|iface
+parameter_list|)
+block|{
+name|iface
+operator|->
+name|reset
+operator|=
+name|gimp_tool_options_config_reset
 expr_stmt|;
 block|}
 end_function
@@ -800,6 +846,50 @@ name|GIMP_CONFIG
 argument_list|(
 name|tool_options
 argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_tool_options_config_reset (GimpConfig * config)
+name|gimp_tool_options_config_reset
+parameter_list|(
+name|GimpConfig
+modifier|*
+name|config
+parameter_list|)
+block|{
+name|gchar
+modifier|*
+name|name
+init|=
+name|g_strdup
+argument_list|(
+name|gimp_object_get_name
+argument_list|(
+name|config
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|gimp_config_reset_properties
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|config
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_object_take_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|config
+argument_list|)
+argument_list|,
+name|name
 argument_list|)
 expr_stmt|;
 block|}
