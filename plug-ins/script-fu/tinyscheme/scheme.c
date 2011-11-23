@@ -166,12 +166,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libintl.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"../script-fu-intl.h"
 end_include
 
@@ -12270,7 +12264,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2c12bb0f0103
+DECL|enum|__anon28eb489c0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -30196,7 +30190,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2c12bb0f0208
+DECL|struct|__anon28eb489c0208
 specifier|static
 struct|struct
 block|{
@@ -30431,7 +30425,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2c12bb0f0308
+DECL|struct|__anon28eb489c0308
 typedef|typedef
 struct|struct
 block|{
