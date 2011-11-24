@@ -2162,6 +2162,10 @@ name|GimpToolInfo
 modifier|*
 name|preset_tool
 decl_stmt|;
+name|gchar
+modifier|*
+name|options_name
+decl_stmt|;
 name|gboolean
 name|tool_change
 init|=
@@ -2218,6 +2222,19 @@ argument_list|,
 name|preset_tool
 argument_list|)
 expr_stmt|;
+comment|/*  save the name, we don't want to overwrite it  */
+name|options_name
+operator|=
+name|g_strdup
+argument_list|(
+name|gimp_object_get_name
+argument_list|(
+name|preset_tool
+operator|->
+name|tool_options
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_config_copy
 argument_list|(
 name|GIMP_CONFIG
@@ -2235,6 +2252,19 @@ name|tool_options
 argument_list|)
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+comment|/*  restore the saved name  */
+name|gimp_object_take_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|preset_tool
+operator|->
+name|tool_options
+argument_list|)
+argument_list|,
+name|options_name
 argument_list|)
 expr_stmt|;
 if|if
