@@ -2666,7 +2666,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pixel_rgns_register:  * @nrgns:   the number of regions to register.  * @Varargs: @nrgns pointers to #GimpPixelRgn.  *  * This is the varargs version of #gimp_pixel_rgns_register2.  *  * Returns: a #gpointer to a regions iterator.  **/
+comment|/**  * gimp_pixel_rgns_register:  * @nrgns: the number of regions to register.  * @...:   @nrgns pointers to #GimpPixelRgn.  *  * This is the varargs version of #gimp_pixel_rgns_register2.  *  * Returns: a #gpointer to a regions iterator.  **/
 end_comment
 
 begin_function

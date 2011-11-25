@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d7b11f0103
+DECL|enum|__anon2a203f6b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1619,7 +1619,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_add_buttons:  * @dialog: The @dialog to add buttons to.  * @Varargs: button_text-response_id pairs.  *  * This function is essentially the same as gtk_dialog_add_buttons()  * except it calls gimp_dialog_add_button() instead of gtk_dialog_add_button()  **/
+comment|/**  * gimp_dialog_add_buttons:  * @dialog: The @dialog to add buttons to.  * @...: button_text-response_id pairs.  *  * This function is essentially the same as gtk_dialog_add_buttons()  * except it calls gimp_dialog_add_button() instead of gtk_dialog_add_button()  **/
 end_comment
 
 begin_function
@@ -1733,7 +1733,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d7b11f0208
+DECL|struct|__anon2a203f6b0208
 block|{
 DECL|member|dialog
 name|GtkDialog

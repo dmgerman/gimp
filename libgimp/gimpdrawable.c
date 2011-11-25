@@ -1582,7 +1582,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_parasite_list:  * @drawable_ID: The drawable.  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * Deprecated: Use gimp_item_list_parasites() instead.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_drawable_parasite_list:  * @drawable_ID: The drawable.  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * Deprecated: Use gimp_item_get_parasite_list() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function

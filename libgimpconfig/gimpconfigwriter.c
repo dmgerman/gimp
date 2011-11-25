@@ -971,7 +971,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_printf:  * @writer: a #GimpConfigWriter  * @format: a format string as described for g_strdup_printf().  * @Varargs: list of arguments according to @format  *  * A printf-like function for #GimpConfigWriter.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_writer_printf:  * @writer: a #GimpConfigWriter  * @format: a format string as described for g_strdup_printf().  * @...: list of arguments according to @format  *  * A printf-like function for #GimpConfigWriter.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
