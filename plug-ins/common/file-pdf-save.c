@@ -146,7 +146,7 @@ value|FALSE
 end_define
 
 begin_typedef
-DECL|struct|__anon2a1d34db0108
+DECL|struct|__anon2b06c8400108
 typedef|typedef
 struct|struct
 block|{
@@ -169,7 +169,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a1d34db0208
+DECL|struct|__anon2b06c8400208
 typedef|typedef
 struct|struct
 block|{
@@ -198,7 +198,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a1d34db0308
+DECL|struct|__anon2b06c8400308
 typedef|typedef
 struct|struct
 block|{
@@ -218,7 +218,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2a1d34db0403
+DECL|enum|__anon2b06c8400403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -237,7 +237,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2a1d34db0508
+DECL|struct|__anon2b06c8400508
 typedef|typedef
 struct|struct
 block|{
@@ -717,7 +717,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"apply-masks"
 block|,
-literal|"Apply layer masks before saving. TRUE or FALSE (Keeping the masks will not change the final result)"
+literal|"Apply layer masks before saving. TRUE or FALSE (Keeping them will not change the output)"
 block|}
 block|,
 block|{
@@ -788,7 +788,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"apply-masks"
 block|,
-literal|"Apply layer masks before saving. TRUE or FALSE (Keeping the masks will not change the final result)"
+literal|"Apply layer masks before saving. TRUE or FALSE (Keeping them will not change the output)"
 block|}
 block|,
 block|{
@@ -2644,7 +2644,7 @@ name|apply_c
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
-literal|"Apply layer masks before saving (keeping the masks will not change the final result)"
+literal|"Apply layer masks before saving (keeping the masks will not change the output)"
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -2893,7 +2893,7 @@ name|file_label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|"Choose the place to save the file in:"
+literal|"Save to:"
 argument_list|)
 expr_stmt|;
 name|file_entry
@@ -3342,7 +3342,7 @@ name|apply_c
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
-literal|"Apply layer masks before saving (keeping the masks will not change the final result)"
+literal|"Apply layer masks before saving (keeping them will not change the output)"
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
