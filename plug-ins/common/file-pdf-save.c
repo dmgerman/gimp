@@ -146,7 +146,7 @@ value|FALSE
 end_define
 
 begin_typedef
-DECL|struct|__anon28a6dcab0108
+DECL|struct|__anon2a1d34db0108
 typedef|typedef
 struct|struct
 block|{
@@ -169,7 +169,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28a6dcab0208
+DECL|struct|__anon2a1d34db0208
 typedef|typedef
 struct|struct
 block|{
@@ -198,7 +198,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28a6dcab0308
+DECL|struct|__anon2a1d34db0308
 typedef|typedef
 struct|struct
 block|{
@@ -218,7 +218,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon28a6dcab0403
+DECL|enum|__anon2a1d34db0403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -237,7 +237,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon28a6dcab0508
+DECL|struct|__anon2a1d34db0508
 typedef|typedef
 struct|struct
 block|{
@@ -701,7 +701,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"convert"
 block|,
-literal|"Convert bitmaps to vector where possible? TRUE or FALSE"
+literal|"Convert bitmaps to vector graphics where possible. TRUE or FALSE"
 block|}
 block|,
 block|{
@@ -709,7 +709,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"ignore"
 block|,
-literal|"Don't Save layers which are hidden or have their opacity set to zero? TRUE or FALSE"
+literal|"Omit hidden layers and layers with zero opacity. TRUE or FALSE"
 block|}
 block|,
 block|{
@@ -717,7 +717,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"apply-masks"
 block|,
-literal|"Apply layer masks before saving? TRUE or FALSE (Keeping the masks will not change the final result)"
+literal|"Apply layer masks before saving. TRUE or FALSE (Keeping the masks will not change the final result)"
 block|}
 block|,
 block|{
@@ -772,7 +772,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"convert"
 block|,
-literal|"Convert bitmaps to vector where possible? TRUE or FALSE"
+literal|"Convert bitmaps to vector graphics where possible. TRUE or FALSE"
 block|}
 block|,
 block|{
@@ -780,7 +780,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"ignore"
 block|,
-literal|"Don't Save layers which are hidden or have their opacity set to zero? TRUE or FALSE"
+literal|"Omit hidden layers and layers with zero opacity. TRUE or FALSE"
 block|}
 block|,
 block|{
@@ -788,7 +788,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"apply-masks"
 block|,
-literal|"Apply layer masks before saving? TRUE or FALSE (Keeping the masks will not change the final result)"
+literal|"Apply layer masks before saving. TRUE or FALSE (Keeping the masks will not change the final result)"
 block|}
 block|,
 block|{
@@ -886,7 +886,7 @@ literal|"Copyright Barak Itkin"
 argument_list|,
 literal|"August 2009"
 argument_list|,
-literal|"_Create multiple paged PDF..."
+literal|"_Create multipage PDF..."
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -2574,7 +2574,7 @@ name|ignore_c
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
-literal|"Don't Save layers which are hidden or have their opacity set to zero?"
+literal|"Omit hidden layers and layers with zero opacity"
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -2609,7 +2609,7 @@ name|convert_c
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
-literal|"Convert bitmaps to vector where possible?"
+literal|"Convert bitmaps to vector graphics where possible"
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -2644,7 +2644,7 @@ name|apply_c
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
-literal|"Apply layer masks before saving? (Keeping the masks will not change the final result)"
+literal|"Apply layer masks before saving (keeping the masks will not change the final result)"
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -3272,7 +3272,7 @@ name|ignore_c
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
-literal|"Don't Save layers which are hidden or have their opacity set to zero?"
+literal|"Omit hidden layers and layers with zero opacity"
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -3307,7 +3307,7 @@ name|convert_c
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
-literal|"Convert bitmaps to vector where possible?"
+literal|"Convert bitmaps to vector graphics where possible"
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -3342,7 +3342,7 @@ name|apply_c
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
-literal|"Apply layer masks before saving? (Keeping the masks will not change the final result)"
+literal|"Apply layer masks before saving (keeping the masks will not change the final result)"
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
