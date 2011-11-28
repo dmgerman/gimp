@@ -1628,6 +1628,18 @@ block|{
 comment|/* If the file was imported we want to set the layer name to the        * file name. For now, assume that multi-layered imported images        * have named the layers already, so only rename the layer of        * single-layered imported files. Note that this will also        * rename already named layers from e.g. single-layered PSD        * files. To solve this properly, we would need new file plug-in        * API.        */
 if|if
 condition|(
+operator|!
+name|file_proc
+condition|)
+name|file_proc
+operator|=
+name|gimp_image_get_load_proc
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
 name|file_open_file_proc_is_import
 argument_list|(
 name|file_proc
