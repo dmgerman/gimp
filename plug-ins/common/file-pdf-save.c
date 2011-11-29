@@ -45,6 +45,12 @@ directive|include
 file|<libgimp/gimpui.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_define
 DECL|macro|SAVE_PROC
 define|#
@@ -146,7 +152,7 @@ value|FALSE
 end_define
 
 begin_typedef
-DECL|struct|__anon2b06c8400108
+DECL|struct|__anon295c4d430108
 typedef|typedef
 struct|struct
 block|{
@@ -169,7 +175,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b06c8400208
+DECL|struct|__anon295c4d430208
 typedef|typedef
 struct|struct
 block|{
@@ -198,7 +204,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b06c8400308
+DECL|struct|__anon295c4d430308
 typedef|typedef
 struct|struct
 block|{
@@ -218,7 +224,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2b06c8400403
+DECL|enum|__anon295c4d430403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -237,7 +243,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2b06c8400508
+DECL|struct|__anon295c4d430508
 typedef|typedef
 struct|struct
 block|{
@@ -2574,7 +2580,10 @@ name|ignore_c
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Omit hidden layers and layers with zero opacity"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -2609,7 +2618,10 @@ name|convert_c
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Convert bitmaps to vector graphics where possible"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -2644,7 +2656,10 @@ name|apply_c
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Apply layer masks before saving (keeping the masks will not change the output)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -2893,7 +2908,10 @@ name|file_label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Save to:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|file_entry
@@ -2921,14 +2939,20 @@ name|file_browse
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
-literal|"Browse..."
+name|_
+argument_list|(
+literal|"_Browse..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|file_choose
 operator|=
 name|gtk_file_chooser_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Multipage PDF export"
+argument_list|)
 argument_list|,
 name|GTK_WINDOW
 argument_list|(
@@ -3160,7 +3184,10 @@ name|del
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Remove the selected pages"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3233,7 +3260,10 @@ name|add_image
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Add this image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3272,7 +3302,10 @@ name|ignore_c
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Omit hidden layers and layers with zero opacity"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -3307,7 +3340,10 @@ name|convert_c
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Convert bitmaps to vector graphics where possible"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -3342,7 +3378,10 @@ name|apply_c
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Apply layer masks before saving (keeping them will not change the output)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -3826,7 +3865,10 @@ condition|)
 block|{
 name|gimp_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Error! In order to save the file, at least one image should be added!"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
