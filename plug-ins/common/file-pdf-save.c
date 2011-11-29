@@ -152,7 +152,7 @@ value|FALSE
 end_define
 
 begin_typedef
-DECL|struct|__anon295c4d430108
+DECL|struct|__anon2b6918420108
 typedef|typedef
 struct|struct
 block|{
@@ -175,7 +175,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon295c4d430208
+DECL|struct|__anon2b6918420208
 typedef|typedef
 struct|struct
 block|{
@@ -204,7 +204,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon295c4d430308
+DECL|struct|__anon2b6918420308
 typedef|typedef
 struct|struct
 block|{
@@ -224,7 +224,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon295c4d430403
+DECL|enum|__anon2b6918420403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -243,7 +243,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon295c4d430508
+DECL|struct|__anon2b6918420508
 typedef|typedef
 struct|struct
 block|{
@@ -1219,7 +1219,10 @@ name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 name|gimp_message
 argument_list|(
+name|_
+argument_list|(
 literal|"You must select a file to save!"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2941,7 +2944,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"_Browse..."
+literal|"Browse..."
 argument_list|)
 argument_list|)
 expr_stmt|;
