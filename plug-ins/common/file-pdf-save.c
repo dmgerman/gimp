@@ -152,7 +152,7 @@ value|FALSE
 end_define
 
 begin_typedef
-DECL|struct|__anon2b6918420108
+DECL|struct|__anon2c7fbec50108
 typedef|typedef
 struct|struct
 block|{
@@ -175,7 +175,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b6918420208
+DECL|struct|__anon2c7fbec50208
 typedef|typedef
 struct|struct
 block|{
@@ -204,7 +204,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b6918420308
+DECL|struct|__anon2c7fbec50308
 typedef|typedef
 struct|struct
 block|{
@@ -224,7 +224,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2b6918420403
+DECL|enum|__anon2c7fbec50403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -243,7 +243,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2b6918420508
+DECL|struct|__anon2c7fbec50508
 typedef|typedef
 struct|struct
 block|{
