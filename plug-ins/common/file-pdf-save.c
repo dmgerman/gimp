@@ -144,7 +144,7 @@ value|120
 end_define
 
 begin_typedef
-DECL|struct|__anon28ecef840108
+DECL|struct|__anon2bb238400108
 typedef|typedef
 struct|struct
 block|{
@@ -167,7 +167,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28ecef840208
+DECL|struct|__anon2bb238400208
 typedef|typedef
 struct|struct
 block|{
@@ -196,7 +196,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28ecef840308
+DECL|struct|__anon2bb238400308
 typedef|typedef
 struct|struct
 block|{
@@ -216,7 +216,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon28ecef840403
+DECL|enum|__anon2bb238400403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -235,7 +235,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon28ecef840508
+DECL|struct|__anon2bb238400508
 typedef|typedef
 struct|struct
 block|{
@@ -1070,6 +1070,9 @@ name|mask_image
 init|=
 name|NULL
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* Setting mandatory output values */
 operator|*
 name|nreturn_vals
