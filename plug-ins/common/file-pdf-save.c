@@ -144,7 +144,7 @@ value|120
 end_define
 
 begin_typedef
-DECL|struct|__anon2af44c3e0108
+DECL|struct|__anon2bd4806c0108
 typedef|typedef
 struct|struct
 block|{
@@ -167,7 +167,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2af44c3e0208
+DECL|struct|__anon2bd4806c0208
 typedef|typedef
 struct|struct
 block|{
@@ -196,7 +196,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2af44c3e0308
+DECL|struct|__anon2bd4806c0308
 typedef|typedef
 struct|struct
 block|{
@@ -216,7 +216,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2af44c3e0403
+DECL|enum|__anon2bd4806c0403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -235,7 +235,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2af44c3e0508
+DECL|struct|__anon2bd4806c0508
 typedef|typedef
 struct|struct
 block|{
@@ -1237,9 +1237,12 @@ name|str
 init|=
 name|g_strdup_printf
 argument_list|(
+name|_
+argument_list|(
 literal|"An error occured while creating the PDF file!\n"
 literal|"%s\n"
 literal|"Make sure you entered a valid filename and that the selected location isn't read only!"
+argument_list|)
 argument_list|,
 name|cairo_status_to_string
 argument_list|(
