@@ -1148,6 +1148,21 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|PSD_WORKING_PATH
+case|:
+name|load_resource_2000
+argument_list|(
+name|res_a
+argument_list|,
+name|image_id
+argument_list|,
+name|f
+argument_list|,
+name|error
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|PSD_IPTC_NAA_DATA
 case|:
 name|load_resource_1028
@@ -6423,6 +6438,29 @@ name|image_id
 argument_list|)
 expr_stmt|;
 comment|/* Create path */
+if|if
+condition|(
+name|res_a
+operator|->
+name|id
+operator|==
+name|PSD_WORKING_PATH
+condition|)
+block|{
+comment|/* use "Working Path" for the path name to match the Photoshop display */
+name|vector_id
+operator|=
+name|gimp_vectors_new
+argument_list|(
+name|image_id
+argument_list|,
+literal|"Working Path"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+comment|/* Use the name stored in the PSD to name the path */
 name|vector_id
 operator|=
 name|gimp_vectors_new
@@ -6434,6 +6472,7 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_image_insert_vectors
 argument_list|(
 name|image_id
