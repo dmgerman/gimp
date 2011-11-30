@@ -143,16 +143,8 @@ name|THUMB_HEIGHT
 value|120
 end_define
 
-begin_define
-DECL|macro|PDF_DEBUG
-define|#
-directive|define
-name|PDF_DEBUG
-value|FALSE
-end_define
-
 begin_typedef
-DECL|struct|__anon297622bb0108
+DECL|struct|__anon2af44c3e0108
 typedef|typedef
 struct|struct
 block|{
@@ -175,7 +167,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon297622bb0208
+DECL|struct|__anon2af44c3e0208
 typedef|typedef
 struct|struct
 block|{
@@ -204,7 +196,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon297622bb0308
+DECL|struct|__anon2af44c3e0308
 typedef|typedef
 struct|struct
 block|{
@@ -224,7 +216,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon297622bb0403
+DECL|enum|__anon2af44c3e0403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -243,7 +235,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon297622bb0508
+DECL|struct|__anon2af44c3e0508
 typedef|typedef
 struct|struct
 block|{
@@ -1239,9 +1231,6 @@ operator|!=
 name|CAIRO_STATUS_SUCCESS
 condition|)
 block|{
-if|#
-directive|if
-name|PDF_DEBUG
 name|char
 modifier|*
 name|str
@@ -1271,16 +1260,6 @@ argument_list|(
 name|str
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
-name|gimp_message
-argument_list|(
-literal|"An error occured while creating the PDF file!\n"
-literal|"Make sure you entered a valid filename and that the selected location isn't read only!"
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 name|values
 index|[
 literal|0
