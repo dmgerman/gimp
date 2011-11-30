@@ -152,7 +152,7 @@ value|FALSE
 end_define
 
 begin_typedef
-DECL|struct|__anon2c7fbec50108
+DECL|struct|__anon297622bb0108
 typedef|typedef
 struct|struct
 block|{
@@ -175,7 +175,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c7fbec50208
+DECL|struct|__anon297622bb0208
 typedef|typedef
 struct|struct
 block|{
@@ -204,7 +204,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c7fbec50308
+DECL|struct|__anon297622bb0308
 typedef|typedef
 struct|struct
 block|{
@@ -224,7 +224,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2c7fbec50403
+DECL|enum|__anon297622bb0403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -243,7 +243,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2c7fbec50508
+DECL|struct|__anon297622bb0508
 typedef|typedef
 struct|struct
 block|{
@@ -1031,16 +1031,6 @@ decl_stmt|;
 name|gint32
 name|temp
 decl_stmt|;
-if|#
-directive|if
-name|PDF_DEBUG
-specifier|const
-name|gchar
-modifier|*
-name|cairo_status
-decl_stmt|;
-endif|#
-directive|endif
 name|gint
 modifier|*
 name|layers
@@ -1252,8 +1242,16 @@ block|{
 if|#
 directive|if
 name|PDF_DEBUG
-name|cairo_status
-operator|=
+name|char
+modifier|*
+name|str
+init|=
+name|g_strdup_printf
+argument_list|(
+literal|"An error occured while creating the PDF file!\n"
+literal|"%s\n"
+literal|"Make sure you entered a valid filename and that the selected location isn't read only!"
+argument_list|,
 name|cairo_status_to_string
 argument_list|(
 name|cairo_surface_status
@@ -1261,22 +1259,28 @@ argument_list|(
 name|pdf_file
 argument_list|)
 argument_list|)
+argument_list|)
+decl_stmt|;
+name|gimp_message
+argument_list|(
+name|str
+argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
+name|g_free
+argument_list|(
+name|str
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|gimp_message
 argument_list|(
 literal|"An error occured while creating the PDF file!\n"
-if|#
-directive|if
-name|PDF_DEBUG
-name|cairo_status
-literal|"\n"
-endif|#
-directive|endif
 literal|"Make sure you entered a valid filename and that the selected location isn't read only!"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|values
 index|[
 literal|0
