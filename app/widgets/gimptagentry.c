@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aac60940103
+DECL|enum|__anon2b03c8c60103
 block|{
 DECL|enumerator|TAG_SEARCH_NONE
 name|TAG_SEARCH_NONE
@@ -138,7 +138,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aac60940203
+DECL|enum|__anon2b03c8c60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -665,17 +665,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpTagEntry,gimp_tag_entry,GTK_TYPE_ENTRY)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpTagEntry
+argument|GimpTagEntry
 argument_list|,
-name|gimp_tag_entry
+argument|gimp_tag_entry
 argument_list|,
-name|GTK_TYPE_ENTRY
+argument|GTK_TYPE_ENTRY
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -688,7 +688,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tag_entry_class_init (GimpTagEntryClass * klass)
 name|gimp_tag_entry_class_init
 parameter_list|(
 name|GimpTagEntryClass
@@ -1995,10 +1994,7 @@ name|g_signal_handlers_block_by_func
 argument_list|(
 name|editable
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|gimp_tag_entry_insert_text
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2029,10 +2025,7 @@ name|g_signal_handlers_unblock_by_func
 argument_list|(
 name|editable
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|gimp_tag_entry_insert_text
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2110,10 +2103,7 @@ name|g_signal_handlers_block_by_func
 argument_list|(
 name|editable
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|gimp_tag_entry_insert_text
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2150,10 +2140,7 @@ name|g_signal_handlers_unblock_by_func
 argument_list|(
 name|editable
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|gimp_tag_entry_insert_text
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2995,10 +2982,6 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|GimpTag
-modifier|*
-name|tag
-decl_stmt|;
 name|GList
 modifier|*
 name|resource_iter
@@ -3059,8 +3042,10 @@ name|i
 operator|++
 control|)
 block|{
+name|GimpTag
+modifier|*
 name|tag
-operator|=
+init|=
 name|gimp_tag_new
 argument_list|(
 name|parsed_tags
@@ -3068,7 +3053,7 @@ index|[
 name|i
 index|]
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|tag
@@ -3294,7 +3279,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_entry_parse_tags:  * @entry:      a #GimpTagEntry widget.  *  * Parses currently entered tags from @entry. Tags do not need to be valid as  * they are fixed when necessary. Only valid tags are returned.  *  * Return value: a newly allocated NULL terminated list of strings. It should  * be freed using g_strfreev().  **/
+comment|/**  * gimp_tag_entry_parse_tags:  * @entry: a #GimpTagEntry widget.  *  * Parses currently entered tags from @entry. Tags do not need to be  * valid as they are fixed when necessary. Only valid tags are  * returned.  *  * Return value: a newly allocated NULL terminated list of strings. It  *               should be freed using g_strfreev().  **/
 end_comment
 
 begin_function
@@ -4406,9 +4391,6 @@ decl_stmt|;
 name|gunichar
 name|c
 decl_stmt|;
-name|gunichar
-name|d
-decl_stmt|;
 name|gint
 name|num_chars_match
 decl_stmt|;
@@ -4598,8 +4580,9 @@ name|i
 operator|++
 control|)
 block|{
+name|gunichar
 name|d
-operator|=
+init|=
 name|g_utf8_get_char
 argument_list|(
 name|completions
@@ -4607,7 +4590,7 @@ index|[
 name|i
 index|]
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|c
@@ -6730,10 +6713,6 @@ name|gchar
 modifier|*
 name|last_item
 init|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_list_last
 argument_list|(
 name|entry
@@ -7285,26 +7264,11 @@ modifier|*
 name|entry
 parameter_list|)
 block|{
-name|gint
-name|region_start
-decl_stmt|;
-name|gint
-name|region_end
-decl_stmt|;
-name|gint
-name|position
-decl_stmt|;
 name|gboolean
 name|found_region
 decl_stmt|;
 name|gint
 name|cursor_position
-decl_stmt|;
-name|glong
-name|length_before
-decl_stmt|;
-name|gint
-name|i
 decl_stmt|;
 name|cursor_position
 operator|=
@@ -7318,6 +7282,21 @@ argument_list|)
 expr_stmt|;
 do|do
 block|{
+name|gint
+name|region_start
+decl_stmt|;
+name|gint
+name|region_end
+decl_stmt|;
+name|gint
+name|position
+decl_stmt|;
+name|glong
+name|length_before
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
 name|found_region
 operator|=
 name|FALSE
