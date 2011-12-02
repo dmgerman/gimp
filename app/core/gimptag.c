@@ -96,6 +96,12 @@ name|collate_key
 operator|=
 literal|0
 expr_stmt|;
+name|tag
+operator|->
+name|internal
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 end_function
 
@@ -372,6 +378,72 @@ expr_stmt|;
 return|return
 name|tag
 return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_tag_get_internal:  * @tag: a gimp tag.  *  * Retrieve internal status of the tag.  *  * Return value: internal status of tag. Internal tags are not saved.  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_tag_get_internal (GimpTag * tag)
+name|gimp_tag_get_internal
+parameter_list|(
+name|GimpTag
+modifier|*
+name|tag
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_TAG
+argument_list|(
+name|tag
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|tag
+operator|->
+name|internal
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_tag_set_internal:  * @tag: a gimp tag.  * @inernal: desired tag internal status  *  * Set internal status of the tag. Internal tags are usually automaticaly  * generated and will not be saved into users tag cache.  *  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_tag_set_internal (GimpTag * tag,gboolean internal)
+name|gimp_tag_set_internal
+parameter_list|(
+name|GimpTag
+modifier|*
+name|tag
+parameter_list|,
+name|gboolean
+name|internal
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_TAG
+argument_list|(
+name|tag
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|tag
+operator|->
+name|internal
+operator|=
+name|internal
+expr_stmt|;
 block|}
 end_function
 
