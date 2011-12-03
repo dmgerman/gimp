@@ -144,7 +144,7 @@ value|120
 end_define
 
 begin_typedef
-DECL|struct|__anon2a1898940108
+DECL|struct|__anon2af11ba40108
 typedef|typedef
 struct|struct
 block|{
@@ -167,7 +167,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a1898940208
+DECL|struct|__anon2af11ba40208
 typedef|typedef
 struct|struct
 block|{
@@ -196,7 +196,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a1898940308
+DECL|struct|__anon2af11ba40308
 typedef|typedef
 struct|struct
 block|{
@@ -216,7 +216,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2a1898940403
+DECL|enum|__anon2af11ba40403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -235,7 +235,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2a1898940508
+DECL|struct|__anon2af11ba40508
 typedef|typedef
 struct|struct
 block|{
@@ -822,7 +822,7 @@ literal|"August 2009"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Save as PDF..."
+literal|"Portable Document Format"
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
@@ -857,7 +857,7 @@ literal|"August 2009"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Save as PDF..."
+literal|"Portable Document Format"
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
