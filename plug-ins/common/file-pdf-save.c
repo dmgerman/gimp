@@ -144,7 +144,7 @@ value|120
 end_define
 
 begin_typedef
-DECL|struct|__anon2af11ba40108
+DECL|struct|__anon27fbdf2b0108
 typedef|typedef
 struct|struct
 block|{
@@ -167,7 +167,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2af11ba40208
+DECL|struct|__anon27fbdf2b0208
 typedef|typedef
 struct|struct
 block|{
@@ -196,7 +196,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2af11ba40308
+DECL|struct|__anon27fbdf2b0308
 typedef|typedef
 struct|struct
 block|{
@@ -216,7 +216,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2af11ba40403
+DECL|enum|__anon27fbdf2b0403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -235,7 +235,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2af11ba40508
+DECL|struct|__anon27fbdf2b0508
 typedef|typedef
 struct|struct
 block|{
@@ -2659,7 +2659,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Apply layer masks before saving (keeping the masks will not change the output)"
+literal|"Apply layer masks before saving"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2689,6 +2689,18 @@ argument_list|,
 name|TRUE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|apply_c
+argument_list|,
+name|_
+argument_list|(
+literal|"Keeping the masks will not change the output"
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show_all
@@ -3381,7 +3393,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Apply layer masks before saving (keeping them will not change the output)"
+literal|"Apply layer masks before saving"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3411,6 +3423,18 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|apply_c
+argument_list|,
+name|_
+argument_list|(
+literal|"Keeping the masks will not change the output"
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show_all
