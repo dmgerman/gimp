@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f6e64e0108
+DECL|struct|__anon296ceab80108
 block|{
 DECL|member|url
 name|char
@@ -118,7 +118,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f6e64e0208
+DECL|struct|__anon296ceab80208
 block|{
 DECL|member|url
 name|char
@@ -1358,8 +1358,10 @@ argument_list|)
 argument_list|,
 literal|14
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"web-page"
+argument_list|,
 literal|"Default"
 argument_list|)
 argument_list|,
