@@ -8,7 +8,7 @@ comment|/* The PDF export plugin has 3 main procedures:  * 1. file-pdf-save  *  
 end_comment
 
 begin_comment
-comment|/* Known Issues (except for the coding style issues):  * 0. Need to add support for i18n.  * 1. Grayscale layers are inverted (although layer masks which are not grayscale,  * are not inverted)  * 2. Exporting some fonts doesn't work since gimp_text_layer_get_font Returns a  * font which is sometimes incompatiable with pango_font_description_from_string  * (gimp_text_layer_get_font sometimes returns suffixes such as "semi-expanded" to  * the font's name although the GIMP's font selection dialog shows the don'ts name  * normally - This should be checked again in GIMP 2.7)  * 3. Indexed layers can't be optimized yet (Since gimp_histogram won't work on  * indexed layers)  * 4. Rendering the pango layout requires multiplying the size in PANGO_SCALE. This  * means I'll need to do some hacking on the markup returned from GIMP.  * 5. When accessing the contents of layer groups is supported, we should do use it  * (since this plugin should preserve layers).  *  * Also, there are 2 things which we should warn the user about:  * 1. Cairo does not support bitmap masks for text.  * 2. Currently layer modes are ignored. We do support layers, including  * transparency and opacity, but layer modes are not supported.  */
+comment|/* Known Issues (except for the coding style issues):  * 1. Grayscale layers are inverted (although layer masks which are not grayscale,  * are not inverted)  * 2. Exporting some fonts doesn't work since gimp_text_layer_get_font Returns a  * font which is sometimes incompatiable with pango_font_description_from_string  * (gimp_text_layer_get_font sometimes returns suffixes such as "semi-expanded" to  * the font's name although the GIMP's font selection dialog shows the don'ts name  * normally - This should be checked again in GIMP 2.7)  * 3. Indexed layers can't be optimized yet (Since gimp_histogram won't work on  * indexed layers)  * 4. Rendering the pango layout requires multiplying the size in PANGO_SCALE. This  * means I'll need to do some hacking on the markup returned from GIMP.  * 5. When accessing the contents of layer groups is supported, we should do use it  * (since this plugin should preserve layers).  *  * Also, there are 2 things which we should warn the user about:  * 1. Cairo does not support bitmap masks for text.  * 2. Currently layer modes are ignored. We do support layers, including  * transparency and opacity, but layer modes are not supported.  */
 end_comment
 
 begin_comment
@@ -144,7 +144,7 @@ value|120
 end_define
 
 begin_typedef
-DECL|struct|__anon27fbdf2b0108
+DECL|struct|__anon2a8eac6e0108
 typedef|typedef
 struct|struct
 block|{
@@ -167,7 +167,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27fbdf2b0208
+DECL|struct|__anon2a8eac6e0208
 typedef|typedef
 struct|struct
 block|{
@@ -196,7 +196,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27fbdf2b0308
+DECL|struct|__anon2a8eac6e0308
 typedef|typedef
 struct|struct
 block|{
@@ -216,7 +216,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon27fbdf2b0403
+DECL|enum|__anon2a8eac6e0403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -235,7 +235,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon27fbdf2b0508
+DECL|struct|__anon2a8eac6e0508
 typedef|typedef
 struct|struct
 block|{
