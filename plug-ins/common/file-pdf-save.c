@@ -144,7 +144,7 @@ value|120
 end_define
 
 begin_typedef
-DECL|struct|__anon2bb238400108
+DECL|struct|__anon2a1898940108
 typedef|typedef
 struct|struct
 block|{
@@ -167,7 +167,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bb238400208
+DECL|struct|__anon2a1898940208
 typedef|typedef
 struct|struct
 block|{
@@ -196,7 +196,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bb238400308
+DECL|struct|__anon2a1898940308
 typedef|typedef
 struct|struct
 block|{
@@ -216,7 +216,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2bb238400403
+DECL|enum|__anon2a1898940403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -235,7 +235,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2bb238400508
+DECL|struct|__anon2a1898940508
 typedef|typedef
 struct|struct
 block|{
@@ -820,7 +820,10 @@ literal|"Copyright Barak Itkin"
 argument_list|,
 literal|"August 2009"
 argument_list|,
+name|N_
+argument_list|(
 literal|"_Save as PDF..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -852,7 +855,10 @@ literal|"Copyright Barak Itkin"
 argument_list|,
 literal|"August 2009"
 argument_list|,
+name|N_
+argument_list|(
 literal|"_Save as PDF..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -884,7 +890,10 @@ literal|"Copyright Barak Itkin"
 argument_list|,
 literal|"August 2009"
 argument_list|,
+name|N_
+argument_list|(
 literal|"_Create multipage PDF..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
