@@ -50,13 +50,6 @@ directive|include
 file|<glib/gstdio.h>
 end_include
 
-begin_define
-DECL|macro|__GIMP_BASE_C__
-define|#
-directive|define
-name|__GIMP_BASE_C__
-end_define
-
 begin_undef
 undef|#
 directive|undef
@@ -68,6 +61,13 @@ include|#
 directive|include
 file|"gimpbasetypes.h"
 end_include
+
+begin_define
+DECL|macro|__GIMP_ENV_C__
+define|#
+directive|define
+name|__GIMP_ENV_C__
+end_define
 
 begin_include
 include|#
