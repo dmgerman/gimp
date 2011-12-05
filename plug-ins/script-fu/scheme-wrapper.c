@@ -289,7 +289,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1c8f500108
+DECL|struct|__anon2c4df39d0108
 block|{
 DECL|member|name
 specifier|const
@@ -1204,7 +1204,7 @@ name|ts_output_string
 argument_list|(
 name|TS_OUTPUT_NORMAL
 argument_list|,
-literal|"Welcome to TinyScheme, Version 1.38\n"
+literal|"Welcome to TinyScheme, Version 1.40\n"
 argument_list|,
 operator|-
 literal|1
