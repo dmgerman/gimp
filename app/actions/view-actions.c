@@ -1023,11 +1023,21 @@ literal|"view-use-gegl"
 block|,
 name|GIMP_STOCK_GEGL
 block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Use GEGL"
+argument_list|)
 block|,
 name|NULL
 block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Use GEGL to create this window's projection"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
