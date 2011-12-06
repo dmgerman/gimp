@@ -82,7 +82,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b0c2400103
+DECL|enum|__anon28c79cfa0103
 block|{
 DECL|enumerator|RGB_565
 name|RGB_565
@@ -110,7 +110,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29b0c2400208
+DECL|struct|__anon28c79cfa0208
 block|{
 DECL|member|rgb_format
 name|RGBMode
@@ -4310,10 +4310,7 @@ name|dialog
 operator|=
 name|gimp_export_dialog_new
 argument_list|(
-name|_
-argument_list|(
 literal|"BMP"
-argument_list|)
 argument_list|,
 name|PLUG_IN_BINARY
 argument_list|,
