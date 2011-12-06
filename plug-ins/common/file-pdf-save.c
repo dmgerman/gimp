@@ -144,7 +144,7 @@ value|120
 end_define
 
 begin_typedef
-DECL|struct|__anon2a8eac6e0108
+DECL|struct|__anon2c40ce390108
 typedef|typedef
 struct|struct
 block|{
@@ -167,7 +167,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a8eac6e0208
+DECL|struct|__anon2c40ce390208
 typedef|typedef
 struct|struct
 block|{
@@ -196,7 +196,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a8eac6e0308
+DECL|struct|__anon2c40ce390308
 typedef|typedef
 struct|struct
 block|{
@@ -216,7 +216,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2a8eac6e0403
+DECL|enum|__anon2c40ce390403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -235,7 +235,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2a8eac6e0508
+DECL|struct|__anon2c40ce390508
 typedef|typedef
 struct|struct
 block|{
@@ -810,9 +810,12 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE_DEFAULTS_PROC
 argument_list|,
-literal|"Save files as PDF"
+literal|"Save files in PDF format"
 argument_list|,
-literal|"Save files in the Portable Document Format (PDF)"
+literal|"Saves files in Adobe's Portable Document Format. "
+literal|"PDF is designed to be easily processed by a variety "
+literal|"of different platforms, and is a distant cousin of "
+literal|"PostScript."
 argument_list|,
 literal|"Barak Itkin"
 argument_list|,
@@ -845,9 +848,12 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE_PROC
 argument_list|,
-literal|"Save files as PDF"
+literal|"Save files in PDF format"
 argument_list|,
-literal|"Save files in the Portable Document Format (PDF)"
+literal|"Saves files in Adobe's Portable Document Format. "
+literal|"PDF is designed to be easily processed by a variety "
+literal|"of different platforms, and is a distant cousin of "
+literal|"PostScript."
 argument_list|,
 literal|"Barak Itkin"
 argument_list|,
@@ -880,9 +886,12 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE_MULTI_PROC
 argument_list|,
-literal|"Save files as PDF"
+literal|"Save files in PDF format"
 argument_list|,
-literal|"Save files in the Portable Document Format (PDF)"
+literal|"Saves files in Adobe's Portable Document Format. "
+literal|"PDF is designed to be easily processed by a variety "
+literal|"of different platforms, and is a distant cousin of "
+literal|"PostScript."
 argument_list|,
 literal|"Barak Itkin"
 argument_list|,
