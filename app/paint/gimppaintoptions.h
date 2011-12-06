@@ -450,6 +450,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_paint_options_copy_gradient_props
+parameter_list|(
+name|GimpPaintOptions
+modifier|*
+name|src
+parameter_list|,
+name|GimpPaintOptions
+modifier|*
+name|dest
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
