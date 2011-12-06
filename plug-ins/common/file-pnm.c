@@ -366,7 +366,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296227420108
+DECL|struct|__anon2b1f3f120108
 block|{
 DECL|member|raw
 name|gint
@@ -1102,7 +1102,7 @@ name|LOAD_PROC
 argument_list|,
 literal|"Loads files in the PNM file format"
 argument_list|,
-literal|"FIXME: write help for pnm_load"
+literal|"This plug-in loads files in the various Netpbm portable file formats."
 argument_list|,
 literal|"Erik Nygren"
 argument_list|,
