@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4b63600108
+DECL|struct|__anon2b985b190108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4b63600208
+DECL|struct|__anon2b985b190208
 block|{
 DECL|member|run
 name|gboolean
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4b63600308
+DECL|struct|__anon2b985b190308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -2920,7 +2920,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Could not create new image for '%s': %s"
+argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
