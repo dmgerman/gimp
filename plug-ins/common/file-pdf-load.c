@@ -99,7 +99,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273a1fd70108
+DECL|struct|__anon2b55d8030108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -133,7 +133,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273a1fd70208
+DECL|struct|__anon2b55d8030208
 block|{
 DECL|member|n_pages
 name|gint
@@ -708,7 +708,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon273a1fd70303
+DECL|enum|__anon2b55d8030303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -1038,11 +1038,10 @@ name|LOAD_PROC
 argument_list|,
 literal|"Load file in PDF format."
 argument_list|,
-literal|"Load file in PDF format. "
-literal|"PDF is a portable document format created by Adobe. "
-literal|"It is designed to be easily processed by a variety "
+literal|"Loads files in Adobe's Portable Document Format. "
+literal|"PDF is designed to be easily processed by a variety "
 literal|"of different platforms, and is a distant cousin of "
-literal|"postscript. "
+literal|"PostScript."
 argument_list|,
 literal|"Nathan Summers"
 argument_list|,
@@ -3711,7 +3710,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273a1fd70408
+DECL|struct|__anon2b55d8030408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -3736,7 +3735,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273a1fd70508
+DECL|struct|__anon2b55d8030508
 block|{
 DECL|member|selector
 name|GimpPageSelector
