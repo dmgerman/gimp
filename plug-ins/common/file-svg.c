@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277c9bd20108
+DECL|struct|__anon2b27698f0108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -526,9 +526,9 @@ name|gimp_install_procedure
 argument_list|(
 name|LOAD_THUMB_PROC
 argument_list|,
-literal|"Loads a small preview from an SVG image"
+literal|"Generates a thumbnail of an SVG image"
 argument_list|,
-literal|""
+literal|"Renders a thumbnail of an SVG file using librsvg."
 argument_list|,
 literal|"Dom Lachowicz, Sven Neumann"
 argument_list|,
