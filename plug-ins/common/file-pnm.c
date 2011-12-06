@@ -366,7 +366,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f653aa0108
+DECL|struct|__anon2ae596b70108
 block|{
 DECL|member|raw
 name|gint
@@ -5728,7 +5728,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Ascii"
+literal|"ASCII"
 argument_list|)
 argument_list|,
 name|FALSE
