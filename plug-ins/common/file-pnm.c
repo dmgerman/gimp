@@ -366,7 +366,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae596b70108
+DECL|struct|__anon296227420108
 block|{
 DECL|member|raw
 name|gint
@@ -1100,7 +1100,7 @@ name|gimp_install_procedure
 argument_list|(
 name|LOAD_PROC
 argument_list|,
-literal|"loads files of the pnm file format"
+literal|"Loads files in the PNM file format"
 argument_list|,
 literal|"FIXME: write help for pnm_load"
 argument_list|,
@@ -1157,7 +1157,7 @@ name|gimp_install_procedure
 argument_list|(
 name|PNM_SAVE_PROC
 argument_list|,
-literal|"saves files in the pnm file format"
+literal|"Saves files in the PNM file format"
 argument_list|,
 literal|"PNM saving handles all image types without transparency."
 argument_list|,
@@ -1192,7 +1192,7 @@ name|gimp_install_procedure
 argument_list|(
 name|PBM_SAVE_PROC
 argument_list|,
-literal|"saves files in the pnm file format"
+literal|"Saves files in the PBM file format"
 argument_list|,
 literal|"PBM saving produces mono images without transparency."
 argument_list|,
@@ -1227,7 +1227,7 @@ name|gimp_install_procedure
 argument_list|(
 name|PGM_SAVE_PROC
 argument_list|,
-literal|"saves files in the pnm file format"
+literal|"Saves files in the PGM file format"
 argument_list|,
 literal|"PGM saving produces grayscale images without transparency."
 argument_list|,
@@ -1262,7 +1262,7 @@ name|gimp_install_procedure
 argument_list|(
 name|PPM_SAVE_PROC
 argument_list|,
-literal|"saves files in the pnm file format"
+literal|"Saves files in the PPM file format"
 argument_list|,
 literal|"PPM saving handles RGB images without transparency."
 argument_list|,
@@ -5047,7 +5047,7 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"pnm: unknown drawable_type\n"
+literal|"PNM: Unknown drawable_type\n"
 argument_list|)
 expr_stmt|;
 return|return
@@ -5187,7 +5187,7 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"pnm: unknown drawable_type\n"
+literal|"PNM: Unknown drawable_type\n"
 argument_list|)
 expr_stmt|;
 return|return
@@ -5316,7 +5316,7 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"images saved as PBM should be black/white"
+literal|"Images saved as PBM should be black/white"
 argument_list|)
 expr_stmt|;
 break|break;
