@@ -99,7 +99,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c647700108
+DECL|struct|__anon297592e10108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -133,7 +133,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c647700208
+DECL|struct|__anon297592e10208
 block|{
 DECL|member|n_pages
 name|gint
@@ -708,7 +708,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c647700303
+DECL|enum|__anon297592e10303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -1036,7 +1036,7 @@ name|gimp_install_procedure
 argument_list|(
 name|LOAD_PROC
 argument_list|,
-literal|"Load file in PDF format."
+literal|"Load file in PDF format"
 argument_list|,
 literal|"Loads files in Adobe's Portable Document Format. "
 literal|"PDF is designed to be easily processed by a variety "
@@ -3713,7 +3713,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c647700408
+DECL|struct|__anon297592e10408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -3738,7 +3738,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c647700508
+DECL|struct|__anon297592e10508
 block|{
 DECL|member|selector
 name|GimpPageSelector
