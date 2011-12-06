@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b985b190108
+DECL|struct|__anon2c1dab690108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b985b190208
+DECL|struct|__anon2c1dab690208
 block|{
 DECL|member|run
 name|gboolean
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b985b190308
+DECL|struct|__anon2c1dab690308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -7089,7 +7089,10 @@ name|error
 operator|->
 name|message
 else|:
-literal|"???"
+name|_
+argument_list|(
+literal|"Unknown error"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
