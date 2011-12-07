@@ -99,7 +99,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297592e10108
+DECL|struct|__anon28ad58d20108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -133,7 +133,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297592e10208
+DECL|struct|__anon28ad58d20208
 block|{
 DECL|member|n_pages
 name|gint
@@ -708,7 +708,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon297592e10303
+DECL|enum|__anon28ad58d20303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -3713,7 +3713,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297592e10408
+DECL|struct|__anon28ad58d20408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -3738,7 +3738,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297592e10508
+DECL|struct|__anon28ad58d20508
 block|{
 DECL|member|selector
 name|GimpPageSelector
@@ -4173,6 +4173,25 @@ argument_list|(
 name|doc
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|n_pages
+operator|<=
+literal|0
+condition|)
+block|{
+name|gimp_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Error getting number of pages from the given pdf file\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
 name|gimp_page_selector_set_n_pages
 argument_list|(
 name|GIMP_PAGE_SELECTOR
