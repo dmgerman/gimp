@@ -99,7 +99,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ad58d20108
+DECL|struct|__anon2a4dc1b70108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -133,7 +133,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ad58d20208
+DECL|struct|__anon2a4dc1b70208
 block|{
 DECL|member|n_pages
 name|gint
@@ -226,7 +226,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|GimpPDBStatusType
 name|load_dialog
 parameter_list|(
 name|PopplerDocument
@@ -708,7 +708,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ad58d20303
+DECL|enum|__anon2a4dc1b70303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -1322,8 +1322,8 @@ name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 break|break;
 block|}
-if|if
-condition|(
+name|status
+operator|=
 name|load_dialog
 argument_list|(
 name|doc
@@ -1331,6 +1331,12 @@ argument_list|,
 operator|&
 name|pages
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|status
+operator|==
+name|GIMP_PDB_SUCCESS
 condition|)
 name|gimp_set_data
 argument_list|(
@@ -1344,11 +1350,6 @@ argument_list|(
 name|loadvals
 argument_list|)
 argument_list|)
-expr_stmt|;
-else|else
-name|status
-operator|=
-name|GIMP_PDB_CANCEL
 expr_stmt|;
 break|break;
 case|case
@@ -3713,7 +3714,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ad58d20408
+DECL|struct|__anon2a4dc1b70408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -3738,7 +3739,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ad58d20508
+DECL|struct|__anon2a4dc1b70508
 block|{
 DECL|member|selector
 name|GimpPageSelector
@@ -3918,7 +3919,7 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|GimpPDBStatusType
 DECL|function|load_dialog (PopplerDocument * doc,PdfSelectedPages * pages)
 name|load_dialog
 parameter_list|(
@@ -4189,7 +4190,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|GIMP_PDB_EXECUTION_ERROR
 return|;
 block|}
 name|gimp_page_selector_set_n_pages
@@ -4550,6 +4551,10 @@ argument_list|)
 expr_stmt|;
 return|return
 name|run
+condition|?
+name|GIMP_PDB_SUCCESS
+else|:
+name|GIMP_PDB_CANCEL
 return|;
 block|}
 end_function
