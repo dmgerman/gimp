@@ -1646,6 +1646,7 @@ comment|/* ignore new buttons while another button is down */
 if|if
 condition|(
 operator|(
+operator|(
 name|state
 operator|&
 operator|(
@@ -1662,12 +1663,9 @@ operator||
 name|GDK_BUTTON3_MASK
 operator|)
 operator|)
-condition|)
-return|return
-name|TRUE
-return|;
-if|if
-condition|(
+operator|)
+operator|||
+operator|(
 operator|(
 name|state
 operator|&
@@ -1685,12 +1683,9 @@ operator||
 name|GDK_BUTTON3_MASK
 operator|)
 operator|)
-condition|)
-return|return
-name|TRUE
-return|;
-if|if
-condition|(
+operator|)
+operator|||
+operator|(
 operator|(
 name|state
 operator|&
@@ -1706,6 +1701,7 @@ operator|(
 name|GDK_BUTTON1_MASK
 operator||
 name|GDK_BUTTON2_MASK
+operator|)
 operator|)
 operator|)
 condition|)
