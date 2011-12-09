@@ -667,6 +667,14 @@ DECL|member|keyboard_grabbed
 name|gboolean
 name|keyboard_grabbed
 decl_stmt|;
+DECL|member|pointer_grab_time
+name|gboolean
+name|pointer_grab_time
+decl_stmt|;
+DECL|member|keyboard_grab_time
+name|gboolean
+name|keyboard_grab_time
+decl_stmt|;
 DECL|member|space_pressed
 name|gboolean
 name|space_pressed
