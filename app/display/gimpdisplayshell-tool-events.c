@@ -1618,6 +1618,36 @@ name|GimpTool
 modifier|*
 name|active_tool
 decl_stmt|;
+comment|/*  ignore new mouse events  */
+if|if
+condition|(
+name|gimp
+operator|->
+name|busy
+operator|||
+name|shell
+operator|->
+name|scrolling
+condition|)
+return|return
+name|TRUE
+return|;
+comment|/* ignore new buttons while another button is down */
+if|if
+condition|(
+name|state
+operator|&
+operator|(
+name|GDK_BUTTON1_MASK
+operator||
+name|GDK_BUTTON2_MASK
+operator||
+name|GDK_BUTTON3_MASK
+operator|)
+condition|)
+return|return
+name|TRUE
+return|;
 comment|/*  focus the widget if it isn't; if the toplevel window          *  already has focus, this will generate a FOCUS_IN on the          *  canvas immediately, therefore we do this before logging          *  the BUTTON_PRESS.          */
 if|if
 condition|(
@@ -1660,20 +1690,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/*  ignore new mouse events  */
-if|if
-condition|(
-name|gimp
-operator|->
-name|busy
-operator|||
-name|shell
-operator|->
-name|scrolling
-condition|)
-return|return
-name|TRUE
-return|;
 name|active_tool
 operator|=
 name|tool_manager_get_active
@@ -2271,6 +2287,10 @@ operator|!
 name|shell
 operator|->
 name|pointer_grabbed
+operator|||
+name|shell
+operator|->
+name|scrolling
 condition|)
 return|return
 name|TRUE
