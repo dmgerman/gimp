@@ -1611,9 +1611,6 @@ operator|*
 operator|)
 name|event
 decl_stmt|;
-name|GdkEventMask
-name|event_mask
-decl_stmt|;
 name|GimpTool
 modifier|*
 name|active_tool
@@ -1802,14 +1799,15 @@ operator|==
 literal|1
 condition|)
 block|{
+name|GdkEventMask
 name|event_mask
-operator|=
+init|=
 operator|(
 name|GDK_BUTTON1_MOTION_MASK
 operator||
 name|GDK_BUTTON_RELEASE_MASK
 operator|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|active_tool
