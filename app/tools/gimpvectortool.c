@@ -819,15 +819,6 @@ argument_list|(
 name|vector_tool
 argument_list|)
 decl_stmt|;
-name|gimp_tool_control_set_scroll_lock
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|gimp_tool_control_set_handle_empty_image
 argument_list|(
 name|tool

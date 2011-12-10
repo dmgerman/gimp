@@ -208,14 +208,6 @@ file|"gimp-intl.h"
 end_include
 
 begin_define
-DECL|macro|EDIT_SELECT_SCROLL_LOCK
-define|#
-directive|define
-name|EDIT_SELECT_SCROLL_LOCK
-value|FALSE
-end_define
-
-begin_define
 DECL|macro|ARROW_VELOCITY
 define|#
 directive|define
@@ -580,15 +572,6 @@ argument_list|(
 name|edit_selection_tool
 argument_list|)
 decl_stmt|;
-name|gimp_tool_control_set_scroll_lock
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|,
-name|EDIT_SELECT_SCROLL_LOCK
-argument_list|)
-expr_stmt|;
 name|gimp_tool_control_set_motion_mode
 argument_list|(
 name|tool
