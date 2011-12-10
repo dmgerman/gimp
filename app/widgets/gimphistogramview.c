@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b207ccf0103
+DECL|enum|__anon297ffef80103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b207ccf0203
+DECL|enum|__anon297ffef80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2301,26 +2301,9 @@ decl_stmt|;
 name|gint
 name|width
 decl_stmt|;
-name|gdk_pointer_grab
-argument_list|(
-name|gtk_widget_get_window
+name|gtk_grab_add
 argument_list|(
 name|widget
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|,
-name|GDK_BUTTON_RELEASE_MASK
-operator||
-name|GDK_BUTTON1_MOTION_MASK
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|bevent
-operator|->
-name|time
 argument_list|)
 expr_stmt|;
 name|gtk_widget_get_allocation
@@ -2430,19 +2413,9 @@ name|start
 decl_stmt|,
 name|end
 decl_stmt|;
-name|gdk_display_pointer_ungrab
+name|gtk_grab_remove
 argument_list|(
-name|gtk_widget_get_display
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|view
-argument_list|)
-argument_list|)
-argument_list|,
-name|bevent
-operator|->
-name|time
+name|widget
 argument_list|)
 expr_stmt|;
 name|start
