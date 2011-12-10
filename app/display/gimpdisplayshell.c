@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9a0cc80103
+DECL|enum|__anon28d954110103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -363,7 +363,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9a0cc80203
+DECL|enum|__anon28d954110203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1319,8 +1319,6 @@ argument_list|)
 argument_list|,
 operator|(
 name|GDK_POINTER_MOTION_MASK
-operator||
-name|GDK_POINTER_MOTION_HINT_MASK
 operator||
 name|GDK_BUTTON_PRESS_MASK
 operator||

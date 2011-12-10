@@ -41,7 +41,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290859440103
+DECL|enum|__anon28dbf0750103
 block|{
 DECL|enumerator|GIMP_BUTTON_PRESS_NORMAL
 name|GIMP_BUTTON_PRESS_NORMAL
@@ -78,7 +78,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290859440203
+DECL|enum|__anon28dbf0750203
 block|{
 DECL|enumerator|GIMP_BUTTON_RELEASE_NORMAL
 name|GIMP_BUTTON_RELEASE_NORMAL
@@ -118,7 +118,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290859440303
+DECL|enum|__anon28dbf0750303
 block|{
 DECL|enumerator|GIMP_RECTANGLE_CONSTRAIN_NONE
 name|GIMP_RECTANGLE_CONSTRAIN_NONE
@@ -155,7 +155,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290859440403
+DECL|enum|__anon28dbf0750403
 block|{
 DECL|enumerator|GIMP_RECTANGLE_PRECISION_INT
 name|GIMP_RECTANGLE_PRECISION_INT
@@ -189,7 +189,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290859440503
+DECL|enum|__anon28dbf0750503
 block|{
 DECL|enumerator|GIMP_RECTANGLE_TOOL_FIXED_ASPECT
 name|GIMP_RECTANGLE_TOOL_FIXED_ASPECT
@@ -234,7 +234,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290859440603
+DECL|enum|__anon28dbf0750603
 block|{
 DECL|enumerator|GIMP_RECT_SELECT_MODE_FREE
 name|GIMP_RECT_SELECT_MODE_FREE
@@ -274,7 +274,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290859440703
+DECL|enum|__anon28dbf0750703
 block|{
 DECL|enumerator|GIMP_TRANSFORM_TYPE_LAYER
 name|GIMP_TRANSFORM_TYPE_LAYER
@@ -314,7 +314,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290859440803
+DECL|enum|__anon28dbf0750803
 block|{
 DECL|enumerator|GIMP_VECTOR_MODE_DESIGN
 name|GIMP_VECTOR_MODE_DESIGN
@@ -354,7 +354,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290859440903
+DECL|enum|__anon28dbf0750903
 block|{
 DECL|enumerator|GIMP_TOOL_ACTION_PAUSE
 name|GIMP_TOOL_ACTION_PAUSE
@@ -378,7 +378,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon290859440a03
+DECL|enum|__anon28dbf0750a03
 block|{
 DECL|enumerator|SELECTION_SELECT
 name|SELECTION_SELECT
@@ -408,7 +408,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon290859440b03
+DECL|enum|__anon28dbf0750b03
 block|{
 DECL|enumerator|GIMP_TRANSLATE_MODE_VECTORS
 name|GIMP_TRANSLATE_MODE_VECTORS
@@ -447,13 +447,10 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon290859440c03
+DECL|enum|__anon28dbf0750c03
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT
-block|,
-DECL|enumerator|GIMP_MOTION_MODE_HINT
-name|GIMP_MOTION_MODE_HINT
 block|,
 DECL|enumerator|GIMP_MOTION_MODE_COMPRESS
 name|GIMP_MOTION_MODE_COMPRESS

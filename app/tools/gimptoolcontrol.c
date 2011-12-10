@@ -138,7 +138,7 @@ name|control
 operator|->
 name|motion_mode
 operator|=
-name|GIMP_MOTION_MODE_HINT
+name|GIMP_MOTION_MODE_EXACT
 expr_stmt|;
 name|control
 operator|->
@@ -845,7 +845,7 @@ argument_list|(
 name|control
 argument_list|)
 argument_list|,
-name|GIMP_MOTION_MODE_HINT
+name|GIMP_MOTION_MODE_EXACT
 argument_list|)
 expr_stmt|;
 return|return
