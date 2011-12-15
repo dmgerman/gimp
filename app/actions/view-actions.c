@@ -2945,13 +2945,6 @@ argument_list|,
 name|image
 argument_list|)
 expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"view-fullscreen"
-argument_list|,
-name|image
-argument_list|)
-expr_stmt|;
 name|SET_ACTIVE
 argument_list|(
 literal|"view-fullscreen"
