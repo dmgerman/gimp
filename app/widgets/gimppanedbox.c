@@ -455,7 +455,7 @@ argument_list|,
 name|GimpPanedBoxPrivate
 argument_list|)
 expr_stmt|;
-comment|/* Instructions label    *    * Size a small size request so it don't mess up dock window layouts    * during startup    */
+comment|/* Instructions label    *    * Size a small size request so it don't mess up dock window layouts    * during startup; in particular, set its height request to 0 so it    * doesn't contribute to the minimum height of the toolbox.    */
 name|paned_box
 operator|->
 name|p
@@ -521,7 +521,7 @@ name|instructions
 argument_list|,
 literal|100
 argument_list|,
-literal|100
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_label_set_attributes
