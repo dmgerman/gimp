@@ -190,6 +190,52 @@ value|(WM_USER + 100)
 end_define
 
 begin_comment
+comment|/* Prototypes */
+end_comment
+
+begin_function_decl
+name|void
+name|setCaptureType
+parameter_list|(
+name|int
+name|capType
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|BOOL
+name|InitApplication
+parameter_list|(
+name|HINSTANCE
+name|hInstance
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|BOOL
+name|InitInstance
+parameter_list|(
+name|HINSTANCE
+name|hInstance
+parameter_list|,
+name|int
+name|nCmdShow
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|int
+name|winsnapWinMain
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* File variables */
 end_comment
 
@@ -359,7 +405,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b29a35c0108
+DECL|struct|__anon2c9917c70108
 typedef|typedef
 struct|struct
 block|{
@@ -406,7 +452,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b29a35c0208
+DECL|struct|__anon2c9917c70208
 typedef|typedef
 struct|struct
 block|{
