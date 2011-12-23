@@ -1545,7 +1545,7 @@ literal|0.
 argument_list|,
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 argument_list|)
 expr_stmt|;
 name|cairo_stroke

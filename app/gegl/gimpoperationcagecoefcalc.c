@@ -1228,7 +1228,7 @@ operator|/
 operator|(
 literal|4.0
 operator|*
-name|M_PI
+name|G_PI
 operator|)
 operator|)
 operator|*
@@ -1317,7 +1317,7 @@ operator|/
 operator|(
 literal|2.0
 operator|*
-name|M_PI
+name|G_PI
 operator|)
 operator|)
 operator|*
@@ -1358,7 +1358,7 @@ operator|/
 operator|(
 literal|2.0
 operator|*
-name|M_PI
+name|G_PI
 operator|)
 operator|)
 operator|*
