@@ -320,7 +320,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9465220108
+DECL|struct|__anon2bf814510108
 block|{
 DECL|member|crop
 name|gboolean
@@ -851,7 +851,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b9465220208
+DECL|struct|__anon2bf814510208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -2678,7 +2678,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"The width of frame %d of '%s' is too big for X cursor."
+literal|"Frame %d of '%s' is too wide for an X cursor."
 argument_list|)
 argument_list|,
 name|i
@@ -2720,7 +2720,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"The height of frame %d of '%s' is too big for X cursor."
+literal|"Frame %d of '%s' is too high for an X cursor."
 argument_list|)
 argument_list|,
 name|i
@@ -3803,7 +3803,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"The width of '%s' is too big for X cursor."
+literal|"'%s' is too wide for an X cursor."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -3835,7 +3835,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"The height of '%s' is too big for X cursor."
+literal|"'%s' is too high for an X cursor."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -6554,7 +6554,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"This plug-in can only handle RGBA image format with 8bit color depth."
+literal|"This plug-in can only handle RGBA image files with 8bit color depth."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6622,7 +6622,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Width of '%s' is too large. Please reduce more than %dpx."
+literal|"Frame '%s' is too wide. Please reduce to no more than %dpx."
 argument_list|)
 argument_list|,
 name|gimp_any_to_utf8
@@ -6661,7 +6661,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Height of '%s' is too large. Please reduce more than %dpx."
+literal|"Frame '%s' is too high. Please reduce to no more than %dpx."
 argument_list|)
 argument_list|,
 name|gimp_any_to_utf8
@@ -6706,7 +6706,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"The size of '%s' is zero!"
+literal|"Width and/or height of frame '%s' is zero!"
 argument_list|)
 argument_list|,
 name|gimp_any_to_utf8
@@ -6934,9 +6934,10 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Cannot save the cursor because the hot spot is not on '%s'.\n"
-literal|"Try to change the hot spot position, layer geometry or "
-literal|"save without auto-crop."
+literal|"Cannot save the cursor because the hot spot "
+literal|"is not on frame '%s'.\n"
+literal|"Try to change the hot spot position, "
+literal|"layer geometry or save without auto-crop."
 argument_list|)
 argument_list|,
 name|gimp_any_to_utf8
@@ -7604,8 +7605,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Your cursor was successfully saved but it contains one "
-literal|"or more frames which width or height is more than %ipx.\n"
+literal|"Your cursor was successfully saved but it contains one or "
+literal|"more frames whose width or height is more than %ipx.\n"
 literal|"It will clutter the screen in some environments."
 argument_list|)
 argument_list|,
@@ -7623,11 +7624,11 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Your cursor was successfully saved but it contains one "
-literal|"or more frames whose nominal size is not "
-literal|"supported by gnome-appearance-properties.\n"
+literal|"or more frames whose nominal size is not supported by "
+literal|"GNOME settings.\n"
 literal|"You can satisfy it by checking \"Replace the size of all "
-literal|"frame...\" in the save dialog, or your cursor may not appear "
-literal|"in gnome-appearance-properties."
+literal|"frames...\" in the save dialog, or your cursor may not "
+literal|"appear in GNOME settings."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8633,8 +8634,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"The parasite \"%s\" is too long for X cursor.\n"
-literal|"The overflowed string was dropped."
+literal|"The parasite \"%s\" is too long for an X cursor "
+literal|"comment. It was cut off to fit."
 argument_list|)
 argument_list|,
 name|gimp_any_to_utf8
@@ -9241,7 +9242,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2b9465220308
+DECL|struct|__anon2bf814510308
 block|{
 DECL|member|size
 name|guint32
