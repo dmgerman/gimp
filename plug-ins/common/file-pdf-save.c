@@ -136,7 +136,7 @@ value|120
 end_define
 
 begin_typedef
-DECL|struct|__anon2b52c6d90108
+DECL|struct|__anon277dff700108
 typedef|typedef
 struct|struct
 block|{
@@ -159,7 +159,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b52c6d90208
+DECL|struct|__anon277dff700208
 typedef|typedef
 struct|struct
 block|{
@@ -188,7 +188,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b52c6d90308
+DECL|struct|__anon277dff700308
 typedef|typedef
 struct|struct
 block|{
@@ -208,7 +208,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2b52c6d90403
+DECL|enum|__anon277dff700403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -227,7 +227,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2b52c6d90508
+DECL|struct|__anon277dff700508
 typedef|typedef
 struct|struct
 block|{
@@ -601,7 +601,7 @@ argument_list|()
 end_macro
 
 begin_typedef
-DECL|enum|__anon2b52c6d90603
+DECL|enum|__anon277dff700603
 typedef|typedef
 enum|enum
 block|{
@@ -646,7 +646,7 @@ value|5
 end_define
 
 begin_typedef
-DECL|enum|__anon2b52c6d90703
+DECL|enum|__anon277dff700703
 typedef|typedef
 enum|enum
 block|{
@@ -909,13 +909,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-name|SAVE_MULTI_PROC
-argument_list|,
-literal|"<Image>/File/Create/PDF"
-argument_list|)
-expr_stmt|;
+comment|/*  gimp_plugin_menu_register (SAVE_MULTI_PROC,                              "<Image>/File/Create/PDF"); */
 name|gimp_register_file_handler_mime
 argument_list|(
 name|SAVE_PROC
