@@ -2451,7 +2451,7 @@ operator|=
 name|gimp_image_get_string_untitled
 argument_list|()
 expr_stmt|;
-comment|/* Priority of default type/extension for Export:        *        *   1. Type of last Export        *   3. Type of latest Export of any document        *   2. .png        */
+comment|/* Priority of default type/extension for Export:        *        *   1. Type of last Export        *   2. Type of latest Export of any document        *   3. Type of the image Import        *   4. .png        */
 name|ext_uri
 operator|=
 name|gimp_image_get_exported_uri
@@ -2474,6 +2474,18 @@ name|gimp
 argument_list|)
 argument_list|,
 name|GIMP_FILE_EXPORT_LAST_URI_KEY
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|ext_uri
+condition|)
+name|ext_uri
+operator|=
+name|gimp_image_get_imported_uri
+argument_list|(
+name|image
 argument_list|)
 expr_stmt|;
 if|if
