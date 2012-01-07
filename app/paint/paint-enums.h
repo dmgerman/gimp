@@ -68,7 +68,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b42c93f0103
+DECL|enum|__anon28a72eef0103
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -107,7 +107,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b42c93f0203
+DECL|enum|__anon28a72eef0203
 block|{
 DECL|enumerator|GIMP_PERSPECTIVE_CLONE_MODE_ADJUST
 name|GIMP_PERSPECTIVE_CLONE_MODE_ADJUST
@@ -144,7 +144,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b42c93f0303
+DECL|enum|__anon28a72eef0303
 block|{
 DECL|enumerator|GIMP_SOURCE_ALIGN_NO
 name|GIMP_SOURCE_ALIGN_NO
@@ -188,7 +188,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b42c93f0403
+DECL|enum|__anon28a72eef0403
 block|{
 DECL|enumerator|GIMP_BLUR_CONVOLVE
 name|GIMP_BLUR_CONVOLVE
@@ -229,16 +229,19 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b42c93f0503
+DECL|enum|__anon28a72eef0503
 block|{
 DECL|enumerator|GIMP_INK_BLOB_TYPE_CIRCLE
 name|GIMP_INK_BLOB_TYPE_CIRCLE
 block|,
+comment|/*< desc="Circle">*/
 DECL|enumerator|GIMP_INK_BLOB_TYPE_SQUARE
 name|GIMP_INK_BLOB_TYPE_SQUARE
 block|,
+comment|/*< desc="Square">*/
 DECL|enumerator|GIMP_INK_BLOB_TYPE_DIAMOND
 name|GIMP_INK_BLOB_TYPE_DIAMOND
+comment|/*< desc="Diamond">*/
 DECL|typedef|GimpInkBlobType
 block|}
 name|GimpInkBlobType
@@ -253,7 +256,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip, pdb-skip>*/
-DECL|enum|__anon2b42c93f0603
+DECL|enum|__anon28a72eef0603
 block|{
 DECL|enumerator|GIMP_PAINT_STATE_INIT
 name|GIMP_PAINT_STATE_INIT
