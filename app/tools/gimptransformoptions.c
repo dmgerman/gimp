@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a4c55b0103
+DECL|enum|__anon2c09b6530103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -446,10 +446,7 @@ name|PROP_CONSTRAIN
 argument_list|,
 literal|"constrain"
 argument_list|,
-name|N_
-argument_list|(
-literal|"Limit rotation steps to 15 degrees"
-argument_list|)
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
@@ -941,7 +938,14 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|constrain
+name|constrain_label
+init|=
+name|NULL
+decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|constrain_tip
 init|=
 name|NULL
 decl_stmt|;
@@ -1417,14 +1421,19 @@ operator|==
 name|GIMP_TYPE_ROTATE_TOOL
 condition|)
 block|{
-name|constrain
+name|constrain_label
 operator|=
-operator|(
 name|_
 argument_list|(
 literal|"15 degrees  (%s)"
 argument_list|)
-operator|)
+expr_stmt|;
+name|constrain_tip
+operator|=
+name|_
+argument_list|(
+literal|"Limit rotation steps to 15 degrees"
+argument_list|)
 expr_stmt|;
 block|}
 elseif|else
@@ -1439,19 +1448,24 @@ operator|==
 name|GIMP_TYPE_SCALE_TOOL
 condition|)
 block|{
-name|constrain
+name|constrain_label
 operator|=
-operator|(
 name|_
 argument_list|(
 literal|"Keep aspect  (%s)"
 argument_list|)
-operator|)
+expr_stmt|;
+name|constrain_tip
+operator|=
+name|_
+argument_list|(
+literal|"Keep the original aspect ratio"
+argument_list|)
 expr_stmt|;
 block|}
 if|if
 condition|(
-name|constrain
+name|constrain_label
 condition|)
 block|{
 name|GtkWidget
@@ -1474,7 +1488,7 @@ name|label
 operator|=
 name|g_strdup_printf
 argument_list|(
-name|constrain
+name|constrain_label
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
@@ -1512,6 +1526,15 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|button
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|button
+argument_list|,
+name|constrain_tip
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_free
