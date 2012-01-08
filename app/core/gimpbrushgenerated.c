@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0be85a0103
+DECL|enum|__anon2b65398a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1203,7 +1203,11 @@ name|brush
 operator|->
 name|radius
 operator|*
+operator|(
 name|scale
+operator|/
+literal|2
+operator|)
 argument_list|,
 name|brush
 operator|->
@@ -1356,7 +1360,11 @@ name|brush
 operator|->
 name|radius
 operator|*
+operator|(
 name|scale
+operator|/
+literal|2
+operator|)
 argument_list|,
 name|brush
 operator|->
