@@ -77,7 +77,7 @@ end_comment
 begin_function
 name|GimpHelpItem
 modifier|*
-DECL|function|gimp_help_item_new (const gchar * ref,const gchar * title,const gchar * parent)
+DECL|function|gimp_help_item_new (const gchar * ref,const gchar * title,const gchar * sort,const gchar * parent)
 name|gimp_help_item_new
 parameter_list|(
 specifier|const
@@ -89,6 +89,11 @@ specifier|const
 name|gchar
 modifier|*
 name|title
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|sort
 parameter_list|,
 specifier|const
 name|gchar
@@ -121,6 +126,15 @@ operator|=
 name|g_strdup
 argument_list|(
 name|title
+argument_list|)
+expr_stmt|;
+name|item
+operator|->
+name|sort
+operator|=
+name|g_strdup
+argument_list|(
+name|sort
 argument_list|)
 expr_stmt|;
 name|item
@@ -160,6 +174,13 @@ argument_list|(
 name|item
 operator|->
 name|title
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|item
+operator|->
+name|sort
 argument_list|)
 expr_stmt|;
 name|g_free

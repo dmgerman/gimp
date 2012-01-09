@@ -31,6 +31,12 @@ name|gchar
 modifier|*
 name|title
 decl_stmt|;
+DECL|member|sort
+name|gchar
+modifier|*
+name|sort
+decl_stmt|;
+comment|/* optional sort key provided by doc team */
 DECL|member|parent
 name|gchar
 modifier|*
@@ -43,7 +49,7 @@ modifier|*
 name|children
 decl_stmt|;
 DECL|member|index
-name|gint
+name|gulong
 name|index
 decl_stmt|;
 block|}
@@ -64,6 +70,11 @@ specifier|const
 name|gchar
 modifier|*
 name|title
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|sort
 parameter_list|,
 specifier|const
 name|gchar

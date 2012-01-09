@@ -281,7 +281,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e11a580103
+DECL|enum|__anon27bb85010103
 block|{
 DECL|enumerator|LOCALE_START
 name|LOCALE_START
@@ -306,7 +306,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e11a580208
+DECL|struct|__anon27bb85010208
 block|{
 DECL|member|file
 name|GFile
@@ -1747,6 +1747,14 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
+name|sort
+init|=
+name|NULL
+decl_stmt|;
+comment|/* optional sort key provided by doc team */
+specifier|const
+name|gchar
+modifier|*
 name|parent
 init|=
 name|NULL
@@ -1825,6 +1833,22 @@ argument_list|(
 operator|*
 name|names
 argument_list|,
+literal|"sort"
+argument_list|)
+condition|)
+name|sort
+operator|=
+operator|*
+name|values
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|strcmp
+argument_list|(
+operator|*
+name|names
+argument_list|,
 literal|"parent"
 argument_list|)
 condition|)
@@ -1888,6 +1912,8 @@ argument_list|(
 name|ref
 argument_list|,
 name|title
+argument_list|,
+name|sort
 argument_list|,
 name|parent
 argument_list|)
