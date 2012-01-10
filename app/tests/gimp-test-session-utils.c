@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b86df1a0108
+DECL|struct|__anon275f9d460108
 block|{
 DECL|member|filename
 name|gchar
@@ -554,12 +554,6 @@ name|dockrc_filename
 init|=
 name|NULL
 decl_stmt|;
-name|gchar
-modifier|*
-name|gimprc_filename
-init|=
-name|NULL
-decl_stmt|;
 comment|/* Make sure to run this before we use any GIMP functions */
 name|gimp_test_utils_set_gimp2_directory
 argument_list|(
@@ -631,39 +625,12 @@ comment|/*overwrite*/
 argument_list|)
 expr_stmt|;
 comment|/* Start up GIMP */
-if|if
-condition|(
-name|single_window_mode
-condition|)
-block|{
-name|gimprc_filename
-operator|=
-name|g_build_filename
-argument_list|(
-name|g_getenv
-argument_list|(
-literal|"GIMP_TESTING_ABS_TOP_SRCDIR"
-argument_list|)
-argument_list|,
-literal|"app/tests/gimpdir/gimprc-single-window"
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-block|}
 name|gimp
 operator|=
-name|gimp_init_for_gui_testing_with_rc
+name|gimp_init_for_gui_testing
 argument_list|(
 name|TRUE
 comment|/*show_gui*/
-argument_list|,
-name|gimprc_filename
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|gimprc_filename
 argument_list|)
 expr_stmt|;
 comment|/* Let the main loop run until idle to let things stabilize. This    * includes parsing sessionrc and dockrc    */
