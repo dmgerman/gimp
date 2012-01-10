@@ -1089,12 +1089,6 @@ init|=
 name|gimp_dialog_factory_get_singleton
 argument_list|()
 decl_stmt|;
-name|GimpSessionInfo
-modifier|*
-name|info
-init|=
-name|NULL
-decl_stmt|;
 name|gboolean
 name|toolbox_found
 init|=
@@ -1105,23 +1099,16 @@ modifier|*
 name|iter
 decl_stmt|;
 comment|/* First look in session managed windows */
-name|info
+name|toolbox_found
 operator|=
-name|gimp_dialog_factory_find_session_info
+name|gimp_dialog_factory_find_widget
 argument_list|(
 name|factory
 argument_list|,
 literal|"gimp-toolbox-window"
 argument_list|)
-expr_stmt|;
-name|toolbox_found
-operator|=
-name|info
-operator|&&
-name|gimp_session_info_get_widget
-argument_list|(
-name|info
-argument_list|)
+operator|!=
+name|NULL
 expr_stmt|;
 comment|/* Then in image windows */
 if|if

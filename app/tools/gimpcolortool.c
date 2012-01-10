@@ -199,7 +199,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2ddfcc0103
+DECL|enum|__anon2999075b0103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -2443,9 +2443,9 @@ operator|==
 name|GIMP_COLOR_PICK_MODE_BACKGROUND
 condition|)
 block|{
-name|GimpSessionInfo
+name|GtkWidget
 modifier|*
-name|info
+name|widget
 decl_stmt|;
 if|if
 condition|(
@@ -2455,9 +2455,9 @@ name|sample_type
 argument_list|)
 condition|)
 block|{
-name|info
+name|widget
 operator|=
-name|gimp_dialog_factory_find_session_info
+name|gimp_dialog_factory_find_widget
 argument_list|(
 name|gimp_dialog_factory_get_singleton
 argument_list|()
@@ -2467,12 +2467,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|info
-operator|&&
-name|gimp_session_info_get_widget
-argument_list|(
-name|info
-argument_list|)
+name|widget
 condition|)
 block|{
 name|GimpColormapEditor
@@ -2487,10 +2482,7 @@ name|gtk_bin_get_child
 argument_list|(
 name|GTK_BIN
 argument_list|(
-name|gimp_session_info_get_widget
-argument_list|(
-name|info
-argument_list|)
+name|widget
 argument_list|)
 argument_list|)
 argument_list|)
@@ -2511,9 +2503,9 @@ condition|(
 name|TRUE
 condition|)
 block|{
-name|info
+name|widget
 operator|=
-name|gimp_dialog_factory_find_session_info
+name|gimp_dialog_factory_find_widget
 argument_list|(
 name|gimp_dialog_factory_get_singleton
 argument_list|()
@@ -2523,12 +2515,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|info
-operator|&&
-name|gimp_session_info_get_widget
-argument_list|(
-name|info
-argument_list|)
+name|widget
 condition|)
 block|{
 name|GimpPaletteEditor
@@ -2546,10 +2533,7 @@ name|gtk_bin_get_child
 argument_list|(
 name|GTK_BIN
 argument_list|(
-name|gimp_session_info_get_widget
-argument_list|(
-name|info
-argument_list|)
+name|widget
 argument_list|)
 argument_list|)
 argument_list|)
