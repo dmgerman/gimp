@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29960c650103
+DECL|enum|__anon29ace3530103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -1577,11 +1577,15 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_dialog_factory_dialog_new_internal:  * @factory:  * @screen:  * @context:  * @ui_manager:  * @identifier:  * @view_size:  * @return_existing:   If %TRUE, (or if the dialog is a singleton),  *                     don't create a new dialog if it exists, instead  *                     return the existing one  * @present:           If %TRUE, the toplevel that contains the dialog (if any)  *                     will be gtk_window_present():ed  * @create_containers: If %TRUE, then containers for the  *                     dialog/dockable will be created as well. If you  *                     want to manage your own containers, pass %FALSE  *  * This is the lowest level dialog factory creation function.  *  * Returns: A created or existing #GtkWidget.  **/
+end_comment
+
 begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_factory_dialog_new_internal (GimpDialogFactory * factory,GdkScreen * screen,GimpContext * context,GimpUIManager * ui_manager,const gchar * identifier,gint view_size,gboolean return_existing,gboolean present)
+DECL|function|gimp_dialog_factory_dialog_new_internal (GimpDialogFactory * factory,GdkScreen * screen,GimpContext * context,GimpUIManager * ui_manager,const gchar * identifier,gint view_size,gboolean return_existing,gboolean present,gboolean create_containers)
 name|gimp_dialog_factory_dialog_new_internal
 parameter_list|(
 name|GimpDialogFactory
@@ -1613,6 +1617,9 @@ name|return_existing
 parameter_list|,
 name|gboolean
 name|present
+parameter_list|,
+name|gboolean
+name|create_containers
 parameter_list|)
 block|{
 name|GimpDialogFactoryEntry
@@ -1740,23 +1747,10 @@ name|dock_window
 init|=
 name|NULL
 decl_stmt|;
-name|gboolean
-name|called_from_raise
-init|=
-name|FALSE
-decl_stmt|;
-name|called_from_raise
-operator|=
-operator|(
-name|context
-operator|==
-name|NULL
-operator|)
-expr_stmt|;
 comment|/* What follows is special-case code for some entires. At some        * point we might want to abstract this block of code away.        */
 if|if
 condition|(
-name|called_from_raise
+name|create_containers
 condition|)
 block|{
 if|if
@@ -2393,8 +2387,12 @@ argument_list|,
 name|view_size
 argument_list|,
 name|FALSE
+comment|/*return_existing*/
 argument_list|,
 name|present
+argument_list|,
+name|FALSE
+comment|/*create_containers*/
 argument_list|)
 return|;
 block|}
@@ -2717,8 +2715,13 @@ argument_list|,
 name|view_size
 argument_list|,
 name|TRUE
+comment|/*return_existing*/
 argument_list|,
 name|TRUE
+comment|/*present*/
+argument_list|,
+name|TRUE
+comment|/*create_containers*/
 argument_list|)
 expr_stmt|;
 name|g_strfreev
@@ -2816,8 +2819,13 @@ argument_list|,
 name|view_size
 argument_list|,
 name|FALSE
+comment|/*return_existing*/
 argument_list|,
 name|FALSE
+comment|/*present*/
+argument_list|,
+name|FALSE
+comment|/*create_containers*/
 argument_list|)
 return|;
 block|}
