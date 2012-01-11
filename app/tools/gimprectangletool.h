@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2961283c0103
+DECL|enum|__anon2b6a2d890103
 block|{
 DECL|enumerator|GIMP_RECTANGLE_TOOL_PROP_0
 name|GIMP_RECTANGLE_TOOL_PROP_0
@@ -58,7 +58,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2961283c0203
+DECL|enum|__anon2b6a2d890203
 block|{
 DECL|enumerator|GIMP_RECTANGLE_TOOL_INACTIVE
 name|GIMP_RECTANGLE_TOOL_INACTIVE
@@ -95,6 +95,9 @@ name|GIMP_RECTANGLE_TOOL_RESIZING_TOP
 block|,
 DECL|enumerator|GIMP_RECTANGLE_TOOL_RESIZING_BOTTOM
 name|GIMP_RECTANGLE_TOOL_RESIZING_BOTTOM
+block|,
+DECL|enumerator|GIMP_RECTANGLE_TOOL_AUTO_SHRINK
+name|GIMP_RECTANGLE_TOOL_AUTO_SHRINK
 block|,
 DECL|enumerator|GIMP_RECTANGLE_TOOL_EXECUTING
 name|GIMP_RECTANGLE_TOOL_EXECUTING
