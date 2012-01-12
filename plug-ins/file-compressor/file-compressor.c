@@ -548,7 +548,7 @@ literal|"file-gz-load"
 block|,
 literal|"loads files compressed with gzip"
 block|,
-literal|"You need to have gzip installed."
+literal|"This procedure loads files in the gzip compressed format."
 block|,
 name|gzip_load
 block|,
@@ -556,7 +556,7 @@ literal|"file-gz-save"
 block|,
 literal|"saves files compressed with gzip"
 block|,
-literal|"You need to have gzip installed."
+literal|"This procedure saves files in the gzip compressed format."
 block|,
 name|gzip_save
 block|}
@@ -581,7 +581,7 @@ literal|"file-bz2-load"
 block|,
 literal|"loads files compressed with bzip2"
 block|,
-literal|"You need to have bzip2 installed."
+literal|"This procedure loads files in the bzip2 compressed format."
 block|,
 name|bzip2_load
 block|,
@@ -589,7 +589,7 @@ literal|"file-bz2-save"
 block|,
 literal|"saves files compressed with bzip2"
 block|,
-literal|"You need to have bzip2 installed"
+literal|"This procedure saves files in the bzip2 compressed format."
 block|,
 name|bzip2_save
 block|}
