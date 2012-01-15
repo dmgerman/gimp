@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b56eea70103
+DECL|enum|__anon2be1ee7a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1388,11 +1388,6 @@ argument_list|,
 name|frame
 operator|->
 name|number_layout
-argument_list|)
-expr_stmt|;
-name|cairo_fill
-argument_list|(
-name|cr
 argument_list|)
 expr_stmt|;
 name|cairo_destroy
