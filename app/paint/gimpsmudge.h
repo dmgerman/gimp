@@ -122,6 +122,10 @@ name|guchar
 modifier|*
 name|accum_data
 decl_stmt|;
+DECL|member|accum_size
+name|gint
+name|accum_size
+decl_stmt|;
 block|}
 struct|;
 end_struct
