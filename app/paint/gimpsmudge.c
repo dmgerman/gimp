@@ -347,6 +347,12 @@ name|gimp_smudge_paint
 expr_stmt|;
 name|brush_core_class
 operator|->
+name|handles_changing_brush
+operator|=
+name|TRUE
+expr_stmt|;
+name|brush_core_class
+operator|->
 name|handles_transforming_brush
 operator|=
 name|TRUE
