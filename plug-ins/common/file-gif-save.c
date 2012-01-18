@@ -135,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0296cf0103
+DECL|enum|__anon2761d9d60103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -148,7 +148,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0296cf0203
+DECL|enum|__anon2761d9d60203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -165,7 +165,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0296cf0308
+DECL|struct|__anon2761d9d60308
 block|{
 DECL|member|interlace
 name|gint
@@ -8529,6 +8529,11 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+DECL|macro|MAX_COMMENT
+define|#
+directive|define
+name|MAX_COMMENT
+value|240
 if|if
 condition|(
 name|strlen
@@ -8536,9 +8541,10 @@ argument_list|(
 name|text
 argument_list|)
 operator|>
-literal|240
+name|MAX_COMMENT
 condition|)
 block|{
+comment|/* translators: the %d is *always* 240 here */
 name|g_message
 argument_list|(
 name|_
@@ -8546,7 +8552,7 @@ argument_list|(
 literal|"The default comment is limited to %d characters."
 argument_list|)
 argument_list|,
-literal|240
+name|MAX_COMMENT
 argument_list|)
 expr_stmt|;
 name|gtk_text_buffer_get_iter_at_offset
@@ -8556,7 +8562,7 @@ argument_list|,
 operator|&
 name|start_iter
 argument_list|,
-literal|240
+name|MAX_COMMENT
 operator|-
 literal|1
 argument_list|)

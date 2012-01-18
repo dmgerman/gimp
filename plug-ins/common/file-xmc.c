@@ -320,7 +320,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf814510108
+DECL|struct|__anon294226310108
 block|{
 DECL|member|crop
 name|gboolean
@@ -851,7 +851,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bf814510208
+DECL|struct|__anon294226310208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -9242,7 +9242,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2bf814510308
+DECL|struct|__anon294226310308
 block|{
 DECL|member|size
 name|guint32
@@ -9320,7 +9320,6 @@ operator|>
 name|MAX_SIZE_NUM
 condition|)
 block|{
-comment|/* the number of different nominal size is over MAX_SIZE_NUM! */
 name|g_set_error
 argument_list|(
 name|errorp
@@ -9329,6 +9328,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+comment|/* translators: the %i is *always* 8 here */
 name|_
 argument_list|(
 literal|"Sorry, this plug-in cannot handle a cursor "
