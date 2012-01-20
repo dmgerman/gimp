@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbc07fd0103
+DECL|enum|__anon2af205310103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -1451,7 +1451,7 @@ if|if
 condition|(
 name|scale
 operator|<
-literal|0.0001
+literal|0.0000001
 condition|)
 return|return
 name|FALSE
