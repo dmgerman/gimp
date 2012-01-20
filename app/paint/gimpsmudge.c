@@ -1537,10 +1537,10 @@ argument_list|(
 name|paint_options
 operator|->
 name|brush_size
+argument_list|)
+argument_list|)
 operator|+
-literal|1
-argument_list|)
-argument_list|)
+literal|2
 argument_list|)
 expr_stmt|;
 block|}
