@@ -78,81 +78,23 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-end_ifdef
-
-begin_comment
-comment|/* On Win32 we don't use pipes. Use a real output file for ghostscript */
-end_comment
-
-begin_define
-DECL|macro|USE_REAL_OUTPUTFILE
-define|#
-directive|define
-name|USE_REAL_OUTPUTFILE
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|USE_REAL_OUTPUTFILE
-end_ifdef
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-end_ifdef
+begin_include
+include|#
+directive|include
+file|<ghostscript/ierrors.h>
+end_include
 
 begin_include
 include|#
 directive|include
-file|<process.h>
+file|<ghostscript/iapi.h>
 end_include
-
-begin_comment
-comment|/* For _getpid() */
-end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_SYS_WAIT_H
-end_ifdef
 
 begin_include
 include|#
 directive|include
-file|<sys/wait.h>
+file|<ghostscript/gdevdsp.h>
 end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_define
 DECL|macro|VERSIO
@@ -254,42 +196,6 @@ name|STR_LENGTH
 value|64
 end_define
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|G_OS_WIN32
-end_ifndef
-
-begin_define
-DECL|macro|DEFAULT_GS_PROG
-define|#
-directive|define
-name|DEFAULT_GS_PROG
-value|"gs"
-end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_comment
-comment|/* We want the console ghostscript application. It should be in the PATH */
-end_comment
-
-begin_define
-DECL|macro|DEFAULT_GS_PROG
-define|#
-directive|define
-name|DEFAULT_GS_PROG
-value|"gswin32c"
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_comment
 comment|/* Load info */
 end_comment
@@ -297,7 +203,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b4ea160108
+DECL|struct|__anon28e4e7780108
 block|{
 DECL|member|resolution
 name|guint
@@ -408,7 +314,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b4ea160208
+DECL|struct|__anon28e4e7780208
 block|{
 DECL|member|width
 DECL|member|height
@@ -815,10 +721,6 @@ parameter_list|,
 name|gboolean
 modifier|*
 name|is_epsf
-parameter_list|,
-name|gint
-modifier|*
-name|ChildPid
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -831,9 +733,6 @@ parameter_list|(
 name|FILE
 modifier|*
 name|ifp
-parameter_list|,
-name|gint
-name|ChildPid
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1039,7 +938,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b4ea160308
+DECL|struct|__anon28e4e7780308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1908,7 +1807,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b4ea160408
+DECL|struct|__anon28e4e7780408
 block|{
 DECL|member|eol
 name|long
@@ -4152,9 +4051,6 @@ decl_stmt|;
 name|guint
 name|page_count
 decl_stmt|;
-name|gint
-name|ChildPid
-decl_stmt|;
 name|FILE
 modifier|*
 name|ifp
@@ -4337,9 +4233,6 @@ name|ury
 argument_list|,
 operator|&
 name|is_epsf
-argument_list|,
-operator|&
-name|ChildPid
 argument_list|)
 expr_stmt|;
 if|if
@@ -4659,8 +4552,6 @@ block|}
 name|ps_close
 argument_list|(
 name|ifp
-argument_list|,
-name|ChildPid
 argument_list|)
 expr_stmt|;
 if|if
@@ -6381,7 +6272,7 @@ begin_function
 specifier|static
 name|FILE
 modifier|*
-DECL|function|ps_open (const gchar * filename,const PSLoadVals * loadopt,gint * llx,gint * lly,gint * urx,gint * ury,gboolean * is_epsf,gint * ChildPidPtr)
+DECL|function|ps_open (const gchar * filename,const PSLoadVals * loadopt,gint * llx,gint * lly,gint * urx,gint * ury,gboolean * is_epsf)
 name|ps_open
 parameter_list|(
 specifier|const
@@ -6413,17 +6304,8 @@ parameter_list|,
 name|gboolean
 modifier|*
 name|is_epsf
-parameter_list|,
-name|gint
-modifier|*
-name|ChildPidPtr
 parameter_list|)
 block|{
-specifier|const
-name|gchar
-modifier|*
-name|gs
-decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
@@ -6483,28 +6365,13 @@ name|maybe_epsf
 init|=
 name|FALSE
 decl_stmt|;
-name|GError
+name|int
+name|code
+decl_stmt|;
+name|void
 modifier|*
-name|error
-init|=
-name|NULL
+name|instance
 decl_stmt|;
-name|GSpawnFlags
-name|flags
-decl_stmt|;
-ifndef|#
-directive|ifndef
-name|USE_REAL_OUTPUTFILE
-name|gint
-name|ChildStdout
-decl_stmt|;
-endif|#
-directive|endif
-operator|*
-name|ChildPidPtr
-operator|=
-literal|0
-expr_stmt|;
 name|resolution
 operator|=
 name|loadopt
@@ -7042,52 +6909,13 @@ literal|"ppmraw"
 expr_stmt|;
 break|break;
 block|}
-ifdef|#
-directive|ifdef
-name|USE_REAL_OUTPUTFILE
 comment|/* For instance, the Win32 port of ghostscript doesn't work correctly when    * using standard output as output file.    * Thus, use a real output file.    */
 name|pnmfile
 operator|=
-name|g_strdup_printf
+name|gimp_temp_name
 argument_list|(
-literal|"%s"
-name|G_DIR_SEPARATOR_S
-literal|"p%lx"
-argument_list|,
-name|g_get_tmp_dir
-argument_list|()
-argument_list|,
-operator|(
-name|gulong
-operator|)
-name|getpid
-argument_list|()
+literal|"pnm"
 argument_list|)
-expr_stmt|;
-else|#
-directive|else
-name|pnmfile
-operator|=
-literal|"-"
-expr_stmt|;
-endif|#
-directive|endif
-name|gs
-operator|=
-name|g_getenv
-argument_list|(
-literal|"GS_PROG"
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|gs
-operator|==
-name|NULL
-condition|)
-name|gs
-operator|=
-name|DEFAULT_GS_PROG
 expr_stmt|;
 comment|/* Build command array */
 name|cmdA
@@ -7101,7 +6929,8 @@ name|cmdA
 argument_list|,
 name|g_strdup
 argument_list|(
-name|gs
+name|g_get_prgname
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7452,7 +7281,13 @@ name|pcmdA
 decl_stmt|;
 name|g_print
 argument_list|(
-literal|"Starting command:\n"
+literal|"Passing args (argc=%d):\n"
+argument_list|,
+name|cmdA
+operator|->
+name|len
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 while|while
@@ -7476,179 +7311,50 @@ block|}
 block|}
 endif|#
 directive|endif
-comment|/* Start the command */
-ifndef|#
-directive|ifndef
-name|USE_REAL_OUTPUTFILE
-name|flags
+name|code
 operator|=
-name|G_SPAWN_SEARCH_PATH
-operator||
-name|G_SPAWN_DO_NOT_REAP_CHILD
+name|gsapi_new_instance
+argument_list|(
+operator|&
+name|instance
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|g_spawn_async_with_pipes
-argument_list|(
-name|NULL
-argument_list|,
-comment|/* working dir */
-name|pcmdA
-argument_list|,
-comment|/* command array */
-name|NULL
-argument_list|,
-comment|/* environment */
-name|flags
-argument_list|,
-comment|/* Flags */
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-comment|/* Child setup and userdata */
-name|ChildPidPtr
-argument_list|,
-name|NULL
-argument_list|,
-comment|/* stdin */
-operator|&
-name|ChildStdout
-argument_list|,
-name|NULL
-argument_list|,
-comment|/* stderr */
-operator|&
-name|error
-argument_list|)
-condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Error starting Ghostscript. Make sure that Ghostscript "
-literal|"is installed and - if necessary - use the environment "
-literal|"variable GS_PROG to tell GIMP about its location.\n(%s)"
-argument_list|)
-argument_list|,
-name|error
-operator|->
-name|message
-argument_list|)
-expr_stmt|;
-name|g_error_free
-argument_list|(
-name|error
-argument_list|)
-expr_stmt|;
-operator|*
-name|ChildPidPtr
-operator|=
+name|code
+operator|==
 literal|0
-expr_stmt|;
-goto|goto
-name|out
-goto|;
-block|}
-ifdef|#
-directive|ifdef
-name|PS_DEBUG
-name|g_print
-argument_list|(
-literal|"Ghostscript started with pid=%d\n"
-argument_list|,
-operator|*
-name|ChildPidPtr
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* Get a file pointer from the descriptor */
-name|fd_popen
-operator|=
-name|fdopen
-argument_list|(
-name|ChildStdout
-argument_list|,
-literal|"rb"
-argument_list|)
-expr_stmt|;
-else|#
-directive|else
-comment|/* Use a real outputfile. Wait until ghostscript has finished */
-name|flags
-operator|=
-name|G_SPAWN_SEARCH_PATH
-operator||
-name|G_SPAWN_STDOUT_TO_DEV_NULL
-operator||
-name|G_SPAWN_STDERR_TO_DEV_NULL
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|g_spawn_sync
-argument_list|(
-name|NULL
-argument_list|,
-comment|/* working dir */
-name|pcmdA
-argument_list|,
-comment|/* command array */
-name|NULL
-argument_list|,
-comment|/* environment */
-name|flags
-argument_list|,
-comment|/* Flags */
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-comment|/* Child setup and userdata */
-name|NULL
-argument_list|,
-comment|/* stdout */
-name|NULL
-argument_list|,
-comment|/* stderr */
-name|NULL
-argument_list|,
-comment|/* exit code */
-operator|&
-name|error
-argument_list|)
 condition|)
 block|{
-name|g_message
+name|code
+operator|=
+name|gsapi_init_with_args
 argument_list|(
-name|_
-argument_list|(
-literal|"Error starting Ghostscript. Make sure that Ghostscript "
-literal|"is installed and - if necessary - use the environment "
-literal|"variable GS_PROG to tell GIMP about its location.\n(%s)"
-argument_list|)
+name|instance
 argument_list|,
-name|error
+name|cmdA
 operator|->
-name|message
+name|len
+operator|-
+literal|1
+argument_list|,
+name|pcmdA
 argument_list|)
 expr_stmt|;
-name|g_error_free
+name|code
+operator|=
+name|gsapi_exit
 argument_list|(
-name|error
+name|instance
 argument_list|)
 expr_stmt|;
-name|g_unlink
+name|gsapi_delete_instance
 argument_list|(
-name|pnmfile
+name|instance
 argument_list|)
 expr_stmt|;
-goto|goto
-name|out
-goto|;
 block|}
 comment|/* Don't care about exit status of ghostscript. */
 comment|/* Just try to read what it wrote. */
@@ -7661,10 +7367,6 @@ argument_list|,
 literal|"rb"
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
-name|out
-label|:
 name|g_ptr_array_free
 argument_list|(
 name|cmdA
@@ -7690,132 +7392,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|ps_close (FILE * ifp,gint ChildPid)
+DECL|function|ps_close (FILE * ifp)
 name|ps_close
 parameter_list|(
 name|FILE
 modifier|*
 name|ifp
-parameter_list|,
-name|gint
-name|ChildPid
 parameter_list|)
 block|{
-ifndef|#
-directive|ifndef
-name|USE_REAL_OUTPUTFILE
-name|int
-name|status
-decl_stmt|;
-name|pid_t
-name|RetVal
-decl_stmt|;
-comment|/* Enabling the code below causes us to read the pipe until EOF even    * if we dont want all images. Should be enabled if people report that    * the gs subprocess does not finish. For now it is disabled since it    * causes a significant slowdown.    */
-ifdef|#
-directive|ifdef
-name|EMPTY_PIPE
-name|guchar
-name|buf
-index|[
-literal|8192
-index|]
-decl_stmt|;
-ifdef|#
-directive|ifdef
-name|PS_DEBUG
-name|g_print
-argument_list|(
-literal|"Reading rest from pipe\n"
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
-while|while
-condition|(
-name|fread
-argument_list|(
-name|buf
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|buf
-argument_list|)
-argument_list|,
-literal|1
-argument_list|,
-name|ifp
-argument_list|)
-condition|)
-empty_stmt|;
-endif|#
-directive|endif
-comment|/*  EMPTY_PIPE  */
-comment|/* Finish reading from pipe. */
-name|fclose
-argument_list|(
-name|ifp
-argument_list|)
-expr_stmt|;
-comment|/* Wait for the child to exit */
-if|if
-condition|(
-name|ChildPid
-condition|)
-block|{
-ifdef|#
-directive|ifdef
-name|PS_DEBUG
-name|g_print
-argument_list|(
-literal|"Waiting for %d to finish\n"
-argument_list|,
-operator|(
-name|int
-operator|)
-name|ChildPid
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
-name|RetVal
-operator|=
-name|waitpid
-argument_list|(
-name|ChildPid
-argument_list|,
-operator|&
-name|status
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-ifdef|#
-directive|ifdef
-name|PS_DEBUG
-if|if
-condition|(
-name|RetVal
-operator|==
-operator|-
-literal|1
-condition|)
-name|g_print
-argument_list|(
-literal|"waitpid() failed\n"
-argument_list|)
-expr_stmt|;
-else|else
-name|g_print
-argument_list|(
-literal|"child has finished\n"
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
-block|}
-else|#
-directive|else
-comment|/*  USE_REAL_OUTPUTFILE  */
 comment|/* If a real outputfile was used, close the file and remove it. */
 name|fclose
 argument_list|(
@@ -7827,8 +7411,6 @@ argument_list|(
 name|pnmfile
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 block|}
 end_function
 
@@ -7915,12 +7497,9 @@ return|return
 operator|-
 literal|1
 return|;
-if|#
-directive|if
-name|defined
-argument_list|(
-name|WIN32
-argument_list|)
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
 if|if
 condition|(
 name|thrd
