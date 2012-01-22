@@ -930,7 +930,7 @@ argument_list|)
 condition|)
 name|g_printerr
 argument_list|(
-literal|">> MEEPITY %d,%d<<\n"
+literal|">> MEEPITY %u,%d<<\n"
 argument_list|,
 name|tile
 operator|->

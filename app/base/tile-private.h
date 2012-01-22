@@ -74,7 +74,7 @@ name|write_count
 decl_stmt|;
 comment|/* write count: number of references that are                            for write access */
 DECL|member|share_count
-name|gshort
+name|guint
 name|share_count
 decl_stmt|;
 comment|/* share count: number of tile managers that                            hold this tile */

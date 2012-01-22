@@ -850,7 +850,7 @@ directive|ifdef
 name|TILE_DEBUG
 name|g_printerr
 argument_list|(
-literal|"tile_detach: %p ~> (%p,%d) r%d *%d\n"
+literal|"tile_detach: %p ~> (%p,%d) r%d *%u\n"
 argument_list|,
 name|tile
 argument_list|,
