@@ -87,6 +87,30 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_struct
+DECL|struct|_GimpToolPresetEditorPrivate
+struct|struct
+name|_GimpToolPresetEditorPrivate
+block|{
+DECL|member|tool_preset_model
+name|GimpToolPreset
+modifier|*
+name|tool_preset_model
+decl_stmt|;
+DECL|member|tool_icon
+name|GtkWidget
+modifier|*
+name|tool_icon
+decl_stmt|;
+DECL|member|tool_label
+name|GtkWidget
+modifier|*
+name|tool_label
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -262,6 +286,16 @@ argument_list|(
 literal|"Tool Preset Editor"
 argument_list|)
 expr_stmt|;
+name|g_type_class_add_private
+argument_list|(
+name|klass
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|GimpToolPresetEditorPrivate
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -275,7 +309,21 @@ name|GimpToolPresetEditor
 modifier|*
 name|editor
 parameter_list|)
-block|{ }
+block|{
+name|editor
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|editor
+argument_list|,
+name|GIMP_TYPE_TOOL_PRESET_EDITOR
+argument_list|,
+name|GimpToolPresetEditorPrivate
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_function
@@ -346,6 +394,8 @@ name|preset
 operator|=
 name|editor
 operator|->
+name|priv
+operator|->
 name|tool_preset_model
 operator|=
 name|g_object_new
@@ -409,6 +459,8 @@ argument_list|)
 expr_stmt|;
 name|editor
 operator|->
+name|priv
+operator|->
 name|tool_icon
 operator|=
 name|gtk_image_new
@@ -423,6 +475,8 @@ argument_list|)
 argument_list|,
 name|editor
 operator|->
+name|priv
+operator|->
 name|tool_icon
 argument_list|,
 name|FALSE
@@ -436,10 +490,14 @@ name|gtk_widget_show
 argument_list|(
 name|editor
 operator|->
+name|priv
+operator|->
 name|tool_icon
 argument_list|)
 expr_stmt|;
 name|editor
+operator|->
+name|priv
 operator|->
 name|tool_label
 operator|=
@@ -453,6 +511,8 @@ argument_list|(
 name|GTK_LABEL
 argument_list|(
 name|editor
+operator|->
+name|priv
 operator|->
 name|tool_label
 argument_list|)
@@ -474,6 +534,8 @@ argument_list|)
 argument_list|,
 name|editor
 operator|->
+name|priv
+operator|->
 name|tool_label
 argument_list|,
 name|FALSE
@@ -486,6 +548,8 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|editor
+operator|->
+name|priv
 operator|->
 name|tool_label
 argument_list|)
@@ -894,6 +958,8 @@ if|if
 condition|(
 name|editor
 operator|->
+name|priv
+operator|->
 name|tool_preset_model
 condition|)
 block|{
@@ -901,10 +967,14 @@ name|g_object_unref
 argument_list|(
 name|editor
 operator|->
+name|priv
+operator|->
 name|tool_preset_model
 argument_list|)
 expr_stmt|;
 name|editor
+operator|->
+name|priv
 operator|->
 name|tool_preset_model
 operator|=
@@ -1003,6 +1073,8 @@ expr_stmt|;
 if|if
 condition|(
 name|preset_editor
+operator|->
+name|priv
 operator|->
 name|tool_preset_model
 condition|)
@@ -1137,6 +1209,8 @@ name|g_signal_handlers_block_by_func
 argument_list|(
 name|editor
 operator|->
+name|priv
+operator|->
 name|tool_preset_model
 argument_list|,
 name|gimp_tool_preset_editor_notify_model
@@ -1157,6 +1231,8 @@ name|GIMP_CONFIG
 argument_list|(
 name|editor
 operator|->
+name|priv
+operator|->
 name|tool_preset_model
 argument_list|)
 argument_list|,
@@ -1166,6 +1242,8 @@ expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
 name|editor
+operator|->
+name|priv
 operator|->
 name|tool_preset_model
 argument_list|,
@@ -1177,6 +1255,8 @@ expr_stmt|;
 name|tool_info
 operator|=
 name|editor
+operator|->
+name|priv
 operator|->
 name|tool_preset_model
 operator|->
@@ -1214,6 +1294,8 @@ name|GTK_IMAGE
 argument_list|(
 name|editor
 operator|->
+name|priv
+operator|->
 name|tool_icon
 argument_list|)
 argument_list|,
@@ -1227,6 +1309,8 @@ argument_list|(
 name|GTK_LABEL
 argument_list|(
 name|editor
+operator|->
+name|priv
 operator|->
 name|tool_label
 argument_list|)
@@ -1295,6 +1379,8 @@ name|GIMP_CONFIG
 argument_list|(
 name|editor
 operator|->
+name|priv
+operator|->
 name|tool_preset_model
 argument_list|)
 argument_list|,
@@ -1356,6 +1442,8 @@ name|g_signal_handlers_block_by_func
 argument_list|(
 name|editor
 operator|->
+name|priv
+operator|->
 name|tool_preset_model
 argument_list|,
 name|gimp_tool_preset_editor_notify_model
@@ -1376,6 +1464,8 @@ name|GIMP_CONFIG
 argument_list|(
 name|editor
 operator|->
+name|priv
+operator|->
 name|tool_preset_model
 argument_list|)
 argument_list|,
@@ -1385,6 +1475,8 @@ expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
 name|editor
+operator|->
+name|priv
 operator|->
 name|tool_preset_model
 argument_list|,
