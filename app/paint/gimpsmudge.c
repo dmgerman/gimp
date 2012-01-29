@@ -672,7 +672,7 @@ operator|->
 name|accum_size
 argument_list|)
 expr_stmt|;
-comment|/*  adjust the x and y coordinates to the upper left corner of the accumulator  */
+comment|/*  adjust the x and y coordinates to the upper left corner of the    *  accumulator    */
 name|gimp_smudge_accumulator_coords
 argument_list|(
 name|paint_core
