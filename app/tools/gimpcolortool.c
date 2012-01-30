@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwindowstrategy.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpcanvasitem.h"
 end_include
 
@@ -168,12 +174,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpwindowstrategy.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcoloroptions.h"
 end_include
 
@@ -205,7 +205,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2978b63d0103
+DECL|enum|__anon29d8f9cd0103
 block|{
 DECL|enumerator|PICKED
 name|PICKED

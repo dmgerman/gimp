@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwindowstrategy.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -91,12 +97,6 @@ begin_include
 include|#
 directive|include
 file|"display/gimpdisplayshell.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/gimpwindowstrategy.h"
 end_include
 
 begin_include

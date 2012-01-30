@@ -162,12 +162,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpwindowstrategy.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"dialogs/file-save-dialog.h"
 end_include
 

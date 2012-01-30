@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpwindowstrategy.h"
+file|"widgets/gimpwindowstrategy.h"
 end_include
 
 begin_include

@@ -66,19 +66,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpimagewindow.h"
+file|"widgets/gimpwindowstrategy.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimagewindow.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimpsinglewindowstrategy.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpwindowstrategy.h"
 end_include
 
 begin_function_decl

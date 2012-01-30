@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display-types.h"
+file|"widgets-types.h"
 end_include
 
 begin_include

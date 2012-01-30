@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpmultiwindowstrategy.h"
+file|"widgets/gimpwindowstrategy.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpwindowstrategy.h"
+file|"gimpmultiwindowstrategy.h"
 end_include
 
 begin_function_decl

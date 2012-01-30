@@ -110,15 +110,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpWindowStrategy
-typedef|typedef
-name|struct
-name|_GimpWindowStrategy
-name|GimpWindowStrategy
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpCursorView
 typedef|typedef
 name|struct
