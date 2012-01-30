@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpwindowstrategy.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"dialogs/stroke-dialog.h"
 end_include
 
@@ -1297,8 +1303,22 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|gimp_dialog_factory_dialog_raise
+name|gimp_window_strategy_show_dockable_dialog
 argument_list|(
+name|GIMP_WINDOW_STRATEGY
+argument_list|(
+name|gimp_get_window_strategy
+argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|)
+argument_list|)
+argument_list|,
+name|image
+operator|->
+name|gimp
+argument_list|,
 name|gimp_dialog_factory_get_singleton
 argument_list|()
 argument_list|,
@@ -1308,9 +1328,6 @@ name|widget
 argument_list|)
 argument_list|,
 literal|"gimp-channel-list"
-argument_list|,
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 block|}

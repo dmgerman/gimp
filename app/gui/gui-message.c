@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpwindowstrategy.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui-message.h"
 end_include
 
@@ -122,6 +128,10 @@ specifier|static
 name|gboolean
 name|gui_message_error_console
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpMessageSeverity
 name|severity
 parameter_list|,
@@ -229,6 +239,8 @@ if|if
 condition|(
 name|gui_message_error_console
 argument_list|(
+name|gimp
+argument_list|,
 name|severity
 argument_list|,
 name|domain
@@ -290,9 +302,13 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gui_message_error_console (GimpMessageSeverity severity,const gchar * domain,const gchar * message)
+DECL|function|gui_message_error_console (Gimp * gimp,GimpMessageSeverity severity,const gchar * domain,const gchar * message)
 name|gui_message_error_console
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpMessageSeverity
 name|severity
 parameter_list|,
@@ -352,8 +368,18 @@ name|dockable
 condition|)
 name|dockable
 operator|=
-name|gimp_dialog_factory_dialog_raise
+name|gimp_window_strategy_show_dockable_dialog
 argument_list|(
+name|GIMP_WINDOW_STRATEGY
+argument_list|(
+name|gimp_get_window_strategy
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+argument_list|,
+name|gimp
+argument_list|,
 name|gimp_dialog_factory_get_singleton
 argument_list|()
 argument_list|,
@@ -361,9 +387,6 @@ name|gdk_screen_get_default
 argument_list|()
 argument_list|,
 literal|"gimp-error-console"
-argument_list|,
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 if|if
