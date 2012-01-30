@@ -162,7 +162,7 @@ if|if
 condition|(
 name|value
 condition|)
-name|gimp_window_strategy_create_dockable_dialog
+name|gimp_window_strategy_show_dockable_dialog
 argument_list|(
 name|GIMP_WINDOW_STRATEGY
 argument_list|(

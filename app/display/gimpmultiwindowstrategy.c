@@ -67,7 +67,7 @@ begin_function_decl
 specifier|static
 name|GtkWidget
 modifier|*
-name|gimp_multi_window_strategy_create_dockable_dialog
+name|gimp_multi_window_strategy_show_dockable_dialog
 parameter_list|(
 name|GimpWindowStrategy
 modifier|*
@@ -153,9 +153,9 @@ parameter_list|)
 block|{
 name|iface
 operator|->
-name|create_dockable_dialog
+name|show_dockable_dialog
 operator|=
-name|gimp_multi_window_strategy_create_dockable_dialog
+name|gimp_multi_window_strategy_show_dockable_dialog
 expr_stmt|;
 block|}
 end_function
@@ -164,8 +164,8 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_multi_window_strategy_create_dockable_dialog (GimpWindowStrategy * strategy,Gimp * gimp,GimpDialogFactory * factory,GdkScreen * screen,const gchar * identifiers)
-name|gimp_multi_window_strategy_create_dockable_dialog
+DECL|function|gimp_multi_window_strategy_show_dockable_dialog (GimpWindowStrategy * strategy,Gimp * gimp,GimpDialogFactory * factory,GdkScreen * screen,const gchar * identifiers)
+name|gimp_multi_window_strategy_show_dockable_dialog
 parameter_list|(
 name|GimpWindowStrategy
 modifier|*

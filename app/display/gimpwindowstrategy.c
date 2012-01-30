@@ -129,7 +129,7 @@ name|TRUE
 expr_stmt|;
 name|strategy_iface
 operator|->
-name|create_dockable_dialog
+name|show_dockable_dialog
 operator|=
 name|NULL
 expr_stmt|;
@@ -139,8 +139,8 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_window_strategy_create_dockable_dialog (GimpWindowStrategy * strategy,Gimp * gimp,GimpDialogFactory * factory,GdkScreen * screen,const gchar * identifiers)
-name|gimp_window_strategy_create_dockable_dialog
+DECL|function|gimp_window_strategy_show_dockable_dialog (GimpWindowStrategy * strategy,Gimp * gimp,GimpDialogFactory * factory,GdkScreen * screen,const gchar * identifiers)
+name|gimp_window_strategy_show_dockable_dialog
 parameter_list|(
 name|GimpWindowStrategy
 modifier|*
@@ -189,12 +189,12 @@ if|if
 condition|(
 name|iface
 operator|->
-name|create_dockable_dialog
+name|show_dockable_dialog
 condition|)
 return|return
 name|iface
 operator|->
-name|create_dockable_dialog
+name|show_dockable_dialog
 argument_list|(
 name|strategy
 argument_list|,

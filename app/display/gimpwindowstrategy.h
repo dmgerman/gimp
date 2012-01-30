@@ -76,12 +76,12 @@ name|GTypeInterface
 name|base_iface
 decl_stmt|;
 comment|/*  virtual functions  */
-DECL|member|create_dockable_dialog
+DECL|member|show_dockable_dialog
 name|GtkWidget
 modifier|*
 function_decl|(
 modifier|*
-name|create_dockable_dialog
+name|show_dockable_dialog
 function_decl|)
 parameter_list|(
 name|GimpWindowStrategy
@@ -123,7 +123,7 @@ end_decl_stmt
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_window_strategy_create_dockable_dialog
+name|gimp_window_strategy_show_dockable_dialog
 parameter_list|(
 name|GimpWindowStrategy
 modifier|*
