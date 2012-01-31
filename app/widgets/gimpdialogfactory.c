@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2f18e20103
+DECL|enum|__anon2b7819470103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -1457,6 +1457,12 @@ modifier|*
 name|identifiers
 parameter_list|)
 block|{
+name|GtkWidget
+modifier|*
+name|widget
+init|=
+name|NULL
+decl_stmt|;
 name|gchar
 modifier|*
 modifier|*
@@ -1531,17 +1537,18 @@ condition|(
 name|info
 condition|)
 block|{
-name|g_strfreev
-argument_list|(
-name|ids
-argument_list|)
-expr_stmt|;
-return|return
+name|widget
+operator|=
 name|gimp_session_info_get_widget
 argument_list|(
 name|info
 argument_list|)
-return|;
+expr_stmt|;
+if|if
+condition|(
+name|widget
+condition|)
+break|break;
 block|}
 block|}
 name|g_strfreev
@@ -1550,7 +1557,7 @@ name|ids
 argument_list|)
 expr_stmt|;
 return|return
-name|NULL
+name|widget
 return|;
 block|}
 end_function
