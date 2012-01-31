@@ -761,7 +761,7 @@ name|strncmp
 argument_list|(
 name|magick
 argument_list|,
-literal|"PI"
+literal|"PT"
 argument_list|,
 literal|2
 argument_list|)
