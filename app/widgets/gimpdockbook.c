@@ -196,19 +196,6 @@ value|500
 end_define
 
 begin_define
-DECL|macro|GIMP_N_TAB_STYLE_CANDIDATES
-define|#
-directive|define
-name|GIMP_N_TAB_STYLE_CANDIDATES
-value|3
-end_define
-
-begin_comment
-DECL|macro|GIMP_N_TAB_STYLE_CANDIDATES
-comment|/* G_N_ELEMENTS (gimp_tab_style_candidates); */
-end_comment
-
-begin_define
 DECL|macro|GIMP_DOCKABLE_DETACH_REF_KEY
 define|#
 directive|define
@@ -218,7 +205,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ac2a960103
+DECL|enum|__anon2785db720103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -234,6 +221,28 @@ name|LAST_SIGNAL
 block|}
 enum|;
 end_enum
+
+begin_comment
+comment|/* List of candidates for the automatic style, starting with the  * biggest first  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|gimp_tab_style_candidates
+specifier|static
+specifier|const
+name|GimpTabStyle
+name|gimp_tab_style_candidates
+index|[]
+init|=
+block|{
+name|GIMP_TAB_STYLE_PREVIEW_BLURB
+block|,
+name|GIMP_TAB_STYLE_PREVIEW_NAME
+block|,
+name|GIMP_TAB_STYLE_PREVIEW
+block|}
+decl_stmt|;
+end_decl_stmt
 
 begin_struct
 DECL|struct|_GimpDockbookPrivate
@@ -269,7 +278,10 @@ DECL|member|min_width_for_style
 name|gint
 name|min_width_for_style
 index|[
-name|GIMP_N_TAB_STYLE_CANDIDATES
+name|G_N_ELEMENTS
+argument_list|(
+name|gimp_tab_style_candidates
+argument_list|)
 index|]
 decl_stmt|;
 comment|/* We need a list separate from the GtkContainer children list,    * because we need to do calculations for all dockables before we    * can add a dockable as a child, namely automatic tab style    * calculations    */
@@ -858,27 +870,6 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/* List of candidates for the automatic style, starting with the  * biggest first  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|gimp_tab_style_candidates
-specifier|static
-name|GimpTabStyle
-name|gimp_tab_style_candidates
-index|[]
-init|=
-block|{
-name|GIMP_TAB_STYLE_PREVIEW_BLURB
-block|,
-name|GIMP_TAB_STYLE_PREVIEW_NAME
-block|,
-name|GIMP_TAB_STYLE_PREVIEW
-block|, }
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 specifier|static
 name|void
@@ -908,20 +899,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|G_N_ELEMENTS
-argument_list|(
-name|gimp_tab_style_candidates
-argument_list|)
-operator|!=
-name|GIMP_N_TAB_STYLE_CANDIDATES
-condition|)
-name|g_error
-argument_list|(
-literal|"Update GIMP_N_TAB_STYLE_CANDIDATES"
-argument_list|)
-expr_stmt|;
 name|dockbook_signals
 index|[
 name|DOCKABLE_ADDED
@@ -2816,7 +2793,10 @@ literal|0
 init|;
 name|i
 operator|<
-name|GIMP_N_TAB_STYLE_CANDIDATES
+name|G_N_ELEMENTS
+argument_list|(
+name|gimp_tab_style_candidates
+argument_list|)
 condition|;
 name|i
 operator|++
@@ -3196,7 +3176,10 @@ literal|0
 init|;
 name|i
 operator|<
-name|GIMP_N_TAB_STYLE_CANDIDATES
+name|G_N_ELEMENTS
+argument_list|(
+name|gimp_tab_style_candidates
+argument_list|)
 condition|;
 name|i
 operator|++
