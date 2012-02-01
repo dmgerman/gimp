@@ -117,7 +117,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c4181d0103
+DECL|enum|__anon27a6d8a00103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -130,7 +130,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c4181d0203
+DECL|enum|__anon27a6d8a00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3672,21 +3672,21 @@ literal|1
 else|:
 literal|1
 return|;
-comment|/*  keep user-writable objects above system resource files  */
+comment|/*  keep user-deletable objects above system resource files  */
 if|if
 condition|(
 name|private1
 operator|->
-name|writable
+name|deletable
 operator|!=
 name|private2
 operator|->
-name|writable
+name|deletable
 condition|)
 return|return
 name|private1
 operator|->
-name|writable
+name|deletable
 condition|?
 operator|-
 literal|1
