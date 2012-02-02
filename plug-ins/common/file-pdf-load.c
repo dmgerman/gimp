@@ -99,7 +99,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d7313f0108
+DECL|struct|__anon2c76d6db0108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -108,6 +108,10 @@ decl_stmt|;
 DECL|member|resolution
 name|gdouble
 name|resolution
+decl_stmt|;
+DECL|member|antialias
+name|gboolean
+name|antialias
 decl_stmt|;
 DECL|typedef|PdfLoadVals
 block|}
@@ -125,7 +129,9 @@ block|{
 name|GIMP_PAGE_SELECTOR_TARGET_LAYERS
 block|,
 literal|100.00
+block|,
 comment|/* 100 dpi   */
+name|TRUE
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -133,7 +139,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d7313f0208
+DECL|struct|__anon2c76d6db0208
 block|{
 DECL|member|n_pages
 name|gint
@@ -216,6 +222,9 @@ name|target
 parameter_list|,
 name|guint32
 name|resolution
+parameter_list|,
+name|gboolean
+name|antialias
 parameter_list|,
 name|PdfSelectedPages
 modifier|*
@@ -708,7 +717,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d7313f0303
+DECL|enum|__anon2c76d6db0303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -941,7 +950,7 @@ literal|"raw-filename"
 block|,
 literal|"The name entered"
 block|}
-comment|/* XXX: Nice to have API at some point, but needs work     { GIMP_PDB_INT32,     "resolution",   "Resolution to rasterize to (dpi)" },     { GIMP_PDB_INT32,     "n-pages",      "Number of pages to load (0 for all)" },     { GIMP_PDB_INT32ARRAY,"pages",        "The pages to load"                }     */
+comment|/* XXX: Nice to have API at some point, but needs work     { GIMP_PDB_INT32,     "resolution",   "Resolution to rasterize to (dpi)" },     { GIMP_PDB_INT32,     "antialiasing", "Enable antialiasing" },     { GIMP_PDB_INT32,     "n-pages",      "Number of pages to load (0 for all)" },     { GIMP_PDB_INT32ARRAY,"pages",        "The pages to load"                }     */
 block|}
 decl_stmt|;
 specifier|static
@@ -1487,6 +1496,10 @@ argument_list|,
 name|loadvals
 operator|.
 name|resolution
+argument_list|,
+name|loadvals
+operator|.
+name|antialias
 argument_list|,
 operator|&
 name|pages
@@ -2948,7 +2961,7 @@ begin_function
 specifier|static
 name|cairo_surface_t
 modifier|*
-DECL|function|render_page_to_surface (PopplerPage * page,int width,int height,double scale)
+DECL|function|render_page_to_surface (PopplerPage * page,int width,int height,double scale,gboolean antialias)
 name|render_page_to_surface
 parameter_list|(
 name|PopplerPage
@@ -2963,6 +2976,9 @@ name|height
 parameter_list|,
 name|double
 name|scale
+parameter_list|,
+name|gboolean
+name|antialias
 parameter_list|)
 block|{
 name|cairo_surface_t
@@ -3020,6 +3036,53 @@ argument_list|,
 name|scale
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|antialias
+condition|)
+block|{
+name|cairo_font_options_t
+modifier|*
+name|options
+init|=
+name|cairo_font_options_create
+argument_list|()
+decl_stmt|;
+name|cairo_get_font_options
+argument_list|(
+name|cr
+argument_list|,
+name|options
+argument_list|)
+expr_stmt|;
+name|cairo_font_options_set_antialias
+argument_list|(
+name|options
+argument_list|,
+name|CAIRO_ANTIALIAS_NONE
+argument_list|)
+expr_stmt|;
+name|cairo_set_font_options
+argument_list|(
+name|cr
+argument_list|,
+name|options
+argument_list|)
+expr_stmt|;
+name|cairo_set_antialias
+argument_list|(
+name|cr
+argument_list|,
+name|CAIRO_ANTIALIAS_NONE
+argument_list|)
+expr_stmt|;
+name|cairo_font_options_destroy
+argument_list|(
+name|options
+argument_list|)
+expr_stmt|;
+block|}
 name|poppler_page_render
 argument_list|(
 name|page
@@ -3085,7 +3148,7 @@ end_endif
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (PopplerDocument * doc,const gchar * filename,GimpRunMode run_mode,GimpPageSelectorTarget target,guint32 resolution,PdfSelectedPages * pages)
+DECL|function|load_image (PopplerDocument * doc,const gchar * filename,GimpRunMode run_mode,GimpPageSelectorTarget target,guint32 resolution,gboolean antialias,PdfSelectedPages * pages)
 name|load_image
 parameter_list|(
 name|PopplerDocument
@@ -3105,6 +3168,9 @@ name|target
 parameter_list|,
 name|guint32
 name|resolution
+parameter_list|,
+name|gboolean
+name|antialias
 parameter_list|,
 name|PdfSelectedPages
 modifier|*
@@ -3357,6 +3423,8 @@ argument_list|,
 name|height
 argument_list|,
 name|scale
+argument_list|,
+name|antialias
 argument_list|)
 expr_stmt|;
 name|layer_from_surface
@@ -3628,6 +3696,8 @@ argument_list|,
 name|height
 argument_list|,
 name|scale
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -3714,7 +3784,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d7313f0408
+DECL|struct|__anon2c76d6db0408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -3739,7 +3809,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d7313f0508
+DECL|struct|__anon2c76d6db0508
 block|{
 DECL|member|selector
 name|GimpPageSelector
@@ -3951,6 +4021,10 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|resolution
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|antialias
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -4449,6 +4523,67 @@ operator|&
 name|loadvals
 operator|.
 name|resolution
+argument_list|)
+expr_stmt|;
+comment|/* Antialiasing*/
+name|antialias
+operator|=
+name|gtk_check_button_new_with_mnemonic
+argument_list|(
+name|_
+argument_list|(
+literal|"_Enable Antialiasing"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_toggle_button_set_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|antialias
+argument_list|)
+argument_list|,
+name|loadvals
+operator|.
+name|antialias
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|antialias
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|antialias
+argument_list|,
+literal|"toggled"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_toggle_button_update
+argument_list|)
+argument_list|,
+operator|&
+name|loadvals
+operator|.
+name|antialias
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|antialias
 argument_list|)
 expr_stmt|;
 comment|/* Setup done; display the dialog */
