@@ -99,7 +99,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2965d0e70108
+DECL|struct|__anon28a636d40108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -139,7 +139,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2965d0e70208
+DECL|struct|__anon28a636d40208
 block|{
 DECL|member|n_pages
 name|gint
@@ -717,7 +717,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2965d0e70303
+DECL|enum|__anon28a636d40303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -950,7 +950,7 @@ literal|"raw-filename"
 block|,
 literal|"The name entered"
 block|}
-comment|/* XXX: Nice to have API at some point, but needs work     { GIMP_PDB_INT32,     "resolution",   "Resolution to rasterize to (dpi)" },     { GIMP_PDB_INT32,     "antialiasing", "Enable antialiasing" },     { GIMP_PDB_INT32,     "n-pages",      "Number of pages to load (0 for all)" },     { GIMP_PDB_INT32ARRAY,"pages",        "The pages to load"                }     */
+comment|/* XXX: Nice to have API at some point, but needs work     { GIMP_PDB_INT32,     "resolution",   "Resolution to rasterize to (dpi)" },     { GIMP_PDB_INT32,     "antialiasing", "Use anti-aliasing" },     { GIMP_PDB_INT32,     "n-pages",      "Number of pages to load (0 for all)" },     { GIMP_PDB_INT32ARRAY,"pages",        "The pages to load"                }     */
 block|}
 decl_stmt|;
 specifier|static
@@ -3784,7 +3784,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2965d0e70408
+DECL|struct|__anon28a636d40408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -3809,7 +3809,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2965d0e70508
+DECL|struct|__anon28a636d40508
 block|{
 DECL|member|selector
 name|GimpPageSelector
@@ -4532,7 +4532,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Enable Antialiasing"
+literal|"Use _Anti-aliasing"
 argument_list|)
 argument_list|)
 expr_stmt|;
