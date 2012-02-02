@@ -82,7 +82,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c79cfa0103
+DECL|enum|__anon29935dce0103
 block|{
 DECL|enumerator|RGB_565
 name|RGB_565
@@ -110,7 +110,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28c79cfa0208
+DECL|struct|__anon29935dce0208
 block|{
 DECL|member|rgb_format
 name|RGBMode
@@ -1878,19 +1878,6 @@ argument_list|,
 literal|36
 argument_list|)
 expr_stmt|;
-name|write_color_map
-argument_list|(
-name|outfile
-argument_list|,
-name|Red
-argument_list|,
-name|Green
-argument_list|,
-name|Blue
-argument_list|,
-name|MapSize
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|mask_info_size
@@ -2274,6 +2261,19 @@ name|color_space_size
 argument_list|)
 expr_stmt|;
 block|}
+name|write_color_map
+argument_list|(
+name|outfile
+argument_list|,
+name|Red
+argument_list|,
+name|Green
+argument_list|,
+name|Blue
+argument_list|,
+name|MapSize
+argument_list|)
+expr_stmt|;
 comment|/* After that is done, we write the image ... */
 name|write_image
 argument_list|(
