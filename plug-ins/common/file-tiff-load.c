@@ -147,7 +147,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad143e30108
+DECL|struct|__anon2c3d20650108
 block|{
 DECL|member|compression
 name|gint
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad143e30208
+DECL|struct|__anon2c3d20650208
 block|{
 DECL|member|ID
 name|gint32
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad143e30308
+DECL|struct|__anon2c3d20650308
 block|{
 DECL|member|o_pages
 name|gint
@@ -1447,11 +1447,6 @@ literal|"%s: unknown field with tag %d (0x%x) encountered"
 argument_list|)
 condition|)
 block|{
-specifier|const
-name|char
-modifier|*
-name|name
-decl_stmt|;
 name|va_list
 name|ap_test
 decl_stmt|;
@@ -1462,8 +1457,6 @@ argument_list|,
 name|ap
 argument_list|)
 expr_stmt|;
-name|name
-operator|=
 name|va_arg
 argument_list|(
 name|ap_test
@@ -1473,6 +1466,7 @@ name|char
 operator|*
 argument_list|)
 expr_stmt|;
+comment|/* ignore first arg */
 name|tag
 operator|=
 name|va_arg
