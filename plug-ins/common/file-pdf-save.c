@@ -136,7 +136,7 @@ value|120
 end_define
 
 begin_typedef
-DECL|struct|__anon28d1aab10108
+DECL|struct|__anon28843f610108
 typedef|typedef
 struct|struct
 block|{
@@ -159,7 +159,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28d1aab10208
+DECL|struct|__anon28843f610208
 typedef|typedef
 struct|struct
 block|{
@@ -188,7 +188,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28d1aab10308
+DECL|struct|__anon28843f610308
 typedef|typedef
 struct|struct
 block|{
@@ -208,7 +208,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon28d1aab10403
+DECL|enum|__anon28843f610403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -227,7 +227,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon28d1aab10508
+DECL|struct|__anon28843f610508
 typedef|typedef
 struct|struct
 block|{
@@ -601,7 +601,7 @@ argument_list|()
 end_macro
 
 begin_typedef
-DECL|enum|__anon28d1aab10603
+DECL|enum|__anon28843f610603
 typedef|typedef
 enum|enum
 block|{
@@ -646,7 +646,7 @@ value|5
 end_define
 
 begin_typedef
-DECL|enum|__anon28d1aab10703
+DECL|enum|__anon28843f610703
 typedef|typedef
 enum|enum
 block|{
@@ -5033,8 +5033,6 @@ init|=
 name|drawable
 operator|->
 name|bpp
-decl_stmt|,
-name|cairo_bpp
 decl_stmt|;
 if|if
 condition|(
@@ -5104,20 +5102,12 @@ name|format
 operator|=
 name|CAIRO_FORMAT_RGB24
 expr_stmt|;
-name|cairo_bpp
-operator|=
-literal|3
-expr_stmt|;
 block|}
 else|else
 block|{
 name|format
 operator|=
 name|CAIRO_FORMAT_RGB24
-expr_stmt|;
-name|cairo_bpp
-operator|=
-literal|3
 expr_stmt|;
 block|}
 break|break;
@@ -5128,10 +5118,6 @@ comment|/* RGB */
 name|format
 operator|=
 name|CAIRO_FORMAT_RGB24
-expr_stmt|;
-name|cairo_bpp
-operator|=
-literal|3
 expr_stmt|;
 break|break;
 case|case
@@ -5145,10 +5131,6 @@ comment|/* RGBA */
 name|format
 operator|=
 name|CAIRO_FORMAT_ARGB32
-expr_stmt|;
-name|cairo_bpp
-operator|=
-literal|4
 expr_stmt|;
 break|break;
 default|default:
