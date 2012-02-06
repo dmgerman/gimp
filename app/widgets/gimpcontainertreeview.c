@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a1e4db0103
+DECL|enum|__anon2be0bd400103
 block|{
 DECL|enumerator|EDIT_NAME
 name|EDIT_NAME
@@ -2592,15 +2592,6 @@ argument_list|(
 name|view
 argument_list|)
 decl_stmt|;
-name|parent_view_iface
-operator|->
-name|set_context
-argument_list|(
-name|view
-argument_list|,
-name|context
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|tree_view
@@ -2615,6 +2606,15 @@ name|tree_view
 operator|->
 name|model
 argument_list|)
+argument_list|,
+name|context
+argument_list|)
+expr_stmt|;
+name|parent_view_iface
+operator|->
+name|set_context
+argument_list|(
+name|view
 argument_list|,
 name|context
 argument_list|)
