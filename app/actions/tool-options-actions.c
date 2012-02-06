@@ -110,6 +110,12 @@ parameter_list|,
 name|GimpContainer
 modifier|*
 name|presets
+parameter_list|,
+name|gboolean
+name|need_writable
+parameter_list|,
+name|gboolean
+name|need_deletable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -336,6 +342,20 @@ value|gimp_action_group_set_action_visible (group, action, (condition) != 0)
 end_define
 
 begin_define
+DECL|macro|SET_SENSITIVE (action,condition)
+define|#
+directive|define
+name|SET_SENSITIVE
+parameter_list|(
+name|action
+parameter_list|,
+name|condition
+parameter_list|)
+define|\
+value|gimp_action_group_set_action_sensitive (group, action, (condition) != 0)
+end_define
+
+begin_define
 DECL|macro|SET_HIDE_EMPTY (action,condition)
 define|#
 directive|define
@@ -482,6 +502,12 @@ argument_list|,
 name|tool_info
 operator|->
 name|presets
+argument_list|,
+name|TRUE
+comment|/* writable */
+argument_list|,
+name|FALSE
+comment|/* deletable */
 argument_list|)
 expr_stmt|;
 name|tool_options_actions_update_presets
@@ -500,6 +526,12 @@ argument_list|,
 name|tool_info
 operator|->
 name|presets
+argument_list|,
+name|FALSE
+comment|/* writable */
+argument_list|,
+name|FALSE
+comment|/* deletable */
 argument_list|)
 expr_stmt|;
 name|tool_options_actions_update_presets
@@ -518,6 +550,12 @@ argument_list|,
 name|tool_info
 operator|->
 name|presets
+argument_list|,
+name|FALSE
+comment|/* writable */
+argument_list|,
+name|FALSE
+comment|/* deletable */
 argument_list|)
 expr_stmt|;
 name|tool_options_actions_update_presets
@@ -536,6 +574,12 @@ argument_list|,
 name|tool_info
 operator|->
 name|presets
+argument_list|,
+name|FALSE
+comment|/* writable */
+argument_list|,
+name|TRUE
+comment|/* deletable */
 argument_list|)
 expr_stmt|;
 block|}
@@ -548,7 +592,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|tool_options_actions_update_presets (GimpActionGroup * group,const gchar * action_prefix,GCallback callback,const gchar * help_id,GimpContainer * presets)
+DECL|function|tool_options_actions_update_presets (GimpActionGroup * group,const gchar * action_prefix,GCallback callback,const gchar * help_id,GimpContainer * presets,gboolean need_writable,gboolean need_deletable)
 name|tool_options_actions_update_presets
 parameter_list|(
 name|GimpActionGroup
@@ -571,6 +615,12 @@ parameter_list|,
 name|GimpContainer
 modifier|*
 name|presets
+parameter_list|,
+name|gboolean
+name|need_writable
+parameter_list|,
+name|gboolean
+name|need_deletable
 parameter_list|)
 block|{
 name|GList
@@ -742,7 +792,7 @@ control|)
 block|{
 name|GimpObject
 modifier|*
-name|options
+name|preset
 init|=
 name|list
 operator|->
@@ -767,7 +817,7 @@ name|label
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|options
+name|preset
 argument_list|)
 expr_stmt|;
 name|entry
@@ -778,7 +828,7 @@ name|gimp_viewable_get_stock_id
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|options
+name|preset
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -802,6 +852,44 @@ argument_list|,
 name|callback
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|need_writable
+condition|)
+name|SET_SENSITIVE
+argument_list|(
+name|entry
+operator|.
+name|name
+argument_list|,
+name|gimp_data_is_writable
+argument_list|(
+name|GIMP_DATA
+argument_list|(
+name|preset
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|need_deletable
+condition|)
+name|SET_SENSITIVE
+argument_list|(
+name|entry
+operator|.
+name|name
+argument_list|,
+name|gimp_data_is_deletable
+argument_list|(
+name|GIMP_DATA
+argument_list|(
+name|preset
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 operator|(
@@ -822,6 +910,12 @@ begin_undef
 undef|#
 directive|undef
 name|SET_VISIBLE
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|SET_SENSITIVE
 end_undef
 
 begin_undef
