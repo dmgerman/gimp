@@ -1161,6 +1161,18 @@ name|preset_editor
 argument_list|)
 expr_stmt|;
 block|}
+name|gtk_widget_set_sensitive
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
+name|editor
+operator|->
+name|data_editable
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
