@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274ac4640103
+DECL|enum|__anon2aab62910103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2003,6 +2003,13 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|editor
+operator|->
+name|toggles
+condition|)
+block|{
 name|g_list_free
 argument_list|(
 name|editor
@@ -2010,6 +2017,13 @@ operator|->
 name|toggles
 argument_list|)
 expr_stmt|;
+name|editor
+operator|->
+name|toggles
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

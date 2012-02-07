@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291e804b0103
+DECL|enum|__anon2c593dab0103
 block|{
 DECL|enumerator|TAG_SEARCH_NONE
 name|TAG_SEARCH_NONE
@@ -138,7 +138,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon291e804b0203
+DECL|enum|__anon2c593dab0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

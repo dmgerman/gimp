@@ -65,7 +65,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc42e7d0103
+DECL|enum|__anon29377dfe0103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc42e7d0203
+DECL|enum|__anon29377dfe0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -128,7 +128,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc42e7d0303
+DECL|enum|__anon29377dfe0303
 block|{
 DECL|enumerator|PARSE_VALID
 name|PARSE_VALID
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc42e7d0408
+DECL|struct|__anon29377dfe0408
 block|{
 comment|/* The current number pair displayed in the widget. */
 DECL|member|left_number
@@ -1087,6 +1087,13 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|priv
+operator|->
+name|default_text
+condition|)
+block|{
 name|g_free
 argument_list|(
 name|priv
@@ -1094,6 +1101,13 @@ operator|->
 name|default_text
 argument_list|)
 expr_stmt|;
+name|priv
+operator|->
+name|default_text
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

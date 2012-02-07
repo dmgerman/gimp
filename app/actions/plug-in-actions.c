@@ -2190,14 +2190,10 @@ name|GimpImage
 modifier|*
 name|image
 init|=
-name|context
-condition|?
 name|gimp_context_get_image
 argument_list|(
 name|context
 argument_list|)
-else|:
-name|NULL
 decl_stmt|;
 name|GimpDrawable
 modifier|*

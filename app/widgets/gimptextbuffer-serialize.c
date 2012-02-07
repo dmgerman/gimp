@@ -852,7 +852,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c301e200103
+DECL|enum|__anon28c87ed10103
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -874,7 +874,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c301e200208
+DECL|struct|__anon28c87ed10208
 block|{
 DECL|member|states
 name|GSList
@@ -910,7 +910,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c301e200308
+DECL|struct|__anon28c87ed10308
 block|{
 DECL|member|text
 name|gchar
