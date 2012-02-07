@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"text-types.h"
 end_include
 
@@ -81,7 +87,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc0c02c0103
+DECL|enum|__anon291e88320103
 block|{
 DECL|enumerator|TEXT_LAYER_XCF_NONE
 name|TEXT_LAYER_XCF_NONE
@@ -390,6 +396,11 @@ argument_list|,
 name|parasite
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|gimp_parasite_free
+argument_list|(
+name|parasite
 argument_list|)
 expr_stmt|;
 block|}

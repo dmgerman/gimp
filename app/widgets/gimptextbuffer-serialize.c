@@ -777,6 +777,11 @@ name|end
 argument_list|)
 condition|)
 do|;
+name|g_slist_free
+argument_list|(
+name|tag_list
+argument_list|)
+expr_stmt|;
 comment|/* Close any open tags */
 for|for
 control|(
@@ -847,7 +852,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3c12570103
+DECL|enum|__anon2c301e200103
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -869,7 +874,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3c12570208
+DECL|struct|__anon2c301e200208
 block|{
 DECL|member|states
 name|GSList
@@ -905,7 +910,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3c12570308
+DECL|struct|__anon2c301e200308
 block|{
 DECL|member|text
 name|gchar

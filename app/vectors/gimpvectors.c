@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1c6fcb0103
+DECL|enum|__anon2b60e7870103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -5079,6 +5079,7 @@ operator|->
 name|len
 argument_list|)
 expr_stmt|;
+block|}
 name|g_array_free
 argument_list|(
 name|cmd_array
@@ -5086,7 +5087,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|ret_bezdesc
 return|;

@@ -3844,11 +3844,6 @@ block|{
 name|GList
 modifier|*
 name|anchor_list
-init|=
-name|gimp_stroke_get_draw_anchors
-argument_list|(
-name|stroke
-argument_list|)
 decl_stmt|;
 name|GList
 modifier|*

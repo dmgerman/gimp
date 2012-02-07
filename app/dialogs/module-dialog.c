@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b0881a0103
+DECL|enum|__anon299cfd6b0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -98,7 +98,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b0881a0203
+DECL|enum|__anon299cfd6b0203
 block|{
 DECL|enumerator|INFO_AUTHOR
 name|INFO_AUTHOR
@@ -124,7 +124,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b0881a0308
+DECL|struct|__anon299cfd6b0308
 block|{
 DECL|member|gimp
 name|Gimp
@@ -2038,6 +2038,11 @@ name|i
 index|]
 else|:
 literal|"--"
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|location
 argument_list|)
 expr_stmt|;
 comment|/* Show errors */

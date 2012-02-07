@@ -162,7 +162,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291ecc210103
+DECL|enum|__anon2bec79d00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -175,7 +175,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291ecc210203
+DECL|enum|__anon2bec79d00203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -1488,6 +1488,11 @@ operator|->
 name|down_button
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|controller_types
 argument_list|)
 expr_stmt|;
 block|}

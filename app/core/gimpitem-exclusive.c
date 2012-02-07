@@ -507,6 +507,11 @@ name|off
 argument_list|)
 expr_stmt|;
 block|}
+name|g_list_free
+argument_list|(
+name|ancestry
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

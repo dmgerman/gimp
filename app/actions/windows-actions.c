@@ -1452,6 +1452,11 @@ argument_list|,
 name|action_name
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|action_name
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|action

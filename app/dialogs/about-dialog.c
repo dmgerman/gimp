@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293ffc520108
+DECL|struct|__anon2b966ce70108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -306,10 +306,7 @@ parameter_list|)
 block|{
 specifier|static
 name|GimpAboutDialog
-modifier|*
 name|dialog
-init|=
-name|NULL
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -324,6 +321,8 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
+name|dialog
+operator|.
 name|dialog
 condition|)
 block|{
@@ -348,16 +347,7 @@ modifier|*
 name|copyright
 decl_stmt|;
 name|dialog
-operator|=
-name|g_new0
-argument_list|(
-name|GimpAboutDialog
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|dialog
-operator|->
+operator|.
 name|n_authors
 operator|=
 name|G_N_ELEMENTS
@@ -479,7 +469,7 @@ name|copyright
 argument_list|)
 expr_stmt|;
 name|dialog
-operator|->
+operator|.
 name|dialog
 operator|=
 name|widget
@@ -495,6 +485,8 @@ operator|(
 name|gpointer
 operator|)
 operator|&
+name|dialog
+operator|.
 name|dialog
 argument_list|)
 expr_stmt|;
@@ -523,6 +515,7 @@ argument_list|(
 name|about_dialog_map
 argument_list|)
 argument_list|,
+operator|&
 name|dialog
 argument_list|)
 expr_stmt|;
@@ -537,6 +530,7 @@ argument_list|(
 name|about_dialog_unmap
 argument_list|)
 argument_list|,
+operator|&
 name|dialog
 argument_list|)
 expr_stmt|;
@@ -577,6 +571,7 @@ name|children
 operator|->
 name|data
 argument_list|,
+operator|&
 name|dialog
 argument_list|)
 expr_stmt|;
@@ -607,14 +602,14 @@ argument_list|(
 name|GTK_WINDOW
 argument_list|(
 name|dialog
-operator|->
+operator|.
 name|dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
 name|dialog
-operator|->
+operator|.
 name|dialog
 return|;
 block|}

@@ -3156,6 +3156,12 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|g_value_unset
+argument_list|(
+operator|&
+name|string_value
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;

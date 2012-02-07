@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4dd3e30103
+DECL|enum|__anon278eab910103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1426,7 +1426,7 @@ argument_list|(
 name|GimpVector2
 argument_list|)
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|item
@@ -1453,6 +1453,11 @@ expr_stmt|;
 name|gimp_array_free
 argument_list|(
 name|array
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|points
 argument_list|)
 expr_stmt|;
 return|return

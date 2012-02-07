@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afb66080103
+DECL|enum|__anon27dade180103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afb66080203
+DECL|enum|__anon27dade180203
 block|{
 DECL|enumerator|AXIS_COLUMN_INDEX
 name|AXIS_COLUMN_INDEX
@@ -107,7 +107,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afb66080303
+DECL|enum|__anon27dade180303
 block|{
 DECL|enumerator|INPUT_COLUMN_INDEX
 name|INPUT_COLUMN_INDEX
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afb66080403
+DECL|enum|__anon27dade180403
 block|{
 DECL|enumerator|KEY_COLUMN_INDEX
 name|KEY_COLUMN_INDEX
@@ -2170,6 +2170,11 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|label
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|string
 argument_list|)
 expr_stmt|;
 block|}

@@ -3240,6 +3240,11 @@ argument_list|,
 name|stroke
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|stroke
+argument_list|)
+expr_stmt|;
 name|stroke_id
 operator|=
 name|gimp_stroke_get_ID
@@ -3808,6 +3813,11 @@ name|gimp_vectors_stroke_add
 argument_list|(
 name|vectors
 argument_list|,
+name|stroke
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|stroke
 argument_list|)
 expr_stmt|;
@@ -4889,6 +4899,11 @@ name|gimp_vectors_stroke_add
 argument_list|(
 name|vectors
 argument_list|,
+name|stroke
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|stroke
 argument_list|)
 expr_stmt|;

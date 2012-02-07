@@ -98,9 +98,6 @@ block|{
 name|GdkRegion
 modifier|*
 name|gdk_region
-init|=
-name|gdk_region_new
-argument_list|()
 decl_stmt|;
 name|gint
 name|n_rectangles
@@ -134,6 +131,11 @@ name|canvas
 argument_list|)
 condition|)
 return|return;
+name|gdk_region
+operator|=
+name|gdk_region_new
+argument_list|()
+expr_stmt|;
 name|n_rectangles
 operator|=
 name|cairo_region_num_rectangles

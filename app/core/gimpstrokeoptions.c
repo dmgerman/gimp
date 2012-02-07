@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299f44ff0103
+DECL|enum|__anon29daccff0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -144,7 +144,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299f44ff0203
+DECL|enum|__anon29daccff0203
 block|{
 DECL|enumerator|DASH_INFO_CHANGED
 name|DASH_INFO_CHANGED
@@ -746,6 +746,27 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|private
+operator|->
+name|dash_info
+condition|)
+block|{
+name|gimp_dash_pattern_free
+argument_list|(
+name|private
+operator|->
+name|dash_info
+argument_list|)
+expr_stmt|;
+name|private
+operator|->
+name|dash_info
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|private

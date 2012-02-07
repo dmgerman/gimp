@@ -2280,6 +2280,11 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|markup
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
