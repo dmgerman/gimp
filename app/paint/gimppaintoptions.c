@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a9b1150103
+DECL|enum|__anon28cb6f8f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2529,6 +2529,14 @@ argument_list|,
 name|GIMP_DYNAMICS_OUTPUT_FORCE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|force_output
+condition|)
+return|return
+name|GIMP_BRUSH_SOFT
+return|;
 if|if
 condition|(
 name|gimp_dynamics_output_is_enabled
