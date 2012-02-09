@@ -5454,8 +5454,15 @@ argument_list|)
 condition|)
 block|{
 name|index
-operator|-=
+operator|=
+name|MAX
+argument_list|(
+literal|0
+argument_list|,
+name|index
+operator|-
 name|WORD_JOINER_LENGTH
+argument_list|)
 expr_stmt|;
 break|break;
 block|}
