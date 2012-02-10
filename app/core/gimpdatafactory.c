@@ -1259,7 +1259,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276b47480108
+DECL|struct|__anon2b9ba8890108
 block|{
 DECL|member|factory
 name|GimpDataFactory
@@ -1368,6 +1368,10 @@ name|tmp
 decl_stmt|;
 name|GimpDataLoadContext
 name|load_context
+init|=
+block|{
+literal|0
+block|, }
 decl_stmt|;
 name|load_context
 operator|.
