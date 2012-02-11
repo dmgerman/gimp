@@ -223,6 +223,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gchar
+modifier|*
+name|gimp_display_get_action_name
+parameter_list|(
+name|GimpDisplay
+modifier|*
+name|display
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|Gimp
 modifier|*
 name|gimp_display_get_gimp

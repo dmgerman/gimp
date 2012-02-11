@@ -162,7 +162,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27de9d240103
+DECL|enum|__anon2c2deaf90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2176,6 +2176,45 @@ return|;
 block|}
 return|return
 name|NULL
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_display_get_action_name:  * @display:  *  * Returns: The action name for the given display. The action name  * depends on the display ID. The result must be freed with g_free().  **/
+end_comment
+
+begin_function
+name|gchar
+modifier|*
+DECL|function|gimp_display_get_action_name (GimpDisplay * display)
+name|gimp_display_get_action_name
+parameter_list|(
+name|GimpDisplay
+modifier|*
+name|display
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|display
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|g_strdup_printf
+argument_list|(
+literal|"windows-display-%04d"
+argument_list|,
+name|gimp_display_get_ID
+argument_list|(
+name|display
+argument_list|)
+argument_list|)
 return|;
 block|}
 end_function

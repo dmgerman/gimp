@@ -120,12 +120,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"dialogs/dialogs.h"
 end_include
 
