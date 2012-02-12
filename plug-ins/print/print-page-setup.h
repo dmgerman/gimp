@@ -5,17 +5,6 @@ end_comment
 
 begin_function_decl
 name|void
-name|print_page_setup_dialog
-parameter_list|(
-name|GtkPrintOperation
-modifier|*
-name|operation
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|print_page_setup_load
 parameter_list|(
 name|GtkPrintOperation
