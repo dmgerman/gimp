@@ -321,10 +321,8 @@ argument_list|(
 literal|"Zoom Tool: Adjust the zoom level"
 argument_list|)
 argument_list|,
-name|NC_
+name|N_
 argument_list|(
-literal|"tool"
-argument_list|,
 literal|"_Zoom"
 argument_list|)
 argument_list|,
