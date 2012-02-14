@@ -3060,7 +3060,7 @@ if|if
 condition|(
 name|tool_info
 operator|->
-name|menu_path
+name|menu_label
 condition|)
 block|{
 name|GimpStringActionEntry
@@ -3155,7 +3155,7 @@ name|label
 operator|=
 name|tool_info
 operator|->
-name|menu_path
+name|menu_label
 expr_stmt|;
 name|entry
 operator|.

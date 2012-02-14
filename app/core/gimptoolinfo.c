@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a0462f0103
+DECL|enum|__anon2b95fa7c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -334,7 +334,7 @@ name|NULL
 expr_stmt|;
 name|tool_info
 operator|->
-name|menu_path
+name|menu_label
 operator|=
 name|NULL
 expr_stmt|;
@@ -528,19 +528,19 @@ if|if
 condition|(
 name|tool_info
 operator|->
-name|menu_path
+name|menu_label
 condition|)
 block|{
 name|g_free
 argument_list|(
 name|tool_info
 operator|->
-name|menu_path
+name|menu_label
 argument_list|)
 expr_stmt|;
 name|tool_info
 operator|->
-name|menu_path
+name|menu_label
 operator|=
 name|NULL
 expr_stmt|;
@@ -832,7 +832,7 @@ end_function
 begin_function
 name|GimpToolInfo
 modifier|*
-DECL|function|gimp_tool_info_new (Gimp * gimp,GType tool_type,GType tool_options_type,GimpContextPropMask context_props,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_path,const gchar * menu_accel,const gchar * help_domain,const gchar * help_id,const gchar * paint_core_name,const gchar * stock_id)
+DECL|function|gimp_tool_info_new (Gimp * gimp,GType tool_type,GType tool_options_type,GimpContextPropMask context_props,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_label,const gchar * menu_accel,const gchar * help_domain,const gchar * help_id,const gchar * paint_core_name,const gchar * stock_id)
 name|gimp_tool_info_new
 parameter_list|(
 name|Gimp
@@ -866,7 +866,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|menu_path
+name|menu_label
 parameter_list|,
 specifier|const
 name|gchar
@@ -941,7 +941,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|menu_path
+name|menu_label
 operator|!=
 name|NULL
 argument_list|,
@@ -1061,11 +1061,11 @@ argument_list|)
 expr_stmt|;
 name|tool_info
 operator|->
-name|menu_path
+name|menu_label
 operator|=
 name|g_strdup
 argument_list|(
-name|menu_path
+name|menu_label
 argument_list|)
 expr_stmt|;
 name|tool_info

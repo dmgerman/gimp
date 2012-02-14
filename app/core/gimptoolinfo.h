@@ -130,10 +130,10 @@ name|gchar
 modifier|*
 name|help
 decl_stmt|;
-DECL|member|menu_path
+DECL|member|menu_label
 name|gchar
 modifier|*
-name|menu_path
+name|menu_label
 decl_stmt|;
 DECL|member|menu_accel
 name|gchar
@@ -232,7 +232,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|menu_path
+name|menu_label
 parameter_list|,
 specifier|const
 name|gchar

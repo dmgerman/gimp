@@ -408,7 +408,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|menu_path
+name|menu_label
 parameter_list|,
 specifier|const
 name|gchar
@@ -1630,7 +1630,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tools_register (GType tool_type,GType tool_options_type,GimpToolOptionsGUIFunc options_gui_func,GimpContextPropMask context_props,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_path,const gchar * menu_accel,const gchar * help_domain,const gchar * help_data,const gchar * stock_id,gpointer data)
+DECL|function|gimp_tools_register (GType tool_type,GType tool_options_type,GimpToolOptionsGUIFunc options_gui_func,GimpContextPropMask context_props,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_label,const gchar * menu_accel,const gchar * help_domain,const gchar * help_data,const gchar * stock_id,gpointer data)
 name|gimp_tools_register
 parameter_list|(
 name|GType
@@ -1663,7 +1663,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|menu_path
+name|menu_label
 parameter_list|,
 specifier|const
 name|gchar
@@ -1920,7 +1920,7 @@ name|blurb
 argument_list|,
 name|help
 argument_list|,
-name|menu_path
+name|menu_label
 argument_list|,
 name|menu_accel
 argument_list|,
