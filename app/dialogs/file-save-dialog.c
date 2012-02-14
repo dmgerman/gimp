@@ -631,13 +631,6 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|gimp_file_dialog_set_sensitive
-argument_list|(
-name|dialog
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|handler_id
 operator|=
 name|g_signal_connect
@@ -674,6 +667,13 @@ name|save_proc
 argument_list|)
 condition|)
 block|{
+name|gimp_file_dialog_set_sensitive
+argument_list|(
+name|dialog
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|file_save_dialog_save_image
@@ -876,12 +876,10 @@ argument_list|(
 name|basename
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|dialog
 condition|)
-block|{
 name|gimp_file_dialog_set_sensitive
 argument_list|(
 name|dialog
@@ -889,6 +887,11 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
+if|if
+condition|(
+name|dialog
+condition|)
 name|g_signal_handler_disconnect
 argument_list|(
 name|dialog
@@ -896,7 +899,6 @@ argument_list|,
 name|handler_id
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
