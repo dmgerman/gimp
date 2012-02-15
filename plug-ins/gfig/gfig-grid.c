@@ -119,7 +119,7 @@ DECL|variable|grid_gc_type
 name|gint
 name|grid_gc_type
 init|=
-name|GTK_STATE_NORMAL
+name|GFIG_NORMAL_GC
 decl_stmt|;
 end_decl_stmt
 
@@ -202,7 +202,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af815680108
+DECL|struct|__anon29ce99a80108
 block|{
 DECL|member|product
 name|gint
@@ -1836,8 +1836,12 @@ argument_list|(
 name|cr
 argument_list|,
 literal|0
+operator|+
+literal|.5
 argument_list|,
 name|loop
+operator|+
+literal|.5
 argument_list|)
 expr_stmt|;
 name|cairo_line_to
@@ -1845,8 +1849,12 @@ argument_list|(
 name|cr
 argument_list|,
 name|preview_width
+operator|+
+literal|.5
 argument_list|,
 name|loop
+operator|+
+literal|.5
 argument_list|)
 expr_stmt|;
 block|}
@@ -1871,8 +1879,12 @@ argument_list|(
 name|cr
 argument_list|,
 name|loop
+operator|+
+literal|.5
 argument_list|,
 literal|0
+operator|+
+literal|.5
 argument_list|)
 expr_stmt|;
 name|cairo_line_to
@@ -1880,8 +1892,12 @@ argument_list|(
 name|cr
 argument_list|,
 name|loop
+operator|+
+literal|.5
 argument_list|,
 name|preview_height
+operator|+
+literal|.5
 argument_list|)
 expr_stmt|;
 block|}

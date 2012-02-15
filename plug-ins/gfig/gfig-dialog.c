@@ -437,7 +437,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1728450108
+DECL|struct|__anon2b445bcf0108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -5795,7 +5795,9 @@ argument_list|(
 name|page_menu_bg
 argument_list|)
 argument_list|,
-literal|0
+name|selvals
+operator|.
+name|onlayerbg
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -6687,7 +6689,11 @@ argument_list|(
 name|combo
 argument_list|)
 argument_list|,
-literal|0
+name|selvals
+operator|.
+name|opts
+operator|.
+name|gridtype
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -6821,7 +6827,7 @@ argument_list|(
 name|combo
 argument_list|)
 argument_list|,
-literal|0
+name|grid_gc_type
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
