@@ -15,12 +15,6 @@ directive|include
 file|<libgimp/gimp.h>
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GDK_DISABLE_DEPRECATED
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -72,6 +66,10 @@ parameter_list|(
 name|GfigObject
 modifier|*
 name|obj
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -172,12 +170,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|d_draw_line (GfigObject * obj)
+DECL|function|d_draw_line (GfigObject * obj,cairo_t * cr)
 name|d_draw_line
 parameter_list|(
 name|GfigObject
 modifier|*
 name|obj
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
 parameter_list|)
 block|{
 name|DobjPoints
@@ -226,6 +228,8 @@ operator|==
 name|gfig_context
 operator|->
 name|selected_obj
+argument_list|,
+name|cr
 argument_list|)
 expr_stmt|;
 comment|/* Go around all the points drawing a line from one to the next */
@@ -254,6 +258,8 @@ operator|->
 name|pnt
 operator|.
 name|y
+argument_list|,
+name|cr
 argument_list|)
 expr_stmt|;
 name|spnt
@@ -267,6 +273,25 @@ operator|->
 name|next
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|obj_creating
+operator|==
+name|obj
+condition|)
+name|draw_circle
+argument_list|(
+operator|&
+name|spnt
+operator|->
+name|pnt
+argument_list|,
+name|TRUE
+argument_list|,
+name|cr
+argument_list|)
+expr_stmt|;
+else|else
 name|draw_sqr
 argument_list|(
 operator|&
@@ -279,6 +304,8 @@ operator|==
 name|gfig_context
 operator|->
 name|selected_obj
+argument_list|,
+name|cr
 argument_list|)
 expr_stmt|;
 block|}
@@ -524,10 +551,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/* Update end point of line */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -546,7 +569,6 @@ decl_stmt|,
 modifier|*
 name|epnt
 decl_stmt|;
-comment|/* Get last but one segment and undraw it -    * Then draw new segment in.    * always dealing with the static object.    */
 comment|/* Get start of segments */
 name|spnt
 operator|=
@@ -572,69 +594,12 @@ name|next
 operator|)
 condition|)
 block|{
-comment|/* undraw  current */
-comment|/* Draw square on point */
-name|draw_circle
-argument_list|(
-operator|&
-name|epnt
-operator|->
-name|pnt
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|gdk_draw_line
-argument_list|(
-name|gtk_widget_get_window
-argument_list|(
-name|gfig_context
-operator|->
-name|preview
-argument_list|)
-argument_list|,
-name|gfig_gc
-argument_list|,
-name|spnt
-operator|->
-name|pnt
-operator|.
-name|x
-argument_list|,
-name|spnt
-operator|->
-name|pnt
-operator|.
-name|y
-argument_list|,
-name|epnt
-operator|->
-name|pnt
-operator|.
-name|x
-argument_list|,
-name|epnt
-operator|->
-name|pnt
-operator|.
-name|y
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
 name|epnt
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* draw new */
-comment|/* Draw circle on point */
-name|draw_circle
-argument_list|(
-name|pnt
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 name|epnt
 operator|=
 name|new_dobjpoint
@@ -645,42 +610,6 @@ name|x
 argument_list|,
 name|pnt
 operator|->
-name|y
-argument_list|)
-expr_stmt|;
-name|gdk_draw_line
-argument_list|(
-name|gtk_widget_get_window
-argument_list|(
-name|gfig_context
-operator|->
-name|preview
-argument_list|)
-argument_list|,
-name|gfig_gc
-argument_list|,
-name|spnt
-operator|->
-name|pnt
-operator|.
-name|x
-argument_list|,
-name|spnt
-operator|->
-name|pnt
-operator|.
-name|y
-argument_list|,
-name|epnt
-operator|->
-name|pnt
-operator|.
-name|x
-argument_list|,
-name|epnt
-operator|->
-name|pnt
-operator|.
 name|y
 argument_list|)
 expr_stmt|;
@@ -715,7 +644,6 @@ operator|!
 name|shift_down
 condition|)
 block|{
-comment|/* Draw square on point */
 comment|/* Must delete obj_creating if we have one */
 name|obj_creating
 operator|=
@@ -758,14 +686,6 @@ name|gboolean
 name|shift_down
 parameter_list|)
 block|{
-comment|/* Undraw the last circle */
-name|draw_circle
-argument_list|(
-name|pnt
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|shift_down

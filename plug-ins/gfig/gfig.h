@@ -47,7 +47,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf733710108
+DECL|struct|__anon2a3137840108
 block|{
 DECL|member|gridspacing
 name|gint
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf733710208
+DECL|struct|__anon2a3137840208
 block|{
 DECL|member|type
 name|SelectionType
@@ -277,14 +277,6 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GdkGC
-modifier|*
-name|gfig_gc
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
 name|gdouble
 name|scale_x_factor
 decl_stmt|,
@@ -318,7 +310,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf733710308
+DECL|struct|__anon2a3137840308
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -513,7 +505,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf733710408
+DECL|struct|__anon2a3137840408
 block|{
 DECL|member|debug_styles
 name|gboolean
@@ -676,6 +668,26 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gint
+name|gfig_scale_x
+parameter_list|(
+name|gint
+name|x
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
+name|gfig_scale_y
+parameter_list|(
+name|gint
+name|y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|scale_to_xy
 parameter_list|(
@@ -725,6 +737,20 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|draw_item
+parameter_list|(
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
+name|gboolean
+name|fill
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|draw_circle
 parameter_list|(
 name|GdkPoint
@@ -733,6 +759,10 @@ name|p
 parameter_list|,
 name|gboolean
 name|selected
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -747,6 +777,10 @@ name|p
 parameter_list|,
 name|gboolean
 name|selected
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -843,6 +877,10 @@ name|angle1
 parameter_list|,
 name|gint
 name|angle2
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -862,6 +900,10 @@ name|x1
 parameter_list|,
 name|gint
 name|y1
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl

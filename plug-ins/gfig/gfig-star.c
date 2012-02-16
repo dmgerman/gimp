@@ -80,6 +80,10 @@ parameter_list|(
 name|GfigObject
 modifier|*
 name|obj
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -172,12 +176,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|d_draw_star (GfigObject * obj)
+DECL|function|d_draw_star (GfigObject * obj,cairo_t * cr)
 name|d_draw_star
 parameter_list|(
 name|GfigObject
 modifier|*
 name|obj
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
 parameter_list|)
 block|{
 name|DobjPoints
@@ -266,6 +274,8 @@ operator|==
 name|gfig_context
 operator|->
 name|selected_obj
+argument_list|,
+name|cr
 argument_list|)
 expr_stmt|;
 comment|/* Next point defines the radius */
@@ -282,17 +292,6 @@ operator|!
 name|outer_radius_pnt
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|DEBUG
-name|g_warning
-argument_list|(
-literal|"Internal error in star - no outer vertice point \n"
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* DEBUG */
 return|return;
 block|}
 name|inner_radius_pnt
@@ -308,20 +307,43 @@ operator|!
 name|inner_radius_pnt
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|DEBUG
-name|g_warning
-argument_list|(
-literal|"Internal error in star - no inner vertice point \n"
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* DEBUG */
 return|return;
 block|}
 comment|/* Other control points */
+if|if
+condition|(
+name|obj
+operator|==
+name|obj_creating
+condition|)
+block|{
+name|draw_circle
+argument_list|(
+operator|&
+name|outer_radius_pnt
+operator|->
+name|pnt
+argument_list|,
+name|TRUE
+argument_list|,
+name|cr
+argument_list|)
+expr_stmt|;
+name|draw_circle
+argument_list|(
+operator|&
+name|inner_radius_pnt
+operator|->
+name|pnt
+argument_list|,
+name|TRUE
+argument_list|,
+name|cr
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|draw_sqr
 argument_list|(
 operator|&
@@ -334,6 +356,8 @@ operator|==
 name|gfig_context
 operator|->
 name|selected_obj
+argument_list|,
+name|cr
 argument_list|)
 expr_stmt|;
 name|draw_sqr
@@ -348,8 +372,11 @@ operator|==
 name|gfig_context
 operator|->
 name|selected_obj
+argument_list|,
+name|cr
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* Have center and radius - draw star */
 name|shift_x
 operator|=
@@ -624,6 +651,8 @@ argument_list|,
 name|start_pnt
 operator|.
 name|y
+argument_list|,
+name|cr
 argument_list|)
 expr_stmt|;
 block|}
@@ -660,6 +689,8 @@ argument_list|,
 name|start_pnt
 operator|.
 name|y
+argument_list|,
+name|cr
 argument_list|)
 expr_stmt|;
 block|}
@@ -1609,16 +1640,6 @@ decl_stmt|,
 modifier|*
 name|outer_pnt
 decl_stmt|;
-name|gint
-name|saved_cnt_pnt
-init|=
-name|selvals
-operator|.
-name|opts
-operator|.
-name|showcontrol
-decl_stmt|;
-comment|/* Undraw last one then draw new one */
 name|center_pnt
 operator|=
 name|obj_creating
@@ -1632,8 +1653,6 @@ name|center_pnt
 condition|)
 return|return;
 comment|/* No points */
-comment|/* Leave the first pnt alone -    * Edge point defines "radius"    * Only undraw if already have edge point.    */
-comment|/* Hack - turn off cnt points in draw routine    * Looking back over the other update routines I could    * use this trick again and cut down on code size!    */
 if|if
 condition|(
 operator|(
@@ -1645,45 +1664,11 @@ name|next
 operator|)
 condition|)
 block|{
-comment|/* Undraw */
 name|inner_pnt
 operator|=
 name|outer_pnt
 operator|->
 name|next
-expr_stmt|;
-name|draw_circle
-argument_list|(
-operator|&
-name|inner_pnt
-operator|->
-name|pnt
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|draw_circle
-argument_list|(
-operator|&
-name|outer_pnt
-operator|->
-name|pnt
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|selvals
-operator|.
-name|opts
-operator|.
-name|showcontrol
-operator|=
-literal|0
-expr_stmt|;
-name|d_draw_star
-argument_list|(
-name|obj_creating
-argument_list|)
 expr_stmt|;
 name|outer_pnt
 operator|->
@@ -1769,12 +1754,6 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|outer_pnt
-operator|=
-name|center_pnt
-operator|->
-name|next
-expr_stmt|;
 comment|/* Inner radius */
 name|d_pnt_add_line
 argument_list|(
@@ -1828,56 +1807,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|inner_pnt
-operator|=
-name|outer_pnt
-operator|->
-name|next
-expr_stmt|;
 block|}
-comment|/* draw it */
-name|selvals
-operator|.
-name|opts
-operator|.
-name|showcontrol
-operator|=
-literal|0
-expr_stmt|;
-name|d_draw_star
-argument_list|(
-name|obj_creating
-argument_list|)
-expr_stmt|;
-name|selvals
-operator|.
-name|opts
-operator|.
-name|showcontrol
-operator|=
-name|saved_cnt_pnt
-expr_stmt|;
-comment|/* Realy draw the control points */
-name|draw_circle
-argument_list|(
-operator|&
-name|outer_pnt
-operator|->
-name|pnt
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|draw_circle
-argument_list|(
-operator|&
-name|inner_pnt
-operator|->
-name|pnt
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1931,13 +1861,6 @@ name|gboolean
 name|shift_down
 parameter_list|)
 block|{
-name|draw_circle
-argument_list|(
-name|pnt
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 name|add_to_all_obj
 argument_list|(
 name|gfig_context

@@ -31,6 +31,10 @@ parameter_list|(
 name|GfigObject
 modifier|*
 name|obj
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl

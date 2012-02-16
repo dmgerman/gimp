@@ -313,14 +313,6 @@ comment|/* globals */
 end_comment
 
 begin_decl_stmt
-DECL|variable|gfig_gc
-name|GdkGC
-modifier|*
-name|gfig_gc
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|dobj_class
 name|GfigObjectClass
 name|dobj_class

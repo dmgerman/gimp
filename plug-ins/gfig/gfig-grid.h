@@ -17,6 +17,14 @@ name|__GFIG_GRID_H__
 end_define
 
 begin_define
+DECL|macro|GFIG_NORMAL_GC
+define|#
+directive|define
+name|GFIG_NORMAL_GC
+value|-1
+end_define
+
+begin_define
 DECL|macro|GFIG_BLACK_GC
 define|#
 directive|define
@@ -38,6 +46,30 @@ define|#
 directive|define
 name|GFIG_GREY_GC
 value|-4
+end_define
+
+begin_define
+DECL|macro|GFIG_DARKER_GC
+define|#
+directive|define
+name|GFIG_DARKER_GC
+value|-5
+end_define
+
+begin_define
+DECL|macro|GFIG_LIGHTER_GC
+define|#
+directive|define
+name|GFIG_LIGHTER_GC
+value|-6
+end_define
+
+begin_define
+DECL|macro|GFIG_VERY_DARK_GC
+define|#
+directive|define
+name|GFIG_VERY_DARK_GC
+value|-7
 end_define
 
 begin_define
@@ -96,7 +128,9 @@ begin_function_decl
 name|void
 name|draw_grid
 parameter_list|(
-name|void
+name|cairo_t
+modifier|*
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl

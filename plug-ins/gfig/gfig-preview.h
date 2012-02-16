@@ -35,21 +35,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
-name|gfig_preview_expose
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GdkEvent
-modifier|*
-name|event
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gfig_pos_enable
 parameter_list|(

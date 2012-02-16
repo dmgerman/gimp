@@ -29,6 +29,24 @@ file|"gfig-style.h"
 end_include
 
 begin_typedef
+DECL|typedef|DobjDrawFunc
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|DobjDrawFunc
+function_decl|)
+parameter_list|(
+name|GfigObject
+modifier|*
+parameter_list|,
+name|cairo_t
+modifier|*
+parameter_list|)
+function_decl|;
+end_typedef
+
+begin_typedef
 DECL|typedef|DobjFunc
 typedef|typedef
 name|void
@@ -88,7 +106,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7371370108
+DECL|struct|__anon2c2702800108
 block|{
 DECL|member|type
 name|DobjType
@@ -103,7 +121,7 @@ name|name
 decl_stmt|;
 comment|/* virtuals */
 DECL|member|drawfunc
-name|DobjFunc
+name|DobjDrawFunc
 name|drawfunc
 decl_stmt|;
 comment|/* How do I draw myself */
@@ -330,6 +348,10 @@ name|objs
 parameter_list|,
 name|gboolean
 name|show_single
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl
