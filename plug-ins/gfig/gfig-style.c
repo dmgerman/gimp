@@ -908,6 +908,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+comment|/* nuke final> and preserve spaces in name */
 if|if
 condition|(
 literal|1
@@ -916,7 +917,7 @@ name|sscanf
 argument_list|(
 name|load_buf2
 argument_list|,
-literal|"<Style %99s>"
+literal|"<Style %99[^>]>"
 argument_list|,
 name|name
 argument_list|)
@@ -960,17 +961,6 @@ literal|"Loading style '%s' -- "
 argument_list|,
 name|name
 argument_list|)
-expr_stmt|;
-comment|/* nuke final> in name */
-operator|*
-name|strrchr
-argument_list|(
-name|name
-argument_list|,
-literal|'>'
-argument_list|)
-operator|=
-literal|'\0'
 expr_stmt|;
 name|style
 operator|->
