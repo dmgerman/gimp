@@ -579,8 +579,6 @@ name|line_pnts
 decl_stmt|;
 name|gint
 name|seg_count
-init|=
-literal|0
 decl_stmt|;
 name|gint
 name|i
@@ -1213,11 +1211,6 @@ parameter_list|)
 block|{
 comment|/* first point center */
 comment|/* Next point is radius */
-name|gint
-name|seg_count
-init|=
-literal|0
-decl_stmt|;
 name|DobjPoints
 modifier|*
 name|center_pnt
@@ -1276,15 +1269,6 @@ name|obj
 operator|!=
 name|NULL
 argument_list|)
-expr_stmt|;
-comment|/* count - add one to close polygon */
-name|seg_count
-operator|=
-name|obj
-operator|->
-name|type_data
-operator|+
-literal|1
 expr_stmt|;
 name|center_pnt
 operator|=
@@ -1581,11 +1565,6 @@ parameter_list|)
 block|{
 comment|/* first point center */
 comment|/* Next point is radius */
-name|gint
-name|seg_count
-init|=
-literal|0
-decl_stmt|;
 name|DobjPoints
 modifier|*
 name|center_pnt
@@ -1651,17 +1630,6 @@ name|obj
 operator|!=
 name|NULL
 argument_list|)
-expr_stmt|;
-comment|/* count - add one to close polygon */
-name|seg_count
-operator|=
-literal|2
-operator|*
-name|obj
-operator|->
-name|type_data
-operator|+
-literal|1
 expr_stmt|;
 name|center_pnt
 operator|=

@@ -251,9 +251,6 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-name|GdkPoint
-name|first_pnt
-decl_stmt|;
 name|gboolean
 name|do_line
 init|=
@@ -619,10 +616,6 @@ block|{
 name|do_line
 operator|=
 name|TRUE
-expr_stmt|;
-name|first_pnt
-operator|=
-name|calc_pnt
 expr_stmt|;
 block|}
 name|start_pnt
