@@ -77,7 +77,7 @@ value|"gimp-maze"
 end_define
 
 begin_typedef
-DECL|enum|__anon295cda560103
+DECL|enum|__anon29aa0b5b0103
 typedef|typedef
 enum|enum
 block|{
@@ -93,7 +93,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon295cda560208
+DECL|struct|__anon29aa0b5b0208
 typedef|typedef
 struct|struct
 block|{
@@ -165,14 +165,14 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|guint
+name|gint
 name|sel_w
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|guint
+name|gint
 name|sel_h
 decl_stmt|;
 end_decl_stmt
