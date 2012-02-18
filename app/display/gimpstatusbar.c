@@ -1574,13 +1574,9 @@ name|g_object_new
 argument_list|(
 name|GTK_TYPE_PROGRESS_BAR
 argument_list|,
-literal|"text-xalign"
+literal|"show-text"
 argument_list|,
-literal|0.0
-argument_list|,
-literal|"text-yalign"
-argument_list|,
-literal|0.5
+name|TRUE
 argument_list|,
 literal|"ellipsize"
 argument_list|,
