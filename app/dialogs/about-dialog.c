@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bb41750108
+DECL|struct|__anon29d975cb0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -281,6 +281,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
+end_ifdef
+
 begin_function_decl
 specifier|static
 name|void
@@ -292,6 +298,15 @@ name|vbox
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_UNSTABLE */
+end_comment
 
 begin_function
 name|GtkWidget
@@ -575,6 +590,9 @@ operator|&
 name|dialog
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
 name|about_dialog_add_unstable_message
 argument_list|(
 name|children
@@ -582,6 +600,9 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
+comment|/* GIMP_UNSTABLE */
 block|}
 else|else
 name|g_warning
@@ -2514,6 +2535,12 @@ return|;
 block|}
 end_function
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
+end_ifdef
+
 begin_function
 specifier|static
 name|void
@@ -2525,9 +2552,6 @@ modifier|*
 name|vbox
 parameter_list|)
 block|{
-ifdef|#
-directive|ifdef
-name|GIMP_UNSTABLE
 name|GtkWidget
 modifier|*
 name|label
@@ -2590,10 +2614,17 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_UNSTABLE */
+end_comment
 
 end_unit
 
