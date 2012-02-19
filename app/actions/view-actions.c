@@ -1131,7 +1131,7 @@ literal|"minus"
 block|,
 name|NC_
 argument_list|(
-literal|"view-action"
+literal|"view-zoom-action"
 argument_list|,
 literal|"Zoom out"
 argument_list|)
@@ -1159,7 +1159,7 @@ literal|"plus"
 block|,
 name|NC_
 argument_list|(
-literal|"view-action"
+literal|"view-zoom-action"
 argument_list|,
 literal|"Zoom in"
 argument_list|)
@@ -1187,7 +1187,7 @@ literal|"KP_Subtract"
 block|,
 name|NC_
 argument_list|(
-literal|"view-action"
+literal|"view-zoom-action"
 argument_list|,
 literal|"Zoom out"
 argument_list|)
@@ -1215,7 +1215,7 @@ literal|"KP_Add"
 block|,
 name|NC_
 argument_list|(
-literal|"view-action"
+literal|"view-zoom-action"
 argument_list|,
 literal|"Zoom in"
 argument_list|)
