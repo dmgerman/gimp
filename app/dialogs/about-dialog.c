@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b966ce70108
+DECL|struct|__anon27bb41750108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -284,7 +284,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|about_dialog_add_message
+name|about_dialog_add_unstable_message
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -575,7 +575,7 @@ operator|&
 name|dialog
 argument_list|)
 expr_stmt|;
-name|about_dialog_add_message
+name|about_dialog_add_unstable_message
 argument_list|(
 name|children
 operator|->
@@ -2517,8 +2517,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|about_dialog_add_message (GtkWidget * vbox)
-name|about_dialog_add_message
+DECL|function|about_dialog_add_unstable_message (GtkWidget * vbox)
+name|about_dialog_add_unstable_message
 parameter_list|(
 name|GtkWidget
 modifier|*
