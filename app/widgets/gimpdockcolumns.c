@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29da1df80103
+DECL|enum|__anon29d83fa70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29da1df80203
+DECL|enum|__anon29d83fa70203
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -662,10 +662,11 @@ name|p
 operator|->
 name|docks
 condition|)
-name|gimp_dock_columns_remove_dock
-argument_list|(
-name|dock_columns
-argument_list|,
+block|{
+name|GimpDock
+modifier|*
+name|dock
+init|=
 name|dock_columns
 operator|->
 name|p
@@ -673,8 +674,33 @@ operator|->
 name|docks
 operator|->
 name|data
+decl_stmt|;
+name|g_object_ref
+argument_list|(
+name|dock
 argument_list|)
 expr_stmt|;
+name|gimp_dock_columns_remove_dock
+argument_list|(
+name|dock_columns
+argument_list|,
+name|dock
+argument_list|)
+expr_stmt|;
+name|gtk_widget_destroy
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|dock
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|dock
+argument_list|)
+expr_stmt|;
+block|}
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

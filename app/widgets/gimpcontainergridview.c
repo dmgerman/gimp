@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a428e530103
+DECL|enum|__anon27aee0700103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -2026,15 +2026,8 @@ name|selected_item
 operator|=
 name|NULL
 expr_stmt|;
-name|gtk_container_remove
+name|gtk_widget_destroy
 argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|grid_view
-operator|->
-name|wrap_box
-argument_list|)
-argument_list|,
 name|view
 argument_list|)
 expr_stmt|;
@@ -2246,15 +2239,8 @@ argument_list|)
 operator|->
 name|children
 condition|)
-name|gtk_container_remove
+name|gtk_widget_destroy
 argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|grid_view
-operator|->
-name|wrap_box
-argument_list|)
-argument_list|,
 name|GTK_WRAP_BOX
 argument_list|(
 name|grid_view

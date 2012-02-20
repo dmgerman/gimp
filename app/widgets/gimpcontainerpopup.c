@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b7f6b00103
+DECL|enum|__anon2a11e82e0103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -1997,15 +1997,8 @@ name|view_type
 operator|=
 name|view_type
 expr_stmt|;
-name|gtk_container_remove
+name|gtk_widget_destroy
 argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|popup
-operator|->
-name|frame
-argument_list|)
-argument_list|,
 name|GTK_WIDGET
 argument_list|(
 name|popup

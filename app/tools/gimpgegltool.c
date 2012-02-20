@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1fc0370103
+DECL|enum|__anon275bd22c0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -2714,15 +2714,8 @@ operator|->
 name|options_table
 condition|)
 block|{
-name|gtk_container_remove
+name|gtk_widget_destroy
 argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|tool
-operator|->
-name|options_frame
-argument_list|)
-argument_list|,
 name|tool
 operator|->
 name|options_table

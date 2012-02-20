@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5cedb40103
+DECL|enum|__anon2961a65f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2295,7 +2295,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5cedb40208
+DECL|struct|__anon2961a65f0208
 block|{
 DECL|member|mod_mask
 name|GdkModifierType
@@ -2668,13 +2668,8 @@ if|if
 condition|(
 name|old_child
 condition|)
-name|gtk_container_remove
+name|gtk_widget_destroy
 argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
 name|old_child
 argument_list|)
 expr_stmt|;

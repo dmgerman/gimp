@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291decf30103
+DECL|enum|__anon2b830c1f0103
 block|{
 DECL|enumerator|SESSION_INFO_SIDE
 name|SESSION_INFO_SIDE
@@ -1268,6 +1268,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|g_object_ref
+argument_list|(
+name|dockbook
+argument_list|)
+expr_stmt|;
 name|gimp_dock_remove_book
 argument_list|(
 name|GIMP_DOCK
@@ -1279,6 +1284,19 @@ name|GIMP_DOCKBOOK
 argument_list|(
 name|dockbook
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_widget_destroy
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|dockbook
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|dockbook
 argument_list|)
 expr_stmt|;
 name|n_books
