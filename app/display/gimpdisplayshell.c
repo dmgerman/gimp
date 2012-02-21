@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d954110103
+DECL|enum|__anon293132310103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -363,7 +363,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d954110203
+DECL|enum|__anon293132310203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -6533,6 +6533,16 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
+name|gdouble
+name|x1_f
+decl_stmt|,
+name|y1_f
+decl_stmt|;
+name|gdouble
+name|x2_f
+decl_stmt|,
+name|y2_f
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
@@ -6767,7 +6777,7 @@ return|return
 name|FALSE
 return|;
 block|}
-name|gimp_display_shell_transform_xy
+name|gimp_display_shell_transform_xy_f
 argument_list|(
 name|shell
 argument_list|,
@@ -6777,12 +6787,14 @@ argument_list|,
 operator|*
 name|y1
 argument_list|,
-name|x1
+operator|&
+name|x1_f
 argument_list|,
-name|y1
+operator|&
+name|y1_f
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_transform_xy
+name|gimp_display_shell_transform_xy_f
 argument_list|(
 name|shell
 argument_list|,
@@ -6792,9 +6804,11 @@ argument_list|,
 operator|*
 name|y2
 argument_list|,
-name|x2
+operator|&
+name|x2_f
 argument_list|,
-name|y2
+operator|&
+name|y2_f
 argument_list|)
 expr_stmt|;
 comment|/*  Make sure the extents are within bounds  */
@@ -6803,8 +6817,10 @@ name|x1
 operator|=
 name|CLAMP
 argument_list|(
-operator|*
-name|x1
+name|floor
+argument_list|(
+name|x1_f
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -6818,8 +6834,10 @@ name|y1
 operator|=
 name|CLAMP
 argument_list|(
-operator|*
-name|y1
+name|floor
+argument_list|(
+name|y1_f
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -6833,8 +6851,10 @@ name|x2
 operator|=
 name|CLAMP
 argument_list|(
-operator|*
-name|x2
+name|ceil
+argument_list|(
+name|x2_f
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -6848,8 +6868,10 @@ name|y2
 operator|=
 name|CLAMP
 argument_list|(
-operator|*
-name|y2
+name|ceil
+argument_list|(
+name|y2_f
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
