@@ -6,20 +6,20 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GFIG_ENUMS_H__
+name|__GFIG_TYPES_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GFIG_ENUMS_H__
+DECL|macro|__GFIG_TYPES_H__
 define|#
 directive|define
-name|__GFIG_ENUMS_H__
+name|__GFIG_TYPES_H__
 end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a4b87a0103
+DECL|enum|__anon292fbb590103
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -40,7 +40,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a4b87a0203
+DECL|enum|__anon292fbb590203
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -64,7 +64,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a4b87a0303
+DECL|enum|__anon292fbb590303
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -82,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a4b87a0403
+DECL|enum|__anon292fbb590403
 block|{
 DECL|enumerator|FILL_NONE
 name|FILL_NONE
@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a4b87a0503
+DECL|enum|__anon292fbb590503
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -133,7 +133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a4b87a0603
+DECL|enum|__anon292fbb590603
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -160,7 +160,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a4b87a0703
+DECL|enum|__anon292fbb590703
 block|{
 DECL|enumerator|PAINT_NONE
 name|PAINT_NONE
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a4b87a0803
+DECL|enum|__anon292fbb590803
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a4b87a0903
+DECL|enum|__anon292fbb590903
 block|{
 DECL|enumerator|OBJ_TYPE_NONE
 name|OBJ_TYPE_NONE
@@ -300,7 +300,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GFIG_ENUMS_H__ */
+comment|/* __GFIG_TYPES_H__ */
 end_comment
 
 end_unit
