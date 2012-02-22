@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3d167b0103
+DECL|enum|__anon2afa14850103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -55,7 +55,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3d167b0203
+DECL|enum|__anon2afa14850203
 block|{
 DECL|enumerator|TARGET_NUMBER
 name|TARGET_NUMBER
@@ -920,9 +920,11 @@ condition|)
 block|{
 name|gint
 name|char_width
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|digit_width
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|char_pixels
 decl_stmt|;
 name|char_width
@@ -1568,10 +1570,6 @@ name|gdouble
 name|y
 parameter_list|)
 block|{
-name|PangoFontMetrics
-modifier|*
-name|metrics
-decl_stmt|;
 name|GtkAllocation
 name|allocation
 decl_stmt|;
