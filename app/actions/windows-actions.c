@@ -506,7 +506,7 @@ name|NC_
 argument_list|(
 literal|"windows-action"
 argument_list|,
-literal|"When enabled GIMP is in a single-window mode. Far from completely implemented!"
+literal|"When enabled GIMP is in a single-window mode."
 argument_list|)
 block|,
 name|G_CALLBACK
