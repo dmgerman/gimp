@@ -352,7 +352,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a09a7010103
+DECL|enum|__anon2c131fd50103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -446,7 +446,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a09a7010203
+DECL|enum|__anon2c131fd50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3368,6 +3368,14 @@ operator|->
 name|default_grid
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|private
+operator|->
+name|quick_mask_color
+operator|=
+name|config
+operator|->
+name|quick_mask_color
 expr_stmt|;
 if|if
 condition|(

@@ -738,6 +738,15 @@ value|N_("Sets the preview size used for layers and channel previews in newly " 
 end_define
 
 begin_define
+DECL|macro|QUICK_MASK_COLOR_BLURB
+define|#
+directive|define
+name|QUICK_MASK_COLOR_BLURB
+define|\
+value|N_("Sets the default quick mask color.")
+end_define
+
+begin_define
 DECL|macro|RESIZE_WINDOWS_ON_RESIZE_BLURB
 define|#
 directive|define
