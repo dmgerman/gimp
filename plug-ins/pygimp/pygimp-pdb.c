@@ -98,7 +98,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2aa70d530108
+DECL|struct|__anon2b6803e00108
 typedef|typedef
 struct|struct
 block|{
@@ -118,7 +118,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2aa70d530208
+DECL|struct|__anon2b6803e00208
 typedef|typedef
 struct|struct
 block|{
@@ -1430,7 +1430,7 @@ name|GIMP_PDB_ITEM
 case|:
 name|value
 operator|=
-name|PyInt_FromLong
+name|pygimp_item_new
 argument_list|(
 name|params
 index|[
@@ -3196,6 +3196,27 @@ break|break;
 case|case
 name|GIMP_PDB_VECTORS
 case|:
+if|if
+condition|(
+name|item
+operator|==
+name|Py_None
+condition|)
+block|{
+name|ret
+index|[
+name|i
+index|]
+operator|.
+name|data
+operator|.
+name|d_vectors
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+break|break;
+block|}
 name|check
 argument_list|(
 operator|!
