@@ -228,6 +228,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GList
+modifier|*
+name|gimp_pdb_context_get_brush_options
+parameter_list|(
+name|GimpPDBContext
+modifier|*
+name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
