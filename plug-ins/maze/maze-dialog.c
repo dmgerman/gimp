@@ -139,7 +139,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27821bde0108
+DECL|struct|__anon2a1e08420108
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -271,7 +271,7 @@ name|GtkWidget
 modifier|*
 name|divbox_new
 parameter_list|(
-name|guint
+name|gint
 modifier|*
 name|max
 parameter_list|,
@@ -1224,10 +1224,10 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|divbox_new (guint * max,GtkWidget * friend,GtkWidget ** div_entry)
+DECL|function|divbox_new (gint * max,GtkWidget * friend,GtkWidget ** div_entry)
 name|divbox_new
 parameter_list|(
-name|guint
+name|gint
 modifier|*
 name|max
 parameter_list|,
@@ -1661,7 +1661,7 @@ name|gchar
 modifier|*
 name|text
 decl_stmt|;
-name|guint
+name|gint
 name|max
 decl_stmt|,
 name|divs
@@ -1689,7 +1689,7 @@ operator|=
 operator|*
 operator|(
 operator|(
-name|guint
+name|gint
 operator|*
 operator|)
 name|g_object_get_data
@@ -2081,7 +2081,7 @@ modifier|*
 name|friend
 parameter_list|)
 block|{
-name|guint
+name|gint
 name|divs
 decl_stmt|,
 name|width
@@ -2122,7 +2122,7 @@ operator|=
 operator|*
 operator|(
 operator|(
-name|guint
+name|gint
 operator|*
 operator|)
 name|g_object_get_data
@@ -2213,7 +2213,7 @@ modifier|*
 name|div_entry
 parameter_list|)
 block|{
-name|guint
+name|gint
 name|divs
 decl_stmt|,
 name|max
@@ -2226,7 +2226,7 @@ operator|=
 operator|*
 operator|(
 operator|(
-name|guint
+name|gint
 operator|*
 operator|)
 name|g_object_get_data
