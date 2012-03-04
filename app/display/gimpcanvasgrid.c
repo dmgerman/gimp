@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7474790103
+DECL|enum|__anon2951483b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -775,6 +775,34 @@ operator|>
 literal|0
 argument_list|)
 expr_stmt|;
+comment|/*  skip grid drawing when the space between grid lines starts    *  disappearing, see bug #599267.    */
+if|if
+condition|(
+name|private
+operator|->
+name|grid
+operator|->
+name|xspacing
+operator|*
+name|shell
+operator|->
+name|scale_x
+operator|<
+literal|2.0
+operator|||
+name|private
+operator|->
+name|grid
+operator|->
+name|yspacing
+operator|*
+name|shell
+operator|->
+name|scale_y
+operator|<
+literal|2.0
+condition|)
+return|return;
 name|cairo_clip_extents
 argument_list|(
 name|cr
