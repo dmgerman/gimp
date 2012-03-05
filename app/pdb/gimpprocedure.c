@@ -2092,6 +2092,9 @@ name|code
 condition|)
 block|{
 case|case
+name|GIMP_PDB_FAILED
+case|:
+case|case
 name|GIMP_PDB_PROCEDURE_NOT_FOUND
 case|:
 case|case
