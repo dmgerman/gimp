@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295b66730103
+DECL|enum|__anon2b3827f80103
 block|{
 DECL|enumerator|REGISTER_PROCEDURE
 name|REGISTER_PROCEDURE
@@ -1211,7 +1211,7 @@ name|g_error_new
 argument_list|(
 name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_PDB_PROCEDURE_NOT_FOUND
+name|GIMP_PDB_ERROR_PROCEDURE_NOT_FOUND
 argument_list|,
 name|_
 argument_list|(
@@ -1480,7 +1480,7 @@ name|g_error_new
 argument_list|(
 name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_PDB_PROCEDURE_NOT_FOUND
+name|GIMP_PDB_ERROR_PROCEDURE_NOT_FOUND
 argument_list|,
 name|_
 argument_list|(
@@ -1629,7 +1629,7 @@ name|g_error_new
 argument_list|(
 name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_PDB_INVALID_ARGUMENT
+name|GIMP_PDB_ERROR_INVALID_ARGUMENT
 argument_list|,
 name|_
 argument_list|(
@@ -1704,7 +1704,7 @@ name|g_error_new_literal
 argument_list|(
 name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_PDB_INTERNAL_ERROR
+name|GIMP_PDB_ERROR_INTERNAL_ERROR
 argument_list|,
 name|error_msg
 argument_list|)

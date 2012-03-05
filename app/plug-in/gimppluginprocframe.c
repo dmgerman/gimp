@@ -755,7 +755,7 @@ name|g_error_new
 argument_list|(
 name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_PDB_INVALID_RETURN_VALUE
+name|GIMP_PDB_ERROR_INVALID_RETURN_VALUE
 argument_list|,
 name|_
 argument_list|(

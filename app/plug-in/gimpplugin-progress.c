@@ -1199,7 +1199,7 @@ name|g_error_new_literal
 argument_list|(
 name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_PDB_CANCELLED
+name|GIMP_PDB_ERROR_CANCELLED
 argument_list|,
 name|_
 argument_list|(

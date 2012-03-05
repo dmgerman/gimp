@@ -1273,7 +1273,7 @@ name|error
 argument_list|,
 name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_PDB_PROCEDURE_NOT_FOUND
+name|GIMP_PDB_ERROR_PROCEDURE_NOT_FOUND
 argument_list|,
 name|_
 argument_list|(

@@ -1536,7 +1536,7 @@ name|error
 argument_list|,
 name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_PDB_FAILED
+name|GIMP_PDB_ERROR_FAILED
 argument_list|,
 name|g_value_get_string
 argument_list|(
@@ -1572,7 +1572,7 @@ name|g_error_new
 argument_list|(
 name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_PDB_INVALID_RETURN_VALUE
+name|GIMP_PDB_ERROR_INVALID_RETURN_VALUE
 argument_list|,
 name|_
 argument_list|(
@@ -2092,19 +2092,19 @@ name|code
 condition|)
 block|{
 case|case
-name|GIMP_PDB_FAILED
+name|GIMP_PDB_ERROR_FAILED
 case|:
 case|case
-name|GIMP_PDB_PROCEDURE_NOT_FOUND
+name|GIMP_PDB_ERROR_PROCEDURE_NOT_FOUND
 case|:
 case|case
-name|GIMP_PDB_INVALID_ARGUMENT
+name|GIMP_PDB_ERROR_INVALID_ARGUMENT
 case|:
 case|case
-name|GIMP_PDB_INVALID_RETURN_VALUE
+name|GIMP_PDB_ERROR_INVALID_RETURN_VALUE
 case|:
 case|case
-name|GIMP_PDB_INTERNAL_ERROR
+name|GIMP_PDB_ERROR_INTERNAL_ERROR
 case|:
 name|g_value_set_enum
 argument_list|(
@@ -2116,7 +2116,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_PDB_CANCELLED
+name|GIMP_PDB_ERROR_CANCELLED
 case|:
 name|g_value_set_enum
 argument_list|(
@@ -2739,7 +2739,7 @@ name|error
 argument_list|,
 name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_PDB_INVALID_RETURN_VALUE
+name|GIMP_PDB_ERROR_INVALID_RETURN_VALUE
 argument_list|,
 name|_
 argument_list|(
@@ -2782,7 +2782,7 @@ name|error
 argument_list|,
 name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_PDB_INVALID_ARGUMENT
+name|GIMP_PDB_ERROR_INVALID_ARGUMENT
 argument_list|,
 name|_
 argument_list|(
@@ -2912,7 +2912,7 @@ name|error
 argument_list|,
 name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_PDB_INVALID_RETURN_VALUE
+name|GIMP_PDB_ERROR_INVALID_RETURN_VALUE
 argument_list|,
 name|_
 argument_list|(
@@ -2943,7 +2943,7 @@ name|error
 argument_list|,
 name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_PDB_INVALID_ARGUMENT
+name|GIMP_PDB_ERROR_INVALID_ARGUMENT
 argument_list|,
 name|_
 argument_list|(
@@ -2995,7 +2995,7 @@ name|error
 argument_list|,
 name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_PDB_INVALID_RETURN_VALUE
+name|GIMP_PDB_ERROR_INVALID_RETURN_VALUE
 argument_list|,
 name|_
 argument_list|(
@@ -3026,7 +3026,7 @@ name|error
 argument_list|,
 name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_PDB_INVALID_ARGUMENT
+name|GIMP_PDB_ERROR_INVALID_ARGUMENT
 argument_list|,
 name|_
 argument_list|(
@@ -3084,7 +3084,7 @@ name|error
 argument_list|,
 name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_PDB_INVALID_RETURN_VALUE
+name|GIMP_PDB_ERROR_INVALID_RETURN_VALUE
 argument_list|,
 name|_
 argument_list|(
@@ -3125,7 +3125,7 @@ name|error
 argument_list|,
 name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_PDB_INVALID_ARGUMENT
+name|GIMP_PDB_ERROR_INVALID_ARGUMENT
 argument_list|,
 name|_
 argument_list|(

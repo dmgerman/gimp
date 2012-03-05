@@ -601,7 +601,7 @@ name|error
 argument_list|,
 name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_PDB_INVALID_ARGUMENT
+name|GIMP_PDB_ERROR_INVALID_ARGUMENT
 argument_list|,
 name|_
 argument_list|(
@@ -820,7 +820,7 @@ name|error
 argument_list|,
 name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_PDB_INVALID_ARGUMENT
+name|GIMP_PDB_ERROR_INVALID_ARGUMENT
 argument_list|,
 literal|"Dither matrix length must be width * height"
 argument_list|)
