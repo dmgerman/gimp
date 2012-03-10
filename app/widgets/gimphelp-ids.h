@@ -3582,6 +3582,14 @@ value|"gimp-about-dialog"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_ACTION_SEARCH_DIALOG
+define|#
+directive|define
+name|GIMP_HELP_ACTION_SEARCH_DIALOG
+value|"gimp-action-search-dialog"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_COLOR_DIALOG
 define|#
 directive|define

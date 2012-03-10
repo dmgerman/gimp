@@ -2070,6 +2070,26 @@ expr_stmt|;
 undef|#
 directive|undef
 name|PREFERENCES
+name|gui_add_to_app_menu
+argument_list|(
+name|image_ui_manager
+argument_list|,
+name|group
+argument_list|,
+literal|"/dummy-menubar/image-popup/Help/dialogs-search-action"
+argument_list|,
+name|_
+argument_list|(
+literal|"Search and Run a Command"
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/*  the preferences group  */
+name|group
+operator|=
+name|ige_mac_menu_add_app_menu_group
+argument_list|()
+expr_stmt|;
 name|item
 operator|=
 name|gtk_separator_menu_item_new

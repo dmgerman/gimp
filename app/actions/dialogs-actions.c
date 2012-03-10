@@ -1085,6 +1085,32 @@ literal|"gimp-about-dialog"
 block|,
 name|GIMP_HELP_ABOUT_DIALOG
 block|}
+block|,
+block|{
+literal|"dialogs-action-search"
+block|,
+name|GTK_STOCK_FIND
+block|,
+name|NC_
+argument_list|(
+literal|"dialogs-action"
+argument_list|,
+literal|"_Search and Run a Command"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"dialogs-action"
+argument_list|,
+literal|"Search commands by keyword, and run them"
+argument_list|)
+block|,
+literal|"gimp-action-search-dialog"
+block|,
+name|GIMP_HELP_ACTION_SEARCH_DIALOG
+block|}
 block|}
 decl_stmt|;
 end_decl_stmt
