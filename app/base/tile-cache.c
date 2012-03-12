@@ -435,7 +435,9 @@ literal|0
 condition|)
 name|g_warning
 argument_list|(
-literal|"tile cache not empty (%ld bytes left)"
+literal|"tile cache not empty (%"
+name|G_GUINT64_FORMAT
+literal|" bytes left)"
 argument_list|,
 name|cur_cache_size
 argument_list|)
