@@ -117,11 +117,6 @@ name|GimpDesaturateConfig
 modifier|*
 name|config
 decl_stmt|;
-DECL|member|mode
-name|GimpDesaturateMode
-name|mode
-decl_stmt|;
-comment|/*  only for legacy mode  */
 comment|/*  dialog  */
 DECL|member|button
 name|GtkWidget
