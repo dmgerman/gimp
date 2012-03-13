@@ -2216,6 +2216,15 @@ decl_stmt|;
 name|GeglRectangle
 name|visible
 decl_stmt|;
+if|if
+condition|(
+name|GIMP_IMAGE_MAP_TOOL_GET_CLASS
+argument_list|(
+name|tool
+argument_list|)
+operator|->
+name|map
+condition|)
 name|GIMP_IMAGE_MAP_TOOL_GET_CLASS
 argument_list|(
 name|tool
