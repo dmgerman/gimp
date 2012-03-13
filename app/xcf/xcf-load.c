@@ -7890,6 +7890,12 @@ block|, }
 decl_stmt|;
 name|GimpAnchor
 name|anchor
+init|=
+block|{
+block|{
+literal|0
+block|, }
+block|}
 decl_stmt|;
 name|GType
 name|stroke_type
