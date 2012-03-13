@@ -289,13 +289,6 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|g_warning
-argument_list|(
-literal|"gimp tile backend is dying!!!!!! %p\n"
-argument_list|,
-name|backend
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|backend
@@ -347,22 +340,6 @@ modifier|*
 name|object
 parameter_list|)
 block|{
-name|GimpTileBackendTileManager
-modifier|*
-name|backend
-init|=
-name|GIMP_TILE_BACKEND_TILE_MANAGER
-argument_list|(
-name|object
-argument_list|)
-decl_stmt|;
-name|g_warning
-argument_list|(
-literal|"gimp tile backend is dying!!!!!! %p\n"
-argument_list|,
-name|backend
-argument_list|)
-expr_stmt|;
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -377,9 +354,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|tile_done (Tile * tile,void * data)
 specifier|static
 name|void
+DECL|function|tile_done (Tile * tile,void * data)
 name|tile_done
 parameter_list|(
 name|Tile
