@@ -532,7 +532,7 @@ name|gegl
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"buffer-source"
+literal|"gegl:buffer-source"
 argument_list|,
 literal|"buffer"
 argument_list|,
@@ -549,7 +549,7 @@ name|gegl
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"write-buffer"
+literal|"gegl:write-buffer"
 argument_list|,
 literal|"buffer"
 argument_list|,
