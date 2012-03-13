@@ -929,7 +929,7 @@ name|gimp_bpp_to_babl_format
 argument_list|(
 name|bpp
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 argument_list|,
 name|NULL
