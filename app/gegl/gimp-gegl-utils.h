@@ -70,6 +70,21 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_function_decl
+name|GeglBuffer
+modifier|*
+name|gimp_tile_manager_get_gegl_buffer
+parameter_list|(
+name|TileManager
+modifier|*
+name|tm
+parameter_list|,
+name|gboolean
+name|write
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

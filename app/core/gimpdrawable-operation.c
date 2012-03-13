@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimptilebackendtilemanager.h"
+file|"gegl/gimp-gegl-utils.h"
 end_include
 
 begin_include
@@ -508,7 +508,7 @@ argument_list|)
 expr_stmt|;
 name|inbuf
 operator|=
-name|gimp_drawable_get_gegl_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
 argument_list|,

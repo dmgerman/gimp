@@ -58,7 +58,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimptilebackendtilemanager.h"
+file|"gegl/gimp-gegl-utils.h"
 end_include
 
 begin_include
@@ -111,7 +111,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5720350103
+DECL|enum|__anon2bd51a5e0103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -3136,19 +3136,18 @@ modifier|*
 name|image_map
 parameter_list|)
 block|{
+name|GimpImage
+modifier|*
+name|image
+decl_stmt|;
 name|PixelRegion
 name|srcPR
 decl_stmt|;
 name|PixelRegion
 name|destPR
 decl_stmt|;
-if|if
-condition|(
-operator|!
-name|gimp_channel_is_empty
-argument_list|(
-name|gimp_image_get_mask
-argument_list|(
+name|image
+operator|=
 name|gimp_item_get_image
 argument_list|(
 name|GIMP_ITEM
@@ -3158,6 +3157,15 @@ operator|->
 name|drawable
 argument_list|)
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp_channel_is_empty
+argument_list|(
+name|gimp_image_get_mask
+argument_list|(
+name|image
 argument_list|)
 argument_list|)
 condition|)

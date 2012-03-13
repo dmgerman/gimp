@@ -754,6 +754,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GeglBuffer
+modifier|*
+name|gimp_drawable_get_buffer
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|gboolean
+name|write
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|TileManager
 modifier|*
 name|gimp_drawable_get_tiles

@@ -229,7 +229,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5537db0103
+DECL|enum|__anon2ab39f660103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -6312,6 +6312,44 @@ name|temp_tiles
 operator|=
 name|NULL
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|GeglBuffer
+modifier|*
+DECL|function|gimp_drawable_get_buffer (GimpDrawable * drawable,gboolean write)
+name|gimp_drawable_get_buffer
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|gboolean
+name|write
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DRAWABLE
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|gimp_tile_manager_get_gegl_buffer
+argument_list|(
+name|gimp_drawable_get_tiles
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+name|write
+argument_list|)
+return|;
 block|}
 end_function
 
