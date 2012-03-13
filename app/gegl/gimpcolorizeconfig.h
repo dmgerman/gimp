@@ -142,25 +142,6 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  temp cruft  */
-end_comment
-
-begin_function_decl
-name|void
-name|gimp_colorize_config_to_cruft
-parameter_list|(
-name|GimpColorizeConfig
-modifier|*
-name|config
-parameter_list|,
-name|Colorize
-modifier|*
-name|cruft
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif

@@ -117,11 +117,6 @@ name|GimpColorizeConfig
 modifier|*
 name|config
 decl_stmt|;
-DECL|member|colorize
-name|Colorize
-modifier|*
-name|colorize
-decl_stmt|;
 comment|/*  dialog  */
 DECL|member|hue_data
 name|GtkAdjustment
