@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292094c90103
+DECL|enum|__anon28045ec90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1066,6 +1066,10 @@ control|)
 block|{
 name|GtkTreeIter
 name|iter
+init|=
+block|{
+literal|0
+block|, }
 decl_stmt|;
 specifier|const
 name|gchar
