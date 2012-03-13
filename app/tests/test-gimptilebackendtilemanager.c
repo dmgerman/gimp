@@ -229,6 +229,8 @@ operator|=
 name|gimp_tile_backend_tile_manager_new
 argument_list|(
 name|tm
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|buffer
