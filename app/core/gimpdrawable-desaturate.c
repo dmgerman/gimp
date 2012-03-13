@@ -76,7 +76,7 @@ parameter_list|)
 block|{
 name|GeglNode
 modifier|*
-name|desaturate
+name|node
 decl_stmt|;
 name|GObject
 modifier|*
@@ -121,7 +121,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|desaturate
+name|node
 operator|=
 name|g_object_new
 argument_list|(
@@ -149,7 +149,7 @@ argument_list|)
 expr_stmt|;
 name|gegl_node_set
 argument_list|(
-name|desaturate
+name|node
 argument_list|,
 literal|"config"
 argument_list|,
@@ -174,14 +174,14 @@ argument_list|(
 literal|"Desaturate"
 argument_list|)
 argument_list|,
-name|desaturate
+name|node
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|desaturate
+name|node
 argument_list|)
 expr_stmt|;
 block|}

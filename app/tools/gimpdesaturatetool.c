@@ -141,18 +141,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_desaturate_tool_map
-parameter_list|(
-name|GimpImageMapTool
-modifier|*
-name|im_tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|gimp_desaturate_tool_dialog
 parameter_list|(
 name|GimpImageMapTool
@@ -322,12 +310,6 @@ operator|->
 name|get_operation
 operator|=
 name|gimp_desaturate_tool_get_operation
-expr_stmt|;
-name|im_tool_class
-operator|->
-name|map
-operator|=
-name|gimp_desaturate_tool_map
 expr_stmt|;
 name|im_tool_class
 operator|->
@@ -597,19 +579,6 @@ return|return
 name|node
 return|;
 block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_desaturate_tool_map (GimpImageMapTool * image_map_tool)
-name|gimp_desaturate_tool_map
-parameter_list|(
-name|GimpImageMapTool
-modifier|*
-name|image_map_tool
-parameter_list|)
-block|{ }
 end_function
 
 begin_comment
