@@ -27,16 +27,6 @@ directive|include
 file|"gimp-gegl-types.h"
 end_include
 
-begin_comment
-comment|/*  temp cruft  */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"base/threshold.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -45,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295668160103
+DECL|enum|__anon2981442f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -380,71 +370,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-block|}
-end_function
-
-begin_comment
-comment|/*  temp cruft  */
-end_comment
-
-begin_function
-name|void
-DECL|function|gimp_threshold_config_to_cruft (GimpThresholdConfig * config,Threshold * cruft,gboolean color)
-name|gimp_threshold_config_to_cruft
-parameter_list|(
-name|GimpThresholdConfig
-modifier|*
-name|config
-parameter_list|,
-name|Threshold
-modifier|*
-name|cruft
-parameter_list|,
-name|gboolean
-name|color
-parameter_list|)
-block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_THRESHOLD_CONFIG
-argument_list|(
-name|config
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|cruft
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|cruft
-operator|->
-name|low_threshold
-operator|=
-name|config
-operator|->
-name|low
-operator|*
-literal|255.999
-expr_stmt|;
-name|cruft
-operator|->
-name|high_threshold
-operator|=
-name|config
-operator|->
-name|high
-operator|*
-literal|255.999
-expr_stmt|;
-name|cruft
-operator|->
-name|color
-operator|=
-name|color
-expr_stmt|;
 block|}
 end_function
 
