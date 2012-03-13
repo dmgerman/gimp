@@ -1026,5 +1026,33 @@ return|;
 block|}
 end_function
 
+begin_function
+name|GeglBuffer
+modifier|*
+DECL|function|gimp_drawable_get_gegl_buffer (GimpDrawable * drawable,gboolean write)
+name|gimp_drawable_get_gegl_buffer
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|gboolean
+name|write
+parameter_list|)
+block|{
+return|return
+name|gimp_tile_manager_get_gegl_buffer
+argument_list|(
+name|gimp_drawable_get_tiles
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+name|write
+argument_list|)
+return|;
+block|}
+end_function
+
 end_unit
 
