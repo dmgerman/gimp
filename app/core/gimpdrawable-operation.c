@@ -285,8 +285,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_apply_operation_with_config (GimpDrawable * drawable,GimpProgress * progress,const gchar * undo_desc,const gchar * operation_type,GObject * config,gboolean linear)
-name|gimp_drawable_apply_operation_with_config
+DECL|function|gimp_drawable_apply_operation_by_name (GimpDrawable * drawable,GimpProgress * progress,const gchar * undo_desc,const gchar * operation_type,GObject * config,gboolean linear)
+name|gimp_drawable_apply_operation_by_name
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -365,6 +365,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|config
+operator|==
+name|NULL
+operator|||
 name|GIMP_IS_IMAGE_MAP_CONFIG
 argument_list|(
 name|config
@@ -384,6 +388,10 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|config
+condition|)
 name|gegl_node_set
 argument_list|(
 name|node

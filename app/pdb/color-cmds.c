@@ -969,7 +969,7 @@ argument_list|,
 name|NULL
 argument_list|)
 decl_stmt|;
-name|gimp_drawable_apply_operation_with_config
+name|gimp_drawable_apply_operation_by_name
 argument_list|(
 name|drawable
 argument_list|,
@@ -1127,7 +1127,7 @@ argument_list|,
 name|NULL
 argument_list|)
 decl_stmt|;
-name|gimp_drawable_apply_operation_with_config
+name|gimp_drawable_apply_operation_by_name
 argument_list|(
 name|drawable
 argument_list|,
@@ -1301,7 +1301,7 @@ argument_list|,
 name|NULL
 argument_list|)
 decl_stmt|;
-name|gimp_drawable_apply_operation_with_config
+name|gimp_drawable_apply_operation_by_name
 argument_list|(
 name|drawable
 argument_list|,
@@ -2455,7 +2455,7 @@ argument_list|,
 name|NULL
 argument_list|)
 decl_stmt|;
-name|gimp_drawable_apply_operation_with_config
+name|gimp_drawable_apply_operation_by_name
 argument_list|(
 name|drawable
 argument_list|,
@@ -3259,7 +3259,7 @@ argument_list|,
 name|NULL
 argument_list|)
 decl_stmt|;
-name|gimp_drawable_apply_operation_with_config
+name|gimp_drawable_apply_operation_by_name
 argument_list|(
 name|drawable
 argument_list|,

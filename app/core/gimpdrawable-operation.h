@@ -45,7 +45,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_drawable_apply_operation_with_config
+name|gimp_drawable_apply_operation_by_name
 parameter_list|(
 name|GimpDrawable
 modifier|*
