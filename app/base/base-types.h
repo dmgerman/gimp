@@ -169,15 +169,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|Colorize
-typedef|typedef
-name|struct
-name|_Colorize
-name|Colorize
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|Curves
 typedef|typedef
 name|struct
