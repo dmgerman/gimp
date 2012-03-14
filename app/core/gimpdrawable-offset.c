@@ -307,7 +307,7 @@ argument_list|)
 expr_stmt|;
 name|src_buffer
 operator|=
-name|gimp_drawable_get_buffer
+name|gimp_drawable_create_buffer
 argument_list|(
 name|drawable
 argument_list|,
@@ -316,7 +316,7 @@ argument_list|)
 expr_stmt|;
 name|dest_buffer
 operator|=
-name|gimp_tile_manager_get_gegl_buffer
+name|gimp_tile_manager_create_buffer
 argument_list|(
 name|new_tiles
 argument_list|,

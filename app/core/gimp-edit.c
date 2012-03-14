@@ -2218,7 +2218,7 @@ name|buffer
 decl_stmt|;
 name|temp
 operator|=
-name|gimp_tile_manager_get_gegl_buffer
+name|gimp_tile_manager_create_buffer
 argument_list|(
 name|tiles
 argument_list|,

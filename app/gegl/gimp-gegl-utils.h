@@ -73,7 +73,7 @@ end_decl_stmt
 begin_function_decl
 name|GeglBuffer
 modifier|*
-name|gimp_tile_manager_get_gegl_buffer
+name|gimp_tile_manager_create_buffer
 parameter_list|(
 name|TileManager
 modifier|*

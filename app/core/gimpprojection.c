@@ -133,7 +133,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2955c6320103
+DECL|enum|__anon29e714670103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1508,7 +1508,7 @@ argument_list|)
 expr_stmt|;
 name|buffer
 operator|=
-name|gimp_tile_manager_get_gegl_buffer
+name|gimp_tile_manager_create_buffer
 argument_list|(
 name|tiles
 argument_list|,
@@ -1687,7 +1687,7 @@ argument_list|)
 expr_stmt|;
 name|buffer
 operator|=
-name|gimp_tile_manager_get_gegl_buffer
+name|gimp_tile_manager_create_buffer
 argument_list|(
 name|tiles
 argument_list|,

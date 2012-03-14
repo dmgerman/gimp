@@ -111,7 +111,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd51a5e0103
+DECL|enum|__anon2a42f5630103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1482,7 +1482,7 @@ name|output_buffer
 decl_stmt|;
 name|input_buffer
 operator|=
-name|gimp_tile_manager_get_gegl_buffer
+name|gimp_tile_manager_create_buffer
 argument_list|(
 name|image_map
 operator|->
@@ -1493,7 +1493,7 @@ argument_list|)
 expr_stmt|;
 name|output_buffer
 operator|=
-name|gimp_tile_manager_get_gegl_buffer
+name|gimp_tile_manager_create_buffer
 argument_list|(
 name|gimp_drawable_get_shadow_tiles
 argument_list|(

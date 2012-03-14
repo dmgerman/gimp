@@ -251,7 +251,7 @@ argument_list|)
 expr_stmt|;
 name|temp
 operator|=
-name|gimp_tile_manager_get_gegl_buffer
+name|gimp_tile_manager_create_buffer
 argument_list|(
 name|new_tiles
 argument_list|,
@@ -513,8 +513,8 @@ end_function
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_tile_manager_get_gegl_buffer (TileManager * tm,gboolean write)
-name|gimp_tile_manager_get_gegl_buffer
+DECL|function|gimp_tile_manager_create_buffer (TileManager * tm,gboolean write)
+name|gimp_tile_manager_create_buffer
 parameter_list|(
 name|TileManager
 modifier|*

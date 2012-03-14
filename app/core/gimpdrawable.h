@@ -756,7 +756,7 @@ end_function_decl
 begin_function_decl
 name|GeglBuffer
 modifier|*
-name|gimp_drawable_get_buffer
+name|gimp_drawable_create_buffer
 parameter_list|(
 name|GimpDrawable
 modifier|*

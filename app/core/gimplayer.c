@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dbfb110103
+DECL|enum|__anon2b4cd2e80103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dbfb110203
+DECL|enum|__anon2b4cd2e80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5059,14 +5059,11 @@ argument_list|)
 expr_stmt|;
 name|dest
 operator|=
-name|gimp_tile_manager_get_gegl_buffer
-argument_list|(
-name|gimp_drawable_get_tiles
+name|gimp_drawable_create_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
-argument_list|)
 argument_list|)
 argument_list|,
 name|TRUE
