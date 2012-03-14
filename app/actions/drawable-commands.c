@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable-desaturate.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpdrawable-equalize.h"
 end_include
 
