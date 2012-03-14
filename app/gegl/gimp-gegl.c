@@ -114,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationtilesink.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpoperationpointlayermode.h"
 end_include
 
@@ -358,11 +352,6 @@ name|gimp_gegl_notify_tile_cache_size
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|g_type_class_ref
-argument_list|(
-name|GIMP_TYPE_OPERATION_TILE_SINK
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref
