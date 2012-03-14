@@ -120,12 +120,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationtilesource.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpoperationpointlayermode.h"
 end_include
 
@@ -369,11 +363,6 @@ expr_stmt|;
 name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_OPERATION_TILE_SINK
-argument_list|)
-expr_stmt|;
-name|g_type_class_ref
-argument_list|(
-name|GIMP_TYPE_OPERATION_TILE_SOURCE
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref
