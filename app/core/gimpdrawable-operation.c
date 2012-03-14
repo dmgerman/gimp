@@ -490,6 +490,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|progress
+operator|==
+name|NULL
+operator|||
 name|undo_desc
 operator|!=
 name|NULL
