@@ -48,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable-invert.h"
+file|"core/gimpdrawable-levels.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable-levels.h"
+file|"core/gimpdrawable-operation.h"
 end_include
 
 begin_include
@@ -287,7 +287,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|gimp_drawable_invert
+name|gimp_drawable_apply_operation_by_name
 argument_list|(
 name|drawable
 argument_list|,
@@ -295,6 +295,17 @@ name|GIMP_PROGRESS
 argument_list|(
 name|display
 argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Invert"
+argument_list|)
+argument_list|,
+literal|"gegl:invert"
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush

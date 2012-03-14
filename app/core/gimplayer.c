@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawable-invert.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimperror.h"
 end_include
 
@@ -179,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b179f930103
+DECL|enum|__anon2b973ba60103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -201,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b179f930203
+DECL|enum|__anon2b973ba60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
