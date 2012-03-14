@@ -772,6 +772,7 @@ operator|!
 name|gimp_tile
 condition|)
 return|return;
+comment|/* if the memory pointer already points to the data, there is    * no point in copying it    */
 if|if
 condition|(
 name|source
@@ -786,7 +787,6 @@ literal|0
 argument_list|)
 condition|)
 block|{
-comment|/* only copy when we are not 0 copy */
 name|tile_stride
 operator|=
 name|TILE_WIDTH
@@ -851,7 +851,7 @@ name|tile_release
 argument_list|(
 name|gimp_tile
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
