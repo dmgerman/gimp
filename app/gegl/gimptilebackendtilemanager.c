@@ -528,6 +528,13 @@ condition|(
 name|tile_stride
 operator|==
 name|gimp_tile_stride
+operator|&&
+name|TILE_HEIGHT
+operator|==
+name|tile_eheight
+argument_list|(
+name|gimp_tile
+argument_list|)
 condition|)
 block|{
 comment|/* use the GimpTile directly as GEGL tile */
