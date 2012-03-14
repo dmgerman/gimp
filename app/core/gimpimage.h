@@ -100,6 +100,17 @@ value|((t) == GIMP_RGBA_IMAGE     ? 4 : \                                       
 end_define
 
 begin_define
+DECL|macro|GIMP_IMAGE_TYPE_FROM_BYTES (b)
+define|#
+directive|define
+name|GIMP_IMAGE_TYPE_FROM_BYTES
+parameter_list|(
+name|b
+parameter_list|)
+value|((b) == 4 ? GIMP_RGBA_IMAGE  :    \                                             (b) == 3 ? GIMP_RGB_IMAGE   :    \                                             (b) == 2 ? GIMP_GRAYA_IMAGE :    \                                             (b) == 1 ? GIMP_GRAY_IMAGE : -1)
+end_define
+
+begin_define
 DECL|macro|GIMP_IMAGE_TYPE_BASE_TYPE (t)
 define|#
 directive|define
