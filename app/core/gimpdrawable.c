@@ -235,7 +235,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c92439c0103
+DECL|enum|__anon2ad742020103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3157,9 +3157,14 @@ block|{
 name|GObject
 modifier|*
 name|operation
+init|=
+name|NULL
 decl_stmt|;
-name|GeglRectangle
-name|rect
+name|GeglBuffer
+modifier|*
+name|buffer
+init|=
+name|NULL
 decl_stmt|;
 name|g_object_get
 argument_list|(
@@ -3177,6 +3182,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|operation
+condition|)
+block|{
+name|GeglRectangle
+name|rect
+decl_stmt|;
 name|rect
 operator|.
 name|x
@@ -3219,13 +3232,7 @@ argument_list|(
 name|operation
 argument_list|)
 expr_stmt|;
-block|{
-name|GeglBuffer
-modifier|*
-name|buffer
-init|=
-name|NULL
-decl_stmt|;
+block|}
 name|gegl_node_get
 argument_list|(
 name|drawable
@@ -3260,7 +3267,6 @@ argument_list|(
 name|buffer
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 name|gimp_viewable_invalidate_preview
