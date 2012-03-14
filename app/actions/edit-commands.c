@@ -1300,9 +1300,9 @@ name|layer
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_layer_new_from_tiles
+name|gimp_layer_new_from_buffer
 argument_list|(
-name|gimp_buffer_get_tiles
+name|gimp_buffer_get_buffer
 argument_list|(
 name|buffer
 argument_list|)
