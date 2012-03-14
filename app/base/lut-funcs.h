@@ -56,17 +56,6 @@ end_function_decl
 begin_function_decl
 name|GimpLut
 modifier|*
-name|invert_lut_new
-parameter_list|(
-name|gint
-name|n_channels
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpLut
-modifier|*
 name|threshold_lut_new
 parameter_list|(
 name|gdouble
