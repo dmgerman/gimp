@@ -229,7 +229,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be4dc340103
+DECL|enum|__anon2afbe36d0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -7817,6 +7817,43 @@ argument_list|,
 name|pattern
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|const
+name|Babl
+modifier|*
+DECL|function|gimp_drawable_get_babl_format (const GimpDrawable * drawable)
+name|gimp_drawable_get_babl_format
+parameter_list|(
+specifier|const
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DRAWABLE
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|gimp_bpp_to_babl_format
+argument_list|(
+name|gimp_drawable_bytes
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+return|;
 block|}
 end_function
 
