@@ -1501,23 +1501,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gaussian_blur_region
-parameter_list|(
-name|PixelRegion
-modifier|*
-name|srcR
-parameter_list|,
-name|gdouble
-name|radius_x
-parameter_list|,
-name|gdouble
-name|radius_y
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|border_region
 parameter_list|(
 name|PixelRegion
