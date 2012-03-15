@@ -781,26 +781,6 @@ end_comment
 
 begin_function
 name|void
-DECL|function|paint_funcs_setup (void)
-name|paint_funcs_setup
-parameter_list|(
-name|void
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-name|void
-DECL|function|paint_funcs_free (void)
-name|paint_funcs_free
-parameter_list|(
-name|void
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-name|void
 DECL|function|combine_indexed_and_indexed_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,const guint opacity,const gboolean * affect,guint length,const guint bytes)
 name|combine_indexed_and_indexed_pixels
 parameter_list|(

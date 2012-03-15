@@ -77,12 +77,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint-funcs/paint-funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"composite/gimp-composite.h"
 end_include
 
@@ -393,9 +387,6 @@ argument_list|,
 name|use_cpu_accel
 argument_list|)
 expr_stmt|;
-name|paint_funcs_setup
-argument_list|()
-expr_stmt|;
 return|return
 name|swap_is_ok
 return|;
@@ -426,9 +417,6 @@ expr_stmt|;
 endif|#
 directive|endif
 name|pixel_processor_exit
-argument_list|()
-expr_stmt|;
-name|paint_funcs_free
 argument_list|()
 expr_stmt|;
 name|tile_cache_exit

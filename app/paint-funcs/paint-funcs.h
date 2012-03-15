@@ -17,28 +17,6 @@ name|__PAINT_FUNCS_H__
 end_define
 
 begin_comment
-comment|/*  Called initially to setup rendering features  */
-end_comment
-
-begin_function_decl
-name|void
-name|paint_funcs_setup
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|paint_funcs_free
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/*  Paint functions  */
 end_comment
 
