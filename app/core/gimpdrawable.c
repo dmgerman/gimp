@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gegl-buffer-backend.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
@@ -235,7 +229,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c3290b0103
+DECL|enum|__anon2c75db1b0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE

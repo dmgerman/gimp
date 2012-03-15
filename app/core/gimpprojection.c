@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gegl-buffer-backend.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core-types.h"
 end_include
 
@@ -133,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291309ba0103
+DECL|enum|__anon2be02a700103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
