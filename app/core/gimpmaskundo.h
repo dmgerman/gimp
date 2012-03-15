@@ -103,10 +103,10 @@ DECL|member|parent_instance
 name|GimpItemUndo
 name|parent_instance
 decl_stmt|;
-DECL|member|tiles
-name|TileManager
+DECL|member|buffer
+name|GeglBuffer
 modifier|*
-name|tiles
+name|buffer
 decl_stmt|;
 DECL|member|x
 name|gint
