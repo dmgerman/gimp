@@ -215,7 +215,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2948f3b90103
+DECL|enum|__anon286c89d90103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -6615,7 +6615,7 @@ argument_list|,
 name|NULL
 argument_list|)
 decl_stmt|;
-name|gimp_drawable_apply_operation_to_tiles
+name|gimp_drawable_apply_operation_to_buffer
 argument_list|(
 name|drawable
 argument_list|,
@@ -6627,7 +6627,7 @@ name|node
 argument_list|,
 name|TRUE
 argument_list|,
-name|gimp_drawable_get_tiles
+name|gimp_drawable_get_write_buffer
 argument_list|(
 name|drawable
 argument_list|)
