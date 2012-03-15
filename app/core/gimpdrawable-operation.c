@@ -659,11 +659,9 @@ argument_list|)
 expr_stmt|;
 name|inbuf
 operator|=
-name|gimp_drawable_create_buffer
+name|gimp_drawable_get_read_buffer
 argument_list|(
 name|drawable
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|outbuf
@@ -707,11 +705,6 @@ argument_list|,
 name|outbuf
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|inbuf
 argument_list|)
 expr_stmt|;
 name|g_object_unref

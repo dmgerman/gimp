@@ -38,6 +38,16 @@ modifier|*
 name|shadow
 decl_stmt|;
 comment|/* shadow buffer tiles     */
+DECL|member|read_buffer
+name|GeglBuffer
+modifier|*
+name|read_buffer
+decl_stmt|;
+DECL|member|write_buffer
+name|GeglBuffer
+modifier|*
+name|write_buffer
+decl_stmt|;
 DECL|member|source_node
 name|GeglNode
 modifier|*

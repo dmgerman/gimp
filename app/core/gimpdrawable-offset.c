@@ -307,11 +307,9 @@ argument_list|)
 expr_stmt|;
 name|src_buffer
 operator|=
-name|gimp_drawable_create_buffer
+name|gimp_drawable_get_read_buffer
 argument_list|(
 name|drawable
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|dest_buffer
@@ -1399,11 +1397,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|g_object_unref
-argument_list|(
-name|src_buffer
-argument_list|)
-expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|dest_buffer

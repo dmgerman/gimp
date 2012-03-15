@@ -111,7 +111,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29beb07f0103
+DECL|enum|__anon2935eac60103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -2532,13 +2532,11 @@ block|}
 comment|/*  Copy from the image to the new tiles  */
 name|src
 operator|=
-name|gimp_drawable_create_buffer
+name|gimp_drawable_get_read_buffer
 argument_list|(
 name|image_map
 operator|->
 name|drawable
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|dest
@@ -2549,7 +2547,7 @@ name|image_map
 operator|->
 name|undo_tiles
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
@@ -2562,11 +2560,6 @@ name|dest
 argument_list|,
 operator|&
 name|dest_rect
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|src
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -3182,13 +3175,11 @@ argument_list|)
 expr_stmt|;
 name|dest
 operator|=
-name|gimp_drawable_create_buffer
+name|gimp_drawable_get_write_buffer
 argument_list|(
 name|image_map
 operator|->
 name|drawable
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|src_rect
@@ -3263,11 +3254,6 @@ expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|src
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|dest
 argument_list|)
 expr_stmt|;
 block|}
