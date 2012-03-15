@@ -235,7 +235,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2eb3f80103
+DECL|enum|__anon27c3290b0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3274,12 +3274,9 @@ condition|(
 name|buffer
 condition|)
 block|{
-name|gegl_tile_source_reinit
-argument_list|(
-name|GEGL_TILE_SOURCE
+name|gimp_gegl_buffer_refetch_tiles
 argument_list|(
 name|buffer
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_unref

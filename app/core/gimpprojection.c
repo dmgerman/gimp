@@ -133,7 +133,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b88da340103
+DECL|enum|__anon291309ba0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3163,12 +3163,8 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* makes the buffer drop all GimpTiles */
-name|gegl_tile_source_reinit
+name|gimp_gegl_buffer_refetch_tiles
 argument_list|(
-operator|(
-name|void
-operator|*
-operator|)
 name|buffer
 argument_list|)
 expr_stmt|;
