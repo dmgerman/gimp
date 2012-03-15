@@ -1006,6 +1006,11 @@ block|}
 else|else
 block|{
 comment|/*  Otherwise, fill the vacated regions  */
+name|gegl_buffer_flush
+argument_list|(
+name|dest_buffer
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|fill_type

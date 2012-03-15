@@ -561,5 +561,34 @@ return|;
 block|}
 end_function
 
+begin_function
+name|void
+DECL|function|gimp_gegl_buffer_refetch_tiles (GeglBuffer * buffer)
+name|gimp_gegl_buffer_refetch_tiles
+parameter_list|(
+name|GeglBuffer
+modifier|*
+name|buffer
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GEGL_IS_BUFFER
+argument_list|(
+name|buffer
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gegl_tile_source_reinit
+argument_list|(
+name|GEGL_TILE_SOURCE
+argument_list|(
+name|buffer
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 end_unit
 

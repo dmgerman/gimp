@@ -691,14 +691,6 @@ operator|&
 name|dest_rect
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_flush
-argument_list|(
-name|gimp_drawable_get_write_buffer
-argument_list|(
-name|drawable
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|mask_undo
