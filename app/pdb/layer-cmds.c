@@ -503,9 +503,9 @@ argument_list|)
 expr_stmt|;
 name|layer
 operator|=
-name|gimp_layer_new_from_tiles
+name|gimp_layer_new_from_buffer
 argument_list|(
-name|gimp_pickable_get_tiles
+name|gimp_pickable_get_buffer
 argument_list|(
 name|pickable
 argument_list|)

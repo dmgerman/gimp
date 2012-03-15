@@ -235,7 +235,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29513a300103
+DECL|enum|__anon2ac4d0920103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1238,6 +1238,24 @@ name|pickable
 argument_list|)
 operator|)
 name|gimp_drawable_bytes
+expr_stmt|;
+name|iface
+operator|->
+name|get_buffer
+operator|=
+operator|(
+name|GeglBuffer
+operator|*
+call|(
+modifier|*
+call|)
+argument_list|(
+name|GimpPickable
+operator|*
+name|pickable
+argument_list|)
+operator|)
+name|gimp_drawable_get_read_buffer
 expr_stmt|;
 name|iface
 operator|->

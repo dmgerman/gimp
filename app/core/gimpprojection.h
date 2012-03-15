@@ -165,6 +165,11 @@ name|TilePyramid
 modifier|*
 name|pyramid
 decl_stmt|;
+DECL|member|buffer
+name|GeglBuffer
+modifier|*
+name|buffer
+decl_stmt|;
 DECL|member|graph
 name|GeglNode
 modifier|*
