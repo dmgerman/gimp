@@ -1370,21 +1370,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|copy_region_nocow
-parameter_list|(
-name|PixelRegion
-modifier|*
-name|src
-parameter_list|,
-name|PixelRegion
-modifier|*
-name|dest
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|add_alpha_region
 parameter_list|(
 name|PixelRegion
