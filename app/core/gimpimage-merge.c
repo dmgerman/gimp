@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"vectors/gimpvectors.h"
 end_include
 
@@ -2365,12 +2371,9 @@ name|y1
 argument_list|)
 expr_stmt|;
 comment|/*  clear the layer  */
-name|pixel_region_init
+name|gegl_buffer_clear
 argument_list|(
-operator|&
-name|src1PR
-argument_list|,
-name|gimp_drawable_get_tiles
+name|gimp_drawable_get_write_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2378,29 +2381,7 @@ name|merge_layer
 argument_list|)
 argument_list|)
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-operator|(
-name|x2
-operator|-
-name|x1
-operator|)
-argument_list|,
-operator|(
-name|y2
-operator|-
-name|y1
-operator|)
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|clear_region
-argument_list|(
-operator|&
-name|src1PR
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  Find the index in the layer list of the bottom layer--we need this        *  in order to add the final, merged layer to the layer list correctly        */
