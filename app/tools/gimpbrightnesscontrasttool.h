@@ -117,11 +117,6 @@ name|GimpBrightnessContrastConfig
 modifier|*
 name|config
 decl_stmt|;
-DECL|member|lut
-name|GimpLut
-modifier|*
-name|lut
-decl_stmt|;
 DECL|member|x
 DECL|member|y
 name|gdouble
