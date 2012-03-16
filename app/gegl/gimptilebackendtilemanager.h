@@ -157,6 +157,11 @@ name|TileManager
 modifier|*
 name|tm
 parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|format
+parameter_list|,
 name|gboolean
 name|write
 parameter_list|)
