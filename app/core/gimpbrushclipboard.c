@@ -30,24 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/pixel-region.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"base/tile-manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint-funcs/paint-funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gegl/gimp-gegl-utils.h"
 end_include
 
@@ -78,18 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppickable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b03b76b0103
+DECL|enum|__anon2b9d58f40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
