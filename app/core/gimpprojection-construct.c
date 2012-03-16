@@ -925,18 +925,13 @@ operator|->
 name|use_gegl
 condition|)
 block|{
-name|g_assert
-argument_list|(
-name|proj
-operator|->
-name|sink_node
-argument_list|)
-expr_stmt|;
+comment|/* GEGL should really do this for us... */
 name|gegl_node_get
 argument_list|(
+name|gimp_projection_get_sink_node
+argument_list|(
 name|proj
-operator|->
-name|sink_node
+argument_list|)
 argument_list|,
 literal|"buffer"
 argument_list|,
