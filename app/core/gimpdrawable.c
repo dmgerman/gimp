@@ -229,7 +229,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5dd2b00103
+DECL|enum|__anon2c77ddf20103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -5484,6 +5484,23 @@ name|GIMP_IS_DRAWABLE
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|drawable
+operator|->
+name|private
+operator|->
+name|write_buffer
+condition|)
+name|gegl_buffer_flush
+argument_list|(
+name|drawable
+operator|->
+name|private
+operator|->
+name|write_buffer
 argument_list|)
 expr_stmt|;
 name|g_signal_emit
