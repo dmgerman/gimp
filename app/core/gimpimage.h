@@ -1233,6 +1233,23 @@ comment|/*  image components  */
 end_comment
 
 begin_function_decl
+specifier|const
+name|Babl
+modifier|*
+name|gimp_image_get_component_format
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|GimpChannelType
+name|channel
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_image_get_component_index
 parameter_list|(

@@ -434,15 +434,14 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_image_get_component_index
+name|gimp_image_get_component_format
 argument_list|(
 name|image
 argument_list|,
 name|component
 argument_list|)
 operator|!=
-operator|-
-literal|1
+name|NULL
 condition|)
 name|channel
 operator|=

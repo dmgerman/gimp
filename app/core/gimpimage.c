@@ -352,7 +352,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b56d8cc0103
+DECL|enum|__anon299889e50103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -446,7 +446,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b56d8cc0203
+DECL|enum|__anon299889e50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7991,6 +7991,98 @@ end_function
 begin_comment
 comment|/*  image components  */
 end_comment
+
+begin_function
+specifier|const
+name|Babl
+modifier|*
+DECL|function|gimp_image_get_component_format (const GimpImage * image,GimpChannelType channel)
+name|gimp_image_get_component_format
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|GimpChannelType
+name|channel
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+switch|switch
+condition|(
+name|channel
+condition|)
+block|{
+case|case
+name|GIMP_RED_CHANNEL
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"R u8"
+argument_list|)
+return|;
+case|case
+name|GIMP_GREEN_CHANNEL
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"G u8"
+argument_list|)
+return|;
+case|case
+name|GIMP_BLUE_CHANNEL
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"B u8"
+argument_list|)
+return|;
+case|case
+name|GIMP_GRAY_CHANNEL
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
+return|;
+case|case
+name|GIMP_INDEXED_CHANNEL
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
+return|;
+case|case
+name|GIMP_ALPHA_CHANNEL
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"A u8"
+argument_list|)
+return|;
+block|}
+return|return
+name|NULL
+return|;
+block|}
+end_function
 
 begin_function
 name|gint
