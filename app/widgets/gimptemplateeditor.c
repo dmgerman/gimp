@@ -104,7 +104,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28acc5ea0103
+DECL|enum|__anon2b1f0d580103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2217,7 +2217,7 @@ literal|"fill-type"
 argument_list|,
 name|GIMP_FOREGROUND_FILL
 argument_list|,
-name|GIMP_TRANSPARENT_FILL
+name|GIMP_PATTERN_FILL
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
