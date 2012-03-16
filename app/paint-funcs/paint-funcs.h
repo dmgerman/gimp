@@ -302,28 +302,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|copy_color_pixels
-parameter_list|(
-specifier|const
-name|guchar
-modifier|*
-name|src
-parameter_list|,
-name|guchar
-modifier|*
-name|dest
-parameter_list|,
-name|guint
-name|length
-parameter_list|,
-name|guint
-name|bytes
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/*  apply the mask data to the alpha channel of the pixel data  */
 end_comment
@@ -1635,25 +1613,6 @@ end_comment
 begin_function_decl
 name|void
 name|copy_gray_to_region
-parameter_list|(
-name|PixelRegion
-modifier|*
-name|src
-parameter_list|,
-name|PixelRegion
-modifier|*
-name|dest
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/*  Copy the color bytes (without alpha channel) to a src_bytes-1 - byte region  */
-end_comment
-
-begin_function_decl
-name|void
-name|copy_color
 parameter_list|(
 name|PixelRegion
 modifier|*
