@@ -29,6 +29,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GeglNode
+modifier|*
+name|gimp_gegl_create_apply_opacity_node
+parameter_list|(
+name|GeglBuffer
+modifier|*
+name|mask
+parameter_list|,
+name|gdouble
+name|opacity
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
