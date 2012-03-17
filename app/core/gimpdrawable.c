@@ -229,7 +229,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27927ddc0103
+DECL|enum|__anon2a30bf910103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3366,13 +3366,6 @@ name|gboolean
 name|push_undo
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|new_base_type
-operator|!=
-name|GIMP_INDEXED
-argument_list|)
-expr_stmt|;
 switch|switch
 condition|(
 name|new_base_type
@@ -3395,6 +3388,19 @@ case|:
 name|gimp_drawable_convert_grayscale
 argument_list|(
 name|drawable
+argument_list|,
+name|push_undo
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_INDEXED
+case|:
+name|gimp_drawable_convert_indexed
+argument_list|(
+name|drawable
+argument_list|,
+name|dest_image
 argument_list|,
 name|push_undo
 argument_list|)
