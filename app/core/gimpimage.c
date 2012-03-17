@@ -352,7 +352,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a41d590103
+DECL|enum|__anon290fbb750103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -446,7 +446,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a41d590203
+DECL|enum|__anon290fbb750203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5075,10 +5075,6 @@ decl_stmt|;
 name|GList
 modifier|*
 name|layers
-decl_stmt|;
-name|GList
-modifier|*
-name|layer
 decl_stmt|;
 comment|/* FIXME gegl migration hack */
 name|layers
