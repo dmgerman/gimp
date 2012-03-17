@@ -69,6 +69,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpOperationSetAlpha
+typedef|typedef
+name|struct
+name|_GimpOperationSetAlpha
+name|GimpOperationSetAlpha
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationPointFilter
 typedef|typedef
 name|struct
