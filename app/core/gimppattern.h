@@ -177,6 +177,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GeglBuffer
+modifier|*
+name|gimp_pattern_create_buffer
+parameter_list|(
+specifier|const
+name|GimpPattern
+modifier|*
+name|pattern
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
