@@ -2758,11 +2758,9 @@ argument_list|(
 name|layer
 argument_list|)
 operator|&&
-name|gimp_layer_mask_get_apply
+name|gimp_layer_get_apply_mask
 argument_list|(
 name|layer
-operator|->
-name|mask
 argument_list|)
 condition|)
 block|{

@@ -775,9 +775,9 @@ name|gchar
 modifier|*
 name|undo_desc
 parameter_list|,
-name|GimpLayerMask
+name|GimpLayer
 modifier|*
-name|mask
+name|layer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -796,9 +796,9 @@ name|gchar
 modifier|*
 name|undo_desc
 parameter_list|,
-name|GimpLayerMask
+name|GimpLayer
 modifier|*
-name|mask
+name|layer
 parameter_list|)
 function_decl|;
 end_function_decl

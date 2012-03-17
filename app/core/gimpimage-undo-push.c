@@ -2892,7 +2892,7 @@ end_function
 begin_function
 name|GimpUndo
 modifier|*
-DECL|function|gimp_image_undo_push_layer_mask_apply (GimpImage * image,const gchar * undo_desc,GimpLayerMask * mask)
+DECL|function|gimp_image_undo_push_layer_mask_apply (GimpImage * image,const gchar * undo_desc,GimpLayer * layer)
 name|gimp_image_undo_push_layer_mask_apply
 parameter_list|(
 name|GimpImage
@@ -2904,9 +2904,9 @@ name|gchar
 modifier|*
 name|undo_desc
 parameter_list|,
-name|GimpLayerMask
+name|GimpLayer
 modifier|*
-name|mask
+name|layer
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -2921,9 +2921,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_LAYER_MASK
+name|GIMP_IS_LAYER
 argument_list|(
-name|mask
+name|layer
 argument_list|)
 argument_list|,
 name|NULL
@@ -2935,7 +2935,7 @@ name|gimp_item_is_attached
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
-name|mask
+name|layer
 argument_list|)
 argument_list|)
 argument_list|,
@@ -2957,7 +2957,7 @@ name|GIMP_DIRTY_ITEM_META
 argument_list|,
 literal|"item"
 argument_list|,
-name|mask
+name|layer
 argument_list|,
 name|NULL
 argument_list|)
@@ -2968,7 +2968,7 @@ end_function
 begin_function
 name|GimpUndo
 modifier|*
-DECL|function|gimp_image_undo_push_layer_mask_show (GimpImage * image,const gchar * undo_desc,GimpLayerMask * mask)
+DECL|function|gimp_image_undo_push_layer_mask_show (GimpImage * image,const gchar * undo_desc,GimpLayer * layer)
 name|gimp_image_undo_push_layer_mask_show
 parameter_list|(
 name|GimpImage
@@ -2980,9 +2980,9 @@ name|gchar
 modifier|*
 name|undo_desc
 parameter_list|,
-name|GimpLayerMask
+name|GimpLayer
 modifier|*
-name|mask
+name|layer
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -2997,9 +2997,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_LAYER_MASK
+name|GIMP_IS_LAYER
 argument_list|(
-name|mask
+name|layer
 argument_list|)
 argument_list|,
 name|NULL
@@ -3011,7 +3011,7 @@ name|gimp_item_is_attached
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
-name|mask
+name|layer
 argument_list|)
 argument_list|)
 argument_list|,
@@ -3033,7 +3033,7 @@ name|GIMP_DIRTY_ITEM_META
 argument_list|,
 literal|"item"
 argument_list|,
-name|mask
+name|layer
 argument_list|,
 name|NULL
 argument_list|)

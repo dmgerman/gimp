@@ -352,7 +352,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon299889e50103
+DECL|enum|__anon2ae48fdb0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -446,7 +446,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299889e50203
+DECL|enum|__anon2ae48fdb0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -12611,9 +12611,9 @@ if|if
 condition|(
 name|mask
 operator|&&
-name|gimp_layer_mask_get_edit
+name|gimp_layer_get_edit_mask
 argument_list|(
-name|mask
+name|layer
 argument_list|)
 condition|)
 return|return

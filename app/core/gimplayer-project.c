@@ -114,9 +114,9 @@ if|if
 condition|(
 name|mask
 operator|&&
-name|gimp_layer_mask_get_show
+name|gimp_layer_get_show_mask
 argument_list|(
-name|mask
+name|layer
 argument_list|)
 condition|)
 block|{
@@ -249,9 +249,9 @@ if|if
 condition|(
 name|mask
 operator|&&
-name|gimp_layer_mask_get_apply
+name|gimp_layer_get_apply_mask
 argument_list|(
-name|mask
+name|layer
 argument_list|)
 condition|)
 block|{

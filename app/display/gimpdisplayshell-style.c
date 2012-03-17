@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimplayermask.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpcairo.h"
 end_include
 
@@ -1033,12 +1027,9 @@ argument_list|(
 name|layer
 argument_list|)
 operator|&&
-name|gimp_layer_mask_get_edit
-argument_list|(
-name|gimp_layer_get_mask
+name|gimp_layer_get_edit_mask
 argument_list|(
 name|layer
-argument_list|)
 argument_list|)
 condition|)
 block|{

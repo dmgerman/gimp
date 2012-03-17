@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpchannel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -49,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimplayer-floating-sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimplayermask.h"
 end_include
 
 begin_include
@@ -3074,9 +3074,9 @@ literal|"layers-mask-edit"
 argument_list|,
 name|mask
 operator|&&
-name|gimp_layer_mask_get_edit
+name|gimp_layer_get_edit_mask
 argument_list|(
-name|mask
+name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3086,9 +3086,9 @@ literal|"layers-mask-show"
 argument_list|,
 name|mask
 operator|&&
-name|gimp_layer_mask_get_show
+name|gimp_layer_get_show_mask
 argument_list|(
-name|mask
+name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3099,9 +3099,9 @@ argument_list|,
 name|mask
 operator|&&
 operator|!
-name|gimp_layer_mask_get_apply
+name|gimp_layer_get_apply_mask
 argument_list|(
-name|mask
+name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
