@@ -138,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c10e4a00108
+DECL|struct|__anon293720190108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c10e4a00208
+DECL|struct|__anon293720190208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -2424,16 +2424,6 @@ decl_stmt|;
 name|gpointer
 name|pr
 decl_stmt|;
-name|guchar
-name|white
-index|[
-literal|1
-index|]
-init|=
-block|{
-name|OPAQUE_OPACITY
-block|}
-decl_stmt|;
 comment|/*  allocate the distance map  */
 name|distR
 operator|.
@@ -2661,6 +2651,16 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|guchar
+name|white
+index|[
+literal|1
+index|]
+init|=
+block|{
+name|OPAQUE_OPACITY
+block|}
+decl_stmt|;
 comment|/*  Otherwise, just fill the shapeburst to white  */
 name|color_region
 argument_list|(
