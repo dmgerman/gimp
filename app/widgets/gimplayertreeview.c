@@ -2254,7 +2254,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292256560108
+DECL|struct|__anon2aaad0600108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2648,7 +2648,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292256560208
+DECL|struct|__anon2aaad0600208
 block|{
 DECL|member|mask_column
 name|gint
@@ -5632,11 +5632,17 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|gimp_layer_get_mask
+argument_list|(
+name|layer
+argument_list|)
+operator|&&
 name|gimp_layer_get_edit_mask
 argument_list|(
 name|layer
 argument_list|)
 condition|)
+block|{
 name|gimp_action_group_set_action_active
 argument_list|(
 name|group
@@ -5646,6 +5652,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+block|}
 name|g_object_unref
 argument_list|(
 name|renderer
