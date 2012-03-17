@@ -356,13 +356,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|tile_done (Tile * tile,void * data)
+DECL|function|tile_done (void * data)
 name|tile_done
 parameter_list|(
-name|Tile
-modifier|*
-name|tile
-parameter_list|,
 name|void
 modifier|*
 name|data
@@ -381,13 +377,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|tile_done_writing (Tile * tile,void * data)
+DECL|function|tile_done_writing (void * data)
 name|tile_done_writing
 parameter_list|(
-name|Tile
-modifier|*
-name|tile
-parameter_list|,
 name|void
 modifier|*
 name|data
@@ -589,16 +581,8 @@ name|priv
 operator|->
 name|write
 condition|?
-operator|(
-name|void
-operator|*
-operator|)
 name|tile_done_writing
 else|:
-operator|(
-name|void
-operator|*
-operator|)
 name|tile_done
 argument_list|,
 name|gimp_tile
