@@ -1199,12 +1199,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scan_convert_render_full:  * @sc:           a #GimpScanConvert context  * @tile_manager: the #TileManager to render to  * @off_x:        horizontal offset into the @tile_manager  * @off_y:        vertical offset into the @tile_manager  * @replace:      if true the original content of the @tile_manager gets  *                destroyed  * @antialias:    if true the rendering happens antialiased  * @value:        value to use for covered pixels  *  * This function renders the area described by the path to the @tile_manager,  * taking the offset @off_x and @off_y in the tilemanager into account.  * The rendering can happen antialiased and be rendered on top of existing  * content or replacing it completely. The @value specifies the opacity value  * to be used for the objects in the @sc.  *  * This function expects a tile manager of depth 1.  *  * You cannot add additional polygons after this command.  */
+comment|/**  * gimp_scan_convert_render_full:  * @sc:           a #GimpScanConvert context  * @tiles:        the #TileManager to render to  * @off_x:        horizontal offset into the @tiles  * @off_y:        vertical offset into the @tiles  * @replace:      if true the original content of the @tiles gets  *                destroyed  * @antialias:    if true the rendering happens antialiased  * @value:        value to use for covered pixels  *  * This function renders the area described by the path to the @tiles,  * taking the offset @off_x and @off_y in the tilemanager into account.  * The rendering can happen antialiased and be rendered on top of existing  * content or replacing it completely. The @value specifies the opacity value  * to be used for the objects in the @sc.  *  * This function expects a tile manager of depth 1.  *  * You cannot add additional polygons after this command.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_scan_convert_render_full (GimpScanConvert * sc,TileManager * tile_manager,gint off_x,gint off_y,gboolean replace,gboolean antialias,guchar value)
+DECL|function|gimp_scan_convert_render_full (GimpScanConvert * sc,TileManager * tiles,gint off_x,gint off_y,gboolean replace,gboolean antialias,guchar value)
 name|gimp_scan_convert_render_full
 parameter_list|(
 name|GimpScanConvert
@@ -1213,7 +1213,7 @@ name|sc
 parameter_list|,
 name|TileManager
 modifier|*
-name|tile_manager
+name|tiles
 parameter_list|,
 name|gint
 name|off_x
@@ -1267,9 +1267,19 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|tile_manager
+name|tiles
 operator|!=
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|tile_manager_bpp
+argument_list|(
+name|tiles
+argument_list|)
+operator|==
+literal|1
 argument_list|)
 expr_stmt|;
 name|x
@@ -1284,14 +1294,14 @@ name|width
 operator|=
 name|tile_manager_width
 argument_list|(
-name|tile_manager
+name|tiles
 argument_list|)
 expr_stmt|;
 name|height
 operator|=
 name|tile_manager_height
 argument_list|(
-name|tile_manager
+name|tiles
 argument_list|)
 expr_stmt|;
 if|if
@@ -1346,7 +1356,7 @@ argument_list|(
 operator|&
 name|maskPR
 argument_list|,
-name|tile_manager
+name|tiles
 argument_list|,
 name|x
 argument_list|,
@@ -1357,15 +1367,6 @@ argument_list|,
 name|height
 argument_list|,
 name|TRUE
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|maskPR
-operator|.
-name|bytes
-operator|==
-literal|1
 argument_list|)
 expr_stmt|;
 name|path
@@ -1441,6 +1442,7 @@ operator|.
 name|w
 argument_list|)
 decl_stmt|;
+comment|/*  cairo rowstrides are always multiples of 4, whereas        *  maskPR.rowstride can be anything, so to be able to create an        *  image surface, we maybe have to create our own temporary        *  buffer        */
 if|if
 condition|(
 name|maskPR
