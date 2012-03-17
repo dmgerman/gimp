@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/pixel-processor.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"base/pixel-region.h"
 end_include
 
@@ -215,7 +209,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a17786f0103
+DECL|enum|__anon2940f4570103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
