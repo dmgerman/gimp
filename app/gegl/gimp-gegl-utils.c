@@ -504,7 +504,10 @@ name|GDestroyNotify
 operator|)
 name|g_object_unref
 argument_list|,
+name|g_object_ref
+argument_list|(
 name|pixbuf
+argument_list|)
 argument_list|)
 return|;
 block|}
