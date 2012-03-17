@@ -111,7 +111,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a54c8150103
+DECL|enum|__anon2b0f8e710103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1146,6 +1146,13 @@ name|image_map
 operator|->
 name|undo_tiles
 argument_list|,
+name|gimp_drawable_get_babl_format
+argument_list|(
+name|image_map
+operator|->
+name|drawable
+argument_list|)
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
@@ -1642,6 +1649,18 @@ operator|->
 name|operation
 condition|)
 block|{
+specifier|const
+name|Babl
+modifier|*
+name|format
+init|=
+name|gimp_drawable_get_babl_format
+argument_list|(
+name|image_map
+operator|->
+name|drawable
+argument_list|)
+decl_stmt|;
 name|GeglBuffer
 modifier|*
 name|input_buffer
@@ -1658,6 +1677,8 @@ name|image_map
 operator|->
 name|undo_tiles
 argument_list|,
+name|format
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
@@ -1671,6 +1692,8 @@ name|image_map
 operator|->
 name|drawable
 argument_list|)
+argument_list|,
+name|format
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2759,6 +2782,13 @@ name|image_map
 operator|->
 name|undo_tiles
 argument_list|,
+name|gimp_drawable_get_babl_format
+argument_list|(
+name|image_map
+operator|->
+name|drawable
+argument_list|)
+argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
@@ -3402,6 +3432,13 @@ argument_list|(
 name|image_map
 operator|->
 name|undo_tiles
+argument_list|,
+name|gimp_drawable_get_babl_format
+argument_list|(
+name|image_map
+operator|->
+name|drawable
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)

@@ -355,6 +355,8 @@ name|gimp_tile_manager_create_buffer
 argument_list|(
 name|new_tiles
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
@@ -453,6 +455,8 @@ operator|=
 name|gimp_tile_manager_create_buffer
 argument_list|(
 name|new_tiles
+argument_list|,
+name|NULL
 argument_list|,
 name|TRUE
 argument_list|)

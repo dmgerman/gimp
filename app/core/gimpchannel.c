@@ -209,7 +209,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2940f4570103
+DECL|enum|__anon279178770103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -7594,7 +7594,7 @@ argument_list|)
 expr_stmt|;
 name|dest_buffer
 operator|=
-name|gimp_tile_manager_create_buffer_with_format
+name|gimp_tile_manager_create_buffer
 argument_list|(
 name|dest_tiles
 argument_list|,
@@ -7786,7 +7786,7 @@ argument_list|)
 expr_stmt|;
 name|dest_buffer
 operator|=
-name|gimp_tile_manager_create_buffer_with_format
+name|gimp_tile_manager_create_buffer
 argument_list|(
 name|dest_tiles
 argument_list|,

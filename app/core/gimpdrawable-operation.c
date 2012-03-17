@@ -193,6 +193,11 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
+name|gimp_drawable_get_babl_format
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
@@ -595,6 +600,11 @@ operator|=
 name|gimp_tile_manager_create_buffer
 argument_list|(
 name|dest_tiles
+argument_list|,
+name|gimp_drawable_get_babl_format
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|)

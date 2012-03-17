@@ -1347,6 +1347,8 @@ name|gimp_tile_manager_create_buffer
 argument_list|(
 name|mask
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
