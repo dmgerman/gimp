@@ -777,6 +777,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/* FIXME gegl migration hack */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_drawable_recreate_buffers
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function_decl
 name|TileManager
 modifier|*

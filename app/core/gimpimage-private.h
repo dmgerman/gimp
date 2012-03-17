@@ -134,6 +134,18 @@ modifier|*
 name|palette
 decl_stmt|;
 comment|/*  palette of colormap          */
+DECL|member|babl_palette_rgb
+name|Babl
+modifier|*
+name|babl_palette_rgb
+decl_stmt|;
+comment|/*  palette's RGB Babl format    */
+DECL|member|babl_palette_rgba
+name|Babl
+modifier|*
+name|babl_palette_rgba
+decl_stmt|;
+comment|/*  palette's RGBA Babl format   */
 DECL|member|dirty
 name|gint
 name|dirty
