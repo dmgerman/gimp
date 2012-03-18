@@ -135,12 +135,14 @@ name|palette
 decl_stmt|;
 comment|/*  palette of colormap          */
 DECL|member|babl_palette_rgb
+specifier|const
 name|Babl
 modifier|*
 name|babl_palette_rgb
 decl_stmt|;
 comment|/*  palette's RGB Babl format    */
 DECL|member|babl_palette_rgba
+specifier|const
 name|Babl
 modifier|*
 name|babl_palette_rgba
