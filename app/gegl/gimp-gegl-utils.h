@@ -44,6 +44,22 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|const
+name|Babl
+modifier|*
+name|gimp_bpp_to_babl_format_with_alpha
+argument_list|(
+name|guint
+name|bpp
+argument_list|,
+name|gboolean
+name|linear
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|const
 name|gchar
 modifier|*
 name|gimp_layer_mode_to_gegl_operation
