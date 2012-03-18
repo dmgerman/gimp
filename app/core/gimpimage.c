@@ -144,12 +144,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-colorhash.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimage-colormap.h"
 end_include
 
@@ -358,7 +352,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fd87d00103
+DECL|enum|__anon290cba4c0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -452,7 +446,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fd87d00203
+DECL|enum|__anon290cba4c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2543,9 +2537,6 @@ operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|gimp_image_color_hash_init
-argument_list|()
 expr_stmt|;
 name|g_type_class_add_private
 argument_list|(
@@ -5241,13 +5232,6 @@ operator|==
 name|GIMP_INDEXED
 condition|)
 block|{
-name|gimp_image_color_hash_invalidate
-argument_list|(
-name|image
-argument_list|,
-name|color_index
-argument_list|)
-expr_stmt|;
 comment|/* A colormap alteration affects the whole image */
 name|gimp_image_invalidate
 argument_list|(

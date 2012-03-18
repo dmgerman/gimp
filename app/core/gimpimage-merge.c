@@ -114,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-colorhash.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimage-merge.h"
 end_include
 
