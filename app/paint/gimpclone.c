@@ -618,12 +618,12 @@ name|fish
 operator|=
 name|babl_fish
 argument_list|(
-name|gimp_pickable_get_babl_format_with_alpha
+name|gimp_pickable_get_format_with_alpha
 argument_list|(
 name|src_pickable
 argument_list|)
 argument_list|,
-name|gimp_drawable_get_babl_format_with_alpha
+name|gimp_drawable_get_format_with_alpha
 argument_list|(
 name|drawable
 argument_list|)
@@ -775,7 +775,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 argument_list|,
-name|gimp_drawable_get_babl_format_with_alpha
+name|gimp_drawable_get_format_with_alpha
 argument_list|(
 name|drawable
 argument_list|)

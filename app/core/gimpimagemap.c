@@ -111,7 +111,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c02bca20103
+DECL|enum|__anon29bdef6e0103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -281,7 +281,7 @@ specifier|static
 specifier|const
 name|Babl
 modifier|*
-name|gimp_image_map_get_babl_format
+name|gimp_image_map_get_format
 parameter_list|(
 name|GimpPickable
 modifier|*
@@ -295,7 +295,7 @@ specifier|static
 specifier|const
 name|Babl
 modifier|*
-name|gimp_image_map_get_babl_format_with_alpha
+name|gimp_image_map_get_format_with_alpha
 parameter_list|(
 name|GimpPickable
 modifier|*
@@ -573,15 +573,15 @@ name|gimp_image_map_get_image
 expr_stmt|;
 name|iface
 operator|->
-name|get_babl_format
+name|get_format
 operator|=
-name|gimp_image_map_get_babl_format
+name|gimp_image_map_get_format
 expr_stmt|;
 name|iface
 operator|->
-name|get_babl_format_with_alpha
+name|get_format_with_alpha
 operator|=
-name|gimp_image_map_get_babl_format_with_alpha
+name|gimp_image_map_get_format_with_alpha
 expr_stmt|;
 name|iface
 operator|->
@@ -1022,8 +1022,8 @@ specifier|static
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_image_map_get_babl_format (GimpPickable * pickable)
-name|gimp_image_map_get_babl_format
+DECL|function|gimp_image_map_get_format (GimpPickable * pickable)
+name|gimp_image_map_get_format
 parameter_list|(
 name|GimpPickable
 modifier|*
@@ -1040,7 +1040,7 @@ name|pickable
 argument_list|)
 decl_stmt|;
 return|return
-name|gimp_pickable_get_babl_format
+name|gimp_pickable_get_format
 argument_list|(
 name|GIMP_PICKABLE
 argument_list|(
@@ -1058,8 +1058,8 @@ specifier|static
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_image_map_get_babl_format_with_alpha (GimpPickable * pickable)
-name|gimp_image_map_get_babl_format_with_alpha
+DECL|function|gimp_image_map_get_format_with_alpha (GimpPickable * pickable)
+name|gimp_image_map_get_format_with_alpha
 parameter_list|(
 name|GimpPickable
 modifier|*
@@ -1076,7 +1076,7 @@ name|pickable
 argument_list|)
 decl_stmt|;
 return|return
-name|gimp_pickable_get_babl_format_with_alpha
+name|gimp_pickable_get_format_with_alpha
 argument_list|(
 name|GIMP_PICKABLE
 argument_list|(
@@ -1202,7 +1202,7 @@ name|image_map
 operator|->
 name|undo_tiles
 argument_list|,
-name|gimp_drawable_get_babl_format
+name|gimp_drawable_get_format
 argument_list|(
 name|image_map
 operator|->
@@ -1710,7 +1710,7 @@ name|Babl
 modifier|*
 name|format
 init|=
-name|gimp_drawable_get_babl_format
+name|gimp_drawable_get_format
 argument_list|(
 name|image_map
 operator|->
@@ -2838,7 +2838,7 @@ name|image_map
 operator|->
 name|undo_tiles
 argument_list|,
-name|gimp_drawable_get_babl_format
+name|gimp_drawable_get_format
 argument_list|(
 name|image_map
 operator|->
@@ -3489,7 +3489,7 @@ name|image_map
 operator|->
 name|undo_tiles
 argument_list|,
-name|gimp_drawable_get_babl_format
+name|gimp_drawable_get_format
 argument_list|(
 name|image_map
 operator|->

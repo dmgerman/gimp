@@ -1200,7 +1200,7 @@ argument_list|)
 expr_stmt|;
 name|format
 operator|=
-name|gimp_pickable_get_babl_format
+name|gimp_pickable_get_format
 argument_list|(
 name|pickable
 argument_list|)
@@ -1287,7 +1287,7 @@ name|pickable_off_y
 expr_stmt|;
 name|format
 operator|=
-name|gimp_drawable_get_babl_format
+name|gimp_drawable_get_format
 argument_list|(
 name|mask
 argument_list|)
@@ -1301,7 +1301,7 @@ argument_list|,
 operator|&
 name|rect
 argument_list|,
-name|gimp_drawable_get_babl_format
+name|gimp_drawable_get_format
 argument_list|(
 name|mask
 argument_list|)

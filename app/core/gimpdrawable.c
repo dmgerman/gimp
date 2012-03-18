@@ -229,7 +229,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27851e980103
+DECL|enum|__anon2adba0df0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1201,7 +1201,7 @@ name|gimp_item_get_image
 expr_stmt|;
 name|iface
 operator|->
-name|get_babl_format
+name|get_format
 operator|=
 operator|(
 specifier|const
@@ -1216,11 +1216,11 @@ operator|*
 name|pickable
 argument_list|)
 operator|)
-name|gimp_drawable_get_babl_format
+name|gimp_drawable_get_format
 expr_stmt|;
 name|iface
 operator|->
-name|get_babl_format_with_alpha
+name|get_format_with_alpha
 operator|=
 operator|(
 specifier|const
@@ -1235,7 +1235,7 @@ operator|*
 name|pickable
 argument_list|)
 operator|)
-name|gimp_drawable_get_babl_format_with_alpha
+name|gimp_drawable_get_format_with_alpha
 expr_stmt|;
 name|iface
 operator|->
@@ -2545,7 +2545,7 @@ name|gimp_tile_manager_create_buffer
 argument_list|(
 name|new_tiles
 argument_list|,
-name|gimp_drawable_get_babl_format
+name|gimp_drawable_get_format
 argument_list|(
 name|drawable
 argument_list|)
@@ -2621,7 +2621,7 @@ name|gegl_color_set_pixel
 argument_list|(
 name|col
 argument_list|,
-name|gimp_drawable_get_babl_format
+name|gimp_drawable_get_format
 argument_list|(
 name|drawable
 argument_list|)
@@ -3951,7 +3951,7 @@ name|gimp_tile_manager_create_buffer
 argument_list|(
 name|tiles
 argument_list|,
-name|gimp_drawable_get_babl_format
+name|gimp_drawable_get_format
 argument_list|(
 name|drawable
 argument_list|)
@@ -6563,7 +6563,7 @@ name|Babl
 modifier|*
 name|format
 init|=
-name|gimp_drawable_get_babl_format
+name|gimp_drawable_get_format
 argument_list|(
 name|drawable
 argument_list|)
@@ -7892,8 +7892,8 @@ begin_function
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_drawable_get_babl_format (const GimpDrawable * drawable)
-name|gimp_drawable_get_babl_format
+DECL|function|gimp_drawable_get_format (const GimpDrawable * drawable)
+name|gimp_drawable_get_format
 parameter_list|(
 specifier|const
 name|GimpDrawable
@@ -8013,8 +8013,8 @@ begin_function
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_drawable_get_babl_format_with_alpha (const GimpDrawable * drawable)
-name|gimp_drawable_get_babl_format_with_alpha
+DECL|function|gimp_drawable_get_format_with_alpha (const GimpDrawable * drawable)
+name|gimp_drawable_get_format_with_alpha
 parameter_list|(
 specifier|const
 name|GimpDrawable

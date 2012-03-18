@@ -193,7 +193,7 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|gimp_drawable_get_babl_format
+name|gimp_drawable_get_format
 argument_list|(
 name|drawable
 argument_list|)
@@ -601,7 +601,7 @@ name|gimp_tile_manager_create_buffer
 argument_list|(
 name|dest_tiles
 argument_list|,
-name|gimp_drawable_get_babl_format
+name|gimp_drawable_get_format
 argument_list|(
 name|drawable
 argument_list|)

@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b8c79e0103
+DECL|enum|__anon2c3612bc0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -212,7 +212,7 @@ specifier|static
 specifier|const
 name|Babl
 modifier|*
-name|gimp_projection_get_babl_format
+name|gimp_projection_get_format
 parameter_list|(
 name|GimpPickable
 modifier|*
@@ -733,15 +733,15 @@ name|gimp_projection_get_image
 expr_stmt|;
 name|iface
 operator|->
-name|get_babl_format
+name|get_format
 operator|=
-name|gimp_projection_get_babl_format
+name|gimp_projection_get_format
 expr_stmt|;
 name|iface
 operator|->
-name|get_babl_format_with_alpha
+name|get_format_with_alpha
 operator|=
-name|gimp_projection_get_babl_format
+name|gimp_projection_get_format
 expr_stmt|;
 comment|/* sic */
 name|iface
@@ -1185,8 +1185,8 @@ specifier|static
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_projection_get_babl_format (GimpPickable * pickable)
-name|gimp_projection_get_babl_format
+DECL|function|gimp_projection_get_format (GimpPickable * pickable)
+name|gimp_projection_get_format
 parameter_list|(
 name|GimpPickable
 modifier|*

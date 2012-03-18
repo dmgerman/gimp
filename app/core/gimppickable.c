@@ -278,8 +278,8 @@ begin_function
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_pickable_get_babl_format (GimpPickable * pickable)
-name|gimp_pickable_get_babl_format
+DECL|function|gimp_pickable_get_format (GimpPickable * pickable)
+name|gimp_pickable_get_format
 parameter_list|(
 name|GimpPickable
 modifier|*
@@ -311,12 +311,12 @@ if|if
 condition|(
 name|pickable_iface
 operator|->
-name|get_babl_format
+name|get_format
 condition|)
 return|return
 name|pickable_iface
 operator|->
-name|get_babl_format
+name|get_format
 argument_list|(
 name|pickable
 argument_list|)
@@ -331,8 +331,8 @@ begin_function
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_pickable_get_babl_format_with_alpha (GimpPickable * pickable)
-name|gimp_pickable_get_babl_format_with_alpha
+DECL|function|gimp_pickable_get_format_with_alpha (GimpPickable * pickable)
+name|gimp_pickable_get_format_with_alpha
 parameter_list|(
 name|GimpPickable
 modifier|*
@@ -364,12 +364,12 @@ if|if
 condition|(
 name|pickable_iface
 operator|->
-name|get_babl_format_with_alpha
+name|get_format_with_alpha
 condition|)
 return|return
 name|pickable_iface
 operator|->
-name|get_babl_format_with_alpha
+name|get_format_with_alpha
 argument_list|(
 name|pickable
 argument_list|)

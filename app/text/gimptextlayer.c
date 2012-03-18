@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298eff3d0103
+DECL|enum|__anon297860d10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2705,7 +2705,7 @@ argument_list|)
 expr_stmt|;
 name|format
 operator|=
-name|gimp_drawable_get_babl_format
+name|gimp_drawable_get_format
 argument_list|(
 name|drawable
 argument_list|)

@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9b1a530103
+DECL|enum|__anon2ad567e90103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -234,7 +234,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9b1a530203
+DECL|enum|__anon2ad567e90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7268,7 +7268,7 @@ name|gimp_tile_manager_create_buffer
 argument_list|(
 name|new_tiles
 argument_list|,
-name|gimp_drawable_get_babl_format_with_alpha
+name|gimp_drawable_get_format_with_alpha
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

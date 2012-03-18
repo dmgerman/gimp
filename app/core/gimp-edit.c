@@ -2391,7 +2391,7 @@ argument_list|)
 expr_stmt|;
 name|format
 operator|=
-name|gimp_drawable_get_babl_format
+name|gimp_drawable_get_format
 argument_list|(
 name|drawable
 argument_list|)
@@ -2488,7 +2488,7 @@ operator|++
 expr_stmt|;
 name|format
 operator|=
-name|gimp_drawable_get_babl_format_with_alpha
+name|gimp_drawable_get_format_with_alpha
 argument_list|(
 name|drawable
 argument_list|)

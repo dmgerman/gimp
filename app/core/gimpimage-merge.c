@@ -2296,7 +2296,7 @@ name|gegl_color_set_pixel
 argument_list|(
 name|color
 argument_list|,
-name|gimp_drawable_get_babl_format
+name|gimp_drawable_get_format
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
