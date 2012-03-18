@@ -495,9 +495,10 @@ begin_function
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_image_colormap_get_rgb_format (GimpImage * image)
+DECL|function|gimp_image_colormap_get_rgb_format (const GimpImage * image)
 name|gimp_image_colormap_get_rgb_format
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -528,9 +529,10 @@ begin_function
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_image_colormap_get_rgba_format (GimpImage * image)
+DECL|function|gimp_image_colormap_get_rgba_format (const GimpImage * image)
 name|gimp_image_colormap_get_rgba_format
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|image
