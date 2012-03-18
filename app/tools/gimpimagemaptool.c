@@ -2756,6 +2756,10 @@ condition|(
 name|image_map_tool
 operator|->
 name|config
+operator|&&
+name|image_map_tool
+operator|->
+name|settings_box
 condition|)
 name|gimp_settings_box_add_current
 argument_list|(
