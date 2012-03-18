@@ -251,6 +251,12 @@ name|context
 parameter_list|,
 name|GimpFillType
 name|fill_type
+parameter_list|,
+name|gdouble
+name|opacity
+parameter_list|,
+name|GimpLayerModeEffects
+name|paint_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -275,6 +281,12 @@ parameter_list|,
 name|GimpPattern
 modifier|*
 name|pattern
+parameter_list|,
+name|gdouble
+name|opacity
+parameter_list|,
+name|GimpLayerModeEffects
+name|paint_mode
 parameter_list|,
 specifier|const
 name|gchar

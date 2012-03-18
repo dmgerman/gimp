@@ -1856,6 +1856,10 @@ name|data
 argument_list|)
 argument_list|,
 name|fill_type
+argument_list|,
+name|GIMP_OPACITY_OPAQUE
+argument_list|,
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush

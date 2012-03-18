@@ -1455,6 +1455,10 @@ name|color
 argument_list|,
 name|pattern
 argument_list|,
+name|GIMP_OPACITY_OPAQUE
+argument_list|,
+name|GIMP_NORMAL_MODE
+argument_list|,
 name|pattern
 condition|?
 name|C_

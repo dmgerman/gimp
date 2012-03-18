@@ -858,6 +858,10 @@ argument_list|(
 name|src_viewable
 argument_list|)
 argument_list|,
+name|GIMP_OPACITY_OPAQUE
+argument_list|,
+name|GIMP_NORMAL_MODE
+argument_list|,
 name|C_
 argument_list|(
 literal|"undo-type"
@@ -944,6 +948,10 @@ argument_list|,
 name|color
 argument_list|,
 name|NULL
+argument_list|,
+name|GIMP_OPACITY_OPAQUE
+argument_list|,
+name|GIMP_NORMAL_MODE
 argument_list|,
 name|C_
 argument_list|(
@@ -1178,6 +1186,10 @@ argument_list|,
 name|color
 argument_list|,
 name|pattern
+argument_list|,
+name|GIMP_OPACITY_OPAQUE
+argument_list|,
+name|GIMP_NORMAL_MODE
 argument_list|,
 name|pattern
 condition|?
