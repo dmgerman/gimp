@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad567e90103
+DECL|enum|__anon279812290103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -234,7 +234,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad567e90203
+DECL|enum|__anon279812290203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7355,6 +7355,10 @@ name|TileManager
 modifier|*
 name|new_tiles
 decl_stmt|;
+name|GeglBuffer
+modifier|*
+name|dest_buffer
+decl_stmt|;
 name|GimpImageType
 name|new_type
 decl_stmt|;
@@ -7425,6 +7429,23 @@ name|new_type
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|dest_buffer
+operator|=
+name|gimp_tile_manager_create_buffer
+argument_list|(
+name|new_tiles
+argument_list|,
+name|gimp_drawable_get_format_without_alpha
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gimp_context_get_background
 argument_list|(
 name|context
@@ -7441,7 +7462,7 @@ operator|&
 name|background
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_apply_operation_to_tiles
+name|gimp_drawable_apply_operation_to_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7456,12 +7477,17 @@ name|flatten
 argument_list|,
 name|TRUE
 argument_list|,
-name|new_tiles
+name|dest_buffer
 argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|flatten
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|dest_buffer
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_set_tiles
