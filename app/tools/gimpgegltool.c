@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28049a710103
+DECL|enum|__anon28f75f2a0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -573,32 +573,6 @@ condition|)
 return|return
 name|FALSE
 return|;
-if|if
-condition|(
-name|gimp_drawable_is_indexed
-argument_list|(
-name|drawable
-argument_list|)
-condition|)
-block|{
-name|g_set_error_literal
-argument_list|(
-name|error
-argument_list|,
-name|GIMP_ERROR
-argument_list|,
-name|GIMP_FAILED
-argument_list|,
-name|_
-argument_list|(
-literal|"GEGL operations do not operate on indexed layers."
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
 if|if
 condition|(
 name|g_tool
