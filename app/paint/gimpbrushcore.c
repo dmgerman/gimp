@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af205310103
+DECL|enum|__anon2a1f6d530103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -7044,9 +7044,9 @@ name|mode
 parameter_list|)
 block|{
 specifier|const
-name|guchar
+name|Babl
 modifier|*
-name|mask
+name|fish
 decl_stmt|;
 name|guchar
 modifier|*
@@ -7056,22 +7056,25 @@ name|guchar
 modifier|*
 name|p
 decl_stmt|;
-name|gdouble
-name|alpha
-decl_stmt|;
-specifier|const
-name|gdouble
-name|factor
-init|=
-literal|0.00392156986
-decl_stmt|;
-comment|/*  1.0 / 255.0  */
-name|gint
-name|x_index
-decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|fish
+operator|=
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"RGB u8"
+argument_list|)
+argument_list|,
+comment|/* brush's pixmap is flat */
+name|gimp_drawable_get_babl_format
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  Make sure x, y are positive  */
 while|while
 condition|(
@@ -7133,8 +7136,11 @@ name|brush_mask
 condition|)
 block|{
 comment|/*  ditto, except for the brush mask, so we can pre-multiply the        *  alpha value        */
+specifier|const
+name|guchar
+modifier|*
 name|mask
-operator|=
+init|=
 operator|(
 name|temp_buf_get_data
 argument_list|(
@@ -7153,7 +7159,7 @@ name|brush_mask
 operator|->
 name|width
 operator|)
-expr_stmt|;
+decl_stmt|;
 for|for
 control|(
 name|i
@@ -7168,8 +7174,22 @@ name|i
 operator|++
 control|)
 block|{
+specifier|const
+name|gdouble
+name|factor
+init|=
+literal|1.0
+operator|/
+literal|255.0
+decl_stmt|;
+name|gint
+name|x_index
+decl_stmt|;
 name|gint
 name|byte_loop
+decl_stmt|;
+name|gdouble
+name|alpha
 decl_stmt|;
 comment|/* attempt to avoid doing this calc twice in the loop */
 name|x_index
@@ -7246,20 +7266,15 @@ index|]
 operator|*=
 name|alpha
 expr_stmt|;
-name|gimp_image_transform_color
+name|babl_process
 argument_list|(
-name|dest
+name|fish
 argument_list|,
-name|gimp_drawable_type
-argument_list|(
-name|drawable
-argument_list|)
+name|p
 argument_list|,
 name|d
 argument_list|,
-name|GIMP_RGB
-argument_list|,
-name|p
+literal|1
 argument_list|)
 expr_stmt|;
 name|d
@@ -7284,6 +7299,9 @@ name|i
 operator|++
 control|)
 block|{
+name|gint
+name|x_index
+decl_stmt|;
 comment|/* attempt to avoid doing this calc twice in the loop */
 name|x_index
 operator|=
@@ -7319,20 +7337,15 @@ operator|=
 literal|255
 expr_stmt|;
 comment|/* multiply alpha into the pixmap data            * maybe we could do this at tool creation or brush switch time?            * and compute it for the whole brush at once and cache it?            */
-name|gimp_image_transform_color
+name|babl_process
 argument_list|(
-name|dest
+name|fish
 argument_list|,
-name|gimp_drawable_type
-argument_list|(
-name|drawable
-argument_list|)
+name|p
 argument_list|,
 name|d
 argument_list|,
-name|GIMP_RGB
-argument_list|,
-name|p
+literal|1
 argument_list|)
 expr_stmt|;
 name|d
