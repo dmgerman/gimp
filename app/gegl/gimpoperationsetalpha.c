@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a20a2d0103
+DECL|enum|__anon27707d0e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -89,6 +89,18 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|void
+name|gimp_operation_set_alpha_prepare
+parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|gboolean
 name|gimp_operation_set_alpha_process
 parameter_list|(
@@ -99,6 +111,10 @@ parameter_list|,
 name|void
 modifier|*
 name|in_buf
+parameter_list|,
+name|void
+modifier|*
+name|aux_buf
 parameter_list|,
 name|void
 modifier|*
@@ -116,14 +132,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationSetAlpha,gimp_operation_set_alpha,GEGL_TYPE_OPERATION_POINT_FILTER)
+DECL|function|G_DEFINE_TYPE (GimpOperationSetAlpha,gimp_operation_set_alpha,GEGL_TYPE_OPERATION_POINT_COMPOSER)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpOperationSetAlpha
 argument_list|,
 argument|gimp_operation_set_alpha
 argument_list|,
-argument|GEGL_TYPE_OPERATION_POINT_FILTER
+argument|GEGL_TYPE_OPERATION_POINT_COMPOSER
 argument_list|)
 end_macro
 
@@ -163,11 +179,11 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|GeglOperationPointFilterClass
+name|GeglOperationPointComposerClass
 modifier|*
 name|point_class
 init|=
-name|GEGL_OPERATION_POINT_FILTER_CLASS
+name|GEGL_OPERATION_POINT_COMPOSER_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -201,6 +217,12 @@ operator|->
 name|description
 operator|=
 literal|"Set a buffer's alpha channel to a value"
+expr_stmt|;
+name|operation_class
+operator|->
+name|prepare
+operator|=
+name|gimp_operation_set_alpha_prepare
 expr_stmt|;
 name|point_class
 operator|->
@@ -381,8 +403,58 @@ end_function
 
 begin_function
 specifier|static
+name|void
+DECL|function|gimp_operation_set_alpha_prepare (GeglOperation * operation)
+name|gimp_operation_set_alpha_prepare
+parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|)
+block|{
+name|gegl_operation_set_format
+argument_list|(
+name|operation
+argument_list|,
+literal|"input"
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"RGBA float"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gegl_operation_set_format
+argument_list|(
+name|operation
+argument_list|,
+literal|"aux"
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"Y float"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gegl_operation_set_format
+argument_list|(
+name|operation
+argument_list|,
+literal|"output"
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"RGBA float"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|gboolean
-DECL|function|gimp_operation_set_alpha_process (GeglOperation * operation,void * in_buf,void * out_buf,glong samples,const GeglRectangle * roi)
+DECL|function|gimp_operation_set_alpha_process (GeglOperation * operation,void * in_buf,void * aux_buf,void * out_buf,glong samples,const GeglRectangle * roi)
 name|gimp_operation_set_alpha_process
 parameter_list|(
 name|GeglOperation
@@ -392,6 +464,10 @@ parameter_list|,
 name|void
 modifier|*
 name|in_buf
+parameter_list|,
+name|void
+modifier|*
+name|aux_buf
 parameter_list|,
 name|void
 modifier|*
@@ -423,10 +499,83 @@ name|in_buf
 decl_stmt|;
 name|gfloat
 modifier|*
+name|aux
+init|=
+name|aux_buf
+decl_stmt|;
+name|gfloat
+modifier|*
 name|dest
 init|=
 name|out_buf
 decl_stmt|;
+if|if
+condition|(
+name|aux
+condition|)
+block|{
+while|while
+condition|(
+name|samples
+operator|--
+condition|)
+block|{
+name|dest
+index|[
+name|RED
+index|]
+operator|=
+name|src
+index|[
+name|RED
+index|]
+expr_stmt|;
+name|dest
+index|[
+name|GREEN
+index|]
+operator|=
+name|src
+index|[
+name|GREEN
+index|]
+expr_stmt|;
+name|dest
+index|[
+name|BLUE
+index|]
+operator|=
+name|src
+index|[
+name|BLUE
+index|]
+expr_stmt|;
+name|dest
+index|[
+name|ALPHA
+index|]
+operator|=
+name|self
+operator|->
+name|value
+operator|*
+name|src
+index|[
+literal|0
+index|]
+expr_stmt|;
+name|src
+operator|+=
+literal|4
+expr_stmt|;
+name|dest
+operator|+=
+literal|4
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
 while|while
 condition|(
 name|samples
@@ -480,6 +629,7 @@ name|dest
 operator|+=
 literal|4
 expr_stmt|;
+block|}
 block|}
 return|return
 name|TRUE

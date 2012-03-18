@@ -106,7 +106,7 @@ struct|struct
 name|_GimpOperationSetAlpha
 block|{
 DECL|member|parent_instance
-name|GeglOperationPointFilter
+name|GeglOperationPointComposer
 name|parent_instance
 decl_stmt|;
 DECL|member|value
@@ -123,7 +123,7 @@ struct|struct
 name|_GimpOperationSetAlphaClass
 block|{
 DECL|member|parent_class
-name|GeglOperationPointFilterClass
+name|GeglOperationPointComposerClass
 name|parent_class
 decl_stmt|;
 block|}
