@@ -1206,20 +1206,6 @@ argument_list|,
 name|col
 argument_list|)
 expr_stmt|;
-comment|/*  set the alpha channel  */
-name|col
-index|[
-name|paint_core
-operator|->
-name|canvas_buf
-operator|->
-name|bytes
-operator|-
-literal|1
-index|]
-operator|=
-name|OPAQUE_OPACITY
-expr_stmt|;
 comment|/*  color the pixels  */
 name|color_pixels
 argument_list|(
@@ -1886,7 +1872,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9f06b20103
+DECL|enum|__anon2af843900103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START

@@ -352,7 +352,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290cba4c0103
+DECL|enum|__anon29a067810103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -446,7 +446,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon290cba4c0203
+DECL|enum|__anon29a067810203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -10792,7 +10792,7 @@ decl_stmt|;
 name|guchar
 name|col
 index|[
-literal|3
+literal|4
 index|]
 decl_stmt|;
 name|g_return_if_fail
@@ -10819,14 +10819,14 @@ argument_list|)
 expr_stmt|;
 name|dest_format
 operator|=
-name|gimp_image_get_format_without_alpha
+name|gimp_image_get_format_with_alpha
 argument_list|(
 name|dest_image
 argument_list|,
 name|dest_type
 argument_list|)
 expr_stmt|;
-name|gimp_rgb_get_uchar
+name|gimp_rgba_get_uchar
 argument_list|(
 name|rgb
 argument_list|,
@@ -10847,6 +10847,12 @@ name|col
 index|[
 literal|2
 index|]
+argument_list|,
+operator|&
+name|col
+index|[
+literal|3
+index|]
 argument_list|)
 expr_stmt|;
 name|babl_process
@@ -10855,7 +10861,7 @@ name|babl_fish
 argument_list|(
 name|babl_format
 argument_list|(
-literal|"RGB u8"
+literal|"RGBA u8"
 argument_list|)
 argument_list|,
 name|dest_format

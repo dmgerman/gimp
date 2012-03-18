@@ -473,18 +473,6 @@ argument_list|,
 name|col
 argument_list|)
 expr_stmt|;
-comment|/*  set the alpha channel  */
-name|col
-index|[
-name|area
-operator|->
-name|bytes
-operator|-
-literal|1
-index|]
-operator|=
-name|OPAQUE_OPACITY
-expr_stmt|;
 comment|/*  color the pixels  */
 name|color_pixels
 argument_list|(

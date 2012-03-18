@@ -1489,15 +1489,6 @@ argument_list|,
 name|col
 argument_list|)
 expr_stmt|;
-name|col
-index|[
-name|bytes
-operator|-
-literal|1
-index|]
-operator|=
-name|OPAQUE_OPACITY
-expr_stmt|;
 name|color_region_mask
 argument_list|(
 operator|&
