@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ed12b30103
+DECL|enum|__anon27b8c79e0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -737,6 +737,13 @@ name|get_babl_format
 operator|=
 name|gimp_projection_get_babl_format
 expr_stmt|;
+name|iface
+operator|->
+name|get_babl_format_with_alpha
+operator|=
+name|gimp_projection_get_babl_format
+expr_stmt|;
+comment|/* sic */
 name|iface
 operator|->
 name|get_image_type
