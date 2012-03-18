@@ -129,13 +129,61 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_function_decl
+specifier|static
+name|void
+name|gimp_drawable_bucket_fill_internal
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|GimpBucketFillMode
+name|fill_mode
+parameter_list|,
+name|gint
+name|paint_mode
+parameter_list|,
+name|gdouble
+name|opacity
+parameter_list|,
+name|gboolean
+name|fill_transparent
+parameter_list|,
+name|GimpSelectCriterion
+name|fill_criterion
+parameter_list|,
+name|gdouble
+name|threshold
+parameter_list|,
+name|gboolean
+name|sample_merged
+parameter_list|,
+name|gdouble
+name|x
+parameter_list|,
+name|gdouble
+name|y
+parameter_list|,
+specifier|const
+name|GimpRGB
+modifier|*
+name|color
+parameter_list|,
+name|GimpPattern
+modifier|*
+name|pattern
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  public functions  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_bucket_fill (GimpDrawable * drawable,GimpContext * context,GimpBucketFillMode fill_mode,gint paint_mode,gdouble opacity,gboolean do_seed_fill,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y,GError ** error)
+DECL|function|gimp_drawable_bucket_fill (GimpDrawable * drawable,GimpContext * context,GimpBucketFillMode fill_mode,gint paint_mode,gdouble opacity,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y,GError ** error)
 name|gimp_drawable_bucket_fill
 parameter_list|(
 name|GimpDrawable
@@ -154,9 +202,6 @@ name|paint_mode
 parameter_list|,
 name|gdouble
 name|opacity
-parameter_list|,
-name|gboolean
-name|do_seed_fill
 parameter_list|,
 name|gboolean
 name|fill_transparent
@@ -324,7 +369,7 @@ return|return
 name|FALSE
 return|;
 block|}
-name|gimp_drawable_bucket_fill_full
+name|gimp_drawable_bucket_fill_internal
 argument_list|(
 name|drawable
 argument_list|,
@@ -333,8 +378,6 @@ argument_list|,
 name|paint_mode
 argument_list|,
 name|opacity
-argument_list|,
-name|do_seed_fill
 argument_list|,
 name|fill_transparent
 argument_list|,
@@ -360,10 +403,15 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*  private functions  */
+end_comment
+
 begin_function
+specifier|static
 name|void
-DECL|function|gimp_drawable_bucket_fill_full (GimpDrawable * drawable,GimpBucketFillMode fill_mode,gint paint_mode,gdouble opacity,gboolean do_seed_fill,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y,const GimpRGB * color,GimpPattern * pattern)
-name|gimp_drawable_bucket_fill_full
+DECL|function|gimp_drawable_bucket_fill_internal (GimpDrawable * drawable,GimpBucketFillMode fill_mode,gint paint_mode,gdouble opacity,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y,const GimpRGB * color,GimpPattern * pattern)
+name|gimp_drawable_bucket_fill_internal
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -377,9 +425,6 @@ name|paint_mode
 parameter_list|,
 name|gdouble
 name|opacity
-parameter_list|,
-name|gboolean
-name|do_seed_fill
 parameter_list|,
 name|gboolean
 name|fill_transparent
@@ -629,11 +674,6 @@ name|gimp
 argument_list|)
 expr_stmt|;
 comment|/*  Do a seed bucket fill...To do this, calculate a new    *  contiguous region. If there is a selection, calculate the    *  intersection of this region with the existing selection.    */
-if|if
-condition|(
-name|do_seed_fill
-condition|)
-block|{
 name|mask
 operator|=
 name|gimp_image_contiguous_region_by_seed
@@ -927,7 +967,7 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  if the image doesn't have an alpha channel, make sure that        *  the buf_tiles have.  We need the alpha channel to fill with        *  the region calculated above        */
+comment|/*  if the image doesn't have an alpha channel, make sure that    *  the buf_tiles have.  We need the alpha channel to fill with    *  the region calculated above    */
 if|if
 condition|(
 operator|!
@@ -939,42 +979,6 @@ condition|)
 name|bytes
 operator|++
 expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|fill_mode
-operator|==
-name|GIMP_PATTERN_BUCKET_FILL
-operator|&&
-operator|(
-name|pat_buf
-operator|->
-name|bytes
-operator|==
-literal|2
-operator|||
-name|pat_buf
-operator|->
-name|bytes
-operator|==
-literal|4
-operator|)
-condition|)
-block|{
-comment|/* If pattern being applied has an alpha channel, add one to the        * buf_tiles.        */
-if|if
-condition|(
-operator|!
-name|gimp_drawable_has_alpha
-argument_list|(
-name|drawable
-argument_list|)
-condition|)
-name|bytes
-operator|++
-expr_stmt|;
-block|}
 name|buf_tiles
 operator|=
 name|tile_manager_new
@@ -1031,10 +1035,6 @@ case|:
 case|case
 name|GIMP_BG_BUCKET_FILL
 case|:
-if|if
-condition|(
-name|mask
-condition|)
 name|color_region_mask
 argument_list|(
 operator|&
@@ -1046,23 +1046,10 @@ argument_list|,
 name|col
 argument_list|)
 expr_stmt|;
-else|else
-name|color_region
-argument_list|(
-operator|&
-name|bufPR
-argument_list|,
-name|col
-argument_list|)
-expr_stmt|;
 break|break;
 case|case
 name|GIMP_PATTERN_BUCKET_FILL
 case|:
-if|if
-condition|(
-name|mask
-condition|)
 name|pattern_region
 argument_list|(
 operator|&
@@ -1070,21 +1057,6 @@ name|bufPR
 argument_list|,
 operator|&
 name|maskPR
-argument_list|,
-name|pat_buf
-argument_list|,
-name|x1
-argument_list|,
-name|y1
-argument_list|)
-expr_stmt|;
-else|else
-name|pattern_region
-argument_list|(
-operator|&
-name|bufPR
-argument_list|,
-name|NULL
 argument_list|,
 name|pat_buf
 argument_list|,
@@ -1156,7 +1128,6 @@ argument_list|(
 name|buf_tiles
 argument_list|)
 expr_stmt|;
-comment|/*  update the image  */
 name|gimp_drawable_update
 argument_list|(
 name|drawable
@@ -1175,10 +1146,6 @@ name|y1
 argument_list|)
 expr_stmt|;
 comment|/*  free the mask  */
-if|if
-condition|(
-name|mask
-condition|)
 name|g_object_unref
 argument_list|(
 name|mask

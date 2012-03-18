@@ -2686,8 +2686,6 @@ name|opacity
 operator|/
 literal|100.0
 argument_list|,
-name|TRUE
-argument_list|,
 name|FALSE
 comment|/* don't fill transparent */
 argument_list|,
@@ -3053,8 +3051,6 @@ argument_list|,
 name|opacity
 operator|/
 literal|100.0
-argument_list|,
-name|TRUE
 argument_list|,
 name|fill_transparent
 argument_list|,

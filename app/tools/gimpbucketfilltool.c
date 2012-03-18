@@ -784,8 +784,6 @@ argument_list|(
 name|context
 argument_list|)
 argument_list|,
-name|TRUE
-argument_list|,
 name|options
 operator|->
 name|fill_transparent
