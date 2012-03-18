@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable-bucket-fill.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -1451,37 +1445,31 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_drawable_bucket_fill_full
+name|gimp_edit_fill_full
 argument_list|(
+name|image
+argument_list|,
 name|drawable
 argument_list|,
-name|fill_mode
-argument_list|,
-name|GIMP_NORMAL_MODE
-argument_list|,
-name|GIMP_OPACITY_OPAQUE
-argument_list|,
-name|FALSE
-argument_list|,
-comment|/* no seed fill */
-name|FALSE
-argument_list|,
-comment|/* don't fill transp */
-name|GIMP_SELECT_CRITERION_COMPOSITE
-argument_list|,
-literal|0.0
-argument_list|,
-name|FALSE
-argument_list|,
-comment|/* fill params  */
-literal|0.0
-argument_list|,
-literal|0.0
-argument_list|,
-comment|/* ignored      */
 name|color
 argument_list|,
 name|pattern
+argument_list|,
+name|pattern
+condition|?
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Drop pattern to layer"
+argument_list|)
+else|:
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Drop color to layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
