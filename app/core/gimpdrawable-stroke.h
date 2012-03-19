@@ -29,7 +29,7 @@ modifier|*
 name|options
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|bound_segs
 parameter_list|,
@@ -61,7 +61,7 @@ modifier|*
 name|options
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|bound_segs
 parameter_list|,

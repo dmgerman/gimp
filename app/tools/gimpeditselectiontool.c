@@ -277,13 +277,13 @@ name|num_segs_out
 decl_stmt|;
 comment|/*  Num seg in selection boundary     */
 DECL|member|segs_in
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segs_in
 decl_stmt|;
 comment|/*  Pointer to the channel sel. segs  */
 DECL|member|segs_out
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segs_out
 decl_stmt|;
@@ -781,12 +781,12 @@ decl_stmt|,
 name|off_y
 decl_stmt|;
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segs_in
 decl_stmt|;
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segs_out
 decl_stmt|;
@@ -1107,7 +1107,7 @@ name|num_segs_in
 operator|*
 sizeof|sizeof
 argument_list|(
-name|BoundSeg
+name|GimpBoundSeg
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1125,7 +1125,7 @@ name|num_segs_out
 operator|*
 sizeof|sizeof
 argument_list|(
-name|BoundSeg
+name|GimpBoundSeg
 argument_list|)
 argument_list|)
 expr_stmt|;

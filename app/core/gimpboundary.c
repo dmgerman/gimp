@@ -64,7 +64,7 @@ file|"gimpboundary.h"
 end_include
 
 begin_comment
-comment|/* BoundSeg array growth parameter */
+comment|/* GimpBoundSeg array growth parameter */
 end_comment
 
 begin_define
@@ -76,22 +76,22 @@ value|2048
 end_define
 
 begin_typedef
-DECL|typedef|Boundary
+DECL|typedef|GimpBoundary
 typedef|typedef
 name|struct
-name|_Boundary
-name|Boundary
+name|_GimpBoundary
+name|GimpBoundary
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_Boundary
+DECL|struct|_GimpBoundary
 struct|struct
-name|_Boundary
+name|_GimpBoundary
 block|{
 comment|/*  The array of segments  */
 DECL|member|segs
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segs
 decl_stmt|;
@@ -139,9 +139,9 @@ end_comment
 
 begin_function_decl
 specifier|static
-name|Boundary
+name|GimpBoundary
 modifier|*
-name|boundary_new
+name|gimp_boundary_new
 parameter_list|(
 name|PixelRegion
 modifier|*
@@ -152,11 +152,11 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
-name|boundary_free
+name|gimp_boundary_free
 parameter_list|(
-name|Boundary
+name|GimpBoundary
 modifier|*
 name|boundary
 parameter_list|,
@@ -169,9 +169,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|boundary_add_seg
+name|gimp_boundary_add_seg
 parameter_list|(
-name|Boundary
+name|GimpBoundary
 modifier|*
 name|bounrady
 parameter_list|,
@@ -216,7 +216,7 @@ name|gint
 modifier|*
 name|num_empty
 parameter_list|,
-name|BoundaryType
+name|GimpBoundaryType
 name|type
 parameter_list|,
 name|gint
@@ -242,7 +242,7 @@ specifier|static
 name|void
 name|process_horiz_seg
 parameter_list|(
-name|Boundary
+name|GimpBoundary
 modifier|*
 name|boundary
 parameter_list|,
@@ -269,7 +269,7 @@ specifier|static
 name|void
 name|make_horiz_segs
 parameter_list|(
-name|Boundary
+name|GimpBoundary
 modifier|*
 name|boundary
 parameter_list|,
@@ -297,7 +297,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|Boundary
+name|GimpBoundary
 modifier|*
 name|generate_boundary
 parameter_list|(
@@ -305,7 +305,7 @@ name|PixelRegion
 modifier|*
 name|PR
 parameter_list|,
-name|BoundaryType
+name|GimpBoundaryType
 name|type
 parameter_list|,
 name|gint
@@ -332,13 +332,13 @@ name|gint
 name|cmp_segptr_xy1_addr
 parameter_list|(
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|seg_ptr_a
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|seg_ptr_b
@@ -352,13 +352,13 @@ name|gint
 name|cmp_segptr_xy2_addr
 parameter_list|(
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|seg_ptr_a
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|seg_ptr_b
@@ -372,13 +372,13 @@ name|gint
 name|cmp_segptr_xy1
 parameter_list|(
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|seg_ptr_a
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|seg_ptr_b
@@ -392,13 +392,13 @@ name|gint
 name|cmp_segptr_xy2
 parameter_list|(
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|seg_ptr_a
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|seg_ptr_b
@@ -409,18 +409,18 @@ end_function_decl
 begin_function_decl
 specifier|static
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|find_segment
 parameter_list|(
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|segs_by_xy1
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|segs_by_xy2
@@ -440,12 +440,12 @@ end_function_decl
 begin_function_decl
 specifier|static
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|find_segment_with_func
 parameter_list|(
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|segs
@@ -454,7 +454,7 @@ name|gint
 name|num_segs
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|search_seg
 parameter_list|,
@@ -470,7 +470,7 @@ name|void
 name|simplify_subdivide
 parameter_list|(
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segs
 parameter_list|,
@@ -493,20 +493,20 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * boundary_find:  * @maskPR:    any PixelRegion  * @type:      type of bounds  * @x1:        left side of bounds  * @y1:        top side of bounds  * @x2:        right side of bounds  * @y2:        botton side of bounds  * @threshold: pixel value of boundary line  * @num_segs:  number of returned #BoundSeg's  *  * This function returns an array of #BoundSeg's which describe all  * outlines along pixel value @threahold, optionally within specified  * bounds instead of the whole region.  *  * The @maskPR paramater can be any PixelRegion.  If the region has  * more than 1 bytes/pixel, the last byte of each pixel is used to  * determine the boundary outline.  *  * Return value: the boundary array.  **/
+comment|/**  * gimp_boundary_find:  * @maskPR:    any PixelRegion  * @type:      type of bounds  * @x1:        left side of bounds  * @y1:        top side of bounds  * @x2:        right side of bounds  * @y2:        botton side of bounds  * @threshold: pixel value of boundary line  * @num_segs:  number of returned #GimpBoundSeg's  *  * This function returns an array of #GimpBoundSeg's which describe all  * outlines along pixel value @threahold, optionally within specified  * bounds instead of the whole region.  *  * The @maskPR paramater can be any PixelRegion.  If the region has  * more than 1 bytes/pixel, the last byte of each pixel is used to  * determine the boundary outline.  *  * Return value: the boundary array.  **/
 end_comment
 
 begin_function
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
-DECL|function|boundary_find (PixelRegion * maskPR,BoundaryType type,int x1,int y1,int x2,int y2,guchar threshold,int * num_segs)
-name|boundary_find
+DECL|function|gimp_boundary_find (PixelRegion * maskPR,GimpBoundaryType type,int x1,int y1,int x2,int y2,guchar threshold,int * num_segs)
+name|gimp_boundary_find
 parameter_list|(
 name|PixelRegion
 modifier|*
 name|maskPR
 parameter_list|,
-name|BoundaryType
+name|GimpBoundaryType
 name|type
 parameter_list|,
 name|int
@@ -529,7 +529,7 @@ modifier|*
 name|num_segs
 parameter_list|)
 block|{
-name|Boundary
+name|GimpBoundary
 modifier|*
 name|boundary
 decl_stmt|;
@@ -578,7 +578,7 @@ operator|->
 name|num_segs
 expr_stmt|;
 return|return
-name|boundary_free
+name|gimp_boundary_free
 argument_list|(
 name|boundary
 argument_list|,
@@ -589,17 +589,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * boundary_sort:  * @segs:       unsorted input segs.  * @num_segs:   number of input segs  * @num_groups: number of groups in the sorted segs  *  * This function takes an array of #BoundSeg's as returned by  * boundary_find() and sorts it by contiguous groups. The returned  * array contains markers consisting of -1 coordinates and is  * @num_groups elements longer than @segs.  *  * Return value: the sorted segs  **/
+comment|/**  * gimp_boundary_sort:  * @segs:       unsorted input segs.  * @num_segs:   number of input segs  * @num_groups: number of groups in the sorted segs  *  * This function takes an array of #GimpBoundSeg's as returned by  * gimp_boundary_find() and sorts it by contiguous groups. The returned  * array contains markers consisting of -1 coordinates and is  * @num_groups elements longer than @segs.  *  * Return value: the sorted segs  **/
 end_comment
 
 begin_function
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
-DECL|function|boundary_sort (const BoundSeg * segs,gint num_segs,gint * num_groups)
-name|boundary_sort
+DECL|function|gimp_boundary_sort (const GimpBoundSeg * segs,gint num_segs,gint * num_groups)
+name|gimp_boundary_sort
 parameter_list|(
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segs
 parameter_list|,
@@ -611,18 +611,18 @@ modifier|*
 name|num_groups
 parameter_list|)
 block|{
-name|Boundary
+name|GimpBoundary
 modifier|*
 name|boundary
 decl_stmt|;
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|segs_ptrs_by_xy1
 decl_stmt|;
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|segs_ptrs_by_xy2
@@ -688,13 +688,13 @@ condition|)
 return|return
 name|NULL
 return|;
-comment|/* prepare arrays with BoundSeg pointers sorted by xy1 and xy2 accordingly */
+comment|/* prepare arrays with GimpBoundSeg pointers sorted by xy1 and xy2 accordingly */
 name|segs_ptrs_by_xy1
 operator|=
 name|g_new
 argument_list|(
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 operator|*
 argument_list|,
 name|num_segs
@@ -705,7 +705,7 @@ operator|=
 name|g_new
 argument_list|(
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 operator|*
 argument_list|,
 name|num_segs
@@ -752,7 +752,7 @@ name|num_segs
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|BoundSeg
+name|GimpBoundSeg
 operator|*
 argument_list|)
 argument_list|,
@@ -770,7 +770,7 @@ name|num_segs
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|BoundSeg
+name|GimpBoundSeg
 operator|*
 argument_list|)
 argument_list|,
@@ -795,7 +795,7 @@ operator|++
 control|)
 operator|(
 operator|(
-name|BoundSeg
+name|GimpBoundSeg
 operator|*
 operator|)
 name|segs
@@ -810,7 +810,7 @@ name|FALSE
 expr_stmt|;
 name|boundary
 operator|=
-name|boundary_new
+name|gimp_boundary_new
 argument_list|(
 name|NULL
 argument_list|)
@@ -830,7 +830,7 @@ operator|++
 control|)
 block|{
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|cur_seg
 decl_stmt|;
@@ -844,7 +844,7 @@ operator|.
 name|visited
 condition|)
 continue|continue;
-name|boundary_add_seg
+name|gimp_boundary_add_seg
 argument_list|(
 name|boundary
 argument_list|,
@@ -886,7 +886,7 @@ argument_list|)
 expr_stmt|;
 operator|(
 operator|(
-name|BoundSeg
+name|GimpBoundSeg
 operator|*
 operator|)
 name|segs
@@ -973,7 +973,7 @@ operator|->
 name|y1
 condition|)
 block|{
-name|boundary_add_seg
+name|gimp_boundary_add_seg
 argument_list|(
 name|boundary
 argument_list|,
@@ -1013,7 +1013,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|boundary_add_seg
+name|gimp_boundary_add_seg
 argument_list|(
 name|boundary
 argument_list|,
@@ -1053,7 +1053,7 @@ expr_stmt|;
 block|}
 operator|(
 operator|(
-name|BoundSeg
+name|GimpBoundSeg
 operator|*
 operator|)
 name|cur_seg
@@ -1091,7 +1091,7 @@ name|num_groups
 operator|+
 literal|1
 expr_stmt|;
-name|boundary_add_seg
+name|gimp_boundary_add_seg
 argument_list|(
 name|boundary
 argument_list|,
@@ -1122,7 +1122,7 @@ name|segs_ptrs_by_xy2
 argument_list|)
 expr_stmt|;
 return|return
-name|boundary_free
+name|gimp_boundary_free
 argument_list|(
 name|boundary
 argument_list|,
@@ -1133,16 +1133,16 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * boundary_simplify:  * @sorted_segs: sorted input segs  * @num_groups:  number of groups in the sorted segs  * @num_segs:    number of returned segs.  *  * This function takes an array of #BoundSeg's which has been sorted  * with boundary_sort() and reduces the number of segments while  * preserving the general shape as close as possible.  *  * Return value: the simplified segs.  **/
+comment|/**  * gimp_boundary_simplify:  * @sorted_segs: sorted input segs  * @num_groups:  number of groups in the sorted segs  * @num_segs:    number of returned segs.  *  * This function takes an array of #GimpBoundSeg's which has been sorted  * with gimp_boundary_sort() and reduces the number of segments while  * preserving the general shape as close as possible.  *  * Return value: the simplified segs.  **/
 end_comment
 
 begin_function
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
-DECL|function|boundary_simplify (BoundSeg * sorted_segs,gint num_groups,gint * num_segs)
-name|boundary_simplify
+DECL|function|gimp_boundary_simplify (GimpBoundSeg * sorted_segs,gint num_groups,gint * num_segs)
+name|gimp_boundary_simplify
 parameter_list|(
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|sorted_segs
 parameter_list|,
@@ -1207,7 +1207,7 @@ name|FALSE
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|BoundSeg
+name|GimpBoundSeg
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1300,7 +1300,7 @@ name|GArray
 modifier|*
 name|tmp_points
 decl_stmt|;
-name|BoundSeg
+name|GimpBoundSeg
 name|tmp_seg
 decl_stmt|;
 name|gint
@@ -1422,7 +1422,7 @@ name|len
 expr_stmt|;
 return|return
 operator|(
-name|BoundSeg
+name|GimpBoundSeg
 operator|*
 operator|)
 name|g_array_free
@@ -1437,10 +1437,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|boundary_offset (BoundSeg * segs,gint num_segs,gint off_x,gint off_y)
-name|boundary_offset
+DECL|function|gimp_boundary_offset (GimpBoundSeg * segs,gint num_segs,gint off_x,gint off_y)
+name|gimp_boundary_offset
 parameter_list|(
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segs
 parameter_list|,
@@ -1565,23 +1565,23 @@ end_comment
 
 begin_function
 specifier|static
-name|Boundary
+name|GimpBoundary
 modifier|*
-DECL|function|boundary_new (PixelRegion * PR)
-name|boundary_new
+DECL|function|gimp_boundary_new (PixelRegion * PR)
+name|gimp_boundary_new
 parameter_list|(
 name|PixelRegion
 modifier|*
 name|PR
 parameter_list|)
 block|{
-name|Boundary
+name|GimpBoundary
 modifier|*
 name|boundary
 init|=
 name|g_slice_new0
 argument_list|(
-name|Boundary
+name|GimpBoundary
 argument_list|)
 decl_stmt|;
 if|if
@@ -1702,12 +1702,12 @@ end_function
 
 begin_function
 specifier|static
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
-DECL|function|boundary_free (Boundary * boundary,gboolean free_segs)
-name|boundary_free
+DECL|function|gimp_boundary_free (GimpBoundary * boundary,gboolean free_segs)
+name|gimp_boundary_free
 parameter_list|(
-name|Boundary
+name|GimpBoundary
 modifier|*
 name|boundary
 parameter_list|,
@@ -1715,7 +1715,7 @@ name|gboolean
 name|free_segs
 parameter_list|)
 block|{
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segs
 init|=
@@ -1769,7 +1769,7 @@ argument_list|)
 expr_stmt|;
 name|g_slice_free
 argument_list|(
-name|Boundary
+name|GimpBoundary
 argument_list|,
 name|boundary
 argument_list|)
@@ -1783,10 +1783,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|boundary_add_seg (Boundary * boundary,gint x1,gint y1,gint x2,gint y2,gboolean open)
-name|boundary_add_seg
+DECL|function|gimp_boundary_add_seg (GimpBoundary * boundary,gint x1,gint y1,gint x2,gint y2,gboolean open)
+name|gimp_boundary_add_seg
 parameter_list|(
-name|Boundary
+name|GimpBoundary
 modifier|*
 name|boundary
 parameter_list|,
@@ -1829,7 +1829,7 @@ name|segs
 operator|=
 name|g_renew
 argument_list|(
-name|BoundSeg
+name|GimpBoundSeg
 argument_list|,
 name|boundary
 operator|->
@@ -1917,7 +1917,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|find_empty_segs (PixelRegion * maskPR,gint scanline,gint empty_segs[],gint max_empty,gint * num_empty,BoundaryType type,gint x1,gint y1,gint x2,gint y2,guchar threshold)
+DECL|function|find_empty_segs (PixelRegion * maskPR,gint scanline,gint empty_segs[],gint max_empty,gint * num_empty,GimpBoundaryType type,gint x1,gint y1,gint x2,gint y2,guchar threshold)
 name|find_empty_segs
 parameter_list|(
 name|PixelRegion
@@ -1938,7 +1938,7 @@ name|gint
 modifier|*
 name|num_empty
 parameter_list|,
-name|BoundaryType
+name|GimpBoundaryType
 name|type
 parameter_list|,
 name|gint
@@ -2062,7 +2062,7 @@ if|if
 condition|(
 name|type
 operator|==
-name|BOUNDARY_WITHIN_BOUNDS
+name|GIMP_BOUNDARY_WITHIN_BOUNDS
 condition|)
 block|{
 if|if
@@ -2114,7 +2114,7 @@ if|if
 condition|(
 name|type
 operator|==
-name|BOUNDARY_IGNORE_BOUNDS
+name|GIMP_BOUNDARY_IGNORE_BOUNDS
 condition|)
 block|{
 name|start
@@ -2312,7 +2312,7 @@ if|if
 condition|(
 name|type
 operator|==
-name|BOUNDARY_IGNORE_BOUNDS
+name|GIMP_BOUNDARY_IGNORE_BOUNDS
 operator|&&
 operator|(
 name|endx
@@ -2508,10 +2508,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|process_horiz_seg (Boundary * boundary,gint x1,gint y1,gint x2,gint y2,gboolean open)
+DECL|function|process_horiz_seg (GimpBoundary * boundary,gint x1,gint y1,gint x2,gint y2,gboolean open)
 name|process_horiz_seg
 parameter_list|(
-name|Boundary
+name|GimpBoundary
 modifier|*
 name|boundary
 parameter_list|,
@@ -2544,7 +2544,7 @@ operator|>=
 literal|0
 condition|)
 block|{
-name|boundary_add_seg
+name|gimp_boundary_add_seg
 argument_list|(
 name|boundary
 argument_list|,
@@ -2598,7 +2598,7 @@ operator|>=
 literal|0
 condition|)
 block|{
-name|boundary_add_seg
+name|gimp_boundary_add_seg
 argument_list|(
 name|boundary
 argument_list|,
@@ -2639,7 +2639,7 @@ index|]
 operator|=
 name|y2
 expr_stmt|;
-name|boundary_add_seg
+name|gimp_boundary_add_seg
 argument_list|(
 name|boundary
 argument_list|,
@@ -2660,10 +2660,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|make_horiz_segs (Boundary * boundary,gint start,gint end,gint scanline,gint empty[],gint num_empty,gint top)
+DECL|function|make_horiz_segs (GimpBoundary * boundary,gint start,gint end,gint scanline,gint empty[],gint num_empty,gint top)
 name|make_horiz_segs
 parameter_list|(
-name|Boundary
+name|GimpBoundary
 modifier|*
 name|boundary
 parameter_list|,
@@ -2806,16 +2806,16 @@ end_function
 
 begin_function
 specifier|static
-name|Boundary
+name|GimpBoundary
 modifier|*
-DECL|function|generate_boundary (PixelRegion * PR,BoundaryType type,gint x1,gint y1,gint x2,gint y2,guchar threshold)
+DECL|function|generate_boundary (PixelRegion * PR,GimpBoundaryType type,gint x1,gint y1,gint x2,gint y2,guchar threshold)
 name|generate_boundary
 parameter_list|(
 name|PixelRegion
 modifier|*
 name|PR
 parameter_list|,
-name|BoundaryType
+name|GimpBoundaryType
 name|type
 parameter_list|,
 name|gint
@@ -2834,7 +2834,7 @@ name|guchar
 name|threshold
 parameter_list|)
 block|{
-name|Boundary
+name|GimpBoundary
 modifier|*
 name|boundary
 decl_stmt|;
@@ -2870,7 +2870,7 @@ literal|0
 decl_stmt|;
 name|boundary
 operator|=
-name|boundary_new
+name|gimp_boundary_new
 argument_list|(
 name|PR
 argument_list|)
@@ -2887,7 +2887,7 @@ if|if
 condition|(
 name|type
 operator|==
-name|BOUNDARY_WITHIN_BOUNDS
+name|GIMP_BOUNDARY_WITHIN_BOUNDS
 condition|)
 block|{
 name|start
@@ -2904,7 +2904,7 @@ if|if
 condition|(
 name|type
 operator|==
-name|BOUNDARY_IGNORE_BOUNDS
+name|GIMP_BOUNDARY_IGNORE_BOUNDS
 condition|)
 block|{
 name|start
@@ -3254,24 +3254,24 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|cmp_segptr_xy1_addr (const BoundSeg ** seg_ptr_a,const BoundSeg ** seg_ptr_b)
+DECL|function|cmp_segptr_xy1_addr (const GimpBoundSeg ** seg_ptr_a,const GimpBoundSeg ** seg_ptr_b)
 name|cmp_segptr_xy1_addr
 parameter_list|(
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|seg_ptr_a
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|seg_ptr_b
 parameter_list|)
 block|{
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|seg_a
 init|=
@@ -3279,7 +3279,7 @@ operator|*
 name|seg_ptr_a
 decl_stmt|;
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|seg_b
 init|=
@@ -3351,24 +3351,24 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|cmp_segptr_xy2_addr (const BoundSeg ** seg_ptr_a,const BoundSeg ** seg_ptr_b)
+DECL|function|cmp_segptr_xy2_addr (const GimpBoundSeg ** seg_ptr_a,const GimpBoundSeg ** seg_ptr_b)
 name|cmp_segptr_xy2_addr
 parameter_list|(
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|seg_ptr_a
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|seg_ptr_b
 parameter_list|)
 block|{
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|seg_a
 init|=
@@ -3376,7 +3376,7 @@ operator|*
 name|seg_ptr_a
 decl_stmt|;
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|seg_b
 init|=
@@ -3448,24 +3448,24 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|cmp_segptr_xy1 (const BoundSeg ** seg_ptr_a,const BoundSeg ** seg_ptr_b)
+DECL|function|cmp_segptr_xy1 (const GimpBoundSeg ** seg_ptr_a,const GimpBoundSeg ** seg_ptr_b)
 name|cmp_segptr_xy1
 parameter_list|(
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|seg_ptr_a
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|seg_ptr_b
 parameter_list|)
 block|{
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|seg_a
 init|=
@@ -3508,24 +3508,24 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|cmp_segptr_xy2 (const BoundSeg ** seg_ptr_a,const BoundSeg ** seg_ptr_b)
+DECL|function|cmp_segptr_xy2 (const GimpBoundSeg ** seg_ptr_a,const GimpBoundSeg ** seg_ptr_b)
 name|cmp_segptr_xy2
 parameter_list|(
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|seg_ptr_a
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|seg_ptr_b
 parameter_list|)
 block|{
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|seg_a
 init|=
@@ -3533,7 +3533,7 @@ operator|*
 name|seg_ptr_a
 decl_stmt|;
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|seg_b
 init|=
@@ -3566,19 +3566,19 @@ end_function
 begin_function
 specifier|static
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
-DECL|function|find_segment (const BoundSeg ** segs_by_xy1,const BoundSeg ** segs_by_xy2,gint num_segs,gint x,gint y)
+DECL|function|find_segment (const GimpBoundSeg ** segs_by_xy1,const GimpBoundSeg ** segs_by_xy2,gint num_segs,gint x,gint y)
 name|find_segment
 parameter_list|(
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|segs_by_xy1
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|segs_by_xy2
@@ -3594,16 +3594,16 @@ name|y
 parameter_list|)
 block|{
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segptr_xy1
 decl_stmt|;
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segptr_xy2
 decl_stmt|;
-name|BoundSeg
+name|GimpBoundSeg
 name|search_seg
 decl_stmt|;
 name|search_seg
@@ -3708,13 +3708,13 @@ end_function
 begin_function
 specifier|static
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
-DECL|function|find_segment_with_func (const BoundSeg ** segs,gint num_segs,const BoundSeg * search_seg,GCompareFunc cmp_func)
+DECL|function|find_segment_with_func (const GimpBoundSeg ** segs,gint num_segs,const GimpBoundSeg * search_seg,GCompareFunc cmp_func)
 name|find_segment_with_func
 parameter_list|(
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|segs
@@ -3723,7 +3723,7 @@ name|gint
 name|num_segs
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|search_seg
 parameter_list|,
@@ -3732,13 +3732,13 @@ name|cmp_func
 parameter_list|)
 block|{
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|seg
 decl_stmt|;
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|found_seg
 init|=
@@ -3757,7 +3757,7 @@ name|num_segs
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|BoundSeg
+name|GimpBoundSeg
 operator|*
 argument_list|)
 argument_list|,
@@ -3848,11 +3848,11 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|simplify_subdivide (const BoundSeg * segs,gint start_idx,gint end_idx,GArray ** ret_points)
+DECL|function|simplify_subdivide (const GimpBoundSeg * segs,gint start_idx,gint end_idx,GArray ** ret_points)
 name|simplify_subdivide
 parameter_list|(
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segs
 parameter_list|,

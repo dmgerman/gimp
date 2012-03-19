@@ -136,13 +136,13 @@ name|boundary_known
 decl_stmt|;
 comment|/*  is the current boundary valid  */
 DECL|member|segs_in
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segs_in
 decl_stmt|;
 comment|/*  outline of selected region     */
 DECL|member|segs_out
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segs_out
 decl_stmt|;
@@ -222,13 +222,13 @@ modifier|*
 name|channel
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|segs_in
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|segs_out
@@ -745,13 +745,13 @@ modifier|*
 name|mask
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|segs_in
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|segs_out

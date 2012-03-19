@@ -342,13 +342,13 @@ modifier|*
 name|channel
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|segs_in
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|segs_out
@@ -1263,12 +1263,12 @@ name|item
 argument_list|)
 decl_stmt|;
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|dummy_in
 decl_stmt|;
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|dummy_out
 decl_stmt|;
@@ -1472,7 +1472,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_selection_boundary (GimpChannel * channel,const BoundSeg ** segs_in,const BoundSeg ** segs_out,gint * num_segs_in,gint * num_segs_out,gint unused1,gint unused2,gint unused3,gint unused4)
+DECL|function|gimp_selection_boundary (GimpChannel * channel,const GimpBoundSeg ** segs_in,const GimpBoundSeg ** segs_out,gint * num_segs_in,gint * num_segs_out,gint unused1,gint unused2,gint unused3,gint unused4)
 name|gimp_selection_boundary
 parameter_list|(
 name|GimpChannel
@@ -1480,13 +1480,13 @@ modifier|*
 name|channel
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|segs_in
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|segs_out

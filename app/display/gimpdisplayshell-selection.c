@@ -247,7 +247,7 @@ modifier|*
 name|selection
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|src_segs
 parameter_list|,
@@ -1170,7 +1170,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|selection_transform_segs (Selection * selection,const BoundSeg * src_segs,GimpSegment * dest_segs,gint n_segs)
+DECL|function|selection_transform_segs (Selection * selection,const GimpBoundSeg * src_segs,GimpSegment * dest_segs,gint n_segs)
 name|selection_transform_segs
 parameter_list|(
 name|Selection
@@ -1178,7 +1178,7 @@ modifier|*
 name|selection
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|src_segs
 parameter_list|,
@@ -1436,12 +1436,12 @@ name|display
 argument_list|)
 decl_stmt|;
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segs_in
 decl_stmt|;
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segs_out
 decl_stmt|;

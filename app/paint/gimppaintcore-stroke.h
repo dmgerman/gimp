@@ -70,7 +70,7 @@ name|gboolean
 name|emulate_dynamics
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|bound_segs
 parameter_list|,

@@ -333,10 +333,10 @@ end_function
 begin_function
 name|GimpBezierDesc
 modifier|*
-DECL|function|gimp_bezier_desc_new_from_bound_segs (BoundSeg * bound_segs,gint n_bound_segs,gint n_bound_groups)
+DECL|function|gimp_bezier_desc_new_from_bound_segs (GimpBoundSeg * bound_segs,gint n_bound_segs,gint n_bound_groups)
 name|gimp_bezier_desc_new_from_bound_segs
 parameter_list|(
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|bound_segs
 parameter_list|,

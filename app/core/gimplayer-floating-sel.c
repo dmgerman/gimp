@@ -674,7 +674,7 @@ end_function
 
 begin_function
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 DECL|function|floating_sel_boundary (GimpLayer * layer,gint * n_segs)
 name|floating_sel_boundary
@@ -837,12 +837,12 @@ name|fs
 operator|.
 name|segs
 operator|=
-name|boundary_find
+name|gimp_boundary_find
 argument_list|(
 operator|&
 name|bPR
 argument_list|,
-name|BOUNDARY_WITHIN_BOUNDS
+name|GIMP_BOUNDARY_WITHIN_BOUNDS
 argument_list|,
 literal|0
 argument_list|,
@@ -852,7 +852,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|BOUNDARY_HALF_WAY
+name|GIMP_BOUNDARY_HALF_WAY
 argument_list|,
 operator|&
 name|layer
@@ -953,7 +953,7 @@ name|segs
 operator|=
 name|g_new0
 argument_list|(
-name|BoundSeg
+name|GimpBoundSeg
 argument_list|,
 literal|4
 argument_list|)

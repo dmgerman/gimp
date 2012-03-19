@@ -71,7 +71,7 @@ end_function_decl
 
 begin_function_decl
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|floating_sel_boundary
 parameter_list|(

@@ -209,7 +209,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c790ec80103
+DECL|enum|__anon2c750f750103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -780,13 +780,13 @@ modifier|*
 name|channel
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|segs_in
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|segs_out
@@ -1866,7 +1866,7 @@ name|num_segs_in
 operator|*
 sizeof|sizeof
 argument_list|(
-name|BoundSeg
+name|GimpBoundSeg
 argument_list|)
 expr_stmt|;
 operator|*
@@ -1878,7 +1878,7 @@ name|num_segs_out
 operator|*
 sizeof|sizeof
 argument_list|(
-name|BoundSeg
+name|GimpBoundSeg
 argument_list|)
 expr_stmt|;
 return|return
@@ -3415,12 +3415,12 @@ name|item
 argument_list|)
 decl_stmt|;
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segs_in
 decl_stmt|;
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segs_out
 decl_stmt|;
@@ -4511,7 +4511,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_channel_real_boundary (GimpChannel * channel,const BoundSeg ** segs_in,const BoundSeg ** segs_out,gint * num_segs_in,gint * num_segs_out,gint x1,gint y1,gint x2,gint y2)
+DECL|function|gimp_channel_real_boundary (GimpChannel * channel,const GimpBoundSeg ** segs_in,const GimpBoundSeg ** segs_out,gint * num_segs_in,gint * num_segs_out,gint x1,gint y1,gint x2,gint y2)
 name|gimp_channel_real_boundary
 parameter_list|(
 name|GimpChannel
@@ -4519,13 +4519,13 @@ modifier|*
 name|channel
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|segs_in
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|segs_out
@@ -4638,12 +4638,12 @@ name|channel
 operator|->
 name|segs_out
 operator|=
-name|boundary_find
+name|gimp_boundary_find
 argument_list|(
 operator|&
 name|bPR
 argument_list|,
-name|BOUNDARY_IGNORE_BOUNDS
+name|GIMP_BOUNDARY_IGNORE_BOUNDS
 argument_list|,
 name|x1
 argument_list|,
@@ -4653,7 +4653,7 @@ name|x2
 argument_list|,
 name|y2
 argument_list|,
-name|BOUNDARY_HALF_WAY
+name|GIMP_BOUNDARY_HALF_WAY
 argument_list|,
 operator|&
 name|channel
@@ -4748,12 +4748,12 @@ name|channel
 operator|->
 name|segs_in
 operator|=
-name|boundary_find
+name|gimp_boundary_find
 argument_list|(
 operator|&
 name|bPR
 argument_list|,
-name|BOUNDARY_WITHIN_BOUNDS
+name|GIMP_BOUNDARY_WITHIN_BOUNDS
 argument_list|,
 name|x1
 argument_list|,
@@ -4763,7 +4763,7 @@ name|x2
 argument_list|,
 name|y2
 argument_list|,
-name|BOUNDARY_HALF_WAY
+name|GIMP_BOUNDARY_HALF_WAY
 argument_list|,
 operator|&
 name|channel
@@ -8661,7 +8661,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_channel_boundary (GimpChannel * channel,const BoundSeg ** segs_in,const BoundSeg ** segs_out,gint * num_segs_in,gint * num_segs_out,gint x1,gint y1,gint x2,gint y2)
+DECL|function|gimp_channel_boundary (GimpChannel * channel,const GimpBoundSeg ** segs_in,const GimpBoundSeg ** segs_out,gint * num_segs_in,gint * num_segs_out,gint x1,gint y1,gint x2,gint y2)
 name|gimp_channel_boundary
 parameter_list|(
 name|GimpChannel
@@ -8669,13 +8669,13 @@ modifier|*
 name|channel
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|segs_in
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 modifier|*
 name|segs_out

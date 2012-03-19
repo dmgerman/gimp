@@ -149,7 +149,7 @@ modifier|*
 name|shell
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segs
 parameter_list|,

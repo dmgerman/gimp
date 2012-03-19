@@ -248,7 +248,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|gimp_region_select_tool_calculate
 parameter_list|(
@@ -1363,7 +1363,7 @@ end_function
 
 begin_function
 specifier|static
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 DECL|function|gimp_region_select_tool_calculate (GimpRegionSelectTool * region_sel,GimpDisplay * display,gint * n_segs)
 name|gimp_region_select_tool_calculate
@@ -1390,7 +1390,7 @@ argument_list|(
 name|display
 argument_list|)
 decl_stmt|;
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segs
 decl_stmt|;
@@ -1500,12 +1500,12 @@ argument_list|)
 expr_stmt|;
 name|segs
 operator|=
-name|boundary_find
+name|gimp_boundary_find
 argument_list|(
 operator|&
 name|maskPR
 argument_list|,
-name|BOUNDARY_WITHIN_BOUNDS
+name|GIMP_BOUNDARY_WITHIN_BOUNDS
 argument_list|,
 literal|0
 argument_list|,
@@ -1531,7 +1531,7 @@ name|region_mask
 argument_list|)
 argument_list|)
 argument_list|,
-name|BOUNDARY_HALF_WAY
+name|GIMP_BOUNDARY_HALF_WAY
 argument_list|,
 name|n_segs
 argument_list|)

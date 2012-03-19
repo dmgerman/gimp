@@ -359,7 +359,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_paint_core_stroke_boundary (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,gboolean emulate_dynamics,const BoundSeg * bound_segs,gint n_bound_segs,gint offset_x,gint offset_y,gboolean push_undo,GError ** error)
+DECL|function|gimp_paint_core_stroke_boundary (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,gboolean emulate_dynamics,const GimpBoundSeg * bound_segs,gint n_bound_segs,gint offset_x,gint offset_y,gboolean push_undo,GError ** error)
 name|gimp_paint_core_stroke_boundary
 parameter_list|(
 name|GimpPaintCore
@@ -378,7 +378,7 @@ name|gboolean
 name|emulate_dynamics
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|bound_segs
 parameter_list|,
@@ -400,7 +400,7 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|stroke_segs
 decl_stmt|;
@@ -503,7 +503,7 @@ argument_list|)
 expr_stmt|;
 name|stroke_segs
 operator|=
-name|boundary_sort
+name|gimp_boundary_sort
 argument_list|(
 name|bound_segs
 argument_list|,

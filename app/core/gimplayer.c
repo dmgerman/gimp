@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bde0afd0103
+DECL|enum|__anon2c52e0910103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -234,7 +234,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bde0afd0203
+DECL|enum|__anon2c52e0910203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2219,7 +2219,7 @@ name|num_segs
 operator|*
 sizeof|sizeof
 argument_list|(
-name|BoundSeg
+name|GimpBoundSeg
 argument_list|)
 expr_stmt|;
 return|return

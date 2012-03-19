@@ -54,7 +54,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* expects sorted BoundSegs */
+comment|/* expects sorted GimpBoundSegs */
 end_comment
 
 begin_function_decl
@@ -62,7 +62,7 @@ name|GimpBezierDesc
 modifier|*
 name|gimp_bezier_desc_new_from_bound_segs
 parameter_list|(
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|bound_segs
 parameter_list|,

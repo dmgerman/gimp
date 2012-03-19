@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__BOUNDARY_H__
+name|__GIMP_BOUNDARY_H__
 end_ifndef
 
 begin_define
-DECL|macro|__BOUNDARY_H__
+DECL|macro|__GIMP_BOUNDARY_H__
 define|#
 directive|define
-name|__BOUNDARY_H__
+name|__GIMP_BOUNDARY_H__
 end_define
 
 begin_comment
@@ -21,33 +21,33 @@ comment|/* half intensity for mask */
 end_comment
 
 begin_define
-DECL|macro|BOUNDARY_HALF_WAY
+DECL|macro|GIMP_BOUNDARY_HALF_WAY
 define|#
 directive|define
-name|BOUNDARY_HALF_WAY
+name|GIMP_BOUNDARY_HALF_WAY
 value|127
 end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c9399400103
+DECL|enum|__anon2b24ee0c0103
 block|{
-DECL|enumerator|BOUNDARY_WITHIN_BOUNDS
-name|BOUNDARY_WITHIN_BOUNDS
+DECL|enumerator|GIMP_BOUNDARY_WITHIN_BOUNDS
+name|GIMP_BOUNDARY_WITHIN_BOUNDS
 block|,
-DECL|enumerator|BOUNDARY_IGNORE_BOUNDS
-name|BOUNDARY_IGNORE_BOUNDS
-DECL|typedef|BoundaryType
+DECL|enumerator|GIMP_BOUNDARY_IGNORE_BOUNDS
+name|GIMP_BOUNDARY_IGNORE_BOUNDS
+DECL|typedef|GimpBoundaryType
 block|}
-name|BoundaryType
+name|GimpBoundaryType
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_BoundSeg
+DECL|struct|_GimpBoundSeg
 struct|struct
-name|_BoundSeg
+name|_GimpBoundSeg
 block|{
 DECL|member|x1
 name|gint
@@ -82,15 +82,15 @@ struct|;
 end_struct
 
 begin_function_decl
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
-name|boundary_find
+name|gimp_boundary_find
 parameter_list|(
 name|PixelRegion
 modifier|*
 name|maskPR
 parameter_list|,
-name|BoundaryType
+name|GimpBoundaryType
 name|type
 parameter_list|,
 name|gint
@@ -116,12 +116,12 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
-name|boundary_sort
+name|gimp_boundary_sort
 parameter_list|(
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segs
 parameter_list|,
@@ -136,11 +136,11 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
-name|boundary_simplify
+name|gimp_boundary_simplify
 parameter_list|(
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|sorted_segs
 parameter_list|,
@@ -160,9 +160,9 @@ end_comment
 
 begin_function_decl
 name|void
-name|boundary_offset
+name|gimp_boundary_offset
 parameter_list|(
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segs
 parameter_list|,
@@ -184,7 +184,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __BOUNDARY_H__  */
+comment|/*  __GIMP_BOUNDARY_H__  */
 end_comment
 
 end_unit

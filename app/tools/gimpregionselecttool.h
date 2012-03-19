@@ -140,7 +140,7 @@ modifier|*
 name|region_mask
 decl_stmt|;
 DECL|member|segs
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segs
 decl_stmt|;

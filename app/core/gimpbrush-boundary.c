@@ -115,7 +115,7 @@ block|{
 name|PixelRegion
 name|maskPR
 decl_stmt|;
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|bound_segs
 decl_stmt|;
@@ -148,12 +148,12 @@ argument_list|)
 expr_stmt|;
 name|bound_segs
 operator|=
-name|boundary_find
+name|gimp_boundary_find
 argument_list|(
 operator|&
 name|maskPR
 argument_list|,
-name|BOUNDARY_WITHIN_BOUNDS
+name|GIMP_BOUNDARY_WITHIN_BOUNDS
 argument_list|,
 literal|0
 argument_list|,
@@ -178,7 +178,7 @@ condition|(
 name|bound_segs
 condition|)
 block|{
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|stroke_segs
 decl_stmt|;
@@ -187,7 +187,7 @@ name|n_stroke_groups
 decl_stmt|;
 name|stroke_segs
 operator|=
-name|boundary_sort
+name|gimp_boundary_sort
 argument_list|(
 name|bound_segs
 argument_list|,

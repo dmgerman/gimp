@@ -3043,7 +3043,7 @@ end_comment
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_draw_tool_add_boundary (GimpDrawTool * draw_tool,const BoundSeg * bound_segs,gint n_bound_segs,GimpMatrix3 * transform,gdouble offset_x,gdouble offset_y)
+DECL|function|gimp_draw_tool_add_boundary (GimpDrawTool * draw_tool,const GimpBoundSeg * bound_segs,gint n_bound_segs,GimpMatrix3 * transform,gdouble offset_x,gdouble offset_y)
 name|gimp_draw_tool_add_boundary
 parameter_list|(
 name|GimpDrawTool
@@ -3051,7 +3051,7 @@ modifier|*
 name|draw_tool
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|bound_segs
 parameter_list|,

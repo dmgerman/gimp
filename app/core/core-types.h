@@ -922,11 +922,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|BoundSeg
+DECL|typedef|GimpBoundSeg
 typedef|typedef
 name|struct
-name|_BoundSeg
-name|BoundSeg
+name|_GimpBoundSeg
+name|GimpBoundSeg
 typedef|;
 end_typedef
 

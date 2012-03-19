@@ -146,7 +146,7 @@ name|opacity_node
 decl_stmt|;
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon290b0f860108
+DECL|struct|__anon2b56afbf0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -160,7 +160,7 @@ name|boundary_known
 decl_stmt|;
 comment|/*  is the current boundary valid  */
 DECL|member|segs
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segs
 decl_stmt|;

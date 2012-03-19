@@ -2951,7 +2951,7 @@ argument_list|,
 name|pressy
 argument_list|)
 operator|>
-name|BOUNDARY_HALF_WAY
+name|GIMP_BOUNDARY_HALF_WAY
 condition|)
 block|{
 name|gint

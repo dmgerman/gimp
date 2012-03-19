@@ -852,7 +852,7 @@ modifier|*
 name|draw_tool
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|bound_segs
 parameter_list|,

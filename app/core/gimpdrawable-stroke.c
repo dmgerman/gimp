@@ -174,7 +174,7 @@ modifier|*
 name|drawable
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|bound_segs
 parameter_list|,
@@ -247,7 +247,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_fill_boundary (GimpDrawable * drawable,GimpFillOptions * options,const BoundSeg * bound_segs,gint n_bound_segs,gint offset_x,gint offset_y,gboolean push_undo)
+DECL|function|gimp_drawable_fill_boundary (GimpDrawable * drawable,GimpFillOptions * options,const GimpBoundSeg * bound_segs,gint n_bound_segs,gint offset_x,gint offset_y,gboolean push_undo)
 name|gimp_drawable_fill_boundary
 parameter_list|(
 name|GimpDrawable
@@ -259,7 +259,7 @@ modifier|*
 name|options
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|bound_segs
 parameter_list|,
@@ -382,7 +382,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_stroke_boundary (GimpDrawable * drawable,GimpStrokeOptions * options,const BoundSeg * bound_segs,gint n_bound_segs,gint offset_x,gint offset_y,gboolean push_undo)
+DECL|function|gimp_drawable_stroke_boundary (GimpDrawable * drawable,GimpStrokeOptions * options,const GimpBoundSeg * bound_segs,gint n_bound_segs,gint offset_x,gint offset_y,gboolean push_undo)
 name|gimp_drawable_stroke_boundary
 parameter_list|(
 name|GimpDrawable
@@ -394,7 +394,7 @@ modifier|*
 name|options
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|bound_segs
 parameter_list|,
@@ -845,7 +845,7 @@ begin_function
 specifier|static
 name|GimpScanConvert
 modifier|*
-DECL|function|gimp_drawable_render_boundary (GimpDrawable * drawable,const BoundSeg * bound_segs,gint n_bound_segs,gint offset_x,gint offset_y)
+DECL|function|gimp_drawable_render_boundary (GimpDrawable * drawable,const GimpBoundSeg * bound_segs,gint n_bound_segs,gint offset_x,gint offset_y)
 name|gimp_drawable_render_boundary
 parameter_list|(
 name|GimpDrawable
@@ -853,7 +853,7 @@ modifier|*
 name|drawable
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|bound_segs
 parameter_list|,
@@ -872,7 +872,7 @@ condition|(
 name|bound_segs
 condition|)
 block|{
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|stroke_segs
 decl_stmt|;
@@ -881,7 +881,7 @@ name|n_stroke_segs
 decl_stmt|;
 name|stroke_segs
 operator|=
-name|boundary_sort
+name|gimp_boundary_sort
 argument_list|(
 name|bound_segs
 argument_list|,

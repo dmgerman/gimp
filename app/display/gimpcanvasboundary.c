@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b144ce20103
+DECL|enum|__anon295b1ded0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -112,7 +112,7 @@ struct|struct
 name|_GimpCanvasBoundaryPrivate
 block|{
 DECL|member|segs
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segs
 decl_stmt|;
@@ -1473,7 +1473,7 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_canvas_boundary_new (GimpDisplayShell * shell,const BoundSeg * segs,gint n_segs,GimpMatrix3 * transform,gdouble offset_x,gdouble offset_y)
+DECL|function|gimp_canvas_boundary_new (GimpDisplayShell * shell,const GimpBoundSeg * segs,gint n_segs,GimpMatrix3 * transform,gdouble offset_x,gdouble offset_y)
 name|gimp_canvas_boundary_new
 parameter_list|(
 name|GimpDisplayShell
@@ -1481,7 +1481,7 @@ modifier|*
 name|shell
 parameter_list|,
 specifier|const
-name|BoundSeg
+name|GimpBoundSeg
 modifier|*
 name|segs
 parameter_list|,
@@ -1562,7 +1562,7 @@ name|n_segs
 operator|*
 sizeof|sizeof
 argument_list|(
-name|BoundSeg
+name|GimpBoundSeg
 argument_list|)
 argument_list|)
 expr_stmt|;
