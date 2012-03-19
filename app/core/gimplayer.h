@@ -146,7 +146,7 @@ name|opacity_node
 decl_stmt|;
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2b56afbf0108
+DECL|struct|__anon2b8050980108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -359,6 +359,11 @@ parameter_list|(
 name|TileManager
 modifier|*
 name|tiles
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|format
 parameter_list|,
 name|GimpImage
 modifier|*

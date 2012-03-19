@@ -201,6 +201,11 @@ name|TileManager
 modifier|*
 name|orig_tiles
 parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|orig_format
+parameter_list|,
 name|gint
 name|orig_offset_x
 parameter_list|,
@@ -704,7 +709,7 @@ begin_function
 specifier|static
 name|TileManager
 modifier|*
-DECL|function|gimp_flip_tool_transform (GimpTransformTool * trans_tool,GimpItem * active_item,TileManager * orig_tiles,gint orig_offset_x,gint orig_offset_y,gint * new_offset_x,gint * new_offset_y)
+DECL|function|gimp_flip_tool_transform (GimpTransformTool * trans_tool,GimpItem * active_item,TileManager * orig_tiles,const Babl * orig_format,gint orig_offset_x,gint orig_offset_y,gint * new_offset_x,gint * new_offset_y)
 name|gimp_flip_tool_transform
 parameter_list|(
 name|GimpTransformTool
@@ -718,6 +723,11 @@ parameter_list|,
 name|TileManager
 modifier|*
 name|orig_tiles
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|orig_format
 parameter_list|,
 name|gint
 name|orig_offset_x
@@ -873,6 +883,8 @@ argument_list|,
 name|context
 argument_list|,
 name|orig_tiles
+argument_list|,
+name|orig_format
 argument_list|,
 name|orig_offset_x
 argument_list|,

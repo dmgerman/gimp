@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -87,7 +93,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aaa6b870103
+DECL|enum|__anon28d144a50103
 block|{
 DECL|enumerator|HORZ_OR_VERT
 name|HORZ_OR_VERT

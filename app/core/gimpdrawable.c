@@ -229,7 +229,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0dde5a0103
+DECL|enum|__anon27efca470103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2844,6 +2844,11 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
+name|gimp_drawable_get_format
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
 name|off_x
 argument_list|,
 name|off_y
@@ -2871,6 +2876,11 @@ argument_list|(
 name|drawable
 argument_list|,
 name|tiles
+argument_list|,
+name|gimp_drawable_get_format
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|,
 name|new_off_x
 argument_list|,
@@ -2962,6 +2972,11 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
+name|gimp_drawable_get_format
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
 name|off_x
 argument_list|,
 name|off_y
@@ -2991,6 +3006,11 @@ argument_list|(
 name|drawable
 argument_list|,
 name|tiles
+argument_list|,
+name|gimp_drawable_get_format
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|,
 name|new_off_x
 argument_list|,
@@ -3091,6 +3111,11 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
+name|gimp_drawable_get_format
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
 name|off_x
 argument_list|,
 name|off_y
@@ -3124,6 +3149,11 @@ argument_list|(
 name|drawable
 argument_list|,
 name|tiles
+argument_list|,
+name|gimp_drawable_get_format
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|,
 name|new_off_x
 argument_list|,

@@ -227,6 +227,12 @@ parameter_list|,
 name|gboolean
 name|add_alpha
 parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+modifier|*
+name|format
+parameter_list|,
 name|gint
 modifier|*
 name|offset_x

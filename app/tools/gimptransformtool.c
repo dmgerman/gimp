@@ -557,6 +557,11 @@ name|TileManager
 modifier|*
 name|orig_tiles
 parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|orig_format
+parameter_list|,
 name|gint
 name|orig_offset_x
 parameter_list|,
@@ -4034,7 +4039,7 @@ begin_function
 specifier|static
 name|TileManager
 modifier|*
-DECL|function|gimp_transform_tool_real_transform (GimpTransformTool * tr_tool,GimpItem * active_item,TileManager * orig_tiles,gint orig_offset_x,gint orig_offset_y,gint * new_offset_x,gint * new_offset_y)
+DECL|function|gimp_transform_tool_real_transform (GimpTransformTool * tr_tool,GimpItem * active_item,TileManager * orig_tiles,const Babl * orig_format,gint orig_offset_x,gint orig_offset_y,gint * new_offset_x,gint * new_offset_y)
 name|gimp_transform_tool_real_transform
 parameter_list|(
 name|GimpTransformTool
@@ -4048,6 +4053,11 @@ parameter_list|,
 name|TileManager
 modifier|*
 name|orig_tiles
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|orig_format
 parameter_list|,
 name|gint
 name|orig_offset_x
@@ -4196,6 +4206,8 @@ argument_list|,
 name|context
 argument_list|,
 name|orig_tiles
+argument_list|,
+name|orig_format
 argument_list|,
 name|orig_offset_x
 argument_list|,
@@ -4347,6 +4359,13 @@ decl_stmt|;
 name|TileManager
 modifier|*
 name|orig_tiles
+init|=
+name|NULL
+decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|orig_format
 init|=
 name|NULL
 decl_stmt|;
@@ -4639,6 +4658,9 @@ argument_list|,
 name|context
 argument_list|,
 operator|&
+name|orig_format
+argument_list|,
+operator|&
 name|orig_offset_x
 argument_list|,
 operator|&
@@ -4696,6 +4718,8 @@ name|active_item
 argument_list|,
 name|orig_tiles
 argument_list|,
+name|orig_format
+argument_list|,
 name|orig_offset_x
 argument_list|,
 name|orig_offset_y
@@ -4739,6 +4763,8 @@ operator|->
 name|drawable
 argument_list|,
 name|new_tiles
+argument_list|,
+name|orig_format
 argument_list|,
 name|new_offset_x
 argument_list|,

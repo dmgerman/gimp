@@ -2539,6 +2539,11 @@ name|TileManager
 modifier|*
 name|tiles
 decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|format
+decl_stmt|;
 name|gint
 name|offset_x
 decl_stmt|;
@@ -2587,6 +2592,9 @@ argument_list|,
 name|FALSE
 argument_list|,
 operator|&
+name|format
+argument_list|,
+operator|&
 name|offset_x
 argument_list|,
 operator|&
@@ -2623,7 +2631,7 @@ name|gimp_tile_manager_create_buffer
 argument_list|(
 name|tiles
 argument_list|,
-name|NULL
+name|format
 argument_list|,
 name|TRUE
 argument_list|)

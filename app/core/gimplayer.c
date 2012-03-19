@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c52e0910103
+DECL|enum|__anon294001bf0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -234,7 +234,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c52e0910203
+DECL|enum|__anon294001bf0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4772,18 +4772,23 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_tiles:  * @tiles:      The buffer to make the new layer from.  * @dest_image: The image the new layer will be added to.  * @type:       The #GimpImageType of the new layer.  * @name:       The new layer's name.  * @opacity:    The new layer's opacity.  * @mode:       The new layer's mode.  *  * Copies %tiles to a layer taking into consideration the  * possibility of transforming the contents to meet the requirements  * of the target image type  *  * Return value: The new layer.  **/
+comment|/**  * gimp_layer_new_from_tiles:  * @tiles:      The buffer to make the new layer from.  * @format:     The tiles' pixel format  * @dest_image: The image the new layer will be added to.  * @type:       The #GimpImageType of the new layer.  * @name:       The new layer's name.  * @opacity:    The new layer's opacity.  * @mode:       The new layer's mode.  *  * Copies %tiles to a layer taking into consideration the  * possibility of transforming the contents to meet the requirements  * of the target image type  *  * Return value: The new layer.  **/
 end_comment
 
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_layer_new_from_tiles (TileManager * tiles,GimpImage * dest_image,GimpImageType type,const gchar * name,gdouble opacity,GimpLayerModeEffects mode)
+DECL|function|gimp_layer_new_from_tiles (TileManager * tiles,const Babl * format,GimpImage * dest_image,GimpImageType type,const gchar * name,gdouble opacity,GimpLayerModeEffects mode)
 name|gimp_layer_new_from_tiles
 parameter_list|(
 name|TileManager
 modifier|*
 name|tiles
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|format
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -4823,6 +4828,15 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|format
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|dest_image
@@ -4837,7 +4851,7 @@ name|gimp_tile_manager_create_buffer
 argument_list|(
 name|tiles
 argument_list|,
-name|NULL
+name|format
 argument_list|,
 name|FALSE
 argument_list|)

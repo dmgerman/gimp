@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274d00f00103
+DECL|enum|__anon29f3207e0103
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -441,6 +441,11 @@ parameter_list|,
 name|TileManager
 modifier|*
 name|orig_tiles
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|orig_format
 parameter_list|,
 name|gint
 name|orig_offset_x
