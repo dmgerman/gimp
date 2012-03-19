@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296efdfc0103
+DECL|enum|__anon2ae0b0520103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -234,7 +234,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296efdfc0203
+DECL|enum|__anon2ae0b0520203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6557,6 +6557,10 @@ argument_list|(
 name|mask_buffer
 argument_list|,
 literal|1.0
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_apply_operation_to_buffer

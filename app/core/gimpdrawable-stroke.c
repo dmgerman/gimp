@@ -1537,6 +1537,10 @@ argument_list|(
 name|mask_buffer
 argument_list|,
 literal|1.0
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_apply_operation
@@ -1549,7 +1553,7 @@ name|NULL
 argument_list|,
 name|apply_opacity
 argument_list|,
-name|TRUE
+literal|1.0
 argument_list|,
 name|base_buffer
 argument_list|,
