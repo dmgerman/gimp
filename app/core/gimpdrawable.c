@@ -229,7 +229,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ab16540103
+DECL|enum|__anon2a0dde5a0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3205,9 +3205,9 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|tile_manager_read_pixel_data_1
+name|gegl_buffer_sample
 argument_list|(
-name|gimp_drawable_get_tiles
+name|gimp_drawable_get_read_buffer
 argument_list|(
 name|drawable
 argument_list|)
@@ -3216,7 +3216,16 @@ name|x
 argument_list|,
 name|y
 argument_list|,
+name|NULL
+argument_list|,
 name|pixel
+argument_list|,
+name|gimp_drawable_get_format
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+name|GEGL_SAMPLER_NEAREST
 argument_list|)
 expr_stmt|;
 return|return
