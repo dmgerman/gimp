@@ -133,15 +133,6 @@ comment|/* types */
 end_comment
 
 begin_typedef
-DECL|typedef|BoundSeg
-typedef|typedef
-name|struct
-name|_BoundSeg
-name|BoundSeg
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpHistogram
 typedef|typedef
 name|struct

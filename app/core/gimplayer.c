@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/boundary.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"base/pixel-region.h"
 end_include
 
@@ -103,6 +97,12 @@ begin_include
 include|#
 directive|include
 file|"gimp-apply-operation.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpboundary.h"
 end_include
 
 begin_include
@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae0b0520103
+DECL|enum|__anon2bde0afd0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -234,7 +234,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae0b0520203
+DECL|enum|__anon2bde0afd0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -36,31 +36,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base-types.h"
+file|"core-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"boundary.h"
+file|"base/pixel-region.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"pixel-region.h"
+file|"base/tile.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tile.h"
+file|"base/tile-manager.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tile-manager.h"
+file|"gimpboundary.h"
 end_include
 
 begin_comment

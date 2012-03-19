@@ -30,13 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/boundary.h"
+file|"gimpbezierdesc.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpbezierdesc.h"
+file|"gimpboundary.h"
 end_include
 
 begin_function

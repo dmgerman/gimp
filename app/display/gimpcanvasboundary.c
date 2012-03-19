@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/boundary.h"
+file|"core/gimpboundary.h"
 end_include
 
 begin_include
@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e9dabf0103
+DECL|enum|__anon2b144ce20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

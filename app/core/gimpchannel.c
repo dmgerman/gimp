@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/boundary.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"base/pixel-region.h"
 end_include
 
@@ -103,6 +97,12 @@ begin_include
 include|#
 directive|include
 file|"gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpboundary.h"
 end_include
 
 begin_include
@@ -209,7 +209,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be70d2b0103
+DECL|enum|__anon2c790ec80103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED

@@ -36,13 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/boundary.h"
+file|"core/gimp.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimp.h"
+file|"core/gimpboundary.h"
 end_include
 
 begin_include
