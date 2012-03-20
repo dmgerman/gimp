@@ -168,6 +168,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|TileManager
+modifier|*
+name|gimp_tile_backend_tile_manager_get_tiles
+parameter_list|(
+name|GeglTileBackend
+modifier|*
+name|backend
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro

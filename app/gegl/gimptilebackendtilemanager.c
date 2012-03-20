@@ -1054,5 +1054,39 @@ return|;
 block|}
 end_function
 
+begin_function
+name|TileManager
+modifier|*
+DECL|function|gimp_tile_backend_tile_manager_get_tiles (GeglTileBackend * backend)
+name|gimp_tile_backend_tile_manager_get_tiles
+parameter_list|(
+name|GeglTileBackend
+modifier|*
+name|backend
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_TILE_BACKEND_TILE_MANAGER
+argument_list|(
+name|backend
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|GIMP_TILE_BACKEND_TILE_MANAGER
+argument_list|(
+name|backend
+argument_list|)
+operator|->
+name|priv
+operator|->
+name|tile_manager
+return|;
+block|}
+end_function
+
 end_unit
 

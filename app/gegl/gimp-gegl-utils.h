@@ -123,6 +123,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|TileManager
+modifier|*
+name|gimp_gegl_buffer_get_tiles
+parameter_list|(
+name|GeglBuffer
+modifier|*
+name|buffer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GeglBuffer
 modifier|*
 name|gimp_pixbuf_create_buffer
