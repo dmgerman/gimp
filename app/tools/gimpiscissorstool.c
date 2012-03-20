@@ -2345,7 +2345,7 @@ name|gimp_scan_convert_render
 argument_list|(
 name|sc
 argument_list|,
-name|gimp_drawable_get_tiles
+name|gimp_drawable_get_write_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

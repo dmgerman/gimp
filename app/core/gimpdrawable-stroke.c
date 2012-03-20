@@ -1117,10 +1117,6 @@ name|TileManager
 modifier|*
 name|base
 decl_stmt|;
-name|TileManager
-modifier|*
-name|mask
-decl_stmt|;
 name|GeglBuffer
 modifier|*
 name|base_buffer
@@ -1132,6 +1128,13 @@ decl_stmt|;
 name|GeglNode
 modifier|*
 name|apply_opacity
+decl_stmt|;
+name|GeglRectangle
+name|rect
+init|=
+block|{
+literal|0
+block|, }
 decl_stmt|;
 name|gint
 name|x
@@ -1334,27 +1337,30 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* fill a 1-bpp Tilemanager with black, this will describe the shape    * of the stroke.    */
-name|mask
+comment|/* fill a 1-bpp GeglBuffer with black, this will describe the shape    * of the stroke.    */
+name|rect
+operator|.
+name|width
 operator|=
-name|tile_manager_new
-argument_list|(
 name|w
-argument_list|,
+expr_stmt|;
+name|rect
+operator|.
+name|height
+operator|=
 name|h
-argument_list|,
-literal|1
-argument_list|)
 expr_stmt|;
 name|mask_buffer
 operator|=
-name|gimp_tile_manager_create_buffer
+name|gegl_buffer_new
 argument_list|(
-name|mask
+operator|&
+name|rect
 argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_clear
@@ -1383,7 +1389,7 @@ name|gimp_scan_convert_render
 argument_list|(
 name|scan_convert
 argument_list|,
-name|mask
+name|mask_buffer
 argument_list|,
 name|x
 operator|+
@@ -1624,11 +1630,6 @@ argument_list|,
 name|x
 argument_list|,
 name|y
-argument_list|)
-expr_stmt|;
-name|tile_manager_unref
-argument_list|(
-name|mask
 argument_list|)
 expr_stmt|;
 name|tile_manager_unref
