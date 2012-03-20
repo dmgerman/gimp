@@ -31,7 +31,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b24ee0c0103
+DECL|enum|__anon29749d570103
 block|{
 DECL|enumerator|GIMP_BOUNDARY_WITHIN_BOUNDS
 name|GIMP_BOUNDARY_WITHIN_BOUNDS
@@ -86,9 +86,14 @@ name|GimpBoundSeg
 modifier|*
 name|gimp_boundary_find
 parameter_list|(
-name|PixelRegion
+name|GeglBuffer
 modifier|*
-name|maskPR
+name|buffer
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|region
 parameter_list|,
 name|GimpBoundaryType
 name|type
