@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/tile-manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -130,7 +124,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2923740b0108
+DECL|struct|__anon29fc058c0108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
