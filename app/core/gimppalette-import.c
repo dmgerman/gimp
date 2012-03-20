@@ -1264,7 +1264,7 @@ argument_list|)
 decl_stmt|;
 name|buffer
 operator|=
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|mask
 argument_list|)

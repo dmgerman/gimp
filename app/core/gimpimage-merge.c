@@ -2267,7 +2267,7 @@ argument_list|)
 expr_stmt|;
 name|gegl_buffer_set_color
 argument_list|(
-name|gimp_drawable_get_write_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2359,7 +2359,7 @@ expr_stmt|;
 comment|/*  clear the layer  */
 name|gegl_buffer_clear
 argument_list|(
-name|gimp_drawable_get_write_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

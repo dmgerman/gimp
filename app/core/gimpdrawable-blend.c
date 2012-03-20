@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad47ca50108
+DECL|struct|__anon29b114bd0108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -215,7 +215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad47ca50208
+DECL|struct|__anon29b114bd0208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -2595,7 +2595,7 @@ expr_stmt|;
 comment|/*  copy the mask to the temp mask  */
 name|gegl_buffer_copy
 argument_list|(
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2683,7 +2683,7 @@ expr_stmt|;
 comment|/*  extract the aplha into the temp mask  */
 name|gegl_buffer_copy
 argument_list|(
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
 argument_list|)

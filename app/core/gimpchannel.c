@@ -209,7 +209,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297479470103
+DECL|enum|__anon2b4e2ab80103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -2704,7 +2704,7 @@ argument_list|)
 expr_stmt|;
 name|tmp_buffer
 operator|=
-name|gimp_drawable_get_write_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2754,7 +2754,7 @@ literal|0
 expr_stmt|;
 name|gegl_buffer_copy
 argument_list|(
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2775,7 +2775,7 @@ block|}
 comment|/*  clear the mask  */
 name|gegl_buffer_clear
 argument_list|(
-name|gimp_drawable_get_write_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2816,7 +2816,7 @@ name|tmp_buffer
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_drawable_get_write_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -4477,7 +4477,7 @@ block|}
 block|}
 name|gegl_buffer_sample
 argument_list|(
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -4626,7 +4626,7 @@ block|}
 decl_stmt|;
 name|buffer
 operator|=
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -4950,7 +4950,7 @@ literal|0
 expr_stmt|;
 name|buffer
 operator|=
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -5470,7 +5470,7 @@ name|empty
 return|;
 name|buffer
 operator|=
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -5755,7 +5755,7 @@ name|node
 argument_list|,
 name|TRUE
 argument_list|,
-name|gimp_drawable_get_write_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
 argument_list|)
@@ -5881,7 +5881,7 @@ name|node
 argument_list|,
 name|TRUE
 argument_list|,
-name|gimp_drawable_get_write_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
 argument_list|)
@@ -6029,7 +6029,7 @@ block|}
 decl_stmt|;
 name|gegl_buffer_clear
 argument_list|(
-name|gimp_drawable_get_write_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6046,7 +6046,7 @@ else|else
 block|{
 name|gegl_buffer_clear
 argument_list|(
-name|gimp_drawable_get_write_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6191,7 +6191,7 @@ argument_list|)
 expr_stmt|;
 name|gegl_buffer_set_color
 argument_list|(
-name|gimp_drawable_get_write_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6382,7 +6382,7 @@ name|node
 argument_list|,
 name|TRUE
 argument_list|,
-name|gimp_drawable_get_write_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
 argument_list|)
@@ -7573,7 +7573,7 @@ argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
 argument_list|(
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
 argument_list|)

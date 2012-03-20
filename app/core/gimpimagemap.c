@@ -111,7 +111,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bdef6e0103
+DECL|enum|__anon2b1f6c9f0103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -2823,7 +2823,7 @@ block|}
 comment|/*  Copy from the image to the new tiles  */
 name|src
 operator|=
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|image_map
 operator|->
@@ -3501,7 +3501,7 @@ argument_list|)
 expr_stmt|;
 name|dest
 operator|=
-name|gimp_drawable_get_write_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|image_map
 operator|->

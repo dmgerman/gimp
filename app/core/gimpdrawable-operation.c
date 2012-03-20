@@ -203,7 +203,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_apply_operation
 argument_list|(
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
 argument_list|)
@@ -494,7 +494,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_apply_operation
 argument_list|(
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
 argument_list|)

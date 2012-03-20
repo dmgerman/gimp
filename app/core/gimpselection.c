@@ -2502,7 +2502,7 @@ expr_stmt|;
 comment|/*  copy the channel to the mask  */
 name|gegl_buffer_copy
 argument_list|(
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2512,7 +2512,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_drawable_get_write_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3151,7 +3151,7 @@ name|apply_opacity
 decl_stmt|;
 name|mask_buffer
 operator|=
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

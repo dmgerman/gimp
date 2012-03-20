@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c72b5380103
+DECL|enum|__anon2b0377f00103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -234,7 +234,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c72b5380203
+DECL|enum|__anon2b0377f00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4296,7 +4296,7 @@ return|;
 comment|/*  Otherwise, determine if the alpha value at        *  the given point is non-zero        */
 name|gegl_buffer_sample
 argument_list|(
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -4783,7 +4783,7 @@ argument_list|)
 expr_stmt|;
 name|dest
 operator|=
-name|gimp_drawable_get_write_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -5750,7 +5750,7 @@ argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
 argument_list|(
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
 argument_list|)
@@ -5827,7 +5827,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_apply_operation
 argument_list|(
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
 argument_list|)
@@ -5840,7 +5840,7 @@ name|set_alpha
 argument_list|,
 name|TRUE
 argument_list|,
-name|gimp_drawable_get_write_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
 argument_list|)
@@ -6016,7 +6016,7 @@ name|dest_rect
 decl_stmt|;
 name|src
 operator|=
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6026,7 +6026,7 @@ argument_list|)
 expr_stmt|;
 name|dest
 operator|=
-name|gimp_drawable_get_write_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6175,7 +6175,7 @@ argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
 argument_list|(
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
 argument_list|)
@@ -6208,7 +6208,7 @@ else|else
 block|{
 name|src_buffer
 operator|=
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
 argument_list|)
@@ -6221,7 +6221,7 @@ expr_stmt|;
 block|}
 name|dest_buffer
 operator|=
-name|gimp_drawable_get_write_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6607,7 +6607,7 @@ expr_stmt|;
 comment|/*  Combine the current layer's alpha channel and the mask  */
 name|mask_buffer
 operator|=
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6617,7 +6617,7 @@ argument_list|)
 expr_stmt|;
 name|dest_buffer
 operator|=
-name|gimp_drawable_get_write_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7464,7 +7464,7 @@ argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
 argument_list|(
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
 argument_list|)

@@ -1511,14 +1511,14 @@ argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
 argument_list|(
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|mask
 argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_drawable_get_write_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|new_mask
 argument_list|)

@@ -1453,7 +1453,7 @@ block|}
 comment|/*  calculate and allocate a new segment array which represents the    *  boundary of the contiguous region    */
 name|buffer
 operator|=
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

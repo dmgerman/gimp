@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297860d10103
+DECL|enum|__anon28c74af70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2698,7 +2698,7 @@ argument_list|)
 expr_stmt|;
 name|buffer
 operator|=
-name|gimp_drawable_get_write_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
 argument_list|)

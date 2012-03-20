@@ -877,7 +877,7 @@ name|gimp_scan_convert_render
 argument_list|(
 name|scan_convert
 argument_list|,
-name|gimp_drawable_get_write_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

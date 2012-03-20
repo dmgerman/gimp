@@ -282,7 +282,7 @@ argument_list|)
 expr_stmt|;
 name|src_buffer
 operator|=
-name|gimp_drawable_get_read_buffer
+name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
 argument_list|)
