@@ -91,10 +91,6 @@ name|TileManager
 modifier|*
 name|tile_manager
 decl_stmt|;
-DECL|member|write
-name|int
-name|write
-decl_stmt|;
 DECL|member|mul
 name|int
 name|mul
@@ -112,32 +108,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-comment|// gegl projection
-comment|// 8 - 18.6
-comment|// 4 - 15.09
-comment|// 2 - 16.09
-comment|// 1 - 21.5<---------
-comment|//------
-comment|// legacy projection
-comment|// 1 - 18.6<---------
-comment|// 2 - 15.07
-comment|// 4 - 15.8
-comment|// 8 - 18.1
-comment|//
-comment|// ---------------------------------------- projection 0copy
-comment|// 1 - 21.15
-comment|// 2 - 17.6
-comment|// 4 - 14.9
-comment|// 8 - 17.036
-comment|// ---------------------------------------- 2d, with projection 0copy
-comment|//10 - 14.1
-comment|// 9 - 15.11
-comment|// 8 - 18.11  \ 15.2
-comment|// 7 - 16
-comment|// 6 - 14.11
-comment|// 4 - 16.8
-comment|// 3 - 17.8
-comment|// 2 - 16.1
 specifier|static
 name|int
 name|mul
@@ -523,27 +493,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|tile_done (void * data)
-name|tile_done
-parameter_list|(
-name|void
-modifier|*
-name|data
-parameter_list|)
-block|{
-name|tile_release
-argument_list|(
-name|data
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|tile_done_writing (void * data)
 name|tile_done_writing
 parameter_list|(
@@ -640,26 +589,6 @@ return|;
 case|case
 name|GEGL_TILE_SET
 case|:
-if|if
-condition|(
-name|backend_tm
-operator|->
-name|priv
-operator|->
-name|write
-operator|==
-name|FALSE
-condition|)
-block|{
-name|g_warning
-argument_list|(
-literal|"writing to a read only geglbuffer"
-argument_list|)
-expr_stmt|;
-return|return
-name|NULL
-return|;
-block|}
 if|if
 condition|(
 name|backend_tm
@@ -803,11 +732,7 @@ name|y
 argument_list|,
 name|TRUE
 argument_list|,
-name|backend_tm
-operator|->
-name|priv
-operator|->
-name|write
+name|TRUE
 argument_list|)
 expr_stmt|;
 if|if
@@ -890,15 +815,7 @@ argument_list|)
 argument_list|,
 name|tile_size
 argument_list|,
-name|backend_tm
-operator|->
-name|priv
-operator|->
-name|write
-condition|?
 name|tile_done_writing
-else|:
-name|tile_done
 argument_list|,
 name|gimp_tile
 argument_list|)
@@ -959,11 +876,7 @@ name|tile_release
 argument_list|(
 name|gimp_tile
 argument_list|,
-name|backend_tm
-operator|->
-name|priv
-operator|->
-name|write
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1007,15 +920,6 @@ decl_stmt|;
 name|int
 name|row
 decl_stmt|;
-name|g_assert
-argument_list|(
-name|backend_tm
-operator|->
-name|priv
-operator|->
-name|write
-argument_list|)
-expr_stmt|;
 name|gimp_tile
 operator|=
 name|tile_manager_get_at
@@ -1447,15 +1351,6 @@ name|void
 modifier|*
 name|validate_proc
 decl_stmt|;
-name|g_assert
-argument_list|(
-name|backend_tm
-operator|->
-name|priv
-operator|->
-name|write
-argument_list|)
-expr_stmt|;
 name|x
 operator|*=
 name|mul
@@ -1654,7 +1549,7 @@ end_function
 begin_function
 name|GeglTileBackend
 modifier|*
-DECL|function|gimp_tile_backend_tile_manager_new (TileManager * tm,const Babl * format,gboolean write)
+DECL|function|gimp_tile_backend_tile_manager_new (TileManager * tm,const Babl * format)
 name|gimp_tile_backend_tile_manager_new
 parameter_list|(
 name|TileManager
@@ -1665,9 +1560,6 @@ specifier|const
 name|Babl
 modifier|*
 name|format
-parameter_list|,
-name|gboolean
-name|write
 parameter_list|)
 block|{
 name|GeglTileBackend
@@ -1721,10 +1613,6 @@ block|,
 name|height
 block|}
 decl_stmt|;
-name|write
-operator|=
-name|TRUE
-expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|format
@@ -1804,14 +1692,6 @@ name|GIMP_TILE_BACKEND_TILE_MANAGER
 argument_list|(
 name|ret
 argument_list|)
-expr_stmt|;
-name|backend_tm
-operator|->
-name|priv
-operator|->
-name|write
-operator|=
-name|write
 expr_stmt|;
 name|backend_tm
 operator|->

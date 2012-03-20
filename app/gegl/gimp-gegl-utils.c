@@ -687,8 +687,6 @@ argument_list|(
 name|tiles
 argument_list|,
 name|format
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|tile_manager_unref
@@ -705,7 +703,7 @@ end_function
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_tile_manager_create_buffer (TileManager * tm,const Babl * format,gboolean write)
+DECL|function|gimp_tile_manager_create_buffer (TileManager * tm,const Babl * format)
 name|gimp_tile_manager_create_buffer
 parameter_list|(
 name|TileManager
@@ -716,9 +714,6 @@ specifier|const
 name|Babl
 modifier|*
 name|format
-parameter_list|,
-name|gboolean
-name|write
 parameter_list|)
 block|{
 name|GeglTileBackend
@@ -736,8 +731,6 @@ argument_list|(
 name|tm
 argument_list|,
 name|format
-argument_list|,
-name|write
 argument_list|)
 expr_stmt|;
 name|buffer

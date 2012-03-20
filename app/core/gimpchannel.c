@@ -209,7 +209,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4e2ab80103
+DECL|enum|__anon29b37d8b0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -2313,8 +2313,6 @@ name|gimp_drawable_get_format_without_alpha
 argument_list|(
 name|drawable
 argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_apply_operation_to_buffer
@@ -7567,8 +7565,6 @@ name|babl_format
 argument_list|(
 literal|"A u8"
 argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
@@ -7756,8 +7752,6 @@ argument_list|(
 name|dest_tiles
 argument_list|,
 name|format
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy

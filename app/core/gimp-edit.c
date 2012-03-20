@@ -2184,8 +2184,6 @@ argument_list|(
 name|buf_tiles
 argument_list|,
 name|format
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 if|if
@@ -2625,8 +2623,6 @@ argument_list|(
 name|tiles
 argument_list|,
 name|format
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|tile_manager_unref

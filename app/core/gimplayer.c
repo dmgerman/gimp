@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0377f00103
+DECL|enum|__anon287b0b2c0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -234,7 +234,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0377f00203
+DECL|enum|__anon287b0b2c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4889,8 +4889,6 @@ argument_list|(
 name|tiles
 argument_list|,
 name|format
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|layer
@@ -5744,8 +5742,6 @@ name|babl_format
 argument_list|(
 literal|"A u8"
 argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
@@ -6169,8 +6165,6 @@ argument_list|(
 name|copy_tiles
 argument_list|,
 name|NULL
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
@@ -6199,8 +6193,6 @@ argument_list|(
 name|copy_tiles
 argument_list|,
 name|NULL
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -7458,8 +7450,6 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
@@ -7625,8 +7615,6 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_context_get_background

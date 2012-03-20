@@ -111,7 +111,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1f6c9f0103
+DECL|enum|__anon2bf7fde60103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1208,8 +1208,6 @@ name|image_map
 operator|->
 name|drawable
 argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
@@ -1734,8 +1732,6 @@ operator|->
 name|undo_tiles
 argument_list|,
 name|format
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|output_buffer
@@ -1750,8 +1746,6 @@ name|drawable
 argument_list|)
 argument_list|,
 name|format
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 if|if
@@ -2844,8 +2838,6 @@ name|image_map
 operator|->
 name|drawable
 argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
@@ -3495,8 +3487,6 @@ name|image_map
 operator|->
 name|drawable
 argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|dest

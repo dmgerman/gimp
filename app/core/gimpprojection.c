@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b215f550103
+DECL|enum|__anon2c6609700103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1388,8 +1388,6 @@ argument_list|(
 name|tiles
 argument_list|,
 name|NULL
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1728,8 +1726,6 @@ argument_list|(
 name|tiles
 argument_list|,
 name|NULL
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|proj
@@ -1909,8 +1905,6 @@ argument_list|(
 name|tiles
 argument_list|,
 name|NULL
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gegl_node_set

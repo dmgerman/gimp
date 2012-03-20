@@ -1433,8 +1433,6 @@ name|gimp_drawable_get_format_with_alpha
 argument_list|(
 name|drawable
 argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 switch|switch

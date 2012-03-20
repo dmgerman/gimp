@@ -3117,8 +3117,6 @@ name|tiles
 argument_list|,
 operator|*
 name|format
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  First, copy the pixels, possibly doing INDEXED->RGB and adding alpha  */

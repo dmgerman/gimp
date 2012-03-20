@@ -161,8 +161,6 @@ argument_list|(
 name|tiles
 argument_list|,
 name|NULL
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
@@ -297,8 +295,6 @@ argument_list|(
 name|tiles
 argument_list|,
 name|NULL
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
@@ -469,8 +465,6 @@ argument_list|(
 name|tiles
 argument_list|,
 name|format
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy

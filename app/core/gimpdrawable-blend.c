@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b114bd0108
+DECL|struct|__anon290b90260108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -215,7 +215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b114bd0208
+DECL|struct|__anon290b90260208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -2560,8 +2560,6 @@ name|babl_format
 argument_list|(
 literal|"Y u8"
 argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|src_rect
@@ -2644,8 +2642,6 @@ name|babl_format
 argument_list|(
 literal|"A u8"
 argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|src_rect
@@ -2719,8 +2715,6 @@ name|babl_format
 argument_list|(
 literal|"Y u8"
 argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  Otherwise, just fill the shapeburst to white  */

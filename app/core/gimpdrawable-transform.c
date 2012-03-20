@@ -595,8 +595,6 @@ argument_list|(
 name|orig_tiles
 argument_list|,
 name|orig_format
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|dest_buffer
@@ -606,8 +604,6 @@ argument_list|(
 name|new_tiles
 argument_list|,
 name|orig_format
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_matrix3_identity
@@ -1057,8 +1053,6 @@ argument_list|(
 name|new_tiles
 argument_list|,
 name|orig_format
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1276,8 +1270,6 @@ argument_list|(
 name|orig_tiles
 argument_list|,
 name|orig_format
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -2011,8 +2003,6 @@ argument_list|(
 name|new_tiles
 argument_list|,
 name|orig_format
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 operator|*
@@ -2287,8 +2277,6 @@ argument_list|(
 name|new_tiles
 argument_list|,
 name|orig_format
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 operator|*
@@ -2345,8 +2333,6 @@ argument_list|(
 name|orig_tiles
 argument_list|,
 name|orig_format
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|src_rect

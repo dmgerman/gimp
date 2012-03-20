@@ -229,7 +229,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c30873d0103
+DECL|enum|__anon2be521db0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2212,8 +2212,6 @@ name|gimp_drawable_get_format
 argument_list|(
 name|drawable
 argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_apply_operation_to_buffer
@@ -2539,8 +2537,6 @@ name|gimp_drawable_get_format
 argument_list|(
 name|drawable
 argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 if|if
@@ -3945,8 +3941,6 @@ name|gimp_drawable_get_format
 argument_list|(
 name|drawable
 argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|src_rect
@@ -6522,15 +6516,12 @@ begin_function
 specifier|static
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_drawable_create_buffer (GimpDrawable * drawable,gboolean write)
+DECL|function|gimp_drawable_create_buffer (GimpDrawable * drawable)
 name|gimp_drawable_create_buffer
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
-parameter_list|,
-name|gboolean
-name|write
 parameter_list|)
 block|{
 name|TileManager
@@ -6558,8 +6549,6 @@ argument_list|(
 name|tiles
 argument_list|,
 name|format
-argument_list|,
-name|write
 argument_list|)
 return|;
 block|}
@@ -6605,8 +6594,6 @@ operator|=
 name|gimp_drawable_create_buffer
 argument_list|(
 name|drawable
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

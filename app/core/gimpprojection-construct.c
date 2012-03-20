@@ -963,8 +963,6 @@ argument_list|(
 name|tiles
 argument_list|,
 name|NULL
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
