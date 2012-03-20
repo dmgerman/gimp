@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb1fe900103
+DECL|enum|__anon2c72b5380103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -234,7 +234,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb1fe900203
+DECL|enum|__anon2c72b5380203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4462,9 +4462,6 @@ operator|->
 name|mode
 condition|)
 block|{
-case|case
-name|GIMP_DISSOLVE_MODE
-case|:
 case|case
 name|GIMP_BEHIND_MODE
 case|:
