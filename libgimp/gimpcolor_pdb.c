@@ -1004,7 +1004,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_colorize:  * @drawable_ID: The drawable.  * @hue: Hue in degrees.  * @saturation: Saturation in percent.  * @lightness: Lightness in percent.  *  * Render the drawable as a grayscale image seen through a colored  * glass.  *  * Desaturates the drawable, then tints it with the specified color.  * This tool is only valid on RGB color images. It will not operate on  * grayscale or indexed drawables.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_colorize:  * @drawable_ID: The drawable.  * @hue: Hue in degrees.  * @saturation: Saturation in percent.  * @lightness: Lightness in percent.  *  * Render the drawable as a grayscale image seen through a colored  * glass.  *  * Desaturates the drawable, then tints it with the specified color.  * This tool is only valid on RGB color images. It will not operate on  * grayscale drawables.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function

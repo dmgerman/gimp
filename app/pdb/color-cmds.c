@@ -265,12 +265,6 @@ argument_list|)
 argument_list|,
 name|error
 argument_list|)
-operator|&&
-operator|!
-name|gimp_drawable_is_indexed
-argument_list|(
-name|drawable
-argument_list|)
 condition|)
 block|{
 name|GObject
@@ -974,12 +968,6 @@ name|drawable
 argument_list|)
 argument_list|,
 name|error
-argument_list|)
-operator|&&
-operator|!
-name|gimp_drawable_is_indexed
-argument_list|(
-name|drawable
 argument_list|)
 condition|)
 block|{
@@ -2458,7 +2446,8 @@ argument_list|,
 name|error
 argument_list|)
 operator|&&
-name|gimp_drawable_is_rgb
+operator|!
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 argument_list|)
@@ -3265,12 +3254,6 @@ name|drawable
 argument_list|)
 argument_list|,
 name|error
-argument_list|)
-operator|&&
-operator|!
-name|gimp_drawable_is_indexed
-argument_list|(
-name|drawable
 argument_list|)
 condition|)
 block|{
@@ -4701,7 +4684,7 @@ literal|"gimp-colorize"
 argument_list|,
 literal|"Render the drawable as a grayscale image seen through a colored glass."
 argument_list|,
-literal|"Desaturates the drawable, then tints it with the specified color. This tool is only valid on RGB color images. It will not operate on grayscale or indexed drawables."
+literal|"Desaturates the drawable, then tints it with the specified color. This tool is only valid on RGB color images. It will not operate on grayscale drawables."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,

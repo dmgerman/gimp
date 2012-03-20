@@ -466,8 +466,7 @@ name|FALSE
 return|;
 if|if
 condition|(
-operator|!
-name|gimp_drawable_is_rgb
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 argument_list|)
@@ -483,7 +482,7 @@ name|GIMP_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"Colorize operates only on RGB color layers."
+literal|"Colorize does not operate on grayscale layers."
 argument_list|)
 argument_list|)
 expr_stmt|;

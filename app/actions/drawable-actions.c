@@ -843,9 +843,6 @@ name|writable
 operator|&&
 operator|!
 name|children
-operator|&&
-operator|!
-name|is_indexed
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

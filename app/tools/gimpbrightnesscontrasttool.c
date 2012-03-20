@@ -569,33 +569,6 @@ condition|)
 return|return
 name|FALSE
 return|;
-if|if
-condition|(
-name|gimp_drawable_is_indexed
-argument_list|(
-name|drawable
-argument_list|)
-condition|)
-block|{
-name|g_set_error_literal
-argument_list|(
-name|error
-argument_list|,
-name|GIMP_ERROR
-argument_list|,
-name|GIMP_FAILED
-argument_list|,
-name|_
-argument_list|(
-literal|"Brightness-Contrast does not operate "
-literal|"on indexed layers."
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
 name|gimp_config_reset
 argument_list|(
 name|GIMP_CONFIG
