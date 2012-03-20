@@ -103,15 +103,8 @@ argument_list|)
 expr_stmt|;
 name|c
 operator|=
-name|gegl_color_new
+name|gimp_gegl_color_new
 argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_gegl_color_set_rgba
-argument_list|(
-name|c
-argument_list|,
 name|background
 argument_list|)
 expr_stmt|;

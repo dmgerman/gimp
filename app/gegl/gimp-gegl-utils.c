@@ -707,32 +707,34 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|gimp_gegl_color_set_rgba (GeglColor * color,const GimpRGB * rgb)
-name|gimp_gegl_color_set_rgba
-parameter_list|(
 name|GeglColor
 modifier|*
-name|color
-parameter_list|,
+DECL|function|gimp_gegl_color_new (const GimpRGB * rgb)
+name|gimp_gegl_color_new
+parameter_list|(
 specifier|const
 name|GimpRGB
 modifier|*
 name|rgb
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|GEGL_IS_COLOR
-argument_list|(
+name|GeglColor
+modifier|*
 name|color
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
+decl_stmt|;
+name|g_return_val_if_fail
 argument_list|(
 name|rgb
 operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|color
+operator|=
+name|gegl_color_new
+argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -757,6 +759,9 @@ operator|->
 name|a
 argument_list|)
 expr_stmt|;
+return|return
+name|color
+return|;
 block|}
 end_function
 

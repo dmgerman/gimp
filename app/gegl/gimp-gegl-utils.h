@@ -128,13 +128,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_gegl_color_set_rgba
-parameter_list|(
 name|GeglColor
 modifier|*
-name|color
-parameter_list|,
+name|gimp_gegl_color_new
+parameter_list|(
 specifier|const
 name|GimpRGB
 modifier|*

@@ -229,7 +229,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27efca470103
+DECL|enum|__anon29edbfbd0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2628,15 +2628,8 @@ argument_list|)
 expr_stmt|;
 name|col
 operator|=
-name|gegl_color_new
+name|gimp_gegl_color_new
 argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_gegl_color_set_rgba
-argument_list|(
-name|col
-argument_list|,
 operator|&
 name|bg
 argument_list|)
@@ -7704,15 +7697,8 @@ argument_list|)
 expr_stmt|;
 name|col
 operator|=
-name|gegl_color_new
+name|gimp_gegl_color_new
 argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_gegl_color_set_rgba
-argument_list|(
-name|col
-argument_list|,
 operator|&
 name|c
 argument_list|)
