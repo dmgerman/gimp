@@ -2701,7 +2701,12 @@ name|pixbuf
 argument_list|,
 name|image
 argument_list|,
+name|gimp_image_get_format
+argument_list|(
+name|image
+argument_list|,
 name|image_type
+argument_list|)
 argument_list|,
 name|_
 argument_list|(

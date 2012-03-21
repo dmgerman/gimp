@@ -1413,7 +1413,12 @@ name|buffer
 argument_list|,
 name|new_image
 argument_list|,
+name|gimp_image_get_format
+argument_list|(
+name|new_image
+argument_list|,
 name|GIMP_RGBA_IMAGE
+argument_list|)
 argument_list|,
 name|new_name
 argument_list|,

@@ -2254,7 +2254,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aaad0600108
+DECL|struct|__anon2bc21aa90108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2648,7 +2648,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aaad0600208
+DECL|struct|__anon2bc21aa90208
 block|{
 DECL|member|mask_column
 name|gint
@@ -3516,9 +3516,19 @@ name|GimpLayer
 modifier|*
 name|parent
 decl_stmt|;
+name|GimpImageType
+name|type
+decl_stmt|;
 name|gint
 name|index
 decl_stmt|;
+name|type
+operator|=
+name|gimp_image_base_type_with_alpha
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 name|index
 operator|=
 name|gimp_item_tree_view_get_drop_index
@@ -3546,9 +3556,11 @@ name|pixbuf
 argument_list|,
 name|image
 argument_list|,
-name|gimp_image_base_type_with_alpha
+name|gimp_image_get_format
 argument_list|(
 name|image
+argument_list|,
+name|type
 argument_list|)
 argument_list|,
 name|_
@@ -3675,6 +3687,9 @@ name|GimpLayer
 modifier|*
 name|new_layer
 decl_stmt|;
+name|GimpImageType
+name|type
+decl_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
 name|image
@@ -3685,6 +3700,13 @@ name|_
 argument_list|(
 literal|"New Layer"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|type
+operator|=
+name|gimp_image_base_type_with_alpha
+argument_list|(
+name|image
 argument_list|)
 expr_stmt|;
 name|new_layer
@@ -3703,9 +3725,11 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|gimp_image_base_type_with_alpha
+name|gimp_image_get_format
 argument_list|(
 name|image
+argument_list|,
+name|type
 argument_list|)
 argument_list|,
 name|NULL

@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b627770103
+DECL|enum|__anon29ad17ec0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1548,7 +1548,12 @@ literal|1
 argument_list|,
 literal|1
 argument_list|,
+name|gimp_image_get_format
+argument_list|(
+name|image
+argument_list|,
 name|type
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

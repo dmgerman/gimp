@@ -3528,9 +3528,9 @@ argument_list|)
 operator|->
 name|private
 operator|->
-name|type
+name|format
 operator|=
-name|gimp_drawable_type
+name|gimp_drawable_get_format
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -4580,7 +4580,12 @@ name|width
 argument_list|,
 name|height
 argument_list|,
+name|gimp_image_get_format
+argument_list|(
+name|image
+argument_list|,
 name|type
+argument_list|)
 argument_list|,
 name|name
 argument_list|,

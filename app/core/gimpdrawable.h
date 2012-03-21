@@ -506,8 +506,10 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|GimpImageType
-name|image_type
+specifier|const
+name|Babl
+modifier|*
+name|format
 parameter_list|)
 function_decl|;
 end_function_decl

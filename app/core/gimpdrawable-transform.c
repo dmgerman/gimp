@@ -4124,7 +4124,7 @@ name|buffer
 argument_list|,
 name|image
 argument_list|,
-name|gimp_drawable_type_with_alpha
+name|gimp_drawable_get_format_with_alpha
 argument_list|(
 name|drawable
 argument_list|)

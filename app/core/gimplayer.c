@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b26f6420103
+DECL|enum|__anon2974d4690103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -234,7 +234,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b26f6420203
+DECL|enum|__anon2974d4690203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4584,7 +4584,7 @@ end_comment
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_layer_new (GimpImage * image,gint width,gint height,GimpImageType type,const gchar * name,gdouble opacity,GimpLayerModeEffects mode)
+DECL|function|gimp_layer_new (GimpImage * image,gint width,gint height,const Babl * format,const gchar * name,gdouble opacity,GimpLayerModeEffects mode)
 name|gimp_layer_new
 parameter_list|(
 name|GimpImage
@@ -4597,8 +4597,10 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|GimpImageType
-name|type
+specifier|const
+name|Babl
+modifier|*
+name|format
 parameter_list|,
 specifier|const
 name|gchar
@@ -4644,6 +4646,15 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|format
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|layer
 operator|=
 name|GIMP_LAYER
@@ -4664,7 +4675,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|type
+name|format
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4704,7 +4715,7 @@ end_comment
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_layer_new_from_buffer (GeglBuffer * buffer,GimpImage * dest_image,GimpImageType type,const gchar * name,gdouble opacity,GimpLayerModeEffects mode)
+DECL|function|gimp_layer_new_from_buffer (GeglBuffer * buffer,GimpImage * dest_image,const Babl * format,const gchar * name,gdouble opacity,GimpLayerModeEffects mode)
 name|gimp_layer_new_from_buffer
 parameter_list|(
 name|GeglBuffer
@@ -4715,8 +4726,10 @@ name|GimpImage
 modifier|*
 name|dest_image
 parameter_list|,
-name|GimpImageType
-name|type
+specifier|const
+name|Babl
+modifier|*
+name|format
 parameter_list|,
 specifier|const
 name|gchar
@@ -4758,6 +4771,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|format
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+comment|/*  do *not* use the buffer's format because this function gets    *  buffers of any format passed, and converts them    */
 name|layer
 operator|=
 name|gimp_layer_new
@@ -4774,7 +4797,7 @@ argument_list|(
 name|buffer
 argument_list|)
 argument_list|,
-name|type
+name|format
 argument_list|,
 name|name
 argument_list|,
@@ -4817,7 +4840,7 @@ end_comment
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_layer_new_from_pixbuf (GdkPixbuf * pixbuf,GimpImage * dest_image,GimpImageType type,const gchar * name,gdouble opacity,GimpLayerModeEffects mode)
+DECL|function|gimp_layer_new_from_pixbuf (GdkPixbuf * pixbuf,GimpImage * dest_image,const Babl * format,const gchar * name,gdouble opacity,GimpLayerModeEffects mode)
 name|gimp_layer_new_from_pixbuf
 parameter_list|(
 name|GdkPixbuf
@@ -4828,8 +4851,10 @@ name|GimpImage
 modifier|*
 name|dest_image
 parameter_list|,
-name|GimpImageType
-name|type
+specifier|const
+name|Babl
+modifier|*
+name|format
 parameter_list|,
 specifier|const
 name|gchar
@@ -4873,15 +4898,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IMAGE_TYPE_BASE_TYPE
-argument_list|(
-name|type
-argument_list|)
-operator|==
-name|gimp_image_base_type
-argument_list|(
-name|dest_image
-argument_list|)
+name|format
+operator|!=
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -4901,7 +4920,7 @@ name|buffer
 argument_list|,
 name|dest_image
 argument_list|,
-name|type
+name|format
 argument_list|,
 name|name
 argument_list|,

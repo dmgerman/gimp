@@ -1298,6 +1298,14 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
+name|GimpImageType
+name|type
+init|=
+name|gimp_image_base_type_with_alpha
+argument_list|(
+name|image
+argument_list|)
+decl_stmt|;
 name|layer
 operator|=
 name|gimp_layer_new_from_buffer
@@ -1309,9 +1317,11 @@ argument_list|)
 argument_list|,
 name|image
 argument_list|,
-name|gimp_image_base_type_with_alpha
+name|gimp_image_get_format
 argument_list|(
 name|image
+argument_list|,
+name|type
 argument_list|)
 argument_list|,
 name|_

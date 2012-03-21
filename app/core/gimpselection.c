@@ -2280,7 +2280,12 @@ name|width
 argument_list|,
 name|height
 argument_list|,
+name|gimp_image_get_format
+argument_list|(
+name|image
+argument_list|,
 name|GIMP_GRAY_IMAGE
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3527,7 +3532,7 @@ name|buffer
 argument_list|,
 name|image
 argument_list|,
-name|gimp_drawable_type_with_alpha
+name|gimp_drawable_get_format_with_alpha
 argument_list|(
 name|drawable
 argument_list|)

@@ -3703,14 +3703,25 @@ argument_list|(
 name|new_type
 argument_list|)
 expr_stmt|;
-comment|/*  FIXME: find a better way to do this: need to set the drawable's    *  type to the new values so the projection will create its tiles    *  with the right depth    */
+comment|/*  FIXME: find a better way to do this: need to set the drawable's    *  format to the new values so the projection will create its tiles    *  with the right depth    */
 name|drawable
 operator|->
 name|private
 operator|->
-name|type
+name|format
 operator|=
+name|gimp_image_get_format
+argument_list|(
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+argument_list|,
 name|new_type
+argument_list|)
 expr_stmt|;
 name|gimp_projectable_structure_changed
 argument_list|(
@@ -4058,7 +4069,12 @@ literal|1
 argument_list|,
 literal|1
 argument_list|,
+name|gimp_image_get_format
+argument_list|(
+name|image
+argument_list|,
 name|type
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
