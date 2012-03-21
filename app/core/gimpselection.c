@@ -3473,14 +3473,9 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|tiles
-decl_stmt|;
-specifier|const
-name|Babl
-modifier|*
-name|format
+name|buffer
 decl_stmt|;
 name|gint
 name|x1
@@ -3629,9 +3624,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Cut or copy the selected region  */
-name|tiles
+name|buffer
 operator|=
-name|gimp_selection_extract
+name|gimp_selection_extract_buffer
 argument_list|(
 name|selection
 argument_list|,
@@ -3647,9 +3642,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
-argument_list|,
-operator|&
-name|format
 argument_list|,
 operator|&
 name|x1
@@ -3676,11 +3668,9 @@ expr_stmt|;
 comment|/* Create a new layer from the buffer, using the drawable's type    *  because it may be different from the image's type if we cut from    *  a channel or layer mask    */
 name|layer
 operator|=
-name|gimp_layer_new_from_tiles
+name|gimp_layer_new_from_buffer
 argument_list|(
-name|tiles
-argument_list|,
-name|format
+name|buffer
 argument_list|,
 name|image
 argument_list|,
@@ -3717,9 +3707,9 @@ name|off_y
 argument_list|)
 expr_stmt|;
 comment|/*  Free the temp buffer  */
-name|tile_manager_unref
+name|g_object_unref
 argument_list|(
-name|tiles
+name|buffer
 argument_list|)
 expr_stmt|;
 comment|/*  Add the floating layer to the image  */
