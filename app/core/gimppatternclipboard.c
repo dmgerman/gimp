@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277ebcae0103
+DECL|enum|__anon2c7f52930103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -608,13 +608,6 @@ name|gimp
 operator|->
 name|global_buffer
 decl_stmt|;
-name|GeglRectangle
-name|rect
-init|=
-block|{
-literal|0
-block|, }
-decl_stmt|;
 name|gint
 name|width
 decl_stmt|;
@@ -655,18 +648,6 @@ argument_list|(
 name|buffer
 argument_list|)
 expr_stmt|;
-name|rect
-operator|.
-name|width
-operator|=
-name|width
-expr_stmt|;
-name|rect
-operator|.
-name|height
-operator|=
-name|height
-expr_stmt|;
 name|pattern
 operator|->
 name|mask
@@ -695,8 +676,16 @@ argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
-operator|&
-name|rect
+name|GIMP_GEGL_RECT
+argument_list|(
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|width
+argument_list|,
+name|height
+argument_list|)
 argument_list|,
 name|gimp_bpp_to_babl_format
 argument_list|(
