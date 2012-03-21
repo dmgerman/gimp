@@ -274,7 +274,7 @@ modifier|*
 name|drawable
 parameter_list|,
 name|gboolean
-name|copy_tiles
+name|copy_buffer
 parameter_list|)
 function_decl|;
 end_function_decl

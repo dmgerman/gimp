@@ -999,7 +999,7 @@ end_function
 begin_function
 name|GimpUndo
 modifier|*
-DECL|function|gimp_image_undo_push_drawable_mod (GimpImage * image,const gchar * undo_desc,GimpDrawable * drawable,gboolean copy_tiles)
+DECL|function|gimp_image_undo_push_drawable_mod (GimpImage * image,const gchar * undo_desc,GimpDrawable * drawable,gboolean copy_buffer)
 name|gimp_image_undo_push_drawable_mod
 parameter_list|(
 name|GimpImage
@@ -1016,7 +1016,7 @@ modifier|*
 name|drawable
 parameter_list|,
 name|gboolean
-name|copy_tiles
+name|copy_buffer
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -1071,9 +1071,9 @@ literal|"item"
 argument_list|,
 name|drawable
 argument_list|,
-literal|"copy-tiles"
+literal|"copy-buffer"
 argument_list|,
-name|copy_tiles
+name|copy_buffer
 argument_list|,
 name|NULL
 argument_list|)
