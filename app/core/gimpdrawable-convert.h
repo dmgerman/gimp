@@ -24,6 +24,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
+name|GimpImage
+modifier|*
+name|dest_image
+parameter_list|,
 name|gboolean
 name|push_undo
 parameter_list|)
@@ -37,6 +41,10 @@ parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpImage
+modifier|*
+name|dest_image
 parameter_list|,
 name|gboolean
 name|push_undo

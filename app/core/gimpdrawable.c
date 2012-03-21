@@ -229,7 +229,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2784e9660103
+DECL|enum|__anon28d397b70103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3262,6 +3262,8 @@ name|gimp_drawable_convert_rgb
 argument_list|(
 name|drawable
 argument_list|,
+name|dest_image
+argument_list|,
 name|push_undo
 argument_list|)
 expr_stmt|;
@@ -3272,6 +3274,8 @@ case|:
 name|gimp_drawable_convert_grayscale
 argument_list|(
 name|drawable
+argument_list|,
+name|dest_image
 argument_list|,
 name|push_undo
 argument_list|)
