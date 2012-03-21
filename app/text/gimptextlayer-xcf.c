@@ -87,7 +87,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab217320103
+DECL|enum|__anon29ad1f330103
 block|{
 DECL|enumerator|TEXT_LAYER_XCF_NONE
 name|TEXT_LAYER_XCF_NONE
@@ -615,9 +615,9 @@ name|drawable
 operator|->
 name|private
 operator|->
-name|tiles
+name|buffer
 operator|=
-name|gimp_drawable_get_tiles
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -632,7 +632,7 @@ argument_list|)
 operator|->
 name|private
 operator|->
-name|tiles
+name|buffer
 operator|=
 name|NULL
 expr_stmt|;

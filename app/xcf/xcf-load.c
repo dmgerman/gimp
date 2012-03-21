@@ -3808,7 +3808,7 @@ argument_list|(
 name|mask
 argument_list|)
 expr_stmt|;
-name|tile_manager_unref
+name|g_object_unref
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3817,7 +3817,7 @@ argument_list|)
 operator|->
 name|private
 operator|->
-name|tiles
+name|buffer
 argument_list|)
 expr_stmt|;
 name|GIMP_DRAWABLE
@@ -3827,7 +3827,7 @@ argument_list|)
 operator|->
 name|private
 operator|->
-name|tiles
+name|buffer
 operator|=
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3837,7 +3837,7 @@ argument_list|)
 operator|->
 name|private
 operator|->
-name|tiles
+name|buffer
 expr_stmt|;
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3847,7 +3847,7 @@ argument_list|)
 operator|->
 name|private
 operator|->
-name|tiles
+name|buffer
 operator|=
 name|NULL
 expr_stmt|;

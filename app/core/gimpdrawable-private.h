@@ -28,23 +28,18 @@ modifier|*
 name|format
 decl_stmt|;
 comment|/* format of drawable      */
-DECL|member|tiles
-name|TileManager
-modifier|*
-name|tiles
-decl_stmt|;
-comment|/* tiles for drawable data */
-DECL|member|shadow
-name|TileManager
-modifier|*
-name|shadow
-decl_stmt|;
-comment|/* shadow buffer tiles     */
 DECL|member|buffer
 name|GeglBuffer
 modifier|*
 name|buffer
 decl_stmt|;
+comment|/* buffer for drawable data */
+DECL|member|shadow
+name|TileManager
+modifier|*
+name|shadow
+decl_stmt|;
+comment|/* shadow buffer tiles      */
 DECL|member|source_node
 name|GeglNode
 modifier|*
