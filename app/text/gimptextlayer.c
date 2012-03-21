@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/tile-manager.h"
+file|"gegl/gimp-gegl-utils.h"
 end_include
 
 begin_include
@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c74af70103
+DECL|enum|__anon27b627770103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2260,23 +2260,30 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|new_tiles
+name|new_buffer
 init|=
-name|tile_manager_new
+name|gimp_gegl_buffer_new
 argument_list|(
+name|GIMP_GEGL_RECT
+argument_list|(
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|width
 argument_list|,
 name|height
+argument_list|)
 argument_list|,
-name|gimp_drawable_bytes
+name|gimp_drawable_get_format
 argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|gimp_drawable_set_tiles
+name|gimp_drawable_set_buffer
 argument_list|(
 name|drawable
 argument_list|,
@@ -2284,7 +2291,7 @@ name|FALSE
 argument_list|,
 name|NULL
 argument_list|,
-name|new_tiles
+name|new_buffer
 argument_list|,
 name|gimp_drawable_type
 argument_list|(
@@ -2292,9 +2299,9 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|tile_manager_unref
+name|g_object_unref
 argument_list|(
-name|new_tiles
+name|new_buffer
 argument_list|)
 expr_stmt|;
 if|if
