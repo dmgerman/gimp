@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp.h"
 end_include
 
@@ -407,7 +413,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon278d973c0103
+DECL|enum|__anon27f251510103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1448,7 +1454,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278d973c0208
+DECL|struct|__anon27f251510208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1691,7 +1697,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278d973c0308
+DECL|struct|__anon27f251510308
 block|{
 DECL|member|used_count
 name|signed
@@ -3519,6 +3525,10 @@ name|TileManager
 modifier|*
 name|new_tiles
 decl_stmt|;
+name|GeglBuffer
+modifier|*
+name|new_buffer
+decl_stmt|;
 name|new_layer_type
 operator|=
 name|GIMP_IMAGE_TYPE_FROM_BASE_TYPE
@@ -3589,7 +3599,21 @@ argument_list|,
 name|new_tiles
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_set_tiles
+name|new_buffer
+operator|=
+name|gimp_tile_manager_create_buffer
+argument_list|(
+name|new_tiles
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|tile_manager_unref
+argument_list|(
+name|new_tiles
+argument_list|)
+expr_stmt|;
+name|gimp_drawable_set_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3600,14 +3624,14 @@ name|TRUE
 argument_list|,
 name|NULL
 argument_list|,
-name|new_tiles
+name|new_buffer
 argument_list|,
 name|new_layer_type
 argument_list|)
 expr_stmt|;
-name|tile_manager_unref
+name|g_object_unref
 argument_list|(
-name|new_tiles
+name|new_buffer
 argument_list|)
 expr_stmt|;
 block|}
