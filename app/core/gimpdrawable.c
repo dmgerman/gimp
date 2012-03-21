@@ -229,7 +229,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292f2f270103
+DECL|enum|__anon2bf684960103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3111,7 +3111,7 @@ name|drawable
 operator|->
 name|private
 operator|->
-name|tile_source_node
+name|buffer_source_node
 condition|)
 block|{
 name|GObject
@@ -3126,7 +3126,7 @@ name|drawable
 operator|->
 name|private
 operator|->
-name|tile_source_node
+name|buffer_source_node
 argument_list|,
 literal|"gegl-operation"
 argument_list|,
@@ -3482,7 +3482,7 @@ name|drawable
 operator|->
 name|private
 operator|->
-name|tile_source_node
+name|buffer_source_node
 condition|)
 name|gegl_node_set
 argument_list|(
@@ -3490,7 +3490,7 @@ name|drawable
 operator|->
 name|private
 operator|->
-name|tile_source_node
+name|buffer_source_node
 argument_list|,
 literal|"buffer"
 argument_list|,
@@ -4384,7 +4384,7 @@ name|drawable
 operator|->
 name|private
 operator|->
-name|tile_source_node
+name|buffer_source_node
 argument_list|,
 literal|"output"
 argument_list|,
@@ -4837,7 +4837,7 @@ name|drawable
 operator|->
 name|private
 operator|->
-name|tile_source_node
+name|buffer_source_node
 argument_list|,
 literal|"output"
 argument_list|,
@@ -6726,7 +6726,7 @@ name|drawable
 operator|->
 name|private
 operator|->
-name|tile_source_node
+name|buffer_source_node
 operator|=
 name|gegl_node_new_child
 argument_list|(

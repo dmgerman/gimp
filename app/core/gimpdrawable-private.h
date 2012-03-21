@@ -45,10 +45,10 @@ name|GeglNode
 modifier|*
 name|source_node
 decl_stmt|;
-DECL|member|tile_source_node
+DECL|member|buffer_source_node
 name|GeglNode
 modifier|*
-name|tile_source_node
+name|buffer_source_node
 decl_stmt|;
 DECL|member|floating_selection
 name|GimpLayer
