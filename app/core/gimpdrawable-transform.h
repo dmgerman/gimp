@@ -17,9 +17,9 @@ name|__GIMP_DRAWABLE_TRANSFORM_H__
 end_define
 
 begin_function_decl
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|gimp_drawable_transform_tiles_affine
+name|gimp_drawable_transform_buffer_affine
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -29,14 +29,9 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|orig_tiles
-parameter_list|,
-specifier|const
-name|Babl
-modifier|*
-name|orig_format
+name|orig_buffer
 parameter_list|,
 name|gint
 name|orig_offset_x
@@ -77,9 +72,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|gimp_drawable_transform_tiles_flip
+name|gimp_drawable_transform_buffer_flip
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -89,14 +84,9 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|orig_tiles
-parameter_list|,
-specifier|const
-name|Babl
-modifier|*
-name|orig_format
+name|orig_buffer
 parameter_list|,
 name|gint
 name|orig_offset_x
@@ -125,9 +115,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|gimp_drawable_transform_tiles_rotate
+name|gimp_drawable_transform_buffer_rotate
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -137,14 +127,9 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|orig_tiles
-parameter_list|,
-specifier|const
-name|Babl
-modifier|*
-name|orig_format
+name|buffer
 parameter_list|,
 name|gint
 name|orig_offset_x
@@ -266,7 +251,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|TileManager
+name|GeglBuffer
 modifier|*
 name|gimp_drawable_transform_cut
 parameter_list|(
@@ -277,12 +262,6 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
-parameter_list|,
-specifier|const
-name|Babl
-modifier|*
-modifier|*
-name|format
 parameter_list|,
 name|gint
 modifier|*
@@ -308,14 +287,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|tiles
-parameter_list|,
-specifier|const
-name|Babl
-modifier|*
-name|format
+name|buffer
 parameter_list|,
 name|gint
 name|offset_x

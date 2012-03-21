@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/tile-manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
 end_include
 
@@ -541,7 +535,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|TileManager
+name|GeglBuffer
 modifier|*
 name|gimp_transform_tool_real_transform
 parameter_list|(
@@ -553,14 +547,9 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|orig_tiles
-parameter_list|,
-specifier|const
-name|Babl
-modifier|*
-name|orig_format
+name|orig_buffer
 parameter_list|,
 name|gint
 name|orig_offset_x
@@ -4037,9 +4026,9 @@ end_function
 
 begin_function
 specifier|static
-name|TileManager
+name|GeglBuffer
 modifier|*
-DECL|function|gimp_transform_tool_real_transform (GimpTransformTool * tr_tool,GimpItem * active_item,TileManager * orig_tiles,const Babl * orig_format,gint orig_offset_x,gint orig_offset_y,gint * new_offset_x,gint * new_offset_y)
+DECL|function|gimp_transform_tool_real_transform (GimpTransformTool * tr_tool,GimpItem * active_item,GeglBuffer * orig_buffer,gint orig_offset_x,gint orig_offset_y,gint * new_offset_x,gint * new_offset_y)
 name|gimp_transform_tool_real_transform
 parameter_list|(
 name|GimpTransformTool
@@ -4050,14 +4039,9 @@ name|GimpItem
 modifier|*
 name|active_item
 parameter_list|,
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|orig_tiles
-parameter_list|,
-specifier|const
-name|Babl
-modifier|*
-name|orig_format
+name|orig_buffer
 parameter_list|,
 name|gint
 name|orig_offset_x
@@ -4101,11 +4085,7 @@ argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
-name|GimpProgress
-modifier|*
-name|progress
-decl_stmt|;
-name|TileManager
+name|GeglBuffer
 modifier|*
 name|ret
 init|=
@@ -4117,6 +4097,10 @@ init|=
 name|options
 operator|->
 name|clip
+decl_stmt|;
+name|GimpProgress
+modifier|*
+name|progress
 decl_stmt|;
 name|progress
 operator|=
@@ -4171,7 +4155,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|orig_tiles
+name|orig_buffer
 condition|)
 block|{
 comment|/*  this happens when transforming a selection cut out of a        *  normal drawable, or the selection        */
@@ -4183,12 +4167,15 @@ argument_list|(
 name|active_item
 argument_list|)
 operator|&&
-name|tile_manager_bpp
+name|gegl_buffer_get_format
 argument_list|(
-name|orig_tiles
+name|orig_buffer
 argument_list|)
 operator|==
-literal|1
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
 condition|)
 name|clip
 operator|=
@@ -4196,7 +4183,7 @@ name|GIMP_TRANSFORM_RESIZE_CLIP
 expr_stmt|;
 name|ret
 operator|=
-name|gimp_drawable_transform_tiles_affine
+name|gimp_drawable_transform_buffer_affine
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -4205,9 +4192,7 @@ argument_list|)
 argument_list|,
 name|context
 argument_list|,
-name|orig_tiles
-argument_list|,
-name|orig_format
+name|orig_buffer
 argument_list|,
 name|orig_offset_x
 argument_list|,
@@ -4356,16 +4341,9 @@ name|active_item
 init|=
 name|NULL
 decl_stmt|;
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|orig_tiles
-init|=
-name|NULL
-decl_stmt|;
-specifier|const
-name|Babl
-modifier|*
-name|orig_format
+name|orig_buffer
 init|=
 name|NULL
 decl_stmt|;
@@ -4375,9 +4353,9 @@ decl_stmt|;
 name|gint
 name|orig_offset_y
 decl_stmt|;
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|new_tiles
+name|new_buffer
 decl_stmt|;
 name|gint
 name|new_offset_x
@@ -4647,7 +4625,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|orig_tiles
+name|orig_buffer
 operator|=
 name|gimp_drawable_transform_cut
 argument_list|(
@@ -4656,9 +4634,6 @@ operator|->
 name|drawable
 argument_list|,
 name|context
-argument_list|,
-operator|&
-name|orig_format
 argument_list|,
 operator|&
 name|orig_offset_x
@@ -4675,11 +4650,11 @@ break|break;
 case|case
 name|GIMP_TRANSFORM_TYPE_SELECTION
 case|:
-name|orig_tiles
+name|orig_buffer
 operator|=
-name|tile_manager_ref
+name|g_object_ref
 argument_list|(
-name|gimp_drawable_get_tiles
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -4703,7 +4678,7 @@ case|:
 break|break;
 block|}
 comment|/*  Send the request for the transformation to the tool...    */
-name|new_tiles
+name|new_buffer
 operator|=
 name|GIMP_TRANSFORM_TOOL_GET_CLASS
 argument_list|(
@@ -4716,9 +4691,7 @@ name|tr_tool
 argument_list|,
 name|active_item
 argument_list|,
-name|orig_tiles
-argument_list|,
-name|orig_format
+name|orig_buffer
 argument_list|,
 name|orig_offset_x
 argument_list|,
@@ -4733,11 +4706,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|orig_tiles
+name|orig_buffer
 condition|)
-name|tile_manager_unref
+name|g_object_unref
 argument_list|(
-name|orig_tiles
+name|orig_buffer
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -4752,7 +4725,7 @@ name|GIMP_TRANSFORM_TYPE_LAYER
 case|:
 if|if
 condition|(
-name|new_tiles
+name|new_buffer
 condition|)
 block|{
 comment|/*  paste the new transformed image to the image...also implement            *  undo...            */
@@ -4762,9 +4735,7 @@ name|tool
 operator|->
 name|drawable
 argument_list|,
-name|new_tiles
-argument_list|,
-name|orig_format
+name|new_buffer
 argument_list|,
 name|new_offset_x
 argument_list|,
@@ -4773,9 +4744,9 @@ argument_list|,
 name|new_layer
 argument_list|)
 expr_stmt|;
-name|tile_manager_unref
+name|g_object_unref
 argument_list|(
-name|new_tiles
+name|new_buffer
 argument_list|)
 expr_stmt|;
 block|}
@@ -4785,7 +4756,7 @@ name|GIMP_TRANSFORM_TYPE_SELECTION
 case|:
 if|if
 condition|(
-name|new_tiles
+name|new_buffer
 condition|)
 block|{
 name|gimp_channel_push_undo
@@ -4798,7 +4769,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_set_tiles
+name|gimp_drawable_set_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -4809,7 +4780,7 @@ name|FALSE
 argument_list|,
 name|NULL
 argument_list|,
-name|new_tiles
+name|new_buffer
 argument_list|,
 name|gimp_drawable_type
 argument_list|(
@@ -4820,9 +4791,9 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|tile_manager_unref
+name|g_object_unref
 argument_list|(
-name|new_tiles
+name|new_buffer
 argument_list|)
 expr_stmt|;
 block|}

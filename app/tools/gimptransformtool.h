@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f3207e0103
+DECL|enum|__anon2c36d4bc0103
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -423,7 +423,7 @@ name|tool
 parameter_list|)
 function_decl|;
 DECL|member|transform
-name|TileManager
+name|GeglBuffer
 modifier|*
 function_decl|(
 modifier|*
@@ -438,14 +438,9 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|orig_tiles
-parameter_list|,
-specifier|const
-name|Babl
-modifier|*
-name|orig_format
+name|orig_buffer
 parameter_list|,
 name|gint
 name|orig_offset_x

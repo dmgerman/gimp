@@ -185,7 +185,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|TileManager
+name|GeglBuffer
 modifier|*
 name|gimp_flip_tool_transform
 parameter_list|(
@@ -197,14 +197,9 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|orig_tiles
-parameter_list|,
-specifier|const
-name|Babl
-modifier|*
-name|orig_format
+name|orig_buffer
 parameter_list|,
 name|gint
 name|orig_offset_x
@@ -707,9 +702,9 @@ end_function
 
 begin_function
 specifier|static
-name|TileManager
+name|GeglBuffer
 modifier|*
-DECL|function|gimp_flip_tool_transform (GimpTransformTool * trans_tool,GimpItem * active_item,TileManager * orig_tiles,const Babl * orig_format,gint orig_offset_x,gint orig_offset_y,gint * new_offset_x,gint * new_offset_y)
+DECL|function|gimp_flip_tool_transform (GimpTransformTool * trans_tool,GimpItem * active_item,GeglBuffer * orig_buffer,gint orig_offset_x,gint orig_offset_y,gint * new_offset_x,gint * new_offset_y)
 name|gimp_flip_tool_transform
 parameter_list|(
 name|GimpTransformTool
@@ -720,14 +715,9 @@ name|GimpItem
 modifier|*
 name|active_item
 parameter_list|,
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|orig_tiles
-parameter_list|,
-specifier|const
-name|Babl
-modifier|*
-name|orig_format
+name|orig_buffer
 parameter_list|,
 name|gint
 name|orig_offset_x
@@ -767,7 +757,7 @@ name|axis
 init|=
 literal|0.0
 decl_stmt|;
-name|TileManager
+name|GeglBuffer
 modifier|*
 name|ret
 init|=
@@ -867,13 +857,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|orig_tiles
+name|orig_buffer
 condition|)
 block|{
 comment|/*  this happens when transforming a selection cut out of a        *  normal drawable, or the selection        */
 name|ret
 operator|=
-name|gimp_drawable_transform_tiles_flip
+name|gimp_drawable_transform_buffer_flip
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -882,9 +872,7 @@ argument_list|)
 argument_list|,
 name|context
 argument_list|,
-name|orig_tiles
-argument_list|,
-name|orig_format
+name|orig_buffer
 argument_list|,
 name|orig_offset_x
 argument_list|,
