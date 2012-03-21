@@ -229,7 +229,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba919830103
+DECL|enum|__anon2ae63cb80103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2108,7 +2108,7 @@ argument_list|)
 argument_list|,
 literal|"hard-edges"
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|"x"
 argument_list|,
