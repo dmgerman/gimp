@@ -800,6 +800,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gegl_buffer_flush
+argument_list|(
+name|buffer
+argument_list|)
+expr_stmt|;
 return|return
 name|gimp_tile_backend_tile_manager_get_tiles
 argument_list|(
