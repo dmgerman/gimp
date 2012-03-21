@@ -350,12 +350,12 @@ name|gboolean
 name|combine
 parameter_list|)
 function_decl|;
-DECL|member|get_tiles
-name|TileManager
+DECL|member|get_buffer
+name|GeglBuffer
 modifier|*
 function_decl|(
 modifier|*
-name|get_tiles
+name|get_buffer
 function_decl|)
 parameter_list|(
 name|GimpDrawable
