@@ -2557,7 +2557,7 @@ expr_stmt|;
 comment|/*  Cut/copy the mask portion from the image  */
 name|buffer
 operator|=
-name|gimp_selection_extract_buffer
+name|gimp_selection_extract
 argument_list|(
 name|GIMP_SELECTION
 argument_list|(

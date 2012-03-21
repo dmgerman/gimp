@@ -3869,7 +3869,7 @@ condition|)
 block|{
 name|buffer
 operator|=
-name|gimp_selection_extract_buffer
+name|gimp_selection_extract
 argument_list|(
 name|GIMP_SELECTION
 argument_list|(
@@ -3936,7 +3936,7 @@ comment|/*  otherwise, just copy the layer  */
 block|{
 name|buffer
 operator|=
-name|gimp_selection_extract_buffer
+name|gimp_selection_extract
 argument_list|(
 name|GIMP_SELECTION
 argument_list|(
