@@ -41,7 +41,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -117,7 +117,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297c92530103
+DECL|enum|__anon2b0dbaa90103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -130,7 +130,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297c92530203
+DECL|enum|__anon2b0dbaa90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<pango/pango.h>
 end_include
 
@@ -83,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c5efab0103
+DECL|enum|__anon2bd1ff040103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -169,7 +175,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c5efab0203
+DECL|enum|__anon2bd1ff040203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED

@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -94,7 +94,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3f7c770103
+DECL|enum|__anon2773e3260103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -119,7 +119,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3f7c770203
+DECL|enum|__anon2773e3260203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -136,7 +136,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3f7c770308
+DECL|struct|__anon2773e3260308
 block|{
 DECL|member|signame
 name|gchar
@@ -1280,7 +1280,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3f7c770408
+DECL|struct|__anon2773e3260408
 block|{
 DECL|member|writer
 name|GimpConfigWriter

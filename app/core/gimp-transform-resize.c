@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6f24dd0108
+DECL|struct|__anon28f8aec60108
 block|{
 DECL|member|x
 DECL|member|y
@@ -144,7 +144,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6f24dd0208
+DECL|struct|__anon28f8aec60208
 block|{
 DECL|member|a
 DECL|member|b

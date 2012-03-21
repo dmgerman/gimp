@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpchannel.h"
 end_include
 
@@ -414,7 +420,15 @@ name|memsize
 init|=
 literal|0
 decl_stmt|;
-comment|/* FIXME memsize += tile_manager_get_memsize (mask_undo->tiles, FALSE); */
+name|memsize
+operator|+=
+name|gimp_gegl_buffer_get_memsize
+argument_list|(
+name|mask_undo
+operator|->
+name|buffer
+argument_list|)
+expr_stmt|;
 return|return
 name|memsize
 operator|+

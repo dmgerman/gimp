@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -47,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c73edb0103
+DECL|enum|__anon2c5556a00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -594,7 +600,15 @@ name|memsize
 init|=
 literal|0
 decl_stmt|;
-comment|/* FIXME memsize += gimp_gegl_buffer_get_memsize (drawable_mod_undo->buffer, FALSE); */
+name|memsize
+operator|+=
+name|gimp_gegl_buffer_get_memsize
+argument_list|(
+name|drawable_mod_undo
+operator|->
+name|buffer
+argument_list|)
+expr_stmt|;
 return|return
 name|memsize
 operator|+

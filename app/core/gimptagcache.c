@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -119,7 +119,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b653b670103
+DECL|enum|__anon296dc92c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -133,7 +133,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b653b670208
+DECL|struct|__anon296dc92c0208
 block|{
 DECL|member|identifier
 name|GQuark
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b653b670308
+DECL|struct|__anon296dc92c0308
 block|{
 DECL|member|records
 name|GArray
