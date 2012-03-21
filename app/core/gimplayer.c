@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon287b0b2c0103
+DECL|enum|__anon2b535af00103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -234,7 +234,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon287b0b2c0203
+DECL|enum|__anon2b535af00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4238,6 +4238,8 @@ argument_list|)
 decl_stmt|;
 name|guchar
 name|value
+init|=
+literal|0
 decl_stmt|;
 if|if
 condition|(
