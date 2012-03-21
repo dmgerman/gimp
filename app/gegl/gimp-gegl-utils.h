@@ -167,6 +167,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_define
+DECL|macro|GIMP_GEGL_RECT (x,y,w,h)
+define|#
+directive|define
+name|GIMP_GEGL_RECT
+parameter_list|(
+name|x
+parameter_list|,
+name|y
+parameter_list|,
+name|w
+parameter_list|,
+name|h
+parameter_list|)
+value|(&((GeglRectangle){(x), (y), (w), (h)}))
+end_define
+
 begin_endif
 endif|#
 directive|endif
