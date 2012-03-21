@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5556a00103
+DECL|enum|__anon29482d900103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -415,15 +415,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|drawable_mod_undo
-operator|->
-name|type
-operator|=
-name|gimp_drawable_type
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 name|gimp_item_get_offset
 argument_list|(
 name|item
@@ -672,9 +663,6 @@ name|GeglBuffer
 modifier|*
 name|buffer
 decl_stmt|;
-name|GimpImageType
-name|type
-decl_stmt|;
 name|gint
 name|offset_x
 decl_stmt|;
@@ -701,12 +689,6 @@ name|drawable_mod_undo
 operator|->
 name|buffer
 expr_stmt|;
-name|type
-operator|=
-name|drawable_mod_undo
-operator|->
-name|type
-expr_stmt|;
 name|offset_x
 operator|=
 name|drawable_mod_undo
@@ -729,15 +711,6 @@ name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|drawable_mod_undo
-operator|->
-name|type
-operator|=
-name|gimp_drawable_type
-argument_list|(
-name|drawable
 argument_list|)
 expr_stmt|;
 name|gimp_item_get_offset
@@ -767,8 +740,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|buffer
-argument_list|,
-name|type
 argument_list|,
 name|offset_x
 argument_list|,

@@ -1005,11 +1005,6 @@ literal|"Offset Drawable"
 argument_list|)
 argument_list|,
 name|new_buffer
-argument_list|,
-name|gimp_drawable_type
-argument_list|(
-name|drawable
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_unref

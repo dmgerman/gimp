@@ -3776,8 +3776,6 @@ name|NULL
 argument_list|,
 name|buffer
 argument_list|,
-name|new_type
-argument_list|,
 name|gimp_item_get_offset_x
 argument_list|(
 name|GIMP_ITEM
@@ -4812,14 +4810,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|buffer
-argument_list|,
-name|gimp_drawable_type
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|group
-argument_list|)
-argument_list|)
 argument_list|,
 name|x
 argument_list|,

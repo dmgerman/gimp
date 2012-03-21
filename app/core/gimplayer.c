@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2974d4690103
+DECL|enum|__anon27a38b170103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -234,7 +234,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2974d4690203
+DECL|enum|__anon27a38b170203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7254,9 +7254,6 @@ name|GeglBuffer
 modifier|*
 name|new_buffer
 decl_stmt|;
-name|GimpImageType
-name|new_type
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_LAYER
@@ -7288,13 +7285,6 @@ operator|=
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
-argument_list|)
-expr_stmt|;
-name|new_type
-operator|=
-name|gimp_drawable_type_with_alpha
-argument_list|(
-name|drawable
 argument_list|)
 expr_stmt|;
 name|new_buffer
@@ -7361,8 +7351,6 @@ literal|"Add Alpha Channel"
 argument_list|)
 argument_list|,
 name|new_buffer
-argument_list|,
-name|new_type
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -7395,9 +7383,6 @@ name|GeglBuffer
 modifier|*
 name|new_buffer
 decl_stmt|;
-name|GimpImageType
-name|new_type
-decl_stmt|;
 name|GimpRGB
 name|background
 decl_stmt|;
@@ -7429,16 +7414,6 @@ argument_list|)
 argument_list|)
 condition|)
 return|return;
-name|new_type
-operator|=
-name|gimp_drawable_type_without_alpha
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|new_buffer
 operator|=
 name|gimp_gegl_buffer_new
@@ -7537,8 +7512,6 @@ literal|"Remove Alpha Channel"
 argument_list|)
 argument_list|,
 name|new_buffer
-argument_list|,
-name|new_type
 argument_list|)
 expr_stmt|;
 name|g_object_unref

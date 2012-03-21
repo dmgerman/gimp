@@ -112,10 +112,6 @@ DECL|member|copy_buffer
 name|gboolean
 name|copy_buffer
 decl_stmt|;
-DECL|member|type
-name|GimpImageType
-name|type
-decl_stmt|;
 DECL|member|offset_x
 name|gint
 name|offset_x

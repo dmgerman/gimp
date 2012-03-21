@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ad17ec0103
+DECL|enum|__anon29fbf5880103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -299,7 +299,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_text_layer_set_tiles
+name|gimp_text_layer_set_buffer
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -313,12 +313,9 @@ name|gchar
 modifier|*
 name|undo_desc
 parameter_list|,
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|tiles
-parameter_list|,
-name|GimpImageType
-name|type
+name|buffer
 parameter_list|,
 name|gint
 name|offset_x
@@ -602,9 +599,9 @@ argument_list|)
 expr_stmt|;
 name|drawable_class
 operator|->
-name|set_tiles
+name|set_buffer
 operator|=
-name|gimp_text_layer_set_tiles
+name|gimp_text_layer_set_buffer
 expr_stmt|;
 name|drawable_class
 operator|->
@@ -1194,8 +1191,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_layer_set_tiles (GimpDrawable * drawable,gboolean push_undo,const gchar * undo_desc,TileManager * tiles,GimpImageType type,gint offset_x,gint offset_y)
-name|gimp_text_layer_set_tiles
+DECL|function|gimp_text_layer_set_buffer (GimpDrawable * drawable,gboolean push_undo,const gchar * undo_desc,GeglBuffer * buffer,gint offset_x,gint offset_y)
+name|gimp_text_layer_set_buffer
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -1209,12 +1206,9 @@ name|gchar
 modifier|*
 name|undo_desc
 parameter_list|,
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|tiles
-parameter_list|,
-name|GimpImageType
-name|type
+name|buffer
 parameter_list|,
 name|gint
 name|offset_x
@@ -1267,7 +1261,7 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|set_tiles
+name|set_buffer
 argument_list|(
 name|drawable
 argument_list|,
@@ -1275,9 +1269,7 @@ name|push_undo
 argument_list|,
 name|undo_desc
 argument_list|,
-name|tiles
-argument_list|,
-name|type
+name|buffer
 argument_list|,
 name|offset_x
 argument_list|,
@@ -2268,7 +2260,9 @@ block|{
 name|GeglBuffer
 modifier|*
 name|new_buffer
-init|=
+decl_stmt|;
+name|new_buffer
+operator|=
 name|gimp_gegl_buffer_new
 argument_list|(
 name|GIMP_GEGL_RECT
@@ -2287,7 +2281,7 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|gimp_drawable_set_buffer
 argument_list|(
 name|drawable
@@ -2297,11 +2291,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|new_buffer
-argument_list|,
-name|gimp_drawable_type
-argument_list|(
-name|drawable
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_unref

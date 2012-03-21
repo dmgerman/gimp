@@ -413,7 +413,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon27f251510103
+DECL|enum|__anon291260830103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1454,7 +1454,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f251510208
+DECL|struct|__anon291260830208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1697,7 +1697,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f251510308
+DECL|struct|__anon291260830308
 block|{
 DECL|member|used_count
 name|signed
@@ -3605,7 +3605,12 @@ name|gimp_tile_manager_create_buffer
 argument_list|(
 name|new_tiles
 argument_list|,
-name|NULL
+name|gimp_image_get_format
+argument_list|(
+name|image
+argument_list|,
+name|new_layer_type
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|tile_manager_unref
@@ -3625,8 +3630,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|new_buffer
-argument_list|,
-name|new_layer_type
 argument_list|)
 expr_stmt|;
 name|g_object_unref

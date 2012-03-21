@@ -188,8 +188,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|dest_buffer
-argument_list|,
-name|type
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -325,8 +323,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|dest_buffer
-argument_list|,
-name|type
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -354,9 +350,6 @@ name|gboolean
 name|push_undo
 parameter_list|)
 block|{
-name|GimpImageType
-name|type
-decl_stmt|;
 name|GeglBuffer
 modifier|*
 name|dest_buffer
@@ -390,10 +383,6 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|type
-operator|=
-name|GIMP_INDEXED_IMAGE
 expr_stmt|;
 if|if
 condition|(
@@ -470,8 +459,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|dest_buffer
-argument_list|,
-name|type
 argument_list|)
 expr_stmt|;
 name|g_object_unref

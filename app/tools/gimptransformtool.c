@@ -4781,14 +4781,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|new_buffer
-argument_list|,
-name|gimp_drawable_type
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|active_item
-argument_list|)
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_unref

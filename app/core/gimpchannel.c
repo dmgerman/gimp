@@ -209,7 +209,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d7eb9a0103
+DECL|enum|__anon276b23f70103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -678,7 +678,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_channel_set_tiles
+name|gimp_channel_set_buffer
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -692,12 +692,9 @@ name|gchar
 modifier|*
 name|undo_desc
 parameter_list|,
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|tiles
-parameter_list|,
-name|GimpImageType
-name|type
+name|buffer
 parameter_list|,
 name|gint
 name|offset_x
@@ -1468,9 +1465,9 @@ name|gimp_channel_project_region
 expr_stmt|;
 name|drawable_class
 operator|->
-name|set_tiles
+name|set_buffer
 operator|=
-name|gimp_channel_set_tiles
+name|gimp_channel_set_buffer
 expr_stmt|;
 name|drawable_class
 operator|->
@@ -2345,8 +2342,6 @@ name|NULL
 argument_list|,
 name|new_buffer
 argument_list|,
-name|GIMP_GRAY_IMAGE
-argument_list|,
 name|gimp_item_get_offset_x
 argument_list|(
 name|item
@@ -3032,11 +3027,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|new_buffer
-argument_list|,
-name|gimp_drawable_type
-argument_list|(
-name|drawable
-argument_list|)
 argument_list|,
 name|new_offset_x
 argument_list|,
@@ -3920,8 +3910,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_set_tiles (GimpDrawable * drawable,gboolean push_undo,const gchar * undo_desc,TileManager * tiles,GimpImageType type,gint offset_x,gint offset_y)
-name|gimp_channel_set_tiles
+DECL|function|gimp_channel_set_buffer (GimpDrawable * drawable,gboolean push_undo,const gchar * undo_desc,GeglBuffer * buffer,gint offset_x,gint offset_y)
+name|gimp_channel_set_buffer
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -3935,12 +3925,9 @@ name|gchar
 modifier|*
 name|undo_desc
 parameter_list|,
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|tiles
-parameter_list|,
-name|GimpImageType
-name|type
+name|buffer
 parameter_list|,
 name|gint
 name|offset_x
@@ -3954,7 +3941,7 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|set_tiles
+name|set_buffer
 argument_list|(
 name|drawable
 argument_list|,
@@ -3962,9 +3949,7 @@ name|push_undo
 argument_list|,
 name|undo_desc
 argument_list|,
-name|tiles
-argument_list|,
-name|type
+name|buffer
 argument_list|,
 name|offset_x
 argument_list|,
