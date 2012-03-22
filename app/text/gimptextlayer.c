@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fbf5880103
+DECL|enum|__anon287a731d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -340,12 +340,9 @@ name|gchar
 modifier|*
 name|undo_desc
 parameter_list|,
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|tiles
-parameter_list|,
-name|gboolean
-name|sparse
+name|buffer
 parameter_list|,
 name|gint
 name|x
@@ -1318,7 +1315,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_layer_push_undo (GimpDrawable * drawable,const gchar * undo_desc,TileManager * tiles,gboolean sparse,gint x,gint y,gint width,gint height)
+DECL|function|gimp_text_layer_push_undo (GimpDrawable * drawable,const gchar * undo_desc,GeglBuffer * buffer,gint x,gint y,gint width,gint height)
 name|gimp_text_layer_push_undo
 parameter_list|(
 name|GimpDrawable
@@ -1330,12 +1327,9 @@ name|gchar
 modifier|*
 name|undo_desc
 parameter_list|,
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|tiles
-parameter_list|,
-name|gboolean
-name|sparse
+name|buffer
 parameter_list|,
 name|gint
 name|x
@@ -1398,9 +1392,7 @@ name|drawable
 argument_list|,
 name|undo_desc
 argument_list|,
-name|tiles
-argument_list|,
-name|sparse
+name|buffer
 argument_list|,
 name|x
 argument_list|,

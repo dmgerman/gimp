@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a38b170103
+DECL|enum|__anon2b27822d0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -234,7 +234,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a38b170203
+DECL|enum|__anon2b27822d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5695,6 +5695,8 @@ argument_list|,
 literal|"Transfer Alpha to Mask"
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -5708,10 +5710,6 @@ name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|set_alpha
@@ -6461,6 +6459,8 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -6474,10 +6474,6 @@ name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  Combine the current layer's alpha channel and the mask  */

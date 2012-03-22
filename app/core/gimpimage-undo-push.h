@@ -233,12 +233,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|tiles
-parameter_list|,
-name|gboolean
-name|sparse
+name|buffer
 parameter_list|,
 name|gint
 name|x

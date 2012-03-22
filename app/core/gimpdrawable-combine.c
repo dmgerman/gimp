@@ -402,6 +402,8 @@ name|drawable
 argument_list|,
 name|undo_desc
 argument_list|,
+name|NULL
+argument_list|,
 name|x1
 argument_list|,
 name|y1
@@ -413,10 +415,6 @@ argument_list|,
 name|y2
 operator|-
 name|y1
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|undo
@@ -1095,6 +1093,8 @@ name|drawable
 argument_list|,
 name|undo_desc
 argument_list|,
+name|NULL
+argument_list|,
 name|x1
 argument_list|,
 name|y1
@@ -1106,10 +1106,6 @@ argument_list|,
 name|y2
 operator|-
 name|y1
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* configure the pixel regions */

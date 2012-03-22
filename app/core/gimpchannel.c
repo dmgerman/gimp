@@ -209,7 +209,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276b23f70103
+DECL|enum|__anon296b572b0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -727,12 +727,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|tiles
-parameter_list|,
-name|gboolean
-name|sparse
+name|buffer
 parameter_list|,
 name|gint
 name|x
@@ -4253,19 +4250,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_swap_pixels (GimpDrawable * drawable,TileManager * tiles,gboolean sparse,gint x,gint y,gint width,gint height)
+DECL|function|gimp_channel_swap_pixels (GimpDrawable * drawable,GeglBuffer * buffer,gint x,gint y,gint width,gint height)
 name|gimp_channel_swap_pixels
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|tiles
-parameter_list|,
-name|gboolean
-name|sparse
+name|buffer
 parameter_list|,
 name|gint
 name|x
@@ -4294,9 +4288,7 @@ name|swap_pixels
 argument_list|(
 name|drawable
 argument_list|,
-name|tiles
-argument_list|,
-name|sparse
+name|buffer
 argument_list|,
 name|x
 argument_list|,
