@@ -51,9 +51,9 @@ parameter_list|,
 name|GimpLayerModeEffects
 name|mode
 parameter_list|,
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|src1_tiles
+name|base_buffer
 parameter_list|,
 name|PixelRegion
 modifier|*

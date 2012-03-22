@@ -77,7 +77,7 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_drawable_real_apply_buffer (GimpDrawable * drawable,GeglBuffer * buffer,const GeglRectangle * buffer_region,gboolean push_undo,const gchar * undo_desc,gdouble opacity,GimpLayerModeEffects mode,TileManager * src1_tiles,PixelRegion * destPR,gint x,gint y)
+DECL|function|gimp_drawable_real_apply_buffer (GimpDrawable * drawable,GeglBuffer * buffer,const GeglRectangle * buffer_region,gboolean push_undo,const gchar * undo_desc,gdouble opacity,GimpLayerModeEffects mode,GeglBuffer * base_buffer,PixelRegion * destPR,gint x,gint y)
 name|gimp_drawable_real_apply_buffer
 parameter_list|(
 name|GimpDrawable
@@ -107,9 +107,9 @@ parameter_list|,
 name|GimpLayerModeEffects
 name|mode
 parameter_list|,
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|src1_tiles
+name|base_buffer
 parameter_list|,
 name|PixelRegion
 modifier|*
@@ -155,6 +155,10 @@ name|temp_buf
 decl_stmt|;
 name|PixelRegion
 name|src2PR
+decl_stmt|;
+name|TileManager
+modifier|*
+name|src1_tiles
 decl_stmt|;
 name|gint
 name|x1
@@ -253,6 +257,22 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|base_buffer
+condition|)
+name|src1_tiles
+operator|=
+name|gimp_gegl_buffer_get_tiles
+argument_list|(
+name|base_buffer
+argument_list|)
+expr_stmt|;
+else|else
+name|src1_tiles
+operator|=
+name|NULL
+expr_stmt|;
 comment|/*  don't apply the mask to itself and don't apply an empty mask  */
 if|if
 condition|(

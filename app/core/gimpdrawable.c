@@ -229,7 +229,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd533240103
+DECL|enum|__anon293f6a850103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -5411,7 +5411,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_apply_buffer (GimpDrawable * drawable,GeglBuffer * buffer,const GeglRectangle * buffer_region,gboolean push_undo,const gchar * undo_desc,gdouble opacity,GimpLayerModeEffects mode,TileManager * src1_tiles,PixelRegion * destPR,gint x,gint y)
+DECL|function|gimp_drawable_apply_buffer (GimpDrawable * drawable,GeglBuffer * buffer,const GeglRectangle * buffer_region,gboolean push_undo,const gchar * undo_desc,gdouble opacity,GimpLayerModeEffects mode,GeglBuffer * base_buffer,PixelRegion * destPR,gint x,gint y)
 name|gimp_drawable_apply_buffer
 parameter_list|(
 name|GimpDrawable
@@ -5441,9 +5441,9 @@ parameter_list|,
 name|GimpLayerModeEffects
 name|mode
 parameter_list|,
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|src1_tiles
+name|base_buffer
 parameter_list|,
 name|PixelRegion
 modifier|*
@@ -5490,6 +5490,18 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|base_buffer
+operator|==
+name|NULL
+operator|||
+name|GEGL_IS_BUFFER
+argument_list|(
+name|base_buffer
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|GIMP_DRAWABLE_GET_CLASS
 argument_list|(
 name|drawable
@@ -5511,7 +5523,7 @@ name|opacity
 argument_list|,
 name|mode
 argument_list|,
-name|src1_tiles
+name|base_buffer
 argument_list|,
 name|destPR
 argument_list|,

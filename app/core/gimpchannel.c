@@ -209,7 +209,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a16a9120103
+DECL|enum|__anon2be1c2eb0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -626,9 +626,9 @@ parameter_list|,
 name|GimpLayerModeEffects
 name|mode
 parameter_list|,
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|src1_tiles
+name|base_buffer
 parameter_list|,
 name|PixelRegion
 modifier|*
@@ -3741,7 +3741,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_apply_buffer (GimpDrawable * drawable,GeglBuffer * buffer,const GeglRectangle * buffer_region,gboolean push_undo,const gchar * undo_desc,gdouble opacity,GimpLayerModeEffects mode,TileManager * src1_tiles,PixelRegion * destPR,gint x,gint y)
+DECL|function|gimp_channel_apply_buffer (GimpDrawable * drawable,GeglBuffer * buffer,const GeglRectangle * buffer_region,gboolean push_undo,const gchar * undo_desc,gdouble opacity,GimpLayerModeEffects mode,GeglBuffer * base_buffer,PixelRegion * destPR,gint x,gint y)
 name|gimp_channel_apply_buffer
 parameter_list|(
 name|GimpDrawable
@@ -3771,9 +3771,9 @@ parameter_list|,
 name|GimpLayerModeEffects
 name|mode
 parameter_list|,
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|src1_tiles
+name|base_buffer
 parameter_list|,
 name|PixelRegion
 modifier|*
@@ -3812,7 +3812,7 @@ name|opacity
 argument_list|,
 name|mode
 argument_list|,
-name|src1_tiles
+name|base_buffer
 argument_list|,
 name|destPR
 argument_list|,

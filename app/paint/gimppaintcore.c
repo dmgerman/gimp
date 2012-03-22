@@ -157,7 +157,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b53c7820103
+DECL|enum|__anon2c8a7cc80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3597,9 +3597,9 @@ name|GimpPaintApplicationMode
 name|mode
 parameter_list|)
 block|{
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|alt
+name|base_buffer
 init|=
 name|NULL
 decl_stmt|;
@@ -3814,14 +3814,11 @@ argument_list|(
 name|core
 argument_list|)
 expr_stmt|;
-name|alt
+name|base_buffer
 operator|=
-name|gimp_gegl_buffer_get_tiles
-argument_list|(
 name|core
 operator|->
 name|undo_buffer
-argument_list|)
 expr_stmt|;
 block|}
 comment|/*  Otherwise:    *   combine the canvas buf and the paint mask to the canvas buf    */
@@ -3886,7 +3883,7 @@ name|image_opacity
 argument_list|,
 name|paint_mode
 argument_list|,
-name|alt
+name|base_buffer
 argument_list|,
 comment|/*  specify an alternative src1  */
 name|NULL
