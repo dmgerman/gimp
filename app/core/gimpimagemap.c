@@ -111,7 +111,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e91dbb0103
+DECL|enum|__anon2758583c0103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1357,14 +1357,11 @@ operator|+
 name|height
 condition|)
 block|{
-name|tile_manager_read_pixel_data_1
-argument_list|(
-name|gimp_gegl_buffer_get_tiles
+name|gegl_buffer_sample
 argument_list|(
 name|image_map
 operator|->
 name|undo_buffer
-argument_list|)
 argument_list|,
 name|x
 operator|-
@@ -1374,7 +1371,18 @@ name|y
 operator|-
 name|offset_y
 argument_list|,
+name|NULL
+argument_list|,
 name|pixel
+argument_list|,
+name|gimp_drawable_get_format
+argument_list|(
+name|image_map
+operator|->
+name|drawable
+argument_list|)
+argument_list|,
+name|GEGL_SAMPLER_NEAREST
 argument_list|)
 expr_stmt|;
 return|return
@@ -1400,13 +1408,9 @@ name|pixel
 argument_list|)
 return|;
 block|}
-else|else
-comment|/* out of bounds error */
-block|{
 return|return
 name|FALSE
 return|;
-block|}
 block|}
 end_function
 
