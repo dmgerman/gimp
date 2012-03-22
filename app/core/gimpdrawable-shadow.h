@@ -17,9 +17,9 @@ name|__GIMP_DRAWABLE_SHADOW_H__
 end_define
 
 begin_function_decl
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|gimp_drawable_get_shadow_tiles
+name|gimp_drawable_get_shadow_buffer
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -30,7 +30,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_drawable_free_shadow_tiles
+name|gimp_drawable_free_shadow_buffer
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -41,7 +41,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_drawable_merge_shadow_tiles
+name|gimp_drawable_merge_shadow_buffer
 parameter_list|(
 name|GimpDrawable
 modifier|*

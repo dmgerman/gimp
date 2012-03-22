@@ -147,9 +147,9 @@ DECL|member|item_ID
 name|gint
 name|item_ID
 decl_stmt|;
-DECL|member|shadow_tiles
+DECL|member|shadow_buffer
 name|gboolean
-name|shadow_tiles
+name|shadow_buffer
 decl_stmt|;
 block|}
 struct|;
@@ -577,7 +577,7 @@ expr_stmt|;
 block|}
 name|cleanup
 operator|->
-name|shadow_tiles
+name|shadow_buffer
 operator|=
 name|TRUE
 expr_stmt|;
@@ -661,7 +661,7 @@ condition|(
 operator|!
 name|cleanup
 operator|->
-name|shadow_tiles
+name|shadow_buffer
 condition|)
 return|return
 name|FALSE
@@ -1250,7 +1250,7 @@ if|if
 condition|(
 name|cleanup
 operator|->
-name|shadow_tiles
+name|shadow_buffer
 condition|)
 block|{
 name|GimpProcedure
@@ -1265,7 +1265,7 @@ name|GIMP_LOG
 argument_list|(
 name|SHADOW_TILES
 argument_list|,
-literal|"Freeing shadow tiles of drawable '%s' on behalf of '%s'."
+literal|"Freeing shadow buffer of drawable '%s' on behalf of '%s'."
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
@@ -1281,7 +1281,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_free_shadow_tiles
+name|gimp_drawable_free_shadow_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

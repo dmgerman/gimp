@@ -229,7 +229,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c36082a0103
+DECL|enum|__anon2937bdb50103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1384,7 +1384,7 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-name|gimp_drawable_free_shadow_tiles
+name|gimp_drawable_free_shadow_buffer
 argument_list|(
 name|drawable
 argument_list|)
@@ -1488,15 +1488,13 @@ argument_list|)
 expr_stmt|;
 name|memsize
 operator|+=
-name|tile_manager_get_memsize
+name|gimp_gegl_buffer_get_memsize
 argument_list|(
 name|drawable
 operator|->
 name|private
 operator|->
 name|shadow
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 operator|*
@@ -1658,7 +1656,7 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-name|gimp_drawable_free_shadow_tiles
+name|gimp_drawable_free_shadow_buffer
 argument_list|(
 name|drawable
 argument_list|)

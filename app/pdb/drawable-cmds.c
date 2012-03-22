@@ -2078,7 +2078,7 @@ operator|->
 name|current_plug_in
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_merge_shadow_tiles
+name|gimp_drawable_merge_shadow_buffer
 argument_list|(
 name|drawable
 argument_list|,
@@ -2194,7 +2194,7 @@ argument_list|,
 name|drawable
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_free_shadow_tiles
+name|gimp_drawable_free_shadow_buffer
 argument_list|(
 name|drawable
 argument_list|)

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdrawable.h"
 end_include
 
@@ -158,11 +164,22 @@ name|height
 argument_list|)
 condition|)
 block|{
+name|GeglBuffer
+modifier|*
+name|dest_buffer
+decl_stmt|;
 name|PixelRegion
 name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
+name|dest_buffer
+operator|=
+name|gimp_drawable_get_shadow_buffer
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 name|pixel_region_init
 argument_list|(
 operator|&
@@ -189,9 +206,9 @@ argument_list|(
 operator|&
 name|destPR
 argument_list|,
-name|gimp_drawable_get_shadow_tiles
+name|gimp_gegl_buffer_get_tiles
 argument_list|(
-name|drawable
+name|dest_buffer
 argument_list|)
 argument_list|,
 name|x
@@ -220,7 +237,7 @@ operator|&
 name|destPR
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_merge_shadow_tiles
+name|gimp_drawable_merge_shadow_buffer
 argument_list|(
 name|drawable
 argument_list|,
@@ -229,7 +246,7 @@ argument_list|,
 name|undo_desc
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_free_shadow_tiles
+name|gimp_drawable_free_shadow_buffer
 argument_list|(
 name|drawable
 argument_list|)

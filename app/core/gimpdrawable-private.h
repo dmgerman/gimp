@@ -35,11 +35,11 @@ name|buffer
 decl_stmt|;
 comment|/* buffer for drawable data */
 DECL|member|shadow
-name|TileManager
+name|GeglBuffer
 modifier|*
 name|shadow
 decl_stmt|;
-comment|/* shadow buffer tiles      */
+comment|/* shadow buffer            */
 DECL|member|source_node
 name|GeglNode
 modifier|*
