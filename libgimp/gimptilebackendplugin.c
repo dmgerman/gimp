@@ -164,14 +164,6 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 block|{
-name|gint32
-name|image_ID
-init|=
-name|gimp_item_get_image
-argument_list|(
-name|drawable_ID
-argument_list|)
-decl_stmt|;
 switch|switch
 condition|(
 name|gimp_drawable_type
@@ -223,6 +215,14 @@ case|case
 name|GIMP_INDEXEDA_IMAGE
 case|:
 block|{
+name|gint32
+name|image_ID
+init|=
+name|gimp_item_get_image
+argument_list|(
+name|drawable_ID
+argument_list|)
+decl_stmt|;
 specifier|const
 name|Babl
 modifier|*
@@ -380,12 +380,12 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpTileBackendPlugin,gimp_tile_backend_plugin,GEGL_TYPE_TILE_BACKEND)
+DECL|function|G_DEFINE_TYPE (GimpTileBackendPlugin,_gimp_tile_backend_plugin,GEGL_TYPE_TILE_BACKEND)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpTileBackendPlugin
 argument_list|,
-argument|gimp_tile_backend_plugin
+argument|_gimp_tile_backend_plugin
 argument_list|,
 argument|GEGL_TYPE_TILE_BACKEND
 argument_list|)
@@ -396,13 +396,13 @@ DECL|macro|parent_class
 define|#
 directive|define
 name|parent_class
-value|gimp_tile_backend_plugin_parent_class
+value|_gimp_tile_backend_plugin_parent_class
 end_define
 
 begin_function
 specifier|static
 name|void
-name|gimp_tile_backend_plugin_class_init
+name|_gimp_tile_backend_plugin_class_init
 parameter_list|(
 name|GimpTileBackendPluginClass
 modifier|*
@@ -445,8 +445,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tile_backend_plugin_init (GimpTileBackendPlugin * backend)
-name|gimp_tile_backend_plugin_init
+DECL|function|_gimp_tile_backend_plugin_init (GimpTileBackendPlugin * backend)
+name|_gimp_tile_backend_plugin_init
 parameter_list|(
 name|GimpTileBackendPlugin
 modifier|*
@@ -1155,8 +1155,8 @@ end_function
 begin_function
 name|GeglTileBackend
 modifier|*
-DECL|function|gimp_tile_backend_plugin_new (GimpDrawable * drawable,gint shadow)
-name|gimp_tile_backend_plugin_new
+DECL|function|_gimp_tile_backend_plugin_new (GimpDrawable * drawable,gint shadow)
+name|_gimp_tile_backend_plugin_new
 parameter_list|(
 name|GimpDrawable
 modifier|*

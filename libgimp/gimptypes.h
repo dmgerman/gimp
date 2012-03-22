@@ -102,15 +102,6 @@ name|GimpParam
 typedef|;
 end_typedef
 
-begin_typedef
-DECL|typedef|GimpTileBackendPlugin
-typedef|typedef
-name|struct
-name|_GimpTileBackendPlugin
-name|GimpTileBackendPlugin
-typedef|;
-end_typedef
-
 begin_macro
 name|G_END_DECLS
 end_macro

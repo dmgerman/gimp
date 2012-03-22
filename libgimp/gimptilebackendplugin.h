@@ -31,7 +31,7 @@ DECL|macro|GIMP_TYPE_TILE_BACKEND_PLUGIN
 define|#
 directive|define
 name|GIMP_TYPE_TILE_BACKEND_PLUGIN
-value|(gimp_tile_backend_plugin_get_type ())
+value|(_gimp_tile_backend_plugin_get_type ())
 end_define
 
 begin_define
@@ -90,6 +90,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_TILE_BACKEND_PLUGIN, GimpTil
 end_define
 
 begin_typedef
+DECL|typedef|GimpTileBackendPlugin
+typedef|typedef
+name|struct
+name|_GimpTileBackendPlugin
+name|GimpTileBackendPlugin
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpTileBackendPluginClass
 typedef|typedef
 name|struct
@@ -140,7 +149,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_tile_backend_plugin_get_type
+name|_gimp_tile_backend_plugin_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -151,7 +160,7 @@ end_decl_stmt
 begin_function_decl
 name|GeglTileBackend
 modifier|*
-name|gimp_tile_backend_plugin_new
+name|_gimp_tile_backend_plugin_new
 parameter_list|(
 name|GimpDrawable
 modifier|*
