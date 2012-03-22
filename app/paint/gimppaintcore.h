@@ -165,12 +165,12 @@ name|gboolean
 name|use_saved_proj
 decl_stmt|;
 comment|/*  keep the unmodified proj around     */
-DECL|member|undo_tiles
-name|TileManager
+DECL|member|undo_buffer
+name|GeglBuffer
 modifier|*
-name|undo_tiles
+name|undo_buffer
 decl_stmt|;
-comment|/*  tiles which have been modified      */
+comment|/*  pixels which have been modified     */
 DECL|member|saved_proj_tiles
 name|TileManager
 modifier|*
@@ -763,33 +763,6 @@ name|image_opacity
 parameter_list|,
 name|GimpPaintApplicationMode
 name|mode
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_paint_core_validate_undo_tiles
-parameter_list|(
-name|GimpPaintCore
-modifier|*
-name|core
-parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|,
-name|gint
-name|w
-parameter_list|,
-name|gint
-name|h
 parameter_list|)
 function_decl|;
 end_function_decl
