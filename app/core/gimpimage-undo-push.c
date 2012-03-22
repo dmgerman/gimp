@@ -785,7 +785,7 @@ end_comment
 begin_function
 name|GimpUndo
 modifier|*
-DECL|function|gimp_image_undo_push_drawable (GimpImage * image,const gchar * undo_desc,GimpDrawable * drawable,GeglBuffer * buffer,gint x,gint y,gint width,gint height)
+DECL|function|gimp_image_undo_push_drawable (GimpImage * image,const gchar * undo_desc,GimpDrawable * drawable,GeglBuffer * buffer,gint x,gint y)
 name|gimp_image_undo_push_drawable
 parameter_list|(
 name|GimpImage
@@ -810,12 +810,6 @@ name|x
 parameter_list|,
 name|gint
 name|y
-parameter_list|,
-name|gint
-name|width
-parameter_list|,
-name|gint
-name|height
 parameter_list|)
 block|{
 name|GimpItem
@@ -899,14 +893,6 @@ argument_list|,
 literal|"y"
 argument_list|,
 name|y
-argument_list|,
-literal|"width"
-argument_list|,
-name|width
-argument_list|,
-literal|"height"
-argument_list|,
-name|height
 argument_list|,
 name|NULL
 argument_list|)

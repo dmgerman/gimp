@@ -229,7 +229,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b98f8390103
+DECL|enum|__anon295847ab0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -714,12 +714,6 @@ name|x
 parameter_list|,
 name|gint
 name|y
-parameter_list|,
-name|gint
-name|width
-parameter_list|,
-name|gint
-name|height
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3787,10 +3781,6 @@ argument_list|,
 name|x
 argument_list|,
 name|y
-argument_list|,
-name|width
-argument_list|,
-name|height
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -3804,7 +3794,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_real_swap_pixels (GimpDrawable * drawable,GeglBuffer * buffer,gint x,gint y,gint width,gint height)
+DECL|function|gimp_drawable_real_swap_pixels (GimpDrawable * drawable,GeglBuffer * buffer,gint x,gint y)
 name|gimp_drawable_real_swap_pixels
 parameter_list|(
 name|GimpDrawable
@@ -3820,17 +3810,27 @@ name|x
 parameter_list|,
 name|gint
 name|y
-parameter_list|,
-name|gint
-name|width
-parameter_list|,
-name|gint
-name|height
 parameter_list|)
 block|{
 name|GeglBuffer
 modifier|*
 name|tmp
+decl_stmt|;
+name|gint
+name|width
+init|=
+name|gegl_buffer_get_width
+argument_list|(
+name|buffer
+argument_list|)
+decl_stmt|;
+name|gint
+name|height
+init|=
+name|gegl_buffer_get_height
+argument_list|(
+name|buffer
+argument_list|)
 decl_stmt|;
 name|tmp
 operator|=
@@ -6634,7 +6634,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_swap_pixels (GimpDrawable * drawable,GeglBuffer * buffer,gint x,gint y,gint width,gint height)
+DECL|function|gimp_drawable_swap_pixels (GimpDrawable * drawable,GeglBuffer * buffer,gint x,gint y)
 name|gimp_drawable_swap_pixels
 parameter_list|(
 name|GimpDrawable
@@ -6650,12 +6650,6 @@ name|x
 parameter_list|,
 name|gint
 name|y
-parameter_list|,
-name|gint
-name|width
-parameter_list|,
-name|gint
-name|height
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -6688,10 +6682,6 @@ argument_list|,
 name|x
 argument_list|,
 name|y
-argument_list|,
-name|width
-argument_list|,
-name|height
 argument_list|)
 expr_stmt|;
 block|}

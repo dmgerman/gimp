@@ -116,14 +116,6 @@ DECL|member|y
 name|gint
 name|y
 decl_stmt|;
-DECL|member|width
-name|gint
-name|width
-decl_stmt|;
-DECL|member|height
-name|gint
-name|height
-decl_stmt|;
 comment|/* stuff for "Fade" */
 DECL|member|src2_tiles
 name|TileManager

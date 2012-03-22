@@ -209,7 +209,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296b572b0103
+DECL|enum|__anon27e70e450103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -736,12 +736,6 @@ name|x
 parameter_list|,
 name|gint
 name|y
-parameter_list|,
-name|gint
-name|width
-parameter_list|,
-name|gint
-name|height
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -4250,7 +4244,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_swap_pixels (GimpDrawable * drawable,GeglBuffer * buffer,gint x,gint y,gint width,gint height)
+DECL|function|gimp_channel_swap_pixels (GimpDrawable * drawable,GeglBuffer * buffer,gint x,gint y)
 name|gimp_channel_swap_pixels
 parameter_list|(
 name|GimpDrawable
@@ -4266,12 +4260,6 @@ name|x
 parameter_list|,
 name|gint
 name|y
-parameter_list|,
-name|gint
-name|width
-parameter_list|,
-name|gint
-name|height
 parameter_list|)
 block|{
 name|gimp_drawable_invalidate_boundary
@@ -4293,10 +4281,6 @@ argument_list|,
 name|x
 argument_list|,
 name|y
-argument_list|,
-name|width
-argument_list|,
-name|height
 argument_list|)
 expr_stmt|;
 name|GIMP_CHANNEL

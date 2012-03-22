@@ -446,12 +446,6 @@ name|x
 parameter_list|,
 name|gint
 name|y
-parameter_list|,
-name|gint
-name|width
-parameter_list|,
-name|gint
-name|height
 parameter_list|)
 function_decl|;
 block|}
@@ -863,12 +857,6 @@ name|x
 parameter_list|,
 name|gint
 name|y
-parameter_list|,
-name|gint
-name|width
-parameter_list|,
-name|gint
-name|height
 parameter_list|)
 function_decl|;
 end_function_decl
