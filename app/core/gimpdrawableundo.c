@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/tile-manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-utils.h"
 end_include
 
@@ -59,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a06817b0103
+DECL|enum|__anon27cc29310103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -786,19 +780,19 @@ if|if
 condition|(
 name|drawable_undo
 operator|->
-name|src2_tiles
+name|applied_buffer
 condition|)
 block|{
-name|tile_manager_unref
+name|g_object_unref
 argument_list|(
 name|drawable_undo
 operator|->
-name|src2_tiles
+name|applied_buffer
 argument_list|)
 expr_stmt|;
 name|drawable_undo
 operator|->
-name|src2_tiles
+name|applied_buffer
 operator|=
 name|NULL
 expr_stmt|;

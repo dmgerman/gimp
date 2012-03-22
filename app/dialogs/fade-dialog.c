@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27aa26e20108
+DECL|struct|__anon29c4793a0108
 block|{
 DECL|member|image
 name|GimpImage
@@ -290,7 +290,7 @@ name|undo
 operator|&&
 name|undo
 operator|->
-name|src2_tiles
+name|applied_buffer
 operator|)
 condition|)
 return|return

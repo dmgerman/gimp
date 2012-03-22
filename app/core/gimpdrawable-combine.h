@@ -22,15 +22,20 @@ end_comment
 
 begin_function_decl
 name|void
-name|gimp_drawable_real_apply_region
+name|gimp_drawable_real_apply_buffer
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PixelRegion
+name|GeglBuffer
 modifier|*
-name|src2PR
+name|buffer
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|buffer_region
 parameter_list|,
 name|gboolean
 name|push_undo

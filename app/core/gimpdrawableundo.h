@@ -117,10 +117,10 @@ name|gint
 name|y
 decl_stmt|;
 comment|/* stuff for "Fade" */
-DECL|member|src2_tiles
-name|TileManager
+DECL|member|applied_buffer
+name|GeglBuffer
 modifier|*
-name|src2_tiles
+name|applied_buffer
 decl_stmt|;
 DECL|member|paint_mode
 name|GimpLayerModeEffects

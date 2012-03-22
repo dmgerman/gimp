@@ -1379,7 +1379,7 @@ argument_list|(
 name|undo
 argument_list|)
 operator|->
-name|src2_tiles
+name|applied_buffer
 condition|)
 block|{
 name|fade_enabled

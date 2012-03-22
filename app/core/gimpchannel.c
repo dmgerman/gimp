@@ -209,7 +209,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e70e450103
+DECL|enum|__anon2a16a9120103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -597,15 +597,20 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_channel_apply_region
+name|gimp_channel_apply_buffer
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PixelRegion
+name|GeglBuffer
 modifier|*
-name|src2PR
+name|buffer
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|buffer_region
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -1438,9 +1443,9 @@ name|gimp_channel_get_active_components
 expr_stmt|;
 name|drawable_class
 operator|->
-name|apply_region
+name|apply_buffer
 operator|=
-name|gimp_channel_apply_region
+name|gimp_channel_apply_buffer
 expr_stmt|;
 name|drawable_class
 operator|->
@@ -3736,16 +3741,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_apply_region (GimpDrawable * drawable,PixelRegion * src2PR,gboolean push_undo,const gchar * undo_desc,gdouble opacity,GimpLayerModeEffects mode,TileManager * src1_tiles,PixelRegion * destPR,gint x,gint y)
-name|gimp_channel_apply_region
+DECL|function|gimp_channel_apply_buffer (GimpDrawable * drawable,GeglBuffer * buffer,const GeglRectangle * buffer_region,gboolean push_undo,const gchar * undo_desc,gdouble opacity,GimpLayerModeEffects mode,TileManager * src1_tiles,PixelRegion * destPR,gint x,gint y)
+name|gimp_channel_apply_buffer
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PixelRegion
+name|GeglBuffer
 modifier|*
-name|src2PR
+name|buffer
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|buffer_region
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -3786,11 +3796,13 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|apply_region
+name|apply_buffer
 argument_list|(
 name|drawable
 argument_list|,
-name|src2PR
+name|buffer
+argument_list|,
+name|buffer_region
 argument_list|,
 name|push_undo
 argument_list|,
