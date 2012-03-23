@@ -157,7 +157,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f5646c0103
+DECL|enum|__anon27d5c4bc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4075,8 +4075,9 @@ name|GimpPaintApplicationMode
 name|mode
 parameter_list|)
 block|{
-name|PixelRegion
-name|srcPR
+name|GeglBuffer
+modifier|*
+name|canvas_buffer
 decl_stmt|;
 if|if
 condition|(
@@ -4208,15 +4209,29 @@ block|{
 comment|/* The mask is just the paint_maskPR */
 block|}
 comment|/*  intialize canvas buf source pixel regions  */
-name|pixel_region_init_temp_buf
+name|canvas_buffer
+operator|=
+name|gimp_temp_buf_create_buffer
 argument_list|(
-operator|&
-name|srcPR
-argument_list|,
 name|core
 operator|->
 name|canvas_buf
 argument_list|,
+name|gimp_drawable_get_format_with_alpha
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/*  apply the paint area to the image  */
+name|gimp_drawable_replace_buffer
+argument_list|(
+name|drawable
+argument_list|,
+name|canvas_buffer
+argument_list|,
+name|GIMP_GEGL_RECT
+argument_list|(
 literal|0
 argument_list|,
 literal|0
@@ -4233,14 +4248,6 @@ name|canvas_buf
 operator|->
 name|height
 argument_list|)
-expr_stmt|;
-comment|/*  apply the paint area to the image  */
-name|gimp_drawable_replace_region
-argument_list|(
-name|drawable
-argument_list|,
-operator|&
-name|srcPR
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4261,6 +4268,11 @@ operator|->
 name|canvas_buf
 operator|->
 name|y
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|canvas_buffer
 argument_list|)
 expr_stmt|;
 comment|/*  Update the undo extents  */

@@ -229,7 +229,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293f6a850103
+DECL|enum|__anon28e5fde00103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1074,9 +1074,9 @@ name|gimp_drawable_real_apply_buffer
 expr_stmt|;
 name|klass
 operator|->
-name|replace_region
+name|replace_buffer
 operator|=
-name|gimp_drawable_real_replace_region
+name|gimp_drawable_real_replace_buffer
 expr_stmt|;
 name|klass
 operator|->
@@ -5537,16 +5537,21 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_replace_region (GimpDrawable * drawable,PixelRegion * src2PR,gboolean push_undo,const gchar * undo_desc,gdouble opacity,PixelRegion * maskPR,gint x,gint y)
-name|gimp_drawable_replace_region
+DECL|function|gimp_drawable_replace_buffer (GimpDrawable * drawable,GeglBuffer * buffer,const GeglRectangle * buffer_region,gboolean push_undo,const gchar * undo_desc,gdouble opacity,PixelRegion * maskPR,gint x,gint y)
+name|gimp_drawable_replace_buffer
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PixelRegion
+name|GeglBuffer
 modifier|*
-name|src2PR
+name|buffer
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|buffer_region
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -5591,9 +5596,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|src2PR
-operator|!=
-name|NULL
+name|GEGL_IS_BUFFER
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -5608,11 +5614,13 @@ argument_list|(
 name|drawable
 argument_list|)
 operator|->
-name|replace_region
+name|replace_buffer
 argument_list|(
 name|drawable
 argument_list|,
-name|src2PR
+name|buffer
+argument_list|,
+name|buffer_region
 argument_list|,
 name|push_undo
 argument_list|,
