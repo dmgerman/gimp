@@ -160,15 +160,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|Curves
-typedef|typedef
-name|struct
-name|_Curves
-name|Curves
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|HueSaturation
 typedef|typedef
 name|struct

@@ -106,11 +106,6 @@ name|GimpCurvesConfig
 modifier|*
 name|config
 decl_stmt|;
-DECL|member|lut
-name|GimpLut
-modifier|*
-name|lut
-decl_stmt|;
 comment|/* dialog */
 DECL|member|picked_color
 name|gdouble
