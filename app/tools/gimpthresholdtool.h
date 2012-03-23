@@ -117,11 +117,6 @@ name|GimpThresholdConfig
 modifier|*
 name|config
 decl_stmt|;
-DECL|member|threshold
-name|Threshold
-modifier|*
-name|threshold
-decl_stmt|;
 comment|/*  dialog  */
 DECL|member|histogram
 name|GimpHistogram

@@ -169,15 +169,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|Threshold
-typedef|typedef
-name|struct
-name|_Threshold
-name|Threshold
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|PixelRegionIterator
 typedef|typedef
 name|struct
