@@ -104,9 +104,9 @@ decl_stmt|;
 name|PixelRegion
 name|srcPR
 decl_stmt|;
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|temp_tiles
+name|temp_buffer
 decl_stmt|;
 name|guchar
 name|col
@@ -162,7 +162,7 @@ argument_list|,
 name|height
 argument_list|,
 operator|&
-name|temp_tiles
+name|temp_buffer
 argument_list|)
 expr_stmt|;
 if|if
@@ -236,11 +236,11 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|temp_tiles
+name|temp_buffer
 condition|)
-name|tile_manager_unref
+name|g_object_unref
 argument_list|(
-name|temp_tiles
+name|temp_buffer
 argument_list|)
 expr_stmt|;
 block|}

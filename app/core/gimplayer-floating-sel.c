@@ -1502,6 +1502,14 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
+name|combine_x
+operator|-
+name|dr_off_x
+argument_list|,
+name|combine_y
+operator|-
+name|dr_off_y
+argument_list|,
 name|NULL
 argument_list|,
 name|combine_x

@@ -398,6 +398,10 @@ name|GIMP_REPLACE_MODE
 argument_list|,
 name|NULL
 argument_list|,
+name|x
+argument_list|,
+name|y
+argument_list|,
 name|NULL
 argument_list|,
 name|x
