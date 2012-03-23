@@ -299,7 +299,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_levels_stretch:  * @drawable_ID: The drawable.  *  * Automatically modifies intensity levels in the specified drawable.  *  * This procedure allows intensity levels in the specified drawable to  * be remapped according to a set of guessed parameters. It is  * equivalent to clicking the \"Auto\" button in the Levels tool. This  * procedure is only valid on RGB color and grayscale images. It will  * not operate on indexed drawables.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_levels_stretch:  * @drawable_ID: The drawable.  *  * Automatically modifies intensity levels in the specified drawable.  *  * This procedure allows intensity levels in the specified drawable to  * be remapped according to a set of guessed parameters. It is  * equivalent to clicking the \"Auto\" button in the Levels tool.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function

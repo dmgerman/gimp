@@ -117,11 +117,6 @@ name|GimpLevelsConfig
 modifier|*
 name|config
 decl_stmt|;
-DECL|member|lut
-name|GimpLut
-modifier|*
-name|lut
-decl_stmt|;
 comment|/* dialog */
 DECL|member|histogram
 name|GimpHistogram
