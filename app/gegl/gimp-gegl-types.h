@@ -177,6 +177,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpOperationNormalMode
+typedef|typedef
+name|struct
+name|_GimpOperationNormalMode
+name|GimpOperationNormalMode
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationDissolveMode
 typedef|typedef
 name|struct

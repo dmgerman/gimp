@@ -223,7 +223,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290c5c030103
+DECL|enum|__anon28dcf9fa0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -466,6 +466,8 @@ argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|,
 name|GIMP_PARAM_READWRITE
+operator||
+name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -594,7 +596,7 @@ name|self
 operator|->
 name|premultiplied
 operator|=
-name|g_value_get_enum
+name|g_value_get_boolean
 argument_list|(
 name|value
 argument_list|)

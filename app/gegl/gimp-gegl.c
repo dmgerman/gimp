@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpoperationnormalmode.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpoperationdissolvemode.h"
 end_include
 
@@ -519,6 +525,11 @@ expr_stmt|;
 name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_OPERATION_POINT_LAYER_MODE
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref
