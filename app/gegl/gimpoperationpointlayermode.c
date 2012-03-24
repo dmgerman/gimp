@@ -223,7 +223,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2907da360103
+DECL|enum|__anon293d8a9b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -648,6 +648,7 @@ modifier|*
 name|operation
 parameter_list|)
 block|{
+specifier|const
 name|Babl
 modifier|*
 name|format
@@ -729,6 +730,7 @@ index|[
 literal|3
 index|]
 decl_stmt|;
+specifier|const
 name|Babl
 modifier|*
 name|ragabaa_to_lchab
@@ -746,6 +748,7 @@ literal|"CIE LCH(ab) float"
 argument_list|)
 argument_list|)
 decl_stmt|;
+specifier|const
 name|Babl
 modifier|*
 name|lchab_to_ragabaa

@@ -119,6 +119,7 @@ name|gboolean
 name|fill_plain_color
 decl_stmt|;
 DECL|member|format_coords
+specifier|const
 name|Babl
 modifier|*
 name|format_coords

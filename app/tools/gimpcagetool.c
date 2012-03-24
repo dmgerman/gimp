@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3f133c0103
+DECL|enum|__anon2a5392310103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -4280,6 +4280,7 @@ name|GimpProgress
 modifier|*
 name|progress
 decl_stmt|;
+specifier|const
 name|Babl
 modifier|*
 name|format

@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a35a7190103
+DECL|enum|__anon2c0b868b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -241,6 +241,7 @@ name|gfloat
 modifier|*
 name|coef
 parameter_list|,
+specifier|const
 name|Babl
 modifier|*
 name|format_coef
@@ -905,6 +906,7 @@ name|gfloat
 modifier|*
 name|coef
 decl_stmt|;
+specifier|const
 name|Babl
 modifier|*
 name|format_coef
@@ -2619,7 +2621,7 @@ end_function
 begin_function
 specifier|static
 name|GimpVector2
-DECL|function|gimp_cage_transform_compute_destination (GimpCageConfig * config,gfloat * coef,Babl * format_coef,GeglBuffer * coef_buf,GimpVector2 coords)
+DECL|function|gimp_cage_transform_compute_destination (GimpCageConfig * config,gfloat * coef,const Babl * format_coef,GeglBuffer * coef_buf,GimpVector2 coords)
 name|gimp_cage_transform_compute_destination
 parameter_list|(
 name|GimpCageConfig
@@ -2630,6 +2632,7 @@ name|gfloat
 modifier|*
 name|coef
 parameter_list|,
+specifier|const
 name|Babl
 modifier|*
 name|format_coef
