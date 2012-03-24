@@ -132,6 +132,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpOperationEqualize
+typedef|typedef
+name|struct
+name|_GimpOperationEqualize
+name|GimpOperationEqualize
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationHueSaturation
 typedef|typedef
 name|struct
