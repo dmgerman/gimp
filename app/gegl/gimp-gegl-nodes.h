@@ -38,15 +38,14 @@ name|GeglBuffer
 modifier|*
 name|mask
 parameter_list|,
-name|gdouble
-name|opacity
-parameter_list|,
-comment|/* offsets *into* the mask */
 name|gint
 name|mask_offset_x
 parameter_list|,
 name|gint
 name|mask_offset_y
+parameter_list|,
+name|gdouble
+name|opacity
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad7f5120103
+DECL|enum|__anon28b7b4f00103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -234,7 +234,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad7f5120203
+DECL|enum|__anon28b7b4f00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6510,11 +6510,11 @@ name|gimp_gegl_create_apply_opacity_node
 argument_list|(
 name|mask_buffer
 argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 literal|1.0
-argument_list|,
-literal|0
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_apply_operation_to_buffer

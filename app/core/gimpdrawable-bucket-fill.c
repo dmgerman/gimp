@@ -944,11 +944,13 @@ name|gimp_gegl_create_apply_opacity_node
 argument_list|(
 name|mask_buffer
 argument_list|,
-literal|1.0
-argument_list|,
+operator|-
 name|mask_offset_x
 argument_list|,
+operator|-
 name|mask_offset_y
+argument_list|,
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|gimp_apply_operation

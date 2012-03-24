@@ -185,22 +185,21 @@ end_function
 begin_function
 name|GeglNode
 modifier|*
-DECL|function|gimp_gegl_create_apply_opacity_node (GeglBuffer * mask,gdouble opacity,gint mask_offset_x,gint mask_offset_y)
+DECL|function|gimp_gegl_create_apply_opacity_node (GeglBuffer * mask,gint mask_offset_x,gint mask_offset_y,gdouble opacity)
 name|gimp_gegl_create_apply_opacity_node
 parameter_list|(
 name|GeglBuffer
 modifier|*
 name|mask
 parameter_list|,
-name|gdouble
-name|opacity
-parameter_list|,
-comment|/* offsets *into* the mask */
 name|gint
 name|mask_offset_x
 parameter_list|,
 name|gint
 name|mask_offset_y
+parameter_list|,
+name|gdouble
+name|opacity
 parameter_list|)
 block|{
 name|GeglNode
@@ -281,10 +280,8 @@ name|node
 argument_list|,
 name|mask
 argument_list|,
-operator|-
 name|mask_offset_x
 argument_list|,
-operator|-
 name|mask_offset_y
 argument_list|)
 expr_stmt|;
