@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/gimphistogram.h"
+file|"core/gimphistogram.h"
 end_include
 
 begin_include
@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297ffef80103
+DECL|enum|__anon29d672250103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297ffef80203
+DECL|enum|__anon29d672250203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

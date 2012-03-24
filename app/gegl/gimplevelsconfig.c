@@ -66,13 +66,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/gimphistogram.h"
+file|"core/gimpcurve.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpcurve.h"
+file|"core/gimphistogram.h"
 end_include
 
 begin_include
@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acc698f0103
+DECL|enum|__anon2bbf6d9e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

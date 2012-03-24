@@ -750,6 +750,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpHistogram
+typedef|typedef
+name|struct
+name|_GimpHistogram
+name|GimpHistogram
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpIdTable
 typedef|typedef
 name|struct

@@ -28,12 +28,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/gimphistogram.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpdrawable-color-balance.h"
 end_include
 
@@ -71,6 +65,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpdrawable.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimphistogram.h"
 end_include
 
 begin_include

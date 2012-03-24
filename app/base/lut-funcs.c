@@ -24,13 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base-types.h"
+file|"core/core-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimphistogram.h"
+file|"core/gimphistogram.h"
 end_include
 
 begin_include
@@ -52,7 +52,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c27be230108
+DECL|struct|__anon295755e60108
 block|{
 DECL|member|histogram
 name|GimpHistogram

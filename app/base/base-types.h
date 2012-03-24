@@ -133,15 +133,6 @@ comment|/* types */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpHistogram
-typedef|typedef
-name|struct
-name|_GimpHistogram
-name|GimpHistogram
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpLut
 typedef|typedef
 name|struct

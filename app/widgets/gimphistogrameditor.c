@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/gimphistogram.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
 end_include
 
@@ -55,6 +49,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpdrawable-histogram.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimphistogram.h"
 end_include
 
 begin_include

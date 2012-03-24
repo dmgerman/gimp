@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/gimphistogram.h"
+file|"core/gimphistogram.h"
 end_include
 
 begin_include
