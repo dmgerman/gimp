@@ -118,6 +118,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_gegl_node_set_layer_mode
+parameter_list|(
+name|GeglNode
+modifier|*
+name|node
+parameter_list|,
+name|GimpLayerModeEffects
+name|mode
+parameter_list|,
+name|gboolean
+name|premultiplied
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
