@@ -114,6 +114,10 @@ DECL|member|blend_mode
 name|GimpLayerModeEffects
 name|blend_mode
 decl_stmt|;
+DECL|member|premultiplied
+name|gboolean
+name|premultiplied
+decl_stmt|;
 block|}
 struct|;
 end_struct
