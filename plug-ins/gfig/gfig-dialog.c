@@ -437,7 +437,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b445bcf0108
+DECL|struct|__anon2ba6c2b40108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -8775,13 +8775,6 @@ operator|->
 name|fill_type
 operator|=
 name|saved_filltype
-expr_stmt|;
-name|gimp_selection_none
-argument_list|(
-name|gfig_context
-operator|->
-name|image_id
-argument_list|)
 expr_stmt|;
 block|}
 name|objs
