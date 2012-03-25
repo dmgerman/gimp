@@ -33,6 +33,15 @@ comment|/*  operations  */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpOperationBorder
+typedef|typedef
+name|struct
+name|_GimpOperationBorder
+name|GimpOperationBorder
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationCageCoefCalc
 typedef|typedef
 name|struct

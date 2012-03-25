@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpoperationborder.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpoperationcagecoefcalc.h"
 end_include
 
@@ -478,6 +484,11 @@ literal|"A"
 argument_list|)
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_BORDER
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref
