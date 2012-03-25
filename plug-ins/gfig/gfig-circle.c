@@ -480,6 +480,16 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gfig_context_get_current_style
+argument_list|()
+operator|->
+name|fill_type
+operator|!=
+name|FILL_NONE
+condition|)
+block|{
 name|gimp_context_push
 argument_list|()
 expr_stmt|;
@@ -584,6 +594,7 @@ operator|->
 name|image_id
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* Drawing a circle may be harder than stroking a circular selection,    * but we have to do it or we will not be able to draw outside of the    * layer. */
 if|if
 condition|(
