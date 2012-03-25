@@ -919,22 +919,6 @@ end_comment
 
 begin_function_decl
 name|void
-name|color_region
-parameter_list|(
-name|PixelRegion
-modifier|*
-name|dest
-parameter_list|,
-specifier|const
-name|guchar
-modifier|*
-name|color
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|blend_region
 parameter_list|(
 name|PixelRegion
