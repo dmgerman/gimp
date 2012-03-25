@@ -33,24 +33,6 @@ comment|/*  operations  */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpOperationTileSink
-typedef|typedef
-name|struct
-name|_GimpOperationTileSink
-name|GimpOperationTileSink
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpOperationTileSource
-typedef|typedef
-name|struct
-name|_GimpOperationTileSource
-name|GimpOperationTileSource
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpOperationCageCoefCalc
 typedef|typedef
 name|struct
@@ -69,11 +51,29 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpOperationEqualize
+typedef|typedef
+name|struct
+name|_GimpOperationEqualize
+name|GimpOperationEqualize
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationSetAlpha
 typedef|typedef
 name|struct
 name|_GimpOperationSetAlpha
 name|GimpOperationSetAlpha
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpOperationShrink
+typedef|typedef
+name|struct
+name|_GimpOperationShrink
+name|GimpOperationShrink
 typedef|;
 end_typedef
 
@@ -128,15 +128,6 @@ typedef|typedef
 name|struct
 name|_GimpOperationDesaturate
 name|GimpOperationDesaturate
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpOperationEqualize
-typedef|typedef
-name|struct
-name|_GimpOperationEqualize
-name|GimpOperationEqualize
 typedef|;
 end_typedef
 

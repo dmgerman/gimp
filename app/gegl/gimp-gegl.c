@@ -60,7 +60,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpoperationequalize.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpoperationsetalpha.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpoperationshrink.h"
 end_include
 
 begin_include
@@ -91,12 +103,6 @@ begin_include
 include|#
 directive|include
 file|"gimpoperationdesaturate.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpoperationequalize.h"
 end_include
 
 begin_include
@@ -480,7 +486,17 @@ argument_list|)
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
+name|GIMP_TYPE_OPERATION_EQUALIZE
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
 name|GIMP_TYPE_OPERATION_SET_ALPHA
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_SHRINK
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref
@@ -506,11 +522,6 @@ expr_stmt|;
 name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_OPERATION_DESATURATE
-argument_list|)
-expr_stmt|;
-name|g_type_class_ref
-argument_list|(
-name|GIMP_TYPE_OPERATION_EQUALIZE
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref

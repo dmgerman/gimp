@@ -640,7 +640,7 @@ name|gegl_node_new_child
 argument_list|(
 name|node
 argument_list|,
-name|NULL
+literal|"gegl:nop"
 argument_list|,
 name|NULL
 argument_list|)
