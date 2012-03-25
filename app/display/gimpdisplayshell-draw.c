@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/tile-manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -67,6 +61,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimppickable.h"
 end_include
 
 begin_include
@@ -227,9 +227,9 @@ name|GimpProjection
 modifier|*
 name|proj
 decl_stmt|;
-name|TileManager
+name|GeglBuffer
 modifier|*
-name|tiles
+name|buffer
 decl_stmt|;
 name|gdouble
 name|scale_x
@@ -282,15 +282,14 @@ operator|&
 name|scale_y
 argument_list|)
 expr_stmt|;
-name|tiles
+name|buffer
 operator|=
-name|gimp_projection_get_tiles_at_level
+name|gimp_pickable_get_buffer
+argument_list|(
+name|GIMP_PICKABLE
 argument_list|(
 name|proj
-argument_list|,
-literal|0
-argument_list|,
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -302,9 +301,9 @@ name|w
 operator|=
 name|scale_x
 operator|*
-name|tile_manager_width
+name|gegl_buffer_get_width
 argument_list|(
-name|tiles
+name|buffer
 argument_list|)
 expr_stmt|;
 if|if
@@ -316,9 +315,9 @@ name|h
 operator|=
 name|scale_y
 operator|*
-name|tile_manager_height
+name|gegl_buffer_get_height
 argument_list|(
-name|tiles
+name|buffer
 argument_list|)
 expr_stmt|;
 block|}
