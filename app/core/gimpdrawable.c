@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/tile.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"base/tile-manager.h"
 end_include
 
@@ -229,7 +223,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294fc64a0103
+DECL|enum|__anon2be4f30d0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
