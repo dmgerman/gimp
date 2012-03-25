@@ -215,7 +215,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a28b09c0103
+DECL|enum|__anon297efb410103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -2334,8 +2334,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|flatten
-argument_list|,
-name|TRUE
 argument_list|,
 name|new_buffer
 argument_list|)
@@ -5734,8 +5732,6 @@ name|NULL
 argument_list|,
 name|node
 argument_list|,
-name|TRUE
-argument_list|,
 name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
@@ -5859,8 +5855,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|node
-argument_list|,
-name|TRUE
 argument_list|,
 name|gimp_drawable_get_buffer
 argument_list|(
@@ -6355,8 +6349,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|node
-argument_list|,
-name|TRUE
 argument_list|,
 name|gimp_drawable_get_buffer
 argument_list|(
@@ -7239,8 +7231,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|shrink
-argument_list|,
-name|TRUE
 argument_list|,
 name|gimp_drawable_get_buffer
 argument_list|(

@@ -1512,8 +1512,6 @@ name|NULL
 argument_list|,
 name|apply_opacity
 argument_list|,
-literal|1.0
-argument_list|,
 name|base_buffer
 argument_list|,
 name|NULL

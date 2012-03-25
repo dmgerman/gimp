@@ -37,9 +37,6 @@ name|GeglNode
 modifier|*
 name|operation
 parameter_list|,
-name|gboolean
-name|linear
-parameter_list|,
 name|GeglBuffer
 modifier|*
 name|dest_buffer

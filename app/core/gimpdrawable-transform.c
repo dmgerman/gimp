@@ -678,8 +678,6 @@ name|NULL
 argument_list|,
 name|affine
 argument_list|,
-name|TRUE
-argument_list|,
 name|new_buffer
 argument_list|,
 name|NULL

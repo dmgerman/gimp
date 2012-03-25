@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0a82e60103
+DECL|enum|__anon28bddbf60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -896,6 +896,26 @@ argument_list|(
 name|operation
 argument_list|)
 decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|input_format
+init|=
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
+decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|output_format
+init|=
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
+decl_stmt|;
 comment|/*      pretty much the same as fatten_region only different      blame all bugs in this function on jaycox@gimp.org   */
 comment|/* If edge_lock is true  we assume that pixels outside the region      we are passed are identical to the edge pixels.      If edge_lock is false, we assume that pixels outside the region are 0   */
 name|gint32
@@ -941,6 +961,27 @@ decl_stmt|;
 name|gint
 name|buffer_size
 decl_stmt|;
+name|g_printerr
+argument_list|(
+literal|"roi: %d %d %d %d\n"
+argument_list|,
+name|roi
+operator|->
+name|x
+argument_list|,
+name|roi
+operator|->
+name|y
+argument_list|,
+name|roi
+operator|->
+name|width
+argument_list|,
+name|roi
+operator|->
+name|height
+argument_list|)
+expr_stmt|;
 name|max
 operator|=
 name|g_new
@@ -1376,7 +1417,7 @@ argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
-name|NULL
+name|input_format
 argument_list|,
 name|buf
 index|[
@@ -1574,7 +1615,7 @@ argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
-name|NULL
+name|input_format
 argument_list|,
 name|buf
 index|[
@@ -1971,7 +2012,7 @@ argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
-name|NULL
+name|output_format
 argument_list|,
 name|out
 argument_list|,

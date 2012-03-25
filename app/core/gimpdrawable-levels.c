@@ -230,8 +230,6 @@ literal|"Levels"
 argument_list|)
 argument_list|,
 name|levels
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref

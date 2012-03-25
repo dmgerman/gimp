@@ -963,8 +963,6 @@ name|NULL
 argument_list|,
 name|apply_opacity
 argument_list|,
-name|TRUE
-argument_list|,
 name|buffer
 argument_list|,
 name|NULL

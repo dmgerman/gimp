@@ -69,7 +69,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_apply_operation (GimpDrawable * drawable,GimpProgress * progress,const gchar * undo_desc,GeglNode * operation,gboolean linear)
+DECL|function|gimp_drawable_apply_operation (GimpDrawable * drawable,GimpProgress * progress,const gchar * undo_desc,GeglNode * operation)
 name|gimp_drawable_apply_operation
 parameter_list|(
 name|GimpDrawable
@@ -88,9 +88,6 @@ parameter_list|,
 name|GeglNode
 modifier|*
 name|operation
-parameter_list|,
-name|gboolean
-name|linear
 parameter_list|)
 block|{
 name|GeglBuffer
@@ -198,8 +195,6 @@ name|undo_desc
 argument_list|,
 name|operation
 argument_list|,
-name|linear
-argument_list|,
 name|dest_buffer
 argument_list|,
 operator|&
@@ -255,7 +250,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_apply_operation_by_name (GimpDrawable * drawable,GimpProgress * progress,const gchar * undo_desc,const gchar * operation_type,GObject * config,gboolean linear)
+DECL|function|gimp_drawable_apply_operation_by_name (GimpDrawable * drawable,GimpProgress * progress,const gchar * undo_desc,const gchar * operation_type,GObject * config)
 name|gimp_drawable_apply_operation_by_name
 parameter_list|(
 name|GimpDrawable
@@ -279,9 +274,6 @@ parameter_list|,
 name|GObject
 modifier|*
 name|config
-parameter_list|,
-name|gboolean
-name|linear
 parameter_list|)
 block|{
 name|GeglNode
@@ -382,8 +374,6 @@ argument_list|,
 name|undo_desc
 argument_list|,
 name|node
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -396,7 +386,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_apply_operation_to_buffer (GimpDrawable * drawable,GimpProgress * progress,const gchar * undo_desc,GeglNode * operation,gboolean linear,GeglBuffer * dest_buffer)
+DECL|function|gimp_drawable_apply_operation_to_buffer (GimpDrawable * drawable,GimpProgress * progress,const gchar * undo_desc,GeglNode * operation,GeglBuffer * dest_buffer)
 name|gimp_drawable_apply_operation_to_buffer
 parameter_list|(
 name|GimpDrawable
@@ -415,9 +405,6 @@ parameter_list|,
 name|GeglNode
 modifier|*
 name|operation
-parameter_list|,
-name|gboolean
-name|linear
 parameter_list|,
 name|GeglBuffer
 modifier|*
@@ -483,8 +470,6 @@ argument_list|,
 name|undo_desc
 argument_list|,
 name|operation
-argument_list|,
-name|linear
 argument_list|,
 name|dest_buffer
 argument_list|,

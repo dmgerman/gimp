@@ -41,7 +41,7 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_apply_operation (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglNode * operation,gboolean linear,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect)
+DECL|function|gimp_apply_operation (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglNode * operation,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect)
 name|gimp_apply_operation
 parameter_list|(
 name|GeglBuffer
@@ -60,9 +60,6 @@ parameter_list|,
 name|GeglNode
 modifier|*
 name|operation
-parameter_list|,
-name|gboolean
-name|linear
 parameter_list|,
 name|GeglBuffer
 modifier|*

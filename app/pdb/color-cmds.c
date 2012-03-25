@@ -312,8 +312,6 @@ argument_list|,
 literal|"gimp:brightness-contrast"
 argument_list|,
 name|config
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -625,8 +623,6 @@ argument_list|,
 literal|"gimp:levels"
 argument_list|,
 name|config
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1038,8 +1034,6 @@ argument_list|,
 literal|"gimp:posterize"
 argument_list|,
 name|config
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1196,8 +1190,6 @@ argument_list|,
 literal|"gimp:desaturate"
 argument_list|,
 name|config
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1370,8 +1362,6 @@ argument_list|,
 literal|"gimp:desaturate"
 argument_list|,
 name|config
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1660,8 +1650,6 @@ argument_list|,
 literal|"gegl:invert"
 argument_list|,
 name|NULL
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1892,8 +1880,6 @@ argument_list|,
 literal|"gimp:curves"
 argument_list|,
 name|config
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -2128,8 +2114,6 @@ argument_list|,
 literal|"gimp:curves"
 argument_list|,
 name|config
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -2571,8 +2555,6 @@ argument_list|,
 literal|"gimp:colorize"
 argument_list|,
 name|config
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -3367,8 +3349,6 @@ argument_list|,
 literal|"gimp:threshold"
 argument_list|,
 name|config
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref

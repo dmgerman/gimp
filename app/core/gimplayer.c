@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d8c89a0103
+DECL|enum|__anon2a545f060103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -234,7 +234,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d8c89a0203
+DECL|enum|__anon2a545f060203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5591,8 +5591,6 @@ name|NULL
 argument_list|,
 name|set_alpha
 argument_list|,
-name|TRUE
-argument_list|,
 name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
@@ -5999,8 +5997,6 @@ name|NULL
 argument_list|,
 name|flatten
 argument_list|,
-name|TRUE
-argument_list|,
 name|dest_buffer
 argument_list|,
 name|NULL
@@ -6371,8 +6367,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|apply_opacity
-argument_list|,
-name|TRUE
 argument_list|,
 name|dest_buffer
 argument_list|)
@@ -7395,8 +7389,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|flatten
-argument_list|,
-name|TRUE
 argument_list|,
 name|new_buffer
 argument_list|)

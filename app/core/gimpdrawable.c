@@ -229,7 +229,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c679900103
+DECL|enum|__anon294fc64a0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2139,8 +2139,6 @@ literal|"Scale"
 argument_list|)
 argument_list|,
 name|scale
-argument_list|,
-name|TRUE
 argument_list|,
 name|new_buffer
 argument_list|)

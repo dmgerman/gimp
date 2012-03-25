@@ -36,9 +36,6 @@ parameter_list|,
 name|GeglNode
 modifier|*
 name|operation
-parameter_list|,
-name|gboolean
-name|linear
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -68,9 +65,6 @@ parameter_list|,
 name|GObject
 modifier|*
 name|config
-parameter_list|,
-name|gboolean
-name|linear
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -95,9 +89,6 @@ parameter_list|,
 name|GeglNode
 modifier|*
 name|operation
-parameter_list|,
-name|gboolean
-name|linear
 parameter_list|,
 name|GeglBuffer
 modifier|*

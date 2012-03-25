@@ -235,8 +235,6 @@ literal|"Hue-Saturation"
 argument_list|)
 argument_list|,
 name|node
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
