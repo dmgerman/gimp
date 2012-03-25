@@ -49,6 +49,9 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|result
+parameter_list|,
+name|gint
+name|level
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -81,6 +84,9 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|roi
+parameter_list|,
+name|gint
+name|level
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -180,7 +186,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_normal_parent_process (GeglOperation * operation,GeglOperationContext * context,const gchar * output_prop,const GeglRectangle * result)
+DECL|function|gimp_operation_normal_parent_process (GeglOperation * operation,GeglOperationContext * context,const gchar * output_prop,const GeglRectangle * result,gint level)
 name|gimp_operation_normal_parent_process
 parameter_list|(
 name|GeglOperation
@@ -200,6 +206,9 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|result
+parameter_list|,
+name|gint
+name|level
 parameter_list|)
 block|{
 specifier|const
@@ -354,6 +363,8 @@ argument_list|,
 name|output_prop
 argument_list|,
 name|result
+argument_list|,
+name|level
 argument_list|)
 return|;
 block|}
@@ -362,7 +373,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_normal_mode_process (GeglOperation * operation,void * in_buf,void * aux_buf,void * out_buf,glong samples,const GeglRectangle * roi)
+DECL|function|gimp_operation_normal_mode_process (GeglOperation * operation,void * in_buf,void * aux_buf,void * out_buf,glong samples,const GeglRectangle * roi,gint level)
 name|gimp_operation_normal_mode_process
 parameter_list|(
 name|GeglOperation
@@ -388,6 +399,9 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|roi
+parameter_list|,
+name|gint
+name|level
 parameter_list|)
 block|{
 name|GimpOperationPointLayerMode

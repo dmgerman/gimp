@@ -2419,10 +2419,10 @@ name|gegl_buffer_get
 argument_list|(
 name|orig_buffer
 argument_list|,
-literal|1.0
-argument_list|,
 operator|&
 name|src_rect
+argument_list|,
+literal|1.0
 argument_list|,
 name|NULL
 argument_list|,
@@ -2437,6 +2437,8 @@ name|new_buffer
 argument_list|,
 operator|&
 name|dest_rect
+argument_list|,
+literal|0
 argument_list|,
 name|NULL
 argument_list|,
@@ -2550,10 +2552,10 @@ name|gegl_buffer_get
 argument_list|(
 name|orig_buffer
 argument_list|,
-literal|1.0
-argument_list|,
 operator|&
 name|src_rect
+argument_list|,
+literal|1.0
 argument_list|,
 name|NULL
 argument_list|,
@@ -2651,6 +2653,8 @@ name|new_buffer
 argument_list|,
 operator|&
 name|dest_rect
+argument_list|,
+literal|0
 argument_list|,
 name|NULL
 argument_list|,
@@ -2760,10 +2764,10 @@ name|gegl_buffer_get
 argument_list|(
 name|orig_buffer
 argument_list|,
-literal|1.0
-argument_list|,
 operator|&
 name|src_rect
+argument_list|,
+literal|1.0
 argument_list|,
 name|NULL
 argument_list|,
@@ -2778,6 +2782,8 @@ name|new_buffer
 argument_list|,
 operator|&
 name|dest_rect
+argument_list|,
+literal|0
 argument_list|,
 name|NULL
 argument_list|,

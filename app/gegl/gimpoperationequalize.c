@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0dc8aa0103
+DECL|enum|__anon289316ef0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -147,6 +147,9 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|roi
+parameter_list|,
+name|gint
+name|level
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -712,7 +715,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_equalize_process (GeglOperation * operation,void * in_buf,void * out_buf,glong samples,const GeglRectangle * roi)
+DECL|function|gimp_operation_equalize_process (GeglOperation * operation,void * in_buf,void * out_buf,glong samples,const GeglRectangle * roi,gint level)
 name|gimp_operation_equalize_process
 parameter_list|(
 name|GeglOperation
@@ -734,6 +737,9 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|roi
+parameter_list|,
+name|gint
+name|level
 parameter_list|)
 block|{
 name|GimpOperationEqualize

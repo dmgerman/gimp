@@ -2940,10 +2940,10 @@ name|gegl_buffer_get
 argument_list|(
 name|buffer
 argument_list|,
-literal|1.0
-argument_list|,
 operator|&
 name|line_rect
+argument_list|,
+literal|1.0
 argument_list|,
 name|format
 argument_list|,
@@ -3026,10 +3026,10 @@ name|gegl_buffer_get
 argument_list|(
 name|buffer
 argument_list|,
-literal|1.0
-argument_list|,
 operator|&
 name|line_rect
+argument_list|,
+literal|1.0
 argument_list|,
 name|format
 argument_list|,

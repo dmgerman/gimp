@@ -742,6 +742,8 @@ name|buffer
 operator|->
 name|buffer
 argument_list|,
+name|NULL
+argument_list|,
 name|MIN
 argument_list|(
 operator|(
@@ -770,8 +772,6 @@ argument_list|(
 name|buffer
 argument_list|)
 argument_list|)
-argument_list|,
-name|NULL
 argument_list|,
 name|gimp_bpp_to_babl_format
 argument_list|(

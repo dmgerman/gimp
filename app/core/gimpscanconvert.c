@@ -1401,6 +1401,8 @@ argument_list|,
 name|format
 argument_list|,
 name|GEGL_BUFFER_WRITE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|roi

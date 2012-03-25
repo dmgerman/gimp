@@ -896,6 +896,8 @@ literal|"Y u8"
 argument_list|)
 argument_list|,
 name|GEGL_BUFFER_READWRITE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|roi
@@ -1916,6 +1918,8 @@ literal|"Y u8"
 argument_list|)
 argument_list|,
 name|GEGL_BUFFER_READWRITE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|rect

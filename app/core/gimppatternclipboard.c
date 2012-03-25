@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7f52930103
+DECL|enum|__anon2a06d2120103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -674,8 +674,6 @@ argument_list|(
 name|buffer
 argument_list|)
 argument_list|,
-literal|1.0
-argument_list|,
 name|GIMP_GEGL_RECT
 argument_list|(
 literal|0
@@ -686,6 +684,8 @@ name|width
 argument_list|,
 name|height
 argument_list|)
+argument_list|,
+literal|1.0
 argument_list|,
 name|gimp_bpp_to_babl_format
 argument_list|(
