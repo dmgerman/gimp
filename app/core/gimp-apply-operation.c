@@ -172,18 +172,6 @@ operator|=
 name|gegl_node_new
 argument_list|()
 expr_stmt|;
-comment|/* Disable caching on all children of the node unless explicitly re-enabled.    */
-name|g_object_set
-argument_list|(
-name|gegl
-argument_list|,
-literal|"dont-cache"
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|src_node
 operator|=
 name|gegl_node_new_child
