@@ -1063,23 +1063,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|fatten_region
-parameter_list|(
-name|PixelRegion
-modifier|*
-name|region
-parameter_list|,
-name|gint16
-name|xradius
-parameter_list|,
-name|gint16
-name|yradius
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|smooth_region
 parameter_list|(
 name|PixelRegion
