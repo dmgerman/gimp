@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint-funcs/paint-funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint/gimppaintcore-stroke.h"
 end_include
 
@@ -197,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f23fe80103
+DECL|enum|__anon28ef68a10103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
