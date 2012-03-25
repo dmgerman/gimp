@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c35c2d40103
+DECL|enum|__anon2b66988c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -173,6 +173,9 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|result
+parameter_list|,
+name|gint
+name|level
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -698,7 +701,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_tile_source_process (GeglOperation * operation,GeglBuffer * output,const GeglRectangle * result)
+DECL|function|gimp_operation_tile_source_process (GeglOperation * operation,GeglBuffer * output,const GeglRectangle * result,gint level)
 name|gimp_operation_tile_source_process
 parameter_list|(
 name|GeglOperation
@@ -713,6 +716,9 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|result
+parameter_list|,
+name|gint
+name|level
 parameter_list|)
 block|{
 name|GimpOperationTileSource
@@ -838,6 +844,8 @@ name|output
 argument_list|,
 operator|&
 name|rect
+argument_list|,
+literal|0
 argument_list|,
 name|format
 argument_list|,

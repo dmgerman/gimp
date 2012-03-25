@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0b868b0103
+DECL|enum|__anon2b3cd76f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -178,6 +178,9 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|roi
+parameter_list|,
+name|gint
+name|level
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -850,7 +853,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_cage_transform_process (GeglOperation * operation,GeglBuffer * in_buf,GeglBuffer * aux_buf,GeglBuffer * out_buf,const GeglRectangle * roi)
+DECL|function|gimp_operation_cage_transform_process (GeglOperation * operation,GeglBuffer * in_buf,GeglBuffer * aux_buf,GeglBuffer * out_buf,const GeglRectangle * roi,gint level)
 name|gimp_operation_cage_transform_process
 parameter_list|(
 name|GeglOperation
@@ -873,6 +876,9 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|roi
+parameter_list|,
+name|gint
+name|level
 parameter_list|)
 block|{
 name|GimpOperationCageTransform
@@ -945,6 +951,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|GEGL_BUFFER_WRITE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|cage_bb
@@ -2285,6 +2293,8 @@ argument_list|,
 operator|&
 name|rect
 argument_list|,
+literal|0
+argument_list|,
 name|oct
 operator|->
 name|format_coords
@@ -2731,10 +2741,10 @@ name|gegl_buffer_get
 argument_list|(
 name|coef_buf
 argument_list|,
-literal|1
-argument_list|,
 operator|&
 name|rect
+argument_list|,
+literal|1.0
 argument_list|,
 name|format_coef
 argument_list|,

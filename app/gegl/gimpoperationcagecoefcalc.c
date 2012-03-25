@@ -151,6 +151,9 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|roi
+parameter_list|,
+name|gint
+name|level
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -736,7 +739,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_cage_coef_calc_process (GeglOperation * operation,GeglBuffer * output,const GeglRectangle * roi)
+DECL|function|gimp_operation_cage_coef_calc_process (GeglOperation * operation,GeglBuffer * output,const GeglRectangle * roi,gint level)
 name|gimp_operation_cage_coef_calc_process
 parameter_list|(
 name|GeglOperation
@@ -751,6 +754,9 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|roi
+parameter_list|,
+name|gint
+name|level
 parameter_list|)
 block|{
 name|GimpOperationCageCoefCalc
@@ -773,6 +779,7 @@ operator|->
 name|config
 argument_list|)
 decl_stmt|;
+specifier|const
 name|Babl
 modifier|*
 name|format
@@ -832,6 +839,8 @@ argument_list|,
 name|format
 argument_list|,
 name|GEGL_BUFFER_READWRITE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 while|while
