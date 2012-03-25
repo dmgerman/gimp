@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bddbf60103
+DECL|enum|__anon2afbe7900103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -887,6 +887,7 @@ name|gint
 name|level
 parameter_list|)
 block|{
+comment|/* pretty much the same as fatten_region only different blame all    * bugs in this function on jaycox@gimp.org    *    * If edge_lock is true we assume that pixels outside the region we    * are passed are identical to the edge pixels.  If edge_lock is    * false, we assume that pixels outside the region are 0    */
 name|GimpOperationShrink
 modifier|*
 name|self
@@ -916,8 +917,6 @@ argument_list|(
 literal|"Y u8"
 argument_list|)
 decl_stmt|;
-comment|/*      pretty much the same as fatten_region only different      blame all bugs in this function on jaycox@gimp.org   */
-comment|/* If edge_lock is true  we assume that pixels outside the region      we are passed are identical to the edge pixels.      If edge_lock is false, we assume that pixels outside the region are 0   */
 name|gint32
 name|i
 decl_stmt|,
@@ -961,27 +960,6 @@ decl_stmt|;
 name|gint
 name|buffer_size
 decl_stmt|;
-name|g_printerr
-argument_list|(
-literal|"roi: %d %d %d %d\n"
-argument_list|,
-name|roi
-operator|->
-name|x
-argument_list|,
-name|roi
-operator|->
-name|y
-argument_list|,
-name|roi
-operator|->
-name|width
-argument_list|,
-name|roi
-operator|->
-name|height
-argument_list|)
-expr_stmt|;
 name|max
 operator|=
 name|g_new
@@ -1317,7 +1295,7 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
-comment|/* offset the max pointer by xradius so the range of the array      is [-xradius] to [region->w + xradius] */
+comment|/* offset the max pointer by self->radius_x so the range of the    * array is [-self->radius_x] to [roi->width + self->radius_x]    */
 name|max
 operator|+=
 name|self
@@ -1363,7 +1341,7 @@ operator|->
 name|radius_y
 argument_list|)
 expr_stmt|;
-comment|/* offset the circ pointer by xradius so the range of the array     is [-xradius] to [xradius] */
+comment|/* offset the circ pointer by self->radius_x so the range of the   * array is [-self->radius_x] to [self->radius_x]   */
 name|circ
 operator|+=
 name|self
