@@ -1002,27 +1002,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gfloat
-name|shapeburst_region
-parameter_list|(
-name|PixelRegion
-modifier|*
-name|srcPR
-parameter_list|,
-name|PixelRegion
-modifier|*
-name|distPR
-parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|smooth_region
 parameter_list|(

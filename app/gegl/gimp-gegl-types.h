@@ -87,6 +87,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpOperationShapeburst
+typedef|typedef
+name|struct
+name|_GimpOperationShapeburst
+name|GimpOperationShapeburst
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationShrink
 typedef|typedef
 name|struct

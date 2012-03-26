@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpoperationshapeburst.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpoperationshrink.h"
 end_include
 
@@ -514,6 +520,11 @@ expr_stmt|;
 name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_OPERATION_SET_ALPHA
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_SHAPEBURST
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref
