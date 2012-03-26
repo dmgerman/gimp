@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpimagemaptool.h"
+file|"gimpoperationtool.h"
 end_include
 
 begin_define
@@ -109,34 +109,14 @@ struct|struct
 name|_GimpGeglTool
 block|{
 DECL|member|parent_instance
-name|GimpImageMapTool
+name|GimpOperationTool
 name|parent_instance
-decl_stmt|;
-DECL|member|operation
-name|gchar
-modifier|*
-name|operation
-decl_stmt|;
-DECL|member|config
-name|GimpObject
-modifier|*
-name|config
 decl_stmt|;
 comment|/* dialog */
 DECL|member|operation_combo
 name|GtkWidget
 modifier|*
 name|operation_combo
-decl_stmt|;
-DECL|member|options_frame
-name|GtkWidget
-modifier|*
-name|options_frame
-decl_stmt|;
-DECL|member|options_table
-name|GtkWidget
-modifier|*
-name|options_table
 decl_stmt|;
 block|}
 struct|;
@@ -148,7 +128,7 @@ struct|struct
 name|_GimpGeglToolClass
 block|{
 DECL|member|parent_class
-name|GimpImageMapToolClass
+name|GimpOperationToolClass
 name|parent_class
 decl_stmt|;
 block|}
