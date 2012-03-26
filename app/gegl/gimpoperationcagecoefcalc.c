@@ -836,11 +836,13 @@ name|output
 argument_list|,
 name|roi
 argument_list|,
+literal|0
+argument_list|,
 name|format
 argument_list|,
 name|GEGL_BUFFER_READWRITE
 argument_list|,
-literal|0
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 while|while

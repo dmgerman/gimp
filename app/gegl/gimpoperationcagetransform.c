@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27aa36b50103
+DECL|enum|__anon2ade3dc20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -948,11 +948,13 @@ name|out_buf
 argument_list|,
 name|roi
 argument_list|,
+literal|0
+argument_list|,
 name|NULL
 argument_list|,
 name|GEGL_BUFFER_WRITE
 argument_list|,
-literal|0
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 name|cage_bb
