@@ -890,14 +890,14 @@ argument_list|,
 name|height
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 name|babl_format
 argument_list|(
 literal|"Y u8"
 argument_list|)
 argument_list|,
 name|GEGL_BUFFER_READWRITE
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|roi
@@ -1912,14 +1912,14 @@ argument_list|,
 operator|&
 name|rect
 argument_list|,
+literal|0
+argument_list|,
 name|babl_format
 argument_list|(
 literal|"Y u8"
 argument_list|)
 argument_list|,
 name|GEGL_BUFFER_READWRITE
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|rect
@@ -1942,6 +1942,8 @@ name|add_on_buffer
 argument_list|,
 operator|&
 name|rect
+argument_list|,
+literal|0
 argument_list|,
 name|babl_format
 argument_list|(

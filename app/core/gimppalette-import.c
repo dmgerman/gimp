@@ -1214,11 +1214,11 @@ argument_list|,
 operator|&
 name|rect
 argument_list|,
+literal|0
+argument_list|,
 name|format
 argument_list|,
 name|GEGL_BUFFER_READ
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|roi
@@ -1302,6 +1302,8 @@ name|buffer
 argument_list|,
 operator|&
 name|rect
+argument_list|,
+literal|0
 argument_list|,
 name|gimp_drawable_get_format
 argument_list|(
