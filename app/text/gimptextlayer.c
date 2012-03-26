@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdeacff0103
+DECL|enum|__anon2be040c10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2735,6 +2735,8 @@ argument_list|,
 name|format
 argument_list|,
 name|GEGL_BUFFER_WRITE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 while|while

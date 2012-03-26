@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2772d7040103
+DECL|enum|__anon297f6f190103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -4911,6 +4911,8 @@ literal|"Y u8"
 argument_list|)
 argument_list|,
 name|GEGL_BUFFER_READ
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 name|roi
@@ -5433,6 +5435,8 @@ literal|"Y u8"
 argument_list|)
 argument_list|,
 name|GEGL_BUFFER_READ
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 while|while

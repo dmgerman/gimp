@@ -1219,6 +1219,8 @@ argument_list|,
 name|format
 argument_list|,
 name|GEGL_BUFFER_READ
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 name|roi
@@ -1311,6 +1313,8 @@ name|mask
 argument_list|)
 argument_list|,
 name|GEGL_BUFFER_READ
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 name|mask_roi
