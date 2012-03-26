@@ -260,21 +260,65 @@ name|parent_class
 value|gimp_operation_tool_parent_class
 end_define
 
-begin_if
-if|#
-directive|if
+begin_function
+name|void
+name|gimp_operation_tool_register
+parameter_list|(
+name|GimpToolRegisterCallback
+name|callback
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+call|(
+modifier|*
+name|callback
+call|)
+argument_list|(
+name|GIMP_TYPE_OPERATION_TOOL
+argument_list|,
+name|GIMP_TYPE_IMAGE_MAP_OPTIONS
+argument_list|,
+name|NULL
+argument_list|,
 literal|0
-end_if
-
-begin_endif
-unit|void gimp_operation_tool_register (GimpToolRegisterCallback  callback,                               gpointer                  data) {   (* callback) (GIMP_TYPE_OPERATION_TOOL,                 GIMP_TYPE_IMAGE_MAP_OPTIONS, NULL,                 0,                 "gimp-operation-tool",                 _("GEGL Operation"),                 _("Operation Tool: Use an arbitrary GEGL operation"),                 N_("_GEGL Operation..."), NULL,                 NULL, GIMP_HELP_TOOL_OPERATION,                 GIMP_STOCK_GEGL,                 data); }
-endif|#
-directive|endif
-end_endif
+argument_list|,
+literal|"gimp-operation-tool"
+argument_list|,
+name|_
+argument_list|(
+literal|"GEGL Operation"
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Operation Tool: Use an arbitrary GEGL operation"
+argument_list|)
+argument_list|,
+name|N_
+argument_list|(
+literal|"_GEGL Operation..."
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_HELP_TOOL_GEGL
+argument_list|,
+name|GIMP_STOCK_GEGL
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+block|}
+end_function
 
 begin_function
 specifier|static
 name|void
+DECL|function|gimp_operation_tool_class_init (GimpOperationToolClass * klass)
 name|gimp_operation_tool_class_init
 parameter_list|(
 name|GimpOperationToolClass
@@ -516,7 +560,9 @@ name|config
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return
+if|if
+condition|(
+operator|!
 name|GIMP_TOOL_CLASS
 argument_list|(
 name|parent_class
@@ -530,6 +576,22 @@ name|display
 argument_list|,
 name|error
 argument_list|)
+condition|)
+block|{
+return|return
+name|FALSE
+return|;
+block|}
+name|gimp_image_map_tool_preview
+argument_list|(
+name|GIMP_IMAGE_MAP_TOOL
+argument_list|(
+name|tool
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|TRUE
 return|;
 block|}
 end_function
@@ -603,7 +665,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*****************/
+comment|/**********************/
 end_comment
 
 begin_comment
@@ -611,7 +673,7 @@ comment|/*  Operation dialog  */
 end_comment
 
 begin_comment
-comment|/*****************/
+comment|/**********************/
 end_comment
 
 begin_function
@@ -757,7 +819,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_tool_set_operation (GimpOperationTool * tool,const gchar * operation)
+DECL|function|gimp_operation_tool_set_operation (GimpOperationTool * tool,const gchar * operation,const gchar * label)
 name|gimp_operation_tool_set_operation
 parameter_list|(
 name|GimpOperationTool
@@ -768,6 +830,11 @@ specifier|const
 name|gchar
 modifier|*
 name|operation
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|label
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1013,6 +1080,26 @@ name|options_table
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|label
+condition|)
+name|g_object_set
+argument_list|(
+name|GIMP_IMAGE_MAP_TOOL
+argument_list|(
+name|tool
+argument_list|)
+operator|->
+name|dialog
+argument_list|,
+literal|"description"
+argument_list|,
+name|label
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_image_map_tool_preview
 argument_list|(
 name|GIMP_IMAGE_MAP_TOOL

@@ -270,6 +270,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpoperationtool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpmagnifytool.h"
 end_include
 
@@ -471,6 +477,8 @@ init|=
 block|{
 comment|/*  register tools in reverse order  */
 comment|/*  color tools  */
+name|gimp_operation_tool_register
+block|,
 name|gimp_gegl_tool_register
 block|,
 name|gimp_posterize_tool_register

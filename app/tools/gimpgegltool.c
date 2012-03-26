@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27455ab80103
+DECL|enum|__anon27d879ed0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -1250,6 +1250,8 @@ name|tool
 argument_list|)
 argument_list|,
 name|operation
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_free

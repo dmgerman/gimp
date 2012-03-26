@@ -282,6 +282,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"filters-actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"fonts-actions.h"
 end_include
 
@@ -740,6 +746,21 @@ block|,
 name|file_actions_setup
 block|,
 name|file_actions_update
+block|}
+block|,
+block|{
+literal|"filters"
+block|,
+name|N_
+argument_list|(
+literal|"Filters"
+argument_list|)
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|filters_actions_setup
+block|,
+name|filters_actions_update
 block|}
 block|,
 block|{

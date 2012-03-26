@@ -732,6 +732,15 @@ argument_list|)
 block|,
 name|FOREIGN
 argument_list|(
+literal|"gimp-operation-tool-dialog"
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|)
+block|,
+name|FOREIGN
+argument_list|(
 literal|"gimp-posterize-tool-dialog"
 argument_list|,
 name|TRUE

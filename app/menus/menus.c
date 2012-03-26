@@ -330,6 +330,8 @@ literal|"windows"
 argument_list|,
 literal|"plug-in"
 argument_list|,
+literal|"filters"
+argument_list|,
 literal|"quick-mask"
 argument_list|,
 name|NULL
@@ -391,6 +393,8 @@ literal|"dialogs"
 argument_list|,
 literal|"plug-in"
 argument_list|,
+literal|"filters"
+argument_list|,
 literal|"quick-mask"
 argument_list|,
 name|NULL
@@ -451,6 +455,8 @@ literal|"layers"
 argument_list|,
 literal|"plug-in"
 argument_list|,
+literal|"filters"
+argument_list|,
 name|NULL
 argument_list|,
 literal|"/layers-popup"
@@ -471,6 +477,8 @@ argument_list|,
 literal|"channels"
 argument_list|,
 literal|"plug-in"
+argument_list|,
+literal|"filters"
 argument_list|,
 name|NULL
 argument_list|,

@@ -150,17 +150,18 @@ block|}
 struct|;
 end_struct
 
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_endif
-unit|void    gimp_operation_tool_register (GimpToolRegisterCallback  callback,                                       gpointer                  data);
-endif|#
-directive|endif
-end_endif
+begin_function_decl
+name|void
+name|gimp_operation_tool_register
+parameter_list|(
+name|GimpToolRegisterCallback
+name|callback
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_decl_stmt
 name|GType
@@ -184,6 +185,11 @@ specifier|const
 name|gchar
 modifier|*
 name|operation
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|label
 parameter_list|)
 function_decl|;
 end_function_decl
