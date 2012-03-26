@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpwidgets/gimpwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"actions-types.h"
 end_include
 
@@ -48,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable.h"
+file|"core/gimpcontext.h"
 end_include
 
 begin_include
@@ -60,19 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimptooloptions.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimptoolinfo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/gimpimagemapoptions.h"
 end_include
 
 begin_include
