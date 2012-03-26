@@ -54,24 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/temp-buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"base/tile-manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint-funcs/paint-funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint-funcs/scale-region.h"
 end_include
 
@@ -223,7 +205,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2941f05b0103
+DECL|enum|__anon2c6238e90103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
