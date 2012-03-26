@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a545f060103
+DECL|enum|__anon2b65c7480103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -234,7 +234,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a545f060203
+DECL|enum|__anon2b65c7480203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4322,6 +4322,8 @@ literal|"A u8"
 argument_list|)
 argument_list|,
 name|GEGL_SAMPLER_NEAREST
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 if|if

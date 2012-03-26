@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3acdcf0103
+DECL|enum|__anon275962080103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1528,6 +1528,8 @@ literal|1
 index|]
 argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1571,6 +1573,8 @@ literal|2
 index|]
 argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 else|else
@@ -1705,6 +1709,8 @@ literal|2
 index|]
 argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2357,6 +2363,8 @@ literal|1
 index|]
 argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 if|if
@@ -2400,6 +2408,8 @@ literal|2
 index|]
 argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 else|else
@@ -2505,6 +2515,8 @@ literal|2
 index|]
 argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 name|compute_transition
@@ -2688,6 +2700,8 @@ literal|2
 index|]
 argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 name|compute_transition

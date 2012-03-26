@@ -794,6 +794,8 @@ name|gimp_buffer_get_bytes
 argument_list|(
 name|buffer
 argument_list|)
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 return|return

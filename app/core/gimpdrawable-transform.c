@@ -2427,6 +2427,8 @@ argument_list|,
 name|buf
 argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_set
@@ -2560,6 +2562,8 @@ argument_list|,
 name|buf
 argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 for|for
@@ -2772,6 +2776,8 @@ argument_list|,
 name|buf
 argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_set

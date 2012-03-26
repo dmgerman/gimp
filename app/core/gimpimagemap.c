@@ -111,7 +111,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297d5a250103
+DECL|enum|__anon2bf2c4890103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1383,6 +1383,8 @@ name|drawable
 argument_list|)
 argument_list|,
 name|GEGL_SAMPLER_NEAREST
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 return|return

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a06d2120103
+DECL|enum|__anon29a18e510103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -707,6 +707,8 @@ name|gimp_buffer_get_bytes
 argument_list|(
 name|buffer
 argument_list|)
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 block|}

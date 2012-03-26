@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ef68a10103
+DECL|enum|__anon2b44feb00103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -4435,6 +4435,8 @@ literal|"Y u8"
 argument_list|)
 argument_list|,
 name|GEGL_SAMPLER_NEAREST
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 return|return

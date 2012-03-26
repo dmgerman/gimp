@@ -2950,6 +2950,8 @@ argument_list|,
 name|line_data
 argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 name|find_empty_segs
@@ -3036,6 +3038,8 @@ argument_list|,
 name|line_data
 argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 name|find_empty_segs

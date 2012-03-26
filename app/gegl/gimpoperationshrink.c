@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afbe7900103
+DECL|enum|__anon2b89a07a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1405,6 +1405,8 @@ literal|1
 index|]
 argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1603,6 +1605,8 @@ name|radius_y
 index|]
 argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 elseif|else

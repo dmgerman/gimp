@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6609700103
+DECL|enum|__anon28cedc3e0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1502,6 +1502,8 @@ name|pickable
 argument_list|)
 argument_list|,
 name|GEGL_SAMPLER_NEAREST
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 return|return
