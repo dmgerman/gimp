@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3cd76f0103
+DECL|enum|__anon27aa36b50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2751,6 +2751,8 @@ argument_list|,
 name|coef
 argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 endif|#

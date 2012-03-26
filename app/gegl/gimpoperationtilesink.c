@@ -75,7 +75,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278fdbb10103
+DECL|enum|__anon27b6cf3f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -91,7 +91,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon278fdbb10203
+DECL|enum|__anon27b6cf3f0203
 block|{
 DECL|enumerator|DATA_WRITTEN
 name|DATA_WRITTEN
@@ -786,6 +786,8 @@ argument_list|,
 name|destPR
 operator|.
 name|rowstride
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 block|}
