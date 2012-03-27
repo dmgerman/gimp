@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/tile.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"base/tile-manager.h"
 end_include
 
@@ -150,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ace0fc30108
+DECL|struct|__anon2afb39dd0108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -212,6 +206,11 @@ name|GRand
 modifier|*
 name|seed
 decl_stmt|;
+DECL|member|dist_buffer
+name|GeglBuffer
+modifier|*
+name|dist_buffer
+decl_stmt|;
 DECL|typedef|RenderBlendData
 block|}
 name|RenderBlendData
@@ -221,7 +220,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ace0fc30208
+DECL|struct|__anon2afb39dd0208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -475,7 +474,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|GeglBuffer
+modifier|*
 name|gradient_precalc_shapeburst
 parameter_list|(
 name|GimpImage
@@ -678,21 +678,6 @@ name|PR
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*  variables for the shapeburst algorithms  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|dist_buffer
-specifier|static
-name|GeglBuffer
-modifier|*
-name|dist_buffer
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
 comment|/*  public functions  */
@@ -964,21 +949,6 @@ argument_list|,
 name|progress
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|dist_buffer
-condition|)
-block|{
-name|g_object_unref
-argument_list|(
-name|dist_buffer
-argument_list|)
-expr_stmt|;
-name|dist_buffer
-operator|=
-name|NULL
-expr_stmt|;
-block|}
 name|gimp_gegl_buffer_refetch_tiles
 argument_list|(
 name|buffer
@@ -2332,7 +2302,8 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|GeglBuffer
+modifier|*
 DECL|function|gradient_precalc_shapeburst (GimpImage * image,GimpDrawable * drawable,PixelRegion * PR,gdouble dist,GimpProgress * progress)
 name|gradient_precalc_shapeburst
 parameter_list|(
@@ -2359,6 +2330,10 @@ block|{
 name|GimpChannel
 modifier|*
 name|mask
+decl_stmt|;
+name|GeglBuffer
+modifier|*
+name|dist_buffer
 decl_stmt|;
 name|GeglBuffer
 modifier|*
@@ -2747,6 +2722,9 @@ name|max_iteration
 expr_stmt|;
 block|}
 block|}
+return|return
+name|dist_buffer
+return|;
 block|}
 end_function
 
@@ -2984,6 +2962,8 @@ name|factor
 operator|=
 name|gradient_calc_shapeburst_angular_factor
 argument_list|(
+name|rbd
+operator|->
 name|dist_buffer
 argument_list|,
 name|x
@@ -2999,6 +2979,8 @@ name|factor
 operator|=
 name|gradient_calc_shapeburst_spherical_factor
 argument_list|(
+name|rbd
+operator|->
 name|dist_buffer
 argument_list|,
 name|x
@@ -3014,6 +2996,8 @@ name|factor
 operator|=
 name|gradient_calc_shapeburst_dimpled_factor
 argument_list|(
+name|rbd
+operator|->
 name|dist_buffer
 argument_list|,
 name|x
@@ -3797,6 +3781,10 @@ parameter_list|)
 block|{
 name|RenderBlendData
 name|rbd
+init|=
+block|{
+literal|0
+block|, }
 decl_stmt|;
 name|rbd
 operator|.
@@ -4150,6 +4138,10 @@ name|sy
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|rbd
+operator|.
+name|dist_buffer
+operator|=
 name|gradient_precalc_shapeburst
 argument_list|(
 name|image
@@ -4430,6 +4422,19 @@ argument_list|(
 name|rbd
 operator|.
 name|gradient
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|rbd
+operator|.
+name|dist_buffer
+condition|)
+name|g_object_unref
+argument_list|(
+name|rbd
+operator|.
+name|dist_buffer
 argument_list|)
 expr_stmt|;
 block|}
