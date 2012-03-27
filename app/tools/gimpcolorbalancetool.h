@@ -128,11 +128,6 @@ name|GimpColorBalanceConfig
 modifier|*
 name|config
 decl_stmt|;
-DECL|member|color_balance
-name|ColorBalance
-modifier|*
-name|color_balance
-decl_stmt|;
 comment|/*  dialog  */
 DECL|member|range_radio
 name|GtkWidget

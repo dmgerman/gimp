@@ -170,25 +170,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  temp cruft  */
-end_comment
-
-begin_function_decl
-name|void
-name|gimp_color_balance_config_to_cruft
-parameter_list|(
-name|GimpColorBalanceConfig
-modifier|*
-name|config
-parameter_list|,
-name|ColorBalance
-modifier|*
-name|cruft
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif

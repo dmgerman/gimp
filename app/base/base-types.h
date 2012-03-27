@@ -142,15 +142,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|ColorBalance
-typedef|typedef
-name|struct
-name|_ColorBalance
-name|ColorBalance
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|HueSaturation
 typedef|typedef
 name|struct
