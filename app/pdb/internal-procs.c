@@ -38,7 +38,7 @@ file|"internal-procs.h"
 end_include
 
 begin_comment
-comment|/* 663 procedures registered total */
+comment|/* 664 procedures registered total */
 end_comment
 
 begin_function
@@ -255,6 +255,11 @@ name|pdb
 argument_list|)
 expr_stmt|;
 name|register_plug_in_procs
+argument_list|(
+name|pdb
+argument_list|)
+expr_stmt|;
+name|register_plug_in_compat_procs
 argument_list|(
 name|pdb
 argument_list|)
