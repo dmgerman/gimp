@@ -205,7 +205,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0518f50103
+DECL|enum|__anon28d1afba0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2027,7 +2027,7 @@ argument_list|)
 operator|&&
 name|interpolation_type
 operator|!=
-name|GIMP_INTERPOLATION_LANCZOS
+name|GIMP_INTERPOLATION_LOHALO
 condition|)
 block|{
 name|GeglNode

@@ -1003,7 +1003,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_INTERPOLATION_LANCZOS
+name|GIMP_INTERPOLATION_LOHALO
 case|:
 name|gimp_transform_region_lanczos
 argument_list|(

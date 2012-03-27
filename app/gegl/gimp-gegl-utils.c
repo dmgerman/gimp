@@ -226,7 +226,7 @@ return|return
 literal|"cubic"
 return|;
 case|case
-name|GIMP_INTERPOLATION_LANCZOS
+name|GIMP_INTERPOLATION_LOHALO
 case|:
 return|return
 literal|"lohalo"

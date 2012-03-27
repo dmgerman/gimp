@@ -3009,11 +3009,11 @@ literal|"cubic"
 block|}
 block|,
 block|{
-name|GIMP_INTERPOLATION_LANCZOS
+name|GIMP_INTERPOLATION_LOHALO
 block|,
-literal|"GIMP_INTERPOLATION_LANCZOS"
+literal|"GIMP_INTERPOLATION_LOHALO"
 block|,
-literal|"lanczos"
+literal|"lohalo"
 block|}
 block|,
 block|{
@@ -3072,13 +3072,13 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_INTERPOLATION_LANCZOS
+name|GIMP_INTERPOLATION_LOHALO
 block|,
 name|NC_
 argument_list|(
 literal|"interpolation-type"
 argument_list|,
-literal|"Sinc (Lanczos3)"
+literal|"LoHalo"
 argument_list|)
 block|,
 name|NULL

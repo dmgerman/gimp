@@ -2040,7 +2040,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_INTERPOLATION_LANCZOS
+name|GIMP_INTERPOLATION_LOHALO
 case|:
 name|surround
 operator|=
@@ -2301,7 +2301,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_INTERPOLATION_LANCZOS
+name|GIMP_INTERPOLATION_LOHALO
 case|:
 name|interpolate_lanczos3
 argument_list|(
