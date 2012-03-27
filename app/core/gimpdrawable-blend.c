@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1628cf0108
+DECL|struct|__anon294311f40108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -208,7 +208,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1628cf0208
+DECL|struct|__anon294311f40208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -2337,6 +2337,16 @@ decl_stmt|;
 name|gfloat
 name|max_iteration
 decl_stmt|;
+name|gimp_progress_set_text
+argument_list|(
+name|progress
+argument_list|,
+name|_
+argument_list|(
+literal|"Calculating distance map"
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  allocate the distance map  */
 name|dist_buffer
 operator|=
@@ -2602,6 +2612,15 @@ argument_list|,
 literal|"operation"
 argument_list|,
 literal|"gimp:shapeburst"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_gegl_progress_connect
+argument_list|(
+name|shapeburst
+argument_list|,
+name|progress
 argument_list|,
 name|NULL
 argument_list|)
@@ -4143,6 +4162,16 @@ operator|.
 name|dist
 argument_list|,
 name|progress
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text
+argument_list|(
+name|progress
+argument_list|,
+name|_
+argument_list|(
+literal|"Blending"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
