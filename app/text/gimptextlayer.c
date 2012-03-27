@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be040c10103
+DECL|enum|__anon2a0d405e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2709,7 +2709,7 @@ name|babl_fish
 argument_list|(
 name|babl_format
 argument_list|(
-literal|"RGBA u8"
+literal|"R'G'B'A u8"
 argument_list|)
 argument_list|,
 name|format

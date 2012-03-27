@@ -133,7 +133,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon294836330103
+DECL|enum|__anon2c2ce85d0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -7177,8 +7177,6 @@ argument_list|(
 name|pixmap_mask
 operator|->
 name|bytes
-argument_list|,
-name|TRUE
 argument_list|)
 argument_list|,
 name|gimp_drawable_get_format_with_alpha
@@ -7309,8 +7307,6 @@ argument_list|(
 name|pixmap_mask
 operator|->
 name|bytes
-argument_list|,
-name|TRUE
 argument_list|)
 argument_list|,
 name|gimp_drawable_get_format_with_alpha

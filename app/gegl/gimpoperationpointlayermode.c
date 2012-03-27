@@ -223,7 +223,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dcf9fa0103
+DECL|enum|__anon2c13b9bd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -729,7 +729,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"RaGaBaA float"
+literal|"R'aG'aB'aA float"
 argument_list|)
 expr_stmt|;
 else|else
@@ -737,7 +737,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"RGBA float"
+literal|"R'G'B'A float"
 argument_list|)
 expr_stmt|;
 name|gegl_operation_set_format
@@ -821,7 +821,7 @@ name|babl_fish
 argument_list|(
 name|babl_format
 argument_list|(
-literal|"RaGaBaA float"
+literal|"R'aG'aB'aA float"
 argument_list|)
 argument_list|,
 name|babl_format
@@ -844,7 +844,7 @@ argument_list|)
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"RaGaBaA float"
+literal|"R'aG'aB'aA float"
 argument_list|)
 argument_list|)
 decl_stmt|;

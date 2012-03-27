@@ -205,7 +205,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6238e90103
+DECL|enum|__anon2a0518f50103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -7337,7 +7337,7 @@ name|format
 operator|==
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y' u8"
 argument_list|)
 condition|)
 return|return
@@ -7350,7 +7350,7 @@ name|format
 operator|==
 name|babl_format
 argument_list|(
-literal|"YA u8"
+literal|"Y'A u8"
 argument_list|)
 condition|)
 return|return
@@ -7363,7 +7363,7 @@ name|format
 operator|==
 name|babl_format
 argument_list|(
-literal|"RGB u8"
+literal|"R'G'B' u8"
 argument_list|)
 condition|)
 return|return
@@ -7376,7 +7376,7 @@ name|format
 operator|==
 name|babl_format
 argument_list|(
-literal|"RGBA u8"
+literal|"R'G'B'A u8"
 argument_list|)
 condition|)
 return|return

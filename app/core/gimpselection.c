@@ -2967,7 +2967,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"RGBA u8"
+literal|"R'G'B'A u8"
 argument_list|)
 expr_stmt|;
 else|else
@@ -2975,7 +2975,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"RGB u8"
+literal|"R'G'B' u8"
 argument_list|)
 expr_stmt|;
 block|}

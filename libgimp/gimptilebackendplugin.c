@@ -178,7 +178,7 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"RGB u8"
+literal|"R'G'B' u8"
 argument_list|)
 return|;
 case|case
@@ -187,7 +187,7 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"RGBA u8"
+literal|"R'G'B'A u8"
 argument_list|)
 return|;
 case|case
@@ -196,7 +196,7 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y' u8"
 argument_list|)
 return|;
 case|case
@@ -205,7 +205,7 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"YA u8"
+literal|"Y'A u8"
 argument_list|)
 return|;
 case|case
@@ -263,7 +263,7 @@ name|pal
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"RGB u8"
+literal|"R'G'B' u8"
 argument_list|)
 argument_list|,
 name|cmap

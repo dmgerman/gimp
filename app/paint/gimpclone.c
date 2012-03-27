@@ -771,8 +771,6 @@ operator|->
 name|mask
 operator|->
 name|bytes
-argument_list|,
-name|TRUE
 argument_list|)
 argument_list|,
 name|gimp_drawable_get_format_with_alpha

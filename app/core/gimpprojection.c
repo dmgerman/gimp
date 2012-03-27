@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcc35d10103
+DECL|enum|__anon2bc82f640103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1231,7 +1231,7 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"RGBA u8"
+literal|"R'G'B'A u8"
 argument_list|)
 return|;
 case|case
@@ -1240,7 +1240,7 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"YA u8"
+literal|"Y'A u8"
 argument_list|)
 return|;
 block|}

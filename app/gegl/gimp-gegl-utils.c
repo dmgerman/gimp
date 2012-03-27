@@ -52,21 +52,18 @@ file|"gimptilebackendtilemanager.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_bpp_to_babl_format:  * @bpp: bytes per pixel  * @linear: whether the pixels are linear or gamma-corrected.  *  * Return the Babl format to use for a given number of bytes per pixel.  * This function assumes that the data is 8bit.  *  * Return value: the Babl format to use  **/
+comment|/**  * gimp_bpp_to_babl_format:  * @bpp: bytes per pixel  *  * Return the Babl format to use for a given number of bytes per pixel.  * This function assumes that the data is 8bit.  *  * Return value: the Babl format to use  **/
 end_comment
 
 begin_function
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_bpp_to_babl_format (guint bpp,gboolean linear)
+DECL|function|gimp_bpp_to_babl_format (guint bpp)
 name|gimp_bpp_to_babl_format
 parameter_list|(
 name|guint
 name|bpp
-parameter_list|,
-name|gboolean
-name|linear
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -82,56 +79,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|linear
-condition|)
-block|{
-switch|switch
-condition|(
-name|bpp
-condition|)
-block|{
-case|case
-literal|1
-case|:
-return|return
-name|babl_format
-argument_list|(
-literal|"Y u8"
-argument_list|)
-return|;
-case|case
-literal|2
-case|:
-return|return
-name|babl_format
-argument_list|(
-literal|"YA u8"
-argument_list|)
-return|;
-case|case
-literal|3
-case|:
-return|return
-name|babl_format
-argument_list|(
-literal|"RGB u8"
-argument_list|)
-return|;
-case|case
-literal|4
-case|:
-return|return
-name|babl_format
-argument_list|(
-literal|"RGBA u8"
-argument_list|)
-return|;
-block|}
-block|}
-else|else
-block|{
 switch|switch
 condition|(
 name|bpp
@@ -174,7 +121,6 @@ literal|"R'G'B'A u8"
 argument_list|)
 return|;
 block|}
-block|}
 return|return
 name|NULL
 return|;
@@ -182,21 +128,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_bpp_to_babl_format_with_alpha:  * @bpp: bytes per pixel  * @linear: whether the pixels are linear or gamma-corrected.  *  * Return the Babl format to use for a given number of bytes per pixel.  * This function assumes that the data is 8bit.  *  * Return value: the Babl format to use  **/
+comment|/**  * gimp_bpp_to_babl_format_with_alpha:  * @bpp: bytes per pixel  *  * Return the Babl format to use for a given number of bytes per pixel.  * This function assumes that the data is 8bit.  *  * Return value: the Babl format to use  **/
 end_comment
 
 begin_function
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_bpp_to_babl_format_with_alpha (guint bpp,gboolean linear)
+DECL|function|gimp_bpp_to_babl_format_with_alpha (guint bpp)
 name|gimp_bpp_to_babl_format_with_alpha
 parameter_list|(
 name|guint
 name|bpp
-parameter_list|,
-name|gboolean
-name|linear
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -212,44 +155,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|linear
-condition|)
-block|{
-switch|switch
-condition|(
-name|bpp
-condition|)
-block|{
-case|case
-literal|1
-case|:
-case|case
-literal|2
-case|:
-return|return
-name|babl_format
-argument_list|(
-literal|"YA u8"
-argument_list|)
-return|;
-case|case
-literal|3
-case|:
-case|case
-literal|4
-case|:
-return|return
-name|babl_format
-argument_list|(
-literal|"RGBA u8"
-argument_list|)
-return|;
-block|}
-block|}
-else|else
-block|{
 switch|switch
 condition|(
 name|bpp
@@ -279,7 +184,6 @@ argument_list|(
 literal|"R'G'B'A u8"
 argument_list|)
 return|;
-block|}
 block|}
 return|return
 name|NULL
@@ -408,8 +312,6 @@ argument_list|,
 name|gimp_bpp_to_babl_format
 argument_list|(
 name|channels
-argument_list|,
-name|TRUE
 argument_list|)
 argument_list|,
 name|GIMP_GEGL_RECT

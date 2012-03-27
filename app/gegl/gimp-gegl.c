@@ -400,11 +400,11 @@ name|babl_format_new
 argument_list|(
 literal|"name"
 argument_list|,
-literal|"R u8"
+literal|"R' u8"
 argument_list|,
 name|babl_model
 argument_list|(
-literal|"RGBA"
+literal|"R'G'B'A"
 argument_list|)
 argument_list|,
 name|babl_type
@@ -424,11 +424,11 @@ name|babl_format_new
 argument_list|(
 literal|"name"
 argument_list|,
-literal|"G u8"
+literal|"G' u8"
 argument_list|,
 name|babl_model
 argument_list|(
-literal|"RGBA"
+literal|"R'G'B'A"
 argument_list|)
 argument_list|,
 name|babl_type
@@ -448,11 +448,11 @@ name|babl_format_new
 argument_list|(
 literal|"name"
 argument_list|,
-literal|"B u8"
+literal|"B' u8"
 argument_list|,
 name|babl_model
 argument_list|(
-literal|"RGBA"
+literal|"R'G'B'A"
 argument_list|)
 argument_list|,
 name|babl_type
@@ -472,11 +472,11 @@ name|babl_format_new
 argument_list|(
 literal|"name"
 argument_list|,
-literal|"A u8"
+literal|"A' u8"
 argument_list|,
 name|babl_model
 argument_list|(
-literal|"RGBA"
+literal|"R'G'B'A"
 argument_list|)
 argument_list|,
 name|babl_type

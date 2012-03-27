@@ -779,8 +779,6 @@ name|gimp_buffer_get_bytes
 argument_list|(
 name|buffer
 argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 argument_list|,
 name|temp_buf_get_data

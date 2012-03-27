@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a18e510103
+DECL|enum|__anon28e31ea10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -690,8 +690,6 @@ argument_list|,
 name|gimp_bpp_to_babl_format
 argument_list|(
 name|bytes
-argument_list|,
-name|TRUE
 argument_list|)
 argument_list|,
 name|temp_buf_get_data

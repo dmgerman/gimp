@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9d58f40103
+DECL|enum|__anon2b4d94270103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -822,7 +822,7 @@ argument_list|)
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"RGB u8"
+literal|"R'G'B' u8"
 argument_list|)
 argument_list|,
 operator|&

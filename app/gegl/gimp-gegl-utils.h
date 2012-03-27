@@ -34,9 +34,6 @@ name|gimp_bpp_to_babl_format
 argument_list|(
 name|guint
 name|bpp
-argument_list|,
-name|gboolean
-name|linear
 argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
@@ -50,9 +47,6 @@ name|gimp_bpp_to_babl_format_with_alpha
 argument_list|(
 name|guint
 name|bpp
-argument_list|,
-name|gboolean
-name|linear
 argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;

@@ -1175,8 +1175,6 @@ argument_list|,
 name|gimp_bpp_to_babl_format
 argument_list|(
 name|bytes
-argument_list|,
-name|TRUE
 argument_list|)
 argument_list|,
 name|GIMP_GEGL_RECT

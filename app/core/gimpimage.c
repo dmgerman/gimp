@@ -352,7 +352,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cd7fff0103
+DECL|enum|__anon27d96a6a0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -446,7 +446,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cd7fff0203
+DECL|enum|__anon27d96a6a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5144,7 +5144,7 @@ name|babl_palette_rgb
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"RGB u8"
+literal|"R'G'B' u8"
 argument_list|)
 argument_list|,
 name|private
@@ -5164,7 +5164,7 @@ name|babl_palette_rgba
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"RGB u8"
+literal|"R'G'B' u8"
 argument_list|)
 argument_list|,
 name|private
@@ -6351,7 +6351,7 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"RGB u8"
+literal|"R'G'B' u8"
 argument_list|)
 return|;
 case|case
@@ -6360,7 +6360,7 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"RGBA u8"
+literal|"R'G'B'A u8"
 argument_list|)
 return|;
 case|case
@@ -6369,7 +6369,7 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y' u8"
 argument_list|)
 return|;
 case|case
@@ -6378,7 +6378,7 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"YA u8"
+literal|"Y'A u8"
 argument_list|)
 return|;
 case|case
@@ -6449,7 +6449,7 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"RGBA u8"
+literal|"R'G'B'A u8"
 argument_list|)
 return|;
 case|case
@@ -6461,7 +6461,7 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"YA u8"
+literal|"Y'A u8"
 argument_list|)
 return|;
 case|case
@@ -6526,7 +6526,7 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"RGB u8"
+literal|"R'G'B' u8"
 argument_list|)
 return|;
 case|case
@@ -6538,7 +6538,7 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y' u8"
 argument_list|)
 return|;
 case|case
@@ -8316,7 +8316,7 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"R u8"
+literal|"R' u8"
 argument_list|)
 return|;
 case|case
@@ -8325,7 +8325,7 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"G u8"
+literal|"G' u8"
 argument_list|)
 return|;
 case|case
@@ -8334,7 +8334,7 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"B u8"
+literal|"B' u8"
 argument_list|)
 return|;
 case|case
@@ -8343,7 +8343,7 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y' u8"
 argument_list|)
 return|;
 case|case
@@ -8352,9 +8352,10 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y' u8"
 argument_list|)
 return|;
+comment|/* XXX: seems wrong */
 case|case
 name|GIMP_ALPHA_CHANNEL
 case|:
@@ -10816,7 +10817,7 @@ name|babl_fish
 argument_list|(
 name|babl_format
 argument_list|(
-literal|"RGBA u8"
+literal|"R'G'B'A u8"
 argument_list|)
 argument_list|,
 name|dest_format
@@ -10904,8 +10905,6 @@ argument_list|(
 name|temp_buf
 operator|->
 name|bytes
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|ret_format

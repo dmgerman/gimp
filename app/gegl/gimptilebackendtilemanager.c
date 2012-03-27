@@ -1629,8 +1629,6 @@ argument_list|(
 name|gimp_bpp_to_babl_format
 argument_list|(
 name|bpp
-argument_list|,
-name|TRUE
 argument_list|)
 argument_list|)
 argument_list|,
@@ -1657,8 +1655,6 @@ operator|=
 name|gimp_bpp_to_babl_format
 argument_list|(
 name|bpp
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|ret
