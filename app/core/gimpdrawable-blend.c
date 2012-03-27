@@ -72,18 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/tile-manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint-funcs/paint-funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gegl/gimp-gegl-utils.h"
 end_include
 
@@ -144,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afb39dd0108
+DECL|struct|__anon2a1628cf0108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -220,7 +208,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afb39dd0208
+DECL|struct|__anon2a1628cf0208
 block|{
 DECL|member|PR
 name|PixelRegion
