@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/tile.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"composite/gimp-composite.h"
 end_include
 
@@ -708,13 +702,13 @@ name|config
 operator|.
 name|tile_width
 operator|=
-name|TILE_WIDTH
+name|GIMP_PLUG_IN_TILE_WIDTH
 expr_stmt|;
 name|config
 operator|.
 name|tile_height
 operator|=
-name|TILE_HEIGHT
+name|GIMP_PLUG_IN_TILE_HEIGHT
 expr_stmt|;
 name|config
 operator|.

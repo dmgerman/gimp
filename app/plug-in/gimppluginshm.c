@@ -205,12 +205,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/tile.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimppluginshm.h"
 end_include
 
@@ -225,7 +219,7 @@ DECL|macro|TILE_MAP_SIZE
 define|#
 directive|define
 name|TILE_MAP_SIZE
-value|(TILE_WIDTH * TILE_HEIGHT * 4)
+value|(GIMP_PLUG_IN_TILE_WIDTH * GIMP_PLUG_IN_TILE_HEIGHT * 4)
 end_define
 
 begin_define

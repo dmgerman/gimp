@@ -28,6 +28,22 @@ directive|include
 file|"plug-in/plug-in-enums.h"
 end_include
 
+begin_define
+DECL|macro|GIMP_PLUG_IN_TILE_WIDTH
+define|#
+directive|define
+name|GIMP_PLUG_IN_TILE_WIDTH
+value|64
+end_define
+
+begin_define
+DECL|macro|GIMP_PLUG_IN_TILE_HEIGHT
+define|#
+directive|define
+name|GIMP_PLUG_IN_TILE_HEIGHT
+value|64
+end_define
+
 begin_typedef
 DECL|typedef|GimpPlugIn
 typedef|typedef
