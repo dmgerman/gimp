@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2badcd410108
+DECL|struct|__anon27ead70c0108
 block|{
 DECL|member|name
 specifier|const
@@ -619,7 +619,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2badcd410208
+DECL|struct|__anon27ead70c0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -692,7 +692,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2badcd410308
+DECL|struct|__anon27ead70c0308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -722,7 +722,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2badcd410408
+DECL|struct|__anon27ead70c0408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -829,7 +829,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2badcd410508
+DECL|struct|__anon27ead70c0508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -994,7 +994,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2badcd410608
+DECL|struct|__anon27ead70c0608
 block|{
 DECL|member|name
 specifier|const
@@ -7092,7 +7092,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2badcd410708
+DECL|struct|__anon27ead70c0708
 block|{
 DECL|member|index
 name|gint
@@ -7570,6 +7570,9 @@ name|gint
 name|tile_width
 decl_stmt|;
 name|gint
+name|tile_height
+decl_stmt|;
+name|gint
 name|width
 decl_stmt|;
 name|gint
@@ -7680,6 +7683,11 @@ expr_stmt|;
 name|tile_width
 operator|=
 name|gimp_tile_width
+argument_list|()
+expr_stmt|;
+name|tile_height
+operator|=
+name|gimp_tile_height
 argument_list|()
 expr_stmt|;
 name|bpp
@@ -8131,12 +8139,12 @@ name|y2
 condition|;
 name|y
 operator|+=
-name|tile_width
+name|tile_height
 operator|-
 operator|(
 name|y
 operator|%
-name|tile_width
+name|tile_height
 operator|)
 control|)
 block|{
@@ -8174,12 +8182,12 @@ operator|)
 expr_stmt|;
 name|y_step
 operator|=
-name|tile_width
+name|tile_height
 operator|-
 operator|(
 name|y
 operator|%
-name|tile_width
+name|tile_height
 operator|)
 expr_stmt|;
 comment|/* don't step off the end of the image */
