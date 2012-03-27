@@ -195,6 +195,26 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_gegl_progress_connect
+parameter_list|(
+name|GeglNode
+modifier|*
+name|node
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|text
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_define
 DECL|macro|GIMP_GEGL_RECT (x,y,w,h)
 define|#
