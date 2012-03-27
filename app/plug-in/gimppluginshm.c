@@ -199,12 +199,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/base-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimppluginshm.h"
 end_include
 
