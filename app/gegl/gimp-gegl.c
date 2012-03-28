@@ -472,7 +472,7 @@ name|babl_format_new
 argument_list|(
 literal|"name"
 argument_list|,
-literal|"A' u8"
+literal|"A u8"
 argument_list|,
 name|babl_model
 argument_list|(
