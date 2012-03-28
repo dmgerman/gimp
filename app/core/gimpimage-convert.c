@@ -407,7 +407,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon27854e690103
+DECL|enum|__anon2c52957e0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1448,7 +1448,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27854e690208
+DECL|struct|__anon2c52957e0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1691,7 +1691,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27854e690308
+DECL|struct|__anon2c52957e0308
 block|{
 DECL|member|used_count
 name|signed
@@ -1761,7 +1761,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* FWIW, the make_remap_table() and mapping_compare() function source    and palentryStruct may be re-used under the XFree86-style license.<adam@gimp.org> */
+comment|/* FWIW, the make_remap_table() and mapping_compare() function source  * and palentryStruct may be re-used under the XFree86-style license.  *<adam@gimp.org>  */
 end_comment
 
 begin_function
@@ -3152,7 +3152,7 @@ argument_list|,
 name|n_layers
 argument_list|)
 expr_stmt|;
-comment|/*                * Note: generate_histogram_rgb may set needs_quantize if                *  the image contains more colours than the limit specified                *  by the user.                */
+comment|/* Note: generate_histogram_rgb may set needs_quantize if                *  the image contains more colours than the limit specified                *  by the user.                */
 block|}
 block|}
 if|if
@@ -5394,6 +5394,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/* Find the splittable box with the largest (scaled) volume Returns  * NULL if no splittable boxes remain  */
+end_comment
+
 begin_function
 specifier|static
 name|boxptr
@@ -5408,8 +5412,6 @@ specifier|const
 name|int
 name|numboxes
 parameter_list|)
-comment|/* Find the splittable box with the largest (scaled) volume */
-comment|/* Returns NULL if no splittable boxes remain */
 block|{
 name|boxptr
 name|boxp
@@ -5475,6 +5477,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/* Shrink the min/max bounds of a box to enclose only nonzero  * elements, and recompute its volume and population  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -5488,8 +5494,6 @@ parameter_list|,
 name|boxptr
 name|boxp
 parameter_list|)
-comment|/* Shrink the min/max bounds of a box to enclose only nonzero elements, */
-comment|/* and recompute its volume and population */
 block|{
 name|int
 name|i
@@ -6657,7 +6661,7 @@ decl_stmt|;
 name|int
 name|ratio
 decl_stmt|;
-comment|/*     fprintf(stderr, "[%d,%d,%d=%d,%d,%d] ",             (Rmax - Rmin), (Gmax - Gmin), (Bmax - Bmin),             dist0, dist1, dist2);     */
+comment|/*         fprintf(stderr, "[%d,%d,%d=%d,%d,%d] ",         (Rmax - Rmin), (Gmax - Gmin), (Bmax - Bmin),         dist0, dist1, dist2);       */
 if|if
 condition|(
 name|dist0
@@ -6779,7 +6783,7 @@ operator|)
 operator|/
 name|longest_length2
 expr_stmt|;
-comment|/* fprintf(stderr, " ratio:(%d/%d)=%d ", longest_length, longest_length2, ratio);        fprintf(stderr, "C%d ", cells_remaining); */
+comment|/* fprintf(stderr, " ratio:(%d/%d)=%d ", longest_length, longest_length2, ratio);          fprintf(stderr, "C%d ", cells_remaining); */
 if|if
 condition|(
 name|ratio
@@ -7851,7 +7855,7 @@ name|blue
 decl_stmt|;
 name|lin_to_rgb
 argument_list|(
-comment|/*(Rtotal + (total>>1)) / total,                  (Gtotal + (total>>1)) / total,                  (Btotal + (total>>1)) / total,*/
+comment|/*(Rtotal + (total>>1)) / total,                     (Gtotal + (total>>1)) / total,                     (Btotal + (total>>1)) / total,*/
 operator|(
 name|double
 operator|)
@@ -7938,6 +7942,8 @@ index|]
 operator|.
 name|red
 operator|=
+literal|0
+expr_stmt|;
 name|quantobj
 operator|->
 name|cmap
@@ -7947,6 +7953,8 @@ index|]
 operator|.
 name|green
 operator|=
+literal|0
+expr_stmt|;
 name|quantobj
 operator|->
 name|cmap
@@ -9585,7 +9593,7 @@ operator|*
 name|inB
 expr_stmt|;
 block|}
-comment|/*    else             {                 inG = 0;                 inB = 0;                 } */
+comment|/*    else             {             inG = 0;             inB = 0;             } */
 comment|/* Form the initial difference increments */
 name|inR
 operator|=
@@ -11365,7 +11373,7 @@ index|[
 name|R
 index|]
 expr_stmt|;
-comment|/* If we have not seen this color before, find nearest                      colormap entry and update the cache */
+comment|/* If we have not seen this color before, find nearest                          colormap entry and update the cache */
 if|if
 condition|(
 operator|*
@@ -11423,7 +11431,7 @@ do|;
 block|}
 else|else
 block|{
-comment|/* not enough colours to bother looking for an 'alternative'                    colour (we may fail to do so anyway), so decide that                    the alternative colour is simply the other cmap entry. */
+comment|/* not enough colours to bother looking for an 'alternative'                      colour (we may fail to do so anyway), so decide that                      the alternative colour is simply the other cmap entry. */
 name|pixval2
 operator|=
 operator|(
@@ -12960,7 +12968,7 @@ argument_list|,
 name|B
 argument_list|)
 expr_stmt|;
-comment|/* If we have not seen this color before, find nearest                      colormap entry and update the cache */
+comment|/* If we have not seen this color before, find nearest                          colormap entry and update the cache */
 if|if
 condition|(
 operator|*
@@ -13164,7 +13172,7 @@ name|B2
 parameter_list|,
 name|D
 parameter_list|)
-value|do { \                 int spacer1, spaceg1, spaceb1; \                 int spacer2, spaceg2, spaceb2; \                 rgb_to_unshifted_lin(R1,G1,B1,&spacer1,&spaceg1,&spaceb1); \                 rgb_to_unshifted_lin(R2,G2,B2,&spacer2,&spaceg2,&spaceb2); \                 D = sqrt(R_SCALE * SQR((spacer1)-(spacer2)) + \                          G_SCALE * SQR((spaceg1)-(spaceg2)) + \                          B_SCALE * SQR((spaceb1)-(spaceb2))); \               } while(0)
+value|do { \                 int spacer1, spaceg1, spaceb1; \                 int spacer2, spaceg2, spaceb2; \                 rgb_to_unshifted_lin(R1,G1,B1,&spacer1,&spaceg1,&spaceb1); \                 rgb_to_unshifted_lin(R2,G2,B2,&spacer2,&spaceg2,&spaceb2); \                 D = sqrt(R_SCALE * SQR((spacer1)-(spacer2)) +           \                          G_SCALE * SQR((spaceg1)-(spaceg2)) + \                          B_SCALE * SQR((spaceb1)-(spaceb2))); \               } while(0)
 comment|/* although LIN_DISTP is more correct, DISTP is much faster and                  barely distinguishable. */
 name|DISTP
 argument_list|(
