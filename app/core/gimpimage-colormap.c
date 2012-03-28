@@ -237,7 +237,14 @@ name|palette_name
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* FIXME name palette */
+if|if
+condition|(
+operator|!
+name|private
+operator|->
+name|babl_palette_rgb
+condition|)
+block|{
 name|babl_new_palette
 argument_list|(
 name|NULL
@@ -253,6 +260,7 @@ operator|->
 name|babl_palette_rgba
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_palette_set_columns
 argument_list|(
 name|private
@@ -462,32 +470,7 @@ name|palette
 operator|=
 name|NULL
 expr_stmt|;
-name|babl_palette_reset
-argument_list|(
-name|private
-operator|->
-name|babl_palette_rgb
-argument_list|)
-expr_stmt|;
-name|babl_palette_reset
-argument_list|(
-name|private
-operator|->
-name|babl_palette_rgba
-argument_list|)
-expr_stmt|;
-name|private
-operator|->
-name|babl_palette_rgb
-operator|=
-name|NULL
-expr_stmt|;
-name|private
-operator|->
-name|babl_palette_rgba
-operator|=
-name|NULL
-expr_stmt|;
+comment|/* don't touch the image's babl_palettes because we might still have    * buffers with that palette on the undo stack, and on undoing the    * image back to indexed, we must have exactly these palettes around    */
 block|}
 end_function
 
