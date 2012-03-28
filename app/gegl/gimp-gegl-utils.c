@@ -537,7 +537,7 @@ case|case
 name|GIMP_INTERPOLATION_LANCZOS
 case|:
 return|return
-literal|"lanczos"
+literal|"lohalo"
 return|;
 default|default:
 break|break;
