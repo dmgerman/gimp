@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c79b3a30103
+DECL|enum|__anon2bc073dd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3573,8 +3573,10 @@ index|[
 literal|32
 index|]
 decl_stmt|;
-name|GimpImageType
-name|sample_type
+specifier|const
+name|Babl
+modifier|*
+name|sample_format
 decl_stmt|;
 name|GimpRGB
 name|color
@@ -3865,7 +3867,7 @@ argument_list|,
 literal|0.0
 argument_list|,
 operator|&
-name|sample_type
+name|sample_format
 argument_list|,
 operator|&
 name|color
@@ -3886,7 +3888,7 @@ operator|->
 name|color_frame_1
 argument_list|)
 argument_list|,
-name|sample_type
+name|sample_format
 argument_list|,
 operator|&
 name|color
@@ -3905,7 +3907,7 @@ operator|->
 name|color_frame_2
 argument_list|)
 argument_list|,
-name|sample_type
+name|sample_format
 argument_list|,
 operator|&
 name|color

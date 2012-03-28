@@ -43,9 +43,11 @@ parameter_list|,
 name|gdouble
 name|average_radius
 parameter_list|,
-name|GimpImageType
+specifier|const
+name|Babl
 modifier|*
-name|sample_type
+modifier|*
+name|sample_format
 parameter_list|,
 name|GimpRGB
 modifier|*

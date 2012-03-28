@@ -198,8 +198,10 @@ parameter_list|,
 name|GimpColorPickState
 name|pick_state
 parameter_list|,
-name|GimpImageType
-name|sample_type
+specifier|const
+name|Babl
+modifier|*
+name|sample_format
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -252,8 +254,10 @@ name|GimpColorPickerTool
 modifier|*
 name|picker_tool
 parameter_list|,
-name|GimpImageType
-name|sample_type
+specifier|const
+name|Babl
+modifier|*
+name|sample_format
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -990,7 +994,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_picker_tool_picked (GimpColorTool * color_tool,GimpColorPickState pick_state,GimpImageType sample_type,const GimpRGB * color,gint color_index)
+DECL|function|gimp_color_picker_tool_picked (GimpColorTool * color_tool,GimpColorPickState pick_state,const Babl * sample_format,const GimpRGB * color,gint color_index)
 name|gimp_color_picker_tool_picked
 parameter_list|(
 name|GimpColorTool
@@ -1000,8 +1004,10 @@ parameter_list|,
 name|GimpColorPickState
 name|pick_state
 parameter_list|,
-name|GimpImageType
-name|sample_type
+specifier|const
+name|Babl
+modifier|*
+name|sample_format
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -1058,7 +1064,7 @@ name|gimp_color_picker_tool_info_update
 argument_list|(
 name|picker_tool
 argument_list|,
-name|sample_type
+name|sample_format
 argument_list|,
 name|color
 argument_list|,
@@ -1076,7 +1082,7 @@ name|color_tool
 argument_list|,
 name|pick_state
 argument_list|,
-name|sample_type
+name|sample_format
 argument_list|,
 name|color
 argument_list|,
@@ -1514,15 +1520,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_picker_tool_info_update (GimpColorPickerTool * picker_tool,GimpImageType sample_type,const GimpRGB * color,gint color_index)
+DECL|function|gimp_color_picker_tool_info_update (GimpColorPickerTool * picker_tool,const Babl * sample_format,const GimpRGB * color,gint color_index)
 name|gimp_color_picker_tool_info_update
 parameter_list|(
 name|GimpColorPickerTool
 modifier|*
 name|picker_tool
 parameter_list|,
-name|GimpImageType
-name|sample_type
+specifier|const
+name|Babl
+modifier|*
+name|sample_format
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -1605,7 +1613,7 @@ operator|->
 name|color_frame1
 argument_list|)
 argument_list|,
-name|sample_type
+name|sample_format
 argument_list|,
 name|color
 argument_list|,
@@ -1621,7 +1629,7 @@ operator|->
 name|color_frame2
 argument_list|)
 argument_list|,
-name|sample_type
+name|sample_format
 argument_list|,
 name|color
 argument_list|,

@@ -183,9 +183,11 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|GimpImageType
+specifier|const
+name|Babl
 modifier|*
-name|sample_type
+modifier|*
+name|sample_format
 parameter_list|,
 name|GimpRGB
 modifier|*
@@ -211,8 +213,10 @@ parameter_list|,
 name|GimpColorPickState
 name|pick_state
 parameter_list|,
-name|GimpImageType
-name|sample_type
+specifier|const
+name|Babl
+modifier|*
+name|sample_format
 parameter_list|,
 specifier|const
 name|GimpRGB

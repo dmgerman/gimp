@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5cc8800103
+DECL|enum|__anon2bbd6b7a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1926,8 +1926,10 @@ name|GimpColorFrame
 modifier|*
 name|color_frame
 decl_stmt|;
-name|GimpImageType
-name|image_type
+specifier|const
+name|Babl
+modifier|*
+name|format
 decl_stmt|;
 name|GimpRGB
 name|color
@@ -1983,7 +1985,7 @@ argument_list|,
 literal|0.0
 argument_list|,
 operator|&
-name|image_type
+name|format
 argument_list|,
 operator|&
 name|color
@@ -1997,7 +1999,7 @@ name|gimp_color_frame_set_color
 argument_list|(
 name|color_frame
 argument_list|,
-name|image_type
+name|format
 argument_list|,
 operator|&
 name|color

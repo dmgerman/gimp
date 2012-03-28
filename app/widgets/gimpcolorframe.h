@@ -109,9 +109,11 @@ DECL|member|sample_valid
 name|gboolean
 name|sample_valid
 decl_stmt|;
-DECL|member|sample_type
-name|GimpImageType
-name|sample_type
+DECL|member|sample_format
+specifier|const
+name|Babl
+modifier|*
+name|sample_format
 decl_stmt|;
 DECL|member|color
 name|GimpRGB
@@ -269,8 +271,10 @@ name|GimpColorFrame
 modifier|*
 name|frame
 parameter_list|,
-name|GimpImageType
-name|sample_type
+specifier|const
+name|Babl
+modifier|*
+name|format
 parameter_list|,
 specifier|const
 name|GimpRGB

@@ -264,8 +264,10 @@ parameter_list|,
 name|GimpColorPickState
 name|pick_state
 parameter_list|,
-name|GimpImageType
-name|sample_type
+specifier|const
+name|Babl
+modifier|*
+name|sample_format
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -5745,7 +5747,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_levels_tool_color_picked (GimpColorTool * color_tool,GimpColorPickState pick_state,GimpImageType sample_type,const GimpRGB * color,gint color_index)
+DECL|function|gimp_levels_tool_color_picked (GimpColorTool * color_tool,GimpColorPickState pick_state,const Babl * sample_format,const GimpRGB * color,gint color_index)
 name|gimp_levels_tool_color_picked
 parameter_list|(
 name|GimpColorTool
@@ -5755,8 +5757,10 @@ parameter_list|,
 name|GimpColorPickState
 name|pick_state
 parameter_list|,
-name|GimpImageType
-name|sample_type
+specifier|const
+name|Babl
+modifier|*
+name|sample_format
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -5802,10 +5806,21 @@ name|value
 operator|&
 name|PICK_ALL_CHANNELS
 operator|&&
-name|GIMP_IMAGE_TYPE_IS_RGB
+operator|(
+name|sample_format
+operator|==
+name|babl_format
 argument_list|(
-name|sample_type
+literal|"R'G'B' u8"
 argument_list|)
+operator|||
+name|sample_format
+operator|==
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
+operator|)
 condition|)
 block|{
 name|GimpHistogramChannel

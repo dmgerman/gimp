@@ -205,7 +205,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d8f9cd0103
+DECL|enum|__anon2a9af0200103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -397,9 +397,11 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|GimpImageType
+specifier|const
+name|Babl
 modifier|*
-name|sample_type
+modifier|*
+name|sample_format
 parameter_list|,
 name|GimpRGB
 modifier|*
@@ -445,8 +447,10 @@ parameter_list|,
 name|GimpColorPickState
 name|pick_state
 parameter_list|,
-name|GimpImageType
-name|sample_type
+specifier|const
+name|Babl
+modifier|*
+name|sample_format
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -559,7 +563,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__ENUM_ENUM_BOXED_INT
+name|gimp_marshal_VOID__ENUM_POINTER_BOXED_INT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -2276,7 +2280,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_color_tool_real_pick (GimpColorTool * color_tool,gint x,gint y,GimpImageType * sample_type,GimpRGB * color,gint * color_index)
+DECL|function|gimp_color_tool_real_pick (GimpColorTool * color_tool,gint x,gint y,const Babl ** sample_format,GimpRGB * color,gint * color_index)
 name|gimp_color_tool_real_pick
 parameter_list|(
 name|GimpColorTool
@@ -2289,9 +2293,11 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|GimpImageType
+specifier|const
+name|Babl
 modifier|*
-name|sample_type
+modifier|*
+name|sample_format
 parameter_list|,
 name|GimpRGB
 modifier|*
@@ -2375,7 +2381,7 @@ name|options
 operator|->
 name|average_radius
 argument_list|,
-name|sample_type
+name|sample_format
 argument_list|,
 name|color
 argument_list|,
@@ -2388,7 +2394,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_tool_real_picked (GimpColorTool * color_tool,GimpColorPickState pick_state,GimpImageType sample_type,const GimpRGB * color,gint color_index)
+DECL|function|gimp_color_tool_real_picked (GimpColorTool * color_tool,GimpColorPickState pick_state,const Babl * sample_format,const GimpRGB * color,gint color_index)
 name|gimp_color_tool_real_picked
 parameter_list|(
 name|GimpColorTool
@@ -2398,8 +2404,10 @@ parameter_list|,
 name|GimpColorPickState
 name|pick_state
 parameter_list|,
-name|GimpImageType
-name|sample_type
+specifier|const
+name|Babl
+modifier|*
+name|sample_format
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -2455,9 +2463,9 @@ name|widget
 decl_stmt|;
 if|if
 condition|(
-name|GIMP_IMAGE_TYPE_IS_INDEXED
+name|babl_format_is_palette
 argument_list|(
-name|sample_type
+name|sample_format
 argument_list|)
 condition|)
 block|{
@@ -2784,8 +2792,10 @@ name|GimpColorToolClass
 modifier|*
 name|klass
 decl_stmt|;
-name|GimpImageType
-name|sample_type
+specifier|const
+name|Babl
+modifier|*
+name|sample_format
 decl_stmt|;
 name|GimpRGB
 name|color
@@ -2817,7 +2827,7 @@ argument_list|,
 name|y
 argument_list|,
 operator|&
-name|sample_type
+name|sample_format
 argument_list|,
 operator|&
 name|color
@@ -2840,7 +2850,7 @@ literal|0
 argument_list|,
 name|pick_state
 argument_list|,
-name|sample_type
+name|sample_format
 argument_list|,
 operator|&
 name|color

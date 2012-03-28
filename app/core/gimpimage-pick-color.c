@@ -47,7 +47,7 @@ end_include
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_pick_color (GimpImage * image,GimpDrawable * drawable,gint x,gint y,gboolean sample_merged,gboolean sample_average,gdouble average_radius,GimpImageType * sample_type,GimpRGB * color,gint * color_index)
+DECL|function|gimp_image_pick_color (GimpImage * image,GimpDrawable * drawable,gint x,gint y,gboolean sample_merged,gboolean sample_average,gdouble average_radius,const Babl ** sample_format,GimpRGB * color,gint * color_index)
 name|gimp_image_pick_color
 parameter_list|(
 name|GimpImage
@@ -73,9 +73,11 @@ parameter_list|,
 name|gdouble
 name|average_radius
 parameter_list|,
-name|GimpImageType
+specifier|const
+name|Babl
 modifier|*
-name|sample_type
+modifier|*
+name|sample_format
 parameter_list|,
 name|GimpRGB
 modifier|*
@@ -216,12 +218,12 @@ block|}
 comment|/* Do *not* call gimp_pickable_flush() here because it's too expensive    * to call it unconditionally each time e.g. the cursor view is updated.    * Instead, call gimp_pickable_flush() in the callers if needed.    */
 if|if
 condition|(
-name|sample_type
+name|sample_format
 condition|)
 operator|*
-name|sample_type
+name|sample_format
 operator|=
-name|gimp_pickable_get_image_type
+name|gimp_pickable_get_format
 argument_list|(
 name|pickable
 argument_list|)
