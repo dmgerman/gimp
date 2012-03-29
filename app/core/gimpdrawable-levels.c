@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawable-process.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimphistogram.h"
 end_include
 
