@@ -134,14 +134,6 @@ name|GObject
 modifier|*
 name|default_config
 decl_stmt|;
-DECL|member|apply_func
-name|GimpImageMapApplyFunc
-name|apply_func
-decl_stmt|;
-DECL|member|apply_data
-name|gpointer
-name|apply_data
-decl_stmt|;
 DECL|member|image_map
 name|GimpImageMap
 modifier|*
