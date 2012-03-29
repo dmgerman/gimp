@@ -223,7 +223,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf4f18f0103
+DECL|enum|__anon27e675e30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -413,23 +413,24 @@ name|get_property
 operator|=
 name|gimp_operation_point_layer_mode_get_property
 expr_stmt|;
+name|gegl_operation_class_set_keys
+argument_list|(
 name|operation_class
-operator|->
-name|name
-operator|=
+argument_list|,
+literal|"name"
+argument_list|,
 literal|"gimp:point-layer-mode"
-expr_stmt|;
-name|operation_class
-operator|->
-name|description
-operator|=
+argument_list|,
+literal|"description"
+argument_list|,
 literal|"GIMP point layer mode operation"
-expr_stmt|;
-name|operation_class
-operator|->
-name|categories
-operator|=
+argument_list|,
+literal|"categories"
+argument_list|,
 literal|"compositors"
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|operation_class
 operator|->

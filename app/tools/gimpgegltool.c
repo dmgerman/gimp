@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275bd22c0103
+DECL|enum|__anon28049a710103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -702,7 +702,7 @@ condition|)
 return|return;
 name|pspecs
 operator|=
-name|gegl_list_properties
+name|gegl_operation_list_properties
 argument_list|(
 name|tool
 operator|->
@@ -1187,9 +1187,12 @@ name|klass
 operator|->
 name|name
 argument_list|,
+name|gegl_operation_class_get_key
+argument_list|(
 name|klass
-operator|->
-name|categories
+argument_list|,
+literal|"categories"
+argument_list|)
 argument_list|)
 condition|)
 name|classes
@@ -2208,7 +2211,7 @@ name|gimp_gegl_tool_config_get_property
 expr_stmt|;
 name|pspecs
 operator|=
-name|gegl_list_properties
+name|gegl_operation_list_properties
 argument_list|(
 name|operation
 argument_list|,
