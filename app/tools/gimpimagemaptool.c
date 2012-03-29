@@ -2514,10 +2514,6 @@ argument_list|,
 name|tool
 operator|->
 name|operation
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

@@ -1097,29 +1097,6 @@ parameter_list|)
 function_decl|;
 end_typedef
 
-begin_typedef
-DECL|typedef|GimpImageMapApplyFunc
-typedef|typedef
-name|void
-function_decl|(
-modifier|*
-name|GimpImageMapApplyFunc
-function_decl|)
-parameter_list|(
-name|gpointer
-name|apply_data
-parameter_list|,
-name|PixelRegion
-modifier|*
-name|srcPR
-parameter_list|,
-name|PixelRegion
-modifier|*
-name|destPR
-parameter_list|)
-function_decl|;
-end_typedef
-
 begin_comment
 comment|/*  structs  */
 end_comment

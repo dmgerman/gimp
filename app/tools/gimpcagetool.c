@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288159d70103
+DECL|enum|__anon2b6711420103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -4890,10 +4890,6 @@ argument_list|,
 name|ct
 operator|->
 name|render_node
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

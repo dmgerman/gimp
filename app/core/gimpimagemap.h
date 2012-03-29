@@ -154,12 +154,6 @@ parameter_list|,
 name|GeglNode
 modifier|*
 name|operation
-parameter_list|,
-name|GimpImageMapApplyFunc
-name|apply_func
-parameter_list|,
-name|gpointer
-name|apply_data
 parameter_list|)
 function_decl|;
 end_function_decl
