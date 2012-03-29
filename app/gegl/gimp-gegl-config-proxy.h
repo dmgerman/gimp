@@ -25,6 +25,9 @@ specifier|const
 name|gchar
 modifier|*
 name|operation
+parameter_list|,
+name|GType
+name|parent_type
 parameter_list|)
 function_decl|;
 end_function_decl

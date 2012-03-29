@@ -503,13 +503,16 @@ end_function
 begin_function
 name|GimpObject
 modifier|*
-DECL|function|gimp_gegl_get_config_proxy (const gchar * operation)
+DECL|function|gimp_gegl_get_config_proxy (const gchar * operation,GType parent_type)
 name|gimp_gegl_get_config_proxy
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|operation
+parameter_list|,
+name|GType
+name|parent_type
 parameter_list|)
 block|{
 specifier|static
@@ -522,6 +525,27 @@ decl_stmt|;
 name|GType
 name|config_type
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|operation
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|g_type_is_a
+argument_list|(
+name|parent_type
+argument_list|,
+name|GIMP_TYPE_OBJECT
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -561,14 +585,25 @@ operator|!
 name|config_type
 condition|)
 block|{
+name|GTypeQuery
+name|query
+decl_stmt|;
+name|g_type_query
+argument_list|(
+name|parent_type
+argument_list|,
+operator|&
+name|query
+argument_list|)
+expr_stmt|;
+block|{
 name|GTypeInfo
 name|info
 init|=
 block|{
-sizeof|sizeof
-argument_list|(
-name|GimpObjectClass
-argument_list|)
+name|query
+operator|.
+name|class_size
 block|,
 operator|(
 name|GBaseInitFunc
@@ -590,10 +625,9 @@ block|,
 comment|/* class_finalize */
 name|operation
 block|,
-sizeof|sizeof
-argument_list|(
-name|GimpObject
-argument_list|)
+name|query
+operator|.
+name|instance_size
 block|,
 literal|0
 block|,
@@ -602,7 +636,7 @@ operator|(
 name|GInstanceInitFunc
 operator|)
 name|NULL
-block|,       }
+block|,           }
 decl_stmt|;
 specifier|const
 name|GInterfaceInfo
@@ -685,6 +719,7 @@ operator|)
 name|config_type
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|g_object_new

@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimagemapconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpparamspecs-duplicate.h"
 end_include
 
@@ -978,6 +984,8 @@ argument_list|(
 name|tool
 operator|->
 name|operation
+argument_list|,
+name|GIMP_TYPE_IMAGE_MAP_CONFIG
 argument_list|)
 expr_stmt|;
 if|if
