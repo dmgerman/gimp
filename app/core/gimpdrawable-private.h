@@ -21,13 +21,6 @@ DECL|struct|_GimpDrawablePrivate
 struct|struct
 name|_GimpDrawablePrivate
 block|{
-DECL|member|format
-specifier|const
-name|Babl
-modifier|*
-name|format
-decl_stmt|;
-comment|/* format of drawable      */
 DECL|member|buffer
 name|GeglBuffer
 modifier|*

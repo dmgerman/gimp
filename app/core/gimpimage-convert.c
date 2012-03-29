@@ -407,7 +407,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c52957e0103
+DECL|enum|__anon295622050103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1448,7 +1448,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c52957e0208
+DECL|struct|__anon295622050208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1691,7 +1691,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c52957e0308
+DECL|struct|__anon295622050308
 block|{
 DECL|member|used_count
 name|signed
@@ -3575,6 +3575,43 @@ argument_list|(
 name|image
 argument_list|,
 name|GIMP_INDEXED_IMAGE
+argument_list|)
+expr_stmt|;
+name|g_printerr
+argument_list|(
+literal|"old: %s %d   new: %s %d\n"
+argument_list|,
+name|babl_get_name
+argument_list|(
+name|gimp_drawable_get_format
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+argument_list|)
+argument_list|,
+name|babl_format_has_alpha
+argument_list|(
+name|gimp_drawable_get_format
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+argument_list|)
+argument_list|,
+name|babl_get_name
+argument_list|(
+name|new_format
+argument_list|)
+argument_list|,
+name|babl_format_has_alpha
+argument_list|(
+name|new_format
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|new_buffer
