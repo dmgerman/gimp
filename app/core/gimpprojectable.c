@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0fd8ed0103
+DECL|enum|__anon27dfa11b0103
 block|{
 DECL|enumerator|INVALIDATE
 name|INVALIDATE
@@ -482,9 +482,11 @@ block|}
 end_function
 
 begin_function
-name|GimpImageType
-DECL|function|gimp_projectable_get_image_type (GimpProjectable * projectable)
-name|gimp_projectable_get_image_type
+specifier|const
+name|Babl
+modifier|*
+DECL|function|gimp_projectable_get_format (GimpProjectable * projectable)
+name|gimp_projectable_get_format
 parameter_list|(
 name|GimpProjectable
 modifier|*
@@ -502,7 +504,7 @@ argument_list|(
 name|projectable
 argument_list|)
 argument_list|,
-literal|0
+name|NULL
 argument_list|)
 expr_stmt|;
 name|iface
@@ -516,12 +518,12 @@ if|if
 condition|(
 name|iface
 operator|->
-name|get_image_type
+name|get_format
 condition|)
 return|return
 name|iface
 operator|->
-name|get_image_type
+name|get_format
 argument_list|(
 name|projectable
 argument_list|)

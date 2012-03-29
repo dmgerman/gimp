@@ -141,11 +141,13 @@ modifier|*
 name|projectable
 parameter_list|)
 function_decl|;
-DECL|member|get_image_type
-name|GimpImageType
+DECL|member|get_format
+specifier|const
+name|Babl
+modifier|*
 function_decl|(
 modifier|*
-name|get_image_type
+name|get_format
 function_decl|)
 parameter_list|(
 name|GimpProjectable
@@ -320,8 +322,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpImageType
-name|gimp_projectable_get_image_type
+specifier|const
+name|Babl
+modifier|*
+name|gimp_projectable_get_format
 parameter_list|(
 name|GimpProjectable
 modifier|*

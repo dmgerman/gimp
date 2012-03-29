@@ -352,7 +352,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdedb1d0103
+DECL|enum|__anon2c35b7bc0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -446,7 +446,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdedb1d0203
+DECL|enum|__anon2c35b7bc0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -782,8 +782,10 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GimpImageType
-name|gimp_image_get_image_type
+specifier|const
+name|Babl
+modifier|*
+name|gimp_image_get_proj_format
 parameter_list|(
 name|GimpProjectable
 modifier|*
@@ -2596,9 +2598,9 @@ name|gimp_image_get_image
 expr_stmt|;
 name|iface
 operator|->
-name|get_image_type
+name|get_format
 operator|=
-name|gimp_image_get_image_type
+name|gimp_image_get_proj_format
 expr_stmt|;
 name|iface
 operator|->
@@ -5442,9 +5444,11 @@ end_function
 
 begin_function
 specifier|static
-name|GimpImageType
-DECL|function|gimp_image_get_image_type (GimpProjectable * projectable)
-name|gimp_image_get_image_type
+specifier|const
+name|Babl
+modifier|*
+DECL|function|gimp_image_get_proj_format (GimpProjectable * projectable)
+name|gimp_image_get_proj_format
 parameter_list|(
 name|GimpProjectable
 modifier|*
@@ -5460,23 +5464,40 @@ argument_list|(
 name|projectable
 argument_list|)
 decl_stmt|;
-name|GimpImageType
-name|type
-decl_stmt|;
-name|type
-operator|=
-name|GIMP_IMAGE_TYPE_FROM_BASE_TYPE
-argument_list|(
+switch|switch
+condition|(
 name|private
 operator|->
 name|base_type
+condition|)
+block|{
+case|case
+name|GIMP_RGB
+case|:
+case|case
+name|GIMP_INDEXED
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
 argument_list|)
+return|;
+case|case
+name|GIMP_GRAY
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"Y'A u8"
+argument_list|)
+return|;
+block|}
+name|g_assert_not_reached
+argument_list|()
 expr_stmt|;
 return|return
-name|GIMP_IMAGE_TYPE_WITH_ALPHA
-argument_list|(
-name|type
-argument_list|)
+name|NULL
 return|;
 block|}
 end_function
