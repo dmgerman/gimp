@@ -142,15 +142,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|HueSaturation
-typedef|typedef
-name|struct
-name|_HueSaturation
-name|HueSaturation
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|PixelRegionIterator
 typedef|typedef
 name|struct

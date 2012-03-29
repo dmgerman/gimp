@@ -117,11 +117,6 @@ name|GimpHueSaturationConfig
 modifier|*
 name|config
 decl_stmt|;
-DECL|member|hue_saturation
-name|HueSaturation
-modifier|*
-name|hue_saturation
-decl_stmt|;
 comment|/*  dialog  */
 DECL|member|range_radio
 name|GtkWidget
