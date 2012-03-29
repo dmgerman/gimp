@@ -383,9 +383,11 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|GimpImageType
+specifier|const
+name|Babl
 modifier|*
-name|sample_type
+modifier|*
+name|sample_format
 parameter_list|,
 name|GimpRGB
 modifier|*
@@ -2058,7 +2060,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_image_map_tool_pick_color (GimpColorTool * color_tool,gint x,gint y,GimpImageType * sample_type,GimpRGB * color,gint * color_index)
+DECL|function|gimp_image_map_tool_pick_color (GimpColorTool * color_tool,gint x,gint y,const Babl ** sample_format,GimpRGB * color,gint * color_index)
 name|gimp_image_map_tool_pick_color
 parameter_list|(
 name|GimpColorTool
@@ -2071,9 +2073,11 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|GimpImageType
+specifier|const
+name|Babl
 modifier|*
-name|sample_type
+modifier|*
+name|sample_format
 parameter_list|,
 name|GimpRGB
 modifier|*
@@ -2115,9 +2119,9 @@ name|off_y
 argument_list|)
 expr_stmt|;
 operator|*
-name|sample_type
+name|sample_format
 operator|=
-name|gimp_drawable_type
+name|gimp_drawable_get_format
 argument_list|(
 name|tool
 operator|->
