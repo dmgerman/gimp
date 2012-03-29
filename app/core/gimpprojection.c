@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba9f8640103
+DECL|enum|__anon2ab1d4d10103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -213,18 +213,6 @@ specifier|const
 name|Babl
 modifier|*
 name|gimp_projection_get_format
-parameter_list|(
-name|GimpPickable
-modifier|*
-name|pickable
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|gint
-name|gimp_projection_get_bytes
 parameter_list|(
 name|GimpPickable
 modifier|*
@@ -734,12 +722,6 @@ expr_stmt|;
 comment|/* sic */
 name|iface
 operator|->
-name|get_bytes
-operator|=
-name|gimp_projection_get_bytes
-expr_stmt|;
-name|iface
-operator|->
 name|get_buffer
 operator|=
 name|gimp_projection_get_buffer
@@ -1237,36 +1219,6 @@ end_function
 
 begin_function
 specifier|static
-name|gint
-DECL|function|gimp_projection_get_bytes (GimpPickable * pickable)
-name|gimp_projection_get_bytes
-parameter_list|(
-name|GimpPickable
-modifier|*
-name|pickable
-parameter_list|)
-block|{
-specifier|const
-name|Babl
-modifier|*
-name|format
-init|=
-name|gimp_projection_get_format
-argument_list|(
-name|pickable
-argument_list|)
-decl_stmt|;
-return|return
-name|babl_format_get_bytes_per_pixel
-argument_list|(
-name|format
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
 name|GeglBuffer
 modifier|*
 DECL|function|gimp_projection_get_buffer (GimpPickable * pickable)
@@ -1754,6 +1706,11 @@ operator|->
 name|pyramid
 condition|)
 block|{
+specifier|const
+name|Babl
+modifier|*
+name|format
+decl_stmt|;
 name|gint
 name|bytes
 decl_stmt|;
@@ -1763,14 +1720,21 @@ decl_stmt|;
 name|gint
 name|height
 decl_stmt|;
-name|bytes
+name|format
 operator|=
-name|gimp_projection_get_bytes
+name|gimp_projection_get_format
 argument_list|(
 name|GIMP_PICKABLE
 argument_list|(
 name|proj
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|bytes
+operator|=
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|format
 argument_list|)
 expr_stmt|;
 name|gimp_projectable_get_size

@@ -157,7 +157,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon275bb7b60103
+DECL|enum|__anon27918f550103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3236,6 +3236,11 @@ decl_stmt|;
 name|gint
 name|pixelwidth
 decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|pickable_format
+decl_stmt|;
 name|gint
 name|pickable_width
 decl_stmt|;
@@ -3285,6 +3290,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|pickable_format
+operator|=
+name|gimp_pickable_get_format
+argument_list|(
+name|pickable
+argument_list|)
+expr_stmt|;
 name|core
 operator|->
 name|orig_proj_buf
@@ -3295,9 +3307,9 @@ name|core
 operator|->
 name|orig_proj_buf
 argument_list|,
-name|gimp_pickable_get_bytes
+name|babl_format_get_bytes_per_pixel
 argument_list|(
-name|pickable
+name|pickable_format
 argument_list|)
 argument_list|,
 name|x
