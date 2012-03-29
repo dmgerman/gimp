@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -108,7 +114,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2910b0040103
+DECL|enum|__anon280055e00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -124,7 +130,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2910b0040203
+DECL|enum|__anon280055e00203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT

@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -65,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab07ee40103
+DECL|enum|__anon2989f2060103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +87,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab07ee40203
+DECL|enum|__anon2989f2060203
 block|{
 DECL|enumerator|COLOR_CLICKED
 name|COLOR_CLICKED
@@ -95,7 +101,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ab07ee40303
+DECL|enum|__anon2989f2060303
 block|{
 DECL|enumerator|INVALID_AREA
 name|INVALID_AREA

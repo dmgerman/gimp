@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -1259,7 +1259,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9ba8890108
+DECL|struct|__anon292d2d9e0108
 block|{
 DECL|member|factory
 name|GimpDataFactory

@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -77,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28009f7c0103
+DECL|enum|__anon29b3a6b70103
 block|{
 DECL|enumerator|PROP_ROUND_CORNERS
 name|PROP_ROUND_CORNERS

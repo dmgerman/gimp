@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gdk/gdkkeysyms.h>
 end_include
 
@@ -125,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad493290103
+DECL|enum|__anon278f38970103
 block|{
 DECL|enumerator|EDIT_NAME
 name|EDIT_NAME

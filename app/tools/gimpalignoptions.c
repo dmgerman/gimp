@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -65,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4d045c0103
+DECL|enum|__anon2aa82ac90103
 block|{
 DECL|enumerator|ALIGN_BUTTON_CLICKED
 name|ALIGN_BUTTON_CLICKED
@@ -78,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4d045c0203
+DECL|enum|__anon2aa82ac90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

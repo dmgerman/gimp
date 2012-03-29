@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -2877,7 +2883,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5bab660108
+DECL|struct|__anon2a3efd800108
 block|{
 DECL|member|config
 name|GObject

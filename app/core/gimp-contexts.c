@@ -35,13 +35,13 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<glib/gstdio.h>
+file|<gegl.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
