@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a5392310103
+DECL|enum|__anon2b9ac3390103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -917,7 +917,7 @@ operator|->
 name|coef
 condition|)
 block|{
-name|gegl_buffer_destroy
+name|g_object_unref
 argument_list|(
 name|ct
 operator|->
@@ -1150,7 +1150,7 @@ operator|->
 name|coef
 condition|)
 block|{
-name|gegl_buffer_destroy
+name|g_object_unref
 argument_list|(
 name|ct
 operator|->
@@ -4332,7 +4332,7 @@ operator|->
 name|coef
 condition|)
 block|{
-name|gegl_buffer_destroy
+name|g_object_unref
 argument_list|(
 name|ct
 operator|->
@@ -4461,7 +4461,7 @@ argument_list|(
 name|progress
 argument_list|)
 expr_stmt|;
-name|gegl_processor_destroy
+name|g_object_unref
 argument_list|(
 name|processor
 argument_list|)
@@ -4943,7 +4943,7 @@ condition|(
 name|buffer
 condition|)
 block|{
-name|gegl_buffer_destroy
+name|g_object_unref
 argument_list|(
 name|buffer
 argument_list|)
