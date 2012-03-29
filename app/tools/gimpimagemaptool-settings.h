@@ -17,12 +17,18 @@ name|__GIMP_IMAGE_MAP_TOOL_SETTINGS_H__
 end_define
 
 begin_function_decl
-name|gboolean
-name|gimp_image_map_tool_add_settings_gui
+name|GtkWidget
+modifier|*
+name|gimp_image_map_tool_real_get_settings_ui
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
-name|image_map_tool
+name|tool
+parameter_list|,
+name|GtkWidget
+modifier|*
+modifier|*
+name|settings_box
 parameter_list|)
 function_decl|;
 end_function_decl
