@@ -205,7 +205,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d1afba0103
+DECL|enum|__anon27f0f64c0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1188,23 +1188,6 @@ name|pickable
 argument_list|)
 operator|)
 name|gimp_drawable_get_format_with_alpha
-expr_stmt|;
-name|iface
-operator|->
-name|get_image_type
-operator|=
-operator|(
-name|GimpImageType
-argument_list|(
-operator|*
-argument_list|)
-argument_list|(
-name|GimpPickable
-operator|*
-name|pickable
-argument_list|)
-operator|)
-name|gimp_drawable_type
 expr_stmt|;
 name|iface
 operator|->
