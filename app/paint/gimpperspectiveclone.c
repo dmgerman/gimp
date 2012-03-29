@@ -1096,8 +1096,10 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|GimpImageType
-name|src_type
+specifier|const
+name|Babl
+modifier|*
+name|src_format_alpha
 decl_stmt|;
 name|gint
 name|x1d
@@ -1171,9 +1173,9 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|src_type
+name|src_format_alpha
 operator|=
-name|gimp_pickable_get_image_type
+name|gimp_pickable_get_format_with_alpha
 argument_list|(
 name|src_pickable
 argument_list|)
@@ -1564,12 +1566,9 @@ block|}
 comment|/*  copy the original image to a tile manager, adding alpha if needed  */
 name|bytes
 operator|=
-name|GIMP_IMAGE_TYPE_BYTES
+name|babl_format_get_bytes_per_pixel
 argument_list|(
-name|GIMP_IMAGE_TYPE_WITH_ALPHA
-argument_list|(
-name|src_type
-argument_list|)
+name|src_format_alpha
 argument_list|)
 expr_stmt|;
 name|orig_tiles
