@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e8745d0103
+DECL|enum|__anon294523b00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -203,23 +203,24 @@ name|get_property
 operator|=
 name|gimp_operation_set_alpha_get_property
 expr_stmt|;
+name|gegl_operation_class_set_keys
+argument_list|(
 name|operation_class
-operator|->
-name|name
-operator|=
+argument_list|,
+literal|"name"
+argument_list|,
 literal|"gimp:set-alpha"
-expr_stmt|;
-name|operation_class
-operator|->
-name|categories
-operator|=
+argument_list|,
+literal|"categories"
+argument_list|,
 literal|"color"
-expr_stmt|;
-name|operation_class
-operator|->
-name|description
-operator|=
+argument_list|,
+literal|"description"
+argument_list|,
 literal|"Set a buffer's alpha channel to a value"
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|operation_class
 operator|->

@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b89a07a0103
+DECL|enum|__anon2b4f3f670103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -265,23 +265,24 @@ name|get_property
 operator|=
 name|gimp_operation_shrink_get_property
 expr_stmt|;
+name|gegl_operation_class_set_keys
+argument_list|(
 name|operation_class
-operator|->
-name|name
-operator|=
+argument_list|,
+literal|"name"
+argument_list|,
 literal|"gimp:shrink"
-expr_stmt|;
-name|operation_class
-operator|->
-name|categories
-operator|=
+argument_list|,
+literal|"categories"
+argument_list|,
 literal|"gimp"
-expr_stmt|;
-name|operation_class
-operator|->
-name|description
-operator|=
+argument_list|,
+literal|"description"
+argument_list|,
 literal|"GIMP Shrink operation"
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|operation_class
 operator|->

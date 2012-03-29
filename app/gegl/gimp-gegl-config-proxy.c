@@ -396,7 +396,7 @@ name|gimp_gegl_config_get_property
 expr_stmt|;
 name|pspecs
 operator|=
-name|gegl_list_properties
+name|gegl_operation_list_properties
 argument_list|(
 name|operation
 argument_list|,
@@ -763,7 +763,7 @@ argument_list|)
 expr_stmt|;
 name|pspecs
 operator|=
-name|gegl_list_properties
+name|gegl_operation_list_properties
 argument_list|(
 name|operation
 argument_list|,

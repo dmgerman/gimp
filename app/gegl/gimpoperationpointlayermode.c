@@ -223,7 +223,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c13b9bd0103
+DECL|enum|__anon2ab19bd20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1349,6 +1349,7 @@ name|sample
 operator|--
 condition|)
 block|{
+comment|/* XXX: having such a switch in an innerloop is a horrible idea */
 switch|switch
 condition|(
 name|blend_mode

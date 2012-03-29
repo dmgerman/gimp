@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d879ed0103
+DECL|enum|__anon2b40a0440103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -511,6 +511,11 @@ name|GType
 modifier|*
 name|ops
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|categories
+decl_stmt|;
 name|guint
 name|n_ops
 decl_stmt|;
@@ -545,6 +550,15 @@ operator|&
 name|n_ops
 argument_list|)
 expr_stmt|;
+name|categories
+operator|=
+name|gegl_operation_class_get_key
+argument_list|(
+name|klass
+argument_list|,
+literal|"categories"
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -554,12 +568,7 @@ name|klass
 operator|->
 name|name
 argument_list|,
-name|gegl_operation_class_get_key
-argument_list|(
-name|klass
-argument_list|,
-literal|"categories"
-argument_list|)
+name|categories
 argument_list|)
 condition|)
 name|classes
