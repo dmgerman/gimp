@@ -25,8 +25,8 @@ name|TilePyramid
 modifier|*
 name|tile_pyramid_new
 parameter_list|(
-name|GimpImageType
-name|type
+name|gint
+name|bytes
 parameter_list|,
 name|gint
 name|width

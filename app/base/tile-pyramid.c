@@ -52,10 +52,6 @@ DECL|struct|_TilePyramid
 struct|struct
 name|_TilePyramid
 block|{
-DECL|member|type
-name|GimpImageType
-name|type
-decl_stmt|;
 DECL|member|width
 name|guint
 name|width
@@ -188,17 +184,17 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * tile_pyramid_new:  * @type:   type of pixel data stored in the pyramid  * @width:  bottom level width  * @height: bottom level height  *  * Creates a new #TilePyramid, managing a set of tile-managers where  * each level is a sized-down version of the level below.  *  * This only works correctly if you set a validate procedure using  * tile_pyramid_set_validate_proc() and invalidate areas. With some  * small changes, it could be made to work for non-validating tile  * managers also. But currently only the projection uses it.  *  * Only the bottom-most tile-manager is allocated at this point. Upper  * levels are created only if they are requested.  *  * Return value: a newly allocate #TilePyramid  **/
+comment|/**  * tile_pyramid_new:  * @bytes:  foo  * @width:  bottom level width  * @height: bottom level height  *  * Creates a new #TilePyramid, managing a set of tile-managers where  * each level is a sized-down version of the level below.  *  * This only works correctly if you set a validate procedure using  * tile_pyramid_set_validate_proc() and invalidate areas. With some  * small changes, it could be made to work for non-validating tile  * managers also. But currently only the projection uses it.  *  * Only the bottom-most tile-manager is allocated at this point. Upper  * levels are created only if they are requested.  *  * Return value: a newly allocate #TilePyramid  **/
 end_comment
 
 begin_function
 name|TilePyramid
 modifier|*
-DECL|function|tile_pyramid_new (GimpImageType type,gint width,gint height)
+DECL|function|tile_pyramid_new (gint bytes,gint width,gint height)
 name|tile_pyramid_new
 parameter_list|(
-name|GimpImageType
-name|type
+name|gint
+name|bytes
 parameter_list|,
 name|gint
 name|width
@@ -238,9 +234,9 @@ argument_list|)
 expr_stmt|;
 name|pyramid
 operator|->
-name|type
+name|bytes
 operator|=
-name|type
+name|bytes
 expr_stmt|;
 name|pyramid
 operator|->
@@ -254,62 +250,6 @@ name|height
 operator|=
 name|height
 expr_stmt|;
-switch|switch
-condition|(
-name|type
-condition|)
-block|{
-case|case
-name|GIMP_GRAY_IMAGE
-case|:
-name|pyramid
-operator|->
-name|bytes
-operator|=
-literal|1
-expr_stmt|;
-break|break;
-case|case
-name|GIMP_GRAYA_IMAGE
-case|:
-name|pyramid
-operator|->
-name|bytes
-operator|=
-literal|2
-expr_stmt|;
-break|break;
-case|case
-name|GIMP_RGB_IMAGE
-case|:
-name|pyramid
-operator|->
-name|bytes
-operator|=
-literal|3
-expr_stmt|;
-break|break;
-case|case
-name|GIMP_RGBA_IMAGE
-case|:
-name|pyramid
-operator|->
-name|bytes
-operator|=
-literal|4
-expr_stmt|;
-break|break;
-case|case
-name|GIMP_INDEXED_IMAGE
-case|:
-case|case
-name|GIMP_INDEXEDA_IMAGE
-case|:
-name|g_assert_not_reached
-argument_list|()
-expr_stmt|;
-break|break;
-block|}
 name|pyramid
 operator|->
 name|tiles
@@ -323,8 +263,6 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|pyramid
-operator|->
 name|bytes
 argument_list|)
 expr_stmt|;

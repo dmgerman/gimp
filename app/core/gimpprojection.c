@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc82f640103
+DECL|enum|__anon27ebdc4c0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1830,8 +1830,8 @@ operator|->
 name|pyramid
 condition|)
 block|{
-name|GimpImageType
-name|type
+name|gint
+name|bytes
 decl_stmt|;
 name|gint
 name|width
@@ -1839,9 +1839,9 @@ decl_stmt|;
 name|gint
 name|height
 decl_stmt|;
-name|type
+name|bytes
 operator|=
-name|gimp_projection_get_image_type
+name|gimp_projection_get_bytes
 argument_list|(
 name|GIMP_PICKABLE
 argument_list|(
@@ -1868,7 +1868,7 @@ name|pyramid
 operator|=
 name|tile_pyramid_new
 argument_list|(
-name|type
+name|bytes
 argument_list|,
 name|width
 argument_list|,
