@@ -141,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27deffd80103
+DECL|enum|__anon2b0b85cd0103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -644,7 +644,14 @@ argument_list|(
 name|info
 argument_list|)
 expr_stmt|;
-break|break;
+comment|/* set token to left paren to we won't set another                    * error below, gimp_config_deserialize() already did                    */
+name|token
+operator|=
+name|G_TOKEN_LEFT_PAREN
+expr_stmt|;
+goto|goto
+name|error
+goto|;
 block|}
 block|}
 elseif|else
@@ -809,6 +816,8 @@ comment|/* do nothing */
 break|break;
 block|}
 block|}
+name|error
+label|:
 if|if
 condition|(
 name|token
