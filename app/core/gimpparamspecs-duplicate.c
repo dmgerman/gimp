@@ -553,6 +553,10 @@ name|gspec
 operator|->
 name|ui_maximum
 argument_list|,
+name|gspec
+operator|->
+name|ui_gamma
+argument_list|,
 name|pspec
 operator|->
 name|flags
