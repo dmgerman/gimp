@@ -627,6 +627,16 @@ argument_list|,
 literal|1000.0
 argument_list|)
 expr_stmt|;
+name|gimp_spin_scale_set_gamma
+argument_list|(
+name|GIMP_SPIN_SCALE
+argument_list|(
+name|scale
+argument_list|)
+argument_list|,
+literal|1.7
+argument_list|)
+expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
