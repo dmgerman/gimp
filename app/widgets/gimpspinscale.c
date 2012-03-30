@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2792eff10103
+DECL|enum|__anon2bed64cf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -61,7 +61,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2792eff10203
+DECL|enum|__anon2bed64cf0203
 block|{
 DECL|enumerator|TARGET_NUMBER
 name|TARGET_NUMBER
@@ -1971,6 +1971,12 @@ name|gdouble
 operator|)
 name|width
 expr_stmt|;
+if|if
+condition|(
+name|fraction
+operator|>
+literal|0.0
+condition|)
 name|fraction
 operator|=
 name|pow
