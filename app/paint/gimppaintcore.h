@@ -171,10 +171,10 @@ modifier|*
 name|undo_buffer
 decl_stmt|;
 comment|/*  pixels which have been modified     */
-DECL|member|saved_proj_tiles
-name|TileManager
+DECL|member|saved_proj_buffer
+name|GeglBuffer
 modifier|*
-name|saved_proj_tiles
+name|saved_proj_buffer
 decl_stmt|;
 comment|/*  proj tiles which have been modified */
 DECL|member|canvas_tiles
@@ -763,33 +763,6 @@ name|image_opacity
 parameter_list|,
 name|GimpPaintApplicationMode
 name|mode
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_paint_core_validate_saved_proj_tiles
-parameter_list|(
-name|GimpPaintCore
-modifier|*
-name|core
-parameter_list|,
-name|GimpPickable
-modifier|*
-name|pickable
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|,
-name|gint
-name|w
-parameter_list|,
-name|gint
-name|h
 parameter_list|)
 function_decl|;
 end_function_decl
