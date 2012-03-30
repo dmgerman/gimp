@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c74dc790103
+DECL|enum|__anon298ee32d0103
 block|{
 DECL|enumerator|SESSION_INFO_FACTORY_ENTRY
 name|SESSION_INFO_FACTORY_ENTRY
@@ -159,7 +159,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c74dc790208
+DECL|struct|__anon298ee32d0208
 block|{
 DECL|member|info
 name|GimpSessionInfo
@@ -1596,6 +1596,12 @@ operator|->
 name|p
 operator|->
 name|docks
+operator|&&
+name|info
+operator|->
+name|p
+operator|->
+name|factory_entry
 operator|&&
 name|strcmp
 argument_list|(
