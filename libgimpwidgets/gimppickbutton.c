@@ -12,13 +12,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gdk/gdkkeysyms.h>
+file|<babl/babl.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gdk/gdkkeysyms.h>
 end_include
 
 begin_include
@@ -75,7 +81,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dd90500103
+DECL|enum|__anon2b07b4470103
 block|{
 DECL|enumerator|COLOR_PICKED
 name|COLOR_PICKED

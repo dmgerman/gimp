@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -71,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2c89ea0103
+DECL|enum|__anon290dd5ff0103
 block|{
 DECL|enumerator|ENTRY_CLICKED
 name|ENTRY_CLICKED

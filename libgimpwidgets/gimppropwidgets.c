@@ -15,6 +15,12 @@ directive|include
 file|<string.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<babl/babl.h>
+end_include
+
 begin_comment
 comment|/* FIXME: #undef GTK_DISABLE_DEPRECATED */
 end_comment

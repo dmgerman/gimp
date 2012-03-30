@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -794,7 +794,7 @@ name|pdb_type_quark
 condition|)
 block|{
 struct|struct
-DECL|struct|__anon2a2218a60108
+DECL|struct|__anon2c0532460108
 block|{
 DECL|member|g_type
 name|GType
@@ -1114,7 +1114,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a2218a60208
+DECL|struct|__anon2c0532460208
 block|{
 DECL|member|old_name
 specifier|const

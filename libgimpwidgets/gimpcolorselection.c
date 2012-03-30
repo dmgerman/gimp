@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<babl/babl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -114,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299ec3cd0103
+DECL|enum|__anon27870bf30103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -159,7 +165,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon299ec3cd0203
+DECL|enum|__anon27870bf30203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -172,7 +178,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299ec3cd0303
+DECL|enum|__anon27870bf30303
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

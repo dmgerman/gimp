@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<babl/babl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -57,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon297fa0170103
+DECL|enum|__anon28f071f80103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -70,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297fa0170203
+DECL|enum|__anon28f071f80203
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME

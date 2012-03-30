@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<babl/babl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -60,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c774c720103
+DECL|enum|__anon2c64ffd70103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_PROTANOPIA
 name|COLORBLIND_DEFICIENCY_PROTANOPIA
@@ -351,7 +357,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c774c720203
+DECL|enum|__anon2c64ffd70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

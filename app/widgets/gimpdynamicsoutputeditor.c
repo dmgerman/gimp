@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -87,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29323cee0103
+DECL|enum|__anon27c573b30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -100,7 +106,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29323cee0203
+DECL|enum|__anon27c573b30203
 block|{
 DECL|enumerator|INPUT_COLUMN_INDEX
 name|INPUT_COLUMN_INDEX
@@ -122,7 +128,7 @@ end_enum
 
 begin_struct
 struct|struct
-DECL|struct|__anon29323cee0308
+DECL|struct|__anon27c573b30308
 block|{
 DECL|member|use_property
 specifier|const

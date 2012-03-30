@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -1182,7 +1182,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4222730108
+DECL|struct|__anon294ae41b0108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -1210,7 +1210,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4222730208
+DECL|struct|__anon294ae41b0208
 block|{
 DECL|member|offset
 name|gdouble

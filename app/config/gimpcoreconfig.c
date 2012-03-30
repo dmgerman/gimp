@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<babl/babl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<cairo.h>
 end_include
 
@@ -147,7 +153,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af18b800103
+DECL|enum|__anon2b0bbda70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

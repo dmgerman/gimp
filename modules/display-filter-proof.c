@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<babl/babl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -188,7 +194,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa273350103
+DECL|enum|__anon2c6fe3d90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

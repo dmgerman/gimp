@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<babl/babl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -64,7 +70,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29595cef0103
+DECL|enum|__anon2b55861f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -80,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29595cef0203
+DECL|enum|__anon2b55861f0203
 block|{
 DECL|enumerator|EVENT
 name|EVENT
