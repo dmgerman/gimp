@@ -35,7 +35,7 @@ parameter_list|(
 name|message
 parameter_list|)
 define|\
-value|g_printerr ("%s: " message " took %0.2f seconds\n", \               G_STRFUNC, g_timer_elapsed (_timer, NULL)); \   g_timer_destroy (_timer); }
+value|g_printerr ("%s: %s took %0.2f seconds\n", \               G_STRFUNC, message, g_timer_elapsed (_timer, NULL)); \   g_timer_destroy (_timer); }
 end_define
 
 begin_define

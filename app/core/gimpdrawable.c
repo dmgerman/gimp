@@ -63,10 +63,6 @@ directive|include
 file|"gimp-utils.h"
 end_include
 
-begin_comment
-comment|/* temp for GIMP_TIMER */
-end_comment
-
 begin_include
 include|#
 directive|include
@@ -189,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c80e8230103
+DECL|enum|__anon2c3654170103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1941,14 +1937,6 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_UNSTABLE
-name|GIMP_TIMER_START
-argument_list|()
-expr_stmt|;
-endif|#
-directive|endif
 name|scale
 operator|=
 name|g_object_new
@@ -2039,16 +2027,6 @@ argument_list|(
 name|scale
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_UNSTABLE
-name|GIMP_TIMER_END
-argument_list|(
-literal|"scaling"
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 name|gimp_drawable_set_buffer_full
 argument_list|(
 name|drawable
