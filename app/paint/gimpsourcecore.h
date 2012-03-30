@@ -154,7 +154,8 @@ name|GimpBrushCoreClass
 name|parent_class
 decl_stmt|;
 DECL|member|get_source
-name|gboolean
+name|GeglBuffer
+modifier|*
 function_decl|(
 modifier|*
 name|get_source
@@ -201,10 +202,6 @@ parameter_list|,
 name|gint
 modifier|*
 name|paint_area_height
-parameter_list|,
-name|PixelRegion
-modifier|*
-name|srcPR
 parameter_list|)
 function_decl|;
 DECL|member|motion
@@ -238,9 +235,9 @@ name|GimpPickable
 modifier|*
 name|src_pickable
 parameter_list|,
-name|PixelRegion
+name|GeglBuffer
 modifier|*
-name|srcPR
+name|src_buffer
 parameter_list|,
 name|gint
 name|src_offset_x

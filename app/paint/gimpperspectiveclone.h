@@ -129,11 +129,6 @@ DECL|member|transform_inv
 name|GimpMatrix3
 name|transform_inv
 decl_stmt|;
-DECL|member|src_area
-name|TempBuf
-modifier|*
-name|src_area
-decl_stmt|;
 block|}
 struct|;
 end_struct
