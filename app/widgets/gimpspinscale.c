@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c3e4a60103
+DECL|enum|__anon2ad41a9b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -61,7 +61,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c3e4a60203
+DECL|enum|__anon2ad41a9b0203
 block|{
 DECL|enumerator|TARGET_NUMBER
 name|TARGET_NUMBER
@@ -545,6 +545,13 @@ name|scale
 argument_list|)
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|gimp_spin_scale_set_gamma
+argument_list|(
+name|scale
+argument_list|,
+literal|1.0
 argument_list|)
 expr_stmt|;
 block|}
