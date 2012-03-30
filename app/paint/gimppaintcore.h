@@ -184,13 +184,13 @@ name|canvas_buffer
 decl_stmt|;
 comment|/*  the buffer to paint the mask to     */
 DECL|member|orig_buf
-name|TempBuf
+name|GeglBuffer
 modifier|*
 name|orig_buf
 decl_stmt|;
 comment|/*  the unmodified drawable pixels      */
 DECL|member|orig_proj_buf
-name|TempBuf
+name|GeglBuffer
 modifier|*
 name|orig_proj_buf
 decl_stmt|;
@@ -653,7 +653,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|TempBuf
+name|GeglBuffer
 modifier|*
 name|gimp_paint_core_get_orig_image
 parameter_list|(
@@ -681,7 +681,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|TempBuf
+name|GeglBuffer
 modifier|*
 name|gimp_paint_core_get_orig_proj
 parameter_list|(
