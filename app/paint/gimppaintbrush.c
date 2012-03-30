@@ -618,13 +618,11 @@ block|}
 else|else
 block|{
 comment|/* otherwise fill the area with the foreground color */
-name|gimp_image_get_foreground
+name|gimp_context_get_foreground_pixel
 argument_list|(
-name|image
-argument_list|,
 name|context
 argument_list|,
-name|gimp_drawable_type
+name|gimp_drawable_get_format_with_alpha
 argument_list|(
 name|drawable
 argument_list|)
