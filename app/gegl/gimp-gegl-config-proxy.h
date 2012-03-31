@@ -33,6 +33,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpContainer
+modifier|*
+name|gimp_gegl_get_config_container
+parameter_list|(
+name|GType
+name|config_type
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_gegl_config_proxy_sync
 parameter_list|(
