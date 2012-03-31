@@ -183,18 +183,6 @@ modifier|*
 name|canvas_buffer
 decl_stmt|;
 comment|/*  the buffer to paint the mask to     */
-DECL|member|orig_buf
-name|GeglBuffer
-modifier|*
-name|orig_buf
-decl_stmt|;
-comment|/*  the unmodified drawable pixels      */
-DECL|member|orig_proj_buf
-name|GeglBuffer
-modifier|*
-name|orig_proj_buf
-decl_stmt|;
-comment|/*  the unmodified projection pixels    */
 DECL|member|canvas_buf
 name|TempBuf
 modifier|*
@@ -660,22 +648,6 @@ parameter_list|(
 name|GimpPaintCore
 modifier|*
 name|core
-parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|,
-name|gint
-name|width
-parameter_list|,
-name|gint
-name|height
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -688,22 +660,6 @@ parameter_list|(
 name|GimpPaintCore
 modifier|*
 name|core
-parameter_list|,
-name|GimpPickable
-modifier|*
-name|pickable
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|,
-name|gint
-name|width
-parameter_list|,
-name|gint
-name|height
 parameter_list|)
 function_decl|;
 end_function_decl

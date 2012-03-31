@@ -811,40 +811,13 @@ condition|)
 block|{
 return|return;
 block|}
+if|#
+directive|if
+literal|0
 comment|/*  get the original untouched image  */
-name|orig
-operator|=
-name|gimp_paint_core_get_orig_image
-argument_list|(
-name|paint_core
-argument_list|,
-name|drawable
-argument_list|,
-name|x
-argument_list|,
-name|y
-argument_list|,
-name|width
-argument_list|,
-name|height
-argument_list|)
-expr_stmt|;
-name|pixel_region_init_temp_buf
-argument_list|(
-operator|&
-name|srcPR
-argument_list|,
-name|orig
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|width
-argument_list|,
-name|height
-argument_list|)
-expr_stmt|;
+block|orig = gimp_paint_core_get_orig_image (paint_core, drawable,                                            x, y, width, height);      pixel_region_init_temp_buf (&srcPR, orig,                                 0, 0, width, height);
+endif|#
+directive|endif
 block|}
 comment|/* tempPR will hold the dodgeburned region */
 name|temp_data

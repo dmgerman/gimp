@@ -310,6 +310,10 @@ name|GeglBuffer
 modifier|*
 name|src_buffer
 parameter_list|,
+name|GeglRectangle
+modifier|*
+name|src_rect
+parameter_list|,
 name|gint
 name|src_offset_x
 parameter_list|,
@@ -1786,7 +1790,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_heal_motion (GimpSourceCore * source_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,gdouble opacity,GimpPickable * src_pickable,GeglBuffer * src_buffer,gint src_offset_x,gint src_offset_y,TempBuf * paint_area,gint paint_area_offset_x,gint paint_area_offset_y,gint paint_area_width,gint paint_area_height)
+DECL|function|gimp_heal_motion (GimpSourceCore * source_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,gdouble opacity,GimpPickable * src_pickable,GeglBuffer * src_buffer,GeglRectangle * src_rect,gint src_offset_x,gint src_offset_y,TempBuf * paint_area,gint paint_area_offset_x,gint paint_area_offset_y,gint paint_area_width,gint paint_area_height)
 name|gimp_heal_motion
 parameter_list|(
 name|GimpSourceCore
@@ -1816,6 +1820,10 @@ parameter_list|,
 name|GeglBuffer
 modifier|*
 name|src_buffer
+parameter_list|,
+name|GeglRectangle
+modifier|*
+name|src_rect
 parameter_list|,
 name|gint
 name|src_offset_x
@@ -1971,15 +1979,13 @@ name|src_temp_buf
 operator|=
 name|temp_buf_new
 argument_list|(
-name|gegl_buffer_get_width
-argument_list|(
-name|src_buffer
-argument_list|)
+name|src_rect
+operator|->
+name|width
 argument_list|,
-name|gegl_buffer_get_height
-argument_list|(
-name|src_buffer
-argument_list|)
+name|src_rect
+operator|->
+name|height
 argument_list|,
 name|gimp_drawable_bytes_with_alpha
 argument_list|(
@@ -2039,11 +2045,20 @@ name|gegl_buffer_copy
 argument_list|(
 name|src_buffer
 argument_list|,
-name|NULL
+name|src_rect
 argument_list|,
 name|tmp
 argument_list|,
-name|NULL
+name|GIMP_GEGL_RECT
+argument_list|(
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_unref

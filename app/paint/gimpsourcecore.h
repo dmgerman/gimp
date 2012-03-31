@@ -202,6 +202,10 @@ parameter_list|,
 name|gint
 modifier|*
 name|paint_area_height
+parameter_list|,
+name|GeglRectangle
+modifier|*
+name|src_rect
 parameter_list|)
 function_decl|;
 DECL|member|motion
@@ -238,6 +242,10 @@ parameter_list|,
 name|GeglBuffer
 modifier|*
 name|src_buffer
+parameter_list|,
+name|GeglRectangle
+modifier|*
+name|src_rect
 parameter_list|,
 name|gint
 name|src_offset_x
