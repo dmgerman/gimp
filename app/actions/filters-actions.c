@@ -91,6 +91,33 @@ index|[]
 init|=
 block|{
 block|{
+literal|"filters-color-to-alpha"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Color to _Alpha..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Convert a specified color to transparency"
+argument_list|)
+block|,
+literal|"gegl:color-to-alpha"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_PIXELIZE */
+block|}
+block|,
+block|{
 literal|"filters-pixelize"
 block|,
 name|GIMP_STOCK_GEGL
@@ -99,7 +126,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"_Pixelize"
+literal|"_Pixelize..."
 argument_list|)
 block|,
 name|NULL
@@ -126,7 +153,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"_Gaussian Blur"
+literal|"_Gaussian Blur..."
 argument_list|)
 block|,
 name|NULL
@@ -208,7 +235,12 @@ init|=
 name|FALSE
 decl_stmt|;
 name|gboolean
-name|children
+name|gray
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
+name|alpha
 init|=
 name|FALSE
 decl_stmt|;
@@ -240,6 +272,20 @@ name|GimpItem
 modifier|*
 name|item
 decl_stmt|;
+name|alpha
+operator|=
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
+name|gray
+operator|=
+name|gimp_drawable_is_gray
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|GIMP_IS_LAYER_MASK
@@ -286,9 +332,9 @@ name|drawable
 argument_list|)
 argument_list|)
 condition|)
-name|children
+name|writable
 operator|=
-name|TRUE
+name|FALSE
 expr_stmt|;
 block|}
 block|}
@@ -305,12 +351,21 @@ define|\
 value|gimp_action_group_set_action_sensitive (group, action, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-literal|"filters-pixelize"
+literal|"filters-color-to-alpha"
 argument_list|,
 name|writable
 operator|&&
 operator|!
-name|children
+name|gray
+operator|&&
+name|alpha
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-pixelize"
+argument_list|,
+name|writable
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -318,9 +373,6 @@ argument_list|(
 literal|"filters-gaussian-blur"
 argument_list|,
 name|writable
-operator|&&
-operator|!
-name|children
 argument_list|)
 expr_stmt|;
 undef|#
