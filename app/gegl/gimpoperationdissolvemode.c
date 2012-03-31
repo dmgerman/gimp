@@ -27,6 +27,18 @@ directive|include
 file|"gimpoperationdissolvemode.h"
 end_include
 
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpOperationDissolveMode,gimp_operation_dissolve_mode,GIMP_TYPE_OPERATION_POINT_LAYER_MODE)
+name|G_DEFINE_TYPE
+argument_list|(
+argument|GimpOperationDissolveMode
+argument_list|,
+argument|gimp_operation_dissolve_mode
+argument_list|,
+argument|GIMP_TYPE_OPERATION_POINT_LAYER_MODE
+argument_list|)
+end_macro
+
 begin_define
 DECL|macro|RANDOM_TABLE_SIZE
 define|#
@@ -34,6 +46,16 @@ directive|define
 name|RANDOM_TABLE_SIZE
 value|4096
 end_define
+
+begin_decl_stmt
+specifier|static
+name|gint32
+name|random_table
+index|[
+name|RANDOM_TABLE_SIZE
+index|]
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 specifier|static
@@ -82,28 +104,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationDissolveMode,gimp_operation_dissolve_mode,GIMP_TYPE_OPERATION_POINT_LAYER_MODE)
-name|G_DEFINE_TYPE
-argument_list|(
-argument|GimpOperationDissolveMode
-argument_list|,
-argument|gimp_operation_dissolve_mode
-argument_list|,
-argument|GIMP_TYPE_OPERATION_POINT_LAYER_MODE
-argument_list|)
-end_macro
-
-begin_decl_stmt
-specifier|static
-name|gint32
-name|random_table
-index|[
-name|RANDOM_TABLE_SIZE
-index|]
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 specifier|static
 name|void
@@ -128,12 +128,6 @@ name|gr
 decl_stmt|;
 name|gint
 name|i
-decl_stmt|;
-specifier|static
-name|gboolean
-name|table_initialized
-init|=
-name|FALSE
 decl_stmt|;
 name|operation_class
 operator|=
@@ -180,23 +174,12 @@ name|process
 operator|=
 name|gimp_operation_dissolve_mode_process
 expr_stmt|;
-DECL|macro|RANDOM_SEED
-define|#
-directive|define
-name|RANDOM_SEED
-value|314159265
-if|if
-condition|(
-operator|!
-name|table_initialized
-condition|)
-block|{
 comment|/* generate a table of random seeds */
 name|gr
 operator|=
 name|g_rand_new_with_seed
 argument_list|(
-name|RANDOM_SEED
+literal|314159265
 argument_list|)
 expr_stmt|;
 for|for
@@ -212,7 +195,6 @@ condition|;
 name|i
 operator|++
 control|)
-block|{
 name|random_table
 index|[
 name|i
@@ -223,17 +205,11 @@ argument_list|(
 name|gr
 argument_list|)
 expr_stmt|;
-block|}
 name|g_rand_free
 argument_list|(
 name|gr
 argument_list|)
 expr_stmt|;
-name|table_initialized
-operator|=
-name|TRUE
-expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -265,14 +241,12 @@ specifier|const
 name|Babl
 modifier|*
 name|format
-decl_stmt|;
-name|format
-operator|=
+init|=
 name|babl_format
 argument_list|(
 literal|"R'G'B'A float"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gegl_operation_set_format
 argument_list|(
 name|operation
@@ -402,7 +376,7 @@ name|RANDOM_TABLE_SIZE
 index|]
 argument_list|)
 decl_stmt|;
-comment|/* fast forward through this rows pseudo random sequence */
+comment|/* fast forward through the rows pseudo random sequence */
 for|for
 control|(
 name|x
@@ -448,12 +422,8 @@ name|i
 operator|++
 control|)
 block|{
-name|int
-name|rand_val
-decl_stmt|;
-comment|/* dissolve if random value is>= opacity */
-name|rand_val
-operator|=
+if|if
+condition|(
 name|g_rand_int_range
 argument_list|(
 name|gr
@@ -462,10 +432,6 @@ literal|0
 argument_list|,
 literal|255
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|rand_val
 operator|>=
 name|aux
 index|[
