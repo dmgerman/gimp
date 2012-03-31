@@ -1794,34 +1794,6 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  color transforms / utilities  */
-end_comment
-
-begin_function_decl
-name|TempBuf
-modifier|*
-name|gimp_image_transform_temp_buf
-parameter_list|(
-specifier|const
-name|GimpImage
-modifier|*
-name|dest_image
-parameter_list|,
-name|GimpImageType
-name|dest_type
-parameter_list|,
-name|TempBuf
-modifier|*
-name|temp_buf
-parameter_list|,
-name|gboolean
-modifier|*
-name|new_buf
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/*  parasites  */
 end_comment
 
