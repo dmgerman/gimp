@@ -79,6 +79,12 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_DISSOLVE_MODE, GimpOperationDissolveModeClass))
 end_define
 
+begin_include
+include|#
+directive|include
+file|"gimpoperationpointlayermode.h"
+end_include
+
 begin_typedef
 DECL|typedef|GimpOperationDissolveModeClass
 typedef|typedef
@@ -94,7 +100,7 @@ struct|struct
 name|_GimpOperationDissolveModeClass
 block|{
 DECL|member|parent_class
-name|GeglOperationComposerClass
+name|GimpOperationPointLayerModeClass
 name|parent_class
 decl_stmt|;
 block|}
@@ -107,12 +113,8 @@ struct|struct
 name|_GimpOperationDissolveMode
 block|{
 DECL|member|parent_instance
-name|GeglOperationComposer
+name|GimpOperationPointLayerMode
 name|parent_instance
-decl_stmt|;
-DECL|member|premultiplied
-name|gboolean
-name|premultiplied
 decl_stmt|;
 block|}
 struct|;
