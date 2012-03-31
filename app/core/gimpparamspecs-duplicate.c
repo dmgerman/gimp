@@ -132,6 +132,8 @@ argument_list|,
 name|pspec
 operator|->
 name|flags
+operator||
+name|GIMP_CONFIG_PARAM_SERIALIZE
 argument_list|)
 return|;
 block|}
@@ -184,6 +186,8 @@ argument_list|,
 name|pspec
 operator|->
 name|flags
+operator||
+name|GIMP_CONFIG_PARAM_SERIALIZE
 argument_list|)
 expr_stmt|;
 if|if
@@ -254,6 +258,8 @@ argument_list|,
 name|pspec
 operator|->
 name|flags
+operator||
+name|GIMP_CONFIG_PARAM_SERIALIZE
 argument_list|)
 return|;
 block|}
@@ -306,6 +312,8 @@ argument_list|,
 name|pspec
 operator|->
 name|flags
+operator||
+name|GIMP_CONFIG_PARAM_SERIALIZE
 argument_list|)
 return|;
 block|}
@@ -380,6 +388,8 @@ argument_list|,
 name|pspec
 operator|->
 name|flags
+operator||
+name|GIMP_CONFIG_PARAM_SERIALIZE
 argument_list|)
 return|;
 block|}
@@ -433,6 +443,8 @@ argument_list|,
 name|pspec
 operator|->
 name|flags
+operator||
+name|GIMP_CONFIG_PARAM_SERIALIZE
 argument_list|)
 return|;
 block|}
@@ -486,6 +498,8 @@ argument_list|,
 name|pspec
 operator|->
 name|flags
+operator||
+name|GIMP_CONFIG_PARAM_SERIALIZE
 argument_list|)
 return|;
 block|}
@@ -560,6 +574,8 @@ argument_list|,
 name|pspec
 operator|->
 name|flags
+operator||
+name|GIMP_CONFIG_PARAM_SERIALIZE
 argument_list|)
 return|;
 block|}
@@ -613,6 +629,8 @@ argument_list|,
 name|pspec
 operator|->
 name|flags
+operator||
+name|GIMP_CONFIG_PARAM_SERIALIZE
 argument_list|)
 return|;
 block|}
@@ -666,6 +684,8 @@ argument_list|,
 name|pspec
 operator|->
 name|flags
+operator||
+name|GIMP_CONFIG_PARAM_SERIALIZE
 argument_list|)
 return|;
 block|}
@@ -802,6 +822,8 @@ argument_list|,
 name|pspec
 operator|->
 name|flags
+operator||
+name|GIMP_CONFIG_PARAM_SERIALIZE
 argument_list|)
 return|;
 block|}
