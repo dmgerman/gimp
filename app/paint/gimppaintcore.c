@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b54b1120103
+DECL|enum|__anon2ad632450103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -406,7 +406,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|paint_mask_to_canvas_tiles
+name|paint_mask_to_canvas_buffer
 parameter_list|(
 name|GimpPaintCore
 modifier|*
@@ -425,7 +425,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|paint_mask_to_canvas_buf
+name|paint_mask_to_paint_area
 parameter_list|(
 name|GimpPaintCore
 modifier|*
@@ -444,7 +444,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|canvas_tiles_to_canvas_buf
+name|canvas_buffer_to_paint_area
 parameter_list|(
 name|GimpPaintCore
 modifier|*
@@ -2275,19 +2275,19 @@ if|if
 condition|(
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 condition|)
 block|{
 name|temp_buf_free
 argument_list|(
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 argument_list|)
 expr_stmt|;
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|=
 name|NULL
 expr_stmt|;
@@ -2921,7 +2921,7 @@ name|GeglBuffer
 modifier|*
 name|canvas_buffer
 decl_stmt|;
-comment|/*  If the mode is CONSTANT:    *   combine the canvas buf, the paint mask to the canvas tiles    */
+comment|/*  If the mode is CONSTANT:    *   combine the canvas buf, the paint mask to the canvas buffer    */
 if|if
 condition|(
 name|mode
@@ -2929,7 +2929,7 @@ operator|==
 name|GIMP_PAINT_CONSTANT
 condition|)
 block|{
-comment|/* Some tools (ink) paint the mask to paint_core->canvas_tiles        * directly. Don't need to copy it in this case.        */
+comment|/* Some tools (ink) paint the mask to paint_core->canvas_buffer        * directly. Don't need to copy it in this case.        */
 if|if
 condition|(
 name|paint_maskPR
@@ -2944,7 +2944,7 @@ name|canvas_buffer
 argument_list|)
 condition|)
 block|{
-name|paint_mask_to_canvas_tiles
+name|paint_mask_to_canvas_buffer
 argument_list|(
 name|core
 argument_list|,
@@ -2954,7 +2954,7 @@ name|paint_opacity
 argument_list|)
 expr_stmt|;
 block|}
-name|canvas_tiles_to_canvas_buf
+name|canvas_buffer_to_paint_area
 argument_list|(
 name|core
 argument_list|)
@@ -2969,7 +2969,7 @@ block|}
 comment|/*  Otherwise:    *   combine the canvas buf and the paint mask to the canvas buf    */
 else|else
 block|{
-name|paint_mask_to_canvas_buf
+name|paint_mask_to_paint_area
 argument_list|(
 name|core
 argument_list|,
@@ -2986,7 +2986,7 @@ name|gimp_temp_buf_create_buffer
 argument_list|(
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 argument_list|,
 name|gimp_drawable_get_format_with_alpha
 argument_list|(
@@ -3009,13 +3009,13 @@ literal|0
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|width
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|height
 argument_list|)
@@ -3033,13 +3033,13 @@ argument_list|,
 comment|/*  specify an alternative src1  */
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|x
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|y
 argument_list|,
@@ -3047,13 +3047,13 @@ name|NULL
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|x
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|y
 argument_list|)
@@ -3076,7 +3076,7 @@ name|x1
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|x
 argument_list|)
@@ -3093,7 +3093,7 @@ name|y1
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|y
 argument_list|)
@@ -3110,13 +3110,13 @@ name|x2
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|x
 operator|+
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|width
 argument_list|)
@@ -3133,13 +3133,13 @@ name|y2
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|y
 operator|+
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|height
 argument_list|)
@@ -3151,25 +3151,25 @@ name|drawable
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|x
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|y
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|width
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|height
 argument_list|)
@@ -3262,8 +3262,8 @@ name|canvas_buffer
 argument_list|)
 condition|)
 block|{
-comment|/* combine the paint mask and the canvas tiles */
-name|paint_mask_to_canvas_tiles
+comment|/* combine the paint mask and the canvas buffer */
+name|paint_mask_to_canvas_buffer
 argument_list|(
 name|core
 argument_list|,
@@ -3272,7 +3272,7 @@ argument_list|,
 name|paint_opacity
 argument_list|)
 expr_stmt|;
-comment|/* initialize the maskPR from the canvas tiles */
+comment|/* initialize the maskPR from the canvas buffer */
 name|pixel_region_init
 argument_list|(
 name|paint_maskPR
@@ -3286,25 +3286,25 @@ argument_list|)
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|x
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|y
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|width
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|height
 argument_list|,
@@ -3324,7 +3324,7 @@ name|gimp_temp_buf_create_buffer
 argument_list|(
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 argument_list|,
 name|gimp_drawable_get_format_with_alpha
 argument_list|(
@@ -3347,13 +3347,13 @@ literal|0
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|width
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|height
 argument_list|)
@@ -3368,13 +3368,13 @@ name|paint_maskPR
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|x
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|y
 argument_list|)
@@ -3397,7 +3397,7 @@ name|x1
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|x
 argument_list|)
@@ -3414,7 +3414,7 @@ name|y1
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|y
 argument_list|)
@@ -3431,13 +3431,13 @@ name|x2
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|x
 operator|+
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|width
 argument_list|)
@@ -3454,13 +3454,13 @@ name|y2
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|y
 operator|+
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|height
 argument_list|)
@@ -3472,25 +3472,25 @@ name|drawable
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|x
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|y
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|width
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|height
 argument_list|)
@@ -3789,8 +3789,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|canvas_tiles_to_canvas_buf (GimpPaintCore * core)
-name|canvas_tiles_to_canvas_buf
+DECL|function|canvas_buffer_to_paint_area (GimpPaintCore * core)
+name|canvas_buffer_to_paint_area
 parameter_list|(
 name|GimpPaintCore
 modifier|*
@@ -3803,7 +3803,7 @@ decl_stmt|;
 name|PixelRegion
 name|maskPR
 decl_stmt|;
-comment|/*  combine the canvas tiles and the canvas buf  */
+comment|/*  combine the canvas buffer and the paint area  */
 name|pixel_region_init_temp_buf
 argument_list|(
 operator|&
@@ -3811,7 +3811,7 @@ name|srcPR
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 argument_list|,
 literal|0
 argument_list|,
@@ -3819,13 +3819,13 @@ literal|0
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|width
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|height
 argument_list|)
@@ -3844,32 +3844,32 @@ argument_list|)
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|x
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|y
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|width
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|height
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/*  apply the canvas tiles to the canvas buf  */
+comment|/*  apply the canvas buffer to the paint area  */
 name|apply_mask_to_region
 argument_list|(
 operator|&
@@ -3887,8 +3887,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|paint_mask_to_canvas_tiles (GimpPaintCore * core,PixelRegion * paint_maskPR,gdouble paint_opacity)
-name|paint_mask_to_canvas_tiles
+DECL|function|paint_mask_to_canvas_buffer (GimpPaintCore * core,PixelRegion * paint_maskPR,gdouble paint_opacity)
+name|paint_mask_to_canvas_buffer
 parameter_list|(
 name|GimpPaintCore
 modifier|*
@@ -3905,7 +3905,7 @@ block|{
 name|PixelRegion
 name|srcPR
 decl_stmt|;
-comment|/*   combine the paint mask and the canvas tiles  */
+comment|/*   combine the paint mask and the canvas buffer  */
 name|pixel_region_init
 argument_list|(
 operator|&
@@ -3920,25 +3920,25 @@ argument_list|)
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|x
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|y
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|width
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|height
 argument_list|,
@@ -3969,8 +3969,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|paint_mask_to_canvas_buf (GimpPaintCore * core,PixelRegion * paint_maskPR,gdouble paint_opacity)
-name|paint_mask_to_canvas_buf
+DECL|function|paint_mask_to_paint_area (GimpPaintCore * core,PixelRegion * paint_maskPR,gdouble paint_opacity)
+name|paint_mask_to_paint_area
 parameter_list|(
 name|GimpPaintCore
 modifier|*
@@ -3995,7 +3995,7 @@ name|srcPR
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 argument_list|,
 literal|0
 argument_list|,
@@ -4003,13 +4003,13 @@ literal|0
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|width
 argument_list|,
 name|core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|height
 argument_list|)

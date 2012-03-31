@@ -1316,7 +1316,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-comment|/* The dest will be the paint area we got above (= canvas_buf) */
+comment|/* The dest will be the paint area we got above (= paint_area) */
 name|pixel_region_init_temp_buf
 argument_list|(
 operator|&
@@ -1337,7 +1337,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-comment|/*  Smudge uses the buffer Accum.    *  For each successive painthit Accum is built like this    *    Accum =  rate*Accum  + (1-rate)*I.    *  where I is the pixels under the current painthit.    *  Then the paint area (canvas_buf) is built as    *    (Accum,1) (if no alpha),    */
+comment|/*  Smudge uses the buffer Accum.    *  For each successive painthit Accum is built like this    *    Accum =  rate*Accum  + (1-rate)*I.    *  where I is the pixels under the current painthit.    *  Then the paint area (paint_area) is built as    *    (Accum,1) (if no alpha),    */
 name|blend_region
 argument_list|(
 operator|&

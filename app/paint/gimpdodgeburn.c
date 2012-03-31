@@ -887,7 +887,7 @@ operator|&
 name|tempPR
 argument_list|)
 expr_stmt|;
-comment|/* The dest is the paint area we got above (= canvas_buf) */
+comment|/* The dest is the paint area we got above (= paint_area) */
 name|pixel_region_init_temp_buf
 argument_list|(
 operator|&
@@ -908,7 +908,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-comment|/* Now add an alpha to the dodgeburned region    * and put this in area = canvas_buf    */
+comment|/* Now add an alpha to the dodgeburned region    * and put this in area = paint_area    */
 if|if
 condition|(
 operator|!
@@ -963,7 +963,7 @@ argument_list|,
 name|fade_point
 argument_list|)
 expr_stmt|;
-comment|/* Replace the newly dodgedburned area (canvas_buf) to the image */
+comment|/* Replace the newly dodgedburned area (paint_area) to the image */
 name|gimp_brush_core_replace_canvas
 argument_list|(
 name|GIMP_BRUSH_CORE

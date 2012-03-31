@@ -856,13 +856,13 @@ operator|)
 condition|)
 name|paint_core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|=
 name|temp_buf_resize
 argument_list|(
 name|paint_core
 operator|->
-name|canvas_buf
+name|paint_area
 argument_list|,
 name|bytes
 argument_list|,
@@ -890,7 +890,7 @@ return|;
 return|return
 name|paint_core
 operator|->
-name|canvas_buf
+name|paint_area
 return|;
 block|}
 end_function
@@ -1203,7 +1203,7 @@ name|temp_buf_get_data
 argument_list|(
 name|paint_core
 operator|->
-name|canvas_buf
+name|paint_area
 argument_list|)
 argument_list|,
 name|col
@@ -1221,7 +1221,7 @@ operator|->
 name|bytes
 argument_list|)
 expr_stmt|;
-comment|/*  draw the blob directly to the canvas_tiles  */
+comment|/*  draw the blob directly to the canvas_buffer  */
 name|pixel_region_init
 argument_list|(
 operator|&
@@ -1236,25 +1236,25 @@ argument_list|)
 argument_list|,
 name|paint_core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|x
 argument_list|,
 name|paint_core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|y
 argument_list|,
 name|paint_core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|width
 argument_list|,
 name|paint_core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|height
 argument_list|,
@@ -1269,7 +1269,7 @@ operator|&
 name|blob_maskPR
 argument_list|)
 expr_stmt|;
-comment|/*  draw the canvas_buf using the just rendered canvas_tiles as mask */
+comment|/*  draw the paint_area using the just rendered canvas_buffer as mask */
 name|pixel_region_init
 argument_list|(
 operator|&
@@ -1284,25 +1284,25 @@ argument_list|)
 argument_list|,
 name|paint_core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|x
 argument_list|,
 name|paint_core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|y
 argument_list|,
 name|paint_core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|width
 argument_list|,
 name|paint_core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|height
 argument_list|,
@@ -1839,7 +1839,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c73aa5f0103
+DECL|enum|__anon2b3d3d050103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START

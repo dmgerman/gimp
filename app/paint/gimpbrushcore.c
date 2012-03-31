@@ -133,7 +133,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2ce85d0103
+DECL|enum|__anon2c87d0740103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -3638,13 +3638,13 @@ argument_list|)
 expr_stmt|;
 name|paint_core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|=
 name|temp_buf_resize
 argument_list|(
 name|paint_core
 operator|->
-name|canvas_buf
+name|paint_area
 argument_list|,
 name|bytes
 argument_list|,
@@ -3668,7 +3668,7 @@ expr_stmt|;
 return|return
 name|paint_core
 operator|->
-name|canvas_buf
+name|paint_area
 return|;
 block|}
 return|return
@@ -4129,13 +4129,13 @@ name|off_y
 argument_list|,
 name|paint_core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|width
 argument_list|,
 name|paint_core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|height
 argument_list|)
@@ -4328,13 +4328,13 @@ name|off_y
 argument_list|,
 name|paint_core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|width
 argument_list|,
 name|paint_core
 operator|->
-name|canvas_buf
+name|paint_area
 operator|->
 name|height
 argument_list|)

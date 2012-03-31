@@ -183,10 +183,10 @@ modifier|*
 name|canvas_buffer
 decl_stmt|;
 comment|/*  the buffer to paint the mask to     */
-DECL|member|canvas_buf
+DECL|member|paint_area
 name|TempBuf
 modifier|*
-name|canvas_buf
+name|paint_area
 decl_stmt|;
 comment|/*  the buffer to paint pixels to       */
 DECL|member|stroke_buffer
