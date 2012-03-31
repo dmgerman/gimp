@@ -111,7 +111,7 @@ argument_list|,
 literal|"Simplify image into an array of solid-colored squares"
 argument_list|)
 block|,
-literal|"gegl:pixelise"
+literal|"gegl:pixelize"
 block|,
 name|NULL
 comment|/* FIXME GIMP_HELP_FILTER_PIXELIZE */
@@ -306,6 +306,16 @@ value|gimp_action_group_set_action_sensitive (group, action, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-pixelize"
+argument_list|,
+name|writable
+operator|&&
+operator|!
+name|children
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-gaussian-blur"
 argument_list|,
 name|writable
 operator|&&
