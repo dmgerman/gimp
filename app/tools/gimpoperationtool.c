@@ -716,14 +716,13 @@ expr_stmt|;
 comment|/*  The options vbox  */
 name|tool
 operator|->
-name|options_frame
+name|options_box
 operator|=
-name|gimp_frame_new
+name|gtk_vbox_new
 argument_list|(
-name|_
-argument_list|(
-literal|"Operation Settings"
-argument_list|)
+name|FALSE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -735,7 +734,7 @@ argument_list|)
 argument_list|,
 name|tool
 operator|->
-name|options_frame
+name|options_box
 argument_list|,
 name|FALSE
 argument_list|,
@@ -748,7 +747,7 @@ name|gtk_widget_show
 argument_list|(
 name|tool
 operator|->
-name|options_frame
+name|options_box
 argument_list|)
 expr_stmt|;
 block|}
@@ -1072,7 +1071,7 @@ name|GTK_CONTAINER
 argument_list|(
 name|tool
 operator|->
-name|options_frame
+name|options_box
 argument_list|)
 argument_list|,
 name|tool

@@ -123,10 +123,10 @@ modifier|*
 name|config
 decl_stmt|;
 comment|/* dialog */
-DECL|member|options_frame
+DECL|member|options_box
 name|GtkWidget
 modifier|*
-name|options_frame
+name|options_box
 decl_stmt|;
 DECL|member|options_table
 name|GtkWidget
