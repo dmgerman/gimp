@@ -224,8 +224,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
-name|gimp_buffer_get_bytes
+specifier|const
+name|Babl
+modifier|*
+name|gimp_buffer_get_format
 parameter_list|(
 specifier|const
 name|GimpBuffer

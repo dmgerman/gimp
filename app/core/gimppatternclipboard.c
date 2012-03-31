@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e31ea10103
+DECL|enum|__anon28b40f5b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -608,6 +608,16 @@ name|gimp
 operator|->
 name|global_buffer
 decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|format
+init|=
+name|gimp_buffer_get_format
+argument_list|(
+name|buffer
+argument_list|)
+decl_stmt|;
 name|gint
 name|width
 decl_stmt|;
@@ -643,9 +653,9 @@ argument_list|)
 expr_stmt|;
 name|bytes
 operator|=
-name|gimp_buffer_get_bytes
+name|babl_format_get_bytes_per_pixel
 argument_list|(
-name|buffer
+name|format
 argument_list|)
 expr_stmt|;
 name|pattern
@@ -687,10 +697,7 @@ argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
-name|gimp_bpp_to_babl_format
-argument_list|(
-name|bytes
-argument_list|)
+name|NULL
 argument_list|,
 name|temp_buf_get_data
 argument_list|(
@@ -699,12 +706,7 @@ operator|->
 name|mask
 argument_list|)
 argument_list|,
-name|width
-operator|*
-name|gimp_buffer_get_bytes
-argument_list|(
-name|buffer
-argument_list|)
+name|GEGL_AUTO_ROWSTRIDE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
