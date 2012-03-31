@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1ea3550103
+DECL|enum|__anon28a534590103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -632,26 +632,19 @@ operator|->
 name|global_buffer
 argument_list|)
 decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|format
+init|=
+name|gegl_buffer_get_format
+argument_list|(
+name|buffer
+argument_list|)
+decl_stmt|;
 name|GeglBuffer
 modifier|*
 name|dest_buffer
-decl_stmt|;
-name|GeglRectangle
-name|rect
-init|=
-block|{
-literal|0
-block|, }
-decl_stmt|;
-name|GimpImageType
-name|type
-init|=
-name|gimp_buffer_get_image_type
-argument_list|(
-name|gimp
-operator|->
-name|global_buffer
-argument_list|)
 decl_stmt|;
 name|width
 operator|=
@@ -680,18 +673,6 @@ argument_list|)
 argument_list|,
 literal|512
 argument_list|)
-expr_stmt|;
-name|rect
-operator|.
-name|width
-operator|=
-name|width
-expr_stmt|;
-name|rect
-operator|.
-name|height
-operator|=
-name|height
 expr_stmt|;
 name|brush
 operator|->
@@ -734,9 +715,9 @@ expr_stmt|;
 comment|/*  copy the alpha channel into the brush's mask  */
 if|if
 condition|(
-name|GIMP_IMAGE_TYPE_HAS_ALPHA
+name|babl_format_has_alpha
 argument_list|(
-name|type
+name|format
 argument_list|)
 condition|)
 block|{
