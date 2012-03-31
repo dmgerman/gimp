@@ -174,7 +174,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c07b4280103
+DECL|enum|__anon2c0273c30103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -193,7 +193,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c07b4280208
+DECL|struct|__anon2c0273c30208
 block|{
 DECL|member|name
 specifier|const
@@ -321,6 +321,12 @@ block|}
 block|,
 block|{
 literal|"levels"
+block|,
+name|USER_INSTALL_MKDIR
+block|}
+block|,
+block|{
+literal|"filters"
 block|,
 name|USER_INSTALL_MKDIR
 block|}
