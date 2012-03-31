@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bed64cf0103
+DECL|enum|__anon2bef40e80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -61,7 +61,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bed64cf0203
+DECL|enum|__anon2bef40e80203
 block|{
 DECL|enumerator|TARGET_NUMBER
 name|TARGET_NUMBER
@@ -526,12 +526,6 @@ argument_list|(
 name|scale
 argument_list|)
 decl_stmt|;
-name|private
-operator|->
-name|gamma
-operator|=
-literal|1.0
-expr_stmt|;
 name|gtk_entry_set_alignment
 argument_list|(
 name|GTK_ENTRY
@@ -561,6 +555,12 @@ argument_list|)
 argument_list|,
 name|TRUE
 argument_list|)
+expr_stmt|;
+name|private
+operator|->
+name|gamma
+operator|=
+literal|1.0
 expr_stmt|;
 block|}
 end_function
