@@ -201,6 +201,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GCompareFunc
+name|gimp_list_get_sort_func
+parameter_list|(
+name|GimpList
+modifier|*
+name|list
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_list_sort
 parameter_list|(

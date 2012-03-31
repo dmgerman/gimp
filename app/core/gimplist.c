@@ -45,7 +45,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon286f4c1f0103
+DECL|enum|__anon2983bed60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1727,6 +1727,38 @@ literal|"sort-func"
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_list_get_sort_func:  * @list: a #GimpList  *  * Returns the @list's sort function, see gimp_list_set_sort_func().  *  * Return Value: The @list's sort function.  **/
+end_comment
+
+begin_function
+name|GCompareFunc
+DECL|function|gimp_list_get_sort_func (GimpList * list)
+name|gimp_list_get_sort_func
+parameter_list|(
+name|GimpList
+modifier|*
+name|list
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_LIST
+argument_list|(
+name|list
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|list
+operator|->
+name|sort_func
+return|;
 block|}
 end_function
 
