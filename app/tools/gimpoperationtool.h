@@ -123,6 +123,11 @@ modifier|*
 name|config
 decl_stmt|;
 comment|/* dialog */
+DECL|member|dialog_desc
+name|gchar
+modifier|*
+name|dialog_desc
+decl_stmt|;
 DECL|member|options_box
 name|GtkWidget
 modifier|*
@@ -189,7 +194,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|label
+name|dialog_desc
 parameter_list|)
 function_decl|;
 end_function_decl
