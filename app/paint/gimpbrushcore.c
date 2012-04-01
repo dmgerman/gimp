@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint-funcs/paint-funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gegl/gimp-gegl-utils.h"
 end_include
 
@@ -133,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf3181e0103
+DECL|enum|__anon27fe486c0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
