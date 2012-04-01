@@ -50,28 +50,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|scale_pixels
-parameter_list|(
-specifier|const
-name|guchar
-modifier|*
-name|src
-parameter_list|,
-name|guchar
-modifier|*
-name|dest
-parameter_list|,
-name|guint
-name|length
-parameter_list|,
-name|gint
-name|scale
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/*  apply the mask data to the alpha channel of the pixel data  */
 end_comment
