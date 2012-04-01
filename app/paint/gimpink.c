@@ -156,9 +156,9 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|TempBuf
+name|GeglBuffer
 modifier|*
-name|gimp_ink_get_paint_area
+name|gimp_ink_get_paint_buffer
 parameter_list|(
 name|GimpPaintCore
 modifier|*
@@ -176,6 +176,14 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|gint
+modifier|*
+name|paint_buffer_x
+parameter_list|,
+name|gint
+modifier|*
+name|paint_buffer_y
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -376,9 +384,9 @@ name|gimp_ink_paint
 expr_stmt|;
 name|paint_core_class
 operator|->
-name|get_paint_area
+name|get_paint_buffer
 operator|=
-name|gimp_ink_get_paint_area
+name|gimp_ink_get_paint_buffer
 expr_stmt|;
 name|paint_core_class
 operator|->
@@ -660,10 +668,10 @@ end_function
 
 begin_function
 specifier|static
-name|TempBuf
+name|GeglBuffer
 modifier|*
-DECL|function|gimp_ink_get_paint_area (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords)
-name|gimp_ink_get_paint_area
+DECL|function|gimp_ink_get_paint_buffer (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,gint * paint_buffer_x,gint * paint_buffer_y)
+name|gimp_ink_get_paint_buffer
 parameter_list|(
 name|GimpPaintCore
 modifier|*
@@ -681,6 +689,14 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|gint
+modifier|*
+name|paint_buffer_x
+parameter_list|,
+name|gint
+modifier|*
+name|paint_buffer_y
 parameter_list|)
 block|{
 name|GimpInk
@@ -886,14 +902,12 @@ name|y1
 operator|)
 argument_list|)
 expr_stmt|;
-name|paint_core
-operator|->
+operator|*
 name|paint_buffer_x
 operator|=
 name|x1
 expr_stmt|;
-name|paint_core
-operator|->
+operator|*
 name|paint_buffer_y
 operator|=
 name|y1
@@ -927,7 +941,7 @@ expr_stmt|;
 return|return
 name|paint_core
 operator|->
-name|paint_area
+name|paint_buffer
 return|;
 block|}
 return|return
@@ -1886,7 +1900,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon286fae2f0103
+DECL|enum|__anon2c2389b90103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START
