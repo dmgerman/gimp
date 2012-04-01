@@ -2019,6 +2019,8 @@ name|gimp_drawable_get_format_with_alpha
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
@@ -2083,6 +2085,8 @@ name|gimp_drawable_get_format_with_alpha
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
@@ -2149,9 +2153,9 @@ argument_list|(
 name|src_temp_buf
 argument_list|)
 expr_stmt|;
-name|temp_buf_free
+name|g_object_unref
 argument_list|(
-name|dest_temp_buf
+name|dest_buffer
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2239,6 +2243,11 @@ name|paint_area_width
 argument_list|,
 name|paint_area_height
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|dest_buffer
 argument_list|)
 expr_stmt|;
 comment|/* replace the canvas with our healed data */

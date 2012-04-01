@@ -630,7 +630,7 @@ end_function
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_temp_buf_create_buffer (TempBuf * temp_buf,const Babl * format)
+DECL|function|gimp_temp_buf_create_buffer (TempBuf * temp_buf,const Babl * format,gboolean take_ownership)
 name|gimp_temp_buf_create_buffer
 parameter_list|(
 name|TempBuf
@@ -641,6 +641,9 @@ specifier|const
 name|Babl
 modifier|*
 name|format
+parameter_list|,
+name|gboolean
+name|take_ownership
 parameter_list|)
 block|{
 name|GeglBuffer
@@ -737,8 +740,19 @@ name|width
 operator|*
 name|bytes
 argument_list|,
+name|take_ownership
+condition|?
+operator|(
+name|GDestroyNotify
+operator|)
+name|temp_buf_free
+else|:
 name|NULL
 argument_list|,
+name|take_ownership
+condition|?
+name|temp_buf
+else|:
 name|NULL
 argument_list|)
 expr_stmt|;

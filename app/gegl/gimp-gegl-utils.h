@@ -137,6 +137,9 @@ specifier|const
 name|Babl
 modifier|*
 name|format
+parameter_list|,
+name|gboolean
+name|take_ownership
 parameter_list|)
 function_decl|;
 end_function_decl

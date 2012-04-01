@@ -731,6 +731,8 @@ argument_list|(
 name|convolve_temp
 argument_list|,
 name|format
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
@@ -769,11 +771,6 @@ literal|0
 argument_list|,
 literal|0
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|convolve_buffer
 argument_list|)
 expr_stmt|;
 comment|/*  Convolve the region  */
@@ -845,9 +842,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|temp_buf_free
+name|g_object_unref
 argument_list|(
-name|convolve_temp
+name|convolve_buffer
 argument_list|)
 expr_stmt|;
 name|gimp_brush_core_replace_canvas

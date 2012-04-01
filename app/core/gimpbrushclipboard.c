@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a534590103
+DECL|enum|__anon29af235f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -733,6 +733,8 @@ name|babl_format
 argument_list|(
 literal|"A u8"
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
@@ -781,6 +783,8 @@ operator|->
 name|pixmap
 argument_list|,
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy

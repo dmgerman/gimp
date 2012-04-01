@@ -183,18 +183,12 @@ modifier|*
 name|canvas_buffer
 decl_stmt|;
 comment|/*  the buffer to paint the mask to     */
-DECL|member|paint_area
-name|TempBuf
-modifier|*
-name|paint_area
-decl_stmt|;
-comment|/*  the buffer to paint pixels to       */
 DECL|member|paint_buffer
 name|GeglBuffer
 modifier|*
 name|paint_buffer
 decl_stmt|;
-comment|/*  for now proxies paint_area          */
+comment|/*  the buffer to paint pixels to       */
 DECL|member|paint_buffer_x
 name|gint
 name|paint_buffer_x
