@@ -183,10 +183,17 @@ parameter_list|,
 name|gint
 name|src_offset_y
 parameter_list|,
-name|TempBuf
+name|GeglBuffer
 modifier|*
-name|paint_area
+name|paint_buffer
 parameter_list|,
+name|gint
+name|paint_buffer_x
+parameter_list|,
+name|gint
+name|paint_buffer_y
+parameter_list|,
+comment|/* offsets *into* the paint_buffer: */
 name|gint
 modifier|*
 name|paint_area_offset_x
@@ -253,10 +260,17 @@ parameter_list|,
 name|gint
 name|src_offset_y
 parameter_list|,
-name|TempBuf
+name|GeglBuffer
 modifier|*
-name|paint_area
+name|paint_buffer
 parameter_list|,
+name|gint
+name|paint_buffer_x
+parameter_list|,
+name|gint
+name|paint_buffer_y
+parameter_list|,
+comment|/* offsets *into* the paint_buffer: */
 name|gint
 name|paint_area_offset_x
 parameter_list|,
