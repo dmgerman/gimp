@@ -2981,7 +2981,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e9bf830108
+DECL|struct|__anon2ad8552f0108
 block|{
 DECL|member|config
 name|GObject
@@ -5326,6 +5326,16 @@ argument_list|,
 literal|24
 argument_list|,
 name|GIMP_COLOR_AREA_SMALL_CHECKS
+argument_list|)
+expr_stmt|;
+name|gimp_color_button_set_update
+argument_list|(
+name|GIMP_COLOR_BUTTON
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_color_panel_set_context
