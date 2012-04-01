@@ -246,11 +246,11 @@ name|gegl_buffer_get
 argument_list|(
 name|buffer
 argument_list|,
-literal|1.0
-comment|/*scale*/
-argument_list|,
 operator|&
 name|pixel_rect
+argument_list|,
+literal|1.0
+comment|/*scale*/
 argument_list|,
 name|babl_format
 argument_list|(
@@ -260,6 +260,8 @@ argument_list|,
 name|actual_data
 argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 name|g_assert_cmpint
