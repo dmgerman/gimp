@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon274e9d7a0103
+DECL|enum|__anon2b3749250103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2924,6 +2924,8 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
 name|gimp_paint_core_get_paint_area
 argument_list|(
 name|core
@@ -2934,7 +2936,8 @@ name|paint_options
 argument_list|,
 name|coords
 argument_list|)
-expr_stmt|;
+condition|)
+block|{
 operator|*
 name|paint_buffer_x
 operator|=
@@ -2953,6 +2956,10 @@ return|return
 name|core
 operator|->
 name|paint_buffer
+return|;
+block|}
+return|return
+name|NULL
 return|;
 block|}
 end_function
