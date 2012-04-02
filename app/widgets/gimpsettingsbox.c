@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e06fc90103
+DECL|enum|__anon290276f40103
 block|{
 DECL|enumerator|FILE_DIALOG_SETUP
 name|FILE_DIALOG_SETUP
@@ -120,7 +120,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e06fc90203
+DECL|enum|__anon290276f40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2425,6 +2425,36 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+comment|/*  reset the "time" property, otherwise explicitly storing the        *  config as setting will also copy the time, and the stored        *  object will be considered to be among the automatically        *  stored recently used settings        */
+if|if
+condition|(
+name|g_object_class_find_property
+argument_list|(
+name|G_OBJECT_GET_CLASS
+argument_list|(
+name|private
+operator|->
+name|config
+argument_list|)
+argument_list|,
+literal|"time"
+argument_list|)
+condition|)
+block|{
+name|g_object_set
+argument_list|(
+name|private
+operator|->
+name|config
+argument_list|,
+literal|"time"
+argument_list|,
+literal|0
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
 name|gimp_container_view_select_item
 argument_list|(
 name|view
