@@ -92,11 +92,6 @@ DECL|member|parent_instance
 name|GimpBrushCore
 name|parent_instance
 decl_stmt|;
-DECL|member|lut
-name|GimpLut
-modifier|*
-name|lut
-decl_stmt|;
 block|}
 struct|;
 end_struct
