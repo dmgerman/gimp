@@ -125,6 +125,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
+name|Babl
+modifier|*
+name|gimp_drawable_get_format
+parameter_list|(
+name|gint32
+name|drawable_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpDrawable
 modifier|*
 name|gimp_drawable_get

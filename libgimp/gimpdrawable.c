@@ -1695,7 +1695,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_buffer:  * @drawable_ID: the ID of the #GimpDrawableto  get the buffer for.  *  * Returns a #GeglBuffer of a specified drawable. The buffer can be used  * like any other GEGL buffer. Its data will we synced back with the core  * drawable when the buffer gets destroyed, or when gegl_buffer_flush()  * is called.  *  * Return value: The #GeglBuffer.  *  * See Also: gimp_drawable_get_shadow_buffer()  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_drawable_get_buffer:  * @drawable_ID: the ID of the #GimpDrawable to get the buffer for.  *  * Returns a #GeglBuffer of a specified drawable. The buffer can be used  * like any other GEGL buffer. Its data will we synced back with the core  * drawable when the buffer gets destroyed, or when gegl_buffer_flush()  * is called.  *  * Return value: The #GeglBuffer.  *  * See Also: gimp_drawable_get_shadow_buffer()  *  * Since: GIMP 2.10  */
 end_comment
 
 begin_function
@@ -1766,7 +1766,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_shadow_buffer:  * @drawable_ID: the ID of the #GimpDrawableto get the buffer for.  *  * Returns a #GeglBuffer of a specified drawable's shadow tiles. The  * buffer can be used like any other GEGL buffer. Its data will we  * synced back with the core drawable's shadow tiles when the buffer  * gets destroyed, or when gegl_buffer_flush() is called.  *  * Return value: The #GeglBuffer.  *  * See Also: gimp_drawable_get_shadow_buffer()  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_drawable_get_shadow_buffer:  * @drawable_ID: the ID of the #GimpDrawable to get the buffer for.  *  * Returns a #GeglBuffer of a specified drawable's shadow tiles. The  * buffer can be used like any other GEGL buffer. Its data will we  * synced back with the core drawable's shadow tiles when the buffer  * gets destroyed, or when gegl_buffer_flush() is called.  *  * Return value: The #GeglBuffer.  *  * See Also: gimp_drawable_get_shadow_buffer()  *  * Since: GIMP 2.10  */
 end_comment
 
 begin_function
@@ -1829,6 +1829,164 @@ expr_stmt|;
 return|return
 name|buffer
 return|;
+block|}
+return|return
+name|NULL
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_drawable_get_format:  * @drawable_ID: the ID of the #GimpDrawable to get the format for.  *  * Returns the #Babl format of the drawable.  *  * Return value: The #Babl format.  *  * Since: GIMP 2.10  */
+end_comment
+
+begin_function
+specifier|const
+name|Babl
+modifier|*
+DECL|function|gimp_drawable_get_format (gint32 drawable_ID)
+name|gimp_drawable_get_format
+parameter_list|(
+name|gint32
+name|drawable_ID
+parameter_list|)
+block|{
+switch|switch
+condition|(
+name|gimp_drawable_type
+argument_list|(
+name|drawable_ID
+argument_list|)
+condition|)
+block|{
+case|case
+name|GIMP_RGB_IMAGE
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
+argument_list|)
+return|;
+case|case
+name|GIMP_RGBA_IMAGE
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
+return|;
+case|case
+name|GIMP_GRAY_IMAGE
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"Y' u8"
+argument_list|)
+return|;
+case|case
+name|GIMP_GRAYA_IMAGE
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"Y'A u8"
+argument_list|)
+return|;
+case|case
+name|GIMP_INDEXED_IMAGE
+case|:
+case|case
+name|GIMP_INDEXEDA_IMAGE
+case|:
+block|{
+name|gint32
+name|image_ID
+init|=
+name|gimp_item_get_image
+argument_list|(
+name|drawable_ID
+argument_list|)
+decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|pala
+decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|pal
+decl_stmt|;
+name|guchar
+modifier|*
+name|cmap
+decl_stmt|;
+name|gint
+name|n_cols
+decl_stmt|;
+name|cmap
+operator|=
+name|gimp_image_get_colormap
+argument_list|(
+name|image_ID
+argument_list|,
+operator|&
+name|n_cols
+argument_list|)
+expr_stmt|;
+name|babl_new_palette
+argument_list|(
+name|NULL
+argument_list|,
+operator|&
+name|pal
+argument_list|,
+operator|&
+name|pala
+argument_list|)
+expr_stmt|;
+name|babl_palette_set_palette
+argument_list|(
+name|pal
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
+argument_list|)
+argument_list|,
+name|cmap
+argument_list|,
+name|n_cols
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|cmap
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp_drawable_type
+argument_list|(
+name|drawable_ID
+argument_list|)
+operator|==
+name|GIMP_INDEXEDA_IMAGE
+condition|)
+return|return
+name|pala
+return|;
+return|return
+name|pal
+return|;
+block|}
+default|default:
+name|g_warn_if_reached
+argument_list|()
+expr_stmt|;
 block|}
 return|return
 name|NULL
