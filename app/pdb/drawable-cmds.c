@@ -2778,7 +2778,7 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|x_coord
 argument_list|,

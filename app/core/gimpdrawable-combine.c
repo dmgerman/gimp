@@ -504,7 +504,7 @@ name|applied_buffer
 operator|=
 name|gimp_gegl_buffer_new
 argument_list|(
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -525,7 +525,7 @@ name|gegl_buffer_copy
 argument_list|(
 name|buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|buffer_region
 operator|->
@@ -556,7 +556,7 @@ name|undo
 operator|->
 name|applied_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,

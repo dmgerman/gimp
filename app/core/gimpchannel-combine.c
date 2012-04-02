@@ -176,7 +176,7 @@ name|mask
 argument_list|)
 argument_list|)
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|x
 argument_list|,
@@ -879,7 +879,7 @@ name|gegl_buffer_iterator_new
 argument_list|(
 name|buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|x0
 argument_list|,

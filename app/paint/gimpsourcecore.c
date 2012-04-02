@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294750d00103
+DECL|enum|__anon27bc7f530103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1942,7 +1942,7 @@ operator|*
 name|src_rect
 operator|=
 operator|*
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|x
 argument_list|,

@@ -578,7 +578,7 @@ name|gegl_buffer_copy
 argument_list|(
 name|src_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|src_rect
 operator|->
@@ -595,7 +595,7 @@ argument_list|)
 argument_list|,
 name|paint_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|paint_area_offset_x
 argument_list|,
@@ -636,7 +636,7 @@ name|gegl_buffer_set_pattern
 argument_list|(
 name|paint_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|paint_area_offset_x
 argument_list|,

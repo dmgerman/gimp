@@ -407,7 +407,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon295622050103
+DECL|enum|__anon29d7435f0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1448,7 +1448,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295622050208
+DECL|struct|__anon29d7435f0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1691,7 +1691,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295622050308
+DECL|struct|__anon29d7435f0308
 block|{
 DECL|member|used_count
 name|signed
@@ -3618,7 +3618,7 @@ name|new_buffer
 operator|=
 name|gimp_gegl_buffer_new
 argument_list|(
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -14548,7 +14548,7 @@ name|gegl_buffer_get
 argument_list|(
 name|src_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -15119,7 +15119,7 @@ name|gegl_buffer_set
 argument_list|(
 name|new_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -15943,7 +15943,7 @@ name|gegl_buffer_get
 argument_list|(
 name|src_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -17033,7 +17033,7 @@ name|gegl_buffer_set
 argument_list|(
 name|new_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,

@@ -884,7 +884,7 @@ name|orig_rect
 argument_list|,
 name|orig_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,

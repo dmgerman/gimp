@@ -533,7 +533,7 @@ name|new_buffer
 operator|=
 name|gimp_gegl_buffer_new
 argument_list|(
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -886,7 +886,7 @@ name|new_buffer
 operator|=
 name|gimp_gegl_buffer_new
 argument_list|(
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -1802,7 +1802,7 @@ name|new_buffer
 operator|=
 name|gimp_gegl_buffer_new
 argument_list|(
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -2077,7 +2077,7 @@ name|new_buffer
 operator|=
 name|gimp_gegl_buffer_new
 argument_list|(
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,

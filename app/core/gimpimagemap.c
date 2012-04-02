@@ -87,7 +87,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3305570103
+DECL|enum|__anon29652d7a0103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -2067,7 +2067,7 @@ name|image_map
 operator|->
 name|undo_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -2085,7 +2085,7 @@ operator|->
 name|drawable
 argument_list|)
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|x
 argument_list|,
@@ -2338,7 +2338,7 @@ name|undo_buffer
 operator|=
 name|gimp_gegl_buffer_new
 argument_list|(
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -2378,7 +2378,7 @@ name|image_map
 operator|->
 name|undo_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -2654,7 +2654,7 @@ name|image_map
 operator|->
 name|undo_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|extent
 operator|->
@@ -2688,7 +2688,7 @@ operator|->
 name|drawable
 argument_list|)
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|extent
 operator|->
@@ -2719,7 +2719,7 @@ operator|->
 name|drawable
 argument_list|)
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|extent
 operator|->

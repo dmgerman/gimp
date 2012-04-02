@@ -1558,7 +1558,7 @@ name|dest_buffer
 operator|=
 name|gegl_buffer_new
 argument_list|(
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -1647,7 +1647,7 @@ name|clone
 operator|->
 name|processor
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -1679,7 +1679,7 @@ operator|*
 name|src_rect
 operator|=
 operator|*
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,

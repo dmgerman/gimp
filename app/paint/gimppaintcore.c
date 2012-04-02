@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5cfa310103
+DECL|enum|__anon2b0bb1fd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1540,7 +1540,7 @@ name|canvas_buffer
 operator|=
 name|gimp_gegl_buffer_new
 argument_list|(
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -1855,7 +1855,7 @@ name|buffer
 operator|=
 name|gimp_gegl_buffer_new
 argument_list|(
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -1878,7 +1878,7 @@ name|core
 operator|->
 name|undo_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|x
 argument_list|,
@@ -1891,7 +1891,7 @@ argument_list|)
 argument_list|,
 name|buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -2119,7 +2119,7 @@ name|core
 operator|->
 name|undo_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|x
 argument_list|,
@@ -2135,7 +2135,7 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|x
 argument_list|,
@@ -3075,7 +3075,7 @@ name|core
 operator|->
 name|paint_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -3358,7 +3358,7 @@ name|core
 operator|->
 name|paint_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,

@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a46bfb0103
+DECL|enum|__anon28896a250103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1223,7 +1223,7 @@ name|gegl_buffer_get
 argument_list|(
 name|input
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|roi
 operator|->
@@ -1395,7 +1395,7 @@ name|gegl_buffer_get
 argument_list|(
 name|input
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|roi
 operator|->
@@ -1768,7 +1768,7 @@ name|gegl_buffer_set
 argument_list|(
 name|output
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|roi
 operator|->

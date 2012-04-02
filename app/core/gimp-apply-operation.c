@@ -155,7 +155,7 @@ block|{
 name|rect
 operator|=
 operator|*
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,

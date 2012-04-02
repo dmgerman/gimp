@@ -3000,7 +3000,7 @@ name|dest_buffer
 operator|=
 name|gimp_gegl_buffer_new
 argument_list|(
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -3023,7 +3023,7 @@ name|gegl_buffer_copy
 argument_list|(
 name|src_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|x1
 argument_list|,
@@ -3040,7 +3040,7 @@ argument_list|)
 argument_list|,
 name|dest_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,

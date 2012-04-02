@@ -1471,7 +1471,7 @@ name|drawable
 argument_list|,
 name|fs_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|combine_x
 operator|-

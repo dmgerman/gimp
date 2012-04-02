@@ -957,7 +957,7 @@ name|gegl_buffer_clear
 argument_list|(
 name|buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|x
 argument_list|,

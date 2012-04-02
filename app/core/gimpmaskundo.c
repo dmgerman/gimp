@@ -316,7 +316,7 @@ name|buffer
 operator|=
 name|gegl_buffer_new
 argument_list|(
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -344,7 +344,7 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|x1
 argument_list|,
@@ -363,7 +363,7 @@ name|mask_undo
 operator|->
 name|buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -575,7 +575,7 @@ name|new_buffer
 operator|=
 name|gegl_buffer_new
 argument_list|(
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -608,7 +608,7 @@ name|src_rect
 argument_list|,
 name|new_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,

@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297f6f190103
+DECL|enum|__anon27c777970103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -2243,7 +2243,7 @@ name|new_buffer
 operator|=
 name|gimp_gegl_buffer_new
 argument_list|(
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -2675,7 +2675,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|x1
 operator|-
@@ -2692,7 +2692,7 @@ argument_list|)
 argument_list|,
 name|tmp_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -2745,7 +2745,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|x1
 argument_list|,
@@ -2969,7 +2969,7 @@ name|new_buffer
 operator|=
 name|gimp_gegl_buffer_new
 argument_list|(
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -5949,7 +5949,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|channel
 operator|->
@@ -6614,7 +6614,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|x1
 argument_list|,
@@ -6954,7 +6954,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|x1
 argument_list|,
@@ -7247,7 +7247,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|x1
 argument_list|,

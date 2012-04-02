@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a375510103
+DECL|enum|__anon2c5a05da0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2257,7 +2257,7 @@ name|new_buffer
 operator|=
 name|gimp_gegl_buffer_new
 argument_list|(
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -2664,7 +2664,7 @@ argument_list|(
 literal|"cairo-ARGB32"
 argument_list|)
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,

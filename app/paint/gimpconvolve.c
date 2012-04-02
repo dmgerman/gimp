@@ -730,7 +730,7 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|paint_buffer_x
 argument_list|,
@@ -749,7 +749,7 @@ argument_list|)
 argument_list|,
 name|convolve_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -765,7 +765,7 @@ name|gimp_gegl_convolve
 argument_list|(
 name|convolve_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -782,7 +782,7 @@ argument_list|)
 argument_list|,
 name|paint_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,

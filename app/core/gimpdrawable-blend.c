@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294311f40108
+DECL|struct|__anon2a2a1e640108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -208,7 +208,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294311f40208
+DECL|struct|__anon2a2a1e640208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -839,7 +839,7 @@ name|buffer
 operator|=
 name|gimp_gegl_buffer_new
 argument_list|(
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -948,7 +948,7 @@ name|drawable
 argument_list|,
 name|buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -2055,7 +2055,7 @@ name|gegl_buffer_get
 argument_list|(
 name|dist_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|ix
 argument_list|,
@@ -2148,7 +2148,7 @@ name|gegl_buffer_get
 argument_list|(
 name|dist_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|ix
 argument_list|,
@@ -2248,7 +2248,7 @@ name|gegl_buffer_get
 argument_list|(
 name|dist_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|ix
 argument_list|,
@@ -2352,7 +2352,7 @@ name|dist_buffer
 operator|=
 name|gegl_buffer_new
 argument_list|(
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -2378,7 +2378,7 @@ name|temp_buffer
 operator|=
 name|gimp_gegl_buffer_new
 argument_list|(
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -2475,7 +2475,7 @@ name|mask
 argument_list|)
 argument_list|)
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|x
 operator|+
@@ -2492,7 +2492,7 @@ argument_list|)
 argument_list|,
 name|temp_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -2534,7 +2534,7 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|PR
 operator|->
@@ -2555,7 +2555,7 @@ argument_list|)
 argument_list|,
 name|temp_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,

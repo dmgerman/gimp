@@ -1293,7 +1293,7 @@ name|paint_core
 operator|->
 name|canvas_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|paint_core
 operator|->
@@ -1889,7 +1889,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c08de200103
+DECL|enum|__anon289667660103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START

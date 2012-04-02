@@ -314,7 +314,7 @@ argument_list|(
 name|channels
 argument_list|)
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
@@ -725,7 +725,7 @@ argument_list|)
 argument_list|,
 name|format
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,

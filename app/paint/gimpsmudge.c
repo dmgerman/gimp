@@ -836,7 +836,7 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|paint_buffer_x
 argument_list|,
@@ -857,7 +857,7 @@ name|smudge
 operator|->
 name|accum_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|paint_buffer_x
 operator|-
@@ -1212,7 +1212,7 @@ name|smudge
 operator|->
 name|accum_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 name|paint_buffer_x
 operator|-
@@ -1235,7 +1235,7 @@ argument_list|)
 argument_list|,
 name|paint_buffer
 argument_list|,
-name|GIMP_GEGL_RECT
+name|GEGL_RECTANGLE
 argument_list|(
 literal|0
 argument_list|,
