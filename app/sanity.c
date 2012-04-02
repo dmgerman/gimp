@@ -1134,7 +1134,7 @@ DECL|macro|BABL_REQUIRED_MICRO
 define|#
 directive|define
 name|BABL_REQUIRED_MICRO
-value|8
+value|10
 name|babl_get_version
 argument_list|(
 operator|&
@@ -1239,12 +1239,12 @@ DECL|macro|GEGL_REQUIRED_MINOR
 define|#
 directive|define
 name|GEGL_REQUIRED_MINOR
-value|1
+value|2
 DECL|macro|GEGL_REQUIRED_MICRO
 define|#
 directive|define
 name|GEGL_REQUIRED_MICRO
-value|9
+value|0
 name|gegl_get_version
 argument_list|(
 operator|&
