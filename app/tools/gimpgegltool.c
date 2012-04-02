@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2786901a0103
+DECL|enum|__anon274f17660103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -338,6 +338,44 @@ literal|"gegl:lens-correct"
 block|,
 literal|"gegl:hstack"
 block|,
+literal|"gegl:display"
+block|,
+literal|"gegl:opacity"
+block|,
+comment|/* pointless */
+literal|"gegl:colorize"
+block|,
+comment|/* in gimp */
+literal|"gegl:color-to-alpha"
+block|,
+comment|/* in gimp */
+literal|"gegl:invert"
+block|,
+comment|/* in gimp */
+literal|"gegl:grey"
+block|,
+comment|/* in gimp */
+literal|"gegl:posterize"
+block|,
+comment|/* in gimp */
+literal|"gegl:scale"
+block|,
+comment|/* in gimp */
+literal|"gegl:translate"
+block|,
+comment|/* pointless */
+literal|"gegl:shear"
+block|,
+comment|/* in gimp */
+literal|"gegl:rotate"
+block|,
+comment|/* in gimp */
+literal|"gegl:transform"
+block|,
+comment|/* in gimp */
+literal|"gegl:value-invert"
+block|,
+comment|/* in gimp */
 literal|"gimp-"
 block|,
 literal|"gimp:"
