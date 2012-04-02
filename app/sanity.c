@@ -1036,7 +1036,7 @@ DECL|macro|GDK_PIXBUF_REQUIRED_MICRO
 define|#
 directive|define
 name|GDK_PIXBUF_REQUIRED_MICRO
-value|0
+value|1
 if|if
 condition|(
 operator|!
