@@ -160,15 +160,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|PixelSurround
-typedef|typedef
-name|struct
-name|_PixelSurround
-name|PixelSurround
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|SioxState
 typedef|typedef
 name|struct
