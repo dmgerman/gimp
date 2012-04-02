@@ -51,7 +51,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290738ef0103
+DECL|enum|__anon2c03acf90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -776,6 +776,21 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp_config_serialize_property_by_name
+argument_list|(
+name|config
+argument_list|,
+literal|"time"
+argument_list|,
+name|writer
+argument_list|)
+condition|)
+return|return
+name|FALSE
+return|;
 name|old_range
 operator|=
 name|hs_config
