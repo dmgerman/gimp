@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274f17660103
+DECL|enum|__anon2b5c69330103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -374,6 +374,9 @@ literal|"gegl:transform"
 block|,
 comment|/* in gimp */
 literal|"gegl:value-invert"
+block|,
+comment|/* in gimp */
+literal|"gegl:threshold"
 block|,
 comment|/* in gimp */
 literal|"gimp-"
