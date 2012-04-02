@@ -133,15 +133,6 @@ comment|/* types */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpLut
-typedef|typedef
-name|struct
-name|_GimpLut
-name|GimpLut
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|PixelRegionIterator
 typedef|typedef
 name|struct
