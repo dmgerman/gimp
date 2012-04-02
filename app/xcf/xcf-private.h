@@ -16,10 +16,26 @@ directive|define
 name|__XCF_PRIVATE_H__
 end_define
 
+begin_define
+DECL|macro|XCF_TILE_WIDTH
+define|#
+directive|define
+name|XCF_TILE_WIDTH
+value|64
+end_define
+
+begin_define
+DECL|macro|XCF_TILE_HEIGHT
+define|#
+directive|define
+name|XCF_TILE_HEIGHT
+value|64
+end_define
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c628c430103
+DECL|enum|__anon274c41510103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -189,7 +205,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c628c430203
+DECL|enum|__anon274c41510203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -221,7 +237,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c628c430303
+DECL|enum|__anon274c41510303
 block|{
 DECL|enumerator|XCF_ORIENTATION_HORIZONTAL
 name|XCF_ORIENTATION_HORIZONTAL
@@ -241,7 +257,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c628c430403
+DECL|enum|__anon274c41510403
 block|{
 DECL|enumerator|XCF_STROKETYPE_STROKE
 name|XCF_STROKETYPE_STROKE
@@ -261,7 +277,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c628c430503
+DECL|enum|__anon274c41510503
 block|{
 DECL|enumerator|XCF_GROUP_ITEM_EXPANDED
 name|XCF_GROUP_ITEM_EXPANDED
