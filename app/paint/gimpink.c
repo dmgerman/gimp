@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/pixel-region.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"base/temp-buf.h"
 end_include
 
@@ -1079,9 +1073,6 @@ name|GeglColor
 modifier|*
 name|color
 decl_stmt|;
-name|PixelRegion
-name|blob_maskPR
-decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -1322,18 +1313,16 @@ name|blob_to_render
 argument_list|)
 expr_stmt|;
 comment|/*  draw the paint_area using the just rendered canvas_buffer as mask */
-name|pixel_region_init
+name|gimp_paint_core_paste
 argument_list|(
-operator|&
-name|blob_maskPR
+name|paint_core
 argument_list|,
-name|gimp_gegl_buffer_get_tiles
-argument_list|(
 name|paint_core
 operator|->
 name|canvas_buffer
-argument_list|)
 argument_list|,
+name|GEGL_RECTANGLE
+argument_list|(
 name|paint_core
 operator|->
 name|paint_buffer_x
@@ -1355,16 +1344,7 @@ name|paint_core
 operator|->
 name|paint_buffer
 argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
-expr_stmt|;
-name|gimp_paint_core_paste
-argument_list|(
-name|paint_core
-argument_list|,
-operator|&
-name|blob_maskPR
 argument_list|,
 name|drawable
 argument_list|,
@@ -1889,7 +1869,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon289667660103
+DECL|enum|__anon2a1476c30103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START
