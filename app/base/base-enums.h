@@ -48,107 +48,6 @@ comment|/*  * these enums that are registered with the type system  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_TYPE_CURVE_TYPE
-define|#
-directive|define
-name|GIMP_TYPE_CURVE_TYPE
-value|(gimp_curve_type_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_curve_type_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< pdb-skip>*/
-DECL|enum|__anon2ae257010103
-block|{
-DECL|enumerator|GIMP_CURVE_SMOOTH
-name|GIMP_CURVE_SMOOTH
-block|,
-comment|/*< desc="Smooth">*/
-DECL|enumerator|GIMP_CURVE_FREE
-name|GIMP_CURVE_FREE
-comment|/*< desc="Freehand">*/
-DECL|typedef|GimpCurveType
-block|}
-name|GimpCurveType
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_TYPE_HISTOGRAM_CHANNEL
-define|#
-directive|define
-name|GIMP_TYPE_HISTOGRAM_CHANNEL
-value|(gimp_histogram_channel_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_histogram_channel_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2ae257010203
-block|{
-DECL|enumerator|GIMP_HISTOGRAM_VALUE
-name|GIMP_HISTOGRAM_VALUE
-init|=
-literal|0
-block|,
-comment|/*< desc="Value">*/
-DECL|enumerator|GIMP_HISTOGRAM_RED
-name|GIMP_HISTOGRAM_RED
-init|=
-literal|1
-block|,
-comment|/*< desc="Red">*/
-DECL|enumerator|GIMP_HISTOGRAM_GREEN
-name|GIMP_HISTOGRAM_GREEN
-init|=
-literal|2
-block|,
-comment|/*< desc="Green">*/
-DECL|enumerator|GIMP_HISTOGRAM_BLUE
-name|GIMP_HISTOGRAM_BLUE
-init|=
-literal|3
-block|,
-comment|/*< desc="Blue">*/
-DECL|enumerator|GIMP_HISTOGRAM_ALPHA
-name|GIMP_HISTOGRAM_ALPHA
-init|=
-literal|4
-block|,
-comment|/*< desc="Alpha">*/
-DECL|enumerator|GIMP_HISTOGRAM_RGB
-name|GIMP_HISTOGRAM_RGB
-init|=
-literal|5
-comment|/*< desc="RGB", pdb-skip>*/
-DECL|typedef|GimpHistogramChannel
-block|}
-name|GimpHistogramChannel
-typedef|;
-end_typedef
-
-begin_define
 DECL|macro|GIMP_TYPE_LAYER_MODE_EFFECTS
 define|#
 directive|define
@@ -169,7 +68,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae257010303
+DECL|enum|__anon27bb83080103
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE
@@ -280,55 +179,6 @@ name|GimpLayerModeEffects
 typedef|;
 end_typedef
 
-begin_define
-DECL|macro|GIMP_TYPE_HUE_RANGE
-define|#
-directive|define
-name|GIMP_TYPE_HUE_RANGE
-value|(gimp_hue_range_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_hue_range_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2ae257010403
-block|{
-DECL|enumerator|GIMP_ALL_HUES
-name|GIMP_ALL_HUES
-block|,
-DECL|enumerator|GIMP_RED_HUES
-name|GIMP_RED_HUES
-block|,
-DECL|enumerator|GIMP_YELLOW_HUES
-name|GIMP_YELLOW_HUES
-block|,
-DECL|enumerator|GIMP_GREEN_HUES
-name|GIMP_GREEN_HUES
-block|,
-DECL|enumerator|GIMP_CYAN_HUES
-name|GIMP_CYAN_HUES
-block|,
-DECL|enumerator|GIMP_BLUE_HUES
-name|GIMP_BLUE_HUES
-block|,
-DECL|enumerator|GIMP_MAGENTA_HUES
-name|GIMP_MAGENTA_HUES
-DECL|typedef|GimpHueRange
-block|}
-name|GimpHueRange
-typedef|;
-end_typedef
-
 begin_comment
 comment|/*  * non-registered enums; register them if needed  */
 end_comment
@@ -337,7 +187,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2ae257010503
+DECL|enum|__anon27bb83080203
 block|{
 DECL|enumerator|GIMP_NORMAL_CONVOL
 name|GIMP_NORMAL_CONVOL
@@ -360,7 +210,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2ae257010603
+DECL|enum|__anon27bb83080303
 block|{
 DECL|enumerator|SIOX_REFINEMENT_NO_CHANGE
 name|SIOX_REFINEMENT_NO_CHANGE
