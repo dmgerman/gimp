@@ -35,7 +35,7 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_gegl_convolve (GeglBuffer * src_buffer,const GeglRectangle * src_rect,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect,const gfloat * matrix,gint size,gdouble divisor,GimpConvolutionType mode,gboolean alpha_weighting)
+DECL|function|gimp_gegl_convolve (GeglBuffer * src_buffer,const GeglRectangle * src_rect,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect,const gfloat * kernel,gint kernel_size,gdouble divisor,GimpConvolutionType mode,gboolean alpha_weighting)
 name|gimp_gegl_convolve
 parameter_list|(
 name|GeglBuffer
@@ -59,10 +59,10 @@ parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
-name|matrix
+name|kernel
 parameter_list|,
 name|gint
-name|size
+name|kernel_size
 parameter_list|,
 name|gdouble
 name|divisor
@@ -192,7 +192,7 @@ name|iter
 argument_list|)
 condition|)
 block|{
-comment|/*  Convolve the src image using the convolution matrix, writing        *  to dest Convolve is not tile-enabled--use accordingly        */
+comment|/*  Convolve the src image using the convolution kernel, writing        *  to dest Convolve is not tile-enabled--use accordingly        */
 specifier|const
 name|guchar
 modifier|*
@@ -244,7 +244,7 @@ specifier|const
 name|gint
 name|margin
 init|=
-name|size
+name|kernel_size
 operator|/
 literal|2
 decl_stmt|;
@@ -372,7 +372,7 @@ name|gfloat
 modifier|*
 name|m
 init|=
-name|matrix
+name|kernel
 decl_stmt|;
 name|gdouble
 name|total
@@ -691,7 +691,7 @@ name|gfloat
 modifier|*
 name|m
 init|=
-name|matrix
+name|kernel
 decl_stmt|;
 name|gdouble
 name|total

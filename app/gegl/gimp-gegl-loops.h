@@ -45,10 +45,10 @@ parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
-name|matrix
+name|kernel
 parameter_list|,
 name|gint
-name|size
+name|kernel_size
 parameter_list|,
 name|gdouble
 name|divisor
