@@ -1212,6 +1212,11 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|temp_buf_free
+argument_list|(
+name|blur_src
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|result
@@ -2309,6 +2314,11 @@ argument_list|,
 name|GIMP_NORMAL_CONVOL
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|temp_buf_free
+argument_list|(
+name|blur_src
 argument_list|)
 expr_stmt|;
 block|}
