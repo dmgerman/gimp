@@ -372,6 +372,17 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_image_window_is_maximized
+parameter_list|(
+name|GimpImageWindow
+modifier|*
+name|window
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_image_window_has_toolbox
 parameter_list|(
 name|GimpImageWindow
