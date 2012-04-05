@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-nodes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl/gimp-gegl-utils.h"
 end_include
 
@@ -185,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3d72460103
+DECL|enum|__anon2976820b0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3949,7 +3955,7 @@ name|source_node
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gimp:point-layer-mode"
+literal|"gegl:over"
 argument_list|,
 name|NULL
 argument_list|)
@@ -4160,7 +4166,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gegl_node_set
+name|gimp_gegl_node_set_layer_mode
 argument_list|(
 name|drawable
 operator|->
@@ -4168,14 +4174,12 @@ name|private
 operator|->
 name|fs_mode_node
 argument_list|,
-literal|"blend-mode"
-argument_list|,
 name|gimp_layer_get_mode
 argument_list|(
 name|fs
 argument_list|)
 argument_list|,
-name|NULL
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
