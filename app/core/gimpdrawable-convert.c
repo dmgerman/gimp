@@ -376,7 +376,7 @@ expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 operator|!
-name|gimp_drawable_is_gray
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable
 argument_list|)
