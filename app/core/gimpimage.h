@@ -779,6 +779,23 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
+name|Babl
+modifier|*
+name|gimp_image_get_layer_format
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|gboolean
+name|with_alpha
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_image_get_ID
 parameter_list|(
