@@ -292,11 +292,11 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|gimp_image_get_format
+name|gimp_image_get_layer_format
 argument_list|(
 name|image
 argument_list|,
-name|GIMP_RGBA_IMAGE
+name|TRUE
 argument_list|)
 argument_list|,
 literal|"layer1"

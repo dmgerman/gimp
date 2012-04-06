@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5a05da0103
+DECL|enum|__anon289e90370103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1467,9 +1467,6 @@ name|GimpTextLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|GimpImageType
-name|type
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -1505,13 +1502,6 @@ condition|)
 return|return
 name|NULL
 return|;
-name|type
-operator|=
-name|gimp_image_base_type_with_alpha
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
 name|layer
 operator|=
 name|GIMP_TEXT_LAYER
@@ -1532,11 +1522,11 @@ literal|1
 argument_list|,
 literal|1
 argument_list|,
-name|gimp_image_get_format
+name|gimp_image_get_layer_format
 argument_list|(
 name|image
 argument_list|,
-name|type
+name|TRUE
 argument_list|)
 argument_list|)
 argument_list|)

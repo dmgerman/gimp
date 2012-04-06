@@ -840,9 +840,11 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|gimp_image_base_type_with_alpha
+name|gimp_image_get_layer_format
 argument_list|(
 name|image
+argument_list|,
+name|TRUE
 argument_list|)
 argument_list|,
 literal|"Layer for testing"
