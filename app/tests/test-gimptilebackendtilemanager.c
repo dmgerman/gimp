@@ -166,6 +166,16 @@ index|[
 literal|4
 index|]
 decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|format
+init|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
+decl_stmt|;
 comment|/* Write some pixels to the tile manager */
 name|tm
 operator|=
@@ -214,7 +224,7 @@ name|gimp_tile_manager_create_buffer
 argument_list|(
 name|tm
 argument_list|,
-name|NULL
+name|format
 argument_list|,
 name|TRUE
 argument_list|)
@@ -253,7 +263,7 @@ name|gimp_tile_backend_tile_manager_new
 argument_list|(
 name|tm
 argument_list|,
-name|NULL
+name|format
 argument_list|,
 name|FALSE
 argument_list|)

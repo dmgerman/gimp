@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1dfbfd0103
+DECL|enum|__anon28bcb1070103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1215,6 +1215,16 @@ argument_list|(
 name|pickable
 argument_list|)
 decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|format
+init|=
+name|gimp_projection_get_format
+argument_list|(
+name|pickable
+argument_list|)
+decl_stmt|;
 name|proj
 operator|->
 name|buffer
@@ -1223,7 +1233,7 @@ name|gimp_tile_manager_create_buffer
 argument_list|(
 name|tiles
 argument_list|,
-name|NULL
+name|format
 argument_list|)
 expr_stmt|;
 if|if
