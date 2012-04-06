@@ -649,7 +649,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_gegl_node_set_layer_mode
 argument_list|(
-name|node
+name|mode_node
 argument_list|,
 name|mode
 argument_list|,
