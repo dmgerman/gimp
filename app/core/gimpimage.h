@@ -23,50 +23,6 @@ file|"gimpviewable.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_IMAGE_TYPE_IS_RGB (t)
-define|#
-directive|define
-name|GIMP_IMAGE_TYPE_IS_RGB
-parameter_list|(
-name|t
-parameter_list|)
-value|((t) == GIMP_RGB_IMAGE ||         \                                             (t) == GIMP_RGBA_IMAGE)
-end_define
-
-begin_define
-DECL|macro|GIMP_IMAGE_TYPE_IS_GRAY (t)
-define|#
-directive|define
-name|GIMP_IMAGE_TYPE_IS_GRAY
-parameter_list|(
-name|t
-parameter_list|)
-value|((t) == GIMP_GRAY_IMAGE ||        \                                             (t) == GIMP_GRAYA_IMAGE)
-end_define
-
-begin_define
-DECL|macro|GIMP_IMAGE_TYPE_IS_INDEXED (t)
-define|#
-directive|define
-name|GIMP_IMAGE_TYPE_IS_INDEXED
-parameter_list|(
-name|t
-parameter_list|)
-value|((t) == GIMP_INDEXED_IMAGE ||     \                                             (t) == GIMP_INDEXEDA_IMAGE)
-end_define
-
-begin_define
-DECL|macro|GIMP_IMAGE_TYPE_HAS_ALPHA (t)
-define|#
-directive|define
-name|GIMP_IMAGE_TYPE_HAS_ALPHA
-parameter_list|(
-name|t
-parameter_list|)
-value|((t) == GIMP_RGBA_IMAGE  ||       \                                             (t) == GIMP_GRAYA_IMAGE ||       \                                             (t) == GIMP_INDEXEDA_IMAGE)
-end_define
-
-begin_define
 DECL|macro|GIMP_IMAGE_TYPE_WITH_ALPHA (t)
 define|#
 directive|define
@@ -75,28 +31,6 @@ parameter_list|(
 name|t
 parameter_list|)
 value|(((t) == GIMP_RGB_IMAGE ||         \                                             (t) == GIMP_RGBA_IMAGE) ?        \                                            GIMP_RGBA_IMAGE :                 \                                            ((t) == GIMP_GRAY_IMAGE ||        \                                             (t) == GIMP_GRAYA_IMAGE) ?       \                                            GIMP_GRAYA_IMAGE :                \                                            ((t) == GIMP_INDEXED_IMAGE ||     \                                             (t) == GIMP_INDEXEDA_IMAGE) ?    \                                            GIMP_INDEXEDA_IMAGE : -1)
-end_define
-
-begin_define
-DECL|macro|GIMP_IMAGE_TYPE_WITHOUT_ALPHA (t)
-define|#
-directive|define
-name|GIMP_IMAGE_TYPE_WITHOUT_ALPHA
-parameter_list|(
-name|t
-parameter_list|)
-value|(((t) == GIMP_RGB_IMAGE ||         \                                             (t) == GIMP_RGBA_IMAGE) ?        \                                            GIMP_RGB_IMAGE :                  \                                            ((t) == GIMP_GRAY_IMAGE ||        \                                             (t) == GIMP_GRAYA_IMAGE) ?       \                                            GIMP_GRAY_IMAGE :                 \                                            ((t) == GIMP_INDEXED_IMAGE ||     \                                             (t) == GIMP_INDEXEDA_IMAGE) ?    \                                            GIMP_INDEXED_IMAGE : -1)
-end_define
-
-begin_define
-DECL|macro|GIMP_IMAGE_TYPE_BYTES (t)
-define|#
-directive|define
-name|GIMP_IMAGE_TYPE_BYTES
-parameter_list|(
-name|t
-parameter_list|)
-value|((t) == GIMP_RGBA_IMAGE     ? 4 : \                                             (t) == GIMP_RGB_IMAGE      ? 3 : \                                             (t) == GIMP_GRAYA_IMAGE    ? 2 : \                                             (t) == GIMP_GRAY_IMAGE     ? 1 : \                                             (t) == GIMP_INDEXEDA_IMAGE ? 2 : \                                             (t) == GIMP_INDEXED_IMAGE  ? 1 : -1)
 end_define
 
 begin_define
@@ -693,18 +627,6 @@ end_function_decl
 begin_function_decl
 name|GimpImageBaseType
 name|gimp_image_base_type
-parameter_list|(
-specifier|const
-name|GimpImage
-modifier|*
-name|image
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpImageType
-name|gimp_image_base_type_with_alpha
 parameter_list|(
 specifier|const
 name|GimpImage
