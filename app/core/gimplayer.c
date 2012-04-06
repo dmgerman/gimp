@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7788610103
+DECL|enum|__anon2990c6b30103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -210,7 +210,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7788610203
+DECL|enum|__anon2990c6b30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2743,12 +2743,9 @@ name|new_base_type
 decl_stmt|;
 name|old_base_type
 operator|=
-name|GIMP_IMAGE_TYPE_BASE_TYPE
-argument_list|(
-name|gimp_drawable_type
+name|gimp_drawable_get_base_type
 argument_list|(
 name|drawable
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|new_base_type

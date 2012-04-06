@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc3caf80103
+DECL|enum|__anon2ab0838d0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -5048,9 +5048,6 @@ name|gboolean
 name|push_undo
 parameter_list|)
 block|{
-name|GimpImageType
-name|type
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DRAWABLE
@@ -5098,20 +5095,13 @@ name|push_undo
 operator|=
 name|FALSE
 expr_stmt|;
-name|type
-operator|=
-name|gimp_drawable_type
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|new_base_type
 operator|!=
-name|GIMP_IMAGE_TYPE_BASE_TYPE
+name|gimp_drawable_get_base_type
 argument_list|(
-name|type
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7236,7 +7226,7 @@ block|}
 end_function
 
 begin_function
-name|GimpImageType
+name|GimpImageBaseType
 DECL|function|gimp_drawable_get_base_type (const GimpDrawable * drawable)
 name|gimp_drawable_get_base_type
 parameter_list|(

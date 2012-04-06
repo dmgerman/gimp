@@ -1043,7 +1043,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpImageType
+name|GimpImageBaseType
 name|gimp_drawable_get_base_type
 parameter_list|(
 specifier|const
