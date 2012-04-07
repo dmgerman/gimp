@@ -69,17 +69,6 @@ name|height
 parameter_list|,
 name|gint
 name|bytes
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|,
-specifier|const
-name|guchar
-modifier|*
-name|color
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -611,12 +611,6 @@ operator|->
 name|mask
 operator|->
 name|bytes
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|temp_buf_copy_area
@@ -923,12 +917,6 @@ argument_list|,
 literal|32
 argument_list|,
 literal|3
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|data

@@ -549,12 +549,6 @@ argument_list|,
 name|dest_height
 argument_list|,
 literal|1
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|dest
@@ -1553,12 +1547,6 @@ argument_list|,
 name|dest_height
 argument_list|,
 literal|3
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|dest

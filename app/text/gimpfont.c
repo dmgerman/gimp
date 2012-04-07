@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon278ce8660103
+DECL|enum|__anon2c8487a00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -904,11 +904,6 @@ name|cairo_surface_t
 modifier|*
 name|surface
 decl_stmt|;
-name|guchar
-name|white
-init|=
-literal|255
-decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -1062,13 +1057,20 @@ argument_list|,
 name|height
 argument_list|,
 literal|1
+argument_list|)
+expr_stmt|;
+name|memset
+argument_list|(
+name|temp_buf_get_data
+argument_list|(
+name|temp_buf
+argument_list|)
 argument_list|,
-literal|0
+literal|255
 argument_list|,
-literal|0
-argument_list|,
-operator|&
-name|white
+name|width
+operator|*
+name|height
 argument_list|)
 expr_stmt|;
 name|surface
@@ -1385,7 +1387,7 @@ comment|/* This is a table of scripts and corresponding short sample strings    
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon278ce8660208
+DECL|struct|__anon2c8487a00208
 block|{
 DECL|member|script
 specifier|const

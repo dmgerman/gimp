@@ -892,12 +892,6 @@ name|y1
 operator|)
 argument_list|,
 name|bytes
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 operator|*
@@ -1869,7 +1863,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1476c30103
+DECL|enum|__anon2966b7830103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START

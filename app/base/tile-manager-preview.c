@@ -345,12 +345,6 @@ name|tile_manager_bpp
 argument_list|(
 name|tiles
 argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|pixel_region_init

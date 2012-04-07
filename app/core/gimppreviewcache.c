@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f893ce0108
+DECL|struct|__anon2b9632580108
 block|{
 DECL|member|buf
 name|TempBuf
@@ -811,12 +811,6 @@ operator|.
 name|buf
 operator|->
 name|bytes
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* preview from nearest bigger one */

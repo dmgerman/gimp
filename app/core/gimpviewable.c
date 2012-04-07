@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon287d33e80103
+DECL|enum|__anon2a8d4e9c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon287d33e80203
+DECL|enum|__anon2a8d4e9c0203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -1364,12 +1364,6 @@ argument_list|,
 name|height
 argument_list|,
 name|color_bytes
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|temp_buf_copy
@@ -2823,12 +2817,6 @@ argument_list|,
 name|height
 argument_list|,
 name|bpp
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|src

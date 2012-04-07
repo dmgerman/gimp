@@ -847,12 +847,6 @@ argument_list|,
 name|dest_height
 argument_list|,
 name|bytes
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|pixel_region_init_temp_buf

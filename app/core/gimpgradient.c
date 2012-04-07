@@ -932,12 +932,6 @@ argument_list|,
 name|height
 argument_list|,
 literal|4
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|buf

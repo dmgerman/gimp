@@ -704,12 +704,6 @@ name|babl_format_get_bytes_per_pixel
 argument_list|(
 name|format
 argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|convolve_buffer

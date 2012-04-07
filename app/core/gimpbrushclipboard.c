@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29af235f0103
+DECL|enum|__anon294a8d3a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -685,12 +685,6 @@ argument_list|,
 name|height
 argument_list|,
 literal|1
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|brush
@@ -704,12 +698,6 @@ argument_list|,
 name|height
 argument_list|,
 literal|3
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  copy the alpha channel into the brush's mask  */
@@ -806,11 +794,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|guchar
-name|color
-init|=
-literal|0
-decl_stmt|;
 name|width
 operator|=
 literal|17
@@ -830,13 +813,13 @@ argument_list|,
 name|height
 argument_list|,
 literal|1
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-operator|&
-name|color
+argument_list|)
+expr_stmt|;
+name|temp_buf_data_clear
+argument_list|(
+name|brush
+operator|->
+name|mask
 argument_list|)
 expr_stmt|;
 block|}
