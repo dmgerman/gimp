@@ -352,7 +352,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be865be0103
+DECL|enum|__anon28d122800103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -446,7 +446,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be865be0203
+DECL|enum|__anon28d122800203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6629,6 +6629,70 @@ argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|const
+name|Babl
+modifier|*
+DECL|function|gimp_image_get_channel_format (const GimpImage * image)
+name|gimp_image_get_channel_format
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|babl_format
+argument_list|(
+literal|"Y' u8"
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|const
+name|Babl
+modifier|*
+DECL|function|gimp_image_get_mask_format (const GimpImage * image)
+name|gimp_image_get_mask_format
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|babl_format
+argument_list|(
+literal|"Y' u8"
+argument_list|)
+return|;
 block|}
 end_function
 

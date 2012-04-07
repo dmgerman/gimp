@@ -603,11 +603,9 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|gimp_image_get_format
+name|gimp_image_get_mask_format
 argument_list|(
 name|image
-argument_list|,
-name|GIMP_GRAY_IMAGE
 argument_list|)
 argument_list|)
 argument_list|)
