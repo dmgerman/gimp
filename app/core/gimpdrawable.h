@@ -1031,18 +1031,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpImageType
-name|gimp_drawable_type_with_alpha
-parameter_list|(
-specifier|const
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|GimpImageBaseType
 name|gimp_drawable_get_base_type
 parameter_list|(
