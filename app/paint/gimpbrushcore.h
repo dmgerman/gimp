@@ -447,6 +447,12 @@ name|TempBuf
 modifier|*
 name|area
 parameter_list|,
+name|gint
+name|area_x
+parameter_list|,
+name|gint
+name|area_y
+parameter_list|,
 name|GimpBrushApplicationMode
 name|mode
 parameter_list|)

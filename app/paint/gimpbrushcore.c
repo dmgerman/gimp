@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon287e6c190103
+DECL|enum|__anon297a79a00103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -6734,7 +6734,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_brush_core_color_area_with_pixmap (GimpBrushCore * core,GimpDrawable * drawable,const GimpCoords * coords,TempBuf * area,GimpBrushApplicationMode mode)
+DECL|function|gimp_brush_core_color_area_with_pixmap (GimpBrushCore * core,GimpDrawable * drawable,const GimpCoords * coords,TempBuf * area,gint area_x,gint area_y,GimpBrushApplicationMode mode)
 name|gimp_brush_core_color_area_with_pixmap
 parameter_list|(
 name|GimpBrushCore
@@ -6753,6 +6753,12 @@ parameter_list|,
 name|TempBuf
 modifier|*
 name|area
+parameter_list|,
+name|gint
+name|area_x
+parameter_list|,
+name|gint
+name|area_y
 parameter_list|,
 name|GimpBrushApplicationMode
 name|mode
@@ -6995,17 +7001,13 @@ argument_list|)
 expr_stmt|;
 name|offsetx
 operator|=
-name|area
-operator|->
-name|x
+name|area_x
 operator|-
 name|ulx
 expr_stmt|;
 name|offsety
 operator|=
-name|area
-operator|->
-name|y
+name|area_y
 operator|-
 name|uly
 expr_stmt|;

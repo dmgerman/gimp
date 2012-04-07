@@ -602,6 +602,10 @@ name|coords
 argument_list|,
 name|area
 argument_list|,
+name|paint_buffer_x
+argument_list|,
+name|paint_buffer_y
+argument_list|,
 name|gimp_paint_options_get_brush_mode
 argument_list|(
 name|paint_options
