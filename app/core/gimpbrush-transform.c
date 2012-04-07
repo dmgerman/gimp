@@ -474,8 +474,6 @@ return|return
 name|temp_buf_copy
 argument_list|(
 name|source
-argument_list|,
-name|NULL
 argument_list|)
 return|;
 name|src_width
@@ -1132,8 +1130,6 @@ operator|=
 name|temp_buf_copy
 argument_list|(
 name|result
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|src_buffer
@@ -1472,8 +1468,6 @@ return|return
 name|temp_buf_copy
 argument_list|(
 name|source
-argument_list|,
-name|NULL
 argument_list|)
 return|;
 name|src_width
@@ -2245,8 +2239,6 @@ operator|=
 name|temp_buf_copy
 argument_list|(
 name|result
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|src_buffer

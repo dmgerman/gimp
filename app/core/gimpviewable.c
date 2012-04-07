@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon280003ff0103
+DECL|enum|__anon29b0c7160103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon280003ff0203
+DECL|enum|__anon29b0c7160203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -2647,8 +2647,6 @@ return|return
 name|temp_buf_copy
 argument_list|(
 name|temp_buf
-argument_list|,
-name|NULL
 argument_list|)
 return|;
 return|return

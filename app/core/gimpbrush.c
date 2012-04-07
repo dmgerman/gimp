@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5e2c110103
+DECL|enum|__anon2b8b9c510103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -120,7 +120,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5e2c110203
+DECL|enum|__anon2b8b9c510203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2649,8 +2649,6 @@ argument_list|(
 name|brush
 operator|->
 name|mask
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -2843,8 +2841,6 @@ argument_list|(
 name|brush
 operator|->
 name|pixmap
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}

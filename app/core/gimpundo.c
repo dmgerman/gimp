@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d843610103
+DECL|enum|__anon2973cb670103
 block|{
 DECL|enumerator|POP
 name|POP
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d843610203
+DECL|enum|__anon2973cb670203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1253,8 +1253,6 @@ argument_list|(
 name|undo
 operator|->
 name|preview
-argument_list|,
-name|NULL
 argument_list|)
 return|;
 block|}

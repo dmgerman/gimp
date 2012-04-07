@@ -81,10 +81,6 @@ parameter_list|(
 name|TempBuf
 modifier|*
 name|src
-parameter_list|,
-name|TempBuf
-modifier|*
-name|dest
 parameter_list|)
 function_decl|;
 end_function_decl

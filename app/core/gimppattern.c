@@ -746,8 +746,6 @@ name|data
 argument_list|)
 operator|->
 name|mask
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return
