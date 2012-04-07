@@ -854,7 +854,7 @@ end_function
 begin_function
 name|GimpBuffer
 modifier|*
-DECL|function|gimp_buffer_new (GeglBuffer * buffer,const gchar * name,GimpImageType image_type,gint offset_x,gint offset_y,gboolean copy_pixels)
+DECL|function|gimp_buffer_new (GeglBuffer * buffer,const gchar * name,gint offset_x,gint offset_y,gboolean copy_pixels)
 name|gimp_buffer_new
 parameter_list|(
 name|GeglBuffer
@@ -865,9 +865,6 @@ specifier|const
 name|gchar
 modifier|*
 name|name
-parameter_list|,
-name|GimpImageType
-name|image_type
 parameter_list|,
 name|gint
 name|offset_x
@@ -941,12 +938,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_buffer
 operator|->
-name|image_type
-operator|=
-name|image_type
-expr_stmt|;
-name|gimp_buffer
-operator|->
 name|offset_x
 operator|=
 name|offset_x
@@ -993,9 +984,6 @@ name|GeglBuffer
 modifier|*
 name|buffer
 decl_stmt|;
-name|gint
-name|channels
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GDK_IS_PIXBUF
@@ -1015,13 +1003,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|channels
-operator|=
-name|gdk_pixbuf_get_n_channels
-argument_list|(
-name|pixbuf
-argument_list|)
-expr_stmt|;
 name|buffer
 operator|=
 name|gimp_pixbuf_create_buffer
@@ -1036,11 +1017,6 @@ argument_list|(
 name|buffer
 argument_list|,
 name|name
-argument_list|,
-name|GIMP_IMAGE_TYPE_FROM_BYTES
-argument_list|(
-name|channels
-argument_list|)
 argument_list|,
 name|offset_x
 argument_list|,
@@ -1154,35 +1130,6 @@ name|buffer
 operator|->
 name|buffer
 argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-name|GimpImageType
-DECL|function|gimp_buffer_get_image_type (const GimpBuffer * buffer)
-name|gimp_buffer_get_image_type
-parameter_list|(
-specifier|const
-name|GimpBuffer
-modifier|*
-name|buffer
-parameter_list|)
-block|{
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_BUFFER
-argument_list|(
-name|buffer
-argument_list|)
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-return|return
-name|buffer
-operator|->
-name|image_type
 return|;
 block|}
 end_function

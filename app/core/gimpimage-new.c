@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp.h"
 end_include
 
@@ -1146,8 +1152,13 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|GimpImageType
-name|type
+specifier|const
+name|Babl
+modifier|*
+name|format
+decl_stmt|;
+name|gboolean
+name|has_alpha
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -1183,11 +1194,18 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|type
+name|format
 operator|=
-name|gimp_buffer_get_image_type
+name|gimp_buffer_get_format
 argument_list|(
 name|paste
+argument_list|)
+expr_stmt|;
+name|has_alpha
+operator|=
+name|babl_format_has_alpha
+argument_list|(
+name|format
 argument_list|)
 expr_stmt|;
 comment|/*  create a new image  (always of type GIMP_RGB)  */
@@ -1207,9 +1225,9 @@ argument_list|(
 name|paste
 argument_list|)
 argument_list|,
-name|GIMP_IMAGE_TYPE_BASE_TYPE
+name|gimp_babl_format_get_base_type
 argument_list|(
-name|type
+name|format
 argument_list|)
 argument_list|,
 name|TRUE
@@ -1273,11 +1291,11 @@ argument_list|)
 argument_list|,
 name|image
 argument_list|,
-name|gimp_image_get_format
+name|gimp_image_get_layer_format
 argument_list|(
 name|image
 argument_list|,
-name|type
+name|has_alpha
 argument_list|)
 argument_list|,
 name|_

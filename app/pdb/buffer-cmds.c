@@ -64,6 +64,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppdb.h"
 end_include
 
@@ -1047,9 +1053,12 @@ name|buffer
 condition|)
 name|image_type
 operator|=
-name|gimp_buffer_get_image_type
+name|gimp_babl_format_get_image_type
+argument_list|(
+name|gimp_buffer_get_format
 argument_list|(
 name|buffer
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
