@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2986067b0103
+DECL|enum|__anon2bf97f4a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -579,7 +579,7 @@ operator|->
 name|mask
 condition|)
 block|{
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|brush
 operator|->
@@ -600,7 +600,7 @@ operator|->
 name|pixmap
 condition|)
 block|{
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|brush
 operator|->
@@ -722,8 +722,6 @@ argument_list|(
 name|brush
 operator|->
 name|mask
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_set_format
@@ -780,8 +778,6 @@ argument_list|(
 name|brush
 operator|->
 name|pixmap
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy

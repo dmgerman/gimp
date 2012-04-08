@@ -8021,7 +8021,7 @@ argument_list|,
 name|thumbnail_data_count
 argument_list|)
 expr_stmt|;
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|buf
 argument_list|)

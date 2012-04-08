@@ -916,8 +916,11 @@ operator|=
 name|gimp_temp_buf_create_buffer
 argument_list|(
 name|temp_buf
-argument_list|,
-name|TRUE
+argument_list|)
+expr_stmt|;
+name|gimp_temp_buf_unref
+argument_list|(
+name|temp_buf
 argument_list|)
 expr_stmt|;
 return|return
@@ -1853,7 +1856,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c061bd60103
+DECL|enum|__anon29c661330103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START

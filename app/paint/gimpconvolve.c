@@ -699,8 +699,11 @@ operator|=
 name|gimp_temp_buf_create_buffer
 argument_list|(
 name|convolve_temp
-argument_list|,
-name|TRUE
+argument_list|)
+expr_stmt|;
+name|gimp_temp_buf_unref
+argument_list|(
+name|convolve_temp
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy

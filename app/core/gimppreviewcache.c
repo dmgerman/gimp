@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ab66f10108
+DECL|struct|__anon27570a2d0108
 block|{
 DECL|member|buf
 name|GimpTempBuf
@@ -399,7 +399,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|smallest
 argument_list|)
@@ -518,7 +518,7 @@ argument_list|,
 operator|(
 name|GDestroyNotify
 operator|)
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|)
 expr_stmt|;
 operator|*

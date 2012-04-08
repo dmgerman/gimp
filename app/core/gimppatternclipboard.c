@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a10e0720103
+DECL|enum|__anon2b44809d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -579,7 +579,7 @@ operator|->
 name|mask
 condition|)
 block|{
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|pattern
 operator|->

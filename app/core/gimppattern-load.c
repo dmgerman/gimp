@@ -957,8 +957,6 @@ argument_list|(
 name|pattern
 operator|->
 name|mask
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy

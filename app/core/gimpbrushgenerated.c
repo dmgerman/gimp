@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2783c5980103
+DECL|enum|__anon2a4b637b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -960,7 +960,7 @@ name|gbrush
 operator|->
 name|mask
 condition|)
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|gbrush
 operator|->

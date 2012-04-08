@@ -122,6 +122,12 @@ argument_list|)
 expr_stmt|;
 name|temp
 operator|->
+name|ref_count
+operator|=
+literal|1
+expr_stmt|;
+name|temp
+operator|->
 name|format
 operator|=
 name|format
@@ -240,9 +246,40 @@ block|}
 end_function
 
 begin_function
+name|GimpTempBuf
+modifier|*
+DECL|function|gimp_temp_buf_ref (GimpTempBuf * buf)
+name|gimp_temp_buf_ref
+parameter_list|(
+name|GimpTempBuf
+modifier|*
+name|buf
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|buf
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|buf
+operator|->
+name|ref_count
+operator|++
+expr_stmt|;
+return|return
+name|buf
+return|;
+block|}
+end_function
+
+begin_function
 name|void
-DECL|function|gimp_temp_buf_free (GimpTempBuf * buf)
-name|gimp_temp_buf_free
+DECL|function|gimp_temp_buf_unref (GimpTempBuf * buf)
+name|gimp_temp_buf_unref
 parameter_list|(
 name|GimpTempBuf
 modifier|*
@@ -256,6 +293,29 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|buf
+operator|->
+name|ref_count
+operator|>
+literal|0
+argument_list|)
+expr_stmt|;
+name|buf
+operator|->
+name|ref_count
+operator|--
+expr_stmt|;
+if|if
+condition|(
+name|buf
+operator|->
+name|ref_count
+operator|<
+literal|1
+condition|)
+block|{
 if|if
 condition|(
 name|buf
@@ -276,6 +336,7 @@ argument_list|,
 name|buf
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -852,15 +913,12 @@ end_function
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_temp_buf_create_buffer (GimpTempBuf * temp_buf,gboolean take_ownership)
+DECL|function|gimp_temp_buf_create_buffer (GimpTempBuf * temp_buf)
 name|gimp_temp_buf_create_buffer
 parameter_list|(
 name|GimpTempBuf
 modifier|*
 name|temp_buf
-parameter_list|,
-name|gboolean
-name|take_ownership
 parameter_list|)
 block|{
 name|GeglBuffer
@@ -906,20 +964,15 @@ argument_list|)
 argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
 argument_list|,
-name|take_ownership
-condition|?
 operator|(
 name|GDestroyNotify
 operator|)
-name|gimp_temp_buf_free
-else|:
-name|NULL
+name|gimp_temp_buf_unref
 argument_list|,
-name|take_ownership
-condition|?
+name|gimp_temp_buf_ref
+argument_list|(
 name|temp_buf
-else|:
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_set_data

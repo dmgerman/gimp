@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29419dfc0103
+DECL|enum|__anon2b4e57c80103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -120,7 +120,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29419dfc0203
+DECL|enum|__anon2b4e57c80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -760,7 +760,7 @@ operator|->
 name|mask
 condition|)
 block|{
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|brush
 operator|->
@@ -781,7 +781,7 @@ operator|->
 name|pixmap
 condition|)
 block|{
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|brush
 operator|->
@@ -1156,11 +1156,6 @@ name|mask_buf
 init|=
 name|NULL
 decl_stmt|;
-name|gboolean
-name|free_mask
-init|=
-name|FALSE
-decl_stmt|;
 specifier|const
 name|GimpTempBuf
 modifier|*
@@ -1325,9 +1320,17 @@ operator|)
 name|mask_buf
 argument_list|)
 expr_stmt|;
-name|free_mask
-operator|=
-name|TRUE
+block|}
+else|else
+block|{
+name|gimp_temp_buf_ref
+argument_list|(
+operator|(
+name|GimpTempBuf
+operator|*
+operator|)
+name|mask_buf
+argument_list|)
 expr_stmt|;
 block|}
 if|if
@@ -1541,11 +1544,7 @@ condition|(
 name|scaled
 condition|)
 block|{
-if|if
-condition|(
-name|free_mask
-condition|)
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 operator|(
 name|GimpTempBuf
@@ -1729,7 +1728,7 @@ argument_list|(
 operator|(
 name|GDestroyNotify
 operator|)
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|,
 literal|'M'
 argument_list|,
@@ -1745,7 +1744,7 @@ argument_list|(
 operator|(
 name|GDestroyNotify
 operator|)
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|,
 literal|'P'
 argument_list|,

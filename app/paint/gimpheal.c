@@ -2263,8 +2263,6 @@ name|GimpTempBuf
 operator|*
 operator|)
 name|mask_buf
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_heal

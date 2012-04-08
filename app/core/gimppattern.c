@@ -396,7 +396,7 @@ operator|->
 name|mask
 condition|)
 block|{
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|pattern
 operator|->
@@ -628,8 +628,6 @@ argument_list|(
 name|pattern
 operator|->
 name|mask
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|dest_buffer
@@ -637,8 +635,6 @@ operator|=
 name|gimp_temp_buf_create_buffer
 argument_list|(
 name|temp_buf
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
@@ -1172,8 +1168,6 @@ argument_list|(
 name|pattern
 operator|->
 name|mask
-argument_list|,
-name|FALSE
 argument_list|)
 return|;
 block|}

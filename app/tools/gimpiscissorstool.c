@@ -1711,7 +1711,7 @@ operator|->
 name|dp_buf
 condition|)
 block|{
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|iscissors
 operator|->
@@ -5396,7 +5396,7 @@ name|iscissors
 operator|->
 name|dp_buf
 condition|)
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|iscissors
 operator|->

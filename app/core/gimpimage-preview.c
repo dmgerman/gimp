@@ -333,7 +333,7 @@ name|private
 operator|->
 name|preview
 condition|)
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|private
 operator|->

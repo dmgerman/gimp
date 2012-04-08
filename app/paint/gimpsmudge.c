@@ -686,8 +686,11 @@ operator|=
 name|gimp_temp_buf_create_buffer
 argument_list|(
 name|accum_temp
-argument_list|,
-name|TRUE
+argument_list|)
+expr_stmt|;
+name|gimp_temp_buf_unref
+argument_list|(
+name|accum_temp
 argument_list|)
 expr_stmt|;
 comment|/*  adjust the x and y coordinates to the upper left corner of the    *  accumulator    */

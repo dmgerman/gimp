@@ -408,7 +408,7 @@ argument_list|,
 name|GIMP_VIEW_BG_WHITE
 argument_list|)
 expr_stmt|;
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|temp_buf
 argument_list|)
@@ -459,7 +459,7 @@ argument_list|,
 name|GIMP_VIEW_BG_WHITE
 argument_list|)
 expr_stmt|;
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|temp_buf
 argument_list|)
@@ -663,7 +663,7 @@ argument_list|,
 name|GIMP_VIEW_BG_WHITE
 argument_list|)
 expr_stmt|;
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|temp_buf
 argument_list|)

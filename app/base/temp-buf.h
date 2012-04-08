@@ -21,6 +21,10 @@ DECL|struct|_GimpTempBuf
 struct|struct
 name|_GimpTempBuf
 block|{
+DECL|member|ref_count
+name|gint
+name|ref_count
+decl_stmt|;
 DECL|member|format
 specifier|const
 name|Babl
@@ -92,8 +96,20 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
+name|GimpTempBuf
+modifier|*
+name|gimp_temp_buf_ref
+parameter_list|(
+name|GimpTempBuf
+modifier|*
+name|buf
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 parameter_list|(
 name|GimpTempBuf
 modifier|*
@@ -187,9 +203,6 @@ argument_list|(
 name|GimpTempBuf
 operator|*
 name|temp_buf
-argument_list|,
-name|gboolean
-name|take_ownership
 argument_list|)
 name|G_GNUC_WARN_UNUSED_RESULT
 decl_stmt|;

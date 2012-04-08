@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27df29870103
+DECL|enum|__anon2c895f970103
 block|{
 DECL|enumerator|POP
 name|POP
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27df29870203
+DECL|enum|__anon2c895f970203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -756,7 +756,7 @@ operator|->
 name|preview
 condition|)
 block|{
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|undo
 operator|->
@@ -1934,7 +1934,7 @@ operator|->
 name|preview
 condition|)
 block|{
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|undo
 operator|->

@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9703c70103
+DECL|enum|__anon28ca9c230103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -1008,7 +1008,7 @@ operator|->
 name|pressure_brush
 condition|)
 block|{
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|core
 operator|->
@@ -1061,7 +1061,7 @@ name|j
 index|]
 condition|)
 block|{
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|core
 operator|->
@@ -1151,7 +1151,7 @@ name|j
 index|]
 condition|)
 block|{
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|core
 operator|->
@@ -3699,8 +3699,11 @@ operator|=
 name|gimp_temp_buf_create_buffer
 argument_list|(
 name|temp_buf
-argument_list|,
-name|TRUE
+argument_list|)
+expr_stmt|;
+name|gimp_temp_buf_unref
+argument_list|(
+name|temp_buf
 argument_list|)
 expr_stmt|;
 return|return
@@ -4162,8 +4165,6 @@ name|GimpTempBuf
 operator|*
 operator|)
 name|brush_mask
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_paint_core_paste
@@ -4374,8 +4375,6 @@ name|GimpTempBuf
 operator|*
 operator|)
 name|brush_mask
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_paint_core_replace
@@ -4868,7 +4867,7 @@ name|j
 index|]
 condition|)
 block|{
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|core
 operator|->
@@ -5347,7 +5346,7 @@ name|core
 operator|->
 name|pressure_brush
 condition|)
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|core
 operator|->
@@ -5922,7 +5921,7 @@ name|j
 index|]
 condition|)
 block|{
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|core
 operator|->

@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b370090103
+DECL|enum|__anon2a3f78ee0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b370090203
+DECL|enum|__anon2a3f78ee0203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -780,7 +780,7 @@ operator|->
 name|preview_temp_buf
 condition|)
 block|{
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|private
 operator|->
@@ -1094,7 +1094,7 @@ operator|->
 name|preview_temp_buf
 condition|)
 block|{
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|private
 operator|->
@@ -1339,8 +1339,6 @@ operator|=
 name|gimp_temp_buf_create_buffer
 argument_list|(
 name|temp_buf
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|dest_buffer
@@ -2436,7 +2434,7 @@ operator|->
 name|preview_temp_buf
 return|;
 block|}
-name|gimp_temp_buf_free
+name|gimp_temp_buf_unref
 argument_list|(
 name|private
 operator|->
