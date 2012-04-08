@@ -314,7 +314,7 @@ condition|)
 block|{
 name|render_buf
 operator|=
-name|temp_buf_scale
+name|gimp_temp_buf_scale
 argument_list|(
 name|temp_buf
 argument_list|,
@@ -323,7 +323,7 @@ argument_list|,
 name|view_height
 argument_list|)
 expr_stmt|;
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|temp_buf
 argument_list|)
@@ -383,7 +383,7 @@ name|temp_buf
 decl_stmt|;
 name|temp_buf
 operator|=
-name|temp_buf_scale
+name|gimp_temp_buf_scale
 argument_list|(
 name|render_buf
 argument_list|,
@@ -396,7 +396,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|render_buf
 argument_list|)
@@ -483,7 +483,7 @@ argument_list|,
 name|GIMP_VIEW_BG_WHITE
 argument_list|)
 expr_stmt|;
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|render_buf
 argument_list|)

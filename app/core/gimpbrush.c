@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297a0c9d0103
+DECL|enum|__anon29419dfc0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -120,7 +120,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297a0c9d0203
+DECL|enum|__anon29419dfc0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -760,7 +760,7 @@ operator|->
 name|mask
 condition|)
 block|{
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|brush
 operator|->
@@ -781,7 +781,7 @@ operator|->
 name|pixmap
 condition|)
 block|{
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|brush
 operator|->
@@ -1032,7 +1032,7 @@ literal|0
 decl_stmt|;
 name|memsize
 operator|+=
-name|temp_buf_get_memsize
+name|gimp_temp_buf_get_memsize
 argument_list|(
 name|brush
 operator|->
@@ -1041,7 +1041,7 @@ argument_list|)
 expr_stmt|;
 name|memsize
 operator|+=
-name|temp_buf_get_memsize
+name|gimp_temp_buf_get_memsize
 argument_list|(
 name|brush
 operator|->
@@ -1304,7 +1304,7 @@ condition|)
 block|{
 name|mask_buf
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 literal|1
 argument_list|,
@@ -1316,7 +1316,7 @@ literal|"Y u8"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|temp_buf_data_clear
+name|gimp_temp_buf_data_clear
 argument_list|(
 operator|(
 name|GimpTempBuf
@@ -1369,7 +1369,7 @@ block|}
 block|}
 name|return_buf
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|mask_width
 argument_list|,
@@ -1381,21 +1381,21 @@ literal|"R'G'B'A u8"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|temp_buf_data_clear
+name|gimp_temp_buf_data_clear
 argument_list|(
 name|return_buf
 argument_list|)
 expr_stmt|;
 name|mask
 operator|=
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|mask_buf
 argument_list|)
 expr_stmt|;
 name|buf
 operator|=
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|return_buf
 argument_list|)
@@ -1409,7 +1409,7 @@ name|guchar
 modifier|*
 name|pixmap
 init|=
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|pixmap_buf
 argument_list|)
@@ -1545,7 +1545,7 @@ if|if
 condition|(
 name|free_mask
 condition|)
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 operator|(
 name|GimpTempBuf
@@ -1729,7 +1729,7 @@ argument_list|(
 operator|(
 name|GDestroyNotify
 operator|)
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|,
 literal|'M'
 argument_list|,
@@ -1745,7 +1745,7 @@ argument_list|(
 operator|(
 name|GDestroyNotify
 operator|)
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|,
 literal|'P'
 argument_list|,
@@ -1926,14 +1926,14 @@ name|g_checksum_update
 argument_list|(
 name|checksum
 argument_list|,
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|brush
 operator|->
 name|mask
 argument_list|)
 argument_list|,
-name|temp_buf_get_data_size
+name|gimp_temp_buf_get_data_size
 argument_list|(
 name|brush
 operator|->
@@ -1951,14 +1951,14 @@ name|g_checksum_update
 argument_list|(
 name|checksum
 argument_list|,
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|brush
 operator|->
 name|pixmap
 argument_list|)
 argument_list|,
-name|temp_buf_get_data_size
+name|gimp_temp_buf_get_data_size
 argument_list|(
 name|brush
 operator|->
@@ -2650,7 +2650,7 @@ condition|)
 block|{
 name|mask
 operator|=
-name|temp_buf_copy
+name|gimp_temp_buf_copy
 argument_list|(
 name|brush
 operator|->
@@ -2842,7 +2842,7 @@ condition|)
 block|{
 name|pixmap
 operator|=
-name|temp_buf_copy
+name|gimp_temp_buf_copy
 argument_list|(
 name|brush
 operator|->

@@ -396,7 +396,7 @@ operator|->
 name|mask
 condition|)
 block|{
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|pattern
 operator|->
@@ -454,7 +454,7 @@ literal|0
 decl_stmt|;
 name|memsize
 operator|+=
-name|temp_buf_get_memsize
+name|gimp_temp_buf_get_memsize
 argument_list|(
 name|pattern
 operator|->
@@ -608,7 +608,7 @@ argument_list|)
 expr_stmt|;
 name|temp_buf
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|copy_width
 argument_list|,
@@ -784,7 +784,7 @@ name|pattern
 operator|->
 name|mask
 operator|=
-name|temp_buf_copy
+name|gimp_temp_buf_copy
 argument_list|(
 name|GIMP_PATTERN
 argument_list|(
@@ -850,14 +850,14 @@ name|g_checksum_update
 argument_list|(
 name|checksum
 argument_list|,
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|pattern
 operator|->
 name|mask
 argument_list|)
 argument_list|,
-name|temp_buf_get_data_size
+name|gimp_temp_buf_get_data_size
 argument_list|(
 name|pattern
 operator|->
@@ -954,7 +954,7 @@ name|pattern
 operator|->
 name|mask
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 literal|32
 argument_list|,
@@ -968,7 +968,7 @@ argument_list|)
 expr_stmt|;
 name|data
 operator|=
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|pattern
 operator|->

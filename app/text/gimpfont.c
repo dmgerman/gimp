@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon291eee640103
+DECL|enum|__anon29d4d7ff0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1050,7 +1050,7 @@ argument_list|)
 expr_stmt|;
 name|temp_buf
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|width
 argument_list|,
@@ -1064,7 +1064,7 @@ argument_list|)
 expr_stmt|;
 name|memset
 argument_list|(
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|temp_buf
 argument_list|)
@@ -1080,7 +1080,7 @@ name|surface
 operator|=
 name|cairo_image_surface_create_for_data
 argument_list|(
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|temp_buf
 argument_list|)
@@ -1390,7 +1390,7 @@ comment|/* This is a table of scripts and corresponding short sample strings    
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon291eee640208
+DECL|struct|__anon29d4d7ff0208
 block|{
 DECL|member|script
 specifier|const

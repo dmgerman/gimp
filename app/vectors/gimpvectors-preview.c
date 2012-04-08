@@ -163,7 +163,7 @@ argument_list|)
 expr_stmt|;
 name|temp_buf
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|width
 argument_list|,
@@ -177,7 +177,7 @@ argument_list|)
 expr_stmt|;
 name|data
 operator|=
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|temp_buf
 argument_list|)

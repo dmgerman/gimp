@@ -1711,7 +1711,7 @@ operator|->
 name|dp_buf
 condition|)
 block|{
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|iscissors
 operator|->
@@ -5396,7 +5396,7 @@ name|iscissors
 operator|->
 name|dp_buf
 condition|)
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|iscissors
 operator|->
@@ -5407,7 +5407,7 @@ name|iscissors
 operator|->
 name|dp_buf
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|width
 argument_list|,
@@ -5998,7 +5998,7 @@ operator|(
 name|guint
 operator|*
 operator|)
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|dp_buf
 argument_list|)
@@ -6248,7 +6248,7 @@ operator|(
 name|guint32
 operator|*
 operator|)
-name|temp_buf_data_clear
+name|gimp_temp_buf_data_clear
 argument_list|(
 name|dp_buf
 argument_list|)

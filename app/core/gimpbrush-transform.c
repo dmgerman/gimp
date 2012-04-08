@@ -471,7 +471,7 @@ name|matrix
 argument_list|)
 condition|)
 return|return
-name|temp_buf_copy
+name|gimp_temp_buf_copy
 argument_list|(
 name|source
 argument_list|)
@@ -540,7 +540,7 @@ argument_list|)
 expr_stmt|;
 name|result
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|dest_width
 argument_list|,
@@ -554,14 +554,14 @@ argument_list|)
 expr_stmt|;
 name|dest
 operator|=
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|result
 argument_list|)
 expr_stmt|;
 name|src
 operator|=
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|source
 argument_list|)
@@ -1130,7 +1130,7 @@ argument_list|)
 expr_stmt|;
 name|blur_src
 operator|=
-name|temp_buf_copy
+name|gimp_temp_buf_copy
 argument_list|(
 name|result
 argument_list|)
@@ -1458,7 +1458,7 @@ name|matrix
 argument_list|)
 condition|)
 return|return
-name|temp_buf_copy
+name|gimp_temp_buf_copy
 argument_list|(
 name|source
 argument_list|)
@@ -1527,7 +1527,7 @@ argument_list|)
 expr_stmt|;
 name|result
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|dest_width
 argument_list|,
@@ -1541,14 +1541,14 @@ argument_list|)
 expr_stmt|;
 name|dest
 operator|=
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|result
 argument_list|)
 expr_stmt|;
 name|src
 operator|=
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|source
 argument_list|)
@@ -2232,7 +2232,7 @@ argument_list|)
 expr_stmt|;
 name|blur_src
 operator|=
-name|temp_buf_copy
+name|gimp_temp_buf_copy
 argument_list|(
 name|result
 argument_list|)

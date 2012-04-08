@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2793ffca0108
+DECL|struct|__anon28ab66f10108
 block|{
 DECL|member|buf
 name|GimpTempBuf
@@ -399,7 +399,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|smallest
 argument_list|)
@@ -518,7 +518,7 @@ argument_list|,
 operator|(
 name|GDestroyNotify
 operator|)
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|)
 expr_stmt|;
 operator|*
@@ -799,7 +799,7 @@ expr_stmt|;
 comment|/* Now get the real one and add to cache */
 name|preview
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|width
 argument_list|,
@@ -857,7 +857,7 @@ literal|0.0
 expr_stmt|;
 name|src_data
 operator|=
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|pn
 operator|.
@@ -866,7 +866,7 @@ argument_list|)
 expr_stmt|;
 name|dest_data
 operator|=
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|preview
 argument_list|)
@@ -1061,7 +1061,7 @@ argument_list|(
 name|GSList
 argument_list|)
 operator|+
-name|temp_buf_get_memsize
+name|gimp_temp_buf_get_memsize
 argument_list|(
 name|list
 operator|->

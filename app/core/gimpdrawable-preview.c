@@ -846,7 +846,7 @@ argument_list|)
 expr_stmt|;
 name|preview_buf
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|dest_width
 argument_list|,

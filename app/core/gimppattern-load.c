@@ -647,7 +647,7 @@ name|pattern
 operator|->
 name|mask
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|header
 operator|.
@@ -671,7 +671,7 @@ name|read
 argument_list|(
 name|fd
 argument_list|,
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|pattern
 operator|->
@@ -922,7 +922,7 @@ name|pattern
 operator|->
 name|mask
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|gdk_pixbuf_get_width
 argument_list|(

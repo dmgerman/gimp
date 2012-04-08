@@ -72,8 +72,8 @@ end_include
 begin_function
 name|GimpTempBuf
 modifier|*
-DECL|function|temp_buf_new (gint width,gint height,const Babl * format)
-name|temp_buf_new
+DECL|function|gimp_temp_buf_new (gint width,gint height,const Babl * format)
+name|gimp_temp_buf_new
 parameter_list|(
 name|gint
 name|width
@@ -177,8 +177,8 @@ end_function
 begin_function
 name|GimpTempBuf
 modifier|*
-DECL|function|temp_buf_copy (GimpTempBuf * src)
-name|temp_buf_copy
+DECL|function|gimp_temp_buf_copy (GimpTempBuf * src)
+name|gimp_temp_buf_copy
 parameter_list|(
 name|GimpTempBuf
 modifier|*
@@ -200,7 +200,7 @@ argument_list|)
 expr_stmt|;
 name|dest
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|src
 operator|->
@@ -215,27 +215,19 @@ operator|->
 name|format
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|dest
-condition|)
-return|return
-name|NULL
-return|;
 name|memcpy
 argument_list|(
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|dest
 argument_list|)
 argument_list|,
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|src
 argument_list|)
 argument_list|,
-name|temp_buf_get_data_size
+name|gimp_temp_buf_get_data_size
 argument_list|(
 name|src
 argument_list|)
@@ -248,10 +240,50 @@ block|}
 end_function
 
 begin_function
+name|void
+DECL|function|gimp_temp_buf_free (GimpTempBuf * buf)
+name|gimp_temp_buf_free
+parameter_list|(
 name|GimpTempBuf
 modifier|*
-DECL|function|temp_buf_scale (GimpTempBuf * src,gint new_width,gint new_height)
-name|temp_buf_scale
+name|buf
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|buf
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|buf
+operator|->
+name|data
+condition|)
+name|g_free
+argument_list|(
+name|buf
+operator|->
+name|data
+argument_list|)
+expr_stmt|;
+name|g_slice_free
+argument_list|(
+name|GimpTempBuf
+argument_list|,
+name|buf
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|GimpTempBuf
+modifier|*
+DECL|function|gimp_temp_buf_scale (GimpTempBuf * src,gint new_width,gint new_height)
+name|gimp_temp_buf_scale
 parameter_list|(
 name|GimpTempBuf
 modifier|*
@@ -316,7 +348,7 @@ argument_list|)
 expr_stmt|;
 name|dest
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|new_width
 argument_list|,
@@ -329,14 +361,14 @@ argument_list|)
 expr_stmt|;
 name|src_data
 operator|=
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|src
 argument_list|)
 expr_stmt|;
 name|dest_data
 operator|=
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|dest
 argument_list|)
@@ -492,13 +524,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * temp_buf_demultiply:  * @buf:  *  * Converts a GimpTempBuf with pre-multiplied alpha to a 'normal' GimpTempBuf.  */
+comment|/**  * gimp_temp_buf_demultiply:  * @buf:  *  * Converts a GimpTempBuf with pre-multiplied alpha to a 'normal' GimpTempBuf.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|temp_buf_demultiply (GimpTempBuf * buf)
-name|temp_buf_demultiply
+DECL|function|gimp_temp_buf_demultiply (GimpTempBuf * buf)
+name|gimp_temp_buf_demultiply
 parameter_list|(
 name|GimpTempBuf
 modifier|*
@@ -538,7 +570,7 @@ literal|2
 case|:
 name|data
 operator|=
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|buf
 argument_list|)
@@ -597,7 +629,7 @@ literal|4
 case|:
 name|data
 operator|=
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|buf
 argument_list|)
@@ -703,50 +735,10 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|temp_buf_free (GimpTempBuf * buf)
-name|temp_buf_free
-parameter_list|(
-name|GimpTempBuf
-modifier|*
-name|buf
-parameter_list|)
-block|{
-name|g_return_if_fail
-argument_list|(
-name|buf
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|buf
-operator|->
-name|data
-condition|)
-name|g_free
-argument_list|(
-name|buf
-operator|->
-name|data
-argument_list|)
-expr_stmt|;
-name|g_slice_free
-argument_list|(
-name|GimpTempBuf
-argument_list|,
-name|buf
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
 name|guchar
 modifier|*
-DECL|function|temp_buf_get_data (const GimpTempBuf * buf)
-name|temp_buf_get_data
+DECL|function|gimp_temp_buf_get_data (const GimpTempBuf * buf)
+name|gimp_temp_buf_get_data
 parameter_list|(
 specifier|const
 name|GimpTempBuf
@@ -764,8 +756,8 @@ end_function
 
 begin_function
 name|gsize
-DECL|function|temp_buf_get_data_size (GimpTempBuf * buf)
-name|temp_buf_get_data_size
+DECL|function|gimp_temp_buf_get_data_size (GimpTempBuf * buf)
+name|gimp_temp_buf_get_data_size
 parameter_list|(
 name|GimpTempBuf
 modifier|*
@@ -794,8 +786,8 @@ end_function
 begin_function
 name|guchar
 modifier|*
-DECL|function|temp_buf_data_clear (GimpTempBuf * buf)
-name|temp_buf_data_clear
+DECL|function|gimp_temp_buf_data_clear (GimpTempBuf * buf)
+name|gimp_temp_buf_data_clear
 parameter_list|(
 name|GimpTempBuf
 modifier|*
@@ -810,7 +802,7 @@ name|data
 argument_list|,
 literal|0
 argument_list|,
-name|temp_buf_get_data_size
+name|gimp_temp_buf_get_data_size
 argument_list|(
 name|buf
 argument_list|)
@@ -826,8 +818,8 @@ end_function
 
 begin_function
 name|gsize
-DECL|function|temp_buf_get_memsize (GimpTempBuf * buf)
-name|temp_buf_get_memsize
+DECL|function|gimp_temp_buf_get_memsize (GimpTempBuf * buf)
+name|gimp_temp_buf_get_memsize
 parameter_list|(
 name|GimpTempBuf
 modifier|*
@@ -845,7 +837,7 @@ argument_list|(
 name|GimpTempBuf
 argument_list|)
 operator|+
-name|temp_buf_get_data_size
+name|gimp_temp_buf_get_data_size
 argument_list|(
 name|buf
 argument_list|)
@@ -854,89 +846,6 @@ return|;
 return|return
 literal|0
 return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * temp_buf_dump:  * @buf:  * @file:  *  * Dumps a GimpTempBuf to a raw RGB image that is easy to analyze, for  * example with GIMP.  **/
-end_comment
-
-begin_function
-name|void
-DECL|function|temp_buf_dump (GimpTempBuf * buf,const gchar * filename)
-name|temp_buf_dump
-parameter_list|(
-name|GimpTempBuf
-modifier|*
-name|buf
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|filename
-parameter_list|)
-block|{
-name|gint
-name|fd
-init|=
-name|g_open
-argument_list|(
-name|filename
-argument_list|,
-name|O_CREAT
-operator||
-name|O_TRUNC
-operator||
-name|O_WRONLY
-argument_list|,
-literal|0666
-argument_list|)
-decl_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|fd
-operator|!=
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|buf
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|temp_buf_get_data
-argument_list|(
-name|buf
-argument_list|)
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|write
-argument_list|(
-name|fd
-argument_list|,
-name|temp_buf_get_data
-argument_list|(
-name|buf
-argument_list|)
-argument_list|,
-name|temp_buf_get_data_size
-argument_list|(
-name|buf
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|close
-argument_list|(
-name|fd
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -971,7 +880,7 @@ name|buffer
 operator|=
 name|gegl_buffer_linear_new_from_data
 argument_list|(
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|temp_buf
 argument_list|)
@@ -1002,7 +911,7 @@ condition|?
 operator|(
 name|GDestroyNotify
 operator|)
-name|temp_buf_free
+name|gimp_temp_buf_free
 else|:
 name|NULL
 argument_list|,

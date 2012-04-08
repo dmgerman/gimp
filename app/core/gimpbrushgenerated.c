@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0c893b0103
+DECL|enum|__anon2783c5980103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -960,7 +960,7 @@ name|gbrush
 operator|->
 name|mask
 condition|)
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|gbrush
 operator|->
@@ -1868,7 +1868,7 @@ argument_list|)
 expr_stmt|;
 name|mask
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|half_width
 operator|*
@@ -1890,7 +1890,7 @@ argument_list|)
 expr_stmt|;
 name|centerp
 operator|=
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|mask
 argument_list|)

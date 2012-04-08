@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d936b00103
+DECL|enum|__anon2a10e0720103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -579,7 +579,7 @@ operator|->
 name|mask
 condition|)
 block|{
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|pattern
 operator|->
@@ -642,7 +642,7 @@ name|pattern
 operator|->
 name|mask
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|width
 argument_list|,
@@ -676,7 +676,7 @@ literal|1.0
 argument_list|,
 name|NULL
 argument_list|,
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|pattern
 operator|->
@@ -695,7 +695,7 @@ name|pattern
 operator|->
 name|mask
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 literal|16
 argument_list|,
@@ -709,7 +709,7 @@ argument_list|)
 expr_stmt|;
 name|memset
 argument_list|(
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|pattern
 operator|->

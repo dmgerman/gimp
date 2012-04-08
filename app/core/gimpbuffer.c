@@ -718,7 +718,7 @@ name|preview
 decl_stmt|;
 name|preview
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|width
 argument_list|,
@@ -769,7 +769,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|preview
 argument_list|)

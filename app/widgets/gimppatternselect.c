@@ -398,14 +398,14 @@ name|array
 operator|=
 name|gimp_array_new
 argument_list|(
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|pattern
 operator|->
 name|mask
 argument_list|)
 argument_list|,
-name|temp_buf_get_data_size
+name|gimp_temp_buf_get_data_size
 argument_list|(
 name|pattern
 operator|->

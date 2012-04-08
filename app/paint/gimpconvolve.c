@@ -676,7 +676,7 @@ argument_list|)
 expr_stmt|;
 name|convolve_temp
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|gegl_buffer_get_width
 argument_list|(

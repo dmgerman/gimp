@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a03c3450103
+DECL|enum|__anon28b370090103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a03c3450203
+DECL|enum|__anon28b370090203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -780,7 +780,7 @@ operator|->
 name|preview_temp_buf
 condition|)
 block|{
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|private
 operator|->
@@ -1004,7 +1004,7 @@ decl_stmt|;
 operator|*
 name|gui_size
 operator|+=
-name|temp_buf_get_memsize
+name|gimp_temp_buf_get_memsize
 argument_list|(
 name|private
 operator|->
@@ -1094,7 +1094,7 @@ operator|->
 name|preview_temp_buf
 condition|)
 block|{
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|private
 operator|->
@@ -2436,7 +2436,7 @@ operator|->
 name|preview_temp_buf
 return|;
 block|}
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|private
 operator|->
@@ -2637,7 +2637,7 @@ condition|(
 name|temp_buf
 condition|)
 return|return
-name|temp_buf_copy
+name|gimp_temp_buf_copy
 argument_list|(
 name|temp_buf
 argument_list|)
@@ -2744,7 +2744,7 @@ argument_list|)
 expr_stmt|;
 name|buf
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|width
 argument_list|,
@@ -2765,7 +2765,7 @@ argument_list|)
 expr_stmt|;
 name|dest
 operator|=
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|buf
 argument_list|)

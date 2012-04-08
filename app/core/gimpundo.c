@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c11aab70103
+DECL|enum|__anon27df29870103
 block|{
 DECL|enumerator|POP
 name|POP
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c11aab70203
+DECL|enum|__anon27df29870203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -756,7 +756,7 @@ operator|->
 name|preview
 condition|)
 block|{
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|undo
 operator|->
@@ -1023,7 +1023,7 @@ decl_stmt|;
 operator|*
 name|gui_size
 operator|+=
-name|temp_buf_get_memsize
+name|gimp_temp_buf_get_memsize
 argument_list|(
 name|undo
 operator|->
@@ -1235,7 +1235,7 @@ name|height
 condition|)
 block|{
 return|return
-name|temp_buf_scale
+name|gimp_temp_buf_scale
 argument_list|(
 name|undo
 operator|->
@@ -1248,7 +1248,7 @@ argument_list|)
 return|;
 block|}
 return|return
-name|temp_buf_copy
+name|gimp_temp_buf_copy
 argument_list|(
 name|undo
 operator|->
@@ -1934,7 +1934,7 @@ operator|->
 name|preview
 condition|)
 block|{
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|undo
 operator|->

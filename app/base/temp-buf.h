@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__TEMP_BUF_H__
+name|__GIMP_TEMP_BUF_H__
 end_ifndef
 
 begin_define
-DECL|macro|__TEMP_BUF_H__
+DECL|macro|__GIMP_TEMP_BUF_H__
 define|#
 directive|define
-name|__TEMP_BUF_H__
+name|__GIMP_TEMP_BUF_H__
 end_define
 
 begin_struct
@@ -58,33 +58,46 @@ begin_comment
 comment|/*  The temp buffer functions  */
 end_comment
 
-begin_function_decl
+begin_decl_stmt
 name|GimpTempBuf
 modifier|*
-name|temp_buf_new
-parameter_list|(
+name|gimp_temp_buf_new
+argument_list|(
 name|gint
 name|width
-parameter_list|,
+argument_list|,
 name|gint
 name|height
-parameter_list|,
+argument_list|,
 specifier|const
 name|Babl
-modifier|*
+operator|*
 name|fomat
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_WARN_UNUSED_RESULT
+decl_stmt|;
+end_decl_stmt
 
-begin_function_decl
+begin_decl_stmt
 name|GimpTempBuf
 modifier|*
-name|temp_buf_copy
+name|gimp_temp_buf_copy
+argument_list|(
+name|GimpTempBuf
+operator|*
+name|src
+argument_list|)
+name|G_GNUC_WARN_UNUSED_RESULT
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
+name|void
+name|gimp_temp_buf_free
 parameter_list|(
 name|GimpTempBuf
 modifier|*
-name|src
+name|buf
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -92,7 +105,7 @@ end_function_decl
 begin_decl_stmt
 name|GimpTempBuf
 modifier|*
-name|temp_buf_scale
+name|gimp_temp_buf_scale
 argument_list|(
 name|GimpTempBuf
 operator|*
@@ -110,18 +123,7 @@ end_decl_stmt
 
 begin_function_decl
 name|void
-name|temp_buf_demultiply
-parameter_list|(
-name|GimpTempBuf
-modifier|*
-name|buf
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|temp_buf_free
+name|gimp_temp_buf_demultiply
 parameter_list|(
 name|GimpTempBuf
 modifier|*
@@ -133,7 +135,7 @@ end_function_decl
 begin_function_decl
 name|guchar
 modifier|*
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 parameter_list|(
 specifier|const
 name|GimpTempBuf
@@ -145,7 +147,7 @@ end_function_decl
 
 begin_function_decl
 name|gsize
-name|temp_buf_get_data_size
+name|gimp_temp_buf_get_data_size
 parameter_list|(
 name|GimpTempBuf
 modifier|*
@@ -157,7 +159,7 @@ end_function_decl
 begin_function_decl
 name|guchar
 modifier|*
-name|temp_buf_data_clear
+name|gimp_temp_buf_data_clear
 parameter_list|(
 name|GimpTempBuf
 modifier|*
@@ -168,7 +170,7 @@ end_function_decl
 
 begin_function_decl
 name|gsize
-name|temp_buf_get_memsize
+name|gimp_temp_buf_get_memsize
 parameter_list|(
 name|GimpTempBuf
 modifier|*
@@ -177,36 +179,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|temp_buf_dump
-parameter_list|(
-name|GimpTempBuf
-modifier|*
-name|buf
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|filename
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
+begin_decl_stmt
 name|GeglBuffer
 modifier|*
 name|gimp_temp_buf_create_buffer
-parameter_list|(
+argument_list|(
 name|GimpTempBuf
-modifier|*
+operator|*
 name|temp_buf
-parameter_list|,
+argument_list|,
 name|gboolean
 name|take_ownership
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_WARN_UNUSED_RESULT
+decl_stmt|;
+end_decl_stmt
 
 begin_endif
 endif|#
@@ -214,7 +201,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __TEMP_BUF_H__  */
+comment|/*  __GIMP_TEMP_BUF_H__  */
 end_comment
 
 end_unit

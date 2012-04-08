@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afc6c280103
+DECL|enum|__anon2986067b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -579,7 +579,7 @@ operator|->
 name|mask
 condition|)
 block|{
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|brush
 operator|->
@@ -600,7 +600,7 @@ operator|->
 name|pixmap
 condition|)
 block|{
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|brush
 operator|->
@@ -678,7 +678,7 @@ name|brush
 operator|->
 name|mask
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|width
 argument_list|,
@@ -694,7 +694,7 @@ name|brush
 operator|->
 name|pixmap
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|width
 argument_list|,
@@ -757,7 +757,7 @@ else|else
 block|{
 name|memset
 argument_list|(
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|brush
 operator|->
@@ -815,7 +815,7 @@ name|brush
 operator|->
 name|mask
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|width
 argument_list|,
@@ -827,7 +827,7 @@ literal|"Y u8"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|temp_buf_data_clear
+name|gimp_temp_buf_data_clear
 argument_list|(
 name|brush
 operator|->

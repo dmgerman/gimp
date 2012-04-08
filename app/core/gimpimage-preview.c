@@ -333,7 +333,7 @@ name|private
 operator|->
 name|preview
 condition|)
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|private
 operator|->
@@ -492,7 +492,7 @@ if|if
 condition|(
 name|is_premult
 condition|)
-name|temp_buf_demultiply
+name|gimp_temp_buf_demultiply
 argument_list|(
 name|buf
 argument_list|)

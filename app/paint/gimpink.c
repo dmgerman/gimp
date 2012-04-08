@@ -869,7 +869,7 @@ name|temp_buf
 decl_stmt|;
 name|temp_buf
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 operator|(
 name|x2
@@ -1853,7 +1853,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon279713ea0103
+DECL|enum|__anon2c061bd60103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START

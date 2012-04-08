@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29566d680103
+DECL|enum|__anon2b9703c70103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -1008,7 +1008,7 @@ operator|->
 name|pressure_brush
 condition|)
 block|{
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|core
 operator|->
@@ -1061,7 +1061,7 @@ name|j
 index|]
 condition|)
 block|{
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|core
 operator|->
@@ -1151,7 +1151,7 @@ name|j
 index|]
 condition|)
 block|{
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|core
 operator|->
@@ -3652,7 +3652,7 @@ name|temp_buf
 decl_stmt|;
 name|temp_buf
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 operator|(
 name|x2
@@ -4868,7 +4868,7 @@ name|j
 index|]
 condition|)
 block|{
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|core
 operator|->
@@ -4909,7 +4909,7 @@ expr_stmt|;
 block|}
 name|dest
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|mask
 operator|->
@@ -4929,7 +4929,7 @@ literal|"Y u8"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|temp_buf_data_clear
+name|gimp_temp_buf_data_clear
 argument_list|(
 name|dest
 argument_list|)
@@ -4978,7 +4978,7 @@ name|dest
 expr_stmt|;
 name|m
 operator|=
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|mask
 argument_list|)
@@ -5072,7 +5072,7 @@ block|}
 comment|/* store the accum buffer into the destination mask */
 name|d
 operator|=
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|dest
 argument_list|)
@@ -5163,7 +5163,7 @@ condition|)
 block|{
 name|d
 operator|=
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|dest
 argument_list|)
@@ -5347,7 +5347,7 @@ name|core
 operator|->
 name|pressure_brush
 condition|)
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|core
 operator|->
@@ -5358,7 +5358,7 @@ name|core
 operator|->
 name|pressure_brush
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|brush_mask
 operator|->
@@ -5378,7 +5378,7 @@ literal|"Y u8"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|temp_buf_data_clear
+name|gimp_temp_buf_data_clear
 argument_list|(
 name|core
 operator|->
@@ -5657,14 +5657,14 @@ comment|/* FANCY_PRESSURE */
 comment|/* Now convert the brush */
 name|source
 operator|=
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|subsample_mask
 argument_list|)
 expr_stmt|;
 name|dest
 operator|=
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|core
 operator|->
@@ -5922,7 +5922,7 @@ name|j
 index|]
 condition|)
 block|{
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|core
 operator|->
@@ -5963,7 +5963,7 @@ expr_stmt|;
 block|}
 name|dest
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|brush_mask
 operator|->
@@ -5983,7 +5983,7 @@ literal|"Y u8"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|temp_buf_data_clear
+name|gimp_temp_buf_data_clear
 argument_list|(
 name|dest
 argument_list|)
@@ -6002,7 +6002,7 @@ name|dest
 expr_stmt|;
 name|m
 operator|=
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|brush_mask
 argument_list|)
@@ -6010,7 +6010,7 @@ expr_stmt|;
 name|d
 operator|=
 operator|(
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|dest
 argument_list|)
@@ -7142,7 +7142,7 @@ comment|/* Point to the approriate scanline */
 name|b
 operator|=
 operator|(
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|pixmap_mask
 argument_list|)
@@ -7182,7 +7182,7 @@ modifier|*
 name|mask
 init|=
 operator|(
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|brush_mask
 argument_list|)

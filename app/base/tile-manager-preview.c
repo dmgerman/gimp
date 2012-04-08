@@ -345,7 +345,7 @@ literal|1
 decl_stmt|;
 name|preview
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|dest_width
 argument_list|,

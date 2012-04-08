@@ -667,7 +667,7 @@ expr_stmt|;
 comment|/*  Allocate the accumulation buffer */
 name|accum_temp
 operator|=
-name|temp_buf_new
+name|gimp_temp_buf_new
 argument_list|(
 name|accum_size
 argument_list|,

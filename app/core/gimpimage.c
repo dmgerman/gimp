@@ -352,7 +352,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d122800103
+DECL|enum|__anon2c35dc110103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -446,7 +446,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d122800203
+DECL|enum|__anon2c35dc110203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4141,7 +4141,7 @@ operator|->
 name|preview
 condition|)
 block|{
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|private
 operator|->
@@ -4692,7 +4692,7 @@ expr_stmt|;
 operator|*
 name|gui_size
 operator|+=
-name|temp_buf_get_memsize
+name|gimp_temp_buf_get_memsize
 argument_list|(
 name|private
 operator|->
@@ -4804,7 +4804,7 @@ operator|->
 name|preview
 condition|)
 block|{
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|private
 operator|->

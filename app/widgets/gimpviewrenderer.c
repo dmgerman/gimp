@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288d19b70103
+DECL|enum|__anon27ec84320103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3952,7 +3952,7 @@ argument_list|)
 expr_stmt|;
 name|src
 operator|=
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|temp_buf
 argument_list|)

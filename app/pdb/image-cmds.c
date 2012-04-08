@@ -8004,7 +8004,7 @@ argument_list|)
 expr_stmt|;
 name|thumbnail_data_count
 operator|=
-name|temp_buf_get_data_size
+name|gimp_temp_buf_get_data_size
 argument_list|(
 name|buf
 argument_list|)
@@ -8013,7 +8013,7 @@ name|thumbnail_data
 operator|=
 name|g_memdup
 argument_list|(
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|buf
 argument_list|)
@@ -8021,7 +8021,7 @@ argument_list|,
 name|thumbnail_data_count
 argument_list|)
 expr_stmt|;
-name|temp_buf_free
+name|gimp_temp_buf_free
 argument_list|(
 name|buf
 argument_list|)

@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b53ba4b0103
+DECL|enum|__anon29d1c7fc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1151,14 +1151,14 @@ name|array
 operator|=
 name|gimp_array_new
 argument_list|(
-name|temp_buf_get_data
+name|gimp_temp_buf_get_data
 argument_list|(
 name|brush
 operator|->
 name|mask
 argument_list|)
 argument_list|,
-name|temp_buf_get_data_size
+name|gimp_temp_buf_get_data_size
 argument_list|(
 name|brush
 operator|->
