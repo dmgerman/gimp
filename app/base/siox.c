@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc6ed180108
+DECL|struct|__anon291a1a930108
 block|{
 DECL|member|l
 name|gfloat
@@ -246,7 +246,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc6ed180208
+DECL|struct|__anon291a1a930208
 block|{
 DECL|member|bgdist
 name|gfloat
@@ -3123,9 +3123,6 @@ name|GDestroyNotify
 operator|)
 name|siox_cache_entry_free
 argument_list|)
-expr_stmt|;
-name|cpercep_init
-argument_list|()
 expr_stmt|;
 ifdef|#
 directive|ifdef

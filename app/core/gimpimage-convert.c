@@ -407,7 +407,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c63a47b0103
+DECL|enum|__anon2b31d70d0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1448,7 +1448,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c63a47b0208
+DECL|struct|__anon2b31d70d0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1691,7 +1691,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c63a47b0308
+DECL|struct|__anon2b31d70d0308
 block|{
 DECL|member|used_count
 name|signed
@@ -2991,10 +2991,6 @@ name|new_type
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
-comment|/* initialize the colour conversion routines */
-name|cpercep_init
-argument_list|()
 expr_stmt|;
 comment|/*  Convert to indexed?  Build histogram if necessary.  */
 if|if

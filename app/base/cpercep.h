@@ -22,15 +22,6 @@ end_define
 
 begin_function_decl
 name|void
-name|cpercep_init
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|cpercep_rgb_to_space
 parameter_list|(
 name|double
