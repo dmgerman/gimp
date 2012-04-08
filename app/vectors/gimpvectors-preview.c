@@ -169,7 +169,10 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-literal|1
+name|babl_format
+argument_list|(
+literal|"Y' u8"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|data

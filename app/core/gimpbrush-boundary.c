@@ -127,11 +127,6 @@ operator|*
 operator|)
 name|mask
 argument_list|,
-name|babl_format
-argument_list|(
-literal|"Y u8"
-argument_list|)
-argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;

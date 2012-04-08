@@ -546,7 +546,10 @@ name|dest_width
 argument_list|,
 name|dest_height
 argument_list|,
-literal|1
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|dest
@@ -1138,11 +1141,6 @@ name|gimp_temp_buf_create_buffer
 argument_list|(
 name|blur_src
 argument_list|,
-name|babl_format
-argument_list|(
-literal|"Y u8"
-argument_list|)
-argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
@@ -1151,11 +1149,6 @@ operator|=
 name|gimp_temp_buf_create_buffer
 argument_list|(
 name|blur_src
-argument_list|,
-name|babl_format
-argument_list|(
-literal|"Y u8"
-argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1540,7 +1533,10 @@ name|dest_width
 argument_list|,
 name|dest_height
 argument_list|,
-literal|3
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|dest
@@ -2247,8 +2243,6 @@ name|gimp_temp_buf_create_buffer
 argument_list|(
 name|blur_src
 argument_list|,
-name|NULL
-argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
@@ -2257,8 +2251,6 @@ operator|=
 name|gimp_temp_buf_create_buffer
 argument_list|(
 name|blur_src
-argument_list|,
-name|NULL
 argument_list|,
 name|FALSE
 argument_list|)

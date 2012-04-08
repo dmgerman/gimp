@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d3532f0103
+DECL|enum|__anon2bed41a20103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3670,6 +3670,9 @@ decl_stmt|,
 name|y2
 decl_stmt|;
 name|gint
+name|bytes
+decl_stmt|;
+name|gint
 name|rowstride
 decl_stmt|;
 name|gint
@@ -3743,17 +3746,22 @@ name|surface
 argument_list|)
 expr_stmt|;
 comment|/*  Here are the different cases this functions handles correctly:    *  1)  Offset temp_buf which does not necessarily cover full image area    *  2)  Color conversion of temp_buf if it is gray and image is color    *  3)  Background check buffer for transparent temp_bufs    *  4)  Using the optional "channel" argument, one channel can be extracted    *      from a multi-channel temp_buf and composited as a grayscale    *  Prereqs:    *  1)  Grayscale temp_bufs have bytes == {1, 2}    *  2)  Color temp_bufs have bytes == {3, 4}    *  3)  If image is gray, then temp_buf should have bytes == {1, 2}    */
+name|bytes
+operator|=
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|temp_buf
+operator|->
+name|format
+argument_list|)
+expr_stmt|;
 name|color
 operator|=
 operator|(
-name|temp_buf
-operator|->
 name|bytes
 operator|==
 literal|3
 operator|||
-name|temp_buf
-operator|->
 name|bytes
 operator|==
 literal|4
@@ -3761,19 +3769,12 @@ operator|)
 expr_stmt|;
 name|has_alpha
 operator|=
-operator|(
+name|babl_format_has_alpha
+argument_list|(
 name|temp_buf
 operator|->
-name|bytes
-operator|==
-literal|2
-operator|||
-name|temp_buf
-operator|->
-name|bytes
-operator|==
-literal|4
-operator|)
+name|format
+argument_list|)
 expr_stmt|;
 name|render_composite
 operator|=
@@ -3790,8 +3791,6 @@ name|temp_buf
 operator|->
 name|width
 operator|*
-name|temp_buf
-operator|->
 name|bytes
 expr_stmt|;
 comment|/*  render the checkerboard only if the temp_buf has alpha *and*    *  we render a composite view    */
@@ -3977,8 +3976,6 @@ operator|->
 name|x
 operator|)
 operator|*
-name|temp_buf
-operator|->
 name|bytes
 operator|)
 expr_stmt|;
@@ -4124,8 +4121,6 @@ literal|4
 operator|,
 name|s
 operator|+=
-name|temp_buf
-operator|->
 name|bytes
 control|)
 block|{

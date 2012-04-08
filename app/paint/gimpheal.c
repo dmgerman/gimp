@@ -2264,8 +2264,6 @@ operator|*
 operator|)
 name|mask_buf
 argument_list|,
-name|NULL
-argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;

@@ -47,7 +47,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include

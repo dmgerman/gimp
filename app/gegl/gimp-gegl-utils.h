@@ -157,11 +157,6 @@ name|TempBuf
 modifier|*
 name|temp_buf
 parameter_list|,
-specifier|const
-name|Babl
-modifier|*
-name|format
-parameter_list|,
 name|gboolean
 name|take_ownership
 parameter_list|)

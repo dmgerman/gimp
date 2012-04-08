@@ -78,7 +78,7 @@ end_include
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|temp_buf_new (gint width,gint height,gint bytes)
+DECL|function|temp_buf_new (gint width,gint height,const Babl * format)
 name|temp_buf_new
 parameter_list|(
 name|gint
@@ -87,8 +87,10 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|gint
-name|bytes
+specifier|const
+name|Babl
+modifier|*
+name|format
 parameter_list|)
 block|{
 name|TempBuf
@@ -110,9 +112,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|bytes
-operator|>
-literal|0
+name|format
+operator|!=
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -126,9 +128,9 @@ argument_list|)
 expr_stmt|;
 name|temp
 operator|->
-name|bytes
+name|format
 operator|=
-name|bytes
+name|format
 expr_stmt|;
 name|temp
 operator|->
@@ -166,7 +168,10 @@ name|width
 operator|*
 name|height
 operator|*
-name|bytes
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|format
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -213,7 +218,7 @@ name|height
 argument_list|,
 name|src
 operator|->
-name|bytes
+name|format
 argument_list|)
 expr_stmt|;
 if|if
@@ -285,6 +290,9 @@ name|gdouble
 name|y_ratio
 decl_stmt|;
 name|gint
+name|bytes
+decl_stmt|;
+name|gint
 name|loop1
 decl_stmt|;
 name|gint
@@ -322,7 +330,7 @@ name|new_height
 argument_list|,
 name|src
 operator|->
-name|bytes
+name|format
 argument_list|)
 expr_stmt|;
 name|src_data
@@ -366,6 +374,15 @@ operator|(
 name|gdouble
 operator|)
 name|new_height
+expr_stmt|;
+name|bytes
+operator|=
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|src
+operator|->
+name|format
+argument_list|)
 expr_stmt|;
 for|for
 control|(
@@ -420,8 +437,6 @@ operator|*
 name|x_ratio
 argument_list|)
 operator|*
-name|src
-operator|->
 name|bytes
 operator|+
 call|(
@@ -433,8 +448,6 @@ operator|*
 name|y_ratio
 argument_list|)
 operator|*
-name|src
-operator|->
 name|bytes
 operator|*
 name|src
@@ -453,8 +466,6 @@ operator|*
 name|new_width
 operator|)
 operator|*
-name|src
-operator|->
 name|bytes
 expr_stmt|;
 for|for
@@ -465,8 +476,6 @@ literal|0
 init|;
 name|i
 operator|<
-name|src
-operator|->
 name|bytes
 condition|;
 name|i
@@ -518,9 +527,12 @@ argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
+name|babl_format_get_bytes_per_pixel
+argument_list|(
 name|buf
 operator|->
-name|bytes
+name|format
+argument_list|)
 condition|)
 block|{
 case|case
@@ -767,9 +779,12 @@ name|buf
 parameter_list|)
 block|{
 return|return
+name|babl_format_get_bytes_per_pixel
+argument_list|(
 name|buf
 operator|->
-name|bytes
+name|format
+argument_list|)
 operator|*
 name|buf
 operator|->
@@ -801,17 +816,10 @@ name|data
 argument_list|,
 literal|0
 argument_list|,
+name|temp_buf_get_data_size
+argument_list|(
 name|buf
-operator|->
-name|height
-operator|*
-name|buf
-operator|->
-name|width
-operator|*
-name|buf
-operator|->
-name|bytes
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

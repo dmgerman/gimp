@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e130f40103
+DECL|enum|__anon2afc63880103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -3646,14 +3646,6 @@ argument_list|(
 name|drawable
 argument_list|)
 decl_stmt|;
-name|gint
-name|bytes
-init|=
-name|babl_format_get_bytes_per_pixel
-argument_list|(
-name|format
-argument_list|)
-decl_stmt|;
 name|TempBuf
 modifier|*
 name|temp_buf
@@ -3674,7 +3666,7 @@ operator|-
 name|y1
 operator|)
 argument_list|,
-name|bytes
+name|format
 argument_list|)
 expr_stmt|;
 operator|*
@@ -3707,8 +3699,6 @@ operator|=
 name|gimp_temp_buf_create_buffer
 argument_list|(
 name|temp_buf
-argument_list|,
-name|format
 argument_list|,
 name|TRUE
 argument_list|)
@@ -4171,11 +4161,6 @@ operator|*
 operator|)
 name|brush_mask
 argument_list|,
-name|babl_format
-argument_list|(
-literal|"Y u8"
-argument_list|)
-argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
@@ -4385,11 +4370,6 @@ name|TempBuf
 operator|*
 operator|)
 name|brush_mask
-argument_list|,
-name|babl_format
-argument_list|(
-literal|"Y u8"
-argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -4939,7 +4919,10 @@ name|height
 operator|+
 literal|2
 argument_list|,
-literal|1
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|temp_buf_data_clear
@@ -5385,7 +5368,10 @@ name|height
 operator|+
 literal|2
 argument_list|,
-literal|1
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|temp_buf_data_clear
@@ -5987,7 +5973,10 @@ name|height
 operator|+
 literal|2
 argument_list|,
-literal|1
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|temp_buf_data_clear
@@ -7104,6 +7093,9 @@ name|GimpBrushApplicationMode
 name|mode
 parameter_list|)
 block|{
+name|gint
+name|pixmap_bytes
+decl_stmt|;
 name|guchar
 modifier|*
 name|b
@@ -7133,6 +7125,15 @@ name|pixmap_mask
 operator|->
 name|height
 expr_stmt|;
+name|pixmap_bytes
+operator|=
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|pixmap_mask
+operator|->
+name|format
+argument_list|)
+expr_stmt|;
 comment|/* Point to the approriate scanline */
 name|b
 operator|=
@@ -7154,9 +7155,7 @@ name|pixmap_mask
 operator|->
 name|width
 operator|*
-name|pixmap_mask
-operator|->
-name|bytes
+name|pixmap_bytes
 operator|)
 expr_stmt|;
 if|if
@@ -7206,9 +7205,7 @@ argument_list|(
 name|width
 operator|*
 operator|(
-name|pixmap_mask
-operator|->
-name|bytes
+name|pixmap_bytes
 operator|+
 literal|1
 operator|)
@@ -7229,9 +7226,7 @@ name|babl_fish
 argument_list|(
 name|gimp_bpp_to_babl_format_with_alpha
 argument_list|(
-name|pixmap_mask
-operator|->
-name|bytes
+name|pixmap_bytes
 argument_list|)
 argument_list|,
 name|gimp_drawable_get_format_with_alpha
@@ -7273,9 +7268,7 @@ decl_stmt|;
 name|gint
 name|p_bytes
 init|=
-name|pixmap_mask
-operator|->
-name|bytes
+name|pixmap_bytes
 decl_stmt|;
 name|guchar
 modifier|*
@@ -7338,9 +7331,7 @@ argument_list|(
 name|width
 operator|*
 operator|(
-name|pixmap_mask
-operator|->
-name|bytes
+name|pixmap_bytes
 operator|)
 argument_list|)
 decl_stmt|;
@@ -7359,9 +7350,7 @@ name|babl_fish
 argument_list|(
 name|gimp_bpp_to_babl_format
 argument_list|(
-name|pixmap_mask
-operator|->
-name|bytes
+name|pixmap_bytes
 argument_list|)
 argument_list|,
 name|gimp_drawable_get_format_with_alpha
@@ -7403,9 +7392,7 @@ decl_stmt|;
 name|gint
 name|p_bytes
 init|=
-name|pixmap_mask
-operator|->
-name|bytes
+name|pixmap_bytes
 decl_stmt|;
 name|guchar
 modifier|*

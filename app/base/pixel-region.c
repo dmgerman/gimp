@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<babl/babl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -322,9 +328,12 @@ name|PR
 operator|->
 name|bytes
 operator|=
+name|babl_format_get_bytes_per_pixel
+argument_list|(
 name|temp_buf
 operator|->
-name|bytes
+name|format
+argument_list|)
 expr_stmt|;
 name|PR
 operator|->
@@ -334,7 +343,7 @@ name|temp_buf
 operator|->
 name|width
 operator|*
-name|temp_buf
+name|PR
 operator|->
 name|bytes
 expr_stmt|;

@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8487a00103
+DECL|enum|__anon27d343850103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1056,7 +1056,10 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-literal|1
+name|babl_format
+argument_list|(
+literal|"Y' u8"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|memset
@@ -1387,7 +1390,7 @@ comment|/* This is a table of scripts and corresponding short sample strings    
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c8487a00208
+DECL|struct|__anon27d343850208
 block|{
 DECL|member|script
 specifier|const

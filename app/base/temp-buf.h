@@ -21,11 +21,13 @@ DECL|struct|_TempBuf
 struct|struct
 name|_TempBuf
 block|{
-DECL|member|bytes
-name|gint
-name|bytes
+DECL|member|format
+specifier|const
+name|Babl
+modifier|*
+name|format
 decl_stmt|;
-comment|/*  number of bytes per pixel (1,2,3 or 4)         */
+comment|/*  pixel format  */
 DECL|member|width
 name|gint
 name|width
@@ -47,7 +49,7 @@ name|guchar
 modifier|*
 name|data
 decl_stmt|;
-comment|/*  The data buffer. Do never access this field                             directly, use temp_buf_get_data() instead !!   */
+comment|/*  The data buffer. Do never access this field                            directly, use temp_buf_get_data() instead !!   */
 block|}
 struct|;
 end_struct
@@ -67,8 +69,10 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|gint
-name|bytes
+specifier|const
+name|Babl
+modifier|*
+name|fomat
 parameter_list|)
 function_decl|;
 end_function_decl

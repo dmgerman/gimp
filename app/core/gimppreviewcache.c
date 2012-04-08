@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9632580108
+DECL|struct|__anon2b1d9bca0108
 block|{
 DECL|member|buf
 name|TempBuf
@@ -753,6 +753,9 @@ modifier|*
 name|dest_data
 decl_stmt|;
 name|gint
+name|bytes
+decl_stmt|;
+name|gint
 name|loop1
 decl_stmt|;
 name|gint
@@ -810,7 +813,7 @@ name|pn
 operator|.
 name|buf
 operator|->
-name|bytes
+name|format
 argument_list|)
 expr_stmt|;
 comment|/* preview from nearest bigger one */
@@ -872,6 +875,15 @@ argument_list|(
 name|preview
 argument_list|)
 expr_stmt|;
+name|bytes
+operator|=
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|preview
+operator|->
+name|format
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|loop1
@@ -925,8 +937,6 @@ name|x_ratio
 argument_list|)
 operator|)
 operator|*
-name|preview
-operator|->
 name|bytes
 operator|+
 operator|(
@@ -942,8 +952,6 @@ operator|)
 operator|*
 name|pwidth
 operator|*
-name|preview
-operator|->
 name|bytes
 expr_stmt|;
 name|dest_pixel
@@ -958,8 +966,6 @@ operator|*
 name|width
 operator|)
 operator|*
-name|preview
-operator|->
 name|bytes
 expr_stmt|;
 for|for
@@ -970,8 +976,6 @@ literal|0
 init|;
 name|i
 operator|<
-name|preview
-operator|->
 name|bytes
 condition|;
 name|i

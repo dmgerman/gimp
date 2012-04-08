@@ -854,7 +854,10 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-literal|3
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|memset

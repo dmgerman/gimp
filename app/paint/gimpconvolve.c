@@ -513,11 +513,6 @@ decl_stmt|;
 name|gint
 name|paint_buffer_y
 decl_stmt|;
-specifier|const
-name|Babl
-modifier|*
-name|format
-decl_stmt|;
 name|TempBuf
 modifier|*
 name|convolve_temp
@@ -679,13 +674,6 @@ argument_list|,
 name|rate
 argument_list|)
 expr_stmt|;
-name|format
-operator|=
-name|gegl_buffer_get_format
-argument_list|(
-name|paint_buffer
-argument_list|)
-expr_stmt|;
 name|convolve_temp
 operator|=
 name|temp_buf_new
@@ -700,9 +688,9 @@ argument_list|(
 name|paint_buffer
 argument_list|)
 argument_list|,
-name|babl_format_get_bytes_per_pixel
+name|gegl_buffer_get_format
 argument_list|(
-name|format
+name|paint_buffer
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -711,8 +699,6 @@ operator|=
 name|gimp_temp_buf_create_buffer
 argument_list|(
 name|convolve_temp
-argument_list|,
-name|format
 argument_list|,
 name|TRUE
 argument_list|)

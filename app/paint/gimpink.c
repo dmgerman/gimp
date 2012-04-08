@@ -863,14 +863,6 @@ argument_list|(
 name|drawable
 argument_list|)
 decl_stmt|;
-name|gint
-name|bytes
-init|=
-name|babl_format_get_bytes_per_pixel
-argument_list|(
-name|format
-argument_list|)
-decl_stmt|;
 name|TempBuf
 modifier|*
 name|temp_buf
@@ -891,7 +883,7 @@ operator|-
 name|y1
 operator|)
 argument_list|,
-name|bytes
+name|format
 argument_list|)
 expr_stmt|;
 operator|*
@@ -924,8 +916,6 @@ operator|=
 name|gimp_temp_buf_create_buffer
 argument_list|(
 name|temp_buf
-argument_list|,
-name|format
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1863,7 +1853,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2966b7830103
+DECL|enum|__anon29c25b040103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START

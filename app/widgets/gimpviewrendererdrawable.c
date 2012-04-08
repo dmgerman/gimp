@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -640,7 +646,10 @@ literal|1
 argument_list|,
 literal|1
 argument_list|,
+name|gimp_bpp_to_babl_format
+argument_list|(
 name|bytes
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|temp_buf_data_clear

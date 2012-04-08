@@ -5413,7 +5413,10 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-literal|4
+name|babl_format
+argument_list|(
+literal|"Y u32"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  find the optimal path of pixels from (x1, y1) to (x2, y2)  */

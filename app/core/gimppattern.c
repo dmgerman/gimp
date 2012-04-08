@@ -618,7 +618,7 @@ name|pattern
 operator|->
 name|mask
 operator|->
-name|bytes
+name|format
 argument_list|)
 expr_stmt|;
 name|src_buffer
@@ -629,8 +629,6 @@ name|pattern
 operator|->
 name|mask
 argument_list|,
-name|NULL
-argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
@@ -639,8 +637,6 @@ operator|=
 name|gimp_temp_buf_create_buffer
 argument_list|(
 name|temp_buf
-argument_list|,
-name|NULL
 argument_list|,
 name|FALSE
 argument_list|)
@@ -964,7 +960,10 @@ literal|32
 argument_list|,
 literal|32
 argument_list|,
-literal|3
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|data
@@ -1173,8 +1172,6 @@ argument_list|(
 name|pattern
 operator|->
 name|mask
-argument_list|,
-name|NULL
 argument_list|,
 name|FALSE
 argument_list|)

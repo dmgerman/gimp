@@ -673,7 +673,7 @@ name|accum_size
 argument_list|,
 name|accum_size
 argument_list|,
-name|gimp_drawable_bytes
+name|gimp_drawable_get_format
 argument_list|(
 name|drawable
 argument_list|)
@@ -686,11 +686,6 @@ operator|=
 name|gimp_temp_buf_create_buffer
 argument_list|(
 name|accum_temp
-argument_list|,
-name|gimp_drawable_get_format
-argument_list|(
-name|drawable
-argument_list|)
 argument_list|,
 name|TRUE
 argument_list|)

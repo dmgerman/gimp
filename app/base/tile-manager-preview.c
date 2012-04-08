@@ -12,19 +12,29 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"base-types.h"
+file|"core/core-types.h"
 end_include
+
+begin_comment
+comment|/* eek, but this file is cruft anyway */
+end_comment
 
 begin_include
 include|#
 directive|include
 file|"paint-funcs/subsample-region.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gegl/gimp-gegl-utils.h"
 end_include
 
 begin_include
@@ -341,9 +351,12 @@ name|dest_width
 argument_list|,
 name|dest_height
 argument_list|,
+name|gimp_bpp_to_babl_format
+argument_list|(
 name|tile_manager_bpp
 argument_list|(
 name|tiles
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

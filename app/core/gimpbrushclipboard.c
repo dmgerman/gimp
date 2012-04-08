@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294a8d3a0103
+DECL|enum|__anon2afc6c280103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -684,7 +684,10 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-literal|1
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|brush
@@ -697,7 +700,10 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-literal|3
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  copy the alpha channel into the brush's mask  */
@@ -717,12 +723,17 @@ name|brush
 operator|->
 name|mask
 argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gegl_buffer_set_format
+argument_list|(
+name|dest_buffer
+argument_list|,
 name|babl_format
 argument_list|(
 literal|"A u8"
 argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
@@ -770,8 +781,6 @@ name|brush
 operator|->
 name|pixmap
 argument_list|,
-name|NULL
-argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
@@ -812,7 +821,10 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-literal|1
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|temp_buf_data_clear

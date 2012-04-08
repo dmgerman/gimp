@@ -12,13 +12,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<cairo.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<cairo.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8b9c510103
+DECL|enum|__anon291c4b350103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -120,7 +120,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8b9c510203
+DECL|enum|__anon291c4b350203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1310,7 +1310,10 @@ literal|1
 argument_list|,
 literal|1
 argument_list|,
-literal|1
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|temp_buf_data_clear
@@ -1372,7 +1375,10 @@ name|mask_width
 argument_list|,
 name|mask_height
 argument_list|,
-literal|4
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|temp_buf_data_clear

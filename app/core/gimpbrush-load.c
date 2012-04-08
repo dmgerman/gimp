@@ -84,7 +84,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -1256,7 +1256,10 @@ name|header
 operator|.
 name|height
 argument_list|,
-literal|1
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|mask
@@ -1403,7 +1406,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2b39ef48010a
+DECL|union|__anon27ea90b8010a
 block|{
 DECL|member|u
 name|guint16
@@ -1519,7 +1522,10 @@ name|header
 operator|.
 name|height
 argument_list|,
-literal|3
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|pixmap
@@ -2756,7 +2762,10 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-literal|1
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|mask
@@ -3188,7 +3197,10 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-literal|1
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|mask

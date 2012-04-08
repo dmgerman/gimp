@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp.h"
 end_include
 
@@ -846,7 +852,10 @@ name|dest_width
 argument_list|,
 name|dest_height
 argument_list|,
+name|gimp_bpp_to_babl_format
+argument_list|(
 name|bytes
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|pixel_region_init_temp_buf

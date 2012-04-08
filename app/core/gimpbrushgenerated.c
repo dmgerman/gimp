@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdea8e20103
+DECL|enum|__anon27d72d9a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1882,7 +1882,10 @@ literal|2
 operator|+
 literal|1
 argument_list|,
-literal|1
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|centerp

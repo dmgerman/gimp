@@ -460,11 +460,14 @@ name|height
 argument_list|,
 name|GIMP_TYPE_INT32
 argument_list|,
+name|babl_format_get_bytes_per_pixel
+argument_list|(
 name|pattern
 operator|->
 name|mask
 operator|->
-name|bytes
+name|format
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_INT32
 argument_list|,

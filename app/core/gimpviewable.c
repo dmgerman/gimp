@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b0c7160103
+DECL|enum|__anon2b05716e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b0c7160203
+DECL|enum|__anon2b05716e0203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -1316,17 +1316,12 @@ name|gdk_pixbuf_new
 argument_list|(
 name|GDK_COLORSPACE_RGB
 argument_list|,
+name|babl_format_has_alpha
+argument_list|(
 name|temp_buf
 operator|->
-name|bytes
-operator|==
-literal|4
-operator|||
-name|temp_buf
-operator|->
-name|bytes
-operator|==
-literal|2
+name|format
+argument_list|)
 argument_list|,
 literal|8
 argument_list|,
@@ -1344,8 +1339,6 @@ operator|=
 name|gimp_temp_buf_create_buffer
 argument_list|(
 name|temp_buf
-argument_list|,
-name|NULL
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2757,7 +2750,10 @@ name|width
 argument_list|,
 name|height
 argument_list|,
+name|gimp_bpp_to_babl_format
+argument_list|(
 name|bpp
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|src
