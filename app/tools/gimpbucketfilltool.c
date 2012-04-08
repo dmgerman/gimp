@@ -704,6 +704,7 @@ operator|->
 name|fill_mode
 condition|)
 block|{
+default|default:
 case|case
 name|GIMP_FG_BUCKET_FILL
 case|:
