@@ -104,13 +104,13 @@ name|GimpData
 name|parent_instance
 decl_stmt|;
 DECL|member|mask
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|mask
 decl_stmt|;
 comment|/*  the actual mask                */
 DECL|member|pixmap
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|pixmap
 decl_stmt|;
@@ -263,7 +263,7 @@ name|height
 parameter_list|)
 function_decl|;
 DECL|member|transform_mask
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 function_decl|(
 modifier|*
@@ -288,7 +288,7 @@ name|hardness
 parameter_list|)
 function_decl|;
 DECL|member|transform_pixmap
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 function_decl|(
 modifier|*
@@ -500,7 +500,7 @@ end_function_decl
 
 begin_function_decl
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_brush_transform_mask
 parameter_list|(
@@ -525,7 +525,7 @@ end_function_decl
 
 begin_function_decl
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_brush_transform_pixmap
 parameter_list|(
@@ -582,7 +582,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_brush_get_mask
 parameter_list|(
@@ -595,7 +595,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_brush_get_pixmap
 parameter_list|(

@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bed41a20103
+DECL|enum|__anon288d19b70103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -262,7 +262,7 @@ specifier|static
 name|void
 name|gimp_view_render_temp_buf_to_surface
 parameter_list|(
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf
 parameter_list|,
@@ -2958,7 +2958,7 @@ name|GdkPixbuf
 modifier|*
 name|pixbuf
 decl_stmt|;
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf
 decl_stmt|;
@@ -3109,14 +3109,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_view_renderer_render_temp_buf_simple (GimpViewRenderer * renderer,TempBuf * temp_buf)
+DECL|function|gimp_view_renderer_render_temp_buf_simple (GimpViewRenderer * renderer,GimpTempBuf * temp_buf)
 name|gimp_view_renderer_render_temp_buf_simple
 parameter_list|(
 name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf
 parameter_list|)
@@ -3207,14 +3207,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_view_renderer_render_temp_buf (GimpViewRenderer * renderer,TempBuf * temp_buf,gint channel,GimpViewBG inside_bg,GimpViewBG outside_bg)
+DECL|function|gimp_view_renderer_render_temp_buf (GimpViewRenderer * renderer,GimpTempBuf * temp_buf,gint channel,GimpViewBG inside_bg,GimpViewBG outside_bg)
 name|gimp_view_renderer_render_temp_buf
 parameter_list|(
 name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf
 parameter_list|,
@@ -3613,10 +3613,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_view_render_temp_buf_to_surface (TempBuf * temp_buf,gint channel,GimpViewBG inside_bg,GimpViewBG outside_bg,cairo_surface_t * surface,gint dest_width,gint dest_height)
+DECL|function|gimp_view_render_temp_buf_to_surface (GimpTempBuf * temp_buf,gint channel,GimpViewBG inside_bg,GimpViewBG outside_bg,cairo_surface_t * surface,gint dest_width,gint dest_height)
 name|gimp_view_render_temp_buf_to_surface
 parameter_list|(
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf
 parameter_list|,

@@ -513,7 +513,7 @@ decl_stmt|;
 name|gint
 name|paint_buffer_y
 decl_stmt|;
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|convolve_temp
 decl_stmt|;

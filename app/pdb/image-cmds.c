@@ -7881,7 +7881,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 decl_stmt|;

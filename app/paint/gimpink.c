@@ -863,7 +863,7 @@ argument_list|(
 name|drawable
 argument_list|)
 decl_stmt|;
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf
 decl_stmt|;
@@ -1853,7 +1853,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c25b040103
+DECL|enum|__anon279713ea0103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START

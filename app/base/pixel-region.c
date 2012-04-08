@@ -261,14 +261,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|pixel_region_init_temp_buf (PixelRegion * PR,TempBuf * temp_buf,gint x,gint y,gint w,gint h)
+DECL|function|pixel_region_init_temp_buf (PixelRegion * PR,GimpTempBuf * temp_buf,gint x,gint y,gint w,gint h)
 name|pixel_region_init_temp_buf
 parameter_list|(
 name|PixelRegion
 modifier|*
 name|PR
 parameter_list|,
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf
 parameter_list|,

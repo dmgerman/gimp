@@ -169,11 +169,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|TempBuf
+DECL|typedef|GimpTempBuf
 typedef|typedef
 name|struct
-name|_TempBuf
-name|TempBuf
+name|_GimpTempBuf
+name|GimpTempBuf
 typedef|;
 end_typedef
 

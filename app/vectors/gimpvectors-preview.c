@@ -68,7 +68,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_vectors_get_new_preview (GimpViewable * viewable,GimpContext * context,gint width,gint height)
 name|gimp_vectors_get_new_preview
@@ -109,7 +109,7 @@ name|guchar
 modifier|*
 name|data
 decl_stmt|;
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf
 decl_stmt|;

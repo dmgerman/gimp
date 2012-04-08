@@ -21,7 +21,7 @@ comment|/*  *  virtual function of GimpVectors -- dont't call directly  */
 end_comment
 
 begin_function_decl
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_vectors_get_new_preview
 parameter_list|(

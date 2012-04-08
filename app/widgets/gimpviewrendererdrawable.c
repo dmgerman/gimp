@@ -210,7 +210,7 @@ decl_stmt|;
 name|gboolean
 name|scaling_up
 decl_stmt|;
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|render_buf
 init|=
@@ -661,7 +661,7 @@ block|}
 block|}
 else|else
 block|{
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf
 decl_stmt|;

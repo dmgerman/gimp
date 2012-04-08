@@ -3302,7 +3302,7 @@ name|drawable
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 decl_stmt|;
@@ -3810,7 +3810,7 @@ name|drawable
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 decl_stmt|;

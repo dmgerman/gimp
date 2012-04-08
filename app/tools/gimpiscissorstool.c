@@ -602,7 +602,7 @@ name|TileManager
 modifier|*
 name|gradient_map
 parameter_list|,
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|dp_buf
 parameter_list|,
@@ -766,7 +766,7 @@ name|GimpIscissorsTool
 modifier|*
 name|iscissors
 parameter_list|,
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|dp_buf
 parameter_list|,
@@ -5933,14 +5933,14 @@ begin_function
 specifier|static
 name|GPtrArray
 modifier|*
-DECL|function|plot_pixels (GimpIscissorsTool * iscissors,TempBuf * dp_buf,gint x1,gint y1,gint xs,gint ys,gint xe,gint ye)
+DECL|function|plot_pixels (GimpIscissorsTool * iscissors,GimpTempBuf * dp_buf,gint x1,gint y1,gint xs,gint ys,gint xe,gint ye)
 name|plot_pixels
 parameter_list|(
 name|GimpIscissorsTool
 modifier|*
 name|iscissors
 parameter_list|,
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|dp_buf
 parameter_list|,
@@ -6147,14 +6147,14 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|find_optimal_path (TileManager * gradient_map,TempBuf * dp_buf,gint x1,gint y1,gint x2,gint y2,gint xs,gint ys)
+DECL|function|find_optimal_path (TileManager * gradient_map,GimpTempBuf * dp_buf,gint x1,gint y1,gint x2,gint y2,gint xs,gint ys)
 name|find_optimal_path
 parameter_list|(
 name|TileManager
 modifier|*
 name|gradient_map
 parameter_list|,
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|dp_buf
 parameter_list|,

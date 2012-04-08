@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2877bfaf0103
+DECL|enum|__anon2bf3a5ec0103
 block|{
 DECL|enumerator|NO_ACTION
 name|NO_ACTION
@@ -55,7 +55,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2877bfaf0203
+DECL|enum|__anon2bf3a5ec0203
 block|{
 DECL|enumerator|ISCISSORS_OP_NONE
 name|ISCISSORS_OP_NONE
@@ -219,7 +219,7 @@ name|ny
 decl_stmt|;
 comment|/*  new coordinates                       */
 DECL|member|dp_buf
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|dp_buf
 decl_stmt|;

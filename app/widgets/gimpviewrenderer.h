@@ -576,7 +576,7 @@ name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf
 parameter_list|)
@@ -591,7 +591,7 @@ name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf
 parameter_list|,

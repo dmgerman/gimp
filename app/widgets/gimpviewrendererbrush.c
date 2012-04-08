@@ -289,7 +289,7 @@ argument_list|(
 name|renderer
 argument_list|)
 decl_stmt|;
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf
 decl_stmt|;
@@ -503,7 +503,7 @@ name|GimpBrush
 modifier|*
 name|brush
 decl_stmt|;
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf
 decl_stmt|;

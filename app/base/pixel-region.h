@@ -200,7 +200,7 @@ name|PixelRegion
 modifier|*
 name|PR
 parameter_list|,
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf
 parameter_list|,

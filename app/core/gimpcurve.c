@@ -75,7 +75,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2a1ac20103
+DECL|enum|__anon2c36a8350103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -249,7 +249,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_curve_get_new_preview
 parameter_list|(
@@ -1653,7 +1653,7 @@ end_function
 
 begin_function
 specifier|static
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_curve_get_new_preview (GimpViewable * viewable,GimpContext * context,gint width,gint height)
 name|gimp_curve_get_new_preview

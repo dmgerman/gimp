@@ -77,7 +77,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_image_get_preview
 parameter_list|(
@@ -99,7 +99,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_image_get_new_preview
 parameter_list|(

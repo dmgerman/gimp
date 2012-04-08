@@ -44,10 +44,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1d9bca0108
+DECL|struct|__anon2793ffca0108
 block|{
 DECL|member|buf
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 decl_stmt|;
@@ -79,14 +79,14 @@ name|b
 parameter_list|)
 block|{
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf1
 init|=
 name|a
 decl_stmt|;
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf2
 init|=
@@ -133,7 +133,7 @@ name|gpointer
 name|udata
 parameter_list|)
 block|{
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 init|=
@@ -195,7 +195,7 @@ name|gpointer
 name|udata
 parameter_list|)
 block|{
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 init|=
@@ -284,7 +284,7 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|smallest
 init|=
@@ -331,7 +331,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|this
 init|=
@@ -449,14 +449,10 @@ operator|->
 name|next
 control|)
 block|{
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 init|=
-operator|(
-name|TempBuf
-operator|*
-operator|)
 name|list
 operator|->
 name|data
@@ -535,7 +531,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_preview_cache_add (GSList ** plist,TempBuf * buf)
+DECL|function|gimp_preview_cache_add (GSList ** plist,GimpTempBuf * buf)
 name|gimp_preview_cache_add
 parameter_list|(
 name|GSList
@@ -543,7 +539,7 @@ modifier|*
 modifier|*
 name|plist
 parameter_list|,
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 parameter_list|)
@@ -606,7 +602,7 @@ block|}
 end_function
 
 begin_function
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_preview_cache_get (GSList ** plist,gint width,gint height)
 name|gimp_preview_cache_get
@@ -728,7 +724,7 @@ operator|.
 name|buf
 condition|)
 block|{
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|preview
 decl_stmt|;
@@ -1067,10 +1063,6 @@ argument_list|)
 operator|+
 name|temp_buf_get_memsize
 argument_list|(
-operator|(
-name|TempBuf
-operator|*
-operator|)
 name|list
 operator|->
 name|data

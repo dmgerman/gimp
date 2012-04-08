@@ -279,7 +279,7 @@ name|popup_height
 parameter_list|)
 function_decl|;
 DECL|member|get_preview
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 function_decl|(
 modifier|*
@@ -302,7 +302,7 @@ name|height
 parameter_list|)
 function_decl|;
 DECL|member|get_new_preview
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 function_decl|(
 modifier|*
@@ -580,7 +580,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_viewable_get_preview
 parameter_list|(
@@ -602,7 +602,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_viewable_get_new_preview
 parameter_list|(
@@ -624,7 +624,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_viewable_get_dummy_preview
 parameter_list|(

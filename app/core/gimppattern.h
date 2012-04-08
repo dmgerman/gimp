@@ -104,7 +104,7 @@ name|GimpData
 name|parent_instance
 decl_stmt|;
 DECL|member|mask
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|mask
 decl_stmt|;
@@ -165,7 +165,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_pattern_get_mask
 parameter_list|(

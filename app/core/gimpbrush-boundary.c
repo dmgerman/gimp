@@ -82,7 +82,7 @@ name|hardness
 parameter_list|)
 block|{
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|mask
 decl_stmt|;
@@ -122,7 +122,7 @@ operator|=
 name|gimp_temp_buf_create_buffer
 argument_list|(
 operator|(
-name|TempBuf
+name|GimpTempBuf
 operator|*
 operator|)
 name|mask

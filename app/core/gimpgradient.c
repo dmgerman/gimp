@@ -189,7 +189,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_gradient_get_new_preview
 parameter_list|(
@@ -744,7 +744,7 @@ end_function
 
 begin_function
 specifier|static
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_gradient_get_new_preview (GimpViewable * viewable,GimpContext * context,gint width,gint height)
 name|gimp_gradient_get_new_preview
@@ -779,7 +779,7 @@ name|seg
 init|=
 name|NULL
 decl_stmt|;
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf
 decl_stmt|;

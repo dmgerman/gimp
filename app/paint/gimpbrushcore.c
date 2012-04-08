@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afc63880103
+DECL|enum|__anon29566d680103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -331,7 +331,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_brush_core_subsample_mask
 parameter_list|(
@@ -340,7 +340,7 @@ modifier|*
 name|core
 parameter_list|,
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|mask
 parameter_list|,
@@ -356,7 +356,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_brush_core_pressurize_mask
 parameter_list|(
@@ -365,7 +365,7 @@ modifier|*
 name|core
 parameter_list|,
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|brush_mask
 parameter_list|,
@@ -384,7 +384,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_brush_core_solidify_mask
 parameter_list|(
@@ -393,7 +393,7 @@ modifier|*
 name|core
 parameter_list|,
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|brush_mask
 parameter_list|,
@@ -409,7 +409,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_brush_core_transform_mask
 parameter_list|(
@@ -427,7 +427,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_brush_core_transform_pixmap
 parameter_list|(
@@ -476,12 +476,12 @@ modifier|*
 name|drawable
 parameter_list|,
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|pixmap_mask
 parameter_list|,
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|brush_mask
 parameter_list|,
@@ -3646,7 +3646,7 @@ argument_list|(
 name|drawable
 argument_list|)
 decl_stmt|;
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf
 decl_stmt|;
@@ -4040,10 +4040,12 @@ name|mode
 parameter_list|)
 block|{
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|brush_mask
-init|=
+decl_stmt|;
+name|brush_mask
+operator|=
 name|gimp_brush_core_get_brush_mask
 argument_list|(
 name|core
@@ -4054,7 +4056,7 @@ name|brush_hardness
 argument_list|,
 name|dynamic_force
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|brush_mask
@@ -4156,7 +4158,7 @@ operator|=
 name|gimp_temp_buf_create_buffer
 argument_list|(
 operator|(
-name|TempBuf
+name|GimpTempBuf
 operator|*
 operator|)
 name|brush_mask
@@ -4250,10 +4252,12 @@ name|mode
 parameter_list|)
 block|{
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|brush_mask
-init|=
+decl_stmt|;
+name|brush_mask
+operator|=
 name|gimp_brush_core_get_brush_mask
 argument_list|(
 name|core
@@ -4264,7 +4268,7 @@ name|brush_hardness
 argument_list|,
 name|dynamic_force
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|brush_mask
@@ -4366,7 +4370,7 @@ operator|=
 name|gimp_temp_buf_create_buffer
 argument_list|(
 operator|(
-name|TempBuf
+name|GimpTempBuf
 operator|*
 operator|)
 name|brush_mask
@@ -4534,9 +4538,9 @@ end_function
 begin_function
 specifier|static
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
-DECL|function|gimp_brush_core_subsample_mask (GimpBrushCore * core,const TempBuf * mask,gdouble x,gdouble y)
+DECL|function|gimp_brush_core_subsample_mask (GimpBrushCore * core,const GimpTempBuf * mask,gdouble x,gdouble y)
 name|gimp_brush_core_subsample_mask
 parameter_list|(
 name|GimpBrushCore
@@ -4544,7 +4548,7 @@ modifier|*
 name|core
 parameter_list|,
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|mask
 parameter_list|,
@@ -4555,7 +4559,7 @@ name|gdouble
 name|y
 parameter_list|)
 block|{
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|dest
 decl_stmt|;
@@ -5256,9 +5260,9 @@ end_comment
 begin_function
 specifier|static
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
-DECL|function|gimp_brush_core_pressurize_mask (GimpBrushCore * core,const TempBuf * brush_mask,gdouble x,gdouble y,gdouble pressure)
+DECL|function|gimp_brush_core_pressurize_mask (GimpBrushCore * core,const GimpTempBuf * brush_mask,gdouble x,gdouble y,gdouble pressure)
 name|gimp_brush_core_pressurize_mask
 parameter_list|(
 name|GimpBrushCore
@@ -5266,7 +5270,7 @@ modifier|*
 name|core
 parameter_list|,
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|brush_mask
 parameter_list|,
@@ -5297,7 +5301,7 @@ modifier|*
 name|dest
 decl_stmt|;
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|subsample_mask
 decl_stmt|;
@@ -5706,9 +5710,9 @@ end_function
 begin_function
 specifier|static
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
-DECL|function|gimp_brush_core_solidify_mask (GimpBrushCore * core,const TempBuf * brush_mask,gdouble x,gdouble y)
+DECL|function|gimp_brush_core_solidify_mask (GimpBrushCore * core,const GimpTempBuf * brush_mask,gdouble x,gdouble y)
 name|gimp_brush_core_solidify_mask
 parameter_list|(
 name|GimpBrushCore
@@ -5716,7 +5720,7 @@ modifier|*
 name|core
 parameter_list|,
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|brush_mask
 parameter_list|,
@@ -5727,7 +5731,7 @@ name|gdouble
 name|y
 parameter_list|)
 block|{
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|dest
 decl_stmt|;
@@ -6087,7 +6091,7 @@ end_function
 begin_function
 specifier|static
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_brush_core_transform_mask (GimpBrushCore * core,GimpBrush * brush)
 name|gimp_brush_core_transform_mask
@@ -6102,7 +6106,7 @@ name|brush
 parameter_list|)
 block|{
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|mask
 decl_stmt|;
@@ -6180,7 +6184,7 @@ end_function
 begin_function
 specifier|static
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_brush_core_transform_pixmap (GimpBrushCore * core,GimpBrush * brush)
 name|gimp_brush_core_transform_pixmap
@@ -6195,7 +6199,7 @@ name|brush
 parameter_list|)
 block|{
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|pixmap
 decl_stmt|;
@@ -6266,7 +6270,7 @@ end_function
 
 begin_function
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_brush_core_get_brush_mask (GimpBrushCore * core,const GimpCoords * coords,GimpBrushApplicationMode brush_hardness,gdouble dynamic_force)
 name|gimp_brush_core_get_brush_mask
@@ -6288,7 +6292,7 @@ name|dynamic_force
 parameter_list|)
 block|{
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|mask
 decl_stmt|;
@@ -6695,7 +6699,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_brush_core_color_area_with_pixmap (GimpBrushCore * core,GimpDrawable * drawable,const GimpCoords * coords,TempBuf * area,gint area_x,gint area_y,GimpBrushApplicationMode mode)
+DECL|function|gimp_brush_core_color_area_with_pixmap (GimpBrushCore * core,GimpDrawable * drawable,const GimpCoords * coords,GimpTempBuf * area,gint area_x,gint area_y,GimpBrushApplicationMode mode)
 name|gimp_brush_core_color_area_with_pixmap
 parameter_list|(
 name|GimpBrushCore
@@ -6711,7 +6715,7 @@ name|GimpCoords
 modifier|*
 name|coords
 parameter_list|,
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|area
 parameter_list|,
@@ -6756,12 +6760,12 @@ name|gint
 name|y
 decl_stmt|;
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|pixmap_mask
 decl_stmt|;
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|brush_mask
 decl_stmt|;
@@ -7052,7 +7056,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_core_paint_line_pixmap_mask (GimpImage * dest,GimpDrawable * drawable,const TempBuf * pixmap_mask,const TempBuf * brush_mask,guchar * d,gint x,gint y,gint bytes,gint width,GimpBrushApplicationMode mode)
+DECL|function|gimp_brush_core_paint_line_pixmap_mask (GimpImage * dest,GimpDrawable * drawable,const GimpTempBuf * pixmap_mask,const GimpTempBuf * brush_mask,guchar * d,gint x,gint y,gint bytes,gint width,GimpBrushApplicationMode mode)
 name|gimp_brush_core_paint_line_pixmap_mask
 parameter_list|(
 name|GimpImage
@@ -7064,12 +7068,12 @@ modifier|*
 name|drawable
 parameter_list|,
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|pixmap_mask
 parameter_list|,
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|brush_mask
 parameter_list|,

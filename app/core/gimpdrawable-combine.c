@@ -965,7 +965,7 @@ argument_list|(
 name|image
 argument_list|)
 decl_stmt|;
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf
 decl_stmt|;

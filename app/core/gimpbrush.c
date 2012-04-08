@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291c4b350103
+DECL|enum|__anon297a0c9d0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -120,7 +120,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291c4b350203
+DECL|enum|__anon297a0c9d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -240,7 +240,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_brush_get_new_preview
 parameter_list|(
@@ -1120,7 +1120,7 @@ end_function
 
 begin_function
 specifier|static
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_brush_get_new_preview (GimpViewable * viewable,GimpContext * context,gint width,gint height)
 name|gimp_brush_get_new_preview
@@ -1150,7 +1150,7 @@ name|viewable
 argument_list|)
 decl_stmt|;
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|mask_buf
 init|=
@@ -1162,13 +1162,13 @@ init|=
 name|FALSE
 decl_stmt|;
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|pixmap_buf
 init|=
 name|NULL
 decl_stmt|;
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|return_buf
 init|=
@@ -1319,7 +1319,7 @@ expr_stmt|;
 name|temp_buf_data_clear
 argument_list|(
 operator|(
-name|TempBuf
+name|GimpTempBuf
 operator|*
 operator|)
 name|mask_buf
@@ -1548,7 +1548,7 @@ condition|)
 name|temp_buf_free
 argument_list|(
 operator|(
-name|TempBuf
+name|GimpTempBuf
 operator|*
 operator|)
 name|mask_buf
@@ -2533,7 +2533,7 @@ end_function
 
 begin_function
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_brush_transform_mask (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gdouble hardness)
 name|gimp_brush_transform_mask
@@ -2556,7 +2556,7 @@ name|hardness
 parameter_list|)
 block|{
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|mask
 decl_stmt|;
@@ -2714,7 +2714,7 @@ end_function
 
 begin_function
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_brush_transform_pixmap (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gdouble hardness)
 name|gimp_brush_transform_pixmap
@@ -2737,7 +2737,7 @@ name|hardness
 parameter_list|)
 block|{
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|pixmap
 decl_stmt|;
@@ -3085,7 +3085,7 @@ block|}
 end_function
 
 begin_function
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_brush_get_mask (const GimpBrush * brush)
 name|gimp_brush_get_mask
@@ -3124,7 +3124,7 @@ block|}
 end_function
 
 begin_function
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_brush_get_pixmap (const GimpBrush * brush)
 name|gimp_brush_get_pixmap

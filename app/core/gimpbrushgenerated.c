@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d72d9a0103
+DECL|enum|__anon2c0c893b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -220,7 +220,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_brush_generated_transform_mask
 parameter_list|(
@@ -245,7 +245,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_brush_generated_calc
 parameter_list|(
@@ -1263,7 +1263,7 @@ end_function
 
 begin_function
 specifier|static
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_brush_generated_transform_mask (GimpBrush * gbrush,gdouble scale,gdouble aspect_ratio,gdouble angle,gdouble hardness)
 name|gimp_brush_generated_transform_mask
@@ -1750,7 +1750,7 @@ end_function
 
 begin_function
 specifier|static
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_brush_generated_calc (GimpBrushGenerated * brush,GimpBrushGeneratedShape shape,gfloat radius,gint spikes,gfloat hardness,gfloat aspect_ratio,gfloat angle,GimpVector2 * xaxis,GimpVector2 * yaxis)
 name|gimp_brush_generated_calc
@@ -1827,7 +1827,7 @@ decl_stmt|;
 name|GimpVector2
 name|y_axis
 decl_stmt|;
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|mask
 decl_stmt|;

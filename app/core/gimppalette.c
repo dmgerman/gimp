@@ -199,7 +199,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_palette_get_new_preview
 parameter_list|(
@@ -787,7 +787,7 @@ end_function
 
 begin_function
 specifier|static
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_palette_get_new_preview (GimpViewable * viewable,GimpContext * context,gint width,gint height)
 name|gimp_palette_get_new_preview
@@ -816,7 +816,7 @@ argument_list|(
 name|viewable
 argument_list|)
 decl_stmt|;
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf
 decl_stmt|;

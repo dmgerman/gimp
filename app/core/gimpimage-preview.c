@@ -265,7 +265,7 @@ block|}
 end_function
 
 begin_function
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_image_get_preview (GimpViewable * viewable,GimpContext * context,gint width,gint height)
 name|gimp_image_get_preview
@@ -365,7 +365,7 @@ block|}
 end_function
 
 begin_function
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_image_get_new_preview (GimpViewable * viewable,GimpContext * context,gint width,gint height)
 name|gimp_image_get_new_preview
@@ -403,7 +403,7 @@ argument_list|(
 name|image
 argument_list|)
 decl_stmt|;
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 decl_stmt|;

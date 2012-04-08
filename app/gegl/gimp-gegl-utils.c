@@ -813,7 +813,7 @@ block|}
 end_function
 
 begin_function
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_gegl_buffer_get_temp_buf (GeglBuffer * buffer)
 name|gimp_gegl_buffer_get_temp_buf

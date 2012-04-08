@@ -583,7 +583,7 @@ name|pixmap
 condition|)
 block|{
 comment|/* otherwise check if the brush has a pixmap and use that to        * color the area        */
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|area
 init|=

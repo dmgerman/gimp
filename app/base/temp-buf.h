@@ -17,9 +17,9 @@ name|__TEMP_BUF_H__
 end_define
 
 begin_struct
-DECL|struct|_TempBuf
+DECL|struct|_GimpTempBuf
 struct|struct
-name|_TempBuf
+name|_GimpTempBuf
 block|{
 DECL|member|format
 specifier|const
@@ -59,7 +59,7 @@ comment|/*  The temp buffer functions  */
 end_comment
 
 begin_function_decl
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf_new
 parameter_list|(
@@ -78,11 +78,11 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf_copy
 parameter_list|(
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|src
 parameter_list|)
@@ -90,11 +90,11 @@ function_decl|;
 end_function_decl
 
 begin_decl_stmt
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf_scale
 argument_list|(
-name|TempBuf
+name|GimpTempBuf
 operator|*
 name|buf
 argument_list|,
@@ -112,7 +112,7 @@ begin_function_decl
 name|void
 name|temp_buf_demultiply
 parameter_list|(
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 parameter_list|)
@@ -123,7 +123,7 @@ begin_function_decl
 name|void
 name|temp_buf_free
 parameter_list|(
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 parameter_list|)
@@ -136,7 +136,7 @@ modifier|*
 name|temp_buf_get_data
 parameter_list|(
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 parameter_list|)
@@ -147,7 +147,7 @@ begin_function_decl
 name|gsize
 name|temp_buf_get_data_size
 parameter_list|(
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 parameter_list|)
@@ -159,7 +159,7 @@ name|guchar
 modifier|*
 name|temp_buf_data_clear
 parameter_list|(
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 parameter_list|)
@@ -170,7 +170,7 @@ begin_function_decl
 name|gsize
 name|temp_buf_get_memsize
 parameter_list|(
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 parameter_list|)
@@ -181,7 +181,7 @@ begin_function_decl
 name|void
 name|temp_buf_dump
 parameter_list|(
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 parameter_list|,
@@ -198,7 +198,7 @@ name|GeglBuffer
 modifier|*
 name|gimp_temp_buf_create_buffer
 parameter_list|(
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf
 parameter_list|,

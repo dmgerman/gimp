@@ -63,7 +63,7 @@ end_include
 
 begin_function_decl
 specifier|static
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|tile_manager_create_preview
 parameter_list|(
@@ -93,7 +93,7 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|tile_manager_get_preview (TileManager * tiles,gint width,gint height)
 name|tile_manager_get_preview
@@ -159,7 +159,7 @@ block|}
 end_function
 
 begin_function
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|tile_manager_get_sub_preview (TileManager * tiles,gint src_x,gint src_y,gint src_width,gint src_height,gint dest_width,gint dest_height)
 name|tile_manager_get_sub_preview
@@ -300,7 +300,7 @@ end_function
 
 begin_function
 specifier|static
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|tile_manager_create_preview (TileManager * tiles,gint src_x,gint src_y,gint src_width,gint src_height,gint dest_width,gint dest_height)
 name|tile_manager_create_preview
@@ -328,7 +328,7 @@ name|gint
 name|dest_height
 parameter_list|)
 block|{
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|preview
 decl_stmt|;

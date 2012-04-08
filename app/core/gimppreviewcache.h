@@ -33,7 +33,7 @@ value|112
 end_define
 
 begin_function_decl
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_preview_cache_get
 parameter_list|(
@@ -60,7 +60,7 @@ modifier|*
 modifier|*
 name|plist
 parameter_list|,
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 parameter_list|)

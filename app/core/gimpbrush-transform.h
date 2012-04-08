@@ -49,7 +49,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_brush_real_transform_mask
 parameter_list|(
@@ -73,7 +73,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_brush_real_transform_pixmap
 parameter_list|(

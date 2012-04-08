@@ -2081,7 +2081,7 @@ modifier|*
 name|mask_buffer
 decl_stmt|;
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|mask_buf
 decl_stmt|;
@@ -2259,7 +2259,7 @@ operator|=
 name|gimp_temp_buf_create_buffer
 argument_list|(
 operator|(
-name|TempBuf
+name|GimpTempBuf
 operator|*
 operator|)
 name|mask_buf

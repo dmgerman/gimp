@@ -166,7 +166,7 @@ name|dirty_mask
 decl_stmt|;
 comment|/* affected parts of the image        */
 DECL|member|preview
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|preview
 decl_stmt|;

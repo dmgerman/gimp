@@ -149,7 +149,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_gegl_buffer_get_temp_buf
 parameter_list|(

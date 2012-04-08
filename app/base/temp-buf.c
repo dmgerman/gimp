@@ -70,7 +70,7 @@ file|"temp-buf.h"
 end_include
 
 begin_function
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|temp_buf_new (gint width,gint height,const Babl * format)
 name|temp_buf_new
@@ -87,7 +87,7 @@ modifier|*
 name|format
 parameter_list|)
 block|{
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp
 decl_stmt|;
@@ -117,7 +117,7 @@ name|temp
 operator|=
 name|g_slice_new
 argument_list|(
-name|TempBuf
+name|GimpTempBuf
 argument_list|)
 expr_stmt|;
 name|temp
@@ -175,17 +175,17 @@ block|}
 end_function
 
 begin_function
-name|TempBuf
+name|GimpTempBuf
 modifier|*
-DECL|function|temp_buf_copy (TempBuf * src)
+DECL|function|temp_buf_copy (GimpTempBuf * src)
 name|temp_buf_copy
 parameter_list|(
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|src
 parameter_list|)
 block|{
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|dest
 decl_stmt|;
@@ -248,12 +248,12 @@ block|}
 end_function
 
 begin_function
-name|TempBuf
+name|GimpTempBuf
 modifier|*
-DECL|function|temp_buf_scale (TempBuf * src,gint new_width,gint new_height)
+DECL|function|temp_buf_scale (GimpTempBuf * src,gint new_width,gint new_height)
 name|temp_buf_scale
 parameter_list|(
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|src
 parameter_list|,
@@ -264,7 +264,7 @@ name|gint
 name|new_height
 parameter_list|)
 block|{
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|dest
 decl_stmt|;
@@ -492,15 +492,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * temp_buf_demultiply:  * @buf:  *  * Converts a TempBuf with pre-multiplied alpha to a 'normal' TempBuf.  */
+comment|/**  * temp_buf_demultiply:  * @buf:  *  * Converts a GimpTempBuf with pre-multiplied alpha to a 'normal' GimpTempBuf.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|temp_buf_demultiply (TempBuf * buf)
+DECL|function|temp_buf_demultiply (GimpTempBuf * buf)
 name|temp_buf_demultiply
 parameter_list|(
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 parameter_list|)
@@ -704,10 +704,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|temp_buf_free (TempBuf * buf)
+DECL|function|temp_buf_free (GimpTempBuf * buf)
 name|temp_buf_free
 parameter_list|(
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 parameter_list|)
@@ -734,7 +734,7 @@ argument_list|)
 expr_stmt|;
 name|g_slice_free
 argument_list|(
-name|TempBuf
+name|GimpTempBuf
 argument_list|,
 name|buf
 argument_list|)
@@ -745,11 +745,11 @@ end_function
 begin_function
 name|guchar
 modifier|*
-DECL|function|temp_buf_get_data (const TempBuf * buf)
+DECL|function|temp_buf_get_data (const GimpTempBuf * buf)
 name|temp_buf_get_data
 parameter_list|(
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 parameter_list|)
@@ -764,10 +764,10 @@ end_function
 
 begin_function
 name|gsize
-DECL|function|temp_buf_get_data_size (TempBuf * buf)
+DECL|function|temp_buf_get_data_size (GimpTempBuf * buf)
 name|temp_buf_get_data_size
 parameter_list|(
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 parameter_list|)
@@ -794,10 +794,10 @@ end_function
 begin_function
 name|guchar
 modifier|*
-DECL|function|temp_buf_data_clear (TempBuf * buf)
+DECL|function|temp_buf_data_clear (GimpTempBuf * buf)
 name|temp_buf_data_clear
 parameter_list|(
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 parameter_list|)
@@ -826,10 +826,10 @@ end_function
 
 begin_function
 name|gsize
-DECL|function|temp_buf_get_memsize (TempBuf * buf)
+DECL|function|temp_buf_get_memsize (GimpTempBuf * buf)
 name|temp_buf_get_memsize
 parameter_list|(
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 parameter_list|)
@@ -842,7 +842,7 @@ return|return
 operator|(
 sizeof|sizeof
 argument_list|(
-name|TempBuf
+name|GimpTempBuf
 argument_list|)
 operator|+
 name|temp_buf_get_data_size
@@ -858,15 +858,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * temp_buf_dump:  * @buf:  * @file:  *  * Dumps a TempBuf to a raw RGB image that is easy to analyze, for  * example with GIMP.  **/
+comment|/**  * temp_buf_dump:  * @buf:  * @file:  *  * Dumps a GimpTempBuf to a raw RGB image that is easy to analyze, for  * example with GIMP.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|temp_buf_dump (TempBuf * buf,const gchar * filename)
+DECL|function|temp_buf_dump (GimpTempBuf * buf,const gchar * filename)
 name|temp_buf_dump
 parameter_list|(
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 parameter_list|,
@@ -943,10 +943,10 @@ end_function
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_temp_buf_create_buffer (TempBuf * temp_buf,gboolean take_ownership)
+DECL|function|gimp_temp_buf_create_buffer (GimpTempBuf * temp_buf,gboolean take_ownership)
 name|gimp_temp_buf_create_buffer
 parameter_list|(
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf
 parameter_list|,

@@ -164,12 +164,12 @@ name|aspect_ratio
 decl_stmt|;
 comment|/*  brush buffers  */
 DECL|member|pressure_brush
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|pressure_brush
 decl_stmt|;
 DECL|member|solid_brushes
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|solid_brushes
 index|[
@@ -181,7 +181,7 @@ index|]
 decl_stmt|;
 DECL|member|last_solid_brush_mask
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|last_solid_brush_mask
 decl_stmt|;
@@ -191,18 +191,18 @@ name|solid_cache_invalid
 decl_stmt|;
 DECL|member|transform_brush
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|transform_brush
 decl_stmt|;
 DECL|member|transform_pixmap
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|transform_pixmap
 decl_stmt|;
 DECL|member|subsample_brushes
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|subsample_brushes
 index|[
@@ -218,7 +218,7 @@ index|]
 decl_stmt|;
 DECL|member|last_subsample_brush_mask
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|last_subsample_brush_mask
 decl_stmt|;
@@ -443,7 +443,7 @@ name|GimpCoords
 modifier|*
 name|coords
 parameter_list|,
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|area
 parameter_list|,
@@ -461,7 +461,7 @@ end_function_decl
 
 begin_function_decl
 specifier|const
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_brush_core_get_brush_mask
 parameter_list|(

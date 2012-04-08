@@ -17,7 +17,7 @@ name|__TILE_MANAGER_PREVIEW_H__
 end_define
 
 begin_function_decl
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|tile_manager_get_preview
 parameter_list|(
@@ -35,7 +35,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|tile_manager_get_sub_preview
 parameter_list|(

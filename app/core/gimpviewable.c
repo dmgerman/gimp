@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b05716e0103
+DECL|enum|__anon2a03c3450103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b05716e0203
+DECL|enum|__anon2a03c3450203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -142,7 +142,7 @@ modifier|*
 name|parent
 decl_stmt|;
 DECL|member|preview_temp_buf
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|preview_temp_buf
 decl_stmt|;
@@ -1274,7 +1274,7 @@ name|gint
 name|height
 parameter_list|)
 block|{
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf
 decl_stmt|;
@@ -2266,11 +2266,11 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_viewable_get_preview:  * @viewable: The viewable object to get a preview for.  * @context:  The context to render the preview for.  * @width:    desired width for the preview  * @height:   desired height for the preview  *  * Gets a preview for a viewable object, by running through a variety  * of methods until it finds one that works.  First, if an  * implementation exists of a "get_preview" method, it is tried, and  * the result is returned if it is not #NULL.  Second, the function  * checks to see whether there is a cached preview with the correct  * dimensions; if so, it is returned.  If neither of these works, then  * the function looks for an implementation of the "get_new_preview"  * method, and executes it, caching the result.  If everything fails,  * #NULL is returned.  *  * Returns: A #TempBuf containg the preview image, or #NULL if none can  *          be found or created.  **/
+comment|/**  * gimp_viewable_get_preview:  * @viewable: The viewable object to get a preview for.  * @context:  The context to render the preview for.  * @width:    desired width for the preview  * @height:   desired height for the preview  *  * Gets a preview for a viewable object, by running through a variety  * of methods until it finds one that works.  First, if an  * implementation exists of a "get_preview" method, it is tried, and  * the result is returned if it is not #NULL.  Second, the function  * checks to see whether there is a cached preview with the correct  * dimensions; if so, it is returned.  If neither of these works, then  * the function looks for an implementation of the "get_new_preview"  * method, and executes it, caching the result.  If everything fails,  * #NULL is returned.  *  * Returns: A #GimpTempBuf containg the preview image, or #NULL if  *          none can be found or created.  **/
 end_comment
 
 begin_function
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_viewable_get_preview (GimpViewable * viewable,GimpContext * context,gint width,gint height)
 name|gimp_viewable_get_preview
@@ -2298,7 +2298,7 @@ name|GimpViewableClass
 modifier|*
 name|viewable_class
 decl_stmt|;
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf
 init|=
@@ -2484,11 +2484,11 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_viewable_get_new_preview:  * @viewable: The viewable object to get a preview for.  * @width:    desired width for the preview  * @height:   desired height for the preview  *  * Gets a new preview for a viewable object.  Similar to  * gimp_viewable_get_preview(), except that it tries things in a  * different order, first looking for a "get_new_preview" method, and  * then if that fails for a "get_preview" method.  This function does  * not look for a cached preview.  *  * Returns: A #TempBuf containg the preview image, or #NULL if none can  *          be found or created.  **/
+comment|/**  * gimp_viewable_get_new_preview:  * @viewable: The viewable object to get a preview for.  * @width:    desired width for the preview  * @height:   desired height for the preview  *  * Gets a new preview for a viewable object.  Similar to  * gimp_viewable_get_preview(), except that it tries things in a  * different order, first looking for a "get_new_preview" method, and  * then if that fails for a "get_preview" method.  This function does  * not look for a cached preview.  *  * Returns: A #GimpTempBuf containg the preview image, or #NULL if  *          none can be found or created.  **/
 end_comment
 
 begin_function
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_viewable_get_new_preview (GimpViewable * viewable,GimpContext * context,gint width,gint height)
 name|gimp_viewable_get_new_preview
@@ -2512,7 +2512,7 @@ name|GimpViewableClass
 modifier|*
 name|viewable_class
 decl_stmt|;
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|temp_buf
 init|=
@@ -2649,11 +2649,11 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_viewable_get_dummy_preview:  * @viewable: viewable object for which to get a dummy preview.  * @width:    width of the preview.  * @height:   height of the preview.  * @bpp:      bytes per pixel for the preview, must be 3 or 4.  *  * Creates a dummy preview the fits into the specified dimensions,  * containing a default "question" symbol.  This function is used to  * generate a preview in situations where layer previews have been  * disabled in the current Gimp configuration.  *  * Returns: a #TempBuf containing the preview image.  **/
+comment|/**  * gimp_viewable_get_dummy_preview:  * @viewable: viewable object for which to get a dummy preview.  * @width:    width of the preview.  * @height:   height of the preview.  * @bpp:      bytes per pixel for the preview, must be 3 or 4.  *  * Creates a dummy preview the fits into the specified dimensions,  * containing a default "question" symbol.  This function is used to  * generate a preview in situations where layer previews have been  * disabled in the current Gimp configuration.  *  * Returns: a #GimpTempBuf containing the preview image.  **/
 end_comment
 
 begin_function
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_viewable_get_dummy_preview (GimpViewable * viewable,gint width,gint height,gint bpp)
 name|gimp_viewable_get_dummy_preview
@@ -2676,7 +2676,7 @@ name|GdkPixbuf
 modifier|*
 name|pixbuf
 decl_stmt|;
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|buf
 decl_stmt|;

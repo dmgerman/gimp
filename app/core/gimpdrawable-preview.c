@@ -117,7 +117,7 @@ end_comment
 
 begin_function_decl
 specifier|static
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_drawable_preview_private
 parameter_list|(
@@ -136,7 +136,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|gimp_drawable_indexed_preview
 parameter_list|(
@@ -175,7 +175,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_drawable_get_preview (GimpViewable * viewable,GimpContext * context,gint width,gint height)
 name|gimp_drawable_get_preview
@@ -269,7 +269,7 @@ operator|>
 name|PREVIEW_CACHE_PRIME_HEIGHT
 condition|)
 block|{
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|tb
 init|=
@@ -381,7 +381,7 @@ block|}
 end_function
 
 begin_function
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_drawable_get_sub_preview (GimpDrawable * drawable,gint src_x,gint src_y,gint src_width,gint src_height,gint dest_width,gint dest_height)
 name|gimp_drawable_get_sub_preview
@@ -601,7 +601,7 @@ end_comment
 
 begin_function
 specifier|static
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_drawable_preview_private (GimpDrawable * drawable,gint width,gint height)
 name|gimp_drawable_preview_private
@@ -617,7 +617,7 @@ name|gint
 name|height
 parameter_list|)
 block|{
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|ret_buf
 decl_stmt|;
@@ -732,7 +732,7 @@ end_function
 
 begin_function
 specifier|static
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_drawable_indexed_preview (GimpDrawable * drawable,const guchar * cmap,gint src_x,gint src_y,gint src_width,gint src_height,gint dest_width,gint dest_height)
 name|gimp_drawable_indexed_preview
@@ -765,7 +765,7 @@ name|gint
 name|dest_height
 parameter_list|)
 block|{
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|preview_buf
 decl_stmt|;

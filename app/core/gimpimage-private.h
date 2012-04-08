@@ -324,7 +324,7 @@ decl_stmt|;
 comment|/*  undo group status flag       */
 comment|/*  Preview  */
 DECL|member|preview
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|preview
 decl_stmt|;

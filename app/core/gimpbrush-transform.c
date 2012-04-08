@@ -74,7 +74,7 @@ specifier|static
 name|void
 name|gimp_brush_transform_bounding_box
 parameter_list|(
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|brush
 parameter_list|,
@@ -240,7 +240,7 @@ comment|/*  * Transforms the brush mask with bilinear interpolation.  *  * Rathe
 end_comment
 
 begin_function
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_brush_real_transform_mask (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gdouble hardness)
 name|gimp_brush_real_transform_mask
@@ -262,11 +262,11 @@ name|gdouble
 name|hardness
 parameter_list|)
 block|{
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|result
 decl_stmt|;
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|source
 decl_stmt|;
@@ -1080,7 +1080,7 @@ operator|<
 literal|1.0
 condition|)
 block|{
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|blur_src
 decl_stmt|;
@@ -1227,7 +1227,7 @@ comment|/*  * Transforms the brush pixmap with bilinear interpolation.  *  * The
 end_comment
 
 begin_function
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 DECL|function|gimp_brush_real_transform_pixmap (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gdouble hardness)
 name|gimp_brush_real_transform_pixmap
@@ -1249,11 +1249,11 @@ name|gdouble
 name|hardness
 parameter_list|)
 block|{
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|result
 decl_stmt|;
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|source
 decl_stmt|;
@@ -2182,7 +2182,7 @@ operator|<
 literal|1.0
 condition|)
 block|{
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|blur_src
 decl_stmt|;
@@ -2495,10 +2495,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_transform_bounding_box (TempBuf * brush,const GimpMatrix3 * matrix,gint * x,gint * y,gint * width,gint * height)
+DECL|function|gimp_brush_transform_bounding_box (GimpTempBuf * brush,const GimpMatrix3 * matrix,gint * x,gint * y,gint * width,gint * height)
 name|gimp_brush_transform_bounding_box
 parameter_list|(
-name|TempBuf
+name|GimpTempBuf
 modifier|*
 name|brush
 parameter_list|,
