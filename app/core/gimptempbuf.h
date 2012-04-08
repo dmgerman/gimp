@@ -138,17 +138,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|void
-name|gimp_temp_buf_demultiply
-parameter_list|(
-name|GimpTempBuf
-modifier|*
-name|buf
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|guchar
 modifier|*
 name|gimp_temp_buf_get_data
