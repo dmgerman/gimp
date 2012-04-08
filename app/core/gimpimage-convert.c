@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/cpercep.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gegl/gimp-gegl-utils.h"
 end_include
 
@@ -407,7 +401,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b31d70d0103
+DECL|enum|__anon2b0bc8c20103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -781,13 +775,6 @@ modifier|*
 name|hb
 parameter_list|)
 block|{
-name|double
-name|sL
-decl_stmt|,
-name|sa
-decl_stmt|,
-name|sb
-decl_stmt|;
 name|int
 name|or
 decl_stmt|,
@@ -795,22 +782,52 @@ name|og
 decl_stmt|,
 name|ob
 decl_stmt|;
-name|cpercep_rgb_to_space
-argument_list|(
+name|float
+name|rgb
+index|[
+literal|3
+index|]
+init|=
+block|{
 name|r
-argument_list|,
+operator|/
+literal|255.0
+block|,
 name|g
-argument_list|,
+operator|/
+literal|255.0
+block|,
 name|b
+operator|/
+literal|255.0
+block|}
+decl_stmt|;
+name|float
+name|lab
+index|[
+literal|3
+index|]
+decl_stmt|;
+name|babl_process
+argument_list|(
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"R'G'B' float"
+argument_list|)
 argument_list|,
-operator|&
-name|sL
+name|babl_format
+argument_list|(
+literal|"CIE Lab float"
+argument_list|)
+argument_list|)
 argument_list|,
-operator|&
-name|sa
+name|rgb
 argument_list|,
-operator|&
-name|sb
+name|lab
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 comment|/* fprintf(stderr, " %d-%d-%d -> %0.3f,%0.3f,%0.3f ", r, g, b, sL, sa, sb);*/
@@ -818,7 +835,10 @@ name|or
 operator|=
 name|RINT
 argument_list|(
-name|sL
+name|lab
+index|[
+literal|0
+index|]
 operator|*
 name|LRAT
 argument_list|)
@@ -828,7 +848,10 @@ operator|=
 name|RINT
 argument_list|(
 operator|(
-name|sa
+name|lab
+index|[
+literal|1
+index|]
 operator|-
 name|LOWA
 operator|)
@@ -841,7 +864,10 @@ operator|=
 name|RINT
 argument_list|(
 operator|(
-name|sb
+name|lab
+index|[
+literal|2
+index|]
 operator|-
 name|LOWB
 operator|)
@@ -849,13 +875,6 @@ operator|*
 name|BRAT
 argument_list|)
 expr_stmt|;
-comment|/*  fprintf(stderr, " %d-%d-%d ", or, og, ob); */
-if|#
-directive|if
-literal|0
-block|if (or< 0 || or> 255)     fprintf(stderr, " \007R%d ", or);   if (og< 0 || og> 255)     fprintf(stderr, " \007G%d ", og);   if (ob< 0 || ob> 255)     fprintf(stderr, " \007B%d ", ob);
-endif|#
-directive|endif
 operator|*
 name|hr
 operator|=
@@ -1150,12 +1169,17 @@ modifier|*
 name|b
 parameter_list|)
 block|{
-name|double
-name|sr
-decl_stmt|,
-name|sg
-decl_stmt|,
-name|sb
+name|float
+name|rgb
+index|[
+literal|3
+index|]
+decl_stmt|;
+name|float
+name|lab
+index|[
+literal|3
+index|]
 decl_stmt|;
 name|double
 name|ir
@@ -1164,14 +1188,6 @@ name|ig
 decl_stmt|,
 name|ib
 decl_stmt|;
-comment|/*  fprintf(stderr, "%d.%d.%d ", hr,hg,hb); */
-if|#
-directive|if
-literal|0
-block|ir = (hr * ((double) (1<< R_SHIFT))) + (((double)(1<<R_SHIFT))*0.5);   ig = (hg * ((double) (1<< G_SHIFT))) + (((double)(1<<G_SHIFT))*0.5);   ib = (hb * ((double) (1<< B_SHIFT))) + (((double)(1<<B_SHIFT))*0.5);
-else|#
-directive|else
-comment|/* w/ artificial widening of dynamic range */
 name|ir
 operator|=
 operator|(
@@ -1238,8 +1254,6 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|ir
 operator|=
 name|ir
@@ -1266,23 +1280,47 @@ operator|)
 operator|+
 name|LOWB
 expr_stmt|;
-comment|/*  fprintf(stderr, "%0.1f,%0.1f,%0.1f ", ir,ig,ib); */
-name|cpercep_space_to_rgb
-argument_list|(
+name|lab
+index|[
+literal|0
+index|]
+operator|=
 name|ir
-argument_list|,
+expr_stmt|;
+name|lab
+index|[
+literal|1
+index|]
+operator|=
 name|ig
-argument_list|,
+expr_stmt|;
+name|lab
+index|[
+literal|2
+index|]
+operator|=
 name|ib
+expr_stmt|;
+name|babl_process
+argument_list|(
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"CIE Lab float"
+argument_list|)
 argument_list|,
-operator|&
-name|sr
+name|babl_format
+argument_list|(
+literal|"R'G'B' float"
+argument_list|)
+argument_list|)
 argument_list|,
-operator|&
-name|sg
+name|lab
 argument_list|,
-operator|&
-name|sb
+name|rgb
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 operator|*
@@ -1292,7 +1330,12 @@ name|RINT
 argument_list|(
 name|CLAMP
 argument_list|(
-name|sr
+name|rgb
+index|[
+literal|0
+index|]
+operator|*
+literal|255
 argument_list|,
 literal|0.0F
 argument_list|,
@@ -1307,7 +1350,12 @@ name|RINT
 argument_list|(
 name|CLAMP
 argument_list|(
-name|sg
+name|rgb
+index|[
+literal|1
+index|]
+operator|*
+literal|255
 argument_list|,
 literal|0.0F
 argument_list|,
@@ -1322,7 +1370,12 @@ name|RINT
 argument_list|(
 name|CLAMP
 argument_list|(
-name|sb
+name|rgb
+index|[
+literal|2
+index|]
+operator|*
+literal|255
 argument_list|,
 literal|0.0F
 argument_list|,
@@ -1330,7 +1383,6 @@ literal|255.0F
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  fprintf(stderr, "%d,%d,%d ", *r, *g, *b); */
 block|}
 end_function
 
@@ -1448,7 +1500,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b31d70d0208
+DECL|struct|__anon2b0bc8c20208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1691,7 +1743,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b31d70d0308
+DECL|struct|__anon2b0bc8c20308
 block|{
 DECL|member|used_count
 name|signed

@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2986252a0108
+DECL|struct|__anon27bb7c040108
 block|{
 DECL|member|l
 name|gfloat
@@ -246,7 +246,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2986252a0208
+DECL|struct|__anon27bb7c040208
 block|{
 DECL|member|bgdist
 name|gfloat
@@ -379,6 +379,8 @@ name|src
 index|[
 name|RED
 index|]
+operator|/
+literal|255.0
 expr_stmt|;
 name|rgb
 index|[
@@ -389,6 +391,8 @@ name|src
 index|[
 name|GREEN
 index|]
+operator|/
+literal|255.0
 expr_stmt|;
 name|rgb
 index|[
@@ -399,6 +403,8 @@ name|src
 index|[
 name|BLUE
 index|]
+operator|/
+literal|255.0
 expr_stmt|;
 break|break;
 case|case
@@ -432,6 +438,8 @@ name|i
 operator|+
 name|RED
 index|]
+operator|/
+literal|255.0
 expr_stmt|;
 name|rgb
 index|[
@@ -444,6 +452,8 @@ name|i
 operator|+
 name|GREEN
 index|]
+operator|/
+literal|255.0
 expr_stmt|;
 name|rgb
 index|[
@@ -456,6 +466,8 @@ name|i
 operator|+
 name|BLUE
 index|]
+operator|/
+literal|255.0
 expr_stmt|;
 block|}
 else|else
@@ -468,6 +480,8 @@ index|]
 operator|=
 operator|*
 name|src
+operator|/
+literal|255.0
 expr_stmt|;
 name|rgb
 index|[
@@ -476,6 +490,8 @@ index|]
 operator|=
 operator|*
 name|src
+operator|/
+literal|255.0
 expr_stmt|;
 name|rgb
 index|[
@@ -484,6 +500,8 @@ index|]
 operator|=
 operator|*
 name|src
+operator|/
+literal|255.0
 expr_stmt|;
 block|}
 break|break;
