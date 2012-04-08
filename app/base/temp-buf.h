@@ -193,6 +193,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GeglBuffer
+modifier|*
+name|gimp_temp_buf_create_buffer
+parameter_list|(
+name|TempBuf
+modifier|*
+name|temp_buf
+parameter_list|,
+name|gboolean
+name|take_ownership
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
