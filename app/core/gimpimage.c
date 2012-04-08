@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/temp-buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"config/gimpcoreconfig.h"
 end_include
 
@@ -258,6 +252,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptempbuf.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptemplate.h"
 end_include
 
@@ -352,7 +352,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c75e3df0103
+DECL|enum|__anon27b369020103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -446,7 +446,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c75e3df0203
+DECL|enum|__anon27b369020203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

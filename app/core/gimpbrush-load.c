@@ -125,12 +125,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/temp-buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpbrush.h"
 end_include
 
@@ -144,6 +138,12 @@ begin_include
 include|#
 directive|include
 file|"gimpbrush-load.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimptempbuf.h"
 end_include
 
 begin_include
@@ -1406,7 +1406,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon28a3897e010a
+DECL|union|__anon2b2b9885010a
 block|{
 DECL|member|u
 name|guint16

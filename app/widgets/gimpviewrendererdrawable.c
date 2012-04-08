@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/temp-buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gegl/gimp-gegl-utils.h"
 end_include
 
@@ -67,6 +61,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimptempbuf.h"
 end_include
 
 begin_include

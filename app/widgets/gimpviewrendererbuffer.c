@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/temp-buf.h"
+file|"core/gimptempbuf.h"
 end_include
 
 begin_include

@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/temp-buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcontext.h"
 end_include
 
@@ -79,6 +73,12 @@ begin_include
 include|#
 directive|include
 file|"gimptagged.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimptempbuf.h"
 end_include
 
 begin_define

@@ -24,13 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/temp-buf.h"
+file|"gimppreviewcache.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppreviewcache.h"
+file|"gimptempbuf.h"
 end_include
 
 begin_define
@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27570a2d0108
+DECL|struct|__anon28a1c9430108
 block|{
 DECL|member|buf
 name|GimpTempBuf

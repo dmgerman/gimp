@@ -71,12 +71,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/temp-buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpbrushgenerated.h"
 end_include
 

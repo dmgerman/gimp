@@ -40,13 +40,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pixel-region.h"
+file|"core/gimptempbuf.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"temp-buf.h"
+file|"pixel-region.h"
 end_include
 
 begin_include

@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/temp-buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gegl/gimp-gegl-utils.h"
 end_include
 
@@ -60,12 +54,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptempbuf.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf97f4a0103
+DECL|enum|__anon2a3cc3800103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/temp-buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpbrushpipe.h"
 end_include
 
@@ -43,6 +37,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpbrushgenerated.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimptempbuf.h"
 end_include
 
 begin_include

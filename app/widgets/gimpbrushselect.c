@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/temp-buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
 end_include
 
@@ -61,6 +55,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpparamspecs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimptempbuf.h"
 end_include
 
 begin_include
@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d1c7fc0103
+DECL|enum|__anon2801bc8f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

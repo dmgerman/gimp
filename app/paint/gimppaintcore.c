@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/temp-buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint-funcs/paint-funcs.h"
 end_include
 
@@ -145,7 +139,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29581c480103
+DECL|enum|__anon2b60da500103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

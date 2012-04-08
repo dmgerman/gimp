@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/temp-buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpbezierdesc.h"
 end_include
 
@@ -102,12 +96,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptempbuf.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4e57c80103
+DECL|enum|__anon2c53f5140103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -120,7 +120,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4e57c80203
+DECL|enum|__anon2c53f5140203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

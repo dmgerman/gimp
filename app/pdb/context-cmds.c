@@ -46,12 +46,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/temp-buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
 end_include
 
@@ -77,6 +71,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpparamspecs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimptempbuf.h"
 end_include
 
 begin_include

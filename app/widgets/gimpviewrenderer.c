@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/temp-buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpcontext.h"
 end_include
 
@@ -73,6 +67,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpmarshal.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimptempbuf.h"
 end_include
 
 begin_include
@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ec84320103
+DECL|enum|__anon2b61040d0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE

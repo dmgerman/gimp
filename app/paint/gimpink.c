@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/temp-buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gegl/gimp-gegl-utils.h"
 end_include
 
@@ -61,6 +55,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimptempbuf.h"
 end_include
 
 begin_include
@@ -1856,7 +1856,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c661330103
+DECL|enum|__anon2b6c05f00103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START

@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/temp-buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"base/tile-manager-preview.h"
 end_include
 
@@ -109,6 +103,12 @@ begin_include
 include|#
 directive|include
 file|"gimppreviewcache.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimptempbuf.h"
 end_include
 
 begin_comment

@@ -55,7 +55,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/temp-buf.h"
+file|"core/gimptempbuf.h"
 end_include
 
 begin_include
@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d4d7ff0103
+DECL|enum|__anon296b050e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1390,7 +1390,7 @@ comment|/* This is a table of scripts and corresponding short sample strings    
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29d4d7ff0208
+DECL|struct|__anon296b050e0208
 block|{
 DECL|member|script
 specifier|const

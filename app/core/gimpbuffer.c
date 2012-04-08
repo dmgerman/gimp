@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/temp-buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gegl/gimp-gegl-utils.h"
 end_include
 
@@ -55,6 +49,12 @@ begin_include
 include|#
 directive|include
 file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimptempbuf.h"
 end_include
 
 begin_function_decl

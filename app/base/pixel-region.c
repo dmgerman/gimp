@@ -30,19 +30,23 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base-types.h"
+file|"core/core-types.h"
+end_include
+
+begin_comment
+comment|/* eek, but this file will die anyway */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"core/gimptempbuf.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"pixel-region.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp-buf.h"
 end_include
 
 begin_include

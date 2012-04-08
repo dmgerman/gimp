@@ -24,8 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint-funcs-types.h"
+file|"core/core-types.h"
 end_include
+
+begin_comment
+comment|/* eek, but this file will die anyway */
+end_comment
 
 begin_include
 include|#

@@ -985,6 +985,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpTempBuf
+typedef|typedef
+name|struct
+name|_GimpTempBuf
+name|GimpTempBuf
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpTattoo
 typedef|typedef
 name|guint32
