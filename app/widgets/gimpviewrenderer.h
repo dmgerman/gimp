@@ -596,6 +596,12 @@ modifier|*
 name|temp_buf
 parameter_list|,
 name|gint
+name|temp_buf_x
+parameter_list|,
+name|gint
+name|temp_buf_y
+parameter_list|,
+name|gint
 name|channel
 parameter_list|,
 name|GimpViewBG

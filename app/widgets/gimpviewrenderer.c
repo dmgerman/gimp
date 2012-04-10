@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290e11550103
+DECL|enum|__anon275da9280103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -275,6 +275,12 @@ parameter_list|,
 name|GimpTempBuf
 modifier|*
 name|temp_buf
+parameter_list|,
+name|gint
+name|temp_buf_x
+parameter_list|,
+name|gint
+name|temp_buf_y
 parameter_list|,
 name|gint
 name|channel
@@ -3131,6 +3137,16 @@ modifier|*
 name|temp_buf
 parameter_list|)
 block|{
+name|gint
+name|temp_buf_x
+init|=
+literal|0
+decl_stmt|;
+name|gint
+name|temp_buf_y
+init|=
+literal|0
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_VIEW_RENDERER
@@ -3156,9 +3172,7 @@ name|renderer
 operator|->
 name|width
 condition|)
-name|temp_buf
-operator|->
-name|x
+name|temp_buf_x
 operator|=
 operator|(
 name|renderer
@@ -3182,9 +3196,7 @@ name|renderer
 operator|->
 name|height
 condition|)
-name|temp_buf
-operator|->
-name|y
+name|temp_buf_y
 operator|=
 operator|(
 name|renderer
@@ -3204,6 +3216,10 @@ name|renderer
 argument_list|,
 name|temp_buf
 argument_list|,
+name|temp_buf_x
+argument_list|,
+name|temp_buf_y
+argument_list|,
 operator|-
 literal|1
 argument_list|,
@@ -3217,7 +3233,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_view_renderer_render_temp_buf (GimpViewRenderer * renderer,GimpTempBuf * temp_buf,gint channel,GimpViewBG inside_bg,GimpViewBG outside_bg)
+DECL|function|gimp_view_renderer_render_temp_buf (GimpViewRenderer * renderer,GimpTempBuf * temp_buf,gint temp_buf_x,gint temp_buf_y,gint channel,GimpViewBG inside_bg,GimpViewBG outside_bg)
 name|gimp_view_renderer_render_temp_buf
 parameter_list|(
 name|GimpViewRenderer
@@ -3227,6 +3243,12 @@ parameter_list|,
 name|GimpTempBuf
 modifier|*
 name|temp_buf
+parameter_list|,
+name|gint
+name|temp_buf_x
+parameter_list|,
+name|gint
+name|temp_buf_y
 parameter_list|,
 name|gint
 name|channel
@@ -3288,6 +3310,10 @@ argument_list|(
 name|renderer
 argument_list|,
 name|temp_buf
+argument_list|,
+name|temp_buf_x
+argument_list|,
+name|temp_buf_y
 argument_list|,
 name|channel
 argument_list|,
@@ -3625,7 +3651,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_view_render_temp_buf_to_surface (GimpViewRenderer * renderer,GimpTempBuf * temp_buf,gint channel,GimpViewBG inside_bg,GimpViewBG outside_bg,cairo_surface_t * surface,gint surface_width,gint surface_height)
+DECL|function|gimp_view_render_temp_buf_to_surface (GimpViewRenderer * renderer,GimpTempBuf * temp_buf,gint temp_buf_x,gint temp_buf_y,gint channel,GimpViewBG inside_bg,GimpViewBG outside_bg,cairo_surface_t * surface,gint surface_width,gint surface_height)
 name|gimp_view_render_temp_buf_to_surface
 parameter_list|(
 name|GimpViewRenderer
@@ -3635,6 +3661,12 @@ parameter_list|,
 name|GimpTempBuf
 modifier|*
 name|temp_buf
+parameter_list|,
+name|gint
+name|temp_buf_x
+parameter_list|,
+name|gint
+name|temp_buf_y
 parameter_list|,
 name|gint
 name|channel
@@ -3780,13 +3812,9 @@ name|surface_width
 argument_list|,
 name|surface_height
 argument_list|,
-name|temp_buf
-operator|->
-name|x
+name|temp_buf_x
 argument_list|,
-name|temp_buf
-operator|->
-name|y
+name|temp_buf_y
 argument_list|,
 name|temp_buf
 operator|->
@@ -3949,15 +3977,11 @@ name|GEGL_RECTANGLE
 argument_list|(
 name|x
 operator|-
-name|temp_buf
-operator|->
-name|x
+name|temp_buf_x
 argument_list|,
 name|y
 operator|-
-name|temp_buf
-operator|->
-name|y
+name|temp_buf_y
 argument_list|,
 name|width
 argument_list|,
@@ -4081,15 +4105,11 @@ name|GEGL_RECTANGLE
 argument_list|(
 name|x
 operator|-
-name|temp_buf
-operator|->
-name|x
+name|temp_buf_x
 argument_list|,
 name|y
 operator|-
-name|temp_buf
-operator|->
-name|y
+name|temp_buf_y
 argument_list|,
 name|width
 argument_list|,
@@ -4187,9 +4207,7 @@ operator|(
 operator|(
 name|y
 operator|-
-name|temp_buf
-operator|->
-name|y
+name|temp_buf_y
 operator|)
 operator|*
 name|rowstride
@@ -4197,9 +4215,7 @@ operator|+
 operator|(
 name|x
 operator|-
-name|temp_buf
-operator|->
-name|x
+name|temp_buf_x
 operator|)
 operator|*
 name|bytes
