@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -108,7 +114,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2882c8da0103
+DECL|enum|__anon2b97d2ac0103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -2991,13 +2997,25 @@ if|if
 condition|(
 name|drawable
 condition|)
-name|image_type
-operator|=
-name|gimp_drawable_type
+block|{
+specifier|const
+name|Babl
+modifier|*
+name|format
+init|=
+name|gimp_drawable_get_format
 argument_list|(
 name|drawable
 argument_list|)
+decl_stmt|;
+name|image_type
+operator|=
+name|gimp_babl_format_get_image_type
+argument_list|(
+name|format
+argument_list|)
 expr_stmt|;
+block|}
 switch|switch
 condition|(
 name|image_type

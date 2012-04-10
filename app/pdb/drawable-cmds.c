@@ -213,9 +213,12 @@ condition|)
 block|{
 name|type
 operator|=
-name|gimp_drawable_type
+name|gimp_babl_format_get_image_type
+argument_list|(
+name|gimp_drawable_get_format
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
