@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-cairo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpboundary.h"
 end_include
 
@@ -49,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpparamspecs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpcairo.h"
 end_include
 
 begin_include
@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295b1ded0103
+DECL|enum|__anon289004800103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

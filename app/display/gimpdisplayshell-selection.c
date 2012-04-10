@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-cairo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpboundary.h"
 end_include
 
@@ -55,12 +61,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpcairo.h"
 end_include
 
 begin_include

@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-cairo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -73,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpprojection.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpcairo.h"
 end_include
 
 begin_include

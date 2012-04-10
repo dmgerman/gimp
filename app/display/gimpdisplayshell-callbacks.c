@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpcairo.h"
+file|"widgets/gimpcairo-wilber.h"
 end_include
 
 begin_include
