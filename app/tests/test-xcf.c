@@ -232,11 +232,11 @@ value|51
 end_define
 
 begin_define
-DECL|macro|GIMP_MAINIMAGE_LAYER1_TYPE
+DECL|macro|GIMP_MAINIMAGE_LAYER1_FORMAT
 define|#
 directive|define
-name|GIMP_MAINIMAGE_LAYER1_TYPE
-value|GIMP_RGBA_IMAGE
+name|GIMP_MAINIMAGE_LAYER1_FORMAT
+value|babl_format ("R'G'B'A u8")
 end_define
 
 begin_define
@@ -280,11 +280,11 @@ value|251
 end_define
 
 begin_define
-DECL|macro|GIMP_MAINIMAGE_LAYER2_TYPE
+DECL|macro|GIMP_MAINIMAGE_LAYER2_FORMAT
 define|#
 directive|define
-name|GIMP_MAINIMAGE_LAYER2_TYPE
-value|GIMP_RGB_IMAGE
+name|GIMP_MAINIMAGE_LAYER2_FORMAT
+value|babl_format ("R'G'B' u8")
 end_define
 
 begin_define
@@ -1261,7 +1261,7 @@ name|GIMP_MAINIMAGE_LAYER1_WIDTH
 argument_list|,
 name|GIMP_MAINIMAGE_LAYER1_HEIGHT
 argument_list|,
-name|GIMP_MAINIMAGE_LAYER1_TYPE
+name|GIMP_MAINIMAGE_LAYER1_FORMAT
 argument_list|,
 name|GIMP_MAINIMAGE_LAYER1_NAME
 argument_list|,
@@ -1294,7 +1294,7 @@ name|GIMP_MAINIMAGE_LAYER2_WIDTH
 argument_list|,
 name|GIMP_MAINIMAGE_LAYER2_HEIGHT
 argument_list|,
-name|GIMP_MAINIMAGE_LAYER2_TYPE
+name|GIMP_MAINIMAGE_LAYER2_FORMAT
 argument_list|,
 name|GIMP_MAINIMAGE_LAYER2_NAME
 argument_list|,
@@ -1807,7 +1807,7 @@ name|GIMP_MAINIMAGE_LAYER1_WIDTH
 argument_list|,
 name|GIMP_MAINIMAGE_LAYER1_HEIGHT
 argument_list|,
-name|GIMP_MAINIMAGE_LAYER1_TYPE
+name|GIMP_MAINIMAGE_LAYER1_FORMAT
 argument_list|,
 name|GIMP_MAINIMAGE_LAYER3_NAME
 argument_list|,
@@ -1843,7 +1843,7 @@ name|GIMP_MAINIMAGE_LAYER1_WIDTH
 argument_list|,
 name|GIMP_MAINIMAGE_LAYER1_HEIGHT
 argument_list|,
-name|GIMP_MAINIMAGE_LAYER1_TYPE
+name|GIMP_MAINIMAGE_LAYER1_FORMAT
 argument_list|,
 name|GIMP_MAINIMAGE_LAYER4_NAME
 argument_list|,
@@ -1917,7 +1917,7 @@ name|GIMP_MAINIMAGE_LAYER1_WIDTH
 argument_list|,
 name|GIMP_MAINIMAGE_LAYER1_HEIGHT
 argument_list|,
-name|GIMP_MAINIMAGE_LAYER1_TYPE
+name|GIMP_MAINIMAGE_LAYER1_FORMAT
 argument_list|,
 name|GIMP_MAINIMAGE_LAYER5_NAME
 argument_list|,
@@ -2376,19 +2376,25 @@ argument_list|,
 name|GIMP_MAINIMAGE_LAYER1_HEIGHT
 argument_list|)
 expr_stmt|;
-name|g_assert_cmpint
+name|g_assert_cmpstr
 argument_list|(
-name|gimp_drawable_type
+name|babl_get_name
+argument_list|(
+name|gimp_drawable_get_format
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
 argument_list|)
 argument_list|)
+argument_list|)
 argument_list|,
 operator|==
 argument_list|,
-name|GIMP_MAINIMAGE_LAYER1_TYPE
+name|babl_get_name
+argument_list|(
+name|GIMP_MAINIMAGE_LAYER1_FORMAT
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_assert_cmpstr
@@ -2469,19 +2475,25 @@ argument_list|,
 name|GIMP_MAINIMAGE_LAYER2_HEIGHT
 argument_list|)
 expr_stmt|;
-name|g_assert_cmpint
+name|g_assert_cmpstr
 argument_list|(
-name|gimp_drawable_type
+name|babl_get_name
+argument_list|(
+name|gimp_drawable_get_format
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
 argument_list|)
 argument_list|)
+argument_list|)
 argument_list|,
 operator|==
 argument_list|,
-name|GIMP_MAINIMAGE_LAYER2_TYPE
+name|babl_get_name
+argument_list|(
+name|GIMP_MAINIMAGE_LAYER2_FORMAT
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_assert_cmpstr

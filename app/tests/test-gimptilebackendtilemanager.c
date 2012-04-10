@@ -225,8 +225,6 @@ argument_list|(
 name|tm
 argument_list|,
 name|format
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gegl_color_set_rgba
@@ -264,8 +262,6 @@ argument_list|(
 name|tm
 argument_list|,
 name|format
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|buffer

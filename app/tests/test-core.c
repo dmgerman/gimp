@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afa24c10108
+DECL|struct|__anon29c62d590108
 block|{
 DECL|member|image
 name|GimpImage
@@ -292,7 +292,10 @@ name|GIMP_TEST_IMAGE_SIZE
 argument_list|,
 name|GIMP_TEST_IMAGE_SIZE
 argument_list|,
-name|GIMP_RGBA_IMAGE
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
 argument_list|,
 literal|"Test Layer"
 argument_list|,
@@ -431,7 +434,10 @@ name|GIMP_TEST_IMAGE_SIZE
 argument_list|,
 name|GIMP_TEST_IMAGE_SIZE
 argument_list|,
-name|GIMP_RGBA_IMAGE
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
 argument_list|,
 literal|"Test Layer"
 argument_list|,
@@ -546,7 +552,10 @@ name|GIMP_TEST_IMAGE_SIZE
 argument_list|,
 name|GIMP_TEST_IMAGE_SIZE
 argument_list|,
-name|GIMP_RGBA_IMAGE
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
 argument_list|,
 literal|"Test Layer"
 argument_list|,
