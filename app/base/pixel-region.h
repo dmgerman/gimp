@@ -93,6 +93,15 @@ block|}
 struct|;
 end_struct
 
+begin_typedef
+DECL|typedef|PixelRegionHolder
+typedef|typedef
+name|struct
+name|_PixelRegionHolder
+name|PixelRegionHolder
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_PixelRegionHolder
 struct|struct
@@ -123,6 +132,15 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_typedef
+DECL|typedef|PixelRegionIterator
+typedef|typedef
+name|struct
+name|_PixelRegionIterator
+name|PixelRegionIterator
+typedef|;
+end_typedef
 
 begin_struct
 DECL|struct|_PixelRegionIterator
