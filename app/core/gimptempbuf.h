@@ -187,6 +187,18 @@ name|G_GNUC_WARN_UNUSED_RESULT
 decl_stmt|;
 end_decl_stmt
 
+begin_function_decl
+name|GimpTempBuf
+modifier|*
+name|gimp_gegl_buffer_get_temp_buf
+parameter_list|(
+name|GeglBuffer
+modifier|*
+name|buffer
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

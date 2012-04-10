@@ -813,41 +813,6 @@ block|}
 end_function
 
 begin_function
-name|GimpTempBuf
-modifier|*
-DECL|function|gimp_gegl_buffer_get_temp_buf (GeglBuffer * buffer)
-name|gimp_gegl_buffer_get_temp_buf
-parameter_list|(
-name|GeglBuffer
-modifier|*
-name|buffer
-parameter_list|)
-block|{
-name|g_return_val_if_fail
-argument_list|(
-name|GEGL_IS_BUFFER
-argument_list|(
-name|buffer
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-return|return
-name|g_object_get_data
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|buffer
-argument_list|)
-argument_list|,
-literal|"gimp-temp-buf"
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
 name|void
 DECL|function|gimp_gegl_buffer_refetch_tiles (GeglBuffer * buffer)
 name|gimp_gegl_buffer_refetch_tiles
