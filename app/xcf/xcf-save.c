@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -5050,11 +5056,14 @@ argument_list|)
 expr_stmt|;
 name|value
 operator|=
-name|gimp_drawable_type
+name|gimp_babl_format_get_image_type
+argument_list|(
+name|gimp_drawable_get_format
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7050,7 +7059,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b5e8bf0108
+DECL|struct|__anon2b8284ed0108
 block|{
 DECL|member|info
 name|XcfInfo
