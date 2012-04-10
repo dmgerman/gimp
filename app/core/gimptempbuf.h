@@ -31,7 +31,6 @@ name|Babl
 modifier|*
 name|format
 decl_stmt|;
-comment|/*  pixel format  */
 DECL|member|width
 name|gint
 name|width
@@ -40,27 +39,14 @@ DECL|member|height
 name|gint
 name|height
 decl_stmt|;
-DECL|member|x
-DECL|member|y
-name|gint
-name|x
-decl_stmt|,
-name|y
-decl_stmt|;
-comment|/*  origin of data source                          */
 DECL|member|data
 name|guchar
 modifier|*
 name|data
 decl_stmt|;
-comment|/*  The data buffer. Do never access this field                            directly, use temp_buf_get_data() instead !!   */
 block|}
 struct|;
 end_struct
-
-begin_comment
-comment|/*  The temp buffer functions  */
-end_comment
 
 begin_decl_stmt
 name|GimpTempBuf
@@ -87,6 +73,7 @@ name|GimpTempBuf
 modifier|*
 name|gimp_temp_buf_copy
 argument_list|(
+specifier|const
 name|GimpTempBuf
 operator|*
 name|src
@@ -123,6 +110,7 @@ name|GimpTempBuf
 modifier|*
 name|gimp_temp_buf_scale
 argument_list|(
+specifier|const
 name|GimpTempBuf
 operator|*
 name|buf
@@ -154,6 +142,7 @@ begin_function_decl
 name|gsize
 name|gimp_temp_buf_get_data_size
 parameter_list|(
+specifier|const
 name|GimpTempBuf
 modifier|*
 name|buf
@@ -177,6 +166,7 @@ begin_function_decl
 name|gsize
 name|gimp_temp_buf_get_memsize
 parameter_list|(
+specifier|const
 name|GimpTempBuf
 modifier|*
 name|buf

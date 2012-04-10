@@ -122,18 +122,6 @@ name|height
 expr_stmt|;
 name|temp
 operator|->
-name|x
-operator|=
-literal|0
-expr_stmt|;
-name|temp
-operator|->
-name|y
-operator|=
-literal|0
-expr_stmt|;
-name|temp
-operator|->
 name|data
 operator|=
 name|g_new
@@ -159,9 +147,10 @@ end_function
 begin_function
 name|GimpTempBuf
 modifier|*
-DECL|function|gimp_temp_buf_copy (GimpTempBuf * src)
+DECL|function|gimp_temp_buf_copy (const GimpTempBuf * src)
 name|gimp_temp_buf_copy
 parameter_list|(
+specifier|const
 name|GimpTempBuf
 modifier|*
 name|src
@@ -319,9 +308,10 @@ end_function
 begin_function
 name|GimpTempBuf
 modifier|*
-DECL|function|gimp_temp_buf_scale (GimpTempBuf * src,gint new_width,gint new_height)
+DECL|function|gimp_temp_buf_scale (const GimpTempBuf * src,gint new_width,gint new_height)
 name|gimp_temp_buf_scale
 parameter_list|(
+specifier|const
 name|GimpTempBuf
 modifier|*
 name|src
@@ -383,6 +373,26 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|new_width
+operator|==
+name|src
+operator|->
+name|width
+operator|&&
+name|new_height
+operator|==
+name|src
+operator|->
+name|height
+condition|)
+return|return
+name|gimp_temp_buf_copy
+argument_list|(
+name|src
+argument_list|)
+return|;
 name|dest
 operator|=
 name|gimp_temp_buf_new
@@ -582,9 +592,10 @@ end_function
 
 begin_function
 name|gsize
-DECL|function|gimp_temp_buf_get_data_size (GimpTempBuf * buf)
+DECL|function|gimp_temp_buf_get_data_size (const GimpTempBuf * buf)
 name|gimp_temp_buf_get_data_size
 parameter_list|(
+specifier|const
 name|GimpTempBuf
 modifier|*
 name|buf
@@ -644,9 +655,10 @@ end_function
 
 begin_function
 name|gsize
-DECL|function|gimp_temp_buf_get_memsize (GimpTempBuf * buf)
+DECL|function|gimp_temp_buf_get_memsize (const GimpTempBuf * buf)
 name|gimp_temp_buf_get_memsize
 parameter_list|(
+specifier|const
 name|GimpTempBuf
 modifier|*
 name|buf
