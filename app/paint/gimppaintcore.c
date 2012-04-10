@@ -139,7 +139,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b60da500103
+DECL|enum|__anon28c902260103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1565,15 +1565,6 @@ name|babl_format
 argument_list|(
 literal|"Y u8"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gegl_buffer_clear
-argument_list|(
-name|core
-operator|->
-name|canvas_buffer
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  Get the initial undo extents  */

@@ -1330,13 +1330,6 @@ literal|"Y u8"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_clear
-argument_list|(
-name|mask_buffer
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 comment|/* render the stroke into it */
 name|gimp_item_get_offset
 argument_list|(

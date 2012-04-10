@@ -335,16 +335,6 @@ name|color
 argument_list|)
 expr_stmt|;
 block|}
-else|else
-block|{
-name|gegl_buffer_clear
-argument_list|(
-name|new_buffer
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 if|if
 condition|(

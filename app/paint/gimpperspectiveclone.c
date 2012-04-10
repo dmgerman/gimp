@@ -1570,13 +1570,6 @@ argument_list|,
 name|src_format_alpha
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_clear
-argument_list|(
-name|dest_buffer
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|gimp_perspective_clone_get_matrix
 argument_list|(
 name|clone
