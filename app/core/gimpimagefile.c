@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl/gimp-gegl-utils.h"
 end_include
 
@@ -125,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f2af9f0103
+DECL|enum|__anon2b6935f40103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -3693,17 +3699,10 @@ modifier|*
 name|image
 parameter_list|)
 block|{
-name|GimpEnumDesc
-modifier|*
-name|desc
-decl_stmt|;
 specifier|const
 name|Babl
 modifier|*
 name|format
-decl_stmt|;
-name|GimpImageType
-name|type
 decl_stmt|;
 comment|/*  peek the thumbnail to make sure that mtime and filesize are set  */
 name|gimp_thumbnail_peek_image
@@ -3721,25 +3720,6 @@ name|gimp_image_has_alpha
 argument_list|(
 name|image
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|type
-operator|=
-name|gimp_babl_format_get_image_type
-argument_list|(
-name|format
-argument_list|)
-expr_stmt|;
-name|desc
-operator|=
-name|gimp_enum_get_desc
-argument_list|(
-name|g_type_class_peek
-argument_list|(
-name|GIMP_TYPE_IMAGE_TYPE
-argument_list|)
-argument_list|,
-name|type
 argument_list|)
 expr_stmt|;
 name|g_object_set
@@ -3766,9 +3746,10 @@ argument_list|)
 argument_list|,
 literal|"image-type"
 argument_list|,
-name|desc
-operator|->
-name|value_desc
+name|gimp_babl_get_description
+argument_list|(
+name|format
+argument_list|)
 argument_list|,
 literal|"image-num-layers"
 argument_list|,
