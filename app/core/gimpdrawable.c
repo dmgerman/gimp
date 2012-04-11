@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb831680103
+DECL|enum|__anon290d2aff0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -6942,7 +6942,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|gimp_image_get_format_with_alpha
+name|gimp_image_get_format
 argument_list|(
 name|gimp_item_get_image
 argument_list|(
@@ -6952,10 +6952,12 @@ name|drawable
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_drawable_type
+name|gimp_drawable_get_base_type
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 return|;
 block|}
@@ -6985,7 +6987,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|gimp_image_get_format_without_alpha
+name|gimp_image_get_format
 argument_list|(
 name|gimp_item_get_image
 argument_list|(
@@ -6995,10 +6997,12 @@ name|drawable
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_drawable_type
+name|gimp_drawable_get_base_type
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 return|;
 block|}

@@ -4451,6 +4451,9 @@ name|gint
 name|type
 decl_stmt|;
 name|gboolean
+name|has_alpha
+decl_stmt|;
+name|gboolean
 name|is_fs_drawable
 decl_stmt|;
 name|gchar
@@ -4547,6 +4550,22 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+name|has_alpha
+operator|=
+operator|(
+name|type
+operator|==
+name|GIMP_RGBA_IMAGE
+operator|||
+name|type
+operator|==
+name|GIMP_GRAYA_IMAGE
+operator|||
+name|type
+operator|==
+name|GIMP_INDEXEDA_IMAGE
+operator|)
+expr_stmt|;
 comment|/* create a new layer */
 name|layer
 operator|=
@@ -4558,11 +4577,11 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|gimp_image_get_format
+name|gimp_image_get_layer_format
 argument_list|(
 name|image
 argument_list|,
-name|type
+name|has_alpha
 argument_list|)
 argument_list|,
 name|name
