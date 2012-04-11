@@ -62,6 +62,10 @@ name|gint
 modifier|*
 name|height
 parameter_list|,
+name|GimpImageType
+modifier|*
+name|type
+parameter_list|,
 name|GError
 modifier|*
 modifier|*

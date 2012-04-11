@@ -2104,7 +2104,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b73aa9d0108
+DECL|struct|__anon290166710108
 block|{
 DECL|member|pub
 name|struct
@@ -2278,7 +2278,7 @@ end_function
 
 begin_function
 name|gint32
-DECL|function|load_thumbnail_image (const gchar * filename,gint * width,gint * height,GError ** error)
+DECL|function|load_thumbnail_image (const gchar * filename,gint * width,gint * height,GimpImageType * type,GError ** error)
 name|load_thumbnail_image
 parameter_list|(
 specifier|const
@@ -2293,6 +2293,10 @@ parameter_list|,
 name|gint
 modifier|*
 name|height
+parameter_list|,
+name|GimpImageType
+modifier|*
+name|type
 parameter_list|,
 name|GError
 modifier|*
@@ -3300,6 +3304,11 @@ name|image_ID
 argument_list|,
 name|orientation
 argument_list|)
+expr_stmt|;
+operator|*
+name|type
+operator|=
+name|layer_type
 expr_stmt|;
 return|return
 name|image_ID
