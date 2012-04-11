@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6935f40103
+DECL|enum|__anon2bfefea60103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -411,8 +411,10 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|GimpImageType
-name|type
+specifier|const
+name|Babl
+modifier|*
+name|format
 parameter_list|,
 name|gint
 name|num_layers
@@ -1311,11 +1313,12 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
-name|GimpImageType
-name|type
+specifier|const
+name|Babl
+modifier|*
+name|format
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|gint
 name|num_layers
@@ -1356,7 +1359,7 @@ operator|&
 name|height
 argument_list|,
 operator|&
-name|type
+name|format
 argument_list|,
 operator|&
 name|num_layers
@@ -1381,7 +1384,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|type
+name|format
 argument_list|,
 name|num_layers
 argument_list|)
@@ -3765,13 +3768,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumbnail_set_info:  * @thumbnail: #GimpThumbnail object  * @mime_type:  MIME type of the image associated with this thumbnail  * @width:      width of the image associated with this thumbnail  * @height:     height of the image associated with this thumbnail  * @type:       type of the image (or -1 if the type is not known)  * @num_layers: number of layers in the image  *              (or -1 if the number of layers is not known)  *  * Set information about the image associated with the @thumbnail object.  */
+comment|/**  * gimp_thumbnail_set_info:  * @thumbnail: #GimpThumbnail object  * @mime_type:  MIME type of the image associated with this thumbnail  * @width:      width of the image associated with this thumbnail  * @height:     height of the image associated with this thumbnail  * @format:     format of the image (or NULL if the type is not known)  * @num_layers: number of layers in the image  *              (or -1 if the number of layers is not known)  *  * Set information about the image associated with the @thumbnail object.  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_thumbnail_set_info (GimpThumbnail * thumbnail,const gchar * mime_type,gint width,gint height,GimpImageType type,gint num_layers)
+DECL|function|gimp_thumbnail_set_info (GimpThumbnail * thumbnail,const gchar * mime_type,gint width,gint height,const Babl * format,gint num_layers)
 name|gimp_thumbnail_set_info
 parameter_list|(
 name|GimpThumbnail
@@ -3789,8 +3792,10 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|GimpImageType
-name|type
+specifier|const
+name|Babl
+modifier|*
+name|format
 parameter_list|,
 name|gint
 name|num_layers
@@ -3823,31 +3828,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|type
-operator|!=
-operator|-
-literal|1
-condition|)
-block|{
-name|GimpEnumDesc
-modifier|*
-name|desc
-decl_stmt|;
-name|desc
-operator|=
-name|gimp_enum_get_desc
-argument_list|(
-name|g_type_class_peek
-argument_list|(
-name|GIMP_TYPE_IMAGE_TYPE
-argument_list|)
-argument_list|,
-name|type
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|desc
+name|format
 condition|)
 name|g_object_set
 argument_list|(
@@ -3855,14 +3836,14 @@ name|thumbnail
 argument_list|,
 literal|"image-type"
 argument_list|,
-name|desc
-operator|->
-name|value_desc
+name|gimp_babl_get_description
+argument_list|(
+name|format
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|num_layers
@@ -3870,7 +3851,6 @@ operator|!=
 operator|-
 literal|1
 condition|)
-block|{
 name|g_object_set
 argument_list|(
 name|thumbnail
@@ -3882,7 +3862,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 

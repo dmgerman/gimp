@@ -18,6 +18,12 @@ end_if
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -77,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8274030103
+DECL|enum|__anon2ad2860a0103
 block|{
 DECL|enumerator|OPENED
 name|OPENED
@@ -91,7 +97,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8274030208
+DECL|struct|__anon2ad2860a0208
 block|{
 DECL|member|uri
 name|gchar

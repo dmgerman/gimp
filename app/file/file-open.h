@@ -110,9 +110,11 @@ name|gint
 modifier|*
 name|image_height
 parameter_list|,
-name|GimpImageType
+specifier|const
+name|Babl
 modifier|*
-name|type
+modifier|*
+name|format
 parameter_list|,
 name|gint
 modifier|*
