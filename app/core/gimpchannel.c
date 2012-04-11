@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0e125f0103
+DECL|enum|__anon29af3fa40103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -2200,7 +2200,7 @@ name|gimp_drawable_convert_type
 argument_list|(
 name|drawable
 argument_list|,
-name|NULL
+name|dest_image
 argument_list|,
 name|GIMP_GRAY
 argument_list|,
