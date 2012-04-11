@@ -71,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27618d9c0103
+DECL|enum|__anon291c13c60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1562,7 +1562,7 @@ argument_list|(
 name|template
 argument_list|)
 argument_list|,
-name|GIMP_RGB_IMAGE
+name|GIMP_RGB
 argument_list|)
 expr_stmt|;
 return|return
