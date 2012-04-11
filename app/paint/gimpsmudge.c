@@ -1522,7 +1522,7 @@ modifier|*
 name|accumulator_size
 parameter_list|)
 block|{
-comment|/* Note: the max brush mask size plus a border of 1 pixel */
+comment|/* Note: the max brush mask size plus a border of 1 pixel and a little    * headroom */
 operator|*
 name|accumulator_size
 operator|=
@@ -1537,6 +1537,8 @@ argument_list|(
 name|paint_options
 operator|->
 name|brush_size
+operator|+
+literal|1
 argument_list|)
 argument_list|)
 operator|+
