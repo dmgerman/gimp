@@ -443,7 +443,7 @@ name|GimpCoords
 modifier|*
 name|coords
 parameter_list|,
-name|GimpTempBuf
+name|GeglBuffer
 modifier|*
 name|area
 parameter_list|,

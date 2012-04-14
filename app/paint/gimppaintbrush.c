@@ -589,15 +589,6 @@ name|pixmap
 condition|)
 block|{
 comment|/* otherwise check if the brush has a pixmap and use that to        * color the area        */
-name|GimpTempBuf
-modifier|*
-name|area
-init|=
-name|gimp_gegl_buffer_get_temp_buf
-argument_list|(
-name|paint_buffer
-argument_list|)
-decl_stmt|;
 name|gimp_brush_core_color_area_with_pixmap
 argument_list|(
 name|brush_core
@@ -606,7 +597,7 @@ name|drawable
 argument_list|,
 name|coords
 argument_list|,
-name|area
+name|paint_buffer
 argument_list|,
 name|paint_buffer_x
 argument_list|,
