@@ -78,6 +78,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpOperationHistogramSink
+typedef|typedef
+name|struct
+name|_GimpOperationHistogramSink
+name|GimpOperationHistogramSink
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationSetAlpha
 typedef|typedef
 name|struct

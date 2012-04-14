@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpoperationhistogramsink.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpoperationsetalpha.h"
 end_include
 
@@ -538,6 +544,11 @@ argument_list|)
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
+name|GIMP_TYPE_OPERATION_HISTOGRAM_SINK
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
 name|GIMP_TYPE_OPERATION_SET_ALPHA
 argument_list|)
 expr_stmt|;
@@ -738,7 +749,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon279dd15d0108
+DECL|struct|__anon2c532f4e0108
 block|{
 DECL|member|name
 specifier|const

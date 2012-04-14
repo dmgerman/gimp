@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*   * Copyright 2012 Ãyvind KolÃ¥s  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpoperationhistogramsink.h  * Copyright (C) 2012 Ãyvind KolÃ¥s  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_ifndef
@@ -19,18 +19,20 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gegl-operation-sink.h"
+file|<gegl-plugin.h>
 end_include
 
-begin_macro
-name|G_BEGIN_DECLS
-end_macro
+begin_include
+include|#
+directive|include
+file|<operation/gegl-operation-sink.h>
+end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_HISTOGRAM_SINK
+DECL|macro|GIMP_TYPE_OPERATION_HISTOGRAM_SINK
 define|#
 directive|define
-name|GIMP_TYPE_HISTOGRAM_SINK
+name|GIMP_TYPE_OPERATION_HISTOGRAM_SINK
 value|(gimp_operation_histogram_sink_get_type ())
 end_define
 
@@ -90,11 +92,11 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_HISTOGRAM_SINK, GimpOperatio
 end_define
 
 begin_typedef
-DECL|typedef|GimpOperationHistogramSink
+DECL|typedef|GimpOperationHistogramSinkClass
 typedef|typedef
 name|struct
-name|_GimpOperationHistogramSink
-name|GimpOperationHistogramSink
+name|_GimpOperationHistogramSinkClass
+name|GimpOperationHistogramSinkClass
 typedef|;
 end_typedef
 
@@ -111,15 +113,6 @@ block|}
 struct|;
 end_struct
 
-begin_typedef
-DECL|typedef|GimpOperationHistogramSinkClass
-typedef|typedef
-name|struct
-name|_GimpOperationHistogramSinkClass
-name|GimpOperationHistogramSinkClass
-typedef|;
-end_typedef
-
 begin_struct
 DECL|struct|_GimpOperationHistogramSinkClass
 struct|struct
@@ -128,45 +121,6 @@ block|{
 DECL|member|parent_class
 name|GeglOperationSinkClass
 name|parent_class
-decl_stmt|;
-DECL|member|process
-name|gboolean
-function_decl|(
-modifier|*
-name|process
-function_decl|)
-parameter_list|(
-name|GeglOperation
-modifier|*
-name|self
-parameter_list|,
-name|GeglBuffer
-modifier|*
-name|input
-parameter_list|,
-name|GeglBuffer
-modifier|*
-name|aux
-parameter_list|,
-name|GeglBuffer
-modifier|*
-name|output
-parameter_list|,
-specifier|const
-name|GeglRectangle
-modifier|*
-name|result
-parameter_list|,
-name|gint
-name|level
-parameter_list|)
-function_decl|;
-DECL|member|pad
-name|gpointer
-name|pad
-index|[
-literal|4
-index|]
 decl_stmt|;
 block|}
 struct|;
@@ -182,14 +136,14 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
-begin_macro
-name|G_END_DECLS
-end_macro
-
 begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __GIMP_OPERATION_HISTOGRAM_SINK_C__ */
+end_comment
 
 end_unit
 

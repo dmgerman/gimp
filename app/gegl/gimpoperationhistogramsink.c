@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * Copyright 2012 Ãyvind KolÃ¥s  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpoperationhistogramsink.c  * Copyright (C) 2012 Ãyvind KolÃ¥s  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -12,54 +12,27 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<string.h>
+file|"gimp-gegl-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gegl.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gegl-plugin.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimp-operation-histogram-sink.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gegl-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"buffer/gegl-buffer.h"
+file|"gimpoperationhistogramsink.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289cf82b0103
+DECL|enum|__anon28f837f20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
-block|,
-DECL|enumerator|PROP_OUTPUT
-name|PROP_OUTPUT
 block|,
 DECL|enumerator|PROP_INPUT
 name|PROP_INPUT
@@ -73,7 +46,7 @@ end_enum
 begin_function_decl
 specifier|static
 name|void
-name|get_property
+name|gimp_operation_histogram_sink_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -96,7 +69,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|set_property
+name|gimp_operation_histogram_sink_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -149,7 +122,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|attach
+name|gimp_operation_histogram_sink_attach
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -161,7 +134,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|GeglRectangle
-name|get_required_for_output
+name|gimp_operation_histogram_sink_get_required_for_output
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -224,31 +197,31 @@ name|object_class
 operator|->
 name|set_property
 operator|=
-name|set_property
+name|gimp_operation_histogram_sink_set_property
 expr_stmt|;
 name|object_class
 operator|->
 name|get_property
 operator|=
-name|get_property
+name|gimp_operation_histogram_sink_get_property
+expr_stmt|;
+name|operation_class
+operator|->
+name|attach
+operator|=
+name|gimp_operation_histogram_sink_attach
+expr_stmt|;
+name|operation_class
+operator|->
+name|get_required_for_output
+operator|=
+name|gimp_operation_histogram_sink_get_required_for_output
 expr_stmt|;
 name|operation_class
 operator|->
 name|process
 operator|=
 name|gimp_operation_histogram_sink_process
-expr_stmt|;
-name|operation_class
-operator|->
-name|get_required_for_output
-operator|=
-name|get_required_for_output
-expr_stmt|;
-name|operation_class
-operator|->
-name|attach
-operator|=
-name|attach
 expr_stmt|;
 name|g_object_class_install_property
 argument_list|(
@@ -260,7 +233,7 @@ name|g_param_spec_object
 argument_list|(
 literal|"aux"
 argument_list|,
-literal|"Input"
+literal|"Aux"
 argument_list|,
 literal|"Auxiliary image buffer input pad."
 argument_list|,
@@ -291,8 +264,57 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|attach (GeglOperation * self)
-name|attach
+DECL|function|gimp_operation_histogram_sink_get_property (GObject * object,guint prop_id,GValue * value,GParamSpec * pspec)
+name|gimp_operation_histogram_sink_get_property
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|,
+name|guint
+name|prop_id
+parameter_list|,
+name|GValue
+modifier|*
+name|value
+parameter_list|,
+name|GParamSpec
+modifier|*
+name|pspec
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_operation_histogram_sink_set_property (GObject * object,guint prop_id,const GValue * value,GParamSpec * pspec)
+name|gimp_operation_histogram_sink_set_property
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|,
+name|guint
+name|prop_id
+parameter_list|,
+specifier|const
+name|GValue
+modifier|*
+name|value
+parameter_list|,
+name|GParamSpec
+modifier|*
+name|pspec
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_operation_histogram_sink_attach (GeglOperation * self)
+name|gimp_operation_histogram_sink_attach
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -334,51 +356,31 @@ end_function
 
 begin_function
 specifier|static
-name|void
-DECL|function|get_property (GObject * object,guint prop_id,GValue * value,GParamSpec * pspec)
-name|get_property
+name|GeglRectangle
+DECL|function|gimp_operation_histogram_sink_get_required_for_output (GeglOperation * self,const gchar * input_pad,const GeglRectangle * roi)
+name|gimp_operation_histogram_sink_get_required_for_output
 parameter_list|(
-name|GObject
+name|GeglOperation
 modifier|*
-name|object
-parameter_list|,
-name|guint
-name|prop_id
-parameter_list|,
-name|GValue
-modifier|*
-name|value
-parameter_list|,
-name|GParamSpec
-modifier|*
-name|pspec
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|set_property (GObject * object,guint prop_id,const GValue * value,GParamSpec * pspec)
-name|set_property
-parameter_list|(
-name|GObject
-modifier|*
-name|object
-parameter_list|,
-name|guint
-name|prop_id
+name|self
 parameter_list|,
 specifier|const
-name|GValue
+name|gchar
 modifier|*
-name|value
+name|input_pad
 parameter_list|,
-name|GParamSpec
+specifier|const
+name|GeglRectangle
 modifier|*
-name|pspec
+name|roi
 parameter_list|)
-block|{ }
+block|{
+comment|/* dunno what to do here, make a wild guess */
+return|return
+operator|*
+name|roi
+return|;
+block|}
 end_function
 
 begin_function
@@ -417,11 +419,6 @@ name|GeglBuffer
 modifier|*
 name|aux
 decl_stmt|;
-name|gboolean
-name|success
-init|=
-name|FALSE
-decl_stmt|;
 if|if
 condition|(
 name|strcmp
@@ -434,7 +431,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"requested processing of %s pad on a composer"
+literal|"requested processing of %s pad on a sink"
 argument_list|,
 name|output_prop
 argument_list|)
@@ -461,59 +458,33 @@ argument_list|,
 literal|"aux"
 argument_list|)
 expr_stmt|;
-comment|/* A composer with a NULL aux, can still be valid, the    * subclass has to handle it.    */
 if|if
 condition|(
 name|input
-operator|!=
-name|NULL
-operator|||
-name|aux
-operator|!=
-name|NULL
 condition|)
 block|{
-comment|/* shake and stir bits */
+if|if
+condition|(
+name|aux
+condition|)
+block|{
+comment|/* do hist with mask */
 block|}
 else|else
 block|{
-name|g_warning
-argument_list|(
-literal|"received NULL input and aux"
-argument_list|)
-expr_stmt|;
+comment|/* without */
 block|}
 return|return
-name|success
+name|TRUE
 return|;
 block|}
-end_function
-
-begin_function
-specifier|static
-name|GeglRectangle
-DECL|function|get_required_for_output (GeglOperation * self,const gchar * input_pad,const GeglRectangle * roi)
-name|get_required_for_output
-parameter_list|(
-name|GeglOperation
-modifier|*
-name|self
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|input_pad
-parameter_list|,
-specifier|const
-name|GeglRectangle
-modifier|*
-name|roi
-parameter_list|)
-block|{
-comment|/* dunno what to do here, make a wild guess */
+name|g_warning
+argument_list|(
+literal|"received NULL input"
+argument_list|)
+expr_stmt|;
 return|return
-operator|*
-name|roi
+name|FALSE
 return|;
 block|}
 end_function
