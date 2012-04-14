@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d0ad10108
+DECL|struct|__anon2b82de950108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d0ad10208
+DECL|struct|__anon2b82de950208
 block|{
 DECL|member|run
 name|gboolean
@@ -256,7 +256,7 @@ modifier|*
 name|save_transp_pixels
 decl_stmt|;
 DECL|member|compression_level
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|compression_level
 decl_stmt|;
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d0ad10308
+DECL|struct|__anon2b82de950308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -7690,7 +7690,7 @@ name|pg
 operator|.
 name|compression_level
 operator|=
-name|GTK_OBJECT
+name|GTK_ADJUSTMENT
 argument_list|(
 name|gtk_builder_get_object
 argument_list|(
@@ -7698,6 +7698,17 @@ name|builder
 argument_list|,
 literal|"compression-level"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_adjustment_set_value
+argument_list|(
+name|pg
+operator|.
+name|compression_level
+argument_list|,
+name|pngvals
+operator|.
+name|compression_level
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -8148,12 +8159,9 @@ directive|undef
 name|SET_ACTIVE
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|pg
 operator|->
 name|compression_level
-argument_list|)
 argument_list|,
 name|pngvals
 operator|.
