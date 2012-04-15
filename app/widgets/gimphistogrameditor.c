@@ -1728,15 +1728,11 @@ name|histogram
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_histogram_calculate
+name|gimp_histogram_clear_values
 argument_list|(
 name|editor
 operator|->
 name|histogram
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_histogram_editor_info_update
