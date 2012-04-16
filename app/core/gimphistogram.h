@@ -63,7 +63,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_histogram_calc_gegl
+name|gimp_histogram_calculate
 parameter_list|(
 name|GimpHistogram
 modifier|*
@@ -86,25 +86,6 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|mask_rect
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_histogram_calculate
-parameter_list|(
-name|GimpHistogram
-modifier|*
-name|histogram
-parameter_list|,
-name|PixelRegion
-modifier|*
-name|region
-parameter_list|,
-name|PixelRegion
-modifier|*
-name|mask
 parameter_list|)
 function_decl|;
 end_function_decl
