@@ -44,7 +44,7 @@ name|GIMP_OPERATION_HISTOGRAM_SINK
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_HISTOGRAM_SINK, GimpOperationHistogramSink))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_OPERATION_HISTOGRAM_SINK, GimpOperationHistogramSink))
 end_define
 
 begin_define
@@ -55,7 +55,7 @@ name|GIMP_OPERATION_HISTOGRAM_SINK_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GIMP_TYPE_HISTOGRAM_SINK, GimpOperationHistogramSinkClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GIMP_TYPE_OPERATION_HISTOGRAM_SINK, GimpOperationHistogramSinkClass))
 end_define
 
 begin_define
@@ -66,7 +66,7 @@ name|GEGL_IS_OPERATION_HISTOGRAM_SINK
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_HISTOGRAM_SINK))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_OPERATION_HISTOGRAM_SINK))
 end_define
 
 begin_define
@@ -77,7 +77,7 @@ name|GEGL_IS_OPERATION_HISTOGRAM_SINK_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass),  GIMP_TYPE_HISTOGRAM_SINK))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass),  GIMP_TYPE_OPERATION_HISTOGRAM_SINK))
 end_define
 
 begin_define
@@ -88,7 +88,7 @@ name|GIMP_OPERATION_HISTOGRAM_SINK_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_HISTOGRAM_SINK, GimpOperationHistogramSinkClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_HISTOGRAM_SINK, GimpOperationHistogramSinkClass))
 end_define
 
 begin_typedef
@@ -108,6 +108,11 @@ block|{
 DECL|member|parent_instance
 name|GeglOperation
 name|parent_instance
+decl_stmt|;
+DECL|member|histogram
+name|GimpHistogram
+modifier|*
+name|histogram
 decl_stmt|;
 block|}
 struct|;
