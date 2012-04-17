@@ -17,40 +17,6 @@ name|__PAINT_FUNCS_H__
 end_define
 
 begin_comment
-comment|/*  Paint functions  */
-end_comment
-
-begin_function_decl
-name|void
-name|blend_pixels
-parameter_list|(
-specifier|const
-name|guchar
-modifier|*
-name|src1
-parameter_list|,
-specifier|const
-name|guchar
-modifier|*
-name|src2
-parameter_list|,
-name|guchar
-modifier|*
-name|dest
-parameter_list|,
-name|guchar
-name|blend
-parameter_list|,
-name|guint
-name|w
-parameter_list|,
-name|guint
-name|bytes
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/*  apply the mask data to the alpha channel of the pixel data  */
 end_comment
 
@@ -828,28 +794,6 @@ end_function_decl
 begin_comment
 comment|/*  Region functions  */
 end_comment
-
-begin_function_decl
-name|void
-name|blend_region
-parameter_list|(
-name|PixelRegion
-modifier|*
-name|src1
-parameter_list|,
-name|PixelRegion
-modifier|*
-name|src2
-parameter_list|,
-name|PixelRegion
-modifier|*
-name|dest
-parameter_list|,
-name|guchar
-name|blend
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 name|void
