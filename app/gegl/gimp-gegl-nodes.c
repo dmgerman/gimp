@@ -880,9 +880,6 @@ case|case
 name|GIMP_DARKEN_ONLY_MODE
 case|:
 case|case
-name|GIMP_LIGHTEN_ONLY_MODE
-case|:
-case|case
 name|GIMP_HUE_MODE
 case|:
 case|case
@@ -1040,7 +1037,7 @@ name|GIMP_LIGHTEN_ONLY_MODE
 case|:
 name|operation
 operator|=
-literal|"gimp:lighten-mode"
+literal|"gimp:lighten-only-mode"
 expr_stmt|;
 break|break;
 case|case
