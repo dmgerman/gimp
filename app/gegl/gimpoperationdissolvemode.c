@@ -315,8 +315,6 @@ name|gint
 name|x
 decl_stmt|,
 name|y
-decl_stmt|,
-name|i
 decl_stmt|;
 name|gfloat
 modifier|*
@@ -338,10 +336,6 @@ name|aux_buf
 decl_stmt|;
 for|for
 control|(
-name|i
-operator|=
-literal|0
-operator|,
 name|y
 operator|=
 name|result
@@ -416,9 +410,6 @@ operator|->
 name|width
 condition|;
 name|x
-operator|++
-operator|,
-name|i
 operator|++
 control|)
 block|{
