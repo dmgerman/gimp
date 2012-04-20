@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e705fc0103
+DECL|enum|__anon2c0361090103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28896a250103
+DECL|enum|__anon2a42bac20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -116,6 +116,18 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|void
+name|gimp_operation_grow_prepare
+parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|GeglRectangle
 name|gimp_operation_grow_get_required_for_output
 parameter_list|(
@@ -149,18 +161,6 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|roi
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_operation_grow_prepare
-parameter_list|(
-name|GeglOperation
-modifier|*
-name|operation
 parameter_list|)
 function_decl|;
 end_function_decl

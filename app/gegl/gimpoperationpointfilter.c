@@ -336,14 +336,12 @@ specifier|const
 name|Babl
 modifier|*
 name|format
-decl_stmt|;
-name|format
-operator|=
+init|=
 name|babl_format
 argument_list|(
 literal|"R'G'B'A float"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gegl_operation_set_format
 argument_list|(
 name|operation

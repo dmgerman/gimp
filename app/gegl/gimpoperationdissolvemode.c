@@ -27,18 +27,6 @@ directive|include
 file|"gimpoperationdissolvemode.h"
 end_include
 
-begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationDissolveMode,gimp_operation_dissolve_mode,GIMP_TYPE_OPERATION_POINT_LAYER_MODE)
-name|G_DEFINE_TYPE
-argument_list|(
-argument|GimpOperationDissolveMode
-argument_list|,
-argument|gimp_operation_dissolve_mode
-argument_list|,
-argument|GIMP_TYPE_OPERATION_POINT_LAYER_MODE
-argument_list|)
-end_macro
-
 begin_define
 DECL|macro|RANDOM_TABLE_SIZE
 define|#
@@ -46,16 +34,6 @@ directive|define
 name|RANDOM_TABLE_SIZE
 value|4096
 end_define
-
-begin_decl_stmt
-specifier|static
-name|gint32
-name|random_table
-index|[
-name|RANDOM_TABLE_SIZE
-index|]
-decl_stmt|;
-end_decl_stmt
 
 begin_function_decl
 specifier|static
@@ -103,6 +81,28 @@ name|level
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpOperationDissolveMode,gimp_operation_dissolve_mode,GIMP_TYPE_OPERATION_POINT_LAYER_MODE)
+name|G_DEFINE_TYPE
+argument_list|(
+argument|GimpOperationDissolveMode
+argument_list|,
+argument|gimp_operation_dissolve_mode
+argument_list|,
+argument|GIMP_TYPE_OPERATION_POINT_LAYER_MODE
+argument_list|)
+end_macro
+
+begin_decl_stmt
+specifier|static
+name|gint32
+name|random_table
+index|[
+name|RANDOM_TABLE_SIZE
+index|]
+decl_stmt|;
+end_decl_stmt
 
 begin_function
 specifier|static
