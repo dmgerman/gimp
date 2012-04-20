@@ -449,6 +449,11 @@ name|GeglRectangle
 modifier|*
 name|tile_rect
 parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|format
+parameter_list|,
 name|GError
 modifier|*
 modifier|*
@@ -473,6 +478,11 @@ parameter_list|,
 name|GeglRectangle
 modifier|*
 name|tile_rect
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|format
 parameter_list|,
 name|guchar
 modifier|*
@@ -5631,6 +5641,7 @@ name|tmp_error
 init|=
 name|NULL
 decl_stmt|;
+comment|/* XXX use an appropriate format here */
 name|format
 operator|=
 name|gegl_buffer_get_format
@@ -5992,6 +6003,7 @@ name|tmp_error
 init|=
 name|NULL
 decl_stmt|;
+comment|/* XXX use an appropriate format here */
 name|format
 operator|=
 name|gegl_buffer_get_format
@@ -6174,6 +6186,8 @@ argument_list|,
 operator|&
 name|rect
 argument_list|,
+name|format
+argument_list|,
 name|error
 argument_list|)
 argument_list|)
@@ -6192,6 +6206,8 @@ name|buffer
 argument_list|,
 operator|&
 name|rect
+argument_list|,
+name|format
 argument_list|,
 name|rlebuf
 argument_list|,
@@ -6297,7 +6313,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_save_tile (XcfInfo * info,GeglBuffer * buffer,GeglRectangle * tile_rect,GError ** error)
+DECL|function|xcf_save_tile (XcfInfo * info,GeglBuffer * buffer,GeglRectangle * tile_rect,const Babl * format,GError ** error)
 name|xcf_save_tile
 parameter_list|(
 name|XcfInfo
@@ -6312,22 +6328,17 @@ name|GeglRectangle
 modifier|*
 name|tile_rect
 parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|format
+parameter_list|,
 name|GError
 modifier|*
 modifier|*
 name|error
 parameter_list|)
 block|{
-specifier|const
-name|Babl
-modifier|*
-name|format
-init|=
-name|gegl_buffer_get_format
-argument_list|(
-name|buffer
-argument_list|)
-decl_stmt|;
 name|gint
 name|bpp
 init|=
@@ -6372,7 +6383,7 @@ name|tile_rect
 argument_list|,
 literal|1.0
 argument_list|,
-name|NULL
+name|format
 argument_list|,
 name|tile_data
 argument_list|,
@@ -6399,7 +6410,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_save_tile_rle (XcfInfo * info,GeglBuffer * buffer,GeglRectangle * tile_rect,guchar * rlebuf,GError ** error)
+DECL|function|xcf_save_tile_rle (XcfInfo * info,GeglBuffer * buffer,GeglRectangle * tile_rect,const Babl * format,guchar * rlebuf,GError ** error)
 name|xcf_save_tile_rle
 parameter_list|(
 name|XcfInfo
@@ -6414,6 +6425,11 @@ name|GeglRectangle
 modifier|*
 name|tile_rect
 parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|format
+parameter_list|,
 name|guchar
 modifier|*
 name|rlebuf
@@ -6424,16 +6440,6 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-specifier|const
-name|Babl
-modifier|*
-name|format
-init|=
-name|gegl_buffer_get_format
-argument_list|(
-name|buffer
-argument_list|)
-decl_stmt|;
 name|gint
 name|bpp
 init|=
@@ -6488,7 +6494,7 @@ name|tile_rect
 argument_list|,
 literal|1.0
 argument_list|,
-name|NULL
+name|format
 argument_list|,
 name|tile_data
 argument_list|,
@@ -7059,7 +7065,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8284ed0108
+DECL|struct|__anon2a35eb010108
 block|{
 DECL|member|info
 name|XcfInfo

@@ -476,6 +476,11 @@ parameter_list|,
 name|GeglRectangle
 modifier|*
 name|tile_rect
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|format
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -496,6 +501,11 @@ parameter_list|,
 name|GeglRectangle
 modifier|*
 name|tile_rect
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|format
 parameter_list|,
 name|gint
 name|data_length
@@ -5729,6 +5739,11 @@ modifier|*
 name|buffer
 parameter_list|)
 block|{
+specifier|const
+name|Babl
+modifier|*
+name|format
+decl_stmt|;
 name|guint32
 name|saved_pos
 decl_stmt|;
@@ -5758,6 +5773,14 @@ decl_stmt|;
 name|gint
 name|fail
 decl_stmt|;
+comment|/* XXX use an appropriate format here */
+name|format
+operator|=
+name|gegl_buffer_get_format
+argument_list|(
+name|buffer
+argument_list|)
+expr_stmt|;
 name|info
 operator|->
 name|cp
@@ -6014,6 +6037,8 @@ name|buffer
 argument_list|,
 operator|&
 name|rect
+argument_list|,
+name|format
 argument_list|)
 condition|)
 name|fail
@@ -6035,6 +6060,8 @@ name|buffer
 argument_list|,
 operator|&
 name|rect
+argument_list|,
+name|format
 argument_list|,
 name|offset2
 operator|-
@@ -6154,7 +6181,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_load_tile (XcfInfo * info,GeglBuffer * buffer,GeglRectangle * tile_rect)
+DECL|function|xcf_load_tile (XcfInfo * info,GeglBuffer * buffer,GeglRectangle * tile_rect,const Babl * format)
 name|xcf_load_tile
 parameter_list|(
 name|XcfInfo
@@ -6168,18 +6195,13 @@ parameter_list|,
 name|GeglRectangle
 modifier|*
 name|tile_rect
-parameter_list|)
-block|{
+parameter_list|,
 specifier|const
 name|Babl
 modifier|*
 name|format
-init|=
-name|gegl_buffer_get_format
-argument_list|(
-name|buffer
-argument_list|)
-decl_stmt|;
+parameter_list|)
+block|{
 name|gint
 name|bpp
 init|=
@@ -6233,7 +6255,7 @@ name|tile_rect
 argument_list|,
 literal|0
 argument_list|,
-name|NULL
+name|format
 argument_list|,
 name|tile_data
 argument_list|,
@@ -6249,7 +6271,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_load_tile_rle (XcfInfo * info,GeglBuffer * buffer,GeglRectangle * tile_rect,gint data_length)
+DECL|function|xcf_load_tile_rle (XcfInfo * info,GeglBuffer * buffer,GeglRectangle * tile_rect,const Babl * format,gint data_length)
 name|xcf_load_tile_rle
 parameter_list|(
 name|XcfInfo
@@ -6264,20 +6286,15 @@ name|GeglRectangle
 modifier|*
 name|tile_rect
 parameter_list|,
-name|gint
-name|data_length
-parameter_list|)
-block|{
 specifier|const
 name|Babl
 modifier|*
 name|format
-init|=
-name|gegl_buffer_get_format
-argument_list|(
-name|buffer
-argument_list|)
-decl_stmt|;
+parameter_list|,
+name|gint
+name|data_length
+parameter_list|)
+block|{
 name|gint
 name|bpp
 init|=
@@ -6684,7 +6701,7 @@ name|tile_rect
 argument_list|,
 literal|0
 argument_list|,
-name|NULL
+name|format
 argument_list|,
 name|tile_data
 argument_list|,
