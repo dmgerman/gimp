@@ -393,6 +393,35 @@ end_function_decl
 begin_decl_stmt
 specifier|extern
 name|PyTypeObject
+name|PyGimpGroupLayer_Type
+decl_stmt|;
+end_decl_stmt
+
+begin_define
+DECL|macro|pygimp_layer__group_check (v)
+define|#
+directive|define
+name|pygimp_layer__group_check
+parameter_list|(
+name|v
+parameter_list|)
+value|(PyObject_TypeCheck(v,&PyGimpGroupLayer_Type))
+end_define
+
+begin_function_decl
+name|PyObject
+modifier|*
+name|pygimp_group_layer_new
+parameter_list|(
+name|gint32
+name|ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_decl_stmt
+specifier|extern
+name|PyTypeObject
 name|PyGimpChannel_Type
 decl_stmt|;
 end_decl_stmt
@@ -420,7 +449,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2c3bc1910108
+DECL|struct|__anon27a005b50108
 typedef|typedef
 struct|struct
 block|{
@@ -477,7 +506,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2c3bc1910208
+DECL|struct|__anon27a005b50208
 typedef|typedef
 struct|struct
 block|{
@@ -547,7 +576,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2c3bc1910308
+DECL|struct|__anon27a005b50308
 typedef|typedef
 struct|struct
 block|{
@@ -637,7 +666,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c3bc1910408
+DECL|struct|__anon27a005b50408
 typedef|typedef
 struct|struct
 block|{

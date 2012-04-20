@@ -29,7 +29,7 @@ file|<libgimp/gimp.h>
 end_include
 
 begin_typedef
-DECL|struct|__anon2a28c19f0108
+DECL|struct|__anon2894cdf80108
 typedef|typedef
 struct|struct
 block|{
@@ -48,7 +48,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a28c19f0208
+DECL|struct|__anon2894cdf80208
 typedef|typedef
 struct|struct
 block|{
@@ -64,7 +64,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a28c19f0308
+DECL|struct|__anon2894cdf80308
 typedef|typedef
 struct|struct
 block|{
@@ -80,18 +80,21 @@ name|drawable
 decl_stmt|;
 DECL|typedef|PyGimpDrawable
 DECL|typedef|PyGimpLayer
+DECL|typedef|PyGimpGroupLayer
 DECL|typedef|PyGimpChannel
 block|}
 name|PyGimpDrawable
 operator|,
 name|PyGimpLayer
 operator|,
+name|PyGimpGroupLayer
+operator|,
 name|PyGimpChannel
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a28c19f0408
+DECL|struct|__anon2894cdf80408
 typedef|typedef
 struct|struct
 block|{
@@ -194,6 +197,23 @@ modifier|*
 function_decl|(
 modifier|*
 name|layer_new
+function_decl|)
+parameter_list|(
+name|gint32
+name|ID
+parameter_list|)
+function_decl|;
+DECL|member|GroupLayer_Type
+name|PyTypeObject
+modifier|*
+name|GroupLayer_Type
+decl_stmt|;
+DECL|member|group_layer_new
+name|PyObject
+modifier|*
+function_decl|(
+modifier|*
+name|group_layer_new
 function_decl|)
 parameter_list|(
 name|gint32
@@ -369,6 +389,22 @@ define|#
 directive|define
 name|pygimp_layer_new
 value|(_PyGimp_API->layer_new)
+end_define
+
+begin_define
+DECL|macro|PyGimpGroupLayer_Type
+define|#
+directive|define
+name|PyGimpGroupLayer_Type
+value|(_PyGimp_API->GroupLayer_Type)
+end_define
+
+begin_define
+DECL|macro|pygimp_group_layer_new
+define|#
+directive|define
+name|pygimp_group_layer_new
+value|(_PyGimp_API->group_layer_new)
 end_define
 
 begin_define

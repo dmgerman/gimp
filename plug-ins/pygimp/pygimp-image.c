@@ -896,7 +896,7 @@ name|NULL
 return|;
 block|}
 return|return
-name|pygimp_layer_new
+name|pygimp_group_layer_new
 argument_list|(
 name|layer_id
 argument_list|)
@@ -1018,7 +1018,7 @@ name|self
 parameter_list|)
 block|{
 return|return
-name|pygimp_layer_new
+name|pygimp_group_layer_new
 argument_list|(
 name|gimp_image_flatten
 argument_list|(
@@ -1359,7 +1359,7 @@ name|NULL
 return|;
 block|}
 return|return
-name|pygimp_layer_new
+name|pygimp_group_layer_new
 argument_list|(
 name|id
 argument_list|)
@@ -1461,7 +1461,7 @@ name|NULL
 return|;
 block|}
 return|return
-name|pygimp_layer_new
+name|pygimp_group_layer_new
 argument_list|(
 name|id
 argument_list|)
@@ -1543,7 +1543,7 @@ name|Py_None
 return|;
 block|}
 return|return
-name|pygimp_layer_new
+name|pygimp_group_layer_new
 argument_list|(
 name|id
 argument_list|)
@@ -3315,7 +3315,7 @@ return|return
 name|NULL
 return|;
 return|return
-name|pygimp_layer_new
+name|pygimp_group_layer_new
 argument_list|(
 name|gimp_image_get_layer_by_tattoo
 argument_list|(
@@ -4774,7 +4774,7 @@ name|Py_None
 return|;
 block|}
 return|return
-name|pygimp_layer_new
+name|pygimp_group_layer_new
 argument_list|(
 name|id
 argument_list|)
@@ -5631,7 +5631,7 @@ name|ret
 argument_list|,
 name|i
 argument_list|,
-name|pygimp_layer_new
+name|pygimp_group_layer_new
 argument_list|(
 name|layers
 index|[
