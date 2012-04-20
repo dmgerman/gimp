@@ -730,6 +730,11 @@ name|GeglBuffer
 modifier|*
 name|buffer
 decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|format
+decl_stmt|;
 name|GeglRectangle
 name|tile_rect
 decl_stmt|;
@@ -1235,6 +1240,14 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+comment|/* XXX use an appropriate format here */
+name|format
+operator|=
+name|gegl_buffer_get_format
+argument_list|(
+name|buffer
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|tile_data
@@ -1251,7 +1264,7 @@ name|tile_rect
 argument_list|,
 literal|0
 argument_list|,
-name|NULL
+name|format
 argument_list|,
 name|gimp_plug_in_shm_get_addr
 argument_list|(
@@ -1277,7 +1290,7 @@ name|tile_rect
 argument_list|,
 literal|0
 argument_list|,
-name|NULL
+name|format
 argument_list|,
 name|tile_info
 operator|->
@@ -1587,6 +1600,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+comment|/* XXX use an appropriate format here */
 name|format
 operator|=
 name|gegl_buffer_get_format
@@ -1690,7 +1704,7 @@ name|tile_rect
 argument_list|,
 literal|1.0
 argument_list|,
-name|NULL
+name|format
 argument_list|,
 name|gimp_plug_in_shm_get_addr
 argument_list|(
@@ -1727,7 +1741,7 @@ name|tile_rect
 argument_list|,
 literal|1.0
 argument_list|,
-name|NULL
+name|format
 argument_list|,
 name|tile_data
 operator|.
