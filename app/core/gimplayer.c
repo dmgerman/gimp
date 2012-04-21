@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0ce4210103
+DECL|enum|__anon29d3b8a90103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -204,7 +204,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0ce4210203
+DECL|enum|__anon29d3b8a90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -737,7 +737,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gdouble
 name|gimp_layer_get_opacity_at
 parameter_list|(
 name|GimpPickable
@@ -4180,7 +4180,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gdouble
 DECL|function|gimp_layer_get_opacity_at (GimpPickable * pickable,gint x,gint y)
 name|gimp_layer_get_opacity_at
 parameter_list|(
@@ -4204,10 +4204,10 @@ argument_list|(
 name|pickable
 argument_list|)
 decl_stmt|;
-name|guchar
+name|gdouble
 name|value
 init|=
-literal|0
+name|GIMP_OPACITY_TRANSPARENT
 decl_stmt|;
 if|if
 condition|(
@@ -4248,7 +4248,6 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-comment|/*  If the point is inside, and the layer has no        *  alpha channel, success!        */
 if|if
 condition|(
 operator|!
@@ -4260,10 +4259,14 @@ name|layer
 argument_list|)
 argument_list|)
 condition|)
-return|return
-name|OPAQUE_OPACITY
-return|;
-comment|/*  Otherwise, determine if the alpha value at        *  the given point is non-zero        */
+block|{
+name|value
+operator|=
+name|GIMP_OPACITY_OPAQUE
+expr_stmt|;
+block|}
+else|else
+block|{
 name|gegl_buffer_sample
 argument_list|(
 name|gimp_drawable_get_buffer
@@ -4285,7 +4288,7 @@ name|value
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"A u8"
+literal|"A double"
 argument_list|)
 argument_list|,
 name|GEGL_SAMPLER_NEAREST
@@ -4293,6 +4296,7 @@ argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|layer
@@ -4300,7 +4304,7 @@ operator|->
 name|mask
 condition|)
 block|{
-name|gint
+name|gdouble
 name|mask_value
 decl_stmt|;
 name|mask_value
@@ -4320,12 +4324,8 @@ name|y
 argument_list|)
 expr_stmt|;
 name|value
-operator|=
-name|value
-operator|*
+operator|*=
 name|mask_value
-operator|/
-literal|255
 expr_stmt|;
 block|}
 block|}

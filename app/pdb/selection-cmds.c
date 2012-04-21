@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb-types.h"
 end_include
 
@@ -409,7 +415,10 @@ condition|(
 name|success
 condition|)
 block|{
-name|value
+name|gdouble
+name|val
+decl_stmt|;
+name|val
 operator|=
 name|gimp_pickable_get_opacity_at
 argument_list|(
@@ -424,6 +433,22 @@ argument_list|,
 name|x
 argument_list|,
 name|y
+argument_list|)
+expr_stmt|;
+name|value
+operator|=
+name|ROUND
+argument_list|(
+name|CLAMP
+argument_list|(
+name|val
+argument_list|,
+literal|0.0
+argument_list|,
+literal|1.0
+argument_list|)
+operator|*
+literal|255.0
 argument_list|)
 expr_stmt|;
 block|}

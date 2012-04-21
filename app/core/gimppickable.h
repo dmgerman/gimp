@@ -182,7 +182,7 @@ name|pixel
 parameter_list|)
 function_decl|;
 DECL|member|get_opacity_at
-name|gint
+name|gdouble
 function_decl|(
 modifier|*
 name|get_opacity_at
@@ -333,7 +333,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|gdouble
 name|gimp_pickable_get_opacity_at
 parameter_list|(
 name|GimpPickable

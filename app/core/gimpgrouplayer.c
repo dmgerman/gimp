@@ -613,7 +613,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gdouble
 name|gimp_group_layer_get_opacity_at
 parameter_list|(
 name|GimpPickable
@@ -4069,7 +4069,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gdouble
 DECL|function|gimp_group_layer_get_opacity_at (GimpPickable * pickable,gint x,gint y)
 name|gimp_group_layer_get_opacity_at
 parameter_list|(
@@ -4086,7 +4086,7 @@ parameter_list|)
 block|{
 comment|/* Only consider child layers as having content */
 return|return
-literal|0
+name|GIMP_OPACITY_TRANSPARENT
 return|;
 block|}
 end_function

@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpboundary.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpchannel.h"
 end_include
 
@@ -2951,7 +2945,7 @@ argument_list|,
 name|pressy
 argument_list|)
 operator|>
-name|GIMP_BOUNDARY_HALF_WAY
+literal|0.5
 condition|)
 block|{
 name|gint

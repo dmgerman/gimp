@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b76c6170103
+DECL|enum|__anon2addf50b0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -275,7 +275,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gdouble
 name|gimp_projection_get_opacity_at
 parameter_list|(
 name|GimpPickable
@@ -1400,7 +1400,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gdouble
 DECL|function|gimp_projection_get_opacity_at (GimpPickable * pickable,gint x,gint y)
 name|gimp_projection_get_opacity_at
 parameter_list|(
@@ -1416,7 +1416,7 @@ name|y
 parameter_list|)
 block|{
 return|return
-name|OPAQUE_OPACITY
+name|GIMP_OPACITY_OPAQUE
 return|;
 block|}
 end_function

@@ -155,7 +155,7 @@ operator|-
 name|off_y
 argument_list|)
 operator|>
-literal|63
+literal|0.25
 condition|)
 block|{
 name|g_list_free
@@ -503,7 +503,7 @@ operator|-
 name|off_y
 argument_list|)
 operator|>
-literal|63
+literal|0.25
 condition|)
 block|{
 comment|/*  a normal layer covers any possible text layers below,            *  bail out            */

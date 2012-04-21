@@ -608,7 +608,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gdouble
 DECL|function|gimp_pickable_get_opacity_at (GimpPickable * pickable,gint x,gint y)
 name|gimp_pickable_get_opacity_at
 parameter_list|(
@@ -634,7 +634,7 @@ argument_list|(
 name|pickable
 argument_list|)
 argument_list|,
-literal|0
+name|GIMP_OPACITY_TRANSPARENT
 argument_list|)
 expr_stmt|;
 name|pickable_iface
@@ -663,7 +663,7 @@ name|y
 argument_list|)
 return|;
 return|return
-literal|0
+name|GIMP_OPACITY_TRANSPARENT
 return|;
 block|}
 end_function
