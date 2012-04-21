@@ -329,8 +329,6 @@ block|{
 name|gfloat
 name|comp
 init|=
-name|MIN
-argument_list|(
 name|in
 index|[
 name|b
@@ -344,10 +342,16 @@ index|[
 name|b
 index|]
 operator|)
+decl_stmt|;
+name|comp
+operator|=
+name|MIN
+argument_list|(
+name|comp
 argument_list|,
 literal|1
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|out
 index|[
 name|b
