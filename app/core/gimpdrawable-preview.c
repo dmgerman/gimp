@@ -598,6 +598,11 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
+name|gimp_drawable_get_preview_format
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
 name|src_x
 argument_list|,
 name|src_y

@@ -34,12 +34,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimptempbuf.h"
 end_include
 
@@ -71,6 +65,11 @@ name|TileManager
 modifier|*
 name|tiles
 parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|format
+parameter_list|,
 name|gint
 name|src_x
 parameter_list|,
@@ -95,12 +94,17 @@ end_function_decl
 begin_function
 name|GimpTempBuf
 modifier|*
-DECL|function|tile_manager_get_preview (TileManager * tiles,gint width,gint height)
+DECL|function|tile_manager_get_preview (TileManager * tiles,const Babl * format,gint width,gint height)
 name|tile_manager_get_preview
 parameter_list|(
 name|TileManager
 modifier|*
 name|tiles
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|format
 parameter_list|,
 name|gint
 name|width
@@ -114,6 +118,30 @@ argument_list|(
 name|tiles
 operator|!=
 name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|format
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|format
+argument_list|)
+operator|==
+name|tile_manager_bpp
+argument_list|(
+name|tiles
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -135,6 +163,8 @@ return|return
 name|tile_manager_create_preview
 argument_list|(
 name|tiles
+argument_list|,
+name|format
 argument_list|,
 literal|0
 argument_list|,
@@ -161,12 +191,17 @@ end_function
 begin_function
 name|GimpTempBuf
 modifier|*
-DECL|function|tile_manager_get_sub_preview (TileManager * tiles,gint src_x,gint src_y,gint src_width,gint src_height,gint dest_width,gint dest_height)
+DECL|function|tile_manager_get_sub_preview (TileManager * tiles,const Babl * format,gint src_x,gint src_y,gint src_width,gint src_height,gint dest_width,gint dest_height)
 name|tile_manager_get_sub_preview
 parameter_list|(
 name|TileManager
 modifier|*
 name|tiles
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|format
 parameter_list|,
 name|gint
 name|src_x
@@ -192,6 +227,30 @@ argument_list|(
 name|tiles
 operator|!=
 name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|format
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|format
+argument_list|)
+operator|==
+name|tile_manager_bpp
+argument_list|(
+name|tiles
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -281,6 +340,8 @@ return|return
 name|tile_manager_create_preview
 argument_list|(
 name|tiles
+argument_list|,
+name|format
 argument_list|,
 name|src_x
 argument_list|,
@@ -302,12 +363,17 @@ begin_function
 specifier|static
 name|GimpTempBuf
 modifier|*
-DECL|function|tile_manager_create_preview (TileManager * tiles,gint src_x,gint src_y,gint src_width,gint src_height,gint dest_width,gint dest_height)
+DECL|function|tile_manager_create_preview (TileManager * tiles,const Babl * format,gint src_x,gint src_y,gint src_width,gint src_height,gint dest_width,gint dest_height)
 name|tile_manager_create_preview
 parameter_list|(
 name|TileManager
 modifier|*
 name|tiles
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|format
 parameter_list|,
 name|gint
 name|src_x
@@ -351,13 +417,7 @@ name|dest_width
 argument_list|,
 name|dest_height
 argument_list|,
-name|gimp_bpp_to_babl_format
-argument_list|(
-name|tile_manager_bpp
-argument_list|(
-name|tiles
-argument_list|)
-argument_list|)
+name|format
 argument_list|)
 expr_stmt|;
 name|pixel_region_init

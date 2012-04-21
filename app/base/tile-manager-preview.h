@@ -25,6 +25,11 @@ name|TileManager
 modifier|*
 name|tiles
 parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|format
+parameter_list|,
 name|gint
 name|width
 parameter_list|,
@@ -42,6 +47,11 @@ parameter_list|(
 name|TileManager
 modifier|*
 name|tiles
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|format
 parameter_list|,
 name|gint
 name|src_x

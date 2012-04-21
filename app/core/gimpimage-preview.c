@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpprojectable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpprojection.h"
 end_include
 
@@ -481,6 +487,14 @@ operator|=
 name|tile_manager_get_preview
 argument_list|(
 name|tiles
+argument_list|,
+name|gimp_projectable_get_format
+argument_list|(
+name|GIMP_PROJECTABLE
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
 argument_list|,
 name|width
 argument_list|,

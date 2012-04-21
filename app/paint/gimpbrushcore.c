@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl-utils.h"
+file|"gegl/gimp-babl.h"
 end_include
 
 begin_include
@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fe2b130103
+DECL|enum|__anon28d80d6e0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -7063,6 +7063,9 @@ name|GimpBrushApplicationMode
 name|mode
 parameter_list|)
 block|{
+name|GimpImageBaseType
+name|pixmap_base_type
+decl_stmt|;
 name|gint
 name|pixmap_bytes
 decl_stmt|;
@@ -7094,6 +7097,15 @@ operator|+=
 name|pixmap_mask
 operator|->
 name|height
+expr_stmt|;
+name|pixmap_base_type
+operator|=
+name|gimp_babl_format_get_base_type
+argument_list|(
+name|pixmap_mask
+operator|->
+name|format
+argument_list|)
 expr_stmt|;
 name|pixmap_bytes
 operator|=
@@ -7194,9 +7206,11 @@ name|fish
 operator|=
 name|babl_fish
 argument_list|(
-name|gimp_bpp_to_babl_format_with_alpha
+name|gimp_babl_format
 argument_list|(
-name|pixmap_bytes
+name|pixmap_base_type
+argument_list|,
+name|TRUE
 argument_list|)
 argument_list|,
 name|gimp_drawable_get_format_with_alpha
@@ -7318,10 +7332,9 @@ name|fish
 operator|=
 name|babl_fish
 argument_list|(
-name|gimp_bpp_to_babl_format
-argument_list|(
-name|pixmap_bytes
-argument_list|)
+name|pixmap_mask
+operator|->
+name|format
 argument_list|,
 name|gimp_drawable_get_format_with_alpha
 argument_list|(
