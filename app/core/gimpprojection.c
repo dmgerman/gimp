@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bcb1070103
+DECL|enum|__anon2b76c6170103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -262,8 +262,12 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|guchar
+specifier|const
+name|Babl
 modifier|*
+name|format
+parameter_list|,
+name|gpointer
 name|pixel
 parameter_list|)
 function_decl|;
@@ -1311,7 +1315,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_projection_get_pixel_at (GimpPickable * pickable,gint x,gint y,guchar * pixel)
+DECL|function|gimp_projection_get_pixel_at (GimpPickable * pickable,gint x,gint y,const Babl * format,gpointer pixel)
 name|gimp_projection_get_pixel_at
 parameter_list|(
 name|GimpPickable
@@ -1324,8 +1328,12 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|guchar
+specifier|const
+name|Babl
 modifier|*
+name|format
+parameter_list|,
+name|gpointer
 name|pixel
 parameter_list|)
 block|{
@@ -1377,10 +1385,7 @@ name|NULL
 argument_list|,
 name|pixel
 argument_list|,
-name|gimp_projection_get_format
-argument_list|(
-name|pickable
-argument_list|)
+name|format
 argument_list|,
 name|GEGL_SAMPLER_NEAREST
 argument_list|,

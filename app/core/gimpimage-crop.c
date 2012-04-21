@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a117c40103
+DECL|enum|__anon2acbe6770103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -146,9 +146,6 @@ parameter_list|,
 name|guchar
 modifier|*
 name|col2
-parameter_list|,
-name|gint
-name|bytes
 parameter_list|)
 function_decl|;
 end_typedef
@@ -165,12 +162,6 @@ parameter_list|(
 name|GimpPickable
 modifier|*
 name|pickable
-parameter_list|,
-name|gint
-name|bytes
-parameter_list|,
-name|gboolean
-name|has_alpha
 parameter_list|,
 name|guchar
 modifier|*
@@ -203,9 +194,6 @@ parameter_list|,
 name|guchar
 modifier|*
 name|col2
-parameter_list|,
-name|gint
-name|bytes
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -222,9 +210,6 @@ parameter_list|,
 name|guchar
 modifier|*
 name|col2
-parameter_list|,
-name|gint
-name|bytes
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1227,9 +1212,6 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-name|gboolean
-name|has_alpha
-decl_stmt|;
 name|guchar
 modifier|*
 name|buf
@@ -1245,9 +1227,6 @@ specifier|const
 name|Babl
 modifier|*
 name|format
-decl_stmt|;
-name|gint
-name|bytes
 decl_stmt|;
 name|gint
 name|x
@@ -1372,23 +1351,9 @@ argument_list|)
 expr_stmt|;
 name|format
 operator|=
-name|gimp_pickable_get_format
+name|babl_format
 argument_list|(
-name|pickable
-argument_list|)
-expr_stmt|;
-name|bytes
-operator|=
-name|babl_format_get_bytes_per_pixel
-argument_list|(
-name|format
-argument_list|)
-expr_stmt|;
-name|has_alpha
-operator|=
-name|babl_format_has_alpha
-argument_list|(
-name|format
+literal|"R'G'B'A u8"
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -1396,10 +1361,6 @@ condition|(
 name|gimp_image_crop_guess_bgcolor
 argument_list|(
 name|pickable
-argument_list|,
-name|bytes
-argument_list|,
-name|has_alpha
 argument_list|,
 name|bgcolor
 argument_list|,
@@ -1476,7 +1437,7 @@ argument_list|,
 name|height
 argument_list|)
 operator|*
-name|bytes
+literal|4
 argument_list|)
 expr_stmt|;
 comment|/* Check how many of the top lines are uniform/transparent. */
@@ -1531,7 +1492,6 @@ name|y
 operator|=
 name|y
 expr_stmt|;
-comment|/* XXX use an appropriate format here */
 name|gegl_buffer_get
 argument_list|(
 name|buffer
@@ -1541,7 +1501,7 @@ name|rect
 argument_list|,
 literal|1.0
 argument_list|,
-name|NULL
+name|format
 argument_list|,
 name|buf
 argument_list|,
@@ -1569,9 +1529,7 @@ control|)
 name|abort
 operator|=
 operator|!
-call|(
 name|colors_equal_func
-call|)
 argument_list|(
 name|bgcolor
 argument_list|,
@@ -1579,9 +1537,7 @@ name|buf
 operator|+
 name|x
 operator|*
-name|bytes
-argument_list|,
-name|bytes
+literal|4
 argument_list|)
 expr_stmt|;
 block|}
@@ -1666,7 +1622,7 @@ name|rect
 argument_list|,
 literal|1.0
 argument_list|,
-name|NULL
+name|format
 argument_list|,
 name|buf
 argument_list|,
@@ -1694,9 +1650,7 @@ control|)
 name|abort
 operator|=
 operator|!
-call|(
 name|colors_equal_func
-call|)
 argument_list|(
 name|bgcolor
 argument_list|,
@@ -1704,9 +1658,7 @@ name|buf
 operator|+
 name|x
 operator|*
-name|bytes
-argument_list|,
-name|bytes
+literal|4
 argument_list|)
 expr_stmt|;
 block|}
@@ -1784,7 +1736,7 @@ name|rect
 argument_list|,
 literal|1.0
 argument_list|,
-name|NULL
+name|format
 argument_list|,
 name|buf
 argument_list|,
@@ -1812,9 +1764,7 @@ control|)
 name|abort
 operator|=
 operator|!
-call|(
 name|colors_equal_func
-call|)
 argument_list|(
 name|bgcolor
 argument_list|,
@@ -1822,9 +1772,7 @@ name|buf
 operator|+
 name|y
 operator|*
-name|bytes
-argument_list|,
-name|bytes
+literal|4
 argument_list|)
 expr_stmt|;
 block|}
@@ -1897,7 +1845,7 @@ name|rect
 argument_list|,
 literal|1.0
 argument_list|,
-name|NULL
+name|format
 argument_list|,
 name|buf
 argument_list|,
@@ -1925,9 +1873,7 @@ control|)
 name|abort
 operator|=
 operator|!
-call|(
 name|colors_equal_func
-call|)
 argument_list|(
 name|bgcolor
 argument_list|,
@@ -1935,9 +1881,7 @@ name|buf
 operator|+
 name|y
 operator|*
-name|bytes
-argument_list|,
-name|bytes
+literal|4
 argument_list|)
 expr_stmt|;
 block|}
@@ -1998,18 +1942,12 @@ end_comment
 begin_function
 specifier|static
 name|AutoCropType
-DECL|function|gimp_image_crop_guess_bgcolor (GimpPickable * pickable,gint bytes,gboolean has_alpha,guchar * color,gint x1,gint x2,gint y1,gint y2)
+DECL|function|gimp_image_crop_guess_bgcolor (GimpPickable * pickable,guchar * color,gint x1,gint x2,gint y1,gint y2)
 name|gimp_image_crop_guess_bgcolor
 parameter_list|(
 name|GimpPickable
 modifier|*
 name|pickable
-parameter_list|,
-name|gint
-name|bytes
-parameter_list|,
-name|gboolean
-name|has_alpha
 parameter_list|,
 name|guchar
 modifier|*
@@ -2028,6 +1966,16 @@ name|gint
 name|y2
 parameter_list|)
 block|{
+specifier|const
+name|Babl
+modifier|*
+name|format
+init|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
+decl_stmt|;
 name|guchar
 name|tl
 index|[
@@ -2063,7 +2011,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|bytes
+literal|4
 condition|;
 name|i
 operator|++
@@ -2087,6 +2035,8 @@ name|x1
 argument_list|,
 name|y1
 argument_list|,
+name|format
+argument_list|,
 name|tl
 argument_list|)
 operator|||
@@ -2098,6 +2048,8 @@ argument_list|,
 name|x1
 argument_list|,
 name|y2
+argument_list|,
+name|format
 argument_list|,
 name|tr
 argument_list|)
@@ -2111,6 +2063,8 @@ name|x2
 argument_list|,
 name|y1
 argument_list|,
+name|format
+argument_list|,
 name|bl
 argument_list|)
 operator|||
@@ -2123,6 +2077,8 @@ name|x2
 argument_list|,
 name|y2
 argument_list|,
+name|format
+argument_list|,
 name|br
 argument_list|)
 condition|)
@@ -2133,29 +2089,17 @@ return|;
 block|}
 if|if
 condition|(
-name|has_alpha
-condition|)
-block|{
-name|gint
-name|alpha
-init|=
-name|bytes
-operator|-
-literal|1
-decl_stmt|;
-if|if
-condition|(
 operator|(
 name|tl
 index|[
-name|alpha
+name|ALPHA
 index|]
 operator|==
 literal|0
 operator|&&
 name|tr
 index|[
-name|alpha
+name|ALPHA
 index|]
 operator|==
 literal|0
@@ -2164,14 +2108,14 @@ operator|||
 operator|(
 name|tl
 index|[
-name|alpha
+name|ALPHA
 index|]
 operator|==
 literal|0
 operator|&&
 name|bl
 index|[
-name|alpha
+name|ALPHA
 index|]
 operator|==
 literal|0
@@ -2180,14 +2124,14 @@ operator|||
 operator|(
 name|tr
 index|[
-name|alpha
+name|ALPHA
 index|]
 operator|==
 literal|0
 operator|&&
 name|br
 index|[
-name|alpha
+name|ALPHA
 index|]
 operator|==
 literal|0
@@ -2196,14 +2140,14 @@ operator|||
 operator|(
 name|bl
 index|[
-name|alpha
+name|ALPHA
 index|]
 operator|==
 literal|0
 operator|&&
 name|br
 index|[
-name|alpha
+name|ALPHA
 index|]
 operator|==
 literal|0
@@ -2214,7 +2158,6 @@ return|return
 name|AUTO_CROP_ALPHA
 return|;
 block|}
-block|}
 if|if
 condition|(
 name|gimp_image_crop_colors_equal
@@ -2222,8 +2165,6 @@ argument_list|(
 name|tl
 argument_list|,
 name|tr
-argument_list|,
-name|bytes
 argument_list|)
 operator|||
 name|gimp_image_crop_colors_equal
@@ -2231,8 +2172,6 @@ argument_list|(
 name|tl
 argument_list|,
 name|bl
-argument_list|,
-name|bytes
 argument_list|)
 condition|)
 block|{
@@ -2242,7 +2181,7 @@ name|color
 argument_list|,
 name|tl
 argument_list|,
-name|bytes
+literal|4
 argument_list|)
 expr_stmt|;
 return|return
@@ -2256,8 +2195,6 @@ argument_list|(
 name|br
 argument_list|,
 name|bl
-argument_list|,
-name|bytes
 argument_list|)
 operator|||
 name|gimp_image_crop_colors_equal
@@ -2265,8 +2202,6 @@ argument_list|(
 name|br
 argument_list|,
 name|tr
-argument_list|,
-name|bytes
 argument_list|)
 condition|)
 block|{
@@ -2276,7 +2211,7 @@ name|color
 argument_list|,
 name|br
 argument_list|,
-name|bytes
+literal|4
 argument_list|)
 expr_stmt|;
 return|return
@@ -2292,7 +2227,7 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|gimp_image_crop_colors_equal (guchar * col1,guchar * col2,gint bytes)
+DECL|function|gimp_image_crop_colors_equal (guchar * col1,guchar * col2)
 name|gimp_image_crop_colors_equal
 parameter_list|(
 name|guchar
@@ -2302,9 +2237,6 @@ parameter_list|,
 name|guchar
 modifier|*
 name|col2
-parameter_list|,
-name|gint
-name|bytes
 parameter_list|)
 block|{
 name|gint
@@ -2318,7 +2250,7 @@ literal|0
 init|;
 name|b
 operator|<
-name|bytes
+literal|4
 condition|;
 name|b
 operator|++
@@ -2349,7 +2281,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_image_crop_colors_alpha (guchar * dummy,guchar * col,gint bytes)
+DECL|function|gimp_image_crop_colors_alpha (guchar * dummy,guchar * col)
 name|gimp_image_crop_colors_alpha
 parameter_list|(
 name|guchar
@@ -2359,18 +2291,13 @@ parameter_list|,
 name|guchar
 modifier|*
 name|col
-parameter_list|,
-name|gint
-name|bytes
 parameter_list|)
 block|{
 return|return
 operator|(
 name|col
 index|[
-name|bytes
-operator|-
-literal|1
+name|ALPHA
 index|]
 operator|==
 literal|0

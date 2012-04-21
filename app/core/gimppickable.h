@@ -172,8 +172,12 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|guchar
+specifier|const
+name|Babl
 modifier|*
+name|format
+parameter_list|,
+name|gpointer
 name|pixel
 parameter_list|)
 function_decl|;
@@ -296,8 +300,12 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|guchar
+specifier|const
+name|Babl
 modifier|*
+name|format
+parameter_list|,
+name|gpointer
 name|pixel
 parameter_list|)
 function_decl|;
