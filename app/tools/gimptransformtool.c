@@ -4101,6 +4101,13 @@ name|ret
 init|=
 name|NULL
 decl_stmt|;
+name|GimpTransformResize
+name|clip
+init|=
+name|options
+operator|->
+name|clip
+decl_stmt|;
 name|progress
 operator|=
 name|gimp_progress_start
@@ -4147,8 +4154,6 @@ name|options
 operator|->
 name|recursion_level
 argument_list|,
-name|options
-operator|->
 name|clip
 argument_list|,
 name|progress
@@ -4160,13 +4165,6 @@ name|orig_tiles
 condition|)
 block|{
 comment|/*  this happens when transforming a selection cut out of a        *  normal drawable, or the selection        */
-name|GimpTransformResize
-name|clip_result
-init|=
-name|options
-operator|->
-name|clip
-decl_stmt|;
 comment|/*  always clip the selction and unfloated channels        *  so they keep their size        */
 if|if
 condition|(
@@ -4182,7 +4180,7 @@ argument_list|)
 operator|==
 literal|1
 condition|)
-name|clip_result
+name|clip
 operator|=
 name|GIMP_TRANSFORM_RESIZE_CLIP
 expr_stmt|;
@@ -4220,7 +4218,7 @@ name|options
 operator|->
 name|recursion_level
 argument_list|,
-name|clip_result
+name|clip
 argument_list|,
 name|new_offset_x
 argument_list|,
@@ -4233,6 +4231,18 @@ block|}
 else|else
 block|{
 comment|/*  this happens for entire drawables, paths and layer groups  */
+comment|/*  always clip layer masks so they keep their size        */
+if|if
+condition|(
+name|GIMP_IS_CHANNEL
+argument_list|(
+name|active_item
+argument_list|)
+condition|)
+name|clip
+operator|=
+name|GIMP_TRANSFORM_RESIZE_CLIP
+expr_stmt|;
 name|gimp_item_transform
 argument_list|(
 name|active_item
@@ -4256,8 +4266,6 @@ name|options
 operator|->
 name|recursion_level
 argument_list|,
-name|options
-operator|->
 name|clip
 argument_list|,
 name|progress
