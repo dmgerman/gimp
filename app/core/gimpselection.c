@@ -2905,28 +2905,20 @@ operator|!
 name|keep_indexed
 condition|)
 block|{
-if|if
-condition|(
+name|dest_format
+operator|=
+name|gimp_image_get_format
+argument_list|(
+name|image
+argument_list|,
+name|GIMP_RGB
+argument_list|,
 name|add_alpha
 operator|||
 name|babl_format_has_alpha
 argument_list|(
 name|src_format
 argument_list|)
-condition|)
-name|dest_format
-operator|=
-name|babl_format
-argument_list|(
-literal|"R'G'B'A u8"
-argument_list|)
-expr_stmt|;
-else|else
-name|dest_format
-operator|=
-name|babl_format
-argument_list|(
-literal|"R'G'B' u8"
 argument_list|)
 expr_stmt|;
 block|}
