@@ -1308,7 +1308,9 @@ name|i
 operator|%
 literal|2
 operator|)
-operator|+
+condition|?
+literal|0
+else|:
 literal|1
 init|;
 name|j
