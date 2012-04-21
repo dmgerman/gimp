@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-babl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl/gimp-gegl-nodes.h"
 end_include
 
@@ -185,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ba28390103
+DECL|enum|__anon2bac60a50103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE

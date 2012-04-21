@@ -38,18 +38,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|GimpImageBaseType
-name|gimp_babl_format_get_base_type
-parameter_list|(
-specifier|const
-name|Babl
-modifier|*
-name|format
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 specifier|const
 name|Babl
