@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0947cd0103
+DECL|enum|__anon29a117c40103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -1531,6 +1531,7 @@ name|y
 operator|=
 name|y
 expr_stmt|;
+comment|/* XXX use an appropriate format here */
 name|gegl_buffer_get
 argument_list|(
 name|buffer

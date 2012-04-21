@@ -2804,6 +2804,7 @@ argument_list|(
 name|region
 argument_list|)
 expr_stmt|;
+comment|/* XXX use an appropriate format here */
 name|format
 operator|=
 name|gegl_buffer_get_format
