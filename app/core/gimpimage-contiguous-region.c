@@ -743,7 +743,7 @@ literal|0
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"Y' u8"
+literal|"Y u8"
 argument_list|)
 argument_list|,
 name|GEGL_BUFFER_WRITE

@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bb1f3f0103
+DECL|enum|__anon29c2b4a80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2010,6 +2010,15 @@ name|GIMP_COLOR_FRAME_MODE_PIXEL
 case|:
 if|if
 condition|(
+name|frame
+operator|->
+name|sample_format
+operator|==
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
+operator|||
 name|frame
 operator|->
 name|sample_format

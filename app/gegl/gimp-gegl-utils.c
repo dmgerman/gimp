@@ -72,6 +72,13 @@ name|format
 operator|==
 name|babl_format
 argument_list|(
+literal|"Y u8"
+argument_list|)
+operator|||
+name|format
+operator|==
+name|babl_format
+argument_list|(
 literal|"Y' u8"
 argument_list|)
 condition|)
@@ -173,6 +180,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|format
+operator|==
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
+operator|||
 name|format
 operator|==
 name|babl_format

@@ -352,7 +352,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae3b8720103
+DECL|enum|__anon298d21cb0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -446,7 +446,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae3b8720203
+DECL|enum|__anon298d21cb0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6483,7 +6483,7 @@ expr_stmt|;
 return|return
 name|babl_format
 argument_list|(
-literal|"Y' u8"
+literal|"Y u8"
 argument_list|)
 return|;
 block|}

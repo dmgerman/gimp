@@ -537,6 +537,12 @@ literal|"R'aG'aB'aA u8"
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|g_warn_if_reached
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 return|return
 name|buf
