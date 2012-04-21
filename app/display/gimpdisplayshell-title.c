@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl.h"
+file|"gegl/gimp-babl.h"
 end_include
 
 begin_include
