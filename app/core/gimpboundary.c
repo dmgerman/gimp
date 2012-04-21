@@ -187,12 +187,9 @@ modifier|*
 name|region
 parameter_list|,
 specifier|const
-name|guchar
+name|gfloat
 modifier|*
 name|line_data
-parameter_list|,
-name|gint
-name|bpp
 parameter_list|,
 name|gint
 name|scanline
@@ -223,7 +220,7 @@ parameter_list|,
 name|gint
 name|y2
 parameter_list|,
-name|guchar
+name|gfloat
 name|threshold
 parameter_list|)
 function_decl|;
@@ -302,6 +299,11 @@ name|GeglRectangle
 modifier|*
 name|region
 parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|format
+parameter_list|,
 name|GimpBoundaryType
 name|type
 parameter_list|,
@@ -317,7 +319,7 @@ parameter_list|,
 name|gint
 name|y2
 parameter_list|,
-name|guchar
+name|gfloat
 name|threshold
 parameter_list|)
 function_decl|;
@@ -490,13 +492,13 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_boundary_find:  * @maskPR:    any PixelRegion  * @type:      type of bounds  * @x1:        left side of bounds  * @y1:        top side of bounds  * @x2:        right side of bounds  * @y2:        botton side of bounds  * @threshold: pixel value of boundary line  * @num_segs:  number of returned #GimpBoundSeg's  *  * This function returns an array of #GimpBoundSeg's which describe all  * outlines along pixel value @threahold, optionally within specified  * bounds instead of the whole region.  *  * The @maskPR paramater can be any PixelRegion.  If the region has  * more than 1 bytes/pixel, the last byte of each pixel is used to  * determine the boundary outline.  *  * Return value: the boundary array.  **/
+comment|/**  * gimp_boundary_find:  * @maskPR:    any PixelRegion  * @format:    a #Babl float format representing the component to analyze  * @type:      type of bounds  * @x1:        left side of bounds  * @y1:        top side of bounds  * @x2:        right side of bounds  * @y2:        botton side of bounds  * @threshold: pixel value of boundary line  * @num_segs:  number of returned #GimpBoundSeg's  *  * This function returns an array of #GimpBoundSeg's which describe all  * outlines along pixel value @threahold, optionally within specified  * bounds instead of the whole region.  *  * The @maskPR paramater can be any PixelRegion.  If the region has  * more than 1 bytes/pixel, the last byte of each pixel is used to  * determine the boundary outline.  *  * Return value: the boundary array.  **/
 end_comment
 
 begin_function
 name|GimpBoundSeg
 modifier|*
-DECL|function|gimp_boundary_find (GeglBuffer * buffer,const GeglRectangle * region,GimpBoundaryType type,int x1,int y1,int x2,int y2,guchar threshold,int * num_segs)
+DECL|function|gimp_boundary_find (GeglBuffer * buffer,const GeglRectangle * region,const Babl * format,GimpBoundaryType type,int x1,int y1,int x2,int y2,gfloat threshold,int * num_segs)
 name|gimp_boundary_find
 parameter_list|(
 name|GeglBuffer
@@ -507,6 +509,11 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|region
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|format
 parameter_list|,
 name|GimpBoundaryType
 name|type
@@ -523,7 +530,7 @@ parameter_list|,
 name|int
 name|y2
 parameter_list|,
-name|guchar
+name|gfloat
 name|threshold
 parameter_list|,
 name|int
@@ -557,6 +564,30 @@ argument_list|(
 name|num_segs
 operator|!=
 name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|format
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|format
+argument_list|)
+operator|==
+sizeof|sizeof
+argument_list|(
+name|gfloat
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -601,6 +632,8 @@ name|buffer
 argument_list|,
 operator|&
 name|rect
+argument_list|,
+name|format
 argument_list|,
 name|type
 argument_list|,
@@ -1963,7 +1996,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|find_empty_segs (const GeglRectangle * region,const guchar * line_data,gint bpp,gint scanline,gint empty_segs[],gint max_empty,gint * num_empty,GimpBoundaryType type,gint x1,gint y1,gint x2,gint y2,guchar threshold)
+DECL|function|find_empty_segs (const GeglRectangle * region,const gfloat * line_data,gint scanline,gint empty_segs[],gint max_empty,gint * num_empty,GimpBoundaryType type,gint x1,gint y1,gint x2,gint y2,gfloat threshold)
 name|find_empty_segs
 parameter_list|(
 specifier|const
@@ -1972,12 +2005,9 @@ modifier|*
 name|region
 parameter_list|,
 specifier|const
-name|guchar
+name|gfloat
 modifier|*
 name|line_data
-parameter_list|,
-name|gint
-name|bpp
 parameter_list|,
 name|gint
 name|scanline
@@ -2008,7 +2038,7 @@ parameter_list|,
 name|gint
 name|y2
 parameter_list|,
-name|guchar
+name|gfloat
 name|threshold
 parameter_list|)
 block|{
@@ -2202,15 +2232,7 @@ name|end
 expr_stmt|;
 name|line_data
 operator|+=
-name|bpp
-operator|*
 name|start
-expr_stmt|;
-name|line_data
-operator|+=
-name|bpp
-operator|-
-literal|1
 expr_stmt|;
 for|for
 control|(
@@ -2293,8 +2315,7 @@ literal|1
 expr_stmt|;
 block|}
 name|line_data
-operator|+=
-name|bpp
+operator|++
 expr_stmt|;
 if|if
 condition|(
@@ -2350,8 +2371,7 @@ operator|-
 literal|1
 expr_stmt|;
 name|line_data
-operator|+=
-name|bpp
+operator|++
 expr_stmt|;
 if|if
 condition|(
@@ -2713,7 +2733,7 @@ begin_function
 specifier|static
 name|GimpBoundary
 modifier|*
-DECL|function|generate_boundary (GeglBuffer * buffer,const GeglRectangle * region,GimpBoundaryType type,gint x1,gint y1,gint x2,gint y2,guchar threshold)
+DECL|function|generate_boundary (GeglBuffer * buffer,const GeglRectangle * region,const Babl * format,GimpBoundaryType type,gint x1,gint y1,gint x2,gint y2,gfloat threshold)
 name|generate_boundary
 parameter_list|(
 name|GeglBuffer
@@ -2724,6 +2744,11 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|region
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|format
 parameter_list|,
 name|GimpBoundaryType
 name|type
@@ -2740,18 +2765,13 @@ parameter_list|,
 name|gint
 name|y2
 parameter_list|,
-name|guchar
+name|gfloat
 name|threshold
 parameter_list|)
 block|{
 name|GimpBoundary
 modifier|*
 name|boundary
-decl_stmt|;
-specifier|const
-name|Babl
-modifier|*
-name|format
 decl_stmt|;
 name|GeglRectangle
 name|line_rect
@@ -2760,12 +2780,9 @@ block|{
 literal|0
 block|, }
 decl_stmt|;
-name|guchar
+name|gfloat
 modifier|*
 name|line_data
-decl_stmt|;
-name|gint
-name|bpp
 decl_stmt|;
 name|gint
 name|scanline
@@ -2804,21 +2821,6 @@ argument_list|(
 name|region
 argument_list|)
 expr_stmt|;
-comment|/* XXX use an appropriate format here */
-name|format
-operator|=
-name|gegl_buffer_get_format
-argument_list|(
-name|buffer
-argument_list|)
-expr_stmt|;
-name|bpp
-operator|=
-name|babl_format_get_bytes_per_pixel
-argument_list|(
-name|format
-argument_list|)
-expr_stmt|;
 name|line_rect
 operator|.
 name|width
@@ -2838,7 +2840,10 @@ name|line_data
 operator|=
 name|g_alloca
 argument_list|(
-name|bpp
+sizeof|sizeof
+argument_list|(
+name|gfloat
+argument_list|)
 operator|*
 name|line_rect
 operator|.
@@ -2901,8 +2906,6 @@ name|region
 argument_list|,
 name|NULL
 argument_list|,
-name|bpp
-argument_list|,
 name|start
 operator|-
 literal|1
@@ -2960,8 +2963,6 @@ argument_list|(
 name|region
 argument_list|,
 name|line_data
-argument_list|,
-name|bpp
 argument_list|,
 name|start
 argument_list|,
@@ -3048,8 +3049,6 @@ argument_list|(
 name|region
 argument_list|,
 name|line_data
-argument_list|,
-name|bpp
 argument_list|,
 name|scanline
 operator|+

@@ -830,6 +830,11 @@ name|buffer
 argument_list|,
 name|NULL
 argument_list|,
+name|babl_format
+argument_list|(
+literal|"A float"
+argument_list|)
+argument_list|,
 name|GIMP_BOUNDARY_WITHIN_BOUNDS
 argument_list|,
 literal|0

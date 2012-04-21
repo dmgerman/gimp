@@ -521,6 +521,30 @@ name|babl_format_new
 argument_list|(
 literal|"name"
 argument_list|,
+literal|"A float"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"R'G'B'A"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"float"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"A"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
 literal|"A double"
 argument_list|,
 name|babl_model
@@ -773,7 +797,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28a1223f0108
+DECL|struct|__anon2a1b60410108
 block|{
 DECL|member|name
 specifier|const

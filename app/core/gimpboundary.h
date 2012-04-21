@@ -25,13 +25,13 @@ DECL|macro|GIMP_BOUNDARY_HALF_WAY
 define|#
 directive|define
 name|GIMP_BOUNDARY_HALF_WAY
-value|127
+value|0.5
 end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29749d570103
+DECL|enum|__anon287c246d0103
 block|{
 DECL|enumerator|GIMP_BOUNDARY_WITHIN_BOUNDS
 name|GIMP_BOUNDARY_WITHIN_BOUNDS
@@ -95,6 +95,11 @@ name|GeglRectangle
 modifier|*
 name|region
 parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|format
+parameter_list|,
 name|GimpBoundaryType
 name|type
 parameter_list|,
@@ -110,7 +115,7 @@ parameter_list|,
 name|gint
 name|y2
 parameter_list|,
-name|guchar
+name|gfloat
 name|threshold
 parameter_list|,
 name|gint

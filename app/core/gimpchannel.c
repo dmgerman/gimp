@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon273c3f050103
+DECL|enum|__anon29e226910103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -4548,6 +4548,11 @@ argument_list|,
 operator|&
 name|rect
 argument_list|,
+name|babl_format
+argument_list|(
+literal|"Y float"
+argument_list|)
+argument_list|,
 name|GIMP_BOUNDARY_IGNORE_BOUNDS
 argument_list|,
 name|x1
@@ -4622,6 +4627,11 @@ argument_list|(
 name|buffer
 argument_list|,
 name|NULL
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"Y float"
+argument_list|)
 argument_list|,
 name|GIMP_BOUNDARY_WITHIN_BOUNDS
 argument_list|,
