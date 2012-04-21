@@ -51,6 +51,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|const
+name|Babl
+modifier|*
+name|gimp_babl_format
+parameter_list|(
+name|GimpImageBaseType
+name|base_type
+parameter_list|,
+name|gboolean
+name|with_alpha
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

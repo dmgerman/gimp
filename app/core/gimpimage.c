@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl-utils.h"
+file|"gegl/gimp-babl.h"
 end_include
 
 begin_include
@@ -352,7 +352,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon298d21cb0103
+DECL|enum|__anon2b0375f20103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -446,7 +446,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon298d21cb0203
+DECL|enum|__anon2b0375f20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6315,41 +6315,15 @@ block|{
 case|case
 name|GIMP_RGB
 case|:
-if|if
-condition|(
-name|with_alpha
-condition|)
-return|return
-name|babl_format
-argument_list|(
-literal|"R'G'B'A u8"
-argument_list|)
-return|;
-else|else
-return|return
-name|babl_format
-argument_list|(
-literal|"R'G'B' u8"
-argument_list|)
-return|;
 case|case
 name|GIMP_GRAY
 case|:
-if|if
-condition|(
+return|return
+name|gimp_babl_format
+argument_list|(
+name|base_type
+argument_list|,
 name|with_alpha
-condition|)
-return|return
-name|babl_format
-argument_list|(
-literal|"Y'A u8"
-argument_list|)
-return|;
-else|else
-return|return
-name|babl_format
-argument_list|(
-literal|"Y' u8"
 argument_list|)
 return|;
 case|case
