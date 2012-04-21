@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -162,7 +168,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon273ba5e40103
+DECL|enum|__anon28d08cf20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -175,7 +181,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon273ba5e40203
+DECL|enum|__anon28d08cf20203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON

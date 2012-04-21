@@ -638,8 +638,10 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|gint
-name|bpp
+specifier|const
+name|Babl
+modifier|*
+name|format
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -703,8 +705,8 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|gint
-name|bpp
+name|gboolean
+name|with_alpha
 parameter_list|)
 function_decl|;
 end_function_decl

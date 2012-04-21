@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -9569,7 +9575,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2a091cfa0108
+DECL|struct|__anon29684f610108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10726,7 +10732,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a091cfa0208
+DECL|struct|__anon29684f610208
 block|{
 DECL|member|label
 specifier|const
@@ -11838,7 +11844,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a091cfa0308
+DECL|struct|__anon29684f610308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11993,7 +11999,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a091cfa0408
+DECL|struct|__anon29684f610408
 block|{
 DECL|member|tree_label
 specifier|const
