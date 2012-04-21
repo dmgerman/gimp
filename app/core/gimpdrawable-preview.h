@@ -47,8 +47,10 @@ comment|/*  *  normal functions (no virtuals)  */
 end_comment
 
 begin_function_decl
-name|gint
-name|gimp_drawable_preview_bytes
+specifier|const
+name|Babl
+modifier|*
+name|gimp_drawable_get_preview_format
 parameter_list|(
 name|GimpDrawable
 modifier|*
