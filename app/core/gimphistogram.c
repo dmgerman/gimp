@@ -323,6 +323,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/* XXX need to analyze the real components here, this code assumes u8 */
 name|format
 operator|=
 name|gegl_buffer_get_format
