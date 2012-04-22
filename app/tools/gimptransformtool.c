@@ -4167,14 +4167,13 @@ argument_list|(
 name|active_item
 argument_list|)
 operator|&&
+operator|!
+name|babl_format_has_alpha
+argument_list|(
 name|gegl_buffer_get_format
 argument_list|(
 name|orig_buffer
 argument_list|)
-operator|==
-name|babl_format
-argument_list|(
-literal|"Y u8"
 argument_list|)
 condition|)
 name|clip

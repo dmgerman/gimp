@@ -485,14 +485,13 @@ argument_list|)
 operator|==
 name|GIMP_TYPE_CHANNEL
 operator|&&
+operator|!
+name|babl_format_has_alpha
+argument_list|(
 name|gegl_buffer_get_format
 argument_list|(
 name|orig_buffer
 argument_list|)
-operator|==
-name|babl_format
-argument_list|(
-literal|"Y u8"
 argument_list|)
 condition|)
 name|clip_result
@@ -2856,14 +2855,13 @@ argument_list|(
 name|drawable
 argument_list|)
 operator|&&
+operator|!
+name|babl_format_has_alpha
+argument_list|(
 name|gegl_buffer_get_format
 argument_list|(
 name|orig_buffer
 argument_list|)
-operator|==
-name|babl_format
-argument_list|(
-literal|"Y u8"
 argument_list|)
 condition|)
 name|clip_result
@@ -3150,7 +3148,7 @@ decl_stmt|;
 name|gint
 name|new_offset_y
 decl_stmt|;
-comment|/*  always clip unfloated tiles so they keep their size  */
+comment|/*  always clip unfloated buffers so they keep their size  */
 if|if
 condition|(
 name|GIMP_IS_CHANNEL
@@ -3158,14 +3156,13 @@ argument_list|(
 name|drawable
 argument_list|)
 operator|&&
+operator|!
+name|babl_format_has_alpha
+argument_list|(
 name|gegl_buffer_get_format
 argument_list|(
 name|orig_buffer
 argument_list|)
-operator|==
-name|babl_format
-argument_list|(
-literal|"Y u8"
 argument_list|)
 condition|)
 name|clip_result
@@ -3447,7 +3444,7 @@ decl_stmt|;
 name|gint
 name|new_offset_y
 decl_stmt|;
-comment|/*  always clip unfloated tiles so they keep their size  */
+comment|/*  always clip unfloated buffers so they keep their size  */
 if|if
 condition|(
 name|GIMP_IS_CHANNEL
@@ -3455,14 +3452,13 @@ argument_list|(
 name|drawable
 argument_list|)
 operator|&&
+operator|!
+name|babl_format_has_alpha
+argument_list|(
 name|gegl_buffer_get_format
 argument_list|(
 name|orig_buffer
 argument_list|)
-operator|==
-name|babl_format
-argument_list|(
-literal|"Y u8"
 argument_list|)
 condition|)
 name|clip_result
@@ -3727,7 +3723,7 @@ name|w
 decl_stmt|,
 name|h
 decl_stmt|;
-comment|/* set the keep_indexed flag to FALSE here, since we use        * gimp_layer_new_from_tiles() later which assumes that the tiles        * are either RGB or GRAY.  Eeek!!!              (Sven)        */
+comment|/* set the keep_indexed flag to FALSE here, since we use        * gimp_layer_new_from_buffer() later which assumes that the buffer        * are either RGB or GRAY.  Eeek!!!              (Sven)        */
 if|if
 condition|(
 name|gimp_item_mask_intersect
