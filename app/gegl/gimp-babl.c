@@ -192,7 +192,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ac0c7880108
+DECL|struct|__anon28dac47b0108
 block|{
 DECL|member|name
 specifier|const
@@ -277,6 +277,24 @@ block|}
 block|,
 block|{
 literal|"A u8"
+block|,
+name|N_
+argument_list|(
+literal|"Alpha component"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"A float"
+block|,
+name|N_
+argument_list|(
+literal|"Alpha component"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"A double"
 block|,
 name|N_
 argument_list|(
