@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296be1bf0103
+DECL|enum|__anon2b89f8f70103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -660,9 +660,14 @@ parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
-name|PixelRegion
+name|GeglBuffer
 modifier|*
-name|maskPR
+name|mask
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|mask_region
 parameter_list|,
 name|gint
 name|x
@@ -3821,7 +3826,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_replace_buffer (GimpDrawable * drawable,GeglBuffer * buffer,const GeglRectangle * buffer_region,gboolean push_undo,const gchar * undo_desc,gdouble opacity,PixelRegion * maskPR,gint x,gint y)
+DECL|function|gimp_channel_replace_buffer (GimpDrawable * drawable,GeglBuffer * buffer,const GeglRectangle * buffer_region,gboolean push_undo,const gchar * undo_desc,gdouble opacity,GeglBuffer * mask,const GeglRectangle * mask_region,gint x,gint y)
 name|gimp_channel_replace_buffer
 parameter_list|(
 name|GimpDrawable
@@ -3848,9 +3853,14 @@ parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
-name|PixelRegion
+name|GeglBuffer
 modifier|*
-name|maskPR
+name|mask
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|mask_region
 parameter_list|,
 name|gint
 name|x
@@ -3883,7 +3893,9 @@ name|undo_desc
 argument_list|,
 name|opacity
 argument_list|,
-name|maskPR
+name|mask
+argument_list|,
+name|mask_region
 argument_list|,
 name|x
 argument_list|,

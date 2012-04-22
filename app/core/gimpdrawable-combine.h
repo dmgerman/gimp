@@ -102,9 +102,14 @@ parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
-name|PixelRegion
+name|GeglBuffer
 modifier|*
-name|maskPR
+name|mask
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|mask_region
 parameter_list|,
 name|gint
 name|x
