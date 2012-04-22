@@ -352,7 +352,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c81dd890103
+DECL|enum|__anon28e472fb0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -446,7 +446,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c81dd890203
+DECL|enum|__anon28e472fb0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5557,29 +5557,39 @@ case|:
 case|case
 name|GIMP_INDEXED
 case|:
+if|#
+directive|if
+literal|0
+comment|/* XXX use real format once the legacy projection is gone */
+block|return gimp_image_get_format (image, GIMP_RGB, TRUE);
+else|#
+directive|else
 return|return
-name|gimp_image_get_format
+name|babl_format
 argument_list|(
-name|image
-argument_list|,
-name|GIMP_RGB
-argument_list|,
-name|TRUE
+literal|"R'G'B'A u8"
 argument_list|)
 return|;
+endif|#
+directive|endif
 case|case
 name|GIMP_GRAY
 case|:
+if|#
+directive|if
+literal|0
+comment|/* XXX use real format once the legacy projection is gone */
+block|return gimp_image_get_format (image, GIMP_GRAY, TRUE);
+else|#
+directive|else
 return|return
-name|gimp_image_get_format
+name|babl_format
 argument_list|(
-name|image
-argument_list|,
-name|GIMP_GRAY
-argument_list|,
-name|TRUE
+literal|"Y'A u8"
 argument_list|)
 return|;
+endif|#
+directive|endif
 block|}
 name|g_assert_not_reached
 argument_list|()
