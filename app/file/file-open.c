@@ -125,6 +125,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-babl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -1322,9 +1328,13 @@ case|:
 operator|*
 name|format
 operator|=
-name|babl_format
+name|gimp_babl_format
 argument_list|(
-literal|"R'G'B' u8"
+name|GIMP_RGB
+argument_list|,
+name|GIMP_PRECISION_U8
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1334,9 +1344,13 @@ case|:
 operator|*
 name|format
 operator|=
-name|babl_format
+name|gimp_babl_format
 argument_list|(
-literal|"R'G'B'A u8"
+name|GIMP_RGB
+argument_list|,
+name|GIMP_PRECISION_U8
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1346,9 +1360,13 @@ case|:
 operator|*
 name|format
 operator|=
-name|babl_format
+name|gimp_babl_format
 argument_list|(
-literal|"Y' u8"
+name|GIMP_GRAY
+argument_list|,
+name|GIMP_PRECISION_U8
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1358,9 +1376,13 @@ case|:
 operator|*
 name|format
 operator|=
-name|babl_format
+name|gimp_babl_format
 argument_list|(
-literal|"Y'A u8"
+name|GIMP_GRAY
+argument_list|,
+name|GIMP_PRECISION_U8
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 break|break;

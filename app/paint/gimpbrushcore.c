@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d80d6e0103
+DECL|enum|__anon2c061e800103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -4909,10 +4909,9 @@ name|height
 operator|+
 literal|2
 argument_list|,
-name|babl_format
-argument_list|(
-literal|"Y u8"
-argument_list|)
+name|mask
+operator|->
+name|format
 argument_list|)
 expr_stmt|;
 name|gimp_temp_buf_data_clear
@@ -5358,10 +5357,9 @@ name|height
 operator|+
 literal|2
 argument_list|,
-name|babl_format
-argument_list|(
-literal|"Y u8"
-argument_list|)
+name|brush_mask
+operator|->
+name|format
 argument_list|)
 expr_stmt|;
 name|gimp_temp_buf_data_clear
@@ -7066,6 +7064,9 @@ block|{
 name|GimpImageBaseType
 name|pixmap_base_type
 decl_stmt|;
+name|GimpPrecision
+name|pixmap_precision
+decl_stmt|;
 name|gint
 name|pixmap_bytes
 decl_stmt|;
@@ -7101,6 +7102,15 @@ expr_stmt|;
 name|pixmap_base_type
 operator|=
 name|gimp_babl_format_get_base_type
+argument_list|(
+name|pixmap_mask
+operator|->
+name|format
+argument_list|)
+expr_stmt|;
+name|pixmap_precision
+operator|=
+name|gimp_babl_format_get_precision
 argument_list|(
 name|pixmap_mask
 operator|->
@@ -7209,6 +7219,8 @@ argument_list|(
 name|gimp_babl_format
 argument_list|(
 name|pixmap_base_type
+argument_list|,
+name|pixmap_precision
 argument_list|,
 name|TRUE
 argument_list|)

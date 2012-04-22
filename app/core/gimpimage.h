@@ -593,6 +593,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpPrecision
+name|gimp_image_get_precision
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|CombinationMode
 name|gimp_image_get_combination_mode
 parameter_list|(

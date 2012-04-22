@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-babl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -65,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c2b4a80103
+DECL|enum|__anon288fa0540103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2010,32 +2016,14 @@ name|GIMP_COLOR_FRAME_MODE_PIXEL
 case|:
 if|if
 condition|(
+name|gimp_babl_format_get_base_type
+argument_list|(
 name|frame
 operator|->
 name|sample_format
-operator|==
-name|babl_format
-argument_list|(
-literal|"Y u8"
 argument_list|)
-operator|||
-name|frame
-operator|->
-name|sample_format
 operator|==
-name|babl_format
-argument_list|(
-literal|"Y' u8"
-argument_list|)
-operator|||
-name|frame
-operator|->
-name|sample_format
-operator|==
-name|babl_format
-argument_list|(
-literal|"Y'A u8"
-argument_list|)
+name|GIMP_GRAY
 condition|)
 block|{
 name|names

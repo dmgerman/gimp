@@ -117,6 +117,11 @@ name|GimpImageBaseType
 name|base_type
 decl_stmt|;
 comment|/*  base gimp_image type         */
+DECL|member|precision
+name|GimpPrecision
+name|precision
+decl_stmt|;
+comment|/*  image's precision            */
 DECL|member|colormap
 name|guchar
 modifier|*

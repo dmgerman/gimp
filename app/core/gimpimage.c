@@ -352,7 +352,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0375f20103
+DECL|enum|__anon299bb5ac0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -446,7 +446,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0375f20203
+DECL|enum|__anon299bb5ac0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2759,6 +2759,12 @@ operator|->
 name|base_type
 operator|=
 name|GIMP_RGB
+expr_stmt|;
+name|private
+operator|->
+name|precision
+operator|=
+name|GIMP_PRECISION_U8
 expr_stmt|;
 name|private
 operator|->
@@ -5144,9 +5150,15 @@ name|private
 operator|->
 name|babl_palette_rgb
 argument_list|,
-name|babl_format
+name|gimp_babl_format
 argument_list|(
-literal|"R'G'B' u8"
+name|GIMP_RGB
+argument_list|,
+name|private
+operator|->
+name|precision
+argument_list|,
+name|FALSE
 argument_list|)
 argument_list|,
 name|private
@@ -5164,9 +5176,15 @@ name|private
 operator|->
 name|babl_palette_rgba
 argument_list|,
-name|babl_format
+name|gimp_babl_format
 argument_list|(
-literal|"R'G'B' u8"
+name|GIMP_RGB
+argument_list|,
+name|private
+operator|->
+name|precision
+argument_list|,
+name|FALSE
 argument_list|)
 argument_list|,
 name|private
@@ -5455,13 +5473,22 @@ modifier|*
 name|projectable
 parameter_list|)
 block|{
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|GIMP_IMAGE
+argument_list|(
+name|projectable
+argument_list|)
+decl_stmt|;
 name|GimpImagePrivate
 modifier|*
 name|private
 init|=
 name|GIMP_IMAGE_GET_PRIVATE
 argument_list|(
-name|projectable
+name|image
 argument_list|)
 decl_stmt|;
 switch|switch
@@ -5478,18 +5505,26 @@ case|case
 name|GIMP_INDEXED
 case|:
 return|return
-name|babl_format
+name|gimp_image_get_format
 argument_list|(
-literal|"R'G'B'A u8"
+name|image
+argument_list|,
+name|GIMP_RGB
+argument_list|,
+name|TRUE
 argument_list|)
 return|;
 case|case
 name|GIMP_GRAY
 case|:
 return|return
-name|babl_format
+name|gimp_image_get_format
 argument_list|(
-literal|"Y'A u8"
+name|image
+argument_list|,
+name|GIMP_GRAY
+argument_list|,
+name|TRUE
 argument_list|)
 return|;
 block|}
@@ -6255,6 +6290,39 @@ block|}
 end_function
 
 begin_function
+name|GimpPrecision
+DECL|function|gimp_image_get_precision (const GimpImage * image)
+name|gimp_image_get_precision
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+return|return
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
+name|image
+argument_list|)
+operator|->
+name|precision
+return|;
+block|}
+end_function
+
+begin_function
 name|CombinationMode
 DECL|function|gimp_image_get_combination_mode (GimpImageType dest_type,gint src_bytes)
 name|gimp_image_get_combination_mode
@@ -6322,6 +6390,11 @@ return|return
 name|gimp_babl_format
 argument_list|(
 name|base_type
+argument_list|,
+name|gimp_image_get_precision
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|with_alpha
 argument_list|)
@@ -6423,9 +6496,13 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|babl_format
+name|gimp_image_get_format
 argument_list|(
-literal|"Y' u8"
+name|image
+argument_list|,
+name|GIMP_GRAY
+argument_list|,
+name|FALSE
 argument_list|)
 return|;
 block|}
