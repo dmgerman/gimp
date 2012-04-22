@@ -355,7 +355,7 @@ argument_list|(
 name|template
 argument_list|)
 argument_list|,
-name|gimp_template_get_image_type
+name|gimp_template_get_base_type
 argument_list|(
 name|template
 argument_list|)

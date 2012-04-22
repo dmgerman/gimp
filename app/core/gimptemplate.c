@@ -71,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291c13c60103
+DECL|enum|__anon2a049ac10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,8 +94,8 @@ block|,
 DECL|enumerator|PROP_RESOLUTION_UNIT
 name|PROP_RESOLUTION_UNIT
 block|,
-DECL|enumerator|PROP_IMAGE_TYPE
-name|PROP_IMAGE_TYPE
+DECL|enumerator|PROP_BASE_TYPE
+name|PROP_BASE_TYPE
 block|,
 DECL|enumerator|PROP_FILL_TYPE
 name|PROP_FILL_TYPE
@@ -147,9 +147,9 @@ DECL|member|resolution_unit
 name|GimpUnit
 name|resolution_unit
 decl_stmt|;
-DECL|member|image_type
+DECL|member|base_type
 name|GimpImageBaseType
-name|image_type
+name|base_type
 decl_stmt|;
 DECL|member|fill_type
 name|GimpFillType
@@ -463,10 +463,11 @@ name|GIMP_CONFIG_INSTALL_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_IMAGE_TYPE
+name|PROP_BASE_TYPE
 argument_list|,
 literal|"image-type"
 argument_list|,
+comment|/* serialized name */
 name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_BASE_TYPE
@@ -740,11 +741,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_IMAGE_TYPE
+name|PROP_BASE_TYPE
 case|:
 name|private
 operator|->
-name|image_type
+name|base_type
 operator|=
 name|g_value_get_enum
 argument_list|(
@@ -947,7 +948,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_IMAGE_TYPE
+name|PROP_BASE_TYPE
 case|:
 name|g_value_set_enum
 argument_list|(
@@ -955,7 +956,7 @@ name|value
 argument_list|,
 name|private
 operator|->
-name|image_type
+name|base_type
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1067,7 +1068,7 @@ operator|(
 operator|(
 name|private
 operator|->
-name|image_type
+name|base_type
 operator|==
 name|GIMP_RGB
 condition|?
@@ -1123,7 +1124,7 @@ name|gimp_projection_estimate_memsize
 argument_list|(
 name|private
 operator|->
-name|image_type
+name|base_type
 argument_list|,
 name|private
 operator|->
@@ -1218,7 +1219,7 @@ name|gdouble
 name|yresolution
 decl_stmt|;
 name|GimpImageBaseType
-name|image_type
+name|base_type
 decl_stmt|;
 specifier|const
 name|GimpParasite
@@ -1258,7 +1259,7 @@ operator|&
 name|yresolution
 argument_list|)
 expr_stmt|;
-name|image_type
+name|base_type
 operator|=
 name|gimp_image_base_type
 argument_list|(
@@ -1267,11 +1268,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_type
+name|base_type
 operator|==
 name|GIMP_INDEXED
 condition|)
-name|image_type
+name|base_type
 operator|=
 name|GIMP_RGB
 expr_stmt|;
@@ -1338,7 +1339,7 @@ argument_list|)
 argument_list|,
 literal|"image-type"
 argument_list|,
-name|image_type
+name|base_type
 argument_list|,
 literal|"comment"
 argument_list|,
@@ -1547,8 +1548,8 @@ end_function
 
 begin_function
 name|GimpImageBaseType
-DECL|function|gimp_template_get_image_type (GimpTemplate * template)
-name|gimp_template_get_image_type
+DECL|function|gimp_template_get_base_type (GimpTemplate * template)
+name|gimp_template_get_base_type
 parameter_list|(
 name|GimpTemplate
 modifier|*
@@ -1571,7 +1572,7 @@ argument_list|(
 name|template
 argument_list|)
 operator|->
-name|image_type
+name|base_type
 return|;
 block|}
 end_function

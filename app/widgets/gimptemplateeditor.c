@@ -110,7 +110,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f728800103
+DECL|enum|__anon293880840103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3429,7 +3429,7 @@ name|gimp_enum_get_value
 argument_list|(
 name|GIMP_TYPE_IMAGE_BASE_TYPE
 argument_list|,
-name|gimp_template_get_image_type
+name|gimp_template_get_base_type
 argument_list|(
 name|template
 argument_list|)

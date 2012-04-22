@@ -286,7 +286,7 @@ end_function_decl
 
 begin_function_decl
 name|GimpImageBaseType
-name|gimp_template_get_image_type
+name|gimp_template_get_base_type
 parameter_list|(
 name|GimpTemplate
 modifier|*
