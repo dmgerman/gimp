@@ -530,14 +530,6 @@ decl_stmt|;
 name|gdouble
 name|rate
 decl_stmt|;
-if|if
-condition|(
-name|gimp_drawable_is_indexed
-argument_list|(
-name|drawable
-argument_list|)
-condition|)
-return|return;
 name|image
 operator|=
 name|gimp_item_get_image
