@@ -123,7 +123,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_levels:  * @drawable_ID: The drawable.  * @channel: The channel to modify.  * @low_input: Intensity of lowest input.  * @high_input: Intensity of highest input.  * @gamma: Gamma correction factor.  * @low_output: Intensity of lowest output.  * @high_output: Intensity of highest output.  *  * Modifies intensity levels in the specified drawable.  *  * This tool allows intensity levels in the specified drawable to be  * remapped according to a set of parameters. The low/high input levels  * specify an initial mapping from the source intensities. The gamma  * value determines how intensities between the low and high input  * intensities are interpolated. A gamma value of 1.0 results in a  * linear interpolation. Higher gamma values result in more high-level  * intensities. Lower gamma values result in more low-level  * intensities. The low/high output levels constrain the final  * intensity mapping--that is, no final intensity will be lower than  * the low output level and no final intensity will be higher than the  * high output level. This tool is only valid on RGB color and  * grayscale images. It will not operate on indexed drawables.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_levels:  * @drawable_ID: The drawable.  * @channel: The channel to modify.  * @low_input: Intensity of lowest input.  * @high_input: Intensity of highest input.  * @gamma: Gamma correction factor.  * @low_output: Intensity of lowest output.  * @high_output: Intensity of highest output.  *  * Modifies intensity levels in the specified drawable.  *  * This tool allows intensity levels in the specified drawable to be  * remapped according to a set of parameters. The low/high input levels  * specify an initial mapping from the source intensities. The gamma  * value determines how intensities between the low and high input  * intensities are interpolated. A gamma value of 1.0 results in a  * linear interpolation. Higher gamma values result in more high-level  * intensities. Lower gamma values result in more low-level  * intensities. The low/high output levels constrain the final  * intensity mapping--that is, no final intensity will be lower than  * the low output level and no final intensity will be higher than the  * high output level. This tool is only valid on RGB color and  * grayscale images.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -581,7 +581,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_equalize:  * @drawable_ID: The drawable.  * @mask_only: Equalization option.  *  * Equalize the contents of the specified drawable.  *  * This procedure equalizes the contents of the specified drawable.  * Each intensity channel is equalized independently. The equalized  * intensity is given as inten' = (255 - inten). Indexed color  * drawables are not valid for this operation. The 'mask_only' option  * specifies whether to adjust only the area of the image within the  * selection bounds, or the entire image based on the histogram of the  * selected area. If there is no selection, the entire image is  * adjusted based on the histogram for the entire image.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_equalize:  * @drawable_ID: The drawable.  * @mask_only: Equalization option.  *  * Equalize the contents of the specified drawable.  *  * This procedure equalizes the contents of the specified drawable.  * Each intensity channel is equalized independently. The equalized  * intensity is given as inten' = (255 - inten). The 'mask_only' option  * specifies whether to adjust only the area of the image within the  * selection bounds, or the entire image based on the histogram of the  * selected area. If there is no selection, the entire image is  * adjusted based on the histogram for the entire image.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -655,7 +655,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_invert:  * @drawable_ID: The drawable.  *  * Invert the contents of the specified drawable.  *  * This procedure inverts the contents of the specified drawable. Each  * intensity channel is inverted independently. The inverted intensity  * is given as inten' = (255 - inten). Indexed color drawables are not  * valid for this operation.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_invert:  * @drawable_ID: The drawable.  *  * Invert the contents of the specified drawable.  *  * This procedure inverts the contents of the specified drawable. Each  * intensity channel is inverted independently. The inverted intensity  * is given as inten' = (255 - inten).  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function

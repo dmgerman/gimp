@@ -665,11 +665,6 @@ init|=
 name|FALSE
 decl_stmt|;
 name|gboolean
-name|is_indexed
-init|=
-name|FALSE
-decl_stmt|;
-name|gboolean
 name|visible
 init|=
 name|FALSE
@@ -730,13 +725,6 @@ decl_stmt|;
 name|is_rgb
 operator|=
 name|gimp_drawable_is_rgb
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
-name|is_indexed
-operator|=
-name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable
 argument_list|)
@@ -851,9 +839,6 @@ name|writable
 operator|&&
 operator|!
 name|children
-operator|&&
-operator|!
-name|is_indexed
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

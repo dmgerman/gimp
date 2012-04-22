@@ -1500,11 +1500,6 @@ argument_list|)
 argument_list|,
 name|error
 argument_list|)
-operator|||
-name|gimp_drawable_is_indexed
-argument_list|(
-name|drawable
-argument_list|)
 condition|)
 name|success
 operator|=
@@ -1627,12 +1622,6 @@ name|drawable
 argument_list|)
 argument_list|,
 name|error
-argument_list|)
-operator|&&
-operator|!
-name|gimp_drawable_is_indexed
-argument_list|(
-name|drawable
 argument_list|)
 condition|)
 block|{
@@ -3620,7 +3609,7 @@ literal|"gimp-levels"
 argument_list|,
 literal|"Modifies intensity levels in the specified drawable."
 argument_list|,
-literal|"This tool allows intensity levels in the specified drawable to be remapped according to a set of parameters. The low/high input levels specify an initial mapping from the source intensities. The gamma value determines how intensities between the low and high input intensities are interpolated. A gamma value of 1.0 results in a linear interpolation. Higher gamma values result in more high-level intensities. Lower gamma values result in more low-level intensities. The low/high output levels constrain the final intensity mapping--that is, no final intensity will be lower than the low output level and no final intensity will be higher than the high output level. This tool is only valid on RGB color and grayscale images. It will not operate on indexed drawables."
+literal|"This tool allows intensity levels in the specified drawable to be remapped according to a set of parameters. The low/high input levels specify an initial mapping from the source intensities. The gamma value determines how intensities between the low and high input intensities are interpolated. A gamma value of 1.0 results in a linear interpolation. Higher gamma values result in more high-level intensities. Lower gamma values result in more low-level intensities. The low/high output levels constrain the final intensity mapping--that is, no final intensity will be lower than the low output level and no final intensity will be higher than the high output level. This tool is only valid on RGB color and grayscale images."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -4218,7 +4207,7 @@ literal|"gimp-equalize"
 argument_list|,
 literal|"Equalize the contents of the specified drawable."
 argument_list|,
-literal|"This procedure equalizes the contents of the specified drawable. Each intensity channel is equalized independently. The equalized intensity is given as inten' = (255 - inten). Indexed color drawables are not valid for this operation. The 'mask_only' option specifies whether to adjust only the area of the image within the selection bounds, or the entire image based on the histogram of the selected area. If there is no selection, the entire image is adjusted based on the histogram for the entire image."
+literal|"This procedure equalizes the contents of the specified drawable. Each intensity channel is equalized independently. The equalized intensity is given as inten' = (255 - inten). The 'mask_only' option specifies whether to adjust only the area of the image within the selection bounds, or the entire image based on the histogram of the selected area. If there is no selection, the entire image is adjusted based on the histogram for the entire image."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -4307,7 +4296,7 @@ literal|"gimp-invert"
 argument_list|,
 literal|"Invert the contents of the specified drawable."
 argument_list|,
-literal|"This procedure inverts the contents of the specified drawable. Each intensity channel is inverted independently. The inverted intensity is given as inten' = (255 - inten). Indexed color drawables are not valid for this operation."
+literal|"This procedure inverts the contents of the specified drawable. Each intensity channel is inverted independently. The inverted intensity is given as inten' = (255 - inten)."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
