@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2a1e640108
+DECL|struct|__anon2a2eb0b40108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -208,7 +208,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2a1e640208
+DECL|struct|__anon2a2eb0b40208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -2393,9 +2393,9 @@ operator|->
 name|h
 argument_list|)
 argument_list|,
-name|babl_format
+name|gimp_image_get_mask_format
 argument_list|(
-literal|"Y u8"
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2516,15 +2516,26 @@ name|drawable
 argument_list|)
 condition|)
 block|{
+specifier|const
+name|Babl
+modifier|*
+name|component_format
+decl_stmt|;
+name|component_format
+operator|=
+name|gimp_image_get_component_format
+argument_list|(
+name|image
+argument_list|,
+name|GIMP_ALPHA_CHANNEL
+argument_list|)
+expr_stmt|;
 comment|/*  extract the aplha into the temp mask  */
 name|gegl_buffer_set_format
 argument_list|(
 name|temp_buffer
 argument_list|,
-name|babl_format
-argument_list|(
-literal|"A u8"
-argument_list|)
+name|component_format
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
