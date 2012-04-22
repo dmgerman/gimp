@@ -352,7 +352,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c17fa4c0103
+DECL|enum|__anon2bd553000103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -446,7 +446,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c17fa4c0203
+DECL|enum|__anon2bd553000203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6591,12 +6591,29 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+switch|switch
+condition|(
+name|gimp_image_get_precision
+argument_list|(
+name|image
+argument_list|)
+condition|)
+block|{
+case|case
+name|GIMP_PRECISION_U8
+case|:
 return|return
 name|babl_format
 argument_list|(
 literal|"Y u8"
 argument_list|)
 return|;
+block|}
+name|g_return_val_if_reached
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -8351,36 +8368,80 @@ case|case
 name|GIMP_RED_CHANNEL
 case|:
 return|return
-name|babl_format
+name|gimp_babl_component_format
 argument_list|(
-literal|"R' u8"
+name|GIMP_RGB
+argument_list|,
+name|gimp_image_get_precision
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|RED
 argument_list|)
 return|;
 case|case
 name|GIMP_GREEN_CHANNEL
 case|:
 return|return
-name|babl_format
+name|gimp_babl_component_format
 argument_list|(
-literal|"G' u8"
+name|GIMP_RGB
+argument_list|,
+name|gimp_image_get_precision
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|GREEN
 argument_list|)
 return|;
 case|case
 name|GIMP_BLUE_CHANNEL
 case|:
 return|return
-name|babl_format
+name|gimp_babl_component_format
 argument_list|(
-literal|"B' u8"
+name|GIMP_RGB
+argument_list|,
+name|gimp_image_get_precision
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|BLUE
+argument_list|)
+return|;
+case|case
+name|GIMP_ALPHA_CHANNEL
+case|:
+return|return
+name|gimp_babl_component_format
+argument_list|(
+name|GIMP_RGB
+argument_list|,
+name|gimp_image_get_precision
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|ALPHA
 argument_list|)
 return|;
 case|case
 name|GIMP_GRAY_CHANNEL
 case|:
 return|return
-name|babl_format
+name|gimp_babl_component_format
 argument_list|(
-literal|"Y' u8"
+name|GIMP_GRAY
+argument_list|,
+name|gimp_image_get_precision
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|GRAY
 argument_list|)
 return|;
 case|case
@@ -8393,15 +8454,6 @@ literal|"Y' u8"
 argument_list|)
 return|;
 comment|/* XXX: seems wrong */
-case|case
-name|GIMP_ALPHA_CHANNEL
-case|:
-return|return
-name|babl_format
-argument_list|(
-literal|"A u8"
-argument_list|)
-return|;
 block|}
 return|return
 name|NULL
