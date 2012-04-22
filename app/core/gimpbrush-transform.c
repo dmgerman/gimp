@@ -546,10 +546,11 @@ name|dest_width
 argument_list|,
 name|dest_height
 argument_list|,
-name|babl_format
-argument_list|(
-literal|"Y u8"
-argument_list|)
+name|brush
+operator|->
+name|mask
+operator|->
+name|format
 argument_list|)
 expr_stmt|;
 name|dest
@@ -1534,10 +1535,11 @@ name|dest_width
 argument_list|,
 name|dest_height
 argument_list|,
-name|babl_format
-argument_list|(
-literal|"R'G'B' u8"
-argument_list|)
+name|brush
+operator|->
+name|pixmap
+operator|->
+name|format
 argument_list|)
 expr_stmt|;
 name|dest
