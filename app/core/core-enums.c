@@ -3951,7 +3951,7 @@ name|NC_
 argument_list|(
 literal|"precision"
 argument_list|,
-literal|"8-Bit unsigned integer"
+literal|"8-bit unsigned integer"
 argument_list|)
 block|,
 name|NULL
@@ -3964,7 +3964,7 @@ name|NC_
 argument_list|(
 literal|"precision"
 argument_list|,
-literal|"32-Bit floating point"
+literal|"32-bit floating point"
 argument_list|)
 block|,
 name|NULL
