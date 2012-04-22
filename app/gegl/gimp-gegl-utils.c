@@ -81,10 +81,19 @@ name|babl_format
 argument_list|(
 literal|"Y' u8"
 argument_list|)
+operator|||
+name|format
+operator|==
+name|babl_format
+argument_list|(
+literal|"Y float"
+argument_list|)
 condition|)
+block|{
 return|return
 name|GIMP_GRAY_IMAGE
 return|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -94,10 +103,19 @@ name|babl_format
 argument_list|(
 literal|"Y'A u8"
 argument_list|)
+operator|||
+name|format
+operator|==
+name|babl_format
+argument_list|(
+literal|"YA float"
+argument_list|)
 condition|)
+block|{
 return|return
 name|GIMP_GRAYA_IMAGE
 return|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -107,10 +125,19 @@ name|babl_format
 argument_list|(
 literal|"R'G'B' u8"
 argument_list|)
+operator|||
+name|format
+operator|==
+name|babl_format
+argument_list|(
+literal|"RGB float"
+argument_list|)
 condition|)
+block|{
 return|return
 name|GIMP_RGB_IMAGE
 return|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -120,10 +147,19 @@ name|babl_format
 argument_list|(
 literal|"R'G'B'A u8"
 argument_list|)
+operator|||
+name|format
+operator|==
+name|babl_format
+argument_list|(
+literal|"RGBA float"
+argument_list|)
 condition|)
+block|{
 return|return
 name|GIMP_RGBA_IMAGE
 return|;
+block|}
 elseif|else
 if|if
 condition|(

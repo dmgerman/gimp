@@ -3921,6 +3921,14 @@ literal|"u8"
 block|}
 block|,
 block|{
+name|GIMP_PRECISION_FLOAT
+block|,
+literal|"GIMP_PRECISION_FLOAT"
+block|,
+literal|"float"
+block|}
+block|,
+block|{
 literal|0
 block|,
 name|NULL
@@ -3944,6 +3952,19 @@ argument_list|(
 literal|"precision"
 argument_list|,
 literal|"8-Bit unsigned integer"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_PRECISION_FLOAT
+block|,
+name|NC_
+argument_list|(
+literal|"precision"
+argument_list|,
+literal|"32-Bit floating point"
 argument_list|)
 block|,
 name|NULL

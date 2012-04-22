@@ -141,11 +141,83 @@ name|babl_format_new
 argument_list|(
 literal|"name"
 argument_list|,
+literal|"R float"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"RGBA"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"float"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"R"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
+literal|"G float"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"RGBA"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"float"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"G"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
+literal|"B float"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"RGBA"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"float"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"B"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
 literal|"A float"
 argument_list|,
 name|babl_model
 argument_list|(
-literal|"R'G'B'A"
+literal|"RGBA"
 argument_list|)
 argument_list|,
 name|babl_type
@@ -169,7 +241,7 @@ literal|"A double"
 argument_list|,
 name|babl_model
 argument_list|(
-literal|"R'G'B'A"
+literal|"RGBA"
 argument_list|)
 argument_list|,
 name|babl_type
@@ -192,7 +264,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27a5c9de0108
+DECL|struct|__anon2ad6da800108
 block|{
 DECL|member|name
 specifier|const
@@ -222,7 +294,25 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"RGB float"
+block|,
+name|N_
+argument_list|(
+literal|"RGB"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"R'G'B'A u8"
+block|,
+name|N_
+argument_list|(
+literal|"RGB-alpha"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"RGBA float"
 block|,
 name|N_
 argument_list|(
@@ -240,7 +330,25 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"Y float"
+block|,
+name|N_
+argument_list|(
+literal|"Grayscale"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"Y'A u8"
+block|,
+name|N_
+argument_list|(
+literal|"Grayscale-alpha"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"YA float"
 block|,
 name|N_
 argument_list|(
@@ -258,6 +366,15 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"R float"
+block|,
+name|N_
+argument_list|(
+literal|"Red component"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"G' u8"
 block|,
 name|N_
@@ -267,7 +384,25 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"G float"
+block|,
+name|N_
+argument_list|(
+literal|"Green component"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"B' u8"
+block|,
+name|N_
+argument_list|(
+literal|"Blue component"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"B float"
 block|,
 name|N_
 argument_list|(
@@ -511,7 +646,21 @@ name|format
 operator|==
 name|babl_format
 argument_list|(
+literal|"Y float"
+argument_list|)
+operator|||
+name|format
+operator|==
+name|babl_format
+argument_list|(
 literal|"Y'A u8"
+argument_list|)
+operator|||
+name|format
+operator|==
+name|babl_format
+argument_list|(
+literal|"YA float"
 argument_list|)
 condition|)
 block|{
@@ -533,7 +682,21 @@ name|format
 operator|==
 name|babl_format
 argument_list|(
+literal|"RGB float"
+argument_list|)
+operator|||
+name|format
+operator|==
+name|babl_format
+argument_list|(
 literal|"R'G'B'A u8"
+argument_list|)
+operator|||
+name|format
+operator|==
+name|babl_format
+argument_list|(
+literal|"RGBA float"
 argument_list|)
 condition|)
 block|{
@@ -610,6 +773,19 @@ condition|)
 return|return
 name|GIMP_PRECISION_U8
 return|;
+elseif|else
+if|if
+condition|(
+name|type
+operator|==
+name|babl_type
+argument_list|(
+literal|"float"
+argument_list|)
+condition|)
+return|return
+name|GIMP_PRECISION_FLOAT
+return|;
 name|g_return_val_if_reached
 argument_list|(
 operator|-
@@ -669,6 +845,26 @@ argument_list|(
 literal|"R'G'B' u8"
 argument_list|)
 return|;
+case|case
+name|GIMP_PRECISION_FLOAT
+case|:
+if|if
+condition|(
+name|with_alpha
+condition|)
+return|return
+name|babl_format
+argument_list|(
+literal|"RGBA float"
+argument_list|)
+return|;
+else|else
+return|return
+name|babl_format
+argument_list|(
+literal|"RGB float"
+argument_list|)
+return|;
 default|default:
 break|break;
 block|}
@@ -699,6 +895,26 @@ return|return
 name|babl_format
 argument_list|(
 literal|"Y' u8"
+argument_list|)
+return|;
+case|case
+name|GIMP_PRECISION_FLOAT
+case|:
+if|if
+condition|(
+name|with_alpha
+condition|)
+return|return
+name|babl_format
+argument_list|(
+literal|"YA float"
+argument_list|)
+return|;
+else|else
+return|return
+name|babl_format
+argument_list|(
+literal|"Y float"
 argument_list|)
 return|;
 default|default:
@@ -796,6 +1012,55 @@ return|;
 default|default:
 break|break;
 block|}
+break|break;
+case|case
+name|GIMP_PRECISION_FLOAT
+case|:
+switch|switch
+condition|(
+name|index
+condition|)
+block|{
+case|case
+literal|0
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"R float"
+argument_list|)
+return|;
+case|case
+literal|1
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"G float"
+argument_list|)
+return|;
+case|case
+literal|2
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"B float"
+argument_list|)
+return|;
+case|case
+literal|3
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"A float"
+argument_list|)
+return|;
+default|default:
+break|break;
+block|}
+break|break;
 default|default:
 break|break;
 block|}
@@ -837,6 +1102,37 @@ return|;
 default|default:
 break|break;
 block|}
+break|break;
+case|case
+name|GIMP_PRECISION_FLOAT
+case|:
+switch|switch
+condition|(
+name|index
+condition|)
+block|{
+case|case
+literal|0
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"Y float"
+argument_list|)
+return|;
+case|case
+literal|1
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"A float"
+argument_list|)
+return|;
+default|default:
+break|break;
+block|}
+break|break;
 default|default:
 break|break;
 block|}

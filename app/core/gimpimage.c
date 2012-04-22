@@ -352,7 +352,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd553000103
+DECL|enum|__anon2c81dd890103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -446,7 +446,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd553000203
+DECL|enum|__anon2c81dd890203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6606,6 +6606,15 @@ return|return
 name|babl_format
 argument_list|(
 literal|"Y u8"
+argument_list|)
+return|;
+case|case
+name|GIMP_PRECISION_FLOAT
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"Y float"
 argument_list|)
 return|;
 block|}
