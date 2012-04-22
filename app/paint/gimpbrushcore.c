@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c061e800103
+DECL|enum|__anon2b38b5650103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -5961,10 +5961,9 @@ name|height
 operator|+
 literal|2
 argument_list|,
-name|babl_format
-argument_list|(
-literal|"Y u8"
-argument_list|)
+name|brush_mask
+operator|->
+name|format
 argument_list|)
 expr_stmt|;
 name|gimp_temp_buf_data_clear
