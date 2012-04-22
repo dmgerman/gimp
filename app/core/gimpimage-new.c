@@ -360,9 +360,11 @@ argument_list|(
 name|template
 argument_list|)
 argument_list|,
-name|GIMP_PRECISION_U8
+name|gimp_template_get_precision
+argument_list|(
+name|template
+argument_list|)
 argument_list|,
-comment|/* XXX add to template */
 name|FALSE
 argument_list|)
 expr_stmt|;

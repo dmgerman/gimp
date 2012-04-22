@@ -296,6 +296,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpPrecision
+name|gimp_template_get_precision
+parameter_list|(
+name|GimpTemplate
+modifier|*
+name|template
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpFillType
 name|gimp_template_get_fill_type
 parameter_list|(
