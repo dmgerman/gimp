@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e726ec0103
+DECL|enum|__anon2c02103b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3357,12 +3357,12 @@ block|}
 else|else
 block|{
 comment|/* The mask is just the paint_mask */
-name|pixel_region_init
+name|pixel_region_init_temp_buf
 argument_list|(
 operator|&
 name|paint_maskPR
 argument_list|,
-name|gimp_gegl_buffer_get_tiles
+name|gimp_gegl_buffer_get_temp_buf
 argument_list|(
 name|paint_mask
 argument_list|)
@@ -3382,8 +3382,6 @@ argument_list|,
 name|paint_mask_rect
 operator|->
 name|height
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
