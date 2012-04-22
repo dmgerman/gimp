@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d3b8a90103
+DECL|enum|__anon28880ef70103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -204,7 +204,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d3b8a90203
+DECL|enum|__anon28880ef70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5446,6 +5446,11 @@ name|GeglBuffer
 modifier|*
 name|dest_buffer
 decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|component_format
+decl_stmt|;
 name|dest_buffer
 operator|=
 name|gimp_drawable_get_buffer
@@ -5456,14 +5461,20 @@ name|mask
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|component_format
+operator|=
+name|gimp_image_get_component_format
+argument_list|(
+name|image
+argument_list|,
+name|GIMP_ALPHA_CHANNEL
+argument_list|)
+expr_stmt|;
 name|gegl_buffer_set_format
 argument_list|(
 name|dest_buffer
 argument_list|,
-name|babl_format
-argument_list|(
-literal|"A u8"
-argument_list|)
+name|component_format
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
