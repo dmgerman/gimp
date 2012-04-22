@@ -360,6 +360,9 @@ argument_list|(
 name|template
 argument_list|)
 argument_list|,
+name|GIMP_PRECISION_U8
+argument_list|,
+comment|/* XXX add to template */
 name|FALSE
 argument_list|)
 expr_stmt|;
@@ -669,6 +672,11 @@ argument_list|)
 argument_list|,
 name|type
 argument_list|,
+name|gimp_drawable_get_precision
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
@@ -963,6 +971,11 @@ argument_list|)
 argument_list|,
 name|GIMP_GRAY
 argument_list|,
+name|gimp_image_get_precision
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
@@ -1199,6 +1212,11 @@ argument_list|(
 name|format
 argument_list|)
 argument_list|,
+name|gimp_babl_format_get_precision
+argument_list|(
+name|format
+argument_list|)
+argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
@@ -1419,6 +1437,8 @@ name|pixbuf
 argument_list|)
 argument_list|,
 name|base_type
+argument_list|,
+name|GIMP_PRECISION_U8
 argument_list|,
 name|FALSE
 argument_list|)

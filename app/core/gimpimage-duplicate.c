@@ -441,6 +441,11 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
+name|gimp_image_get_precision
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;

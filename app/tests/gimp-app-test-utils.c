@@ -280,6 +280,8 @@ argument_list|,
 name|height
 argument_list|,
 name|GIMP_RGB
+argument_list|,
+name|GIMP_PRECISION_U8
 argument_list|)
 expr_stmt|;
 name|layer

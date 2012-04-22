@@ -327,7 +327,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c06a43c0103
+DECL|enum|__anon2bb698b50103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -4614,7 +4614,7 @@ end_function
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|gimp_create_image (Gimp * gimp,gint width,gint height,GimpImageBaseType type,gboolean attach_comment)
+DECL|function|gimp_create_image (Gimp * gimp,gint width,gint height,GimpImageBaseType type,GimpPrecision precision,gboolean attach_comment)
 name|gimp_create_image
 parameter_list|(
 name|Gimp
@@ -4629,6 +4629,9 @@ name|height
 parameter_list|,
 name|GimpImageBaseType
 name|type
+parameter_list|,
+name|GimpPrecision
+name|precision
 parameter_list|,
 name|gboolean
 name|attach_comment
@@ -4659,6 +4662,8 @@ argument_list|,
 name|height
 argument_list|,
 name|type
+argument_list|,
+name|precision
 argument_list|)
 expr_stmt|;
 if|if

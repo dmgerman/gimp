@@ -352,7 +352,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon299bb5ac0103
+DECL|enum|__anon2c17fa4c0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -446,7 +446,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299bb5ac0203
+DECL|enum|__anon2c17fa4c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -465,6 +465,9 @@ name|PROP_HEIGHT
 block|,
 DECL|enumerator|PROP_BASE_TYPE
 name|PROP_BASE_TYPE
+block|,
+DECL|enumerator|PROP_PRECISION
+name|PROP_PRECISION
 block|}
 enum|;
 end_enum
@@ -2540,6 +2543,30 @@ name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_object_class_install_property
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_PRECISION
+argument_list|,
+name|g_param_spec_enum
+argument_list|(
+literal|"precision"
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_TYPE_PRECISION
+argument_list|,
+name|GIMP_PRECISION_U8
+argument_list|,
+name|GIMP_PARAM_READWRITE
+operator||
+name|G_PARAM_CONSTRUCT
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_type_class_add_private
 argument_list|(
 name|klass
@@ -3616,6 +3643,19 @@ name|value
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|PROP_PRECISION
+case|:
+name|private
+operator|->
+name|precision
+operator|=
+name|g_value_get_enum
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
 argument_list|(
@@ -3738,6 +3778,19 @@ argument_list|,
 name|private
 operator|->
 name|base_type
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_PRECISION
+case|:
+name|g_value_set_enum
+argument_list|(
+name|value
+argument_list|,
+name|private
+operator|->
+name|precision
 argument_list|)
 expr_stmt|;
 break|break;
@@ -6202,7 +6255,7 @@ end_comment
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|gimp_image_new (Gimp * gimp,gint width,gint height,GimpImageBaseType base_type)
+DECL|function|gimp_image_new (Gimp * gimp,gint width,gint height,GimpImageBaseType base_type,GimpPrecision precision)
 name|gimp_image_new
 parameter_list|(
 name|Gimp
@@ -6217,6 +6270,9 @@ name|height
 parameter_list|,
 name|GimpImageBaseType
 name|base_type
+parameter_list|,
+name|GimpPrecision
+name|precision
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -6249,6 +6305,10 @@ argument_list|,
 literal|"base-type"
 argument_list|,
 name|base_type
+argument_list|,
+literal|"precision"
+argument_list|,
+name|precision
 argument_list|,
 name|NULL
 argument_list|)

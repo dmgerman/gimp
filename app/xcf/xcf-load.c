@@ -738,6 +738,8 @@ name|height
 argument_list|,
 name|image_type
 argument_list|,
+name|GIMP_PRECISION_U8
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
