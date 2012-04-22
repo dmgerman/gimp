@@ -353,10 +353,6 @@ argument_list|(
 name|bpp
 operator|>
 literal|0
-operator|&&
-name|bpp
-operator|<=
-literal|4
 argument_list|,
 name|NULL
 argument_list|)
