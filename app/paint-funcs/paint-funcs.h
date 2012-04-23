@@ -896,11 +896,6 @@ name|PixelRegion
 modifier|*
 name|mask
 parameter_list|,
-specifier|const
-name|guchar
-modifier|*
-name|data
-parameter_list|,
 name|guint
 name|opacity
 parameter_list|,
@@ -908,9 +903,6 @@ specifier|const
 name|gboolean
 modifier|*
 name|affect
-parameter_list|,
-name|CombinationMode
-name|type
 parameter_list|)
 function_decl|;
 end_function_decl
