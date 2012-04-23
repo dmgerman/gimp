@@ -17,35 +17,6 @@ name|__PAINT_FUNCS_H__
 end_define
 
 begin_comment
-comment|/*  apply the mask data to the alpha channel of the pixel data  */
-end_comment
-
-begin_function_decl
-name|void
-name|apply_mask_to_alpha_channel
-parameter_list|(
-name|guchar
-modifier|*
-name|src
-parameter_list|,
-specifier|const
-name|guchar
-modifier|*
-name|mask
-parameter_list|,
-name|guint
-name|opacity
-parameter_list|,
-name|guint
-name|length
-parameter_list|,
-name|guint
-name|bytes
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/*  copy gray pixels to intensity-alpha pixels.  This function  *  essentially takes a source that is only a grayscale image and  *  copies it to the destination, expanding to RGB if necessary and  *  adding an alpha channel.  (OPAQUE)  */
 end_comment
 
@@ -802,28 +773,6 @@ parameter_list|(
 name|PixelRegion
 modifier|*
 name|region
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/*  Apply a mask to an image's alpha channel  */
-end_comment
-
-begin_function_decl
-name|void
-name|apply_mask_to_region
-parameter_list|(
-name|PixelRegion
-modifier|*
-name|src
-parameter_list|,
-name|PixelRegion
-modifier|*
-name|mask
-parameter_list|,
-name|guint
-name|opacity
 parameter_list|)
 function_decl|;
 end_function_decl
