@@ -5976,6 +5976,11 @@ name|link
 decl_stmt|;
 name|gint
 name|width
+init|=
+name|gimp_temp_buf_get_width
+argument_list|(
+name|dp_buf
+argument_list|)
 decl_stmt|;
 name|guint
 modifier|*
@@ -5985,12 +5990,6 @@ name|GPtrArray
 modifier|*
 name|list
 decl_stmt|;
-name|width
-operator|=
-name|dp_buf
-operator|->
-name|width
-expr_stmt|;
 comment|/*  Start the data pointer at the correct location  */
 name|data
 operator|=
@@ -6141,7 +6140,7 @@ name|OFFSET
 parameter_list|(
 name|pixel
 parameter_list|)
-value|((gint8)((pixel)& 0xff) + \   ((gint8)(((pixel)& 0xff00)>> 8)) * dp_buf->width)
+value|((gint8)((pixel)& 0xff) + \                        ((gint8)(((pixel)& 0xff00)>> 8)) * gimp_temp_buf_get_width (dp_buf))
 end_define
 
 begin_function
@@ -6241,6 +6240,22 @@ name|guint32
 modifier|*
 name|d
 decl_stmt|;
+name|gint
+name|dp_buf_width
+init|=
+name|gimp_temp_buf_get_width
+argument_list|(
+name|dp_buf
+argument_list|)
+decl_stmt|;
+name|gint
+name|dp_buf_height
+init|=
+name|gimp_temp_buf_get_height
+argument_list|(
+name|dp_buf
+argument_list|)
+decl_stmt|;
 comment|/*  initialize the dynamic programming buffer  */
 name|data
 operator|=
@@ -6304,9 +6319,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|dp_buf
-operator|->
-name|height
+name|dp_buf_height
 condition|;
 name|i
 operator|++
@@ -6326,9 +6339,7 @@ operator|-
 name|y1
 operator|)
 operator|*
-name|dp_buf
-operator|->
-name|width
+name|dp_buf_width
 operator|+
 operator|(
 name|x
@@ -6344,9 +6355,7 @@ literal|0
 init|;
 name|j
 operator|<
-name|dp_buf
-operator|->
-name|width
+name|dp_buf_width
 condition|;
 name|j
 operator|++
@@ -6495,9 +6504,7 @@ if|if
 condition|(
 name|j
 operator|!=
-name|dp_buf
-operator|->
-name|width
+name|dp_buf_width
 operator|-
 literal|1
 condition|)

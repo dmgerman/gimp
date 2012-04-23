@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c500f910103
+DECL|enum|__anon28e7a2b30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1831,6 +1831,9 @@ name|GimpTempBuf
 modifier|*
 name|mask
 decl_stmt|;
+name|gint
+name|mask_width
+decl_stmt|;
 name|gimp_brush_generated_get_half_size
 argument_list|(
 name|brush
@@ -1888,6 +1891,13 @@ literal|"Y u8"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|mask_width
+operator|=
+name|gimp_temp_buf_get_width
+argument_list|(
+name|mask
+argument_list|)
+expr_stmt|;
 name|centerp
 operator|=
 name|gimp_temp_buf_get_data
@@ -1897,9 +1907,7 @@ argument_list|)
 operator|+
 name|half_height
 operator|*
-name|mask
-operator|->
-name|width
+name|mask_width
 operator|+
 name|half_width
 expr_stmt|;
@@ -2167,9 +2175,7 @@ name|centerp
 index|[
 name|y
 operator|*
-name|mask
-operator|->
-name|width
+name|mask_width
 operator|+
 name|x
 index|]
@@ -2191,9 +2197,7 @@ literal|1
 operator|*
 name|y
 operator|*
-name|mask
-operator|->
-name|width
+name|mask_width
 operator|-
 name|x
 index|]

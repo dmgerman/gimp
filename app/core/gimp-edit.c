@@ -2096,11 +2096,12 @@ name|pattern
 operator|&&
 name|babl_format_has_alpha
 argument_list|(
+name|gimp_temp_buf_get_format
+argument_list|(
 name|pattern
 operator|->
 name|mask
-operator|->
-name|format
+argument_list|)
 argument_list|)
 operator|&&
 operator|!
