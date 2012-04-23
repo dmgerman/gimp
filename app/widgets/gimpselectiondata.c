@@ -48,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/base-utils.h"
+file|"core/gimp.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimp.h"
+file|"core/gimp-utils.h"
 end_include
 
 begin_include
@@ -1620,7 +1620,7 @@ name|g_strdup_printf
 argument_list|(
 literal|"%d:%d"
 argument_list|,
-name|get_pid
+name|gimp_get_pid
 argument_list|()
 argument_list|,
 name|gimp_image_get_ID
@@ -1738,7 +1738,7 @@ literal|2
 operator|&&
 name|pid
 operator|==
-name|get_pid
+name|gimp_get_pid
 argument_list|()
 condition|)
 block|{
@@ -1800,7 +1800,7 @@ name|g_strdup_printf
 argument_list|(
 literal|"%d:%d:%d"
 argument_list|,
-name|get_pid
+name|gimp_get_pid
 argument_list|()
 argument_list|,
 name|gimp_image_get_ID
@@ -1942,7 +1942,7 @@ literal|3
 operator|&&
 name|pid
 operator|==
-name|get_pid
+name|gimp_get_pid
 argument_list|()
 condition|)
 block|{
@@ -2018,7 +2018,7 @@ name|g_strdup_printf
 argument_list|(
 literal|"%d:%d"
 argument_list|,
-name|get_pid
+name|gimp_get_pid
 argument_list|()
 argument_list|,
 name|gimp_item_get_ID
@@ -2136,7 +2136,7 @@ literal|2
 operator|&&
 name|pid
 operator|==
-name|get_pid
+name|gimp_get_pid
 argument_list|()
 condition|)
 block|{
@@ -2212,7 +2212,7 @@ name|g_strdup_printf
 argument_list|(
 literal|"%d:%p:%s"
 argument_list|,
-name|get_pid
+name|gimp_get_pid
 argument_list|()
 argument_list|,
 name|object
@@ -2972,7 +2972,7 @@ literal|2
 operator|&&
 name|pid
 operator|==
-name|get_pid
+name|gimp_get_pid
 argument_list|()
 operator|&&
 name|name_offset

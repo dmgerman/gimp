@@ -47,7 +47,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -94,8 +94,12 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"base-types.h"
+file|"core/core-types.h"
 end_include
+
+begin_comment
+comment|/* screw it */
+end_comment
 
 begin_ifndef
 ifndef|#
@@ -138,12 +142,6 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"base-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tile.h"
 end_include
 
@@ -174,13 +172,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28addfa70103
+DECL|enum|__anon2784d1ed0103
 block|{
 DECL|enumerator|SWAP_IN
 name|SWAP_IN
@@ -900,7 +904,7 @@ operator|(
 name|unsigned
 name|long
 operator|)
-name|get_pid
+name|gimp_get_pid
 argument_list|()
 argument_list|)
 expr_stmt|;

@@ -34,13 +34,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/base-utils.h"
+file|"core/gimp-parasites.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimp-parasites.h"
+file|"core/gimp-utils.h"
 end_include
 
 begin_include
@@ -199,7 +199,7 @@ literal|0
 decl_stmt|;
 name|pid
 operator|=
-name|get_pid
+name|gimp_get_pid
 argument_list|()
 expr_stmt|;
 name|return_vals
