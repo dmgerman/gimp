@@ -331,9 +331,9 @@ operator|-
 name|y1
 argument_list|)
 argument_list|,
-name|babl_format
+name|gimp_drawable_get_format
 argument_list|(
-literal|"Y float"
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -573,9 +573,9 @@ operator|-
 name|y1
 argument_list|)
 argument_list|,
-name|babl_format
+name|gimp_drawable_get_format
 argument_list|(
-literal|"Y float"
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
