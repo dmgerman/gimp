@@ -98,7 +98,7 @@ name|GeglOperationPointComposer3
 name|parent_instance
 decl_stmt|;
 DECL|member|opacity
-name|gfloat
+name|gdouble
 name|opacity
 decl_stmt|;
 DECL|member|premultiplied

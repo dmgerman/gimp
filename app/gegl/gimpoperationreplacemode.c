@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfa0f900103
+DECL|enum|__anon2b946e220103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -263,7 +263,7 @@ name|object_class
 argument_list|,
 name|PROP_OPACITY
 argument_list|,
-name|g_param_spec_float
+name|g_param_spec_double
 argument_list|(
 literal|"opacity"
 argument_list|,
@@ -356,7 +356,7 @@ name|self
 operator|->
 name|opacity
 operator|=
-name|g_value_get_float
+name|g_value_get_double
 argument_list|(
 name|value
 argument_list|)
@@ -429,7 +429,7 @@ break|break;
 case|case
 name|PROP_OPACITY
 case|:
-name|g_value_set_float
+name|g_value_set_double
 argument_list|(
 name|value
 argument_list|,
