@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b89f8f70103
+DECL|enum|__anon2894de3b0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -4895,7 +4895,7 @@ literal|0
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y float"
 argument_list|)
 argument_list|,
 name|GEGL_BUFFER_READ
@@ -4921,7 +4921,7 @@ name|iter
 argument_list|)
 condition|)
 block|{
-name|guchar
+name|gfloat
 modifier|*
 name|data
 init|=
@@ -4932,7 +4932,7 @@ index|[
 literal|0
 index|]
 decl_stmt|;
-name|guchar
+name|gfloat
 modifier|*
 name|data1
 init|=
@@ -5419,7 +5419,7 @@ literal|0
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y float"
 argument_list|)
 argument_list|,
 name|GEGL_BUFFER_READ
@@ -5435,7 +5435,7 @@ name|iter
 argument_list|)
 condition|)
 block|{
-name|guchar
+name|gfloat
 modifier|*
 name|data
 init|=
