@@ -509,10 +509,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_combine_span (guchar * data,GimpChannelOps op,gint x1,gint x2,gint value)
+DECL|function|gimp_channel_combine_span (gfloat * data,GimpChannelOps op,gint x1,gint x2,gfloat value)
 name|gimp_channel_combine_span
 parameter_list|(
-name|guchar
+name|gfloat
 modifier|*
 name|data
 parameter_list|,
@@ -525,7 +525,7 @@ parameter_list|,
 name|gint
 name|x2
 parameter_list|,
-name|gint
+name|gfloat
 name|value
 parameter_list|)
 block|{
@@ -551,21 +551,22 @@ if|if
 condition|(
 name|value
 operator|==
-literal|255
+literal|1.0
 condition|)
 block|{
-name|memset
-argument_list|(
-name|data
-operator|+
+while|while
+condition|(
 name|x1
-argument_list|,
-literal|255
-argument_list|,
+operator|<
 name|x2
-operator|-
+condition|)
+name|data
+index|[
 name|x1
-argument_list|)
+operator|++
+index|]
+operator|=
+literal|1.0
 expr_stmt|;
 block|}
 else|else
@@ -578,7 +579,7 @@ name|x2
 condition|)
 block|{
 specifier|const
-name|guint
+name|gfloat
 name|val
 init|=
 name|data
@@ -596,9 +597,9 @@ index|]
 operator|=
 name|val
 operator|>
-literal|255
+literal|1.0
 condition|?
-literal|255
+literal|1.0
 else|:
 name|val
 expr_stmt|;
@@ -612,21 +613,22 @@ if|if
 condition|(
 name|value
 operator|==
-literal|255
+literal|1.0
 condition|)
 block|{
-name|memset
-argument_list|(
-name|data
-operator|+
+while|while
+condition|(
 name|x1
-argument_list|,
-literal|0
-argument_list|,
+operator|<
 name|x2
-operator|-
+condition|)
+name|data
+index|[
 name|x1
-argument_list|)
+operator|++
+index|]
+operator|=
+literal|0.0
 expr_stmt|;
 block|}
 else|else
@@ -639,7 +641,7 @@ name|x2
 condition|)
 block|{
 specifier|const
-name|gint
+name|gfloat
 name|val
 init|=
 name|data
@@ -657,11 +659,11 @@ index|]
 operator|=
 name|val
 operator|>
-literal|0
+literal|0.0
 condition|?
 name|val
 else|:
-literal|0
+literal|0.0
 expr_stmt|;
 block|}
 block|}
@@ -724,9 +726,6 @@ decl_stmt|;
 name|GeglRectangle
 modifier|*
 name|roi
-decl_stmt|;
-name|gint
-name|bpp
 decl_stmt|;
 name|gdouble
 name|a_sqr
@@ -894,7 +893,7 @@ literal|0
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y float"
 argument_list|)
 argument_list|,
 name|GEGL_BUFFER_READWRITE
@@ -912,10 +911,6 @@ index|[
 literal|0
 index|]
 expr_stmt|;
-name|bpp
-operator|=
-literal|1
-expr_stmt|;
 while|while
 condition|(
 name|gegl_buffer_iterator_next
@@ -924,7 +919,7 @@ name|iter
 argument_list|)
 condition|)
 block|{
-name|guchar
+name|gfloat
 modifier|*
 name|data
 init|=
@@ -964,8 +959,6 @@ operator|+=
 name|roi
 operator|->
 name|width
-operator|*
-name|bpp
 control|)
 block|{
 specifier|const
@@ -1009,7 +1002,7 @@ name|roi
 operator|->
 name|width
 argument_list|,
-literal|255
+literal|1.0
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -1128,7 +1121,7 @@ operator|->
 name|width
 argument_list|)
 argument_list|,
-literal|255
+literal|1.0
 argument_list|)
 expr_stmt|;
 block|}
@@ -1149,7 +1142,7 @@ operator|-
 name|ellipse_center_y
 argument_list|)
 decl_stmt|;
-name|gint
+name|gfloat
 name|last_val
 init|=
 operator|-
@@ -1198,7 +1191,7 @@ decl_stmt|;
 name|gfloat
 name|dist
 decl_stmt|;
-name|gint
+name|gfloat
 name|val
 decl_stmt|;
 if|if
@@ -1318,7 +1311,7 @@ literal|0.001
 condition|)
 name|dist
 operator|=
-literal|0.
+literal|0.0
 expr_stmt|;
 else|else
 name|dist
@@ -1350,7 +1343,7 @@ literal|0.5
 condition|)
 name|val
 operator|=
-literal|255
+literal|1.0
 expr_stmt|;
 elseif|else
 if|if
@@ -1361,14 +1354,8 @@ literal|0.5
 condition|)
 name|val
 operator|=
-call|(
-name|gint
-call|)
-argument_list|(
-literal|255
-operator|*
 operator|(
-literal|1
+literal|1.0
 operator|-
 operator|(
 name|dist
@@ -1376,12 +1363,11 @@ operator|+
 literal|0.5
 operator|)
 operator|)
-argument_list|)
 expr_stmt|;
 else|else
 name|val
 operator|=
-literal|0
+literal|0.0
 expr_stmt|;
 if|if
 condition|(
@@ -1498,7 +1484,7 @@ name|last_val
 operator|=
 name|val
 operator|=
-literal|255
+literal|1.0
 expr_stmt|;
 block|}
 comment|/* Time to change center? */
@@ -1918,7 +1904,7 @@ literal|0
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y float"
 argument_list|)
 argument_list|,
 name|GEGL_BUFFER_READWRITE
@@ -1951,7 +1937,7 @@ literal|0
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y float"
 argument_list|)
 argument_list|,
 name|GEGL_BUFFER_READ
@@ -1978,7 +1964,7 @@ name|iter
 argument_list|)
 condition|)
 block|{
-name|guchar
+name|gfloat
 modifier|*
 name|mask_data
 init|=
@@ -1989,7 +1975,8 @@ index|[
 literal|0
 index|]
 decl_stmt|;
-name|guchar
+specifier|const
+name|gfloat
 modifier|*
 name|add_on_data
 init|=
@@ -2000,21 +1987,16 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|gint
-name|length
-init|=
-name|iter
-operator|->
-name|length
-decl_stmt|;
 while|while
 condition|(
+name|iter
+operator|->
 name|length
 operator|--
 condition|)
 block|{
 specifier|const
-name|guint
+name|gfloat
 name|val
 init|=
 operator|*
@@ -2030,9 +2012,9 @@ name|CLAMP
 argument_list|(
 name|val
 argument_list|,
-literal|0
+literal|0.0
 argument_list|,
-literal|255
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|add_on_data
@@ -2055,7 +2037,7 @@ name|iter
 argument_list|)
 condition|)
 block|{
-name|guchar
+name|gfloat
 modifier|*
 name|mask_data
 init|=
@@ -2066,7 +2048,8 @@ index|[
 literal|0
 index|]
 decl_stmt|;
-name|guchar
+specifier|const
+name|gfloat
 modifier|*
 name|add_on_data
 init|=
@@ -2077,15 +2060,10 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|gint
-name|length
-init|=
-name|iter
-operator|->
-name|length
-decl_stmt|;
 while|while
 condition|(
+name|iter
+operator|->
 name|length
 operator|--
 condition|)
@@ -2101,7 +2079,7 @@ condition|)
 operator|*
 name|mask_data
 operator|=
-literal|0
+literal|0.0
 expr_stmt|;
 else|else
 operator|*
@@ -2130,7 +2108,7 @@ name|iter
 argument_list|)
 condition|)
 block|{
-name|guchar
+name|gfloat
 modifier|*
 name|mask_data
 init|=
@@ -2141,7 +2119,8 @@ index|[
 literal|0
 index|]
 decl_stmt|;
-name|guchar
+specifier|const
+name|gfloat
 modifier|*
 name|add_on_data
 init|=
@@ -2152,15 +2131,10 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|gint
-name|length
-init|=
-name|iter
-operator|->
-name|length
-decl_stmt|;
 while|while
 condition|(
+name|iter
+operator|->
 name|length
 operator|--
 condition|)
