@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_OPERATION_REPLACE_MODE_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gimpoperationpointlayermode.h"
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_OPERATION_REPLACE_MODE
 define|#
@@ -100,8 +94,16 @@ struct|struct
 name|_GimpOperationReplaceMode
 block|{
 DECL|member|parent_instance
-name|GimpOperationPointLayerMode
+name|GeglOperationPointComposer3
 name|parent_instance
+decl_stmt|;
+DECL|member|opacity
+name|gfloat
+name|opacity
+decl_stmt|;
+DECL|member|premultiplied
+name|gboolean
+name|premultiplied
 decl_stmt|;
 block|}
 struct|;
@@ -113,7 +115,7 @@ struct|struct
 name|_GimpOperationReplaceModeClass
 block|{
 DECL|member|parent_class
-name|GimpOperationPointLayerModeClass
+name|GeglOperationPointComposer3Class
 name|parent_class
 decl_stmt|;
 block|}
