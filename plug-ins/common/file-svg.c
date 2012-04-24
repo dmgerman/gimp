@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b27698f0108
+DECL|struct|__anon29a1c9840108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -1946,7 +1946,7 @@ argument_list|(
 name|handle
 argument_list|)
 expr_stmt|;
-name|rsvg_handle_free
+name|g_object_unref
 argument_list|(
 name|handle
 argument_list|)
@@ -2291,7 +2291,7 @@ argument_list|(
 name|io
 argument_list|)
 expr_stmt|;
-name|rsvg_handle_free
+name|g_object_unref
 argument_list|(
 name|handle
 argument_list|)
