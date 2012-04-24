@@ -136,6 +136,13 @@ range|:
 literal|1
 decl_stmt|;
 comment|/*  Did we receive a G_IO_HUP         */
+DECL|member|precision
+name|guint
+name|precision
+range|:
+literal|1
+decl_stmt|;
+comment|/*  True drawable precision enabled   */
 DECL|member|pid
 name|GPid
 name|pid
@@ -445,6 +452,28 @@ end_function_decl
 begin_function_decl
 name|GimpPDBErrorHandler
 name|gimp_plug_in_get_error_handler
+parameter_list|(
+name|GimpPlugIn
+modifier|*
+name|plug_in
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_plug_in_enable_precision
+parameter_list|(
+name|GimpPlugIn
+modifier|*
+name|plug_in
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_plug_in_precision_enabled
 parameter_list|(
 name|GimpPlugIn
 modifier|*

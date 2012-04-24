@@ -50,6 +50,18 @@ end_define
 begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
+name|G_GNUC_INTERNAL
+name|gchar
+modifier|*
+name|_gimp_drawable_get_format
+parameter_list|(
+name|gint32
+name|drawable_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpImageType
 name|gimp_drawable_type
 parameter_list|(

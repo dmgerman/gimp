@@ -48,6 +48,89 @@ comment|/**  * SECTION: gimpdrawable  * @title: gimpdrawable  * @short_descripti
 end_comment
 
 begin_comment
+comment|/**  * _gimp_drawable_get_format:  * @drawable_ID: The drawable.  *  * Returns the drawable's Babl format  *  * This procedure returns the drawable's Babl format.  *  * Returns: The drawable's Babl format.  *  * Since: GIMP 2.10  **/
+end_comment
+
+begin_function
+name|gchar
+modifier|*
+DECL|function|_gimp_drawable_get_format (gint32 drawable_ID)
+name|_gimp_drawable_get_format
+parameter_list|(
+name|gint32
+name|drawable_ID
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gchar
+modifier|*
+name|format
+init|=
+name|NULL
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp-drawable-get-format"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_DRAWABLE
+argument_list|,
+name|drawable_ID
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+condition|)
+name|format
+operator|=
+name|g_strdup
+argument_list|(
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+argument_list|)
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|format
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_drawable_type:  * @drawable_ID: The drawable.  *  * Returns the drawable's type.  *  * This procedure returns the drawable's type.  *  * Returns: The drawable's type.  **/
 end_comment
 
@@ -516,7 +599,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_bpp:  * @drawable_ID: The drawable.  *  * Returns the bytes per pixel.  *  * This procedure returns the number of bytes per pixel (or the number  * of channels) for the specified drawable.  *  * Returns: Bytes per pixel.  **/
+comment|/**  * gimp_drawable_bpp:  * @drawable_ID: The drawable.  *  * Returns the bytes per pixel.  *  * This procedure returns the number of bytes per pixel, which  * corresponds to the number of components unless  * gimp_plugin_enable_precision() was called.  *  * Returns: Bytes per pixel.  **/
 end_comment
 
 begin_function
