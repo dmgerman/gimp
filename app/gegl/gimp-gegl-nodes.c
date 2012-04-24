@@ -877,9 +877,6 @@ case|case
 name|GIMP_ERASE_MODE
 case|:
 case|case
-name|GIMP_REPLACE_MODE
-case|:
-case|case
 name|GIMP_ANTI_ERASE_MODE
 case|:
 name|gegl_node_set
