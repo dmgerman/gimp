@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpoperationmaskcomponents.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpoperationsetalpha.h"
 end_include
 
@@ -452,6 +458,11 @@ expr_stmt|;
 name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_OPERATION_HISTOGRAM_SINK
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_MASK_COMPONENTS
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref

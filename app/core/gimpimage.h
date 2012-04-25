@@ -1283,6 +1283,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpComponentMask
+name|gimp_image_get_active_mask
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_image_set_component_visible
 parameter_list|(

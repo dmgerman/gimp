@@ -92,6 +92,9 @@ name|opacity
 parameter_list|,
 name|GimpLayerModeEffects
 name|mode
+parameter_list|,
+name|GimpComponentMask
+name|affect
 parameter_list|)
 function_decl|;
 end_function_decl

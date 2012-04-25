@@ -493,6 +493,9 @@ name|GeglNode
 modifier|*
 name|apply
 decl_stmt|;
+name|GimpComponentMask
+name|affect
+decl_stmt|;
 if|if
 condition|(
 name|mask
@@ -510,6 +513,13 @@ expr_stmt|;
 name|dest_buffer
 operator|=
 name|gimp_drawable_get_buffer
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
+name|affect
+operator|=
+name|gimp_drawable_get_active_mask
 argument_list|(
 name|drawable
 argument_list|)
@@ -551,6 +561,8 @@ argument_list|,
 name|opacity
 argument_list|,
 name|mode
+argument_list|,
+name|affect
 argument_list|)
 expr_stmt|;
 name|gimp_apply_operation

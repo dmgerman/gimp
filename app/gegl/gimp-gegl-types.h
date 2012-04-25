@@ -87,6 +87,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpOperationMaskComponents
+typedef|typedef
+name|struct
+name|_GimpOperationMaskComponents
+name|GimpOperationMaskComponents
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationSetAlpha
 typedef|typedef
 name|struct
