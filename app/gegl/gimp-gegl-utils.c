@@ -86,6 +86,13 @@ name|format
 operator|==
 name|babl_format
 argument_list|(
+literal|"Y u16"
+argument_list|)
+operator|||
+name|format
+operator|==
+name|babl_format
+argument_list|(
 literal|"Y float"
 argument_list|)
 condition|)
@@ -102,6 +109,13 @@ operator|==
 name|babl_format
 argument_list|(
 literal|"Y'A u8"
+argument_list|)
+operator|||
+name|format
+operator|==
+name|babl_format
+argument_list|(
+literal|"YA u16"
 argument_list|)
 operator|||
 name|format
@@ -130,6 +144,13 @@ name|format
 operator|==
 name|babl_format
 argument_list|(
+literal|"RGB u16"
+argument_list|)
+operator|||
+name|format
+operator|==
+name|babl_format
+argument_list|(
 literal|"RGB float"
 argument_list|)
 condition|)
@@ -146,6 +167,13 @@ operator|==
 name|babl_format
 argument_list|(
 literal|"R'G'B'A u8"
+argument_list|)
+operator|||
+name|format
+operator|==
+name|babl_format
+argument_list|(
+literal|"RGBA u16"
 argument_list|)
 operator|||
 name|format
