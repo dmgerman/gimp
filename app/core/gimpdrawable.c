@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ed9a900103
+DECL|enum|__anon28efaa280103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -5110,6 +5110,16 @@ argument_list|(
 name|new_base_type
 operator|!=
 name|gimp_drawable_get_base_type
+argument_list|(
+name|drawable
+argument_list|)
+operator|||
+name|gimp_image_get_precision
+argument_list|(
+name|dest_image
+argument_list|)
+operator|!=
+name|gimp_drawable_get_precision
 argument_list|(
 name|drawable
 argument_list|)
