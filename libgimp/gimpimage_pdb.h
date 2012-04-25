@@ -89,6 +89,25 @@ end_function_decl
 
 begin_function_decl
 name|gint32
+name|gimp_image_new_with_precision
+parameter_list|(
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|height
+parameter_list|,
+name|GimpImageBaseType
+name|type
+parameter_list|,
+name|GimpPrecision
+name|precision
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint32
 name|gimp_image_duplicate
 parameter_list|(
 name|gint32

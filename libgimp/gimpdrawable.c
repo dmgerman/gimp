@@ -1878,9 +1878,6 @@ condition|(
 name|format_str
 condition|)
 block|{
-name|gimp_plugin_enable_precision
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 name|gimp_drawable_is_indexed

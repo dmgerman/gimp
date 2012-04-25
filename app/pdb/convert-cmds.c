@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-convert.h"
 end_include
 
@@ -53,6 +59,18 @@ begin_include
 include|#
 directive|include
 file|"core/gimpparamspecs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-in/gimpplugin.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-in/gimppluginmanager.h"
 end_include
 
 begin_include
@@ -937,6 +955,23 @@ condition|(
 name|success
 condition|)
 block|{
+if|if
+condition|(
+name|gimp
+operator|->
+name|plug_in_manager
+operator|->
+name|current_plug_in
+condition|)
+name|gimp_plug_in_enable_precision
+argument_list|(
+name|gimp
+operator|->
+name|plug_in_manager
+operator|->
+name|current_plug_in
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp_pdb_image_is_not_base_type
