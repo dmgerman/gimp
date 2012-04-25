@@ -5575,6 +5575,14 @@ literal|"image-type"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_IMAGE_PRECISION
+block|,
+literal|"GIMP_UNDO_IMAGE_PRECISION"
+block|,
+literal|"image-precision"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_IMAGE_SIZE
 block|,
 literal|"GIMP_UNDO_IMAGE_SIZE"
@@ -6428,6 +6436,19 @@ argument_list|(
 literal|"undo-type"
 argument_list|,
 literal|"Image type"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_UNDO_IMAGE_PRECISION
+block|,
+name|NC_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Image precision"
 argument_list|)
 block|,
 name|NULL

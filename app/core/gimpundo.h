@@ -31,6 +31,10 @@ DECL|member|mode_changed
 name|gboolean
 name|mode_changed
 decl_stmt|;
+DECL|member|precision_changed
+name|gboolean
+name|precision_changed
+decl_stmt|;
 DECL|member|size_changed
 name|gboolean
 name|size_changed

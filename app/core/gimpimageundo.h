@@ -107,6 +107,10 @@ DECL|member|base_type
 name|GimpImageBaseType
 name|base_type
 decl_stmt|;
+DECL|member|precision
+name|GimpPrecision
+name|precision
+decl_stmt|;
 DECL|member|width
 name|gint
 name|width

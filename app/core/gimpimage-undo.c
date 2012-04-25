@@ -1764,6 +1764,17 @@ if|if
 condition|(
 name|accum
 operator|.
+name|precision_changed
+condition|)
+name|gimp_image_precision_changed
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|accum
+operator|.
 name|size_changed
 condition|)
 name|gimp_image_size_changed_detailed

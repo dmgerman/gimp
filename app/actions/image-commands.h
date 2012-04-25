@@ -32,7 +32,25 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|image_convert_cmd_callback
+name|image_convert_base_type_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|GtkAction
+modifier|*
+name|current
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|image_convert_precision_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
