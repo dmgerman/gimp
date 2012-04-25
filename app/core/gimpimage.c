@@ -352,7 +352,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a44bcf80103
+DECL|enum|__anon2952e3b30103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -446,7 +446,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a44bcf80203
+DECL|enum|__anon2952e3b30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6291,6 +6291,19 @@ name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
 argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|base_type
+operator|!=
+name|GIMP_INDEXED
+operator|||
+name|precision
+operator|!=
+name|GIMP_PRECISION_U8
 argument_list|,
 name|NULL
 argument_list|)
