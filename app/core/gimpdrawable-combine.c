@@ -466,8 +466,15 @@ block|}
 block|}
 if|if
 condition|(
-name|FALSE
-comment|/* XXX gimp_use_gegl (image->gimp)&& ! dest_buffer */
+name|gimp_use_gegl
+argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|)
+operator|&&
+operator|!
+name|dest_buffer
 condition|)
 block|{
 name|GeglBuffer
