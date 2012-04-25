@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-babl-compat.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl/gimp-gegl-loops.h"
 end_include
 
@@ -676,9 +682,12 @@ name|operation
 operator|=
 name|gimp_image_get_combination_mode
 argument_list|(
-name|gimp_drawable_type
+name|gimp_babl_format_get_image_type
+argument_list|(
+name|gimp_drawable_get_format
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|)
 argument_list|,
 name|src2PR

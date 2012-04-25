@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl-utils.h"
+file|"gegl/gimp-babl-compat.h"
 end_include
 
 begin_include
@@ -114,7 +114,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b97d2ac0103
+DECL|enum|__anon2a9f75610103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED

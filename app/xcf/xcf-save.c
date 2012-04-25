@@ -54,13 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl-tile-compat.h"
+file|"gegl/gimp-babl-compat.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl-utils.h"
+file|"gegl/gimp-gegl-tile-compat.h"
 end_include
 
 begin_include
@@ -7065,7 +7065,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a35eb010108
+DECL|struct|__anon2c4bfff40108
 block|{
 DECL|member|info
 name|XcfInfo
