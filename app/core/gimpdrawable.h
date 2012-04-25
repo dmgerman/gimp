@@ -1095,18 +1095,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
-name|gimp_drawable_bytes
-parameter_list|(
-specifier|const
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 specifier|const
 name|guchar
 modifier|*

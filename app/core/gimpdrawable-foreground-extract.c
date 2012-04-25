@@ -416,9 +416,12 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|gimp_drawable_bytes
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|gimp_drawable_get_format
 argument_list|(
 name|mask
+argument_list|)
 argument_list|)
 operator|==
 literal|1

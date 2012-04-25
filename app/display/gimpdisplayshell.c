@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293132310103
+DECL|enum|__anon2963f2770103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -363,7 +363,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293132310203
+DECL|enum|__anon2963f2770203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -7321,9 +7321,12 @@ argument_list|(
 name|mask
 argument_list|)
 operator|&&
-name|gimp_drawable_bytes
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|gimp_drawable_get_format
 argument_list|(
 name|mask
+argument_list|)
 argument_list|)
 operator|==
 literal|1
