@@ -523,6 +523,15 @@ argument_list|,
 name|error
 argument_list|)
 operator|&&
+name|gimp_pdb_image_has_precision
+argument_list|(
+name|image
+argument_list|,
+name|GIMP_PRECISION_U8
+argument_list|,
+name|error
+argument_list|)
+operator|&&
 name|gimp_item_stack_is_flat
 argument_list|(
 name|GIMP_ITEM_STACK
