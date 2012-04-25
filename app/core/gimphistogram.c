@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-babl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimphistogram.h"
 end_include
 
@@ -299,7 +305,7 @@ modifier|*
 name|format
 decl_stmt|;
 name|gint
-name|bpp
+name|n_components
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -323,7 +329,6 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* XXX need to analyze the real components here, this code assumes u8 */
 name|format
 operator|=
 name|gegl_buffer_get_format
@@ -331,18 +336,35 @@ argument_list|(
 name|buffer
 argument_list|)
 expr_stmt|;
-name|bpp
+name|format
 operator|=
-name|babl_format_get_bytes_per_pixel
+name|gimp_babl_format
+argument_list|(
+name|gimp_babl_format_get_base_type
 argument_list|(
 name|format
 argument_list|)
+argument_list|,
+name|GIMP_PRECISION_U8
+argument_list|,
+name|babl_format_has_alpha
+argument_list|(
+name|format
+argument_list|)
+argument_list|)
 expr_stmt|;
+name|n_components
+operator|=
+name|babl_format_get_n_components
+argument_list|(
+name|format
+argument_list|)
+operator|,
 name|gimp_histogram_alloc_values
 argument_list|(
 name|histogram
 argument_list|,
-name|bpp
+name|n_components
 argument_list|)
 expr_stmt|;
 name|iter
@@ -355,7 +377,7 @@ name|buffer_rect
 argument_list|,
 literal|0
 argument_list|,
-name|NULL
+name|format
 argument_list|,
 name|GEGL_BUFFER_READ
 argument_list|,
@@ -438,7 +460,7 @@ index|]
 decl_stmt|;
 switch|switch
 condition|(
-name|bpp
+name|n_components
 condition|)
 block|{
 case|case
@@ -472,7 +494,7 @@ name|masked
 expr_stmt|;
 name|data
 operator|+=
-name|bpp
+name|n_components
 expr_stmt|;
 name|mask_data
 operator|+=
@@ -537,7 +559,7 @@ name|masked
 expr_stmt|;
 name|data
 operator|+=
-name|bpp
+name|n_components
 expr_stmt|;
 name|mask_data
 operator|+=
@@ -638,7 +660,7 @@ name|masked
 expr_stmt|;
 name|data
 operator|+=
-name|bpp
+name|n_components
 expr_stmt|;
 name|mask_data
 operator|+=
@@ -770,7 +792,7 @@ name|masked
 expr_stmt|;
 name|data
 operator|+=
-name|bpp
+name|n_components
 expr_stmt|;
 name|mask_data
 operator|+=
@@ -785,7 +807,7 @@ comment|/* no mask */
 block|{
 switch|switch
 condition|(
-name|bpp
+name|n_components
 condition|)
 block|{
 case|case
@@ -813,7 +835,7 @@ literal|1.0
 expr_stmt|;
 name|data
 operator|+=
-name|bpp
+name|n_components
 expr_stmt|;
 block|}
 break|break;
@@ -865,7 +887,7 @@ literal|1.0
 expr_stmt|;
 name|data
 operator|+=
-name|bpp
+name|n_components
 expr_stmt|;
 block|}
 break|break;
@@ -955,7 +977,7 @@ literal|1.0
 expr_stmt|;
 name|data
 operator|+=
-name|bpp
+name|n_components
 expr_stmt|;
 block|}
 break|break;
@@ -1068,7 +1090,7 @@ name|weight
 expr_stmt|;
 name|data
 operator|+=
-name|bpp
+name|n_components
 expr_stmt|;
 block|}
 break|break;
