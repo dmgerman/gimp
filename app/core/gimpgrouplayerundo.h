@@ -107,6 +107,10 @@ DECL|member|prev_type
 name|GimpImageBaseType
 name|prev_type
 decl_stmt|;
+DECL|member|prev_precision
+name|GimpPrecision
+name|prev_precision
+decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7d04ee0103
+DECL|enum|__anon2c5363a80103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -204,7 +204,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7d04ee0203
+DECL|enum|__anon2c5363a80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2779,6 +2779,7 @@ name|old_precision
 operator|!=
 name|new_precision
 condition|)
+block|{
 name|gimp_drawable_convert_type
 argument_list|(
 name|drawable
@@ -2787,9 +2788,12 @@ name|dest_image
 argument_list|,
 name|new_base_type
 argument_list|,
+name|new_precision
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|layer

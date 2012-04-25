@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28efaa280103
+DECL|enum|__anon29bf820c0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -566,6 +566,9 @@ name|dest_image
 parameter_list|,
 name|GimpImageBaseType
 name|new_base_type
+parameter_list|,
+name|GimpPrecision
+name|new_precision
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -2970,7 +2973,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_real_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type,gboolean push_undo)
+DECL|function|gimp_drawable_real_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type,GimpPrecision new_precision,gboolean push_undo)
 name|gimp_drawable_real_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -2983,6 +2986,9 @@ name|dest_image
 parameter_list|,
 name|GimpImageBaseType
 name|new_base_type
+parameter_list|,
+name|GimpPrecision
+name|new_precision
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -2999,11 +3005,11 @@ name|format
 decl_stmt|;
 name|format
 operator|=
-name|gimp_image_get_format
+name|gimp_babl_format
 argument_list|(
-name|dest_image
-argument_list|,
 name|new_base_type
+argument_list|,
+name|new_precision
 argument_list|,
 name|gimp_drawable_has_alpha
 argument_list|(
@@ -5071,7 +5077,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type,gboolean push_undo)
+DECL|function|gimp_drawable_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type,GimpPrecision new_precision,gboolean push_undo)
 name|gimp_drawable_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -5084,6 +5090,9 @@ name|dest_image
 parameter_list|,
 name|GimpImageBaseType
 name|new_base_type
+parameter_list|,
+name|GimpPrecision
+name|new_precision
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -5114,10 +5123,7 @@ argument_list|(
 name|drawable
 argument_list|)
 operator|||
-name|gimp_image_get_precision
-argument_list|(
-name|dest_image
-argument_list|)
+name|new_precision
 operator|!=
 name|gimp_drawable_get_precision
 argument_list|(
@@ -5152,6 +5158,8 @@ argument_list|,
 name|dest_image
 argument_list|,
 name|new_base_type
+argument_list|,
+name|new_precision
 argument_list|,
 name|push_undo
 argument_list|)

@@ -234,6 +234,9 @@ parameter_list|,
 name|GimpImageBaseType
 name|new_base_type
 parameter_list|,
+name|GimpPrecision
+name|new_precision
+parameter_list|,
 name|gboolean
 name|push_undo
 parameter_list|)
@@ -613,6 +616,9 @@ name|dest_image
 parameter_list|,
 name|GimpImageBaseType
 name|new_base_type
+parameter_list|,
+name|GimpPrecision
+name|new_precision
 parameter_list|,
 name|gboolean
 name|push_undo

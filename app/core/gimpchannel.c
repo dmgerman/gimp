@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2894de3b0103
+DECL|enum|__anon27913b310103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -2208,6 +2208,11 @@ argument_list|,
 name|dest_image
 argument_list|,
 name|GIMP_GRAY
+argument_list|,
+name|gimp_image_get_precision
+argument_list|(
+name|dest_image
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
