@@ -797,7 +797,7 @@ name|NC_
 argument_list|(
 literal|"image-convert-action"
 argument_list|,
-literal|"16 bit floating point"
+literal|"32 bit floating point"
 argument_list|)
 block|,
 name|NULL
@@ -806,7 +806,7 @@ name|NC_
 argument_list|(
 literal|"image-convert-action"
 argument_list|,
-literal|"Convert the image to 16 bit floating point"
+literal|"Convert the image to 32 bit floating point"
 argument_list|)
 block|,
 name|GIMP_PRECISION_FLOAT
