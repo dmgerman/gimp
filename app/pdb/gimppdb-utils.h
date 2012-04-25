@@ -446,7 +446,26 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_pdb_image_has_precision
+name|gimp_pdb_image_is_precision
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|GimpPrecision
+name|precision
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_pdb_image_is_not_precision
 parameter_list|(
 name|GimpImage
 modifier|*
