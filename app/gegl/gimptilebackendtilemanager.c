@@ -112,7 +112,7 @@ specifier|static
 name|int
 name|mul
 init|=
-literal|8
+literal|2
 decl_stmt|;
 specifier|static
 name|gboolean
