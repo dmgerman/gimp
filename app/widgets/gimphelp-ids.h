@@ -734,6 +734,14 @@ value|"gimp-image-convert-u16"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_IMAGE_CONVERT_HALF
+define|#
+directive|define
+name|GIMP_HELP_IMAGE_CONVERT_HALF
+value|"gimp-image-convert-half"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_IMAGE_CONVERT_FLOAT
 define|#
 directive|define

@@ -4094,6 +4094,14 @@ literal|"u16"
 block|}
 block|,
 block|{
+name|GIMP_PRECISION_HALF
+block|,
+literal|"GIMP_PRECISION_HALF"
+block|,
+literal|"half"
+block|}
+block|,
+block|{
 name|GIMP_PRECISION_FLOAT
 block|,
 literal|"GIMP_PRECISION_FLOAT"
@@ -4138,6 +4146,19 @@ argument_list|(
 literal|"precision"
 argument_list|,
 literal|"16-bit unsigned integer"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_PRECISION_HALF
+block|,
+name|NC_
+argument_list|(
+literal|"precision"
+argument_list|,
+literal|"16-bit floating point"
 argument_list|)
 block|,
 name|NULL

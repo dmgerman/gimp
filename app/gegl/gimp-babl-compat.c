@@ -38,6 +38,11 @@ modifier|*
 name|format
 parameter_list|)
 block|{
+specifier|const
+name|Babl
+modifier|*
+name|model
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|format
@@ -48,34 +53,27 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+name|model
+operator|=
+name|babl_format_get_model
+argument_list|(
+name|format
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
-name|format
+name|model
 operator|==
-name|babl_format
+name|babl_model
 argument_list|(
-literal|"Y u8"
+literal|"Y"
 argument_list|)
 operator|||
-name|format
+name|model
 operator|==
-name|babl_format
+name|babl_model
 argument_list|(
-literal|"Y' u8"
-argument_list|)
-operator|||
-name|format
-operator|==
-name|babl_format
-argument_list|(
-literal|"Y u16"
-argument_list|)
-operator|||
-name|format
-operator|==
-name|babl_format
-argument_list|(
-literal|"Y float"
+literal|"Y'"
 argument_list|)
 condition|)
 block|{
@@ -86,25 +84,18 @@ block|}
 elseif|else
 if|if
 condition|(
-name|format
+name|model
 operator|==
-name|babl_format
+name|babl_model
 argument_list|(
-literal|"Y'A u8"
+literal|"YA"
 argument_list|)
 operator|||
-name|format
+name|model
 operator|==
-name|babl_format
+name|babl_model
 argument_list|(
-literal|"YA u16"
-argument_list|)
-operator|||
-name|format
-operator|==
-name|babl_format
-argument_list|(
-literal|"YA float"
+literal|"Y'A"
 argument_list|)
 condition|)
 block|{
@@ -115,25 +106,18 @@ block|}
 elseif|else
 if|if
 condition|(
-name|format
+name|model
 operator|==
-name|babl_format
+name|babl_model
 argument_list|(
-literal|"R'G'B' u8"
+literal|"RGB"
 argument_list|)
 operator|||
-name|format
+name|model
 operator|==
-name|babl_format
+name|babl_model
 argument_list|(
-literal|"RGB u16"
-argument_list|)
-operator|||
-name|format
-operator|==
-name|babl_format
-argument_list|(
-literal|"RGB float"
+literal|"R'G'B'"
 argument_list|)
 condition|)
 block|{
@@ -144,25 +128,18 @@ block|}
 elseif|else
 if|if
 condition|(
-name|format
+name|model
 operator|==
-name|babl_format
+name|babl_model
 argument_list|(
-literal|"R'G'B'A u8"
+literal|"RGBA"
 argument_list|)
 operator|||
-name|format
+name|model
 operator|==
-name|babl_format
+name|babl_model
 argument_list|(
-literal|"RGBA u16"
-argument_list|)
-operator|||
-name|format
-operator|==
-name|babl_format
-argument_list|(
-literal|"RGBA float"
+literal|"R'G'B'A"
 argument_list|)
 condition|)
 block|{
