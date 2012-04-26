@@ -213,7 +213,7 @@ DECL|macro|TILE_MAP_SIZE
 define|#
 directive|define
 name|TILE_MAP_SIZE
-value|(GIMP_PLUG_IN_TILE_WIDTH * GIMP_PLUG_IN_TILE_HEIGHT * 4)
+value|(GIMP_PLUG_IN_TILE_WIDTH * GIMP_PLUG_IN_TILE_HEIGHT * 16)
 end_define
 
 begin_define
