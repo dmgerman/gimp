@@ -2692,6 +2692,8 @@ argument_list|,
 name|GIMP_SELECT_CRITERION_COMPOSITE
 argument_list|,
 name|threshold
+operator|/
+literal|255.0
 argument_list|,
 name|sample_merged
 argument_list|,
@@ -3057,6 +3059,8 @@ argument_list|,
 name|select_criterion
 argument_list|,
 name|threshold
+operator|/
+literal|255.0
 argument_list|,
 name|sample_merged
 argument_list|,

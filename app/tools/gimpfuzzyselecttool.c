@@ -391,6 +391,8 @@ argument_list|,
 name|options
 operator|->
 name|threshold
+operator|/
+literal|255.0
 argument_list|,
 name|options
 operator|->

@@ -35,7 +35,7 @@ parameter_list|,
 name|gboolean
 name|antialias
 parameter_list|,
-name|gint
+name|gfloat
 name|threshold
 parameter_list|,
 name|gboolean
@@ -72,7 +72,7 @@ parameter_list|,
 name|gboolean
 name|antialias
 parameter_list|,
-name|gint
+name|gfloat
 name|threshold
 parameter_list|,
 name|gboolean

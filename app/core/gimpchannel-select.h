@@ -389,7 +389,7 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|gint
+name|gfloat
 name|threshold
 parameter_list|,
 name|gboolean
@@ -436,7 +436,7 @@ name|GimpRGB
 modifier|*
 name|color
 parameter_list|,
-name|gint
+name|gfloat
 name|threshold
 parameter_list|,
 name|gboolean

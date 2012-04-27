@@ -294,6 +294,8 @@ operator|&
 name|color
 argument_list|,
 name|threshold
+operator|/
+literal|255.0
 argument_list|,
 name|FALSE
 comment|/* don't select transparent */
@@ -581,6 +583,8 @@ operator|&
 name|color
 argument_list|,
 name|threshold
+operator|/
+literal|255.0
 argument_list|,
 name|select_transparent
 argument_list|,
@@ -1300,6 +1304,8 @@ argument_list|,
 name|y
 argument_list|,
 name|threshold
+operator|/
+literal|255.0
 argument_list|,
 name|FALSE
 comment|/* don't select transparent */
@@ -1603,6 +1609,8 @@ argument_list|,
 name|y
 argument_list|,
 name|threshold
+operator|/
+literal|255.0
 argument_list|,
 name|select_transparent
 argument_list|,

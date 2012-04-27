@@ -1748,7 +1748,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_select_fuzzy (GimpChannel * channel,GimpDrawable * drawable,gboolean sample_merged,gint x,gint y,gint threshold,gboolean select_transparent,GimpSelectCriterion select_criterion,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_channel_select_fuzzy (GimpChannel * channel,GimpDrawable * drawable,gboolean sample_merged,gint x,gint y,gfloat threshold,gboolean select_transparent,GimpSelectCriterion select_criterion,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
 name|gimp_channel_select_fuzzy
 parameter_list|(
 name|GimpChannel
@@ -1768,7 +1768,7 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|gint
+name|gfloat
 name|threshold
 parameter_list|,
 name|gboolean
@@ -1926,7 +1926,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_select_by_color (GimpChannel * channel,GimpDrawable * drawable,gboolean sample_merged,const GimpRGB * color,gint threshold,gboolean select_transparent,GimpSelectCriterion select_criterion,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_channel_select_by_color (GimpChannel * channel,GimpDrawable * drawable,gboolean sample_merged,const GimpRGB * color,gfloat threshold,gboolean select_transparent,GimpSelectCriterion select_criterion,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
 name|gimp_channel_select_by_color
 parameter_list|(
 name|GimpChannel
@@ -1945,7 +1945,7 @@ name|GimpRGB
 modifier|*
 name|color
 parameter_list|,
-name|gint
+name|gfloat
 name|threshold
 parameter_list|,
 name|gboolean

@@ -599,9 +599,6 @@ name|sample_merged
 argument_list|,
 name|TRUE
 argument_list|,
-operator|(
-name|gint
-operator|)
 name|threshold
 argument_list|,
 name|fill_transparent
