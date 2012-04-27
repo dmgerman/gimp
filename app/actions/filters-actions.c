@@ -118,6 +118,33 @@ comment|/* FIXME GIMP_HELP_FILTER_PIXELIZE */
 block|}
 block|,
 block|{
+literal|"filters-gaussian-blur"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Gaussian Blur..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Apply a gaussian blur"
+argument_list|)
+block|,
+literal|"gegl:gaussian-blur"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_GAUSSIAN_BLUR */
+block|}
+block|,
+block|{
 literal|"filters-pixelize"
 block|,
 name|GIMP_STOCK_GEGL
@@ -145,7 +172,7 @@ comment|/* FIXME GIMP_HELP_FILTER_PIXELIZE */
 block|}
 block|,
 block|{
-literal|"filters-gaussian-blur"
+literal|"filters-polar-coordinates"
 block|,
 name|GIMP_STOCK_GEGL
 block|,
@@ -153,7 +180,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"_Gaussian Blur..."
+literal|"P_olar Coordinates..."
 argument_list|)
 block|,
 name|NULL
@@ -162,13 +189,13 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"Apply a gaussian blur"
+literal|"Convert image to or from polar coordinates"
 argument_list|)
 block|,
-literal|"gegl:gaussian-blur"
+literal|"gegl:polar-coordinates"
 block|,
 name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_GAUSSIAN_BLUR */
+comment|/* FIXME GIMP_HELP_FILTER_POLAR_COORDINATES */
 block|}
 block|, }
 decl_stmt|;
@@ -363,6 +390,13 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
+literal|"filters-gaussian-blur"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
 literal|"filters-pixelize"
 argument_list|,
 name|writable
@@ -370,7 +404,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"filters-gaussian-blur"
+literal|"filters-polar-coordinates"
 argument_list|,
 name|writable
 argument_list|)

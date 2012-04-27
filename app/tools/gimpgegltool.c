@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5c69330103
+DECL|enum|__anon2c00e7da0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -352,7 +352,16 @@ comment|/* in gimp */
 literal|"gegl:invert"
 block|,
 comment|/* in gimp */
+literal|"gegl:gaussian-blur"
+block|,
+comment|/* in gimp */
 literal|"gegl:grey"
+block|,
+comment|/* in gimp */
+literal|"gegl:pixelize"
+block|,
+comment|/* in gimp */
+literal|"gegl:polar-coordinates"
 block|,
 comment|/* in gimp */
 literal|"gegl:posterize"
