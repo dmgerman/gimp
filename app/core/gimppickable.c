@@ -548,7 +548,7 @@ block|{
 name|guchar
 name|pixel
 index|[
-literal|4
+literal|32
 index|]
 decl_stmt|;
 name|g_return_val_if_fail
