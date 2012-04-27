@@ -28,6 +28,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|const
+name|Babl
+modifier|*
+name|gimp_babl_compat_u8_format
+parameter_list|(
+specifier|const
+name|Babl
+modifier|*
+name|format
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
