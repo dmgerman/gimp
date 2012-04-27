@@ -734,6 +734,14 @@ value|"gimp-image-convert-u16"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_IMAGE_CONVERT_U32
+define|#
+directive|define
+name|GIMP_HELP_IMAGE_CONVERT_U32
+value|"gimp-image-convert-u32"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_IMAGE_CONVERT_HALF
 define|#
 directive|define

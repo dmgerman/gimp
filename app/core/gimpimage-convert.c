@@ -401,7 +401,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2aaa6d410103
+DECL|enum|__anon2acd87930103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1500,7 +1500,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aaa6d410208
+DECL|struct|__anon2acd87930208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1743,7 +1743,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aaa6d410308
+DECL|struct|__anon2acd87930308
 block|{
 DECL|member|used_count
 name|signed
@@ -4178,6 +4178,19 @@ argument_list|(
 literal|"undo-type"
 argument_list|,
 literal|"Convert Image to 16 bit unsigned integer"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_PRECISION_U32
+case|:
+name|undo_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Convert Image to 32 bit unsigned integer"
 argument_list|)
 expr_stmt|;
 break|break;
