@@ -198,20 +198,16 @@ block|{
 name|GimpDrawable
 modifier|*
 name|drawable
-decl_stmt|;
-name|GimpImage
-modifier|*
-name|image
-decl_stmt|;
-name|drawable
-operator|=
+init|=
 name|GIMP_DRAWABLE
 argument_list|(
 name|viewable
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|GimpImage
+modifier|*
 name|image
-operator|=
+init|=
 name|gimp_item_get_image
 argument_list|(
 name|GIMP_ITEM
@@ -219,7 +215,7 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -230,6 +226,14 @@ operator|->
 name|config
 operator|->
 name|layer_previews
+operator|||
+comment|/* XXX fixme enable drawable previews for> u8 */
+name|gimp_drawable_get_precision
+argument_list|(
+name|drawable
+argument_list|)
+operator|!=
+name|GIMP_PRECISION_U8
 condition|)
 return|return
 name|NULL
@@ -556,6 +560,14 @@ operator|->
 name|config
 operator|->
 name|layer_previews
+operator|||
+comment|/* XXX fixme enable drawable previews for> u8 */
+name|gimp_drawable_get_precision
+argument_list|(
+name|drawable
+argument_list|)
+operator|!=
+name|GIMP_PRECISION_U8
 condition|)
 return|return
 name|NULL
@@ -644,6 +656,8 @@ block|{
 name|GimpTempBuf
 modifier|*
 name|ret_buf
+init|=
+name|NULL
 decl_stmt|;
 if|if
 condition|(
