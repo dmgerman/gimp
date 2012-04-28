@@ -103,6 +103,10 @@ DECL|member|parent_instance
 name|GimpItemUndo
 name|parent_instance
 decl_stmt|;
+DECL|member|convert_precision
+name|gboolean
+name|convert_precision
+decl_stmt|;
 DECL|member|buffer
 name|GeglBuffer
 modifier|*
@@ -115,6 +119,12 @@ decl_stmt|;
 DECL|member|y
 name|gint
 name|y
+decl_stmt|;
+DECL|member|format
+specifier|const
+name|Babl
+modifier|*
+name|format
 decl_stmt|;
 block|}
 struct|;
