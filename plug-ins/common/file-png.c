@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2ab60b0108
+DECL|struct|__anon2c18c0ef0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2ab60b0208
+DECL|struct|__anon2c18c0ef0208
 block|{
 DECL|member|run
 name|gboolean
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2ab60b0308
+DECL|struct|__anon2c18c0ef0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -4172,35 +4172,9 @@ block|{
 warning|#
 directive|warning
 warning|this crashes horribly.
-name|g_printerr
-argument_list|(
-literal|"pre-add-alpha: %s\n"
-argument_list|,
-name|babl_get_name
-argument_list|(
-name|gimp_drawable_get_format
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_layer_add_alpha
 argument_list|(
 name|layer
-argument_list|)
-expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"post-add-alpha: %s\n"
-argument_list|,
-name|babl_get_name
-argument_list|(
-name|gimp_drawable_get_format
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|file_format
