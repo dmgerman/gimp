@@ -352,7 +352,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c82c06f0103
+DECL|enum|__anon29344ecd0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -449,7 +449,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c82c06f0203
+DECL|enum|__anon29344ecd0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6379,7 +6379,7 @@ operator|!=
 name|GIMP_INDEXED
 operator|||
 name|precision
-operator|!=
+operator|==
 name|GIMP_PRECISION_U8
 argument_list|,
 name|NULL
