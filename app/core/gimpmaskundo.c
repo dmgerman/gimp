@@ -47,13 +47,13 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b05c1bc0103
+DECL|enum|__anon27d9e6cc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
 block|,
-DECL|enumerator|PROP_CONVERT_PRECISION
-name|PROP_CONVERT_PRECISION
+DECL|enumerator|PROP_CONVERT_FORMAT
+name|PROP_CONVERT_FORMAT
 block|}
 enum|;
 end_enum
@@ -264,11 +264,11 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_CONVERT_PRECISION
+name|PROP_CONVERT_FORMAT
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
-literal|"convert-precision"
+literal|"convert-format"
 argument_list|,
 name|NULL
 argument_list|,
@@ -534,11 +534,11 @@ name|property_id
 condition|)
 block|{
 case|case
-name|PROP_CONVERT_PRECISION
+name|PROP_CONVERT_FORMAT
 case|:
 name|mask_undo
 operator|->
-name|convert_precision
+name|convert_format
 operator|=
 name|g_value_get_boolean
 argument_list|(
@@ -598,7 +598,7 @@ name|property_id
 condition|)
 block|{
 case|case
-name|PROP_CONVERT_PRECISION
+name|PROP_CONVERT_FORMAT
 case|:
 name|g_value_set_boolean
 argument_list|(
@@ -606,7 +606,7 @@ name|value
 argument_list|,
 name|mask_undo
 operator|->
-name|convert_precision
+name|convert_format
 argument_list|)
 expr_stmt|;
 break|break;
@@ -896,7 +896,7 @@ if|if
 condition|(
 name|mask_undo
 operator|->
-name|convert_precision
+name|convert_format
 condition|)
 block|{
 name|GeglBuffer

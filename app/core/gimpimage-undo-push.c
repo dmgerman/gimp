@@ -1206,7 +1206,7 @@ literal|"item"
 argument_list|,
 name|mask
 argument_list|,
-literal|"convert-precision"
+literal|"convert-format"
 argument_list|,
 name|TRUE
 argument_list|,

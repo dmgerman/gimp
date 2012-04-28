@@ -103,9 +103,9 @@ DECL|member|parent_instance
 name|GimpItemUndo
 name|parent_instance
 decl_stmt|;
-DECL|member|convert_precision
+DECL|member|convert_format
 name|gboolean
-name|convert_precision
+name|convert_format
 decl_stmt|;
 DECL|member|buffer
 name|GeglBuffer
