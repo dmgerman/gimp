@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c18c0ef0108
+DECL|struct|__anon2acd70ec0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c18c0ef0208
+DECL|struct|__anon2acd70ec0208
 block|{
 DECL|member|run
 name|gboolean
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c18c0ef0308
+DECL|struct|__anon2acd70ec0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -4169,9 +4169,6 @@ condition|(
 name|trns
 condition|)
 block|{
-warning|#
-directive|warning
-warning|this crashes horribly.
 name|gimp_layer_add_alpha
 argument_list|(
 name|layer
