@@ -1960,12 +1960,12 @@ argument_list|)
 condition|)
 name|format
 operator|=
-name|palette
+name|palette_alpha
 expr_stmt|;
 else|else
 name|format
 operator|=
-name|palette_alpha
+name|palette
 expr_stmt|;
 block|}
 else|else
