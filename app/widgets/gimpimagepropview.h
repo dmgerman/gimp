@@ -122,6 +122,11 @@ name|GtkWidget
 modifier|*
 name|colorspace_label
 decl_stmt|;
+DECL|member|precision_label
+name|GtkWidget
+modifier|*
+name|precision_label
+decl_stmt|;
 DECL|member|filename_label
 name|GtkWidget
 modifier|*
