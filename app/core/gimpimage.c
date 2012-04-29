@@ -352,7 +352,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29344ecd0103
+DECL|enum|__anon27df97ba0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -449,7 +449,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29344ecd0203
+DECL|enum|__anon27df97ba0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -8586,10 +8586,10 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"Y' u8"
+literal|"Y u8"
 argument_list|)
 return|;
-comment|/* XXX: seems wrong */
+comment|/* will extract grayscale, the best                                     * we can do here */
 block|}
 return|return
 name|NULL
