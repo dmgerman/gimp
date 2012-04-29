@@ -359,7 +359,7 @@ name|babl_format_get_n_components
 argument_list|(
 name|format
 argument_list|)
-operator|,
+expr_stmt|;
 name|gimp_histogram_alloc_values
 argument_list|(
 name|histogram
