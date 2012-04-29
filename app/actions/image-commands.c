@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-convert-precision.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-crop.h"
 end_include
 
@@ -228,7 +234,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b86244f0108
+DECL|struct|__anon28ea4e390108
 block|{
 DECL|member|context
 name|GimpContext

@@ -34,6 +34,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-convert-precision.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-convert.h"
 end_include
 
