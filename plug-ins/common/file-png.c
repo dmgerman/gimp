@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1f64590108
+DECL|struct|__anon28f936df0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1f64590208
+DECL|struct|__anon28f936df0208
 block|{
 DECL|member|run
 name|gboolean
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1f64590308
+DECL|struct|__anon28f936df0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -2282,14 +2282,12 @@ comment|/* Transparency present */
 name|bpp
 decl_stmt|,
 comment|/* Bytes per pixel */
-name|have_u16
-init|=
-literal|0
-decl_stmt|,
-comment|/* 16bit values? */
 name|image_type
 decl_stmt|,
 comment|/* Type of image */
+name|image_precision
+decl_stmt|,
+comment|/* Precision of image */
 name|layer_type
 decl_stmt|,
 comment|/* Type of drawable/layer */
@@ -2342,12 +2340,6 @@ modifier|*
 name|buffer
 decl_stmt|;
 comment|/* GEGL buffer for layer */
-specifier|const
-name|char
-modifier|*
-name|file_format_nick
-decl_stmt|;
-comment|/* BABL nick for file format */
 specifier|const
 name|Babl
 modifier|*
@@ -2567,25 +2559,38 @@ argument_list|)
 operator|==
 literal|16
 condition|)
-block|{
-name|have_u16
+name|image_precision
 operator|=
-literal|1
+name|GIMP_PRECISION_U16
 expr_stmt|;
-block|}
+else|else
+name|image_precision
+operator|=
+name|GIMP_PRECISION_U8
+expr_stmt|;
 if|if
 condition|(
 name|G_BYTE_ORDER
 operator|==
 name|G_LITTLE_ENDIAN
 condition|)
-block|{
 name|png_set_swap
 argument_list|(
 name|pp
 argument_list|)
 expr_stmt|;
-block|}
+if|if
+condition|(
+name|png_get_bit_depth
+argument_list|(
+name|pp
+argument_list|,
+name|info
+argument_list|)
+operator|<
+literal|8
+condition|)
+block|{
 if|if
 condition|(
 name|png_get_color_type
@@ -2596,23 +2601,12 @@ name|info
 argument_list|)
 operator|==
 name|PNG_COLOR_TYPE_GRAY
-operator|&&
-name|png_get_bit_depth
-argument_list|(
-name|pp
-argument_list|,
-name|info
-argument_list|)
-operator|<
-literal|8
 condition|)
-block|{
 name|png_set_expand
 argument_list|(
 name|pp
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|png_get_color_type
@@ -2623,17 +2617,7 @@ name|info
 argument_list|)
 operator|==
 name|PNG_COLOR_TYPE_PALETTE
-operator|&&
-name|png_get_bit_depth
-argument_list|(
-name|pp
-argument_list|,
-name|info
-argument_list|)
-operator|<
-literal|8
 condition|)
-block|{
 name|png_set_packing
 argument_list|(
 name|pp
@@ -2661,13 +2645,11 @@ argument_list|,
 name|PNG_INFO_tRNS
 argument_list|)
 condition|)
-block|{
 name|png_set_expand
 argument_list|(
 name|pp
 argument_list|)
 expr_stmt|;
-block|}
 comment|/*    * Turn on interlace handling... libpng returns just 1 (ie single pass)    * if the image is not interlaced    */
 name|num_passes
 operator|=
@@ -2796,7 +2778,6 @@ case|case
 name|PNG_COLOR_TYPE_RGB
 case|:
 comment|/* RGB */
-comment|// file_format = gimp_babl_format (GIMP_RGB, have_u16 ? GIMP_PRECISION_U16 : GIMP_PRECISION_U8, FALSE);
 name|image_type
 operator|=
 name|GIMP_RGB
@@ -2805,20 +2786,32 @@ name|layer_type
 operator|=
 name|GIMP_RGB_IMAGE
 expr_stmt|;
-name|file_format_nick
+if|if
+condition|(
+name|image_precision
+operator|==
+name|GIMP_PRECISION_U8
+condition|)
+name|file_format
 operator|=
-name|have_u16
-condition|?
-literal|"R'G'B' u16"
-else|:
+name|babl_format
+argument_list|(
 literal|"R'G'B' u8"
+argument_list|)
+expr_stmt|;
+else|else
+name|file_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B' u16"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
 name|PNG_COLOR_TYPE_RGB_ALPHA
 case|:
 comment|/* RGBA */
-comment|// file_format = gimp_babl_format (GIMP_RGB, have_u16 ? GIMP_PRECISION_U16 : GIMP_PRECISION_U8, TRUE);
 name|image_type
 operator|=
 name|GIMP_RGB
@@ -2827,20 +2820,32 @@ name|layer_type
 operator|=
 name|GIMP_RGBA_IMAGE
 expr_stmt|;
-name|file_format_nick
+if|if
+condition|(
+name|image_precision
+operator|==
+name|GIMP_PRECISION_U8
+condition|)
+name|file_format
 operator|=
-name|have_u16
-condition|?
-literal|"R'G'B'A u16"
-else|:
+name|babl_format
+argument_list|(
 literal|"R'G'B'A u8"
+argument_list|)
+expr_stmt|;
+else|else
+name|file_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u16"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
 name|PNG_COLOR_TYPE_GRAY
 case|:
 comment|/* Grayscale */
-comment|// file_format = gimp_babl_format (GIMP_GRAY, have_u16 ? GIMP_PRECISION_U16 : GIMP_PRECISION_U8, FALSE);
 name|image_type
 operator|=
 name|GIMP_GRAY
@@ -2849,20 +2854,32 @@ name|layer_type
 operator|=
 name|GIMP_GRAY_IMAGE
 expr_stmt|;
-name|file_format_nick
+if|if
+condition|(
+name|image_precision
+operator|==
+name|GIMP_PRECISION_U8
+condition|)
+name|file_format
 operator|=
-name|have_u16
-condition|?
-literal|"Y' u16"
-else|:
+name|babl_format
+argument_list|(
 literal|"Y' u8"
+argument_list|)
+expr_stmt|;
+else|else
+name|file_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y' u16"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
 name|PNG_COLOR_TYPE_GRAY_ALPHA
 case|:
 comment|/* Grayscale + alpha */
-comment|// file_format = gimp_babl_format (GIMP_GRAY, have_u16 ? GIMP_PRECISION_U16 : GIMP_PRECISION_U8, TRUE);
 name|image_type
 operator|=
 name|GIMP_GRAY
@@ -2871,13 +2888,26 @@ name|layer_type
 operator|=
 name|GIMP_GRAYA_IMAGE
 expr_stmt|;
-name|file_format_nick
+if|if
+condition|(
+name|image_precision
+operator|==
+name|GIMP_PRECISION_U8
+condition|)
+name|file_format
 operator|=
-name|have_u16
-condition|?
-literal|"Y'A u16"
-else|:
+name|babl_format
+argument_list|(
 literal|"Y'A u8"
+argument_list|)
+expr_stmt|;
+else|else
+name|file_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y'A u16"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -2892,6 +2922,7 @@ name|layer_type
 operator|=
 name|GIMP_INDEXED_IMAGE
 expr_stmt|;
+comment|/* we can get the format only after creating the layer */
 break|break;
 default|default:
 comment|/* Aie! Unknown type */
@@ -2947,11 +2978,7 @@ name|height
 argument_list|,
 name|image_type
 argument_list|,
-name|have_u16
-condition|?
-name|GIMP_PRECISION_U16
-else|:
-name|GIMP_PRECISION_U8
+name|image_precision
 argument_list|)
 expr_stmt|;
 if|if
@@ -3022,6 +3049,19 @@ operator|-
 literal|1
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|layer_type
+operator|==
+name|GIMP_INDEXED_IMAGE
+condition|)
+name|file_format
+operator|=
+name|gimp_drawable_get_format
+argument_list|(
+name|layer
 argument_list|)
 expr_stmt|;
 comment|/*    * Find out everything we can about the image resolution    * This is only practical with the new 1.0 APIs, I'm afraid    * due to a bug in libpng-1.0.6, see png-implement for details    */
@@ -3474,34 +3514,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-if|if
-condition|(
-name|layer_type
-operator|==
-name|GIMP_INDEXED_IMAGE
-condition|)
-warning|#
-directive|warning
-warning|gimp_drawable_get_format() seems to fail when no colormap set
-name|file_format
-operator|=
-name|gimp_drawable_get_format
-argument_list|(
-name|layer
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|file_format
-condition|)
-name|file_format
-operator|=
-name|babl_format
-argument_list|(
-name|file_format_nick
-argument_list|)
-expr_stmt|;
 name|bpp
 operator|=
 name|babl_format_get_bytes_per_pixel
@@ -4656,9 +4668,6 @@ comment|/* Type of drawable/layer */
 name|num_passes
 decl_stmt|,
 comment|/* Number of interlace passes in file */
-name|have_u16
-decl_stmt|,
-comment|/* save as 16 bit PNG */
 name|pass
 decl_stmt|,
 comment|/* Current pass in file */
@@ -4690,12 +4699,6 @@ modifier|*
 name|buffer
 decl_stmt|;
 comment|/* GEGL buffer for layer */
-specifier|const
-name|char
-modifier|*
-name|file_format_nick
-decl_stmt|;
-comment|/* BABL format nick for file */
 specifier|const
 name|Babl
 modifier|*
@@ -4772,16 +4775,23 @@ name|text
 init|=
 name|NULL
 decl_stmt|;
-name|have_u16
-operator|=
-operator|(
+if|if
+condition|(
 name|gimp_image_get_precision
 argument_list|(
 name|image_ID
 argument_list|)
-operator|!=
+operator|==
 name|GIMP_PRECISION_U8
-operator|)
+condition|)
+name|bit_depth
+operator|=
+literal|8
+expr_stmt|;
+else|else
+name|bit_depth
+operator|=
+literal|16
 expr_stmt|;
 name|pp
 operator|=
@@ -5001,18 +5011,6 @@ operator|=
 name|i
 expr_stmt|;
 comment|/*    * Set color type and remember bytes per pixel count    */
-name|bit_depth
-operator|=
-name|have_u16
-condition|?
-literal|16
-else|:
-literal|8
-expr_stmt|;
-name|file_format
-operator|=
-name|NULL
-expr_stmt|;
 switch|switch
 condition|(
 name|type
@@ -5021,73 +5019,117 @@ block|{
 case|case
 name|GIMP_RGB_IMAGE
 case|:
-comment|// file_format = gimp_babl_format (GIMP_RGB, have_u16 ? GIMP_PRECISION_U16 : GIMP_PRECISION_U8, FALSE);
 name|color_type
 operator|=
 name|PNG_COLOR_TYPE_RGB
 expr_stmt|;
-name|file_format_nick
+if|if
+condition|(
+name|bit_depth
+operator|==
+literal|8
+condition|)
+name|file_format
 operator|=
-name|have_u16
-condition|?
-literal|"R'G'B' u16"
-else|:
+name|babl_format
+argument_list|(
 literal|"R'G'B' u8"
+argument_list|)
+expr_stmt|;
+else|else
+name|file_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B' u16"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
 name|GIMP_RGBA_IMAGE
 case|:
-comment|// file_format = gimp_babl_format (GIMP_RGB, have_u16 ? GIMP_PRECISION_U16 : GIMP_PRECISION_U8, TRUE);
 name|color_type
 operator|=
 name|PNG_COLOR_TYPE_RGB_ALPHA
 expr_stmt|;
-name|file_format_nick
+if|if
+condition|(
+name|bit_depth
+operator|==
+literal|8
+condition|)
+name|file_format
 operator|=
-name|have_u16
-condition|?
-literal|"R'G'B'A u16"
-else|:
+name|babl_format
+argument_list|(
 literal|"R'G'B'A u8"
+argument_list|)
+expr_stmt|;
+else|else
+name|file_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u16"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
 name|GIMP_GRAY_IMAGE
 case|:
-comment|// file_format = gimp_babl_format (GIMP_GRAY, have_u16 ? GIMP_PRECISION_U16 : GIMP_PRECISION_U8, FALSE);
 name|color_type
 operator|=
 name|PNG_COLOR_TYPE_GRAY
 expr_stmt|;
-name|file_format_nick
+if|if
+condition|(
+name|bit_depth
+operator|==
+literal|8
+condition|)
+name|file_format
 operator|=
-name|have_u16
-condition|?
-literal|"Y' u16"
-else|:
+name|babl_format
+argument_list|(
 literal|"Y' u8"
+argument_list|)
+expr_stmt|;
+else|else
+name|file_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y' u16"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
 name|GIMP_GRAYA_IMAGE
 case|:
-comment|// file_format = gimp_babl_format (GIMP_GRAY, have_u16 ? GIMP_PRECISION_U16 : GIMP_PRECISION_U8, TRUE);
-name|color_type
-operator|=
-name|PNG_COLOR_TYPE_GRAY
-expr_stmt|;
 name|color_type
 operator|=
 name|PNG_COLOR_TYPE_GRAY_ALPHA
 expr_stmt|;
-name|file_format_nick
+if|if
+condition|(
+name|bit_depth
+operator|==
+literal|8
+condition|)
+name|file_format
 operator|=
-name|have_u16
-condition|?
-literal|"Y'A u16"
-else|:
+name|babl_format
+argument_list|(
 literal|"Y'A u8"
+argument_list|)
+expr_stmt|;
+else|else
+name|file_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y'A u16"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -5184,18 +5226,6 @@ return|return
 name|FALSE
 return|;
 block|}
-if|if
-condition|(
-operator|!
-name|file_format
-condition|)
-name|file_format
-operator|=
-name|babl_format
-argument_list|(
-name|file_format_nick
-argument_list|)
-expr_stmt|;
 name|bpp
 operator|=
 name|babl_format_get_bytes_per_pixel
@@ -5237,7 +5267,6 @@ name|pngg
 operator|.
 name|has_trns
 condition|)
-block|{
 name|png_set_tRNS
 argument_list|(
 name|pp
@@ -5255,14 +5284,12 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|pngg
 operator|.
 name|has_plte
 condition|)
-block|{
 name|png_set_PLTE
 argument_list|(
 name|pp
@@ -5278,7 +5305,6 @@ operator|.
 name|num_palette
 argument_list|)
 expr_stmt|;
-block|}
 comment|/* Set the compression level */
 name|png_set_compression_level
 argument_list|(
@@ -5461,7 +5487,6 @@ name|offy
 operator|!=
 literal|0
 condition|)
-block|{
 name|png_set_oFFs
 argument_list|(
 name|pp
@@ -5475,7 +5500,6 @@ argument_list|,
 name|PNG_OFFSET_PIXEL
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 if|if
 condition|(
