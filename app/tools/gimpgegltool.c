@@ -72,13 +72,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpgegltool.h"
+file|"gimpcoloroptions.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpimagemapoptions.h"
+file|"gimpgegltool.h"
 end_include
 
 begin_include
@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c00e7da0103
+DECL|enum|__anon29f4dd450103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -176,9 +176,9 @@ call|)
 argument_list|(
 name|GIMP_TYPE_GEGL_TOOL
 argument_list|,
-name|GIMP_TYPE_IMAGE_MAP_OPTIONS
+name|GIMP_TYPE_COLOR_OPTIONS
 argument_list|,
-name|NULL
+name|gimp_color_options_gui
 argument_list|,
 literal|0
 argument_list|,
