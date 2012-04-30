@@ -270,25 +270,12 @@ operator|-
 name|low_input
 operator|)
 expr_stmt|;
-comment|/* clamp to new black and white points */
-name|value
-operator|=
-name|CLAMP
-argument_list|(
-name|value
-argument_list|,
-literal|0.0
-argument_list|,
-literal|1.0
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|inv_gamma
 operator|!=
 literal|1.0
 condition|)
-block|{
 name|value
 operator|=
 name|pow
@@ -298,7 +285,6 @@ argument_list|,
 name|inv_gamma
 argument_list|)
 expr_stmt|;
-block|}
 comment|/*  determine the output intensity  */
 if|if
 condition|(
