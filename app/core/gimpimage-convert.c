@@ -401,7 +401,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon27a754060103
+DECL|enum|__anon2b51ae6d0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -740,6 +740,30 @@ endif|#
 directive|endif
 end_endif
 
+begin_decl_stmt
+DECL|variable|rgb_to_lab_fish
+specifier|static
+specifier|const
+name|Babl
+modifier|*
+name|rgb_to_lab_fish
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|lab_to_rgb_fish
+specifier|static
+specifier|const
+name|Babl
+modifier|*
+name|lab_to_rgb_fish
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 specifier|static
 specifier|inline
@@ -810,18 +834,7 @@ index|]
 decl_stmt|;
 name|babl_process
 argument_list|(
-name|babl_fish
-argument_list|(
-name|babl_format
-argument_list|(
-literal|"R'G'B' float"
-argument_list|)
-argument_list|,
-name|babl_format
-argument_list|(
-literal|"CIE Lab float"
-argument_list|)
-argument_list|)
+name|rgb_to_lab_fish
 argument_list|,
 name|rgb
 argument_list|,
@@ -1303,18 +1316,7 @@ name|ib
 expr_stmt|;
 name|babl_process
 argument_list|(
-name|babl_fish
-argument_list|(
-name|babl_format
-argument_list|(
-literal|"CIE Lab float"
-argument_list|)
-argument_list|,
-name|babl_format
-argument_list|(
-literal|"R'G'B' float"
-argument_list|)
-argument_list|)
+name|lab_to_rgb_fish
 argument_list|,
 name|lab
 argument_list|,
@@ -1500,7 +1502,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a754060208
+DECL|struct|__anon2b51ae6d0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1743,7 +1745,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a754060308
+DECL|struct|__anon2b51ae6d0308
 block|{
 DECL|member|used_count
 name|signed
@@ -3055,6 +3057,36 @@ block|{
 name|gint
 name|i
 decl_stmt|;
+name|rgb_to_lab_fish
+operator|=
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"R'G'B' float"
+argument_list|)
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"CIE Lab float"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|lab_to_rgb_fish
+operator|=
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"CIE Lab float"
+argument_list|)
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"R'G'B' float"
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* fprintf(stderr, " TO INDEXED(%d) ", num_cols); */
 comment|/* don't dither if the input is grayscale and we are simply        * mapping every color        */
 if|if
