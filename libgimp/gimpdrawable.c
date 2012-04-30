@@ -2021,6 +2021,11 @@ operator|=
 name|palette
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|colormap
+condition|)
+block|{
 name|babl_palette_set_palette
 argument_list|(
 name|format
@@ -2040,6 +2045,7 @@ argument_list|(
 name|colormap
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 else|else
 block|{
