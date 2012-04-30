@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-babl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl/gimplevelsconfig.h"
 end_include
 
@@ -5806,21 +5812,12 @@ name|value
 operator|&
 name|PICK_ALL_CHANNELS
 operator|&&
-operator|(
-name|sample_format
-operator|==
-name|babl_format
+name|gimp_babl_format_get_base_type
 argument_list|(
-literal|"R'G'B' u8"
-argument_list|)
-operator|||
 name|sample_format
-operator|==
-name|babl_format
-argument_list|(
-literal|"R'G'B'A u8"
 argument_list|)
-operator|)
+operator|==
+name|GIMP_RGB
 condition|)
 block|{
 name|GimpHistogramChannel
