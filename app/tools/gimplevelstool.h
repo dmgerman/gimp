@@ -183,11 +183,6 @@ name|GtkAdjustment
 modifier|*
 name|high_output
 decl_stmt|;
-DECL|member|active_picker
-name|GtkWidget
-modifier|*
-name|active_picker
-decl_stmt|;
 comment|/* export dialog */
 DECL|member|export_old_format
 name|gboolean
