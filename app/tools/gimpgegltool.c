@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f4dd450103
+DECL|enum|__anon289047970103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -318,46 +318,48 @@ name|name_blacklist
 index|[]
 init|=
 block|{
-literal|"gegl:convert-format"
-block|,
-literal|"gegl:introspect"
-block|,
-literal|"gegl:path"
-block|,
-literal|"gegl:text"
-block|,
-literal|"gegl:layer"
-block|,
-literal|"gegl:contrast-curve"
-block|,
-literal|"gegl:fill-path"
-block|,
-literal|"gegl:vector-stroke"
-block|,
-literal|"gegl:lens-correct"
-block|,
-literal|"gegl:hstack"
-block|,
-literal|"gegl:display"
-block|,
-literal|"gegl:opacity"
+literal|"gegl:color"
 block|,
 comment|/* pointless */
-literal|"gegl:colorize"
+literal|"gegl:color-temperature"
 block|,
 comment|/* in gimp */
 literal|"gegl:color-to-alpha"
 block|,
 comment|/* in gimp */
-literal|"gegl:invert"
+literal|"gegl:colorize"
 block|,
 comment|/* in gimp */
+literal|"gegl:contrast-curve"
+block|,
+literal|"gegl:convert-format"
+block|,
+literal|"gegl:display"
+block|,
+literal|"gegl:fill-path"
+block|,
 literal|"gegl:gaussian-blur"
 block|,
 comment|/* in gimp */
 literal|"gegl:grey"
 block|,
 comment|/* in gimp */
+literal|"gegl:hstack"
+block|,
+literal|"gegl:introspect"
+block|,
+literal|"gegl:invert"
+block|,
+comment|/* in gimp */
+literal|"gegl:layer"
+block|,
+literal|"gegl:lens-correct"
+block|,
+literal|"gegl:opacity"
+block|,
+comment|/* pointless */
+literal|"gegl:path"
+block|,
 literal|"gegl:pixelize"
 block|,
 comment|/* in gimp */
@@ -367,27 +369,31 @@ comment|/* in gimp */
 literal|"gegl:posterize"
 block|,
 comment|/* in gimp */
+literal|"gegl:rotate"
+block|,
+comment|/* in gimp */
 literal|"gegl:scale"
 block|,
 comment|/* in gimp */
-literal|"gegl:translate"
-block|,
-comment|/* pointless */
 literal|"gegl:shear"
 block|,
 comment|/* in gimp */
-literal|"gegl:rotate"
+literal|"gegl:text"
+block|,
+literal|"gegl:threshold"
 block|,
 comment|/* in gimp */
 literal|"gegl:transform"
 block|,
 comment|/* in gimp */
+literal|"gegl:translate"
+block|,
+comment|/* pointless */
 literal|"gegl:value-invert"
 block|,
 comment|/* in gimp */
-literal|"gegl:threshold"
+literal|"gegl:vector-stroke"
 block|,
-comment|/* in gimp */
 literal|"gimp-"
 block|,
 literal|"gimp:"

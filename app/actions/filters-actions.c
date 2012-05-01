@@ -91,6 +91,33 @@ index|[]
 init|=
 block|{
 block|{
+literal|"filters-color-temperature"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Color T_emperature..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Change the color temperature of the image"
+argument_list|)
+block|,
+literal|"gegl:color-temperature"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_COLOR_TEMPERATURE */
+block|}
+block|,
+block|{
 literal|"filters-color-to-alpha"
 block|,
 name|GIMP_STOCK_GEGL
@@ -114,7 +141,7 @@ block|,
 literal|"gegl:color-to-alpha"
 block|,
 name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_PIXELIZE */
+comment|/* FIXME GIMP_HELP_FILTER_COLOR_TO_ALPHA */
 block|}
 block|,
 block|{
@@ -376,6 +403,16 @@ name|condition
 parameter_list|)
 define|\
 value|gimp_action_group_set_action_sensitive (group, action, (condition) != 0)
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-color-temperature"
+argument_list|,
+name|writable
+operator|&&
+operator|!
+name|gray
+argument_list|)
+expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-color-to-alpha"
