@@ -1395,6 +1395,8 @@ argument_list|)
 argument_list|,
 name|GIMP_RGB
 argument_list|,
+name|GIMP_PRECISION_U8
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
