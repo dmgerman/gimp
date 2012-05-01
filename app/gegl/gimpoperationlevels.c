@@ -689,17 +689,6 @@ name|channel
 index|]
 operator|)
 expr_stmt|;
-name|value
-operator|=
-name|CLAMP
-argument_list|(
-name|value
-argument_list|,
-literal|0.0
-argument_list|,
-literal|1.0
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|config
@@ -711,7 +700,6 @@ index|]
 operator|!=
 literal|0.0
 condition|)
-block|{
 name|value
 operator|=
 name|pow
@@ -728,7 +716,6 @@ name|channel
 index|]
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|value
 return|;
