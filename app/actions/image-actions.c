@@ -745,7 +745,7 @@ name|NC_
 argument_list|(
 literal|"image-convert-action"
 argument_list|,
-literal|"8 bit unsigned integer"
+literal|"8 bit integer"
 argument_list|)
 block|,
 name|NULL
@@ -754,7 +754,7 @@ name|NC_
 argument_list|(
 literal|"image-convert-action"
 argument_list|,
-literal|"Convert the image to 8 bit unsigned integer"
+literal|"Convert the image to 8 bit integer"
 argument_list|)
 block|,
 name|GIMP_PRECISION_U8
@@ -771,7 +771,7 @@ name|NC_
 argument_list|(
 literal|"image-convert-action"
 argument_list|,
-literal|"16 bit unsigned integer"
+literal|"16 bit integer"
 argument_list|)
 block|,
 name|NULL
@@ -780,7 +780,7 @@ name|NC_
 argument_list|(
 literal|"image-convert-action"
 argument_list|,
-literal|"Convert the image to 16 bit unsigned integer"
+literal|"Convert the image to 16 bit integer"
 argument_list|)
 block|,
 name|GIMP_PRECISION_U16
@@ -797,7 +797,7 @@ name|NC_
 argument_list|(
 literal|"image-convert-action"
 argument_list|,
-literal|"32 bit unsigned integer"
+literal|"32 bit integer"
 argument_list|)
 block|,
 name|NULL
@@ -806,7 +806,7 @@ name|NC_
 argument_list|(
 literal|"image-convert-action"
 argument_list|,
-literal|"Convert the image to 32 bit unsigned integer"
+literal|"Convert the image to 32 bit integer"
 argument_list|)
 block|,
 name|GIMP_PRECISION_U32

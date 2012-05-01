@@ -186,7 +186,7 @@ name|C_
 argument_list|(
 literal|"undo-type"
 argument_list|,
-literal|"Convert Image to 8 bit unsigned integer"
+literal|"Convert Image to 8 bit integer"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -199,7 +199,7 @@ name|C_
 argument_list|(
 literal|"undo-type"
 argument_list|,
-literal|"Convert Image to 16 bit unsigned integer"
+literal|"Convert Image to 16 bit integer"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -212,7 +212,7 @@ name|C_
 argument_list|(
 literal|"undo-type"
 argument_list|,
-literal|"Convert Image to 32 bit unsigned integer"
+literal|"Convert Image to 32 bit integer"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -225,7 +225,7 @@ name|C_
 argument_list|(
 literal|"undo-type"
 argument_list|,
-literal|"Convert Image to 16 bit float"
+literal|"Convert Image to 16 bit floating point"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -238,7 +238,7 @@ name|C_
 argument_list|(
 literal|"undo-type"
 argument_list|,
-literal|"Convert Image to 32 bit float"
+literal|"Convert Image to 32 bit floating point"
 argument_list|)
 expr_stmt|;
 break|break;
