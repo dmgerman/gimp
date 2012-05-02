@@ -43,40 +43,32 @@ directive|define
 name|__GIMP_MD5_H__
 end_define
 
-begin_function_decl
+begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
-ifndef|#
-directive|ifndef
-name|GIMP_DISABLE_DEPRECATED
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+name|GChecksum
+argument_list|)
 name|void
 name|gimp_md5_get_digest
-parameter_list|(
+argument_list|(
 specifier|const
 name|gchar
-modifier|*
+operator|*
 name|buffer
-parameter_list|,
+argument_list|,
 name|gint
 name|buffer_size
-parameter_list|,
+argument_list|,
 name|guchar
 name|digest
 index|[
 literal|16
 index|]
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* GIMP_DISABLE_DEPRECATED */
-end_comment
+argument_list|)
+decl_stmt|;
+end_decl_stmt
 
 begin_macro
 name|G_END_DECLS

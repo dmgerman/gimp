@@ -21,6 +21,18 @@ directive|include
 file|<glib-object.h>
 end_include
 
+begin_define
+DECL|macro|GIMP_DISABLE_DEPRECATION_WARNINGS
+define|#
+directive|define
+name|GIMP_DISABLE_DEPRECATION_WARNINGS
+end_define
+
+begin_comment
+DECL|macro|GIMP_DISABLE_DEPRECATION_WARNINGS
+comment|/*  for GIMP_RGB_INTENSITY()  */
+end_comment
+
 begin_include
 include|#
 directive|include

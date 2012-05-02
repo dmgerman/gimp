@@ -168,6 +168,13 @@ directive|ifndef
 name|GIMP_DISABLE_DEPRECATED
 end_ifndef
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|g_get_user_special_dir
+argument_list|)
+end_macro
+
 begin_decl_stmt
 specifier|const
 name|gchar

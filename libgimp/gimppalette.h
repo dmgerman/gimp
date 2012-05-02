@@ -43,21 +43,29 @@ directive|define
 name|__GIMP_PALETTE_H__
 end_define
 
-begin_function_decl
+begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
-ifndef|#
-directive|ifndef
-name|GIMP_DISABLE_DEPRECATED
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+name|gimp_context_get_foreground
+argument_list|)
 name|gboolean
 name|gimp_palette_get_foreground
-parameter_list|(
+argument_list|(
 name|GimpRGB
-modifier|*
+operator|*
 name|foreground
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+decl_stmt|;
+end_decl_stmt
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_context_get_background
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -69,6 +77,13 @@ name|background
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_context_set_foreground
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -82,6 +97,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_context_set_background
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_palette_set_background
@@ -94,6 +116,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_context_set_default_colors
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_palette_set_default_colors
@@ -103,6 +132,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_context_swap_colors
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_palette_swap_colors
@@ -111,15 +147,6 @@ name|void
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* GIMP_DISABLE_DEPRECATED */
-end_comment
 
 begin_macro
 name|G_END_DECLS

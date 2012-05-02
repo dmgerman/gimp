@@ -186,7 +186,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296f78e60103
+DECL|enum|__anon2c1bcf790103
 block|{
 DECL|enumerator|GIMP_RGB_COMPOSITE_NONE
 name|GIMP_RGB_COMPOSITE_NONE
@@ -514,11 +514,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|GIMP_DISABLE_DEPRECATED
-end_ifndef
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_rgb_luminance
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gdouble
@@ -532,6 +533,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_rgb_luminance_uchar
+argument_list|)
+end_macro
+
 begin_function_decl
 name|guchar
 name|gimp_rgb_intensity_uchar
@@ -543,11 +551,6 @@ name|rgb
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_function_decl
 name|void

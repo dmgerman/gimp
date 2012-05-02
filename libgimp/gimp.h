@@ -1166,13 +1166,8 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|GIMP_DISABLE_DEPRECATED
-end_ifndef
-
 begin_decl_stmt
+name|GIMP_DEPRECATED
 name|gboolean
 name|gimp_install_cmap
 argument_list|(
@@ -1183,6 +1178,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+name|GIMP_DEPRECATED
 name|gint
 name|gimp_min_colors
 argument_list|(
@@ -1191,6 +1187,13 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_get_parasite
+argument_list|)
+end_macro
 
 begin_function_decl
 name|GimpParasite
@@ -1205,6 +1208,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_parasite_attach
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_parasite_attach
@@ -1217,6 +1227,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_parasite_detach
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_parasite_detach
@@ -1228,6 +1245,13 @@ name|name
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_get_parasite_list
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -1245,6 +1269,13 @@ name|parasites
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_parasite_attach
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -1266,15 +1297,6 @@ name|data
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* GIMP_DISABLE_DEPRECATED */
-end_comment
 
 begin_macro
 name|G_END_DECLS

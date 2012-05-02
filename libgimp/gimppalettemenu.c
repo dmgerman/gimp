@@ -30,19 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppaletteselectbutton.h"
+file|"gimppalettemenu.h"
 end_include
-
-begin_undef
-undef|#
-directive|undef
-name|GIMP_DISABLE_DEPRECATED
-end_undef
 
 begin_include
 include|#
 directive|include
-file|"gimppalettemenu.h"
+file|"gimppaletteselectbutton.h"
 end_include
 
 begin_comment
@@ -52,7 +46,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae638ee0108
+DECL|struct|__anon291fa8c20108
 block|{
 DECL|member|callback
 name|GimpRunPaletteCallback

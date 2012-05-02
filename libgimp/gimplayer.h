@@ -141,11 +141,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|GIMP_DISABLE_DEPRECATED
-end_ifndef
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_layer_get_lock_alpha
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -156,6 +157,13 @@ name|layer_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_layer_set_lock_alpha
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -169,15 +177,6 @@ name|preserve_trans
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* GIMP_DISABLE_DEPRECATED */
-end_comment
 
 begin_macro
 name|G_END_DECLS

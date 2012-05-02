@@ -47,15 +47,15 @@ begin_comment
 comment|/*  These functions are deprecated and should not be used in newly  *  written code.  */
 end_comment
 
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
+
 begin_ifndef
 ifndef|#
 directive|ifndef
 name|GIMP_DISABLE_DEPRECATED
 end_ifndef
-
-begin_macro
-name|G_BEGIN_DECLS
-end_macro
 
 begin_typedef
 DECL|typedef|GimpConstraintFunc
@@ -96,6 +96,13 @@ parameter_list|)
 function_decl|;
 end_typedef
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_combo_box_new
+argument_list|)
+end_macro
+
 begin_function_decl
 name|GtkWidget
 modifier|*
@@ -115,6 +122,13 @@ name|active_image
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_layer_combo_box_new
+argument_list|)
+end_macro
 
 begin_function_decl
 name|GtkWidget
@@ -136,6 +150,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_channel_combo_box_new
+argument_list|)
+end_macro
+
 begin_function_decl
 name|GtkWidget
 modifier|*
@@ -155,6 +176,13 @@ name|active_channel
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_combo_box_new
+argument_list|)
+end_macro
 
 begin_function_decl
 name|GtkWidget
@@ -176,10 +204,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_macro
-name|G_END_DECLS
-end_macro
-
 begin_endif
 endif|#
 directive|endif
@@ -188,6 +212,10 @@ end_endif
 begin_comment
 comment|/*  GIMP_DISABLE_DEPRECATED  */
 end_comment
+
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

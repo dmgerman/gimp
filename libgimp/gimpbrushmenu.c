@@ -30,19 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushselectbutton.h"
+file|"gimpbrushmenu.h"
 end_include
-
-begin_undef
-undef|#
-directive|undef
-name|GIMP_DISABLE_DEPRECATED
-end_undef
 
 begin_include
 include|#
 directive|include
-file|"gimpbrushmenu.h"
+file|"gimpbrushselectbutton.h"
 end_include
 
 begin_comment
@@ -52,7 +46,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dc5ac20108
+DECL|struct|__anon2c66780d0108
 block|{
 DECL|member|callback
 name|GimpRunBrushCallback

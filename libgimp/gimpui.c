@@ -52,12 +52,6 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"libgimpmodule/gimpmodule.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp.h"
 end_include
 
@@ -65,6 +59,12 @@ begin_include
 include|#
 directive|include
 file|"gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpmodule/gimpmodule.h"
 end_include
 
 begin_include

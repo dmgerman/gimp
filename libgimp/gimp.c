@@ -369,12 +369,6 @@ directive|include
 file|"libgimpbase/gimpwire.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GIMP_DISABLE_DEPRECATED
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -420,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27eda3a80103
+DECL|enum|__anon28e82eb10103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID

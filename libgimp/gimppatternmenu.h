@@ -47,36 +47,41 @@ begin_comment
 comment|/*  These functions are deprecated and should not be used in newly  *  written code.  */
 end_comment
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|GIMP_DISABLE_DEPRECATED
-end_ifndef
-
-begin_function_decl
+begin_decl_stmt
 name|G_BEGIN_DECLS
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+name|gimp_pattern_select_button_new
+argument_list|)
 name|GtkWidget
 modifier|*
 name|gimp_pattern_select_widget_new
-parameter_list|(
+argument_list|(
 specifier|const
 name|gchar
-modifier|*
+operator|*
 name|title
-parameter_list|,
+argument_list|,
 specifier|const
 name|gchar
-modifier|*
+operator|*
 name|pattern_name
-parameter_list|,
+argument_list|,
 name|GimpRunPatternCallback
 name|callback
-parameter_list|,
+argument_list|,
 name|gpointer
 name|data
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+decl_stmt|;
+end_decl_stmt
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_select_button_close_popup
+argument_list|)
+end_macro
 
 begin_function_decl
 name|void
@@ -88,6 +93,13 @@ name|widget
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_pattern_select_button_set_brush
+argument_list|)
+end_macro
 
 begin_function_decl
 name|void
@@ -108,15 +120,6 @@ end_function_decl
 begin_macro
 name|G_END_DECLS
 end_macro
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/*  GIMP_DISABLE_DEPRECATED  */
-end_comment
 
 begin_endif
 endif|#

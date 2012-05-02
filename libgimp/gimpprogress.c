@@ -15,6 +15,12 @@ directive|include
 file|<glib-object.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
 begin_undef
 undef|#
 directive|undef
@@ -43,7 +49,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dc2af90108
+DECL|struct|__anon277477d10108
 block|{
 DECL|member|progress_callback
 name|gchar

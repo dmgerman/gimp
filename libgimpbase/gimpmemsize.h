@@ -96,11 +96,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|GIMP_DISABLE_DEPRECATED
-end_ifndef
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|g_format_size
+argument_list|)
+end_macro
 
 begin_decl_stmt
 name|gchar
@@ -113,15 +114,6 @@ argument_list|)
 name|G_GNUC_MALLOC
 decl_stmt|;
 end_decl_stmt
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* GIMP_DISABLE_DEPRECATED */
-end_comment
 
 begin_comment
 comment|/*  * GIMP_TYPE_PARAM_MEMSIZE  */

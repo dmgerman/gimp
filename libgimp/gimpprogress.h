@@ -407,6 +407,13 @@ parameter_list|)
 function_decl|;
 end_typedef
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_progress_install_vtable
+argument_list|)
+end_macro
+
 begin_function_decl
 specifier|const
 name|gchar

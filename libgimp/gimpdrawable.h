@@ -288,11 +288,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|GIMP_DISABLE_DEPRECATED
-end_ifndef
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_is_valid
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -304,6 +305,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_is_layer
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_drawable_is_layer
@@ -313,6 +321,13 @@ name|drawable_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_is_text_layer
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -324,6 +339,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_is_layer_mask
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_drawable_is_layer_mask
@@ -333,6 +355,13 @@ name|drawable_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_is_channel
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -344,6 +373,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_delete
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_drawable_delete
@@ -353,6 +389,13 @@ name|drawable_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_get_image
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gint32
@@ -364,6 +407,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_get_name
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gchar
 modifier|*
@@ -374,6 +424,13 @@ name|drawable_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_set_name
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -390,6 +447,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_get_visible
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_drawable_get_visible
@@ -399,6 +463,13 @@ name|drawable_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_get_visible
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -413,6 +484,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_get_linked
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_drawable_get_linked
@@ -422,6 +500,13 @@ name|drawable_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_set_linked
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -436,6 +521,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_get_tattoo
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gint
 name|gimp_drawable_get_tattoo
@@ -445,6 +537,13 @@ name|drawable_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_set_tattoo
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -458,6 +557,13 @@ name|tattoo
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_get_parasite
+argument_list|)
+end_macro
 
 begin_function_decl
 name|GimpParasite
@@ -475,6 +581,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_attach_parasite
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_drawable_parasite_attach
@@ -490,6 +603,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_detach_parasite
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_drawable_parasite_detach
@@ -504,6 +624,13 @@ name|name
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_get_parasite_list
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -524,6 +651,13 @@ name|parasites
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_attach_parasite
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -548,15 +682,6 @@ name|data
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* GIMP_DISABLE_DEPRECATED */
-end_comment
 
 begin_macro
 name|G_END_DECLS

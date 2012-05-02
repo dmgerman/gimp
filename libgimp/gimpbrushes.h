@@ -43,19 +43,27 @@ directive|define
 name|__GIMP_BRUSHES_H__
 end_define
 
-begin_function_decl
+begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
-ifndef|#
-directive|ifndef
-name|GIMP_DISABLE_DEPRECATED
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+name|gimp_context_get_opacity
+argument_list|)
 name|gdouble
 name|gimp_brushes_get_opacity
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+decl_stmt|;
+end_decl_stmt
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_context_set_opacity
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -67,6 +75,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_context_get_paint_mode
+argument_list|)
+end_macro
+
 begin_function_decl
 name|GimpLayerModeEffects
 name|gimp_brushes_get_paint_mode
@@ -75,6 +90,13 @@ name|void
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_context_set_paint_mode
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -85,6 +107,13 @@ name|paint_mode
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_context_set_brush
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -97,15 +126,6 @@ name|name
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* GIMP_DISABLE_DEPRECATED */
-end_comment
 
 begin_macro
 name|G_END_DECLS

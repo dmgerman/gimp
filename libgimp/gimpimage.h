@@ -101,11 +101,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|GIMP_DISABLE_DEPRECATED
-end_ifndef
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_get_colormap
+argument_list|)
+end_macro
 
 begin_function_decl
 name|guchar
@@ -121,6 +122,13 @@ name|num_colors
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_set_colormap
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -140,6 +148,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_get_item_position
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gint
 name|gimp_image_get_layer_position
@@ -152,6 +167,13 @@ name|layer_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_raise_item
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -166,6 +188,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_lower_item
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_image_lower_layer
@@ -178,6 +207,13 @@ name|layer_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_raise_item_to_top
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -192,6 +228,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_lower_item_to_bottom
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_image_lower_layer_to_bottom
@@ -204,6 +247,13 @@ name|layer_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_get_item_position
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gint
@@ -218,6 +268,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_raise_item
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_image_raise_channel
@@ -230,6 +287,13 @@ name|channel_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_lower_item
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -244,6 +308,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_get_item_position
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gint
 name|gimp_image_get_vectors_position
@@ -256,6 +327,13 @@ name|vectors_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_raise_item
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -270,6 +348,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_lower_item
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_image_lower_vectors
@@ -282,6 +367,13 @@ name|vectors_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_raise_item_to_top
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -296,6 +388,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_lower_item_to_bottom
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_image_lower_vectors_to_bottom
@@ -308,6 +407,13 @@ name|vectors_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_get_parasite
+argument_list|)
+end_macro
 
 begin_function_decl
 name|GimpParasite
@@ -325,6 +431,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_attach_parasite
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_image_parasite_attach
@@ -340,6 +453,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_detach_parasite
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_image_parasite_detach
@@ -354,6 +474,13 @@ name|name
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_get_parasite_list
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -374,6 +501,13 @@ name|parasites
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_attach_parasite
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -398,15 +532,6 @@ name|data
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* GIMP_DISABLE_DEPRECATED */
-end_comment
 
 begin_macro
 name|G_END_DECLS

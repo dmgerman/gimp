@@ -30,19 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpfontselectbutton.h"
+file|"gimpfontmenu.h"
 end_include
-
-begin_undef
-undef|#
-directive|undef
-name|GIMP_DISABLE_DEPRECATED
-end_undef
 
 begin_include
 include|#
 directive|include
-file|"gimpfontmenu.h"
+file|"gimpfontselectbutton.h"
 end_include
 
 begin_comment
@@ -52,7 +46,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b28f4c00108
+DECL|struct|__anon2a0932a20108
 block|{
 DECL|member|callback
 name|GimpRunFontCallback

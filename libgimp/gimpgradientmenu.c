@@ -30,19 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpgradientselectbutton.h"
+file|"gimpgradientmenu.h"
 end_include
-
-begin_undef
-undef|#
-directive|undef
-name|GIMP_DISABLE_DEPRECATED
-end_undef
 
 begin_include
 include|#
 directive|include
-file|"gimpgradientmenu.h"
+file|"gimpgradientselectbutton.h"
 end_include
 
 begin_comment
@@ -52,7 +46,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27820d870108
+DECL|struct|__anon295b55f90108
 block|{
 DECL|member|callback
 name|GimpRunGradientCallback

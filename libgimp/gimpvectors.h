@@ -43,20 +43,28 @@ directive|define
 name|__GIMP_VECTORS_H__
 end_define
 
-begin_function_decl
+begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
-ifndef|#
-directive|ifndef
-name|GIMP_DISABLE_DEPRECATED
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+name|gimp_item_is_valid
+argument_list|)
 name|gboolean
 name|gimp_vectors_is_valid
-parameter_list|(
+argument_list|(
 name|gint32
 name|vectors_ID
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+decl_stmt|;
+end_decl_stmt
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_get_image
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gint32
@@ -68,6 +76,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_get_name
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gchar
 modifier|*
@@ -78,6 +93,13 @@ name|vectors_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_set_name
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -94,6 +116,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_get_visible
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_vectors_get_visible
@@ -103,6 +132,13 @@ name|vectors_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_get_visible
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -117,6 +153,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_get_linked
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_vectors_get_linked
@@ -126,6 +169,13 @@ name|vectors_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_set_linked
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -140,6 +190,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_get_tattoo
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gint
 name|gimp_vectors_get_tattoo
@@ -149,6 +206,13 @@ name|vectors_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_set_tattoo
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -162,6 +226,13 @@ name|tattoo
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_get_parasite
+argument_list|)
+end_macro
 
 begin_function_decl
 name|GimpParasite
@@ -179,6 +250,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_attach_parasite
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_vectors_parasite_attach
@@ -194,6 +272,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_detach_parasite
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_vectors_parasite_detach
@@ -208,6 +293,13 @@ name|name
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_get_parasite_list
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -228,15 +320,6 @@ name|parasites
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* GIMP_DISABLE_DEPRECATED */
-end_comment
 
 begin_macro
 name|G_END_DECLS

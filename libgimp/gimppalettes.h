@@ -43,31 +43,23 @@ directive|define
 name|__GIMP_PALETTES_H__
 end_define
 
-begin_function_decl
+begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
-ifndef|#
-directive|ifndef
-name|GIMP_DISABLE_DEPRECATED
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+name|gimp_context_set_gradient
+argument_list|)
 name|gboolean
 name|gimp_palettes_set_palette
-parameter_list|(
+argument_list|(
 specifier|const
 name|gchar
-modifier|*
+operator|*
 name|name
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* GIMP_DISABLE_DEPRECATED */
-end_comment
+argument_list|)
+decl_stmt|;
+end_decl_stmt
 
 begin_macro
 name|G_END_DECLS

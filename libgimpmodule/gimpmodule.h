@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2936215f0103
+DECL|enum|__anon2bd327fb0103
 block|{
 DECL|enumerator|GIMP_MODULE_STATE_ERROR
 name|GIMP_MODULE_STATE_ERROR
@@ -110,7 +110,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2936215f0203
+DECL|enum|__anon2bd327fb0203
 block|{
 DECL|enumerator|GIMP_MODULE_FAILED
 name|GIMP_MODULE_FAILED
@@ -523,11 +523,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|GIMP_DISABLE_DEPRECATED
-end_ifndef
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|g_type_module_register_enum
+argument_list|)
+end_macro
 
 begin_function_decl
 name|GType
@@ -549,15 +550,6 @@ name|const_static_values
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* GIMP_DISABLE_DEPRECATED */
-end_comment
 
 begin_comment
 comment|/*  GimpModuleInfo functions  */
