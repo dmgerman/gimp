@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -47,7 +53,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad2fe830108
+DECL|struct|__anon2c1450930108
 block|{
 DECL|member|str
 specifier|const

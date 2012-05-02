@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c62d590108
+DECL|struct|__anon293860a90108
 block|{
 DECL|member|image
 name|GimpImage
@@ -181,6 +181,8 @@ argument_list|,
 name|GIMP_TEST_IMAGE_SIZE
 argument_list|,
 name|GIMP_RGB
+argument_list|,
+name|GIMP_PRECISION_FLOAT
 argument_list|)
 expr_stmt|;
 block|}

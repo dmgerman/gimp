@@ -208,6 +208,14 @@ value|GIMP_RGB
 end_define
 
 begin_define
+DECL|macro|GIMP_MAINIMAGE_PRECISION
+define|#
+directive|define
+name|GIMP_MAINIMAGE_PRECISION
+value|GIMP_PRECISION_FLOAT
+end_define
+
+begin_define
 DECL|macro|GIMP_MAINIMAGE_LAYER1_NAME
 define|#
 directive|define
@@ -1248,6 +1256,8 @@ argument_list|,
 name|GIMP_MAINIMAGE_HEIGHT
 argument_list|,
 name|GIMP_MAINIMAGE_TYPE
+argument_list|,
+name|GIMP_MAINIMAGE_PRECISION
 argument_list|)
 expr_stmt|;
 comment|/* Layers */
