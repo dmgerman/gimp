@@ -149,7 +149,7 @@ name|vectors_ID
 parameter_list|)
 block|{
 return|return
-name|gimp_vectors_get_visible
+name|gimp_item_get_visible
 argument_list|(
 name|vectors_ID
 argument_list|)
@@ -272,7 +272,7 @@ name|tattoo
 parameter_list|)
 block|{
 return|return
-name|gimp_vectors_set_tattoo
+name|gimp_item_set_tattoo
 argument_list|(
 name|vectors_ID
 argument_list|,
