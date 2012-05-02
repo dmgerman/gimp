@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f936df0108
+DECL|struct|__anon2b8c4a770108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f936df0208
+DECL|struct|__anon2b8c4a770208
 block|{
 DECL|member|run
 name|gboolean
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f936df0308
+DECL|struct|__anon2b8c4a770308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -4972,21 +4972,6 @@ operator|=
 name|gimp_drawable_type
 argument_list|(
 name|drawable_ID
-argument_list|)
-expr_stmt|;
-comment|/* this is a stupid workaround for some caching issues in GEGL */
-warning|#
-directive|warning
-warning|remove this when gegl is fixed
-name|gegl_buffer_copy
-argument_list|(
-name|buffer
-argument_list|,
-name|NULL
-argument_list|,
-name|buffer
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*    * Initialise remap[]    */
