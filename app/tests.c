@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -73,6 +79,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimp-contexts.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gegl/gimp-gegl.h"
 end_include
 
 begin_include
@@ -172,6 +184,18 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gegl_init
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_gegl_init
+argument_list|(
+name|gimp
 argument_list|)
 expr_stmt|;
 name|base_init
@@ -329,6 +353,18 @@ comment|/*be_verbose*/
 argument_list|,
 name|FALSE
 comment|/*use_cpu_accel*/
+argument_list|)
+expr_stmt|;
+name|gegl_init
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_gegl_init
+argument_list|(
+name|gimp
 argument_list|)
 expr_stmt|;
 name|gui_init
