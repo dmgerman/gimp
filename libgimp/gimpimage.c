@@ -742,7 +742,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_attach_new_parasite:  * @image_ID: the ID of the image to attach the #GimpParasite to.  * @name: the name of the #GimpParasite to create and attach.  * @flags: the flags set on the #GimpParasite.  * @size: the size of the parasite data in bytes.  * @data: a pointer to the data attached with the #GimpParasite.  *  * Convenience function that creates a parasite and attaches it  * to GIMP.  *  * Deprecated: Use gimp_image_parasite_attach() instead.  *  * Return value: TRUE on successful creation and attachment of  * the new parasite.  *  * See Also: gimp_image_parasite_attach()  */
+comment|/**  * gimp_image_attach_new_parasite:  * @image_ID: the ID of the image to attach the #GimpParasite to.  * @name: the name of the #GimpParasite to create and attach.  * @flags: the flags set on the #GimpParasite.  * @size: the size of the parasite data in bytes.  * @data: a pointer to the data attached with the #GimpParasite.  *  * Convenience function that creates a parasite and attaches it  * to GIMP.  *  * Deprecated: Use gimp_image_attach_parasite() instead.  *  * Return value: TRUE on successful creation and attachment of  * the new parasite.  *  * See Also: gimp_image_parasite_attach()  */
 end_comment
 
 begin_function
@@ -788,7 +788,7 @@ name|success
 decl_stmt|;
 name|success
 operator|=
-name|gimp_image_parasite_attach
+name|gimp_image_attach_parasite
 argument_list|(
 name|image_ID
 argument_list|,
