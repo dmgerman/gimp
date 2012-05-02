@@ -420,7 +420,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1d01050103
+DECL|enum|__anon27eda3a80103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -4681,7 +4681,7 @@ name|name
 parameter_list|)
 block|{
 return|return
-name|gimp_parasite_detach
+name|gimp_detach_parasite
 argument_list|(
 name|name
 argument_list|)
@@ -4770,7 +4770,7 @@ name|success
 decl_stmt|;
 name|success
 operator|=
-name|gimp_parasite_attach
+name|gimp_attach_parasite
 argument_list|(
 name|parasite
 argument_list|)
