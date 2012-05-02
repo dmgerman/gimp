@@ -19,24 +19,6 @@ directive|include
 file|"gimp.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GIMP_DISABLE_DEPRECATED
-end_undef
-
-begin_undef
-undef|#
-directive|undef
-name|__GIMP_TRANSFORM_TOOLS_PDB_H__
-end_undef
-
-begin_include
-include|#
-directive|include
-file|"gimptransformtools_pdb.h"
-end_include
-
 begin_comment
 comment|/**  * SECTION: gimptransformtools  * @title: gimptransformtools  * @short_description: Access to toolbox transform tools.  *  * Functions giving access to toolbox transform tools.  **/
 end_comment

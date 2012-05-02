@@ -47,26 +47,34 @@ directive|define
 name|__GIMP_PATHS_PDB_H__
 end_define
 
-begin_function_decl
+begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
-ifndef|#
-directive|ifndef
-name|GIMP_DISABLE_DEPRECATED
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+name|gimp_image_get_vectors
+argument_list|)
 name|gchar
 modifier|*
 modifier|*
 name|gimp_path_list
-parameter_list|(
+argument_list|(
 name|gint32
 name|image_ID
-parameter_list|,
+argument_list|,
 name|gint
-modifier|*
+operator|*
 name|num_paths
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+decl_stmt|;
+end_decl_stmt
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_get_active_vectors
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gchar
@@ -78,6 +86,13 @@ name|image_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_set_active_vectors
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -94,6 +109,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_remove_vectors
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_path_delete
@@ -108,6 +130,13 @@ name|name
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_vectors_stroke_get_points
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gint
@@ -137,6 +166,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_vectors_stroke_new_from_points
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_path_set_points
@@ -163,6 +199,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_edit_stroke_vectors
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_path_stroke_current
@@ -172,6 +215,13 @@ name|image_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_vectors_stroke_get_point_at_dist
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gint
@@ -194,6 +244,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_vectors_get_tattoo
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gint
 name|gimp_path_get_tattoo
@@ -208,6 +265,13 @@ name|name
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_vectors_set_tattoo
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -227,6 +291,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_get_vectors_by_tattoo
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gchar
 modifier|*
@@ -240,6 +311,13 @@ name|tattoo
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_vectors_get_linked
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -255,6 +333,13 @@ name|name
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_vectors_set_linked
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -273,6 +358,13 @@ name|locked
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_vectors_to_selection
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -304,6 +396,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_vectors_import_from_file
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_path_import
@@ -324,15 +423,6 @@ name|scale
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* GIMP_DISABLE_DEPRECATED */
-end_comment
 
 begin_macro
 name|G_END_DECLS

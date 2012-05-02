@@ -19,24 +19,6 @@ directive|include
 file|"gimp.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GIMP_DISABLE_DEPRECATED
-end_undef
-
-begin_undef
-undef|#
-directive|undef
-name|__GIMP_FLOATING_SEL_PDB_H__
-end_undef
-
-begin_include
-include|#
-directive|include
-file|"gimpfloatingsel_pdb.h"
-end_include
-
 begin_comment
 comment|/**  * SECTION: gimpfloatingsel  * @title: gimpfloatingsel  * @short_description: Functions for removing or attaching floating selections.  *  * Functions for removing or attaching floating selections.  **/
 end_comment

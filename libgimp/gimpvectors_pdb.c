@@ -25,24 +25,6 @@ directive|include
 file|"gimp.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GIMP_DISABLE_DEPRECATED
-end_undef
-
-begin_undef
-undef|#
-directive|undef
-name|__GIMP_VECTORS_PDB_H__
-end_undef
-
-begin_include
-include|#
-directive|include
-file|"gimpvectors_pdb.h"
-end_include
-
 begin_comment
 comment|/**  * SECTION: gimpvectors  * @title: gimpvectors  * @short_description: Functions for querying and manipulating vectors.  *  * Functions for querying and manipulating vectors.  **/
 end_comment

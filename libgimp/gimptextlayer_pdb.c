@@ -19,24 +19,6 @@ directive|include
 file|"gimp.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GIMP_DISABLE_DEPRECATED
-end_undef
-
-begin_undef
-undef|#
-directive|undef
-name|__GIMP_TEXT_LAYER_PDB_H__
-end_undef
-
-begin_include
-include|#
-directive|include
-file|"gimptextlayer_pdb.h"
-end_include
-
 begin_comment
 comment|/**  * SECTION: gimptextlayer  * @title: gimptextlayer  * @short_description: Functions for querying and manipulating text layers.  *  * Functions for querying and manipulating text layers.  **/
 end_comment

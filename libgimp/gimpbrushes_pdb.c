@@ -25,24 +25,6 @@ directive|include
 file|"gimp.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GIMP_DISABLE_DEPRECATED
-end_undef
-
-begin_undef
-undef|#
-directive|undef
-name|__GIMP_BRUSHES_PDB_H__
-end_undef
-
-begin_include
-include|#
-directive|include
-file|"gimpbrushes_pdb.h"
-end_include
-
 begin_comment
 comment|/**  * SECTION: gimpbrushes  * @title: gimpbrushes  * @short_description: Functions for manipulating brushes.  *  * Functions related to getting and setting brushes.  **/
 end_comment

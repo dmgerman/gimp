@@ -76,11 +76,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|GIMP_DISABLE_DEPRECATED
-end_ifndef
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_gradient_get_uniform_samples
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gdouble
@@ -95,6 +96,13 @@ name|reverse
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_gradient_get_custom_samples
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gdouble
@@ -114,6 +122,13 @@ name|reverse
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_gradient_get_uniform_samples
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gchar
@@ -142,15 +157,6 @@ name|grad_data
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* GIMP_DISABLE_DEPRECATED */
-end_comment
 
 begin_macro
 name|G_END_DECLS

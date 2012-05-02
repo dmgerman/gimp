@@ -76,11 +76,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|GIMP_DISABLE_DEPRECATED
-end_ifndef
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_context_get_brush
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gchar
@@ -102,6 +103,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_brush_get_spacing
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gint
 name|gimp_brushes_get_spacing
@@ -110,6 +118,13 @@ name|void
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_brush_set_spacing
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -120,6 +135,13 @@ name|spacing
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_brush_get_pixels
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gchar
@@ -162,15 +184,6 @@ name|mask_data
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* GIMP_DISABLE_DEPRECATED */
-end_comment
 
 begin_macro
 name|G_END_DECLS

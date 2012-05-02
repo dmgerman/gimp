@@ -19,24 +19,6 @@ directive|include
 file|"gimp.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GIMP_DISABLE_DEPRECATED
-end_undef
-
-begin_undef
-undef|#
-directive|undef
-name|__GIMP_SELECTION_PDB_H__
-end_undef
-
-begin_include
-include|#
-directive|include
-file|"gimpselection_pdb.h"
-end_include
-
 begin_comment
 comment|/**  * SECTION: gimpselection  * @title: gimpselection  * @short_description: Functions for manipulating selections.  *  * Functions for manipulating selections.  **/
 end_comment

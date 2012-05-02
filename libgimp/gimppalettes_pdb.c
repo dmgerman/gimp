@@ -19,24 +19,6 @@ directive|include
 file|"gimp.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GIMP_DISABLE_DEPRECATED
-end_undef
-
-begin_undef
-undef|#
-directive|undef
-name|__GIMP_PALETTES_PDB_H__
-end_undef
-
-begin_include
-include|#
-directive|include
-file|"gimppalettes_pdb.h"
-end_include
-
 begin_comment
 comment|/**  * SECTION: gimppalettes  * @title: gimppalettes  * @short_description: Operations related to palettes.  *  * Operations related to palettes.  **/
 end_comment

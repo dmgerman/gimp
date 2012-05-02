@@ -25,24 +25,6 @@ directive|include
 file|"gimp.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GIMP_DISABLE_DEPRECATED
-end_undef
-
-begin_undef
-undef|#
-directive|undef
-name|__GIMP_PATTERNS_PDB_H__
-end_undef
-
-begin_include
-include|#
-directive|include
-file|"gimppatterns_pdb.h"
-end_include
-
 begin_comment
 comment|/**  * SECTION: gimppatterns  * @title: gimppatterns  * @short_description: Functions relating to patterns.  *  * Functions relating to patterns.  **/
 end_comment

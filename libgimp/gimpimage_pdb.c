@@ -25,24 +25,6 @@ directive|include
 file|"gimp.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GIMP_DISABLE_DEPRECATED
-end_undef
-
-begin_undef
-undef|#
-directive|undef
-name|__GIMP_IMAGE_PDB_H__
-end_undef
-
-begin_include
-include|#
-directive|include
-file|"gimpimage_pdb.h"
-end_include
-
 begin_comment
 comment|/**  * SECTION: gimpimage  * @title: gimpimage  * @short_description: Operations on complete images.  *  * Operations on complete images: creation, resizing/rescaling, and  * operations involving multiple layers.  **/
 end_comment

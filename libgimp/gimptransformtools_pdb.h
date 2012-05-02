@@ -47,23 +47,31 @@ directive|define
 name|__GIMP_TRANSFORM_TOOLS_PDB_H__
 end_define
 
-begin_function_decl
+begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
-ifndef|#
-directive|ifndef
-name|GIMP_DISABLE_DEPRECATED
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+name|gimp_item_transform_flip_simple
+argument_list|)
 name|gint32
 name|gimp_flip
-parameter_list|(
+argument_list|(
 name|gint32
 name|drawable_ID
-parameter_list|,
+argument_list|,
 name|GimpOrientationType
 name|flip_type
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+decl_stmt|;
+end_decl_stmt
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_transform_perspective
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gint32
@@ -102,6 +110,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_transform_rotate
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gint32
 name|gimp_rotate
@@ -117,6 +132,13 @@ name|angle
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_transform_scale
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gint32
@@ -143,6 +165,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_transform_shear
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gint32
 name|gimp_shear
@@ -161,6 +190,13 @@ name|magnitude
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_transform_2d
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gint32
@@ -195,15 +231,6 @@ name|dest_y
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* GIMP_DISABLE_DEPRECATED */
-end_comment
 
 begin_macro
 name|G_END_DECLS

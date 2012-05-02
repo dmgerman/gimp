@@ -19,24 +19,6 @@ directive|include
 file|"gimp.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GIMP_DISABLE_DEPRECATED
-end_undef
-
-begin_undef
-undef|#
-directive|undef
-name|__GIMP_COLOR_PDB_H__
-end_undef
-
-begin_include
-include|#
-directive|include
-file|"gimpcolor_pdb.h"
-end_include
-
 begin_comment
 comment|/**  * SECTION: gimpcolor  * @title: gimpcolor  * @short_description: Functions for manipulating color.  *  * Functions for manipulating color, including curves and histograms.  **/
 end_comment

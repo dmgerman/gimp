@@ -47,43 +47,51 @@ directive|define
 name|__GIMP_SELECTION_TOOLS_PDB_H__
 end_define
 
-begin_function_decl
+begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
-ifndef|#
-directive|ifndef
-name|GIMP_DISABLE_DEPRECATED
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+name|gimp_image_select_color
+argument_list|)
 name|gboolean
 name|gimp_by_color_select
-parameter_list|(
+argument_list|(
 name|gint32
 name|drawable_ID
-parameter_list|,
+argument_list|,
 specifier|const
 name|GimpRGB
-modifier|*
+operator|*
 name|color
-parameter_list|,
+argument_list|,
 name|gint
 name|threshold
-parameter_list|,
+argument_list|,
 name|GimpChannelOps
 name|operation
-parameter_list|,
+argument_list|,
 name|gboolean
 name|antialias
-parameter_list|,
+argument_list|,
 name|gboolean
 name|feather
-parameter_list|,
+argument_list|,
 name|gdouble
 name|feather_radius
-parameter_list|,
+argument_list|,
 name|gboolean
 name|sample_merged
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+decl_stmt|;
+end_decl_stmt
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_select_color
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -127,6 +135,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_select_ellipse
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_ellipse_select
@@ -161,6 +176,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_select_polygon
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_free_select
@@ -190,6 +212,13 @@ name|feather_radius
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_select_contiguous_color
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -224,6 +253,13 @@ name|sample_merged
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_select_contiguous_color
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -268,6 +304,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_select_rectangle
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_rect_select
@@ -298,6 +341,13 @@ name|feather_radius
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_image_select_round_rectangle
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -341,15 +391,6 @@ name|feather_radius_y
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* GIMP_DISABLE_DEPRECATED */
-end_comment
 
 begin_macro
 name|G_END_DECLS

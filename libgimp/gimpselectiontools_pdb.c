@@ -19,24 +19,6 @@ directive|include
 file|"gimp.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GIMP_DISABLE_DEPRECATED
-end_undef
-
-begin_undef
-undef|#
-directive|undef
-name|__GIMP_SELECTION_TOOLS_PDB_H__
-end_undef
-
-begin_include
-include|#
-directive|include
-file|"gimpselectiontools_pdb.h"
-end_include
-
 begin_comment
 comment|/**  * SECTION: gimpselectiontools  * @title: gimpselectiontools  * @short_description: Access to toolbox selection tools.  *  * Functions giving access to toolbox selection tools.  **/
 end_comment
