@@ -6165,7 +6165,7 @@ name|NULL
 return|;
 name|user_dir
 operator|=
-name|gimp_user_directory
+name|g_get_user_special_dir
 argument_list|(
 name|type
 argument_list|)
