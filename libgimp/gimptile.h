@@ -112,6 +112,7 @@ struct|;
 end_struct
 
 begin_function_decl
+name|GIMP_DEPRECATED
 name|void
 name|gimp_tile_ref
 parameter_list|(
@@ -123,6 +124,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GIMP_DEPRECATED
 name|void
 name|gimp_tile_ref_zero
 parameter_list|(
@@ -134,6 +136,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GIMP_DEPRECATED
 name|void
 name|gimp_tile_unref
 parameter_list|(
@@ -148,6 +151,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GIMP_DEPRECATED
 name|void
 name|gimp_tile_flush
 parameter_list|(
@@ -159,6 +163,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GIMP_DEPRECATED
 name|void
 name|gimp_tile_cache_size
 parameter_list|(
@@ -169,6 +174,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GIMP_DEPRECATED
 name|void
 name|gimp_tile_cache_ntiles
 parameter_list|(

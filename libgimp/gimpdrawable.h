@@ -136,6 +136,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_get_buffer
+argument_list|)
+end_macro
+
 begin_function_decl
 name|GimpDrawable
 modifier|*
@@ -148,6 +155,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GIMP_DEPRECATED
 name|void
 name|gimp_drawable_detach
 parameter_list|(
@@ -157,6 +165,13 @@ name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gegl_buffer_flush
+argument_list|)
+end_macro
 
 begin_function_decl
 name|void
@@ -168,6 +183,13 @@ name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_get_buffer
+argument_list|)
+end_macro
 
 begin_function_decl
 name|GimpTile
@@ -189,6 +211,13 @@ name|col
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_get_buffer
+argument_list|)
+end_macro
 
 begin_function_decl
 name|GimpTile
@@ -212,6 +241,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GIMP_DEPRECATED
 name|void
 name|gimp_drawable_get_color_uchar
 parameter_list|(

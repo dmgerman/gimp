@@ -117,6 +117,13 @@ block|}
 struct|;
 end_struct
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_get_buffer
+argument_list|)
+end_macro
+
 begin_function_decl
 name|void
 name|gimp_pixel_rgn_init
@@ -151,6 +158,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GIMP_DEPRECATED
 name|void
 name|gimp_pixel_rgn_resize
 parameter_list|(
@@ -173,6 +181,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gegl_buffer_sample
+argument_list|)
+end_macro
+
 begin_function_decl
 name|void
 name|gimp_pixel_rgn_get_pixel
@@ -193,6 +208,13 @@ name|y
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gegl_buffer_get
+argument_list|)
+end_macro
 
 begin_function_decl
 name|void
@@ -218,6 +240,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gegl_buffer_get
+argument_list|)
+end_macro
+
 begin_function_decl
 name|void
 name|gimp_pixel_rgn_get_col
@@ -241,6 +270,13 @@ name|height
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gegl_buffer_get
+argument_list|)
+end_macro
 
 begin_function_decl
 name|void
@@ -269,6 +305,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gegl_buffer_set
+argument_list|)
+end_macro
+
 begin_function_decl
 name|void
 name|gimp_pixel_rgn_set_pixel
@@ -290,6 +333,13 @@ name|y
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gegl_buffer_set
+argument_list|)
+end_macro
 
 begin_function_decl
 name|void
@@ -316,6 +366,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gegl_buffer_set
+argument_list|)
+end_macro
+
 begin_function_decl
 name|void
 name|gimp_pixel_rgn_set_col
@@ -340,6 +397,13 @@ name|height
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gegl_buffer_set
+argument_list|)
+end_macro
 
 begin_function_decl
 name|void
@@ -369,6 +433,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gegl_buffer_iterator_new
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gpointer
 name|gimp_pixel_rgns_register
@@ -380,6 +451,13 @@ modifier|...
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gegl_buffer_iterator_new
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gpointer
@@ -395,6 +473,13 @@ name|prs
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gegl_buffer_iterator_next
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gpointer

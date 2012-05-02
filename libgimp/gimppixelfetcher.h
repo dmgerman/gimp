@@ -54,7 +54,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291154770103
+DECL|enum|__anon28c188f70103
 block|{
 DECL|enumerator|GIMP_PIXEL_FETCHER_EDGE_NONE
 name|GIMP_PIXEL_FETCHER_EDGE_NONE
@@ -86,6 +86,7 @@ typedef|;
 end_typedef
 
 begin_function_decl
+name|GIMP_DEPRECATED
 name|GimpPixelFetcher
 modifier|*
 name|gimp_pixel_fetcher_new
@@ -101,6 +102,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GIMP_DEPRECATED
 name|void
 name|gimp_pixel_fetcher_destroy
 parameter_list|(
@@ -112,6 +114,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GIMP_DEPRECATED
 name|void
 name|gimp_pixel_fetcher_set_edge_mode
 parameter_list|(
@@ -126,6 +129,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GIMP_DEPRECATED
 name|void
 name|gimp_pixel_fetcher_set_bg_color
 parameter_list|(
@@ -142,6 +146,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GIMP_DEPRECATED
 name|void
 name|gimp_pixel_fetcher_get_pixel
 parameter_list|(
@@ -163,6 +168,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GIMP_DEPRECATED
 name|void
 name|gimp_pixel_fetcher_put_pixel
 parameter_list|(

@@ -200,6 +200,13 @@ parameter_list|)
 function_decl|;
 end_typedef
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|GeglBufferIterator
+argument_list|)
+end_macro
+
 begin_function_decl
 name|GimpRgnIterator
 modifier|*
@@ -215,6 +222,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|GeglBufferIterator
+argument_list|)
+end_macro
+
 begin_function_decl
 name|void
 name|gimp_rgn_iterator_free
@@ -225,6 +239,13 @@ name|iter
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|GeglBufferIterator
+argument_list|)
+end_macro
 
 begin_function_decl
 name|void
@@ -243,6 +264,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|GeglBufferIterator
+argument_list|)
+end_macro
+
 begin_function_decl
 name|void
 name|gimp_rgn_iterator_dest
@@ -260,6 +288,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|GeglBufferIterator
+argument_list|)
+end_macro
+
 begin_function_decl
 name|void
 name|gimp_rgn_iterator_src_dest
@@ -276,6 +311,13 @@ name|data
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|GeglBufferIterator
+argument_list|)
+end_macro
 
 begin_function_decl
 name|void
@@ -296,6 +338,13 @@ name|data
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|GeglBufferIterator
+argument_list|)
+end_macro
 
 begin_function_decl
 name|void
