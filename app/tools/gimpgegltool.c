@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289047970103
+DECL|enum|__anon287d89160103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -375,6 +375,9 @@ comment|/* in gimp */
 literal|"gegl:scale"
 block|,
 comment|/* in gimp */
+literal|"gegl:sdl-display"
+block|,
+comment|/* useless */
 literal|"gegl:shear"
 block|,
 comment|/* in gimp */
