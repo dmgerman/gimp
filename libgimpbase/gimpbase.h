@@ -95,6 +95,12 @@ directive|include
 file|<libgimpbase/gimpversion.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<libgimpbase/gimpvaluearray.h>
+end_include
+
 begin_ifndef
 ifndef|#
 directive|ifndef

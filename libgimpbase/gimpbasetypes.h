@@ -163,6 +163,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpValueArray
+typedef|typedef
+name|struct
+name|_GimpValueArray
+name|GimpValueArray
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDatafileLoaderFunc
 typedef|typedef
 name|void
