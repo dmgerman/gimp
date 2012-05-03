@@ -44,7 +44,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimpcolor/gimpcairocolor.h>
+file|<libgimpcolor/gimpcairo.h>
 end_include
 
 begin_include
