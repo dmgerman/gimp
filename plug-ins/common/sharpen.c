@@ -336,7 +336,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c820b0a0108
+DECL|struct|__anon2b1dd1c50108
 block|{
 DECL|member|sharpen_percent
 name|gint
@@ -484,13 +484,6 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-name|PLUG_IN_PROC
-argument_list|,
-literal|"<Image>/Filters/Enhance"
 argument_list|)
 expr_stmt|;
 block|}
