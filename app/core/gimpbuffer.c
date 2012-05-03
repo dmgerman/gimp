@@ -12,13 +12,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|<cairo.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gdk-pixbuf/gdk-pixbuf.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpcolor/gimpcolor.h"
 end_include
 
 begin_include
@@ -31,12 +43,6 @@ begin_include
 include|#
 directive|include
 file|"gegl/gimp-babl.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gegl/gimp-gegl-utils.h"
 end_include
 
 begin_include

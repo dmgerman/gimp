@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
@@ -7109,7 +7115,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e66ad20108
+DECL|struct|__anon2c6056590108
 block|{
 DECL|member|info
 name|XcfInfo

@@ -12,13 +12,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|<cairo.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<cairo.h>
+file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
 begin_include
@@ -161,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd05db60103
+DECL|enum|__anon2a054df80103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE

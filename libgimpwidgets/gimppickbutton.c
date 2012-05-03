@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<babl/babl.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -81,7 +81,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b07b4470103
+DECL|enum|__anon29ff0d200103
 block|{
 DECL|enumerator|COLOR_PICKED
 name|COLOR_PICKED

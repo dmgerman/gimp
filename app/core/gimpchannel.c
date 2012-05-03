@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpcolor/gimpcolor.h"
 end_include
 
@@ -191,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf8e8bc0103
+DECL|enum|__anon28db00120103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED

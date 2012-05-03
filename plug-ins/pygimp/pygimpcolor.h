@@ -25,31 +25,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<babl/babl.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<cairo.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<glib-object.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<pygobject.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimpcolor/gimpcolor.h>
+file|<libgimp/gimp.h>
 end_include
 
 begin_decl_stmt

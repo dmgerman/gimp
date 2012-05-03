@@ -65,7 +65,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gegl.h>
+file|<glib.h>
 end_include
 
 begin_include
@@ -113,7 +113,19 @@ end_endif
 begin_include
 include|#
 directive|include
+file|<cairo.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
 begin_include
@@ -125,13 +137,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core-types.h"
+file|"libgimpcolor/gimpcolor.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl-utils.h"
+file|"core-types.h"
 end_include
 
 begin_include

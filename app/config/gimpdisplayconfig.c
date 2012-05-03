@@ -12,19 +12,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<babl/babl.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<cairo.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
 begin_include
@@ -109,7 +109,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c62c1d80103
+DECL|enum|__anon2a4afe9f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

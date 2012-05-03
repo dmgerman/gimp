@@ -24,19 +24,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<babl/babl.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<cairo.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
 begin_include
@@ -82,7 +82,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3aee6b0108
+DECL|struct|__anon2887b4230108
 block|{
 DECL|member|name
 name|gchar
@@ -1203,7 +1203,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3aee6b0203
+DECL|enum|__anon2887b4230203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB

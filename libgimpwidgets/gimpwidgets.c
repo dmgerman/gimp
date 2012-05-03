@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<babl/babl.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -1663,7 +1663,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b287c690108
+DECL|struct|__anon28caa6320108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton

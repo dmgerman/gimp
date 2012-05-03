@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
@@ -120,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5c22b90108
+DECL|struct|__anon29419d8b0108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -196,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5c22b90208
+DECL|struct|__anon29419d8b0208
 block|{
 DECL|member|buffer
 name|GeglBuffer

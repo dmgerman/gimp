@@ -33,14 +33,14 @@ end_endif
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_PIXBUF_H__
+name|__LIBGIMP_GIMP_PIXBUF_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_PIXBUF_H__
+DECL|macro|__LIBGIMP_GIMP_PIXBUF_H__
 define|#
 directive|define
-name|__GIMP_PIXBUF_H__
+name|__LIBGIMP_GIMP_PIXBUF_H__
 end_define
 
 begin_macro
@@ -54,7 +54,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d13b110103
+DECL|enum|__anon2a3edb010103
 block|{
 DECL|enumerator|GIMP_PIXBUF_KEEP_ALPHA
 name|GIMP_PIXBUF_KEEP_ALPHA
@@ -152,7 +152,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_PIXBUF_H__ */
+comment|/* __LIBGIMP_GIMP_PIXBUF_H__ */
 end_comment
 
 end_unit

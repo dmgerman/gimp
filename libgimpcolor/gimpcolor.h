@@ -80,6 +80,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpcolor/gimppixbuf.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpcolor/gimprgb.h>
 end_include
 

@@ -158,6 +158,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
@@ -367,7 +373,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6c9bae0108
+DECL|struct|__anon2880cf270108
 block|{
 DECL|member|func
 name|GimpMemsizeFunc

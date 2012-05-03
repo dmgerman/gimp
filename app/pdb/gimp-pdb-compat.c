@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
@@ -794,7 +800,7 @@ name|pdb_type_quark
 condition|)
 block|{
 struct|struct
-DECL|struct|__anon2c0532460108
+DECL|struct|__anon291ba4c60108
 block|{
 DECL|member|g_type
 name|GType
@@ -1114,7 +1120,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c0532460208
+DECL|struct|__anon291ba4c60208
 block|{
 DECL|member|old_name
 specifier|const

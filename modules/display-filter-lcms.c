@@ -59,7 +59,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<babl/babl.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -2032,7 +2032,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28caa27d0108
+DECL|struct|__anon2a0be9230108
 block|{
 DECL|member|data
 name|guchar
@@ -2051,7 +2051,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28caa27d0203
+DECL|enum|__anon2a0be9230203
 block|{
 DECL|enumerator|openReadSpool
 name|openReadSpool

@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
@@ -1454,7 +1460,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6308420103
+DECL|enum|__anon2c2eeb420103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1468,7 +1474,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6308420203
+DECL|enum|__anon2c2eeb420203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0

@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<babl/babl.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdc11ff0103
+DECL|enum|__anon2b4e57b30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdc11ff0203
+DECL|enum|__anon2b4e57b30203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -108,7 +108,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdc11ff0308
+DECL|struct|__anon2b4e57b30308
 block|{
 DECL|member|config
 name|GimpColorConfig

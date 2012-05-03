@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<babl/babl.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -174,7 +174,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8006bc0103
+DECL|enum|__anon2c87dd9a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

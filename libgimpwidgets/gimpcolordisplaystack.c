@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<babl/babl.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b325c710103
+DECL|enum|__anon2ad801330103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED

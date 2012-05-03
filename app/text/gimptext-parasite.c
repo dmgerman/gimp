@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
@@ -335,7 +341,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a29750e0103
+DECL|enum|__anon2899b4740103
 block|{
 DECL|enumerator|TEXT
 name|TEXT

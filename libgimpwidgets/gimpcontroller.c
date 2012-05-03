@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<babl/babl.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -70,7 +70,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b55861f0103
+DECL|enum|__anon29f1e7900103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b55861f0203
+DECL|enum|__anon29f1e7900203
 block|{
 DECL|enumerator|EVENT
 name|EVENT
