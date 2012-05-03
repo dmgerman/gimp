@@ -265,11 +265,6 @@ modifier|*
 name|gimp
 decl_stmt|;
 comment|/* from main() */
-name|g_thread_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
 name|g_type_init
 argument_list|()
 expr_stmt|;

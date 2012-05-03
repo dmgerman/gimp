@@ -452,11 +452,6 @@ name|return_vals
 operator|=
 name|values
 expr_stmt|;
-name|g_thread_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
 name|values
 index|[
 literal|0

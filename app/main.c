@@ -1434,11 +1434,6 @@ endif|#
 directive|endif
 endif|#
 directive|endif
-name|g_thread_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
 ifdef|#
 directive|ifdef
 name|GIMP_UNSTABLE
