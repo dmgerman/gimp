@@ -395,7 +395,7 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"cairo-ARGB32"
+literal|"cairo-RGB24"
 argument_list|)
 return|;
 case|case
@@ -404,7 +404,7 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"cairo-RGB24"
+literal|"cairo-ARGB32"
 argument_list|)
 return|;
 default|default:
@@ -461,6 +461,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|format
+operator|=
+name|gimp_cairo_surface_get_format
+argument_list|(
+name|surface
+argument_list|)
+expr_stmt|;
 name|width
 operator|=
 name|cairo_image_surface_get_width
@@ -471,13 +478,6 @@ expr_stmt|;
 name|height
 operator|=
 name|cairo_image_surface_get_height
-argument_list|(
-name|surface
-argument_list|)
-expr_stmt|;
-name|format
-operator|=
-name|gimp_cairo_surface_get_format
 argument_list|(
 name|surface
 argument_list|)
