@@ -18,7 +18,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|<babl/babl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
 begin_include
@@ -53,7 +65,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1450930108
+DECL|struct|__anon2b2d5c1b0108
 block|{
 DECL|member|str
 specifier|const
