@@ -17,18 +17,6 @@ name|__APP_GIMP_CAIRO_H__
 end_define
 
 begin_function_decl
-name|GeglBuffer
-modifier|*
-name|gimp_cairo_image_surface_create_buffer
-parameter_list|(
-name|cairo_surface_t
-modifier|*
-name|surface
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|cairo_pattern_t
 modifier|*
 name|gimp_cairo_stipple_pattern_create

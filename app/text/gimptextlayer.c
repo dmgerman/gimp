@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp-cairo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp-utils.h"
 end_include
 
@@ -167,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b7b15b0103
+DECL|enum|__anon28dd2ffc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2648,7 +2642,7 @@ argument_list|)
 expr_stmt|;
 name|buffer
 operator|=
-name|gimp_cairo_image_surface_create_buffer
+name|gimp_cairo_surface_create_buffer
 argument_list|(
 name|surface
 argument_list|)

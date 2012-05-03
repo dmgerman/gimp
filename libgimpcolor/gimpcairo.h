@@ -73,6 +73,31 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|const
+name|Babl
+modifier|*
+name|gimp_cairo_surface_get_format
+parameter_list|(
+name|cairo_surface_t
+modifier|*
+name|surface
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GeglBuffer
+modifier|*
+name|gimp_cairo_surface_create_buffer
+parameter_list|(
+name|cairo_surface_t
+modifier|*
+name|surface
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  some useful macros for writing directly to a Cairo surface  */
 end_comment
