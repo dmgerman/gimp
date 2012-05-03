@@ -133,6 +133,11 @@ name|GtkAdjustment
 modifier|*
 name|lightness_data
 decl_stmt|;
+DECL|member|color_button
+name|GtkWidget
+modifier|*
+name|color_button
+decl_stmt|;
 block|}
 struct|;
 end_struct
