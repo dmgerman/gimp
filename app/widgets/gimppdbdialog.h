@@ -165,7 +165,7 @@ modifier|*
 name|dialogs
 decl_stmt|;
 DECL|member|run_callback
-name|GValueArray
+name|GimpValueArray
 modifier|*
 function_decl|(
 modifier|*

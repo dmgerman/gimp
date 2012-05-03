@@ -12,7 +12,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
@@ -72,7 +78,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|gimp_temporary_procedure_execute
 parameter_list|(
@@ -92,7 +98,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -125,7 +131,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -284,9 +290,9 @@ end_function
 
 begin_function
 specifier|static
-name|GValueArray
+name|GimpValueArray
 modifier|*
-DECL|function|gimp_temporary_procedure_execute (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GValueArray * args,GError ** error)
+DECL|function|gimp_temporary_procedure_execute (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpValueArray * args,GError ** error)
 name|gimp_temporary_procedure_execute
 parameter_list|(
 name|GimpProcedure
@@ -305,7 +311,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -340,7 +346,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_temporary_procedure_execute_async (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GValueArray * args,GimpObject * display)
+DECL|function|gimp_temporary_procedure_execute_async (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpValueArray * args,GimpObject * display)
 name|gimp_temporary_procedure_execute_async
 parameter_list|(
 name|GimpProcedure
@@ -359,7 +365,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -377,7 +383,7 @@ argument_list|(
 name|procedure
 argument_list|)
 decl_stmt|;
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -423,7 +429,7 @@ argument_list|,
 name|return_vals
 argument_list|)
 expr_stmt|;
-name|g_value_array_free
+name|gimp_value_array_unref
 argument_list|(
 name|return_vals
 argument_list|)

@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb-types.h"
 end_include
 
@@ -93,9 +99,9 @@ end_include
 
 begin_function
 specifier|static
-name|GValueArray
+name|GimpValueArray
 modifier|*
-DECL|function|image_undo_group_start_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
+DECL|function|image_undo_group_start_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
 name|image_undo_group_start_invoker
 parameter_list|(
 name|GimpProcedure
@@ -115,7 +121,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -138,13 +144,12 @@ name|image
 operator|=
 name|gimp_value_get_image
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|args
-operator|->
-name|values
-index|[
+argument_list|,
 literal|0
-index|]
+argument_list|)
 argument_list|,
 name|gimp
 argument_list|)
@@ -231,9 +236,9 @@ end_function
 
 begin_function
 specifier|static
-name|GValueArray
+name|GimpValueArray
 modifier|*
-DECL|function|image_undo_group_end_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
+DECL|function|image_undo_group_end_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
 name|image_undo_group_end_invoker
 parameter_list|(
 name|GimpProcedure
@@ -253,7 +258,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -276,13 +281,12 @@ name|image
 operator|=
 name|gimp_value_get_image
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|args
-operator|->
-name|values
-index|[
+argument_list|,
 literal|0
-index|]
+argument_list|)
 argument_list|,
 name|gimp
 argument_list|)
@@ -345,9 +349,9 @@ end_function
 
 begin_function
 specifier|static
-name|GValueArray
+name|GimpValueArray
 modifier|*
-DECL|function|image_undo_is_enabled_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
+DECL|function|image_undo_is_enabled_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
 name|image_undo_is_enabled_invoker
 parameter_list|(
 name|GimpProcedure
@@ -367,7 +371,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -382,7 +386,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -399,13 +403,12 @@ name|image
 operator|=
 name|gimp_value_get_image
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|args
-operator|->
-name|values
-index|[
+argument_list|,
 literal|0
-index|]
+argument_list|)
 argument_list|,
 name|gimp
 argument_list|)
@@ -445,13 +448,12 @@ name|success
 condition|)
 name|g_value_set_boolean
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|return_vals
-operator|->
-name|values
-index|[
+argument_list|,
 literal|1
-index|]
+argument_list|)
 argument_list|,
 name|enabled
 argument_list|)
@@ -464,9 +466,9 @@ end_function
 
 begin_function
 specifier|static
-name|GValueArray
+name|GimpValueArray
 modifier|*
-DECL|function|image_undo_disable_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
+DECL|function|image_undo_disable_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
 name|image_undo_disable_invoker
 parameter_list|(
 name|GimpProcedure
@@ -486,7 +488,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -501,7 +503,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -518,13 +520,12 @@ name|image
 operator|=
 name|gimp_value_get_image
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|args
-operator|->
-name|values
-index|[
+argument_list|,
 literal|0
-index|]
+argument_list|)
 argument_list|,
 name|gimp
 argument_list|)
@@ -574,13 +575,12 @@ name|success
 condition|)
 name|g_value_set_boolean
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|return_vals
-operator|->
-name|values
-index|[
+argument_list|,
 literal|1
-index|]
+argument_list|)
 argument_list|,
 name|disabled
 argument_list|)
@@ -593,9 +593,9 @@ end_function
 
 begin_function
 specifier|static
-name|GValueArray
+name|GimpValueArray
 modifier|*
-DECL|function|image_undo_enable_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
+DECL|function|image_undo_enable_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
 name|image_undo_enable_invoker
 parameter_list|(
 name|GimpProcedure
@@ -615,7 +615,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -630,7 +630,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -647,13 +647,12 @@ name|image
 operator|=
 name|gimp_value_get_image
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|args
-operator|->
-name|values
-index|[
+argument_list|,
 literal|0
-index|]
+argument_list|)
 argument_list|,
 name|gimp
 argument_list|)
@@ -703,13 +702,12 @@ name|success
 condition|)
 name|g_value_set_boolean
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|return_vals
-operator|->
-name|values
-index|[
+argument_list|,
 literal|1
-index|]
+argument_list|)
 argument_list|,
 name|enabled
 argument_list|)
@@ -722,9 +720,9 @@ end_function
 
 begin_function
 specifier|static
-name|GValueArray
+name|GimpValueArray
 modifier|*
-DECL|function|image_undo_freeze_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
+DECL|function|image_undo_freeze_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
 name|image_undo_freeze_invoker
 parameter_list|(
 name|GimpProcedure
@@ -744,7 +742,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -759,7 +757,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -776,13 +774,12 @@ name|image
 operator|=
 name|gimp_value_get_image
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|args
-operator|->
-name|values
-index|[
+argument_list|,
 literal|0
-index|]
+argument_list|)
 argument_list|,
 name|gimp
 argument_list|)
@@ -832,13 +829,12 @@ name|success
 condition|)
 name|g_value_set_boolean
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|return_vals
-operator|->
-name|values
-index|[
+argument_list|,
 literal|1
-index|]
+argument_list|)
 argument_list|,
 name|frozen
 argument_list|)
@@ -851,9 +847,9 @@ end_function
 
 begin_function
 specifier|static
-name|GValueArray
+name|GimpValueArray
 modifier|*
-DECL|function|image_undo_thaw_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
+DECL|function|image_undo_thaw_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
 name|image_undo_thaw_invoker
 parameter_list|(
 name|GimpProcedure
@@ -873,7 +869,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -888,7 +884,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -905,13 +901,12 @@ name|image
 operator|=
 name|gimp_value_get_image
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|args
-operator|->
-name|values
-index|[
+argument_list|,
 literal|0
-index|]
+argument_list|)
 argument_list|,
 name|gimp
 argument_list|)
@@ -961,13 +956,12 @@ name|success
 condition|)
 name|g_value_set_boolean
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|return_vals
-operator|->
-name|values
-index|[
+argument_list|,
 literal|1
-index|]
+argument_list|)
 argument_list|,
 name|thawed
 argument_list|)

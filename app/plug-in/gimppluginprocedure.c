@@ -114,7 +114,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9f75610103
+DECL|enum|__anon2bddc78b0103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -155,7 +155,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|gimp_plug_in_procedure_execute
 parameter_list|(
@@ -175,7 +175,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -208,7 +208,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -849,9 +849,9 @@ end_function
 
 begin_function
 specifier|static
-name|GValueArray
+name|GimpValueArray
 modifier|*
-DECL|function|gimp_plug_in_procedure_execute (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GValueArray * args,GError ** error)
+DECL|function|gimp_plug_in_procedure_execute (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpValueArray * args,GError ** error)
 name|gimp_plug_in_procedure_execute
 parameter_list|(
 name|GimpProcedure
@@ -870,7 +870,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -938,7 +938,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_plug_in_procedure_execute_async (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GValueArray * args,GimpObject * display)
+DECL|function|gimp_plug_in_procedure_execute_async (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpValueArray * args,GimpObject * display)
 name|gimp_plug_in_procedure_execute_async
 parameter_list|(
 name|GimpProcedure
@@ -957,7 +957,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -975,7 +975,7 @@ argument_list|(
 name|procedure
 argument_list|)
 decl_stmt|;
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -1016,7 +1016,7 @@ argument_list|,
 name|return_vals
 argument_list|)
 expr_stmt|;
-name|g_value_array_free
+name|gimp_value_array_unref
 argument_list|(
 name|return_vals
 argument_list|)
@@ -4054,7 +4054,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_plug_in_procedure_handle_return_values (GimpPlugInProcedure * proc,Gimp * gimp,GimpProgress * progress,GValueArray * return_vals)
+DECL|function|gimp_plug_in_procedure_handle_return_values (GimpPlugInProcedure * proc,Gimp * gimp,GimpProgress * progress,GimpValueArray * return_vals)
 name|gimp_plug_in_procedure_handle_return_values
 parameter_list|(
 name|GimpPlugInProcedure
@@ -4069,7 +4069,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 parameter_list|)
@@ -4092,21 +4092,21 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
+name|gimp_value_array_length
+argument_list|(
 name|return_vals
-operator|->
-name|n_values
+argument_list|)
 operator|>
 literal|0
 operator|||
 name|G_VALUE_TYPE
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|return_vals
-operator|->
-name|values
-index|[
+argument_list|,
 literal|0
-index|]
+argument_list|)
 argument_list|)
 operator|!=
 name|GIMP_TYPE_PDB_STATUS_TYPE
@@ -4118,13 +4118,12 @@ switch|switch
 condition|(
 name|g_value_get_enum
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|return_vals
-operator|->
-name|values
-index|[
+argument_list|,
 literal|0
-index|]
+argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -4137,21 +4136,21 @@ name|GIMP_PDB_CALLING_ERROR
 case|:
 if|if
 condition|(
+name|gimp_value_array_length
+argument_list|(
 name|return_vals
-operator|->
-name|n_values
+argument_list|)
 operator|>
 literal|1
 operator|&&
 name|G_VALUE_HOLDS_STRING
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|return_vals
-operator|->
-name|values
-index|[
+argument_list|,
 literal|1
-index|]
+argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -4179,13 +4178,12 @@ argument_list|)
 argument_list|,
 name|g_value_get_string
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|return_vals
-operator|->
-name|values
-index|[
+argument_list|,
 literal|1
-index|]
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4196,21 +4194,21 @@ name|GIMP_PDB_EXECUTION_ERROR
 case|:
 if|if
 condition|(
+name|gimp_value_array_length
+argument_list|(
 name|return_vals
-operator|->
-name|n_values
+argument_list|)
 operator|>
 literal|1
 operator|&&
 name|G_VALUE_HOLDS_STRING
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|return_vals
-operator|->
-name|values
-index|[
+argument_list|,
 literal|1
-index|]
+argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -4238,13 +4236,12 @@ argument_list|)
 argument_list|,
 name|g_value_get_string
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|return_vals
-operator|->
-name|values
-index|[
+argument_list|,
 literal|1
-index|]
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

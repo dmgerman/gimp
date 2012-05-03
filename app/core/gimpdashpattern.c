@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core-types.h"
 end_include
 
@@ -812,10 +818,10 @@ end_function
 begin_function
 name|GArray
 modifier|*
-DECL|function|gimp_dash_pattern_from_value_array (GValueArray * value_array)
+DECL|function|gimp_dash_pattern_from_value_array (GimpValueArray * value_array)
 name|gimp_dash_pattern_from_value_array
 parameter_list|(
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|value_array
 parameter_list|)
@@ -826,9 +832,10 @@ name|value_array
 operator|==
 name|NULL
 operator|||
+name|gimp_value_array_length
+argument_list|(
 name|value_array
-operator|->
-name|n_values
+argument_list|)
 operator|==
 literal|0
 condition|)
@@ -844,8 +851,18 @@ modifier|*
 name|pattern
 decl_stmt|;
 name|gint
+name|length
+decl_stmt|;
+name|gint
 name|i
 decl_stmt|;
+name|length
+operator|=
+name|gimp_value_array_length
+argument_list|(
+name|value_array
+argument_list|)
+expr_stmt|;
 name|pattern
 operator|=
 name|g_array_sized_new
@@ -859,9 +876,7 @@ argument_list|(
 name|gdouble
 argument_list|)
 argument_list|,
-name|value_array
-operator|->
-name|n_values
+name|length
 argument_list|)
 expr_stmt|;
 for|for
@@ -872,9 +887,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|value_array
-operator|->
-name|n_values
+name|length
 condition|;
 name|i
 operator|++
@@ -884,7 +897,7 @@ name|GValue
 modifier|*
 name|item
 init|=
-name|g_value_array_get_nth
+name|gimp_value_array_index
 argument_list|(
 name|value_array
 argument_list|,
@@ -927,7 +940,7 @@ block|}
 end_function
 
 begin_function
-name|GValueArray
+name|GimpValueArray
 modifier|*
 DECL|function|gimp_dash_pattern_to_value_array (GArray * pattern)
 name|gimp_dash_pattern_to_value_array
@@ -956,11 +969,11 @@ return|;
 block|}
 else|else
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|value_array
 init|=
-name|g_value_array_new
+name|gimp_value_array_new
 argument_list|(
 name|pattern
 operator|->
@@ -1016,7 +1029,7 @@ name|i
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_value_array_append
+name|gimp_value_array_append
 argument_list|(
 name|value_array
 argument_list|,

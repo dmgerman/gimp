@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb-types.h"
 end_include
 
@@ -81,9 +87,9 @@ end_include
 
 begin_function
 specifier|static
-name|GValueArray
+name|GimpValueArray
 modifier|*
-DECL|function|help_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
+DECL|function|help_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
 name|help_invoker
 parameter_list|(
 name|GimpProcedure
@@ -103,7 +109,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -132,26 +138,24 @@ name|help_domain
 operator|=
 name|g_value_get_string
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|args
-operator|->
-name|values
-index|[
+argument_list|,
 literal|0
-index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|help_id
 operator|=
 name|g_value_get_string
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|args
-operator|->
-name|values
-index|[
+argument_list|,
 literal|1
-index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

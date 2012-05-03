@@ -1782,7 +1782,7 @@ name|list
 operator|->
 name|data
 decl_stmt|;
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 decl_stmt|;
@@ -1830,7 +1830,7 @@ argument_list|)
 expr_stmt|;
 name|args
 operator|=
-name|g_value_array_new
+name|gimp_value_array_new
 argument_list|(
 literal|0
 argument_list|)
@@ -1856,7 +1856,7 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
-name|g_value_array_free
+name|gimp_value_array_unref
 argument_list|(
 name|args
 argument_list|)
@@ -2627,7 +2627,7 @@ operator|->
 name|file_proc
 condition|)
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -2736,7 +2736,7 @@ name|G_TYPE_NONE
 argument_list|)
 expr_stmt|;
 block|}
-name|g_value_array_free
+name|gimp_value_array_unref
 argument_list|(
 name|return_vals
 argument_list|)

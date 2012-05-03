@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6f46250103
+DECL|enum|__anon27b232930103
 block|{
 DECL|enumerator|REGISTER_PROCEDURE
 name|REGISTER_PROCEDURE
@@ -1086,9 +1086,9 @@ block|}
 end_function
 
 begin_function
-name|GValueArray
+name|GimpValueArray
 modifier|*
-DECL|function|gimp_pdb_execute_procedure_by_name_args (GimpPDB * pdb,GimpContext * context,GimpProgress * progress,GError ** error,const gchar * name,GValueArray * args)
+DECL|function|gimp_pdb_execute_procedure_by_name_args (GimpPDB * pdb,GimpContext * context,GimpProgress * progress,GError ** error,const gchar * name,GimpValueArray * args)
 name|gimp_pdb_execute_procedure_by_name_args
 parameter_list|(
 name|GimpPDB
@@ -1113,12 +1113,12 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|)
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 init|=
@@ -1306,13 +1306,12 @@ if|if
 condition|(
 name|g_value_get_enum
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|return_vals
-operator|->
-name|values
-index|[
+argument_list|,
 literal|0
-index|]
+argument_list|)
 argument_list|)
 operator|==
 name|GIMP_PDB_PASS_THROUGH
@@ -1327,7 +1326,7 @@ name|list
 argument_list|)
 condition|)
 block|{
-name|g_value_array_free
+name|gimp_value_array_unref
 argument_list|(
 name|return_vals
 argument_list|)
@@ -1352,7 +1351,7 @@ block|}
 end_function
 
 begin_function
-name|GValueArray
+name|GimpValueArray
 modifier|*
 DECL|function|gimp_pdb_execute_procedure_by_name (GimpPDB * pdb,GimpContext * context,GimpProgress * progress,GError ** error,const gchar * name,...)
 name|gimp_pdb_execute_procedure_by_name
@@ -1386,11 +1385,11 @@ name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 decl_stmt|;
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -1573,13 +1572,12 @@ condition|)
 break|break;
 name|value
 operator|=
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|args
-operator|->
-name|values
-index|[
+argument_list|,
 name|i
-index|]
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -1618,7 +1616,7 @@ argument_list|(
 name|arg_type
 argument_list|)
 decl_stmt|;
-name|g_value_array_free
+name|gimp_value_array_unref
 argument_list|(
 name|args
 argument_list|)
@@ -1723,7 +1721,7 @@ argument_list|(
 name|error_msg
 argument_list|)
 expr_stmt|;
-name|g_value_array_free
+name|gimp_value_array_unref
 argument_list|(
 name|args
 argument_list|)
@@ -1778,7 +1776,7 @@ argument_list|,
 name|args
 argument_list|)
 expr_stmt|;
-name|g_value_array_free
+name|gimp_value_array_unref
 argument_list|(
 name|args
 argument_list|)

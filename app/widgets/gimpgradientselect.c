@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -83,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c022d590103
+DECL|enum|__anon2c3bb1650103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -132,7 +138,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|gimp_gradient_select_run_callback
 parameter_list|(
@@ -489,7 +495,7 @@ end_function
 
 begin_function
 specifier|static
-name|GValueArray
+name|GimpValueArray
 modifier|*
 DECL|function|gimp_gradient_select_run_callback (GimpPdbDialog * dialog,GimpObject * object,gboolean closing,GError ** error)
 name|gimp_gradient_select_run_callback
@@ -548,7 +554,7 @@ name|GimpArray
 modifier|*
 name|array
 decl_stmt|;
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;

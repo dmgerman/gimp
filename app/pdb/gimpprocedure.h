@@ -25,7 +25,7 @@ end_include
 begin_typedef
 DECL|typedef|GimpMarshalFunc
 typedef|typedef
-name|GValueArray
+name|GimpValueArray
 modifier|*
 function_decl|(
 modifier|*
@@ -49,7 +49,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -237,7 +237,7 @@ name|GimpObjectClass
 name|parent_class
 decl_stmt|;
 DECL|member|execute
-name|GValueArray
+name|GimpValueArray
 modifier|*
 function_decl|(
 modifier|*
@@ -260,7 +260,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -293,7 +293,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -489,7 +489,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|gimp_procedure_get_arguments
 parameter_list|(
@@ -501,7 +501,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|gimp_procedure_get_return_values
 parameter_list|(
@@ -536,7 +536,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|gimp_procedure_execute
 parameter_list|(
@@ -556,7 +556,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -588,7 +588,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,

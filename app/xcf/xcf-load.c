@@ -8049,7 +8049,7 @@ decl_stmt|;
 name|gint
 name|j
 decl_stmt|;
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|control_points
 decl_stmt|;
@@ -8222,7 +8222,7 @@ return|;
 block|}
 name|control_points
 operator|=
-name|g_value_array_new
+name|gimp_value_array_new
 argument_list|(
 name|num_control_points
 argument_list|)
@@ -8359,7 +8359,7 @@ operator|&
 name|anchor
 argument_list|)
 expr_stmt|;
-name|g_value_array_append
+name|gimp_value_array_append
 argument_list|(
 name|control_points
 argument_list|,
@@ -8445,7 +8445,7 @@ argument_list|(
 name|stroke
 argument_list|)
 expr_stmt|;
-name|g_value_array_free
+name|gimp_value_array_unref
 argument_list|(
 name|control_points
 argument_list|)

@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -95,7 +101,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|gimp_font_select_run_callback
 parameter_list|(
@@ -349,7 +355,7 @@ end_function
 
 begin_function
 specifier|static
-name|GValueArray
+name|GimpValueArray
 modifier|*
 DECL|function|gimp_font_select_run_callback (GimpPdbDialog * dialog,GimpObject * object,gboolean closing,GError ** error)
 name|gimp_font_select_run_callback

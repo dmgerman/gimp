@@ -607,7 +607,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 parameter_list|)

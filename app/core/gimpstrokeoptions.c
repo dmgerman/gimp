@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpparamspecs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpstrokeoptions.h"
 end_include
 
@@ -95,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296c50210103
+DECL|enum|__anon2a423f710103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -144,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296c50210203
+DECL|enum|__anon2a423f710203
 block|{
 DECL|enumerator|DASH_INFO_CHANGED
 name|DASH_INFO_CHANGED
@@ -603,7 +609,7 @@ name|object_class
 argument_list|,
 name|PROP_DASH_INFO
 argument_list|,
-name|g_param_spec_value_array
+name|gimp_param_spec_value_array
 argument_list|(
 literal|"dash-info"
 argument_list|,
@@ -942,7 +948,7 @@ case|case
 name|PROP_DASH_INFO
 case|:
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|value_array
 init|=
@@ -1158,7 +1164,7 @@ case|case
 name|PROP_DASH_INFO
 case|:
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|value_array
 decl_stmt|;

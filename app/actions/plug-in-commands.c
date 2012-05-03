@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -216,7 +222,7 @@ name|GimpDisplay
 modifier|*
 name|display
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -244,7 +250,7 @@ modifier|*
 modifier|*
 name|pspecs
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -272,7 +278,7 @@ modifier|*
 modifier|*
 name|pspecs
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -304,7 +310,7 @@ modifier|*
 modifier|*
 name|pspecs
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -332,7 +338,7 @@ modifier|*
 modifier|*
 name|pspecs
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -395,7 +401,7 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 decl_stmt|;
@@ -427,13 +433,12 @@ expr_stmt|;
 comment|/* initialize the first argument  */
 name|g_value_set_int
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|args
-operator|->
-name|values
-index|[
+argument_list|,
 name|n_args
-index|]
+argument_list|)
 argument_list|,
 name|GIMP_RUN_INTERACTIVE
 argument_list|)
@@ -728,7 +733,7 @@ argument_list|,
 name|n_args
 argument_list|)
 expr_stmt|;
-name|g_value_array_free
+name|gimp_value_array_unref
 argument_list|(
 name|args
 argument_list|)
@@ -804,7 +809,7 @@ condition|(
 name|procedure
 condition|)
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 decl_stmt|;
@@ -823,13 +828,12 @@ argument_list|)
 expr_stmt|;
 name|g_value_set_int
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|args
-operator|->
-name|values
-index|[
+argument_list|,
 literal|0
-index|]
+argument_list|)
 argument_list|,
 name|run_mode
 argument_list|)
@@ -867,7 +871,7 @@ argument_list|,
 name|n_args
 argument_list|)
 expr_stmt|;
-name|g_value_array_free
+name|gimp_value_array_unref
 argument_list|(
 name|args
 argument_list|)
@@ -901,7 +905,7 @@ name|GimpDisplay
 modifier|*
 name|display
 decl_stmt|;
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 decl_stmt|;
@@ -934,13 +938,12 @@ argument_list|)
 expr_stmt|;
 name|g_value_set_int
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|args
-operator|->
-name|values
-index|[
+argument_list|,
 literal|0
-index|]
+argument_list|)
 argument_list|,
 name|GIMP_RUN_INTERACTIVE
 argument_list|)
@@ -978,7 +981,7 @@ argument_list|,
 name|n_args
 argument_list|)
 expr_stmt|;
-name|g_value_array_free
+name|gimp_value_array_unref
 argument_list|(
 name|args
 argument_list|)
@@ -1104,7 +1107,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_procedure_execute (GimpPlugInProcedure * procedure,Gimp * gimp,GimpDisplay * display,GValueArray * args,gint n_args)
+DECL|function|plug_in_procedure_execute (GimpPlugInProcedure * procedure,Gimp * gimp,GimpDisplay * display,GimpValueArray * args,gint n_args)
 name|plug_in_procedure_execute
 parameter_list|(
 name|GimpPlugInProcedure
@@ -1119,7 +1122,7 @@ name|GimpDisplay
 modifier|*
 name|display
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -1243,7 +1246,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|plug_in_collect_data_args (GtkAction * action,GimpObject * object,GParamSpec ** pspecs,GValueArray * args,gint n_args)
+DECL|function|plug_in_collect_data_args (GtkAction * action,GimpObject * object,GParamSpec ** pspecs,GimpValueArray * args,gint n_args)
 name|plug_in_collect_data_args
 parameter_list|(
 name|GtkAction
@@ -1259,7 +1262,7 @@ modifier|*
 modifier|*
 name|pspecs
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -1269,9 +1272,10 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|gimp_value_array_length
+argument_list|(
 name|args
-operator|->
-name|n_values
+argument_list|)
 operator|>
 name|n_args
 operator|&&
@@ -1291,13 +1295,12 @@ condition|)
 block|{
 name|g_value_set_string
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|args
-operator|->
-name|values
-index|[
+argument_list|,
 name|n_args
-index|]
+argument_list|)
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
@@ -1331,7 +1334,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|plug_in_collect_image_args (GtkAction * action,GimpImage * image,GParamSpec ** pspecs,GValueArray * args,gint n_args)
+DECL|function|plug_in_collect_image_args (GtkAction * action,GimpImage * image,GParamSpec ** pspecs,GimpValueArray * args,gint n_args)
 name|plug_in_collect_image_args
 parameter_list|(
 name|GtkAction
@@ -1347,7 +1350,7 @@ modifier|*
 modifier|*
 name|pspecs
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -1357,9 +1360,10 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|gimp_value_array_length
+argument_list|(
 name|args
-operator|->
-name|n_values
+argument_list|)
 operator|>
 name|n_args
 operator|&&
@@ -1379,13 +1383,12 @@ condition|)
 block|{
 name|gimp_value_set_image
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|args
-operator|->
-name|values
-index|[
+argument_list|,
 name|n_args
-index|]
+argument_list|)
 argument_list|,
 name|image
 argument_list|)
@@ -1416,7 +1419,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|plug_in_collect_item_args (GtkAction * action,GimpImage * image,GimpItem * item,GParamSpec ** pspecs,GValueArray * args,gint n_args)
+DECL|function|plug_in_collect_item_args (GtkAction * action,GimpImage * image,GimpItem * item,GParamSpec ** pspecs,GimpValueArray * args,gint n_args)
 name|plug_in_collect_item_args
 parameter_list|(
 name|GtkAction
@@ -1436,7 +1439,7 @@ modifier|*
 modifier|*
 name|pspecs
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -1446,9 +1449,10 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|gimp_value_array_length
+argument_list|(
 name|args
-operator|->
-name|n_values
+argument_list|)
 operator|>
 name|n_args
 operator|&&
@@ -1468,13 +1472,12 @@ condition|)
 block|{
 name|gimp_value_set_image
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|args
-operator|->
-name|values
-index|[
+argument_list|,
 name|n_args
-index|]
+argument_list|)
 argument_list|,
 name|image
 argument_list|)
@@ -1484,9 +1487,10 @@ operator|++
 expr_stmt|;
 if|if
 condition|(
+name|gimp_value_array_length
+argument_list|(
 name|args
-operator|->
-name|n_values
+argument_list|)
 operator|>
 name|n_args
 operator|&&
@@ -1524,13 +1528,12 @@ condition|)
 block|{
 name|gimp_value_set_item
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|args
-operator|->
-name|values
-index|[
+argument_list|,
 name|n_args
-index|]
+argument_list|)
 argument_list|,
 name|item
 argument_list|)
@@ -1563,7 +1566,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|plug_in_collect_display_args (GtkAction * action,GimpDisplay * display,GParamSpec ** pspecs,GValueArray * args,gint n_args)
+DECL|function|plug_in_collect_display_args (GtkAction * action,GimpDisplay * display,GParamSpec ** pspecs,GimpValueArray * args,gint n_args)
 name|plug_in_collect_display_args
 parameter_list|(
 name|GtkAction
@@ -1579,7 +1582,7 @@ modifier|*
 modifier|*
 name|pspecs
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -1589,9 +1592,10 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|gimp_value_array_length
+argument_list|(
 name|args
-operator|->
-name|n_values
+argument_list|)
 operator|>
 name|n_args
 operator|&&
@@ -1611,13 +1615,12 @@ condition|)
 block|{
 name|gimp_value_set_display
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|args
-operator|->
-name|values
-index|[
+argument_list|,
 name|n_args
-index|]
+argument_list|)
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -1644,9 +1647,10 @@ block|}
 block|}
 if|if
 condition|(
+name|gimp_value_array_length
+argument_list|(
 name|args
-operator|->
-name|n_values
+argument_list|)
 operator|>
 name|n_args
 operator|&&
@@ -1679,13 +1683,12 @@ condition|)
 block|{
 name|gimp_value_set_image
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|args
-operator|->
-name|values
-index|[
+argument_list|,
 name|n_args
-index|]
+argument_list|)
 argument_list|,
 name|image
 argument_list|)
@@ -1695,9 +1698,10 @@ operator|++
 expr_stmt|;
 if|if
 condition|(
+name|gimp_value_array_length
+argument_list|(
 name|args
-operator|->
-name|n_values
+argument_list|)
 operator|>
 name|n_args
 operator|&&
@@ -1726,13 +1730,12 @@ condition|)
 block|{
 name|gimp_value_set_drawable
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|args
-operator|->
-name|values
-index|[
+argument_list|,
 name|n_args
-index|]
+argument_list|)
 argument_list|,
 name|drawable
 argument_list|)

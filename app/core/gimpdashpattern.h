@@ -98,7 +98,7 @@ name|GArray
 modifier|*
 name|gimp_dash_pattern_from_value_array
 parameter_list|(
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|value_array
 parameter_list|)
@@ -106,7 +106,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|gimp_dash_pattern_to_value_array
 parameter_list|(

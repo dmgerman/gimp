@@ -84,7 +84,7 @@ comment|/*  Run a plug-in as if it were a procedure database procedure  */
 end_comment
 
 begin_function_decl
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|gimp_plug_in_manager_call_run
 parameter_list|(
@@ -104,7 +104,7 @@ name|GimpPlugInProcedure
 modifier|*
 name|procedure
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -123,7 +123,7 @@ comment|/*  Run a temp plug-in proc as if it were a procedure database procedure
 end_comment
 
 begin_function_decl
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|gimp_plug_in_manager_call_run_temp
 parameter_list|(
@@ -143,7 +143,7 @@ name|GimpTemporaryProcedure
 modifier|*
 name|procedure
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|)

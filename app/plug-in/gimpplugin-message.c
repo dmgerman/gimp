@@ -2079,13 +2079,13 @@ name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 init|=
 name|NULL
 decl_stmt|;
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 init|=
@@ -2436,7 +2436,7 @@ operator|->
 name|manager
 argument_list|)
 expr_stmt|;
-name|g_value_array_free
+name|gimp_value_array_unref
 argument_list|(
 name|args
 argument_list|)
@@ -2492,9 +2492,10 @@ name|proc_return
 operator|.
 name|nparams
 operator|=
+name|gimp_value_array_length
+argument_list|(
 name|return_vals
-operator|->
-name|n_values
+argument_list|)
 expr_stmt|;
 name|proc_return
 operator|.
@@ -2556,7 +2557,7 @@ name|params
 argument_list|)
 expr_stmt|;
 block|}
-name|g_value_array_free
+name|gimp_value_array_unref
 argument_list|(
 name|return_vals
 argument_list|)

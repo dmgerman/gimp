@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -83,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bde818a0103
+DECL|enum|__anon296177ec0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1178,7 +1184,7 @@ name|callback_name
 argument_list|)
 condition|)
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -1208,13 +1214,12 @@ if|if
 condition|(
 name|g_value_get_enum
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|return_vals
-operator|->
-name|values
-index|[
+argument_list|,
 literal|0
-index|]
+argument_list|)
 argument_list|)
 operator|!=
 name|GIMP_PDB_SUCCESS
@@ -1284,7 +1289,7 @@ name|error
 argument_list|)
 expr_stmt|;
 block|}
-name|g_value_array_free
+name|gimp_value_array_unref
 argument_list|(
 name|return_vals
 argument_list|)

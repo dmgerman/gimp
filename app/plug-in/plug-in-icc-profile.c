@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -110,7 +116,7 @@ specifier|static
 name|void
 name|plug_in_icc_profile_info_return
 parameter_list|(
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 parameter_list|,
@@ -274,7 +280,7 @@ index|]
 argument_list|)
 condition|)
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -323,9 +329,12 @@ name|status
 operator|=
 name|g_value_get_enum
 argument_list|(
+name|gimp_value_array_index
+argument_list|(
 name|return_vals
-operator|->
-name|values
+argument_list|,
+literal|0
+argument_list|)
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -393,9 +402,10 @@ if|if
 condition|(
 name|success
 operator|&&
+name|gimp_value_array_length
+argument_list|(
 name|return_vals
-operator|->
-name|n_values
+argument_list|)
 operator|>
 literal|1
 condition|)
@@ -404,7 +414,7 @@ name|GValue
 modifier|*
 name|value
 init|=
-name|g_value_array_get_nth
+name|gimp_value_array_index
 argument_list|(
 name|return_vals
 argument_list|,
@@ -442,7 +452,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|g_value_array_free
+name|gimp_value_array_unref
 argument_list|(
 name|return_vals
 argument_list|)
@@ -605,7 +615,7 @@ index|]
 argument_list|)
 condition|)
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -642,9 +652,12 @@ name|status
 operator|=
 name|g_value_get_enum
 argument_list|(
+name|gimp_value_array_index
+argument_list|(
 name|return_vals
-operator|->
-name|values
+argument_list|,
+literal|0
+argument_list|)
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -695,7 +708,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-name|g_value_array_free
+name|gimp_value_array_unref
 argument_list|(
 name|return_vals
 argument_list|)
@@ -866,7 +879,7 @@ index|]
 argument_list|)
 condition|)
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -900,9 +913,12 @@ name|status
 operator|=
 name|g_value_get_enum
 argument_list|(
+name|gimp_value_array_index
+argument_list|(
 name|return_vals
-operator|->
-name|values
+argument_list|,
+literal|0
+argument_list|)
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -953,7 +969,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-name|g_value_array_free
+name|gimp_value_array_unref
 argument_list|(
 name|return_vals
 argument_list|)
@@ -991,10 +1007,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_icc_profile_info_return (GValueArray * return_vals,gchar ** name,gchar ** desc,gchar ** info)
+DECL|function|plug_in_icc_profile_info_return (GimpValueArray * return_vals,gchar ** name,gchar ** desc,gchar ** info)
 name|plug_in_icc_profile_info_return
 parameter_list|(
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 parameter_list|,
@@ -1023,7 +1039,7 @@ name|GValue
 modifier|*
 name|value
 init|=
-name|g_value_array_get_nth
+name|gimp_value_array_index
 argument_list|(
 name|return_vals
 argument_list|,
@@ -1055,7 +1071,7 @@ name|GValue
 modifier|*
 name|value
 init|=
-name|g_value_array_get_nth
+name|gimp_value_array_index
 argument_list|(
 name|return_vals
 argument_list|,
@@ -1087,7 +1103,7 @@ name|GValue
 modifier|*
 name|value
 init|=
-name|g_value_array_get_nth
+name|gimp_value_array_index
 argument_list|(
 name|return_vals
 argument_list|,

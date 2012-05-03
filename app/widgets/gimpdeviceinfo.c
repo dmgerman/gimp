@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpconfig/gimpconfig.h"
 end_include
 
@@ -90,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpparamspecs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdeviceinfo.h"
 end_include
 
@@ -103,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf1cb9e0103
+DECL|enum|__anon2a47976a0103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -116,7 +128,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf1cb9e0203
+DECL|enum|__anon2a47976a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -447,7 +459,7 @@ name|object_class
 argument_list|,
 name|PROP_AXES
 argument_list|,
-name|g_param_spec_value_array
+name|gimp_param_spec_value_array
 argument_list|(
 literal|"axes"
 argument_list|,
@@ -484,7 +496,7 @@ name|object_class
 argument_list|,
 name|PROP_KEYS
 argument_list|,
-name|g_param_spec_value_array
+name|gimp_param_spec_value_array
 argument_list|(
 literal|"keys"
 argument_list|,
@@ -1073,7 +1085,7 @@ case|case
 name|PROP_AXES
 case|:
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|array
 init|=
@@ -1102,9 +1114,10 @@ name|n_device_values
 operator|=
 name|MIN
 argument_list|(
+name|gimp_value_array_length
+argument_list|(
 name|array
-operator|->
-name|n_values
+argument_list|)
 argument_list|,
 name|device
 operator|->
@@ -1116,9 +1129,10 @@ else|else
 block|{
 name|n_device_values
 operator|=
+name|gimp_value_array_length
+argument_list|(
 name|array
-operator|->
-name|n_values
+argument_list|)
 expr_stmt|;
 name|info
 operator|->
@@ -1183,7 +1197,7 @@ name|axis_use
 operator|=
 name|g_value_get_enum
 argument_list|(
-name|g_value_array_get_nth
+name|gimp_value_array_index
 argument_list|(
 name|array
 argument_list|,
@@ -1208,7 +1222,7 @@ case|case
 name|PROP_KEYS
 case|:
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|array
 init|=
@@ -1237,9 +1251,10 @@ name|n_device_values
 operator|=
 name|MIN
 argument_list|(
+name|gimp_value_array_length
+argument_list|(
 name|array
-operator|->
-name|n_values
+argument_list|)
 argument_list|,
 name|device
 operator|->
@@ -1251,9 +1266,10 @@ else|else
 block|{
 name|n_device_values
 operator|=
+name|gimp_value_array_length
+argument_list|(
 name|array
-operator|->
-name|n_values
+argument_list|)
 expr_stmt|;
 name|info
 operator|->
@@ -1326,7 +1342,7 @@ name|accel
 operator|=
 name|g_value_get_string
 argument_list|(
-name|g_value_array_get_nth
+name|gimp_value_array_index
 argument_list|(
 name|array
 argument_list|,
@@ -1495,7 +1511,7 @@ case|case
 name|PROP_AXES
 case|:
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|array
 decl_stmt|;
@@ -1514,7 +1530,7 @@ name|i
 decl_stmt|;
 name|array
 operator|=
-name|g_value_array_new
+name|gimp_value_array_new
 argument_list|(
 literal|6
 argument_list|)
@@ -1561,7 +1577,7 @@ name|i
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_value_array_append
+name|gimp_value_array_append
 argument_list|(
 name|array
 argument_list|,
@@ -1589,7 +1605,7 @@ case|case
 name|PROP_KEYS
 case|:
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|array
 decl_stmt|;
@@ -1608,7 +1624,7 @@ name|i
 decl_stmt|;
 name|array
 operator|=
-name|g_value_array_new
+name|gimp_value_array_new
 argument_list|(
 literal|32
 argument_list|)
@@ -1722,7 +1738,7 @@ literal|""
 argument_list|)
 expr_stmt|;
 block|}
-name|g_value_array_append
+name|gimp_value_array_append
 argument_list|(
 name|array
 argument_list|,

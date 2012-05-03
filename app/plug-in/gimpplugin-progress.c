@@ -1175,7 +1175,7 @@ end_comment
 
 begin_function
 specifier|static
-name|GValueArray
+name|GimpValueArray
 modifier|*
 DECL|function|get_cancel_return_values (GimpProcedure * procedure)
 name|get_cancel_return_values
@@ -1185,7 +1185,7 @@ modifier|*
 name|procedure
 parameter_list|)
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;

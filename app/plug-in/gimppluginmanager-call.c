@@ -437,9 +437,9 @@ block|}
 end_function
 
 begin_function
-name|GValueArray
+name|GimpValueArray
 modifier|*
-DECL|function|gimp_plug_in_manager_call_run (GimpPlugInManager * manager,GimpContext * context,GimpProgress * progress,GimpPlugInProcedure * procedure,GValueArray * args,gboolean synchronous,GimpObject * display)
+DECL|function|gimp_plug_in_manager_call_run (GimpPlugInManager * manager,GimpContext * context,GimpProgress * progress,GimpPlugInProcedure * procedure,GimpValueArray * args,gboolean synchronous,GimpObject * display)
 name|gimp_plug_in_manager_call_run
 parameter_list|(
 name|GimpPlugInManager
@@ -458,7 +458,7 @@ name|GimpPlugInProcedure
 modifier|*
 name|procedure
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -470,7 +470,7 @@ modifier|*
 name|display
 parameter_list|)
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 init|=
@@ -891,9 +891,10 @@ name|proc_run
 operator|.
 name|nparams
 operator|=
+name|gimp_value_array_length
+argument_list|(
 name|args
-operator|->
-name|n_values
+argument_list|)
 expr_stmt|;
 name|proc_run
 operator|.
@@ -1171,9 +1172,9 @@ block|}
 end_function
 
 begin_function
-name|GValueArray
+name|GimpValueArray
 modifier|*
-DECL|function|gimp_plug_in_manager_call_run_temp (GimpPlugInManager * manager,GimpContext * context,GimpProgress * progress,GimpTemporaryProcedure * procedure,GValueArray * args)
+DECL|function|gimp_plug_in_manager_call_run_temp (GimpPlugInManager * manager,GimpContext * context,GimpProgress * progress,GimpTemporaryProcedure * procedure,GimpValueArray * args)
 name|gimp_plug_in_manager_call_run_temp
 parameter_list|(
 name|GimpPlugInManager
@@ -1192,12 +1193,12 @@ name|GimpTemporaryProcedure
 modifier|*
 name|procedure
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|)
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 init|=
@@ -1306,9 +1307,10 @@ name|proc_run
 operator|.
 name|nparams
 operator|=
+name|gimp_value_array_length
+argument_list|(
 name|args
-operator|->
-name|n_values
+argument_list|)
 expr_stmt|;
 name|proc_run
 operator|.

@@ -276,7 +276,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|gimp_pdb_execute_procedure_by_name_args
 parameter_list|(
@@ -302,7 +302,7 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -310,7 +310,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|gimp_pdb_execute_procedure_by_name
 parameter_list|(

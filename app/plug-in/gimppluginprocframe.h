@@ -46,7 +46,7 @@ modifier|*
 name|main_loop
 decl_stmt|;
 DECL|member|return_vals
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -168,7 +168,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|gimp_plug_in_proc_frame_get_return_values
 parameter_list|(

@@ -17,7 +17,7 @@ name|__PLUG_IN_PARAMS_H__
 end_define
 
 begin_function_decl
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|plug_in_params_to_args
 parameter_list|(
@@ -50,7 +50,7 @@ name|GPParam
 modifier|*
 name|plug_in_args_to_params
 parameter_list|(
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,

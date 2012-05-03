@@ -1177,7 +1177,7 @@ name|prop_spec
 operator|->
 name|value_type
 operator|==
-name|G_TYPE_VALUE_ARRAY
+name|GIMP_TYPE_VALUE_ARRAY
 condition|)
 block|{
 return|return
@@ -2458,11 +2458,11 @@ modifier|*
 name|scanner
 parameter_list|)
 block|{
-name|GParamSpecValueArray
+name|GimpParamSpecValueArray
 modifier|*
 name|array_spec
 decl_stmt|;
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|array
 decl_stmt|;
@@ -2484,7 +2484,7 @@ name|i
 decl_stmt|;
 name|array_spec
 operator|=
-name|G_PARAM_SPEC_VALUE_ARRAY
+name|GIMP_PARAM_SPEC_VALUE_ARRAY
 argument_list|(
 name|prop_spec
 argument_list|)
@@ -2505,7 +2505,7 @@ name|G_TOKEN_INT
 return|;
 name|array
 operator|=
-name|g_value_array_new
+name|gimp_value_array_new
 argument_list|(
 name|n_values
 argument_list|)
@@ -2558,7 +2558,7 @@ name|token
 operator|==
 name|G_TOKEN_RIGHT_PAREN
 condition|)
-name|g_value_array_append
+name|gimp_value_array_append
 argument_list|(
 name|array
 argument_list|,

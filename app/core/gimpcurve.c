@@ -34,6 +34,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpmath/gimpmath.h"
 end_include
 
@@ -70,12 +76,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpparamspecs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c998ea20103
+DECL|enum|__anon291a98330103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -693,7 +705,7 @@ name|object_class
 argument_list|,
 name|PROP_POINTS
 argument_list|,
-name|g_param_spec_value_array
+name|gimp_param_spec_value_array
 argument_list|(
 literal|"points"
 argument_list|,
@@ -753,7 +765,7 @@ name|object_class
 argument_list|,
 name|PROP_SAMPLES
 argument_list|,
-name|g_param_spec_value_array
+name|gimp_param_spec_value_array
 argument_list|(
 literal|"samples"
 argument_list|,
@@ -1004,7 +1016,7 @@ case|case
 name|PROP_POINTS
 case|:
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|array
 init|=
@@ -1012,6 +1024,9 @@ name|g_value_get_boxed
 argument_list|(
 name|value
 argument_list|)
+decl_stmt|;
+name|gint
+name|length
 decl_stmt|;
 name|gint
 name|i
@@ -1022,6 +1037,13 @@ operator|!
 name|array
 condition|)
 break|break;
+name|length
+operator|=
+name|gimp_value_array_length
+argument_list|(
+name|array
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -1038,9 +1060,7 @@ name|i
 operator|*
 literal|2
 operator|<
-name|array
-operator|->
-name|n_values
+name|length
 condition|;
 name|i
 operator|++
@@ -1050,7 +1070,7 @@ name|GValue
 modifier|*
 name|x
 init|=
-name|g_value_array_get_nth
+name|gimp_value_array_index
 argument_list|(
 name|array
 argument_list|,
@@ -1063,7 +1083,7 @@ name|GValue
 modifier|*
 name|y
 init|=
-name|g_value_array_get_nth
+name|gimp_value_array_index
 argument_list|(
 name|array
 argument_list|,
@@ -1123,7 +1143,7 @@ case|case
 name|PROP_SAMPLES
 case|:
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|array
 init|=
@@ -1131,6 +1151,9 @@ name|g_value_get_boxed
 argument_list|(
 name|value
 argument_list|)
+decl_stmt|;
+name|gint
+name|length
 decl_stmt|;
 name|gint
 name|i
@@ -1141,6 +1164,13 @@ operator|!
 name|array
 condition|)
 break|break;
+name|length
+operator|=
+name|gimp_value_array_length
+argument_list|(
+name|array
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -1155,9 +1185,7 @@ name|n_samples
 operator|&&
 name|i
 operator|<
-name|array
-operator|->
-name|n_values
+name|length
 condition|;
 name|i
 operator|++
@@ -1167,7 +1195,7 @@ name|GValue
 modifier|*
 name|v
 init|=
-name|g_value_array_get_nth
+name|gimp_value_array_index
 argument_list|(
 name|array
 argument_list|,
@@ -1270,11 +1298,11 @@ case|case
 name|PROP_POINTS
 case|:
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|array
 init|=
-name|g_value_array_new
+name|gimp_value_array_new
 argument_list|(
 name|curve
 operator|->
@@ -1332,7 +1360,7 @@ operator|.
 name|x
 argument_list|)
 expr_stmt|;
-name|g_value_array_append
+name|gimp_value_array_append
 argument_list|(
 name|array
 argument_list|,
@@ -1355,7 +1383,7 @@ operator|.
 name|y
 argument_list|)
 expr_stmt|;
-name|g_value_array_append
+name|gimp_value_array_append
 argument_list|(
 name|array
 argument_list|,
@@ -1396,11 +1424,11 @@ case|case
 name|PROP_SAMPLES
 case|:
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|array
 init|=
-name|g_value_array_new
+name|gimp_value_array_new
 argument_list|(
 name|curve
 operator|->
@@ -1454,7 +1482,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|g_value_array_append
+name|gimp_value_array_append
 argument_list|(
 name|array
 argument_list|,

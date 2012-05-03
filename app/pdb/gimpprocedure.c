@@ -135,7 +135,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|gimp_procedure_real_execute
 parameter_list|(
@@ -155,7 +155,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -188,7 +188,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -228,7 +228,7 @@ parameter_list|,
 name|gint
 name|n_param_specs
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -673,9 +673,9 @@ end_function
 
 begin_function
 specifier|static
-name|GValueArray
+name|GimpValueArray
 modifier|*
-DECL|function|gimp_procedure_real_execute (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GValueArray * args,GError ** error)
+DECL|function|gimp_procedure_real_execute (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpValueArray * args,GError ** error)
 name|gimp_procedure_real_execute
 parameter_list|(
 name|GimpProcedure
@@ -694,7 +694,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -706,9 +706,10 @@ parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
+name|gimp_value_array_length
+argument_list|(
 name|args
-operator|->
-name|n_values
+argument_list|)
 operator|>=
 name|procedure
 operator|->
@@ -741,7 +742,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_procedure_real_execute_async (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GValueArray * args,GimpObject * display)
+DECL|function|gimp_procedure_real_execute_async (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpValueArray * args,GimpObject * display)
 name|gimp_procedure_real_execute_async
 parameter_list|(
 name|GimpProcedure
@@ -760,7 +761,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -769,7 +770,7 @@ modifier|*
 name|display
 parameter_list|)
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -781,9 +782,10 @@ name|NULL
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|gimp_value_array_length
+argument_list|(
 name|args
-operator|->
-name|n_values
+argument_list|)
 operator|>=
 name|procedure
 operator|->
@@ -813,7 +815,7 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
-name|g_value_array_free
+name|gimp_value_array_unref
 argument_list|(
 name|return_vals
 argument_list|)
@@ -1266,9 +1268,9 @@ block|}
 end_function
 
 begin_function
-name|GValueArray
+name|GimpValueArray
 modifier|*
-DECL|function|gimp_procedure_execute (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GValueArray * args,GError ** error)
+DECL|function|gimp_procedure_execute (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpValueArray * args,GError ** error)
 name|gimp_procedure_execute
 parameter_list|(
 name|GimpProcedure
@@ -1287,7 +1289,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -1297,7 +1299,7 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -1483,13 +1485,12 @@ switch|switch
 condition|(
 name|g_value_get_enum
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|return_vals
-operator|->
-name|values
-index|[
+argument_list|,
 literal|0
-index|]
+argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -1512,24 +1513,35 @@ condition|)
 block|{
 if|if
 condition|(
+name|gimp_value_array_length
+argument_list|(
 name|return_vals
-operator|->
-name|n_values
+argument_list|)
 operator|>
 literal|1
 operator|&&
 name|G_VALUE_HOLDS_STRING
 argument_list|(
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|return_vals
-operator|->
-name|values
-index|[
+argument_list|,
 literal|1
-index|]
+argument_list|)
 argument_list|)
 condition|)
 block|{
+name|GValue
+modifier|*
+name|value
+init|=
+name|gimp_value_array_index
+argument_list|(
+name|return_vals
+argument_list|,
+literal|1
+argument_list|)
+decl_stmt|;
 name|g_set_error_literal
 argument_list|(
 name|error
@@ -1540,13 +1552,7 @@ name|GIMP_PDB_ERROR_FAILED
 argument_list|,
 name|g_value_get_string
 argument_list|(
-operator|&
-name|return_vals
-operator|->
-name|values
-index|[
-literal|1
-index|]
+name|value
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1627,7 +1633,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_procedure_execute_async (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GValueArray * args,GimpObject * display,GError ** error)
+DECL|function|gimp_procedure_execute_async (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpValueArray * args,GimpObject * display,GError ** error)
 name|gimp_procedure_execute_async
 parameter_list|(
 name|GimpProcedure
@@ -1646,7 +1652,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -1805,7 +1811,7 @@ block|}
 end_function
 
 begin_function
-name|GValueArray
+name|GimpValueArray
 modifier|*
 DECL|function|gimp_procedure_get_arguments (GimpProcedure * procedure)
 name|gimp_procedure_get_arguments
@@ -1815,7 +1821,7 @@ modifier|*
 name|procedure
 parameter_list|)
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 decl_stmt|;
@@ -1841,7 +1847,7 @@ argument_list|)
 expr_stmt|;
 name|args
 operator|=
-name|g_value_array_new
+name|gimp_value_array_new
 argument_list|(
 name|procedure
 operator|->
@@ -1880,7 +1886,7 @@ index|]
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_value_array_append
+name|gimp_value_array_append
 argument_list|(
 name|args
 argument_list|,
@@ -1902,7 +1908,7 @@ block|}
 end_function
 
 begin_function
-name|GValueArray
+name|GimpValueArray
 modifier|*
 DECL|function|gimp_procedure_get_return_values (GimpProcedure * procedure,gboolean success,const GError * error)
 name|gimp_procedure_get_return_values
@@ -1920,7 +1926,7 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 decl_stmt|;
@@ -1955,7 +1961,7 @@ condition|)
 block|{
 name|args
 operator|=
-name|g_value_array_new
+name|gimp_value_array_new
 argument_list|(
 name|procedure
 operator|->
@@ -1980,7 +1986,7 @@ argument_list|,
 name|GIMP_PDB_SUCCESS
 argument_list|)
 expr_stmt|;
-name|g_value_array_append
+name|gimp_value_array_append
 argument_list|(
 name|args
 argument_list|,
@@ -2026,7 +2032,7 @@ index|]
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_value_array_append
+name|gimp_value_array_append
 argument_list|(
 name|args
 argument_list|,
@@ -2046,7 +2052,7 @@ else|else
 block|{
 name|args
 operator|=
-name|g_value_array_new
+name|gimp_value_array_new
 argument_list|(
 operator|(
 name|error
@@ -2144,7 +2150,7 @@ name|GIMP_PDB_EXECUTION_ERROR
 argument_list|)
 expr_stmt|;
 block|}
-name|g_value_array_append
+name|gimp_value_array_append
 argument_list|(
 name|args
 argument_list|,
@@ -2185,7 +2191,7 @@ operator|->
 name|message
 argument_list|)
 expr_stmt|;
-name|g_value_array_append
+name|gimp_value_array_append
 argument_list|(
 name|args
 argument_list|,
@@ -2632,7 +2638,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_procedure_validate_args (GimpProcedure * procedure,GParamSpec ** param_specs,gint n_param_specs,GValueArray * args,gboolean return_vals,GError ** error)
+DECL|function|gimp_procedure_validate_args (GimpProcedure * procedure,GParamSpec ** param_specs,gint n_param_specs,GimpValueArray * args,gboolean return_vals,GError ** error)
 name|gimp_procedure_validate_args
 parameter_list|(
 name|GimpProcedure
@@ -2647,7 +2653,7 @@ parameter_list|,
 name|gint
 name|n_param_specs
 parameter_list|,
-name|GValueArray
+name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
@@ -2673,9 +2679,10 @@ name|i
 operator|<
 name|MIN
 argument_list|(
+name|gimp_value_array_length
+argument_list|(
 name|args
-operator|->
-name|n_values
+argument_list|)
 argument_list|,
 name|n_param_specs
 argument_list|)
@@ -2688,13 +2695,12 @@ name|GValue
 modifier|*
 name|arg
 init|=
-operator|&
+name|gimp_value_array_index
+argument_list|(
 name|args
-operator|->
-name|values
-index|[
+argument_list|,
 name|i
-index|]
+argument_list|)
 decl_stmt|;
 name|GParamSpec
 modifier|*
