@@ -502,6 +502,15 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
+literal|"filters-semi-flatten"
+argument_list|,
+name|writable
+operator|&&
+name|alpha
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
 literal|"filters-threshold-alpha"
 argument_list|,
 name|writable
