@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpoperationthresholdalpha.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpoperationbrightnesscontrast.h"
 end_include
 
@@ -478,6 +484,11 @@ expr_stmt|;
 name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_OPERATION_SHRINK
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_THRESHOLD_ALPHA
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref

@@ -22,12 +22,6 @@ directive|include
 file|<gegl-plugin.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<operation/gegl-operation-point-filter.h>
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_OPERATION_SET_ALPHA
 define|#

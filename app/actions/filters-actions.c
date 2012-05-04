@@ -224,6 +224,33 @@ block|,
 name|NULL
 comment|/* FIXME GIMP_HELP_FILTER_POLAR_COORDINATES */
 block|}
+block|,
+block|{
+literal|"filters-threshold-alpha"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Threshold Alpha..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Make transparency all-or-nothing"
+argument_list|)
+block|,
+literal|"gimp:threshold-alpha"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_POLAR_COORDINATES */
+block|}
 block|, }
 decl_stmt|;
 end_decl_stmt
@@ -444,6 +471,15 @@ argument_list|(
 literal|"filters-polar-coordinates"
 argument_list|,
 name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-threshold-alpha"
+argument_list|,
+name|writable
+operator|&&
+name|alpha
 argument_list|)
 expr_stmt|;
 undef|#
