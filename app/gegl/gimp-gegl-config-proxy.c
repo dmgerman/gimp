@@ -1009,9 +1009,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GIMP_IS_PARAM_SPEC_RGB
+name|GEGL_IS_PARAM_SPEC_COLOR
 argument_list|(
-name|gimp_pspec
+name|gegl_pspec
 argument_list|)
 condition|)
 block|{
