@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpoperationsemiflatten.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpoperationsetalpha.h"
 end_include
 
@@ -469,6 +475,11 @@ expr_stmt|;
 name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_OPERATION_MASK_COMPONENTS
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_SEMI_FLATTEN
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref

@@ -226,6 +226,33 @@ comment|/* FIXME GIMP_HELP_FILTER_POLAR_COORDINATES */
 block|}
 block|,
 block|{
+literal|"filters-semi-flatten"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Semi-Flatten..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Replace partial transparency with a color"
+argument_list|)
+block|,
+literal|"gimp:semi-flatten"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_POLAR_COORDINATES */
+block|}
+block|,
+block|{
 literal|"filters-threshold-alpha"
 block|,
 name|GIMP_STOCK_GEGL

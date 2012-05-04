@@ -38,7 +38,7 @@ file|"internal-procs.h"
 end_include
 
 begin_comment
-comment|/* 675 procedures registered total */
+comment|/* 676 procedures registered total */
 end_comment
 
 begin_function
