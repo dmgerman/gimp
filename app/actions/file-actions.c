@@ -1314,6 +1314,9 @@ argument_list|(
 literal|"file-export-to"
 argument_list|,
 name|drawable
+operator|&&
+operator|!
+name|show_overwrite
 argument_list|)
 expr_stmt|;
 name|SET_VISIBLE
