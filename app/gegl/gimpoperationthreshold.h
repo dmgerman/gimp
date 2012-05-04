@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_THRESHOLD, GimpOpe
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationThreshold
+typedef|typedef
+name|struct
+name|_GimpOperationThreshold
+name|GimpOperationThreshold
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationThresholdClass
 typedef|typedef
 name|struct

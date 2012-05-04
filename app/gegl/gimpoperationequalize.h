@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_EQUALIZE, GimpOper
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationEqualize
+typedef|typedef
+name|struct
+name|_GimpOperationEqualize
+name|GimpOperationEqualize
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationEqualizeClass
 typedef|typedef
 name|struct

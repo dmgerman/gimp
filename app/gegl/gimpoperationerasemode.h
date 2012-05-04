@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_ERASE_MODE, GimpOp
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationEraseMode
+typedef|typedef
+name|struct
+name|_GimpOperationEraseMode
+name|GimpOperationEraseMode
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationEraseModeClass
 typedef|typedef
 name|struct

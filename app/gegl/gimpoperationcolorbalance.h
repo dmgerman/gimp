@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_COLOR_BALANCE, Gim
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationColorBalance
+typedef|typedef
+name|struct
+name|_GimpOperationColorBalance
+name|GimpOperationColorBalance
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationColorBalanceClass
 typedef|typedef
 name|struct

@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_SCREEN_MODE, GimpO
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationScreenMode
+typedef|typedef
+name|struct
+name|_GimpOperationScreenMode
+name|GimpOperationScreenMode
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationScreenModeClass
 typedef|typedef
 name|struct

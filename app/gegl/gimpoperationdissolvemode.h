@@ -16,6 +16,12 @@ directive|define
 name|__GIMP_OPERATION_DISSOLVE_MODE_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"gimpoperationpointlayermode.h"
+end_include
+
 begin_define
 DECL|macro|GIMP_TYPE_OPERATION_DISSOLVE_MODE
 define|#
@@ -79,11 +85,14 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_DISSOLVE_MODE, GimpOperationDissolveModeClass))
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gimpoperationpointlayermode.h"
-end_include
+begin_typedef
+DECL|typedef|GimpOperationDissolveMode
+typedef|typedef
+name|struct
+name|_GimpOperationDissolveMode
+name|GimpOperationDissolveMode
+typedef|;
+end_typedef
 
 begin_typedef
 DECL|typedef|GimpOperationDissolveModeClass

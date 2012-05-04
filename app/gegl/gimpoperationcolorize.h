@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_COLORIZE, GimpOper
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationColorize
+typedef|typedef
+name|struct
+name|_GimpOperationColorize
+name|GimpOperationColorize
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationColorizeClass
 typedef|typedef
 name|struct

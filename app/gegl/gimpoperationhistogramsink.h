@@ -92,6 +92,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_HISTOGRAM_SINK, Gi
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationHistogramSink
+typedef|typedef
+name|struct
+name|_GimpOperationHistogramSink
+name|GimpOperationHistogramSink
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationHistogramSinkClass
 typedef|typedef
 name|struct

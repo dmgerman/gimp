@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_SHRINK, GimpOperat
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationShrink
+typedef|typedef
+name|struct
+name|_GimpOperationShrink
+name|GimpOperationShrink
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationShrinkClass
 typedef|typedef
 name|struct

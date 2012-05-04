@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_DESATURATE, GimpOp
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationDesaturate
+typedef|typedef
+name|struct
+name|_GimpOperationDesaturate
+name|GimpOperationDesaturate
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationDesaturateClass
 typedef|typedef
 name|struct

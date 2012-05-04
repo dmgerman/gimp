@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_DIFFERENCE_MODE, G
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationDifferenceMode
+typedef|typedef
+name|struct
+name|_GimpOperationDifferenceMode
+name|GimpOperationDifferenceMode
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationDifferenceModeClass
 typedef|typedef
 name|struct

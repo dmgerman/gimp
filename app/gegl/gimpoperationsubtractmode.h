@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_SUBTRACT_MODE, Gim
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationSubtractMode
+typedef|typedef
+name|struct
+name|_GimpOperationSubtractMode
+name|GimpOperationSubtractMode
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationSubtractModeClass
 typedef|typedef
 name|struct

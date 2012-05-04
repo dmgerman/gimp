@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_BURN_MODE, GimpOpe
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationBurnMode
+typedef|typedef
+name|struct
+name|_GimpOperationBurnMode
+name|GimpOperationBurnMode
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationBurnModeClass
 typedef|typedef
 name|struct

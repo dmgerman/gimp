@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_HUE_MODE, GimpOper
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationHueMode
+typedef|typedef
+name|struct
+name|_GimpOperationHueMode
+name|GimpOperationHueMode
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationHueModeClass
 typedef|typedef
 name|struct

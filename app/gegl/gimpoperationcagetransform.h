@@ -92,6 +92,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_CAGE_TRANSFORM, Gi
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationCageTransform
+typedef|typedef
+name|struct
+name|_GimpOperationCageTransform
+name|GimpOperationCageTransform
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationCageTransformClass
 typedef|typedef
 name|struct

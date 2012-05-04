@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_ADDITION_MODE, Gim
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationAdditionMode
+typedef|typedef
+name|struct
+name|_GimpOperationAdditionMode
+name|GimpOperationAdditionMode
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationAdditionModeClass
 typedef|typedef
 name|struct

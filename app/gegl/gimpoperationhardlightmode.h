@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_HARDLIGHT_MODE, Gi
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationHardlightMode
+typedef|typedef
+name|struct
+name|_GimpOperationHardlightMode
+name|GimpOperationHardlightMode
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationHardlightModeClass
 typedef|typedef
 name|struct

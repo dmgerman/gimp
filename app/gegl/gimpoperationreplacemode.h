@@ -80,6 +80,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_REPLACE_MODE, Gimp
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationReplaceMode
+typedef|typedef
+name|struct
+name|_GimpOperationReplaceMode
+name|GimpOperationReplaceMode
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationReplaceModeClass
 typedef|typedef
 name|struct

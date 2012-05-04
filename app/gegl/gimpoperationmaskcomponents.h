@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_MASK_COMPONENTS, G
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationMaskComponents
+typedef|typedef
+name|struct
+name|_GimpOperationMaskComponents
+name|GimpOperationMaskComponents
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationMaskComponentsClass
 typedef|typedef
 name|struct

@@ -30,7 +30,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c731b960103
+DECL|enum|__anon27cec6370103
 block|{
 DECL|enumerator|GIMP_OPERATION_CAGE_COEF_CALC_PROP_0
 name|GIMP_OPERATION_CAGE_COEF_CALC_PROP_0
@@ -103,6 +103,15 @@ name|obj
 parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_CAGE_COEF_CALC, GimpOperationCageCoefCalcClass))
 end_define
+
+begin_typedef
+DECL|typedef|GimpOperationCageCoefCalc
+typedef|typedef
+name|struct
+name|_GimpOperationCageCoefCalc
+name|GimpOperationCageCoefCalc
+typedef|;
+end_typedef
 
 begin_typedef
 DECL|typedef|GimpOperationCageCoefCalcClass

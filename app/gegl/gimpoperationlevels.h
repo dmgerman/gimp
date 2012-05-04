@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_LEVELS, GimpOperat
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationLevels
+typedef|typedef
+name|struct
+name|_GimpOperationLevels
+name|GimpOperationLevels
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationLevelsClass
 typedef|typedef
 name|struct

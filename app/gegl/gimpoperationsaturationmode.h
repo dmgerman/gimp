@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_SATURATION_MODE, G
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationSaturationMode
+typedef|typedef
+name|struct
+name|_GimpOperationSaturationMode
+name|GimpOperationSaturationMode
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationSaturationModeClass
 typedef|typedef
 name|struct

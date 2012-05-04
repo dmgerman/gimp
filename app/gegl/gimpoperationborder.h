@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_BORDER, GimpOperat
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationBorder
+typedef|typedef
+name|struct
+name|_GimpOperationBorder
+name|GimpOperationBorder
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationBorderClass
 typedef|typedef
 name|struct

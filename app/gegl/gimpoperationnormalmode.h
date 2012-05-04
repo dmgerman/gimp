@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_NORMAL_MODE, GimpO
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationNormalMode
+typedef|typedef
+name|struct
+name|_GimpOperationNormalMode
+name|GimpOperationNormalMode
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationNormalModeClass
 typedef|typedef
 name|struct

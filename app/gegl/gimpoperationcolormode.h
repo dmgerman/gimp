@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_COLOR_MODE, GimpOp
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationColorMode
+typedef|typedef
+name|struct
+name|_GimpOperationColorMode
+name|GimpOperationColorMode
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationColorModeClass
 typedef|typedef
 name|struct

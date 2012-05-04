@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_DODGE_MODE, GimpOp
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationDodgeMode
+typedef|typedef
+name|struct
+name|_GimpOperationDodgeMode
+name|GimpOperationDodgeMode
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationDodgeModeClass
 typedef|typedef
 name|struct

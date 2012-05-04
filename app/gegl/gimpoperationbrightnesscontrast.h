@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_BRIGHTNESS_CONTRAS
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationBrightnessContrast
+typedef|typedef
+name|struct
+name|_GimpOperationBrightnessContrast
+name|GimpOperationBrightnessContrast
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationBrightnessContrastClass
 typedef|typedef
 name|struct

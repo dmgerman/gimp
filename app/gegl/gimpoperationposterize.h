@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_POSTERIZE, GimpOpe
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationPosterize
+typedef|typedef
+name|struct
+name|_GimpOperationPosterize
+name|GimpOperationPosterize
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationPosterizeClass
 typedef|typedef
 name|struct

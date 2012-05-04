@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_LIGHTEN_ONLY_MODE,
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationLightenOnlyMode
+typedef|typedef
+name|struct
+name|_GimpOperationLightenOnlyMode
+name|GimpOperationLightenOnlyMode
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationLightenOnlyModeClass
 typedef|typedef
 name|struct

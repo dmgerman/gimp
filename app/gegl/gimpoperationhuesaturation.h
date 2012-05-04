@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_HUE_SATURATION, Gi
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationHueSaturation
+typedef|typedef
+name|struct
+name|_GimpOperationHueSaturation
+name|GimpOperationHueSaturation
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationHueSaturationClass
 typedef|typedef
 name|struct

@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_MULTIPLY_MODE, Gim
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationMultiplyMode
+typedef|typedef
+name|struct
+name|_GimpOperationMultiplyMode
+name|GimpOperationMultiplyMode
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationMultiplyModeClass
 typedef|typedef
 name|struct

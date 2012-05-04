@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_VALUE_MODE, GimpOp
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationValueMode
+typedef|typedef
+name|struct
+name|_GimpOperationValueMode
+name|GimpOperationValueMode
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationValueModeClass
 typedef|typedef
 name|struct

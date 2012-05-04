@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_COLOR_ERASE_MODE, 
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationColorEraseMode
+typedef|typedef
+name|struct
+name|_GimpOperationColorEraseMode
+name|GimpOperationColorEraseMode
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationColorEraseModeClass
 typedef|typedef
 name|struct

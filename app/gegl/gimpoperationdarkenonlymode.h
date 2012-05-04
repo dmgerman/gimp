@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_DARKEN_ONLY_MODE, 
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationDarkenOnlyMode
+typedef|typedef
+name|struct
+name|_GimpOperationDarkenOnlyMode
+name|GimpOperationDarkenOnlyMode
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationDarkenOnlyModeClass
 typedef|typedef
 name|struct

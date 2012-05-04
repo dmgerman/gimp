@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_CURVES, GimpOperat
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationCurves
+typedef|typedef
+name|struct
+name|_GimpOperationCurves
+name|GimpOperationCurves
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationCurvesClass
 typedef|typedef
 name|struct

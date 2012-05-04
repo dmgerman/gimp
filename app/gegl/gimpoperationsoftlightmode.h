@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_SOFTLIGHT_MODE, Gi
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationSoftlightMode
+typedef|typedef
+name|struct
+name|_GimpOperationSoftlightMode
+name|GimpOperationSoftlightMode
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationSoftlightModeClass
 typedef|typedef
 name|struct

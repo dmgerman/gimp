@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_GROW, GimpOperatio
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationGrow
+typedef|typedef
+name|struct
+name|_GimpOperationGrow
+name|GimpOperationGrow
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationGrowClass
 typedef|typedef
 name|struct

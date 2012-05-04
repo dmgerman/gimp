@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_OVERLAY_MODE, Gimp
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationOverlayMode
+typedef|typedef
+name|struct
+name|_GimpOperationOverlayMode
+name|GimpOperationOverlayMode
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationOverlayModeClass
 typedef|typedef
 name|struct

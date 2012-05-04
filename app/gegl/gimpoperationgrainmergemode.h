@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_GRAIN_MERGE_MODE, 
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationGrainMergeMode
+typedef|typedef
+name|struct
+name|_GimpOperationGrainMergeMode
+name|GimpOperationGrainMergeMode
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationGrainMergeModeClass
 typedef|typedef
 name|struct

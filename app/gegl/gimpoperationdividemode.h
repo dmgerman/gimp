@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_DIVIDE_MODE, GimpO
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationDivideMode
+typedef|typedef
+name|struct
+name|_GimpOperationDivideMode
+name|GimpOperationDivideMode
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationDivideModeClass
 typedef|typedef
 name|struct

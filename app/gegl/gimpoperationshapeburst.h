@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_SHAPEBURST, GimpOp
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationShapeburst
+typedef|typedef
+name|struct
+name|_GimpOperationShapeburst
+name|GimpOperationShapeburst
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationShapeburstClass
 typedef|typedef
 name|struct

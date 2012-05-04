@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_GRAIN_EXTRACT_MODE
 end_define
 
 begin_typedef
+DECL|typedef|GimpOperationGrainExtractMode
+typedef|typedef
+name|struct
+name|_GimpOperationGrainExtractMode
+name|GimpOperationGrainExtractMode
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationGrainExtractModeClass
 typedef|typedef
 name|struct
