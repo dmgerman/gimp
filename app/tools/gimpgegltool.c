@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon287d89160103
+DECL|enum|__anon29aa1a2b0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -396,10 +396,6 @@ literal|"gegl:value-invert"
 block|,
 comment|/* in gimp */
 literal|"gegl:vector-stroke"
-block|,
-literal|"gimp-"
-block|,
-literal|"gimp:"
 block|}
 decl_stmt|;
 name|gchar
@@ -415,6 +411,18 @@ if|if
 condition|(
 operator|!
 name|name
+condition|)
+return|return
+name|TRUE
+return|;
+if|if
+condition|(
+name|g_str_has_prefix
+argument_list|(
+name|name
+argument_list|,
+literal|"gimp"
+argument_list|)
 condition|)
 return|return
 name|TRUE
@@ -438,7 +446,8 @@ control|)
 block|{
 if|if
 condition|(
-name|g_str_has_prefix
+operator|!
+name|strcmp
 argument_list|(
 name|name
 argument_list|,
