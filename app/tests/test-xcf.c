@@ -212,7 +212,7 @@ DECL|macro|GIMP_MAINIMAGE_PRECISION
 define|#
 directive|define
 name|GIMP_MAINIMAGE_PRECISION
-value|GIMP_PRECISION_FLOAT
+value|GIMP_PRECISION_U8
 end_define
 
 begin_define

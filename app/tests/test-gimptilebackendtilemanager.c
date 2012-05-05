@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/pixel-region.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"base/tile-cache.h"
 end_include
 
@@ -145,9 +139,6 @@ argument_list|(
 name|NULL
 argument_list|)
 decl_stmt|;
-name|PixelRegion
-name|pr
-decl_stmt|;
 name|TileManager
 modifier|*
 name|tm
@@ -192,32 +183,6 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
-name|pixel_region_init
-argument_list|(
-operator|&
-name|pr
-argument_list|,
-name|tm
-argument_list|,
-name|rect
-operator|.
-name|x
-argument_list|,
-name|rect
-operator|.
-name|y
-argument_list|,
-name|rect
-operator|.
-name|width
-argument_list|,
-name|rect
-operator|.
-name|height
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 name|buffer
 operator|=
 name|gimp_tile_manager_create_buffer
@@ -252,6 +217,11 @@ expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|magenta
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|buffer
 argument_list|)
 expr_stmt|;
 comment|/* Make sure we can read them through the GeglBuffer using the    * TileManager backend. Use u16 to complicate code paths, decreasing    * risk of the test accidentally passing    */
