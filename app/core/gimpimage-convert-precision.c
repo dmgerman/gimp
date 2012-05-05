@@ -273,7 +273,7 @@ argument_list|,
 name|undo_desc
 argument_list|)
 expr_stmt|;
-comment|/*  Push the image type to the stack  */
+comment|/*  Push the image precision to the stack  */
 name|gimp_image_undo_push_image_precision
 argument_list|(
 name|image
