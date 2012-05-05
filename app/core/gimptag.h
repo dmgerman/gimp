@@ -269,6 +269,22 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_tag_has_prefix
+parameter_list|(
+name|GimpTag
+modifier|*
+name|tag
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|prefix_string
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_tag_string_make_valid

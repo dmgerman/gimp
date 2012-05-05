@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2986309e0103
+DECL|enum|__anon29dbac4d0103
 block|{
 DECL|enumerator|TAG_SEARCH_NONE
 name|TAG_SEARCH_NONE
@@ -144,7 +144,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2986309e0203
+DECL|enum|__anon29dbac4d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4181,14 +4181,6 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|tag_name
-decl_stmt|;
-name|gint
-name|i
-decl_stmt|;
 name|gint
 name|length
 decl_stmt|;
@@ -4273,23 +4265,19 @@ name|list
 operator|->
 name|data
 decl_stmt|;
-name|tag_name
-operator|=
-name|gimp_tag_get_name
-argument_list|(
-name|tag
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
-name|g_str_has_prefix
+name|gimp_tag_has_prefix
 argument_list|(
-name|tag_name
+name|tag
 argument_list|,
 name|prefix
 argument_list|)
 condition|)
 block|{
+name|gint
+name|i
+decl_stmt|;
 comment|/* check if tag is not already entered */
 for|for
 control|(
