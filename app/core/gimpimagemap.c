@@ -87,7 +87,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6691550103
+DECL|enum|__anon29fea2890103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -259,19 +259,6 @@ specifier|static
 name|GeglBuffer
 modifier|*
 name|gimp_image_map_get_buffer
-parameter_list|(
-name|GimpPickable
-modifier|*
-name|pickable
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|TileManager
-modifier|*
-name|gimp_image_map_get_tiles
 parameter_list|(
 name|GimpPickable
 modifier|*
@@ -506,12 +493,6 @@ operator|->
 name|get_buffer
 operator|=
 name|gimp_image_map_get_buffer
-expr_stmt|;
-name|iface
-operator|->
-name|get_tiles
-operator|=
-name|gimp_image_map_get_tiles
 expr_stmt|;
 name|iface
 operator|->
@@ -1004,55 +985,6 @@ end_function
 
 begin_function
 specifier|static
-name|TileManager
-modifier|*
-DECL|function|gimp_image_map_get_tiles (GimpPickable * pickable)
-name|gimp_image_map_get_tiles
-parameter_list|(
-name|GimpPickable
-modifier|*
-name|pickable
-parameter_list|)
-block|{
-name|GimpImageMap
-modifier|*
-name|image_map
-init|=
-name|GIMP_IMAGE_MAP
-argument_list|(
-name|pickable
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|image_map
-operator|->
-name|undo_buffer
-condition|)
-return|return
-name|gimp_gegl_buffer_get_tiles
-argument_list|(
-name|image_map
-operator|->
-name|undo_buffer
-argument_list|)
-return|;
-return|return
-name|gimp_pickable_get_tiles
-argument_list|(
-name|GIMP_PICKABLE
-argument_list|(
-name|image_map
-operator|->
-name|drawable
-argument_list|)
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
 name|gboolean
 DECL|function|gimp_image_map_get_pixel_at (GimpPickable * pickable,gint x,gint y,const Babl * format,gpointer pixel)
 name|gimp_image_map_get_pixel_at
@@ -1443,7 +1375,7 @@ name|height
 argument_list|)
 condition|)
 return|return;
-comment|/*  If undo tiles don't exist, or change size, (re)allocate  */
+comment|/*  If undo buffer don't exist, or change size, (re)allocate  */
 name|gimp_image_map_update_undo_buffer
 argument_list|(
 name|image_map
@@ -2301,7 +2233,7 @@ operator|->
 name|height
 condition|)
 block|{
-comment|/* If either the extents changed or the tiles don't exist,        * allocate new        */
+comment|/* If either the extents changed or the buffer don't exist,        * allocate new        */
 if|if
 condition|(
 operator|!
@@ -2322,7 +2254,6 @@ operator|->
 name|height
 condition|)
 block|{
-comment|/*  Destroy old tiles  */
 if|if
 condition|(
 name|image_map
@@ -2336,7 +2267,6 @@ operator|->
 name|undo_buffer
 argument_list|)
 expr_stmt|;
-comment|/*  Allocate new tiles  */
 name|image_map
 operator|->
 name|undo_buffer

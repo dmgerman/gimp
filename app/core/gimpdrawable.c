@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c127ce00103
+DECL|enum|__anon2af826530103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1211,24 +1211,6 @@ name|pickable
 argument_list|)
 operator|)
 name|gimp_drawable_get_buffer
-expr_stmt|;
-name|iface
-operator|->
-name|get_tiles
-operator|=
-operator|(
-name|TileManager
-operator|*
-call|(
-modifier|*
-call|)
-argument_list|(
-name|GimpPickable
-operator|*
-name|pickable
-argument_list|)
-operator|)
-name|gimp_drawable_get_tiles
 expr_stmt|;
 name|iface
 operator|->

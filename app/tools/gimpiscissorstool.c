@@ -94,6 +94,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpchannel.h"
 end_include
 
@@ -6850,6 +6856,10 @@ name|Babl
 modifier|*
 name|pickable_format
 decl_stmt|;
+name|GeglBuffer
+modifier|*
+name|src_buffer
+decl_stmt|;
 name|Tile
 modifier|*
 name|srctile
@@ -7013,13 +7023,20 @@ name|pickable
 argument_list|)
 expr_stmt|;
 comment|/* get corresponding tile in the image */
+name|src_buffer
+operator|=
+name|gimp_pickable_get_buffer
+argument_list|(
+name|pickable
+argument_list|)
+expr_stmt|;
 name|srctile
 operator|=
 name|tile_manager_get_tile
 argument_list|(
-name|gimp_pickable_get_tiles
+name|gimp_gegl_buffer_get_tiles
 argument_list|(
-name|pickable
+name|src_buffer
 argument_list|)
 argument_list|,
 name|x
