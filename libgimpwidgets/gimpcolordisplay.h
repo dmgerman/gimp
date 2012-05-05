@@ -332,11 +332,12 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|GIMP_DISABLE_DEPRECATED
-end_ifndef
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|g_object_new
+argument_list|)
+end_macro
 
 begin_function_decl
 name|GimpColorDisplay
@@ -348,11 +349,6 @@ name|display_type
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_function_decl
 name|GimpColorDisplay
@@ -381,11 +377,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|GIMP_DISABLE_DEPRECATED
-end_ifndef
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_color_display_convert_surface
+argument_list|)
+end_macro
 
 begin_function_decl
 name|void
@@ -413,11 +410,6 @@ name|bpl
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_function_decl
 name|void

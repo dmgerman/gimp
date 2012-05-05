@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad801330103
+DECL|enum|__anon2bd9ab7d0103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -1227,6 +1227,7 @@ name|list
 operator|->
 name|data
 decl_stmt|;
+name|G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 name|gimp_color_display_convert
 argument_list|(
 name|display
@@ -1241,7 +1242,8 @@ name|bpp
 argument_list|,
 name|bpl
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|G_GNUC_END_IGNORE_DEPRECATIONS
 block|}
 block|}
 end_function
