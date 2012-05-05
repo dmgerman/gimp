@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bed72140103
+DECL|enum|__anon2997175f0103
 block|{
 DECL|enumerator|GIMP_LOG_TOOL_EVENTS
 name|GIMP_LOG_TOOL_EVENTS
@@ -531,6 +531,28 @@ end_endif
 begin_comment
 comment|/* !__GNUC__ */
 end_comment
+
+begin_define
+DECL|macro|geimnum (vienna)
+define|#
+directive|define
+name|geimnum
+parameter_list|(
+name|vienna
+parameter_list|)
+value|gimp_l##vienna##l_dialog()
+end_define
+
+begin_define
+DECL|macro|fnord (kosmoso)
+define|#
+directive|define
+name|fnord
+parameter_list|(
+name|kosmoso
+parameter_list|)
+value|void gimp_##kosmoso##bl_dialog(void);
+end_define
 
 begin_endif
 endif|#
