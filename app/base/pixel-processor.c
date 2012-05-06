@@ -105,10 +105,7 @@ begin_decl_stmt
 DECL|variable|pool_cond
 specifier|static
 name|GCond
-modifier|*
 name|pool_cond
-init|=
-name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -798,6 +795,7 @@ argument_list|)
 expr_stmt|;
 name|g_cond_signal
 argument_list|(
+operator|&
 name|pool_cond
 argument_list|)
 expr_stmt|;
@@ -1329,6 +1327,7 @@ argument_list|)
 expr_stmt|;
 name|g_cond_timed_wait
 argument_list|(
+operator|&
 name|pool_cond
 argument_list|,
 operator|&
@@ -1389,6 +1388,7 @@ literal|0
 condition|)
 name|g_cond_wait
 argument_list|(
+operator|&
 name|pool_cond
 argument_list|,
 operator|&
@@ -1757,15 +1757,6 @@ name|pool
 operator|=
 name|NULL
 expr_stmt|;
-name|g_cond_free
-argument_list|(
-name|pool_cond
-argument_list|)
-expr_stmt|;
-name|pool_cond
-operator|=
-name|NULL
-expr_stmt|;
 block|}
 block|}
 else|else
@@ -1819,10 +1810,11 @@ operator|&
 name|pool_mutex
 argument_list|)
 expr_stmt|;
+name|g_cond_init
+argument_list|(
+operator|&
 name|pool_cond
-operator|=
-name|g_cond_new
-argument_list|()
+argument_list|)
 expr_stmt|;
 block|}
 if|if
