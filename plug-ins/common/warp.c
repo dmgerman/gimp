@@ -91,7 +91,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f07a4b0103
+DECL|enum|__anon286fd6d10103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -111,7 +111,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f07a4b0208
+DECL|struct|__anon286fd6d10208
 block|{
 DECL|member|amount
 name|gdouble
@@ -793,13 +793,6 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-name|PLUG_IN_PROC
-argument_list|,
-literal|"<Image>/Filters/Map"
 argument_list|)
 expr_stmt|;
 block|}
