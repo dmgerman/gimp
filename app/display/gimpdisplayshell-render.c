@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -664,6 +670,10 @@ operator|->
 name|mask
 condition|)
 block|{
+name|GeglBuffer
+modifier|*
+name|buffer
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -686,13 +696,20 @@ name|GIMP_DISPLAY_RENDER_BUF_HEIGHT
 argument_list|)
 expr_stmt|;
 block|}
-name|tiles
+name|buffer
 operator|=
-name|gimp_drawable_get_tiles
+name|gimp_drawable_get_buffer
 argument_list|(
 name|shell
 operator|->
 name|mask
+argument_list|)
+expr_stmt|;
+name|tiles
+operator|=
+name|gimp_gegl_buffer_get_tiles
+argument_list|(
+name|buffer
 argument_list|)
 expr_stmt|;
 comment|/* The mask does not (yet) have an image pyramid, use 0 as level, */

@@ -878,18 +878,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|TileManager
-modifier|*
-name|gimp_drawable_get_tiles
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|GeglNode
 modifier|*
 name|gimp_drawable_get_source_node
