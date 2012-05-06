@@ -84,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27591da20103
+DECL|enum|__anon28af04840103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27591da20203
+DECL|enum|__anon28af04840203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -204,7 +204,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27591da20308
+DECL|struct|__anon28af04840308
 block|{
 DECL|member|params
 name|PluginParams
@@ -224,7 +224,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27591da20408
+DECL|struct|__anon28af04840408
 block|{
 DECL|member|x0
 name|gint
@@ -605,7 +605,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27591da20508
+DECL|struct|__anon28af04840508
 block|{
 DECL|member|tile_width_adj
 name|GtkObject
@@ -4792,13 +4792,6 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-name|PLUG_IN_PROC
-argument_list|,
-literal|"<Image>/Filters/Map"
 argument_list|)
 expr_stmt|;
 block|}
