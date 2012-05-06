@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289bbf290108
+DECL|struct|__anon2bbe8e030108
 block|{
 DECL|member|run
 name|gboolean
@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289bbf290208
+DECL|struct|__anon2bbe8e030208
 block|{
 DECL|member|width
 name|gint
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289bbf290303
+DECL|enum|__anon2bbe8e030303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -184,7 +184,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon289bbf290403
+DECL|enum|__anon2bbe8e030403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -216,7 +216,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon289bbf290503
+DECL|enum|__anon2bbe8e030503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -235,7 +235,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon289bbf290603
+DECL|enum|__anon2bbe8e030603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -263,7 +263,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon289bbf290703
+DECL|enum|__anon2bbe8e030703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -282,7 +282,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289bbf290808
+DECL|struct|__anon2bbe8e030808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -313,7 +313,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289bbf290908
+DECL|struct|__anon2bbe8e030908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289bbf290a08
+DECL|struct|__anon2bbe8e030a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -1292,7 +1292,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon289bbf290b08
+DECL|struct|__anon2bbe8e030b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -1584,13 +1584,6 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-name|PLUG_IN_PROC
-argument_list|,
-literal|"<Image>/Colors/Modify"
 argument_list|)
 expr_stmt|;
 block|}
