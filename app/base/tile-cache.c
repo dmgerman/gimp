@@ -235,10 +235,7 @@ begin_decl_stmt
 DECL|variable|tile_cache_mutex
 specifier|static
 name|GMutex
-modifier|*
 name|tile_cache_mutex
-init|=
-name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -247,7 +244,7 @@ DECL|macro|TILE_CACHE_LOCK
 define|#
 directive|define
 name|TILE_CACHE_LOCK
-value|g_mutex_lock (tile_cache_mutex)
+value|g_mutex_lock (&tile_cache_mutex)
 end_define
 
 begin_define
@@ -255,7 +252,7 @@ DECL|macro|TILE_CACHE_UNLOCK
 define|#
 directive|define
 name|TILE_CACHE_UNLOCK
-value|g_mutex_unlock (tile_cache_mutex)
+value|g_mutex_unlock (&tile_cache_mutex)
 end_define
 
 begin_else
@@ -369,17 +366,11 @@ block|{
 ifdef|#
 directive|ifdef
 name|ENABLE_MP
-name|g_return_if_fail
+name|g_mutex_init
 argument_list|(
+operator|&
 name|tile_cache_mutex
-operator|==
-name|NULL
 argument_list|)
-expr_stmt|;
-name|tile_cache_mutex
-operator|=
-name|g_mutex_new
-argument_list|()
 expr_stmt|;
 endif|#
 directive|endif
@@ -447,20 +438,6 @@ argument_list|(
 literal|0
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|ENABLE_MP
-name|g_mutex_free
-argument_list|(
-name|tile_cache_mutex
-argument_list|)
-expr_stmt|;
-name|tile_cache_mutex
-operator|=
-name|NULL
-expr_stmt|;
-endif|#
-directive|endif
 block|}
 end_function
 
