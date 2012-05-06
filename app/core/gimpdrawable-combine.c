@@ -1278,7 +1278,7 @@ literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_gegl_apply_mask
+name|gimp_gegl_combine_mask
 argument_list|(
 name|mask_buffer
 argument_list|,
