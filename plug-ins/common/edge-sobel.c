@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ca9ada0108
+DECL|struct|__anon2b558e090108
 block|{
 DECL|member|horizontal
 name|gboolean
@@ -376,13 +376,6 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-name|PLUG_IN_PROC
-argument_list|,
-literal|"<Image>/Filters/Edge-Detect"
 argument_list|)
 expr_stmt|;
 block|}
