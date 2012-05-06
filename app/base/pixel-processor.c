@@ -97,10 +97,7 @@ begin_decl_stmt
 DECL|variable|pool_mutex
 specifier|static
 name|GMutex
-modifier|*
 name|pool_mutex
-init|=
-name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -242,7 +239,6 @@ directive|ifdef
 name|ENABLE_MP
 DECL|member|mutex
 name|GMutex
-modifier|*
 name|mutex
 decl_stmt|;
 DECL|member|threads
@@ -308,6 +304,7 @@ name|i
 decl_stmt|;
 name|g_mutex_lock
 argument_list|(
+operator|&
 name|processor
 operator|->
 name|mutex
@@ -438,6 +435,7 @@ block|}
 block|}
 name|g_mutex_unlock
 argument_list|(
+operator|&
 name|processor
 operator|->
 name|mutex
@@ -686,6 +684,7 @@ break|break;
 block|}
 name|g_mutex_lock
 argument_list|(
+operator|&
 name|processor
 operator|->
 name|mutex
@@ -785,6 +784,7 @@ condition|)
 block|{
 name|g_mutex_unlock
 argument_list|(
+operator|&
 name|processor
 operator|->
 name|mutex
@@ -792,6 +792,7 @@ argument_list|)
 expr_stmt|;
 name|g_mutex_lock
 argument_list|(
+operator|&
 name|pool_mutex
 argument_list|)
 expr_stmt|;
@@ -802,6 +803,7 @@ argument_list|)
 expr_stmt|;
 name|g_mutex_unlock
 argument_list|(
+operator|&
 name|pool_mutex
 argument_list|)
 expr_stmt|;
@@ -810,6 +812,7 @@ else|else
 block|{
 name|g_mutex_unlock
 argument_list|(
+operator|&
 name|processor
 operator|->
 name|mutex
@@ -1228,15 +1231,17 @@ name|threads
 operator|=
 name|tasks
 expr_stmt|;
+name|g_mutex_init
+argument_list|(
+operator|&
 name|processor
 operator|->
 name|mutex
-operator|=
-name|g_mutex_new
-argument_list|()
+argument_list|)
 expr_stmt|;
 name|g_mutex_lock
 argument_list|(
+operator|&
 name|pool_mutex
 argument_list|)
 expr_stmt|;
@@ -1326,6 +1331,7 @@ name|g_cond_timed_wait
 argument_list|(
 name|pool_cond
 argument_list|,
+operator|&
 name|pool_mutex
 argument_list|,
 operator|&
@@ -1334,6 +1340,7 @@ argument_list|)
 expr_stmt|;
 name|g_mutex_lock
 argument_list|(
+operator|&
 name|processor
 operator|->
 name|mutex
@@ -1347,6 +1354,7 @@ name|progress
 expr_stmt|;
 name|g_mutex_unlock
 argument_list|(
+operator|&
 name|processor
 operator|->
 name|mutex
@@ -1383,20 +1391,15 @@ name|g_cond_wait
 argument_list|(
 name|pool_cond
 argument_list|,
+operator|&
 name|pool_mutex
 argument_list|)
 expr_stmt|;
 block|}
 name|g_mutex_unlock
 argument_list|(
+operator|&
 name|pool_mutex
-argument_list|)
-expr_stmt|;
-name|g_mutex_free
-argument_list|(
-name|processor
-operator|->
-name|mutex
 argument_list|)
 expr_stmt|;
 block|}
@@ -1763,15 +1766,6 @@ name|pool_cond
 operator|=
 name|NULL
 expr_stmt|;
-name|g_mutex_free
-argument_list|(
-name|pool_mutex
-argument_list|)
-expr_stmt|;
-name|pool_mutex
-operator|=
-name|NULL
-expr_stmt|;
 block|}
 block|}
 else|else
@@ -1819,10 +1813,11 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
+name|g_mutex_init
+argument_list|(
+operator|&
 name|pool_mutex
-operator|=
-name|g_mutex_new
-argument_list|()
+argument_list|)
 expr_stmt|;
 name|pool_cond
 operator|=
