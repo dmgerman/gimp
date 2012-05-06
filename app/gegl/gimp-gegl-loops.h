@@ -163,7 +163,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_gegl_combine_mask
+name|gimp_gegl_combine_mask_weird
 parameter_list|(
 name|GeglBuffer
 modifier|*

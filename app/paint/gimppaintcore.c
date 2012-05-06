@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1666ca0103
+DECL|enum|__anon291cb4a70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2969,7 +2969,7 @@ operator|->
 name|canvas_buffer
 condition|)
 block|{
-name|gimp_gegl_combine_mask
+name|gimp_gegl_combine_mask_weird
 argument_list|(
 name|paint_mask
 argument_list|,
@@ -3320,7 +3320,7 @@ name|canvas_buffer
 condition|)
 block|{
 comment|/* combine the paint mask and the canvas buffer */
-name|gimp_gegl_combine_mask
+name|gimp_gegl_combine_mask_weird
 argument_list|(
 name|paint_mask
 argument_list|,

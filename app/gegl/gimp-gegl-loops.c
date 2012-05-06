@@ -2020,8 +2020,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gegl_combine_mask (GeglBuffer * mask_buffer,const GeglRectangle * mask_rect,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect,gdouble opacity,gboolean stipple)
-name|gimp_gegl_combine_mask
+DECL|function|gimp_gegl_combine_mask_weird (GeglBuffer * mask_buffer,const GeglRectangle * mask_rect,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect,gdouble opacity,gboolean stipple)
+name|gimp_gegl_combine_mask_weird
 parameter_list|(
 name|GeglBuffer
 modifier|*
