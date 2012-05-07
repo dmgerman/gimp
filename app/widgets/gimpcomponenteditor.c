@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a53ca50103
+DECL|enum|__anon27d8da0d0103
 block|{
 DECL|enumerator|COLUMN_CHANNEL
 name|COLUMN_CHANNEL
@@ -1377,7 +1377,7 @@ name|i
 decl_stmt|;
 switch|switch
 condition|(
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)

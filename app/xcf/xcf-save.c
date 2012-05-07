@@ -1002,7 +1002,7 @@ argument_list|)
 expr_stmt|;
 name|value
 operator|=
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)
@@ -7115,7 +7115,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6056590108
+DECL|struct|__anon2c9bcb7e0108
 block|{
 DECL|member|info
 name|XcfInfo

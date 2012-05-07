@@ -436,7 +436,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)
@@ -729,7 +729,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|new_image
 argument_list|)

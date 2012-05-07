@@ -130,7 +130,7 @@ name|precision
 operator|==
 name|GIMP_PRECISION_U8
 operator|||
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)

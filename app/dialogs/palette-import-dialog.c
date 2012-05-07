@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c341afd0103
+DECL|enum|__anon2988415a0103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c341afd0208
+DECL|struct|__anon2988415a0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -2531,7 +2531,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)
@@ -3682,7 +3682,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)

@@ -2546,7 +2546,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)
@@ -2584,7 +2584,7 @@ name|gimp_pdb_enum_value_get_nick
 argument_list|(
 name|GIMP_TYPE_IMAGE_BASE_TYPE
 argument_list|,
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)
@@ -2648,7 +2648,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)

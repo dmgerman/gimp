@@ -71,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f40a610103
+DECL|enum|__anon28a203da0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1312,7 +1312,7 @@ argument_list|)
 expr_stmt|;
 name|base_type
 operator|=
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)

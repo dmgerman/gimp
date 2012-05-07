@@ -1776,7 +1776,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)

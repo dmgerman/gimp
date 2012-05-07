@@ -407,7 +407,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b8473320103
+DECL|enum|__anon2bf8a5f20103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1508,7 +1508,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8473320208
+DECL|struct|__anon2bf8a5f20208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1751,7 +1751,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8473320308
+DECL|struct|__anon2bf8a5f20308
 block|{
 DECL|member|used_count
 name|signed
@@ -2827,7 +2827,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|new_type
 operator|!=
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)
@@ -3036,7 +3036,7 @@ expr_stmt|;
 comment|/*  Set the new base type  */
 name|old_type
 operator|=
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)

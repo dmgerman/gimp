@@ -1249,7 +1249,7 @@ name|NULL
 decl_stmt|;
 switch|switch
 condition|(
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)
@@ -1352,7 +1352,7 @@ expr_stmt|;
 name|is_indexed
 operator|=
 operator|(
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)

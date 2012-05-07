@@ -1062,7 +1062,7 @@ name|scalable_size
 operator|+=
 name|gimp_projection_estimate_memsize
 argument_list|(
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)
@@ -1082,7 +1082,7 @@ name|scaled_size
 operator|+=
 name|gimp_projection_estimate_memsize
 argument_list|(
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)

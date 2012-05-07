@@ -597,7 +597,7 @@ end_function_decl
 
 begin_function_decl
 name|GimpImageBaseType
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 parameter_list|(
 specifier|const
 name|GimpImage

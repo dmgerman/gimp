@@ -317,12 +317,14 @@ condition|)
 block|{
 name|indexed
 operator|=
-name|gimp_image_base_type
+operator|(
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)
 operator|==
 name|GIMP_INDEXED
+operator|)
 expr_stmt|;
 name|num_colors
 operator|=

@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2891cfdb0103
+DECL|enum|__anon2b7e71870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -570,7 +570,7 @@ name|image_undo
 operator|->
 name|base_type
 operator|=
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)
@@ -1170,7 +1170,7 @@ name|image_undo
 operator|->
 name|base_type
 operator|=
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)
@@ -1200,7 +1200,7 @@ name|image_undo
 operator|->
 name|base_type
 operator|!=
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)

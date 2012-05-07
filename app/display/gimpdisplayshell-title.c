@@ -457,7 +457,7 @@ name|gimp_enum_get_value
 argument_list|(
 name|GIMP_TYPE_IMAGE_BASE_TYPE
 argument_list|,
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)

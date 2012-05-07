@@ -234,7 +234,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ea4e390108
+DECL|struct|__anon28e2bb130108
 block|{
 DECL|member|context
 name|GimpContext
@@ -646,7 +646,7 @@ if|if
 condition|(
 name|value
 operator|==
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)

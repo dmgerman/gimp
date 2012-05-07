@@ -2695,7 +2695,7 @@ name|NULL
 decl_stmt|;
 if|if
 condition|(
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)

@@ -154,7 +154,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28806a110103
+DECL|enum|__anon278e679a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2035,7 +2035,7 @@ expr_stmt|;
 comment|/*  color type  */
 name|type
 operator|=
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)

@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab45c7e0108
+DECL|struct|__anon2ae719e90108
 block|{
 DECL|member|viewable
 name|GimpViewable
@@ -872,7 +872,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)

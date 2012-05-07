@@ -358,7 +358,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e101930103
+DECL|enum|__anon2bc2194a0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -455,7 +455,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e101930203
+DECL|enum|__anon2bc2194a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5335,7 +5335,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)
@@ -6424,8 +6424,8 @@ end_function
 
 begin_function
 name|GimpImageBaseType
-DECL|function|gimp_image_base_type (const GimpImage * image)
-name|gimp_image_base_type
+DECL|function|gimp_image_get_base_type (const GimpImage * image)
+name|gimp_image_get_base_type
 parameter_list|(
 specifier|const
 name|GimpImage
@@ -6633,7 +6633,7 @@ name|gimp_image_get_format
 argument_list|(
 name|image
 argument_list|,
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)
@@ -8684,7 +8684,7 @@ name|GIMP_ALPHA_CHANNEL
 case|:
 switch|switch
 condition|(
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)
@@ -9036,7 +9036,7 @@ argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)

@@ -166,7 +166,7 @@ parameter_list|(
 name|image
 parameter_list|)
 define|\
-value|(image != NULL&& \          gimp_image_base_type (image) == GIMP_INDEXED&& \          gimp_image_get_colormap (image) != NULL)
+value|(image != NULL&& \          gimp_image_get_base_type (image) == GIMP_INDEXED&& \          gimp_image_get_colormap (image) != NULL)
 end_define
 
 begin_function_decl
@@ -2097,7 +2097,7 @@ name|image
 operator|==
 name|NULL
 operator|||
-name|gimp_image_base_type
+name|gimp_image_get_base_type
 argument_list|(
 name|image_editor
 operator|->
