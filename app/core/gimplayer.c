@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa08b350103
+DECL|enum|__anon2945d04b0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -210,7 +210,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa08b350203
+DECL|enum|__anon2945d04b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6080,6 +6080,11 @@ argument_list|(
 name|image
 argument_list|,
 name|GIMP_GRAY
+argument_list|,
+name|gimp_drawable_get_precision
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|,
 name|gimp_drawable_has_alpha
 argument_list|(

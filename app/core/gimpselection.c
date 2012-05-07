@@ -2913,6 +2913,11 @@ name|image
 argument_list|,
 name|GIMP_RGB
 argument_list|,
+name|gimp_image_get_precision
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
 name|add_alpha
 operator|||
 name|babl_format_has_alpha

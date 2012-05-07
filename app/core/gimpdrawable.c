@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cd4cef0103
+DECL|enum|__anon2c77f6aa0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3009,8 +3009,10 @@ name|format
 decl_stmt|;
 name|format
 operator|=
-name|gimp_babl_format
+name|gimp_image_get_format
 argument_list|(
+name|dest_image
+argument_list|,
 name|new_base_type
 argument_list|,
 name|new_precision
@@ -7034,6 +7036,11 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
+name|gimp_drawable_get_precision
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
 name|TRUE
 argument_list|)
 return|;
@@ -7075,6 +7082,11 @@ argument_list|)
 argument_list|)
 argument_list|,
 name|gimp_drawable_get_base_type
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+name|gimp_drawable_get_precision
 argument_list|(
 name|drawable
 argument_list|)

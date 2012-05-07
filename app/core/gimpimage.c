@@ -358,7 +358,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2756b4520103
+DECL|enum|__anon29e101930103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -455,7 +455,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2756b4520203
+DECL|enum|__anon29e101930203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5644,7 +5644,7 @@ if|#
 directive|if
 literal|0
 comment|/* XXX use real format once the legacy projection is gone */
-block|return gimp_image_get_format (image, GIMP_RGB, TRUE);
+block|return gimp_image_get_format (image, GIMP_RGB, GIMP_PRECISION_U8, TRUE);
 else|#
 directive|else
 return|return
@@ -5662,7 +5662,7 @@ if|#
 directive|if
 literal|0
 comment|/* XXX use real format once the legacy projection is gone */
-block|return gimp_image_get_format (image, GIMP_GRAY, TRUE);
+block|return gimp_image_get_format (image, GIMP_GRAY, GIMP_PRECISION_U8, TRUE);
 else|#
 directive|else
 return|return
@@ -6516,7 +6516,7 @@ begin_function
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_image_get_format (const GimpImage * image,GimpImageBaseType base_type,gboolean with_alpha)
+DECL|function|gimp_image_get_format (const GimpImage * image,GimpImageBaseType base_type,GimpPrecision precision,gboolean with_alpha)
 name|gimp_image_get_format
 parameter_list|(
 specifier|const
@@ -6526,6 +6526,9 @@ name|image
 parameter_list|,
 name|GimpImageBaseType
 name|base_type
+parameter_list|,
+name|GimpPrecision
+name|precision
 parameter_list|,
 name|gboolean
 name|with_alpha
@@ -6557,10 +6560,7 @@ name|gimp_babl_format
 argument_list|(
 name|base_type
 argument_list|,
-name|gimp_image_get_precision
-argument_list|(
-name|image
-argument_list|)
+name|precision
 argument_list|,
 name|with_alpha
 argument_list|)
@@ -6568,6 +6568,13 @@ return|;
 case|case
 name|GIMP_INDEXED
 case|:
+if|if
+condition|(
+name|precision
+operator|==
+name|GIMP_PRECISION_U8
+condition|)
+block|{
 if|if
 condition|(
 name|with_alpha
@@ -6585,6 +6592,7 @@ argument_list|(
 name|image
 argument_list|)
 return|;
+block|}
 block|}
 name|g_return_val_if_reached
 argument_list|(
@@ -6625,12 +6633,15 @@ name|gimp_image_get_format
 argument_list|(
 name|image
 argument_list|,
-name|GIMP_IMAGE_GET_PRIVATE
+name|gimp_image_base_type
 argument_list|(
 name|image
 argument_list|)
-operator|->
-name|base_type
+argument_list|,
+name|gimp_image_get_precision
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|with_alpha
 argument_list|)
@@ -6667,6 +6678,11 @@ argument_list|(
 name|image
 argument_list|,
 name|GIMP_GRAY
+argument_list|,
+name|gimp_image_get_precision
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)

@@ -646,6 +646,9 @@ parameter_list|,
 name|GimpImageBaseType
 name|base_type
 parameter_list|,
+name|GimpPrecision
+name|precision
+parameter_list|,
 name|gboolean
 name|with_alpha
 parameter_list|)

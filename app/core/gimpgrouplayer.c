@@ -3655,6 +3655,11 @@ name|image
 argument_list|,
 name|GIMP_RGB
 argument_list|,
+name|gimp_image_get_precision
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
 name|TRUE
 argument_list|)
 return|;
@@ -3667,6 +3672,11 @@ argument_list|(
 name|image
 argument_list|,
 name|GIMP_GRAY
+argument_list|,
+name|gimp_image_get_precision
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|)
