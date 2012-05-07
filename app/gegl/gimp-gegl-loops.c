@@ -2350,7 +2350,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gegl_replace (GeglBuffer * top_buffer,const GeglRectangle * top_rect,GeglBuffer * bottom_buffer,const GeglRectangle * bottom_rect,GeglBuffer * mask_buffer,const GeglRectangle * mask_rect,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect,guchar opacity,const gboolean * affect)
+DECL|function|gimp_gegl_replace (GeglBuffer * top_buffer,const GeglRectangle * top_rect,GeglBuffer * bottom_buffer,const GeglRectangle * bottom_rect,GeglBuffer * mask_buffer,const GeglRectangle * mask_rect,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect,gdouble opacity,const gboolean * affect)
 name|gimp_gegl_replace
 parameter_list|(
 name|GeglBuffer
@@ -2389,7 +2389,7 @@ name|GeglRectangle
 modifier|*
 name|dest_rect
 parameter_list|,
-name|guchar
+name|gdouble
 name|opacity
 parameter_list|,
 specifier|const
@@ -2401,26 +2401,6 @@ block|{
 name|GeglBufferIterator
 modifier|*
 name|iter
-decl_stmt|;
-specifier|const
-name|gint
-name|alpha
-init|=
-literal|4
-operator|-
-literal|1
-decl_stmt|;
-specifier|const
-name|gdouble
-name|norm_opacity
-init|=
-name|opacity
-operator|*
-operator|(
-literal|1.0
-operator|/
-literal|65536.0
-operator|)
 decl_stmt|;
 name|iter
 operator|=
@@ -2434,7 +2414,7 @@ literal|0
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"R'G'B'A u8"
+literal|"RGBA float"
 argument_list|)
 argument_list|,
 name|GEGL_BUFFER_READ
@@ -2454,7 +2434,7 @@ literal|0
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"R'G'B'A u8"
+literal|"RGBA float"
 argument_list|)
 argument_list|,
 name|GEGL_BUFFER_READ
@@ -2474,7 +2454,7 @@ literal|0
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y float"
 argument_list|)
 argument_list|,
 name|GEGL_BUFFER_READ
@@ -2494,7 +2474,7 @@ literal|0
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"R'G'B'A u8"
+literal|"RGBA float"
 argument_list|)
 argument_list|,
 name|GEGL_BUFFER_WRITE
@@ -2511,7 +2491,7 @@ argument_list|)
 condition|)
 block|{
 specifier|const
-name|guchar
+name|gfloat
 modifier|*
 name|top
 init|=
@@ -2523,7 +2503,7 @@ literal|0
 index|]
 decl_stmt|;
 specifier|const
-name|guchar
+name|gfloat
 modifier|*
 name|bottom
 init|=
@@ -2535,7 +2515,7 @@ literal|1
 index|]
 decl_stmt|;
 specifier|const
-name|guchar
+name|gfloat
 modifier|*
 name|mask
 init|=
@@ -2546,7 +2526,7 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-name|guchar
+name|gfloat
 modifier|*
 name|dest
 init|=
@@ -2565,34 +2545,32 @@ name|length
 operator|--
 condition|)
 block|{
-name|guint
+name|gint
 name|b
 decl_stmt|;
 name|gdouble
 name|mask_val
 init|=
-name|mask
-index|[
-literal|0
-index|]
 operator|*
-name|norm_opacity
+name|mask
+operator|*
+name|opacity
 decl_stmt|;
 comment|/* calculate new alpha first. */
-name|gint
+name|gfloat
 name|s1_a
 init|=
 name|bottom
 index|[
-name|alpha
+literal|3
 index|]
 decl_stmt|;
-name|gint
+name|gfloat
 name|s2_a
 init|=
 name|top
 index|[
-name|alpha
+literal|3
 index|]
 decl_stmt|;
 name|gdouble
@@ -2612,7 +2590,7 @@ if|if
 condition|(
 name|a_val
 operator|==
-literal|0
+literal|0.0
 condition|)
 block|{
 comment|/* In any case, write out versions of the blending                * function that result when combinations of s1_a, s2_a,                * and mask_val --> 0 (or mask_val -->1)                */
@@ -2635,20 +2613,17 @@ literal|0
 init|;
 name|b
 operator|<
-name|alpha
+literal|3
 condition|;
 name|b
 operator|++
 control|)
 block|{
-name|gint
+name|gfloat
 name|new_val
-init|=
-literal|0.5
-operator|+
-operator|(
-name|gdouble
-operator|)
+decl_stmt|;
+name|new_val
+operator|=
 name|bottom
 index|[
 name|b
@@ -2657,23 +2632,17 @@ operator|+
 name|mask_val
 operator|*
 operator|(
-operator|(
-name|gdouble
-operator|)
 name|top
 index|[
 name|b
 index|]
 operator|-
-operator|(
-name|gdouble
-operator|)
 name|bottom
 index|[
 name|b
 index|]
 operator|)
-decl_stmt|;
+expr_stmt|;
 name|dest
 index|[
 name|b
@@ -2688,7 +2657,7 @@ name|MIN
 argument_list|(
 name|new_val
 argument_list|,
-literal|255
+literal|1.0
 argument_list|)
 else|:
 name|bottom
@@ -2717,7 +2686,7 @@ literal|0
 init|;
 name|b
 operator|<
-name|alpha
+literal|3
 condition|;
 name|b
 operator|++
@@ -2754,7 +2723,7 @@ literal|0
 init|;
 name|b
 operator|<
-name|alpha
+literal|3
 condition|;
 name|b
 operator|++
@@ -2799,17 +2768,15 @@ literal|0
 init|;
 name|b
 operator|<
-name|alpha
+literal|3
 condition|;
 name|b
 operator|++
 control|)
 block|{
-name|gint
+name|gfloat
 name|new_val
 init|=
-literal|0.5
-operator|+
 name|a_recip
 operator|*
 operator|(
@@ -2853,7 +2820,7 @@ name|MIN
 argument_list|(
 name|new_val
 argument_list|,
-literal|255
+literal|1.0
 argument_list|)
 else|:
 name|bottom
@@ -2865,17 +2832,15 @@ block|}
 block|}
 name|dest
 index|[
-name|alpha
+literal|3
 index|]
 operator|=
 name|affect
 index|[
-name|alpha
+literal|3
 index|]
 condition|?
 name|a_val
-operator|+
-literal|0.5
 else|:
 name|s1_a
 expr_stmt|;

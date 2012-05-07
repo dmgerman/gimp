@@ -260,7 +260,7 @@ name|GeglRectangle
 modifier|*
 name|dest_rect
 parameter_list|,
-name|guchar
+name|gdouble
 name|opacity
 parameter_list|,
 specifier|const

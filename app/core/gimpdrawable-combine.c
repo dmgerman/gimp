@@ -1342,8 +1342,6 @@ name|height
 argument_list|)
 argument_list|,
 name|opacity
-operator|*
-literal|255.999
 argument_list|,
 name|active_components
 argument_list|)
@@ -1393,8 +1391,6 @@ name|height
 argument_list|)
 argument_list|,
 name|opacity
-operator|*
-literal|255.999
 argument_list|,
 name|active_components
 argument_list|)
