@@ -117,15 +117,6 @@ value|N_("How to handle embedded color profiles when opening a file.")
 end_define
 
 begin_define
-DECL|macro|CONFIRM_ON_CLOSE_BLURB
-define|#
-directive|define
-name|CONFIRM_ON_CLOSE_BLURB
-define|\
-value|N_("Ask for confirmation before closing an image without saving.")
-end_define
-
-begin_define
 DECL|macro|CURSOR_FORMAT_BLURB
 define|#
 directive|define

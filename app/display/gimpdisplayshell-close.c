@@ -284,14 +284,6 @@ name|gimp_image_is_dirty
 argument_list|(
 name|image
 argument_list|)
-operator|&&
-name|shell
-operator|->
-name|display
-operator|->
-name|config
-operator|->
-name|confirm_on_close
 condition|)
 block|{
 comment|/*  If there's a save dialog active for this image, then raise it.        *  (see bug #511965)        */

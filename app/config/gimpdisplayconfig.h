@@ -170,10 +170,6 @@ name|gchar
 modifier|*
 name|image_status_format
 decl_stmt|;
-DECL|member|confirm_on_close
-name|gboolean
-name|confirm_on_close
-decl_stmt|;
 DECL|member|monitor_xres
 name|gdouble
 name|monitor_xres
