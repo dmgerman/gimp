@@ -114,7 +114,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_if
@@ -194,6 +194,12 @@ begin_include
 include|#
 directive|include
 file|"plug-in-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimp-utils.h"
 end_include
 
 begin_include
@@ -574,7 +580,7 @@ decl_stmt|;
 comment|/* Our shared memory id will be our process ID */
 name|pid
 operator|=
-name|get_pid
+name|gimp_get_pid
 argument_list|()
 expr_stmt|;
 comment|/* From the id, derive the file map name */
