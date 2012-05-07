@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon287dee460103
+DECL|enum|__anon277cea810103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -4382,6 +4382,11 @@ argument_list|,
 name|image_opacity
 argument_list|,
 name|mode
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|paint_mask
 argument_list|)
 expr_stmt|;
 block|}
