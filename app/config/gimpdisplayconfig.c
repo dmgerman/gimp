@@ -109,7 +109,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon293e16d60103
+DECL|enum|__anon27692a8c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -851,6 +851,8 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
+operator||
+name|GIMP_CONFIG_PARAM_IGNORE
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_RGB
