@@ -339,7 +339,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b084870103
+DECL|enum|__anon2b77470f0103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -358,7 +358,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b084870208
+DECL|struct|__anon2b77470f0208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -1186,6 +1186,29 @@ argument_list|(
 name|image_ID
 argument_list|)
 expr_stmt|;
+comment|/* Give some sort of feedback that the shot is done */
+if|if
+condition|(
+name|shootvals
+operator|.
+name|select_delay
+operator|>
+literal|0
+condition|)
+block|{
+name|gdk_display_beep
+argument_list|(
+name|gdk_screen_get_display
+argument_list|(
+name|screen
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gdk_flush
+argument_list|()
+expr_stmt|;
+comment|/* flush so the beep makes it to the server */
+block|}
 block|}
 comment|/* set return values */
 operator|*
