@@ -118,7 +118,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2978ef0a0108
+DECL|struct|__anon2b77c2e00108
 block|{
 DECL|member|lam_r
 name|gdouble
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2978ef0a0208
+DECL|struct|__anon2b77c2e00208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -682,13 +682,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-name|PLUG_IN_PROC
-argument_list|,
-literal|"<Image>/Filters/Render/Pattern"
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1131,7 +1124,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2978ef0a0308
+DECL|struct|__anon2b77c2e00308
 typedef|typedef
 struct|struct
 block|{
