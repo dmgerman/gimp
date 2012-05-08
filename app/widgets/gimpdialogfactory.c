@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279655170103
+DECL|enum|__anon290b58910103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -2352,14 +2352,22 @@ argument_list|(
 name|toplevel
 argument_list|)
 condition|)
-name|gtk_window_present
+block|{
+comment|/*  Work around focus-stealing protection, or whatever makes the        *  dock appear below the one where we clicked a button to open        *  it. See bug #630173.        */
+name|gtk_widget_show_now
 argument_list|(
-name|GTK_WINDOW
+name|toplevel
+argument_list|)
+expr_stmt|;
+name|gdk_window_raise
+argument_list|(
+name|gtk_widget_get_window
 argument_list|(
 name|toplevel
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|dialog
 return|;
