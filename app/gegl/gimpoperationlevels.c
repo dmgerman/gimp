@@ -234,6 +234,16 @@ name|gdouble
 name|high_output
 parameter_list|)
 block|{
+comment|/* clamp to guard pow() against negative input */
+name|value
+operator|=
+name|MAX
+argument_list|(
+name|value
+argument_list|,
+name|low_input
+argument_list|)
+expr_stmt|;
 comment|/*  determine input intensity  */
 if|if
 condition|(
