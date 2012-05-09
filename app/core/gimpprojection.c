@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b5ce430103
+DECL|enum|__anon278646da0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1232,20 +1232,6 @@ operator|->
 name|sink_node
 condition|)
 block|{
-name|GeglBuffer
-modifier|*
-name|buffer
-decl_stmt|;
-name|buffer
-operator|=
-name|gimp_projection_get_buffer
-argument_list|(
-name|GIMP_PICKABLE
-argument_list|(
-name|proj
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gegl_node_set
 argument_list|(
 name|proj
@@ -1254,6 +1240,8 @@ name|sink_node
 argument_list|,
 literal|"buffer"
 argument_list|,
+name|proj
+operator|->
 name|buffer
 argument_list|,
 name|NULL
