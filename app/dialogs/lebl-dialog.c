@@ -38,19 +38,8 @@ end_include
 begin_include
 include|#
 directive|include
-file|"lebl-dialog.h"
+file|"gimp-intl.h"
 end_include
-
-begin_define
-DECL|macro|_ (a)
-define|#
-directive|define
-name|_
-parameter_list|(
-name|a
-parameter_list|)
-value|(a)
-end_define
 
 begin_decl_stmt
 DECL|variable|goatpb2
@@ -365,7 +354,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon27f093dd0108
+DECL|struct|__anon2a2d7d440108
 typedef|typedef
 struct|struct
 block|{
@@ -387,7 +376,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27f093dd0208
+DECL|struct|__anon2a2d7d440208
 typedef|typedef
 struct|struct
 block|{
@@ -3856,6 +3845,15 @@ name|TRUE
 return|;
 block|}
 end_function
+
+begin_function_decl
+name|gboolean
+name|gimp_lebl_dialog
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function
 name|gboolean
