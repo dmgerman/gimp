@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimpthresholdconfig.h"
+file|"operations/gimpthresholdconfig.h"
 end_include
 
 begin_include

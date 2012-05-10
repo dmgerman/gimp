@@ -66,6 +66,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"operations/gimpcageconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -109,18 +121,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpprojection.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gegl/gimp-gegl-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gegl/gimpcageconfig.h"
 end_include
 
 begin_include
@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ea24320103
+DECL|enum|__anon2c339b570103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT

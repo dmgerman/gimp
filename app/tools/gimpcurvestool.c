@@ -66,13 +66,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimpcurvesconfig.h"
+file|"operations/gimpcurvesconfig.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gegl/gimpoperationcurves.h"
+file|"operations/gimpoperationcurves.h"
 end_include
 
 begin_include

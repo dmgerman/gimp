@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimpbrightnesscontrastconfig.h"
+file|"operations/gimpbrightnesscontrastconfig.h"
 end_include
 
 begin_include

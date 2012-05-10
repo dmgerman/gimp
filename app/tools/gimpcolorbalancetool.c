@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimpcolorbalanceconfig.h"
+file|"operations/gimpcolorbalanceconfig.h"
 end_include
 
 begin_include

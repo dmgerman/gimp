@@ -82,55 +82,55 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimpbrightnesscontrastconfig.h"
+file|"operations/gimpbrightnesscontrastconfig.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gegl/gimpcolorbalanceconfig.h"
+file|"operations/gimpcolorbalanceconfig.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gegl/gimpcolorizeconfig.h"
+file|"operations/gimpcolorizeconfig.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gegl/gimpcurvesconfig.h"
+file|"operations/gimpcurvesconfig.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gegl/gimpdesaturateconfig.h"
+file|"operations/gimpdesaturateconfig.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gegl/gimphuesaturationconfig.h"
+file|"operations/gimphuesaturationconfig.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gegl/gimplevelsconfig.h"
+file|"operations/gimplevelsconfig.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gegl/gimpposterizeconfig.h"
+file|"operations/gimpposterizeconfig.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gegl/gimpthresholdconfig.h"
+file|"operations/gimpthresholdconfig.h"
 end_include
 
 begin_include

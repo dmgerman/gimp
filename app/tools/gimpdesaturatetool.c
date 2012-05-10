@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimpdesaturateconfig.h"
+file|"operations/gimpdesaturateconfig.h"
 end_include
 
 begin_include

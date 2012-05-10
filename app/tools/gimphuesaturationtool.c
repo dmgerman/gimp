@@ -48,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimphuesaturationconfig.h"
+file|"operations/gimphuesaturationconfig.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gegl/gimpoperationhuesaturation.h"
+file|"operations/gimpoperationhuesaturation.h"
 end_include
 
 begin_include
@@ -806,7 +806,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2b65d6890108
+DECL|struct|__anon2956f2090108
 block|{
 DECL|member|label
 specifier|const

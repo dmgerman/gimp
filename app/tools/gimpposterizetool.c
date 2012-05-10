@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimpposterizeconfig.h"
+file|"operations/gimpposterizeconfig.h"
 end_include
 
 begin_include

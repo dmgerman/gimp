@@ -72,13 +72,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimplevelsconfig.h"
+file|"operations/gimplevelsconfig.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gegl/gimpoperationlevels.h"
+file|"operations/gimpoperationlevels.h"
 end_include
 
 begin_include
