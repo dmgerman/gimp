@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp.h"
 end_include
 
@@ -71,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29550d8e0103
+DECL|enum|__anon28a7f2620103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

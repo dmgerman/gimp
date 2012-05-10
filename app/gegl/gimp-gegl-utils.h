@@ -16,16 +16,6 @@ directive|define
 name|__GIMP_GEGL_UTILS_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gdk-pixbuf/gdk-pixbuf.h>
-end_include
-
-begin_comment
-comment|/* temp hack */
-end_comment
-
 begin_decl_stmt
 specifier|const
 name|gchar
