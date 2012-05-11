@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276181ec0103
+DECL|enum|__anon29ec4ccb0103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -2285,9 +2285,8 @@ operator|-
 literal|1
 operator|&&
 name|edge
-operator|==
-operator|-
-literal|1
+operator|<=
+literal|0
 condition|)
 block|{
 comment|/* User clicked on the background, we add a new handle                  * and move it                  */
@@ -2436,7 +2435,7 @@ elseif|else
 if|if
 condition|(
 name|edge
-operator|>=
+operator|>
 literal|0
 condition|)
 block|{
