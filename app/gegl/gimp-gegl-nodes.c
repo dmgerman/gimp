@@ -1023,9 +1023,6 @@ case|case
 name|GIMP_BEHIND_MODE
 case|:
 case|case
-name|GIMP_SATURATION_MODE
-case|:
-case|case
 name|GIMP_COLOR_MODE
 case|:
 case|case
