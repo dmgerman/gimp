@@ -1020,12 +1020,6 @@ name|mode
 condition|)
 block|{
 case|case
-name|GIMP_BEHIND_MODE
-case|:
-case|case
-name|GIMP_VALUE_MODE
-case|:
-case|case
 name|GIMP_COLOR_ERASE_MODE
 case|:
 case|case
