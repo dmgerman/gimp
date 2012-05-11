@@ -34,19 +34,6 @@ directive|include
 file|"operations/operations-types.h"
 end_include
 
-begin_comment
-comment|/*  temporary stuff  */
-end_comment
-
-begin_typedef
-DECL|typedef|GimpTileBackendTileManager
-typedef|typedef
-name|struct
-name|_GimpTileBackendTileManager
-name|GimpTileBackendTileManager
-typedef|;
-end_typedef
-
 begin_endif
 endif|#
 directive|endif

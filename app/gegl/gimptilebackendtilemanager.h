@@ -90,6 +90,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_TILE_BACKEND_TILE_MANAGER, G
 end_define
 
 begin_typedef
+DECL|typedef|GimpTileBackendTileManager
+typedef|typedef
+name|struct
+name|_GimpTileBackendTileManager
+name|GimpTileBackendTileManager
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpTileBackendTileManagerClass
 typedef|typedef
 name|struct
