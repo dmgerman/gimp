@@ -49,14 +49,6 @@ begin_comment
 comment|/*#define DEBUG_CAGE */
 end_comment
 
-begin_define
-DECL|macro|N_ITEMS_PER_ALLOC
-define|#
-directive|define
-name|N_ITEMS_PER_ALLOC
-value|10
-end_define
-
 begin_comment
 comment|/* This DELTA is aimed to not have handle on exact pixel during computation,  * to avoid particular case. It shouldn't be so usefull, but it's a double  * safety. */
 end_comment

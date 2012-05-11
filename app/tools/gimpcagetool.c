@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c339b570103
+DECL|enum|__anon276181ec0103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -1703,10 +1703,20 @@ name|GDK_KEY_ISO_Enter
 case|:
 if|if
 condition|(
-operator|!
 name|ct
 operator|->
 name|cage_complete
+operator|==
+name|FALSE
+operator|&&
+name|gimp_cage_config_get_n_points
+argument_list|(
+name|ct
+operator|->
+name|config
+argument_list|)
+operator|>
+literal|2
 condition|)
 block|{
 name|g_object_set
