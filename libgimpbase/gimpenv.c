@@ -694,7 +694,7 @@ name|g_build_filename
 argument_list|(
 argument|[library_dir UTF8String]
 argument_list|,
-literal|"Gimp"
+literal|"GIMP"
 argument_list|,
 argument|GIMP_USER_VERSION
 argument_list|,
