@@ -1478,15 +1478,11 @@ name|tmp_buf
 operator|=
 name|g_alloca
 argument_list|(
-name|roi
-operator|->
-name|width
+name|stride
 operator|*
 name|roi
 operator|->
 name|height
-operator|*
-name|bpp
 argument_list|)
 expr_stmt|;
 if|if
