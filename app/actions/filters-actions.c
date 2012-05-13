@@ -226,6 +226,33 @@ comment|/* FIXME GIMP_HELP_FILTER_POLAR_COORDINATES */
 block|}
 block|,
 block|{
+literal|"filters-unsharp-mask"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Unsharp Mask..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"The most widely used method for sharpening an image"
+argument_list|)
+block|,
+literal|"gegl:unsharp-mask"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_UNSHARP_MASK */
+block|}
+block|,
+block|{
 literal|"filters-semi-flatten"
 block|,
 name|GIMP_STOCK_GEGL
