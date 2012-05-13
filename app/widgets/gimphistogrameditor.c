@@ -1243,6 +1243,17 @@ name|image_editor
 operator|->
 name|image
 argument_list|,
+name|gimp_histogram_editor_update
+argument_list|,
+name|editor
+argument_list|)
+expr_stmt|;
+name|g_signal_handlers_disconnect_by_func
+argument_list|(
+name|image_editor
+operator|->
+name|image
+argument_list|,
 name|gimp_histogram_editor_layer_changed
 argument_list|,
 name|editor

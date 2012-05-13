@@ -355,6 +355,21 @@ define|\
 value|G_TYPE_INSTANCE_GET_PRIVATE (image, \                                      GIMP_TYPE_IMAGE, \                                      GimpImagePrivate)
 end_define
 
+begin_function_decl
+name|void
+name|gimp_image_take_mask
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|GimpChannel
+modifier|*
+name|mask
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
