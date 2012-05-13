@@ -145,6 +145,33 @@ comment|/* FIXME GIMP_HELP_FILTER_COLOR_TO_ALPHA */
 block|}
 block|,
 block|{
+literal|"filters-difference-of-gaussians"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Difference of Gaussians..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Edge detection with control of edge thickness"
+argument_list|)
+block|,
+literal|"gegl:difference-of-gaussians"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_DIFFERENCE_OF_GAUSSIANS */
+block|}
+block|,
+block|{
 literal|"filters-gaussian-blur"
 block|,
 name|GIMP_STOCK_GEGL
@@ -169,6 +196,60 @@ literal|"gegl:gaussian-blur"
 block|,
 name|NULL
 comment|/* FIXME GIMP_HELP_FILTER_GAUSSIAN_BLUR */
+block|}
+block|,
+block|{
+literal|"filters-laplace"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Laplace"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"High-resolution edge detection"
+argument_list|)
+block|,
+literal|"gegl:edge-laplace"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_LAPLACE */
+block|}
+block|,
+block|{
+literal|"filters-lens-distortion"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Lens Distortion..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Corrects lens distortion"
+argument_list|)
+block|,
+literal|"gegl:lens-distortion"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_LENS_DISTORTION */
 block|}
 block|,
 block|{
@@ -226,33 +307,6 @@ comment|/* FIXME GIMP_HELP_FILTER_POLAR_COORDINATES */
 block|}
 block|,
 block|{
-literal|"filters-unsharp-mask"
-block|,
-name|GIMP_STOCK_GEGL
-block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"_Unsharp Mask..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"The most widely used method for sharpening an image"
-argument_list|)
-block|,
-literal|"gegl:unsharp-mask"
-block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_UNSHARP_MASK */
-block|}
-block|,
-block|{
 literal|"filters-ripple"
 block|,
 name|GIMP_STOCK_GEGL
@@ -277,114 +331,6 @@ literal|"gegl:ripple"
 block|,
 name|NULL
 comment|/* FIXME GIMP_HELP_FILTER_RIPPLE */
-block|}
-block|,
-block|{
-literal|"filters-lens-distortion"
-block|,
-name|GIMP_STOCK_GEGL
-block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Lens Distortion..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Corrects lens distortion"
-argument_list|)
-block|,
-literal|"gegl:lens-distortion"
-block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_LENS_DISTORTION */
-block|}
-block|,
-block|{
-literal|"filters-difference-of-gaussians"
-block|,
-name|GIMP_STOCK_GEGL
-block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Difference of Gaussians..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Edge detection with control of edge thickness"
-argument_list|)
-block|,
-literal|"gegl:difference-of-gaussians"
-block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_DIFFERENCE_OF_GAUSSIANS */
-block|}
-block|,
-block|{
-literal|"filters-laplace"
-block|,
-name|GIMP_STOCK_GEGL
-block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"_Laplace"
-argument_list|)
-block|,
-name|NULL
-block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"High-resolution edge detection"
-argument_list|)
-block|,
-literal|"gegl:edge-laplace"
-block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_LAPLACE */
-block|}
-block|,
-block|{
-literal|"filters-sobel"
-block|,
-name|GIMP_STOCK_GEGL
-block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"_Sobel..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Specialized direction-dependent edge-detection"
-argument_list|)
-block|,
-literal|"gegl:edge-sobel"
-block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_SOBEL */
 block|}
 block|,
 block|{
@@ -415,6 +361,33 @@ comment|/* FIXME GIMP_HELP_FILTER_POLAR_COORDINATES */
 block|}
 block|,
 block|{
+literal|"filters-sobel"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Sobel..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Specialized direction-dependent edge-detection"
+argument_list|)
+block|,
+literal|"gegl:edge-sobel"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_SOBEL */
+block|}
+block|,
+block|{
 literal|"filters-threshold-alpha"
 block|,
 name|GIMP_STOCK_GEGL
@@ -439,6 +412,33 @@ literal|"gimp:threshold-alpha"
 block|,
 name|NULL
 comment|/* FIXME GIMP_HELP_FILTER_POLAR_COORDINATES */
+block|}
+block|,
+block|{
+literal|"filters-unsharp-mask"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Unsharp Mask..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"The most widely used method for sharpening an image"
+argument_list|)
+block|,
+literal|"gegl:unsharp-mask"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_UNSHARP_MASK */
 block|}
 block|, }
 decl_stmt|;
@@ -643,7 +643,28 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
+literal|"filters-difference-of-gaussians"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
 literal|"filters-gaussian-blur"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-laplace"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-lens-distortion"
 argument_list|,
 name|writable
 argument_list|)
@@ -664,6 +685,20 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
+literal|"filters-ripple"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-sobel"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
 literal|"filters-semi-flatten"
 argument_list|,
 name|writable
@@ -678,6 +713,13 @@ argument_list|,
 name|writable
 operator|&&
 name|alpha
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-unsharp-mask"
+argument_list|,
+name|writable
 argument_list|)
 expr_stmt|;
 undef|#
