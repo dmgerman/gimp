@@ -1042,7 +1042,7 @@ name|TRUE
 argument_list|,
 name|antialias
 argument_list|,
-literal|255
+literal|1.0
 argument_list|)
 expr_stmt|;
 block|}
@@ -1054,7 +1054,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_scan_convert_render_value (GimpScanConvert * sc,GeglBuffer * buffer,gint off_x,gint off_y,guchar value)
+DECL|function|gimp_scan_convert_render_value (GimpScanConvert * sc,GeglBuffer * buffer,gint off_x,gint off_y,gdouble value)
 name|gimp_scan_convert_render_value
 parameter_list|(
 name|GimpScanConvert
@@ -1071,7 +1071,7 @@ parameter_list|,
 name|gint
 name|off_y
 parameter_list|,
-name|guchar
+name|gdouble
 name|value
 parameter_list|)
 block|{
@@ -1133,7 +1133,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|255
+literal|1.0
 argument_list|)
 expr_stmt|;
 block|}
@@ -1145,7 +1145,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_scan_convert_compose_value (GimpScanConvert * sc,GeglBuffer * buffer,gint off_x,gint off_y,gint value)
+DECL|function|gimp_scan_convert_compose_value (GimpScanConvert * sc,GeglBuffer * buffer,gint off_x,gint off_y,gdouble value)
 name|gimp_scan_convert_compose_value
 parameter_list|(
 name|GimpScanConvert
@@ -1162,7 +1162,7 @@ parameter_list|,
 name|gint
 name|off_y
 parameter_list|,
-name|gint
+name|gdouble
 name|value
 parameter_list|)
 block|{
@@ -1192,7 +1192,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_scan_convert_render_full (GimpScanConvert * sc,GeglBuffer * buffer,gint off_x,gint off_y,gboolean replace,gboolean antialias,guchar value)
+DECL|function|gimp_scan_convert_render_full (GimpScanConvert * sc,GeglBuffer * buffer,gint off_x,gint off_y,gboolean replace,gboolean antialias,gdouble value)
 name|gimp_scan_convert_render_full
 parameter_list|(
 name|GimpScanConvert
@@ -1215,7 +1215,7 @@ parameter_list|,
 name|gboolean
 name|antialias
 parameter_list|,
-name|guchar
+name|gdouble
 name|value
 parameter_list|)
 block|{
@@ -1629,8 +1629,6 @@ argument_list|,
 literal|0
 argument_list|,
 name|value
-operator|/
-literal|255.0
 argument_list|)
 expr_stmt|;
 name|cairo_append_path

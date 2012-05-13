@@ -150,7 +150,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1fb2340108
+DECL|struct|__anon2c1b21bb0108
 block|{
 DECL|member|width
 name|gint
@@ -2610,7 +2610,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|128
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gimp_scan_convert_free
@@ -3248,9 +3248,9 @@ name|stroke
 operator|->
 name|background
 condition|?
-literal|0
+literal|0.0
 else|:
-literal|255
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|gimp_scan_convert_free

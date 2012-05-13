@@ -166,7 +166,7 @@ parameter_list|,
 name|gboolean
 name|antialias
 parameter_list|,
-name|guchar
+name|gdouble
 name|value
 parameter_list|)
 function_decl|;
@@ -214,7 +214,7 @@ parameter_list|,
 name|gint
 name|off_y
 parameter_list|,
-name|guchar
+name|gdouble
 name|value
 parameter_list|)
 function_decl|;
@@ -259,7 +259,7 @@ parameter_list|,
 name|gint
 name|off_y
 parameter_list|,
-name|gint
+name|gdouble
 name|value
 parameter_list|)
 function_decl|;
