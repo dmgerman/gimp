@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpgrid.h"
 end_include
 
@@ -153,7 +159,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28951b9d0103
+DECL|enum|__anon2b3b555f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -489,6 +495,9 @@ literal|0
 block|,
 literal|0.5
 block|}
+decl_stmt|;
+name|guint64
+name|undo_size
 decl_stmt|;
 name|object_class
 operator|->
@@ -1360,6 +1369,32 @@ operator||
 name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
+name|undo_size
+operator|=
+name|gimp_get_physical_memory_size
+argument_list|()
+expr_stmt|;
+if|if
+condition|(
+name|undo_size
+operator|>
+literal|0
+condition|)
+name|undo_size
+operator|=
+name|undo_size
+operator|/
+literal|8
+expr_stmt|;
+comment|/* 1/8th of the memory */
+else|else
+name|undo_size
+operator|=
+literal|1
+operator|<<
+literal|26
+expr_stmt|;
+comment|/* 64GB */
 name|GIMP_CONFIG_INSTALL_PROP_MEMSIZE
 argument_list|(
 name|object_class
@@ -1374,11 +1409,8 @@ literal|0
 argument_list|,
 name|GIMP_MAX_MEMSIZE
 argument_list|,
-literal|1
-operator|<<
-literal|26
+name|undo_size
 argument_list|,
-comment|/* 64MB */
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
 name|GIMP_CONFIG_PARAM_CONFIRM

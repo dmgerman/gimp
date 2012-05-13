@@ -92,7 +92,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be6c2540103
+DECL|enum|__anon299d30f80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -323,6 +323,9 @@ decl_stmt|;
 name|gint
 name|num_processors
 decl_stmt|;
+name|guint64
+name|memory_size
+decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
@@ -432,6 +435,32 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
+name|memory_size
+operator|=
+name|gimp_get_physical_memory_size
+argument_list|()
+expr_stmt|;
+if|if
+condition|(
+name|memory_size
+operator|>
+literal|0
+condition|)
+name|memory_size
+operator|=
+name|memory_size
+operator|/
+literal|2
+expr_stmt|;
+comment|/* half the memory */
+else|else
+name|memory_size
+operator|=
+literal|1
+operator|<<
+literal|30
+expr_stmt|;
+comment|/* 1GB */
 name|GIMP_CONFIG_INSTALL_PROP_MEMSIZE
 argument_list|(
 name|object_class
@@ -451,11 +480,8 @@ argument_list|,
 name|GIMP_MAX_MEMSIZE
 argument_list|)
 argument_list|,
-literal|1
-operator|<<
-literal|30
+name|memory_size
 argument_list|,
-comment|/* 1GB */
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
 name|GIMP_CONFIG_PARAM_CONFIRM
