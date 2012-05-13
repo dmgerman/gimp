@@ -253,6 +253,60 @@ comment|/* FIXME GIMP_HELP_FILTER_UNSHARP_MASK */
 block|}
 block|,
 block|{
+literal|"filters-ripple"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Ripple..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Displace pixels in a ripple pattern"
+argument_list|)
+block|,
+literal|"gegl:ripple"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_RIPPLE */
+block|}
+block|,
+block|{
+literal|"filters-lens-distortion"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Lens Distortion..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Corrects lens distortion"
+argument_list|)
+block|,
+literal|"gegl:lens-distortion"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_RIPPLE */
+block|}
+block|,
+block|{
 literal|"filters-semi-flatten"
 block|,
 name|GIMP_STOCK_GEGL

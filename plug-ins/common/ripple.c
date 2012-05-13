@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297f02bf0108
+DECL|struct|__anon2bda3d2e0108
 block|{
 DECL|member|period
 name|gint
@@ -478,13 +478,6 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-name|PLUG_IN_PROC
-argument_list|,
-literal|"<Image>/Filters/Distorts"
 argument_list|)
 expr_stmt|;
 block|}
@@ -920,7 +913,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297f02bf0208
+DECL|struct|__anon2bda3d2e0208
 block|{
 DECL|member|pft
 name|GimpPixelFetcher

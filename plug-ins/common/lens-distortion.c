@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b84bd0108
+DECL|struct|__anon2bff075e0108
 block|{
 DECL|member|centre_x
 name|gdouble
@@ -111,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b84bd0208
+DECL|struct|__anon2bff075e0208
 block|{
 DECL|member|normallise_radius_sq
 name|gdouble
@@ -415,13 +415,6 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-name|PLUG_IN_PROC
-argument_list|,
-literal|"<Image>/Filters/Distorts"
 argument_list|)
 expr_stmt|;
 block|}

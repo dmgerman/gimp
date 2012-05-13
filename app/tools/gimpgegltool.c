@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f993ed0103
+DECL|enum|__anon2b5d2cf30103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -355,6 +355,9 @@ literal|"gegl:layer"
 block|,
 literal|"gegl:lens-correct"
 block|,
+literal|"gegl:lens-distortion"
+block|,
+comment|/* in gimp */
 literal|"gegl:opacity"
 block|,
 comment|/* pointless */
@@ -367,6 +370,9 @@ literal|"gegl:polar-coordinates"
 block|,
 comment|/* in gimp */
 literal|"gegl:posterize"
+block|,
+comment|/* in gimp */
+literal|"gegl:ripple"
 block|,
 comment|/* in gimp */
 literal|"gegl:rotate"
