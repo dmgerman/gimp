@@ -303,7 +303,88 @@ block|,
 literal|"gegl:lens-distortion"
 block|,
 name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_RIPPLE */
+comment|/* FIXME GIMP_HELP_FILTER_LENS_DISTORTION */
+block|}
+block|,
+block|{
+literal|"filters-difference-of-gaussians"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Difference of Gaussians..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Edge detection with control of edge thickness"
+argument_list|)
+block|,
+literal|"gegl:difference-of-gaussians"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_DIFFERENCE_OF_GAUSSIANS */
+block|}
+block|,
+block|{
+literal|"filters-laplace"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Laplace"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"High-resolution edge detection"
+argument_list|)
+block|,
+literal|"gegl:edge-laplace"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_LAPLACE */
+block|}
+block|,
+block|{
+literal|"filters-sobel"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Sobel..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Specialized direction-dependent edge-detection"
+argument_list|)
+block|,
+literal|"gegl:edge-sobel"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_SOBEL */
 block|}
 block|,
 block|{

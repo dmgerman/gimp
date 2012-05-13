@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5d2cf30103
+DECL|enum|__anon29da8d850103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -334,8 +334,17 @@ literal|"gegl:contrast-curve"
 block|,
 literal|"gegl:convert-format"
 block|,
+literal|"gegl:difference-of-gaussians"
+block|,
+comment|/* in gimp */
 literal|"gegl:display"
 block|,
+literal|"gegl:edge-laplace"
+block|,
+comment|/* in gimp */
+literal|"gegl:edge-sobel"
+block|,
+comment|/* in gimp */
 literal|"gegl:fill-path"
 block|,
 literal|"gegl:gaussian-blur"
