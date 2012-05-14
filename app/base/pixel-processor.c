@@ -45,7 +45,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"config/gimpbaseconfig.h"
+file|"config/gimpgeglconfig.h"
 end_include
 
 begin_include

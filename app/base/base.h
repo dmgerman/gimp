@@ -20,7 +20,7 @@ begin_function_decl
 name|gboolean
 name|base_init
 parameter_list|(
-name|GimpBaseConfig
+name|GimpGeglConfig
 modifier|*
 name|config
 parameter_list|,

@@ -71,7 +71,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpbaseconfig.h"
+file|"config/gimpgeglconfig.h"
 end_include
 
 begin_include
@@ -164,7 +164,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|base_config
 specifier|static
-name|GimpBaseConfig
+name|GimpGeglConfig
 modifier|*
 name|base_config
 init|=
@@ -178,10 +178,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|base_init (GimpBaseConfig * config,gboolean be_verbose,gboolean use_cpu_accel)
+DECL|function|base_init (GimpGeglConfig * config,gboolean be_verbose,gboolean use_cpu_accel)
 name|base_init
 parameter_list|(
-name|GimpBaseConfig
+name|GimpGeglConfig
 modifier|*
 name|config
 parameter_list|,
@@ -201,7 +201,7 @@ name|temp_dir
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_BASE_CONFIG
+name|GIMP_IS_GEGL_CONFIG
 argument_list|(
 name|config
 argument_list|)
@@ -632,7 +632,7 @@ parameter_list|)
 block|{
 name|tile_cache_set_size
 argument_list|(
-name|GIMP_BASE_CONFIG
+name|GIMP_GEGL_CONFIG
 argument_list|(
 name|config
 argument_list|)
@@ -663,7 +663,7 @@ parameter_list|)
 block|{
 name|pixel_processor_set_num_threads
 argument_list|(
-name|GIMP_BASE_CONFIG
+name|GIMP_GEGL_CONFIG
 argument_list|(
 name|config
 argument_list|)

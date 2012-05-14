@@ -471,7 +471,7 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
-name|GimpBaseConfig
+name|GimpGeglConfig
 modifier|*
 name|config
 decl_stmt|;
@@ -597,7 +597,7 @@ argument_list|)
 expr_stmt|;
 name|config
 operator|=
-name|GIMP_BASE_CONFIG
+name|GIMP_GEGL_CONFIG
 argument_list|(
 name|gimp
 operator|->

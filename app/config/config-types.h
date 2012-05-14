@@ -45,11 +45,11 @@ value|1.0
 end_define
 
 begin_typedef
-DECL|typedef|GimpBaseConfig
+DECL|typedef|GimpGeglConfig
 typedef|typedef
 name|struct
-name|_GimpBaseConfig
-name|GimpBaseConfig
+name|_GimpGeglConfig
+name|GimpGeglConfig
 typedef|;
 end_typedef
 

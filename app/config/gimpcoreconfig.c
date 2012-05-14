@@ -159,7 +159,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3b555f0103
+DECL|enum|__anon2957d96f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -441,14 +441,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpCoreConfig,gimp_core_config,GIMP_TYPE_BASE_CONFIG)
+DECL|function|G_DEFINE_TYPE (GimpCoreConfig,gimp_core_config,GIMP_TYPE_GEGL_CONFIG)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpCoreConfig
 argument_list|,
 argument|gimp_core_config
 argument_list|,
-argument|GIMP_TYPE_BASE_CONFIG
+argument|GIMP_TYPE_GEGL_CONFIG
 argument_list|)
 end_macro
 

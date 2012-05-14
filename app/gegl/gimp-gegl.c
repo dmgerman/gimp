@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpbaseconfig.h"
+file|"config/gimpgeglconfig.h"
 end_include
 
 begin_include
@@ -62,7 +62,7 @@ specifier|static
 name|void
 name|gimp_gegl_notify_tile_cache_size
 parameter_list|(
-name|GimpBaseConfig
+name|GimpGeglConfig
 modifier|*
 name|config
 parameter_list|)
@@ -79,7 +79,7 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|GimpBaseConfig
+name|GimpGeglConfig
 modifier|*
 name|config
 decl_stmt|;
@@ -93,7 +93,7 @@ argument_list|)
 expr_stmt|;
 name|config
 operator|=
-name|GIMP_BASE_CONFIG
+name|GIMP_GEGL_CONFIG
 argument_list|(
 name|gimp
 operator|->
@@ -171,10 +171,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_gegl_notify_tile_cache_size (GimpBaseConfig * config)
+DECL|function|gimp_gegl_notify_tile_cache_size (GimpGeglConfig * config)
 name|gimp_gegl_notify_tile_cache_size
 parameter_list|(
-name|GimpBaseConfig
+name|GimpGeglConfig
 modifier|*
 name|config
 parameter_list|)

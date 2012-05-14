@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpbaseconfig.h"
+file|"config/gimpgeglconfig.h"
 end_include
 
 begin_include
@@ -200,7 +200,7 @@ argument_list|)
 expr_stmt|;
 name|base_init
 argument_list|(
-name|GIMP_BASE_CONFIG
+name|GIMP_GEGL_CONFIG
 argument_list|(
 name|gimp
 operator|->
@@ -336,7 +336,7 @@ argument_list|)
 expr_stmt|;
 name|base_init
 argument_list|(
-name|GIMP_BASE_CONFIG
+name|GIMP_GEGL_CONFIG
 argument_list|(
 name|gimp
 operator|->

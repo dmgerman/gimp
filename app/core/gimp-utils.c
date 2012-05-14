@@ -194,12 +194,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpbaseconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp.h"
 end_include
 
@@ -373,7 +367,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7e7b7a0108
+DECL|struct|__anon2c004f910108
 block|{
 DECL|member|func
 name|GimpMemsizeFunc

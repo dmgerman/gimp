@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * GimpBaseConfig class  * Copyright (C) 2001  Sven Neumann<sven@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * GimpGeglConfig class  * Copyright (C) 2001  Sven Neumann<sven@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -69,7 +69,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbaseconfig.h"
+file|"gimpgeglconfig.h"
 end_include
 
 begin_include
@@ -92,7 +92,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299d30f80103
+DECL|enum|__anon27a87a8a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -119,9 +119,9 @@ end_enum
 begin_function_decl
 specifier|static
 name|void
-name|gimp_base_config_class_init
+name|gimp_gegl_config_class_init
 parameter_list|(
-name|GimpBaseConfigClass
+name|GimpGeglConfigClass
 modifier|*
 name|klass
 parameter_list|)
@@ -131,13 +131,13 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_base_config_init
+name|gimp_gegl_config_init
 parameter_list|(
-name|GimpBaseConfig
+name|GimpGeglConfig
 modifier|*
 name|config
 parameter_list|,
-name|GimpBaseConfigClass
+name|GimpGeglConfigClass
 modifier|*
 name|klass
 parameter_list|)
@@ -147,7 +147,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_base_config_finalize
+name|gimp_gegl_config_finalize
 parameter_list|(
 name|GObject
 modifier|*
@@ -159,7 +159,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_base_config_set_property
+name|gimp_gegl_config_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -183,7 +183,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_base_config_get_property
+name|gimp_gegl_config_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -216,8 +216,8 @@ end_decl_stmt
 
 begin_function
 name|GType
-DECL|function|gimp_base_config_get_type (void)
-name|gimp_base_config_get_type
+DECL|function|gimp_gegl_config_get_type (void)
+name|gimp_gegl_config_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -241,7 +241,7 @@ init|=
 block|{
 sizeof|sizeof
 argument_list|(
-name|GimpBaseConfigClass
+name|GimpGeglConfigClass
 argument_list|)
 block|,
 operator|(
@@ -257,7 +257,7 @@ block|,
 operator|(
 name|GClassInitFunc
 operator|)
-name|gimp_base_config_class_init
+name|gimp_gegl_config_class_init
 block|,
 name|NULL
 block|,
@@ -267,7 +267,7 @@ block|,
 comment|/* class_data     */
 sizeof|sizeof
 argument_list|(
-name|GimpBaseConfig
+name|GimpGeglConfig
 argument_list|)
 block|,
 literal|0
@@ -276,7 +276,7 @@ comment|/* n_preallocs    */
 operator|(
 name|GInstanceInitFunc
 operator|)
-name|gimp_base_config_init
+name|gimp_gegl_config_init
 block|,       }
 decl_stmt|;
 name|config_type
@@ -285,7 +285,7 @@ name|g_type_register_static
 argument_list|(
 name|G_TYPE_OBJECT
 argument_list|,
-literal|"GimpBaseConfig"
+literal|"GimpGeglConfig"
 argument_list|,
 operator|&
 name|config_info
@@ -303,10 +303,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_base_config_class_init (GimpBaseConfigClass * klass)
-name|gimp_base_config_class_init
+DECL|function|gimp_gegl_config_class_init (GimpGeglConfigClass * klass)
+name|gimp_gegl_config_class_init
 parameter_list|(
-name|GimpBaseConfigClass
+name|GimpGeglConfigClass
 modifier|*
 name|klass
 parameter_list|)
@@ -337,19 +337,19 @@ name|object_class
 operator|->
 name|finalize
 operator|=
-name|gimp_base_config_finalize
+name|gimp_gegl_config_finalize
 expr_stmt|;
 name|object_class
 operator|->
 name|set_property
 operator|=
-name|gimp_base_config_set_property
+name|gimp_gegl_config_set_property
 expr_stmt|;
 name|object_class
 operator|->
 name|get_property
 operator|=
-name|gimp_base_config_get_property
+name|gimp_gegl_config_get_property
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
 argument_list|(
@@ -509,14 +509,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_base_config_init (GimpBaseConfig * config,GimpBaseConfigClass * klass)
-name|gimp_base_config_init
+DECL|function|gimp_gegl_config_init (GimpGeglConfig * config,GimpGeglConfigClass * klass)
+name|gimp_gegl_config_init
 parameter_list|(
-name|GimpBaseConfig
+name|GimpGeglConfig
 modifier|*
 name|config
 parameter_list|,
-name|GimpBaseConfigClass
+name|GimpGeglConfigClass
 modifier|*
 name|klass
 parameter_list|)
@@ -540,33 +540,33 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_base_config_finalize (GObject * object)
-name|gimp_base_config_finalize
+DECL|function|gimp_gegl_config_finalize (GObject * object)
+name|gimp_gegl_config_finalize
 parameter_list|(
 name|GObject
 modifier|*
 name|object
 parameter_list|)
 block|{
-name|GimpBaseConfig
+name|GimpGeglConfig
 modifier|*
-name|base_config
+name|gegl_config
 init|=
-name|GIMP_BASE_CONFIG
+name|GIMP_GEGL_CONFIG
 argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
 name|g_free
 argument_list|(
-name|base_config
+name|gegl_config
 operator|->
 name|temp_path
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|base_config
+name|gegl_config
 operator|->
 name|swap_path
 argument_list|)
@@ -592,8 +592,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_base_config_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
-name|gimp_base_config_set_property
+DECL|function|gimp_gegl_config_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
+name|gimp_gegl_config_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -612,11 +612,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpBaseConfig
+name|GimpGeglConfig
 modifier|*
-name|base_config
+name|gegl_config
 init|=
-name|GIMP_BASE_CONFIG
+name|GIMP_GEGL_CONFIG
 argument_list|(
 name|object
 argument_list|)
@@ -631,12 +631,12 @@ name|PROP_TEMP_PATH
 case|:
 name|g_free
 argument_list|(
-name|base_config
+name|gegl_config
 operator|->
 name|temp_path
 argument_list|)
 expr_stmt|;
-name|base_config
+name|gegl_config
 operator|->
 name|temp_path
 operator|=
@@ -651,12 +651,12 @@ name|PROP_SWAP_PATH
 case|:
 name|g_free
 argument_list|(
-name|base_config
+name|gegl_config
 operator|->
 name|swap_path
 argument_list|)
 expr_stmt|;
-name|base_config
+name|gegl_config
 operator|->
 name|swap_path
 operator|=
@@ -669,7 +669,7 @@ break|break;
 case|case
 name|PROP_NUM_PROCESSORS
 case|:
-name|base_config
+name|gegl_config
 operator|->
 name|num_processors
 operator|=
@@ -682,7 +682,7 @@ break|break;
 case|case
 name|PROP_TILE_CACHE_SIZE
 case|:
-name|base_config
+name|gegl_config
 operator|->
 name|tile_cache_size
 operator|=
@@ -715,8 +715,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_base_config_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
-name|gimp_base_config_get_property
+DECL|function|gimp_gegl_config_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
+name|gimp_gegl_config_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -734,11 +734,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpBaseConfig
+name|GimpGeglConfig
 modifier|*
-name|base_config
+name|gegl_config
 init|=
-name|GIMP_BASE_CONFIG
+name|GIMP_GEGL_CONFIG
 argument_list|(
 name|object
 argument_list|)
@@ -755,7 +755,7 @@ name|g_value_set_string
 argument_list|(
 name|value
 argument_list|,
-name|base_config
+name|gegl_config
 operator|->
 name|temp_path
 argument_list|)
@@ -768,7 +768,7 @@ name|g_value_set_string
 argument_list|(
 name|value
 argument_list|,
-name|base_config
+name|gegl_config
 operator|->
 name|swap_path
 argument_list|)
@@ -781,7 +781,7 @@ name|g_value_set_uint
 argument_list|(
 name|value
 argument_list|,
-name|base_config
+name|gegl_config
 operator|->
 name|num_processors
 argument_list|)
@@ -794,7 +794,7 @@ name|g_value_set_uint64
 argument_list|(
 name|value
 argument_list|,
-name|base_config
+name|gegl_config
 operator|->
 name|tile_cache_size
 argument_list|)

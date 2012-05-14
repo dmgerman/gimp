@@ -25,7 +25,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpbaseconfig.h"
+file|"config/gimpgeglconfig.h"
 end_include
 
 begin_define
@@ -95,7 +95,7 @@ struct|struct
 name|_GimpCoreConfig
 block|{
 DECL|member|parent_instance
-name|GimpBaseConfig
+name|GimpGeglConfig
 name|parent_instance
 decl_stmt|;
 DECL|member|language
@@ -339,7 +339,7 @@ struct|struct
 name|_GimpCoreConfigClass
 block|{
 DECL|member|parent_class
-name|GimpBaseConfigClass
+name|GimpGeglConfigClass
 name|parent_class
 decl_stmt|;
 block|}
