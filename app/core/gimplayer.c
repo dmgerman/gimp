@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbe28190103
+DECL|enum|__anon2bd298f40103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -210,7 +210,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbe28190203
+DECL|enum|__anon2bd298f40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3773,10 +3773,6 @@ name|node
 decl_stmt|;
 name|GeglNode
 modifier|*
-name|offset_node
-decl_stmt|;
-name|GeglNode
-modifier|*
 name|source
 decl_stmt|;
 name|GeglNode
@@ -3836,6 +3832,15 @@ argument_list|(
 name|layer
 operator|->
 name|opacity_node
+operator|==
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_warn_if_fail
+argument_list|(
+name|layer
+operator|->
+name|offset_node
 operator|==
 name|NULL
 argument_list|)
@@ -3963,14 +3968,31 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|layer
+operator|->
 name|offset_node
 operator|=
-name|gimp_item_get_offset_node
+name|gegl_node_new_child
+argument_list|(
+name|node
+argument_list|,
+literal|"operation"
+argument_list|,
+literal|"gegl:translate"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_item_add_offset_node
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
+argument_list|,
+name|layer
+operator|->
+name|offset_node
 argument_list|)
 expr_stmt|;
 name|gegl_node_connect_to
@@ -3981,6 +4003,8 @@ name|opacity_node
 argument_list|,
 literal|"output"
 argument_list|,
+name|layer
+operator|->
 name|offset_node
 argument_list|,
 literal|"input"
@@ -4006,6 +4030,8 @@ argument_list|)
 expr_stmt|;
 name|gegl_node_connect_to
 argument_list|(
+name|layer
+operator|->
 name|offset_node
 argument_list|,
 literal|"output"

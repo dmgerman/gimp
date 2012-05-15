@@ -144,9 +144,14 @@ name|GeglNode
 modifier|*
 name|opacity_node
 decl_stmt|;
+DECL|member|offset_node
+name|GeglNode
+modifier|*
+name|offset_node
+decl_stmt|;
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2c472d910108
+DECL|struct|__anon29b428620108
 block|{
 DECL|member|drawable
 name|GimpDrawable
