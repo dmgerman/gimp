@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28db00120103
+DECL|enum|__anon293cbd1d0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -8003,9 +8003,13 @@ name|color
 expr_stmt|;
 if|if
 condition|(
+name|gimp_item_peek_node
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
 name|channel
-operator|->
-name|color_node
+argument_list|)
+argument_list|)
 condition|)
 block|{
 name|GeglColor
@@ -8250,9 +8254,13 @@ name|opacity
 expr_stmt|;
 if|if
 condition|(
+name|gimp_item_peek_node
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
 name|channel
-operator|->
-name|color_node
+argument_list|)
+argument_list|)
 condition|)
 block|{
 name|GeglColor
