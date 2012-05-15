@@ -92,7 +92,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a87a8a0103
+DECL|enum|__anon2781750f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -461,6 +461,23 @@ operator|<<
 literal|30
 expr_stmt|;
 comment|/* 1GB */
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|limiting tile cache size to G_MAXINT
+endif|#
+directive|endif
+name|memory_size
+operator|=
+name|MIN
+argument_list|(
+name|memory_size
+argument_list|,
+name|G_MAXINT
+argument_list|)
+expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_MEMSIZE
 argument_list|(
 name|object_class
@@ -471,15 +488,23 @@ literal|"tile-cache-size"
 argument_list|,
 name|TILE_CACHE_SIZE_BLURB
 argument_list|,
+if|#
+directive|if
+literal|0
+argument_list|0, MIN (G_MAXSIZE, GIMP_MAX_MEMSIZE),
+else|#
+directive|else
 literal|0
 argument_list|,
 name|MIN
 argument_list|(
-name|G_MAXSIZE
+name|G_MAXINT
 argument_list|,
 name|GIMP_MAX_MEMSIZE
 argument_list|)
 argument_list|,
+endif|#
+directive|endif
 name|memory_size
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS

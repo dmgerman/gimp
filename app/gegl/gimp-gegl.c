@@ -100,6 +100,14 @@ operator|->
 name|config
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|limiting tile cache size to G_MAXINT
+endif|#
+directive|endif
 name|g_object_set
 argument_list|(
 name|gegl_config
