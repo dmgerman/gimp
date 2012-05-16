@@ -248,7 +248,7 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-name|gimp_item_get_visible
+name|gimp_item_is_visible
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -464,6 +464,14 @@ operator|<
 name|off_y
 operator|+
 name|gimp_item_get_height
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+operator|&&
+name|gimp_item_is_visible
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
