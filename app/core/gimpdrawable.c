@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c77f6aa0103
+DECL|enum|__anon2c61767b0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3807,14 +3807,14 @@ if|if
 condition|(
 name|fs
 operator|->
-name|opacity_node
+name|layer_offset_node
 condition|)
 block|{
 name|gegl_node_disconnect
 argument_list|(
 name|fs
 operator|->
-name|opacity_node
+name|layer_offset_node
 argument_list|,
 literal|"input"
 argument_list|)
@@ -4300,7 +4300,7 @@ if|if
 condition|(
 name|fs
 operator|->
-name|opacity_node
+name|layer_offset_node
 condition|)
 block|{
 name|gegl_node_add_child
@@ -4324,7 +4324,7 @@ literal|"output"
 argument_list|,
 name|fs
 operator|->
-name|opacity_node
+name|layer_offset_node
 argument_list|,
 literal|"input"
 argument_list|)

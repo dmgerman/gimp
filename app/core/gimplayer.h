@@ -139,19 +139,19 @@ name|gboolean
 name|show_mask
 decl_stmt|;
 comment|/*  show mask or layer?        */
-DECL|member|opacity_node
+DECL|member|layer_offset_node
 name|GeglNode
 modifier|*
-name|opacity_node
+name|layer_offset_node
 decl_stmt|;
-DECL|member|offset_node
+DECL|member|mask_offset_node
 name|GeglNode
 modifier|*
-name|offset_node
+name|mask_offset_node
 decl_stmt|;
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon29b428620108
+DECL|struct|__anon2b0b3f480108
 block|{
 DECL|member|drawable
 name|GimpDrawable
