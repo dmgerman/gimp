@@ -428,8 +428,19 @@ operator|->
 name|saved_operation
 expr_stmt|;
 block|}
-else|else
+elseif|else
+if|if
+condition|(
+name|state
+operator|&
+operator|(
+name|extend_mask
+operator||
+name|modify_mask
+operator|)
+condition|)
 block|{
+comment|/*  else get the operation from the modifier state, but only            *  if there is actually a modifier pressed, so we don't            *  override the "last modifier released" assignment above            */
 name|button_op
 operator|=
 name|gimp_modifiers_to_channel_op
