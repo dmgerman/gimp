@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c52c33e0103
+DECL|enum|__anon28a76e710103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -630,16 +630,6 @@ name|base_x
 parameter_list|,
 name|gint
 name|base_y
-parameter_list|,
-name|GeglBuffer
-modifier|*
-name|dest_buffer
-parameter_list|,
-name|gint
-name|dest_x
-parameter_list|,
-name|gint
-name|dest_y
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3758,7 +3748,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_apply_buffer (GimpDrawable * drawable,GeglBuffer * buffer,const GeglRectangle * buffer_region,gboolean push_undo,const gchar * undo_desc,gdouble opacity,GimpLayerModeEffects mode,GeglBuffer * base_buffer,gint base_x,gint base_y,GeglBuffer * dest_buffer,gint dest_x,gint dest_y)
+DECL|function|gimp_channel_apply_buffer (GimpDrawable * drawable,GeglBuffer * buffer,const GeglRectangle * buffer_region,gboolean push_undo,const gchar * undo_desc,gdouble opacity,GimpLayerModeEffects mode,GeglBuffer * base_buffer,gint base_x,gint base_y)
 name|gimp_channel_apply_buffer
 parameter_list|(
 name|GimpDrawable
@@ -3797,16 +3787,6 @@ name|base_x
 parameter_list|,
 name|gint
 name|base_y
-parameter_list|,
-name|GeglBuffer
-modifier|*
-name|dest_buffer
-parameter_list|,
-name|gint
-name|dest_x
-parameter_list|,
-name|gint
-name|dest_y
 parameter_list|)
 block|{
 name|gimp_drawable_invalidate_boundary
@@ -3840,12 +3820,6 @@ argument_list|,
 name|base_x
 argument_list|,
 name|base_y
-argument_list|,
-name|dest_buffer
-argument_list|,
-name|dest_x
-argument_list|,
-name|dest_y
 argument_list|)
 expr_stmt|;
 name|GIMP_CHANNEL

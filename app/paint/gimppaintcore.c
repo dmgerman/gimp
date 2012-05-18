@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291cb4a70103
+DECL|enum|__anon2b5e47250103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3108,16 +3108,6 @@ argument_list|,
 name|base_buffer
 argument_list|,
 comment|/*  specify an alternative src1  */
-name|core
-operator|->
-name|paint_buffer_x
-argument_list|,
-name|core
-operator|->
-name|paint_buffer_y
-argument_list|,
-name|NULL
-argument_list|,
 name|core
 operator|->
 name|paint_buffer_x

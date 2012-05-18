@@ -1021,12 +1021,6 @@ argument_list|,
 name|x1
 argument_list|,
 name|y1
-argument_list|,
-name|NULL
-argument_list|,
-name|x1
-argument_list|,
-name|y1
 argument_list|)
 expr_stmt|;
 name|g_object_unref

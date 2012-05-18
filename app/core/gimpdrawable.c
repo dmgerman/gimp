@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d838e30103
+DECL|enum|__anon28fa10800103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -5134,7 +5134,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_apply_buffer (GimpDrawable * drawable,GeglBuffer * buffer,const GeglRectangle * buffer_region,gboolean push_undo,const gchar * undo_desc,gdouble opacity,GimpLayerModeEffects mode,GeglBuffer * base_buffer,gint base_x,gint base_y,GeglBuffer * dest_buffer,gint dest_x,gint dest_y)
+DECL|function|gimp_drawable_apply_buffer (GimpDrawable * drawable,GeglBuffer * buffer,const GeglRectangle * buffer_region,gboolean push_undo,const gchar * undo_desc,gdouble opacity,GimpLayerModeEffects mode,GeglBuffer * base_buffer,gint base_x,gint base_y)
 name|gimp_drawable_apply_buffer
 parameter_list|(
 name|GimpDrawable
@@ -5173,16 +5173,6 @@ name|base_x
 parameter_list|,
 name|gint
 name|base_y
-parameter_list|,
-name|GeglBuffer
-modifier|*
-name|dest_buffer
-parameter_list|,
-name|gint
-name|dest_x
-parameter_list|,
-name|gint
-name|dest_y
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -5231,18 +5221,6 @@ name|base_buffer
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|dest_buffer
-operator|==
-name|NULL
-operator|||
-name|GEGL_IS_BUFFER
-argument_list|(
-name|dest_buffer
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|GIMP_DRAWABLE_GET_CLASS
 argument_list|(
 name|drawable
@@ -5269,12 +5247,6 @@ argument_list|,
 name|base_x
 argument_list|,
 name|base_y
-argument_list|,
-name|dest_buffer
-argument_list|,
-name|dest_x
-argument_list|,
-name|dest_y
 argument_list|)
 expr_stmt|;
 block|}
