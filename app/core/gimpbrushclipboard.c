@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3dfb790103
+DECL|enum|__anon2ac5e9090103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -756,7 +756,7 @@ operator|->
 name|mask
 argument_list|)
 argument_list|,
-name|OPAQUE_OPACITY
+literal|255
 argument_list|,
 name|width
 operator|*

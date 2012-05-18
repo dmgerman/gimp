@@ -1010,7 +1010,7 @@ operator|+
 literal|2
 index|]
 argument_list|,
-name|OPAQUE_OPACITY
+literal|255
 argument_list|)
 expr_stmt|;
 block|}

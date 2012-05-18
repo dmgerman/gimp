@@ -19,12 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|"paint-funcs/paint-funcs-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/core-types.h"
 end_include
 
@@ -164,7 +158,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b517080103
+DECL|enum|__anon28bffd990103
 block|{
 DECL|enumerator|SIOX_REFINEMENT_NO_CHANGE
 name|SIOX_REFINEMENT_NO_CHANGE

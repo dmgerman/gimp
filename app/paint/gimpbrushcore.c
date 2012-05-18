@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon277cea810103
+DECL|enum|__anon2aba23ff0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -6059,9 +6059,9 @@ name|m
 operator|++
 operator|)
 condition|?
-name|OPAQUE_OPACITY
+literal|255
 else|:
-name|TRANSPARENT_OPACITY
+literal|0
 expr_stmt|;
 name|d
 operator|+=
