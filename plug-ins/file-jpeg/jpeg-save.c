@@ -301,7 +301,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bde74070108
+DECL|struct|__anon298120a90108
 block|{
 DECL|member|cinfo
 name|struct
@@ -381,7 +381,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bde74070208
+DECL|struct|__anon298120a90208
 block|{
 DECL|member|run
 name|gboolean
@@ -5966,7 +5966,7 @@ if|if
 condition|(
 name|num_fields
 operator|==
-literal|12
+literal|13
 condition|)
 name|memcpy
 argument_list|(
@@ -6596,7 +6596,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bde74070308
+DECL|struct|__anon298120a90308
 block|{
 DECL|member|pub
 name|struct
