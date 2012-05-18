@@ -972,6 +972,8 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
@@ -1083,6 +1085,9 @@ name|GimpPlugInProcedure
 modifier|*
 name|export_proc
 decl_stmt|;
+name|gboolean
+name|overwrite
+decl_stmt|;
 if|if
 condition|(
 name|save_mode
@@ -1115,6 +1120,10 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+name|overwrite
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 elseif|else
 if|if
@@ -1130,6 +1139,10 @@ name|gimp_image_get_imported_uri
 argument_list|(
 name|image
 argument_list|)
+expr_stmt|;
+name|overwrite
+operator|=
+name|TRUE
 expr_stmt|;
 block|}
 if|if
@@ -1195,7 +1208,10 @@ name|GIMP_RUN_WITH_LAST_VALS
 argument_list|,
 name|FALSE
 argument_list|,
-name|TRUE
+name|overwrite
+argument_list|,
+operator|!
+name|overwrite
 argument_list|,
 name|TRUE
 argument_list|)

@@ -573,7 +573,10 @@ name|proc
 argument_list|,
 name|GIMP_RUN_INTERACTIVE
 argument_list|,
-name|TRUE
+operator|!
+name|export
+argument_list|,
+name|FALSE
 argument_list|,
 name|export
 argument_list|,

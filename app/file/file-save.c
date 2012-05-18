@@ -206,7 +206,7 @@ end_comment
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|file_save (Gimp * gimp,GimpImage * image,GimpProgress * progress,const gchar * uri,GimpPlugInProcedure * file_proc,GimpRunMode run_mode,gboolean change_saved_state,gboolean export,GError ** error)
+DECL|function|file_save (Gimp * gimp,GimpImage * image,GimpProgress * progress,const gchar * uri,GimpPlugInProcedure * file_proc,GimpRunMode run_mode,gboolean change_saved_state,gboolean export_backward,gboolean export_forward,GError ** error)
 name|file_save
 parameter_list|(
 name|Gimp
@@ -237,7 +237,10 @@ name|gboolean
 name|change_saved_state
 parameter_list|,
 name|gboolean
-name|export
+name|export_backward
+parameter_list|,
+name|gboolean
+name|export_forward
 parameter_list|,
 name|GError
 modifier|*
@@ -315,6 +318,19 @@ name|GIMP_IS_PLUG_IN_PROCEDURE
 argument_list|(
 name|file_proc
 argument_list|)
+argument_list|,
+name|GIMP_PDB_CALLING_ERROR
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+operator|(
+name|export_backward
+operator|&&
+name|export_forward
+operator|)
+operator|==
+name|FALSE
 argument_list|,
 name|GIMP_PDB_CALLING_ERROR
 argument_list|)
@@ -588,7 +604,20 @@ block|}
 elseif|else
 if|if
 condition|(
-name|export
+name|export_backward
+condition|)
+block|{
+comment|/* We exported the image back to its imported source,            * change nothing about export/import flags, only set            * the export state to clean            */
+name|gimp_image_export_clean_all
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|export_forward
 condition|)
 block|{
 comment|/* Remeber the last entered Export URI for the image. We            * only need to do this explicitly when exporting. It            * happens implicitly when saving since the GimpObject name            * of a GimpImage is the last-save URI            */
@@ -615,7 +644,9 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|export
+name|export_backward
+operator|||
+name|export_forward
 condition|)
 name|gimp_image_exported
 argument_list|(

@@ -63,7 +63,10 @@ name|gboolean
 name|save_a_copy
 parameter_list|,
 name|gboolean
-name|export
+name|export_backward
+parameter_list|,
+name|gboolean
+name|export_forward
 parameter_list|,
 name|gboolean
 name|verbose_cancel

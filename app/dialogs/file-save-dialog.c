@@ -705,6 +705,8 @@ name|dialog
 operator|->
 name|export
 argument_list|,
+name|FALSE
+argument_list|,
 name|dialog
 operator|->
 name|export
@@ -2177,7 +2179,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|file_save_dialog_save_image (GimpProgress * progress,Gimp * gimp,GimpImage * image,const gchar * uri,GimpPlugInProcedure * save_proc,GimpRunMode run_mode,gboolean change_saved_state,gboolean export,gboolean verbose_cancel)
+DECL|function|file_save_dialog_save_image (GimpProgress * progress,Gimp * gimp,GimpImage * image,const gchar * uri,GimpPlugInProcedure * save_proc,GimpRunMode run_mode,gboolean change_saved_state,gboolean export_backward,gboolean export_forward,gboolean verbose_cancel)
 name|file_save_dialog_save_image
 parameter_list|(
 name|GimpProgress
@@ -2208,7 +2210,10 @@ name|gboolean
 name|change_saved_state
 parameter_list|,
 name|gboolean
-name|export
+name|export_backward
+parameter_list|,
+name|gboolean
+name|export_forward
 parameter_list|,
 name|gboolean
 name|verbose_cancel
@@ -2281,7 +2286,9 @@ name|run_mode
 argument_list|,
 name|change_saved_state
 argument_list|,
-name|export
+name|export_backward
+argument_list|,
+name|export_forward
 argument_list|,
 operator|&
 name|error

@@ -48,7 +48,10 @@ name|gboolean
 name|change_saved_state
 parameter_list|,
 name|gboolean
-name|export
+name|export_backward
+parameter_list|,
+name|gboolean
+name|export_forward
 parameter_list|,
 name|GError
 modifier|*
