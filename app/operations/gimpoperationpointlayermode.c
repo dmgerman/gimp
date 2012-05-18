@@ -229,7 +229,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2932b21a0103
+DECL|enum|__anon27b1b92b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -239,6 +239,9 @@ name|PROP_BLEND_MODE
 block|,
 DECL|enumerator|PROP_PREMULTIPLIED
 name|PROP_PREMULTIPLIED
+block|,
+DECL|enumerator|PROP_OPACITY
+name|PROP_OPACITY
 block|}
 enum|;
 end_enum
@@ -321,6 +324,10 @@ name|aux_buf
 parameter_list|,
 name|void
 modifier|*
+name|aux2_buf
+parameter_list|,
+name|void
+modifier|*
 name|out_buf
 parameter_list|,
 name|glong
@@ -338,14 +345,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationPointLayerMode,gimp_operation_point_layer_mode,GEGL_TYPE_OPERATION_POINT_COMPOSER)
+DECL|function|G_DEFINE_TYPE (GimpOperationPointLayerMode,gimp_operation_point_layer_mode,GEGL_TYPE_OPERATION_POINT_COMPOSER3)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpOperationPointLayerMode
 argument_list|,
 argument|gimp_operation_point_layer_mode
 argument_list|,
-argument|GEGL_TYPE_OPERATION_POINT_COMPOSER
+argument|GEGL_TYPE_OPERATION_POINT_COMPOSER3
 argument_list|)
 end_macro
 
@@ -389,11 +396,11 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|GeglOperationPointComposerClass
+name|GeglOperationPointComposer3Class
 modifier|*
 name|point_class
 init|=
-name|GEGL_OPERATION_POINT_COMPOSER_CLASS
+name|GEGL_OPERATION_POINT_COMPOSER3_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -492,6 +499,32 @@ argument_list|,
 name|NULL
 argument_list|,
 name|TRUE
+argument_list|,
+name|GIMP_PARAM_READWRITE
+operator||
+name|G_PARAM_CONSTRUCT
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_class_install_property
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_OPACITY
+argument_list|,
+name|g_param_spec_double
+argument_list|(
+literal|"opacity"
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+literal|0.0
+argument_list|,
+literal|1.0
+argument_list|,
+literal|1.0
 argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
@@ -608,6 +641,19 @@ name|value
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|PROP_OPACITY
+case|:
+name|self
+operator|->
+name|opacity
+operator|=
+name|g_value_get_double
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
 argument_list|(
@@ -682,6 +728,19 @@ argument_list|,
 name|self
 operator|->
 name|premultiplied
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_OPACITY
+case|:
+name|g_value_set_double
+argument_list|(
+name|value
+argument_list|,
+name|self
+operator|->
+name|opacity
 argument_list|)
 expr_stmt|;
 break|break;
@@ -771,6 +830,18 @@ argument_list|,
 literal|"aux"
 argument_list|,
 name|format
+argument_list|)
+expr_stmt|;
+name|gegl_operation_set_format
+argument_list|(
+name|operation
+argument_list|,
+literal|"aux2"
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"Y float"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1247,7 +1318,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_point_layer_mode_process (GeglOperation * operation,void * in_buf,void * aux_buf,void * out_buf,glong samples,const GeglRectangle * roi,gint level)
+DECL|function|gimp_operation_point_layer_mode_process (GeglOperation * operation,void * in_buf,void * aux_buf,void * aux2_buf,void * out_buf,glong samples,const GeglRectangle * roi,gint level)
 name|gimp_operation_point_layer_mode_process
 parameter_list|(
 name|GeglOperation
@@ -1261,6 +1332,10 @@ parameter_list|,
 name|void
 modifier|*
 name|aux_buf
+parameter_list|,
+name|void
+modifier|*
+name|aux2_buf
 parameter_list|,
 name|void
 modifier|*
@@ -1294,6 +1369,13 @@ name|self
 operator|->
 name|blend_mode
 decl_stmt|;
+name|gdouble
+name|opacity
+init|=
+name|self
+operator|->
+name|opacity
+decl_stmt|;
 name|gfloat
 modifier|*
 name|in
@@ -1308,6 +1390,13 @@ init|=
 name|aux_buf
 decl_stmt|;
 comment|/* layer */
+name|gfloat
+modifier|*
+name|mask
+init|=
+name|aux2_buf
+decl_stmt|;
+comment|/* mask */
 name|gfloat
 modifier|*
 name|out
@@ -1355,6 +1444,30 @@ name|sample
 operator|--
 condition|)
 block|{
+if|if
+condition|(
+name|mask
+condition|)
+name|in
+index|[
+name|ALPHA
+index|]
+operator|*=
+operator|(
+operator|*
+name|mask
+operator|)
+operator|*
+name|opacity
+expr_stmt|;
+else|else
+name|in
+index|[
+name|ALPHA
+index|]
+operator|*=
+name|opacity
+expr_stmt|;
 comment|/* XXX: having such a switch in an innerloop is a horrible idea */
 switch|switch
 condition|(
@@ -2083,6 +2196,14 @@ operator|+=
 literal|4
 expr_stmt|;
 name|out
+operator|+=
+literal|4
+expr_stmt|;
+if|if
+condition|(
+name|mask
+condition|)
+name|mask
 operator|+=
 literal|4
 expr_stmt|;

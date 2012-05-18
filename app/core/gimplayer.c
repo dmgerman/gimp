@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f569020103
+DECL|enum|__anon2bd8da620103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -210,7 +210,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f569020203
+DECL|enum|__anon2bd8da620203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -8122,7 +8122,7 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-literal|"value"
+literal|"opacity"
 argument_list|,
 name|layer
 operator|->

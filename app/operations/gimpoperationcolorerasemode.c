@@ -46,6 +46,10 @@ name|aux_buf
 parameter_list|,
 name|void
 modifier|*
+name|aux2_buf
+parameter_list|,
+name|void
+modifier|*
 name|out_buf
 parameter_list|,
 name|glong
@@ -88,7 +92,7 @@ name|GeglOperationClass
 modifier|*
 name|operation_class
 decl_stmt|;
-name|GeglOperationPointComposerClass
+name|GeglOperationPointComposer3Class
 modifier|*
 name|point_class
 decl_stmt|;
@@ -101,7 +105,7 @@ argument_list|)
 expr_stmt|;
 name|point_class
 operator|=
-name|GEGL_OPERATION_POINT_COMPOSER_CLASS
+name|GEGL_OPERATION_POINT_COMPOSER3_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -146,7 +150,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_color_erase_mode_process (GeglOperation * operation,void * in_buf,void * aux_buf,void * out_buf,glong samples,const GeglRectangle * roi,gint level)
+DECL|function|gimp_operation_color_erase_mode_process (GeglOperation * operation,void * in_buf,void * aux_buf,void * aux2_buf,void * out_buf,glong samples,const GeglRectangle * roi,gint level)
 name|gimp_operation_color_erase_mode_process
 parameter_list|(
 name|GeglOperation
@@ -160,6 +164,10 @@ parameter_list|,
 name|void
 modifier|*
 name|aux_buf
+parameter_list|,
+name|void
+modifier|*
+name|aux2_buf
 parameter_list|,
 name|void
 modifier|*

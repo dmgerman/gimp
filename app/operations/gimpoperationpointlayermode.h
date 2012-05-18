@@ -94,7 +94,7 @@ struct|struct
 name|_GimpOperationPointLayerModeClass
 block|{
 DECL|member|parent_class
-name|GeglOperationPointComposerClass
+name|GeglOperationPointComposer3Class
 name|parent_class
 decl_stmt|;
 block|}
@@ -107,7 +107,7 @@ struct|struct
 name|_GimpOperationPointLayerMode
 block|{
 DECL|member|parent_instance
-name|GeglOperationPointComposer
+name|GeglOperationPointComposer3
 name|parent_instance
 decl_stmt|;
 DECL|member|blend_mode
@@ -117,6 +117,10 @@ decl_stmt|;
 DECL|member|premultiplied
 name|gboolean
 name|premultiplied
+decl_stmt|;
+DECL|member|opacity
+name|gdouble
+name|opacity
 decl_stmt|;
 block|}
 struct|;
