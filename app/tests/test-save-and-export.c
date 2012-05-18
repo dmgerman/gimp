@@ -788,7 +788,10 @@ name|TRUE
 comment|/*change_saved_state*/
 argument_list|,
 name|FALSE
-comment|/*export*/
+comment|/*export_backward*/
+argument_list|,
+name|FALSE
+comment|/*export_forward*/
 argument_list|,
 name|NULL
 comment|/*error*/
@@ -938,8 +941,11 @@ argument_list|,
 name|FALSE
 comment|/*change_saved_state*/
 argument_list|,
+name|FALSE
+comment|/*export_backward*/
+argument_list|,
 name|TRUE
-comment|/*export*/
+comment|/*export_forward*/
 argument_list|,
 name|NULL
 comment|/*error*/
@@ -1187,8 +1193,11 @@ argument_list|,
 name|FALSE
 comment|/*change_saved_state*/
 argument_list|,
+name|FALSE
+comment|/*export_backward*/
+argument_list|,
 name|TRUE
-comment|/*export*/
+comment|/*export_forward*/
 argument_list|,
 name|NULL
 comment|/*error*/
