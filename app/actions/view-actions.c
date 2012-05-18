@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpprojection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpactiongroup.h"
 end_include
 
@@ -1016,37 +1010,6 @@ block|,
 name|FALSE
 block|,
 name|GIMP_HELP_VIEW_FULLSCREEN
-block|}
-block|,
-block|{
-literal|"view-use-gegl"
-block|,
-name|GIMP_STOCK_GEGL
-block|,
-name|NC_
-argument_list|(
-literal|"view-action"
-argument_list|,
-literal|"Use GEGL"
-argument_list|)
-block|,
-name|NULL
-block|,
-name|NC_
-argument_list|(
-literal|"view-action"
-argument_list|,
-literal|"Use GEGL to create this window's projection"
-argument_list|)
-block|,
-name|G_CALLBACK
-argument_list|(
-name|view_use_gegl_cmd_callback
-argument_list|)
-block|,
-name|FALSE
-block|,
-name|NULL
 block|}
 block|}
 decl_stmt|;
@@ -2388,11 +2351,6 @@ init|=
 name|FALSE
 decl_stmt|;
 comment|/* able to revert zoom? */
-name|gboolean
-name|use_gegl
-init|=
-name|FALSE
-decl_stmt|;
 if|if
 condition|(
 name|display
@@ -2462,19 +2420,6 @@ name|gimp_display_shell_scale_can_revert
 argument_list|(
 name|shell
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|image
-condition|)
-name|use_gegl
-operator|=
-name|gimp_image_get_projection
-argument_list|(
-name|image
-argument_list|)
-operator|->
-name|use_gegl
 expr_stmt|;
 block|}
 DECL|macro|SET_ACTIVE (action,condition)
@@ -3082,13 +3027,6 @@ argument_list|,
 name|display
 operator|&&
 name|fullscreen
-argument_list|)
-expr_stmt|;
-name|SET_ACTIVE
-argument_list|(
-literal|"view-use-gegl"
-argument_list|,
-name|use_gegl
 argument_list|)
 expr_stmt|;
 if|if

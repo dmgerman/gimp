@@ -150,12 +150,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimplayer-project.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimplayermask.h"
 end_include
 
@@ -179,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b286720103
+DECL|enum|__anon2ae63ece0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -210,7 +204,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b286720203
+DECL|enum|__anon2ae63ece0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1497,12 +1491,6 @@ operator|->
 name|get_active_mask
 operator|=
 name|gimp_layer_get_active_mask
-expr_stmt|;
-name|drawable_class
-operator|->
-name|project_region
-operator|=
-name|gimp_layer_project_region
 expr_stmt|;
 name|klass
 operator|->

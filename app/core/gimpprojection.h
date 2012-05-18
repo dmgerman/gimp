@@ -202,10 +202,6 @@ DECL|member|invalidate_preview
 name|gboolean
 name|invalidate_preview
 decl_stmt|;
-DECL|member|use_gegl
-name|gboolean
-name|use_gegl
-decl_stmt|;
 block|}
 struct|;
 end_struct
