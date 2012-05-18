@@ -327,7 +327,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ecaf9a0103
+DECL|enum|__anon28ff0a770103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -5399,36 +5399,6 @@ argument_list|)
 expr_stmt|;
 return|return
 name|filename
-return|;
-block|}
-end_function
-
-begin_function
-name|gboolean
-DECL|function|gimp_use_gegl (Gimp * gimp)
-name|gimp_use_gegl
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|)
-block|{
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_GIMP
-argument_list|(
-name|gimp
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-return|return
-name|gimp
-operator|->
-name|config
-operator|->
-name|use_gegl
 return|;
 block|}
 end_function

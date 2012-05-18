@@ -159,7 +159,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2957d96f0103
+DECL|enum|__anon276e427c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -310,9 +310,6 @@ name|PROP_SAVE_DOCUMENT_HISTORY
 block|,
 DECL|enumerator|PROP_QUICK_MASK_COLOR
 name|PROP_QUICK_MASK_COLOR
-block|,
-DECL|enumerator|PROP_USE_GEGL
-name|PROP_USE_GEGL
 block|,
 comment|/* ignored, only for backward compatibility: */
 DECL|enumerator|PROP_INSTALL_COLORMAP
@@ -1612,29 +1609,6 @@ operator|&
 name|red
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
-argument_list|)
-expr_stmt|;
-comment|/*  not serialized  */
-name|g_object_class_install_property
-argument_list|(
-name|object_class
-argument_list|,
-name|PROP_USE_GEGL
-argument_list|,
-name|g_param_spec_boolean
-argument_list|(
-literal|"use-gegl"
-argument_list|,
-literal|"Use GEGL"
-argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|,
-name|GIMP_PARAM_READWRITE
-operator||
-name|G_PARAM_CONSTRUCT
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  only for backward compatibility:  */
@@ -2957,19 +2931,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_USE_GEGL
-case|:
-name|core_config
-operator|->
-name|use_gegl
-operator|=
-name|g_value_get_boolean
-argument_list|(
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
 name|PROP_INSTALL_COLORMAP
 case|:
 case|case
@@ -3663,19 +3624,6 @@ operator|&
 name|core_config
 operator|->
 name|quick_mask_color
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|PROP_USE_GEGL
-case|:
-name|g_value_set_boolean
-argument_list|(
-name|value
-argument_list|,
-name|core_config
-operator|->
-name|use_gegl
 argument_list|)
 expr_stmt|;
 break|break;
