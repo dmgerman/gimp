@@ -110,10 +110,6 @@ DECL|member|parent_instance
 name|GeglOperationPointComposer3
 name|parent_instance
 decl_stmt|;
-DECL|member|blend_mode
-name|GimpLayerModeEffects
-name|blend_mode
-decl_stmt|;
 DECL|member|premultiplied
 name|gboolean
 name|premultiplied

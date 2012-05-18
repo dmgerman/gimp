@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd8da620103
+DECL|enum|__anon2947a4470103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -210,7 +210,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd8da620203
+DECL|enum|__anon2947a4470203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3861,7 +3861,7 @@ name|layer
 operator|->
 name|mode
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gegl_node_set
@@ -8322,7 +8322,7 @@ name|layer
 operator|->
 name|mode
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
