@@ -620,19 +620,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|CombinationMode
-name|gimp_image_get_combination_mode
-parameter_list|(
-name|GimpImageType
-name|dest_type
-parameter_list|,
-name|gint
-name|src_bytes
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 specifier|const
 name|Babl
 modifier|*

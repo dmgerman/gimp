@@ -77,12 +77,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"composite/gimp-composite.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"base.h"
 end_include
 
@@ -378,13 +372,6 @@ name|base_num_processors_notify
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_composite_init
-argument_list|(
-name|be_verbose
-argument_list|,
-name|use_cpu_accel
 argument_list|)
 expr_stmt|;
 return|return

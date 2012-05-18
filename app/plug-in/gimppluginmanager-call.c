@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"composite/gimp-composite.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
 end_include
 
@@ -760,12 +754,19 @@ operator|->
 name|show_help_button
 operator|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME what to do with config.use_cpu_accel
+endif|#
+directive|endif
 name|config
 operator|.
 name|use_cpu_accel
 operator|=
-name|gimp_composite_use_cpu_accel
-argument_list|()
+name|FALSE
 expr_stmt|;
 name|config
 operator|.
