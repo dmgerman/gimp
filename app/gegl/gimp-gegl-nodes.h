@@ -123,7 +123,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_gegl_node_set_layer_mode
+name|gimp_gegl_mode_node_set
 parameter_list|(
 name|GeglNode
 modifier|*
@@ -131,6 +131,9 @@ name|node
 parameter_list|,
 name|GimpLayerModeEffects
 name|mode
+parameter_list|,
+name|gdouble
+name|opacity
 parameter_list|,
 name|gboolean
 name|premultiplied

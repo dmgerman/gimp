@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2947a4470103
+DECL|enum|__anon29b286720103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -210,7 +210,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2947a4470203
+DECL|enum|__anon29b286720203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3853,7 +3853,7 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-name|gimp_gegl_node_set_layer_mode
+name|gimp_gegl_mode_node_set
 argument_list|(
 name|mode_node
 argument_list|,
@@ -3861,20 +3861,11 @@ name|layer
 operator|->
 name|mode
 argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|gegl_node_set
-argument_list|(
-name|mode_node
-argument_list|,
-literal|"opacity"
-argument_list|,
 name|layer
 operator|->
 name|opacity
 argument_list|,
-name|NULL
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* the layer's offset node */
@@ -8112,8 +8103,12 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|gegl_node_set
-argument_list|(
+name|GeglNode
+modifier|*
+name|mode_node
+decl_stmt|;
+name|mode_node
+operator|=
 name|gimp_drawable_get_mode_node
 argument_list|(
 name|GIMP_DRAWABLE
@@ -8121,14 +8116,20 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|gimp_gegl_mode_node_set
+argument_list|(
+name|mode_node
 argument_list|,
-literal|"opacity"
+name|layer
+operator|->
+name|mode
 argument_list|,
 name|layer
 operator|->
 name|opacity
 argument_list|,
-name|NULL
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -8314,13 +8315,17 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_gegl_node_set_layer_mode
+name|gimp_gegl_mode_node_set
 argument_list|(
 name|mode_node
 argument_list|,
 name|layer
 operator|->
 name|mode
+argument_list|,
+name|layer
+operator|->
+name|opacity
 argument_list|,
 name|FALSE
 argument_list|)

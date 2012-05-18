@@ -626,24 +626,15 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_gegl_node_set_layer_mode
+name|gimp_gegl_mode_node_set
 argument_list|(
 name|mode_node
 argument_list|,
 name|mode
 argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|gegl_node_set
-argument_list|(
-name|mode_node
-argument_list|,
-literal|"opacity"
-argument_list|,
 name|opacity
 argument_list|,
-name|NULL
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gegl_node_connect_to
@@ -891,8 +882,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gegl_node_set_layer_mode (GeglNode * node,GimpLayerModeEffects mode,gboolean premultiplied)
-name|gimp_gegl_node_set_layer_mode
+DECL|function|gimp_gegl_mode_node_set (GeglNode * node,GimpLayerModeEffects mode,gdouble opacity,gboolean premultiplied)
+name|gimp_gegl_mode_node_set
 parameter_list|(
 name|GeglNode
 modifier|*
@@ -900,6 +891,9 @@ name|node
 parameter_list|,
 name|GimpLayerModeEffects
 name|mode
+parameter_list|,
+name|gdouble
+name|opacity
 parameter_list|,
 name|gboolean
 name|premultiplied
@@ -1143,6 +1137,10 @@ argument_list|,
 literal|"operation"
 argument_list|,
 name|operation
+argument_list|,
+literal|"opacity"
+argument_list|,
+name|opacity
 argument_list|,
 literal|"premultiplied"
 argument_list|,

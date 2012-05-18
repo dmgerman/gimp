@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6c4ce90103
+DECL|enum|__anon27570e4a0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -4129,7 +4129,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_gegl_node_set_layer_mode
+name|gimp_gegl_mode_node_set
 argument_list|(
 name|drawable
 operator|->
@@ -4142,25 +4142,12 @@ argument_list|(
 name|fs
 argument_list|)
 argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|gegl_node_set
-argument_list|(
-name|drawable
-operator|->
-name|private
-operator|->
-name|fs_mode_node
-argument_list|,
-literal|"opacity"
-argument_list|,
 name|gimp_layer_get_opacity
 argument_list|(
 name|fs
 argument_list|)
 argument_list|,
-name|NULL
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
