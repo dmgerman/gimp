@@ -57,12 +57,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"base/pixel-processor.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc-blurbs.h"
 end_include
 
@@ -90,9 +84,17 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_define
+DECL|macro|GIMP_MAX_NUM_THREADS
+define|#
+directive|define
+name|GIMP_MAX_NUM_THREADS
+value|16
+end_define
+
 begin_enum
 enum|enum
-DECL|enum|__anon2781750f0103
+DECL|enum|__anon2a9742610103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
