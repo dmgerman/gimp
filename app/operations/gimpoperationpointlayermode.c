@@ -42,18 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint-funcs/paint-funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpoperationpointlayermode.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2921353e0103
+DECL|enum|__anon29fd61ca0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
