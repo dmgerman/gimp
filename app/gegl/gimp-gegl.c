@@ -120,6 +120,14 @@ directive|warning
 warning|limiting tile cache size to G_MAXINT
 endif|#
 directive|endif
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|not setting GeglConfig:threads
+endif|#
+directive|endif
 name|g_object_set
 argument_list|(
 name|gegl_config
@@ -147,12 +155,12 @@ argument_list|,
 name|G_MAXINT
 argument_list|)
 argument_list|,
-literal|"threads"
-argument_list|,
-name|config
-operator|->
-name|num_processors
-argument_list|,
+if|#
+directive|if
+literal|0
+argument_list|"threads",     config->num_processors,
+endif|#
+directive|endif
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -255,20 +263,12 @@ modifier|*
 name|config
 parameter_list|)
 block|{
-name|g_object_set
-argument_list|(
-name|gegl_config
-argument_list|()
-argument_list|,
-literal|"threads"
-argument_list|,
-name|config
-operator|->
-name|num_processors
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|g_object_set (gegl_config (),                 "threads", config->num_processors,                 NULL);
+endif|#
+directive|endif
 block|}
 end_function
 
