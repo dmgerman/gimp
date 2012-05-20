@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bedf2dd0103
+DECL|enum|__anon2c09b9d50103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -659,12 +659,6 @@ operator|.
 name|update_areas
 operator|=
 name|NULL
-expr_stmt|;
-name|proj
-operator|->
-name|construct_flag
-operator|=
-name|FALSE
 expr_stmt|;
 block|}
 end_function

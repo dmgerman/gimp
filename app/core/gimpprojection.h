@@ -194,10 +194,6 @@ DECL|member|idle_render
 name|GimpProjectionIdleRender
 name|idle_render
 decl_stmt|;
-DECL|member|construct_flag
-name|gboolean
-name|construct_flag
-decl_stmt|;
 DECL|member|invalidate_preview
 name|gboolean
 name|invalidate_preview
