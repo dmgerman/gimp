@@ -94,26 +94,6 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"debug-benchmark-projection"
-block|,
-name|NULL
-block|,
-literal|"Benchmark _Projection"
-block|,
-name|NULL
-block|,
-literal|"Invalidates the entire projection, measures the time it takes to "
-literal|"validate (render) it again, and print the result to stdout."
-block|,
-name|G_CALLBACK
-argument_list|(
-name|debug_benchmark_projection_cmd_callback
-argument_list|)
-block|,
-name|NULL
-block|}
-block|,
-block|{
 literal|"debug-show-image-graph"
 block|,
 name|NULL
