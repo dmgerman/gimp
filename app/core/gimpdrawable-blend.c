@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299733530108
+DECL|struct|__anon2b1c6cf20108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299733530208
+DECL|struct|__anon2b1c6cf20208
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -760,7 +760,7 @@ expr_stmt|;
 comment|/*  Always create an alpha temp buf (for generality) */
 name|buffer
 operator|=
-name|gimp_gegl_buffer_new
+name|gegl_buffer_new
 argument_list|(
 name|GEGL_RECTANGLE
 argument_list|(
@@ -2274,7 +2274,7 @@ expr_stmt|;
 comment|/*  allocate the selection mask copy  */
 name|temp_buffer
 operator|=
-name|gimp_gegl_buffer_new
+name|gegl_buffer_new
 argument_list|(
 name|GEGL_RECTANGLE
 argument_list|(

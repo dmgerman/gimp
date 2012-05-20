@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5e47250103
+DECL|enum|__anon27fea6ec0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1393,7 +1393,7 @@ name|core
 operator|->
 name|undo_buffer
 operator|=
-name|gimp_gegl_buffer_dup
+name|gegl_buffer_dup
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(
@@ -1464,7 +1464,7 @@ name|core
 operator|->
 name|saved_proj_buffer
 operator|=
-name|gimp_gegl_buffer_dup
+name|gegl_buffer_dup
 argument_list|(
 name|buffer
 argument_list|)
@@ -1488,7 +1488,7 @@ name|core
 operator|->
 name|canvas_buffer
 operator|=
-name|gimp_gegl_buffer_new
+name|gegl_buffer_new
 argument_list|(
 name|GEGL_RECTANGLE
 argument_list|(
@@ -1794,7 +1794,7 @@ argument_list|)
 expr_stmt|;
 name|buffer
 operator|=
-name|gimp_gegl_buffer_new
+name|gegl_buffer_new
 argument_list|(
 name|GEGL_RECTANGLE
 argument_list|(

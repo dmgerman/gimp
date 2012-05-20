@@ -87,7 +87,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbf5c890103
+DECL|enum|__anon2b8bd9560103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -2271,7 +2271,7 @@ name|image_map
 operator|->
 name|undo_buffer
 operator|=
-name|gimp_gegl_buffer_new
+name|gegl_buffer_new
 argument_list|(
 name|GEGL_RECTANGLE
 argument_list|(

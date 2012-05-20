@@ -845,7 +845,7 @@ expr_stmt|;
 block|}
 name|buffer
 operator|=
-name|gimp_gegl_buffer_new
+name|gegl_buffer_new
 argument_list|(
 name|GEGL_RECTANGLE
 argument_list|(

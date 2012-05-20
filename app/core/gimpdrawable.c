@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fa10800103
+DECL|enum|__anon29aaad7c0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3482,7 +3482,7 @@ condition|)
 block|{
 name|buffer
 operator|=
-name|gimp_gegl_buffer_new
+name|gegl_buffer_new
 argument_list|(
 name|GEGL_RECTANGLE
 argument_list|(
@@ -3614,7 +3614,7 @@ argument_list|)
 decl_stmt|;
 name|tmp
 operator|=
-name|gimp_gegl_buffer_dup
+name|gegl_buffer_dup
 argument_list|(
 name|buffer
 argument_list|)
