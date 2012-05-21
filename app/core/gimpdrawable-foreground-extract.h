@@ -3,6 +3,12 @@ begin_comment
 comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -10,7 +16,6 @@ name|__GIMP_DRAWABLE_FOREGROUND_EXTRACT_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_DRAWABLE_FOREGROUND_EXTRACT_H__
 define|#
 directive|define
 name|__GIMP_DRAWABLE_FOREGROUND_EXTRACT_H__
@@ -20,103 +25,13 @@ begin_comment
 comment|/*  general API (as seen from the PDB)  */
 end_comment
 
-begin_function_decl
-name|void
-name|gimp_drawable_foreground_extract
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|GimpForegroundExtractMode
-name|mode
-parameter_list|,
-name|GimpDrawable
-modifier|*
-name|mask
-parameter_list|,
-name|GimpProgress
-modifier|*
-name|progress
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
+unit|void       gimp_drawable_foreground_extract (GimpDrawable              *drawable,                                              GimpForegroundExtractMode  mode,                                              GimpDrawable              *mask,                                              GimpProgress              *progress);
 comment|/*  SIOX specific API  */
 end_comment
 
-begin_function_decl
-name|SioxState
-modifier|*
-name|gimp_drawable_foreground_extract_siox_init
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|,
-name|gint
-name|width
-parameter_list|,
-name|gint
-name|height
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_drawable_foreground_extract_siox
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|mask
-parameter_list|,
-name|SioxState
-modifier|*
-name|state
-parameter_list|,
-name|SioxRefinementType
-name|refinemane
-parameter_list|,
-name|gint
-name|smoothness
-parameter_list|,
-specifier|const
-name|gdouble
-name|sensitivity
-index|[
-literal|3
-index|]
-parameter_list|,
-name|gboolean
-name|multiblob
-parameter_list|,
-name|GimpProgress
-modifier|*
-name|progress
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_drawable_foreground_extract_siox_done
-parameter_list|(
-name|SioxState
-modifier|*
-name|state
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
+unit|SioxState * gimp_drawable_foreground_extract_siox_init   (GimpDrawable *drawable,                                                           gint          x,                                                           gint          y,                                                           gint          width,                                                           gint          height); void        gimp_drawable_foreground_extract_siox  (GimpDrawable       *mask,                                                     SioxState          *state,                                                     SioxRefinementType  refinemane,                                                     gint                smoothness,                                                     const gdouble       sensitivity[3],                                                     gboolean            multiblob,                                                     GimpProgress       *progress); void        gimp_drawable_foreground_extract_siox_done (SioxState      *state);
 endif|#
 directive|endif
 end_endif
@@ -124,6 +39,11 @@ end_endif
 begin_comment
 comment|/*  __GIMP_DRAWABLE_FOREGROUND_EXTRACT_H__  */
 end_comment
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 end_unit
 
