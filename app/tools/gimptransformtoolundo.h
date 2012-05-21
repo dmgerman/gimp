@@ -112,11 +112,12 @@ DECL|member|trans_info
 name|TransInfo
 name|trans_info
 decl_stmt|;
-DECL|member|original
-name|TileManager
-modifier|*
-name|original
-decl_stmt|;
+if|#
+directive|if
+literal|0
+block|TileManager       *original;
+endif|#
+directive|endif
 block|}
 struct|;
 end_struct
