@@ -273,7 +273,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2760ec5c0103
+DECL|enum|__anon2b3bbf260103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -386,7 +386,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2760ec5c0208
+DECL|struct|__anon2b3bbf260208
 block|{
 DECL|member|window
 name|GimpImageWindow
@@ -6448,6 +6448,18 @@ name|active_display
 argument_list|,
 name|NULL
 comment|/*new_entry_id*/
+argument_list|)
+expr_stmt|;
+name|gimp_context_set_display
+argument_list|(
+name|gimp_get_user_context
+argument_list|(
+name|private
+operator|->
+name|gimp
+argument_list|)
+argument_list|,
+name|active_display
 argument_list|)
 expr_stmt|;
 name|gimp_ui_manager_update
