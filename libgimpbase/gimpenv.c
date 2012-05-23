@@ -921,13 +921,16 @@ endif|#
 directive|endif
 end_endif
 
+begin_comment
+comment|/**  * gimp_installation_directory:  *  * Returns the top installation directory of GIMP. On Unix the  * compile-time defined installation prefix is used. On Windows, the  * installation directory as deduced from the executable's full  * filename is used. On OSX we ask [NSBundle mainBundle] for the  * resource path to check if GIMP is part of a relocatable bundle.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * GLib, which isn't necessarily UTF-8. (On Windows it always is  * UTF-8.)  *  * Since: GIMP 2.8  *  * Returns: The toplevel installation directory of GIMP.  **/
+end_comment
+
 begin_function
-specifier|static
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_toplevel_directory (void)
-name|gimp_toplevel_directory
+DECL|function|gimp_installation_directory (void)
+name|gimp_installation_directory
 parameter_list|(
 name|void
 parameter_list|)
@@ -1675,7 +1678,7 @@ name|path
 operator|=
 name|g_strconcat
 argument_list|(
-name|gimp_toplevel_directory
+name|gimp_installation_directory
 argument_list|()
 argument_list|,
 literal|"\\"
@@ -1757,7 +1760,7 @@ name|path
 operator|=
 name|g_build_filename
 argument_list|(
-name|gimp_toplevel_directory
+name|gimp_installation_directory
 argument_list|()
 argument_list|,
 operator|*
@@ -1803,7 +1806,7 @@ name|path
 operator|=
 name|g_build_filename
 argument_list|(
-name|gimp_toplevel_directory
+name|gimp_installation_directory
 argument_list|()
 argument_list|,
 operator|*
