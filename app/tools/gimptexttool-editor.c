@@ -2990,6 +2990,10 @@ operator|!=
 operator|-
 literal|1
 operator|&&
+name|new_index
+operator|!=
+name|G_MAXINT
+operator|&&
 name|g_utf8_get_char
 argument_list|(
 name|text
@@ -2999,6 +3003,7 @@ argument_list|)
 operator|==
 name|word_joiner
 condition|)
+block|{
 name|pango_layout_move_cursor_visually
 argument_list|(
 name|layout
@@ -3019,6 +3024,7 @@ operator|&
 name|trailing
 argument_list|)
 expr_stmt|;
+block|}
 name|count
 operator|++
 expr_stmt|;
