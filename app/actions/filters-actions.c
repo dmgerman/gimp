@@ -91,6 +91,33 @@ index|[]
 init|=
 block|{
 block|{
+literal|"filters-color-reduction"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Color _Reduction..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Reduce the number of colors in the image, with optional dithering"
+argument_list|)
+block|,
+literal|"gegl:color-reduction"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_COLOR_TEMPERATURE */
+block|}
+block|,
+block|{
 literal|"filters-color-temperature"
 block|,
 name|GIMP_STOCK_GEGL
@@ -619,6 +646,13 @@ name|condition
 parameter_list|)
 define|\
 value|gimp_action_group_set_action_sensitive (group, action, (condition) != 0)
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-color-reduction"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-color-temperature"
