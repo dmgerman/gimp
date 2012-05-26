@@ -34,6 +34,15 @@ directive|include
 file|"operations/operations-types.h"
 end_include
 
+begin_typedef
+DECL|typedef|GimpApplicator
+typedef|typedef
+name|struct
+name|_GimpApplicator
+name|GimpApplicator
+typedef|;
+end_typedef
+
 begin_endif
 endif|#
 directive|endif

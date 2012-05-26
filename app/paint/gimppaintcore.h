@@ -202,6 +202,11 @@ name|GArray
 modifier|*
 name|stroke_buffer
 decl_stmt|;
+DECL|member|applicator
+name|GimpApplicator
+modifier|*
+name|applicator
+decl_stmt|;
 block|}
 struct|;
 end_struct
