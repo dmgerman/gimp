@@ -3551,6 +3551,8 @@ if|if
 condition|(
 name|keyboard
 condition|)
+name|return_val
+operator|=
 name|gimp_controller_keyboard_key_press
 argument_list|(
 name|GIMP_CONTROLLER_KEYBOARD
@@ -3562,10 +3564,6 @@ name|kevent
 argument_list|)
 expr_stmt|;
 block|}
-name|return_val
-operator|=
-name|TRUE
-expr_stmt|;
 break|break;
 case|case
 name|GDK_KEY_space
