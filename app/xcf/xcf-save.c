@@ -6053,7 +6053,6 @@ name|tmp_error
 init|=
 name|NULL
 decl_stmt|;
-comment|/* XXX use an appropriate format here */
 name|format
 operator|=
 name|gegl_buffer_get_format
@@ -7115,7 +7114,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9bcb7e0108
+DECL|struct|__anon2af95ddf0108
 block|{
 DECL|member|info
 name|XcfInfo
