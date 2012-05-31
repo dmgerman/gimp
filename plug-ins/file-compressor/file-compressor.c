@@ -132,6 +132,25 @@ directive|include
 file|<glib/gstdio.h>
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|_O_BINARY
+end_ifndef
+
+begin_define
+DECL|macro|_O_BINARY
+define|#
+directive|define
+name|_O_BINARY
+value|0
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -1887,6 +1906,8 @@ argument_list|(
 name|infile
 argument_list|,
 name|O_RDONLY
+operator||
+name|_O_BINARY
 argument_list|,
 literal|0
 argument_list|)
@@ -2109,6 +2130,8 @@ argument_list|,
 name|O_CREAT
 operator||
 name|O_WRONLY
+operator||
+name|_O_BINARY
 argument_list|,
 literal|0664
 argument_list|)
@@ -2304,6 +2327,8 @@ argument_list|(
 name|infile
 argument_list|,
 name|O_RDONLY
+operator||
+name|_O_BINARY
 argument_list|,
 literal|0
 argument_list|)
@@ -2520,6 +2545,8 @@ argument_list|,
 name|O_CREAT
 operator||
 name|O_WRONLY
+operator||
+name|_O_BINARY
 argument_list|,
 literal|0664
 argument_list|)
