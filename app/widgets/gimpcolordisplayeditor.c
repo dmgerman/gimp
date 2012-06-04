@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0b69030103
+DECL|enum|__anon29f936de0103
 block|{
 DECL|enumerator|SRC_COLUMN_NAME
 name|SRC_COLUMN_NAME
@@ -82,7 +82,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0b69030203
+DECL|enum|__anon29f936de0203
 block|{
 DECL|enumerator|DEST_COLUMN_ENABLED
 name|DEST_COLUMN_ENABLED
@@ -1592,6 +1592,38 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|editor
+operator|->
+name|selected
+condition|)
+block|{
+name|g_object_remove_weak_pointer
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|editor
+operator|->
+name|selected
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+operator|&
+name|editor
+operator|->
+name|selected
+argument_list|)
+expr_stmt|;
+name|editor
+operator|->
+name|selected
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|editor
