@@ -844,7 +844,7 @@ name|layer
 decl_stmt|;
 name|image
 operator|=
-name|gimp_test_utils_create_image_from_dalog
+name|gimp_test_utils_create_image_from_dialog
 argument_list|(
 name|gimp
 argument_list|)

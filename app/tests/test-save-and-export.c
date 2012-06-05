@@ -298,7 +298,7 @@ name|GimpImage
 modifier|*
 name|image
 init|=
-name|gimp_test_utils_create_image_from_dalog
+name|gimp_test_utils_create_image_from_dialog
 argument_list|(
 name|gimp
 argument_list|)
@@ -877,7 +877,7 @@ name|GimpImage
 modifier|*
 name|image
 init|=
-name|gimp_test_utils_create_image_from_dalog
+name|gimp_test_utils_create_image_from_dialog
 argument_list|(
 name|gimp
 argument_list|)

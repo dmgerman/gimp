@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_RECTANGLE_SELECT_TOOL_H__
+name|__GIMP_APP_TEST_UTILS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_RECTANGLE_SELECT_TOOL_H__
+DECL|macro|__GIMP_APP_TEST_UTILS_H__
 define|#
 directive|define
-name|__GIMP_RECTANGLE_SELECT_TOOL_H__
+name|__GIMP_APP_TEST_UTILS_H__
 end_define
 
 begin_function_decl
@@ -110,7 +110,7 @@ end_function_decl
 begin_function_decl
 name|GimpImage
 modifier|*
-name|gimp_test_utils_create_image_from_dalog
+name|gimp_test_utils_create_image_from_dialog
 parameter_list|(
 name|Gimp
 modifier|*
@@ -125,7 +125,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_RECTANGLE_SELECT_TOOL_H__ */
+comment|/* __GIMP_APP_TEST_UTILS_H__ */
 end_comment
 
 end_unit

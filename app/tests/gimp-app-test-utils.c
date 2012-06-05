@@ -520,8 +520,8 @@ end_comment
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|gimp_test_utils_create_image_from_dalog (Gimp * gimp)
-name|gimp_test_utils_create_image_from_dalog
+DECL|function|gimp_test_utils_create_image_from_dialog (Gimp * gimp)
+name|gimp_test_utils_create_image_from_dialog
 parameter_list|(
 name|Gimp
 modifier|*
