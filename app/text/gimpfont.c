@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon296b050e0103
+DECL|enum|__anon27f20e7b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1390,7 +1390,7 @@ comment|/* This is a table of scripts and corresponding short sample strings    
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon296b050e0208
+DECL|struct|__anon27f20e7b0208
 block|{
 DECL|member|script
 specifier|const
@@ -1861,6 +1861,15 @@ name|PANGO_FC_FONT
 argument_list|(
 name|font
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|face
+operator|!=
+name|NULL
+argument_list|,
+literal|"Aa"
 argument_list|)
 expr_stmt|;
 name|ot_info
