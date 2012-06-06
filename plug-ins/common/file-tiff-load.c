@@ -147,7 +147,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcd0dac0108
+DECL|struct|__anon2a2035900108
 block|{
 DECL|member|compression
 name|gint
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcd0dac0208
+DECL|struct|__anon2a2035900208
 block|{
 DECL|member|ID
 name|gint32
@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcd0dac0308
+DECL|struct|__anon2a2035900308
 block|{
 DECL|member|o_pages
 name|gint
@@ -2590,7 +2590,7 @@ name|base_format
 operator|=
 name|babl_format
 argument_list|(
-literal|"R'G'B'A u8"
+literal|"RGBA u8"
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -2607,7 +2607,7 @@ name|base_format
 operator|=
 name|babl_format
 argument_list|(
-literal|"R'G'B' u8"
+literal|"RGB u8"
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -2623,7 +2623,7 @@ name|base_format
 operator|=
 name|babl_format
 argument_list|(
-literal|"R'G'B'A u16"
+literal|"RGBA u16"
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -2640,7 +2640,7 @@ name|base_format
 operator|=
 name|babl_format
 argument_list|(
-literal|"R'G'B' u16"
+literal|"RGB u16"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2680,7 +2680,7 @@ name|base_format
 operator|=
 name|babl_format
 argument_list|(
-literal|"R'G'B'A u8"
+literal|"RGBA u8"
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -2694,7 +2694,7 @@ name|base_format
 operator|=
 name|babl_format
 argument_list|(
-literal|"R'G'B'A u16"
+literal|"RGBA u16"
 argument_list|)
 expr_stmt|;
 block|}
@@ -5473,20 +5473,12 @@ name|guchar
 modifier|*
 name|s
 init|=
-operator|(
-operator|(
-name|guchar
-operator|*
-operator|)
 name|iter
 operator|->
 name|data
 index|[
 literal|0
 index|]
-operator|)
-operator|+
-name|offset
 decl_stmt|;
 name|guchar
 modifier|*
@@ -5506,6 +5498,10 @@ name|iter
 operator|->
 name|length
 decl_stmt|;
+name|s
+operator|+=
+name|offset
+expr_stmt|;
 while|while
 condition|(
 name|length
