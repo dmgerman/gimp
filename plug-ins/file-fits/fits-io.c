@@ -4757,6 +4757,13 @@ argument_list|,
 name|typ_fstring
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|fdat
+operator|!=
+name|NULL
+condition|)
+block|{
 name|strcpy
 argument_list|(
 name|hdulist
@@ -4768,6 +4775,20 @@ operator|->
 name|fstring
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|strcpy
+argument_list|(
+name|errmsg
+argument_list|,
+literal|"No valid XTENSION header found."
+argument_list|)
+expr_stmt|;
+goto|goto
+name|err_return
+goto|;
+block|}
 block|}
 name|FITS_DECODE_CARD
 argument_list|(
