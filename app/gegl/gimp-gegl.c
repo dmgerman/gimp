@@ -209,9 +209,7 @@ name|gimp_babl_init
 argument_list|()
 expr_stmt|;
 name|gimp_operations_init
-argument_list|(
-name|gimp
-argument_list|)
+argument_list|()
 expr_stmt|;
 block|}
 end_function

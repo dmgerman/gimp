@@ -323,22 +323,12 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_operations_init (Gimp * gimp)
+DECL|function|gimp_operations_init (void)
 name|gimp_operations_init
 parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
+name|void
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_GIMP
-argument_list|(
-name|gimp
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_OPERATION_BORDER
