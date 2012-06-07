@@ -147,7 +147,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295b50d60108
+DECL|struct|__anon2b4566160108
 block|{
 DECL|member|compression
 name|gint
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295b50d60208
+DECL|struct|__anon2b4566160208
 block|{
 DECL|member|ID
 name|gint32
@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295b50d60308
+DECL|struct|__anon2b4566160308
 block|{
 DECL|member|o_pages
 name|gint
@@ -397,57 +397,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|read_separate
-parameter_list|(
-specifier|const
-name|guchar
-modifier|*
-name|source
-parameter_list|,
-name|channel_data
-modifier|*
-name|channel
-parameter_list|,
-name|gushort
-name|bps
-parameter_list|,
-name|gint
-name|startcol
-parameter_list|,
-name|gint
-name|startrow
-parameter_list|,
-name|gint
-name|rows
-parameter_list|,
-name|gint
-name|cols
-parameter_list|,
-name|gboolean
-name|alpha
-parameter_list|,
-name|gint
-name|extra
-parameter_list|,
-name|gint
-name|sample
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|fill_bit2byte
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|tiff_warning
 parameter_list|(
 specifier|const
@@ -568,19 +517,6 @@ name|GimpPageSelectorTarget
 name|target
 init|=
 name|GIMP_PAGE_SELECTOR_TARGET_LAYERS
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|bit2byte
-specifier|static
-name|guchar
-name|bit2byte
-index|[
-literal|256
-operator|*
-literal|8
-index|]
 decl_stmt|;
 end_decl_stmt
 
@@ -5710,6 +5646,8 @@ name|one_row
 decl_stmt|;
 name|gint
 name|i
+decl_stmt|,
+name|compindex
 decl_stmt|;
 name|g_printerr
 argument_list|(
@@ -5887,6 +5825,10 @@ name|src_format
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|compindex
+operator|=
+literal|0
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -5962,15 +5904,6 @@ name|j
 operator|++
 control|)
 block|{
-name|g_printerr
-argument_list|(
-literal|"i: %d, j: %d\n"
-argument_list|,
-name|i
-argument_list|,
-name|j
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|y
@@ -6020,7 +5953,6 @@ name|imageWidth
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/* that sample index is wrong */
 if|if
 condition|(
 name|TIFFIsTiled
@@ -6040,9 +5972,7 @@ name|y
 argument_list|,
 literal|0
 argument_list|,
-name|i
-operator|+
-name|j
+name|compindex
 argument_list|)
 expr_stmt|;
 else|else
@@ -6054,9 +5984,7 @@ name|buffer
 argument_list|,
 name|y
 argument_list|,
-name|i
-operator|+
-name|j
+name|compindex
 argument_list|)
 expr_stmt|;
 name|cols
@@ -6241,6 +6169,9 @@ name|offset
 operator|+=
 name|src_bpp
 expr_stmt|;
+name|compindex
+operator|++
+expr_stmt|;
 block|}
 name|progress
 operator|+=
@@ -6249,34 +6180,6 @@ expr_stmt|;
 block|}
 block|}
 end_function
-
-begin_comment
-comment|/* Step through all<= 8-bit samples in an image */
-end_comment
-
-begin_define
-DECL|macro|NEXTSAMPLE (var)
-define|#
-directive|define
-name|NEXTSAMPLE
-parameter_list|(
-name|var
-parameter_list|)
-define|\
-value|{                                           \       if (bitsleft == 0)                      \       {                                       \           source++;                           \           bitsleft = 8;                       \       }                                       \       bitsleft -= bps;                        \       var = ( *source>> bitsleft )& maxval; \   }
-end_define
-
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_endif
-unit|static void read_separate (const guchar *source,                channel_data *channel,                gushort       bps,                gint          startrow,                gint          startcol,                gint          rows,                gint          cols,                gboolean      alpha,                gint          extra,                gint          sample) {   guchar *dest;   gint    col, row, c;   gint    bitsleft = 8, maxval = (1<< bps) - 1;    if (bps> 8)     {       g_message ("Unsupported layout");       gimp_quit ();     }    if (sample< channel[0].drawable->bpp)     c = 0;   else     c = (sample - channel[0].drawable->bpp) + 4;    gimp_pixel_rgn_init (&(channel[c].pixel_rgn), channel[c].drawable,                          startcol, startrow, cols, rows, TRUE, FALSE);    gimp_pixel_rgn_get_rect (&(channel[c].pixel_rgn), channel[c].pixels,                            startcol, startrow, cols, rows);    for (row = 0; row< rows; ++row)     {       dest = channel[c].pixels + row * cols * channel[c].drawable->bpp;        if (c == 0)         {           for (col = 0; col< cols; ++col)             NEXTSAMPLE(dest[col * channel[0].drawable->bpp + sample]);         }       else         {           for (col = 0; col< cols; ++col)             NEXTSAMPLE(dest[col]);         }     }    gimp_pixel_rgn_set_rect (&(channel[c].pixel_rgn), channel[c].pixels,                            startcol, startrow, cols, rows); }
-endif|#
-directive|endif
-end_endif
 
 begin_if
 if|#
