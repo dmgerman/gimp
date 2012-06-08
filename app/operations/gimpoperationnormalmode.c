@@ -159,6 +159,14 @@ literal|"description"
 argument_list|,
 literal|"GIMP normal mode operation"
 argument_list|,
+literal|"reference-image"
+argument_list|,
+literal|"normal-mode.png"
+argument_list|,
+literal|"reference-composition"
+argument_list|,
+literal|"normal-mode.xml"
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
