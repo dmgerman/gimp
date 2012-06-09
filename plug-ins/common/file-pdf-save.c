@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib/gstdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<cairo-pdf.h>
 end_include
 
@@ -136,7 +142,7 @@ value|120
 end_define
 
 begin_typedef
-DECL|struct|__anon28843f610108
+DECL|struct|__anon27e6ef110108
 typedef|typedef
 struct|struct
 block|{
@@ -159,7 +165,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28843f610208
+DECL|struct|__anon27e6ef110208
 typedef|typedef
 struct|struct
 block|{
@@ -188,7 +194,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28843f610308
+DECL|struct|__anon27e6ef110308
 typedef|typedef
 struct|struct
 block|{
@@ -208,7 +214,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon28843f610403
+DECL|enum|__anon27e6ef110403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -227,7 +233,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon28843f610508
+DECL|struct|__anon27e6ef110508
 typedef|typedef
 struct|struct
 block|{
@@ -601,7 +607,7 @@ argument_list|()
 end_macro
 
 begin_typedef
-DECL|enum|__anon28843f610603
+DECL|enum|__anon27e6ef110603
 typedef|typedef
 enum|enum
 block|{
@@ -646,7 +652,7 @@ value|5
 end_define
 
 begin_typedef
-DECL|enum|__anon28843f610703
+DECL|enum|__anon27e6ef110703
 typedef|typedef
 enum|enum
 block|{
@@ -931,6 +937,48 @@ end_function
 
 begin_function
 specifier|static
+name|cairo_status_t
+DECL|function|write_func (void * fp,const unsigned char * data,unsigned int size)
+name|write_func
+parameter_list|(
+name|void
+modifier|*
+name|fp
+parameter_list|,
+specifier|const
+name|unsigned
+name|char
+modifier|*
+name|data
+parameter_list|,
+name|unsigned
+name|int
+name|size
+parameter_list|)
+block|{
+return|return
+name|fwrite
+argument_list|(
+name|data
+argument_list|,
+literal|1
+argument_list|,
+name|size
+argument_list|,
+name|fp
+argument_list|)
+operator|==
+name|size
+condition|?
+name|CAIRO_STATUS_SUCCESS
+else|:
+name|CAIRO_STATUS_WRITE_ERROR
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|void
 DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
@@ -1070,6 +1118,10 @@ modifier|*
 name|mask_image
 init|=
 name|NULL
+decl_stmt|;
+name|FILE
+modifier|*
+name|fp
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -1231,11 +1283,22 @@ expr_stmt|;
 return|return;
 block|}
 block|}
-name|pdf_file
+name|fp
 operator|=
-name|cairo_pdf_surface_create
+name|g_fopen
 argument_list|(
 name|file_name
+argument_list|,
+literal|"wb"
+argument_list|)
+expr_stmt|;
+name|pdf_file
+operator|=
+name|cairo_pdf_surface_create_for_stream
+argument_list|(
+name|write_func
+argument_list|,
+name|fp
 argument_list|,
 literal|1
 argument_list|,
@@ -1857,6 +1920,11 @@ expr_stmt|;
 name|cairo_destroy
 argument_list|(
 name|cr
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
 argument_list|)
 expr_stmt|;
 comment|/* Finally done, let's save the parameters */
