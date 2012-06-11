@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1280590103
+DECL|enum|__anon287625450103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -424,7 +424,7 @@ literal|"input"
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"R'G'B'A float"
+literal|"RGBA float"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -448,7 +448,7 @@ literal|"output"
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"R'G'B'A float"
+literal|"RGBA float"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -566,14 +566,16 @@ name|self
 operator|->
 name|value
 operator|*
-name|src
-index|[
-literal|0
-index|]
+operator|*
+name|aux
 expr_stmt|;
 name|src
 operator|+=
 literal|4
+expr_stmt|;
+name|aux
+operator|+=
+literal|1
 expr_stmt|;
 name|dest
 operator|+=
