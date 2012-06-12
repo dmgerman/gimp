@@ -1141,6 +1141,11 @@ if|if
 condition|(
 operator|!
 name|save_proc
+operator|&&
+operator|!
+name|dialog
+operator|->
+name|export
 condition|)
 block|{
 name|ext
@@ -1151,6 +1156,8 @@ block|}
 elseif|else
 if|if
 condition|(
+name|save_proc
+operator|&&
 name|save_proc
 operator|->
 name|extensions_list
