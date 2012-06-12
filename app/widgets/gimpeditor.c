@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2961a65f0103
+DECL|enum|__anon2afc12530103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2295,7 +2295,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2961a65f0208
+DECL|struct|__anon2afc12530208
 block|{
 DECL|member|mod_mask
 name|GdkModifierType
@@ -2654,6 +2654,18 @@ name|action
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|help_id
+operator|=
+name|g_object_get_qdata
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|action
+argument_list|)
+argument_list|,
+name|GIMP_HELP_ID
+argument_list|)
+expr_stmt|;
 name|old_child
 operator|=
 name|gtk_bin_get_child
@@ -2926,18 +2938,6 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-name|help_id
-operator|=
-name|g_object_get_qdata
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|action
-argument_list|)
-argument_list|,
-name|GIMP_HELP_ID
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|tooltip
