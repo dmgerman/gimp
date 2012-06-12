@@ -31,6 +31,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_item_toggle_exclusive_linked
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

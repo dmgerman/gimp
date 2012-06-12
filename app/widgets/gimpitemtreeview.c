@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon273d82c30103
+DECL|enum|__anon27a22e690103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -6251,7 +6251,7 @@ name|gimp_item_set_linked
 expr_stmt|;
 name|exclusive
 operator|=
-name|NULL
+name|gimp_item_toggle_exclusive_linked
 expr_stmt|;
 break|break;
 default|default:
