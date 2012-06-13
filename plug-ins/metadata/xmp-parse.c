@@ -115,7 +115,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29551ec30103
+DECL|enum|__anon2a97cf290103
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29551ec30208
+DECL|struct|__anon2a97cf290208
 block|{
 DECL|member|depth
 name|gint
@@ -4298,8 +4298,6 @@ name|STATE_INSIDE_ALT_LI_RSC_IMG
 case|:
 block|{
 name|size_t
-name|len
-decl_stmt|,
 name|max_size
 decl_stmt|;
 name|guchar
@@ -4321,16 +4319,10 @@ name|DEBUG_XMP_PARSER
 comment|/* g_print ("XMP: Pushing text:\n%s\n", text); */
 endif|#
 directive|endif
-name|len
-operator|=
-name|text_len
-operator|-
-name|text_len
-expr_stmt|;
 name|max_size
 operator|=
 operator|(
-name|len
+name|text_len
 operator|/
 literal|4
 operator|)
