@@ -153,7 +153,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2356450103
+DECL|enum|__anon2bbd29a40103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -2144,6 +2144,15 @@ argument_list|,
 name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
+comment|/* draw an item at 40,80 in screen coordinates */
+comment|//gint x, y;
+comment|//gimp_display_shell_untransform_xy (gimp_display_get_shell (tool->display),
+comment|//                                 40, 80,&x,&y, TRUE);
+comment|//gimp_draw_tool_add_handle (draw_tool,
+comment|//                           GIMP_HANDLE_SQUARE,
+comment|//                           x, y,
+comment|//                           5, 5,
+comment|//                           GIMP_HANDLE_ANCHOR_CENTER);
 name|gimp_draw_tool_pop_group
 argument_list|(
 name|draw_tool
