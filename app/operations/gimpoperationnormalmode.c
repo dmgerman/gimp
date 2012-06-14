@@ -96,7 +96,6 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationNormalMode,gimp_operation_normal_mode,GIMP_TYPE_OPERATION_POINT_LAYER_MODE)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpOperationNormalMode
@@ -115,9 +114,35 @@ name|parent_class
 value|gimp_operation_normal_mode_parent_class
 end_define
 
+begin_decl_stmt
+specifier|static
+specifier|const
+name|gchar
+modifier|*
+name|reference_xml
+init|=
+literal|"<?xml version='1.0' encoding='UTF-8'?>"
+literal|"<gegl>"
+literal|"<node operation='gimp:normal-mode'>"
+literal|"<node operation='gegl:load'>"
+literal|"<params>"
+literal|"<param name='path'>blending-test-B.png</param>"
+literal|"</params>"
+literal|"</node>"
+literal|"</node>"
+literal|"<node operation='gegl:load'>"
+literal|"<params>"
+literal|"<param name='path'>blending-test-A.png</param>"
+literal|"</params>"
+literal|"</node>"
+literal|"</gegl>"
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 specifier|static
 name|void
+DECL|function|gimp_operation_normal_mode_class_init (GimpOperationNormalModeClass * klass)
 name|gimp_operation_normal_mode_class_init
 parameter_list|(
 name|GimpOperationNormalModeClass
@@ -165,7 +190,7 @@ literal|"normal-mode.png"
 argument_list|,
 literal|"reference-composition"
 argument_list|,
-literal|"normal-mode.xml"
+name|reference_xml
 argument_list|,
 name|NULL
 argument_list|)

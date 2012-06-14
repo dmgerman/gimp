@@ -79,7 +79,6 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationSoftlightMode,gimp_operation_softlight_mode,GIMP_TYPE_OPERATION_POINT_LAYER_MODE)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpOperationSoftlightMode
@@ -90,9 +89,35 @@ argument|GIMP_TYPE_OPERATION_POINT_LAYER_MODE
 argument_list|)
 end_macro
 
+begin_decl_stmt
+specifier|static
+specifier|const
+name|gchar
+modifier|*
+name|reference_xml
+init|=
+literal|"<?xml version='1.0' encoding='UTF-8'?>"
+literal|"<gegl>"
+literal|"<node operation='gimp:softlight-mode'>"
+literal|"<node operation='gegl:load'>"
+literal|"<params>"
+literal|"<param name='path'>B.png</param>"
+literal|"</params>"
+literal|"</node>"
+literal|"</node>"
+literal|"<node operation='gegl:load'>"
+literal|"<params>"
+literal|"<param name='path'>A.png</param>"
+literal|"</params>"
+literal|"</node>"
+literal|"</gegl>"
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 specifier|static
 name|void
+DECL|function|gimp_operation_softlight_mode_class_init (GimpOperationSoftlightModeClass * klass)
 name|gimp_operation_softlight_mode_class_init
 parameter_list|(
 name|GimpOperationSoftlightModeClass
@@ -133,6 +158,14 @@ argument_list|,
 literal|"description"
 argument_list|,
 literal|"GIMP softlight mode operation"
+argument_list|,
+literal|"reference-image"
+argument_list|,
+literal|"soft-light-mode.png"
+argument_list|,
+literal|"reference-composition"
+argument_list|,
+name|reference_xml
 argument_list|,
 name|NULL
 argument_list|)
