@@ -22,18 +22,10 @@ directive|include
 file|"gimpdrawtool.h"
 end_include
 
-begin_define
-DECL|macro|TRANS_INFO_SIZE
-define|#
-directive|define
-name|TRANS_INFO_SIZE
-value|10
-end_define
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5284f10103
+DECL|enum|__anon29f34cbd0103
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -79,12 +71,59 @@ block|,
 comment|/* pivot for rotation and scaling */
 DECL|enumerator|TRANSFORM_HANDLE_CENTER
 name|TRANSFORM_HANDLE_CENTER
+block|,
 comment|/* for moving */
+comment|/* extra handles for unified tool */
+DECL|enumerator|TRANSFORM_HANDLE_NW_P
+name|TRANSFORM_HANDLE_NW_P
+block|,
+comment|/* perspective handles */
+DECL|enumerator|TRANSFORM_HANDLE_NE_P
+name|TRANSFORM_HANDLE_NE_P
+block|,
+DECL|enumerator|TRANSFORM_HANDLE_SW_P
+name|TRANSFORM_HANDLE_SW_P
+block|,
+DECL|enumerator|TRANSFORM_HANDLE_SE_P
+name|TRANSFORM_HANDLE_SE_P
+block|,
+DECL|enumerator|TRANSFORM_HANDLE_N_S
+name|TRANSFORM_HANDLE_N_S
+block|,
+comment|/* shearing handles */
+DECL|enumerator|TRANSFORM_HANDLE_S_S
+name|TRANSFORM_HANDLE_S_S
+block|,
+DECL|enumerator|TRANSFORM_HANDLE_E_S
+name|TRANSFORM_HANDLE_E_S
+block|,
+DECL|enumerator|TRANSFORM_HANDLE_W_S
+name|TRANSFORM_HANDLE_W_S
+block|,
+DECL|enumerator|TRANSFORM_HANDLE_ROTATION
+name|TRANSFORM_HANDLE_ROTATION
+block|,
+comment|/* rotation handle */
+DECL|enumerator|TRANSFORM_HANDLE_NUM
+name|TRANSFORM_HANDLE_NUM
+comment|/* keep this last so *handles[] is the right size */
 DECL|typedef|TransformAction
 block|}
 name|TransformAction
 typedef|;
 end_typedef
+
+begin_comment
+comment|/* This is not the number of items in the enum above, but the max size of the  * enums at the top of each transformation tool, stored in trans_info and related */
+end_comment
+
+begin_define
+DECL|macro|TRANS_INFO_SIZE
+define|#
+directive|define
+name|TRANS_INFO_SIZE
+value|10
+end_define
 
 begin_typedef
 DECL|typedef|TransInfo
@@ -260,7 +299,7 @@ name|px
 decl_stmt|,
 name|py
 decl_stmt|;
-comment|/*  pivot point (for rotation)        */
+comment|/*  pivot point (for rotation/scaling)*/
 DECL|member|aspect
 name|gdouble
 name|aspect
@@ -378,9 +417,7 @@ name|GimpCanvasItem
 modifier|*
 name|handles
 index|[
-name|TRANSFORM_HANDLE_CENTER
-operator|+
-literal|1
+name|TRANSFORM_HANDLE_NUM
 index|]
 decl_stmt|;
 DECL|member|progress_text
