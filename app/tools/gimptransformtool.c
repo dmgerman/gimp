@@ -2163,7 +2163,8 @@ if|if
 condition|(
 name|key
 operator|==
-name|GDK_MOD1_MASK
+name|gimp_get_extend_selection_mask
+argument_list|()
 condition|)
 name|g_object_set
 argument_list|(

@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ad9bb00103
+DECL|enum|__anon2c933f520103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1546,7 +1546,7 @@ operator|=
 operator|(
 name|_
 argument_list|(
-literal|"Move points  (%s)"
+literal|"From center  (%s)"
 argument_list|)
 operator|)
 expr_stmt|;
@@ -1557,11 +1557,14 @@ operator|=
 operator|(
 name|_
 argument_list|(
-literal|"Keep aspect when scaling  (%s)"
+literal|"Constrain/snap movement  (%s)"
 argument_list|)
 operator|)
 expr_stmt|;
 block|}
+comment|/* The constrain behaviour is not what is in the spec, it would make the help labels essays */
+comment|/* spec:    * constrain move,rotate,perspective = ctrl    * keep aspect scale = shift    * from centre scale,shear = ctrl    * free shear = shift    * centre/corner rotate = ctrl    * real life:    * constrain move,rotate,perspective,scale(aspect),shear,rotation axis = ctrl    * from centre scale, shear = shift    */
+comment|/* TODO: should we just hardcode ctrl and shift here instead of using the not really applicably named functions? */
 if|if
 condition|(
 name|alternate
@@ -1583,7 +1586,8 @@ name|alternate
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
-name|GDK_MOD1_MASK
+name|gimp_get_extend_selection_mask
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
