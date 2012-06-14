@@ -1502,7 +1502,12 @@ name|function
 operator|==
 name|TRANSFORM_CREATING
 condition|)
-name|gimp_transform_tool_oper_update
+name|GIMP_TOOL_GET_CLASS
+argument_list|(
+name|tool
+argument_list|)
+operator|->
+name|oper_update
 argument_list|(
 name|tool
 argument_list|,

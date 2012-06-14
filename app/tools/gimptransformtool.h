@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f34cbd0103
+DECL|enum|__anon27f9696c0103
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -65,14 +65,14 @@ DECL|enumerator|TRANSFORM_HANDLE_W
 name|TRANSFORM_HANDLE_W
 block|,
 comment|/* west       */
-DECL|enumerator|TRANSFORM_HANDLE_PIVOT
-name|TRANSFORM_HANDLE_PIVOT
-block|,
-comment|/* pivot for rotation and scaling */
 DECL|enumerator|TRANSFORM_HANDLE_CENTER
 name|TRANSFORM_HANDLE_CENTER
 block|,
 comment|/* for moving */
+DECL|enumerator|TRANSFORM_HANDLE_PIVOT
+name|TRANSFORM_HANDLE_PIVOT
+block|,
+comment|/* pivot for rotation and scaling */
 comment|/* extra handles for unified tool */
 DECL|enumerator|TRANSFORM_HANDLE_NW_P
 name|TRANSFORM_HANDLE_NW_P
