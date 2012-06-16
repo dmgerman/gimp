@@ -153,7 +153,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fd84970103
+DECL|enum|__anon2a1ac71c0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -3995,7 +3995,7 @@ operator|->
 name|constrain
 decl_stmt|;
 name|gboolean
-name|fromcenter
+name|frompivot
 init|=
 name|options
 operator|->
@@ -4937,6 +4937,7 @@ operator|+
 name|dy
 expr_stmt|;
 block|}
+comment|/* scaling via corner */
 if|if
 condition|(
 name|function
@@ -4956,8 +4957,7 @@ operator|==
 name|TRANSFORM_HANDLE_SW
 condition|)
 block|{
-comment|//TODO: scale through corner
-comment|/* Scaling through scale handles means translating one corner points,        * with all sides at constant angles. */
+comment|/* Scaling through scale handles means translating one corner point,        * with all sides at constant angles. */
 name|gint
 name|this
 decl_stmt|,
@@ -5165,6 +5165,30 @@ name|y
 operator|=
 name|dy
 block|}
+decl_stmt|,
+name|pivot
+init|=
+block|{
+operator|.
+name|x
+operator|=
+name|ppivot_x
+block|,
+operator|.
+name|y
+operator|=
+name|ppivot_y
+block|}
+decl_stmt|,
+name|nt
+decl_stmt|,
+name|nr
+decl_stmt|,
+name|nl
+decl_stmt|,
+name|no
+init|=
+name|op
 decl_stmt|;
 comment|/* when the keep aspect transformation constraint is enabled, the        * translation shall only be along the diagonal that runs trough        * this corner point. */
 if|if
@@ -5195,7 +5219,7 @@ expr_stmt|;
 block|}
 comment|/* Move the corner being interacted with */
 comment|/*    rp---------tp        *   /           /\<- p, the interaction vector        *  /           /  tp        * op----------/        *        */
-name|tp
+name|nt
 operator|=
 name|vectoradd
 argument_list|(
@@ -5204,41 +5228,124 @@ argument_list|,
 name|p
 argument_list|)
 expr_stmt|;
+comment|/* in frompivot mode, the part of the frame over the pivot must stay        * in the same place during the operation */
+if|if
+condition|(
+name|frompivot
+condition|)
+block|{
+comment|//TODO: this is wrong, only works in the simple case where pivot point
+comment|//is in the center and the transform is affine
+comment|//Maybe it would work better to simply do this last by generating the
+comment|//transform matrix, applying it to the pivot point, the undoing that
+comment|//movement from everything?
+comment|/* Move the opposite point's x component and y component the same            * ratio away from the pivot point as this point */
+name|GimpVector2
+name|old
+init|=
+name|vectorsubtract
+argument_list|(
+name|pivot
+argument_list|,
+name|tp
+argument_list|)
+decl_stmt|;
+name|GimpVector2
+name|new
+init|=
+name|vectorsubtract
+argument_list|(
+name|pivot
+argument_list|,
+name|nt
+argument_list|)
+decl_stmt|;
+name|no
+operator|=
+name|vectorsubtract
+argument_list|(
+name|no
+argument_list|,
+name|pivot
+argument_list|)
+expr_stmt|;
+name|no
+operator|.
+name|x
+operator|*=
+name|new
+operator|.
+name|x
+operator|/
+name|old
+operator|.
+name|x
+expr_stmt|;
+name|no
+operator|.
+name|y
+operator|*=
+name|new
+operator|.
+name|y
+operator|/
+name|old
+operator|.
+name|y
+expr_stmt|;
+name|no
+operator|=
+name|vectoradd
+argument_list|(
+name|no
+argument_list|,
+name|pivot
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* Where the corner to the right and left would go, need these to form        * lines to intersect with the sides */
-comment|/*    rp----------/        *   /\          /\        *  /  nr       /  tp        * op----------lp        *              \        *               nl        */
-name|GimpVector2
+comment|/*    rp----------/        *   /\          /\        *  /  nr       /  nt        * op----------lp        *              \        *               nl        */
 name|nr
-init|=
+operator|=
 name|vectoradd
 argument_list|(
 name|rp
 argument_list|,
 name|p
 argument_list|)
-decl_stmt|;
-name|GimpVector2
+expr_stmt|;
 name|nl
-init|=
+operator|=
 name|vectoradd
 argument_list|(
 name|lp
 argument_list|,
 name|p
 argument_list|)
-decl_stmt|;
-comment|/* Now we just need to find the intersection of op-rp and nr-tp */
-comment|/*    rp----------/        *   /           /        *  /  nr==========tp        * op----------/        *        */
+expr_stmt|;
+comment|/* Now we just need to find the intersection of op-rp and nr-nt.        * If frompivot mode is active, then op also moved,        * so we add no-op to rp */
+comment|/*    rp----------/        *   /           /        *  /  nr==========nt        * op----------/        *        */
 name|nr
 operator|=
 name|lineintersect
 argument_list|(
 name|nr
 argument_list|,
-name|tp
+name|nt
+argument_list|,
+name|no
+argument_list|,
+name|vectoradd
+argument_list|(
+name|rp
+argument_list|,
+name|vectorsubtract
+argument_list|(
+name|no
 argument_list|,
 name|op
-argument_list|,
-name|rp
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|nl
@@ -5247,21 +5354,31 @@ name|lineintersect
 argument_list|(
 name|nl
 argument_list|,
-name|tp
+name|nt
+argument_list|,
+name|no
+argument_list|,
+name|vectoradd
+argument_list|(
+name|lp
+argument_list|,
+name|vectorsubtract
+argument_list|(
+name|no
 argument_list|,
 name|op
-argument_list|,
-name|lp
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*    /-----------/        *   /           /        *  rp============tp        * op----------/        *        */
+comment|/*    /-----------/        *   /           /        *  rp============nt        * op----------/        *        */
 operator|*
 name|x
 index|[
 name|this
 index|]
 operator|=
-name|tp
+name|nt
 operator|.
 name|x
 expr_stmt|;
@@ -5271,7 +5388,7 @@ index|[
 name|this
 index|]
 operator|=
-name|tp
+name|nt
 operator|.
 name|y
 expr_stmt|;
@@ -5312,16 +5429,30 @@ name|left
 index|]
 operator|=
 name|nl
+operator|.
+name|y
+expr_stmt|;
+operator|*
+name|x
+index|[
+name|opposite
+index|]
+operator|=
+name|no
+operator|.
+name|x
+expr_stmt|;
+operator|*
+name|y
+index|[
+name|opposite
+index|]
+operator|=
+name|no
 operator|.
 name|y
 expr_stmt|;
 comment|/*        *        *  /--------------/        * /--------------/        *        */
-comment|/* when the from centre transformation constraint is enabled, the        * translation shall also translate the diagonally opposite corner        * points by the same distance, however with the angle of the        * vector 180 degrees rotated. */
-if|if
-condition|(
-name|fromcenter
-condition|)
-block|{}
 block|}
 if|if
 condition|(
@@ -5364,7 +5495,7 @@ operator|==
 name|TRANSFORM_HANDLE_W_S
 condition|)
 block|{
-comment|/* o for the opposite edge, for fromcenter */
+comment|/* o for the opposite edge, for frompivot */
 name|gint
 name|left
 decl_stmt|,
@@ -5465,7 +5596,7 @@ name|right
 expr_stmt|;
 if|if
 condition|(
-name|fromcenter
+name|frompivot
 condition|)
 block|{
 name|dxo
@@ -5584,7 +5715,7 @@ if|if
 condition|(
 name|constrain
 operator|&&
-name|fromcenter
+name|frompivot
 condition|)
 block|{
 comment|/* restrict to movement along the opposite side */
@@ -5726,7 +5857,7 @@ index|]
 operator|+
 name|dy
 expr_stmt|;
-comment|/* We have to set these unconditionally, or the opposite edge will stay        * in place when you toggle the fromcenter constraint during an action */
+comment|/* We have to set these unconditionally, or the opposite edge will stay        * in place when you toggle the frompivot constraint during an action */
 operator|*
 name|x
 index|[
