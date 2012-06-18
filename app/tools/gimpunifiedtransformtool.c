@@ -153,7 +153,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2947d9b60103
+DECL|enum|__anon2a2356450103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -4286,6 +4286,8 @@ operator|)
 operator|/
 literal|4.
 expr_stmt|;
+comment|//TODO: pivot point must transform along with the frame in all
+comment|//transformations, not just move
 name|pivot_x
 operator|=
 operator|&
@@ -4596,6 +4598,20 @@ operator|+
 name|dy
 expr_stmt|;
 block|}
+operator|*
+name|pivot_x
+operator|=
+name|ppivot_x
+operator|+
+name|dx
+expr_stmt|;
+operator|*
+name|pivot_y
+operator|=
+name|ppivot_y
+operator|+
+name|dy
+expr_stmt|;
 block|}
 comment|/* rotate */
 if|if
@@ -5737,6 +5753,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
+comment|/* scaling via sides */
 if|if
 condition|(
 name|function
