@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2963f2770103
+DECL|enum|__anon289d1a170103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -363,7 +363,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2963f2770203
+DECL|enum|__anon289d1a170203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3112,20 +3112,13 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_help_set_help_data
-argument_list|(
-name|shell
-operator|->
-name|canvas
-argument_list|,
-name|_
-argument_list|(
-literal|"Drop image files here to open them"
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+comment|/* Disabled because it sets GDK_POINTER_MOTION_HINT on        * shell->canvas. For info see Bug 677375        */
+block|gimp_help_set_help_data (shell->canvas,                                _("Drop image files here to open them"),                                NULL);
+endif|#
+directive|endif
 name|gimp_statusbar_empty
 argument_list|(
 name|GIMP_STATUSBAR
@@ -5432,20 +5425,12 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|shell
-operator|->
-name|canvas
-argument_list|,
-name|_
-argument_list|(
-literal|"Drop image files here to open them"
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|gimp_help_set_help_data (shell->canvas,                            _("Drop image files here to open them"), NULL);
+endif|#
+directive|endif
 name|gimp_statusbar_empty
 argument_list|(
 name|GIMP_STATUSBAR
@@ -5651,17 +5636,12 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|shell
-operator|->
-name|canvas
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|gimp_help_set_help_data (shell->canvas, NULL, NULL);
+endif|#
+directive|endif
 name|gimp_statusbar_fill
 argument_list|(
 name|GIMP_STATUSBAR
