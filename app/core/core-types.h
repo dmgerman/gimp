@@ -49,12 +49,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/base-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"config/config-types.h"
 end_include
 

@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29482d900103
+DECL|enum|__anon28e539e40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -391,7 +391,7 @@ name|drawable_mod_undo
 operator|->
 name|buffer
 operator|=
-name|gimp_gegl_buffer_dup
+name|gegl_buffer_dup
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(

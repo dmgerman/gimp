@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dd2ffc0103
+DECL|enum|__anon29e3a00a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2245,7 +2245,7 @@ name|new_buffer
 decl_stmt|;
 name|new_buffer
 operator|=
-name|gimp_gegl_buffer_new
+name|gegl_buffer_new
 argument_list|(
 name|GEGL_RECTANGLE
 argument_list|(

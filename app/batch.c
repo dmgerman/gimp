@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/tile-swap.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
 end_include
 
@@ -408,10 +402,6 @@ name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 name|gegl_exit
-argument_list|()
-expr_stmt|;
-comment|/*  make sure that the swap files are removed before we quit */
-name|tile_swap_exit
 argument_list|()
 expr_stmt|;
 name|exit

@@ -123,18 +123,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/base.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"base/tile-swap.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gegl/gimp-gegl.h"
 end_include
 
@@ -471,16 +459,9 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
-name|GimpGeglConfig
-modifier|*
-name|config
-decl_stmt|;
 name|GMainLoop
 modifier|*
 name|loop
-decl_stmt|;
-name|gboolean
-name|swap_is_ok
 decl_stmt|;
 comment|/*  Create an instance of the "Gimp" object which is the root of the    *  core object system    */
 name|gimp
@@ -595,15 +576,6 @@ argument_list|,
 name|alternate_gimprc
 argument_list|)
 expr_stmt|;
-name|config
-operator|=
-name|GIMP_GEGL_CONFIG
-argument_list|(
-name|gimp
-operator|->
-name|config
-argument_list|)
-expr_stmt|;
 comment|/*  change the locale if a language if specified  */
 name|language_init
 argument_list|(
@@ -615,17 +587,6 @@ name|language
 argument_list|)
 expr_stmt|;
 comment|/*  initialize lowlevel stuff  */
-name|swap_is_ok
-operator|=
-name|base_init
-argument_list|(
-name|config
-argument_list|,
-name|be_verbose
-argument_list|,
-name|use_cpu_accel
-argument_list|)
-expr_stmt|;
 name|gimp_gegl_init
 argument_list|(
 name|gimp
@@ -675,47 +636,6 @@ argument_list|,
 name|update_status_func
 argument_list|)
 expr_stmt|;
-comment|/* display a warning when no test swap file could be generated */
-if|if
-condition|(
-operator|!
-name|swap_is_ok
-condition|)
-block|{
-name|gchar
-modifier|*
-name|path
-init|=
-name|gimp_config_path_expand
-argument_list|(
-name|config
-operator|->
-name|swap_path
-argument_list|,
-name|FALSE
-argument_list|,
-name|NULL
-argument_list|)
-decl_stmt|;
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Unable to open a test swap file.\n\n"
-literal|"To avoid data loss, please check the location "
-literal|"and permissions of the swap directory defined in "
-literal|"your Preferences (currently \"%s\")."
-argument_list|)
-argument_list|,
-name|path
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
-argument_list|)
-expr_stmt|;
-block|}
 comment|/*  enable autosave late so we don't autosave when the    *  monitor resolution is set in gui_init()    */
 name|gimp_rc_set_autosave
 argument_list|(
@@ -831,9 +751,6 @@ name|errors_exit
 argument_list|()
 expr_stmt|;
 name|gegl_exit
-argument_list|()
-expr_stmt|;
-name|base_exit
 argument_list|()
 expr_stmt|;
 block|}

@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bee02530103
+DECL|enum|__anon279370fa0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -204,7 +204,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bee02530203
+DECL|enum|__anon279370fa0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7441,7 +7441,7 @@ argument_list|)
 expr_stmt|;
 name|new_buffer
 operator|=
-name|gimp_gegl_buffer_new
+name|gegl_buffer_new
 argument_list|(
 name|GEGL_RECTANGLE
 argument_list|(
@@ -7568,7 +7568,7 @@ condition|)
 return|return;
 name|new_buffer
 operator|=
-name|gimp_gegl_buffer_new
+name|gegl_buffer_new
 argument_list|(
 name|GEGL_RECTANGLE
 argument_list|(

@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/tile.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"config/gimpgeglconfig.h"
 end_include
 
@@ -133,14 +127,12 @@ argument_list|(
 name|gegl_config
 argument_list|()
 argument_list|,
-literal|"tile-width"
-argument_list|,
-name|TILE_WIDTH
-argument_list|,
-literal|"tile-height"
-argument_list|,
-name|TILE_HEIGHT
-argument_list|,
+if|#
+directive|if
+literal|0
+argument_list|"tile-width",  TILE_WIDTH,                 "tile-height", TILE_HEIGHT,
+endif|#
+directive|endif
 literal|"cache-size"
 argument_list|,
 operator|(

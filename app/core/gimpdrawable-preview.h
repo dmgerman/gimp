@@ -23,7 +23,7 @@ end_comment
 begin_function_decl
 name|GimpTempBuf
 modifier|*
-name|gimp_drawable_get_preview
+name|gimp_drawable_get_new_preview
 parameter_list|(
 name|GimpViewable
 modifier|*

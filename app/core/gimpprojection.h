@@ -16,6 +16,14 @@ directive|define
 name|__GIMP_PROJECTION_H__
 end_define
 
+begin_define
+DECL|macro|USE_BUFFER
+define|#
+directive|define
+name|USE_BUFFER
+value|1
+end_define
+
 begin_include
 include|#
 directive|include
@@ -160,11 +168,6 @@ name|GimpProjectable
 modifier|*
 name|projectable
 decl_stmt|;
-DECL|member|pyramid
-name|TilePyramid
-modifier|*
-name|pyramid
-decl_stmt|;
 DECL|member|buffer
 name|GeglBuffer
 modifier|*
@@ -264,6 +267,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_if
+if|#
+directive|if
+name|USE_BUFFER
+end_if
+
 begin_function_decl
 name|GeglNode
 modifier|*
@@ -276,41 +285,10 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|TileManager
-modifier|*
-name|gimp_projection_get_tiles_at_level
-parameter_list|(
-name|GimpProjection
-modifier|*
-name|proj
-parameter_list|,
-name|gint
-name|level
-parameter_list|,
-name|gboolean
-modifier|*
-name|is_premult
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gint
-name|gimp_projection_get_level
-parameter_list|(
-name|GimpProjection
-modifier|*
-name|proj
-parameter_list|,
-name|gdouble
-name|scale_x
-parameter_list|,
-name|gdouble
-name|scale_y
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function_decl
 name|void

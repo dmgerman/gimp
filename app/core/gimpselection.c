@@ -1457,15 +1457,21 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME is this still needed?
+endif|#
+directive|endif
+if|#
+directive|if
+literal|0
 comment|/*  invalidate the preview  */
-name|drawable
-operator|->
-name|private
-operator|->
-name|preview_valid
-operator|=
-name|FALSE
-expr_stmt|;
+block|drawable->private->preview_valid = FALSE;
+endif|#
+directive|endif
 block|}
 end_function
 
@@ -2993,7 +2999,7 @@ expr_stmt|;
 comment|/*  Allocate the temp buffer  */
 name|dest_buffer
 operator|=
-name|gimp_gegl_buffer_new
+name|gegl_buffer_new
 argument_list|(
 name|GEGL_RECTANGLE
 argument_list|(

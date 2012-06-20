@@ -536,7 +536,7 @@ expr_stmt|;
 comment|/*  Get the new temporary buffer for the transformed result  */
 name|new_buffer
 operator|=
-name|gimp_gegl_buffer_new
+name|gegl_buffer_new
 argument_list|(
 name|GEGL_RECTANGLE
 argument_list|(
@@ -889,7 +889,7 @@ break|break;
 block|}
 name|new_buffer
 operator|=
-name|gimp_gegl_buffer_new
+name|gegl_buffer_new
 argument_list|(
 name|GEGL_RECTANGLE
 argument_list|(
@@ -1805,7 +1805,7 @@ name|clip_height
 decl_stmt|;
 name|new_buffer
 operator|=
-name|gimp_gegl_buffer_new
+name|gegl_buffer_new
 argument_list|(
 name|GEGL_RECTANGLE
 argument_list|(
@@ -2080,7 +2080,7 @@ else|else
 block|{
 name|new_buffer
 operator|=
-name|gimp_gegl_buffer_new
+name|gegl_buffer_new
 argument_list|(
 name|GEGL_RECTANGLE
 argument_list|(

@@ -126,12 +126,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/tile.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"config/gimpconfig-dump.h"
 end_include
 
@@ -2786,15 +2780,12 @@ ifdef|#
 directive|ifdef
 name|__GLIBC__
 comment|/* Tweak memory allocation so that memory allocated in chunks>= 4k    * (64x64 pixel 1bpp tile) gets returned to the system when free()'d.    *    * The default value for M_MMAP_THRESHOLD in glibc-2.3 is 128k.    * This is said to be an empirically derived value that works well    * in most systems. Lowering it to 4k is thus probably not the ideal    * solution.    *    * An alternative to tuning this parameter would be to use    * malloc_trim(), for example after releasing a large tile-manager.    */
-name|mallopt
-argument_list|(
-name|M_MMAP_THRESHOLD
-argument_list|,
-name|TILE_WIDTH
-operator|*
-name|TILE_HEIGHT
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|mallopt (M_MMAP_THRESHOLD, TILE_WIDTH * TILE_HEIGHT);
+endif|#
+directive|endif
 endif|#
 directive|endif
 block|}
