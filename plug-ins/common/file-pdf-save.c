@@ -142,7 +142,7 @@ value|120
 end_define
 
 begin_typedef
-DECL|struct|__anon27e6ef110108
+DECL|struct|__anon2953bf810108
 typedef|typedef
 struct|struct
 block|{
@@ -165,7 +165,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27e6ef110208
+DECL|struct|__anon2953bf810208
 typedef|typedef
 struct|struct
 block|{
@@ -194,7 +194,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27e6ef110308
+DECL|struct|__anon2953bf810308
 typedef|typedef
 struct|struct
 block|{
@@ -214,7 +214,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon27e6ef110403
+DECL|enum|__anon2953bf810403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -233,7 +233,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon27e6ef110508
+DECL|struct|__anon2953bf810508
 typedef|typedef
 struct|struct
 block|{
@@ -607,7 +607,7 @@ argument_list|()
 end_macro
 
 begin_typedef
-DECL|enum|__anon27e6ef110603
+DECL|enum|__anon2953bf810603
 typedef|typedef
 enum|enum
 block|{
@@ -652,7 +652,7 @@ value|5
 end_define
 
 begin_typedef
-DECL|enum|__anon27e6ef110703
+DECL|enum|__anon2953bf810703
 typedef|typedef
 enum|enum
 block|{
@@ -5839,7 +5839,7 @@ name|text_layer
 operator|->
 name|drawable_id
 decl_stmt|;
-name|GimpImageBaseType
+name|GimpImageType
 name|type
 init|=
 name|gimp_drawable_type
@@ -5987,7 +5987,7 @@ if|if
 condition|(
 name|type
 operator|==
-name|GIMP_RGB
+name|GIMP_RGBA_IMAGE
 condition|)
 name|gimp_text_layer_get_color
 argument_list|(
@@ -6208,33 +6208,16 @@ operator|&
 name|unit
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|g_strcmp0
-argument_list|(
-name|gimp_unit_get_abbreviation
-argument_list|(
-name|unit
-argument_list|)
-argument_list|,
-literal|"px"
-argument_list|)
-operator|==
-literal|0
-condition|)
 name|size
-operator|*=
-literal|1.0
-operator|/
-name|gimp_unit_get_factor
+operator|=
+name|gimp_units_to_pixels
 argument_list|(
+name|size
+argument_list|,
 name|unit
-argument_list|)
-operator|*
-name|x_res
-operator|/
+argument_list|,
 name|y_res
+argument_list|)
 expr_stmt|;
 name|pango_font_description_set_absolute_size
 argument_list|(
