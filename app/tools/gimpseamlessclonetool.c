@@ -245,7 +245,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon274b06640103
+DECL|enum|__anon29993c200103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -2314,24 +2314,6 @@ literal|"operation"
 argument_list|,
 literal|"gegl:seamless-clone"
 argument_list|,
-literal|"xoff"
-argument_list|,
-operator|(
-name|gint
-operator|)
-name|sc
-operator|->
-name|xoff
-argument_list|,
-literal|"yoff"
-argument_list|,
-operator|(
-name|gint
-operator|)
-name|sc
-operator|->
-name|yoff
-argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -2415,6 +2397,11 @@ name|sc_node
 operator|=
 name|op
 expr_stmt|;
+name|gimp_seamless_clone_tool_render_node_update
+argument_list|(
+name|sc
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -2429,6 +2416,37 @@ modifier|*
 name|sc
 parameter_list|)
 block|{
+name|GimpDrawable
+modifier|*
+name|bg
+init|=
+name|GIMP_TOOL
+argument_list|(
+name|sc
+argument_list|)
+operator|->
+name|drawable
+decl_stmt|;
+name|gint
+name|xoff
+decl_stmt|,
+name|yoff
+decl_stmt|;
+comment|/* Now we should also take into consideration the fact that    * we should work with coordinates relative to the background    * buffer */
+name|gimp_item_get_offset
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|bg
+argument_list|)
+argument_list|,
+operator|&
+name|xoff
+argument_list|,
+operator|&
+name|yoff
+argument_list|)
+expr_stmt|;
 comment|/* The only thing to update right now, is the location of the paste */
 name|gegl_node_set
 argument_list|(
@@ -2444,6 +2462,8 @@ operator|)
 name|sc
 operator|->
 name|xoff
+operator|-
+name|xoff
 argument_list|,
 literal|"yoff"
 argument_list|,
@@ -2452,6 +2472,8 @@ name|gint
 operator|)
 name|sc
 operator|->
+name|yoff
+operator|-
 name|yoff
 argument_list|,
 name|NULL
