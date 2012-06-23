@@ -245,7 +245,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c12099f0103
+DECL|enum|__anon274b06640103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -805,12 +805,6 @@ name|NULL
 expr_stmt|;
 name|self
 operator|->
-name|abstract_cache
-operator|=
-name|NULL
-expr_stmt|;
-name|self
-operator|->
 name|render_node
 operator|=
 name|NULL
@@ -1266,14 +1260,6 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-comment|/* TODO: free the abstract_cache object */
-if|if
-condition|(
-name|sc
-operator|->
-name|abstract_cache
-condition|)
-block|{         }
 block|}
 comment|/* This should always happen, even when we just switch a display */
 if|if
@@ -2326,9 +2312,9 @@ name|node
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gegl:seamless-clone-render"
+literal|"gegl:seamless-clone"
 argument_list|,
-literal|"x"
+literal|"xoff"
 argument_list|,
 operator|(
 name|gint
@@ -2337,7 +2323,7 @@ name|sc
 operator|->
 name|xoff
 argument_list|,
-literal|"y"
+literal|"yoff"
 argument_list|,
 operator|(
 name|gint
@@ -2345,12 +2331,6 @@ operator|)
 name|sc
 operator|->
 name|yoff
-argument_list|,
-literal|"prepare"
-argument_list|,
-name|sc
-operator|->
-name|abstract_cache
 argument_list|,
 name|NULL
 argument_list|)
@@ -2456,7 +2436,7 @@ name|sc
 operator|->
 name|sc_node
 argument_list|,
-literal|"x"
+literal|"xoff"
 argument_list|,
 operator|(
 name|gint
@@ -2465,7 +2445,7 @@ name|sc
 operator|->
 name|xoff
 argument_list|,
-literal|"y"
+literal|"yoff"
 argument_list|,
 operator|(
 name|gint

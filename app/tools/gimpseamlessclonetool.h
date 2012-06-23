@@ -129,10 +129,6 @@ modifier|*
 name|paste
 decl_stmt|;
 comment|/* A buffer containing the original                                   * paste that will be used in the                                   * rendering process */
-DECL|member|abstract_cache
-name|gpointer
-name|abstract_cache
-decl_stmt|;
 DECL|member|render_node
 name|GeglNode
 modifier|*
