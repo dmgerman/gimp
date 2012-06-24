@@ -327,13 +327,6 @@ name|GimpUndoType
 name|pushing_undo_group
 decl_stmt|;
 comment|/*  undo group status flag       */
-comment|/*  Preview  */
-DECL|member|preview
-name|GimpTempBuf
-modifier|*
-name|preview
-decl_stmt|;
-comment|/*  the projection preview       */
 comment|/*  Signal emmision accumulator  */
 DECL|member|flush_accum
 name|GimpImageFlushAccumulator
