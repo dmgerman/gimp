@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_IMAGE_CONVERT_H__
+name|__GIMP_IMAGE_CONVERT_TYPE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_IMAGE_CONVERT_H__
+DECL|macro|__GIMP_IMAGE_CONVERT_TYPE_H__
 define|#
 directive|define
-name|__GIMP_IMAGE_CONVERT_H__
+name|__GIMP_IMAGE_CONVERT_TYPE_H__
 end_define
 
 begin_define
@@ -26,7 +26,7 @@ end_define
 
 begin_function_decl
 name|gboolean
-name|gimp_image_convert
+name|gimp_image_convert_type
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -69,7 +69,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_convert_set_dither_matrix
+name|gimp_image_convert_type_set_dither_matrix
 parameter_list|(
 specifier|const
 name|guchar
@@ -91,7 +91,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_IMAGE_CONVERT_H__  */
+comment|/*  __GIMP_IMAGE_CONVERT_TYPE_H__  */
 end_comment
 
 end_unit

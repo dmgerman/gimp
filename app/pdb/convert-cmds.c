@@ -52,7 +52,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-convert.h"
+file|"core/gimpimage-convert-type.h"
 end_include
 
 begin_include
@@ -203,7 +203,7 @@ condition|)
 block|{
 name|success
 operator|=
-name|gimp_image_convert
+name|gimp_image_convert_type
 argument_list|(
 name|image
 argument_list|,
@@ -329,7 +329,7 @@ condition|)
 block|{
 name|success
 operator|=
-name|gimp_image_convert
+name|gimp_image_convert_type
 argument_list|(
 name|image
 argument_list|,
@@ -669,7 +669,7 @@ name|success
 condition|)
 name|success
 operator|=
-name|gimp_image_convert
+name|gimp_image_convert_type
 argument_list|(
 name|image
 argument_list|,
@@ -834,7 +834,7 @@ operator|*
 name|height
 condition|)
 block|{
-name|gimp_image_convert_set_dither_matrix
+name|gimp_image_convert_type_set_dither_matrix
 argument_list|(
 name|matrix
 argument_list|,

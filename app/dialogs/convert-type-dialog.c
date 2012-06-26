@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-convert.h"
+file|"core/gimpimage-convert-type.h"
 end_include
 
 begin_include
@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c26b1870108
+DECL|struct|__anon2c1233250108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1329,7 +1329,7 @@ comment|/*  Convert the image to indexed color  */
 if|if
 condition|(
 operator|!
-name|gimp_image_convert
+name|gimp_image_convert_type
 argument_list|(
 name|dialog
 operator|->

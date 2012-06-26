@@ -72,13 +72,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-convert.h"
+file|"core/gimpimage-convert-precision.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-convert-precision.h"
+file|"core/gimpimage-convert-type.h"
 end_include
 
 begin_include
@@ -242,7 +242,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fe4bc70108
+DECL|struct|__anon2937fa780108
 block|{
 DECL|member|context
 name|GimpContext
@@ -674,7 +674,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|gimp_image_convert
+name|gimp_image_convert_type
 argument_list|(
 name|image
 argument_list|,

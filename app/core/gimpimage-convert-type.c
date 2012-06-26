@@ -162,7 +162,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-convert.h"
+file|"gimpimage-convert-type.h"
 end_include
 
 begin_include
@@ -407,7 +407,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2a1279990103
+DECL|enum|__anon2947d9cf0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1508,7 +1508,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1279990208
+DECL|struct|__anon2947d9cf0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1751,7 +1751,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1279990308
+DECL|struct|__anon2947d9cf0308
 block|{
 DECL|member|used_count
 name|signed
@@ -2744,8 +2744,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_convert (GimpImage * image,GimpImageBaseType new_type,gint num_cols,GimpConvertDitherType dither,gboolean alpha_dither,gboolean remove_dups,GimpConvertPaletteType palette_type,GimpPalette * custom_palette,GimpProgress * progress,GError ** error)
-name|gimp_image_convert
+DECL|function|gimp_image_convert_type (GimpImage * image,GimpImageBaseType new_type,gint num_cols,GimpConvertDitherType dither,gboolean alpha_dither,gboolean remove_dups,GimpConvertPaletteType palette_type,GimpPalette * custom_palette,GimpProgress * progress,GError ** error)
+name|gimp_image_convert_type
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -2754,7 +2754,7 @@ parameter_list|,
 name|GimpImageBaseType
 name|new_type
 parameter_list|,
-comment|/* The following are only used for new_type == GIMP_INDEXED                      */
+comment|/* The following are only used for                           * new_type == GIMP_INDEXED                           */
 name|gint
 name|num_cols
 parameter_list|,
@@ -17212,8 +17212,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_convert_set_dither_matrix (const guchar * matrix,gint width,gint height)
-name|gimp_image_convert_set_dither_matrix
+DECL|function|gimp_image_convert_type_set_dither_matrix (const guchar * matrix,gint width,gint height)
+name|gimp_image_convert_type_set_dither_matrix
 parameter_list|(
 specifier|const
 name|guchar
