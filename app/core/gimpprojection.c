@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon274f82940103
+DECL|enum|__anon2a113ae90103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2782,9 +2782,13 @@ expr_stmt|;
 comment|/* GEGL should really do this for us... */
 name|gegl_buffer_clear
 argument_list|(
+name|gimp_projection_get_buffer
+argument_list|(
+name|GIMP_PICKABLE
+argument_list|(
 name|proj
-operator|->
-name|buffer
+argument_list|)
+argument_list|)
 argument_list|,
 operator|&
 name|rect
