@@ -168,7 +168,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs/convert-dialog.h"
+file|"dialogs/convert-type-dialog.h"
 end_include
 
 begin_include
@@ -231,10 +231,18 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_define
+DECL|macro|IMAGE_CONVERT_TYPE_DIALOG_KEY
+define|#
+directive|define
+name|IMAGE_CONVERT_TYPE_DIALOG_KEY
+value|"image-convert-type-dialog"
+end_define
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e2bb130108
+DECL|struct|__anon27fe4bc70108
 block|{
 DECL|member|context
 name|GimpContext
@@ -565,7 +573,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"image-convert-dialog"
+name|IMAGE_CONVERT_TYPE_DIALOG_KEY
 argument_list|,
 name|NULL
 argument_list|)
@@ -735,7 +743,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"image-convert-dialog"
+name|IMAGE_CONVERT_TYPE_DIALOG_KEY
 argument_list|)
 expr_stmt|;
 if|if
@@ -746,7 +754,7 @@ condition|)
 block|{
 name|dialog
 operator|=
-name|convert_dialog_new
+name|convert_type_dialog_new
 argument_list|(
 name|image
 argument_list|,
@@ -770,7 +778,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"image-convert-dialog"
+name|IMAGE_CONVERT_TYPE_DIALOG_KEY
 argument_list|,
 name|dialog
 argument_list|)
