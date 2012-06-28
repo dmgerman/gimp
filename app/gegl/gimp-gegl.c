@@ -111,15 +111,55 @@ directive|ifdef
 name|__GNUC__
 warning|#
 directive|warning
-warning|limiting tile cache size to G_MAXINT
+warning|not setting GeglConfig:threads
 endif|#
 directive|endif
+if|if
+condition|(
+name|g_object_class_find_property
+argument_list|(
+name|G_OBJECT_GET_CLASS
+argument_list|(
+name|gegl_config
+argument_list|()
+argument_list|)
+argument_list|,
+literal|"tile-cache-size"
+argument_list|)
+condition|)
+block|{
+name|g_object_set
+argument_list|(
+name|gegl_config
+argument_list|()
+argument_list|,
+literal|"cache-size"
+argument_list|,
+operator|(
+name|guint64
+operator|)
+name|config
+operator|->
+name|tile_cache_size
+argument_list|,
+if|#
+directive|if
+literal|0
+argument_list|"threads",    config->num_processors,
+endif|#
+directive|endif
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 ifdef|#
 directive|ifdef
 name|__GNUC__
 warning|#
 directive|warning
-warning|not setting GeglConfig:threads
+warning|limiting tile cache size to G_MAXINT
 endif|#
 directive|endif
 name|g_object_set
@@ -127,12 +167,6 @@ argument_list|(
 name|gegl_config
 argument_list|()
 argument_list|,
-if|#
-directive|if
-literal|0
-argument_list|"tile-width",  TILE_WIDTH,                 "tile-height", TILE_HEIGHT,
-endif|#
-directive|endif
 literal|"cache-size"
 argument_list|,
 operator|(
@@ -150,12 +184,13 @@ argument_list|,
 if|#
 directive|if
 literal|0
-argument_list|"threads",     config->num_processors,
+argument_list|"threads",    config->num_processors,
 endif|#
 directive|endif
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* turn down the precision of babl - permitting use of lookup tables for    * gamma conversions, this precision is anyways high enough for both 8bit    * and 16bit operation    */
 name|g_object_set
 argument_list|(
