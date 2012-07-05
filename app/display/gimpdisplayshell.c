@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289d1a170103
+DECL|enum|__anon2946d1f20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -363,7 +363,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon289d1a170203
+DECL|enum|__anon2946d1f20203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5676,18 +5676,14 @@ name|shell
 operator|->
 name|fill_idle_id
 operator|=
-name|g_idle_add_full
+name|g_idle_add
 argument_list|(
-name|G_PRIORITY_LOW
-argument_list|,
 operator|(
 name|GSourceFunc
 operator|)
 name|gimp_display_shell_fill_idle
 argument_list|,
 name|shell
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
