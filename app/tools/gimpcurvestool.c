@@ -1258,6 +1258,10 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|c_tool
+operator|->
+name|graph
+operator|&&
 name|gtk_widget_event
 argument_list|(
 name|c_tool
