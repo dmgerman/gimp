@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279370fa0103
+DECL|enum|__anon2c2c849d0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -204,7 +204,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon279370fa0203
+DECL|enum|__anon2c2c849d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7271,7 +7271,7 @@ name|layer
 operator|->
 name|layer_offset_node
 argument_list|,
-literal|"outout"
+literal|"output"
 argument_list|,
 name|mode_node
 argument_list|,
