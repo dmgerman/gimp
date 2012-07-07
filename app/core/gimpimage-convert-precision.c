@@ -360,6 +360,11 @@ name|n_drawables
 argument_list|)
 expr_stmt|;
 block|}
+name|g_list_free
+argument_list|(
+name|all_drawables
+argument_list|)
+expr_stmt|;
 comment|/*  convert the selection mask  */
 block|{
 name|GimpChannel
