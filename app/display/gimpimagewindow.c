@@ -285,7 +285,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon294386e40103
+DECL|enum|__anon293194960103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -398,7 +398,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294386e40208
+DECL|struct|__anon293194960208
 block|{
 DECL|member|window
 name|GimpImageWindow
@@ -7580,6 +7580,16 @@ argument_list|,
 literal|0
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_size_request
+argument_list|(
+name|view
+argument_list|,
+name|GIMP_VIEW_SIZE_LARGE
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
