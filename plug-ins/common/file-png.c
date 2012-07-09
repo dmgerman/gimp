@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8c4a770108
+DECL|struct|__anon28ef2e9d0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8c4a770208
+DECL|struct|__anon28ef2e9d0208
 block|{
 DECL|member|run
 name|gboolean
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8c4a770308
+DECL|struct|__anon28ef2e9d0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -4267,10 +4267,6 @@ condition|)
 block|{
 name|data
 index|[
-name|i
-operator|*
-literal|2
-operator|+
 literal|1
 index|]
 operator|=
@@ -4278,17 +4274,13 @@ name|alpha
 index|[
 name|data
 index|[
-name|i
-operator|*
-literal|2
+literal|0
 index|]
 index|]
 expr_stmt|;
 name|data
 index|[
-name|i
-operator|*
-literal|2
+literal|0
 index|]
 operator|-=
 name|empty
