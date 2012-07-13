@@ -2441,17 +2441,14 @@ literal|32
 condition|)
 block|{
 comment|/* Use palette from file or otherwise default grey palette */
-name|palette
-operator|=
-name|g_new
-argument_list|(
 name|guchar
-argument_list|,
-name|colours
+name|palette
+index|[
+literal|256
 operator|*
 literal|3
-argument_list|)
-expr_stmt|;
+index|]
+decl_stmt|;
 comment|/* Open the file for reading if user picked one */
 if|if
 condition|(
@@ -2615,12 +2612,6 @@ argument_list|,
 name|colours
 operator|-
 literal|1
-argument_list|)
-expr_stmt|;
-comment|/* Close palette file, give back allocated memory */
-name|g_free
-argument_list|(
-name|palette
 argument_list|)
 expr_stmt|;
 block|}
