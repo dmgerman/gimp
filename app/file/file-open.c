@@ -1837,6 +1837,11 @@ name|GimpImagefile
 modifier|*
 name|imagefile
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|opened_uri
+decl_stmt|;
 name|imagefile
 operator|=
 name|gimp_document_list_add_uri
@@ -1848,20 +1853,25 @@ argument_list|,
 name|mime_type
 argument_list|)
 expr_stmt|;
-comment|/*  can only create a thumbnail if the passed uri and the            *  resulting image's uri match.            */
+comment|/*  can only create a thumbnail if the passed uri and the            *  resulting image's uri match. Use any_uri() here so we            *  create thumbnails for both XCF and imported images.            */
+name|opened_uri
+operator|=
+name|gimp_image_get_any_uri
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
+name|opened_uri
+operator|&&
+operator|!
 name|strcmp
 argument_list|(
 name|uri
 argument_list|,
-name|gimp_image_get_uri_or_untitled
-argument_list|(
-name|image
+name|opened_uri
 argument_list|)
-argument_list|)
-operator|==
-literal|0
 condition|)
 block|{
 comment|/*  no need to save a thumbnail if there's a good one already  */
