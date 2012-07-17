@@ -1840,7 +1840,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|opened_uri
+name|any_uri
 decl_stmt|;
 name|imagefile
 operator|=
@@ -1854,7 +1854,7 @@ name|mime_type
 argument_list|)
 expr_stmt|;
 comment|/*  can only create a thumbnail if the passed uri and the            *  resulting image's uri match. Use any_uri() here so we            *  create thumbnails for both XCF and imported images.            */
-name|opened_uri
+name|any_uri
 operator|=
 name|gimp_image_get_any_uri
 argument_list|(
@@ -1863,14 +1863,14 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|opened_uri
+name|any_uri
 operator|&&
 operator|!
 name|strcmp
 argument_list|(
 name|uri
 argument_list|,
-name|opened_uri
+name|any_uri
 argument_list|)
 condition|)
 block|{

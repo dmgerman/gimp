@@ -1457,10 +1457,6 @@ else|else
 block|{
 name|gchar
 modifier|*
-name|basename
-decl_stmt|;
-name|gchar
-modifier|*
 name|filename
 decl_stmt|;
 name|dialog
@@ -1544,13 +1540,6 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-name|basename
-operator|=
-name|file_utils_uri_display_basename
-argument_list|(
-name|uri
-argument_list|)
-expr_stmt|;
 name|filename
 operator|=
 name|file_utils_uri_display_name
@@ -1572,7 +1561,10 @@ argument_list|(
 literal|"Revert '%s' to '%s'?"
 argument_list|)
 argument_list|,
-name|basename
+name|gimp_image_get_display_name
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1580,11 +1572,6 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|filename
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|basename
 argument_list|)
 expr_stmt|;
 name|gimp_message_box_set_text

@@ -87,6 +87,12 @@ modifier|*
 name|display_name
 decl_stmt|;
 comment|/*  display basename             */
+DECL|member|display_path
+name|gchar
+modifier|*
+name|display_path
+decl_stmt|;
+comment|/*  display full path            */
 DECL|member|width
 name|gint
 name|width

@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file/file-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gegl/gimp-gegl-utils.h"
 end_include
 
@@ -1154,12 +1148,9 @@ name|g_strdup_printf
 argument_list|(
 literal|"%s GEGL graph"
 argument_list|,
-name|file_utils_uri_display_name
-argument_list|(
-name|gimp_image_get_uri_or_untitled
+name|gimp_image_get_display_name
 argument_list|(
 name|source_image
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

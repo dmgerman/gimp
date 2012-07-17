@@ -208,6 +208,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in/gimpplugin.h"
 end_include
 
@@ -10769,14 +10775,22 @@ condition|(
 name|success
 condition|)
 block|{
-name|name
-operator|=
-name|g_strdup
-argument_list|(
-name|gimp_image_get_display_name
+comment|/* XXX do we really want to return this, or the name as in the title? */
+specifier|const
+name|gchar
+modifier|*
+name|uri
+init|=
+name|gimp_image_get_uri_or_untitled
 argument_list|(
 name|image
 argument_list|)
+decl_stmt|;
+name|name
+operator|=
+name|file_utils_uri_display_basename
+argument_list|(
+name|uri
 argument_list|)
 expr_stmt|;
 block|}
