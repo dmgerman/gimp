@@ -153,7 +153,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2094150103
+DECL|enum|__anon2ab12e5c0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -4032,11 +4032,32 @@ operator|->
 name|constrain
 decl_stmt|;
 name|gboolean
+name|keepaspect
+init|=
+name|options
+operator|->
+name|keepaspect
+decl_stmt|;
+name|gboolean
 name|frompivot
 init|=
 name|options
 operator|->
-name|alternate
+name|frompivot
+decl_stmt|;
+name|gboolean
+name|freeshear
+init|=
+name|options
+operator|->
+name|freeshear
+decl_stmt|;
+name|gboolean
+name|cornersnap
+init|=
+name|options
+operator|->
+name|cornersnap
 decl_stmt|;
 name|TransformAction
 name|function
@@ -4854,7 +4875,7 @@ name|screeny
 decl_stmt|;
 if|if
 condition|(
-name|constrain
+name|cornersnap
 condition|)
 block|{
 comment|/* snap to corner points and center */
@@ -5246,7 +5267,7 @@ decl_stmt|;
 comment|/* when the keep aspect transformation constraint is enabled, the        * translation shall only be along the diagonal that runs trough        * this corner point. */
 if|if
 condition|(
-name|constrain
+name|keepaspect
 condition|)
 block|{
 comment|/* restrict to movement along the diagonal */
@@ -6056,7 +6077,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|constrain
+name|keepaspect
 condition|)
 comment|//TODO this scales about the center, not the opposite edge
 block|{
@@ -6454,7 +6475,8 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|constrain
+operator|!
+name|freeshear
 condition|)
 block|{
 comment|/* restrict to movement along the side */
@@ -6546,7 +6568,8 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|constrain
+operator|!
+name|freeshear
 operator|&&
 name|frompivot
 condition|)
