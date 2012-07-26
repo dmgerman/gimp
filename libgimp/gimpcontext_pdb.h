@@ -240,11 +240,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|gdouble
 name|gimp_context_get_brush_size
 parameter_list|(
-name|gdouble
-name|size
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -269,11 +268,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|gdouble
 name|gimp_context_get_brush_aspect_ratio
 parameter_list|(
-name|gdouble
-name|aspect
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -289,11 +287,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|gdouble
 name|gimp_context_get_brush_angle
 parameter_list|(
-name|gdouble
-name|angle
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl

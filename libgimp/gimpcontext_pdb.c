@@ -1356,16 +1356,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_brush_size:  * @size: brush size in pixels.  *  * Get brush size in pixels.  *  * Get the brush size in pixels for brush based paint tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_brush_size:  *  * Get brush size in pixels.  *  * Get the brush size in pixels for brush based paint tools.  *  * Returns: brush size in pixels.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
-name|gboolean
-DECL|function|gimp_context_get_brush_size (gdouble size)
+name|gdouble
+DECL|function|gimp_context_get_brush_size (void)
 name|gimp_context_get_brush_size
 parameter_list|(
-name|gdouble
-name|size
+name|void
 parameter_list|)
 block|{
 name|GimpParam
@@ -1375,10 +1374,10 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|gboolean
-name|success
+name|gdouble
+name|size
 init|=
-name|TRUE
+literal|0.0
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1389,15 +1388,11 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|GIMP_PDB_FLOAT
-argument_list|,
-name|size
-argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
-name|success
-operator|=
+if|if
+condition|(
 name|return_vals
 index|[
 literal|0
@@ -1408,6 +1403,17 @@ operator|.
 name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
+condition|)
+name|size
+operator|=
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_float
 expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
@@ -1417,7 +1423,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|success
+name|size
 return|;
 block|}
 end_function
@@ -1552,16 +1558,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_brush_aspect_ratio:  * @aspect: aspect ratio.  *  * Get brush aspect ratio.  *  * Set the aspect ratio for brush based paint tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_brush_aspect_ratio:  *  * Get brush aspect ratio.  *  * Set the aspect ratio for brush based paint tools.  *  * Returns: aspect ratio.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
-name|gboolean
-DECL|function|gimp_context_get_brush_aspect_ratio (gdouble aspect)
+name|gdouble
+DECL|function|gimp_context_get_brush_aspect_ratio (void)
 name|gimp_context_get_brush_aspect_ratio
 parameter_list|(
-name|gdouble
-name|aspect
+name|void
 parameter_list|)
 block|{
 name|GimpParam
@@ -1571,10 +1576,10 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|gboolean
-name|success
+name|gdouble
+name|aspect
 init|=
-name|TRUE
+literal|0.0
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1585,15 +1590,11 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|GIMP_PDB_FLOAT
-argument_list|,
-name|aspect
-argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
-name|success
-operator|=
+if|if
+condition|(
 name|return_vals
 index|[
 literal|0
@@ -1604,6 +1605,17 @@ operator|.
 name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
+condition|)
+name|aspect
+operator|=
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_float
 expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
@@ -1613,7 +1625,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|success
+name|aspect
 return|;
 block|}
 end_function
@@ -1686,16 +1698,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_brush_angle:  * @angle: angle in degrees.  *  * Get brush angle in degrees.  *  * Set the angle in degrees for brush based paint tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_brush_angle:  *  * Get brush angle in degrees.  *  * Set the angle in degrees for brush based paint tools.  *  * Returns: angle in degrees.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
-name|gboolean
-DECL|function|gimp_context_get_brush_angle (gdouble angle)
+name|gdouble
+DECL|function|gimp_context_get_brush_angle (void)
 name|gimp_context_get_brush_angle
 parameter_list|(
-name|gdouble
-name|angle
+name|void
 parameter_list|)
 block|{
 name|GimpParam
@@ -1705,10 +1716,10 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|gboolean
-name|success
+name|gdouble
+name|angle
 init|=
-name|TRUE
+literal|0.0
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1719,15 +1730,11 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|GIMP_PDB_FLOAT
-argument_list|,
-name|angle
-argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
-name|success
-operator|=
+if|if
+condition|(
 name|return_vals
 index|[
 literal|0
@@ -1738,6 +1745,17 @@ operator|.
 name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
+condition|)
+name|angle
+operator|=
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_float
 expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
@@ -1747,7 +1765,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|success
+name|angle
 return|;
 block|}
 end_function
