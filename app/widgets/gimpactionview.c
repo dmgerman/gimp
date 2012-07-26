@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gdk/gdkkeysyms.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
@@ -2340,7 +2346,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c236a850108
+DECL|struct|__anon2c190b3e0108
 block|{
 DECL|member|manager
 name|GimpUIManager
@@ -2901,6 +2907,23 @@ if|if
 condition|(
 operator|!
 name|accel_key
+operator|||
+comment|/* Don't allow arrow keys, they are all swallowed by the canvas        * and cannot be invoked anyway        */
+name|accel_key
+operator|==
+name|GDK_KEY_Left
+operator|||
+name|accel_key
+operator|==
+name|GDK_KEY_Right
+operator|||
+name|accel_key
+operator|==
+name|GDK_KEY_Up
+operator|||
+name|accel_key
+operator|==
+name|GDK_KEY_Down
 condition|)
 block|{
 name|gimp_message_literal
