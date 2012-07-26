@@ -4556,7 +4556,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  We're going to dirty this image, but we want to keep the tool around  */
-name|gimp_tool_control_set_preserve
+name|gimp_tool_control_push_preserve
 argument_list|(
 name|tool
 operator|->
@@ -4820,13 +4820,11 @@ name|image
 argument_list|)
 expr_stmt|;
 comment|/*  We're done dirtying the image, and would like to be restarted if    *  the image gets dirty while the tool exists    */
-name|gimp_tool_control_set_preserve
+name|gimp_tool_control_pop_preserve
 argument_list|(
 name|tool
 operator|->
 name|control
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control

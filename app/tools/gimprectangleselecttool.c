@@ -1742,7 +1742,7 @@ name|undo
 condition|)
 block|{
 comment|/* prevent this change from halting the tool */
-name|gimp_tool_control_set_preserve
+name|gimp_tool_control_push_preserve
 argument_list|(
 name|tool
 operator|->
@@ -1756,13 +1756,11 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|gimp_tool_control_set_preserve
+name|gimp_tool_control_pop_preserve
 argument_list|(
 name|tool
 operator|->
 name|control
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* we will need to redo if the user cancels or executes */
@@ -1935,7 +1933,7 @@ name|redo
 condition|)
 block|{
 comment|/* prevent this from halting the tool */
-name|gimp_tool_control_set_preserve
+name|gimp_tool_control_push_preserve
 argument_list|(
 name|tool
 operator|->
@@ -1955,13 +1953,11 @@ name|redo
 operator|=
 name|NULL
 expr_stmt|;
-name|gimp_tool_control_set_preserve
+name|gimp_tool_control_pop_preserve
 argument_list|(
 name|tool
 operator|->
 name|control
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1996,7 +1992,7 @@ name|redo
 condition|)
 block|{
 comment|/* prevent this from halting the tool */
-name|gimp_tool_control_set_preserve
+name|gimp_tool_control_push_preserve
 argument_list|(
 name|tool
 operator|->
@@ -2010,13 +2006,11 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|gimp_tool_control_set_preserve
+name|gimp_tool_control_pop_preserve
 argument_list|(
 name|tool
 operator|->
 name|control
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -3027,7 +3021,7 @@ name|GimpChannelOps
 name|operation
 decl_stmt|;
 comment|/* prevent this change from halting the tool */
-name|gimp_tool_control_set_preserve
+name|gimp_tool_control_push_preserve
 argument_list|(
 name|tool
 operator|->
@@ -3080,13 +3074,11 @@ default|default:
 comment|/* Do nothing */
 break|break;
 block|}
-name|gimp_tool_control_set_preserve
+name|gimp_tool_control_pop_preserve
 argument_list|(
 name|tool
 operator|->
 name|control
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -3210,7 +3202,7 @@ name|undo
 condition|)
 block|{
 comment|/* prevent this change from halting the tool */
-name|gimp_tool_control_set_preserve
+name|gimp_tool_control_push_preserve
 argument_list|(
 name|tool
 operator|->
@@ -3229,13 +3221,11 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|gimp_tool_control_set_preserve
+name|gimp_tool_control_pop_preserve
 argument_list|(
 name|tool
 operator|->
 name|control
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -3307,7 +3297,7 @@ name|rect_sel_tool
 argument_list|)
 expr_stmt|;
 comment|/* prevent change in selection from halting the tool */
-name|gimp_tool_control_set_preserve
+name|gimp_tool_control_push_preserve
 argument_list|(
 name|tool
 operator|->
@@ -3498,13 +3488,11 @@ name|image
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_tool_control_set_preserve
+name|gimp_tool_control_pop_preserve
 argument_list|(
 name|tool
 operator|->
 name|control
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_select_tool_update_option_defaults

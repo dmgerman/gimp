@@ -118,6 +118,12 @@ name|gboolean
 name|preserve
 decl_stmt|;
 comment|/*  Preserve this tool across       *                                             *  drawable changes                */
+DECL|member|preserve_stack
+name|GSList
+modifier|*
+name|preserve_stack
+decl_stmt|;
+comment|/*  for push/pop preserve           */
 DECL|member|scroll_lock
 name|gboolean
 name|scroll_lock
@@ -348,6 +354,31 @@ end_function_decl
 begin_function_decl
 name|gboolean
 name|gimp_tool_control_get_preserve
+parameter_list|(
+name|GimpToolControl
+modifier|*
+name|control
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_tool_control_push_preserve
+parameter_list|(
+name|GimpToolControl
+modifier|*
+name|control
+parameter_list|,
+name|gboolean
+name|preserve
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_tool_control_pop_preserve
 parameter_list|(
 name|GimpToolControl
 modifier|*
