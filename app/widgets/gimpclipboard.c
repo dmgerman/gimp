@@ -1748,6 +1748,14 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  mark the first entry (image/png) as suitable for storing  */
+if|if
+condition|(
+name|gimp_clip
+operator|->
+name|n_target_entries
+operator|>
+literal|0
+condition|)
 name|gtk_clipboard_set_can_store
 argument_list|(
 name|clipboard
