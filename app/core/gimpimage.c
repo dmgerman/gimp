@@ -358,7 +358,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b1ecfa0103
+DECL|enum|__anon298965700103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -455,7 +455,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b1ecfa0203
+DECL|enum|__anon298965700203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5402,39 +5402,39 @@ case|:
 case|case
 name|GIMP_INDEXED
 case|:
-if|#
-directive|if
-literal|0
-comment|/* XXX use real format once the legacy projection is gone */
-block|return gimp_image_get_format (image, GIMP_RGB, GIMP_PRECISION_U8, TRUE);
-else|#
-directive|else
 return|return
-name|babl_format
+name|gimp_image_get_format
 argument_list|(
-literal|"R'G'B'A u8"
+name|image
+argument_list|,
+name|GIMP_RGB
+argument_list|,
+name|gimp_image_get_precision
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 return|;
-endif|#
-directive|endif
 case|case
 name|GIMP_GRAY
 case|:
-if|#
-directive|if
-literal|0
-comment|/* XXX use real format once the legacy projection is gone */
-block|return gimp_image_get_format (image, GIMP_GRAY, GIMP_PRECISION_U8, TRUE);
-else|#
-directive|else
 return|return
-name|babl_format
+name|gimp_image_get_format
 argument_list|(
-literal|"Y'A u8"
+name|image
+argument_list|,
+name|GIMP_GRAY
+argument_list|,
+name|gimp_image_get_precision
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 return|;
-endif|#
-directive|endif
 block|}
 name|g_assert_not_reached
 argument_list|()
