@@ -360,7 +360,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b0262dd0108
+DECL|struct|__anon2b792ecf0108
 typedef|typedef
 struct|struct
 block|{
@@ -382,7 +382,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b0262dd0208
+DECL|struct|__anon2b792ecf0208
 typedef|typedef
 struct|struct
 block|{
@@ -3832,9 +3832,9 @@ condition|(
 name|inv_do_pause
 condition|)
 block|{
-name|sleep
+name|g_usleep
 argument_list|(
-literal|1
+name|G_USEC_PER_SEC
 argument_list|)
 expr_stmt|;
 name|inv_do_pause
