@@ -525,7 +525,7 @@ name|p
 operator|->
 name|instructions
 argument_list|,
-literal|100
+literal|16
 argument_list|,
 literal|0
 argument_list|)
