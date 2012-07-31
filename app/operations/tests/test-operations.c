@@ -2226,11 +2226,6 @@ block|{
 name|gint
 name|result
 decl_stmt|;
-name|g_thread_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
 name|gegl_init
 argument_list|(
 operator|&
