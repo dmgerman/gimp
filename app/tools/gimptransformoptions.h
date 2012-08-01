@@ -168,6 +168,10 @@ DECL|member|cornersnap
 name|gboolean
 name|cornersnap
 decl_stmt|;
+DECL|member|fixedpivot
+name|gboolean
+name|fixedpivot
+decl_stmt|;
 block|}
 struct|;
 end_struct

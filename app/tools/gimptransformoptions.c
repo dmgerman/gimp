@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293617720103
+DECL|enum|__anon2c6c1da90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -150,6 +150,9 @@ name|PROP_FREESHEAR
 block|,
 DECL|enumerator|PROP_CORNERSNAP
 name|PROP_CORNERSNAP
+block|,
+DECL|enumerator|PROP_FIXEDPIVOT
+name|PROP_FIXEDPIVOT
 block|, }
 enum|;
 end_enum
@@ -537,6 +540,21 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
+name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_FIXEDPIVOT
+argument_list|,
+literal|"fixedpivot"
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -766,6 +784,19 @@ name|value
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|PROP_FIXEDPIVOT
+case|:
+name|options
+operator|->
+name|fixedpivot
+operator|=
+name|g_value_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
 argument_list|(
@@ -983,6 +1014,19 @@ argument_list|,
 name|options
 operator|->
 name|cornersnap
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_FIXEDPIVOT
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|options
+operator|->
+name|fixedpivot
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1666,12 +1710,24 @@ operator|==
 name|GIMP_TYPE_UNIFIED_TRANSFORM_TOOL
 condition|)
 block|{
-DECL|struct|__anon293617720208
+name|GdkModifierType
+name|shift
+init|=
+name|gimp_get_extend_selection_mask
+argument_list|()
+decl_stmt|;
+name|GdkModifierType
+name|ctrl
+init|=
+name|gimp_get_constrain_behavior_mask
+argument_list|()
+decl_stmt|;
+DECL|struct|__anon2c6c1da90208
 struct|struct
 block|{
-DECL|member|shift
-name|gboolean
-name|shift
+DECL|member|mod
+name|GdkModifierType
+name|mod
 decl_stmt|;
 DECL|member|name
 name|gchar
@@ -1689,7 +1745,7 @@ index|[]
 init|=
 block|{
 block|{
-name|TRUE
+name|shift
 block|,
 literal|"keepaspect"
 block|,
@@ -1697,7 +1753,7 @@ literal|"Keep aspect (%s)"
 block|}
 block|,
 block|{
-name|TRUE
+name|shift
 block|,
 literal|"freeshear"
 block|,
@@ -1705,7 +1761,7 @@ literal|"Move edge freely in shearing (%s)"
 block|}
 block|,
 block|{
-name|FALSE
+name|ctrl
 block|,
 literal|"frompivot"
 block|,
@@ -1713,7 +1769,7 @@ literal|"Scale from pivot / Symmetric shearing (%s)"
 block|}
 block|,
 block|{
-name|FALSE
+name|ctrl
 block|,
 literal|"cornersnap"
 block|,
@@ -1721,11 +1777,19 @@ literal|"Snap pivot point to corners/center (%s)"
 block|}
 block|,
 block|{
-name|FALSE
+name|ctrl
 block|,
 literal|"constrain"
 block|,
 literal|"Constrain movement (%s)"
+block|}
+block|,
+block|{
+literal|0
+block|,
+literal|"fixedpivot"
+block|,
+literal|"Lock pivot to canvas"
 block|}
 block|,       }
 struct|;
@@ -1748,7 +1812,7 @@ literal|0
 init|;
 name|i
 operator|<
-literal|5
+literal|6
 condition|;
 name|i
 operator|++
@@ -1772,13 +1836,7 @@ index|[
 name|i
 index|]
 operator|.
-name|shift
-condition|?
-name|gimp_get_extend_selection_mask
-argument_list|()
-else|:
-name|gimp_get_constrain_behavior_mask
-argument_list|()
+name|mod
 argument_list|)
 argument_list|)
 expr_stmt|;
