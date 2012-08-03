@@ -1103,223 +1103,52 @@ name|gconstpointer
 name|data
 parameter_list|)
 block|{
-name|Gimp
-modifier|*
-name|gimp
-init|=
-name|GIMP
-argument_list|(
-name|data
-argument_list|)
-decl_stmt|;
-name|GimpImage
-modifier|*
-name|image
-init|=
-name|GIMP_IMAGE
-argument_list|(
-name|gimp_get_image_iter
-argument_list|(
-name|gimp
-argument_list|)
-operator|->
-name|data
-argument_list|)
-decl_stmt|;
-name|GimpChannel
-modifier|*
-name|selection
-init|=
-name|gimp_image_get_mask
-argument_list|(
-name|image
-argument_list|)
-decl_stmt|;
-name|GimpLayer
-modifier|*
-name|active_layer
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|dockable
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|gtk_tree_view
-decl_stmt|;
-name|gint
-name|assumed_layer_x
-decl_stmt|;
-name|gint
-name|assumed_empty_layer_y
-decl_stmt|;
-name|gint
-name|assumed_background_layer_y
-decl_stmt|;
+if|#
+directive|if
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: please fix alt_click_is_layer_to_selection test
+endif|#
+directive|endif
+if|#
+directive|if
+literal|0
+block|Gimp        *gimp      = GIMP (data);   GimpImage   *image     = GIMP_IMAGE (gimp_get_image_iter (gimp)->data);   GimpChannel *selection = gimp_image_get_mask (image);   GimpLayer   *active_layer;   GtkWidget   *dockable;   GtkWidget   *gtk_tree_view;   gint         assumed_layer_x;   gint         assumed_empty_layer_y;   gint         assumed_background_layer_y;
 comment|/* Hardcode assumptions of where the layers are in the    * GtkTreeView. Doesn't feel worth adding proper API for this. One    * can just use GIMP_PAUSE and re-measure new coordinates if we    * start to layout layers in the GtkTreeView differently    */
-name|assumed_layer_x
-operator|=
-literal|96
-expr_stmt|;
-name|assumed_empty_layer_y
-operator|=
-literal|16
-expr_stmt|;
-name|assumed_background_layer_y
-operator|=
-literal|42
-expr_stmt|;
+block|assumed_layer_x            = 96;   assumed_empty_layer_y      = 16;   assumed_background_layer_y = 42;
 comment|/* Store the active layer, it shall not change during the execution    * of this test    */
-name|active_layer
-operator|=
-name|gimp_image_get_active_layer
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
+block|active_layer = gimp_image_get_active_layer (image);
 comment|/* Find the layer tree view to click in. Note that there is a    * potential problem with gtk_test_find_widget and GtkNotebook: it    * will return e.g. a GtkTreeView from another page if that page is    * "on top" of the reference label.    */
-name|dockable
-operator|=
-name|gimp_ui_find_window
-argument_list|(
-name|gimp_dialog_factory_get_singleton
-argument_list|()
-argument_list|,
-name|gimp_ui_is_gimp_layer_list
-argument_list|)
-expr_stmt|;
-name|gtk_tree_view
-operator|=
-name|gtk_test_find_widget
-argument_list|(
-name|dockable
-argument_list|,
-literal|"Lock:"
-argument_list|,
-name|GTK_TYPE_TREE_VIEW
-argument_list|)
-expr_stmt|;
+block|dockable = gimp_ui_find_window (gimp_dialog_factory_get_singleton (),                                   gimp_ui_is_gimp_layer_list);   gtk_tree_view = gtk_test_find_widget (dockable,                                         "Lock:",                                         GTK_TYPE_TREE_VIEW);
 comment|/* First make sure there is no selection */
-name|g_assert
-argument_list|(
-operator|!
-name|gimp_channel_bounds
-argument_list|(
-name|selection
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
+block|g_assert (! gimp_channel_bounds (selection,                                    NULL, NULL,
 comment|/*x1, y1*/
-name|NULL
-argument_list|,
-name|NULL
+block|NULL, NULL
 comment|/*x2, y2*/
-argument_list|)
-argument_list|)
-expr_stmt|;
+block|));
 comment|/* Now simulate alt-click on the background layer */
-name|g_assert
-argument_list|(
-name|gimp_ui_synthesize_click
-argument_list|(
-name|gtk_tree_view
-argument_list|,
-name|assumed_layer_x
-argument_list|,
-name|assumed_background_layer_y
-argument_list|,
-literal|1
+block|g_assert (gimp_ui_synthesize_click (gtk_tree_view,                                       assumed_layer_x,                                       assumed_background_layer_y,                                       1
 comment|/*button*/
-argument_list|,
-name|GDK_MOD1_MASK
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_test_run_mainloop_until_idle
-argument_list|()
-expr_stmt|;
+block|,                                       GDK_MOD1_MASK));   gimp_test_run_mainloop_until_idle ();
 comment|/* Make sure we got a selection and that the active layer didn't    * change    */
-name|g_assert
-argument_list|(
-name|gimp_channel_bounds
-argument_list|(
-name|selection
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
+block|g_assert (gimp_channel_bounds (selection,                                  NULL, NULL,
 comment|/*x1, y1*/
-name|NULL
-argument_list|,
-name|NULL
+block|NULL, NULL
 comment|/*x2, y2*/
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_assert
-argument_list|(
-name|gimp_image_get_active_layer
-argument_list|(
-name|image
-argument_list|)
-operator|==
-name|active_layer
-argument_list|)
-expr_stmt|;
+block|));   g_assert (gimp_image_get_active_layer (image) == active_layer);
 comment|/* Now simulate alt-click on the empty layer */
-name|g_assert
-argument_list|(
-name|gimp_ui_synthesize_click
-argument_list|(
-name|gtk_tree_view
-argument_list|,
-name|assumed_layer_x
-argument_list|,
-name|assumed_empty_layer_y
-argument_list|,
-literal|1
+block|g_assert (gimp_ui_synthesize_click (gtk_tree_view,                                       assumed_layer_x,                                       assumed_empty_layer_y,                                       1
 comment|/*button*/
-argument_list|,
-name|GDK_MOD1_MASK
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_test_run_mainloop_until_idle
-argument_list|()
-expr_stmt|;
+block|,                                       GDK_MOD1_MASK));   gimp_test_run_mainloop_until_idle ();
 comment|/* Make sure that emptied the selection and that the active layer    * still didn't change    */
-name|g_assert
-argument_list|(
-operator|!
-name|gimp_channel_bounds
-argument_list|(
-name|selection
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
+block|g_assert (! gimp_channel_bounds (selection,                                    NULL, NULL,
 comment|/*x1, y1*/
-name|NULL
-argument_list|,
-name|NULL
+block|NULL, NULL
 comment|/*x2, y2*/
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_assert
-argument_list|(
-name|gimp_image_get_active_layer
-argument_list|(
-name|image
-argument_list|)
-operator|==
-name|active_layer
-argument_list|)
-expr_stmt|;
+block|));   g_assert (gimp_image_get_active_layer (image) == active_layer);
+endif|#
+directive|endif
 block|}
 end_function
 
