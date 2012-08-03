@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<string.h>
 end_include
 
 begin_include
@@ -30,13 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
+file|"libgimpmath/gimpmath.h"
 end_include
 
 begin_include
@@ -59,14 +53,6 @@ define|#
 directive|define
 name|OUTPUT_DIR
 value|"output"
-end_define
-
-begin_define
-DECL|macro|PI
-define|#
-directive|define
-name|PI
-value|M_PI
 end_define
 
 begin_function
@@ -619,7 +605,7 @@ argument_list|)
 operator|*
 literal|180
 operator|/
-name|PI
+name|G_PI
 expr_stmt|;
 name|h1_
 operator|=
@@ -646,7 +632,7 @@ argument_list|)
 operator|*
 literal|180
 operator|/
-name|PI
+name|G_PI
 expr_stmt|;
 name|h2_
 operator|=
@@ -711,7 +697,7 @@ operator|-
 literal|30
 operator|)
 operator|*
-name|PI
+name|G_PI
 operator|/
 literal|180
 argument_list|)
@@ -726,7 +712,7 @@ operator|*
 literal|2
 operator|)
 operator|*
-name|PI
+name|G_PI
 operator|/
 literal|180
 argument_list|)
@@ -743,7 +729,7 @@ operator|+
 literal|6
 operator|)
 operator|*
-name|PI
+name|G_PI
 operator|/
 literal|180
 argument_list|)
@@ -760,7 +746,7 @@ operator|-
 literal|63
 operator|)
 operator|*
-name|PI
+name|G_PI
 operator|/
 literal|180
 argument_list|)
@@ -834,7 +820,7 @@ name|dh_
 operator|/
 literal|2.0
 operator|*
-name|PI
+name|G_PI
 operator|/
 literal|180
 argument_list|)
@@ -940,7 +926,7 @@ literal|2
 operator|*
 name|dPhi
 operator|*
-name|PI
+name|G_PI
 operator|/
 literal|180
 argument_list|)
