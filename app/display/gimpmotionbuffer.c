@@ -101,7 +101,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9f09460103
+DECL|enum|__anon29929e3d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9f09460203
+DECL|enum|__anon29929e3d0203
 block|{
 DECL|enumerator|STROKE
 name|STROKE
@@ -861,16 +861,6 @@ init|=
 literal|0.0
 decl_stmt|;
 name|gdouble
-name|dir_delta_x
-init|=
-literal|0.0
-decl_stmt|;
-name|gdouble
-name|dir_delta_y
-init|=
-literal|0.0
-decl_stmt|;
-name|gdouble
 name|distance
 init|=
 literal|1.0
@@ -959,6 +949,16 @@ name|dist
 decl_stmt|;
 name|gdouble
 name|delta_dir
+decl_stmt|;
+name|gdouble
+name|dir_delta_x
+init|=
+literal|0.0
+decl_stmt|;
+name|gdouble
+name|dir_delta_y
+init|=
+literal|0.0
 decl_stmt|;
 name|delta_x
 operator|=

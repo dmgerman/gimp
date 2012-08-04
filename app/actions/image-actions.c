@@ -1279,7 +1279,6 @@ operator|=
 literal|"image-convert-indexed"
 expr_stmt|;
 break|break;
-break|break;
 block|}
 name|gimp_action_group_set_action_active
 argument_list|(
@@ -1337,7 +1336,6 @@ name|action
 operator|=
 literal|"image-convert-float"
 expr_stmt|;
-break|break;
 break|break;
 block|}
 name|gimp_action_group_set_action_active

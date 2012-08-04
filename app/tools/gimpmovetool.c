@@ -2813,10 +2813,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|GimpGuide
-modifier|*
-name|guide
-decl_stmt|;
 name|GimpLayer
 modifier|*
 name|layer
@@ -2838,9 +2834,6 @@ argument_list|(
 name|shell
 argument_list|)
 operator|&&
-operator|(
-name|guide
-operator|=
 name|gimp_image_find_guide
 argument_list|(
 name|image
@@ -2867,7 +2860,6 @@ argument_list|,
 name|snap_distance
 argument_list|)
 argument_list|)
-operator|)
 condition|)
 block|{
 name|tool_cursor

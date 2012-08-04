@@ -2041,7 +2041,7 @@ while|while
 condition|(
 name|dwExitCode
 operator|==
-name|dwExitCode
+name|STILL_ACTIVE
 operator|&&
 name|GetExitCodeProcess
 argument_list|(
