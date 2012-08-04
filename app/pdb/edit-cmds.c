@@ -2961,6 +2961,8 @@ condition|)
 block|{
 name|GimpFillType
 name|fill_type
+init|=
+name|GIMP_FG_BUCKET_FILL
 decl_stmt|;
 switch|switch
 condition|(
@@ -2974,6 +2976,7 @@ name|fill_type
 operator|=
 name|GIMP_FOREGROUND_FILL
 expr_stmt|;
+break|break;
 case|case
 name|GIMP_BG_BUCKET_FILL
 case|:
@@ -2981,6 +2984,7 @@ name|fill_type
 operator|=
 name|GIMP_BACKGROUND_FILL
 expr_stmt|;
+break|break;
 case|case
 name|GIMP_PATTERN_BUCKET_FILL
 case|:
@@ -2988,6 +2992,7 @@ name|fill_type
 operator|=
 name|GIMP_PATTERN_FILL
 expr_stmt|;
+break|break;
 block|}
 name|success
 operator|=
