@@ -153,7 +153,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba8ca1a0103
+DECL|enum|__anon2a1f5ea90103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -4295,7 +4295,7 @@ name|mousey
 block|}
 decl_stmt|;
 name|GimpVector2
-name|p
+name|d
 decl_stmt|;
 name|GimpVector2
 name|pivot
@@ -4545,7 +4545,7 @@ operator|)
 operator|/
 literal|4.
 expr_stmt|;
-name|p
+name|d
 operator|=
 name|vectorsubtract
 argument_list|(
@@ -4630,7 +4630,7 @@ block|,
 literal|0.
 block|}
 argument_list|,
-name|p
+name|d
 argument_list|)
 operator|/
 operator|(
@@ -4644,7 +4644,7 @@ name|diag
 init|=
 name|norm
 argument_list|(
-name|p
+name|d
 argument_list|)
 operator|/
 name|sqrt
@@ -4661,12 +4661,12 @@ operator|/
 literal|16
 operator|||
 name|angle
-operator|>
+operator|>=
 literal|15.
 operator|/
 literal|16
 condition|)
-name|p
+name|d
 operator|.
 name|y
 operator|=
@@ -4681,13 +4681,13 @@ literal|3.
 operator|/
 literal|16
 condition|)
-name|p
+name|d
 operator|.
 name|y
 operator|=
 operator|-
 operator|(
-name|p
+name|d
 operator|.
 name|x
 operator|=
@@ -4703,7 +4703,7 @@ literal|5.
 operator|/
 literal|16
 condition|)
-name|p
+name|d
 operator|.
 name|x
 operator|=
@@ -4718,11 +4718,11 @@ literal|7.
 operator|/
 literal|16
 condition|)
-name|p
+name|d
 operator|.
 name|x
 operator|=
-name|p
+name|d
 operator|.
 name|y
 operator|=
@@ -4738,7 +4738,7 @@ literal|9.
 operator|/
 literal|16
 condition|)
-name|p
+name|d
 operator|.
 name|y
 operator|=
@@ -4753,13 +4753,13 @@ literal|11.
 operator|/
 literal|16
 condition|)
-name|p
+name|d
 operator|.
 name|x
 operator|=
 operator|-
 operator|(
-name|p
+name|d
 operator|.
 name|y
 operator|=
@@ -4775,7 +4775,7 @@ literal|13.
 operator|/
 literal|16
 condition|)
-name|p
+name|d
 operator|.
 name|x
 operator|=
@@ -4790,11 +4790,11 @@ literal|15.
 operator|/
 literal|16
 condition|)
-name|p
+name|d
 operator|.
 name|x
 operator|=
-name|p
+name|d
 operator|.
 name|y
 operator|=
@@ -4826,7 +4826,7 @@ index|[
 name|i
 index|]
 argument_list|,
-name|p
+name|d
 argument_list|)
 expr_stmt|;
 if|if
@@ -4841,7 +4841,7 @@ name|vectoradd
 argument_list|(
 name|pivot
 argument_list|,
-name|p
+name|d
 argument_list|)
 expr_stmt|;
 name|fixedpivot
@@ -5076,7 +5076,7 @@ name|vectoradd
 argument_list|(
 name|pivot
 argument_list|,
-name|p
+name|d
 argument_list|)
 expr_stmt|;
 name|fixedpivot
@@ -5241,18 +5241,18 @@ name|opposite
 index|]
 argument_list|)
 decl_stmt|;
-name|p
+name|d
 operator|=
 name|vectorproject
 argument_list|(
-name|p
+name|d
 argument_list|,
 name|diag
 argument_list|)
 expr_stmt|;
 block|}
 comment|/* Move the corner being interacted with */
-comment|/*    rp---------tp        *   /           /\<- p, the interaction vector        *  /           /  tp        * op----------/        *        */
+comment|/*    rp---------tp        *   /           /\<- d, the interaction vector        *  /           /  tp        * op----------/        *        */
 name|newpos
 index|[
 name|this
@@ -5265,7 +5265,7 @@ index|[
 name|this
 index|]
 argument_list|,
-name|p
+name|d
 argument_list|)
 expr_stmt|;
 comment|/* Where the corner to the right and left would go, need these to form        * lines to intersect with the sides */
@@ -5282,7 +5282,7 @@ index|[
 name|right
 index|]
 argument_list|,
-name|p
+name|d
 argument_list|)
 expr_stmt|;
 name|newpos
@@ -5297,7 +5297,7 @@ index|[
 name|left
 index|]
 argument_list|,
-name|p
+name|d
 argument_list|)
 expr_stmt|;
 comment|/* Now we just need to find the intersection of op-rp and nr-nt.        *    rp----------/        *   /           /        *  /  nr==========nt        * op----------/        *        */
@@ -5585,11 +5585,11 @@ name|side_r
 argument_list|)
 expr_stmt|;
 comment|/* restrict to movement along the midline */
-name|p
+name|d
 operator|=
 name|vectorproject
 argument_list|(
-name|p
+name|d
 argument_list|,
 name|midline
 argument_list|)
@@ -5742,7 +5742,7 @@ index|[
 name|this_l
 index|]
 argument_list|,
-name|p
+name|d
 argument_list|)
 expr_stmt|;
 name|newpos
@@ -5757,7 +5757,7 @@ index|[
 name|this_r
 index|]
 argument_list|,
-name|p
+name|d
 argument_list|)
 expr_stmt|;
 name|newpos
@@ -5977,7 +5977,7 @@ name|vectorsubtract
 argument_list|(
 name|zero
 argument_list|,
-name|p
+name|d
 argument_list|)
 expr_stmt|;
 else|else
@@ -6008,11 +6008,11 @@ name|this_l
 index|]
 argument_list|)
 decl_stmt|;
-name|p
+name|d
 operator|=
 name|vectorproject
 argument_list|(
-name|p
+name|d
 argument_list|,
 name|side
 argument_list|)
@@ -6066,7 +6066,7 @@ index|[
 name|this_l
 index|]
 argument_list|,
-name|p
+name|d
 argument_list|)
 expr_stmt|;
 name|newpos
@@ -6081,7 +6081,7 @@ index|[
 name|this_r
 index|]
 argument_list|,
-name|p
+name|d
 argument_list|)
 expr_stmt|;
 name|newpos
@@ -6306,7 +6306,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-comment|/* project p on each candidate vector and see                * which has the shortest rejection */
+comment|/* project d on each candidate vector and see                * which has the shortest rejection */
 name|proj
 index|[
 name|i
@@ -6314,7 +6314,7 @@ index|]
 operator|=
 name|vectorproject
 argument_list|(
-name|p
+name|d
 argument_list|,
 name|proj
 index|[
@@ -6331,7 +6331,7 @@ name|norm
 argument_list|(
 name|vectorsubtract
 argument_list|(
-name|p
+name|d
 argument_list|,
 name|proj
 index|[
@@ -6363,7 +6363,7 @@ index|[
 name|opposite
 index|]
 condition|)
-name|p
+name|d
 operator|=
 name|proj
 index|[
@@ -6383,7 +6383,7 @@ index|[
 name|opposite
 index|]
 condition|)
-name|p
+name|d
 operator|=
 name|proj
 index|[
@@ -6391,7 +6391,7 @@ name|right
 index|]
 expr_stmt|;
 else|else
-name|p
+name|d
 operator|=
 name|proj
 index|[
@@ -6411,7 +6411,7 @@ index|[
 name|this
 index|]
 argument_list|,
-name|p
+name|d
 argument_list|)
 expr_stmt|;
 if|if
