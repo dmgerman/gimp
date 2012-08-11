@@ -117,7 +117,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1117760103
+DECL|enum|__anon293ebcc10103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -545,7 +545,7 @@ literal|"keep-aspect"
 argument_list|,
 name|options
 operator|->
-name|constrain
+name|constrain_scale
 argument_list|,
 name|NULL
 argument_list|)
@@ -728,7 +728,7 @@ literal|"keep-aspect"
 argument_list|,
 name|options
 operator|->
-name|constrain
+name|constrain_scale
 argument_list|,
 literal|"unit"
 argument_list|,
@@ -1218,7 +1218,7 @@ if|if
 condition|(
 name|options
 operator|->
-name|constrain
+name|constrain_scale
 condition|)
 block|{
 comment|/*  FIXME: improve this  */
@@ -1787,7 +1787,7 @@ name|constrain
 operator|!=
 name|options
 operator|->
-name|constrain
+name|constrain_scale
 condition|)
 block|{
 name|gint
@@ -1832,7 +1832,7 @@ name|g_object_set
 argument_list|(
 name|options
 argument_list|,
-literal|"constrain"
+literal|"constrain-scale"
 argument_list|,
 name|constrain
 argument_list|,

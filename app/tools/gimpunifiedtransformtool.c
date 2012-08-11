@@ -147,7 +147,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f25a7b0103
+DECL|enum|__anon2c4b1ccb0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -3151,41 +3151,6 @@ name|transform_tool
 argument_list|)
 decl_stmt|;
 name|gboolean
-name|constrain
-init|=
-name|options
-operator|->
-name|constrain
-decl_stmt|;
-name|gboolean
-name|keepaspect
-init|=
-name|options
-operator|->
-name|keepaspect
-decl_stmt|;
-name|gboolean
-name|frompivot
-init|=
-name|options
-operator|->
-name|frompivot
-decl_stmt|;
-name|gboolean
-name|freeshear
-init|=
-name|options
-operator|->
-name|freeshear
-decl_stmt|;
-name|gboolean
-name|cornersnap
-init|=
-name|options
-operator|->
-name|cornersnap
-decl_stmt|;
-name|gboolean
 name|fixedpivot
 init|=
 name|options
@@ -3450,7 +3415,9 @@ condition|)
 block|{
 if|if
 condition|(
-name|constrain
+name|options
+operator|->
+name|constrain_move
 condition|)
 block|{
 comment|/* snap to 45 degree vectors from starting point */
@@ -3702,7 +3669,9 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|constrain
+name|options
+operator|->
+name|constrain_rotate
 condition|)
 block|{
 comment|/* round to 15 degree multiple */
@@ -3788,6 +3757,8 @@ name|screeny
 decl_stmt|;
 if|if
 condition|(
+name|options
+operator|->
 name|cornersnap
 condition|)
 block|{
@@ -4043,7 +4014,9 @@ expr_stmt|;
 comment|/* when the keep aspect transformation constraint is enabled, the        * translation shall only be along the diagonal that runs trough        * this corner point. */
 if|if
 condition|(
-name|keepaspect
+name|options
+operator|->
+name|constrain_scale
 condition|)
 block|{
 comment|/* restrict to movement along the diagonal */
@@ -4183,7 +4156,9 @@ comment|/*    /-----------/        *   /           /        *  rp============nt 
 comment|/*        *        *  /--------------/        * /--------------/        *        */
 if|if
 condition|(
-name|frompivot
+name|options
+operator|->
+name|frompivot_scale
 operator|&&
 name|transform_is_convex
 argument_list|(
@@ -4412,7 +4387,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|keepaspect
+name|options
+operator|->
+name|constrain_scale
 condition|)
 block|{
 name|GimpVector2
@@ -4430,7 +4407,9 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|frompivot
+name|options
+operator|->
+name|frompivot_scale
 condition|)
 block|{
 comment|/* center of the opposite side is pivot */
@@ -4581,9 +4560,13 @@ block|}
 if|if
 condition|(
 operator|!
-name|keepaspect
+name|options
+operator|->
+name|constrain_scale
 operator|&&
-name|frompivot
+name|options
+operator|->
+name|frompivot_scale
 operator|&&
 name|transform_is_convex
 argument_list|(
@@ -4771,7 +4754,9 @@ name|this_r
 expr_stmt|;
 if|if
 condition|(
-name|frompivot
+name|options
+operator|->
+name|frompivot_shear
 condition|)
 name|po
 operator|=
@@ -4789,8 +4774,9 @@ name|zero
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|freeshear
+name|options
+operator|->
+name|constrain_shear
 condition|)
 block|{
 comment|/* restrict to movement along the side */
@@ -4822,10 +4808,13 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-operator|!
-name|freeshear
+name|options
+operator|->
+name|constrain_shear
 operator|&&
-name|frompivot
+name|options
+operator|->
+name|frompivot_shear
 condition|)
 block|{
 comment|/* restrict to movement along the opposite side */
@@ -5052,7 +5041,9 @@ argument_list|()
 expr_stmt|;
 if|if
 condition|(
-name|constrain
+name|options
+operator|->
+name|constrain_perspective
 condition|)
 block|{
 comment|/* when the constrain transformation constraint is enabled, the              translation shall only be either along the side angles of the              two sides that run to this corner point, or along the              diagonal that runs trough this corner point. */
@@ -5218,7 +5209,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|frompivot
+name|options
+operator|->
+name|frompivot_perspective
 operator|&&
 name|transform_is_convex
 argument_list|(

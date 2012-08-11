@@ -111,7 +111,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2974a8e50103
+DECL|enum|__anon2a3f54eb0103
 block|{
 DECL|enumerator|ANGLE
 name|ANGLE
@@ -1709,7 +1709,7 @@ if|if
 condition|(
 name|options
 operator|->
-name|constrain
+name|constrain_rotate
 condition|)
 block|{
 name|tr_tool
