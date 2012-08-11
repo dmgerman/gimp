@@ -147,7 +147,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0c85060103
+DECL|enum|__anon27f25a7b0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -5225,7 +5225,6 @@ argument_list|(
 name|newpos
 argument_list|)
 condition|)
-comment|//TODO constrain and frompivot are both bound to ctrl
 block|{
 name|GimpVector2
 name|delta

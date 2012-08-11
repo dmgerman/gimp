@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6c1da90103
+DECL|enum|__anon28ac4bdf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1722,7 +1722,7 @@ init|=
 name|gimp_get_constrain_behavior_mask
 argument_list|()
 decl_stmt|;
-DECL|struct|__anon2c6c1da90208
+DECL|struct|__anon28ac4bdf0208
 struct|struct
 block|{
 DECL|member|mod
@@ -1747,17 +1747,17 @@ block|{
 block|{
 name|shift
 block|,
-literal|"keepaspect"
+literal|"constrain"
 block|,
-literal|"Keep aspect (%s)"
+literal|"Constrain movement (%s)"
 block|}
 block|,
 block|{
 name|shift
 block|,
-literal|"freeshear"
+literal|"keepaspect"
 block|,
-literal|"Move edge freely in shearing (%s)"
+literal|"Keep aspect (%s)"
 block|}
 block|,
 block|{
@@ -1769,19 +1769,19 @@ literal|"Scale from pivot / Symmetric shearing (%s)"
 block|}
 block|,
 block|{
-name|ctrl
+name|shift
+block|,
+literal|"freeshear"
+block|,
+literal|"Move edge freely in shearing (%s)"
+block|}
+block|,
+block|{
+name|shift
 block|,
 literal|"cornersnap"
 block|,
 literal|"Snap pivot point to corners/center (%s)"
-block|}
-block|,
-block|{
-name|ctrl
-block|,
-literal|"constrain"
-block|,
-literal|"Constrain movement (%s)"
 block|}
 block|,
 block|{
