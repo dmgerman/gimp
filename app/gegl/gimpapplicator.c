@@ -638,6 +638,10 @@ literal|"buffer"
 argument_list|,
 name|dest_buffer
 argument_list|,
+literal|"flush"
+argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
