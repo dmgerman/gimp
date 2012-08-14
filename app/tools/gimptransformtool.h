@@ -25,13 +25,26 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a406a900103
+DECL|enum|__anon2a17ad700103
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
 block|,
 DECL|enumerator|TRANSFORM_HANDLE_NONE
 name|TRANSFORM_HANDLE_NONE
+block|,
+DECL|enumerator|TRANSFORM_HANDLE_NW_P
+name|TRANSFORM_HANDLE_NW_P
+block|,
+comment|/* perspective handles */
+DECL|enumerator|TRANSFORM_HANDLE_NE_P
+name|TRANSFORM_HANDLE_NE_P
+block|,
+DECL|enumerator|TRANSFORM_HANDLE_SW_P
+name|TRANSFORM_HANDLE_SW_P
+block|,
+DECL|enumerator|TRANSFORM_HANDLE_SE_P
+name|TRANSFORM_HANDLE_SE_P
 block|,
 DECL|enumerator|TRANSFORM_HANDLE_NW
 name|TRANSFORM_HANDLE_NW
@@ -73,20 +86,6 @@ DECL|enumerator|TRANSFORM_HANDLE_PIVOT
 name|TRANSFORM_HANDLE_PIVOT
 block|,
 comment|/* pivot for rotation and scaling */
-comment|/* extra handles for unified tool */
-DECL|enumerator|TRANSFORM_HANDLE_NW_P
-name|TRANSFORM_HANDLE_NW_P
-block|,
-comment|/* perspective handles */
-DECL|enumerator|TRANSFORM_HANDLE_NE_P
-name|TRANSFORM_HANDLE_NE_P
-block|,
-DECL|enumerator|TRANSFORM_HANDLE_SW_P
-name|TRANSFORM_HANDLE_SW_P
-block|,
-DECL|enumerator|TRANSFORM_HANDLE_SE_P
-name|TRANSFORM_HANDLE_SE_P
-block|,
 DECL|enumerator|TRANSFORM_HANDLE_N_S
 name|TRANSFORM_HANDLE_N_S
 block|,
