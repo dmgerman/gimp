@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f455110103
+DECL|enum|__anon297c95680103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f455110203
+DECL|enum|__anon297c95680203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -2983,7 +2983,9 @@ name|height
 condition|)
 block|{
 return|return
-name|pixbuf
+name|private
+operator|->
+name|preview_pixbuf
 return|;
 block|}
 name|g_object_unref
