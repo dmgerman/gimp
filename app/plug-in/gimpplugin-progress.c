@@ -167,7 +167,6 @@ name|attach_count
 argument_list|)
 argument_list|)
 expr_stmt|;
-empty_stmt|;
 return|return
 name|attach_count
 return|;
@@ -230,7 +229,6 @@ name|attach_count
 argument_list|)
 argument_list|)
 expr_stmt|;
-empty_stmt|;
 return|return
 name|attach_count
 return|;

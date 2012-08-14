@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b621a390103
+DECL|enum|__anon2955d78e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -149,7 +149,6 @@ DECL|member|slice_angle
 name|gdouble
 name|slice_angle
 decl_stmt|;
-empty_stmt|;
 block|}
 struct|;
 end_struct

@@ -2414,7 +2414,6 @@ name|r2
 operator|*
 name|tcos
 expr_stmt|;
-empty_stmt|;
 name|ny
 operator|=
 name|r2

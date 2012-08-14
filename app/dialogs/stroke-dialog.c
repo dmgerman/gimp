@@ -1061,7 +1061,6 @@ argument_list|,
 literal|"gimp-tool-menu"
 argument_list|)
 expr_stmt|;
-empty_stmt|;
 name|image
 operator|=
 name|gimp_item_get_image

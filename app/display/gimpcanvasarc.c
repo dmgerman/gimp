@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdb7e750103
+DECL|enum|__anon2990a3c70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -132,7 +132,6 @@ DECL|member|slice_angle
 name|gdouble
 name|slice_angle
 decl_stmt|;
-empty_stmt|;
 DECL|member|filled
 name|gboolean
 name|filled

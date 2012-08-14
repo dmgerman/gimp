@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c60062b0103
+DECL|enum|__anon2bc7ce2d0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -165,7 +165,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c60062b0203
+DECL|enum|__anon2bc7ce2d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -8239,7 +8239,6 @@ expr_stmt|;
 return|return
 name|retval
 return|;
-empty_stmt|;
 block|}
 end_function
 
