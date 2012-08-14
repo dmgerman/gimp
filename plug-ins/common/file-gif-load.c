@@ -935,7 +935,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b3b3c7d0108
+DECL|struct|__anon2aad66580108
 block|{
 DECL|member|Width
 name|guint
@@ -979,7 +979,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b3b3c7d0208
+DECL|struct|__anon2aad66580208
 block|{
 DECL|member|transparent
 name|gint
@@ -4574,8 +4574,14 @@ operator|*
 operator|)
 name|g_malloc
 argument_list|(
+operator|(
+name|gsize
+operator|)
 name|len
 operator|*
+operator|(
+name|gsize
+operator|)
 name|height
 operator|*
 operator|(
@@ -4596,8 +4602,14 @@ operator|*
 operator|)
 name|g_malloc
 argument_list|(
+operator|(
+name|gsize
+operator|)
 name|len
 operator|*
+operator|(
+name|gsize
+operator|)
 name|height
 argument_list|)
 expr_stmt|;
