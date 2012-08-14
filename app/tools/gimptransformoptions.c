@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2794bc610103
+DECL|enum|__anon29baa54f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1911,7 +1911,7 @@ init|=
 name|gimp_get_constrain_behavior_mask
 argument_list|()
 decl_stmt|;
-DECL|struct|__anon2794bc610208
+DECL|struct|__anon29baa54f0208
 struct|struct
 block|{
 DECL|member|mod
@@ -2409,12 +2409,6 @@ operator|->
 name|type
 operator|==
 name|GIMP_TRANSFORM_TYPE_LAYER
-operator|&&
-name|options
-operator|->
-name|direction
-operator|==
-name|GIMP_TRANSFORM_FORWARD
 operator|)
 return|;
 block|}
