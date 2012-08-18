@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a17ad700103
+DECL|enum|__anon278d1af50103
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -103,10 +103,6 @@ DECL|enumerator|TRANSFORM_HANDLE_ROTATION
 name|TRANSFORM_HANDLE_ROTATION
 block|,
 comment|/* rotation handle */
-DECL|enumerator|TRANSFORM_HANDLE_ROTATION2
-name|TRANSFORM_HANDLE_ROTATION2
-block|,
-comment|/* extra rotation handle */
 DECL|enumerator|TRANSFORM_HANDLE_NUM
 name|TRANSFORM_HANDLE_NUM
 comment|/* keep this last so *handles[] is the right size */
