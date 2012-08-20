@@ -147,7 +147,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ebf3ba0103
+DECL|enum|__anon28c9912d0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -4791,10 +4791,6 @@ name|gint
 name|this_l
 decl_stmt|,
 name|this_r
-decl_stmt|,
-name|opp_l
-decl_stmt|,
-name|opp_r
 decl_stmt|;
 comment|/* set up indices for this edge and the opposite edge */
 if|if
@@ -4867,18 +4863,6 @@ block|}
 else|else
 name|g_assert_not_reached
 argument_list|()
-expr_stmt|;
-name|opp_l
-operator|=
-literal|3
-operator|-
-name|this_l
-expr_stmt|;
-name|opp_r
-operator|=
-literal|3
-operator|-
-name|this_r
 expr_stmt|;
 if|if
 condition|(
