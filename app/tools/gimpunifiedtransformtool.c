@@ -147,7 +147,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c9912d0103
+DECL|enum|__anon2aaff7b20103
 block|{
 DECL|enumerator|X0
 name|X0
