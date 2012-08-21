@@ -1567,7 +1567,7 @@ block|{
 name|gint
 name|i
 decl_stmt|;
-comment|/* push current state on the undo list and set this    * state as the current state, but avoid doing this if there were no changes */
+comment|/* push current state on the undo list and set this state as the    * current state, but avoid doing this if there were no changes    */
 for|for
 control|(
 name|i
@@ -1662,7 +1662,7 @@ operator|->
 name|prev_trans_info
 argument_list|)
 expr_stmt|;
-comment|/* If we undid anything and started interacting, we have to discard        * the redo history */
+comment|/* If we undid anything and started interacting, we have to        * discard the redo history        */
 name|g_list_free_full
 argument_list|(
 name|tr_tool
@@ -6888,9 +6888,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|free_trans (gpointer data)
 specifier|static
 name|void
+DECL|function|free_trans (gpointer data)
 name|free_trans
 parameter_list|(
 name|gpointer
@@ -6908,9 +6908,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|update_sensitivity (GimpTransformTool * tr_tool)
 specifier|static
 name|void
+DECL|function|update_sensitivity (GimpTransformTool * tr_tool)
 name|update_sensitivity
 parameter_list|(
 name|GimpTransformTool
