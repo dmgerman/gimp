@@ -147,7 +147,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon278d0d9e0103
+DECL|enum|__anon28acfade0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -899,13 +899,6 @@ modifier|*
 name|display
 parameter_list|)
 block|{
-name|TransformAction
-name|ret
-init|=
-name|TRANSFORM_HANDLE_NONE
-decl_stmt|,
-name|i
-decl_stmt|;
 name|GimpTool
 modifier|*
 name|tool
@@ -914,6 +907,14 @@ name|GIMP_TOOL
 argument_list|(
 name|tr_tool
 argument_list|)
+decl_stmt|;
+name|TransformAction
+name|ret
+init|=
+name|TRANSFORM_HANDLE_NONE
+decl_stmt|;
+name|TransformAction
+name|i
 decl_stmt|;
 for|for
 control|(
@@ -2433,9 +2434,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|transform_is_convex (GimpVector2 * pos)
 specifier|static
 name|gboolean
+DECL|function|transform_is_convex (GimpVector2 * pos)
 name|transform_is_convex
 parameter_list|(
 name|GimpVector2
@@ -2507,10 +2508,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|dotprod (GimpVector2 a,GimpVector2 b)
 specifier|static
 specifier|inline
 name|gdouble
+DECL|function|dotprod (GimpVector2 a,GimpVector2 b)
 name|dotprod
 parameter_list|(
 name|GimpVector2
@@ -2566,10 +2567,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|vectorsubtract (GimpVector2 a,GimpVector2 b)
 specifier|static
 specifier|inline
 name|GimpVector2
+DECL|function|vectorsubtract (GimpVector2 a,GimpVector2 b)
 name|vectorsubtract
 parameter_list|(
 name|GimpVector2
@@ -2613,10 +2614,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|vectoradd (GimpVector2 a,GimpVector2 b)
 specifier|static
 specifier|inline
 name|GimpVector2
+DECL|function|vectoradd (GimpVector2 a,GimpVector2 b)
 name|vectoradd
 parameter_list|(
 name|GimpVector2
@@ -2660,10 +2661,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|scalemult (GimpVector2 a,gdouble b)
 specifier|static
 specifier|inline
 name|GimpVector2
+DECL|function|scalemult (GimpVector2 a,gdouble b)
 name|scalemult
 parameter_list|(
 name|GimpVector2
@@ -2703,10 +2704,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|vectorproject (GimpVector2 a,GimpVector2 b)
 specifier|static
 specifier|inline
 name|GimpVector2
+DECL|function|vectorproject (GimpVector2 a,GimpVector2 b)
 name|vectorproject
 parameter_list|(
 name|GimpVector2
@@ -2744,10 +2745,10 @@ comment|/* finds the clockwise angle between the vectors given, 0-2Ï */
 end_comment
 
 begin_function
-DECL|function|calcangle (GimpVector2 a,GimpVector2 b)
 specifier|static
 specifier|inline
 name|gdouble
+DECL|function|calcangle (GimpVector2 a,GimpVector2 b)
 name|calcangle
 parameter_list|(
 name|GimpVector2
@@ -2761,7 +2762,8 @@ name|gdouble
 name|angle
 decl_stmt|,
 name|angle2
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 name|length
 init|=
 name|norm
@@ -2846,10 +2848,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|rotate2d (GimpVector2 p,gdouble angle)
 specifier|static
 specifier|inline
 name|GimpVector2
+DECL|function|rotate2d (GimpVector2 p,gdouble angle)
 name|rotate2d
 parameter_list|(
 name|GimpVector2
@@ -2913,10 +2915,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|lineintersect (GimpVector2 p1,GimpVector2 p2,GimpVector2 q1,GimpVector2 q2)
 specifier|static
 specifier|inline
 name|GimpVector2
+DECL|function|lineintersect (GimpVector2 p1,GimpVector2 p2,GimpVector2 q1,GimpVector2 q2)
 name|lineintersect
 parameter_list|(
 name|GimpVector2
@@ -3134,10 +3136,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|getpivotdelta (GimpTransformTool * tr_tool,GimpVector2 * oldpos,GimpVector2 * newpos,GimpVector2 pivot)
 specifier|static
 specifier|inline
 name|GimpVector2
+DECL|function|getpivotdelta (GimpTransformTool * tr_tool,GimpVector2 * oldpos,GimpVector2 * newpos,GimpVector2 pivot)
 name|getpivotdelta
 parameter_list|(
 name|GimpTransformTool
@@ -3413,6 +3415,15 @@ modifier|*
 name|transform_tool
 parameter_list|)
 block|{
+name|GimpTransformOptions
+modifier|*
+name|options
+init|=
+name|GIMP_TRANSFORM_TOOL_GET_OPTIONS
+argument_list|(
+name|transform_tool
+argument_list|)
+decl_stmt|;
 name|gdouble
 modifier|*
 name|x
@@ -3425,7 +3436,8 @@ name|y
 index|[
 literal|4
 index|]
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 modifier|*
 name|newpivot_x
 decl_stmt|,
@@ -3489,15 +3501,6 @@ name|pivot
 decl_stmt|;
 name|gint
 name|i
-decl_stmt|;
-name|GimpTransformOptions
-modifier|*
-name|options
-init|=
-name|GIMP_TRANSFORM_TOOL_GET_OPTIONS
-argument_list|(
-name|transform_tool
-argument_list|)
 decl_stmt|;
 name|gboolean
 name|fixedpivot
@@ -4321,7 +4324,7 @@ else|else
 name|g_assert_not_reached
 argument_list|()
 expr_stmt|;
-comment|/* when the keep aspect transformation constraint is enabled, the        * translation shall only be along the diagonal that runs trough        * this corner point. */
+comment|/* when the keep aspect transformation constraint is enabled,        * the translation shall only be along the diagonal that runs        * trough this corner point.        */
 if|if
 condition|(
 name|options
@@ -5308,7 +5311,7 @@ operator|->
 name|constrain_perspective
 condition|)
 block|{
-comment|/* when the constrain transformation constraint is enabled, the              translation shall only be either along the side angles of the              two sides that run to this corner point, or along the              diagonal that runs trough this corner point. */
+comment|/* when the constrain transformation constraint is enabled,            * the translation shall only be either along the side            * angles of the two sides that run to this corner point, or            * along the diagonal that runs trough this corner point.            */
 name|GimpVector2
 name|proj
 index|[
@@ -5361,7 +5364,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-comment|/* project d on each candidate vector and see                * which has the shortest rejection */
+comment|/* project d on each candidate vector and see which has                * the shortest rejection                */
 name|proj
 index|[
 name|i
@@ -5575,7 +5578,7 @@ operator|.
 name|y
 expr_stmt|;
 block|}
-comment|/* this will have been set to TRUE if an operation used the pivot in addition to being a user option */
+comment|/* this will have been set to TRUE if an operation used the pivot in    * addition to being a user option    */
 if|if
 condition|(
 operator|!
@@ -5623,7 +5626,7 @@ name|delta
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* set unconditionally: if options get toggled during operation, we have to move pivot back */
+comment|/* set unconditionally: if options get toggled during operation, we    * have to move pivot back    */
 operator|*
 name|newpivot_x
 operator|=
