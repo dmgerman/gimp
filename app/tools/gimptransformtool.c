@@ -6825,7 +6825,7 @@ operator|==
 name|RESPONSE_RESET
 condition|)
 block|{
-comment|/* Move all undo events to redo, and pop off the first one as that's the current one,                  * which always sits on the undo_list */
+comment|/* Move all undo events to redo, and pop off the first                  * one as that's the current one, which always sits on                  * the undo_list                  */
 name|tr_tool
 operator|->
 name|redo_list
