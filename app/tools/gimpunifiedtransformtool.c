@@ -147,7 +147,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28acfade0103
+DECL|enum|__anon2b20cdf60103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -1613,7 +1613,7 @@ name|tr_tool
 operator|->
 name|tx1
 operator|*
-literal|2.0
+literal|1.0
 operator|+
 name|tr_tool
 operator|->
@@ -1622,7 +1622,7 @@ operator|*
 literal|3.0
 operator|)
 operator|/
-literal|5.0
+literal|4.0
 expr_stmt|;
 name|ty
 index|[
@@ -1634,7 +1634,7 @@ name|tr_tool
 operator|->
 name|ty1
 operator|*
-literal|2.0
+literal|1.0
 operator|+
 name|tr_tool
 operator|->
@@ -1643,7 +1643,7 @@ operator|*
 literal|3.0
 operator|)
 operator|/
-literal|5.0
+literal|4.0
 expr_stmt|;
 name|tx
 index|[
@@ -1661,10 +1661,10 @@ name|tr_tool
 operator|->
 name|tx4
 operator|*
-literal|2.0
+literal|1.0
 operator|)
 operator|/
-literal|5.0
+literal|4.0
 expr_stmt|;
 name|ty
 index|[
@@ -1682,10 +1682,10 @@ name|tr_tool
 operator|->
 name|ty4
 operator|*
-literal|2.0
+literal|1.0
 operator|)
 operator|/
-literal|5.0
+literal|4.0
 expr_stmt|;
 name|tx
 index|[
@@ -1697,7 +1697,7 @@ name|tr_tool
 operator|->
 name|tx2
 operator|*
-literal|2.0
+literal|1.0
 operator|+
 name|tr_tool
 operator|->
@@ -1706,7 +1706,7 @@ operator|*
 literal|3.0
 operator|)
 operator|/
-literal|5.0
+literal|4.0
 expr_stmt|;
 name|ty
 index|[
@@ -1718,7 +1718,7 @@ name|tr_tool
 operator|->
 name|ty2
 operator|*
-literal|2.0
+literal|1.0
 operator|+
 name|tr_tool
 operator|->
@@ -1727,7 +1727,7 @@ operator|*
 literal|3.0
 operator|)
 operator|/
-literal|5.0
+literal|4.0
 expr_stmt|;
 name|tx
 index|[
@@ -1745,10 +1745,10 @@ name|tr_tool
 operator|->
 name|tx1
 operator|*
-literal|2.0
+literal|1.0
 operator|)
 operator|/
-literal|5.0
+literal|4.0
 expr_stmt|;
 name|ty
 index|[
@@ -1766,10 +1766,10 @@ name|tr_tool
 operator|->
 name|ty1
 operator|*
-literal|2.0
+literal|1.0
 operator|)
 operator|/
-literal|5.0
+literal|4.0
 expr_stmt|;
 for|for
 control|(
@@ -1825,10 +1825,7 @@ name|handle_w
 argument_list|,
 name|handle_h
 argument_list|)
-operator|*
-literal|2.0
 expr_stmt|;
-comment|/* so you can grab it from under the center handle */
 name|stroke_group
 operator|=
 name|gimp_draw_tool_add_stroke_group
@@ -1859,7 +1856,7 @@ name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
-name|GIMP_HANDLE_SQUARE
+name|GIMP_HANDLE_CIRCLE
 argument_list|,
 name|tr_tool
 operator|->

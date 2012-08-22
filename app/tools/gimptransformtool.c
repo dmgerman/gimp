@@ -3694,9 +3694,17 @@ name|handle_w
 argument_list|,
 name|handle_h
 argument_list|)
-operator|*
-literal|2
 decl_stmt|;
+if|if
+condition|(
+name|tr_tool
+operator|->
+name|use_center
+condition|)
+name|d
+operator|*=
+literal|2
+expr_stmt|;
 comment|/* so you can grab it from under the center handle */
 name|stroke_group
 operator|=
@@ -3728,7 +3736,7 @@ name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
-name|GIMP_HANDLE_SQUARE
+name|GIMP_HANDLE_CIRCLE
 argument_list|,
 name|tr_tool
 operator|->
@@ -3824,7 +3832,7 @@ name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
-name|GIMP_HANDLE_CIRCLE
+name|GIMP_HANDLE_SQUARE
 argument_list|,
 name|tr_tool
 operator|->
