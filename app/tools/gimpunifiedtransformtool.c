@@ -153,7 +153,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad640980103
+DECL|enum|__anon2beec6ed0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -634,10 +634,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|norm (GimpVector2 a)
 specifier|static
 specifier|inline
 name|gdouble
+DECL|function|norm (GimpVector2 a)
 name|norm
 parameter_list|(
 name|GimpVector2
