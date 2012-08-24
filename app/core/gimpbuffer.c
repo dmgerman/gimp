@@ -965,8 +965,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|TRUE
-comment|/* XXX FIXME copy_pixels */
+name|copy_pixels
 condition|)
 name|gimp_buffer
 operator|->
