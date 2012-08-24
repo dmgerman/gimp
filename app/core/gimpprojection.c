@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-babl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl/gimp-gegl-utils.h"
 end_include
 
@@ -96,12 +102,13 @@ DECL|macro|GIMP_PROJECTION_IDLE_PRIORITY
 define|#
 directive|define
 name|GIMP_PROJECTION_IDLE_PRIORITY
-value|150
+define|\
+value|((G_PRIORITY_HIGH_IDLE + G_PRIORITY_DEFAULT_IDLE) / 2)
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fde8970103
+DECL|enum|__anon2a0e1a650103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -797,16 +804,19 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_projection_estimate_memsize:  * @type:   the image base type  * @width:  projection width  * @height: projection height  *  * Calculates a rough estimate of the memory that is required for the  * projection of an image with the given @width and @height.  *  * Return value: a rough estimate of the memory requirements.  **/
+comment|/**  * gimp_projection_estimate_memsize:  * @type:      the projectable's base type  * @precision: the projectable's precision  * @width:     projection width  * @height:    projection height  *  * Calculates a rough estimate of the memory that is required for the  * projection of an image with the given @width and @height.  *  * Return value: a rough estimate of the memory requirements.  **/
 end_comment
 
 begin_function
 name|gint64
-DECL|function|gimp_projection_estimate_memsize (GimpImageBaseType type,gint width,gint height)
+DECL|function|gimp_projection_estimate_memsize (GimpImageBaseType type,GimpPrecision precision,gint width,gint height)
 name|gimp_projection_estimate_memsize
 parameter_list|(
 name|GimpImageBaseType
 name|type
+parameter_list|,
+name|GimpPrecision
+name|precision
 parameter_list|,
 name|gint
 name|width
@@ -815,36 +825,42 @@ name|gint
 name|height
 parameter_list|)
 block|{
+specifier|const
+name|Babl
+modifier|*
+name|format
+decl_stmt|;
 name|gint64
 name|bytes
-init|=
-literal|0
 decl_stmt|;
-switch|switch
+if|if
 condition|(
 name|type
-condition|)
-block|{
-case|case
-name|GIMP_RGB
-case|:
-case|case
+operator|==
 name|GIMP_INDEXED
-case|:
+condition|)
+name|type
+operator|=
+name|GIMP_RGB
+expr_stmt|;
+name|format
+operator|=
+name|gimp_babl_format
+argument_list|(
+name|type
+argument_list|,
+name|precision
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|bytes
 operator|=
-literal|4
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|format
+argument_list|)
 expr_stmt|;
-break|break;
-case|case
-name|GIMP_GRAY
-case|:
-name|bytes
-operator|=
-literal|2
-expr_stmt|;
-break|break;
-block|}
 comment|/* The pyramid levels constitute a geometric sum with a ratio of 1/4. */
 return|return
 name|bytes

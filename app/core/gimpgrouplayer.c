@@ -3553,6 +3553,11 @@ name|gimp_projection_estimate_memsize
 argument_list|(
 name|base_type
 argument_list|,
+name|gimp_drawable_get_precision
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
 name|width
 argument_list|,
 name|height

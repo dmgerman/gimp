@@ -1067,6 +1067,11 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
+name|gimp_image_get_precision
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
 name|gimp_image_get_width
 argument_list|(
 name|image
@@ -1083,6 +1088,11 @@ operator|+=
 name|gimp_projection_estimate_memsize
 argument_list|(
 name|gimp_image_get_base_type
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|gimp_image_get_precision
 argument_list|(
 name|image
 argument_list|)

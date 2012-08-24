@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-babl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -71,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a203da0103
+DECL|enum|__anon27e104800103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1088,8 +1094,13 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|format
+decl_stmt|;
 name|gint
-name|channels
+name|bytes
 decl_stmt|;
 if|if
 condition|(
@@ -1112,36 +1123,54 @@ argument_list|,
 name|pspec
 argument_list|)
 expr_stmt|;
-name|channels
+comment|/* the initial layer */
+name|format
 operator|=
-operator|(
-operator|(
+name|gimp_babl_format
+argument_list|(
 name|private
 operator|->
 name|base_type
-operator|==
-name|GIMP_RGB
-condition|?
-literal|3
-else|:
-literal|1
-operator|)
-comment|/* color      */
-operator|+
-operator|(
+argument_list|,
+name|private
+operator|->
+name|precision
+argument_list|,
 name|private
 operator|->
 name|fill_type
 operator|==
 name|GIMP_TRANSPARENT_FILL
-operator|)
-comment|/* alpha      */
-operator|+
-literal|1
-comment|/* selection  */
-operator|)
+argument_list|)
 expr_stmt|;
-comment|/* XXX todo honor precision */
+name|bytes
+operator|=
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|format
+argument_list|)
+expr_stmt|;
+comment|/* the selection */
+name|format
+operator|=
+name|gimp_babl_format
+argument_list|(
+name|GIMP_GRAY
+argument_list|,
+name|private
+operator|->
+name|precision
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|bytes
+operator|+=
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|format
+argument_list|)
+expr_stmt|;
 name|private
 operator|->
 name|initial_size
@@ -1150,7 +1179,7 @@ operator|(
 operator|(
 name|guint64
 operator|)
-name|channels
+name|bytes
 operator|*
 operator|(
 name|guint64
@@ -1176,6 +1205,10 @@ argument_list|(
 name|private
 operator|->
 name|base_type
+argument_list|,
+name|private
+operator|->
+name|precision
 argument_list|,
 name|private
 operator|->

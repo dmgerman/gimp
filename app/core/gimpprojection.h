@@ -288,6 +288,9 @@ parameter_list|(
 name|GimpImageBaseType
 name|type
 parameter_list|,
+name|GimpPrecision
+name|precision
+parameter_list|,
 name|gint
 name|width
 parameter_list|,
