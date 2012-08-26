@@ -157,13 +157,11 @@ name|image_ID
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
-name|exif_data
-operator|->
-name|size
+literal|7
 argument_list|,
 name|GIMP_PDB_INT8ARRAY
 argument_list|,
-name|exif_data
+literal|"unused"
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
