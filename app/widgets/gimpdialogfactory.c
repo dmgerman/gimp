@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290b58910103
+DECL|enum|__anon28816cfd0103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -5437,8 +5437,6 @@ operator|=
 name|gimp_cursor_new
 argument_list|(
 name|display
-argument_list|,
-name|GIMP_CURSOR_FORMAT_BITMAP
 argument_list|,
 name|GIMP_HANDEDNESS_RIGHT
 argument_list|,

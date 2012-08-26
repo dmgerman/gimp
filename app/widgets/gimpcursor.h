@@ -25,9 +25,6 @@ name|GdkDisplay
 modifier|*
 name|display
 parameter_list|,
-name|GimpCursorFormat
-name|cursor_format
-parameter_list|,
 name|GimpHandedness
 name|cursor_handedness
 parameter_list|,
@@ -50,9 +47,6 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GimpCursorFormat
-name|cursor_format
 parameter_list|,
 name|GimpHandedness
 name|cursor_handedness

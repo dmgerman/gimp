@@ -552,11 +552,6 @@ name|guint
 name|fill_idle_id
 decl_stmt|;
 comment|/*  display_shell_fill() idle ID       */
-DECL|member|cursor_format
-name|GimpCursorFormat
-name|cursor_format
-decl_stmt|;
-comment|/*  Currently used cursor format       */
 DECL|member|cursor_handedness
 name|GimpHandedness
 name|cursor_handedness

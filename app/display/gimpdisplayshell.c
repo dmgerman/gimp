@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2946d1f20103
+DECL|enum|__anon2b40ec7b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -363,7 +363,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2946d1f20203
+DECL|enum|__anon2b40ec7b0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1219,12 +1219,6 @@ operator|->
 name|icon_size
 operator|=
 literal|32
-expr_stmt|;
-name|shell
-operator|->
-name|cursor_format
-operator|=
-name|GIMP_CURSOR_FORMAT_BITMAP
 expr_stmt|;
 name|shell
 operator|->
