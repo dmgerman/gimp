@@ -797,7 +797,7 @@ name|GIMP_CURSOR_CORNER_TOP_LEFT
 operator|||
 name|cursor_type
 operator|>
-name|GIMP_CURSOR_SIDE_BOTTOM
+name|GIMP_CURSOR_SIDE_BOTTOM_RIGHT
 condition|)
 block|{
 comment|/* the corner and side cursors count as crosshair, so leave                * them and override everything else                */
