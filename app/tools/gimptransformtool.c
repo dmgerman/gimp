@@ -2896,9 +2896,6 @@ block|{
 case|case
 name|TRANSFORM_HANDLE_NW
 case|:
-case|case
-name|TRANSFORM_HANDLE_NW_P
-case|:
 name|cursor
 operator|=
 name|GIMP_CURSOR_CORNER_TOP_LEFT
@@ -2906,9 +2903,6 @@ expr_stmt|;
 break|break;
 case|case
 name|TRANSFORM_HANDLE_NE
-case|:
-case|case
-name|TRANSFORM_HANDLE_NE_P
 case|:
 name|cursor
 operator|=
@@ -2918,9 +2912,6 @@ break|break;
 case|case
 name|TRANSFORM_HANDLE_SW
 case|:
-case|case
-name|TRANSFORM_HANDLE_SW_P
-case|:
 name|cursor
 operator|=
 name|GIMP_CURSOR_CORNER_BOTTOM_LEFT
@@ -2928,9 +2919,6 @@ expr_stmt|;
 break|break;
 case|case
 name|TRANSFORM_HANDLE_SE
-case|:
-case|case
-name|TRANSFORM_HANDLE_SE_P
 case|:
 name|cursor
 operator|=
