@@ -153,7 +153,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acdbf800103
+DECL|enum|__anon2c0080240103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -2593,7 +2593,7 @@ name|int
 operator|)
 name|angle
 index|[
-literal|4
+literal|5
 index|]
 operator|+
 literal|2
@@ -2620,7 +2620,7 @@ name|int
 operator|)
 name|angle
 index|[
-literal|4
+literal|6
 index|]
 operator|+
 literal|6
@@ -2647,7 +2647,7 @@ name|int
 operator|)
 name|angle
 index|[
-literal|4
+literal|7
 index|]
 operator|+
 literal|4
@@ -2674,7 +2674,7 @@ name|int
 operator|)
 name|angle
 index|[
-literal|4
+literal|0
 index|]
 operator|+
 literal|1
@@ -2703,7 +2703,7 @@ name|int
 operator|)
 name|angle
 index|[
-literal|4
+literal|1
 index|]
 operator|+
 literal|5
@@ -2732,7 +2732,7 @@ name|int
 operator|)
 name|angle
 index|[
-literal|4
+literal|2
 index|]
 operator|+
 literal|3
@@ -2761,7 +2761,7 @@ name|int
 operator|)
 name|angle
 index|[
-literal|4
+literal|3
 index|]
 operator|+
 literal|7
