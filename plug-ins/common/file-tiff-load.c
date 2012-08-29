@@ -147,7 +147,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4566160108
+DECL|struct|__anon2a3421510108
 block|{
 DECL|member|compression
 name|gint
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4566160208
+DECL|struct|__anon2a3421510208
 block|{
 DECL|member|ID
 name|gint32
@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4566160308
+DECL|struct|__anon2a3421510308
 block|{
 DECL|member|o_pages
 name|gint
@@ -2601,7 +2601,7 @@ name|base_format
 operator|=
 name|babl_format
 argument_list|(
-literal|"RGBA u8"
+literal|"R'G'B'A u8"
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -2618,7 +2618,7 @@ name|base_format
 operator|=
 name|babl_format
 argument_list|(
-literal|"RGB u8"
+literal|"R'G'B' u8"
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -2634,7 +2634,7 @@ name|base_format
 operator|=
 name|babl_format
 argument_list|(
-literal|"RGBA u16"
+literal|"R'G'B'A u16"
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -2651,7 +2651,7 @@ name|base_format
 operator|=
 name|babl_format
 argument_list|(
-literal|"RGB u16"
+literal|"R'G'B' u16"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5482,7 +5482,12 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-name|NULL
+name|channel
+index|[
+name|i
+index|]
+operator|.
+name|format
 argument_list|,
 name|GEGL_BUFFER_WRITE
 argument_list|,
@@ -6085,7 +6090,12 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-name|NULL
+name|channel
+index|[
+name|i
+index|]
+operator|.
+name|format
 argument_list|,
 name|GEGL_BUFFER_READWRITE
 argument_list|,
