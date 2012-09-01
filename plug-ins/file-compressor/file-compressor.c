@@ -675,7 +675,7 @@ literal|"application/x-xz"
 block|,
 literal|"xcf.xz,xz,xcfxz"
 block|,
-literal|"0,ustring,\xFD7zXZ\x00"
+literal|"0,ustring,\3757zXZ\x00"
 block|,
 literal|".xcfxz"
 block|,
