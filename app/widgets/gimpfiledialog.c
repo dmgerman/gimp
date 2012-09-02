@@ -391,6 +391,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+name|GimpFileChooserAction
+name|action
+parameter_list|,
 name|GSList
 modifier|*
 name|file_procs
@@ -419,6 +422,10 @@ parameter_list|,
 name|GtkFileFilter
 modifier|*
 name|all
+parameter_list|,
+name|GtkFileFilter
+modifier|*
+name|all_savable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1737,6 +1744,8 @@ name|dialog
 argument_list|,
 name|gimp
 argument_list|,
+name|action
+argument_list|,
 name|file_procs
 argument_list|,
 name|file_procs_all_images
@@ -3002,13 +3011,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_dialog_add_filters:  * @dialog:  * @gimp:  * @file_procs:            The image types that can be chosen from  *                         the drop down  * @file_procs_all_images: The additional images types shown when  *                         "All images" is selected  *  **/
+comment|/**  * gimp_file_dialog_add_filters:  * @dialog:  * @gimp:  * @action:  * @file_procs:            The image types that can be chosen from  *                         the file type list  * @file_procs_all_images: The additional images types shown when  *                         "All images" is selected  *  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_file_dialog_add_filters (GimpFileDialog * dialog,Gimp * gimp,GSList * file_procs,GSList * file_procs_all_images)
+DECL|function|gimp_file_dialog_add_filters (GimpFileDialog * dialog,Gimp * gimp,GimpFileChooserAction action,GSList * file_procs,GSList * file_procs_all_images)
 name|gimp_file_dialog_add_filters
 parameter_list|(
 name|GimpFileDialog
@@ -3018,6 +3027,9 @@ parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpFileChooserAction
+name|action
 parameter_list|,
 name|GSList
 modifier|*
@@ -3031,6 +3043,12 @@ block|{
 name|GtkFileFilter
 modifier|*
 name|all
+decl_stmt|;
+name|GtkFileFilter
+modifier|*
+name|all_savable
+init|=
+name|NULL
 decl_stmt|;
 name|GSList
 modifier|*
@@ -3093,6 +3111,54 @@ argument_list|,
 name|all
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|file_procs_all_images
+condition|)
+block|{
+name|all_savable
+operator|=
+name|gtk_file_filter_new
+argument_list|()
+expr_stmt|;
+if|if
+condition|(
+name|action
+operator|==
+name|GIMP_FILE_CHOOSER_ACTION_SAVE
+condition|)
+name|gtk_file_filter_set_name
+argument_list|(
+name|all_savable
+argument_list|,
+name|_
+argument_list|(
+literal|"All XCF images"
+argument_list|)
+argument_list|)
+expr_stmt|;
+else|else
+name|gtk_file_filter_set_name
+argument_list|(
+name|all_savable
+argument_list|,
+name|_
+argument_list|(
+literal|"All export images"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_file_chooser_add_filter
+argument_list|(
+name|GTK_FILE_CHOOSER
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|all_savable
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* Add the normal file procs */
 for|for
 control|(
@@ -3132,6 +3198,8 @@ operator|&
 name|filter
 argument_list|,
 name|all
+argument_list|,
+name|all_savable
 argument_list|)
 expr_stmt|;
 if|if
@@ -3188,9 +3256,26 @@ argument_list|,
 name|NULL
 argument_list|,
 name|all
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|all_savable
+condition|)
+name|gtk_file_chooser_set_filter
+argument_list|(
+name|GTK_FILE_CHOOSER
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|all_savable
+argument_list|)
+expr_stmt|;
+else|else
 name|gtk_file_chooser_set_filter
 argument_list|(
 name|GTK_FILE_CHOOSER
@@ -3205,13 +3290,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_dialog_process_procedure:  * @file_proc:  * @filter_out:  * @all:  *  * Creates a #GtkFileFilter of @file_proc and adds the extensions to  * the @all filter. The returned #GtkFileFilter has a normal ref and  * must be unreffed when used.  **/
+comment|/**  * gimp_file_dialog_process_procedure:  * @file_proc:  * @filter_out:  * @all:  * @all_savable:  *  * Creates a #GtkFileFilter of @file_proc and adds the extensions to  * the @all filter. The returned #GtkFileFilter has a normal ref and  * must be unreffed when used.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_file_dialog_process_procedure (GimpPlugInProcedure * file_proc,GtkFileFilter ** filter_out,GtkFileFilter * all)
+DECL|function|gimp_file_dialog_process_procedure (GimpPlugInProcedure * file_proc,GtkFileFilter ** filter_out,GtkFileFilter * all,GtkFileFilter * all_savable)
 name|gimp_file_dialog_process_procedure
 parameter_list|(
 name|GimpPlugInProcedure
@@ -3226,6 +3311,10 @@ parameter_list|,
 name|GtkFileFilter
 modifier|*
 name|all
+parameter_list|,
+name|GtkFileFilter
+modifier|*
+name|all_savable
 parameter_list|)
 block|{
 name|GtkFileFilter
@@ -3335,6 +3424,17 @@ expr_stmt|;
 name|gtk_file_filter_add_pattern
 argument_list|(
 name|all
+argument_list|,
+name|pattern
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|all_savable
+condition|)
+name|gtk_file_filter_add_pattern
+argument_list|(
+name|all_savable
 argument_list|,
 name|pattern
 argument_list|)
