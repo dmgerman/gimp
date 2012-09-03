@@ -75,7 +75,7 @@ end_ifdef
 begin_include
 include|#
 directive|include
-file|<lcms.h>
+file|<lcms2.h>
 end_include
 
 begin_endif
@@ -2104,7 +2104,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290166710108
+DECL|struct|__anon2bbc128f0108
 block|{
 DECL|member|pub
 name|struct
@@ -3359,7 +3359,7 @@ name|rgb_profile
 init|=
 name|NULL
 decl_stmt|;
-name|DWORD
+name|cmsUInt32Number
 name|flags
 init|=
 literal|0
@@ -3395,7 +3395,7 @@ argument_list|(
 name|cmyk_profile
 argument_list|)
 operator|==
-name|icSigCmykData
+name|cmsSigCmykData
 condition|)
 block|{
 name|cmsCloseProfile
@@ -3442,7 +3442,7 @@ argument_list|(
 name|cmyk_profile
 argument_list|)
 operator|==
-name|icSigCmykData
+name|cmsSigCmykData
 condition|)
 block|{
 name|cmsCloseProfile
@@ -3501,7 +3501,7 @@ argument_list|(
 name|rgb_profile
 argument_list|)
 operator|==
-name|icSigRgbData
+name|cmsSigRgbData
 condition|)
 block|{
 name|cmsCloseProfile
