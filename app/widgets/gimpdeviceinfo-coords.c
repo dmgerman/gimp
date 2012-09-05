@@ -374,6 +374,10 @@ name|axes
 index|[
 name|GDK_AXIS_LAST
 index|]
+init|=
+block|{
+literal|0
+block|, }
 decl_stmt|;
 operator|*
 name|coords
