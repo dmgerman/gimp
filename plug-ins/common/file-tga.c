@@ -109,7 +109,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291414140103
+DECL|enum|__anon2c5dc3280103
 block|{
 DECL|enumerator|ORIGIN_TOP_LEFT
 name|ORIGIN_TOP_LEFT
@@ -3154,9 +3154,9 @@ operator|&
 literal|0x80
 operator|)
 condition|?
-literal|0
-else|:
 literal|255
+else|:
+literal|0
 expr_stmt|;
 name|dest
 operator|+=
