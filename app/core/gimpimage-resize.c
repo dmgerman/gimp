@@ -120,6 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"text/gimptextlayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -169,6 +175,8 @@ name|offset_y
 argument_list|,
 name|GIMP_ITEM_SET_NONE
 argument_list|,
+name|TRUE
+argument_list|,
 name|progress
 argument_list|)
 expr_stmt|;
@@ -177,7 +185,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_resize_with_layers (GimpImage * image,GimpContext * context,gint new_width,gint new_height,gint offset_x,gint offset_y,GimpItemSet layer_set,GimpProgress * progress)
+DECL|function|gimp_image_resize_with_layers (GimpImage * image,GimpContext * context,gint new_width,gint new_height,gint offset_x,gint offset_y,GimpItemSet layer_set,gboolean resize_text_layers,GimpProgress * progress)
 name|gimp_image_resize_with_layers
 parameter_list|(
 name|GimpImage
@@ -202,6 +210,9 @@ name|offset_y
 parameter_list|,
 name|GimpItemSet
 name|layer_set
+parameter_list|,
+name|gboolean
+name|resize_text_layers
 parameter_list|,
 name|GimpProgress
 modifier|*
@@ -640,6 +651,17 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|item
 argument_list|)
+argument_list|)
+condition|)
+continue|continue;
+if|if
+condition|(
+operator|!
+name|resize_text_layers
+operator|&&
+name|gimp_item_is_text_layer
+argument_list|(
+name|item
 argument_list|)
 condition|)
 continue|continue;

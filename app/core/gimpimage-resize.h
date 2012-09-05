@@ -74,6 +74,9 @@ parameter_list|,
 name|GimpItemSet
 name|layer_set
 parameter_list|,
+name|gboolean
+name|resize_text_layers
+parameter_list|,
 name|GimpProgress
 modifier|*
 name|progress

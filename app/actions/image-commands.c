@@ -242,7 +242,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2937fa780108
+DECL|struct|__anon2a35a24a0108
 block|{
 DECL|member|context
 name|GimpContext
@@ -294,6 +294,9 @@ name|offset_y
 parameter_list|,
 name|GimpItemSet
 name|layer_set
+parameter_list|,
+name|gboolean
+name|resize_text_layers
 parameter_list|,
 name|gpointer
 name|data
@@ -2235,7 +2238,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|image_resize_callback (GtkWidget * dialog,GimpViewable * viewable,gint width,gint height,GimpUnit unit,gint offset_x,gint offset_y,GimpItemSet layer_set,gpointer data)
+DECL|function|image_resize_callback (GtkWidget * dialog,GimpViewable * viewable,gint width,gint height,GimpUnit unit,gint offset_x,gint offset_y,GimpItemSet layer_set,gboolean resize_text_layers,gpointer data)
 name|image_resize_callback
 parameter_list|(
 name|GtkWidget
@@ -2263,6 +2266,9 @@ name|offset_y
 parameter_list|,
 name|GimpItemSet
 name|layer_set
+parameter_list|,
+name|gboolean
+name|resize_text_layers
 parameter_list|,
 name|gpointer
 name|data
@@ -2372,6 +2378,8 @@ argument_list|,
 name|offset_y
 argument_list|,
 name|layer_set
+argument_list|,
+name|resize_text_layers
 argument_list|,
 name|progress
 argument_list|)
