@@ -717,7 +717,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297afedc0108
+DECL|struct|__anon2889f3730108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -878,7 +878,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297afedc0208
+DECL|struct|__anon2889f3730208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -2000,11 +2000,11 @@ literal|0
 operator|)
 operator|||
 operator|(
-literal|255
-operator|<
 name|vpvals
 operator|.
 name|lower_limit
+operator|>
+literal|255
 operator|)
 operator|||
 operator|(
@@ -2016,11 +2016,11 @@ literal|0
 operator|)
 operator|||
 operator|(
-literal|255
-operator|<
 name|vpvals
 operator|.
 name|upper_limit
+operator|>
+literal|255
 operator|)
 operator|||
 operator|(
@@ -4074,7 +4074,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297afedc0308
+DECL|struct|__anon2889f3730308
 block|{
 DECL|member|min_modified
 name|gshort
