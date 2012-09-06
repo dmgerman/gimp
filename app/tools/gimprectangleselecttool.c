@@ -939,6 +939,15 @@ argument_list|,
 name|GIMP_TOOL_CURSOR_RECT_SELECT
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_preserve
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|gimp_tool_control_set_dirty_mask
 argument_list|(
 name|tool

@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aefda490103
+DECL|enum|__anon292d96180103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -764,6 +764,8 @@ operator||
 name|GIMP_DIRTY_DRAWABLE
 operator||
 name|GIMP_DIRTY_SELECTION
+operator||
+name|GIMP_DIRTY_ACTIVE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_wants_click

@@ -1035,6 +1035,8 @@ operator||
 name|GIMP_DIRTY_DRAWABLE
 operator||
 name|GIMP_DIRTY_SELECTION
+operator||
+name|GIMP_DIRTY_ACTIVE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_precision

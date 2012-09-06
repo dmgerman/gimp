@@ -910,6 +910,8 @@ operator||
 name|GIMP_DIRTY_DRAWABLE
 operator||
 name|GIMP_DIRTY_SELECTION
+operator||
+name|GIMP_DIRTY_ACTIVE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|image_map_tool
