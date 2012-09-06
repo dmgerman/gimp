@@ -705,6 +705,10 @@ name|data
 operator|.
 name|d_string
 expr_stmt|;
+if|if
+condition|(
+name|palette_file
+condition|)
 name|data_length
 operator|=
 name|strlen
@@ -713,6 +717,11 @@ name|palette_file
 argument_list|)
 operator|+
 literal|1
+expr_stmt|;
+else|else
+name|data_length
+operator|=
+literal|0
 expr_stmt|;
 block|}
 elseif|else
