@@ -142,7 +142,7 @@ value|120
 end_define
 
 begin_typedef
-DECL|struct|__anon2953bf810108
+DECL|struct|__anon2a1bc60c0108
 typedef|typedef
 struct|struct
 block|{
@@ -165,7 +165,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2953bf810208
+DECL|struct|__anon2a1bc60c0208
 typedef|typedef
 struct|struct
 block|{
@@ -194,7 +194,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2953bf810308
+DECL|struct|__anon2a1bc60c0308
 typedef|typedef
 struct|struct
 block|{
@@ -214,7 +214,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2953bf810403
+DECL|enum|__anon2a1bc60c0403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -233,7 +233,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2953bf810508
+DECL|struct|__anon2a1bc60c0508
 typedef|typedef
 struct|struct
 block|{
@@ -607,7 +607,7 @@ argument_list|()
 end_macro
 
 begin_typedef
-DECL|enum|__anon2953bf810603
+DECL|enum|__anon2a1bc60c0603
 typedef|typedef
 enum|enum
 block|{
@@ -652,7 +652,7 @@ value|5
 end_define
 
 begin_typedef
-DECL|enum|__anon2953bf810703
+DECL|enum|__anon2a1bc60c0703
 typedef|typedef
 enum|enum
 block|{
@@ -5160,25 +5160,6 @@ case|case
 literal|1
 case|:
 comment|/* GRAY or INDEXED */
-if|if
-condition|(
-operator|!
-name|indexed
-condition|)
-block|{
-name|format
-operator|=
-name|CAIRO_FORMAT_RGB24
-expr_stmt|;
-block|}
-else|else
-block|{
-name|format
-operator|=
-name|CAIRO_FORMAT_RGB24
-expr_stmt|;
-block|}
-break|break;
 case|case
 literal|3
 case|:
