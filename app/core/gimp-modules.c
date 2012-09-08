@@ -195,6 +195,17 @@ operator|->
 name|no_interface
 condition|)
 return|return;
+comment|/* FIXME, gimp->be_verbose is not yet initialized in init() */
+name|gimp
+operator|->
+name|module_db
+operator|->
+name|verbose
+operator|=
+name|gimp
+operator|->
+name|be_verbose
+expr_stmt|;
 name|filename
 operator|=
 name|gimp_personal_rc_file
