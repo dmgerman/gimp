@@ -55,7 +55,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab32d520103
+DECL|enum|__anon29fd87360103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -376,7 +376,7 @@ argument_list|,
 literal|12
 argument_list|)
 expr_stmt|;
-comment|/*  Unset the focus chain to keep the labels from being in the focus    *  chain.  Users of GimpMessageBox that add focusable widgets should    *  either unset the focus chain or (better) explicitely set one.    */
+comment|/*  Unset the focus chain to keep the labels from being in the focus    *  chain.  Users of GimpMessageBox that add focusable widgets should    *  either unset the focus chain or (better) explicitly set one.    */
 name|gtk_container_set_focus_chain
 argument_list|(
 name|GTK_CONTAINER

@@ -3236,7 +3236,7 @@ literal|"gimp-file-save-thumbnail"
 argument_list|,
 literal|"Saves a thumbnail for the given image"
 argument_list|,
-literal|"This procedure saves a thumbnail for the given image according to the Free Desktop Thumbnail Managing Standard. The thumbnail is saved so that it belongs to the file with the given filename. This means you have to save the image under this name first, otherwise this procedure will fail. This procedure may become useful if you want to explicitely save a thumbnail with a file."
+literal|"This procedure saves a thumbnail for the given image according to the Free Desktop Thumbnail Managing Standard. The thumbnail is saved so that it belongs to the file with the given filename. This means you have to save the image under this name first, otherwise this procedure will fail. This procedure may become useful if you want to explicitly save a thumbnail with a file."
 argument_list|,
 literal|"Josh MacDonald"
 argument_list|,

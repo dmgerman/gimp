@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c49e0d20108
+DECL|struct|__anon290e7d4a0108
 block|{
 DECL|member|angle
 name|gint
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c49e0d20208
+DECL|struct|__anon290e7d4a0208
 block|{
 DECL|member|ID
 name|gint32
@@ -359,7 +359,7 @@ literal|"Rotates a layer or the whole image by 90, 180 or 270 degrees"
 argument_list|,
 literal|"This plug-in does rotate the active layer or the "
 literal|"whole image clockwise by multiples of 90 degrees. "
-literal|"When the whole image is choosen, the image is "
+literal|"When the whole image is chosen, the image is "
 literal|"resized if necessary."
 argument_list|,
 name|PLUG_IN_AUTHOR

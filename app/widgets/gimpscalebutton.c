@@ -335,7 +335,7 @@ argument_list|(
 name|adj
 argument_list|)
 expr_stmt|;
-comment|/*  use U+2009 THIN SPACE to seperate the percent sign from the number */
+comment|/*  use U+2009 THIN SPACE to separate the percent sign from the number */
 name|text
 operator|=
 name|g_strdup_printf

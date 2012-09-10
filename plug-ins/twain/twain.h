@@ -524,7 +524,7 @@ comment|/* Fixed point structure type. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d0108
+DECL|struct|__anon29a4cb7a0108
 typedef|typedef
 struct|struct
 block|{
@@ -557,7 +557,7 @@ comment|/* No DAT needed. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d0208
+DECL|struct|__anon29a4cb7a0208
 typedef|typedef
 struct|struct
 block|{
@@ -589,7 +589,7 @@ comment|/* No DAT needed. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d0308
+DECL|struct|__anon29a4cb7a0308
 typedef|typedef
 struct|struct
 block|{
@@ -642,7 +642,7 @@ comment|/* No DAT needed. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d0408
+DECL|struct|__anon29a4cb7a0408
 typedef|typedef
 struct|struct
 block|{
@@ -682,7 +682,7 @@ comment|/* No DAT.  Defines a frame rectangle in ICAP_UNITS coordinates. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d0508
+DECL|struct|__anon29a4cb7a0508
 typedef|typedef
 struct|struct
 block|{
@@ -718,7 +718,7 @@ comment|/* No DAT needed.  Used to manage memory buffers. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d0608
+DECL|struct|__anon29a4cb7a0608
 typedef|typedef
 struct|struct
 block|{
@@ -753,7 +753,7 @@ comment|/* No DAT needed. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d0708
+DECL|struct|__anon29a4cb7a0708
 typedef|typedef
 struct|struct
 block|{
@@ -790,7 +790,7 @@ comment|/* No DAT needed.  Describes version of software currently running. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d0808
+DECL|struct|__anon29a4cb7a0808
 typedef|typedef
 struct|struct
 block|{
@@ -835,7 +835,7 @@ comment|/* TWON_ARRAY. Container for array of values (a simplified TW_ENUMERATIO
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d0908
+DECL|struct|__anon29a4cb7a0908
 typedef|typedef
 struct|struct
 block|{
@@ -872,7 +872,7 @@ comment|/* TWON_ENUMERATION. Container for a collection of values. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d0a08
+DECL|struct|__anon29a4cb7a0a08
 typedef|typedef
 struct|struct
 block|{
@@ -919,7 +919,7 @@ comment|/* TWON_ONEVALUE. Container for one value. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d0b08
+DECL|struct|__anon29a4cb7a0b08
 typedef|typedef
 struct|struct
 block|{
@@ -947,7 +947,7 @@ comment|/* TWON_RANGE. Container for a range of values. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d0c08
+DECL|struct|__anon29a4cb7a0c08
 typedef|typedef
 struct|struct
 block|{
@@ -996,7 +996,7 @@ comment|/* DAT_CAPABILITY. Used by application to get/set capability from/in a d
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d0d08
+DECL|struct|__anon29a4cb7a0d08
 typedef|typedef
 struct|struct
 block|{
@@ -1031,7 +1031,7 @@ comment|/* DAT_CIECOLOR. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d0e08
+DECL|struct|__anon29a4cb7a0e08
 typedef|typedef
 struct|struct
 block|{
@@ -1098,7 +1098,7 @@ comment|/* DAT_EVENT. For passing events down from the application to the DS. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d0f08
+DECL|struct|__anon29a4cb7a0f08
 typedef|typedef
 struct|struct
 block|{
@@ -1128,7 +1128,7 @@ comment|/* DAT_GRAYRESPONSE */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d1008
+DECL|struct|__anon29a4cb7a1008
 typedef|typedef
 struct|struct
 block|{
@@ -1155,7 +1155,7 @@ comment|/* DAT_IDENTITY. Identifies the program/library/code resource. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d1108
+DECL|struct|__anon29a4cb7a1108
 typedef|typedef
 struct|struct
 block|{
@@ -1215,7 +1215,7 @@ comment|/* DAT_IMAGEINFO. Application gets detailed image info from DS with this
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d1208
+DECL|struct|__anon29a4cb7a1208
 typedef|typedef
 struct|struct
 block|{
@@ -1288,7 +1288,7 @@ comment|/* DAT_IMAGELAYOUT. Provides image layout information in current units. 
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d1308
+DECL|struct|__anon29a4cb7a1308
 typedef|typedef
 struct|struct
 block|{
@@ -1327,7 +1327,7 @@ comment|/* DAT_IMAGEMEMXFER. Used to pass image data (e.g. in strips) from DS to
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d1408
+DECL|struct|__anon29a4cb7a1408
 typedef|typedef
 struct|struct
 block|{
@@ -1391,7 +1391,7 @@ comment|/* DAT_JPEGCOMPRESSION. Based on JPEG Draft International Std, ver 10918
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d1508
+DECL|struct|__anon29a4cb7a1508
 typedef|typedef
 struct|struct
 block|{
@@ -1471,7 +1471,7 @@ comment|/* DAT_PALETTE8. Color palette when TWPT_PALETTE pixels xfer'd in mem bu
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d1608
+DECL|struct|__anon29a4cb7a1608
 typedef|typedef
 struct|struct
 block|{
@@ -1509,7 +1509,7 @@ comment|/* DAT_PENDINGXFERS. Used with MSG_ENDXFER to indicate additional data. 
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d1708
+DECL|struct|__anon29a4cb7a1708
 typedef|typedef
 struct|struct
 block|{
@@ -1517,7 +1517,7 @@ DECL|member|Count
 name|TW_UINT16
 name|Count
 decl_stmt|;
-DECL|union|__anon2b6f3c9d180a
+DECL|union|__anon29a4cb7a180a
 union|union
 block|{
 DECL|member|EOJ
@@ -1546,7 +1546,7 @@ comment|/* DAT_RGBRESPONSE */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d1908
+DECL|struct|__anon29a4cb7a1908
 typedef|typedef
 struct|struct
 block|{
@@ -1573,7 +1573,7 @@ comment|/* DAT_SETUPFILEXFER. Sets up DS to application data transfer via a file
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d1a08
+DECL|struct|__anon29a4cb7a1a08
 typedef|typedef
 struct|struct
 block|{
@@ -1607,7 +1607,7 @@ comment|/* DAT_SETUPMEMXFER. Sets up DS to application data transfer via a memor
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d1b08
+DECL|struct|__anon29a4cb7a1b08
 typedef|typedef
 struct|struct
 block|{
@@ -1639,7 +1639,7 @@ comment|/* DAT_STATUS. Application gets detailed status info from a data source 
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d1c08
+DECL|struct|__anon29a4cb7a1c08
 typedef|typedef
 struct|struct
 block|{
@@ -1669,7 +1669,7 @@ comment|/* DAT_USERINTERFACE. Coordinates UI between application and data source
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d1d08
+DECL|struct|__anon29a4cb7a1d08
 typedef|typedef
 struct|struct
 block|{
@@ -1712,7 +1712,7 @@ comment|/*                    across thunk link. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d1e08
+DECL|struct|__anon29a4cb7a1e08
 typedef|typedef
 struct|struct
 block|{
@@ -1748,7 +1748,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6f3c9d1f08
+DECL|struct|__anon29a4cb7a1f08
 block|{
 DECL|member|destFlag
 name|TW_INT8
@@ -1806,7 +1806,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6f3c9d2008
+DECL|struct|__anon29a4cb7a2008
 block|{
 DECL|member|returnCode
 name|TW_UINT16
@@ -1853,7 +1853,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6f3c9d2108
+DECL|struct|__anon29a4cb7a2108
 block|{
 DECL|member|Cap
 name|TW_UINT16
@@ -1881,7 +1881,7 @@ comment|/* ---------------------------------------------------------------------
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d2208
+DECL|struct|__anon29a4cb7a2208
 typedef|typedef
 struct|struct
 block|{
@@ -1907,7 +1907,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d2308
+DECL|struct|__anon29a4cb7a2308
 typedef|typedef
 struct|struct
 block|{
@@ -1943,7 +1943,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d2408
+DECL|struct|__anon29a4cb7a2408
 typedef|typedef
 struct|struct
 block|{
@@ -1978,7 +1978,7 @@ comment|/* DAT_AUDIOINFO, information about audio data */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d2508
+DECL|struct|__anon29a4cb7a2508
 typedef|typedef
 struct|struct
 block|{
@@ -2008,7 +2008,7 @@ comment|/* DAT_DEVICEEVENT, information about events */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d2608
+DECL|struct|__anon29a4cb7a2608
 typedef|typedef
 struct|struct
 block|{
@@ -2083,7 +2083,7 @@ comment|/* DAT_FILESYSTEM, information about TWAIN file system */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d2708
+DECL|struct|__anon29a4cb7a2708
 typedef|typedef
 struct|struct
 block|{
@@ -2170,11 +2170,11 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/* DAT_PASSTHRU, device dependant data to pass through Data Source */
+comment|/* DAT_PASSTHRU, device dependent data to pass through Data Source */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d2808
+DECL|struct|__anon29a4cb7a2808
 typedef|typedef
 struct|struct
 block|{
@@ -2224,7 +2224,7 @@ comment|/* DAT_SETUPAUDIOFILEXFER, information required to setup an audio file t
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f3c9d2908
+DECL|struct|__anon29a4cb7a2908
 typedef|typedef
 struct|struct
 block|{

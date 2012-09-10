@@ -211,7 +211,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297a94e20103
+DECL|enum|__anon2b40e8ce0103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -669,7 +669,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|GimpTabStyle
-name|gimp_dockbook_tab_style_to_prefered
+name|gimp_dockbook_tab_style_to_preferred
 parameter_list|(
 name|GimpTabStyle
 name|tab_style
@@ -2655,14 +2655,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dockbook_tab_style_to_prefered:  * @tab_style:  * @dockable:  *  * The list of tab styles to try in automatic mode only consists of  * preview styles. For some dockables, like the tool options dockable,  * we rather want to use the icon tab styles for the automatic  * mode. This function is used to convert tab styles for such  * dockables.  *  * Returns: An icon tab style if the dockable prefers icon tab styles  *          in automatic mode.  **/
+comment|/**  * gimp_dockbook_tab_style_to_preferred:  * @tab_style:  * @dockable:  *  * The list of tab styles to try in automatic mode only consists of  * preview styles. For some dockables, like the tool options dockable,  * we rather want to use the icon tab styles for the automatic  * mode. This function is used to convert tab styles for such  * dockables.  *  * Returns: An icon tab style if the dockable prefers icon tab styles  *          in automatic mode.  **/
 end_comment
 
 begin_function
 specifier|static
 name|GimpTabStyle
-DECL|function|gimp_dockbook_tab_style_to_prefered (GimpTabStyle tab_style,GimpDockable * dockable)
-name|gimp_dockbook_tab_style_to_prefered
+DECL|function|gimp_dockbook_tab_style_to_preferred (GimpTabStyle tab_style,GimpDockable * dockable)
+name|gimp_dockbook_tab_style_to_preferred
 parameter_list|(
 name|GimpTabStyle
 name|tab_style
@@ -2879,7 +2879,7 @@ name|style_to_use
 decl_stmt|;
 name|style_to_use
 operator|=
-name|gimp_dockbook_tab_style_to_prefered
+name|gimp_dockbook_tab_style_to_preferred
 argument_list|(
 name|candidate
 argument_list|,
@@ -3301,7 +3301,7 @@ condition|)
 continue|continue;
 name|actual_tab_style
 operator|=
-name|gimp_dockbook_tab_style_to_prefered
+name|gimp_dockbook_tab_style_to_preferred
 argument_list|(
 name|tab_style
 argument_list|,

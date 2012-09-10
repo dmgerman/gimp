@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a34f03b0103
+DECL|enum|__anon2bac964e0103
 block|{
 DECL|enumerator|COLUMN_SCALE
 name|COLUMN_SCALE
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a34f03b0203
+DECL|enum|__anon2bac964e0203
 block|{
 DECL|enumerator|ENTRY_ACTIVATED
 name|ENTRY_ACTIVATED
@@ -1417,7 +1417,7 @@ index|[
 literal|32
 index|]
 decl_stmt|;
-comment|/*  use U+2009 THIN SPACE to seperate the percent sign from the number */
+comment|/*  use U+2009 THIN SPACE to separate the percent sign from the number */
 if|if
 condition|(
 name|scale

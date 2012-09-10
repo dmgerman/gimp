@@ -3227,7 +3227,7 @@ literal|"gimp-palette-get-columns"
 argument_list|,
 literal|"Retrieves the number of columns to use to display this palette"
 argument_list|,
-literal|"This procedures retrieves the prefered number of columns to use when the palette is being displayed."
+literal|"This procedures retrieves the preferred number of columns to use when the palette is being displayed."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -3417,7 +3417,7 @@ literal|"gimp-palette-add-entry"
 argument_list|,
 literal|"Adds a palette entry to the specified palette."
 argument_list|,
-literal|"This procedure adds an entry to the specifed palette. It returns an error if the entry palette does not exist."
+literal|"This procedure adds an entry to the specified palette. It returns an error if the entry palette does not exist."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -3556,7 +3556,7 @@ literal|"gimp-palette-delete-entry"
 argument_list|,
 literal|"Deletes a palette entry from the specified palette."
 argument_list|,
-literal|"This procedure deletes an entry from the specifed palette. It returns an error if the entry palette does not exist."
+literal|"This procedure deletes an entry from the specified palette. It returns an error if the entry palette does not exist."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -3651,7 +3651,7 @@ literal|"gimp-palette-entry-get-color"
 argument_list|,
 literal|"Gets the specified palette entry from the specified palette."
 argument_list|,
-literal|"This procedure retrieves the color of the zero-based entry specifed for the specified palette. It returns an error if the entry does not exist."
+literal|"This procedure retrieves the color of the zero-based entry specified for the specified palette. It returns an error if the entry does not exist."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -3766,7 +3766,7 @@ literal|"gimp-palette-entry-set-color"
 argument_list|,
 literal|"Sets the specified palette entry in the specified palette."
 argument_list|,
-literal|"This procedure sets the color of the zero-based entry specifed for the specified palette. It returns an error if the entry does not exist."
+literal|"This procedure sets the color of the zero-based entry specified for the specified palette. It returns an error if the entry does not exist."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -3881,7 +3881,7 @@ literal|"gimp-palette-entry-get-name"
 argument_list|,
 literal|"Gets the specified palette entry from the specified palette."
 argument_list|,
-literal|"This procedure retrieves the name of the zero-based entry specifed for the specified palette. It returns an error if the entry does not exist."
+literal|"This procedure retrieves the name of the zero-based entry specified for the specified palette. It returns an error if the entry does not exist."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4000,7 +4000,7 @@ literal|"gimp-palette-entry-set-name"
 argument_list|,
 literal|"Sets the specified palette entry in the specified palette."
 argument_list|,
-literal|"This procedure sets the name of the zero-based entry specifed for the specified palette. It returns an error if the entry does not exist."
+literal|"This procedure sets the name of the zero-based entry specified for the specified palette. It returns an error if the entry does not exist."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

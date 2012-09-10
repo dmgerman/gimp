@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b558e090108
+DECL|struct|__anon2bc364eb0108
 block|{
 DECL|member|horizontal
 name|gboolean
@@ -345,7 +345,7 @@ literal|"This plugin calculates the gradient with a sobel "
 literal|"operator. The user can specify which direction to "
 literal|"use. When both directions are used, the result is "
 literal|"the RMS of the two gradients; if only one direction "
-literal|"is used, the result either the absolut value of the "
+literal|"is used, the result either the absolute value of the "
 literal|"gradient, or 127 + gradient (if the 'keep sign' "
 literal|"switch is on). This way, information about the "
 literal|"direction of the gradient is preserved. Resulting "

@@ -4074,7 +4074,7 @@ name|fullscreen
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/*  if the user did not set the padding mode for this display explicitely  */
+comment|/*  if the user did not set the padding mode for this display explicitly  */
 if|if
 condition|(
 operator|!
@@ -4137,7 +4137,7 @@ name|padding_color
 expr_stmt|;
 block|}
 block|}
-comment|/*  if the user did not set the padding mode for this display explicitely  */
+comment|/*  if the user did not set the padding mode for this display explicitly  */
 if|if
 condition|(
 operator|!

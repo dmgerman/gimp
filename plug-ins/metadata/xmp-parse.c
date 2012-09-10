@@ -4,7 +4,7 @@ comment|/* xmp-parse.c - simple parser for XMP metadata  *  * Copyright (C) 2004
 end_comment
 
 begin_comment
-comment|/* This code implements a simple parser for XMP metadata.  Its API is  * based on the one provided by GMarkupParser (part of Glib).  *  * This is not a full RDF parser: it shares some of the limitations  * inherited from glib (UTF-8 only, no special entities) and supports  * RDF only to the extent needed for XMP.  XMP defines several  * "schemas" containing a list of "properties".  Each property in a  * schema has one value, which can be a simple type (e.g., integer or  * text) or a structured type (rdf:Alt, rdf:Bag, rdf:Seq).  As there  * is no need to support a much deeper nesting of elements, this  * parser does not try to maintain an arbitrarily large stack of  * elements.  Also, it does not support RDF features that are  * forbidden by the XMP specs, such as rdf:parseType="Litteral".  *  * The design goals for this parser are: support all RDF features  * needed for XMP (at least the features explicitely described in the  * XMP spec), be tolerant in case unknown elements or attributes are  * found, be as simple as possible, avoid building a DOM tree.  *  * TODO:  * - support UCS-2 and UCS-4 besides UTF-8 (copy and convert the data)  * - write a decent scanner for finding<?xpacket...?> as recommended  *   in the XMP specification (including support for UCS-2 and UCS-4)  * - provide an API for passing unknown elements or tags to the caller  * - think about re-writing this using a better XML parser (expat?)  *   instead of the GMarkup parser  */
+comment|/* This code implements a simple parser for XMP metadata.  Its API is  * based on the one provided by GMarkupParser (part of Glib).  *  * This is not a full RDF parser: it shares some of the limitations  * inherited from glib (UTF-8 only, no special entities) and supports  * RDF only to the extent needed for XMP.  XMP defines several  * "schemas" containing a list of "properties".  Each property in a  * schema has one value, which can be a simple type (e.g., integer or  * text) or a structured type (rdf:Alt, rdf:Bag, rdf:Seq).  As there  * is no need to support a much deeper nesting of elements, this  * parser does not try to maintain an arbitrarily large stack of  * elements.  Also, it does not support RDF features that are  * forbidden by the XMP specs, such as rdf:parseType="Litteral".  *  * The design goals for this parser are: support all RDF features  * needed for XMP (at least the features explicitly described in the  * XMP spec), be tolerant in case unknown elements or attributes are  * found, be as simple as possible, avoid building a DOM tree.  *  * TODO:  * - support UCS-2 and UCS-4 besides UTF-8 (copy and convert the data)  * - write a decent scanner for finding<?xpacket...?> as recommended  *   in the XMP specification (including support for UCS-2 and UCS-4)  * - provide an API for passing unknown elements or tags to the caller  * - think about re-writing this using a better XML parser (expat?)  *   instead of the GMarkup parser  */
 end_comment
 
 begin_ifndef
@@ -115,7 +115,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a97cf290103
+DECL|enum|__anon277c59ce0103
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a97cf290208
+DECL|struct|__anon277c59ce0208
 block|{
 DECL|member|depth
 name|gint

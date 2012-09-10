@@ -174,7 +174,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dec8400103
+DECL|enum|__anon2b2f4e100103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -193,7 +193,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27dec8400208
+DECL|struct|__anon2b2f4e100208
 block|{
 DECL|member|name
 specifier|const
@@ -2222,7 +2222,7 @@ name|source
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  create the tmp directory that was explicitely not copied  */
+comment|/*  create the tmp directory that was explicitly not copied  */
 name|g_snprintf
 argument_list|(
 name|dest

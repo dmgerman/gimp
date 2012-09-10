@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpprogress  * @title: gimpprogress  * @short_descripti
 end_comment
 
 begin_comment
-comment|/**  * _gimp_progress_init:  * @message: Message to use in the progress dialog.  * @gdisplay_ID: GimpDisplay to update progressbar in, or -1 for a seperate window.  *  * Initializes the progress bar for the current plug-in.  *  * Initializes the progress bar for the current plug-in. It is only  * valid to call this procedure from a plug-in.  *  * Returns: TRUE on success.  **/
+comment|/**  * _gimp_progress_init:  * @message: Message to use in the progress dialog.  * @gdisplay_ID: GimpDisplay to update progressbar in, or -1 for a separate window.  *  * Initializes the progress bar for the current plug-in.  *  * Initializes the progress bar for the current plug-in. It is only  * valid to call this procedure from a plug-in.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function

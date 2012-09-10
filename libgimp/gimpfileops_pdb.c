@@ -461,7 +461,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_save_thumbnail:  * @image_ID: The image.  * @filename: The name of the file the thumbnail belongs to.  *  * Saves a thumbnail for the given image  *  * This procedure saves a thumbnail for the given image according to  * the Free Desktop Thumbnail Managing Standard. The thumbnail is saved  * so that it belongs to the file with the given filename. This means  * you have to save the image under this name first, otherwise this  * procedure will fail. This procedure may become useful if you want to  * explicitely save a thumbnail with a file.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_file_save_thumbnail:  * @image_ID: The image.  * @filename: The name of the file the thumbnail belongs to.  *  * Saves a thumbnail for the given image  *  * This procedure saves a thumbnail for the given image according to  * the Free Desktop Thumbnail Managing Standard. The thumbnail is saved  * so that it belongs to the file with the given filename. This means  * you have to save the image under this name first, otherwise this  * procedure will fail. This procedure may become useful if you want to  * explicitly save a thumbnail with a file.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function

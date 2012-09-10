@@ -66,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2dc1280103
+DECL|enum|__anon2b70fd180103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_PROTANOPIA
 name|COLORBLIND_DEFICIENCY_PROTANOPIA
@@ -357,7 +357,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2dc1280203
+DECL|enum|__anon2b70fd180203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1987,7 +1987,7 @@ index|[
 literal|12
 index|]
 decl_stmt|;
-comment|/*  This function performs initialisations that are dependant    *  on the type of color deficiency.    */
+comment|/*  This function performs initialisations that are dependent    *  on the type of color deficiency.    */
 comment|/* Performs protan, deutan or tritan color image simulation based on    * Brettel, Vienot and Mollon JOSA 14/10 1997    *  L,M,S for lambda=475,485,575,660    *    * Load the LMS anchor-point values for lambda = 475& 485 nm (for    * protans& deutans) and the LMS values for lambda = 575& 660 nm    * (for tritans)    */
 name|anchor
 index|[

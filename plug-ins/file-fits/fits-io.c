@@ -256,7 +256,7 @@ comment|/* The library was developed for a FITS-plug-in to GIMP, the GNU Image  
 end_comment
 
 begin_comment
-comment|/* Manipulation Program. But it is completely independant to that (beside use */
+comment|/* Manipulation Program. But it is completely independent to that (beside use */
 end_comment
 
 begin_comment
@@ -264,7 +264,7 @@ comment|/* of glib). If someone finds it useful for other purposes, try to keep 
 end_comment
 
 begin_comment
-comment|/* independant from your application.                                         */
+comment|/* independent from your application.                                         */
 end_comment
 
 begin_comment

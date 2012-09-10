@@ -92,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cdb0fb0108
+DECL|struct|__anon27a769bc0108
 block|{
 DECL|member|mask_radius
 name|gdouble
@@ -437,7 +437,7 @@ literal|"of white and much less detail for black areas everywhere including "
 literal|"inside regions of color. Small values result in less toner overall "
 literal|"and more detail everywhere. Small values for the pct_black make the "
 literal|"blend from the white regions to the black border lines smoother and "
-literal|"the toner regions themselves thinner and less noticable; larger values "
+literal|"the toner regions themselves thinner and less noticeable; larger values "
 literal|"achieve the opposite effect."
 decl_stmt|;
 name|gimp_install_procedure

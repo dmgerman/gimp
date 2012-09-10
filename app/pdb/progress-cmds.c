@@ -1198,7 +1198,7 @@ literal|"gdisplay"
 argument_list|,
 literal|"gdisplay"
 argument_list|,
-literal|"GimpDisplay to update progressbar in, or -1 for a seperate window"
+literal|"GimpDisplay to update progressbar in, or -1 for a separate window"
 argument_list|,
 name|pdb
 operator|->

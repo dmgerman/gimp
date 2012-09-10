@@ -203,7 +203,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e4e7780108
+DECL|struct|__anon2b27fc800108
 block|{
 DECL|member|resolution
 name|guint
@@ -314,7 +314,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e4e7780208
+DECL|struct|__anon2b27fc800208
 block|{
 DECL|member|width
 DECL|member|height
@@ -938,7 +938,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e4e7780308
+DECL|struct|__anon2b27fc800308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1807,7 +1807,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e4e7780408
+DECL|struct|__anon2b27fc800408
 block|{
 DECL|member|eol
 name|long
@@ -10411,7 +10411,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Write a device independant screen preview */
+comment|/* Write a device independent screen preview */
 end_comment
 
 begin_function

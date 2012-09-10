@@ -69,7 +69,7 @@ DECL|member|type
 name|GimpAnchorType
 name|type
 decl_stmt|;
-comment|/* Interpretation dependant on GimpStroke type */
+comment|/* Interpretation dependent on GimpStroke type */
 DECL|member|selected
 name|gboolean
 name|selected

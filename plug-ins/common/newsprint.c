@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ead70c0108
+DECL|struct|__anon280049b00108
 block|{
 DECL|member|name
 specifier|const
@@ -619,7 +619,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ead70c0208
+DECL|struct|__anon280049b00208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -692,7 +692,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ead70c0308
+DECL|struct|__anon280049b00308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -722,7 +722,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ead70c0408
+DECL|struct|__anon280049b00408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -829,7 +829,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ead70c0508
+DECL|struct|__anon280049b00508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -994,7 +994,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ead70c0608
+DECL|struct|__anon280049b00608
 block|{
 DECL|member|name
 specifier|const
@@ -7092,7 +7092,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ead70c0708
+DECL|struct|__anon280049b00708
 block|{
 DECL|member|index
 name|gint
@@ -7180,7 +7180,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Convert spot function "type" to a threshold matrix of size "width"  * times "width".  Returns newly allocated threshold matrix.  The  * reason for qsort()ing the results rather than just using the spot  * function's value directly as the threshold value is that we want to  * ensure that the threshold matrix is tonally balanced - that is, for  * a threshold value of x%, x% of the values in the matrix are< x%.  *  * Actually, it turns out that qsort()ing a function which is already  * balanced can quite significantly detract from the quality of the  * final result.  This is particularly noticable with the line or  * diamond spot functions at 45 degrees.  This is because if the spot  * function has multiple locations with the same value, qsort may use  * them in any order.  Often, there is quite clearly an optimal order  * however.  By marking functions as pre-balanced, this random  * shuffling is avoided.  WARNING: a non-balanced spot function marked  * as pre-balanced is bad: you'll end up with dark areas becoming too  * dark or too light, and vice versa for light areas.  This is most  * easily checked by halftoning an area, then bluring it back - you  * should get the same colour back again.  The only way of getting a  * correctly balanced function is by getting a formula for the spot's  * area as a function of x and y - this can be fairly tough (ie  * possiblly an integral in two dimensions that must be solved  * analytically).  *  * The threshold matrix is used to compare against image values.  If  * the image value is greater than the threshold value, then the  * output pixel is illuminated.  This means that a threshold matrix  * entry of 0 never causes output pixels to be illuminated.  */
+comment|/* Convert spot function "type" to a threshold matrix of size "width"  * times "width".  Returns newly allocated threshold matrix.  The  * reason for qsort()ing the results rather than just using the spot  * function's value directly as the threshold value is that we want to  * ensure that the threshold matrix is tonally balanced - that is, for  * a threshold value of x%, x% of the values in the matrix are< x%.  *  * Actually, it turns out that qsort()ing a function which is already  * balanced can quite significantly detract from the quality of the  * final result.  This is particularly noticeable with the line or  * diamond spot functions at 45 degrees.  This is because if the spot  * function has multiple locations with the same value, qsort may use  * them in any order.  Often, there is quite clearly an optimal order  * however.  By marking functions as pre-balanced, this random  * shuffling is avoided.  WARNING: a non-balanced spot function marked  * as pre-balanced is bad: you'll end up with dark areas becoming too  * dark or too light, and vice versa for light areas.  This is most  * easily checked by halftoning an area, then bluring it back - you  * should get the same colour back again.  The only way of getting a  * correctly balanced function is by getting a formula for the spot's  * area as a function of x and y - this can be fairly tough (ie  * possiblly an integral in two dimensions that must be solved  * analytically).  *  * The threshold matrix is used to compare against image values.  If  * the image value is greater than the threshold value, then the  * output pixel is illuminated.  This means that a threshold matrix  * entry of 0 never causes output pixels to be illuminated.  */
 end_comment
 
 begin_function
