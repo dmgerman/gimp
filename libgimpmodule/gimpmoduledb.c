@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ae1b390103
+DECL|enum|__anon2893c1c30103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -760,7 +760,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_db_get_load_inhibit:  * @db: A #GimpModuleDB.  *  * Return the #G_SEARCHPATH_SEPARATOR selimited list of module filenames  * which are excluded from auto-loading.  *  * Return value: the @db's @load_inhibit string.  **/
+comment|/**  * gimp_module_db_get_load_inhibit:  * @db: A #GimpModuleDB.  *  * Return the #G_SEARCHPATH_SEPARATOR delimited list of module filenames  * which are excluded from auto-loading.  *  * Return value: the @db's @load_inhibit string.  **/
 end_comment
 
 begin_function
