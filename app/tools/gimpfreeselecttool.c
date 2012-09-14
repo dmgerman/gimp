@@ -184,7 +184,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291d75990108
+DECL|struct|__anon2a0d8a4d0108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -4815,11 +4815,13 @@ name|priv
 operator|->
 name|constrain_angle
 operator|=
+operator|(
+operator|(
 name|state
 operator|&
-operator|(
 name|gimp_get_constrain_behavior_mask
 argument_list|()
+operator|)
 condition|?
 name|TRUE
 else|:
@@ -4925,11 +4927,13 @@ name|priv
 operator|->
 name|constrain_angle
 operator|=
+operator|(
+operator|(
 name|state
 operator|&
-operator|(
 name|gimp_get_constrain_behavior_mask
 argument_list|()
+operator|)
 condition|?
 name|TRUE
 else|:
