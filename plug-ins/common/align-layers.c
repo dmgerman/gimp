@@ -61,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7648380103
+DECL|enum|__anon2c006b850103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -83,7 +83,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7648380203
+DECL|enum|__anon2c006b850203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7648380303
+DECL|enum|__anon2c006b850303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -121,7 +121,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7648380403
+DECL|enum|__anon2c006b850403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -245,7 +245,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7648380508
+DECL|struct|__anon2c006b850508
 block|{
 DECL|member|h_style
 name|gint
@@ -1406,11 +1406,18 @@ modifier|*
 name|y
 parameter_list|)
 block|{
-name|GimpDrawable
-modifier|*
-name|layer
+name|gint
+name|width
 init|=
-name|gimp_drawable_get
+name|gimp_drawable_width
+argument_list|(
+name|drawable_id
+argument_list|)
+decl_stmt|;
+name|gint
+name|height
+init|=
+name|gimp_drawable_height
 argument_list|(
 name|drawable_id
 argument_list|)
@@ -1437,8 +1444,6 @@ case|:
 operator|*
 name|x
 operator|=
-name|layer
-operator|->
 name|width
 operator|/
 literal|2
@@ -1450,8 +1455,6 @@ case|:
 operator|*
 name|x
 operator|=
-name|layer
-operator|->
 name|width
 expr_stmt|;
 break|break;
@@ -1485,8 +1488,6 @@ case|:
 operator|*
 name|y
 operator|=
-name|layer
-operator|->
 name|height
 operator|/
 literal|2
@@ -1498,8 +1499,6 @@ case|:
 operator|*
 name|y
 operator|=
-name|layer
-operator|->
 name|height
 expr_stmt|;
 break|break;
@@ -1511,11 +1510,6 @@ literal|0
 expr_stmt|;
 break|break;
 block|}
-name|gimp_drawable_detach
-argument_list|(
-name|layer
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
