@@ -578,8 +578,8 @@ name|DEBUG
 end_ifdef
 
 begin_function
-DECL|function|putbin (unsigned long d)
 name|void
+DECL|function|putbin (unsigned long d)
 name|putbin
 parameter_list|(
 name|unsigned
@@ -1226,11 +1226,9 @@ name|rs
 operator|==
 literal|0
 condition|)
-block|{
 goto|goto
 name|do_write
 goto|;
-block|}
 block|}
 ifdef|#
 directive|ifdef
@@ -1726,10 +1724,12 @@ name|col
 operator|==
 literal|0
 condition|)
+block|{
 name|cons_eol
 operator|++
 expr_stmt|;
 comment|/* consecutive EOLs */
+block|}
 else|else
 block|{
 if|if
@@ -1872,10 +1872,12 @@ operator|==
 literal|0
 condition|)
 comment|/* white */
+block|{
 name|col
 operator|+=
 name|nr_pels
 expr_stmt|;
+block|}
 else|else
 comment|/* black */
 block|{
