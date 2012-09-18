@@ -1856,7 +1856,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6c05f00103
+DECL|enum|__anon2ba39fa80103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START
@@ -2009,14 +2009,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|fill_run (guchar * dest,guchar alpha,gint w)
+DECL|function|fill_run (gfloat * dest,gfloat alpha,gint w)
 name|fill_run
 parameter_list|(
-name|guchar
+name|gfloat
 modifier|*
 name|dest
 parameter_list|,
-name|guchar
+name|gfloat
 name|alpha
 parameter_list|,
 name|gint
@@ -2027,18 +2027,24 @@ if|if
 condition|(
 name|alpha
 operator|==
-literal|255
+literal|1.0
 condition|)
 block|{
-name|memset
-argument_list|(
-name|dest
-argument_list|,
-literal|255
-argument_list|,
+while|while
+condition|(
 name|w
-argument_list|)
+operator|--
+condition|)
+block|{
+operator|*
+name|dest
+operator|=
+literal|1.0
 expr_stmt|;
+name|dest
+operator|++
+expr_stmt|;
+block|}
 block|}
 else|else
 block|{
@@ -2070,14 +2076,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|render_blob_line (GimpBlob * blob,guchar * dest,gint x,gint y,gint width)
+DECL|function|render_blob_line (GimpBlob * blob,gfloat * dest,gint x,gint y,gint width)
 name|render_blob_line
 parameter_list|(
 name|GimpBlob
 modifier|*
 name|blob
 parameter_list|,
-name|guchar
+name|gfloat
 modifier|*
 name|dest
 parameter_list|,
@@ -2438,10 +2444,9 @@ operator|+
 name|last_x
 argument_list|,
 operator|(
-literal|255
-operator|*
-name|current
+name|gfloat
 operator|)
+name|current
 operator|/
 name|SUBSAMPLE
 argument_list|,
@@ -2564,10 +2569,9 @@ name|cur_x
 index|]
 argument_list|,
 operator|(
-name|pixel
-operator|*
-literal|255
+name|gfloat
 operator|)
+name|pixel
 operator|/
 operator|(
 name|SUBSAMPLE
@@ -2596,10 +2600,9 @@ operator|+
 name|last_x
 argument_list|,
 operator|(
-literal|255
-operator|*
-name|current
+name|gfloat
 operator|)
+name|current
 operator|/
 name|SUBSAMPLE
 argument_list|,
@@ -2650,7 +2653,7 @@ literal|0
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y float"
 argument_list|)
 argument_list|,
 name|GEGL_BUFFER_READWRITE
@@ -2676,7 +2679,7 @@ name|iter
 argument_list|)
 condition|)
 block|{
-name|guchar
+name|gfloat
 modifier|*
 name|d
 init|=
