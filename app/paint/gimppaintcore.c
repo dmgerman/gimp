@@ -157,7 +157,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2755067c0103
+DECL|enum|__anon2c7051630103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1523,7 +1523,7 @@ argument_list|)
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y float"
 argument_list|)
 argument_list|)
 expr_stmt|;
