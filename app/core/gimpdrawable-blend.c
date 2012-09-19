@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab13a210108
+DECL|struct|__anon299ab19e0108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -226,7 +226,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab13a210208
+DECL|struct|__anon299ab19e0208
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -2295,7 +2295,7 @@ literal|"Y float"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  allocate the selection mask copy  */
+comment|/*  allocate the selection mask copy    *  XXX: its format should be the same of gimp:shapeburst input buffer    *       porting the op to 'float' should be reflected here as well    */
 name|temp_buffer
 operator|=
 name|gegl_buffer_new
@@ -2315,9 +2315,9 @@ operator|->
 name|height
 argument_list|)
 argument_list|,
-name|gimp_image_get_mask_format
+name|babl_format
 argument_list|(
-name|image
+literal|"Y u8"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2445,11 +2445,9 @@ name|component_format
 decl_stmt|;
 name|component_format
 operator|=
-name|gimp_image_get_component_format
+name|babl_format
 argument_list|(
-name|image
-argument_list|,
-name|GIMP_ALPHA_CHANNEL
+literal|"A u8"
 argument_list|)
 expr_stmt|;
 comment|/*  extract the aplha into the temp mask  */
