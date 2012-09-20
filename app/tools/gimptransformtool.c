@@ -1812,6 +1812,25 @@ operator|!=
 name|GIMP_BUTTON_RELEASE_CANCEL
 condition|)
 block|{
+comment|/* This hack is to perform the flip immediately with the flip tool */
+if|if
+condition|(
+operator|!
+name|tr_tool
+operator|->
+name|use_grid
+condition|)
+block|{
+name|gimp_transform_tool_response
+argument_list|(
+name|NULL
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|tr_tool
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* We're done with an interaction, save it on the undo list */
 name|gimp_transform_tool_push_internal_undo
 argument_list|(
