@@ -358,7 +358,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon298965700103
+DECL|enum|__anon280262830103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -455,7 +455,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon298965700203
+DECL|enum|__anon280262830203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7341,6 +7341,10 @@ name|gchar
 modifier|*
 name|format_string
 decl_stmt|;
+name|gchar
+modifier|*
+name|tmp
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -7537,15 +7541,13 @@ condition|(
 name|basename
 condition|)
 block|{
-name|gchar
-modifier|*
 name|tmp
-init|=
+operator|=
 name|file_utils_uri_display_basename
 argument_list|(
 name|display_uri
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|g_free
 argument_list|(
 name|display_uri
@@ -7558,15 +7560,13 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gchar
-modifier|*
 name|tmp
-init|=
+operator|=
 name|file_utils_uri_display_name
 argument_list|(
 name|display_uri
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|g_free
 argument_list|(
 name|display_uri
@@ -7588,7 +7588,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|display_uri
+name|tmp
 operator|=
 name|g_strdup_printf
 argument_list|(
@@ -7596,6 +7596,15 @@ name|format_string
 argument_list|,
 name|display_uri
 argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|display_uri
+argument_list|)
+expr_stmt|;
+name|display_uri
+operator|=
+name|tmp
 expr_stmt|;
 name|g_free
 argument_list|(
