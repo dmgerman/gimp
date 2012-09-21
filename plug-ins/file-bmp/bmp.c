@@ -577,6 +577,13 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|gegl_init
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
