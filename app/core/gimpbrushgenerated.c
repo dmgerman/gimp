@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e7a2b30103
+DECL|enum|__anon29b4bc470103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1950,9 +1950,11 @@ control|(
 name|y
 operator|=
 operator|(
+operator|(
 name|spikes
 operator|%
 literal|2
+operator|)
 condition|?
 operator|-
 name|half_height
