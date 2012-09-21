@@ -260,7 +260,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e0fde80103
+DECL|enum|__anon27b259a20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -570,7 +570,7 @@ name|NULL
 argument_list|,
 literal|"Modification time of the image file in seconds since the Epoch"
 argument_list|,
-literal|0
+name|G_MININT64
 argument_list|,
 name|G_MAXINT64
 argument_list|,
