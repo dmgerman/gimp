@@ -82,7 +82,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29935dce0103
+DECL|enum|__anon2c706a880103
 block|{
 DECL|enumerator|RGB_565
 name|RGB_565
@@ -110,7 +110,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29935dce0208
+DECL|struct|__anon2c706a880208
 block|{
 DECL|member|rgb_format
 name|RGBMode
@@ -1028,6 +1028,7 @@ condition|)
 return|return
 name|GIMP_PDB_CANCEL
 return|;
+comment|/* mask_info_size is only set to non-zero for 16- and 32-bpp */
 switch|switch
 condition|(
 name|BMPSaveData
@@ -1049,6 +1050,10 @@ case|:
 name|BitsPerPixel
 operator|=
 literal|32
+expr_stmt|;
+name|mask_info_size
+operator|=
+literal|16
 expr_stmt|;
 break|break;
 case|case
@@ -1091,6 +1096,10 @@ case|case
 name|RGB_555
 case|:
 name|BitsPerPixel
+operator|=
+literal|16
+expr_stmt|;
+name|mask_info_size
 operator|=
 literal|16
 expr_stmt|;
