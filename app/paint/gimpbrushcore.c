@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aba23ff0103
+DECL|enum|__anon291e94a80103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -3603,16 +3603,6 @@ name|y1
 operator|)
 condition|)
 block|{
-specifier|const
-name|Babl
-modifier|*
-name|format
-init|=
-name|gimp_drawable_get_format_with_alpha
-argument_list|(
-name|drawable
-argument_list|)
-decl_stmt|;
 name|GimpTempBuf
 modifier|*
 name|temp_buf
@@ -3633,7 +3623,10 @@ operator|-
 name|y1
 operator|)
 argument_list|,
-name|format
+name|babl_format
+argument_list|(
+literal|"RGBA float"
+argument_list|)
 argument_list|)
 expr_stmt|;
 operator|*
