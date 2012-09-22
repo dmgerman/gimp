@@ -6,27 +6,23 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_IMAGE_CROP_H__
+name|__GIMP_PICKABLE_AUTO_SHRINK_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_IMAGE_CROP_H__
+DECL|macro|__GIMP_PICKABLE_AUTO_SHRINK_H__
 define|#
 directive|define
-name|__GIMP_IMAGE_CROP_H__
+name|__GIMP_PICKABLE_AUTO_SHRINK_H__
 end_define
 
 begin_function_decl
-name|void
-name|gimp_image_crop
+name|gboolean
+name|gimp_pickable_auto_shrink
 parameter_list|(
-name|GimpImage
+name|GimpPickable
 modifier|*
-name|image
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
+name|pickable
 parameter_list|,
 name|gint
 name|x1
@@ -40,11 +36,21 @@ parameter_list|,
 name|gint
 name|y2
 parameter_list|,
-name|gboolean
-name|active_layer_only
+name|gint
+modifier|*
+name|shrunk_x1
 parameter_list|,
-name|gboolean
-name|crop_layers
+name|gint
+modifier|*
+name|shrunk_y1
+parameter_list|,
+name|gint
+modifier|*
+name|shrunk_x2
+parameter_list|,
+name|gint
+modifier|*
+name|shrunk_y2
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -55,7 +61,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_IMAGE_CROP_H__ */
+comment|/* __GIMP_PICKABLE_AUTO_SHRINK_H__ */
 end_comment
 
 end_unit
