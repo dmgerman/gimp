@@ -552,7 +552,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b3c2e1e0108
+DECL|struct|__anon28ae6fc90108
 block|{
 DECL|member|name
 specifier|const
