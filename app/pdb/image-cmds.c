@@ -2511,8 +2511,6 @@ name|offy
 operator|+
 name|new_height
 argument_list|,
-name|FALSE
-argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;

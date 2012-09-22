@@ -41,9 +41,6 @@ name|gint
 name|y2
 parameter_list|,
 name|gboolean
-name|active_layer_only
-parameter_list|,
-name|gboolean
 name|crop_layers
 parameter_list|)
 function_decl|;

@@ -242,7 +242,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a35a24a0108
+DECL|struct|__anon29d1122c0108
 block|{
 DECL|member|context
 name|GimpContext
@@ -1760,8 +1760,6 @@ argument_list|,
 name|x2
 argument_list|,
 name|y2
-argument_list|,
-name|FALSE
 argument_list|,
 name|TRUE
 argument_list|)
