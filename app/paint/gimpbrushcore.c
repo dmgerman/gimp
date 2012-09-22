@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291e94a80103
+DECL|enum|__anon291e7d2f0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -5718,7 +5718,7 @@ name|guchar
 modifier|*
 name|m
 decl_stmt|;
-name|guchar
+name|gfloat
 modifier|*
 name|d
 decl_stmt|;
@@ -5959,9 +5959,9 @@ name|brush_mask_height
 operator|+
 literal|2
 argument_list|,
-name|gimp_temp_buf_get_format
+name|babl_format
 argument_list|(
-name|brush_mask
+literal|"Y float"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5992,11 +5992,16 @@ expr_stmt|;
 name|d
 operator|=
 operator|(
+operator|(
+name|gfloat
+operator|*
+operator|)
 name|gimp_temp_buf_get_data
 argument_list|(
 name|dest
 argument_list|)
 operator|+
+operator|(
 operator|(
 name|dest_offset_y
 operator|+
@@ -6012,6 +6017,7 @@ operator|(
 name|dest_offset_x
 operator|+
 literal|1
+operator|)
 operator|)
 operator|)
 expr_stmt|;
@@ -6052,9 +6058,9 @@ name|m
 operator|++
 operator|)
 condition|?
-literal|255
+literal|1.0
 else|:
-literal|0
+literal|0.0
 expr_stmt|;
 name|d
 operator|+=
