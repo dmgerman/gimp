@@ -141,11 +141,11 @@ name|babl_format_new
 argument_list|(
 literal|"name"
 argument_list|,
-literal|"R u16"
+literal|"R' u16"
 argument_list|,
 name|babl_model
 argument_list|(
-literal|"RGBA"
+literal|"R'G'B'A"
 argument_list|)
 argument_list|,
 name|babl_type
@@ -155,7 +155,7 @@ argument_list|)
 argument_list|,
 name|babl_component
 argument_list|(
-literal|"R"
+literal|"R'"
 argument_list|)
 argument_list|,
 name|NULL
@@ -165,11 +165,11 @@ name|babl_format_new
 argument_list|(
 literal|"name"
 argument_list|,
-literal|"G u16"
+literal|"G' u16"
 argument_list|,
 name|babl_model
 argument_list|(
-literal|"RGBA"
+literal|"R'G'B'A"
 argument_list|)
 argument_list|,
 name|babl_type
@@ -179,7 +179,7 @@ argument_list|)
 argument_list|,
 name|babl_component
 argument_list|(
-literal|"G"
+literal|"G'"
 argument_list|)
 argument_list|,
 name|NULL
@@ -189,11 +189,11 @@ name|babl_format_new
 argument_list|(
 literal|"name"
 argument_list|,
-literal|"B u16"
+literal|"B' u16"
 argument_list|,
 name|babl_model
 argument_list|(
-literal|"RGBA"
+literal|"R'G'B'A"
 argument_list|)
 argument_list|,
 name|babl_type
@@ -203,7 +203,7 @@ argument_list|)
 argument_list|,
 name|babl_component
 argument_list|(
-literal|"B"
+literal|"B'"
 argument_list|)
 argument_list|,
 name|NULL
@@ -552,7 +552,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2795621b0108
+DECL|struct|__anon2b3c2e1e0108
 block|{
 DECL|member|name
 specifier|const
@@ -582,7 +582,7 @@ argument_list|)
 block|}
 block|,
 block|{
-literal|"RGB u16"
+literal|"R'G'B' u16"
 block|,
 name|N_
 argument_list|(
@@ -627,7 +627,7 @@ argument_list|)
 block|}
 block|,
 block|{
-literal|"RGBA u16"
+literal|"R'G'B'A u16"
 block|,
 name|N_
 argument_list|(
@@ -681,6 +681,15 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"Y' u16"
+block|,
+name|N_
+argument_list|(
+literal|"Grayscale"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"Y u16"
 block|,
 name|N_
@@ -726,7 +735,7 @@ argument_list|)
 block|}
 block|,
 block|{
-literal|"YA u16"
+literal|"Y'A u16"
 block|,
 name|N_
 argument_list|(
@@ -771,7 +780,7 @@ argument_list|)
 block|}
 block|,
 block|{
-literal|"R u16"
+literal|"R' u16"
 block|,
 name|N_
 argument_list|(
@@ -816,7 +825,7 @@ argument_list|)
 block|}
 block|,
 block|{
-literal|"G u16"
+literal|"G' u16"
 block|,
 name|N_
 argument_list|(
@@ -861,7 +870,7 @@ argument_list|)
 block|}
 block|,
 block|{
-literal|"B u16"
+literal|"B' u16"
 block|,
 name|N_
 argument_list|(
@@ -1412,14 +1421,14 @@ condition|)
 return|return
 name|babl_format
 argument_list|(
-literal|"RGBA u16"
+literal|"R'G'B'A u16"
 argument_list|)
 return|;
 else|else
 return|return
 name|babl_format
 argument_list|(
-literal|"RGB u16"
+literal|"R'G'B' u16"
 argument_list|)
 return|;
 case|case
@@ -1524,14 +1533,14 @@ condition|)
 return|return
 name|babl_format
 argument_list|(
-literal|"YA u16"
+literal|"Y'A u16"
 argument_list|)
 return|;
 else|else
 return|return
 name|babl_format
 argument_list|(
-literal|"Y u16"
+literal|"Y' u16"
 argument_list|)
 return|;
 case|case
@@ -1704,7 +1713,7 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"R u16"
+literal|"R' u16"
 argument_list|)
 return|;
 case|case
@@ -1713,7 +1722,7 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"G u16"
+literal|"G' u16"
 argument_list|)
 return|;
 case|case
@@ -1722,7 +1731,7 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"B u16"
+literal|"B' u16"
 argument_list|)
 return|;
 case|case
@@ -1938,7 +1947,7 @@ case|:
 return|return
 name|babl_format
 argument_list|(
-literal|"Y u16"
+literal|"Y' u16"
 argument_list|)
 return|;
 case|case
