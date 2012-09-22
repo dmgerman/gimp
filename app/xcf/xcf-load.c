@@ -5852,6 +5852,9 @@ name|Babl
 modifier|*
 name|format
 decl_stmt|;
+name|gint
+name|bpp
+decl_stmt|;
 name|guint32
 name|saved_pos
 decl_stmt|;
@@ -5886,6 +5889,13 @@ operator|=
 name|gegl_buffer_get_format
 argument_list|(
 name|buffer
+argument_list|)
+expr_stmt|;
+name|bpp
+operator|=
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|format
 argument_list|)
 expr_stmt|;
 name|info
@@ -6086,7 +6096,7 @@ name|XCF_TILE_WIDTH
 operator|*
 name|XCF_TILE_WIDTH
 operator|*
-literal|4
+name|bpp
 operator|*
 literal|1.5
 expr_stmt|;
