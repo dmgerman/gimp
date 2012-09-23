@@ -1107,6 +1107,11 @@ define|#
 directive|define
 name|GIMP_STOCK_CONTROLLER_MOUSE
 value|GIMP_STOCK_CURSOR
+DECL|macro|GIMP_STOCK_CONVERT_PRECISION
+define|#
+directive|define
+name|GIMP_STOCK_CONVERT_PRECISION
+value|GIMP_STOCK_CONVERT_RGB
 name|void
 name|gimp_stock_init
 parameter_list|(

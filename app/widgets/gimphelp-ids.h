@@ -758,6 +758,14 @@ value|"gimp-image-convert-float"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_IMAGE_CONVERT_PRECISION
+define|#
+directive|define
+name|GIMP_HELP_IMAGE_CONVERT_PRECISION
+value|"gimp-image-convert-precision"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_IMAGE_FLIP_HORIZONTAL
 define|#
 directive|define

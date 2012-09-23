@@ -71,7 +71,7 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_image_convert_precision (GimpImage * image,GimpPrecision precision,GimpProgress * progress)
+DECL|function|gimp_image_convert_precision (GimpImage * image,GimpPrecision precision,gint layer_dither_type,gint mask_dither_type,GimpProgress * progress)
 name|gimp_image_convert_precision
 parameter_list|(
 name|GimpImage
@@ -80,6 +80,12 @@ name|image
 parameter_list|,
 name|GimpPrecision
 name|precision
+parameter_list|,
+name|gint
+name|layer_dither_type
+parameter_list|,
+name|gint
+name|mask_dither_type
 parameter_list|,
 name|GimpProgress
 modifier|*
