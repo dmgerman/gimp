@@ -30,6 +30,23 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
+name|GType
+name|gimp_gegl_get_op_enum_type
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|operation
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|property
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GeglColor
 modifier|*
 name|gimp_gegl_color_new
