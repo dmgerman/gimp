@@ -959,7 +959,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Crop the layer to the extents its content (remove empty borders from the layer)"
+literal|"Crop the layer to the extents of its content (remove empty borders from the layer)"
 argument_list|)
 block|,
 name|G_CALLBACK
