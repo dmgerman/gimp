@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2909fc3f0103
+DECL|enum|__anon2a2948c30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1318,10 +1318,14 @@ block|{
 name|gsize
 name|info_len
 init|=
+name|info
+condition|?
 name|strlen
 argument_list|(
 name|info
 argument_list|)
+else|:
+literal|0
 decl_stmt|;
 name|gsize
 name|name_len
@@ -1364,6 +1368,10 @@ operator|->
 name|buffer
 argument_list|,
 name|info
+condition|?
+name|info
+else|:
+literal|""
 argument_list|,
 name|info_len
 argument_list|)
