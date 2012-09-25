@@ -863,6 +863,20 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+operator|!
+operator|*
+name|name
+condition|)
+operator|*
+name|name
+operator|=
+name|g_strdup
+argument_list|(
+literal|"(unnamed profile)"
+argument_list|)
+expr_stmt|;
 name|descSize
 operator|=
 name|cmsGetProfileInfoASCII
