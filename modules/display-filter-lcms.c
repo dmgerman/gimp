@@ -869,14 +869,20 @@ operator|!
 operator|*
 name|name
 condition|)
+block|{
+comment|/* a color profile without a name */
 operator|*
 name|name
 operator|=
 name|g_strdup
 argument_list|(
+name|_
+argument_list|(
 literal|"(unnamed profile)"
 argument_list|)
+argument_list|)
 expr_stmt|;
+block|}
 name|descSize
 operator|=
 name|cmsGetProfileInfoASCII
