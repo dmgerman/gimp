@@ -1259,7 +1259,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292d2d9e0108
+DECL|struct|__anon2a06a9500108
 block|{
 DECL|member|factory
 name|GimpDataFactory
@@ -1442,7 +1442,7 @@ name|gimp_path_parse
 argument_list|(
 name|writable_path
 argument_list|,
-literal|16
+literal|256
 argument_list|,
 name|TRUE
 argument_list|,
@@ -2912,7 +2912,7 @@ name|gimp_path_parse
 argument_list|(
 name|path
 argument_list|,
-literal|16
+literal|256
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2925,7 +2925,7 @@ name|gimp_path_parse
 argument_list|(
 name|writable_path
 argument_list|,
-literal|16
+literal|256
 argument_list|,
 name|FALSE
 argument_list|,

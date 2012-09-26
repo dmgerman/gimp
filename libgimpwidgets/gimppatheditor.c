@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1fa1d60103
+DECL|enum|__anon2c1ec2130103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -85,7 +85,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1fa1d60203
+DECL|enum|__anon2c1ec2130203
 block|{
 DECL|enumerator|COLUMN_UTF8
 name|COLUMN_UTF8
@@ -1363,7 +1363,7 @@ name|gimp_path_parse
 argument_list|(
 name|path
 argument_list|,
-literal|16
+literal|256
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1699,7 +1699,7 @@ name|gimp_path_parse
 argument_list|(
 name|path
 argument_list|,
-literal|16
+literal|256
 argument_list|,
 name|FALSE
 argument_list|,

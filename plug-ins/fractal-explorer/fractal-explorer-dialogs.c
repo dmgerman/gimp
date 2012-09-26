@@ -8186,7 +8186,7 @@ name|gimp_path_parse
 argument_list|(
 name|fractalexplorer_path
 argument_list|,
-literal|16
+literal|256
 argument_list|,
 name|FALSE
 argument_list|,

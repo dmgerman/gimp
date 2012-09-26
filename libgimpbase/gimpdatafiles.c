@@ -283,7 +283,7 @@ name|gimp_path_parse
 argument_list|(
 name|local_path
 argument_list|,
-literal|16
+literal|256
 argument_list|,
 name|TRUE
 argument_list|,

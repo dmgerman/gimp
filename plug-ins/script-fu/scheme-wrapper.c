@@ -289,7 +289,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4df39d0108
+DECL|struct|__anon29495a1c0108
 block|{
 DECL|member|name
 specifier|const
@@ -1022,7 +1022,7 @@ name|gimp_path_parse
 argument_list|(
 name|path
 argument_list|,
-literal|16
+literal|256
 argument_list|,
 name|TRUE
 argument_list|,
