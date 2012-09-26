@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291e7d2f0103
+DECL|enum|__anon2bd0c3d40103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -475,7 +475,7 @@ name|GimpTempBuf
 modifier|*
 name|brush_mask
 parameter_list|,
-name|guchar
+name|gfloat
 modifier|*
 name|d
 parameter_list|,
@@ -6704,9 +6704,6 @@ modifier|*
 name|roi
 decl_stmt|;
 name|gint
-name|bpp
-decl_stmt|;
-name|gint
 name|ulx
 decl_stmt|;
 name|gint
@@ -6899,16 +6896,6 @@ name|area_y
 operator|-
 name|uly
 expr_stmt|;
-name|bpp
-operator|=
-name|babl_format_get_bytes_per_pixel
-argument_list|(
-name|gegl_buffer_get_format
-argument_list|(
-name|area
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|iter
 operator|=
 name|gegl_buffer_iterator_new
@@ -6919,7 +6906,10 @@ name|NULL
 argument_list|,
 literal|0
 argument_list|,
-name|NULL
+name|babl_format
+argument_list|(
+literal|"RGBA float"
+argument_list|)
 argument_list|,
 name|GEGL_BUFFER_WRITE
 argument_list|,
@@ -6944,7 +6934,7 @@ name|iter
 argument_list|)
 condition|)
 block|{
-name|guchar
+name|gfloat
 modifier|*
 name|d
 init|=
@@ -7003,7 +6993,7 @@ name|roi
 operator|->
 name|width
 operator|*
-name|bpp
+literal|4
 expr_stmt|;
 block|}
 block|}
@@ -7013,7 +7003,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_core_paint_line_pixmap_mask (GimpDrawable * drawable,const GimpTempBuf * pixmap_mask,const GimpTempBuf * brush_mask,guchar * d,gint x,gint y,gint width,GimpBrushApplicationMode mode)
+DECL|function|gimp_brush_core_paint_line_pixmap_mask (GimpDrawable * drawable,const GimpTempBuf * pixmap_mask,const GimpTempBuf * brush_mask,gfloat * d,gint x,gint y,gint width,GimpBrushApplicationMode mode)
 name|gimp_brush_core_paint_line_pixmap_mask
 parameter_list|(
 name|GimpDrawable
@@ -7030,7 +7020,7 @@ name|GimpTempBuf
 modifier|*
 name|brush_mask
 parameter_list|,
-name|guchar
+name|gfloat
 modifier|*
 name|d
 parameter_list|,
@@ -7231,9 +7221,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 argument_list|,
-name|gimp_drawable_get_format_with_alpha
+name|babl_format
 argument_list|(
-name|drawable
+literal|"RGBA float"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7350,9 +7340,9 @@ name|babl_fish
 argument_list|(
 name|pixmap_format
 argument_list|,
-name|gimp_drawable_get_format_with_alpha
+name|babl_format
 argument_list|(
-name|drawable
+literal|"RGBA float"
 argument_list|)
 argument_list|)
 expr_stmt|;
