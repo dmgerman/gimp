@@ -358,7 +358,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon280262830103
+DECL|enum|__anon27cc62f20103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -455,7 +455,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon280262830203
+DECL|enum|__anon27cc62f20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6451,65 +6451,15 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-switch|switch
-condition|(
+return|return
+name|gimp_babl_mask_format
+argument_list|(
 name|gimp_image_get_precision
 argument_list|(
 name|image
 argument_list|)
-condition|)
-block|{
-case|case
-name|GIMP_PRECISION_U8
-case|:
-return|return
-name|babl_format
-argument_list|(
-literal|"Y u8"
 argument_list|)
 return|;
-case|case
-name|GIMP_PRECISION_U16
-case|:
-return|return
-name|babl_format
-argument_list|(
-literal|"Y u16"
-argument_list|)
-return|;
-case|case
-name|GIMP_PRECISION_U32
-case|:
-return|return
-name|babl_format
-argument_list|(
-literal|"Y u32"
-argument_list|)
-return|;
-case|case
-name|GIMP_PRECISION_HALF
-case|:
-return|return
-name|babl_format
-argument_list|(
-literal|"Y half"
-argument_list|)
-return|;
-case|case
-name|GIMP_PRECISION_FLOAT
-case|:
-return|return
-name|babl_format
-argument_list|(
-literal|"Y float"
-argument_list|)
-return|;
-block|}
-name|g_return_val_if_reached
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
