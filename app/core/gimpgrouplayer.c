@@ -3588,7 +3588,7 @@ specifier|static
 specifier|const
 name|Babl
 modifier|*
-DECL|function|get_projection_format (GimpProjectable * projectable,GimpImageBaseType base_type)
+DECL|function|get_projection_format (GimpProjectable * projectable,GimpImageBaseType base_type,GimpPrecision precision)
 name|get_projection_format
 parameter_list|(
 name|GimpProjectable
@@ -3597,6 +3597,9 @@ name|projectable
 parameter_list|,
 name|GimpImageBaseType
 name|base_type
+parameter_list|,
+name|GimpPrecision
+name|precision
 parameter_list|)
 block|{
 name|GimpImage
@@ -3629,10 +3632,7 @@ name|image
 argument_list|,
 name|GIMP_RGB
 argument_list|,
-name|gimp_image_get_precision
-argument_list|(
-name|image
-argument_list|)
+name|precision
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3647,10 +3647,7 @@ name|image
 argument_list|,
 name|GIMP_GRAY
 argument_list|,
-name|gimp_image_get_precision
-argument_list|(
-name|image
-argument_list|)
+name|precision
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3755,6 +3752,8 @@ name|drawable
 argument_list|)
 argument_list|,
 name|new_base_type
+argument_list|,
+name|new_precision
 argument_list|)
 expr_stmt|;
 name|gimp_projectable_structure_changed
@@ -3881,6 +3880,9 @@ decl_stmt|;
 name|GimpImageBaseType
 name|base_type
 decl_stmt|;
+name|GimpPrecision
+name|precision
+decl_stmt|;
 if|if
 condition|(
 name|private
@@ -3902,12 +3904,24 @@ name|projectable
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|precision
+operator|=
+name|gimp_drawable_get_precision
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|projectable
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
 name|get_projection_format
 argument_list|(
 name|projectable
 argument_list|,
 name|base_type
+argument_list|,
+name|precision
 argument_list|)
 return|;
 block|}
