@@ -197,6 +197,25 @@ directive|include
 file|<netdb.h>
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|AI_ADDRCONFIG
+end_ifndef
+
+begin_define
+DECL|macro|AI_ADDRCONFIG
+define|#
+directive|define
+name|AI_ADDRCONFIG
+value|0
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_endif
 endif|#
 directive|endif
@@ -469,7 +488,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b86e2310108
+DECL|struct|__anon2c3c9b280108
 block|{
 DECL|member|command
 name|gchar
@@ -493,7 +512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b86e2310208
+DECL|struct|__anon2c3c9b280208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -527,7 +546,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2b86e231030a
+DECL|union|__anon2c3c9b28030a
 block|{
 DECL|member|family
 name|sa_family_t
