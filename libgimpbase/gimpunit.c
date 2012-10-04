@@ -305,7 +305,9 @@ name|error
 label|:
 name|g_warning
 argument_list|(
-literal|"Can't convert string to GimpUnit."
+literal|"Can't convert string '%s' to GimpUnit."
+argument_list|,
+name|str
 argument_list|)
 expr_stmt|;
 block|}
