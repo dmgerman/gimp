@@ -140,7 +140,7 @@ name|GimpDisplay
 modifier|*
 name|display
 decl_stmt|;
-comment|/*  The display we are drawing to (may be                                  *  a different one than tool->display)                                  */
+comment|/*  The display we are drawing to (may be                                    *  a different one than tool->display)                                    */
 DECL|member|paused_count
 name|gint
 name|paused_count
@@ -151,6 +151,11 @@ name|guint
 name|draw_timeout
 decl_stmt|;
 comment|/*  draw delay timeout ID                   */
+DECL|member|last_draw_time
+name|guint64
+name|last_draw_time
+decl_stmt|;
+comment|/*  time of last draw(), monotonically      */
 DECL|member|preview
 name|GimpCanvasItem
 modifier|*
