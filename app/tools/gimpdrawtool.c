@@ -1269,9 +1269,6 @@ operator|->
 name|paused_count
 operator|--
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|USE_TIMEOUT
 if|if
 condition|(
 name|draw_tool
@@ -1279,7 +1276,13 @@ operator|->
 name|paused_count
 operator|==
 literal|0
-operator|&&
+condition|)
+block|{
+ifdef|#
+directive|ifdef
+name|USE_TIMEOUT
+if|if
+condition|(
 operator|!
 name|draw_tool
 operator|->
@@ -1305,15 +1308,15 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
+endif|#
+directive|endif
+comment|/* call draw() anyway, it will do nothing if the timeout is        * running, but will additionally check the drawing times to        * ensure the minimum framerate        */
 name|gimp_draw_tool_draw
 argument_list|(
 name|draw_tool
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
+block|}
 block|}
 end_function
 
