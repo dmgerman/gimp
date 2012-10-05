@@ -228,12 +228,12 @@ DECL|macro|MINIMUM_DRAW_INTERVAL
 define|#
 directive|define
 name|MINIMUM_DRAW_INTERVAL
-value|50
+value|50000
 end_define
 
 begin_comment
 DECL|macro|MINIMUM_DRAW_INTERVAL
-comment|/* 50 microseconds == 20 fps */
+comment|/* 50000 microseconds == 20 fps */
 end_comment
 
 begin_function_decl
