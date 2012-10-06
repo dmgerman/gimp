@@ -206,6 +206,12 @@ modifier|*
 name|graph
 decl_stmt|;
 comment|/*  GEGL projection graph        */
+DECL|member|visible_mask
+name|GeglNode
+modifier|*
+name|visible_mask
+decl_stmt|;
+comment|/*  component visibility node    */
 DECL|member|guides
 name|GList
 modifier|*

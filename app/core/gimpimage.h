@@ -1345,6 +1345,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GimpComponentMask
+name|gimp_image_get_visible_mask
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  emitting image signals  */
 end_comment
