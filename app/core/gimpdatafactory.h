@@ -433,6 +433,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GType
+name|gimp_data_factory_get_data_type
+parameter_list|(
+name|GimpDataFactory
+modifier|*
+name|factory
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpContainer
 modifier|*
 name|gimp_data_factory_get_container
