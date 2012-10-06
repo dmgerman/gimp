@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon277ca4130103
+DECL|enum|__anon2af8bfd60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1387,14 +1387,11 @@ argument_list|)
 expr_stmt|;
 name|data_type
 operator|=
-name|gimp_container_get_children_type
-argument_list|(
-name|gimp_data_factory_get_container
+name|gimp_data_factory_get_data_type
 argument_list|(
 name|editor
 operator|->
 name|data_factory
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|data
@@ -2004,14 +2001,11 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|,
-name|gimp_container_get_children_type
-argument_list|(
-name|gimp_data_factory_get_container
+name|gimp_data_factory_get_data_type
 argument_list|(
 name|editor
 operator|->
 name|data_factory
-argument_list|)
 argument_list|)
 argument_list|)
 argument_list|)
@@ -2165,14 +2159,11 @@ name|data
 decl_stmt|;
 name|data_type
 operator|=
-name|gimp_container_get_children_type
-argument_list|(
-name|gimp_data_factory_get_container
+name|gimp_data_factory_get_data_type
 argument_list|(
 name|editor
 operator|->
 name|data_factory
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|data
