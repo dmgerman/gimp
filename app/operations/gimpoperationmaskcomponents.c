@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon287d3ac20103
+DECL|enum|__anon29e55f160103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -534,7 +534,7 @@ literal|0.0
 block|,
 literal|0.0
 block|,
-literal|0.0
+literal|1.0
 block|}
 decl_stmt|;
 if|if
@@ -544,6 +544,10 @@ name|aux
 condition|)
 name|aux
 operator|=
+operator|(
+name|gfloat
+operator|*
+operator|)
 name|nothing
 expr_stmt|;
 while|while
