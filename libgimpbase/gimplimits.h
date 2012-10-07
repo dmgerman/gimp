@@ -71,7 +71,7 @@ DECL|macro|GIMP_MAX_RESOLUTION
 define|#
 directive|define
 name|GIMP_MAX_RESOLUTION
-value|65536.0
+value|1048576.0
 comment|/**  * GIMP_MAX_MEMSIZE:  *  * A large but arbitrary value that can be used when an upper limit  * for a memory size (in bytes) is needed. It is smaller than  * %G_MAXDOUBLE since the #GimpMemsizeEntry doesn't handle larger  * values.  **/
 DECL|macro|GIMP_MAX_MEMSIZE
 define|#
