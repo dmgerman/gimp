@@ -289,7 +289,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29495a1c0108
+DECL|struct|__anon278d0c9c0108
 block|{
 DECL|member|name
 specifier|const
@@ -6681,6 +6681,17 @@ condition|(
 name|success
 condition|)
 block|{
+comment|/* refuse to refresh scripts from a script, better than crashing        * see bug #575830        */
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|proc_name
+argument_list|,
+literal|"script-fu-refresh-scripts"
+argument_list|)
+condition|)
+block|{
 if|#
 directive|if
 name|DEBUG_MARSHALL
@@ -6717,6 +6728,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
+block|}
 block|}
 else|else
 block|{
