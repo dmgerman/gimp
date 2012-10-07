@@ -120,7 +120,7 @@ DECL|macro|DROP_AREA_SIZE
 define|#
 directive|define
 name|DROP_AREA_SIZE
-value|5
+value|6
 end_define
 
 begin_define
@@ -136,7 +136,7 @@ DECL|macro|INSTRUCTIONS_TEXT_PADDING
 define|#
 directive|define
 name|INSTRUCTIONS_TEXT_PADDING
-value|4
+value|6
 end_define
 
 begin_define
@@ -527,7 +527,7 @@ name|instructions
 argument_list|,
 literal|16
 argument_list|,
-literal|0
+name|DROP_AREA_SIZE
 argument_list|)
 expr_stmt|;
 name|gimp_label_set_attributes
@@ -951,13 +951,15 @@ operator|.
 name|height
 expr_stmt|;
 block|}
-else|else
-block|{
 name|drop_area_size
 operator|=
+name|MAX
+argument_list|(
+name|drop_area_size
+argument_list|,
 name|DROP_AREA_SIZE
+argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|drop_area_size
 return|;
