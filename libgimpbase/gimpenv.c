@@ -672,7 +672,7 @@ name|path
 operator|=
 name|NSSearchPathForDirectoriesInDomains
 argument_list|(
-name|NSLibraryDirectory
+name|NSApplicationSupportDirectory
 argument_list|,
 name|NSUserDomainMask
 argument_list|,
