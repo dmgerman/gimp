@@ -685,11 +685,9 @@ argument_list|,
 literal|"module-load-inhibit"
 argument_list|)
 expr_stmt|;
-name|gimp_config_writer_printf
+name|gimp_config_writer_string
 argument_list|(
 name|writer
-argument_list|,
-literal|"\"%s\""
 argument_list|,
 name|p
 argument_list|)
