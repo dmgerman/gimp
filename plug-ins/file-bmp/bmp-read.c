@@ -1716,7 +1716,7 @@ index|]
 operator|.
 name|mask
 operator|=
-literal|0xff000000
+literal|0x00000000
 expr_stmt|;
 name|masks
 index|[
@@ -1725,7 +1725,7 @@ index|]
 operator|.
 name|shiftin
 operator|=
-literal|24
+literal|0
 expr_stmt|;
 name|masks
 index|[
@@ -1737,7 +1737,7 @@ operator|=
 operator|(
 name|gfloat
 operator|)
-literal|255.0
+literal|0.0
 expr_stmt|;
 break|break;
 case|case
