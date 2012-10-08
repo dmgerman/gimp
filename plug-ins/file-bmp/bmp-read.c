@@ -100,6 +100,14 @@ name|BI_BITFIELDS
 value|3
 end_define
 
+begin_define
+DECL|macro|BI_ALPHABITFIELDS
+define|#
+directive|define
+name|BI_ALPHABITFIELDS
+value|4
+end_define
+
 begin_endif
 endif|#
 directive|endif
@@ -1591,7 +1599,16 @@ literal|3
 argument_list|)
 expr_stmt|;
 block|}
-else|else
+elseif|else
+if|if
+condition|(
+name|Bitmap_Head
+operator|.
+name|biCompr
+operator|==
+name|BI_RGB
+condition|)
+block|{
 switch|switch
 condition|(
 name|Bitmap_Head
@@ -1973,6 +1990,34 @@ expr_stmt|;
 break|break;
 default|default:
 break|break;
+block|}
+block|}
+else|else
+block|{
+comment|/* BI_ALPHABITFIELDS, etc. */
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"Unsupported compression (%lu) in BMP file from '%s'"
+argument_list|)
+argument_list|,
+name|Bitmap_Head
+operator|.
+name|biCompr
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 elseif|else
