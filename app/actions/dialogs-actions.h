@@ -29,7 +29,7 @@ end_ifndef
 begin_error
 error|#
 directive|error
-literal|"widgets/gimpactiongroup.h must be included prior to dialog-actions.h"
+literal|"widgets/gimpactiongroup.h must be included prior to dialogs-actions.h"
 end_error
 
 begin_endif
@@ -74,6 +74,17 @@ name|group
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|dialogs_actions_toolbox_exists
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl

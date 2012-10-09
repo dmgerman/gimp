@@ -93,18 +93,6 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_function_decl
-specifier|static
-name|gboolean
-name|dialogs_actions_toolbox_exists
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 DECL|variable|dialogs_dockable_actions
 specifier|const
@@ -1072,7 +1060,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-specifier|static
 name|gboolean
 DECL|function|dialogs_actions_toolbox_exists (Gimp * gimp)
 name|dialogs_actions_toolbox_exists
