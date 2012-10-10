@@ -78,62 +78,41 @@ value|200
 end_define
 
 begin_define
-DECL|macro|GIMP_TYPE_ITEM_COMBO_BOX
+DECL|macro|GET_PRIVATE (obj)
 define|#
 directive|define
-name|GIMP_TYPE_ITEM_COMBO_BOX
-value|(gimp_item_combo_box_get_type ())
-end_define
-
-begin_define
-DECL|macro|GIMP_ITEM_COMBO_BOX (obj)
-define|#
-directive|define
-name|GIMP_ITEM_COMBO_BOX
+name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_ITEM_COMBO_BOX, GimpItemComboBox))
+value|(g_object_get_data (G_OBJECT (obj), "gimp-item-combo-box-private"))
 end_define
 
-begin_define
-DECL|macro|GIMP_IS_ITEM_COMBO_BOX (obj)
-define|#
-directive|define
-name|GIMP_IS_ITEM_COMBO_BOX
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_ITEM_COMBO_BOX))
-end_define
+begin_typedef
+DECL|typedef|GimpItemComboBoxPrivate
+typedef|typedef
+name|struct
+name|_GimpItemComboBoxPrivate
+name|GimpItemComboBoxPrivate
+typedef|;
+end_typedef
 
-begin_decl_stmt
-name|GType
-name|gimp_item_combo_box_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
+begin_struct
+DECL|struct|_GimpItemComboBoxPrivate
+struct|struct
+name|_GimpItemComboBoxPrivate
+block|{
+DECL|member|constraint
+name|GimpItemConstraintFunc
+name|constraint
 decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-DECL|typedef|GimpItemComboBox
-typedef|typedef
-name|struct
-name|_GimpItemComboBox
-name|GimpItemComboBox
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpItemComboBoxClass
-typedef|typedef
-name|struct
-name|_GimpItemComboBoxClass
-name|GimpItemComboBoxClass
-typedef|;
-end_typedef
+DECL|member|data
+name|gpointer
+name|data
+decl_stmt|;
+block|}
+struct|;
+end_struct
 
 begin_typedef
 DECL|typedef|GimpDrawableComboBoxClass
@@ -172,46 +151,12 @@ typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpItemComboBox
-struct|struct
-name|_GimpItemComboBox
-block|{
-DECL|member|parent_instance
-name|GimpIntComboBox
-name|parent_instance
-decl_stmt|;
-DECL|member|constraint
-name|GimpItemConstraintFunc
-name|constraint
-decl_stmt|;
-DECL|member|data
-name|gpointer
-name|data
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|_GimpItemComboBoxClass
-struct|struct
-name|_GimpItemComboBoxClass
-block|{
-DECL|member|parent_class
-name|GimpIntComboBoxClass
-name|parent_class
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_struct
 DECL|struct|_GimpDrawableComboBox
 struct|struct
 name|_GimpDrawableComboBox
 block|{
 DECL|member|parent_instance
-name|GimpItemComboBox
+name|GimpIntComboBox
 name|parent_instance
 decl_stmt|;
 block|}
@@ -224,7 +169,7 @@ struct|struct
 name|_GimpDrawableComboBoxClass
 block|{
 DECL|member|parent_class
-name|GimpItemComboBoxClass
+name|GimpIntComboBoxClass
 name|parent_class
 decl_stmt|;
 block|}
@@ -237,7 +182,7 @@ struct|struct
 name|_GimpChannelComboBox
 block|{
 DECL|member|parent_instance
-name|GimpItemComboBox
+name|GimpIntComboBox
 name|parent_instance
 decl_stmt|;
 block|}
@@ -250,7 +195,7 @@ struct|struct
 name|_GimpChannelComboBoxClass
 block|{
 DECL|member|parent_class
-name|GimpItemComboBoxClass
+name|GimpIntComboBoxClass
 name|parent_class
 decl_stmt|;
 block|}
@@ -263,7 +208,7 @@ struct|struct
 name|_GimpLayerComboBox
 block|{
 DECL|member|parent_instance
-name|GimpItemComboBox
+name|GimpIntComboBox
 name|parent_instance
 decl_stmt|;
 block|}
@@ -276,7 +221,7 @@ struct|struct
 name|_GimpLayerComboBoxClass
 block|{
 DECL|member|parent_class
-name|GimpItemComboBoxClass
+name|GimpIntComboBoxClass
 name|parent_class
 decl_stmt|;
 block|}
@@ -289,7 +234,7 @@ struct|struct
 name|_GimpVectorsComboBox
 block|{
 DECL|member|parent_instance
-name|GimpItemComboBox
+name|GimpIntComboBox
 name|parent_instance
 decl_stmt|;
 block|}
@@ -302,7 +247,7 @@ struct|struct
 name|_GimpVectorsComboBoxClass
 block|{
 DECL|member|parent_class
-name|GimpItemComboBoxClass
+name|GimpIntComboBoxClass
 name|parent_class
 decl_stmt|;
 block|}
@@ -332,7 +277,7 @@ specifier|static
 name|void
 name|gimp_item_combo_box_populate
 parameter_list|(
-name|GimpItemComboBox
+name|GimpIntComboBox
 modifier|*
 name|combo_box
 parameter_list|)
@@ -344,7 +289,7 @@ specifier|static
 name|void
 name|gimp_item_combo_box_model_add
 parameter_list|(
-name|GimpItemComboBox
+name|GimpIntComboBox
 modifier|*
 name|combo_box
 parameter_list|,
@@ -405,7 +350,7 @@ specifier|static
 name|void
 name|gimp_item_combo_box_changed
 parameter_list|(
-name|GimpItemComboBox
+name|GimpIntComboBox
 modifier|*
 name|combo_box
 parameter_list|)
@@ -443,12 +388,12 @@ decl_stmt|;
 end_decl_stmt
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpItemComboBox,gimp_item_combo_box,GIMP_TYPE_INT_COMBO_BOX)
+DECL|function|G_DEFINE_TYPE (GimpDrawableComboBox,gimp_drawable_combo_box,GIMP_TYPE_INT_COMBO_BOX)
 name|G_DEFINE_TYPE
 argument_list|(
-argument|GimpItemComboBox
+argument|GimpDrawableComboBox
 argument_list|,
-argument|gimp_item_combo_box
+argument|gimp_drawable_combo_box
 argument_list|,
 argument|GIMP_TYPE_INT_COMBO_BOX
 argument_list|)
@@ -457,9 +402,9 @@ end_macro
 begin_function
 specifier|static
 name|void
-name|gimp_item_combo_box_class_init
+name|gimp_drawable_combo_box_class_init
 parameter_list|(
-name|GimpItemComboBoxClass
+name|GimpDrawableComboBoxClass
 modifier|*
 name|klass
 parameter_list|)
@@ -480,43 +425,6 @@ operator|=
 name|gimp_item_combo_box_drag_data_received
 expr_stmt|;
 block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_item_combo_box_init (GimpItemComboBox * combo_box)
-name|gimp_item_combo_box_init
-parameter_list|(
-name|GimpItemComboBox
-modifier|*
-name|combo_box
-parameter_list|)
-block|{ }
-end_function
-
-begin_macro
-DECL|function|G_DEFINE_TYPE (GimpDrawableComboBox,gimp_drawable_combo_box,GIMP_TYPE_ITEM_COMBO_BOX)
-name|G_DEFINE_TYPE
-argument_list|(
-argument|GimpDrawableComboBox
-argument_list|,
-argument|gimp_drawable_combo_box
-argument_list|,
-argument|GIMP_TYPE_ITEM_COMBO_BOX
-argument_list|)
-end_macro
-
-begin_function
-specifier|static
-name|void
-name|gimp_drawable_combo_box_class_init
-parameter_list|(
-name|GimpDrawableComboBoxClass
-modifier|*
-name|klass
-parameter_list|)
-block|{ }
 end_function
 
 begin_function
@@ -548,6 +456,28 @@ argument_list|,
 literal|2
 argument_list|,
 name|GDK_ACTION_COPY
+argument_list|)
+expr_stmt|;
+name|g_object_set_data_full
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|combo_box
+argument_list|)
+argument_list|,
+literal|"gimp-item-combo-box-private"
+argument_list|,
+name|g_new0
+argument_list|(
+name|GimpItemComboBoxPrivate
+argument_list|,
+literal|1
+argument_list|)
+argument_list|,
+operator|(
+name|GDestroyNotify
+operator|)
+name|g_free
 argument_list|)
 expr_stmt|;
 block|}
@@ -584,14 +514,14 @@ block|}
 end_function
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpChannelComboBox,gimp_channel_combo_box,GIMP_TYPE_ITEM_COMBO_BOX)
+DECL|function|G_DEFINE_TYPE (GimpChannelComboBox,gimp_channel_combo_box,GIMP_TYPE_INT_COMBO_BOX)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpChannelComboBox
 argument_list|,
 argument|gimp_channel_combo_box
 argument_list|,
-argument|GIMP_TYPE_ITEM_COMBO_BOX
+argument|GIMP_TYPE_INT_COMBO_BOX
 argument_list|)
 end_macro
 
@@ -604,7 +534,23 @@ name|GimpChannelComboBoxClass
 modifier|*
 name|klass
 parameter_list|)
-block|{ }
+block|{
+name|GtkWidgetClass
+modifier|*
+name|widget_class
+init|=
+name|GTK_WIDGET_CLASS
+argument_list|(
+name|klass
+argument_list|)
+decl_stmt|;
+name|widget_class
+operator|->
+name|drag_data_received
+operator|=
+name|gimp_item_combo_box_drag_data_received
+expr_stmt|;
+block|}
 end_function
 
 begin_function
@@ -636,6 +582,28 @@ argument_list|,
 literal|1
 argument_list|,
 name|GDK_ACTION_COPY
+argument_list|)
+expr_stmt|;
+name|g_object_set_data_full
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|combo_box
+argument_list|)
+argument_list|,
+literal|"gimp-item-combo-box-private"
+argument_list|,
+name|g_new0
+argument_list|(
+name|GimpItemComboBoxPrivate
+argument_list|,
+literal|1
+argument_list|)
+argument_list|,
+operator|(
+name|GDestroyNotify
+operator|)
+name|g_free
 argument_list|)
 expr_stmt|;
 block|}
@@ -672,14 +640,14 @@ block|}
 end_function
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpLayerComboBox,gimp_layer_combo_box,GIMP_TYPE_ITEM_COMBO_BOX)
+DECL|function|G_DEFINE_TYPE (GimpLayerComboBox,gimp_layer_combo_box,GIMP_TYPE_INT_COMBO_BOX)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpLayerComboBox
 argument_list|,
 argument|gimp_layer_combo_box
 argument_list|,
-argument|GIMP_TYPE_ITEM_COMBO_BOX
+argument|GIMP_TYPE_INT_COMBO_BOX
 argument_list|)
 end_macro
 
@@ -692,7 +660,23 @@ name|GimpLayerComboBoxClass
 modifier|*
 name|klass
 parameter_list|)
-block|{ }
+block|{
+name|GtkWidgetClass
+modifier|*
+name|widget_class
+init|=
+name|GTK_WIDGET_CLASS
+argument_list|(
+name|klass
+argument_list|)
+decl_stmt|;
+name|widget_class
+operator|->
+name|drag_data_received
+operator|=
+name|gimp_item_combo_box_drag_data_received
+expr_stmt|;
+block|}
 end_function
 
 begin_function
@@ -726,6 +710,28 @@ argument_list|,
 literal|1
 argument_list|,
 name|GDK_ACTION_COPY
+argument_list|)
+expr_stmt|;
+name|g_object_set_data_full
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|combo_box
+argument_list|)
+argument_list|,
+literal|"gimp-item-combo-box-private"
+argument_list|,
+name|g_new0
+argument_list|(
+name|GimpItemComboBoxPrivate
+argument_list|,
+literal|1
+argument_list|)
+argument_list|,
+operator|(
+name|GDestroyNotify
+operator|)
+name|g_free
 argument_list|)
 expr_stmt|;
 block|}
@@ -762,14 +768,14 @@ block|}
 end_function
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpVectorsComboBox,gimp_vectors_combo_box,GIMP_TYPE_ITEM_COMBO_BOX)
+DECL|function|G_DEFINE_TYPE (GimpVectorsComboBox,gimp_vectors_combo_box,GIMP_TYPE_INT_COMBO_BOX)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpVectorsComboBox
 argument_list|,
 argument|gimp_vectors_combo_box
 argument_list|,
-argument|GIMP_TYPE_ITEM_COMBO_BOX
+argument|GIMP_TYPE_INT_COMBO_BOX
 argument_list|)
 end_macro
 
@@ -782,7 +788,23 @@ name|GimpVectorsComboBoxClass
 modifier|*
 name|klass
 parameter_list|)
-block|{ }
+block|{
+name|GtkWidgetClass
+modifier|*
+name|widget_class
+init|=
+name|GTK_WIDGET_CLASS
+argument_list|(
+name|klass
+argument_list|)
+decl_stmt|;
+name|widget_class
+operator|->
+name|drag_data_received
+operator|=
+name|gimp_item_combo_box_drag_data_received
+expr_stmt|;
+block|}
 end_function
 
 begin_function
@@ -816,6 +838,28 @@ argument_list|,
 literal|1
 argument_list|,
 name|GDK_ACTION_COPY
+argument_list|)
+expr_stmt|;
+name|g_object_set_data_full
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|combo_box
+argument_list|)
+argument_list|,
+literal|"gimp-item-combo-box-private"
+argument_list|,
+name|g_new0
+argument_list|(
+name|GimpItemComboBoxPrivate
+argument_list|,
+literal|1
+argument_list|)
+argument_list|,
+operator|(
+name|GDestroyNotify
+operator|)
+name|g_free
 argument_list|)
 expr_stmt|;
 block|}
@@ -868,9 +912,13 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpItemComboBox
+name|GimpIntComboBox
 modifier|*
 name|combo_box
+decl_stmt|;
+name|GimpItemComboBoxPrivate
+modifier|*
+name|private
 decl_stmt|;
 name|combo_box
 operator|=
@@ -889,13 +937,20 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|private
+operator|=
+name|GET_PRIVATE
+argument_list|(
 name|combo_box
+argument_list|)
+expr_stmt|;
+name|private
 operator|->
 name|constraint
 operator|=
 name|constraint
 expr_stmt|;
-name|combo_box
+name|private
 operator|->
 name|data
 operator|=
@@ -932,10 +987,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_item_combo_box_populate (GimpItemComboBox * combo_box)
+DECL|function|gimp_item_combo_box_populate (GimpIntComboBox * combo_box)
 name|gimp_item_combo_box_populate
 parameter_list|(
-name|GimpItemComboBox
+name|GimpIntComboBox
 modifier|*
 name|combo_box
 parameter_list|)
@@ -1183,10 +1238,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_item_combo_box_model_add (GimpItemComboBox * combo_box,GtkListStore * store,gint32 image,gint num_items,gint32 * items,gint tree_level)
+DECL|function|gimp_item_combo_box_model_add (GimpIntComboBox * combo_box,GtkListStore * store,gint32 image,gint num_items,gint32 * items,gint tree_level)
 name|gimp_item_combo_box_model_add
 parameter_list|(
-name|GimpItemComboBox
+name|GimpIntComboBox
 modifier|*
 name|combo_box
 parameter_list|,
@@ -1208,6 +1263,15 @@ name|gint
 name|tree_level
 parameter_list|)
 block|{
+name|GimpItemComboBoxPrivate
+modifier|*
+name|private
+init|=
+name|GET_PRIVATE
+argument_list|(
+name|combo_box
+argument_list|)
+decl_stmt|;
 name|GtkTreeIter
 name|iter
 decl_stmt|;
@@ -1289,13 +1353,13 @@ block|{
 if|if
 condition|(
 operator|!
-name|combo_box
+name|private
 operator|->
 name|constraint
 operator|||
 call|(
 modifier|*
-name|combo_box
+name|private
 operator|->
 name|constraint
 call|)
@@ -1307,7 +1371,7 @@ index|[
 name|i
 index|]
 argument_list|,
-name|combo_box
+name|private
 operator|->
 name|data
 argument_list|)
@@ -1660,10 +1724,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_item_combo_box_changed (GimpItemComboBox * combo_box)
+DECL|function|gimp_item_combo_box_changed (GimpIntComboBox * combo_box)
 name|gimp_item_combo_box_changed
 parameter_list|(
-name|GimpItemComboBox
+name|GimpIntComboBox
 modifier|*
 name|combo_box
 parameter_list|)
@@ -1675,10 +1739,7 @@ if|if
 condition|(
 name|gimp_int_combo_box_get_active
 argument_list|(
-name|GIMP_INT_COMBO_BOX
-argument_list|(
 name|combo_box
-argument_list|)
 argument_list|,
 operator|&
 name|item_ID
