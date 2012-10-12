@@ -153,7 +153,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0080240103
+DECL|enum|__anon2a21c64a0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -483,15 +483,6 @@ modifier|*
 name|unified_tool
 parameter_list|)
 block|{
-name|GimpTool
-modifier|*
-name|tool
-init|=
-name|GIMP_TOOL
-argument_list|(
-name|unified_tool
-argument_list|)
-decl_stmt|;
 name|GimpTransformTool
 modifier|*
 name|tr_tool
