@@ -1155,7 +1155,13 @@ argument_list|(
 name|window
 argument_list|)
 decl_stmt|;
-comment|/* FIXME image window: set this display active */
+name|gimp_image_window_set_active_shell
+argument_list|(
+name|window
+argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
 name|gimp_ui_manager_activate_action
 argument_list|(
 name|manager
