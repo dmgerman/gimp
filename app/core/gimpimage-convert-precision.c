@@ -346,6 +346,10 @@ argument_list|)
 argument_list|,
 name|precision
 argument_list|,
+name|layer_dither_type
+argument_list|,
+name|mask_dither_type
+argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;

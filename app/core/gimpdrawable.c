@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc1c3950103
+DECL|enum|__anon2c7793520103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -551,6 +551,12 @@ name|new_base_type
 parameter_list|,
 name|GimpPrecision
 name|new_precision
+parameter_list|,
+name|gint
+name|layer_dither_type
+parameter_list|,
+name|gint
+name|mask_dither_type
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -2855,10 +2861,14 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/* FIXME: this default impl is currently unused because no subclass  * chins up. the goal is to handle the almost identical subclass code  * here again.  */
+end_comment
+
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_real_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type,GimpPrecision new_precision,gboolean push_undo)
+DECL|function|gimp_drawable_real_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean push_undo)
 name|gimp_drawable_real_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -2874,6 +2884,12 @@ name|new_base_type
 parameter_list|,
 name|GimpPrecision
 name|new_precision
+parameter_list|,
+name|gint
+name|layer_dither_type
+parameter_list|,
+name|gint
+name|mask_dither_type
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -4889,7 +4905,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type,GimpPrecision new_precision,gboolean push_undo)
+DECL|function|gimp_drawable_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean push_undo)
 name|gimp_drawable_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -4905,6 +4921,12 @@ name|new_base_type
 parameter_list|,
 name|GimpPrecision
 name|new_precision
+parameter_list|,
+name|gint
+name|layer_dither_type
+parameter_list|,
+name|gint
+name|mask_dither_type
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -4972,6 +4994,10 @@ argument_list|,
 name|new_base_type
 argument_list|,
 name|new_precision
+argument_list|,
+name|layer_dither_type
+argument_list|,
+name|mask_dither_type
 argument_list|,
 name|push_undo
 argument_list|)

@@ -438,6 +438,10 @@ name|group_layer_undo
 operator|->
 name|prev_precision
 argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;

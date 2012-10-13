@@ -250,6 +250,12 @@ parameter_list|,
 name|GimpPrecision
 name|new_precision
 parameter_list|,
+name|gint
+name|layer_dither_type
+parameter_list|,
+name|gint
+name|mask_dither_type
+parameter_list|,
 name|gboolean
 name|push_undo
 parameter_list|)
@@ -603,6 +609,12 @@ name|new_base_type
 parameter_list|,
 name|GimpPrecision
 name|new_precision
+parameter_list|,
+name|gint
+name|layer_dither_type
+parameter_list|,
+name|gint
+name|mask_dither_type
 parameter_list|,
 name|gboolean
 name|push_undo
