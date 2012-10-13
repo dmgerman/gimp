@@ -556,6 +556,11 @@ name|GimpImage
 modifier|*
 name|dest_image
 parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|new_format
+parameter_list|,
 name|GimpImageBaseType
 name|new_base_type
 parameter_list|,
@@ -3671,7 +3676,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_group_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean push_undo)
+DECL|function|gimp_group_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean push_undo)
 name|gimp_group_layer_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -3681,6 +3686,12 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|dest_image
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|new_format
+comment|/* unused */
 parameter_list|,
 name|GimpImageBaseType
 name|new_base_type

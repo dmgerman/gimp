@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d6131a0103
+DECL|enum|__anon2b2cdd630103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -204,7 +204,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d6131a0203
+DECL|enum|__anon2b2cdd630203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -718,6 +718,11 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|dest_image
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|new_format
 parameter_list|,
 name|GimpImageBaseType
 name|new_base_type
@@ -4136,7 +4141,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean push_undo)
+DECL|function|gimp_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean push_undo)
 name|gimp_layer_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -4146,6 +4151,11 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|dest_image
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|new_format
 parameter_list|,
 name|GimpImageBaseType
 name|new_base_type
@@ -4176,27 +4186,6 @@ name|GeglBuffer
 modifier|*
 name|dest_buffer
 decl_stmt|;
-specifier|const
-name|Babl
-modifier|*
-name|format
-decl_stmt|;
-name|format
-operator|=
-name|gimp_image_get_format
-argument_list|(
-name|dest_image
-argument_list|,
-name|new_base_type
-argument_list|,
-name|new_precision
-argument_list|,
-name|gimp_drawable_has_alpha
-argument_list|(
-name|drawable
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|dest_buffer
 operator|=
 name|gegl_buffer_new
@@ -4224,7 +4213,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 argument_list|,
-name|format
+name|new_format
 argument_list|)
 expr_stmt|;
 if|if
@@ -4263,14 +4252,14 @@ operator|=
 operator|(
 name|babl_format_get_bytes_per_pixel
 argument_list|(
-name|format
+name|new_format
 argument_list|)
 operator|*
 literal|8
 operator|/
 name|babl_format_get_n_components
 argument_list|(
-name|format
+name|new_format
 argument_list|)
 operator|)
 expr_stmt|;

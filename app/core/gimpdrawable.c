@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7793520103
+DECL|enum|__anon2acc52ae0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -545,6 +545,11 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|dest_image
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|new_format
 parameter_list|,
 name|GimpImageBaseType
 name|new_base_type
@@ -2868,7 +2873,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_real_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean push_undo)
+DECL|function|gimp_drawable_real_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean push_undo)
 name|gimp_drawable_real_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -2878,6 +2883,11 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|dest_image
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|new_format
 parameter_list|,
 name|GimpImageBaseType
 name|new_base_type
@@ -4932,6 +4942,11 @@ name|gboolean
 name|push_undo
 parameter_list|)
 block|{
+specifier|const
+name|Babl
+modifier|*
+name|new_format
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DRAWABLE
@@ -4980,6 +4995,22 @@ name|push_undo
 operator|=
 name|FALSE
 expr_stmt|;
+name|new_format
+operator|=
+name|gimp_image_get_format
+argument_list|(
+name|dest_image
+argument_list|,
+name|new_base_type
+argument_list|,
+name|new_precision
+argument_list|,
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|GIMP_DRAWABLE_GET_CLASS
 argument_list|(
 name|drawable
@@ -4990,6 +5021,8 @@ argument_list|(
 name|drawable
 argument_list|,
 name|dest_image
+argument_list|,
+name|new_format
 argument_list|,
 name|new_base_type
 argument_list|,
