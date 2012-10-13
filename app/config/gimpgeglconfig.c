@@ -94,7 +94,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acc2f830103
+DECL|enum|__anon2c4041ff0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -441,6 +441,16 @@ name|memory_size
 operator|=
 name|gimp_get_physical_memory_size
 argument_list|()
+expr_stmt|;
+comment|/* limit to the amount one process can handle */
+name|memory_size
+operator|=
+name|MIN
+argument_list|(
+name|G_MAXSIZE
+argument_list|,
+name|memory_size
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
