@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*  *  Screenshot plug-in  *  Copyright 1998-2007 Sven Neumann<sven@gimp.org>  *  Copyright 2003      Henrik Brix Andersen<brix@gimp.org>  *  *  Any suggestions, bug-reports or patches are very welcome.  *  */
+comment|/*  *  Screenshot plug-in  *  Copyright 1998-2007 Sven Neumann<sven@gimp.org>  *  Copyright 2003      Henrik Brix Andersen<brix@gimp.org>  *  Copyright 2012      Simone Karin Lehmann - OS X patches  *  *  Any suggestions, bug-reports or patches are very welcome.  *  */
 end_comment
 
 begin_include
@@ -18,6 +18,23 @@ include|#
 directive|include
 file|<string.h>
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|PLATFORM_OSX
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<stdlib.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -339,7 +356,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd9effa0103
+DECL|enum|__anon2ad38b5a0103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -358,7 +375,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd9effa0208
+DECL|struct|__anon2ad38b5a0208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -412,9 +429,18 @@ block|{
 name|SHOOT_WINDOW
 block|,
 comment|/* root window  */
+ifdef|#
+directive|ifdef
+name|PLATFORM_OSX
+name|FALSE
+block|,
+else|#
+directive|else
 name|TRUE
 block|,
 comment|/* include WM decorations */
+endif|#
+directive|endif
 literal|0
 block|,
 comment|/* window ID    */
@@ -512,6 +538,30 @@ begin_function_decl
 specifier|static
 name|gint32
 name|shoot
+parameter_list|(
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gint32
+name|shoot_main
+parameter_list|(
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gint32
+name|shoot_osx
 parameter_list|(
 name|GdkScreen
 modifier|*
@@ -707,9 +757,20 @@ literal|"may grab the root window or use the window-id "
 literal|"passed as a parameter.  The last four parameters "
 literal|"are optional and can be used to specify the corners "
 literal|"of the region to be grabbed."
+ifdef|#
+directive|ifdef
+name|PLATFORM_OSX
+literal|"On Mac OS X, when called non-interactively, the plugin"
+literal|"only can take screenshots of the entire root window."
+literal|"Grabbing a window or a region is not supported"
+literal|"non-interactively. To grab a region or a paticular"
+literal|"window, you need to use the interactive mode."
+endif|#
+directive|endif
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>, "
-literal|"Henrik Brix Andersen<brix@gimp.org>"
+literal|"Henrik Brix Andersen<brix@gimp.org>,"
+literal|"Simone Karin Lehmann"
 argument_list|,
 literal|"1998 - 2008"
 argument_list|,
@@ -1059,6 +1120,29 @@ name|status
 operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|PLATFORM_OSX
+if|if
+condition|(
+name|shootvals
+operator|.
+name|shoot_type
+operator|==
+name|SHOOT_WINDOW
+operator|||
+name|shootvals
+operator|.
+name|shoot_type
+operator|==
+name|SHOOT_REGION
+condition|)
+name|status
+operator|=
+name|GIMP_PDB_CALLING_ERROR
+expr_stmt|;
+endif|#
+directive|endif
 break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
@@ -1076,6 +1160,9 @@ break|break;
 default|default:
 break|break;
 block|}
+ifndef|#
+directive|ifndef
+name|PLATFORM_OSX
 if|if
 condition|(
 name|status
@@ -1134,6 +1221,8 @@ name|GIMP_PDB_CANCEL
 expr_stmt|;
 block|}
 block|}
+endif|#
+directive|endif
 if|if
 condition|(
 name|status
@@ -3734,6 +3823,40 @@ modifier|*
 name|screen
 parameter_list|)
 block|{
+ifdef|#
+directive|ifdef
+name|PLATFORM_OSX
+comment|/* on Mac OS X, either with X11 (which is a rootless X server) or      * as a native quartz build, we have to implement it differently,      * without using X and just use the standard OS X screenshot      * utility.      */
+return|return
+name|shoot_osx
+argument_list|(
+name|screen
+argument_list|)
+return|;
+else|#
+directive|else
+return|return
+name|shoot_main
+argument_list|(
+name|screen
+argument_list|)
+return|;
+endif|#
+directive|endif
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gint32
+DECL|function|shoot_main (GdkScreen * screen)
+name|shoot_main
+parameter_list|(
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|)
+block|{
 name|GdkDisplay
 modifier|*
 name|display
@@ -4204,6 +4327,176 @@ block|}
 end_function
 
 begin_comment
+comment|/*  * Mac OS X uses a rootless X server. This won't let us use  * gdk_pixbuf_get_from_drawable() and similar function on the root  * window to get the entire screen contents. With a nytive OS X build  * we have to do this without X as well.  *  * Since Mac OS X 10.2 a system utility for screencapturing is  * included. We can safely use this, since it's available on every OS  * X version GIMP is running on.  *  * The main drawbacks are that it's not possible to shoot windows or  * regions in scripts in noninteractive mode, and that windows always  * include decorations, since decorations are different between X11  * windows and native OS X app windows. But we can use this switch  * to capture the shadow of a window, which is indeed very Mac-ish.  *  * This routines works well with X11 and as a navtive build  */
+end_comment
+
+begin_function
+specifier|static
+name|gint32
+DECL|function|shoot_osx (GdkScreen * screen)
+name|shoot_osx
+parameter_list|(
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|)
+block|{
+name|gint32
+name|image
+decl_stmt|;
+name|gchar
+modifier|*
+name|mode
+init|=
+literal|" "
+decl_stmt|;
+name|gchar
+modifier|*
+name|delay
+init|=
+name|NULL
+decl_stmt|;
+name|gchar
+modifier|*
+name|cursor
+init|=
+literal|" "
+decl_stmt|;
+name|gchar
+modifier|*
+name|command
+init|=
+name|NULL
+decl_stmt|;
+switch|switch
+condition|(
+name|shootvals
+operator|.
+name|shoot_type
+condition|)
+block|{
+case|case
+name|SHOOT_REGION
+case|:
+name|mode
+operator|=
+literal|"-is"
+expr_stmt|;
+break|break;
+case|case
+name|SHOOT_WINDOW
+case|:
+name|mode
+operator|=
+literal|"-iwo"
+expr_stmt|;
+if|if
+condition|(
+name|shootvals
+operator|.
+name|decorate
+condition|)
+name|mode
+operator|=
+literal|"-iw"
+expr_stmt|;
+break|break;
+case|case
+name|SHOOT_ROOT
+case|:
+name|mode
+operator|=
+literal|" "
+expr_stmt|;
+break|break;
+default|default:
+break|break;
+block|}
+name|delay
+operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"-T %i"
+argument_list|,
+name|shootvals
+operator|.
+name|select_delay
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|shootvals
+operator|.
+name|show_cursor
+condition|)
+name|cursor
+operator|=
+literal|"-C"
+expr_stmt|;
+name|command
+operator|=
+name|g_strjoin
+argument_list|(
+literal|" "
+argument_list|,
+literal|"/usr/sbin/screencapture"
+argument_list|,
+name|mode
+argument_list|,
+name|cursor
+argument_list|,
+name|delay
+argument_list|,
+literal|"/tmp/screenshot.png"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|system
+argument_list|(
+operator|(
+specifier|const
+name|char
+operator|*
+operator|)
+name|command
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|command
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|delay
+argument_list|)
+expr_stmt|;
+name|image
+operator|=
+name|gimp_file_load
+argument_list|(
+name|GIMP_RUN_NONINTERACTIVE
+argument_list|,
+literal|"/tmp/screenshot.png"
+argument_list|,
+literal|"/tmp/screenshot.png"
+argument_list|)
+expr_stmt|;
+name|gimp_image_set_filename
+argument_list|(
+name|image
+argument_list|,
+literal|"screenshot.png"
+argument_list|)
+expr_stmt|;
+return|return
+name|image
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/*  Screenshot dialog  */
 end_comment
 
@@ -4377,10 +4670,25 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
+if|#
+directive|if
+operator|(
+name|defined
+argument_list|(
+name|HAVE_X11_XMU_WINUTIL_H
+argument_list|)
+operator|||
+name|defined
+argument_list|(
+name|PLATFORM_OSX
+argument_list|)
+operator|)
 name|GtkWidget
 modifier|*
 name|toggle
 decl_stmt|;
+endif|#
+directive|endif
 name|GtkWidget
 modifier|*
 name|spinner
@@ -4779,9 +5087,19 @@ argument_list|,
 name|notebook
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
+if|#
+directive|if
+operator|(
+name|defined
+argument_list|(
 name|HAVE_X11_XMU_WINUTIL_H
+argument_list|)
+operator|||
+name|defined
+argument_list|(
+name|PLATFORM_OSX
+argument_list|)
+operator|)
 comment|/*  window decorations  */
 name|hbox
 operator|=
@@ -4977,9 +5295,19 @@ argument_list|,
 name|notebook
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
+if|#
+directive|if
+operator|(
+name|defined
+argument_list|(
 name|HAVE_XFIXES
+argument_list|)
+operator|||
+name|defined
+argument_list|(
+name|PLATFORM_OSX
+argument_list|)
+operator|)
 comment|/*  mouse pointer  */
 name|hbox
 operator|=
