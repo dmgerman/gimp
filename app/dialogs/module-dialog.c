@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon299cfd6b0103
+DECL|enum|__anon2ba9f3ef0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -98,7 +98,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299cfd6b0203
+DECL|enum|__anon2ba9f3ef0203
 block|{
 DECL|enumerator|INFO_AUTHOR
 name|INFO_AUTHOR
@@ -124,7 +124,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299cfd6b0308
+DECL|struct|__anon2ba9f3ef0308
 block|{
 DECL|member|gimp
 name|Gimp
@@ -1200,13 +1200,11 @@ modifier|*
 name|dialog
 parameter_list|)
 block|{
-name|GimpModule
-modifier|*
-name|module
-decl_stmt|;
 name|GtkTreeIter
 name|iter
 decl_stmt|;
+if|if
+condition|(
 name|gtk_tree_selection_get_selected
 argument_list|(
 name|sel
@@ -1216,7 +1214,12 @@ argument_list|,
 operator|&
 name|iter
 argument_list|)
-expr_stmt|;
+condition|)
+block|{
+name|GimpModule
+modifier|*
+name|module
+decl_stmt|;
 name|gtk_tree_model_get
 argument_list|(
 name|GTK_TREE_MODEL
@@ -1277,6 +1280,7 @@ argument_list|,
 name|dialog
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
