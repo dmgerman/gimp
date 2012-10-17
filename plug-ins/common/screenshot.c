@@ -16,25 +16,18 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
+file|<stdlib.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|PLATFORM_OSX
-end_ifdef
+begin_comment
+comment|/* for system() on OSX */
+end_comment
 
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
+file|<string.h>
 end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
@@ -356,7 +349,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad38b5a0103
+DECL|enum|__anon2b26bdcd0103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -375,7 +368,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad38b5a0208
+DECL|struct|__anon2b26bdcd0208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -558,6 +551,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|PLATFORM_OSX
+end_ifdef
+
 begin_function_decl
 specifier|static
 name|gint32
@@ -569,6 +568,11 @@ name|screen
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function_decl
 specifier|static
@@ -3826,7 +3830,7 @@ block|{
 ifdef|#
 directive|ifdef
 name|PLATFORM_OSX
-comment|/* on Mac OS X, either with X11 (which is a rootless X server) or      * as a native quartz build, we have to implement it differently,      * without using X and just use the standard OS X screenshot      * utility.      */
+comment|/* on Mac OS X, either with X11 (which is a rootless X server) or    * as a native quartz build, we have to implement it differently,    * without using X and just use the standard OS X screenshot    * utility.    */
 return|return
 name|shoot_osx
 argument_list|(
@@ -4326,6 +4330,12 @@ return|;
 block|}
 end_function
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|PLATFORM_OSX
+end_ifdef
+
 begin_comment
 comment|/*  * Mac OS X uses a rootless X server. This won't let us use  * gdk_pixbuf_get_from_drawable() and similar function on the root  * window to get the entire screen contents. With a nytive OS X build  * we have to do this without X as well.  *  * Since Mac OS X 10.2 a system utility for screencapturing is  * included. We can safely use this, since it's available on every OS  * X version GIMP is running on.  *  * The main drawbacks are that it's not possible to shoot windows or  * regions in scripts in noninteractive mode, and that windows always  * include decorations, since decorations are different between X11  * windows and native OS X app windows. But we can use this switch  * to capture the shadow of a window, which is indeed very Mac-ish.  *  * This routines works well with X11 and as a navtive build  */
 end_comment
@@ -4495,6 +4505,15 @@ name|image
 return|;
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* PLATFORM_OSX */
+end_comment
 
 begin_comment
 comment|/*  Screenshot dialog  */
@@ -4673,6 +4692,11 @@ decl_stmt|;
 if|#
 directive|if
 operator|(
+name|defined
+argument_list|(
+name|HAVE_XFIXES
+argument_list|)
+operator|||
 name|defined
 argument_list|(
 name|HAVE_X11_XMU_WINUTIL_H
