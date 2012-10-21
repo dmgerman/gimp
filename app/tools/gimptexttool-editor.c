@@ -4635,12 +4635,6 @@ operator|->
 name|use_editor
 condition|)
 block|{
-if|if
-condition|(
-name|text_tool
-operator|->
-name|text
-condition|)
 name|gimp_text_tool_editor_dialog
 argument_list|(
 name|text_tool
