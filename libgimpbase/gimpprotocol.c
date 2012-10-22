@@ -3681,6 +3681,13 @@ condition|(
 name|tile_data
 condition|)
 block|{
+if|if
+condition|(
+name|tile_data
+operator|->
+name|data
+condition|)
+block|{
 name|g_free
 argument_list|(
 name|tile_data
@@ -3688,6 +3695,13 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
+name|tile_data
+operator|->
+name|data
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 name|g_slice_free
 argument_list|(
 name|GPTileData
