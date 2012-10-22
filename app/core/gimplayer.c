@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawable-operation.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimperror.h"
 end_include
 
@@ -173,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2772505f0103
+DECL|enum|__anon28bd63410103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -204,7 +198,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2772505f0203
+DECL|enum|__anon28bd63410203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4296,9 +4290,12 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_apply_operation_to_buffer
+name|gimp_gegl_apply_operation
+argument_list|(
+name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -4307,6 +4304,8 @@ argument_list|,
 name|dither
 argument_list|,
 name|dest_buffer
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -6772,11 +6771,14 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_apply_operation_to_buffer
+name|gimp_gegl_apply_operation
+argument_list|(
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 argument_list|,
 name|NULL
@@ -6786,6 +6788,8 @@ argument_list|,
 name|apply_opacity
 argument_list|,
 name|dest_buffer
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -7779,11 +7783,14 @@ operator|&
 name|background
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_apply_operation_to_buffer
+name|gimp_gegl_apply_operation
+argument_list|(
+name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 argument_list|,
 name|NULL
@@ -7793,6 +7800,8 @@ argument_list|,
 name|flatten
 argument_list|,
 name|new_buffer
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_object_unref

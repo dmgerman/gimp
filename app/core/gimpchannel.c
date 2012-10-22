@@ -150,12 +150,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawable-operation.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdrawable-stroke.h"
 end_include
 
@@ -191,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b3f9bf0103
+DECL|enum|__anon287660820103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -2344,9 +2338,12 @@ operator|&
 name|background
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_apply_operation_to_buffer
+name|gimp_gegl_apply_operation
+argument_list|(
+name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2355,6 +2352,8 @@ argument_list|,
 name|flatten
 argument_list|,
 name|new_buffer
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -3864,9 +3863,12 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_apply_operation_to_buffer
+name|gimp_gegl_apply_operation
+argument_list|(
+name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -3875,6 +3877,8 @@ argument_list|,
 name|dither
 argument_list|,
 name|dest_buffer
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -5920,9 +5924,12 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_apply_operation_to_buffer
+name|gimp_gegl_apply_operation
+argument_list|(
+name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -5934,6 +5941,8 @@ name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -6044,9 +6053,12 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_apply_operation_to_buffer
+name|gimp_gegl_apply_operation
+argument_list|(
+name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -6058,6 +6070,8 @@ name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -6538,9 +6552,12 @@ argument_list|,
 name|NULL
 argument_list|)
 decl_stmt|;
-name|gimp_drawable_apply_operation_to_buffer
+name|gimp_gegl_apply_operation
+argument_list|(
+name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -6552,6 +6569,8 @@ name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_object_unref

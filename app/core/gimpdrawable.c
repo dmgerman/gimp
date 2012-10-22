@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-apply-operation.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl/gimp-gegl-nodes.h"
 end_include
 
@@ -91,12 +97,6 @@ begin_include
 include|#
 directive|include
 file|"gimpdrawable-combine.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdrawable-operation.h"
 end_include
 
 begin_include
@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acc52ae0103
+DECL|enum|__anon27c4ea9c0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1887,9 +1887,12 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_apply_operation_to_buffer
+name|gimp_gegl_apply_operation
+argument_list|(
+name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 name|progress
 argument_list|,
@@ -1903,6 +1906,8 @@ argument_list|,
 name|scale
 argument_list|,
 name|new_buffer
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_object_unref
