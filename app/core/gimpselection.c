@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-apply-operation.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl/gimp-gegl-nodes.h"
 end_include
 
@@ -55,12 +61,6 @@ begin_include
 include|#
 directive|include
 file|"gimp-edit.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimp-apply-operation.h"
 end_include
 
 begin_include
@@ -3217,7 +3217,7 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-name|gimp_apply_operation
+name|gimp_gegl_apply_operation
 argument_list|(
 name|dest_buffer
 argument_list|,

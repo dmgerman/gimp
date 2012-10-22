@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-apply-operation.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl/gimp-gegl-utils.h"
 end_include
 
@@ -79,12 +85,6 @@ begin_include
 include|#
 directive|include
 file|"gimp-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimp-apply-operation.h"
 end_include
 
 begin_include
@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299ab19e0108
+DECL|struct|__anon2b3ec5ab0108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -226,7 +226,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299ab19e0208
+DECL|struct|__anon2b3ec5ab0208
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -2556,7 +2556,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_apply_operation
+name|gimp_gegl_apply_operation
 argument_list|(
 name|temp_buffer
 argument_list|,

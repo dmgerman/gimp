@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-apply-operation.h"
+file|"gegl/gimp-gegl-apply-operation.h"
 end_include
 
 begin_include
@@ -176,7 +176,7 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-name|gimp_apply_operation
+name|gimp_gegl_apply_operation
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(
@@ -452,7 +452,7 @@ name|dest_buffer
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_apply_operation
+name|gimp_gegl_apply_operation
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(

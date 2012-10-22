@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp-apply-operation.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp-utils.h"
 end_include
 
@@ -157,7 +151,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7051630103
+DECL|enum|__anon2933fc150103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

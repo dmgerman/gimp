@@ -18,31 +18,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core-types.h"
+file|"gimp-gegl-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimp-utils.h"
+file|"core/gimp-utils.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimp-apply-operation.h"
+file|"core/gimpprogress.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpprogress.h"
+file|"gimp-gegl-apply-operation.h"
 end_include
 
 begin_function
 name|void
-DECL|function|gimp_apply_operation (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglNode * operation,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect)
-name|gimp_apply_operation
+DECL|function|gimp_gegl_apply_operation (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglNode * operation,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect)
+name|gimp_gegl_apply_operation
 parameter_list|(
 name|GeglBuffer
 modifier|*

@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-apply-operation.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl/gimp-gegl-utils.h"
 end_include
 
@@ -73,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimp-apply-operation.h"
 end_include
 
 begin_include
@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bab4a030103
+DECL|enum|__anon28b3f9bf0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -6822,7 +6822,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_apply_operation
+name|gimp_gegl_apply_operation
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(
@@ -7162,7 +7162,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_apply_operation
+name|gimp_gegl_apply_operation
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(
@@ -7455,7 +7455,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_apply_operation
+name|gimp_gegl_apply_operation
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(
