@@ -301,7 +301,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298120a90108
+DECL|struct|__anon298093e80108
 block|{
 DECL|member|cinfo
 name|struct
@@ -381,7 +381,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298120a90208
+DECL|struct|__anon298093e80208
 block|{
 DECL|member|run
 name|gboolean
@@ -4718,6 +4718,20 @@ operator|.
 name|save_xmp
 argument_list|)
 expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|toggle
+argument_list|,
+literal|"toggled"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|make_preview
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
@@ -6596,7 +6610,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298120a90308
+DECL|struct|__anon298093e80308
 block|{
 DECL|member|pub
 name|struct
