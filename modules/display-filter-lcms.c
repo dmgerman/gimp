@@ -1737,7 +1737,7 @@ index|]
 init|=
 block|{
 literal|0
-block|}
+block|, }
 decl_stmt|;
 if|if
 condition|(
@@ -1894,6 +1894,8 @@ operator|(
 name|cmsUInt16Number
 operator|)
 name|r
+operator|*
+literal|256
 expr_stmt|;
 name|alarmCodes
 index|[
@@ -1904,6 +1906,8 @@ operator|(
 name|cmsUInt16Number
 operator|)
 name|g
+operator|*
+literal|256
 expr_stmt|;
 name|alarmCodes
 index|[
@@ -1914,6 +1918,8 @@ operator|(
 name|cmsUInt16Number
 operator|)
 name|b
+operator|*
+literal|256
 expr_stmt|;
 name|cmsSetAlarmCodes
 argument_list|(
