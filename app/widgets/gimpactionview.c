@@ -2346,7 +2346,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c190b3e0108
+DECL|struct|__anon27d4128b0108
 block|{
 DECL|member|manager
 name|GimpUIManager
@@ -2908,7 +2908,7 @@ condition|(
 operator|!
 name|accel_key
 operator|||
-comment|/* Don't allow arrow keys, they are all swallowed by the canvas        * and cannot be invoked anyway        */
+comment|/* Don't allow arrow keys, they are all swallowed by the canvas        * and cannot be invoked anyway, the same applies to space.        */
 name|accel_key
 operator|==
 name|GDK_KEY_Left
@@ -2924,6 +2924,14 @@ operator|||
 name|accel_key
 operator|==
 name|GDK_KEY_Down
+operator|||
+name|accel_key
+operator|==
+name|GDK_KEY_space
+operator|||
+name|accel_key
+operator|==
+name|GDK_KEY_KP_Space
 condition|)
 block|{
 name|gimp_message_literal
