@@ -78,7 +78,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4e6ff00108
+DECL|struct|__anon296e90780108
 block|{
 DECL|member|vectors
 name|GimpVectors
@@ -225,16 +225,13 @@ name|vectors
 operator|=
 name|vectors
 expr_stmt|;
-comment|/* A cairo_t needs an image surface to function, so "surface" is        * created temporarily for this purpose. Nothing is drawn to        * "surface", but it is still needed to be connected to "cr" for        * "cr" to execute cr_glyph_path(). The size of surface is        * therefore irrelevant.        */
 name|surface
 operator|=
-name|cairo_image_surface_create
+name|cairo_recording_surface_create
 argument_list|(
-name|CAIRO_FORMAT_A8
+name|CAIRO_CONTENT_ALPHA
 argument_list|,
-literal|2
-argument_list|,
-literal|2
+name|NULL
 argument_list|)
 expr_stmt|;
 name|cr
