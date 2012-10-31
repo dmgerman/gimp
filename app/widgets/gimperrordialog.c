@@ -638,6 +638,7 @@ argument_list|(
 name|box
 argument_list|)
 argument_list|,
+comment|/* %s is a message domain,                                         * like "GIMP Message" or                                         * "PNG Message"                                         */
 name|_
 argument_list|(
 literal|"%s Message"
