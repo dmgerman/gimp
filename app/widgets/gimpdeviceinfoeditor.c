@@ -81,7 +81,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0bf1640103
+DECL|enum|__anon2c2ea2ce0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0bf1640203
+DECL|enum|__anon2c2ea2ce0203
 block|{
 DECL|enumerator|AXIS_COLUMN_INDEX
 name|AXIS_COLUMN_INDEX
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0bf1640303
+DECL|enum|__anon2c2ea2ce0303
 block|{
 DECL|enumerator|INPUT_COLUMN_INDEX
 name|INPUT_COLUMN_INDEX
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0bf1640403
+DECL|enum|__anon2c2ea2ce0403
 block|{
 DECL|enumerator|KEY_COLUMN_INDEX
 name|KEY_COLUMN_INDEX
@@ -463,6 +463,7 @@ argument_list|(
 literal|"Y tilt"
 argument_list|)
 block|,
+comment|/* Wheel as in mouse or input device wheel */
 name|N_
 argument_list|(
 literal|"Wheel"
@@ -660,6 +661,7 @@ name|vbox
 argument_list|)
 expr_stmt|;
 comment|/*  the axes  */
+comment|/* The axes of an input device */
 name|frame
 operator|=
 name|gimp_frame_new
@@ -1728,6 +1730,7 @@ name|gchar
 modifier|*
 name|title
 decl_stmt|;
+comment|/* e.g. "Pressure Curve" for mapping input device axes */
 name|title
 operator|=
 name|g_strdup_printf
