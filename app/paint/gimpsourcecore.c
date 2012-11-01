@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288f662a0103
+DECL|enum|__anon2a1a3b720103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -221,10 +221,26 @@ literal|0
 end_if
 
 begin_endif
-unit|static void     gimp_source_core_motion          (GimpSourceCore   *source_core,                                                   GimpDrawable     *drawable,                                                   GimpPaintOptions *paint_options,                                                   const GimpCoords *coords);
+unit|static void     gimp_source_core_motion          (GimpSourceCore    *source_core,                                                   GimpDrawable      *drawable,                                                   GimpPaintOptions  *paint_options,                                                   const GimpCoords  *coords);
 endif|#
 directive|endif
 end_endif
+
+begin_function_decl
+specifier|static
+name|gboolean
+name|gimp_source_core_real_use_source
+parameter_list|(
+name|GimpSourceCore
+modifier|*
+name|source_core
+parameter_list|,
+name|GimpSourceOptions
+modifier|*
+name|options
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -389,6 +405,12 @@ operator|->
 name|handles_changing_brush
 operator|=
 name|TRUE
+expr_stmt|;
+name|klass
+operator|->
+name|use_source
+operator|=
+name|gimp_source_core_real_use_source
 expr_stmt|;
 name|klass
 operator|->
@@ -809,9 +831,12 @@ name|source_core
 operator|->
 name|set_source
 operator|&&
+name|gimp_source_core_use_source
+argument_list|(
+name|source_core
+argument_list|,
 name|options
-operator|->
-name|use_source
+argument_list|)
 condition|)
 block|{
 if|if
@@ -1405,9 +1430,12 @@ name|offset_y
 expr_stmt|;
 if|if
 condition|(
+name|gimp_source_core_use_source
+argument_list|(
+name|source_core
+argument_list|,
 name|options
-operator|->
-name|use_source
+argument_list|)
 condition|)
 block|{
 name|src_pickable
@@ -1530,9 +1558,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimp_source_core_use_source
+argument_list|(
+name|source_core
+argument_list|,
 name|options
-operator|->
-name|use_source
+argument_list|)
 condition|)
 block|{
 name|src_buffer
@@ -1645,6 +1676,57 @@ argument_list|(
 name|src_buffer
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_source_core_use_source (GimpSourceCore * source_core,GimpSourceOptions * options)
+name|gimp_source_core_use_source
+parameter_list|(
+name|GimpSourceCore
+modifier|*
+name|source_core
+parameter_list|,
+name|GimpSourceOptions
+modifier|*
+name|options
+parameter_list|)
+block|{
+return|return
+name|GIMP_SOURCE_CORE_GET_CLASS
+argument_list|(
+name|source_core
+argument_list|)
+operator|->
+name|use_source
+argument_list|(
+name|source_core
+argument_list|,
+name|options
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|gimp_source_core_real_use_source (GimpSourceCore * source_core,GimpSourceOptions * options)
+name|gimp_source_core_real_use_source
+parameter_list|(
+name|GimpSourceCore
+modifier|*
+name|source_core
+parameter_list|,
+name|GimpSourceOptions
+modifier|*
+name|options
+parameter_list|)
+block|{
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 

@@ -153,6 +153,22 @@ DECL|member|parent_class
 name|GimpBrushCoreClass
 name|parent_class
 decl_stmt|;
+DECL|member|use_source
+name|gboolean
+function_decl|(
+modifier|*
+name|use_source
+function_decl|)
+parameter_list|(
+name|GimpSourceCore
+modifier|*
+name|source_core
+parameter_list|,
+name|GimpSourceOptions
+modifier|*
+name|options
+parameter_list|)
+function_decl|;
 DECL|member|get_source
 name|GeglBuffer
 modifier|*
@@ -297,6 +313,21 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|gboolean
+name|gimp_source_core_use_source
+parameter_list|(
+name|GimpSourceCore
+modifier|*
+name|source_core
+parameter_list|,
+name|GimpSourceOptions
+modifier|*
+name|options
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_comment
 comment|/* TEMP HACK */

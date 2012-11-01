@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a7a1320103
+DECL|enum|__anon288e068c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -184,14 +184,7 @@ name|GimpSourceOptions
 modifier|*
 name|options
 parameter_list|)
-block|{
-name|options
-operator|->
-name|use_source
-operator|=
-name|TRUE
-expr_stmt|;
-block|}
+block|{ }
 end_function
 
 begin_function

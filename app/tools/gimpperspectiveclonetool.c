@@ -123,7 +123,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ffbc990103
+DECL|enum|__anon2748ea6b0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -2313,18 +2313,6 @@ block|}
 block|}
 else|else
 block|{
-if|if
-condition|(
-name|GIMP_CLONE_OPTIONS
-argument_list|(
-name|options
-argument_list|)
-operator|->
-name|clone_type
-operator|==
-name|GIMP_IMAGE_CLONE
-condition|)
-block|{
 name|GdkModifierType
 name|toggle_mask
 init|=
@@ -2372,7 +2360,6 @@ name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_BAD
 expr_stmt|;
-block|}
 block|}
 block|}
 name|gimp_tool_control_set_cursor
@@ -2708,15 +2695,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GIMP_CLONE_OPTIONS
-argument_list|(
-name|options
-argument_list|)
-operator|->
-name|clone_type
-operator|==
-name|GIMP_IMAGE_CLONE
-operator|&&
 name|proximity
 condition|)
 block|{
@@ -3138,15 +3116,6 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|GIMP_CLONE_OPTIONS
-argument_list|(
-name|options
-argument_list|)
-operator|->
-name|clone_type
-operator|==
-name|GIMP_IMAGE_CLONE
-operator|&&
 name|source_core
 operator|->
 name|src_drawable
