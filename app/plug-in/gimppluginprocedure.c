@@ -114,7 +114,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bddc78b0103
+DECL|enum|__anon27e600ed0103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -3967,12 +3967,6 @@ name|proc
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|proc
-operator|->
-name|file_proc
-operator|=
-name|TRUE
-expr_stmt|;
 if|if
 condition|(
 name|proc
@@ -4020,12 +4014,6 @@ argument_list|(
 name|proc
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|proc
-operator|->
-name|file_proc
-operator|=
-name|TRUE
 expr_stmt|;
 if|if
 condition|(
