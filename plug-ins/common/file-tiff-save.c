@@ -155,7 +155,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1014a80108
+DECL|struct|__anon28aeeca30108
 block|{
 DECL|member|compression
 name|gint
@@ -178,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1014a80208
+DECL|struct|__anon28aeeca30208
 block|{
 DECL|member|ID
 name|gint32
@@ -621,13 +621,6 @@ argument_list|,
 name|save_args
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_register_file_handler_mime
-argument_list|(
-name|SAVE2_PROC
-argument_list|,
-literal|"image/tiff"
 argument_list|)
 expr_stmt|;
 block|}
