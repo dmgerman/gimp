@@ -158,18 +158,6 @@ name|SAVE_PROC
 value|"file-xmc-save"
 end_define
 
-begin_comment
-comment|/* save without file extension "xmc" */
-end_comment
-
-begin_define
-DECL|macro|SAVE_PROC2
-define|#
-directive|define
-name|SAVE_PROC2
-value|"file-xmc-save2"
-end_define
-
 begin_define
 DECL|macro|PLUG_IN_BINARY
 define|#
@@ -320,7 +308,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294226310108
+DECL|struct|__anon27dcfaad0108
 block|{
 DECL|member|crop
 name|gboolean
@@ -851,7 +839,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon294226310208
+DECL|struct|__anon27dcfaad0208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -1281,31 +1269,41 @@ argument_list|,
 name|LOAD_THUMB_PROC
 argument_list|)
 expr_stmt|;
-DECL|macro|GIMP_INSTALL_SAVE_PROC (mProc,mAdd)
-define|#
-directive|define
-name|GIMP_INSTALL_SAVE_PROC
-parameter_list|(
-name|mProc
-parameter_list|,
-name|mAdd
-parameter_list|)
-define|\
-value|gimp_install_procedure ((mProc),\         "Saves files of X11 cursor file",\         "This plug-in saves X11 Mouse Cursor (XMC) files"\         #mAdd,\         "Takeshi Matsuyama<tksmashiw@gmail.com>",\         "Takeshi Matsuyama",\         "26 May 2009",\         N_("X11 Mouse Cursor"),\         "RGBA",\         GIMP_PLUGIN,\         G_N_ELEMENTS (save_args), 0,\         save_args, NULL)
-name|GIMP_INSTALL_SAVE_PROC
+name|gimp_install_procedure
 argument_list|(
 name|SAVE_PROC
 argument_list|,
-operator|.
+literal|"Saves files of X11 cursor file"
+argument_list|,
+literal|"This plug-in saves X11 Mouse Cursor (XMC) files"
+argument_list|,
+literal|"Takeshi Matsuyama<tksmashiw@gmail.com>"
+argument_list|,
+literal|"Takeshi Matsuyama"
+argument_list|,
+literal|"26 May 2009"
+argument_list|,
+name|N_
+argument_list|(
+literal|"X11 Mouse Cursor"
+argument_list|)
+argument_list|,
+literal|"RGBA"
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|save_args
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|save_args
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-name|GIMP_INSTALL_SAVE_PROC
-argument_list|(
-argument|SAVE_PROC2
-argument_list|,
-argument|\nwithout file extension.
-argument_list|)
-empty_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
 name|SAVE_PROC
@@ -1320,13 +1318,6 @@ argument_list|,
 name|XCURSOR_EXTENSION
 argument_list|,
 literal|""
-argument_list|)
-expr_stmt|;
-name|gimp_register_file_handler_mime
-argument_list|(
-name|SAVE_PROC2
-argument_list|,
-name|XCURSOR_MIME_TYPE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1759,15 +1750,6 @@ argument_list|(
 name|name
 argument_list|,
 name|SAVE_PROC
-argument_list|)
-operator|==
-literal|0
-operator|||
-name|strcmp
-argument_list|(
-name|name
-argument_list|,
-name|SAVE_PROC2
 argument_list|)
 operator|==
 literal|0
@@ -9242,7 +9224,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon294226310308
+DECL|struct|__anon27dcfaad0308
 block|{
 DECL|member|size
 name|guint32
