@@ -727,6 +727,7 @@ index|]
 decl_stmt|;
 if|if
 condition|(
+operator|!
 name|strcmp
 argument_list|(
 name|name
@@ -800,6 +801,7 @@ block|}
 elseif|else
 if|if
 condition|(
+operator|!
 name|strcmp
 argument_list|(
 name|name
