@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba9f3ef0103
+DECL|enum|__anon2894413f0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -98,7 +98,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba9f3ef0203
+DECL|enum|__anon2894413f0203
 block|{
 DECL|enumerator|INFO_AUTHOR
 name|INFO_AUTHOR
@@ -124,7 +124,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9f3ef0308
+DECL|struct|__anon2894413f0308
 block|{
 DECL|member|gimp
 name|Gimp
@@ -443,7 +443,7 @@ name|RESPONSE_REFRESH
 argument_list|,
 name|GTK_STOCK_CLOSE
 argument_list|,
-name|GTK_STOCK_CLOSE
+name|GTK_RESPONSE_CLOSE
 argument_list|,
 name|NULL
 argument_list|)
