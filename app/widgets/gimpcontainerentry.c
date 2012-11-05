@@ -81,18 +81,6 @@ directive|include
 file|"gimpviewrenderer.h"
 end_include
 
-begin_define
-DECL|macro|gimp_container_entry_get_model (entry)
-define|#
-directive|define
-name|gimp_container_entry_get_model
-parameter_list|(
-name|entry
-parameter_list|)
-define|\
-value|gtk_entry_completion_get_model (gtk_entry_get_completion (GTK_ENTRY (entry)))
-end_define
-
 begin_function_decl
 specifier|static
 name|void
@@ -759,6 +747,48 @@ end_comment
 
 begin_function
 specifier|static
+name|GtkTreeModel
+modifier|*
+DECL|function|gimp_container_entry_get_model (GimpContainerView * view)
+name|gimp_container_entry_get_model
+parameter_list|(
+name|GimpContainerView
+modifier|*
+name|view
+parameter_list|)
+block|{
+name|GtkEntryCompletion
+modifier|*
+name|completion
+decl_stmt|;
+name|completion
+operator|=
+name|gtk_entry_get_completion
+argument_list|(
+name|GTK_ENTRY
+argument_list|(
+name|view
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|completion
+condition|)
+return|return
+name|gtk_entry_completion_get_model
+argument_list|(
+name|completion
+argument_list|)
+return|;
+return|return
+name|NULL
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|void
 DECL|function|gimp_container_entry_set_context (GimpContainerView * view,GimpContext * context)
 name|gimp_container_entry_set_context
@@ -1077,6 +1107,13 @@ argument_list|(
 name|view
 argument_list|)
 decl_stmt|;
+comment|/* happens in dispose() */
+if|if
+condition|(
+operator|!
+name|model
+condition|)
+return|return;
 name|gimp_container_tree_store_clear_items
 argument_list|(
 name|GIMP_CONTAINER_TREE_STORE
