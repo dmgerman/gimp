@@ -1595,6 +1595,9 @@ operator|*
 operator|)
 name|event
 decl_stmt|;
+name|GdkModifierType
+name|button_state
+decl_stmt|;
 comment|/*  ignore new mouse events  */
 if|if
 condition|(
@@ -1613,14 +1616,18 @@ condition|)
 return|return
 name|TRUE
 return|;
-name|state
-operator||=
+name|button_state
+operator|=
 name|gimp_display_shell_button_to_state
 argument_list|(
 name|bevent
 operator|->
 name|button
 argument_list|)
+expr_stmt|;
+name|state
+operator||=
+name|button_state
 expr_stmt|;
 comment|/* ignore new buttons while another button is down */
 if|if
@@ -1726,6 +1733,9 @@ operator|&
 name|image_coords
 argument_list|,
 name|state
+operator|&
+operator|~
+name|button_state
 argument_list|,
 name|FALSE
 argument_list|)
