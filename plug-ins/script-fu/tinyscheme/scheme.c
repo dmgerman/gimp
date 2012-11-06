@@ -428,6 +428,14 @@ name|BACKQUOTE
 value|'`'
 end_define
 
+begin_define
+DECL|macro|DELIMITERS
+define|#
+directive|define
+name|DELIMITERS
+value|"()\";\f\t\v\n\r "
+end_define
+
 begin_comment
 comment|/*  *  Basic memory allocation units  */
 end_comment
@@ -12264,7 +12272,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon28eb489c0103
+DECL|enum|__anon29e7345d0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -28339,7 +28347,7 @@ name|readstr_upto
 argument_list|(
 name|sc
 argument_list|,
-literal|"();\t\n\r "
+name|DELIMITERS
 argument_list|)
 argument_list|)
 argument_list|)
@@ -28569,7 +28577,7 @@ name|readstr_upto
 argument_list|(
 name|sc
 argument_list|,
-literal|"();\t\n\r "
+name|DELIMITERS
 argument_list|)
 argument_list|)
 operator|)
@@ -30190,7 +30198,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon28eb489c0208
+DECL|struct|__anon29e7345d0208
 specifier|static
 struct|struct
 block|{
@@ -30425,7 +30433,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon28eb489c0308
+DECL|struct|__anon29e7345d0308
 typedef|typedef
 struct|struct
 block|{
