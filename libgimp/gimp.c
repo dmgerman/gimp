@@ -147,8 +147,12 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gtk/gtk.h>
 end_include
+
+begin_comment
+comment|/* need GDK_WINDOWING_FOO defines */
+end_comment
 
 begin_ifndef
 ifndef|#
@@ -285,6 +289,23 @@ begin_comment
 comment|/* USE_POSIX_SHM */
 end_comment
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|GDK_WINDOWING_QUARTZ
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<Cocoa/Cocoa.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_if
 if|#
 directive|if
@@ -414,7 +435,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295bca6c0103
+DECL|enum|__anon2bf512640103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -6191,6 +6212,39 @@ decl_stmt|;
 name|gint
 name|n_return_vals
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|GDK_WINDOWING_QUARTZ
+if|if
+condition|(
+name|proc_run
+operator|->
+name|params
+operator|&&
+name|proc_run
+operator|->
+name|params
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+operator|==
+name|GIMP_RUN_INTERACTIVE
+condition|)
+block|{
+index|[
+name|NSApp
+name|activateIgnoringOtherApps
+operator|:
+name|YES
+index|]
+expr_stmt|;
+block|}
+endif|#
+directive|endif
 call|(
 modifier|*
 name|run_proc
