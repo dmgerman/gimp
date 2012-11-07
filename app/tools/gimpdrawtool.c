@@ -1303,13 +1303,20 @@ block|{
 ifdef|#
 directive|ifdef
 name|USE_TIMEOUT
+comment|/* Don't install the timeout if the draw tool isn't active, so        * suspend()/resume() can always be called, and have no side        * effect on an inactive tool. See bug #687851.        */
 if|if
 condition|(
+name|gimp_draw_tool_is_active
+argument_list|(
+name|draw_tool
+argument_list|)
+operator|&&
 operator|!
 name|draw_tool
 operator|->
 name|draw_timeout
 condition|)
+block|{
 name|draw_tool
 operator|->
 name|draw_timeout
@@ -1330,6 +1337,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 endif|#
 directive|endif
 comment|/* call draw() anyway, it will do nothing if the timeout is        * running, but will additionally check the drawing times to        * ensure the minimum framerate        */
