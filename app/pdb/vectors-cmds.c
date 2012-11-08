@@ -934,7 +934,7 @@ name|vectors
 argument_list|,
 name|stroke_id
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -1137,7 +1137,7 @@ name|vectors
 argument_list|,
 name|stroke_id
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -1357,7 +1357,7 @@ name|vectors
 argument_list|,
 name|stroke_id
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -1514,7 +1514,7 @@ name|vectors
 argument_list|,
 name|stroke_id
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -1699,7 +1699,7 @@ name|vectors
 argument_list|,
 name|stroke_id
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -1888,7 +1888,7 @@ name|vectors
 argument_list|,
 name|stroke_id
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -2092,7 +2092,7 @@ name|vectors
 argument_list|,
 name|stroke_id
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -2283,7 +2283,7 @@ name|vectors
 argument_list|,
 name|stroke_id
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -2502,7 +2502,7 @@ name|vectors
 argument_list|,
 name|stroke_id
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -2690,7 +2690,7 @@ name|vectors
 argument_list|,
 name|stroke_id
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -3375,7 +3375,7 @@ name|vectors
 argument_list|,
 name|stroke_id
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -3672,12 +3672,14 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_pdb_item_is_writable
+name|gimp_pdb_item_is_modifyable
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|vectors
 argument_list|)
+argument_list|,
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -3931,7 +3933,7 @@ name|vectors
 argument_list|,
 name|stroke_id
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -4166,7 +4168,7 @@ name|vectors
 argument_list|,
 name|stroke_id
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -4451,7 +4453,7 @@ name|vectors
 argument_list|,
 name|stroke_id
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -4727,12 +4729,14 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_pdb_item_is_writable
+name|gimp_pdb_item_is_modifyable
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|vectors
 argument_list|)
+argument_list|,
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -5023,7 +5027,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)

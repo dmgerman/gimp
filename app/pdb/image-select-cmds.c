@@ -256,7 +256,7 @@ argument_list|)
 argument_list|,
 name|image
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -483,7 +483,7 @@ argument_list|)
 argument_list|,
 name|image
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -1514,7 +1514,7 @@ name|item
 argument_list|,
 name|image
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)

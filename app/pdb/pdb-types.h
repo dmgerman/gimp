@@ -61,7 +61,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28cb310a0103
+DECL|enum|__anon2940df0b0103
 block|{
 DECL|enumerator|GIMP_PDB_COMPAT_OFF
 name|GIMP_PDB_COMPAT_OFF
@@ -74,6 +74,23 @@ name|GIMP_PDB_COMPAT_WARN
 DECL|typedef|GimpPDBCompatMode
 block|}
 name|GimpPDBCompatMode
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2940df0b0203
+block|{
+DECL|enumerator|GIMP_PDB_ITEM_CONTENT
+name|GIMP_PDB_ITEM_CONTENT
+init|=
+literal|1
+operator|<<
+literal|0
+DECL|typedef|GimpPDBItemModify
+block|}
+name|GimpPDBItemModify
 typedef|;
 end_typedef
 

@@ -1396,12 +1396,14 @@ name|vectors
 operator|&&
 name|drawable
 operator|&&
-name|gimp_pdb_item_is_writable
+name|gimp_pdb_item_is_modifyable
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)

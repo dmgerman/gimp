@@ -464,7 +464,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -620,7 +620,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -750,7 +750,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -899,7 +899,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -1055,7 +1055,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -1189,7 +1189,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -1377,7 +1377,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -1510,7 +1510,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -1664,7 +1664,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -1793,7 +1793,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -1947,7 +1947,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -2076,7 +2076,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -2230,7 +2230,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -2360,7 +2360,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -2516,7 +2516,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -2645,7 +2645,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -2799,7 +2799,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -2928,7 +2928,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -3082,7 +3082,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -3219,7 +3219,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -3369,7 +3369,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -3499,7 +3499,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -3653,7 +3653,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -3782,7 +3782,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -3936,7 +3936,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -4065,7 +4065,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -4219,7 +4219,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -4369,7 +4369,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -4563,7 +4563,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -4731,7 +4731,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)

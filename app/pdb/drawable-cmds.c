@@ -1768,7 +1768,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -1991,7 +1991,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -2200,7 +2200,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -2953,12 +2953,14 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|gimp_pdb_item_is_writable
+name|gimp_pdb_item_is_modifyable
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -3132,12 +3134,14 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_pdb_item_is_writable
+name|gimp_pdb_item_is_modifyable
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -3321,7 +3325,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|TRUE
+name|GIMP_PDB_ITEM_CONTENT
 argument_list|,
 name|error
 argument_list|)
@@ -4308,7 +4312,7 @@ condition|(
 name|success
 condition|)
 block|{
-comment|/*       if (gimp_pdb_item_is_attached (GIMP_ITEM (drawable), NULL, FALSE, error))         gimp_drawable_foreground_extract (drawable, mode, mask, progress);       else         success = FALSE;     */
+comment|/*       if (gimp_pdb_item_is_attached (GIMP_ITEM (drawable), NULL, 0, error))         gimp_drawable_foreground_extract (drawable, mode, mask, progress);       else         success = FALSE;     */
 name|success
 operator|=
 name|FALSE

@@ -4633,7 +4633,7 @@ argument_list|)
 argument_list|,
 name|image
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -4805,7 +4805,7 @@ argument_list|)
 argument_list|,
 name|image
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -5145,7 +5145,7 @@ argument_list|)
 argument_list|,
 name|image
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -5317,7 +5317,7 @@ argument_list|)
 argument_list|,
 name|image
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -5657,7 +5657,7 @@ argument_list|)
 argument_list|,
 name|image
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -5829,7 +5829,7 @@ argument_list|)
 argument_list|,
 name|image
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -5966,7 +5966,7 @@ name|item
 argument_list|,
 name|image
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -6110,7 +6110,7 @@ name|item
 argument_list|,
 name|image
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -6238,7 +6238,7 @@ name|item
 argument_list|,
 name|image
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -6366,7 +6366,7 @@ name|item
 argument_list|,
 name|image
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -6492,7 +6492,7 @@ name|item
 argument_list|,
 name|image
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -6651,7 +6651,7 @@ name|item
 argument_list|,
 name|image
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -7129,7 +7129,7 @@ argument_list|)
 argument_list|,
 name|image
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -7462,6 +7462,21 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpPDBItemModify
+name|modify
+init|=
+literal|0
+decl_stmt|;
+if|if
+condition|(
+name|mode
+operator|==
+name|GIMP_MASK_APPLY
+condition|)
+name|modify
+operator||=
+name|GIMP_PDB_ITEM_CONTENT
+expr_stmt|;
 if|if
 condition|(
 name|gimp_pdb_item_is_attached
@@ -7473,9 +7488,7 @@ argument_list|)
 argument_list|,
 name|image
 argument_list|,
-name|mode
-operator|==
-name|GIMP_MASK_APPLY
+name|modify
 argument_list|,
 name|error
 argument_list|)

@@ -1401,7 +1401,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_pdb_item_is_attached (GimpItem * item,GimpImage * image,gboolean writable,GError ** error)
+DECL|function|gimp_pdb_item_is_attached (GimpItem * item,GimpImage * image,GimpPDBItemModify modify,GError ** error)
 name|gimp_pdb_item_is_attached
 parameter_list|(
 name|GimpItem
@@ -1412,8 +1412,8 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gboolean
-name|writable
+name|GimpPDBItemModify
+name|modify
 parameter_list|,
 name|GError
 modifier|*
@@ -1538,27 +1538,22 @@ return|return
 name|FALSE
 return|;
 block|}
-if|if
-condition|(
-name|writable
-condition|)
 return|return
-name|gimp_pdb_item_is_writable
+name|gimp_pdb_item_is_modifyable
 argument_list|(
 name|item
 argument_list|,
+name|modify
+argument_list|,
 name|error
 argument_list|)
-return|;
-return|return
-name|TRUE
 return|;
 block|}
 end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_pdb_item_is_in_tree (GimpItem * item,GimpImage * image,gboolean writable,GError ** error)
+DECL|function|gimp_pdb_item_is_in_tree (GimpItem * item,GimpImage * image,GimpPDBItemModify modify,GError ** error)
 name|gimp_pdb_item_is_in_tree
 parameter_list|(
 name|GimpItem
@@ -1569,8 +1564,8 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gboolean
-name|writable
+name|GimpPDBItemModify
+name|modify
 parameter_list|,
 name|GError
 modifier|*
@@ -1625,7 +1620,7 @@ name|item
 argument_list|,
 name|image
 argument_list|,
-name|writable
+name|modify
 argument_list|,
 name|error
 argument_list|)
@@ -2086,12 +2081,15 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_pdb_item_is_writable (GimpItem * item,GError ** error)
-name|gimp_pdb_item_is_writable
+DECL|function|gimp_pdb_item_is_modifyable (GimpItem * item,GimpPDBItemModify modify,GError ** error)
+name|gimp_pdb_item_is_modifyable
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpPDBItemModify
+name|modify
 parameter_list|,
 name|GError
 modifier|*
@@ -2125,6 +2123,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|(
+name|modify
+operator|&
+name|GIMP_PDB_ITEM_CONTENT
+operator|)
+operator|&&
 name|gimp_item_is_content_locked
 argument_list|(
 name|item
@@ -2339,15 +2343,15 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_pdb_layer_is_text_layer (GimpLayer * layer,gboolean writable,GError ** error)
+DECL|function|gimp_pdb_layer_is_text_layer (GimpLayer * layer,GimpPDBItemModify modify,GError ** error)
 name|gimp_pdb_layer_is_text_layer
 parameter_list|(
 name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
-name|gboolean
-name|writable
+name|GimpPDBItemModify
+name|modify
 parameter_list|,
 name|GError
 modifier|*
@@ -2433,7 +2437,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|writable
+name|modify
 argument_list|,
 name|error
 argument_list|)
@@ -2891,7 +2895,7 @@ end_function
 begin_function
 name|GimpStroke
 modifier|*
-DECL|function|gimp_pdb_get_vectors_stroke (GimpVectors * vectors,gint stroke_ID,gboolean writable,GError ** error)
+DECL|function|gimp_pdb_get_vectors_stroke (GimpVectors * vectors,gint stroke_ID,GimpPDBItemModify modify,GError ** error)
 name|gimp_pdb_get_vectors_stroke
 parameter_list|(
 name|GimpVectors
@@ -2901,8 +2905,8 @@ parameter_list|,
 name|gint
 name|stroke_ID
 parameter_list|,
-name|gboolean
-name|writable
+name|GimpPDBItemModify
+name|modify
 parameter_list|,
 name|GError
 modifier|*
@@ -2959,14 +2963,16 @@ return|;
 if|if
 condition|(
 operator|!
-name|writable
+name|modify
 operator|||
-name|gimp_pdb_item_is_writable
+name|gimp_pdb_item_is_modifyable
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|vectors
 argument_list|)
+argument_list|,
+name|modify
 argument_list|,
 name|error
 argument_list|)

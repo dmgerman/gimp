@@ -241,8 +241,8 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gboolean
-name|writable
+name|GimpPDBItemModify
+name|modify
 parameter_list|,
 name|GError
 modifier|*
@@ -264,8 +264,8 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gboolean
-name|writable
+name|GimpPDBItemModify
+name|modify
 parameter_list|,
 name|GError
 modifier|*
@@ -341,11 +341,14 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_pdb_item_is_writable
+name|gimp_pdb_item_is_modifyable
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpPDBItemModify
+name|modify
 parameter_list|,
 name|GError
 modifier|*
@@ -395,8 +398,8 @@ name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
-name|gboolean
-name|writable
+name|GimpPDBItemModify
+name|modify
 parameter_list|,
 name|GError
 modifier|*
@@ -494,8 +497,8 @@ parameter_list|,
 name|gint
 name|stroke_ID
 parameter_list|,
-name|gboolean
-name|writable
+name|GimpPDBItemModify
+name|modify
 parameter_list|,
 name|GError
 modifier|*
