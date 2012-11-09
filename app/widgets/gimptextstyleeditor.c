@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c6e6300103
+DECL|enum|__anon2b032a200103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3111,11 +3111,6 @@ operator|&
 name|end
 argument_list|)
 expr_stmt|;
-name|gtk_text_buffer_begin_user_action
-argument_list|(
-name|buffer
-argument_list|)
-expr_stmt|;
 name|gimp_text_buffer_set_font
 argument_list|(
 name|editor
@@ -3132,11 +3127,6 @@ name|gimp_context_get_font_name
 argument_list|(
 name|context
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_text_buffer_end_user_action
-argument_list|(
-name|buffer
 argument_list|)
 expr_stmt|;
 block|}
@@ -3345,11 +3335,6 @@ operator|&
 name|end
 argument_list|)
 expr_stmt|;
-name|gtk_text_buffer_begin_user_action
-argument_list|(
-name|buffer
-argument_list|)
-expr_stmt|;
 name|gimp_color_button_get_color
 argument_list|(
 name|button
@@ -3372,11 +3357,6 @@ name|end
 argument_list|,
 operator|&
 name|color
-argument_list|)
-expr_stmt|;
-name|gtk_text_buffer_end_user_action
-argument_list|(
-name|buffer
 argument_list|)
 expr_stmt|;
 block|}
@@ -3791,11 +3771,6 @@ operator|&
 name|end
 argument_list|)
 expr_stmt|;
-name|gtk_text_buffer_begin_user_action
-argument_list|(
-name|buffer
-argument_list|)
-expr_stmt|;
 name|points
 operator|=
 name|gimp_units_to_points
@@ -3829,11 +3804,6 @@ argument_list|,
 name|PANGO_SCALE
 operator|*
 name|points
-argument_list|)
-expr_stmt|;
-name|gtk_text_buffer_end_user_action
-argument_list|(
-name|buffer
 argument_list|)
 expr_stmt|;
 block|}
