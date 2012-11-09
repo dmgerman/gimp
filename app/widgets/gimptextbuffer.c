@@ -1336,7 +1336,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|GtkTextTag
 modifier|*
 DECL|function|gimp_text_buffer_get_size_tag (GimpTextBuffer * buffer,gint size)
@@ -3211,7 +3210,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|GtkTextTag
 modifier|*
 DECL|function|gimp_text_buffer_get_font_tag (GimpTextBuffer * buffer,const gchar * font)
@@ -3582,7 +3580,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|GtkTextTag
 modifier|*
 DECL|function|gimp_text_buffer_get_color_tag (GimpTextBuffer * buffer,const GimpRGB * color)
