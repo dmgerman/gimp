@@ -229,6 +229,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PDB_ITEM_CONTENT
+operator||
+name|GIMP_PDB_ITEM_POSITION
 argument_list|,
 name|error
 argument_list|)
@@ -610,6 +612,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PDB_ITEM_CONTENT
+operator||
+name|GIMP_PDB_ITEM_POSITION
 argument_list|,
 name|error
 argument_list|)
@@ -988,6 +992,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PDB_ITEM_CONTENT
+operator||
+name|GIMP_PDB_ITEM_POSITION
 argument_list|,
 name|error
 argument_list|)
@@ -1398,6 +1404,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PDB_ITEM_CONTENT
+operator||
+name|GIMP_PDB_ITEM_POSITION
 argument_list|,
 name|error
 argument_list|)
@@ -1796,6 +1804,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PDB_ITEM_CONTENT
+operator||
+name|GIMP_PDB_ITEM_POSITION
 argument_list|,
 name|error
 argument_list|)
@@ -2252,6 +2262,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PDB_ITEM_CONTENT
+operator||
+name|GIMP_PDB_ITEM_POSITION
 argument_list|,
 name|error
 argument_list|)

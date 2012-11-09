@@ -384,7 +384,7 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 name|error
 argument_list|)
@@ -1700,6 +1700,8 @@ argument_list|,
 name|stroke_id
 argument_list|,
 name|GIMP_PDB_ITEM_CONTENT
+operator||
+name|GIMP_PDB_ITEM_POSITION
 argument_list|,
 name|error
 argument_list|)
@@ -1889,6 +1891,8 @@ argument_list|,
 name|stroke_id
 argument_list|,
 name|GIMP_PDB_ITEM_CONTENT
+operator||
+name|GIMP_PDB_ITEM_POSITION
 argument_list|,
 name|error
 argument_list|)
@@ -2093,6 +2097,8 @@ argument_list|,
 name|stroke_id
 argument_list|,
 name|GIMP_PDB_ITEM_CONTENT
+operator||
+name|GIMP_PDB_ITEM_POSITION
 argument_list|,
 name|error
 argument_list|)
@@ -2284,6 +2290,8 @@ argument_list|,
 name|stroke_id
 argument_list|,
 name|GIMP_PDB_ITEM_CONTENT
+operator||
+name|GIMP_PDB_ITEM_POSITION
 argument_list|,
 name|error
 argument_list|)
@@ -2503,6 +2511,8 @@ argument_list|,
 name|stroke_id
 argument_list|,
 name|GIMP_PDB_ITEM_CONTENT
+operator||
+name|GIMP_PDB_ITEM_POSITION
 argument_list|,
 name|error
 argument_list|)

@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpuimanager.h"
 end_include
 
@@ -444,6 +450,33 @@ name|_
 argument_list|(
 literal|"Lock path strokes"
 argument_list|)
+expr_stmt|;
+name|iv_class
+operator|->
+name|lock_content_help_id
+operator|=
+name|GIMP_HELP_PATH_LOCK_STROKES
+expr_stmt|;
+name|iv_class
+operator|->
+name|lock_position_stock_id
+operator|=
+name|GIMP_STOCK_TOOL_MOVE
+expr_stmt|;
+name|iv_class
+operator|->
+name|lock_position_tooltip
+operator|=
+name|_
+argument_list|(
+literal|"Lock path position"
+argument_list|)
+expr_stmt|;
+name|iv_class
+operator|->
+name|lock_position_help_id
+operator|=
+name|GIMP_HELP_PATH_LOCK_POSITION
 expr_stmt|;
 block|}
 end_function

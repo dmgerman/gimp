@@ -398,6 +398,25 @@ name|gchar
 modifier|*
 name|lock_content_help_id
 decl_stmt|;
+comment|/* lock position (translation and transformation) button appearance */
+DECL|member|lock_position_stock_id
+specifier|const
+name|gchar
+modifier|*
+name|lock_position_stock_id
+decl_stmt|;
+DECL|member|lock_position_tooltip
+specifier|const
+name|gchar
+modifier|*
+name|lock_position_tooltip
+decl_stmt|;
+DECL|member|lock_position_help_id
+specifier|const
+name|gchar
+modifier|*
+name|lock_position_help_id
+decl_stmt|;
 block|}
 struct|;
 end_struct

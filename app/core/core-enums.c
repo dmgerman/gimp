@@ -5902,6 +5902,22 @@ literal|"item-linked"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_ITEM_LOCK_CONTENT
+block|,
+literal|"GIMP_UNDO_ITEM_LOCK_CONTENT"
+block|,
+literal|"item-lock-content"
+block|}
+block|,
+block|{
+name|GIMP_UNDO_ITEM_LOCK_POSITION
+block|,
+literal|"GIMP_UNDO_ITEM_LOCK_POSITION"
+block|,
+literal|"item-lock-position"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_LAYER_ADD
 block|,
 literal|"GIMP_UNDO_LAYER_ADD"
@@ -6838,6 +6854,32 @@ argument_list|(
 literal|"undo-type"
 argument_list|,
 literal|"Link/Unlink item"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_UNDO_ITEM_LOCK_CONTENT
+block|,
+name|NC_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Lock/Unlock content"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_UNDO_ITEM_LOCK_POSITION
+block|,
+name|NC_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Lock/Unlock position"
 argument_list|)
 block|,
 name|NULL

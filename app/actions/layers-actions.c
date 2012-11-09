@@ -2260,6 +2260,11 @@ init|=
 name|FALSE
 decl_stmt|;
 name|gboolean
+name|movable
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
 name|children
 init|=
 name|FALSE
@@ -2386,6 +2391,17 @@ name|writable
 operator|=
 operator|!
 name|gimp_item_is_content_locked
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|movable
+operator|=
+operator|!
+name|gimp_item_is_position_locked
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -2922,6 +2938,8 @@ literal|"layers-resize"
 argument_list|,
 name|writable
 operator|&&
+name|movable
+operator|&&
 operator|!
 name|ac
 argument_list|)
@@ -2931,6 +2949,8 @@ argument_list|(
 literal|"layers-resize-to-image"
 argument_list|,
 name|writable
+operator|&&
+name|movable
 operator|&&
 operator|!
 name|ac
@@ -2942,6 +2962,8 @@ literal|"layers-scale"
 argument_list|,
 name|writable
 operator|&&
+name|movable
+operator|&&
 operator|!
 name|ac
 argument_list|)
@@ -2952,6 +2974,8 @@ literal|"layers-crop-to-selection"
 argument_list|,
 name|writable
 operator|&&
+name|movable
+operator|&&
 name|sel
 argument_list|)
 expr_stmt|;
@@ -2960,6 +2984,8 @@ argument_list|(
 literal|"layers-crop-to-content"
 argument_list|,
 name|writable
+operator|&&
+name|movable
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

@@ -1078,6 +1078,18 @@ name|delete_action
 operator|=
 literal|"layers-delete"
 expr_stmt|;
+name|item_view_class
+operator|->
+name|lock_content_help_id
+operator|=
+name|GIMP_HELP_LAYER_LOCK_PIXELS
+expr_stmt|;
+name|item_view_class
+operator|->
+name|lock_position_help_id
+operator|=
+name|GIMP_HELP_LAYER_LOCK_POSITION
+expr_stmt|;
 name|g_type_class_add_private
 argument_list|(
 name|klass
@@ -1469,7 +1481,7 @@ argument_list|(
 literal|"Lock alpha channel"
 argument_list|)
 argument_list|,
-name|GIMP_HELP_LAYER_DIALOG_LOCK_ALPHA_BUTTON
+name|GIMP_HELP_LAYER_LOCK_ALPHA
 argument_list|)
 expr_stmt|;
 name|gtk_widget_style_get
@@ -2254,7 +2266,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abe5f950108
+DECL|struct|__anon2c144e830108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2648,7 +2660,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abe5f950208
+DECL|struct|__anon2c144e830208
 block|{
 DECL|member|mask_column
 name|gint

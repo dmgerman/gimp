@@ -61,7 +61,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2940df0b0103
+DECL|enum|__anon2bd6676c0103
 block|{
 DECL|enumerator|GIMP_PDB_COMPAT_OFF
 name|GIMP_PDB_COMPAT_OFF
@@ -80,7 +80,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2940df0b0203
+DECL|enum|__anon2bd6676c0203
 block|{
 DECL|enumerator|GIMP_PDB_ITEM_CONTENT
 name|GIMP_PDB_ITEM_CONTENT
@@ -88,6 +88,13 @@ init|=
 literal|1
 operator|<<
 literal|0
+block|,
+DECL|enumerator|GIMP_PDB_ITEM_POSITION
+name|GIMP_PDB_ITEM_POSITION
+init|=
+literal|1
+operator|<<
+literal|1
 DECL|typedef|GimpPDBItemModify
 block|}
 name|GimpPDBItemModify

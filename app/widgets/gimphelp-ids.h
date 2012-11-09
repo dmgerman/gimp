@@ -926,14 +926,6 @@ value|"gimp-layer-dialog-opacity-scale"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_LAYER_DIALOG_LOCK_ALPHA_BUTTON
-define|#
-directive|define
-name|GIMP_HELP_LAYER_DIALOG_LOCK_ALPHA_BUTTON
-value|"gimp-layer-dialog-lock-alpha-button"
-end_define
-
-begin_define
 DECL|macro|GIMP_HELP_LAYER_NEW
 define|#
 directive|define
@@ -1139,6 +1131,22 @@ define|#
 directive|define
 name|GIMP_HELP_LAYER_LOCK_ALPHA
 value|"gimp-layer-lock-alpha"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_LAYER_LOCK_PIXELS
+define|#
+directive|define
+name|GIMP_HELP_LAYER_LOCK_PIXELS
+value|"gimp-layer-lock-pixels"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_LAYER_LOCK_POSITION
+define|#
+directive|define
+name|GIMP_HELP_LAYER_LOCK_POSITION
+value|"gimp-layer-lock-position"
 end_define
 
 begin_define
@@ -1422,6 +1430,22 @@ value|"gimp-channel-delete"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_CHANNEL_LOCK_PIXELS
+define|#
+directive|define
+name|GIMP_HELP_CHANNEL_LOCK_PIXELS
+value|"gimp-channel-lock-pixels"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_CHANNEL_LOCK_POSITION
+define|#
+directive|define
+name|GIMP_HELP_CHANNEL_LOCK_POSITION
+value|"gimp-channel-lock-position"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_CHANNEL_SELECTION_REPLACE
 define|#
 directive|define
@@ -1579,6 +1603,22 @@ define|#
 directive|define
 name|GIMP_HELP_PATH_LINKED
 value|"gimp-path-linked"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PATH_LOCK_STROKES
+define|#
+directive|define
+name|GIMP_HELP_PATH_LOCK_STROKES
+value|"gimp-path-lock-strokes"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PATH_LOCK_POSITION
+define|#
+directive|define
+name|GIMP_HELP_PATH_LOCK_POSITION
+value|"gimp-path-lock-position"
 end_define
 
 begin_define

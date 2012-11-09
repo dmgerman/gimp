@@ -17,6 +17,18 @@ name|__GIMP_ITEM_LINKED_H__
 end_define
 
 begin_function_decl
+name|gboolean
+name|gimp_item_linked_is_locked
+parameter_list|(
+specifier|const
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_item_linked_translate
 parameter_list|(

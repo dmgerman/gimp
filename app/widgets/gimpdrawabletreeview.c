@@ -430,6 +430,21 @@ argument_list|(
 literal|"Lock pixels"
 argument_list|)
 expr_stmt|;
+name|item_view_class
+operator|->
+name|lock_position_stock_id
+operator|=
+name|GIMP_STOCK_TOOL_MOVE
+expr_stmt|;
+name|item_view_class
+operator|->
+name|lock_position_tooltip
+operator|=
+name|_
+argument_list|(
+literal|"Lock position and size"
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

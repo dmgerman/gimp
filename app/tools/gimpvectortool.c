@@ -1050,6 +1050,16 @@ operator|->
 name|vectors
 argument_list|)
 argument_list|)
+operator|||
+name|gimp_item_is_position_locked
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|vector_tool
+operator|->
+name|vectors
+argument_list|)
+argument_list|)
 condition|)
 block|{
 name|gimp_tool_message_literal
