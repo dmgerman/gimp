@@ -47,7 +47,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon293f64390103
+DECL|enum|__anon296a3af90103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -60,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293f64390203
+DECL|enum|__anon296a3af90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1473,7 +1473,7 @@ name|cairo_set_line_width
 argument_list|(
 name|cr
 argument_list|,
-literal|2.0
+literal|1.5
 argument_list|)
 expr_stmt|;
 name|cairo_move_to
@@ -1487,10 +1487,14 @@ operator|+
 name|toggle_rect
 operator|.
 name|width
+operator|-
+literal|1
 argument_list|,
 name|toggle_rect
 operator|.
 name|y
+operator|+
+literal|1
 argument_list|)
 expr_stmt|;
 name|cairo_line_to
@@ -1500,6 +1504,8 @@ argument_list|,
 name|toggle_rect
 operator|.
 name|x
+operator|+
+literal|1
 argument_list|,
 name|toggle_rect
 operator|.
@@ -1508,6 +1514,8 @@ operator|+
 name|toggle_rect
 operator|.
 name|height
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|cairo_stroke
