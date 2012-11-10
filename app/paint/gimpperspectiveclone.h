@@ -134,6 +134,11 @@ name|GeglNode
 modifier|*
 name|node
 decl_stmt|;
+DECL|member|crop
+name|GeglNode
+modifier|*
+name|crop
+decl_stmt|;
 DECL|member|transform_node
 name|GeglNode
 modifier|*
