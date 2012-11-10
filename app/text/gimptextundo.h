@@ -123,6 +123,12 @@ DECL|member|modified
 name|gboolean
 name|modified
 decl_stmt|;
+DECL|member|format
+specifier|const
+name|Babl
+modifier|*
+name|format
+decl_stmt|;
 block|}
 struct|;
 end_struct

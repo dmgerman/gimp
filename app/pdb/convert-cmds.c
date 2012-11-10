@@ -217,6 +217,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 literal|0
 argument_list|,
 name|NULL
@@ -338,6 +340,8 @@ argument_list|,
 literal|0
 argument_list|,
 literal|0
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -681,6 +685,8 @@ name|dither_type
 argument_list|,
 name|alpha_dither
 argument_list|,
+name|FALSE
+argument_list|,
 name|remove_unused
 argument_list|,
 name|palette_type
@@ -1001,6 +1007,8 @@ argument_list|(
 name|image
 argument_list|,
 name|precision
+argument_list|,
+literal|0
 argument_list|,
 literal|0
 argument_list|,

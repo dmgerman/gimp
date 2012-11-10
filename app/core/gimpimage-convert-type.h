@@ -46,6 +46,9 @@ name|gboolean
 name|alpha_dither
 parameter_list|,
 name|gboolean
+name|text_layer_dither
+parameter_list|,
+name|gboolean
 name|remove_dups
 parameter_list|,
 name|GimpConvertPaletteType

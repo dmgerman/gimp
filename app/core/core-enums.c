@@ -5998,6 +5998,14 @@ literal|"text-layer-modified"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_TEXT_LAYER_CONVERT
+block|,
+literal|"GIMP_UNDO_TEXT_LAYER_CONVERT"
+block|,
+literal|"text-layer-convert"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_LAYER_MASK_ADD
 block|,
 literal|"GIMP_UNDO_LAYER_MASK_ADD"
@@ -7010,6 +7018,19 @@ argument_list|(
 literal|"undo-type"
 argument_list|,
 literal|"Text layer modification"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_UNDO_TEXT_LAYER_CONVERT
+block|,
+name|NC_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Convert text layer"
 argument_list|)
 block|,
 name|NULL

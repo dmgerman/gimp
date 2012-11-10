@@ -31,6 +31,9 @@ name|gint
 name|layer_dither_type
 parameter_list|,
 name|gint
+name|text_layer_dither_type
+parameter_list|,
+name|gint
 name|mask_dither_type
 parameter_list|,
 name|GimpProgress

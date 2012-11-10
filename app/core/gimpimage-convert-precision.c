@@ -66,12 +66,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"text/gimptextlayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_function
 name|void
-DECL|function|gimp_image_convert_precision (GimpImage * image,GimpPrecision precision,gint layer_dither_type,gint mask_dither_type,GimpProgress * progress)
+DECL|function|gimp_image_convert_precision (GimpImage * image,GimpPrecision precision,gint layer_dither_type,gint text_layer_dither_type,gint mask_dither_type,GimpProgress * progress)
 name|gimp_image_convert_precision
 parameter_list|(
 name|GimpImage
@@ -83,6 +89,9 @@ name|precision
 parameter_list|,
 name|gint
 name|layer_dither_type
+parameter_list|,
+name|gint
+name|text_layer_dither_type
 parameter_list|,
 name|gint
 name|mask_dither_type
@@ -333,6 +342,28 @@ name|list
 operator|->
 name|data
 decl_stmt|;
+name|gint
+name|dither_type
+decl_stmt|;
+if|if
+condition|(
+name|gimp_item_is_text_layer
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+condition|)
+name|dither_type
+operator|=
+name|text_layer_dither_type
+expr_stmt|;
+else|else
+name|dither_type
+operator|=
+name|layer_dither_type
+expr_stmt|;
 name|gimp_drawable_convert_type
 argument_list|(
 name|drawable
@@ -346,7 +377,7 @@ argument_list|)
 argument_list|,
 name|precision
 argument_list|,
-name|layer_dither_type
+name|dither_type
 argument_list|,
 name|mask_dither_type
 argument_list|,
