@@ -573,6 +573,19 @@ argument_list|,
 name|GTK_WIN_POS_CENTER
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GDK_WINDOWING_QUARTZ
+comment|/*  in OSX, bringing the plug-in's window to front hilariously        *  fails even though we call [NSApp activateIgnoringOtherApps];        *  as a workaround, set the window to UTILITY which places them        *  above all normal windows (which sucks, but it's better than        *  below the image window, and not that bad because plug-in        *  windows are generally temporary, see bug #677776).        */
+name|gtk_window_set_type_hint
+argument_list|(
+name|window
+argument_list|,
+name|GDK_WINDOW_TYPE_HINT_UTILITY
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 block|}
 block|}
 end_function
@@ -624,6 +637,19 @@ argument_list|,
 name|GTK_WIN_POS_CENTER
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GDK_WINDOWING_QUARTZ
+comment|/*  ditto  */
+name|gtk_window_set_type_hint
+argument_list|(
+name|window
+argument_list|,
+name|GDK_WINDOW_TYPE_HINT_UTILITY
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 block|}
 block|}
 end_function
