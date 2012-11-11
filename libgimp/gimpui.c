@@ -148,7 +148,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_window_set_transient_for
 parameter_list|(
 name|GtkWindow
@@ -551,6 +551,9 @@ name|window
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
 name|gimp_window_set_transient_for
 argument_list|(
 name|window
@@ -560,7 +563,17 @@ argument_list|(
 name|gdisp_ID
 argument_list|)
 argument_list|)
+condition|)
+block|{
+comment|/*  if setting the window transient failed, at least set        *  WIN_POS_CENTER, which will center the window on the screen        *  where the mouse is (see bug #684003).        */
+name|gtk_window_set_position
+argument_list|(
+name|window
+argument_list|,
+name|GTK_WIN_POS_CENTER
+argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -591,6 +604,9 @@ name|window
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
 name|gimp_window_set_transient_for
 argument_list|(
 name|window
@@ -598,7 +614,17 @@ argument_list|,
 name|gimp_ui_get_progress_window
 argument_list|()
 argument_list|)
+condition|)
+block|{
+comment|/*  see above  */
+name|gtk_window_set_position
+argument_list|(
+name|window
+argument_list|,
+name|GTK_WIN_POS_CENTER
+argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -741,7 +767,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_window_set_transient_for (GtkWindow * window,GdkWindow * parent)
 name|gimp_window_set_transient_for
 parameter_list|(
@@ -786,7 +812,9 @@ condition|(
 operator|!
 name|parent
 condition|)
-return|return;
+return|return
+name|FALSE
+return|;
 if|if
 condition|(
 name|gtk_widget_get_realized
@@ -831,8 +859,14 @@ argument_list|(
 name|parent
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 endif|#
 directive|endif
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 

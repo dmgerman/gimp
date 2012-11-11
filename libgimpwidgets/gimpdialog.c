@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbf67c90103
+DECL|enum|__anon2a203f6b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -454,21 +454,6 @@ modifier|*
 name|dialog
 parameter_list|)
 block|{
-ifdef|#
-directive|ifdef
-name|GDK_WINDOWING_QUARTZ
-name|gtk_window_set_position
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|,
-name|GTK_WIN_POS_CENTER
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 name|g_signal_connect
 argument_list|(
 name|dialog
@@ -1748,7 +1733,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbf67c90208
+DECL|struct|__anon2a203f6b0208
 block|{
 DECL|member|dialog
 name|GtkDialog
