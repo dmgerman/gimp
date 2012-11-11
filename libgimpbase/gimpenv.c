@@ -1858,11 +1858,6 @@ modifier|*
 name|check_failed
 parameter_list|)
 block|{
-specifier|const
-name|gchar
-modifier|*
-name|home
-decl_stmt|;
 name|gchar
 modifier|*
 modifier|*
@@ -1908,11 +1903,6 @@ condition|)
 return|return
 name|NULL
 return|;
-name|home
-operator|=
-name|g_get_home_dir
-argument_list|()
-expr_stmt|;
 name|patharray
 operator|=
 name|g_strsplit
@@ -1969,7 +1959,8 @@ name|dir
 operator|=
 name|g_string_new
 argument_list|(
-name|home
+name|g_get_home_dir
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|g_string_append
