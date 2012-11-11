@@ -448,7 +448,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tile_cache_ntiles:  * @ntiles: number of tiles that should fit into the cache  *  * Sets the size of the tile cache on the plug-in side. This function  * is similar to gimp_tile_cache_size() but allows to specify the  * number of tiles directly.  *  * If your plug-in access pixels tile-by-tile, it doesn't need a tile  * cache at all. If however the plug-in accesses drawable pixel data  * row-by-row, it should set the tile cache large enough to hold the  * number of tiles per row. Double this size if your plug-in uses  * shadow tiles.  **/
+comment|/**  * gimp_tile_cache_ntiles:  * @ntiles: number of tiles that should fit into the cache  *  * Sets the size of the tile cache on the plug-in side. This function  * is similar to gimp_tile_cache_size() but supports specifying the  * number of tiles directly.  *  * If your plug-in access pixels tile-by-tile, it doesn't need a tile  * cache at all. If however the plug-in accesses drawable pixel data  * row-by-row, it should set the tile cache large enough to hold the  * number of tiles per row. Double this size if your plug-in uses  * shadow tiles.  **/
 end_comment
 
 begin_function

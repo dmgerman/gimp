@@ -3322,7 +3322,7 @@ literal|"gimp-palette-set-columns"
 argument_list|,
 literal|"Sets the number of columns to use when displaying the palette"
 argument_list|,
-literal|"This procedures allows to control how many colors are shown per row when the palette is being displayed. This value can only be changed if the palette is writable. The maximum allowed value is 64."
+literal|"This procedures controls how many colors are shown per row when the palette is being displayed. This value can only be changed if the palette is writable. The maximum allowed value is 64."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,

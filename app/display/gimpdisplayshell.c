@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b40ec7b0103
+DECL|enum|__anon28efd6270103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -363,7 +363,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b40ec7b0203
+DECL|enum|__anon28efd6270203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -7155,7 +7155,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_set_highlight:  * @shell:     a #GimpDisplayShell  * @highlight: a rectangle in image coordinates that should be brought out  *  * This function allows to set an area of the image that should be  * accentuated. The actual implementation is to dim all pixels outside  * this rectangle. Passing %NULL for @highlight unsets the rectangle.  **/
+comment|/**  * gimp_display_shell_set_highlight:  * @shell:     a #GimpDisplayShell  * @highlight: a rectangle in image coordinates that should be brought out  *  * This function sets an area of the image that should be  * accentuated. The actual implementation is to dim all pixels outside  * this rectangle. Passing %NULL for @highlight unsets the rectangle.  **/
 end_comment
 
 begin_function
@@ -7249,7 +7249,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_set_mask:  * @shell: a #GimpDisplayShell  * @mask:  a #GimpDrawable (1 byte per pixel)  * @color: the color to use for drawing the mask  *  * Allows to preview a selection (used by the foreground selection  * tool).  Pixels that are not selected (> 127) in the mask are tinted  * with the given color.  **/
+comment|/**  * gimp_display_shell_set_mask:  * @shell: a #GimpDisplayShell  * @mask:  a #GimpDrawable (1 byte per pixel)  * @color: the color to use for drawing the mask  *  * Previews a selection (used by the foreground selection tool).  * Pixels that are not selected (> 127) in the mask are tinted with  * the given color.  **/
 end_comment
 
 begin_function

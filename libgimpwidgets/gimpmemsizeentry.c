@@ -40,12 +40,12 @@ file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpmemsizeentry  * @title: GimpMemSizeEntry  * @short_description: A composite widget that allows to enter a memory size.  *  * Similar to a #GimpSizeEntry but instead of lengths, this widget is  * used to let the user enter memory sizes. An option menu allows to  * switch between Kilobytes, Megabytes and Gigabytes. Used in the GIMP  * preferences dialog.  **/
+comment|/**  * SECTION: gimpmemsizeentry  * @title: GimpMemSizeEntry  * @short_description: A composite widget to enter a memory size.  *  * Similar to a #GimpSizeEntry but instead of lengths, this widget is  * used to let the user enter memory sizes. A combo box allows one to  * switch between Kilobytes, Megabytes and Gigabytes. Used in the GIMP  * preferences dialog.  **/
 end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dea36d0103
+DECL|enum|__anon2c4bab170103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED

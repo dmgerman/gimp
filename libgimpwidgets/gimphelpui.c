@@ -46,7 +46,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bab7acd0103
+DECL|enum|__anon2c25b53e0103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TOOLTIP
 name|GIMP_WIDGET_HELP_TOOLTIP
@@ -586,7 +586,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_help_set_help_data_with_markup:  * @widget:  The #GtkWidget you want to set a @tooltip and/or @help_id for.  * @tooltip: The markup for this widget's tooltip (or %NULL).  * @help_id: The @help_id for the #GtkTipsQuery tooltips inspector.  *  * Just like gimp_help_set_help_data(), but it allows to pass text which  * is marked up with  *<link linkend="PangoMarkupFormat">Pango text markup language</link>.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_help_set_help_data_with_markup:  * @widget:  The #GtkWidget you want to set a @tooltip and/or @help_id for.  * @tooltip: The markup for this widget's tooltip (or %NULL).  * @help_id: The @help_id for the #GtkTipsQuery tooltips inspector.  *  * Just like gimp_help_set_help_data(), but supports to pass text  * which is marked up with<link linkend="PangoMarkupFormat">Pango  * text markup language</link>.  *  * Since: GIMP 2.6  **/
 end_comment
 
 begin_function

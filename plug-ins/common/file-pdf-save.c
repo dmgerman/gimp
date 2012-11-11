@@ -12,7 +12,7 @@ comment|/* Known Issues (except for the coding style issues):  * 1. Grayscale la
 end_comment
 
 begin_comment
-comment|/* Changelog  *  * April 29, 2009 | Barak Itkin<lightningismyname@gmail.com>  *   First version of the plugin. This is only a proof of concept and not a full  *   working plugin.  *  * May 6, 2009 Barak | Itkin<lightningismyname@gmail.com>  *   Added new features and several bugfixes:  *   - Added handling for image resolutions  *   - fixed the behaviour of getting font sizes  *   - Added various optimizations (solid rectangles instead of bitmaps, ignoring  *     invisible layers, etc.) as a macro flag.  *   - Added handling for layer masks, use CAIRO_FORMAT_A8 for grayscale drawables.  *   - Indexed layers are now supported  *  * August 17, 2009 | Barak Itkin<lightningismyname@gmail.com>  *   Most of the plugin was rewritten from scratch and it now has several new  *   features:  *   - Got rid of the optimization macros in the code. The gui now allows to  *     select which optimizations to apply.  *   - Added a procedure to allow the creation of multiple paged PDF's  *   - Registered the plugin on "<Image>/File/Create/PDF"  *  * August 21, 2009 | Barak Itkin<lightningismyname@gmail.com>  *   Fixed a typo that prevented the plugin from compiling...  *   A migration to the new GIMP 2.8 api, which includes:  *   - Now using gimp_export_dialog_new  *   - Using gimp_text_layer_get_hint_style (2.8) instead of the depreceated  *     gimp_text_layer_get_hinting (2.6).  *  * August 24, 2010 | Barak Itkin<lightningismyname@gmail.com>  *   More migrations to the new GIMP 2.8 api:  *   - Now using the GimpItem api  *   - Using gimp_text_layer_get_markup where possible  *   - Fixed some compiler warnings  *   Also merged the header and c file into one file, Updated some of the comments  *   and documentation, and moved this into the main source repository.  */
+comment|/* Changelog  *  * April 29, 2009 | Barak Itkin<lightningismyname@gmail.com>  *   First version of the plugin. This is only a proof of concept and not a full  *   working plugin.  *  * May 6, 2009 Barak | Itkin<lightningismyname@gmail.com>  *   Added new features and several bugfixes:  *   - Added handling for image resolutions  *   - fixed the behaviour of getting font sizes  *   - Added various optimizations (solid rectangles instead of bitmaps, ignoring  *     invisible layers, etc.) as a macro flag.  *   - Added handling for layer masks, use CAIRO_FORMAT_A8 for grayscale drawables.  *   - Indexed layers are now supported  *  * August 17, 2009 | Barak Itkin<lightningismyname@gmail.com>  *   Most of the plugin was rewritten from scratch and it now has several new  *   features:  *   - Got rid of the optimization macros in the code. The gui now supports  *     selecting which optimizations to apply.  *   - Added a procedure to allow the creation of multiple paged PDF's  *   - Registered the plugin on "<Image>/File/Create/PDF"  *  * August 21, 2009 | Barak Itkin<lightningismyname@gmail.com>  *   Fixed a typo that prevented the plugin from compiling...  *   A migration to the new GIMP 2.8 api, which includes:  *   - Now using gimp_export_dialog_new  *   - Using gimp_text_layer_get_hint_style (2.8) instead of the depreceated  *     gimp_text_layer_get_hinting (2.6).  *  * August 24, 2010 | Barak Itkin<lightningismyname@gmail.com>  *   More migrations to the new GIMP 2.8 api:  *   - Now using the GimpItem api  *   - Using gimp_text_layer_get_markup where possible  *   - Fixed some compiler warnings  *   Also merged the header and c file into one file, Updated some of the comments  *   and documentation, and moved this into the main source repository.  */
 end_comment
 
 begin_include
@@ -142,7 +142,7 @@ value|120
 end_define
 
 begin_typedef
-DECL|struct|__anon2a1bc60c0108
+DECL|struct|__anon2bae9ab70108
 typedef|typedef
 struct|struct
 block|{
@@ -165,7 +165,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a1bc60c0208
+DECL|struct|__anon2bae9ab70208
 typedef|typedef
 struct|struct
 block|{
@@ -194,7 +194,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a1bc60c0308
+DECL|struct|__anon2bae9ab70308
 typedef|typedef
 struct|struct
 block|{
@@ -214,7 +214,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2a1bc60c0403
+DECL|enum|__anon2bae9ab70403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -233,7 +233,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2a1bc60c0508
+DECL|struct|__anon2bae9ab70508
 typedef|typedef
 struct|struct
 block|{
@@ -607,7 +607,7 @@ argument_list|()
 end_macro
 
 begin_typedef
-DECL|enum|__anon2a1bc60c0603
+DECL|enum|__anon2bae9ab70603
 typedef|typedef
 enum|enum
 block|{
@@ -652,7 +652,7 @@ value|5
 end_define
 
 begin_typedef
-DECL|enum|__anon2a1bc60c0703
+DECL|enum|__anon2bae9ab70703
 typedef|typedef
 enum|enum
 block|{

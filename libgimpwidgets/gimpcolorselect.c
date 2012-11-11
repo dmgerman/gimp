@@ -88,7 +88,7 @@ file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpcolorselect  * @title: GimpColorSelect  * @short_description: A #GimpColorSelector implementation.  *  * The #GimpColorSelect widget is an implementation of a  * #GimpColorSelector. It shows a square area that allows to  * interactively change two color channels and a smaller area to  * change the third channel. You can select which channel should be  * the third by calling gimp_color_selector_set_channel(). The widget  * will then change the other two channels accordingly.  **/
+comment|/**  * SECTION: gimpcolorselect  * @title: GimpColorSelect  * @short_description: A #GimpColorSelector implementation.  *  * The #GimpColorSelect widget is an implementation of a  * #GimpColorSelector. It shows a square area that supports  * interactively changing two color channels and a smaller area to  * change the third channel. You can select which channel should be  * the third by calling gimp_color_selector_set_channel(). The widget  * will then change the other two channels accordingly.  **/
 end_comment
 
 begin_define
@@ -102,7 +102,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aefdec60103
+DECL|enum|__anon29c5339a0103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -153,7 +153,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aefdec60203
+DECL|enum|__anon29c5339a0203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -198,7 +198,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aefdec60303
+DECL|enum|__anon29c5339a0303
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE

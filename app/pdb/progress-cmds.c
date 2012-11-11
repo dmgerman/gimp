@@ -1369,7 +1369,7 @@ literal|"gimp-progress-set-text"
 argument_list|,
 literal|"Changes the text in the progress bar for the current plug-in."
 argument_list|,
-literal|"This function allows to change the text in the progress bar for the current plug-in. Unlike 'gimp-progress-init' it does not change the displayed value."
+literal|"This function changes the text in the progress bar for the current plug-in. Unlike 'gimp-progress-init' it does not change the displayed value."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,

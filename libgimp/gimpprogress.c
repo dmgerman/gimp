@@ -49,7 +49,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277477d10108
+DECL|struct|__anon2aba63920108
 block|{
 DECL|member|progress_callback
 name|gchar
@@ -781,7 +781,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_progress_set_text_printf:  * @format: a standard printf() format string  * @...: arguments for @format  *  * Changes the text in the progress bar for the current plug-in.  *  * This function allows to change the text in the progress bar for the  * current plug-in. Unlike gimp_progress_init() it does not change the  * displayed value.  *  * Returns: %TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_progress_set_text_printf:  * @format: a standard printf() format string  * @...: arguments for @format  *  * Changes the text in the progress bar for the current plug-in.  *  * This function changes the text in the progress bar for the current  * plug-in. Unlike gimp_progress_init() it does not change the  * displayed value.  *  * Returns: %TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function

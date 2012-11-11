@@ -349,7 +349,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b26bdcd0103
+DECL|enum|__anon29f2a6b70103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -368,7 +368,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b26bdcd0208
+DECL|struct|__anon29f2a6b70208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -753,7 +753,7 @@ argument_list|(
 literal|"Create an image from an area of the screen"
 argument_list|)
 argument_list|,
-literal|"The plug-in allows to take screenshots of an "
+literal|"The plug-in takes screenshots of an "
 literal|"interactively selected window or of the desktop, "
 literal|"either the whole desktop or an interactively "
 literal|"selected region. When called non-interactively, it "

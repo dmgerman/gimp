@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a7087a0103
+DECL|enum|__anon2930046d0103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a7087a0203
+DECL|enum|__anon2930046d0203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -152,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a7087a0308
+DECL|struct|__anon2930046d0308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -183,7 +183,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a7087a0408
+DECL|struct|__anon2930046d0408
 block|{
 DECL|member|menu
 name|gchar
@@ -425,8 +425,8 @@ argument_list|(
 literal|"Display information about plug-ins"
 argument_list|)
 argument_list|,
-literal|"Allows to browse the plug-in menus system. You can "
-literal|"search for plug-in names, sort by name or menu "
+literal|"Allows one to browse the plug-in menus system. You "
+literal|"can search for plug-in names, sort by name or menu "
 literal|"location and you can view a tree representation "
 literal|"of the plug-in menus. Can also be of help to find "
 literal|"where new plug-ins have installed themselves in "

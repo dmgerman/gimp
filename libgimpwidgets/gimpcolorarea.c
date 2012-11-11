@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0ba3d30103
+DECL|enum|__anon2949a6a40103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0ba3d30203
+DECL|enum|__anon2949a6a40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1602,7 +1602,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_area_set_type:  * @area: Pointer to a #GimpColorArea.  * @type: A #GimpColorAreaType.  *  * Allows to change the type of @area. The #GimpColorAreaType determines  * whether the widget shows transparency information and chooses the size of  * the checkerboard used to do that.  **/
+comment|/**  * gimp_color_area_set_type:  * @area: Pointer to a #GimpColorArea.  * @type: A #GimpColorAreaType.  *  * Changes the type of @area. The #GimpColorAreaType determines  * whether the widget shows transparency information and chooses the  * size of the checkerboard used to do that.  **/
 end_comment
 
 begin_function
@@ -1670,7 +1670,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_area_set_draw_border:  * @area: Pointer to a #GimpColorArea.  * @draw_border: whether to draw a border or not  *  * The @area can draw a thin border in the foreground color around  * itself.  This function allows to toggle this behaviour on and  * off. The default is not draw a border.  **/
+comment|/**  * gimp_color_area_set_draw_border:  * @area: Pointer to a #GimpColorArea.  * @draw_border: whether to draw a border or not  *  * The @area can draw a thin border in the foreground color around  * itself.  This function toggles this behaviour on and off. The  * default is not draw a border.  **/
 end_comment
 
 begin_function

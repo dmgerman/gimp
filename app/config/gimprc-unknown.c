@@ -60,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2750d7eb0108
+DECL|struct|__anon2ac162780108
 block|{
 DECL|member|key
 name|gchar
@@ -91,7 +91,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_rc_add_unknown_token:  * @config: a #GObject.  * @key: a nul-terminated string to identify the value.  * @value: a nul-terminated string representing the value.  *  * This function allows to add arbitrary key/value pairs to a GObject.  * It's purpose is to attach additional data to a #GimpConfig object  * that can be stored along with the object properties when  * serializing the object to a configuration file. Please note however  * that the default gimp_config_serialize() implementation does not  * serialize unknown tokens.  *  * If you want to remove a key/value pair from the object, call this  * function with a %NULL @value.  **/
+comment|/**  * gimp_rc_add_unknown_token:  * @config: a #GObject.  * @key: a nul-terminated string to identify the value.  * @value: a nul-terminated string representing the value.  *  * This function adds arbitrary key/value pairs to a GObject.  It's  * purpose is to attach additional data to a #GimpConfig object that  * can be stored along with the object properties when serializing the  * object to a configuration file. Please note however that the  * default gimp_config_serialize() implementation does not serialize  * unknown tokens.  *  * If you want to remove a key/value pair from the object, call this  * function with a %NULL @value.  **/
 end_comment
 
 begin_function

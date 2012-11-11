@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c64049f0103
+DECL|enum|__anon29e1a3590103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -59,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c64049f0208
+DECL|struct|__anon29e1a3590208
 block|{
 DECL|member|user_data_type
 name|GType
@@ -289,7 +289,7 @@ name|get_property
 operator|=
 name|gimp_int_store_get_property
 expr_stmt|;
-comment|/**    * GimpIntStore:user-data-type:    *    * Allows to set the #GType for the GIMP_INT_STORE_USER_DATA column.    *    * You need to set this property when constructing the store if you want    * to use the GIMP_INT_STORE_USER_DATA column and want to have the store    * handle ref-counting of your user data.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpIntStore:user-data-type:    *    * Sets the #GType for the GIMP_INT_STORE_USER_DATA column.    *    * You need to set this property when constructing the store if you want    * to use the GIMP_INT_STORE_USER_DATA column and want to have the store    * handle ref-counting of your user data.    *    * Since: GIMP 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class

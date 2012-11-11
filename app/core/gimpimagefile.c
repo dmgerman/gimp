@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae81e230103
+DECL|enum|__anon2c06f70b0103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -1535,7 +1535,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  The weak version doesn't ref the imagefile but deals gracefully  *  with an imagefile that is destroyed while the thumbnail is  *  created. Thia allows to use this function w/o the need to block  *  the user interface.  */
+comment|/*  The weak version doesn't ref the imagefile but deals gracefully  *  with an imagefile that is destroyed while the thumbnail is  *  created. Thia allows one to use this function w/o the need to  *  block the user interface.  */
 end_comment
 
 begin_function

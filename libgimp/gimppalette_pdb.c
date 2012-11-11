@@ -743,7 +743,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_set_columns:  * @name: The palette name.  * @columns: The new number of columns.  *  * Sets the number of columns to use when displaying the palette  *  * This procedures allows to control how many colors are shown per row  * when the palette is being displayed. This value can only be changed  * if the palette is writable. The maximum allowed value is 64.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_palette_set_columns:  * @name: The palette name.  * @columns: The new number of columns.  *  * Sets the number of columns to use when displaying the palette  *  * This procedures controls how many colors are shown per row when the  * palette is being displayed. This value can only be changed if the  * palette is writable. The maximum allowed value is 64.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function

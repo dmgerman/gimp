@@ -91,7 +91,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb21ab10103
+DECL|enum|__anon295976950103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -104,7 +104,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb21ab10203
+DECL|enum|__anon295976950203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -1465,7 +1465,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_menu_set_pixel_digits:  * @menu: a #GimpUnitMenu  * @digits: the number of digits to display for a pixel size  *  * A GimpUnitMenu can be setup to control the number of digits shown  * by attached spinbuttons. Please refer to the documentation of  * gimp_unit_menu_update() to see how this is done.  *  * This function allows to specify the number of digits shown for a  * size in pixels. Usually this is 0 (only full pixels). If you want  * to allow the user to specify sub-pixel sizes using the attached  * spinbuttons, specify the number of digits after the decimal point  * here. You should do this after attaching your spinbuttons.  **/
+comment|/**  * gimp_unit_menu_set_pixel_digits:  * @menu: a #GimpUnitMenu  * @digits: the number of digits to display for a pixel size  *  * A GimpUnitMenu can be setup to control the number of digits shown  * by attached spinbuttons. Please refer to the documentation of  * gimp_unit_menu_update() to see how this is done.  *  * This function specifies the number of digits shown for a size in  * pixels. Usually this is 0 (only full pixels). If you want to allow  * the user to specify sub-pixel sizes using the attached spinbuttons,  * specify the number of digits after the decimal point here. You  * should do this after attaching your spinbuttons.  **/
 end_comment
 
 begin_function

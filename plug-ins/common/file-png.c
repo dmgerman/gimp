@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ef2e9d0108
+DECL|struct|__anon2be45c8d0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ef2e9d0208
+DECL|struct|__anon2be45c8d0208
 block|{
 DECL|member|run
 name|gboolean
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ef2e9d0308
+DECL|struct|__anon2be45c8d0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -844,7 +844,7 @@ argument_list|,
 literal|"This plug-in saves Portable Network Graphics "
 literal|"(PNG) files. "
 literal|"This procedure adds 2 extra parameters to "
-literal|"file-png-save that allows to control whether "
+literal|"file-png-save that control whether "
 literal|"image comments are saved and whether transparent "
 literal|"pixels are saved or nullified."
 argument_list|,

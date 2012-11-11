@@ -145,7 +145,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b374310108
+DECL|struct|__anon2bb71d130108
 block|{
 DECL|member|name
 specifier|const
@@ -2007,7 +2007,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_list_names:  * @names:  return location for an array of color names  * @colors: return location for an array of GimpRGB structs  *  * Allows to retrieve the list of<ulink  * url="http://www.w3.org/TR/SVG/types.html">SVG 1.0 color  * keywords</ulink> that is used by gimp_rgb_parse_name().  *  * The returned strings are const and must not be freed. Only the two  * arrays are allocated dynamically. You must call g_free() on the  * @names and @colors arrays when they are not any longer needed.  *  * Return value: the number of named colors  *               (i.e. the length of the returned arrays)  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_rgb_list_names:  * @names:  return location for an array of color names  * @colors: return location for an array of GimpRGB structs  *  * Returns the list of<ulink  * url="http://www.w3.org/TR/SVG/types.html">SVG 1.0 color  * keywords</ulink> that is used by gimp_rgb_parse_name().  *  * The returned strings are const and must not be freed. Only the two  * arrays are allocated dynamically. You must call g_free() on the  * @names and @colors arrays when they are not any longer needed.  *  * Return value: the number of named colors  *               (i.e. the length of the returned arrays)  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function

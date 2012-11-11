@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aea048a0103
+DECL|enum|__anon2c35878d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9270,7 +9270,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_area_menu_popup:  * @area:  a #GimpPreviewArea  * @event: the button event that causes the menu to popup or %NULL  *  * Creates a popup menu that allows to configure the size and type of  * the checkerboard pattern that the @area uses to visualize transparency.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_preview_area_menu_popup:  * @area:  a #GimpPreviewArea  * @event: the button event that causes the menu to popup or %NULL  *  * Creates a popup menu that allows one to configure the size and type of  * the checkerboard pattern that the @area uses to visualize transparency.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
