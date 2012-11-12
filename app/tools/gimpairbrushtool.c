@@ -287,8 +287,10 @@ name|config
 argument_list|,
 literal|"rate"
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"airbrush-tool"
+argument_list|,
 literal|"Rate"
 argument_list|)
 argument_list|,
