@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f53ee70103
+DECL|enum|__anon2bb95af70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f53ee70203
+DECL|enum|__anon2bb95af70203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -826,15 +826,6 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -2172,7 +2163,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f53ee70308
+DECL|struct|__anon2bb95af70308
 block|{
 DECL|member|x
 name|guint

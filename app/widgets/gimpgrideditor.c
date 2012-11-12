@@ -107,7 +107,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0acc7f0103
+DECL|enum|__anon2b8e43ac0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -438,15 +438,6 @@ name|GtkWidget
 modifier|*
 name|sizeentry
 decl_stmt|;
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

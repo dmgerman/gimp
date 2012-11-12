@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab9748c0103
+DECL|enum|__anon29e127ae0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab9748c0203
+DECL|enum|__anon29e127ae0203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -695,15 +695,6 @@ operator|=
 literal|0
 expr_stmt|;
 comment|/* undo hack from init() */
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

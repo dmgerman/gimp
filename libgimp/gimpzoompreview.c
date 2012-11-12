@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2e55650103
+DECL|enum|__anon296eea9b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2e55650208
+DECL|struct|__anon296eea9b0208
 block|{
 DECL|member|update
 name|gboolean
@@ -774,15 +774,6 @@ decl_stmt|;
 name|PreviewSettings
 name|settings
 decl_stmt|;
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

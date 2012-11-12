@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcd9af40103
+DECL|enum|__anon2c6072700103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -59,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcd9af40208
+DECL|struct|__anon2c6072700208
 block|{
 DECL|member|id_column
 name|gint
@@ -349,15 +349,6 @@ name|GtkCellRenderer
 modifier|*
 name|cell
 decl_stmt|;
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

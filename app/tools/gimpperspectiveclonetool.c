@@ -123,7 +123,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2748ea6b0103
+DECL|enum|__anon2b8d80620103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -742,15 +742,6 @@ name|GimpPerspectiveCloneOptions
 modifier|*
 name|options
 decl_stmt|;
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dca73a0103
+DECL|enum|__anon2b9cd3840103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -52,7 +52,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dca73a0203
+DECL|enum|__anon2b9cd3840203
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
@@ -435,15 +435,6 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

@@ -165,7 +165,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29dfee370103
+DECL|enum|__anon29b296bb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -995,15 +995,6 @@ name|GdkRectangle
 name|popup_rect
 decl_stmt|;
 comment|/* best popup rect in screen coordinates */
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

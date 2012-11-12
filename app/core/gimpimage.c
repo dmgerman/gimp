@@ -358,7 +358,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon278b2ea10103
+DECL|enum|__anon291706ba0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -455,7 +455,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon278b2ea10203
+DECL|enum|__anon291706ba0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3189,15 +3189,6 @@ name|GimpTemplate
 modifier|*
 name|template
 decl_stmt|;
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

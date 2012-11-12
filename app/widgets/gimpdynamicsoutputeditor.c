@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c573b30103
+DECL|enum|__anon2ba9f7cb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -106,7 +106,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c573b30203
+DECL|enum|__anon2ba9f7cb0203
 block|{
 DECL|enumerator|INPUT_COLUMN_INDEX
 name|INPUT_COLUMN_INDEX
@@ -128,7 +128,7 @@ end_enum
 
 begin_struct
 struct|struct
-DECL|struct|__anon27c573b30308
+DECL|struct|__anon2ba9f7cb0308
 block|{
 DECL|member|use_property
 specifier|const
@@ -725,15 +725,6 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b33672b0103
+DECL|enum|__anon2b56aa450103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -862,15 +862,6 @@ name|GimpContext
 modifier|*
 name|user_context
 decl_stmt|;
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290276f40103
+DECL|enum|__anon2a96e7d00103
 block|{
 DECL|enumerator|FILE_DIALOG_SETUP
 name|FILE_DIALOG_SETUP
@@ -120,7 +120,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon290276f40203
+DECL|enum|__anon2a96e7d00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -985,15 +985,6 @@ name|GtkWidget
 modifier|*
 name|arrow
 decl_stmt|;
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

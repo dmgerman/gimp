@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4e57b30103
+DECL|enum|__anon2af9b2f10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4e57b30203
+DECL|enum|__anon2af9b2f10203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -108,7 +108,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4e57b30308
+DECL|struct|__anon2af9b2f10308
 block|{
 DECL|member|config
 name|GimpColorConfig
@@ -529,15 +529,6 @@ modifier|*
 name|object
 parameter_list|)
 block|{
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

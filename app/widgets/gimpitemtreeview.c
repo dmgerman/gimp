@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3a2ab20103
+DECL|enum|__anon2a03accc0103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1492,15 +1492,6 @@ decl_stmt|;
 name|GtkIconSize
 name|icon_size
 decl_stmt|;
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

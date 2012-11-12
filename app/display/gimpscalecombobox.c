@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bac964e0103
+DECL|enum|__anon290c5f8d0103
 block|{
 DECL|enumerator|COLUMN_SCALE
 name|COLUMN_SCALE
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bac964e0203
+DECL|enum|__anon290c5f8d0203
 block|{
 DECL|enumerator|ENTRY_ACTIVATED
 name|ENTRY_ACTIVATED
@@ -433,15 +433,6 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

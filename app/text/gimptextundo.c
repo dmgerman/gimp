@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd154520103
+DECL|enum|__anon2b0c88880103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -346,15 +346,6 @@ name|GimpTextLayer
 modifier|*
 name|layer
 decl_stmt|;
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

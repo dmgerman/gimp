@@ -53,7 +53,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291db8fb0103
+DECL|enum|__anon278fe2a20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -67,7 +67,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291db8fb0208
+DECL|struct|__anon278fe2a20208
 block|{
 DECL|member|x
 name|gint
@@ -436,15 +436,6 @@ decl_stmt|;
 name|PreviewSettings
 name|settings
 decl_stmt|;
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

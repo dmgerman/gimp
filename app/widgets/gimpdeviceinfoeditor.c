@@ -81,7 +81,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2ea2ce0103
+DECL|enum|__anon29c16c870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2ea2ce0203
+DECL|enum|__anon29c16c870203
 block|{
 DECL|enumerator|AXIS_COLUMN_INDEX
 name|AXIS_COLUMN_INDEX
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2ea2ce0303
+DECL|enum|__anon29c16c870303
 block|{
 DECL|enumerator|INPUT_COLUMN_INDEX
 name|INPUT_COLUMN_INDEX
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2ea2ce0403
+DECL|enum|__anon29c16c870403
 block|{
 DECL|enumerator|KEY_COLUMN_INDEX
 name|KEY_COLUMN_INDEX
@@ -1293,15 +1293,6 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

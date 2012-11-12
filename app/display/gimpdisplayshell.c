@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b24c2a40103
+DECL|enum|__anon2925e6f80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -363,7 +363,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b24c2a40203
+DECL|enum|__anon2925e6f80203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1477,15 +1477,6 @@ decl_stmt|;
 name|gint
 name|shell_height
 decl_stmt|;
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

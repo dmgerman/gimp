@@ -1460,7 +1460,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2eeb420103
+DECL|enum|__anon2793f0da0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1474,7 +1474,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2eeb420203
+DECL|enum|__anon2793f0da0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -3272,15 +3272,6 @@ name|GimpContainer
 modifier|*
 name|container
 decl_stmt|;
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

@@ -133,7 +133,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1d15620103
+DECL|enum|__anon2a3b0bbf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -668,15 +668,6 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

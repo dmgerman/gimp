@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296ccd210103
+DECL|enum|__anon275fe7470103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -378,15 +378,6 @@ modifier|*
 name|object
 parameter_list|)
 block|{
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -1649,7 +1640,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296ccd210208
+DECL|struct|__anon275fe7470208
 block|{
 DECL|member|view_size
 name|gint

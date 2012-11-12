@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296177ec0103
+DECL|enum|__anon29dafb4e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -618,15 +618,6 @@ name|gchar
 modifier|*
 name|signal_name
 decl_stmt|;
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

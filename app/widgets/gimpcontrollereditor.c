@@ -114,7 +114,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon280055e00103
+DECL|enum|__anon2c2ff7920103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -130,7 +130,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon280055e00203
+DECL|enum|__anon2c2ff7920203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -660,15 +660,6 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

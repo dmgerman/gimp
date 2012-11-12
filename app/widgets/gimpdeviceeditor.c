@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c78a16f0103
+DECL|enum|__anon2c0224de0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -987,15 +987,6 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

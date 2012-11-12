@@ -1643,15 +1643,6 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -2266,7 +2257,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c144e830108
+DECL|struct|__anon2b685f510108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2660,7 +2651,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c144e830208
+DECL|struct|__anon2b685f510208
 block|{
 DECL|member|mask_column
 name|gint

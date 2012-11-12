@@ -162,7 +162,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0627f70103
+DECL|enum|__anon2870a3870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -597,15 +597,6 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

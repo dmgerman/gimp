@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad869050103
+DECL|enum|__anon2ad1edee0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -87,7 +87,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad869050203
+DECL|enum|__anon2ad1edee0203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -412,15 +412,6 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructed
-condition|)
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
