@@ -92,9 +92,17 @@ name|GIMP_MAX_NUM_THREADS
 value|16
 end_define
 
+begin_define
+DECL|macro|GIMP_MAX_MEM_PROCESS
+define|#
+directive|define
+name|GIMP_MAX_MEM_PROCESS
+value|(MIN (G_MAXSIZE, GIMP_MAX_MEMSIZE))
+end_define
+
 begin_enum
 enum|enum
-DECL|enum|__anon2c4041ff0103
+DECL|enum|__anon2954890e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -447,7 +455,7 @@ name|memory_size
 operator|=
 name|MIN
 argument_list|(
-name|G_MAXSIZE
+name|GIMP_MAX_MEM_PROCESS
 argument_list|,
 name|memory_size
 argument_list|)
@@ -485,12 +493,7 @@ name|TILE_CACHE_SIZE_BLURB
 argument_list|,
 literal|0
 argument_list|,
-name|MIN
-argument_list|(
-name|G_MAXSIZE
-argument_list|,
-name|GIMP_MAX_MEMSIZE
-argument_list|)
+name|GIMP_MAX_MEM_PROCESS
 argument_list|,
 name|memory_size
 argument_list|,
