@@ -2011,7 +2011,10 @@ argument_list|)
 argument_list|,
 name|GTK_WINDOW
 argument_list|(
+name|gtk_widget_get_toplevel
+argument_list|(
 name|parent
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2212,7 +2215,10 @@ argument_list|)
 argument_list|,
 name|GTK_WINDOW
 argument_list|(
+name|gtk_widget_get_toplevel
+argument_list|(
 name|parent
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
