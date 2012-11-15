@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cc2bac0103
+DECL|enum|__anon29457d490103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -100,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cc2bac0208
+DECL|struct|__anon29457d490208
 block|{
 DECL|member|orientation
 name|GtkOrientation
@@ -180,7 +180,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28cc2bac0308
+DECL|struct|__anon29457d490308
 block|{
 DECL|member|ruler_scale
 specifier|const
@@ -2487,8 +2487,6 @@ operator||
 name|GDK_EXPOSURE_MASK
 operator||
 name|GDK_POINTER_MOTION_MASK
-operator||
-name|GDK_POINTER_MOTION_HINT_MASK
 operator|)
 expr_stmt|;
 name|attributes_mask
@@ -3042,11 +3040,6 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
-name|gdk_event_request_motions
-argument_list|(
-name|event
-argument_list|)
-expr_stmt|;
 name|gimp_ruler_update_position
 argument_list|(
 name|ruler
