@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278aff5c0103
+DECL|enum|__anon29c9e7780103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -172,6 +172,18 @@ name|void
 name|play_callback
 parameter_list|(
 name|GtkToggleAction
+modifier|*
+name|action
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|step_back_callback
+parameter_list|(
+name|GtkAction
 modifier|*
 name|action
 parameter_list|)
@@ -777,7 +789,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278aff5c0208
+DECL|struct|__anon29c9e7780208
 block|{
 DECL|member|x
 DECL|member|y
@@ -1993,6 +2005,29 @@ index|[]
 init|=
 block|{
 block|{
+literal|"step-back"
+block|,
+name|GTK_STOCK_MEDIA_PREVIOUS
+block|,
+name|N_
+argument_list|(
+literal|"_Step_back"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Step back to previous frame"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+argument|step_back_callback
+argument_list|)
+block|}
+block|,
+block|{
 literal|"step"
 block|,
 name|GTK_STOCK_MEDIA_NEXT
@@ -2310,6 +2345,7 @@ argument_list|,
 literal|"<ui>"
 literal|"<toolbar name=\"anim-play-toolbar\">"
 literal|"<toolitem action=\"play\" />"
+literal|"<toolitem action=\"step-back\" />"
 literal|"<toolitem action=\"step\" />"
 literal|"<toolitem action=\"rewind\" />"
 literal|"<separator />"
@@ -2356,6 +2392,7 @@ argument_list|,
 literal|"<ui>"
 literal|"<popup name=\"anim-play-popup\">"
 literal|"<menuitem action=\"play\" />"
+literal|"<menuitem action=\"step-back\" />"
 literal|"<menuitem action=\"step\" />"
 literal|"<menuitem action=\"rewind\" />"
 literal|"<separator />"
@@ -4307,6 +4344,46 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|do_back_step (void)
+name|do_back_step
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+name|frame_number
+operator|==
+literal|0
+condition|)
+name|frame_number
+operator|=
+name|total_frames
+operator|-
+literal|1
+expr_stmt|;
+else|else
+name|frame_number
+operator|=
+operator|(
+name|frame_number
+operator|-
+literal|1
+operator|)
+operator|%
+name|total_frames
+expr_stmt|;
+name|render_frame
+argument_list|(
+name|frame_number
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
 DECL|function|do_step (void)
 name|do_step
 parameter_list|(
@@ -4664,6 +4741,40 @@ return|return
 literal|10
 return|;
 block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|step_back_callback (GtkAction * action)
+name|step_back_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|)
+block|{
+if|if
+condition|(
+name|playing
+condition|)
+name|gtk_action_activate
+argument_list|(
+name|gtk_ui_manager_get_action
+argument_list|(
+name|ui_manager
+argument_list|,
+literal|"/anim-play-toolbar/play"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|do_back_step
+argument_list|()
+expr_stmt|;
+name|show_frame
+argument_list|()
+expr_stmt|;
 block|}
 end_function
 
@@ -5757,6 +5868,22 @@ name|gtk_ui_manager_get_action
 argument_list|(
 name|ui_manager
 argument_list|,
+literal|"/ui/anim-play-toolbar/step-back"
+argument_list|)
+expr_stmt|;
+name|gtk_action_set_sensitive
+argument_list|(
+name|action
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|action
+operator|=
+name|gtk_ui_manager_get_action
+argument_list|(
+name|ui_manager
+argument_list|,
 literal|"/ui/anim-play-toolbar/step"
 argument_list|)
 expr_stmt|;
@@ -5793,6 +5920,22 @@ argument_list|(
 name|ui_manager
 argument_list|,
 literal|"/ui/anim-play-toolbar/play"
+argument_list|)
+expr_stmt|;
+name|gtk_action_set_sensitive
+argument_list|(
+name|action
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|action
+operator|=
+name|gtk_ui_manager_get_action
+argument_list|(
+name|ui_manager
+argument_list|,
+literal|"/ui/anim-play-toolbar/step-back"
 argument_list|)
 expr_stmt|;
 name|gtk_action_set_sensitive
