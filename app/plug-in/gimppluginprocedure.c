@@ -114,7 +114,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e600ed0103
+DECL|enum|__anon2b77fe310103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -3988,6 +3988,33 @@ name|g_strdup
 argument_list|(
 name|mime_type
 argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_plug_in_procedure_set_handles_uri (GimpPlugInProcedure * proc)
+name|gimp_plug_in_procedure_set_handles_uri
+parameter_list|(
+name|GimpPlugInProcedure
+modifier|*
+name|proc
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_PLUG_IN_PROCEDURE
+argument_list|(
+name|proc
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|proc
+operator|->
+name|handles_uri
+operator|=
+name|TRUE
 expr_stmt|;
 block|}
 end_function

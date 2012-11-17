@@ -254,6 +254,18 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_register_file_handler_uri
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|procedure_name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_register_thumbnail_loader
 parameter_list|(
 specifier|const
