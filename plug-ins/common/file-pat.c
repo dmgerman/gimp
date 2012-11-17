@@ -114,10 +114,9 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -132,10 +131,9 @@ specifier|static
 name|gboolean
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gint32
 name|image_ID
@@ -233,17 +231,17 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"filename"
+literal|"uri"
 block|,
-literal|"The name of the file to load"
+literal|"The URI of the file to load"
 block|}
 block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw-filename"
+literal|"raw-uri"
 block|,
-literal|"The name of the file to load"
+literal|"The URI of the file to load"
 block|}
 block|}
 decl_stmt|;
@@ -297,17 +295,17 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"filename"
+literal|"uri"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The URI of the file to save the image in"
 block|}
 block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw-filename"
+literal|"raw-uri"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The URI of the file to save the image in"
 block|}
 block|,
 block|{
@@ -379,6 +377,11 @@ argument_list|,
 literal|"image/x-gimp-pat"
 argument_list|)
 expr_stmt|;
+name|gimp_register_file_handler_uri
+argument_list|(
+name|LOAD_PROC
+argument_list|)
+expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
 name|LOAD_PROC
@@ -445,6 +448,11 @@ argument_list|(
 name|SAVE_PROC
 argument_list|,
 literal|"image/x-gimp-pat"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_uri
+argument_list|(
+name|SAVE_PROC
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
@@ -587,6 +595,8 @@ name|image_ID
 operator|=
 name|load_image
 argument_list|(
+name|g_file_new_for_uri
+argument_list|(
 name|param
 index|[
 literal|1
@@ -595,6 +605,7 @@ operator|.
 name|data
 operator|.
 name|d_string
+argument_list|)
 argument_list|,
 operator|&
 name|error
@@ -908,6 +919,8 @@ if|if
 condition|(
 name|save_image
 argument_list|(
+name|g_file_new_for_uri
+argument_list|(
 name|param
 index|[
 literal|3
@@ -916,6 +929,7 @@ operator|.
 name|data
 operator|.
 name|d_string
+argument_list|)
 argument_list|,
 name|image_ID
 argument_list|,
@@ -1073,13 +1087,12 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (const gchar * filename,GError ** error)
+DECL|function|load_image (GFile * file,GError ** error)
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -1138,10 +1151,7 @@ name|input
 operator|=
 name|g_file_read
 argument_list|(
-name|g_file_new_for_path
-argument_list|(
-name|filename
-argument_list|)
+name|file
 argument_list|,
 name|NULL
 argument_list|,
@@ -1164,9 +1174,9 @@ argument_list|(
 literal|"Opening '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|g_file_get_parse_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1389,9 +1399,9 @@ argument_list|(
 literal|"Invalid UTF-8 string in pattern file '%s'."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|g_file_get_parse_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1496,6 +1506,11 @@ operator|.
 name|bytes
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|input
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -1565,9 +1580,9 @@ literal|"Invalid header data in '%s': width=%lu, height=%lu, "
 literal|"bytes=%lu"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|g_file_get_parse_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 operator|(
@@ -1598,6 +1613,11 @@ operator|.
 name|bytes
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|input
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -1622,7 +1642,10 @@ name|gimp_image_set_filename
 argument_list|(
 name|image_ID
 argument_list|,
-name|filename
+name|g_file_get_uri
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|parasite
@@ -1765,6 +1788,13 @@ operator|.
 name|bytes
 condition|)
 block|{
+if|if
+condition|(
+name|line
+operator|==
+literal|0
+condition|)
+block|{
 name|g_free
 argument_list|(
 name|buf
@@ -1784,6 +1814,24 @@ return|return
 operator|-
 literal|1
 return|;
+block|}
+else|else
+block|{
+name|g_message
+argument_list|(
+literal|"Returning partially loaded pattern (%d of %d lines)."
+argument_list|,
+name|line
+operator|-
+literal|1
+argument_list|,
+name|ph
+operator|.
+name|height
+argument_list|)
+expr_stmt|;
+break|break;
+block|}
 block|}
 name|gegl_buffer_set
 argument_list|(
@@ -1856,13 +1904,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,GError ** error)
+DECL|function|save_image (GFile * file,gint32 image_ID,gint32 drawable_ID,GError ** error)
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gint32
 name|image_ID
@@ -1912,10 +1959,7 @@ name|output
 operator|=
 name|g_file_replace
 argument_list|(
-name|g_file_new_for_path
-argument_list|(
-name|filename
-argument_list|)
+name|file
 argument_list|,
 name|NULL
 argument_list|,
@@ -2017,9 +2061,9 @@ argument_list|(
 literal|"Saving '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|g_file_get_parse_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
