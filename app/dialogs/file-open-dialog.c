@@ -153,11 +153,6 @@ name|gchar
 modifier|*
 name|uri
 parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|entered_filename
-parameter_list|,
 name|GimpPlugInProcedure
 modifier|*
 name|load_proc
@@ -182,11 +177,6 @@ specifier|const
 name|gchar
 modifier|*
 name|uri
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|entered_filename
 parameter_list|,
 name|GimpPlugInProcedure
 modifier|*
@@ -533,10 +523,6 @@ name|list
 operator|->
 name|data
 argument_list|,
-name|list
-operator|->
-name|data
-argument_list|,
 name|dialog
 operator|->
 name|file_proc
@@ -568,10 +554,6 @@ name|list
 operator|->
 name|data
 argument_list|,
-name|list
-operator|->
-name|data
-argument_list|,
 name|dialog
 operator|->
 name|file_proc
@@ -593,10 +575,6 @@ argument_list|(
 name|open_dialog
 argument_list|,
 name|gimp
-argument_list|,
-name|list
-operator|->
-name|data
 argument_list|,
 name|list
 operator|->
@@ -686,7 +664,7 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|file_open_dialog_open_image (GtkWidget * open_dialog,Gimp * gimp,const gchar * uri,const gchar * entered_filename,GimpPlugInProcedure * load_proc)
+DECL|function|file_open_dialog_open_image (GtkWidget * open_dialog,Gimp * gimp,const gchar * uri,GimpPlugInProcedure * load_proc)
 name|file_open_dialog_open_image
 parameter_list|(
 name|GtkWidget
@@ -701,11 +679,6 @@ specifier|const
 name|gchar
 modifier|*
 name|uri
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|entered_filename
 parameter_list|,
 name|GimpPlugInProcedure
 modifier|*
@@ -743,7 +716,7 @@ argument_list|)
 argument_list|,
 name|uri
 argument_list|,
-name|entered_filename
+name|uri
 argument_list|,
 name|FALSE
 argument_list|,
@@ -819,7 +792,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|file_open_dialog_open_layers (GtkWidget * open_dialog,GimpImage * image,const gchar * uri,const gchar * entered_filename,GimpPlugInProcedure * load_proc)
+DECL|function|file_open_dialog_open_layers (GtkWidget * open_dialog,GimpImage * image,const gchar * uri,GimpPlugInProcedure * load_proc)
 name|file_open_dialog_open_layers
 parameter_list|(
 name|GtkWidget
@@ -834,11 +807,6 @@ specifier|const
 name|gchar
 modifier|*
 name|uri
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|entered_filename
 parameter_list|,
 name|GimpPlugInProcedure
 modifier|*
