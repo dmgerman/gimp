@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bef40e80103
+DECL|enum|__anon2b8149f90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -61,7 +61,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bef40e80203
+DECL|enum|__anon2b8149f90203
 block|{
 DECL|enumerator|TARGET_NUMBER
 name|TARGET_NUMBER
@@ -526,6 +526,24 @@ argument_list|(
 name|scale
 argument_list|)
 decl_stmt|;
+name|gtk_widget_add_events
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|scale
+argument_list|)
+argument_list|,
+name|GDK_BUTTON_PRESS_MASK
+operator||
+name|GDK_BUTTON_RELEASE_MASK
+operator||
+name|GDK_POINTER_MOTION_MASK
+operator||
+name|GDK_BUTTON1_MOTION_MASK
+operator||
+name|GDK_LEAVE_NOTIFY_MASK
+argument_list|)
+expr_stmt|;
 name|gtk_entry_set_alignment
 argument_list|(
 name|GTK_ENTRY
@@ -2260,6 +2278,11 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|gdk_event_request_motions
+argument_list|(
+name|event
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|private
