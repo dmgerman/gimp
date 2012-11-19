@@ -2338,7 +2338,9 @@ name|toolbox
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_assert_cmpstr
+name|g_assert_cmpint
+argument_list|(
+name|g_str_has_prefix
 argument_list|(
 name|gtk_window_get_role
 argument_list|(
@@ -2348,12 +2350,17 @@ name|dock_window
 argument_list|)
 argument_list|)
 argument_list|,
+literal|"gimp-dock-"
+argument_list|)
+argument_list|,
 operator|==
 argument_list|,
-literal|"gimp-dock"
+name|TRUE
 argument_list|)
 expr_stmt|;
-name|g_assert_cmpstr
+name|g_assert_cmpint
+argument_list|(
+name|g_str_has_prefix
 argument_list|(
 name|gtk_window_get_role
 argument_list|(
@@ -2363,9 +2370,12 @@ name|toolbox_window
 argument_list|)
 argument_list|)
 argument_list|,
+literal|"gimp-toolbox-"
+argument_list|)
+argument_list|,
 operator|==
 argument_list|,
-literal|"gimp-toolbox"
+name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/* When we get here we have a ref count of one, but the signals we    * emit cause the reference count to become less than zero for some    * reason. So we're lazy and simply ignore to unref these   g_object_unref (toolbox);   g_object_unref (dock);    */
@@ -3047,11 +3057,15 @@ argument_list|(
 name|show_docks_in_single_window_mode
 argument_list|)
 expr_stmt|;
-name|ADD_TEST
-argument_list|(
-name|maximize_state_in_aux_data
-argument_list|)
-expr_stmt|;
+warning|#
+directive|warning
+warning|FIXME: maximize_state_in_aux_data doesn't work without WM
+if|#
+directive|if
+literal|0
+block|ADD_TEST (maximize_state_in_aux_data);
+endif|#
+directive|endif
 name|ADD_TEST
 argument_list|(
 name|switch_back_to_multi_window_mode
