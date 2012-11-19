@@ -153,11 +153,6 @@ name|gchar
 modifier|*
 name|file
 parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|brief
-parameter_list|,
 name|GError
 modifier|*
 modifier|*
@@ -175,11 +170,6 @@ specifier|const
 name|gchar
 modifier|*
 name|file
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|brief
 parameter_list|,
 name|gint32
 name|image
@@ -574,6 +564,16 @@ name|needs_palette
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
+name|gegl_init
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -584,9 +584,6 @@ operator|.
 name|data
 operator|.
 name|d_int32
-expr_stmt|;
-name|INIT_I18N
-argument_list|()
 expr_stmt|;
 comment|/* Set up default return values */
 operator|*
@@ -798,15 +795,6 @@ name|data
 operator|.
 name|d_string
 argument_list|,
-name|param
-index|[
-literal|2
-index|]
-operator|.
-name|data
-operator|.
-name|d_string
-argument_list|,
 operator|&
 name|error
 argument_list|)
@@ -927,13 +915,11 @@ name|drawable_ID
 argument_list|,
 name|NULL
 argument_list|,
-operator|(
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_ALPHA
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_INDEXED
-operator|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -967,15 +953,6 @@ argument_list|(
 name|param
 index|[
 literal|3
-index|]
-operator|.
-name|data
-operator|.
-name|d_string
-argument_list|,
-name|param
-index|[
-literal|4
 index|]
 operator|.
 name|data
@@ -1222,18 +1199,13 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (const gchar * file,const gchar * brief,GError ** error)
+DECL|function|load_image (const gchar * file,GError ** error)
 name|load_image
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|file
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|brief
 parameter_list|,
 name|GError
 modifier|*
@@ -1282,26 +1254,19 @@ decl_stmt|;
 comment|/* Layer */
 name|guchar
 modifier|*
-name|palette
-decl_stmt|,
-comment|/* 24 bit palette */
-modifier|*
-name|buffer
-decl_stmt|,
+name|buf
+decl_stmt|;
 comment|/* Temporary buffer */
+name|guchar
 modifier|*
 name|line
 decl_stmt|;
 comment|/* Pixel data */
-name|GimpDrawable
+name|GeglBuffer
 modifier|*
-name|drawable
+name|buffer
 decl_stmt|;
-comment|/* Drawable for layer */
-name|GimpPixelRgn
-name|pixel_rgn
-decl_stmt|;
-comment|/* Pixel region for layer */
+comment|/* Buffer for layer */
 name|gint
 name|i
 decl_stmt|,
@@ -1372,7 +1337,7 @@ argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|brief
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1887,39 +1852,15 @@ name|offy
 argument_list|)
 expr_stmt|;
 comment|/* Get the drawable and set the pixel region for our load... */
-name|drawable
+name|buffer
 operator|=
-name|gimp_drawable_get
+name|gimp_drawable_get_buffer
 argument_list|(
 name|layer
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_rgn_init
-argument_list|(
-operator|&
-name|pixel_rgn
-argument_list|,
-name|drawable
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|drawable
-operator|->
-name|width
-argument_list|,
-name|drawable
-operator|->
-name|height
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 comment|/* Read the image in and give it to GIMP a line at a time */
-name|buffer
+name|buf
 operator|=
 name|g_new
 argument_list|(
@@ -1977,7 +1918,7 @@ name|n_read
 operator|=
 name|fread
 argument_list|(
-name|buffer
+name|buf
 argument_list|,
 operator|(
 name|width
@@ -2044,7 +1985,7 @@ control|)
 block|{
 if|if
 condition|(
-name|buffer
+name|buf
 index|[
 name|k
 index|]
@@ -2079,7 +2020,7 @@ name|j
 index|]
 operator|=
 operator|(
-name|buffer
+name|buf
 index|[
 name|k
 index|]
@@ -2101,7 +2042,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|buffer
+name|buf
 index|[
 name|k
 index|]
@@ -2140,7 +2081,7 @@ literal|2
 index|]
 operator|=
 operator|(
-name|buffer
+name|buf
 index|[
 name|k
 index|]
@@ -2169,7 +2110,7 @@ name|n_read
 operator|=
 name|fread
 argument_list|(
-name|buffer
+name|buf
 argument_list|,
 name|width
 argument_list|,
@@ -2230,7 +2171,7 @@ control|)
 block|{
 if|if
 condition|(
-name|buffer
+name|buf
 index|[
 name|k
 index|]
@@ -2262,7 +2203,7 @@ index|[
 name|j
 index|]
 operator|=
-name|buffer
+name|buf
 index|[
 name|k
 index|]
@@ -2401,22 +2342,28 @@ operator|-
 literal|1
 return|;
 block|}
-name|gimp_pixel_rgn_set_rect
+name|gegl_buffer_set
 argument_list|(
-operator|&
-name|pixel_rgn
+name|buffer
 argument_list|,
-name|line
-argument_list|,
+name|GEGL_RECTANGLE
+argument_list|(
 literal|0
 argument_list|,
 name|i
 argument_list|,
-name|drawable
-operator|->
 name|width
 argument_list|,
 literal|1
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|NULL
+argument_list|,
+name|line
+argument_list|,
+name|GEGL_AUTO_ROWSTRIDE
 argument_list|)
 expr_stmt|;
 name|gimp_progress_update
@@ -2433,11 +2380,6 @@ name|height
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_progress_update
-argument_list|(
-literal|1.0
-argument_list|)
-expr_stmt|;
 comment|/* Close image files, give back allocated memory */
 name|fclose
 argument_list|(
@@ -2446,7 +2388,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|buffer
+name|buf
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2637,14 +2579,14 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* Now get everything redrawn and hand back the finished image */
-name|gimp_drawable_flush
+name|g_object_unref
 argument_list|(
-name|drawable
+name|buffer
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_detach
+name|gimp_progress_update
 argument_list|(
-name|drawable
+literal|1.0
 argument_list|)
 expr_stmt|;
 return|return
@@ -3262,18 +3204,13 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_image (const gchar * file,const gchar * brief,gint32 image,gint32 layer,GError ** error)
+DECL|function|save_image (const gchar * file,gint32 image,gint32 layer,GError ** error)
 name|save_image
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|file
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|brief
 parameter_list|,
 name|gint32
 name|image
@@ -3292,6 +3229,21 @@ modifier|*
 name|fp
 decl_stmt|;
 comment|/* Write file pointer */
+name|GeglBuffer
+modifier|*
+name|buffer
+decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|format
+decl_stmt|;
+name|gint
+name|width
+decl_stmt|;
+name|gint
+name|height
+decl_stmt|;
 name|guchar
 name|header
 index|[
@@ -3317,7 +3269,7 @@ decl_stmt|;
 comment|/* Layer offsets */
 name|guchar
 modifier|*
-name|buffer
+name|buf
 decl_stmt|;
 comment|/* Temporary buffer */
 name|guchar
@@ -3325,15 +3277,6 @@ modifier|*
 name|line
 decl_stmt|;
 comment|/* Pixel data */
-name|GimpDrawable
-modifier|*
-name|drawable
-decl_stmt|;
-comment|/* Drawable for layer */
-name|GimpPixelRgn
-name|pixel_rgn
-decl_stmt|;
-comment|/* Pixel region for layer */
 name|gint
 name|i
 decl_stmt|,
@@ -3353,18 +3296,33 @@ expr_stmt|;
 if|if
 condition|(
 name|type
-operator|!=
+operator|==
 name|GIMP_INDEXEDA_IMAGE
 condition|)
-name|bpp
-operator|=
-literal|32
-expr_stmt|;
-else|else
+block|{
 name|bpp
 operator|=
 literal|4
 expr_stmt|;
+name|format
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+else|else
+block|{
+name|bpp
+operator|=
+literal|32
+expr_stmt|;
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* Find out how offset this layer was */
 name|gimp_drawable_offsets
 argument_list|(
@@ -3377,11 +3335,25 @@ operator|&
 name|offy
 argument_list|)
 expr_stmt|;
-name|drawable
+name|buffer
 operator|=
-name|gimp_drawable_get
+name|gimp_drawable_get_buffer
 argument_list|(
 name|layer
+argument_list|)
+expr_stmt|;
+name|width
+operator|=
+name|gegl_buffer_get_width
+argument_list|(
+name|buffer
+argument_list|)
+expr_stmt|;
+name|height
+operator|=
+name|gegl_buffer_get_height
+argument_list|(
+name|buffer
 argument_list|)
 expr_stmt|;
 comment|/* Open the file for writing */
@@ -3441,7 +3413,7 @@ argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|brief
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3519,6 +3491,7 @@ expr_stmt|;
 block|}
 block|}
 else|else
+block|{
 name|header
 index|[
 literal|5
@@ -3526,14 +3499,13 @@ index|]
 operator|=
 literal|32
 expr_stmt|;
+block|}
 comment|/* Fill in the blanks ... */
 name|header
 index|[
 literal|8
 index|]
 operator|=
-name|drawable
-operator|->
 name|width
 operator|%
 literal|256
@@ -3543,8 +3515,6 @@ index|[
 literal|9
 index|]
 operator|=
-name|drawable
-operator|->
 name|width
 operator|/
 literal|256
@@ -3554,8 +3524,6 @@ index|[
 literal|10
 index|]
 operator|=
-name|drawable
-operator|->
 name|height
 operator|%
 literal|256
@@ -3565,8 +3533,6 @@ index|[
 literal|11
 index|]
 operator|=
-name|drawable
-operator|->
 name|height
 operator|/
 literal|256
@@ -3619,38 +3585,12 @@ name|fp
 argument_list|)
 expr_stmt|;
 comment|/* Arrange for memory etc. */
-name|gimp_pixel_rgn_init
-argument_list|(
-operator|&
-name|pixel_rgn
-argument_list|,
-name|drawable
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|drawable
-operator|->
-name|width
-argument_list|,
-name|drawable
-operator|->
-name|height
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|buffer
+name|buf
 operator|=
 name|g_new
 argument_list|(
 name|guchar
 argument_list|,
-name|drawable
-operator|->
 name|width
 operator|*
 literal|4
@@ -3663,8 +3603,6 @@ argument_list|(
 name|guchar
 argument_list|,
 operator|(
-name|drawable
-operator|->
 name|width
 operator|+
 literal|1
@@ -3682,40 +3620,44 @@ literal|0
 init|;
 name|i
 operator|<
-name|drawable
-operator|->
 name|height
 condition|;
 operator|++
 name|i
 control|)
 block|{
-name|gimp_pixel_rgn_get_rect
+name|gegl_buffer_get
 argument_list|(
-operator|&
-name|pixel_rgn
+name|buffer
 argument_list|,
-name|line
-argument_list|,
+name|GEGL_RECTANGLE
+argument_list|(
 literal|0
 argument_list|,
 name|i
 argument_list|,
-name|drawable
-operator|->
 name|width
 argument_list|,
 literal|1
 argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+name|format
+argument_list|,
+name|line
+argument_list|,
+name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|)
 expr_stmt|;
 name|memset
 argument_list|(
-name|buffer
+name|buf
 argument_list|,
 literal|0
 argument_list|,
-name|drawable
-operator|->
 name|width
 argument_list|)
 expr_stmt|;
@@ -3734,15 +3676,13 @@ literal|0
 init|;
 name|j
 operator|<
-name|drawable
-operator|->
 name|width
 condition|;
 name|j
 operator|++
 control|)
 block|{
-name|buffer
+name|buf
 index|[
 literal|4
 operator|*
@@ -3759,7 +3699,7 @@ literal|2
 index|]
 expr_stmt|;
 comment|/* B */
-name|buffer
+name|buf
 index|[
 literal|4
 operator|*
@@ -3778,7 +3718,7 @@ literal|1
 index|]
 expr_stmt|;
 comment|/* G */
-name|buffer
+name|buf
 index|[
 literal|4
 operator|*
@@ -3797,7 +3737,7 @@ literal|0
 index|]
 expr_stmt|;
 comment|/* R */
-name|buffer
+name|buf
 index|[
 literal|4
 operator|*
@@ -3819,10 +3759,8 @@ comment|/* Alpha */
 block|}
 name|fwrite
 argument_list|(
-name|buffer
+name|buf
 argument_list|,
-name|drawable
-operator|->
 name|width
 argument_list|,
 literal|4
@@ -3851,8 +3789,6 @@ literal|0
 init|;
 name|j
 operator|<
-name|drawable
-operator|->
 name|width
 operator|*
 literal|2
@@ -3877,7 +3813,7 @@ operator|>
 literal|127
 condition|)
 block|{
-name|buffer
+name|buf
 index|[
 name|k
 index|]
@@ -3893,10 +3829,8 @@ block|}
 block|}
 name|fwrite
 argument_list|(
-name|buffer
+name|buf
 argument_list|,
-name|drawable
-operator|->
 name|width
 argument_list|,
 literal|1
@@ -3919,8 +3853,6 @@ literal|0
 init|;
 name|j
 operator|<
-name|drawable
-operator|->
 name|width
 operator|*
 literal|2
@@ -3933,7 +3865,7 @@ operator|++
 name|k
 control|)
 block|{
-name|buffer
+name|buf
 index|[
 name|k
 index|]
@@ -3952,7 +3884,7 @@ operator|>
 literal|127
 condition|)
 block|{
-name|buffer
+name|buf
 index|[
 name|k
 index|]
@@ -3981,7 +3913,7 @@ operator|>
 literal|127
 condition|)
 block|{
-name|buffer
+name|buf
 index|[
 name|k
 index|]
@@ -4001,11 +3933,9 @@ block|}
 block|}
 name|fwrite
 argument_list|(
-name|buffer
+name|buf
 argument_list|,
 operator|(
-name|drawable
-operator|->
 name|width
 operator|+
 literal|1
@@ -4029,31 +3959,33 @@ operator|/
 operator|(
 name|float
 operator|)
-name|drawable
-operator|->
 name|height
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_progress_update
-argument_list|(
-literal|1.0
-argument_list|)
-expr_stmt|;
-comment|/* Close files, give back allocated memory */
-name|fclose
-argument_list|(
-name|fp
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
-name|buffer
+name|buf
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
 name|line
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|buffer
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
+name|gimp_progress_update
+argument_list|(
+literal|1.0
 argument_list|)
 expr_stmt|;
 return|return
