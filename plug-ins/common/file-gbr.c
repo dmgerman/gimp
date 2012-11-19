@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ae8cdf0108
+DECL|struct|__anon2bd4270e0108
 block|{
 DECL|member|description
 name|gchar
@@ -1195,7 +1195,7 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GFileInputStream
+name|GInputStream
 modifier|*
 name|input
 decl_stmt|;
@@ -1231,9 +1231,6 @@ name|Babl
 modifier|*
 name|format
 decl_stmt|;
-name|gint
-name|bn_size
-decl_stmt|;
 name|GimpImageBaseType
 name|base_type
 decl_stmt|;
@@ -1251,6 +1248,8 @@ name|i
 decl_stmt|;
 name|input
 operator|=
+name|G_INPUT_STREAM
+argument_list|(
 name|g_file_read
 argument_list|(
 name|file
@@ -1258,6 +1257,7 @@ argument_list|,
 name|NULL
 argument_list|,
 name|error
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1296,10 +1296,7 @@ condition|(
 operator|!
 name|g_input_stream_read_all
 argument_list|(
-name|G_INPUT_STREAM
-argument_list|(
 name|input
-argument_list|)
 argument_list|,
 operator|&
 name|bh
@@ -1577,10 +1574,7 @@ condition|(
 operator|!
 name|g_input_stream_read_all
 argument_list|(
-name|G_INPUT_STREAM
-argument_list|(
 name|input
-argument_list|)
 argument_list|,
 operator|(
 name|guchar
@@ -1730,7 +1724,7 @@ block|}
 if|if
 condition|(
 operator|(
-name|bn_size
+name|size
 operator|=
 operator|(
 name|bh
@@ -1755,7 +1749,7 @@ name|g_new
 argument_list|(
 name|gchar
 argument_list|,
-name|bn_size
+name|size
 argument_list|)
 decl_stmt|;
 if|if
@@ -1763,14 +1757,11 @@ condition|(
 operator|!
 name|g_input_stream_read_all
 argument_list|(
-name|G_INPUT_STREAM
-argument_list|(
 name|input
-argument_list|)
 argument_list|,
 name|temp
 argument_list|,
-name|bn_size
+name|size
 argument_list|,
 operator|&
 name|bytes_read
@@ -1782,7 +1773,7 @@ argument_list|)
 operator|||
 name|bytes_read
 operator|!=
-name|bn_size
+name|size
 condition|)
 block|{
 name|g_set_error
@@ -1885,10 +1876,7 @@ condition|(
 operator|!
 name|g_input_stream_read_all
 argument_list|(
-name|G_INPUT_STREAM
-argument_list|(
 name|input
-argument_list|)
 argument_list|,
 name|brush_buf
 argument_list|,
@@ -1946,10 +1934,7 @@ if|if
 condition|(
 name|g_input_stream_read_all
 argument_list|(
-name|G_INPUT_STREAM
-argument_list|(
 name|input
-argument_list|)
 argument_list|,
 operator|&
 name|ph
@@ -2089,10 +2074,7 @@ name|height
 operator|&&
 name|g_input_stream_skip
 argument_list|(
-name|G_INPUT_STREAM
-argument_list|(
 name|input
-argument_list|)
 argument_list|,
 name|ph
 operator|.
@@ -2173,10 +2155,7 @@ condition|(
 operator|!
 name|g_input_stream_read_all
 argument_list|(
-name|G_INPUT_STREAM
-argument_list|(
 name|input
-argument_list|)
 argument_list|,
 name|brush_buf
 operator|+
@@ -2286,7 +2265,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon29ae8cdf020a
+DECL|union|__anon2bd4270e020a
 block|{
 DECL|member|u
 name|guint16
@@ -2668,7 +2647,7 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GFileOutputStream
+name|GOutputStream
 modifier|*
 name|output
 decl_stmt|;
@@ -2789,6 +2768,8 @@ argument_list|)
 expr_stmt|;
 name|output
 operator|=
+name|G_OUTPUT_STREAM
+argument_list|(
 name|g_file_replace
 argument_list|(
 name|file
@@ -2802,6 +2783,7 @@ argument_list|,
 name|NULL
 argument_list|,
 name|error
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2928,10 +2910,7 @@ condition|(
 operator|!
 name|g_output_stream_write_all
 argument_list|(
-name|G_OUTPUT_STREAM
-argument_list|(
 name|output
-argument_list|)
 argument_list|,
 operator|&
 name|bh
@@ -2971,10 +2950,7 @@ condition|(
 operator|!
 name|g_output_stream_write_all
 argument_list|(
-name|G_OUTPUT_STREAM
-argument_list|(
 name|output
-argument_list|)
 argument_list|,
 name|info
 operator|.
@@ -3208,10 +3184,7 @@ condition|(
 operator|!
 name|g_output_stream_write_all
 argument_list|(
-name|G_OUTPUT_STREAM
-argument_list|(
 name|output
-argument_list|)
 argument_list|,
 name|brush_buf
 argument_list|,
