@@ -160,7 +160,7 @@ name|height
 parameter_list|,
 name|guchar
 modifier|*
-name|buffer
+name|buf
 parameter_list|,
 name|guint16
 name|bytes
@@ -185,7 +185,7 @@ name|height
 parameter_list|,
 name|guchar
 modifier|*
-name|buffer
+name|buf
 parameter_list|,
 name|guint16
 name|bytes
@@ -210,7 +210,7 @@ name|height
 parameter_list|,
 name|guchar
 modifier|*
-name|buffer
+name|buf
 parameter_list|,
 name|guint16
 name|bytes
@@ -235,7 +235,7 @@ name|height
 parameter_list|,
 name|guchar
 modifier|*
-name|buffer
+name|buf
 parameter_list|,
 name|guint16
 name|bytes
@@ -254,7 +254,7 @@ name|fp
 parameter_list|,
 name|guchar
 modifier|*
-name|buffer
+name|buf
 parameter_list|,
 name|gint
 name|bytes
@@ -304,7 +304,7 @@ parameter_list|,
 specifier|const
 name|guchar
 modifier|*
-name|buffer
+name|buf
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -327,7 +327,7 @@ parameter_list|,
 specifier|const
 name|guchar
 modifier|*
-name|buffer
+name|buf
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -344,7 +344,7 @@ parameter_list|,
 specifier|const
 name|guchar
 modifier|*
-name|buffer
+name|buf
 parameter_list|,
 name|gint
 name|bytes
@@ -656,6 +656,16 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
+name|gegl_init
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -666,9 +676,6 @@ operator|.
 name|data
 operator|.
 name|d_int32
-expr_stmt|;
-name|INIT_I18N
-argument_list|()
 expr_stmt|;
 operator|*
 name|nreturn_vals
@@ -1035,7 +1042,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon298b51ab0108
+DECL|struct|__anon29db15b50108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1112,7 +1119,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon298b51ab0208
+DECL|struct|__anon29db15b50208
 specifier|static
 struct|struct
 block|{
@@ -1449,12 +1456,9 @@ name|FILE
 modifier|*
 name|fd
 decl_stmt|;
-name|GimpDrawable
+name|GeglBuffer
 modifier|*
-name|drawable
-decl_stmt|;
-name|GimpPixelRgn
-name|pixel_rgn
+name|buffer
 decl_stmt|;
 name|guint16
 name|offset_x
@@ -1939,9 +1943,9 @@ argument_list|,
 name|offset_y
 argument_list|)
 expr_stmt|;
-name|drawable
+name|buffer
 operator|=
-name|gimp_drawable_get
+name|gimp_drawable_get_buffer
 argument_list|(
 name|layer
 argument_list|)
@@ -2201,18 +2205,12 @@ operator|-
 literal|1
 return|;
 block|}
-name|gimp_progress_update
+name|gegl_buffer_set
 argument_list|(
-literal|1.0
-argument_list|)
-expr_stmt|;
-name|gimp_pixel_rgn_init
+name|buffer
+argument_list|,
+name|GEGL_RECTANGLE
 argument_list|(
-operator|&
-name|pixel_rgn
-argument_list|,
-name|drawable
-argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -2220,26 +2218,15 @@ argument_list|,
 name|width
 argument_list|,
 name|height
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
 argument_list|)
-expr_stmt|;
-name|gimp_pixel_rgn_set_rect
-argument_list|(
-operator|&
-name|pixel_rgn
+argument_list|,
+literal|0
+argument_list|,
+name|NULL
 argument_list|,
 name|dest
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|width
-argument_list|,
-name|height
+name|GEGL_AUTO_ROWSTRIDE
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -2252,14 +2239,14 @@ argument_list|(
 name|dest
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_flush
+name|g_object_unref
 argument_list|(
-name|drawable
+name|buffer
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_detach
+name|gimp_progress_update
 argument_list|(
-name|drawable
+literal|1.0
 argument_list|)
 expr_stmt|;
 return|return
@@ -2271,7 +2258,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_8 (FILE * fp,gint width,gint height,guchar * buffer,guint16 bytes)
+DECL|function|load_8 (FILE * fp,gint width,gint height,guchar * buf,guint16 bytes)
 name|load_8
 parameter_list|(
 name|FILE
@@ -2286,7 +2273,7 @@ name|height
 parameter_list|,
 name|guchar
 modifier|*
-name|buffer
+name|buf
 parameter_list|,
 name|guint16
 name|bytes
@@ -2316,7 +2303,7 @@ name|row
 operator|<
 name|height
 condition|;
-name|buffer
+name|buf
 operator|+=
 name|width
 operator|,
@@ -2335,7 +2322,7 @@ argument_list|)
 expr_stmt|;
 name|memcpy
 argument_list|(
-name|buffer
+name|buf
 argument_list|,
 name|line
 argument_list|,
@@ -2367,7 +2354,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_24 (FILE * fp,gint width,gint height,guchar * buffer,guint16 bytes)
+DECL|function|load_24 (FILE * fp,gint width,gint height,guchar * buf,guint16 bytes)
 name|load_24
 parameter_list|(
 name|FILE
@@ -2382,7 +2369,7 @@ name|height
 parameter_list|,
 name|guchar
 modifier|*
-name|buffer
+name|buf
 parameter_list|,
 name|guint16
 name|bytes
@@ -2416,7 +2403,7 @@ name|y
 operator|<
 name|height
 condition|;
-name|buffer
+name|buf
 operator|+=
 name|width
 operator|*
@@ -2463,7 +2450,7 @@ operator|++
 name|x
 control|)
 block|{
-name|buffer
+name|buf
 index|[
 name|x
 operator|*
@@ -2504,7 +2491,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_1 (FILE * fp,gint width,gint height,guchar * buffer,guint16 bytes)
+DECL|function|load_1 (FILE * fp,gint width,gint height,guchar * buf,guint16 bytes)
 name|load_1
 parameter_list|(
 name|FILE
@@ -2519,7 +2506,7 @@ name|height
 parameter_list|,
 name|guchar
 modifier|*
-name|buffer
+name|buf
 parameter_list|,
 name|guint16
 name|bytes
@@ -2551,7 +2538,7 @@ name|y
 operator|<
 name|height
 condition|;
-name|buffer
+name|buf
 operator|+=
 name|width
 operator|,
@@ -2601,7 +2588,7 @@ literal|8
 operator|)
 operator|)
 condition|)
-name|buffer
+name|buf
 index|[
 name|x
 index|]
@@ -2609,7 +2596,7 @@ operator|=
 literal|1
 expr_stmt|;
 else|else
-name|buffer
+name|buf
 index|[
 name|x
 index|]
@@ -2642,7 +2629,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_4 (FILE * fp,gint width,gint height,guchar * buffer,guint16 bytes)
+DECL|function|load_4 (FILE * fp,gint width,gint height,guchar * buf,guint16 bytes)
 name|load_4
 parameter_list|(
 name|FILE
@@ -2657,7 +2644,7 @@ name|height
 parameter_list|,
 name|guchar
 modifier|*
-name|buffer
+name|buf
 parameter_list|,
 name|guint16
 name|bytes
@@ -2691,7 +2678,7 @@ name|y
 operator|<
 name|height
 condition|;
-name|buffer
+name|buf
 operator|+=
 name|width
 operator|,
@@ -2712,7 +2699,7 @@ condition|;
 operator|++
 name|x
 control|)
-name|buffer
+name|buf
 index|[
 name|x
 index|]
@@ -2775,7 +2762,7 @@ literal|8
 operator|)
 operator|)
 condition|)
-name|buffer
+name|buf
 index|[
 name|x
 index|]
@@ -2813,7 +2800,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|readline (FILE * fp,guchar * buffer,gint bytes)
+DECL|function|readline (FILE * fp,guchar * buf,gint bytes)
 name|readline
 parameter_list|(
 name|FILE
@@ -2822,7 +2809,7 @@ name|fp
 parameter_list|,
 name|guchar
 modifier|*
-name|buffer
+name|buf
 parameter_list|,
 name|gint
 name|bytes
@@ -2899,7 +2886,7 @@ operator|--
 expr_stmt|;
 operator|*
 operator|(
-name|buffer
+name|buf
 operator|++
 operator|)
 operator|=
@@ -2911,7 +2898,7 @@ else|else
 block|{
 name|fread
 argument_list|(
-name|buffer
+name|buf
 argument_list|,
 name|bytes
 argument_list|,
@@ -2951,12 +2938,14 @@ name|FILE
 modifier|*
 name|fp
 decl_stmt|;
-name|GimpPixelRgn
-name|pixel_rgn
-decl_stmt|;
-name|GimpDrawable
+name|GeglBuffer
 modifier|*
-name|drawable
+name|buffer
+decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|format
 decl_stmt|;
 name|GimpImageType
 name|drawable_type
@@ -2992,13 +2981,6 @@ index|[
 literal|128
 index|]
 decl_stmt|;
-name|drawable
-operator|=
-name|gimp_drawable_get
-argument_list|(
-name|layer
-argument_list|)
-expr_stmt|;
 name|drawable_type
 operator|=
 name|gimp_drawable_type
@@ -3017,36 +2999,25 @@ operator|&
 name|offset_y
 argument_list|)
 expr_stmt|;
-name|width
+name|buffer
 operator|=
-name|drawable
-operator|->
-name|width
-expr_stmt|;
-name|height
-operator|=
-name|drawable
-operator|->
-name|height
-expr_stmt|;
-name|gimp_pixel_rgn_init
+name|gimp_drawable_get_buffer
 argument_list|(
-operator|&
-name|pixel_rgn
-argument_list|,
-name|drawable
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
+name|layer
+argument_list|)
+expr_stmt|;
 name|width
-argument_list|,
+operator|=
+name|gegl_buffer_get_width
+argument_list|(
+name|buffer
+argument_list|)
+expr_stmt|;
 name|height
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
+operator|=
+name|gegl_buffer_get_height
+argument_list|(
+name|buffer
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init_printf
@@ -3106,15 +3077,6 @@ literal|8
 expr_stmt|;
 name|pcx_header
 operator|.
-name|bytesperline
-operator|=
-name|GUINT16_TO_LE
-argument_list|(
-name|width
-argument_list|)
-expr_stmt|;
-name|pcx_header
-operator|.
 name|planes
 operator|=
 literal|1
@@ -3127,6 +3089,19 @@ name|GUINT16_TO_LE
 argument_list|(
 literal|1
 argument_list|)
+expr_stmt|;
+name|pcx_header
+operator|.
+name|bytesperline
+operator|=
+name|GUINT16_TO_LE
+argument_list|(
+name|width
+argument_list|)
+expr_stmt|;
+name|format
+operator|=
+name|NULL
 expr_stmt|;
 break|break;
 case|case
@@ -3160,6 +3135,13 @@ operator|=
 name|GUINT16_TO_LE
 argument_list|(
 name|width
+argument_list|)
+expr_stmt|;
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3196,6 +3178,13 @@ argument_list|(
 name|width
 argument_list|)
 expr_stmt|;
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y' u8"
+argument_list|)
+expr_stmt|;
 break|break;
 default|default:
 name|g_message
@@ -3227,13 +3216,12 @@ operator|.
 name|planes
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_rgn_get_rect
+name|gegl_buffer_get
 argument_list|(
-operator|&
-name|pixel_rgn
+name|buffer
 argument_list|,
-name|pixels
-argument_list|,
+name|GEGL_RECTANGLE
+argument_list|(
 literal|0
 argument_list|,
 literal|0
@@ -3241,6 +3229,17 @@ argument_list|,
 name|width
 argument_list|,
 name|height
+argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+name|format
+argument_list|,
+name|pixels
+argument_list|,
+name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 if|if
@@ -3695,9 +3694,9 @@ return|return
 name|FALSE
 return|;
 block|}
-name|gimp_drawable_detach
+name|g_object_unref
 argument_list|(
-name|drawable
+name|buffer
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -3755,7 +3754,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|save_8 (FILE * fp,gint width,gint height,const guchar * buffer)
+DECL|function|save_8 (FILE * fp,gint width,gint height,const guchar * buf)
 name|save_8
 parameter_list|(
 name|FILE
@@ -3771,7 +3770,7 @@ parameter_list|,
 specifier|const
 name|guchar
 modifier|*
-name|buffer
+name|buf
 parameter_list|)
 block|{
 name|int
@@ -3795,12 +3794,12 @@ name|writeline
 argument_list|(
 name|fp
 argument_list|,
-name|buffer
+name|buf
 argument_list|,
 name|width
 argument_list|)
 expr_stmt|;
-name|buffer
+name|buf
 operator|+=
 name|width
 expr_stmt|;
@@ -3824,7 +3823,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|save_24 (FILE * fp,gint width,gint height,const guchar * buffer)
+DECL|function|save_24 (FILE * fp,gint width,gint height,const guchar * buf)
 name|save_24
 parameter_list|(
 name|FILE
@@ -3840,7 +3839,7 @@ parameter_list|,
 specifier|const
 name|guchar
 modifier|*
-name|buffer
+name|buf
 parameter_list|)
 block|{
 name|int
@@ -3912,7 +3911,7 @@ index|[
 name|x
 index|]
 operator|=
-name|buffer
+name|buf
 index|[
 operator|(
 literal|3
@@ -3934,7 +3933,7 @@ name|width
 argument_list|)
 expr_stmt|;
 block|}
-name|buffer
+name|buf
 operator|+=
 name|width
 operator|*
@@ -3965,7 +3964,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|writeline (FILE * fp,const guchar * buffer,gint bytes)
+DECL|function|writeline (FILE * fp,const guchar * buf,gint bytes)
 name|writeline
 parameter_list|(
 name|FILE
@@ -3975,7 +3974,7 @@ parameter_list|,
 specifier|const
 name|guchar
 modifier|*
-name|buffer
+name|buf
 parameter_list|,
 name|gint
 name|bytes
@@ -3986,7 +3985,7 @@ name|guchar
 modifier|*
 name|finish
 init|=
-name|buffer
+name|buf
 operator|+
 name|bytes
 decl_stmt|;
@@ -3998,7 +3997,7 @@ name|count
 decl_stmt|;
 while|while
 condition|(
-name|buffer
+name|buf
 operator|<
 name|finish
 condition|)
@@ -4007,7 +4006,7 @@ name|value
 operator|=
 operator|*
 operator|(
-name|buffer
+name|buf
 operator|++
 operator|)
 expr_stmt|;
@@ -4017,7 +4016,7 @@ literal|1
 expr_stmt|;
 while|while
 condition|(
-name|buffer
+name|buf
 operator|<
 name|finish
 operator|&&
@@ -4026,7 +4025,7 @@ operator|<
 literal|63
 operator|&&
 operator|*
-name|buffer
+name|buf
 operator|==
 name|value
 condition|)
@@ -4034,7 +4033,7 @@ block|{
 name|count
 operator|++
 expr_stmt|;
-name|buffer
+name|buf
 operator|++
 expr_stmt|;
 block|}
