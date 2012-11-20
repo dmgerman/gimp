@@ -114,6 +114,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|<babl/babl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
@@ -2529,6 +2535,9 @@ name|units_init
 argument_list|(
 name|gimp
 argument_list|)
+expr_stmt|;
+name|babl_init
+argument_list|()
 expr_stmt|;
 name|success
 operator|=
