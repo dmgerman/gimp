@@ -142,9 +142,9 @@ value|120
 end_define
 
 begin_typedef
-DECL|struct|__anon2bae9ab70108
 typedef|typedef
 struct|struct
+DECL|struct|__anon27a863a30108
 block|{
 DECL|member|vectorize
 name|gboolean
@@ -165,9 +165,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bae9ab70208
 typedef|typedef
 struct|struct
+DECL|struct|__anon27a863a30208
 block|{
 DECL|member|images
 name|gint32
@@ -194,9 +194,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bae9ab70308
 typedef|typedef
 struct|struct
+DECL|struct|__anon27a863a30308
 block|{
 DECL|member|optimize
 name|PdfOptimize
@@ -214,8 +214,8 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2bae9ab70403
 enum|enum
+DECL|enum|__anon27a863a30403
 block|{
 DECL|enumerator|THUMB
 name|THUMB
@@ -233,9 +233,9 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2bae9ab70508
 typedef|typedef
 struct|struct
+DECL|struct|__anon27a863a30508
 block|{
 DECL|member|thumb
 name|GdkPixbuf
@@ -432,9 +432,8 @@ name|cairo_surface_t
 modifier|*
 name|get_drawable_image
 parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
+name|gint32
+name|drawable_ID
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -444,9 +443,8 @@ specifier|static
 name|GimpRGB
 name|get_layer_color
 parameter_list|(
-name|GimpDrawable
-modifier|*
-name|layer
+name|gint32
+name|layer_ID
 parameter_list|,
 name|gboolean
 modifier|*
@@ -460,9 +458,8 @@ specifier|static
 name|void
 name|drawText
 parameter_list|(
-name|GimpDrawable
-modifier|*
-name|text_layer
+name|gint32
+name|text_id
 parameter_list|,
 name|gdouble
 name|opacity
@@ -584,32 +581,10 @@ name|file_name
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|PLUG_IN_INFO
-name|GimpPlugInInfo
-name|PLUG_IN_INFO
-init|=
-block|{
-name|NULL
-block|,
-name|NULL
-block|,
-name|query
-block|,
-name|run
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_macro
-name|MAIN
-argument_list|()
-end_macro
-
 begin_typedef
-DECL|enum|__anon2bae9ab70603
 typedef|typedef
 enum|enum
+DECL|enum|__anon27a863a30603
 block|{
 DECL|enumerator|SA_RUN_MODE
 name|SA_RUN_MODE
@@ -652,9 +627,9 @@ value|5
 end_define
 
 begin_typedef
-DECL|enum|__anon2bae9ab70703
 typedef|typedef
 enum|enum
+DECL|enum|__anon27a863a30703
 block|{
 DECL|enumerator|SMA_RUN_MODE
 name|SMA_RUN_MODE
@@ -688,10 +663,32 @@ name|SaveMultiArgs
 typedef|;
 end_typedef
 
+begin_decl_stmt
+DECL|variable|PLUG_IN_INFO
+name|GimpPlugInInfo
+name|PLUG_IN_INFO
+init|=
+block|{
+name|NULL
+block|,
+name|NULL
+block|,
+name|query
+block|,
+name|run
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_macro
+DECL|function|MAIN ()
+name|MAIN
+argument_list|()
+end_macro
+
 begin_function
 specifier|static
 name|void
-DECL|function|query (void)
 name|query
 parameter_list|(
 name|void
@@ -1021,14 +1018,12 @@ decl_stmt|;
 name|GimpRunMode
 name|run_mode
 decl_stmt|;
-comment|/* Plug-in variables */
 name|gboolean
 name|single_image
 decl_stmt|;
 name|gboolean
 name|defaults_proc
 decl_stmt|;
-comment|/* Plug-In variables */
 name|cairo_surface_t
 modifier|*
 name|pdf_file
@@ -1040,88 +1035,12 @@ decl_stmt|;
 name|GimpExportCapabilities
 name|capabilities
 decl_stmt|;
-name|guint32
-name|i
-init|=
-literal|0
-decl_stmt|;
-name|gint32
-name|j
-init|=
-literal|0
-decl_stmt|;
-name|gdouble
-name|x_res
-decl_stmt|,
-name|y_res
-decl_stmt|;
-name|gdouble
-name|x_scale
-decl_stmt|,
-name|y_scale
-decl_stmt|;
-name|gint32
-name|image_id
-decl_stmt|;
-name|gboolean
-name|exported
-decl_stmt|;
-name|GimpImageBaseType
-name|type
-decl_stmt|;
-name|gint32
-name|temp
-decl_stmt|;
-name|gint
-modifier|*
-name|layers
-decl_stmt|;
-name|gint32
-name|num_of_layers
-decl_stmt|;
-name|GimpDrawable
-modifier|*
-name|layer
-decl_stmt|;
-name|cairo_surface_t
-modifier|*
-name|layer_image
-decl_stmt|;
-name|gdouble
-name|opacity
-decl_stmt|;
-name|gint
-name|x
-decl_stmt|,
-name|y
-decl_stmt|;
-name|GimpRGB
-name|layer_color
-decl_stmt|;
-name|gboolean
-name|single_color
-decl_stmt|;
-name|gint32
-name|mask_id
-init|=
-operator|-
-literal|1
-decl_stmt|;
-name|GimpDrawable
-modifier|*
-name|mask
-init|=
-name|NULL
-decl_stmt|;
-name|cairo_surface_t
-modifier|*
-name|mask_image
-init|=
-name|NULL
-decl_stmt|;
 name|FILE
 modifier|*
 name|fp
+decl_stmt|;
+name|gint
+name|i
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -1315,17 +1234,14 @@ operator|!=
 name|CAIRO_STATUS_SUCCESS
 condition|)
 block|{
-name|char
-modifier|*
-name|str
-init|=
-name|g_strdup_printf
+name|g_message
 argument_list|(
 name|_
 argument_list|(
 literal|"An error occured while creating the PDF file:\n"
 literal|"%s\n"
-literal|"Make sure you entered a valid filename and that the selected location isn't read only!"
+literal|"Make sure you entered a valid filename and that the "
+literal|"selected location isn't read only!"
 argument_list|)
 argument_list|,
 name|cairo_status_to_string
@@ -1335,16 +1251,6 @@ argument_list|(
 name|pdf_file
 argument_list|)
 argument_list|)
-argument_list|)
-decl_stmt|;
-name|gimp_message
-argument_list|(
-name|str
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|str
 argument_list|)
 expr_stmt|;
 name|values
@@ -1369,6 +1275,7 @@ argument_list|)
 expr_stmt|;
 name|capabilities
 operator|=
+operator|(
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_ALPHA
@@ -1378,6 +1285,7 @@ operator||
 name|GIMP_EXPORT_CAN_HANDLE_LAYERS
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_INDEXED
+operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -1405,13 +1313,45 @@ name|i
 operator|++
 control|)
 block|{
-comment|/* Save the state of the surface before any changes, so that settings        * from one page won't affect all the others */
+name|GimpImageBaseType
+name|type
+decl_stmt|;
+name|gint
+modifier|*
+name|layers
+decl_stmt|;
+name|gint32
+name|image_ID
+decl_stmt|;
+name|gboolean
+name|exported
+decl_stmt|;
+name|gint32
+name|num_of_layers
+decl_stmt|;
+name|gdouble
+name|x_res
+decl_stmt|,
+name|y_res
+decl_stmt|;
+name|gdouble
+name|x_scale
+decl_stmt|,
+name|y_scale
+decl_stmt|;
+name|gint32
+name|temp
+decl_stmt|;
+name|gint
+name|j
+decl_stmt|;
+comment|/* Save the state of the surface before any changes, so that        * settings from one page won't affect all the others        */
 name|cairo_save
 argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
-name|image_id
+name|image_ID
 operator|=
 name|multi_page
 operator|.
@@ -1425,7 +1365,7 @@ name|temp
 operator|=
 name|gimp_image_get_active_drawable
 argument_list|(
-name|image_id
+name|image_ID
 argument_list|)
 expr_stmt|;
 if|if
@@ -1440,7 +1380,7 @@ operator|=
 name|gimp_export_image
 argument_list|(
 operator|&
-name|image_id
+name|image_ID
 argument_list|,
 operator|&
 name|temp
@@ -1461,12 +1401,12 @@ name|type
 operator|=
 name|gimp_image_base_type
 argument_list|(
-name|image_id
+name|image_ID
 argument_list|)
 expr_stmt|;
 name|gimp_image_get_resolution
 argument_list|(
-name|image_id
+name|image_ID
 argument_list|,
 operator|&
 name|x_res
@@ -1493,20 +1433,20 @@ name|pdf_file
 argument_list|,
 name|gimp_image_width
 argument_list|(
-name|image_id
+name|image_ID
 argument_list|)
 operator|*
 name|x_scale
 argument_list|,
 name|gimp_image_height
 argument_list|(
-name|image_id
+name|image_ID
 argument_list|)
 operator|*
 name|y_scale
 argument_list|)
 expr_stmt|;
-comment|/* This way we set how many pixels are there in every inch.        * It's very important for PangoCairo */
+comment|/* This way we set how many pixels are there in every inch.        * It's very important for PangoCairo        */
 name|cairo_surface_set_fallback_resolution
 argument_list|(
 name|pdf_file
@@ -1516,7 +1456,7 @@ argument_list|,
 name|y_res
 argument_list|)
 expr_stmt|;
-comment|/* PDF is usually 72 points per inch. If we have a different resolution,        * we will need this to fit our drawings */
+comment|/* PDF is usually 72 points per inch. If we have a different resolution,        * we will need this to fit our drawings        */
 name|cairo_scale
 argument_list|(
 name|cr
@@ -1531,7 +1471,7 @@ name|layers
 operator|=
 name|gimp_image_get_layers
 argument_list|(
-name|image_id
+name|image_ID
 argument_list|,
 operator|&
 name|num_of_layers
@@ -1551,10 +1491,9 @@ name|j
 operator|++
 control|)
 block|{
-name|layer
-operator|=
-name|gimp_drawable_get
-argument_list|(
+name|gint32
+name|layer_ID
+init|=
 name|layers
 index|[
 name|num_of_layers
@@ -1563,50 +1502,44 @@ name|j
 operator|-
 literal|1
 index|]
-argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|gint32
+name|mask_ID
+init|=
+operator|-
+literal|1
+decl_stmt|;
+name|cairo_surface_t
+modifier|*
+name|mask_image
+init|=
+name|NULL
+decl_stmt|;
+name|gdouble
+name|opacity
+decl_stmt|;
+name|gboolean
+name|single_color
+decl_stmt|;
+name|gint
+name|x
+decl_stmt|,
+name|y
+decl_stmt|;
 name|opacity
 operator|=
 name|gimp_layer_get_opacity
 argument_list|(
-name|layer
-operator|->
-name|drawable_id
+name|layer_ID
 argument_list|)
 operator|/
 literal|100.0
 expr_stmt|;
-comment|/* Gimp doesn't display indexed layers with opacity below 50%            * And if it's above 50%, it will be rounded to 100% */
-if|if
-condition|(
-name|type
-operator|==
-name|GIMP_INDEXED
-condition|)
-block|{
-if|if
-condition|(
-name|opacity
-operator|<=
-literal|0.5
-condition|)
-name|opacity
-operator|=
-literal|0.0
-expr_stmt|;
-else|else
-name|opacity
-operator|=
-literal|1.0
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|gimp_item_get_visible
 argument_list|(
-name|layer
-operator|->
-name|drawable_id
+name|layer_ID
 argument_list|)
 operator|&&
 operator|(
@@ -1627,43 +1560,30 @@ operator|)
 operator|)
 condition|)
 block|{
-name|mask_id
+name|mask_ID
 operator|=
 name|gimp_layer_get_mask
 argument_list|(
-name|layer
-operator|->
-name|drawable_id
+name|layer_ID
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|mask_id
+name|mask_ID
 operator|!=
 operator|-
 literal|1
 condition|)
-block|{
-name|mask
-operator|=
-name|gimp_drawable_get
-argument_list|(
-name|mask_id
-argument_list|)
-expr_stmt|;
 name|mask_image
 operator|=
 name|get_drawable_image
 argument_list|(
-name|mask
+name|mask_ID
 argument_list|)
 expr_stmt|;
-block|}
 name|gimp_drawable_offsets
 argument_list|(
-name|layer
-operator|->
-name|drawable_id
+name|layer_ID
 argument_list|,
 operator|&
 name|x
@@ -1672,23 +1592,24 @@ operator|&
 name|y
 argument_list|)
 expr_stmt|;
-comment|/* For raster layers */
 if|if
 condition|(
 operator|!
 name|gimp_item_is_text_layer
 argument_list|(
-name|layer
-operator|->
-name|drawable_id
+name|layer_ID
 argument_list|)
 condition|)
 block|{
+comment|/* For raster layers */
+name|GimpRGB
+name|layer_color
+decl_stmt|;
 name|layer_color
 operator|=
 name|get_layer_color
 argument_list|(
-name|layer
+name|layer_ID
 argument_list|,
 operator|&
 name|single_color
@@ -1702,13 +1623,15 @@ name|x
 argument_list|,
 name|y
 argument_list|,
-name|layer
-operator|->
-name|width
+name|gimp_drawable_width
+argument_list|(
+name|layer_ID
+argument_list|)
 argument_list|,
-name|layer
-operator|->
-name|height
+name|gimp_drawable_height
+argument_list|(
+name|layer_ID
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1745,7 +1668,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|mask_id
+name|mask_ID
 operator|!=
 operator|-
 literal|1
@@ -1770,16 +1693,20 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|cairo_clip
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
+name|cairo_surface_t
+modifier|*
+name|layer_image
+decl_stmt|;
 name|layer_image
 operator|=
 name|get_drawable_image
 argument_list|(
-name|layer
+name|layer_ID
+argument_list|)
+expr_stmt|;
+name|cairo_clip
+argument_list|(
+name|cr
 argument_list|)
 expr_stmt|;
 name|cairo_set_source_surface
@@ -1812,7 +1739,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|mask_id
+name|mask_ID
 operator|!=
 operator|-
 literal|1
@@ -1846,12 +1773,12 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/* For text layers */
 else|else
 block|{
+comment|/* For text layers */
 name|drawText
 argument_list|(
-name|layer
+name|layer_ID
 argument_list|,
 name|opacity
 argument_list|,
@@ -1865,30 +1792,18 @@ expr_stmt|;
 block|}
 block|}
 comment|/* We are done with the layer - time to free some resources */
-name|gimp_drawable_detach
-argument_list|(
-name|layer
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
-name|mask_id
+name|mask_ID
 operator|!=
 operator|-
 literal|1
 condition|)
-block|{
-name|gimp_drawable_detach
-argument_list|(
-name|mask
-argument_list|)
-expr_stmt|;
 name|cairo_surface_destroy
 argument_list|(
 name|mask_image
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 comment|/* We are done with this image - Show it! */
 name|cairo_show_page
@@ -1907,7 +1822,7 @@ name|exported
 condition|)
 name|gimp_image_delete
 argument_list|(
-name|image_id
+name|image_ID
 argument_list|)
 expr_stmt|;
 block|}
@@ -1988,7 +1903,7 @@ comment|/******************************************************/
 end_comment
 
 begin_comment
-comment|/* A function that takes care of loading the basic  * parameters */
+comment|/* A function that takes care of loading the basic parameters  */
 end_comment
 
 begin_function
@@ -2522,7 +2437,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* A function that removes images that are no longer valid from  * the image list */
+comment|/* A function that removes images that are no longer valid from the  * image list  */
 end_comment
 
 begin_function
@@ -3588,10 +3503,7 @@ argument_list|(
 name|choose_file_call
 argument_list|)
 argument_list|,
-name|G_OBJECT
-argument_list|(
 name|file_entry
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -3608,10 +3520,7 @@ argument_list|(
 name|add_image_call
 argument_list|)
 argument_list|,
-name|G_OBJECT
-argument_list|(
 name|img_combo
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -3628,10 +3537,7 @@ argument_list|(
 name|del_image_call
 argument_list|)
 argument_list|,
-name|G_OBJECT
-argument_list|(
 name|page_view
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -3733,7 +3639,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* A function that is called when the button for browsing for file  * locations was clicked */
+comment|/* A function that is called when the button for browsing for file  * locations was clicked  */
 end_comment
 
 begin_function
@@ -3815,7 +3721,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-empty_stmt|;
 name|file_name
 operator|=
 name|g_file_get_path
@@ -3849,23 +3754,10 @@ name|GtkListStore
 modifier|*
 name|model
 decl_stmt|;
-name|GtkTreeIter
-name|iter
-decl_stmt|;
 name|guint32
 name|i
 decl_stmt|;
-name|gint32
-name|image
-init|=
-name|multi_page
-operator|.
-name|images
-index|[
-literal|0
-index|]
-decl_stmt|;
-comment|/* validate_image_list was called earlier, so all the images    * up to multi_page.image_count are valid */
+comment|/* validate_image_list was called earlier, so all the images    * up to multi_page.image_count are valid    */
 name|model
 operator|=
 name|gtk_list_store_new
@@ -3905,14 +3797,35 @@ name|i
 operator|++
 control|)
 block|{
+name|GtkTreeIter
+name|iter
+decl_stmt|;
+name|gint32
 name|image
-operator|=
+init|=
 name|multi_page
 operator|.
 name|images
 index|[
 name|i
 index|]
+decl_stmt|;
+name|GdkPixbuf
+modifier|*
+name|pixbuf
+decl_stmt|;
+name|pixbuf
+operator|=
+name|gimp_image_get_thumbnail
+argument_list|(
+name|image
+argument_list|,
+name|THUMB_WIDTH
+argument_list|,
+name|THUMB_HEIGHT
+argument_list|,
+name|GIMP_PIXBUF_SMALL_CHECKS
+argument_list|)
 expr_stmt|;
 name|gtk_list_store_append
 argument_list|(
@@ -3931,22 +3844,16 @@ name|iter
 argument_list|,
 name|THUMB
 argument_list|,
-name|gimp_image_get_thumbnail
-argument_list|(
-name|image
-argument_list|,
-name|THUMB_WIDTH
-argument_list|,
-name|THUMB_HEIGHT
-argument_list|,
-name|GIMP_PIXBUF_SMALL_CHECKS
-argument_list|)
+name|pixbuf
 argument_list|,
 name|PAGE_NUMBER
 argument_list|,
 name|g_strdup_printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Page %d"
+argument_list|)
 argument_list|,
 name|i
 operator|+
@@ -3968,6 +3875,11 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|pixbuf
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|GTK_TREE_MODEL
@@ -3979,7 +3891,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* A function that puts the images from the model inside the  * images (pages) array */
+comment|/* A function that puts the images from the model inside the images  * (pages) array  */
 end_comment
 
 begin_function
@@ -3996,17 +3908,6 @@ name|iter
 decl_stmt|;
 name|gboolean
 name|valid
-init|=
-name|gtk_tree_model_get_iter_first
-argument_list|(
-name|model
-argument_list|,
-operator|&
-name|iter
-argument_list|)
-decl_stmt|;
-name|gint32
-name|image
 decl_stmt|;
 name|multi_page
 operator|.
@@ -4014,29 +3915,34 @@ name|image_count
 operator|=
 literal|0
 expr_stmt|;
-if|if
-condition|(
-operator|!
+for|for
+control|(
 name|valid
-condition|)
-block|{
-name|gimp_message
+operator|=
+name|gtk_tree_model_get_iter_first
 argument_list|(
-name|_
-argument_list|(
-literal|"Error! In order to save the file, at least one image should be added!"
+name|model
+argument_list|,
+operator|&
+name|iter
 argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
-while|while
-condition|(
+init|;
 name|valid
-condition|)
+condition|;
+name|valid
+operator|=
+name|gtk_tree_model_iter_next
+argument_list|(
+name|model
+argument_list|,
+operator|&
+name|iter
+argument_list|)
+control|)
 block|{
+name|gint32
+name|image
+decl_stmt|;
 name|gtk_tree_model_get
 argument_list|(
 name|model
@@ -4064,21 +3970,33 @@ index|]
 operator|=
 name|image
 expr_stmt|;
-name|valid
-operator|=
-name|gtk_tree_model_iter_next
-argument_list|(
-name|model
-argument_list|,
-operator|&
-name|iter
-argument_list|)
-expr_stmt|;
 name|multi_page
 operator|.
 name|image_count
 operator|++
 expr_stmt|;
+block|}
+if|if
+condition|(
+name|multi_page
+operator|.
+name|image_count
+operator|==
+literal|0
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Error! In order to save the file, at least one image "
+literal|"should be added!"
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
 block|}
 return|return
 name|TRUE
@@ -4087,7 +4005,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* A function that is called when the button for adding an image  * was clicked */
+comment|/* A function that is called when the button for adding an image was  * clicked  */
 end_comment
 
 begin_function
@@ -4114,6 +4032,10 @@ decl_stmt|;
 name|gint32
 name|image
 decl_stmt|;
+name|GdkPixbuf
+modifier|*
+name|pixbuf
+decl_stmt|;
 name|dnd_remove
 operator|=
 name|FALSE
@@ -4131,6 +4053,19 @@ operator|=
 name|GTK_LIST_STORE
 argument_list|(
 name|model
+argument_list|)
+expr_stmt|;
+name|pixbuf
+operator|=
+name|gimp_image_get_thumbnail
+argument_list|(
+name|image
+argument_list|,
+name|THUMB_WIDTH
+argument_list|,
+name|THUMB_HEIGHT
+argument_list|,
+name|GIMP_PIXBUF_SMALL_CHECKS
 argument_list|)
 expr_stmt|;
 name|gtk_list_store_append
@@ -4152,7 +4087,10 @@ name|PAGE_NUMBER
 argument_list|,
 name|g_strdup_printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Page %d"
+argument_list|)
 argument_list|,
 name|multi_page
 operator|.
@@ -4163,16 +4101,7 @@ argument_list|)
 argument_list|,
 name|THUMB
 argument_list|,
-name|gimp_image_get_thumbnail
-argument_list|(
-name|image
-argument_list|,
-name|THUMB_WIDTH
-argument_list|,
-name|THUMB_HEIGHT
-argument_list|,
-name|GIMP_PIXBUF_SMALL_CHECKS
-argument_list|)
+name|pixbuf
 argument_list|,
 name|IMAGE_NAME
 argument_list|,
@@ -4189,6 +4118,11 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|pixbuf
+argument_list|)
+expr_stmt|;
 name|multi_page
 operator|.
 name|image_count
@@ -4202,7 +4136,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* A function that is called when the button for deleting the  * selected images was clicked */
+comment|/* A function that is called when the button for deleting the selected  * images was clicked  */
 end_comment
 
 begin_function
@@ -4235,22 +4169,11 @@ decl_stmt|;
 name|GtkTreeIter
 name|item
 decl_stmt|;
-name|guint32
-name|i
-decl_stmt|;
 name|gpointer
 name|temp
 decl_stmt|;
 name|guint32
 name|len
-decl_stmt|;
-name|GdkPixbuf
-modifier|*
-name|thumb
-decl_stmt|;
-name|gchar
-modifier|*
-name|name
 decl_stmt|;
 name|dnd_remove
 operator|=
@@ -4280,6 +4203,9 @@ operator|>
 literal|0
 condition|)
 block|{
+name|gint
+name|i
+decl_stmt|;
 name|items
 operator|=
 name|g_newa
@@ -4370,29 +4296,6 @@ argument_list|,
 name|item_path
 argument_list|)
 expr_stmt|;
-comment|/* Get the data that should be freed */
-name|gtk_tree_model_get
-argument_list|(
-name|model
-argument_list|,
-operator|&
-name|item
-argument_list|,
-name|THUMB
-argument_list|,
-operator|&
-name|thumb
-argument_list|,
-name|IMAGE_NAME
-argument_list|,
-operator|&
-name|name
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
-comment|/* Only after you have the pointers, remove them from the tree */
 name|gtk_list_store_remove
 argument_list|(
 name|GTK_LIST_STORE
@@ -4402,17 +4305,6 @@ argument_list|)
 argument_list|,
 operator|&
 name|item
-argument_list|)
-expr_stmt|;
-comment|/* Now you can free the data */
-name|g_object_unref
-argument_list|(
-name|thumb
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|name
 argument_list|)
 expr_stmt|;
 name|gtk_tree_path_free
@@ -4451,7 +4343,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* A function that is called on rows-deleted signal. It will  * call the function to relabel the pages */
+comment|/* A function that is called on rows-deleted signal. It will call the  * function to relabel the pages  */
 end_comment
 
 begin_function
@@ -4484,7 +4376,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* A function to relabel the pages in the icon view, when  * their order was changed */
+comment|/* A function to relabel the pages in the icon view, when their order  * was changed  */
 end_comment
 
 begin_function
@@ -4518,6 +4410,8 @@ argument_list|(
 name|model
 argument_list|)
 expr_stmt|;
+for|for
+control|(
 name|valid
 operator|=
 name|gtk_tree_model_get_iter_first
@@ -4527,11 +4421,19 @@ argument_list|,
 operator|&
 name|iter
 argument_list|)
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|valid
-condition|)
+condition|;
+name|valid
+operator|=
+name|gtk_tree_model_iter_next
+argument_list|(
+name|model
+argument_list|,
+operator|&
+name|iter
+argument_list|)
+control|)
 block|{
 name|gtk_list_store_set
 argument_list|(
@@ -4544,7 +4446,10 @@ name|PAGE_NUMBER
 argument_list|,
 name|g_strdup_printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Page %d"
+argument_list|)
 argument_list|,
 name|i
 operator|+
@@ -4553,16 +4458,6 @@ argument_list|)
 argument_list|,
 operator|-
 literal|1
-argument_list|)
-expr_stmt|;
-name|valid
-operator|=
-name|gtk_tree_model_iter_next
-argument_list|(
-name|model
-argument_list|,
-operator|&
-name|iter
 argument_list|)
 expr_stmt|;
 name|i
@@ -4585,7 +4480,7 @@ comment|/******************************************************/
 end_comment
 
 begin_comment
-comment|/* A function to get a cairo image surface from a drawable.  * Some of the code was taken from the gimp-print plugin */
+comment|/* A function to get a cairo image surface from a drawable.  * Some of the code was taken from the gimp-print plugin  */
 end_comment
 
 begin_comment
@@ -5019,20 +4914,16 @@ begin_function
 specifier|static
 name|cairo_surface_t
 modifier|*
-DECL|function|get_drawable_image (GimpDrawable * drawable)
+DECL|function|get_drawable_image (gint32 drawable_ID)
 name|get_drawable_image
 parameter_list|(
+name|gint32
+name|drawable_ID
+parameter_list|)
+block|{
 name|GimpDrawable
 modifier|*
 name|drawable
-parameter_list|)
-block|{
-name|gint32
-name|drawable_ID
-init|=
-name|drawable
-operator|->
-name|drawable_id
 decl_stmt|;
 name|GimpPixelRgn
 name|region
@@ -5052,20 +4943,10 @@ decl_stmt|;
 name|cairo_format_t
 name|format
 decl_stmt|;
-specifier|const
 name|gint
-name|width
-init|=
-name|drawable
-operator|->
 name|width
 decl_stmt|;
-specifier|const
 name|gint
-name|height
-init|=
-name|drawable
-operator|->
 name|height
 decl_stmt|;
 name|guchar
@@ -5090,18 +4971,34 @@ decl_stmt|;
 name|gpointer
 name|pr
 decl_stmt|;
-name|gboolean
-name|indexed
-init|=
-name|FALSE
-decl_stmt|;
 name|int
 name|bpp
-init|=
+decl_stmt|;
+name|drawable
+operator|=
+name|gimp_drawable_get
+argument_list|(
+name|drawable_ID
+argument_list|)
+expr_stmt|;
+name|width
+operator|=
+name|drawable
+operator|->
+name|width
+expr_stmt|;
+name|height
+operator|=
+name|drawable
+operator|->
+name|height
+expr_stmt|;
+name|bpp
+operator|=
 name|drawable
 operator|->
 name|bpp
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|gimp_drawable_is_indexed
@@ -5117,10 +5014,6 @@ decl_stmt|;
 name|gint
 name|num_colors
 decl_stmt|;
-name|indexed
-operator|=
-name|TRUE
-expr_stmt|;
 name|colors
 operator|=
 name|gimp_image_get_colormap
@@ -5420,6 +5313,11 @@ argument_list|(
 name|surface
 argument_list|)
 expr_stmt|;
+name|gimp_drawable_detach
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 return|return
 name|surface
 return|;
@@ -5427,18 +5325,17 @@ block|}
 end_function
 
 begin_comment
-comment|/* A function to check if a drawable is single colored  * This allows to convert bitmaps to vector where possible */
+comment|/* A function to check if a drawable is single colored This allows to  * convert bitmaps to vector where possible  */
 end_comment
 
 begin_function
 specifier|static
 name|GimpRGB
-DECL|function|get_layer_color (GimpDrawable * layer,gboolean * single)
+DECL|function|get_layer_color (gint32 layer_ID,gboolean * single)
 name|get_layer_color
 parameter_list|(
-name|GimpDrawable
-modifier|*
-name|layer
+name|gint32
+name|layer_ID
 parameter_list|,
 name|gboolean
 modifier|*
@@ -5471,15 +5368,6 @@ name|count
 decl_stmt|,
 name|precentile
 decl_stmt|;
-name|gint32
-name|id
-decl_stmt|;
-name|id
-operator|=
-name|layer
-operator|->
-name|drawable_id
-expr_stmt|;
 name|devSum
 operator|=
 literal|0
@@ -5508,7 +5396,7 @@ if|if
 condition|(
 name|gimp_drawable_is_indexed
 argument_list|(
-name|id
+name|layer_ID
 argument_list|)
 condition|)
 block|{
@@ -5540,19 +5428,20 @@ return|return
 name|col
 return|;
 block|}
-comment|/* Are we in RGB mode? */
 if|if
 condition|(
-name|layer
-operator|->
-name|bpp
+name|gimp_drawable_bpp
+argument_list|(
+name|layer_ID
+argument_list|)
 operator|>=
 literal|3
 condition|)
 block|{
+comment|/* Are we in RGB mode? */
 name|gimp_histogram
 argument_list|(
-name|id
+name|layer_ID
 argument_list|,
 name|GIMP_HISTOGRAM_RED
 argument_list|,
@@ -5585,7 +5474,7 @@ name|dev
 expr_stmt|;
 name|gimp_histogram
 argument_list|(
-name|id
+name|layer_ID
 argument_list|,
 name|GIMP_HISTOGRAM_GREEN
 argument_list|,
@@ -5618,7 +5507,7 @@ name|dev
 expr_stmt|;
 name|gimp_histogram
 argument_list|(
-name|id
+name|layer_ID
 argument_list|,
 name|GIMP_HISTOGRAM_BLUE
 argument_list|,
@@ -5650,12 +5539,12 @@ operator|+=
 name|dev
 expr_stmt|;
 block|}
-comment|/* We are in Grayscale mode (or Indexed) */
 else|else
 block|{
+comment|/* We are in Grayscale mode (or Indexed) */
 name|gimp_histogram
 argument_list|(
-name|id
+name|layer_ID
 argument_list|,
 name|GIMP_HISTOGRAM_VALUE
 argument_list|,
@@ -5699,12 +5588,12 @@ if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|id
+name|layer_ID
 argument_list|)
 condition|)
 name|gimp_histogram
 argument_list|(
-name|id
+name|layer_ID
 argument_list|,
 name|GIMP_HISTOGRAM_ALPHA
 argument_list|,
@@ -5792,12 +5681,11 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|drawText (GimpDrawable * text_layer,gdouble opacity,cairo_t * cr,gdouble x_res,gdouble y_res)
+DECL|function|drawText (gint32 text_id,gdouble opacity,cairo_t * cr,gdouble x_res,gdouble y_res)
 name|drawText
 parameter_list|(
-name|GimpDrawable
-modifier|*
-name|text_layer
+name|gint32
+name|text_id
 parameter_list|,
 name|gdouble
 name|opacity
@@ -5813,13 +5701,6 @@ name|gdouble
 name|y_res
 parameter_list|)
 block|{
-name|gint32
-name|text_id
-init|=
-name|text_layer
-operator|->
-name|drawable_id
-decl_stmt|;
 name|GimpImageType
 name|type
 init|=
@@ -6102,7 +5983,7 @@ argument_list|,
 name|CAIRO_ANTIALIAS_NONE
 argument_list|)
 expr_stmt|;
-comment|/* We are done with cairo's settings.    * It's time to create the context */
+comment|/* We are done with cairo's settings. It's time to create the    * context    */
 name|cairo_set_font_options
 argument_list|(
 name|cr
@@ -6154,7 +6035,7 @@ argument_list|,
 name|pango_dir
 argument_list|)
 expr_stmt|;
-comment|/* We are done with the context's settings.    * It's time to create the layout */
+comment|/* We are done with the context's settings. It's time to create the    * layout    */
 name|layout
 operator|=
 name|pango_layout_new
@@ -6170,7 +6051,7 @@ argument_list|(
 name|text_id
 argument_list|)
 expr_stmt|;
-comment|/* We need to find a way to convert GIMP's returned font name to    * a normal Pango name... Hopefully GIMP 2.8 with Pango will fix it. */
+comment|/* We need to find a way to convert GIMP's returned font name to a    * normal Pango name... Hopefully GIMP 2.8 with Pango will fix it.    */
 name|font_description
 operator|=
 name|pango_font_description_from_string
@@ -6221,9 +6102,10 @@ name|pango_layout_set_width
 argument_list|(
 name|layout
 argument_list|,
-name|text_layer
-operator|->
-name|width
+name|gimp_drawable_width
+argument_list|(
+name|text_id
+argument_list|)
 operator|*
 name|PANGO_SCALE
 argument_list|)
@@ -6232,9 +6114,10 @@ name|pango_layout_set_height
 argument_list|(
 name|layout
 argument_list|,
-name|text_layer
-operator|->
-name|height
+name|gimp_drawable_height
+argument_list|(
+name|text_id
+argument_list|)
 operator|*
 name|PANGO_SCALE
 argument_list|)
