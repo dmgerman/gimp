@@ -99,7 +99,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293051070108
+DECL|struct|__anon2c08aef30108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -139,7 +139,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293051070208
+DECL|struct|__anon2c08aef30208
 block|{
 DECL|member|n_pages
 name|gint
@@ -717,7 +717,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon293051070303
+DECL|enum|__anon2c08aef30303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -3773,7 +3773,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293051070408
+DECL|struct|__anon2c08aef30408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -3798,7 +3798,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293051070508
+DECL|struct|__anon2c08aef30508
 block|{
 DECL|member|selector
 name|GimpPageSelector
@@ -4401,16 +4401,14 @@ name|FALSE
 expr_stmt|;
 name|thread
 operator|=
-name|g_thread_create
+name|g_thread_new
 argument_list|(
+literal|"thumbnailer"
+argument_list|,
 name|thumbnail_thread
 argument_list|,
 operator|&
 name|thread_data
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Resolution */
