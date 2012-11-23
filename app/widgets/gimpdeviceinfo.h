@@ -250,6 +250,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_device_info_set_default_tool
+parameter_list|(
+name|GimpDeviceInfo
+modifier|*
+name|info
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GdkInputMode
 name|gimp_device_info_get_mode
 parameter_list|(

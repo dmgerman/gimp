@@ -406,6 +406,11 @@ argument_list|,
 name|GIMP_DEVICE_INFO_CONTEXT_MASK
 argument_list|)
 expr_stmt|;
+name|gimp_device_info_set_default_tool
+argument_list|(
+name|device_info
+argument_list|)
+expr_stmt|;
 block|}
 name|filename
 operator|=
