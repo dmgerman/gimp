@@ -255,6 +255,10 @@ name|save_a_copy
 parameter_list|,
 name|gboolean
 name|close_after_saving
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1029,6 +1033,8 @@ argument_list|,
 name|save_mode
 operator|==
 name|GIMP_SAVE_MODE_SAVE_AND_CLOSE
+argument_list|,
+name|display
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1051,6 +1057,8 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
+argument_list|,
+name|display
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1914,7 +1922,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_save_dialog_show (Gimp * gimp,GimpImage * image,GtkWidget * parent,const gchar * title,gboolean save_a_copy,gboolean close_after_saving)
+DECL|function|file_save_dialog_show (Gimp * gimp,GimpImage * image,GtkWidget * parent,const gchar * title,gboolean save_a_copy,gboolean close_after_saving,GimpDisplay * display)
 name|file_save_dialog_show
 parameter_list|(
 name|Gimp
@@ -1939,6 +1947,10 @@ name|save_a_copy
 parameter_list|,
 name|gboolean
 name|close_after_saving
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|display
 parameter_list|)
 block|{
 name|GtkWidget
@@ -2071,6 +2083,11 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|close_after_saving
+argument_list|,
+name|GIMP_OBJECT
+argument_list|(
+name|display
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_present
@@ -2265,6 +2282,8 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_window_present

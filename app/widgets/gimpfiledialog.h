@@ -127,6 +127,11 @@ DECL|member|close_after_saving
 name|gboolean
 name|close_after_saving
 decl_stmt|;
+DECL|member|display_to_close
+name|GimpObject
+modifier|*
+name|display_to_close
+decl_stmt|;
 DECL|member|thumb_box
 name|GtkWidget
 modifier|*
@@ -297,6 +302,10 @@ name|export
 parameter_list|,
 name|gboolean
 name|close_after_saving
+parameter_list|,
+name|GimpObject
+modifier|*
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
