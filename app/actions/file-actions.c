@@ -1149,6 +1149,12 @@ argument_list|,
 name|group
 argument_list|)
 expr_stmt|;
+comment|/* Allows to interact with the active file view from docks. */
+name|view_actions_setup
+argument_list|(
+name|group
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

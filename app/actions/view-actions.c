@@ -312,7 +312,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"_Close"
+literal|"_Close View"
 argument_list|)
 block|,
 literal|"<primary>W"
@@ -321,12 +321,12 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Close this image window"
+literal|"Close the active image view"
 argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|window_close_cmd_callback
+name|view_close_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_FILE_CLOSE

@@ -32,6 +32,20 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|view_close_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|view_zoom_fit_in_cmd_callback
 parameter_list|(
 name|GtkAction
