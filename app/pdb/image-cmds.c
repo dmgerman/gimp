@@ -13089,7 +13089,7 @@ literal|"image-ids"
 argument_list|,
 literal|"image ids"
 argument_list|,
-literal|"The list of images currently open"
+literal|"The list of images currently open. The returned value must be freed with g_free()"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -14927,7 +14927,7 @@ literal|"layer-ids"
 argument_list|,
 literal|"layer ids"
 argument_list|,
-literal|"The list of layers contained in the image"
+literal|"The list of layers contained in the image. The returned value must be freed with g_free()"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -15036,7 +15036,7 @@ literal|"channel-ids"
 argument_list|,
 literal|"channel ids"
 argument_list|,
-literal|"The list of channels contained in the image"
+literal|"The list of channels contained in the image. The returned value must be freed with g_free()"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -15145,7 +15145,7 @@ literal|"vector-ids"
 argument_list|,
 literal|"vector ids"
 argument_list|,
-literal|"The list of vectors contained in the image"
+literal|"The list of vectors contained in the image. The returned value must be freed with g_free()"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -18218,7 +18218,7 @@ literal|"colormap"
 argument_list|,
 literal|"colormap"
 argument_list|,
-literal|"The image's colormap"
+literal|"The image's colormap. The returned value must be freed with g_free()"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -19880,7 +19880,7 @@ literal|"filename"
 argument_list|,
 literal|"filename"
 argument_list|,
-literal|"The filename"
+literal|"The filename. The returned value must be freed with g_free()"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -20070,7 +20070,7 @@ literal|"uri"
 argument_list|,
 literal|"uri"
 argument_list|,
-literal|"The URI"
+literal|"The URI. The returned value must be freed with g_free()"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -20165,7 +20165,7 @@ literal|"uri"
 argument_list|,
 literal|"uri"
 argument_list|,
-literal|"The imported URI"
+literal|"The imported URI. The returned value must be freed with g_free()"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -20260,7 +20260,7 @@ literal|"uri"
 argument_list|,
 literal|"uri"
 argument_list|,
-literal|"The imported URI"
+literal|"The imported URI. The returned value must be freed with g_free()"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -20355,7 +20355,7 @@ literal|"uri"
 argument_list|,
 literal|"uri"
 argument_list|,
-literal|"The exported URI"
+literal|"The exported URI. The returned value must be freed with g_free()"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -20450,7 +20450,7 @@ literal|"name"
 argument_list|,
 literal|"name"
 argument_list|,
-literal|"The name"
+literal|"The name. The returned value must be freed with g_free()"
 argument_list|,
 name|FALSE
 argument_list|,
