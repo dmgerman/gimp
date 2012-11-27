@@ -306,6 +306,8 @@ operator|*
 argument_list|,
 operator|*
 name|num_paint_methods
+operator|+
+literal|1
 argument_list|)
 expr_stmt|;
 for|for
@@ -344,6 +346,16 @@ index|[
 name|i
 index|]
 argument_list|)
+expr_stmt|;
+operator|(
+operator|*
+name|paint_methods
+operator|)
+index|[
+name|i
+index|]
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 name|gimp_destroy_params

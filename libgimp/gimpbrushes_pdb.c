@@ -185,6 +185,8 @@ operator|*
 argument_list|,
 operator|*
 name|num_brushes
+operator|+
+literal|1
 argument_list|)
 expr_stmt|;
 for|for
@@ -220,6 +222,13 @@ index|[
 name|i
 index|]
 argument_list|)
+expr_stmt|;
+name|brush_list
+index|[
+name|i
+index|]
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 name|gimp_destroy_params
