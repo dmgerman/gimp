@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29336ba80103
+DECL|enum|__anon275fca0d0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29336ba80203
+DECL|enum|__anon275fca0d0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -166,7 +166,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29336ba80308
+DECL|struct|__anon275fca0d0308
 block|{
 DECL|member|name
 specifier|const
@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29336ba80408
+DECL|struct|__anon275fca0d0408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -4044,7 +4044,6 @@ argument_list|(
 literal|"layer format has not been coded yet; unable to create transform"
 argument_list|)
 expr_stmt|;
-continue|continue;
 block|}
 if|if
 condition|(
@@ -4098,6 +4097,12 @@ name|layer_width
 decl_stmt|;
 name|gint
 name|layer_height
+decl_stmt|;
+name|gint
+name|layer_bpp
+decl_stmt|;
+name|gboolean
+name|layer_alpha
 decl_stmt|;
 name|gdouble
 name|progress_start
@@ -4168,6 +4173,20 @@ argument_list|(
 name|src_buffer
 argument_list|)
 expr_stmt|;
+name|layer_bpp
+operator|=
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|iter_format
+argument_list|)
+expr_stmt|;
+name|layer_alpha
+operator|=
+name|babl_format_has_alpha
+argument_list|(
+name|iter_format
+argument_list|)
+expr_stmt|;
 name|iter
 operator|=
 name|gegl_buffer_iterator_new
@@ -4210,6 +4229,34 @@ name|iter
 argument_list|)
 condition|)
 block|{
+comment|/*  lcms doesn't touch the alpha channel, simply                    *  copy everything to dest before the transform                    */
+if|if
+condition|(
+name|layer_alpha
+condition|)
+name|memcpy
+argument_list|(
+name|iter
+operator|->
+name|data
+index|[
+literal|1
+index|]
+argument_list|,
+name|iter
+operator|->
+name|data
+index|[
+literal|0
+index|]
+argument_list|,
+name|iter
+operator|->
+name|length
+operator|*
+name|bpp
+argument_list|)
+expr_stmt|;
 name|cmsDoTransform
 argument_list|(
 name|transform
