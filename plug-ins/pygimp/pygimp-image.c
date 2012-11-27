@@ -3244,16 +3244,8 @@ index|]
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|parasites
-index|[
-name|i
-index|]
-argument_list|)
-expr_stmt|;
 block|}
-name|g_free
+name|g_strfreev
 argument_list|(
 name|parasites
 argument_list|)

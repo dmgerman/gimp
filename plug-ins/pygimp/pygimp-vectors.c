@@ -43,7 +43,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2b3ee8180108
+DECL|struct|__anon29489f620108
 typedef|typedef
 struct|struct
 block|{
@@ -3507,16 +3507,8 @@ index|]
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|parasites
-index|[
-name|i
-index|]
-argument_list|)
-expr_stmt|;
 block|}
-name|g_free
+name|g_strfreev
 argument_list|(
 name|parasites
 argument_list|)

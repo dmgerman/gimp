@@ -98,7 +98,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6803e00108
+DECL|struct|__anon287e236e0108
 typedef|typedef
 struct|struct
 block|{
@@ -118,7 +118,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6803e00208
+DECL|struct|__anon287e236e0208
 typedef|typedef
 struct|struct
 block|{
@@ -3479,7 +3479,7 @@ index|]
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_strfreev
 argument_list|(
 name|names
 argument_list|)
@@ -3842,13 +3842,8 @@ name|name
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|name
-argument_list|)
-expr_stmt|;
 block|}
-name|g_free
+name|g_strfreev
 argument_list|(
 name|names
 argument_list|)

@@ -87,7 +87,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0afdcb0103
+DECL|enum|__anon2bb7fb980103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -104,7 +104,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0afdcb0203
+DECL|enum|__anon2bb7fb980203
 block|{
 DECL|enumerator|SEARCH_TYPE_ALL
 name|SEARCH_TYPE_ALL
@@ -137,7 +137,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0afdcb0303
+DECL|enum|__anon2bb7fb980303
 block|{
 DECL|enumerator|COLUMN_PROC_NAME
 name|COLUMN_PROC_NAME
@@ -1907,16 +1907,8 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|proc_list
-index|[
-name|i
-index|]
-argument_list|)
-expr_stmt|;
 block|}
-name|g_free
+name|g_strfreev
 argument_list|(
 name|proc_list
 argument_list|)

@@ -289,7 +289,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278d0c9c0108
+DECL|struct|__anon27afa6960108
 block|{
 DECL|member|name
 specifier|const
@@ -2790,16 +2790,8 @@ name|n_return_vals
 argument_list|)
 expr_stmt|;
 block|}
-name|g_free
-argument_list|(
-name|proc_list
-index|[
-name|i
-index|]
-argument_list|)
-expr_stmt|;
 block|}
-name|g_free
+name|g_strfreev
 argument_list|(
 name|proc_list
 argument_list|)

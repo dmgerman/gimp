@@ -3107,7 +3107,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cf57980108
+DECL|struct|__anon2bc329890108
 block|{
 DECL|member|group_word
 name|guint16
@@ -4066,29 +4066,14 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/* make sure we free each individual parasite name, in            * addition to the array of names            */
-name|g_free
-argument_list|(
-name|parasites
-index|[
-name|i
-index|]
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 comment|/* cleanup the array of names */
-if|if
-condition|(
-name|parasites
-condition|)
-block|{
-name|g_free
+name|g_strfreev
 argument_list|(
 name|parasites
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|elements
 return|;
@@ -5479,7 +5464,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-DECL|struct|__anon28cf57980208
+DECL|struct|__anon2bc329890208
 struct|struct
 block|{
 DECL|member|DICOM
@@ -5607,7 +5592,7 @@ modifier|*
 name|elements
 parameter_list|)
 block|{
-DECL|struct|__anon28cf57980308
+DECL|struct|__anon2bc329890308
 struct|struct
 block|{
 DECL|member|DICOM
