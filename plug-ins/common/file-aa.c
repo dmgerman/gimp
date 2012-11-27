@@ -272,7 +272,7 @@ argument_list|(
 literal|"ASCII art"
 argument_list|)
 argument_list|,
-literal|"*"
+literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
@@ -452,7 +452,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* Set us up to return a status. */
 operator|*
 name|nreturn_vals
 operator|=
@@ -516,7 +515,6 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-comment|/*  eventually export the image */
 switch|switch
 condition|(
 name|run_mode
@@ -547,7 +545,6 @@ name|drawable_ID
 argument_list|,
 name|NULL
 argument_list|,
-operator|(
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_GRAY
@@ -555,7 +552,6 @@ operator||
 name|GIMP_EXPORT_CAN_HANDLE_INDEXED
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_ALPHA
-operator|)
 argument_list|)
 expr_stmt|;
 if|if

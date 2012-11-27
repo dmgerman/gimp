@@ -135,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6780a30103
+DECL|enum|__anon2756bcca0103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -148,7 +148,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6780a30203
+DECL|enum|__anon2756bcca0203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -165,7 +165,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6780a30308
+DECL|struct|__anon2756bcca0308
 block|{
 DECL|member|interlace
 name|gint
@@ -645,6 +645,16 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
+name|gegl_init
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -655,16 +665,6 @@ operator|.
 name|data
 operator|.
 name|d_int32
-expr_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
-name|gegl_init
-argument_list|(
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
 expr_stmt|;
 operator|*
 name|nreturn_vals

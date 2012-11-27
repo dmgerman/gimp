@@ -413,6 +413,9 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gegl_init
 argument_list|(
 name|NULL
@@ -462,9 +465,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|image_ID
 operator|=
 name|load_image

@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be45c8d0108
+DECL|struct|__anon2991b1c70108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be45c8d0208
+DECL|struct|__anon2991b1c70208
 block|{
 DECL|member|run
 name|gboolean
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be45c8d0308
+DECL|struct|__anon2991b1c70308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -1089,6 +1089,13 @@ decl_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
+name|gegl_init
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -1098,13 +1105,6 @@ operator|*
 name|return_vals
 operator|=
 name|values
-expr_stmt|;
-name|gegl_init
-argument_list|(
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
 expr_stmt|;
 name|values
 index|[

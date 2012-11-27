@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd4270e0108
+DECL|struct|__anon2b68c7ca0108
 block|{
 DECL|member|description
 name|gchar
@@ -467,7 +467,7 @@ argument_list|(
 literal|"GIMP brush"
 argument_list|)
 argument_list|,
-literal|"*"
+literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
@@ -786,6 +786,8 @@ argument_list|,
 name|GIMP_EXPORT_CAN_HANDLE_GRAY
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_RGB
+operator||
+name|GIMP_EXPORT_CAN_HANDLE_INDEXED
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_ALPHA
 argument_list|)
@@ -2265,7 +2267,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2bd4270e020a
+DECL|union|__anon2b68c7ca020a
 block|{
 DECL|member|u
 name|guint16

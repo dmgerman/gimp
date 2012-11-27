@@ -409,7 +409,7 @@ argument_list|(
 literal|"Silicon Graphics IRIS image"
 argument_list|)
 argument_list|,
-literal|"*"
+literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
@@ -505,6 +505,16 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
+name|gegl_init
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -545,16 +555,6 @@ operator|.
 name|d_status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
-expr_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
-name|gegl_init
-argument_list|(
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -693,7 +693,6 @@ name|drawable_ID
 argument_list|,
 name|NULL
 argument_list|,
-operator|(
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_GRAY
@@ -701,7 +700,6 @@ operator||
 name|GIMP_EXPORT_CAN_HANDLE_INDEXED
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_ALPHA
-operator|)
 argument_list|)
 expr_stmt|;
 if|if

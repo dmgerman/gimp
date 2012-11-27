@@ -147,7 +147,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3421510108
+DECL|struct|__anon2b847a200108
 block|{
 DECL|member|compression
 name|gint
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3421510208
+DECL|struct|__anon2b847a200208
 block|{
 DECL|member|ID
 name|gint32
@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3421510308
+DECL|struct|__anon2b847a200308
 block|{
 DECL|member|o_pages
 name|gint
@@ -694,6 +694,16 @@ decl_stmt|;
 name|TiffSelectedPages
 name|pages
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
+name|gegl_init
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -705,9 +715,6 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -717,13 +724,6 @@ operator|*
 name|return_vals
 operator|=
 name|values
-expr_stmt|;
-name|gegl_init
-argument_list|(
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
 expr_stmt|;
 name|values
 index|[

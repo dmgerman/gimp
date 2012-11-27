@@ -942,7 +942,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c2f3ac70108
+DECL|struct|__anon29c16fc00108
 block|{
 DECL|member|Width
 name|guint
@@ -986,7 +986,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c2f3ac70208
+DECL|struct|__anon29c16fc00208
 block|{
 DECL|member|transparent
 name|gint
