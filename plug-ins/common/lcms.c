@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon275fca0d0103
+DECL|enum|__anon2aface6f0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275fca0d0203
+DECL|enum|__anon2aface6f0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -166,7 +166,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275fca0d0308
+DECL|struct|__anon2aface6f0308
 block|{
 DECL|member|name
 specifier|const
@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275fca0d0408
+DECL|struct|__anon2aface6f0408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -3908,6 +3908,8 @@ specifier|const
 name|Babl
 modifier|*
 name|iter_format
+init|=
+name|NULL
 decl_stmt|;
 if|if
 condition|(
@@ -4254,7 +4256,7 @@ name|iter
 operator|->
 name|length
 operator|*
-name|bpp
+name|layer_bpp
 argument_list|)
 expr_stmt|;
 name|cmsDoTransform
