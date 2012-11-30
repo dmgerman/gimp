@@ -1109,7 +1109,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|ico_read_png (FILE * fp,guint32 header,guchar * buffer,gint maxsize,gint * width,gint * height)
+DECL|function|ico_read_png (FILE * fp,guint32 header,guchar * buf,gint maxsize,gint * width,gint * height)
 name|ico_read_png
 parameter_list|(
 name|FILE
@@ -1121,7 +1121,7 @@ name|header
 parameter_list|,
 name|guchar
 modifier|*
-name|buffer
+name|buf
 parameter_list|,
 name|gint
 name|maxsize
@@ -1496,7 +1496,7 @@ operator|(
 name|guint32
 operator|*
 operator|)
-name|buffer
+name|buf
 expr_stmt|;
 for|for
 control|(
@@ -1854,7 +1854,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|ico_read_icon (FILE * fp,guint32 header_size,guchar * buffer,gint maxsize,gint * width,gint * height)
+DECL|function|ico_read_icon (FILE * fp,guint32 header_size,guchar * buf,gint maxsize,gint * width,gint * height)
 name|ico_read_icon
 parameter_list|(
 name|FILE
@@ -1866,7 +1866,7 @@ name|header_size
 parameter_list|,
 name|guchar
 modifier|*
-name|buffer
+name|buf
 parameter_list|,
 name|gint
 name|maxsize
@@ -2347,7 +2347,7 @@ operator|(
 name|guint32
 operator|*
 operator|)
-name|buffer
+name|buf
 expr_stmt|;
 switch|switch
 condition|(
@@ -2957,7 +2957,7 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|ico_load_layer (FILE * fp,gint32 image,gint32 icon_num,guchar * buffer,gint maxsize,IcoLoadInfo * info)
+DECL|function|ico_load_layer (FILE * fp,gint32 image,gint32 icon_num,guchar * buf,gint maxsize,IcoLoadInfo * info)
 name|ico_load_layer
 parameter_list|(
 name|FILE
@@ -2972,7 +2972,7 @@ name|icon_num
 parameter_list|,
 name|guchar
 modifier|*
-name|buffer
+name|buf
 parameter_list|,
 name|gint
 name|maxsize
@@ -2993,15 +2993,12 @@ decl_stmt|;
 name|guint32
 name|first_bytes
 decl_stmt|;
-name|GimpDrawable
+name|GeglBuffer
 modifier|*
-name|drawable
-decl_stmt|;
-name|GimpPixelRgn
-name|pixel_rgn
+name|buffer
 decl_stmt|;
 name|gchar
-name|buf
+name|name
 index|[
 name|ICO_MAXBUF
 index|]
@@ -3052,7 +3049,7 @@ name|fp
 argument_list|,
 name|first_bytes
 argument_list|,
-name|buffer
+name|buf
 argument_list|,
 name|maxsize
 argument_list|,
@@ -3085,7 +3082,7 @@ name|fp
 argument_list|,
 name|first_bytes
 argument_list|,
-name|buffer
+name|buf
 argument_list|,
 name|maxsize
 argument_list|,
@@ -3111,11 +3108,11 @@ block|}
 comment|/* read successfully. add to image */
 name|g_snprintf
 argument_list|(
-name|buf
+name|name
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|buf
+name|name
 argument_list|)
 argument_list|,
 name|_
@@ -3134,7 +3131,7 @@ name|gimp_layer_new
 argument_list|(
 name|image
 argument_list|,
-name|buf
+name|name
 argument_list|,
 name|width
 argument_list|,
@@ -3159,65 +3156,40 @@ argument_list|,
 name|icon_num
 argument_list|)
 expr_stmt|;
-name|drawable
+name|buffer
 operator|=
-name|gimp_drawable_get
+name|gimp_drawable_get_buffer
 argument_list|(
 name|layer
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_rgn_init
+name|gegl_buffer_set
 argument_list|(
-operator|&
-name|pixel_rgn
-argument_list|,
-name|drawable
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|drawable
-operator|->
-name|width
-argument_list|,
-name|drawable
-operator|->
-name|height
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|gimp_pixel_rgn_set_rect
-argument_list|(
-operator|&
-name|pixel_rgn
-argument_list|,
-operator|(
-specifier|const
-name|guchar
-operator|*
-operator|)
 name|buffer
 argument_list|,
+name|GEGL_RECTANGLE
+argument_list|(
 literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|drawable
-operator|->
 name|width
 argument_list|,
-name|drawable
-operator|->
 name|height
 argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|NULL
+argument_list|,
+name|buf
+argument_list|,
+name|GEGL_AUTO_ROWSTRIDE
+argument_list|)
 expr_stmt|;
-name|gimp_drawable_detach
+name|g_object_unref
 argument_list|(
-name|drawable
+name|buffer
 argument_list|)
 expr_stmt|;
 return|return
@@ -3263,7 +3235,7 @@ name|image
 decl_stmt|;
 name|guchar
 modifier|*
-name|buffer
+name|buf
 decl_stmt|;
 name|guint
 name|icon_count
@@ -3506,7 +3478,7 @@ name|max_height
 operator|*
 literal|4
 expr_stmt|;
-name|buffer
+name|buf
 operator|=
 name|g_new
 argument_list|(
@@ -3541,7 +3513,7 @@ name|image
 argument_list|,
 name|i
 argument_list|,
-name|buffer
+name|buf
 argument_list|,
 name|maxsize
 argument_list|,
@@ -3553,7 +3525,7 @@ expr_stmt|;
 block|}
 name|g_free
 argument_list|(
-name|buffer
+name|buf
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -3639,7 +3611,7 @@ name|icon_count
 decl_stmt|;
 name|guchar
 modifier|*
-name|buffer
+name|buf
 decl_stmt|;
 name|gimp_progress_init_printf
 argument_list|(
@@ -3914,7 +3886,7 @@ argument_list|,
 name|GIMP_RGB
 argument_list|)
 expr_stmt|;
-name|buffer
+name|buf
 operator|=
 name|g_new
 argument_list|(
@@ -3935,7 +3907,7 @@ name|image
 argument_list|,
 name|match
 argument_list|,
-name|buffer
+name|buf
 argument_list|,
 name|w
 operator|*
@@ -3950,7 +3922,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|buffer
+name|buf
 argument_list|)
 expr_stmt|;
 operator|*
