@@ -829,10 +829,6 @@ directive|else
 name|gegl_exit
 argument_list|()
 expr_stmt|;
-comment|/*  make sure that the swap files are removed before we quit */
-name|tile_swap_exit
-argument_list|()
-expr_stmt|;
 name|exit
 argument_list|(
 name|EXIT_SUCCESS
