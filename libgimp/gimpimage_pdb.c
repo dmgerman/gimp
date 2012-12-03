@@ -7149,7 +7149,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_parasite_list:  * @image_ID: The image.  * @num_parasites: The number of attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached parasites.  *  * Returns: The names of currently attached parasites. The returned value must be freed with g_strfreev().  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_get_parasite_list:  * @image_ID: The image.  * @num_parasites: The number of attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached parasites.  *  * Returns: The names of currently attached parasites.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function

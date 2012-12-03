@@ -2462,7 +2462,7 @@ literal|"procedure-names"
 argument_list|,
 literal|"procedure names"
 argument_list|,
-literal|"The list of procedure names. The returned value must be freed with g_strfreev()"
+literal|"The list of procedure names"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

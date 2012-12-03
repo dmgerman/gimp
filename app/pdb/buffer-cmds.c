@@ -1210,7 +1210,7 @@ literal|"buffer-list"
 argument_list|,
 literal|"buffer list"
 argument_list|,
-literal|"The list of buffer names. The returned value must be freed with g_strfreev()"
+literal|"The list of buffer names"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

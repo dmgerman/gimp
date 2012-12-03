@@ -446,7 +446,7 @@ literal|"dynamics-list"
 argument_list|,
 literal|"dynamics list"
 argument_list|,
-literal|"The list of paint dynamics names. The returned value must be freed with g_strfreev()"
+literal|"The list of paint dynamics names"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

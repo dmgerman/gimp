@@ -30,7 +30,7 @@ comment|/**  * SECTION: gimppaths  * @title: gimppaths  * @short_description: De
 end_comment
 
 begin_comment
-comment|/**  * gimp_path_list:  * @image_ID: The image to list the paths from.  * @num_paths: The number of paths returned.  *  * Deprecated: Use gimp_image_get_vectors() instead.  *  * Returns: List of the paths belonging to this image. The returned value must be freed with g_strfreev().  **/
+comment|/**  * gimp_path_list:  * @image_ID: The image to list the paths from.  * @num_paths: The number of paths returned.  *  * Deprecated: Use gimp_image_get_vectors() instead.  *  * Returns: List of the paths belonging to this image.  **/
 end_comment
 
 begin_function

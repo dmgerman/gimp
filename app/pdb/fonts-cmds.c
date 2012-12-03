@@ -439,7 +439,7 @@ literal|"font-list"
 argument_list|,
 literal|"font list"
 argument_list|,
-literal|"The list of font names. The returned value must be freed with g_strfreev()"
+literal|"The list of font names"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
