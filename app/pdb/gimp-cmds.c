@@ -1256,7 +1256,7 @@ literal|"parasites"
 argument_list|,
 literal|"parasites"
 argument_list|,
-literal|"The names of currently attached parasites"
+literal|"The names of currently attached parasites. The returned value must be freed with g_strfreev()"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

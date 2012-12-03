@@ -1209,7 +1209,7 @@ literal|"brush-list"
 argument_list|,
 literal|"brush list"
 argument_list|,
-literal|"The list of brush names"
+literal|"The list of brush names. The returned value must be freed with g_strfreev()"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

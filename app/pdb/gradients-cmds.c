@@ -1354,7 +1354,7 @@ literal|"gradient-list"
 argument_list|,
 literal|"gradient list"
 argument_list|,
-literal|"The list of gradient names"
+literal|"The list of gradient names. The returned value must be freed with g_strfreev()"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

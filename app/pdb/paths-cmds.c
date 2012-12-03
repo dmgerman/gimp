@@ -3045,7 +3045,7 @@ literal|"path-list"
 argument_list|,
 literal|"path list"
 argument_list|,
-literal|"List of the paths belonging to this image."
+literal|"List of the paths belonging to this image. The returned value must be freed with g_strfreev()"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

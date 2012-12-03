@@ -210,7 +210,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_list_paint_methods:  * @num_paint_methods: The number of the available paint methods.  * @paint_methods: The names of the available paint methods.  *  * Lists the available paint methods.  *  * This procedure lists the names of the available paint methods. Any  * of the results can be used for gimp_context_set_paint_method().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_context_list_paint_methods:  * @num_paint_methods: The number of the available paint methods.  * @paint_methods: The names of the available paint methods. The returned value must be freed with g_strfreev().  *  * Lists the available paint methods.  *  * This procedure lists the names of the available paint methods. Any  * of the results can be used for gimp_context_set_paint_method().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function

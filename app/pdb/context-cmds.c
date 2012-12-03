@@ -8028,7 +8028,7 @@ literal|"paint-methods"
 argument_list|,
 literal|"paint methods"
 argument_list|,
-literal|"The names of the available paint methods"
+literal|"The names of the available paint methods. The returned value must be freed with g_strfreev()"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
