@@ -217,7 +217,7 @@ literal|"A u16"
 argument_list|,
 name|babl_model
 argument_list|(
-literal|"RGBA"
+literal|"R'G'B'A"
 argument_list|)
 argument_list|,
 name|babl_type
@@ -552,7 +552,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon296753b20108
+DECL|struct|__anon2a2cdf640108
 block|{
 DECL|member|name
 specifier|const
