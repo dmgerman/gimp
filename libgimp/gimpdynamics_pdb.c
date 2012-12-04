@@ -86,7 +86,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dynamics_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_dynamics: The number of available paint dynamics.  *  * Retrieve the list of loaded paint dynamics.  *  * This procedure returns a list of the paint dynamics that are  * currently available.  *  * Returns: The list of paint dynamics names.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_dynamics_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_dynamics: The number of available paint dynamics.  *  * Retrieve the list of loaded paint dynamics.  *  * This procedure returns a list of the paint dynamics that are  * currently available.  *  * Returns: The list of paint dynamics names The returned value must be freed with g_strfreev().  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function

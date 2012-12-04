@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpbuffer  * @title: gimpbuffer  * @short_description: 
 end_comment
 
 begin_comment
-comment|/**  * gimp_buffers_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_buffers: The number of buffers.  *  * Retrieve a complete listing of the available buffers.  *  * This procedure returns a complete listing of available named  * buffers.  *  * Returns: The list of buffer names.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_buffers_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_buffers: The number of buffers.  *  * Retrieve a complete listing of the available buffers.  *  * This procedure returns a complete listing of available named  * buffers.  *  * Returns: The list of buffer names The returned value must be freed with g_strfreev().  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
