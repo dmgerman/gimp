@@ -86,7 +86,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_fonts_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_fonts: The number of available fonts.  *  * Retrieve the list of loaded fonts.  *  * This procedure returns a list of the fonts that are currently  * available.  *  * Returns: The list of font names The returned value must be freed with g_strfreev().  **/
+comment|/**  * gimp_fonts_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_fonts: The number of available fonts.  *  * Retrieve the list of loaded fonts.  *  * This procedure returns a list of the fonts that are currently  * available.  *  * Returns: The list of font names. The returned value must be freed  * with g_strfreev().  **/
 end_comment
 
 begin_function

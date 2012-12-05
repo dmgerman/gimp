@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpedit  * @title: gimpedit  * @short_description: Edit
 end_comment
 
 begin_comment
-comment|/**  * gimp_edit_cut:  * @drawable_ID: The drawable to cut from.  *  * Cut from the specified drawable.  *  * If there is a selection in the image, then the area specified by the  * selection is cut from the specified drawable and placed in an  * internal GIMP edit buffer. It can subsequently be retrieved using  * the gimp_edit_paste() command. If there is no selection, then the  * specified drawable will be removed and its contents stored in the  * internal GIMP edit buffer. This procedure will fail if the selected  * area lies completely outside the bounds of the current drawable and  * there is nothing to copy from.  *  * Returns: TRUE if the cut was successful, FALSE if there was nothing to copy from.  **/
+comment|/**  * gimp_edit_cut:  * @drawable_ID: The drawable to cut from.  *  * Cut from the specified drawable.  *  * If there is a selection in the image, then the area specified by the  * selection is cut from the specified drawable and placed in an  * internal GIMP edit buffer. It can subsequently be retrieved using  * the gimp_edit_paste() command. If there is no selection, then the  * specified drawable will be removed and its contents stored in the  * internal GIMP edit buffer. This procedure will fail if the selected  * area lies completely outside the bounds of the current drawable and  * there is nothing to copy from.  *  * Returns: TRUE if the cut was successful, FALSE if there was nothing  * to copy from.  **/
 end_comment
 
 begin_function
@@ -102,7 +102,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_copy:  * @drawable_ID: The drawable to copy from.  *  * Copy from the specified drawable.  *  * If there is a selection in the image, then the area specified by the  * selection is copied from the specified drawable and placed in an  * internal GIMP edit buffer. It can subsequently be retrieved using  * the gimp_edit_paste() command. If there is no selection, then the  * specified drawable's contents will be stored in the internal GIMP  * edit buffer. This procedure will fail if the selected area lies  * completely outside the bounds of the current drawable and there is  * nothing to copy from.  *  * Returns: TRUE if the cut was successful, FALSE if there was nothing to copy from.  **/
+comment|/**  * gimp_edit_copy:  * @drawable_ID: The drawable to copy from.  *  * Copy from the specified drawable.  *  * If there is a selection in the image, then the area specified by the  * selection is copied from the specified drawable and placed in an  * internal GIMP edit buffer. It can subsequently be retrieved using  * the gimp_edit_paste() command. If there is no selection, then the  * specified drawable's contents will be stored in the internal GIMP  * edit buffer. This procedure will fail if the selected area lies  * completely outside the bounds of the current drawable and there is  * nothing to copy from.  *  * Returns: TRUE if the cut was successful, FALSE if there was nothing  * to copy from.  **/
 end_comment
 
 begin_function
@@ -418,7 +418,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_named_cut:  * @drawable_ID: The drawable to cut from.  * @buffer_name: The name of the buffer to create.  *  * Cut into a named buffer.  *  * This procedure works like gimp_edit_cut(), but additionally stores  * the cut buffer into a named buffer that will stay available for  * later pasting, regardless of any intermediate copy or cut  * operations.  *  * Returns: The real name given to the buffer, or NULL if the cut failed.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_edit_named_cut:  * @drawable_ID: The drawable to cut from.  * @buffer_name: The name of the buffer to create.  *  * Cut into a named buffer.  *  * This procedure works like gimp_edit_cut(), but additionally stores  * the cut buffer into a named buffer that will stay available for  * later pasting, regardless of any intermediate copy or cut  * operations.  *  * Returns: The real name given to the buffer, or NULL if the cut  * failed.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -510,7 +510,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_named_copy:  * @drawable_ID: The drawable to copy from.  * @buffer_name: The name of the buffer to create.  *  * Copy into a named buffer.  *  * This procedure works like gimp_edit_copy(), but additionally stores  * the copied buffer into a named buffer that will stay available for  * later pasting, regardless of any intermediate copy or cut  * operations.  *  * Returns: The real name given to the buffer, or NULL if the copy failed.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_edit_named_copy:  * @drawable_ID: The drawable to copy from.  * @buffer_name: The name of the buffer to create.  *  * Copy into a named buffer.  *  * This procedure works like gimp_edit_copy(), but additionally stores  * the copied buffer into a named buffer that will stay available for  * later pasting, regardless of any intermediate copy or cut  * operations.  *  * Returns: The real name given to the buffer, or NULL if the copy  * failed.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -602,7 +602,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_named_copy_visible:  * @image_ID: The image to copy from.  * @buffer_name: The name of the buffer to create.  *  * Copy from the projection into a named buffer.  *  * This procedure works like gimp_edit_copy_visible(), but additionally  * stores the copied buffer into a named buffer that will stay  * available for later pasting, regardless of any intermediate copy or  * cut operations.  *  * Returns: The real name given to the buffer, or NULL if the copy failed.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_edit_named_copy_visible:  * @image_ID: The image to copy from.  * @buffer_name: The name of the buffer to create.  *  * Copy from the projection into a named buffer.  *  * This procedure works like gimp_edit_copy_visible(), but additionally  * stores the copied buffer into a named buffer that will stay  * available for later pasting, regardless of any intermediate copy or  * cut operations.  *  * Returns: The real name given to the buffer, or NULL if the copy  * failed.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function

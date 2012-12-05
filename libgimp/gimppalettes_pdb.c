@@ -86,7 +86,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palettes_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_palettes: The number of palettes in the list.  *  * Retrieves a list of all of the available palettes  *  * This procedure returns a complete listing of available palettes.  * Each name returned can be used as input to the command  * gimp_context_set_palette().  *  * Returns: The list of palette names The returned value must be freed with g_strfreev().  **/
+comment|/**  * gimp_palettes_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_palettes: The number of palettes in the list.  *  * Retrieves a list of all of the available palettes  *  * This procedure returns a complete listing of available palettes.  * Each name returned can be used as input to the command  * gimp_context_set_palette().  *  * Returns: The list of palette names. The returned value must be freed  * with g_strfreev().  **/
 end_comment
 
 begin_function

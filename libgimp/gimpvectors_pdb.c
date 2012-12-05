@@ -30,7 +30,7 @@ comment|/**  * SECTION: gimpvectors  * @title: gimpvectors  * @short_description
 end_comment
 
 begin_comment
-comment|/**  * gimp_vectors_new:  * @image_ID: The image.  * @name: the name of the new vector object.  *  * Creates a new empty vectors object.  *  * Creates a new empty vectors object. The vectors object needs to be  * added to the image using gimp_image_insert_vectors().  *  * Returns: the current vector object, 0 if no vector exists in the image.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_vectors_new:  * @image_ID: The image.  * @name: the name of the new vector object.  *  * Creates a new empty vectors object.  *  * Creates a new empty vectors object. The vectors object needs to be  * added to the image using gimp_image_insert_vectors().  *  * Returns: the current vector object, 0 if no vector exists in the  * image.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1286,7 +1286,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_stroke_get_points:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @num_points: The number of floats returned.  * @controlpoints: List of the control points for the stroke (x0, y0, x1, y1, ...).  * @closed: Whether the stroke is closed or not.  *  * returns the control points of a stroke.  *  * returns the control points of a stroke. The interpretation of the  * coordinates returned depends on the type of the stroke. For Gimp 2.4  * this is always a bezier stroke, where the coordinates are the  * control points.  *  * Returns: type of the stroke (always GIMP_VECTORS_STROKE_TYPE_BEZIER for now).  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_vectors_stroke_get_points:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @num_points: The number of floats returned.  * @controlpoints: List of the control points for the stroke (x0, y0, x1, y1, ...).  * @closed: Whether the stroke is closed or not.  *  * returns the control points of a stroke.  *  * returns the control points of a stroke. The interpretation of the  * coordinates returned depends on the type of the stroke. For Gimp 2.4  * this is always a bezier stroke, where the coordinates are the  * control points.  *  * Returns: type of the stroke (always GIMP_VECTORS_STROKE_TYPE_BEZIER  * for now).  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function

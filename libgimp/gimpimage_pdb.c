@@ -108,7 +108,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_list:  * @num_images: The number of images currently open.  *  * Returns the list of images currently open.  *  * This procedure returns the list of images currently open in GIMP.  *  * Returns: The list of images currently open. The returned value must be freed with g_free().  **/
+comment|/**  * gimp_image_list:  * @num_images: The number of images currently open.  *  * Returns the list of images currently open.  *  * This procedure returns the list of images currently open in GIMP.  *  * Returns: The list of images currently open. The returned value must  * be freed with g_free().  **/
 end_comment
 
 begin_function
@@ -1517,7 +1517,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_layers:  * @image_ID: The image.  * @num_layers: The number of layers contained in the image.  *  * Returns the list of layers contained in the specified image.  *  * This procedure returns the list of layers contained in the specified  * image. The order of layers is from topmost to bottommost.  *  * Returns: The list of layers contained in the image. The returned value must be freed with g_free().  **/
+comment|/**  * gimp_image_get_layers:  * @image_ID: The image.  * @num_layers: The number of layers contained in the image.  *  * Returns the list of layers contained in the specified image.  *  * This procedure returns the list of layers contained in the specified  * image. The order of layers is from topmost to bottommost.  *  * Returns: The list of layers contained in the image. The returned  * value must be freed with g_free().  **/
 end_comment
 
 begin_function
@@ -1641,7 +1641,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_channels:  * @image_ID: The image.  * @num_channels: The number of channels contained in the image.  *  * Returns the list of channels contained in the specified image.  *  * This procedure returns the list of channels contained in the  * specified image. This does not include the selection mask, or layer  * masks. The order is from topmost to bottommost.  *  * Returns: The list of channels contained in the image. The returned value must be freed with g_free().  **/
+comment|/**  * gimp_image_get_channels:  * @image_ID: The image.  * @num_channels: The number of channels contained in the image.  *  * Returns the list of channels contained in the specified image.  *  * This procedure returns the list of channels contained in the  * specified image. This does not include the selection mask, or layer  * masks. The order is from topmost to bottommost.  *  * Returns: The list of channels contained in the image. The returned  * value must be freed with g_free().  **/
 end_comment
 
 begin_function
@@ -1765,7 +1765,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_vectors:  * @image_ID: The image.  * @num_vectors: The number of vectors contained in the image.  *  * Returns the list of vectors contained in the specified image.  *  * This procedure returns the list of vectors contained in the  * specified image.  *  * Returns: The list of vectors contained in the image. The returned value must be freed with g_free().  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_image_get_vectors:  * @image_ID: The image.  * @num_vectors: The number of vectors contained in the image.  *  * Returns the list of vectors contained in the specified image.  *  * This procedure returns the list of vectors contained in the  * specified image.  *  * Returns: The list of vectors contained in the image. The returned  * value must be freed with g_free().  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -3871,7 +3871,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_get_colormap:  * @image_ID: The image.  * @num_bytes: Number of bytes in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of bytes contained in the colormap. The actual  * number of colors in the transmitted colormap will be 'num-bytes' /  * 3. If the image is not in Indexed color mode, no colormap is  * returned.  *  * Returns: The image's colormap. The returned value must be freed with g_free().  **/
+comment|/**  * _gimp_image_get_colormap:  * @image_ID: The image.  * @num_bytes: Number of bytes in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of bytes contained in the colormap. The actual  * number of colors in the transmitted colormap will be 'num-bytes' /  * 3. If the image is not in Indexed color mode, no colormap is  * returned.  *  * Returns: The image's colormap. The returned value must be freed with  * g_free().  **/
 end_comment
 
 begin_function
@@ -5308,7 +5308,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_filename:  * @image_ID: The image.  *  * Returns the specified image's filename.  *  * This procedure returns the specified image's filename in the  * filesystem encoding. The image has a filename only if it was loaded  * or imported from a file or has since been saved or exported.  * Otherwise, this function returns %NULL. See also  * gimp_image_get_uri().  *  * Returns: The filename. The returned value must be freed with g_free().  **/
+comment|/**  * gimp_image_get_filename:  * @image_ID: The image.  *  * Returns the specified image's filename.  *  * This procedure returns the specified image's filename in the  * filesystem encoding. The image has a filename only if it was loaded  * or imported from a file or has since been saved or exported.  * Otherwise, this function returns %NULL. See also  * gimp_image_get_uri().  *  * Returns: The filename. The returned value must be freed with  * g_free().  **/
 end_comment
 
 begin_function
@@ -5550,7 +5550,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_xcf_uri:  * @image_ID: The image.  *  * Returns the XCF URI for the specified image.  *  * This procedure returns the XCF URI associated with the image. If  * there is no such URI, this procedure returns %NULL.  *  * Returns: The imported URI. The returned value must be freed with g_free().  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_get_xcf_uri:  * @image_ID: The image.  *  * Returns the XCF URI for the specified image.  *  * This procedure returns the XCF URI associated with the image. If  * there is no such URI, this procedure returns %NULL.  *  * Returns: The imported URI. The returned value must be freed with  * g_free().  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -5633,7 +5633,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_imported_uri:  * @image_ID: The image.  *  * Returns the imported URI for the specified image.  *  * This procedure returns the URI associated with the specified image  * if the image was imported from a non-native Gimp format. If the  * image was not imported, or has since been saved in the native Gimp  * format, this procedure returns %NULL.  *  * Returns: The imported URI. The returned value must be freed with g_free().  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_get_imported_uri:  * @image_ID: The image.  *  * Returns the imported URI for the specified image.  *  * This procedure returns the URI associated with the specified image  * if the image was imported from a non-native Gimp format. If the  * image was not imported, or has since been saved in the native Gimp  * format, this procedure returns %NULL.  *  * Returns: The imported URI. The returned value must be freed with  * g_free().  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -5716,7 +5716,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_exported_uri:  * @image_ID: The image.  *  * Returns the exported URI for the specified image.  *  * This procedure returns the URI associated with the specified image  * if the image was exported a non-native GIMP format. If the image was  * not exported, this procedure returns %NULL.  *  * Returns: The exported URI. The returned value must be freed with g_free().  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_get_exported_uri:  * @image_ID: The image.  *  * Returns the exported URI for the specified image.  *  * This procedure returns the URI associated with the specified image  * if the image was exported a non-native GIMP format. If the image was  * not exported, this procedure returns %NULL.  *  * Returns: The exported URI. The returned value must be freed with  * g_free().  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -7149,7 +7149,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_parasite_list:  * @image_ID: The image.  * @num_parasites: The number of attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached parasites.  *  * Returns: The names of currently attached parasites The returned value must be freed with g_strfreev().  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_get_parasite_list:  * @image_ID: The image.  * @num_parasites: The number of attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached parasites.  *  * Returns: The names of currently attached parasites. The returned  * value must be freed with g_strfreev().  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function

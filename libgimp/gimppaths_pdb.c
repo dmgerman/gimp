@@ -30,7 +30,7 @@ comment|/**  * SECTION: gimppaths  * @title: gimppaths  * @short_description: De
 end_comment
 
 begin_comment
-comment|/**  * gimp_path_list:  * @image_ID: The image to list the paths from.  * @num_paths: The number of paths returned.  *  * Deprecated: Use gimp_image_get_vectors() instead.  *  * Returns: List of the paths belonging to this image. The returned value must be freed with g_strfreev().  **/
+comment|/**  * gimp_path_list:  * @image_ID: The image to list the paths from.  * @num_paths: The number of paths returned.  *  * Deprecated: Use gimp_image_get_vectors() instead.  *  * Returns: List of the paths belonging to this image. The returned  * value must be freed with g_strfreev().  **/
 end_comment
 
 begin_function
@@ -416,7 +416,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_get_points:  * @image_ID: The image to list the paths from.  * @name: The name of the path whose points should be listed.  * @path_closed: Return if the path is closed. (0 = path open, 1 = path closed).  * @num_path_point_details: The number of points returned. Each point is made up of (x, y, pnt_type) of floats.  * @points_pairs: The points in the path represented as 3 floats. The first is the x pos, next is the y pos, last is the type of the pnt. The type field is dependent on the path type. For beziers (type 1 paths) the type can either be (1.0 = BEZIER_ANCHOR, 2.0 = BEZIER_CONTROL, 3.0 = BEZIER_MOVE). Note all points are returned in pixel resolution.  *  * Deprecated: Use gimp_vectors_stroke_get_points() instead.  *  * Returns: The type of the path. Currently only one type (1 = Bezier) is supported.  **/
+comment|/**  * gimp_path_get_points:  * @image_ID: The image to list the paths from.  * @name: The name of the path whose points should be listed.  * @path_closed: Return if the path is closed. (0 = path open, 1 = path closed).  * @num_path_point_details: The number of points returned. Each point is made up of (x, y, pnt_type) of floats.  * @points_pairs: The points in the path represented as 3 floats. The first is the x pos, next is the y pos, last is the type of the pnt. The type field is dependent on the path type. For beziers (type 1 paths) the type can either be (1.0 = BEZIER_ANCHOR, 2.0 = BEZIER_CONTROL, 3.0 = BEZIER_MOVE). Note all points are returned in pixel resolution.  *  * Deprecated: Use gimp_vectors_stroke_get_points() instead.  *  * Returns: The type of the path. Currently only one type (1 = Bezier)  * is supported.  **/
 end_comment
 
 begin_function
