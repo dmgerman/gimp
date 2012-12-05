@@ -82,7 +82,15 @@ DECL|macro|INITIAL_ALPHA
 define|#
 directive|define
 name|INITIAL_ALPHA
-value|0
+value|0.0
+end_define
+
+begin_define
+DECL|macro|INITIAL_ALPHA_RADIANS
+define|#
+directive|define
+name|INITIAL_ALPHA_RADIANS
+value|0.0
 end_define
 
 begin_define
@@ -90,7 +98,15 @@ DECL|macro|INITIAL_BETA
 define|#
 directive|define
 name|INITIAL_BETA
-value|G_PI_2
+value|90.0
+end_define
+
+begin_define
+DECL|macro|INITIAL_BETA_RADIANS
+define|#
+directive|define
+name|INITIAL_BETA_RADIANS
+value|((INITIAL_BETA / 360) * 2 * G_PI)
 end_define
 
 begin_define
@@ -873,7 +889,7 @@ name|angle
 operator|->
 name|alpha
 operator|=
-name|INITIAL_ALPHA
+name|INITIAL_ALPHA_RADIANS
 expr_stmt|;
 name|st
 operator|->
@@ -881,7 +897,7 @@ name|angle
 operator|->
 name|beta
 operator|=
-name|INITIAL_BETA
+name|INITIAL_BETA_RADIANS
 expr_stmt|;
 name|st
 operator|->
@@ -1379,11 +1395,11 @@ name|alpha
 argument_list|,
 literal|0.0
 argument_list|,
-literal|2.0
+literal|360.0
 argument_list|,
-literal|0.0001
+literal|0.01
 argument_list|,
-literal|0.001
+literal|1.0
 argument_list|,
 literal|0.0
 argument_list|)
@@ -1400,7 +1416,7 @@ name|adj
 argument_list|,
 literal|0.01
 argument_list|,
-literal|4
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_spin_button_set_numeric
@@ -1560,7 +1576,7 @@ name|angle
 operator|->
 name|beta
 operator|=
-name|INITIAL_BETA
+name|INITIAL_BETA_RADIANS
 expr_stmt|;
 name|adj
 operator|=
@@ -1570,19 +1586,15 @@ operator|*
 operator|)
 name|gtk_adjustment_new
 argument_list|(
-name|st
-operator|->
-name|angle
-operator|->
-name|beta
+name|INITIAL_BETA
 argument_list|,
 literal|0.0
 argument_list|,
-literal|2.0
+literal|360.0
 argument_list|,
-literal|0.0001
+literal|0.01
 argument_list|,
-literal|0.001
+literal|1.0
 argument_list|,
 literal|0.0
 argument_list|)
@@ -1599,7 +1611,7 @@ name|adj
 argument_list|,
 literal|0.01
 argument_list|,
-literal|4
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_spin_button_set_numeric

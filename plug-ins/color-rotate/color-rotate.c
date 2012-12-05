@@ -127,9 +127,9 @@ comment|/* SELECTION ONLY */
 name|TRUE
 block|,
 comment|/* REAL TIME */
-name|RADIANS_OVER_PI
+name|DEGREES
 block|,
-comment|/* START IN RADIANS OVER PI */
+comment|/* START IN DEGREES */
 name|GRAY_TO
 block|}
 decl_stmt|;
