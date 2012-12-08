@@ -1583,7 +1583,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_gegl_smudge_blend (GeglBuffer * top_buffer,const GeglRectangle * top_rect,GeglBuffer * bottom_buffer,const GeglRectangle * bottom_rect,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect,guchar blend)
+DECL|function|gimp_gegl_smudge_blend (GeglBuffer * top_buffer,const GeglRectangle * top_rect,GeglBuffer * bottom_buffer,const GeglRectangle * bottom_rect,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect,gdouble blend)
 name|gimp_gegl_smudge_blend
 parameter_list|(
 name|GeglBuffer
@@ -1613,7 +1613,7 @@ name|GeglRectangle
 modifier|*
 name|dest_rect
 parameter_list|,
-name|guchar
+name|gdouble
 name|blend
 parameter_list|)
 block|{
@@ -1633,7 +1633,7 @@ literal|0
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"R'G'B'A u8"
+literal|"RGBA float"
 argument_list|)
 argument_list|,
 name|GEGL_BUFFER_READ
@@ -1653,7 +1653,7 @@ literal|0
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"R'G'B'A u8"
+literal|"RGBA float"
 argument_list|)
 argument_list|,
 name|GEGL_BUFFER_READ
@@ -1673,7 +1673,7 @@ literal|0
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"R'G'B'A u8"
+literal|"RGBA float"
 argument_list|)
 argument_list|,
 name|GEGL_BUFFER_WRITE
@@ -1690,7 +1690,7 @@ argument_list|)
 condition|)
 block|{
 specifier|const
-name|guchar
+name|gfloat
 modifier|*
 name|top
 init|=
@@ -1702,7 +1702,7 @@ literal|0
 index|]
 decl_stmt|;
 specifier|const
-name|guchar
+name|gfloat
 modifier|*
 name|bottom
 init|=
@@ -1713,7 +1713,7 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|guchar
+name|gfloat
 modifier|*
 name|dest
 init|=
@@ -1725,20 +1725,18 @@ literal|2
 index|]
 decl_stmt|;
 specifier|const
-name|guint
+name|gfloat
 name|blend1
 init|=
-literal|255
+literal|1.0
 operator|-
 name|blend
 decl_stmt|;
 specifier|const
-name|guint
+name|gfloat
 name|blend2
 init|=
 name|blend
-operator|+
-literal|1
 decl_stmt|;
 while|while
 condition|(
@@ -1749,7 +1747,7 @@ operator|--
 condition|)
 block|{
 specifier|const
-name|gint
+name|gfloat
 name|a1
 init|=
 name|blend1
@@ -1760,7 +1758,7 @@ literal|3
 index|]
 decl_stmt|;
 specifier|const
-name|gint
+name|gfloat
 name|a2
 init|=
 name|blend2
@@ -1771,20 +1769,21 @@ literal|3
 index|]
 decl_stmt|;
 specifier|const
-name|gint
+name|gfloat
 name|a
 init|=
 name|a1
 operator|+
 name|a2
 decl_stmt|;
-name|guint
+name|gint
 name|b
 decl_stmt|;
 if|if
 condition|(
-operator|!
 name|a
+operator|==
+literal|0
 condition|)
 block|{
 for|for
@@ -1855,8 +1854,6 @@ index|[
 name|b
 index|]
 operator|)
-operator|/
-name|a
 expr_stmt|;
 name|dest
 index|[
@@ -1864,8 +1861,6 @@ literal|3
 index|]
 operator|=
 name|a
-operator|>>
-literal|8
 expr_stmt|;
 block|}
 name|top

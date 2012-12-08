@@ -127,7 +127,7 @@ name|GeglRectangle
 modifier|*
 name|dest_rect
 parameter_list|,
-name|guchar
+name|gdouble
 name|blend
 parameter_list|)
 function_decl|;

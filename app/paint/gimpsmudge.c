@@ -650,9 +650,9 @@ argument_list|,
 name|accum_size
 argument_list|)
 argument_list|,
-name|gimp_drawable_get_format
+name|babl_format
 argument_list|(
-name|drawable
+literal|"RGBA float"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1117,12 +1117,7 @@ argument_list|,
 name|paint_buffer_height
 argument_list|)
 argument_list|,
-name|ROUND
-argument_list|(
 name|rate
-operator|*
-literal|255.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
