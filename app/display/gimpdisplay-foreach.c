@@ -720,7 +720,7 @@ name|new
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  remember which contexts refer to old_image  */
+comment|/*  check which contexts refer to old_image  */
 for|for
 control|(
 name|list
@@ -768,6 +768,24 @@ name|data
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*  set the new_image on the remembered contexts (in reverse order,    *  since older contexts are usually the parents of newer    *  ones). Also, update the contexts before the displays, or we    *  might run into menu update functions that would see an    *  inconsistent state (display = new, context = old), and thus    *  inadvertently call actions as if the user had selected a menu    *  item.    */
+name|g_list_foreach
+argument_list|(
+name|contexts
+argument_list|,
+operator|(
+name|GFunc
+operator|)
+name|gimp_context_set_image
+argument_list|,
+name|new
+argument_list|)
+expr_stmt|;
+name|g_list_free
+argument_list|(
+name|contexts
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|list
@@ -812,24 +830,6 @@ name|new
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  set the new_image on the remembered contexts (in reverse    *  order, since older contexts are usually the parents of    *  newer ones)    */
-name|g_list_foreach
-argument_list|(
-name|contexts
-argument_list|,
-operator|(
-name|GFunc
-operator|)
-name|gimp_context_set_image
-argument_list|,
-name|new
-argument_list|)
-expr_stmt|;
-name|g_list_free
-argument_list|(
-name|contexts
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
