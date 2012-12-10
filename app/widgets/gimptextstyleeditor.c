@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5ceea50103
+DECL|enum|__anon2c1a9cb90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1793,6 +1793,11 @@ argument_list|,
 name|G_CONNECT_AFTER
 operator||
 name|G_CONNECT_SWAPPED
+argument_list|)
+expr_stmt|;
+name|gimp_text_style_editor_update
+argument_list|(
+name|editor
 argument_list|)
 expr_stmt|;
 block|}
