@@ -9252,7 +9252,7 @@ literal|"show-paint-tool-cursor"
 argument_list|,
 name|_
 argument_list|(
-literal|"Show pointer for paint _tools"
+literal|"Show pointer for brush _tools"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -9515,7 +9515,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b966b4b0108
+DECL|struct|__anon2c82557c0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10672,7 +10672,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b966b4b0208
+DECL|struct|__anon2c82557c0208
 block|{
 DECL|member|label
 specifier|const
@@ -11784,7 +11784,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b966b4b0308
+DECL|struct|__anon2c82557c0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11939,7 +11939,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b966b4b0408
+DECL|struct|__anon2c82557c0408
 block|{
 DECL|member|tree_label
 specifier|const
