@@ -146,9 +146,8 @@ condition|(
 name|old_options_pattern
 operator|&&
 name|update_callback
-operator|&&
-operator|!
-operator|(
+condition|)
+block|{
 name|old_options_regexp
 operator|=
 name|g_regex_new
@@ -161,12 +160,17 @@ literal|0
 argument_list|,
 name|error
 argument_list|)
-operator|)
-condition|)
+expr_stmt|;
 comment|/* error set by g_regex_new. */
+if|if
+condition|(
+operator|!
+name|old_options_regexp
+condition|)
 return|return
 name|FALSE
 return|;
+block|}
 name|sfile
 operator|=
 name|g_fopen
@@ -380,7 +384,7 @@ name|sfile
 argument_list|)
 condition|)
 block|{
-comment|/* We are in unlikely case where a single config line is longer than the buffer! */
+comment|/* We are in unlikely case where a single config line is            * longer than the buffer!            */
 name|g_set_error
 argument_list|(
 name|error
@@ -391,7 +395,9 @@ name|GIMP_CONFIG_ERROR_PARSE
 argument_list|,
 name|_
 argument_list|(
-literal|"Error parsing '%s': line over %ld characters."
+literal|"Error parsing '%s': line longer than %"
+name|G_GINT64_FORMAT
+literal|" characters."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -399,6 +405,9 @@ argument_list|(
 name|dest
 argument_list|)
 argument_list|,
+operator|(
+name|gint64
+operator|)
 sizeof|sizeof
 argument_list|(
 name|buffer
