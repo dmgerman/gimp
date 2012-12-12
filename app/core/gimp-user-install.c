@@ -174,7 +174,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2795aeb20103
+DECL|enum|__anon2c076c7d0103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -193,7 +193,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2795aeb20208
+DECL|struct|__anon2c076c7d0208
 block|{
 DECL|member|name
 specifier|const
@@ -495,6 +495,14 @@ specifier|const
 name|gchar
 modifier|*
 name|dest
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|old_options_regexp
+parameter_list|,
+name|GRegexEvalCallback
+name|update_callback
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1351,7 +1359,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|user_install_file_copy (GimpUserInstall * install,const gchar * source,const gchar * dest)
+DECL|function|user_install_file_copy (GimpUserInstall * install,const gchar * source,const gchar * dest,const gchar * old_options_regexp,GRegexEvalCallback update_callback)
 name|user_install_file_copy
 parameter_list|(
 name|GimpUserInstall
@@ -1367,6 +1375,14 @@ specifier|const
 name|gchar
 modifier|*
 name|dest
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|old_options_regexp
+parameter_list|,
+name|GRegexEvalCallback
+name|update_callback
 parameter_list|)
 block|{
 name|GError
@@ -1405,6 +1421,10 @@ argument_list|(
 name|source
 argument_list|,
 name|dest
+argument_list|,
+name|old_options_regexp
+argument_list|,
+name|update_callback
 argument_list|,
 operator|&
 name|error
@@ -1640,6 +1660,74 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/* The regexp pattern of all options changed from previous menurc.  * Add any pattern that we want to recognize for replacement in the menurc of  * the next release*/
+end_comment
+
+begin_define
+DECL|macro|MENURC_OVER20_UPDATE_PATTERN
+define|#
+directive|define
+name|MENURC_OVER20_UPDATE_PATTERN
+value|"NOMATCH^"
+end_define
+
+begin_comment
+comment|/**  * callback to use for updating any change value in the menurc.  * data is unused (always NULL).  * The updated value will be matched line by line.  */
+end_comment
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|user_update_menurc_over20 (const GMatchInfo * matched_value,GString * new_value,gpointer data)
+name|user_update_menurc_over20
+parameter_list|(
+specifier|const
+name|GMatchInfo
+modifier|*
+name|matched_value
+parameter_list|,
+name|GString
+modifier|*
+name|new_value
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|gchar
+modifier|*
+name|match
+decl_stmt|;
+name|match
+operator|=
+name|g_match_info_fetch
+argument_list|(
+name|matched_value
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+comment|/* This is an example of how to use it.    * If view-close were to be renamed to file-close for instance, we'd add:    if (strcmp (match, "\"<Actions>/view/view-close\"") == 0)     g_string_append (new_value, "\"<Actions>/file/file-close\"");   else   */
+comment|/* Should not happen. Just in case we match something unexpected by mistake. */
+name|g_string_append
+argument_list|(
+name|new_value
+argument_list|,
+name|match
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|match
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
+end_function
+
 begin_function
 specifier|static
 name|gboolean
@@ -1858,6 +1946,10 @@ argument_list|,
 name|name
 argument_list|,
 name|dest
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 condition|)
 block|{
@@ -2057,6 +2149,10 @@ argument_list|,
 name|source
 argument_list|,
 name|dest
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 condition|)
 return|return
@@ -2211,6 +2307,18 @@ argument_list|,
 name|NULL
 argument_list|)
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|update_pattern
+init|=
+name|NULL
+decl_stmt|;
+name|GRegexEvalCallback
+name|update_callback
+init|=
+name|NULL
+decl_stmt|;
 if|if
 condition|(
 name|g_file_test
@@ -2272,15 +2380,8 @@ goto|goto
 name|next_file
 goto|;
 block|}
-comment|/*  skip menurc for gimp 2.0 as the format has changed  */
 if|if
 condition|(
-name|install
-operator|->
-name|old_minor
-operator|==
-literal|0
-operator|&&
 name|strcmp
 argument_list|(
 name|basename
@@ -2291,9 +2392,26 @@ operator|==
 literal|0
 condition|)
 block|{
+comment|/*  skip menurc for gimp 2.0 as the format has changed  */
+if|if
+condition|(
+name|install
+operator|->
+name|old_minor
+operator|==
+literal|0
+condition|)
 goto|goto
 name|next_file
 goto|;
+name|update_pattern
+operator|=
+name|MENURC_OVER20_UPDATE_PATTERN
+expr_stmt|;
+name|update_callback
+operator|=
+name|user_update_menurc_over20
+expr_stmt|;
 block|}
 name|g_snprintf
 argument_list|(
@@ -2321,6 +2439,10 @@ argument_list|,
 name|source
 argument_list|,
 name|dest
+argument_list|,
+name|update_pattern
+argument_list|,
+name|update_callback
 argument_list|)
 expr_stmt|;
 block|}

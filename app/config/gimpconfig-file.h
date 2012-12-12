@@ -30,6 +30,14 @@ name|gchar
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|old_options_regexp
+parameter_list|,
+name|GRegexEvalCallback
+name|update_callback
+parameter_list|,
 name|GError
 modifier|*
 modifier|*
