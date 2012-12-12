@@ -135,7 +135,7 @@ argument_list|,
 literal|"Close Dock"
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|NULL
 block|,
