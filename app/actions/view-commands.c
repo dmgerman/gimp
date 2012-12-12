@@ -359,22 +359,9 @@ expr_stmt|;
 comment|/* Check for active image so we don't close the last display. */
 if|if
 condition|(
-operator|!
-name|GIMP_IS_IMAGE
-argument_list|(
-name|image
-argument_list|)
-operator|||
-operator|!
-name|gimp_image_get_active_drawable
-argument_list|(
-name|image
-argument_list|)
-condition|)
-return|return;
-if|if
-condition|(
 name|shell
+operator|&&
+name|image
 condition|)
 name|gimp_display_shell_close
 argument_list|(
