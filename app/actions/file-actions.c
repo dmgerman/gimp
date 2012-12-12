@@ -132,12 +132,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"view-actions.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -1152,12 +1146,6 @@ name|displays
 argument_list|,
 name|NULL
 argument_list|,
-name|group
-argument_list|)
-expr_stmt|;
-comment|/* Allows to interact with the active file view from docks. */
-name|view_actions_setup
-argument_list|(
 name|group
 argument_list|)
 expr_stmt|;
