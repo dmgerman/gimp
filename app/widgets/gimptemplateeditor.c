@@ -110,7 +110,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6d0b2d0103
+DECL|enum|__anon2bd13ebd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2795,14 +2795,12 @@ name|icon_picker
 operator|=
 name|gimp_prop_icon_picker_new
 argument_list|(
-name|G_OBJECT
+name|GIMP_VIEWABLE
 argument_list|(
 name|private
 operator|->
 name|template
 argument_list|)
-argument_list|,
-literal|"stock-id"
 argument_list|,
 name|gimp
 argument_list|)

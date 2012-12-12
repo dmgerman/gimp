@@ -651,12 +651,10 @@ name|button
 operator|=
 name|gimp_prop_icon_picker_new
 argument_list|(
-name|G_OBJECT
+name|GIMP_VIEWABLE
 argument_list|(
 name|preset
 argument_list|)
-argument_list|,
-literal|"stock-id"
 argument_list|,
 name|data_editor
 operator|->

@@ -319,14 +319,9 @@ name|GtkWidget
 modifier|*
 name|gimp_prop_icon_picker_new
 parameter_list|(
-name|GObject
+name|GimpViewable
 modifier|*
-name|config
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|property_name
+name|viewable
 parameter_list|,
 name|Gimp
 modifier|*
