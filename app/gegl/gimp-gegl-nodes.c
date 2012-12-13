@@ -882,7 +882,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gegl_mode_node_set (GeglNode * node,GimpLayerModeEffects mode,gdouble opacity,gboolean premultiplied)
+DECL|function|gimp_gegl_mode_node_set (GeglNode * node,GimpLayerModeEffects mode,gdouble opacity,gboolean linear)
 name|gimp_gegl_mode_node_set
 parameter_list|(
 name|GeglNode
@@ -896,7 +896,7 @@ name|gdouble
 name|opacity
 parameter_list|,
 name|gboolean
-name|premultiplied
+name|linear
 parameter_list|)
 block|{
 specifier|const
@@ -1142,9 +1142,9 @@ literal|"opacity"
 argument_list|,
 name|opacity
 argument_list|,
-literal|"premultiplied"
+literal|"linear"
 argument_list|,
-name|premultiplied
+name|linear
 argument_list|,
 name|NULL
 argument_list|)

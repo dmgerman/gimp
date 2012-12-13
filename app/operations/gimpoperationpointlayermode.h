@@ -110,9 +110,9 @@ DECL|member|parent_instance
 name|GeglOperationPointComposer3
 name|parent_instance
 decl_stmt|;
-DECL|member|premultiplied
+DECL|member|linear
 name|gboolean
-name|premultiplied
+name|linear
 decl_stmt|;
 DECL|member|opacity
 name|gdouble

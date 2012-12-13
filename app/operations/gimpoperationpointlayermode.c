@@ -47,13 +47,13 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fd61ca0103
+DECL|enum|__anon278152d20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
 block|,
-DECL|enumerator|PROP_PREMULTIPLIED
-name|PROP_PREMULTIPLIED
+DECL|enumerator|PROP_LINEAR
+name|PROP_LINEAR
 block|,
 DECL|enumerator|PROP_OPACITY
 name|PROP_OPACITY
@@ -201,11 +201,11 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_PREMULTIPLIED
+name|PROP_LINEAR
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
-literal|"premultiplied"
+literal|"linear"
 argument_list|,
 name|NULL
 argument_list|,
@@ -299,11 +299,11 @@ name|property_id
 condition|)
 block|{
 case|case
-name|PROP_PREMULTIPLIED
+name|PROP_LINEAR
 case|:
 name|self
 operator|->
-name|premultiplied
+name|linear
 operator|=
 name|g_value_get_boolean
 argument_list|(
@@ -376,7 +376,7 @@ name|property_id
 condition|)
 block|{
 case|case
-name|PROP_PREMULTIPLIED
+name|PROP_LINEAR
 case|:
 name|g_value_set_boolean
 argument_list|(
@@ -384,7 +384,7 @@ name|value
 argument_list|,
 name|self
 operator|->
-name|premultiplied
+name|linear
 argument_list|)
 expr_stmt|;
 break|break;
@@ -445,13 +445,13 @@ if|if
 condition|(
 name|self
 operator|->
-name|premultiplied
+name|linear
 condition|)
 name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"R'aG'aB'aA float"
+literal|"RGBA float"
 argument_list|)
 expr_stmt|;
 else|else
