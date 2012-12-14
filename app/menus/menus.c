@@ -371,6 +371,8 @@ literal|"edit"
 argument_list|,
 literal|"select"
 argument_list|,
+literal|"view"
+argument_list|,
 literal|"image"
 argument_list|,
 literal|"drawable"
@@ -411,6 +413,8 @@ argument_list|,
 literal|"edit"
 argument_list|,
 literal|"select"
+argument_list|,
+literal|"view"
 argument_list|,
 literal|"image"
 argument_list|,
