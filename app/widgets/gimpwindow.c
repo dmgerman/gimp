@@ -297,11 +297,13 @@ condition|(
 operator|!
 name|handled
 operator|&&
+operator|(
 name|event
 operator|->
 name|state
 operator|&
 name|accel_mods
+operator|)
 condition|)
 block|{
 name|handled
