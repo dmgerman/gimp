@@ -82,7 +82,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291127970103
+DECL|enum|__anon298b92d60103
 block|{
 DECL|enumerator|RGB_565
 name|RGB_565
@@ -110,7 +110,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon291127970208
+DECL|struct|__anon298b92d60208
 block|{
 DECL|member|rgb_format
 name|RGBMode
@@ -120,7 +120,7 @@ DECL|member|use_run_length_encoding
 name|gint
 name|use_run_length_encoding
 decl_stmt|;
-comment|/* Weather or not to write BITMAPV5HEADER color space data */
+comment|/* Whether or not to write BITMAPV5HEADER color space data */
 DECL|member|dont_write_color_space_data
 name|gint
 name|dont_write_color_space_data
