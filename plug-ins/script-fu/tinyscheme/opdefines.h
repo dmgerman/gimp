@@ -1469,9 +1469,9 @@ literal|"atom->string"
 argument_list|,
 literal|1
 argument_list|,
-literal|1
+literal|2
 argument_list|,
-argument|TST_ANY
+argument|TST_ANY TST_NATURAL
 argument_list|,
 argument|OP_ATOM2STR
 argument_list|)
@@ -1503,9 +1503,9 @@ literal|"string->atom"
 argument_list|,
 literal|1
 argument_list|,
-literal|1
+literal|2
 argument_list|,
-argument|TST_STRING
+argument|TST_STRING TST_NATURAL
 argument_list|,
 argument|OP_STR2ATOM
 argument_list|)
