@@ -114,6 +114,11 @@ name|gchar
 modifier|*
 name|session_name
 decl_stmt|;
+DECL|member|default_folder
+name|gchar
+modifier|*
+name|default_folder
+decl_stmt|;
 DECL|member|be_verbose
 name|gboolean
 name|be_verbose
@@ -463,6 +468,11 @@ specifier|const
 name|gchar
 modifier|*
 name|session_name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|default_folder
 parameter_list|,
 name|gboolean
 name|be_verbose

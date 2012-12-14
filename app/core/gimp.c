@@ -327,7 +327,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ff0a770103
+DECL|enum|__anon29be67210103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -780,6 +780,12 @@ expr_stmt|;
 name|gimp
 operator|->
 name|session_name
+operator|=
+name|NULL
+expr_stmt|;
+name|gimp
+operator|->
+name|default_folder
 operator|=
 name|NULL
 expr_stmt|;
@@ -1817,6 +1823,27 @@ expr_stmt|;
 name|gimp
 operator|->
 name|edit_config
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|gimp
+operator|->
+name|default_folder
+condition|)
+block|{
+name|g_free
+argument_list|(
+name|gimp
+operator|->
+name|default_folder
+argument_list|)
+expr_stmt|;
+name|gimp
+operator|->
+name|default_folder
 operator|=
 name|NULL
 expr_stmt|;
@@ -3086,7 +3113,7 @@ end_function
 begin_function
 name|Gimp
 modifier|*
-DECL|function|gimp_new (const gchar * name,const gchar * session_name,gboolean be_verbose,gboolean no_data,gboolean no_fonts,gboolean no_interface,gboolean use_shm,gboolean console_messages,GimpStackTraceMode stack_trace_mode,GimpPDBCompatMode pdb_compat_mode)
+DECL|function|gimp_new (const gchar * name,const gchar * session_name,const gchar * default_folder,gboolean be_verbose,gboolean no_data,gboolean no_fonts,gboolean no_interface,gboolean use_shm,gboolean console_messages,GimpStackTraceMode stack_trace_mode,GimpPDBCompatMode pdb_compat_mode)
 name|gimp_new
 parameter_list|(
 specifier|const
@@ -3098,6 +3125,11 @@ specifier|const
 name|gchar
 modifier|*
 name|session_name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|default_folder
 parameter_list|,
 name|gboolean
 name|be_verbose
@@ -3157,6 +3189,15 @@ operator|=
 name|g_strdup
 argument_list|(
 name|session_name
+argument_list|)
+expr_stmt|;
+name|gimp
+operator|->
+name|default_folder
+operator|=
+name|g_strdup
+argument_list|(
+name|default_folder
 argument_list|)
 expr_stmt|;
 name|gimp

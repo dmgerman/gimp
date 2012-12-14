@@ -557,9 +557,11 @@ begin_function_decl
 specifier|static
 name|gchar
 modifier|*
-name|gimp_file_dialog_get_documents_uri
+name|gimp_file_dialog_get_default_uri
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2098,7 +2100,7 @@ name|NULL
 decl_stmt|;
 name|gchar
 modifier|*
-name|docs_uri
+name|default_uri
 init|=
 name|NULL
 decl_stmt|;
@@ -2130,10 +2132,12 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|docs_uri
+name|default_uri
 operator|=
-name|gimp_file_dialog_get_documents_uri
-argument_list|()
+name|gimp_file_dialog_get_default_uri
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 name|dialog
 operator|->
@@ -2178,7 +2182,7 @@ operator|!
 name|export
 condition|)
 block|{
-comment|/*        * Priority of default paths for Save:        *        *   1. Last Save a copy-path (applies only to Save a copy)        *   2. Last Save path        *   3. Path of source XCF        *   4. Path of Import source        *   5. Last Save path of any GIMP document        *   6. The OS 'Documents' path        */
+comment|/*        * Priority of default paths for Save:        *        *   1. Last Save a copy-path (applies only to Save a copy)        *   2. Last Save path        *   3. Path of source XCF        *   4. Path of Import source        *   5. Last Save path of any GIMP document        *   6. The default path (usually the OS 'Documents' path)        */
 if|if
 condition|(
 name|save_a_copy
@@ -2255,7 +2259,7 @@ name|dir_uri
 condition|)
 name|dir_uri
 operator|=
-name|docs_uri
+name|default_uri
 expr_stmt|;
 comment|/* Priority of default basenames for Save:        *        *   1. Last Save a copy-name (applies only to Save a copy)        *   2. Last Save name        *   3. Last Export name        *   3. The source image path        *   3. 'Untitled'        */
 if|if
@@ -2336,7 +2340,7 @@ block|}
 else|else
 comment|/* if (export) */
 block|{
-comment|/*        * Priority of default paths for Export:        *        *   1. Last Export path        *   2. Path of import source        *   3. Path of XCF source        *   4. Last path of any save to XCF        *   5. Last Export path of any document        *   6. The OS 'Documents' path        */
+comment|/*        * Priority of default paths for Export:        *        *   1. Last Export path        *   2. Path of import source        *   3. Path of XCF source        *   4. Last path of any save to XCF        *   5. Last Export path of any document        *   6. The default path (usually the OS 'Documents' path)        */
 name|dir_uri
 operator|=
 name|gimp_image_get_exported_uri
@@ -2426,7 +2430,7 @@ name|dir_uri
 condition|)
 name|dir_uri
 operator|=
-name|docs_uri
+name|default_uri
 expr_stmt|;
 comment|/* Priority of default basenames for Export:        *        *   1. Last Export name        *   3. Save URI        *   2. Source file name        *   3. 'Untitled'        */
 name|name_uri
@@ -2585,7 +2589,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|docs_uri
+name|default_uri
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -4447,11 +4451,31 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_file_dialog_get_documents_uri (void)
-name|gimp_file_dialog_get_documents_uri
+DECL|function|gimp_file_dialog_get_default_uri (Gimp * gimp)
+name|gimp_file_dialog_get_default_uri
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
+block|{
+if|if
+condition|(
+name|gimp
+operator|->
+name|default_folder
+condition|)
+block|{
+return|return
+name|g_strdup
+argument_list|(
+name|gimp
+operator|->
+name|default_folder
+argument_list|)
+return|;
+block|}
+else|else
 block|{
 name|gchar
 modifier|*
@@ -4466,14 +4490,14 @@ name|path
 operator|=
 name|g_build_path
 argument_list|(
-literal|"/"
+name|G_DIR_SEPARATOR_S
 argument_list|,
 name|g_get_user_special_dir
 argument_list|(
 name|G_USER_DIRECTORY_DOCUMENTS
 argument_list|)
 argument_list|,
-literal|"/"
+name|G_DIR_SEPARATOR_S
 argument_list|,
 name|NULL
 argument_list|)
@@ -4497,6 +4521,7 @@ expr_stmt|;
 return|return
 name|uri
 return|;
+block|}
 block|}
 end_function
 

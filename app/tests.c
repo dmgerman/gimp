@@ -159,6 +159,8 @@ literal|"Unit Tested GIMP"
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
@@ -280,6 +282,8 @@ operator|=
 name|gimp_new
 argument_list|(
 literal|"Unit Tested GIMP"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
