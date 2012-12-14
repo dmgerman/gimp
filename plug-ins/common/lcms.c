@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aface6f0103
+DECL|enum|__anon2c5e245b0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aface6f0203
+DECL|enum|__anon2c5e245b0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -166,7 +166,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aface6f0308
+DECL|struct|__anon2c5e245b0308
 block|{
 DECL|member|name
 specifier|const
@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aface6f0408
+DECL|struct|__anon2c5e245b0408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -4388,7 +4388,7 @@ modifier|*
 name|cmap
 decl_stmt|;
 name|gint
-name|num_colors
+name|n_cmap_bytes
 decl_stmt|;
 name|cmsUInt32Number
 name|format
@@ -4402,7 +4402,7 @@ argument_list|(
 name|image
 argument_list|,
 operator|&
-name|num_colors
+name|n_cmap_bytes
 argument_list|)
 expr_stmt|;
 name|transform
@@ -4441,7 +4441,9 @@ name|cmap
 argument_list|,
 name|cmap
 argument_list|,
-name|num_colors
+name|n_cmap_bytes
+operator|/
+literal|3
 argument_list|)
 expr_stmt|;
 name|cmsDeleteTransform
@@ -4464,7 +4466,7 @@ name|image
 argument_list|,
 name|cmap
 argument_list|,
-name|num_colors
+name|n_cmap_bytes
 argument_list|)
 expr_stmt|;
 block|}
