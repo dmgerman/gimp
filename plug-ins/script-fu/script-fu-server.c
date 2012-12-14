@@ -488,7 +488,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3c9b280108
+DECL|struct|__anon28c442c40108
 block|{
 DECL|member|command
 name|gchar
@@ -512,7 +512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3c9b280208
+DECL|struct|__anon28c442c40208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -546,7 +546,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2c3c9b28030a
+DECL|union|__anon28c442c4030a
 block|{
 DECL|member|family
 name|sa_family_t
@@ -940,6 +940,11 @@ expr_stmt|;
 name|ts_set_run_mode
 argument_list|(
 name|run_mode
+argument_list|)
+expr_stmt|;
+name|ts_set_print_flag
+argument_list|(
+literal|1
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -2114,6 +2119,14 @@ name|error
 operator|=
 name|FALSE
 expr_stmt|;
+if|if
+condition|(
+name|response
+operator|->
+name|len
+operator|==
+literal|0
+condition|)
 name|g_string_assign
 argument_list|(
 name|response
