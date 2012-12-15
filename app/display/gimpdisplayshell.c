@@ -333,9 +333,22 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_comment
+comment|/*  halfway between G_PRIORITY_HIGH_IDLE and G_PRIORITY_DEFAULT_IDLE - 1,  *  so a bit higher than projection construction  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_DISPLAY_SHELL_FILL_IDLE_PRIORITY
+define|#
+directive|define
+name|GIMP_DISPLAY_SHELL_FILL_IDLE_PRIORITY
+define|\
+value|((G_PRIORITY_HIGH_IDLE + G_PRIORITY_DEFAULT_IDLE) / 2 - 1)
+end_define
+
 begin_enum
 enum|enum
-DECL|enum|__anon2925e6f80103
+DECL|enum|__anon2a2dccca0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -363,7 +376,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2925e6f80203
+DECL|enum|__anon2a2dccca0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5672,14 +5685,18 @@ name|shell
 operator|->
 name|fill_idle_id
 operator|=
-name|g_idle_add
+name|g_idle_add_full
 argument_list|(
+name|GIMP_DISPLAY_SHELL_FILL_IDLE_PRIORITY
+argument_list|,
 operator|(
 name|GSourceFunc
 operator|)
 name|gimp_display_shell_fill_idle
 argument_list|,
 name|shell
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
