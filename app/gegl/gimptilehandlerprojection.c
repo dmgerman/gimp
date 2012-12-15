@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2895c4170103
+DECL|enum|__anon29e2aa1f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1148,6 +1148,8 @@ operator|(
 name|x
 operator|+
 name|width
+operator|-
+literal|1
 operator|)
 operator|/
 name|projection
@@ -1160,6 +1162,8 @@ operator|(
 name|y
 operator|+
 name|height
+operator|-
+literal|1
 operator|)
 operator|/
 name|projection
