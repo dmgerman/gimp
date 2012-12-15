@@ -108,7 +108,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0e1a650103
+DECL|enum|__anon2c41a9190103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1116,11 +1116,10 @@ operator|->
 name|validate_handler
 argument_list|)
 expr_stmt|;
-name|gimp_tile_handler_projection_invalidate
+comment|/*  This used to call gimp_tile_handler_projection_invalidate()        *  which forced the entire projection to be constructed in one        *  go for new images, causing a potentially huge delay. Now we        *  initially validate stuff the normal way, which makes the        *  image appear incrementally, but it keeps everything        *  responsive.        */
+name|gimp_projection_add_update_area
 argument_list|(
 name|proj
-operator|->
-name|validate_handler
 argument_list|,
 literal|0
 argument_list|,
@@ -1129,6 +1128,17 @@ argument_list|,
 name|width
 argument_list|,
 name|height
+argument_list|)
+expr_stmt|;
+name|proj
+operator|->
+name|invalidate_preview
+operator|=
+name|TRUE
+expr_stmt|;
+name|gimp_projection_flush
+argument_list|(
+name|proj
 argument_list|)
 expr_stmt|;
 block|}
