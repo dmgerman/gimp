@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290d94ad0103
+DECL|enum|__anon2768f6af0103
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -98,7 +98,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290d94ad0208
+DECL|struct|__anon2768f6af0208
 block|{
 DECL|member|duration_index
 name|gint
@@ -125,7 +125,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290d94ad0308
+DECL|struct|__anon2768f6af0308
 block|{
 DECL|member|x
 DECL|member|y
@@ -2743,7 +2743,7 @@ argument_list|(
 literal|"_Step_back"
 argument_list|)
 block|,
-name|NULL
+literal|"d"
 block|,
 name|N_
 argument_list|(
@@ -2766,7 +2766,7 @@ argument_list|(
 literal|"_Step"
 argument_list|)
 block|,
-name|NULL
+literal|"f"
 block|,
 name|N_
 argument_list|(
@@ -2953,7 +2953,7 @@ name|GTK_STOCK_MEDIA_PLAY
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"space"
 block|,
 name|N_
 argument_list|(
