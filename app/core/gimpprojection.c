@@ -108,7 +108,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c41a9190103
+DECL|enum|__anon2c2785ae0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -900,6 +900,12 @@ argument_list|(
 name|pickable
 argument_list|)
 decl_stmt|;
+comment|/* create the buffer if it doesn't exist */
+name|gimp_projection_get_buffer
+argument_list|(
+name|pickable
+argument_list|)
+expr_stmt|;
 name|gimp_projection_finish_draw
 argument_list|(
 name|proj
