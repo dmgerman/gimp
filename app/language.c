@@ -1379,7 +1379,7 @@ literal|1046
 case|:
 name|language
 operator|=
-literal|"pt"
+literal|"pt_BR"
 expr_stmt|;
 comment|/* Portuguese - Brazil */
 break|break;
