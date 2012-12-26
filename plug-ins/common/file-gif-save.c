@@ -135,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2756bcca0103
+DECL|enum|__anon2b83d5620103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -148,7 +148,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2756bcca0203
+DECL|enum|__anon2b83d5620203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -165,7 +165,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2756bcca0308
+DECL|struct|__anon2b83d5620308
 block|{
 DECL|member|interlace
 name|gint
@@ -287,6 +287,7 @@ modifier|*
 name|filename
 parameter_list|,
 name|gint32
+modifier|*
 name|image_ID
 parameter_list|,
 name|GError
@@ -715,6 +716,10 @@ name|filename
 decl_stmt|;
 name|gint32
 name|image_ID
+decl_stmt|,
+name|sanitized_image_ID
+init|=
+literal|0
 decl_stmt|;
 name|gint32
 name|drawable_ID
@@ -780,6 +785,7 @@ name|sanity_check
 argument_list|(
 name|filename
 argument_list|,
+operator|&
 name|image_ID
 argument_list|,
 operator|&
@@ -794,6 +800,11 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
+comment|/* If the sanity check succeeded, the image_ID will point to            * a duplicate image to delete later. */
+name|sanitized_image_ID
+operator|=
+name|image_ID
+expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -998,6 +1009,15 @@ name|d_status
 operator|=
 name|GIMP_PDB_CANCEL
 expr_stmt|;
+if|if
+condition|(
+name|sanitized_image_ID
+condition|)
+name|gimp_image_delete
+argument_list|(
+name|sanitized_image_ID
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 block|}
@@ -1059,6 +1079,11 @@ operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
+name|gimp_image_delete
+argument_list|(
+name|sanitized_image_ID
+argument_list|)
+expr_stmt|;
 block|}
 if|if
 condition|(
@@ -2249,7 +2274,7 @@ end_function
 begin_function
 specifier|static
 name|GimpPDBStatusType
-DECL|function|sanity_check (const gchar * filename,gint32 image_ID,GError ** error)
+DECL|function|sanity_check (const gchar * filename,gint32 * image_ID,GError ** error)
 name|sanity_check
 parameter_list|(
 specifier|const
@@ -2258,6 +2283,7 @@ modifier|*
 name|filename
 parameter_list|,
 name|gint32
+modifier|*
 name|image_ID
 parameter_list|,
 name|GError
@@ -2286,6 +2312,7 @@ name|image_width
 operator|=
 name|gimp_image_width
 argument_list|(
+operator|*
 name|image_ID
 argument_list|)
 expr_stmt|;
@@ -2293,6 +2320,7 @@ name|image_height
 operator|=
 name|gimp_image_height
 argument_list|(
+operator|*
 name|image_ID
 argument_list|)
 expr_stmt|;
@@ -2336,10 +2364,20 @@ return|;
 block|}
 comment|/*** Iterate through the layers to make sure they're all ***/
 comment|/*** within the bounds of the image                      ***/
+operator|*
+name|image_ID
+operator|=
+name|gimp_image_duplicate
+argument_list|(
+operator|*
+name|image_ID
+argument_list|)
+expr_stmt|;
 name|layers
 operator|=
 name|gimp_image_get_layers
 argument_list|(
+operator|*
 name|image_ID
 argument_list|,
 operator|&
@@ -2436,6 +2474,7 @@ condition|)
 block|{
 name|gimp_image_crop
 argument_list|(
+operator|*
 name|image_ID
 argument_list|,
 name|image_width
@@ -2453,6 +2492,12 @@ return|;
 block|}
 else|else
 block|{
+name|gimp_image_delete
+argument_list|(
+operator|*
+name|image_ID
+argument_list|)
+expr_stmt|;
 return|return
 name|GIMP_PDB_CANCEL
 return|;
