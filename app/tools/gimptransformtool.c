@@ -5313,7 +5313,7 @@ name|locked_message
 operator|=
 name|_
 argument_list|(
-literal|"The active path's position are locked."
+literal|"The active path's position is locked."
 argument_list|)
 expr_stmt|;
 break|break;
