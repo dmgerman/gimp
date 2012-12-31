@@ -68,6 +68,12 @@ return|return
 literal|"cubic"
 return|;
 case|case
+name|GIMP_INTERPOLATION_NOHALO
+case|:
+return|return
+literal|"nohalo"
+return|;
+case|case
 name|GIMP_INTERPOLATION_LOHALO
 case|:
 return|return
