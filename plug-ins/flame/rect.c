@@ -2467,6 +2467,11 @@ argument_list|(
 name|temporal_filter
 argument_list|)
 expr_stmt|;
+name|free
+argument_list|(
+name|temporal_deltas
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
