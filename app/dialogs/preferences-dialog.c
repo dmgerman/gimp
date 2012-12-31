@@ -7978,8 +7978,10 @@ argument_list|(
 name|notebook
 argument_list|)
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"preferences"
+argument_list|,
 literal|"Tool Options"
 argument_list|)
 argument_list|,
@@ -9515,7 +9517,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c82557c0108
+DECL|struct|__anon2af2d1ee0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10672,7 +10674,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c82557c0208
+DECL|struct|__anon2af2d1ee0208
 block|{
 DECL|member|label
 specifier|const
@@ -11784,7 +11786,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c82557c0308
+DECL|struct|__anon2af2d1ee0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11939,7 +11941,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c82557c0408
+DECL|struct|__anon2af2d1ee0408
 block|{
 DECL|member|tree_label
 specifier|const
