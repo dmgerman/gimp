@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7a31800108
+DECL|struct|__anon2991b1c70108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7a31800208
+DECL|struct|__anon2991b1c70208
 block|{
 DECL|member|run
 name|gboolean
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7a31800308
+DECL|struct|__anon2991b1c70308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -4020,9 +4020,6 @@ argument_list|,
 operator|&
 name|profcomp
 argument_list|,
-operator|(
-name|png_bytepp
-operator|)
 operator|&
 name|profile
 argument_list|,
@@ -5695,7 +5692,8 @@ argument_list|,
 literal|0
 argument_list|,
 operator|(
-name|png_const_bytep
+name|gchar
+operator|*
 operator|)
 name|gimp_parasite_data
 argument_list|(
