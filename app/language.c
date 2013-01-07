@@ -119,7 +119,7 @@ literal|1025
 case|:
 name|language
 operator|=
-literal|"ar"
+literal|"ar_SA"
 expr_stmt|;
 comment|/* Arabic - Saudi Arabia */
 break|break;
@@ -128,7 +128,7 @@ literal|5121
 case|:
 name|language
 operator|=
-literal|"ar"
+literal|"ar_DZ"
 expr_stmt|;
 comment|/* Arabic - Algeria */
 break|break;
@@ -137,7 +137,7 @@ literal|15361
 case|:
 name|language
 operator|=
-literal|"ar"
+literal|"ar_BH"
 expr_stmt|;
 comment|/* Arabic - Bahrain */
 break|break;
@@ -146,7 +146,7 @@ literal|3073
 case|:
 name|language
 operator|=
-literal|"ar"
+literal|"ar_EG"
 expr_stmt|;
 comment|/* Arabic - Egypt */
 break|break;
@@ -155,7 +155,7 @@ literal|2049
 case|:
 name|language
 operator|=
-literal|"ar"
+literal|"ar_IQ"
 expr_stmt|;
 comment|/* Arabic - Iraq */
 break|break;
@@ -164,7 +164,7 @@ literal|11265
 case|:
 name|language
 operator|=
-literal|"ar"
+literal|"ar_JO"
 expr_stmt|;
 comment|/* Arabic - Jordan */
 break|break;
@@ -173,7 +173,7 @@ literal|13313
 case|:
 name|language
 operator|=
-literal|"ar"
+literal|"ar_KW"
 expr_stmt|;
 comment|/* Arabic - Kuwait */
 break|break;
@@ -182,7 +182,7 @@ literal|12289
 case|:
 name|language
 operator|=
-literal|"ar"
+literal|"ar_LB"
 expr_stmt|;
 comment|/* Arabic - Lebanon */
 break|break;
@@ -191,7 +191,7 @@ literal|4097
 case|:
 name|language
 operator|=
-literal|"ar"
+literal|"ar_LY"
 expr_stmt|;
 comment|/* Arabic - Libya */
 break|break;
@@ -200,7 +200,7 @@ literal|6145
 case|:
 name|language
 operator|=
-literal|"ar"
+literal|"ar_MO"
 expr_stmt|;
 comment|/* Arabic - Morocco */
 break|break;
@@ -209,7 +209,7 @@ literal|8193
 case|:
 name|language
 operator|=
-literal|"ar"
+literal|"ar_OM"
 expr_stmt|;
 comment|/* Arabic - Oman */
 break|break;
@@ -218,7 +218,7 @@ literal|16385
 case|:
 name|language
 operator|=
-literal|"ar"
+literal|"ar_QA"
 expr_stmt|;
 comment|/* Arabic - Qatar */
 break|break;
@@ -227,7 +227,7 @@ literal|10241
 case|:
 name|language
 operator|=
-literal|"ar"
+literal|"ar_SY"
 expr_stmt|;
 comment|/* Arabic - Syria */
 break|break;
@@ -236,7 +236,7 @@ literal|7169
 case|:
 name|language
 operator|=
-literal|"ar"
+literal|"ar_TN"
 expr_stmt|;
 comment|/* Arabic - Tunisia */
 break|break;
@@ -245,7 +245,7 @@ literal|14337
 case|:
 name|language
 operator|=
-literal|"ar"
+literal|"ar_AE"
 expr_stmt|;
 comment|/* Arabic - U.A.E. */
 break|break;
@@ -254,7 +254,7 @@ literal|9217
 case|:
 name|language
 operator|=
-literal|"ar"
+literal|"ar_YE"
 expr_stmt|;
 comment|/* Arabic - Yemen */
 break|break;
@@ -317,7 +317,7 @@ literal|1093
 case|:
 name|language
 operator|=
-literal|"bn"
+literal|"bn_IN"
 expr_stmt|;
 comment|/* Bengali (India) */
 break|break;
@@ -326,7 +326,7 @@ literal|2117
 case|:
 name|language
 operator|=
-literal|"bn"
+literal|"bn_BD"
 expr_stmt|;
 comment|/* Bengali (Bangladesh) */
 break|break;
@@ -380,7 +380,7 @@ literal|2052
 case|:
 name|language
 operator|=
-literal|"zh"
+literal|"zh_CN"
 expr_stmt|;
 comment|/* Chinese - People"s Republic of China */
 break|break;
@@ -389,7 +389,7 @@ literal|4100
 case|:
 name|language
 operator|=
-literal|"zh"
+literal|"zh_SG"
 expr_stmt|;
 comment|/* Chinese - Singapore */
 break|break;
@@ -398,7 +398,7 @@ literal|1028
 case|:
 name|language
 operator|=
-literal|"zh"
+literal|"zh_TW"
 expr_stmt|;
 comment|/* Chinese - Taiwan */
 break|break;
@@ -407,7 +407,7 @@ literal|3076
 case|:
 name|language
 operator|=
-literal|"zh"
+literal|"zh_HK"
 expr_stmt|;
 comment|/* Chinese - Hong Kong SAR */
 break|break;
@@ -416,7 +416,7 @@ literal|5124
 case|:
 name|language
 operator|=
-literal|"zh"
+literal|"zh_MO"
 expr_stmt|;
 comment|/* Chinese - Macao SAR */
 break|break;
@@ -425,7 +425,7 @@ literal|1050
 case|:
 name|language
 operator|=
-literal|"hr"
+literal|"hr_HR"
 expr_stmt|;
 comment|/* Croatian */
 break|break;
@@ -434,7 +434,7 @@ literal|4122
 case|:
 name|language
 operator|=
-literal|"hr"
+literal|"hr_BA"
 expr_stmt|;
 comment|/* Croatian (Bosnia/Herzegovina) */
 break|break;
@@ -470,7 +470,7 @@ literal|1043
 case|:
 name|language
 operator|=
-literal|"nl"
+literal|"nl_NL"
 expr_stmt|;
 comment|/* Dutch - Netherlands */
 break|break;
@@ -479,7 +479,7 @@ literal|2067
 case|:
 name|language
 operator|=
-literal|"nl"
+literal|"nl_BE"
 expr_stmt|;
 comment|/* Dutch - Belgium */
 break|break;
@@ -497,7 +497,7 @@ literal|1033
 case|:
 name|language
 operator|=
-literal|"en"
+literal|"en_US"
 expr_stmt|;
 comment|/* English - United States */
 break|break;
@@ -506,7 +506,7 @@ literal|2057
 case|:
 name|language
 operator|=
-literal|"en"
+literal|"en_UK"
 expr_stmt|;
 comment|/* English - United Kingdom */
 break|break;
@@ -515,7 +515,7 @@ literal|3081
 case|:
 name|language
 operator|=
-literal|"en"
+literal|"en_AU"
 expr_stmt|;
 comment|/* English - Australia */
 break|break;
@@ -524,7 +524,7 @@ literal|10249
 case|:
 name|language
 operator|=
-literal|"en"
+literal|"en_BZ"
 expr_stmt|;
 comment|/* English - Belize */
 break|break;
@@ -533,7 +533,7 @@ literal|4105
 case|:
 name|language
 operator|=
-literal|"en"
+literal|"en_CA"
 expr_stmt|;
 comment|/* English - Canada */
 break|break;
@@ -551,7 +551,7 @@ literal|15369
 case|:
 name|language
 operator|=
-literal|"en"
+literal|"en_HK"
 expr_stmt|;
 comment|/* English - Hong Kong SAR */
 break|break;
@@ -560,7 +560,7 @@ literal|16393
 case|:
 name|language
 operator|=
-literal|"en"
+literal|"en_IN"
 expr_stmt|;
 comment|/* English - India */
 break|break;
@@ -569,7 +569,7 @@ literal|14345
 case|:
 name|language
 operator|=
-literal|"en"
+literal|"en_ID"
 expr_stmt|;
 comment|/* English - Indonesia */
 break|break;
@@ -578,7 +578,7 @@ literal|6153
 case|:
 name|language
 operator|=
-literal|"en"
+literal|"en_IR"
 expr_stmt|;
 comment|/* English - Ireland */
 break|break;
@@ -587,7 +587,7 @@ literal|8201
 case|:
 name|language
 operator|=
-literal|"en"
+literal|"en_JM"
 expr_stmt|;
 comment|/* English - Jamaica */
 break|break;
@@ -596,7 +596,7 @@ literal|17417
 case|:
 name|language
 operator|=
-literal|"en"
+literal|"en_MW"
 expr_stmt|;
 comment|/* English - Malaysia */
 break|break;
@@ -605,7 +605,7 @@ literal|5129
 case|:
 name|language
 operator|=
-literal|"en"
+literal|"en_NZ"
 expr_stmt|;
 comment|/* English - New Zealand */
 break|break;
@@ -614,7 +614,7 @@ literal|13321
 case|:
 name|language
 operator|=
-literal|"en"
+literal|"en_PH"
 expr_stmt|;
 comment|/* English - Philippines */
 break|break;
@@ -623,7 +623,7 @@ literal|18441
 case|:
 name|language
 operator|=
-literal|"en"
+literal|"en_SG"
 expr_stmt|;
 comment|/* English - Singapore */
 break|break;
@@ -632,7 +632,7 @@ literal|7177
 case|:
 name|language
 operator|=
-literal|"en"
+literal|"en_ZA"
 expr_stmt|;
 comment|/* English - South Africa */
 break|break;
@@ -641,7 +641,7 @@ literal|11273
 case|:
 name|language
 operator|=
-literal|"en"
+literal|"en_TT"
 expr_stmt|;
 comment|/* English - Trinidad */
 break|break;
@@ -650,7 +650,7 @@ literal|12297
 case|:
 name|language
 operator|=
-literal|"en"
+literal|"en_ZW"
 expr_stmt|;
 comment|/* English - Zimbabwe */
 break|break;
@@ -677,7 +677,7 @@ literal|1065
 case|:
 name|language
 operator|=
-name|NULL
+literal|"fa"
 expr_stmt|;
 comment|/* Farsi */
 break|break;
@@ -704,7 +704,7 @@ literal|1036
 case|:
 name|language
 operator|=
-literal|"fr"
+literal|"fr_FR"
 expr_stmt|;
 comment|/* French - France */
 break|break;
@@ -713,7 +713,7 @@ literal|2060
 case|:
 name|language
 operator|=
-literal|"fr"
+literal|"fr_BE"
 expr_stmt|;
 comment|/* French - Belgium */
 break|break;
@@ -722,7 +722,7 @@ literal|11276
 case|:
 name|language
 operator|=
-literal|"fr"
+literal|"fr_CM"
 expr_stmt|;
 comment|/* French - Cameroon */
 break|break;
@@ -731,7 +731,7 @@ literal|3084
 case|:
 name|language
 operator|=
-literal|"fr"
+literal|"fr_CA"
 expr_stmt|;
 comment|/* French - Canada */
 break|break;
@@ -740,7 +740,7 @@ literal|9228
 case|:
 name|language
 operator|=
-literal|"fr"
+literal|"fr_CD"
 expr_stmt|;
 comment|/* French - Democratic Rep. of Congo */
 break|break;
@@ -749,7 +749,7 @@ literal|12300
 case|:
 name|language
 operator|=
-literal|"fr"
+literal|"fr_CI"
 expr_stmt|;
 comment|/* French - Cote d"Ivoire */
 break|break;
@@ -758,7 +758,7 @@ literal|15372
 case|:
 name|language
 operator|=
-literal|"fr"
+literal|"fr_HT"
 expr_stmt|;
 comment|/* French - Haiti */
 break|break;
@@ -767,7 +767,7 @@ literal|5132
 case|:
 name|language
 operator|=
-literal|"fr"
+literal|"fr_LU"
 expr_stmt|;
 comment|/* French - Luxembourg */
 break|break;
@@ -776,7 +776,7 @@ literal|13324
 case|:
 name|language
 operator|=
-literal|"fr"
+literal|"fr_ML"
 expr_stmt|;
 comment|/* French - Mali */
 break|break;
@@ -785,7 +785,7 @@ literal|6156
 case|:
 name|language
 operator|=
-literal|"fr"
+literal|"fr_MC"
 expr_stmt|;
 comment|/* French - Monaco */
 break|break;
@@ -794,7 +794,7 @@ literal|14348
 case|:
 name|language
 operator|=
-literal|"fr"
+literal|"fr_MA"
 expr_stmt|;
 comment|/* French - Morocco */
 break|break;
@@ -812,7 +812,7 @@ literal|8204
 case|:
 name|language
 operator|=
-literal|"fr"
+literal|"fr_RE"
 expr_stmt|;
 comment|/* French - Reunion */
 break|break;
@@ -821,7 +821,7 @@ literal|10252
 case|:
 name|language
 operator|=
-literal|"fr"
+literal|"fr_SN"
 expr_stmt|;
 comment|/* French - Senegal */
 break|break;
@@ -830,7 +830,7 @@ literal|4108
 case|:
 name|language
 operator|=
-literal|"fr"
+literal|"fr_CH"
 expr_stmt|;
 comment|/* French - Switzerland */
 break|break;
@@ -911,7 +911,7 @@ literal|1031
 case|:
 name|language
 operator|=
-literal|"de"
+literal|"de_DE"
 expr_stmt|;
 comment|/* German - Germany */
 break|break;
@@ -920,7 +920,7 @@ literal|3079
 case|:
 name|language
 operator|=
-literal|"de"
+literal|"de_AT"
 expr_stmt|;
 comment|/* German - Austria */
 break|break;
@@ -929,7 +929,7 @@ literal|5127
 case|:
 name|language
 operator|=
-literal|"de"
+literal|"de_LI"
 expr_stmt|;
 comment|/* German - Liechtenstein */
 break|break;
@@ -938,7 +938,7 @@ literal|4103
 case|:
 name|language
 operator|=
-literal|"de"
+literal|"de_LU"
 expr_stmt|;
 comment|/* German - Luxembourg */
 break|break;
@@ -947,7 +947,7 @@ literal|2055
 case|:
 name|language
 operator|=
-literal|"de"
+literal|"de_CH"
 expr_stmt|;
 comment|/* German - Switzerland */
 break|break;
@@ -1073,7 +1073,7 @@ literal|1040
 case|:
 name|language
 operator|=
-literal|"it"
+literal|"it_IT"
 expr_stmt|;
 comment|/* Italian - Italy */
 break|break;
@@ -1082,7 +1082,7 @@ literal|2064
 case|:
 name|language
 operator|=
-literal|"it"
+literal|"it_CH"
 expr_stmt|;
 comment|/* Italian - Switzerland */
 break|break;
@@ -1217,7 +1217,7 @@ literal|1086
 case|:
 name|language
 operator|=
-literal|"ms"
+literal|"ms_MY"
 expr_stmt|;
 comment|/* Malay - Malaysia */
 break|break;
@@ -1226,7 +1226,7 @@ literal|2110
 case|:
 name|language
 operator|=
-literal|"ms"
+literal|"ms_BN"
 expr_stmt|;
 comment|/* Malay - Brunei Darussalam */
 break|break;
@@ -1298,7 +1298,7 @@ literal|1121
 case|:
 name|language
 operator|=
-literal|"ne"
+literal|"ne_NP"
 expr_stmt|;
 comment|/* Nepali */
 break|break;
@@ -1307,7 +1307,7 @@ literal|2145
 case|:
 name|language
 operator|=
-literal|"ne"
+literal|"ne_IN"
 expr_stmt|;
 comment|/* Nepali - India */
 break|break;
@@ -1388,7 +1388,7 @@ literal|2070
 case|:
 name|language
 operator|=
-literal|"pt"
+literal|"pt_PT"
 expr_stmt|;
 comment|/* Portuguese - Portugal */
 break|break;
@@ -1406,7 +1406,7 @@ literal|2118
 case|:
 name|language
 operator|=
-literal|"pa"
+literal|"pa_PK"
 expr_stmt|;
 comment|/* Punjabi (Pakistan) */
 break|break;
@@ -1415,7 +1415,7 @@ literal|1131
 case|:
 name|language
 operator|=
-literal|"qu"
+literal|"qu_BO"
 expr_stmt|;
 comment|/* Quecha - Bolivia */
 break|break;
@@ -1424,7 +1424,7 @@ literal|2155
 case|:
 name|language
 operator|=
-literal|"qu"
+literal|"qu_EC"
 expr_stmt|;
 comment|/* Quecha - Ecuador */
 break|break;
@@ -1433,7 +1433,7 @@ literal|3179
 case|:
 name|language
 operator|=
-literal|"qu"
+literal|"qu_PE"
 expr_stmt|;
 comment|/* Quecha - Peru */
 break|break;
@@ -1451,7 +1451,7 @@ literal|1048
 case|:
 name|language
 operator|=
-literal|"ro"
+literal|"ro_RO"
 expr_stmt|;
 comment|/* Romanian */
 break|break;
@@ -1460,7 +1460,7 @@ literal|2072
 case|:
 name|language
 operator|=
-literal|"ro"
+literal|"ro_MD"
 expr_stmt|;
 comment|/* Romanian - Moldava */
 break|break;
@@ -1469,7 +1469,7 @@ literal|1049
 case|:
 name|language
 operator|=
-literal|"ru"
+literal|"ru_RU"
 expr_stmt|;
 comment|/* Russian */
 break|break;
@@ -1478,7 +1478,7 @@ literal|2073
 case|:
 name|language
 operator|=
-literal|"ru"
+literal|"ru_MD"
 expr_stmt|;
 comment|/* Russian - Moldava */
 break|break;
@@ -1523,7 +1523,7 @@ literal|2074
 case|:
 name|language
 operator|=
-literal|"sr"
+literal|"sr@latin"
 expr_stmt|;
 comment|/* Serbian (Latin) */
 break|break;
@@ -1532,7 +1532,7 @@ literal|1113
 case|:
 name|language
 operator|=
-literal|"sd"
+literal|"sd_IN"
 expr_stmt|;
 comment|/* Sindhi - India */
 break|break;
@@ -1541,7 +1541,7 @@ literal|2137
 case|:
 name|language
 operator|=
-literal|"sd"
+literal|"sd_PK"
 expr_stmt|;
 comment|/* Sindhi - Pakistan */
 break|break;
@@ -1613,7 +1613,7 @@ literal|11274
 case|:
 name|language
 operator|=
-literal|"es"
+literal|"es_AR"
 expr_stmt|;
 comment|/* Spanish - Argentina */
 break|break;
@@ -1622,7 +1622,7 @@ literal|16394
 case|:
 name|language
 operator|=
-literal|"es"
+literal|"es_BO"
 expr_stmt|;
 comment|/* Spanish - Bolivia */
 break|break;
@@ -1631,7 +1631,7 @@ literal|13322
 case|:
 name|language
 operator|=
-literal|"es"
+literal|"es_CL"
 expr_stmt|;
 comment|/* Spanish - Chile */
 break|break;
@@ -1640,7 +1640,7 @@ literal|9226
 case|:
 name|language
 operator|=
-literal|"es"
+literal|"es_CO"
 expr_stmt|;
 comment|/* Spanish - Colombia */
 break|break;
@@ -1649,7 +1649,7 @@ literal|5130
 case|:
 name|language
 operator|=
-literal|"es"
+literal|"es_CR"
 expr_stmt|;
 comment|/* Spanish - Costa Rica */
 break|break;
@@ -1658,7 +1658,7 @@ literal|7178
 case|:
 name|language
 operator|=
-literal|"es"
+literal|"es_DO"
 expr_stmt|;
 comment|/* Spanish - Dominican Republic */
 break|break;
@@ -1667,7 +1667,7 @@ literal|12298
 case|:
 name|language
 operator|=
-literal|"es"
+literal|"es_EC"
 expr_stmt|;
 comment|/* Spanish - Ecuador */
 break|break;
@@ -1676,7 +1676,7 @@ literal|17418
 case|:
 name|language
 operator|=
-literal|"es"
+literal|"es_SV"
 expr_stmt|;
 comment|/* Spanish - El Salvador */
 break|break;
@@ -1685,7 +1685,7 @@ literal|4106
 case|:
 name|language
 operator|=
-literal|"es"
+literal|"es_GT"
 expr_stmt|;
 comment|/* Spanish - Guatemala */
 break|break;
@@ -1694,7 +1694,7 @@ literal|18442
 case|:
 name|language
 operator|=
-literal|"es"
+literal|"es_HN"
 expr_stmt|;
 comment|/* Spanish - Honduras */
 break|break;
@@ -1712,7 +1712,7 @@ literal|2058
 case|:
 name|language
 operator|=
-literal|"es"
+literal|"es_MX"
 expr_stmt|;
 comment|/* Spanish - Mexico */
 break|break;
@@ -1721,7 +1721,7 @@ literal|19466
 case|:
 name|language
 operator|=
-literal|"es"
+literal|"es_NI"
 expr_stmt|;
 comment|/* Spanish - Nicaragua */
 break|break;
@@ -1730,7 +1730,7 @@ literal|6154
 case|:
 name|language
 operator|=
-literal|"es"
+literal|"es_PA"
 expr_stmt|;
 comment|/* Spanish - Panama */
 break|break;
@@ -1739,7 +1739,7 @@ literal|15370
 case|:
 name|language
 operator|=
-literal|"es"
+literal|"es_PY"
 expr_stmt|;
 comment|/* Spanish - Paraguay */
 break|break;
@@ -1748,7 +1748,7 @@ literal|10250
 case|:
 name|language
 operator|=
-literal|"es"
+literal|"es_PE"
 expr_stmt|;
 comment|/* Spanish - Peru */
 break|break;
@@ -1757,7 +1757,7 @@ literal|20490
 case|:
 name|language
 operator|=
-literal|"es"
+literal|"es_PR"
 expr_stmt|;
 comment|/* Spanish - Puerto Rico */
 break|break;
@@ -1766,7 +1766,7 @@ literal|21514
 case|:
 name|language
 operator|=
-literal|"es"
+literal|"es_US"
 expr_stmt|;
 comment|/* Spanish - United States */
 break|break;
@@ -1775,7 +1775,7 @@ literal|14346
 case|:
 name|language
 operator|=
-literal|"es"
+literal|"es_UY"
 expr_stmt|;
 comment|/* Spanish - Uruguay */
 break|break;
@@ -1784,7 +1784,7 @@ literal|8202
 case|:
 name|language
 operator|=
-literal|"es"
+literal|"es_VE"
 expr_stmt|;
 comment|/* Spanish - Venezuela */
 break|break;
@@ -1811,7 +1811,7 @@ literal|1053
 case|:
 name|language
 operator|=
-literal|"sv"
+literal|"sv_SE"
 expr_stmt|;
 comment|/* Swedish */
 break|break;
@@ -1820,7 +1820,7 @@ literal|2077
 case|:
 name|language
 operator|=
-literal|"sv"
+literal|"sv_FI"
 expr_stmt|;
 comment|/* Swedish - Finland */
 break|break;
@@ -1901,7 +1901,7 @@ literal|2129
 case|:
 name|language
 operator|=
-literal|"bo"
+literal|"bo_BT"
 expr_stmt|;
 comment|/* Tibetan - Bhutan */
 break|break;
@@ -1910,7 +1910,7 @@ literal|1105
 case|:
 name|language
 operator|=
-literal|"bo"
+literal|"bo_CN"
 expr_stmt|;
 comment|/* Tibetan - People"s Republic of China */
 break|break;
@@ -1919,7 +1919,7 @@ literal|2163
 case|:
 name|language
 operator|=
-literal|"ti"
+literal|"ti_ER"
 expr_stmt|;
 comment|/* Tigrigna - Eritrea */
 break|break;
@@ -1928,7 +1928,7 @@ literal|1139
 case|:
 name|language
 operator|=
-literal|"ti"
+literal|"ti_ET"
 expr_stmt|;
 comment|/* Tigrigna - Ethiopia */
 break|break;
@@ -2000,7 +2000,7 @@ literal|2080
 case|:
 name|language
 operator|=
-literal|"ur"
+literal|"ur_IN"
 expr_stmt|;
 comment|/* Urdu - India */
 break|break;
@@ -2018,7 +2018,7 @@ literal|1091
 case|:
 name|language
 operator|=
-literal|"uz"
+literal|"uz@latin"
 expr_stmt|;
 comment|/* Uzbek (Latin) */
 break|break;
