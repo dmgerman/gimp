@@ -1799,7 +1799,7 @@ argument_list|,
 name|tree_view
 argument_list|)
 expr_stmt|;
-name|gimp_dnd_pixbuf_dest_add
+name|gimp_dnd_uri_list_dest_add
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
@@ -1813,7 +1813,7 @@ argument_list|,
 name|tree_view
 argument_list|)
 expr_stmt|;
-name|gimp_dnd_uri_list_dest_add
+name|gimp_dnd_pixbuf_dest_add
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
@@ -2257,7 +2257,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b685f510108
+DECL|struct|__anon28ff31900108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2651,7 +2651,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b685f510208
+DECL|struct|__anon28ff31900208
 block|{
 DECL|member|mask_column
 name|gint
