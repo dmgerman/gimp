@@ -144,7 +144,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8b92f70103
+DECL|enum|__anon27f0f62e0103
 block|{
 DECL|enumerator|SA_RUN_MODE
 name|SA_RUN_MODE
@@ -189,7 +189,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8b92f70203
+DECL|enum|__anon27f0f62e0203
 block|{
 DECL|enumerator|SMA_RUN_MODE
 name|SMA_RUN_MODE
@@ -226,7 +226,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8b92f70308
+DECL|struct|__anon27f0f62e0308
 block|{
 DECL|member|vectorize
 name|gboolean
@@ -249,7 +249,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8b92f70408
+DECL|struct|__anon27f0f62e0408
 block|{
 DECL|member|images
 name|gint32
@@ -278,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8b92f70508
+DECL|struct|__anon27f0f62e0508
 block|{
 DECL|member|optimize
 name|PdfOptimize
@@ -297,7 +297,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8b92f70603
+DECL|enum|__anon27f0f62e0603
 block|{
 DECL|enumerator|THUMB
 name|THUMB
@@ -317,7 +317,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8b92f70708
+DECL|struct|__anon27f0f62e0708
 block|{
 DECL|member|thumb
 name|GdkPixbuf
@@ -4326,11 +4326,6 @@ name|image_count
 operator|--
 expr_stmt|;
 block|}
-name|g_free
-argument_list|(
-name|items
-argument_list|)
-expr_stmt|;
 block|}
 name|dnd_remove
 operator|=
