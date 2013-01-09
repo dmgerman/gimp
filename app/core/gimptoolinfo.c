@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ea7cc90103
+DECL|enum|__anon29d25d170103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -513,7 +513,7 @@ argument_list|)
 expr_stmt|;
 name|tool_info
 operator|->
-name|blurb
+name|help
 operator|=
 name|NULL
 expr_stmt|;
