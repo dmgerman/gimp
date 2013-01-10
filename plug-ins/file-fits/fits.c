@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27625c970108
+DECL|struct|__anon2ae61aeb0108
 block|{
 DECL|member|replace
 name|gint
