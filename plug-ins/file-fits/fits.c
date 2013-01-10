@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ce91900108
+DECL|struct|__anon27625c970108
 block|{
 DECL|member|replace
 name|gint
@@ -2058,15 +2058,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Load FITS image. ncompose gives the number of FITS-images which have */
-end_comment
-
-begin_comment
-comment|/* to be composed together. This will result in different GIMP image types: */
-end_comment
-
-begin_comment
-comment|/* 1: GRAY, 2: GRAYA, 3: RGB, 4: RGBA */
+comment|/* Load FITS image. ncompose gives the number of FITS-images which have  * to be composed together. This will result in different GIMP image types:  * 1: GRAY, 2: GRAYA, 3: RGB, 4: RGBA  */
 end_comment
 
 begin_function
@@ -2181,10 +2173,8 @@ operator|==
 name|NULL
 condition|)
 return|return
-operator|(
 operator|-
 literal|1
-operator|)
 return|;
 name|width
 operator|=
@@ -2319,10 +2309,8 @@ operator|==
 name|NULL
 condition|)
 return|return
-operator|(
 operator|-
 literal|1
-operator|)
 return|;
 name|data_end
 operator|=
@@ -2334,8 +2322,7 @@ name|width
 operator|*
 name|ncompose
 expr_stmt|;
-comment|/* If the transformation from pixel value to */
-comment|/* data value has been specified, use it */
+comment|/* If the transformation from pixel value to data value has been    * specified, use it    */
 if|if
 condition|(
 name|plvals
@@ -2476,8 +2463,7 @@ name|dsttyp
 operator|=
 literal|'c'
 expr_stmt|;
-comment|/* FITS stores images with bottom row first. Therefore we have */
-comment|/* to fill the image from bottom to top. */
+comment|/* FITS stores images with bottom row first. Therefore we have to    * fill the image from bottom to top.    */
 if|if
 condition|(
 name|ncompose
@@ -2647,10 +2633,8 @@ operator|==
 name|NULL
 condition|)
 return|return
-operator|(
 operator|-
 literal|1
-operator|)
 return|;
 for|for
 control|(
@@ -2964,14 +2948,12 @@ name|drawable
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|err
 condition|?
 operator|-
 literal|1
 else|:
 name|image_ID
-operator|)
 return|;
 block|}
 end_function
@@ -3061,9 +3043,7 @@ operator|==
 name|NULL
 condition|)
 return|return
-operator|(
 name|NULL
-operator|)
 return|;
 name|hdulist
 operator|->
@@ -3210,7 +3190,7 @@ name|hdulist
 argument_list|,
 literal|"COMMENT under the GNU general public licence."
 argument_list|)
-operator|,
+expr_stmt|;
 name|fits_add_card
 argument_list|(
 name|hdulist
@@ -3303,9 +3283,7 @@ literal|""
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|hdulist
-operator|)
 return|;
 block|}
 end_function
@@ -3434,8 +3412,7 @@ operator|=
 name|data
 operator|=
 operator|(
-name|unsigned
-name|char
+name|guchar
 operator|*
 operator|)
 name|g_malloc
@@ -3467,9 +3444,7 @@ operator|==
 name|NULL
 condition|)
 return|return
-operator|(
 name|FALSE
-operator|)
 return|;
 if|if
 condition|(
@@ -3483,19 +3458,8 @@ operator|<
 literal|0
 condition|)
 return|return
-operator|(
 name|FALSE
-operator|)
 return|;
-DECL|macro|GET_DIRECT_TILE (begin)
-define|#
-directive|define
-name|GET_DIRECT_TILE
-parameter_list|(
-name|begin
-parameter_list|)
-define|\
-value|{int scan_lines; \     scan_lines = (i+tile_height-1< height) ? tile_height : (height-i); \     gimp_pixel_rgn_get_rect (&pixel_rgn, begin, 0, height-i-scan_lines, \     width, scan_lines); \     src = begin+bpsl*(scan_lines-1)+channel; }
 name|nbytes
 operator|=
 literal|0
@@ -3538,12 +3502,65 @@ operator|)
 operator|==
 literal|0
 condition|)
-name|GET_DIRECT_TILE
+block|{
+name|int
+name|scan_lines
+decl_stmt|;
+name|scan_lines
+operator|=
+operator|(
+name|i
+operator|+
+name|tile_height
+operator|-
+literal|1
+operator|<
+name|height
+operator|)
+condition|?
+name|tile_height
+else|:
+operator|(
+name|height
+operator|-
+name|i
+operator|)
+expr_stmt|;
+name|gimp_pixel_rgn_get_rect
 argument_list|(
+operator|&
+name|pixel_rgn
+argument_list|,
 name|data
+argument_list|,
+literal|0
+argument_list|,
+name|height
+operator|-
+name|i
+operator|-
+name|scan_lines
+argument_list|,
+name|width
+argument_list|,
+name|scan_lines
 argument_list|)
 expr_stmt|;
-comment|/* get more data */
+name|src
+operator|=
+name|data
+operator|+
+name|bpsl
+operator|*
+operator|(
+name|scan_lines
+operator|-
+literal|1
+operator|)
+operator|+
+name|channel
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|bpp
@@ -3711,19 +3728,12 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|FALSE
-operator|)
 return|;
 block|}
 return|return
-operator|(
 name|TRUE
-operator|)
 return|;
-undef|#
-directive|undef
-name|GET_DIRECT_TILE
 block|}
 end_function
 
@@ -4398,15 +4408,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|FALSE
-operator|)
 return|;
 block|}
 return|return
-operator|(
 name|TRUE
-operator|)
 return|;
 undef|#
 directive|undef
