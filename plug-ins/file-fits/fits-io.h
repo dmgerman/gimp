@@ -82,14 +82,15 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|FITS_MAX_AXIS
+name|__FITS_IO_H__
 end_ifndef
 
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
+begin_define
+DECL|macro|__FITS_IO_H__
+define|#
+directive|define
+name|__FITS_IO_H__
+end_define
 
 begin_define
 DECL|macro|FITS_CARD_SIZE
@@ -204,35 +205,35 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon297d307f0103
 typedef|typedef
 enum|enum
+DECL|enum|__anon28d3a6050103
 block|{
 DECL|enumerator|typ_bitpix8
-DECL|enumerator|typ_bitpix16
-DECL|enumerator|typ_bitpix32
-DECL|enumerator|typ_bitpixm32
-DECL|enumerator|typ_bitpixm64
 name|typ_bitpix8
 block|,
+DECL|enumerator|typ_bitpix16
 name|typ_bitpix16
 block|,
+DECL|enumerator|typ_bitpix32
 name|typ_bitpix32
 block|,
+DECL|enumerator|typ_bitpixm32
 name|typ_bitpixm32
 block|,
+DECL|enumerator|typ_bitpixm64
 name|typ_bitpixm64
 block|,
 DECL|enumerator|typ_fbool
-DECL|enumerator|typ_flong
-DECL|enumerator|typ_fdouble
-DECL|enumerator|typ_fstring
 name|typ_fbool
 block|,
+DECL|enumerator|typ_flong
 name|typ_flong
 block|,
+DECL|enumerator|typ_fdouble
 name|typ_fdouble
 block|,
+DECL|enumerator|typ_fstring
 name|typ_fstring
 DECL|typedef|FITS_DATA_TYPES
 block|}
@@ -245,13 +246,13 @@ comment|/* How to transform FITS pixel values */
 end_comment
 
 begin_typedef
-DECL|struct|__anon297d307f0208
 typedef|typedef
 struct|struct
+DECL|struct|__anon28d3a6050208
 block|{
 DECL|member|pixmin
 DECL|member|pixmax
-name|double
+name|gdouble
 name|pixmin
 decl_stmt|,
 name|pixmax
@@ -259,19 +260,19 @@ decl_stmt|;
 comment|/* Pixel values [pixmin,pixmax] should be mapped */
 DECL|member|datamin
 DECL|member|datamax
-name|double
+name|gdouble
 name|datamin
 decl_stmt|,
 name|datamax
 decl_stmt|;
 comment|/* to [datamin,datamax] */
 DECL|member|replacement
-name|double
+name|gdouble
 name|replacement
 decl_stmt|;
 comment|/* datavalue to use for blank or NaN pixels */
 DECL|member|dsttyp
-name|char
+name|gchar
 name|dsttyp
 decl_stmt|;
 comment|/* Destination typ ('c' = char) */
@@ -282,9 +283,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|union|__anon297d307f030a
 typedef|typedef
 union|union
+DECL|union|__anon28d3a605030a
 block|{
 DECL|member|bitpix8
 name|FITS_BITPIX8
@@ -333,10 +334,10 @@ DECL|struct|fits_record_list
 typedef|typedef
 struct|struct
 name|fits_record_list
-block|{
 comment|/* Record list */
+block|{
 DECL|member|data
-name|char
+name|gchar
 name|data
 index|[
 name|FITS_RECORD_SIZE
@@ -359,45 +360,45 @@ DECL|struct|fits_hdu_list
 typedef|typedef
 struct|struct
 name|fits_hdu_list
-block|{
 comment|/* Header and Data Unit List */
+block|{
 DECL|member|header_offset
-name|long
+name|glong
 name|header_offset
 decl_stmt|;
 comment|/* Offset of header in the file */
 DECL|member|data_offset
-name|long
+name|glong
 name|data_offset
 decl_stmt|;
 comment|/* Offset of data in the file */
 DECL|member|data_size
-name|long
+name|glong
 name|data_size
 decl_stmt|;
 comment|/* Size of data in the HDU (including pad)*/
 DECL|member|udata_size
-name|long
+name|glong
 name|udata_size
 decl_stmt|;
 comment|/* Size of used data in the HDU (excl. pad) */
 DECL|member|bpp
-name|int
+name|gint
 name|bpp
 decl_stmt|;
 comment|/* Bytes per pixel */
 DECL|member|numpic
-name|int
+name|gint
 name|numpic
 decl_stmt|;
 comment|/* Number of interpretable images in HDU */
 DECL|member|naddcards
-name|int
+name|gint
 name|naddcards
 decl_stmt|;
 comment|/* Number of additional cards */
 DECL|member|addcards
-name|char
+name|gchar
 name|addcards
 index|[
 name|FITS_NADD_CARDS
@@ -406,66 +407,66 @@ index|[
 name|FITS_CARD_SIZE
 index|]
 decl_stmt|;
-DECL|struct|__anon297d307f0408
 struct|struct
+DECL|struct|__anon28d3a6050408
 block|{
 DECL|member|nan_value
-name|char
+name|gboolean
 name|nan_value
 decl_stmt|;
 comment|/* NaN's found in data ? */
 DECL|member|blank_value
-name|char
+name|gboolean
 name|blank_value
 decl_stmt|;
 comment|/* Blanks found in data ? */
 comment|/* Flags specifying if some cards are used */
 DECL|member|blank
-name|char
+name|gchar
 name|blank
 decl_stmt|;
 comment|/* The corresponding data below is only */
 DECL|member|datamin
-name|char
+name|gchar
 name|datamin
 decl_stmt|;
 comment|/* valid, if the flag is set. */
 DECL|member|datamax
-name|char
+name|gchar
 name|datamax
 decl_stmt|;
 DECL|member|simple
-name|char
+name|gchar
 name|simple
 decl_stmt|;
 comment|/* This indicates a simple HDU */
 DECL|member|xtension
-name|char
+name|gchar
 name|xtension
 decl_stmt|;
 comment|/* This indicates an extension */
 DECL|member|gcount
-name|char
+name|gchar
 name|gcount
 decl_stmt|;
 DECL|member|pcount
-name|char
+name|gchar
 name|pcount
 decl_stmt|;
 DECL|member|bzero
-name|char
+name|gchar
 name|bzero
 decl_stmt|;
 DECL|member|bscale
-name|char
+name|gchar
 name|bscale
 decl_stmt|;
 DECL|member|groups
-name|char
+name|gchar
 name|groups
 decl_stmt|;
 DECL|member|extend
-name|char
+name|gchar
 name|extend
 decl_stmt|;
 DECL|member|used
@@ -474,7 +475,7 @@ name|used
 struct|;
 DECL|member|pixmin
 DECL|member|pixmax
-name|double
+name|gdouble
 name|pixmin
 decl_stmt|,
 name|pixmax
@@ -482,12 +483,12 @@ decl_stmt|;
 comment|/* Minimum/Maximum pixel values */
 comment|/* Some decoded data of the HDU: */
 DECL|member|naxis
-name|int
+name|gint
 name|naxis
 decl_stmt|;
 comment|/* Number of axes */
 DECL|member|naxisn
-name|int
+name|gint
 name|naxisn
 index|[
 name|FITS_MAX_AXIS
@@ -495,27 +496,27 @@ index|]
 decl_stmt|;
 comment|/* Sizes of axes (NAXIS1 --> naxisn[0]) */
 DECL|member|bitpix
-name|int
+name|gint
 name|bitpix
 decl_stmt|;
 comment|/* Data representation (8,16,32,-16,-32) */
 comment|/* When using the following data, */
 comment|/* the used-flags must be checked before. */
 DECL|member|blank
-name|long
+name|glong
 name|blank
 decl_stmt|;
 comment|/* Blank value */
 DECL|member|datamin
 DECL|member|datamax
-name|double
+name|gdouble
 name|datamin
 decl_stmt|,
 name|datamax
 decl_stmt|;
 comment|/* Minimum/Maximum physical data values */
 DECL|member|xtension
-name|char
+name|gchar
 name|xtension
 index|[
 name|FITS_CARD_SIZE
@@ -524,7 +525,7 @@ decl_stmt|;
 comment|/* Type of extension */
 DECL|member|gcount
 DECL|member|pcount
-name|long
+name|glong
 name|gcount
 decl_stmt|,
 name|pcount
@@ -532,19 +533,19 @@ decl_stmt|;
 comment|/* Used by XTENSION */
 DECL|member|bzero
 DECL|member|bscale
-name|double
+name|gdouble
 name|bzero
 decl_stmt|,
 name|bscale
 decl_stmt|;
 comment|/* Transformation values */
 DECL|member|groups
-name|int
+name|gint
 name|groups
 decl_stmt|;
 comment|/* Random groups indicator */
 DECL|member|extend
-name|int
+name|gint
 name|extend
 decl_stmt|;
 comment|/* Extend flag */
@@ -567,9 +568,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon297d307f0508
 typedef|typedef
 struct|struct
+DECL|struct|__anon28d3a6050508
 block|{
 DECL|member|fp
 name|FILE
@@ -578,27 +579,27 @@ name|fp
 decl_stmt|;
 comment|/* File pointer to fits file */
 DECL|member|openmode
-name|char
+name|gchar
 name|openmode
 decl_stmt|;
 comment|/* Mode the file was opened (0, 'r', 'w') */
 DECL|member|n_hdu
-name|int
+name|gint
 name|n_hdu
 decl_stmt|;
 comment|/* Number of HDUs in file */
 DECL|member|n_pic
-name|int
+name|gint
 name|n_pic
 decl_stmt|;
 comment|/* Total number of interpretable pictures */
 DECL|member|nan_used
-name|int
+name|gboolean
 name|nan_used
 decl_stmt|;
 comment|/* NaN's used in the file ? */
 DECL|member|blank_used
-name|int
+name|gboolean
 name|blank_used
 decl_stmt|;
 comment|/* Blank's used in the file ? */
@@ -624,12 +625,12 @@ modifier|*
 name|fits_open
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|openmode
 parameter_list|)
@@ -660,7 +661,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|fits_add_card
 parameter_list|(
 name|FITS_HDU_LIST
@@ -668,7 +669,7 @@ modifier|*
 name|hdulist
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|card
 parameter_list|)
@@ -676,7 +677,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|fits_write_header
 parameter_list|(
 name|FITS_FILE
@@ -699,10 +700,10 @@ name|FITS_FILE
 modifier|*
 name|ff
 parameter_list|,
-name|int
+name|gint
 name|picind
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|hdupicind
 parameter_list|)
@@ -718,7 +719,7 @@ name|FITS_FILE
 modifier|*
 name|ff
 parameter_list|,
-name|int
+name|gint
 name|picind
 parameter_list|)
 function_decl|;
@@ -741,7 +742,7 @@ modifier|*
 name|fits_decode_card
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|card
 parameter_list|,
@@ -752,7 +753,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|char
+name|gchar
 modifier|*
 name|fits_search_card
 parameter_list|(
@@ -760,7 +761,7 @@ name|FITS_RECORD_LIST
 modifier|*
 name|rl
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|keyword
 parameter_list|)
@@ -768,7 +769,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|fits_read_pixel
 parameter_list|(
 name|FITS_FILE
@@ -779,7 +780,7 @@ name|FITS_HDU_LIST
 modifier|*
 name|hdulist
 parameter_list|,
-name|int
+name|gint
 name|npix
 parameter_list|,
 name|FITS_PIX_TRANSFORM
@@ -794,7 +795,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|char
+name|gchar
 modifier|*
 name|fits_get_error
 parameter_list|(
@@ -815,14 +816,14 @@ name|FITS_NO_DEMO
 end_define
 
 begin_function_decl
-name|int
+name|gint
 name|fits_to_pgmraw
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|fitsfile
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|pgmfile
 parameter_list|)
@@ -830,14 +831,14 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|pgmraw_to_fits
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|pgmfile
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|fitsfile
 parameter_list|)
@@ -848,6 +849,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __FITS_IO_H__ */
+end_comment
 
 end_unit
 
