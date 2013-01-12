@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296167a70108
+DECL|struct|__anon2bc17fae0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -2446,6 +2446,11 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|src
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|src2
 argument_list|)
 expr_stmt|;
 name|g_free
