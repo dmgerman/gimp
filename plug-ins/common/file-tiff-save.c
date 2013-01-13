@@ -155,7 +155,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28aeeca30108
+DECL|struct|__anon286d58be0108
 block|{
 DECL|member|compression
 name|gint
@@ -178,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28aeeca30208
+DECL|struct|__anon286d58be0208
 block|{
 DECL|member|ID
 name|gint32
@@ -4420,6 +4420,11 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|data
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|src
 argument_list|)
 expr_stmt|;
 return|return
