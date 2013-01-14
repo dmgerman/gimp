@@ -380,12 +380,6 @@ block|,
 name|NULL
 block|,
 comment|/* info_dialog */
-name|NULL
-block|,
-comment|/* icon */
-name|NULL
-block|,
-comment|/* mask */
 name|circle_is_valid
 block|,
 name|NULL
@@ -1279,7 +1273,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b3e3e0e0108
+DECL|struct|__anon28ddd8a10108
 typedef|typedef
 struct|struct
 block|{

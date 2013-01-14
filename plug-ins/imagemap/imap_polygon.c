@@ -449,12 +449,6 @@ block|,
 name|NULL
 block|,
 comment|/* info_dialog */
-name|NULL
-block|,
-comment|/* icon */
-name|NULL
-block|,
-comment|/* mask */
 name|polygon_is_valid
 block|,
 name|polygon_destruct
@@ -1655,7 +1649,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c2ea6bb0108
+DECL|struct|__anon2bd5bf310108
 typedef|typedef
 struct|struct
 block|{

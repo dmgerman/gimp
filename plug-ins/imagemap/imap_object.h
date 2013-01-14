@@ -187,16 +187,6 @@ name|AreaInfoDialog_t
 modifier|*
 name|info_dialog
 decl_stmt|;
-DECL|member|icon
-name|GdkPixmap
-modifier|*
-name|icon
-decl_stmt|;
-DECL|member|mask
-name|GdkBitmap
-modifier|*
-name|mask
-decl_stmt|;
 DECL|member|is_valid
 name|gboolean
 function_decl|(
@@ -1008,7 +998,7 @@ value|((obj)->class->get_stock_icon_name())
 end_define
 
 begin_typedef
-DECL|struct|__anon2b81cffd0108
+DECL|struct|__anon2b17801b0108
 typedef|typedef
 struct|struct
 block|{
@@ -1112,7 +1102,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2b81cffd0208
+DECL|struct|__anon2b17801b0208
 typedef|typedef
 struct|struct
 block|{

@@ -402,12 +402,6 @@ block|,
 name|NULL
 block|,
 comment|/* info_dialog */
-name|NULL
-block|,
-comment|/* icon */
-name|NULL
-block|,
-comment|/* mask */
 name|rectangle_is_valid
 block|,
 name|NULL
@@ -1913,7 +1907,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon27a68d190108
+DECL|struct|__anon27a64ce10108
 typedef|typedef
 struct|struct
 block|{
