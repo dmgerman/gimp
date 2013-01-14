@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fbe50f0103
+DECL|enum|__anon2b8421d30103
 block|{
 DECL|enumerator|SESSION_INFO_FACTORY_ENTRY
 name|SESSION_INFO_FACTORY_ENTRY
@@ -165,7 +165,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fbe50f0208
+DECL|struct|__anon2b8421d30208
 block|{
 DECL|member|info
 name|GimpSessionInfo
@@ -2001,6 +2001,12 @@ expr_stmt|;
 block|}
 block|}
 block|}
+block|}
+name|gimp_session_info_clear_info
+argument_list|(
+name|info
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|dialog
@@ -2026,12 +2032,6 @@ argument_list|(
 name|GimpRestoreDocksData
 argument_list|,
 name|data
-argument_list|)
-expr_stmt|;
-block|}
-name|gimp_session_info_clear_info
-argument_list|(
-name|info
 argument_list|)
 expr_stmt|;
 return|return
