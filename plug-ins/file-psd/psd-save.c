@@ -4261,7 +4261,7 @@ decl_stmt|;
 comment|/* Create first array dimension (layers, channels) */
 name|ChannelLengthPos
 operator|=
-name|g_new
+name|g_newa
 argument_list|(
 name|glong
 operator|*
@@ -5305,6 +5305,14 @@ name|i
 index|]
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|ChannelLengthPos
+index|[
+name|i
+index|]
 argument_list|)
 expr_stmt|;
 block|}
