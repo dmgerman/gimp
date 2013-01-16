@@ -4521,6 +4521,11 @@ argument_list|(
 name|fp
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
 name|gimp_progress_update
 argument_list|(
 literal|1.0
