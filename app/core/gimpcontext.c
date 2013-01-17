@@ -1460,7 +1460,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2793f0da0103
+DECL|enum|__anon275ae0d30103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1474,7 +1474,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2793f0da0203
+DECL|enum|__anon275ae0d30203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
