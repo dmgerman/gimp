@@ -777,6 +777,16 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|gimp_dock_invalidate_geometry
+argument_list|(
+name|GIMP_DOCK
+argument_list|(
+name|private
+operator|->
+name|toolbox
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
