@@ -103,7 +103,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c42c7450108
+DECL|struct|__anon2c2c7ed60108
 block|{
 DECL|member|code
 name|guint16
@@ -614,7 +614,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c42c7450203
+DECL|enum|__anon2c2c7ed60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -744,6 +744,7 @@ struct|;
 end_struct
 
 begin_function_decl
+specifier|static
 name|GType
 name|controller_linux_input_get_type
 parameter_list|(

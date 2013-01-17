@@ -174,7 +174,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e675220103
+DECL|enum|__anon2ae750c90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -186,6 +186,7 @@ enum|;
 end_enum
 
 begin_function_decl
+specifier|static
 name|GType
 name|cdisplay_gamma_get_type
 parameter_list|(

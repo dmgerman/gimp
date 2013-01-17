@@ -171,6 +171,7 @@ struct|;
 end_struct
 
 begin_function_decl
+specifier|static
 name|GType
 name|colorsel_wheel_get_type
 parameter_list|(

@@ -110,7 +110,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2dac370103
+DECL|enum|__anon2b0555a60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -412,6 +412,7 @@ struct|;
 end_struct
 
 begin_function_decl
+specifier|static
 name|GType
 name|controller_dx_dinput_get_type
 parameter_list|(

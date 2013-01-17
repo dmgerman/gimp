@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6549960108
+DECL|struct|__anon2a1fb7090108
 block|{
 DECL|member|name
 name|gchar
@@ -146,7 +146,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6549960203
+DECL|enum|__anon2a1fb7090203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -318,6 +318,7 @@ struct|;
 end_struct
 
 begin_function_decl
+specifier|static
 name|GType
 name|controller_midi_get_type
 parameter_list|(
