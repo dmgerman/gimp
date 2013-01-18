@@ -348,7 +348,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2dccca0103
+DECL|enum|__anon28d9ed180103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -376,7 +376,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2dccca0203
+DECL|enum|__anon28d9ed180203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1218,8 +1218,12 @@ argument_list|(
 name|CAIRO_FORMAT_ARGB32
 argument_list|,
 name|GIMP_DISPLAY_RENDER_BUF_WIDTH
+operator|*
+name|GIMP_DISPLAY_RENDER_MAX_SCALE
 argument_list|,
 name|GIMP_DISPLAY_RENDER_BUF_HEIGHT
+operator|*
+name|GIMP_DISPLAY_RENDER_MAX_SCALE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_items_init
