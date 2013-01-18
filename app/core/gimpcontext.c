@@ -1460,7 +1460,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon275ae0d30103
+DECL|enum|__anon29515d3d0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1474,7 +1474,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275ae0d30203
+DECL|enum|__anon29515d3d0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -12871,20 +12871,9 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|context
 operator|->
-name|font
-condition|?
-name|gimp_object_get_name
-argument_list|(
-name|context
-operator|->
-name|font
-argument_list|)
-else|:
-name|NULL
-operator|)
+name|font_name
 return|;
 block|}
 end_function
@@ -12929,6 +12918,11 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|font
+condition|)
+block|{
 name|gimp_context_set_font
 argument_list|(
 name|context
@@ -12939,6 +12933,35 @@ name|font
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+comment|/* No font with this name exists, use the standard font, but        * keep the intended name around        */
+name|gimp_context_set_font
+argument_list|(
+name|context
+argument_list|,
+name|gimp_font_get_standard
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|context
+operator|->
+name|font_name
+argument_list|)
+expr_stmt|;
+name|context
+operator|->
+name|font_name
+operator|=
+name|g_strdup
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
