@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon277974790103
+DECL|enum|__anon29392c5a0103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -268,7 +268,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277974790203
+DECL|enum|__anon29392c5a0203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -1583,10 +1583,24 @@ condition|)
 block|{
 name|before
 operator|=
-name|g_new0
+name|g_newa
 argument_list|(
 name|guchar
 argument_list|,
+literal|3
+argument_list|)
+expr_stmt|;
+name|memset
+argument_list|(
+name|before
+argument_list|,
+literal|0
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|guchar
+argument_list|)
+operator|*
 literal|3
 argument_list|)
 expr_stmt|;
