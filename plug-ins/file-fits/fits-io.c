@@ -375,7 +375,7 @@ end_comment
 
 begin_function_decl
 specifier|static
-name|FITS_FILE
+name|FitsFile
 modifier|*
 name|fits_new_filestruct
 parameter_list|(
@@ -386,7 +386,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 name|fits_new_hdulist
 parameter_list|(
@@ -400,7 +400,7 @@ specifier|static
 name|void
 name|fits_delete_filestruct
 parameter_list|(
-name|FITS_FILE
+name|FitsFile
 modifier|*
 name|ff
 parameter_list|)
@@ -412,7 +412,7 @@ specifier|static
 name|void
 name|fits_delete_recordlist
 parameter_list|(
-name|FITS_RECORD_LIST
+name|FitsRecordList
 modifier|*
 name|rl
 parameter_list|)
@@ -424,7 +424,7 @@ specifier|static
 name|void
 name|fits_delete_hdulist
 parameter_list|(
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 name|hl
 parameter_list|)
@@ -480,7 +480,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|FITS_RECORD_LIST
+name|FitsRecordList
 modifier|*
 name|fits_read_header
 parameter_list|(
@@ -497,11 +497,11 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 name|fits_decode_header
 parameter_list|(
-name|FITS_RECORD_LIST
+name|FitsRecordList
 modifier|*
 name|hdr
 parameter_list|,
@@ -523,7 +523,7 @@ name|FILE
 modifier|*
 name|fp
 parameter_list|,
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 name|hdu
 parameter_list|)
@@ -699,7 +699,7 @@ parameter_list|,
 name|val
 parameter_list|)
 define|\
-value|{ if (fits_ieee32_intel) {guchar uc[4]; \    uc[0] = p[3]; uc[1] = p[2]; uc[2] = p[1]; uc[3] = p[0]; \    val = *(FITS_BITPIXM32 *)uc; } \    else if (fits_ieee32_motorola) { val = *(FITS_BITPIXM32 *)p; } \    else if (fits_ieee64_motorola) {FITS_BITPIXM64 m64; \    guchar *uc= (guchar *)&m64; \    uc[0]=p[0]; uc[1]=p[1]; uc[2]=p[2]; uc[3]=p[3]; uc[4]=uc[5]=uc[6]=uc[7]=0; \    val = (FITS_BITPIXM32)m64; } \    else if (fits_ieee64_intel) {FITS_BITPIXM64 i64; \    guchar *uc= (guchar *)&i64; \    uc[0]=uc[1]=uc[2]=uc[3]=0; uc[7]=p[0]; uc[6]=p[1]; uc[5]=p[2]; uc[4]=p[3]; \    val = (FITS_BITPIXM32)i64;} }
+value|{ if (fits_ieee32_intel) {guchar uc[4]; \    uc[0] = p[3]; uc[1] = p[2]; uc[2] = p[1]; uc[3] = p[0]; \    val = *(FitsBitpixM32 *)uc; } \    else if (fits_ieee32_motorola) { val = *(FitsBitpixM32 *)p; } \    else if (fits_ieee64_motorola) {FitsBitpixM64 m64; \    guchar *uc= (guchar *)&m64; \    uc[0]=p[0]; uc[1]=p[1]; uc[2]=p[2]; uc[3]=p[3]; uc[4]=uc[5]=uc[6]=uc[7]=0; \    val = (FitsBitpixM32)m64; } \    else if (fits_ieee64_intel) {FitsBitpixM64 i64; \    guchar *uc= (guchar *)&i64; \    uc[0]=uc[1]=uc[2]=uc[3]=0; uc[7]=p[0]; uc[6]=p[1]; uc[5]=p[2]; uc[4]=p[3]; \    val = (FitsBitpixM32)i64;} }
 end_define
 
 begin_define
@@ -713,7 +713,7 @@ parameter_list|,
 name|val
 parameter_list|)
 define|\
-value|{ if (fits_ieee64_intel) {guchar uc[8]; \    uc[0] = p[7]; uc[1] = p[6]; uc[2] = p[5]; uc[3] = p[4]; \    uc[4] = p[3]; uc[5] = p[2]; uc[6] = p[1]; uc[7] = p[0]; \    val = *(FITS_BITPIXM64 *)uc; } else val = *(FITS_BITPIXM64 *)p; }
+value|{ if (fits_ieee64_intel) {guchar uc[8]; \    uc[0] = p[7]; uc[1] = p[6]; uc[2] = p[5]; uc[3] = p[4]; \    uc[4] = p[3]; uc[5] = p[2]; uc[6] = p[1]; uc[7] = p[0]; \    val = *(FitsBitpixM64 *)uc; } else val = *(FitsBitpixM64 *)p; }
 end_define
 
 begin_define
@@ -1095,7 +1095,7 @@ end_comment
 
 begin_function
 specifier|static
-name|FITS_FILE
+name|FitsFile
 modifier|*
 DECL|function|fits_new_filestruct (void)
 name|fits_new_filestruct
@@ -1106,7 +1106,7 @@ block|{
 return|return
 name|g_new0
 argument_list|(
-name|FITS_FILE
+name|FitsFile
 argument_list|,
 literal|1
 argument_list|)
@@ -1168,7 +1168,7 @@ end_comment
 
 begin_function
 specifier|static
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 DECL|function|fits_new_hdulist (void)
 name|fits_new_hdulist
@@ -1179,7 +1179,7 @@ block|{
 return|return
 name|g_new0
 argument_list|(
-name|FITS_HDU_LIST
+name|FitsHduList
 argument_list|,
 literal|1
 argument_list|)
@@ -1212,7 +1212,7 @@ comment|/* Parameters:                                                          
 end_comment
 
 begin_comment
-comment|/* FITS_FILE *ff   [I] : pointer to fits file structure                      */
+comment|/* FitsFile *ff   [I] : pointer to fits file structure                      */
 end_comment
 
 begin_comment
@@ -1242,10 +1242,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|fits_delete_filestruct (FITS_FILE * ff)
+DECL|function|fits_delete_filestruct (FitsFile * ff)
 name|fits_delete_filestruct
 parameter_list|(
-name|FITS_FILE
+name|FitsFile
 modifier|*
 name|ff
 parameter_list|)
@@ -1303,7 +1303,7 @@ comment|/* Parameters:                                                          
 end_comment
 
 begin_comment
-comment|/* FITS_RECORD_LIST *rl  [I] : record list to delete                         */
+comment|/* FitsRecordList *rl  [I] : record list to delete                         */
 end_comment
 
 begin_comment
@@ -1325,10 +1325,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|fits_delete_recordlist (FITS_RECORD_LIST * rl)
+DECL|function|fits_delete_recordlist (FitsRecordList * rl)
 name|fits_delete_recordlist
 parameter_list|(
-name|FITS_RECORD_LIST
+name|FitsRecordList
 modifier|*
 name|rl
 parameter_list|)
@@ -1340,7 +1340,7 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|FITS_RECORD_LIST
+name|FitsRecordList
 modifier|*
 name|next
 decl_stmt|;
@@ -1394,7 +1394,7 @@ comment|/* Parameters:                                                          
 end_comment
 
 begin_comment
-comment|/* FITS_HDU_LIST *hl  [I] : hdu list to delete                               */
+comment|/* FitsHduList *hl  [I] : hdu list to delete                               */
 end_comment
 
 begin_comment
@@ -1416,10 +1416,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|fits_delete_hdulist (FITS_HDU_LIST * hl)
+DECL|function|fits_delete_hdulist (FitsHduList * hl)
 name|fits_delete_hdulist
 parameter_list|(
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 name|hl
 parameter_list|)
@@ -1431,7 +1431,7 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 name|next
 decl_stmt|;
@@ -2112,7 +2112,7 @@ comment|/*                                                                      
 end_comment
 
 begin_comment
-comment|/* On success, a FITS_FILE-pointer is returned. On failure, a NULL-          */
+comment|/* On success, a FitsFile-pointer is returned. On failure, a NULL-          */
 end_comment
 
 begin_comment
@@ -2140,7 +2140,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-name|FITS_FILE
+name|FitsFile
 modifier|*
 DECL|function|fits_open (const gchar * filename,const gchar * openmode)
 name|fits_open
@@ -2174,21 +2174,21 @@ name|FILE
 modifier|*
 name|fp
 decl_stmt|;
-name|FITS_FILE
+name|FitsFile
 modifier|*
 name|ff
 decl_stmt|;
-name|FITS_RECORD_LIST
+name|FitsRecordList
 modifier|*
 name|hdrlist
 decl_stmt|;
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 name|hdulist
 init|=
 name|NULL
 decl_stmt|;
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 name|last_hdulist
 init|=
@@ -2648,7 +2648,7 @@ comment|/* Parameters:                                                          
 end_comment
 
 begin_comment
-comment|/* FITS_FILE *ff  [I] : FITS file pointer                                    */
+comment|/* FitsFile *ff  [I] : FITS file pointer                                    */
 end_comment
 
 begin_comment
@@ -2669,10 +2669,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|fits_close (FITS_FILE * ff)
+DECL|function|fits_close (FitsFile * ff)
 name|fits_close
 parameter_list|(
-name|FITS_FILE
+name|FitsFile
 modifier|*
 name|ff
 parameter_list|)
@@ -2728,7 +2728,7 @@ comment|/* Parameters:                                                          
 end_comment
 
 begin_comment
-comment|/* FITS_FILE *ff  [I] : FITS file pointer                                    */
+comment|/* FitsFile *ff  [I] : FITS file pointer                                    */
 end_comment
 
 begin_comment
@@ -2760,17 +2760,17 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
-DECL|function|fits_add_hdu (FITS_FILE * ff)
+DECL|function|fits_add_hdu (FitsFile * ff)
 name|fits_add_hdu
 parameter_list|(
-name|FITS_FILE
+name|FitsFile
 modifier|*
 name|ff
 parameter_list|)
 block|{
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 name|newhdu
 decl_stmt|,
@@ -2882,7 +2882,7 @@ comment|/* Parameters:                                                          
 end_comment
 
 begin_comment
-comment|/* FITS_HDU_LIST *hdulist [I] : HDU listr                                    */
+comment|/* FitsHduList *hdulist [I] : HDU listr                                    */
 end_comment
 
 begin_comment
@@ -2923,10 +2923,10 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|fits_add_card (FITS_HDU_LIST * hdulist,const gchar * card)
+DECL|function|fits_add_card (FitsHduList * hdulist,const gchar * card)
 name|fits_add_card
 parameter_list|(
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 name|hdulist
 parameter_list|,
@@ -3062,7 +3062,7 @@ comment|/* Parameters:                                                          
 end_comment
 
 begin_comment
-comment|/* FITS_HDU_LIST *hdr  [I] : pointer to the header                           */
+comment|/* FitsHduList *hdr  [I] : pointer to the header                           */
 end_comment
 
 begin_comment
@@ -3083,10 +3083,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|fits_print_header (FITS_HDU_LIST * hdr)
+DECL|function|fits_print_header (FitsHduList * hdr)
 name|fits_print_header
 parameter_list|(
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 name|hdr
 parameter_list|)
@@ -3495,7 +3495,7 @@ end_comment
 
 begin_function
 specifier|static
-name|FITS_RECORD_LIST
+name|FitsRecordList
 modifier|*
 DECL|function|fits_read_header (FILE * fp,gint * nrec)
 name|fits_read_header
@@ -3515,23 +3515,23 @@ index|[
 name|FITS_RECORD_SIZE
 index|]
 decl_stmt|;
-name|FITS_RECORD_LIST
+name|FitsRecordList
 modifier|*
 name|start_list
 init|=
 name|NULL
 decl_stmt|;
-name|FITS_RECORD_LIST
+name|FitsRecordList
 modifier|*
 name|cu_record
 init|=
 name|NULL
 decl_stmt|;
-name|FITS_RECORD_LIST
+name|FitsRecordList
 modifier|*
 name|new_record
 decl_stmt|;
-name|FITS_DATA
+name|FitsData
 modifier|*
 name|fdat
 decl_stmt|;
@@ -3633,7 +3633,7 @@ name|fits_decode_card
 argument_list|(
 name|record
 argument_list|,
-name|typ_fbool
+name|FITS_DATA_TYPE_FBOOL
 argument_list|)
 expr_stmt|;
 if|if
@@ -3663,7 +3663,7 @@ name|new_record
 operator|=
 name|g_new0
 argument_list|(
-name|FITS_RECORD_LIST
+name|FitsRecordList
 argument_list|,
 literal|1
 argument_list|)
@@ -3784,11 +3784,11 @@ comment|/* Parameters:                                                          
 end_comment
 
 begin_comment
-comment|/* FITS_FILE *ff [I] : FITS-file pointer                                     */
+comment|/* FitsFile *ff [I] : FITS-file pointer                                     */
 end_comment
 
 begin_comment
-comment|/* FITS_HDU_LIST [I] : pointer to header                                     */
+comment|/* FitsHduList [I] : pointer to header                                     */
 end_comment
 
 begin_comment
@@ -3820,15 +3820,15 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-name|int
-DECL|function|fits_write_header (FITS_FILE * ff,FITS_HDU_LIST * hdulist)
+name|gint
+DECL|function|fits_write_header (FitsFile * ff,FitsHduList * hdulist)
 name|fits_write_header
 parameter_list|(
-name|FITS_FILE
+name|FitsFile
 modifier|*
 name|ff
 parameter_list|,
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 name|hdulist
 parameter_list|)
@@ -4349,7 +4349,7 @@ comment|/* Parameters:                                                          
 end_comment
 
 begin_comment
-comment|/* FITS_RECORD_LIST *hdr  [I] : the header record list                       */
+comment|/* FitsRecordList *hdr  [I] : the header record list                       */
 end_comment
 
 begin_comment
@@ -4373,7 +4373,7 @@ comment|/* The function decodes the mostly used data within the header and gener
 end_comment
 
 begin_comment
-comment|/* a FITS_HDU_LIST-entry. On failure, a NULL-pointer is returned.            */
+comment|/* a FitsHduList-entry. On failure, a NULL-pointer is returned.            */
 end_comment
 
 begin_comment
@@ -4390,12 +4390,12 @@ end_comment
 
 begin_function
 specifier|static
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
-DECL|function|fits_decode_header (FITS_RECORD_LIST * hdr,glong hdr_offset,glong dat_offset)
+DECL|function|fits_decode_header (FitsRecordList * hdr,glong hdr_offset,glong dat_offset)
 name|fits_decode_header
 parameter_list|(
-name|FITS_RECORD_LIST
+name|FitsRecordList
 modifier|*
 name|hdr
 parameter_list|,
@@ -4406,11 +4406,11 @@ name|glong
 name|dat_offset
 parameter_list|)
 block|{
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 name|hdulist
 decl_stmt|;
-name|FITS_DATA
+name|FitsData
 modifier|*
 name|fdat
 decl_stmt|;
@@ -4472,7 +4472,7 @@ parameter_list|,
 name|unionvar
 parameter_list|)
 define|\
-value|{ FITS_DATA *mfdat = fits_decode_card (fits_search_card (mhdr,mkey), mtyp); \     mhdu->used.mvar = (mfdat != NULL);                                  \     if (mhdu->used.mvar) mhdu->mvar = mfdat->unionvar; }
+value|{ FitsData *mfdat = fits_decode_card (fits_search_card (mhdr,mkey), mtyp); \     mhdu->used.mvar = (mfdat != NULL);                                  \     if (mhdu->used.mvar) mhdu->mvar = mfdat->unionvar; }
 name|hdulist
 operator|=
 name|fits_new_hdulist
@@ -4566,7 +4566,7 @@ argument_list|,
 literal|"XTENSION"
 argument_list|)
 argument_list|,
-name|typ_fstring
+name|FITS_DATA_TYPE_FSTRING
 argument_list|)
 expr_stmt|;
 if|if
@@ -4610,7 +4610,7 @@ literal|"NAXIS"
 argument_list|,
 name|fdat
 argument_list|,
-name|typ_flong
+name|FITS_DATA_TYPE_FLONG
 argument_list|)
 expr_stmt|;
 name|hdulist
@@ -4629,7 +4629,7 @@ literal|"BITPIX"
 argument_list|,
 name|fdat
 argument_list|,
-name|typ_flong
+name|FITS_DATA_TYPE_FLONG
 argument_list|)
 expr_stmt|;
 name|bpp
@@ -4722,7 +4722,7 @@ literal|"GCOUNT"
 argument_list|,
 name|gcount
 argument_list|,
-name|typ_flong
+name|FITS_DATA_TYPE_FLONG
 argument_list|,
 name|flong
 argument_list|)
@@ -4737,7 +4737,7 @@ literal|"PCOUNT"
 argument_list|,
 name|pcount
 argument_list|,
-name|typ_flong
+name|FITS_DATA_TYPE_FLONG
 argument_list|,
 name|flong
 argument_list|)
@@ -4752,7 +4752,7 @@ literal|"GROUPS"
 argument_list|,
 name|groups
 argument_list|,
-name|typ_fbool
+name|FITS_DATA_TYPE_FLONG
 argument_list|,
 name|fbool
 argument_list|)
@@ -4779,7 +4779,7 @@ literal|"EXTEND"
 argument_list|,
 name|extend
 argument_list|,
-name|typ_fbool
+name|FITS_DATA_TYPE_FLONG
 argument_list|,
 name|fbool
 argument_list|)
@@ -4868,7 +4868,7 @@ argument_list|,
 name|naxisn
 argument_list|)
 argument_list|,
-name|typ_flong
+name|FITS_DATA_TYPE_FLONG
 argument_list|)
 expr_stmt|;
 if|if
@@ -5118,7 +5118,7 @@ literal|"BLANK"
 argument_list|,
 name|blank
 argument_list|,
-name|typ_flong
+name|FITS_DATA_TYPE_FLONG
 argument_list|,
 name|flong
 argument_list|)
@@ -5133,7 +5133,7 @@ literal|"DATAMIN"
 argument_list|,
 name|datamin
 argument_list|,
-name|typ_fdouble
+name|FITS_DATA_TYPE_FDOUBLE
 argument_list|,
 name|fdouble
 argument_list|)
@@ -5148,7 +5148,7 @@ literal|"DATAMAX"
 argument_list|,
 name|datamax
 argument_list|,
-name|typ_fdouble
+name|FITS_DATA_TYPE_FDOUBLE
 argument_list|,
 name|fdouble
 argument_list|)
@@ -5163,7 +5163,7 @@ literal|"BZERO"
 argument_list|,
 name|bzero
 argument_list|,
-name|typ_fdouble
+name|FITS_DATA_TYPE_FDOUBLE
 argument_list|,
 name|fdouble
 argument_list|)
@@ -5178,7 +5178,7 @@ literal|"BSCALE"
 argument_list|,
 name|bscale
 argument_list|,
-name|typ_fdouble
+name|FITS_DATA_TYPE_FDOUBLE
 argument_list|,
 name|fdouble
 argument_list|)
@@ -5465,7 +5465,7 @@ comment|/* FILE *fp               [I] : file pointer                            
 end_comment
 
 begin_comment
-comment|/* FITS_HDU_LIST *hdu     [I] : pointer to header                            */
+comment|/* FitsHduList *hdu     [I] : pointer to header                            */
 end_comment
 
 begin_comment
@@ -5499,14 +5499,14 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|fits_eval_pixrange (FILE * fp,FITS_HDU_LIST * hdu)
+DECL|function|fits_eval_pixrange (FILE * fp,FitsHduList * hdu)
 name|fits_eval_pixrange
 parameter_list|(
 name|FILE
 modifier|*
 name|fp
 parameter_list|,
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 name|hdu
 parameter_list|)
@@ -5592,7 +5592,7 @@ literal|8
 case|:
 block|{
 specifier|register
-name|FITS_BITPIX8
+name|FitsBitpix8
 name|pixval
 decl_stmt|;
 specifier|register
@@ -5600,12 +5600,12 @@ name|guchar
 modifier|*
 name|ptr
 decl_stmt|;
-name|FITS_BITPIX8
+name|FitsBitpix8
 name|minval
 init|=
 literal|255
 decl_stmt|;
-name|FITS_BITPIX8
+name|FitsBitpix8
 name|maxval
 init|=
 literal|0
@@ -5680,11 +5680,11 @@ operator|.
 name|blank
 condition|)
 block|{
-name|FITS_BITPIX8
+name|FitsBitpix8
 name|blankval
 init|=
 operator|(
-name|FITS_BITPIX8
+name|FitsBitpix8
 operator|)
 name|hdu
 operator|->
@@ -5701,7 +5701,7 @@ block|{
 name|pixval
 operator|=
 operator|(
-name|FITS_BITPIX8
+name|FitsBitpix8
 operator|)
 operator|*
 operator|(
@@ -5760,7 +5760,7 @@ block|{
 name|pixval
 operator|=
 operator|(
-name|FITS_BITPIX8
+name|FitsBitpix8
 operator|)
 operator|*
 operator|(
@@ -5811,7 +5811,7 @@ literal|16
 case|:
 block|{
 specifier|register
-name|FITS_BITPIX16
+name|FitsBitpix16
 name|pixval
 decl_stmt|;
 specifier|register
@@ -5819,12 +5819,12 @@ name|guchar
 modifier|*
 name|ptr
 decl_stmt|;
-name|FITS_BITPIX16
+name|FitsBitpix16
 name|minval
 init|=
 literal|0x7fff
 decl_stmt|;
-name|FITS_BITPIX16
+name|FitsBitpix16
 name|maxval
 init|=
 operator|~
@@ -5900,11 +5900,11 @@ operator|.
 name|blank
 condition|)
 block|{
-name|FITS_BITPIX16
+name|FitsBitpix16
 name|blankval
 init|=
 operator|(
-name|FITS_BITPIX16
+name|FitsBitpix16
 operator|)
 name|hdu
 operator|->
@@ -6031,7 +6031,7 @@ literal|32
 case|:
 block|{
 specifier|register
-name|FITS_BITPIX32
+name|FitsBitpix32
 name|pixval
 decl_stmt|;
 specifier|register
@@ -6039,12 +6039,12 @@ name|guchar
 modifier|*
 name|ptr
 decl_stmt|;
-name|FITS_BITPIX32
+name|FitsBitpix32
 name|minval
 init|=
 literal|0x7fffffff
 decl_stmt|;
-name|FITS_BITPIX32
+name|FitsBitpix32
 name|maxval
 init|=
 operator|~
@@ -6120,11 +6120,11 @@ operator|.
 name|blank
 condition|)
 block|{
-name|FITS_BITPIX32
+name|FitsBitpix32
 name|blankval
 init|=
 operator|(
-name|FITS_BITPIX32
+name|FitsBitpix32
 operator|)
 name|hdu
 operator|->
@@ -6252,7 +6252,7 @@ literal|32
 case|:
 block|{
 specifier|register
-name|FITS_BITPIXM32
+name|FitsBitpixM32
 name|pixval
 init|=
 literal|0
@@ -6262,12 +6262,12 @@ name|guchar
 modifier|*
 name|ptr
 decl_stmt|;
-name|FITS_BITPIXM32
+name|FitsBitpixM32
 name|minval
 init|=
 literal|0
 decl_stmt|;
-name|FITS_BITPIXM32
+name|FitsBitpixM32
 name|maxval
 init|=
 literal|0
@@ -6438,7 +6438,7 @@ literal|64
 case|:
 block|{
 specifier|register
-name|FITS_BITPIXM64
+name|FitsBitpixM64
 name|pixval
 decl_stmt|;
 specifier|register
@@ -6446,12 +6446,12 @@ name|guchar
 modifier|*
 name|ptr
 decl_stmt|;
-name|FITS_BITPIXM64
+name|FitsBitpixM64
 name|minval
 init|=
 literal|0
 decl_stmt|;
-name|FITS_BITPIXM64
+name|FitsBitpixM64
 name|maxval
 init|=
 literal|0
@@ -6676,7 +6676,7 @@ comment|/* const char *card   [I] : pointer to card image                       
 end_comment
 
 begin_comment
-comment|/* FITS_DATA_TYPES data_type [I] : datatype to decode                        */
+comment|/* FitsDataType data_type [I] : datatype to decode                        */
 end_comment
 
 begin_comment
@@ -6720,9 +6720,9 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-name|FITS_DATA
+name|FitsData
 modifier|*
-DECL|function|fits_decode_card (const gchar * card,FITS_DATA_TYPES data_type)
+DECL|function|fits_decode_card (const gchar * card,FitsDataType data_type)
 name|fits_decode_card
 parameter_list|(
 specifier|const
@@ -6730,12 +6730,12 @@ name|gchar
 modifier|*
 name|card
 parameter_list|,
-name|FITS_DATA_TYPES
+name|FitsDataType
 name|data_type
 parameter_list|)
 block|{
 specifier|static
-name|FITS_DATA
+name|FitsData
 name|data
 decl_stmt|;
 name|glong
@@ -6839,14 +6839,14 @@ name|data_type
 condition|)
 block|{
 case|case
-name|typ_bitpix8
+name|FITS_DATA_TYPE_BITPIX_8
 case|:
 name|data
 operator|.
 name|bitpix8
 operator|=
 call|(
-name|FITS_BITPIX8
+name|FitsBitpix8
 call|)
 argument_list|(
 name|l_card
@@ -6857,7 +6857,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|typ_bitpix16
+name|FITS_DATA_TYPE_BITPIX_16
 case|:
 if|if
 condition|(
@@ -6878,7 +6878,7 @@ condition|)
 block|{
 name|fits_set_error
 argument_list|(
-literal|"fits_decode_card: error decoding typ_bitpix16"
+literal|"fits_decode_card: error decoding FITS_DATA_TYPE_BITPIX_16"
 argument_list|)
 expr_stmt|;
 name|ErrCount
@@ -6891,13 +6891,13 @@ operator|.
 name|bitpix16
 operator|=
 operator|(
-name|FITS_BITPIX16
+name|FitsBitpix16
 operator|)
 name|l_long
 expr_stmt|;
 break|break;
 case|case
-name|typ_bitpix32
+name|FITS_DATA_TYPE_BITPIX_32
 case|:
 if|if
 condition|(
@@ -6918,7 +6918,7 @@ condition|)
 block|{
 name|fits_set_error
 argument_list|(
-literal|"fits_decode_card: error decoding typ_bitpix32"
+literal|"fits_decode_card: error decoding FITS_DATA_TYPE_BITPIX_32"
 argument_list|)
 expr_stmt|;
 name|ErrCount
@@ -6931,13 +6931,13 @@ operator|.
 name|bitpix32
 operator|=
 operator|(
-name|FITS_BITPIX32
+name|FitsBitpix32
 operator|)
 name|l_long
 expr_stmt|;
 break|break;
 case|case
-name|typ_bitpixm32
+name|FITS_DATA_TYPE_BITPIX_M32
 case|:
 if|if
 condition|(
@@ -6956,7 +6956,7 @@ condition|)
 block|{
 name|fits_set_error
 argument_list|(
-literal|"fits_decode_card: error decoding typ_bitpixm32"
+literal|"fits_decode_card: error decoding FITS_DATA_TYPE_BITPIX_M32"
 argument_list|)
 expr_stmt|;
 name|ErrCount
@@ -6969,13 +6969,13 @@ operator|.
 name|bitpixm32
 operator|=
 operator|(
-name|FITS_BITPIXM32
+name|FitsBitpixM32
 operator|)
 name|l_double
 expr_stmt|;
 break|break;
 case|case
-name|typ_bitpixm64
+name|FITS_DATA_TYPE_BITPIX_M64
 case|:
 if|if
 condition|(
@@ -6994,7 +6994,7 @@ condition|)
 block|{
 name|fits_set_error
 argument_list|(
-literal|"fits_decode_card: error decoding typ_bitpixm64"
+literal|"fits_decode_card: error decoding FITS_DATA_TYPE_BITPIX_M64"
 argument_list|)
 expr_stmt|;
 name|ErrCount
@@ -7007,13 +7007,13 @@ operator|.
 name|bitpixm64
 operator|=
 operator|(
-name|FITS_BITPIXM64
+name|FitsBitpixM64
 operator|)
 name|l_double
 expr_stmt|;
 break|break;
 case|case
-name|typ_fbool
+name|FITS_DATA_TYPE_FBOOL
 case|:
 name|cp
 operator|=
@@ -7066,7 +7066,7 @@ else|else
 block|{
 name|fits_set_error
 argument_list|(
-literal|"fits_decode_card: error decoding typ_fbool"
+literal|"fits_decode_card: error decoding FITS_DATA_TYPE_FBOOL"
 argument_list|)
 expr_stmt|;
 name|ErrCount
@@ -7076,7 +7076,7 @@ break|break;
 block|}
 break|break;
 case|case
-name|typ_flong
+name|FITS_DATA_TYPE_FLONG
 case|:
 if|if
 condition|(
@@ -7097,7 +7097,7 @@ condition|)
 block|{
 name|fits_set_error
 argument_list|(
-literal|"fits_decode_card: error decoding typ_flong"
+literal|"fits_decode_card: error decoding FITS_DATA_TYPE_FLONG"
 argument_list|)
 expr_stmt|;
 name|ErrCount
@@ -7110,13 +7110,13 @@ operator|.
 name|flong
 operator|=
 operator|(
-name|FITS_BITPIX32
+name|FitsBitpix32
 operator|)
 name|l_long
 expr_stmt|;
 break|break;
 case|case
-name|typ_fdouble
+name|FITS_DATA_TYPE_FDOUBLE
 case|:
 if|if
 condition|(
@@ -7135,7 +7135,7 @@ condition|)
 block|{
 name|fits_set_error
 argument_list|(
-literal|"fits_decode_card: error decoding typ_fdouble"
+literal|"fits_decode_card: error decoding FITS_DATA_TYPE_FDOUBLE"
 argument_list|)
 expr_stmt|;
 name|ErrCount
@@ -7148,13 +7148,13 @@ operator|.
 name|fdouble
 operator|=
 operator|(
-name|FITS_BITPIXM32
+name|FitsBitpixM32
 operator|)
 name|l_double
 expr_stmt|;
 break|break;
 case|case
-name|typ_fstring
+name|FITS_DATA_TYPE_FSTRING
 case|:
 name|cp
 operator|=
@@ -7172,7 +7172,7 @@ condition|)
 block|{
 name|fits_set_error
 argument_list|(
-literal|"fits_decode_card: missing \' decoding typ_fstring"
+literal|"fits_decode_card: missing \' decoding FITS_DATA_TYPE_FSTRING"
 argument_list|)
 expr_stmt|;
 name|ErrCount
@@ -7317,7 +7317,7 @@ comment|/* Parameters:                                                          
 end_comment
 
 begin_comment
-comment|/* FITS_RECORD_LIST *rl  [I] : record list to search                         */
+comment|/* FitsRecordList *rl  [I] : record list to search                         */
 end_comment
 
 begin_comment
@@ -7375,10 +7375,10 @@ end_comment
 begin_function
 name|gchar
 modifier|*
-DECL|function|fits_search_card (FITS_RECORD_LIST * rl,gchar * keyword)
+DECL|function|fits_search_card (FitsRecordList * rl,gchar * keyword)
 name|fits_search_card
 parameter_list|(
-name|FITS_RECORD_LIST
+name|FitsRecordList
 modifier|*
 name|rl
 parameter_list|,
@@ -7540,7 +7540,7 @@ comment|/* Parameters:                                                          
 end_comment
 
 begin_comment
-comment|/* FITS_FILE *ff         [I] : FITS file structure                           */
+comment|/* FitsFile *ff         [I] : FITS file structure                           */
 end_comment
 
 begin_comment
@@ -7560,7 +7560,7 @@ comment|/*                                                                      
 end_comment
 
 begin_comment
-comment|/* The function returns on success a pointer to a FITS_HDU_LIST. hdupicind   */
+comment|/* The function returns on success a pointer to a FitsHduList. hdupicind   */
 end_comment
 
 begin_comment
@@ -7584,12 +7584,12 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
-DECL|function|fits_image_info (FITS_FILE * ff,gint picind,gint * hdupicind)
+DECL|function|fits_image_info (FitsFile * ff,gint picind,gint * hdupicind)
 name|fits_image_info
 parameter_list|(
-name|FITS_FILE
+name|FitsFile
 modifier|*
 name|ff
 parameter_list|,
@@ -7601,7 +7601,7 @@ modifier|*
 name|hdupicind
 parameter_list|)
 block|{
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 name|hdulist
 decl_stmt|;
@@ -7758,7 +7758,7 @@ comment|/* Parameters:                                                          
 end_comment
 
 begin_comment
-comment|/* FITS_FILE *ff         [I] : FITS file structure                           */
+comment|/* FitsFile *ff         [I] : FITS file structure                           */
 end_comment
 
 begin_comment
@@ -7778,7 +7778,7 @@ comment|/* The function positions the file pointer to a specified image.        
 end_comment
 
 begin_comment
-comment|/* The function returns on success a pointer to a FITS_HDU_LIST. This pointer*/
+comment|/* The function returns on success a pointer to a FitsHduList. This pointer*/
 end_comment
 
 begin_comment
@@ -7802,12 +7802,12 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
-DECL|function|fits_seek_image (FITS_FILE * ff,gint picind)
+DECL|function|fits_seek_image (FitsFile * ff,gint picind)
 name|fits_seek_image
 parameter_list|(
-name|FITS_FILE
+name|FitsFile
 modifier|*
 name|ff
 parameter_list|,
@@ -7815,7 +7815,7 @@ name|gint
 name|picind
 parameter_list|)
 block|{
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 name|hdulist
 decl_stmt|;
@@ -7935,11 +7935,11 @@ comment|/* Parameters:                                                          
 end_comment
 
 begin_comment
-comment|/* FITS_FILE *ff           [I] : FITS file structure                         */
+comment|/* FitsFile *ff           [I] : FITS file structure                         */
 end_comment
 
 begin_comment
-comment|/* FITS_HDU_LIST *hdulist  [I] : pointer to hdulist that describes image     */
+comment|/* FitsHduList *hdulist  [I] : pointer to hdulist that describes image     */
 end_comment
 
 begin_comment
@@ -7947,7 +7947,7 @@ comment|/* int npix                [I] : number of pixel values to read         
 end_comment
 
 begin_comment
-comment|/* FITS_PIX_TRANSFORM *trans [I]: pixel transformation                       */
+comment|/* FitsPixTransform *trans [I]: pixel transformation                       */
 end_comment
 
 begin_comment
@@ -8004,21 +8004,21 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|fits_read_pixel (FITS_FILE * ff,FITS_HDU_LIST * hdulist,gint npix,FITS_PIX_TRANSFORM * trans,void * buf)
+DECL|function|fits_read_pixel (FitsFile * ff,FitsHduList * hdulist,gint npix,FitsPixTransform * trans,void * buf)
 name|fits_read_pixel
 parameter_list|(
-name|FITS_FILE
+name|FitsFile
 modifier|*
 name|ff
 parameter_list|,
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 name|hdulist
 parameter_list|,
 name|gint
 name|npix
 parameter_list|,
-name|FITS_PIX_TRANSFORM
+name|FitsPixTransform
 modifier|*
 name|trans
 parameter_list|,
@@ -8239,7 +8239,7 @@ literal|0
 condition|)
 comment|/* For all pixels to read */
 block|{
-name|FITS_BITPIX8
+name|FitsBitpix8
 name|bp8
 decl_stmt|,
 name|bp8blank
@@ -8312,7 +8312,7 @@ block|{
 name|bp8blank
 operator|=
 operator|(
-name|FITS_BITPIX8
+name|FitsBitpix8
 operator|)
 name|hdulist
 operator|->
@@ -8327,7 +8327,7 @@ block|{
 name|bp8
 operator|=
 operator|(
-name|FITS_BITPIX8
+name|FitsBitpix8
 operator|)
 operator|*
 operator|(
@@ -8407,7 +8407,7 @@ block|{
 name|bp8
 operator|=
 operator|(
-name|FITS_BITPIX8
+name|FitsBitpix8
 operator|)
 operator|*
 operator|(
@@ -8468,7 +8468,7 @@ literal|0
 condition|)
 comment|/* For all pixels to read */
 block|{
-name|FITS_BITPIX16
+name|FitsBitpix16
 name|bp16
 decl_stmt|,
 name|bp16blank
@@ -8541,7 +8541,7 @@ block|{
 name|bp16blank
 operator|=
 operator|(
-name|FITS_BITPIX16
+name|FitsBitpix16
 operator|)
 name|hdulist
 operator|->
@@ -8715,7 +8715,7 @@ literal|0
 condition|)
 comment|/* For all pixels to read */
 block|{
-name|FITS_BITPIX32
+name|FitsBitpix32
 name|bp32
 decl_stmt|,
 name|bp32blank
@@ -8788,7 +8788,7 @@ block|{
 name|bp32blank
 operator|=
 operator|(
-name|FITS_BITPIX32
+name|FitsBitpix32
 operator|)
 name|hdulist
 operator|->
@@ -8953,7 +8953,7 @@ literal|0
 condition|)
 comment|/* For all pixels to read */
 block|{
-name|FITS_BITPIXM32
+name|FitsBitpixM32
 name|bpm32
 init|=
 literal|0
@@ -9106,7 +9106,7 @@ literal|0
 condition|)
 comment|/* For all pixels to read */
 block|{
-name|FITS_BITPIXM64
+name|FitsBitpixM64
 name|bpm64
 decl_stmt|;
 name|maxelem
@@ -9334,7 +9334,7 @@ modifier|*
 name|pgmfile
 parameter_list|)
 block|{
-name|FITS_FILE
+name|FitsFile
 modifier|*
 name|fitsin
 init|=
@@ -9346,11 +9346,11 @@ name|pgmout
 init|=
 name|NULL
 decl_stmt|;
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 name|hdu
 decl_stmt|;
-name|FITS_PIX_TRANSFORM
+name|FitsPixTransform
 name|trans
 decl_stmt|;
 name|gint
@@ -9709,7 +9709,7 @@ modifier|*
 name|fitsfile
 parameter_list|)
 block|{
-name|FITS_FILE
+name|FitsFile
 modifier|*
 name|fitsout
 init|=
@@ -9721,7 +9721,7 @@ name|pgmin
 init|=
 name|NULL
 decl_stmt|;
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 name|hdu
 decl_stmt|;

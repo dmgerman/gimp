@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cb30a10108
+DECL|struct|__anon2b8a20be0108
 block|{
 DECL|member|replace
 name|gint
@@ -205,11 +205,11 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 name|create_fits_header
 parameter_list|(
-name|FITS_FILE
+name|FitsFile
 modifier|*
 name|ofp
 parameter_list|,
@@ -230,7 +230,7 @@ specifier|static
 name|gint
 name|save_fits
 parameter_list|(
-name|FITS_FILE
+name|FitsFile
 modifier|*
 name|ofp
 parameter_list|,
@@ -300,7 +300,7 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|FITS_FILE
+name|FitsFile
 modifier|*
 name|ifp
 parameter_list|,
@@ -1169,11 +1169,11 @@ name|FILE
 modifier|*
 name|fp
 decl_stmt|;
-name|FITS_FILE
+name|FitsFile
 modifier|*
 name|ifp
 decl_stmt|;
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 name|hdu
 decl_stmt|;
@@ -1610,7 +1610,7 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|FITS_FILE
+name|FitsFile
 modifier|*
 name|ofp
 decl_stmt|;
@@ -1987,7 +1987,7 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_fits (const gchar * filename,FITS_FILE * ifp,guint picnum,guint ncompose)
+DECL|function|load_fits (const gchar * filename,FitsFile * ifp,guint picnum,guint ncompose)
 name|load_fits
 parameter_list|(
 specifier|const
@@ -1995,7 +1995,7 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|FITS_FILE
+name|FitsFile
 modifier|*
 name|ifp
 parameter_list|,
@@ -2065,11 +2065,11 @@ name|err
 init|=
 literal|0
 decl_stmt|;
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 name|hdulist
 decl_stmt|;
-name|FITS_PIX_TRANSFORM
+name|FitsPixTransform
 name|trans
 decl_stmt|;
 name|hdulist
@@ -2904,12 +2904,12 @@ end_function
 
 begin_function
 specifier|static
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
-DECL|function|create_fits_header (FITS_FILE * ofp,guint width,guint height,guint bpp)
+DECL|function|create_fits_header (FitsFile * ofp,guint width,guint height,guint bpp)
 name|create_fits_header
 parameter_list|(
-name|FITS_FILE
+name|FitsFile
 modifier|*
 name|ofp
 parameter_list|,
@@ -2923,11 +2923,11 @@ name|guint
 name|bpp
 parameter_list|)
 block|{
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 name|hdulist
 decl_stmt|;
-name|int
+name|gint
 name|print_ctype3
 init|=
 literal|0
@@ -3239,10 +3239,10 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|save_fits (FITS_FILE * ofp,gint32 image_ID,gint32 drawable_ID)
+DECL|function|save_fits (FitsFile * ofp,gint32 image_ID,gint32 drawable_ID)
 name|save_fits
 parameter_list|(
-name|FITS_FILE
+name|FitsFile
 modifier|*
 name|ofp
 parameter_list|,
@@ -3292,7 +3292,7 @@ name|format
 init|=
 name|NULL
 decl_stmt|;
-name|FITS_HDU_LIST
+name|FitsHduList
 modifier|*
 name|hdu
 decl_stmt|;
