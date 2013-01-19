@@ -729,7 +729,7 @@ parameter_list|,
 name|value
 parameter_list|)
 define|\
-value|{ char card[81]; \   sprintf (card, "%-8.8s= %20s%50s", key, value ? "T" : "F", " "); \   fwrite (card, 1, 80, fp); }
+value|{ gchar card[81]; \   g_snprintf (card, sizeof (card), \               "%-8.8s= %20s%50s", key, value ? "T" : "F", " "); \   fwrite (card, 1, 80, fp); }
 end_define
 
 begin_define
@@ -745,7 +745,7 @@ parameter_list|,
 name|value
 parameter_list|)
 define|\
-value|{ char card[81]; \   sprintf (card, "%-8.8s= %20ld%50s", key, (long)value, " "); \   fwrite (card, 1, 80, fp); }
+value|{ gchar card[81]; \   g_snprintf (card, sizeof (card), \               "%-8.8s= %20ld%50s", key, (long)value, " "); \   fwrite (card, 1, 80, fp); }
 end_define
 
 begin_define
@@ -761,7 +761,7 @@ parameter_list|,
 name|value
 parameter_list|)
 define|\
-value|{ char card[81], dbl[21], *istr; \   g_ascii_formatd (dbl, sizeof(dbl), "%f", (gdouble)value); \   istr = strstr (dbl, "e"); \   if (istr) *istr = 'E'; \   sprintf (card, "%-8.8s= %20.20s%50s", key, dbl, " "); \   fwrite (card, 1, 80, fp); }
+value|{ gchar card[81], dbl[21], *istr; \   g_ascii_formatd (dbl, sizeof(dbl), "%f", (gdouble)value); \   istr = strstr (dbl, "e"); \   if (istr) *istr = 'E'; \   g_snprintf (card, sizeof (card), \               "%-8.8s= %20.20s%50s", key, dbl, " "); \   fwrite (card, 1, 80, fp); }
 end_define
 
 begin_define
@@ -777,7 +777,7 @@ parameter_list|,
 name|value
 parameter_list|)
 define|\
-value|{ char card[81]; int k;\   sprintf (card, "%-8.8s= \'%s", key, value); \   for (k = strlen (card); k< 81; k++) card[k] = ' '; \   k = strlen (key); if (k< 8) card[19] = '\''; else card[11+k] = '\''; \   fwrite (card, 1, 80, fp); }
+value|{ gchar card[81]; int k;\   g_snprintf (card, sizeof (card), \               "%-8.8s= \'%s", key, value); \   for (k = strlen (card); k< 81; k++) card[k] = ' '; \   k = strlen (key); if (k< 8) card[19] = '\''; else card[11+k] = '\''; \   fwrite (card, 1, 80, fp); }
 end_define
 
 begin_define
@@ -791,7 +791,7 @@ parameter_list|,
 name|value
 parameter_list|)
 define|\
-value|{ char card[81]; \   sprintf (card, "%-80.80s", value); \   fwrite (card, 1, 80, fp); }
+value|{ gchar card[81]; \   g_snprintf (card, sizeof (card), \               "%-80.80s", value); \   fwrite (card, 1, 80, fp); }
 end_define
 
 begin_comment
@@ -1824,7 +1824,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-name|char
+name|gchar
 modifier|*
 DECL|function|fits_get_error (void)
 name|fits_get_error
@@ -1957,11 +1957,11 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|fits_set_error (const char * errmsg)
+DECL|function|fits_set_error (const gchar * errmsg)
 name|fits_set_error
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|errmsg
 parameter_list|)
@@ -5377,11 +5377,17 @@ index|[
 literal|160
 index|]
 decl_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|msg
 argument_list|,
-literal|"fits_decode_header: IEEE floating point format required for\  BITPIX=%d\nis not supported on this machine"
+sizeof|sizeof
+argument_list|(
+name|msg
+argument_list|)
+argument_list|,
+literal|"fits_decode_header: IEEE floating point format required for "
+literal|"BITPIX=%d\nis not supported on this machine"
 argument_list|,
 name|hdulist
 operator|->
@@ -6676,7 +6682,7 @@ comment|/* const char *card   [I] : pointer to card image                       
 end_comment
 
 begin_comment
-comment|/* FitsDataType data_type [I] : datatype to decode                        */
+comment|/* FitsDataType data_type [I] : datatype to decode                           */
 end_comment
 
 begin_comment
@@ -7317,7 +7323,7 @@ comment|/* Parameters:                                                          
 end_comment
 
 begin_comment
-comment|/* FitsRecordList *rl  [I] : record list to search                         */
+comment|/* FitsRecordList *rl  [I] : record list to search                           */
 end_comment
 
 begin_comment
@@ -7540,7 +7546,7 @@ comment|/* Parameters:                                                          
 end_comment
 
 begin_comment
-comment|/* FitsFile *ff         [I] : FITS file structure                           */
+comment|/* FitsFile *ff         [I] : FITS file structure                            */
 end_comment
 
 begin_comment
@@ -7560,7 +7566,7 @@ comment|/*                                                                      
 end_comment
 
 begin_comment
-comment|/* The function returns on success a pointer to a FitsHduList. hdupicind   */
+comment|/* The function returns on success a pointer to a FitsHduList. hdupicind     */
 end_comment
 
 begin_comment
@@ -7758,7 +7764,7 @@ comment|/* Parameters:                                                          
 end_comment
 
 begin_comment
-comment|/* FitsFile *ff         [I] : FITS file structure                           */
+comment|/* FitsFile *ff         [I] : FITS file structure                            */
 end_comment
 
 begin_comment
@@ -7778,7 +7784,7 @@ comment|/* The function positions the file pointer to a specified image.        
 end_comment
 
 begin_comment
-comment|/* The function returns on success a pointer to a FitsHduList. This pointer*/
+comment|/* The function returns on success a pointer to a FitsHduList. This pointer  */
 end_comment
 
 begin_comment
@@ -7935,11 +7941,11 @@ comment|/* Parameters:                                                          
 end_comment
 
 begin_comment
-comment|/* FitsFile *ff           [I] : FITS file structure                         */
+comment|/* FitsFile *ff           [I] : FITS file structure                          */
 end_comment
 
 begin_comment
-comment|/* FitsHduList *hdulist  [I] : pointer to hdulist that describes image     */
+comment|/* FitsHduList *hdulist  [I] : pointer to hdulist that describes image       */
 end_comment
 
 begin_comment
@@ -7947,7 +7953,7 @@ comment|/* int npix                [I] : number of pixel values to read         
 end_comment
 
 begin_comment
-comment|/* FitsPixTransform *trans [I]: pixel transformation                       */
+comment|/* FitsPixTransform *trans [I]: pixel transformation                         */
 end_comment
 
 begin_comment
@@ -10219,6 +10225,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* ! FITS_NO_DEMO */
+end_comment
 
 end_unit
 
