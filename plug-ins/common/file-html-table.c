@@ -80,7 +80,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b32ff30108
+DECL|struct|__anon27bce2600108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -937,7 +937,7 @@ argument_list|)
 expr_stmt|;
 name|buf
 operator|=
-name|g_new
+name|g_newa
 argument_list|(
 name|guchar
 argument_list|,
@@ -949,7 +949,7 @@ argument_list|)
 expr_stmt|;
 name|buf2
 operator|=
-name|g_new
+name|g_newa
 argument_list|(
 name|guchar
 argument_list|,
