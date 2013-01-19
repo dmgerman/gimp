@@ -189,7 +189,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bad71b40108
+DECL|struct|__anon2c1ba5620108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -532,8 +532,10 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"metadata-value"
+argument_list|,
 literal|"Value"
 argument_list|)
 argument_list|,
