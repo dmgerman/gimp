@@ -125,12 +125,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/stdplugins-intl.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"xmp-schemas.h"
 end_include
 
@@ -170,6 +164,12 @@ directive|include
 file|"gimpxmpmodeltext.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_define
 DECL|macro|RESPONSE_IMPORT
 define|#
@@ -189,7 +189,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a46738d0108
+DECL|struct|__anon2bad71b40108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1517,7 +1517,7 @@ argument_list|(
 name|sw
 argument_list|)
 argument_list|,
-name|GTK_SHADOW_ETCHED_IN
+name|GTK_SHADOW_IN
 argument_list|)
 expr_stmt|;
 name|gtk_scrolled_window_set_policy
