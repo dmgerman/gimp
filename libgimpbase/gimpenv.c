@@ -848,7 +848,7 @@ name|G_OS_WIN32
 end_ifdef
 
 begin_comment
-comment|/* Taken and slightly modified from glib 2.34.0 code. */
+comment|/* Taken from glib 2.35 code. */
 end_comment
 
 begin_function
@@ -889,15 +889,11 @@ name|NULL
 decl_stmt|;
 name|hr
 operator|=
-name|SHGetFolderLocation
+name|SHGetSpecialFolderLocation
 argument_list|(
 name|NULL
 argument_list|,
 name|csidl
-argument_list|,
-name|NULL
-argument_list|,
-literal|0
 argument_list|,
 operator|&
 name|pidl
