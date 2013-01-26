@@ -330,6 +330,8 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|eol
+init|=
+name|NULL
 decl_stmt|;
 name|gchar
 modifier|*
@@ -337,6 +339,13 @@ name|write_bytes
 init|=
 name|NULL
 decl_stmt|;
+if|if
+condition|(
+name|old_options_regexp
+operator|&&
+name|update_callback
+condition|)
+block|{
 name|eol
 operator|=
 name|g_strrstr_len
@@ -384,7 +393,7 @@ name|sfile
 argument_list|)
 condition|)
 block|{
-comment|/* We are in unlikely case where a single config line is            * longer than the buffer!            */
+comment|/* We are in unlikely case where a single config line is                * longer than the buffer!                */
 name|g_set_error
 argument_list|(
 name|error
@@ -402,7 +411,7 @@ argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|dest
+name|source
 argument_list|)
 argument_list|,
 operator|(
@@ -424,10 +433,6 @@ argument_list|(
 name|dfile
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|old_options_regexp
-condition|)
 name|g_regex_unref
 argument_list|(
 name|old_options_regexp
@@ -437,13 +442,6 @@ return|return
 name|FALSE
 return|;
 block|}
-if|if
-condition|(
-name|old_options_regexp
-operator|&&
-name|update_callback
-condition|)
-block|{
 name|write_bytes
 operator|=
 name|g_regex_replace_eval
@@ -598,7 +596,6 @@ argument_list|(
 name|write_bytes
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|eol
@@ -625,6 +622,7 @@ block|}
 else|else
 comment|/* EOF */
 break|break;
+block|}
 block|}
 if|if
 condition|(
