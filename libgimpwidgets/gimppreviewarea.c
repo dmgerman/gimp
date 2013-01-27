@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c35878d0103
+DECL|enum|__anon2bb6f6170103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -8890,7 +8890,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_area_set_max_size:  * @area:   a #GimpPreviewArea widget  * @width:  the maximum width in pixels or -1 to unset the limit  * @height: the maximum height in pixels or -1 to unset the limit  *  * Usually a #GimpPreviewArea fills the size that it is  * allocated. This funtion allows you to limit the preview area to a  * maximum size. If a larger size is allocated for the widget, the  * preview will draw itself centered into the allocated area.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_preview_area_set_max_size:  * @area:   a #GimpPreviewArea widget  * @width:  the maximum width in pixels or -1 to unset the limit  * @height: the maximum height in pixels or -1 to unset the limit  *  * Usually a #GimpPreviewArea fills the size that it is  * allocated. This function allows you to limit the preview area to a  * maximum size. If a larger size is allocated for the widget, the  * preview will draw itself centered into the allocated area.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function

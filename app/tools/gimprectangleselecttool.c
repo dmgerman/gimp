@@ -1572,7 +1572,7 @@ name|coords
 argument_list|)
 condition|)
 block|{
-comment|/* In some cases we want to finish the rectangle select tool        * and hand over responsability to the selection tool        */
+comment|/* In some cases we want to finish the rectangle select tool        * and hand over responsibility to the selection tool        */
 name|gimp_rectangle_tool_execute
 argument_list|(
 name|rectangle

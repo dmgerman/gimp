@@ -3123,7 +3123,7 @@ name|mevent
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* gdk_device_get_history() has several quirks. First                  * is that events with borderline timestamps at both                  * ends are included. Because of that we need to add 1                  * to lower border. The second is due to poor X event                  * resolution. We need to do -1 to ensure that the                  * amount of events between timestamps is final or                  * risk loosing some.                  */
+comment|/* gdk_device_get_history() has several quirks. First                  * is that events with borderline timestamps at both                  * ends are included. Because of that we need to add 1                  * to lower border. The second is due to poor X event                  * resolution. We need to do -1 to ensure that the                  * amount of events between timestamps is final or                  * risk losing some.                  */
 name|last_motion_time
 operator|=
 name|gimp_motion_buffer_get_last_motion_time

@@ -4631,7 +4631,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/*            * it isnt. if we are on a handle go to the nearest            * anchor and see if we can find an end from it.            * Yes, this is tedious.            */
+comment|/*            * It isn't. If we are on a handle go to the nearest            * anchor and see if we can find an end from it.            * Yes, this is tedious.            */
 name|listneighbor
 operator|=
 name|g_list_find
@@ -4977,7 +4977,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/*                * it isnt. if we are on a handle go to the nearest                * anchor and see if we can find an end from it.                * Yes, this is tedious.                */
+comment|/*                * It isn't. If we are on a handle go to the nearest                * anchor and see if we can find an end from it.                * Yes, this is tedious.                */
 name|listneighbor
 operator|=
 name|g_list_find

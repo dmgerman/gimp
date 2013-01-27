@@ -308,7 +308,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dcfaad0108
+DECL|struct|__anon291c9ca10108
 block|{
 DECL|member|crop
 name|gboolean
@@ -839,7 +839,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27dcfaad0208
+DECL|struct|__anon291c9ca10208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -6354,7 +6354,7 @@ name|MAX_SAVE_DIMENSION
 argument_list|)
 index|]
 decl_stmt|;
-comment|/* This will be used in set_size_and_delay fucntion later.      To define this in that function is easy to read but place here to      reduce overheads. */
+comment|/* This will be used in set_size_and_delay function later.      To define this in that function is easy to read but place here to      reduce overheads. */
 name|re
 operator|=
 name|g_regex_new
@@ -8045,7 +8045,7 @@ comment|/* set comments to cursor from xmcparas.comments. */
 end_comment
 
 begin_comment
-comment|/* don't forget to XcursorCommentsDestory returned pointer later. */
+comment|/* don't forget to XcursorCommentsDestroy returned pointer later. */
 end_comment
 
 begin_function
@@ -9224,7 +9224,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon27dcfaad0308
+DECL|struct|__anon291c9ca10308
 block|{
 DECL|member|size
 name|guint32

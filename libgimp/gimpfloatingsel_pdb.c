@@ -158,7 +158,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_floating_sel_to_layer:  * @floating_sel_ID: The floating selection.  *  * Transforms the specified floating selection into a layer.  *  * This procedure transforms the specified floating selection into a  * layer with the same offsets and extents. The composited image will  * look precisely the same, but the floating selection layer will no  * longer be clipped to the extents of the drawable it was attached to.  * The floating selection will become the active layer. This procedure  * will not work if the floating selection has a different base type  * from the underlying image. This might be the case if the floating  * selection is above an auxillary channel or a layer mask.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_floating_sel_to_layer:  * @floating_sel_ID: The floating selection.  *  * Transforms the specified floating selection into a layer.  *  * This procedure transforms the specified floating selection into a  * layer with the same offsets and extents. The composited image will  * look precisely the same, but the floating selection layer will no  * longer be clipped to the extents of the drawable it was attached to.  * The floating selection will become the active layer. This procedure  * will not work if the floating selection has a different base type  * from the underlying image. This might be the case if the floating  * selection is above an auxiliary channel or a layer mask.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function

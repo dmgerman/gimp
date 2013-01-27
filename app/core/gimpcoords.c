@@ -544,7 +544,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * The "lenght" of the gimpcoord.  * Applies a metric that increases the weight on the  * pressure/xtilt/ytilt/wheel to ensure proper interpolation  */
+comment|/*  * The "length" of the gimpcoord.  * Applies a metric that increases the weight on the  * pressure/xtilt/ytilt/wheel to ensure proper interpolation  */
 end_comment
 
 begin_function

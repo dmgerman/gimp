@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a1c9840108
+DECL|struct|__anon2c628aac0108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -1969,7 +1969,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/*  This function retrieves the pixel size from an SVG file. Parsing  *  stops after the first chunk that provided the parser with enough  *  information to determine the size. This is usally the opening  *<svg> element and should thus be in the first chunk (1024 bytes).  */
+comment|/*  This function retrieves the pixel size from an SVG file. Parsing  *  stops after the first chunk that provided the parser with enough  *  information to determine the size. This is usually the opening  *<svg> element and should thus be in the first chunk (1024 bytes).  */
 end_comment
 
 begin_function

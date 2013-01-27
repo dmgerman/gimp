@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b56aa450103
+DECL|enum|__anon2c4fe13f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1896,7 +1896,7 @@ name|GtkWidget
 modifier|*
 name|options_gui
 decl_stmt|;
-comment|/* This will warn if tool info is changed to nothing.    * This seems to happen if starting in SWM with tool editor visible    * Maybe its normal, and the code should just be writen to    * handle this case, but someone smarter needs to take a look*/
+comment|/* This will warn if tool info is changed to nothing.    * This seems to happen if starting in SWM with tool editor visible    * Maybe its normal, and the code should just be written to    * handle this case, but someone smarter needs to take a look*/
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_TOOL_INFO

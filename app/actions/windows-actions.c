@@ -330,7 +330,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* The only reason we have "Tab" in the action entries below is to  * give away the hardcoded keyboard shortcut. If the user changes the  * shortcut to something else, both that shortcut and Tab will  * work. The reason we have the shortcut hardcoded is beccause  * gtk_accelerator_valid() returns FALSE for GDK_tab.  */
+comment|/* The only reason we have "Tab" in the action entries below is to  * give away the hardcoded keyboard shortcut. If the user changes the  * shortcut to something else, both that shortcut and Tab will  * work. The reason we have the shortcut hardcoded is because  * gtk_accelerator_valid() returns FALSE for GDK_tab.  */
 end_comment
 
 begin_decl_stmt

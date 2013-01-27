@@ -86,7 +86,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e77420108
+DECL|struct|__anon277b61480108
 block|{
 DECL|member|u
 DECL|member|v
@@ -1145,7 +1145,7 @@ literal|0
 index|]
 operator|)
 expr_stmt|;
-comment|/* Now we have the simultanous solutions. Lets compute the unknowns */
+comment|/* Now we have the simultaneous solutions. Lets compute the unknowns */
 comment|/* (skip u&v if t is<0, this means the intersection is behind us)  */
 comment|/* ================================================================ */
 name|t

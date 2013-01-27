@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f9d460108
+DECL|struct|__anon2797e71c0108
 block|{
 DECL|member|filename
 name|gchar
@@ -580,7 +580,7 @@ argument_list|(
 name|expected_dockrc
 argument_list|)
 expr_stmt|;
-comment|/* Remeber the modtimes and MD5s */
+comment|/* Remember the modtimes and MD5s */
 name|g_assert
 argument_list|(
 name|gimp_test_get_file_state_verbose

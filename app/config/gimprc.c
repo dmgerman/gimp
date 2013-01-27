@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29798f0c0103
+DECL|enum|__anon2c6d9b4f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1635,7 +1635,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rc_set_unkown_token:  * @gimprc: a #GimpRc object.  * @token:  * @value:  *  * Calls gimp_rc_add_unknown_token() and triggers an idle-save if  * autosave is enabled on @gimprc.  **/
+comment|/**  * gimp_rc_set_unknown_token:  * @gimprc: a #GimpRc object.  * @token:  * @value:  *  * Calls gimp_rc_add_unknown_token() and triggers an idle-save if  * autosave is enabled on @gimprc.  **/
 end_comment
 
 begin_function

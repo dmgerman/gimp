@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c14a8450103
+DECL|enum|__anon2bcd039c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1083,7 +1083,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_filtered_container_new:  * @src_container: container to be filtered.  *  * Creates a new #GimpFilteredContainer object which creates filtered  * data view of #GimpTagged objects. It filters @src_container for objects  * containing all of the filtering tags. Syncronization with @src_container  * data is performed automatically.  *  * Return value: a new #GimpFilteredContainer object.  **/
+comment|/**  * gimp_filtered_container_new:  * @src_container: container to be filtered.  *  * Creates a new #GimpFilteredContainer object which creates filtered  * data view of #GimpTagged objects. It filters @src_container for objects  * containing all of the filtering tags. Synchronization with @src_container  * data is performed automatically.  *  * Return value: a new #GimpFilteredContainer object.  **/
 end_comment
 
 begin_function

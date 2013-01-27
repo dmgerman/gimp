@@ -46,7 +46,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291fa8c20108
+DECL|struct|__anon29a132830108
 block|{
 DECL|member|callback
 name|GimpRunPaletteCallback
@@ -99,7 +99,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_palette_select_widget_new:  * @title:        Title of the dialog to use or %NULL to use the default title.  * @palette_name: Initial palette name.  * @callback:     A function to call when the selected palette changes.  * @data:         A pointer to arbitary data to be used in the call to @callback.  *  * Creates a new #GtkWidget that completely controls the selection of  * a palette.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_palette_select_widget_new:  * @title:        Title of the dialog to use or %NULL to use the default title.  * @palette_name: Initial palette name.  * @callback:     A function to call when the selected palette changes.  * @data:         A pointer to arbitrary data to be used in the call to @callback.  *  * Creates a new #GtkWidget that completely controls the selection of  * a palette.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function

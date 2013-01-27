@@ -3001,7 +3001,7 @@ name|created
 operator|=
 literal|0
 expr_stmt|;
-comment|/* program ID. not neccessary... */
+comment|/* program ID. not necessary... */
 name|fli_header
 operator|.
 name|updated
@@ -3266,7 +3266,7 @@ operator|*
 name|bytes
 argument_list|)
 expr_stmt|;
-comment|/* now paste it into the framebuffer, with the neccessary offset */
+comment|/* now paste it into the framebuffer, with the necessary offset */
 for|for
 control|(
 name|yc

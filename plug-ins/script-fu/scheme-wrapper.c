@@ -289,7 +289,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27afa6960108
+DECL|struct|__anon2a2ebf650108
 block|{
 DECL|member|name
 specifier|const
@@ -536,7 +536,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* The following constants are deprecated. They are  * included to keep backwards compatability with  * older scripts used with version 2.0 of GIMP.  */
+comment|/* The following constants are deprecated. They are  * included to keep backwards compatibility with  * older scripts used with version 2.0 of GIMP.  */
 end_comment
 
 begin_decl_stmt

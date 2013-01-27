@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be5b00b0103
+DECL|enum|__anon2c52d4ad0103
 block|{
 DECL|enumerator|GIMP_EEVL_TOKEN_NUM
 name|GIMP_EEVL_TOKEN_NUM
@@ -82,21 +82,21 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be5b00b0208
+DECL|struct|__anon2c52d4ad0208
 block|{
 DECL|member|type
 name|GimpEevlTokenType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2be5b00b030a
+DECL|union|__anon2c52d4ad030a
 block|{
 DECL|member|fl
 name|gdouble
 name|fl
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2be5b00b0408
+DECL|struct|__anon2c52d4ad0408
 block|{
 DECL|member|c
 specifier|const
@@ -123,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be5b00b0508
+DECL|struct|__anon2c52d4ad0508
 block|{
 DECL|member|string
 specifier|const
@@ -402,7 +402,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_eevl_evaluate:  * @string:             The NULL-terminated string to be evaluated.  * @unit_resolver_proc: Unit resolver callback.  * @result:             Result of evaluation.  * @data:               Data passed to unit resolver.  * @error_pos:          Will point to the poisiton within the string,  *                      before which the parse / evaluation error  *                      occured. Will be set to null of no error occured.  * @error_message:      Will point to a static string with a semi-descriptive  *                      error message if parsing / evaluation failed.  *  * Evaluates the given arithmetic expression, along with an optional dimension  * analysis, and basic unit conversions.  *  * All units conversions factors are relative to some implicit  * base-unit (which in GIMP is inches). This is also the unit of the  * returned value.  *  * Returns: A #GimpEevlQuantity with a value given in the base unit along with  * the order of the dimension (i.e. if the base unit is inches, a dimension  * order of two menas in^2).  **/
+comment|/**  * gimp_eevl_evaluate:  * @string:             The NULL-terminated string to be evaluated.  * @unit_resolver_proc: Unit resolver callback.  * @result:             Result of evaluation.  * @data:               Data passed to unit resolver.  * @error_pos:          Will point to the poisiton within the string,  *                      before which the parse / evaluation error  *                      occurred. Will be set to null of no error occurred.  * @error_message:      Will point to a static string with a semi-descriptive  *                      error message if parsing / evaluation failed.  *  * Evaluates the given arithmetic expression, along with an optional dimension  * analysis, and basic unit conversions.  *  * All units conversions factors are relative to some implicit  * base-unit (which in GIMP is inches). This is also the unit of the  * returned value.  *  * Returns: A #GimpEevlQuantity with a value given in the base unit along with  * the order of the dimension (i.e. if the base unit is inches, a dimension  * order of two menas in^2).  **/
 end_comment
 
 begin_function

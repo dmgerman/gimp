@@ -50,7 +50,7 @@ comment|/*#define DEBUG_CAGE */
 end_comment
 
 begin_comment
-comment|/* This DELTA is aimed to not have handle on exact pixel during computation,  * to avoid particular case. It shouldn't be so usefull, but it's a double  * safety. */
+comment|/* This DELTA is aimed to not have handle on exact pixel during computation,  * to avoid particular case. It shouldn't be so useful, but it's a double  * safety. */
 end_comment
 
 begin_define
@@ -1208,7 +1208,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_cage_config_add_displacement:  * @gcc: the cage config  * @mode: the actual mode of the cage, GIMP_CAGE_MODE_CAGE_CHANGE or GIMP_CAGE_MODE_DEFORM  * @point_number: the point of the cage to move  * @x: x displacement value  * @y: y displacement value  *  * Add a displacement for all slected point of the cage.  * This displacement need to be commited to become effective.  */
+comment|/**  * gimp_cage_config_add_displacement:  * @gcc: the cage config  * @mode: the actual mode of the cage, GIMP_CAGE_MODE_CAGE_CHANGE or GIMP_CAGE_MODE_DEFORM  * @point_number: the point of the cage to move  * @x: x displacement value  * @y: y displacement value  *  * Add a displacement for all slected point of the cage.  * This displacement need to be committed to become effective.  */
 end_comment
 
 begin_function

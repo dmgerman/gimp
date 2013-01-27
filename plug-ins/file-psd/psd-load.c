@@ -8569,7 +8569,7 @@ argument_list|,
 name|layer_size
 argument_list|)
 expr_stmt|;
-comment|/* Crop mask at layer boundry */
+comment|/* Crop mask at layer boundary */
 name|IFDBG
 argument_list|(
 literal|3
@@ -11459,7 +11459,7 @@ name|guint32
 name|columns
 parameter_list|)
 block|{
-comment|/* Convert bits to bytes left to right by row.    Rows are padded out to a byte boundry. */
+comment|/* Convert bits to bytes left to right by row.    Rows are padded out to a byte boundary. */
 name|guint32
 name|row_pos
 init|=

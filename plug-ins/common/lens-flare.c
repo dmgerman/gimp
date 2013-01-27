@@ -4,7 +4,7 @@ comment|/*  * This is the FlareFX plug-in for GIMP 0.99  * Version 1.05  *  * Co
 end_comment
 
 begin_comment
-comment|/*  * Please send any comments or suggestions to me,  * Karl-Johan Andersson (t96kja@student.tdb.uu.se)  *  * TODO:  * - add "streaks" from lightsource  * - improve the user interface  * - speed it up  * - more flare types, more control (color, size, intensity...)  *  * Missing something? - please contact me!  *  * May 2000 - tim copperfield [timecop@japan.co.jp]  * preview window now draws a "mini flarefx" to show approximate  * positioning after final render.  *  * Note, the algorithm does not render into an alpha channel.  * Therefore, changed RGB* to RGB in the capabilities.  * Someone who actually knows something about graphics should  * take a look to see why this doesnt render on alpha channel :)  *  */
+comment|/*  * Please send any comments or suggestions to me,  * Karl-Johan Andersson (t96kja@student.tdb.uu.se)  *  * TODO:  * - add "streaks" from lightsource  * - improve the user interface  * - speed it up  * - more flare types, more control (color, size, intensity...)  *  * Missing something? - please contact me!  *  * May 2000 - tim copperfield [timecop@japan.co.jp]  * preview window now draws a "mini flarefx" to show approximate  * positioning after final render.  *  * Note, the algorithm does not render into an alpha channel.  * Therefore, changed RGB* to RGB in the capabilities.  * Someone who actually knows something about graphics should  * take a look to see why this doesn't render on alpha channel :)  *  */
 end_comment
 
 begin_include
@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289051070108
+DECL|struct|__anon294140200108
 block|{
 DECL|member|posx
 name|gint
@@ -119,7 +119,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289051070208
+DECL|struct|__anon294140200208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -4595,7 +4595,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*=================================================================     CenterFrame      A frame that contains one preview and 2 entrys, used for positioning     of the center of Flare.     This whole thing is just too ugly, but I don't want to dig into it      - tim ==================================================================*/
+comment|/*=================================================================     CenterFrame      A frame that contains one preview and 2 entries, used for positioning     of the center of Flare.     This whole thing is just too ugly, but I don't want to dig into it      - tim ==================================================================*/
 end_comment
 
 begin_comment

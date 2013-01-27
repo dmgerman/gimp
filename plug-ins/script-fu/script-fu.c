@@ -558,7 +558,7 @@ operator|==
 literal|0
 condition|)
 block|{
-comment|/*  Setup auxillary temporary procedures for the base extension  */
+comment|/*  Setup auxiliary temporary procedures for the base extension  */
 name|script_fu_extension_init
 argument_list|()
 expr_stmt|;

@@ -12272,7 +12272,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon27a684740103
+DECL|enum|__anon275e001a0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -22294,7 +22294,7 @@ name|real_result
 operator|=
 literal|0
 expr_stmt|;
-comment|/* This 'if' is an R5RS compatability fix. */
+comment|/* This 'if' is an R5RS compatibility fix. */
 comment|/* NOTE: Remove this 'if' fix for R6RS.    */
 if|if
 condition|(
@@ -30631,7 +30631,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon27a684740208
+DECL|struct|__anon275e001a0208
 specifier|static
 struct|struct
 block|{
@@ -30866,7 +30866,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon27a684740308
+DECL|struct|__anon275e001a0308
 typedef|typedef
 struct|struct
 block|{

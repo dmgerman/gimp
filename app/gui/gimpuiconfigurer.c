@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278ddaa80103
+DECL|enum|__anon292025c10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1816,7 +1816,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_ui_configurer_update_appearance:  * @ui_configurer:  *  * Updates the appearance of all shells in all image windows, so they  * do whatever they deem neccessary to fit the new UI mode mode.  **/
+comment|/**  * gimp_ui_configurer_update_appearance:  * @ui_configurer:  *  * Updates the appearance of all shells in all image windows, so they  * do whatever they deem necessary to fit the new UI mode mode.  **/
 end_comment
 
 begin_function

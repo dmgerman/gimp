@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon280049b00108
+DECL|struct|__anon2c425f680108
 block|{
 DECL|member|name
 specifier|const
@@ -406,7 +406,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/* This is all the info needed per spot function.  Functions are refered to  * by their index into this array. */
+comment|/* This is all the info needed per spot function.  Functions are referred to  * by their index into this array. */
 end_comment
 
 begin_decl_stmt
@@ -619,7 +619,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon280049b00208
+DECL|struct|__anon2c425f680208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -692,7 +692,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon280049b00308
+DECL|struct|__anon2c425f680308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -722,7 +722,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon280049b00408
+DECL|struct|__anon2c425f680408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -829,7 +829,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon280049b00508
+DECL|struct|__anon2c425f680508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -994,7 +994,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon280049b00608
+DECL|struct|__anon2c425f680608
 block|{
 DECL|member|name
 specifier|const
@@ -7092,7 +7092,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon280049b00708
+DECL|struct|__anon2c425f680708
 block|{
 DECL|member|index
 name|gint

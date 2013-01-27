@@ -46,7 +46,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c66780d0108
+DECL|struct|__anon29a393190108
 block|{
 DECL|member|callback
 name|GimpRunBrushCallback
@@ -119,7 +119,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_brush_select_widget_new:  * @title:      Title of the dialog to use or %NULL to use the default title.  * @brush_name: Initial brush name or %NULL to use current selection.  * @opacity:    Initial opacity. -1 means to use current opacity.  * @spacing:    Initial spacing. -1 means to use current spacing.  * @paint_mode: Initial paint mode.  -1 means to use current paint mode.  * @callback:   A function to call when the selected brush changes.  * @data:       A pointer to arbitary data to be used in the call to @callback.  *  * Creates a new #GtkWidget that completely controls the selection of  * a #GimpBrush. This widget is suitable for placement in a table in  * a plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  */
+comment|/**  * gimp_brush_select_widget_new:  * @title:      Title of the dialog to use or %NULL to use the default title.  * @brush_name: Initial brush name or %NULL to use current selection.  * @opacity:    Initial opacity. -1 means to use current opacity.  * @spacing:    Initial spacing. -1 means to use current spacing.  * @paint_mode: Initial paint mode.  -1 means to use current paint mode.  * @callback:   A function to call when the selected brush changes.  * @data:       A pointer to arbitrary data to be used in the call to @callback.  *  * Creates a new #GtkWidget that completely controls the selection of  * a #GimpBrush. This widget is suitable for placement in a table in  * a plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  */
 end_comment
 
 begin_function

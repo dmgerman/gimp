@@ -44,7 +44,7 @@ name|__GIMP_3_MIGRATION_H__
 end_define
 
 begin_comment
-comment|/* This file is evil. Its purpose is to keep GIMP's gtk3-port branch  * managable, and contains functions that are only in GTK+ 3.x but  * are *not* in GTK+ 2.x. Please just ignore the uglyness and move  * along. This file will be removed in GIMP 3.  */
+comment|/* This file is evil. Its purpose is to keep GIMP's gtk3-port branch  * manageable, and contains functions that are only in GTK+ 3.x but  * are *not* in GTK+ 2.x. Please just ignore the uglyness and move  * along. This file will be removed in GIMP 3.  */
 end_comment
 
 begin_function_decl
@@ -145,7 +145,7 @@ end_if
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1d085a0103
+DECL|enum|__anon2bd3f50f0103
 block|{
 DECL|enumerator|GDK_MODIFIER_INTENT_PRIMARY_ACCELERATOR
 name|GDK_MODIFIER_INTENT_PRIMARY_ACCELERATOR

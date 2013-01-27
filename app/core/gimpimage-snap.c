@@ -2843,7 +2843,7 @@ comment|/* private functions */
 end_comment
 
 begin_comment
-comment|/**  * gimp_image_snap_distance:  * @unsnapped: One coordinate of the unsnapped position  * @nearest:  One coordinate of a snapping position candidate  * @epsilon:  The snapping threshold  * @mindist:  The distance to the currently closest snapping target  * @target:   The currently closest snapping target  *  * Finds out if snapping occurs from position to a snapping candidate  * and sets the target accordingly.  *  * Return value: %TRUE if snapping occured, %FALSE otherwise  */
+comment|/**  * gimp_image_snap_distance:  * @unsnapped: One coordinate of the unsnapped position  * @nearest:  One coordinate of a snapping position candidate  * @epsilon:  The snapping threshold  * @mindist:  The distance to the currently closest snapping target  * @target:   The currently closest snapping target  *  * Finds out if snapping occurs from position to a snapping candidate  * and sets the target accordingly.  *  * Return value: %TRUE if snapping occurred, %FALSE otherwise  */
 end_comment
 
 begin_function

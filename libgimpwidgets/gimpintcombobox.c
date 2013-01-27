@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2901c4a90103
+DECL|enum|__anon2c1ce10b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -59,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2901c4a90208
+DECL|struct|__anon2c1ce10b0208
 block|{
 DECL|member|pixbuf_renderer
 name|GtkCellRenderer
@@ -1287,7 +1287,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_combo_box_connect:  * @combo_box: a #GimpIntComboBox  * @value:     the value to set  * @callback:  a callback to connect to the @combo_box's "changed" signal  * @data:      a pointer passed as data to g_signal_connect()  *  * A convenience function that sets the inital @value of a  * #GimpIntComboBox and connects @callback to the "changed"  * signal.  *  * This function also calls the @callback once after setting the  * initial @value. This is often convenient when working with combo  * boxes that select a default active item, like for example  * gimp_drawable_combo_box_new(). If you pass an invalid initial  * @value, the @callback will be called with the default item active.  *  * Return value: the signal handler ID as returned by g_signal_connect()  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_int_combo_box_connect:  * @combo_box: a #GimpIntComboBox  * @value:     the value to set  * @callback:  a callback to connect to the @combo_box's "changed" signal  * @data:      a pointer passed as data to g_signal_connect()  *  * A convenience function that sets the initial @value of a  * #GimpIntComboBox and connects @callback to the "changed"  * signal.  *  * This function also calls the @callback once after setting the  * initial @value. This is often convenient when working with combo  * boxes that select a default active item, like for example  * gimp_drawable_combo_box_new(). If you pass an invalid initial  * @value, the @callback will be called with the default item active.  *  * Return value: the signal handler ID as returned by g_signal_connect()  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function

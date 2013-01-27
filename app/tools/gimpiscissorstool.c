@@ -12,7 +12,7 @@ comment|/* Personal note: Dr. Barrett, one of the authors of the paper written a
 end_comment
 
 begin_comment
-comment|/* The history of this implementation is lonog and varied.  It was  * orignally done by Spencer and Peter, and worked fine in the 0.54  * (motif only) release of GIMP.  Later revisions (0.99.something  * until about 1.1.4) completely changed the algorithm used, until it  * bore little resemblance to the one described in the paper above.  * The 0.54 version of the algorithm was then forwards ported to 1.1.4  * by Austin Donnelly.  */
+comment|/* The history of this implementation is lonog and varied.  It was  * originally done by Spencer and Peter, and worked fine in the 0.54  * (motif only) release of GIMP.  Later revisions (0.99.something  * until about 1.1.4) completely changed the algorithm used, until it  * bore little resemblance to the one described in the paper above.  * The 0.54 version of the algorithm was then forwards ported to 1.1.4  * by Austin Donnelly.  */
 end_comment
 
 begin_comment
@@ -704,7 +704,7 @@ end_comment
 
 begin_comment
 unit|dirx = (xs - x1 == 0) ? 1 : -1;   diry = (ys - y1 == 0) ? 1 : -1;   linkdir = (dirx * diry);    y = ys;    for (i = 0; i< dp_buf_height; i++)     {       x = xs;        d = data + (y-y1) * dp_buf_width + (x-x1);        for (j = 0; j< dp_buf_width; j++)         {           min_cost = G_MAXINT;
-comment|/* pixel[] array encodes how to get to a neigbour, if possible.            * 0 means no connection (eg edge).            * Rest packed as bottom two bytes: y offset then x offset.            * Initially, we assume we can't get anywhere. */
+comment|/* pixel[] array encodes how to get to a neighbour, if possible.            * 0 means no connection (eg edge).            * Rest packed as bottom two bytes: y offset then x offset.            * Initially, we assume we can't get anywhere. */
 end_comment
 
 begin_comment

@@ -4,7 +4,7 @@ comment|/*  * This is the Struc plug-in for GIMP 0.99  * Version 1.01  *  * Copy
 end_comment
 
 begin_comment
-comment|/* Don't ask me why its called "Struc". The first .c-file  * just happend to be called struc.c  *  * Some code for the dialog was taken from Motion Blur plug-in for  * GIMP 0.99 by Daniel Skarda (0rfelyus@atrey.karlin.mff.cuni.cz)  *  * Please send any comments or suggestions to me,  * Karl-Johan Andersson (t96kja@student.tdb.uu.se)  *  */
+comment|/* Don't ask me why its called "Struc". The first .c-file  * just happened to be called struc.c  *  * Some code for the dialog was taken from Motion Blur plug-in for  * GIMP 0.99 by Daniel Skarda (0rfelyus@atrey.karlin.mff.cuni.cz)  *  * Please send any comments or suggestions to me,  * Karl-Johan Andersson (t96kja@student.tdb.uu.se)  *  */
 end_comment
 
 begin_include
@@ -40891,7 +40891,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c01bf450103
+DECL|enum|__anon2ab20b740103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40911,7 +40911,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c01bf450208
+DECL|struct|__anon2ab20b740208
 block|{
 DECL|member|direction
 name|gint

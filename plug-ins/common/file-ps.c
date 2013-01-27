@@ -203,7 +203,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b27fc800108
+DECL|struct|__anon2bbb7bf60108
 block|{
 DECL|member|resolution
 name|guint
@@ -314,7 +314,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b27fc800208
+DECL|struct|__anon2bbb7bf60208
 block|{
 DECL|member|width
 DECL|member|height
@@ -938,7 +938,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b27fc800308
+DECL|struct|__anon2bbb7bf60308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1807,7 +1807,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b27fc800408
+DECL|struct|__anon2bbb7bf60408
 block|{
 DECL|member|eol
 name|long
@@ -5440,7 +5440,7 @@ literal|','
 operator|)
 condition|)
 block|{
-comment|/* Try to remove double occurances of these characters */
+comment|/* Try to remove double occurrences of these characters */
 if|if
 condition|(
 name|c0
@@ -6412,7 +6412,7 @@ name|height
 operator|-
 literal|1
 expr_stmt|;
-comment|/* Check if the file is a PDF. For PDF, we cant set geometry */
+comment|/* Check if the file is a PDF. For PDF, we can't set geometry */
 name|is_pdf
 operator|=
 name|FALSE

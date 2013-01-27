@@ -100,7 +100,7 @@ file|"gimp-intl.h"
 end_include
 
 begin_comment
-comment|/* NOTES  *  * The method used here is similar to the lighting invariant correctin  * method but slightly different: we do not divide the RGB components,  * but substract them I2 = I0 - I1, where I0 is the sample image to be  * corrected, I1 is the reference pattern. Then we solve DeltaI=0  * (Laplace) with I2 Dirichlet conditions at the borders of the  * mask. The solver is a unoptimized red/black checker Gauss-Siedel  * with an over-relaxation factor of 1.8. It can benefit from a  * multi-grid evaluation of an initial solution before the main  * iteration loop.  *  * I reduced the convergence criteria to 0.1% (0.001) as we are  * dealing here with RGB integer components, more is overkill.  *  * Jean-Yves Couleaud cjyves@free.fr  */
+comment|/* NOTES  *  * The method used here is similar to the lighting invariant correctin  * method but slightly different: we do not divide the RGB components,  * but subtract them I2 = I0 - I1, where I0 is the sample image to be  * corrected, I1 is the reference pattern. Then we solve DeltaI=0  * (Laplace) with I2 Dirichlet conditions at the borders of the  * mask. The solver is a unoptimized red/black checker Gauss-Siedel  * with an over-relaxation factor of 1.8. It can benefit from a  * multi-grid evaluation of an initial solution before the main  * iteration loop.  *  * I reduced the convergence criteria to 0.1% (0.001) as we are  * dealing here with RGB integer components, more is overkill.  *  * Jean-Yves Couleaud cjyves@free.fr  */
 end_comment
 
 begin_function_decl
@@ -1804,7 +1804,7 @@ argument_list|,
 name|i_2
 argument_list|)
 expr_stmt|;
-comment|/* substract pattern from image and store the result as a double in i_1 */
+comment|/* subtract pattern from image and store the result as a double in i_1 */
 name|gimp_heal_sub
 argument_list|(
 name|dest_buffer

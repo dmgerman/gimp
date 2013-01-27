@@ -145,7 +145,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fbf5890108
+DECL|struct|__anon28b44f210108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -254,7 +254,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fbf5890208
+DECL|struct|__anon28b44f210208
 block|{
 DECL|member|height
 DECL|member|width
@@ -336,7 +336,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fbf5890308
+DECL|struct|__anon28b44f210308
 block|{
 DECL|member|width
 name|gint
@@ -1008,7 +1008,7 @@ operator|&
 name|svals
 argument_list|)
 expr_stmt|;
-comment|/* In order to prepare the dialog I need to know wether it's grayscale or not */
+comment|/* In order to prepare the dialog I need to know whether it's grayscale or not */
 name|drawable
 operator|=
 name|gimp_drawable_get

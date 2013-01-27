@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a96ba8b0103
+DECL|enum|__anon278ed8fe0103
 block|{
 DECL|enumerator|SQUARES
 name|SQUARES
@@ -182,7 +182,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a96ba8b0208
+DECL|struct|__anon278ed8fe0208
 block|{
 DECL|member|x
 DECL|member|y
@@ -200,7 +200,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a96ba8b0308
+DECL|struct|__anon278ed8fe0308
 block|{
 DECL|member|npts
 name|guint
@@ -222,7 +222,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a96ba8b0408
+DECL|struct|__anon278ed8fe0408
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a96ba8b0508
+DECL|struct|__anon278ed8fe0508
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -8786,7 +8786,7 @@ argument_list|,
 name|dest
 argument_list|)
 expr_stmt|;
-comment|/*  The auxillary hexagon  */
+comment|/*  The auxiliary hexagon  */
 name|polygon_reset
 argument_list|(
 operator|&
@@ -9065,7 +9065,7 @@ argument_list|,
 name|dest
 argument_list|)
 expr_stmt|;
-comment|/*  The auxillary octagon  */
+comment|/*  The auxiliary octagon  */
 name|polygon_reset
 argument_list|(
 operator|&
@@ -9473,7 +9473,7 @@ argument_list|,
 name|dest
 argument_list|)
 expr_stmt|;
-comment|/*  The auxillary square  */
+comment|/*  The auxiliary square  */
 name|polygon_reset
 argument_list|(
 operator|&

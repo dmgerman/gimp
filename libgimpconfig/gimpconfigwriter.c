@@ -707,7 +707,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_comment_mode:  * @writer: a #GimpConfigWriter  * @enable: %TRUE to enable comment mode, %FALSE to disable it  *  * This function toggles whether the @writer should create commented  * or uncommented output. This feature is used to generate the  * system-wide installed gimprc that documents the default settings.  *  * Since comments have to start at the beginning of a line, this  * funtion will insert a newline if necessary.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_writer_comment_mode:  * @writer: a #GimpConfigWriter  * @enable: %TRUE to enable comment mode, %FALSE to disable it  *  * This function toggles whether the @writer should create commented  * or uncommented output. This feature is used to generate the  * system-wide installed gimprc that documents the default settings.  *  * Since comments have to start at the beginning of a line, this  * function will insert a newline if necessary.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function

@@ -144,7 +144,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_rgn_iterator_new:  * @drawable: a #GimpDrawable  * @unused:   ignored  *  * Creates a new #GimpRgnIterator for @drawable. The #GimpRunMode  * parameter is ignored. Use gimp_rgn_iterator_free() to free thsi  * iterator.  *  * Return value: a newly allocated #GimpRgnIterator.  **/
+comment|/**  * gimp_rgn_iterator_new:  * @drawable: a #GimpDrawable  * @unused:   ignored  *  * Creates a new #GimpRgnIterator for @drawable. The #GimpRunMode  * parameter is ignored. Use gimp_rgn_iterator_free() to free this  * iterator.  *  * Return value: a newly allocated #GimpRgnIterator.  **/
 end_comment
 
 begin_function

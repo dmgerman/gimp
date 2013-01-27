@@ -79,7 +79,7 @@ file|"gimpreloc.h"
 end_include
 
 begin_comment
-comment|/*  * Find the canonical filename of the executable. Returns the filename  * (which must be freed) or NULL on error. If the parameter 'error' is  * not NULL, the error code will be stored there, if an error occured.  */
+comment|/*  * Find the canonical filename of the executable. Returns the filename  * (which must be freed) or NULL on error. If the parameter 'error' is  * not NULL, the error code will be stored there, if an error occurred.  */
 end_comment
 
 begin_function

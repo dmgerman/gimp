@@ -65,7 +65,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29377dfe0103
+DECL|enum|__anon27d478170103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29377dfe0203
+DECL|enum|__anon27d478170203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -128,7 +128,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29377dfe0303
+DECL|enum|__anon27d478170303
 block|{
 DECL|enumerator|PARSE_VALID
 name|PARSE_VALID
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29377dfe0408
+DECL|struct|__anon27d478170408
 block|{
 comment|/* The current number pair displayed in the widget. */
 DECL|member|left_number
@@ -2264,7 +2264,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_get_user_override:  * @entry: A #GimpNumberPairEntry widget.  *  * Returns: Wether or not the the widget is in user overridden mode.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_number_pair_entry_get_user_override:  * @entry: A #GimpNumberPairEntry widget.  *  * Returns: Whether or not the the widget is in user overridden mode.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function

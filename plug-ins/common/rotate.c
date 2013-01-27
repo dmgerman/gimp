@@ -8,7 +8,7 @@ comment|/* Revision history  *  (09/28/97)  v0.1   first development release  * 
 end_comment
 
 begin_comment
-comment|/* TODO List  *  - handle channels and masks  *  - rewrite the main function to make it work on tiles rather than  *    process the image row by row. This should result in a significant  *    speedup (thanks to quartic for this suggestion).  *  - do something magical so that only one rotate can be occuring at a time!  */
+comment|/* TODO List  *  - handle channels and masks  *  - rewrite the main function to make it work on tiles rather than  *    process the image row by row. This should result in a significant  *    speedup (thanks to quartic for this suggestion).  *  - do something magical so that only one rotate can be occurring at a time!  */
 end_comment
 
 begin_include
@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290e7d4a0108
+DECL|struct|__anon2bc0e5140108
 block|{
 DECL|member|angle
 name|gint
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290e7d4a0208
+DECL|struct|__anon2bc0e5140208
 block|{
 DECL|member|ID
 name|gint32

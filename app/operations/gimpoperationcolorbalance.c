@@ -243,7 +243,7 @@ name|gdouble
 name|highlights
 parameter_list|)
 block|{
-comment|/* Apply masks to the corrections for shadows, midtones and    * highlights so that each correction affects only one range.    * Those masks look like this:    *     â¾\___    *     _/â¾\_    *     ___/â¾    * whith ramps of width a at x = b and x = 1 - b.    *    * The sum of these masks equals 1 for x in 0..1, so applying the    * same correction in the shadows and in the midtones is equivalent    * to applying this correction on a virtual shadows_and_midtones    * range.    */
+comment|/* Apply masks to the corrections for shadows, midtones and    * highlights so that each correction affects only one range.    * Those masks look like this:    *     â¾\___    *     _/â¾\_    *     ___/â¾    * with ramps of width a at x = b and x = 1 - b.    *    * The sum of these masks equals 1 for x in 0..1, so applying the    * same correction in the shadows and in the midtones is equivalent    * to applying this correction on a virtual shadows_and_midtones    * range.    */
 specifier|static
 specifier|const
 name|gdouble

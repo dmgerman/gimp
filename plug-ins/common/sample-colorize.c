@@ -349,7 +349,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f4d2ac0108
+DECL|struct|__anon2afc52c80108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -383,32 +383,32 @@ DECL|member|lvl_in_min
 name|gint32
 name|lvl_in_min
 decl_stmt|;
-comment|/* 0 upto 254 */
+comment|/* 0 up to 254 */
 DECL|member|lvl_in_max
 name|gint32
 name|lvl_in_max
 decl_stmt|;
-comment|/* 1 upto 255 */
+comment|/* 1 up to 255 */
 DECL|member|lvl_in_gamma
 name|float
 name|lvl_in_gamma
 decl_stmt|;
-comment|/* 0.1 upto 10.0  (1.0 == linear) */
+comment|/* 0.1 up to 10.0  (1.0 == linear) */
 DECL|member|lvl_out_min
 name|gint32
 name|lvl_out_min
 decl_stmt|;
-comment|/* 0 upto 254 */
+comment|/* 0 up to 254 */
 DECL|member|lvl_out_max
 name|gint32
 name|lvl_out_max
 decl_stmt|;
-comment|/* 1 upto 255 */
+comment|/* 1 up to 255 */
 DECL|member|tol_col_err
 name|float
 name|tol_col_err
 decl_stmt|;
-comment|/* 0.0% upto 100.0%                             * this is uesd to findout colors of the same                             * colortone, while analyzing sample colors,                             * It does not make much sense for the user to adjust this                             * value. (I used a param file to findout a suitable value)                             */
+comment|/* 0.0% up to 100.0%                             * this is used to findout colors of the same                             * colortone, while analyzing sample colors,                             * It does not make much sense for the user to adjust this                             * value. (I used a param file to findout a suitable value)                             */
 DECL|typedef|t_values
 block|}
 name|t_values
@@ -418,7 +418,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f4d2ac0208
+DECL|struct|__anon2afc52c80208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -526,7 +526,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f4d2ac0308
+DECL|struct|__anon2afc52c80308
 block|{
 DECL|member|color
 name|guchar
@@ -555,7 +555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f4d2ac0408
+DECL|struct|__anon2afc52c80408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -582,7 +582,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f4d2ac0508
+DECL|struct|__anon2afc52c80508
 block|{
 DECL|member|drawable
 name|GimpDrawable

@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9ea9230103
+DECL|enum|__anon27837edb0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -243,7 +243,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9ea9230203
+DECL|enum|__anon27837edb0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -286,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9ea9230303
+DECL|enum|__anon27837edb0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -367,7 +367,7 @@ struct|struct
 name|_GimpRectangleToolPrivate
 block|{
 comment|/* The following members are "constants", that is, variables that are setup    * during gimp_rectangle_tool_button_press and then only read.    */
-comment|/* Wether or not the rectangle currently being rubber-banded was    * created from scatch.    */
+comment|/* Whether or not the rectangle currently being rubber-banded was    * created from scatch.    */
 DECL|member|is_new
 name|gboolean
 name|is_new
@@ -411,7 +411,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-comment|/* Integer coordinats of upper left corner and size. We must    * calculate this separately from the gdouble ones because sometimes    * we don't want to affect the integer size (e.g. when moving the    * rectangle), but that will be the case if we always calculate the    * integer coordinates based on rounded values of the gdouble    * coordinates even if the gdouble width remains constant.    *    * TODO: Change the internal double-representation of the rectangle    * to x,y width,height instead of x1,y1 x2,y2. That way we don't    * need to keep a separate representation of the integer version of    * the rectangle; rounding width an height will yield consistant    * results and not depend on position of the rectangle.    */
+comment|/* Integer coordinats of upper left corner and size. We must    * calculate this separately from the gdouble ones because sometimes    * we don't want to affect the integer size (e.g. when moving the    * rectangle), but that will be the case if we always calculate the    * integer coordinates based on rounded values of the gdouble    * coordinates even if the gdouble width remains constant.    *    * TODO: Change the internal double-representation of the rectangle    * to x,y width,height instead of x1,y1 x2,y2. That way we don't    * need to keep a separate representation of the integer version of    * the rectangle; rounding width an height will yield consistent    * results and not depend on position of the rectangle.    */
 DECL|member|x1_int
 DECL|member|y1_int
 name|gint
@@ -468,7 +468,7 @@ DECL|member|left_and_right_handle_h
 name|gint
 name|left_and_right_handle_h
 decl_stmt|;
-comment|/* Wether or not the rectangle is in a 'narrow situation' i.e. it is    * too small for reasonable sized handle to be inside. In this case    * we put handles on the outside.    */
+comment|/* Whether or not the rectangle is in a 'narrow situation' i.e. it is    * too small for reasonable sized handle to be inside. In this case    * we put handles on the outside.    */
 DECL|member|narrow_mode
 name|gboolean
 name|narrow_mode
@@ -4339,7 +4339,7 @@ argument_list|(
 name|rect_tool
 argument_list|)
 expr_stmt|;
-comment|/* Only emit the rectangle-changed signal if the button is            * not down. If it is down, the signal will and shall be            * emited on _button_release instead.            */
+comment|/* Only emit the rectangle-changed signal if the button is            * not down. If it is down, the signal will and shall be            * emitted on _button_release instead.            */
 if|if
 condition|(
 operator|!
@@ -13335,7 +13335,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_get_constraints:  * @rect_tool:      A #GimpRectangleTool.  * @min_x:  * @min_y:  * @max_x:  * @max_y:          Pointers of where to put constraints. NULL allowed.  * @constraint:     Wether to return image or layer constraints.  *  * Calculates constraint coordinates for image or layer.  */
+comment|/**  * gimp_rectangle_tool_get_constraints:  * @rect_tool:      A #GimpRectangleTool.  * @min_x:  * @min_y:  * @max_x:  * @max_y:          Pointers of where to put constraints. NULL allowed.  * @constraint:     Whether to return image or layer constraints.  *  * Calculates constraint coordinates for image or layer.  */
 end_comment
 
 begin_function

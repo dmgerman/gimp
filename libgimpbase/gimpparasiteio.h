@@ -115,7 +115,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/* Initalize with dummy values */
+comment|/* Initialize with dummy values */
 end_comment
 
 begin_function_decl

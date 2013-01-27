@@ -4,7 +4,7 @@ comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis an
 end_comment
 
 begin_comment
-comment|/*  * This implements a widget derived from GtkTable that visualizes  * it's state with two different pixmaps showing a closed and a  * broken chain. It's intented to be used with the GimpSizeEntry  * widget. The usage is quite similar to the one the GtkToggleButton  * provides.  */
+comment|/*  * This implements a widget derived from GtkTable that visualizes  * it's state with two different pixmaps showing a closed and a  * broken chain. It's intended to be used with the GimpSizeEntry  * widget. The usage is quite similar to the one the GtkToggleButton  * provides.  */
 end_comment
 
 begin_if

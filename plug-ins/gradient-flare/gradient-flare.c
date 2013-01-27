@@ -360,7 +360,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289cd8210103
+DECL|enum|__anon29c9ef0a0103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -387,7 +387,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289cd8210203
+DECL|enum|__anon29c9ef0a0203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -408,7 +408,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289cd8210308
+DECL|struct|__anon29c9ef0a0308
 block|{
 DECL|member|name
 name|gchar
@@ -549,7 +549,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289cd8210408
+DECL|struct|__anon29c9ef0a0408
 block|{
 DECL|member|fp
 name|FILE
@@ -569,7 +569,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289cd8210503
+DECL|enum|__anon29c9ef0a0503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -597,7 +597,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289cd8210608
+DECL|struct|__anon29c9ef0a0608
 block|{
 DECL|member|init
 name|gint
@@ -619,7 +619,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon289cd8210708
+DECL|struct|__anon29c9ef0a0708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -698,7 +698,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289cd8210808
+DECL|struct|__anon29c9ef0a0808
 block|{
 DECL|member|init
 name|gint
@@ -768,7 +768,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289cd8210908
+DECL|struct|__anon29c9ef0a0908
 block|{
 DECL|member|x0
 name|gdouble
@@ -795,7 +795,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289cd8210a08
+DECL|struct|__anon29c9ef0a0a08
 block|{
 DECL|member|init
 name|gint
@@ -965,7 +965,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289cd8210b08
+DECL|struct|__anon29c9ef0a0b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -992,7 +992,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289cd8210c08
+DECL|struct|__anon29c9ef0a0c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1233,7 +1233,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289cd8210d08
+DECL|struct|__anon29c9ef0a0d08
 block|{
 DECL|member|tag
 name|gint
@@ -1310,7 +1310,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289cd8210e08
+DECL|struct|__anon29c9ef0a0e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -8520,7 +8520,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon289cd8210f08
+DECL|struct|__anon29c9ef0a0f08
 block|{
 DECL|member|values
 name|guchar
@@ -14465,7 +14465,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon289cd8211008
+DECL|struct|__anon29c9ef0a1008
 block|{
 DECL|member|label
 specifier|const
@@ -23593,7 +23593,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   Caching gradients is really needed. It really takes 0.2 seconds each   time to resample an external gradient. (And this plug-in has   currently 6 gradient menus.)    However, this caching routine is not too good. It picks up just   GRADIENT_RESOLUTION samples everytime, and rescales it later.  And   cached values are stored in guchar array. No accuracy.  */
+comment|/*   Caching gradients is really needed. It really takes 0.2 seconds each   time to resample an external gradient. (And this plug-in has   currently 6 gradient menus.)    However, this caching routine is not too good. It picks up just   GRADIENT_RESOLUTION samples every time, and rescales it later.  And   cached values are stored in guchar array. No accuracy.  */
 end_comment
 
 begin_function

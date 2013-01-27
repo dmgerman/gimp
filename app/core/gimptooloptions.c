@@ -115,7 +115,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b26b9560103
+DECL|enum|__anon27ffb1de0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -446,7 +446,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  This is such a horrible hack, but neccessary because we  *  a) load an option's tool-info from disk in many cases  *  b) screwed up in the past and saved the wrong tool-info in some cases  */
+comment|/*  This is such a horrible hack, but necessary because we  *  a) load an option's tool-info from disk in many cases  *  b) screwed up in the past and saved the wrong tool-info in some cases  */
 end_comment
 
 begin_function

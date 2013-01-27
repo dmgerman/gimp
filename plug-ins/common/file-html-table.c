@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Version 1.0:  * Once I first found out that it was possible to have pixel level control  * of HTML tables I instantly realized that it would be possible, however  * pointless, to save an image as a, albeit huge, HTML table.  *  * One night when I was feeling in an adventourously stupid programming mood  * I decided to write a program to do it.  *  * At first I just wrote a really ugly hack to do it, which I then planned  * on using once just to see how it worked, and then posting a URL and  * laughing about it on #gimp.  As it turns out, tigert thought it actually  * had potential to be a useful plugin, so I started adding features and  * and making a nice UI.  *  * It's still not very useful, but I did manage to significantly improve my  * C programming skills in the process, so it was worth it.  *  * If you happen to find it usefull I would appreciate any email about it.  *                                     - Daniel Dunbar  *                                       ddunbar@diads.com  */
+comment|/* Version 1.0:  * Once I first found out that it was possible to have pixel level control  * of HTML tables I instantly realized that it would be possible, however  * pointless, to save an image as a, albeit huge, HTML table.  *  * One night when I was feeling in an adventourously stupid programming mood  * I decided to write a program to do it.  *  * At first I just wrote a really ugly hack to do it, which I then planned  * on using once just to see how it worked, and then posting a URL and  * laughing about it on #gimp.  As it turns out, tigert thought it actually  * had potential to be a useful plugin, so I started adding features and  * and making a nice UI.  *  * It's still not very useful, but I did manage to significantly improve my  * C programming skills in the process, so it was worth it.  *  * If you happen to find it useful I would appreciate any email about it.  *                                     - Daniel Dunbar  *                                       ddunbar@diads.com  */
 end_comment
 
 begin_include
@@ -80,7 +80,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bce2600108
+DECL|struct|__anon276d89a00108
 block|{
 DECL|member|captiontxt
 name|gchar

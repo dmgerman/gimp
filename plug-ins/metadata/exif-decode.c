@@ -92,7 +92,7 @@ comment|/* public functions */
 end_comment
 
 begin_comment
-comment|/**  * xmp_merge_from_exifbuffer:  * @xmp_model: pointer to the #XMPModel in which the results will be stored  * @image_ID: id of the image where the exif data parasite is attached to  * @error: return location for a #GErrror  *  * Load the Exif data, which is attached to the image as a parasite. The  * parsed Exif data is merged into the XMP model.  *  * Return value: %TRUE on success, %FALSE if an error occured during  * reading/writing  *  **/
+comment|/**  * xmp_merge_from_exifbuffer:  * @xmp_model: pointer to the #XMPModel in which the results will be stored  * @image_ID: id of the image where the exif data parasite is attached to  * @error: return location for a #GErrror  *  * Load the Exif data, which is attached to the image as a parasite. The  * parsed Exif data is merged into the XMP model.  *  * Return value: %TRUE on success, %FALSE if an error occurred during  * reading/writing  *  **/
 end_comment
 
 begin_function

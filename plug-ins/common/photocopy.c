@@ -92,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a769bc0108
+DECL|struct|__anon2a0c6aea0108
 block|{
 DECL|member|mask_radius
 name|gdouble
@@ -423,7 +423,7 @@ init|=
 literal|"Propagates dark values in an image based on "
 literal|"each pixel's relative darkness to a neighboring average. The idea behind "
 literal|"this filter is to give the look of a photocopied version of the image, "
-literal|"with toner transfered based on the relative darkness of a particular "
+literal|"with toner transferred based on the relative darkness of a particular "
 literal|"region. This is achieved by darkening areas of the image which are "
 literal|"measured to be darker than a neighborhood average and setting other "
 literal|"pixels to white. In this way, sufficiently large shifts in intensity "

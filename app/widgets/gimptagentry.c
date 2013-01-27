@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29dbac4d0103
+DECL|enum|__anon2b191c7a0103
 block|{
 DECL|enumerator|TAG_SEARCH_NONE
 name|TAG_SEARCH_NONE
@@ -144,7 +144,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29dbac4d0203
+DECL|enum|__anon2b191c7a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1524,7 +1524,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_entry_set_tag_string:  * @entry:      a #GimpTagEntry object.  * @tag_string: string of tags, separated by any terminal punctuation  *              character.  *  * Sets tags from @tag_string to @tag_entry. Given tags do not need to  * be valid as they can be fixed or dropped automatically. Depending on  * selected #GimpTagEntryMode, appropriate action is peformed.  **/
+comment|/**  * gimp_tag_entry_set_tag_string:  * @entry:      a #GimpTagEntry object.  * @tag_string: string of tags, separated by any terminal punctuation  *              character.  *  * Sets tags from @tag_string to @tag_entry. Given tags do not need to  * be valid as they can be fixed or dropped automatically. Depending on  * selected #GimpTagEntryMode, appropriate action is performed.  **/
 end_comment
 
 begin_function

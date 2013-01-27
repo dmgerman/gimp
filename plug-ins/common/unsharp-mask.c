@@ -84,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2beec59d0108
+DECL|struct|__anon2bd59c710108
 block|{
 DECL|member|radius
 name|gdouble
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2beec59d0208
+DECL|struct|__anon2bd59c710208
 block|{
 DECL|member|run
 name|gboolean
@@ -915,7 +915,7 @@ comment|/* This marks the leading edge of the kernel              */
 name|gint
 name|output
 decl_stmt|;
-comment|/* This marks the center of ther kernel                   */
+comment|/* This marks the center of the kernel                    */
 name|gint
 name|trail
 decl_stmt|;
@@ -3013,7 +3013,7 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-comment|/* we want to generate a matrix that goes out a certain radius    * from the center, so we have to go out ceil(rad-0.5) pixels,    * inlcuding the center pixel.  Of course, that's only in one direction,    * so we have to go the same amount in the other direction, but not count    * the center pixel again.  So we double the previous result and subtract    * one.    * The radius parameter that is passed to this function is used as    * the standard deviation, and the radius of effect is the    * standard deviation * 2.  It's a little confusing.    */
+comment|/* we want to generate a matrix that goes out a certain radius    * from the center, so we have to go out ceil(rad-0.5) pixels,    * including the center pixel.  Of course, that's only in one direction,    * so we have to go the same amount in the other direction, but not count    * the center pixel again.  So we double the previous result and subtract    * one.    * The radius parameter that is passed to this function is used as    * the standard deviation, and the radius of effect is the    * standard deviation * 2.  It's a little confusing.    */
 name|radius
 operator|=
 name|fabs

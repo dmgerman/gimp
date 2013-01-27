@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9692b50108
+DECL|struct|__anon2773b22b0108
 block|{
 DECL|member|xcenter
 name|gint
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9692b50208
+DECL|struct|__anon2773b22b0208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -1569,7 +1569,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*=================================================================     CenterFrame      A frame that contains one preview and 2 entrys, used for positioning     of the center of Nova. ==================================================================*/
+comment|/*=================================================================     CenterFrame      A frame that contains one preview and 2 entries, used for positioning     of the center of Nova. ==================================================================*/
 end_comment
 
 begin_comment

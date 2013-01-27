@@ -1057,7 +1057,7 @@ operator|->
 name|zoom
 argument_list|)
 expr_stmt|;
-comment|/* First of all make sure a zoom happend at all. If this assert    * fails, it means that the zoom didn't happen. Possible causes:    *    *  * gdk_test_simulate_key() failed to map 'GDK_KEY_plus' to the proper    *    'plus' X keysym, probably because it is mapped to a keycode    *    with modifiers like 'shift'. Run "xmodmap -pk | grep plus" to    *    find out. Make sure 'plus' is the first keysym for the given    *    keycode. If not, use "xmodmap<keycode> = plus" to correct it.    */
+comment|/* First of all make sure a zoom happened at all. If this assert    * fails, it means that the zoom didn't happen. Possible causes:    *    *  * gdk_test_simulate_key() failed to map 'GDK_KEY_plus' to the proper    *    'plus' X keysym, probably because it is mapped to a keycode    *    with modifiers like 'shift'. Run "xmodmap -pk | grep plus" to    *    find out. Make sure 'plus' is the first keysym for the given    *    keycode. If not, use "xmodmap<keycode> = plus" to correct it.    */
 name|g_assert_cmpfloat
 argument_list|(
 name|fabs
@@ -1285,7 +1285,7 @@ directive|if
 literal|0
 comment|/* Restore the (only avaiable) closed dock and make sure the session    * infos in the global dock factory are increased again    */
 block|gimp_ui_manager_activate_action (gimp_test_utils_get_ui_manager (gimp),                                    "windows",
-comment|/* FIXME: This is severly hardcoded */
+comment|/* FIXME: This is severely hardcoded */
 block|"windows-recent-0003");   gimp_test_run_mainloop_until_idle ();   session_infos = gimp_dialog_factory_get_session_infos (gimp_dialog_factory_get_singleton ());   n_session_infos_after_restore = g_list_length (session_infos);   g_assert_cmpint (n_session_infos_after_close,<,                    n_session_infos_after_restore);
 endif|#
 directive|endif

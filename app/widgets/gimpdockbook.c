@@ -211,7 +211,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b40e8ce0103
+DECL|enum|__anon28c731530103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -4785,7 +4785,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dockbook_drag_source_to_dockable:  * @drag_source: A drag-and-drop source widget  *  * Gets the dockable associated with a drag-and-drop source. If  * successfull, the function will also cleanup the dockable.  *  * Returns: The dockable  **/
+comment|/**  * gimp_dockbook_drag_source_to_dockable:  * @drag_source: A drag-and-drop source widget  *  * Gets the dockable associated with a drag-and-drop source. If  * successful, the function will also cleanup the dockable.  *  * Returns: The dockable  **/
 end_comment
 
 begin_function

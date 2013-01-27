@@ -218,7 +218,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b73ff040108
+DECL|struct|__anon28a637f70108
 block|{
 DECL|member|filename
 name|gchar
@@ -2467,7 +2467,7 @@ parameter_list|)
 block|{
 comment|/* create all the mail header stuff. Feel free to add your own */
 comment|/* It is advisable to leave the X-Mailer header though, as     */
-comment|/* there is a possibilty of a Gimp mail scanner/reader in the  */
+comment|/* there is a possibility of a Gimp mail scanner/reader in the  */
 comment|/* future. It will probabaly need that header.                 */
 name|fprintf
 argument_list|(

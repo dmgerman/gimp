@@ -942,7 +942,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29c16fc00108
+DECL|struct|__anon2a1ff67c0108
 block|{
 DECL|member|Width
 name|guint
@@ -986,7 +986,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29c16fc00208
+DECL|struct|__anon2a1ff67c0208
 block|{
 DECL|member|transparent
 name|gint
@@ -3477,7 +3477,7 @@ literal|0
 condition|)
 name|g_print
 argument_list|(
-literal|"GIF: missing EOD in data stream (common occurence)"
+literal|"GIF: missing EOD in data stream (common occurrence)"
 argument_list|)
 expr_stmt|;
 return|return

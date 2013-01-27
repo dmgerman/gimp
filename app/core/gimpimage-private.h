@@ -339,7 +339,7 @@ name|GimpUndoType
 name|pushing_undo_group
 decl_stmt|;
 comment|/*  undo group status flag       */
-comment|/*  Signal emmision accumulator  */
+comment|/*  Signal emission accumulator  */
 DECL|member|flush_accum
 name|GimpImageFlushAccumulator
 name|flush_accum

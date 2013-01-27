@@ -5564,7 +5564,7 @@ literal|0
 condition|)
 name|FITS_RETURN
 argument_list|(
-literal|"fits_eval_pixrange: cant position file"
+literal|"fits_eval_pixrange: can't position file"
 argument_list|,
 operator|-
 literal|1
@@ -9831,7 +9831,7 @@ condition|)
 goto|goto
 name|err_return
 goto|;
-comment|/* Skip comments upto width/height */
+comment|/* Skip comments up to width/height */
 do|do
 block|{
 if|if
@@ -9901,7 +9901,7 @@ condition|)
 goto|goto
 name|err_return
 goto|;
-comment|/* Skip comments upto maxval */
+comment|/* Skip comments up to maxval */
 do|do
 block|{
 if|if

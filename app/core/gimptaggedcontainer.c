@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276ff04a0103
+DECL|enum|__anon2794c6b50103
 block|{
 DECL|enumerator|TAG_COUNT_CHANGED
 name|TAG_COUNT_CHANGED
@@ -978,7 +978,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tagged_container_new:  * @src_container: container to be filtered.  *  * Creates a new #GimpTaggedContainer object which creates filtered  * data view of #GimpTagged objects. It filters @src_container for  * objects containing all of the filtering tags. Syncronization with  * @src_container data is performed automatically.  *  * Return value: a new #GimpTaggedContainer object.  **/
+comment|/**  * gimp_tagged_container_new:  * @src_container: container to be filtered.  *  * Creates a new #GimpTaggedContainer object which creates filtered  * data view of #GimpTagged objects. It filters @src_container for  * objects containing all of the filtering tags. Synchronization with  * @src_container data is performed automatically.  *  * Return value: a new #GimpTaggedContainer object.  **/
 end_comment
 
 begin_function

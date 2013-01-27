@@ -648,7 +648,7 @@ condition|(
 name|export_forward
 condition|)
 block|{
-comment|/* Remeber the last entered Export URI for the image. We            * only need to do this explicitly when exporting. It            * happens implicitly when saving since the GimpObject name            * of a GimpImage is the last-save URI            */
+comment|/* Remember the last entered Export URI for the image. We            * only need to do this explicitly when exporting. It            * happens implicitly when saving since the GimpObject name            * of a GimpImage is the last-save URI            */
 name|gimp_image_set_exported_uri
 argument_list|(
 name|image

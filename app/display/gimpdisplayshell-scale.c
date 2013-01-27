@@ -1965,7 +1965,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scale_by_values:  * @shell:         the #GimpDisplayShell  * @scale:         the new scale  * @offset_x:      the new X offset  * @offset_y:      the new Y offset  * @resize_window: whether the display window should be resized  *  * Directly sets the image scale and image offsets used by the display. If  * @resize_window is %TRUE then the display window is resized to better  * accomodate the image, see gimp_display_shell_shrink_wrap().  **/
+comment|/**  * gimp_display_shell_scale_by_values:  * @shell:         the #GimpDisplayShell  * @scale:         the new scale  * @offset_x:      the new X offset  * @offset_y:      the new Y offset  * @resize_window: whether the display window should be resized  *  * Directly sets the image scale and image offsets used by the display. If  * @resize_window is %TRUE then the display window is resized to better  * accommodate the image, see gimp_display_shell_shrink_wrap().  **/
 end_comment
 
 begin_function
@@ -2116,7 +2116,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scale_resize:  * @shell:          the #GimpDisplayShell  * @resize_window:  whether the display window should be resized  * @grow_only:      whether shrinking of the window is allowed or not  *  * Function commonly called after a change in display scale to make the changes  * visible to the user. If @resize_window is %TRUE then the display window is  * resized to accomodate the display image as per  * gimp_display_shell_shrink_wrap().  **/
+comment|/**  * gimp_display_shell_scale_resize:  * @shell:          the #GimpDisplayShell  * @resize_window:  whether the display window should be resized  * @grow_only:      whether shrinking of the window is allowed or not  *  * Function commonly called after a change in display scale to make the changes  * visible to the user. If @resize_window is %TRUE then the display window is  * resized to accommodate the display image as per  * gimp_display_shell_shrink_wrap().  **/
 end_comment
 
 begin_function

@@ -184,7 +184,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d8a4d0108
+DECL|struct|__anon2b204dfd0108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -210,7 +210,7 @@ DECL|member|max_n_saved_points_higher_segment
 name|gint
 name|max_n_saved_points_higher_segment
 decl_stmt|;
-comment|/* Keeps track wether or not a modification of the polygon has been    * made between _button_press and _button_release    */
+comment|/* Keeps track whether or not a modification of the polygon has been    * made between _button_press and _button_release    */
 DECL|member|polygon_modified
 name|gboolean
 name|polygon_modified
@@ -259,12 +259,12 @@ DECL|member|operation_at_start
 name|GimpChannelOps
 name|operation_at_start
 decl_stmt|;
-comment|/* Wether or not to constrain the angle for newly created polygonal    * segments.    */
+comment|/* Whether or not to constrain the angle for newly created polygonal    * segments.    */
 DECL|member|constrain_angle
 name|gboolean
 name|constrain_angle
 decl_stmt|;
-comment|/* Wether or not to supress handles (so that new segments can be    * created immediately after an existing segment vertex.    */
+comment|/* Whether or not to suppress handles (so that new segments can be    * created immediately after an existing segment vertex.    */
 DECL|member|supress_handles
 name|gboolean
 name|supress_handles
@@ -2922,7 +2922,7 @@ name|fst
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* After the segments are up to date and we have handled        * double-click, see if it's commiting time        */
+comment|/* After the segments are up to date and we have handled        * double-click, see if it's committing time        */
 if|if
 condition|(
 name|gimp_free_select_tool_should_close
@@ -3004,7 +3004,7 @@ name|fst
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* After the segments are up to date, see if it's commiting time */
+comment|/* After the segments are up to date, see if it's committing time */
 if|if
 condition|(
 name|gimp_free_select_tool_should_close

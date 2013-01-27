@@ -4,7 +4,7 @@ comment|/* $Id$  * Contains routines for generating mazes, somewhat intertwined 
 end_comment
 
 begin_comment
-comment|/* mazegen code from rec.games.programmer's maze-faq:  * * maz.c - generate a maze  * *  * * algorithm posted to rec.games.programmer by jallen@ic.sunysb.edu  * * program cleaned and reorganized by mzraly@ldbvax.dnet.lotus.com  * *  * * don't make people pay for this, or I'll jump up and down and  * * yell and scream and embarass you in front of your friends...  */
+comment|/* mazegen code from rec.games.programmer's maze-faq:  * * maz.c - generate a maze  * *  * * algorithm posted to rec.games.programmer by jallen@ic.sunysb.edu  * * program cleaned and reorganized by mzraly@ldbvax.dnet.lotus.com  * *  * * don't make people pay for this, or I'll jump up and down and  * * yell and scream and embarrass you in front of your friends...  */
 end_comment
 
 begin_comment

@@ -162,7 +162,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5f8a930103
+DECL|enum|__anon2b66051c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3304,7 +3304,7 @@ operator|&
 name|y2_f
 argument_list|)
 expr_stmt|;
-comment|/*  make sure to expose a superset of the transformed sub-pixel expose    *  area, not a subset. bug #126942. --mitch    *    *  also acommodate for spill introduced by potential box filtering.    *  (bug #474509). --simon    */
+comment|/*  make sure to expose a superset of the transformed sub-pixel expose    *  area, not a subset. bug #126942. --mitch    *    *  also accommodate for spill introduced by potential box filtering.    *  (bug #474509). --simon    */
 name|x1
 operator|=
 name|floor

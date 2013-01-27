@@ -46,7 +46,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d350e10108
+DECL|struct|__anon2902070c0108
 block|{
 DECL|member|callback
 name|GimpRunPatternCallback
@@ -113,7 +113,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_pattern_select_widget_new:  * @title:        Title of the dialog to use or %NULL to use the default title.  * @pattern_name: Initial pattern name or %NULL to use current selection.  * @callback:     A function to call when the selected pattern changes.  * @data:         A pointer to arbitary data to be used in the call to @callback.  *  * Creates a new #GtkWidget that completely controls the selection of  * a pattern. This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  */
+comment|/**  * gimp_pattern_select_widget_new:  * @title:        Title of the dialog to use or %NULL to use the default title.  * @pattern_name: Initial pattern name or %NULL to use current selection.  * @callback:     A function to call when the selected pattern changes.  * @data:         A pointer to arbitrary data to be used in the call to @callback.  *  * Creates a new #GtkWidget that completely controls the selection of  * a pattern. This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  */
 end_comment
 
 begin_function

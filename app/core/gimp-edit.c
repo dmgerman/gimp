@@ -2047,7 +2047,7 @@ case|:
 return|return
 name|TRUE
 return|;
-comment|/*  nothing to do, but the fill succeded  */
+comment|/*  nothing to do, but the fill succeeded  */
 default|default:
 name|g_warning
 argument_list|(
@@ -2219,7 +2219,7 @@ condition|)
 return|return
 name|TRUE
 return|;
-comment|/*  nothing to do, but the fill succeded  */
+comment|/*  nothing to do, but the fill succeeded  */
 if|if
 condition|(
 name|pattern

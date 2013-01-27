@@ -99,7 +99,7 @@ end_define
 
 begin_comment
 DECL|macro|SGI_COMP_ARLE
-comment|/* Agressive run-length encoding */
+comment|/* Aggressive run-length encoding */
 end_comment
 
 begin_comment
@@ -109,7 +109,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275c7ccc0108
+DECL|struct|__anon2b2f190e0108
 block|{
 DECL|member|file
 name|FILE

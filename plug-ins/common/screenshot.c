@@ -349,7 +349,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b0f7750103
+DECL|enum|__anon2a0bc31d0103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -368,7 +368,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b0f7750208
+DECL|struct|__anon2a0bc31d0208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -767,7 +767,7 @@ name|PLATFORM_OSX
 literal|"On Mac OS X, when called non-interactively, the plugin"
 literal|"only can take screenshots of the entire root window."
 literal|"Grabbing a window or a region is not supported"
-literal|"non-interactively. To grab a region or a paticular"
+literal|"non-interactively. To grab a region or a particular"
 literal|"window, you need to use the interactive mode."
 endif|#
 directive|endif

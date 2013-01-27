@@ -144,7 +144,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b7bf120103
+DECL|enum|__anon2b50128d0103
 block|{
 DECL|enumerator|SA_RUN_MODE
 name|SA_RUN_MODE
@@ -189,7 +189,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b7bf120203
+DECL|enum|__anon2b50128d0203
 block|{
 DECL|enumerator|SMA_RUN_MODE
 name|SMA_RUN_MODE
@@ -226,7 +226,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b7bf120308
+DECL|struct|__anon2b50128d0308
 block|{
 DECL|member|vectorize
 name|gboolean
@@ -249,7 +249,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b7bf120408
+DECL|struct|__anon2b50128d0408
 block|{
 DECL|member|images
 name|gint32
@@ -278,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b7bf120508
+DECL|struct|__anon2b50128d0508
 block|{
 DECL|member|optimize
 name|PdfOptimize
@@ -297,7 +297,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b7bf120603
+DECL|enum|__anon2b50128d0603
 block|{
 DECL|enumerator|THUMB
 name|THUMB
@@ -317,7 +317,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b7bf120708
+DECL|struct|__anon2b50128d0708
 block|{
 DECL|member|thumb
 name|GdkPixbuf
@@ -1250,7 +1250,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"An error occured while creating the PDF file:\n"
+literal|"An error occurred while creating the PDF file:\n"
 literal|"%s\n"
 literal|"Make sure you entered a valid filename and that the "
 literal|"selected location isn't read only!"
@@ -1902,7 +1902,7 @@ comment|/******************************************************/
 end_comment
 
 begin_comment
-comment|/* Begining of parameter handling functions           */
+comment|/* Beginning of parameter handling functions          */
 end_comment
 
 begin_comment
@@ -2532,7 +2532,7 @@ comment|/******************************************************/
 end_comment
 
 begin_comment
-comment|/* Begining of GUI functions                          */
+comment|/* Beginning of GUI functions                         */
 end_comment
 
 begin_comment
@@ -4474,7 +4474,7 @@ comment|/******************************************************/
 end_comment
 
 begin_comment
-comment|/* Begining of the actual PDF functions               */
+comment|/* Beginning of the actual PDF functions              */
 end_comment
 
 begin_comment
