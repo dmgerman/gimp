@@ -534,7 +534,7 @@ DECL|macro|CAIRO_REQUIRED_MINOR
 define|#
 directive|define
 name|CAIRO_REQUIRED_MINOR
-value|10
+value|12
 DECL|macro|CAIRO_REQUIRED_MICRO
 define|#
 directive|define

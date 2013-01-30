@@ -415,6 +415,18 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|shell
+operator|->
+name|xfer
+operator|=
+name|gimp_display_xfer_realize
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|shell
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
