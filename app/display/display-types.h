@@ -155,6 +155,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDisplayXfer
+typedef|typedef
+name|struct
+name|_GimpDisplayXfer
+name|GimpDisplayXfer
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|Selection
 typedef|typedef
 name|struct

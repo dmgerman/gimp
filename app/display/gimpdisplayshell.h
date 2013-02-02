@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_DISPLAY_SHELL_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gimpdisplay-transport.h"
-end_include
-
 begin_comment
 comment|/* Apply to a float the same rounding mode used in the renderer */
 end_comment
@@ -447,6 +441,7 @@ name|GimpDisplayXfer
 modifier|*
 name|xfer
 decl_stmt|;
+comment|/*  managers image buffer transfers    */
 DECL|member|mask_surface
 name|cairo_surface_t
 modifier|*

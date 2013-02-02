@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_DISPLAY_TRANSPORT_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<cairo.h>
-end_include
-
 begin_comment
 comment|/* #define GIMP_DISPLAY_RENDER_ENABLE_SCALING 1 */
 end_comment
@@ -73,15 +67,6 @@ begin_endif
 endif|#
 directive|endif
 end_endif
-
-begin_typedef
-DECL|typedef|GimpDisplayXfer
-typedef|typedef
-name|struct
-name|GimpDisplayXfer
-name|GimpDisplayXfer
-typedef|;
-end_typedef
 
 begin_function_decl
 name|GimpDisplayXfer

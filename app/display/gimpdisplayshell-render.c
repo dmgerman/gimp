@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplay-transport.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell.h"
 end_include
 
@@ -184,8 +190,7 @@ decl_stmt|;
 name|gint
 name|stride
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 decl_stmt|;
