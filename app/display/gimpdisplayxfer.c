@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplay-transport.h"
+file|"gimpdisplayxfer.h"
 end_include
 
 begin_define
@@ -981,7 +981,7 @@ argument_list|(
 name|screen
 argument_list|)
 argument_list|,
-literal|"gimpdisplay-transport"
+literal|"gimp-display-xfer"
 argument_list|)
 expr_stmt|;
 if|if
@@ -1107,7 +1107,7 @@ argument_list|(
 name|screen
 argument_list|)
 argument_list|,
-literal|"gimpdisplay-transport"
+literal|"gimp-display-xfer"
 argument_list|,
 name|xfer
 argument_list|,

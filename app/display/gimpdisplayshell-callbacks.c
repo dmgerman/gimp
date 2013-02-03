@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplay-transport.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayshell.h"
 end_include
 
@@ -127,6 +121,12 @@ begin_include
 include|#
 directive|include
 file|"gimpdisplayshell-title.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdisplayxfer.h"
 end_include
 
 begin_include

@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_DISPLAY_TRANSPORT_H__
+name|__GIMP_DISPLAY_XFER_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_DISPLAY_TRANSPORT_H__
+DECL|macro|__GIMP_DISPLAY_XFER_H__
 define|#
 directive|define
-name|__GIMP_DISPLAY_TRANSPORT_H__
+name|__GIMP_DISPLAY_XFER_H__
 end_define
 
 begin_comment
@@ -112,7 +112,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_DISPLAY_TRANSPORT_H__  */
+comment|/*  __GIMP_DISPLAY_XFER_H__  */
 end_comment
 
 end_unit
