@@ -395,11 +395,9 @@ operator|->
 name|no_fonts
 condition|)
 return|return;
-comment|/* We clear the default config here, so any subsequent fontconfig use will    * reinit the library with defaults. (Maybe we should call FcFini here too?)    */
-name|FcConfigSetCurrent
-argument_list|(
-name|NULL
-argument_list|)
+comment|/* Reinit the library with defaults. */
+name|FcInitReinitialize
+argument_list|()
 expr_stmt|;
 block|}
 end_function
