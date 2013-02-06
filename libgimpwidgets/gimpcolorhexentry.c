@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon299217f80103
+DECL|enum|__anon2ae7b2440103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299217f80203
+DECL|enum|__anon2ae7b2440203
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -256,6 +256,17 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+comment|/* GtkEntry's minimum size is way too large, set a reasonable one    * for our use case    */
+name|gtk_entry_set_width_chars
+argument_list|(
+name|GTK_ENTRY
+argument_list|(
+name|entry
+argument_list|)
+argument_list|,
+literal|8
+argument_list|)
+expr_stmt|;
 name|gimp_rgba_set
 argument_list|(
 operator|&
