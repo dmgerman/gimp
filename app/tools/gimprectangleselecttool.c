@@ -3002,6 +3002,13 @@ argument_list|,
 name|GIMP_RECTANGLE_TOOL_MOVING
 argument_list|)
 expr_stmt|;
+name|gimp_rectangle_select_tool_update_option_defaults
+argument_list|(
+name|rect_sel_tool
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
