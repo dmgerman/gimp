@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27837edb0103
+DECL|enum|__anon29be17b70103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -243,7 +243,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27837edb0203
+DECL|enum|__anon29be17b70203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -286,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27837edb0303
+DECL|enum|__anon29be17b70303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -13694,7 +13694,7 @@ name|priv
 operator|->
 name|x1_int
 operator|=
-name|ROUND
+name|SIGNED_ROUND
 argument_list|(
 name|priv
 operator|->
@@ -13705,7 +13705,7 @@ name|priv
 operator|->
 name|y1_int
 operator|=
-name|ROUND
+name|SIGNED_ROUND
 argument_list|(
 name|priv
 operator|->
@@ -13727,7 +13727,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|ROUND
+name|SIGNED_ROUND
 argument_list|(
 name|priv
 operator|->
@@ -13745,7 +13745,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|ROUND
+name|SIGNED_ROUND
 argument_list|(
 name|priv
 operator|->

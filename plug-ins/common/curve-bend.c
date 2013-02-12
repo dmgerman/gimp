@@ -176,17 +176,6 @@ value|127
 end_define
 
 begin_define
-DECL|macro|SIGNED_ROUND (x)
-define|#
-directive|define
-name|SIGNED_ROUND
-parameter_list|(
-name|x
-parameter_list|)
-value|((int) (((x< 0) ? (x) - 0.5 : (x) + 0.5)  ))
-end_define
-
-begin_define
 DECL|macro|MIX_CHANNEL (a,b,m)
 define|#
 directive|define
@@ -672,7 +661,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6242960108
+DECL|struct|__anon28e546560108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -726,7 +715,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6242960208
+DECL|struct|__anon28e546560208
 block|{
 DECL|member|y
 name|gint32

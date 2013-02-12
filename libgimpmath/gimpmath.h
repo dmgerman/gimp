@@ -119,7 +119,7 @@ parameter_list|)
 value|floor ((x) + 0.5)
 endif|#
 directive|endif
-comment|/**  * ROUND:  * @x: the value to be rounded.  *  * This macro rounds its argument @x to the nearest integer.  **/
+comment|/**  * ROUND:  * @x: the value to be rounded.  *  * This macro rounds its positive argument @x to the nearest integer.  **/
 DECL|macro|ROUND (x)
 define|#
 directive|define
@@ -128,6 +128,15 @@ parameter_list|(
 name|x
 parameter_list|)
 value|((int) ((x) + 0.5))
+comment|/**  * SIGNED_ROUND:  * @x: the value to be rounded.  *  * This macro rounds its argument @x to the nearest integer.  **/
+DECL|macro|SIGNED_ROUND (x)
+define|#
+directive|define
+name|SIGNED_ROUND
+parameter_list|(
+name|x
+parameter_list|)
+value|((int) ((((x)< 0) ? (x) - 0.5 : (x) + 0.5)))
 comment|/**  * SQR:  * @x: the value to be squared.  *  * This macro squares its argument @x.  **/
 DECL|macro|SQR (x)
 define|#
