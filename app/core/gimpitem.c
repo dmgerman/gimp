@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294704a60103
+DECL|enum|__anon2889597a0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -174,7 +174,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon294704a60203
+DECL|enum|__anon2889597a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4873,7 +4873,7 @@ return|;
 block|}
 name|new_offset_x
 operator|=
-name|ROUND
+name|SIGNED_ROUND
 argument_list|(
 name|w_factor
 operator|*
@@ -4887,7 +4887,7 @@ argument_list|)
 expr_stmt|;
 name|new_offset_y
 operator|=
-name|ROUND
+name|SIGNED_ROUND
 argument_list|(
 name|h_factor
 operator|*
