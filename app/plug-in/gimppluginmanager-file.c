@@ -588,7 +588,15 @@ name|file_proc
 argument_list|)
 expr_stmt|;
 block|}
-else|else
+if|if
+condition|(
+name|file_procedure_in_group
+argument_list|(
+name|file_proc
+argument_list|,
+name|FILE_PROCEDURE_GROUP_EXPORT
+argument_list|)
+condition|)
 block|{
 if|if
 condition|(

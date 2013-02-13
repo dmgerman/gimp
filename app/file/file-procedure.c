@@ -118,7 +118,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc2b34f0103
+DECL|enum|__anon2b20d0320103
 block|{
 DECL|enumerator|FILE_MATCH_NONE
 name|FILE_MATCH_NONE
@@ -874,6 +874,15 @@ argument_list|(
 name|name
 argument_list|,
 literal|"file-xz-save"
+argument_list|)
+operator|==
+literal|0
+operator|||
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"file-uri-save"
 argument_list|)
 operator|==
 literal|0
