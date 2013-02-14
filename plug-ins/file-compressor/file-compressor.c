@@ -607,8 +607,9 @@ argument_list|)
 block|,
 literal|"application/x-gzip"
 block|,
-literal|"xcf.gz,gz,xcfgz"
+literal|"xcf.gz,xcfgz"
 block|,
+comment|/* FIXME "xcf.gz,gz,xcfgz" */
 literal|"0,string,\037\213"
 block|,
 literal|".xcfgz"
@@ -640,8 +641,9 @@ argument_list|)
 block|,
 literal|"application/x-bzip"
 block|,
-literal|"xcf.bz2,bz2,xcfbz2"
+literal|"xcf.bz2,xcfbz2"
 block|,
+comment|/* FIXME "xcf.bz2,bz2,xcfbz2" */
 literal|"0,string,BZh"
 block|,
 literal|".xcfbz2"
@@ -673,8 +675,9 @@ argument_list|)
 block|,
 literal|"application/x-xz"
 block|,
-literal|"xcf.xz,xz,xcfxz"
+literal|"xcf.xz,xcfxz"
 block|,
+comment|/* FIXME "xcf.xz,xz,xcfxz" */
 literal|"0,ustring,\3757zXZ\x00"
 block|,
 literal|".xcfxz"

@@ -118,7 +118,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b20d0320103
+DECL|enum|__anon295a24460103
 block|{
 DECL|enumerator|FILE_MATCH_NONE
 name|FILE_MATCH_NONE
@@ -835,6 +835,11 @@ name|is_filter
 init|=
 name|FALSE
 decl_stmt|;
+name|gboolean
+name|is_uri
+init|=
+name|FALSE
+decl_stmt|;
 name|is_xcf_save
 operator|=
 operator|(
@@ -877,7 +882,11 @@ literal|"file-xz-save"
 argument_list|)
 operator|==
 literal|0
-operator|||
+operator|)
+expr_stmt|;
+name|is_uri
+operator|=
+operator|(
 name|strcmp
 argument_list|(
 name|name
@@ -897,22 +906,22 @@ case|case
 name|FILE_PROCEDURE_GROUP_SAVE
 case|:
 comment|/* Only .xcf shall pass */
-comment|/* FIXME: Handle .gz and .bz2 properly */
 return|return
 name|is_xcf_save
 operator|||
 name|is_filter
+operator|||
+name|is_uri
 return|;
 case|case
 name|FILE_PROCEDURE_GROUP_EXPORT
 case|:
 comment|/* Anything but .xcf shall pass */
-comment|/* FIXME: Handle .gz, .bz2 and .xz properly */
 return|return
 operator|!
 name|is_xcf_save
 operator|||
-name|is_filter
+name|is_uri
 return|;
 case|case
 name|FILE_PROCEDURE_GROUP_OPEN
