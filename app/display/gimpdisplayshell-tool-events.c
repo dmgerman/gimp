@@ -3526,6 +3526,11 @@ block|}
 block|}
 else|else
 block|{
+name|gboolean
+name|arrow_key
+init|=
+name|FALSE
+decl_stmt|;
 name|tool_manager_focus_display_active
 argument_list|(
 name|gimp
@@ -3568,11 +3573,6 @@ operator|->
 name|keyval
 condition|)
 block|{
-name|gboolean
-name|arrow_key
-init|=
-name|FALSE
-decl_stmt|;
 case|case
 name|GDK_KEY_Left
 case|:
