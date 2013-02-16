@@ -4433,6 +4433,12 @@ name|G_PARAM_READWRITE
 operator|)
 operator|==
 name|G_PARAM_READWRITE
+operator|&&
+name|pspec
+operator|->
+name|owner_type
+operator|==
+name|GIMP_TYPE_TEXT
 condition|)
 block|{
 name|gimp_text_tool_block_drawing
