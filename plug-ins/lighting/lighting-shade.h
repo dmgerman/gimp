@@ -101,6 +101,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|interpol_row
+parameter_list|(
+name|gint
+name|x1
+parameter_list|,
+name|gint
+name|x2
+parameter_list|,
+name|gint
+name|y
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

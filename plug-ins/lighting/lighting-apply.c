@@ -414,7 +414,35 @@ literal|"Lighting Effects"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  if (mapvals.antialiasing==FALSE)     { */
+comment|/* Init the first row */
+if|if
+condition|(
+name|mapvals
+operator|.
+name|bump_mapped
+operator|==
+name|TRUE
+operator|&&
+name|mapvals
+operator|.
+name|bumpmap_id
+operator|!=
+operator|-
+literal|1
+operator|&&
+name|height
+operator|>=
+literal|2
+condition|)
+name|interpol_row
+argument_list|(
+literal|0
+argument_list|,
+name|width
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|ycount
