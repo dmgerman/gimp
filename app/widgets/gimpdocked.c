@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295ce5df0103
+DECL|enum|__anon29fa6f8b0103
 block|{
 DECL|enumerator|TITLE_CHANGED
 name|TITLE_CHANGED
@@ -385,14 +385,16 @@ name|gimp_docked_has_button_bar
 argument_list|(
 name|docked
 argument_list|)
-operator|&&
-operator|!
+condition|)
+block|{
+name|gboolean
+name|show
+init|=
 name|gimp_docked_get_show_button_bar
 argument_list|(
 name|docked
 argument_list|)
-condition|)
-block|{
+decl_stmt|;
 return|return
 name|g_list_append
 argument_list|(
@@ -402,6 +404,10 @@ name|gimp_session_info_aux_new
 argument_list|(
 name|AUX_INFO_SHOW_BUTTON_BAR
 argument_list|,
+name|show
+condition|?
+literal|"true"
+else|:
 literal|"false"
 argument_list|)
 argument_list|)
