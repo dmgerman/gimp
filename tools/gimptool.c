@@ -230,7 +230,7 @@ directive|endif
 end_endif
 
 begin_struct
-DECL|struct|__anon2b2af4b10108
+DECL|struct|__anon29d84cc50108
 specifier|static
 struct|struct
 block|{
@@ -1923,10 +1923,8 @@ block|{
 return|return
 name|g_build_filename
 argument_list|(
-name|g_get_home_dir
+name|gimp_directory
 argument_list|()
-argument_list|,
-name|GIMPDIR
 argument_list|,
 literal|"plug-ins"
 argument_list|,
@@ -2430,10 +2428,8 @@ block|{
 return|return
 name|g_build_filename
 argument_list|(
-name|g_get_home_dir
+name|gimp_directory
 argument_list|()
-argument_list|,
-name|GIMPDIR
 argument_list|,
 literal|"scripts"
 argument_list|,
