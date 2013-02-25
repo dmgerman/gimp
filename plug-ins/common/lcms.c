@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2accbfe30103
+DECL|enum|__anon2c5e245b0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2accbfe30203
+DECL|enum|__anon2c5e245b0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -166,7 +166,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2accbfe30308
+DECL|struct|__anon2c5e245b0308
 block|{
 DECL|member|name
 specifier|const
@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2accbfe30408
+DECL|struct|__anon2c5e245b0408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -3992,50 +3992,6 @@ operator|=
 name|babl_format
 argument_list|(
 literal|"R'G'B' u16"
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-elseif|else
-if|if
-condition|(
-name|type
-operator|==
-name|babl_type
-argument_list|(
-literal|"half"
-argument_list|)
-condition|)
-comment|/* 16-bit floating point (half) */
-block|{
-if|if
-condition|(
-name|has_alpha
-condition|)
-block|{
-name|lcms_format
-operator|=
-name|TYPE_RGBA_HALF_FLT
-expr_stmt|;
-name|iter_format
-operator|=
-name|babl_format
-argument_list|(
-literal|"R'G'B'A half"
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|lcms_format
-operator|=
-name|TYPE_RGB_HALF_FLT
-expr_stmt|;
-name|iter_format
-operator|=
-name|babl_format
-argument_list|(
-literal|"R'G'B' half"
 argument_list|)
 expr_stmt|;
 block|}
