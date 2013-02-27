@@ -285,7 +285,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon298107790103
+DECL|enum|__anon291c05b20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -398,7 +398,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298107790208
+DECL|struct|__anon291c05b20208
 block|{
 DECL|member|window
 name|GimpImageWindow
@@ -3488,6 +3488,9 @@ name|GimpSessionInfoAux
 modifier|*
 name|aux
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|gchar
 name|widthbuf
 index|[
@@ -3534,6 +3537,17 @@ argument_list|,
 name|aux
 argument_list|)
 expr_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|private
+operator|->
+name|right_hpane
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
+comment|/* a negative number will be interpreted as the width of the second        * child of the pane        */
 name|g_snprintf
 argument_list|(
 name|widthbuf
@@ -3554,6 +3568,10 @@ operator|->
 name|right_hpane
 argument_list|)
 argument_list|)
+operator|-
+name|allocation
+operator|.
+name|width
 argument_list|)
 expr_stmt|;
 name|aux
@@ -3644,11 +3662,29 @@ name|paned
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|position
+operator|>
+literal|0
+condition|)
 name|gtk_paned_set_position
 argument_list|(
 name|paned
 argument_list|,
 name|position
+argument_list|)
+expr_stmt|;
+else|else
+name|gtk_paned_set_position
+argument_list|(
+name|paned
+argument_list|,
+name|position
+operator|+
+name|allocation
+operator|->
+name|width
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
@@ -3892,6 +3928,10 @@ block|{
 if|if
 condition|(
 name|wait_with_right_docks
+operator|||
+name|right_docks_pos
+operator|<
+literal|0
 condition|)
 block|{
 comment|/* We must wait on a size allocation before we can set the            * position            */
