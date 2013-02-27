@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/gimptool.h"
 end_include
 
@@ -162,7 +168,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b66051c0103
+DECL|enum|__anon2a2b42dc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1774,6 +1780,12 @@ expr_stmt|;
 name|gimp_display_shell_present
 argument_list|(
 name|shell
+argument_list|)
+expr_stmt|;
+comment|/* make sure the docks are visible, in case all other image windows    * are iconified, see bug #686544.    */
+name|gimp_dialog_factory_show_with_display
+argument_list|(
+name|dialog_factory
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
