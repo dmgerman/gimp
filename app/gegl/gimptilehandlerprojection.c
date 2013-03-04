@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e2aa1f0103
+DECL|enum|__anon28b58da50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -842,7 +842,7 @@ name|tile_bpp
 argument_list|,
 name|tile_stride
 argument_list|,
-name|GEGL_ABYSS_NONE
+name|GEGL_BLIT_DEFAULT
 argument_list|)
 expr_stmt|;
 block|}
