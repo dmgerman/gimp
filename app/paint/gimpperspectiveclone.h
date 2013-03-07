@@ -149,11 +149,6 @@ name|GeglNode
 modifier|*
 name|dest_node
 decl_stmt|;
-DECL|member|processor
-name|GeglProcessor
-modifier|*
-name|processor
-decl_stmt|;
 block|}
 struct|;
 end_struct
