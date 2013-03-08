@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c95b8190103
+DECL|enum|__anon2a59b5800103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -318,6 +318,9 @@ name|name_blacklist
 index|[]
 init|=
 block|{
+literal|"gegl:cartoon"
+block|,
+comment|/* in gimp */
 literal|"gegl:color"
 block|,
 comment|/* pointless */
@@ -370,11 +373,29 @@ block|,
 literal|"gegl:lens-distortion"
 block|,
 comment|/* in gimp */
+literal|"gegl:noise-hurl"
+block|,
+comment|/* in gimp */
+literal|"gegl:noise-pick"
+block|,
+comment|/* in gimp */
+literal|"gegl:noise-hsv"
+block|,
+comment|/* in gimp */
+literal|"gegl:noise-rgb"
+block|,
+comment|/* in gimp */
+literal|"gegl:noise-slur"
+block|,
+comment|/* in gimp */
 literal|"gegl:opacity"
 block|,
 comment|/* pointless */
 literal|"gegl:path"
 block|,
+literal|"gegl:photocopy"
+block|,
+comment|/* in gimp */
 literal|"gegl:pixelize"
 block|,
 comment|/* in gimp */
