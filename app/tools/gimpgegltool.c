@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae0bfba0103
+DECL|enum|__anon28dd6e040103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -379,6 +379,9 @@ block|,
 literal|"gegl:lens-distortion"
 block|,
 comment|/* in gimp */
+literal|"gegl:matting-global"
+block|,
+comment|/* useless */
 literal|"gegl:mono-mixer"
 block|,
 comment|/* in gimp */
@@ -426,6 +429,8 @@ comment|/* in gimp */
 literal|"gegl:sdl-display"
 block|,
 comment|/* useless */
+literal|"gegl:seamless-clone"
+block|,
 literal|"gegl:shear"
 block|,
 comment|/* in gimp */
@@ -434,6 +439,9 @@ block|,
 literal|"gegl:threshold"
 block|,
 comment|/* in gimp */
+literal|"gegl:tile"
+block|,
+comment|/* useless */
 literal|"gegl:transform"
 block|,
 comment|/* in gimp */
