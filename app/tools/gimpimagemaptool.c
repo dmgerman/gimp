@@ -1554,6 +1554,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|image_map_tool
+operator|->
+name|config
+operator|&&
 name|klass
 operator|->
 name|settings_name
