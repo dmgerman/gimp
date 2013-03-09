@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dd6e040103
+DECL|enum|__anon2800d8a10103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -385,13 +385,16 @@ comment|/* useless */
 literal|"gegl:mono-mixer"
 block|,
 comment|/* in gimp */
+literal|"gegl:noise-CIE_lch"
+block|,
+comment|/* in gimp */
+literal|"gegl:noise-hsv"
+block|,
+comment|/* in gimp */
 literal|"gegl:noise-hurl"
 block|,
 comment|/* in gimp */
 literal|"gegl:noise-pick"
-block|,
-comment|/* in gimp */
-literal|"gegl:noise-hsv"
 block|,
 comment|/* in gimp */
 literal|"gegl:noise-rgb"

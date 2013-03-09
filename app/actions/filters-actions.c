@@ -388,6 +388,33 @@ comment|/* FIXME GIMP_HELP_FILTER_MONO_MIXER */
 block|}
 block|,
 block|{
+literal|"filters-noise-cie-lch"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"CIE lch Noise..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Randomize lightness, chroma and hue independently"
+argument_list|)
+block|,
+literal|"gegl:noise-CIE_lch"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_NOISE_CIE_LCH */
+block|}
+block|,
+block|{
 literal|"filters-noise-hsv"
 block|,
 name|GIMP_STOCK_GEGL
@@ -1025,6 +1052,13 @@ name|writable
 operator|&&
 operator|!
 name|gray
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-noise-cie-lch"
+argument_list|,
+name|writable
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
