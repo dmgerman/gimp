@@ -1038,6 +1038,14 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
+name|gchar
+modifier|*
+name|import_title
+decl_stmt|;
+name|gchar
+modifier|*
+name|export_title
+decl_stmt|;
 name|settings
 operator|=
 name|gimp_gegl_get_config_container
@@ -1104,6 +1112,34 @@ argument_list|(
 name|basename
 argument_list|)
 expr_stmt|;
+name|import_title
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Import '%s' Settings"
+argument_list|)
+argument_list|,
+name|tool
+operator|->
+name|dialog_desc
+argument_list|)
+expr_stmt|;
+name|export_title
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Export '%s' Settings"
+argument_list|)
+argument_list|,
+name|tool
+operator|->
+name|dialog_desc
+argument_list|)
+expr_stmt|;
 name|widget
 operator|=
 name|GIMP_IMAGE_MAP_TOOL_CLASS
@@ -1119,9 +1155,9 @@ name|settings
 argument_list|,
 name|filename
 argument_list|,
-literal|"Import foo"
+name|import_title
 argument_list|,
-literal|"Export foo"
+name|export_title
 argument_list|,
 literal|"help-foo"
 argument_list|,
@@ -1134,6 +1170,16 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|filename
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|import_title
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|export_title
 argument_list|)
 expr_stmt|;
 return|return
