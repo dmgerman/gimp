@@ -513,7 +513,18 @@ name|GimpOperationTool
 modifier|*
 name|tool
 parameter_list|)
-block|{ }
+block|{
+name|GIMP_IMAGE_MAP_TOOL_GET_CLASS
+argument_list|(
+name|tool
+argument_list|)
+operator|->
+name|settings_name
+operator|=
+name|NULL
+expr_stmt|;
+comment|/* XXX hack */
+block|}
 end_function
 
 begin_function
@@ -1439,6 +1450,10 @@ name|default_stock_id
 operator|=
 name|GIMP_STOCK_GEGL
 expr_stmt|;
+if|if
+condition|(
+name|dialog_desc
+condition|)
 name|GIMP_IMAGE_MAP_TOOL_GET_CLASS
 argument_list|(
 name|tool
@@ -1446,7 +1461,18 @@ argument_list|)
 operator|->
 name|settings_name
 operator|=
-name|dialog_desc
+literal|"yes"
+expr_stmt|;
+comment|/* XXX hack */
+else|else
+name|GIMP_IMAGE_MAP_TOOL_GET_CLASS
+argument_list|(
+name|tool
+argument_list|)
+operator|->
+name|settings_name
+operator|=
+name|NULL
 expr_stmt|;
 comment|/* XXX hack */
 if|if
