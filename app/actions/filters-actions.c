@@ -945,6 +945,16 @@ define|\
 value|gimp_action_group_set_action_sensitive (group, action, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
+literal|"filters-c2g"
+argument_list|,
+name|writable
+operator|&&
+operator|!
+name|gray
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
 literal|"filters-cartoon"
 argument_list|,
 name|writable
@@ -988,6 +998,13 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
+literal|"filters-dot"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
 literal|"filters-gaussian-blur"
 argument_list|,
 name|writable
@@ -998,6 +1015,16 @@ argument_list|(
 literal|"filters-laplace"
 argument_list|,
 name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-mono-mixer"
+argument_list|,
+name|writable
+operator|&&
+operator|!
+name|gray
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
