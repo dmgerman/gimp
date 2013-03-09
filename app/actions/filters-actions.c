@@ -91,6 +91,33 @@ index|[]
 init|=
 block|{
 block|{
+literal|"filters-c2g"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Color to Gray..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Color to grayscale conversion"
+argument_list|)
+block|,
+literal|"gegl:c2g"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_C2G */
+block|}
+block|,
+block|{
 literal|"filters-cartoon"
 block|,
 name|GIMP_STOCK_GEGL
@@ -199,6 +226,33 @@ comment|/* FIXME GIMP_HELP_FILTER_COLOR_TO_ALPHA */
 block|}
 block|,
 block|{
+literal|"filters-dot"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Dots..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Simplify image into an array of solid-colored dots"
+argument_list|)
+block|,
+literal|"gegl:dot"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_DOT */
+block|}
+block|,
+block|{
 literal|"filters-difference-of-gaussians"
 block|,
 name|GIMP_STOCK_GEGL
@@ -304,6 +358,33 @@ literal|"gegl:lens-distortion"
 block|,
 name|NULL
 comment|/* FIXME GIMP_HELP_FILTER_LENS_DISTORTION */
+block|}
+block|,
+block|{
+literal|"filters-mono-mixer"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Mono Mixer..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Monochrome channel mixer"
+argument_list|)
+block|,
+literal|"gegl:mono-mixer"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_MONO_MIXER */
 block|}
 block|,
 block|{

@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a59b5800103
+DECL|enum|__anon2ae0bfba0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -318,6 +318,9 @@ name|name_blacklist
 index|[]
 init|=
 block|{
+literal|"gegl:c2g"
+block|,
+comment|/* in gimp */
 literal|"gegl:cartoon"
 block|,
 comment|/* in gimp */
@@ -345,6 +348,9 @@ block|,
 comment|/* in gimp */
 literal|"gegl:display"
 block|,
+literal|"gegl:dot"
+block|,
+comment|/* in gimp */
 literal|"gegl:edge-laplace"
 block|,
 comment|/* in gimp */
@@ -371,6 +377,9 @@ block|,
 literal|"gegl:lens-correct"
 block|,
 literal|"gegl:lens-distortion"
+block|,
+comment|/* in gimp */
+literal|"gegl:mono-mixer"
 block|,
 comment|/* in gimp */
 literal|"gegl:noise-hurl"
