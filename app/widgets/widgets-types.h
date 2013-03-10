@@ -1142,6 +1142,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPrefsBox
+typedef|typedef
+name|struct
+name|_GimpPrefsBox
+name|GimpPrefsBox
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpProgressBox
 typedef|typedef
 name|struct
