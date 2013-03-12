@@ -942,7 +942,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a1ff67c0108
+DECL|struct|__anon2ba971c60108
 block|{
 DECL|member|Width
 name|guint
@@ -986,7 +986,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a1ff67c0208
+DECL|struct|__anon2ba971c60208
 block|{
 DECL|member|transparent
 name|gint
@@ -2841,7 +2841,7 @@ name|curbit
 operator|+
 name|code_size
 operator|)
-operator|>=
+operator|>
 name|lastbit
 condition|)
 block|{
