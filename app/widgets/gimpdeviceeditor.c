@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0224de0103
+DECL|enum|__anon28b88be30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -585,9 +585,9 @@ name|private
 operator|->
 name|treeview
 argument_list|,
-name|FALSE
-argument_list|,
 name|TRUE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -679,7 +679,7 @@ name|vbox
 argument_list|,
 name|TRUE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
