@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpcolor/gimpcolor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -31,6 +37,12 @@ begin_include
 include|#
 directive|include
 file|"display-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"config/gimpcoreconfig.h"
 end_include
 
 begin_include
@@ -96,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1063290108
+DECL|struct|__anon274b57040108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -169,6 +181,10 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
+name|GimpDisplayConfig
+modifier|*
+name|config
+decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -190,6 +206,14 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+name|config
+operator|=
+name|shell
+operator|->
+name|display
+operator|->
+name|config
 expr_stmt|;
 name|image
 operator|=
@@ -398,6 +422,18 @@ argument_list|(
 name|shell
 operator|->
 name|filter_stack
+argument_list|,
+name|GIMP_CORE_CONFIG
+argument_list|(
+name|config
+argument_list|)
+operator|->
+name|color_management
+argument_list|,
+name|GIMP_COLOR_MANAGED
+argument_list|(
+name|shell
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
