@@ -235,9 +235,27 @@ argument_list|)
 operator|==
 name|GIMP_GRAY
 condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_PLUG_IN_ERROR
+argument_list|,
+name|GIMP_PLUG_IN_EXECUTION_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"Can't apply color profile to grayscale image (%s)"
+argument_list|)
+argument_list|,
+name|ICC_PROFILE_APPLY_RGB_PROC
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
+block|}
 name|procedure
 operator|=
 name|gimp_pdb_lookup_procedure
