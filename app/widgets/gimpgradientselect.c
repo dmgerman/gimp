@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2910b80103
+DECL|enum|__anon27dc0c490103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -735,11 +735,6 @@ expr_stmt|;
 name|gimp_array_free
 argument_list|(
 name|array
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|values
 argument_list|)
 expr_stmt|;
 return|return
