@@ -110,7 +110,7 @@ name|NC_
 argument_list|(
 literal|"cage-mode"
 argument_list|,
-literal|"Deform the cage to deform the image"
+literal|"Deform the cage\nto deform the image"
 argument_list|)
 block|,
 name|NULL

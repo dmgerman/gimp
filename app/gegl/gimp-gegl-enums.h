@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b2eba90103
+DECL|enum|__anon2bfa7cd50103
 block|{
 DECL|enumerator|GIMP_CAGE_MODE_CAGE_CHANGE
 name|GIMP_CAGE_MODE_CAGE_CHANGE
@@ -45,7 +45,7 @@ block|,
 comment|/*< desc="Create or adjust the cage">*/
 DECL|enumerator|GIMP_CAGE_MODE_DEFORM
 name|GIMP_CAGE_MODE_DEFORM
-comment|/*< desc="Deform the cage to deform the image">*/
+comment|/*< desc="Deform the cage\nto deform the image">*/
 DECL|typedef|GimpCageMode
 block|}
 name|GimpCageMode

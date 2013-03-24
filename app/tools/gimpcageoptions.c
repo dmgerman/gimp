@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4a58c30103
+DECL|enum|__anon2be539640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -455,7 +455,8 @@ literal|"fill-plain-color"
 argument_list|,
 name|_
 argument_list|(
-literal|"Fill the original position of the cage with a plain color"
+literal|"Fill the original position\n"
+literal|"of the cage with a color"
 argument_list|)
 argument_list|)
 expr_stmt|;
