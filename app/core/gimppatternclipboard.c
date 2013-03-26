@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2990a4340103
+DECL|enum|__anon2a0e832f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -608,7 +608,7 @@ argument_list|(
 name|buffer
 argument_list|)
 argument_list|,
-literal|512
+literal|2048
 argument_list|)
 expr_stmt|;
 name|height
@@ -620,7 +620,7 @@ argument_list|(
 name|buffer
 argument_list|)
 argument_list|,
-literal|512
+literal|2048
 argument_list|)
 expr_stmt|;
 name|pattern
