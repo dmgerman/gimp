@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29be4cd90103
+DECL|enum|__anon2c638b6b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2303,7 +2303,9 @@ name|range
 operator|<=
 literal|0
 condition|)
-return|return;
+goto|goto
+name|out
+goto|;
 name|input
 operator|-=
 name|config
@@ -2319,7 +2321,9 @@ name|input
 operator|<
 literal|0
 condition|)
-return|return;
+goto|goto
+name|out
+goto|;
 comment|/* Normalize input and lightness */
 name|inten
 operator|=
@@ -2333,13 +2337,20 @@ name|lightness
 operator|/
 name|range
 expr_stmt|;
+comment|/* See bug 622054: picking pure black or white as gamma doesn't        * work. But we cannot compare to 0.0 or 1.0 because cpus and        * compilers are shit. If you try to check out_light using        * printf() it will give exact 0.0 or 1.0 anyway, probably        * because the generated code is different and out_light doesn't        * live in a register. That must be why the cpu/compiler mafia        * invented epsilon and defined this shit to be the programmer's        * responsibility.        */
 if|if
 condition|(
 name|out_light
 operator|<=
-literal|0
+literal|0.0001
+operator|||
+name|out_light
+operator|>=
+literal|0.9999
 condition|)
-return|return;
+goto|goto
+name|out
+goto|;
 comment|/* Map selected color to corresponding lightness */
 name|config
 operator|->
@@ -2358,6 +2369,27 @@ argument_list|(
 name|out_light
 argument_list|)
 expr_stmt|;
+name|config
+operator|->
+name|gamma
+index|[
+name|channel
+index|]
+operator|=
+name|CLAMP
+argument_list|(
+name|config
+operator|->
+name|gamma
+index|[
+name|channel
+index|]
+argument_list|,
+literal|0.1
+argument_list|,
+literal|10.0
+argument_list|)
+expr_stmt|;
 name|g_object_notify
 argument_list|(
 name|G_OBJECT
@@ -2369,6 +2401,8 @@ literal|"gamma"
 argument_list|)
 expr_stmt|;
 block|}
+name|out
+label|:
 name|g_object_thaw_notify
 argument_list|(
 name|G_OBJECT
