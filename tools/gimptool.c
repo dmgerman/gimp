@@ -230,7 +230,7 @@ directive|endif
 end_endif
 
 begin_struct
-DECL|struct|__anon29d84cc50108
+DECL|struct|__anon29a5cbb90108
 specifier|static
 struct|struct
 block|{
@@ -511,7 +511,7 @@ decl_stmt|;
 name|gchar
 name|line
 index|[
-literal|1000
+literal|4096
 index|]
 decl_stmt|;
 if|if
