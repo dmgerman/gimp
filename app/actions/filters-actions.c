@@ -791,6 +791,33 @@ block|,
 name|NULL
 comment|/* FIXME GIMP_HELP_FILTER_UNSHARP_MASK */
 block|}
+block|,
+block|{
+literal|"filters-vignette"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Vignette..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Applies a vignette to an image"
+argument_list|)
+block|,
+literal|"gegl:vignette"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_VIGNETTE */
+block|}
 block|, }
 decl_stmt|;
 end_decl_stmt
