@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a005df80108
+DECL|struct|__anon2c765b330108
 block|{
 DECL|member|replace
 name|gint
@@ -2830,7 +2830,6 @@ condition|)
 break|break;
 block|}
 block|}
-comment|/* XXX: Needs to be ported to high bit depths */
 else|else
 comment|/* multiple images to compose */
 block|{
@@ -2887,6 +2886,10 @@ operator|*
 name|ncompose
 operator|+
 name|channel
+operator|*
+name|hdulist
+operator|->
+name|bpp
 expr_stmt|;
 name|scan_lines
 operator|=
