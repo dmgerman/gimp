@@ -108,7 +108,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2785ae0103
+DECL|enum|__anon277c78460103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1109,6 +1109,10 @@ operator|=
 name|gimp_tile_handler_projection_new
 argument_list|(
 name|graph
+argument_list|,
+name|width
+argument_list|,
+name|height
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_add_handler

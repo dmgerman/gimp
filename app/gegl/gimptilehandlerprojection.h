@@ -144,6 +144,14 @@ DECL|member|tile_height
 name|gint
 name|tile_height
 decl_stmt|;
+DECL|member|proj_width
+name|gint
+name|proj_width
+decl_stmt|;
+DECL|member|proj_height
+name|gint
+name|proj_height
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -179,6 +187,12 @@ parameter_list|(
 name|GeglNode
 modifier|*
 name|graph
+parameter_list|,
+name|gint
+name|proj_width
+parameter_list|,
+name|gint
+name|proj_height
 parameter_list|)
 function_decl|;
 end_function_decl
