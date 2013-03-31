@@ -152,6 +152,10 @@ DECL|member|proj_height
 name|gint
 name|proj_height
 decl_stmt|;
+DECL|member|max_z
+name|gint
+name|max_z
+decl_stmt|;
 block|}
 struct|;
 end_struct
