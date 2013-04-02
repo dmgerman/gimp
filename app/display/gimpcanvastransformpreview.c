@@ -159,7 +159,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2781519e0103
+DECL|enum|__anon2b0ac9c60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1868,7 +1868,7 @@ parameter_list|,
 name|index
 parameter_list|)
 define|\
-value|{                                                             \     gdouble tx1, ty1;                                           \     gdouble tx2, ty2;                                           \                                                                 \     u[sub][index] = private->x1 + (dx * (col + (index& 1)));   \     v[sub][index] = private->y1 + (dy * (row + (index>> 1)));  \                                                                 \     gimp_matrix3_transform_point (&private->transform,          \                                   u[sub][index], v[sub][index], \&tx1,&ty1);                  \                                                                 \     gimp_display_shell_transform_xy_f (shell,                   \                                        tx1, ty1,                \&tx2,&ty2);             \     x[sub][index] = (gint) tx2;                                 \     y[sub][index] = (gint) ty2;                                 \                                                                 \     u[sub][index] = mask_x1 + (du * (col + (index& 1)));       \     v[sub][index] = mask_y1 + (dv * (row + (index>> 1)));      \   }
+value|{                                                             \     gdouble tx1, ty1;                                           \     gdouble tx2, ty2;                                           \                                                                 \     tx2 = private->x1 + (dx * (col + (index& 1)));             \     ty2 = private->y1 + (dy * (row + (index>> 1)));            \                                                                 \     gimp_matrix3_transform_point (&private->transform,          \                                   tx2, ty2,                     \&tx1,&ty1);                  \                                                                 \     gimp_display_shell_transform_xy_f (shell,                   \                                        tx1, ty1,                \&tx2,&ty2);             \     x[sub][index] = (gint) tx2;                                 \     y[sub][index] = (gint) ty2;                                 \                                                                 \     u[sub][index] = mask_x1 + (du * (col + (index& 1)));       \     v[sub][index] = mask_y1 + (dv * (row + (index>> 1)));      \   }
 DECL|macro|COPY_VERTEX (subdest,idest,subsrc,isrc)
 define|#
 directive|define
@@ -3023,7 +3023,7 @@ literal|0
 init|;
 name|j
 operator|<
-literal|3
+literal|2
 condition|;
 name|j
 operator|++
