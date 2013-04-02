@@ -127,7 +127,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a176aff0108
+DECL|struct|__anon2b4b72960108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1094,12 +1094,9 @@ argument_list|(
 literal|"%s:"
 argument_list|)
 argument_list|,
-name|gettext
-argument_list|(
 name|arg
 operator|->
 name|label
-argument_list|)
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -1339,12 +1336,9 @@ name|widget
 operator|=
 name|gtk_check_button_new_with_mnemonic
 argument_list|(
-name|gettext
-argument_list|(
 name|arg
 operator|->
 name|label
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -2155,12 +2149,9 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-name|gettext
-argument_list|(
 name|list
 operator|->
 name|data
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

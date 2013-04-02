@@ -1153,12 +1153,9 @@ name|title
 operator|=
 name|gimp_strip_uline
 argument_list|(
-name|gettext
-argument_list|(
 name|script
 operator|->
 name|menu_label
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* if this looks like a full menu path, use only the last part */
