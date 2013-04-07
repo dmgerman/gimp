@@ -1465,12 +1465,6 @@ argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
 argument_list|)
 expr_stmt|;
-comment|/* XXX this should now be needed and is a performance killer */
-name|gegl_buffer_sample_cleanup
-argument_list|(
-name|mask_buffer
-argument_list|)
-expr_stmt|;
 return|return
 name|TRUE
 return|;
