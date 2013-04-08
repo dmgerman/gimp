@@ -836,7 +836,7 @@ argument_list|)
 expr_stmt|;
 name|src
 operator|+=
-literal|4
+name|n_components
 expr_stmt|;
 name|dest
 operator|+=
