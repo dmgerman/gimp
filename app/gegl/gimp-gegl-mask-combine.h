@@ -6,21 +6,21 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_CHANNEL_COMBINE_H__
+name|__GIMP_GEGL_MASK_COMBINE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_CHANNEL_COMBINE_H__
+DECL|macro|__GIMP_GEGL_MASK_COMBINE_H__
 define|#
 directive|define
-name|__GIMP_CHANNEL_COMBINE_H__
+name|__GIMP_GEGL_MASK_COMBINE_H__
 end_define
 
 begin_function_decl
-name|void
-name|gimp_channel_combine_rect
+name|gboolean
+name|gimp_gegl_mask_combine_rect
 parameter_list|(
-name|GimpChannel
+name|GeglBuffer
 modifier|*
 name|mask
 parameter_list|,
@@ -43,10 +43,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_channel_combine_ellipse
+name|gboolean
+name|gimp_gegl_mask_combine_ellipse
 parameter_list|(
-name|GimpChannel
+name|GeglBuffer
 modifier|*
 name|mask
 parameter_list|,
@@ -72,10 +72,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_channel_combine_ellipse_rect
+name|gboolean
+name|gimp_gegl_mask_combine_ellipse_rect
 parameter_list|(
-name|GimpChannel
+name|GeglBuffer
 modifier|*
 name|mask
 parameter_list|,
@@ -107,40 +107,16 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_channel_combine_mask
+name|gboolean
+name|gimp_gegl_mask_combine_buffer
 parameter_list|(
-name|GimpChannel
-modifier|*
-name|mask
-parameter_list|,
-name|GimpChannel
-modifier|*
-name|add_on
-parameter_list|,
-name|GimpChannelOps
-name|op
-parameter_list|,
-name|gint
-name|off_x
-parameter_list|,
-name|gint
-name|off_y
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_channel_combine_buffer
-parameter_list|(
-name|GimpChannel
+name|GeglBuffer
 modifier|*
 name|mask
 parameter_list|,
 name|GeglBuffer
 modifier|*
-name|add_on_buffer
+name|add_on
 parameter_list|,
 name|GimpChannelOps
 name|op
@@ -160,7 +136,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_CHANNEL_COMBINE_H__ */
+comment|/* __GIMP_GEGL_MASK_COMBINE_H__ */
 end_comment
 
 end_unit
