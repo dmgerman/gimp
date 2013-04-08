@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab0ea890103
+DECL|enum|__anon29225e700103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -5828,8 +5828,7 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-comment|/* 3.5 is completely magic and picked to visually match the old    * gaussian_blur_region() on a crappy laptop display    */
-name|gimp_gegl_apply_gaussian_blur
+name|gimp_gegl_apply_feather
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(
@@ -5846,12 +5845,8 @@ name|drawable
 argument_list|)
 argument_list|,
 name|radius_x
-operator|/
-literal|3.5
 argument_list|,
 name|radius_y
-operator|/
-literal|3.5
 argument_list|)
 expr_stmt|;
 name|channel
