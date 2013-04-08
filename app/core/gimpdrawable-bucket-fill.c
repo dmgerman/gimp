@@ -54,6 +54,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-mask.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gegl/gimp-gegl-mask-combine.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl/gimp-gegl-utils.h"
 end_include
 
@@ -61,12 +73,6 @@ begin_include
 include|#
 directive|include
 file|"gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpchannel.h"
 end_include
 
 begin_include
@@ -452,10 +458,6 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|GimpChannel
-modifier|*
-name|mask
-decl_stmt|;
 name|GeglBuffer
 modifier|*
 name|buffer
@@ -583,7 +585,7 @@ name|gimp
 argument_list|)
 expr_stmt|;
 comment|/*  Do a seed bucket fill...To do this, calculate a new    *  contiguous region. If there is a selection, calculate the    *  intersection of this region with the existing selection.    */
-name|mask
+name|mask_buffer
 operator|=
 name|gimp_image_contiguous_region_by_seed
 argument_list|(
@@ -617,6 +619,10 @@ condition|(
 name|selection
 condition|)
 block|{
+name|GimpDrawable
+modifier|*
+name|sel
+decl_stmt|;
 name|gint
 name|off_x
 init|=
@@ -646,13 +652,23 @@ operator|&
 name|off_y
 argument_list|)
 expr_stmt|;
-name|gimp_channel_combine_mask
+name|sel
+operator|=
+name|GIMP_DRAWABLE
 argument_list|(
-name|mask
-argument_list|,
 name|gimp_image_get_mask
 argument_list|(
 name|image
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_gegl_mask_combine_buffer
+argument_list|(
+name|mask_buffer
+argument_list|,
+name|gimp_drawable_get_buffer
+argument_list|(
+name|sel
 argument_list|)
 argument_list|,
 name|GIMP_CHANNEL_OP_INTERSECT
@@ -665,19 +681,9 @@ name|off_y
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_gegl_mask_bounds
+argument_list|(
 name|mask_buffer
-operator|=
-name|gimp_drawable_get_buffer
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|mask
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_channel_bounds
-argument_list|(
-name|mask
 argument_list|,
 operator|&
 name|x1
@@ -954,7 +960,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|mask
+name|mask_buffer
 argument_list|)
 expr_stmt|;
 comment|/*  Apply it to the image  */

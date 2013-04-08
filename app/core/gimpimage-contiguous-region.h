@@ -17,7 +17,7 @@ name|__GIMP_IMAGE_CONTIGUOUS_REGION_H__
 end_define
 
 begin_function_decl
-name|GimpChannel
+name|GeglBuffer
 modifier|*
 name|gimp_image_contiguous_region_by_seed
 parameter_list|(
@@ -54,7 +54,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpChannel
+name|GeglBuffer
 modifier|*
 name|gimp_image_contiguous_region_by_color
 parameter_list|(

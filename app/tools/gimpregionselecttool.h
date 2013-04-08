@@ -135,7 +135,7 @@ name|gdouble
 name|saved_threshold
 decl_stmt|;
 DECL|member|region_mask
-name|GimpChannel
+name|GeglBuffer
 modifier|*
 name|region_mask
 decl_stmt|;
@@ -168,7 +168,7 @@ modifier|*
 name|undo_desc
 decl_stmt|;
 DECL|member|get_mask
-name|GimpChannel
+name|GeglBuffer
 modifier|*
 function_decl|(
 modifier|*

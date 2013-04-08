@@ -107,7 +107,7 @@ end_include
 
 begin_function_decl
 specifier|static
-name|GimpChannel
+name|GeglBuffer
 modifier|*
 name|gimp_by_color_select_tool_get_mask
 parameter_list|(
@@ -273,7 +273,7 @@ end_function
 
 begin_function
 specifier|static
-name|GimpChannel
+name|GeglBuffer
 modifier|*
 DECL|function|gimp_by_color_select_tool_get_mask (GimpRegionSelectTool * region_select,GimpDisplay * display)
 name|gimp_by_color_select_tool_get_mask

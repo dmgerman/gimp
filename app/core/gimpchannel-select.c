@@ -1954,7 +1954,7 @@ name|GimpItem
 modifier|*
 name|item
 decl_stmt|;
-name|GimpChannel
+name|GeglBuffer
 modifier|*
 name|add_on
 decl_stmt|;
@@ -2047,7 +2047,7 @@ operator|&
 name|add_on_y
 argument_list|)
 expr_stmt|;
-name|gimp_channel_select_channel
+name|gimp_channel_select_buffer
 argument_list|(
 name|channel
 argument_list|,
@@ -2131,7 +2131,7 @@ name|GimpItem
 modifier|*
 name|item
 decl_stmt|;
-name|GimpChannel
+name|GeglBuffer
 modifier|*
 name|add_on
 decl_stmt|;
@@ -2229,7 +2229,7 @@ operator|&
 name|add_on_y
 argument_list|)
 expr_stmt|;
-name|gimp_channel_select_channel
+name|gimp_channel_select_buffer
 argument_list|(
 name|channel
 argument_list|,
