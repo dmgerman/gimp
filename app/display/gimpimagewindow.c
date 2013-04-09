@@ -285,7 +285,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290b54730103
+DECL|enum|__anon2ac37e630103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -398,7 +398,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290b54730208
+DECL|struct|__anon2ac37e630208
 block|{
 DECL|member|window
 name|GimpImageWindow
@@ -6543,6 +6543,18 @@ operator|->
 name|active_shell
 operator|=
 name|shell
+expr_stmt|;
+name|gimp_window_set_primary_focus_widget
+argument_list|(
+name|GIMP_WINDOW
+argument_list|(
+name|window
+argument_list|)
+argument_list|,
+name|shell
+operator|->
+name|canvas
+argument_list|)
 expr_stmt|;
 name|active_display
 operator|=
