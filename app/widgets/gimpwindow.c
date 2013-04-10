@@ -588,6 +588,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|primary_focus
+operator|==
+name|NULL
+operator|||
 name|GTK_IS_WIDGET
 argument_list|(
 name|primary_focus
@@ -596,6 +600,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|primary_focus
+operator|==
+name|NULL
+operator|||
 name|gtk_widget_get_toplevel
 argument_list|(
 name|primary_focus
