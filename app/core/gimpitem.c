@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2889597a0103
+DECL|enum|__anon28ea0f420103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -174,7 +174,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2889597a0203
+DECL|enum|__anon28ea0f420203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6271,7 +6271,7 @@ name|private
 operator|->
 name|offset_nodes
 operator|=
-name|g_list_append
+name|g_list_remove
 argument_list|(
 name|private
 operator|->
