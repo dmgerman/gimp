@@ -4119,9 +4119,9 @@ argument_list|()
 expr_stmt|;
 name|layers_node
 operator|=
-name|gimp_drawable_stack_get_graph
+name|gimp_filter_stack_get_graph
 argument_list|(
-name|GIMP_DRAWABLE_STACK
+name|GIMP_FILTER_STACK
 argument_list|(
 name|private
 operator|->

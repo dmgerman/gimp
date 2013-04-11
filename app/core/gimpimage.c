@@ -358,7 +358,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291706ba0103
+DECL|enum|__anon29bf3d230103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -455,7 +455,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291706ba0203
+DECL|enum|__anon29bf3d230203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5511,9 +5511,9 @@ argument_list|()
 expr_stmt|;
 name|layers_node
 operator|=
-name|gimp_drawable_stack_get_graph
+name|gimp_filter_stack_get_graph
 argument_list|(
-name|GIMP_DRAWABLE_STACK
+name|GIMP_FILTER_STACK
 argument_list|(
 name|private
 operator|->
@@ -5534,9 +5534,9 @@ argument_list|)
 expr_stmt|;
 name|channels_node
 operator|=
-name|gimp_drawable_stack_get_graph
+name|gimp_filter_stack_get_graph
 argument_list|(
-name|GIMP_DRAWABLE_STACK
+name|GIMP_FILTER_STACK
 argument_list|(
 name|private
 operator|->

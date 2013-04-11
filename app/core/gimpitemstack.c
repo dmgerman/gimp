@@ -88,14 +88,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpItemStack,gimp_item_stack,GIMP_TYPE_LIST)
+DECL|function|G_DEFINE_TYPE (GimpItemStack,gimp_item_stack,GIMP_TYPE_FILTER_STACK)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpItemStack
 argument_list|,
 argument|gimp_item_stack
 argument_list|,
-argument|GIMP_TYPE_LIST
+argument|GIMP_TYPE_FILTER_STACK
 argument_list|)
 end_macro
 
