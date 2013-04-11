@@ -68,10 +68,6 @@ name|GeglNode
 modifier|*
 name|mode_node
 decl_stmt|;
-DECL|member|is_last_node
-name|gboolean
-name|is_last_node
-decl_stmt|;
 block|}
 struct|;
 end_struct

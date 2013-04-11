@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa9a5b00103
+DECL|enum|__anon2b52208f0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -192,7 +192,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa9a5b00203
+DECL|enum|__anon2b52208f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2137,9 +2137,9 @@ name|mode
 operator|!=
 name|GIMP_DISSOLVE_MODE
 operator|&&
-name|gimp_drawable_get_is_last_node
+name|gimp_filter_get_is_last_node
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_FILTER
 argument_list|(
 name|layer
 argument_list|)
