@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd018ca0103
+DECL|enum|__anon27b98b530103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -580,6 +580,46 @@ return|return
 name|private
 operator|->
 name|node
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/*  public functions  */
+end_comment
+
+begin_function
+name|GimpFilter
+modifier|*
+DECL|function|gimp_filter_new (const gchar * name)
+name|gimp_filter_new
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|name
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_FILTER
+argument_list|,
+literal|"name"
+argument_list|,
+name|name
+argument_list|,
+name|NULL
+argument_list|)
 return|;
 block|}
 end_function
