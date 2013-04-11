@@ -190,7 +190,7 @@ DECL|macro|YY_FLEX_SUBMINOR_VERSION
 define|#
 directive|define
 name|YY_FLEX_SUBMINOR_VERSION
-value|35
+value|36
 end_define
 
 begin_if
@@ -419,15 +419,6 @@ name|flex_uint32_t
 typedef|;
 end_typedef
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* ! C99 */
-end_comment
-
 begin_comment
 comment|/* Limits of integral types. */
 end_comment
@@ -602,6 +593,15 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* ! C99 */
+end_comment
 
 begin_endif
 endif|#
@@ -864,9 +864,35 @@ endif|#
 directive|endif
 end_endif
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|YY_TYPEDEF_YY_SIZE_T
+end_ifndef
+
+begin_define
+DECL|macro|YY_TYPEDEF_YY_SIZE_T
+define|#
+directive|define
+name|YY_TYPEDEF_YY_SIZE_T
+end_define
+
+begin_typedef
+DECL|typedef|yy_size_t
+typedef|typedef
+name|size_t
+name|yy_size_t
+typedef|;
+end_typedef
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_decl_stmt
 specifier|extern
-name|int
+name|yy_size_t
 name|ncsa_leng
 decl_stmt|;
 end_decl_stmt
@@ -950,32 +976,6 @@ end_define
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|YY_TYPEDEF_YY_SIZE_T
-end_ifndef
-
-begin_define
-DECL|macro|YY_TYPEDEF_YY_SIZE_T
-define|#
-directive|define
-name|YY_TYPEDEF_YY_SIZE_T
-end_define
-
-begin_typedef
-DECL|typedef|yy_size_t
-typedef|typedef
-name|size_t
-name|yy_size_t
-typedef|;
-end_typedef
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_ifndef
-ifndef|#
-directive|ifndef
 name|YY_STRUCT_YY_BUFFER_STATE
 end_ifndef
 
@@ -1015,7 +1015,7 @@ name|yy_buf_size
 decl_stmt|;
 comment|/* Number of characters read into yy_ch_buf, not including EOB 	 * characters. 	 */
 DECL|member|yy_n_chars
-name|int
+name|yy_size_t
 name|yy_n_chars
 decl_stmt|;
 comment|/* Whether we "own" the buffer - i.e., we know we created it, 	 * and can realloc() it to grow it, and should free() it to 	 * delete it. 	 */
@@ -1170,7 +1170,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|yy_n_chars
 specifier|static
-name|int
+name|yy_size_t
 name|yy_n_chars
 decl_stmt|;
 end_decl_stmt
@@ -1182,7 +1182,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|ncsa_leng
-name|int
+name|yy_size_t
 name|ncsa_leng
 decl_stmt|;
 end_decl_stmt
@@ -1400,7 +1400,7 @@ name|char
 modifier|*
 name|bytes
 parameter_list|,
-name|int
+name|yy_size_t
 name|len
 parameter_list|)
 function_decl|;
@@ -1485,13 +1485,11 @@ comment|/* Begin user sect3 */
 end_comment
 
 begin_define
-DECL|macro|ncsa_wrap (n)
+DECL|macro|ncsa_wrap ()
 define|#
 directive|define
 name|ncsa_wrap
-parameter_list|(
-name|n
-parameter_list|)
+parameter_list|()
 value|1
 end_define
 
@@ -3877,7 +3875,7 @@ end_define
 begin_line
 line|#
 directive|line
-number|580
+number|581
 file|"<stdout>"
 end_line
 
@@ -4049,7 +4047,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|yy_size_t
 name|ncsa_get_leng
 parameter_list|(
 name|void
@@ -4309,7 +4307,7 @@ parameter_list|,
 name|max_size
 parameter_list|)
 define|\
-value|if ( YY_CURRENT_BUFFER_LVALUE->yy_is_interactive ) \ 		{ \ 		int c = '*'; \ 		unsigned n; \ 		for ( n = 0; n< max_size&& \ 			     (c = getc( ncsa_in )) != EOF&& c != '\n'; ++n ) \ 			buf[n] = (char) c; \ 		if ( c == '\n' ) \ 			buf[n++] = (char) c; \ 		if ( c == EOF&& ferror( ncsa_in ) ) \ 			YY_FATAL_ERROR( "input in flex scanner failed" ); \ 		result = n; \ 		} \ 	else \ 		{ \ 		errno=0; \ 		while ( (result = fread(buf, 1, max_size, ncsa_in))==0&& ferror(ncsa_in)) \ 			{ \ 			if( errno != EINTR) \ 				{ \ 				YY_FATAL_ERROR( "input in flex scanner failed" ); \ 				break; \ 				} \ 			errno=0; \ 			clearerr(ncsa_in); \ 			} \ 		}\ \  #endif
+value|if ( YY_CURRENT_BUFFER_LVALUE->yy_is_interactive ) \ 		{ \ 		int c = '*'; \ 		size_t n; \ 		for ( n = 0; n< max_size&& \ 			     (c = getc( ncsa_in )) != EOF&& c != '\n'; ++n ) \ 			buf[n] = (char) c; \ 		if ( c == '\n' ) \ 			buf[n++] = (char) c; \ 		if ( c == EOF&& ferror( ncsa_in ) ) \ 			YY_FATAL_ERROR( "input in flex scanner failed" ); \ 		result = n; \ 		} \ 	else \ 		{ \ 		errno=0; \ 		while ( (result = fread(buf, 1, max_size, ncsa_in))==0&& ferror(ncsa_in)) \ 			{ \ 			if( errno != EINTR) \ 				{ \ 				YY_FATAL_ERROR( "input in flex scanner failed" ); \ 				break; \ 				} \ 			errno=0; \ 			clearerr(ncsa_in); \ 			} \ 		}\ \  #endif
 end_define
 
 begin_comment
@@ -4524,7 +4522,7 @@ number|47
 file|"imap_ncsa.l"
 line|#
 directive|line
-number|765
+number|766
 file|"<stdout>"
 if|if
 condition|(
@@ -5096,7 +5094,7 @@ decl_stmt|;
 name|YY_BREAK
 line|#
 directive|line
-number|954
+number|955
 file|"<stdout>"
 case|case
 name|YY_STATE_EOF
@@ -5588,7 +5586,7 @@ literal|0
 expr_stmt|;
 else|else
 block|{
-name|int
+name|yy_size_t
 name|num_to_read
 init|=
 name|YY_CURRENT_BUFFER_LVALUE
@@ -5611,7 +5609,7 @@ comment|/* just a shorter name for the current buffer */
 name|YY_BUFFER_STATE
 name|b
 init|=
-name|YY_CURRENT_BUFFER
+name|YY_CURRENT_BUFFER_LVALUE
 decl_stmt|;
 name|int
 name|yy_c_buf_p_offset
@@ -5636,7 +5634,7 @@ operator|->
 name|yy_is_our_buffer
 condition|)
 block|{
-name|int
+name|yy_size_t
 name|new_size
 init|=
 name|b
@@ -5765,9 +5763,6 @@ operator|(
 name|yy_n_chars
 operator|)
 argument_list|,
-operator|(
-name|size_t
-operator|)
 name|num_to_read
 argument_list|)
 expr_stmt|;
@@ -6310,7 +6305,7 @@ expr_stmt|;
 else|else
 block|{
 comment|/* need more input */
-name|int
+name|yy_size_t
 name|offset
 init|=
 operator|(
@@ -6770,31 +6765,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|__cplusplus
-end_ifndef
-
-begin_function_decl
-specifier|extern
-name|int
-name|isatty
-parameter_list|(
-name|int
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
-
 begin_comment
 comment|/* Initializes or reinitializes a buffer.  * This function is sometimes called more than once on the same buffer,  * such as during a ncsa_restart() or at EOF.  */
 end_comment
@@ -7117,7 +7087,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|int
+name|yy_size_t
 name|num_to_alloc
 decl_stmt|;
 if|if
@@ -7476,11 +7446,11 @@ block|}
 end_function
 
 begin_comment
-comment|/** Setup the input buffer state to scan the given bytes. The next call to ncsa_lex() will  * scan from a @e copy of @a bytes.  * @param bytes the byte buffer to scan  * @param len the number of bytes in the buffer pointed to by @a bytes.  *   * @return the newly allocated buffer state object.  */
+comment|/** Setup the input buffer state to scan the given bytes. The next call to ncsa_lex() will  * scan from a @e copy of @a bytes.  * @param yybytes the byte buffer to scan  * @param _yybytes_len the number of bytes in the buffer pointed to by @a bytes.  *   * @return the newly allocated buffer state object.  */
 end_comment
 
 begin_function
-DECL|function|ncsa__scan_bytes (yyconst char * yybytes,int _yybytes_len)
+DECL|function|ncsa__scan_bytes (yyconst char * yybytes,yy_size_t _yybytes_len)
 name|YY_BUFFER_STATE
 name|ncsa__scan_bytes
 parameter_list|(
@@ -7489,7 +7459,7 @@ name|char
 modifier|*
 name|yybytes
 parameter_list|,
-name|int
+name|yy_size_t
 name|_yybytes_len
 parameter_list|)
 block|{
@@ -7744,7 +7714,7 @@ end_comment
 
 begin_function
 DECL|function|ncsa_get_leng (void)
-name|int
+name|yy_size_t
 name|ncsa_get_leng
 parameter_list|(
 name|void
