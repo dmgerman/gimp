@@ -125,6 +125,17 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
+name|GimpContainer
+modifier|*
+name|gimp_filter_stack_new
+parameter_list|(
+name|GType
+name|filter_type
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GeglNode
 modifier|*
 name|gimp_filter_stack_get_graph
