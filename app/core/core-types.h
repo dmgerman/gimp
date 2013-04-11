@@ -257,6 +257,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpFilter
+typedef|typedef
+name|struct
+name|_GimpFilter
+name|GimpFilter
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpItem
 typedef|typedef
 name|struct

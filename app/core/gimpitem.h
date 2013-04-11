@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpviewable.h"
+file|"gimpfilter.h"
 end_include
 
 begin_define
@@ -100,7 +100,7 @@ struct|struct
 name|_GimpItem
 block|{
 DECL|member|parent_instance
-name|GimpViewable
+name|GimpFilter
 name|parent_instance
 decl_stmt|;
 block|}
@@ -113,7 +113,7 @@ struct|struct
 name|_GimpItemClass
 block|{
 DECL|member|parent_class
-name|GimpViewableClass
+name|GimpFilterClass
 name|parent_class
 decl_stmt|;
 comment|/*  signals  */
@@ -528,19 +528,6 @@ name|feather_radius_x
 parameter_list|,
 name|gdouble
 name|feather_radius_y
-parameter_list|)
-function_decl|;
-DECL|member|get_node
-name|GeglNode
-modifier|*
-function_decl|(
-modifier|*
-name|get_node
-function_decl|)
-parameter_list|(
-name|GimpItem
-modifier|*
-name|item
 parameter_list|)
 function_decl|;
 DECL|member|default_name
@@ -1268,30 +1255,6 @@ name|feather_radius_x
 parameter_list|,
 name|gdouble
 name|feather_radius_y
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GeglNode
-modifier|*
-name|gimp_item_get_node
-parameter_list|(
-name|GimpItem
-modifier|*
-name|item
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GeglNode
-modifier|*
-name|gimp_item_peek_node
-parameter_list|(
-name|GimpItem
-modifier|*
-name|item
 parameter_list|)
 function_decl|;
 end_function_decl

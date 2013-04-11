@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27da21150103
+DECL|enum|__anon27c9cdef0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -558,9 +558,9 @@ name|stack
 operator|->
 name|graph
 argument_list|,
-name|gimp_item_get_node
+name|gimp_filter_get_node
 argument_list|(
-name|GIMP_ITEM
+name|GIMP_FILTER
 argument_list|(
 name|object
 argument_list|)
@@ -648,9 +648,9 @@ name|stack
 operator|->
 name|graph
 argument_list|,
-name|gimp_item_get_node
+name|gimp_filter_get_node
 argument_list|(
-name|GIMP_ITEM
+name|GIMP_FILTER
 argument_list|(
 name|object
 argument_list|)
@@ -982,9 +982,9 @@ name|GeglNode
 modifier|*
 name|node
 init|=
-name|gimp_item_get_node
+name|gimp_filter_get_node
 argument_list|(
-name|GIMP_ITEM
+name|GIMP_FILTER
 argument_list|(
 name|drawable
 argument_list|)
@@ -1100,9 +1100,9 @@ name|index
 decl_stmt|;
 name|node
 operator|=
-name|gimp_item_get_node
+name|gimp_filter_get_node
 argument_list|(
-name|GIMP_ITEM
+name|GIMP_FILTER
 argument_list|(
 name|drawable
 argument_list|)
@@ -1164,9 +1164,9 @@ argument_list|)
 expr_stmt|;
 name|node_above
 operator|=
-name|gimp_item_get_node
+name|gimp_filter_get_node
 argument_list|(
-name|GIMP_ITEM
+name|GIMP_FILTER
 argument_list|(
 name|drawable_above
 argument_list|)
@@ -1211,9 +1211,9 @@ name|GeglNode
 modifier|*
 name|node_below
 init|=
-name|gimp_item_get_node
+name|gimp_filter_get_node
 argument_list|(
-name|GIMP_ITEM
+name|GIMP_FILTER
 argument_list|(
 name|drawable_below
 argument_list|)
@@ -1293,9 +1293,9 @@ name|index
 decl_stmt|;
 name|node
 operator|=
-name|gimp_item_get_node
+name|gimp_filter_get_node
 argument_list|(
-name|GIMP_ITEM
+name|GIMP_FILTER
 argument_list|(
 name|drawable
 argument_list|)
@@ -1357,9 +1357,9 @@ argument_list|)
 expr_stmt|;
 name|node_above
 operator|=
-name|gimp_item_get_node
+name|gimp_filter_get_node
 argument_list|(
-name|GIMP_ITEM
+name|GIMP_FILTER
 argument_list|(
 name|drawable_above
 argument_list|)
@@ -1393,9 +1393,9 @@ name|GeglNode
 modifier|*
 name|node_below
 init|=
-name|gimp_item_get_node
+name|gimp_filter_get_node
 argument_list|(
-name|GIMP_ITEM
+name|GIMP_FILTER
 argument_list|(
 name|drawable_below
 argument_list|)
