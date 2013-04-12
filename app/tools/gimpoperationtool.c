@@ -1393,7 +1393,7 @@ operator|->
 name|image_map
 condition|)
 block|{
-name|gimp_image_map_clear
+name|gimp_image_map_abort
 argument_list|(
 name|GIMP_IMAGE_MAP_TOOL
 argument_list|(
