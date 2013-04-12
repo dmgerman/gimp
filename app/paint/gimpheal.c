@@ -1500,7 +1500,7 @@ DECL|macro|EPSILON
 define|#
 directive|define
 name|EPSILON
-value|0.001
+value|1e-8
 DECL|macro|MAX_ITER
 define|#
 directive|define
