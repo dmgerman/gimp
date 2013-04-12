@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b08b2700103
+DECL|enum|__anon2a42fb3b0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -213,7 +213,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b08b2700203
+DECL|enum|__anon2a42fb3b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7132,7 +7132,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_attach_floating_sel (GimpDrawable * drawable,GimpLayer * floating_sel)
+DECL|function|gimp_drawable_attach_floating_sel (GimpDrawable * drawable,GimpLayer * fs)
 name|gimp_drawable_attach_floating_sel
 parameter_list|(
 name|GimpDrawable
@@ -7141,7 +7141,7 @@ name|drawable
 parameter_list|,
 name|GimpLayer
 modifier|*
-name|floating_sel
+name|fs
 parameter_list|)
 block|{
 name|GimpImage
@@ -7181,7 +7181,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_LAYER
 argument_list|(
-name|floating_sel
+name|fs
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7210,13 +7210,13 @@ name|private
 operator|->
 name|floating_selection
 operator|=
-name|floating_sel
+name|fs
 expr_stmt|;
 name|gimp_image_set_floating_selection
 argument_list|(
 name|image
 argument_list|,
-name|floating_sel
+name|fs
 argument_list|)
 expr_stmt|;
 comment|/*  clear the selection  */
@@ -7224,7 +7224,7 @@ name|gimp_drawable_invalidate_boundary
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
-name|floating_sel
+name|fs
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7237,7 +7237,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|floating_sel
+name|fs
 argument_list|,
 literal|"update"
 argument_list|,
@@ -7251,7 +7251,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_fs_update
 argument_list|(
-name|floating_sel
+name|fs
 argument_list|,
 literal|0
 argument_list|,
@@ -7261,7 +7261,7 @@ name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
-name|floating_sel
+name|fs
 argument_list|)
 argument_list|)
 argument_list|,
@@ -7269,7 +7269,7 @@ name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
-name|floating_sel
+name|fs
 argument_list|)
 argument_list|)
 argument_list|,
@@ -7295,7 +7295,7 @@ name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
-name|floating_sel
+name|fs
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -7334,7 +7334,7 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|floating_sel
+name|fs
 operator|=
 name|drawable
 operator|->
@@ -7351,7 +7351,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|floating_sel
+name|fs
 argument_list|,
 name|gimp_drawable_fs_update
 argument_list|,
@@ -7360,7 +7360,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_fs_update
 argument_list|(
-name|floating_sel
+name|fs
 argument_list|,
 literal|0
 argument_list|,
@@ -7370,7 +7370,7 @@ name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
-name|floating_sel
+name|fs
 argument_list|)
 argument_list|)
 argument_list|,
@@ -7378,7 +7378,7 @@ name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
-name|floating_sel
+name|fs
 argument_list|)
 argument_list|)
 argument_list|,
@@ -7390,7 +7390,7 @@ name|gimp_drawable_invalidate_boundary
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
-name|floating_sel
+name|fs
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7409,6 +7409,49 @@ name|floating_selection
 operator|=
 name|NULL
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|GimpFilter
+modifier|*
+DECL|function|gimp_drawable_get_floating_sel_filter (GimpDrawable * drawable)
+name|gimp_drawable_get_floating_sel_filter
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DRAWABLE
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|gimp_drawable_get_floating_sel
+argument_list|(
+name|drawable
+argument_list|)
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|drawable
+operator|->
+name|private
+operator|->
+name|fs_filter
+return|;
 block|}
 end_function
 
