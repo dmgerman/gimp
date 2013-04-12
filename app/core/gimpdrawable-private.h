@@ -68,6 +68,16 @@ name|GeglNode
 modifier|*
 name|fs_offset_node
 decl_stmt|;
+DECL|member|fs_mask_node
+name|GeglNode
+modifier|*
+name|fs_mask_node
+decl_stmt|;
+DECL|member|fs_mask_offset_node
+name|GeglNode
+modifier|*
+name|fs_mask_offset_node
+decl_stmt|;
 DECL|member|fs_mode_node
 name|GeglNode
 modifier|*
