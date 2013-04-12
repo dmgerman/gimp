@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad7a6d40103
+DECL|enum|__anon2b53e46e0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -207,7 +207,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad7a6d40203
+DECL|enum|__anon2b53e46e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4114,22 +4114,15 @@ name|fs
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_container_add
+name|gimp_drawable_add_filter
 argument_list|(
 name|drawable
-operator|->
-name|private
-operator|->
-name|filter_stack
 argument_list|,
-name|GIMP_OBJECT
-argument_list|(
 name|drawable
 operator|->
 name|private
 operator|->
 name|fs_filter
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -4313,22 +4306,15 @@ argument_list|,
 name|drawable
 argument_list|)
 expr_stmt|;
-name|gimp_container_remove
+name|gimp_drawable_remove_filter
 argument_list|(
 name|drawable
-operator|->
-name|private
-operator|->
-name|filter_stack
 argument_list|,
-name|GIMP_OBJECT
-argument_list|(
 name|drawable
 operator|->
 name|private
 operator|->
 name|fs_filter
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|fs_source
