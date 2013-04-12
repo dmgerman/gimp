@@ -2125,6 +2125,7 @@ block|{
 comment|/* this generally means that the source point has hit the edge        * of the layer, so it is not an error and we should not        * complain, just don't do anything        */
 return|return;
 block|}
+comment|/*  heal should work in perceptual space, use R'G'B' instead of RGB  */
 name|src_copy
 operator|=
 name|gegl_buffer_new
@@ -2146,7 +2147,7 @@ argument_list|)
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"RGBA float"
+literal|"R'G'B'A float"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2171,6 +2172,17 @@ argument_list|,
 name|src_rect
 operator|->
 name|height
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/*  this is ok because we know that the paint_buffer is "RGBA float"  */
+name|gegl_buffer_set_format
+argument_list|(
+name|paint_buffer
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"R'G'B'A float"
 argument_list|)
 argument_list|)
 expr_stmt|;
