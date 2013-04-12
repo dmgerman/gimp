@@ -73,6 +73,11 @@ name|GeglNode
 modifier|*
 name|fs_mode_node
 decl_stmt|;
+DECL|member|fs_affect_node
+name|GeglNode
+modifier|*
+name|fs_affect_node
+decl_stmt|;
 DECL|member|mode_node
 name|GeglNode
 modifier|*
