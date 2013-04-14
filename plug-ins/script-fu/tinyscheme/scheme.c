@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* T I N Y S C H E M E    1 . 4 0  *   Dimitrios Souflis (dsouflis@acm.org)  *   Based on MiniScheme (original credits follow)  * (MINISCM)               coded by Atsushi Moriwaki (11/5/1989)  * (MINISCM)           E-MAIL :  moriwaki@kurims.kurims.kyoto-u.ac.jp  * (MINISCM) This version has been modified by R.C. Secrist.  * (MINISCM)  * (MINISCM) Mini-Scheme is now maintained by Akira KIDA.  * (MINISCM)  * (MINISCM) This is a revised and modified version by Akira KIDA.  * (MINISCM)   current version is 0.85k4 (15 May 1994)  *  */
+comment|/* T I N Y S C H E M E    1 . 4 1  *   Dimitrios Souflis (dsouflis@acm.org)  *   Based on MiniScheme (original credits follow)  * (MINISCM)               coded by Atsushi Moriwaki (11/5/1989)  * (MINISCM)           E-MAIL :  moriwaki@kurims.kurims.kyoto-u.ac.jp  * (MINISCM) This version has been modified by R.C. Secrist.  * (MINISCM)  * (MINISCM) Mini-Scheme is now maintained by Akira KIDA.  * (MINISCM)  * (MINISCM) This is a revised and modified version by Akira KIDA.  * (MINISCM)   current version is 0.85k4 (15 May 1994)  *  */
 end_comment
 
 begin_comment
@@ -445,7 +445,7 @@ DECL|macro|banner
 define|#
 directive|define
 name|banner
-value|"TinyScheme 1.40 (with UTF-8 support)"
+value|"TinyScheme 1.41 (with UTF-8 support)"
 end_define
 
 begin_include
@@ -12292,7 +12292,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon294f9b2f0103
+DECL|enum|__anon28ba09310103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -30720,7 +30720,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon294f9b2f0208
+DECL|struct|__anon28ba09310208
 specifier|static
 struct|struct
 block|{
@@ -30955,7 +30955,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon294f9b2f0308
+DECL|struct|__anon28ba09310308
 typedef|typedef
 struct|struct
 block|{
