@@ -8765,6 +8765,11 @@ name|tmp
 argument_list|,
 literal|"%lo"
 argument_list|,
+operator|(
+name|long
+name|unsigned
+operator|*
+operator|)
 operator|&
 name|x
 argument_list|)
@@ -8798,6 +8803,11 @@ literal|1
 argument_list|,
 literal|"%ld"
 argument_list|,
+operator|(
+name|long
+name|int
+operator|*
+operator|)
 operator|&
 name|x
 argument_list|)
@@ -8842,6 +8852,11 @@ name|tmp
 argument_list|,
 literal|"%lx"
 argument_list|,
+operator|(
+name|long
+name|unsigned
+operator|*
+operator|)
 operator|&
 name|x
 argument_list|)
@@ -9014,6 +9029,11 @@ literal|2
 argument_list|,
 literal|"%x"
 argument_list|,
+operator|(
+name|unsigned
+name|int
+operator|*
+operator|)
 operator|&
 name|c1
 argument_list|)
@@ -12272,7 +12292,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon27b6880d0103
+DECL|enum|__anon294f9b2f0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -13886,7 +13906,7 @@ index|]
 operator|=
 literal|'.'
 expr_stmt|;
-comment|// not found, so add '.0' at the end
+comment|/* not found, so add '.0' at the end */
 name|p
 index|[
 name|f
@@ -30700,7 +30720,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon27b6880d0208
+DECL|struct|__anon294f9b2f0208
 specifier|static
 struct|struct
 block|{
@@ -30935,7 +30955,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon27b6880d0308
+DECL|struct|__anon294f9b2f0308
 typedef|typedef
 struct|struct
 block|{
