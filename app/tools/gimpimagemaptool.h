@@ -134,6 +134,11 @@ name|GObject
 modifier|*
 name|default_config
 decl_stmt|;
+DECL|member|undo_desc
+name|gchar
+modifier|*
+name|undo_desc
+decl_stmt|;
 DECL|member|image_map
 name|GimpImageMap
 modifier|*
@@ -228,6 +233,11 @@ name|GObject
 modifier|*
 modifier|*
 name|config
+parameter_list|,
+name|gchar
+modifier|*
+modifier|*
+name|undo_desc
 parameter_list|)
 function_decl|;
 DECL|member|map
@@ -407,22 +417,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* temp hack for the gegl tool */
-end_comment
-
 begin_function_decl
 name|void
-name|gimp_image_map_tool_create_map
+name|gimp_image_map_tool_get_operation
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
 name|image_map_tool
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|undo_desc
 parameter_list|)
 function_decl|;
 end_function_decl
