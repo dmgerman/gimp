@@ -117,17 +117,17 @@ name|gchar
 modifier|*
 name|operation
 decl_stmt|;
+DECL|member|undo_desc
+name|gchar
+modifier|*
+name|undo_desc
+decl_stmt|;
 DECL|member|config
 name|GimpObject
 modifier|*
 name|config
 decl_stmt|;
 comment|/* dialog */
-DECL|member|dialog_desc
-name|gchar
-modifier|*
-name|dialog_desc
-decl_stmt|;
 DECL|member|options_box
 name|GtkWidget
 modifier|*
@@ -194,7 +194,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|dialog_desc
+name|undo_desc
 parameter_list|)
 function_decl|;
 end_function_decl

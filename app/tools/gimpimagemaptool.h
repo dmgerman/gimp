@@ -418,6 +418,11 @@ parameter_list|(
 name|GimpImageMapTool
 modifier|*
 name|image_map_tool
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
 parameter_list|)
 function_decl|;
 end_function_decl

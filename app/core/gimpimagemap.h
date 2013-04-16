@@ -154,6 +154,11 @@ parameter_list|,
 name|GeglNode
 modifier|*
 name|operation
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
 parameter_list|)
 function_decl|;
 end_function_decl

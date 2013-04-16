@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fe46d30103
+DECL|enum|__anon2bf218bd0103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -4887,6 +4887,8 @@ argument_list|,
 name|ct
 operator|->
 name|render_node
+argument_list|,
+name|GIMP_STOCK_TOOL_CAGE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
