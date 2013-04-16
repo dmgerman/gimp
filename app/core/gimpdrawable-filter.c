@@ -64,6 +64,37 @@ file|"gimpprogress.h"
 end_include
 
 begin_function
+name|GimpContainer
+modifier|*
+DECL|function|gimp_drawable_get_filters (GimpDrawable * drawable)
+name|gimp_drawable_get_filters
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DRAWABLE
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|drawable
+operator|->
+name|private
+operator|->
+name|filter_stack
+return|;
+block|}
+end_function
+
+begin_function
 name|void
 DECL|function|gimp_drawable_add_filter (GimpDrawable * drawable,GimpFilter * filter)
 name|gimp_drawable_add_filter
