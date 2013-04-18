@@ -294,24 +294,6 @@ name|gboolean
 name|dot_for_dot
 decl_stmt|;
 comment|/*  ignore monitor resolution          */
-DECL|member|x_src_dec
-name|gint
-name|x_src_dec
-decl_stmt|;
-comment|/*  increments for the bresenham style */
-DECL|member|y_src_dec
-name|gint
-name|y_src_dec
-decl_stmt|;
-comment|/*  image --> display transformation   */
-DECL|member|x_dest_inc
-name|gint
-name|x_dest_inc
-decl_stmt|;
-DECL|member|y_dest_inc
-name|gint
-name|y_dest_inc
-decl_stmt|;
 DECL|member|zoom
 name|GimpZoomModel
 modifier|*
