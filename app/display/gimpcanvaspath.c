@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b51b5ce0103
+DECL|enum|__anon2b61839d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -932,6 +932,15 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|canvas
+init|=
+name|gimp_canvas_item_get_canvas
+argument_list|(
+name|item
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
 name|private
@@ -940,8 +949,6 @@ name|path
 operator|&&
 name|gtk_widget_get_realized
 argument_list|(
-name|shell
-operator|->
 name|canvas
 argument_list|)
 condition|)
@@ -968,8 +975,6 @@ name|gdk_cairo_create
 argument_list|(
 name|gtk_widget_get_window
 argument_list|(
-name|shell
-operator|->
 name|canvas
 argument_list|)
 argument_list|)

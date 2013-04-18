@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27504b690103
+DECL|enum|__anon2b9c9fcc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -788,6 +788,15 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|canvas
+init|=
+name|gimp_canvas_item_get_canvas
+argument_list|(
+name|item
+argument_list|)
+decl_stmt|;
 name|PangoLayout
 modifier|*
 name|layout
@@ -951,8 +960,6 @@ name|gimp_canvas_get_layout
 argument_list|(
 name|GIMP_CANVAS
 argument_list|(
-name|shell
-operator|->
 name|canvas
 argument_list|)
 argument_list|,
