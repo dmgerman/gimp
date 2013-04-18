@@ -285,41 +285,6 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_display_shell_update_scrollbars_and_rulers:  * @shell: the #GimpDisplayShell  *  **/
-end_comment
-
-begin_function
-name|void
-DECL|function|gimp_display_shell_update_scrollbars_and_rulers (GimpDisplayShell * shell)
-name|gimp_display_shell_update_scrollbars_and_rulers
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|)
-block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_DISPLAY_SHELL
-argument_list|(
-name|shell
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_scale_update_scrollbars
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_scale_update_rulers
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
 comment|/**  * gimp_display_shell_scale_update_scrollbars:  * @shell:  *  **/
 end_comment
 
