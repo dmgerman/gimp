@@ -63,12 +63,6 @@ directive|include
 file|"gimpdisplayshell-style.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpdisplayshell-transform.h"
-end_include
-
 begin_define
 DECL|macro|GIMP_SAMPLE_POINT_DRAW_SIZE
 define|#
@@ -79,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e069180103
+DECL|enum|__anon27dd30510103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -687,16 +681,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_canvas_sample_point_transform (GimpCanvasItem * item,GimpDisplayShell * shell,gdouble * x,gdouble * y)
+DECL|function|gimp_canvas_sample_point_transform (GimpCanvasItem * item,gdouble * x,gdouble * y)
 name|gimp_canvas_sample_point_transform
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|,
 name|gdouble
 modifier|*
@@ -716,9 +706,9 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-name|gimp_display_shell_transform_xy_f
+name|gimp_canvas_item_transform_xy_f
 argument_list|(
-name|shell
+name|item
 argument_list|,
 name|private
 operator|->
@@ -819,8 +809,6 @@ decl_stmt|;
 name|gimp_canvas_sample_point_transform
 argument_list|(
 name|item
-argument_list|,
-name|shell
 argument_list|,
 operator|&
 name|x
@@ -1041,8 +1029,6 @@ decl_stmt|;
 name|gimp_canvas_sample_point_transform
 argument_list|(
 name|item
-argument_list|,
-name|shell
 argument_list|,
 operator|&
 name|x

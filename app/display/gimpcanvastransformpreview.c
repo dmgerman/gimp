@@ -93,12 +93,6 @@ directive|include
 file|"gimpdisplayshell.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpdisplayshell-transform.h"
-end_include
-
 begin_define
 DECL|macro|INT_MULT (a,b,t)
 define|#
@@ -159,7 +153,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ddbd150103
+DECL|enum|__anon29c569bb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1194,16 +1188,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_canvas_transform_preview_transform (GimpCanvasItem * item,GimpDisplayShell * shell,cairo_rectangle_int_t * extents)
+DECL|function|gimp_canvas_transform_preview_transform (GimpCanvasItem * item,cairo_rectangle_int_t * extents)
 name|gimp_canvas_transform_preview_transform
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|,
 name|cairo_rectangle_int_t
 modifier|*
@@ -1377,9 +1367,9 @@ name|dx4
 decl_stmt|,
 name|dy4
 decl_stmt|;
-name|gimp_display_shell_transform_xy_f
+name|gimp_canvas_item_transform_xy_f
 argument_list|(
-name|shell
+name|item
 argument_list|,
 name|tx1
 argument_list|,
@@ -1392,9 +1382,9 @@ operator|&
 name|dy1
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_transform_xy_f
+name|gimp_canvas_item_transform_xy_f
 argument_list|(
-name|shell
+name|item
 argument_list|,
 name|tx2
 argument_list|,
@@ -1407,9 +1397,9 @@ operator|&
 name|dy2
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_transform_xy_f
+name|gimp_canvas_item_transform_xy_f
 argument_list|(
-name|shell
+name|item
 argument_list|,
 name|tx3
 argument_list|,
@@ -1422,9 +1412,9 @@ operator|&
 name|dy3
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_transform_xy_f
+name|gimp_canvas_item_transform_xy_f
 argument_list|(
-name|shell
+name|item
 argument_list|,
 name|tx4
 argument_list|,
@@ -1676,8 +1666,6 @@ name|gimp_canvas_transform_preview_transform
 argument_list|(
 name|item
 argument_list|,
-name|shell
-argument_list|,
 name|NULL
 argument_list|)
 condition|)
@@ -1868,7 +1856,7 @@ parameter_list|,
 name|index
 parameter_list|)
 define|\
-value|{                                                             \     gdouble tx1, ty1;                                           \     gdouble tx2, ty2;                                           \                                                                 \     tx2 = private->x1 + (dx * (col + (index& 1)));             \     ty2 = private->y1 + (dy * (row + (index>> 1)));            \                                                                 \     gimp_matrix3_transform_point (&private->transform,          \                                   tx2, ty2,                     \&tx1,&ty1);                  \                                                                 \     gimp_display_shell_transform_xy_f (shell,                   \                                        tx1, ty1,                \&tx2,&ty2);             \     x[sub][index] = (gint) tx2;                                 \     y[sub][index] = (gint) ty2;                                 \                                                                 \     u[sub][index] = mask_x1 + (du * (col + (index& 1)));       \     v[sub][index] = mask_y1 + (dv * (row + (index>> 1)));      \   }
+value|{                                                             \     gdouble tx1, ty1;                                           \     gdouble tx2, ty2;                                           \                                                                 \     tx2 = private->x1 + (dx * (col + (index& 1)));             \     ty2 = private->y1 + (dy * (row + (index>> 1)));            \                                                                 \     gimp_matrix3_transform_point (&private->transform,          \                                   tx2, ty2,                     \&tx1,&ty1);                  \                                                                 \     gimp_canvas_item_transform_xy_f (item,                      \                                      tx1, ty1,                  \&tx2,&ty2);               \     x[sub][index] = (gint) tx2;                                 \     y[sub][index] = (gint) ty2;                                 \                                                                 \     u[sub][index] = mask_x1 + (du * (col + (index& 1)));       \     v[sub][index] = mask_y1 + (dv * (row + (index>> 1)));      \   }
 DECL|macro|COPY_VERTEX (subdest,idest,subsrc,isrc)
 define|#
 directive|define
@@ -2227,8 +2215,6 @@ condition|(
 name|gimp_canvas_transform_preview_transform
 argument_list|(
 name|item
-argument_list|,
-name|shell
 argument_list|,
 operator|&
 name|rectangle

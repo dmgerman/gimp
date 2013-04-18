@@ -57,15 +57,9 @@ directive|include
 file|"gimpdisplayshell.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpdisplayshell-transform.h"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon278eab910103
+DECL|enum|__anon2a081dac0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -682,16 +676,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_canvas_polygon_transform (GimpCanvasItem * item,GimpDisplayShell * shell,GimpVector2 * points)
+DECL|function|gimp_canvas_polygon_transform (GimpCanvasItem * item,GimpVector2 * points)
 name|gimp_canvas_polygon_transform
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|,
 name|GimpVector2
 modifier|*
@@ -726,9 +716,9 @@ name|i
 operator|++
 control|)
 block|{
-name|gimp_display_shell_transform_xy_f
+name|gimp_canvas_item_transform_xy_f
 argument_list|(
-name|shell
+name|item
 argument_list|,
 name|private
 operator|->
@@ -856,8 +846,6 @@ expr_stmt|;
 name|gimp_canvas_polygon_transform
 argument_list|(
 name|item
-argument_list|,
-name|shell
 argument_list|,
 name|points
 argument_list|)
@@ -1004,8 +992,6 @@ expr_stmt|;
 name|gimp_canvas_polygon_transform
 argument_list|(
 name|item
-argument_list|,
-name|shell
 argument_list|,
 name|points
 argument_list|)

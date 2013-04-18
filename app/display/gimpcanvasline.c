@@ -51,15 +51,9 @@ directive|include
 file|"gimpdisplayshell.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpdisplayshell-transform.h"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon29e0d92b0103
+DECL|enum|__anon27af06880103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -621,16 +615,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_canvas_line_transform (GimpCanvasItem * item,GimpDisplayShell * shell,gdouble * x1,gdouble * y1,gdouble * x2,gdouble * y2)
+DECL|function|gimp_canvas_line_transform (GimpCanvasItem * item,gdouble * x1,gdouble * y1,gdouble * x2,gdouble * y2)
 name|gimp_canvas_line_transform
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|,
 name|gdouble
 modifier|*
@@ -658,9 +648,9 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-name|gimp_display_shell_transform_xy_f
+name|gimp_canvas_item_transform_xy_f
 argument_list|(
-name|shell
+name|item
 argument_list|,
 name|private
 operator|->
@@ -675,9 +665,9 @@ argument_list|,
 name|y1
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_transform_xy_f
+name|gimp_canvas_item_transform_xy_f
 argument_list|(
-name|shell
+name|item
 argument_list|,
 name|private
 operator|->
@@ -772,8 +762,6 @@ name|gimp_canvas_line_transform
 argument_list|(
 name|item
 argument_list|,
-name|shell
-argument_list|,
 operator|&
 name|x1
 argument_list|,
@@ -847,8 +835,6 @@ decl_stmt|;
 name|gimp_canvas_line_transform
 argument_list|(
 name|item
-argument_list|,
-name|shell
 argument_list|,
 operator|&
 name|x1

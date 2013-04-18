@@ -57,15 +57,9 @@ directive|include
 file|"gimpdisplayshell-style.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpdisplayshell-transform.h"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon28b6c8480103
+DECL|enum|__anon29195dac0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -587,16 +581,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_canvas_guide_transform (GimpCanvasItem * item,GimpDisplayShell * shell,gdouble * x1,gdouble * y1,gdouble * x2,gdouble * y2)
+DECL|function|gimp_canvas_guide_transform (GimpCanvasItem * item,gdouble * x1,gdouble * y1,gdouble * x2,gdouble * y2)
 name|gimp_canvas_guide_transform
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|,
 name|gdouble
 modifier|*
@@ -624,6 +614,15 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|canvas
+init|=
+name|gimp_canvas_item_get_canvas
+argument_list|(
+name|item
+argument_list|)
+decl_stmt|;
 name|GtkAllocation
 name|allocation
 decl_stmt|;
@@ -634,8 +633,6 @@ name|y
 decl_stmt|;
 name|gtk_widget_get_allocation
 argument_list|(
-name|shell
-operator|->
 name|canvas
 argument_list|,
 operator|&
@@ -676,9 +673,9 @@ block|{
 case|case
 name|GIMP_ORIENTATION_HORIZONTAL
 case|:
-name|gimp_display_shell_transform_xy
+name|gimp_canvas_item_transform_xy
 argument_list|(
-name|shell
+name|item
 argument_list|,
 literal|0
 argument_list|,
@@ -707,9 +704,9 @@ break|break;
 case|case
 name|GIMP_ORIENTATION_VERTICAL
 case|:
-name|gimp_display_shell_transform_xy
+name|gimp_canvas_item_transform_xy
 argument_list|(
-name|shell
+name|item
 argument_list|,
 name|private
 operator|->
@@ -775,8 +772,6 @@ decl_stmt|;
 name|gimp_canvas_guide_transform
 argument_list|(
 name|item
-argument_list|,
-name|shell
 argument_list|,
 operator|&
 name|x1
@@ -851,8 +846,6 @@ decl_stmt|;
 name|gimp_canvas_guide_transform
 argument_list|(
 name|item
-argument_list|,
-name|shell
 argument_list|,
 operator|&
 name|x1

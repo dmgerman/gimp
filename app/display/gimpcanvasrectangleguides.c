@@ -51,12 +51,6 @@ directive|include
 file|"gimpdisplayshell.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpdisplayshell-transform.h"
-end_include
-
 begin_define
 DECL|macro|SQRT5
 define|#
@@ -67,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d14eac0103
+DECL|enum|__anon277d39ff0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -741,16 +735,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_canvas_rectangle_guides_transform (GimpCanvasItem * item,GimpDisplayShell * shell,gdouble * x1,gdouble * y1,gdouble * x2,gdouble * y2)
+DECL|function|gimp_canvas_rectangle_guides_transform (GimpCanvasItem * item,gdouble * x1,gdouble * y1,gdouble * x2,gdouble * y2)
 name|gimp_canvas_rectangle_guides_transform
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|,
 name|gdouble
 modifier|*
@@ -778,9 +768,9 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-name|gimp_display_shell_transform_xy_f
+name|gimp_canvas_item_transform_xy_f
 argument_list|(
-name|shell
+name|item
 argument_list|,
 name|MIN
 argument_list|(
@@ -817,9 +807,9 @@ argument_list|,
 name|y1
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_transform_xy_f
+name|gimp_canvas_item_transform_xy_f
 argument_list|(
-name|shell
+name|item
 argument_list|,
 name|MAX
 argument_list|(
@@ -1071,8 +1061,6 @@ decl_stmt|;
 name|gimp_canvas_rectangle_guides_transform
 argument_list|(
 name|item
-argument_list|,
-name|shell
 argument_list|,
 operator|&
 name|x1
@@ -1644,8 +1632,6 @@ decl_stmt|;
 name|gimp_canvas_rectangle_guides_transform
 argument_list|(
 name|item
-argument_list|,
-name|shell
 argument_list|,
 operator|&
 name|x1

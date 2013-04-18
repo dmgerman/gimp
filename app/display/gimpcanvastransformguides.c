@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcanvastransformguides.h"
 end_include
 
@@ -55,18 +61,6 @@ begin_include
 include|#
 directive|include
 file|"gimpdisplayshell.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdisplayshell-transform.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimp-utils.h"
 end_include
 
 begin_define
@@ -79,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d0e83b0103
+DECL|enum|__anon2c54c5e40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -827,16 +821,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_canvas_transform_guides_transform (GimpCanvasItem * item,GimpDisplayShell * shell,gdouble * tx1,gdouble * ty1,gdouble * tx2,gdouble * ty2,gdouble * tx3,gdouble * ty3,gdouble * tx4,gdouble * ty4)
+DECL|function|gimp_canvas_transform_guides_transform (GimpCanvasItem * item,gdouble * tx1,gdouble * ty1,gdouble * tx2,gdouble * ty2,gdouble * tx3,gdouble * ty3,gdouble * tx4,gdouble * ty4)
 name|gimp_canvas_transform_guides_transform
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|,
 name|gdouble
 modifier|*
@@ -994,16 +984,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_line (cairo_t * cr,GimpDisplayShell * shell,GimpMatrix3 * transform,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
+DECL|function|draw_line (cairo_t * cr,GimpCanvasItem * item,GimpMatrix3 * transform,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
 name|draw_line
 parameter_list|(
 name|cairo_t
 modifier|*
 name|cr
 parameter_list|,
-name|GimpDisplayShell
+name|GimpCanvasItem
 modifier|*
-name|shell
+name|item
 parameter_list|,
 name|GimpMatrix3
 modifier|*
@@ -1052,9 +1042,9 @@ operator|&
 name|y2
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_transform_xy_f
+name|gimp_canvas_item_transform_xy_f
 argument_list|(
-name|shell
+name|item
 argument_list|,
 name|x1
 argument_list|,
@@ -1067,9 +1057,9 @@ operator|&
 name|y1
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_transform_xy_f
+name|gimp_canvas_item_transform_xy_f
 argument_list|(
-name|shell
+name|item
 argument_list|,
 name|x2
 argument_list|,
@@ -1142,16 +1132,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_hline (cairo_t * cr,GimpDisplayShell * shell,GimpMatrix3 * transform,gdouble x1,gdouble x2,gdouble y)
+DECL|function|draw_hline (cairo_t * cr,GimpCanvasItem * item,GimpMatrix3 * transform,gdouble x1,gdouble x2,gdouble y)
 name|draw_hline
 parameter_list|(
 name|cairo_t
 modifier|*
 name|cr
 parameter_list|,
-name|GimpDisplayShell
+name|GimpCanvasItem
 modifier|*
-name|shell
+name|item
 parameter_list|,
 name|GimpMatrix3
 modifier|*
@@ -1171,7 +1161,7 @@ name|draw_line
 argument_list|(
 name|cr
 argument_list|,
-name|shell
+name|item
 argument_list|,
 name|transform
 argument_list|,
@@ -1190,16 +1180,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_vline (cairo_t * cr,GimpDisplayShell * shell,GimpMatrix3 * transform,gdouble y1,gdouble y2,gdouble x)
+DECL|function|draw_vline (cairo_t * cr,GimpCanvasItem * item,GimpMatrix3 * transform,gdouble y1,gdouble y2,gdouble x)
 name|draw_vline
 parameter_list|(
 name|cairo_t
 modifier|*
 name|cr
 parameter_list|,
-name|GimpDisplayShell
+name|GimpCanvasItem
 modifier|*
-name|shell
+name|item
 parameter_list|,
 name|GimpMatrix3
 modifier|*
@@ -1219,7 +1209,7 @@ name|draw_line
 argument_list|(
 name|cr
 argument_list|,
-name|shell
+name|item
 argument_list|,
 name|transform
 argument_list|,
@@ -1295,8 +1285,6 @@ name|gimp_canvas_transform_guides_transform
 argument_list|(
 name|item
 argument_list|,
-name|shell
-argument_list|,
 operator|&
 name|x1
 argument_list|,
@@ -1322,9 +1310,9 @@ operator|&
 name|y4
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_transform_xy_f
+name|gimp_canvas_item_transform_xy_f
 argument_list|(
-name|shell
+name|item
 argument_list|,
 name|x1
 argument_list|,
@@ -1337,9 +1325,9 @@ operator|&
 name|y1
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_transform_xy_f
+name|gimp_canvas_item_transform_xy_f
 argument_list|(
-name|shell
+name|item
 argument_list|,
 name|x2
 argument_list|,
@@ -1352,9 +1340,9 @@ operator|&
 name|y2
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_transform_xy_f
+name|gimp_canvas_item_transform_xy_f
 argument_list|(
-name|shell
+name|item
 argument_list|,
 name|x3
 argument_list|,
@@ -1367,9 +1355,9 @@ operator|&
 name|y3
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_transform_xy_f
+name|gimp_canvas_item_transform_xy_f
 argument_list|(
-name|shell
+name|item
 argument_list|,
 name|x4
 argument_list|,
@@ -1532,7 +1520,7 @@ name|draw_hline
 argument_list|(
 name|cr
 argument_list|,
-name|shell
+name|item
 argument_list|,
 operator|&
 name|private
@@ -1564,7 +1552,7 @@ name|draw_vline
 argument_list|(
 name|cr
 argument_list|,
-name|shell
+name|item
 argument_list|,
 operator|&
 name|private
@@ -1600,7 +1588,7 @@ name|draw_hline
 argument_list|(
 name|cr
 argument_list|,
-name|shell
+name|item
 argument_list|,
 operator|&
 name|private
@@ -1634,7 +1622,7 @@ name|draw_hline
 argument_list|(
 name|cr
 argument_list|,
-name|shell
+name|item
 argument_list|,
 operator|&
 name|private
@@ -1668,7 +1656,7 @@ name|draw_vline
 argument_list|(
 name|cr
 argument_list|,
-name|shell
+name|item
 argument_list|,
 operator|&
 name|private
@@ -1702,7 +1690,7 @@ name|draw_vline
 argument_list|(
 name|cr
 argument_list|,
-name|shell
+name|item
 argument_list|,
 operator|&
 name|private
@@ -1754,7 +1742,7 @@ name|draw_hline
 argument_list|(
 name|cr
 argument_list|,
-name|shell
+name|item
 argument_list|,
 operator|&
 name|private
@@ -1792,7 +1780,7 @@ name|draw_vline
 argument_list|(
 name|cr
 argument_list|,
-name|shell
+name|item
 argument_list|,
 operator|&
 name|private
@@ -1835,7 +1823,7 @@ name|draw_hline
 argument_list|(
 name|cr
 argument_list|,
-name|shell
+name|item
 argument_list|,
 operator|&
 name|private
@@ -1879,7 +1867,7 @@ name|draw_hline
 argument_list|(
 name|cr
 argument_list|,
-name|shell
+name|item
 argument_list|,
 operator|&
 name|private
@@ -1923,7 +1911,7 @@ name|draw_vline
 argument_list|(
 name|cr
 argument_list|,
-name|shell
+name|item
 argument_list|,
 operator|&
 name|private
@@ -1967,7 +1955,7 @@ name|draw_vline
 argument_list|(
 name|cr
 argument_list|,
-name|shell
+name|item
 argument_list|,
 operator|&
 name|private
@@ -2042,7 +2030,7 @@ name|draw_line
 argument_list|(
 name|cr
 argument_list|,
-name|shell
+name|item
 argument_list|,
 operator|&
 name|private
@@ -2075,7 +2063,7 @@ name|draw_line
 argument_list|(
 name|cr
 argument_list|,
-name|shell
+name|item
 argument_list|,
 operator|&
 name|private
@@ -2108,7 +2096,7 @@ name|draw_line
 argument_list|(
 name|cr
 argument_list|,
-name|shell
+name|item
 argument_list|,
 operator|&
 name|private
@@ -2141,7 +2129,7 @@ name|draw_line
 argument_list|(
 name|cr
 argument_list|,
-name|shell
+name|item
 argument_list|,
 operator|&
 name|private
@@ -2355,7 +2343,7 @@ name|draw_line
 argument_list|(
 name|cr
 argument_list|,
-name|shell
+name|item
 argument_list|,
 operator|&
 name|private
@@ -2426,7 +2414,7 @@ name|draw_line
 argument_list|(
 name|cr
 argument_list|,
-name|shell
+name|item
 argument_list|,
 operator|&
 name|private
@@ -2502,8 +2490,6 @@ name|gimp_canvas_transform_guides_transform
 argument_list|(
 name|item
 argument_list|,
-name|shell
-argument_list|,
 operator|&
 name|x1
 argument_list|,
@@ -2529,9 +2515,9 @@ operator|&
 name|y4
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_transform_xy_f
+name|gimp_canvas_item_transform_xy_f
 argument_list|(
-name|shell
+name|item
 argument_list|,
 name|x1
 argument_list|,
@@ -2544,9 +2530,9 @@ operator|&
 name|y1
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_transform_xy_f
+name|gimp_canvas_item_transform_xy_f
 argument_list|(
-name|shell
+name|item
 argument_list|,
 name|x2
 argument_list|,
@@ -2559,9 +2545,9 @@ operator|&
 name|y2
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_transform_xy_f
+name|gimp_canvas_item_transform_xy_f
 argument_list|(
-name|shell
+name|item
 argument_list|,
 name|x3
 argument_list|,
@@ -2574,9 +2560,9 @@ operator|&
 name|y3
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_transform_xy_f
+name|gimp_canvas_item_transform_xy_f
 argument_list|(
-name|shell
+name|item
 argument_list|,
 name|x4
 argument_list|,

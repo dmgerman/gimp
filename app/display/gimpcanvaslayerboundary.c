@@ -81,15 +81,9 @@ directive|include
 file|"gimpdisplayshell-style.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpdisplayshell-transform.h"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon2b28fd930103
+DECL|enum|__anon2b651f7c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

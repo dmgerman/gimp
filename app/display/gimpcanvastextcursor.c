@@ -51,15 +51,9 @@ directive|include
 file|"gimpdisplayshell.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpdisplayshell-transform.h"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon274b40530103
+DECL|enum|__anon2aa57ad30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -674,16 +668,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_canvas_text_cursor_transform (GimpCanvasItem * item,GimpDisplayShell * shell,gdouble * x,gdouble * y,gdouble * w,gdouble * h)
+DECL|function|gimp_canvas_text_cursor_transform (GimpCanvasItem * item,gdouble * x,gdouble * y,gdouble * w,gdouble * h)
 name|gimp_canvas_text_cursor_transform
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|,
 name|gdouble
 modifier|*
@@ -711,9 +701,9 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-name|gimp_display_shell_transform_xy_f
+name|gimp_canvas_item_transform_xy_f
 argument_list|(
-name|shell
+name|item
 argument_list|,
 name|MIN
 argument_list|(
@@ -750,9 +740,9 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_transform_xy_f
+name|gimp_canvas_item_transform_xy_f
 argument_list|(
-name|shell
+name|item
 argument_list|,
 name|MAX
 argument_list|(
@@ -917,8 +907,6 @@ name|gimp_canvas_text_cursor_transform
 argument_list|(
 name|item
 argument_list|,
-name|shell
-argument_list|,
 operator|&
 name|x
 argument_list|,
@@ -1075,8 +1063,6 @@ decl_stmt|;
 name|gimp_canvas_text_cursor_transform
 argument_list|(
 name|item
-argument_list|,
-name|shell
 argument_list|,
 operator|&
 name|x
