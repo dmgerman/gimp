@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplayshell-style.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimptool.h"
 end_include
 

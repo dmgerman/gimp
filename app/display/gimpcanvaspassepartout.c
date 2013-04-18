@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcanvas.h"
+file|"gimpcanvas-style.h"
 end_include
 
 begin_include
@@ -49,12 +49,6 @@ begin_include
 include|#
 directive|include
 file|"gimpdisplayshell-draw.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdisplayshell-style.h"
 end_include
 
 begin_comment
@@ -403,9 +397,12 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_set_passe_partout_style
+name|gimp_canvas_set_passe_partout_style
 argument_list|(
-name|shell
+name|gimp_canvas_item_get_canvas
+argument_list|(
+name|item
+argument_list|)
 argument_list|,
 name|cr
 argument_list|)

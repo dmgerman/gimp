@@ -6,23 +6,23 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_DISPLAY_SHELL_STYLE_H__
+name|__GIMP_CANVAS_STYLE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_DISPLAY_SHELL_STYLE_H__
+DECL|macro|__GIMP_CANVAS_STYLE_H__
 define|#
 directive|define
-name|__GIMP_DISPLAY_SHELL_STYLE_H__
+name|__GIMP_CANVAS_STYLE_H__
 end_define
 
 begin_function_decl
 name|void
-name|gimp_display_shell_set_guide_style
+name|gimp_canvas_set_guide_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -36,11 +36,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_set_sample_point_style
+name|gimp_canvas_set_sample_point_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -54,11 +54,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_set_grid_style
+name|gimp_canvas_set_grid_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -73,11 +73,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_set_pen_style
+name|gimp_canvas_set_pen_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -96,11 +96,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_set_layer_style
+name|gimp_canvas_set_layer_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -115,11 +115,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_set_selection_out_style
+name|gimp_canvas_set_selection_out_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -130,11 +130,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_set_selection_in_style
+name|gimp_canvas_set_selection_in_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -148,11 +148,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_set_vectors_bg_style
+name|gimp_canvas_set_vectors_bg_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -166,11 +166,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_set_vectors_fg_style
+name|gimp_canvas_set_vectors_fg_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -184,11 +184,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_set_outline_bg_style
+name|gimp_canvas_set_outline_bg_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -199,11 +199,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_set_outline_fg_style
+name|gimp_canvas_set_outline_fg_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -214,11 +214,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_set_passe_partout_style
+name|gimp_canvas_set_passe_partout_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -229,11 +229,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_set_tool_bg_style
+name|gimp_canvas_set_tool_bg_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -244,11 +244,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_set_tool_fg_style
+name|gimp_canvas_set_tool_fg_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -266,7 +266,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_DISPLAY_SHELL_STYLE_H__ */
+comment|/* __GIMP_CANVAS_STYLE_H__ */
 end_comment
 
 end_unit

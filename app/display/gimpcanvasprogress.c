@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcanvas-style.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcanvasitem-utils.h"
 end_include
 
@@ -67,12 +73,6 @@ begin_include
 include|#
 directive|include
 file|"gimpdisplayshell.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdisplayshell-style.h"
 end_include
 
 begin_define
@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon298e633a0103
+DECL|enum|__anon277f9d230103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1247,9 +1247,12 @@ name|text
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_set_tool_bg_style
+name|gimp_canvas_set_tool_bg_style
 argument_list|(
-name|shell
+name|gimp_canvas_item_get_canvas
+argument_list|(
+name|item
+argument_list|)
 argument_list|,
 name|cr
 argument_list|)

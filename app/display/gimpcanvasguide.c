@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcanvas-style.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcanvasguide.h"
 end_include
 
@@ -51,15 +57,9 @@ directive|include
 file|"gimpdisplayshell.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpdisplayshell-style.h"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon29195dac0103
+DECL|enum|__anon276cb9dc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -972,9 +972,12 @@ operator|->
 name|offset_y
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_set_guide_style
+name|gimp_canvas_set_guide_style
 argument_list|(
-name|shell
+name|gimp_canvas_item_get_canvas
+argument_list|(
+name|item
+argument_list|)
 argument_list|,
 name|cr
 argument_list|,

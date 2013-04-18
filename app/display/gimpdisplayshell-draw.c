@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcanvas-style.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcanvaspath.h"
 end_include
 
@@ -115,12 +121,6 @@ begin_include
 include|#
 directive|include
 file|"gimpdisplayshell-scroll.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdisplayshell-style.h"
 end_include
 
 begin_include
@@ -339,9 +339,11 @@ operator|>
 literal|0
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_set_selection_out_style
+name|gimp_canvas_set_selection_out_style
 argument_list|(
 name|shell
+operator|->
+name|canvas
 argument_list|,
 name|cr
 argument_list|)
@@ -406,9 +408,11 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_set_selection_in_style
+name|gimp_canvas_set_selection_in_style
 argument_list|(
 name|shell
+operator|->
+name|canvas
 argument_list|,
 name|cr
 argument_list|,

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpdisplayshell-style.c  * Copyright (C) 2010  Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpcanvas-style.c  * Copyright (C) 2010  Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -60,13 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplayshell.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdisplayshell-style.h"
+file|"gimpcanvas-style.h"
 end_include
 
 begin_decl_stmt
@@ -569,12 +563,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_guide_style (GimpDisplayShell * shell,cairo_t * cr,gboolean active)
-name|gimp_display_shell_set_guide_style
+DECL|function|gimp_canvas_set_guide_style (GtkWidget * canvas,cairo_t * cr,gboolean active)
+name|gimp_canvas_set_guide_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -590,9 +584,9 @@ name|pattern
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_DISPLAY_SHELL
+name|GTK_IS_WIDGET
 argument_list|(
-name|shell
+name|canvas
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -658,12 +652,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_sample_point_style (GimpDisplayShell * shell,cairo_t * cr,gboolean active)
-name|gimp_display_shell_set_sample_point_style
+DECL|function|gimp_canvas_set_sample_point_style (GtkWidget * canvas,cairo_t * cr,gboolean active)
+name|gimp_canvas_set_sample_point_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -675,9 +669,9 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_DISPLAY_SHELL
+name|GTK_IS_WIDGET
 argument_list|(
-name|shell
+name|canvas
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -721,12 +715,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_grid_style (GimpDisplayShell * shell,cairo_t * cr,GimpGrid * grid)
-name|gimp_display_shell_set_grid_style
+DECL|function|gimp_canvas_set_grid_style (GtkWidget * canvas,cairo_t * cr,GimpGrid * grid)
+name|gimp_canvas_set_grid_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -739,9 +733,9 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_DISPLAY_SHELL
+name|GTK_IS_WIDGET
 argument_list|(
-name|shell
+name|canvas
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -881,12 +875,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_pen_style (GimpDisplayShell * shell,cairo_t * cr,const GimpRGB * color,gint width)
-name|gimp_display_shell_set_pen_style
+DECL|function|gimp_canvas_set_pen_style (GtkWidget * canvas,cairo_t * cr,const GimpRGB * color,gint width)
+name|gimp_canvas_set_pen_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -903,9 +897,9 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_DISPLAY_SHELL
+name|GTK_IS_WIDGET
 argument_list|(
-name|shell
+name|canvas
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -963,12 +957,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_layer_style (GimpDisplayShell * shell,cairo_t * cr,GimpLayer * layer)
-name|gimp_display_shell_set_layer_style
+DECL|function|gimp_canvas_set_layer_style (GtkWidget * canvas,cairo_t * cr,GimpLayer * layer)
+name|gimp_canvas_set_layer_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -985,9 +979,9 @@ name|pattern
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_DISPLAY_SHELL
+name|GTK_IS_WIDGET
 argument_list|(
-name|shell
+name|canvas
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1106,12 +1100,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_selection_out_style (GimpDisplayShell * shell,cairo_t * cr)
-name|gimp_display_shell_set_selection_out_style
+DECL|function|gimp_canvas_set_selection_out_style (GtkWidget * canvas,cairo_t * cr)
+name|gimp_canvas_set_selection_out_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -1124,9 +1118,9 @@ name|pattern
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_DISPLAY_SHELL
+name|GTK_IS_WIDGET
 argument_list|(
-name|shell
+name|canvas
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1181,12 +1175,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_selection_in_style (GimpDisplayShell * shell,cairo_t * cr,gint index)
-name|gimp_display_shell_set_selection_in_style
+DECL|function|gimp_canvas_set_selection_in_style (GtkWidget * canvas,cairo_t * cr,gint index)
+name|gimp_canvas_set_selection_in_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -1202,9 +1196,9 @@ name|pattern
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_DISPLAY_SHELL
+name|GTK_IS_WIDGET
 argument_list|(
-name|shell
+name|canvas
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1259,12 +1253,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_vectors_bg_style (GimpDisplayShell * shell,cairo_t * cr,gboolean active)
-name|gimp_display_shell_set_vectors_bg_style
+DECL|function|gimp_canvas_set_vectors_bg_style (GtkWidget * canvas,cairo_t * cr,gboolean active)
+name|gimp_canvas_set_vectors_bg_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -1276,9 +1270,9 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_DISPLAY_SHELL
+name|GTK_IS_WIDGET
 argument_list|(
-name|shell
+name|canvas
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1322,12 +1316,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_vectors_fg_style (GimpDisplayShell * shell,cairo_t * cr,gboolean active)
-name|gimp_display_shell_set_vectors_fg_style
+DECL|function|gimp_canvas_set_vectors_fg_style (GtkWidget * canvas,cairo_t * cr,gboolean active)
+name|gimp_canvas_set_vectors_fg_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -1339,9 +1333,9 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_DISPLAY_SHELL
+name|GTK_IS_WIDGET
 argument_list|(
-name|shell
+name|canvas
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1385,12 +1379,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_outline_bg_style (GimpDisplayShell * shell,cairo_t * cr)
-name|gimp_display_shell_set_outline_bg_style
+DECL|function|gimp_canvas_set_outline_bg_style (GtkWidget * canvas,cairo_t * cr)
+name|gimp_canvas_set_outline_bg_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -1399,9 +1393,9 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_DISPLAY_SHELL
+name|GTK_IS_WIDGET
 argument_list|(
-name|shell
+name|canvas
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1432,12 +1426,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_outline_fg_style (GimpDisplayShell * shell,cairo_t * cr)
-name|gimp_display_shell_set_outline_fg_style
+DECL|function|gimp_canvas_set_outline_fg_style (GtkWidget * canvas,cairo_t * cr)
+name|gimp_canvas_set_outline_fg_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -1458,9 +1452,9 @@ block|}
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_DISPLAY_SHELL
+name|GTK_IS_WIDGET
 argument_list|(
-name|shell
+name|canvas
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1505,12 +1499,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_passe_partout_style (GimpDisplayShell * shell,cairo_t * cr)
-name|gimp_display_shell_set_passe_partout_style
+DECL|function|gimp_canvas_set_passe_partout_style (GtkWidget * canvas,cairo_t * cr)
+name|gimp_canvas_set_passe_partout_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -1519,9 +1513,9 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_DISPLAY_SHELL
+name|GTK_IS_WIDGET
 argument_list|(
-name|shell
+name|canvas
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1545,12 +1539,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_tool_bg_style (GimpDisplayShell * shell,cairo_t * cr)
-name|gimp_display_shell_set_tool_bg_style
+DECL|function|gimp_canvas_set_tool_bg_style (GtkWidget * canvas,cairo_t * cr)
+name|gimp_canvas_set_tool_bg_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -1559,9 +1553,9 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_DISPLAY_SHELL
+name|GTK_IS_WIDGET
 argument_list|(
-name|shell
+name|canvas
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1599,12 +1593,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_tool_fg_style (GimpDisplayShell * shell,cairo_t * cr,gboolean highlight)
-name|gimp_display_shell_set_tool_fg_style
+DECL|function|gimp_canvas_set_tool_fg_style (GtkWidget * canvas,cairo_t * cr,gboolean highlight)
+name|gimp_canvas_set_tool_fg_style
 parameter_list|(
-name|GimpDisplayShell
+name|GtkWidget
 modifier|*
-name|shell
+name|canvas
 parameter_list|,
 name|cairo_t
 modifier|*

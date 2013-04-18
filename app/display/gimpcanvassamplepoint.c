@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcanvas-style.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcanvassamplepoint.h"
 end_include
 
@@ -55,12 +61,6 @@ begin_include
 include|#
 directive|include
 file|"gimpdisplayshell.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdisplayshell-style.h"
 end_include
 
 begin_define
@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dd30510103
+DECL|enum|__anon27504b690103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1167,9 +1167,12 @@ operator|->
 name|sample_point_style
 condition|)
 block|{
-name|gimp_display_shell_set_sample_point_style
+name|gimp_canvas_set_sample_point_style
 argument_list|(
-name|shell
+name|gimp_canvas_item_get_canvas
+argument_list|(
+name|item
+argument_list|)
 argument_list|,
 name|cr
 argument_list|,
@@ -1240,9 +1243,12 @@ operator|->
 name|sample_point_style
 condition|)
 block|{
-name|gimp_display_shell_set_sample_point_style
+name|gimp_canvas_set_sample_point_style
 argument_list|(
-name|shell
+name|gimp_canvas_item_get_canvas
+argument_list|(
+name|item
+argument_list|)
 argument_list|,
 name|cr
 argument_list|,

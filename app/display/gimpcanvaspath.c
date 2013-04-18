@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcanvas-style.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcanvaspath.h"
 end_include
 
@@ -63,15 +69,9 @@ directive|include
 file|"gimpdisplayshell.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpdisplayshell-style.h"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon2b7a80660103
+DECL|enum|__anon2b51b5ce0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1213,6 +1213,15 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|canvas
+init|=
+name|gimp_canvas_item_get_canvas
+argument_list|(
+name|item
+argument_list|)
+decl_stmt|;
 name|gboolean
 name|active
 decl_stmt|;
@@ -1233,9 +1242,9 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_set_vectors_bg_style
+name|gimp_canvas_set_vectors_bg_style
 argument_list|(
-name|shell
+name|canvas
 argument_list|,
 name|cr
 argument_list|,
@@ -1247,9 +1256,9 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_set_vectors_fg_style
+name|gimp_canvas_set_vectors_fg_style
 argument_list|(
-name|shell
+name|canvas
 argument_list|,
 name|cr
 argument_list|,
@@ -1265,9 +1274,9 @@ break|break;
 case|case
 name|GIMP_PATH_STYLE_OUTLINE
 case|:
-name|gimp_display_shell_set_outline_bg_style
+name|gimp_canvas_set_outline_bg_style
 argument_list|(
-name|shell
+name|canvas
 argument_list|,
 name|cr
 argument_list|)
@@ -1277,9 +1286,9 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_set_outline_fg_style
+name|gimp_canvas_set_outline_fg_style
 argument_list|(
-name|shell
+name|canvas
 argument_list|,
 name|cr
 argument_list|)

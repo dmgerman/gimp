@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcanvas-style.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcanvasitem.h"
 end_include
 
@@ -60,18 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplayshell-style.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayshell-transform.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b408b40103
+DECL|enum|__anon2757f8a50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b408b40203
+DECL|enum|__anon2757f8a50203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1100,9 +1100,12 @@ operator|->
 name|line_cap
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_set_tool_bg_style
+name|gimp_canvas_set_tool_bg_style
 argument_list|(
-name|shell
+name|gimp_canvas_item_get_canvas
+argument_list|(
+name|item
+argument_list|)
 argument_list|,
 name|cr
 argument_list|)
@@ -1112,9 +1115,12 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_set_tool_fg_style
+name|gimp_canvas_set_tool_fg_style
 argument_list|(
-name|shell
+name|gimp_canvas_item_get_canvas
+argument_list|(
+name|item
+argument_list|)
 argument_list|,
 name|cr
 argument_list|,
@@ -1159,9 +1165,12 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-name|gimp_display_shell_set_tool_bg_style
+name|gimp_canvas_set_tool_bg_style
 argument_list|(
-name|shell
+name|gimp_canvas_item_get_canvas
+argument_list|(
+name|item
+argument_list|)
 argument_list|,
 name|cr
 argument_list|)
@@ -1178,9 +1187,12 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_set_tool_fg_style
+name|gimp_canvas_set_tool_fg_style
 argument_list|(
-name|shell
+name|gimp_canvas_item_get_canvas
+argument_list|(
+name|item
+argument_list|)
 argument_list|,
 name|cr
 argument_list|,
