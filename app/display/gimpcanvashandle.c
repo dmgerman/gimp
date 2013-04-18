@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2db4770103
+DECL|enum|__anon28cb01d50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -219,10 +219,6 @@ name|GimpCanvasItem
 modifier|*
 name|item
 parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|,
 name|cairo_t
 modifier|*
 name|cr
@@ -239,10 +235,6 @@ parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -255,10 +247,6 @@ parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|,
 name|gdouble
 name|x
@@ -1068,16 +1056,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_canvas_handle_draw (GimpCanvasItem * item,GimpDisplayShell * shell,cairo_t * cr)
+DECL|function|gimp_canvas_handle_draw (GimpCanvasItem * item,cairo_t * cr)
 name|gimp_canvas_handle_draw
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -1552,16 +1536,12 @@ begin_function
 specifier|static
 name|cairo_region_t
 modifier|*
-DECL|function|gimp_canvas_handle_get_extents (GimpCanvasItem * item,GimpDisplayShell * shell)
+DECL|function|gimp_canvas_handle_get_extents (GimpCanvasItem * item)
 name|gimp_canvas_handle_get_extents
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|)
 block|{
 name|GimpCanvasHandlePrivate
@@ -1773,16 +1753,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_canvas_handle_hit (GimpCanvasItem * item,GimpDisplayShell * shell,gdouble x,gdouble y)
+DECL|function|gimp_canvas_handle_hit (GimpCanvasItem * item,gdouble x,gdouble y)
 name|gimp_canvas_handle_hit
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|,
 name|gdouble
 name|x

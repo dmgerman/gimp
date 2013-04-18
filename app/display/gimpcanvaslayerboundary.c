@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1d641f0103
+DECL|enum|__anon2b75dd8d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -190,10 +190,6 @@ name|GimpCanvasItem
 modifier|*
 name|item
 parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|,
 name|cairo_t
 modifier|*
 name|cr
@@ -210,10 +206,6 @@ parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -226,10 +218,6 @@ parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -541,16 +529,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_canvas_layer_boundary_draw (GimpCanvasItem * item,GimpDisplayShell * shell,cairo_t * cr)
+DECL|function|gimp_canvas_layer_boundary_draw (GimpCanvasItem * item,cairo_t * cr)
 name|gimp_canvas_layer_boundary_draw
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -581,8 +565,6 @@ name|draw
 argument_list|(
 name|item
 argument_list|,
-name|shell
-argument_list|,
 name|cr
 argument_list|)
 expr_stmt|;
@@ -593,16 +575,12 @@ begin_function
 specifier|static
 name|cairo_region_t
 modifier|*
-DECL|function|gimp_canvas_layer_boundary_get_extents (GimpCanvasItem * item,GimpDisplayShell * shell)
+DECL|function|gimp_canvas_layer_boundary_get_extents (GimpCanvasItem * item)
 name|gimp_canvas_layer_boundary_get_extents
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|)
 block|{
 name|GimpCanvasLayerBoundaryPrivate
@@ -629,8 +607,6 @@ operator|->
 name|get_extents
 argument_list|(
 name|item
-argument_list|,
-name|shell
 argument_list|)
 return|;
 return|return
@@ -642,16 +618,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_canvas_layer_boundary_stroke (GimpCanvasItem * item,GimpDisplayShell * shell,cairo_t * cr)
+DECL|function|gimp_canvas_layer_boundary_stroke (GimpCanvasItem * item,cairo_t * cr)
 name|gimp_canvas_layer_boundary_stroke
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -667,21 +639,6 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-name|cairo_translate
-argument_list|(
-name|cr
-argument_list|,
-operator|-
-name|shell
-operator|->
-name|offset_x
-argument_list|,
-operator|-
-name|shell
-operator|->
-name|offset_y
-argument_list|)
-expr_stmt|;
 name|gimp_canvas_set_layer_style
 argument_list|(
 name|gimp_canvas_item_get_canvas

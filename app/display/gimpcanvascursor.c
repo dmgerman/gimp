@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a33fe370103
+DECL|enum|__anon2bd545510103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -179,10 +179,6 @@ name|GimpCanvasItem
 modifier|*
 name|item
 parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|,
 name|cairo_t
 modifier|*
 name|cr
@@ -199,10 +195,6 @@ parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -524,16 +516,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_canvas_cursor_draw (GimpCanvasItem * item,GimpDisplayShell * shell,cairo_t * cr)
+DECL|function|gimp_canvas_cursor_draw (GimpCanvasItem * item,cairo_t * cr)
 name|gimp_canvas_cursor_draw
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -634,16 +622,12 @@ begin_function
 specifier|static
 name|cairo_region_t
 modifier|*
-DECL|function|gimp_canvas_cursor_get_extents (GimpCanvasItem * item,GimpDisplayShell * shell)
+DECL|function|gimp_canvas_cursor_get_extents (GimpCanvasItem * item)
 name|gimp_canvas_cursor_get_extents
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|)
 block|{
 name|GimpCanvasCursorPrivate

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2757f8a50103
+DECL|enum|__anon2c841c7e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2757f8a50203
+DECL|enum|__anon2c841c7e0203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -260,10 +260,6 @@ name|GimpCanvasItem
 modifier|*
 name|item
 parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|,
 name|cairo_t
 modifier|*
 name|cr
@@ -280,10 +276,6 @@ parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -296,10 +288,6 @@ parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -317,10 +305,6 @@ name|GimpCanvasItem
 modifier|*
 name|item
 parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|,
 name|cairo_t
 modifier|*
 name|cr
@@ -336,10 +320,6 @@ parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|,
 name|gdouble
 name|x
@@ -1019,16 +999,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_canvas_item_real_draw (GimpCanvasItem * item,GimpDisplayShell * shell,cairo_t * cr)
+DECL|function|gimp_canvas_item_real_draw (GimpCanvasItem * item,cairo_t * cr)
 name|gimp_canvas_item_real_draw
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -1045,16 +1021,12 @@ begin_function
 specifier|static
 name|cairo_region_t
 modifier|*
-DECL|function|gimp_canvas_item_real_get_extents (GimpCanvasItem * item,GimpDisplayShell * shell)
+DECL|function|gimp_canvas_item_real_get_extents (GimpCanvasItem * item)
 name|gimp_canvas_item_real_get_extents
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|)
 block|{
 return|return
@@ -1066,16 +1038,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_canvas_item_real_stroke (GimpCanvasItem * item,GimpDisplayShell * shell,cairo_t * cr)
+DECL|function|gimp_canvas_item_real_stroke (GimpCanvasItem * item,cairo_t * cr)
 name|gimp_canvas_item_real_stroke
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -1140,16 +1108,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_canvas_item_real_fill (GimpCanvasItem * item,GimpDisplayShell * shell,cairo_t * cr)
+DECL|function|gimp_canvas_item_real_fill (GimpCanvasItem * item,cairo_t * cr)
 name|gimp_canvas_item_real_fill
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|,
 name|cairo_t
 modifier|*
@@ -1212,16 +1176,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_canvas_item_real_hit (GimpCanvasItem * item,GimpDisplayShell * shell,gdouble x,gdouble y)
+DECL|function|gimp_canvas_item_real_hit (GimpCanvasItem * item,gdouble x,gdouble y)
 name|gimp_canvas_item_real_hit
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|,
 name|gdouble
 name|x
@@ -1239,6 +1199,46 @@ end_function
 begin_comment
 comment|/*  public functions  */
 end_comment
+
+begin_function
+name|GimpDisplayShell
+modifier|*
+DECL|function|gimp_canvas_item_get_shell (GimpCanvasItem * item)
+name|gimp_canvas_item_get_shell
+parameter_list|(
+name|GimpCanvasItem
+modifier|*
+name|item
+parameter_list|)
+block|{
+name|GimpCanvasItemPrivate
+modifier|*
+name|private
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CANVAS_ITEM
+argument_list|(
+name|item
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|private
+operator|=
+name|GET_PRIVATE
+argument_list|(
+name|item
+argument_list|)
+expr_stmt|;
+return|return
+name|private
+operator|->
+name|shell
+return|;
+block|}
+end_function
 
 begin_function
 name|GimpImage
@@ -1388,10 +1388,6 @@ name|draw
 argument_list|(
 name|item
 argument_list|,
-name|private
-operator|->
-name|shell
-argument_list|,
 name|cr
 argument_list|)
 expr_stmt|;
@@ -1451,10 +1447,6 @@ operator|->
 name|get_extents
 argument_list|(
 name|item
-argument_list|,
-name|private
-operator|->
-name|shell
 argument_list|)
 return|;
 return|return
@@ -1479,10 +1471,6 @@ name|gdouble
 name|y
 parameter_list|)
 block|{
-name|GimpCanvasItemPrivate
-modifier|*
-name|private
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_CANVAS_ITEM
@@ -1491,13 +1479,6 @@ name|item
 argument_list|)
 argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|private
-operator|=
-name|GET_PRIVATE
-argument_list|(
-name|item
 argument_list|)
 expr_stmt|;
 return|return
@@ -1509,10 +1490,6 @@ operator|->
 name|hit
 argument_list|(
 name|item
-argument_list|,
-name|private
-operator|->
-name|shell
 argument_list|,
 name|x
 argument_list|,
@@ -2209,6 +2186,85 @@ end_function
 
 begin_function
 name|void
+DECL|function|gimp_canvas_item_transform (GimpCanvasItem * item,cairo_t * cr)
+name|gimp_canvas_item_transform
+parameter_list|(
+name|GimpCanvasItem
+modifier|*
+name|item
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|)
+block|{
+name|GimpCanvasItemPrivate
+modifier|*
+name|private
+decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CANVAS_ITEM
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|cr
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|private
+operator|=
+name|GET_PRIVATE
+argument_list|(
+name|item
+argument_list|)
+expr_stmt|;
+name|cairo_translate
+argument_list|(
+name|cr
+argument_list|,
+operator|-
+name|private
+operator|->
+name|shell
+operator|->
+name|offset_x
+argument_list|,
+operator|-
+name|private
+operator|->
+name|shell
+operator|->
+name|offset_y
+argument_list|)
+expr_stmt|;
+name|cairo_scale
+argument_list|(
+name|cr
+argument_list|,
+name|private
+operator|->
+name|shell
+operator|->
+name|scale_x
+argument_list|,
+name|private
+operator|->
+name|shell
+operator|->
+name|scale_y
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|gimp_canvas_item_transform_xy (GimpCanvasItem * item,gdouble x,gdouble y,gint * tx,gint * ty)
 name|gimp_canvas_item_transform_xy
 parameter_list|(
@@ -2463,10 +2519,6 @@ name|stroke
 argument_list|(
 name|item
 argument_list|,
-name|private
-operator|->
-name|shell
-argument_list|,
 name|cr
 argument_list|)
 expr_stmt|;
@@ -2535,10 +2587,6 @@ operator|->
 name|fill
 argument_list|(
 name|item
-argument_list|,
-name|private
-operator|->
-name|shell
 argument_list|,
 name|cr
 argument_list|)
