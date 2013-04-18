@@ -346,7 +346,7 @@ name|scale_y
 operator|-
 name|shell
 operator|->
-name|offset_x
+name|offset_y
 expr_stmt|;
 comment|/* The projected coordinates might overflow a gint in the case of big      images at high zoom levels, so we clamp them here to avoid problems.  */
 operator|*
