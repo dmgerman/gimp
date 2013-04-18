@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplayshell-draw.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayshell-expose.h"
 end_include
 
@@ -124,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d4a6c10108
+DECL|struct|__anon294a76f90108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -951,7 +945,7 @@ name|out_offset_y
 operator|=
 name|in_offset_y
 expr_stmt|;
-name|gimp_display_shell_draw_get_scaled_image_size
+name|gimp_display_shell_scale_get_image_size
 argument_list|(
 name|shell
 argument_list|,
@@ -1167,7 +1161,7 @@ name|shell
 operator|->
 name|offset_y
 expr_stmt|;
-name|gimp_display_shell_draw_get_scaled_image_size
+name|gimp_display_shell_scale_get_image_size
 argument_list|(
 name|shell
 argument_list|,
@@ -1567,7 +1561,7 @@ name|display
 argument_list|)
 condition|)
 return|return;
-name|gimp_display_shell_draw_get_scaled_image_size
+name|gimp_display_shell_scale_get_image_size
 argument_list|(
 name|shell
 argument_list|,
@@ -1737,7 +1731,7 @@ name|display
 argument_list|)
 condition|)
 return|return;
-name|gimp_display_shell_draw_get_scaled_image_size
+name|gimp_display_shell_scale_get_image_size
 argument_list|(
 name|shell
 argument_list|,

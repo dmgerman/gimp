@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-scale.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-scroll.h"
 end_include
 
@@ -676,7 +682,7 @@ decl_stmt|;
 name|gint
 name|sh
 decl_stmt|;
-name|gimp_display_shell_draw_get_scaled_image_size
+name|gimp_display_shell_scale_get_image_size
 argument_list|(
 name|shell
 argument_list|,
@@ -1785,7 +1791,7 @@ name|shell
 operator|->
 name|offset_y
 expr_stmt|;
-name|gimp_display_shell_draw_get_scaled_image_size
+name|gimp_display_shell_scale_get_image_size
 argument_list|(
 name|shell
 argument_list|,
