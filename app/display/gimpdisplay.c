@@ -168,7 +168,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2b42dc0103
+DECL|enum|__anon2795d8380103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3282,24 +3282,13 @@ name|y1
 operator|)
 expr_stmt|;
 comment|/*  display the area  */
-name|gimp_display_shell_transform_xy_f
+name|gimp_display_shell_transform_bounds
 argument_list|(
 name|shell
 argument_list|,
 name|x
 argument_list|,
 name|y
-argument_list|,
-operator|&
-name|x1_f
-argument_list|,
-operator|&
-name|y1_f
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_transform_xy_f
-argument_list|(
-name|shell
 argument_list|,
 name|x
 operator|+
@@ -3308,6 +3297,12 @@ argument_list|,
 name|y
 operator|+
 name|h
+argument_list|,
+operator|&
+name|x1_f
+argument_list|,
+operator|&
+name|y1_f
 argument_list|,
 operator|&
 name|x2_f

@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-rotate.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-scale.h"
 end_include
 
@@ -118,7 +124,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a64c700108
+DECL|struct|__anon2b9dd8f70108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -361,6 +367,11 @@ operator|->
 name|offset_y
 operator|+=
 name|y_offset
+expr_stmt|;
+name|gimp_display_shell_rotate_update_transform
+argument_list|(
+name|shell
+argument_list|)
 expr_stmt|;
 name|gimp_overlay_box_scroll
 argument_list|(

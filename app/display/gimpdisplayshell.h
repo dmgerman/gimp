@@ -281,6 +281,20 @@ name|gdouble
 name|scale_y
 decl_stmt|;
 comment|/*  vertical scale factor              */
+DECL|member|rotate_angle
+name|gdouble
+name|rotate_angle
+decl_stmt|;
+DECL|member|rotate_transform
+name|cairo_matrix_t
+modifier|*
+name|rotate_transform
+decl_stmt|;
+DECL|member|rotate_untransform
+name|cairo_matrix_t
+modifier|*
+name|rotate_untransform
+decl_stmt|;
 DECL|member|monitor_xres
 name|gdouble
 name|monitor_xres
@@ -677,6 +691,14 @@ decl_stmt|;
 DECL|member|scroll_last_y
 name|gint
 name|scroll_last_y
+decl_stmt|;
+DECL|member|rotating
+name|gboolean
+name|rotating
+decl_stmt|;
+DECL|member|rotate_drag_angle
+name|gdouble
+name|rotate_drag_angle
 decl_stmt|;
 DECL|member|scroll_info
 name|gpointer
