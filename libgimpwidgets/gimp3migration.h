@@ -145,7 +145,7 @@ end_if
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd3f50f0103
+DECL|enum|__anon292354c80103
 block|{
 DECL|enumerator|GDK_MODIFIER_INTENT_PRIMARY_ACCELERATOR
 name|GDK_MODIFIER_INTENT_PRIMARY_ACCELERATOR
@@ -211,6 +211,21 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_function_decl
+name|gboolean
+name|gdk_cairo_get_clip_rectangle
+parameter_list|(
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
+name|GdkRectangle
+modifier|*
+name|rect
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#
