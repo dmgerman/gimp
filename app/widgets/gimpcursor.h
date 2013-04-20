@@ -63,6 +63,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GimpCursorType
+name|gimp_cursor_rotate
+parameter_list|(
+name|GimpCursorType
+name|cursor
+parameter_list|,
+name|gdouble
+name|angle
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

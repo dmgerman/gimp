@@ -793,11 +793,11 @@ if|if
 condition|(
 name|cursor_type
 operator|<
-name|GIMP_CURSOR_CORNER_TOP_LEFT
+name|GIMP_CURSOR_CORNER_TOP
 operator|||
 name|cursor_type
 operator|>
-name|GIMP_CURSOR_SIDE_BOTTOM_RIGHT
+name|GIMP_CURSOR_SIDE_TOP_LEFT
 condition|)
 block|{
 comment|/* the corner and side cursors count as crosshair, so leave                * them and override everything else                */
@@ -834,6 +834,17 @@ block|}
 break|break;
 block|}
 block|}
+name|cursor_type
+operator|=
+name|gimp_cursor_rotate
+argument_list|(
+name|cursor_type
+argument_list|,
+name|shell
+operator|->
+name|rotate_angle
+argument_list|)
+expr_stmt|;
 name|cursor_handedness
 operator|=
 name|GIMP_GUI_CONFIG
