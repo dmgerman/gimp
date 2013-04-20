@@ -670,13 +670,13 @@ DECL|member|scrolling
 name|gboolean
 name|scrolling
 decl_stmt|;
-DECL|member|scroll_start_x
+DECL|member|scroll_last_x
 name|gint
-name|scroll_start_x
+name|scroll_last_x
 decl_stmt|;
-DECL|member|scroll_start_y
+DECL|member|scroll_last_y
 name|gint
-name|scroll_start_y
+name|scroll_last_y
 decl_stmt|;
 DECL|member|scroll_info
 name|gpointer
