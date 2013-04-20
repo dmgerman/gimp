@@ -594,6 +594,12 @@ modifier|*
 name|scale_dialog
 decl_stmt|;
 comment|/*  scale (zoom) dialog                */
+DECL|member|rotate_dialog
+name|GtkWidget
+modifier|*
+name|rotate_dialog
+decl_stmt|;
+comment|/*  rotate dialog                      */
 DECL|member|nav_popup
 name|GtkWidget
 modifier|*

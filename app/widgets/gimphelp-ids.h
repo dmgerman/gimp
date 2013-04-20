@@ -526,6 +526,14 @@ value|"gimp-view-rotate-270"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_VIEW_ROTATE_OTHER
+define|#
+directive|define
+name|GIMP_HELP_VIEW_ROTATE_OTHER
+value|"gimp-view-rotate-other"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_VIEW_SHOW_SELECTION
 define|#
 directive|define
