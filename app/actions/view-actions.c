@@ -451,7 +451,7 @@ block|,
 block|{
 literal|"view-rotate-reset"
 block|,
-name|NULL
+name|GIMP_STOCK_RESET
 block|,
 name|NC_
 argument_list|(
