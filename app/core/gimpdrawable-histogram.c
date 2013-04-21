@@ -387,11 +387,11 @@ argument_list|,
 name|GEGL_RECTANGLE
 argument_list|(
 name|x
-operator|-
+operator|+
 name|off_x
 argument_list|,
 name|y
-operator|-
+operator|+
 name|off_y
 argument_list|,
 name|width

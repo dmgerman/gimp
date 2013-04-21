@@ -493,6 +493,7 @@ condition|(
 name|iter
 operator|->
 name|length
+operator|--
 condition|)
 block|{
 specifier|const
@@ -881,7 +882,7 @@ index|[
 literal|1
 index|]
 operator|/
-literal|255
+literal|255.0
 decl_stmt|;
 name|VALUE
 argument_list|(
@@ -1024,7 +1025,7 @@ index|[
 literal|3
 index|]
 operator|/
-literal|255
+literal|255.0
 decl_stmt|;
 name|VALUE
 argument_list|(
