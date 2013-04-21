@@ -155,7 +155,7 @@ name|rotate_angle
 operator|=
 name|value
 expr_stmt|;
-name|gimp_display_shell_rotate_update_transform
+name|gimp_display_shell_rotated
 argument_list|(
 name|shell
 argument_list|)
