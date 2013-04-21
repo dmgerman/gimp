@@ -360,7 +360,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ae17bf0103
+DECL|enum|__anon29e4af3c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -388,7 +388,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ae17bf0203
+DECL|enum|__anon29e4af3c0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5438,6 +5438,17 @@ operator|->
 name|canvas
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|shell
+operator|->
+name|rotate_angle
+operator|=
+literal|0.0
+expr_stmt|;
+name|gimp_display_shell_rotate_update_transform
+argument_list|(
+name|shell
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_expose_full
