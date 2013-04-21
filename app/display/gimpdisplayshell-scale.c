@@ -1274,9 +1274,6 @@ decl_stmt|;
 name|gdouble
 name|current_scale
 decl_stmt|;
-name|gdouble
-name|real_new_scale
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
@@ -1309,8 +1306,7 @@ name|zoom_type
 operator|!=
 name|GIMP_ZOOM_TO
 condition|)
-block|{
-name|real_new_scale
+name|new_scale
 operator|=
 name|gimp_zoom_model_zoom_step
 argument_list|(
@@ -1319,20 +1315,12 @@ argument_list|,
 name|current_scale
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|real_new_scale
-operator|=
-name|new_scale
-expr_stmt|;
-block|}
 if|if
 condition|(
 operator|!
 name|SCALE_EQUALS
 argument_list|(
-name|real_new_scale
+name|new_scale
 argument_list|,
 name|current_scale
 argument_list|)
@@ -1367,7 +1355,7 @@ name|zoom
 argument_list|,
 name|GIMP_ZOOM_TO
 argument_list|,
-name|real_new_scale
+name|new_scale
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_scaled
@@ -1426,7 +1414,7 @@ name|gimp_display_shell_scale_get_zoom_focus
 argument_list|(
 name|shell
 argument_list|,
-name|real_new_scale
+name|new_scale
 argument_list|,
 name|current_scale
 argument_list|,
@@ -1454,7 +1442,7 @@ name|gimp_display_shell_scale_to
 argument_list|(
 name|shell
 argument_list|,
-name|real_new_scale
+name|new_scale
 argument_list|,
 name|x
 argument_list|,
@@ -1466,7 +1454,7 @@ name|gimp_display_shell_scale_image_starts_to_fit
 argument_list|(
 name|shell
 argument_list|,
-name|real_new_scale
+name|new_scale
 argument_list|,
 name|current_scale
 argument_list|,
