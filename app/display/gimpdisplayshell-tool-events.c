@@ -859,6 +859,10 @@ condition|(
 name|shell
 operator|->
 name|space_pressed
+operator|||
+name|shell
+operator|->
+name|scrolling
 condition|)
 return|return
 name|TRUE
