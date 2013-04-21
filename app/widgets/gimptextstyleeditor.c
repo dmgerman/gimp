@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1a9cb90103
+DECL|enum|__anon299ec7850103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2550,19 +2550,12 @@ expr_stmt|;
 block|}
 block|}
 block|{
-name|GtkTextTag
-modifier|*
-name|tag
-decl_stmt|;
 name|GList
 modifier|*
 name|list
 decl_stmt|;
 name|gdouble
 name|pixels
-decl_stmt|;
-name|gdouble
-name|points
 decl_stmt|;
 for|for
 control|(
@@ -2610,6 +2603,20 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|pixels
+operator|!=
+literal|0.0
+condition|)
+block|{
+name|GtkTextTag
+modifier|*
+name|tag
+decl_stmt|;
+name|gdouble
+name|points
+decl_stmt|;
 name|points
 operator|=
 name|gimp_units_to_points
@@ -2646,11 +2653,8 @@ name|tag
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 block|{
-name|GtkTextTag
-modifier|*
-name|tag
-decl_stmt|;
 name|GList
 modifier|*
 name|list
@@ -2701,6 +2705,15 @@ operator|->
 name|context
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|font_name
+condition|)
+block|{
+name|GtkTextTag
+modifier|*
+name|tag
+decl_stmt|;
 name|tag
 operator|=
 name|gimp_text_buffer_get_font_tag
@@ -2722,11 +2735,8 @@ name|tag
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 block|{
-name|GtkTextTag
-modifier|*
-name|tag
-decl_stmt|;
 name|GList
 modifier|*
 name|list
@@ -2779,6 +2789,16 @@ operator|&
 name|color
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|TRUE
+condition|)
+comment|/* FIXME should have "inconsistent" state as for font and size */
+block|{
+name|GtkTextTag
+modifier|*
+name|tag
+decl_stmt|;
 name|tag
 operator|=
 name|gimp_text_buffer_get_color_tag
@@ -2800,6 +2820,7 @@ argument_list|,
 name|tag
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 operator|*
 name|remove_tags
@@ -3448,6 +3469,7 @@ operator|&
 name|color
 argument_list|)
 expr_stmt|;
+comment|/* FIXME should have "inconsistent" state as for font and size */
 name|g_signal_handlers_unblock_by_func
 argument_list|(
 name|editor
