@@ -170,11 +170,6 @@ parameter_list|(
 name|GimpImageMap
 modifier|*
 name|image_map
-parameter_list|,
-specifier|const
-name|GeglRectangle
-modifier|*
-name|visible
 parameter_list|)
 function_decl|;
 end_function_decl

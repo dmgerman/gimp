@@ -99,7 +99,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a233e2a0103
+DECL|enum|__anon29d13b570103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -964,17 +964,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_map_apply (GimpImageMap * image_map,const GeglRectangle * visible)
+DECL|function|gimp_image_map_apply (GimpImageMap * image_map)
 name|gimp_image_map_apply
 parameter_list|(
 name|GimpImageMap
 modifier|*
 name|image_map
-parameter_list|,
-specifier|const
-name|GeglRectangle
-modifier|*
-name|visible
 parameter_list|)
 block|{
 name|GimpImage
