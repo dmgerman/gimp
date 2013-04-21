@@ -360,7 +360,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5f2f990103
+DECL|enum|__anon28ae17bf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -388,7 +388,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5f2f990203
+DECL|enum|__anon28ae17bf0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3433,6 +3433,32 @@ argument_list|(
 name|shell
 operator|->
 name|zoom
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|shell
+operator|->
+name|rotate_transform
+condition|)
+name|g_free
+argument_list|(
+name|shell
+operator|->
+name|rotate_transform
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|shell
+operator|->
+name|rotate_untransform
+condition|)
+name|g_free
+argument_list|(
+name|shell
+operator|->
+name|rotate_untransform
 argument_list|)
 expr_stmt|;
 if|if
