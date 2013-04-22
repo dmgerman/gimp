@@ -385,6 +385,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GeglBuffer
+modifier|*
+name|gimp_applicator_dup_apply_buffer
+parameter_list|(
+name|GimpApplicator
+modifier|*
+name|applicator
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|rect
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
