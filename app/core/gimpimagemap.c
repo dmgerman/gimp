@@ -99,7 +99,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d13b570103
+DECL|enum|__anon27701d510103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1111,6 +1111,17 @@ operator|=
 name|gimp_applicator_new
 argument_list|(
 name|filter_node
+argument_list|)
+expr_stmt|;
+name|gimp_filter_set_applicator
+argument_list|(
+name|image_map
+operator|->
+name|filter
+argument_list|,
+name|image_map
+operator|->
+name|applicator
 argument_list|)
 expr_stmt|;
 name|image_map
