@@ -450,8 +450,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gegl_mode_node_set (GeglNode * node,GimpLayerModeEffects mode,gdouble opacity,gboolean linear)
-name|gimp_gegl_mode_node_set
+DECL|function|gimp_gegl_mode_node_set_mode (GeglNode * node,GimpLayerModeEffects mode,gboolean linear)
+name|gimp_gegl_mode_node_set_mode
 parameter_list|(
 name|GeglNode
 modifier|*
@@ -459,9 +459,6 @@ name|node
 parameter_list|,
 name|GimpLayerModeEffects
 name|mode
-parameter_list|,
-name|gdouble
-name|opacity
 parameter_list|,
 name|gboolean
 name|linear
@@ -706,10 +703,6 @@ literal|"operation"
 argument_list|,
 name|operation
 argument_list|,
-literal|"opacity"
-argument_list|,
-name|opacity
-argument_list|,
 literal|"linear"
 argument_list|,
 name|linear
@@ -719,6 +712,40 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_macro
+DECL|function|gimp_gegl_mode_node_set_opacity (GeglNode * node,gdouble opacity)
+name|gimp_gegl_mode_node_set_opacity
+argument_list|(
+argument|GeglNode *node
+argument_list|,
+argument|gdouble   opacity
+argument_list|)
+end_macro
+
+begin_block
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GEGL_IS_NODE
+argument_list|(
+name|node
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gegl_node_set
+argument_list|(
+name|node
+argument_list|,
+literal|"opacity"
+argument_list|,
+name|opacity
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+end_block
 
 begin_function
 name|void

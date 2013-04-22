@@ -74,7 +74,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_gegl_mode_node_set
+name|gimp_gegl_mode_node_set_mode
 parameter_list|(
 name|GeglNode
 modifier|*
@@ -83,11 +83,22 @@ parameter_list|,
 name|GimpLayerModeEffects
 name|mode
 parameter_list|,
-name|gdouble
-name|opacity
-parameter_list|,
 name|gboolean
 name|linear
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_gegl_mode_node_set_opacity
+parameter_list|(
+name|GeglNode
+modifier|*
+name|node
+parameter_list|,
+name|gdouble
+name|opacity
 parameter_list|)
 function_decl|;
 end_function_decl

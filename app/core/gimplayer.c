@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b52208f0103
+DECL|enum|__anon27c4f7230103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -192,7 +192,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b52208f0203
+DECL|enum|__anon27c4f7230203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2215,7 +2215,7 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_gegl_mode_node_set
+name|gimp_gegl_mode_node_set_mode
 argument_list|(
 name|mode_node
 argument_list|,
@@ -2223,10 +2223,6 @@ name|gimp_layer_get_visible_mode
 argument_list|(
 name|layer
 argument_list|)
-argument_list|,
-name|layer
-operator|->
-name|opacity
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2637,7 +2633,7 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-name|gimp_gegl_mode_node_set
+name|gimp_gegl_mode_node_set_mode
 argument_list|(
 name|mode_node
 argument_list|,
@@ -2646,11 +2642,16 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gimp_gegl_mode_node_set_opacity
+argument_list|(
+name|mode_node
+argument_list|,
 name|layer
 operator|->
 name|opacity
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* the layer's offset node */
@@ -8325,20 +8326,13 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_gegl_mode_node_set
+name|gimp_gegl_mode_node_set_opacity
 argument_list|(
 name|mode_node
-argument_list|,
-name|gimp_layer_get_visible_mode
-argument_list|(
-name|layer
-argument_list|)
 argument_list|,
 name|layer
 operator|->
 name|opacity
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -8524,7 +8518,7 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_gegl_mode_node_set
+name|gimp_gegl_mode_node_set_mode
 argument_list|(
 name|mode_node
 argument_list|,
@@ -8532,10 +8526,6 @@ name|gimp_layer_get_visible_mode
 argument_list|(
 name|layer
 argument_list|)
-argument_list|,
-name|layer
-operator|->
-name|opacity
 argument_list|,
 name|FALSE
 argument_list|)
