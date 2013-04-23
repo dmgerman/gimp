@@ -1460,7 +1460,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29515d3d0103
+DECL|enum|__anon27b2568f0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1474,7 +1474,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29515d3d0203
+DECL|enum|__anon27b2568f0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -7928,7 +7928,48 @@ name|display
 operator|==
 name|display
 condition|)
+block|{
+comment|/*  make sure that setting a display *always* sets the image        *  to that display's image, even if the display already        *  matches        */
+if|if
+condition|(
+name|display
+condition|)
+block|{
+name|GimpImage
+modifier|*
+name|image
+decl_stmt|;
+name|g_object_get
+argument_list|(
+name|display
+argument_list|,
+literal|"image"
+argument_list|,
+operator|&
+name|image
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_context_real_set_image
+argument_list|(
+name|context
+argument_list|,
+name|image
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|image
+condition|)
+name|g_object_unref
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+block|}
 return|return;
+block|}
 name|old_display
 operator|=
 name|context
