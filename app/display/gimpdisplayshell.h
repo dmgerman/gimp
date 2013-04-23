@@ -456,6 +456,12 @@ modifier|*
 name|canvas_item
 decl_stmt|;
 comment|/*  items drawn on the canvas          */
+DECL|member|unrotated_item
+name|GimpCanvasItem
+modifier|*
+name|unrotated_item
+decl_stmt|;
+comment|/*  unrotated items for e.g. cursor    */
 DECL|member|passe_partout
 name|GimpCanvasItem
 modifier|*

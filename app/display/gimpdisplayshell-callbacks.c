@@ -1905,6 +1905,11 @@ argument_list|)
 expr_stmt|;
 comment|/*  finally, draw all the remaining image window stuff on top    */
 comment|/* draw canvas items */
+name|cairo_save
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|shell
@@ -1925,6 +1930,20 @@ argument_list|(
 name|shell
 operator|->
 name|canvas_item
+argument_list|,
+name|cr
+argument_list|)
+expr_stmt|;
+name|cairo_restore
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
+name|gimp_canvas_item_draw
+argument_list|(
+name|shell
+operator|->
+name|unrotated_item
 argument_list|,
 name|cr
 argument_list|)
