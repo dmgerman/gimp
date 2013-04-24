@@ -240,7 +240,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|selection_transform_segs
+name|selection_zoom_segs
 parameter_list|(
 name|Selection
 modifier|*
@@ -1189,8 +1189,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|selection_transform_segs (Selection * selection,const GimpBoundSeg * src_segs,GimpSegment * dest_segs,gint n_segs)
-name|selection_transform_segs
+DECL|function|selection_zoom_segs (Selection * selection,const GimpBoundSeg * src_segs,GimpSegment * dest_segs,gint n_segs)
+name|selection_zoom_segs
 parameter_list|(
 name|Selection
 modifier|*
@@ -1236,7 +1236,7 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|gimp_display_shell_transform_segments
+name|gimp_display_shell_zoom_segments
 argument_list|(
 name|selection
 operator|->
@@ -1517,7 +1517,7 @@ operator|->
 name|n_segs_in
 argument_list|)
 expr_stmt|;
-name|selection_transform_segs
+name|selection_zoom_segs
 argument_list|(
 name|selection
 argument_list|,
@@ -1568,7 +1568,7 @@ operator|->
 name|n_segs_out
 argument_list|)
 expr_stmt|;
-name|selection_transform_segs
+name|selection_zoom_segs
 argument_list|(
 name|selection
 argument_list|,

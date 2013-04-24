@@ -108,13 +108,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplayshell-rotate.h"
+file|"gimpdisplayshell-scale.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpdisplayshell-scale.h"
+file|"gimpdisplayshell-transform.h"
 end_include
 
 begin_include
@@ -590,7 +590,7 @@ decl_stmt|;
 name|gint
 name|image_height
 decl_stmt|;
-name|gimp_display_shell_rotate_untransform_bounds
+name|gimp_display_shell_unrotate_bounds
 argument_list|(
 name|shell
 argument_list|,

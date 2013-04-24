@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplayshell-rotate.h"
+file|"gimpdisplayshell-transform.h"
 end_include
 
 begin_comment
@@ -1072,7 +1072,7 @@ operator|&
 name|rect
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_rotate_transform_bounds
+name|gimp_display_shell_rotate_bounds
 argument_list|(
 name|shell
 argument_list|,
