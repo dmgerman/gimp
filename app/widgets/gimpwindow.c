@@ -260,6 +260,9 @@ comment|/* we're overriding the GtkWindow implementation here to give    * the f
 comment|/* text widgets get all key events first */
 if|if
 condition|(
+name|focus
+operator|&&
+operator|(
 name|GTK_IS_EDITABLE
 argument_list|(
 name|focus
@@ -274,6 +277,14 @@ name|GIMP_IS_CANVAS
 argument_list|(
 name|focus
 argument_list|)
+operator|||
+name|gtk_widget_get_ancestor
+argument_list|(
+name|focus
+argument_list|,
+name|GIMP_TYPE_CANVAS
+argument_list|)
+operator|)
 condition|)
 block|{
 name|handled
@@ -342,6 +353,9 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+operator|!
+name|handled
+operator|&&
 name|event
 operator|->
 name|keyval
