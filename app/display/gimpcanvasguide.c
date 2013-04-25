@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291b178d0103
+DECL|enum|__anon2b185e9f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -615,6 +615,9 @@ name|GtkAllocation
 name|allocation
 decl_stmt|;
 name|gint
+name|max_outside
+decl_stmt|;
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -627,15 +630,27 @@ operator|&
 name|allocation
 argument_list|)
 expr_stmt|;
+name|max_outside
+operator|=
+name|allocation
+operator|.
+name|width
+operator|+
+name|allocation
+operator|.
+name|height
+expr_stmt|;
 operator|*
 name|x1
 operator|=
-literal|0
+operator|-
+name|max_outside
 expr_stmt|;
 operator|*
 name|y1
 operator|=
-literal|0
+operator|-
+name|max_outside
 expr_stmt|;
 operator|*
 name|x2
@@ -643,6 +658,8 @@ operator|=
 name|allocation
 operator|.
 name|width
+operator|+
+name|max_outside
 expr_stmt|;
 operator|*
 name|y2
@@ -650,6 +667,8 @@ operator|=
 name|allocation
 operator|.
 name|height
+operator|+
+name|max_outside
 expr_stmt|;
 switch|switch
 condition|(
