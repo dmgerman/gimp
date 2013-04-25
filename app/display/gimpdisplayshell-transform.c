@@ -329,10 +329,6 @@ operator|*
 name|shell
 operator|->
 name|scale_x
-operator|-
-name|shell
-operator|->
-name|offset_x
 expr_stmt|;
 name|ty
 operator|=
@@ -341,10 +337,6 @@ operator|*
 name|shell
 operator|->
 name|scale_y
-operator|-
-name|shell
-operator|->
-name|offset_y
 expr_stmt|;
 name|tx
 operator|-=
@@ -2212,10 +2204,6 @@ operator|*
 name|shell
 operator|->
 name|scale_x
-operator|-
-name|shell
-operator|->
-name|offset_x
 expr_stmt|;
 name|ty
 operator|=
@@ -2224,10 +2212,6 @@ operator|*
 name|shell
 operator|->
 name|scale_y
-operator|-
-name|shell
-operator|->
-name|offset_y
 expr_stmt|;
 name|tx
 operator|-=
