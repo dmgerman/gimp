@@ -1245,10 +1245,17 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|tool
+operator|->
+name|display
+operator|&&
 name|c_tool
 operator|->
 name|graph
-operator|&&
+condition|)
+block|{
+if|if
+condition|(
 name|gtk_widget_event
 argument_list|(
 name|c_tool
@@ -1265,6 +1272,7 @@ condition|)
 return|return
 name|TRUE
 return|;
+block|}
 return|return
 name|GIMP_TOOL_CLASS
 argument_list|(
