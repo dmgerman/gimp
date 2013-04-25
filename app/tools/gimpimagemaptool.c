@@ -2957,6 +2957,14 @@ name|dialog
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|gtk_widget_get_parent
+argument_list|(
+name|dialog
+argument_list|)
+condition|)
+block|{
 name|g_object_ref
 argument_list|(
 name|dialog
@@ -2975,6 +2983,7 @@ argument_list|,
 name|dialog
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function
