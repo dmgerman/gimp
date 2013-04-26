@@ -110,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278fd0500108
+DECL|struct|__anon2b97d1b00108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -605,10 +605,6 @@ name|data
 operator|->
 name|rotate_adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|shell
