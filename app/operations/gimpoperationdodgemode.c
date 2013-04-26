@@ -29,18 +29,6 @@ end_include
 
 begin_function_decl
 specifier|static
-name|void
-name|gimp_operation_dodge_mode_prepare
-parameter_list|(
-name|GeglOperation
-modifier|*
-name|operation
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|gboolean
 name|gimp_operation_dodge_mode_process
 parameter_list|(
@@ -143,12 +131,6 @@ name|process
 operator|=
 name|gimp_operation_dodge_mode_process
 expr_stmt|;
-name|operation_class
-operator|->
-name|prepare
-operator|=
-name|gimp_operation_dodge_mode_prepare
-expr_stmt|;
 block|}
 end_function
 
@@ -163,69 +145,6 @@ modifier|*
 name|self
 parameter_list|)
 block|{ }
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_operation_dodge_mode_prepare (GeglOperation * operation)
-name|gimp_operation_dodge_mode_prepare
-parameter_list|(
-name|GeglOperation
-modifier|*
-name|operation
-parameter_list|)
-block|{
-specifier|const
-name|Babl
-modifier|*
-name|format
-init|=
-name|babl_format
-argument_list|(
-literal|"R'G'B'A float"
-argument_list|)
-decl_stmt|;
-name|gegl_operation_set_format
-argument_list|(
-name|operation
-argument_list|,
-literal|"input"
-argument_list|,
-name|format
-argument_list|)
-expr_stmt|;
-name|gegl_operation_set_format
-argument_list|(
-name|operation
-argument_list|,
-literal|"aux"
-argument_list|,
-name|format
-argument_list|)
-expr_stmt|;
-name|gegl_operation_set_format
-argument_list|(
-name|operation
-argument_list|,
-literal|"aux2"
-argument_list|,
-name|babl_format
-argument_list|(
-literal|"Y float"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gegl_operation_set_format
-argument_list|(
-name|operation
-argument_list|,
-literal|"output"
-argument_list|,
-name|format
-argument_list|)
-expr_stmt|;
-block|}
 end_function
 
 begin_function
