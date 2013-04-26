@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eed57b0103
+DECL|enum|__anon29d02fbc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -449,16 +449,75 @@ modifier|*
 name|operation
 parameter_list|)
 block|{
+specifier|const
+name|Babl
+modifier|*
+name|format
+init|=
+name|gegl_operation_get_source_format
+argument_list|(
+name|operation
+argument_list|,
+literal|"input"
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|format
+condition|)
+block|{
+specifier|const
+name|Babl
+modifier|*
+name|model
+init|=
+name|babl_format_get_model
+argument_list|(
+name|format
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|model
+operator|==
+name|babl_model
+argument_list|(
+literal|"R'G'B'A"
+argument_list|)
+condition|)
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A float"
+argument_list|)
+expr_stmt|;
+else|else
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"RGBA float"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"RGBA float"
+argument_list|)
+expr_stmt|;
+block|}
 name|gegl_operation_set_format
 argument_list|(
 name|operation
 argument_list|,
 literal|"input"
 argument_list|,
-name|babl_format
-argument_list|(
-literal|"RGBA float"
-argument_list|)
+name|format
 argument_list|)
 expr_stmt|;
 name|gegl_operation_set_format
@@ -467,10 +526,7 @@ name|operation
 argument_list|,
 literal|"aux"
 argument_list|,
-name|babl_format
-argument_list|(
-literal|"RGBA float"
-argument_list|)
+name|format
 argument_list|)
 expr_stmt|;
 name|gegl_operation_set_format
@@ -479,10 +535,7 @@ name|operation
 argument_list|,
 literal|"output"
 argument_list|,
-name|babl_format
-argument_list|(
-literal|"RGBA float"
-argument_list|)
+name|format
 argument_list|)
 expr_stmt|;
 block|}
