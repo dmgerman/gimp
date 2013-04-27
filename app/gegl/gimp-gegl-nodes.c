@@ -713,17 +713,18 @@ expr_stmt|;
 block|}
 end_function
 
-begin_macro
+begin_function
+name|void
 DECL|function|gimp_gegl_mode_node_set_opacity (GeglNode * node,gdouble opacity)
 name|gimp_gegl_mode_node_set_opacity
-argument_list|(
-argument|GeglNode *node
-argument_list|,
-argument|gdouble   opacity
-argument_list|)
-end_macro
-
-begin_block
+parameter_list|(
+name|GeglNode
+modifier|*
+name|node
+parameter_list|,
+name|gdouble
+name|opacity
+parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
@@ -745,7 +746,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-end_block
+end_function
 
 begin_function
 name|void
