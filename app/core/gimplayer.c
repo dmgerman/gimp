@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c4f7230103
+DECL|enum|__anon29cc08a60103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -192,7 +192,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c4f7230203
+DECL|enum|__anon29cc08a60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2205,9 +2205,22 @@ name|GeglNode
 modifier|*
 name|mode_node
 decl_stmt|;
+name|gboolean
+name|linear
+decl_stmt|;
 name|mode_node
 operator|=
 name|gimp_drawable_get_mode_node
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|linear
+operator|=
+name|gimp_drawable_get_linear
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2224,7 +2237,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|FALSE
+name|linear
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
@@ -2560,6 +2573,9 @@ modifier|*
 name|mode_node
 decl_stmt|;
 name|gboolean
+name|linear
+decl_stmt|;
+name|gboolean
 name|source_node_hijacked
 init|=
 name|FALSE
@@ -2633,6 +2649,13 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+name|linear
+operator|=
+name|gimp_drawable_get_linear
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 name|gimp_gegl_mode_node_set_mode
 argument_list|(
 name|mode_node
@@ -2642,7 +2665,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|FALSE
+name|linear
 argument_list|)
 expr_stmt|;
 name|gimp_gegl_mode_node_set_opacity
@@ -8508,9 +8531,22 @@ name|GeglNode
 modifier|*
 name|mode_node
 decl_stmt|;
+name|gboolean
+name|linear
+decl_stmt|;
 name|mode_node
 operator|=
 name|gimp_drawable_get_mode_node
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|linear
+operator|=
+name|gimp_drawable_get_linear
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -8527,7 +8563,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|FALSE
+name|linear
 argument_list|)
 expr_stmt|;
 block|}

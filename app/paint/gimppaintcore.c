@@ -151,7 +151,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29da9a3b0103
+DECL|enum|__anon27a421bc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1605,6 +1605,11 @@ operator|=
 name|gimp_applicator_new
 argument_list|(
 name|NULL
+argument_list|,
+name|gimp_drawable_get_linear
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

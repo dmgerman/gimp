@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bad2d570103
+DECL|enum|__anon2b2b37b80103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -213,7 +213,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bad2d570203
+DECL|enum|__anon2b2b37b80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3913,6 +3913,9 @@ name|GeglNode
 modifier|*
 name|fs_source
 decl_stmt|;
+name|gboolean
+name|linear
+decl_stmt|;
 name|private
 operator|->
 name|fs_filter
@@ -3946,6 +3949,16 @@ expr_stmt|;
 name|fs_source
 operator|=
 name|gimp_drawable_get_source_node
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|fs
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|linear
+operator|=
+name|gimp_drawable_get_linear
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3998,6 +4011,8 @@ operator|=
 name|gimp_applicator_new
 argument_list|(
 name|node
+argument_list|,
+name|linear
 argument_list|)
 expr_stmt|;
 name|private
@@ -6733,6 +6748,33 @@ argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_drawable_get_linear (const GimpDrawable * drawable)
+name|gimp_drawable_get_linear
+parameter_list|(
+specifier|const
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DRAWABLE
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
 return|;
 block|}
 end_function

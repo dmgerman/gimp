@@ -941,6 +941,18 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_drawable_get_linear
+parameter_list|(
+specifier|const
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_drawable_has_alpha
 parameter_list|(
 specifier|const

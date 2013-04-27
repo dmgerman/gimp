@@ -148,6 +148,10 @@ DECL|member|paint_mode
 name|GimpLayerModeEffects
 name|paint_mode
 decl_stmt|;
+DECL|member|linear
+name|gboolean
+name|linear
+decl_stmt|;
 DECL|member|mode_node
 name|GeglNode
 modifier|*
@@ -240,6 +244,9 @@ parameter_list|(
 name|GeglNode
 modifier|*
 name|parent
+parameter_list|,
+name|gboolean
+name|linear
 parameter_list|)
 function_decl|;
 end_function_decl
