@@ -2976,11 +2976,6 @@ argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
-name|gtk_widget_hide
-argument_list|(
-name|dialog
-argument_list|)
-expr_stmt|;
 name|gtk_container_remove
 argument_list|(
 name|GTK_CONTAINER
@@ -2991,6 +2986,11 @@ name|dialog
 argument_list|)
 argument_list|)
 argument_list|,
+name|dialog
+argument_list|)
+expr_stmt|;
+name|gtk_widget_hide
+argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
