@@ -110,7 +110,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bce2d9c0108
+DECL|struct|__anon2974a7a70108
 block|{
 DECL|member|spacing
 name|guint
@@ -186,7 +186,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bce2d9c0208
+DECL|struct|__anon2974a7a70208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -1282,6 +1282,26 @@ argument_list|,
 operator|&
 name|gihparams
 argument_list|)
+expr_stmt|;
+comment|/* Force default rank to same as number of cells if there is just one dim */
+if|if
+condition|(
+name|gihparams
+operator|.
+name|dim
+operator|==
+literal|1
+condition|)
+name|gihparams
+operator|.
+name|rank
+index|[
+literal|0
+index|]
+operator|=
+name|gihparams
+operator|.
+name|ncells
 expr_stmt|;
 if|if
 condition|(
