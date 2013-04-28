@@ -360,7 +360,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c239a170103
+DECL|enum|__anon2c915fe20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -388,7 +388,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c239a170203
+DECL|enum|__anon2c915fe20203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2295,22 +2295,6 @@ argument_list|,
 name|G_CALLBACK
 argument_list|(
 name|gimp_display_shell_canvas_expose
-argument_list|)
-argument_list|,
-name|shell
-argument_list|)
-expr_stmt|;
-name|g_signal_connect_after
-argument_list|(
-name|shell
-operator|->
-name|canvas
-argument_list|,
-literal|"expose-event"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gimp_display_shell_canvas_expose_after
 argument_list|)
 argument_list|,
 name|shell
@@ -5544,16 +5528,6 @@ name|statusbar
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  so wilber doesn't flicker  */
-name|gtk_widget_set_double_buffered
-argument_list|(
-name|shell
-operator|->
-name|canvas
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 name|shell
 operator|->
 name|rotate_angle
@@ -5774,16 +5748,6 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|TRUE
-argument_list|)
-expr_stmt|;
-comment|/*  we double buffer image drawing manually  */
-name|gtk_widget_set_double_buffered
-argument_list|(
-name|shell
-operator|->
-name|canvas
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|shell
