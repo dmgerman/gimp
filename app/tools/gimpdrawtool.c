@@ -758,7 +758,7 @@ operator|<=
 name|MINIMUM_DRAW_INTERVAL
 condition|)
 return|return
-name|FALSE
+name|TRUE
 return|;
 name|draw_tool
 operator|->
