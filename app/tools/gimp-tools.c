@@ -566,10 +566,12 @@ comment|/*  path tool */
 name|gimp_vector_tool_register
 block|,
 comment|/*  selection tools */
+name|gimp_foreground_select_tool_register
+block|,
 if|#
 directive|if
 literal|0
-block|gimp_foreground_select_tool_register,     gimp_iscissors_tool_register,
+block|gimp_iscissors_tool_register,
 endif|#
 directive|endif
 name|gimp_by_color_select_tool_register
