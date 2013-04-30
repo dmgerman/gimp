@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2b37b80103
+DECL|enum|__anon2ad6898d0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -213,7 +213,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2b37b80203
+DECL|enum|__anon2ad6898d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6763,6 +6763,11 @@ modifier|*
 name|drawable
 parameter_list|)
 block|{
+specifier|const
+name|Babl
+modifier|*
+name|format
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DRAWABLE
@@ -6773,8 +6778,22 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|format
+operator|=
+name|gegl_buffer_get_format
+argument_list|(
+name|drawable
+operator|->
+name|private
+operator|->
+name|buffer
+argument_list|)
+expr_stmt|;
 return|return
-name|FALSE
+name|gimp_babl_format_get_linear
+argument_list|(
+name|format
+argument_list|)
 return|;
 block|}
 end_function
