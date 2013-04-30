@@ -145,6 +145,33 @@ comment|/* FIXME GIMP_HELP_FILTER_CARTOON */
 block|}
 block|,
 block|{
+literal|"filters-checkerboard"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Checkerboard..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Create a checkerboard pattern"
+argument_list|)
+block|,
+literal|"gegl:checkerboard"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_CHECKERBOARD */
+block|}
+block|,
+block|{
 literal|"filters-color-reduction"
 block|,
 name|GIMP_STOCK_GEGL
@@ -1010,6 +1037,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-cartoon"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-checkerboard"
 argument_list|,
 name|writable
 argument_list|)

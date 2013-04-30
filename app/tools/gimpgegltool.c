@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae6a2e00103
+DECL|enum|__anon2c3808d70103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -322,6 +322,9 @@ literal|"gegl:c2g"
 block|,
 comment|/* in gimp */
 literal|"gegl:cartoon"
+block|,
+comment|/* in gimp */
+literal|"gegl:checkerboard"
 block|,
 comment|/* in gimp */
 literal|"gegl:color"
