@@ -358,7 +358,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dd315f0103
+DECL|enum|__anon2b4d2d410103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -455,7 +455,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dd315f0203
+DECL|enum|__anon2b4d2d410203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9310,7 +9310,7 @@ name|private
 operator|->
 name|active
 index|[
-name|ALPHA
+name|ALPHA_G
 index|]
 operator|)
 condition|?
