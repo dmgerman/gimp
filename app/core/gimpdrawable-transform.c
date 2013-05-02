@@ -300,9 +300,6 @@ decl_stmt|;
 name|GimpMatrix3
 name|m
 decl_stmt|;
-name|GimpMatrix3
-name|inv
-decl_stmt|;
 name|gint
 name|u1
 decl_stmt|,
@@ -415,27 +412,12 @@ operator|=
 operator|*
 name|matrix
 expr_stmt|;
-name|inv
-operator|=
-operator|*
-name|matrix
-expr_stmt|;
 if|if
 condition|(
 name|direction
 operator|==
 name|GIMP_TRANSFORM_BACKWARD
 condition|)
-block|{
-comment|/*  keep the original matrix here, so we dont need to recalculate        *  the inverse later        */
-name|gimp_matrix3_invert
-argument_list|(
-operator|&
-name|inv
-argument_list|)
-expr_stmt|;
-block|}
-else|else
 block|{
 comment|/*  Find the inverse of the transformation matrix  */
 name|gimp_matrix3_invert
@@ -498,7 +480,7 @@ comment|/*  Find the bounding coordinates of target */
 name|gimp_transform_resize_boundary
 argument_list|(
 operator|&
-name|inv
+name|m
 argument_list|,
 name|clip_result
 argument_list|,
@@ -568,7 +550,7 @@ expr_stmt|;
 name|gimp_matrix3_mult
 argument_list|(
 operator|&
-name|inv
+name|m
 argument_list|,
 operator|&
 name|gegl_matrix
