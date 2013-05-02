@@ -115,6 +115,20 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
+name|gchar
+modifier|*
+name|file_utils_uri_get_ext
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|uri
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|file_utils_uri_to_utf8_filename

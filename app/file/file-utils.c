@@ -118,21 +118,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-specifier|const
-name|gchar
-modifier|*
-name|file_utils_get_ext_start
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|uri
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_function
 name|gboolean
 DECL|function|file_utils_filename_is_uri (const gchar * filename,GError ** error)
@@ -796,7 +781,7 @@ name|gchar
 modifier|*
 name|uri_ext
 init|=
-name|file_utils_get_ext_start
+name|file_utils_uri_get_ext
 argument_list|(
 name|uri
 argument_list|)
@@ -808,7 +793,7 @@ name|ext_uri_ext
 init|=
 name|ext_uri
 condition|?
-name|file_utils_get_ext_start
+name|file_utils_uri_get_ext
 argument_list|(
 name|ext_uri
 argument_list|)
@@ -853,16 +838,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * file_utils_get_ext_start:  * @uri:  *  * Returns the position of the extension (after the .) for an URI. If  * there is no extension the returned position is right after the  * string, at the terminating NULL character.  *  * Returns:  **/
+comment|/**  * file_utils_uri_get_ext:  * @uri:  *  * Returns the position of the extension (including the .) for an URI. If  * there is no extension the returned position is right after the  * string, at the terminating NULL character.  *  * Returns:  **/
 end_comment
 
 begin_function
-specifier|static
 specifier|const
 name|gchar
 modifier|*
-DECL|function|file_utils_get_ext_start (const gchar * uri)
-name|file_utils_get_ext_start
+DECL|function|file_utils_uri_get_ext (const gchar * uri)
+name|file_utils_uri_get_ext
 parameter_list|(
 specifier|const
 name|gchar
@@ -920,6 +904,22 @@ operator|=
 name|uri_len
 operator|-
 literal|4
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|g_strrstr
+argument_list|(
+name|uri
+argument_list|,
+literal|".xz"
+argument_list|)
+condition|)
+name|search_len
+operator|=
+name|uri_len
+operator|-
+literal|3
 expr_stmt|;
 else|else
 name|search_len
