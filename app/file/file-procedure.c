@@ -118,7 +118,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a829050103
+DECL|enum|__anon2c678b6b0103
 block|{
 DECL|enumerator|FILE_MATCH_NONE
 name|FILE_MATCH_NONE
@@ -473,7 +473,7 @@ control|)
 block|{
 name|file_proc
 operator|=
-name|procs
+name|list
 operator|->
 name|data
 expr_stmt|;
