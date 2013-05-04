@@ -1161,6 +1161,10 @@ argument_list|(
 name|pixels
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|loader
+condition|)
 name|exr_loader_unref
 argument_list|(
 name|loader
