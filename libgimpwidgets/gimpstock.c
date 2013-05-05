@@ -1171,7 +1171,7 @@ name|GIMP_STOCK_RESIZE
 block|,
 name|N_
 argument_list|(
-literal|"_Resize"
+literal|"Re_size"
 argument_list|)
 block|,
 literal|0
@@ -2736,7 +2736,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28b47d870108
+DECL|struct|__anon2bb097550108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3596,7 +3596,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28b47d870208
+DECL|struct|__anon2bb097550208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4548,7 +4548,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28b47d870308
+DECL|struct|__anon2bb097550308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4651,7 +4651,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28b47d870408
+DECL|struct|__anon2bb097550408
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4802,7 +4802,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28b47d870508
+DECL|struct|__anon2bb097550508
 block|{
 DECL|member|stock_id
 specifier|const
