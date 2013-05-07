@@ -41,7 +41,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dbf0750103
+DECL|enum|__anon2945d23b0103
 block|{
 DECL|enumerator|GIMP_BUTTON_PRESS_NORMAL
 name|GIMP_BUTTON_PRESS_NORMAL
@@ -78,7 +78,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dbf0750203
+DECL|enum|__anon2945d23b0203
 block|{
 DECL|enumerator|GIMP_BUTTON_RELEASE_NORMAL
 name|GIMP_BUTTON_RELEASE_NORMAL
@@ -118,7 +118,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dbf0750303
+DECL|enum|__anon2945d23b0303
 block|{
 DECL|enumerator|GIMP_RECTANGLE_CONSTRAIN_NONE
 name|GIMP_RECTANGLE_CONSTRAIN_NONE
@@ -155,7 +155,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dbf0750403
+DECL|enum|__anon2945d23b0403
 block|{
 DECL|enumerator|GIMP_RECTANGLE_PRECISION_INT
 name|GIMP_RECTANGLE_PRECISION_INT
@@ -189,7 +189,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dbf0750503
+DECL|enum|__anon2945d23b0503
 block|{
 DECL|enumerator|GIMP_RECTANGLE_TOOL_FIXED_ASPECT
 name|GIMP_RECTANGLE_TOOL_FIXED_ASPECT
@@ -234,7 +234,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dbf0750603
+DECL|enum|__anon2945d23b0603
 block|{
 DECL|enumerator|GIMP_RECT_SELECT_MODE_FREE
 name|GIMP_RECT_SELECT_MODE_FREE
@@ -274,7 +274,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dbf0750703
+DECL|enum|__anon2945d23b0703
 block|{
 DECL|enumerator|GIMP_TRANSFORM_TYPE_LAYER
 name|GIMP_TRANSFORM_TYPE_LAYER
@@ -314,7 +314,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dbf0750803
+DECL|enum|__anon2945d23b0803
 block|{
 DECL|enumerator|GIMP_VECTOR_MODE_DESIGN
 name|GIMP_VECTOR_MODE_DESIGN
@@ -354,7 +354,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dbf0750903
+DECL|enum|__anon2945d23b0903
 block|{
 DECL|enumerator|GIMP_TOOL_ACTION_PAUSE
 name|GIMP_TOOL_ACTION_PAUSE
@@ -370,6 +370,84 @@ name|GimpToolAction
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_MATTING_DRAW_MODE
+define|#
+directive|define
+name|GIMP_TYPE_MATTING_DRAW_MODE
+value|(gimp_matting_draw_mode_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_matting_draw_mode_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2945d23b0a03
+block|{
+DECL|enumerator|GIMP_MATTING_DRAW_MODE_FOREGROUND
+name|GIMP_MATTING_DRAW_MODE_FOREGROUND
+block|,
+comment|/*< desc="Draw foreground">*/
+DECL|enumerator|GIMP_MATTING_DRAW_MODE_BACKGROUND
+name|GIMP_MATTING_DRAW_MODE_BACKGROUND
+block|,
+comment|/*< desc="Draw background">*/
+DECL|enumerator|GIMP_MATTING_DRAW_MODE_UNKNOWN
+name|GIMP_MATTING_DRAW_MODE_UNKNOWN
+block|,
+comment|/*< desc="Draw unknown">*/
+DECL|typedef|GimpMattingDrawMode
+block|}
+name|GimpMattingDrawMode
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_MATTING_ENGINE
+define|#
+directive|define
+name|GIMP_TYPE_MATTING_ENGINE
+value|(gimp_matting_engine_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_matting_engine_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2945d23b0b03
+block|{
+DECL|enumerator|GIMP_MATTING_ENGINE_MATTING_GLOBAL
+name|GIMP_MATTING_ENGINE_MATTING_GLOBAL
+block|,
+comment|/*< desc="Matting Global">*/
+DECL|enumerator|GIMP_MATTING_ENGINE_MATTING_LEVIN
+name|GIMP_MATTING_ENGINE_MATTING_LEVIN
+block|,
+comment|/*< desc="Matting Levin">*/
+DECL|typedef|GimpMattingEngine
+block|}
+name|GimpMattingEngine
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  * non-registered enums; register them if needed  */
 end_comment
@@ -378,7 +456,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28dbf0750a03
+DECL|enum|__anon2945d23b0c03
 block|{
 DECL|enumerator|SELECTION_SELECT
 name|SELECTION_SELECT
@@ -408,7 +486,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28dbf0750b03
+DECL|enum|__anon2945d23b0d03
 block|{
 DECL|enumerator|GIMP_TRANSLATE_MODE_VECTORS
 name|GIMP_TRANSLATE_MODE_VECTORS
@@ -447,7 +525,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28dbf0750c03
+DECL|enum|__anon2945d23b0e03
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT
