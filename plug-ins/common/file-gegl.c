@@ -225,31 +225,6 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"EXR image"
-argument_list|)
-block|,
-literal|"image/x-exr"
-block|,
-literal|"exr,hdr"
-block|,
-literal|""
-block|,
-literal|"file-exr-load"
-block|,
-literal|"Loads EXR images using GEGL"
-block|,
-literal|"This procedure loads images in EXR format, using gegl:load"
-block|,
-literal|"file-exr-save"
-block|,
-literal|"Save EXR images using GEGL"
-block|,
-literal|"This procedure saves images in EXR format, using gegl:save"
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
 literal|"NEF image"
 argument_list|)
 block|,
