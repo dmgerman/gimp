@@ -788,7 +788,7 @@ break|break;
 case|case
 name|IMAGE_TYPE_GRAY
 case|:
-name|image_precision
+name|image_type
 operator|=
 name|GIMP_GRAY
 expr_stmt|;
