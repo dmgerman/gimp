@@ -245,7 +245,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29993c200103
+DECL|enum|__anon2c66bc5d0103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -1463,11 +1463,9 @@ comment|// gimp_tool_control_set_preserve (tool->control, TRUE);
 comment|/* TODO: there may be issues with committing the image map            *       result after some changes were made and the preview            *       was scrolled. We can fix these by either invalidating            *       the area which is a union of the previous paste            *       rectangle each time (in the update function) or by            *       invalidating and re-rendering all now (expensive and            *       perhaps useless */
 name|gimp_image_map_commit
 argument_list|(
-name|sct
-operator|->
-name|image_map
+argument|sct->image_map                                  NULL
 argument_list|)
-expr_stmt|;
+empty_stmt|;
 name|g_object_unref
 argument_list|(
 name|sct
@@ -2520,16 +2518,13 @@ name|image_map
 operator|=
 name|gimp_image_map_new
 argument_list|(
-name|drawable
+argument|drawable
 argument_list|,
-name|_
-argument_list|(
+argument|_(
 literal|"Seamless Clone"
-argument_list|)
+argument|)
 argument_list|,
-name|sc
-operator|->
-name|render_node
+argument|sc->render_node 				      GIMP_STOCK_TOOL_SEAMLESS_CLONE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -2789,9 +2784,6 @@ argument_list|(
 name|sc
 operator|->
 name|image_map
-argument_list|,
-operator|&
-name|visible
 argument_list|)
 expr_stmt|;
 block|}
