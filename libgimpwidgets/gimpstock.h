@@ -517,6 +517,11 @@ define|#
 directive|define
 name|GIMP_STOCK_TOOL_SCALE
 value|"gimp-tool-scale"
+DECL|macro|GIMP_STOCK_TOOL_SEAMLESS_CLONE
+define|#
+directive|define
+name|GIMP_STOCK_TOOL_SEAMLESS_CLONE
+value|"gimp-tool-seamless-clone"
 DECL|macro|GIMP_STOCK_TOOL_SHEAR
 define|#
 directive|define
