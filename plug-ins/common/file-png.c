@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab20fb50108
+DECL|struct|__anon28b6af4b0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab20fb50208
+DECL|struct|__anon28b6af4b0208
 block|{
 DECL|member|run
 name|gboolean
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab20fb50308
+DECL|struct|__anon28b6af4b0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -2282,15 +2282,6 @@ comment|/* Transparency present */
 name|bpp
 decl_stmt|,
 comment|/* Bytes per pixel */
-name|image_type
-decl_stmt|,
-comment|/* Type of image */
-name|image_precision
-decl_stmt|,
-comment|/* Precision of image */
-name|layer_type
-decl_stmt|,
-comment|/* Type of drawable/layer */
 name|width
 decl_stmt|,
 comment|/* image width */
@@ -2318,6 +2309,18 @@ comment|/* Ending tile row */
 name|num
 decl_stmt|;
 comment|/* Number of rows to load */
+name|GimpImageBaseType
+name|image_type
+decl_stmt|;
+comment|/* Type of image */
+name|GimpPrecision
+name|image_precision
+decl_stmt|;
+comment|/* Precision of image */
+name|GimpImageType
+name|layer_type
+decl_stmt|;
+comment|/* Type of drawable/layer */
 name|FILE
 modifier|*
 name|fp
