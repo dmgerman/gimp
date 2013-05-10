@@ -14971,7 +14971,7 @@ literal|"gimp-image-get-channels"
 argument_list|,
 literal|"Returns the list of channels contained in the specified image."
 argument_list|,
-literal|"This procedure returns the list of channels contained in the specified image. This does not include the selection mask, or layer masks. The order is from topmost to bottommost."
+literal|"This procedure returns the list of channels contained in the specified image. This does not include the selection mask, or layer masks. The order is from topmost to bottommost. Note that \"channels\" are custom channels and do not include the image's color components."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,

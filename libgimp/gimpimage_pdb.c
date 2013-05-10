@@ -1641,7 +1641,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_channels:  * @image_ID: The image.  * @num_channels: The number of channels contained in the image.  *  * Returns the list of channels contained in the specified image.  *  * This procedure returns the list of channels contained in the  * specified image. This does not include the selection mask, or layer  * masks. The order is from topmost to bottommost.  *  * Returns: The list of channels contained in the image. The returned  * value must be freed with g_free().  **/
+comment|/**  * gimp_image_get_channels:  * @image_ID: The image.  * @num_channels: The number of channels contained in the image.  *  * Returns the list of channels contained in the specified image.  *  * This procedure returns the list of channels contained in the  * specified image. This does not include the selection mask, or layer  * masks. The order is from topmost to bottommost. Note that  * \"channels\" are custom channels and do not include the image's  * color components.  *  * Returns: The list of channels contained in the image. The returned  * value must be freed with g_free().  **/
 end_comment
 
 begin_function
