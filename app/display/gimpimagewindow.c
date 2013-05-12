@@ -248,7 +248,7 @@ value|"gimp-single-image-window"
 end_define
 
 begin_comment
-comment|/* GtkPaned position of the image area, i.e. the width of the left  * docks area  */
+comment|/* The width of the left and right dock areas */
 end_comment
 
 begin_define
@@ -259,8 +259,16 @@ name|GIMP_IMAGE_WINDOW_LEFT_DOCKS_WIDTH
 value|"left-docks-width"
 end_define
 
+begin_define
+DECL|macro|GIMP_IMAGE_WINDOW_RIGHT_DOCKS_WIDTH
+define|#
+directive|define
+name|GIMP_IMAGE_WINDOW_RIGHT_DOCKS_WIDTH
+value|"right-docks-width"
+end_define
+
 begin_comment
-comment|/* GtkPaned position of the right docks area */
+comment|/* deprecated property: GtkPaned position of the right docks area */
 end_comment
 
 begin_define
@@ -285,7 +293,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c729e3a0103
+DECL|enum|__anon2c34f4430103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -398,7 +406,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c729e3a0208
+DECL|struct|__anon2c34f4430208
 block|{
 DECL|member|window
 name|GimpImageWindow
@@ -3610,7 +3618,6 @@ operator|&
 name|allocation
 argument_list|)
 expr_stmt|;
-comment|/* a negative number will be interpreted as the width of the second        * child of the pane        */
 name|g_snprintf
 argument_list|(
 name|widthbuf
@@ -3622,6 +3629,10 @@ argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
+name|allocation
+operator|.
+name|width
+operator|-
 name|gtk_paned_get_position
 argument_list|(
 name|GTK_PANED
@@ -3631,17 +3642,13 @@ operator|->
 name|right_hpane
 argument_list|)
 argument_list|)
-operator|-
-name|allocation
-operator|.
-name|width
 argument_list|)
 expr_stmt|;
 name|aux
 operator|=
 name|gimp_session_info_aux_new
 argument_list|(
-name|GIMP_IMAGE_WINDOW_RIGHT_DOCKS_POS
+name|GIMP_IMAGE_WINDOW_RIGHT_DOCKS_WIDTH
 argument_list|,
 name|widthbuf
 argument_list|)
@@ -3693,8 +3700,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_window_set_right_hpane_position (GtkPaned * paned,GtkAllocation * allocation,void * data)
-name|gimp_image_window_set_right_hpane_position
+DECL|function|gimp_image_window_set_right_docks_width (GtkPaned * paned,GtkAllocation * allocation,void * data)
+name|gimp_image_window_set_right_docks_width
 parameter_list|(
 name|GtkPaned
 modifier|*
@@ -3710,7 +3717,7 @@ name|data
 parameter_list|)
 block|{
 name|gint
-name|position
+name|width
 init|=
 name|GPOINTER_TO_INT
 argument_list|(
@@ -3727,7 +3734,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|position
+name|width
 operator|>
 literal|0
 condition|)
@@ -3735,7 +3742,11 @@ name|gtk_paned_set_position
 argument_list|(
 name|paned
 argument_list|,
-name|position
+name|allocation
+operator|->
+name|width
+operator|-
+name|width
 argument_list|)
 expr_stmt|;
 else|else
@@ -3743,10 +3754,7 @@ name|gtk_paned_set_position
 argument_list|(
 name|paned
 argument_list|,
-name|position
-operator|+
-name|allocation
-operator|->
+operator|-
 name|width
 argument_list|)
 expr_stmt|;
@@ -3754,7 +3762,7 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|paned
 argument_list|,
-name|gimp_image_window_set_right_hpane_position
+name|gimp_image_window_set_right_docks_width
 argument_list|,
 name|data
 argument_list|)
@@ -3788,14 +3796,12 @@ decl_stmt|;
 name|gint
 name|left_docks_width
 init|=
-operator|-
-literal|1
+name|G_MININT
 decl_stmt|;
 name|gint
-name|right_docks_pos
+name|right_docks_width
 init|=
-operator|-
-literal|1
+name|G_MININT
 decl_stmt|;
 name|gboolean
 name|wait_with_right_docks
@@ -3879,13 +3885,31 @@ name|aux
 operator|->
 name|name
 argument_list|,
+name|GIMP_IMAGE_WINDOW_RIGHT_DOCKS_WIDTH
+argument_list|)
+condition|)
+name|width
+operator|=
+operator|&
+name|right_docks_width
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+operator|!
+name|strcmp
+argument_list|(
+name|aux
+operator|->
+name|name
+argument_list|,
 name|GIMP_IMAGE_WINDOW_RIGHT_DOCKS_POS
 argument_list|)
 condition|)
 name|width
 operator|=
 operator|&
-name|right_docks_pos
+name|right_docks_width
 expr_stmt|;
 elseif|else
 if|if
@@ -3931,12 +3955,35 @@ argument_list|,
 name|width
 argument_list|)
 expr_stmt|;
+comment|/* compat handling for right docks */
+if|if
+condition|(
+operator|!
+name|strcmp
+argument_list|(
+name|aux
+operator|->
+name|name
+argument_list|,
+name|GIMP_IMAGE_WINDOW_RIGHT_DOCKS_POS
+argument_list|)
+condition|)
+block|{
+comment|/* negate the value because negative docks pos means docks width,            * also use the negativenes of a real docks pos as condition below.            */
+operator|*
+name|width
+operator|=
+operator|-
+operator|*
+name|width
+expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
 name|left_docks_width
-operator|>
-literal|0
+operator|!=
+name|G_MININT
 operator|&&
 name|gtk_paned_get_position
 argument_list|(
@@ -3971,9 +4018,9 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|right_docks_pos
-operator|>
-literal|0
+name|right_docks_width
+operator|!=
+name|G_MININT
 operator|&&
 name|gtk_paned_get_position
 argument_list|(
@@ -3985,19 +4032,19 @@ name|right_hpane
 argument_list|)
 argument_list|)
 operator|!=
-name|right_docks_pos
+name|right_docks_width
 condition|)
 block|{
 if|if
 condition|(
 name|wait_with_right_docks
 operator|||
-name|right_docks_pos
-operator|<
+name|right_docks_width
+operator|>
 literal|0
 condition|)
 block|{
-comment|/* We must wait on a size allocation before we can set the            * position            */
+comment|/* We must wait for a size allocation before we can set the            * position            */
 name|g_signal_connect_data
 argument_list|(
 name|private
@@ -4008,12 +4055,12 @@ literal|"size-allocate"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_image_window_set_right_hpane_position
+name|gimp_image_window_set_right_docks_width
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|right_docks_pos
+name|right_docks_width
 argument_list|)
 argument_list|,
 name|NULL
@@ -4024,7 +4071,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* We can set the position directly, because we didn't            * change the left hpane position            */
+comment|/* We can set the position directly, because we didn't            * change the left hpane position, and we got the old compat            * dock pos property.            */
 name|gtk_paned_set_position
 argument_list|(
 name|GTK_PANED
@@ -4034,7 +4081,8 @@ operator|->
 name|right_hpane
 argument_list|)
 argument_list|,
-name|right_docks_pos
+operator|-
+name|right_docks_width
 argument_list|)
 expr_stmt|;
 block|}
