@@ -155,7 +155,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286d58be0108
+DECL|struct|__anon28701c150108
 block|{
 DECL|member|compression
 name|gint
@@ -178,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286d58be0208
+DECL|struct|__anon28701c150208
 block|{
 DECL|member|ID
 name|gint32
@@ -3290,9 +3290,11 @@ name|G_FILE_ERROR
 argument_list|,
 name|G_FILE_ERROR_FAILED
 argument_list|,
-literal|"%s"
-argument_list|,
-literal|"TIFF save cannot handle indexed images with alpha channel."
+name|_
+argument_list|(
+literal|"TIFF save cannot handle indexed images with "
+literal|"an alpha channel."
+argument_list|)
 argument_list|)
 expr_stmt|;
 default|default:
@@ -3324,7 +3326,11 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Only monochrome pictures can be compressed with \"CCITT Group 4\" or \"CCITT Group 3\"."
+name|_
+argument_list|(
+literal|"Only monochrome pictures can be compressed with "
+literal|"\"CCITT Group 4\" or \"CCITT Group 3\"."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -4363,7 +4369,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Failed a scanline write on row %d"
+argument_list|)
 argument_list|,
 name|row
 argument_list|)
