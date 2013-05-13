@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1d22060108
+DECL|struct|__anon2af1efcf0108
 block|{
 DECL|member|threshold
 name|gint
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1d22060208
+DECL|struct|__anon2af1efcf0208
 block|{
 DECL|member|r
 name|guchar
@@ -2468,6 +2468,29 @@ name|buffer
 argument_list|)
 expr_stmt|;
 break|break;
+default|default:
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"Unsupported drawable type"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|buffer
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
 block|}
 comment|/* allocate buffer making the assumption that ibuff is 32 bit aligned... */
 name|ibuff
