@@ -2086,7 +2086,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2260010108
+DECL|struct|__anon279821120108
 block|{
 DECL|member|pub
 name|struct
@@ -2323,6 +2323,8 @@ decl_stmt|;
 name|GeglBuffer
 modifier|*
 name|buffer
+init|=
+name|NULL
 decl_stmt|;
 name|gint
 name|tile_height
@@ -2481,6 +2483,15 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|buffer
+condition|)
+name|g_object_unref
+argument_list|(
+name|buffer
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
