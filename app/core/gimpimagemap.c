@@ -99,7 +99,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdc70d90103
+DECL|enum|__anon2c525d8e0103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1498,8 +1498,10 @@ name|image_map
 operator|->
 name|applicator
 argument_list|,
+operator|-
 name|offset_x
 argument_list|,
+operator|-
 name|offset_y
 argument_list|)
 expr_stmt|;
