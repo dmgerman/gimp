@@ -224,22 +224,6 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
-begin_define
-DECL|macro|gimp_seamless_clone_tool_is_in_paste (sc,x0,y0)
-define|#
-directive|define
-name|gimp_seamless_clone_tool_is_in_paste
-parameter_list|(
-name|sc
-parameter_list|,
-name|x0
-parameter_list|,
-name|y0
-parameter_list|)
-define|\
-value|(   ((sc)->xoff<= (x0)&& (x0)< (sc)->xoff + (sc)->width)   \&& ((sc)->yoff<= (y0)&& (y0)< (sc)->yoff + (sc)->height)) \  #define gimp_seamless_clone_tool_is_in_paste_c(sc,coords)       \   gimp_seamless_clone_tool_is_in_paste((sc),(coords)->x,(coords)->y)
-end_define
-
 begin_endif
 endif|#
 directive|endif

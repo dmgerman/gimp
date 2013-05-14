@@ -69,10 +69,6 @@ directive|include
 file|"tools-types.h"
 end_include
 
-begin_comment
-comment|//#include "base/tile-manager.h"
-end_comment
-
 begin_include
 include|#
 directive|include
@@ -239,13 +235,29 @@ endif|#
 directive|endif
 end_endif
 
+begin_define
+DECL|macro|gimp_seamless_clone_tool_is_in_paste (sc,x0,y0)
+define|#
+directive|define
+name|gimp_seamless_clone_tool_is_in_paste
+parameter_list|(
+name|sc
+parameter_list|,
+name|x0
+parameter_list|,
+name|y0
+parameter_list|)
+define|\
+value|(   ((sc)->xoff<= (x0)&& (x0)< (sc)->xoff + (sc)->width)   \&& ((sc)->yoff<= (y0)&& (y0)< (sc)->yoff + (sc)->height)) \  #define gimp_seamless_clone_tool_is_in_paste_c(sc,coords)       \   gimp_seamless_clone_tool_is_in_paste((sc),(coords)->x,(coords)->y)
+end_define
+
 begin_comment
-comment|/*  init ----------> preprocess  *    |                  |  *    |                  |  *    |                  |  *    |                  v  *    |                render(wait, motion)  *    |               /  |  *    |         _____/   |  *    |   _____/         |  *    v  v               v  *  quit<----------  commit  *  * Begin at INIT state  *  * INIT:       Wait for click on canvas  *             have a paste ? -> PREPROCESS : -> QUIT  *   * PREPROCESS: Do the preprocessing  *             -> RENDER  *  * RENDER:     Interact and wait for quit signal  *             commit quit ? -> COMMIT : -> QUIT  *  * COMMIT:     Commit the changes  *             -> QUIT  *  * QUIT:       Invoked by sending a ACTION_HALT to the tool_control  *             Free resources  */
+comment|/*  init ----------> preprocess  *    |                  |  *    |                  |  *    |                  |  *    |                  v  *    |                render(wait, motion)  *    |               /  |  *    |         _____/   |  *    |   _____/         |  *    v  v               v  *  quit<----------  commit  *  * Begin at INIT state  *  * INIT:       Wait for click on canvas  *             have a paste ? -> PREPROCESS : -> QUIT  *  * PREPROCESS: Do the preprocessing  *             -> RENDER  *  * RENDER:     Interact and wait for quit signal  *             commit quit ? -> COMMIT : -> QUIT  *  * COMMIT:     Commit the changes  *             -> QUIT  *  * QUIT:       Invoked by sending a ACTION_HALT to the tool_control  *             Free resources  */
 end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c66bc5d0103
+DECL|enum|__anon2ac6269d0103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -1463,9 +1475,13 @@ comment|// gimp_tool_control_set_preserve (tool->control, TRUE);
 comment|/* TODO: there may be issues with committing the image map            *       result after some changes were made and the preview            *       was scrolled. We can fix these by either invalidating            *       the area which is a union of the previous paste            *       rectangle each time (in the update function) or by            *       invalidating and re-rendering all now (expensive and            *       perhaps useless */
 name|gimp_image_map_commit
 argument_list|(
-argument|sct->image_map                                  NULL
+name|sct
+operator|->
+name|image_map
+argument_list|,
+name|NULL
 argument_list|)
-empty_stmt|;
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|sct
@@ -2518,13 +2534,18 @@ name|image_map
 operator|=
 name|gimp_image_map_new
 argument_list|(
-argument|drawable
+name|drawable
 argument_list|,
-argument|_(
+name|_
+argument_list|(
 literal|"Seamless Clone"
-argument|)
+argument_list|)
 argument_list|,
-argument|sc->render_node 				      GIMP_STOCK_TOOL_SEAMLESS_CLONE
+name|sc
+operator|->
+name|render_node
+argument_list|,
+name|GIMP_STOCK_TOOL_SEAMLESS_CLONE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b031cea0103
+DECL|enum|__anon278294b20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -356,10 +356,6 @@ name|gimp_tool_options_gui
 argument_list|(
 name|tool_options
 argument_list|)
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|mode
 decl_stmt|;
 name|GtkWidget
 modifier|*
