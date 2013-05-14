@@ -203,7 +203,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4223050108
+DECL|struct|__anon2b0b755b0108
 block|{
 DECL|member|resolution
 name|guint
@@ -314,7 +314,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4223050208
+DECL|struct|__anon2b0b755b0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -929,7 +929,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4223050308
+DECL|struct|__anon2b0b755b0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1443,7 +1443,6 @@ modifier|*
 name|dst
 parameter_list|)
 block|{
-specifier|register
 name|unsigned
 name|char
 name|c
@@ -1798,7 +1797,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4223050408
+DECL|struct|__anon2b0b755b0408
 block|{
 DECL|member|eol
 name|long
@@ -7439,7 +7438,6 @@ modifier|*
 name|maxval
 parameter_list|)
 block|{
-specifier|register
 name|int
 name|frst
 decl_stmt|,
@@ -8081,7 +8079,6 @@ name|gint
 name|ury
 parameter_list|)
 block|{
-specifier|register
 name|guchar
 modifier|*
 name|dest
@@ -9951,20 +9948,17 @@ index|[
 literal|256
 index|]
 decl_stmt|;
-specifier|register
 specifier|const
 name|guchar
 modifier|*
 name|greyptr
 decl_stmt|;
-specifier|register
 name|guchar
 modifier|*
 name|bwptr
 decl_stmt|,
 name|mask
 decl_stmt|;
-specifier|register
 name|gint
 modifier|*
 name|fse
