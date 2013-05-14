@@ -155,7 +155,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed1e270108
+DECL|struct|__anon2793dbac0108
 block|{
 DECL|member|compression
 name|gint
@@ -178,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed1e270208
+DECL|struct|__anon2793dbac0208
 block|{
 DECL|member|ID
 name|gint32
@@ -3029,15 +3029,6 @@ argument_list|(
 literal|"R'G'B' u16"
 argument_list|)
 expr_stmt|;
-name|bytesperrow
-operator|=
-name|cols
-operator|*
-name|babl_format_get_bytes_per_pixel
-argument_list|(
-name|format
-argument_list|)
-expr_stmt|;
 break|break;
 case|case
 name|GIMP_GRAY_IMAGE
@@ -3073,15 +3064,6 @@ operator|=
 name|babl_format
 argument_list|(
 literal|"Y' u16"
-argument_list|)
-expr_stmt|;
-name|bytesperrow
-operator|=
-name|cols
-operator|*
-name|babl_format_get_bytes_per_pixel
-argument_list|(
-name|format
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3125,15 +3107,6 @@ argument_list|(
 literal|"R'G'B'A u16"
 argument_list|)
 expr_stmt|;
-name|bytesperrow
-operator|=
-name|cols
-operator|*
-name|babl_format_get_bytes_per_pixel
-argument_list|(
-name|format
-argument_list|)
-expr_stmt|;
 break|break;
 case|case
 name|GIMP_GRAYA_IMAGE
@@ -3169,15 +3142,6 @@ operator|=
 name|babl_format
 argument_list|(
 literal|"Y'A u16"
-argument_list|)
-expr_stmt|;
-name|bytesperrow
-operator|=
-name|cols
-operator|*
-name|babl_format_get_bytes_per_pixel
-argument_list|(
-name|format
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3363,7 +3327,10 @@ name|FALSE
 expr_stmt|;
 name|format
 operator|=
-name|NULL
+name|gimp_drawable_get_format
+argument_list|(
+name|layer
+argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
@@ -3394,6 +3361,15 @@ goto|goto
 name|out
 goto|;
 block|}
+name|bytesperrow
+operator|=
+name|cols
+operator|*
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|format
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|compression
