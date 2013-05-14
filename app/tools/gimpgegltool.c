@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3808d70103
+DECL|enum|__anon2c03af1e0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -318,6 +318,9 @@ name|name_blacklist
 index|[]
 init|=
 block|{
+literal|"gegl:box-blur"
+block|,
+comment|/* in gimp */
 literal|"gegl:c2g"
 block|,
 comment|/* in gimp */
