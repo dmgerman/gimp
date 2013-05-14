@@ -761,7 +761,7 @@ else|else
 block|{
 name|image_ID
 operator|=
-name|gimp_image_new
+name|gimp_image_new_with_precision
 argument_list|(
 name|cinfo
 operator|.
@@ -772,6 +772,8 @@ operator|.
 name|output_height
 argument_list|,
 name|image_type
+argument_list|,
+name|GIMP_PRECISION_U8
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_disable
@@ -2086,7 +2088,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279821120108
+DECL|struct|__anon27a6d08b0108
 block|{
 DECL|member|pub
 name|struct

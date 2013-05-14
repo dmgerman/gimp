@@ -301,7 +301,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27832cfc0108
+DECL|struct|__anon2ace97f10108
 block|{
 DECL|member|cinfo
 name|struct
@@ -350,6 +350,12 @@ name|GeglBuffer
 modifier|*
 name|buffer
 decl_stmt|;
+DECL|member|format
+specifier|const
+name|Babl
+modifier|*
+name|format
+decl_stmt|;
 DECL|member|file_name
 specifier|const
 name|gchar
@@ -377,7 +383,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27832cfc0208
+DECL|struct|__anon2ace97f10208
 block|{
 DECL|member|run
 name|gboolean
@@ -1046,7 +1052,9 @@ argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
-name|NULL
+name|pp
+operator|->
+name|format
 argument_list|,
 name|pp
 operator|->
@@ -1201,6 +1209,11 @@ modifier|*
 name|buffer
 init|=
 name|NULL
+decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|format
 decl_stmt|;
 name|GimpParasite
 modifier|*
@@ -1438,6 +1451,13 @@ name|has_alpha
 operator|=
 name|FALSE
 expr_stmt|;
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
+argument_list|)
+expr_stmt|;
 break|break;
 case|case
 name|GIMP_GRAY_IMAGE
@@ -1452,6 +1472,13 @@ expr_stmt|;
 name|has_alpha
 operator|=
 name|FALSE
+expr_stmt|;
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y' u8"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -1470,6 +1497,13 @@ name|has_alpha
 operator|=
 name|TRUE
 expr_stmt|;
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
+expr_stmt|;
 break|break;
 case|case
 name|GIMP_GRAYA_IMAGE
@@ -1486,6 +1520,13 @@ expr_stmt|;
 name|has_alpha
 operator|=
 name|TRUE
+expr_stmt|;
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y'A u8"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -2795,6 +2836,12 @@ name|buffer
 expr_stmt|;
 name|pp
 operator|->
+name|format
+operator|=
+name|format
+expr_stmt|;
+name|pp
+operator|->
 name|src
 operator|=
 name|NULL
@@ -2950,7 +2997,7 @@ argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
-name|NULL
+name|format
 argument_list|,
 name|data
 argument_list|,
@@ -6595,7 +6642,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27832cfc0308
+DECL|struct|__anon2ace97f10308
 block|{
 DECL|member|pub
 name|struct
