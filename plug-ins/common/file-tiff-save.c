@@ -155,7 +155,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278d4aac0108
+DECL|struct|__anon2a2df3780108
 block|{
 DECL|member|compression
 name|gint
@@ -178,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278d4aac0208
+DECL|struct|__anon2a2df3780208
 block|{
 DECL|member|ID
 name|gint32
@@ -2774,6 +2774,11 @@ name|buffer
 init|=
 name|NULL
 decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|format
+decl_stmt|;
 name|gint
 name|tile_height
 decl_stmt|;
@@ -2995,6 +3000,13 @@ name|alpha
 operator|=
 name|FALSE
 expr_stmt|;
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
+argument_list|)
+expr_stmt|;
 break|break;
 case|case
 name|GIMP_GRAY_IMAGE
@@ -3018,6 +3030,13 @@ expr_stmt|;
 name|alpha
 operator|=
 name|FALSE
+expr_stmt|;
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y' u8"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -3049,6 +3068,13 @@ name|alpha
 operator|=
 name|TRUE
 expr_stmt|;
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
+expr_stmt|;
 break|break;
 case|case
 name|GIMP_GRAYA_IMAGE
@@ -3074,6 +3100,13 @@ expr_stmt|;
 name|alpha
 operator|=
 name|TRUE
+expr_stmt|;
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y'A u8"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -3255,6 +3288,10 @@ expr_stmt|;
 name|alpha
 operator|=
 name|FALSE
+expr_stmt|;
+name|format
+operator|=
+name|NULL
 expr_stmt|;
 name|g_free
 argument_list|(
@@ -3925,7 +3962,7 @@ argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
-name|NULL
+name|format
 argument_list|,
 name|src
 argument_list|,
