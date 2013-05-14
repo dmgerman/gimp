@@ -108,7 +108,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"Radius of square pixel region, (width and height will be radius*2+1)"
+literal|"Performs an averaging of a square box of pixels"
 argument_list|)
 block|,
 literal|"gegl:box-blur"
@@ -280,6 +280,33 @@ comment|/* FIXME GIMP_HELP_FILTER_COLOR_TO_ALPHA */
 block|}
 block|,
 block|{
+literal|"filters-difference-of-gaussians"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Difference of Gaussians..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Edge detection with control of edge thickness"
+argument_list|)
+block|,
+literal|"gegl:difference-of-gaussians"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_DIFFERENCE_OF_GAUSSIANS */
+block|}
+block|,
+block|{
 literal|"filters-dot"
 block|,
 name|GIMP_STOCK_GEGL
@@ -307,7 +334,7 @@ comment|/* FIXME GIMP_HELP_FILTER_DOT */
 block|}
 block|,
 block|{
-literal|"filters-difference-of-gaussians"
+literal|"filters-exposure"
 block|,
 name|GIMP_STOCK_GEGL
 block|,
@@ -315,7 +342,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"Difference of Gaussians..."
+literal|"_E_xposure..."
 argument_list|)
 block|,
 name|NULL
@@ -324,13 +351,13 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"Edge detection with control of edge thickness"
+literal|"Changes Exposure and Contrast, mainly for use with high dynamic range images"
 argument_list|)
 block|,
-literal|"gegl:difference-of-gaussians"
+literal|"gegl:exposure"
 block|,
 name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_DIFFERENCE_OF_GAUSSIANS */
+comment|/* FIXME GIMP_HELP_FILTER_EXPOSURE */
 block|}
 block|,
 block|{
@@ -1121,6 +1148,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-dot"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-exposure"
 argument_list|,
 name|writable
 argument_list|)
