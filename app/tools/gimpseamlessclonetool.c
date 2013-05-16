@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimptoolinfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -257,7 +263,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac6269d0103
+DECL|enum|__anon2a456a9f0103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -750,10 +756,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/**  * gimp_seamless_clone_tool_init:  * @self: The instance of the tool to initialize  *  * Initialize all the pointers to NULL, initialize the state machine,  * moust cursor and the tool control object. This function will be  * called on the first time the tool is being switched to.  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -774,20 +776,19 @@ argument_list|(
 name|self
 argument_list|)
 decl_stmt|;
-comment|/* TODO: If we want our tool to be invalidated by something, enable    * the following line. Note that the enum of the dirty properties is    * GimpDirtyMask which is located under app/core/core-enums.h */
-comment|//  gimp_tool_control_set_dirty_mask  (tool->control,
-comment|//                                     GIMP_DIRTY_IMAGE           |
-comment|//                                     GIMP_DIRTY_IMAGE_STRUCTURE |
-comment|//                                     GIMP_DIRTY_DRAWABLE        |
-comment|//                                     GIMP_DIRTY_SELECTION);
-comment|/* TODO: We do need click events, but so do all tools. What's this? */
-name|gimp_tool_control_set_wants_click
+name|gimp_tool_control_set_dirty_mask
 argument_list|(
 name|tool
 operator|->
 name|control
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_IMAGE
+operator||
+name|GIMP_DIRTY_IMAGE_STRUCTURE
+operator||
+name|GIMP_DIRTY_DRAWABLE
+operator||
+name|GIMP_DIRTY_SELECTION
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_tool_cursor
@@ -799,7 +800,6 @@ argument_list|,
 name|GIMP_TOOL_CURSOR_MOVE
 argument_list|)
 expr_stmt|;
-comment|/* In order to achieve as much instant reponse as possible, only care    * about the location of the mouse at present (while it's being moved)    * and ignore motion events that happened while we were dealing with    * previous motion events */
 name|gimp_tool_control_set_motion_mode
 argument_list|(
 name|tool
@@ -811,58 +811,12 @@ argument_list|)
 expr_stmt|;
 name|self
 operator|->
-name|paste
-operator|=
-name|NULL
-expr_stmt|;
-name|self
-operator|->
-name|render_node
-operator|=
-name|NULL
-expr_stmt|;
-name|self
-operator|->
-name|sc_node
-operator|=
-name|NULL
-expr_stmt|;
-name|self
-operator|->
 name|tool_state
 operator|=
 name|SC_STATE_INIT
 expr_stmt|;
-name|self
-operator|->
-name|image_map
-operator|=
-name|NULL
-expr_stmt|;
-name|self
-operator|->
-name|xoff
-operator|=
-name|self
-operator|->
-name|yoff
-operator|=
-name|self
-operator|->
-name|width
-operator|=
-name|self
-operator|->
-name|height
-operator|=
-literal|0
-expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* This function is called when the tool should pause and resume it's  * action, and when it should halt (i.e. stop and free all resources).  * We are interested in this mainly because we want to free resources  * when the tool terminates, and nothing else...  */
-end_comment
 
 begin_function
 specifier|static
@@ -906,14 +860,11 @@ break|break;
 case|case
 name|GIMP_TOOL_ACTION_HALT
 case|:
-comment|/* We only have what to stop if we are active on some display */
 if|if
 condition|(
 name|tool
 operator|->
 name|display
-operator|!=
-name|NULL
 condition|)
 name|gimp_seamless_clone_tool_stop
 argument_list|(
@@ -921,13 +872,6 @@ name|sc
 argument_list|,
 name|FALSE
 argument_list|)
-expr_stmt|;
-comment|/* Now, mark that we have no display, so any needed initialization        * will happen on the next time a display is picked */
-name|tool
-operator|->
-name|display
-operator|=
-name|NULL
 expr_stmt|;
 comment|/* TODO: If we have any tool options that should be reset, here is        *       a good place to do so.        */
 break|break;
@@ -946,79 +890,6 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * paste_to_gegl_buf:  * @tool: The GimpTool which wishes to acquire the paste  *  * This function takes a GimpTool as a parameter, and using it's Gimp  * object, it will convert the current buffer in the clipboard into a  * GeglBuffer.  *  * Returns: A GeglBuffer* object representing the active paste in Gimp's  *          clipboard, or NULL if the clipboard does not contain image  *          data  */
-end_comment
-
-begin_function
-specifier|static
-name|GeglBuffer
-modifier|*
-DECL|function|paste_to_gegl_buf (GimpTool * tool)
-name|paste_to_gegl_buf
-parameter_list|(
-name|GimpTool
-modifier|*
-name|tool
-parameter_list|)
-block|{
-comment|/* Here is a textual description of the graph we are going to create:    *    * +--------------------------------------+    * |<tilemanager-source><- paste         |    * |           |output                    |    * |     +-----+------------+             |    * |     |input             |input        |    * |<buffer-sink><seamless-clone-prepare>|    * |     |                  |             |    * |     v                  v             |    * |   paste          abstract_cache      |    * +--------------------------------------+    */
-name|GimpContext
-modifier|*
-name|context
-init|=
-operator|&
-name|gimp_tool_get_options
-argument_list|(
-name|tool
-argument_list|)
-operator|->
-name|parent_instance
-decl_stmt|;
-name|GimpBuffer
-modifier|*
-name|buffer
-init|=
-name|gimp_clipboard_get_buffer
-argument_list|(
-name|context
-operator|->
-name|gimp
-argument_list|)
-decl_stmt|;
-name|GeglBuffer
-modifier|*
-name|result
-init|=
-name|NULL
-decl_stmt|;
-if|if
-condition|(
-name|buffer
-condition|)
-block|{
-name|result
-operator|=
-name|gegl_buffer_dup
-argument_list|(
-name|gimp_buffer_get_buffer
-argument_list|(
-name|buffer
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|buffer
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|result
-return|;
 block|}
 end_function
 
@@ -1068,7 +939,7 @@ argument_list|(
 name|image
 argument_list|)
 decl_stmt|;
-comment|/* First handle the paste - we need to make sure we have one in order    * to do anything else. */
+comment|/* First handle the paste - we need to make sure we have one in order    * to do anything else.    */
 if|if
 condition|(
 name|sc
@@ -1078,32 +949,43 @@ operator|==
 name|NULL
 condition|)
 block|{
+name|GimpBuffer
+modifier|*
+name|buffer
+init|=
+name|gimp_clipboard_get_buffer
+argument_list|(
+name|tool
+operator|->
+name|tool_info
+operator|->
+name|gimp
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|buffer
+condition|)
+comment|/* TODO: prompt for some error message */
+return|return;
 name|sc
 operator|->
 name|paste
 operator|=
-name|paste_to_gegl_buf
+name|gegl_buffer_dup
 argument_list|(
-name|GIMP_TOOL
+name|gimp_buffer_get_buffer
 argument_list|(
-name|sc
+name|buffer
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|sc
-operator|->
-name|paste
-operator|==
-name|NULL
-condition|)
-block|{
-comment|/* TODO: prompt for some error message */
-return|return;
-block|}
-else|else
-block|{
+name|g_object_unref
+argument_list|(
+name|buffer
+argument_list|)
+expr_stmt|;
 name|sc
 operator|->
 name|width
@@ -1127,7 +1009,6 @@ name|paste
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 comment|/* Free resources which are relevant only for the previous display */
 name|gimp_seamless_clone_tool_stop
 argument_list|(
@@ -1136,14 +1017,12 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/* Set the new tool display */
 name|tool
 operator|->
 name|display
 operator|=
 name|display
 expr_stmt|;
-comment|/* Initialize the image map preview */
 name|gimp_seamless_clone_tool_create_image_map
 argument_list|(
 name|sc
@@ -1151,7 +1030,6 @@ argument_list|,
 name|drawable
 argument_list|)
 expr_stmt|;
-comment|/* Now call the start method of the draw tool */
 name|gimp_draw_tool_start
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -1207,18 +1085,6 @@ condition|)
 block|{
 name|sc
 operator|->
-name|render_node
-operator|=
-name|NULL
-expr_stmt|;
-name|sc
-operator|->
-name|sc_node
-operator|=
-name|NULL
-expr_stmt|;
-name|sc
-operator|->
 name|tool_state
 operator|=
 name|SC_STATE_INIT
@@ -1251,7 +1117,6 @@ operator|->
 name|render_node
 condition|)
 block|{
-comment|/* When the parent render_node is unreffed completly, it will            * also free all of it's child nodes */
 name|g_object_unref
 argument_list|(
 name|sc
@@ -1281,9 +1146,6 @@ operator|->
 name|image_map
 condition|)
 block|{
-comment|/* This line makes sure the tool won't be aborted when the        * active drawable is being switched.        * Now, the question is why? We are currently handling an        * abort signal, so unless somehow we can have two of these in        * parallel, I don't see any reason to be afraid. Not that it        * does any harm, but still.        * TODO: check this?! */
-comment|//      gimp_tool_control_set_preserve (tool->control, TRUE);
-comment|/* Stop the computation of the live preview, and mark it not        * to be committed. Then free the image map object. */
 name|gimp_image_map_abort
 argument_list|(
 name|sc
@@ -1304,8 +1166,6 @@ name|image_map
 operator|=
 name|NULL
 expr_stmt|;
-comment|/* Revert the previous set_preserve */
-comment|//      gimp_tool_control_set_preserve (tool->control, FALSE);
 if|if
 condition|(
 name|GIMP_TOOL
@@ -1315,7 +1175,6 @@ argument_list|)
 operator|->
 name|display
 condition|)
-block|{
 name|gimp_image_flush
 argument_list|(
 name|gimp_display_get_image
@@ -1329,7 +1188,6 @@ name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|gimp_draw_tool_stop
 argument_list|(
@@ -1362,7 +1220,6 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-comment|// GimpSeamlessCloneTool *sc = GIMP_SEAMLESS_CLONE_TOOL (tool);
 name|GIMP_TOOL_CLASS
 argument_list|(
 name|parent_class
@@ -1385,7 +1242,6 @@ operator|->
 name|display
 condition|)
 return|return;
-comment|/* Pause the tool before modifying the tool data, so that drawing    * won't be done using data in intermidiate states */
 name|gimp_draw_tool_pause
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -1395,7 +1251,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* TODO: Modify data here */
-comment|/* Done modifying data? If so, now restore the tool drawing */
 name|gimp_draw_tool_resume
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -1479,7 +1334,10 @@ name|sct
 operator|->
 name|image_map
 argument_list|,
-name|NULL
+name|GIMP_PROGRESS
+argument_list|(
+name|tool
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1576,7 +1434,6 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-comment|/* Pause the tool before modifying the tool data, so that drawing    * won't be done using data in intermidiate states */
 name|gimp_draw_tool_pause
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -1585,7 +1442,6 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* There is nothing to do, unless we were actually moving a paste */
 if|if
 condition|(
 name|sc
@@ -1664,7 +1520,6 @@ name|sc
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Done modifying data? If so, now restore the tool drawing */
 name|gimp_draw_tool_resume
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -1702,7 +1557,6 @@ modifier|*
 name|display
 parameter_list|)
 block|{
-comment|/* Pause the tool before modifying the tool data, so that drawing    * won't be done using data in intermidiate states */
 name|gimp_draw_tool_pause
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -1712,7 +1566,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* TODO: Modify data here */
-comment|/* Done modifying data? If so, now restore the tool drawing */
 name|gimp_draw_tool_resume
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -1838,7 +1691,7 @@ name|sc
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* Record previous location, in case the user cancel's the        * movement */
+comment|/* Record previous location, in case the user cancel's the        * movement        */
 name|sc
 operator|->
 name|xoff_p
@@ -1855,7 +1708,7 @@ name|sc
 operator|->
 name|yoff
 expr_stmt|;
-comment|/* Record the mouse location, so that the dragging offset can be        * calculated */
+comment|/* Record the mouse location, so that the dragging offset can be        * calculated        */
 name|sc
 operator|->
 name|xclick
@@ -1891,7 +1744,7 @@ name|tool_state
 operator|=
 name|SC_STATE_RENDER_MOTION
 expr_stmt|;
-comment|/* In order to receive motion events from the current click, we must        * activate the tool control */
+comment|/* In order to receive motion events from the current click, we must        * activate the tool control        */
 name|gimp_tool_control_activate
 argument_list|(
 name|tool
@@ -1950,7 +1803,6 @@ operator|==
 name|SC_STATE_RENDER_MOTION
 condition|)
 block|{
-comment|/* Now, halt the tool control */
 name|gimp_tool_control_halt
 argument_list|(
 name|tool
@@ -2120,10 +1972,12 @@ name|tool_state
 operator|==
 name|SC_STATE_RENDER_MOTION
 condition|)
+block|{
 name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_MOVE
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -2140,10 +1994,12 @@ argument_list|,
 name|coords
 argument_list|)
 condition|)
+block|{
 name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_NONE
 expr_stmt|;
+block|}
 name|gimp_tool_control_set_cursor_modifier
 argument_list|(
 name|tool
@@ -2172,10 +2028,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* Draw any required on canvas interaction. For now, this is kept empty.  * It's a place holder for the future of this tool, for some more  * advanced features that may be added later */
-end_comment
 
 begin_function
 specifier|static
@@ -2446,7 +2298,7 @@ name|xoff
 decl_stmt|,
 name|yoff
 decl_stmt|;
-comment|/* Now we should also take into consideration the fact that    * we should work with coordinates relative to the background    * buffer */
+comment|/* Now we should also take into consideration the fact that    * we should work with coordinates relative to the background    * buffer    */
 name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
@@ -2461,7 +2313,6 @@ operator|&
 name|yoff
 argument_list|)
 expr_stmt|;
-comment|/* The only thing to update right now, is the location of the paste */
 name|gegl_node_set
 argument_list|(
 name|sc
@@ -2496,10 +2347,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/* Create an image map to render the operation of the current tool with  * a preview on the given drawable */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -2515,7 +2362,6 @@ modifier|*
 name|drawable
 parameter_list|)
 block|{
-comment|/* First, make sure we actually have the GEGL graph needed to render    * the operation's result */
 if|if
 condition|(
 operator|!
@@ -2567,10 +2413,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/* Flush (Refresh) the image map preview */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -2597,7 +2439,7 @@ operator|->
 name|display
 argument_list|)
 decl_stmt|;
-name|gimp_projection_flush_now
+name|gimp_projection_flush
 argument_list|(
 name|gimp_image_get_projection
 argument_list|(
@@ -2605,19 +2447,8 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_display_flush_now
-argument_list|(
-name|tool
-operator|->
-name|display
-argument_list|)
-expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/**  * gimp_seamless_clone_tool_image_map_update:  * @sc: A GimpSeamlessCloneTool to update  *  * This functions updates the image map preview displayed by a given  * GimpSeamlessCloneTool. The image_map must be initialized prior to the  * call to this function!  */
-end_comment
 
 begin_function
 specifier|static
@@ -2797,6 +2628,11 @@ operator|&
 name|visible
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|op
 argument_list|)
 expr_stmt|;
 comment|/* Now update the image map and show this area */
