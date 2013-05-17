@@ -315,6 +315,11 @@ name|buffer
 init|=
 name|NULL
 decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|format
+decl_stmt|;
 name|gint
 name|tile_height
 decl_stmt|;
@@ -1470,6 +1475,19 @@ argument_list|(
 name|layer_ID
 argument_list|)
 expr_stmt|;
+name|format
+operator|=
+name|babl_format
+argument_list|(
+name|image_type
+operator|==
+name|GIMP_RGB
+condition|?
+literal|"R'G'B' u8"
+else|:
+literal|"Y' u8"
+argument_list|)
+expr_stmt|;
 while|while
 condition|(
 name|cinfo
@@ -1582,7 +1600,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-name|NULL
+name|format
 argument_list|,
 name|buf
 argument_list|,
@@ -2088,7 +2106,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a6d08b0108
+DECL|struct|__anon28daf8850108
 block|{
 DECL|member|pub
 name|struct
