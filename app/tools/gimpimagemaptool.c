@@ -2270,7 +2270,7 @@ name|GIMP_PICKABLE
 argument_list|(
 name|tool
 operator|->
-name|image_map
+name|drawable
 argument_list|)
 argument_list|,
 name|x
