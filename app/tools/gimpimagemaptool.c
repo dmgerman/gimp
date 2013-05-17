@@ -2408,6 +2408,8 @@ argument_list|(
 name|tool
 operator|->
 name|image_map
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

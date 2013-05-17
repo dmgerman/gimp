@@ -263,7 +263,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a456a9f0103
+DECL|enum|__anon2b3098020103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -2641,6 +2641,8 @@ argument_list|(
 name|sc
 operator|->
 name|image_map
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

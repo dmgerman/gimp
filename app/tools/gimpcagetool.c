@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d110340103
+DECL|enum|__anon28e6fd0b0103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -4951,6 +4951,8 @@ argument_list|(
 name|ct
 operator|->
 name|image_map
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
