@@ -404,7 +404,18 @@ name|GimpToolPalette
 modifier|*
 name|palette
 parameter_list|)
-block|{ }
+block|{
+name|gtk_tool_palette_set_style
+argument_list|(
+name|GTK_TOOL_PALETTE
+argument_list|(
+name|palette
+argument_list|)
+argument_list|,
+name|GTK_TOOLBAR_ICONS
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_function
