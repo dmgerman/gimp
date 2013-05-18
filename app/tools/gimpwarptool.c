@@ -756,7 +756,7 @@ operator|->
 name|coords_buffer
 condition|)
 block|{
-name|gegl_buffer_destroy
+name|g_object_unref
 argument_list|(
 name|wt
 operator|->
@@ -914,6 +914,7 @@ argument_list|(
 name|image
 argument_list|)
 decl_stmt|;
+specifier|const
 name|Babl
 modifier|*
 name|format
@@ -952,7 +953,7 @@ operator|->
 name|coords_buffer
 condition|)
 block|{
-name|gegl_buffer_destroy
+name|g_object_unref
 argument_list|(
 name|wt
 operator|->
@@ -1225,6 +1226,11 @@ argument_list|(
 name|wt
 operator|->
 name|image_map
+argument_list|,
+name|GIMP_PROGRESS
+argument_list|(
+name|tool
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -2078,9 +2084,7 @@ name|wt
 operator|->
 name|graph
 argument_list|,
-name|NULL
-argument_list|,
-name|NULL
+name|GIMP_STOCK_TOOL_WARP
 argument_list|)
 expr_stmt|;
 name|g_object_set
@@ -2231,7 +2235,7 @@ operator|.
 name|height
 argument_list|)
 expr_stmt|;
-name|gimp_image_map_apply_region
+name|gimp_image_map_apply
 argument_list|(
 name|wt
 operator|->
@@ -2619,7 +2623,7 @@ operator|->
 name|image_map
 argument_list|)
 expr_stmt|;
-name|gimp_image_map_apply_region
+name|gimp_image_map_apply
 argument_list|(
 name|wt
 operator|->
