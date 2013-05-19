@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*  * The dicom reading and writing code was written from scratch  * by Dov Grobgeld.  (dov@imagic.weizman.ac.il).  */
+comment|/*  * The dicom reading and writing code was written from scratch  * by Dov Grobgeld.  (dov.grobgeld@gmail.com).  */
 end_comment
 
 begin_include
@@ -3107,7 +3107,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc329890108
+DECL|struct|__anon2b89e24c0108
 block|{
 DECL|member|group_word
 name|guint16
@@ -4376,7 +4376,7 @@ comment|/* 0002, 0010 - Transfer syntax uid */
 block|{
 literal|0x0002
 block|,
-literal|0x0001
+literal|0x0010
 block|,
 literal|"UI"
 block|,
@@ -4413,6 +4413,45 @@ literal|"GIMP Dicom Plugin 1.0"
 block|}
 block|,
 comment|/* Identifying group */
+comment|/* ImageType */
+block|{
+literal|0x0008
+block|,
+literal|0x0008
+block|,
+literal|"CS"
+block|,
+name|strlen
+argument_list|(
+literal|"ORIGINAL\\PRIMARY"
+argument_list|)
+block|,
+operator|(
+name|guint8
+operator|*
+operator|)
+literal|"ORIGINAL\\PRIMARY"
+block|}
+block|,
+block|{
+literal|0x0008
+block|,
+literal|0x0016
+block|,
+literal|"UI"
+block|,
+name|strlen
+argument_list|(
+literal|"1.2.840.10008.5.1.4.1.1.7"
+argument_list|)
+block|,
+operator|(
+name|guint8
+operator|*
+operator|)
+literal|"1.2.840.10008.5.1.4.1.1.7"
+block|}
+block|,
 comment|/* Study date */
 block|{
 literal|0x0008
@@ -4493,7 +4532,47 @@ operator|)
 name|today_string
 block|}
 block|,
-comment|/* Modality - I have to add something.. */
+comment|/* Content Time */
+block|{
+literal|0x0008
+block|,
+literal|0x0030
+block|,
+literal|"TM"
+block|,
+name|strlen
+argument_list|(
+literal|"000000.000000"
+argument_list|)
+block|,
+operator|(
+name|guint8
+operator|*
+operator|)
+literal|"000000.000000"
+block|}
+block|,
+comment|/* AccessionNumber */
+block|{
+literal|0x0008
+block|,
+literal|0x0050
+block|,
+literal|"SH"
+block|,
+name|strlen
+argument_list|(
+literal|""
+argument_list|)
+block|,
+operator|(
+name|guint8
+operator|*
+operator|)
+literal|""
+block|}
+block|,
+comment|/* Modality */
 block|{
 literal|0x0008
 block|,
@@ -4511,6 +4590,46 @@ name|guint8
 operator|*
 operator|)
 literal|"MR"
+block|}
+block|,
+comment|/* ConversionType */
+block|{
+literal|0x0008
+block|,
+literal|0x0064
+block|,
+literal|"CS"
+block|,
+name|strlen
+argument_list|(
+literal|"WSD"
+argument_list|)
+block|,
+operator|(
+name|guint8
+operator|*
+operator|)
+literal|"WSD"
+block|}
+block|,
+comment|/* ReferringPhysiciansName */
+block|{
+literal|0x0008
+block|,
+literal|0x0090
+block|,
+literal|"PN"
+block|,
+name|strlen
+argument_list|(
+literal|""
+argument_list|)
+block|,
+operator|(
+name|guint8
+operator|*
+operator|)
+literal|""
 block|}
 block|,
 comment|/* Patient group */
@@ -4540,7 +4659,7 @@ literal|0x0010
 block|,
 literal|0x0020
 block|,
-literal|"CS"
+literal|"LO"
 block|,
 name|strlen
 argument_list|(
@@ -4596,6 +4715,66 @@ comment|/* unknown */
 block|}
 block|,
 comment|/* Relationship group */
+comment|/* StudyId */
+block|{
+literal|0x0020
+block|,
+literal|0x0010
+block|,
+literal|"IS"
+block|,
+name|strlen
+argument_list|(
+literal|"1"
+argument_list|)
+block|,
+operator|(
+name|guint8
+operator|*
+operator|)
+literal|"1"
+block|}
+block|,
+comment|/* SeriesNumber */
+block|{
+literal|0x0020
+block|,
+literal|0x0011
+block|,
+literal|"IS"
+block|,
+name|strlen
+argument_list|(
+literal|"1"
+argument_list|)
+block|,
+operator|(
+name|guint8
+operator|*
+operator|)
+literal|"1"
+block|}
+block|,
+comment|/* AcquisitionNumber */
+block|{
+literal|0x0020
+block|,
+literal|0x0012
+block|,
+literal|"IS"
+block|,
+name|strlen
+argument_list|(
+literal|"1"
+argument_list|)
+block|,
+operator|(
+name|guint8
+operator|*
+operator|)
+literal|"1"
+block|}
+block|,
 comment|/* Instance number */
 block|{
 literal|0x0020
@@ -5464,7 +5643,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-DECL|struct|__anon2bc329890208
+DECL|struct|__anon2b89e24c0208
 struct|struct
 block|{
 DECL|member|DICOM
@@ -5592,7 +5771,7 @@ modifier|*
 name|elements
 parameter_list|)
 block|{
-DECL|struct|__anon2bc329890308
+DECL|struct|__anon2b89e24c0308
 struct|struct
 block|{
 DECL|member|DICOM
@@ -5914,7 +6093,7 @@ operator|(
 name|guint8
 operator|*
 operator|)
-literal|0x0000
+literal|"\0"
 argument_list|,
 literal|1
 argument_list|)
