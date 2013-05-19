@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e891320103
+DECL|enum|__anon2767e2640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -861,14 +861,28 @@ name|channel
 operator|=
 name|channel
 expr_stmt|;
+comment|/*  Serialize the channel properties manually (not using        *  gimp_config_serialize_properties()), so the parent class'        *  "time" property doesn't end up in the config file once per        *  channel. See bug #700653.        */
 name|success
 operator|=
-name|gimp_config_serialize_properties
+operator|(
+name|gimp_config_serialize_property_by_name
 argument_list|(
 name|config
 argument_list|,
+literal|"channel"
+argument_list|,
 name|writer
 argument_list|)
+operator|&&
+name|gimp_config_serialize_property_by_name
+argument_list|(
+name|config
+argument_list|,
+literal|"curve"
+argument_list|,
+name|writer
+argument_list|)
+operator|)
 expr_stmt|;
 if|if
 condition|(
