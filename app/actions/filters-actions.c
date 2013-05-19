@@ -253,6 +253,33 @@ comment|/* FIXME GIMP_HELP_FILTER_COLOR_TO_ALPHA */
 block|}
 block|,
 block|{
+literal|"filters-cubism"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Cubism..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Convert the image into randomly rotated square blobs, somehow resembling a cubist painting style"
+argument_list|)
+block|,
+literal|"gegl:cubism"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_CUBISM */
+block|}
+block|,
+block|{
 literal|"filters-difference-of-gaussians"
 block|,
 name|GIMP_STOCK_GEGL
@@ -1129,6 +1156,13 @@ operator|!
 name|gray
 operator|&&
 name|alpha
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-cubism"
+argument_list|,
+name|writable
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

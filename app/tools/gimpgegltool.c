@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292ff2e90103
+DECL|enum|__anon2ae4e8670103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -343,6 +343,9 @@ literal|"gegl:color-to-alpha"
 block|,
 comment|/* in gimp */
 literal|"gegl:colorize"
+block|,
+comment|/* in gimp */
+literal|"gegl:cubism"
 block|,
 comment|/* in gimp */
 literal|"gegl:contrast-curve"
