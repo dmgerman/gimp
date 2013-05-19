@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae4e8670103
+DECL|enum|__anon2b81bad10103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -478,6 +478,9 @@ comment|/* in gimp */
 literal|"gegl:vector-stroke"
 block|,
 literal|"gegl:vignette"
+block|,
+comment|/* in gimp */
+literal|"gegl:whirl-pinch"
 block|,
 comment|/* in gimp */
 block|}

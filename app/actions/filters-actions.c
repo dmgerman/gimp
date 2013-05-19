@@ -926,6 +926,33 @@ block|,
 name|NULL
 comment|/* FIXME GIMP_HELP_FILTER_VIGNETTE */
 block|}
+block|,
+block|{
+literal|"filters-whirl-pinch"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"W_hirl and Pinch..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Distort an image by whirling and pinching"
+argument_list|)
+block|,
+literal|"gegl:whirl-pinch"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_WHIRL_PINCH */
+block|}
 block|, }
 decl_stmt|;
 end_decl_stmt
@@ -1335,6 +1362,20 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-unsharp-mask"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-vignette"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-whirl-pinch"
 argument_list|,
 name|writable
 argument_list|)
