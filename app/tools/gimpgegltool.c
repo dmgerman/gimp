@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278e49800103
+DECL|enum|__anon292ff2e90103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -427,6 +427,9 @@ literal|"gegl:polar-coordinates"
 block|,
 comment|/* in gimp */
 literal|"gegl:posterize"
+block|,
+comment|/* in gimp */
+literal|"gegl:red-eye-removal"
 block|,
 comment|/* in gimp */
 literal|"gegl:ripple"

@@ -685,6 +685,33 @@ comment|/* FIXME GIMP_HELP_FILTER_POLAR_COORDINATES */
 block|}
 block|,
 block|{
+literal|"filters-red-eye-removal"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Red Eye Removal..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Remove the red eye effect caused by camera flashes"
+argument_list|)
+block|,
+literal|"gegl:red-eye-removal"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_RED_EYE_REMOVAL */
+block|}
+block|,
+block|{
 literal|"filters-ripple"
 block|,
 name|GIMP_STOCK_GEGL
@@ -1220,6 +1247,16 @@ argument_list|(
 literal|"filters-polar-coordinates"
 argument_list|,
 name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-red-eye-removal"
+argument_list|,
+name|writable
+operator|&&
+operator|!
+name|gray
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
