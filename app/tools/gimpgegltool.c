@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5be5ad0103
+DECL|enum|__anon278e49800103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -444,6 +444,9 @@ comment|/* useless */
 literal|"gegl:seamless-clone"
 block|,
 literal|"gegl:shear"
+block|,
+comment|/* in gimp */
+literal|"gegl:softglow"
 block|,
 comment|/* in gimp */
 literal|"gegl:text"
