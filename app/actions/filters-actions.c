@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl-plugin.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -104,12 +110,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Color to grayscale conversion"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:c2g"
 block|,
@@ -131,12 +132,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Simulate a cartoon by enhancing edges"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:cartoon"
 block|,
@@ -158,12 +154,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Create a checkerboard pattern"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:checkerboard"
 block|,
@@ -185,12 +176,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Reduce the number of colors in the image, with optional dithering"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:color-reduction"
 block|,
@@ -212,12 +198,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Change the color temperature of the image"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:color-temperature"
 block|,
@@ -239,12 +220,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Convert a specified color to transparency"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:color-to-alpha"
 block|,
@@ -266,12 +242,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Convert the image into randomly rotated square blobs, somehow resembling a cubist painting style"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:cubism"
 block|,
@@ -293,12 +264,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Edge detection with control of edge thickness"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:difference-of-gaussians"
 block|,
@@ -320,12 +286,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Simplify image into an array of solid-colored dots"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:dot"
 block|,
@@ -347,12 +308,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Simulate an image created by embossing"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:emboss"
 block|,
@@ -374,12 +330,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Changes Exposure and Contrast, mainly for use with high dynamic range images"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:exposure"
 block|,
@@ -401,12 +352,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Apply a gaussian blur"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:gaussian-blur"
 block|,
@@ -428,12 +374,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"High-resolution edge detection"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:edge-laplace"
 block|,
@@ -455,12 +396,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Corrects lens distortion"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:lens-distortion"
 block|,
@@ -482,12 +418,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Monochrome channel mixer"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:mono-mixer"
 block|,
@@ -509,12 +440,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Randomize lightness, chroma and hue independently"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:noise-CIE_lch"
 block|,
@@ -536,12 +462,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Scattering pixel values in HSV space"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:noise-hsv"
 block|,
@@ -563,12 +484,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Completely randomize a fraction of pixels"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:noise-hurl"
 block|,
@@ -590,12 +506,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Randomly interchange some pixels with neighbors"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:noise-pick"
 block|,
@@ -617,12 +528,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Distort colors by random amounts"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:noise-rgb"
 block|,
@@ -644,12 +550,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Randomly slide some pixels downward (similar to melting)"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:noise-slur"
 block|,
@@ -671,12 +572,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Simulate color distortion produced by a copy machine"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:photocopy"
 block|,
@@ -698,12 +594,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Simplify image into an array of solid-colored squares"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:pixelize"
 block|,
@@ -725,12 +616,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Convert image to or from polar coordinates"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:polar-coordinates"
 block|,
@@ -752,12 +638,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Remove the red eye effect caused by camera flashes"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:red-eye-removal"
 block|,
@@ -779,12 +660,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Displace pixels in a ripple pattern"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:ripple"
 block|,
@@ -806,12 +682,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Replace partial transparency with a color"
-argument_list|)
+name|NULL
 block|,
 literal|"gimp:semi-flatten"
 block|,
@@ -833,12 +704,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Specialized direction-dependent edge-detection"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:edge-sobel"
 block|,
@@ -860,12 +726,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Simulate glow by making highlights intense and fuzzy"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:softglow"
 block|,
@@ -887,12 +748,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Make transparency all-or-nothing"
-argument_list|)
+name|NULL
 block|,
 literal|"gimp:threshold-alpha"
 block|,
@@ -914,12 +770,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"The most widely used method for sharpening an image"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:unsharp-mask"
 block|,
@@ -941,12 +792,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Applies a vignette to an image"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:vignette"
 block|,
@@ -968,12 +814,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"filters-action"
-argument_list|,
-literal|"Distort an image by whirling and pinching"
-argument_list|)
+name|NULL
 block|,
 literal|"gegl:whirl-pinch"
 block|,
@@ -994,6 +835,9 @@ modifier|*
 name|group
 parameter_list|)
 block|{
+name|gint
+name|i
+decl_stmt|;
 name|gimp_action_group_add_string_actions
 argument_list|(
 name|group
@@ -1013,6 +857,110 @@ name|filters_filter_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|G_N_ELEMENTS
+argument_list|(
+name|filters_actions
+argument_list|)
+condition|;
+name|i
+operator|++
+control|)
+block|{
+specifier|const
+name|GimpStringActionEntry
+modifier|*
+name|entry
+init|=
+operator|&
+name|filters_actions
+index|[
+name|i
+index|]
+decl_stmt|;
+name|GtkAction
+modifier|*
+name|action
+decl_stmt|;
+name|GType
+name|op_type
+decl_stmt|;
+name|action
+operator|=
+name|gtk_action_group_get_action
+argument_list|(
+name|GTK_ACTION_GROUP
+argument_list|(
+name|group
+argument_list|)
+argument_list|,
+name|entry
+operator|->
+name|name
+argument_list|)
+expr_stmt|;
+name|op_type
+operator|=
+name|gegl_operation_gtype_from_name
+argument_list|(
+name|entry
+operator|->
+name|value
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|action
+operator|&&
+name|op_type
+condition|)
+block|{
+name|GeglOperationClass
+modifier|*
+name|op_class
+decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|description
+decl_stmt|;
+name|op_class
+operator|=
+name|g_type_class_ref
+argument_list|(
+name|op_type
+argument_list|)
+expr_stmt|;
+name|description
+operator|=
+name|gegl_operation_class_get_key
+argument_list|(
+name|op_class
+argument_list|,
+literal|"description"
+argument_list|)
+expr_stmt|;
+name|gtk_action_set_tooltip
+argument_list|(
+name|action
+argument_list|,
+name|description
+argument_list|)
+expr_stmt|;
+name|g_type_class_unref
+argument_list|(
+name|op_class
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 block|}
 end_function
 
