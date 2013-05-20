@@ -118,6 +118,11 @@ name|GtkWidget
 modifier|*
 name|operation_combo
 decl_stmt|;
+DECL|member|description_label
+name|GtkWidget
+modifier|*
+name|description_label
+decl_stmt|;
 block|}
 struct|;
 end_struct
