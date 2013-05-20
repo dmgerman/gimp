@@ -334,6 +334,33 @@ comment|/* FIXME GIMP_HELP_FILTER_DOT */
 block|}
 block|,
 block|{
+literal|"filters-emboss"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Emboss..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Simulate an image created by embossing"
+argument_list|)
+block|,
+literal|"gegl:emboss"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_EMBOSS */
+block|}
+block|,
+block|{
 literal|"filters-exposure"
 block|,
 name|GIMP_STOCK_GEGL
@@ -1202,6 +1229,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-dot"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-emboss"
 argument_list|,
 name|writable
 argument_list|)

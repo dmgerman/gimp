@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b81bad10103
+DECL|enum|__anon2ba670420103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -358,6 +358,9 @@ comment|/* in gimp */
 literal|"gegl:display"
 block|,
 literal|"gegl:dot"
+block|,
+comment|/* in gimp */
+literal|"gegl:emboss"
 block|,
 comment|/* in gimp */
 literal|"gegl:edge-laplace"
