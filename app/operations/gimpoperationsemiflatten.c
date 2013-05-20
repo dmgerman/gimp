@@ -45,9 +45,15 @@ directive|include
 file|"gimpoperationsemiflatten.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon29ce45620103
+DECL|enum|__anon2bc9d1f90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -234,7 +240,10 @@ literal|"color"
 argument_list|,
 literal|"description"
 argument_list|,
-literal|"Replace partial transparency with  a color"
+name|_
+argument_list|(
+literal|"Replace partial transparency with a color"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

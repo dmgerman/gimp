@@ -27,9 +27,15 @@ directive|include
 file|"gimpoperationthresholdalpha.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon2b748b200103
+DECL|enum|__anon292014110103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -213,7 +219,11 @@ literal|"color"
 argument_list|,
 literal|"description"
 argument_list|,
-literal|"Threshold a buffer's alpha channel to a value"
+name|_
+argument_list|(
+literal|"Make transparency all-or-nothing, by "
+literal|"thresholding the alpha channel to a value"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
