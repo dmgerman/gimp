@@ -144,13 +144,7 @@ name|GeglNode
 modifier|*
 name|graph
 decl_stmt|;
-comment|/* Top level GeglNode. All others node are child of it */
-DECL|member|read_coords_buffer_node
-name|GeglNode
-modifier|*
-name|read_coords_buffer_node
-decl_stmt|;
-comment|/* Gegl node that read in the coords buffer */
+comment|/* Top level GeglNode */
 DECL|member|render_node
 name|GeglNode
 modifier|*
@@ -171,7 +165,6 @@ name|GimpImageMap
 modifier|*
 name|image_map
 decl_stmt|;
-comment|/* For preview */
 DECL|member|last_region
 name|GeglRectangle
 name|last_region

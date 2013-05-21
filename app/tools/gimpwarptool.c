@@ -165,6 +165,14 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_define
+DECL|macro|STROKE_PERIOD
+define|#
+directive|define
+name|STROKE_PERIOD
+value|100
+end_define
+
 begin_function_decl
 specifier|static
 name|void
@@ -481,14 +489,6 @@ name|parent_class
 value|gimp_warp_tool_parent_class
 end_define
 
-begin_define
-DECL|macro|STROKE_PERIOD
-define|#
-directive|define
-name|STROKE_PERIOD
-value|100
-end_define
-
 begin_function
 name|void
 name|gimp_warp_tool_register
@@ -686,24 +686,6 @@ argument_list|,
 name|GIMP_TOOL_CURSOR_PERSPECTIVE
 argument_list|)
 expr_stmt|;
-name|self
-operator|->
-name|coords_buffer
-operator|=
-name|NULL
-expr_stmt|;
-name|self
-operator|->
-name|render_node
-operator|=
-name|NULL
-expr_stmt|;
-name|self
-operator|->
-name|image_map
-operator|=
-name|NULL
-expr_stmt|;
 block|}
 end_function
 
@@ -787,6 +769,12 @@ expr_stmt|;
 name|wt
 operator|->
 name|graph
+operator|=
+name|NULL
+expr_stmt|;
+name|wt
+operator|->
+name|render_node
 operator|=
 name|NULL
 expr_stmt|;
@@ -984,6 +972,12 @@ expr_stmt|;
 name|wt
 operator|->
 name|graph
+operator|=
+name|NULL
+expr_stmt|;
+name|wt
+operator|->
+name|render_node
 operator|=
 name|NULL
 expr_stmt|;
@@ -1641,6 +1635,12 @@ operator|->
 name|stroke_timer
 argument_list|)
 expr_stmt|;
+name|wt
+operator|->
+name|stroke_timer
+operator|=
+literal|0
+expr_stmt|;
 name|printf
 argument_list|(
 literal|"%s\n"
@@ -1902,12 +1902,9 @@ parameter_list|)
 block|{
 name|GeglNode
 modifier|*
-name|coords
-decl_stmt|,
-modifier|*
-name|render
+name|graph
 decl_stmt|;
-comment|/* Render nodes */
+comment|/* Wraper to be returned */
 name|GeglNode
 modifier|*
 name|input
@@ -1915,12 +1912,16 @@ decl_stmt|,
 modifier|*
 name|output
 decl_stmt|;
-comment|/* Proxy nodes*/
+comment|/* Proxy nodes */
 name|GeglNode
 modifier|*
-name|graph
+name|coords
+decl_stmt|,
+modifier|*
+name|render
 decl_stmt|;
-comment|/* wraper to be returned */
+comment|/* Render nodes */
+comment|/* render_node is not supposed to be recreated */
 name|g_return_if_fail
 argument_list|(
 name|wt
@@ -1930,7 +1931,6 @@ operator|==
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* render_node is not supposed to be recreated */
 name|graph
 operator|=
 name|gegl_node_new
@@ -2030,12 +2030,6 @@ operator|->
 name|render_node
 operator|=
 name|render
-expr_stmt|;
-name|wt
-operator|->
-name|read_coords_buffer_node
-operator|=
-name|coords
 expr_stmt|;
 block|}
 end_function
@@ -2308,7 +2302,8 @@ decl_stmt|;
 name|GeglNode
 modifier|*
 name|new_op
-decl_stmt|,
+decl_stmt|;
+name|GeglNode
 modifier|*
 name|last_op
 decl_stmt|;
