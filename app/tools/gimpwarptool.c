@@ -12,18 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gegl.h>
 end_include
 
@@ -43,18 +31,6 @@ begin_include
 include|#
 directive|include
 file|<gdk/gdkkeysyms.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpbase/gimpbase.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpmath/gimpmath.h"
 end_include
 
 begin_include
@@ -84,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable-shadow.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -97,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimagemap.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimplayer.h"
 end_include
 
 begin_include
@@ -127,18 +91,6 @@ begin_include
 include|#
 directive|include
 file|"display/gimpdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/gimpdisplayshell.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/gimpdisplayshell-transform.h"
 end_include
 
 begin_include
