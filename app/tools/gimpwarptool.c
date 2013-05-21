@@ -958,7 +958,10 @@ name|stroke_timer
 operator|=
 literal|0
 expr_stmt|;
-name|printf
+ifdef|#
+directive|ifdef
+name|WARP_DEBUG
+name|g_printerr
 argument_list|(
 literal|"%s\n"
 argument_list|,
@@ -970,6 +973,8 @@ name|current_stroke
 argument_list|)
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 name|release_type
@@ -1629,7 +1634,10 @@ operator|-
 name|y2
 argument_list|)
 expr_stmt|;
-name|printf
+ifdef|#
+directive|ifdef
+name|WARP_DEBUG
+name|g_printerr
 argument_list|(
 literal|"Initialize coordinate buffer (%d,%d) at %d,%d\n"
 argument_list|,
@@ -1650,6 +1658,8 @@ operator|.
 name|y
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|wt
 operator|->
 name|coords_buffer
@@ -2099,19 +2109,12 @@ argument_list|,
 name|GIMP_STOCK_TOOL_WARP
 argument_list|)
 expr_stmt|;
-name|g_object_set
-argument_list|(
-name|wt
-operator|->
-name|image_map
-argument_list|,
-literal|"gegl-caching"
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|g_object_set (wt->image_map, "gegl-caching", TRUE, NULL);
+endif|#
+directive|endif
 name|g_signal_connect
 argument_list|(
 name|wt
@@ -2226,7 +2229,10 @@ operator|&
 name|region
 argument_list|)
 expr_stmt|;
-name|printf
+ifdef|#
+directive|ifdef
+name|WARP_DEBUG
+name|g_printerr
 argument_list|(
 literal|"update rect: (%d,%d), %dx%d\n"
 argument_list|,
@@ -2247,6 +2253,8 @@ operator|.
 name|height
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|gimp_image_map_apply
 argument_list|(
 name|wt
