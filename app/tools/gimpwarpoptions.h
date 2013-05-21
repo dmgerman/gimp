@@ -112,6 +112,10 @@ DECL|member|parent_instance
 name|GimpToolOptions
 name|parent_instance
 decl_stmt|;
+DECL|member|behavior
+name|GimpWarpBehavior
+name|behavior
+decl_stmt|;
 DECL|member|effect_strength
 name|gdouble
 name|effect_strength
@@ -123,10 +127,6 @@ decl_stmt|;
 DECL|member|effect_hardness
 name|gdouble
 name|effect_hardness
-decl_stmt|;
-DECL|member|behavior
-name|GimpWarpBehavior
-name|behavior
 decl_stmt|;
 block|}
 struct|;
