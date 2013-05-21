@@ -75,7 +75,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2871d0d50103
+DECL|enum|__anon27b842800103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -763,8 +763,20 @@ block|}
 comment|/* Only update "area" because only that has changed */
 if|if
 condition|(
+operator|!
 name|area
-operator|&&
+condition|)
+block|{
+name|update_area
+operator|=
+name|image_map
+operator|->
+name|filter_area
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
 operator|!
 name|gimp_rectangle_intersect
 argument_list|(
@@ -832,15 +844,6 @@ condition|)
 block|{
 comment|/* Bail out, but don't remove the filter */
 return|return;
-block|}
-else|else
-block|{
-name|update_area
-operator|=
-name|image_map
-operator|->
-name|filter_area
-expr_stmt|;
 block|}
 if|if
 condition|(
