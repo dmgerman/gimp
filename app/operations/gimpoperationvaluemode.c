@@ -214,7 +214,7 @@ operator|->
 name|opacity
 decl_stmt|;
 return|return
-name|gimp_operation_overlay_mode_process_pixels
+name|gimp_operation_value_mode_process_pixels
 argument_list|(
 name|in_buf
 argument_list|,
