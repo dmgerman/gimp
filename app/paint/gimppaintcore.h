@@ -222,6 +222,11 @@ DECL|member|mask_y_offset
 name|gint
 name|mask_y_offset
 decl_stmt|;
+DECL|member|applicator
+name|GimpApplicator
+modifier|*
+name|applicator
+decl_stmt|;
 DECL|member|stroke_buffer
 name|GArray
 modifier|*

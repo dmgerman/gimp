@@ -232,6 +232,10 @@ name|GimpPaintInfo
 modifier|*
 name|paint_info
 decl_stmt|;
+DECL|member|use_applicator
+name|gboolean
+name|use_applicator
+decl_stmt|;
 DECL|member|brush_size
 name|gdouble
 name|brush_size
