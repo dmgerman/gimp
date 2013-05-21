@@ -224,7 +224,7 @@ begin_function
 specifier|static
 specifier|inline
 name|gfloat
-DECL|function|gimp_operation_brightness_contrast_map (gfloat value,gdouble brightness,gdouble contrast)
+DECL|function|gimp_operation_brightness_contrast_map (gfloat value,gdouble brightness,gdouble slant)
 name|gimp_operation_brightness_contrast_map
 parameter_list|(
 name|gfloat
@@ -234,12 +234,9 @@ name|gdouble
 name|brightness
 parameter_list|,
 name|gdouble
-name|contrast
+name|slant
 parameter_list|)
 block|{
-name|gdouble
-name|slant
-decl_stmt|;
 comment|/* apply brightness */
 if|if
 condition|(
@@ -271,19 +268,6 @@ operator|)
 operator|*
 name|brightness
 operator|)
-expr_stmt|;
-name|slant
-operator|=
-name|tan
-argument_list|(
-operator|(
-name|contrast
-operator|+
-literal|1
-operator|)
-operator|*
-name|G_PI_4
-argument_list|)
 expr_stmt|;
 name|value
 operator|=
@@ -368,6 +352,9 @@ decl_stmt|;
 name|gdouble
 name|brightness
 decl_stmt|;
+name|gdouble
+name|slant
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -383,6 +370,21 @@ operator|->
 name|brightness
 operator|/
 literal|2.0
+expr_stmt|;
+name|slant
+operator|=
+name|tan
+argument_list|(
+operator|(
+name|config
+operator|->
+name|contrast
+operator|+
+literal|1
+operator|)
+operator|*
+name|G_PI_4
+argument_list|)
 expr_stmt|;
 while|while
 condition|(
@@ -404,9 +406,7 @@ index|]
 argument_list|,
 name|brightness
 argument_list|,
-name|config
-operator|->
-name|contrast
+name|slant
 argument_list|)
 expr_stmt|;
 name|dest
@@ -423,9 +423,7 @@ index|]
 argument_list|,
 name|brightness
 argument_list|,
-name|config
-operator|->
-name|contrast
+name|slant
 argument_list|)
 expr_stmt|;
 name|dest
@@ -442,9 +440,7 @@ index|]
 argument_list|,
 name|brightness
 argument_list|,
-name|config
-operator|->
-name|contrast
+name|slant
 argument_list|)
 expr_stmt|;
 name|dest
