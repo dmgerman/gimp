@@ -857,6 +857,33 @@ name|GimpTempBuf
 modifier|*
 name|temp_buf
 decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|format
+decl_stmt|;
+if|if
+condition|(
+name|gimp_drawable_get_linear
+argument_list|(
+name|drawable
+argument_list|)
+condition|)
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"RGBA float"
+argument_list|)
+expr_stmt|;
+else|else
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A float"
+argument_list|)
+expr_stmt|;
 name|temp_buf
 operator|=
 name|gimp_temp_buf_new
@@ -873,10 +900,7 @@ operator|-
 name|y1
 operator|)
 argument_list|,
-name|babl_format
-argument_list|(
-literal|"RGBA float"
-argument_list|)
+name|format
 argument_list|)
 expr_stmt|;
 operator|*
@@ -1297,12 +1321,8 @@ name|gimp_paint_core_paste
 argument_list|(
 name|paint_core
 argument_list|,
-name|paint_core
-operator|->
-name|canvas_buffer
+name|NULL
 argument_list|,
-name|GEGL_RECTANGLE
-argument_list|(
 name|paint_core
 operator|->
 name|paint_buffer_x
@@ -1310,21 +1330,6 @@ argument_list|,
 name|paint_core
 operator|->
 name|paint_buffer_y
-argument_list|,
-name|gegl_buffer_get_width
-argument_list|(
-name|paint_core
-operator|->
-name|paint_buffer
-argument_list|)
-argument_list|,
-name|gegl_buffer_get_height
-argument_list|(
-name|paint_core
-operator|->
-name|paint_buffer
-argument_list|)
-argument_list|)
 argument_list|,
 name|drawable
 argument_list|,
@@ -1849,7 +1854,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8d6a4b0103
+DECL|enum|__anon2ad835150103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START
