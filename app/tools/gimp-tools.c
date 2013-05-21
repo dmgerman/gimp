@@ -549,6 +549,8 @@ block|,
 name|gimp_seamless_clone_tool_register
 block|,
 comment|/*  transform tools  */
+name|gimp_warp_tool_register
+block|,
 name|gimp_cage_tool_register
 block|,
 name|gimp_flip_tool_register
@@ -568,8 +570,6 @@ block|,
 name|gimp_align_tool_register
 block|,
 name|gimp_move_tool_register
-block|,
-name|gimp_warp_tool_register
 block|,
 comment|/*  non-modifying tools  */
 name|gimp_measure_tool_register
