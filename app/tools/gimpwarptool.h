@@ -165,10 +165,6 @@ name|GimpImageMap
 modifier|*
 name|image_map
 decl_stmt|;
-DECL|member|last_region
-name|GeglRectangle
-name|last_region
-decl_stmt|;
 block|}
 struct|;
 end_struct
