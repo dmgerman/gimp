@@ -165,6 +165,11 @@ name|GimpImageMap
 modifier|*
 name|image_map
 decl_stmt|;
+DECL|member|redo_stack
+name|GList
+modifier|*
+name|redo_stack
+decl_stmt|;
 block|}
 struct|;
 end_struct
