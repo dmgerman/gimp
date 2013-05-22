@@ -102,13 +102,32 @@ DECL|macro|GIMP_PROJECTION_IDLE_PRIORITY
 define|#
 directive|define
 name|GIMP_PROJECTION_IDLE_PRIORITY
-define|\
-value|((G_PRIORITY_HIGH_IDLE + G_PRIORITY_DEFAULT_IDLE) / 2)
+value|((G_PRIORITY_HIGH_IDLE + \                                             G_PRIORITY_DEFAULT_IDLE) / 2)
+end_define
+
+begin_comment
+comment|/*  chunk size for one iteration of the idle renderer  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_PROJECTION_IDLE_CHUNK_WIDTH
+define|#
+directive|define
+name|GIMP_PROJECTION_IDLE_CHUNK_WIDTH
+value|512
+end_define
+
+begin_define
+DECL|macro|GIMP_PROJECTION_IDLE_CHUNK_HEIGHT
+define|#
+directive|define
+name|GIMP_PROJECTION_IDLE_CHUNK_HEIGHT
+value|256
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon277c78460103
+DECL|enum|__anon2b83cf370103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2107,23 +2126,13 @@ name|workw
 decl_stmt|,
 name|workh
 decl_stmt|;
-DECL|macro|CHUNK_WIDTH
-define|#
-directive|define
-name|CHUNK_WIDTH
-value|256
-DECL|macro|CHUNK_HEIGHT
-define|#
-directive|define
-name|CHUNK_HEIGHT
-value|128
 name|workw
 operator|=
-name|CHUNK_WIDTH
+name|GIMP_PROJECTION_IDLE_CHUNK_WIDTH
 expr_stmt|;
 name|workh
 operator|=
-name|CHUNK_HEIGHT
+name|GIMP_PROJECTION_IDLE_CHUNK_HEIGHT
 expr_stmt|;
 name|workx
 operator|=
@@ -2235,7 +2244,7 @@ name|idle_render
 operator|.
 name|x
 operator|+=
-name|CHUNK_WIDTH
+name|GIMP_PROJECTION_IDLE_CHUNK_WIDTH
 expr_stmt|;
 if|if
 condition|(
@@ -2276,7 +2285,7 @@ name|idle_render
 operator|.
 name|y
 operator|+=
-name|CHUNK_HEIGHT
+name|GIMP_PROJECTION_IDLE_CHUNK_HEIGHT
 expr_stmt|;
 if|if
 condition|(
