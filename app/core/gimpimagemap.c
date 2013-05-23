@@ -75,7 +75,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b842800103
+DECL|enum|__anon2b79e4ad0103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -114,6 +114,10 @@ DECL|member|stock_id
 name|gchar
 modifier|*
 name|stock_id
+decl_stmt|;
+DECL|member|region
+name|GimpImageMapRegion
+name|region
 decl_stmt|;
 DECL|member|filtering
 name|gboolean
@@ -319,7 +323,14 @@ name|GimpImageMap
 modifier|*
 name|image_map
 parameter_list|)
-block|{ }
+block|{
+name|image_map
+operator|->
+name|region
+operator|=
+name|GIMP_IMAGE_MAP_REGION_SELECTION
+expr_stmt|;
+block|}
 end_function
 
 begin_function
@@ -648,6 +659,36 @@ expr_stmt|;
 return|return
 name|image_map
 return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_image_map_set_region (GimpImageMap * image_map,GimpImageMapRegion region)
+name|gimp_image_map_set_region
+parameter_list|(
+name|GimpImageMap
+modifier|*
+name|image_map
+parameter_list|,
+name|GimpImageMapRegion
+name|region
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE_MAP
+argument_list|(
+name|image_map
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|image_map
+operator|->
+name|region
+operator|=
+name|region
+expr_stmt|;
 block|}
 end_function
 
@@ -1107,6 +1148,15 @@ name|GIMP_REPLACE_MODE
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|image_map
+operator|->
+name|region
+operator|==
+name|GIMP_IMAGE_MAP_REGION_SELECTION
+condition|)
+block|{
 name|gegl_node_set
 argument_list|(
 name|image_map
@@ -1159,6 +1209,7 @@ operator|.
 name|y
 argument_list|)
 expr_stmt|;
+block|}
 name|active_mask
 operator|=
 name|gimp_drawable_get_active_mask
