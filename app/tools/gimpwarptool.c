@@ -2747,6 +2747,15 @@ argument_list|,
 name|GIMP_STOCK_TOOL_WARP
 argument_list|)
 expr_stmt|;
+name|gimp_image_map_set_region
+argument_list|(
+name|wt
+operator|->
+name|image_map
+argument_list|,
+name|GIMP_IMAGE_MAP_REGION_DRAWABLE
+argument_list|)
+expr_stmt|;
 if|#
 directive|if
 literal|0
