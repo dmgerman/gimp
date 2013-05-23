@@ -12,18 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gegl.h>
 end_include
 
@@ -54,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpmath.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -84,18 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpchannel.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpdrawable-shadow.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -108,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimplayer.h"
+file|"core/gimpitem.h"
 end_include
 
 begin_include
@@ -263,7 +233,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon297e81070103
+DECL|enum|__anon2b0447560103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -1314,7 +1284,7 @@ name|sc
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* Record previous location, in case the user cancel's the        * movement        */
+comment|/* Record previous location, in case the user cancels the        * movement        */
 name|sc
 operator|->
 name|xoff_p
@@ -1573,14 +1543,6 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|gimp_draw_tool_pause
-argument_list|(
-name|GIMP_DRAW_TOOL
-argument_list|(
-name|tool
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|sc
@@ -1659,14 +1621,6 @@ name|sc
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_draw_tool_resume
-argument_list|(
-name|GIMP_DRAW_TOOL
-argument_list|(
-name|tool
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1697,11 +1651,6 @@ name|GIMP_SEAMLESS_CLONE_TOOL
 argument_list|(
 name|tool
 argument_list|)
-decl_stmt|;
-name|gboolean
-name|retval
-init|=
-name|TRUE
 decl_stmt|;
 if|if
 condition|(
@@ -1734,7 +1683,15 @@ case|:
 case|case
 name|GDK_KEY_ISO_Enter
 case|:
-comment|// gimp_tool_control_set_preserve (tool->control, TRUE);
+name|gimp_tool_control_set_preserve
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 comment|/* TODO: there may be issues with committing the image map            *       result after some changes were made and the preview            *       was scrolled. We can fix these by either invalidating            *       the area which is a union of the previous paste            *       rectangle each time (in the update function) or by            *       invalidating and re-rendering all now (expensive and            *       perhaps useless */
 name|gimp_image_map_commit
 argument_list|(
@@ -1761,7 +1718,15 @@ name|image_map
 operator|=
 name|NULL
 expr_stmt|;
-comment|// gimp_tool_control_set_preserve (tool->control, FALSE);
+name|gimp_tool_control_set_preserve
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|gimp_image_flush
 argument_list|(
 name|gimp_display_get_image
@@ -1779,7 +1744,9 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-break|break;
+return|return
+name|TRUE
+return|;
 case|case
 name|GDK_KEY_Escape
 case|:
@@ -1792,17 +1759,15 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-break|break;
+return|return
+name|TRUE
+return|;
 default|default:
-name|retval
-operator|=
-name|FALSE
-expr_stmt|;
 break|break;
 block|}
 block|}
 return|return
-name|retval
+name|FALSE
 return|;
 block|}
 end_function
@@ -2294,11 +2259,10 @@ operator|->
 name|drawable
 decl_stmt|;
 name|gint
-name|xoff
+name|off_x
 decl_stmt|,
-name|yoff
+name|off_y
 decl_stmt|;
-comment|/* Now we should also take into consideration the fact that    * we should work with coordinates relative to the background    * buffer    */
 name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
@@ -2307,10 +2271,10 @@ name|bg
 argument_list|)
 argument_list|,
 operator|&
-name|xoff
+name|off_x
 argument_list|,
 operator|&
-name|yoff
+name|off_y
 argument_list|)
 expr_stmt|;
 name|gegl_node_set
@@ -2328,7 +2292,7 @@ name|sc
 operator|->
 name|xoff
 operator|-
-name|xoff
+name|off_y
 argument_list|,
 literal|"yoff"
 argument_list|,
@@ -2339,7 +2303,7 @@ name|sc
 operator|->
 name|yoff
 operator|-
-name|yoff
+name|off_x
 argument_list|,
 name|NULL
 argument_list|)
@@ -2392,6 +2356,15 @@ operator|->
 name|render_node
 argument_list|,
 name|GIMP_STOCK_TOOL_SEAMLESS_CLONE
+argument_list|)
+expr_stmt|;
+name|gimp_image_map_set_region
+argument_list|(
+name|sc
+operator|->
+name|image_map
+argument_list|,
+name|GIMP_IMAGE_MAP_REGION_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -2619,7 +2592,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* If any cache of the visible area was present, clear it!    * We need to clear the cache in the sc_node, since that is    * where the previous paste was located */
+comment|/* If any cache of the visible area was present, clear it!    * We need to clear the cache in the sc_node, since that is    * where the previous paste was located    */
 name|gegl_operation_invalidate
 argument_list|(
 name|op
