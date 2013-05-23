@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2887afb70103
+DECL|enum|__anon2c0873210103
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -113,7 +113,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/* This is not the number of items in the enum above, but the max size of the  * enums at the top of each transformation tool, stored in trans_info and related */
+comment|/* This is not the number of items in the enum above, but the max size  * of the enums at the top of each transformation tool, stored in  * trans_info and related  */
 end_comment
 
 begin_define
