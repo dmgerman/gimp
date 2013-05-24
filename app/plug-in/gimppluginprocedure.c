@@ -114,7 +114,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3f05020103
+DECL|enum|__anon2af808680103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -2085,6 +2085,13 @@ name|g_str_has_prefix
 argument_list|(
 name|menu_path
 argument_list|,
+literal|"<ToolPresets>"
+argument_list|)
+operator|||
+name|g_str_has_prefix
+argument_list|(
+name|menu_path
+argument_list|,
 literal|"<Fonts>"
 argument_list|)
 operator|||
@@ -2149,11 +2156,11 @@ argument_list|,
 literal|"Plug-In \"%s\"\n(%s)\n"
 literal|"attempted to install procedure \"%s\" "
 literal|"in the invalid menu location \"%s\".\n"
-literal|"Use either \"<Toolbox>\", \"<Image>\", "
+literal|"Use either \"<Image>\", "
 literal|"\"<Layers>\", \"<Channels>\", \"<Vectors>\", "
-literal|"\"<Colormap>\", \"<Load>\", \"<Save>\", "
-literal|"\"<Brushes>\", \"<Dynamics>\", \"<Gradients>\", "
-literal|"\"<Palettes>\", \"<Patterns>\" or \"<Buffers>\"."
+literal|"\"<Colormap>\", \"<Brushes>\", \"<Dynamics>\", "
+literal|"\"<Gradients>\", \"<Palettes>\", \"<Patterns>\", "
+literal|"\"<ToolPresets>\", \"<Fonts>\" or \"<Buffers>\"."
 argument_list|,
 name|basename
 argument_list|,
