@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * GimpDBusService  * Copyright (C) 2007, 2008 Sven Neumann<sven@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * GimpDBusService  * Copyright (C) 2007, 2008 Sven Neumann<sven@gimp.org>  * Copyright (C) 2013       Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_ifndef
@@ -16,9 +16,15 @@ directive|define
 name|__GIMP_DBUS_SERVICE_H__
 end_define
 
-begin_macro
-name|G_BEGIN_DECLS
-end_macro
+begin_include
+include|#
+directive|include
+file|"gimpdbusservice-generated.h"
+end_include
+
+begin_comment
+comment|/* service name and path should really be org.gimp.GIMP and  * /org/gimp/GIMP and only the interface be called UI.  */
+end_comment
 
 begin_define
 DECL|macro|GIMP_DBUS_SERVICE_NAME
@@ -37,11 +43,19 @@ value|"/org/gimp/GIMP/UI"
 end_define
 
 begin_define
-DECL|macro|GIMP_DBUS_SERVICE_INTERFACE
+DECL|macro|GIMP_DBUS_INTERFACE_NAME
 define|#
 directive|define
-name|GIMP_DBUS_SERVICE_INTERFACE
+name|GIMP_DBUS_INTERFACE_NAME
 value|"org.gimp.GIMP.UI"
+end_define
+
+begin_define
+DECL|macro|GIMP_DBUS_INTERFACE_PATH
+define|#
+directive|define
+name|GIMP_DBUS_INTERFACE_PATH
+value|"/org/gimp/GIMP/UI"
 end_define
 
 begin_define
@@ -131,7 +145,7 @@ struct|struct
 name|_GimpDBusService
 block|{
 DECL|member|parent_instance
-name|GObject
+name|GimpDBusServiceUISkeleton
 name|parent_instance
 decl_stmt|;
 DECL|member|gimp
@@ -159,27 +173,9 @@ struct|struct
 name|_GimpDBusServiceClass
 block|{
 DECL|member|parent_class
-name|GObjectClass
+name|GimpDBusServiceUISkeletonClass
 name|parent_class
 decl_stmt|;
-comment|/*  signals  */
-DECL|member|opened
-name|void
-function_decl|(
-modifier|*
-name|opened
-function_decl|)
-parameter_list|(
-name|GimpDBusService
-modifier|*
-name|service
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|uri
-parameter_list|)
-function_decl|;
 block|}
 struct|;
 end_struct
@@ -205,76 +201,6 @@ name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_dbus_service_open
-parameter_list|(
-name|GimpDBusService
-modifier|*
-name|service
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|uri
-parameter_list|,
-name|gboolean
-modifier|*
-name|success
-parameter_list|,
-name|GError
-modifier|*
-modifier|*
-name|dbus_error
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_dbus_service_open_as_new
-parameter_list|(
-name|GimpDBusService
-modifier|*
-name|service
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|uri
-parameter_list|,
-name|gboolean
-modifier|*
-name|success
-parameter_list|,
-name|GError
-modifier|*
-modifier|*
-name|dbus_error
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_dbus_service_activate
-parameter_list|(
-name|GimpDBusService
-modifier|*
-name|service
-parameter_list|,
-name|GError
-modifier|*
-modifier|*
-name|dbus_error
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_macro
-name|G_END_DECLS
-end_macro
 
 begin_endif
 endif|#

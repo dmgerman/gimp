@@ -402,7 +402,7 @@ name|GIMP_DBUS_SERVICE_NAME
 argument_list|,
 name|GIMP_DBUS_SERVICE_PATH
 argument_list|,
-name|GIMP_DBUS_SERVICE_INTERFACE
+name|GIMP_DBUS_INTERFACE_NAME
 argument_list|,
 name|method
 argument_list|,
@@ -486,7 +486,7 @@ name|GIMP_DBUS_SERVICE_NAME
 argument_list|,
 name|GIMP_DBUS_SERVICE_PATH
 argument_list|,
-name|GIMP_DBUS_SERVICE_INTERFACE
+name|GIMP_DBUS_INTERFACE_NAME
 argument_list|,
 literal|"Activate"
 argument_list|,
