@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c09f7460103
+DECL|enum|__anon2998bc4a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -348,7 +348,7 @@ argument_list|(
 name|buf
 argument_list|)
 argument_list|,
-literal|"%Y-%m-%d %T"
+literal|"%Y-%m-%d %H:%M:%S"
 argument_list|,
 operator|&
 name|tm
