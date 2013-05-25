@@ -443,12 +443,12 @@ DECL|macro|GLIB_REQUIRED_MINOR
 define|#
 directive|define
 name|GLIB_REQUIRED_MINOR
-value|32
+value|36
 DECL|macro|GLIB_REQUIRED_MICRO
 define|#
 directive|define
 name|GLIB_REQUIRED_MICRO
-value|0
+value|1
 specifier|const
 name|gchar
 modifier|*
