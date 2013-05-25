@@ -260,15 +260,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
-name|gimp_get_number_of_processors
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|guint64
 name|gimp_get_physical_memory_size
 parameter_list|(

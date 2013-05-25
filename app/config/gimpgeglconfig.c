@@ -102,7 +102,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2954890e0103
+DECL|enum|__anon294f1e760103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -403,7 +403,7 @@ argument_list|)
 expr_stmt|;
 name|num_processors
 operator|=
-name|gimp_get_number_of_processors
+name|g_get_num_processors
 argument_list|()
 expr_stmt|;
 ifdef|#
