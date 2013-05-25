@@ -147,7 +147,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ab6f4c0108
+DECL|struct|__anon2b656b300108
 block|{
 DECL|member|compression
 name|gint
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ab6f4c0208
+DECL|struct|__anon2b656b300208
 block|{
 DECL|member|ID
 name|gint32
@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ab6f4c0308
+DECL|struct|__anon2b656b300308
 block|{
 DECL|member|o_pages
 name|gint
@@ -2507,11 +2507,21 @@ name|GIMP_GRAY_IMAGE
 expr_stmt|;
 if|if
 condition|(
+name|alpha
+condition|)
+block|{
+if|if
+condition|(
 name|bps
 operator|==
 literal|8
-operator|&&
-name|alpha
+condition|)
+block|{
+if|if
+condition|(
+name|tsvals
+operator|.
+name|save_transp_pixels
 condition|)
 name|base_format
 operator|=
@@ -2520,15 +2530,53 @@ argument_list|(
 literal|"Y'A u8"
 argument_list|)
 expr_stmt|;
+else|else
+name|base_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y'aA u8"
+argument_list|)
+expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
 name|bps
 operator|==
+literal|16
+condition|)
+block|{
+if|if
+condition|(
+name|tsvals
+operator|.
+name|save_transp_pixels
+condition|)
+name|base_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y'A u16"
+argument_list|)
+expr_stmt|;
+else|else
+name|base_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y'aA u16"
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+if|if
+condition|(
+name|bps
+operator|==
 literal|8
-operator|&&
-operator|!
-name|alpha
 condition|)
 name|base_format
 operator|=
@@ -2543,25 +2591,6 @@ condition|(
 name|bps
 operator|==
 literal|16
-operator|&&
-name|alpha
-condition|)
-name|base_format
-operator|=
-name|babl_format
-argument_list|(
-literal|"Y'A u16"
-argument_list|)
-expr_stmt|;
-elseif|else
-if|if
-condition|(
-name|bps
-operator|==
-literal|16
-operator|&&
-operator|!
-name|alpha
 condition|)
 name|base_format
 operator|=
@@ -2570,6 +2599,7 @@ argument_list|(
 literal|"Y' u16"
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 break|break;
 case|case
@@ -2591,11 +2621,21 @@ name|GIMP_RGB_IMAGE
 expr_stmt|;
 if|if
 condition|(
+name|alpha
+condition|)
+block|{
+if|if
+condition|(
 name|bps
 operator|==
 literal|8
-operator|&&
-name|alpha
+condition|)
+block|{
+if|if
+condition|(
+name|tsvals
+operator|.
+name|save_transp_pixels
 condition|)
 name|base_format
 operator|=
@@ -2604,15 +2644,53 @@ argument_list|(
 literal|"R'G'B'A u8"
 argument_list|)
 expr_stmt|;
+else|else
+name|base_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'aG'aB'aA u8"
+argument_list|)
+expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
 name|bps
 operator|==
+literal|16
+condition|)
+block|{
+if|if
+condition|(
+name|tsvals
+operator|.
+name|save_transp_pixels
+condition|)
+name|base_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u16"
+argument_list|)
+expr_stmt|;
+else|else
+name|base_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'aG'aB'aA u16"
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+if|if
+condition|(
+name|bps
+operator|==
 literal|8
-operator|&&
-operator|!
-name|alpha
 condition|)
 name|base_format
 operator|=
@@ -2627,25 +2705,6 @@ condition|(
 name|bps
 operator|==
 literal|16
-operator|&&
-name|alpha
-condition|)
-name|base_format
-operator|=
-name|babl_format
-argument_list|(
-literal|"R'G'B'A u16"
-argument_list|)
-expr_stmt|;
-elseif|else
-if|if
-condition|(
-name|bps
-operator|==
-literal|16
-operator|&&
-operator|!
-name|alpha
 condition|)
 name|base_format
 operator|=
@@ -2654,6 +2713,7 @@ argument_list|(
 literal|"R'G'B' u16"
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 if|#
 directive|if
@@ -2781,7 +2841,7 @@ name|base_format
 operator|=
 name|babl_format
 argument_list|(
-literal|"R'G'B'A u8"
+literal|"R'aG'aB'aA u8"
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -2795,7 +2855,7 @@ name|base_format
 operator|=
 name|babl_format
 argument_list|(
-literal|"R'G'B'A u16"
+literal|"R'aG'aB'aA u16"
 argument_list|)
 expr_stmt|;
 block|}
