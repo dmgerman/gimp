@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"core/gimpimagemapconfig.h"
+file|"core/gimpsettings.h"
 end_include
 
 begin_define
@@ -100,7 +100,7 @@ struct|struct
 name|_GimpDesaturateConfig
 block|{
 DECL|member|parent_instance
-name|GimpImageMapConfig
+name|GimpSettings
 name|parent_instance
 decl_stmt|;
 DECL|member|mode
@@ -117,7 +117,7 @@ struct|struct
 name|_GimpDesaturateConfigClass
 block|{
 DECL|member|parent_class
-name|GimpImageMapConfigClass
+name|GimpSettingsClass
 name|parent_class
 decl_stmt|;
 block|}

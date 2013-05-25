@@ -883,15 +883,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpImageMapConfig
-typedef|typedef
-name|struct
-name|_GimpImageMapConfig
-name|GimpImageMapConfig
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpImagefile
 typedef|typedef
 name|struct
@@ -933,6 +924,15 @@ typedef|typedef
 name|struct
 name|_GimpProjection
 name|GimpProjection
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpSettings
+typedef|typedef
+name|struct
+name|_GimpSettings
+name|GimpSettings
 typedef|;
 end_typedef
 

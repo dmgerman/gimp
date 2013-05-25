@@ -48,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimagemapconfig.h"
+file|"gimpprogress.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpprogress.h"
+file|"gimpsettings.h"
 end_include
 
 begin_comment
@@ -325,7 +325,7 @@ name|config
 operator|==
 name|NULL
 operator|||
-name|GIMP_IS_IMAGE_MAP_CONFIG
+name|GIMP_IS_SETTINGS
 argument_list|(
 name|config
 argument_list|)

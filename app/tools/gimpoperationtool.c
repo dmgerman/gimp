@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimagemapconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimplist.h"
 end_include
 
@@ -109,6 +103,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpparamspecs-duplicate.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpsettings.h"
 end_include
 
 begin_include
@@ -982,7 +982,7 @@ argument_list|,
 operator|(
 name|GCompareFunc
 operator|)
-name|gimp_image_map_config_compare
+name|gimp_settings_compare
 argument_list|)
 expr_stmt|;
 name|basename
@@ -1247,7 +1247,7 @@ name|tool
 operator|->
 name|operation
 argument_list|,
-name|GIMP_TYPE_IMAGE_MAP_CONFIG
+name|GIMP_TYPE_SETTINGS
 argument_list|)
 expr_stmt|;
 name|gimp_image_map_tool_get_operation

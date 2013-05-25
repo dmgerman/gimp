@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be7ff2f0103
+DECL|enum|__anon29918a3c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -212,14 +212,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpHueSaturationConfig,gimp_hue_saturation_config,GIMP_TYPE_IMAGE_MAP_CONFIG,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,gimp_hue_saturation_config_iface_init))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpHueSaturationConfig,gimp_hue_saturation_config,GIMP_TYPE_SETTINGS,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,gimp_hue_saturation_config_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpHueSaturationConfig
 argument_list|,
 argument|gimp_hue_saturation_config
 argument_list|,
-argument|GIMP_TYPE_IMAGE_MAP_CONFIG
+argument|GIMP_TYPE_SETTINGS
 argument_list|,
 argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 gimp_hue_saturation_config_iface_init)
 argument_list|)
