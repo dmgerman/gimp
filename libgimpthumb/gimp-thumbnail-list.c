@@ -254,9 +254,6 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
-name|g_type_init
-argument_list|()
-expr_stmt|;
 name|context
 operator|=
 name|g_option_context_new

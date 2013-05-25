@@ -138,9 +138,6 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
-name|g_type_init
-argument_list|()
-expr_stmt|;
 name|gimp_log_init
 argument_list|()
 expr_stmt|;
@@ -248,9 +245,6 @@ modifier|*
 name|gimp
 decl_stmt|;
 comment|/* from main() */
-name|g_type_init
-argument_list|()
-expr_stmt|;
 name|gimp_log_init
 argument_list|()
 expr_stmt|;

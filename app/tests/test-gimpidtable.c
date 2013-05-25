@@ -42,7 +42,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf7d5650108
+DECL|struct|__anon292502d50108
 block|{
 DECL|member|id_table
 name|GimpIdTable
@@ -745,9 +745,6 @@ modifier|*
 name|argv
 parameter_list|)
 block|{
-name|g_type_init
-argument_list|()
-expr_stmt|;
 name|g_test_init
 argument_list|(
 operator|&

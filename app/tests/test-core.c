@@ -104,7 +104,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7d86380108
+DECL|struct|__anon2b97d0e80108
 block|{
 DECL|member|image
 name|GimpImage
@@ -778,9 +778,6 @@ decl_stmt|;
 name|int
 name|result
 decl_stmt|;
-name|g_type_init
-argument_list|()
-expr_stmt|;
 name|g_test_init
 argument_list|(
 operator|&

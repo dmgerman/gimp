@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2c72a60108
+DECL|struct|__anon298bb22d0108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -650,10 +650,6 @@ operator|.
 name|d_status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
-expr_stmt|;
-comment|/* MUST call this before any RSVG funcs */
-name|g_type_init
-argument_list|()
 expr_stmt|;
 if|if
 condition|(

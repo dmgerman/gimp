@@ -362,9 +362,6 @@ return|return
 name|EXIT_FAILURE
 return|;
 block|}
-name|g_type_init
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 name|help_base

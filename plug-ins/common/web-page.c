@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296ceab80108
+DECL|struct|__anon2b4ba4160108
 block|{
 DECL|member|url
 name|char
@@ -118,7 +118,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296ceab80208
+DECL|struct|__anon2b4ba4160208
 block|{
 DECL|member|url
 name|char
@@ -445,10 +445,6 @@ operator|.
 name|type
 operator|=
 name|GIMP_PDB_STATUS
-expr_stmt|;
-comment|/* MUST call this before any RSVG funcs */
-name|g_type_init
-argument_list|()
 expr_stmt|;
 name|gimp_get_data
 argument_list|(

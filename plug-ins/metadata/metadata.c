@@ -1036,9 +1036,6 @@ expr_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
-name|g_type_init
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 operator|!

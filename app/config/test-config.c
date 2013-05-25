@@ -212,9 +212,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|g_type_init
-argument_list|()
-expr_stmt|;
 name|units_init
 argument_list|()
 expr_stmt|;

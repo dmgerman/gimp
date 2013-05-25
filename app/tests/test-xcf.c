@@ -3333,9 +3333,6 @@ decl_stmt|;
 name|int
 name|result
 decl_stmt|;
-name|g_type_init
-argument_list|()
-expr_stmt|;
 name|g_test_init
 argument_list|(
 operator|&

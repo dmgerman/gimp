@@ -704,9 +704,6 @@ argument_list|(
 literal|"xmpdump"
 argument_list|)
 expr_stmt|;
-name|g_type_init
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 name|argc
