@@ -114,7 +114,7 @@ DECL|macro|GIMP_PROJECTION_IDLE_CHUNK_WIDTH
 define|#
 directive|define
 name|GIMP_PROJECTION_IDLE_CHUNK_WIDTH
-value|512
+value|256
 end_define
 
 begin_define
@@ -122,12 +122,12 @@ DECL|macro|GIMP_PROJECTION_IDLE_CHUNK_HEIGHT
 define|#
 directive|define
 name|GIMP_PROJECTION_IDLE_CHUNK_HEIGHT
-value|256
+value|128
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b83cf370103
+DECL|enum|__anon2959b0a50103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
