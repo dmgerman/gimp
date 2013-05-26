@@ -152,9 +152,14 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
-begin_empty
-empty|#elifdef GDK_WINDOWING_QUARTZ
-end_empty
+begin_elif
+elif|#
+directive|elif
+name|defined
+argument_list|(
+name|GDK_WINDOWING_QUARTZ
+argument_list|)
+end_elif
 
 begin_function_decl
 specifier|static
@@ -267,7 +272,12 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-empty|#elifdef GDK_WINDOWING_QUARTZ
+elif|#
+directive|elif
+name|defined
+argument_list|(
+name|GDK_WINDOWING_QUARTZ
+argument_list|)
 name|gui_unique_mac_init
 argument_list|(
 name|gimp
@@ -299,7 +309,12 @@ name|G_OS_WIN32
 name|gui_unique_win32_exit
 argument_list|()
 expr_stmt|;
-empty|#elifdef GDK_WINDOWING_QUARTZ
+elif|#
+directive|elif
+name|defined
+argument_list|(
+name|GDK_WINDOWING_QUARTZ
+argument_list|)
 name|gui_unique_mac_exit
 argument_list|()
 expr_stmt|;
@@ -322,7 +337,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed71f10108
+DECL|struct|__anon2923a8560108
 block|{
 DECL|member|name
 name|gchar
@@ -789,9 +804,14 @@ expr_stmt|;
 block|}
 end_function
 
-begin_empty
-empty|#elifdef GDK_WINDOWING_QUARTZ
-end_empty
+begin_elif
+elif|#
+directive|elif
+name|defined
+argument_list|(
+name|GDK_WINDOWING_QUARTZ
+argument_list|)
+end_elif
 
 begin_function
 specifier|static
