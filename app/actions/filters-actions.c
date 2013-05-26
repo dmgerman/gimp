@@ -361,6 +361,28 @@ comment|/* FIXME GIMP_HELP_FILTER_EXPOSURE */
 block|}
 block|,
 block|{
+literal|"filters-fractal-trace"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Fractal Trace..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:fractal-trace"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_FRACTAL_TRACE */
+block|}
+block|,
+block|{
 literal|"filters-gaussian-blur"
 block|,
 name|GIMP_STOCK_GEGL
@@ -1176,6 +1198,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-exposure"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-fractal-trace"
 argument_list|,
 name|writable
 argument_list|)

@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dc34730103
+DECL|enum|__anon27ba63840103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -374,6 +374,9 @@ block|,
 comment|/* in gimp */
 literal|"gegl:fill-path"
 block|,
+literal|"gegl:fractal-trace"
+block|,
+comment|/* in gimp */
 literal|"gegl:gaussian-blur"
 block|,
 comment|/* in gimp */
