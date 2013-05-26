@@ -211,7 +211,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_imagefile_create_thumbnail
 parameter_list|(
 name|GimpImagefile
@@ -231,6 +231,11 @@ name|size
 parameter_list|,
 name|gboolean
 name|replace
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -287,6 +292,11 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl

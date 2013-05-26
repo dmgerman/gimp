@@ -1911,6 +1911,8 @@ argument_list|,
 name|mime_type
 argument_list|,
 name|image
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

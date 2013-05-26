@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c06f70b0103
+DECL|enum|__anon2b93495e0103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -1173,8 +1173,8 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|gimp_imagefile_create_thumbnail (GimpImagefile * imagefile,GimpContext * context,GimpProgress * progress,gint size,gboolean replace)
+name|gboolean
+DECL|function|gimp_imagefile_create_thumbnail (GimpImagefile * imagefile,GimpContext * context,GimpProgress * progress,gint size,gboolean replace,GError ** error)
 name|gimp_imagefile_create_thumbnail
 parameter_list|(
 name|GimpImagefile
@@ -1194,6 +1194,11 @@ name|size
 parameter_list|,
 name|gboolean
 name|replace
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpImagefilePrivate
@@ -1207,23 +1212,27 @@ decl_stmt|;
 name|GimpThumbState
 name|image_state
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGEFILE
 argument_list|(
 name|imagefile
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_CONTEXT
 argument_list|(
 name|context
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|progress
 operator|==
@@ -1233,15 +1242,34 @@ name|GIMP_IS_PROGRESS
 argument_list|(
 name|progress
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+comment|/* thumbnailing is disabled, we successfully did nothing */
 if|if
 condition|(
 name|size
 operator|<
 literal|1
 condition|)
-return|return;
+return|return
+name|TRUE
+return|;
 name|private
 operator|=
 name|GET_PRIVATE
@@ -1307,12 +1335,6 @@ name|mime_type
 init|=
 name|NULL
 decl_stmt|;
-name|GError
-modifier|*
-name|error
-init|=
-name|NULL
-decl_stmt|;
 specifier|const
 name|Babl
 modifier|*
@@ -1331,6 +1353,7 @@ argument_list|(
 name|imagefile
 argument_list|)
 expr_stmt|;
+comment|/* don't pass the error, we're only interested in errors from        * actual thumbnail saving        */
 name|image
 operator|=
 name|file_open_thumbnail
@@ -1395,6 +1418,7 @@ block|{
 name|GimpPDBStatusType
 name|status
 decl_stmt|;
+comment|/* don't pass the error, we're only interested in errors            * from actual thumbnail saving            */
 name|image
 operator|=
 name|file_open_image
@@ -1463,7 +1487,6 @@ name|size
 argument_list|,
 name|replace
 argument_list|,
-operator|&
 name|error
 argument_list|)
 expr_stmt|;
@@ -1484,7 +1507,6 @@ argument_list|,
 literal|"GIMP "
 name|GIMP_VERSION
 argument_list|,
-operator|&
 name|error
 argument_list|)
 expr_stmt|;
@@ -1499,38 +1521,13 @@ argument_list|(
 name|imagefile
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
+return|return
 name|success
-condition|)
-block|{
-name|gimp_message_literal
-argument_list|(
-name|private
-operator|->
-name|gimp
-argument_list|,
-name|G_OBJECT
-argument_list|(
-name|progress
-argument_list|)
-argument_list|,
-name|GIMP_MESSAGE_ERROR
-argument_list|,
-name|error
-operator|->
-name|message
-argument_list|)
-expr_stmt|;
-name|g_clear_error
-argument_list|(
-operator|&
-name|error
-argument_list|)
-expr_stmt|;
+return|;
 block|}
-block|}
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -1646,6 +1643,8 @@ argument_list|,
 name|size
 argument_list|,
 name|replace
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -1787,7 +1786,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_imagefile_save_thumbnail (GimpImagefile * imagefile,const gchar * mime_type,GimpImage * image)
+DECL|function|gimp_imagefile_save_thumbnail (GimpImagefile * imagefile,const gchar * mime_type,GimpImage * image,GError ** error)
 name|gimp_imagefile_save_thumbnail
 parameter_list|(
 name|GimpImagefile
@@ -1802,6 +1801,11 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpImagefilePrivate
@@ -1815,12 +1819,6 @@ name|gboolean
 name|success
 init|=
 name|TRUE
-decl_stmt|;
-name|GError
-modifier|*
-name|error
-init|=
-name|NULL
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -1838,6 +1836,20 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|image
 argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1889,38 +1901,9 @@ name|size
 argument_list|,
 name|FALSE
 argument_list|,
-operator|&
 name|error
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|success
-condition|)
-block|{
-name|gimp_message_literal
-argument_list|(
-name|private
-operator|->
-name|gimp
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_MESSAGE_ERROR
-argument_list|,
-name|error
-operator|->
-name|message
-argument_list|)
-expr_stmt|;
-name|g_clear_error
-argument_list|(
-operator|&
-name|error
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 return|return
 name|success
