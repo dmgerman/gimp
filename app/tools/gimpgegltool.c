@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8a9d220103
+DECL|enum|__anon28dc34730103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -318,9 +318,6 @@ name|name_blacklist
 index|[]
 init|=
 block|{
-literal|"gegl:box-blur"
-block|,
-comment|/* in gimp */
 literal|"gegl:c2g"
 block|,
 comment|/* in gimp */
@@ -352,6 +349,9 @@ literal|"gegl:contrast-curve"
 block|,
 literal|"gegl:convert-format"
 block|,
+literal|"gegl:deinterlace"
+block|,
+comment|/* in gimp */
 literal|"gegl:difference-of-gaussians"
 block|,
 comment|/* in gimp */
