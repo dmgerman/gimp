@@ -119,7 +119,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0ec4870103
+DECL|enum|__anon286dead00103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -132,7 +132,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0ec4870203
+DECL|enum|__anon286dead00203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -149,7 +149,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0ec4870308
+DECL|struct|__anon286dead00308
 block|{
 DECL|member|interlace
 name|gint
@@ -1435,11 +1435,20 @@ name|max_progress
 decl_stmt|;
 end_decl_stmt
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|GIF_UN
-end_ifdef
+begin_function_decl
+specifier|static
+name|void
+name|compress
+parameter_list|(
+name|int
+parameter_list|,
+name|FILE
+modifier|*
+parameter_list|,
+name|ifunptr
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -1456,17 +1465,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_else
-else|#
-directive|else
-end_else
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|GIF_RLE
-end_ifdef
-
 begin_function_decl
 specifier|static
 name|void
@@ -1481,11 +1479,6 @@ name|ifunptr
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_else
-else|#
-directive|else
-end_else
 
 begin_function_decl
 specifier|static
@@ -1502,16 +1495,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_function_decl
 specifier|static
 name|void
@@ -1521,21 +1504,6 @@ name|int
 parameter_list|,
 name|FILE
 modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|compress
-parameter_list|(
-name|int
-parameter_list|,
-name|FILE
-modifier|*
-parameter_list|,
-name|ifunptr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -6550,9 +6518,10 @@ name|ifunptr
 name|ReadValue
 parameter_list|)
 block|{
-ifdef|#
-directive|ifdef
-name|GIF_UN
+if|if
+condition|(
+name|FALSE
+condition|)
 name|no_compress
 argument_list|(
 name|init_bits
@@ -6562,11 +6531,11 @@ argument_list|,
 name|ReadValue
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
-ifdef|#
-directive|ifdef
-name|GIF_RLE
+elseif|else
+if|if
+condition|(
+name|FALSE
+condition|)
 name|rle_compress
 argument_list|(
 name|init_bits
@@ -6576,8 +6545,7 @@ argument_list|,
 name|ReadValue
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
+else|else
 name|normal_compress
 argument_list|(
 name|init_bits
@@ -6587,18 +6555,8 @@ argument_list|,
 name|ReadValue
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
-endif|#
-directive|endif
 block|}
 end_function
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|GIF_UN
-end_ifdef
 
 begin_function
 specifier|static
@@ -6891,17 +6849,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|GIF_RLE
-end_ifdef
 
 begin_function
 specifier|static
@@ -7318,11 +7265,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_else
-else|#
-directive|else
-end_else
-
 begin_function
 specifier|static
 name|void
@@ -7723,16 +7665,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_comment
 comment|/*****************************************************************  * TAG( output )  *  * Output the given code.  * Inputs:  *      code:   A n_bits-bit integer.  If == -1, then EOF.  This assumes  *              that n_bits =< (long)wordsize - 1.  * Outputs:  *      Outputs code to the file.  * Assumptions:  *      Chars are 8 bits long.  * Algorithm:  *      Maintain a GIF_BITS character long buffer (so that 8 codes will  * fit in it exactly).  Use the VAX insv instruction to insert each  * code in turn.  When the buffer fills up empty it and start over.  */
