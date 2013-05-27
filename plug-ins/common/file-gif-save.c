@@ -117,25 +117,9 @@ begin_comment
 comment|/* #define GIFDEBUG yesplease */
 end_comment
 
-begin_comment
-comment|/* Does the version of GIMP we're compiling for support    data attachments to images?  ('Parasites') */
-end_comment
-
-begin_define
-DECL|macro|FACEHUGGERS
-define|#
-directive|define
-name|FACEHUGGERS
-value|aieee
-end_define
-
-begin_comment
-comment|/* PS: I know that technically facehuggers aren't parasites,    the pupal-forms are.  But facehuggers are ky00te. */
-end_comment
-
 begin_enum
 enum|enum
-DECL|enum|__anon2b83d5620103
+DECL|enum|__anon2b0ec4870103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -148,7 +132,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b83d5620203
+DECL|enum|__anon2b0ec4870203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -165,7 +149,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b83d5620308
+DECL|struct|__anon2b0ec4870308
 block|{
 DECL|member|interlace
 name|gint
@@ -332,28 +316,12 @@ function_decl|;
 end_function_decl
 
 begin_decl_stmt
-DECL|variable|comment_was_edited
-specifier|static
-name|gboolean
-name|comment_was_edited
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|run_mode
 specifier|static
 name|GimpRunMode
 name|run_mode
 decl_stmt|;
 end_decl_stmt
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|FACEHUGGERS
-end_ifdef
 
 begin_decl_stmt
 DECL|variable|comment_parasite
@@ -366,10 +334,15 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
-begin_endif
-endif|#
-directive|endif
-end_endif
+begin_decl_stmt
+DECL|variable|comment_was_edited
+specifier|static
+name|gboolean
+name|comment_was_edited
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/* For compression code */
@@ -1203,41 +1176,6 @@ name|code_int
 typedef|;
 end_typedef
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|SIGNED_COMPARE_SLOW
-end_ifdef
-
-begin_typedef
-DECL|typedef|count_int
-typedef|typedef
-name|unsigned
-name|long
-name|int
-name|count_int
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|count_short
-typedef|typedef
-name|unsigned
-name|short
-name|int
-name|count_short
-typedef|;
-end_typedef
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_comment
-comment|/*SIGNED_COMPARE_SLOW */
-end_comment
-
 begin_typedef
 DECL|typedef|count_int
 typedef|typedef
@@ -1246,15 +1184,6 @@ name|int
 name|count_int
 typedef|;
 end_typedef
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/*SIGNED_COMPARE_SLOW */
-end_comment
 
 begin_function_decl
 specifier|static
@@ -2653,9 +2582,6 @@ name|best_error
 init|=
 literal|0xFFFFFFFF
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|FACEHUGGERS
 comment|/* Save the comment back to the ImageID, if appropriate */
 if|if
 condition|(
@@ -2705,8 +2631,6 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-endif|#
-directive|endif
 comment|/* The GIF spec says 7bit ASCII for the comment block. */
 if|if
 condition|(
@@ -4439,15 +4363,10 @@ name|GtkWidget
 modifier|*
 name|frame
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|FACEHUGGERS
 name|GimpParasite
 modifier|*
 name|GIF2_CMNT
 decl_stmt|;
-endif|#
-directive|endif
 name|gint32
 name|nlayers
 decl_stmt|;
@@ -4649,9 +4568,6 @@ argument_list|(
 name|globalcomment
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|FACEHUGGERS
 name|GIF2_CMNT
 operator|=
 name|gimp_image_get_parasite
@@ -4665,6 +4581,7 @@ if|if
 condition|(
 name|GIF2_CMNT
 condition|)
+block|{
 name|globalcomment
 operator|=
 name|g_strndup
@@ -4680,24 +4597,20 @@ name|GIF2_CMNT
 argument_list|)
 argument_list|)
 expr_stmt|;
-else|else
-endif|#
-directive|endif
-name|globalcomment
-operator|=
-name|gimp_get_default_comment
-argument_list|()
-expr_stmt|;
-ifdef|#
-directive|ifdef
-name|FACEHUGGERS
 name|gimp_parasite_free
 argument_list|(
 name|GIF2_CMNT
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
+block|}
+else|else
+block|{
+name|globalcomment
+operator|=
+name|gimp_get_default_comment
+argument_list|()
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|globalcomment
@@ -6266,29 +6179,6 @@ DECL|macro|HSIZE
 comment|/* 80% occupancy */
 end_comment
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|NO_UCHAR
-end_ifdef
-
-begin_typedef
-DECL|typedef|char_type
-typedef|typedef
-name|char
-name|char_type
-typedef|;
-end_typedef
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_comment
-comment|/*NO_UCHAR */
-end_comment
-
 begin_typedef
 DECL|typedef|char_type
 typedef|typedef
@@ -6297,15 +6187,6 @@ name|char
 name|char_type
 typedef|;
 end_typedef
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/*NO_UCHAR */
-end_comment
 
 begin_comment
 comment|/*   * GIF Image compression - modified 'compress'  *  * Based on: compress.c - File compression ala IEEE Computer, June 1984.  *  * By Authors:  Spencer W. Thomas       (decvax!harpo!utah-cs!utah-gr!thomas)  *              Jim McKie               (decvax!mcvax!jim)  *              Steve Davies            (decvax!vax135!petsd!peora!srd)  *              Ken Turkowski           (decvax!decwrl!turtlevax!ken)  *              James A. Woods          (decvax!ihnp4!ames!jaw)  *              Joe Orost               (decvax!vax135!petsd!joe)  *  */
@@ -6893,29 +6774,6 @@ operator|)
 name|ClearCode
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|SIGNED_COMPARE_SLOW
-while|while
-condition|(
-operator|(
-name|c
-operator|=
-name|gif_next_pixel
-argument_list|(
-name|ReadValue
-argument_list|)
-operator|)
-operator|!=
-operator|(
-name|unsigned
-operator|)
-name|EOF
-condition|)
-block|{
-else|#
-directive|else
-comment|/*SIGNED_COMPARE_SLOW */
 while|while
 condition|(
 operator|(
@@ -6930,10 +6788,6 @@ operator|!=
 name|EOF
 condition|)
 block|{
-comment|/* } */
-endif|#
-directive|endif
-comment|/*SIGNED_COMPARE_SLOW */
 operator|++
 name|in_count
 expr_stmt|;
@@ -6986,25 +6840,6 @@ name|ent
 operator|=
 name|c
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|SIGNED_COMPARE_SLOW
-if|if
-condition|(
-operator|(
-name|unsigned
-operator|)
-name|free_ent
-operator|<
-operator|(
-name|unsigned
-operator|)
-name|maxmaxcode
-condition|)
-block|{
-else|#
-directive|else
-comment|/*SIGNED_COMPARE_SLOW */
 if|if
 condition|(
 name|free_ent
@@ -7012,10 +6847,6 @@ operator|<
 name|maxmaxcode
 condition|)
 block|{
-comment|/* } */
-endif|#
-directive|endif
-comment|/*SIGNED_COMPARE_SLOW */
 name|CodeTabOf
 argument_list|(
 name|i
@@ -7059,11 +6890,20 @@ name|EOFCode
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_else
 else|#
 directive|else
+end_else
+
+begin_ifdef
 ifdef|#
 directive|ifdef
 name|GIF_RLE
+end_ifdef
+
+begin_function
 specifier|static
 name|void
 DECL|function|rle_compress (int init_bits,FILE * outfile,ifunptr ReadValue)
@@ -7245,29 +7085,6 @@ operator|)
 name|ClearCode
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|SIGNED_COMPARE_SLOW
-while|while
-condition|(
-operator|(
-name|c
-operator|=
-name|gif_next_pixel
-argument_list|(
-name|ReadValue
-argument_list|)
-operator|)
-operator|!=
-operator|(
-name|unsigned
-operator|)
-name|EOF
-condition|)
-block|{
-else|#
-directive|else
-comment|/*SIGNED_COMPARE_SLOW */
 while|while
 condition|(
 operator|(
@@ -7282,10 +7099,6 @@ operator|!=
 name|EOF
 condition|)
 block|{
-comment|/* } */
-endif|#
-directive|endif
-comment|/*SIGNED_COMPARE_SLOW */
 operator|++
 name|in_count
 expr_stmt|;
@@ -7453,25 +7266,6 @@ name|ent
 operator|=
 name|c
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|SIGNED_COMPARE_SLOW
-if|if
-condition|(
-operator|(
-name|unsigned
-operator|)
-name|free_ent
-operator|<
-operator|(
-name|unsigned
-operator|)
-name|maxmaxcode
-condition|)
-block|{
-else|#
-directive|else
-comment|/*SIGNED_COMPARE_SLOW */
 if|if
 condition|(
 name|free_ent
@@ -7479,10 +7273,6 @@ operator|<
 name|maxmaxcode
 condition|)
 block|{
-comment|/* } */
-endif|#
-directive|endif
-comment|/*SIGNED_COMPARE_SLOW */
 name|CodeTabOf
 argument_list|(
 name|i
@@ -7526,8 +7316,14 @@ name|EOFCode
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_else
 else|#
 directive|else
+end_else
+
+begin_function
 specifier|static
 name|void
 DECL|function|normal_compress (int init_bits,FILE * outfile,ifunptr ReadValue)
@@ -7705,29 +7501,6 @@ operator|)
 name|ClearCode
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|SIGNED_COMPARE_SLOW
-while|while
-condition|(
-operator|(
-name|c
-operator|=
-name|gif_next_pixel
-argument_list|(
-name|ReadValue
-argument_list|)
-operator|)
-operator|!=
-operator|(
-name|unsigned
-operator|)
-name|EOF
-condition|)
-block|{
-else|#
-directive|else
-comment|/*SIGNED_COMPARE_SLOW */
 while|while
 condition|(
 operator|(
@@ -7742,10 +7515,6 @@ operator|!=
 name|EOF
 condition|)
 block|{
-comment|/* } */
-endif|#
-directive|endif
-comment|/*SIGNED_COMPARE_SLOW */
 operator|++
 name|in_count
 expr_stmt|;
@@ -7903,25 +7672,6 @@ name|ent
 operator|=
 name|c
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|SIGNED_COMPARE_SLOW
-if|if
-condition|(
-operator|(
-name|unsigned
-operator|)
-name|free_ent
-operator|<
-operator|(
-name|unsigned
-operator|)
-name|maxmaxcode
-condition|)
-block|{
-else|#
-directive|else
-comment|/*SIGNED_COMPARE_SLOW */
 if|if
 condition|(
 name|free_ent
@@ -7929,10 +7679,6 @@ operator|<
 name|maxmaxcode
 condition|)
 block|{
-comment|/* } */
-endif|#
-directive|endif
-comment|/*SIGNED_COMPARE_SLOW */
 name|CodeTabOf
 argument_list|(
 name|i
@@ -7976,11 +7722,23 @@ name|EOFCode
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_endif
 endif|#
 directive|endif
+end_endif
+
+begin_endif
 endif|#
 directive|endif
+end_endif
+
+begin_comment
 comment|/*****************************************************************  * TAG( output )  *  * Output the given code.  * Inputs:  *      code:   A n_bits-bit integer.  If == -1, then EOF.  This assumes  *              that n_bits =< (long)wordsize - 1.  * Outputs:  *      Outputs code to the file.  * Assumptions:  *      Chars are 8 bits long.  * Algorithm:  *      Maintain a GIF_BITS character long buffer (so that 8 codes will  * fit in it exactly).  Use the VAX insv instruction to insert each  * code in turn.  When the buffer fills up empty it and start over.  */
+end_comment
+
+begin_function
 specifier|static
 name|void
 DECL|function|output (code_int code)
@@ -8163,7 +7921,13 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+end_function
+
+begin_comment
 comment|/*  * Clear out the hash table  */
+end_comment
+
+begin_function
 specifier|static
 name|void
 DECL|function|cl_block (void)
@@ -8200,6 +7964,9 @@ name|ClearCode
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
 specifier|static
 name|void
 DECL|function|cl_hash (count_int hsize)
@@ -8419,6 +8186,9 @@ operator|=
 name|m1
 expr_stmt|;
 block|}
+end_function
+
+begin_function
 specifier|static
 name|void
 DECL|function|write_err (void)
@@ -8437,14 +8207,29 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+end_function
+
+begin_comment
 comment|/******************************************************************************  *  * GIF Specific routines  *  ******************************************************************************/
+end_comment
+
+begin_comment
 comment|/*  * Number of characters so far in this 'packet'  */
+end_comment
+
+begin_decl_stmt
 DECL|variable|a_count
 specifier|static
 name|int
 name|a_count
 decl_stmt|;
+end_decl_stmt
+
+begin_comment
 comment|/*  * Set up the 'byte output' routine  */
+end_comment
+
+begin_function
 specifier|static
 name|void
 DECL|function|char_init (void)
@@ -8458,7 +8243,13 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
+end_function
+
+begin_comment
 comment|/*  * Define the storage for the packet accumulator  */
+end_comment
+
+begin_decl_stmt
 DECL|variable|accum
 specifier|static
 name|char
@@ -8467,7 +8258,13 @@ index|[
 literal|256
 index|]
 decl_stmt|;
+end_decl_stmt
+
+begin_comment
 comment|/*  * Add a character to the end of the current packet, and if it is 254  * characters, flush the packet to disk.  */
+end_comment
+
+begin_function
 specifier|static
 name|void
 DECL|function|char_out (int c)
@@ -8495,7 +8292,13 @@ name|flush_char
 argument_list|()
 expr_stmt|;
 block|}
+end_function
+
+begin_comment
 comment|/*  * Flush the packet to disk, and reset the accumulator  */
+end_comment
+
+begin_function
 specifier|static
 name|void
 DECL|function|flush_char (void)
@@ -8535,7 +8338,13 @@ literal|0
 expr_stmt|;
 block|}
 block|}
+end_function
+
+begin_comment
 comment|/*  Save interface functions  */
+end_comment
+
+begin_function
 specifier|static
 name|void
 DECL|function|comment_entry_callback (GtkTextBuffer * buffer)
