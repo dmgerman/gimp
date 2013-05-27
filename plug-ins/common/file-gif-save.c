@@ -98,18 +98,6 @@ value|"gimp-file-gif-save"
 end_define
 
 begin_comment
-comment|/* Define only one of these to determine which kind of gif's you would like.  * GIF_UN means use uncompressed gifs.  These will be large, but no  * patent problems.  * GIF_RLE uses Run-length-encoding, which should not be covered by the  * patent, but this is not legal advice.  */
-end_comment
-
-begin_comment
-comment|/* #define GIF_UN */
-end_comment
-
-begin_comment
-comment|/* #define GIF_RLE */
-end_comment
-
-begin_comment
 comment|/* uncomment the line below for a little debugging info */
 end_comment
 
@@ -119,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon286dead00103
+DECL|enum|__anon2b217d100103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -132,7 +120,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon286dead00203
+DECL|enum|__anon2b217d100203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -149,7 +137,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286dead00308
+DECL|struct|__anon2b217d100308
 block|{
 DECL|member|interlace
 name|gint
@@ -344,9 +332,16 @@ name|FALSE
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/* For compression code */
-end_comment
+begin_decl_stmt
+DECL|variable|globalcomment
+specifier|static
+name|gchar
+modifier|*
+name|globalcomment
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|Interlace
@@ -355,6 +350,11 @@ name|gint
 name|Interlace
 decl_stmt|;
 end_decl_stmt
+
+begin_comment
+DECL|variable|Interlace
+comment|/* For compression code */
+end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
@@ -1121,17 +1121,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_decl_stmt
-DECL|variable|globalcomment
-specifier|static
-name|gchar
-modifier|*
-name|globalcomment
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/* ppmtogif.c - read a portable pixmap and produce a GIF file ** ** Based on GIFENCOD by David Rowley<mgardi@watdscu.waterloo.edu>. A ** Lempel-Ziv compression based on "compress". ** ** Modified by Marcel Wijkstra<wijkstra@fwi.uva.nl> ** ** ** Copyright (C) 1989 by Jef Poskanzer. ** ** Permission to use, copy, modify, and distribute this software and its ** documentation for any purpose and without fee is hereby granted, provided ** that the above copyright notice appear in all copies and that both that ** copyright notice and this permission notice appear in supporting ** documentation.  This software is provided "as is" without express or ** implied warranty. ** ** The Graphics Interchange Format(c) is the Copyright property of ** CompuServe Incorporated.  GIF(sm) is a Service Mark property of ** CompuServe Incorporated. */
 end_comment
@@ -1162,27 +1151,6 @@ parameter_list|,
 name|int
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_comment
-comment|/*  * a code_int must be able to hold 2**BITS values of type int, and also -1  */
-end_comment
-
-begin_typedef
-DECL|typedef|code_int
-typedef|typedef
-name|int
-name|code_int
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|count_int
-typedef|typedef
-name|long
-name|int
-name|count_int
-typedef|;
 end_typedef
 
 begin_function_decl
@@ -1228,7 +1196,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|colors_to_bpp
 parameter_list|(
 name|int
@@ -1238,7 +1206,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|bpp_to_colors
 parameter_list|(
 name|int
@@ -1248,7 +1216,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|get_pixel
 parameter_list|(
 name|int
@@ -1260,7 +1228,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|gif_next_pixel
 parameter_list|(
 name|ifunptr
@@ -1441,11 +1409,14 @@ name|void
 name|compress
 parameter_list|(
 name|int
+name|init_bits
 parameter_list|,
 name|FILE
 modifier|*
+name|outfile
 parameter_list|,
 name|ifunptr
+name|ReadValue
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1456,11 +1427,14 @@ name|void
 name|no_compress
 parameter_list|(
 name|int
+name|init_bits
 parameter_list|,
 name|FILE
 modifier|*
+name|outfile
 parameter_list|,
 name|ifunptr
+name|ReadValue
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1471,11 +1445,14 @@ name|void
 name|rle_compress
 parameter_list|(
 name|int
+name|init_bits
 parameter_list|,
 name|FILE
 modifier|*
+name|outfile
 parameter_list|,
 name|ifunptr
+name|ReadValue
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1486,11 +1463,14 @@ name|void
 name|normal_compress
 parameter_list|(
 name|int
+name|init_bits
 parameter_list|,
 name|FILE
 modifier|*
+name|outfile
 parameter_list|,
 name|ifunptr
+name|ReadValue
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1513,7 +1493,7 @@ specifier|static
 name|void
 name|output
 parameter_list|(
-name|code_int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1533,17 +1513,7 @@ specifier|static
 name|void
 name|cl_hash
 parameter_list|(
-name|count_int
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|write_err
-parameter_list|(
-name|void
+name|glong
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -4818,7 +4788,7 @@ name|int
 name|colors
 parameter_list|)
 block|{
-name|int
+name|gint
 name|bpp
 decl_stmt|;
 if|if
@@ -4937,7 +4907,7 @@ name|int
 name|bpp
 parameter_list|)
 block|{
-name|int
+name|gint
 name|colors
 decl_stmt|;
 if|if
@@ -4965,9 +4935,7 @@ operator|<<
 name|bpp
 expr_stmt|;
 return|return
-operator|(
 name|colors
-operator|)
 return|;
 block|}
 end_function
@@ -6147,17 +6115,8 @@ DECL|macro|HSIZE
 comment|/* 80% occupancy */
 end_comment
 
-begin_typedef
-DECL|typedef|char_type
-typedef|typedef
-name|unsigned
-name|char
-name|char_type
-typedef|;
-end_typedef
-
 begin_comment
-comment|/*   * GIF Image compression - modified 'compress'  *  * Based on: compress.c - File compression ala IEEE Computer, June 1984.  *  * By Authors:  Spencer W. Thomas       (decvax!harpo!utah-cs!utah-gr!thomas)  *              Jim McKie               (decvax!mcvax!jim)  *              Steve Davies            (decvax!vax135!petsd!peora!srd)  *              Ken Turkowski           (decvax!decwrl!turtlevax!ken)  *              James A. Woods          (decvax!ihnp4!ames!jaw)  *              Joe Orost               (decvax!vax135!petsd!joe)  *  */
+comment|/*  * GIF Image compression - modified 'compress'  *  * Based on: compress.c - File compression ala IEEE Computer, June 1984.  *  * By Authors:  Spencer W. Thomas       (decvax!harpo!utah-cs!utah-gr!thomas)  *              Jim McKie               (decvax!mcvax!jim)  *              Steve Davies            (decvax!vax135!petsd!peora!srd)  *              Ken Turkowski           (decvax!decwrl!turtlevax!ken)  *              James A. Woods          (decvax!ihnp4!ames!jaw)  *              Joe Orost               (decvax!vax135!petsd!joe)  *  */
 end_comment
 
 begin_decl_stmt
@@ -6191,7 +6150,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|maxcode
 specifier|static
-name|code_int
+name|gint
 name|maxcode
 decl_stmt|;
 end_decl_stmt
@@ -6204,11 +6163,11 @@ end_comment
 begin_decl_stmt
 DECL|variable|maxmaxcode
 specifier|static
-name|code_int
+name|gint
 name|maxmaxcode
 init|=
 operator|(
-name|code_int
+name|gint
 operator|)
 literal|1
 operator|<<
@@ -6239,7 +6198,7 @@ name|MAXCODE
 parameter_list|(
 name|Mn_bits
 parameter_list|)
-value|((code_int) 1<< (Mn_bits) - 1)
+value|((gint) 1<< (Mn_bits) - 1)
 end_define
 
 begin_else
@@ -6259,7 +6218,7 @@ name|MAXCODE
 parameter_list|(
 name|Mn_bits
 parameter_list|)
-value|(((code_int) 1<< (Mn_bits)) - 1)
+value|(((gint) 1<< (Mn_bits)) - 1)
 end_define
 
 begin_endif
@@ -6274,7 +6233,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|htab
 specifier|static
-name|count_int
+name|glong
 name|htab
 index|[
 name|HSIZE
@@ -6320,7 +6279,7 @@ begin_decl_stmt
 DECL|variable|hsize
 specifier|static
 specifier|const
-name|code_int
+name|gint
 name|hsize
 init|=
 name|HSIZE
@@ -6329,13 +6288,13 @@ end_decl_stmt
 
 begin_comment
 DECL|variable|hsize
-comment|/* the original reason for this being                                         variable was "for dynamic table sizing",                                         but since it was never actually changed                                         I made it const   --Adam. */
+comment|/* the original reason for this being                                     variable was "for dynamic table sizing",                                     but since it was never actually changed                                     I made it const   --Adam. */
 end_comment
 
 begin_decl_stmt
 DECL|variable|free_ent
 specifier|static
-name|code_int
+name|gint
 name|free_ent
 init|=
 literal|0
@@ -6408,7 +6367,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|g_init_bits
 specifier|static
-name|int
+name|gint
 name|g_init_bits
 decl_stmt|;
 end_decl_stmt
@@ -6441,8 +6400,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|cur_accum
 specifier|static
-name|unsigned
-name|long
+name|gulong
 name|cur_accum
 decl_stmt|;
 end_decl_stmt
@@ -6450,7 +6408,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|cur_bits
 specifier|static
-name|int
+name|gint
 name|cur_bits
 decl_stmt|;
 end_decl_stmt
@@ -6458,8 +6416,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|masks
 specifier|static
-name|unsigned
-name|long
+name|gulong
 name|masks
 index|[]
 init|=
@@ -6580,7 +6537,7 @@ name|long
 name|fcode
 decl_stmt|;
 specifier|register
-name|code_int
+name|gint
 name|i
 comment|/* = 0 */
 decl_stmt|;
@@ -6589,11 +6546,11 @@ name|int
 name|c
 decl_stmt|;
 specifier|register
-name|code_int
+name|gint
 name|ent
 decl_stmt|;
 specifier|register
-name|code_int
+name|gint
 name|hsize_reg
 decl_stmt|;
 specifier|register
@@ -6718,7 +6675,7 @@ expr_stmt|;
 name|cl_hash
 argument_list|(
 operator|(
-name|count_int
+name|glong
 operator|)
 name|hsize_reg
 argument_list|)
@@ -6727,7 +6684,7 @@ comment|/* clear hash table */
 name|output
 argument_list|(
 operator|(
-name|code_int
+name|gint
 operator|)
 name|ClearCode
 argument_list|)
@@ -6772,7 +6729,7 @@ operator|=
 operator|(
 operator|(
 operator|(
-name|code_int
+name|gint
 operator|)
 name|c
 operator|<<
@@ -6786,7 +6743,7 @@ comment|/* xor hashing */
 name|output
 argument_list|(
 operator|(
-name|code_int
+name|gint
 operator|)
 name|ent
 argument_list|)
@@ -6831,7 +6788,7 @@ comment|/*    * Put out the final code.    */
 name|output
 argument_list|(
 operator|(
-name|code_int
+name|gint
 operator|)
 name|ent
 argument_list|)
@@ -6842,7 +6799,7 @@ expr_stmt|;
 name|output
 argument_list|(
 operator|(
-name|code_int
+name|gint
 operator|)
 name|EOFCode
 argument_list|)
@@ -6872,7 +6829,7 @@ name|long
 name|fcode
 decl_stmt|;
 specifier|register
-name|code_int
+name|gint
 name|i
 comment|/* = 0 */
 decl_stmt|;
@@ -6883,15 +6840,15 @@ decl_stmt|,
 name|last
 decl_stmt|;
 specifier|register
-name|code_int
+name|gint
 name|ent
 decl_stmt|;
 specifier|register
-name|code_int
+name|gint
 name|disp
 decl_stmt|;
 specifier|register
-name|code_int
+name|gint
 name|hsize_reg
 decl_stmt|;
 specifier|register
@@ -7018,7 +6975,7 @@ expr_stmt|;
 name|cl_hash
 argument_list|(
 operator|(
-name|count_int
+name|glong
 operator|)
 name|hsize_reg
 argument_list|)
@@ -7027,7 +6984,7 @@ comment|/* clear hash table */
 name|output
 argument_list|(
 operator|(
-name|code_int
+name|gint
 operator|)
 name|ClearCode
 argument_list|)
@@ -7072,7 +7029,7 @@ operator|=
 operator|(
 operator|(
 operator|(
-name|code_int
+name|gint
 operator|)
 name|c
 operator|<<
@@ -7199,7 +7156,7 @@ label|:
 name|output
 argument_list|(
 operator|(
-name|code_int
+name|gint
 operator|)
 name|ent
 argument_list|)
@@ -7246,7 +7203,7 @@ comment|/*    * Put out the final code.    */
 name|output
 argument_list|(
 operator|(
-name|code_int
+name|gint
 operator|)
 name|ent
 argument_list|)
@@ -7257,7 +7214,7 @@ expr_stmt|;
 name|output
 argument_list|(
 operator|(
-name|code_int
+name|gint
 operator|)
 name|EOFCode
 argument_list|)
@@ -7287,7 +7244,7 @@ name|long
 name|fcode
 decl_stmt|;
 specifier|register
-name|code_int
+name|gint
 name|i
 comment|/* = 0 */
 decl_stmt|;
@@ -7296,15 +7253,15 @@ name|int
 name|c
 decl_stmt|;
 specifier|register
-name|code_int
+name|gint
 name|ent
 decl_stmt|;
 specifier|register
-name|code_int
+name|gint
 name|disp
 decl_stmt|;
 specifier|register
-name|code_int
+name|gint
 name|hsize_reg
 decl_stmt|;
 specifier|register
@@ -7429,7 +7386,7 @@ expr_stmt|;
 name|cl_hash
 argument_list|(
 operator|(
-name|count_int
+name|glong
 operator|)
 name|hsize_reg
 argument_list|)
@@ -7438,7 +7395,7 @@ comment|/* clear hash table */
 name|output
 argument_list|(
 operator|(
-name|code_int
+name|gint
 operator|)
 name|ClearCode
 argument_list|)
@@ -7483,7 +7440,7 @@ operator|=
 operator|(
 operator|(
 operator|(
-name|code_int
+name|gint
 operator|)
 name|c
 operator|<<
@@ -7602,7 +7559,7 @@ label|:
 name|output
 argument_list|(
 operator|(
-name|code_int
+name|gint
 operator|)
 name|ent
 argument_list|)
@@ -7647,7 +7604,7 @@ comment|/*    * Put out the final code.    */
 name|output
 argument_list|(
 operator|(
-name|code_int
+name|gint
 operator|)
 name|ent
 argument_list|)
@@ -7658,7 +7615,7 @@ expr_stmt|;
 name|output
 argument_list|(
 operator|(
-name|code_int
+name|gint
 operator|)
 name|EOFCode
 argument_list|)
@@ -7673,10 +7630,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|output (code_int code)
+DECL|function|output (gint code)
 name|output
 parameter_list|(
-name|code_int
+name|gint
 name|code
 parameter_list|)
 block|{
@@ -7848,8 +7805,13 @@ argument_list|(
 name|g_outfile
 argument_list|)
 condition|)
-name|write_err
-argument_list|()
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Error writing output file."
+argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -7872,7 +7834,7 @@ block|{
 name|cl_hash
 argument_list|(
 operator|(
-name|count_int
+name|glong
 operator|)
 name|hsize
 argument_list|)
@@ -7890,7 +7852,7 @@ expr_stmt|;
 name|output
 argument_list|(
 operator|(
-name|code_int
+name|gint
 operator|)
 name|ClearCode
 argument_list|)
@@ -7901,16 +7863,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|cl_hash (count_int hsize)
+DECL|function|cl_hash (glong hsize)
 name|cl_hash
 parameter_list|(
-name|count_int
+name|glong
 name|hsize
 parameter_list|)
 comment|/* reset code table */
 block|{
 specifier|register
-name|count_int
+name|glong
 modifier|*
 name|htab_p
 init|=
@@ -8117,27 +8079,6 @@ name|htab_p
 operator|=
 name|m1
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|write_err (void)
-name|write_err
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Error writing output file."
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return;
 block|}
 end_function
 
