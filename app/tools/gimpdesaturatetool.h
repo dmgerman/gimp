@@ -112,17 +112,6 @@ DECL|member|parent_instance
 name|GimpImageMapTool
 name|parent_instance
 decl_stmt|;
-DECL|member|config
-name|GimpDesaturateConfig
-modifier|*
-name|config
-decl_stmt|;
-comment|/*  dialog  */
-DECL|member|button
-name|GtkWidget
-modifier|*
-name|button
-decl_stmt|;
 block|}
 struct|;
 end_struct
