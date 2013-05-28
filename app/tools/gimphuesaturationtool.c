@@ -714,7 +714,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon290867a10108
+DECL|struct|__anon2aabbd7f0108
 block|{
 DECL|member|label
 specifier|const
@@ -1476,7 +1476,6 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-comment|/*  The table containing sliders  */
 name|vbox
 operator|=
 name|gtk_box_new
@@ -1589,7 +1588,7 @@ argument_list|(
 name|scale
 argument_list|)
 argument_list|,
-literal|180.0
+literal|100.0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1643,7 +1642,7 @@ argument_list|(
 name|scale
 argument_list|)
 argument_list|,
-literal|180.0
+literal|100.0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
