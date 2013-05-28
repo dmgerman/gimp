@@ -131,17 +131,6 @@ name|dx
 decl_stmt|,
 name|dy
 decl_stmt|;
-comment|/*  dialog  */
-DECL|member|brightness_data
-name|GtkAdjustment
-modifier|*
-name|brightness_data
-decl_stmt|;
-DECL|member|contrast_data
-name|GtkAdjustment
-modifier|*
-name|contrast_data
-decl_stmt|;
 block|}
 struct|;
 end_struct
