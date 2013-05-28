@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29da971c0103
+DECL|enum|__anon279e247e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -67,7 +67,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29da971c0203
+DECL|enum|__anon279e247e0203
 block|{
 DECL|enumerator|TARGET_NUMBER
 name|TARGET_NUMBER
@@ -706,6 +706,12 @@ argument_list|)
 expr_stmt|;
 name|private
 operator|->
+name|mnemonic_keyval
+operator|=
+name|GDK_KEY_VoidSymbol
+expr_stmt|;
+name|private
+operator|->
 name|gamma
 operator|=
 literal|1.0
@@ -746,7 +752,7 @@ name|private
 operator|->
 name|mnemonic_keyval
 operator|=
-literal|0
+name|GDK_KEY_VoidSymbol
 expr_stmt|;
 name|gimp_spin_scale_setup_mnemonic
 argument_list|(
