@@ -118,21 +118,6 @@ modifier|*
 name|config
 decl_stmt|;
 comment|/*  dialog  */
-DECL|member|hue_data
-name|GtkAdjustment
-modifier|*
-name|hue_data
-decl_stmt|;
-DECL|member|saturation_data
-name|GtkAdjustment
-modifier|*
-name|saturation_data
-decl_stmt|;
-DECL|member|lightness_data
-name|GtkAdjustment
-modifier|*
-name|lightness_data
-decl_stmt|;
 DECL|member|color_button
 name|GtkWidget
 modifier|*
