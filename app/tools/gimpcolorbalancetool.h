@@ -129,11 +129,6 @@ modifier|*
 name|config
 decl_stmt|;
 comment|/*  dialog  */
-DECL|member|range_radio
-name|GtkWidget
-modifier|*
-name|range_radio
-decl_stmt|;
 DECL|member|cyan_red_adj
 name|GtkAdjustment
 modifier|*
@@ -148,11 +143,6 @@ DECL|member|yellow_blue_adj
 name|GtkAdjustment
 modifier|*
 name|yellow_blue_adj
-decl_stmt|;
-DECL|member|preserve_toggle
-name|GtkWidget
-modifier|*
-name|preserve_toggle
 decl_stmt|;
 block|}
 struct|;
