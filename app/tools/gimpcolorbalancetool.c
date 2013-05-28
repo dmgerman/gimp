@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpspinscale.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -657,7 +663,17 @@ literal|0.01
 argument_list|,
 literal|0.1
 argument_list|,
-literal|2
+literal|0
+argument_list|)
+expr_stmt|;
+name|gimp_spin_scale_set_factor
+argument_list|(
+name|GIMP_SPIN_SCALE
+argument_list|(
+name|scale
+argument_list|)
+argument_list|,
+literal|100.0
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach_defaults
