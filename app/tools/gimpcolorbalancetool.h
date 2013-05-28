@@ -128,22 +128,6 @@ name|GimpColorBalanceConfig
 modifier|*
 name|config
 decl_stmt|;
-comment|/*  dialog  */
-DECL|member|cyan_red_adj
-name|GtkAdjustment
-modifier|*
-name|cyan_red_adj
-decl_stmt|;
-DECL|member|magenta_green_adj
-name|GtkAdjustment
-modifier|*
-name|magenta_green_adj
-decl_stmt|;
-DECL|member|yellow_blue_adj
-name|GtkAdjustment
-modifier|*
-name|yellow_blue_adj
-decl_stmt|;
 block|}
 struct|;
 end_struct
