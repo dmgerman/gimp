@@ -254,6 +254,35 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/* note: after calling set_factor(), gtk_spin_button_get_adjustment()  * will return a different adjustment!  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_spin_scale_set_factor
+parameter_list|(
+name|GimpSpinScale
+modifier|*
+name|scale
+parameter_list|,
+name|gdouble
+name|factor
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gdouble
+name|gimp_spin_scale_get_factor
+parameter_list|(
+name|GimpSpinScale
+modifier|*
+name|scale
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
