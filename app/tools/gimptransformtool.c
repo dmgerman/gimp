@@ -7653,6 +7653,10 @@ name|display
 argument_list|)
 expr_stmt|;
 comment|/*  update the undo actions / menu items  */
+if|if
+condition|(
+name|display
+condition|)
 name|gimp_image_flush
 argument_list|(
 name|gimp_display_get_image
