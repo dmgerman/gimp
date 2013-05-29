@@ -7480,6 +7480,14 @@ argument_list|(
 name|tr_tool
 argument_list|)
 decl_stmt|;
+name|GimpDisplay
+modifier|*
+name|display
+init|=
+name|tool
+operator|->
+name|display
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -7589,8 +7597,6 @@ name|gimp_transform_tool_bounds
 argument_list|(
 name|tr_tool
 argument_list|,
-name|tool
-operator|->
 name|display
 argument_list|)
 expr_stmt|;
@@ -7613,8 +7619,6 @@ name|gimp_image_flush
 argument_list|(
 name|gimp_display_get_image
 argument_list|(
-name|tool
-operator|->
 name|display
 argument_list|)
 argument_list|)
@@ -7625,8 +7629,6 @@ name|GTK_RESPONSE_OK
 case|:
 name|g_return_if_fail
 argument_list|(
-name|tool
-operator|->
 name|display
 operator|!=
 name|NULL
@@ -7636,8 +7638,6 @@ name|gimp_transform_tool_transform
 argument_list|(
 name|tr_tool
 argument_list|,
-name|tool
-operator|->
 name|display
 argument_list|)
 expr_stmt|;
@@ -7649,8 +7649,6 @@ name|tool
 argument_list|,
 name|GIMP_TOOL_ACTION_HALT
 argument_list|,
-name|tool
-operator|->
 name|display
 argument_list|)
 expr_stmt|;
@@ -7659,8 +7657,6 @@ name|gimp_image_flush
 argument_list|(
 name|gimp_display_get_image
 argument_list|(
-name|tool
-operator|->
 name|display
 argument_list|)
 argument_list|)
