@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3633900103
+DECL|enum|__anon2bd1e1210103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -419,6 +419,9 @@ literal|"gegl:noise-rgb"
 block|,
 comment|/* in gimp */
 literal|"gegl:noise-slur"
+block|,
+comment|/* in gimp */
+literal|"gegl:noise-spread"
 block|,
 comment|/* in gimp */
 literal|"gegl:opacity"
