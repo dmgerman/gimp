@@ -120,7 +120,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimppropwidgets.h"
+file|"widgets/gimpproptable.h"
 end_include
 
 begin_include
