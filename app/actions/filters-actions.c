@@ -471,6 +471,28 @@ comment|/* FIXME GIMP_HELP_FILTER_MONO_MIXER */
 block|}
 block|,
 block|{
+literal|"filters-motion-blur"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Motion Blur..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:motion-blur"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_MOTION_BLUR */
+block|}
+block|,
+block|{
 literal|"filters-noise-cie-lch"
 block|,
 name|GIMP_STOCK_GEGL
@@ -1275,6 +1297,13 @@ name|writable
 operator|&&
 operator|!
 name|gray
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-motion-blur"
+argument_list|,
+name|writable
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

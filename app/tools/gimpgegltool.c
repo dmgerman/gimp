@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd1e1210103
+DECL|enum|__anon293ec1180103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -401,6 +401,9 @@ literal|"gegl:matting-global"
 block|,
 comment|/* useless */
 literal|"gegl:mono-mixer"
+block|,
+comment|/* in gimp */
+literal|"gegl:motion-blur"
 block|,
 comment|/* in gimp */
 literal|"gegl:noise-CIE_lch"
