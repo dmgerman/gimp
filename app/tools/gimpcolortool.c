@@ -205,7 +205,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b19a8df0103
+DECL|enum|__anon2c84ca330103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -577,11 +577,11 @@ literal|6
 argument_list|,
 name|GIMP_TYPE_COLOR_PICK_STATE
 argument_list|,
+name|G_TYPE_DOUBLE
+argument_list|,
+name|G_TYPE_DOUBLE
+argument_list|,
 name|G_TYPE_POINTER
-argument_list|,
-name|G_TYPE_DOUBLE
-argument_list|,
-name|G_TYPE_DOUBLE
 argument_list|,
 name|GIMP_TYPE_RGB
 operator||
