@@ -222,14 +222,6 @@ file|"gimpparamspecs.h"
 end_include
 
 begin_define
-DECL|macro|NUM_PROCESSORS_DEFAULT
-define|#
-directive|define
-name|NUM_PROCESSORS_DEFAULT
-value|1
-end_define
-
-begin_define
 DECL|macro|MAX_FUNC
 define|#
 directive|define
@@ -367,7 +359,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae6455a0108
+DECL|struct|__anon2ad26a160108
 block|{
 DECL|member|func
 name|GimpMemsizeFunc
