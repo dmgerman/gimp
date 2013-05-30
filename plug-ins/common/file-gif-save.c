@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b217d100103
+DECL|enum|__anon293e02710103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -120,7 +120,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b217d100203
+DECL|enum|__anon293e02710203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -137,7 +137,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b217d100308
+DECL|struct|__anon293e02710308
 block|{
 DECL|member|interlace
 name|gint
@@ -6532,28 +6532,22 @@ name|ifunptr
 name|ReadValue
 parameter_list|)
 block|{
-specifier|register
 name|long
 name|fcode
 decl_stmt|;
-specifier|register
 name|gint
 name|i
 comment|/* = 0 */
 decl_stmt|;
-specifier|register
 name|int
 name|c
 decl_stmt|;
-specifier|register
 name|gint
 name|ent
 decl_stmt|;
-specifier|register
 name|gint
 name|hsize_reg
 decl_stmt|;
-specifier|register
 name|int
 name|hshift
 decl_stmt|;
@@ -6824,34 +6818,27 @@ name|ifunptr
 name|ReadValue
 parameter_list|)
 block|{
-specifier|register
 name|long
 name|fcode
 decl_stmt|;
-specifier|register
 name|gint
 name|i
 comment|/* = 0 */
 decl_stmt|;
-specifier|register
 name|int
 name|c
 decl_stmt|,
 name|last
 decl_stmt|;
-specifier|register
 name|gint
 name|ent
 decl_stmt|;
-specifier|register
 name|gint
 name|disp
 decl_stmt|;
-specifier|register
 name|gint
 name|hsize_reg
 decl_stmt|;
-specifier|register
 name|int
 name|hshift
 decl_stmt|;
@@ -7239,32 +7226,25 @@ name|ifunptr
 name|ReadValue
 parameter_list|)
 block|{
-specifier|register
 name|long
 name|fcode
 decl_stmt|;
-specifier|register
 name|gint
 name|i
 comment|/* = 0 */
 decl_stmt|;
-specifier|register
 name|int
 name|c
 decl_stmt|;
-specifier|register
 name|gint
 name|ent
 decl_stmt|;
-specifier|register
 name|gint
 name|disp
 decl_stmt|;
-specifier|register
 name|gint
 name|hsize_reg
 decl_stmt|;
-specifier|register
 name|int
 name|hshift
 decl_stmt|;
@@ -7871,7 +7851,6 @@ name|hsize
 parameter_list|)
 comment|/* reset code table */
 block|{
-specifier|register
 name|glong
 modifier|*
 name|htab_p
@@ -7880,11 +7859,9 @@ name|htab
 operator|+
 name|hsize
 decl_stmt|;
-specifier|register
 name|long
 name|i
 decl_stmt|;
-specifier|register
 name|long
 name|m1
 init|=
