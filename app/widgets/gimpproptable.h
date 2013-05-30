@@ -46,7 +46,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|help_id
+name|tooltip
 parameter_list|)
 function_decl|;
 end_typedef
@@ -68,7 +68,7 @@ modifier|*
 name|context
 parameter_list|,
 name|GimpCreatePickerFunc
-name|create_picker_fnc
+name|create_picker_func
 parameter_list|,
 name|gpointer
 name|picker_creator
