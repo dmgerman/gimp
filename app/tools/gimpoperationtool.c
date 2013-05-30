@@ -1315,6 +1315,15 @@ name|options_table
 operator|=
 name|NULL
 expr_stmt|;
+name|GIMP_IMAGE_MAP_TOOL
+argument_list|(
+name|tool
+argument_list|)
+operator|->
+name|active_picker
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 if|if
 condition|(
