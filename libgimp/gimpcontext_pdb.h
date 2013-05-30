@@ -634,6 +634,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GIMP_DEPRECATED
 name|gint
 name|gimp_context_get_transform_recursion
 parameter_list|(
@@ -643,6 +644,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GIMP_DEPRECATED
 name|gboolean
 name|gimp_context_set_transform_recursion
 parameter_list|(

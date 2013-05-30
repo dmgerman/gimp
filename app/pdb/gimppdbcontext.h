@@ -156,10 +156,6 @@ DECL|member|transform_resize
 name|GimpTransformResize
 name|transform_resize
 decl_stmt|;
-DECL|member|transform_recursion
-name|gint
-name|transform_recursion
-decl_stmt|;
 DECL|member|paint_options_list
 name|GimpContainer
 modifier|*

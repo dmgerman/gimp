@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3a6a6d0103
+DECL|enum|__anon28e3e1eb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -640,14 +640,7 @@ name|GimpTransformOptions
 modifier|*
 name|options
 parameter_list|)
-block|{
-name|options
-operator|->
-name|recursion_level
-operator|=
-literal|3
-expr_stmt|;
-block|}
+block|{ }
 end_function
 
 begin_function
@@ -1912,7 +1905,7 @@ name|gimp_get_constrain_behavior_mask
 argument_list|()
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b3a6a6d0208
+DECL|struct|__anon28e3e1eb0208
 block|{
 DECL|member|mod
 name|GdkModifierType

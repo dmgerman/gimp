@@ -461,7 +461,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_text_layer_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,GimpTransformResize clip_result,GimpProgress * progress)
+DECL|function|gimp_text_layer_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,GimpTransformResize clip_result,GimpProgress * progress)
 name|gimp_text_layer_transform
 parameter_list|(
 name|GimpItem
@@ -485,9 +485,6 @@ name|interpolation_type
 parameter_list|,
 name|gboolean
 name|supersample
-parameter_list|,
-name|gint
-name|recursion_level
 parameter_list|,
 name|GimpTransformResize
 name|clip_result

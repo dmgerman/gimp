@@ -392,7 +392,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_item_list_transform (GimpImage * image,GList * list,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gint recursion_level,GimpTransformResize clip_result,GimpProgress * progress)
+DECL|function|gimp_image_item_list_transform (GimpImage * image,GList * list,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,GimpTransformResize clip_result,GimpProgress * progress)
 name|gimp_image_item_list_transform
 parameter_list|(
 name|GimpImage
@@ -417,9 +417,6 @@ name|direction
 parameter_list|,
 name|GimpInterpolationType
 name|interpolation_type
-parameter_list|,
-name|gint
-name|recursion_level
 parameter_list|,
 name|GimpTransformResize
 name|clip_result
@@ -511,8 +508,6 @@ argument_list|,
 name|direction
 argument_list|,
 name|interpolation_type
-argument_list|,
-name|recursion_level
 argument_list|,
 name|clip_result
 argument_list|,

@@ -124,10 +124,6 @@ DECL|member|interpolation
 name|GimpInterpolationType
 name|interpolation
 decl_stmt|;
-DECL|member|recursion_level
-name|gint
-name|recursion_level
-decl_stmt|;
 DECL|member|clip
 name|GimpTransformResize
 name|clip

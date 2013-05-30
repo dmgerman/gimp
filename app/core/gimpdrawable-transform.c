@@ -242,7 +242,7 @@ end_comment
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_drawable_transform_buffer_affine (GimpDrawable * drawable,GimpContext * context,GeglBuffer * orig_buffer,gint orig_offset_x,gint orig_offset_y,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gint recursion_level,GimpTransformResize clip_result,gint * new_offset_x,gint * new_offset_y,GimpProgress * progress)
+DECL|function|gimp_drawable_transform_buffer_affine (GimpDrawable * drawable,GimpContext * context,GeglBuffer * orig_buffer,gint orig_offset_x,gint orig_offset_y,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,GimpTransformResize clip_result,gint * new_offset_x,gint * new_offset_y,GimpProgress * progress)
 name|gimp_drawable_transform_buffer_affine
 parameter_list|(
 name|GimpDrawable
@@ -273,9 +273,6 @@ name|direction
 parameter_list|,
 name|GimpInterpolationType
 name|interpolation_type
-parameter_list|,
-name|gint
-name|recursion_level
 parameter_list|,
 name|GimpTransformResize
 name|clip_result
@@ -2618,7 +2615,7 @@ end_function
 begin_function
 name|GimpDrawable
 modifier|*
-DECL|function|gimp_drawable_transform_affine (GimpDrawable * drawable,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gint recursion_level,GimpTransformResize clip_result,GimpProgress * progress)
+DECL|function|gimp_drawable_transform_affine (GimpDrawable * drawable,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,GimpTransformResize clip_result,GimpProgress * progress)
 name|gimp_drawable_transform_affine
 parameter_list|(
 name|GimpDrawable
@@ -2639,9 +2636,6 @@ name|direction
 parameter_list|,
 name|GimpInterpolationType
 name|interpolation_type
-parameter_list|,
-name|gint
-name|recursion_level
 parameter_list|,
 name|GimpTransformResize
 name|clip_result
@@ -2862,8 +2856,6 @@ name|direction
 argument_list|,
 name|interpolation_type
 argument_list|,
-name|recursion_level
-argument_list|,
 name|clip_result
 argument_list|,
 name|progress
@@ -2890,8 +2882,6 @@ argument_list|,
 name|direction
 argument_list|,
 name|interpolation_type
-argument_list|,
-name|recursion_level
 argument_list|,
 name|clip_result
 argument_list|,

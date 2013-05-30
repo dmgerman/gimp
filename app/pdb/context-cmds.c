@@ -5785,17 +5785,9 @@ name|transform_recursion
 init|=
 literal|0
 decl_stmt|;
-name|g_object_get
-argument_list|(
-name|context
-argument_list|,
-literal|"transform-recursion"
-argument_list|,
-operator|&
 name|transform_recursion
-argument_list|,
-name|NULL
-argument_list|)
+operator|=
+literal|3
 expr_stmt|;
 name|return_vals
 operator|=
@@ -5865,38 +5857,11 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|gint32
-name|transform_recursion
-decl_stmt|;
-name|transform_recursion
-operator|=
-name|g_value_get_int
-argument_list|(
-name|gimp_value_array_index
-argument_list|(
-name|args
-argument_list|,
-literal|0
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|success
 condition|)
-block|{
-name|g_object_set
-argument_list|(
-name|context
-argument_list|,
-literal|"transform-recursion"
-argument_list|,
-name|transform_recursion
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-block|}
+block|{     }
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
@@ -11787,17 +11752,17 @@ name|procedure
 argument_list|,
 literal|"gimp-context-get-transform-recursion"
 argument_list|,
-literal|"Get the transform supersampling recursion."
+literal|"Deprecated: There is no replacement for this procedure."
 argument_list|,
-literal|"This procedure returns the transform supersampling recursion level."
+literal|"Deprecated: There is no replacement for this procedure."
 argument_list|,
-literal|"Michael Natterer<mitch@gimp.org>"
+literal|""
 argument_list|,
-literal|"Michael Natterer"
+literal|""
 argument_list|,
-literal|"2010"
+literal|""
 argument_list|,
-name|NULL
+literal|"NONE"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -11810,7 +11775,7 @@ literal|"transform-recursion"
 argument_list|,
 literal|"transform recursion"
 argument_list|,
-literal|"The transform recursion level"
+literal|"This returns always 3 and is meaningless"
 argument_list|,
 literal|1
 argument_list|,
@@ -11858,17 +11823,17 @@ name|procedure
 argument_list|,
 literal|"gimp-context-set-transform-recursion"
 argument_list|,
-literal|"Set the transform supersampling recursion."
+literal|"Deprecated: There is no replacement for this procedure."
 argument_list|,
-literal|"This procedure modifies the transform supersampling recursion level setting. Whether or not a transformation does supersampling is determined by the interplolation type. The recursion level defaults to 3, which is a nice default value. This setting affects affects the following procedures: 'gimp-item-transform-flip', 'gimp-item-transform-perspective', 'gimp-item-transform-rotate', 'gimp-item-transform-scale', 'gimp-item-transform-shear', 'gimp-item-transform-2d', 'gimp-item-transform-matrix'."
+literal|"Deprecated: There is no replacement for this procedure."
 argument_list|,
-literal|"Michael Natterer<mitch@gimp.org>"
+literal|""
 argument_list|,
-literal|"Michael Natterer"
+literal|""
 argument_list|,
-literal|"2010"
+literal|""
 argument_list|,
-name|NULL
+literal|"NONE"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -11881,7 +11846,7 @@ literal|"transform-recursion"
 argument_list|,
 literal|"transform recursion"
 argument_list|,
-literal|"The transform recursion level"
+literal|"This parameter is ignored"
 argument_list|,
 literal|1
 argument_list|,

@@ -497,9 +497,6 @@ decl_stmt|;
 name|gint32
 name|interpolation
 decl_stmt|;
-name|gint32
-name|recursion_level
-decl_stmt|;
 name|gboolean
 name|clip_result
 decl_stmt|;
@@ -586,18 +583,6 @@ argument_list|(
 name|args
 argument_list|,
 literal|6
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|recursion_level
-operator|=
-name|g_value_get_int
-argument_list|(
-name|gimp_value_array_index
-argument_list|(
-name|args
-argument_list|,
-literal|8
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -780,8 +765,6 @@ name|transform_direction
 argument_list|,
 name|interpolation
 argument_list|,
-name|recursion_level
-argument_list|,
 name|clip_result
 argument_list|,
 name|progress
@@ -811,8 +794,6 @@ argument_list|,
 name|transform_direction
 argument_list|,
 name|interpolation
-argument_list|,
-name|recursion_level
 argument_list|,
 name|clip_result
 argument_list|,
@@ -1204,8 +1185,6 @@ name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
 argument_list|,
-literal|3
-argument_list|,
 name|clip_result
 argument_list|,
 name|progress
@@ -1235,8 +1214,6 @@ argument_list|,
 name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
-argument_list|,
-literal|3
 argument_list|,
 name|clip_result
 argument_list|,
@@ -1369,9 +1346,6 @@ name|transform_direction
 decl_stmt|;
 name|gint32
 name|interpolation
-decl_stmt|;
-name|gint32
-name|recursion_level
 decl_stmt|;
 name|gint32
 name|clip_result
@@ -1507,18 +1481,6 @@ argument_list|(
 name|args
 argument_list|,
 literal|10
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|recursion_level
-operator|=
-name|g_value_get_int
-argument_list|(
-name|gimp_value_array_index
-argument_list|(
-name|args
-argument_list|,
-literal|12
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1717,8 +1679,6 @@ name|transform_direction
 argument_list|,
 name|interpolation
 argument_list|,
-name|recursion_level
-argument_list|,
 name|clip_result
 argument_list|,
 name|progress
@@ -1748,8 +1708,6 @@ argument_list|,
 name|transform_direction
 argument_list|,
 name|interpolation
-argument_list|,
-name|recursion_level
 argument_list|,
 name|clip_result
 argument_list|,
@@ -2217,8 +2175,6 @@ name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
 argument_list|,
-literal|3
-argument_list|,
 name|clip_result
 argument_list|,
 name|progress
@@ -2248,8 +2204,6 @@ argument_list|,
 name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
-argument_list|,
-literal|3
 argument_list|,
 name|clip_result
 argument_list|,
@@ -2707,9 +2661,6 @@ name|gint32
 name|interpolation
 decl_stmt|;
 name|gint32
-name|recursion_level
-decl_stmt|;
-name|gint32
 name|clip_result
 decl_stmt|;
 name|drawable
@@ -2795,18 +2746,6 @@ argument_list|(
 name|args
 argument_list|,
 literal|6
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|recursion_level
-operator|=
-name|g_value_get_int
-argument_list|(
-name|gimp_value_array_index
-argument_list|(
-name|args
-argument_list|,
-literal|8
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3008,8 +2947,6 @@ name|transform_direction
 argument_list|,
 name|interpolation
 argument_list|,
-name|recursion_level
-argument_list|,
 name|clip_result
 argument_list|,
 name|progress
@@ -3039,8 +2976,6 @@ argument_list|,
 name|transform_direction
 argument_list|,
 name|interpolation
-argument_list|,
-name|recursion_level
 argument_list|,
 name|clip_result
 argument_list|,
@@ -3451,8 +3386,6 @@ name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
 argument_list|,
-literal|3
-argument_list|,
 name|clip_result
 argument_list|,
 name|progress
@@ -3482,8 +3415,6 @@ argument_list|,
 name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
-argument_list|,
-literal|3
 argument_list|,
 name|clip_result
 argument_list|,
@@ -3606,9 +3537,6 @@ name|gint32
 name|interpolation
 decl_stmt|;
 name|gint32
-name|recursion_level
-decl_stmt|;
-name|gint32
 name|clip_result
 decl_stmt|;
 name|drawable
@@ -3694,18 +3622,6 @@ argument_list|(
 name|args
 argument_list|,
 literal|6
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|recursion_level
-operator|=
-name|g_value_get_int
-argument_list|(
-name|gimp_value_array_index
-argument_list|(
-name|args
-argument_list|,
-literal|8
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3910,8 +3826,6 @@ name|transform_direction
 argument_list|,
 name|interpolation
 argument_list|,
-name|recursion_level
-argument_list|,
 name|clip_result
 argument_list|,
 name|progress
@@ -3941,8 +3855,6 @@ argument_list|,
 name|transform_direction
 argument_list|,
 name|interpolation
-argument_list|,
-name|recursion_level
 argument_list|,
 name|clip_result
 argument_list|,
@@ -4356,8 +4268,6 @@ name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
 argument_list|,
-literal|3
-argument_list|,
 name|clip_result
 argument_list|,
 name|progress
@@ -4387,8 +4297,6 @@ argument_list|,
 name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
-argument_list|,
-literal|3
 argument_list|,
 name|clip_result
 argument_list|,
@@ -4505,9 +4413,6 @@ name|gint32
 name|interpolation
 decl_stmt|;
 name|gint32
-name|recursion_level
-decl_stmt|;
-name|gint32
 name|clip_result
 decl_stmt|;
 name|drawable
@@ -4569,18 +4474,6 @@ argument_list|(
 name|args
 argument_list|,
 literal|4
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|recursion_level
-operator|=
-name|g_value_get_int
-argument_list|(
-name|gimp_value_array_index
-argument_list|(
-name|args
-argument_list|,
-literal|6
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4767,8 +4660,6 @@ name|transform_direction
 argument_list|,
 name|interpolation
 argument_list|,
-name|recursion_level
-argument_list|,
 name|clip_result
 argument_list|,
 name|progress
@@ -4798,8 +4689,6 @@ argument_list|,
 name|transform_direction
 argument_list|,
 name|interpolation
-argument_list|,
-name|recursion_level
 argument_list|,
 name|clip_result
 argument_list|,
@@ -5165,8 +5054,6 @@ name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
 argument_list|,
-literal|3
-argument_list|,
 name|clip_result
 argument_list|,
 name|progress
@@ -5196,8 +5083,6 @@ argument_list|,
 name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
-argument_list|,
-literal|3
 argument_list|,
 name|clip_result
 argument_list|,
@@ -5329,9 +5214,6 @@ name|gint32
 name|interpolation
 decl_stmt|;
 name|gint32
-name|recursion_level
-decl_stmt|;
-name|gint32
 name|clip_result
 decl_stmt|;
 name|drawable
@@ -5453,18 +5335,6 @@ argument_list|(
 name|args
 argument_list|,
 literal|9
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|recursion_level
-operator|=
-name|g_value_get_int
-argument_list|(
-name|gimp_value_array_index
-argument_list|(
-name|args
-argument_list|,
-literal|11
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5673,8 +5543,6 @@ name|transform_direction
 argument_list|,
 name|interpolation
 argument_list|,
-name|recursion_level
-argument_list|,
 name|clip_result
 argument_list|,
 name|progress
@@ -5704,8 +5572,6 @@ argument_list|,
 name|transform_direction
 argument_list|,
 name|interpolation
-argument_list|,
-name|recursion_level
 argument_list|,
 name|clip_result
 argument_list|,
@@ -6168,8 +6034,6 @@ name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
 argument_list|,
-literal|3
-argument_list|,
 name|clip_result
 argument_list|,
 name|progress
@@ -6199,8 +6063,6 @@ argument_list|,
 name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
-argument_list|,
-literal|3
 argument_list|,
 name|clip_result
 argument_list|,
@@ -6336,9 +6198,6 @@ name|transform_direction
 decl_stmt|;
 name|gint32
 name|interpolation
-decl_stmt|;
-name|gint32
-name|recursion_level
 decl_stmt|;
 name|gint32
 name|clip_result
@@ -6486,18 +6345,6 @@ argument_list|(
 name|args
 argument_list|,
 literal|11
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|recursion_level
-operator|=
-name|g_value_get_int
-argument_list|(
-name|gimp_value_array_index
-argument_list|(
-name|args
-argument_list|,
-literal|13
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6768,8 +6615,6 @@ name|transform_direction
 argument_list|,
 name|interpolation
 argument_list|,
-name|recursion_level
-argument_list|,
 name|clip_result
 argument_list|,
 name|progress
@@ -6799,8 +6644,6 @@ argument_list|,
 name|transform_direction
 argument_list|,
 name|interpolation
-argument_list|,
-name|recursion_level
 argument_list|,
 name|clip_result
 argument_list|,
@@ -7355,8 +7198,6 @@ name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
 argument_list|,
-literal|3
-argument_list|,
 name|clip_result
 argument_list|,
 name|progress
@@ -7386,8 +7227,6 @@ argument_list|,
 name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
-argument_list|,
-literal|3
 argument_list|,
 name|clip_result
 argument_list|,
@@ -7846,7 +7685,7 @@ literal|"supersample"
 argument_list|,
 literal|"supersample"
 argument_list|,
-literal|"This parameter is ignored, supersampling is performed based on the interpolation type"
+literal|"This parameter is ignored"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -7864,7 +7703,7 @@ literal|"recursion-level"
 argument_list|,
 literal|"recursion level"
 argument_list|,
-literal|"Maximum recursion level used for supersampling (3 is a nice value)"
+literal|"This parameter is ignored"
 argument_list|,
 literal|1
 argument_list|,
@@ -8442,7 +8281,7 @@ literal|"supersample"
 argument_list|,
 literal|"supersample"
 argument_list|,
-literal|"This parameter is ignored, supersampling is performed based on the interpolation type"
+literal|"This parameter is ignored"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -8460,7 +8299,7 @@ literal|"recursion-level"
 argument_list|,
 literal|"recursion level"
 argument_list|,
-literal|"Maximum recursion level used for supersampling (3 is a nice value)"
+literal|"This parameter is ignored"
 argument_list|,
 literal|1
 argument_list|,
@@ -9228,7 +9067,7 @@ literal|"supersample"
 argument_list|,
 literal|"supersample"
 argument_list|,
-literal|"This parameter is ignored, supersampling is performed based on the interpolation type"
+literal|"This parameter is ignored"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -9246,7 +9085,7 @@ literal|"recursion-level"
 argument_list|,
 literal|"recursion level"
 argument_list|,
-literal|"Maximum recursion level used for supersampling (3 is a nice value)"
+literal|"This parameter is ignored"
 argument_list|,
 literal|1
 argument_list|,
@@ -9729,7 +9568,7 @@ literal|"supersample"
 argument_list|,
 literal|"supersample"
 argument_list|,
-literal|"This parameter is ignored, supersampling is performed based on the interpolation type"
+literal|"This parameter is ignored"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -9747,7 +9586,7 @@ literal|"recursion-level"
 argument_list|,
 literal|"recursion level"
 argument_list|,
-literal|"Maximum recursion level used for supersampling (3 is a nice value)"
+literal|"This parameter is ignored"
 argument_list|,
 literal|1
 argument_list|,
@@ -10203,7 +10042,7 @@ literal|"supersample"
 argument_list|,
 literal|"supersample"
 argument_list|,
-literal|"This parameter is ignored, supersampling is performed based on the interpolation type"
+literal|"This parameter is ignored"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -10221,7 +10060,7 @@ literal|"recursion-level"
 argument_list|,
 literal|"recursion level"
 argument_list|,
-literal|"Maximum recursion level used for supersampling (3 is a nice value)"
+literal|"This parameter is ignored"
 argument_list|,
 literal|1
 argument_list|,
@@ -10746,7 +10585,7 @@ literal|"supersample"
 argument_list|,
 literal|"supersample"
 argument_list|,
-literal|"This parameter is ignored, supersampling is performed based on the interpolation type"
+literal|"This parameter is ignored"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -10764,7 +10603,7 @@ literal|"recursion-level"
 argument_list|,
 literal|"recursion level"
 argument_list|,
-literal|"Maximum recursion level used for supersampling (3 is a nice value)"
+literal|"This parameter is ignored"
 argument_list|,
 literal|1
 argument_list|,
@@ -11438,7 +11277,7 @@ literal|"supersample"
 argument_list|,
 literal|"supersample"
 argument_list|,
-literal|"This parameter is ignored, supersampling is performed based on the interpolation type"
+literal|"This parameter is ignored"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -11456,7 +11295,7 @@ literal|"recursion-level"
 argument_list|,
 literal|"recursion level"
 argument_list|,
-literal|"Maximum recursion level used for supersampling (3 is a nice value)"
+literal|"This parameter is ignored"
 argument_list|,
 literal|1
 argument_list|,

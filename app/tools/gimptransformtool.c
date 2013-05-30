@@ -5505,10 +5505,6 @@ name|options
 operator|->
 name|interpolation
 argument_list|,
-name|options
-operator|->
-name|recursion_level
-argument_list|,
 name|clip
 argument_list|,
 name|progress
@@ -5571,10 +5567,6 @@ name|options
 operator|->
 name|interpolation
 argument_list|,
-name|options
-operator|->
-name|recursion_level
-argument_list|,
 name|clip
 argument_list|,
 name|new_offset_x
@@ -5618,10 +5610,6 @@ argument_list|,
 name|options
 operator|->
 name|interpolation
-argument_list|,
-name|options
-operator|->
-name|recursion_level
 argument_list|,
 name|clip
 argument_list|,

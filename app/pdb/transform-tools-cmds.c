@@ -786,8 +786,6 @@ name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
 argument_list|,
-literal|3
-argument_list|,
 name|FALSE
 argument_list|,
 name|progress
@@ -817,8 +815,6 @@ argument_list|,
 name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation
-argument_list|,
-literal|3
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1152,8 +1148,6 @@ name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
 argument_list|,
-literal|3
-argument_list|,
 name|FALSE
 argument_list|,
 name|progress
@@ -1183,8 +1177,6 @@ argument_list|,
 name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation
-argument_list|,
-literal|3
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1583,8 +1575,6 @@ name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
 argument_list|,
-literal|3
-argument_list|,
 name|FALSE
 argument_list|,
 name|progress
@@ -1614,8 +1604,6 @@ argument_list|,
 name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation
-argument_list|,
-literal|3
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1966,8 +1954,6 @@ name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
 argument_list|,
-literal|3
-argument_list|,
 name|FALSE
 argument_list|,
 name|progress
@@ -1997,8 +1983,6 @@ argument_list|,
 name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation
-argument_list|,
-literal|3
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2419,8 +2403,6 @@ name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
 argument_list|,
-literal|3
-argument_list|,
 name|FALSE
 argument_list|,
 name|progress
@@ -2450,8 +2432,6 @@ argument_list|,
 name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation
-argument_list|,
-literal|3
 argument_list|,
 name|FALSE
 argument_list|,

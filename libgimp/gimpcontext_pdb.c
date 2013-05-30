@@ -4167,7 +4167,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_transform_recursion:  *  * Get the transform supersampling recursion.  *  * This procedure returns the transform supersampling recursion level.  *  * Returns: The transform recursion level.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_transform_recursion:  *  * Deprecated: There is no replacement for this procedure.  *  * Returns: This returns always 3 and is meaningless.  **/
 end_comment
 
 begin_function
@@ -4240,7 +4240,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_transform_recursion:  * @transform_recursion: The transform recursion level.  *  * Set the transform supersampling recursion.  *  * This procedure modifies the transform supersampling recursion level  * setting. Whether or not a transformation does supersampling is  * determined by the interplolation type. The recursion level defaults  * to 3, which is a nice default value. This setting affects affects  * the following procedures: gimp_item_transform_flip(),  * gimp_item_transform_perspective(), gimp_item_transform_rotate(),  * gimp_item_transform_scale(), gimp_item_transform_shear(),  * gimp_item_transform_2d(), gimp_item_transform_matrix().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_transform_recursion:  * @transform_recursion: This parameter is ignored.  *  * Deprecated: There is no replacement for this procedure.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
