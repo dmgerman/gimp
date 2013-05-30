@@ -3743,7 +3743,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_image_map_tool_add_color_picker (GimpImageMapTool * tool,gpointer identifier,const gchar * stock_id,const gchar * help_id)
+DECL|function|gimp_image_map_tool_add_color_picker (GimpImageMapTool * tool,gpointer identifier,const gchar * stock_id,const gchar * tooltip)
 name|gimp_image_map_tool_add_color_picker
 parameter_list|(
 name|GimpImageMapTool
@@ -3761,7 +3761,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|help_id
+name|tooltip
 parameter_list|)
 block|{
 name|GtkWidget
@@ -3842,13 +3842,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|help_id
+name|tooltip
 condition|)
 name|gimp_help_set_help_data
 argument_list|(
 name|button
 argument_list|,
-name|help_id
+name|tooltip
 argument_list|,
 name|NULL
 argument_list|)
