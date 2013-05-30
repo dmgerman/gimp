@@ -213,6 +213,12 @@ parameter_list|,
 name|GimpColorPickState
 name|pick_state
 parameter_list|,
+name|gdouble
+name|x
+parameter_list|,
+name|gdouble
+name|y
+parameter_list|,
 specifier|const
 name|Babl
 modifier|*

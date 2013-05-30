@@ -381,6 +381,12 @@ parameter_list|,
 name|gpointer
 name|identifier
 parameter_list|,
+name|gdouble
+name|x
+parameter_list|,
+name|gdouble
+name|y
+parameter_list|,
 specifier|const
 name|Babl
 modifier|*

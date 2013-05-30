@@ -198,6 +198,12 @@ parameter_list|,
 name|GimpColorPickState
 name|pick_state
 parameter_list|,
+name|gdouble
+name|x
+parameter_list|,
+name|gdouble
+name|y
+parameter_list|,
 specifier|const
 name|Babl
 modifier|*
@@ -985,7 +991,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_picker_tool_picked (GimpColorTool * color_tool,GimpColorPickState pick_state,const Babl * sample_format,const GimpRGB * color,gint color_index)
+DECL|function|gimp_color_picker_tool_picked (GimpColorTool * color_tool,GimpColorPickState pick_state,gdouble x,gdouble y,const Babl * sample_format,const GimpRGB * color,gint color_index)
 name|gimp_color_picker_tool_picked
 parameter_list|(
 name|GimpColorTool
@@ -994,6 +1000,12 @@ name|color_tool
 parameter_list|,
 name|GimpColorPickState
 name|pick_state
+parameter_list|,
+name|gdouble
+name|x
+parameter_list|,
+name|gdouble
+name|y
 parameter_list|,
 specifier|const
 name|Babl
@@ -1072,6 +1084,10 @@ argument_list|(
 name|color_tool
 argument_list|,
 name|pick_state
+argument_list|,
+name|x
+argument_list|,
+name|y
 argument_list|,
 name|sample_format
 argument_list|,

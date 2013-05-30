@@ -205,7 +205,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4192980103
+DECL|enum|__anon2b19a8df0103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -447,6 +447,12 @@ parameter_list|,
 name|GimpColorPickState
 name|pick_state
 parameter_list|,
+name|gdouble
+name|x
+parameter_list|,
+name|gdouble
+name|y
+parameter_list|,
 specifier|const
 name|Babl
 modifier|*
@@ -563,15 +569,19 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__ENUM_POINTER_BOXED_INT
+name|gimp_marshal_VOID__ENUM_DOUBLE_DOUBLE_POINTER_BOXED_INT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
-literal|4
+literal|6
 argument_list|,
 name|GIMP_TYPE_COLOR_PICK_STATE
 argument_list|,
 name|G_TYPE_POINTER
+argument_list|,
+name|G_TYPE_DOUBLE
+argument_list|,
+name|G_TYPE_DOUBLE
 argument_list|,
 name|GIMP_TYPE_RGB
 operator||
@@ -2367,7 +2377,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_tool_real_picked (GimpColorTool * color_tool,GimpColorPickState pick_state,const Babl * sample_format,const GimpRGB * color,gint color_index)
+DECL|function|gimp_color_tool_real_picked (GimpColorTool * color_tool,GimpColorPickState pick_state,gdouble x,gdouble y,const Babl * sample_format,const GimpRGB * color,gint color_index)
 name|gimp_color_tool_real_picked
 parameter_list|(
 name|GimpColorTool
@@ -2376,6 +2386,12 @@ name|color_tool
 parameter_list|,
 name|GimpColorPickState
 name|pick_state
+parameter_list|,
+name|gdouble
+name|x
+parameter_list|,
+name|gdouble
+name|y
 parameter_list|,
 specifier|const
 name|Babl
@@ -2822,6 +2838,16 @@ argument_list|,
 literal|0
 argument_list|,
 name|pick_state
+argument_list|,
+operator|(
+name|gdouble
+operator|)
+name|x
+argument_list|,
+operator|(
+name|gdouble
+operator|)
+name|y
 argument_list|,
 name|sample_format
 argument_list|,

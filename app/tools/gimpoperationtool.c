@@ -281,6 +281,12 @@ parameter_list|,
 name|gpointer
 name|identifier
 parameter_list|,
+name|gdouble
+name|x
+parameter_list|,
+name|gdouble
+name|y
+parameter_list|,
 specifier|const
 name|Babl
 modifier|*
@@ -1099,7 +1105,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_tool_color_picked (GimpImageMapTool * im_tool,gpointer identifier,const Babl * sample_format,const GimpRGB * color)
+DECL|function|gimp_operation_tool_color_picked (GimpImageMapTool * im_tool,gpointer identifier,gdouble x,gdouble y,const Babl * sample_format,const GimpRGB * color)
 name|gimp_operation_tool_color_picked
 parameter_list|(
 name|GimpImageMapTool
@@ -1108,6 +1114,12 @@ name|im_tool
 parameter_list|,
 name|gpointer
 name|identifier
+parameter_list|,
+name|gdouble
+name|x
+parameter_list|,
+name|gdouble
+name|y
 parameter_list|,
 specifier|const
 name|Babl
