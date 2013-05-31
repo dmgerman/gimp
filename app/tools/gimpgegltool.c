@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e5073f0103
+DECL|enum|__anon28b694a20103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -318,172 +318,136 @@ name|name_blacklist
 index|[]
 init|=
 block|{
+comment|/* these ops are already added to the menus via      * filter-actions ordrawable-actions      */
 literal|"gegl:c2g"
 block|,
-comment|/* in gimp */
 literal|"gegl:cartoon"
 block|,
-comment|/* in gimp */
 literal|"gegl:checkerboard"
 block|,
-comment|/* in gimp */
 literal|"gegl:color"
 block|,
-comment|/* pointless */
 literal|"gegl:color-reduction"
 block|,
-comment|/* in gimp */
 literal|"gegl:color-temperature"
 block|,
-comment|/* in gimp */
 literal|"gegl:color-to-alpha"
 block|,
-comment|/* in gimp */
-literal|"gegl:colorize"
-block|,
-comment|/* in gimp */
 literal|"gegl:cubism"
 block|,
-comment|/* in gimp */
+literal|"gegl:deinterlace"
+block|,
+literal|"gegl:difference-of-gaussians"
+block|,
+literal|"gegl:dot"
+block|,
+literal|"gegl:edge-laplace"
+block|,
+literal|"gegl:edge-sobel"
+block|,
+literal|"gegl:emboss"
+block|,
+literal|"gegl:exposure"
+block|,
+literal|"gegl:fractal-trace"
+block|,
+literal|"gegl:gaussian-blur"
+block|,
+literal|"gegl:invert"
+block|,
+literal|"gegl:lens-distortion"
+block|,
+literal|"gegl:mono-mixer"
+block|,
+literal|"gegl:motion-blur"
+block|,
+literal|"gegl:noise-CIE_lch"
+block|,
+literal|"gegl:noise-hsv"
+block|,
+literal|"gegl:noise-hurl"
+block|,
+literal|"gegl:noise-pick"
+block|,
+literal|"gegl:noise-rgb"
+block|,
+literal|"gegl:noise-slur"
+block|,
+literal|"gegl:noise-spread"
+block|,
+literal|"gegl:photocopy"
+block|,
+literal|"gegl:pixelize"
+block|,
+literal|"gegl:polar-coordinates"
+block|,
+literal|"gegl:red-eye-removal"
+block|,
+literal|"gegl:ripple"
+block|,
+literal|"gegl:shift"
+block|,
+literal|"gegl:softglow"
+block|,
+literal|"gegl:unsharp-mask"
+block|,
+literal|"gegl:value-invert"
+block|,
+literal|"gegl:vignette"
+block|,
+literal|"gegl:whirl-pinch"
+block|,
+comment|/* these ops are blacklisted for other reasons */
 literal|"gegl:contrast-curve"
 block|,
 literal|"gegl:convert-format"
 block|,
-literal|"gegl:deinterlace"
-block|,
-comment|/* in gimp */
-literal|"gegl:difference-of-gaussians"
-block|,
-comment|/* in gimp */
+comment|/* pointless */
 literal|"gegl:display"
 block|,
-literal|"gegl:dot"
-block|,
-comment|/* in gimp */
-literal|"gegl:emboss"
-block|,
-comment|/* in gimp */
-literal|"gegl:edge-laplace"
-block|,
-comment|/* in gimp */
-literal|"gegl:edge-sobel"
-block|,
-comment|/* in gimp */
-literal|"gegl:exposure"
-block|,
-comment|/* in gimp */
+comment|/* pointless */
 literal|"gegl:fill-path"
 block|,
-literal|"gegl:fractal-trace"
-block|,
-comment|/* in gimp */
-literal|"gegl:gaussian-blur"
-block|,
-comment|/* in gimp */
 literal|"gegl:grey"
 block|,
-comment|/* in gimp */
+comment|/* we use gimp's op */
 literal|"gegl:hstack"
 block|,
+comment|/* pointless */
 literal|"gegl:introspect"
 block|,
-literal|"gegl:invert"
-block|,
-comment|/* in gimp */
+comment|/* pointless */
 literal|"gegl:layer"
 block|,
-literal|"gegl:lens-correct"
-block|,
-literal|"gegl:lens-distortion"
-block|,
-comment|/* in gimp */
+comment|/* we use gimp's ops */
 literal|"gegl:matting-global"
 block|,
-comment|/* useless */
-literal|"gegl:mono-mixer"
-block|,
-comment|/* in gimp */
-literal|"gegl:motion-blur"
-block|,
-comment|/* in gimp */
-literal|"gegl:noise-CIE_lch"
-block|,
-comment|/* in gimp */
-literal|"gegl:noise-hsv"
-block|,
-comment|/* in gimp */
-literal|"gegl:noise-hurl"
-block|,
-comment|/* in gimp */
-literal|"gegl:noise-pick"
-block|,
-comment|/* in gimp */
-literal|"gegl:noise-rgb"
-block|,
-comment|/* in gimp */
-literal|"gegl:noise-slur"
-block|,
-comment|/* in gimp */
-literal|"gegl:noise-spread"
-block|,
-comment|/* in gimp */
+comment|/* used in the foreground select tool */
 literal|"gegl:opacity"
 block|,
-comment|/* pointless */
+comment|/* poinless */
 literal|"gegl:path"
 block|,
-literal|"gegl:photocopy"
-block|,
-comment|/* in gimp */
-literal|"gegl:pixelize"
-block|,
-comment|/* in gimp */
-literal|"gegl:polar-coordinates"
-block|,
-comment|/* in gimp */
 literal|"gegl:posterize"
 block|,
-comment|/* in gimp */
-literal|"gegl:red-eye-removal"
-block|,
-comment|/* in gimp */
-literal|"gegl:ripple"
-block|,
-comment|/* in gimp */
+comment|/* we use gimp's op */
 literal|"gegl:sdl-display"
 block|,
-comment|/* useless */
+comment|/* pointless */
 literal|"gegl:seamless-clone"
 block|,
-literal|"gegl:shift"
-block|,
-comment|/* in gimp */
-literal|"gegl:softglow"
-block|,
-comment|/* in gimp */
+comment|/* used in the seamless clone tool */
 literal|"gegl:text"
 block|,
+comment|/* we use gimp's text rendering */
 literal|"gegl:threshold"
 block|,
-comment|/* in gimp */
+comment|/* we use gimp's op */
 literal|"gegl:tile"
 block|,
-comment|/* useless */
-literal|"gegl:unsharp-mask"
-block|,
-comment|/* in gimp */
-literal|"gegl:value-invert"
-block|,
-comment|/* in gimp */
+comment|/* pointless */
 literal|"gegl:vector-stroke"
-block|,
-literal|"gegl:vignette"
-block|,
-comment|/* in gimp */
-literal|"gegl:whirl-pinch"
-block|,
-comment|/* in gimp */
-block|}
+block|,   }
 decl_stmt|;
 name|gchar
 modifier|*
