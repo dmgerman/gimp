@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a346dd80103
+DECL|enum|__anon2bad68450103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -354,6 +354,8 @@ block|,
 literal|"gegl:fractal-trace"
 block|,
 literal|"gegl:gaussian-blur"
+block|,
+literal|"gegl:grid"
 block|,
 literal|"gegl:invert"
 block|,
