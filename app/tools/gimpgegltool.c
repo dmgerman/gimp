@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b694a20103
+DECL|enum|__anon2a346dd80103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -340,6 +340,8 @@ block|,
 literal|"gegl:difference-of-gaussians"
 block|,
 literal|"gegl:dot"
+block|,
+literal|"gegl:dropshadow"
 block|,
 literal|"gegl:edge-laplace"
 block|,

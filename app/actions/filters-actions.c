@@ -317,6 +317,28 @@ comment|/* FIXME GIMP_HELP_FILTER_DOT */
 block|}
 block|,
 block|{
+literal|"filters-dropshadow"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Drop Shadow..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:dropshadow"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_DROPSHADOW */
+block|}
+block|,
+block|{
 literal|"filters-edge-laplace"
 block|,
 name|GIMP_STOCK_GEGL
@@ -1252,6 +1274,15 @@ argument_list|(
 literal|"filters-dot"
 argument_list|,
 name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-dropshadow"
+argument_list|,
+name|writable
+operator|&&
+name|alpha
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
