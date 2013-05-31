@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293ec1180103
+DECL|enum|__anon29e5073f0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -450,20 +450,11 @@ comment|/* in gimp */
 literal|"gegl:ripple"
 block|,
 comment|/* in gimp */
-literal|"gegl:rotate"
-block|,
-comment|/* in gimp */
-literal|"gegl:scale"
-block|,
-comment|/* in gimp */
 literal|"gegl:sdl-display"
 block|,
 comment|/* useless */
 literal|"gegl:seamless-clone"
 block|,
-literal|"gegl:shear"
-block|,
-comment|/* in gimp */
 literal|"gegl:shift"
 block|,
 comment|/* in gimp */
@@ -478,12 +469,6 @@ comment|/* in gimp */
 literal|"gegl:tile"
 block|,
 comment|/* useless */
-literal|"gegl:transform"
-block|,
-comment|/* in gimp */
-literal|"gegl:translate"
-block|,
-comment|/* pointless */
 literal|"gegl:unsharp-mask"
 block|,
 comment|/* in gimp */
