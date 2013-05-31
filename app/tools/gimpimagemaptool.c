@@ -2352,6 +2352,16 @@ decl_stmt|;
 name|gpointer
 name|identifier
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GTK_IS_WIDGET
+argument_list|(
+name|tool
+operator|->
+name|active_picker
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|identifier
 operator|=
 name|g_object_get_data
