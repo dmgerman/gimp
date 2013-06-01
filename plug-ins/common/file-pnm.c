@@ -366,7 +366,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27aa38e00108
+DECL|struct|__anon2bb4ef9f0108
 block|{
 DECL|member|raw
 name|gint
@@ -2029,6 +2029,8 @@ name|char
 name|buf
 index|[
 name|BUFLEN
+operator|+
+literal|4
 index|]
 decl_stmt|;
 comment|/* buffer for random things like scanning */
