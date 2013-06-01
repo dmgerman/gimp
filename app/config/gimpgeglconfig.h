@@ -104,6 +104,10 @@ DECL|member|tile_cache_size
 name|guint64
 name|tile_cache_size
 decl_stmt|;
+DECL|member|use_opencl
+name|gboolean
+name|use_opencl
+decl_stmt|;
 block|}
 struct|;
 end_struct

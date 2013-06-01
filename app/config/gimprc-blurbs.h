@@ -1152,6 +1152,15 @@ value|N_("When enabled, pressing F1 will open the help browser.")
 end_define
 
 begin_define
+DECL|macro|USE_OPENCL_BLURB
+define|#
+directive|define
+name|USE_OPENCL_BLURB
+define|\
+value|N_("When enabled, uses OpenCL for some operations.")
+end_define
+
+begin_define
 DECL|macro|USER_MANUAL_ONLINE_BLURB
 define|#
 directive|define

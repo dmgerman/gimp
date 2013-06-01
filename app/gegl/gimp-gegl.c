@@ -75,6 +75,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|gimp_gegl_notify_use_opencl
+parameter_list|(
+name|GimpGeglConfig
+modifier|*
+name|config
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function
 name|void
 DECL|function|gimp_gegl_init (Gimp * gimp)
@@ -145,9 +157,15 @@ argument_list|,
 if|#
 directive|if
 literal|0
-argument_list|"threads",    config->num_processors,
+argument_list|"threads",         config->num_processors,
 endif|#
 directive|endif
+literal|"use-opencl"
+argument_list|,
+name|config
+operator|->
+name|use_opencl
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -187,6 +205,12 @@ literal|0
 argument_list|"threads",    config->num_processors,
 endif|#
 directive|endif
+literal|"use-opencl"
+argument_list|,
+name|config
+operator|->
+name|use_opencl
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -227,6 +251,20 @@ argument_list|,
 name|G_CALLBACK
 argument_list|(
 name|gimp_gegl_notify_num_processors
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|config
+argument_list|,
+literal|"notify::use-opencl"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_gegl_notify_use_opencl
 argument_list|)
 argument_list|,
 name|NULL
@@ -329,6 +367,34 @@ literal|0
 block|g_object_set (gegl_config (),                 "threads", config->num_processors,                 NULL);
 endif|#
 directive|endif
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_gegl_notify_use_opencl (GimpGeglConfig * config)
+name|gimp_gegl_notify_use_opencl
+parameter_list|(
+name|GimpGeglConfig
+modifier|*
+name|config
+parameter_list|)
+block|{
+name|g_object_set
+argument_list|(
+name|gegl_config
+argument_list|()
+argument_list|,
+literal|"use-opencl"
+argument_list|,
+name|config
+operator|->
+name|use_opencl
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

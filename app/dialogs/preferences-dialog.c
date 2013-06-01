@@ -5575,6 +5575,41 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* ENABLE_MP */
+comment|/*  Hardware Acceleration  */
+name|vbox2
+operator|=
+name|prefs_frame_new
+argument_list|(
+name|_
+argument_list|(
+literal|"Hardware Acceleration"
+argument_list|)
+argument_list|,
+name|GTK_CONTAINER
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|prefs_check_button_add
+argument_list|(
+name|object
+argument_list|,
+literal|"use-opencl"
+argument_list|,
+name|_
+argument_list|(
+literal|"Use OpenCL"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  Image Thumbnails  */
 name|vbox2
 operator|=
@@ -8533,7 +8568,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon277421060108
+DECL|struct|__anon29698ab50108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9698,7 +9733,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon277421060208
+DECL|struct|__anon29698ab50208
 block|{
 DECL|member|label
 specifier|const
@@ -10826,7 +10861,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon277421060308
+DECL|struct|__anon29698ab50308
 block|{
 DECL|member|property_name
 specifier|const
@@ -10981,7 +11016,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon277421060408
+DECL|struct|__anon29698ab50408
 block|{
 DECL|member|tree_label
 specifier|const
