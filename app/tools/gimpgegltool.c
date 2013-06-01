@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bad68450103
+DECL|enum|__anon2b43f18a0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -398,6 +398,8 @@ block|,
 literal|"gegl:value-invert"
 block|,
 literal|"gegl:vignette"
+block|,
+literal|"gegl:waves"
 block|,
 literal|"gegl:whirl-pinch"
 block|,
