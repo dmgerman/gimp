@@ -537,7 +537,7 @@ comment|/* FIXME GIMP_HELP_FILTER_MONO_MIXER */
 block|}
 block|,
 block|{
-literal|"filters-motion-blur"
+literal|"filters-motion-blur-circular"
 block|,
 name|GIMP_STOCK_GEGL
 block|,
@@ -545,17 +545,61 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"_Motion Blur..."
+literal|"_Circular Motion Blur..."
 argument_list|)
 block|,
 name|NULL
 block|,
 name|NULL
 block|,
-literal|"gegl:motion-blur"
+literal|"gegl:motion-blur-circular"
 block|,
 name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_MOTION_BLUR */
+comment|/* FIXME GIMP_HELP_FILTER_MOTION_BLUR_CIRCULAR */
+block|}
+block|,
+block|{
+literal|"filters-motion-blur-linear"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Linear Motion Blur..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:motion-blur-linear"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_MOTION_BLUR_LINEAR */
+block|}
+block|,
+block|{
+literal|"filters-motion-blur-zoom"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Zoom Motion Blur..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:motion-blur-zoom"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_MOTION_BLUR_ZOOM */
 block|}
 block|,
 block|{
@@ -1390,7 +1434,21 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"filters-motion-blur"
+literal|"filters-motion-blur-circular"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-motion-blur-linear"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-motion-blur-zoom"
 argument_list|,
 name|writable
 argument_list|)

@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b43f18a0103
+DECL|enum|__anon29ea89430103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -363,7 +363,11 @@ literal|"gegl:lens-distortion"
 block|,
 literal|"gegl:mono-mixer"
 block|,
-literal|"gegl:motion-blur"
+literal|"gegl:motion-blur-circular"
+block|,
+literal|"gegl:motion-blur-linear"
+block|,
+literal|"gegl:motion-blur-zoom"
 block|,
 literal|"gegl:noise-CIE_lch"
 block|,
