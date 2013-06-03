@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbc5f690103
+DECL|enum|__anon2b5f73600103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -62,7 +62,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbc5f690208
+DECL|struct|__anon2b5f73600208
 block|{
 DECL|member|pixbuf_renderer
 name|GtkCellRenderer
@@ -1849,7 +1849,9 @@ name|text_renderer
 argument_list|,
 literal|"ellipsize"
 argument_list|,
-name|PANGO_ELLIPSIZE_END
+name|priv
+operator|->
+name|ellipsize
 argument_list|,
 name|NULL
 argument_list|)
