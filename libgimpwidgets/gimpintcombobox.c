@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5f73600103
+DECL|enum|__anon29a1fc710103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -62,7 +62,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5f73600208
+DECL|struct|__anon29a1fc710208
 block|{
 DECL|member|pixbuf_renderer
 name|GtkCellRenderer
@@ -1841,6 +1841,11 @@ operator|=
 name|gtk_cell_renderer_text_new
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|shown
+condition|)
 name|g_object_set
 argument_list|(
 name|priv
