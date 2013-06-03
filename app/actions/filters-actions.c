@@ -618,7 +618,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-literal|"gegl:noise-CIE_lch"
+literal|"gegl:noise-cie-lch"
 block|,
 name|NULL
 comment|/* FIXME GIMP_HELP_FILTER_NOISE_CIE_LCH */
