@@ -162,7 +162,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279ed5c10108
+DECL|struct|__anon287fff000108
 block|{
 DECL|member|width
 name|gint
@@ -3165,7 +3165,7 @@ name|options
 operator|->
 name|engine
 operator|==
-name|GIMP_MATTING_ENGINE_MATTING_GLOBAL
+name|GIMP_MATTING_ENGINE_GLOBAL
 condition|)
 block|{
 name|matting_node
