@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2911f8bb0103
+DECL|enum|__anon2b1ae0c60103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -2993,6 +2993,17 @@ name|_
 argument_list|(
 literal|"Fixed"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_set
+argument_list|(
+name|combo
+argument_list|,
+literal|"ellipsize"
+argument_list|,
+name|PANGO_ELLIPSIZE_END
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

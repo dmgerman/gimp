@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299c833c0103
+DECL|enum|__anon28b307580103
 block|{
 DECL|enumerator|ALIGN_BUTTON_CLICKED
 name|ALIGN_BUTTON_CLICKED
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299c833c0203
+DECL|enum|__anon28b307580203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -968,6 +968,17 @@ name|_
 argument_list|(
 literal|"Relative to"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_set
+argument_list|(
+name|combo
+argument_list|,
+literal|"ellipsize"
+argument_list|,
+name|PANGO_ELLIPSIZE_END
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
