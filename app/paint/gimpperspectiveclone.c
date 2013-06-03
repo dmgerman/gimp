@@ -849,10 +849,6 @@ argument_list|(
 name|GIMP_INTERPOLATION_LINEAR
 argument_list|)
 argument_list|,
-literal|"hard-edges"
-argument_list|,
-name|TRUE
-argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
