@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ea89430103
+DECL|enum|__anon2c402abe0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -408,8 +408,7 @@ block|,
 literal|"gegl:whirl-pinch"
 block|,
 comment|/* these ops are blacklisted for other reasons */
-literal|"gegl:contrast-curve"
-block|,
+comment|//"gegl:contrast-curve",
 literal|"gegl:convert-format"
 block|,
 comment|/* pointless */

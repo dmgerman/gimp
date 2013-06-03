@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a7e4320103
+DECL|enum|__anon2911f8bb0103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -2931,10 +2931,7 @@ name|config
 argument_list|,
 literal|"fixed-rule-active"
 argument_list|,
-name|_
-argument_list|(
-literal|"Fixed:"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2983,6 +2980,19 @@ argument_list|,
 literal|0
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gimp_int_combo_box_set_label
+argument_list|(
+name|GIMP_INT_COMBO_BOX
+argument_list|(
+name|combo
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Fixed"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
