@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a1fc710103
+DECL|enum|__anon289a4ba30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -62,7 +62,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a1fc710208
+DECL|struct|__anon289a4ba30208
 block|{
 DECL|member|pixbuf_renderer
 name|GtkCellRenderer
@@ -1681,7 +1681,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  pruvate functions  */
+comment|/*  private functions  */
 end_comment
 
 begin_function
