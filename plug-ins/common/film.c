@@ -108,7 +108,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9f2cfb0108
+DECL|struct|__anon298d38f30108
 block|{
 DECL|member|film_height
 name|gint
@@ -212,7 +212,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9f2cfb0208
+DECL|struct|__anon298d38f30208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -4457,7 +4457,7 @@ argument_list|(
 name|GTK_SIZE_GROUP_HORIZONTAL
 argument_list|)
 expr_stmt|;
-comment|/* Film height/colour */
+comment|/* Film height/color */
 name|frame
 operator|=
 name|gimp_frame_new
@@ -4828,7 +4828,7 @@ operator|.
 name|film_color
 argument_list|)
 expr_stmt|;
-comment|/* Film numbering: Startindex/Font/colour */
+comment|/* Film numbering: Startindex/Font/color */
 name|frame
 operator|=
 name|gimp_frame_new

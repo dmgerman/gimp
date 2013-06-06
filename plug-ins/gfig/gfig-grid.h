@@ -97,7 +97,7 @@ end_decl_stmt
 
 begin_function_decl
 name|void
-name|gfig_grid_colours
+name|gfig_grid_colors
 parameter_list|(
 name|GtkWidget
 modifier|*

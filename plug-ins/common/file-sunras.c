@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a111cd80108
+DECL|struct|__anon2c424b2b0108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -224,7 +224,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a111cd80208
+DECL|struct|__anon2c424b2b0208
 block|{
 DECL|member|val
 name|gint
@@ -830,7 +830,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a111cd80308
+DECL|struct|__anon2c424b2b0308
 block|{
 DECL|member|rle
 name|gboolean
@@ -1792,7 +1792,7 @@ name|gimp_quit
 argument_list|()
 expr_stmt|;
 block|}
-comment|/* Is there a RGB colourmap ? */
+comment|/* Is there a RGB colormap ? */
 if|if
 condition|(
 operator|(
@@ -2163,7 +2163,7 @@ break|break;
 case|case
 literal|8
 case|:
-comment|/* 256 colours */
+comment|/* 256 colors */
 name|image_ID
 operator|=
 name|load_sun_d8
@@ -4062,7 +4062,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Read the sun colourmap */
+comment|/* Read the sun colormap */
 end_comment
 
 begin_function
@@ -4143,7 +4143,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Write a sun colourmap */
+comment|/* Write a sun colormap */
 end_comment
 
 begin_function
@@ -4191,7 +4191,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Set a GIMP colourtable using the sun colourmap */
+comment|/* Set a GIMP colortable using the sun colormap */
 end_comment
 
 begin_function
@@ -4728,7 +4728,7 @@ name|suncolmap
 operator|!=
 name|NULL
 condition|)
-comment|/* Set up the specified colour map */
+comment|/* Set up the specified color map */
 block|{
 name|set_color_table
 argument_list|(
@@ -4741,9 +4741,9 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-comment|/* No colourmap available. Set up a dummy b/w-colourmap */
+comment|/* No colormap available. Set up a dummy b/w-colormap */
 block|{
-comment|/* Copy the original header and simulate b/w-colourmap */
+comment|/* Copy the original header and simulate b/w-colormap */
 name|memcpy
 argument_list|(
 operator|(
@@ -5180,7 +5180,7 @@ decl_stmt|,
 name|j
 decl_stmt|;
 name|int
-name|greyscale
+name|grayscale
 decl_stmt|,
 name|ncols
 decl_stmt|;
@@ -5235,7 +5235,7 @@ name|sunhdr
 operator|->
 name|l_ras_height
 expr_stmt|;
-comment|/* This could also be a greyscale image. Check it */
+comment|/* This could also be a grayscale image. Check it */
 name|ncols
 operator|=
 name|sunhdr
@@ -5244,11 +5244,11 @@ name|l_ras_maplength
 operator|/
 literal|3
 expr_stmt|;
-name|greyscale
+name|grayscale
 operator|=
 literal|1
 expr_stmt|;
-comment|/* Also greyscale if no colourmap present */
+comment|/* Also grayscale if no colormap present */
 if|if
 condition|(
 operator|(
@@ -5314,7 +5314,7 @@ name|j
 operator|)
 condition|)
 block|{
-name|greyscale
+name|grayscale
 operator|=
 literal|0
 expr_stmt|;
@@ -5332,7 +5332,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|greyscale
+name|grayscale
 condition|?
 name|GIMP_GRAY
 else|:
@@ -5365,7 +5365,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|greyscale
+name|grayscale
 condition|)
 name|set_color_table
 argument_list|(
@@ -6846,7 +6846,7 @@ operator|==
 literal|2
 operator|)
 expr_stmt|;
-comment|/* Maybe this is a two-colour image */
+comment|/* Maybe this is a two-color image */
 if|if
 condition|(
 name|bw
@@ -6888,7 +6888,7 @@ name|bw
 condition|)
 comment|/* The Sun-OS imagetool generates index 0 for white and */
 block|{
-comment|/* index 1 for black. Do the same without colourtable. */
+comment|/* index 1 for black. Do the same without colortable. */
 name|is_bw
 operator|=
 operator|(
@@ -7000,7 +7000,7 @@ name|is_bw
 operator|||
 name|is_wb
 condition|)
-comment|/* No colourtable for real b/w images */
+comment|/* No colortable for real b/w images */
 block|{
 name|sunhdr
 operator|.
@@ -7008,14 +7008,14 @@ name|l_ras_maptype
 operator|=
 literal|0
 expr_stmt|;
-comment|/* No colourmap */
+comment|/* No colormap */
 name|sunhdr
 operator|.
 name|l_ras_maplength
 operator|=
 literal|0
 expr_stmt|;
-comment|/* Length of colourmap */
+comment|/* Length of colormap */
 block|}
 else|else
 block|{
@@ -7025,7 +7025,7 @@ name|l_ras_maptype
 operator|=
 literal|1
 expr_stmt|;
-comment|/* RGB colourmap */
+comment|/* RGB colormap */
 name|sunhdr
 operator|.
 name|l_ras_maplength
@@ -7034,7 +7034,7 @@ name|ncols
 operator|*
 literal|3
 expr_stmt|;
-comment|/* Length of colourmap */
+comment|/* Length of colormap */
 block|}
 name|write_sun_header
 argument_list|(
@@ -7105,7 +7105,7 @@ if|if
 condition|(
 name|bw
 condition|)
-comment|/* Two colour image */
+comment|/* Two color image */
 block|{
 for|for
 control|(
@@ -7215,7 +7215,7 @@ expr_stmt|;
 block|}
 block|}
 else|else
-comment|/* Colour or grey-image */
+comment|/* Color or grey-image */
 block|{
 for|for
 control|(
@@ -7580,14 +7580,14 @@ name|l_ras_maptype
 operator|=
 literal|0
 expr_stmt|;
-comment|/* No colourmap */
+comment|/* No colormap */
 name|sunhdr
 operator|.
 name|l_ras_maplength
 operator|=
 literal|0
 expr_stmt|;
-comment|/* Length of colourmap */
+comment|/* Length of colormap */
 name|write_sun_header
 argument_list|(
 name|ofp

@@ -615,7 +615,7 @@ name|gint
 name|num_components
 decl_stmt|;
 name|gint
-name|colourspace_family
+name|colorspace_family
 decl_stmt|;
 name|GeglBuffer
 modifier|*
@@ -830,7 +830,7 @@ name|image
 argument_list|)
 expr_stmt|;
 comment|/* determine image type */
-name|colourspace_family
+name|colorspace_family
 operator|=
 name|jas_clrspc_fam
 argument_list|(
@@ -842,7 +842,7 @@ argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
-name|colourspace_family
+name|colorspace_family
 condition|)
 block|{
 case|case

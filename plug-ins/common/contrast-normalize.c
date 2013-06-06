@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* This plugin performs almost the same operation as the 'contrast  * autostretch' plugin, except that it won't allow the colour channels  * to normalize independently.  This is actually what most people probably  * want instead of contrast-autostretch; use c-a only if you wish to remove  * an undesirable colour-tint from a source image which is supposed to  * contain pure-white and pure-black.  */
+comment|/* This plugin performs almost the same operation as the 'contrast  * autostretch' plugin, except that it won't allow the color channels  * to normalize independently.  This is actually what most people probably  * want instead of contrast-autostretch; use c-a only if you wish to remove  * an undesirable color-tint from a source image which is supposed to  * contain pure-white and pure-black.  */
 end_comment
 
 begin_include
@@ -786,7 +786,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf737520108
+DECL|struct|__anon27c30f7f0108
 block|{
 DECL|member|lut
 name|guchar

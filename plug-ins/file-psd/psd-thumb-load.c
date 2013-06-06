@@ -349,14 +349,14 @@ argument_list|(
 literal|0.2
 argument_list|)
 expr_stmt|;
-comment|/* ----- Read the PSD file Colour Mode block ----- */
+comment|/* ----- Read the PSD file Color Mode block ----- */
 name|IFDBG
 argument_list|(
 literal|2
 argument_list|)
 name|g_debug
 argument_list|(
-literal|"Read colour mode block"
+literal|"Read color mode block"
 argument_list|)
 expr_stmt|;
 if|if

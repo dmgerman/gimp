@@ -239,7 +239,7 @@ value|wgt[((y+oversample/2)*oversample) + x+oversample/2]
 end_define
 
 begin_comment
-comment|/* colourspaces we can separate to: */
+comment|/* colorspaces we can separate to: */
 end_comment
 
 begin_define
@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c425f680108
+DECL|struct|__anon2785c96b0108
 block|{
 DECL|member|name
 specifier|const
@@ -619,7 +619,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c425f680208
+DECL|struct|__anon2785c96b0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -627,9 +627,9 @@ name|gint
 name|cell_width
 decl_stmt|;
 comment|/* screening section: */
-DECL|member|colourspace
+DECL|member|colorspace
 name|gint
-name|colourspace
+name|colorspace
 decl_stmt|;
 comment|/* 0: RGB, 1: CMYK, 2: Luminance */
 DECL|member|k_pullout
@@ -637,7 +637,7 @@ name|gint
 name|k_pullout
 decl_stmt|;
 comment|/* percentage of black to pull out */
-comment|/* grey screen (only used if greyscale drawable) */
+comment|/* grey screen (only used if grayscale drawable) */
 DECL|member|gry_ang
 name|gdouble
 name|gry_ang
@@ -692,7 +692,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c425f680308
+DECL|struct|__anon2785c96b0308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -722,7 +722,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c425f680408
+DECL|struct|__anon2785c96b0408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -829,7 +829,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c425f680508
+DECL|struct|__anon2785c96b0508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -872,7 +872,7 @@ index|[
 name|NUM_CS
 index|]
 decl_stmt|;
-comment|/* room for up to 4 channels per colourspace */
+comment|/* room for up to 4 channels per colorspace */
 DECL|member|chst
 name|channel_st
 modifier|*
@@ -994,7 +994,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c425f680608
+DECL|struct|__anon2785c96b0608
 block|{
 DECL|member|name
 specifier|const
@@ -1372,7 +1372,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* cspace_chan_tmpl is indexed by colourspace, and gives an array of  * channel templates for that colourspace */
+comment|/* cspace_chan_tmpl is indexed by colorspace, and gives an array of  * channel templates for that colorspace */
 end_comment
 
 begin_decl_stmt
@@ -1408,7 +1408,7 @@ value|((sizeof(x) / sizeof(chan_tmpl)) - 1)
 end_define
 
 begin_comment
-comment|/* cspace_nchans gives a quick way of finding the number of channels  * in a colourspace.  Alternatively, if you're walking the channel  * template, you can use the NULL entry at the end to stop. */
+comment|/* cspace_nchans gives a quick way of finding the number of channels  * in a colorspace.  Alternatively, if you're walking the channel  * template, you can use the NULL entry at the end to stop. */
 end_comment
 
 begin_decl_stmt
@@ -2061,7 +2061,7 @@ name|d_int32
 expr_stmt|;
 name|pvals
 operator|.
-name|colourspace
+name|colorspace
 operator|=
 name|param
 index|[
@@ -2242,7 +2242,7 @@ name|VALID_CS
 argument_list|(
 name|pvals
 operator|.
-name|colourspace
+name|colorspace
 argument_list|)
 operator|||
 name|pvals
@@ -3610,7 +3610,7 @@ name|lock_channels
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/* for each colourspace, reset its channel info */
+comment|/* for each colorspace, reset its channel info */
 for|for
 control|(
 name|cspace
@@ -3641,7 +3641,7 @@ index|[
 name|cspace
 index|]
 expr_stmt|;
-comment|/* skip this colourspace if we haven't used it yet */
+comment|/* skip this colorspace if we haven't used it yet */
 if|if
 condition|(
 operator|!
@@ -4434,13 +4434,13 @@ block|}
 end_function
 
 begin_comment
-comment|/* Make all the channels needed for "colourspace", and fill in  * the respective channel state fields in "st". */
+comment|/* Make all the channels needed for "colorspace", and fill in  * the respective channel state fields in "st". */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gen_channels (NewsprintDialog_st * st,gint colourspace,GtkWidget * preview)
+DECL|function|gen_channels (NewsprintDialog_st * st,gint colorspace,GtkWidget * preview)
 name|gen_channels
 parameter_list|(
 name|NewsprintDialog_st
@@ -4448,7 +4448,7 @@ modifier|*
 name|st
 parameter_list|,
 name|gint
-name|colourspace
+name|colorspace
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -4480,14 +4480,14 @@ name|st
 operator|->
 name|chst
 index|[
-name|colourspace
+name|colorspace
 index|]
 expr_stmt|;
 name|ct
 operator|=
 name|cspace_chan_tmpl
 index|[
-name|colourspace
+name|colorspace
 index|]
 expr_stmt|;
 name|i
@@ -4498,7 +4498,7 @@ name|st
 operator|->
 name|channel_notebook
 index|[
-name|colourspace
+name|colorspace
 index|]
 operator|=
 name|gtk_notebook_new
@@ -4517,7 +4517,7 @@ name|st
 operator|->
 name|channel_notebook
 index|[
-name|colourspace
+name|colorspace
 index|]
 argument_list|,
 name|FALSE
@@ -4540,7 +4540,7 @@ name|st
 operator|->
 name|channel_notebook
 index|[
-name|colourspace
+name|colorspace
 index|]
 argument_list|,
 literal|3
@@ -4552,7 +4552,7 @@ name|st
 operator|->
 name|channel_notebook
 index|[
-name|colourspace
+name|colorspace
 index|]
 argument_list|)
 expr_stmt|;
@@ -4609,7 +4609,7 @@ name|st
 operator|->
 name|channel_notebook
 index|[
-name|colourspace
+name|colorspace
 index|]
 argument_list|)
 argument_list|,
@@ -4785,7 +4785,7 @@ condition|)
 name|bpp
 operator|--
 expr_stmt|;
-comment|/* force greyscale if it's the only thing we can do */
+comment|/* force grayscale if it's the only thing we can do */
 if|if
 condition|(
 name|bpp
@@ -4795,7 +4795,7 @@ condition|)
 block|{
 name|pvals
 operator|.
-name|colourspace
+name|colorspace
 operator|=
 name|CS_GREY
 expr_stmt|;
@@ -4806,13 +4806,13 @@ if|if
 condition|(
 name|pvals
 operator|.
-name|colourspace
+name|colorspace
 operator|==
 name|CS_GREY
 condition|)
 name|pvals
 operator|.
-name|colourspace
+name|colorspace
 operator|=
 name|CS_RGB
 expr_stmt|;
@@ -5631,7 +5631,7 @@ argument_list|,
 operator|(
 name|pvals
 operator|.
-name|colourspace
+name|colorspace
 operator|==
 name|CS_CMYK
 operator|)
@@ -5807,7 +5807,7 @@ argument_list|,
 operator|(
 name|pvals
 operator|.
-name|colourspace
+name|colorspace
 operator|==
 name|CS_RGB
 operator|)
@@ -5922,7 +5922,7 @@ argument_list|,
 operator|(
 name|pvals
 operator|.
-name|colourspace
+name|colorspace
 operator|==
 name|CS_CMYK
 operator|)
@@ -6037,7 +6037,7 @@ argument_list|,
 operator|(
 name|pvals
 operator|.
-name|colourspace
+name|colorspace
 operator|==
 name|CS_LUMINANCE
 operator|)
@@ -6285,7 +6285,7 @@ name|preview
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  Make the channels appropriate for this colourspace and    *  currently selected defaults.  They may have already been    *  created as a result of callbacks to cspace_update from    *  gtk_toggle_button_set_active().    */
+comment|/*  Make the channels appropriate for this colorspace and    *  currently selected defaults.  They may have already been    *  created as a result of callbacks to cspace_update from    *  gtk_toggle_button_set_active().    */
 if|if
 condition|(
 operator|!
@@ -6295,7 +6295,7 @@ name|chst
 index|[
 name|pvals
 operator|.
-name|colourspace
+name|colorspace
 index|]
 index|[
 literal|0
@@ -6309,7 +6309,7 @@ name|st
 argument_list|,
 name|pvals
 operator|.
-name|colourspace
+name|colorspace
 argument_list|,
 name|preview
 argument_list|)
@@ -6486,7 +6486,7 @@ name|chst
 index|[
 name|pvals
 operator|.
-name|colourspace
+name|colorspace
 index|]
 index|[
 literal|0
@@ -6553,7 +6553,7 @@ name|old_cs
 init|=
 name|pvals
 operator|.
-name|colourspace
+name|colorspace
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -6636,11 +6636,11 @@ condition|)
 return|return;
 name|pvals
 operator|.
-name|colourspace
+name|colorspace
 operator|=
 name|new_cs
 expr_stmt|;
-comment|/* make sure we have the necessary channels for the new        * colourspace */
+comment|/* make sure we have the necessary channels for the new        * colorspace */
 if|if
 condition|(
 operator|!
@@ -6741,7 +6741,7 @@ comment|/* Spot functions */
 end_comment
 
 begin_comment
-comment|/* Spot functions define the order in which pixels should be whitened  * as a cell lightened in colour.  They are defined over the entire  * cell, and are called over each pixel in the cell.  The cell  * co-ordinate space ranges from -1.0 .. +1.0 inclusive, in both x- and  * y-axes.  *  * This means the spot function f(x, y) must be defined for:  *     -1<= x<= +1, where x is a real number,   and  *     -1<= y<= +1, where y is a real number.  *  * The function f's range is -1.0 .. +1.0 inclusive, but it is  * permissible for f to return values outside this range: the nearest  * valid value will be used instead.  NOTE: this is in contrast with  * PostScript spot functions, where it is a RangeError for the spot  * function to go outside these limits.  *  * An initially black cell is filled from lowest spot function value  * to highest.  The actual values returned do not matter - it is their  * relative orderings that count.  This means that spot functions do  * not need to be tonally balanced.  A tonally balanced spot function  * is one which for all slices though the function (eg say at z), the  * area of the slice = 4z.  In particular, almost all PostScript spot  * functions are _not_ tonally balanced.  */
+comment|/* Spot functions define the order in which pixels should be whitened  * as a cell lightened in color.  They are defined over the entire  * cell, and are called over each pixel in the cell.  The cell  * co-ordinate space ranges from -1.0 .. +1.0 inclusive, in both x- and  * y-axes.  *  * This means the spot function f(x, y) must be defined for:  *     -1<= x<= +1, where x is a real number,   and  *     -1<= y<= +1, where y is a real number.  *  * The function f's range is -1.0 .. +1.0 inclusive, but it is  * permissible for f to return values outside this range: the nearest  * valid value will be used instead.  NOTE: this is in contrast with  * PostScript spot functions, where it is a RangeError for the spot  * function to go outside these limits.  *  * An initially black cell is filled from lowest spot function value  * to highest.  The actual values returned do not matter - it is their  * relative orderings that count.  This means that spot functions do  * not need to be tonally balanced.  A tonally balanced spot function  * is one which for all slices though the function (eg say at z), the  * area of the slice = 4z.  In particular, almost all PostScript spot  * functions are _not_ tonally balanced.  */
 end_comment
 
 begin_comment
@@ -7092,7 +7092,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c425f680708
+DECL|struct|__anon2785c96b0708
 block|{
 DECL|member|index
 name|gint
@@ -7180,7 +7180,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Convert spot function "type" to a threshold matrix of size "width"  * times "width".  Returns newly allocated threshold matrix.  The  * reason for qsort()ing the results rather than just using the spot  * function's value directly as the threshold value is that we want to  * ensure that the threshold matrix is tonally balanced - that is, for  * a threshold value of x%, x% of the values in the matrix are< x%.  *  * Actually, it turns out that qsort()ing a function which is already  * balanced can quite significantly detract from the quality of the  * final result.  This is particularly noticeable with the line or  * diamond spot functions at 45 degrees.  This is because if the spot  * function has multiple locations with the same value, qsort may use  * them in any order.  Often, there is quite clearly an optimal order  * however.  By marking functions as pre-balanced, this random  * shuffling is avoided.  WARNING: a non-balanced spot function marked  * as pre-balanced is bad: you'll end up with dark areas becoming too  * dark or too light, and vice versa for light areas.  This is most  * easily checked by halftoning an area, then bluring it back - you  * should get the same colour back again.  The only way of getting a  * correctly balanced function is by getting a formula for the spot's  * area as a function of x and y - this can be fairly tough (ie  * possiblly an integral in two dimensions that must be solved  * analytically).  *  * The threshold matrix is used to compare against image values.  If  * the image value is greater than the threshold value, then the  * output pixel is illuminated.  This means that a threshold matrix  * entry of 0 never causes output pixels to be illuminated.  */
+comment|/* Convert spot function "type" to a threshold matrix of size "width"  * times "width".  Returns newly allocated threshold matrix.  The  * reason for qsort()ing the results rather than just using the spot  * function's value directly as the threshold value is that we want to  * ensure that the threshold matrix is tonally balanced - that is, for  * a threshold value of x%, x% of the values in the matrix are< x%.  *  * Actually, it turns out that qsort()ing a function which is already  * balanced can quite significantly detract from the quality of the  * final result.  This is particularly noticeable with the line or  * diamond spot functions at 45 degrees.  This is because if the spot  * function has multiple locations with the same value, qsort may use  * them in any order.  Often, there is quite clearly an optimal order  * however.  By marking functions as pre-balanced, this random  * shuffling is avoided.  WARNING: a non-balanced spot function marked  * as pre-balanced is bad: you'll end up with dark areas becoming too  * dark or too light, and vice versa for light areas.  This is most  * easily checked by halftoning an area, then bluring it back - you  * should get the same color back again.  The only way of getting a  * correctly balanced function is by getting a formula for the spot's  * area as a function of x and y - this can be fairly tough (ie  * possiblly an integral in two dimensions that must be solved  * analytically).  *  * The threshold matrix is used to compare against image values.  If  * the image value is greater than the threshold value, then the  * output pixel is illuminated.  This means that a threshold matrix  * entry of 0 never causes output pixels to be illuminated.  */
 end_comment
 
 begin_function
@@ -7558,7 +7558,7 @@ decl_stmt|;
 name|gint
 name|bpp
 decl_stmt|,
-name|colour_bpp
+name|color_bpp
 decl_stmt|;
 name|gint
 name|has_alpha
@@ -7617,7 +7617,7 @@ name|gint
 name|oversample
 decl_stmt|;
 name|gint
-name|colourspace
+name|colorspace
 decl_stmt|;
 name|gpointer
 name|pr
@@ -7783,7 +7783,7 @@ operator|->
 name|drawable_id
 argument_list|)
 expr_stmt|;
-name|colour_bpp
+name|color_bpp
 operator|=
 name|has_alpha
 condition|?
@@ -7793,20 +7793,20 @@ literal|1
 else|:
 name|bpp
 expr_stmt|;
-name|colourspace
+name|colorspace
 operator|=
 name|pvals
 operator|.
-name|colourspace
+name|colorspace
 expr_stmt|;
 if|if
 condition|(
-name|colour_bpp
+name|color_bpp
 operator|==
 literal|1
 condition|)
 block|{
-name|colourspace
+name|colorspace
 operator|=
 name|CS_GREY
 expr_stmt|;
@@ -7815,11 +7815,11 @@ else|else
 block|{
 if|if
 condition|(
-name|colourspace
+name|colorspace
 operator|==
 name|CS_GREY
 condition|)
-name|colourspace
+name|colorspace
 operator|=
 name|CS_RGB
 expr_stmt|;
@@ -7861,11 +7861,11 @@ value|do {                                                            \     if (
 comment|/* calculate the RGB / CMYK rotations and threshold matrices */
 if|if
 condition|(
-name|colour_bpp
+name|color_bpp
 operator|==
 literal|1
 operator|||
-name|colourspace
+name|colorspace
 operator|==
 name|CS_LUMINANCE
 condition|)
@@ -8052,7 +8052,7 @@ name|thresh
 expr_stmt|;
 if|if
 condition|(
-name|colourspace
+name|colorspace
 operator|==
 name|CS_CMYK
 condition|)
@@ -8444,7 +8444,7 @@ literal|0
 init|;
 name|b
 operator|<
-name|colour_bpp
+name|color_bpp
 condition|;
 name|b
 operator|++
@@ -8459,10 +8459,10 @@ index|[
 name|b
 index|]
 expr_stmt|;
-comment|/* do colour space conversion */
+comment|/* do color space conversion */
 switch|switch
 condition|(
-name|colourspace
+name|colorspace
 condition|)
 block|{
 case|case
@@ -8603,7 +8603,7 @@ name|b
 operator|<
 name|cspace_nchans
 index|[
-name|colourspace
+name|colorspace
 index|]
 condition|;
 name|b
@@ -8843,18 +8843,18 @@ name|has_alpha
 condition|)
 name|dest
 index|[
-name|colour_bpp
+name|color_bpp
 index|]
 operator|=
 name|src
 index|[
-name|colour_bpp
+name|color_bpp
 index|]
 expr_stmt|;
-comment|/* re-pack the colours into RGB */
+comment|/* re-pack the colors into RGB */
 switch|switch
 condition|(
-name|colourspace
+name|colorspace
 condition|)
 block|{
 case|case
@@ -8961,7 +8961,7 @@ condition|)
 block|{
 name|dest
 index|[
-name|colour_bpp
+name|color_bpp
 index|]
 operator|=
 name|data
@@ -9041,7 +9041,7 @@ literal|0
 init|;
 name|b
 operator|<
-name|colour_bpp
+name|color_bpp
 condition|;
 name|b
 operator|++

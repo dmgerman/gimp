@@ -203,7 +203,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b755b0108
+DECL|struct|__anon2c48ce620108
 block|{
 DECL|member|resolution
 name|guint
@@ -275,7 +275,7 @@ block|,
 comment|/* pages to load                  */
 literal|6
 block|,
-comment|/* use ppm (colour)               */
+comment|/* use ppm (color)               */
 literal|1
 block|,
 comment|/* dont use text antialiasing     */
@@ -314,7 +314,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b755b0208
+DECL|struct|__anon2c48ce620208
 block|{
 DECL|member|width
 DECL|member|height
@@ -929,7 +929,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b755b0308
+DECL|struct|__anon2c48ce620308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1797,7 +1797,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b755b0408
+DECL|struct|__anon2c48ce620408
 block|{
 DECL|member|eol
 name|long
@@ -2125,7 +2125,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"coloring"
 block|,
-literal|"4: b/w, 5: grey, 6: colour image, 7: automatic"
+literal|"4: b/w, 5: grey, 6: color image, 7: automatic"
 block|}
 block|,
 block|{
@@ -4113,7 +4113,7 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|" Colouring: %d\n"
+literal|" Coloring: %d\n"
 argument_list|,
 name|plvals
 operator|.
@@ -9867,7 +9867,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Do a Floyd-Steinberg dithering on a greyscale scanline. */
+comment|/* Do a Floyd-Steinberg dithering on a grayscale scanline. */
 end_comment
 
 begin_comment
@@ -10913,7 +10913,7 @@ operator|=
 operator|*
 name|src_ptr
 expr_stmt|;
-comment|/* Get colour index and convert to grey */
+comment|/* Get color index and convert to grey */
 name|src_ptr
 operator|=
 operator|(
@@ -11004,7 +11004,7 @@ operator|)
 operator|)
 expr_stmt|;
 block|}
-comment|/* Now we have a greyscale line for the desired width. */
+comment|/* Now we have a grayscale line for the desired width. */
 comment|/* Dither it to b/w */
 name|dither_grey
 argument_list|(
@@ -14934,7 +14934,7 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-comment|/* Colouring */
+comment|/* Coloring */
 name|frame
 operator|=
 name|gimp_int_radio_group_new

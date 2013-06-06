@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon293e02710103
+DECL|enum|__anon28eed42c0103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -120,7 +120,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293e02710203
+DECL|enum|__anon28eed42c0203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -137,7 +137,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293e02710308
+DECL|struct|__anon28eed42c0308
 block|{
 DECL|member|interlace
 name|gint
@@ -1156,7 +1156,7 @@ end_typedef
 begin_function_decl
 specifier|static
 name|gint
-name|find_unused_ia_colour
+name|find_unused_ia_color
 parameter_list|(
 specifier|const
 name|guchar
@@ -1551,8 +1551,8 @@ end_function_decl
 begin_function
 specifier|static
 name|gint
-DECL|function|find_unused_ia_colour (const guchar * pixels,gint numpixels,gint num_indices,gint * colors)
-name|find_unused_ia_colour
+DECL|function|find_unused_ia_color (const guchar * pixels,gint numpixels,gint num_indices,gint * colors)
+name|find_unused_ia_color
 parameter_list|(
 specifier|const
 name|guchar
@@ -1683,7 +1683,7 @@ directive|ifdef
 name|GIFDEBUG
 name|g_printerr
 argument_list|(
-literal|"GIF: Found unused colour index %d.\n"
+literal|"GIF: Found unused color index %d.\n"
 argument_list|,
 operator|(
 name|int
@@ -1698,7 +1698,7 @@ name|i
 return|;
 block|}
 block|}
-comment|/* Couldn't find an unused colour index within the number of      bits per pixel we wanted.  Will have to increment the number      of colours in the image and assign a transparent pixel there. */
+comment|/* Couldn't find an unused color index within the number of      bits per pixel we wanted.  Will have to increment the number      of colors in the image and assign a transparent pixel there. */
 if|if
 condition|(
 operator|*
@@ -1716,7 +1716,7 @@ expr_stmt|;
 name|g_printerr
 argument_list|(
 literal|"GIF: 2nd pass "
-literal|"- Increasing bounds and using colour index %d.\n"
+literal|"- Increasing bounds and using color index %d.\n"
 argument_list|,
 operator|*
 name|colors
@@ -1770,7 +1770,7 @@ block|{
 name|guint32
 name|i
 decl_stmt|;
-comment|/* Each transparent pixel in the image is mapped to a uniform value for      encoding, if image already has<=255 colours */
+comment|/* Each transparent pixel in the image is mapped to a uniform value for      encoding, if image already has<=255 colors */
 if|if
 condition|(
 name|transparent
@@ -2887,7 +2887,7 @@ return|return
 name|FALSE
 return|;
 block|}
-comment|/* find earliest index in palette which is closest to the background      colour, and ATTEMPT to use that as the GIF's default background colour. */
+comment|/* find earliest index in palette which is closest to the background      color, and ATTEMPT to use that as the GIF's default background color. */
 for|for
 control|(
 name|i
@@ -3096,7 +3096,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"GIF: Too many colours?\n"
+literal|"GIF: Too many colors?\n"
 argument_list|)
 expr_stmt|;
 block|}
@@ -3358,7 +3358,7 @@ block|{
 comment|/* Try to find an entry which isn't actually used in the              image, for a transparency index. */
 name|transparent
 operator|=
-name|find_unused_ia_colour
+name|find_unused_ia_color
 argument_list|(
 name|pixels
 argument_list|,
@@ -4882,7 +4882,7 @@ else|else
 block|{
 name|g_warning
 argument_list|(
-literal|"GIF: colors_to_bpp - Eep! too many colours: %d\n"
+literal|"GIF: colors_to_bpp - Eep! too many colors: %d\n"
 argument_list|,
 name|colors
 argument_list|)
@@ -5363,7 +5363,7 @@ argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
-comment|/*    * Indicate that there is a global colour map    */
+comment|/*    * Indicate that there is a global color map    */
 name|B
 operator|=
 literal|0x80
@@ -5397,7 +5397,7 @@ argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
-comment|/*    * Write out the Background colour    */
+comment|/*    * Write out the Background color    */
 name|fputc
 argument_list|(
 name|Background
@@ -5413,7 +5413,7 @@ argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
-comment|/*    * Write out the Global Colour Map    */
+comment|/*    * Write out the Global Color Map    */
 for|for
 control|(
 name|i
@@ -5530,7 +5530,7 @@ name|cury
 operator|=
 literal|0
 expr_stmt|;
-comment|/*    * Write out extension for transparent colour index, if necessary.    */
+comment|/*    * Write out extension for transparent color index, if necessary.    */
 if|if
 condition|(
 operator|(

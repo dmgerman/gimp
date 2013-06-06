@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2768f6af0103
+DECL|enum|__anon277ed97c0103
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -98,7 +98,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2768f6af0208
+DECL|struct|__anon277ed97c0208
 block|{
 DECL|member|duration_index
 name|gint
@@ -125,7 +125,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2768f6af0308
+DECL|struct|__anon277ed97c0308
 block|{
 DECL|member|x
 DECL|member|y
@@ -835,10 +835,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|ncolours
+DECL|variable|ncolors
 specifier|static
 name|gint
-name|ncolours
+name|ncolors
 decl_stmt|;
 end_decl_stmt
 
@@ -5091,7 +5091,7 @@ argument_list|(
 name|image_id
 argument_list|,
 operator|&
-name|ncolours
+name|ncolors
 argument_list|)
 expr_stmt|;
 block|}
@@ -5155,7 +5155,7 @@ index|]
 operator|=
 name|i
 expr_stmt|;
-name|ncolours
+name|ncolors
 operator|=
 literal|256
 expr_stmt|;

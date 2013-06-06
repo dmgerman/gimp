@@ -12,7 +12,7 @@ comment|/* Event history:  * V 1.0, MT, 02-Jul-97: initial version of plug-in  *
 end_comment
 
 begin_comment
-comment|/* Features  *  - loads and saves  *    - 24-bit (.pix)  *    - 8-bit (.matte, .alpha, or .mask) images  *  * NOTE: pix and matte files do not support alpha channels or indexed  *       colour, so neither does this plug-in  */
+comment|/* Features  *  - loads and saves  *    - 24-bit (.pix)  *    - 8-bit (.matte, .alpha, or .mask) images  *  * NOTE: pix and matte files do not support alpha channels or indexed  *       color, so neither does this plug-in  */
 end_comment
 
 begin_include

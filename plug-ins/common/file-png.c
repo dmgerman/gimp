@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2eebb80108
+DECL|struct|__anon28ea610e0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2eebb80208
+DECL|struct|__anon28ea610e0208
 block|{
 DECL|member|run
 name|gboolean
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2eebb80308
+DECL|struct|__anon28ea610e0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -3996,7 +3996,7 @@ name|defined
 argument_list|(
 name|PNG_iCCP_SUPPORTED
 argument_list|)
-comment|/*    * Get the iCCP (colour profile) chunk, if any, and attach it as    * a parasite    */
+comment|/*    * Get the iCCP (color profile) chunk, if any, and attach it as    * a parasite    */
 block|{
 name|png_uint_32
 name|proflen

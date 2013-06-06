@@ -366,7 +366,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb4ef9f0108
+DECL|struct|__anon2be2250c0108
 block|{
 DECL|member|raw
 name|gint
@@ -4278,7 +4278,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Writes out RGB and greyscale raw rows */
+comment|/* Writes out RGB and grayscale raw rows */
 end_comment
 
 begin_function
@@ -4431,7 +4431,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Writes out RGB and greyscale ascii rows */
+comment|/* Writes out RGB and grayscale ascii rows */
 end_comment
 
 begin_function
@@ -4534,7 +4534,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Writes out RGB and greyscale ascii rows */
+comment|/* Writes out RGB and grayscale ascii rows */
 end_comment
 
 begin_function

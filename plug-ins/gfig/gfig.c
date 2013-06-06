@@ -494,7 +494,7 @@ literal|"Gfig allows you to draw many types of objects "
 literal|"including Lines, Circles, Ellipses, Curves, Polygons, "
 literal|"pointed stars, Bezier curves, and Spirals.  "
 literal|"Objects can be painted using Brushes or other tools"
-literal|"or filled using colours or patterns.  "
+literal|"or filled using colors or patterns.  "
 literal|"Gfig objects can also be used to create selections.  "
 argument_list|,
 literal|"Andy Thomas"

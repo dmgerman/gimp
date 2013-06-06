@@ -326,7 +326,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * CIE 2000 delta E colour comparison  */
+comment|/*  * CIE 2000 delta E color comparison  */
 end_comment
 
 begin_function

@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c765b330108
+DECL|struct|__anon2c2ad46c0108
 block|{
 DECL|member|replace
 name|gint
@@ -3630,7 +3630,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Save direct colours (GRAY, GRAYA, RGB, RGBA) */
+comment|/* Save direct colors (GRAY, GRAYA, RGB, RGBA) */
 end_comment
 
 begin_function

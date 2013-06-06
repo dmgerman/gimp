@@ -36,7 +36,7 @@ comment|/*  * REVISION HISTORY  *  * 2003/06/03  * 1.50.04 - When initializing t
 end_comment
 
 begin_comment
-comment|/*  * TODO (more *'s means more important!)  *  * - PDB stuff for comments  *  * - Remove unused colourmap entries for GRAYSCALE images.  */
+comment|/*  * TODO (more *'s means more important!)  *  * - PDB stuff for comments  *  * - Remove unused colormap entries for GRAYSCALE images.  */
 end_comment
 
 begin_include
@@ -638,7 +638,7 @@ operator|-
 literal|1
 condition|)
 block|{
-comment|/* The GIF format only tells you how many bits per pixel            *  are in the image, not the actual number of used indices (D'OH!)            *            * So if we're not careful, repeated load/save of a transparent GIF            *  without intermediate indexed->RGB->indexed pumps up the number of            *  bits used, as we add an index each time for the transparent            *  colour.  Ouch.  We either do some heavier analysis at save-time,            *  or trim down the number of GIMP colours at load-time.  We do the            *  latter for now.            */
+comment|/* The GIF format only tells you how many bits per pixel            *  are in the image, not the actual number of used indices (D'OH!)            *            * So if we're not careful, repeated load/save of a transparent GIF            *  without intermediate indexed->RGB->indexed pumps up the number of            *  bits used, as we add an index each time for the transparent            *  color.  Ouch.  We either do some heavier analysis at save-time,            *  or trim down the number of GIMP colors at load-time.  We do the            *  latter for now.            */
 ifdef|#
 directive|ifdef
 name|GIFDEBUG
@@ -942,7 +942,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ba971c60108
+DECL|struct|__anon2c793efe0108
 block|{
 DECL|member|Width
 name|guint
@@ -986,7 +986,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ba971c60208
+DECL|struct|__anon2c793efe0208
 block|{
 DECL|member|transparent
 name|gint
@@ -4160,7 +4160,7 @@ expr_stmt|;
 name|gimp_progress_pulse
 argument_list|()
 expr_stmt|;
-comment|/* If the colourmap is now different, we have to promote to RGB! */
+comment|/* If the colormap is now different, we have to promote to RGB! */
 if|if
 condition|(
 operator|!

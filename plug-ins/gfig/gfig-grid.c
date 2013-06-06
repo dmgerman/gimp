@@ -202,7 +202,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ce99a80108
+DECL|struct|__anon299aec980108
 block|{
 DECL|member|product
 name|gint
@@ -852,8 +852,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gfig_grid_colours (GtkWidget * widget)
-name|gfig_grid_colours
+DECL|function|gfig_grid_colors (GtkWidget * widget)
+name|gfig_grid_colors
 parameter_list|(
 name|GtkWidget
 modifier|*

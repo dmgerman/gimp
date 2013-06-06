@@ -1427,7 +1427,7 @@ decl_stmt|;
 comment|/* Make the row 'shrink' around points along its length */
 comment|/* The bvals.numsegs determins how many segments to slip it in to */
 comment|/* The angle is the conceptual 'rotation' of each of these segments */
-comment|/* Note the row is considered to be made up of a two dim array actual    * pixel locations and the RGB colour at these locations.    */
+comment|/* Note the row is considered to be made up of a two dim array actual    * pixel locations and the RGB color at these locations.    */
 comment|/* In the process copy the src row to the destination row */
 comment|/* Fill in with background color ? */
 for|for

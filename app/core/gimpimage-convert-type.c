@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*  * 2005-09-04 - Switch 'positional' dither matrix to a 32x32 Bayer,  *  which generates results that compress somewhat better (and may look  *  worse or better depending on what you enjoy...).  [adam@gimp.org]  *  * 2004-12-12 - Use a slower but much nicer technique for finding the  *  two best colours to dither between when using fixed/positional  *  dither methods.  Makes positional dither much less lame.  [adam@gimp.org]  *  * 2002-02-10 - Quantizer version 3.0 (the rest of the commit started  *  a year ago -- whoops).  Divide colours within CIE L*a*b* space using  *  CPercep module (cpercep.[ch]), colour-match and dither likewise,  *  change the underlying box selection criteria and division point  *  logic, bump luminance precision upwards, etc.etc.  Generally  *  chooses a much richer colour set, especially for low numbers of  *  colours.  n.b.: Less luminance-sloppy in straight remapping which is  *  good for colour but a bit worse for high-frequency detail (that's  *  partly what fs-dithering is for -- use it).  [adam@gimp.org]  *  * 2001-03-25 - Define accessor function/macro for histogram reads and  *  writes.  This slows us down a little because we avoid some of the  *  dirty tricks we used when we knew that the histogram was a straight  *  3d array, so I've recovered some of the speed loss by implementing  *  a 5d accessor function with good locality of reference.  This change  *  is the first step towards quantizing in a more interesting colourspace  *  than frumpy old RGB.  [Adam]  *  * 2000/01/30 - Use palette_selector instead of option_menu for custom  *  palette. Use libgimp callback functions.  [Sven]  *  * 99/09/01 - Created a low-bleed FS-dither option.  [Adam]  *  * 99/08/29 - Deterministic colour dithering to arbitrary palettes.  *  Ideal for animations that are going to be delta-optimized or simply  *  don't want to look 'busy' in static areas.  Also a bunch of bugfixes  *  and tweaks.  [Adam]  *  * 99/08/28 - Deterministic alpha dithering over layers, reduced bleeding  *  of transparent values into opaque values, added optional stage to  *  remove duplicate or unused colour entries from final colourmap. [Adam]  *  * 99/02/24 - Many revisions to the box-cut quantizer used in RGB->INDEXED  *  conversion.  Box to be cut is chosen on the basis of possessing an axis  *  with the largest sum of weighted perceptible error, rather than based on  *  volume or population.  The box is split along this axis rather than its  *  longest axis, at the point of error mean rather than simply at its centre.  *  Error-limiting in the F-S dither has been disabled - it may become optional  *  again later.  If you're convinced that you have an image where the old  *  dither looks better, let me know.  [Adam]  *  * 99/01/10 - Hourglass... [Adam]  *  * 98/07/25 - Convert-to-indexed now remembers the last invocation's  *  settings.  Also, GRAY->INDEXED is more flexible.  [Adam]  *  * 98/07/05 - Sucked the warning about quantizing to too many colours into  *  a text widget embedded in the dialog, improved intelligence of dialog  *  to default 'custom palette' selection to 'Web' if available, and  *  in this case not bother to present the native WWW-palette radio  *  button.  [Adam]  *  * 98/04/13 - avoid a division by zero when converting an empty gray-scale  *  image (who would like to do such a thing anyway??)  [Sven ]  *  * 98/03/23 - fixed a longstanding fencepost - hopefully the *right*  *  way, *again*.  [Adam]  *  * 97/11/14 - added a proper pdb interface and support for dithering  *  to custom palettes (based on a patch by Eric Hernes) [Yosh]  *  * 97/11/04 - fixed the accidental use of the colour-counting case  *  when palette_type is WEB or MONO. [Adam]  *  * 97/10/25 - colour-counting implemented (could use some hashing, but  *  performance actually seems okay) - now RGB->INDEXED conversion isn't  *  destructive if it doesn't have to be. [Adam]  *  * 97/10/14 - fixed divide-by-zero when converting a completely transparent  *  RGB image to indexed. [Adam]  *  * 97/07/01 - started todo/revision log.  Put code back in to  *  eliminate full-alpha pixels from RGB histogram.  *  [Adam D. Moss - adam@gimp.org]  */
+comment|/*  * 2005-09-04 - Switch 'positional' dither matrix to a 32x32 Bayer,  *  which generates results that compress somewhat better (and may look  *  worse or better depending on what you enjoy...).  [adam@gimp.org]  *  * 2004-12-12 - Use a slower but much nicer technique for finding the  *  two best colors to dither between when using fixed/positional  *  dither methods.  Makes positional dither much less lame.  [adam@gimp.org]  *  * 2002-02-10 - Quantizer version 3.0 (the rest of the commit started  *  a year ago -- whoops).  Divide colors within CIE L*a*b* space using  *  CPercep module (cpercep.[ch]), color-match and dither likewise,  *  change the underlying box selection criteria and division point  *  logic, bump luminance precision upwards, etc.etc.  Generally  *  chooses a much richer color set, especially for low numbers of  *  colors.  n.b.: Less luminance-sloppy in straight remapping which is  *  good for color but a bit worse for high-frequency detail (that's  *  partly what fs-dithering is for -- use it).  [adam@gimp.org]  *  * 2001-03-25 - Define accessor function/macro for histogram reads and  *  writes.  This slows us down a little because we avoid some of the  *  dirty tricks we used when we knew that the histogram was a straight  *  3d array, so I've recovered some of the speed loss by implementing  *  a 5d accessor function with good locality of reference.  This change  *  is the first step towards quantizing in a more interesting colorspace  *  than frumpy old RGB.  [Adam]  *  * 2000/01/30 - Use palette_selector instead of option_menu for custom  *  palette. Use libgimp callback functions.  [Sven]  *  * 99/09/01 - Created a low-bleed FS-dither option.  [Adam]  *  * 99/08/29 - Deterministic color dithering to arbitrary palettes.  *  Ideal for animations that are going to be delta-optimized or simply  *  don't want to look 'busy' in static areas.  Also a bunch of bugfixes  *  and tweaks.  [Adam]  *  * 99/08/28 - Deterministic alpha dithering over layers, reduced bleeding  *  of transparent values into opaque values, added optional stage to  *  remove duplicate or unused color entries from final colormap. [Adam]  *  * 99/02/24 - Many revisions to the box-cut quantizer used in RGB->INDEXED  *  conversion.  Box to be cut is chosen on the basis of possessing an axis  *  with the largest sum of weighted perceptible error, rather than based on  *  volume or population.  The box is split along this axis rather than its  *  longest axis, at the point of error mean rather than simply at its centre.  *  Error-limiting in the F-S dither has been disabled - it may become optional  *  again later.  If you're convinced that you have an image where the old  *  dither looks better, let me know.  [Adam]  *  * 99/01/10 - Hourglass... [Adam]  *  * 98/07/25 - Convert-to-indexed now remembers the last invocation's  *  settings.  Also, GRAY->INDEXED is more flexible.  [Adam]  *  * 98/07/05 - Sucked the warning about quantizing to too many colors into  *  a text widget embedded in the dialog, improved intelligence of dialog  *  to default 'custom palette' selection to 'Web' if available, and  *  in this case not bother to present the native WWW-palette radio  *  button.  [Adam]  *  * 98/04/13 - avoid a division by zero when converting an empty gray-scale  *  image (who would like to do such a thing anyway??)  [Sven ]  *  * 98/03/23 - fixed a longstanding fencepost - hopefully the *right*  *  way, *again*.  [Adam]  *  * 97/11/14 - added a proper pdb interface and support for dithering  *  to custom palettes (based on a patch by Eric Hernes) [Yosh]  *  * 97/11/04 - fixed the accidental use of the color-counting case  *  when palette_type is WEB or MONO. [Adam]  *  * 97/10/25 - color-counting implemented (could use some hashing, but  *  performance actually seems okay) - now RGB->INDEXED conversion isn't  *  destructive if it doesn't have to be. [Adam]  *  * 97/10/14 - fixed divide-by-zero when converting a completely transparent  *  RGB image to indexed. [Adam]  *  * 97/07/01 - started todo/revision log.  Put code back in to  *  eliminate full-alpha pixels from RGB histogram.  *  [Adam D. Moss - adam@gimp.org]  */
 end_comment
 
 begin_comment
@@ -413,7 +413,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b7a25a40103
+DECL|enum|__anon2b0bd13e0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1514,7 +1514,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7a25a40208
+DECL|struct|__anon2b0bd13e0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1757,7 +1757,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7a25a40308
+DECL|struct|__anon2b0bd13e0308
 block|{
 DECL|member|used_count
 name|signed
@@ -3169,7 +3169,7 @@ operator|->
 name|histogram
 argument_list|)
 expr_stmt|;
-comment|/* To begin, assume that there are fewer colours in            *  the image than the user actually asked for.  In that            *  case, we don't need to quantize or colour-dither.            */
+comment|/* To begin, assume that there are fewer colors in            *  the image than the user actually asked for.  In that            *  case, we don't need to quantize or color-dither.            */
 name|needs_quantize
 operator|=
 name|FALSE
@@ -3247,7 +3247,7 @@ argument_list|,
 name|n_layers
 argument_list|)
 expr_stmt|;
-comment|/* Note: generate_histogram_rgb may set needs_quantize if                *  the image contains more colours than the limit specified                *  by the user.                */
+comment|/* Note: generate_histogram_rgb may set needs_quantize if                *  the image contains more colors than the limit specified                *  by the user.                */
 block|}
 block|}
 if|if
@@ -3278,7 +3278,7 @@ operator|==
 name|GIMP_MAKE_PALETTE
 condition|)
 block|{
-comment|/* If this is an RGB image, and the user wanted a custom-built            *  generated palette, and this image has no more colours than            *  the user asked for, we don't need the first pass (quantization).            *            * There's also no point in dithering, since there's no error to            *  spread.  So we destroy the old quantobj and make a new one            *  with the remapping function set to a special LUT-based            *  no-dither remapper.            */
+comment|/* If this is an RGB image, and the user wanted a custom-built            *  generated palette, and this image has no more colors than            *  the user asked for, we don't need the first pass (quantization).            *            * There's also no point in dithering, since there's no error to            *  spread.  So we destroy the old quantobj and make a new one            *  with the remapping function set to a special LUT-based            *  no-dither remapper.            */
 name|quantobj
 operator|->
 name|delete_func
@@ -5011,7 +5011,7 @@ goto|goto
 name|already_found
 goto|;
 block|}
-comment|/* Colour was not in the table of                        * existing colours                        */
+comment|/* Color was not in the table of                        * existing colors                        */
 name|num_found_cols
 operator|++
 expr_stmt|;
@@ -5022,19 +5022,19 @@ operator|>
 name|col_limit
 condition|)
 block|{
-comment|/* There are more colours in the image                            *  than were allowed.  We switch to plain                            *  histogram calculation with a view to                            *  quantizing at a later stage.                            */
+comment|/* There are more colors in the image                            *  than were allowed.  We switch to plain                            *  histogram calculation with a view to                            *  quantizing at a later stage.                            */
 name|needs_quantize
 operator|=
 name|TRUE
 expr_stmt|;
-comment|/* g_print ("\nmax colours exceeded - needs quantize.\n");*/
+comment|/* g_print ("\nmax colors exceeded - needs quantize.\n");*/
 goto|goto
 name|already_found
 goto|;
 block|}
 else|else
 block|{
-comment|/* Remember the new colour we just found.                            */
+comment|/* Remember the new color we just found.                            */
 name|found_cols
 index|[
 name|num_found_cols
@@ -5200,7 +5200,7 @@ name|which_axis
 operator|=
 name|AXIS_UNDEF
 expr_stmt|;
-comment|/* we only perform the initial L-split bias /at all/ if the final      number of desired colours is quite low, otherwise it all comes      out in the wash anyway and this initial bias generally only hurts      us in the long run. */
+comment|/* we only perform the initial L-split bias /at all/ if the final      number of desired colors is quite low, otherwise it all comes      out in the wash anyway and this initial bias generally only hurts      us in the long run. */
 if|if
 condition|(
 name|desired_colors
@@ -5219,7 +5219,7 @@ directive|define
 name|BIAS_NUMBER
 value|2
 comment|/* 0 */
-comment|/* we bias towards splitting across L* for first few colours */
+comment|/* we bias towards splitting across L* for first few colors */
 name|Lbias
 operator|=
 operator|(
@@ -7740,7 +7740,7 @@ name|total
 expr_stmt|;
 block|}
 else|else
-comment|/* The only situation where total==0 is if the image was null or         *  all-transparent.  In that case we just put a dummy value in         *  the colourmap.         */
+comment|/* The only situation where total==0 is if the image was null or         *  all-transparent.  In that case we just put a dummy value in         *  the colormap.         */
 block|{
 name|quantobj
 operator|->
@@ -8057,7 +8057,7 @@ name|blue
 expr_stmt|;
 block|}
 else|else
-comment|/* The only situation where total==0 is if the image was null or         *  all-transparent.  In that case we just put a dummy value in         *  the colourmap.         */
+comment|/* The only situation where total==0 is if the image was null or         *  all-transparent.  In that case we just put a dummy value in         *  the colormap.         */
 block|{
 name|quantobj
 operator|->
@@ -8370,7 +8370,7 @@ name|total
 expr_stmt|;
 block|}
 else|else
-comment|/* The only situation where total==0 is if the image was null or         *  all-transparent.  In that case we just put a dummy value in         *  the colourmap.         */
+comment|/* The only situation where total==0 is if the image was null or         *  all-transparent.  In that case we just put a dummy value in         *  the colormap.         */
 block|{
 name|g_warning
 argument_list|(
@@ -11557,7 +11557,7 @@ do|;
 block|}
 else|else
 block|{
-comment|/* not enough colours to bother looking for an 'alternative'                      colour (we may fail to do so anyway), so decide that                      the alternative colour is simply the other cmap entry. */
+comment|/* not enough colors to bother looking for an 'alternative'                      color (we may fail to do so anyway), so decide that                      the alternative color is simply the other cmap entry. */
 name|pixval2
 operator|=
 operator|(
@@ -11573,7 +11573,7 @@ name|actual_number_of_colors
 operator|)
 expr_stmt|;
 block|}
-comment|/* always deterministically sort pixval1 and pixval2, to                  avoid artifacts in the dither range due to inverting our                  relative colour viewpoint -- most obvious in 1-bit dither. */
+comment|/* always deterministically sort pixval1 and pixval2, to                  avoid artifacts in the dither range due to inverting our                  relative color viewpoint -- most obvious in 1-bit dither. */
 if|if
 condition|(
 name|pixval1
@@ -12941,7 +12941,7 @@ argument_list|,
 name|B
 argument_list|)
 expr_stmt|;
-comment|/* We now try to find a colour which, when mixed in some fashion                  with the closest match, yields something closer to the                  desired colour.  We do this by repeatedly extrapolating the                  colour vector from one to the other until we find another                  colour cell.  Then we assess the distance of both mixer                  colours from the intended colour to determine their relative                  probabilities of being chosen. */
+comment|/* We now try to find a color which, when mixed in some fashion                  with the closest match, yields something closer to the                  desired color.  We do this by repeatedly extrapolating the                  color vector from one to the other until we find another                  color cell.  Then we assess the distance of both mixer                  colors from the intended color to determine their relative                  probabilities of being chosen. */
 name|pixval1
 operator|=
 operator|*
@@ -13200,7 +13200,7 @@ literal|2
 comment|/* || pixval1 == pixval2 */
 condition|)
 block|{
-comment|/* not enough colours to bother looking for an 'alternative'                    colour (we may fail to do so anyway), so decide that                    the alternative colour is simply the other cmap entry. */
+comment|/* not enough colors to bother looking for an 'alternative'                    color (we may fail to do so anyway), so decide that                    the alternative color is simply the other cmap entry. */
 name|pixval2
 operator|=
 operator|(
@@ -13216,7 +13216,7 @@ name|actual_number_of_colors
 operator|)
 expr_stmt|;
 block|}
-comment|/* always deterministically sort pixval1 and pixval2, to                  avoid artifacts in the dither range due to inverting our                  relative colour viewpoint -- most obvious in 1-bit dither. */
+comment|/* always deterministically sort pixval1 and pixval2, to                  avoid artifacts in the dither range due to inverting our                  relative color viewpoint -- most obvious in 1-bit dither. */
 if|if
 condition|(
 name|pixval1
@@ -13860,7 +13860,7 @@ index|]
 operator|)
 condition|)
 block|{
-comment|/*  same pixel colour as last time  */
+comment|/*  same pixel color as last time  */
 name|dest
 index|[
 name|INDEXED
@@ -13978,17 +13978,17 @@ operator|=
 name|i
 expr_stmt|;
 goto|goto
-name|got_colour
+name|got_color
 goto|;
 block|}
 block|}
 name|g_error
 argument_list|(
-literal|"Non-existant colour was expected to "
-literal|"be in non-destructive colourmap."
+literal|"Non-existant color was expected to "
+literal|"be in non-destructive colormap."
 argument_list|)
 expr_stmt|;
-name|got_colour
+name|got_color
 label|:
 name|dest
 index|[
@@ -15299,7 +15299,7 @@ name|long
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/* Make a version of our discovered colourmap in linear space */
+comment|/* Make a version of our discovered colormap in linear space */
 for|for
 control|(
 name|i
@@ -15779,7 +15779,7 @@ name|range_array
 operator|+
 literal|256
 expr_stmt|;
-comment|/* find the bounding box of the palette colours --      we use this for hard-clamping our error-corrected      values so that we can't continuously accelerate outside      of our attainable gamut, which looks icky. */
+comment|/* find the bounding box of the palette colors --      we use this for hard-clamping our error-corrected      values so that we can't continuously accelerate outside      of our attainable gamut, which looks icky. */
 for|for
 control|(
 name|index
@@ -16768,7 +16768,7 @@ literal|0
 block|if ((re> 0&& re< 255)
 comment|/* HMM&&               ge>= 0&& ge<= 255&&               be>= 0&& be<= 255*/
 block|)             {               ge = ge - color->green;               be = be - color->blue;               re = re - color->red;             }           else             {
-comment|/* colour pretty much undefined now; nullify error. */
+comment|/* color pretty much undefined now; nullify error. */
 block|re = ge = be = 0;             }
 endif|#
 directive|endif

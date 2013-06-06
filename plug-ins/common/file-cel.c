@@ -1242,9 +1242,9 @@ decl_stmt|,
 name|offy
 decl_stmt|,
 comment|/* Layer offets */
-name|colours
+name|colors
 decl_stmt|;
-comment|/* Number of colours */
+comment|/* Number of colors */
 name|gint32
 name|image
 decl_stmt|,
@@ -1398,7 +1398,7 @@ literal|4
 argument_list|)
 condition|)
 block|{
-name|colours
+name|colors
 operator|=
 literal|16
 expr_stmt|;
@@ -1547,7 +1547,7 @@ case|:
 case|case
 literal|32
 case|:
-name|colours
+name|colors
 operator|=
 operator|(
 literal|1
@@ -2483,7 +2483,7 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|colours
+name|colors
 operator|=
 name|load_palette
 argument_list|(
@@ -2503,7 +2503,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|colours
+name|colors
 operator|<
 literal|0
 operator|||
@@ -2525,7 +2525,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|colours
+name|colors
 condition|;
 operator|++
 name|i
@@ -2560,7 +2560,7 @@ name|i
 operator|*
 literal|256
 operator|/
-name|colours
+name|colors
 expr_stmt|;
 block|}
 block|}
@@ -2572,7 +2572,7 @@ name|palette
 operator|+
 literal|3
 argument_list|,
-name|colours
+name|colors
 operator|-
 literal|1
 argument_list|)
@@ -2641,7 +2641,7 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|,
-name|colours
+name|colors
 init|=
 literal|0
 decl_stmt|;
@@ -2838,7 +2838,7 @@ operator|-
 literal|1
 return|;
 block|}
-name|colours
+name|colors
 operator|=
 name|header
 index|[
@@ -2854,11 +2854,11 @@ literal|256
 expr_stmt|;
 if|if
 condition|(
-name|colours
+name|colors
 operator|!=
 literal|16
 operator|&&
-name|colours
+name|colors
 operator|!=
 literal|256
 condition|)
@@ -2881,7 +2881,7 @@ argument_list|(
 name|file
 argument_list|)
 argument_list|,
-name|colours
+name|colors
 argument_list|)
 expr_stmt|;
 return|return
@@ -2905,7 +2905,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|colours
+name|colors
 condition|;
 operator|++
 name|i
@@ -3021,7 +3021,7 @@ name|fread
 argument_list|(
 name|palette
 argument_list|,
-name|colours
+name|colors
 argument_list|,
 literal|3
 argument_list|,
@@ -3068,7 +3068,7 @@ block|}
 block|}
 else|else
 block|{
-name|colours
+name|colors
 operator|=
 literal|16
 expr_stmt|;
@@ -3089,7 +3089,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|colours
+name|colors
 condition|;
 operator|++
 name|i
@@ -3196,7 +3196,7 @@ expr_stmt|;
 block|}
 block|}
 return|return
-name|colours
+name|colors
 return|;
 block|}
 end_function
@@ -3256,11 +3256,11 @@ name|bpp
 decl_stmt|;
 comment|/* Bit per pixel */
 name|gint
-name|colours
+name|colors
 decl_stmt|,
 name|type
 decl_stmt|;
-comment|/* Number of colours, type of layer */
+comment|/* Number of colors, type of layer */
 name|gint
 name|offx
 decl_stmt|,
@@ -3460,13 +3460,13 @@ argument_list|(
 name|image
 argument_list|,
 operator|&
-name|colours
+name|colors
 argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|colours
+name|colors
 operator|>
 literal|15
 condition|)
@@ -3772,7 +3772,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|colours
+name|colors
 operator|>
 literal|16
 condition|)

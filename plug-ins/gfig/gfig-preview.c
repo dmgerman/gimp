@@ -688,7 +688,7 @@ name|GDK_CROSSHAIR
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gfig_grid_colours
+name|gfig_grid_colors
 argument_list|(
 name|widget
 argument_list|)

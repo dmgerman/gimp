@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb1e05a0108
+DECL|struct|__anon275e82bc0108
 block|{
 DECL|member|independent
 name|gboolean
@@ -115,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb1e05a0208
+DECL|struct|__anon275e82bc0208
 block|{
 DECL|member|channels
 name|gint
@@ -518,7 +518,7 @@ literal|"Add normally distributed (zero mean) random values "
 literal|"to image channels.  Noise may be additive "
 literal|"(uncorrelated) or multiplicative (correlated - "
 literal|"also known as speckle noise). "
-literal|"For colour images colour channels may be treated "
+literal|"For color images color channels may be treated "
 literal|"together or independently."
 argument_list|,
 literal|"Torsten Martinsen"
@@ -562,8 +562,8 @@ argument_list|,
 literal|"Adds random noise to image channels "
 argument_list|,
 literal|"Add normally distributed random values to "
-literal|"image channels. For colour images each "
-literal|"colour channel may be treated together or "
+literal|"image channels. For color images each "
+literal|"color channel may be treated together or "
 literal|"independently."
 argument_list|,
 literal|"Torsten Martinsen"

@@ -596,14 +596,14 @@ argument_list|(
 literal|0.1
 argument_list|)
 expr_stmt|;
-comment|/* ----- Read the PSD file Colour Mode block ----- */
+comment|/* ----- Read the PSD file Color Mode block ----- */
 name|IFDBG
 argument_list|(
 literal|2
 argument_list|)
 name|g_debug
 argument_list|(
-literal|"Read colour mode block"
+literal|"Read color mode block"
 argument_list|)
 expr_stmt|;
 if|if
@@ -772,7 +772,7 @@ argument_list|(
 literal|0.6
 argument_list|)
 expr_stmt|;
-comment|/* ----- Add colour map ----- */
+comment|/* ----- Add color map ----- */
 name|IFDBG
 argument_list|(
 literal|2
@@ -2042,7 +2042,7 @@ literal|2
 argument_list|)
 name|g_debug
 argument_list|(
-literal|"Colour map data length %d"
+literal|"Color map data length %d"
 argument_list|,
 name|img_a
 operator|->

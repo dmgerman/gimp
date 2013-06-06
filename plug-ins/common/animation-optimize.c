@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f57c2c0103
+DECL|enum|__anon296ee7860103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f57c2c0203
+DECL|enum|__anon296ee7860203
 block|{
 DECL|enumerator|OPOPTIMIZE
 name|OPOPTIMIZE
@@ -424,10 +424,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|ncolours
+DECL|variable|ncolors
 specifier|static
 name|gint
-name|ncolours
+name|ncolors
 decl_stmt|;
 end_decl_stmt
 
@@ -1735,7 +1735,7 @@ argument_list|(
 name|image_id
 argument_list|,
 operator|&
-name|ncolours
+name|ncolors
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_colormap
@@ -1744,7 +1744,7 @@ name|new_image_id
 argument_list|,
 name|palette
 argument_list|,
-name|ncolours
+name|ncolors
 argument_list|)
 expr_stmt|;
 block|}
@@ -1795,7 +1795,7 @@ name|count
 decl_stmt|;
 name|guint
 modifier|*
-name|num_colours
+name|num_colors
 decl_stmt|;
 name|these_rows
 operator|=
@@ -1847,7 +1847,7 @@ argument_list|,
 name|total_frames
 argument_list|)
 expr_stmt|;
-name|num_colours
+name|num_colors
 operator|=
 name|g_new
 argument_list|(
@@ -1947,7 +1947,7 @@ control|)
 block|{
 name|memset
 argument_list|(
-name|num_colours
+name|num_colors
 argument_list|,
 literal|0
 argument_list|,
@@ -2077,7 +2077,7 @@ literal|0
 init|;
 name|j
 operator|<
-name|num_colours
+name|num_colors
 index|[
 name|i
 index|]
@@ -2226,7 +2226,7 @@ block|}
 block|}
 name|count
 index|[
-name|num_colours
+name|num_colors
 index|[
 name|i
 index|]
@@ -2239,7 +2239,7 @@ literal|1
 expr_stmt|;
 name|red
 index|[
-name|num_colours
+name|num_colors
 index|[
 name|i
 index|]
@@ -2267,7 +2267,7 @@ condition|)
 block|{
 name|green
 index|[
-name|num_colours
+name|num_colors
 index|[
 name|i
 index|]
@@ -2290,7 +2290,7 @@ index|]
 expr_stmt|;
 name|blue
 index|[
-name|num_colours
+name|num_colors
 index|[
 name|i
 index|]
@@ -2312,7 +2312,7 @@ literal|2
 index|]
 expr_stmt|;
 block|}
-name|num_colours
+name|num_colors
 index|[
 name|i
 index|]
@@ -2365,7 +2365,7 @@ literal|0
 init|;
 name|j
 operator|<
-name|num_colours
+name|num_colors
 index|[
 name|i
 index|]
@@ -2611,7 +2611,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|num_colours
+name|num_colors
 argument_list|)
 expr_stmt|;
 block|}
@@ -3265,7 +3265,7 @@ goto|goto
 name|decided
 goto|;
 block|}
-comment|/* If 'last' and 'this' are opaque, we have                        *  to check if they're the same colour - we                        *  only have to keep the pixel if 'last' or                        *  'this' are opaque and different.                        */
+comment|/* If 'last' and 'this' are opaque, we have                        *  to check if they're the same color - we                        *  only have to keep the pixel if 'last' or                        *  'this' are opaque and different.                        */
 name|keep_pix
 operator|=
 name|FALSE

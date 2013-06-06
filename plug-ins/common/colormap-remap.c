@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*  * Colormap remapping plug-in  * Copyright (C) 2006 Mukund Sivaraman<muks@mukund.org>  *  * This plug-in takes the colormap and lets you move colors from one index  * to another while keeping the original image visually unmodified.  *  * Such functionality is useful for creating graphics files for applications  * which expect certain indices to contain some specific colours.  *  */
+comment|/*  * Colormap remapping plug-in  * Copyright (C) 2006 Mukund Sivaraman<muks@mukund.org>  *  * This plug-in takes the colormap and lets you move colors from one index  * to another while keeping the original image visually unmodified.  *  * Such functionality is useful for creating graphics files for applications  * which expect certain indices to contain some specific colors.  *  */
 end_comment
 
 begin_include
@@ -1657,7 +1657,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be530a90103
+DECL|enum|__anon277b10da0103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX

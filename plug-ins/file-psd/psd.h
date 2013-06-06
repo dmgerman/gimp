@@ -887,11 +887,11 @@ comment|/* PSD spec enums */
 end_comment
 
 begin_comment
-comment|/* Image colour modes */
+comment|/* Image color modes */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27cee6da0103
+DECL|enum|__anon2ad5bac10103
 typedef|typedef
 enum|enum
 block|{
@@ -949,11 +949,11 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/* Image colour spaces */
+comment|/* Image color spaces */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27cee6da0203
+DECL|enum|__anon2ad5bac10203
 typedef|typedef
 enum|enum
 block|{
@@ -986,7 +986,7 @@ name|PSD_CS_FOCOLTONE
 init|=
 literal|4
 block|,
-comment|/* Focoltone colour system (CMYK)*/
+comment|/* Focoltone color system (CMYK)*/
 DECL|enumerator|PSD_CS_TRUMATCH
 name|PSD_CS_TRUMATCH
 init|=
@@ -1040,7 +1040,7 @@ comment|/* Image Resource IDs */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27cee6da0303
+DECL|enum|__anon2ad5bac10303
 typedef|typedef
 enum|enum
 block|{
@@ -1061,7 +1061,7 @@ name|PSD_PS2_COLOR_TAB
 init|=
 literal|1003
 block|,
-comment|/* 0x03eb - Obsolete - ps 2.0 indexed colour table */
+comment|/* 0x03eb - Obsolete - ps 2.0 indexed color table */
 DECL|enumerator|PSD_RESN_INFO
 name|PSD_RESN_INFO
 init|=
@@ -1097,7 +1097,7 @@ name|PSD_BACKGROUND_COL
 init|=
 literal|1010
 block|,
-comment|/* 0x03f2 - Background colour */
+comment|/* 0x03f2 - Background color */
 DECL|enumerator|PSD_PRINT_FLAGS
 name|PSD_PRINT_FLAGS
 init|=
@@ -1115,7 +1115,7 @@ name|PSD_COLOR_HALFTONE
 init|=
 literal|1013
 block|,
-comment|/* 0x03f5 - Colour halftoning info */
+comment|/* 0x03f5 - Color halftoning info */
 DECL|enumerator|PSD_DUOTONE_HALFTONE
 name|PSD_DUOTONE_HALFTONE
 init|=
@@ -1133,7 +1133,7 @@ name|PSD_COLOR_XFER
 init|=
 literal|1016
 block|,
-comment|/* 0x03f8 - Colour transfer functions */
+comment|/* 0x03f8 - Color transfer functions */
 DECL|enumerator|PSD_DUOTONE_XFER
 name|PSD_DUOTONE_XFER
 init|=
@@ -1259,7 +1259,7 @@ name|PSD_COLOR_SAMPLER
 init|=
 literal|1038
 block|,
-comment|/* 0x040e - Colour samplers resource */
+comment|/* 0x040e - Color samplers resource */
 DECL|enumerator|PSD_ICC_PROFILE
 name|PSD_ICC_PROFILE
 init|=
@@ -1307,13 +1307,13 @@ name|PSD_IDX_COL_TAB_CNT
 init|=
 literal|1046
 block|,
-comment|/* 0x0416 - Indexed colour table count */
+comment|/* 0x0416 - Indexed color table count */
 DECL|enumerator|PSD_IDX_TRANSPARENT
 name|PSD_IDX_TRANSPARENT
 init|=
 literal|1047
 block|,
-comment|/* 0x0417 - Index of transparent colour (if any) */
+comment|/* 0x0417 - Index of transparent color (if any) */
 DECL|enumerator|PSD_GLOBAL_ALT
 name|PSD_GLOBAL_ALT
 init|=
@@ -1402,7 +1402,7 @@ comment|/* Display resolution units */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27cee6da0403
+DECL|enum|__anon2ad5bac10403
 typedef|typedef
 enum|enum
 block|{
@@ -1429,7 +1429,7 @@ comment|/* Width and height units */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27cee6da0503
+DECL|enum|__anon2ad5bac10503
 typedef|typedef
 enum|enum
 block|{
@@ -1474,7 +1474,7 @@ comment|/* Thumbnail image data encoding */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27cee6da0603
+DECL|enum|__anon2ad5bac10603
 typedef|typedef
 enum|enum
 block|{
@@ -1500,7 +1500,7 @@ comment|/* Path record types */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27cee6da0703
+DECL|enum|__anon2ad5bac10703
 typedef|typedef
 enum|enum
 block|{
@@ -1568,7 +1568,7 @@ comment|/* Channel ID */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27cee6da0803
+DECL|enum|__anon2ad5bac10803
 typedef|typedef
 enum|enum
 block|{
@@ -1614,7 +1614,7 @@ comment|/* Clipping */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27cee6da0903
+DECL|enum|__anon2ad5bac10903
 typedef|typedef
 enum|enum
 block|{
@@ -1640,7 +1640,7 @@ comment|/* Image compression mode */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27cee6da0a03
+DECL|enum|__anon2ad5bac10a03
 typedef|typedef
 enum|enum
 block|{
@@ -1672,7 +1672,7 @@ comment|/* Vertical - horizontal selection */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27cee6da0b03
+DECL|enum|__anon2ad5bac10b03
 typedef|typedef
 enum|enum
 block|{
@@ -1715,7 +1715,7 @@ comment|/* Represents a fixed point implied decimal */
 end_comment
 
 begin_comment
-comment|/* Apple colour space data structures */
+comment|/* Apple color space data structures */
 end_comment
 
 begin_comment
@@ -1725,7 +1725,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cee6da0c08
+DECL|struct|__anon2ad5bac10c08
 block|{
 DECL|member|red
 name|guint16
@@ -1752,7 +1752,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cee6da0d08
+DECL|struct|__anon2ad5bac10d08
 block|{
 DECL|member|hue
 name|guint16
@@ -1779,7 +1779,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cee6da0e08
+DECL|struct|__anon2ad5bac10e08
 block|{
 DECL|member|cyan
 name|guint16
@@ -1810,7 +1810,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cee6da0f08
+DECL|struct|__anon2ad5bac10f08
 block|{
 DECL|member|L
 name|guint16
@@ -1837,7 +1837,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cee6da1008
+DECL|struct|__anon2ad5bac11008
 block|{
 DECL|member|gray
 name|guint16
@@ -1856,7 +1856,7 @@ end_comment
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon27cee6da110a
+DECL|union|__anon2ad5bac1110a
 block|{
 DECL|member|rgb
 name|CMRGBColor
@@ -1889,7 +1889,7 @@ comment|/* Image resolution data */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27cee6da1208
+DECL|struct|__anon2ad5bac11208
 typedef|typedef
 struct|struct
 block|{
@@ -1934,7 +1934,7 @@ comment|/* Grid& guide header */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27cee6da1308
+DECL|struct|__anon2ad5bac11308
 typedef|typedef
 struct|struct
 block|{
@@ -1969,7 +1969,7 @@ comment|/* Guide resource block */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27cee6da1408
+DECL|struct|__anon2ad5bac11408
 typedef|typedef
 struct|struct
 block|{
@@ -1994,7 +1994,7 @@ comment|/* Thumbnail data */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27cee6da1508
+DECL|struct|__anon2ad5bac11508
 typedef|typedef
 struct|struct
 block|{
@@ -2049,7 +2049,7 @@ comment|/* Channel display info data */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27cee6da1608
+DECL|struct|__anon2ad5bac11608
 typedef|typedef
 struct|struct
 block|{
@@ -2057,7 +2057,7 @@ DECL|member|colorSpace
 name|gint16
 name|colorSpace
 decl_stmt|;
-comment|/* Colour space from  PSDColorSpace */
+comment|/* Color space from  PSDColorSpace */
 DECL|member|color
 name|guint16
 name|color
@@ -2094,7 +2094,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cee6da1708
+DECL|struct|__anon2ad5bac11708
 block|{
 DECL|member|channel_id
 name|gint16
@@ -2119,7 +2119,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cee6da1808
+DECL|struct|__anon2ad5bac11808
 block|{
 DECL|member|trans_prot
 name|gboolean
@@ -2159,7 +2159,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cee6da1908
+DECL|struct|__anon2ad5bac11908
 block|{
 DECL|member|relative_pos
 name|gboolean
@@ -2189,7 +2189,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cee6da1a08
+DECL|struct|__anon2ad5bac11a08
 block|{
 DECL|member|top
 name|gint32
@@ -2215,7 +2215,7 @@ DECL|member|def_color
 name|guchar
 name|def_color
 decl_stmt|;
-comment|/* Default background colour */
+comment|/* Default background color */
 DECL|member|flags
 name|guchar
 name|flags
@@ -2225,7 +2225,7 @@ DECL|member|extra_def_color
 name|guchar
 name|extra_def_color
 decl_stmt|;
-comment|/* Real default background colour */
+comment|/* Real default background color */
 DECL|member|extra_flags
 name|guchar
 name|extra_flags
@@ -2249,7 +2249,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cee6da1b08
+DECL|struct|__anon2ad5bac11b08
 block|{
 DECL|member|top
 name|gint32
@@ -2284,7 +2284,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cee6da1c08
+DECL|struct|__anon2ad5bac11c08
 block|{
 DECL|member|drop
 name|gboolean
@@ -2412,7 +2412,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cee6da1d08
+DECL|struct|__anon2ad5bac11d08
 block|{
 DECL|member|id
 name|gint16
@@ -2454,7 +2454,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cee6da1e08
+DECL|struct|__anon2ad5bac11e08
 block|{
 DECL|member|gimp_color
 name|GimpRGB
@@ -2475,12 +2475,12 @@ DECL|member|ps_cspace
 name|gint16
 name|ps_cspace
 decl_stmt|;
-comment|/* PS colour space */
+comment|/* PS color space */
 DECL|member|ps_color
 name|CMColor
 name|ps_color
 decl_stmt|;
-comment|/* PS colour */
+comment|/* PS color */
 DECL|typedef|PSDchanneldata
 block|}
 name|PSDchanneldata
@@ -2494,7 +2494,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cee6da1f08
+DECL|struct|__anon2ad5bac11f08
 block|{
 DECL|member|type
 name|gchar
@@ -2540,7 +2540,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cee6da2008
+DECL|struct|__anon2ad5bac12008
 block|{
 DECL|member|sig
 name|gchar
@@ -2581,7 +2581,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cee6da2108
+DECL|struct|__anon2ad5bac12108
 block|{
 DECL|member|channels
 name|guint16
@@ -2612,12 +2612,12 @@ DECL|member|color_mode
 name|guint16
 name|color_mode
 decl_stmt|;
-comment|/* Image colour mode: {PSDColorMode} */
+comment|/* Image color mode: {PSDColorMode} */
 DECL|member|base_type
 name|GimpImageBaseType
 name|base_type
 decl_stmt|;
-comment|/* Image base colour mode: (GIMP) */
+comment|/* Image base color mode: (GIMP) */
 DECL|member|comp_mode
 name|guint16
 name|comp_mode
@@ -2628,17 +2628,17 @@ name|guchar
 modifier|*
 name|color_map
 decl_stmt|;
-comment|/* Colour map data */
+comment|/* Color map data */
 DECL|member|color_map_len
 name|guint32
 name|color_map_len
 decl_stmt|;
-comment|/* Colour map data length */
+comment|/* Color map data length */
 DECL|member|color_map_entries
 name|guint32
 name|color_map_entries
 decl_stmt|;
-comment|/* Colour map number of entries */
+comment|/* Color map number of entries */
 DECL|member|image_res_start
 name|guint32
 name|image_res_start

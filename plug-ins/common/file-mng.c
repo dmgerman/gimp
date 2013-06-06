@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29392c5a0103
+DECL|enum|__anon2a1fa5150103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -268,7 +268,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29392c5a0203
+DECL|enum|__anon2a1fa5150203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -573,7 +573,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gint
-name|find_unused_ia_colour
+name|find_unused_ia_color
 parameter_list|(
 name|guchar
 modifier|*
@@ -1231,14 +1231,14 @@ block|}
 end_function
 
 begin_comment
-comment|/* Try to find a colour in the palette which isn't actually  * used in the image, so that we can use it as the transparency  * index. Taken from png.c */
+comment|/* Try to find a color in the palette which isn't actually  * used in the image, so that we can use it as the transparency  * index. Taken from png.c */
 end_comment
 
 begin_function
 specifier|static
 name|gint
-DECL|function|find_unused_ia_colour (guchar * pixels,gint numpixels,gint * colors)
-name|find_unused_ia_colour
+DECL|function|find_unused_ia_color (guchar * pixels,gint numpixels,gint * colors)
+name|find_unused_ia_color
 parameter_list|(
 name|guchar
 modifier|*
@@ -1303,7 +1303,7 @@ name|i
 operator|++
 control|)
 block|{
-comment|/* If alpha is over a threshold, the colour index in the        * palette is taken. Otherwise, this pixel is transparent. */
+comment|/* If alpha is over a threshold, the color index in the        * palette is taken. Otherwise, this pixel is transparent. */
 if|if
 condition|(
 name|pixels
@@ -1376,7 +1376,7 @@ name|i
 return|;
 block|}
 block|}
-comment|/* Couldn't find an unused colour index within the number of      bits per pixel we wanted.  Will have to increment the number      of colours in the image and assign a transparent pixel there. */
+comment|/* Couldn't find an unused color index within the number of      bits per pixel we wanted.  Will have to increment the number      of colors in the image and assign a transparent pixel there. */
 if|if
 condition|(
 operator|(
@@ -1680,7 +1680,7 @@ condition|)
 block|{
 name|transparent
 operator|=
-name|find_unused_ia_colour
+name|find_unused_ia_color
 argument_list|(
 name|pixels
 argument_list|,
