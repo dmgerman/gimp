@@ -16,19 +16,6 @@ directive|define
 name|__GIMP_GEGL_UTILS_H__
 end_define
 
-begin_decl_stmt
-specifier|const
-name|gchar
-modifier|*
-name|gimp_interpolation_to_gegl_filter
-argument_list|(
-name|GimpInterpolationType
-name|interpolation
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
 begin_function_decl
 name|GType
 name|gimp_gegl_get_op_enum_type

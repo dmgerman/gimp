@@ -1073,12 +1073,9 @@ literal|"origin-y"
 argument_list|,
 literal|0.0
 argument_list|,
-literal|"filter"
+literal|"sampler"
 argument_list|,
-name|gimp_interpolation_to_gegl_filter
-argument_list|(
 name|interpolation_type
-argument_list|)
 argument_list|,
 literal|"x"
 argument_list|,
@@ -1382,12 +1379,9 @@ literal|"operation"
 argument_list|,
 literal|"gegl:transform"
 argument_list|,
-literal|"filter"
+literal|"sampler"
 argument_list|,
-name|gimp_interpolation_to_gegl_filter
-argument_list|(
 name|interpolation_type
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
