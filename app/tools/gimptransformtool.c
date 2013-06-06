@@ -1741,6 +1741,15 @@ name|tr_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|tr_tool
+operator|->
+name|prev_trans_info
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 comment|/* push current state on the undo list and set this state as the    * current state, but avoid doing this if there were no changes    */
 for|for
 control|(
@@ -1962,6 +1971,7 @@ argument_list|,
 name|tr_tool
 argument_list|)
 expr_stmt|;
+return|return;
 block|}
 comment|/* We're done with an interaction, save it on the undo list */
 name|gimp_transform_tool_push_internal_undo
