@@ -260,6 +260,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_tool_gui_set_alternative_button_order
+parameter_list|(
+name|GimpToolGui
+modifier|*
+name|gui
+parameter_list|,
+modifier|...
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

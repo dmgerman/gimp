@@ -7233,13 +7233,22 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|)
 expr_stmt|;
-comment|/* FIXME */
-if|#
-directive|if
-literal|0
-block|gtk_dialog_set_alternative_button_order (GTK_DIALOG (tr_tool->dialog),                                            RESPONSE_RESET,                                            GTK_RESPONSE_OK,                                            GTK_RESPONSE_CANCEL,                                            -1);
-endif|#
-directive|endif
+name|gimp_tool_gui_set_alternative_button_order
+argument_list|(
+name|tr_tool
+operator|->
+name|gui
+argument_list|,
+name|RESPONSE_RESET
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|gimp_tool_gui_get_dialog
