@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2beee42a0103
+DECL|enum|__anon2921ff2e0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -229,10 +229,10 @@ index|[
 literal|3
 index|]
 decl_stmt|;
-DECL|member|dialog
-name|GtkWidget
+DECL|member|gui
+name|GimpToolGui
 modifier|*
-name|dialog
+name|gui
 decl_stmt|;
 DECL|member|distance_label
 name|GtkWidget
