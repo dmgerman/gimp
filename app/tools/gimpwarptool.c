@@ -1388,7 +1388,7 @@ operator|->
 name|image_map
 condition|)
 block|{
-name|gimp_tool_control_set_preserve
+name|gimp_tool_control_push_preserve
 argument_list|(
 name|tool
 operator|->
@@ -1422,13 +1422,11 @@ name|image_map
 operator|=
 name|NULL
 expr_stmt|;
-name|gimp_tool_control_set_preserve
+name|gimp_tool_control_pop_preserve
 argument_list|(
 name|tool
 operator|->
 name|control
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
