@@ -822,7 +822,7 @@ argument_list|(
 name|tool
 argument_list|)
 operator|->
-name|dialog
+name|gui
 argument_list|,
 literal|"description"
 argument_list|,
@@ -1959,7 +1959,7 @@ argument_list|(
 name|tool
 argument_list|)
 operator|->
-name|dialog
+name|gui
 condition|)
 name|g_object_set
 argument_list|(
@@ -1968,7 +1968,7 @@ argument_list|(
 name|tool
 argument_list|)
 operator|->
-name|dialog
+name|gui
 argument_list|,
 literal|"description"
 argument_list|,

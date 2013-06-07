@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimptoolgui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimagemapoptions.h"
 end_include
 
@@ -671,9 +677,12 @@ name|gimp
 argument_list|,
 name|G_OBJECT
 argument_list|(
+name|gimp_tool_gui_get_dialog
+argument_list|(
 name|tool
 operator|->
-name|dialog
+name|gui
+argument_list|)
 argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
@@ -797,9 +806,12 @@ name|gimp
 argument_list|,
 name|G_OBJECT
 argument_list|(
+name|gimp_tool_gui_get_dialog
+argument_list|(
 name|tool
 operator|->
-name|dialog
+name|gui
+argument_list|)
 argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
