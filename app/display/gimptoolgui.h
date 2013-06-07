@@ -142,7 +142,7 @@ argument_list|,
 specifier|const
 name|gchar
 operator|*
-name|desc
+name|description
 argument_list|,
 name|gboolean
 name|overlay
@@ -152,6 +152,22 @@ argument_list|)
 name|G_GNUC_NULL_TERMINATED
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|void
+name|gimp_tool_gui_set_description
+parameter_list|(
+name|GimpToolGui
+modifier|*
+name|gui
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|description
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void

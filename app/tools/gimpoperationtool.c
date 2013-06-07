@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimptoolgui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcoloroptions.h"
 end_include
 
@@ -815,7 +821,7 @@ name|tool
 operator|->
 name|undo_desc
 condition|)
-name|g_object_set
+name|gimp_tool_gui_set_description
 argument_list|(
 name|GIMP_IMAGE_MAP_TOOL
 argument_list|(
@@ -824,13 +830,9 @@ argument_list|)
 operator|->
 name|gui
 argument_list|,
-literal|"description"
-argument_list|,
 name|tool
 operator|->
 name|undo_desc
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1961,7 +1963,7 @@ argument_list|)
 operator|->
 name|gui
 condition|)
-name|g_object_set
+name|gimp_tool_gui_set_description
 argument_list|(
 name|GIMP_IMAGE_MAP_TOOL
 argument_list|(
@@ -1970,11 +1972,7 @@ argument_list|)
 operator|->
 name|gui
 argument_list|,
-literal|"description"
-argument_list|,
 name|undo_desc
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 if|if
