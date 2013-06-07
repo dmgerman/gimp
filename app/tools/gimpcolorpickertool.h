@@ -123,10 +123,10 @@ DECL|member|parent_instance
 name|GimpColorTool
 name|parent_instance
 decl_stmt|;
-DECL|member|dialog
-name|GtkWidget
+DECL|member|gui
+name|GimpToolGui
 modifier|*
-name|dialog
+name|gui
 decl_stmt|;
 DECL|member|color_area
 name|GtkWidget
