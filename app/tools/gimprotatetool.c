@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimptoolgui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprotatetool.h"
 end_include
 
@@ -111,7 +117,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3f54eb0103
+DECL|enum|__anon27daf16a0103
 block|{
 DECL|enumerator|ANGLE
 name|ANGLE
@@ -677,16 +683,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|6
-argument_list|)
-expr_stmt|;
 name|gtk_table_set_row_spacings
 argument_list|(
 name|GTK_TABLE
@@ -723,14 +719,11 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|gtk_dialog_get_content_area
-argument_list|(
-name|GTK_DIALOG
+name|gimp_tool_gui_get_vbox
 argument_list|(
 name|tr_tool
 operator|->
-name|dialog
-argument_list|)
+name|gui
 argument_list|)
 argument_list|)
 argument_list|,

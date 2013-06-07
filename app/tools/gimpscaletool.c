@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimptoolgui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpscaletool.h"
 end_include
 
@@ -117,7 +123,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon293ebcc10103
+DECL|enum|__anon2ae29b3f0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -750,30 +756,15 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|scale
-operator|->
-name|box
-argument_list|)
-argument_list|,
-literal|6
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|gtk_dialog_get_content_area
-argument_list|(
-name|GTK_DIALOG
+name|gimp_tool_gui_get_vbox
 argument_list|(
 name|tr_tool
 operator|->
-name|dialog
-argument_list|)
+name|gui
 argument_list|)
 argument_list|)
 argument_list|,
