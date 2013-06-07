@@ -808,9 +808,9 @@ specifier|static
 name|void
 name|gimp_transform_tool_response
 parameter_list|(
-name|GtkWidget
+name|GimpToolGui
 modifier|*
-name|widget
+name|gui
 parameter_list|,
 name|gint
 name|response_id
@@ -7251,12 +7251,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimp_tool_gui_get_dialog
-argument_list|(
 name|tr_tool
 operator|->
 name|gui
-argument_list|)
 argument_list|,
 literal|"response"
 argument_list|,
@@ -7434,12 +7431,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_response (GtkWidget * widget,gint response_id,GimpTransformTool * tr_tool)
+DECL|function|gimp_transform_tool_response (GimpToolGui * gui,gint response_id,GimpTransformTool * tr_tool)
 name|gimp_transform_tool_response
 parameter_list|(
-name|GtkWidget
+name|GimpToolGui
 modifier|*
-name|widget
+name|gui
 parameter_list|,
 name|gint
 name|response_id

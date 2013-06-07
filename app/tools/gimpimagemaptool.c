@@ -522,9 +522,9 @@ specifier|static
 name|void
 name|gimp_image_map_tool_response
 parameter_list|(
-name|GtkWidget
+name|GimpToolGui
 modifier|*
-name|widget
+name|gui
 parameter_list|,
 name|gint
 name|response_id
@@ -1319,10 +1319,6 @@ name|klass
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|dialog
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|vbox
 decl_stmt|;
 name|GtkWidget
@@ -1399,15 +1395,6 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|dialog
-operator|=
-name|gimp_tool_gui_get_dialog
-argument_list|(
-name|image_map_tool
-operator|->
-name|gui
-argument_list|)
-expr_stmt|;
 name|vbox
 operator|=
 name|gimp_tool_gui_get_vbox
@@ -1419,7 +1406,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|dialog
+name|image_map_tool
+operator|->
+name|gui
 argument_list|,
 literal|"response"
 argument_list|,
@@ -1811,17 +1800,6 @@ operator|->
 name|display
 condition|)
 block|{
-name|GtkWidget
-modifier|*
-name|dialog
-init|=
-name|gimp_tool_gui_get_dialog
-argument_list|(
-name|image_map_tool
-operator|->
-name|gui
-argument_list|)
-decl_stmt|;
 switch|switch
 condition|(
 name|kevent
@@ -1840,7 +1818,9 @@ name|GDK_KEY_ISO_Enter
 case|:
 name|gimp_image_map_tool_response
 argument_list|(
-name|dialog
+name|image_map_tool
+operator|->
+name|gui
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
@@ -1855,7 +1835,9 @@ name|GDK_KEY_BackSpace
 case|:
 name|gimp_image_map_tool_response
 argument_list|(
-name|dialog
+name|image_map_tool
+operator|->
+name|gui
 argument_list|,
 name|RESPONSE_RESET
 argument_list|,
@@ -1870,7 +1852,9 @@ name|GDK_KEY_Escape
 case|:
 name|gimp_image_map_tool_response
 argument_list|(
-name|dialog
+name|image_map_tool
+operator|->
+name|gui
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
@@ -2592,12 +2576,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_map_tool_response (GtkWidget * widget,gint response_id,GimpImageMapTool * image_map_tool)
+DECL|function|gimp_image_map_tool_response (GimpToolGui * gui,gint response_id,GimpImageMapTool * image_map_tool)
 name|gimp_image_map_tool_response
 parameter_list|(
-name|GtkWidget
+name|GimpToolGui
 modifier|*
-name|widget
+name|gui
 parameter_list|,
 name|gint
 name|response_id

@@ -4834,9 +4834,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_signal_connect_swapped
+name|g_signal_connect
 argument_list|(
-name|dialog
+name|gui
 argument_list|,
 literal|"response"
 argument_list|,
@@ -4845,7 +4845,7 @@ argument_list|(
 name|g_object_unref
 argument_list|)
 argument_list|,
-name|gui
+name|NULL
 argument_list|)
 expr_stmt|;
 name|table

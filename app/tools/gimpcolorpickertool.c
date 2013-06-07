@@ -237,9 +237,9 @@ specifier|static
 name|void
 name|gimp_color_picker_tool_info_response
 parameter_list|(
-name|GtkWidget
+name|GimpToolGui
 modifier|*
-name|widget
+name|gui
 parameter_list|,
 name|gint
 name|response_id
@@ -1222,7 +1222,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|dialog
+name|picker_tool
+operator|->
+name|gui
 argument_list|,
 literal|"response"
 argument_list|,
@@ -1473,12 +1475,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_picker_tool_info_response (GtkWidget * widget,gint response_id,GimpColorPickerTool * picker_tool)
+DECL|function|gimp_color_picker_tool_info_response (GimpToolGui * gui,gint response_id,GimpColorPickerTool * picker_tool)
 name|gimp_color_picker_tool_info_response
 parameter_list|(
-name|GtkWidget
+name|GimpToolGui
 modifier|*
-name|widget
+name|gui
 parameter_list|,
 name|gint
 name|response_id
