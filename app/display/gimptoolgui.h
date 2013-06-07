@@ -233,6 +233,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_tool_gui_set_response_sensitive
+parameter_list|(
+name|GimpToolGui
+modifier|*
+name|gui
+parameter_list|,
+name|gint
+name|response_id
+parameter_list|,
+name|gboolean
+name|sensitive
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
