@@ -471,6 +471,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|shell
+operator|==
+name|NULL
+operator|||
 name|GIMP_IS_DISPLAY_SHELL
 argument_list|(
 name|shell
