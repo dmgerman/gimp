@@ -155,6 +155,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpToolGui
+typedef|typedef
+name|struct
+name|_GimpToolGui
+name|GimpToolGui
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDisplayXfer
 typedef|typedef
 name|struct
