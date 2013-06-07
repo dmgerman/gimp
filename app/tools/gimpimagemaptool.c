@@ -1351,8 +1351,6 @@ name|gimp_tool_gui_new
 argument_list|(
 name|tool_info
 argument_list|,
-name|display_shell
-argument_list|,
 name|klass
 operator|->
 name|dialog_desc

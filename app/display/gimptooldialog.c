@@ -254,22 +254,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tool_dialog_new:  * @tool_info: a #GimpToolInfo  * @shell:     the parent display shell this dialog  * @desc:      a string to use in the dialog header or %NULL to use the help  *             field from #GimpToolInfo  * @...:       a %NULL-terminated valist of button parameters as described in  *             gtk_dialog_new_with_buttons().  *  * This function conveniently creates a #GimpViewableDialog using the  * information stored in @tool_info. It also registers the tool with  * the "toplevel" dialog factory.  *  * Return value: a new #GimpViewableDialog  **/
+comment|/**  * gimp_tool_dialog_new:  * @tool_info: a #GimpToolInfo  * @desc:      a string to use in the dialog header or %NULL to use the help  *             field from #GimpToolInfo  * @...:       a %NULL-terminated valist of button parameters as described in  *             gtk_dialog_new_with_buttons().  *  * This function conveniently creates a #GimpViewableDialog using the  * information stored in @tool_info. It also registers the tool with  * the "toplevel" dialog factory.  *  * Return value: a new #GimpViewableDialog  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_tool_dialog_new (GimpToolInfo * tool_info,GimpDisplayShell * shell,const gchar * desc,...)
+DECL|function|gimp_tool_dialog_new (GimpToolInfo * tool_info,const gchar * desc,...)
 name|gimp_tool_dialog_new
 parameter_list|(
 name|GimpToolInfo
 modifier|*
 name|tool_info
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|,
 specifier|const
 name|gchar
@@ -300,16 +296,6 @@ argument_list|(
 name|GIMP_IS_TOOL_INFO
 argument_list|(
 name|tool_info
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_DISPLAY_SHELL
-argument_list|(
-name|shell
 argument_list|)
 argument_list|,
 name|NULL
@@ -369,16 +355,6 @@ operator|->
 name|help
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_tool_dialog_set_shell
-argument_list|(
-name|GIMP_TOOL_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|,
-name|shell
 argument_list|)
 expr_stmt|;
 name|va_start

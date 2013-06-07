@@ -126,10 +126,6 @@ name|GimpToolInfo
 operator|*
 name|tool_info
 argument_list|,
-name|GimpDisplayShell
-operator|*
-name|shell
-argument_list|,
 specifier|const
 name|gchar
 operator|*

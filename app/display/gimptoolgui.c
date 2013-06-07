@@ -377,22 +377,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tool_gui_new:  * @tool_info: a #GimpToolInfo  * @shell:     the parent display shell this gui  * @desc:      a string to use in the gui header or %NULL to use the help  *             field from #GimpToolInfo  * @...:       a %NULL-terminated valist of button parameters as described in  *             gtk_gui_new_with_buttons().  *  * This function creates a #GimpToolGui using the information stored  * in @tool_info.  *  * Return value: a new #GimpToolGui  **/
+comment|/**  * gimp_tool_gui_new:  * @tool_info: a #GimpToolInfo  * @desc:      a string to use in the gui header or %NULL to use the help  *             field from #GimpToolInfo  * @...:       a %NULL-terminated valist of button parameters as described in  *             gtk_gui_new_with_buttons().  *  * This function creates a #GimpToolGui using the information stored  * in @tool_info.  *  * Return value: a new #GimpToolGui  **/
 end_comment
 
 begin_function
 name|GimpToolGui
 modifier|*
-DECL|function|gimp_tool_gui_new (GimpToolInfo * tool_info,GimpDisplayShell * shell,const gchar * desc,gboolean overlay,...)
+DECL|function|gimp_tool_gui_new (GimpToolInfo * tool_info,const gchar * desc,gboolean overlay,...)
 name|gimp_tool_gui_new
 parameter_list|(
 name|GimpToolInfo
 modifier|*
 name|tool_info
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|,
 specifier|const
 name|gchar
@@ -421,16 +417,6 @@ argument_list|(
 name|GIMP_IS_TOOL_INFO
 argument_list|(
 name|tool_info
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_DISPLAY_SHELL
-argument_list|(
-name|shell
 argument_list|)
 argument_list|,
 name|NULL
@@ -577,8 +563,6 @@ name|gimp_tool_dialog_new
 argument_list|(
 name|tool_info
 argument_list|,
-name|shell
-argument_list|,
 name|desc
 argument_list|,
 name|NULL
@@ -665,16 +649,6 @@ name|vbox
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_tool_gui_set_shell
-argument_list|(
-name|GIMP_TOOL_GUI
-argument_list|(
-name|gui
-argument_list|)
-argument_list|,
-name|shell
-argument_list|)
-expr_stmt|;
 return|return
 name|gui
 return|;
@@ -930,6 +904,15 @@ operator|=
 name|GET_PRIVATE
 argument_list|(
 name|gui
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|private
+operator|->
+name|shell
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if

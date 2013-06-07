@@ -1157,13 +1157,6 @@ name|tool
 operator|->
 name|tool_info
 argument_list|,
-name|gimp_display_get_shell
-argument_list|(
-name|tool
-operator|->
-name|display
-argument_list|)
-argument_list|,
 name|_
 argument_list|(
 literal|"Color Picker Information"
