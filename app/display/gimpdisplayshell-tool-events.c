@@ -811,6 +811,9 @@ case|case
 name|GDK_KEY_Tab
 case|:
 case|case
+name|GDK_KEY_KP_Tab
+case|:
+case|case
 name|GDK_KEY_ISO_Left_Tab
 case|:
 case|case
@@ -1087,6 +1090,12 @@ operator|->
 name|keyval
 operator|==
 name|GDK_KEY_Tab
+operator|||
+name|kevent
+operator|->
+name|keyval
+operator|==
+name|GDK_KEY_KP_Tab
 operator|||
 name|kevent
 operator|->
@@ -3746,8 +3755,29 @@ case|case
 name|GDK_KEY_Tab
 case|:
 case|case
+name|GDK_KEY_KP_Tab
+case|:
+case|case
 name|GDK_KEY_ISO_Left_Tab
 case|:
+if|if
+condition|(
+operator|!
+name|gtk_widget_has_focus
+argument_list|(
+name|shell
+operator|->
+name|canvas
+argument_list|)
+condition|)
+block|{
+comment|/*  The event was in an overlay widget and not                      *  handled there, make sure the overlay widgets                      *  are keyboard navigatable by letting the generic                      *  focus handler deal with tabs.                      */
+return|return
+name|FALSE
+return|;
+block|}
+else|else
+block|{
 name|gimp_display_shell_tab_pressed
 argument_list|(
 name|shell
@@ -3759,6 +3789,7 @@ name|return_val
 operator|=
 name|TRUE
 expr_stmt|;
+block|}
 break|break;
 comment|/*  Update the state based on modifiers being pressed  */
 case|case
@@ -5527,6 +5558,12 @@ operator|->
 name|keyval
 operator|==
 name|GDK_KEY_Tab
+operator|||
+name|kevent
+operator|->
+name|keyval
+operator|==
+name|GDK_KEY_KP_Tab
 condition|)
 name|gimp_display_shell_layer_select_init
 argument_list|(
@@ -5579,6 +5616,12 @@ operator|->
 name|keyval
 operator|==
 name|GDK_KEY_Tab
+operator|||
+name|kevent
+operator|->
+name|keyval
+operator|==
+name|GDK_KEY_KP_Tab
 condition|)
 name|gimp_ui_manager_activate_action
 argument_list|(
