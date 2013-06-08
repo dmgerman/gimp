@@ -3633,6 +3633,22 @@ name|TRUE
 return|;
 block|}
 block|}
+if|if
+condition|(
+operator|!
+name|gtk_widget_has_focus
+argument_list|(
+name|shell
+operator|->
+name|canvas
+argument_list|)
+condition|)
+block|{
+comment|/*  The event was in an overlay widget and not handled                  *  there, make sure the overlay widgets are keyboard                  *  navigatable by letting the generic widget handlers                  *  deal with the event.                  */
+return|return
+name|FALSE
+return|;
+block|}
 switch|switch
 condition|(
 name|kevent
@@ -3760,24 +3776,6 @@ case|:
 case|case
 name|GDK_KEY_ISO_Left_Tab
 case|:
-if|if
-condition|(
-operator|!
-name|gtk_widget_has_focus
-argument_list|(
-name|shell
-operator|->
-name|canvas
-argument_list|)
-condition|)
-block|{
-comment|/*  The event was in an overlay widget and not                      *  handled there, make sure the overlay widgets                      *  are keyboard navigatable by letting the generic                      *  focus handler deal with tabs.                      */
-return|return
-name|FALSE
-return|;
-block|}
-else|else
-block|{
 name|gimp_display_shell_tab_pressed
 argument_list|(
 name|shell
@@ -3789,7 +3787,6 @@ name|return_val
 operator|=
 name|TRUE
 expr_stmt|;
-block|}
 break|break;
 comment|/*  Update the state based on modifiers being pressed  */
 case|case
@@ -4021,6 +4018,22 @@ return|return
 name|TRUE
 return|;
 block|}
+block|}
+if|if
+condition|(
+operator|!
+name|gtk_widget_has_focus
+argument_list|(
+name|shell
+operator|->
+name|canvas
+argument_list|)
+condition|)
+block|{
+comment|/*  The event was in an overlay widget and not handled                  *  there, make sure the overlay widgets are keyboard                  *  navigatable by letting the generic widget handlers                  *  deal with the event.                  */
+return|return
+name|FALSE
+return|;
 block|}
 switch|switch
 condition|(
