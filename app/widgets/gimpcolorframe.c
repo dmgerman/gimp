@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd2fb050103
+DECL|enum|__anon292c40130103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2003,15 +2003,11 @@ name|print_format
 init|=
 name|NULL
 decl_stmt|;
-name|gpointer
-name|pixel
-init|=
-name|g_alloca
-argument_list|(
-literal|5
-operator|*
-literal|64
-argument_list|)
+name|guchar
+name|print_pixel
+index|[
+literal|32
+index|]
 decl_stmt|;
 switch|switch
 condition|(
@@ -2090,7 +2086,7 @@ name|color
 argument_list|,
 name|print_format
 argument_list|,
-name|pixel
+name|print_pixel
 argument_list|)
 expr_stmt|;
 name|values
@@ -2099,7 +2095,7 @@ name|gimp_babl_print_pixel
 argument_list|(
 name|print_format
 argument_list|,
-name|pixel
+name|print_pixel
 argument_list|)
 expr_stmt|;
 block|}
