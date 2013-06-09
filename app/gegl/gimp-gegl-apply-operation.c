@@ -1063,7 +1063,7 @@ name|NULL
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gegl:scale"
+literal|"gegl:scale-ratio"
 argument_list|,
 literal|"origin-x"
 argument_list|,
