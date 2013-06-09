@@ -123,6 +123,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gchar
+modifier|*
+modifier|*
+name|gimp_babl_print_pixel
+parameter_list|(
+specifier|const
+name|Babl
+modifier|*
+name|format
+parameter_list|,
+name|gpointer
+name|pixel
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
