@@ -935,7 +935,7 @@ expr_stmt|;
 operator|*
 name|color_index
 operator|=
-name|pixel
+name|indexed_pixel
 index|[
 literal|0
 index|]
