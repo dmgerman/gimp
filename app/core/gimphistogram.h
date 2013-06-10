@@ -260,6 +260,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gint
+name|gimp_histogram_n_bins
+parameter_list|(
+name|GimpHistogram
+modifier|*
+name|histogram
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
