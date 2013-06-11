@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c03a52a0103
+DECL|enum|__anon28b480a40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -266,13 +266,15 @@ name|object_class
 argument_list|,
 name|PROP_HISTOGRAM
 argument_list|,
-name|g_param_spec_pointer
+name|g_param_spec_object
 argument_list|(
 literal|"histogram"
 argument_list|,
 literal|"Histogram"
 argument_list|,
 literal|"The histogram"
+argument_list|,
+name|GIMP_TYPE_HISTOGRAM
 argument_list|,
 name|G_PARAM_READWRITE
 operator||
@@ -323,7 +325,7 @@ operator|->
 name|histogram
 condition|)
 block|{
-name|gimp_histogram_unref
+name|g_object_unref
 argument_list|(
 name|self
 operator|->
@@ -450,7 +452,7 @@ name|self
 operator|->
 name|histogram
 condition|)
-name|gimp_histogram_unref
+name|g_object_unref
 argument_list|(
 name|self
 operator|->
@@ -461,7 +463,7 @@ name|self
 operator|->
 name|histogram
 operator|=
-name|g_value_get_pointer
+name|g_value_dup_object
 argument_list|(
 name|value
 argument_list|)
@@ -482,13 +484,6 @@ decl_stmt|;
 name|gint
 name|k
 decl_stmt|;
-name|gimp_histogram_ref
-argument_list|(
-name|self
-operator|->
-name|histogram
-argument_list|)
-expr_stmt|;
 name|pixels
 operator|=
 name|gimp_histogram_get_count

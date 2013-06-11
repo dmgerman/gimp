@@ -468,7 +468,7 @@ operator|->
 name|histogram
 condition|)
 block|{
-name|gimp_histogram_unref
+name|g_object_unref
 argument_list|(
 name|t_tool
 operator|->

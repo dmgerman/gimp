@@ -69,7 +69,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon275df7630103
+DECL|enum|__anon297ed9e20103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -82,7 +82,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275df7630203
+DECL|enum|__anon297ed9e20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -616,7 +616,7 @@ operator|->
 name|histogram
 condition|)
 block|{
-name|gimp_histogram_unref
+name|g_object_unref
 argument_list|(
 name|view
 operator|->
@@ -637,7 +637,7 @@ operator|->
 name|bg_histogram
 condition|)
 block|{
-name|gimp_histogram_unref
+name|g_object_unref
 argument_list|(
 name|view
 operator|->
@@ -2732,7 +2732,7 @@ name|view
 operator|->
 name|histogram
 condition|)
-name|gimp_histogram_unref
+name|g_object_unref
 argument_list|(
 name|view
 operator|->
@@ -2750,7 +2750,7 @@ condition|(
 name|histogram
 condition|)
 block|{
-name|gimp_histogram_ref
+name|g_object_ref
 argument_list|(
 name|histogram
 argument_list|)
@@ -2858,7 +2858,7 @@ name|view
 operator|->
 name|bg_histogram
 condition|)
-name|gimp_histogram_unref
+name|g_object_unref
 argument_list|(
 name|view
 operator|->
@@ -2876,7 +2876,7 @@ condition|(
 name|histogram
 condition|)
 block|{
-name|gimp_histogram_ref
+name|g_object_ref
 argument_list|(
 name|histogram
 argument_list|)

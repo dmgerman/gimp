@@ -2876,7 +2876,7 @@ name|count
 operator|/
 name|pixels
 expr_stmt|;
-name|gimp_histogram_unref
+name|g_object_unref
 argument_list|(
 name|histogram
 argument_list|)
