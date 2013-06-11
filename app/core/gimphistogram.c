@@ -86,6 +86,9 @@ name|histogram
 parameter_list|,
 name|gint
 name|n_components
+parameter_list|,
+name|gint
+name|n_bins
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -327,6 +330,9 @@ decl_stmt|;
 name|gint
 name|n_components
 decl_stmt|;
+name|gint
+name|n_bins
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|histogram
@@ -355,6 +361,29 @@ name|gegl_buffer_get_format
 argument_list|(
 name|buffer
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|babl_format_get_type
+argument_list|(
+name|format
+argument_list|,
+literal|0
+argument_list|)
+operator|==
+name|babl_type
+argument_list|(
+literal|"u8"
+argument_list|)
+condition|)
+name|n_bins
+operator|=
+literal|256
+expr_stmt|;
+else|else
+name|n_bins
+operator|=
+literal|1024
 expr_stmt|;
 if|if
 condition|(
@@ -569,6 +598,8 @@ argument_list|(
 name|histogram
 argument_list|,
 name|n_components
+argument_list|,
+name|n_bins
 argument_list|)
 expr_stmt|;
 name|iter
@@ -3172,7 +3203,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_histogram_alloc_values (GimpHistogram * histogram,gint n_components)
+DECL|function|gimp_histogram_alloc_values (GimpHistogram * histogram,gint n_components,gint n_bins)
 name|gimp_histogram_alloc_values
 parameter_list|(
 name|GimpHistogram
@@ -3181,6 +3212,9 @@ name|histogram
 parameter_list|,
 name|gint
 name|n_components
+parameter_list|,
+name|gint
+name|n_bins
 parameter_list|)
 block|{
 if|if
@@ -3192,6 +3226,12 @@ operator|!=
 name|histogram
 operator|->
 name|n_channels
+operator|||
+name|n_bins
+operator|!=
+name|histogram
+operator|->
+name|n_bins
 condition|)
 block|{
 name|gimp_histogram_clear_values
@@ -3206,6 +3246,12 @@ operator|=
 name|n_components
 operator|+
 literal|1
+expr_stmt|;
+name|histogram
+operator|->
+name|n_bins
+operator|=
+name|n_bins
 expr_stmt|;
 name|histogram
 operator|->
