@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293847470103
+DECL|enum|__anon29f460ea0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1129,7 +1129,7 @@ name|c
 parameter_list|,
 name|i
 parameter_list|)
-value|(priv->values[(c) * priv->n_bins + (gint) ((i) * (priv->n_bins - 0.0001))])
+value|(priv->values[(c) * priv->n_bins + \                                  (gint) (CLAMP ((i), 0.0, 1.0) * \                                          (priv->n_bins - 0.0001))])
 while|while
 condition|(
 name|gegl_buffer_iterator_next
