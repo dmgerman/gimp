@@ -2229,6 +2229,9 @@ condition|(
 name|hist
 condition|)
 block|{
+name|gint
+name|n_bins
+decl_stmt|;
 name|gdouble
 name|pixels
 decl_stmt|;
@@ -2241,6 +2244,13 @@ index|[
 literal|12
 index|]
 decl_stmt|;
+name|n_bins
+operator|=
+name|gimp_histogram_n_bins
+argument_list|(
+name|hist
+argument_list|)
+expr_stmt|;
 name|pixels
 operator|=
 name|gimp_histogram_get_count
@@ -2253,7 +2263,9 @@ name|channel
 argument_list|,
 literal|0
 argument_list|,
-literal|255
+name|n_bins
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|count
