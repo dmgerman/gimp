@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29597a9b0103
+DECL|enum|__anon293847470103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2270,15 +2270,15 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_histogram_get_channel (GimpHistogram * histogram,GimpHistogramChannel channel,gint bin)
-name|gimp_histogram_get_channel
+DECL|function|gimp_histogram_get_component (GimpHistogram * histogram,gint component,gint bin)
+name|gimp_histogram_get_component
 parameter_list|(
 name|GimpHistogram
 modifier|*
 name|histogram
 parameter_list|,
-name|GimpHistogramChannel
-name|channel
+name|gint
+name|component
 parameter_list|,
 name|gint
 name|bin
@@ -2304,7 +2304,7 @@ name|n_channels
 operator|>
 literal|3
 condition|)
-name|channel
+name|component
 operator|++
 expr_stmt|;
 return|return
@@ -2312,7 +2312,7 @@ name|gimp_histogram_get_value
 argument_list|(
 name|histogram
 argument_list|,
-name|channel
+name|component
 argument_list|,
 name|bin
 argument_list|)

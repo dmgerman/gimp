@@ -339,14 +339,14 @@ end_function_decl
 
 begin_function_decl
 name|gdouble
-name|gimp_histogram_get_channel
+name|gimp_histogram_get_component
 parameter_list|(
 name|GimpHistogram
 modifier|*
 name|histogram
 parameter_list|,
-name|GimpHistogramChannel
-name|channel
+name|gint
+name|component
 parameter_list|,
 name|gint
 name|bin

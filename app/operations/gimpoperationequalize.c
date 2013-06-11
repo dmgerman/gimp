@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b480a40103
+DECL|enum|__anon298976260103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -569,7 +569,7 @@ name|histi
 decl_stmt|;
 name|histi
 operator|=
-name|gimp_histogram_get_channel
+name|gimp_histogram_get_component
 argument_list|(
 name|self
 operator|->
