@@ -100,7 +100,9 @@ expr_stmt|;
 name|hist
 operator|=
 name|gimp_histogram_new
-argument_list|()
+argument_list|(
+name|TRUE
+argument_list|)
 expr_stmt|;
 name|gimp_drawable_calculate_histogram
 argument_list|(

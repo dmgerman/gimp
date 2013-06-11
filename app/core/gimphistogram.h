@@ -149,7 +149,8 @@ name|GimpHistogram
 modifier|*
 name|gimp_histogram_new
 parameter_list|(
-name|void
+name|gboolean
+name|gamma_correct
 parameter_list|)
 function_decl|;
 end_function_decl

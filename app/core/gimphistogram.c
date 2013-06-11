@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f460ea0103
+DECL|enum|__anon2c83f2dc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -69,6 +69,10 @@ DECL|struct|_GimpHistogramPrivate
 struct|struct
 name|_GimpHistogramPrivate
 block|{
+DECL|member|gamma_correct
+name|gboolean
+name|gamma_correct
+decl_stmt|;
 DECL|member|n_channels
 name|gint
 name|n_channels
@@ -635,19 +639,34 @@ end_comment
 begin_function
 name|GimpHistogram
 modifier|*
-DECL|function|gimp_histogram_new (void)
+DECL|function|gimp_histogram_new (gboolean gamma_correct)
 name|gimp_histogram_new
 parameter_list|(
-name|void
+name|gboolean
+name|gamma_correct
 parameter_list|)
 block|{
-return|return
+name|GimpHistogram
+modifier|*
+name|histogram
+init|=
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_HISTOGRAM
 argument_list|,
 name|NULL
 argument_list|)
+decl_stmt|;
+name|histogram
+operator|->
+name|priv
+operator|->
+name|gamma_correct
+operator|=
+name|gamma_correct
+expr_stmt|;
+return|return
+name|histogram
 return|;
 block|}
 end_function
@@ -684,7 +703,13 @@ expr_stmt|;
 name|dup
 operator|=
 name|gimp_histogram_new
-argument_list|()
+argument_list|(
+name|histogram
+operator|->
+name|priv
+operator|->
+name|gamma_correct
+argument_list|)
 expr_stmt|;
 name|dup
 operator|->
@@ -907,6 +932,20 @@ literal|"Y"
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|priv
+operator|->
+name|gamma_correct
+condition|)
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y' float"
+argument_list|)
+expr_stmt|;
+else|else
 name|format
 operator|=
 name|babl_format
@@ -945,6 +984,20 @@ literal|"YA"
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|priv
+operator|->
+name|gamma_correct
+condition|)
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y'A float"
+argument_list|)
+expr_stmt|;
+else|else
 name|format
 operator|=
 name|babl_format
@@ -983,6 +1036,20 @@ literal|"RGB"
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|priv
+operator|->
+name|gamma_correct
+condition|)
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B' float"
+argument_list|)
+expr_stmt|;
+else|else
 name|format
 operator|=
 name|babl_format
@@ -1021,6 +1088,20 @@ literal|"RGBA"
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|priv
+operator|->
+name|gamma_correct
+condition|)
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A float"
+argument_list|)
+expr_stmt|;
+else|else
 name|format
 operator|=
 name|babl_format

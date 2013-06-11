@@ -2796,7 +2796,9 @@ modifier|*
 name|histogram
 init|=
 name|gimp_histogram_new
-argument_list|()
+argument_list|(
+name|TRUE
+argument_list|)
 decl_stmt|;
 name|gimp_drawable_calculate_histogram
 argument_list|(

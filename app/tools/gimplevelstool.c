@@ -822,7 +822,9 @@ operator|->
 name|histogram
 operator|=
 name|gimp_histogram_new
-argument_list|()
+argument_list|(
+name|TRUE
+argument_list|)
 expr_stmt|;
 block|}
 end_function
