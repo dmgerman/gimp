@@ -115,6 +115,10 @@ DECL|member|scale
 name|GimpHistogramScale
 name|scale
 decl_stmt|;
+DECL|member|n_bins
+name|gint
+name|n_bins
+decl_stmt|;
 DECL|member|start
 name|gint
 name|start
