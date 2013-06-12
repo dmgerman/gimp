@@ -112,6 +112,10 @@ name|GtkWidget
 modifier|*
 name|slider_bar
 decl_stmt|;
+DECL|member|n_bins
+name|gint
+name|n_bins
+decl_stmt|;
 DECL|member|low_adj
 name|GtkAdjustment
 modifier|*
@@ -121,6 +125,16 @@ DECL|member|high_adj
 name|GtkAdjustment
 modifier|*
 name|high_adj
+decl_stmt|;
+DECL|member|low_spinbutton
+name|GtkWidget
+modifier|*
+name|low_spinbutton
+decl_stmt|;
+DECL|member|high_spinbutton
+name|GtkWidget
+modifier|*
+name|high_spinbutton
 decl_stmt|;
 block|}
 struct|;
