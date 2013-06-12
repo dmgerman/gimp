@@ -2298,7 +2298,7 @@ argument_list|(
 name|text
 argument_list|)
 argument_list|,
-literal|"%.1f"
+literal|"%.3f"
 argument_list|,
 name|gimp_histogram_get_mean
 argument_list|(
@@ -2342,7 +2342,7 @@ argument_list|(
 name|text
 argument_list|)
 argument_list|,
-literal|"%.1f"
+literal|"%.3f"
 argument_list|,
 name|gimp_histogram_get_std_dev
 argument_list|(
@@ -2386,11 +2386,8 @@ argument_list|(
 name|text
 argument_list|)
 argument_list|,
-literal|"%.1f"
+literal|"%.3f"
 argument_list|,
-operator|(
-name|gdouble
-operator|)
 name|gimp_histogram_get_median
 argument_list|(
 name|hist

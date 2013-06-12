@@ -262,7 +262,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|gdouble
 name|gimp_histogram_get_median
 parameter_list|(
 name|GimpHistogram
