@@ -131,6 +131,17 @@ name|dx
 decl_stmt|,
 name|dy
 decl_stmt|;
+comment|/* dialog */
+DECL|member|brightness_scale
+name|GtkWidget
+modifier|*
+name|brightness_scale
+decl_stmt|;
+DECL|member|contrast_scale
+name|GtkWidget
+modifier|*
+name|contrast_scale
+decl_stmt|;
 block|}
 struct|;
 end_struct
