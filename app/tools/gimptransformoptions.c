@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aea82d40103
+DECL|enum|__anon2bd309170103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1614,7 +1614,7 @@ expr_stmt|;
 comment|/*  the preview frame  */
 name|scale
 operator|=
-name|gimp_prop_opacity_spin_scale_new
+name|gimp_prop_spin_scale_new
 argument_list|(
 name|config
 argument_list|,
@@ -1624,6 +1624,21 @@ name|_
 argument_list|(
 literal|"Image opacity"
 argument_list|)
+argument_list|,
+literal|0.01
+argument_list|,
+literal|0.1
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gimp_prop_widget_set_factor
+argument_list|(
+name|scale
+argument_list|,
+literal|100.0
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|frame
@@ -1883,7 +1898,7 @@ name|gimp_get_constrain_behavior_mask
 argument_list|()
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2aea82d40208
+DECL|struct|__anon2bd309170208
 block|{
 DECL|member|mod
 name|GdkModifierType
