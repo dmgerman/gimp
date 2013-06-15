@@ -399,7 +399,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"New Layer _Group..."
+literal|"New Layer _Group"
 argument_list|)
 block|,
 name|NULL
