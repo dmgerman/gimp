@@ -4315,16 +4315,6 @@ operator|<=
 literal|0
 condition|)
 block|{
-if|#
-directive|if
-literal|0
-block|if (ori2 == 0)
-comment|/* Kandidat finden */
-block|;           else
-comment|/* ret_coords[i] ist der Kandidat */
-block|;
-endif|#
-directive|endif
 name|gimp_coords_difference
 argument_list|(
 operator|&
