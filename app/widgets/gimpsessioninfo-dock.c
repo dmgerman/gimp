@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b830c1f0103
+DECL|enum|__anon27ba3d8a0103
 block|{
 DECL|enumerator|SESSION_INFO_SIDE
 name|SESSION_INFO_SIDE
@@ -1107,12 +1107,8 @@ control|(
 name|iter
 operator|=
 name|dock_info
-condition|?
-name|dock_info
 operator|->
 name|books
-else|:
-name|NULL
 init|;
 name|iter
 condition|;
@@ -1209,8 +1205,6 @@ block|}
 comment|/* Now remove empty dockbooks from the list, check the comment in    * gimp_session_info_book_restore() which explains why the dock    * can contain empty dockbooks at all    */
 if|if
 condition|(
-name|dock_info
-operator|&&
 name|dock_info
 operator|->
 name|books
@@ -1317,8 +1311,6 @@ block|}
 comment|/*  if we removed all books again, the dock was destroyed, so bail out  */
 if|if
 condition|(
-name|dock_info
-operator|&&
 name|dock_info
 operator|->
 name|books

@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb95af70103
+DECL|enum|__anon2b33813c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb95af70203
+DECL|enum|__anon2b33813c0203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2163,7 +2163,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb95af70308
+DECL|struct|__anon2b33813c0308
 block|{
 DECL|member|x
 name|guint
@@ -4775,10 +4775,6 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* We return (x, y) relative to the allocation of event_widget. */
-if|if
-condition|(
-name|x
-condition|)
 operator|*
 name|x
 operator|=
@@ -4786,10 +4782,6 @@ name|child_loc
 operator|.
 name|x
 expr_stmt|;
-if|if
-condition|(
-name|y
-condition|)
 operator|*
 name|y
 operator|=

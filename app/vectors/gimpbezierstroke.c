@@ -2652,8 +2652,6 @@ name|stroke
 operator|->
 name|anchors
 init|;
-name|anchorlist
-operator|&&
 name|GIMP_ANCHOR
 argument_list|(
 name|anchorlist
@@ -3686,8 +3684,6 @@ name|stroke
 operator|->
 name|anchors
 init|;
-name|anchorlist
-operator|&&
 name|GIMP_ANCHOR
 argument_list|(
 name|anchorlist

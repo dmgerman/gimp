@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276c18620103
+DECL|enum|__anon28e4dedb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -114,7 +114,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon276c18620203
+DECL|enum|__anon28e4dedb0203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -1965,15 +1965,6 @@ condition|(
 name|pixbuf
 condition|)
 block|{
-if|if
-condition|(
-name|icon_pixbuf
-condition|)
-name|g_object_unref
-argument_list|(
-name|icon_pixbuf
-argument_list|)
-expr_stmt|;
 name|icon_pixbuf
 operator|=
 name|pixbuf
