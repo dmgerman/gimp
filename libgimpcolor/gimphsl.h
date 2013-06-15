@@ -81,6 +81,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_hsl_set_alpha
+parameter_list|(
+name|GimpHSL
+modifier|*
+name|hsl
+parameter_list|,
+name|gdouble
+name|a
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro

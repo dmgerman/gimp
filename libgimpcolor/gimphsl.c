@@ -169,5 +169,38 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_hsl_set_alpha:  * @hsl:  * @a:  *  * Since: GIMP 2.10  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_hsl_set_alpha (GimpHSL * hsl,gdouble a)
+name|gimp_hsl_set_alpha
+parameter_list|(
+name|GimpHSL
+modifier|*
+name|hsl
+parameter_list|,
+name|gdouble
+name|a
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|hsl
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|hsl
+operator|->
+name|a
+operator|=
+name|a
+expr_stmt|;
+block|}
+end_function
+
 end_unit
 
