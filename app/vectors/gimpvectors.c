@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b243930103
+DECL|enum|__anon2c558b7d0103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -3937,7 +3937,6 @@ literal|0.0
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|gimp_stroke_get_length
 argument_list|(
 name|stroke
@@ -3946,10 +3945,6 @@ name|vectors
 operator|->
 name|precision
 argument_list|)
-operator|)
-return|;
-return|return
-literal|0.0
 return|;
 block|}
 end_function
