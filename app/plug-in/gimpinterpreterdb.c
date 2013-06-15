@@ -3023,8 +3023,11 @@ sizeof|sizeof
 argument_list|(
 name|buffer
 argument_list|)
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
+comment|/* leave one nul at the end */
 name|close
 argument_list|(
 name|fd
