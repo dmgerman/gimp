@@ -211,7 +211,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c731530103
+DECL|enum|__anon29ea75ab0103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -4925,12 +4925,11 @@ if|if
 condition|(
 name|only_auto
 operator|&&
-operator|!
 name|gimp_dockable_get_tab_style
 argument_list|(
 name|dockable
 argument_list|)
-operator|==
+operator|!=
 name|GIMP_TAB_STYLE_AUTOMATIC
 condition|)
 continue|continue;
