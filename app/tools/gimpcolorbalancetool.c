@@ -666,14 +666,13 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gimp_spin_scale_set_factor
-argument_list|(
-name|GIMP_SPIN_SCALE
+name|gimp_prop_widget_set_factor
 argument_list|(
 name|scale
-argument_list|)
 argument_list|,
 literal|100.0
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach_defaults
