@@ -360,7 +360,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c915fe20103
+DECL|enum|__anon2978f7710103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -388,7 +388,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c915fe20203
+DECL|enum|__anon2978f7710203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3195,6 +3195,12 @@ name|popup_manager
 operator|=
 name|NULL
 expr_stmt|;
+if|if
+condition|(
+name|shell
+operator|->
+name|selection
+condition|)
 name|gimp_display_shell_selection_free
 argument_list|(
 name|shell
