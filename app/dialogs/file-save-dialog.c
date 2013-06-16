@@ -853,6 +853,10 @@ argument_list|(
 name|basename
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|dialog
+condition|)
 name|gimp_file_dialog_set_sensitive
 argument_list|(
 name|dialog
@@ -861,6 +865,10 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|dialog
+condition|)
 name|g_signal_handler_disconnect
 argument_list|(
 name|dialog
