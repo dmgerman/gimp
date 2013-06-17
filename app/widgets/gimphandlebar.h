@@ -184,6 +184,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_handle_bar_connect_events
+parameter_list|(
+name|GimpHandleBar
+modifier|*
+name|bar
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|event_source
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
