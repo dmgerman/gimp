@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29143e3d0103
+DECL|enum|__anon2a55ec660103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29143e3d0203
+DECL|enum|__anon2a55ec660203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3369,6 +3369,8 @@ parameter_list|)
 block|{
 name|gint
 name|new_bins
+init|=
+literal|256
 decl_stmt|;
 if|if
 condition|(
