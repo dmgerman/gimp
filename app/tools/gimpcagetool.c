@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e6fd0b0103
+DECL|enum|__anon2c0a2c6c0103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -739,6 +739,15 @@ argument_list|(
 name|self
 argument_list|)
 decl_stmt|;
+name|gimp_tool_control_set_preserve
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|gimp_tool_control_set_dirty_mask
 argument_list|(
 name|tool
