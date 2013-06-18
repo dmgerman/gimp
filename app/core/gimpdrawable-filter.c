@@ -415,11 +415,15 @@ argument_list|(
 name|filter
 argument_list|)
 expr_stmt|;
+comment|/* dup() because reading and writing the same buffer doesn't        * work with area ops when using a processor. See bug #701875.        */
 name|buffer
 operator|=
+name|gegl_buffer_dup
+argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|src_node
@@ -437,6 +441,11 @@ argument_list|,
 name|buffer
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|buffer
 argument_list|)
 expr_stmt|;
 name|gegl_node_connect_to
@@ -533,7 +542,10 @@ name|undo_desc
 argument_list|,
 name|node
 argument_list|,
-name|buffer
+name|gimp_drawable_get_buffer
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|rect
