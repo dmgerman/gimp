@@ -477,7 +477,7 @@ name|gint
 name|level
 parameter_list|)
 block|{
-name|gdouble
+name|gfloat
 name|opacity
 init|=
 name|GIMP_OPERATION_POINT_LAYER_MODE
@@ -512,7 +512,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_operation_normal_mode_process_pixels (gfloat * in,gfloat * aux,gfloat * mask,gfloat * out,gdouble opacity,glong samples,const GeglRectangle * roi,gint level)
+DECL|function|gimp_operation_normal_mode_process_pixels (gfloat * in,gfloat * aux,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level)
 name|gimp_operation_normal_mode_process_pixels
 parameter_list|(
 name|gfloat
@@ -531,7 +531,7 @@ name|gfloat
 modifier|*
 name|out
 parameter_list|,
-name|gdouble
+name|gfloat
 name|opacity
 parameter_list|,
 name|glong

@@ -159,7 +159,7 @@ name|gfloat
 modifier|*
 name|out
 parameter_list|,
-name|gdouble
+name|gfloat
 name|opacity
 parameter_list|,
 name|glong
