@@ -754,19 +754,15 @@ operator|->
 name|show_help_button
 operator|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME what to do with config.use_cpu_accel
-endif|#
-directive|endif
 name|config
 operator|.
 name|use_cpu_accel
 operator|=
-name|FALSE
+name|manager
+operator|->
+name|gimp
+operator|->
+name|use_cpu_accel
 expr_stmt|;
 name|config
 operator|.

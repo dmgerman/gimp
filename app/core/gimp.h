@@ -143,6 +143,10 @@ DECL|member|use_shm
 name|gboolean
 name|use_shm
 decl_stmt|;
+DECL|member|use_cpu_accel
+name|gboolean
+name|use_cpu_accel
+decl_stmt|;
 DECL|member|message_handler
 name|GimpMessageHandlerType
 name|message_handler
@@ -488,6 +492,9 @@ name|no_interface
 parameter_list|,
 name|gboolean
 name|use_shm
+parameter_list|,
+name|gboolean
+name|use_cpu_accel
 parameter_list|,
 name|gboolean
 name|console_messages

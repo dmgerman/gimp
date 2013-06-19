@@ -327,7 +327,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29be67210103
+DECL|enum|__anon27ecdfff0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -818,6 +818,12 @@ operator|->
 name|use_shm
 operator|=
 name|FALSE
+expr_stmt|;
+name|gimp
+operator|->
+name|use_cpu_accel
+operator|=
+name|TRUE
 expr_stmt|;
 name|gimp
 operator|->
@@ -3113,7 +3119,7 @@ end_function
 begin_function
 name|Gimp
 modifier|*
-DECL|function|gimp_new (const gchar * name,const gchar * session_name,const gchar * default_folder,gboolean be_verbose,gboolean no_data,gboolean no_fonts,gboolean no_interface,gboolean use_shm,gboolean console_messages,GimpStackTraceMode stack_trace_mode,GimpPDBCompatMode pdb_compat_mode)
+DECL|function|gimp_new (const gchar * name,const gchar * session_name,const gchar * default_folder,gboolean be_verbose,gboolean no_data,gboolean no_fonts,gboolean no_interface,gboolean use_shm,gboolean use_cpu_accel,gboolean console_messages,GimpStackTraceMode stack_trace_mode,GimpPDBCompatMode pdb_compat_mode)
 name|gimp_new
 parameter_list|(
 specifier|const
@@ -3145,6 +3151,9 @@ name|no_interface
 parameter_list|,
 name|gboolean
 name|use_shm
+parameter_list|,
+name|gboolean
+name|use_cpu_accel
 parameter_list|,
 name|gboolean
 name|console_messages
@@ -3245,6 +3254,16 @@ operator|->
 name|use_shm
 operator|=
 name|use_shm
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
+name|gimp
+operator|->
+name|use_cpu_accel
+operator|=
+name|use_cpu_accel
 condition|?
 name|TRUE
 else|:

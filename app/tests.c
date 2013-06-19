@@ -168,6 +168,8 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|TRUE
 argument_list|,
 name|TRUE
@@ -289,6 +291,8 @@ name|TRUE
 argument_list|,
 operator|!
 name|show_gui
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
