@@ -55,7 +55,7 @@ DECL|macro|PSD_DEBUG
 define|#
 directive|define
 name|PSD_DEBUG
-value|0
+value|3
 end_define
 
 begin_define
@@ -434,6 +434,32 @@ DECL|macro|PSD_LADJ_POSTERIZE
 comment|/* Adjustment layer - posterize (PS4) */
 end_comment
 
+begin_define
+DECL|macro|PSD_LADJ_VIBRANCE
+define|#
+directive|define
+name|PSD_LADJ_VIBRANCE
+value|"vibA"
+end_define
+
+begin_comment
+DECL|macro|PSD_LADJ_VIBRANCE
+comment|/* Adjustment layer - vibrance (PS10) */
+end_comment
+
+begin_define
+DECL|macro|PSD_LADJ_COLOR_LOOKUP
+define|#
+directive|define
+name|PSD_LADJ_COLOR_LOOKUP
+value|"clrL"
+end_define
+
+begin_comment
+DECL|macro|PSD_LADJ_COLOR_LOOKUP
+comment|/* Adjustment layer - color lookup (PS13) */
+end_comment
+
 begin_comment
 comment|/* Fill Layer IDs */
 end_comment
@@ -723,6 +749,32 @@ comment|/* Patterns (PS6) */
 end_comment
 
 begin_define
+DECL|macro|PSD_LOTH_PATTERN_2
+define|#
+directive|define
+name|PSD_LOTH_PATTERN_2
+value|"Pat2"
+end_define
+
+begin_comment
+DECL|macro|PSD_LOTH_PATTERN_2
+comment|/* Patterns 2nd key (PS6) */
+end_comment
+
+begin_define
+DECL|macro|PSD_LOTH_PATTERN_3
+define|#
+directive|define
+name|PSD_LOTH_PATTERN_3
+value|"Pat3"
+end_define
+
+begin_comment
+DECL|macro|PSD_LOTH_PATTERN_3
+comment|/* Patterns 3rd key (PS6) */
+end_comment
+
+begin_define
 DECL|macro|PSD_LOTH_GRADIENT
 define|#
 directive|define
@@ -798,6 +850,110 @@ end_define
 begin_comment
 DECL|macro|PSD_LOTH_LAYER_DATA
 comment|/* Layer data (PS6) */
+end_comment
+
+begin_define
+DECL|macro|PSD_LOTH_CONTENT_GEN
+define|#
+directive|define
+name|PSD_LOTH_CONTENT_GEN
+value|"CgEd"
+end_define
+
+begin_comment
+DECL|macro|PSD_LOTH_CONTENT_GEN
+comment|/* Content generator extra data (PS12) */
+end_comment
+
+begin_define
+DECL|macro|PSD_LOTH_TEXT_ENGINE
+define|#
+directive|define
+name|PSD_LOTH_TEXT_ENGINE
+value|"Txt2"
+end_define
+
+begin_comment
+DECL|macro|PSD_LOTH_TEXT_ENGINE
+comment|/* Text engine data (PS10) */
+end_comment
+
+begin_define
+DECL|macro|PSD_LOTH_PATH_NAME
+define|#
+directive|define
+name|PSD_LOTH_PATH_NAME
+value|"pths"
+end_define
+
+begin_comment
+DECL|macro|PSD_LOTH_PATH_NAME
+comment|/* Unicode path name (PS13) */
+end_comment
+
+begin_define
+DECL|macro|PSD_LOTH_ANIMATION_FX
+define|#
+directive|define
+name|PSD_LOTH_ANIMATION_FX
+value|"anFX"
+end_define
+
+begin_comment
+DECL|macro|PSD_LOTH_ANIMATION_FX
+comment|/* Animation effects (PS13) */
+end_comment
+
+begin_define
+DECL|macro|PSD_LOTH_FILTER_MASK
+define|#
+directive|define
+name|PSD_LOTH_FILTER_MASK
+value|"FMsk"
+end_define
+
+begin_comment
+DECL|macro|PSD_LOTH_FILTER_MASK
+comment|/* Filter mask (PS10) */
+end_comment
+
+begin_define
+DECL|macro|PSD_LOTH_VECTOR_STROKE
+define|#
+directive|define
+name|PSD_LOTH_VECTOR_STROKE
+value|"vscg"
+end_define
+
+begin_comment
+DECL|macro|PSD_LOTH_VECTOR_STROKE
+comment|/* Vector stroke data (PS13) */
+end_comment
+
+begin_define
+DECL|macro|PSD_LOTH_ALIGN_RENDER
+define|#
+directive|define
+name|PSD_LOTH_ALIGN_RENDER
+value|"sn2P"
+end_define
+
+begin_comment
+DECL|macro|PSD_LOTH_ALIGN_RENDER
+comment|/* Aligned rendering flag (?) */
+end_comment
+
+begin_define
+DECL|macro|PSD_LOTH_USER_MASK
+define|#
+directive|define
+name|PSD_LOTH_USER_MASK
+value|"LMsk"
+end_define
+
+begin_comment
+DECL|macro|PSD_LOTH_USER_MASK
+comment|/* User mask (?) */
 end_comment
 
 begin_comment
@@ -883,6 +1039,152 @@ comment|/* Effects layer - bevel (PS5) */
 end_comment
 
 begin_comment
+comment|/* Placed Layer */
+end_comment
+
+begin_define
+DECL|macro|PSD_LPL_PLACE_LAYER
+define|#
+directive|define
+name|PSD_LPL_PLACE_LAYER
+value|"plLd"
+end_define
+
+begin_comment
+DECL|macro|PSD_LPL_PLACE_LAYER
+comment|/* Placed layer (?) */
+end_comment
+
+begin_define
+DECL|macro|PSD_LPL_PLACE_LAYER_NEW
+define|#
+directive|define
+name|PSD_LPL_PLACE_LAYER_NEW
+value|"SoLd"
+end_define
+
+begin_comment
+DECL|macro|PSD_LPL_PLACE_LAYER_NEW
+comment|/* Placed layer (PS10) */
+end_comment
+
+begin_comment
+comment|/* Linked Layer */
+end_comment
+
+begin_define
+DECL|macro|PSD_LLL_LINKED_LAYER
+define|#
+directive|define
+name|PSD_LLL_LINKED_LAYER
+value|"lnkD"
+end_define
+
+begin_comment
+DECL|macro|PSD_LLL_LINKED_LAYER
+comment|/* Linked layer (?) */
+end_comment
+
+begin_define
+DECL|macro|PSD_LLL_LINKED_LAYER_2
+define|#
+directive|define
+name|PSD_LLL_LINKED_LAYER_2
+value|"lnk2"
+end_define
+
+begin_comment
+DECL|macro|PSD_LLL_LINKED_LAYER_2
+comment|/* Linked layer 2nd key */
+end_comment
+
+begin_define
+DECL|macro|PSD_LLL_LINKED_LAYER_3
+define|#
+directive|define
+name|PSD_LLL_LINKED_LAYER_3
+value|"lnk3"
+end_define
+
+begin_comment
+DECL|macro|PSD_LLL_LINKED_LAYER_3
+comment|/* Linked layer 3rd key */
+end_comment
+
+begin_comment
+comment|/* Merged Transparency */
+end_comment
+
+begin_define
+DECL|macro|PSD_LMT_MERGE_TRANS
+define|#
+directive|define
+name|PSD_LMT_MERGE_TRANS
+value|"Mtrn"
+end_define
+
+begin_comment
+DECL|macro|PSD_LMT_MERGE_TRANS
+comment|/* Merged transperency save flag (?) */
+end_comment
+
+begin_define
+DECL|macro|PSD_LMT_MERGE_TRANS_16
+define|#
+directive|define
+name|PSD_LMT_MERGE_TRANS_16
+value|"Mt16"
+end_define
+
+begin_comment
+DECL|macro|PSD_LMT_MERGE_TRANS_16
+comment|/* Merged transperency save flag 2 */
+end_comment
+
+begin_define
+DECL|macro|PSD_LMT_MERGE_TRANS_32
+define|#
+directive|define
+name|PSD_LMT_MERGE_TRANS_32
+value|"Mt32"
+end_define
+
+begin_comment
+DECL|macro|PSD_LMT_MERGE_TRANS_32
+comment|/* Merged transperency save flag 3 */
+end_comment
+
+begin_comment
+comment|/* Filter Effects */
+end_comment
+
+begin_define
+DECL|macro|PSD_LFFX_FILTER_FX
+define|#
+directive|define
+name|PSD_LFFX_FILTER_FX
+value|"FXid"
+end_define
+
+begin_comment
+DECL|macro|PSD_LFFX_FILTER_FX
+comment|/* Filter effects (?) */
+end_comment
+
+begin_define
+DECL|macro|PSD_LFFX_FILTER_FX_2
+define|#
+directive|define
+name|PSD_LFFX_FILTER_FX_2
+value|"FEid"
+end_define
+
+begin_comment
+DECL|macro|PSD_LFFX_FILTER_FX_2
+comment|/* Filter effects 2 */
+end_comment
+
+begin_comment
 comment|/* PSD spec enums */
 end_comment
 
@@ -891,7 +1193,7 @@ comment|/* Image color modes */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ad5bac10103
+DECL|enum|__anon29a185870103
 typedef|typedef
 enum|enum
 block|{
@@ -953,7 +1255,7 @@ comment|/* Image color spaces */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ad5bac10203
+DECL|enum|__anon29a185870203
 typedef|typedef
 enum|enum
 block|{
@@ -1040,7 +1342,7 @@ comment|/* Image Resource IDs */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ad5bac10303
+DECL|enum|__anon29a185870303
 typedef|typedef
 enum|enum
 block|{
@@ -1079,7 +1381,7 @@ name|PSD_DISPLAY_INFO
 init|=
 literal|1007
 block|,
-comment|/* 0x03ef - DisplayInfo structure */
+comment|/* 0x03ef - Superceded by PSD_DISPLAY_INFO_NEW for ps CS3 and higher - DisplayInfo structure */
 DECL|enumerator|PSD_CAPTION
 name|PSD_CAPTION
 init|=
@@ -1253,13 +1555,13 @@ name|PSD_GLOBAL_ANGLE
 init|=
 literal|1037
 block|,
-comment|/* 0x040d - Global angle */
+comment|/* 0x040d - Superceded by PSD_NEW_COLOR_SAMPLER for ps CS3 and higher - Global angle */
 DECL|enumerator|PSD_COLOR_SAMPLER
 name|PSD_COLOR_SAMPLER
 init|=
 literal|1038
 block|,
-comment|/* 0x040e - Color samplers resource */
+comment|/* 0x040e - Superceded by PSD_NEW_COLOR_SAMPLER for ps CS3 and higher - Color samplers resource */
 DECL|enumerator|PSD_ICC_PROFILE
 name|PSD_ICC_PROFILE
 init|=
@@ -1361,13 +1663,157 @@ name|PSD_EXIF_DATA
 init|=
 literal|1058
 block|,
-comment|/* 0x0422 - Exif data block */
+comment|/* 0x0422 - Exif data block 1 */
+DECL|enumerator|PSD_EXIF_DATA_3
+name|PSD_EXIF_DATA_3
+init|=
+literal|1059
+block|,
+comment|/* 0X0423 - Exif data block 3 (?) */
 DECL|enumerator|PSD_XMP_DATA
 name|PSD_XMP_DATA
 init|=
 literal|1060
 block|,
 comment|/* 0x0424 - XMP data block */
+DECL|enumerator|PSD_CAPTION_DIGEST
+name|PSD_CAPTION_DIGEST
+init|=
+literal|1061
+block|,
+comment|/* 0x0425 - Caption digest */
+DECL|enumerator|PSD_PRINT_SCALE
+name|PSD_PRINT_SCALE
+init|=
+literal|1062
+block|,
+comment|/* 0x0426 - Print scale */
+DECL|enumerator|PSD_PIXEL_AR
+name|PSD_PIXEL_AR
+init|=
+literal|1064
+block|,
+comment|/* 0x0428 - Pixel aspect ratio */
+DECL|enumerator|PSD_LAYER_COMPS
+name|PSD_LAYER_COMPS
+init|=
+literal|1065
+block|,
+comment|/* 0x0429 - Layer comps */
+DECL|enumerator|PSD_ALT_DUOTONE_COLOR
+name|PSD_ALT_DUOTONE_COLOR
+init|=
+literal|1066
+block|,
+comment|/* 0x042A - Alternative Duotone colors */
+DECL|enumerator|PSD_ALT_SPOT_COLOR
+name|PSD_ALT_SPOT_COLOR
+init|=
+literal|1067
+block|,
+comment|/* 0x042B - Alternative Spot colors */
+DECL|enumerator|PSD_LAYER_SELECT_ID
+name|PSD_LAYER_SELECT_ID
+init|=
+literal|1069
+block|,
+comment|/* 0x042D - Layer selection ID */
+DECL|enumerator|PSD_HDR_TONING_INFO
+name|PSD_HDR_TONING_INFO
+init|=
+literal|1070
+block|,
+comment|/* 0x042E - HDR toning information */
+DECL|enumerator|PSD_PRINT_INFO_SCALE
+name|PSD_PRINT_INFO_SCALE
+init|=
+literal|1071
+block|,
+comment|/* 0x042F - Print scale */
+DECL|enumerator|PSD_LAYER_GROUP_E_ID
+name|PSD_LAYER_GROUP_E_ID
+init|=
+literal|1072
+block|,
+comment|/* 0x0430 - Layer group(s) enabled ID */
+DECL|enumerator|PSD_COLOR_SAMPLER_NEW
+name|PSD_COLOR_SAMPLER_NEW
+init|=
+literal|1073
+block|,
+comment|/* 0x0431 - Color sampler resource for ps CS3 and higher PSD files */
+DECL|enumerator|PSD_MEASURE_SCALE
+name|PSD_MEASURE_SCALE
+init|=
+literal|1074
+block|,
+comment|/* 0x0432 - Measurement scale */
+DECL|enumerator|PSD_TIMELINE_INFO
+name|PSD_TIMELINE_INFO
+init|=
+literal|1075
+block|,
+comment|/* 0x0433 - Timeline information */
+DECL|enumerator|PSD_SHEET_DISCLOSE
+name|PSD_SHEET_DISCLOSE
+init|=
+literal|1076
+block|,
+comment|/* 0x0434 - Sheet discloser */
+DECL|enumerator|PSD_DISPLAY_INFO_NEW
+name|PSD_DISPLAY_INFO_NEW
+init|=
+literal|1077
+block|,
+comment|/* 0x0435 - DisplayInfo structure for ps CS3 and higher PSD files */
+DECL|enumerator|PSD_ONION_SKINS
+name|PSD_ONION_SKINS
+init|=
+literal|1078
+block|,
+comment|/* 0x0436 - Onion skins */
+DECL|enumerator|PSD_COUNT_INFO
+name|PSD_COUNT_INFO
+init|=
+literal|1080
+block|,
+comment|/* 0x0438 - Count information*/
+DECL|enumerator|PSD_PRINT_INFO
+name|PSD_PRINT_INFO
+init|=
+literal|1082
+block|,
+comment|/* 0x043A - Print information added in ps CS5*/
+DECL|enumerator|PSD_PRINT_STYLE
+name|PSD_PRINT_STYLE
+init|=
+literal|1083
+block|,
+comment|/* 0x043B - Print style */
+DECL|enumerator|PSD_MAC_NSPRINTINFO
+name|PSD_MAC_NSPRINTINFO
+init|=
+literal|1084
+block|,
+comment|/* 0x043C - Mac NSPrintInfo*/
+DECL|enumerator|PSD_WIN_DEVMODE
+name|PSD_WIN_DEVMODE
+init|=
+literal|1085
+block|,
+comment|/* 0x043D - Windows DEVMODE */
+DECL|enumerator|PSD_AUTO_SAVE_PATH
+name|PSD_AUTO_SAVE_PATH
+init|=
+literal|1086
+block|,
+comment|/* 0x043E - Auto save file path */
+DECL|enumerator|PSD_AUTO_SAVE_FORMAT
+name|PSD_AUTO_SAVE_FORMAT
+init|=
+literal|1087
+block|,
+comment|/* 0x043F - Auto save format */
 DECL|enumerator|PSD_PATH_INFO_FIRST
 name|PSD_PATH_INFO_FIRST
 init|=
@@ -1386,6 +1832,36 @@ init|=
 literal|2999
 block|,
 comment|/* 0x0bb7 - Name of clipping path */
+DECL|enumerator|PSD_PLUGIN_R_FIRST
+name|PSD_PLUGIN_R_FIRST
+init|=
+literal|4000
+block|,
+comment|/* 0x0FA0 - First plugin resource */
+DECL|enumerator|PSD_PLUGIN_R_LAST
+name|PSD_PLUGIN_R_LAST
+init|=
+literal|4999
+block|,
+comment|/* 0x1387 - Last plugin resource */
+DECL|enumerator|PSD_IMAGEREADY_VARS
+name|PSD_IMAGEREADY_VARS
+init|=
+literal|7000
+block|,
+comment|/* 0x1B58 - Imageready variables */
+DECL|enumerator|PSD_IMAGEREADY_DATA
+name|PSD_IMAGEREADY_DATA
+init|=
+literal|7001
+block|,
+comment|/* 0x1B59 - Imageready data sets */
+DECL|enumerator|PSD_LIGHTROOM_WORK
+name|PSD_LIGHTROOM_WORK
+init|=
+literal|8000
+block|,
+comment|/* 0x1F40 - Lightroom workflow */
 DECL|enumerator|PSD_PRINT_FLAGS_2
 name|PSD_PRINT_FLAGS_2
 init|=
@@ -1402,7 +1878,7 @@ comment|/* Display resolution units */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ad5bac10403
+DECL|enum|__anon29a185870403
 typedef|typedef
 enum|enum
 block|{
@@ -1429,7 +1905,7 @@ comment|/* Width and height units */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ad5bac10503
+DECL|enum|__anon29a185870503
 typedef|typedef
 enum|enum
 block|{
@@ -1474,7 +1950,7 @@ comment|/* Thumbnail image data encoding */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ad5bac10603
+DECL|enum|__anon29a185870603
 typedef|typedef
 enum|enum
 block|{
@@ -1500,7 +1976,7 @@ comment|/* Path record types */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ad5bac10703
+DECL|enum|__anon29a185870703
 typedef|typedef
 enum|enum
 block|{
@@ -1568,7 +2044,7 @@ comment|/* Channel ID */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ad5bac10803
+DECL|enum|__anon29a185870803
 typedef|typedef
 enum|enum
 block|{
@@ -1614,7 +2090,7 @@ comment|/* Clipping */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ad5bac10903
+DECL|enum|__anon29a185870903
 typedef|typedef
 enum|enum
 block|{
@@ -1640,7 +2116,7 @@ comment|/* Image compression mode */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ad5bac10a03
+DECL|enum|__anon29a185870a03
 typedef|typedef
 enum|enum
 block|{
@@ -1672,7 +2148,7 @@ comment|/* Vertical - horizontal selection */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ad5bac10b03
+DECL|enum|__anon29a185870b03
 typedef|typedef
 enum|enum
 block|{
@@ -1725,7 +2201,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad5bac10c08
+DECL|struct|__anon29a185870c08
 block|{
 DECL|member|red
 name|guint16
@@ -1752,7 +2228,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad5bac10d08
+DECL|struct|__anon29a185870d08
 block|{
 DECL|member|hue
 name|guint16
@@ -1779,7 +2255,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad5bac10e08
+DECL|struct|__anon29a185870e08
 block|{
 DECL|member|cyan
 name|guint16
@@ -1810,7 +2286,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad5bac10f08
+DECL|struct|__anon29a185870f08
 block|{
 DECL|member|L
 name|guint16
@@ -1837,7 +2313,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad5bac11008
+DECL|struct|__anon29a185871008
 block|{
 DECL|member|gray
 name|guint16
@@ -1850,13 +2326,13 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/* The color union is defined by the CMColor type definition. */
+comment|/* The color union is defined by the CMColor type definition.  */
 end_comment
 
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2ad5bac1110a
+DECL|union|__anon29a18587110a
 block|{
 DECL|member|rgb
 name|CMRGBColor
@@ -1889,7 +2365,7 @@ comment|/* Image resolution data */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ad5bac11208
+DECL|struct|__anon29a185871208
 typedef|typedef
 struct|struct
 block|{
@@ -1934,7 +2410,7 @@ comment|/* Grid& guide header */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ad5bac11308
+DECL|struct|__anon29a185871308
 typedef|typedef
 struct|struct
 block|{
@@ -1969,7 +2445,7 @@ comment|/* Guide resource block */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ad5bac11408
+DECL|struct|__anon29a185871408
 typedef|typedef
 struct|struct
 block|{
@@ -1994,7 +2470,7 @@ comment|/* Thumbnail data */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ad5bac11508
+DECL|struct|__anon29a185871508
 typedef|typedef
 struct|struct
 block|{
@@ -2045,11 +2521,11 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/* Channel display info data */
+comment|/* Channel display info data for Adobe Photoshop CS2 and lower */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ad5bac11608
+DECL|struct|__anon29a185871608
 typedef|typedef
 struct|struct
 block|{
@@ -2057,7 +2533,7 @@ DECL|member|colorSpace
 name|gint16
 name|colorSpace
 decl_stmt|;
-comment|/* Color space from  PSDColorSpace */
+comment|/* Color space from PSDColorSpace */
 DECL|member|color
 name|guint16
 name|color
@@ -2088,13 +2564,56 @@ typedef|;
 end_typedef
 
 begin_comment
+comment|/* Channel display info data for Adobe Photoshop CS3 and higher to support floating point colors */
+end_comment
+
+begin_typedef
+DECL|struct|__anon29a185871708
+typedef|typedef
+struct|struct
+block|{
+DECL|member|colorSpace
+name|gint16
+name|colorSpace
+decl_stmt|;
+comment|/* Color space from PSDColorSpace */
+DECL|member|color
+name|guint16
+name|color
+index|[
+literal|4
+index|]
+decl_stmt|;
+comment|/* 4 * 16 bit color components */
+DECL|member|opacity
+name|gint16
+name|opacity
+decl_stmt|;
+comment|/* Opacity 0 to 100 */
+DECL|member|kind
+name|gchar
+name|kind
+decl_stmt|;
+comment|/* Selected = 0, Protected = 1 */
+DECL|member|mode
+name|gchar
+name|mode
+decl_stmt|;
+comment|/* Alpha = 0, Inverted alpha = 1, Spot = 2 */
+DECL|typedef|DisplayInfoNew
+block|}
+name|DisplayInfoNew
+typedef|;
+end_typedef
+
+begin_comment
 comment|/* PSD Channel length info data structure */
 end_comment
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad5bac11708
+DECL|struct|__anon29a185871808
 block|{
 DECL|member|channel_id
 name|gint16
@@ -2119,7 +2638,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad5bac11808
+DECL|struct|__anon29a185871908
 block|{
 DECL|member|trans_prot
 name|gboolean
@@ -2159,7 +2678,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad5bac11908
+DECL|struct|__anon29a185871a08
 block|{
 DECL|member|relative_pos
 name|gboolean
@@ -2183,13 +2702,141 @@ typedef|;
 end_typedef
 
 begin_comment
+comment|/* PSD Slices */
+end_comment
+
+begin_typedef
+typedef|typedef
+struct|struct
+DECL|struct|__anon29a185871b08
+block|{
+DECL|member|id
+name|gint32
+name|id
+decl_stmt|;
+comment|/* ID */
+DECL|member|groupid
+name|gint32
+name|groupid
+decl_stmt|;
+comment|/* Group ID */
+DECL|member|origin
+name|gint32
+name|origin
+decl_stmt|;
+comment|/* Origin */
+DECL|member|associatedid
+name|gint32
+name|associatedid
+decl_stmt|;
+comment|/* Associated Layer ID */
+DECL|member|name
+name|gchar
+modifier|*
+name|name
+decl_stmt|;
+comment|/* Name */
+DECL|member|type
+name|gint32
+name|type
+decl_stmt|;
+comment|/* Type */
+DECL|member|left
+name|gint32
+name|left
+decl_stmt|;
+comment|/* Position coordinates */
+DECL|member|top
+name|gint32
+name|top
+decl_stmt|;
+DECL|member|right
+name|gint32
+name|right
+decl_stmt|;
+DECL|member|bottom
+name|gint32
+name|bottom
+decl_stmt|;
+DECL|member|url
+name|gchar
+modifier|*
+name|url
+decl_stmt|;
+comment|/* URL */
+DECL|member|target
+name|gchar
+modifier|*
+name|target
+decl_stmt|;
+comment|/* Target */
+DECL|member|message
+name|gchar
+modifier|*
+name|message
+decl_stmt|;
+comment|/* Message */
+DECL|member|alttag
+name|gchar
+modifier|*
+name|alttag
+decl_stmt|;
+comment|/* Alt Tag */
+DECL|member|html
+name|gchar
+name|html
+decl_stmt|;
+comment|/* Boolean for if cell text is HTML */
+DECL|member|celltext
+name|gchar
+modifier|*
+name|celltext
+decl_stmt|;
+comment|/* Cell text */
+DECL|member|horizontal
+name|gint32
+name|horizontal
+decl_stmt|;
+comment|/* Horizontal alignment */
+DECL|member|vertical
+name|gint32
+name|vertical
+decl_stmt|;
+comment|/* Vertical alignment */
+DECL|member|alpha
+name|gchar
+name|alpha
+decl_stmt|;
+comment|/* Alpha */
+DECL|member|red
+name|gchar
+name|red
+decl_stmt|;
+comment|/* Red */
+DECL|member|green
+name|gchar
+name|green
+decl_stmt|;
+comment|/* Green */
+DECL|member|blue
+name|gchar
+name|blue
+decl_stmt|;
+comment|/* Blue */
+DECL|typedef|PSDSlice
+block|}
+name|PSDSlice
+typedef|;
+end_typedef
+
+begin_comment
 comment|/* PSD Layer mask data (length 20) */
 end_comment
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad5bac11a08
+DECL|struct|__anon29a185871c08
 block|{
 DECL|member|top
 name|gint32
@@ -2249,7 +2896,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad5bac11b08
+DECL|struct|__anon29a185871d08
 block|{
 DECL|member|top
 name|gint32
@@ -2278,13 +2925,59 @@ typedef|;
 end_typedef
 
 begin_comment
+comment|/* PSD text reading */
+end_comment
+
+begin_typedef
+typedef|typedef
+struct|struct
+DECL|struct|__anon29a185871e08
+block|{
+DECL|member|xx
+name|gdouble
+name|xx
+decl_stmt|;
+comment|/* Transform information */
+DECL|member|xy
+name|gdouble
+name|xy
+decl_stmt|;
+DECL|member|yx
+name|gdouble
+name|yx
+decl_stmt|;
+DECL|member|yy
+name|gdouble
+name|yy
+decl_stmt|;
+DECL|member|tx
+name|gdouble
+name|tx
+decl_stmt|;
+DECL|member|ty
+name|gdouble
+name|ty
+decl_stmt|;
+DECL|member|info
+name|gchar
+modifier|*
+name|info
+decl_stmt|;
+comment|/* Text information */
+DECL|typedef|PSDText
+block|}
+name|PSDText
+typedef|;
+end_typedef
+
+begin_comment
 comment|/* PSD Layer data structure */
 end_comment
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad5bac11c08
+DECL|struct|__anon29a185871f08
 block|{
 DECL|member|drop
 name|gboolean
@@ -2389,6 +3082,11 @@ name|LayerFlags
 name|layer_flags
 decl_stmt|;
 comment|/* Layer flags */
+DECL|member|text
+name|PSDText
+name|text
+decl_stmt|;
+comment|/* PSD text */
 DECL|member|id
 name|guint32
 name|id
@@ -2412,7 +3110,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad5bac11d08
+DECL|struct|__anon29a185872008
 block|{
 DECL|member|id
 name|gint16
@@ -2454,7 +3152,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad5bac11e08
+DECL|struct|__anon29a185872108
 block|{
 DECL|member|gimp_color
 name|GimpRGB
@@ -2466,6 +3164,11 @@ name|gint16
 name|opacity
 decl_stmt|;
 comment|/* Opacity */
+DECL|member|ps_mode
+name|guchar
+name|ps_mode
+decl_stmt|;
+comment|/* PS mode flag */
 DECL|member|ps_kind
 name|guchar
 name|ps_kind
@@ -2494,7 +3197,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad5bac11f08
+DECL|struct|__anon29a185872208
 block|{
 DECL|member|type
 name|gchar
@@ -2540,7 +3243,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad5bac12008
+DECL|struct|__anon29a185872308
 block|{
 DECL|member|sig
 name|gchar
@@ -2581,7 +3284,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad5bac12108
+DECL|struct|__anon29a185872408
 block|{
 DECL|member|channels
 name|guint16
@@ -2607,7 +3310,7 @@ DECL|member|bps
 name|guint16
 name|bps
 decl_stmt|;
-comment|/* Bits per channel: 1, 8 or 16 */
+comment|/* Bits per sample: 1, 8, 16, or 32 */
 DECL|member|color_mode
 name|guint16
 name|color_mode
