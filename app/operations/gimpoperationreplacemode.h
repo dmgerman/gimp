@@ -112,14 +112,6 @@ DECL|member|parent_instance
 name|GimpOperationPointLayerMode
 name|parent_instance
 decl_stmt|;
-DECL|member|opacity
-name|gdouble
-name|opacity
-decl_stmt|;
-DECL|member|premultiplied
-name|gboolean
-name|premultiplied
-decl_stmt|;
 block|}
 struct|;
 end_struct
