@@ -459,6 +459,10 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
+name|Selection
+modifier|*
+name|selection
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
@@ -476,14 +480,12 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|Selection
-modifier|*
 name|selection
-init|=
+operator|=
 name|shell
 operator|->
 name|selection
-decl_stmt|;
+expr_stmt|;
 name|selection_stop
 argument_list|(
 name|selection
