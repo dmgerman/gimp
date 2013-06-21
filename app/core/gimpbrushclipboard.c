@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be2ff620103
+DECL|enum|__anon2be3f52c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -642,7 +642,7 @@ operator|->
 name|global_buffer
 argument_list|)
 argument_list|,
-literal|2048
+literal|1024
 argument_list|)
 expr_stmt|;
 name|height
@@ -656,7 +656,7 @@ operator|->
 name|global_buffer
 argument_list|)
 argument_list|,
-literal|2048
+literal|1024
 argument_list|)
 expr_stmt|;
 name|brush
