@@ -5715,9 +5715,13 @@ name|NULL
 decl_stmt|;
 name|gint
 name|orig_offset_x
+init|=
+literal|0
 decl_stmt|;
 name|gint
 name|orig_offset_y
+init|=
+literal|0
 decl_stmt|;
 name|GeglBuffer
 modifier|*
@@ -5751,6 +5755,8 @@ name|NULL
 decl_stmt|;
 name|gboolean
 name|new_layer
+init|=
+name|FALSE
 decl_stmt|;
 switch|switch
 condition|(
@@ -6075,14 +6081,6 @@ name|active_item
 argument_list|)
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|orig_offset_x
-operator|=
-literal|0
-expr_stmt|;
-name|orig_offset_y
-operator|=
-literal|0
 expr_stmt|;
 break|break;
 case|case
