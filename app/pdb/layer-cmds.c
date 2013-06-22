@@ -6405,7 +6405,7 @@ name|procedure
 argument_list|,
 literal|"gimp-layer-create-mask"
 argument_list|,
-literal|"Create a layer mask for the specified specified layer."
+literal|"Create a layer mask for the specified layer."
 argument_list|,
 literal|"This procedure creates a layer mask for the specified layer. Layer masks serve as an additional alpha channel for a layer. A number of different types of masks are allowed for initialisation: completely white masks (which will leave the layer fully visible), completely black masks (which will give the layer complete transparency, the layer's already existing alpha channel (which will leave the layer fully visible, but which may be more useful than a white mask), the current selection or a grayscale copy of the layer. The layer mask still needs to be added to the layer. This can be done with a call to 'gimp-layer-add-mask'."
 argument_list|,
