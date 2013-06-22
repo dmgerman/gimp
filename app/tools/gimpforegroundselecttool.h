@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae7ab490103
+DECL|enum|__anon29b73d440103
 block|{
 DECL|enumerator|MATTING_STATE_FREE_SELECT
 name|MATTING_STATE_FREE_SELECT
@@ -154,12 +154,12 @@ modifier|*
 name|stroke
 decl_stmt|;
 DECL|member|trimap
-name|GimpChannel
+name|GeglBuffer
 modifier|*
 name|trimap
 decl_stmt|;
 DECL|member|mask
-name|GimpChannel
+name|GeglBuffer
 modifier|*
 name|mask
 decl_stmt|;

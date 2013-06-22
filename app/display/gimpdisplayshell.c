@@ -360,7 +360,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2978f7710103
+DECL|enum|__anon2b1598e20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -388,7 +388,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2978f7710203
+DECL|enum|__anon2b1598e20203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -7382,14 +7382,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_mask (GimpDisplayShell * shell,GimpDrawable * mask,const GimpRGB * color)
+DECL|function|gimp_display_shell_set_mask (GimpDisplayShell * shell,GeglBuffer * mask,const GimpRGB * color)
 name|gimp_display_shell_set_mask
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
-name|GimpDrawable
+name|GeglBuffer
 modifier|*
 name|mask
 parameter_list|,
@@ -7413,22 +7413,10 @@ name|mask
 operator|==
 name|NULL
 operator|||
-operator|(
-name|GIMP_IS_DRAWABLE
+name|GEGL_IS_BUFFER
 argument_list|(
 name|mask
 argument_list|)
-operator|&&
-name|babl_format_get_bytes_per_pixel
-argument_list|(
-name|gimp_drawable_get_format
-argument_list|(
-name|mask
-argument_list|)
-argument_list|)
-operator|==
-literal|1
-operator|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail

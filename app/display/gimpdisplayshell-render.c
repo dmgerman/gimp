@@ -529,15 +529,6 @@ operator|->
 name|mask_surface
 argument_list|)
 expr_stmt|;
-name|buffer
-operator|=
-name|gimp_drawable_get_buffer
-argument_list|(
-name|shell
-operator|->
-name|mask
-argument_list|)
-expr_stmt|;
 name|stride
 operator|=
 name|cairo_image_surface_get_stride
@@ -568,7 +559,9 @@ literal|4
 expr_stmt|;
 name|gegl_buffer_get
 argument_list|(
-name|buffer
+name|shell
+operator|->
+name|mask
 argument_list|,
 name|GEGL_RECTANGLE
 argument_list|(

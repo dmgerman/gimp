@@ -717,7 +717,7 @@ name|gpointer
 name|scroll_info
 decl_stmt|;
 DECL|member|mask
-name|GimpDrawable
+name|GeglBuffer
 modifier|*
 name|mask
 decl_stmt|;
@@ -1153,7 +1153,7 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
-name|GimpDrawable
+name|GeglBuffer
 modifier|*
 name|mask
 parameter_list|,
