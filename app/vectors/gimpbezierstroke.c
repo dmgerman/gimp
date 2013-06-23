@@ -2644,6 +2644,14 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
+name|pos
+operator|=
+literal|0
+expr_stmt|;
+name|point
+operator|=
+name|GIMP_COORDS_DEFAULT_VALUES
+expr_stmt|;
 for|for
 control|(
 name|anchorlist
