@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c092f330103
+DECL|enum|__anon2ae02a5c0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -2147,7 +2147,7 @@ name|node
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gegl:invert"
+literal|"gegl:invert-linear"
 argument_list|,
 name|NULL
 argument_list|)
@@ -5876,7 +5876,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_gegl_apply_invert
+name|gimp_gegl_apply_invert_linear
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(

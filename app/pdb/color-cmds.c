@@ -1652,7 +1652,7 @@ argument_list|(
 literal|"Invert"
 argument_list|)
 argument_list|,
-literal|"gegl:invert"
+literal|"gegl:invert-gamma"
 argument_list|,
 name|NULL
 argument_list|)

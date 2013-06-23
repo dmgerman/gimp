@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0dad6d0103
+DECL|enum|__anon291107eb0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -357,7 +357,9 @@ literal|"gegl:gaussian-blur"
 block|,
 literal|"gegl:grid"
 block|,
-literal|"gegl:invert"
+literal|"gegl:invert-linear"
+block|,
+literal|"gegl:invert-gamma"
 block|,
 literal|"gegl:lens-distortion"
 block|,

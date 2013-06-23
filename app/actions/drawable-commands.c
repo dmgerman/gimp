@@ -207,6 +207,7 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+comment|/* FIXME invert masks? */
 name|gimp_drawable_apply_operation_by_name
 argument_list|(
 name|drawable
@@ -221,7 +222,7 @@ argument_list|(
 literal|"Invert"
 argument_list|)
 argument_list|,
-literal|"gegl:invert"
+literal|"gegl:invert-gamma"
 argument_list|,
 name|NULL
 argument_list|)
