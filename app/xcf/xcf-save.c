@@ -817,13 +817,13 @@ argument_list|(
 name|image
 argument_list|)
 operator|!=
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 condition|)
 name|save_version
 operator|=
 name|MAX
 argument_list|(
-literal|4
+literal|5
 argument_list|,
 name|save_version
 argument_list|)
@@ -7207,7 +7207,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b37dc070108
+DECL|struct|__anon27f05a6e0108
 block|{
 DECL|member|info
 name|XcfInfo

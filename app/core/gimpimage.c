@@ -358,7 +358,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4d2d410103
+DECL|enum|__anon28c8f68d0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -455,7 +455,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4d2d410203
+DECL|enum|__anon28c8f68d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2482,7 +2482,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_PRECISION
 argument_list|,
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
@@ -2680,7 +2680,7 @@ name|private
 operator|->
 name|precision
 operator|=
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 expr_stmt|;
 name|private
 operator|->
@@ -6164,7 +6164,7 @@ name|GIMP_INDEXED
 operator|||
 name|precision
 operator|==
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 argument_list|,
 name|NULL
 argument_list|)
@@ -6229,6 +6229,42 @@ name|image
 argument_list|)
 operator|->
 name|base_type
+return|;
+block|}
+end_function
+
+begin_function
+name|GimpComponentType
+DECL|function|gimp_image_get_component_type (const GimpImage * image)
+name|gimp_image_get_component_type
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+return|return
+name|gimp_babl_component_type
+argument_list|(
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
+name|image
+argument_list|)
+operator|->
+name|precision
+argument_list|)
 return|;
 block|}
 end_function
@@ -6326,7 +6362,7 @@ if|if
 condition|(
 name|precision
 operator|==
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 condition|)
 block|{
 if|if

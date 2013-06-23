@@ -896,7 +896,7 @@ argument_list|(
 name|format
 argument_list|)
 argument_list|,
-name|GIMP_PRECISION_FLOAT
+name|GIMP_PRECISION_FLOAT_LINEAR
 argument_list|,
 operator|*
 name|has_alpha

@@ -976,6 +976,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpComponentType
+name|gimp_drawable_get_component_type
+parameter_list|(
+specifier|const
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpPrecision
 name|gimp_drawable_get_precision
 parameter_list|(

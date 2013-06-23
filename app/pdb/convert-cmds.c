@@ -558,7 +558,7 @@ name|gimp_pdb_image_is_precision
 argument_list|(
 name|image
 argument_list|,
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 argument_list|,
 name|error
 argument_list|)
@@ -1597,7 +1597,7 @@ literal|"The new precision"
 argument_list|,
 name|GIMP_TYPE_PRECISION
 argument_list|,
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_LINEAR
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

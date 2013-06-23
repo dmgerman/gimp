@@ -608,6 +608,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpComponentType
+name|gimp_image_get_component_type
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpPrecision
 name|gimp_image_get_precision
 parameter_list|(

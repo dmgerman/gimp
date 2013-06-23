@@ -155,7 +155,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c088650108
+DECL|struct|__anon2b5b98cb0108
 block|{
 DECL|member|compression
 name|gint
@@ -178,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c088650208
+DECL|struct|__anon2b5b98cb0208
 block|{
 DECL|member|ID
 name|gint32
@@ -2945,7 +2945,7 @@ argument_list|(
 name|image
 argument_list|)
 operator|==
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 condition|)
 name|bitspersample
 operator|=

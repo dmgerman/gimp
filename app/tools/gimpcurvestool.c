@@ -987,12 +987,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_get_precision
+name|gimp_drawable_get_component_type
 argument_list|(
 name|drawable
 argument_list|)
 operator|==
-name|GIMP_PRECISION_U8
+name|GIMP_COMPONENT_TYPE_U8
 condition|)
 block|{
 name|gimp_curve_view_set_range_x

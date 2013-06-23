@@ -1172,7 +1172,7 @@ argument_list|)
 argument_list|,
 name|GIMP_RGB
 argument_list|,
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 argument_list|,
 name|FALSE
 argument_list|)

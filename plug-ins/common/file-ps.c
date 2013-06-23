@@ -203,7 +203,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c48ce620108
+DECL|struct|__anon2c0597940108
 block|{
 DECL|member|resolution
 name|guint
@@ -314,7 +314,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c48ce620208
+DECL|struct|__anon2c0597940208
 block|{
 DECL|member|width
 DECL|member|height
@@ -929,7 +929,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c48ce620308
+DECL|struct|__anon2c0597940308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1797,7 +1797,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c48ce620408
+DECL|struct|__anon2c0597940408
 block|{
 DECL|member|eol
 name|long
@@ -7796,7 +7796,7 @@ name|height
 argument_list|,
 name|type
 argument_list|,
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_disable

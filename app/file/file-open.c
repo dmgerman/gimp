@@ -1343,7 +1343,7 @@ name|gimp_babl_format
 argument_list|(
 name|GIMP_RGB
 argument_list|,
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1359,7 +1359,7 @@ name|gimp_babl_format
 argument_list|(
 name|GIMP_RGB
 argument_list|,
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1375,7 +1375,7 @@ name|gimp_babl_format
 argument_list|(
 name|GIMP_GRAY
 argument_list|,
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1391,7 +1391,7 @@ name|gimp_babl_format
 argument_list|(
 name|GIMP_GRAY
 argument_list|,
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 argument_list|,
 name|TRUE
 argument_list|)

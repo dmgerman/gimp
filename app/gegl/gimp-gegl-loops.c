@@ -128,7 +128,7 @@ name|gimp_babl_format
 argument_list|(
 name|GIMP_RGB
 argument_list|,
-name|GIMP_PRECISION_FLOAT
+name|GIMP_PRECISION_FLOAT_LINEAR
 argument_list|,
 name|babl_format_has_alpha
 argument_list|(
@@ -146,7 +146,7 @@ argument_list|(
 name|src_format
 argument_list|)
 argument_list|,
-name|GIMP_PRECISION_FLOAT
+name|GIMP_PRECISION_FLOAT_LINEAR
 argument_list|,
 name|babl_format_has_alpha
 argument_list|(
@@ -174,7 +174,7 @@ name|gimp_babl_format
 argument_list|(
 name|GIMP_RGB
 argument_list|,
-name|GIMP_PRECISION_FLOAT
+name|GIMP_PRECISION_FLOAT_LINEAR
 argument_list|,
 name|babl_format_has_alpha
 argument_list|(
@@ -192,7 +192,7 @@ argument_list|(
 name|dest_format
 argument_list|)
 argument_list|,
-name|GIMP_PRECISION_FLOAT
+name|GIMP_PRECISION_FLOAT_LINEAR
 argument_list|,
 name|babl_format_has_alpha
 argument_list|(

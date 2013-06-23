@@ -143,7 +143,7 @@ name|g_return_if_fail
 argument_list|(
 name|precision
 operator|==
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 operator|||
 name|gimp_image_get_base_type
 argument_list|(
@@ -196,7 +196,7 @@ name|precision
 condition|)
 block|{
 case|case
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_LINEAR
 case|:
 name|undo_desc
 operator|=
@@ -204,12 +204,12 @@ name|C_
 argument_list|(
 literal|"undo-type"
 argument_list|,
-literal|"Convert Image to 8 bit integer"
+literal|"Convert Image to 8 bit linear integer"
 argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_PRECISION_U16
+name|GIMP_PRECISION_U8_GAMMA
 case|:
 name|undo_desc
 operator|=
@@ -217,12 +217,12 @@ name|C_
 argument_list|(
 literal|"undo-type"
 argument_list|,
-literal|"Convert Image to 16 bit integer"
+literal|"Convert Image to 8 bit gamma integer"
 argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_PRECISION_U32
+name|GIMP_PRECISION_U16_LINEAR
 case|:
 name|undo_desc
 operator|=
@@ -230,12 +230,12 @@ name|C_
 argument_list|(
 literal|"undo-type"
 argument_list|,
-literal|"Convert Image to 32 bit integer"
+literal|"Convert Image to 16 bit linear integer"
 argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_PRECISION_HALF
+name|GIMP_PRECISION_U16_GAMMA
 case|:
 name|undo_desc
 operator|=
@@ -243,12 +243,12 @@ name|C_
 argument_list|(
 literal|"undo-type"
 argument_list|,
-literal|"Convert Image to 16 bit floating point"
+literal|"Convert Image to 16 bit gamma integer"
 argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_PRECISION_FLOAT
+name|GIMP_PRECISION_U32_LINEAR
 case|:
 name|undo_desc
 operator|=
@@ -256,7 +256,72 @@ name|C_
 argument_list|(
 literal|"undo-type"
 argument_list|,
-literal|"Convert Image to 32 bit floating point"
+literal|"Convert Image to 32 bit linear integer"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_PRECISION_U32_GAMMA
+case|:
+name|undo_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Convert Image to 32 bit gamma integer"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_PRECISION_HALF_LINEAR
+case|:
+name|undo_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Convert Image to 16 bit linear floating point"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_PRECISION_HALF_GAMMA
+case|:
+name|undo_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Convert Image to 16 bit gamma floating point"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_PRECISION_FLOAT_LINEAR
+case|:
+name|undo_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Convert Image to 32 bit linear floating point"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_PRECISION_FLOAT_GAMMA
+case|:
+name|undo_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Convert Image to 32 bit gamma floating point"
 argument_list|)
 expr_stmt|;
 break|break;

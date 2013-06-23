@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e104800103
+DECL|enum|__anon2bf3f4570103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -502,7 +502,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_PRECISION
 argument_list|,
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -1685,7 +1685,7 @@ argument_list|(
 name|template
 argument_list|)
 argument_list|,
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 argument_list|)
 expr_stmt|;
 return|return

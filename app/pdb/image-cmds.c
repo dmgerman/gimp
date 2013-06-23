@@ -716,7 +716,7 @@ name|height
 argument_list|,
 name|type
 argument_list|,
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 argument_list|,
 name|FALSE
 argument_list|)
@@ -908,7 +908,7 @@ name|GIMP_INDEXED
 operator|||
 name|precision
 operator|==
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 condition|)
 block|{
 name|image
@@ -13268,7 +13268,7 @@ literal|"gimp-image-new-with-precision"
 argument_list|,
 literal|"Creates a new image with the specified width, height, type and precision."
 argument_list|,
-literal|"Creates a new image, undisplayed with the specified extents, type and precision. Indexed images can only be created at GIMP_PRECISION_U8 precision. See 'gimp-image-new' for further details."
+literal|"Creates a new image, undisplayed with the specified extents, type and precision. Indexed images can only be created at GIMP_PRECISION_U8_GAMMA precision. See 'gimp-image-new' for further details."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -13357,7 +13357,7 @@ literal|"The precision"
 argument_list|,
 name|GIMP_TYPE_PRECISION
 argument_list|,
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_LINEAR
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -13725,7 +13725,7 @@ literal|"The image's precision"
 argument_list|,
 name|GIMP_TYPE_PRECISION
 argument_list|,
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_LINEAR
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

@@ -718,7 +718,7 @@ name|PREC_UINT
 case|:
 name|image_precision
 operator|=
-name|GIMP_PRECISION_U32
+name|GIMP_PRECISION_U32_LINEAR
 expr_stmt|;
 break|break;
 case|case
@@ -726,7 +726,7 @@ name|PREC_HALF
 case|:
 name|image_precision
 operator|=
-name|GIMP_PRECISION_HALF
+name|GIMP_PRECISION_HALF_LINEAR
 expr_stmt|;
 break|break;
 case|case
@@ -734,7 +734,7 @@ name|PREC_FLOAT
 case|:
 name|image_precision
 operator|=
-name|GIMP_PRECISION_FLOAT
+name|GIMP_PRECISION_FLOAT_LINEAR
 expr_stmt|;
 break|break;
 default|default:

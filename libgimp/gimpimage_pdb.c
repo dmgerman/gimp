@@ -318,7 +318,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_new_with_precision:  * @width: The width of the image.  * @height: The height of the image.  * @type: The type of image.  * @precision: The precision.  *  * Creates a new image with the specified width, height, type and  * precision.  *  * Creates a new image, undisplayed with the specified extents, type  * and precision. Indexed images can only be created at  * GIMP_PRECISION_U8 precision. See gimp_image_new() for further  * details.  *  * Returns: The ID of the newly created image.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_image_new_with_precision:  * @width: The width of the image.  * @height: The height of the image.  * @type: The type of image.  * @precision: The precision.  *  * Creates a new image with the specified width, height, type and  * precision.  *  * Creates a new image, undisplayed with the specified extents, type  * and precision. Indexed images can only be created at  * GIMP_PRECISION_U8_GAMMA precision. See gimp_image_new() for further  * details.  *  * Returns: The ID of the newly created image.  *  * Since: GIMP 2.10  **/
 end_comment
 
 begin_function

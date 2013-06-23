@@ -379,7 +379,7 @@ argument_list|(
 name|format
 argument_list|)
 argument_list|,
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 argument_list|,
 name|babl_format_has_alpha
 argument_list|(

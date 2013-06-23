@@ -45,6 +45,30 @@ name|babl_format_new
 argument_list|(
 literal|"name"
 argument_list|,
+literal|"R u8"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"RGBA"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"u8"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"R"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
 literal|"R' u8"
 argument_list|,
 name|babl_model
@@ -69,6 +93,30 @@ name|babl_format_new
 argument_list|(
 literal|"name"
 argument_list|,
+literal|"G u8"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"RGBA"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"u8"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"G"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
 literal|"G' u8"
 argument_list|,
 name|babl_model
@@ -84,6 +132,30 @@ argument_list|,
 name|babl_component
 argument_list|(
 literal|"G'"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
+literal|"B u8"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"RGBA"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"u8"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"B"
 argument_list|)
 argument_list|,
 name|NULL
@@ -121,7 +193,7 @@ literal|"A u8"
 argument_list|,
 name|babl_model
 argument_list|(
-literal|"R'G'B'A"
+literal|"RGBA"
 argument_list|)
 argument_list|,
 name|babl_type
@@ -132,6 +204,30 @@ argument_list|,
 name|babl_component
 argument_list|(
 literal|"A"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
+literal|"R u16"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"RGBA"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"u16"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"R"
 argument_list|)
 argument_list|,
 name|NULL
@@ -165,6 +261,30 @@ name|babl_format_new
 argument_list|(
 literal|"name"
 argument_list|,
+literal|"G u16"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"RGBA"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"u16"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"G"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
 literal|"G' u16"
 argument_list|,
 name|babl_model
@@ -180,6 +300,30 @@ argument_list|,
 name|babl_component
 argument_list|(
 literal|"G'"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
+literal|"B u16"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"RGBA"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"u16"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"B"
 argument_list|)
 argument_list|,
 name|NULL
@@ -217,7 +361,7 @@ literal|"A u16"
 argument_list|,
 name|babl_model
 argument_list|(
-literal|"R'G'B'A"
+literal|"RGBA"
 argument_list|)
 argument_list|,
 name|babl_type
@@ -261,6 +405,30 @@ name|babl_format_new
 argument_list|(
 literal|"name"
 argument_list|,
+literal|"R' u32"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"R'G'B'A"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"u32"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"R'"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
 literal|"G u32"
 argument_list|,
 name|babl_model
@@ -285,6 +453,30 @@ name|babl_format_new
 argument_list|(
 literal|"name"
 argument_list|,
+literal|"G' u32"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"R'G'B'A"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"u32"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"G'"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
 literal|"B u32"
 argument_list|,
 name|babl_model
@@ -300,6 +492,30 @@ argument_list|,
 name|babl_component
 argument_list|(
 literal|"B"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
+literal|"B' u32"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"R'G'B'A"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"u32"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"B'"
 argument_list|)
 argument_list|,
 name|NULL
@@ -357,6 +573,30 @@ name|babl_format_new
 argument_list|(
 literal|"name"
 argument_list|,
+literal|"R' half"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"R'G'B'A"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"half"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"R'"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
 literal|"G half"
 argument_list|,
 name|babl_model
@@ -381,6 +621,30 @@ name|babl_format_new
 argument_list|(
 literal|"name"
 argument_list|,
+literal|"G' half"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"R'G'B'A"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"half"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"G'"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
 literal|"B half"
 argument_list|,
 name|babl_model
@@ -396,6 +660,30 @@ argument_list|,
 name|babl_component
 argument_list|(
 literal|"B"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
+literal|"B' half"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"R'G'B'A"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"half"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"B'"
 argument_list|)
 argument_list|,
 name|NULL
@@ -453,6 +741,30 @@ name|babl_format_new
 argument_list|(
 literal|"name"
 argument_list|,
+literal|"R' float"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"R'G'B'A"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"float"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"R'"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
 literal|"G float"
 argument_list|,
 name|babl_model
@@ -477,6 +789,30 @@ name|babl_format_new
 argument_list|(
 literal|"name"
 argument_list|,
+literal|"G' float"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"R'G'B'A"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"float"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"G'"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
 literal|"B float"
 argument_list|,
 name|babl_model
@@ -492,6 +828,30 @@ argument_list|,
 name|babl_component
 argument_list|(
 literal|"B"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
+literal|"B' float"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"R'G'B'A"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"float"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"B'"
 argument_list|)
 argument_list|,
 name|NULL
@@ -552,7 +912,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b84b08f0108
+DECL|struct|__anon28ecfc650108
 block|{
 DECL|member|name
 specifier|const
@@ -573,7 +933,25 @@ index|[]
 init|=
 block|{
 block|{
+literal|"RGB u8"
+block|,
+name|N_
+argument_list|(
+literal|"RGB"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"R'G'B' u8"
+block|,
+name|N_
+argument_list|(
+literal|"RGB"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"RGB u16"
 block|,
 name|N_
 argument_list|(
@@ -600,7 +978,25 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"R'G'B' u32"
+block|,
+name|N_
+argument_list|(
+literal|"RGB"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"RGB half"
+block|,
+name|N_
+argument_list|(
+literal|"RGB"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"R'G'B' half"
 block|,
 name|N_
 argument_list|(
@@ -618,7 +1014,34 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"R'G'B' float"
+block|,
+name|N_
+argument_list|(
+literal|"RGB"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"RGBA u8"
+block|,
+name|N_
+argument_list|(
+literal|"RGB-alpha"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"R'G'B'A u8"
+block|,
+name|N_
+argument_list|(
+literal|"RGB-alpha"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"RGBA u16"
 block|,
 name|N_
 argument_list|(
@@ -645,7 +1068,25 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"R'G'B'A u32"
+block|,
+name|N_
+argument_list|(
+literal|"RGB-alpha"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"RGBA half"
+block|,
+name|N_
+argument_list|(
+literal|"RGB-alpha"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"R'G'B'A half"
 block|,
 name|N_
 argument_list|(
@@ -663,11 +1104,11 @@ argument_list|)
 block|}
 block|,
 block|{
-literal|"Y' u8"
+literal|"R'G'B'A float"
 block|,
 name|N_
 argument_list|(
-literal|"Grayscale"
+literal|"RGB-alpha"
 argument_list|)
 block|}
 block|,
@@ -681,7 +1122,7 @@ argument_list|)
 block|}
 block|,
 block|{
-literal|"Y' u16"
+literal|"Y' u8"
 block|,
 name|N_
 argument_list|(
@@ -699,7 +1140,25 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"Y' u16"
+block|,
+name|N_
+argument_list|(
+literal|"Grayscale"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"Y u32"
+block|,
+name|N_
+argument_list|(
+literal|"Grayscale"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"Y' u32"
 block|,
 name|N_
 argument_list|(
@@ -717,6 +1176,15 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"Y' half"
+block|,
+name|N_
+argument_list|(
+literal|"Grayscale"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"Y float"
 block|,
 name|N_
@@ -726,7 +1194,34 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"Y' float"
+block|,
+name|N_
+argument_list|(
+literal|"Grayscale"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"YA u8"
+block|,
+name|N_
+argument_list|(
+literal|"Grayscale-alpha"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"Y'A u8"
+block|,
+name|N_
+argument_list|(
+literal|"Grayscale-alpha"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"YA u16"
 block|,
 name|N_
 argument_list|(
@@ -753,7 +1248,25 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"Y'A u32"
+block|,
+name|N_
+argument_list|(
+literal|"Grayscale-alpha"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"YA half"
+block|,
+name|N_
+argument_list|(
+literal|"Grayscale-alpha"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"Y'A half"
 block|,
 name|N_
 argument_list|(
@@ -771,7 +1284,34 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"Y'A float"
+block|,
+name|N_
+argument_list|(
+literal|"Grayscale-alpha"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"R u8"
+block|,
+name|N_
+argument_list|(
+literal|"Red component"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"R' u8"
+block|,
+name|N_
+argument_list|(
+literal|"Red component"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"R u16"
 block|,
 name|N_
 argument_list|(
@@ -798,7 +1338,25 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"R' u32"
+block|,
+name|N_
+argument_list|(
+literal|"Red component"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"R half"
+block|,
+name|N_
+argument_list|(
+literal|"Red component"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"R' half"
 block|,
 name|N_
 argument_list|(
@@ -816,7 +1374,34 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"R' float"
+block|,
+name|N_
+argument_list|(
+literal|"Red component"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"G u8"
+block|,
+name|N_
+argument_list|(
+literal|"Green component"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"G' u8"
+block|,
+name|N_
+argument_list|(
+literal|"Green component"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"G u16"
 block|,
 name|N_
 argument_list|(
@@ -843,7 +1428,25 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"G' u32"
+block|,
+name|N_
+argument_list|(
+literal|"Green component"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"G half"
+block|,
+name|N_
+argument_list|(
+literal|"Green component"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"G' half"
 block|,
 name|N_
 argument_list|(
@@ -861,7 +1464,34 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"G' float"
+block|,
+name|N_
+argument_list|(
+literal|"Green component"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"B u8"
+block|,
+name|N_
+argument_list|(
+literal|"Blue component"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"B' u8"
+block|,
+name|N_
+argument_list|(
+literal|"Blue component"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"B u16"
 block|,
 name|N_
 argument_list|(
@@ -888,6 +1518,15 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"B' u32"
+block|,
+name|N_
+argument_list|(
+literal|"Blue component"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"B half"
 block|,
 name|N_
@@ -897,7 +1536,25 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"B' half"
+block|,
+name|N_
+argument_list|(
+literal|"Blue component"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"B float"
+block|,
+name|N_
+argument_list|(
+literal|"Blue component"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"B' float"
 block|,
 name|N_
 argument_list|(
@@ -1254,9 +1911,9 @@ block|}
 end_function
 
 begin_function
-name|GimpPrecision
-DECL|function|gimp_babl_format_get_precision (const Babl * format)
-name|gimp_babl_format_get_precision
+name|GimpComponentType
+DECL|function|gimp_babl_format_get_component_type (const Babl * format)
+name|gimp_babl_format_get_component_type
 parameter_list|(
 specifier|const
 name|Babl
@@ -1298,7 +1955,7 @@ literal|"u8"
 argument_list|)
 condition|)
 return|return
-name|GIMP_PRECISION_U8
+name|GIMP_COMPONENT_TYPE_U8
 return|;
 elseif|else
 if|if
@@ -1311,7 +1968,7 @@ literal|"u16"
 argument_list|)
 condition|)
 return|return
-name|GIMP_PRECISION_U16
+name|GIMP_COMPONENT_TYPE_U16
 return|;
 elseif|else
 if|if
@@ -1324,7 +1981,7 @@ literal|"u32"
 argument_list|)
 condition|)
 return|return
-name|GIMP_PRECISION_U32
+name|GIMP_COMPONENT_TYPE_U32
 return|;
 elseif|else
 if|if
@@ -1337,7 +1994,7 @@ literal|"half"
 argument_list|)
 condition|)
 return|return
-name|GIMP_PRECISION_HALF
+name|GIMP_COMPONENT_TYPE_HALF
 return|;
 elseif|else
 if|if
@@ -1350,8 +2007,192 @@ literal|"float"
 argument_list|)
 condition|)
 return|return
-name|GIMP_PRECISION_FLOAT
+name|GIMP_COMPONENT_TYPE_FLOAT
 return|;
+name|g_return_val_if_reached
+argument_list|(
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|GimpPrecision
+DECL|function|gimp_babl_format_get_precision (const Babl * format)
+name|gimp_babl_format_get_precision
+parameter_list|(
+specifier|const
+name|Babl
+modifier|*
+name|format
+parameter_list|)
+block|{
+specifier|const
+name|Babl
+modifier|*
+name|type
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|format
+operator|!=
+name|NULL
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|type
+operator|=
+name|babl_format_get_type
+argument_list|(
+name|format
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp_babl_format_get_linear
+argument_list|(
+name|format
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|type
+operator|==
+name|babl_type
+argument_list|(
+literal|"u8"
+argument_list|)
+condition|)
+return|return
+name|GIMP_PRECISION_U8_LINEAR
+return|;
+elseif|else
+if|if
+condition|(
+name|type
+operator|==
+name|babl_type
+argument_list|(
+literal|"u16"
+argument_list|)
+condition|)
+return|return
+name|GIMP_PRECISION_U16_LINEAR
+return|;
+elseif|else
+if|if
+condition|(
+name|type
+operator|==
+name|babl_type
+argument_list|(
+literal|"u32"
+argument_list|)
+condition|)
+return|return
+name|GIMP_PRECISION_U32_LINEAR
+return|;
+elseif|else
+if|if
+condition|(
+name|type
+operator|==
+name|babl_type
+argument_list|(
+literal|"half"
+argument_list|)
+condition|)
+return|return
+name|GIMP_PRECISION_HALF_LINEAR
+return|;
+elseif|else
+if|if
+condition|(
+name|type
+operator|==
+name|babl_type
+argument_list|(
+literal|"float"
+argument_list|)
+condition|)
+return|return
+name|GIMP_PRECISION_FLOAT_LINEAR
+return|;
+block|}
+else|else
+block|{
+if|if
+condition|(
+name|type
+operator|==
+name|babl_type
+argument_list|(
+literal|"u8"
+argument_list|)
+condition|)
+return|return
+name|GIMP_PRECISION_U8_GAMMA
+return|;
+elseif|else
+if|if
+condition|(
+name|type
+operator|==
+name|babl_type
+argument_list|(
+literal|"u16"
+argument_list|)
+condition|)
+return|return
+name|GIMP_PRECISION_U16_GAMMA
+return|;
+elseif|else
+if|if
+condition|(
+name|type
+operator|==
+name|babl_type
+argument_list|(
+literal|"u32"
+argument_list|)
+condition|)
+return|return
+name|GIMP_PRECISION_U32_GAMMA
+return|;
+elseif|else
+if|if
+condition|(
+name|type
+operator|==
+name|babl_type
+argument_list|(
+literal|"half"
+argument_list|)
+condition|)
+return|return
+name|GIMP_PRECISION_HALF_GAMMA
+return|;
+elseif|else
+if|if
+condition|(
+name|type
+operator|==
+name|babl_type
+argument_list|(
+literal|"float"
+argument_list|)
+condition|)
+return|return
+name|GIMP_PRECISION_FLOAT_GAMMA
+return|;
+block|}
 name|g_return_val_if_reached
 argument_list|(
 operator|-
@@ -1486,6 +2327,174 @@ block|}
 end_function
 
 begin_function
+name|GimpComponentType
+DECL|function|gimp_babl_component_type (GimpPrecision precision)
+name|gimp_babl_component_type
+parameter_list|(
+name|GimpPrecision
+name|precision
+parameter_list|)
+block|{
+switch|switch
+condition|(
+name|precision
+condition|)
+block|{
+case|case
+name|GIMP_PRECISION_U8_LINEAR
+case|:
+case|case
+name|GIMP_PRECISION_U8_GAMMA
+case|:
+return|return
+name|GIMP_COMPONENT_TYPE_U8
+return|;
+case|case
+name|GIMP_PRECISION_U16_LINEAR
+case|:
+case|case
+name|GIMP_PRECISION_U16_GAMMA
+case|:
+return|return
+name|GIMP_COMPONENT_TYPE_U16
+return|;
+case|case
+name|GIMP_PRECISION_U32_LINEAR
+case|:
+case|case
+name|GIMP_PRECISION_U32_GAMMA
+case|:
+return|return
+name|GIMP_COMPONENT_TYPE_U32
+return|;
+case|case
+name|GIMP_PRECISION_HALF_LINEAR
+case|:
+case|case
+name|GIMP_PRECISION_HALF_GAMMA
+case|:
+return|return
+name|GIMP_COMPONENT_TYPE_HALF
+return|;
+case|case
+name|GIMP_PRECISION_FLOAT_LINEAR
+case|:
+case|case
+name|GIMP_PRECISION_FLOAT_GAMMA
+case|:
+return|return
+name|GIMP_COMPONENT_TYPE_FLOAT
+return|;
+block|}
+name|g_return_val_if_reached
+argument_list|(
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|GimpPrecision
+DECL|function|gimp_babl_precision (GimpComponentType component,gboolean linear)
+name|gimp_babl_precision
+parameter_list|(
+name|GimpComponentType
+name|component
+parameter_list|,
+name|gboolean
+name|linear
+parameter_list|)
+block|{
+switch|switch
+condition|(
+name|component
+condition|)
+block|{
+case|case
+name|GIMP_COMPONENT_TYPE_U8
+case|:
+if|if
+condition|(
+name|linear
+condition|)
+return|return
+name|GIMP_PRECISION_U8_LINEAR
+return|;
+else|else
+return|return
+name|GIMP_PRECISION_U8_GAMMA
+return|;
+case|case
+name|GIMP_COMPONENT_TYPE_U16
+case|:
+if|if
+condition|(
+name|linear
+condition|)
+return|return
+name|GIMP_PRECISION_U16_LINEAR
+return|;
+else|else
+return|return
+name|GIMP_PRECISION_U16_GAMMA
+return|;
+case|case
+name|GIMP_COMPONENT_TYPE_U32
+case|:
+if|if
+condition|(
+name|linear
+condition|)
+return|return
+name|GIMP_PRECISION_U32_LINEAR
+return|;
+else|else
+return|return
+name|GIMP_PRECISION_U32_GAMMA
+return|;
+case|case
+name|GIMP_COMPONENT_TYPE_HALF
+case|:
+if|if
+condition|(
+name|linear
+condition|)
+return|return
+name|GIMP_PRECISION_HALF_LINEAR
+return|;
+else|else
+return|return
+name|GIMP_PRECISION_HALF_GAMMA
+return|;
+case|case
+name|GIMP_COMPONENT_TYPE_FLOAT
+case|:
+if|if
+condition|(
+name|linear
+condition|)
+return|return
+name|GIMP_PRECISION_FLOAT_LINEAR
+return|;
+else|else
+return|return
+name|GIMP_PRECISION_FLOAT_GAMMA
+return|;
+default|default:
+break|break;
+block|}
+name|g_return_val_if_reached
+argument_list|(
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 specifier|const
 name|Babl
 modifier|*
@@ -1516,7 +2525,27 @@ name|precision
 condition|)
 block|{
 case|case
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_LINEAR
+case|:
+if|if
+condition|(
+name|with_alpha
+condition|)
+return|return
+name|babl_format
+argument_list|(
+literal|"RGBA u8"
+argument_list|)
+return|;
+else|else
+return|return
+name|babl_format
+argument_list|(
+literal|"RGB u8"
+argument_list|)
+return|;
+case|case
+name|GIMP_PRECISION_U8_GAMMA
 case|:
 if|if
 condition|(
@@ -1536,7 +2565,27 @@ literal|"R'G'B' u8"
 argument_list|)
 return|;
 case|case
-name|GIMP_PRECISION_U16
+name|GIMP_PRECISION_U16_LINEAR
+case|:
+if|if
+condition|(
+name|with_alpha
+condition|)
+return|return
+name|babl_format
+argument_list|(
+literal|"RGBA u16"
+argument_list|)
+return|;
+else|else
+return|return
+name|babl_format
+argument_list|(
+literal|"RGB u16"
+argument_list|)
+return|;
+case|case
+name|GIMP_PRECISION_U16_GAMMA
 case|:
 if|if
 condition|(
@@ -1556,7 +2605,7 @@ literal|"R'G'B' u16"
 argument_list|)
 return|;
 case|case
-name|GIMP_PRECISION_U32
+name|GIMP_PRECISION_U32_LINEAR
 case|:
 if|if
 condition|(
@@ -1576,7 +2625,27 @@ literal|"RGB u32"
 argument_list|)
 return|;
 case|case
-name|GIMP_PRECISION_HALF
+name|GIMP_PRECISION_U32_GAMMA
+case|:
+if|if
+condition|(
+name|with_alpha
+condition|)
+return|return
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u32"
+argument_list|)
+return|;
+else|else
+return|return
+name|babl_format
+argument_list|(
+literal|"R'G'B' u32"
+argument_list|)
+return|;
+case|case
+name|GIMP_PRECISION_HALF_LINEAR
 case|:
 if|if
 condition|(
@@ -1596,7 +2665,27 @@ literal|"RGB half"
 argument_list|)
 return|;
 case|case
-name|GIMP_PRECISION_FLOAT
+name|GIMP_PRECISION_HALF_GAMMA
+case|:
+if|if
+condition|(
+name|with_alpha
+condition|)
+return|return
+name|babl_format
+argument_list|(
+literal|"R'G'B'A half"
+argument_list|)
+return|;
+else|else
+return|return
+name|babl_format
+argument_list|(
+literal|"R'G'B' half"
+argument_list|)
+return|;
+case|case
+name|GIMP_PRECISION_FLOAT_LINEAR
 case|:
 if|if
 condition|(
@@ -1615,6 +2704,26 @@ argument_list|(
 literal|"RGB float"
 argument_list|)
 return|;
+case|case
+name|GIMP_PRECISION_FLOAT_GAMMA
+case|:
+if|if
+condition|(
+name|with_alpha
+condition|)
+return|return
+name|babl_format
+argument_list|(
+literal|"R'G'B'A float"
+argument_list|)
+return|;
+else|else
+return|return
+name|babl_format
+argument_list|(
+literal|"R'G'B' float"
+argument_list|)
+return|;
 default|default:
 break|break;
 block|}
@@ -1628,7 +2737,27 @@ name|precision
 condition|)
 block|{
 case|case
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_LINEAR
+case|:
+if|if
+condition|(
+name|with_alpha
+condition|)
+return|return
+name|babl_format
+argument_list|(
+literal|"YA u8"
+argument_list|)
+return|;
+else|else
+return|return
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
+return|;
+case|case
+name|GIMP_PRECISION_U8_GAMMA
 case|:
 if|if
 condition|(
@@ -1648,7 +2777,27 @@ literal|"Y' u8"
 argument_list|)
 return|;
 case|case
-name|GIMP_PRECISION_U16
+name|GIMP_PRECISION_U16_LINEAR
+case|:
+if|if
+condition|(
+name|with_alpha
+condition|)
+return|return
+name|babl_format
+argument_list|(
+literal|"YA u16"
+argument_list|)
+return|;
+else|else
+return|return
+name|babl_format
+argument_list|(
+literal|"Y u16"
+argument_list|)
+return|;
+case|case
+name|GIMP_PRECISION_U16_GAMMA
 case|:
 if|if
 condition|(
@@ -1668,7 +2817,7 @@ literal|"Y' u16"
 argument_list|)
 return|;
 case|case
-name|GIMP_PRECISION_U32
+name|GIMP_PRECISION_U32_LINEAR
 case|:
 if|if
 condition|(
@@ -1688,7 +2837,27 @@ literal|"Y u32"
 argument_list|)
 return|;
 case|case
-name|GIMP_PRECISION_HALF
+name|GIMP_PRECISION_U32_GAMMA
+case|:
+if|if
+condition|(
+name|with_alpha
+condition|)
+return|return
+name|babl_format
+argument_list|(
+literal|"Y'A u32"
+argument_list|)
+return|;
+else|else
+return|return
+name|babl_format
+argument_list|(
+literal|"Y' u32"
+argument_list|)
+return|;
+case|case
+name|GIMP_PRECISION_HALF_LINEAR
 case|:
 if|if
 condition|(
@@ -1708,7 +2877,27 @@ literal|"Y half"
 argument_list|)
 return|;
 case|case
-name|GIMP_PRECISION_FLOAT
+name|GIMP_PRECISION_HALF_GAMMA
+case|:
+if|if
+condition|(
+name|with_alpha
+condition|)
+return|return
+name|babl_format
+argument_list|(
+literal|"Y'A half"
+argument_list|)
+return|;
+else|else
+return|return
+name|babl_format
+argument_list|(
+literal|"Y' half"
+argument_list|)
+return|;
+case|case
+name|GIMP_PRECISION_FLOAT_LINEAR
 case|:
 if|if
 condition|(
@@ -1725,6 +2914,26 @@ return|return
 name|babl_format
 argument_list|(
 literal|"Y float"
+argument_list|)
+return|;
+case|case
+name|GIMP_PRECISION_FLOAT_GAMMA
+case|:
+if|if
+condition|(
+name|with_alpha
+condition|)
+return|return
+name|babl_format
+argument_list|(
+literal|"Y'A float"
+argument_list|)
+return|;
+else|else
+return|return
+name|babl_format
+argument_list|(
+literal|"Y' float"
 argument_list|)
 return|;
 default|default:
@@ -1758,11 +2967,14 @@ parameter_list|)
 block|{
 switch|switch
 condition|(
+name|gimp_babl_component_type
+argument_list|(
 name|precision
+argument_list|)
 condition|)
 block|{
 case|case
-name|GIMP_PRECISION_U8
+name|GIMP_COMPONENT_TYPE_U8
 case|:
 return|return
 name|babl_format
@@ -1771,7 +2983,7 @@ literal|"Y u8"
 argument_list|)
 return|;
 case|case
-name|GIMP_PRECISION_U16
+name|GIMP_COMPONENT_TYPE_U16
 case|:
 return|return
 name|babl_format
@@ -1780,7 +2992,7 @@ literal|"Y u16"
 argument_list|)
 return|;
 case|case
-name|GIMP_PRECISION_U32
+name|GIMP_COMPONENT_TYPE_U32
 case|:
 return|return
 name|babl_format
@@ -1789,7 +3001,7 @@ literal|"Y u32"
 argument_list|)
 return|;
 case|case
-name|GIMP_PRECISION_HALF
+name|GIMP_COMPONENT_TYPE_HALF
 case|:
 return|return
 name|babl_format
@@ -1798,7 +3010,7 @@ literal|"Y half"
 argument_list|)
 return|;
 case|case
-name|GIMP_PRECISION_FLOAT
+name|GIMP_COMPONENT_TYPE_FLOAT
 case|:
 return|return
 name|babl_format
@@ -1846,7 +3058,55 @@ name|precision
 condition|)
 block|{
 case|case
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_LINEAR
+case|:
+switch|switch
+condition|(
+name|index
+condition|)
+block|{
+case|case
+literal|0
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"R u8"
+argument_list|)
+return|;
+case|case
+literal|1
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"G u8"
+argument_list|)
+return|;
+case|case
+literal|2
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"B u8"
+argument_list|)
+return|;
+case|case
+literal|3
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"A u8"
+argument_list|)
+return|;
+default|default:
+break|break;
+block|}
+break|break;
+case|case
+name|GIMP_PRECISION_U8_GAMMA
 case|:
 switch|switch
 condition|(
@@ -1894,7 +3154,55 @@ break|break;
 block|}
 break|break;
 case|case
-name|GIMP_PRECISION_U16
+name|GIMP_PRECISION_U16_LINEAR
+case|:
+switch|switch
+condition|(
+name|index
+condition|)
+block|{
+case|case
+literal|0
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"R u16"
+argument_list|)
+return|;
+case|case
+literal|1
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"G u16"
+argument_list|)
+return|;
+case|case
+literal|2
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"B u16"
+argument_list|)
+return|;
+case|case
+literal|3
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"A u16"
+argument_list|)
+return|;
+default|default:
+break|break;
+block|}
+break|break;
+case|case
+name|GIMP_PRECISION_U16_GAMMA
 case|:
 switch|switch
 condition|(
@@ -1942,7 +3250,7 @@ break|break;
 block|}
 break|break;
 case|case
-name|GIMP_PRECISION_U32
+name|GIMP_PRECISION_U32_LINEAR
 case|:
 switch|switch
 condition|(
@@ -1990,7 +3298,55 @@ break|break;
 block|}
 break|break;
 case|case
-name|GIMP_PRECISION_HALF
+name|GIMP_PRECISION_U32_GAMMA
+case|:
+switch|switch
+condition|(
+name|index
+condition|)
+block|{
+case|case
+literal|0
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"R' u32"
+argument_list|)
+return|;
+case|case
+literal|1
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"G' u32"
+argument_list|)
+return|;
+case|case
+literal|2
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"B' u32"
+argument_list|)
+return|;
+case|case
+literal|3
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"A u32"
+argument_list|)
+return|;
+default|default:
+break|break;
+block|}
+break|break;
+case|case
+name|GIMP_PRECISION_HALF_LINEAR
 case|:
 switch|switch
 condition|(
@@ -2038,7 +3394,55 @@ break|break;
 block|}
 break|break;
 case|case
-name|GIMP_PRECISION_FLOAT
+name|GIMP_PRECISION_HALF_GAMMA
+case|:
+switch|switch
+condition|(
+name|index
+condition|)
+block|{
+case|case
+literal|0
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"R' half"
+argument_list|)
+return|;
+case|case
+literal|1
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"G' half"
+argument_list|)
+return|;
+case|case
+literal|2
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"B' half"
+argument_list|)
+return|;
+case|case
+literal|3
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"A half"
+argument_list|)
+return|;
+default|default:
+break|break;
+block|}
+break|break;
+case|case
+name|GIMP_PRECISION_FLOAT_LINEAR
 case|:
 switch|switch
 condition|(
@@ -2085,6 +3489,54 @@ default|default:
 break|break;
 block|}
 break|break;
+case|case
+name|GIMP_PRECISION_FLOAT_GAMMA
+case|:
+switch|switch
+condition|(
+name|index
+condition|)
+block|{
+case|case
+literal|0
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"R' float"
+argument_list|)
+return|;
+case|case
+literal|1
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"G' float"
+argument_list|)
+return|;
+case|case
+literal|2
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"B' float"
+argument_list|)
+return|;
+case|case
+literal|3
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"A float"
+argument_list|)
+return|;
+default|default:
+break|break;
+block|}
+break|break;
 default|default:
 break|break;
 block|}
@@ -2098,7 +3550,37 @@ name|precision
 condition|)
 block|{
 case|case
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_LINEAR
+case|:
+switch|switch
+condition|(
+name|index
+condition|)
+block|{
+case|case
+literal|0
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
+return|;
+case|case
+literal|1
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"A u8"
+argument_list|)
+return|;
+default|default:
+break|break;
+block|}
+break|break;
+case|case
+name|GIMP_PRECISION_U8_GAMMA
 case|:
 switch|switch
 condition|(
@@ -2128,7 +3610,37 @@ break|break;
 block|}
 break|break;
 case|case
-name|GIMP_PRECISION_U16
+name|GIMP_PRECISION_U16_LINEAR
+case|:
+switch|switch
+condition|(
+name|index
+condition|)
+block|{
+case|case
+literal|0
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"Y u16"
+argument_list|)
+return|;
+case|case
+literal|1
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"A u16"
+argument_list|)
+return|;
+default|default:
+break|break;
+block|}
+break|break;
+case|case
+name|GIMP_PRECISION_U16_GAMMA
 case|:
 switch|switch
 condition|(
@@ -2158,7 +3670,7 @@ break|break;
 block|}
 break|break;
 case|case
-name|GIMP_PRECISION_U32
+name|GIMP_PRECISION_U32_LINEAR
 case|:
 switch|switch
 condition|(
@@ -2188,7 +3700,37 @@ break|break;
 block|}
 break|break;
 case|case
-name|GIMP_PRECISION_HALF
+name|GIMP_PRECISION_U32_GAMMA
+case|:
+switch|switch
+condition|(
+name|index
+condition|)
+block|{
+case|case
+literal|0
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"Y' u32"
+argument_list|)
+return|;
+case|case
+literal|1
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"A u32"
+argument_list|)
+return|;
+default|default:
+break|break;
+block|}
+break|break;
+case|case
+name|GIMP_PRECISION_HALF_LINEAR
 case|:
 switch|switch
 condition|(
@@ -2218,7 +3760,37 @@ break|break;
 block|}
 break|break;
 case|case
-name|GIMP_PRECISION_FLOAT
+name|GIMP_PRECISION_HALF_GAMMA
+case|:
+switch|switch
+condition|(
+name|index
+condition|)
+block|{
+case|case
+literal|0
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"Y' half"
+argument_list|)
+return|;
+case|case
+literal|1
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"A half"
+argument_list|)
+return|;
+default|default:
+break|break;
+block|}
+break|break;
+case|case
+name|GIMP_PRECISION_FLOAT_LINEAR
 case|:
 switch|switch
 condition|(
@@ -2232,6 +3804,36 @@ return|return
 name|babl_format
 argument_list|(
 literal|"Y float"
+argument_list|)
+return|;
+case|case
+literal|1
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"A float"
+argument_list|)
+return|;
+default|default:
+break|break;
+block|}
+break|break;
+case|case
+name|GIMP_PRECISION_FLOAT_GAMMA
+case|:
+switch|switch
+condition|(
+name|index
+condition|)
+block|{
+case|case
+literal|0
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"Y' float"
 argument_list|)
 return|;
 case|case
@@ -2394,14 +3996,14 @@ argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
-name|gimp_babl_format_get_precision
+name|gimp_babl_format_get_component_type
 argument_list|(
 name|format
 argument_list|)
 condition|)
 block|{
 case|case
-name|GIMP_PRECISION_U8
+name|GIMP_COMPONENT_TYPE_U8
 case|:
 block|{
 name|guchar
@@ -2444,7 +4046,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GIMP_PRECISION_U16
+name|GIMP_COMPONENT_TYPE_U16
 case|:
 block|{
 name|guint16
@@ -2487,7 +4089,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GIMP_PRECISION_U32
+name|GIMP_COMPONENT_TYPE_U32
 case|:
 block|{
 name|guint32
@@ -2530,14 +4132,31 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GIMP_PRECISION_HALF
+name|GIMP_COMPONENT_TYPE_HALF
 case|:
 block|{
+name|GimpPrecision
+name|p
+decl_stmt|;
 specifier|const
 name|Babl
 modifier|*
 name|f
-init|=
+decl_stmt|;
+name|p
+operator|=
+name|gimp_babl_precision
+argument_list|(
+name|GIMP_COMPONENT_TYPE_FLOAT
+argument_list|,
+name|gimp_babl_format_get_linear
+argument_list|(
+name|format
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|f
+operator|=
 name|gimp_babl_format
 argument_list|(
 name|gimp_babl_format_get_base_type
@@ -2545,14 +4164,14 @@ argument_list|(
 name|format
 argument_list|)
 argument_list|,
-name|GIMP_PRECISION_FLOAT
+name|p
 argument_list|,
 name|babl_format_has_alpha
 argument_list|(
 name|format
 argument_list|)
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|babl_process
 argument_list|(
 name|babl_fish
@@ -2576,7 +4195,7 @@ expr_stmt|;
 block|}
 comment|/* fall through */
 case|case
-name|GIMP_PRECISION_FLOAT
+name|GIMP_COMPONENT_TYPE_FLOAT
 case|:
 block|{
 name|gfloat

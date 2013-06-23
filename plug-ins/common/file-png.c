@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ea610e0108
+DECL|struct|__anon2c6576b10108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ea610e0208
+DECL|struct|__anon2c6576b10208
 block|{
 DECL|member|run
 name|gboolean
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ea610e0308
+DECL|struct|__anon2c6576b10308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -2564,12 +2564,12 @@ literal|16
 condition|)
 name|image_precision
 operator|=
-name|GIMP_PRECISION_U16
+name|GIMP_PRECISION_U16_GAMMA
 expr_stmt|;
 else|else
 name|image_precision
 operator|=
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 expr_stmt|;
 if|if
 condition|(
@@ -2793,7 +2793,7 @@ if|if
 condition|(
 name|image_precision
 operator|==
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 condition|)
 name|file_format
 operator|=
@@ -2827,7 +2827,7 @@ if|if
 condition|(
 name|image_precision
 operator|==
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 condition|)
 name|file_format
 operator|=
@@ -2861,7 +2861,7 @@ if|if
 condition|(
 name|image_precision
 operator|==
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 condition|)
 name|file_format
 operator|=
@@ -2895,7 +2895,7 @@ if|if
 condition|(
 name|image_precision
 operator|==
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 condition|)
 name|file_format
 operator|=
@@ -4778,7 +4778,7 @@ argument_list|(
 name|image_ID
 argument_list|)
 operator|==
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 condition|)
 name|bit_depth
 operator|=

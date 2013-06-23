@@ -147,7 +147,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b656b300108
+DECL|struct|__anon27864eb30108
 block|{
 DECL|member|compression
 name|gint
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b656b300208
+DECL|struct|__anon27864eb30208
 block|{
 DECL|member|ID
 name|gint32
@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b656b300308
+DECL|struct|__anon27864eb30308
 block|{
 DECL|member|o_pages
 name|gint
@@ -2899,9 +2899,6 @@ name|image
 operator|)
 condition|)
 block|{
-if|if
-condition|(
-operator|(
 name|image
 operator|=
 name|gimp_image_new_with_precision
@@ -2916,13 +2913,15 @@ name|bps
 operator|<=
 literal|8
 condition|?
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 else|:
-name|GIMP_PRECISION_U16
+name|GIMP_PRECISION_U16_GAMMA
 argument_list|)
-operator|)
-operator|==
-operator|-
+expr_stmt|;
+if|if
+condition|(
+name|image
+operator|<
 literal|1
 condition|)
 block|{

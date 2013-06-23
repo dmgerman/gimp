@@ -778,7 +778,7 @@ name|output_height
 argument_list|,
 name|image_type
 argument_list|,
-name|GIMP_PRECISION_U8
+name|GIMP_PRECISION_U8_GAMMA
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_disable
@@ -2106,7 +2106,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28daf8850108
+DECL|struct|__anon274475730108
 block|{
 DECL|member|pub
 name|struct
