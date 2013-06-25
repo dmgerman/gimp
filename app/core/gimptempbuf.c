@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl-utils.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib/gstdio.h>
 end_include
 
@@ -156,10 +162,8 @@ name|temp
 operator|->
 name|data
 operator|=
-name|g_new
+name|gegl_malloc
 argument_list|(
-name|guchar
-argument_list|,
 name|width
 operator|*
 name|height
@@ -319,7 +323,7 @@ name|buf
 operator|->
 name|data
 condition|)
-name|g_free
+name|gegl_free
 argument_list|(
 name|buf
 operator|->
