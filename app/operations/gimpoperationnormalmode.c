@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpbase/gimpbase.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"operations-types.h"
 end_include
 
@@ -26,6 +32,15 @@ include|#
 directive|include
 file|"gimpoperationnormalmode.h"
 end_include
+
+begin_decl_stmt
+DECL|variable|gimp_operation_normal_mode_process_pixels
+name|GimpLayerModeFunction
+name|gimp_operation_normal_mode_process_pixels
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 specifier|static
@@ -207,6 +222,44 @@ name|process
 operator|=
 name|gimp_operation_normal_mode_process
 expr_stmt|;
+name|gimp_operation_normal_mode_process_pixels
+operator|=
+name|gimp_operation_normal_mode_process_pixels_core
+expr_stmt|;
+if|#
+directive|if
+name|COMPILE_SSE2_INTRINISICS
+if|if
+condition|(
+name|gimp_cpu_accel_get_support
+argument_list|()
+operator|&
+name|GIMP_CPU_ACCEL_X86_SSE2
+condition|)
+name|gimp_operation_normal_mode_process_pixels
+operator|=
+name|gimp_operation_normal_mode_process_pixels_sse2
+expr_stmt|;
+endif|#
+directive|endif
+comment|/* COMPILE_SSE2_INTRINISICS */
+if|#
+directive|if
+name|COMPILE_SSE4_1_INTRINISICS
+if|if
+condition|(
+name|gimp_cpu_accel_get_support
+argument_list|()
+operator|&
+name|GIMP_CPU_ACCEL_X86_SSE4_1
+condition|)
+name|gimp_operation_normal_mode_process_pixels
+operator|=
+name|gimp_operation_normal_mode_process_pixels_sse4
+expr_stmt|;
+endif|#
+directive|endif
+comment|/* COMPILE_SSE4_1_INTRINISICS */
 block|}
 end_function
 
@@ -512,8 +565,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_operation_normal_mode_process_pixels (gfloat * in,gfloat * aux,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level)
-name|gimp_operation_normal_mode_process_pixels
+DECL|function|gimp_operation_normal_mode_process_pixels_core (gfloat * in,gfloat * aux,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level)
+name|gimp_operation_normal_mode_process_pixels_core
 parameter_list|(
 name|gfloat
 modifier|*
