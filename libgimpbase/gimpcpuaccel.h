@@ -50,7 +50,7 @@ end_macro
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1642b70103
+DECL|enum|__anon2b77899d0103
 block|{
 DECL|enumerator|GIMP_CPU_ACCEL_NONE
 name|GIMP_CPU_ACCEL_NONE
@@ -87,6 +87,26 @@ DECL|enumerator|GIMP_CPU_ACCEL_X86_SSE3
 name|GIMP_CPU_ACCEL_X86_SSE3
 init|=
 literal|0x02000000
+block|,
+DECL|enumerator|GIMP_CPU_ACCEL_X86_SSSE3
+name|GIMP_CPU_ACCEL_X86_SSSE3
+init|=
+literal|0x01000000
+block|,
+DECL|enumerator|GIMP_CPU_ACCEL_X86_SSE4_1
+name|GIMP_CPU_ACCEL_X86_SSE4_1
+init|=
+literal|0x00800000
+block|,
+DECL|enumerator|GIMP_CPU_ACCEL_X86_SSE4_2
+name|GIMP_CPU_ACCEL_X86_SSE4_2
+init|=
+literal|0x00400000
+block|,
+DECL|enumerator|GIMP_CPU_ACCEL_X86_AVX
+name|GIMP_CPU_ACCEL_X86_AVX
+init|=
+literal|0x00200000
 block|,
 comment|/* powerpc accelerations */
 DECL|enumerator|GIMP_CPU_ACCEL_PPC_ALTIVEC
