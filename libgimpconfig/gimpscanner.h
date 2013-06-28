@@ -191,6 +191,21 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_scanner_parse_int64
+parameter_list|(
+name|GScanner
+modifier|*
+name|scanner
+parameter_list|,
+name|gint64
+modifier|*
+name|dest
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_scanner_parse_float
 parameter_list|(
 name|GScanner
