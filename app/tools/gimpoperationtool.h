@@ -138,6 +138,11 @@ name|GtkWidget
 modifier|*
 name|options_table
 decl_stmt|;
+DECL|member|aux_input_combo
+name|GtkWidget
+modifier|*
+name|aux_input_combo
+decl_stmt|;
 block|}
 struct|;
 end_struct
