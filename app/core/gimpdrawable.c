@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295aa7f40103
+DECL|enum|__anon2b7f3f290103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -213,7 +213,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon295aa7f40203
+DECL|enum|__anon2b7f3f290203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3352,12 +3352,6 @@ modifier|*
 name|drawable
 parameter_list|)
 block|{
-if|#
-directive|if
-literal|0
-block|gegl_buffer_flush (drawable->private->buffer);   gimp_gegl_buffer_refetch_tiles (drawable->private->buffer);
-endif|#
-directive|endif
 return|return
 name|drawable
 operator|->
