@@ -127,6 +127,11 @@ name|GimpObject
 modifier|*
 name|config
 decl_stmt|;
+DECL|member|aux_input
+name|GeglNode
+modifier|*
+name|aux_input
+decl_stmt|;
 comment|/* dialog */
 DECL|member|options_box
 name|GtkWidget
