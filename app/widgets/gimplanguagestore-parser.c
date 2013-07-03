@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c6e57c0103
+DECL|enum|__anon29db33a30103
 block|{
 DECL|enumerator|ISO_CODES_START
 name|ISO_CODES_START
@@ -82,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c6e57c0208
+DECL|struct|__anon29db33a30208
 block|{
 DECL|member|state
 name|IsoCodesParserState
@@ -649,16 +649,6 @@ name|gchar
 modifier|*
 name|semicolon
 decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|current_lang
-init|=
-name|g_getenv
-argument_list|(
-literal|"LANGUAGE"
-argument_list|)
-decl_stmt|;
 comment|/* English does not need localization. */
 if|if
 condition|(
@@ -672,6 +662,18 @@ operator|!=
 literal|0
 condition|)
 block|{
+name|gchar
+modifier|*
+name|current_lang
+init|=
+name|g_strdup
+argument_list|(
+name|g_getenv
+argument_list|(
+literal|"LANGUAGE"
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|gchar
 modifier|*
 name|temp_lang
@@ -746,6 +748,11 @@ argument_list|(
 name|LC_ALL
 argument_list|,
 literal|""
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|current_lang
 argument_list|)
 expr_stmt|;
 name|g_free
