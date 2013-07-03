@@ -368,11 +368,9 @@ argument_list|(
 name|display
 argument_list|)
 expr_stmt|;
-comment|/* Check for active image so we don't close the last display. */
+comment|/* Check for the image so we don't close the last display. */
 if|if
 condition|(
-name|shell
-operator|&&
 name|image
 condition|)
 name|gimp_display_shell_close
