@@ -360,7 +360,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1598e20103
+DECL|enum|__anon27d9352c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -388,7 +388,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1598e20203
+DECL|enum|__anon27d9352c0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5441,6 +5441,10 @@ name|GimpContext
 modifier|*
 name|user_context
 decl_stmt|;
+name|GimpImageWindow
+modifier|*
+name|window
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
@@ -5469,6 +5473,13 @@ name|display
 argument_list|)
 operator|==
 name|NULL
+argument_list|)
+expr_stmt|;
+name|window
+operator|=
+name|gimp_display_shell_get_window
+argument_list|(
+name|shell
 argument_list|)
 expr_stmt|;
 if|if
@@ -5516,6 +5527,11 @@ expr_stmt|;
 name|gimp_display_shell_appearance_update
 argument_list|(
 name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_image_window_update_tabs
+argument_list|(
+name|window
 argument_list|)
 expr_stmt|;
 if|#
@@ -5665,6 +5681,10 @@ name|gdouble
 name|scale
 parameter_list|)
 block|{
+name|GimpImageWindow
+modifier|*
+name|window
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
@@ -5689,6 +5709,13 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|image
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|window
+operator|=
+name|gimp_display_shell_get_window
+argument_list|(
+name|shell
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_set_unit
@@ -5728,6 +5755,11 @@ expr_stmt|;
 name|gimp_display_shell_appearance_update
 argument_list|(
 name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_image_window_update_tabs
+argument_list|(
+name|window
 argument_list|)
 expr_stmt|;
 if|#

@@ -429,6 +429,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_image_window_update_tabs
+parameter_list|(
+name|GimpImageWindow
+modifier|*
+name|window
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
