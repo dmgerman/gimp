@@ -230,7 +230,7 @@ directive|endif
 end_endif
 
 begin_struct
-DECL|struct|__anon29a5cbb90108
+DECL|struct|__anon2bdc71b50108
 specifier|static
 struct|struct
 block|{
@@ -2023,6 +2023,9 @@ name|gboolean
 name|forward_slashes
 parameter_list|)
 block|{
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
 specifier|const
 name|gchar
 modifier|*
@@ -2061,6 +2064,30 @@ argument_list|,
 name|NULL
 argument_list|)
 return|;
+else|#
+directive|else
+return|return
+name|g_build_path
+argument_list|(
+name|forward_slashes
+condition|?
+literal|"/"
+else|:
+name|G_DIR_SEPARATOR_S
+argument_list|,
+name|LIBDIR
+argument_list|,
+literal|"gimp"
+argument_list|,
+name|GIMP_PLUGIN_VERSION
+argument_list|,
+literal|"plug-ins"
+argument_list|,
+name|NULL
+argument_list|)
+return|;
+endif|#
+directive|endif
 block|}
 end_function
 
