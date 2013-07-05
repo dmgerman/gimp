@@ -4142,9 +4142,9 @@ name|procedure
 argument_list|,
 literal|"plug-in-autocrop-layer"
 argument_list|,
-literal|"Remove empty borders from the layer"
+literal|"Crop the active layer based on empty borders of the input drawable"
 argument_list|,
-literal|"Remove empty borders from the layer."
+literal|"Crop the active layer of the input \"image\" based on empty borders of the input \"drawable\". \n\nThe input drawable serves as a base for detecting cropping extents (transparency or background color), and is not necessarily the cropped layer (the current active layer)."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
