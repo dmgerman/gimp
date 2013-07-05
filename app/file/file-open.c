@@ -2343,6 +2343,10 @@ decl_stmt|;
 name|GimpPDBStatusType
 name|status
 decl_stmt|;
+if|if
+condition|(
+name|display
+condition|)
 name|g_object_add_weak_pointer
 argument_list|(
 name|G_OBJECT
