@@ -311,18 +311,11 @@ name|label
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s [%s]"
+literal|"%s"
 argument_list|,
 name|_
 argument_list|(
 literal|"System Language"
-argument_list|)
-argument_list|,
-name|setlocale
-argument_list|(
-name|LC_ALL
-argument_list|,
-name|NULL
 argument_list|)
 argument_list|)
 expr_stmt|;
