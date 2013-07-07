@@ -293,7 +293,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c34f4430103
+DECL|enum|__anon2bcf83240103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -406,7 +406,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c34f4430208
+DECL|struct|__anon2bcf83240208
 block|{
 DECL|member|window
 name|GimpImageWindow
@@ -4220,7 +4220,7 @@ name|gimp
 operator|->
 name|image_windows
 operator|=
-name|g_list_prepend
+name|g_list_append
 argument_list|(
 name|gimp
 operator|->
