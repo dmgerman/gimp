@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292025c10103
+DECL|enum|__anon27e9113c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1443,6 +1443,21 @@ modifier|*
 name|source_image_window
 parameter_list|)
 block|{
+name|GimpDisplayShell
+modifier|*
+name|active_shell
+init|=
+name|gimp_image_window_get_active_shell
+argument_list|(
+name|source_image_window
+argument_list|)
+decl_stmt|;
+name|GimpImageWindow
+modifier|*
+name|active_window
+init|=
+name|NULL
+decl_stmt|;
 comment|/* The last display shell remains in its window */
 while|while
 condition|(
@@ -1491,6 +1506,16 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|shell
+operator|==
+name|active_shell
+condition|)
+name|active_window
+operator|=
+name|new_image_window
+expr_stmt|;
 name|g_object_ref
 argument_list|(
 name|shell
@@ -1538,6 +1563,26 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* If none of the shells were active, I assume the first one is. */
+if|if
+condition|(
+name|active_window
+operator|==
+name|NULL
+condition|)
+name|active_window
+operator|=
+name|source_image_window
+expr_stmt|;
+comment|/* The active tab must stay at the top of the windows stack. */
+name|gtk_window_present
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|active_window
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1586,6 +1631,27 @@ modifier|*
 name|uber_image_window
 init|=
 name|NULL
+decl_stmt|;
+name|GimpDisplay
+modifier|*
+name|active_display
+init|=
+name|gimp_context_get_display
+argument_list|(
+name|gimp_get_user_context
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|active_shell
+init|=
+name|gimp_display_get_shell
+argument_list|(
+name|active_display
+argument_list|)
 decl_stmt|;
 comment|/* Get and setup the window to put everything in */
 name|uber_image_window
@@ -1647,6 +1713,14 @@ argument_list|,
 name|image_window
 argument_list|,
 name|uber_image_window
+argument_list|)
+expr_stmt|;
+comment|/* Ensure the context shell remains active after mode switch. */
+name|gimp_image_window_set_active_shell
+argument_list|(
+name|uber_image_window
+argument_list|,
+name|active_shell
 argument_list|)
 expr_stmt|;
 comment|/* Destroy the window */
