@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2936a5220108
+DECL|struct|__anon27942c0b0108
 block|{
 comment|/* the babl_component names of the channels */
 DECL|member|babl_name
@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2936a5220208
+DECL|struct|__anon27942c0b0208
 block|{
 DECL|member|type
 specifier|const
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2936a5220308
+DECL|struct|__anon27942c0b0308
 block|{
 DECL|member|extract_type
 name|gchar
@@ -1178,7 +1178,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"YCbCr ITU R470 256"
+literal|"YCbCr_ITU_R470_256"
 argument_list|)
 block|,
 literal|"Y'CbCr"
@@ -1224,7 +1224,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"YCbCr ITU R709 256"
+literal|"YCbCr_ITU_R709_256"
 argument_list|)
 block|,
 literal|"Y'CbCr709"
