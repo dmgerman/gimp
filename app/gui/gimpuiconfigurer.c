@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e9113c0103
+DECL|enum|__anon29b329120103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1715,6 +1715,13 @@ argument_list|,
 name|uber_image_window
 argument_list|)
 expr_stmt|;
+comment|/* Destroy the window */
+name|gimp_image_window_destroy
+argument_list|(
+name|image_window
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* Ensure the context shell remains active after mode switch. */
 name|gimp_image_window_set_active_shell
 argument_list|(
@@ -1723,13 +1730,6 @@ argument_list|,
 name|active_shell
 argument_list|)
 expr_stmt|;
-comment|/* Destroy the window */
-name|gimp_image_window_destroy
-argument_list|(
-name|image_window
-argument_list|)
-expr_stmt|;
-block|}
 name|g_list_free
 argument_list|(
 name|windows
