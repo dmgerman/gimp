@@ -293,7 +293,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcf83240103
+DECL|enum|__anon2c79193e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -406,13 +406,8 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcf83240208
+DECL|struct|__anon2c79193e0208
 block|{
-DECL|member|window
-name|GimpImageWindow
-modifier|*
-name|window
-decl_stmt|;
 DECL|member|x
 name|gint
 name|x
@@ -6009,7 +6004,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_window_keep_canvas_pos:  * @window:  *  * Stores the coordinate of the current shell image origin in  * GtkWindow coordinates and on the first size-allocate sets the  * offsets in the shell so the image origin remains the same in  * GtkWindow coordinates.  *  * Exampe use case: The user hides docks attached to the side of image  * windows. You want the image to remain fixed on the screen though,  * so you use this function to keep the image fixed after the docks  * have been hidden.  **/
+comment|/**  * gimp_image_window_keep_canvas_pos:  * @window:  *  * Stores the coordinates of the current image canvas origin relatively  * its GtkWindow; and on the first size-allocate sets the offsets in  * the shell so that the image origin remains the same (even on another  * GtkWindow).  *  * Example use case: The user hides docks attached to the side of image  * windows. You want the image to remain fixed on the screen though,  * so you use this function to keep the image fixed after the docks  * have been hidden.  **/
 end_comment
 
 begin_function
@@ -6109,12 +6104,6 @@ argument_list|,
 literal|1
 argument_list|)
 decl_stmt|;
-name|data
-operator|->
-name|window
-operator|=
-name|window
-expr_stmt|;
 name|data
 operator|->
 name|x
@@ -6456,9 +6445,10 @@ name|GimpImageWindow
 modifier|*
 name|window
 init|=
-name|data
-operator|->
-name|window
+name|gimp_display_shell_get_window
+argument_list|(
+name|shell
+argument_list|)
 decl_stmt|;
 name|gint
 name|image_origin_shell_x
@@ -6472,6 +6462,8 @@ init|=
 operator|-
 literal|1
 decl_stmt|;
+if|if
+condition|(
 name|gtk_widget_translate_coordinates
 argument_list|(
 name|GTK_WIDGET
@@ -6500,8 +6492,9 @@ argument_list|,
 operator|&
 name|image_origin_shell_y
 argument_list|)
-expr_stmt|;
-comment|/* Note that the shell offset isn't the offset of the image into the    * shell, but the offset of the shell relative to the image,    * therefore we need to negate    */
+condition|)
+block|{
+comment|/* Note that the shell offset isn't the offset of the image into the        * shell, but the offset of the shell relative to the image,        * therefore we need to negate        */
 name|gimp_display_shell_scroll_set_offset
 argument_list|(
 name|shell
@@ -6513,6 +6506,7 @@ operator|-
 name|image_origin_shell_y
 argument_list|)
 expr_stmt|;
+block|}
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|shell
