@@ -117,7 +117,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2c18b90103
+DECL|enum|__anon2c5329ba0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -130,7 +130,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2c18b90203
+DECL|enum|__anon2c5329ba0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -202,7 +202,7 @@ name|gint
 name|freeze_count
 decl_stmt|;
 DECL|member|mtime
-name|time_t
+name|gint64
 name|mtime
 decl_stmt|;
 comment|/* Identifies the GimpData object across sessions. Used when there    * is not a filename associated with the object.    */
@@ -3510,14 +3510,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_data_set_mtime (GimpData * data,time_t mtime)
+DECL|function|gimp_data_set_mtime (GimpData * data,gint64 mtime)
 name|gimp_data_set_mtime
 parameter_list|(
 name|GimpData
 modifier|*
 name|data
 parameter_list|,
-name|time_t
+name|gint64
 name|mtime
 parameter_list|)
 block|{
@@ -3550,7 +3550,7 @@ block|}
 end_function
 
 begin_function
-name|time_t
+name|gint64
 DECL|function|gimp_data_get_mtime (GimpData * data)
 name|gimp_data_get_mtime
 parameter_list|(

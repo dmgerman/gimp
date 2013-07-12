@@ -19,23 +19,13 @@ end_define
 begin_include
 include|#
 directive|include
-file|<time.h>
-end_include
-
-begin_comment
-comment|/* time_t */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|"gimpviewable.h"
 end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7bb6ec0103
+DECL|enum|__anon28d94a7d0103
 block|{
 DECL|enumerator|GIMP_DATA_ERROR_OPEN
 name|GIMP_DATA_ERROR_OPEN
@@ -445,14 +435,14 @@ name|GimpData
 modifier|*
 name|data
 parameter_list|,
-name|time_t
+name|gint64
 name|mtime
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|time_t
+name|gint64
 name|gimp_data_get_mtime
 parameter_list|(
 name|GimpData
