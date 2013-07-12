@@ -19,16 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|<time.h>
-end_include
-
-begin_comment
-comment|/* time_t */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
@@ -171,7 +161,7 @@ name|GimpPlugInImageType
 name|image_types_val
 decl_stmt|;
 DECL|member|mtime
-name|time_t
+name|gint64
 name|mtime
 decl_stmt|;
 DECL|member|installed_during_init

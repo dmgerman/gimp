@@ -19,12 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|<time.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpobject.h"
 end_include
 
@@ -129,7 +123,7 @@ modifier|*
 name|help_domain_uri
 decl_stmt|;
 DECL|member|mtime
-name|time_t
+name|gint64
 name|mtime
 decl_stmt|;
 DECL|member|needs_query
@@ -262,7 +256,7 @@ name|GimpPlugInDef
 modifier|*
 name|plug_in_def
 parameter_list|,
-name|time_t
+name|gint64
 name|mtime
 parameter_list|)
 function_decl|;

@@ -766,14 +766,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_plug_in_def_set_mtime (GimpPlugInDef * plug_in_def,time_t mtime)
+DECL|function|gimp_plug_in_def_set_mtime (GimpPlugInDef * plug_in_def,gint64 mtime)
 name|gimp_plug_in_def_set_mtime
 parameter_list|(
 name|GimpPlugInDef
 modifier|*
 name|plug_in_def
 parameter_list|,
-name|time_t
+name|gint64
 name|mtime
 parameter_list|)
 block|{

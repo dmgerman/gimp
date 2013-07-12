@@ -255,7 +255,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon291250d70103
+DECL|enum|__anon28e506e20103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -1047,7 +1047,7 @@ name|gchar
 modifier|*
 name|path
 decl_stmt|;
-name|gint
+name|gint64
 name|mtime
 decl_stmt|;
 name|GTokenType
@@ -1098,7 +1098,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_scanner_parse_int
+name|gimp_scanner_parse_int64
 argument_list|(
 name|scanner
 argument_list|,
@@ -3197,7 +3197,8 @@ name|gimp_config_writer_printf
 argument_list|(
 name|writer
 argument_list|,
-literal|"%ld"
+literal|"%"
+name|G_GINT64_FORMAT
 argument_list|,
 name|plug_in_def
 operator|->
