@@ -339,14 +339,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|gfig_drawable
-name|GimpDrawable
-modifier|*
-name|gfig_drawable
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|gfig_list
 name|GList
 modifier|*
@@ -570,9 +562,8 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|GimpDrawable
-modifier|*
-name|drawable
+name|gint32
+name|drawable_id
 decl_stmt|;
 name|GimpRunMode
 name|run_mode
@@ -611,6 +602,17 @@ name|selected_obj
 operator|=
 name|NULL
 expr_stmt|;
+name|drawable_id
+operator|=
+name|param
+index|[
+literal|2
+index|]
+operator|.
+name|data
+operator|.
+name|d_drawable
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -639,14 +641,7 @@ name|gfig_context
 operator|->
 name|drawable_id
 operator|=
-name|param
-index|[
-literal|2
-index|]
-operator|.
-name|data
-operator|.
-name|d_drawable
+name|drawable_id
 expr_stmt|;
 operator|*
 name|nreturn_vals
@@ -688,20 +683,6 @@ expr_stmt|;
 name|gimp_context_push
 argument_list|()
 expr_stmt|;
-name|drawable
-operator|=
-name|gimp_drawable_get
-argument_list|(
-name|param
-index|[
-literal|2
-index|]
-operator|.
-name|data
-operator|.
-name|d_drawable
-argument_list|)
-expr_stmt|;
 comment|/* TMP Hack - clear any selections */
 if|if
 condition|(
@@ -722,8 +703,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_mask_bounds
 argument_list|(
-name|drawable
-operator|->
 name|drawable_id
 argument_list|,
 operator|&
@@ -844,28 +823,6 @@ name|gdouble
 operator|)
 name|preview_height
 expr_stmt|;
-name|gimp_tile_cache_ntiles
-argument_list|(
-operator|(
-name|drawable
-operator|->
-name|width
-operator|+
-name|gimp_tile_width
-argument_list|()
-operator|-
-literal|1
-operator|)
-operator|/
-name|gimp_tile_width
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gimp_drawable_detach
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 comment|/* initialize */
 name|gfig_init_object_classes
 argument_list|()
@@ -889,11 +846,6 @@ name|gfig_dialog
 argument_list|()
 condition|)
 block|{
-name|gimp_drawable_detach
-argument_list|(
-name|gfig_drawable
-argument_list|)
-expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
 name|gfig_context
@@ -959,7 +911,6 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
-comment|/* gimp_drawable_detach (drawable) already done above, don't do it twice */
 block|}
 end_function
 

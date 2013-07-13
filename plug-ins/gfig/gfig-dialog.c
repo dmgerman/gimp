@@ -437,7 +437,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290e88630108
+DECL|struct|__anon2c9029af0108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -1150,15 +1150,6 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
-name|gfig_drawable
-operator|=
-name|gimp_drawable_get
-argument_list|(
-name|gfig_context
-operator|->
-name|drawable_id
-argument_list|)
-expr_stmt|;
 name|gfig_stock_init
 argument_list|()
 expr_stmt|;

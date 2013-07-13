@@ -47,7 +47,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3137840108
+DECL|struct|__anon27a6a4d00108
 block|{
 DECL|member|gridspacing
 name|gint
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3137840208
+DECL|struct|__anon27a6a4d00208
 block|{
 DECL|member|type
 name|SelectionType
@@ -310,7 +310,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3137840308
+DECL|struct|__anon27a6a4d00308
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -505,7 +505,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3137840408
+DECL|struct|__anon27a6a4d00408
 block|{
 DECL|member|debug_styles
 name|gboolean
@@ -1082,14 +1082,6 @@ specifier|extern
 name|GtkWidget
 modifier|*
 name|top_level_dlg
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|GimpDrawable
-modifier|*
-name|gfig_drawable
 decl_stmt|;
 end_decl_stmt
 
