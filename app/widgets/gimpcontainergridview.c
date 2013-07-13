@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2df39a0103
+DECL|enum|__anon29015b740103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -2999,8 +2999,6 @@ name|grid_view
 operator|->
 name|wrap_box
 argument_list|,
-name|columns
-operator|*
 name|view_requisition
 operator|.
 name|width
