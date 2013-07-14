@@ -206,6 +206,17 @@ block|}
 struct|;
 end_struct
 
+begin_function_decl
+name|void
+name|color_wheel_register_type
+parameter_list|(
+name|GTypeModule
+modifier|*
+name|module
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_decl_stmt
 name|GType
 name|gimp_color_wheel_get_type

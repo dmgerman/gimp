@@ -80,7 +80,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29eb4eba0103
+DECL|enum|__anon28ee2e3c0103
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -103,7 +103,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eb4eba0208
+DECL|struct|__anon28ee2e3c0208
 block|{
 comment|/* Color value */
 DECL|member|h
@@ -157,7 +157,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29eb4eba0303
+DECL|enum|__anon28ee2e3c0303
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -373,8 +373,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpColorWheel,gimp_color_wheel,GTK_TYPE_WIDGET)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_DYNAMIC_TYPE (GimpColorWheel,gimp_color_wheel,GTK_TYPE_WIDGET)
+name|G_DEFINE_DYNAMIC_TYPE
 argument_list|(
 argument|GimpColorWheel
 argument_list|,
@@ -393,8 +393,26 @@ value|gimp_color_wheel_parent_class
 end_define
 
 begin_function
+name|void
+name|color_wheel_register_type
+parameter_list|(
+name|GTypeModule
+modifier|*
+name|module
+parameter_list|)
+block|{
+name|gimp_color_wheel_register_type
+argument_list|(
+name|module
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 specifier|static
 name|void
+DECL|function|gimp_color_wheel_class_init (GimpColorWheelClass * class)
 name|gimp_color_wheel_class_init
 parameter_list|(
 name|GimpColorWheelClass
@@ -737,6 +755,19 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_color_wheel_class_finalize (GimpColorWheelClass * klass)
+name|gimp_color_wheel_class_finalize
+parameter_list|(
+name|GimpColorWheelClass
+modifier|*
+name|klass
+parameter_list|)
+block|{ }
 end_function
 
 begin_function

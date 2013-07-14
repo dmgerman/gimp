@@ -286,6 +286,11 @@ modifier|*
 name|module
 parameter_list|)
 block|{
+name|color_wheel_register_type
+argument_list|(
+name|module
+argument_list|)
+expr_stmt|;
 name|colorsel_wheel_register_type
 argument_list|(
 name|module
