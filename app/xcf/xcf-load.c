@@ -1957,7 +1957,7 @@ literal|3
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* only set color map if image is not indexed, this is              * just sanity checking to make sure gimp doesn't end up              * with an image state that is impossible.              */
+comment|/* only set color map if image is indexed, this is just              * sanity checking to make sure gimp doesn't end up with              * an image state that is impossible.              */
 if|if
 condition|(
 name|gimp_image_get_base_type
