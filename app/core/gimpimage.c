@@ -358,7 +358,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c8f68d0103
+DECL|enum|__anon297d6b030103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -455,7 +455,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c8f68d0203
+DECL|enum|__anon297d6b030203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5037,6 +5037,12 @@ condition|(
 name|private
 operator|->
 name|colormap
+operator|&&
+name|private
+operator|->
+name|n_colors
+operator|>
+literal|0
 condition|)
 block|{
 name|babl_palette_set_palette

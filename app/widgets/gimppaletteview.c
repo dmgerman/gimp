@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290dd5ff0103
+DECL|enum|__anon2af8df830103
 block|{
 DECL|enumerator|ENTRY_CLICKED
 name|ENTRY_CLICKED
@@ -1720,6 +1720,12 @@ if|if
 condition|(
 operator|!
 name|palette
+operator|||
+operator|!
+name|gimp_palette_get_n_colors
+argument_list|(
+name|palette
+argument_list|)
 condition|)
 return|return
 name|NULL

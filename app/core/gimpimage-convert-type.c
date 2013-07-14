@@ -413,7 +413,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b0bd13e0103
+DECL|enum|__anon2c5f20390103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1514,7 +1514,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0bd13e0208
+DECL|struct|__anon2c5f20390208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1757,7 +1757,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0bd13e0308
+DECL|struct|__anon2c5f20390308
 block|{
 DECL|member|used_count
 name|signed
@@ -3793,13 +3793,9 @@ name|old_type
 operator|==
 name|GIMP_INDEXED
 condition|)
-name|gimp_image_set_colormap
+name|gimp_image_unset_colormap
 argument_list|(
 name|image
-argument_list|,
-name|NULL
-argument_list|,
-literal|0
 argument_list|,
 name|TRUE
 argument_list|)

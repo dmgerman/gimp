@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af03dd80103
+DECL|enum|__anon28ac8a5d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1642,6 +1642,12 @@ argument_list|,
 name|GIMP_IMAGE_COLORMAP_SIZE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|image_undo
+operator|->
+name|colormap
+condition|)
 name|gimp_image_set_colormap
 argument_list|(
 name|image
@@ -1653,6 +1659,14 @@ argument_list|,
 name|image_undo
 operator|->
 name|num_colors
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+else|else
+name|gimp_image_unset_colormap
+argument_list|(
+name|image
 argument_list|,
 name|FALSE
 argument_list|)

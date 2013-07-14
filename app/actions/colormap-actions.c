@@ -385,6 +385,10 @@ argument_list|,
 name|image
 operator|&&
 name|indexed
+operator|&&
+name|num_colors
+operator|>
+literal|0
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

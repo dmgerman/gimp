@@ -147,6 +147,20 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_image_unset_colormap
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|gboolean
+name|push_undo
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_image_get_colormap_entry
 parameter_list|(
 name|GimpImage
