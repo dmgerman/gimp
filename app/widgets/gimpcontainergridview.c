@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29015b740103
+DECL|enum|__anon292e48930103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -858,6 +858,18 @@ operator|=
 name|gtk_hwrap_box_new
 argument_list|(
 name|FALSE
+argument_list|)
+expr_stmt|;
+comment|/* set a silly small and random size request so it doesn't initially    * request too much and breaks dock geometry deserialization    */
+name|gtk_widget_set_size_request
+argument_list|(
+name|grid_view
+operator|->
+name|wrap_box
+argument_list|,
+literal|16
+argument_list|,
+literal|16
 argument_list|)
 expr_stmt|;
 name|gtk_scrolled_window_add_with_viewport
