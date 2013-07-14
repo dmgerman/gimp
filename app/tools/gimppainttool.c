@@ -1254,7 +1254,15 @@ operator|->
 name|draw_line
 condition|)
 block|{
-comment|/*  if this is a new image, reinit the core vals  */
+comment|/* if this is a new display, resest the "last stroke's endpoint"        * because there is none        */
+if|if
+condition|(
+name|display
+operator|!=
+name|tool
+operator|->
+name|display
+condition|)
 name|core
 operator|->
 name|start_coords
@@ -1305,14 +1313,6 @@ operator|!=
 literal|0
 decl_stmt|;
 comment|/*  If shift is down and this is not the first paint        *  stroke, then draw a line from the last coords to the pointer        */
-name|core
-operator|->
-name|start_coords
-operator|=
-name|core
-operator|->
-name|last_coords
-expr_stmt|;
 name|gimp_paint_core_round_line
 argument_list|(
 name|core

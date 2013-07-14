@@ -157,7 +157,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon292acd610103
+DECL|enum|__anon2ad619410103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1368,6 +1368,15 @@ argument_list|)
 argument_list|,
 name|STROKE_BUFFER_INIT_SIZE
 argument_list|)
+expr_stmt|;
+comment|/* remember the last stroke's endpoint for later undo */
+name|core
+operator|->
+name|start_coords
+operator|=
+name|core
+operator|->
+name|last_coords
 expr_stmt|;
 name|core
 operator|->

@@ -118,7 +118,7 @@ DECL|member|start_coords
 name|GimpCoords
 name|start_coords
 decl_stmt|;
-comment|/*  starting coords (for undo only)     */
+comment|/*  the last stroke's endpoint for undo */
 DECL|member|cur_coords
 name|GimpCoords
 name|cur_coords
