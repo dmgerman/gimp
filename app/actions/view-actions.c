@@ -3020,7 +3020,7 @@ literal|"view-snap-to-guides"
 argument_list|,
 name|display
 operator|&&
-name|shell
+name|options
 operator|->
 name|snap_to_guides
 argument_list|)
@@ -3038,7 +3038,7 @@ literal|"view-snap-to-grid"
 argument_list|,
 name|display
 operator|&&
-name|shell
+name|options
 operator|->
 name|snap_to_grid
 argument_list|)
@@ -3056,7 +3056,7 @@ literal|"view-snap-to-canvas"
 argument_list|,
 name|display
 operator|&&
-name|shell
+name|options
 operator|->
 name|snap_to_canvas
 argument_list|)
@@ -3074,9 +3074,9 @@ literal|"view-snap-to-vectors"
 argument_list|,
 name|display
 operator|&&
-name|shell
+name|options
 operator|->
-name|snap_to_vectors
+name|snap_to_path
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

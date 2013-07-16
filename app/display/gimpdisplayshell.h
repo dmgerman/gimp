@@ -238,26 +238,6 @@ name|GimpDisplayOptions
 modifier|*
 name|no_image_options
 decl_stmt|;
-DECL|member|snap_to_guides
-name|gboolean
-name|snap_to_guides
-decl_stmt|;
-comment|/*  should the guides be snapped to?   */
-DECL|member|snap_to_grid
-name|gboolean
-name|snap_to_grid
-decl_stmt|;
-comment|/*  should the grid be snapped to?     */
-DECL|member|snap_to_canvas
-name|gboolean
-name|snap_to_canvas
-decl_stmt|;
-comment|/*  should the canvas be snapped to?   */
-DECL|member|snap_to_vectors
-name|gboolean
-name|snap_to_vectors
-decl_stmt|;
-comment|/*  should the active path be snapped  */
 DECL|member|unit
 name|GimpUnit
 name|unit

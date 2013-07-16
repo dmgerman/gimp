@@ -131,7 +131,6 @@ DECL|member|show_scrollbars
 name|gboolean
 name|show_scrollbars
 decl_stmt|;
-comment|/*  GimpCanvas options  */
 DECL|member|show_selection
 name|gboolean
 name|show_selection
@@ -151,6 +150,22 @@ decl_stmt|;
 DECL|member|show_sample_points
 name|gboolean
 name|show_sample_points
+decl_stmt|;
+DECL|member|snap_to_guides
+name|gboolean
+name|snap_to_guides
+decl_stmt|;
+DECL|member|snap_to_grid
+name|gboolean
+name|snap_to_grid
+decl_stmt|;
+DECL|member|snap_to_canvas
+name|gboolean
+name|snap_to_canvas
+decl_stmt|;
+DECL|member|snap_to_path
+name|gboolean
+name|snap_to_path
 decl_stmt|;
 DECL|member|padding_mode
 name|GimpCanvasPaddingMode
