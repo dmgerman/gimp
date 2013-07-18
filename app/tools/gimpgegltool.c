@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291107eb0103
+DECL|enum|__anon28e419110103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -319,6 +319,8 @@ index|[]
 init|=
 block|{
 comment|/* these ops are already added to the menus via      * filter-actions ordrawable-actions      */
+literal|"gegl:alien-map"
+block|,
 literal|"gegl:c2g"
 block|,
 literal|"gegl:cartoon"

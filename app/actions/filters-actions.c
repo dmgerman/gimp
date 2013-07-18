@@ -97,6 +97,28 @@ index|[]
 init|=
 block|{
 block|{
+literal|"filters-alien-map"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Alien Map..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:alien-map"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_ALIEN_MAP */
+block|}
+block|,
+block|{
 literal|"filters-c2g"
 block|,
 name|GIMP_STOCK_GEGL
@@ -1283,6 +1305,13 @@ name|condition
 parameter_list|)
 define|\
 value|gimp_action_group_set_action_sensitive (group, action, (condition) != 0)
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-alien-map"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-c2g"
