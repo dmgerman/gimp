@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29db33a30103
+DECL|enum|__anon2a187f0c0103
 block|{
 DECL|enumerator|ISO_CODES_START
 name|ISO_CODES_START
@@ -82,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29db33a30208
+DECL|struct|__anon2a187f0c0208
 block|{
 DECL|member|state
 name|IsoCodesParserState
@@ -734,6 +734,10 @@ argument_list|,
 name|lang
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|current_lang
+condition|)
 name|g_setenv
 argument_list|(
 literal|"LANGUAGE"
@@ -741,6 +745,12 @@ argument_list|,
 name|current_lang
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+else|else
+name|g_unsetenv
+argument_list|(
+literal|"LANGUAGE"
 argument_list|)
 expr_stmt|;
 name|setlocale
