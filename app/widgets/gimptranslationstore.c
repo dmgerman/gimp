@@ -319,6 +319,10 @@ literal|"System Language"
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|current_lang
+condition|)
 name|g_setenv
 argument_list|(
 literal|"LANGUAGE"
@@ -326,6 +330,12 @@ argument_list|,
 name|current_lang
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+else|else
+name|g_unsetenv
+argument_list|(
+literal|"LANGUAGE"
 argument_list|)
 expr_stmt|;
 name|setlocale
