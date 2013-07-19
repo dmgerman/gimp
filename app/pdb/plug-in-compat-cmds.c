@@ -402,7 +402,7 @@ literal|"operation"
 argument_list|,
 literal|"gegl:alien-map"
 argument_list|,
-literal|"color_representation"
+literal|"color-model"
 argument_list|,
 operator|(
 name|gint
