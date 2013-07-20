@@ -216,6 +216,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimplanguagestore-parser.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"actions/actions.h"
 end_include
 
@@ -883,6 +889,9 @@ name|gui_unique_init
 argument_list|(
 name|gimp
 argument_list|)
+expr_stmt|;
+name|gimp_language_store_parser_init
+argument_list|()
 expr_stmt|;
 name|gimp_widgets_init
 argument_list|(
@@ -2355,6 +2364,9 @@ name|gimp_tools_exit
 argument_list|(
 name|gimp
 argument_list|)
+expr_stmt|;
+name|gimp_language_store_parser_clean
+argument_list|()
 expr_stmt|;
 return|return
 name|FALSE
