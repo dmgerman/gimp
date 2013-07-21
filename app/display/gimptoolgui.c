@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0df4250103
+DECL|enum|__anon2be5ec790103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -2384,6 +2384,11 @@ name|gint
 name|n_ids
 decl_stmt|;
 name|gint
+name|n_alternatives
+init|=
+literal|0
+decl_stmt|;
+name|gint
 name|i
 decl_stmt|;
 name|n_ids
@@ -2463,8 +2468,18 @@ name|entry
 operator|->
 name|response_id
 expr_stmt|;
+name|n_alternatives
+operator|++
+expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|n_ids
+operator|==
+name|n_alternatives
+condition|)
+block|{
 if|if
 condition|(
 name|private
@@ -2490,6 +2505,7 @@ argument_list|,
 name|ids
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|g_free
 argument_list|(
