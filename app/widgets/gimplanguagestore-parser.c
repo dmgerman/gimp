@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<locale.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
 end_include
 
@@ -60,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c94b3c0103
+DECL|enum|__anon2c1085b00103
 block|{
 DECL|enumerator|ISO_CODES_START
 name|ISO_CODES_START
@@ -82,7 +88,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c94b3c0208
+DECL|struct|__anon2c1085b00208
 block|{
 DECL|member|state
 name|IsoCodesParserState
