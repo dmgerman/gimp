@@ -702,6 +702,10 @@ index|]
 decl_stmt|;
 if|if
 condition|(
+name|format
+operator|->
+name|load_proc
+operator|&&
 operator|!
 name|strcmp
 argument_list|(
@@ -776,6 +780,10 @@ block|}
 elseif|else
 if|if
 condition|(
+name|format
+operator|->
+name|save_proc
+operator|&&
 operator|!
 name|strcmp
 argument_list|(
