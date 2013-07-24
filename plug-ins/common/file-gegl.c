@@ -247,6 +247,32 @@ block|,
 name|NULL
 comment|/* no NEF saving */
 block|}
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"WebP image"
+argument_list|)
+block|,
+literal|"image/webp"
+block|,
+literal|"webp"
+block|,
+literal|""
+block|,
+literal|"file-webp-load"
+block|,
+literal|"Loads WebP images using GEGL"
+block|,
+literal|"This procedure loads images in WebP format, using gegl:load"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+comment|/* no WebP saving */
+block|}
 block|}
 decl_stmt|;
 end_decl_stmt
