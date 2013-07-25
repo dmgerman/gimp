@@ -266,12 +266,11 @@ literal|"Loads WebP images using GEGL"
 block|,
 literal|"This procedure loads images in WebP format, using gegl:load"
 block|,
-name|NULL
+literal|"file-webp-save"
 block|,
-name|NULL
+literal|"Saves WebP images using GEGL"
 block|,
-name|NULL
-comment|/* no WebP saving */
+literal|"This procedure saves images in WebP format, using gegl:save"
 block|}
 block|}
 decl_stmt|;
