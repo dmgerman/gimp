@@ -882,6 +882,14 @@ literal|"resizable"
 argument_list|,
 name|FALSE
 argument_list|,
+literal|"focus-on-map"
+argument_list|,
+name|FALSE
+argument_list|,
+literal|"window-position"
+argument_list|,
+name|GTK_WIN_POS_CENTER
+argument_list|,
 name|NULL
 argument_list|)
 return|;
