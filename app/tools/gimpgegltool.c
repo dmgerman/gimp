@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e419110103
+DECL|enum|__anon2923ea360103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -400,6 +400,8 @@ block|,
 literal|"gegl:shift"
 block|,
 literal|"gegl:softglow"
+block|,
+literal|"gegl:tile-seamless"
 block|,
 literal|"gegl:unsharp-mask"
 block|,
