@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimplanguagestore-parser.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptranslationstore.h"
 end_include
 
@@ -169,6 +175,13 @@ argument_list|(
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|lang_list
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_hash_table_iter_init
 argument_list|(
 operator|&
@@ -203,15 +216,9 @@ argument_list|(
 name|object
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|name
-argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|code
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
