@@ -23,19 +23,23 @@ file|"gimpobject.h"
 end_include
 
 begin_typedef
-DECL|typedef|GimpProjectionIdleRender
+DECL|typedef|GimpProjectionChunkRender
 typedef|typedef
 name|struct
-name|_GimpProjectionIdleRender
-name|GimpProjectionIdleRender
+name|_GimpProjectionChunkRender
+name|GimpProjectionChunkRender
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpProjectionIdleRender
+DECL|struct|_GimpProjectionChunkRender
 struct|struct
-name|_GimpProjectionIdleRender
+name|_GimpProjectionChunkRender
 block|{
+DECL|member|running
+name|gboolean
+name|running
+decl_stmt|;
 DECL|member|width
 name|gint
 name|width
@@ -59,10 +63,6 @@ decl_stmt|;
 DECL|member|base_y
 name|gint
 name|base_y
-decl_stmt|;
-DECL|member|idle_id
-name|guint
-name|idle_id
 decl_stmt|;
 DECL|member|update_areas
 name|GSList
@@ -174,9 +174,13 @@ name|GSList
 modifier|*
 name|update_areas
 decl_stmt|;
-DECL|member|idle_render
-name|GimpProjectionIdleRender
-name|idle_render
+DECL|member|chunk_render
+name|GimpProjectionChunkRender
+name|chunk_render
+decl_stmt|;
+DECL|member|chunk_render_idle_id
+name|guint
+name|chunk_render_idle_id
 decl_stmt|;
 DECL|member|invalidate_preview
 name|gboolean
