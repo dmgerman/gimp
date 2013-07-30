@@ -482,6 +482,11 @@ define|#
 directive|define
 name|GIMP_STOCK_TOOL_MOVE
 value|"gimp-tool-move"
+DECL|macro|GIMP_STOCK_TOOL_N_POINT_DEFORMATION
+define|#
+directive|define
+name|GIMP_STOCK_TOOL_N_POINT_DEFORMATION
+value|"gimp-tool-n-point-deformation"
 DECL|macro|GIMP_STOCK_TOOL_PAINTBRUSH
 define|#
 directive|define

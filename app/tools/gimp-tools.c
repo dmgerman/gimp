@@ -294,6 +294,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpnpointdeformationtool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppaintbrushtool.h"
 end_include
 
@@ -549,6 +555,8 @@ block|,
 name|gimp_seamless_clone_tool_register
 block|,
 comment|/*  transform tools  */
+name|gimp_n_point_deformation_tool_register
+block|,
 name|gimp_warp_tool_register
 block|,
 name|gimp_cage_tool_register

@@ -2038,6 +2038,14 @@ value|"gimp-tool-move"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TOOL_N_POINT_DEFORMATION
+define|#
+directive|define
+name|GIMP_HELP_TOOL_N_POINT_DEFORMATION
+value|"gimp-tool-n-point-deformation"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TOOL_PATH
 define|#
 directive|define
