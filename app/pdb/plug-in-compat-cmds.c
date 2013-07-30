@@ -2255,7 +2255,7 @@ name|NULL
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gegl:pixelise"
+literal|"gegl:pixelize"
 argument_list|,
 literal|"size-x"
 argument_list|,
@@ -2443,7 +2443,7 @@ name|NULL
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gegl:pixelise"
+literal|"gegl:pixelize"
 argument_list|,
 literal|"size-x"
 argument_list|,
@@ -2676,7 +2676,7 @@ name|NULL
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gegl:polar-coords"
+literal|"gegl:polar-coordinates"
 argument_list|,
 literal|"depth"
 argument_list|,
