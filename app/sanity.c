@@ -285,16 +285,12 @@ operator|=
 name|sanity_check_gegl
 argument_list|()
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|abort_message
-condition|)
-name|abort_message
-operator|=
-name|sanity_check_gegl_ops
-argument_list|()
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|if (! abort_message)     abort_message = sanity_check_gegl_ops ();
+endif|#
+directive|endif
 if|if
 condition|(
 operator|!
