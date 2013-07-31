@@ -135,9 +135,11 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_comment
-comment|//#include<npd/npd_common.h>
-end_comment
+begin_include
+include|#
+directive|include
+file|<npd/npd_common.h>
+end_include
 
 begin_function_decl
 name|void
@@ -327,13 +329,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|//static void     gimp_n_point_deformation_add_handle                   (GimpNPointDeformationTool *npd_tool,
-end_comment
-
-begin_comment
-comment|//                                                                       NPDPoint                  *coords);
-end_comment
+begin_function_decl
+specifier|static
+name|void
+name|gimp_n_point_deformation_add_handle
+parameter_list|(
+name|GimpNPointDeformationTool
+modifier|*
+name|npd_tool
+parameter_list|,
+name|NPDPoint
+modifier|*
+name|coords
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -672,8 +682,18 @@ name|active
 operator|=
 name|FALSE
 expr_stmt|;
-comment|//  npd_tool->selected_cp = NULL;
-comment|//  npd_tool->hovering_cp = NULL;
+name|npd_tool
+operator|->
+name|selected_cp
+operator|=
+name|NULL
+expr_stmt|;
+name|npd_tool
+operator|->
+name|hovering_cp
+operator|=
+name|NULL
+expr_stmt|;
 name|npd_tool
 operator|->
 name|selected_cps
@@ -820,7 +840,10 @@ name|GeglBuffer
 modifier|*
 name|shadow
 decl_stmt|;
-comment|//  NPDModel      *model;
+name|NPDModel
+modifier|*
+name|model
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_N_POINT_DEFORMATION_TOOL
@@ -962,14 +985,14 @@ argument_list|(
 name|sink
 argument_list|)
 expr_stmt|;
-comment|//  gegl_node_get (node, "model",&model, NULL);
-name|gegl_node_set
+name|gegl_node_get
 argument_list|(
 name|node
 argument_list|,
-literal|"rigidity"
+literal|"model"
 argument_list|,
-literal|2000
+operator|&
+name|model
 argument_list|,
 name|NULL
 argument_list|)
@@ -992,7 +1015,12 @@ name|graph
 operator|=
 name|graph
 expr_stmt|;
-comment|//  npd_tool->model = model;
+name|npd_tool
+operator|->
+name|model
+operator|=
+name|model
+expr_stmt|;
 name|npd_tool
 operator|->
 name|node
@@ -1011,7 +1039,12 @@ name|sink
 operator|=
 name|sink
 expr_stmt|;
-comment|//  npd_tool->selected_cp = NULL;
+name|npd_tool
+operator|->
+name|selected_cp
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 end_function
 
@@ -1246,11 +1279,37 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-comment|//  NPDModel                  *model;
-comment|//  NPDPoint                   p;
-comment|//  NPDControlPoint           *cp;
-comment|//  GSList                   **selected_cps =&npd_tool->selected_cps;
-comment|//  GSList                   **previous_cp_positions =&npd_tool->previous_cp_positions;
+name|NPDModel
+modifier|*
+name|model
+decl_stmt|;
+name|NPDPoint
+name|p
+decl_stmt|;
+name|NPDControlPoint
+modifier|*
+name|cp
+decl_stmt|;
+name|GSList
+modifier|*
+modifier|*
+name|selected_cps
+init|=
+operator|&
+name|npd_tool
+operator|->
+name|selected_cps
+decl_stmt|;
+name|GSList
+modifier|*
+modifier|*
+name|previous_cp_positions
+init|=
+operator|&
+name|npd_tool
+operator|->
+name|previous_cp_positions
+decl_stmt|;
 if|if
 condition|(
 name|display
@@ -1268,7 +1327,12 @@ name|display
 argument_list|)
 expr_stmt|;
 block|}
-comment|//  model = npd_tool->model;
+name|model
+operator|=
+name|npd_tool
+operator|->
+name|model
+expr_stmt|;
 name|gimp_tool_control_activate
 argument_list|(
 name|tool
@@ -1276,7 +1340,12 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-comment|//  npd_tool->selected_cp = NULL;
+name|npd_tool
+operator|->
+name|selected_cp
+operator|=
+name|NULL
+expr_stmt|;
 if|if
 condition|(
 name|press_type
@@ -1284,27 +1353,168 @@ operator|==
 name|GIMP_BUTTON_PRESS_NORMAL
 condition|)
 block|{
-comment|//      p.x = coords->x; p.y = coords->y;
-comment|//      cp = npd_get_control_point_at (model,&p);
-comment|//      if (cp == NULL || (cp != NULL&& !g_slist_find (*selected_cps, cp)&& !(state& GDK_SHIFT_MASK)))
-comment|//        {
-comment|//          g_slist_free (*selected_cps);
-comment|//          *selected_cps = NULL;
-comment|//          g_slist_free_full (*previous_cp_positions, g_free);
-comment|//          *previous_cp_positions = NULL;
-comment|//        }
-comment|//
-comment|//
-comment|//      if (cp != NULL)
-comment|//        {
-comment|//          NPDPoint *cp_point_copy = g_new (NPDPoint, 1);
-comment|//          *cp_point_copy = cp->point;
-comment|//          npd_tool->selected_cp = cp;
-comment|//          npd_tool->delta_x = cp->point.x - coords->x;
-comment|//          npd_tool->delta_y = cp->point.y - coords->y;
-comment|//          *selected_cps = g_slist_append (*selected_cps, cp);
-comment|//          *previous_cp_positions = g_slist_append (*previous_cp_positions, cp_point_copy);
-comment|//        }
+name|p
+operator|.
+name|x
+operator|=
+name|coords
+operator|->
+name|x
+expr_stmt|;
+name|p
+operator|.
+name|y
+operator|=
+name|coords
+operator|->
+name|y
+expr_stmt|;
+name|cp
+operator|=
+name|npd_get_control_point_at
+argument_list|(
+name|model
+argument_list|,
+operator|&
+name|p
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|cp
+operator|==
+name|NULL
+operator|||
+operator|(
+name|cp
+operator|!=
+name|NULL
+operator|&&
+operator|!
+name|g_slist_find
+argument_list|(
+operator|*
+name|selected_cps
+argument_list|,
+name|cp
+argument_list|)
+operator|&&
+operator|!
+operator|(
+name|state
+operator|&
+name|GDK_SHIFT_MASK
+operator|)
+operator|)
+condition|)
+block|{
+name|g_slist_free
+argument_list|(
+operator|*
+name|selected_cps
+argument_list|)
+expr_stmt|;
+operator|*
+name|selected_cps
+operator|=
+name|NULL
+expr_stmt|;
+name|g_slist_free_full
+argument_list|(
+operator|*
+name|previous_cp_positions
+argument_list|,
+name|g_free
+argument_list|)
+expr_stmt|;
+operator|*
+name|previous_cp_positions
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|cp
+operator|!=
+name|NULL
+condition|)
+block|{
+name|NPDPoint
+modifier|*
+name|cp_point_copy
+init|=
+name|g_new
+argument_list|(
+name|NPDPoint
+argument_list|,
+literal|1
+argument_list|)
+decl_stmt|;
+operator|*
+name|cp_point_copy
+operator|=
+name|cp
+operator|->
+name|point
+expr_stmt|;
+name|npd_tool
+operator|->
+name|selected_cp
+operator|=
+name|cp
+expr_stmt|;
+name|npd_tool
+operator|->
+name|delta_x
+operator|=
+name|cp
+operator|->
+name|point
+operator|.
+name|x
+operator|-
+name|coords
+operator|->
+name|x
+expr_stmt|;
+name|npd_tool
+operator|->
+name|delta_y
+operator|=
+name|cp
+operator|->
+name|point
+operator|.
+name|y
+operator|-
+name|coords
+operator|->
+name|y
+expr_stmt|;
+operator|*
+name|selected_cps
+operator|=
+name|g_slist_append
+argument_list|(
+operator|*
+name|selected_cps
+argument_list|,
+name|cp
+argument_list|)
+expr_stmt|;
+operator|*
+name|previous_cp_positions
+operator|=
+name|g_slist_append
+argument_list|(
+operator|*
+name|previous_cp_positions
+argument_list|,
+name|cp_point_copy
+argument_list|)
+expr_stmt|;
+block|}
 name|npd_tool
 operator|->
 name|movement_start_x
@@ -1363,9 +1573,21 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-comment|//  NPDModel                  *model = npd_tool->model;
-comment|//  NPDPoint                   p;
-comment|//  NPDControlPoint           *cp;
+name|NPDModel
+modifier|*
+name|model
+init|=
+name|npd_tool
+operator|->
+name|model
+decl_stmt|;
+name|NPDPoint
+name|p
+decl_stmt|;
+name|NPDControlPoint
+modifier|*
+name|cp
+decl_stmt|;
 name|GeglBuffer
 modifier|*
 name|buffer
@@ -1392,12 +1614,48 @@ operator|==
 name|GIMP_BUTTON_RELEASE_CLICK
 condition|)
 block|{
-comment|//      p.x = coords->x; p.y = coords->y;
-comment|//      cp = npd_get_control_point_at (model,&p);
-comment|//      if (cp != NULL)
-comment|//        {
-comment|//          gimp_n_point_deformation_add_handle (npd_tool,&p);
-comment|//        }
+name|p
+operator|.
+name|x
+operator|=
+name|coords
+operator|->
+name|x
+expr_stmt|;
+name|p
+operator|.
+name|y
+operator|=
+name|coords
+operator|->
+name|y
+expr_stmt|;
+name|cp
+operator|=
+name|npd_get_control_point_at
+argument_list|(
+name|model
+argument_list|,
+operator|&
+name|p
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|cp
+operator|==
+name|NULL
+condition|)
+block|{
+name|gimp_n_point_deformation_add_handle
+argument_list|(
+name|npd_tool
+argument_list|,
+operator|&
+name|p
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 elseif|else
 if|if
@@ -1549,10 +1807,45 @@ operator|->
 name|active
 condition|)
 block|{
-comment|//      NPDModel *model = npd_tool->model;
-comment|//      NPDPoint p;
-comment|//      p.x = coords->x; p.y = coords->y;
-comment|//      npd_tool->hovering_cp = npd_get_control_point_at (model,&p);
+name|NPDModel
+modifier|*
+name|model
+init|=
+name|npd_tool
+operator|->
+name|model
+decl_stmt|;
+name|NPDPoint
+name|p
+decl_stmt|;
+name|p
+operator|.
+name|x
+operator|=
+name|coords
+operator|->
+name|x
+expr_stmt|;
+name|p
+operator|.
+name|y
+operator|=
+name|coords
+operator|->
+name|y
+expr_stmt|;
+name|npd_tool
+operator|->
+name|hovering_cp
+operator|=
+name|npd_get_control_point_at
+argument_list|(
+name|model
+argument_list|,
+operator|&
+name|p
+argument_list|)
+expr_stmt|;
 block|}
 name|gimp_draw_tool_pause
 argument_list|(
@@ -1583,33 +1876,38 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|//static void
-end_comment
-
-begin_comment
-comment|//gimp_n_point_deformation_add_handle (GimpNPointDeformationTool *npd_tool,
-end_comment
-
-begin_comment
-comment|//                                     NPDPoint *coords)
-end_comment
-
-begin_comment
-comment|//{
-end_comment
-
-begin_comment
-comment|//  NPDModel *model = npd_tool->model;
-end_comment
-
-begin_comment
-comment|//  npd_add_control_point (model, coords);
-end_comment
-
-begin_comment
-comment|//}
-end_comment
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_n_point_deformation_add_handle (GimpNPointDeformationTool * npd_tool,NPDPoint * coords)
+name|gimp_n_point_deformation_add_handle
+parameter_list|(
+name|GimpNPointDeformationTool
+modifier|*
+name|npd_tool
+parameter_list|,
+name|NPDPoint
+modifier|*
+name|coords
+parameter_list|)
+block|{
+name|NPDModel
+modifier|*
+name|model
+init|=
+name|npd_tool
+operator|->
+name|model
+decl_stmt|;
+name|npd_add_control_point
+argument_list|(
+name|model
+argument_list|,
+name|coords
+argument_list|)
+expr_stmt|;
+block|}
+end_function
 
 begin_function
 specifier|static
@@ -1622,40 +1920,155 @@ modifier|*
 name|draw_tool
 parameter_list|)
 block|{
-comment|//  GimpNPointDeformationTool *npd_tool = GIMP_N_POINT_DEFORMATION_TOOL (draw_tool);
-comment|//  NPDModel                  *model = npd_tool->model;
-comment|//  gint                       i;
-comment|//  NPDControlPoint           *cp;
-comment|//  GimpHandleType             handle_type;
-comment|//  g_return_if_fail (model != NULL);
-comment|//  for (i = 0; i< model->control_points->len; i++)
-comment|//    {
-comment|//      cp =&g_array_index (model->control_points, NPDControlPoint, i);
-comment|//
-comment|//      if (cp == npd_tool->hovering_cp)
-comment|//        handle_type = GIMP_HANDLE_FILLED_CIRCLE;
-comment|//      else
-comment|//        handle_type = GIMP_HANDLE_CIRCLE;
-comment|//
-comment|//      gimp_draw_tool_add_handle (draw_tool,
-comment|//                                 handle_type,
-comment|//                                 cp->point.x,
-comment|//                                 cp->point.y,
-comment|//                                 GIMP_TOOL_HANDLE_SIZE_CIRCLE,
-comment|//                                 GIMP_TOOL_HANDLE_SIZE_CIRCLE,
-comment|//                                 GIMP_HANDLE_ANCHOR_CENTER);
-comment|//
-comment|//      if (g_slist_find (npd_tool->selected_cps, cp) != NULL)
-comment|//        {
-comment|//          gimp_draw_tool_add_handle (draw_tool,
-comment|//                                     GIMP_HANDLE_SQUARE,
-comment|//                                     cp->point.x,
-comment|//                                     cp->point.y,
-comment|//                                     GIMP_TOOL_HANDLE_SIZE_CIRCLE,
-comment|//                                     GIMP_TOOL_HANDLE_SIZE_CIRCLE,
-comment|//                                     GIMP_HANDLE_ANCHOR_CENTER);
-comment|//        }
-comment|//    }
+name|GimpNPointDeformationTool
+modifier|*
+name|npd_tool
+init|=
+name|GIMP_N_POINT_DEFORMATION_TOOL
+argument_list|(
+name|draw_tool
+argument_list|)
+decl_stmt|;
+name|NPDModel
+modifier|*
+name|model
+init|=
+name|npd_tool
+operator|->
+name|model
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
+name|NPDControlPoint
+modifier|*
+name|cp
+decl_stmt|;
+name|GimpHandleType
+name|handle_type
+decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|model
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|model
+operator|->
+name|control_points
+operator|->
+name|len
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|cp
+operator|=
+operator|&
+name|g_array_index
+argument_list|(
+name|model
+operator|->
+name|control_points
+argument_list|,
+name|NPDControlPoint
+argument_list|,
+name|i
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|cp
+operator|==
+name|npd_tool
+operator|->
+name|hovering_cp
+condition|)
+name|handle_type
+operator|=
+name|GIMP_HANDLE_FILLED_CIRCLE
+expr_stmt|;
+else|else
+name|handle_type
+operator|=
+name|GIMP_HANDLE_CIRCLE
+expr_stmt|;
+name|gimp_draw_tool_add_handle
+argument_list|(
+name|draw_tool
+argument_list|,
+name|handle_type
+argument_list|,
+name|cp
+operator|->
+name|point
+operator|.
+name|x
+argument_list|,
+name|cp
+operator|->
+name|point
+operator|.
+name|y
+argument_list|,
+name|GIMP_TOOL_HANDLE_SIZE_CIRCLE
+argument_list|,
+name|GIMP_TOOL_HANDLE_SIZE_CIRCLE
+argument_list|,
+name|GIMP_HANDLE_ANCHOR_CENTER
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|g_slist_find
+argument_list|(
+name|npd_tool
+operator|->
+name|selected_cps
+argument_list|,
+name|cp
+argument_list|)
+operator|!=
+name|NULL
+condition|)
+block|{
+name|gimp_draw_tool_add_handle
+argument_list|(
+name|draw_tool
+argument_list|,
+name|GIMP_HANDLE_SQUARE
+argument_list|,
+name|cp
+operator|->
+name|point
+operator|.
+name|x
+argument_list|,
+name|cp
+operator|->
+name|point
+operator|.
+name|y
+argument_list|,
+name|GIMP_TOOL_HANDLE_SIZE_CIRCLE
+argument_list|,
+name|GIMP_TOOL_HANDLE_SIZE_CIRCLE
+argument_list|,
+name|GIMP_HANDLE_ANCHOR_CENTER
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 block|}
 end_function
 
@@ -1694,11 +2107,52 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-comment|//  NPDControlPoint           *selected_cp = npd_tool->selected_cp;
-comment|//  GSList                    *selected_cps = npd_tool->selected_cps;
-comment|//  GSList                    *previous_cp_positions = npd_tool->previous_cp_positions;
-comment|//  gdouble                    movement_x = coords->x - npd_tool->movement_start_x;
-comment|//  gdouble                    movement_y = coords->y - npd_tool->movement_start_y;
+name|NPDControlPoint
+modifier|*
+name|selected_cp
+init|=
+name|npd_tool
+operator|->
+name|selected_cp
+decl_stmt|;
+name|GSList
+modifier|*
+name|selected_cps
+init|=
+name|npd_tool
+operator|->
+name|selected_cps
+decl_stmt|;
+name|GSList
+modifier|*
+name|previous_cp_positions
+init|=
+name|npd_tool
+operator|->
+name|previous_cp_positions
+decl_stmt|;
+name|gdouble
+name|movement_x
+init|=
+name|coords
+operator|->
+name|x
+operator|-
+name|npd_tool
+operator|->
+name|movement_start_x
+decl_stmt|;
+name|gdouble
+name|movement_y
+init|=
+name|coords
+operator|->
+name|y
+operator|-
+name|npd_tool
+operator|->
+name|movement_start_y
+decl_stmt|;
 name|gimp_draw_tool_pause
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -1707,20 +2161,81 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|//  if (selected_cp != NULL)
-comment|//    {
-comment|//      while (selected_cps != NULL)
-comment|//        {
-comment|//          NPDControlPoint *cp = selected_cps->data;
-comment|//          NPDPoint *p =&cp->point;
-comment|//          NPDPoint *prev = previous_cp_positions->data;
-comment|//          p->x = prev->x + movement_x;
-comment|//          p->y = prev->y + movement_y;
-comment|//
-comment|//          selected_cps = g_slist_next (selected_cps);
-comment|//          previous_cp_positions = g_slist_next (previous_cp_positions);
-comment|//        }
-comment|//    }
+if|if
+condition|(
+name|selected_cp
+operator|!=
+name|NULL
+condition|)
+block|{
+while|while
+condition|(
+name|selected_cps
+operator|!=
+name|NULL
+condition|)
+block|{
+name|NPDControlPoint
+modifier|*
+name|cp
+init|=
+name|selected_cps
+operator|->
+name|data
+decl_stmt|;
+name|NPDPoint
+modifier|*
+name|p
+init|=
+operator|&
+name|cp
+operator|->
+name|point
+decl_stmt|;
+name|NPDPoint
+modifier|*
+name|prev
+init|=
+name|previous_cp_positions
+operator|->
+name|data
+decl_stmt|;
+name|p
+operator|->
+name|x
+operator|=
+name|prev
+operator|->
+name|x
+operator|+
+name|movement_x
+expr_stmt|;
+name|p
+operator|->
+name|y
+operator|=
+name|prev
+operator|->
+name|y
+operator|+
+name|movement_y
+expr_stmt|;
+name|selected_cps
+operator|=
+name|g_slist_next
+argument_list|(
+name|selected_cps
+argument_list|)
+expr_stmt|;
+name|previous_cp_positions
+operator|=
+name|g_slist_next
+argument_list|(
+name|previous_cp_positions
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 name|npd_tool
 operator|->
 name|cursor_x

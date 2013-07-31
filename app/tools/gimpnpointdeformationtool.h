@@ -22,9 +22,11 @@ directive|include
 file|"gimpdrawtool.h"
 end_include
 
-begin_comment
-comment|//#include<npd/npd_common.h>
-end_comment
+begin_include
+include|#
+directive|include
+file|<npd/npd_common.h>
+end_include
 
 begin_define
 DECL|macro|GIMP_TYPE_N_POINT_DEFORMATION_TOOL
@@ -156,28 +158,27 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-comment|//  NPDModel        *model;
-comment|//  NPDControlPoint *selected_cp; /* last selected control point */
+DECL|member|model
+name|NPDModel
+modifier|*
+name|model
+decl_stmt|;
+DECL|member|selected_cp
+name|NPDControlPoint
+modifier|*
+name|selected_cp
+decl_stmt|;
+comment|/* last selected control point */
 DECL|member|selected_cps
 name|GSList
 modifier|*
 name|selected_cps
 decl_stmt|;
 comment|/* list of selected control points */
-comment|//  NPDControlPoint *hovering_cp;
-DECL|member|previous_cp_positions
-name|GSList
+DECL|member|hovering_cp
+name|NPDControlPoint
 modifier|*
-name|previous_cp_positions
-decl_stmt|;
-comment|/* list of NPDPoints holding previous control points positions */
-DECL|member|movement_start_x
-name|gdouble
-name|movement_start_x
-decl_stmt|;
-DECL|member|movement_start_y
-name|gdouble
-name|movement_start_y
+name|hovering_cp
 decl_stmt|;
 DECL|member|cursor_x
 name|gdouble
@@ -187,8 +188,28 @@ DECL|member|cursor_y
 name|gdouble
 name|cursor_y
 decl_stmt|;
-comment|//  gdouble        delta_x;
-comment|//  gdouble        delta_y;
+DECL|member|delta_x
+name|gdouble
+name|delta_x
+decl_stmt|;
+DECL|member|delta_y
+name|gdouble
+name|delta_y
+decl_stmt|;
+DECL|member|movement_start_x
+name|gdouble
+name|movement_start_x
+decl_stmt|;
+DECL|member|movement_start_y
+name|gdouble
+name|movement_start_y
+decl_stmt|;
+DECL|member|previous_cp_positions
+name|GSList
+modifier|*
+name|previous_cp_positions
+decl_stmt|;
+comment|/* list of NPDPoints holding previous control points positions */
 DECL|member|active
 name|gboolean
 name|active
