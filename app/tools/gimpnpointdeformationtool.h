@@ -134,6 +134,11 @@ name|GeglNode
 modifier|*
 name|graph
 decl_stmt|;
+DECL|member|source
+name|GeglNode
+modifier|*
+name|source
+decl_stmt|;
 DECL|member|node
 name|GeglNode
 modifier|*
@@ -170,7 +175,7 @@ name|selected_cp
 decl_stmt|;
 comment|/* last selected control point */
 DECL|member|selected_cps
-name|GSList
+name|GList
 modifier|*
 name|selected_cps
 decl_stmt|;
@@ -205,7 +210,7 @@ name|gdouble
 name|movement_start_y
 decl_stmt|;
 DECL|member|previous_cp_positions
-name|GSList
+name|GList
 modifier|*
 name|previous_cp_positions
 decl_stmt|;
@@ -213,6 +218,11 @@ comment|/* list of NPDPoints holding previous control points positions */
 DECL|member|active
 name|gboolean
 name|active
+decl_stmt|;
+DECL|member|image_map
+name|GimpImageMap
+modifier|*
+name|image_map
 decl_stmt|;
 block|}
 struct|;
