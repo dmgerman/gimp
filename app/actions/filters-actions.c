@@ -185,6 +185,28 @@ comment|/* FIXME GIMP_HELP_FILTER_CARTOON */
 block|}
 block|,
 block|{
+literal|"filters-channel-mixer"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Channel Mixer..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:channel-mixer"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_CHANNEL_MIXER */
+block|}
+block|,
+block|{
 literal|"filters-checkerboard"
 block|,
 name|GIMP_STOCK_GEGL

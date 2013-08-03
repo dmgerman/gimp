@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd466d00103
+DECL|enum|__anon2959c0480103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -326,6 +326,8 @@ block|,
 literal|"gegl:c2g"
 block|,
 literal|"gegl:cartoon"
+block|,
+literal|"gegl:channel-mixer"
 block|,
 literal|"gegl:checkerboard"
 block|,
