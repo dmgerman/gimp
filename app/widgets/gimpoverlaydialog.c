@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2accc37f0103
+DECL|enum|__anon2746340e0103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -1441,6 +1441,64 @@ expr_stmt|;
 return|return
 name|button
 return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_overlay_dialog_set_alternative_button_order (GimpOverlayDialog * overlay,gint n_ids,gint * ids)
+name|gimp_overlay_dialog_set_alternative_button_order
+parameter_list|(
+name|GimpOverlayDialog
+modifier|*
+name|overlay
+parameter_list|,
+name|gint
+name|n_ids
+parameter_list|,
+name|gint
+modifier|*
+name|ids
+parameter_list|)
+block|{
+comment|/* TODO */
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_overlay_dialog_set_default_response (GimpOverlayDialog * overlay,gint response_id)
+name|gimp_overlay_dialog_set_default_response
+parameter_list|(
+name|GimpOverlayDialog
+modifier|*
+name|overlay
+parameter_list|,
+name|gint
+name|response_id
+parameter_list|)
+block|{
+comment|/* TODO */
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_overlay_dialog_set_response_sensitive (GimpOverlayDialog * overlay,gint response_id,gboolean sensitive)
+name|gimp_overlay_dialog_set_response_sensitive
+parameter_list|(
+name|GimpOverlayDialog
+modifier|*
+name|overlay
+parameter_list|,
+name|gint
+name|response_id
+parameter_list|,
+name|gboolean
+name|sensitive
+parameter_list|)
+block|{
+comment|/* TODO */
 block|}
 end_function
 
