@@ -193,14 +193,6 @@ DECL|member|cursor_y
 name|gdouble
 name|cursor_y
 decl_stmt|;
-DECL|member|delta_x
-name|gdouble
-name|delta_x
-decl_stmt|;
-DECL|member|delta_y
-name|gdouble
-name|delta_y
-decl_stmt|;
 DECL|member|movement_start_x
 name|gdouble
 name|movement_start_x
@@ -209,20 +201,15 @@ DECL|member|movement_start_y
 name|gdouble
 name|movement_start_y
 decl_stmt|;
-DECL|member|previous_cp_positions
+DECL|member|previous_cps_positions
 name|GList
 modifier|*
-name|previous_cp_positions
+name|previous_cps_positions
 decl_stmt|;
-comment|/* list of NPDPoints holding previous control points positions */
+comment|/* list of NPDPoints holding previous                                             * positions of control points */
 DECL|member|active
 name|gboolean
 name|active
-decl_stmt|;
-DECL|member|image_map
-name|GimpImageMap
-modifier|*
-name|image_map
 decl_stmt|;
 block|}
 struct|;
