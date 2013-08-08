@@ -69,7 +69,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299286830108
+DECL|struct|__anon274e08db0108
 block|{
 DECL|member|default_action
 name|ExportFunc
