@@ -6813,6 +6813,8 @@ argument_list|(
 name|image
 argument_list|,
 name|context
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 if|if

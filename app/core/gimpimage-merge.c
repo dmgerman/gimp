@@ -558,7 +558,7 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_flatten (GimpImage * image,GimpContext * context)
+DECL|function|gimp_image_flatten (GimpImage * image,GimpContext * context,GError ** error)
 name|gimp_image_flatten
 parameter_list|(
 name|GimpImage
@@ -568,6 +568,11 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GList
@@ -600,6 +605,20 @@ name|GIMP_IS_CONTEXT
 argument_list|(
 name|context
 argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -739,12 +758,26 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
-block|}
 return|return
-name|gimp_image_get_active_layer
+name|layer
+return|;
+block|}
+name|g_set_error_literal
 argument_list|(
-name|image
+name|error
+argument_list|,
+name|GIMP_ERROR
+argument_list|,
+name|GIMP_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"Cannot flatten an image without any visible layer."
 argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|NULL
 return|;
 block|}
 end_function
