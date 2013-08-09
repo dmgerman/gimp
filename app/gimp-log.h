@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2997175f0103
+DECL|enum|__anon27c7d18c0103
 block|{
 DECL|enumerator|GIMP_LOG_TOOL_EVENTS
 name|GIMP_LOG_TOOL_EVENTS
@@ -153,6 +153,13 @@ init|=
 literal|1
 operator|<<
 literal|18
+block|,
+DECL|enumerator|GIMP_LOG_PROJECTION
+name|GIMP_LOG_PROJECTION
+init|=
+literal|1
+operator|<<
+literal|19
 DECL|typedef|GimpLogFlags
 block|}
 name|GimpLogFlags
@@ -442,6 +449,14 @@ define|#
 directive|define
 name|BRUSH_CACHE
 value|GIMP_LOG_BRUSH_CACHE
+end_define
+
+begin_define
+DECL|macro|PROJECTION
+define|#
+directive|define
+name|PROJECTION
+value|GIMP_LOG_PROJECTION
 end_define
 
 begin_if

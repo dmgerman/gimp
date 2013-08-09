@@ -149,6 +149,12 @@ literal|"brush-cache"
 block|,
 name|GIMP_LOG_BRUSH_CACHE
 block|}
+block|,
+block|{
+literal|"projection"
+block|,
+name|GIMP_LOG_PROJECTION
+block|}
 block|}
 decl_stmt|;
 end_decl_stmt
