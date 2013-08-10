@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c042c7a0103
+DECL|enum|__anon27b73a1d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -220,12 +220,6 @@ operator|->
 name|process
 operator|=
 name|gimp_operation_point_layer_mode_process
-expr_stmt|;
-name|operation_class
-operator|->
-name|no_cache
-operator|=
-name|FALSE
 expr_stmt|;
 name|g_object_class_install_property
 argument_list|(
