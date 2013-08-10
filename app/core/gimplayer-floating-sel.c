@@ -298,6 +298,12 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* Don't let gimp_image_remove_layer free the layer while we still need it */
+name|g_object_ref
+argument_list|(
+name|layer
+argument_list|)
+expr_stmt|;
 name|image
 operator|=
 name|gimp_item_get_image
@@ -481,6 +487,11 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|layer
 argument_list|)
 expr_stmt|;
 block|}
