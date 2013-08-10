@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7f3f290103
+DECL|enum|__anon2a05ef850103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -213,7 +213,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7f3f290203
+DECL|enum|__anon2a05ef850203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7468,6 +7468,15 @@ operator|!=
 name|NULL
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+comment|/*    * Ensure that the graph is construced before the filter is used.    * Otherwise, we rely on the projection to cause the graph to be constructed,    * which fails for images that aren't displayed.    */
+name|gimp_filter_get_node
+argument_list|(
+name|GIMP_FILTER
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
