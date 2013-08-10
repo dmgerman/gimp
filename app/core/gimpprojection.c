@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b853df60103
+DECL|enum|__anon293896910103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2783,13 +2783,17 @@ name|proj
 operator|->
 name|validate_handler
 argument_list|,
-name|x
+name|x1
 argument_list|,
-name|y
+name|y1
 argument_list|,
-name|width
+name|x2
+operator|-
+name|x1
 argument_list|,
-name|height
+name|y2
+operator|-
+name|y1
 argument_list|)
 expr_stmt|;
 if|if
