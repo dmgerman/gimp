@@ -129,6 +129,11 @@ DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
+DECL|member|display
+name|GimpDisplay
+modifier|*
+name|display
+decl_stmt|;
 DECL|member|graph
 name|GeglNode
 modifier|*

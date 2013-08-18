@@ -917,6 +917,12 @@ name|display
 operator|=
 name|display
 expr_stmt|;
+name|npd_tool
+operator|->
+name|display
+operator|=
+name|display
+expr_stmt|;
 name|gimp_draw_tool_start
 argument_list|(
 name|draw_tool
@@ -1142,6 +1148,12 @@ argument_list|(
 name|npd_tool
 argument_list|)
 decl_stmt|;
+name|npd_tool
+operator|->
+name|active
+operator|=
+name|FALSE
+expr_stmt|;
 if|if
 condition|(
 name|gimp_draw_tool_is_active
@@ -1233,6 +1245,12 @@ argument_list|,
 name|npd_options
 operator|->
 name|MLS_weights_alpha
+argument_list|,
+literal|"mesh visible"
+argument_list|,
+name|npd_options
+operator|->
+name|mesh_visible
 argument_list|,
 name|NULL
 argument_list|)

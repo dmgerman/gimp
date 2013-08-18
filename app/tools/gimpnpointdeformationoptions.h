@@ -132,6 +132,10 @@ DECL|member|MLS_weights_alpha
 name|gdouble
 name|MLS_weights_alpha
 decl_stmt|;
+DECL|member|mesh_visible
+name|gboolean
+name|mesh_visible
+decl_stmt|;
 block|}
 struct|;
 end_struct
