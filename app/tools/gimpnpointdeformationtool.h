@@ -216,6 +216,10 @@ DECL|member|active
 name|gboolean
 name|active
 decl_stmt|;
+DECL|member|rubber_band
+name|gboolean
+name|rubber_band
+decl_stmt|;
 block|}
 struct|;
 end_struct
