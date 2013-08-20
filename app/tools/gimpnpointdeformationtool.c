@@ -1489,7 +1489,16 @@ block|{
 case|case
 name|GDK_KEY_BackSpace
 case|:
-comment|/* if there is at least one control point,        * remove last added control point */
+if|if
+condition|(
+name|npd_tool
+operator|->
+name|selected_cps
+operator|==
+name|NULL
+condition|)
+block|{
+comment|/* if there isn't any selected control point and if there is at least            * one control point, remove last added control point */
 if|if
 condition|(
 name|cps
@@ -1518,7 +1527,7 @@ expr_stmt|;
 name|gimp_npd_debug
 argument_list|(
 operator|(
-literal|"removing cp %p\n"
+literal|"removing last cp %p\n"
 operator|,
 name|cp
 operator|)
@@ -1539,10 +1548,36 @@ name|cp
 argument_list|)
 expr_stmt|;
 block|}
-break|break;
+block|}
+comment|/* break is omitted intentionally */
 case|case
 name|GDK_KEY_Delete
 case|:
+if|if
+condition|(
+name|npd_tool
+operator|->
+name|selected_cps
+operator|!=
+name|NULL
+condition|)
+block|{
+comment|/* if there is at least one selected control point, remove it */
+name|npd_remove_control_points
+argument_list|(
+name|model
+argument_list|,
+name|npd_tool
+operator|->
+name|selected_cps
+argument_list|)
+expr_stmt|;
+name|gimp_n_point_deformation_tool_clear_selected_points_list
+argument_list|(
+name|npd_tool
+argument_list|)
+expr_stmt|;
+block|}
 break|break;
 case|case
 name|GDK_KEY_Return
@@ -1553,8 +1588,16 @@ case|:
 case|case
 name|GDK_KEY_ISO_Enter
 case|:
+break|break;
 case|case
 name|GDK_KEY_Escape
+case|:
+break|break;
+case|case
+name|GDK_KEY_KP_Space
+case|:
+case|case
+name|GDK_KEY_space
 case|:
 break|break;
 default|default:
@@ -3167,7 +3210,7 @@ block|}
 block|}
 else|else
 block|{
-comment|/* rubber band */
+comment|/* activate a rubber band selection */
 name|npd_tool
 operator|->
 name|rubber_band
