@@ -16,6 +16,14 @@ directive|define
 name|__FILE_SAVE_DIALOG_H__
 end_define
 
+begin_define
+DECL|macro|FILE_SAVE_RESPONSE_OTHER_DIALOG
+define|#
+directive|define
+name|FILE_SAVE_RESPONSE_OTHER_DIALOG
+value|-23
+end_define
+
 begin_function_decl
 name|GtkWidget
 modifier|*
