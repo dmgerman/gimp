@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e791bd0103
+DECL|enum|__anon2bf968da0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -547,7 +547,7 @@ literal|"input"
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y float"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -559,7 +559,7 @@ literal|"output"
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y float"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -747,10 +747,10 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|rotate_pointers (guchar ** p,guint32 n)
+DECL|function|rotate_pointers (gfloat ** p,guint32 n)
 name|rotate_pointers
 parameter_list|(
-name|guchar
+name|gfloat
 modifier|*
 modifier|*
 name|p
@@ -762,7 +762,7 @@ block|{
 name|guint32
 name|i
 decl_stmt|;
-name|guchar
+name|gfloat
 modifier|*
 name|tmp
 decl_stmt|;
@@ -837,7 +837,7 @@ name|gint
 name|level
 parameter_list|)
 block|{
-comment|/* Any bugs in this fuction are probably also in thin_region Blame    * all bugs in this function on jaycox@gimp.org    */
+comment|/* Any bugs in this fuction are probably also in thin_region.    * Blame all bugs in this function on jaycox@gimp.org    */
 name|GimpOperationGrow
 modifier|*
 name|self
@@ -854,7 +854,7 @@ name|input_format
 init|=
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y float"
 argument_list|)
 decl_stmt|;
 specifier|const
@@ -864,7 +864,7 @@ name|output_format
 init|=
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y float"
 argument_list|)
 decl_stmt|;
 name|gint32
@@ -876,18 +876,18 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|guchar
+name|gfloat
 modifier|*
 modifier|*
 name|buf
 decl_stmt|;
 comment|/* caches the region's pixel data */
-name|guchar
+name|gfloat
 modifier|*
 name|out
 decl_stmt|;
 comment|/* holds the new scan line we are computing */
-name|guchar
+name|gfloat
 modifier|*
 modifier|*
 name|max
@@ -898,12 +898,13 @@ modifier|*
 name|circ
 decl_stmt|;
 comment|/* holds the y coords of the filter's mask */
-name|gint16
+name|gfloat
 name|last_max
-decl_stmt|,
+decl_stmt|;
+name|gint16
 name|last_index
 decl_stmt|;
-name|guchar
+name|gfloat
 modifier|*
 name|buffer
 decl_stmt|;
@@ -911,7 +912,7 @@ name|max
 operator|=
 name|g_new
 argument_list|(
-name|guchar
+name|gfloat
 operator|*
 argument_list|,
 name|roi
@@ -929,7 +930,7 @@ name|buf
 operator|=
 name|g_new
 argument_list|(
-name|guchar
+name|gfloat
 operator|*
 argument_list|,
 name|self
@@ -963,7 +964,7 @@ index|]
 operator|=
 name|g_new
 argument_list|(
-name|guchar
+name|gfloat
 argument_list|,
 name|roi
 operator|->
@@ -974,7 +975,7 @@ name|buffer
 operator|=
 name|g_new
 argument_list|(
-name|guchar
+name|gfloat
 argument_list|,
 operator|(
 name|roi
@@ -1127,7 +1128,7 @@ index|[
 name|j
 index|]
 operator|=
-literal|0
+literal|0.0
 expr_stmt|;
 block|}
 comment|/* offset the max pointer by self->radius_x so the range of the    * array is [-self->radius_x] to [roi->width + self->radius_x]    */
@@ -1141,7 +1142,7 @@ name|out
 operator|=
 name|g_new
 argument_list|(
-name|guchar
+name|gfloat
 argument_list|,
 name|roi
 operator|->
@@ -1195,6 +1196,11 @@ argument_list|,
 name|roi
 operator|->
 name|width
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gfloat
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -1283,7 +1289,7 @@ index|[
 literal|0
 index|]
 operator|=
-literal|0
+literal|0.0
 expr_stmt|;
 comment|/* buf[0][x] is always 0 */
 name|max
@@ -1449,6 +1455,11 @@ argument_list|,
 name|roi
 operator|->
 name|width
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gfloat
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -1590,8 +1601,8 @@ block|{
 if|if
 condition|(
 name|last_max
-operator|==
-literal|255
+operator|>=
+literal|1.0
 condition|)
 block|{
 name|out
@@ -1599,14 +1610,14 @@ index|[
 name|x
 index|]
 operator|=
-literal|255
+literal|1.0
 expr_stmt|;
 block|}
 else|else
 block|{
 name|last_max
 operator|=
-literal|0
+literal|0.0
 expr_stmt|;
 for|for
 control|(

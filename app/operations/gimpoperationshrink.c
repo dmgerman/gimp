@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c11a6660103
+DECL|enum|__anon2bd4fd1a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -598,7 +598,7 @@ literal|"input"
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y float"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -610,7 +610,7 @@ literal|"output"
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y float"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -798,10 +798,10 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|rotate_pointers (guchar ** p,guint32 n)
+DECL|function|rotate_pointers (gfloat ** p,guint32 n)
 name|rotate_pointers
 parameter_list|(
-name|guchar
+name|gfloat
 modifier|*
 modifier|*
 name|p
@@ -813,7 +813,7 @@ block|{
 name|guint32
 name|i
 decl_stmt|;
-name|guchar
+name|gfloat
 modifier|*
 name|tmp
 decl_stmt|;
@@ -888,7 +888,7 @@ name|gint
 name|level
 parameter_list|)
 block|{
-comment|/* pretty much the same as fatten_region only different blame all    * bugs in this function on jaycox@gimp.org    *    * If edge_lock is true we assume that pixels outside the region we    * are passed are identical to the edge pixels.  If edge_lock is    * false, we assume that pixels outside the region are 0    */
+comment|/* Pretty much the same as fatten_region only different.    * Blame all bugs in this function on jaycox@gimp.org    *    * If edge_lock is true we assume that pixels outside the region we    * are passed are identical to the edge pixels.  If edge_lock is    * false, we assume that pixels outside the region are 0    */
 name|GimpOperationShrink
 modifier|*
 name|self
@@ -905,7 +905,7 @@ name|input_format
 init|=
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y float"
 argument_list|)
 decl_stmt|;
 specifier|const
@@ -915,7 +915,7 @@ name|output_format
 init|=
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y float"
 argument_list|)
 decl_stmt|;
 name|gint32
@@ -927,18 +927,18 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|guchar
+name|gfloat
 modifier|*
 modifier|*
 name|buf
 decl_stmt|;
 comment|/* caches the the region's pixels */
-name|guchar
+name|gfloat
 modifier|*
 name|out
 decl_stmt|;
 comment|/* holds the new scan line we are computing */
-name|guchar
+name|gfloat
 modifier|*
 modifier|*
 name|max
@@ -949,12 +949,13 @@ modifier|*
 name|circ
 decl_stmt|;
 comment|/* holds the y coords of the filter's mask */
-name|gint16
+name|gfloat
 name|last_max
-decl_stmt|,
+decl_stmt|;
+name|gint16
 name|last_index
 decl_stmt|;
-name|guchar
+name|gfloat
 modifier|*
 name|buffer
 decl_stmt|;
@@ -965,7 +966,7 @@ name|max
 operator|=
 name|g_new
 argument_list|(
-name|guchar
+name|gfloat
 operator|*
 argument_list|,
 name|roi
@@ -983,7 +984,7 @@ name|buf
 operator|=
 name|g_new
 argument_list|(
-name|guchar
+name|gfloat
 operator|*
 argument_list|,
 name|self
@@ -1017,7 +1018,7 @@ index|]
 operator|=
 name|g_new
 argument_list|(
-name|guchar
+name|gfloat
 argument_list|,
 name|roi
 operator|->
@@ -1052,7 +1053,7 @@ name|buffer
 operator|=
 name|g_new
 argument_list|(
-name|guchar
+name|gfloat
 argument_list|,
 name|buffer_size
 argument_list|)
@@ -1063,16 +1064,30 @@ name|self
 operator|->
 name|edge_lock
 condition|)
-name|memset
-argument_list|(
-name|buffer
-argument_list|,
-literal|255
-argument_list|,
+block|{
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
 name|buffer_size
-argument_list|)
+condition|;
+name|i
+operator|++
+control|)
+name|buffer
+index|[
+name|i
+index|]
+operator|=
+literal|1.0
 expr_stmt|;
+block|}
 else|else
+block|{
 name|memset
 argument_list|(
 name|buffer
@@ -1080,8 +1095,14 @@ argument_list|,
 literal|0
 argument_list|,
 name|buffer_size
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gfloat
+argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 for|for
 control|(
 name|i
@@ -1294,7 +1315,7 @@ index|[
 name|j
 index|]
 operator|=
-literal|0
+literal|0.0
 expr_stmt|;
 comment|/* offset the max pointer by self->radius_x so the range of the    * array is [-self->radius_x] to [roi->width + self->radius_x]    */
 name|max
@@ -1307,7 +1328,7 @@ name|out
 operator|=
 name|g_new
 argument_list|(
-name|guchar
+name|gfloat
 argument_list|,
 name|roi
 operator|->
@@ -1431,6 +1452,11 @@ argument_list|,
 name|roi
 operator|->
 name|width
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gfloat
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -1446,6 +1472,11 @@ argument_list|,
 name|roi
 operator|->
 name|width
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gfloat
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -1638,6 +1669,11 @@ argument_list|,
 name|roi
 operator|->
 name|width
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gfloat
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -1655,6 +1691,11 @@ argument_list|,
 name|roi
 operator|->
 name|width
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gfloat
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -1796,8 +1837,8 @@ block|{
 if|if
 condition|(
 name|last_max
-operator|==
-literal|0
+operator|<=
+literal|0.0
 condition|)
 block|{
 name|out
@@ -1805,14 +1846,14 @@ index|[
 name|x
 index|]
 operator|=
-literal|0
+literal|0.0
 expr_stmt|;
 block|}
 else|else
 block|{
 name|last_max
 operator|=
-literal|255
+literal|1.0
 expr_stmt|;
 for|for
 control|(
