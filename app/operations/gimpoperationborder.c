@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae2a0e90103
+DECL|enum|__anon2ae6a5d50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -649,7 +649,7 @@ literal|"input"
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y float"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -661,7 +661,7 @@ literal|"output"
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y float"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -733,10 +733,10 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|rotate_pointers (guchar ** p,guint32 n)
+DECL|function|rotate_pointers (gfloat ** p,guint32 n)
 name|rotate_pointers
 parameter_list|(
-name|guchar
+name|gfloat
 modifier|*
 modifier|*
 name|p
@@ -748,7 +748,7 @@ block|{
 name|guint32
 name|i
 decl_stmt|;
-name|guchar
+name|gfloat
 modifier|*
 name|tmp
 decl_stmt|;
@@ -803,14 +803,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|compute_transition (guchar * transition,guchar ** buf,gint32 width,gboolean edge_lock)
+DECL|function|compute_transition (gfloat * transition,gfloat ** buf,gint32 width,gboolean edge_lock)
 name|compute_transition
 parameter_list|(
-name|guchar
+name|gfloat
 modifier|*
 name|transition
 parameter_list|,
-name|guchar
+name|gfloat
 modifier|*
 modifier|*
 name|buf
@@ -844,8 +844,8 @@ index|]
 index|[
 literal|0
 index|]
-operator|>
-literal|127
+operator|>=
+literal|0.5
 operator|&&
 operator|(
 name|buf
@@ -856,7 +856,7 @@ index|[
 literal|0
 index|]
 operator|<
-literal|128
+literal|0.5
 operator|||
 name|buf
 index|[
@@ -866,7 +866,7 @@ index|[
 literal|0
 index|]
 operator|<
-literal|128
+literal|0.5
 operator|)
 condition|)
 name|transition
@@ -874,7 +874,7 @@ index|[
 literal|0
 index|]
 operator|=
-literal|255
+literal|1.0
 expr_stmt|;
 else|else
 name|transition
@@ -882,7 +882,7 @@ index|[
 literal|0
 index|]
 operator|=
-literal|0
+literal|0.0
 expr_stmt|;
 return|return;
 block|}
@@ -895,8 +895,8 @@ index|]
 index|[
 literal|0
 index|]
-operator|>
-literal|127
+operator|>=
+literal|0.5
 operator|&&
 name|edge_lock
 condition|)
@@ -912,7 +912,7 @@ index|[
 name|x
 index|]
 operator|<
-literal|128
+literal|0.5
 operator|||
 name|buf
 index|[
@@ -924,7 +924,7 @@ operator|+
 literal|1
 index|]
 operator|<
-literal|128
+literal|0.5
 operator|||
 name|buf
 index|[
@@ -936,7 +936,7 @@ operator|+
 literal|1
 index|]
 operator|<
-literal|128
+literal|0.5
 operator|||
 name|buf
 index|[
@@ -946,7 +946,7 @@ index|[
 name|x
 index|]
 operator|<
-literal|128
+literal|0.5
 operator|||
 name|buf
 index|[
@@ -958,7 +958,7 @@ operator|+
 literal|1
 index|]
 operator|<
-literal|128
+literal|0.5
 condition|)
 block|{
 name|transition
@@ -966,7 +966,7 @@ index|[
 name|x
 index|]
 operator|=
-literal|255
+literal|1.0
 expr_stmt|;
 block|}
 else|else
@@ -976,7 +976,7 @@ index|[
 name|x
 index|]
 operator|=
-literal|0
+literal|0.0
 expr_stmt|;
 block|}
 block|}
@@ -990,8 +990,8 @@ index|]
 index|[
 literal|0
 index|]
-operator|>
-literal|127
+operator|>=
+literal|0.5
 operator|&&
 operator|!
 name|edge_lock
@@ -1003,7 +1003,7 @@ index|[
 name|x
 index|]
 operator|=
-literal|255
+literal|1.0
 expr_stmt|;
 block|}
 else|else
@@ -1013,7 +1013,7 @@ index|[
 name|x
 index|]
 operator|=
-literal|0
+literal|0.0
 expr_stmt|;
 block|}
 for|for
@@ -1042,7 +1042,7 @@ index|[
 name|x
 index|]
 operator|>=
-literal|128
+literal|0.5
 condition|)
 block|{
 if|if
@@ -1057,7 +1057,7 @@ operator|-
 literal|1
 index|]
 operator|<
-literal|128
+literal|0.5
 operator|||
 name|buf
 index|[
@@ -1067,7 +1067,7 @@ index|[
 name|x
 index|]
 operator|<
-literal|128
+literal|0.5
 operator|||
 name|buf
 index|[
@@ -1079,7 +1079,7 @@ operator|+
 literal|1
 index|]
 operator|<
-literal|128
+literal|0.5
 operator|||
 name|buf
 index|[
@@ -1091,7 +1091,7 @@ operator|-
 literal|1
 index|]
 operator|<
-literal|128
+literal|0.5
 operator|||
 name|buf
 index|[
@@ -1103,7 +1103,7 @@ operator|+
 literal|1
 index|]
 operator|<
-literal|128
+literal|0.5
 operator|||
 name|buf
 index|[
@@ -1115,7 +1115,7 @@ operator|-
 literal|1
 index|]
 operator|<
-literal|128
+literal|0.5
 operator|||
 name|buf
 index|[
@@ -1125,7 +1125,7 @@ index|[
 name|x
 index|]
 operator|<
-literal|128
+literal|0.5
 operator|||
 name|buf
 index|[
@@ -1137,14 +1137,14 @@ operator|+
 literal|1
 index|]
 operator|<
-literal|128
+literal|0.5
 condition|)
 name|transition
 index|[
 name|x
 index|]
 operator|=
-literal|255
+literal|1.0
 expr_stmt|;
 else|else
 name|transition
@@ -1152,7 +1152,7 @@ index|[
 name|x
 index|]
 operator|=
-literal|0
+literal|0.0
 expr_stmt|;
 block|}
 else|else
@@ -1162,7 +1162,7 @@ index|[
 name|x
 index|]
 operator|=
-literal|0
+literal|0.0
 expr_stmt|;
 block|}
 block|}
@@ -1178,7 +1178,7 @@ operator|-
 literal|1
 index|]
 operator|>=
-literal|128
+literal|0.5
 operator|&&
 name|edge_lock
 condition|)
@@ -1196,7 +1196,7 @@ operator|-
 literal|1
 index|]
 operator|<
-literal|128
+literal|0.5
 operator|||
 name|buf
 index|[
@@ -1206,7 +1206,7 @@ index|[
 name|x
 index|]
 operator|<
-literal|128
+literal|0.5
 operator|||
 name|buf
 index|[
@@ -1218,7 +1218,7 @@ operator|-
 literal|1
 index|]
 operator|<
-literal|128
+literal|0.5
 operator|||
 name|buf
 index|[
@@ -1230,7 +1230,7 @@ operator|-
 literal|1
 index|]
 operator|<
-literal|128
+literal|0.5
 operator|||
 name|buf
 index|[
@@ -1240,7 +1240,7 @@ index|[
 name|x
 index|]
 operator|<
-literal|128
+literal|0.5
 condition|)
 block|{
 name|transition
@@ -1250,7 +1250,7 @@ operator|-
 literal|1
 index|]
 operator|=
-literal|255
+literal|1.0
 expr_stmt|;
 block|}
 else|else
@@ -1262,7 +1262,7 @@ operator|-
 literal|1
 index|]
 operator|=
-literal|0
+literal|0.0
 expr_stmt|;
 block|}
 block|}
@@ -1279,7 +1279,7 @@ operator|-
 literal|1
 index|]
 operator|>=
-literal|128
+literal|0.5
 operator|&&
 operator|!
 name|edge_lock
@@ -1293,7 +1293,7 @@ operator|-
 literal|1
 index|]
 operator|=
-literal|255
+literal|1.0
 expr_stmt|;
 block|}
 else|else
@@ -1305,7 +1305,7 @@ operator|-
 literal|1
 index|]
 operator|=
-literal|0
+literal|0.0
 expr_stmt|;
 block|}
 block|}
@@ -1355,7 +1355,7 @@ name|input_format
 init|=
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y float"
 argument_list|)
 decl_stmt|;
 specifier|const
@@ -1365,7 +1365,7 @@ name|output_format
 init|=
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y float"
 argument_list|)
 decl_stmt|;
 name|gint32
@@ -1378,7 +1378,7 @@ decl_stmt|,
 name|y
 decl_stmt|;
 comment|/* A cache used in the algorithm as it works its way down. `buf[1]' is the      current row. Thus, at algorithm initialization, `buf[0]' represents the      row 'above' the first row of the region. */
-name|guchar
+name|gfloat
 modifier|*
 name|buf
 index|[
@@ -1386,12 +1386,12 @@ literal|3
 index|]
 decl_stmt|;
 comment|/* The resulting selection is calculated row by row, and this buffer holds the      output for each individual row, on each iteration. */
-name|guchar
+name|gfloat
 modifier|*
 name|out
 decl_stmt|;
 comment|/* Keeps track of transitional pixels (pixels that are selected and have      unselected neighbouring pixels). */
-name|guchar
+name|gfloat
 modifier|*
 modifier|*
 name|transition
@@ -1402,7 +1402,7 @@ modifier|*
 name|max
 decl_stmt|;
 comment|/* TODO: Figure out role clearly in algorithm. */
-name|guchar
+name|gfloat
 modifier|*
 modifier|*
 name|density
@@ -1426,11 +1426,11 @@ operator|==
 literal|1
 condition|)
 block|{
-name|guchar
+name|gfloat
 modifier|*
 name|transition
 decl_stmt|;
-name|guchar
+name|gfloat
 modifier|*
 name|source
 index|[
@@ -1457,7 +1457,7 @@ index|]
 operator|=
 name|g_new
 argument_list|(
-name|guchar
+name|gfloat
 argument_list|,
 name|roi
 operator|->
@@ -1468,7 +1468,7 @@ name|transition
 operator|=
 name|g_new
 argument_list|(
-name|guchar
+name|gfloat
 argument_list|,
 name|roi
 operator|->
@@ -1476,6 +1476,41 @@ name|width
 argument_list|)
 expr_stmt|;
 comment|/* With `self->edge_lock', initialize row above image as        * selected, otherwise, initialize as unselected.        */
+if|if
+condition|(
+name|self
+operator|->
+name|edge_lock
+condition|)
+block|{
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|roi
+operator|->
+name|width
+condition|;
+name|i
+operator|++
+control|)
+name|source
+index|[
+literal|0
+index|]
+index|[
+name|i
+index|]
+operator|=
+literal|1.0
+expr_stmt|;
+block|}
+else|else
+block|{
 name|memset
 argument_list|(
 name|source
@@ -1483,19 +1518,19 @@ index|[
 literal|0
 index|]
 argument_list|,
-name|self
-operator|->
-name|edge_lock
-condition|?
-literal|255
-else|:
 literal|0
 argument_list|,
 name|roi
 operator|->
 name|width
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gfloat
+argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|gegl_buffer_get
 argument_list|(
 name|input
@@ -1594,6 +1629,11 @@ argument_list|,
 name|roi
 operator|->
 name|width
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gfloat
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|compute_transition
@@ -1718,6 +1758,41 @@ block|}
 else|else
 block|{
 comment|/* Depending on `self->edge_lock', set the row below the                * image as either selected or non-selected.                */
+if|if
+condition|(
+name|self
+operator|->
+name|edge_lock
+condition|)
+block|{
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|roi
+operator|->
+name|width
+condition|;
+name|i
+operator|++
+control|)
+name|source
+index|[
+literal|2
+index|]
+index|[
+name|i
+index|]
+operator|=
+literal|1.0
+expr_stmt|;
+block|}
+else|else
+block|{
 name|memset
 argument_list|(
 name|source
@@ -1725,19 +1800,19 @@ index|[
 literal|2
 index|]
 argument_list|,
-name|self
-operator|->
-name|edge_lock
-condition|?
-literal|255
-else|:
 literal|0
 argument_list|,
 name|roi
 operator|->
 name|width
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gfloat
+argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|compute_transition
 argument_list|(
@@ -1895,7 +1970,7 @@ index|]
 operator|=
 name|g_new
 argument_list|(
-name|guchar
+name|gfloat
 argument_list|,
 name|roi
 operator|->
@@ -1906,7 +1981,7 @@ name|transition
 operator|=
 name|g_new
 argument_list|(
-name|guchar
+name|gfloat
 operator|*
 argument_list|,
 name|self
@@ -1941,7 +2016,7 @@ index|]
 operator|=
 name|g_new
 argument_list|(
-name|guchar
+name|gfloat
 argument_list|,
 name|roi
 operator|->
@@ -1963,6 +2038,7 @@ index|]
 argument_list|,
 literal|0
 argument_list|,
+operator|(
 name|roi
 operator|->
 name|width
@@ -1972,6 +2048,12 @@ operator|*
 name|self
 operator|->
 name|radius_x
+operator|)
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gfloat
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|transition
@@ -1988,7 +2070,7 @@ name|out
 operator|=
 name|g_new
 argument_list|(
-name|guchar
+name|gfloat
 argument_list|,
 name|roi
 operator|->
@@ -1999,7 +2081,7 @@ name|density
 operator|=
 name|g_new
 argument_list|(
-name|guchar
+name|gfloat
 operator|*
 argument_list|,
 literal|2
@@ -2045,7 +2127,7 @@ index|]
 operator|=
 name|g_new
 argument_list|(
-name|guchar
+name|gfloat
 argument_list|,
 literal|2
 operator|*
@@ -2098,7 +2180,6 @@ name|x
 operator|++
 control|)
 block|{
-specifier|register
 name|gdouble
 name|tmpx
 decl_stmt|,
@@ -2106,7 +2187,7 @@ name|tmpy
 decl_stmt|,
 name|dist
 decl_stmt|;
-name|guchar
+name|gfloat
 name|a
 decl_stmt|;
 if|if
@@ -2240,28 +2321,24 @@ name|feather
 condition|)
 name|a
 operator|=
-literal|255
-operator|*
-operator|(
 literal|1.0
 operator|-
 name|sqrt
 argument_list|(
 name|dist
 argument_list|)
-operator|)
 expr_stmt|;
 else|else
 name|a
 operator|=
-literal|255
+literal|1.0
 expr_stmt|;
 block|}
 else|else
 block|{
 name|a
 operator|=
-literal|0
+literal|0.0
 expr_stmt|;
 block|}
 name|density
@@ -2311,6 +2388,41 @@ expr_stmt|;
 block|}
 block|}
 comment|/* Since the algorithm considerers `buf[0]' to be 'over' the row    * currently calculated, we must start with `buf[0]' as non-selected    * if there is no `self->edge_lock. If there is an    * 'self->edge_lock', initialize the first row to 'selected'. Refer    * to bug #350009.    */
+if|if
+condition|(
+name|self
+operator|->
+name|edge_lock
+condition|)
+block|{
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|roi
+operator|->
+name|width
+condition|;
+name|i
+operator|++
+control|)
+name|buf
+index|[
+literal|0
+index|]
+index|[
+name|i
+index|]
+operator|=
+literal|1.0
+expr_stmt|;
+block|}
+else|else
+block|{
 name|memset
 argument_list|(
 name|buf
@@ -2318,19 +2430,19 @@ index|[
 literal|0
 index|]
 argument_list|,
-name|self
-operator|->
-name|edge_lock
-condition|?
-literal|255
-else|:
 literal|0
 argument_list|,
 name|roi
 operator|->
 name|width
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gfloat
+argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|gegl_buffer_get
 argument_list|(
 name|input
@@ -2429,6 +2541,11 @@ argument_list|,
 name|roi
 operator|->
 name|width
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gfloat
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|compute_transition
@@ -2756,6 +2873,11 @@ argument_list|,
 name|roi
 operator|->
 name|width
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gfloat
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2774,6 +2896,11 @@ argument_list|,
 name|roi
 operator|->
 name|width
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gfloat
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|compute_transition
@@ -2990,7 +3117,7 @@ name|x
 operator|++
 control|)
 block|{
-name|guchar
+name|gfloat
 name|last_max
 decl_stmt|;
 name|last_index
@@ -3005,7 +3132,7 @@ condition|)
 block|{
 name|last_max
 operator|=
-literal|0
+literal|0.0
 expr_stmt|;
 for|for
 control|(
@@ -3095,7 +3222,7 @@ else|else
 block|{
 name|last_max
 operator|=
-literal|0
+literal|0.0
 expr_stmt|;
 for|for
 control|(
@@ -3187,8 +3314,8 @@ block|}
 if|if
 condition|(
 name|last_max
-operator|==
-literal|0
+operator|<=
+literal|0.0
 condition|)
 block|{
 for|for
