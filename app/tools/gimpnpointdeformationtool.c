@@ -877,6 +877,13 @@ break|break;
 case|case
 name|GIMP_TOOL_ACTION_HALT
 case|:
+comment|/* stop the tool only when it has been started */
+if|if
+condition|(
+name|npd_tool
+operator|->
+name|active
+condition|)
 name|gimp_n_point_deformation_tool_halt
 argument_list|(
 name|npd_tool
@@ -1959,6 +1966,7 @@ operator|->
 name|display
 condition|)
 block|{
+comment|/* this is the first click on the drawable - just start the tool */
 name|gimp_n_point_deformation_tool_start
 argument_list|(
 name|npd_tool
@@ -1966,7 +1974,9 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
+return|return;
 block|}
+comment|/* this is at least second click on the drawable - do usual work */
 name|gimp_tool_control_activate
 argument_list|(
 name|tool
