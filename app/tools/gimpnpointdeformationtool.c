@@ -751,7 +751,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_tool_control_set_wants_double_click
+name|gimp_tool_control_set_wants_all_key_events
 argument_list|(
 name|tool
 operator|->
@@ -1288,7 +1288,7 @@ argument_list|,
 literal|"square size"
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
 name|npd_options
 operator|->
@@ -1297,7 +1297,7 @@ argument_list|,
 literal|"rigidity"
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
 name|npd_options
 operator|->
@@ -1489,16 +1489,7 @@ block|{
 case|case
 name|GDK_KEY_BackSpace
 case|:
-if|if
-condition|(
-name|npd_tool
-operator|->
-name|selected_cps
-operator|==
-name|NULL
-condition|)
-block|{
-comment|/* if there isn't any selected control point and if there is at least            * one control point, remove last added control point */
+comment|/* if there is at least one control point, remove last added control point */
 if|if
 condition|(
 name|cps
@@ -1548,8 +1539,7 @@ name|cp
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-comment|/* break is omitted intentionally */
+break|break;
 case|case
 name|GDK_KEY_Delete
 case|:
@@ -1674,6 +1664,20 @@ name|modifier
 init|=
 name|GIMP_CURSOR_MODIFIER_PLUS
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|npd_tool
+operator|->
+name|active
+condition|)
+block|{
+name|modifier
+operator|=
+name|GIMP_CURSOR_MODIFIER_NONE
+expr_stmt|;
+block|}
+elseif|else
 if|if
 condition|(
 name|npd_tool
@@ -1922,7 +1926,6 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-comment|//  NPDModel                  *model;
 name|NPDControlPoint
 modifier|*
 name|cp
@@ -1964,7 +1967,6 @@ name|display
 argument_list|)
 expr_stmt|;
 block|}
-comment|//  model = npd_tool->model;
 name|gimp_tool_control_activate
 argument_list|(
 name|tool
