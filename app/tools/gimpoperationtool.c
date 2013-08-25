@@ -2020,7 +2020,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_tool_aux_selected (GimpContainerView * view,GimpViewable * viewable,gpointer insert_data,GimpOperationTool * tool)
+DECL|function|gimp_operation_tool_aux_selected (GimpContainerView * view,GimpViewable * viewable,gpointer insert_data,GeglNode * aux_input)
 name|gimp_operation_tool_aux_selected
 parameter_list|(
 name|GimpContainerView
@@ -2034,9 +2034,9 @@ parameter_list|,
 name|gpointer
 name|insert_data
 parameter_list|,
-name|GimpOperationTool
+name|GeglNode
 modifier|*
-name|tool
+name|aux_input
 parameter_list|)
 block|{
 name|GeglBuffer
@@ -2061,8 +2061,6 @@ argument_list|)
 expr_stmt|;
 name|gegl_node_set
 argument_list|(
-name|tool
-operator|->
 name|aux_input
 argument_list|,
 literal|"buffer"
@@ -2463,6 +2461,8 @@ name|gimp_operation_tool_aux_selected
 argument_list|)
 argument_list|,
 name|tool
+operator|->
+name|aux_input
 argument_list|,
 literal|0
 argument_list|)
