@@ -206,6 +206,11 @@ DECL|member|movement_start_y
 name|gdouble
 name|movement_start_y
 decl_stmt|;
+DECL|member|cp_scaled_radius
+name|gfloat
+name|cp_scaled_radius
+decl_stmt|;
+comment|/* radius of a control point scaled                                             * according to display shell's scale */
 DECL|member|previous_cps_positions
 name|GList
 modifier|*
