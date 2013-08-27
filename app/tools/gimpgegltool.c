@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2959c0480103
+DECL|enum|__anon27a974bd0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -394,6 +394,8 @@ block|,
 literal|"gegl:photocopy"
 block|,
 literal|"gegl:pixelize"
+block|,
+literal|"gegl:plasma"
 block|,
 literal|"gegl:polar-coordinates"
 block|,
