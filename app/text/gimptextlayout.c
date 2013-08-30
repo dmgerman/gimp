@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimperror.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptext.h"
 end_include
 
@@ -67,6 +73,12 @@ begin_include
 include|#
 directive|include
 file|"gimptextlayout.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
 end_include
 
 begin_struct
@@ -136,6 +148,11 @@ parameter_list|(
 name|GimpTextLayout
 modifier|*
 name|layout
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -311,7 +328,7 @@ end_function
 begin_function
 name|GimpTextLayout
 modifier|*
-DECL|function|gimp_text_layout_new (GimpText * text,gdouble xres,gdouble yres)
+DECL|function|gimp_text_layout_new (GimpText * text,gdouble xres,gdouble yres,GError ** error)
 name|gimp_text_layout_new
 parameter_list|(
 name|GimpText
@@ -323,6 +340,11 @@ name|xres
 parameter_list|,
 name|gdouble
 name|yres
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpTextLayout
@@ -484,6 +506,8 @@ expr_stmt|;
 name|gimp_text_layout_set_markup
 argument_list|(
 name|layout
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -2097,12 +2121,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_layout_set_markup (GimpTextLayout * layout)
+DECL|function|gimp_text_layout_set_markup (GimpTextLayout * layout,GError ** error)
 name|gimp_text_layout_set_markup
 parameter_list|(
 name|GimpTextLayout
 modifier|*
 name|layout
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpText
@@ -2274,6 +2303,85 @@ argument_list|(
 name|close_tag
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|pango_parse_markup
+argument_list|(
+name|markup
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+literal|0
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|error
+argument_list|)
+operator|==
+name|FALSE
+condition|)
+block|{
+if|if
+condition|(
+name|error
+operator|&&
+operator|*
+name|error
+operator|&&
+operator|(
+operator|*
+name|error
+operator|)
+operator|->
+name|domain
+operator|==
+name|G_MARKUP_ERROR
+operator|&&
+operator|(
+operator|*
+name|error
+operator|)
+operator|->
+name|code
+operator|==
+name|G_MARKUP_ERROR_INVALID_CONTENT
+condition|)
+block|{
+comment|/* Errors from pango lib are not accurate enough.            * Other possible error codes are: G_MARKUP_ERROR_UNKNOWN_ELEMENT            * and G_MARKUP_ERROR_UNKNOWN_ATTRIBUTE, which likely indicate a bug            * in GIMP code or a pango library version issue.            * G_MARKUP_ERROR_INVALID_CONTENT on the other hand likely indicates            * size/color/style/weight/variant/etc. value issue. Font size is the            * only free text in GIMP GUI so we assume that must be it.            * Also we output a custom message because pango's error->message is            * too technical (telling of<span> tags, not using user's font size            * unit, and such). */
+name|g_error_free
+argument_list|(
+operator|*
+name|error
+argument_list|)
+expr_stmt|;
+operator|*
+name|error
+operator|=
+name|NULL
+expr_stmt|;
+name|g_set_error_literal
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_ERROR
+argument_list|,
+name|GIMP_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"The new text layout cannot be generated. "
+literal|"Most likely the font size is too big."
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+else|else
 name|pango_layout_set_markup
 argument_list|(
 name|layout
