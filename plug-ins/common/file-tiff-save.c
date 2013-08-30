@@ -155,7 +155,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5b98cb0108
+DECL|struct|__anon27bc476a0108
 block|{
 DECL|member|compression
 name|gint
@@ -178,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5b98cb0208
+DECL|struct|__anon27bc476a0208
 block|{
 DECL|member|ID
 name|gint32
@@ -2700,8 +2700,6 @@ index|]
 decl_stmt|;
 name|gint
 name|cols
-decl_stmt|,
-name|col
 decl_stmt|,
 name|rows
 decl_stmt|,

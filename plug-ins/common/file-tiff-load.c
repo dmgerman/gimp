@@ -147,7 +147,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27864eb30108
+DECL|struct|__anon2c4a50150108
 block|{
 DECL|member|compression
 name|gint
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27864eb30208
+DECL|struct|__anon2c4a50150208
 block|{
 DECL|member|ID
 name|gint32
@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27864eb30308
+DECL|struct|__anon2c4a50150308
 block|{
 DECL|member|o_pages
 name|gint
@@ -1951,24 +1951,8 @@ name|channel
 init|=
 name|NULL
 decl_stmt|;
-name|gushort
-modifier|*
-name|redmap
-decl_stmt|,
-modifier|*
-name|greenmap
-decl_stmt|,
-modifier|*
-name|bluemap
-decl_stmt|;
 name|GimpRGB
 name|color
-decl_stmt|;
-name|guchar
-name|cmap
-index|[
-literal|768
-index|]
 decl_stmt|;
 name|uint16
 name|planar
@@ -3413,7 +3397,7 @@ if|#
 directive|if
 literal|0
 comment|/* Install colormap for INDEXED images only */
-block|if (image_type == GIMP_INDEXED)         {           if (is_bw)             {               if (photomet == PHOTOMETRIC_MINISWHITE)                 {                   cmap[0] = cmap[1] = cmap[2] = 255;                   cmap[3] = cmap[4] = cmap[5] = 0;                 }               else                 {                   cmap[0] = cmap[1] = cmap[2] = 0;                   cmap[3] = cmap[4] = cmap[5] = 255;                 }             }           else             {               if (!TIFFGetField (tif, TIFFTAG_COLORMAP,&redmap,&greenmap,&bluemap))                 {                   g_message ("Could not get colormaps from '%s'",                              gimp_filename_to_utf8 (filename));                   return -1;                 }                for (i = 0, j = 0; i< (1<< bps); i++)                 {                   cmap[j++] = redmap[i]>> 8;                   cmap[j++] = greenmap[i]>> 8;                   cmap[j++] = bluemap[i]>> 8;                 }             }            gimp_image_set_colormap (image, cmap, (1<< bps));         }
+block|if (image_type == GIMP_INDEXED)         {           guchar cmap[768];            if (is_bw)             {               if (photomet == PHOTOMETRIC_MINISWHITE)                 {                   cmap[0] = cmap[1] = cmap[2] = 255;                   cmap[3] = cmap[4] = cmap[5] = 0;                 }               else                 {                   cmap[0] = cmap[1] = cmap[2] = 0;                   cmap[3] = cmap[4] = cmap[5] = 255;                 }             }           else             {               gushort *redmap, *greenmap, *bluemap;                if (!TIFFGetField (tif, TIFFTAG_COLORMAP,&redmap,&greenmap,&bluemap))                 {                   g_message ("Could not get colormaps from '%s'",                              gimp_filename_to_utf8 (filename));                   return -1;                 }                for (i = 0, j = 0; i< (1<< bps); i++)                 {                   cmap[j++] = redmap[i]>> 8;                   cmap[j++] = greenmap[i]>> 8;                   cmap[j++] = bluemap[i]>> 8;                 }             }            gimp_image_set_colormap (image, cmap, (1<< bps));         }
 endif|#
 directive|endif
 name|load_paths
