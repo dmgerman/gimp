@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277ed97c0103
+DECL|enum|__anon29317faa0103
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -98,7 +98,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277ed97c0208
+DECL|struct|__anon29317faa0208
 block|{
 DECL|member|duration_index
 name|gint
@@ -125,7 +125,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277ed97c0308
+DECL|struct|__anon29317faa0308
 block|{
 DECL|member|x
 DECL|member|y
@@ -1079,6 +1079,16 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|frames_image_id
+specifier|static
+name|gint32
+name|frames_image_id
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
+
 begin_macro
 DECL|function|MAIN ()
 name|MAIN
@@ -1352,6 +1362,14 @@ operator|.
 name|d_status
 operator|=
 name|status
+expr_stmt|;
+name|gimp_image_delete
+argument_list|(
+name|frames_image_id
+argument_list|)
+expr_stmt|;
+name|gegl_exit
+argument_list|()
 expr_stmt|;
 block|}
 end_function
@@ -4608,10 +4626,6 @@ name|void
 parameter_list|)
 block|{
 comment|/* Frames are associated to an unused image. */
-specifier|static
-name|gint32
-name|frames_image_id
-decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
