@@ -134,6 +134,11 @@ name|GimpDisplay
 modifier|*
 name|display
 decl_stmt|;
+DECL|member|deform_thread
+name|GThread
+modifier|*
+name|deform_thread
+decl_stmt|;
 DECL|member|graph
 name|GeglNode
 modifier|*
