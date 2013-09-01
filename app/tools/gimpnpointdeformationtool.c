@@ -641,7 +641,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"N-Point Deformation Tool: Deform image using points"
+literal|"N-Point Deformation Tool: Rubber-like deformation of an image using points"
 argument_list|)
 argument_list|,
 name|N_
@@ -852,36 +852,6 @@ name|active
 operator|=
 name|FALSE
 expr_stmt|;
-name|npd_tool
-operator|->
-name|selected_cp
-operator|=
-name|NULL
-expr_stmt|;
-name|npd_tool
-operator|->
-name|hovering_cp
-operator|=
-name|NULL
-expr_stmt|;
-name|npd_tool
-operator|->
-name|selected_cps
-operator|=
-name|NULL
-expr_stmt|;
-name|npd_tool
-operator|->
-name|previous_cps_positions
-operator|=
-name|NULL
-expr_stmt|;
-name|npd_tool
-operator|->
-name|rubber_band
-operator|=
-name|FALSE
-expr_stmt|;
 block|}
 end_function
 
@@ -1031,6 +1001,10 @@ name|GThread
 modifier|*
 name|deform_thread
 decl_stmt|;
+name|GimpNPointDeformationOptions
+modifier|*
+name|npd_options
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_N_POINT_DEFORMATION_TOOL
@@ -1052,8 +1026,6 @@ name|tool
 operator|->
 name|display
 operator|=
-name|display
-expr_stmt|;
 name|npd_tool
 operator|->
 name|display
@@ -1173,16 +1145,28 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_n_point_deformation_tool_set_options
-argument_list|(
-name|node
-argument_list|,
+comment|/* initialize some options */
+name|npd_options
+operator|=
 name|GIMP_N_POINT_DEFORMATION_TOOL_GET_OPTIONS
 argument_list|(
 name|npd_tool
 argument_list|)
+expr_stmt|;
+name|npd_options
+operator|->
+name|mesh_visible
+operator|=
+name|TRUE
+expr_stmt|;
+name|gimp_n_point_deformation_tool_set_options
+argument_list|(
+name|node
+argument_list|,
+name|npd_options
 argument_list|)
 expr_stmt|;
+comment|/* compute and get model */
 name|gegl_node_process
 argument_list|(
 name|sink
@@ -1253,6 +1237,30 @@ operator|->
 name|selected_cp
 operator|=
 name|NULL
+expr_stmt|;
+name|npd_tool
+operator|->
+name|hovering_cp
+operator|=
+name|NULL
+expr_stmt|;
+name|npd_tool
+operator|->
+name|selected_cps
+operator|=
+name|NULL
+expr_stmt|;
+name|npd_tool
+operator|->
+name|previous_cps_positions
+operator|=
+name|NULL
+expr_stmt|;
+name|npd_tool
+operator|->
+name|rubber_band
+operator|=
+name|FALSE
 expr_stmt|;
 comment|/* start deformation thread */
 name|deform_thread
@@ -1337,6 +1345,18 @@ argument_list|(
 name|tool
 operator|->
 name|control
+argument_list|)
+expr_stmt|;
+name|gimp_n_point_deformation_tool_clear_selected_points_list
+argument_list|(
+name|npd_tool
+argument_list|)
+expr_stmt|;
+name|npd_destroy_model
+argument_list|(
+name|npd_tool
+operator|->
+name|model
 argument_list|)
 expr_stmt|;
 name|tool
@@ -3109,6 +3129,29 @@ operator|-
 name|y0
 argument_list|)
 expr_stmt|;
+block|}
+comment|/* draw preview test */
+block|{
+comment|//    GimpCanvasItem *item = g_object_new (GIMP_TYPE_CANVAS_TRANSFORM_PREVIEW,
+comment|//                       "shell",       shell,
+comment|//                       "drawable",    drawable,
+comment|//                       "transform",   transform,
+comment|//                       "x1",          x1,
+comment|//                       "y1",          y1,
+comment|//                       "x2",          x2,
+comment|//                       "y2",          y2,
+comment|//                       "perspective", perspective,
+comment|//                       "opacity",     CLAMP (opacity, 0.0, 1.0),
+comment|//                       NULL);
+comment|//
+comment|//    gimp_draw_tool_add_preview (draw_tool, item);
+comment|//    g_object_unref (item);
+comment|////    cairo_surface_t *area;
+comment|////    GimpDisplayShell *shell;
+comment|////    shell = gimp_display_get_shell (npd_tool->display);
+comment|////    area = cairo_image_surface_create (CAIRO_FORMAT_ARGB_32, 500, 500);
+comment|//
+comment|//    cairo_surface_destroy (area);
 block|}
 block|}
 end_function
