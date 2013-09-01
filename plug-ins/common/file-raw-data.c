@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* Raw image loader (and saver) plugin 3.4  *  * by tim copperfield [timecop@japan.co.jp]  * http://www.ne.jp/asahi/linux/timecop  *  * Updated for Gimp 2.1 by pg@futureware.at and mitch@gimp.org  *  * This plugin is not based on any other plugin.  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* Raw data image loader (and saver) plugin 3.4  *  * by tim copperfield [timecop@japan.co.jp]  * http://www.ne.jp/asahi/linux/timecop  *  * Updated for Gimp 2.1 by pg@futureware.at and mitch@gimp.org  *  * This plugin is not based on any other plugin.  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -118,7 +118,7 @@ DECL|macro|PLUG_IN_BINARY
 define|#
 directive|define
 name|PLUG_IN_BINARY
-value|"file-raw"
+value|"file-raw-data"
 end_define
 
 begin_define
@@ -126,7 +126,7 @@ DECL|macro|PLUG_IN_ROLE
 define|#
 directive|define
 name|PLUG_IN_ROLE
-value|"gimp-file-raw"
+value|"gimp-file-raw-data"
 end_define
 
 begin_define
@@ -140,7 +140,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27564a280103
+DECL|enum|__anon27747c5d0103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -198,7 +198,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27564a280203
+DECL|enum|__anon27747c5d0203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -216,7 +216,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27564a280308
+DECL|struct|__anon27747c5d0308
 block|{
 DECL|member|file_offset
 name|gint32
@@ -257,7 +257,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27564a280408
+DECL|struct|__anon27747c5d0408
 block|{
 DECL|member|fp
 name|FILE
