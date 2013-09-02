@@ -203,6 +203,14 @@ DECL|member|cursor_y
 name|gdouble
 name|cursor_y
 decl_stmt|;
+DECL|member|offset_x
+name|gdouble
+name|offset_x
+decl_stmt|;
+DECL|member|offset_y
+name|gdouble
+name|offset_y
+decl_stmt|;
 DECL|member|movement_start_x
 name|gdouble
 name|movement_start_x
