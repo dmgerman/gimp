@@ -215,14 +215,15 @@ DECL|member|cp_scaled_radius
 name|gfloat
 name|cp_scaled_radius
 decl_stmt|;
-comment|/* radius of a control point scaled                                             * according to display shell's scale */
+comment|/* radius of a control point scaled                                              * according to display shell's scale */
 DECL|member|previous_cps_positions
 name|GList
 modifier|*
 name|previous_cps_positions
 decl_stmt|;
-comment|/* list of NPDPoints holding previous                                             * positions of control points */
+comment|/* list of NPDPoints holding previous                                              * positions of control points */
 DECL|member|active
+specifier|volatile
 name|gboolean
 name|active
 decl_stmt|;
