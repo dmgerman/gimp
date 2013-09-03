@@ -141,6 +141,28 @@ comment|/* FIXME GIMP_HELP_FILTER_ANTIALIAS */
 block|}
 block|,
 block|{
+literal|"filters-bump-map"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Bump Map..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:bump-map"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_BUMP_MAP */
+block|}
+block|,
+block|{
 literal|"filters-c2g"
 block|,
 name|GIMP_STOCK_GEGL
@@ -1403,6 +1425,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-antialias"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-bump-map"
 argument_list|,
 name|writable
 argument_list|)
