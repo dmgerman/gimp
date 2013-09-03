@@ -95,7 +95,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27829f040103
+DECL|enum|__anon2ae877c20103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27829f040203
+DECL|enum|__anon2ae877c20203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -129,7 +129,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27829f040308
+DECL|struct|__anon2ae877c20308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27829f040408
+DECL|struct|__anon2ae877c20408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -233,7 +233,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27829f040508
+DECL|struct|__anon2ae877c20508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -4461,11 +4461,12 @@ literal|10.0
 argument_list|,
 literal|0
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-literal|0
+operator|-
+literal|10000.0
 argument_list|,
-literal|0
+literal|10001.0
 argument_list|,
 name|_
 argument_list|(
@@ -4548,11 +4549,12 @@ literal|10.0
 argument_list|,
 literal|0
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-literal|0
+operator|-
+literal|10000.0
 argument_list|,
-literal|0
+literal|10001.0
 argument_list|,
 name|_
 argument_list|(
@@ -5048,9 +5050,9 @@ operator|-
 name|dx
 argument_list|,
 operator|-
-literal|1000
+literal|10000
 argument_list|,
-literal|1000
+literal|10000
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_block_by_func
@@ -5108,9 +5110,9 @@ operator|-
 name|dy
 argument_list|,
 operator|-
-literal|1000
+literal|10000
 argument_list|,
-literal|1000
+literal|10000
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_block_by_func
