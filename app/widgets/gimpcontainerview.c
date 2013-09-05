@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b020e5a0103
+DECL|enum|__anon27721e030103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -1476,6 +1476,17 @@ operator|->
 name|container
 condition|)
 block|{
+if|if
+condition|(
+name|private
+operator|->
+name|context
+condition|)
+name|gimp_container_view_disconnect_context
+argument_list|(
+name|view
+argument_list|)
+expr_stmt|;
 name|gimp_container_view_select_item
 argument_list|(
 name|view
@@ -1523,17 +1534,6 @@ argument_list|,
 name|private
 operator|->
 name|container
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|private
-operator|->
-name|context
-condition|)
-name|gimp_container_view_disconnect_context
-argument_list|(
-name|view
 argument_list|)
 expr_stmt|;
 block|}
