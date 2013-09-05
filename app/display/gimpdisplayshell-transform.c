@@ -952,7 +952,7 @@ operator|*
 name|rotated_coords
 operator|=
 operator|*
-name|rotated_coords
+name|unrotated_coords
 expr_stmt|;
 if|if
 condition|(
