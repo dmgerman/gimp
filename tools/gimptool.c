@@ -230,7 +230,7 @@ directive|endif
 end_endif
 
 begin_struct
-DECL|struct|__anon2bdc71b50108
+DECL|struct|__anon29e17b000108
 specifier|static
 struct|struct
 block|{
@@ -1118,6 +1118,17 @@ argument_list|,
 literal|2
 argument_list|)
 operator|==
+literal|0
+operator|&&
+name|g_ascii_strncasecmp
+argument_list|(
+name|env_cc
+argument_list|,
+literal|"clang"
+argument_list|,
+literal|5
+argument_list|)
+operator|!=
 literal|0
 condition|)
 name|msvc_syntax
