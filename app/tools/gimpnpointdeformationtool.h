@@ -148,10 +148,15 @@ name|GeglNode
 modifier|*
 name|graph
 decl_stmt|;
-DECL|member|node
+DECL|member|source
 name|GeglNode
 modifier|*
-name|node
+name|source
+decl_stmt|;
+DECL|member|npd_node
+name|GeglNode
+modifier|*
+name|npd_node
 decl_stmt|;
 DECL|member|sink
 name|GeglNode
@@ -162,6 +167,11 @@ DECL|member|preview_buffer
 name|GeglBuffer
 modifier|*
 name|preview_buffer
+decl_stmt|;
+DECL|member|source_buffer
+name|GeglBuffer
+modifier|*
+name|source_buffer
 decl_stmt|;
 DECL|member|drawable
 name|GimpDrawable
@@ -226,9 +236,13 @@ name|previous_cps_positions
 decl_stmt|;
 comment|/* list of NPDPoints holding previous                                              * positions of control points */
 DECL|member|active
-specifier|volatile
 name|gboolean
 name|active
+decl_stmt|;
+DECL|member|deformation_active
+specifier|volatile
+name|gboolean
+name|deformation_active
 decl_stmt|;
 DECL|member|rubber_band
 name|gboolean
