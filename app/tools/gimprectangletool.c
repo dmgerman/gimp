@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29be17b70103
+DECL|enum|__anon277294ef0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -243,7 +243,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29be17b70203
+DECL|enum|__anon277294ef0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -286,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29be17b70303
+DECL|enum|__anon277294ef0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -8818,10 +8818,7 @@ name|pickable
 operator|=
 name|GIMP_PICKABLE
 argument_list|(
-name|gimp_image_get_projection
-argument_list|(
 name|image
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|x1

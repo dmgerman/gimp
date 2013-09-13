@@ -772,7 +772,7 @@ comment|/* Called to fill in a newly referenced tile in the gradient map */
 end_comment
 
 begin_comment
-unit|static void gradmap_tile_validate (TileManager *tm,                        Tile        *tile,                        GimpImage   *image) {   GimpPickable *pickable;   const Babl   *pickable_format;   GeglBuffer   *src_buffer;   Tile         *srctile;   PixelRegion   srcPR;   PixelRegion   destPR;   gint          x, y;   gint          dw, dh;   gint          sw, sh;   gint          i, j;   gint          b;   gfloat        gradient;   guint8       *tiledata;   guint8       *gradmap;    tile_manager_get_tile_coordinates (tm, tile,&x,&y);    dw = tile_ewidth (tile);   dh = tile_eheight (tile);    pickable = GIMP_PICKABLE (gimp_image_get_projection (image));    gimp_pickable_flush (pickable);
+unit|static void gradmap_tile_validate (TileManager *tm,                        Tile        *tile,                        GimpImage   *image) {   GimpPickable *pickable;   const Babl   *pickable_format;   GeglBuffer   *src_buffer;   Tile         *srctile;   PixelRegion   srcPR;   PixelRegion   destPR;   gint          x, y;   gint          dw, dh;   gint          sw, sh;   gint          i, j;   gint          b;   gfloat        gradient;   guint8       *tiledata;   guint8       *gradmap;    tile_manager_get_tile_coordinates (tm, tile,&x,&y);    dw = tile_ewidth (tile);   dh = tile_eheight (tile);    pickable = GIMP_PICKABLE (image);    gimp_pickable_flush (pickable);
 comment|/* get corresponding tile in the image */
 end_comment
 

@@ -274,7 +274,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f740740108
+DECL|struct|__anon2b6fbcbb0108
 block|{
 DECL|member|context
 name|GimpContext
@@ -2008,10 +2008,7 @@ name|gimp_pickable_auto_shrink
 argument_list|(
 name|GIMP_PICKABLE
 argument_list|(
-name|gimp_image_get_projection
-argument_list|(
 name|image
-argument_list|)
 argument_list|)
 argument_list|,
 literal|0

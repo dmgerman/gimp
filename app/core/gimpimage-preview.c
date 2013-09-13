@@ -306,15 +306,6 @@ argument_list|(
 name|viewable
 argument_list|)
 decl_stmt|;
-name|GimpProjection
-modifier|*
-name|projection
-init|=
-name|gimp_image_get_projection
-argument_list|(
-name|image
-argument_list|)
-decl_stmt|;
 specifier|const
 name|Babl
 modifier|*
@@ -404,7 +395,7 @@ name|gimp_pickable_get_buffer
 argument_list|(
 name|GIMP_PICKABLE
 argument_list|(
-name|projection
+name|image
 argument_list|)
 argument_list|)
 argument_list|,

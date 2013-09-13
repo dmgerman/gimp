@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae02a5c0103
+DECL|enum|__anon27ddb5a10103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -7272,10 +7272,6 @@ modifier|*
 name|color
 parameter_list|)
 block|{
-name|GimpProjection
-modifier|*
-name|projection
-decl_stmt|;
 name|GimpChannel
 modifier|*
 name|channel
@@ -7327,18 +7323,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|projection
-operator|=
-name|gimp_image_get_projection
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
 name|gimp_pickable_flush
 argument_list|(
 name|GIMP_PICKABLE
 argument_list|(
-name|projection
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7348,7 +7337,7 @@ name|gimp_pickable_get_buffer
 argument_list|(
 name|GIMP_PICKABLE
 argument_list|(
-name|projection
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;

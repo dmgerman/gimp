@@ -485,10 +485,6 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GimpProjection
-modifier|*
-name|projection
-decl_stmt|;
 name|GimpBuffer
 modifier|*
 name|buffer
@@ -527,13 +523,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|projection
-operator|=
-name|gimp_image_get_projection
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
 name|buffer
 operator|=
 name|gimp_edit_extract
@@ -542,7 +531,7 @@ name|image
 argument_list|,
 name|GIMP_PICKABLE
 argument_list|(
-name|projection
+name|image
 argument_list|)
 argument_list|,
 name|context
@@ -1601,10 +1590,6 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GimpProjection
-modifier|*
-name|projection
-decl_stmt|;
 name|GimpBuffer
 modifier|*
 name|buffer
@@ -1652,13 +1637,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|projection
-operator|=
-name|gimp_image_get_projection
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
 name|buffer
 operator|=
 name|gimp_edit_extract
@@ -1667,7 +1645,7 @@ name|image
 argument_list|,
 name|GIMP_PICKABLE
 argument_list|(
-name|projection
+name|image
 argument_list|)
 argument_list|,
 name|context

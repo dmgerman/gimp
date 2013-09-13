@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b93495e0103
+DECL|enum|__anon2770c1ad0103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -3574,10 +3574,7 @@ name|gimp_pickable_flush
 argument_list|(
 name|GIMP_PICKABLE
 argument_list|(
-name|gimp_image_get_projection
-argument_list|(
 name|image
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

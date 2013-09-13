@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1a3b720103
+DECL|enum|__anon28a0a2c60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1472,10 +1472,7 @@ name|src_pickable
 operator|=
 name|GIMP_PICKABLE
 argument_list|(
-name|gimp_image_get_projection
-argument_list|(
 name|src_image
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_item_get_offset

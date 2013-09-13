@@ -674,10 +674,7 @@ name|src_pickable
 operator|=
 name|GIMP_PICKABLE
 argument_list|(
-name|gimp_image_get_projection
-argument_list|(
 name|src_image
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|dest_image
