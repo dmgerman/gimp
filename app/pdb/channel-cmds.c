@@ -1566,7 +1566,7 @@ literal|"gimp-channel-new"
 argument_list|,
 literal|"Create a new channel."
 argument_list|,
-literal|"This procedure creates a new channel with the specified width, height, name, opacity and color. \n\nThe new channel still needs to be added to the image, as this is not automatic. Add the new channel with 'gimp-image-insert-channel'. Other attributes, such as channel visibility, should be set with explicit procedure calls. \nThe channel's contents are undefined initially."
+literal|"This procedure creates a new channel with the specified width, height, name, opacity and color. The new channel still needs to be added to the image, as this is not automatic. Add the new channel with 'gimp-image-insert-channel'. Other attributes, such as channel visibility, should be set with explicit procedure calls. The channel's contents are undefined initially."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -1769,7 +1769,7 @@ literal|"gimp-channel-new-from-component"
 argument_list|,
 literal|"Create a new channel from a color component"
 argument_list|,
-literal|"This procedure creates a new channel from a color component. \n\nThe new channel still needs to be added to the image, as this is not automatic. Add the new channel with 'gimp-image-insert-channel'. Other attributes, such as channel visibility, should be set with explicit procedure calls."
+literal|"This procedure creates a new channel from a color component. The new channel still needs to be added to the image, as this is not automatic. Add the new channel with 'gimp-image-insert-channel'. Other attributes, such as channel visibility, should be set with explicit procedure calls."
 argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
@@ -1906,7 +1906,7 @@ literal|"gimp-channel-copy"
 argument_list|,
 literal|"Copy a channel."
 argument_list|,
-literal|"This procedure copies the specified channel and returns the copy. \n\nThe new channel still needs to be added to the image, as this is not automatic. Add the new channel with 'gimp-image-insert-channel'."
+literal|"This procedure copies the specified channel and returns the copy. The new channel still needs to be added to the image, as this is not automatic. Add the new channel with 'gimp-image-insert-channel'."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
