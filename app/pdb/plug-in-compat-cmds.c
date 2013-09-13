@@ -3230,7 +3230,7 @@ name|node
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"svg:src-over"
+literal|"svg:src"
 argument_list|,
 name|NULL
 argument_list|)
