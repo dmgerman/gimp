@@ -203,6 +203,13 @@ expr_stmt|;
 if|if
 condition|(
 name|src_buffer
+operator|&&
+name|gegl_node_has_pad
+argument_list|(
+name|operation
+argument_list|,
+literal|"input"
+argument_list|)
 condition|)
 block|{
 name|GeglNode
