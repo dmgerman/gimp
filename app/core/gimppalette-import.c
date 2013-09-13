@@ -1341,6 +1341,13 @@ name|mask_data
 init|=
 name|NULL
 decl_stmt|;
+name|gint
+name|length
+init|=
+name|iter
+operator|->
+name|length
+decl_stmt|;
 if|if
 condition|(
 name|mask_roi
@@ -1356,8 +1363,6 @@ index|]
 expr_stmt|;
 while|while
 condition|(
-name|iter
-operator|->
 name|length
 operator|--
 condition|)

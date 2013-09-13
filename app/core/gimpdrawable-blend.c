@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a06f39f0108
+DECL|struct|__anon2bc37d120108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -226,7 +226,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a06f39f0208
+DECL|struct|__anon2bc37d120208
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -2634,6 +2634,13 @@ name|iter
 argument_list|)
 condition|)
 block|{
+name|gint
+name|count
+init|=
+name|iter
+operator|->
+name|length
+decl_stmt|;
 name|gfloat
 modifier|*
 name|data
@@ -2647,9 +2654,7 @@ index|]
 decl_stmt|;
 while|while
 condition|(
-name|iter
-operator|->
-name|length
+name|count
 operator|--
 condition|)
 operator|*

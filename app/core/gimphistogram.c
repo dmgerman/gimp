@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3512980103
+DECL|enum|__anon2bb17c0b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1231,6 +1231,13 @@ index|[
 literal|0
 index|]
 decl_stmt|;
+name|gint
+name|length
+init|=
+name|iter
+operator|->
+name|length
+decl_stmt|;
 name|gfloat
 name|max
 decl_stmt|;
@@ -1261,8 +1268,6 @@ literal|1
 case|:
 while|while
 condition|(
-name|iter
-operator|->
 name|length
 operator|--
 condition|)
@@ -1301,8 +1306,6 @@ literal|2
 case|:
 while|while
 condition|(
-name|iter
-operator|->
 name|length
 operator|--
 condition|)
@@ -1365,8 +1368,6 @@ case|:
 comment|/* calculate separate value values */
 while|while
 condition|(
-name|iter
-operator|->
 name|length
 operator|--
 condition|)
@@ -1466,8 +1467,6 @@ case|:
 comment|/* calculate separate value values */
 while|while
 condition|(
-name|iter
-operator|->
 name|length
 operator|--
 condition|)
@@ -1605,8 +1604,6 @@ literal|1
 case|:
 while|while
 condition|(
-name|iter
-operator|->
 name|length
 operator|--
 condition|)
@@ -1634,8 +1631,6 @@ literal|2
 case|:
 while|while
 condition|(
-name|iter
-operator|->
 name|length
 operator|--
 condition|)
@@ -1685,8 +1680,6 @@ case|:
 comment|/* calculate separate value values */
 while|while
 condition|(
-name|iter
-operator|->
 name|length
 operator|--
 condition|)
@@ -1775,8 +1768,6 @@ case|:
 comment|/* calculate separate value values */
 while|while
 condition|(
-name|iter
-operator|->
 name|length
 operator|--
 condition|)

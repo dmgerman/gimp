@@ -413,7 +413,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c5f20390103
+DECL|enum|__anon29e6daef0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1514,7 +1514,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5f20390208
+DECL|struct|__anon29e6daef0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1757,7 +1757,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5f20390308
+DECL|struct|__anon29e6daef0308
 block|{
 DECL|member|used_count
 name|signed
@@ -2576,6 +2576,13 @@ index|[
 literal|0
 index|]
 decl_stmt|;
+name|gint
+name|length
+init|=
+name|iter
+operator|->
+name|length
+decl_stmt|;
 if|if
 condition|(
 name|has_alpha
@@ -2583,8 +2590,6 @@ condition|)
 block|{
 while|while
 condition|(
-name|iter
-operator|->
 name|length
 operator|--
 condition|)
@@ -2619,8 +2624,6 @@ else|else
 block|{
 while|while
 condition|(
-name|iter
-operator|->
 name|length
 operator|--
 condition|)
@@ -4316,6 +4319,13 @@ index|[
 literal|0
 index|]
 decl_stmt|;
+name|gint
+name|length
+init|=
+name|iter
+operator|->
+name|length
+decl_stmt|;
 if|if
 condition|(
 name|has_alpha
@@ -4323,8 +4333,6 @@ condition|)
 block|{
 while|while
 condition|(
-name|iter
-operator|->
 name|length
 operator|--
 condition|)
@@ -4355,8 +4363,6 @@ else|else
 block|{
 while|while
 condition|(
-name|iter
-operator|->
 name|length
 operator|--
 condition|)
@@ -4599,10 +4605,15 @@ index|[
 literal|0
 index|]
 decl_stmt|;
-name|total_size
-operator|+=
+name|gint
+name|length
+init|=
 name|iter
 operator|->
+name|length
+decl_stmt|;
+name|total_size
+operator|+=
 name|length
 expr_stmt|;
 comment|/* g_printerr (" [%d,%d - %d,%d]", srcPR.x, src_roi->y, offsetx, offsety); */
@@ -4643,8 +4654,6 @@ name|offsety
 expr_stmt|;
 while|while
 condition|(
-name|iter
-operator|->
 name|length
 operator|--
 condition|)
@@ -4746,8 +4755,6 @@ else|else
 block|{
 while|while
 condition|(
-name|iter
-operator|->
 name|length
 operator|--
 condition|)
@@ -4840,8 +4847,6 @@ name|offsety
 expr_stmt|;
 while|while
 condition|(
-name|iter
-operator|->
 name|length
 operator|--
 condition|)
