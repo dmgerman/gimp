@@ -145,6 +145,11 @@ name|GtkWidget
 modifier|*
 name|check_pause_deformation
 decl_stmt|;
+DECL|member|check_mesh_visible
+name|GtkWidget
+modifier|*
+name|check_mesh_visible
+decl_stmt|;
 block|}
 struct|;
 end_struct

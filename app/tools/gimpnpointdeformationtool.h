@@ -248,6 +248,10 @@ DECL|member|rubber_band
 name|gboolean
 name|rubber_band
 decl_stmt|;
+DECL|member|apply_deformation
+name|gboolean
+name|apply_deformation
+decl_stmt|;
 block|}
 struct|;
 end_struct
