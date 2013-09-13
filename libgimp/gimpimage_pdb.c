@@ -4670,7 +4670,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_active_channel:  * @image_ID: The image.  * @active_channel_ID: The new image active channel.  *  * Sets the specified image's active channel.  *  * If the channel exists, it is set as the active channel in the image.  * Any previous active channel or channel is set to inactive. An  * exception is a previously existing floating selection, in which case  * this procedure will return an execution error.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_set_active_channel:  * @image_ID: The image.  * @active_channel_ID: The new image active channel.  *  * Sets the specified image's active channel.  *  * If the channel exists, it is set as the active channel in the image.  * Any previous active channel or layer is set to inactive. An  * exception is a previously existing floating selection, in which case  * this procedure will return an execution error.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function

@@ -19031,7 +19031,7 @@ literal|"gimp-image-set-active-channel"
 argument_list|,
 literal|"Sets the specified image's active channel."
 argument_list|,
-literal|"If the channel exists, it is set as the active channel in the image. Any previous active channel or channel is set to inactive. An exception is a previously existing floating selection, in which case this procedure will return an execution error."
+literal|"If the channel exists, it is set as the active channel in the image. Any previous active channel or layer is set to inactive. An exception is a previously existing floating selection, in which case this procedure will return an execution error."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
