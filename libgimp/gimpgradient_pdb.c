@@ -1363,7 +1363,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_set_left_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: The position to set the guidepoint to.  * @final_pos: The return position.  *  * Sets the left endpoint position of the specified segment  *  * This procedure sets the left endpoint position of the specified  * segment of the specified gradient. The final position will be  * between the position of the middle point to the left to the middle  * point of the current segement. This procedure returns the final  * position.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_gradient_segment_set_left_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: The position to set the guidepoint to.  * @final_pos: The return position.  *  * Sets the left endpoint position of the specified segment  *  * This procedure sets the left endpoint position of the specified  * segment of the specified gradient. The final position will be  * between the position of the middle point to the left to the middle  * point of the current segement.  * This procedure returns the final position.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1572,7 +1572,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_set_middle_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: The position to set the guidepoint to.  * @final_pos: The return position.  *  * Sets the middle point position of the specified segment  *  * This procedure sets the middle point position of the specified  * segment of the specified gradient. The final position will be  * between the two endpoints of the segment. This procedure returns the  * final position.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_gradient_segment_set_middle_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: The position to set the guidepoint to.  * @final_pos: The return position.  *  * Sets the middle point position of the specified segment  *  * This procedure sets the middle point position of the specified  * segment of the specified gradient. The final position will be  * between the two endpoints of the segment.  * This procedure returns the final position.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1781,7 +1781,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_set_right_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: The position to set the guidepoint to.  * @final_pos: The return position.  *  * Sets the right endpoint position of the specified segment  *  * This procedure sets the right endpoint position of the specified  * segment of the specified gradient. The final position will be  * between the position of the middle point of the current segment and  * the middle point of the segment to the right. This procedure returns  * the final position.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_gradient_segment_set_right_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: The position to set the guidepoint to.  * @final_pos: The return position.  *  * Sets the right endpoint position of the specified segment  *  * This procedure sets the right endpoint position of the specified  * segment of the specified gradient. The final position will be  * between the position of the middle point of the current segment and  * the middle point of the segment to the right.  * This procedure returns the final position.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function

@@ -1148,7 +1148,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_mask_intersect:  * @drawable_ID: The drawable.  * @x: x coordinate of the upper left corner of the intersection.  * @y: y coordinate of the upper left corner of the intersection.  * @width: width of the intersection.  * @height: height of the intersection.  *  * Find the bounding box of the current selection in relation to the  * specified drawable.  *  * This procedure returns whether there is an intersection between the  * drawable and the selection. Unlike gimp_drawable_mask_bounds(), the  * intersection's bounds are returned as x, y, width, height. If there  * is no selection this function returns TRUE and the returned bounds  * are the extents of the whole drawable.  *  * Returns: TRUE if the returned area is not empty.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_drawable_mask_intersect:  * @drawable_ID: The drawable.  * @x: x coordinate of the upper left corner of the intersection.  * @y: y coordinate of the upper left corner of the intersection.  * @width: width of the intersection.  * @height: height of the intersection.  *  * Find the bounding box of the current selection in relation to the  * specified drawable.  *  * This procedure returns whether there is an intersection between the  * drawable and the selection. Unlike gimp_drawable_mask_bounds(), the  * intersection's bounds are returned as x, y, width, height.  * If there is no selection this function returns TRUE and the returned  * bounds are the extents of the whole drawable.  *  * Returns: TRUE if the returned area is not empty.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1763,7 +1763,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_fill:  * @drawable_ID: The drawable.  * @fill_type: The type of fill.  *  * Fill the drawable with the specified fill mode.  *  * This procedure fills the drawable. If the fill mode is foreground  * the current foreground color is used. If the fill mode is  * background, the current background color is used. If the fill type  * is white, then white is used. Transparent fill only affects layers  * with an alpha channel, in which case the alpha channel is set to  * transparent. If the drawable has no alpha channel, it is filled to  * white. No fill leaves the drawable's contents undefined. This  * procedure is unlike gimp_edit_fill() or the bucket fill tool because  * it fills regardless of a selection. Its main purpose is to fill a  * newly created drawable before adding it to the image. This operation  * cannot be undone.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_drawable_fill:  * @drawable_ID: The drawable.  * @fill_type: The type of fill.  *  * Fill the drawable with the specified fill mode.  *  * This procedure fills the drawable. If the fill mode is foreground  * the current foreground color is used. If the fill mode is  * background, the current background color is used. If the fill type  * is white, then white is used. Transparent fill only affects layers  * with an alpha channel, in which case the alpha channel is set to  * transparent. If the drawable has no alpha channel, it is filled to  * white. No fill leaves the drawable's contents undefined.  * This procedure is unlike gimp_edit_fill() or the bucket fill tool  * because it fills regardless of a selection. Its main purpose is to  * fill a newly created drawable before adding it to the image. This  * operation cannot be undone.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function

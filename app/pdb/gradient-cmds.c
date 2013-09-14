@@ -7617,7 +7617,8 @@ literal|"gimp-gradient-segment-set-left-pos"
 argument_list|,
 literal|"Sets the left endpoint position of the specified segment"
 argument_list|,
-literal|"This procedure sets the left endpoint position of the specified segment of the specified gradient. The final position will be between the position of the middle point to the left to the middle point of the current segement. This procedure returns the final position."
+literal|"This procedure sets the left endpoint position of the specified segment of the specified gradient. The final position will be between the position of the middle point to the left to the middle point of the current segement.\n"
+literal|"This procedure returns the final position."
 argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
@@ -7875,7 +7876,8 @@ literal|"gimp-gradient-segment-set-middle-pos"
 argument_list|,
 literal|"Sets the middle point position of the specified segment"
 argument_list|,
-literal|"This procedure sets the middle point position of the specified segment of the specified gradient. The final position will be between the two endpoints of the segment. This procedure returns the final position."
+literal|"This procedure sets the middle point position of the specified segment of the specified gradient. The final position will be between the two endpoints of the segment.\n"
+literal|"This procedure returns the final position."
 argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
@@ -8133,7 +8135,8 @@ literal|"gimp-gradient-segment-set-right-pos"
 argument_list|,
 literal|"Sets the right endpoint position of the specified segment"
 argument_list|,
-literal|"This procedure sets the right endpoint position of the specified segment of the specified gradient. The final position will be between the position of the middle point of the current segment and the middle point of the segment to the right. This procedure returns the final position."
+literal|"This procedure sets the right endpoint position of the specified segment of the specified gradient. The final position will be between the position of the middle point of the current segment and the middle point of the segment to the right.\n"
+literal|"This procedure returns the final position."
 argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
