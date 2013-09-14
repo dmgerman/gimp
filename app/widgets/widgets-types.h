@@ -1142,6 +1142,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPickableButton
+typedef|typedef
+name|struct
+name|_GimpPickableButton
+name|GimpPickableButton
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPrefsBox
 typedef|typedef
 name|struct
