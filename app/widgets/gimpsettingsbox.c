@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a96e7d00103
+DECL|enum|__anon2b2e704f0103
 block|{
 DECL|enumerator|FILE_DIALOG_SETUP
 name|FILE_DIALOG_SETUP
@@ -120,7 +120,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a96e7d00203
+DECL|enum|__anon2b2e704f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

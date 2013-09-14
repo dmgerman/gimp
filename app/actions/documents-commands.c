@@ -162,7 +162,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c781b860108
+DECL|struct|__anon28c9ca8e0108
 block|{
 DECL|member|name
 specifier|const

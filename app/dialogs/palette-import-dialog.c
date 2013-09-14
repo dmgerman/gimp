@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2988415a0103
+DECL|enum|__anon29592dc30103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2988415a0208
+DECL|struct|__anon29592dc30208
 block|{
 DECL|member|dialog
 name|GtkWidget

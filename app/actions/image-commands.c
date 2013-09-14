@@ -274,7 +274,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6fbcbb0108
+DECL|struct|__anon2b50f9db0108
 block|{
 DECL|member|context
 name|GimpContext

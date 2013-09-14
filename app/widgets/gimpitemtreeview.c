@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a03accc0103
+DECL|enum|__anon29c0cf650103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE

@@ -2346,7 +2346,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298849750108
+DECL|struct|__anon2b1999c90108
 block|{
 DECL|member|manager
 name|GimpUIManager
