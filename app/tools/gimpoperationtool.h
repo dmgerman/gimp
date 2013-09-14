@@ -143,10 +143,10 @@ name|GtkWidget
 modifier|*
 name|options_table
 decl_stmt|;
-DECL|member|aux_input_combo
+DECL|member|aux_input_button
 name|GtkWidget
 modifier|*
-name|aux_input_combo
+name|aux_input_button
 decl_stmt|;
 block|}
 struct|;
