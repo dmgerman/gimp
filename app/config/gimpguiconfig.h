@@ -222,6 +222,10 @@ DECL|member|single_window_mode
 name|gboolean
 name|single_window_mode
 decl_stmt|;
+DECL|member|tabs_position
+name|GimpPosition
+name|tabs_position
+decl_stmt|;
 DECL|member|last_tip_shown
 name|gint
 name|last_tip_shown

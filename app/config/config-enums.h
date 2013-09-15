@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d6aef90103
+DECL|enum|__anon2b19413e0103
 block|{
 DECL|enumerator|GIMP_CURSOR_MODE_TOOL_ICON
 name|GIMP_CURSOR_MODE_TOOL_ICON
@@ -77,7 +77,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d6aef90203
+DECL|enum|__anon2b19413e0203
 block|{
 DECL|enumerator|GIMP_CANVAS_PADDING_MODE_DEFAULT
 name|GIMP_CANVAS_PADDING_MODE_DEFAULT
@@ -128,7 +128,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d6aef90303
+DECL|enum|__anon2b19413e0303
 block|{
 DECL|enumerator|GIMP_SPACE_BAR_ACTION_NONE
 name|GIMP_SPACE_BAR_ACTION_NONE
@@ -168,7 +168,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d6aef90403
+DECL|enum|__anon2b19413e0403
 block|{
 DECL|enumerator|GIMP_ZOOM_QUALITY_LOW
 name|GIMP_ZOOM_QUALITY_LOW
@@ -204,7 +204,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d6aef90503
+DECL|enum|__anon2b19413e0503
 block|{
 DECL|enumerator|GIMP_HELP_BROWSER_GIMP
 name|GIMP_HELP_BROWSER_GIMP
@@ -240,7 +240,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d6aef90603
+DECL|enum|__anon2b19413e0603
 block|{
 DECL|enumerator|GIMP_WINDOW_HINT_NORMAL
 name|GIMP_WINDOW_HINT_NORMAL
@@ -280,7 +280,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d6aef90703
+DECL|enum|__anon2b19413e0703
 block|{
 DECL|enumerator|GIMP_CURSOR_FORMAT_BITMAP
 name|GIMP_CURSOR_FORMAT_BITMAP
@@ -316,7 +316,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d6aef90803
+DECL|enum|__anon2b19413e0803
 block|{
 DECL|enumerator|GIMP_HANDEDNESS_LEFT
 name|GIMP_HANDEDNESS_LEFT
@@ -328,6 +328,50 @@ comment|/*< desc="Right-handed">*/
 DECL|typedef|GimpHandedness
 block|}
 name|GimpHandedness
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_POSITION
+define|#
+directive|define
+name|GIMP_TYPE_POSITION
+value|(gimp_position_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_position_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2b19413e0903
+block|{
+DECL|enumerator|GIMP_POSITION_TOP
+name|GIMP_POSITION_TOP
+block|,
+comment|/*< desc="Top">*/
+DECL|enumerator|GIMP_POSITION_BOTTOM
+name|GIMP_POSITION_BOTTOM
+block|,
+comment|/*< desc="Bottom">*/
+DECL|enumerator|GIMP_POSITION_LEFT
+name|GIMP_POSITION_LEFT
+block|,
+comment|/*< desc="Left">*/
+DECL|enumerator|GIMP_POSITION_RIGHT
+name|GIMP_POSITION_RIGHT
+comment|/*< desc="Right">*/
+DECL|typedef|GimpPosition
+block|}
+name|GimpPosition
 typedef|;
 end_typedef
 
