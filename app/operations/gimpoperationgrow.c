@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf968da0103
+DECL|enum|__anon2b9dc1b80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -317,7 +317,7 @@ literal|"radius-x"
 argument_list|,
 literal|"Radius X"
 argument_list|,
-literal|"Grow radius in X diection"
+literal|"Grow radius in X direction"
 argument_list|,
 literal|1
 argument_list|,
@@ -343,7 +343,7 @@ literal|"radius-y"
 argument_list|,
 literal|"Radius Y"
 argument_list|,
-literal|"Grow radius in Y diection"
+literal|"Grow radius in Y direction"
 argument_list|,
 literal|1
 argument_list|,
