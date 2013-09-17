@@ -858,10 +858,13 @@ name|manager
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* If I don't ensure the menu items are effectively removed, adding      * the same ones may simply cancel the effect of the removal, hence      * losing the menu reordering. */
+comment|/* If I don't ensure the menu items are effectively removed, adding    * the same ones may simply cancel the effect of the removal, hence    * losing the menu reordering.    */
 name|gtk_ui_manager_ensure_update
 argument_list|(
+name|GTK_UI_MANAGER
+argument_list|(
 name|manager
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
