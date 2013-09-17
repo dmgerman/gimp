@@ -327,7 +327,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29982b8b0103
+DECL|enum|__anon2949be9a0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2483,7 +2483,7 @@ index|[]
 init|=
 block|{
 block|{
-name|gimp_startup_palette_load
+name|gimp_palette_load
 block|,
 name|GIMP_PALETTE_FILE_EXTENSION
 block|,
@@ -2491,7 +2491,7 @@ name|TRUE
 block|}
 block|,
 block|{
-name|gimp_startup_palette_load
+name|gimp_palette_load
 block|,
 name|NULL
 comment|/* legacy loader */

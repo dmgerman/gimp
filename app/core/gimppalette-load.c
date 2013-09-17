@@ -136,8 +136,8 @@ end_include
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_startup_palette_load (GimpContext * context,const gchar * filename,GError ** error)
-name|gimp_startup_palette_load
+DECL|function|gimp_palette_load (GimpContext * context,const gchar * filename,GError ** error)
+name|gimp_palette_load
 parameter_list|(
 name|GimpContext
 modifier|*
@@ -240,7 +240,7 @@ return|;
 block|}
 name|glist
 operator|=
-name|gimp_palette_load
+name|gimp_palette_load_gpl
 argument_list|(
 name|context
 argument_list|,
@@ -265,8 +265,8 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_palette_load (GimpContext * context,const gchar * filename,FILE * file,GError ** error)
-name|gimp_palette_load
+DECL|function|gimp_palette_load_gpl (GimpContext * context,const gchar * filename,FILE * file,GError ** error)
+name|gimp_palette_load_gpl
 parameter_list|(
 name|GimpContext
 modifier|*

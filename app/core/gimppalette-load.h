@@ -27,7 +27,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9679df0103
+DECL|enum|__anon29c979f60103
 block|{
 DECL|enumerator|GIMP_PALETTE_FILE_FORMAT_UNKNOWN
 name|GIMP_PALETTE_FILE_FORMAT_UNKNOWN
@@ -64,7 +64,7 @@ end_typedef
 begin_function_decl
 name|GList
 modifier|*
-name|gimp_startup_palette_load
+name|gimp_palette_load
 parameter_list|(
 name|GimpContext
 modifier|*
@@ -86,7 +86,7 @@ end_function_decl
 begin_function_decl
 name|GList
 modifier|*
-name|gimp_palette_load
+name|gimp_palette_load_gpl
 parameter_list|(
 name|GimpContext
 modifier|*
