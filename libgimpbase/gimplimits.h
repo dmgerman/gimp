@@ -57,7 +57,7 @@ DECL|macro|GIMP_MAX_IMAGE_SIZE
 define|#
 directive|define
 name|GIMP_MAX_IMAGE_SIZE
-value|262144
+value|524288
 comment|/*  2^18  */
 comment|/**  * GIMP_MIN_RESOLUTION:  *  * The minimum resolution of a GIMP image in pixels per inch. This is  * a somewhat arbitray value that can be used when a lower value for a  * resolution is needed. GIMP will not accept resolutions smaller than  * this value.  **/
 DECL|macro|GIMP_MIN_RESOLUTION
