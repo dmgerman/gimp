@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289bd0520103
+DECL|enum|__anon27ea1fec0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -208,7 +208,7 @@ literal|"square-size"
 argument_list|,
 name|_
 argument_list|(
-literal|"Square Size"
+literal|"Density"
 argument_list|)
 argument_list|,
 literal|5.0
@@ -252,7 +252,7 @@ literal|"ASAP-deformation"
 argument_list|,
 name|_
 argument_list|(
-literal|"Deformation Type"
+literal|"Deformation mode"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -270,7 +270,7 @@ literal|"MLS-weights"
 argument_list|,
 name|_
 argument_list|(
-literal|"MLS Weights"
+literal|"Use weights"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -288,7 +288,7 @@ literal|"MLS-weights-alpha"
 argument_list|,
 name|_
 argument_list|(
-literal|"MLS Weights Alpha"
+literal|"Amount of control points' influence"
 argument_list|)
 argument_list|,
 literal|0.1
@@ -310,7 +310,7 @@ literal|"mesh-visible"
 argument_list|,
 name|_
 argument_list|(
-literal|"Mesh Visible"
+literal|"Show lattice"
 argument_list|)
 argument_list|,
 name|TRUE
@@ -328,7 +328,7 @@ literal|"pause-deformation"
 argument_list|,
 name|_
 argument_list|(
-literal|"Pause Deformation"
+literal|"Pause deformation"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -440,13 +440,30 @@ argument_list|(
 name|value
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|options
+operator|->
+name|scale_MLS_weights_alpha
+condition|)
+name|gtk_widget_set_sensitive
+argument_list|(
+name|options
+operator|->
+name|scale_MLS_weights_alpha
+argument_list|,
+name|options
+operator|->
+name|MLS_weights
+argument_list|)
+expr_stmt|;
 break|break;
 case|case
 name|PROP_MLS_WEIGHTS_ALPHA
 case|:
 name|options
 operator|->
-name|square_size
+name|MLS_weights_alpha
 operator|=
 name|g_value_get_double
 argument_list|(
@@ -632,7 +649,7 @@ name|value
 argument_list|,
 name|options
 operator|->
-name|square_size
+name|MLS_weights_alpha
 argument_list|)
 expr_stmt|;
 break|break;
@@ -721,34 +738,6 @@ name|widget
 decl_stmt|;
 name|widget
 operator|=
-name|gtk_label_new
-argument_list|(
-literal|"Note: These options are temporary."
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|widget
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|widget
-argument_list|)
-expr_stmt|;
-name|widget
-operator|=
 name|gimp_prop_check_button_new
 argument_list|(
 name|config
@@ -757,7 +746,7 @@ literal|"mesh-visible"
 argument_list|,
 name|_
 argument_list|(
-literal|"Show Mesh"
+literal|"Show lattice"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -783,6 +772,13 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_can_focus
+argument_list|(
+name|widget
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|widget
@@ -798,7 +794,7 @@ literal|"square-size"
 argument_list|,
 name|_
 argument_list|(
-literal|"Square Size"
+literal|"Density"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -808,6 +804,12 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|npd_options
+operator|->
+name|scale_square_size
+operator|=
+name|widget
+expr_stmt|;
 name|gimp_spin_scale_set_scale_limits
 argument_list|(
 name|GIMP_SPIN_SCALE
@@ -815,9 +817,9 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|5.0
+literal|10.0
 argument_list|,
-literal|1000.0
+literal|100.0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -834,6 +836,13 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_can_focus
+argument_list|(
+name|widget
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -870,7 +879,7 @@ argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
-literal|10000.0
+literal|2000.0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -889,14 +898,22 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_can_focus
+argument_list|(
+name|widget
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
+comment|/*widget = gimp_prop_boolean_combo_box_new (config, "ASAP-deformation", _("ASAP"), _("ARAP"));*/
 name|widget
 operator|=
-name|gimp_prop_boolean_combo_box_new
+name|gimp_prop_boolean_radio_frame_new
 argument_list|(
 name|config
 argument_list|,
@@ -904,12 +921,17 @@ literal|"ASAP-deformation"
 argument_list|,
 name|_
 argument_list|(
-literal|"ASAP"
+literal|"Deformation mode"
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"ARAP"
+literal|"scale"
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"rigid (rubber)"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -927,6 +949,13 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_can_focus
+argument_list|(
+name|widget
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -934,9 +963,10 @@ argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
+comment|/*widget = gimp_prop_boolean_combo_box_new (config, "MLS-weights", _("Enabled"), _("Disabled"));*/
 name|widget
 operator|=
-name|gimp_prop_boolean_combo_box_new
+name|gimp_prop_check_button_new
 argument_list|(
 name|config
 argument_list|,
@@ -944,12 +974,7 @@ literal|"MLS-weights"
 argument_list|,
 name|_
 argument_list|(
-literal|"Enabled"
-argument_list|)
-argument_list|,
-name|_
-argument_list|(
-literal|"Disabled"
+literal|"Use weights"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -967,6 +992,13 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_can_focus
+argument_list|(
+name|widget
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -984,7 +1016,7 @@ literal|"MLS-weights-alpha"
 argument_list|,
 name|_
 argument_list|(
-literal|"MLS Weights Alpha"
+literal|"Amount of control points' influence"
 argument_list|)
 argument_list|,
 literal|0.1
@@ -993,6 +1025,12 @@ literal|0.1
 argument_list|,
 literal|1
 argument_list|)
+expr_stmt|;
+name|npd_options
+operator|->
+name|scale_MLS_weights_alpha
+operator|=
+name|widget
 expr_stmt|;
 name|gimp_spin_scale_set_scale_limits
 argument_list|(
@@ -1022,6 +1060,22 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_can_focus
+argument_list|(
+name|widget
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|widget
+argument_list|,
+name|npd_options
+operator|->
+name|MLS_weights
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|widget
@@ -1037,7 +1091,7 @@ literal|"pause-deformation"
 argument_list|,
 name|_
 argument_list|(
-literal|"Pause Deformation"
+literal|"Pause deformation"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1063,9 +1117,23 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_can_focus
+argument_list|(
+name|widget
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|widget
+argument_list|)
+expr_stmt|;
+name|gimp_n_point_deformation_options_init_some_widgets
+argument_list|(
+name|npd_options
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
@@ -1140,6 +1208,50 @@ operator|!
 name|npd_options
 operator|->
 name|deformation_is_paused
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_n_point_deformation_options_init_some_widgets (GimpNPointDeformationOptions * npd_options,gboolean is_tool_active)
+name|gimp_n_point_deformation_options_init_some_widgets
+parameter_list|(
+name|GimpNPointDeformationOptions
+modifier|*
+name|npd_options
+parameter_list|,
+name|gboolean
+name|is_tool_active
+parameter_list|)
+block|{
+name|gtk_widget_set_sensitive
+argument_list|(
+name|npd_options
+operator|->
+name|scale_square_size
+argument_list|,
+operator|!
+name|is_tool_active
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|npd_options
+operator|->
+name|check_mesh_visible
+argument_list|,
+name|is_tool_active
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|npd_options
+operator|->
+name|check_pause_deformation
+argument_list|,
+name|is_tool_active
 argument_list|)
 expr_stmt|;
 block|}
