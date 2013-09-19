@@ -389,6 +389,9 @@ block|{
 name|gint
 name|new_id
 decl_stmt|;
+name|gint
+name|start_id
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_ID_TABLE
@@ -398,6 +401,14 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|)
+expr_stmt|;
+name|start_id
+operator|=
+name|id_table
+operator|->
+name|priv
+operator|->
+name|next_id
 expr_stmt|;
 do|do
 block|{
@@ -428,6 +439,27 @@ name|next_id
 operator|=
 name|GIMP_ID_TABLE_START_ID
 expr_stmt|;
+if|if
+condition|(
+name|start_id
+operator|==
+name|id_table
+operator|->
+name|priv
+operator|->
+name|next_id
+condition|)
+block|{
+comment|/* We looped once over all used ids. Very unlikely to happen.              And if it does, there is probably not much to be done.              It is just good design not to allow a theoretical infinite loop. */
+name|g_error
+argument_list|(
+literal|"%s: out of ids!"
+argument_list|,
+name|G_STRFUNC
+argument_list|)
+expr_stmt|;
+break|break;
+block|}
 block|}
 do|while
 condition|(
