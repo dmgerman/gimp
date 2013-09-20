@@ -155,7 +155,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc476a0108
+DECL|struct|__anon2bcf8a050108
 block|{
 DECL|member|compression
 name|gint
@@ -178,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc476a0208
+DECL|struct|__anon2bcf8a050208
 block|{
 DECL|member|ID
 name|gint32
@@ -1053,7 +1053,7 @@ name|tsvals
 operator|.
 name|compression
 operator|=
-name|COMPRESSION_DEFLATE
+name|COMPRESSION_ADOBE_DEFLATE
 expr_stmt|;
 break|break;
 case|case
@@ -3532,7 +3532,7 @@ name|COMPRESSION_LZW
 operator|||
 name|compression
 operator|==
-name|COMPRESSION_DEFLATE
+name|COMPRESSION_ADOBE_DEFLATE
 operator|)
 operator|&&
 operator|(
@@ -4460,7 +4460,7 @@ argument_list|(
 literal|"_Deflate"
 argument_list|)
 argument_list|,
-name|COMPRESSION_DEFLATE
+name|COMPRESSION_ADOBE_DEFLATE
 argument_list|,
 name|NULL
 argument_list|,
