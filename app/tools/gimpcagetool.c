@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0a2c6c0103
+DECL|enum|__anon29a5f0e50103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -1791,7 +1791,9 @@ name|display
 argument_list|)
 expr_stmt|;
 block|}
-break|break;
+return|return
+name|TRUE
+return|;
 case|case
 name|GDK_KEY_Escape
 case|:
