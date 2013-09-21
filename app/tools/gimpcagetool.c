@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a5f0e50103
+DECL|enum|__anon2a35de7e0103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -1648,7 +1648,7 @@ name|ct
 operator|->
 name|tool_state
 operator|==
-name|CAGE_STATE_WAIT
+name|DEFORM_STATE_WAIT
 condition|)
 block|{
 name|gimp_cage_config_remove_selected_points
@@ -1670,11 +1670,29 @@ argument_list|)
 operator|<=
 literal|2
 condition|)
+block|{
 name|ct
 operator|->
 name|cage_complete
 operator|=
 name|FALSE
+expr_stmt|;
+name|ct
+operator|->
+name|tool_state
+operator|=
+name|CAGE_STATE_WAIT
+expr_stmt|;
+block|}
+name|gimp_cage_tool_compute_coef
+argument_list|(
+name|ct
+argument_list|)
+expr_stmt|;
+name|gimp_cage_tool_render_node_update
+argument_list|(
+name|ct
+argument_list|)
 expr_stmt|;
 block|}
 return|return
