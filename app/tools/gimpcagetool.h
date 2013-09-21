@@ -178,11 +178,6 @@ name|gint
 name|hovering_edge
 decl_stmt|;
 comment|/* Edge which the cursor is above */
-DECL|member|cage_complete
-name|gboolean
-name|cage_complete
-decl_stmt|;
-comment|/* Cage closed or not */
 DECL|member|coef
 name|GeglBuffer
 modifier|*
