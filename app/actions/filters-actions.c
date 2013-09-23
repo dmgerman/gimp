@@ -853,7 +853,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"_Sp_read..."
+literal|"Sp_read..."
 argument_list|)
 block|,
 name|NULL
