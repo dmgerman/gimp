@@ -633,7 +633,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"Mosaic..."
+literal|"_Mosaic..."
 argument_list|)
 block|,
 name|NULL
