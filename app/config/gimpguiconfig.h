@@ -191,6 +191,15 @@ DECL|member|help_browser
 name|GimpHelpBrowserType
 name|help_browser
 decl_stmt|;
+comment|/* Action Search preferences. */
+DECL|member|search_show_unavailable
+name|gboolean
+name|search_show_unavailable
+decl_stmt|;
+DECL|member|action_history_size
+name|gint
+name|action_history_size
+decl_stmt|;
 DECL|member|web_browser
 name|gchar
 modifier|*

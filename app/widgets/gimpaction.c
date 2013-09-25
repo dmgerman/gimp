@@ -88,6 +88,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpaction-history.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpview.h"
 end_include
 
@@ -99,7 +105,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dd2e990103
+DECL|enum|__anon2bae38080103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -121,6 +127,18 @@ name|PROP_MAX_WIDTH_CHARS
 block|}
 enum|;
 end_enum
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_action_constructed
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -300,6 +318,12 @@ decl_stmt|;
 name|GimpRGB
 name|black
 decl_stmt|;
+name|object_class
+operator|->
+name|constructed
+operator|=
+name|gimp_action_constructed
+expr_stmt|;
 name|object_class
 operator|->
 name|finalize
@@ -498,6 +522,43 @@ name|G_CALLBACK
 argument_list|(
 name|gimp_action_tooltip_notify
 argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_action_constructed (GObject * object)
+name|gimp_action_constructed
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|)
+block|{
+name|GimpAction
+modifier|*
+name|action
+init|=
+name|GIMP_ACTION
+argument_list|(
+name|object
+argument_list|)
+decl_stmt|;
+name|g_signal_connect
+argument_list|(
+name|action
+argument_list|,
+literal|"activate"
+argument_list|,
+operator|(
+name|GCallback
+operator|)
+name|gimp_action_history_activate_callback
 argument_list|,
 name|NULL
 argument_list|)

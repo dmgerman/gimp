@@ -222,6 +222,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpaction-history.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"actions/actions.h"
 end_include
 
@@ -1924,6 +1930,11 @@ argument_list|,
 name|gimp
 argument_list|)
 expr_stmt|;
+name|gimp_action_history_init
+argument_list|(
+name|gui_config
+argument_list|)
+expr_stmt|;
 ifdef|#
 directive|ifdef
 name|GDK_WINDOWING_QUARTZ
@@ -2532,6 +2543,16 @@ argument_list|,
 name|gui_show_tooltips_notify
 argument_list|,
 name|gimp
+argument_list|)
+expr_stmt|;
+name|gimp_action_history_exit
+argument_list|(
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|gimp
+operator|->
+name|config
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_unref
