@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27942c0b0108
+DECL|struct|__anon27a6dbff0108
 block|{
 comment|/* the babl_component names of the channels */
 DECL|member|babl_name
@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27942c0b0208
+DECL|struct|__anon27a6dbff0208
 block|{
 DECL|member|type
 specifier|const
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27942c0b0308
+DECL|struct|__anon27a6dbff0308
 block|{
 DECL|member|extract_type
 name|gchar
@@ -1031,7 +1031,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Yeallow"
+literal|"Yellow"
 argument_list|)
 block|,
 literal|"CMY"
