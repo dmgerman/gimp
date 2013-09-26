@@ -37,12 +37,6 @@ directive|include
 file|"selection-to-path.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimp/stdplugins-intl.h"
-end_include
-
 begin_define
 DECL|macro|SCALE_WIDTH
 define|#
@@ -300,10 +294,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-name|_
-argument_list|(
 literal|"Align Threshold:"
-argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
@@ -329,11 +320,8 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|_
-argument_list|(
 literal|"If two endpoints are closer than this,"
 literal|"they are made to be equal."
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -393,10 +381,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-name|_
-argument_list|(
 literal|"Corner Always Threshold:"
-argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
@@ -422,13 +407,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|_
-argument_list|(
 literal|"If the angle defined by a point and its predecessors "
 literal|"and successors is smaller than this, it's a corner, "
 literal|"even if it's within `corner_surround' pixels of a "
 literal|"point with a smaller angle."
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -488,10 +470,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-name|_
-argument_list|(
 literal|"Corner Surround:"
-argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
@@ -517,11 +496,8 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|_
-argument_list|(
 literal|"Number of points to consider when determining if a "
 literal|"point is a corner or not."
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -581,10 +557,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-name|_
-argument_list|(
 literal|"Corner Threshold:"
-argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
@@ -610,11 +583,8 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|_
-argument_list|(
 literal|"If a point, its predecessors, and its successors "
 literal|"define an angle smaller than this, it's a corner."
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -674,10 +644,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-name|_
-argument_list|(
 literal|"Error Threshold:"
-argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
@@ -703,12 +670,9 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|_
-argument_list|(
 literal|"Amount of error at which a fitted spline is "
 literal|"unacceptable.  If any pixel is further away "
 literal|"than this from the fitted curve, we try again."
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -768,10 +732,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-name|_
-argument_list|(
 literal|"Filter Alternative Surround:"
-argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
@@ -797,11 +758,8 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|_
-argument_list|(
 literal|"A second number of adjacent points to consider "
 literal|"when filtering."
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -861,10 +819,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-name|_
-argument_list|(
 literal|"Filter Epsilon:"
-argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
@@ -890,13 +845,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|_
-argument_list|(
 literal|"If the angles between the vectors produced by "
 literal|"filter_surround and filter_alternative_surround "
 literal|"points differ by more than this, use the one from "
 literal|"filter_alternative_surround."
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -956,10 +908,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-name|_
-argument_list|(
 literal|"Filter Iteration Count:"
-argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
@@ -985,14 +934,11 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|_
-argument_list|(
 literal|"Number of times to smooth original data points.  "
 literal|"Increasing this number dramatically --- to 50 or "
 literal|"so --- can produce vastly better results.  But if "
 literal|"any points that ``should'' be corners aren't found, "
 literal|"the curve goes to hell around that point."
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1052,10 +998,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-name|_
-argument_list|(
 literal|"Filter Percent:"
-argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
@@ -1081,11 +1024,8 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|_
-argument_list|(
 literal|"To produce the new point, use the old point plus "
 literal|"this times the neighbors."
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1145,10 +1085,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-name|_
-argument_list|(
 literal|"Filter Secondary Surround:"
-argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
@@ -1174,11 +1111,8 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|_
-argument_list|(
 literal|"Number of adjacent points to consider if "
 literal|"`filter_surround' points defines a straight line."
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1238,10 +1172,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-name|_
-argument_list|(
 literal|"Filter Surround:"
-argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
@@ -1267,10 +1198,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|_
-argument_list|(
 literal|"Number of adjacent points to consider when filtering."
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1320,10 +1248,7 @@ name|check
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
-name|_
-argument_list|(
 literal|"Keep Knees"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -1377,11 +1302,8 @@ argument_list|(
 name|check
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Says whether or not to remove ``knee'' "
 literal|"points after finding the outline."
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1452,10 +1374,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-name|_
-argument_list|(
 literal|"Line Reversion Threshold:"
-argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
@@ -1481,14 +1400,11 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|_
-argument_list|(
 literal|"If a spline is closer to a straight line than this, "
 literal|"it remains a straight line, even if it would otherwise "
 literal|"be changed back to a curve. This is weighted by the "
 literal|"square of the curve length, to make shorter curves "
 literal|"more likely to be reverted."
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1548,10 +1464,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-name|_
-argument_list|(
 literal|"Line Threshold:"
-argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
@@ -1577,12 +1490,9 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|_
-argument_list|(
 literal|"How many pixels (on the average) a spline can "
 literal|"diverge from the line determined by its endpoints "
 literal|"before it is changed to a straight line."
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1642,10 +1552,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-name|_
-argument_list|(
 literal|"Reparametrize Improvement:"
-argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
@@ -1671,13 +1578,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|_
-argument_list|(
 literal|"If reparameterization doesn't improve the fit by this "
 literal|"much percent, stop doing it. "
 literal|"Amount of error at which "
 literal|"it is pointless to reparameterize."
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1737,10 +1641,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-name|_
-argument_list|(
 literal|"Reparametrize Threshold:"
-argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
@@ -1766,15 +1667,12 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|_
-argument_list|(
 literal|"Amount of error at which it is pointless to reparameterize.  "
 literal|"This happens, for example, when we are trying to fit the "
 literal|"outline of the outside of an `O' with a single spline.  "
 literal|"The initial fit is not good enough for the Newton-Raphson "
 literal|"iteration to improve it.  It may be that it would be better "
 literal|"to detect the cases where we didn't find any corners."
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1834,10 +1732,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-name|_
-argument_list|(
 literal|"Subdivide Search:"
-argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
@@ -1863,11 +1758,8 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|_
-argument_list|(
 literal|"Percentage of the curve away from the worst point "
 literal|"to look for a better place to subdivide."
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1927,10 +1819,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-name|_
-argument_list|(
 literal|"Subdivide Surround:"
-argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
@@ -1956,11 +1845,8 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|_
-argument_list|(
 literal|"Number of points to consider when deciding whether "
 literal|"a given point is a better place to subdivide."
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2020,10 +1906,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-name|_
-argument_list|(
 literal|"Subdivide Threshold:"
-argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
@@ -2049,12 +1932,9 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|_
-argument_list|(
 literal|"How many pixels a point can diverge from a straight "
 literal|"line and still be considered a better place to "
 literal|"subdivide."
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2114,10 +1994,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-name|_
-argument_list|(
 literal|"Tangent Surround:"
-argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
@@ -2143,12 +2020,9 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|_
-argument_list|(
 literal|"Number of points to look at on either side of a "
 literal|"point when computing the approximation to the "
 literal|"tangent at that point."
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
