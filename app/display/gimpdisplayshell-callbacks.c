@@ -1846,6 +1846,10 @@ operator|->
 name|canvas
 argument_list|,
 name|cr
+argument_list|,
+name|shell
+operator|->
+name|blink
 argument_list|)
 expr_stmt|;
 block|}

@@ -715,6 +715,14 @@ name|GQueue
 modifier|*
 name|zoom_focus_pointer_queue
 decl_stmt|;
+DECL|member|blink
+name|gboolean
+name|blink
+decl_stmt|;
+DECL|member|blink_timeout_id
+name|guint
+name|blink_timeout_id
+decl_stmt|;
 block|}
 struct|;
 end_struct
