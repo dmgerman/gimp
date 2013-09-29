@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d61a530103
+DECL|enum|__anon2b5001580103
 block|{
 DECL|enumerator|EDIT_NAME
 name|EDIT_NAME
@@ -1375,6 +1375,22 @@ argument_list|,
 name|G_CALLBACK
 argument_list|(
 name|gimp_container_tree_view_selection_changed
+argument_list|)
+argument_list|,
+name|tree_view
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|tree_view
+operator|->
+name|view
+argument_list|,
+literal|"drag-failed"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_container_tree_view_drag_failed
 argument_list|)
 argument_list|,
 name|tree_view
