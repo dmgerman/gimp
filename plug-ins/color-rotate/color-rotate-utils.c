@@ -644,7 +644,7 @@ return|return
 operator|(
 name|s
 operator|<=
-name|Current
+name|Current_c
 operator|.
 name|Gray
 operator|->
@@ -1616,7 +1616,7 @@ argument_list|)
 expr_stmt|;
 name|reduced
 operator|=
-name|Current
+name|Current_c
 operator|.
 name|reduced
 expr_stmt|;
@@ -1634,7 +1634,7 @@ name|height
 expr_stmt|;
 name|bytes
 operator|=
-name|Current
+name|Current_c
 operator|.
 name|drawable
 operator|->
@@ -1799,7 +1799,7 @@ condition|)
 block|{
 switch|switch
 condition|(
-name|Current
+name|Current_c
 operator|.
 name|Gray_to_from
 condition|)
@@ -1811,13 +1811,13 @@ if|if
 condition|(
 name|rcm_angle_inside_slice
 argument_list|(
-name|Current
+name|Current_c
 operator|.
 name|Gray
 operator|->
 name|hue
 argument_list|,
-name|Current
+name|Current_c
 operator|.
 name|From
 operator|->
@@ -1829,7 +1829,7 @@ condition|)
 block|{
 name|H
 operator|=
-name|Current
+name|Current_c
 operator|.
 name|Gray
 operator|->
@@ -1839,7 +1839,7 @@ name|TP
 expr_stmt|;
 name|S
 operator|=
-name|Current
+name|Current_c
 operator|.
 name|Gray
 operator|->
@@ -1867,7 +1867,7 @@ name|gimp_hsv_to_rgb4
 argument_list|(
 name|rgb
 argument_list|,
-name|Current
+name|Current_c
 operator|.
 name|Gray
 operator|->
@@ -1875,7 +1875,7 @@ name|hue
 operator|/
 name|TP
 argument_list|,
-name|Current
+name|Current_c
 operator|.
 name|Gray
 operator|->
@@ -1905,7 +1905,7 @@ name|rcm_linear
 argument_list|(
 name|rcm_left_end
 argument_list|(
-name|Current
+name|Current_c
 operator|.
 name|From
 operator|->
@@ -1914,7 +1914,7 @@ argument_list|)
 argument_list|,
 name|rcm_right_end
 argument_list|(
-name|Current
+name|Current_c
 operator|.
 name|From
 operator|->
@@ -1923,7 +1923,7 @@ argument_list|)
 argument_list|,
 name|rcm_left_end
 argument_list|(
-name|Current
+name|Current_c
 operator|.
 name|To
 operator|->
@@ -1932,7 +1932,7 @@ argument_list|)
 argument_list|,
 name|rcm_right_end
 argument_list|(
-name|Current
+name|Current_c
 operator|.
 name|To
 operator|->

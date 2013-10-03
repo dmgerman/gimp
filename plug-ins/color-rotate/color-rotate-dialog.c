@@ -390,7 +390,7 @@ operator|=
 name|rcm_create_one_preview
 argument_list|(
 operator|&
-name|Current
+name|Current_c
 operator|.
 name|Bna
 operator|->
@@ -398,13 +398,13 @@ name|before
 argument_list|,
 name|ORIGINAL
 argument_list|,
-name|Current
+name|Current_c
 operator|.
 name|reduced
 operator|->
 name|width
 argument_list|,
-name|Current
+name|Current_c
 operator|.
 name|reduced
 operator|->
@@ -434,7 +434,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_after
 argument_list|(
-name|Current
+name|Current_c
 operator|.
 name|Bna
 operator|->
@@ -516,7 +516,7 @@ operator|=
 name|rcm_create_one_preview
 argument_list|(
 operator|&
-name|Current
+name|Current_c
 operator|.
 name|Bna
 operator|->
@@ -524,13 +524,13 @@ name|after
 argument_list|,
 name|CURRENT
 argument_list|,
-name|Current
+name|Current_c
 operator|.
 name|reduced
 operator|->
 name|width
 argument_list|,
-name|Current
+name|Current_c
 operator|.
 name|reduced
 operator|->
@@ -560,7 +560,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_after
 argument_list|(
-name|Current
+name|Current_c
 operator|.
 name|Bna
 operator|->
@@ -639,7 +639,7 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|,
-name|Current
+name|Current_c
 operator|.
 name|RealTime
 argument_list|)
@@ -662,7 +662,7 @@ argument_list|)
 argument_list|,
 operator|&
 operator|(
-name|Current
+name|Current_c
 operator|.
 name|RealTime
 operator|)
@@ -764,7 +764,7 @@ argument_list|(
 name|combo
 argument_list|)
 argument_list|,
-name|Current
+name|Current_c
 operator|.
 name|Slctn
 argument_list|)
@@ -1485,7 +1485,7 @@ name|gtk_label_new
 argument_list|(
 name|rcm_units_string
 argument_list|(
-name|Current
+name|Current_c
 operator|.
 name|Units
 argument_list|)
@@ -1680,7 +1680,7 @@ name|gtk_label_new
 argument_list|(
 name|rcm_units_string
 argument_list|(
-name|Current
+name|Current_c
 operator|.
 name|Units
 argument_list|)
@@ -1867,7 +1867,7 @@ name|GtkWidget
 modifier|*
 name|vbox
 decl_stmt|;
-name|Current
+name|Current_c
 operator|.
 name|From
 operator|=
@@ -1883,7 +1883,7 @@ literal|"From:"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|Current
+name|Current_c
 operator|.
 name|To
 operator|=
@@ -1930,7 +1930,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-name|Current
+name|Current_c
 operator|.
 name|From
 operator|->
@@ -1950,7 +1950,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-name|Current
+name|Current_c
 operator|.
 name|To
 operator|->
@@ -2035,7 +2035,7 @@ name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;
-name|Current
+name|Current_c
 operator|.
 name|Gray
 operator|=
@@ -2518,7 +2518,7 @@ name|gtk_label_new
 argument_list|(
 name|rcm_units_string
 argument_list|(
-name|Current
+name|Current_c
 operator|.
 name|Units
 argument_list|)
@@ -2826,7 +2826,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|Current
+name|Current_c
 operator|.
 name|Gray_to_from
 operator|==
@@ -2853,7 +2853,7 @@ argument_list|)
 argument_list|,
 operator|&
 operator|(
-name|Current
+name|Current_c
 operator|.
 name|Gray_to_from
 operator|)
@@ -2904,7 +2904,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|Current
+name|Current_c
 operator|.
 name|Gray_to_from
 operator|==
@@ -2931,7 +2931,7 @@ argument_list|)
 argument_list|,
 operator|&
 operator|(
-name|Current
+name|Current_c
 operator|.
 name|Gray_to_from
 operator|)
@@ -3243,7 +3243,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|Current
+name|Current_c
 operator|.
 name|Units
 operator|==
@@ -3316,7 +3316,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|Current
+name|Current_c
 operator|.
 name|Units
 operator|==
@@ -3379,7 +3379,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|Current
+name|Current_c
 operator|.
 name|Units
 operator|==
@@ -3444,7 +3444,7 @@ decl_stmt|;
 name|gboolean
 name|run
 decl_stmt|;
-name|Current
+name|Current_c
 operator|.
 name|Bna
 operator|=
@@ -3518,7 +3518,7 @@ name|dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|Current
+name|Current_c
 operator|.
 name|Bna
 operator|->
@@ -3527,28 +3527,28 @@ operator|=
 name|dialog
 expr_stmt|;
 comment|/* Create sub-dialogs */
-name|Current
+name|Current_c
 operator|.
 name|reduced
 operator|=
 name|rcm_reduce_image
 argument_list|(
-name|Current
+name|Current_c
 operator|.
 name|drawable
 argument_list|,
-name|Current
+name|Current_c
 operator|.
 name|mask
 argument_list|,
 name|MAX_PREVIEW_SIZE
 argument_list|,
-name|Current
+name|Current_c
 operator|.
 name|Slctn
 argument_list|)
 expr_stmt|;
-name|Current
+name|Current_c
 operator|.
 name|Bna
 operator|->
@@ -3723,7 +3723,7 @@ argument_list|)
 expr_stmt|;
 name|rcm_render_circle
 argument_list|(
-name|Current
+name|Current_c
 operator|.
 name|From
 operator|->
@@ -3736,7 +3736,7 @@ argument_list|)
 expr_stmt|;
 name|rcm_render_circle
 argument_list|(
-name|Current
+name|Current_c
 operator|.
 name|To
 operator|->
@@ -3749,7 +3749,7 @@ argument_list|)
 expr_stmt|;
 name|rcm_render_circle
 argument_list|(
-name|Current
+name|Current_c
 operator|.
 name|Gray
 operator|->
