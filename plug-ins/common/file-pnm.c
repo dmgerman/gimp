@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  * PNM reading and writing code Copyright (C) 1996 Erik Nygren  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * PNM reading and writing code Copyright (C) 1996 Erik Nygren  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_comment
@@ -112,6 +112,74 @@ name|PNMScanner
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|PNMInfo
+typedef|typedef
+name|struct
+name|_PNMInfo
+name|PNMInfo
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|PNMRowInfo
+typedef|typedef
+name|struct
+name|_PNMRowInfo
+name|PNMRowInfo
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|PNMLoaderFunc
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|PNMLoaderFunc
+function_decl|)
+parameter_list|(
+name|PNMScanner
+modifier|*
+name|scanner
+parameter_list|,
+name|PNMInfo
+modifier|*
+name|info
+parameter_list|,
+name|GeglBuffer
+modifier|*
+name|buffer
+parameter_list|)
+function_decl|;
+end_typedef
+
+begin_typedef
+DECL|typedef|PNMSaverowFunc
+typedef|typedef
+name|gboolean
+function_decl|(
+modifier|*
+name|PNMSaverowFunc
+function_decl|)
+parameter_list|(
+name|PNMRowInfo
+modifier|*
+name|info
+parameter_list|,
+specifier|const
+name|guchar
+modifier|*
+name|data
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_typedef
+
 begin_struct
 DECL|struct|_PNMScanner
 struct|struct
@@ -158,15 +226,6 @@ block|}
 struct|;
 end_struct
 
-begin_typedef
-DECL|typedef|PNMInfo
-typedef|typedef
-name|struct
-name|_PNMInfo
-name|PNMInfo
-typedef|;
-end_typedef
-
 begin_struct
 DECL|struct|_PNMInfo
 struct|struct
@@ -200,27 +259,11 @@ name|jmp_buf
 name|jmpbuf
 decl_stmt|;
 comment|/* Where to jump to on an error loading */
-comment|/* Routine to use to load the pnm body */
 DECL|member|loader
-name|void
-function_decl|(
-modifier|*
+name|PNMLoaderFunc
 name|loader
-function_decl|)
-parameter_list|(
-name|PNMScanner
-modifier|*
-name|scanner
-parameter_list|,
-name|PNMInfo
-modifier|*
-name|info
-parameter_list|,
-name|GeglBuffer
-modifier|*
-name|buffer
-parameter_list|)
-function_decl|;
+decl_stmt|;
+comment|/* Routine to use to load the pnm body */
 block|}
 struct|;
 end_struct
@@ -229,9 +272,8 @@ begin_comment
 comment|/* Contains the information needed to write out PNM rows */
 end_comment
 
-begin_typedef
+begin_struct
 DECL|struct|_PNMRowInfo
-typedef|typedef
 struct|struct
 name|_PNMRowInfo
 block|{
@@ -280,11 +322,9 @@ name|gboolean
 name|zero_is_black
 decl_stmt|;
 comment|/* index zero is black (PBM only) */
-DECL|typedef|PNMRowInfo
 block|}
-name|PNMRowInfo
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_comment
 comment|/* Save info  */
@@ -293,7 +333,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c9fc740108
+DECL|struct|__anon2be115920108
 block|{
 DECL|member|raw
 name|gint
@@ -416,7 +456,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|save_dialog
 parameter_list|(
 name|void
@@ -758,11 +798,10 @@ value|if ((predicate)) \           { g_message (__VA_ARGS__); longjmp ((jmpbuf),
 end_define
 
 begin_struct
-DECL|struct|struct_pnm_types
 specifier|static
 specifier|const
 struct|struct
-name|struct_pnm_types
+DECL|struct|__anon2be115920208
 block|{
 DECL|member|name
 name|gchar
@@ -781,23 +820,9 @@ name|gint
 name|maxval
 decl_stmt|;
 DECL|member|loader
-name|void
-function_decl|(
-modifier|*
+name|PNMLoaderFunc
 name|loader
-function_decl|)
-parameter_list|(
-name|PNMScanner
-modifier|*
-parameter_list|,
-name|PNMInfo
-modifier|*
-parameter_list|,
-name|GeglBuffer
-modifier|*
-name|buffer
-parameter_list|)
-function_decl|;
+decl_stmt|;
 DECL|variable|pnm_types
 block|}
 name|pnm_types
@@ -1047,7 +1072,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"raw"
 block|,
-literal|"Specify non-zero for raw output, zero for ascii output"
+literal|"TRUE for raw output, FALSE for ascii output"
 block|}
 block|}
 decl_stmt|;
@@ -4881,26 +4906,11 @@ decl_stmt|;
 name|PNMRowInfo
 name|rowinfo
 decl_stmt|;
-name|gboolean
-function_decl|(
-modifier|*
+name|PNMSaverowFunc
 name|saverow
-function_decl|)
-parameter_list|(
-name|PNMRowInfo
-modifier|*
-parameter_list|,
-specifier|const
-name|guchar
-modifier|*
-parameter_list|,
-name|GError
-modifier|*
-modifier|*
-parameter_list|)
 init|=
 name|NULL
-function_decl|;
+decl_stmt|;
 name|guchar
 name|red
 index|[
@@ -4922,7 +4932,8 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|data
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|d
 decl_stmt|;
@@ -4945,9 +4956,6 @@ name|gint
 name|xres
 decl_stmt|,
 name|yres
-decl_stmt|;
-name|gint
-name|bpp
 decl_stmt|;
 name|gint
 name|ypos
@@ -5230,16 +5238,14 @@ expr_stmt|;
 name|rowbufsize
 operator|=
 operator|(
-name|int
+name|gint
 operator|)
 name|ceil
 argument_list|(
-call|(
-name|double
-call|)
-argument_list|(
+operator|(
+name|gdouble
+operator|)
 name|xres
-argument_list|)
 operator|/
 literal|8.0
 argument_list|)
@@ -5590,28 +5596,6 @@ name|cmap
 argument_list|)
 expr_stmt|;
 block|}
-name|bpp
-operator|=
-name|babl_format_get_bytes_per_pixel
-argument_list|(
-name|format
-argument_list|)
-expr_stmt|;
-comment|/* allocate a buffer for retrieving information from the pixel region  */
-name|data
-operator|=
-name|g_new
-argument_list|(
-name|guchar
-argument_list|,
-name|gimp_tile_height
-argument_list|()
-operator|*
-name|xres
-operator|*
-name|bpp
-argument_list|)
-expr_stmt|;
 comment|/* write out comment string */
 if|if
 condition|(
@@ -5715,6 +5699,24 @@ return|return
 name|FALSE
 return|;
 block|}
+comment|/* allocate a buffer for retrieving information from the pixel region  */
+name|data
+operator|=
+name|g_new
+argument_list|(
+name|guchar
+argument_list|,
+name|gimp_tile_height
+argument_list|()
+operator|*
+name|xres
+operator|*
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|format
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|rowbuf
 operator|=
 name|g_new
@@ -5845,6 +5847,16 @@ name|error
 argument_list|)
 condition|)
 block|{
+name|g_free
+argument_list|(
+name|rowbuf
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|output
@@ -5928,7 +5940,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|save_dialog (void)
 name|save_dialog
 parameter_list|(
@@ -6395,11 +6407,9 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-operator|(
 name|s
 operator|->
 name|eof
-operator|)
 operator|&&
 operator|!
 name|g_ascii_isspace
