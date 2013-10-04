@@ -2365,8 +2365,6 @@ operator|/
 operator|(
 name|gdouble
 operator|)
-name|ph
-operator|.
 name|height
 argument_list|)
 expr_stmt|;
