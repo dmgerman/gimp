@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf1b1ae0103
+DECL|enum|__anon276978050103
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -98,7 +98,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf1b1ae0208
+DECL|struct|__anon276978050208
 block|{
 DECL|member|duration_index
 name|gint
@@ -125,7 +125,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf1b1ae0308
+DECL|struct|__anon276978050308
 block|{
 DECL|member|x
 DECL|member|y
@@ -812,14 +812,6 @@ name|gint32
 name|total_layers
 init|=
 literal|0
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|imagetype
-specifier|static
-name|GimpImageBaseType
-name|imagetype
 decl_stmt|;
 end_decl_stmt
 
@@ -4715,6 +4707,7 @@ argument_list|()
 expr_stmt|;
 return|return;
 block|}
+comment|/* We only use RGB images for display because indexed images would somehow      render terrible colors. Layers from other types will be automatically      converted. */
 name|frames_image_id
 operator|=
 name|gimp_image_new
@@ -4723,7 +4716,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|imagetype
+name|GIMP_RGB
 argument_list|)
 expr_stmt|;
 comment|/* Save processing time and memory by not saving history and merged frames. */
@@ -5058,13 +5051,6 @@ name|image_id
 argument_list|,
 operator|&
 name|total_layers
-argument_list|)
-expr_stmt|;
-name|imagetype
-operator|=
-name|gimp_image_base_type
-argument_list|(
-name|image_id
 argument_list|)
 expr_stmt|;
 if|if
