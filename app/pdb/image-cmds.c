@@ -13129,7 +13129,9 @@ literal|"gimp-image-new"
 argument_list|,
 literal|"Creates a new image with the specified width, height, and type."
 argument_list|,
-literal|"Creates a new image, undisplayed with the specified extents and type. A layer should be created and added before this image is displayed, or subsequent calls to 'gimp-display-new' with this image as an argument will fail. Layers can be created using the 'gimp-layer-new' commands. They can be added to an image using the 'gimp-image-insert-layer' command."
+literal|"Creates a new image, undisplayed, with the specified extents and type. A layer should be created and added before this image is displayed, or subsequent calls to 'gimp-display-new' with this image as an argument will fail. Layers can be created using the 'gimp-layer-new' commands. They can be added to an image using the 'gimp-image-insert-layer' command.\n"
+literal|"\n"
+literal|"If your image's type if INDEXED, a colormap must also be added with 'gimp-image-set-colormap'. An indexed image without a colormap will output unexpected colors."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
