@@ -1352,19 +1352,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|gchar
-modifier|*
-modifier|*
-name|operations
-decl_stmt|;
-name|guint
-name|n_operations
-decl_stmt|;
-name|gint
-name|i
-decl_stmt|,
-name|j
-decl_stmt|;
 specifier|static
 specifier|const
 name|gchar
@@ -1504,6 +1491,9 @@ block|,
 literal|"gegl:write-buffer"
 block|}
 decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
 for|for
 control|(
 name|i
@@ -1532,14 +1522,15 @@ name|i
 index|]
 argument_list|)
 condition|)
+block|{
 return|return
 name|g_strdup_printf
 argument_list|(
 literal|"GEGL operation missing!\n\n"
-literal|"GIMP requires the GEGL operation \"%s\". \n"
-literal|"This operation cannot be found. Check your \n"
-literal|"GEGL install and ensure it has been compiled \n"
-literal|"with any dependencies required for GIMP.\n"
+literal|"GIMP requires the GEGL operation \"%s\".\n"
+literal|"This operation cannot be found. Check your\n"
+literal|"GEGL install and ensure it has been compiled\n"
+literal|"with any dependencies required for GIMP."
 argument_list|,
 name|required_ops
 index|[
@@ -1547,6 +1538,7 @@ name|i
 index|]
 argument_list|)
 return|;
+block|}
 block|}
 return|return
 name|NULL
