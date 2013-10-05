@@ -225,7 +225,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_new:  * @width: The width of the image.  * @height: The height of the image.  * @type: The type of image.  *  * Creates a new image with the specified width, height, and type.  *  * Creates a new image, undisplayed, with the specified extents and  * type. A layer should be created and added before this image is  * displayed, or subsequent calls to gimp_display_new() with this image  * as an argument will fail. Layers can be created using the  * gimp_layer_new() commands. They can be added to an image using the  * gimp_image_insert_layer() command.  *   * If your image's type if INDEXED, a colormap must also be added with  * gimp_image_set_colormap(). An indexed image without a colormap will  * output unexpected colors.  *  * Returns: The ID of the newly created image.  **/
+comment|/**  * gimp_image_new:  * @width: The width of the image.  * @height: The height of the image.  * @type: The type of image.  *  * Creates a new image with the specified width, height, and type.  *  * Creates a new image, undisplayed, with the specified extents and  * type. A layer should be created and added before this image is  * displayed, or subsequent calls to gimp_display_new() with this image  * as an argument will fail. Layers can be created using the  * gimp_layer_new() commands. They can be added to an image using the  * gimp_image_insert_layer() command.  *  * If your image's type if INDEXED, a colormap must also be added with  * gimp_image_set_colormap(). An indexed image without a colormap will  * output unexpected colors.  *  * Returns: The ID of the newly created image.  **/
 end_comment
 
 begin_function
