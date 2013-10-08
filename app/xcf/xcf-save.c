@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -602,7 +596,7 @@ name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START { \   info->cp += xcf_write_int32 (info->fp, data, count,&tmp_error); \   if (tmp_error)                                                   \     {                                                              \       g_propagate_error (error, tmp_error);                        \       return FALSE;                                                \     }                                                              \   } G_STMT_END
+value|G_STMT_START {  \   info->cp += xcf_write_int32 (info->output, data, count,&tmp_error); \   if (tmp_error)                                                       \     {                                                                  \       g_propagate_error (error, tmp_error);                            \       return FALSE;                                                    \     }                                                                  \   } G_STMT_END
 end_define
 
 begin_define
@@ -617,7 +611,7 @@ name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START { \   info->cp += xcf_write_int8 (info->fp, data, count,&tmp_error); \   if (tmp_error)                                                  \     {                                                             \       g_propagate_error (error, tmp_error);                       \       return FALSE;                                               \     }                                                             \   } G_STMT_END
+value|G_STMT_START {  \   info->cp += xcf_write_int8 (info->output, data, count,&tmp_error); \   if (tmp_error)                                                      \     {                                                                 \       g_propagate_error (error, tmp_error);                           \       return FALSE;                                                   \     }                                                                 \   } G_STMT_END
 end_define
 
 begin_define
@@ -632,7 +626,7 @@ name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START { \   info->cp += xcf_write_float (info->fp, data, count,&tmp_error); \   if (tmp_error)                                                   \     {                                                              \       g_propagate_error (error, tmp_error);                        \       return FALSE;                                                \     }                                                              \   } G_STMT_END
+value|G_STMT_START {  \   info->cp += xcf_write_float (info->output, data, count,&tmp_error); \   if (tmp_error)                                                       \     {                                                                  \       g_propagate_error (error, tmp_error);                            \       return FALSE;                                                    \     }                                                                  \   } G_STMT_END
 end_define
 
 begin_define
@@ -647,7 +641,7 @@ name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START { \   info->cp += xcf_write_string (info->fp, data, count,&tmp_error); \   if (tmp_error)                                                    \     {                                                               \       g_propagate_error (error, tmp_error);                         \       return FALSE;                                                 \     }                                                               \   } G_STMT_END
+value|G_STMT_START {  \   info->cp += xcf_write_string (info->output, data, count,&tmp_error); \   if (tmp_error)                                                        \     {                                                                   \       g_propagate_error (error, tmp_error);                             \       return FALSE;                                                     \     }                                                                   \   } G_STMT_END
 end_define
 
 begin_define
@@ -1448,11 +1442,11 @@ name|cp
 expr_stmt|;
 return|return
 operator|!
-name|ferror
+name|g_output_stream_is_closed
 argument_list|(
 name|info
 operator|->
-name|fp
+name|output
 argument_list|)
 return|;
 block|}
@@ -4299,7 +4293,7 @@ name|xcf_write_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|output
 argument_list|,
 operator|&
 name|length
@@ -4467,7 +4461,7 @@ name|xcf_write_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|output
 argument_list|,
 operator|&
 name|length
@@ -4839,7 +4833,7 @@ name|xcf_write_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|output
 argument_list|,
 operator|&
 name|length
@@ -7207,7 +7201,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f05a6e0108
+DECL|struct|__anon2b5f39d80108
 block|{
 DECL|member|info
 name|XcfInfo

@@ -12,13 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<glib-object.h>
+file|<gio/gio.h>
 end_include
 
 begin_include
@@ -49,12 +43,12 @@ end_define
 
 begin_function
 name|guint
-DECL|function|xcf_read_int32 (FILE * fp,guint32 * data,gint count)
+DECL|function|xcf_read_int32 (GInputStream * input,guint32 * data,gint count)
 name|xcf_read_int32
 parameter_list|(
-name|FILE
+name|GInputStream
 modifier|*
-name|fp
+name|input
 parameter_list|,
 name|guint32
 modifier|*
@@ -80,7 +74,7 @@ name|total
 operator|+=
 name|xcf_read_int8
 argument_list|(
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint8
@@ -121,12 +115,12 @@ end_function
 
 begin_function
 name|guint
-DECL|function|xcf_read_float (FILE * fp,gfloat * data,gint count)
+DECL|function|xcf_read_float (GInputStream * input,gfloat * data,gint count)
 name|xcf_read_float
 parameter_list|(
-name|FILE
+name|GInputStream
 modifier|*
-name|fp
+name|input
 parameter_list|,
 name|gfloat
 modifier|*
@@ -139,7 +133,7 @@ block|{
 return|return
 name|xcf_read_int32
 argument_list|(
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -161,12 +155,12 @@ end_function
 
 begin_function
 name|guint
-DECL|function|xcf_read_int8 (FILE * fp,guint8 * data,gint count)
+DECL|function|xcf_read_int8 (GInputStream * input,guint8 * data,gint count)
 name|xcf_read_int8
 parameter_list|(
-name|FILE
+name|GInputStream
 modifier|*
-name|fp
+name|input
 parameter_list|,
 name|guint8
 modifier|*
@@ -176,74 +170,39 @@ name|gint
 name|count
 parameter_list|)
 block|{
-name|guint
-name|total
-init|=
-literal|0
+name|gsize
+name|bytes_read
 decl_stmt|;
-while|while
-condition|(
-name|count
-operator|>
-literal|0
-condition|)
-block|{
-name|gint
-name|bytes
-init|=
-name|fread
+name|g_input_stream_read_all
 argument_list|(
-operator|(
-name|char
-operator|*
-operator|)
+name|input
+argument_list|,
 name|data
 argument_list|,
-sizeof|sizeof
-argument_list|(
-name|char
-argument_list|)
-argument_list|,
 name|count
 argument_list|,
-name|fp
+operator|&
+name|bytes_read
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|bytes
-operator|<=
-literal|0
-condition|)
-comment|/* something bad happened */
-break|break;
-name|total
-operator|+=
-name|bytes
 expr_stmt|;
-name|count
-operator|-=
-name|bytes
-expr_stmt|;
-name|data
-operator|+=
-name|bytes
-expr_stmt|;
-block|}
 return|return
-name|total
+name|bytes_read
 return|;
 block|}
 end_function
 
 begin_function
 name|guint
-DECL|function|xcf_read_string (FILE * fp,gchar ** data,gint count)
+DECL|function|xcf_read_string (GInputStream * input,gchar ** data,gint count)
 name|xcf_read_string
 parameter_list|(
-name|FILE
+name|GInputStream
 modifier|*
-name|fp
+name|input
 parameter_list|,
 name|gchar
 modifier|*
@@ -283,7 +242,7 @@ name|total
 operator|+=
 name|xcf_read_int32
 argument_list|(
-name|fp
+name|input
 argument_list|,
 operator|&
 name|tmp
@@ -339,7 +298,7 @@ name|total
 operator|+=
 name|xcf_read_int8
 argument_list|(
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint8

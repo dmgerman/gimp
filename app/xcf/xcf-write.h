@@ -20,9 +20,9 @@ begin_function_decl
 name|guint
 name|xcf_write_int32
 parameter_list|(
-name|FILE
+name|GOutputStream
 modifier|*
-name|fp
+name|output
 parameter_list|,
 specifier|const
 name|guint32
@@ -44,9 +44,9 @@ begin_function_decl
 name|guint
 name|xcf_write_float
 parameter_list|(
-name|FILE
+name|GOutputStream
 modifier|*
-name|fp
+name|output
 parameter_list|,
 specifier|const
 name|gfloat
@@ -68,9 +68,9 @@ begin_function_decl
 name|guint
 name|xcf_write_int8
 parameter_list|(
-name|FILE
+name|GOutputStream
 modifier|*
-name|fp
+name|output
 parameter_list|,
 specifier|const
 name|guint8
@@ -92,9 +92,9 @@ begin_function_decl
 name|guint
 name|xcf_write_string
 parameter_list|(
-name|FILE
+name|GOutputStream
 modifier|*
-name|fp
+name|output
 parameter_list|,
 name|gchar
 modifier|*

@@ -12,29 +12,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
-begin_comment
-comment|/* strlen */
-end_comment
-
 begin_include
 include|#
 directive|include
-file|<errno.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<glib.h>
+file|<gio/gio.h>
 end_include
 
 begin_include
@@ -51,12 +35,12 @@ end_include
 
 begin_function
 name|guint
-DECL|function|xcf_write_int32 (FILE * fp,const guint32 * data,gint count,GError ** error)
+DECL|function|xcf_write_int32 (GOutputStream * output,const guint32 * data,gint count,GError ** error)
 name|xcf_write_int32
 parameter_list|(
-name|FILE
+name|GOutputStream
 modifier|*
-name|fp
+name|output
 parameter_list|,
 specifier|const
 name|guint32
@@ -115,7 +99,7 @@ argument_list|)
 decl_stmt|;
 name|xcf_write_int8
 argument_list|(
-name|fp
+name|output
 argument_list|,
 operator|(
 specifier|const
@@ -161,12 +145,12 @@ end_function
 
 begin_function
 name|guint
-DECL|function|xcf_write_float (FILE * fp,const gfloat * data,gint count,GError ** error)
+DECL|function|xcf_write_float (GOutputStream * output,const gfloat * data,gint count,GError ** error)
 name|xcf_write_float
 parameter_list|(
-name|FILE
+name|GOutputStream
 modifier|*
-name|fp
+name|output
 parameter_list|,
 specifier|const
 name|gfloat
@@ -185,7 +169,7 @@ block|{
 return|return
 name|xcf_write_int32
 argument_list|(
-name|fp
+name|output
 argument_list|,
 operator|(
 specifier|const
@@ -209,12 +193,12 @@ end_function
 
 begin_function
 name|guint
-DECL|function|xcf_write_int8 (FILE * fp,const guint8 * data,gint count,GError ** error)
+DECL|function|xcf_write_int8 (GOutputStream * output,const guint8 * data,gint count,GError ** error)
 name|xcf_write_int8
 parameter_list|(
-name|FILE
+name|GOutputStream
 modifier|*
-name|fp
+name|output
 parameter_list|,
 specifier|const
 name|guint8
@@ -230,96 +214,63 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|guint
-name|total
+name|GError
+modifier|*
+name|my_error
 init|=
-name|count
+name|NULL
 decl_stmt|;
-while|while
-condition|(
-name|count
-operator|>
-literal|0
-condition|)
-block|{
-name|gint
-name|bytes
-init|=
-name|fwrite
-argument_list|(
-operator|(
-specifier|const
-name|gchar
-operator|*
-operator|)
-name|data
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|gchar
-argument_list|)
-argument_list|,
-name|count
-argument_list|,
-name|fp
-argument_list|)
+name|gsize
+name|bytes_written
 decl_stmt|;
 if|if
 condition|(
-name|bytes
-operator|==
-literal|0
+operator|!
+name|g_output_stream_write_all
+argument_list|(
+name|output
+argument_list|,
+name|data
+argument_list|,
+name|count
+argument_list|,
+operator|&
+name|bytes_written
+argument_list|,
+name|NULL
+argument_list|,
+operator|&
+name|my_error
+argument_list|)
 condition|)
 block|{
-name|g_set_error
+name|g_propagate_prefixed_error
 argument_list|(
 name|error
 argument_list|,
-name|G_FILE_ERROR
-argument_list|,
-name|g_file_error_from_errno
-argument_list|(
-name|errno
-argument_list|)
+name|my_error
 argument_list|,
 name|_
 argument_list|(
-literal|"Error writing XCF: %s"
-argument_list|)
-argument_list|,
-name|g_strerror
-argument_list|(
-name|errno
+literal|"Error writing XCF: "
 argument_list|)
 argument_list|)
-expr_stmt|;
-return|return
-name|total
-return|;
-block|}
-name|count
-operator|-=
-name|bytes
-expr_stmt|;
-name|data
-operator|+=
-name|bytes
 expr_stmt|;
 block|}
 return|return
-name|total
+name|bytes_written
 return|;
 block|}
 end_function
 
 begin_function
 name|guint
-DECL|function|xcf_write_string (FILE * fp,gchar ** data,gint count,GError ** error)
+DECL|function|xcf_write_string (GOutputStream * output,gchar ** data,gint count,GError ** error)
 name|xcf_write_string
 parameter_list|(
-name|FILE
+name|GOutputStream
 modifier|*
-name|fp
+name|output
 parameter_list|,
 name|gchar
 modifier|*
@@ -392,7 +343,7 @@ literal|0
 expr_stmt|;
 name|xcf_write_int32
 argument_list|(
-name|fp
+name|output
 argument_list|,
 operator|&
 name|tmp
@@ -427,7 +378,7 @@ literal|0
 condition|)
 name|xcf_write_int8
 argument_list|(
-name|fp
+name|output
 argument_list|,
 operator|(
 specifier|const

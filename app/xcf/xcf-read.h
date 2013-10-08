@@ -20,9 +20,9 @@ begin_function_decl
 name|guint
 name|xcf_read_int32
 parameter_list|(
-name|FILE
+name|GInputStream
 modifier|*
-name|fp
+name|input
 parameter_list|,
 name|guint32
 modifier|*
@@ -38,9 +38,9 @@ begin_function_decl
 name|guint
 name|xcf_read_float
 parameter_list|(
-name|FILE
+name|GInputStream
 modifier|*
-name|fp
+name|input
 parameter_list|,
 name|gfloat
 modifier|*
@@ -56,9 +56,9 @@ begin_function_decl
 name|guint
 name|xcf_read_int8
 parameter_list|(
-name|FILE
+name|GInputStream
 modifier|*
-name|fp
+name|input
 parameter_list|,
 name|guint8
 modifier|*
@@ -74,9 +74,9 @@ begin_function_decl
 name|guint
 name|xcf_read_string
 parameter_list|(
-name|FILE
+name|GInputStream
 modifier|*
-name|fp
+name|input
 parameter_list|,
 name|gchar
 modifier|*

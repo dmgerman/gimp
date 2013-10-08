@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -695,7 +689,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -715,7 +709,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -735,7 +729,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -767,7 +761,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -990,7 +984,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|offset
@@ -1219,7 +1213,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|offset
@@ -1791,7 +1785,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|n_colors
@@ -1947,7 +1941,7 @@ name|xcf_read_int8
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 name|cmap
 argument_list|,
@@ -1995,7 +1989,7 @@ name|xcf_read_int8
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint8
@@ -2125,7 +2119,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -2145,7 +2139,7 @@ name|xcf_read_int8
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint8
@@ -2278,7 +2272,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -2298,7 +2292,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -2341,7 +2335,7 @@ name|xcf_read_float
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|xres
@@ -2357,7 +2351,7 @@ name|xcf_read_float
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|yres
@@ -2452,7 +2446,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|info
@@ -2561,7 +2555,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|unit
@@ -2663,7 +2657,7 @@ name|xcf_read_float
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|factor
@@ -2679,7 +2673,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|digits
@@ -2695,7 +2689,7 @@ name|xcf_read_string
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 name|unit_strings
 argument_list|,
@@ -3087,7 +3081,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -3117,7 +3111,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|opacity
@@ -3157,7 +3151,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -3199,7 +3193,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -3241,7 +3235,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -3294,7 +3288,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -3341,7 +3335,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -3390,7 +3384,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -3413,7 +3407,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -3436,7 +3430,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -3466,7 +3460,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|offset_x
@@ -3482,7 +3476,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|offset_y
@@ -3520,7 +3514,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|mode
@@ -3558,7 +3552,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -3682,7 +3676,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 name|text_layer_flags
 argument_list|,
@@ -3777,7 +3771,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|index
@@ -3816,7 +3810,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 name|group_layer_flags
 argument_list|,
@@ -4058,7 +4052,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|opacity
@@ -4095,7 +4089,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -4141,7 +4135,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -4187,7 +4181,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -4233,7 +4227,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -4279,7 +4273,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -4319,7 +4313,7 @@ name|xcf_read_int8
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint8
@@ -4373,7 +4367,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -4550,7 +4544,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -4581,7 +4575,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -4725,7 +4719,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -4745,7 +4739,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -4765,7 +4759,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -4785,7 +4779,7 @@ name|xcf_read_string
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|name
@@ -5034,7 +5028,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|hierarchy_offset
@@ -5050,7 +5044,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|layer_mask_offset
@@ -5344,7 +5338,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -5364,7 +5358,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -5384,7 +5378,7 @@ name|xcf_read_string
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|name
@@ -5453,7 +5447,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|hierarchy_offset
@@ -5605,7 +5599,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -5625,7 +5619,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -5645,7 +5639,7 @@ name|xcf_read_string
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|name
@@ -5721,7 +5715,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|hierarchy_offset
@@ -5852,7 +5846,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -5872,7 +5866,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -5892,7 +5886,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -5940,7 +5934,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|offset
@@ -5960,7 +5954,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|junk
@@ -6109,7 +6103,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -6129,7 +6123,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -6169,7 +6163,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|offset
@@ -6276,7 +6270,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|offset2
@@ -6452,7 +6446,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|offset
@@ -6560,7 +6554,7 @@ name|xcf_read_int8
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 name|tile_data
 argument_list|,
@@ -6648,7 +6642,7 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|gint
+name|gsize
 name|nmemb_read_successfully
 decl_stmt|;
 name|guchar
@@ -6682,29 +6676,34 @@ argument_list|(
 name|data_length
 argument_list|)
 expr_stmt|;
-comment|/* we have to use fread instead of xcf_read_* because we may be    * reading past the end of the file here    */
-name|nmemb_read_successfully
-operator|=
-name|fread
+comment|/* we have to read directly instead of xcf_read_* because we may be    * reading past the end of the file here    */
+name|g_input_stream_read_all
 argument_list|(
-operator|(
-name|gchar
-operator|*
-operator|)
-name|xcfdata
+name|info
+operator|->
+name|input
 argument_list|,
-sizeof|sizeof
-argument_list|(
-name|gchar
-argument_list|)
+name|xcfdata
 argument_list|,
 name|data_length
 argument_list|,
-name|info
-operator|->
-name|fp
+operator|&
+name|nmemb_read_successfully
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|nmemb_read_successfully
+operator|==
+literal|0
+condition|)
+return|return
+name|TRUE
+return|;
 name|info
 operator|->
 name|cp
@@ -7076,7 +7075,7 @@ name|xcf_read_string
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|name
@@ -7092,7 +7091,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|flags
@@ -7108,7 +7107,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|size
@@ -7157,7 +7156,7 @@ name|xcf_read_int8
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 name|data
 argument_list|,
@@ -7226,7 +7225,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|last_selected_row
@@ -7242,7 +7241,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|num_paths
@@ -7355,7 +7354,7 @@ name|xcf_read_string
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|name
@@ -7371,7 +7370,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|locked
@@ -7387,7 +7386,7 @@ name|xcf_read_int8
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|state
@@ -7403,7 +7402,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|closed
@@ -7419,7 +7418,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|num_points
@@ -7435,7 +7434,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|version
@@ -7462,7 +7461,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -7495,7 +7494,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -7515,7 +7514,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -7606,7 +7605,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|points
@@ -7627,7 +7626,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -7647,7 +7646,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|(
 name|guint32
@@ -7694,7 +7693,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|points
@@ -7715,7 +7714,7 @@ name|xcf_read_float
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|x
@@ -7731,7 +7730,7 @@ name|xcf_read_float
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|y
@@ -7882,7 +7881,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|version
@@ -7929,7 +7928,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|active_index
@@ -7945,7 +7944,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|num_paths
@@ -8097,7 +8096,7 @@ name|xcf_read_string
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|name
@@ -8113,7 +8112,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|tattoo
@@ -8129,7 +8128,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|visible
@@ -8145,7 +8144,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|linked
@@ -8161,7 +8160,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|num_parasites
@@ -8177,7 +8176,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|num_strokes
@@ -8392,7 +8391,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|stroke_type_id
@@ -8408,7 +8407,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|closed
@@ -8424,7 +8423,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|num_axes
@@ -8440,7 +8439,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|num_control_points
@@ -8559,7 +8558,7 @@ name|xcf_read_int32
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 operator|&
 name|type
@@ -8575,7 +8574,7 @@ name|xcf_read_float
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 name|coords
 argument_list|,
@@ -8813,11 +8812,11 @@ condition|)
 block|{
 if|if
 condition|(
-name|feof
+name|g_input_stream_is_closed
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|)
 condition|)
 return|return
@@ -8840,7 +8839,7 @@ name|xcf_read_int8
 argument_list|(
 name|info
 operator|->
-name|fp
+name|input
 argument_list|,
 name|buf
 argument_list|,
