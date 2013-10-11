@@ -16,6 +16,18 @@ directive|define
 name|__TESTS_H__
 end_define
 
+begin_comment
+comment|/* Automake doc says:    "When no test protocol is in use, an exit status of 0 from a test    script will denote a success, an exit status of 77 a skipped test,    an exit status of 99 an hard error, and any other exit status will    denote a failure."     Unfortunately glib returns a SUCCESS when you skip tests, which is    not a reliable test feedback. So we hard-code the SKIPPED return    value. */
+end_comment
+
+begin_define
+DECL|macro|GIMP_EXIT_TEST_SKIPPED
+define|#
+directive|define
+name|GIMP_EXIT_TEST_SKIPPED
+value|77
+end_define
+
 begin_function_decl
 name|Gimp
 modifier|*

@@ -51,6 +51,18 @@ define|\
 value|g_test_add_func ("/gimp-session-2-8-compatibility-multi-window/" #function, \                    function);
 end_define
 
+begin_define
+DECL|macro|SKIP_TEST (function)
+define|#
+directive|define
+name|SKIP_TEST
+parameter_list|(
+name|function
+parameter_list|)
+define|\
+value|g_test_add_func ("/gimp-session-2-8-compatibility-multi-window/subprocess/" #function, \                    function);
+end_define
+
 begin_comment
 comment|/**  * Tests that a single-window sessionrc in GIMP 2.8 format is loaded  * and written (thus also interpreted) like we expect.  **/
 end_comment
@@ -109,16 +121,38 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|HAVE_XVFB_RUN
 name|ADD_TEST
 argument_list|(
 name|read_and_write_session_files
 argument_list|)
 expr_stmt|;
+else|#
+directive|else
+name|SKIP_TEST
+argument_list|(
+name|read_and_write_session_files
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 comment|/* Don't bother freeing stuff, the process is short-lived */
+ifdef|#
+directive|ifdef
+name|HAVE_XVFB_RUN
 return|return
 name|g_test_run
 argument_list|()
 return|;
+else|#
+directive|else
+return|return
+name|GIMP_EXIT_TEST_SKIPPED
+return|;
+endif|#
+directive|endif
 block|}
 end_function
 
