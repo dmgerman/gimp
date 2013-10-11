@@ -98,7 +98,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5ce4840103
+DECL|enum|__anon293dcfc90103
 block|{
 DECL|enumerator|COLOR_PICKED
 name|COLOR_PICKED
@@ -1408,7 +1408,7 @@ index|[
 literal|0
 index|]
 argument_list|,
-literal|1.0
+literal|255
 argument_list|)
 expr_stmt|;
 name|CGImageRelease
