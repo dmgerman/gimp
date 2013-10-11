@@ -584,7 +584,7 @@ argument_list|)
 block|,
 name|GIMP_POSITION_TOP
 block|,
-name|GIMP_HELP_WINDOWS_TABS_POSITION_TOP
+name|GIMP_HELP_WINDOWS_TABS_POSITION
 block|}
 block|,
 block|{
@@ -610,7 +610,7 @@ argument_list|)
 block|,
 name|GIMP_POSITION_BOTTOM
 block|,
-name|GIMP_HELP_WINDOWS_TABS_POSITION_BOTTOM
+name|GIMP_HELP_WINDOWS_TABS_POSITION
 block|}
 block|,
 block|{
@@ -636,7 +636,7 @@ argument_list|)
 block|,
 name|GIMP_POSITION_LEFT
 block|,
-name|GIMP_HELP_WINDOWS_TABS_POSITION_LEFT
+name|GIMP_HELP_WINDOWS_TABS_POSITION
 block|}
 block|,
 block|{
@@ -662,7 +662,7 @@ argument_list|)
 block|,
 name|GIMP_POSITION_RIGHT
 block|,
-name|GIMP_HELP_WINDOWS_TABS_POSITION_RIGHT
+name|GIMP_HELP_WINDOWS_TABS_POSITION
 block|}
 block|, }
 decl_stmt|;

@@ -936,15 +936,6 @@ value|N_("Use GIMP in a single-window mode.")
 end_define
 
 begin_define
-DECL|macro|WINDOWS_TABS_POSITION
-define|#
-directive|define
-name|WINDOWS_TABS_POSITION
-define|\
-value|N_("Choose the position of the tabs.")
-end_define
-
-begin_define
 DECL|macro|HIDE_DOCKS_BLURB
 define|#
 directive|define
