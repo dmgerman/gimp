@@ -233,7 +233,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b089c950103
+DECL|enum|__anon2b1e22580103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1752,7 +1752,7 @@ name|auto_button
 argument_list|,
 name|_
 argument_list|(
-literal|"When enabled the dialog automatically "
+literal|"When enabled, the dialog automatically "
 literal|"follows the image you are working on."
 argument_list|)
 argument_list|,

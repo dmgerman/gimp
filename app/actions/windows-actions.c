@@ -492,7 +492,7 @@ name|NC_
 argument_list|(
 literal|"windows-action"
 argument_list|,
-literal|"When enabled docks and other dialogs are hidden, leaving only image windows."
+literal|"When enabled, docks and other dialogs are hidden, leaving only image windows."
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -523,7 +523,7 @@ name|NC_
 argument_list|(
 literal|"windows-action"
 argument_list|,
-literal|"When enabled GIMP is in a single-window mode."
+literal|"When enabled, GIMP is in a single-window mode."
 argument_list|)
 block|,
 name|G_CALLBACK
