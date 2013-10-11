@@ -579,7 +579,7 @@ name|NC_
 argument_list|(
 literal|"windows-tabs-position-action"
 argument_list|,
-literal|"Position the tabs to the top"
+literal|"Position the tabs on the top"
 argument_list|)
 block|,
 name|GIMP_POSITION_TOP
@@ -605,7 +605,7 @@ name|NC_
 argument_list|(
 literal|"windows-tabs-position-action"
 argument_list|,
-literal|"Position the tabs to the bottom"
+literal|"Position the tabs on the bottom"
 argument_list|)
 block|,
 name|GIMP_POSITION_BOTTOM
@@ -631,7 +631,7 @@ name|NC_
 argument_list|(
 literal|"windows-tabs-position-action"
 argument_list|,
-literal|"Position the tabs to the left"
+literal|"Position the tabs on the left"
 argument_list|)
 block|,
 name|GIMP_POSITION_LEFT
@@ -657,7 +657,7 @@ name|NC_
 argument_list|(
 literal|"windows-tabs-position-action"
 argument_list|,
-literal|"Position the tabs to the right"
+literal|"Position the tabs on the right"
 argument_list|)
 block|,
 name|GIMP_POSITION_RIGHT
