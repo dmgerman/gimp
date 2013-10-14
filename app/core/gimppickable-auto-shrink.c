@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
@@ -54,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f8ffc60103
+DECL|enum|__anon29aa17d70103
 block|{
 DECL|enumerator|AUTO_SHRINK_NOTHING
 name|AUTO_SHRINK_NOTHING

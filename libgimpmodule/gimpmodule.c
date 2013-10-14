@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gio/gio.h>
 end_include
 
 begin_include
@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2907c57c0103
+DECL|enum|__anon2bdcab050103
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED

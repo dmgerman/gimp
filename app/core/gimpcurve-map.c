@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
@@ -123,7 +129,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon296e6e380103
+DECL|enum|__anon278df0090103
 block|{
 DECL|enumerator|CURVE_NONE
 name|CURVE_NONE

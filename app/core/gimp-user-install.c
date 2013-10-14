@@ -57,13 +57,13 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<glib/gstdio.h>
+file|<gio/gio.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_ifdef
@@ -174,7 +174,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d342e40103
+DECL|enum|__anon29f8d0280103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -193,7 +193,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28d342e40208
+DECL|struct|__anon29f8d0280208
 block|{
 DECL|member|name
 specifier|const

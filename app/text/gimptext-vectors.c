@@ -12,13 +12,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gegl.h>
+file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|<pango/pangocairo.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gegl.h>
 end_include
 
 begin_include
@@ -78,7 +84,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296e90780108
+DECL|struct|__anon2c5c137d0108
 block|{
 DECL|member|vectors
 name|GimpVectors

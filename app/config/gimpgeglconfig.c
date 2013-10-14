@@ -29,6 +29,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|<gio/gio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
@@ -102,7 +108,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b1d4ea0103
+DECL|enum|__anon2bf836540103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

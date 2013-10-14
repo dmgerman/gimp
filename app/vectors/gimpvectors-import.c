@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
@@ -102,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3335590108
+DECL|struct|__anon2c1814550108
 block|{
 DECL|member|stack
 name|GQueue
@@ -222,7 +228,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3335590208
+DECL|struct|__anon2c1814550208
 block|{
 DECL|member|id
 name|gchar
@@ -6241,7 +6247,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3335590308
+DECL|struct|__anon2c1814550308
 block|{
 DECL|member|strokes
 name|GList

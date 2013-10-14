@@ -16,12 +16,6 @@ directive|define
 name|__FILE_UTILS_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gdk-pixbuf/gdk-pixbuf.h>
-end_include
-
 begin_function_decl
 name|gboolean
 name|file_utils_filename_is_uri

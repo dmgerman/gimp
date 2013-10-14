@@ -34,7 +34,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gio/gio.h>
 end_include
 
 begin_include
@@ -230,7 +230,7 @@ directive|endif
 end_endif
 
 begin_struct
-DECL|struct|__anon29e17b000108
+DECL|struct|__anon2c6d19fa0108
 specifier|static
 struct|struct
 block|{

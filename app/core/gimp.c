@@ -22,6 +22,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
@@ -327,7 +333,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2949be9a0103
+DECL|enum|__anon2bd6c8960103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE

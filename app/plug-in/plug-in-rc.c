@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
 begin_include
@@ -255,7 +255,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e506e20103
+DECL|enum|__anon2746f49a0103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION

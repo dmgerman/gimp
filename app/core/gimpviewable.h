@@ -22,12 +22,6 @@ directive|include
 file|"gimpobject.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|<gdk-pixbuf/gdk-pixbuf.h>
-end_include
-
 begin_define
 DECL|macro|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 define|#

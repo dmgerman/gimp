@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
@@ -107,7 +113,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f20e7b0103
+DECL|enum|__anon27708b250103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1390,7 +1396,7 @@ comment|/* This is a table of scripts and corresponding short sample strings    
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27f20e7b0208
+DECL|struct|__anon27708b250208
 block|{
 DECL|member|script
 specifier|const

@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
@@ -1259,7 +1265,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aaed9210108
+DECL|struct|__anon2bf8a58e0108
 block|{
 DECL|member|factory
 name|GimpDataFactory

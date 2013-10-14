@@ -41,6 +41,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
@@ -117,7 +123,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8606df0103
+DECL|enum|__anon2911a9290103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -130,7 +136,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8606df0203
+DECL|enum|__anon2911a9290203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

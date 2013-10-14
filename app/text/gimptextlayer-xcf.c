@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
@@ -87,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a401760103
+DECL|enum|__anon2c597bc10103
 block|{
 DECL|enumerator|TEXT_LAYER_XCF_NONE
 name|TEXT_LAYER_XCF_NONE

@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
@@ -943,7 +949,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-DECL|union|__anon2b51e51e010a
+DECL|union|__anon29113ee1010a
 DECL|member|v
 DECL|member|f
 union|union

@@ -70,7 +70,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
 begin_include
@@ -118,7 +118,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0487d60103
+DECL|enum|__anon2989c4d10103
 block|{
 DECL|enumerator|FILE_MATCH_NONE
 name|FILE_MATCH_NONE

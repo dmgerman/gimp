@@ -30,13 +30,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gegl.h>
+file|<gobject/gvaluecollector.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<gobject/gvaluecollector.h>
+file|<gdk-pixbuf/gdk-pixbuf.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gegl.h>
 end_include
 
 begin_include
@@ -107,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b232930103
+DECL|enum|__anon2c896a8e0103
 block|{
 DECL|enumerator|REGISTER_PROCEDURE
 name|REGISTER_PROCEDURE

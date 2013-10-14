@@ -84,13 +84,19 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<gegl.h>
+file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|<glib/gstdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gegl.h>
 end_include
 
 begin_include
@@ -1416,7 +1422,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon275795d4010a
+DECL|union|__anon2c2d94d9010a
 block|{
 DECL|member|u
 name|guint16

@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gegl.h>
+file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
 begin_include
@@ -31,6 +31,12 @@ begin_include
 include|#
 directive|include
 file|<pango/pangofc-fontmap.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gegl.h>
 end_include
 
 begin_include
