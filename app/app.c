@@ -277,6 +277,19 @@ name|gboolean
 name|no_interface
 parameter_list|)
 block|{
+comment|/* disable OpenCL before GEGL is even initialized; this way we only    * enable if wanted in gimprc, instead of always enabling, and then    * disabling again if wanted in gimprc    */
+name|g_object_set
+argument_list|(
+name|gegl_config
+argument_list|()
+argument_list|,
+literal|"use-opencl"
+argument_list|,
+name|FALSE
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_option_context_add_group
 argument_list|(
 name|context
