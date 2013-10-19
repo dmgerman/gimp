@@ -3,84 +3,45 @@ begin_comment
 comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
-begin_comment
-comment|/*  * EXIF-handling code for the metadata library.  */
-end_comment
-
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_EXIF_H__
+name|__GIMP_IMAGE_METADATA_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_EXIF_H__
+DECL|macro|__GIMP_IMAGE_METADATA_H__
 define|#
 directive|define
-name|__GIMP_EXIF_H__
+name|__GIMP_IMAGE_METADATA_H__
 end_define
 
 begin_function_decl
-name|void
-name|gimp_metadata_store_exif
+name|GimpMetadata
+modifier|*
+name|gimp_image_get_metadata
 parameter_list|(
-name|gint32
-name|image_ID
-parameter_list|,
-name|ExifData
+name|GimpImage
 modifier|*
-name|exif_data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|ExifData
-modifier|*
-name|gimp_metadata_generate_exif
-parameter_list|(
-name|gint32
-name|image_ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|const
-name|gchar
-modifier|*
-name|gimp_exif_content_get_value
-parameter_list|(
-name|ExifContent
-modifier|*
-name|content
-parameter_list|,
-name|ExifTag
-name|tag
-parameter_list|,
-name|gchar
-modifier|*
-name|value
-parameter_list|,
-name|gint
-name|maxlen
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_exif_data_remove_entry
+name|gimp_image_set_metadata
 parameter_list|(
-name|ExifData
+name|GimpImage
 modifier|*
-name|exif_data
+name|image
 parameter_list|,
-name|ExifIfd
-name|ifd
+name|GimpMetadata
+modifier|*
+name|metadata
 parameter_list|,
-name|ExifTag
-name|tag
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -91,7 +52,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_EXIF_H__ */
+comment|/* __GIMP_IMAGE_METADATA_H__ */
 end_comment
 
 end_unit

@@ -56,6 +56,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpmetadata.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpaspectpreview.h>
 end_include
 

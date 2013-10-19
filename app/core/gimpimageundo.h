@@ -161,6 +161,11 @@ name|guchar
 modifier|*
 name|colormap
 decl_stmt|;
+DECL|member|metadata
+name|GimpMetadata
+modifier|*
+name|metadata
+decl_stmt|;
 DECL|member|parasite_name
 name|gchar
 modifier|*

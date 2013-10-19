@@ -159,6 +159,12 @@ modifier|*
 name|babl_palette_rgba
 decl_stmt|;
 comment|/*  palette's RGBA Babl format   */
+DECL|member|metadata
+name|GimpMetadata
+modifier|*
+name|metadata
+decl_stmt|;
+comment|/*  image's metadata             */
 DECL|member|dirty
 name|gint
 name|dirty

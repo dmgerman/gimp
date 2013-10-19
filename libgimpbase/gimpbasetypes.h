@@ -191,6 +191,15 @@ parameter_list|)
 function_decl|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpMetadata
+typedef|typedef
+name|struct
+name|_GExiv2Metadata
+name|GimpMetadata
+typedef|;
+end_typedef
+
 begin_comment
 comment|/**  * GimpEnumDesc:  * @value:      An enum value.  * @value_desc: The value's description.  * @value_help: The value's help text.  *  * This structure is used to register translatable descriptions and  * help texts for enum values. See gimp_enum_set_value_descriptions().  **/
 end_comment

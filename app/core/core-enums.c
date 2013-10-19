@@ -6109,6 +6109,14 @@ literal|"image-grid"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_IMAGE_METADATA
+block|,
+literal|"GIMP_UNDO_IMAGE_METADATA"
+block|,
+literal|"image-metadata"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_IMAGE_COLORMAP
 block|,
 literal|"GIMP_UNDO_IMAGE_COLORMAP"
@@ -7014,6 +7022,19 @@ argument_list|(
 literal|"undo-type"
 argument_list|,
 literal|"Grid"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_UNDO_IMAGE_METADATA
+block|,
+name|NC_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Change metadata"
 argument_list|)
 block|,
 name|NULL

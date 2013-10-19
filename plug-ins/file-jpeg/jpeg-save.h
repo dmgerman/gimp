@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c087b880108
+DECL|struct|__anon29f9d7500108
 block|{
 DECL|member|quality
 name|gdouble
@@ -68,6 +68,10 @@ decl_stmt|;
 DECL|member|save_xmp
 name|gboolean
 name|save_xmp
+decl_stmt|;
+DECL|member|save_iptc
+name|gboolean
+name|save_iptc
 decl_stmt|;
 DECL|member|use_orig_quality
 name|gboolean
