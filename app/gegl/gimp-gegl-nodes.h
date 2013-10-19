@@ -119,6 +119,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_gegl_node_set_color
+parameter_list|(
+name|GeglNode
+modifier|*
+name|node
+parameter_list|,
+specifier|const
+name|GimpRGB
+modifier|*
+name|color
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
