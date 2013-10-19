@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl-utils.h"
+file|"gegl/gimp-gegl-nodes.h"
 end_include
 
 begin_include
@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27962a5d0103
+DECL|enum|__anon2ac504de0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
