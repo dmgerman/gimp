@@ -155,19 +155,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* turn down the precision of babl - permitting use of lookup tables for    * gamma conversions, this precision is anyways high enough for both 8bit    * and 16bit operation    */
-name|g_object_set
-argument_list|(
-name|gegl_config
-argument_list|()
-argument_list|,
-literal|"babl-tolerance"
-argument_list|,
-literal|0.00015
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|config
