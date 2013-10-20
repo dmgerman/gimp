@@ -3577,6 +3577,13 @@ condition|(
 name|proc_install
 operator|->
 name|menu_path
+operator|&&
+name|strlen
+argument_list|(
+name|proc_install
+operator|->
+name|menu_path
+argument_list|)
 condition|)
 block|{
 if|if
