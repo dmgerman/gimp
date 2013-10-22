@@ -326,20 +326,12 @@ argument_list|,
 literal|"image/jp2"
 argument_list|)
 expr_stmt|;
-name|gimp_register_file_handler_mime
-argument_list|(
-name|LOAD_PROC
-argument_list|,
-literal|"image/jpeg2000"
-argument_list|)
-expr_stmt|;
-name|gimp_register_file_handler_mime
-argument_list|(
-name|LOAD_PROC
-argument_list|,
-literal|"image/jpx"
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|gimp_register_file_handler_mime (LOAD_PROC, "image/jpeg2000");   gimp_register_file_handler_mime (LOAD_PROC, "image/jpx");
+endif|#
+directive|endif
 block|}
 end_function
 
