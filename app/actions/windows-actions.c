@@ -1136,6 +1136,17 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|gimp_action_group_set_action_sensitive
+argument_list|(
+name|group
+argument_list|,
+literal|"windows-tab-position"
+argument_list|,
+name|config
+operator|->
+name|single_window_mode
+argument_list|)
+expr_stmt|;
 undef|#
 directive|undef
 name|SET_ACTIVE
