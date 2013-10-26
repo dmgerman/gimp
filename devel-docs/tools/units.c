@@ -8,7 +8,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gio/gio.h>
 end_include
 
 begin_include
@@ -32,7 +32,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299ad90a0108
+DECL|struct|__anon28843fe60108
 block|{
 DECL|member|factor
 name|gdouble
