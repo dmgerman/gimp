@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cf709d0108
+DECL|struct|__anon28d30cf80108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cf709d0208
+DECL|struct|__anon28d30cf80208
 block|{
 DECL|member|run
 name|gboolean
@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cf709d0308
+DECL|struct|__anon28d30cf80308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -397,6 +397,10 @@ name|filename
 parameter_list|,
 name|gboolean
 name|interactive
+parameter_list|,
+name|gboolean
+modifier|*
+name|resolution_loaded
 parameter_list|,
 name|GError
 modifier|*
@@ -1200,6 +1204,11 @@ block|{
 name|gboolean
 name|interactive
 decl_stmt|;
+name|gboolean
+name|resolution_loaded
+init|=
+name|FALSE
+decl_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -1244,6 +1253,9 @@ operator|.
 name|d_string
 argument_list|,
 name|interactive
+argument_list|,
+operator|&
+name|resolution_loaded
 argument_list|,
 operator|&
 name|error
@@ -1300,6 +1312,15 @@ name|flags
 init|=
 name|GIMP_METADATA_LOAD_ALL
 decl_stmt|;
+if|if
+condition|(
+name|resolution_loaded
+condition|)
+name|flags
+operator|&=
+operator|~
+name|GIMP_METADATA_LOAD_RESOLUTION
+expr_stmt|;
 name|gimp_image_metadata_load_finish
 argument_list|(
 name|image_ID
@@ -2515,7 +2536,7 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (const gchar * filename,gboolean interactive,GError ** error)
+DECL|function|load_image (const gchar * filename,gboolean interactive,gboolean * resolution_loaded,GError ** error)
 name|load_image
 parameter_list|(
 specifier|const
@@ -2525,6 +2546,10 @@ name|filename
 parameter_list|,
 name|gboolean
 name|interactive
+parameter_list|,
+name|gboolean
+modifier|*
+name|resolution_loaded
 parameter_list|,
 name|GError
 modifier|*
@@ -3620,6 +3645,11 @@ argument_list|,
 name|image_yres
 argument_list|)
 expr_stmt|;
+operator|*
+name|resolution_loaded
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 break|break;
 case|case
@@ -3643,6 +3673,18 @@ name|yres
 operator|*
 literal|0.0254
 argument_list|)
+expr_stmt|;
+name|gimp_image_set_unit
+argument_list|(
+name|image
+argument_list|,
+name|GIMP_UNIT_MM
+argument_list|)
+expr_stmt|;
+operator|*
+name|resolution_loaded
+operator|=
+name|TRUE
 expr_stmt|;
 break|break;
 default|default:
