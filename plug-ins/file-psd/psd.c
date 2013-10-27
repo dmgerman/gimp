@@ -604,6 +604,11 @@ literal|0
 condition|)
 block|{
 name|gboolean
+name|resolution_loaded
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
 name|interactive
 decl_stmt|;
 switch|switch
@@ -648,6 +653,9 @@ operator|.
 name|data
 operator|.
 name|d_string
+argument_list|,
+operator|&
+name|resolution_loaded
 argument_list|,
 operator|&
 name|error
@@ -704,6 +712,15 @@ name|flags
 init|=
 name|GIMP_METADATA_LOAD_ALL
 decl_stmt|;
+if|if
+condition|(
+name|resolution_loaded
+condition|)
+name|flags
+operator|&=
+operator|~
+name|GIMP_METADATA_LOAD_RESOLUTION
+expr_stmt|;
 name|gimp_image_metadata_load_finish
 argument_list|(
 name|image_ID

@@ -25,6 +25,10 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
+name|gboolean
+modifier|*
+name|resolution_loaded
+parameter_list|,
 name|GError
 modifier|*
 modifier|*

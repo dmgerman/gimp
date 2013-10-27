@@ -238,6 +238,10 @@ name|FILE
 modifier|*
 name|f
 parameter_list|,
+name|gboolean
+modifier|*
+name|resolution_loaded
+parameter_list|,
 name|GError
 modifier|*
 modifier|*
@@ -428,13 +432,17 @@ end_comment
 
 begin_function
 name|gint32
-DECL|function|load_image (const gchar * filename,GError ** load_error)
+DECL|function|load_image (const gchar * filename,gboolean * resolution_loaded,GError ** load_error)
 name|load_image
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|gboolean
+modifier|*
+name|resolution_loaded
 parameter_list|,
 name|GError
 modifier|*
@@ -822,6 +830,8 @@ operator|&
 name|img_a
 argument_list|,
 name|f
+argument_list|,
+name|resolution_loaded
 argument_list|,
 operator|&
 name|error
@@ -5839,7 +5849,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|add_image_resources (const gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
+DECL|function|add_image_resources (const gint32 image_id,PSDimage * img_a,FILE * f,gboolean * resolution_loaded,GError ** error)
 name|add_image_resources
 parameter_list|(
 specifier|const
@@ -5853,6 +5863,10 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|gboolean
+modifier|*
+name|resolution_loaded
 parameter_list|,
 name|GError
 modifier|*
@@ -6023,6 +6037,8 @@ argument_list|,
 name|img_a
 argument_list|,
 name|f
+argument_list|,
+name|resolution_loaded
 argument_list|,
 name|error
 argument_list|)

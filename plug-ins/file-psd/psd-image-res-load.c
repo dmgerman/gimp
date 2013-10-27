@@ -817,7 +817,7 @@ end_function
 
 begin_function
 name|gint
-DECL|function|load_image_resource (PSDimageres * res_a,const gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
+DECL|function|load_image_resource (PSDimageres * res_a,const gint32 image_id,PSDimage * img_a,FILE * f,gboolean * resolution_loaded,GError ** error)
 name|load_image_resource
 parameter_list|(
 name|PSDimageres
@@ -835,6 +835,10 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|gboolean
+modifier|*
+name|resolution_loaded
 parameter_list|,
 name|GError
 modifier|*
@@ -1005,6 +1009,9 @@ break|break;
 case|case
 name|PSD_RESN_INFO
 case|:
+if|if
+condition|(
+operator|!
 name|load_resource_1005
 argument_list|(
 name|res_a
@@ -1015,6 +1022,11 @@ name|f
 argument_list|,
 name|error
 argument_list|)
+condition|)
+operator|*
+name|resolution_loaded
+operator|=
+name|TRUE
 expr_stmt|;
 break|break;
 case|case
