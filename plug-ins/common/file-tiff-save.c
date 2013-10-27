@@ -155,7 +155,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c639e70108
+DECL|struct|__anon2931eea60108
 block|{
 DECL|member|compression
 name|gint
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c639e70208
+DECL|struct|__anon2931eea60208
 block|{
 DECL|member|ID
 name|gint32
@@ -1357,9 +1357,9 @@ literal|"image/tiff"
 argument_list|,
 name|metadata
 argument_list|,
-name|file
-argument_list|,
 name|flags
+argument_list|,
+name|file
 argument_list|,
 name|NULL
 argument_list|)

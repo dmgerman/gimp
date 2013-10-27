@@ -1078,9 +1078,9 @@ literal|"image/x-psd"
 argument_list|,
 name|metadata
 argument_list|,
-name|file
-argument_list|,
 name|flags
+argument_list|,
+name|file
 argument_list|,
 name|NULL
 argument_list|)

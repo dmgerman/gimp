@@ -114,7 +114,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a8f10960103
+DECL|enum|__anon2c2a53df0103
 block|{
 DECL|enumerator|JPEG_SUBSAMPLING_2x2_1x1_1x1
 name|JPEG_SUBSAMPLING_2x2_1x1_1x1
@@ -184,13 +184,6 @@ specifier|extern
 name|gchar
 modifier|*
 name|image_comment
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|gboolean
-name|has_metadata
 decl_stmt|;
 end_decl_stmt
 
