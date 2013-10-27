@@ -277,7 +277,7 @@ name|comment
 decl_stmt|;
 name|comment
 operator|=
-name|gexiv2_metadata_get_tag_string
+name|gexiv2_metadata_get_tag_interpreted_string
 argument_list|(
 name|metadata
 argument_list|,
@@ -291,7 +291,7 @@ name|comment
 condition|)
 name|comment
 operator|=
-name|gexiv2_metadata_get_tag_string
+name|gexiv2_metadata_get_tag_interpreted_string
 argument_list|(
 name|metadata
 argument_list|,
