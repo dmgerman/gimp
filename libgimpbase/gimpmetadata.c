@@ -1107,7 +1107,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291257490108
+DECL|struct|__anon2b52372a0108
 block|{
 DECL|member|name
 name|gchar
@@ -1273,7 +1273,7 @@ argument_list|()
 argument_list|,
 literal|1001
 argument_list|,
-literal|"Element 'tag' not contain required attribute 'name'."
+literal|"Element 'tag' does not contain required attribute 'name'."
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2183,7 +2183,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Can save metadata only from to files"
+literal|"Can save metadata only to local files"
 argument_list|)
 argument_list|)
 expr_stmt|;
