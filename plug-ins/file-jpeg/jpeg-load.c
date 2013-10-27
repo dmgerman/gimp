@@ -118,7 +118,7 @@ end_include
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|jpeg_load_resolution
 parameter_list|(
 name|gint32
@@ -194,7 +194,7 @@ end_decl_stmt
 
 begin_function
 name|gint32
-DECL|function|load_image (const gchar * filename,GimpRunMode runmode,gboolean preview,GError ** error)
+DECL|function|load_image (const gchar * filename,GimpRunMode runmode,gboolean preview,gboolean * resolution_loaded,GError ** error)
 name|load_image
 parameter_list|(
 specifier|const
@@ -207,6 +207,10 @@ name|runmode
 parameter_list|,
 name|gboolean
 name|preview
+parameter_list|,
+name|gboolean
+modifier|*
+name|resolution_loaded
 parameter_list|,
 name|GError
 modifier|*
@@ -979,6 +983,8 @@ endif|#
 directive|endif
 block|}
 block|}
+if|if
+condition|(
 name|jpeg_load_resolution
 argument_list|(
 name|image_ID
@@ -986,7 +992,18 @@ argument_list|,
 operator|&
 name|cinfo
 argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|resolution_loaded
+condition|)
+operator|*
+name|resolution_loaded
+operator|=
+name|TRUE
 expr_stmt|;
+block|}
 comment|/* if we found any comments, then make a parasite for them */
 if|if
 condition|(
@@ -1389,7 +1406,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|jpeg_load_resolution (gint32 image_ID,struct jpeg_decompress_struct * cinfo)
 name|jpeg_load_resolution
 parameter_list|(
@@ -1611,7 +1628,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291422d90108
+DECL|struct|__anon2b436be10108
 block|{
 DECL|member|pub
 name|struct

@@ -271,7 +271,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7172800108
+DECL|struct|__anon2a97b6d20108
 block|{
 DECL|member|cinfo
 name|struct
@@ -348,7 +348,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7172800208
+DECL|struct|__anon2a97b6d20208
 block|{
 DECL|member|run
 name|gboolean
@@ -922,6 +922,8 @@ argument_list|,
 name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
 name|TRUE
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

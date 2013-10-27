@@ -31,6 +31,10 @@ parameter_list|,
 name|gboolean
 name|preview
 parameter_list|,
+name|gboolean
+modifier|*
+name|resolution_loaded
+parameter_list|,
 name|GError
 modifier|*
 modifier|*
