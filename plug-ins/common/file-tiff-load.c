@@ -147,7 +147,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d3ea650108
+DECL|struct|__anon2b4c7fa20108
 block|{
 DECL|member|compression
 name|gint
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d3ea650208
+DECL|struct|__anon2b4c7fa20208
 block|{
 DECL|member|ID
 name|gint32
@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d3ea650308
+DECL|struct|__anon2b4c7fa20308
 block|{
 DECL|member|o_pages
 name|gint
@@ -304,6 +304,10 @@ parameter_list|,
 name|TiffSelectedPages
 modifier|*
 name|pages
+parameter_list|,
+name|gboolean
+modifier|*
+name|resolution_loaded
 parameter_list|,
 name|GError
 modifier|*
@@ -973,6 +977,11 @@ condition|(
 name|run_it
 condition|)
 block|{
+name|gboolean
+name|resolution_loaded
+init|=
+name|FALSE
+decl_stmt|;
 name|gimp_set_data
 argument_list|(
 name|LOAD_PROC
@@ -1003,6 +1012,9 @@ name|tif
 argument_list|,
 operator|&
 name|pages
+argument_list|,
+operator|&
+name|resolution_loaded
 argument_list|,
 operator|&
 name|error
@@ -1066,6 +1078,15 @@ name|flags
 init|=
 name|GIMP_METADATA_LOAD_ALL
 decl_stmt|;
+if|if
+condition|(
+name|resolution_loaded
+condition|)
+name|flags
+operator|&=
+operator|~
+name|GIMP_METADATA_LOAD_RESOLUTION
+expr_stmt|;
 name|gimp_image_metadata_load_finish
 argument_list|(
 name|image
@@ -1900,7 +1921,7 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (const gchar * filename,TIFF * tif,TiffSelectedPages * pages,GError ** error)
+DECL|function|load_image (const gchar * filename,TIFF * tif,TiffSelectedPages * pages,gboolean * resolution_loaded,GError ** error)
 name|load_image
 parameter_list|(
 specifier|const
@@ -1915,6 +1936,10 @@ parameter_list|,
 name|TiffSelectedPages
 modifier|*
 name|pages
+parameter_list|,
+name|gboolean
+modifier|*
+name|resolution_loaded
 parameter_list|,
 name|GError
 modifier|*
@@ -3402,6 +3427,11 @@ name|image
 argument_list|,
 name|unit
 argument_list|)
+expr_stmt|;
+operator|*
+name|resolution_loaded
+operator|=
+name|TRUE
 expr_stmt|;
 block|}
 block|}
