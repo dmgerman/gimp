@@ -810,6 +810,7 @@ name|save_version
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* need version 5 for high bit depth images */
 if|if
 condition|(
 name|gimp_image_get_precision
@@ -824,6 +825,23 @@ operator|=
 name|MAX
 argument_list|(
 literal|5
+argument_list|,
+name|save_version
+argument_list|)
+expr_stmt|;
+comment|/* need version 6 for new metadata */
+if|if
+condition|(
+name|gimp_image_get_metadata
+argument_list|(
+name|image
+argument_list|)
+condition|)
+name|save_version
+operator|=
+name|MAX
+argument_list|(
+literal|6
 argument_list|,
 name|save_version
 argument_list|)
@@ -7303,7 +7321,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a58d4d0108
+DECL|struct|__anon2bec51110108
 block|{
 DECL|member|info
 name|XcfInfo
