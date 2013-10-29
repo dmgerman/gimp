@@ -142,6 +142,26 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/* this is experimental API, so be finished for 2.10 */
+end_comment
+
+begin_function_decl
+name|gint32
+name|gimp_image_metadata_load_thumbnail
+parameter_list|(
+name|GFile
+modifier|*
+name|file
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
