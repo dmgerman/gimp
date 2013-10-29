@@ -1119,7 +1119,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3e68010108
+DECL|struct|__anon28b889ae0108
 block|{
 DECL|member|name
 name|gchar
@@ -2252,7 +2252,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_set_from_exif:  * @metadata:         A #GimpMetadata instance.  * @exif_data:        The blob of EXIF data to set  * @exif_data_length: Length of @exif_data, in bytes  * @error:            Return location for error message  *  * Sets the tags from a piece of EXIF data on @metadata.  *  * Return value: %TRUE on success, %FALSE otherwise.  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_metadata_set_from_exif:  * @metadata:         A #GimpMetadata instance.  * @exif_data:        The blob of Exif data to set  * @exif_data_length: Length of @exif_data, in bytes  * @error:            Return location for error message  *  * Sets the tags from a piece of Exif data on @metadata.  *  * Return value: %TRUE on success, %FALSE otherwise.  *  * Since: GIMP 2.10  */
 end_comment
 
 begin_function
@@ -2476,7 +2476,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Parsing EXIF data failed."
+literal|"Parsing Exif data failed."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2522,7 +2522,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_set_from_xmp:  * @metadata:        A #GimpMetadata instance.  * @xmp_data:        The blob of EXIF data to set  * @xmp_data_length: Length of @exif_data, in bytes  * @error:           Return location for error message  *  * Sets the tags from a piece of XMP data on @metadata.  *  * Return value: %TRUE on success, %FALSE otherwise.  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_metadata_set_from_xmp:  * @metadata:        A #GimpMetadata instance.  * @xmp_data:        The blob of Exif data to set  * @xmp_data_length: Length of @exif_data, in bytes  * @error:           Return location for error message  *  * Sets the tags from a piece of XMP data on @metadata.  *  * Return value: %TRUE on success, %FALSE otherwise.  *  * Since: GIMP 2.10  */
 end_comment
 
 begin_function

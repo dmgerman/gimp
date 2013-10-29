@@ -271,7 +271,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a97b6d20108
+DECL|struct|__anon28aceec30108
 block|{
 DECL|member|cinfo
 name|struct
@@ -348,7 +348,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a97b6d20208
+DECL|struct|__anon28aceec30208
 block|{
 DECL|member|run
 name|gboolean
@@ -3909,7 +3909,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save _EXIF data"
+literal|"Save _Exif data"
 argument_list|)
 argument_list|)
 expr_stmt|;

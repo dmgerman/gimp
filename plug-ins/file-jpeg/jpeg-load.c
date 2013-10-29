@@ -499,7 +499,7 @@ argument_list|,
 literal|0xffff
 argument_list|)
 expr_stmt|;
-comment|/* - step 2.2: tell the lib to save APP1 data (EXIF or XMP) */
+comment|/* - step 2.2: tell the lib to save APP1 data (Exif or XMP) */
 name|jpeg_save_markers
 argument_list|(
 operator|&
@@ -827,7 +827,7 @@ argument_list|,
 name|image_ID
 argument_list|)
 expr_stmt|;
-comment|/* Step 5.1: check for comments, or EXIF metadata in APP1 markers */
+comment|/* Step 5.1: check for comments, or Exif metadata in APP1 markers */
 for|for
 control|(
 name|marker
@@ -964,7 +964,7 @@ directive|ifdef
 name|GIMP_UNSTABLE
 name|g_print
 argument_list|(
-literal|"jpeg-load: found EXIF block (%d bytes)\n"
+literal|"jpeg-load: found Exif block (%d bytes)\n"
 argument_list|,
 call|(
 name|gint
@@ -1628,7 +1628,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b436be10108
+DECL|struct|__anon286dc14c0108
 block|{
 DECL|member|pub
 name|struct

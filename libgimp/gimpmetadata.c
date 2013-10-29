@@ -550,7 +550,7 @@ argument_list|(
 name|comment_parasite
 argument_list|)
 expr_stmt|;
-comment|/* EXIF */
+comment|/* Exif */
 if|if
 condition|(
 name|comment
@@ -2258,7 +2258,7 @@ literal|"label"
 argument_list|,
 name|_
 argument_list|(
-literal|"According to the EXIF data, "
+literal|"According to the Exif data, "
 literal|"this image is rotated."
 argument_list|)
 argument_list|,

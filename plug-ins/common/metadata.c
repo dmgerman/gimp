@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb7a8360103
+DECL|enum|__anon29a306100103
 block|{
 DECL|enumerator|C_XMP_TAG
 name|C_XMP_TAG
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb7a8360203
+DECL|enum|__anon29a306100203
 block|{
 DECL|enumerator|C_EXIF_TAG
 name|C_EXIF_TAG
@@ -132,7 +132,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb7a8360308
+DECL|struct|__anon29a306100308
 block|{
 DECL|member|tag
 name|gchar
@@ -443,11 +443,11 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"View and edit metadata (EXIF, IPTC, XMP)"
+literal|"View and edit metadata (Exif, IPTC, XMP)"
 argument_list|)
 argument_list|,
 literal|"View and edit metadata information attached to the "
-literal|"current image.  This can include EXIF, IPTC and/or "
+literal|"current image.  This can include Exif, IPTC and/or "
 literal|"XMP information.  Some or all of this metadata "
 literal|"will be saved in the file, depending on the output "
 literal|"file format."

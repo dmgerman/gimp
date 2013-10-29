@@ -1167,7 +1167,7 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Corrupt 'exif-data' parasite discovered.\n"
-literal|"EXIF data could not be migrated: %s"
+literal|"Exif data could not be migrated: %s"
 argument_list|)
 argument_list|,
 name|my_error

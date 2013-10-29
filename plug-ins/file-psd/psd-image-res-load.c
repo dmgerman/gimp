@@ -5492,7 +5492,7 @@ literal|2
 argument_list|)
 name|g_debug
 argument_list|(
-literal|"Process image resource block: 1058: EXIF data"
+literal|"Process image resource block: 1058: Exif data"
 argument_list|)
 expr_stmt|;
 name|res_data
