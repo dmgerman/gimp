@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -103,7 +109,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2c7ed60108
+DECL|struct|__anon28d56d210108
 block|{
 DECL|member|code
 name|guint16
@@ -614,7 +620,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2c7ed60203
+DECL|enum|__anon28d56d210203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
