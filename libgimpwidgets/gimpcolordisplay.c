@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af9b2f10103
+DECL|enum|__anon2bce5c2c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af9b2f10203
+DECL|enum|__anon2bce5c2c0203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -108,7 +108,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af9b2f10308
+DECL|struct|__anon2bce5c2c0308
 block|{
 DECL|member|config
 name|GimpColorConfig
@@ -450,6 +450,12 @@ expr_stmt|;
 name|klass
 operator|->
 name|clone
+operator|=
+name|NULL
+expr_stmt|;
+name|klass
+operator|->
+name|convert_buffer
 operator|=
 name|NULL
 expr_stmt|;
@@ -1112,7 +1118,77 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_display_convert_surface:  * @display: a #GimpColorDisplay  * @surface: a #cairo_image_surface_t of type ARGB32  *  * Converts all pixels in @surface.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_color_display_convert_buffer:  * @display: a #GimpColorDisplay  * @buffer:  a #GeglBuffer  * @area:    area in @buffer to convert  *  * Converts all pixels in @area of @buffer.  *  * Since: GIMP 2.10  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_color_display_convert_buffer (GimpColorDisplay * display,GeglBuffer * buffer,GeglRectangle * area)
+name|gimp_color_display_convert_buffer
+parameter_list|(
+name|GimpColorDisplay
+modifier|*
+name|display
+parameter_list|,
+name|GeglBuffer
+modifier|*
+name|buffer
+parameter_list|,
+name|GeglRectangle
+modifier|*
+name|area
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_COLOR_DISPLAY
+argument_list|(
+name|display
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GEGL_IS_BUFFER
+argument_list|(
+name|buffer
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|display
+operator|->
+name|enabled
+operator|&&
+name|GIMP_COLOR_DISPLAY_GET_CLASS
+argument_list|(
+name|display
+argument_list|)
+operator|->
+name|convert_buffer
+condition|)
+block|{
+name|GIMP_COLOR_DISPLAY_GET_CLASS
+argument_list|(
+name|display
+argument_list|)
+operator|->
+name|convert_buffer
+argument_list|(
+name|display
+argument_list|,
+name|buffer
+argument_list|,
+name|area
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_color_display_convert_surface:  * @display: a #GimpColorDisplay  * @surface: a #cairo_image_surface_t of type ARGB32  *  * Converts all pixels in @surface.  *  * Since: GIMP 2.8  *  * Deprecated: GIMP 2.8: Use gimp_color_display_convert_buffer() instead.  **/
 end_comment
 
 begin_function
@@ -1195,7 +1271,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_display_convert:  * @display: a #GimpColorDisplay  * @buf: the pixel buffer to convert  * @width: the width of the buffer  * @height: the height of the buffer  * @bpp: the number of bytes per pixel  * @bpl: the buffer's rowstride  *  * Converts all pixels in @buf.  *  * Deprecated: GIMP 2.8: Use gimp_color_display_convert_surface() instead.  **/
+comment|/**  * gimp_color_display_convert:  * @display: a #GimpColorDisplay  * @buf: the pixel buffer to convert  * @width: the width of the buffer  * @height: the height of the buffer  * @bpp: the number of bytes per pixel  * @bpl: the buffer's rowstride  *  * Converts all pixels in @buf.  *  * Deprecated: GIMP 2.8: Use gimp_color_display_convert_buffer() instead.  **/
 end_comment
 
 begin_function

@@ -281,6 +281,7 @@ name|gchar
 modifier|*
 name|stock_id
 decl_stmt|;
+comment|/*  implementing the GimpColorDisplay::convert_surface method is deprecated  */
 DECL|member|convert_surface
 name|void
 function_decl|(
@@ -297,17 +298,27 @@ modifier|*
 name|surface
 parameter_list|)
 function_decl|;
-comment|/* Padding for future expansion */
-DECL|member|_gimp_reserved3
+DECL|member|convert_buffer
 name|void
 function_decl|(
 modifier|*
-name|_gimp_reserved3
+name|convert_buffer
 function_decl|)
 parameter_list|(
-name|void
+name|GimpColorDisplay
+modifier|*
+name|display
+parameter_list|,
+name|GeglBuffer
+modifier|*
+name|buffer
+parameter_list|,
+name|GeglRectangle
+modifier|*
+name|area
 parameter_list|)
 function_decl|;
+comment|/* Padding for future expansion */
 DECL|member|_gimp_reserved4
 name|void
 function_decl|(
@@ -364,6 +375,32 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_color_display_convert_buffer
+parameter_list|(
+name|GimpColorDisplay
+modifier|*
+name|display
+parameter_list|,
+name|GeglBuffer
+modifier|*
+name|buffer
+parameter_list|,
+name|GeglRectangle
+modifier|*
+name|area
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_color_display_convert_buffer
+argument_list|)
+end_macro
+
+begin_function_decl
+name|void
 name|gimp_color_display_convert_surface
 parameter_list|(
 name|GimpColorDisplay
@@ -380,7 +417,7 @@ end_function_decl
 begin_macro
 name|GIMP_DEPRECATED_FOR
 argument_list|(
-argument|gimp_color_display_convert_surface
+argument|gimp_color_display_convert_buffer
 argument_list|)
 end_macro
 

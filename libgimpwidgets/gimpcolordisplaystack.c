@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd9ab7d0103
+DECL|enum|__anon278b50620103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -1076,7 +1076,88 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_display_stack_convert_surface:  * @stack: a #GimpColorDisplayStack  * @surface: a #cairo_image_surface_t of type ARGB32  *  * Runs all the stack's filters on all pixels in @surface.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_color_display_stack_convert_buffer:  * @stack:  a #GimpColorDisplayStack  * @buffer: a #GeglBuffer  * @area:   area of @buffer to convert  *  * Runs all the stack's filters on all pixels in @area of @buffer.  *  * Since: GIMP 2.10  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_color_display_stack_convert_buffer (GimpColorDisplayStack * stack,GeglBuffer * buffer,GeglRectangle * area)
+name|gimp_color_display_stack_convert_buffer
+parameter_list|(
+name|GimpColorDisplayStack
+modifier|*
+name|stack
+parameter_list|,
+name|GeglBuffer
+modifier|*
+name|buffer
+parameter_list|,
+name|GeglRectangle
+modifier|*
+name|area
+parameter_list|)
+block|{
+name|GList
+modifier|*
+name|list
+decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_COLOR_DISPLAY_STACK
+argument_list|(
+name|stack
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GEGL_IS_BUFFER
+argument_list|(
+name|buffer
+argument_list|)
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|list
+operator|=
+name|stack
+operator|->
+name|filters
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|g_list_next
+argument_list|(
+name|list
+argument_list|)
+control|)
+block|{
+name|GimpColorDisplay
+modifier|*
+name|display
+init|=
+name|list
+operator|->
+name|data
+decl_stmt|;
+name|gimp_color_display_convert_buffer
+argument_list|(
+name|display
+argument_list|,
+name|buffer
+argument_list|,
+name|area
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_color_display_stack_convert_surface:  * @stack: a #GimpColorDisplayStack  * @surface: a #cairo_image_surface_t of type ARGB32  *  * Runs all the stack's filters on all pixels in @surface.  *  * Since: GIMP 2.8  *  * Deprecated: GIMP 2.10: Use gimp_color_display_stack_convert_buffer() instead.  **/
 end_comment
 
 begin_function
@@ -1148,19 +1229,21 @@ name|list
 operator|->
 name|data
 decl_stmt|;
+name|G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 name|gimp_color_display_convert_surface
 argument_list|(
 name|display
 argument_list|,
 name|surface
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|G_GNUC_END_IGNORE_DEPRECATIONS
 block|}
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_display_stack_convert:  * @stack: a #GimpColorDisplayStack  * @buf: the pixel buffer to convert  * @width: the width of the buffer  * @height: the height of the buffer  * @bpp: the number of bytes per pixel  * @bpl: the buffer's rowstride  *  * Converts all pixels in @buf.  *  * Deprecated: GIMP 2.8: Use gimp_color_display_stack_convert_surface() instead.  **/
+comment|/**  * gimp_color_display_stack_convert:  * @stack: a #GimpColorDisplayStack  * @buf: the pixel buffer to convert  * @width: the width of the buffer  * @height: the height of the buffer  * @bpp: the number of bytes per pixel  * @bpl: the buffer's rowstride  *  * Converts all pixels in @buf.  *  * Deprecated: GIMP 2.8: Use gimp_color_display_stack_convert_buffer() instead.  **/
 end_comment
 
 begin_function
