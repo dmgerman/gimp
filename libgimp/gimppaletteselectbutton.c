@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -107,7 +113,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4b379a0103
+DECL|enum|__anon2b6576d70103
 block|{
 DECL|enumerator|PALETTE_SET
 name|PALETTE_SET
@@ -120,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4b379a0203
+DECL|enum|__anon2b6576d70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

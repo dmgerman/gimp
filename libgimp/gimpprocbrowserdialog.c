@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -87,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb7fb980103
+DECL|enum|__anon29b616dd0103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -104,7 +110,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb7fb980203
+DECL|enum|__anon29b616dd0203
 block|{
 DECL|enumerator|SEARCH_TYPE_ALL
 name|SEARCH_TYPE_ALL
@@ -137,7 +143,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb7fb980303
+DECL|enum|__anon29b616dd0303
 block|{
 DECL|enumerator|COLUMN_PROC_NAME
 name|COLUMN_PROC_NAME
