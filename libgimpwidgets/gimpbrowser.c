@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -51,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7677ed0103
+DECL|enum|__anon29a84b320103
 block|{
 DECL|enumerator|SEARCH
 name|SEARCH

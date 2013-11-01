@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -70,7 +76,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b06c25d0103
+DECL|enum|__anon2a47942f0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED

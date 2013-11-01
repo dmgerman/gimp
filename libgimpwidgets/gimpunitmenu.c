@@ -15,6 +15,12 @@ directive|undef
 name|GSEAL_ENABLE
 end_undef
 
+begin_include
+include|#
+directive|include
+file|<gegl.h>
+end_include
+
 begin_comment
 comment|/* FIXME: #undef GTK_DISABLE_DEPRECATED */
 end_comment
@@ -91,7 +97,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon295976950103
+DECL|enum|__anon291725010103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -104,7 +110,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon295976950203
+DECL|enum|__anon291725010203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN

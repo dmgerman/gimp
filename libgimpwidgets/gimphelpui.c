@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -46,7 +52,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c25b53e0103
+DECL|enum|__anon2ba6fe3f0103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TOOLTIP
 name|GIMP_WIDGET_HELP_TOOLTIP

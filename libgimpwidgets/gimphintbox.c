@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -36,7 +42,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acbbec80108
+DECL|struct|__anon28e9cda10108
 block|{
 DECL|member|parent_instance
 name|GtkBox
@@ -71,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acbbec80203
+DECL|enum|__anon28e9cda10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

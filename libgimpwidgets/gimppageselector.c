@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -75,7 +81,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4bbebd0103
+DECL|enum|__anon293f11130103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -91,7 +97,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4bbebd0203
+DECL|enum|__anon293f11130203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -107,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4bbebd0303
+DECL|enum|__anon293f11130303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -127,7 +133,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4bbebd0408
+DECL|struct|__anon293f11130408
 block|{
 DECL|member|n_pages
 name|gint
