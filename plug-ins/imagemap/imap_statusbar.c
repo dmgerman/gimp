@@ -24,13 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|"libgimp/gimp.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimpwidgets/gimpwidgets.h>
+file|"libgimp/gimpui.h"
 end_include
 
 begin_include

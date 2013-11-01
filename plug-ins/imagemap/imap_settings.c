@@ -12,13 +12,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|"libgimp/gimp.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimpwidgets/gimpwidgets.h"
+file|"libgimp/gimpui.h"
 end_include
 
 begin_include
@@ -58,7 +58,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon27a7ae5f0108
+DECL|struct|__anon27edafae0108
 typedef|typedef
 struct|struct
 block|{

@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpwidgets/gimpwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -112,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8dc3e40108
+DECL|struct|__anon2bb167d30108
 block|{
 DECL|member|width
 name|gint
@@ -142,7 +136,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a8dc3e40203
+DECL|enum|__anon2bb167d30203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE

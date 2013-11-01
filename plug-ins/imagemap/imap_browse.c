@@ -6,13 +6,19 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|"config.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimpwidgets/gimpwidgets.h"
+file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpui.h"
 end_include
 
 begin_include
