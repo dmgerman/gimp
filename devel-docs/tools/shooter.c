@@ -31,6 +31,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gdk/gdkx.h>
 end_include
 
