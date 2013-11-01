@@ -26,6 +26,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -360,7 +366,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b792ecf0108
+DECL|struct|__anon2b7ac5d20108
 typedef|typedef
 struct|struct
 block|{
@@ -382,7 +388,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b792ecf0208
+DECL|struct|__anon2b7ac5d20208
 typedef|typedef
 struct|struct
 block|{

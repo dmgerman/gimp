@@ -15,6 +15,12 @@ directive|include
 file|<string.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<gegl.h>
+end_include
+
 begin_undef
 undef|#
 directive|undef
@@ -95,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b33813c0103
+DECL|enum|__anon2b2771c70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +117,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b33813c0203
+DECL|enum|__anon2b2771c70203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2163,7 +2169,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b33813c0308
+DECL|struct|__anon2b2771c70308
 block|{
 DECL|member|x
 name|guint

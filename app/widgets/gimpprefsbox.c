@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -41,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a913e80103
+DECL|enum|__anon29d8a9ca0103
 block|{
 DECL|enumerator|COLUMN_TREE_PIXBUF
 name|COLUMN_TREE_PIXBUF
