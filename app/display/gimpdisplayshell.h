@@ -417,7 +417,7 @@ name|GimpDisplayXfer
 modifier|*
 name|xfer
 decl_stmt|;
-comment|/*  managers image buffer transfers    */
+comment|/*  manages image buffer transfers     */
 DECL|member|mask_surface
 name|cairo_surface_t
 modifier|*
@@ -430,6 +430,23 @@ modifier|*
 name|checkerboard
 decl_stmt|;
 comment|/*  checkerboard pattern               */
+DECL|member|filter_buffer
+name|GeglBuffer
+modifier|*
+name|filter_buffer
+decl_stmt|;
+comment|/*  buffer for display filters         */
+DECL|member|filter_data
+name|guchar
+modifier|*
+name|filter_data
+decl_stmt|;
+comment|/*  filter_buffer's pixels             */
+DECL|member|filter_stride
+name|gint
+name|filter_stride
+decl_stmt|;
+comment|/*  filter_buffer's stride             */
 DECL|member|canvas_item
 name|GimpCanvasItem
 modifier|*
