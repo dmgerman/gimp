@@ -57,22 +57,11 @@ directive|include
 file|<jerror.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_LCMS
-end_ifdef
-
 begin_include
 include|#
 directive|include
 file|<lcms2.h>
 end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
@@ -279,23 +268,11 @@ name|start
 decl_stmt|,
 name|end
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|HAVE_LCMS
 name|cmsHTRANSFORM
 name|cmyk_transform
 init|=
 name|NULL
 decl_stmt|;
-else|#
-directive|else
-name|gpointer
-name|cmyk_transform
-init|=
-name|NULL
-decl_stmt|;
-endif|#
-directive|endif
 comment|/* We set up the normal JPEG error routines. */
 name|cinfo
 operator|.
@@ -1328,9 +1305,6 @@ name|cinfo
 argument_list|)
 expr_stmt|;
 comment|/* We can ignore the return value since suspension is not possible    * with the stdio data source.    */
-ifdef|#
-directive|ifdef
-name|HAVE_LCMS
 if|if
 condition|(
 name|cmyk_transform
@@ -1340,8 +1314,6 @@ argument_list|(
 name|cmyk_transform
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 comment|/* Step 8: Release JPEG decompression object */
 comment|/* This is an important step since it will release a good deal of memory. */
 name|jpeg_destroy_decompress
@@ -1991,9 +1963,6 @@ name|gsize
 name|profile_len
 parameter_list|)
 block|{
-ifdef|#
-directive|ifdef
-name|HAVE_LCMS
 name|GimpColorConfig
 modifier|*
 name|config
@@ -2231,14 +2200,6 @@ expr_stmt|;
 return|return
 name|transform
 return|;
-else|#
-directive|else
-comment|/* HAVE_LCMS */
-return|return
-name|NULL
-return|;
-endif|#
-directive|endif
 block|}
 end_function
 
@@ -2272,9 +2233,6 @@ name|dest
 init|=
 name|buf
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|HAVE_LCMS
 if|if
 condition|(
 name|transform
@@ -2293,8 +2251,6 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-endif|#
-directive|endif
 while|while
 condition|(
 name|pixels
