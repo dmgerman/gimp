@@ -332,7 +332,7 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
-name|cairo_region_subtract
+name|cairo_region_xor
 argument_list|(
 name|outer
 argument_list|,
