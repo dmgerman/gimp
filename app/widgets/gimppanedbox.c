@@ -525,7 +525,7 @@ name|p
 operator|->
 name|instructions
 argument_list|,
-literal|16
+literal|1
 argument_list|,
 name|DROP_AREA_SIZE
 argument_list|)
