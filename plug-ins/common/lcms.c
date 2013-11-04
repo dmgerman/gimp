@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2adfdb2e0103
+DECL|enum|__anon29f2c4130103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2adfdb2e0203
+DECL|enum|__anon29f2c4130203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -166,7 +166,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adfdb2e0308
+DECL|struct|__anon29f2c4130308
 block|{
 DECL|member|name
 specifier|const
@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adfdb2e0408
+DECL|struct|__anon29f2c4130408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -5787,6 +5787,8 @@ name|name
 decl_stmt|;
 name|cmsHPROFILE
 name|profile
+init|=
+name|NULL
 decl_stmt|;
 name|dialog
 operator|=
@@ -5845,7 +5847,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-else|else
+if|if
+condition|(
+operator|!
+name|profile
+condition|)
 name|profile
 operator|=
 name|cmsCreate_sRGBProfile
