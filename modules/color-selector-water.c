@@ -462,6 +462,10 @@ name|GtkWidget
 modifier|*
 name|scale
 decl_stmt|;
+name|colorsel_water_get_type
+argument_list|()
+expr_stmt|;
+comment|/* useless function call to silence compiler */
 name|water
 operator|->
 name|pressure_adjust
