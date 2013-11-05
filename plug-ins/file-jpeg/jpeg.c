@@ -1939,7 +1939,7 @@ name|GIMP_EXPORT_EXPORT
 condition|)
 block|{
 comment|/* If the image was exported, delete the new display. */
-comment|/* This also deletes the image.                       */
+comment|/* This also deletes the image.            */
 if|if
 condition|(
 name|display_ID
@@ -2053,7 +2053,7 @@ name|metadata
 operator|=
 name|gimp_image_metadata_save_prepare
 argument_list|(
-name|image_ID
+name|orig_image_ID
 argument_list|,
 literal|"image/jpeg"
 argument_list|)
@@ -2143,7 +2143,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_metadata_save_finish
 argument_list|(
-name|image_ID
+name|orig_image_ID
 argument_list|,
 literal|"image/jpeg"
 argument_list|,
