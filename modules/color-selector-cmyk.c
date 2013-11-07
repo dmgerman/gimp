@@ -1609,6 +1609,8 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|descData
+init|=
+name|NULL
 decl_stmt|;
 specifier|const
 name|gchar
