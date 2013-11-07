@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f2c4130103
+DECL|enum|__anon275c511f0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f2c4130203
+DECL|enum|__anon275c511f0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -166,7 +166,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f2c4130308
+DECL|struct|__anon275c511f0308
 block|{
 DECL|member|name
 specifier|const
@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f2c4130408
+DECL|struct|__anon275c511f0408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -1319,21 +1319,27 @@ name|proc
 operator|!=
 name|PROC_FILE_INFO
 condition|)
+block|{
 name|config
 operator|=
 name|gimp_get_color_configuration
 argument_list|()
 expr_stmt|;
-if|if
-condition|(
+comment|/* Later code relies on config != NULL if proc != PROC_FILE_INFO */
+name|g_return_if_fail
+argument_list|(
 name|config
-condition|)
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|intent
 operator|=
 name|config
 operator|->
 name|display_intent
 expr_stmt|;
+block|}
 else|else
 name|intent
 operator|=
@@ -5386,6 +5392,11 @@ operator|==
 name|GTK_RESPONSE_OK
 operator|)
 expr_stmt|;
+if|if
+condition|(
+name|dont_ask
+condition|)
+block|{
 operator|*
 name|dont_ask
 operator|=
@@ -5397,6 +5408,7 @@ name|toggle
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|gtk_widget_destroy
 argument_list|(
 name|dialog
