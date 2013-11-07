@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5001580103
+DECL|enum|__anon2c6312850103
 block|{
 DECL|enumerator|EDIT_NAME
 name|EDIT_NAME
@@ -2039,6 +2039,37 @@ name|GTK_WIDGET
 argument_list|(
 name|tree_view
 argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|GtkCellRenderer
+modifier|*
+DECL|function|gimp_container_tree_view_get_name_cell (GimpContainerTreeView * tree_view)
+name|gimp_container_tree_view_get_name_cell
+parameter_list|(
+name|GimpContainerTreeView
+modifier|*
+name|tree_view
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTAINER_TREE_VIEW
+argument_list|(
+name|tree_view
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|tree_view
+operator|->
+name|priv
+operator|->
+name|name_cell
 return|;
 block|}
 end_function

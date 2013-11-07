@@ -402,6 +402,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GtkCellRenderer
+modifier|*
+name|gimp_container_tree_view_get_name_cell
+parameter_list|(
+name|GimpContainerTreeView
+modifier|*
+name|tree_view
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_container_tree_view_set_main_column_title
 parameter_list|(
