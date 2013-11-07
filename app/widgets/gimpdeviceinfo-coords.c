@@ -177,6 +177,8 @@ decl_stmt|;
 name|gint
 name|offset_y
 decl_stmt|;
+if|if
+condition|(
 name|gtk_widget_translate_coordinates
 argument_list|(
 name|src_widget
@@ -193,7 +195,8 @@ argument_list|,
 operator|&
 name|offset_y
 argument_list|)
-expr_stmt|;
+condition|)
+block|{
 name|coords
 operator|->
 name|x
@@ -206,6 +209,7 @@ name|y
 operator|+=
 name|offset_y
 expr_stmt|;
+block|}
 block|}
 block|}
 if|if
