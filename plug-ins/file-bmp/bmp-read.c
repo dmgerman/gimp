@@ -5113,11 +5113,6 @@ argument_list|()
 expr_stmt|;
 break|break;
 block|}
-name|fclose
-argument_list|(
-name|fd
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|bpp
