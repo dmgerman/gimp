@@ -232,6 +232,15 @@ end_function_decl
 
 begin_function_decl
 name|GdkModifierType
+name|gimp_get_primary_accelerator_mask
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GdkModifierType
 name|gimp_get_extend_selection_mask
 parameter_list|(
 name|void
