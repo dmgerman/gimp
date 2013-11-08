@@ -596,7 +596,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"_Discard Changed"
+literal|"_Discard Changes"
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CLOSE
