@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1fa5150103
+DECL|enum|__anon2779afd10103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -268,7 +268,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1fa5150203
+DECL|enum|__anon2779afd10203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -6652,17 +6652,13 @@ name|GIMP_EXPORT_IGNORE
 decl_stmt|;
 if|if
 condition|(
-operator|(
 name|run_mode
 operator|==
 name|GIMP_RUN_INTERACTIVE
-operator|)
 operator|||
-operator|(
 name|run_mode
 operator|==
 name|GIMP_RUN_WITH_LAST_VALS
-operator|)
 condition|)
 block|{
 name|gimp_procedural_db_get_data
@@ -6690,7 +6686,7 @@ argument_list|,
 operator|&
 name|drawable_id
 argument_list|,
-name|NULL
+literal|"MNG"
 argument_list|,
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||

@@ -110,7 +110,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2974a7a70108
+DECL|struct|__anon28d859160108
 block|{
 DECL|member|spacing
 name|guint
@@ -186,7 +186,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2974a7a70208
+DECL|struct|__anon28d859160208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -1057,7 +1057,7 @@ argument_list|,
 operator|&
 name|drawable_ID
 argument_list|,
-name|NULL
+literal|"GIH"
 argument_list|,
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||

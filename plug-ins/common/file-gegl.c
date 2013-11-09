@@ -876,9 +876,8 @@ argument_list|,
 operator|&
 name|drawable_ID
 argument_list|,
-name|NULL
+literal|"GEGL"
 argument_list|,
-operator|(
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_GRAY
@@ -886,7 +885,6 @@ operator||
 name|GIMP_EXPORT_CAN_HANDLE_INDEXED
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_ALPHA
-operator|)
 argument_list|)
 expr_stmt|;
 if|if

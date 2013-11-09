@@ -888,7 +888,7 @@ argument_list|,
 operator|&
 name|drawable_ID
 argument_list|,
-name|NULL
+literal|"DICOM"
 argument_list|,
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
@@ -3107,7 +3107,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b89e24c0108
+DECL|struct|__anon28881aab0108
 block|{
 DECL|member|group_word
 name|guint16
@@ -5643,7 +5643,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-DECL|struct|__anon2b89e24c0208
+DECL|struct|__anon28881aab0208
 struct|struct
 block|{
 DECL|member|DICOM
@@ -5771,7 +5771,7 @@ modifier|*
 name|elements
 parameter_list|)
 block|{
-DECL|struct|__anon2b89e24c0308
+DECL|struct|__anon28881aab0308
 struct|struct
 block|{
 DECL|member|DICOM

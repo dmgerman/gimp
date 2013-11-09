@@ -842,15 +842,13 @@ argument_list|,
 operator|&
 name|drawable_ID
 argument_list|,
-name|NULL
+literal|"PCX"
 argument_list|,
-operator|(
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_GRAY
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_INDEXED
-operator|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1042,7 +1040,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon296ddb7f0108
+DECL|struct|__anon2951e4610108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1119,7 +1117,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon296ddb7f0208
+DECL|struct|__anon2951e4610208
 specifier|static
 struct|struct
 block|{

@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c424b2b0108
+DECL|struct|__anon2c043ffc0108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -224,7 +224,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c424b2b0208
+DECL|struct|__anon2c043ffc0208
 block|{
 DECL|member|val
 name|gint
@@ -830,7 +830,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c424b2b0308
+DECL|struct|__anon2c043ffc0308
 block|{
 DECL|member|rle
 name|gboolean
@@ -1339,15 +1339,13 @@ argument_list|,
 operator|&
 name|drawable_ID
 argument_list|,
-name|NULL
+literal|"SUNRAS"
 argument_list|,
-operator|(
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_GRAY
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_INDEXED
-operator|)
 argument_list|)
 expr_stmt|;
 if|if

@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d30cf80108
+DECL|struct|__anon2a446b3b0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d30cf80208
+DECL|struct|__anon2a446b3b0208
 block|{
 DECL|member|run
 name|gboolean
@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d30cf80308
+DECL|struct|__anon2a446b3b0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -1469,9 +1469,8 @@ argument_list|,
 operator|&
 name|drawable_ID
 argument_list|,
-name|NULL
+literal|"PNG"
 argument_list|,
-operator|(
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_GRAY
@@ -1479,7 +1478,6 @@ operator||
 name|GIMP_EXPORT_CAN_HANDLE_INDEXED
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_ALPHA
-operator|)
 argument_list|)
 expr_stmt|;
 if|if

@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68c7ca0108
+DECL|struct|__anon2977397d0108
 block|{
 DECL|member|description
 name|gchar
@@ -781,7 +781,7 @@ argument_list|,
 operator|&
 name|drawable_ID
 argument_list|,
-name|NULL
+literal|"GBR"
 argument_list|,
 name|GIMP_EXPORT_CAN_HANDLE_GRAY
 operator||
@@ -2267,7 +2267,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2b68c7ca020a
+DECL|union|__anon2977397d020a
 block|{
 DECL|member|u
 name|guint16

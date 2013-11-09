@@ -1283,7 +1283,7 @@ argument_list|,
 operator|&
 name|drawable_ID
 argument_list|,
-name|NULL
+literal|"FLI"
 argument_list|,
 name|GIMP_EXPORT_CAN_HANDLE_INDEXED
 operator||

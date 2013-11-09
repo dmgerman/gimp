@@ -741,7 +741,7 @@ argument_list|,
 operator|&
 name|drawable_ID
 argument_list|,
-name|NULL
+literal|"PIX"
 argument_list|,
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||

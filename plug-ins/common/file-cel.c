@@ -913,7 +913,7 @@ argument_list|,
 operator|&
 name|drawable_ID
 argument_list|,
-name|NULL
+literal|"CEL"
 argument_list|,
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||

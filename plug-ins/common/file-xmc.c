@@ -308,7 +308,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291c9ca10108
+DECL|struct|__anon2b6215b00108
 block|{
 DECL|member|crop
 name|gboolean
@@ -839,7 +839,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon291c9ca10208
+DECL|struct|__anon2b6215b00208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -1895,9 +1895,8 @@ argument_list|,
 operator|&
 name|drawable_ID
 argument_list|,
-name|NULL
+literal|"XMC"
 argument_list|,
-operator|(
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_ALPHA
@@ -1905,7 +1904,6 @@ operator||
 name|GIMP_EXPORT_CAN_HANDLE_LAYERS
 operator||
 name|GIMP_EXPORT_NEEDS_ALPHA
-operator|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -9224,7 +9222,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon291c9ca10308
+DECL|struct|__anon2b6215b00308
 block|{
 DECL|member|size
 name|guint32

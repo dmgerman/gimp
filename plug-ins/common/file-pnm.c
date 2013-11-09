@@ -333,7 +333,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be115920108
+DECL|struct|__anon2aab609c0108
 block|{
 DECL|member|raw
 name|gint
@@ -801,7 +801,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2be115920208
+DECL|struct|__anon2aab609c0208
 block|{
 DECL|member|name
 name|gchar
@@ -1660,7 +1660,7 @@ argument_list|,
 operator|&
 name|drawable_ID
 argument_list|,
-name|NULL
+literal|"PNM"
 argument_list|,
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
@@ -1693,7 +1693,7 @@ argument_list|,
 operator|&
 name|drawable_ID
 argument_list|,
-name|NULL
+literal|"PBM"
 argument_list|,
 name|GIMP_EXPORT_CAN_HANDLE_BITMAP
 argument_list|)
@@ -1727,7 +1727,7 @@ argument_list|,
 operator|&
 name|drawable_ID
 argument_list|,
-name|NULL
+literal|"PGM"
 argument_list|,
 name|GIMP_EXPORT_CAN_HANDLE_GRAY
 argument_list|)
@@ -1745,7 +1745,7 @@ argument_list|,
 operator|&
 name|drawable_ID
 argument_list|,
-name|NULL
+literal|"PPM"
 argument_list|,
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||

@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c1076c0108
+DECL|struct|__anon2b682f410108
 block|{
 DECL|member|file_name
 name|gchar
@@ -651,7 +651,7 @@ argument_list|,
 operator|&
 name|drawable_ID
 argument_list|,
-name|NULL
+literal|"C Source"
 argument_list|,
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||

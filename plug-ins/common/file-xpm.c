@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af1efcf0108
+DECL|struct|__anon2a40d5260108
 block|{
 DECL|member|threshold
 name|gint
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af1efcf0208
+DECL|struct|__anon2a40d5260208
 block|{
 DECL|member|r
 name|guchar
@@ -872,7 +872,7 @@ argument_list|,
 operator|&
 name|drawable_ID
 argument_list|,
-name|NULL
+literal|"XPM"
 argument_list|,
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||

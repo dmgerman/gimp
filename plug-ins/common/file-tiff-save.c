@@ -155,7 +155,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fd69530108
+DECL|struct|__anon28e4b8300108
 block|{
 DECL|member|compression
 name|gint
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fd69530208
+DECL|struct|__anon28e4b8300208
 block|{
 DECL|member|ID
 name|gint32
@@ -866,9 +866,8 @@ argument_list|,
 operator|&
 name|drawable
 argument_list|,
-name|NULL
+literal|"TIFF"
 argument_list|,
-operator|(
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_GRAY
@@ -876,7 +875,6 @@ operator||
 name|GIMP_EXPORT_CAN_HANDLE_INDEXED
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_ALPHA
-operator|)
 argument_list|)
 expr_stmt|;
 if|if

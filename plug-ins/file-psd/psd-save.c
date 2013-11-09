@@ -931,7 +931,7 @@ argument_list|,
 operator|&
 name|drawable_id
 argument_list|,
-name|NULL
+literal|"PSD"
 argument_list|,
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
