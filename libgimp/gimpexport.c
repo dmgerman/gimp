@@ -69,7 +69,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274e08db0108
+DECL|struct|__anon2b41d8f90108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -2697,6 +2697,11 @@ modifier|*
 name|layers
 decl_stmt|;
 name|gboolean
+name|interactive
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
 name|added_flatten
 init|=
 name|FALSE
@@ -2774,10 +2779,19 @@ name|capabilities
 operator||=
 name|GIMP_EXPORT_CAN_HANDLE_ALPHA
 expr_stmt|;
+if|if
+condition|(
+name|FALSE
+comment|/* format_name */
+condition|)
+name|interactive
+operator|=
+name|TRUE
+expr_stmt|;
 comment|/* ask for confirmation if the user is not saving a layer (see bug #51114) */
 if|if
 condition|(
-name|format_name
+name|interactive
 operator|&&
 operator|!
 name|gimp_item_is_layer
@@ -3569,7 +3583,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|format_name
+name|interactive
 condition|)
 name|retval
 operator|=
