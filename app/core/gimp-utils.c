@@ -104,11 +104,19 @@ endif|#
 directive|endif
 end_endif
 
-begin_ifdef
-ifdef|#
-directive|ifdef
+begin_if
+if|#
+directive|if
+name|defined
+argument_list|(
 name|G_OS_UNIX
-end_ifdef
+argument_list|)
+operator|&&
+name|defined
+argument_list|(
+name|HAVE_EXECINFO_H
+argument_list|)
+end_if
 
 begin_comment
 comment|/* For get_backtrace() */
@@ -359,7 +367,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad26a160108
+DECL|struct|__anon2b975b2b0108
 block|{
 DECL|member|func
 name|GimpMemsizeFunc
@@ -1419,9 +1427,17 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-ifdef|#
-directive|ifdef
+if|#
+directive|if
+name|defined
+argument_list|(
 name|G_OS_UNIX
+argument_list|)
+operator|&&
+name|defined
+argument_list|(
+name|HAVE_EXECINFO_H
+argument_list|)
 name|void
 modifier|*
 name|functions
