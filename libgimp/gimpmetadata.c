@@ -995,6 +995,26 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+operator|(
+name|flags
+operator|&
+operator|(
+name|GIMP_METADATA_SAVE_EXIF
+operator|||
+name|GIMP_METADATA_SAVE_XMP
+operator|||
+name|GIMP_METADATA_SAVE_IPTC
+operator|||
+name|GIMP_METADATA_SAVE_THUMBNAIL
+operator|)
+operator|)
+condition|)
+return|return
+name|TRUE
+return|;
 comment|/* read metadata from saved file */
 name|new_metadata
 operator|=
