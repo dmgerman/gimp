@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298bac1a0103
+DECL|enum|__anon2c30b1400103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -346,8 +346,6 @@ block|,
 literal|"gegl:deinterlace"
 block|,
 literal|"gegl:difference-of-gaussians"
-block|,
-literal|"gegl:dot"
 block|,
 literal|"gegl:dropshadow"
 block|,
