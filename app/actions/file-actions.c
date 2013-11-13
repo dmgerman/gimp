@@ -597,7 +597,7 @@ name|GIMP_HELP_FILE_SAVE
 block|}
 block|,
 block|{
-literal|"file-export-to"
+literal|"file-export"
 block|,
 name|NULL
 block|,
@@ -605,7 +605,7 @@ name|NC_
 argument_list|(
 literal|"file-action"
 argument_list|,
-literal|"Export to"
+literal|"Export"
 argument_list|)
 block|,
 literal|"<primary>E"
@@ -617,11 +617,11 @@ argument_list|,
 literal|"Export the image again"
 argument_list|)
 block|,
-name|GIMP_SAVE_MODE_EXPORT_TO
+name|GIMP_SAVE_MODE_EXPORT
 block|,
 name|FALSE
 block|,
-name|GIMP_HELP_FILE_EXPORT_TO
+name|GIMP_HELP_FILE_EXPORT
 block|}
 block|,
 block|{
@@ -653,7 +653,7 @@ name|GIMP_HELP_FILE_OVERWRITE
 block|}
 block|,
 block|{
-literal|"file-export"
+literal|"file-export-as"
 block|,
 name|NULL
 block|,
@@ -661,7 +661,7 @@ name|NC_
 argument_list|(
 literal|"file-action"
 argument_list|,
-literal|"Export..."
+literal|"Export As..."
 argument_list|)
 block|,
 literal|"<primary><shift>E"
@@ -673,11 +673,11 @@ argument_list|,
 literal|"Export the image to various file formats such as PNG or JPEG"
 argument_list|)
 block|,
-name|GIMP_SAVE_MODE_EXPORT
+name|GIMP_SAVE_MODE_EXPORT_AS
 block|,
 name|FALSE
 block|,
-name|GIMP_HELP_FILE_EXPORT
+name|GIMP_HELP_FILE_EXPORT_AS
 block|}
 block|}
 decl_stmt|;
@@ -1311,14 +1311,14 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"file-export-to"
+literal|"file-export"
 argument_list|,
 name|drawable
 argument_list|)
 expr_stmt|;
 name|SET_VISIBLE
 argument_list|(
-literal|"file-export-to"
+literal|"file-export"
 argument_list|,
 operator|!
 name|show_overwrite
@@ -1340,7 +1340,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"file-export"
+literal|"file-export-as"
 argument_list|,
 name|drawable
 argument_list|)
@@ -1375,7 +1375,7 @@ name|gimp_action_group_set_action_label
 argument_list|(
 name|group
 argument_list|,
-literal|"file-export-to"
+literal|"file-export"
 argument_list|,
 name|label
 argument_list|)
@@ -1427,11 +1427,11 @@ name|gimp_action_group_set_action_label
 argument_list|(
 name|group
 argument_list|,
-literal|"file-export-to"
+literal|"file-export"
 argument_list|,
 name|_
 argument_list|(
-literal|"Export to"
+literal|"Export"
 argument_list|)
 argument_list|)
 expr_stmt|;

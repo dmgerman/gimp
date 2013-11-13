@@ -1101,7 +1101,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_SAVE_MODE_EXPORT
+name|GIMP_SAVE_MODE_EXPORT_AS
 case|:
 name|file_export_dialog_show
 argument_list|(
@@ -1114,7 +1114,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_SAVE_MODE_EXPORT_TO
+name|GIMP_SAVE_MODE_EXPORT
 case|:
 case|case
 name|GIMP_SAVE_MODE_OVERWRITE
@@ -1133,12 +1133,14 @@ name|export_proc
 decl_stmt|;
 name|gboolean
 name|overwrite
+init|=
+name|FALSE
 decl_stmt|;
 if|if
 condition|(
 name|save_mode
 operator|==
-name|GIMP_SAVE_MODE_EXPORT_TO
+name|GIMP_SAVE_MODE_EXPORT
 condition|)
 block|{
 name|uri
@@ -1154,7 +1156,7 @@ operator|!
 name|uri
 condition|)
 block|{
-comment|/* Behave as if Export... was invoked */
+comment|/* Behave as if Export As... was invoked */
 name|file_export_dialog_show
 argument_list|(
 name|gimp

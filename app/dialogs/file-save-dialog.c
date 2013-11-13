@@ -156,7 +156,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275f1d5d0103
+DECL|enum|__anon27a7b4a10103
 block|{
 DECL|enumerator|CHECK_URI_FAIL
 name|CHECK_URI_FAIL
@@ -413,7 +413,7 @@ argument_list|(
 literal|"_Export"
 argument_list|)
 argument_list|,
-name|GIMP_HELP_FILE_EXPORT
+name|GIMP_HELP_FILE_EXPORT_AS
 argument_list|)
 expr_stmt|;
 name|state

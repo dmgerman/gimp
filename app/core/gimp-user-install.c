@@ -174,7 +174,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f8d0280103
+DECL|enum|__anon287d15d10103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -193,7 +193,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29f8d0280208
+DECL|struct|__anon287d15d10208
 block|{
 DECL|member|name
 specifier|const
@@ -1661,26 +1661,26 @@ block|}
 end_function
 
 begin_comment
-comment|/* The regexp pattern of all options changed from previous menurc.  * Add any pattern that we want to recognize for replacement in the menurc of  * the next release*/
+comment|/* The regexp pattern of all options changed from menurc of GIMP 2.8.  * Add any pattern that we want to recognize for replacement in the menurc of  * the next release*/
 end_comment
 
 begin_define
-DECL|macro|MENURC_OVER20_UPDATE_PATTERN
+DECL|macro|MENURC_28_UPDATE_PATTERN
 define|#
 directive|define
-name|MENURC_OVER20_UPDATE_PATTERN
-value|"NOMATCH^"
+name|MENURC_28_UPDATE_PATTERN
+value|"\"<Actions>/file/file-export-to\"|" \                                  "\"<Actions>/file/file-export\""
 end_define
 
 begin_comment
-comment|/**  * callback to use for updating any change value in the menurc.  * data is unused (always NULL).  * The updated value will be matched line by line.  */
+comment|/**  * callback to use for updating a menurc from GIMP 2.8.  * data is unused (always NULL).  * The updated value will be matched line by line.  */
 end_comment
 
 begin_function
 specifier|static
 name|gboolean
-DECL|function|user_update_menurc_over20 (const GMatchInfo * matched_value,GString * new_value,gpointer data)
-name|user_update_menurc_over20
+DECL|function|user_update_menurc_28 (const GMatchInfo * matched_value,GString * new_value,gpointer data)
+name|user_update_menurc_28
 parameter_list|(
 specifier|const
 name|GMatchInfo
@@ -1708,7 +1708,50 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/* This is an example of how to use it.    * If view-close were to be renamed to file-close for instance, we'd add:    if (strcmp (match, "\"<Actions>/view/view-close\"") == 0)     g_string_append (new_value, "\"<Actions>/file/file-close\"");   else   */
+comment|/* This is an example of how to use it.    * If view-close were to be renamed to file-close for instance, we'd add:    if (strcmp (match, "\"<Actions>/view/view-close\"") == 0)     g_string_append (new_value, "\"<Actions>/file/file-close\"");   */
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|match
+argument_list|,
+literal|"\"<Actions>/file/file-export\""
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|g_string_append
+argument_list|(
+name|new_value
+argument_list|,
+literal|"\"<Actions>/file/file-export-as\""
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|match
+argument_list|,
+literal|"\"<Actions>/file/file-export-to\""
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|g_string_append
+argument_list|(
+name|new_value
+argument_list|,
+literal|"\"<Actions>/file/file-export\""
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 comment|/* Should not happen. Just in case we match something unexpected by mistake. */
 name|g_string_append
 argument_list|(
@@ -1717,6 +1760,7 @@ argument_list|,
 name|match
 argument_list|)
 expr_stmt|;
+block|}
 name|g_free
 argument_list|(
 name|match
@@ -2392,26 +2436,34 @@ operator|==
 literal|0
 condition|)
 block|{
-comment|/*  skip menurc for gimp 2.0 as the format has changed  */
-if|if
+switch|switch
 condition|(
 name|install
 operator|->
 name|old_minor
-operator|==
-literal|0
 condition|)
+block|{
+case|case
+literal|0
+case|:
+comment|/*  skip menurc for gimp 2.0 as the format has changed  */
 goto|goto
 name|next_file
 goto|;
+break|break;
+case|case
+literal|8
+case|:
 name|update_pattern
 operator|=
-name|MENURC_OVER20_UPDATE_PATTERN
+name|MENURC_28_UPDATE_PATTERN
 expr_stmt|;
 name|update_callback
 operator|=
-name|user_update_menurc_over20
+name|user_update_menurc_28
 expr_stmt|;
+break|break;
+block|}
 block|}
 name|g_snprintf
 argument_list|(

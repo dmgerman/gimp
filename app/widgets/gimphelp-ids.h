@@ -113,11 +113,11 @@ value|"gimp-file-export"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_FILE_EXPORT_TO
+DECL|macro|GIMP_HELP_FILE_EXPORT_AS
 define|#
 directive|define
-name|GIMP_HELP_FILE_EXPORT_TO
-value|"gimp-file-export-to"
+name|GIMP_HELP_FILE_EXPORT_AS
+value|"gimp-file-export-as"
 end_define
 
 begin_define
