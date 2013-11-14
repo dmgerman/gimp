@@ -290,6 +290,14 @@ literal|"The run mode { RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"ip"
+block|,
+literal|"The ip on which to listen for requests"
+block|}
+block|,
+block|{
 name|GIMP_PDB_INT32
 block|,
 literal|"port"
@@ -432,7 +440,12 @@ argument_list|(
 literal|"Server for remote Script-Fu operation"
 argument_list|)
 argument_list|,
-literal|"Provides a server for remote script-fu operation"
+literal|"Provides a server for remote script-fu operation. "
+literal|"NOTE that for security reasons this procedure's "
+literal|"API was changed in an incompatible way since "
+literal|"GIMP 2.8.12. You now have to pass the IP to listen "
+literal|"on as first parameter. Calling this procedure with "
+literal|"the old API will fail on purpose."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
