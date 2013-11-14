@@ -488,7 +488,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c442c40108
+DECL|struct|__anon2c2d8bfc0108
 block|{
 DECL|member|command
 name|gchar
@@ -512,7 +512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c442c40208
+DECL|struct|__anon2c2d8bfc0208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -524,6 +524,11 @@ name|GtkWidget
 modifier|*
 name|log_entry
 decl_stmt|;
+DECL|member|ip_entry
+name|GtkWidget
+modifier|*
+name|ip_entry
+decl_stmt|;
 DECL|member|port
 name|gint
 name|port
@@ -532,6 +537,11 @@ DECL|member|logfile
 name|gchar
 modifier|*
 name|logfile
+decl_stmt|;
+DECL|member|listen_ip
+name|gchar
+modifier|*
+name|listen_ip
 decl_stmt|;
 DECL|member|run
 name|gboolean
@@ -546,7 +556,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon28c442c4030a
+DECL|union|__anon2c2d8bfc030a
 block|{
 DECL|member|family
 name|sa_family_t
@@ -594,6 +604,11 @@ specifier|const
 name|gchar
 modifier|*
 name|logfile
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|ip
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -838,12 +853,18 @@ comment|/*  port entry widget    */
 name|NULL
 block|,
 comment|/*  log entry widget     */
+name|NULL
+block|,
+comment|/*  ip entry widget      */
 literal|10008
 block|,
 comment|/*  default port number  */
 name|NULL
 block|,
 comment|/*  use stdout           */
+name|NULL
+block|,
+comment|/*  ip to bind to        */
 name|FALSE
 comment|/*  run                  */
 block|}
@@ -975,6 +996,10 @@ argument_list|,
 name|sint
 operator|.
 name|logfile
+argument_list|,
+name|sint
+operator|.
+name|listen_ip
 argument_list|)
 expr_stmt|;
 block|}
@@ -1007,6 +1032,21 @@ operator|.
 name|data
 operator|.
 name|d_string
+argument_list|,
+name|nparams
+operator|>
+literal|3
+condition|?
+name|params
+index|[
+literal|3
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+else|:
+literal|"127.0.0.1"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1712,7 +1752,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|server_start (gint port,const gchar * logfile)
+DECL|function|server_start (gint port,const gchar * logfile,const gchar * listen_ip)
 name|server_start
 parameter_list|(
 name|gint
@@ -1722,6 +1762,11 @@ specifier|const
 name|gchar
 modifier|*
 name|logfile
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|listen_ip
 parameter_list|)
 block|{
 name|struct
@@ -1790,7 +1835,7 @@ name|e
 operator|=
 name|getaddrinfo
 argument_list|(
-name|NULL
+name|listen_ip
 argument_list|,
 name|port_s
 argument_list|,
@@ -3204,12 +3249,12 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  The table to hold port& logfile entries  */
+comment|/*  The table to hold port, logfile and listen-to entries  */
 name|table
 operator|=
 name|gtk_table_new
 argument_list|(
-literal|2
+literal|3
 argument_list|,
 literal|2
 argument_list|,
@@ -3354,6 +3399,55 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+comment|/* The server ip to listen to */
+name|sint
+operator|.
+name|ip_entry
+operator|=
+name|gtk_entry_new
+argument_list|()
+expr_stmt|;
+name|gtk_entry_set_text
+argument_list|(
+name|GTK_ENTRY
+argument_list|(
+name|sint
+operator|.
+name|ip_entry
+argument_list|)
+argument_list|,
+literal|"127.0.0.1"
+argument_list|)
+expr_stmt|;
+name|gimp_table_attach_aligned
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|2
+argument_list|,
+name|_
+argument_list|(
+literal|"Listen on IP:"
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.5
+argument_list|,
+name|sint
+operator|.
+name|ip_entry
+argument_list|,
+literal|1
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|table
@@ -3406,6 +3500,13 @@ operator|.
 name|logfile
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|sint
+operator|.
+name|listen_ip
+argument_list|)
+expr_stmt|;
 name|sint
 operator|.
 name|port
@@ -3436,6 +3537,23 @@ argument_list|(
 name|sint
 operator|.
 name|log_entry
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|sint
+operator|.
+name|listen_ip
+operator|=
+name|g_strdup
+argument_list|(
+name|gtk_entry_get_text
+argument_list|(
+name|GTK_ENTRY
+argument_list|(
+name|sint
+operator|.
+name|ip_entry
 argument_list|)
 argument_list|)
 argument_list|)
