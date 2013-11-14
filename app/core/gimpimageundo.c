@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3d58310103
+DECL|enum|__anon2780551b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1971,7 +1971,7 @@ operator|->
 name|metadata
 condition|)
 block|{
-name|g_free
+name|g_object_unref
 argument_list|(
 name|image_undo
 operator|->
