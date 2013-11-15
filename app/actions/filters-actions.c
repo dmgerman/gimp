@@ -1043,6 +1043,28 @@ comment|/* FIXME GIMP_HELP_FILTER_SOFTGLOW */
 block|}
 block|,
 block|{
+literal|"filters-stretch-contrast"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Stretch Contrast..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:stretch-contrast"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_STRETCH_CONTRAST */
+block|}
+block|,
+block|{
 literal|"filters-threshold-alpha"
 block|,
 name|GIMP_STOCK_GEGL
@@ -1729,6 +1751,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-softglow"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-stretch-contrast"
 argument_list|,
 name|writable
 argument_list|)
