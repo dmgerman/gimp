@@ -1117,6 +1117,12 @@ operator|<
 name|num_of_brushes
 condition|)
 block|{
+name|GError
+modifier|*
+name|my_error
+init|=
+name|NULL
+decl_stmt|;
 name|pipe
 operator|->
 name|brushes
@@ -1134,7 +1140,8 @@ name|fd
 argument_list|,
 name|filename
 argument_list|,
-name|NULL
+operator|&
+name|my_error
 argument_list|)
 expr_stmt|;
 if|if
@@ -1169,24 +1176,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_set_error
+name|g_propagate_error
 argument_list|(
 name|error
 argument_list|,
-name|GIMP_DATA_ERROR
-argument_list|,
-name|GIMP_DATA_ERROR_READ
-argument_list|,
-name|_
-argument_list|(
-literal|"Fatal parse error in brush file '%s': "
-literal|"File is corrupt."
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
+name|my_error
 argument_list|)
 expr_stmt|;
 name|close
