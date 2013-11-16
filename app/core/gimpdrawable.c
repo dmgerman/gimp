@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d245fb0103
+DECL|enum|__anon2b1ef2e90103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -213,7 +213,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d245fb0203
+DECL|enum|__anon2b1ef2e90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2383,6 +2383,9 @@ name|copy_width
 decl_stmt|,
 name|copy_height
 decl_stmt|;
+name|gboolean
+name|intersect
+decl_stmt|;
 comment|/*  if the size doesn't change, this is a nop  */
 if|if
 condition|(
@@ -2427,6 +2430,8 @@ argument_list|)
 operator|-
 name|offset_y
 expr_stmt|;
+name|intersect
+operator|=
 name|gimp_rectangle_intersect
 argument_list|(
 name|gimp_item_get_offset_x
@@ -2493,6 +2498,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|intersect
+operator|||
 name|copy_width
 operator|!=
 name|new_width
@@ -2572,6 +2580,8 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|intersect
+operator|&&
 name|copy_width
 operator|&&
 name|copy_height
