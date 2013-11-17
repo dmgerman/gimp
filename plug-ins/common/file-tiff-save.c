@@ -155,7 +155,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e4b8300108
+DECL|struct|__anon2ab295f70108
 block|{
 DECL|member|compression
 name|gint
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e4b8300208
+DECL|struct|__anon2ab295f70208
 block|{
 DECL|member|ID
 name|gint32
@@ -3818,12 +3818,6 @@ name|save_unit
 init|=
 name|RESUNIT_INCH
 decl_stmt|;
-name|GimpUnit
-name|unit
-decl_stmt|;
-name|gfloat
-name|factor
-decl_stmt|;
 name|gimp_image_get_resolution
 argument_list|(
 name|orig_image
@@ -3835,71 +3829,16 @@ operator|&
 name|yresolution
 argument_list|)
 expr_stmt|;
-name|unit
-operator|=
+if|if
+condition|(
+name|gimp_unit_is_metric
+argument_list|(
 name|gimp_image_get_unit
 argument_list|(
 name|orig_image
 argument_list|)
-expr_stmt|;
-name|factor
-operator|=
-name|gimp_unit_get_factor
-argument_list|(
-name|unit
 argument_list|)
-expr_stmt|;
-comment|/*  if we have a metric unit, save the resolution as centimeters      */
-if|if
-condition|(
-operator|(
-name|ABS
-argument_list|(
-name|factor
-operator|-
-literal|0.0254
-argument_list|)
-operator|<
-literal|1e-5
-operator|)
-operator|||
-comment|/* m  */
-operator|(
-name|ABS
-argument_list|(
-name|factor
-operator|-
-literal|0.254
-argument_list|)
-operator|<
-literal|1e-5
-operator|)
-operator|||
-comment|/* dm */
-operator|(
-name|ABS
-argument_list|(
-name|factor
-operator|-
-literal|2.54
-argument_list|)
-operator|<
-literal|1e-5
-operator|)
-operator|||
-comment|/* cm */
-operator|(
-name|ABS
-argument_list|(
-name|factor
-operator|-
-literal|25.4
-argument_list|)
-operator|<
-literal|1e-5
-operator|)
 condition|)
-comment|/* mm */
 block|{
 name|save_unit
 operator|=
@@ -3953,7 +3892,13 @@ name|save_unit
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* TODO: enable in 2.6      gint     offset_x, offset_y;      gimp_drawable_offsets (layer,&offset_x,&offset_y);      if (offset_x || offset_y)       {         TIFFSetField (tif, TIFFTAG_XPOSITION, offset_x / xresolution);         TIFFSetField (tif, TIFFTAG_YPOSITION, offset_y / yresolution);       } */
+if|#
+directive|if
+literal|0
+comment|/* TODO: enable in 2.6 */
+block|gint     offset_x, offset_y;      gimp_drawable_offsets (layer,&offset_x,&offset_y);      if (offset_x || offset_y)       {         TIFFSetField (tif, TIFFTAG_XPOSITION, offset_x / xresolution);         TIFFSetField (tif, TIFFTAG_YPOSITION, offset_y / yresolution);       }
+endif|#
+directive|endif
 block|}
 comment|/* The TIFF spec explicitely says ASCII for the image description. */
 if|if
