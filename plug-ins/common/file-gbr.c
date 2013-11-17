@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2977397d0108
+DECL|struct|__anon29c8e9680108
 block|{
 DECL|member|description
 name|gchar
@@ -1931,7 +1931,7 @@ block|{
 name|PatternHeader
 name|ph
 decl_stmt|;
-comment|/*  For backwards-compatibility, check if a pattern follows.             The obsolete .gpb format did it this way.  */
+comment|/* For backwards-compatibility, check if a pattern follows.          * The obsolete .gpb format did it this way.          */
 if|if
 condition|(
 name|g_input_stream_read_all
@@ -2267,7 +2267,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2977397d020a
+DECL|union|__anon29c8e968020a
 block|{
 DECL|member|u
 name|guint16
