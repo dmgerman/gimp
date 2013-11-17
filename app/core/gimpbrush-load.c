@@ -1422,7 +1422,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2c2d94d9010a
+DECL|union|__anon2c23b1a9010a
 block|{
 DECL|member|u
 name|guint16
@@ -1511,6 +1511,46 @@ block|}
 block|}
 block|}
 block|}
+break|break;
+case|case
+literal|3
+case|:
+comment|/* The obsolete .gbp format had a 3-byte pattern following a        * 1-byte brush, when embedded in a brush pipe, the current code        * tries to load that pattern as a brush, and encounters the '3'        * in the header.        */
+name|g_object_unref
+argument_list|(
+name|brush
+argument_list|)
+expr_stmt|;
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
+name|_
+argument_list|(
+literal|"Fatal parse error in brush file '%s': "
+literal|"Unsupported brush depth %d\n"
+literal|"GIMP brushes must be GRAY or RGBA.\n"
+literal|"This might be an obsolete GIMP brush file, try "
+literal|"loading it as image and save it again."
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|,
+name|header
+operator|.
+name|bytes
+argument_list|)
+expr_stmt|;
+return|return
+name|NULL
+return|;
 break|break;
 case|case
 literal|4
