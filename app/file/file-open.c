@@ -2349,6 +2349,22 @@ decl_stmt|;
 name|GimpPDBStatusType
 name|status
 decl_stmt|;
+comment|/* show the progress in the last opened display, see bug #704896 */
+if|if
+condition|(
+operator|!
+name|display
+condition|)
+name|display
+operator|=
+name|gimp_context_get_display
+argument_list|(
+name|gimp_get_user_context
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|display
