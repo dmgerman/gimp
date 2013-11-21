@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a446b3b0108
+DECL|struct|__anon2a108ac20108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a446b3b0208
+DECL|struct|__anon2a108ac20208
 block|{
 DECL|member|run
 name|gboolean
@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a446b3b0308
+DECL|struct|__anon2a108ac20308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -1808,7 +1808,7 @@ name|metadata
 operator|=
 name|gimp_image_metadata_save_prepare
 argument_list|(
-name|image_ID
+name|orig_image_ID
 argument_list|,
 literal|"image/png"
 argument_list|)
@@ -1898,7 +1898,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_metadata_save_finish
 argument_list|(
-name|image_ID
+name|orig_image_ID
 argument_list|,
 literal|"image/png"
 argument_list|,
