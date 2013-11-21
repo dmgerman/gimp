@@ -141,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7b17760103
+DECL|enum|__anon2c84f5e30103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -1013,6 +1013,41 @@ name|gimp_dialog_factory_get_singleton
 argument_list|()
 argument_list|)
 expr_stmt|;
+comment|/* make sure GimpImageWindow acts upon hide-docks at the right time,    * see bug #678043.    */
+if|if
+condition|(
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
+name|single_window_mode
+operator|&&
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
+name|hide_docks
+condition|)
+block|{
+name|g_object_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimp
+operator|->
+name|config
+argument_list|)
+argument_list|,
+literal|"hide-docks"
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
