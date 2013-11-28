@@ -571,8 +571,17 @@ parameter_list|,
 name|va_list
 name|args
 parameter_list|)
-function_decl|;
+function_decl|G_GNUC_PRINTF
+parameter_list|(
+function_decl|1
+operator|,
+function_decl|0
 end_function_decl
+
+begin_empty_stmt
+unit|)
+empty_stmt|;
+end_empty_stmt
 
 begin_macro
 DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpStatusbar,gimp_statusbar,GTK_TYPE_STATUSBAR,G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,gimp_statusbar_progress_iface_init))

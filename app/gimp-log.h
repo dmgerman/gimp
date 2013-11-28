@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c7d18c0103
+DECL|enum|__anon2b0a67ae0103
 block|{
 DECL|enumerator|GIMP_LOG_TOOL_EVENTS
 name|GIMP_LOG_TOOL_EVENTS
@@ -239,8 +239,17 @@ parameter_list|,
 name|va_list
 name|args
 parameter_list|)
-function_decl|;
+function_decl|G_GNUC_PRINTF
+parameter_list|(
+function_decl|4
+operator|,
+function_decl|0
 end_function_decl
+
+begin_empty_stmt
+unit|)
+empty_stmt|;
+end_empty_stmt
 
 begin_ifdef
 ifdef|#
