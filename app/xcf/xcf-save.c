@@ -4342,6 +4342,8 @@ name|guint32
 name|base
 decl_stmt|,
 name|length
+init|=
+literal|0
 decl_stmt|;
 name|long
 name|pos
@@ -4510,6 +4512,8 @@ name|guint32
 name|base
 decl_stmt|,
 name|length
+init|=
+literal|0
 decl_stmt|;
 name|glong
 name|pos
@@ -4882,6 +4886,8 @@ name|guint32
 name|base
 decl_stmt|,
 name|length
+init|=
+literal|0
 decl_stmt|;
 name|glong
 name|pos
@@ -7321,7 +7327,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bec51110108
+DECL|struct|__anon2c2d0abe0108
 block|{
 DECL|member|info
 name|XcfInfo
