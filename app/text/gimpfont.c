@@ -49,7 +49,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<freetype/tttables.h>
+file|<ft2build.h>
+end_include
+
+begin_include
+include|#
+directive|include
+include|FT_TRUETYPE_TABLES_H
 end_include
 
 begin_include
@@ -113,7 +119,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27708b250103
+DECL|enum|__anon2a2136c80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1396,7 +1402,7 @@ comment|/* This is a table of scripts and corresponding short sample strings    
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27708b250208
+DECL|struct|__anon2a2136c80208
 block|{
 DECL|member|script
 specifier|const
