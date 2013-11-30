@@ -364,6 +364,9 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|guint
+name|path_data_len
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|bound_segs
@@ -637,6 +640,12 @@ argument_list|(
 name|points
 argument_list|)
 expr_stmt|;
+name|path_data_len
+operator|=
+name|path_data
+operator|->
+name|len
+expr_stmt|;
 return|return
 name|gimp_bezier_desc_new
 argument_list|(
@@ -651,9 +660,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 argument_list|,
-name|path_data
-operator|->
-name|len
+name|path_data_len
 argument_list|)
 return|;
 block|}
