@@ -1397,7 +1397,7 @@ block|}
 block|}
 block|}
 comment|/* return the color */
-name|gimp_rgb_set_uchar
+name|gimp_rgba_set_uchar
 argument_list|(
 name|result
 argument_list|,
@@ -1406,6 +1406,8 @@ argument_list|,
 name|g
 argument_list|,
 name|b
+argument_list|,
+literal|255
 argument_list|)
 expr_stmt|;
 name|g_free
