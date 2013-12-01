@@ -1217,6 +1217,28 @@ block|,
 name|NULL
 comment|/* FIXME GIMP_HELP_FILTER_WHIRL_PINCH */
 block|}
+block|,
+block|{
+literal|"filters-wind"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"W_ind..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:wind"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_WIND */
+block|}
 block|, }
 decl_stmt|;
 end_decl_stmt
@@ -1831,6 +1853,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-whirl-pinch"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-wind"
 argument_list|,
 name|writable
 argument_list|)

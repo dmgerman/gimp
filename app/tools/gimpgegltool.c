@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289d60820103
+DECL|enum|__anon27b6f3270103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -424,6 +424,8 @@ block|,
 literal|"gegl:waves"
 block|,
 literal|"gegl:whirl-pinch"
+block|,
+literal|"gegl:wind"
 block|,
 comment|/* these ops are blacklisted for other reasons */
 literal|"gegl:contrast-curve"
