@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ea1fec0103
+DECL|enum|__anon2bc96ca20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -910,7 +910,6 @@ argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
-comment|/*widget = gimp_prop_boolean_combo_box_new (config, "ASAP-deformation", _("ASAP"), _("ARAP"));*/
 name|widget
 operator|=
 name|gimp_prop_boolean_radio_frame_new
@@ -963,7 +962,6 @@ argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
-comment|/*widget = gimp_prop_boolean_combo_box_new (config, "MLS-weights", _("Enabled"), _("Disabled"));*/
 name|widget
 operator|=
 name|gimp_prop_check_button_new

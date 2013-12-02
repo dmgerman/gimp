@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -222,6 +228,7 @@ value|"N-Point Deformation"
 end_define
 
 begin_function_decl
+specifier|static
 name|void
 name|gimp_n_point_deformation_tool_start
 parameter_list|(
@@ -237,6 +244,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|gimp_n_point_deformation_tool_halt
 parameter_list|(
@@ -576,6 +584,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|gpointer
 name|gimp_n_point_deformation_tool_deform_thread_func
 parameter_list|(
@@ -586,6 +595,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|gboolean
 name|gimp_n_point_deformation_tool_canvas_update_thread_func
 parameter_list|(
@@ -734,7 +744,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"N-Point Deformation Tool: Rubber-like deformation of an image using points"
+literal|"N-Point Deformation Tool: Rubber-like deformation of image using points"
 argument_list|)
 argument_list|,
 name|N_
@@ -1020,6 +1030,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_n_point_deformation_tool_start (GimpNPointDeformationTool * npd_tool,GimpDisplay * display)
 name|gimp_n_point_deformation_tool_start
@@ -1353,6 +1364,23 @@ name|apply_deformation
 operator|=
 name|FALSE
 expr_stmt|;
+name|npd_tool
+operator|->
+name|lattice_points
+operator|=
+name|g_new
+argument_list|(
+name|GimpVector2
+argument_list|,
+literal|5
+operator|*
+name|model
+operator|->
+name|hidden_model
+operator|->
+name|num_of_bones
+argument_list|)
+expr_stmt|;
 comment|/* get drawable's offset */
 name|gimp_item_get_offset
 argument_list|(
@@ -1468,6 +1496,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_n_point_deformation_tool_halt (GimpNPointDeformationTool * npd_tool)
 name|gimp_n_point_deformation_tool_halt
@@ -1638,6 +1667,13 @@ name|preview_buffer
 operator|=
 name|NULL
 expr_stmt|;
+name|g_free
+argument_list|(
+name|npd_tool
+operator|->
+name|lattice_points
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|npd_tool
@@ -1722,12 +1758,6 @@ argument_list|,
 name|npd_options
 operator|->
 name|MLS_weights_alpha
-argument_list|,
-literal|"mesh visible"
-argument_list|,
-name|npd_options
-operator|->
-name|mesh_visible
 argument_list|,
 name|NULL
 argument_list|)
@@ -2224,6 +2254,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gboolean
 DECL|function|gimp_n_point_deformation_tool_add_cp_to_selection (GimpNPointDeformationTool * npd_tool,NPDControlPoint * cp)
 name|gimp_n_point_deformation_tool_add_cp_to_selection
@@ -2678,6 +2709,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gboolean
 DECL|function|gimp_n_point_deformation_tool_is_cp_in_area (NPDControlPoint * cp,gfloat x0,gfloat y0,gfloat x1,gfloat y1,gfloat offset_x,gfloat offset_y,gfloat cp_radius)
 name|gimp_n_point_deformation_tool_is_cp_in_area
@@ -3283,6 +3315,216 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|gimp_n_point_deformation_tool_prepare_lattice (GimpNPointDeformationTool * npd_tool)
+name|gimp_n_point_deformation_tool_prepare_lattice
+parameter_list|(
+name|GimpNPointDeformationTool
+modifier|*
+name|npd_tool
+parameter_list|)
+block|{
+name|NPDHiddenModel
+modifier|*
+name|hm
+init|=
+name|npd_tool
+operator|->
+name|model
+operator|->
+name|hidden_model
+decl_stmt|;
+name|GimpVector2
+modifier|*
+name|points
+init|=
+name|npd_tool
+operator|->
+name|lattice_points
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|,
+name|j
+decl_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|hm
+operator|->
+name|num_of_bones
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|NPDBone
+modifier|*
+name|bone
+init|=
+operator|&
+name|hm
+operator|->
+name|current_bones
+index|[
+name|i
+index|]
+decl_stmt|;
+for|for
+control|(
+name|j
+operator|=
+literal|0
+init|;
+name|j
+operator|<
+literal|4
+condition|;
+name|j
+operator|++
+control|)
+name|gimp_vector2_set
+argument_list|(
+operator|&
+name|points
+index|[
+literal|5
+operator|*
+name|i
+operator|+
+name|j
+index|]
+argument_list|,
+name|bone
+operator|->
+name|points
+index|[
+name|j
+index|]
+operator|.
+name|x
+argument_list|,
+name|bone
+operator|->
+name|points
+index|[
+name|j
+index|]
+operator|.
+name|y
+argument_list|)
+expr_stmt|;
+name|gimp_vector2_set
+argument_list|(
+operator|&
+name|points
+index|[
+literal|5
+operator|*
+name|i
+operator|+
+name|j
+index|]
+argument_list|,
+name|bone
+operator|->
+name|points
+index|[
+literal|0
+index|]
+operator|.
+name|x
+argument_list|,
+name|bone
+operator|->
+name|points
+index|[
+literal|0
+index|]
+operator|.
+name|y
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_n_point_deformation_tool_draw_lattice (GimpNPointDeformationTool * npd_tool)
+name|gimp_n_point_deformation_tool_draw_lattice
+parameter_list|(
+name|GimpNPointDeformationTool
+modifier|*
+name|npd_tool
+parameter_list|)
+block|{
+name|GimpVector2
+modifier|*
+name|points
+init|=
+name|npd_tool
+operator|->
+name|lattice_points
+decl_stmt|;
+name|gint
+name|n_squares
+init|=
+name|npd_tool
+operator|->
+name|model
+operator|->
+name|hidden_model
+operator|->
+name|num_of_bones
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|n_squares
+condition|;
+name|i
+operator|++
+control|)
+name|gimp_draw_tool_add_lines
+argument_list|(
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|npd_tool
+argument_list|)
+argument_list|,
+operator|&
+name|points
+index|[
+literal|5
+operator|*
+name|i
+index|]
+argument_list|,
+literal|5
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
 DECL|function|gimp_n_point_deformation_tool_draw (GimpDrawTool * draw_tool)
 name|gimp_n_point_deformation_tool_draw
 parameter_list|(
@@ -3298,6 +3540,15 @@ init|=
 name|GIMP_N_POINT_DEFORMATION_TOOL
 argument_list|(
 name|draw_tool
+argument_list|)
+decl_stmt|;
+name|GimpNPointDeformationOptions
+modifier|*
+name|npd_options
+init|=
+name|GIMP_N_POINT_DEFORMATION_TOOL_GET_OPTIONS
+argument_list|(
+name|npd_tool
 argument_list|)
 decl_stmt|;
 name|NPDModel
@@ -3334,6 +3585,18 @@ argument_list|(
 name|model
 operator|!=
 name|NULL
+argument_list|)
+expr_stmt|;
+comment|/* draw lattice */
+if|if
+condition|(
+name|npd_options
+operator|->
+name|mesh_visible
+condition|)
+name|gimp_n_point_deformation_tool_draw_lattice
+argument_list|(
+name|npd_tool
 argument_list|)
 expr_stmt|;
 name|x0
@@ -3791,6 +4054,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gboolean
 DECL|function|gimp_n_point_deformation_tool_canvas_update_thread_func (GimpNPointDeformationTool * npd_tool)
 name|gimp_n_point_deformation_tool_canvas_update_thread_func
@@ -3865,6 +4129,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gpointer
 DECL|function|gimp_n_point_deformation_tool_deform_thread_func (gpointer data)
 name|gimp_n_point_deformation_tool_deform_thread_func
@@ -3922,6 +4187,17 @@ argument_list|)
 condition|)
 block|{
 name|gimp_n_point_deformation_tool_perform_deformation
+argument_list|(
+name|npd_tool
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|npd_options
+operator|->
+name|mesh_visible
+condition|)
+name|gimp_n_point_deformation_tool_prepare_lattice
 argument_list|(
 name|npd_tool
 argument_list|)
@@ -4013,7 +4289,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|//  gegl_node_invalidated (npd_tool->npd_node, NULL, FALSE);
 name|gimp_npd_debug
 argument_list|(
 operator|(
@@ -4212,12 +4487,6 @@ name|gegl_buffer_get_height
 argument_list|(
 name|buffer
 argument_list|)
-expr_stmt|;
-name|npd_options
-operator|->
-name|mesh_visible
-operator|=
-name|FALSE
 expr_stmt|;
 name|gimp_n_point_deformation_tool_set_options
 argument_list|(

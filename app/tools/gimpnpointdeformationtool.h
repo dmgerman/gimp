@@ -25,6 +25,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<npd/npd_common.h>
 end_include
 
@@ -199,6 +205,11 @@ DECL|member|hovering_cp
 name|NPDControlPoint
 modifier|*
 name|hovering_cp
+decl_stmt|;
+DECL|member|lattice_points
+name|GimpVector2
+modifier|*
+name|lattice_points
 decl_stmt|;
 DECL|member|cursor_x
 name|gdouble
