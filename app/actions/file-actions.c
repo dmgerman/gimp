@@ -1295,6 +1295,13 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
+literal|"file-save-and-close"
+argument_list|,
+name|drawable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
 literal|"file-revert"
 argument_list|,
 name|image
