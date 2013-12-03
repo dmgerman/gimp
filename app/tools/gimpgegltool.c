@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b6f3270103
+DECL|enum|__anon2b9b7ace0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -296,6 +296,8 @@ literal|"core"
 block|,
 literal|"debug"
 block|,
+literal|"display"
+block|,
 literal|"hidden"
 block|,
 literal|"input"
@@ -433,9 +435,6 @@ block|,
 literal|"gegl:convert-format"
 block|,
 comment|/* pointless */
-literal|"gegl:display"
-block|,
-comment|/* pointless */
 literal|"gegl:fill-path"
 block|,
 literal|"gegl:grey"
@@ -461,9 +460,6 @@ block|,
 literal|"gegl:posterize"
 block|,
 comment|/* we use gimp's op */
-literal|"gegl:sdl-display"
-block|,
-comment|/* pointless */
 literal|"gegl:seamless-clone"
 block|,
 comment|/* used in the seamless clone tool */
