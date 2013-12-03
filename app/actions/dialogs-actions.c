@@ -1041,6 +1041,27 @@ literal|"dialogs-about"
 block|,
 name|GTK_STOCK_ABOUT
 block|,
+if|#
+directive|if
+name|defined
+argument_list|(
+name|G_OS_WIN32
+argument_list|)
+operator|||
+name|defined
+argument_list|(
+name|PLATFORM_OSX
+argument_list|)
+name|NC_
+argument_list|(
+literal|"dialogs-action"
+argument_list|,
+literal|"About GIMP"
+argument_list|)
+block|,
+else|#
+directive|else
+comment|/* UNIX: use GNOME HIG */
 name|NC_
 argument_list|(
 literal|"dialogs-action"
@@ -1048,6 +1069,9 @@ argument_list|,
 literal|"_About"
 argument_list|)
 block|,
+endif|#
+directive|endif
+comment|/* G_OS_WIN32 */
 name|NULL
 block|,
 name|NC_
