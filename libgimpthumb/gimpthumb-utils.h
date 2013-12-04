@@ -61,6 +61,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|const
+name|gchar
+modifier|*
+name|gimp_thumb_get_thumb_base_dir
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_decl_stmt
 name|gchar
 modifier|*

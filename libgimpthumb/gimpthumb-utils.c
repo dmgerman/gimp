@@ -599,6 +599,33 @@ block|}
 end_function
 
 begin_comment
+comment|/**  * gimp_thumb_get_thumb_base_dir:  *  * Returns the base directory of thumbnails cache.  * It uses the Freedesktop Thumbnail Managing Standard on UNIX,  * "~/Library/Caches/org.freedesktop.thumbnails" on OSX, and a cache  * folder determined by glib on Windows (currently the common repository  * for temporary Internet files).  * The returned string belongs to GIMP and must not be changed nor freed.  *  * Returns: the thumbnails cache directory.  **/
+end_comment
+
+begin_function
+specifier|const
+name|gchar
+modifier|*
+DECL|function|gimp_thumb_get_thumb_base_dir (void)
+name|gimp_thumb_get_thumb_base_dir
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|gimp_thumb_initialized
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|thumb_dir
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_thumb_get_thumb_dir:  * @size: a GimpThumbSize  *  * Retrieve the name of the thumbnail folder for a specific size. The  * returned pointer will become invalid if gimp_thumb_init() is used  * again. It must not be changed or freed.  *  * Return value: the thumbnail directory in the encoding of the filesystem  **/
 end_comment
 

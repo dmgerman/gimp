@@ -234,11 +234,6 @@ name|GDir
 modifier|*
 name|dir
 decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|home
-decl_stmt|;
 name|gchar
 modifier|*
 name|thumb_folder
@@ -254,6 +249,18 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
+name|gimp_thumb_init
+argument_list|(
+literal|"gimp-thumbnail-list"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|thumb_folder
+operator|=
+name|gimp_thumb_get_thumb_base_dir
+argument_list|()
+expr_stmt|;
 name|context
 operator|=
 name|g_option_context_new
@@ -302,22 +309,6 @@ operator|-
 literal|1
 return|;
 block|}
-name|home
-operator|=
-name|g_get_home_dir
-argument_list|()
-expr_stmt|;
-name|thumb_folder
-operator|=
-name|g_build_filename
-argument_list|(
-name|home
-argument_list|,
-literal|".thumbnails"
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|dir
 operator|=
 name|g_dir_open
@@ -337,7 +328,9 @@ name|dir
 condition|)
 name|g_error
 argument_list|(
-literal|"Error opening ~/.thumbnails: %s"
+literal|"Error opening %s: %s"
+argument_list|,
+name|thumb_folder
 argument_list|,
 name|error
 operator|->
@@ -394,11 +387,6 @@ block|}
 name|g_dir_close
 argument_list|(
 name|dir
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|thumb_folder
 argument_list|)
 expr_stmt|;
 return|return
