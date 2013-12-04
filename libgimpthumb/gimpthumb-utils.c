@@ -432,7 +432,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Cannot determine a valid home directory.\n"
+literal|"Cannot determine a valid thumbnails directory.\n"
 literal|"Thumbnails will be stored in the folder for "
 literal|"temporary files (%s) instead."
 argument_list|)
