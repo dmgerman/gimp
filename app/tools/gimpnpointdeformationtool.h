@@ -276,6 +276,19 @@ DECL|member|parent_class
 name|GimpDrawToolClass
 name|parent_class
 decl_stmt|;
+comment|/*  virtual function  */
+DECL|member|perform_deformation
+name|void
+function_decl|(
+modifier|*
+name|perform_deformation
+function_decl|)
+parameter_list|(
+name|GimpNPointDeformationTool
+modifier|*
+name|npd_tool
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
