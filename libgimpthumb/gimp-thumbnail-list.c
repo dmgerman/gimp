@@ -234,6 +234,7 @@ name|GDir
 modifier|*
 name|dir
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|thumb_folder
