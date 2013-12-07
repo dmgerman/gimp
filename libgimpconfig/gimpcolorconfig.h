@@ -163,18 +163,23 @@ DECL|member|out_of_gamut_color
 name|GimpRGB
 name|out_of_gamut_color
 decl_stmt|;
+DECL|member|display_use_black_point_compensation
+name|gboolean
+name|display_use_black_point_compensation
+decl_stmt|;
+DECL|member|simulation_use_black_point_compensation
+name|gboolean
+name|simulation_use_black_point_compensation
+decl_stmt|;
 comment|/*< private>*/
 comment|/* Padding for future expansion */
-DECL|member|_gimp_reserved1
-name|void
-function_decl|(
-modifier|*
-name|_gimp_reserved1
-function_decl|)
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
+if|#
+directive|if
+operator|(
+name|GLIB_SIZEOF_VOID_P
+operator|==
+literal|8
+operator|)
 DECL|member|_gimp_reserved2
 name|void
 function_decl|(
@@ -185,6 +190,8 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+endif|#
+directive|endif
 DECL|member|_gimp_reserved3
 name|void
 function_decl|(

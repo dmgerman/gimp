@@ -136,7 +136,7 @@ define|#
 directive|define
 name|PRINTER_PROFILE_BLURB
 define|\
-value|N_("The color profile used for simulating a printed version (softproof).")
+value|N_("The color profile to use for soft proofing from your image's " \      "color space to some other color space, including " \      "soft proofing to a printer or other output device profile. ")
 end_define
 
 begin_define
@@ -145,7 +145,16 @@ define|#
 directive|define
 name|DISPLAY_RENDERING_INTENT_BLURB
 define|\
-value|N_("Sets how colors are mapped for your display.")
+value|N_("How colors are converted from your image's color space to your display device. " \      "Relative colorimetric is usually the best choice. " \      "Unless you use a LUT monitor profile (most monitor profiles are matrix), " \      "choosing perceptual intent really gives you relative colorimetric." )
+end_define
+
+begin_define
+DECL|macro|DISPLAY_USE_BPC_BLURB
+define|#
+directive|define
+name|DISPLAY_USE_BPC_BLURB
+define|\
+value|N_("Do use black point compensation (unless you know you have a reason not to). ")
 end_define
 
 begin_define
@@ -154,7 +163,16 @@ define|#
 directive|define
 name|SIMULATION_RENDERING_INTENT_BLURB
 define|\
-value|N_("Sets how colors are converted from RGB working space to the " \      "print simulation device.")
+value|N_("How colors are converted from your image's color space to the " \      "output simulation device (usually your monitor). " \      "Try them all and choose what looks the best. ")
+end_define
+
+begin_define
+DECL|macro|SIMULATION_USE_BPC_BLURB
+define|#
+directive|define
+name|SIMULATION_USE_BPC_BLURB
+define|\
+value|N_("Try with and without black point compensation "\      "and choose what looks best. ")
 end_define
 
 begin_define
@@ -163,7 +181,7 @@ define|#
 directive|define
 name|SIMULATION_GAMUT_CHECK_BLURB
 define|\
-value|N_("When enabled, the print simulation will mark colors which can not be " \      "represented in the target color space.")
+value|N_("When enabled, the print simulation will mark colors " \      "which can not be represented in the target color space.")
 end_define
 
 begin_define
@@ -177,7 +195,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon289c5c9d0103
+DECL|enum|__anon27dab20f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -203,8 +221,14 @@ block|,
 DECL|enumerator|PROP_DISPLAY_RENDERING_INTENT
 name|PROP_DISPLAY_RENDERING_INTENT
 block|,
+DECL|enumerator|PROP_DISPLAY_USE_BPC
+name|PROP_DISPLAY_USE_BPC
+block|,
 DECL|enumerator|PROP_SIMULATION_RENDERING_INTENT
 name|PROP_SIMULATION_RENDERING_INTENT
+block|,
+DECL|enumerator|PROP_SIMULATION_USE_BPC
+name|PROP_SIMULATION_USE_BPC
 block|,
 DECL|enumerator|PROP_SIMULATION_GAMUT_CHECK
 name|PROP_SIMULATION_GAMUT_CHECK
@@ -467,7 +491,22 @@ name|DISPLAY_RENDERING_INTENT_BLURB
 argument_list|,
 name|GIMP_TYPE_COLOR_RENDERING_INTENT
 argument_list|,
-name|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
+name|GIMP_COLOR_RENDERING_INTENT_RELATIVE_COLORIMETRIC
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
+name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_DISPLAY_USE_BPC
+argument_list|,
+literal|"display-use-black-point-compensation"
+argument_list|,
+name|DISPLAY_USE_BPC_BLURB
+argument_list|,
+name|TRUE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -485,6 +524,21 @@ argument_list|,
 name|GIMP_TYPE_COLOR_RENDERING_INTENT
 argument_list|,
 name|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
+name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_SIMULATION_USE_BPC
+argument_list|,
+literal|"simulation-use-black-point-compensation"
+argument_list|,
+name|SIMULATION_USE_BPC_BLURB
+argument_list|,
+name|FALSE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -808,6 +862,19 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|PROP_DISPLAY_USE_BPC
+case|:
+name|color_config
+operator|->
+name|display_use_black_point_compensation
+operator|=
+name|g_value_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|PROP_SIMULATION_RENDERING_INTENT
 case|:
 name|color_config
@@ -815,6 +882,19 @@ operator|->
 name|simulation_intent
 operator|=
 name|g_value_get_enum
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_SIMULATION_USE_BPC
+case|:
+name|color_config
+operator|->
+name|simulation_use_black_point_compensation
+operator|=
+name|g_value_get_boolean
 argument_list|(
 name|value
 argument_list|)
@@ -1014,6 +1094,19 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|PROP_DISPLAY_USE_BPC
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|color_config
+operator|->
+name|display_use_black_point_compensation
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|PROP_SIMULATION_RENDERING_INTENT
 case|:
 name|g_value_set_enum
@@ -1023,6 +1116,19 @@ argument_list|,
 name|color_config
 operator|->
 name|simulation_intent
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_SIMULATION_USE_BPC
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|color_config
+operator|->
+name|simulation_use_black_point_compensation
 argument_list|)
 expr_stmt|;
 break|break;
