@@ -702,6 +702,15 @@ argument_list|)
 block|,
 name|FOREIGN
 argument_list|(
+literal|"gimp-foreground-select-tool-dialog"
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|)
+block|,
+name|FOREIGN
+argument_list|(
 literal|"gimp-gegl-tool-dialog"
 argument_list|,
 name|TRUE

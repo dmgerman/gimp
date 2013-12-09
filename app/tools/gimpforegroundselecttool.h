@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b73d440103
+DECL|enum|__anon2798033d0103
 block|{
 DECL|enumerator|MATTING_STATE_FREE_SELECT
 name|MATTING_STATE_FREE_SELECT
@@ -166,6 +166,11 @@ decl_stmt|;
 DECL|member|state
 name|MattingState
 name|state
+decl_stmt|;
+DECL|member|gui
+name|GimpToolGui
+modifier|*
+name|gui
 decl_stmt|;
 block|}
 struct|;
