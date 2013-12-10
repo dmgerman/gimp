@@ -1265,7 +1265,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf8a58e0108
+DECL|struct|__anon2a07e7650108
 block|{
 DECL|member|factory
 name|GimpDataFactory
@@ -3085,7 +3085,7 @@ argument_list|(
 literal|"You have a writable data folder "
 literal|"configured (%s), but this folder does "
 literal|"not exist. Please create the folder or "
-literal|"fix your configuation in the "
+literal|"fix your configuration in the "
 literal|"Preferences dialog's 'Folders' section."
 argument_list|)
 argument_list|,
