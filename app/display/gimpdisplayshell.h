@@ -675,6 +675,10 @@ DECL|member|keyboard_grab_time
 name|guint32
 name|keyboard_grab_time
 decl_stmt|;
+DECL|member|inferior_ignore_mode
+name|gboolean
+name|inferior_ignore_mode
+decl_stmt|;
 DECL|member|space_pressed
 name|gboolean
 name|space_pressed
