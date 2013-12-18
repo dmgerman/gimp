@@ -946,11 +946,11 @@ else|else
 block|{
 name|scale_factor
 operator|=
-literal|100.0
+literal|10000
 expr_stmt|;
 name|digits
 operator|=
-literal|1
+literal|0
 expr_stmt|;
 block|}
 name|gimp_prop_widget_set_factor
@@ -2095,7 +2095,7 @@ name|config
 argument_list|,
 literal|"low-input"
 argument_list|,
-literal|0.01
+literal|0.0001
 argument_list|,
 literal|0.1
 argument_list|,
@@ -2342,7 +2342,7 @@ name|config
 argument_list|,
 literal|"high-input"
 argument_list|,
-literal|0.01
+literal|0.0001
 argument_list|,
 literal|0.1
 argument_list|,
@@ -2676,7 +2676,7 @@ name|config
 argument_list|,
 literal|"low-output"
 argument_list|,
-literal|0.01
+literal|0.0001
 argument_list|,
 literal|0.1
 argument_list|,
@@ -2741,7 +2741,7 @@ name|config
 argument_list|,
 literal|"high-output"
 argument_list|,
-literal|0.01
+literal|0.0001
 argument_list|,
 literal|0.1
 argument_list|,

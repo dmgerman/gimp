@@ -1035,9 +1035,9 @@ operator|->
 name|graph
 argument_list|)
 argument_list|,
-literal|0.0
+literal|0
 argument_list|,
-literal|1.0
+literal|100
 argument_list|)
 expr_stmt|;
 name|gimp_curve_view_set_range_y
@@ -1049,9 +1049,9 @@ operator|->
 name|graph
 argument_list|)
 argument_list|,
-literal|0.0
+literal|0
 argument_list|,
-literal|1.0
+literal|100
 argument_list|)
 expr_stmt|;
 block|}
