@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b217d5a0103
+DECL|enum|__anon2a3a14f20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1396,6 +1396,13 @@ argument_list|(
 name|object
 argument_list|,
 literal|"line-spacing"
+argument_list|)
+expr_stmt|;
+name|gimp_config_reset_property
+argument_list|(
+name|object
+argument_list|,
+literal|"letter-spacing"
 argument_list|)
 expr_stmt|;
 name|gimp_config_reset_property
