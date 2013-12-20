@@ -4779,7 +4779,7 @@ literal|"EXTEND"
 argument_list|,
 name|extend
 argument_list|,
-name|FITS_DATA_TYPE_FLONG
+name|FITS_DATA_TYPE_FBOOL
 argument_list|,
 name|fbool
 argument_list|)
