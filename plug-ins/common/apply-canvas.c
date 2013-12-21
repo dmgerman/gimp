@@ -40891,7 +40891,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab20b740103
+DECL|enum|__anon29a299cd0103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40911,7 +40911,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab20b740208
+DECL|struct|__anon29a299cd0208
 block|{
 DECL|member|direction
 name|gint
@@ -42331,7 +42331,7 @@ literal|1
 expr_stmt|;
 name|offs
 operator|=
-literal|128
+literal|127
 expr_stmt|;
 break|break;
 default|default:
