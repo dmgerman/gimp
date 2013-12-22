@@ -260,7 +260,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b259a20103
+DECL|enum|__anon2b65c7b70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2310,8 +2310,13 @@ operator|&
 name|size
 argument_list|)
 expr_stmt|;
+comment|/* We don't want to clear the GIMP_THUMB_STATE_FAILED state, because    * it is normal to have no filename if thumbnail creation failed. */
 if|if
 condition|(
+name|state
+operator|!=
+name|GIMP_THUMB_STATE_FAILED
+operator|&&
 operator|!
 name|filename
 condition|)
@@ -2329,9 +2334,6 @@ name|GIMP_THUMB_STATE_EXISTS
 case|:
 case|case
 name|GIMP_THUMB_STATE_OLD
-case|:
-case|case
-name|GIMP_THUMB_STATE_FAILED
 case|:
 case|case
 name|GIMP_THUMB_STATE_OK

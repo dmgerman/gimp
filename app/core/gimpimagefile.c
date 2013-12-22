@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b412af0103
+DECL|enum|__anon2c4d4daf0103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -1620,6 +1620,24 @@ argument_list|(
 name|imagefile
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|success
+condition|)
+block|{
+name|g_object_set
+argument_list|(
+name|thumbnail
+argument_list|,
+literal|"thumb-state"
+argument_list|,
+name|GIMP_THUMB_STATE_FAILED
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
 return|return
 name|success
 return|;
@@ -1731,6 +1749,9 @@ operator|&
 name|imagefile
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
 name|gimp_imagefile_create_thumbnail
 argument_list|(
 name|local
@@ -1745,7 +1766,23 @@ name|replace
 argument_list|,
 name|NULL
 argument_list|)
+condition|)
+block|{
+comment|/* The weak version works on a local copy so the thumbnail status        * of the actual image is not properly updated in case of creation        * failure, thus it would end up in a generic GIMP_THUMB_STATE_NOT_FOUND,        * which is less informative. */
+name|g_object_set
+argument_list|(
+name|private
+operator|->
+name|thumbnail
+argument_list|,
+literal|"thumb-state"
+argument_list|,
+name|GIMP_THUMB_STATE_FAILED
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|imagefile
