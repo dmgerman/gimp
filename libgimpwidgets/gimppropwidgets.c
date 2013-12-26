@@ -3663,7 +3663,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_scale_entry_new:  * @config:         Object to which property is attached.  * @property_name:  Name of double property controlled by the spin button.  * @table:          The #GtkTable the widgets will be attached to.  * @column:         The column to start with.  * @row:            The row to attach the widgets.  * @label:          The text for the #GtkLabel which will appear left of  *                  the #GtkHScale.  * @step_increment: Step size.  * @page_increment: Page size.  * @digits:         Number of digits after decimal point to display.  * @limit_scale:    %TRUE if the range of possible values of the  *                  GtkSpinButton should be the same as of the GtkHScale.  * @lower_limit:    The spinbutton's lower boundary if @limit_scale is %FALSE.  * @upper_limit:    The spinbutton's upper boundary if @limit_scale is %FALSE.  *  * Creates a #libgimpwidgets-gimpscaleentry (slider and spin button)  * to set and display the value of the specified double property.  See  * gimp_scale_entry_new() for more information.  *  * Return value: The #GtkSpinButton's #GtkAdjustment.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_scale_entry_new:  * @config:         Object to which property is attached.  * @property_name:  Name of double property controlled by the spin button.  * @table:          The #GtkTable the widgets will be attached to.  * @column:         The column to start with.  * @row:            The row to attach the widgets.  * @label:          The text for the #GtkLabel which will appear left of  *                  the #GtkHScale.  * @step_increment: Step size.  * @page_increment: Page size.  * @digits:         Number of digits after decimal point to display.  * @scale_limits:   %FALSE if the range of possible values of the  *                  GtkHScale should be the same as of the GtkSpinButton.  * @lower_limit:    The scale's lower boundary if @scale_limits is %TRUE.  * @upper_limit:    The scale's upper boundary if @scale_limits is %TRUE.  *  * Creates a #libgimpwidgets-gimpscaleentry (slider and spin button)  * to set and display the value of the specified double property.  See  * gimp_scale_entry_new() for more information.  *  * Note that the @scale_limits boolean is the inverse of  * gimp_scale_entry_new()'s "constrain" parameter.  *  * Return value: The #GtkSpinButton's #GtkAdjustment.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
@@ -4238,7 +4238,7 @@ literal|0.1
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0.0
 argument_list|,
