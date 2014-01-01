@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9b7ace0103
+DECL|enum|__anon2b888dce0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -320,7 +320,7 @@ name|name_blacklist
 index|[]
 init|=
 block|{
-comment|/* these ops are already added to the menus via      * filter-actions ordrawable-actions      */
+comment|/* these ops are already added to the menus via      * filters-actions or drawable-actions      */
 literal|"gegl:alien-map"
 block|,
 literal|"gegl:antialias"
@@ -414,6 +414,8 @@ block|,
 literal|"gegl:stretch-contrast"
 block|,
 literal|"gegl:stretch-contrast-hsv"
+block|,
+literal|"gegl:texturize-canvas"
 block|,
 literal|"gegl:tile-seamless"
 block|,
