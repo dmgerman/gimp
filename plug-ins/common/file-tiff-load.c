@@ -147,7 +147,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4c7fa20108
+DECL|struct|__anon27cdb2830108
 block|{
 DECL|member|compression
 name|gint
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4c7fa20208
+DECL|struct|__anon27cdb2830208
 block|{
 DECL|member|ID
 name|gint32
@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4c7fa20308
+DECL|struct|__anon27cdb2830308
 block|{
 DECL|member|o_pages
 name|gint
@@ -416,8 +416,17 @@ parameter_list|,
 name|va_list
 name|ap
 parameter_list|)
-function_decl|;
+function_decl|G_GNUC_PRINTF
+parameter_list|(
+function_decl|2
+operator|,
+function_decl|0
 end_function_decl
+
+begin_empty_stmt
+unit|)
+empty_stmt|;
+end_empty_stmt
 
 begin_function_decl
 specifier|static
@@ -437,8 +446,17 @@ parameter_list|,
 name|va_list
 name|ap
 parameter_list|)
-function_decl|;
+function_decl|G_GNUC_PRINTF
+parameter_list|(
+function_decl|2
+operator|,
+function_decl|0
 end_function_decl
+
+begin_empty_stmt
+unit|)
+empty_stmt|;
+end_empty_stmt
 
 begin_function_decl
 specifier|static
