@@ -393,7 +393,30 @@ name|sfile
 argument_list|)
 condition|)
 block|{
+name|gchar
+name|format
+index|[
+literal|256
+index|]
+decl_stmt|;
 comment|/* We are in unlikely case where a single config line is                * longer than the buffer!                */
+name|g_snprintf
+argument_list|(
+name|format
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|format
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Error parsing '%%s': line longer than %s characters."
+argument_list|)
+argument_list|,
+name|G_GINT64_FORMAT
+argument_list|)
+expr_stmt|;
 name|g_set_error
 argument_list|(
 name|error
@@ -402,12 +425,7 @@ name|GIMP_CONFIG_ERROR
 argument_list|,
 name|GIMP_CONFIG_ERROR_PARSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Error parsing '%s': line longer than %"
-name|G_GINT64_FORMAT
-literal|" characters."
-argument_list|)
+name|format
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
