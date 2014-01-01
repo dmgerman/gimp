@@ -308,7 +308,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6215b00108
+DECL|struct|__anon2781a49c0108
 block|{
 DECL|member|crop
 name|gboolean
@@ -711,9 +711,9 @@ name|GimpParamRegion
 modifier|*
 name|retrun_rgn
 parameter_list|,
-name|GimpPixelRgn
+name|GeglBuffer
 modifier|*
-name|pr
+name|buffer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -839,7 +839,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b6215b00208
+DECL|struct|__anon2781a49c0208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -876,11 +876,11 @@ comment|/* parasites correspond to XcursorComment type */
 end_comment
 
 begin_decl_stmt
+DECL|variable|parasiteName
 specifier|static
 specifier|const
 name|gchar
 modifier|*
-DECL|variable|parasiteName
 name|parasiteName
 index|[
 literal|3
@@ -1391,14 +1391,12 @@ name|hotspotRange
 init|=
 name|NULL
 decl_stmt|;
-name|gint
-name|i
-decl_stmt|;
 name|gint32
 name|width
 decl_stmt|,
 name|height
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|num_layers
 decl_stmt|;
 name|GError
@@ -1407,8 +1405,18 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
 name|INIT_I18N
 argument_list|()
+expr_stmt|;
+name|gegl_init
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|DM_XMC
 argument_list|(
@@ -1952,7 +1960,6 @@ operator|&
 name|xmcvals
 argument_list|)
 expr_stmt|;
-comment|/* load xmcparas.comments from parasite. */
 name|load_comments
 argument_list|(
 name|image_ID
@@ -2153,7 +2160,6 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-comment|/* load xmcparas.comments from parasites.*/
 name|load_comments
 argument_list|(
 name|image_ID
@@ -2234,7 +2240,7 @@ break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-comment|/*            * Possibly retrieve data...            */
+comment|/* Possibly retrieve data... */
 name|gimp_get_data
 argument_list|(
 name|SAVE_PROC
@@ -2243,13 +2249,11 @@ operator|&
 name|xmcvals
 argument_list|)
 expr_stmt|;
-comment|/* load xmcparas.comments from parasite. */
 name|load_comments
 argument_list|(
 name|image_ID
 argument_list|)
 expr_stmt|;
-comment|/* load hotspot from parasite */
 name|load_default_hotspot
 argument_list|(
 name|image_ID
@@ -2325,13 +2329,11 @@ argument_list|(
 name|image_ID
 argument_list|)
 expr_stmt|;
-comment|/* free hotspotRange */
 name|g_free
 argument_list|(
 name|hotspotRange
 argument_list|)
 expr_stmt|;
-comment|/* free xmcparas.comments */
 for|for
 control|(
 name|i
@@ -2458,40 +2460,20 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|gint
-name|i
-decl_stmt|,
-name|j
-decl_stmt|;
-comment|/* Looping var */
-name|gint
-name|img_width
-decl_stmt|,
-name|img_height
-decl_stmt|;
-comment|/* dimensions of the image */
 name|FILE
 modifier|*
 name|fp
 decl_stmt|;
-comment|/* File pointer */
 name|gint32
 name|image_ID
 decl_stmt|;
-comment|/* Image */
 name|gint32
 name|layer_ID
 decl_stmt|;
-comment|/* Layer */
-name|GimpDrawable
+name|GeglBuffer
 modifier|*
-name|drawable
+name|buffer
 decl_stmt|;
-comment|/* Drawable for layer */
-name|GimpPixelRgn
-name|pixel_rgn
-decl_stmt|;
-comment|/* Pixel region for layer */
 name|XcursorComments
 modifier|*
 name|commentsp
@@ -2505,7 +2487,7 @@ comment|/* pointer to images*/
 name|guint32
 name|delay
 decl_stmt|;
-comment|/* use guint32 instead CARD32(defined in X11/Xmd.h)*/
+comment|/* use guint32 instead CARD32(in X11/Xmd.h) */
 name|gchar
 modifier|*
 name|framename
@@ -2516,7 +2498,18 @@ modifier|*
 name|tmppixel
 decl_stmt|;
 comment|/* pixel data (guchar * bpp = guint32) */
-comment|/*    * Open the file and check it is a valid X cursor    */
+name|gint
+name|img_width
+decl_stmt|;
+name|gint
+name|img_height
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|,
+name|j
+decl_stmt|;
+comment|/* Open the file and check it is a valid X cursor */
 name|fp
 operator|=
 name|g_fopen
@@ -2617,7 +2610,7 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*   ** check dimension is valid.   */
+comment|/* check dimension is valid. */
 for|for
 control|(
 name|i
@@ -2757,7 +2750,6 @@ argument_list|,
 name|img_height
 argument_list|)
 expr_stmt|;
-comment|/* create new image! */
 name|image_ID
 operator|=
 name|gimp_image_new
@@ -2769,7 +2761,6 @@ argument_list|,
 name|GIMP_RGB
 argument_list|)
 expr_stmt|;
-comment|/* set filename */
 name|gimp_image_set_filename
 argument_list|(
 name|image_ID
@@ -2818,6 +2809,30 @@ name|i
 operator|++
 control|)
 block|{
+name|gint
+name|width
+init|=
+name|imagesp
+operator|->
+name|images
+index|[
+name|i
+index|]
+operator|->
+name|width
+decl_stmt|;
+name|gint
+name|height
+init|=
+name|imagesp
+operator|->
+name|images
+index|[
+name|i
+index|]
+operator|->
+name|height
+decl_stmt|;
 name|delay
 operator|=
 name|imagesp
@@ -2910,22 +2925,8 @@ name|image_ID
 argument_list|,
 name|framename
 argument_list|,
-name|imagesp
-operator|->
-name|images
-index|[
-name|i
-index|]
-operator|->
 name|width
 argument_list|,
-name|imagesp
-operator|->
-name|images
-index|[
-name|i
-index|]
-operator|->
 name|height
 argument_list|,
 name|GIMP_RGBA_IMAGE
@@ -2984,36 +2985,12 @@ argument_list|(
 name|framename
 argument_list|)
 expr_stmt|;
-comment|/*        * Get the drawable and set the pixel region for our load...        */
-name|drawable
+comment|/* Get the buffer for our load... */
+name|buffer
 operator|=
-name|gimp_drawable_get
+name|gimp_drawable_get_buffer
 argument_list|(
 name|layer_ID
-argument_list|)
-expr_stmt|;
-name|gimp_pixel_rgn_init
-argument_list|(
-operator|&
-name|pixel_rgn
-argument_list|,
-name|drawable
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|drawable
-operator|->
-name|width
-argument_list|,
-name|drawable
-operator|->
-name|height
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* set color to each pixel */
@@ -3025,12 +3002,8 @@ literal|0
 init|;
 name|j
 operator|<
-name|drawable
-operator|->
 name|width
 operator|*
-name|drawable
-operator|->
 name|height
 condition|;
 name|j
@@ -3059,28 +3032,28 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* set pixel */
-name|gimp_pixel_rgn_set_rect
+name|gegl_buffer_set
 argument_list|(
-operator|&
-name|pixel_rgn
+name|buffer
 argument_list|,
-operator|(
-name|guchar
-operator|*
-operator|)
-name|tmppixel
-argument_list|,
+name|GEGL_RECTANGLE
+argument_list|(
 literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|drawable
-operator|->
 name|width
 argument_list|,
-name|drawable
-operator|->
 name|height
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|NULL
+argument_list|,
+name|tmppixel
+argument_list|,
+name|GEGL_AUTO_ROWSTRIDE
 argument_list|)
 expr_stmt|;
 name|gimp_progress_update
@@ -3096,29 +3069,23 @@ operator|->
 name|nimage
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_flush
+name|g_object_unref
 argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
-name|gimp_drawable_detach
-argument_list|(
-name|drawable
+name|buffer
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_progress_update
-argument_list|(
-literal|1.0
-argument_list|)
-expr_stmt|;
-comment|/* free temporary buffer */
 name|g_free
 argument_list|(
 name|tmppixel
 argument_list|)
 expr_stmt|;
-comment|/*    * Comment parsing    */
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
+comment|/* Comment parsing */
 if|if
 condition|(
 name|commentsp
@@ -3274,24 +3241,7 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-comment|/* Return only one frame for thumbnail.    * We select first frame of an animation sequence which nominal size is the    * closest of thumb_size. */
-name|gint
-name|i
-decl_stmt|;
-comment|/* Looping var */
-name|guint32
-name|ntoc
-init|=
-literal|0
-decl_stmt|;
-comment|/* the number of table of contents */
-name|gint
-name|sel_num
-init|=
-operator|-
-literal|1
-decl_stmt|;
-comment|/* the index of selected image chunk */
+comment|/* Return only one frame for thumbnail.    * We select first frame of an animation sequence which nominal size is the    * closest of thumb_size.    */
 name|XcursorImages
 modifier|*
 name|xcIs
@@ -3333,32 +3283,46 @@ name|fp
 init|=
 name|NULL
 decl_stmt|;
-comment|/* File pointer */
 name|gint32
 name|image_ID
 init|=
 operator|-
 literal|1
 decl_stmt|;
-comment|/* Image */
 name|gint32
 name|layer_ID
 decl_stmt|;
-comment|/* Layer */
-name|GimpDrawable
+name|GeglBuffer
 modifier|*
-name|drawable
+name|buffer
 decl_stmt|;
-comment|/* Drawable for layer */
-name|GimpPixelRgn
-name|pixel_rgn
-decl_stmt|;
-comment|/* Pixel region for layer */
 name|guint32
 modifier|*
 name|tmppixel
 decl_stmt|;
 comment|/* pixel data (guchar * bpp = guint32) */
+name|guint32
+name|ntoc
+init|=
+literal|0
+decl_stmt|;
+comment|/* the number of table of contents */
+name|gint
+name|sel_num
+init|=
+operator|-
+literal|1
+decl_stmt|;
+comment|/* the index of selected image chunk */
+name|gint
+name|width
+decl_stmt|;
+name|gint
+name|height
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|thumb_width
@@ -3446,8 +3410,8 @@ operator|-
 literal|1
 return|;
 block|}
-comment|/*    * From this line, we make a XcursorImages struct so that we can find out the    * width and height of entire image.    * We can use XcursorFileLoadImages (fp, thumb_size) from libXcursor instead    * of this ugly code but XcursorFileLoadImages loads all pixel data of the    * image chunks on memory thus we should not use it.    */
-comment|/*    * find which image chunk is preferred to load.    */
+comment|/* From this line, we make a XcursorImages struct so that we can find out the    * width and height of entire image.    * We can use XcursorFileLoadImages (fp, thumb_size) from libXcursor instead    * of this ugly code but XcursorFileLoadImages loads all pixel data of the    * image chunks on memory thus we should not use it.    */
+comment|/* find which image chunk is preferred to load. */
 comment|/* skip magic, headersize, version */
 name|fseek
 argument_list|(
@@ -3605,7 +3569,7 @@ operator|-
 literal|1
 return|;
 block|}
-comment|/*    * get width and height of entire image    */
+comment|/* get width and height of entire image */
 comment|/* Let's make XcursorImages */
 name|xcIs
 operator|=
@@ -3829,11 +3793,9 @@ operator|-
 literal|1
 return|;
 block|}
-comment|/*    *  create new image!    */
-name|image_ID
+comment|/*  create new image! */
+name|width
 operator|=
-name|gimp_image_new
-argument_list|(
 name|xcIs
 operator|->
 name|images
@@ -3842,7 +3804,9 @@ name|sel_num
 index|]
 operator|->
 name|width
-argument_list|,
+expr_stmt|;
+name|height
+operator|=
 name|xcIs
 operator|->
 name|images
@@ -3850,6 +3814,14 @@ index|[
 name|sel_num
 index|]
 operator|->
+name|height
+expr_stmt|;
+name|image_ID
+operator|=
+name|gimp_image_new
+argument_list|(
+name|width
+argument_list|,
 name|height
 argument_list|,
 name|GIMP_RGB
@@ -3863,22 +3835,8 @@ name|image_ID
 argument_list|,
 name|NULL
 argument_list|,
-name|xcIs
-operator|->
-name|images
-index|[
-name|sel_num
-index|]
-operator|->
 name|width
 argument_list|,
-name|xcIs
-operator|->
-name|images
-index|[
-name|sel_num
-index|]
-operator|->
 name|height
 argument_list|,
 name|GIMP_RGBA_IMAGE
@@ -3901,45 +3859,11 @@ literal|0
 argument_list|)
 expr_stmt|;
 comment|/*    * Get the drawable and set the pixel region for our load...    */
-name|drawable
+name|buffer
 operator|=
-name|gimp_drawable_get
+name|gimp_drawable_get_buffer
 argument_list|(
 name|layer_ID
-argument_list|)
-expr_stmt|;
-name|gimp_pixel_rgn_init
-argument_list|(
-operator|&
-name|pixel_rgn
-argument_list|,
-name|drawable
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|xcIs
-operator|->
-name|images
-index|[
-name|sel_num
-index|]
-operator|->
-name|width
-argument_list|,
-name|xcIs
-operator|->
-name|images
-index|[
-name|sel_num
-index|]
-operator|->
-name|height
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* Temporary buffer */
@@ -3949,22 +3873,8 @@ name|g_new
 argument_list|(
 name|guint32
 argument_list|,
-name|xcIs
-operator|->
-name|images
-index|[
-name|sel_num
-index|]
-operator|->
 name|width
 operator|*
-name|xcIs
-operator|->
-name|images
-index|[
-name|sel_num
-index|]
-operator|->
 name|height
 argument_list|)
 expr_stmt|;
@@ -3999,22 +3909,8 @@ literal|0
 init|;
 name|i
 operator|<
-name|xcIs
-operator|->
-name|images
-index|[
-name|sel_num
-index|]
-operator|->
 name|width
 operator|*
-name|xcIs
-operator|->
-name|images
-index|[
-name|sel_num
-index|]
-operator|->
 name|height
 condition|;
 name|i
@@ -4048,28 +3944,28 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* set pixel */
-name|gimp_pixel_rgn_set_rect
+name|gegl_buffer_set
 argument_list|(
-operator|&
-name|pixel_rgn
+name|buffer
 argument_list|,
-operator|(
-name|guchar
-operator|*
-operator|)
-name|tmppixel
-argument_list|,
+name|GEGL_RECTANGLE
+argument_list|(
 literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|drawable
-operator|->
 name|width
 argument_list|,
-name|drawable
-operator|->
 name|height
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|NULL
+argument_list|,
+name|tmppixel
+argument_list|,
+name|GEGL_AUTO_ROWSTRIDE
 argument_list|)
 expr_stmt|;
 comment|/* free tmppixel */
@@ -4088,14 +3984,9 @@ argument_list|(
 name|fp
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_flush
+name|g_object_unref
 argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
-name|gimp_drawable_detach
-argument_list|(
-name|drawable
+name|buffer
 argument_list|)
 expr_stmt|;
 return|return
@@ -4298,7 +4189,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * 'save_dialog ()'  */
+comment|/* 'save_dialog ()'  */
 end_comment
 
 begin_function
@@ -5888,20 +5779,14 @@ argument_list|,
 name|GTK_WRAP_WORD
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_container_add
 argument_list|(
-name|GTK_BOX
+name|GTK_CONTAINER
 argument_list|(
 name|box
 argument_list|)
 argument_list|,
 name|tmpwidget
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -6267,12 +6152,6 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|gint
-name|i
-decl_stmt|,
-name|j
-decl_stmt|;
-comment|/* Looping vars */
 name|FILE
 modifier|*
 name|fp
@@ -6283,27 +6162,18 @@ name|dimension_warn
 init|=
 name|FALSE
 decl_stmt|;
-comment|/* become TRUE if even one of the   dimensions of the frames of the cursor is over MAX_BITMAP_CURSOR_SIZE */
+comment|/* become TRUE if even one                                             * of the dimensions of the                                             * frames of the cursor is                                             * over                                             * MAX_BITMAP_CURSOR_SIZE */
 name|gboolean
 name|size_warn
 init|=
 name|FALSE
 decl_stmt|;
-comment|/* become TRUE if even one of the nominal   size of the frames is not supported by gnome-appearance-properties */
+comment|/* become TRUE if even one                                             * of the nominal size of                                             * the frames is not                                             * supported by                                             * gnome-appearance-properties */
 name|GRegex
 modifier|*
 name|re
 decl_stmt|;
-comment|/* used to get size and delay from framename */
-name|GimpDrawable
-modifier|*
-name|drawable
-decl_stmt|;
-comment|/* Drawable for layer */
-name|GimpPixelRgn
-name|pixel_rgn
-decl_stmt|;
-comment|/* Pixel region for layer */
+comment|/* used to get size and delay from                                             * framename */
 name|XcursorComments
 modifier|*
 name|commentsp
@@ -6352,7 +6222,13 @@ name|MAX_SAVE_DIMENSION
 argument_list|)
 index|]
 decl_stmt|;
-comment|/* This will be used in set_size_and_delay function later.      To define this in that function is easy to read but place here to      reduce overheads. */
+name|gint
+name|i
+decl_stmt|,
+name|j
+decl_stmt|;
+comment|/* Looping vars */
+comment|/* This will be used in set_size_and_delay function later.  To    * define this in that function is easy to read but place here to    * reduce overheads.    */
 name|re
 operator|=
 name|g_regex_new
@@ -6500,9 +6376,24 @@ name|i
 operator|++
 control|)
 block|{
-name|drawable
+name|GeglBuffer
+modifier|*
+name|buffer
+decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|format
+decl_stmt|;
+name|gint
+name|width
+decl_stmt|;
+name|gint
+name|height
+decl_stmt|;
+name|buffer
 operator|=
-name|gimp_drawable_get
+name|gimp_drawable_get_buffer
 argument_list|(
 name|layers
 index|[
@@ -6514,34 +6405,27 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-comment|/* this plugin only treat 8bit color depth RGBA image. */
-if|if
-condition|(
-name|drawable
-operator|->
-name|bpp
-operator|!=
-literal|4
-condition|)
-block|{
-name|g_set_error
+name|width
+operator|=
+name|gegl_buffer_get_width
 argument_list|(
-name|error
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|_
-argument_list|(
-literal|"This plug-in can only handle RGBA image files with 8bit color depth."
-argument_list|)
+name|buffer
 argument_list|)
 expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
+name|height
+operator|=
+name|gegl_buffer_get_height
+argument_list|(
+name|buffer
+argument_list|)
+expr_stmt|;
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
+expr_stmt|;
 comment|/* get framename of this layer */
 name|framename
 operator|=
@@ -6582,11 +6466,9 @@ argument_list|(
 literal|"layer size check.\n"
 argument_list|)
 expr_stmt|;
-comment|/* We allow to save a cursor which dimensions are no more than        * MAX_SAVE_DIMENSION but after auto-cropping, we warn (only warn, don't        * stop) if dimension is over MAX_BITMAP_CURSOR_SIZE. */
+comment|/* We allow to save a cursor which dimensions are no more than        * MAX_SAVE_DIMENSION but after auto-cropping, we warn (only        * warn, don't stop) if dimension is over        * MAX_BITMAP_CURSOR_SIZE.        */
 if|if
 condition|(
-name|drawable
-operator|->
 name|width
 operator|>
 name|MAX_SAVE_DIMENSION
@@ -6624,8 +6506,6 @@ return|;
 block|}
 if|if
 condition|(
-name|drawable
-operator|->
 name|height
 operator|>
 name|MAX_SAVE_DIMENSION
@@ -6663,14 +6543,10 @@ return|;
 block|}
 if|if
 condition|(
-name|drawable
-operator|->
 name|height
 operator|==
 literal|0
 operator|||
-name|drawable
-operator|->
 name|width
 operator|==
 literal|0
@@ -6704,30 +6580,6 @@ return|return
 name|FALSE
 return|;
 block|}
-name|gimp_pixel_rgn_init
-argument_list|(
-operator|&
-name|pixel_rgn
-argument_list|,
-name|drawable
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|drawable
-operator|->
-name|width
-argument_list|,
-name|drawable
-operator|->
-name|height
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|xmcvals
@@ -6747,11 +6599,10 @@ argument_list|(
 operator|&
 name|save_rgn
 argument_list|,
-operator|&
-name|pixel_rgn
+name|buffer
 argument_list|)
 expr_stmt|;
-comment|/* don't forget save_rgn's origin is not a entire image               but a layer which we are doing on.*/
+comment|/* don't forget save_rgn's origin is not a entire image            * but a layer which we are doing on.           */
 if|if
 condition|(
 name|save_rgn
@@ -6944,16 +6795,12 @@ name|save_rgn
 operator|.
 name|width
 operator|=
-name|drawable
-operator|->
 name|width
 expr_stmt|;
 name|save_rgn
 operator|.
 name|height
 operator|=
-name|drawable
-operator|->
 name|height
 expr_stmt|;
 name|save_rgn
@@ -7149,17 +6996,12 @@ argument_list|)
 expr_stmt|;
 comment|/*        * set images[i]->pixels        */
 comment|/* get image data to pixelbuf. */
-name|gimp_pixel_rgn_get_rect
+name|gegl_buffer_get
 argument_list|(
-operator|&
-name|pixel_rgn
+name|buffer
 argument_list|,
-operator|(
-name|guchar
-operator|*
-operator|)
-name|pixelbuf
-argument_list|,
+name|GEGL_RECTANGLE
+argument_list|(
 name|save_rgn
 operator|.
 name|x
@@ -7175,6 +7017,17 @@ argument_list|,
 name|save_rgn
 operator|.
 name|height
+argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+name|format
+argument_list|,
+name|pixelbuf
+argument_list|,
+name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 comment|/*convert pixel date to XcursorPixel. */
@@ -7334,6 +7187,11 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|framename
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|buffer
 argument_list|)
 expr_stmt|;
 name|gimp_progress_update
@@ -8039,11 +7897,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* set comments to cursor from xmcparas.comments. */
-end_comment
-
-begin_comment
-comment|/* don't forget to XcursorCommentsDestroy returned pointer later. */
+comment|/* set comments to cursor from xmcparas.comments.  * don't forget to XcursorCommentsDestroy returned pointer later.  */
 end_comment
 
 begin_function
@@ -8294,7 +8148,7 @@ end_return
 
 begin_comment
 unit|}
-comment|/*  * Load xmcparas.comments from three parasites named as "xmc-copyright",  * "xmc-license","gimp-comment".  * This alignment sequence is depends on the definition of comment_type  * in Xcursor.h .  * Don't forget to g_free each element of xmcparas.comments later.  */
+comment|/* Load xmcparas.comments from three parasites named as "xmc-copyright",  * "xmc-license","gimp-comment".  * This alignment sequence is depends on the definition of comment_type  * in Xcursor.h .  * Don't forget to g_free each element of xmcparas.comments later.  */
 end_comment
 
 begin_function
@@ -8353,7 +8207,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * Set content to a parasite named as pname. if parasite  * is already exist, append the new one to the old one with "\n" **/
+comment|/* Set content to a parasite named as pname. if parasite already  * exists, append the new one to the old one with "\n"  */
 end_comment
 
 begin_function
@@ -8535,7 +8389,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * get back comment from parasite name  * don't forget to call g_free(returned pointer) later **/
+comment|/* get back comment from parasite name, don't forget to call  * g_free(returned pointer) later  */
 end_comment
 
 begin_function
@@ -8655,7 +8509,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * Set hotspot to "hot-spot" parasite which format is common with that  * of file-xbm.  **/
+comment|/* Set hotspot to "hot-spot" parasite which format is common with that  * of file-xbm.  */
 end_comment
 
 begin_function
@@ -8756,7 +8610,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * Get back xhot& yhot from "hot-spot" parasite.  * If succeed, hotspot coordinate is set to xmcparas.x, xmcparas.y and  * return TRUE.  * If "hot-spot" is not found or broken, return FALSE. **/
+comment|/* Get back xhot& yhot from "hot-spot" parasite.  * If succeed, hotspot coordinate is set to xmcparas.x, xmcparas.y and  * return TRUE.  * If "hot-spot" is not found or broken, return FALSE.  */
 end_comment
 
 begin_function
@@ -8772,8 +8626,6 @@ block|{
 name|GimpParasite
 modifier|*
 name|parasite
-init|=
-name|NULL
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -8848,7 +8700,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * Set size to sizep, delay to delayp from drawable's framename. **/
+comment|/* Set size to sizep, delay to delayp from drawable's framename.  */
 end_comment
 
 begin_function
@@ -9195,7 +9047,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * Return framename as format: "([x]px)_[i] ([t]ms) (replace)"  * where [x] is nominal size, [t] is delay passed as argument respectively,  * and [i] is an index separately counted by [x].  * This format is compatible with "animation-play" plug-in.  * Don't forget to g_free returned framename later.  **/
+comment|/* Return framename as format: "([x]px)_[i] ([t]ms) (replace)"  * where [x] is nominal size, [t] is delay passed as argument respectively,  * and [i] is an index separately counted by [x].  * This format is compatible with "animation-play" plug-in.  * Don't forget to g_free returned framename later.  */
 end_comment
 
 begin_function
@@ -9222,7 +9074,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2b6215b00308
+DECL|struct|__anon2781a49c0308
 block|{
 DECL|member|size
 name|guint32
@@ -9370,28 +9222,39 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * Get the region which is maintained when auto-crop.  **/
+comment|/* Get the region which is maintained when auto-crop.  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|get_cropped_region (GimpParamRegion * return_rgn,GimpPixelRgn * pr)
+DECL|function|get_cropped_region (GimpParamRegion * return_rgn,GeglBuffer * buffer)
 name|get_cropped_region
 parameter_list|(
 name|GimpParamRegion
 modifier|*
 name|return_rgn
 parameter_list|,
-name|GimpPixelRgn
+name|GeglBuffer
 modifier|*
-name|pr
+name|buffer
 parameter_list|)
 block|{
-name|guint
-name|i
-decl_stmt|,
-name|j
+name|gint
+name|width
+init|=
+name|gegl_buffer_get_width
+argument_list|(
+name|buffer
+argument_list|)
+decl_stmt|;
+name|gint
+name|height
+init|=
+name|gegl_buffer_get_height
+argument_list|(
+name|buffer
+argument_list|)
 decl_stmt|;
 name|guint32
 modifier|*
@@ -9401,13 +9264,9 @@ name|g_malloc
 argument_list|(
 name|MAX
 argument_list|(
-name|pr
-operator|->
-name|w
+name|width
 argument_list|,
-name|pr
-operator|->
-name|h
+name|height
 argument_list|)
 operator|*
 sizeof|sizeof
@@ -9416,36 +9275,32 @@ name|guint32
 argument_list|)
 argument_list|)
 decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|format
+init|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
+decl_stmt|;
+name|guint
+name|i
+decl_stmt|,
+name|j
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|pr
+name|GEGL_IS_BUFFER
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|DM_XMC
 argument_list|(
 literal|"function:get_cropped_region\n"
-argument_list|)
-expr_stmt|;
-name|gimp_tile_cache_ntiles
-argument_list|(
-name|MAX
-argument_list|(
-name|pr
-operator|->
-name|w
-operator|/
-name|gimp_tile_width
-argument_list|()
-argument_list|,
-name|pr
-operator|->
-name|h
-operator|/
-name|gimp_tile_height
-argument_list|()
-argument_list|)
-operator|+
-literal|1
 argument_list|)
 expr_stmt|;
 name|DM_XMC
@@ -9477,9 +9332,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|pr
-operator|->
-name|w
+name|width
 condition|;
 operator|++
 name|i
@@ -9487,42 +9340,37 @@ control|)
 block|{
 name|DM_XMC
 argument_list|(
-literal|"pr->x+i=%i\tpr->w=%i\n"
+literal|"i=%i  width=%i\n"
 argument_list|,
-name|pr
-operator|->
-name|x
-operator|+
 name|i
 argument_list|,
-name|pr
-operator|->
-name|w
+name|width
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_rgn_get_col
+name|gegl_buffer_get
 argument_list|(
-name|pr
+name|buffer
 argument_list|,
-operator|(
-name|guchar
-operator|*
-operator|)
-name|buf
-argument_list|,
-name|pr
-operator|->
-name|x
-operator|+
+name|GEGL_RECTANGLE
+argument_list|(
 name|i
 argument_list|,
-name|pr
-operator|->
-name|y
+literal|0
 argument_list|,
-name|pr
-operator|->
-name|h
+literal|1
+argument_list|,
+name|height
+argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+name|format
+argument_list|,
+name|buf
+argument_list|,
+name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 for|for
@@ -9533,9 +9381,7 @@ literal|0
 init|;
 name|j
 operator|<
-name|pr
-operator|->
-name|h
+name|height
 condition|;
 operator|++
 name|j
@@ -9557,10 +9403,6 @@ name|return_rgn
 operator|->
 name|x
 operator|=
-name|pr
-operator|->
-name|x
-operator|+
 name|i
 expr_stmt|;
 goto|goto
@@ -9588,9 +9430,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|pr
-operator|->
-name|w
+name|width
 condition|;
 operator|++
 name|i
@@ -9598,58 +9438,45 @@ control|)
 block|{
 name|DM_XMC
 argument_list|(
-literal|"pr->x+pr->w-1=%i\tpr->y+j=%i\tpr->h=%i\n"
+literal|"width-1-i=%i  height=%i\n"
 argument_list|,
-name|pr
-operator|->
-name|x
-operator|+
-name|pr
-operator|->
-name|w
+name|width
 operator|-
 literal|1
 operator|-
 name|i
 argument_list|,
-name|pr
-operator|->
-name|y
-argument_list|,
-name|pr
-operator|->
-name|h
+name|height
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_rgn_get_col
+name|gegl_buffer_get
 argument_list|(
-name|pr
+name|buffer
 argument_list|,
-operator|(
-name|guchar
-operator|*
-operator|)
-name|buf
-argument_list|,
-name|pr
-operator|->
-name|x
-operator|+
-name|pr
-operator|->
-name|w
+name|GEGL_RECTANGLE
+argument_list|(
+name|width
 operator|-
 literal|1
 operator|-
 name|i
 argument_list|,
-name|pr
-operator|->
-name|y
+literal|0
 argument_list|,
-name|pr
-operator|->
-name|h
+literal|1
+argument_list|,
+name|height
+argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+name|format
+argument_list|,
+name|buf
+argument_list|,
+name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 for|for
@@ -9660,9 +9487,7 @@ literal|0
 init|;
 name|j
 operator|<
-name|pr
-operator|->
-name|h
+name|height
 condition|;
 operator|++
 name|j
@@ -9684,13 +9509,7 @@ name|return_rgn
 operator|->
 name|width
 operator|=
-name|pr
-operator|->
-name|x
-operator|+
-name|pr
-operator|->
-name|w
+name|width
 operator|-
 name|i
 operator|-
@@ -9718,9 +9537,7 @@ literal|0
 init|;
 name|j
 operator|<
-name|pr
-operator|->
-name|h
+name|height
 condition|;
 operator|++
 name|j
@@ -9728,46 +9545,37 @@ control|)
 block|{
 name|DM_XMC
 argument_list|(
-literal|"pr->x=%i\tpr->y+j=%i\tpr->w=%i\n"
+literal|"j=%i  width=%i\n"
 argument_list|,
-name|pr
-operator|->
-name|x
-argument_list|,
-name|pr
-operator|->
-name|y
-operator|+
 name|j
 argument_list|,
-name|pr
-operator|->
-name|w
+name|width
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_rgn_get_row
+name|gegl_buffer_get
 argument_list|(
-name|pr
+name|buffer
 argument_list|,
-operator|(
-name|guchar
-operator|*
-operator|)
-name|buf
+name|GEGL_RECTANGLE
+argument_list|(
+literal|0
 argument_list|,
-name|pr
-operator|->
-name|x
-argument_list|,
-name|pr
-operator|->
-name|y
-operator|+
 name|j
 argument_list|,
-name|pr
-operator|->
-name|w
+name|width
+argument_list|,
+literal|1
+argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+name|format
+argument_list|,
+name|buf
+argument_list|,
+name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 for|for
@@ -9778,9 +9586,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|pr
-operator|->
-name|w
+name|width
 condition|;
 operator|++
 name|i
@@ -9802,10 +9608,6 @@ name|return_rgn
 operator|->
 name|y
 operator|=
-name|pr
-operator|->
-name|y
-operator|+
 name|j
 expr_stmt|;
 goto|goto
@@ -9828,9 +9630,7 @@ literal|0
 init|;
 name|j
 operator|<
-name|pr
-operator|->
-name|h
+name|height
 condition|;
 operator|++
 name|j
@@ -9838,58 +9638,45 @@ control|)
 block|{
 name|DM_XMC
 argument_list|(
-literal|"pr->x=%i\tpr->y+pr->h-1-j=%i\tpr->w=%i\n"
+literal|"height-1-j=%i  width=%i\n"
 argument_list|,
-name|pr
-operator|->
-name|x
-argument_list|,
-name|pr
-operator|->
-name|y
-operator|+
-name|pr
-operator|->
-name|h
+name|height
 operator|-
 literal|1
 operator|-
 name|j
 argument_list|,
-name|pr
-operator|->
-name|w
+name|width
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_rgn_get_row
+name|gegl_buffer_get
 argument_list|(
-name|pr
+name|buffer
 argument_list|,
-operator|(
-name|guchar
-operator|*
-operator|)
-name|buf
+name|GEGL_RECTANGLE
+argument_list|(
+literal|0
 argument_list|,
-name|pr
-operator|->
-name|x
-argument_list|,
-name|pr
-operator|->
-name|y
-operator|+
-name|pr
-operator|->
-name|h
+name|height
 operator|-
 literal|1
 operator|-
 name|j
 argument_list|,
-name|pr
-operator|->
-name|w
+name|width
+argument_list|,
+literal|1
+argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+name|format
+argument_list|,
+name|buf
+argument_list|,
+name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 for|for
@@ -9900,9 +9687,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|pr
-operator|->
-name|w
+name|width
 condition|;
 operator|++
 name|i
@@ -9924,13 +9709,7 @@ name|return_rgn
 operator|->
 name|height
 operator|=
-name|pr
-operator|->
-name|y
-operator|+
-name|pr
-operator|->
-name|h
+name|height
 operator|-
 name|j
 operator|-
@@ -9979,7 +9758,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * Return true if alpha of pix is not 0.  **/
+comment|/* Return true if alpha of pix is not 0.  */
 end_comment
 
 begin_function
@@ -10022,7 +9801,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * Get the intersection of the all layers of the image specified by image_ID.  * if the intersection is empty return NULL.  * don't forget to g_free returned pointer later. **/
+comment|/* Get the intersection of the all layers of the image specified by image_ID.  * if the intersection is empty return NULL.  * don't forget to g_free returned pointer later.  */
 end_comment
 
 begin_function
@@ -10073,10 +9852,6 @@ name|gint
 modifier|*
 name|layers
 decl_stmt|;
-name|GimpDrawable
-modifier|*
-name|drawable
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|image_ID
@@ -10111,16 +9886,6 @@ operator|++
 name|i
 control|)
 block|{
-name|drawable
-operator|=
-name|gimp_drawable_get
-argument_list|(
-name|layers
-index|[
-name|i
-index|]
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -10167,9 +9932,13 @@ name|x2
 argument_list|,
 name|x_off
 operator|+
-name|drawable
-operator|->
-name|width
+name|gimp_drawable_width
+argument_list|(
+name|layers
+index|[
+name|i
+index|]
+argument_list|)
 operator|-
 literal|1
 argument_list|)
@@ -10182,9 +9951,13 @@ name|y2
 argument_list|,
 name|y_off
 operator|+
-name|drawable
-operator|->
-name|height
+name|gimp_drawable_height
+argument_list|(
+name|layers
+index|[
+name|i
+index|]
+argument_list|)
 operator|-
 literal|1
 argument_list|)
@@ -10252,7 +10025,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * If (x,y) is in xmcrp, return TRUE.  **/
+comment|/* If (x,y) is in xmcrp, return TRUE.  */
 end_comment
 
 begin_function
@@ -10354,10 +10127,6 @@ modifier|*
 name|heightp
 parameter_list|)
 block|{
-name|gint
-name|i
-decl_stmt|;
-comment|/* loop value */
 name|gint32
 name|dw
 decl_stmt|,
@@ -10366,10 +10135,14 @@ decl_stmt|;
 comment|/* the distance between hotspot and right(bottom) border */
 name|gint32
 name|max_xhot
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|max_yhot
 decl_stmt|;
 comment|/* the maximum value of xhot(yhot) */
+name|gint
+name|i
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|xcIs
