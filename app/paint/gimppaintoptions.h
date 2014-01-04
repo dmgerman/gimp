@@ -426,6 +426,21 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_paint_options_set_default_brush_size
+parameter_list|(
+name|GimpPaintOptions
+modifier|*
+name|paint_options
+parameter_list|,
+name|GimpBrush
+modifier|*
+name|brush
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_paint_options_copy_brush_props
 parameter_list|(
 name|GimpPaintOptions
