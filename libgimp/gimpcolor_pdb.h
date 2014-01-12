@@ -47,23 +47,34 @@ directive|define
 name|__GIMP_COLOR_PDB_H__
 end_define
 
-begin_function_decl
+begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+name|gimp_drawable_brightness_contrast
+argument_list|)
 name|gboolean
 name|gimp_brightness_contrast
-parameter_list|(
+argument_list|(
 name|gint32
 name|drawable_ID
-parameter_list|,
+argument_list|,
 name|gint
 name|brightness
-parameter_list|,
+argument_list|,
 name|gint
 name|contrast
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+decl_stmt|;
+end_decl_stmt
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_levels
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -96,7 +107,7 @@ end_function_decl
 begin_macro
 name|GIMP_DEPRECATED_FOR
 argument_list|(
-argument|gimp_levels_stretch
+argument|gimp_drawable_levels_stretch
 argument_list|)
 end_macro
 
@@ -110,6 +121,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_levels_stretch
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_levels_stretch
@@ -119,6 +137,13 @@ name|drawable_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_posterize
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -133,6 +158,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_desaturate
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_desaturate
@@ -142,6 +174,13 @@ name|drawable_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_desaturate
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -155,6 +194,13 @@ name|desaturate_mode
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_equalize
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -246,6 +292,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_colorize_hsl
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_colorize
@@ -308,6 +361,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_hue_saturation
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_hue_saturation
@@ -326,31 +386,6 @@ name|lightness
 parameter_list|,
 name|gdouble
 name|saturation
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_hue_saturation_overlap
-parameter_list|(
-name|gint32
-name|drawable_ID
-parameter_list|,
-name|GimpHueRange
-name|hue_range
-parameter_list|,
-name|gdouble
-name|hue_offset
-parameter_list|,
-name|gdouble
-name|lightness
-parameter_list|,
-name|gdouble
-name|saturation
-parameter_list|,
-name|gdouble
-name|overlap
 parameter_list|)
 function_decl|;
 end_function_decl

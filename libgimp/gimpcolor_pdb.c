@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpcolor  * @title: gimpcolor  * @short_description: Fu
 end_comment
 
 begin_comment
-comment|/**  * gimp_brightness_contrast:  * @drawable_ID: The drawable.  * @brightness: Brightness adjustment.  * @contrast: Contrast adjustment.  *  * Modify brightness/contrast in the specified drawable.  *  * This procedures allows the brightness and contrast of the specified  * drawable to be modified. Both 'brightness' and 'contrast' parameters  * are defined between -127 and 127.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_brightness_contrast:  * @drawable_ID: The drawable.  * @brightness: Brightness adjustment.  * @contrast: Contrast adjustment.  *  * Deprecated: Use gimp_drawable_brightness_contrast() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -105,7 +105,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_levels:  * @drawable_ID: The drawable.  * @channel: The channel to modify.  * @low_input: Intensity of lowest input.  * @high_input: Intensity of highest input.  * @gamma: Gamma correction factor.  * @low_output: Intensity of lowest output.  * @high_output: Intensity of highest output.  *  * Modifies intensity levels in the specified drawable.  *  * This tool allows intensity levels in the specified drawable to be  * remapped according to a set of parameters. The low/high input levels  * specify an initial mapping from the source intensities. The gamma  * value determines how intensities between the low and high input  * intensities are interpolated. A gamma value of 1.0 results in a  * linear interpolation. Higher gamma values result in more high-level  * intensities. Lower gamma values result in more low-level  * intensities. The low/high output levels constrain the final  * intensity mapping--that is, no final intensity will be lower than  * the low output level and no final intensity will be higher than the  * high output level. This tool is only valid on RGB color and  * grayscale images.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_levels:  * @drawable_ID: The drawable.  * @channel: The channel to modify.  * @low_input: Intensity of lowest input.  * @high_input: Intensity of highest input.  * @gamma: Gamma correction factor.  * @low_output: Intensity of lowest output.  * @high_output: Intensity of highest output.  *  * Deprecated: Use gimp_drawable_levels() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -214,7 +214,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_levels_auto:  * @drawable_ID: The drawable.  *  * Deprecated: Use gimp_levels_stretch() instead.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_levels_auto:  * @drawable_ID: The drawable.  *  * Deprecated: Use gimp_drawable_levels_stretch() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -281,7 +281,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_levels_stretch:  * @drawable_ID: The drawable.  *  * Automatically modifies intensity levels in the specified drawable.  *  * This procedure allows intensity levels in the specified drawable to  * be remapped according to a set of guessed parameters. It is  * equivalent to clicking the \"Auto\" button in the Levels tool.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_levels_stretch:  * @drawable_ID: The drawable.  *  * Deprecated: Use gimp_drawable_levels_stretch() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -348,7 +348,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_posterize:  * @drawable_ID: The drawable.  * @levels: Levels of posterization.  *  * Posterize the specified drawable.  *  * This procedures reduces the number of shades allows in each  * intensity channel to the specified 'levels' parameter.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_posterize:  * @drawable_ID: The drawable.  * @levels: Levels of posterization.  *  * Deprecated: Use gimp_drawable_posterize() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -422,7 +422,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_desaturate:  * @drawable_ID: The drawable.  *  * Desaturate the contents of the specified drawable.  *  * This procedure desaturates the contents of the specified drawable.  * This procedure only works on drawables of type RGB color.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_desaturate:  * @drawable_ID: The drawable.  *  * Deprecated: Use gimp_drawable_desaturate() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -489,7 +489,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_desaturate_full:  * @drawable_ID: The drawable.  * @desaturate_mode: The formula to use to desaturate.  *  * Desaturate the contents of the specified drawable, with the  * specified formula.  *  * This procedure desaturates the contents of the specified drawable,  * with the specified formula. This procedure only works on drawables  * of type RGB color.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_desaturate_full:  * @drawable_ID: The drawable.  * @desaturate_mode: The formula to use to desaturate.  *  * Deprecated: Use gimp_drawable_desaturate() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -563,7 +563,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_equalize:  * @drawable_ID: The drawable.  * @mask_only: Equalization option.  *  * Equalize the contents of the specified drawable.  *  * This procedure equalizes the contents of the specified drawable.  * Each intensity channel is equalized independently. The equalized  * intensity is given as inten' = (255 - inten). The 'mask_only' option  * specifies whether to adjust only the area of the image within the  * selection bounds, or the entire image based on the histogram of the  * selected area. If there is no selection, the entire image is  * adjusted based on the histogram for the entire image.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_equalize:  * @drawable_ID: The drawable.  * @mask_only: Equalization option.  *  * Deprecated: Use gimp_drawable_equalize() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -986,7 +986,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_colorize:  * @drawable_ID: The drawable.  * @hue: Hue in degrees.  * @saturation: Saturation in percent.  * @lightness: Lightness in percent.  *  * Render the drawable as a grayscale image seen through a colored  * glass.  *  * Desaturates the drawable, then tints it with the specified color.  * This tool is only valid on RGB color images. It will not operate on  * grayscale drawables.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_colorize:  * @drawable_ID: The drawable.  * @hue: Hue in degrees.  * @saturation: Saturation in percent.  * @lightness: Lightness in percent.  *  * Deprecated: Use gimp_drawable_colorize_hsl() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1294,7 +1294,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_hue_saturation:  * @drawable_ID: The drawable.  * @hue_range: Range of affected hues.  * @hue_offset: Hue offset in degrees.  * @lightness: Lightness modification.  * @saturation: Saturation modification.  *  * Modify hue, lightness, and saturation in the specified drawable.  *  * This procedure allows the hue, lightness, and saturation in the  * specified drawable to be modified. The 'hue-range' parameter  * provides the capability to limit range of affected hues.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_hue_saturation:  * @drawable_ID: The drawable.  * @hue_range: Range of affected hues.  * @hue_offset: Hue offset in degrees.  * @lightness: Lightness modification.  * @saturation: Saturation modification.  *  * Deprecated: Use gimp_drawable_hue_saturation() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1358,108 +1358,6 @@ argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
 name|saturation
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-name|success
-operator|=
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|success
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_hue_saturation_overlap:  * @drawable_ID: The drawable.  * @hue_range: Range of affected hues.  * @hue_offset: Hue offset in degrees.  * @lightness: Lightness modification.  * @saturation: Saturation modification.  * @overlap: Overlap other hue channels.  *  * Modify hue, lightness, and saturation in the specified drawable.  *  * This procedure allows the hue, lightness, and saturation in the  * specified drawable to be modified. The 'hue-range' parameter  * provides the capability to limit range of affected hues. The  * 'overlap' parameter provides blending into neighboring hue channels  * when rendering.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.10  **/
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_hue_saturation_overlap (gint32 drawable_ID,GimpHueRange hue_range,gdouble hue_offset,gdouble lightness,gdouble saturation,gdouble overlap)
-name|gimp_hue_saturation_overlap
-parameter_list|(
-name|gint32
-name|drawable_ID
-parameter_list|,
-name|GimpHueRange
-name|hue_range
-parameter_list|,
-name|gdouble
-name|hue_offset
-parameter_list|,
-name|gdouble
-name|lightness
-parameter_list|,
-name|gdouble
-name|saturation
-parameter_list|,
-name|gdouble
-name|overlap
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gboolean
-name|success
-init|=
-name|TRUE
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp-hue-saturation-overlap"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|drawable_ID
-argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|hue_range
-argument_list|,
-name|GIMP_PDB_FLOAT
-argument_list|,
-name|hue_offset
-argument_list|,
-name|GIMP_PDB_FLOAT
-argument_list|,
-name|lightness
-argument_list|,
-name|GIMP_PDB_FLOAT
-argument_list|,
-name|saturation
-argument_list|,
-name|GIMP_PDB_FLOAT
-argument_list|,
-name|overlap
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)

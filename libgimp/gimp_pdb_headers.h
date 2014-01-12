@@ -116,6 +116,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpdrawablecolor_pdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpdrawabletransform_pdb.h>
 end_include
 

@@ -147,6 +147,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|register_drawable_color_procs
+parameter_list|(
+name|GimpPDB
+modifier|*
+name|pdb
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|register_drawable_transform_procs
 parameter_list|(
 name|GimpPDB
