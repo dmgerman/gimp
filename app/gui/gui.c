@@ -1010,33 +1010,11 @@ name|the_gui_gimp
 operator|=
 name|gimp
 expr_stmt|;
-comment|/* TRANSLATORS: there is no need to translate this in GIMP. This uses    * "gtk20" domain as a special trick to determine language direction,    * but xgettext extracts it anyway mistakenly into GIMP po files.    * Leave an empty string as translation. It does not matter.    */
-if|if
-condition|(
-name|g_strcmp0
-argument_list|(
-name|dgettext
-argument_list|(
-literal|"gtk20"
-argument_list|,
-literal|"default:LTR"
-argument_list|)
-argument_list|,
-literal|"default:RTL"
-argument_list|)
-operator|==
-literal|0
-condition|)
-comment|/* Normally this should have been taken care of during command line      * parsing as a post-parse hook of gtk_get_option_group(), using the      * system locales.      * But user config may have overridden the language, therefore we must      * check the widget directions again.      */
+comment|/* Normally this should have been taken care of during command line    * parsing as a post-parse hook of gtk_get_option_group(), using the    * system locales.    * But user config may have overriden the language, therefore we must    * check the widget directions again.    */
 name|gtk_widget_set_default_direction
 argument_list|(
-name|GTK_TEXT_DIR_RTL
-argument_list|)
-expr_stmt|;
-else|else
-name|gtk_widget_set_default_direction
-argument_list|(
-name|GTK_TEXT_DIR_LTR
+name|gtk_get_locale_direction
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|gui_unique_init
@@ -3574,7 +3552,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e7bb6f0108
+DECL|struct|__anon2c5a6ca10108
 block|{
 DECL|member|path
 specifier|const
