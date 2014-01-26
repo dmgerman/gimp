@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7561cf0103
+DECL|enum|__anon2ba921970103
 block|{
 DECL|enumerator|TAG_ADDED
 name|TAG_ADDED
@@ -418,6 +418,7 @@ argument_list|(
 name|tag_ref
 argument_list|)
 expr_stmt|;
+return|return;
 block|}
 block|}
 block|}

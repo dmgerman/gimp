@@ -123,7 +123,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2911a9290103
+DECL|enum|__anon2b6787d80103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -136,7 +136,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2911a9290203
+DECL|enum|__anon2b6787d80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1620,7 +1620,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|tag
+name|this
 argument_list|)
 expr_stmt|;
 return|return
