@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b97d9a70103
+DECL|enum|__anon2b70073e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -62,7 +62,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b97d9a70208
+DECL|struct|__anon2b70073e0208
 block|{
 DECL|member|last_path
 name|GtkTreePath
@@ -324,6 +324,17 @@ init|=
 name|gtk_cell_renderer_text_new
 argument_list|()
 decl_stmt|;
+name|g_object_set
+argument_list|(
+name|cell
+argument_list|,
+literal|"ellipsize"
+argument_list|,
+name|PANGO_ELLIPSIZE_END
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gtk_cell_layout_pack_start
 argument_list|(
 name|GTK_CELL_LAYOUT
