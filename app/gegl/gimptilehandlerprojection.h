@@ -203,6 +203,21 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_tile_handler_projection_assign
+parameter_list|(
+name|GimpTileHandlerProjection
+modifier|*
+name|projection
+parameter_list|,
+name|GeglBuffer
+modifier|*
+name|buffer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_tile_handler_projection_invalidate
 parameter_list|(
 name|GimpTileHandlerProjection

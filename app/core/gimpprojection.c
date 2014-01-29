@@ -151,7 +151,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c07a2c0103
+DECL|enum|__anon29492b810103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -164,7 +164,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c07a2c0203
+DECL|enum|__anon29492b810203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1347,15 +1347,15 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_add_handler
+name|gimp_tile_handler_projection_assign
 argument_list|(
 name|proj
 operator|->
-name|buffer
+name|validate_handler
 argument_list|,
 name|proj
 operator|->
-name|validate_handler
+name|buffer
 argument_list|)
 expr_stmt|;
 comment|/*  This used to call gimp_tile_handler_projection_invalidate()        *  which forced the entire projection to be constructed in one        *  go for new images, causing a potentially huge delay. Now we        *  initially validate stuff the normal way, which makes the        *  image appear incrementally, but it keeps everything        *  responsive.        */
