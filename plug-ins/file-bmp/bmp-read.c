@@ -2891,6 +2891,12 @@ operator|.
 name|biClrUsed
 operator|>
 literal|256
+operator|&&
+name|Bitmap_Head
+operator|.
+name|biBitCnt
+operator|<=
+literal|8
 condition|)
 block|{
 name|g_set_error
