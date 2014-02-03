@@ -12292,7 +12292,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon28ba09310103
+DECL|enum|__anon27c123510103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -14340,7 +14340,7 @@ name|p
 argument_list|,
 name|STRBUFFSIZE
 argument_list|,
-literal|"#\\x%c"
+literal|"#\\%c"
 argument_list|,
 name|c
 argument_list|)
@@ -30720,7 +30720,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon28ba09310208
+DECL|struct|__anon27c123510208
 specifier|static
 struct|struct
 block|{
@@ -30955,7 +30955,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon28ba09310308
+DECL|struct|__anon27c123510308
 typedef|typedef
 struct|struct
 block|{
