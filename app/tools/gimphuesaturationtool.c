@@ -714,7 +714,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2a27d34e0108
+DECL|struct|__anon2c59f2570108
 block|{
 DECL|member|label
 specifier|const
@@ -1420,6 +1420,10 @@ name|scale
 argument_list|,
 literal|100.0
 argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
+argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
@@ -1532,6 +1536,10 @@ name|scale
 argument_list|,
 literal|180.0
 argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
+argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
@@ -1585,6 +1593,10 @@ name|scale
 argument_list|,
 literal|100.0
 argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
+argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
@@ -1637,6 +1649,10 @@ argument_list|(
 name|scale
 argument_list|,
 literal|100.0
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
 argument_list|,
 literal|1
 argument_list|)

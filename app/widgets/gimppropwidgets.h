@@ -176,6 +176,12 @@ parameter_list|,
 name|gdouble
 name|factor
 parameter_list|,
+name|gdouble
+name|step_increment
+parameter_list|,
+name|gdouble
+name|page_increment
+parameter_list|,
 name|gint
 name|digits
 parameter_list|)

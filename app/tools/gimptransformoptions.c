@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd309170103
+DECL|enum|__anon289fd50c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1638,6 +1638,10 @@ name|scale
 argument_list|,
 literal|100.0
 argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
+argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
@@ -1898,7 +1902,7 @@ name|gimp_get_constrain_behavior_mask
 argument_list|()
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bd309170208
+DECL|struct|__anon289fd50c0208
 block|{
 DECL|member|mod
 name|GdkModifierType

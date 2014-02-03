@@ -663,7 +663,7 @@ argument_list|)
 argument_list|,
 literal|1.0
 operator|/
-literal|230.0
+literal|360.0
 argument_list|,
 literal|15.0
 operator|/
@@ -677,6 +677,10 @@ argument_list|(
 name|scale
 argument_list|,
 literal|360.0
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
 argument_list|,
 literal|1
 argument_list|)
@@ -731,6 +735,10 @@ name|scale
 argument_list|,
 literal|100.0
 argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
+argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
@@ -783,6 +791,10 @@ argument_list|(
 name|scale
 argument_list|,
 literal|100.0
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
 argument_list|,
 literal|1
 argument_list|)
