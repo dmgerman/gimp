@@ -197,17 +197,6 @@ operator|/=
 literal|2
 expr_stmt|;
 comment|/* #doubles -> #points */
-comment|/* FIXME: i'm most certain that this is wrong, see bug 721249 --mitch */
-name|gimp_paint_options_set_default_brush_size
-argument_list|(
-name|options
-argument_list|,
-name|gimp_context_get_brush
-argument_list|(
-name|context
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/*  undefine the paint-relevant context properties and get them    *  from the current context    */
 name|gimp_context_define_properties
 argument_list|(
