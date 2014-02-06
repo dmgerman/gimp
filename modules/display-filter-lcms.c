@@ -1622,7 +1622,7 @@ name|src_profile
 condition|)
 name|src_profile
 operator|=
-name|cmsCreate_sRGBProfile
+name|gimp_lcms_create_srgb_profile
 argument_list|()
 expr_stmt|;
 if|if
@@ -1632,7 +1632,7 @@ name|dest_profile
 condition|)
 name|dest_profile
 operator|=
-name|cmsCreate_sRGBProfile
+name|gimp_lcms_create_srgb_profile
 argument_list|()
 expr_stmt|;
 name|softproof_flags
@@ -1781,7 +1781,7 @@ name|src_profile
 condition|)
 name|src_profile
 operator|=
-name|cmsCreate_sRGBProfile
+name|gimp_lcms_create_srgb_profile
 argument_list|()
 expr_stmt|;
 if|if
@@ -1791,7 +1791,7 @@ name|dest_profile
 condition|)
 name|dest_profile
 operator|=
-name|cmsCreate_sRGBProfile
+name|gimp_lcms_create_srgb_profile
 argument_list|()
 expr_stmt|;
 if|if

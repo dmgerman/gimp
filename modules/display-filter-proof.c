@@ -194,7 +194,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0e11ba0103
+DECL|enum|__anon2c82b76e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1802,7 +1802,7 @@ condition|)
 return|return;
 name|rgbProfile
 operator|=
-name|cmsCreate_sRGBProfile
+name|gimp_lcms_create_srgb_profile
 argument_list|()
 expr_stmt|;
 name|proofProfile

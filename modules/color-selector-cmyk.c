@@ -1556,7 +1556,7 @@ name|profile
 condition|?
 name|profile
 else|:
-name|cmsCreate_sRGBProfile
+name|gimp_lcms_create_srgb_profile
 argument_list|()
 return|;
 block|}

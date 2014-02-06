@@ -2133,7 +2133,7 @@ name|NULL
 expr_stmt|;
 block|}
 block|}
-comment|/*  use the built-in sRGB profile as fallback  */
+comment|/*  make the real sRGB profile as a fallback  */
 if|if
 condition|(
 operator|!
@@ -2142,7 +2142,7 @@ condition|)
 block|{
 name|rgb_profile
 operator|=
-name|cmsCreate_sRGBProfile
+name|gimp_lcms_create_srgb_profile
 argument_list|()
 expr_stmt|;
 block|}

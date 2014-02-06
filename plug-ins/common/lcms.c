@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon275c511f0103
+DECL|enum|__anon2ac599460103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275c511f0203
+DECL|enum|__anon2ac599460203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -166,7 +166,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275c511f0308
+DECL|struct|__anon2ac599460308
 block|{
 DECL|member|name
 specifier|const
@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275c511f0408
+DECL|struct|__anon2ac599460408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -2585,7 +2585,7 @@ condition|)
 block|{
 name|src_profile
 operator|=
-name|cmsCreate_sRGBProfile
+name|gimp_lcms_create_srgb_profile
 argument_list|()
 expr_stmt|;
 name|lcms_sRGB_checksum
@@ -2602,7 +2602,7 @@ condition|)
 block|{
 name|dest_profile
 operator|=
-name|cmsCreate_sRGBProfile
+name|gimp_lcms_create_srgb_profile
 argument_list|()
 expr_stmt|;
 name|lcms_sRGB_checksum
@@ -2914,7 +2914,7 @@ name|desc
 operator|=
 name|g_strdup
 argument_list|(
-literal|"sRGB built-in"
+literal|"sRGB made with the correct white point and primaries"
 argument_list|)
 expr_stmt|;
 if|if
@@ -5866,7 +5866,7 @@ name|profile
 condition|)
 name|profile
 operator|=
-name|cmsCreate_sRGBProfile
+name|gimp_lcms_create_srgb_profile
 argument_list|()
 expr_stmt|;
 name|name
@@ -6065,7 +6065,7 @@ name|src_profile
 condition|)
 name|src_profile
 operator|=
-name|cmsCreate_sRGBProfile
+name|gimp_lcms_create_srgb_profile
 argument_list|()
 expr_stmt|;
 name|gimp_ui_init
@@ -6634,7 +6634,7 @@ else|else
 block|{
 name|dest_profile
 operator|=
-name|cmsCreate_sRGBProfile
+name|gimp_lcms_create_srgb_profile
 argument_list|()
 expr_stmt|;
 block|}
