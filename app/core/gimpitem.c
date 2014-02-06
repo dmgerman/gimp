@@ -150,12 +150,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint/gimppaintoptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29407d290103
+DECL|enum|__anon2754e5b00103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -180,7 +186,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29407d290203
+DECL|enum|__anon2754e5b00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5640,7 +5646,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_item_stroke (GimpItem * item,GimpDrawable * drawable,GimpContext * context,GimpStrokeOptions * stroke_options,gboolean use_default_values,gboolean push_undo,GimpProgress * progress,GError ** error)
+DECL|function|gimp_item_stroke (GimpItem * item,GimpDrawable * drawable,GimpContext * context,GimpStrokeOptions * stroke_options,GimpPaintOptions * paint_options,gboolean push_undo,GimpProgress * progress,GError ** error)
 name|gimp_item_stroke
 parameter_list|(
 name|GimpItem
@@ -5659,8 +5665,9 @@ name|GimpStrokeOptions
 modifier|*
 name|stroke_options
 parameter_list|,
-name|gboolean
-name|use_default_values
+name|GimpPaintOptions
+modifier|*
+name|paint_options
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -5749,6 +5756,20 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|paint_options
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_PAINT_OPTIONS
+argument_list|(
+name|paint_options
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|progress
 operator|==
 name|NULL
@@ -5804,7 +5825,7 @@ name|stroke_options
 argument_list|,
 name|context
 argument_list|,
-name|use_default_values
+name|paint_options
 argument_list|)
 expr_stmt|;
 if|if

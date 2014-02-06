@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5404fe0103
+DECL|enum|__anon2bdbcdca0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1296,13 +1296,22 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
+if|if
+condition|(
+operator|!
 name|name
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
+condition|)
+name|name
+operator|=
+name|gimp_object_get_name
+argument_list|(
+name|gimp_context_get_paint_info
+argument_list|(
+name|GIMP_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

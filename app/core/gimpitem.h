@@ -1209,8 +1209,9 @@ name|GimpStrokeOptions
 modifier|*
 name|stroke_options
 parameter_list|,
-name|gboolean
-name|use_default_values
+name|GimpPaintOptions
+modifier|*
+name|paint_options
 parameter_list|,
 name|gboolean
 name|push_undo

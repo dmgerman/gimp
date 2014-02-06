@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29db21de0103
+DECL|enum|__anon27b120df0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29db21de0203
+DECL|enum|__anon27b120df0203
 block|{
 DECL|enumerator|DASH_INFO_CHANGED
 name|DASH_INFO_CHANGED
@@ -1891,7 +1891,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_stroke_options_prepare (GimpStrokeOptions * options,GimpContext * context,gboolean use_default_values)
+DECL|function|gimp_stroke_options_prepare (GimpStrokeOptions * options,GimpContext * context,GimpPaintOptions * paint_options)
 name|gimp_stroke_options_prepare
 parameter_list|(
 name|GimpStrokeOptions
@@ -1902,8 +1902,9 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|gboolean
-name|use_default_values
+name|GimpPaintOptions
+modifier|*
+name|paint_options
 parameter_list|)
 block|{
 name|GimpStrokeOptionsPrivate
@@ -1923,6 +1924,18 @@ argument_list|(
 name|GIMP_IS_CONTEXT
 argument_list|(
 name|context
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|paint_options
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_PAINT_OPTIONS
+argument_list|(
+name|paint_options
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1959,30 +1972,18 @@ argument_list|)
 operator|->
 name|paint_info
 decl_stmt|;
-name|GimpPaintOptions
-modifier|*
-name|paint_options
-decl_stmt|;
 if|if
 condition|(
-name|use_default_values
+name|paint_options
 condition|)
 block|{
-name|paint_options
-operator|=
-name|gimp_paint_options_new
+name|g_return_if_fail
 argument_list|(
 name|paint_info
-argument_list|)
-expr_stmt|;
-name|gimp_paint_options_set_default_brush_size
-argument_list|(
+operator|==
 name|paint_options
-argument_list|,
-name|gimp_context_get_brush
-argument_list|(
-name|context
-argument_list|)
+operator|->
+name|paint_info
 argument_list|)
 expr_stmt|;
 comment|/*  undefine the paint-relevant context properties and get them              *  from the passed context              */

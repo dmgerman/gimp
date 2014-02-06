@@ -306,8 +306,9 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|gboolean
-name|use_default_values
+name|GimpPaintOptions
+modifier|*
+name|paint_options
 parameter_list|)
 function_decl|;
 end_function_decl
