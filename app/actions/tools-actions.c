@@ -548,6 +548,42 @@ name|FALSE
 block|,
 name|NULL
 block|}
+block|,
+block|{
+literal|"tools-paint-brush-size-decrease-percent"
+block|,
+name|GIMP_STOCK_TOOL_PAINTBRUSH
+block|,
+literal|"Decrease Brush Size Relative"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_PERCENT_PREVIOUS
+block|,
+name|FALSE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"tools-paint-brush-size-increase-percent"
+block|,
+name|GIMP_STOCK_TOOL_PAINTBRUSH
+block|,
+literal|"Increase Brush Size Relative"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_PERCENT_NEXT
+block|,
+name|FALSE
+block|,
+name|NULL
+block|}
 block|, }
 decl_stmt|;
 end_decl_stmt
@@ -704,43 +740,7 @@ name|FALSE
 block|,
 name|NULL
 block|}
-block|,
-block|{
-literal|"tools-paint-brush-size-decrease-percent"
-block|,
-name|GIMP_STOCK_TOOL_PAINTBRUSH
-block|,
-literal|"Decrease Brush Size Relative"
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|GIMP_ACTION_SELECT_PERCENT_PREVIOUS
-block|,
-name|FALSE
-block|,
-name|NULL
-block|}
-block|,
-block|{
-literal|"tools-paint-brush-size-increase-percent"
-block|,
-name|GIMP_STOCK_TOOL_PAINTBRUSH
-block|,
-literal|"Increase Brush Size Relative"
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|GIMP_ACTION_SELECT_PERCENT_NEXT
-block|,
-name|FALSE
-block|,
-name|NULL
-block|}
-block|,  }
+block|, }
 decl_stmt|;
 end_decl_stmt
 
