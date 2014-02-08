@@ -942,7 +942,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c793efe0108
+DECL|struct|__anon29fadb1a0108
 block|{
 DECL|member|Width
 name|guint
@@ -986,7 +986,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c793efe0208
+DECL|struct|__anon29fadb1a0208
 block|{
 DECL|member|transparent
 name|gint
@@ -3095,6 +3095,10 @@ condition|(
 name|input_code_size
 operator|>
 name|MAX_LZW_BITS
+operator|||
+name|input_code_size
+operator|<=
+literal|1
 condition|)
 block|{
 name|g_message
