@@ -210,7 +210,6 @@ specifier|static
 name|gint
 name|add_color_map
 parameter_list|(
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -226,7 +225,6 @@ specifier|static
 name|gint
 name|add_image_resources
 parameter_list|(
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -255,7 +253,6 @@ specifier|static
 name|gint
 name|add_layers
 parameter_list|(
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -285,7 +282,6 @@ specifier|static
 name|gint
 name|add_merged_image
 parameter_list|(
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -338,11 +334,9 @@ specifier|static
 name|GimpImageType
 name|get_gimp_image_type
 parameter_list|(
-specifier|const
 name|GimpImageBaseType
 name|image_base_type
 parameter_list|,
-specifier|const
 name|gboolean
 name|alpha
 parameter_list|)
@@ -358,11 +352,9 @@ name|PSDchannel
 modifier|*
 name|channel
 parameter_list|,
-specifier|const
 name|guint16
 name|bps
 parameter_list|,
-specifier|const
 name|guint16
 name|compression
 parameter_list|,
@@ -5804,10 +5796,9 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|add_color_map (const gint32 image_id,PSDimage * img_a)
+DECL|function|add_color_map (gint32 image_id,PSDimage * img_a)
 name|add_color_map
 parameter_list|(
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -5909,10 +5900,9 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|add_image_resources (const gint32 image_id,PSDimage * img_a,FILE * f,gboolean * resolution_loaded,GError ** error)
+DECL|function|add_image_resources (gint32 image_id,PSDimage * img_a,FILE * f,gboolean * resolution_loaded,GError ** error)
 name|add_image_resources
 parameter_list|(
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -6119,10 +6109,9 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|add_layers (const gint32 image_id,PSDimage * img_a,PSDlayer ** lyr_a,FILE * f,GError ** error)
+DECL|function|add_layers (gint32 image_id,PSDimage * img_a,PSDlayer ** lyr_a,FILE * f,GError ** error)
 name|add_layers
 parameter_list|(
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -9055,10 +9044,9 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|add_merged_image (const gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
+DECL|function|add_merged_image (gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
 name|add_merged_image
 parameter_list|(
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -10817,14 +10805,12 @@ end_function
 begin_function
 specifier|static
 name|GimpImageType
-DECL|function|get_gimp_image_type (const GimpImageBaseType image_base_type,const gboolean alpha)
+DECL|function|get_gimp_image_type (GimpImageBaseType image_base_type,gboolean alpha)
 name|get_gimp_image_type
 parameter_list|(
-specifier|const
 name|GimpImageBaseType
 name|image_base_type
 parameter_list|,
-specifier|const
 name|gboolean
 name|alpha
 parameter_list|)
@@ -10896,18 +10882,16 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|read_channel_data (PSDchannel * channel,const guint16 bps,const guint16 compression,const guint16 * rle_pack_len,FILE * f,GError ** error)
+DECL|function|read_channel_data (PSDchannel * channel,guint16 bps,guint16 compression,const guint16 * rle_pack_len,FILE * f,GError ** error)
 name|read_channel_data
 parameter_list|(
 name|PSDchannel
 modifier|*
 name|channel
 parameter_list|,
-specifier|const
 name|guint16
 name|bps
 parameter_list|,
-specifier|const
 name|guint16
 name|compression
 parameter_list|,

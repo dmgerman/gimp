@@ -44,7 +44,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -76,7 +75,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,

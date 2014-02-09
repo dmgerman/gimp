@@ -152,7 +152,6 @@ specifier|static
 name|gint
 name|add_image_resources
 parameter_list|(
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -1270,10 +1269,9 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|add_image_resources (const gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
+DECL|function|add_image_resources (gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
 name|add_image_resources
 parameter_list|(
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,

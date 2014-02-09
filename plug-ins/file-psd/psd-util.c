@@ -73,7 +73,6 @@ name|gchar
 modifier|*
 name|gimp_layer_mode_effects_name
 parameter_list|(
-specifier|const
 name|GimpLayerModeEffects
 name|mode
 parameter_list|)
@@ -86,14 +85,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|psd_set_error (const gboolean file_eof,const gint err_no,GError ** error)
+DECL|function|psd_set_error (gboolean file_eof,gint err_no,GError ** error)
 name|psd_set_error
 parameter_list|(
-specifier|const
 name|gboolean
 name|file_eof
 parameter_list|,
-specifier|const
 name|gint
 name|err_no
 parameter_list|,
@@ -154,7 +151,7 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|fread_pascal_string (gint32 * bytes_read,gint32 * bytes_written,const guint16 mod_len,FILE * f,GError ** error)
+DECL|function|fread_pascal_string (gint32 * bytes_read,gint32 * bytes_written,guint16 mod_len,FILE * f,GError ** error)
 name|fread_pascal_string
 parameter_list|(
 name|gint32
@@ -165,7 +162,6 @@ name|gint32
 modifier|*
 name|bytes_written
 parameter_list|,
-specifier|const
 name|guint16
 name|mod_len
 parameter_list|,
@@ -478,7 +474,7 @@ end_function
 
 begin_function
 name|gint32
-DECL|function|fwrite_pascal_string (const gchar * src,const guint16 mod_len,FILE * f,GError ** error)
+DECL|function|fwrite_pascal_string (const gchar * src,guint16 mod_len,FILE * f,GError ** error)
 name|fwrite_pascal_string
 parameter_list|(
 specifier|const
@@ -486,7 +482,6 @@ name|gchar
 modifier|*
 name|src
 parameter_list|,
-specifier|const
 name|guint16
 name|mod_len
 parameter_list|,
@@ -777,7 +772,7 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|fread_unicode_string (gint32 * bytes_read,gint32 * bytes_written,const guint16 mod_len,FILE * f,GError ** error)
+DECL|function|fread_unicode_string (gint32 * bytes_read,gint32 * bytes_written,guint16 mod_len,FILE * f,GError ** error)
 name|fread_unicode_string
 parameter_list|(
 name|gint32
@@ -788,7 +783,6 @@ name|gint32
 modifier|*
 name|bytes_written
 parameter_list|,
-specifier|const
 name|guint16
 name|mod_len
 parameter_list|,
@@ -1149,7 +1143,7 @@ end_function
 
 begin_function
 name|gint32
-DECL|function|fwrite_unicode_string (const gchar * src,const guint16 mod_len,FILE * f,GError ** error)
+DECL|function|fwrite_unicode_string (const gchar * src,guint16 mod_len,FILE * f,GError ** error)
 name|fwrite_unicode_string
 parameter_list|(
 specifier|const
@@ -1157,7 +1151,6 @@ name|gchar
 modifier|*
 name|src
 parameter_list|,
-specifier|const
 name|guint16
 name|mod_len
 parameter_list|,
@@ -1461,7 +1454,7 @@ name|guint32
 name|unpacked_len
 parameter_list|)
 block|{
-comment|/*  *  Decode a PackBits chunk.  */
+comment|/*    *  Decode a PackBits chunk.    */
 name|gint
 name|n
 decl_stmt|;
@@ -1825,7 +1818,7 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|encode_packbits (const gchar * src,const guint32 unpacked_len,guint16 * packed_len)
+DECL|function|encode_packbits (const gchar * src,guint32 unpacked_len,guint16 * packed_len)
 name|encode_packbits
 parameter_list|(
 specifier|const
@@ -1833,7 +1826,6 @@ name|gchar
 modifier|*
 name|src
 parameter_list|,
-specifier|const
 name|guint32
 name|unpacked_len
 parameter_list|,
@@ -1842,7 +1834,7 @@ modifier|*
 name|packed_len
 parameter_list|)
 block|{
-comment|/*  *  Encode a PackBits chunk.  */
+comment|/*    *  Encode a PackBits chunk.    */
 name|GString
 modifier|*
 name|dst_str
@@ -3005,10 +2997,9 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_to_psd_blend_mode (const GimpLayerModeEffects gimp_layer_mode)
+DECL|function|gimp_to_psd_blend_mode (GimpLayerModeEffects gimp_layer_mode)
 name|gimp_to_psd_blend_mode
 parameter_list|(
-specifier|const
 name|GimpLayerModeEffects
 name|gimp_layer_mode
 parameter_list|)
@@ -3516,10 +3507,9 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_layer_mode_effects_name (const GimpLayerModeEffects mode)
+DECL|function|gimp_layer_mode_effects_name (GimpLayerModeEffects mode)
 name|gimp_layer_mode_effects_name
 parameter_list|(
-specifier|const
 name|GimpLayerModeEffects
 name|mode
 parameter_list|)

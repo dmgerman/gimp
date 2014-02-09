@@ -116,7 +116,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -142,7 +141,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -168,7 +166,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -194,7 +191,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -224,7 +220,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -254,7 +249,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -280,7 +274,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -310,7 +303,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -340,7 +332,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -366,7 +357,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -392,7 +382,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -418,7 +407,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -444,7 +432,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -474,7 +461,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -500,7 +486,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -530,7 +515,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -556,7 +540,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -586,7 +569,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -847,14 +829,13 @@ end_function
 
 begin_function
 name|gint
-DECL|function|load_image_resource (PSDimageres * res_a,const gint32 image_id,PSDimage * img_a,FILE * f,gboolean * resolution_loaded,GError ** error)
+DECL|function|load_image_resource (PSDimageres * res_a,gint32 image_id,PSDimage * img_a,FILE * f,gboolean * resolution_loaded,GError ** error)
 name|load_image_resource
 parameter_list|(
 name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -1395,14 +1376,13 @@ end_function
 
 begin_function
 name|gint
-DECL|function|load_thumbnail_resource (PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
+DECL|function|load_thumbnail_resource (PSDimageres * res_a,gint32 image_id,FILE * f,GError ** error)
 name|load_thumbnail_resource
 parameter_list|(
 name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -1564,7 +1544,7 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_unknown (const PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
+DECL|function|load_resource_unknown (const PSDimageres * res_a,gint32 image_id,FILE * f,GError ** error)
 name|load_resource_unknown
 parameter_list|(
 specifier|const
@@ -1572,7 +1552,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -1733,7 +1712,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_ps_only (const PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
+DECL|function|load_resource_ps_only (const PSDimageres * res_a,gint32 image_id,FILE * f,GError ** error)
 name|load_resource_ps_only
 parameter_list|(
 specifier|const
@@ -1741,7 +1720,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -1902,7 +1880,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1005 (const PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
+DECL|function|load_resource_1005 (const PSDimageres * res_a,gint32 image_id,FILE * f,GError ** error)
 name|load_resource_1005
 parameter_list|(
 specifier|const
@@ -1910,7 +1888,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -2220,7 +2197,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1006 (const PSDimageres * res_a,const gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
+DECL|function|load_resource_1006 (const PSDimageres * res_a,gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
 name|load_resource_1006
 parameter_list|(
 specifier|const
@@ -2228,7 +2205,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -2384,7 +2360,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1007 (const PSDimageres * res_a,const gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
+DECL|function|load_resource_1007 (const PSDimageres * res_a,gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
 name|load_resource_1007
 parameter_list|(
 specifier|const
@@ -2392,7 +2368,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -3082,7 +3057,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1008 (const PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
+DECL|function|load_resource_1008 (const PSDimageres * res_a,gint32 image_id,FILE * f,GError ** error)
 name|load_resource_1008
 parameter_list|(
 specifier|const
@@ -3090,7 +3065,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -3204,7 +3178,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1022 (const PSDimageres * res_a,const gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
+DECL|function|load_resource_1022 (const PSDimageres * res_a,gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
 name|load_resource_1022
 parameter_list|(
 specifier|const
@@ -3212,7 +3186,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -3329,7 +3302,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1024 (const PSDimageres * res_a,const gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
+DECL|function|load_resource_1024 (const PSDimageres * res_a,gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
 name|load_resource_1024
 parameter_list|(
 specifier|const
@@ -3337,7 +3310,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -3421,7 +3393,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1028 (const PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
+DECL|function|load_resource_1028 (const PSDimageres * res_a,gint32 image_id,FILE * f,GError ** error)
 name|load_resource_1028
 parameter_list|(
 specifier|const
@@ -3429,7 +3401,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -3711,7 +3682,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1032 (const PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
+DECL|function|load_resource_1032 (const PSDimageres * res_a,gint32 image_id,FILE * f,GError ** error)
 name|load_resource_1032
 parameter_list|(
 specifier|const
@@ -3719,7 +3690,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -4045,7 +4015,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1033 (const PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
+DECL|function|load_resource_1033 (const PSDimageres * res_a,gint32 image_id,FILE * f,GError ** error)
 name|load_resource_1033
 parameter_list|(
 specifier|const
@@ -4053,7 +4023,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -4831,7 +4800,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1039 (const PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
+DECL|function|load_resource_1039 (const PSDimageres * res_a,gint32 image_id,FILE * f,GError ** error)
 name|load_resource_1039
 parameter_list|(
 specifier|const
@@ -4839,7 +4808,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -4961,7 +4929,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1045 (const PSDimageres * res_a,const gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
+DECL|function|load_resource_1045 (const PSDimageres * res_a,gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
 name|load_resource_1045
 parameter_list|(
 specifier|const
@@ -4969,7 +4937,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -5169,7 +5136,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1046 (const PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
+DECL|function|load_resource_1046 (const PSDimageres * res_a,gint32 image_id,FILE * f,GError ** error)
 name|load_resource_1046
 parameter_list|(
 specifier|const
@@ -5177,7 +5144,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -5319,7 +5285,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1053 (const PSDimageres * res_a,const gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
+DECL|function|load_resource_1053 (const PSDimageres * res_a,gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
 name|load_resource_1053
 parameter_list|(
 specifier|const
@@ -5327,7 +5293,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -5496,7 +5461,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1058 (const PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
+DECL|function|load_resource_1058 (const PSDimageres * res_a,gint32 image_id,FILE * f,GError ** error)
 name|load_resource_1058
 parameter_list|(
 specifier|const
@@ -5504,7 +5469,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -5670,7 +5634,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1077 (const PSDimageres * res_a,const gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
+DECL|function|load_resource_1077 (const PSDimageres * res_a,gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
 name|load_resource_1077
 parameter_list|(
 specifier|const
@@ -5678,7 +5642,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,
@@ -6362,7 +6325,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_2000 (const PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
+DECL|function|load_resource_2000 (const PSDimageres * res_a,gint32 image_id,FILE * f,GError ** error)
 name|load_resource_2000
 parameter_list|(
 specifier|const
@@ -6370,7 +6333,6 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-specifier|const
 name|gint32
 name|image_id
 parameter_list|,

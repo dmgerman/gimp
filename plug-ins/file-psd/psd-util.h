@@ -24,11 +24,9 @@ begin_function_decl
 name|void
 name|psd_set_error
 parameter_list|(
-specifier|const
 name|gboolean
 name|file_eof
 parameter_list|,
-specifier|const
 name|gint
 name|err_no
 parameter_list|,
@@ -57,7 +55,6 @@ name|gint32
 modifier|*
 name|bytes_written
 parameter_list|,
-specifier|const
 name|guint16
 name|mod_len
 parameter_list|,
@@ -86,7 +83,6 @@ name|gchar
 modifier|*
 name|src
 parameter_list|,
-specifier|const
 name|guint16
 name|mod_len
 parameter_list|,
@@ -119,7 +115,6 @@ name|gint32
 modifier|*
 name|bytes_written
 parameter_list|,
-specifier|const
 name|guint16
 name|mod_len
 parameter_list|,
@@ -148,7 +143,6 @@ name|gchar
 modifier|*
 name|src
 parameter_list|,
-specifier|const
 name|guint16
 name|mod_len
 parameter_list|,
@@ -196,7 +190,6 @@ name|gchar
 modifier|*
 name|src
 parameter_list|,
-specifier|const
 name|guint32
 name|unpacked_len
 parameter_list|,
@@ -224,7 +217,6 @@ name|gchar
 modifier|*
 name|gimp_to_psd_blend_mode
 parameter_list|(
-specifier|const
 name|GimpLayerModeEffects
 name|gimp_layer_mode
 parameter_list|)
