@@ -730,10 +730,6 @@ DECL|member|keyboard_grab_time
 name|guint32
 name|keyboard_grab_time
 decl_stmt|;
-DECL|member|inferior_ignore_mode
-name|gboolean
-name|inferior_ignore_mode
-decl_stmt|;
 comment|/* Two states are possible when the shell is grabbed: it can be    * grabbed with space (or space+button1 which is the same state),    * then if space is released but button1 was still pressed, we wait    * for button1 to be released as well.    */
 DECL|member|space_release_pending
 name|gboolean
