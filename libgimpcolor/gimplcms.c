@@ -48,7 +48,7 @@ comment|/**  * SECTION: gimplcms  * @title: GimpLcms  * @short_description: Defi
 end_comment
 
 begin_comment
-comment|/**  * gimp_lcms_create_srgb_profile:  *  * This function is a replacement for cmsCreate_sRGBProfile() and  * returns an sRGB profile that is functionally the same as the  * ArgyllCMS sRGB.icm profile. "Functionally the same" means it has  * the same red, green, and blue colorants and the V4 "chad"  * equivalent of the ArgyllCMS V2 white point. The profile TRC is also  * functionally equivalent to the ArgyllCMS sRGB.icm TRC and is the  * same as the LCMS sRGB built-in profile TRC.  *  * Return value: the sRGB cmsHPROFILE.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_lcms_create_srgb_profile:  *  * This function is a replacement for cmsCreate_sRGBProfile() and  * returns an sRGB profile that is functionally the same as the  * ArgyllCMS sRGB.icm profile. "Functionally the same" means it has  * the same red, green, and blue colorants and the V4 "chad"  * equivalent of the ArgyllCMS V2 white point. The profile TRC is also  * functionally equivalent to the ArgyllCMS sRGB.icm TRC and is the  * same as the LCMS sRGB built-in profile TRC.  *  * The actual primaries in the sRGB specification are  * red xy:   {0.6400, 0.3300, 1.0}  * green xy: {0.3000, 0.6000, 1.0}  * blue xy:  {0.1500, 0.0600, 1.0}  *  * The sRGB primaries given below are "pre-quantized" to compensate  * for hexadecimal quantization during the profile-making process.  * Unless the profile-making code compensates for this quantization,  * the resulting profile's red, green, and blue colorants will deviate  * slightly from the correct XYZ values.  *  * LCMS2 doesn't compensate for hexadecimal quantization. The  * "pre-quantized" primaries below were back-calculated from the  * ArgyllCMS sRGB.icm profile. The resulting sRGB profile's colorants  * exactly matches the ArgyllCMS sRGB.icm profile colorants.  *  * Return value: the sRGB cmsHPROFILE.  *  * Since: GIMP 2.10  **/
 end_comment
 
 begin_function
@@ -219,13 +219,7 @@ argument_list|(
 name|description
 argument_list|)
 expr_stmt|;
-name|cmsSetProfileVersion
-argument_list|(
-name|srgb_profile
-argument_list|,
-literal|2.1
-argument_list|)
-expr_stmt|;
+comment|/**    * The following line produces a V2 profile with a point curve TRC.    * Profiles with point curve TRCs can't be used in LCMS2 unbounded    * mode ICC profile conversions. A V2 profile might be appropriate    * for embedding in sRGB images saved to disk, if the image is to be    * opened by an image editing application that doesn't understand V4    * profiles.    *    * cmsSetProfileVersion (srgb_profile, 2.1);    **/
 return|return
 name|srgb_profile
 return|;
