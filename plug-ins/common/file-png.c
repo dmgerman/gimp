@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a108ac20108
+DECL|struct|__anon27613c5e0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a108ac20208
+DECL|struct|__anon27613c5e0208
 block|{
 DECL|member|run
 name|gboolean
@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a108ac20308
+DECL|struct|__anon27613c5e0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -2756,6 +2756,14 @@ return|return
 name|image
 return|;
 block|}
+comment|/* Change some libpng errors to warnings (e.g. bug 721135) */
+name|png_set_benign_errors
+argument_list|(
+name|pp
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 comment|/*    * Open the file and initialize the PNG read "engine"...    */
 name|fp
 operator|=
@@ -5178,6 +5186,14 @@ return|return
 name|FALSE
 return|;
 block|}
+comment|/* Change some libpng errors to warnings (e.g. bug 721135) */
+name|png_set_benign_errors
+argument_list|(
+name|pp
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 comment|/*    * Open the file and initialize the PNG write "engine"...    */
 name|fp
 operator|=
