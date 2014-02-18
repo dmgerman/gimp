@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297b96230108
+DECL|struct|__anon276838d40108
 block|{
 DECL|member|action
 name|GtkAction
@@ -99,7 +99,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon297b96230208
+DECL|struct|__anon276838d40208
 block|{
 DECL|member|config
 name|GimpGuiConfig
@@ -458,14 +458,9 @@ name|action_history_size
 expr_stmt|;
 name|history_file_path
 operator|=
-name|g_build_filename
+name|gimp_personal_rc_file
 argument_list|(
-name|gimp_directory
-argument_list|()
-argument_list|,
 name|GIMP_ACTION_HISTORY_FILENAME
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|fp
