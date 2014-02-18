@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpaction-history.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpcolorpanel.h"
 end_include
 
@@ -187,12 +193,6 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimpwidgets-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpaction-history.h"
 end_include
 
 begin_include
@@ -8922,7 +8922,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2ad755700108
+DECL|struct|__anon2c40fb0a0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10178,7 +10178,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ad755700208
+DECL|struct|__anon2c40fb0a0208
 block|{
 DECL|member|label
 specifier|const
@@ -11390,7 +11390,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ad755700308
+DECL|struct|__anon2c40fb0a0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11545,7 +11545,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ad755700408
+DECL|struct|__anon2c40fb0a0408
 block|{
 DECL|member|tree_label
 specifier|const

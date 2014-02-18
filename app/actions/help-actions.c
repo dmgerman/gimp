@@ -142,35 +142,6 @@ argument_list|)
 block|,
 name|GIMP_HELP_HELP_CONTEXT
 block|}
-block|,
-block|{
-literal|"help-action-search"
-block|,
-name|GTK_STOCK_FIND
-block|,
-name|NC_
-argument_list|(
-literal|"help-action"
-argument_list|,
-literal|"_Search and Run a Command"
-argument_list|)
-block|,
-literal|"slash"
-block|,
-name|NC_
-argument_list|(
-literal|"help-action"
-argument_list|,
-literal|"Search commands by keyword, and run them"
-argument_list|)
-block|,
-name|G_CALLBACK
-argument_list|(
-name|help_search_actions_cmd_callback
-argument_list|)
-block|,
-name|GIMP_HELP_ACTION_SEARCH_DIALOG
-block|}
 block|}
 decl_stmt|;
 end_decl_stmt

@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpaction-history.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpclipboard.h"
 end_include
 
@@ -217,12 +223,6 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimplanguagestore-parser.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpaction-history.h"
 end_include
 
 begin_include
@@ -2013,6 +2013,17 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gui_add_to_app_menu
+argument_list|(
+name|image_ui_manager
+argument_list|,
+name|osx_app
+argument_list|,
+literal|"/image-menubar/Help/dialogs-search-action"
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
 DECL|macro|PREFERENCES
 define|#
 directive|define
@@ -2027,7 +2038,7 @@ argument_list|,
 name|PREFERENCES
 literal|"dialogs-preferences"
 argument_list|,
-literal|2
+literal|3
 argument_list|)
 expr_stmt|;
 name|gui_add_to_app_menu
@@ -2039,7 +2050,7 @@ argument_list|,
 name|PREFERENCES
 literal|"dialogs-input-devices"
 argument_list|,
-literal|3
+literal|4
 argument_list|)
 expr_stmt|;
 name|gui_add_to_app_menu
@@ -2051,7 +2062,7 @@ argument_list|,
 name|PREFERENCES
 literal|"dialogs-keyboard-shortcuts"
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 expr_stmt|;
 name|gui_add_to_app_menu
@@ -2063,7 +2074,7 @@ argument_list|,
 name|PREFERENCES
 literal|"dialogs-module-dialog"
 argument_list|,
-literal|5
+literal|6
 argument_list|)
 expr_stmt|;
 name|gui_add_to_app_menu
@@ -2075,26 +2086,12 @@ argument_list|,
 name|PREFERENCES
 literal|"plug-in-unit-editor"
 argument_list|,
-literal|6
+literal|7
 argument_list|)
 expr_stmt|;
 undef|#
 directive|undef
 name|PREFERENCES
-name|gui_add_to_app_menu
-argument_list|(
-name|image_ui_manager
-argument_list|,
-name|group
-argument_list|,
-literal|"/dummy-menubar/image-popup/Help/dialogs-search-action"
-argument_list|,
-name|_
-argument_list|(
-literal|"Search and Run a Command"
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/*  the preferences group  */
 name|group
 operator|=
@@ -2112,7 +2109,7 @@ name|osx_app
 argument_list|,
 name|item
 argument_list|,
-literal|7
+literal|8
 argument_list|)
 expr_stmt|;
 name|item
