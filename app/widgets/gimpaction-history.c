@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 2013  Jehan<jehan at girinstud.io>  *  * gimpaction-history.c  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpaction-history.c  * Copyright (C) 2013  Jehan<jehan at girinstud.io>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -68,13 +68,13 @@ DECL|macro|GIMP_ACTION_HISTORY_FILENAME
 define|#
 directive|define
 name|GIMP_ACTION_HISTORY_FILENAME
-value|"action_history"
+value|"action-history"
 end_define
 
 begin_typedef
-DECL|struct|__anon28d9c5510108
 typedef|typedef
 struct|struct
+DECL|struct|__anon297b96230108
 block|{
 DECL|member|action
 name|GtkAction
@@ -97,9 +97,9 @@ typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|__anon28d9c5510208
 specifier|static
 struct|struct
+DECL|struct|__anon297b96230208
 block|{
 DECL|member|config
 name|GimpGuiConfig
@@ -164,7 +164,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_action_insert
+name|gimp_action_history_insert
 parameter_list|(
 specifier|const
 name|gchar
@@ -231,14 +231,9 @@ name|config
 expr_stmt|;
 name|history_file_path
 operator|=
-name|g_build_filename
+name|gimp_personal_rc_file
 argument_list|(
-name|gimp_directory
-argument_list|()
-argument_list|,
 name|GIMP_ACTION_HISTORY_FILENAME
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|fp
@@ -298,7 +293,7 @@ operator|==
 name|EOF
 condition|)
 break|break;
-name|gimp_action_insert
+name|gimp_action_history_insert
 argument_list|(
 name|action_name
 argument_list|,
@@ -633,7 +628,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Callback run on the `activate` signal of an action.    It allows us to log all used action. */
+comment|/* Callback run on the `activate` signal of an action.  * It allows us to log all used action.  */
 end_comment
 
 begin_function
@@ -739,7 +734,7 @@ name|data
 else|:
 name|NULL
 decl_stmt|;
-comment|/* Is there any other item with the same count?              We don't want to leave any count gap to always accept new items.              This means that if we increment the only item with a given count,              we must decrement the next item.              Other consequence is that an item with higher count won't be              incremented at all if no other items have the same count. */
+comment|/* Is there any other item with the same count?  We don't            * want to leave any count gap to always accept new items.            * This means that if we increment the only item with a            * given count, we must decrement the next item.  Other            * consequence is that an item with higher count won't be            * incremented at all if no other items have the same            * count.            */
 if|if
 condition|(
 name|previous_count
@@ -994,7 +989,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Search all history actions which match "keyword"    with function match_func(action, keyword).     @return a list of GtkAction*, to free with:    g_list_free_full (result, (GDestroyNotify) g_object_unref);   */
+comment|/* Search all history actions which match "keyword" with function  * match_func(action, keyword).  *  * @return a list of GtkAction*, to free with:  * g_list_free_full (result, (GDestroyNotify) g_object_unref);  */
 end_comment
 
 begin_function
@@ -1079,7 +1074,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gtk_action_get_sensitive
+name|gtk_action_is_sensitive
 argument_list|(
 name|action
 argument_list|)
@@ -1163,7 +1158,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Compare function used at list initialization.    We use a slightly different compare function as for runtime insert,    because we want to keep history file order for equal values. */
+comment|/* Compare function used at list initialization.  * We use a slightly different compare function as for runtime insert,  * because we want to keep history file order for equal values.  */
 end_comment
 
 begin_function
@@ -1196,7 +1191,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Compare function used when updating the list.    There is no equality case. If they have the same count,    I ensure that the first action (last inserted) will be before. */
+comment|/* Compare function used when updating the list.  * There is no equality case. If they have the same count,  * I ensure that the first action (last inserted) will be before.  */
 end_comment
 
 begin_function
@@ -1231,8 +1226,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_action_insert (const gchar * action_name,gint count)
-name|gimp_action_insert
+DECL|function|gimp_action_history_insert (const gchar * action_name,gint count)
+name|gimp_action_history_insert
 parameter_list|(
 specifier|const
 name|gchar
@@ -1388,12 +1383,11 @@ name|GimpActionHistoryItem
 modifier|*
 name|new_action
 init|=
-name|g_malloc0
-argument_list|(
-sizeof|sizeof
+name|g_new0
 argument_list|(
 name|GimpActionHistoryItem
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 decl_stmt|;
 name|new_action
@@ -1452,7 +1446,7 @@ operator|<
 literal|0
 condition|)
 block|{
-comment|/* Since the actions list is sorted, it means we passed                  all possible actions already and it is not in this group. */
+comment|/* Since the actions list is sorted, it means we passed                * all possible actions already and it is not in this group.                */
 break|break;
 block|}
 block|}

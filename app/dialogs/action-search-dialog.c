@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 2012-2013 Srihari Sriraman, Suhas V, Vidyashree K, Zeeshan Ali Ansari  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * action-search-dialog.c  * Copyright (C) 2012-2013 Srihari Sriraman  *                         Suhas V  *                         Vidyashree K  *                         Zeeshan Ali Ansari  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -120,7 +120,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae0adfd0108
+DECL|struct|__anon2be07f670108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -804,10 +804,10 @@ name|results_list
 argument_list|,
 literal|"row-activated"
 argument_list|,
-operator|(
-name|GCallback
-operator|)
+name|G_CALLBACK
+argument_list|(
 name|row_activated
+argument_list|)
 argument_list|,
 name|private
 argument_list|)
@@ -893,7 +893,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Move the window to the previous session's position using session management. */
+comment|/* Move the window to the previous session's position using session    * management.    */
 name|private
 operator|->
 name|x
@@ -915,7 +915,7 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-comment|/* Height is the only value not reused since it is too variable because of the result list. */
+comment|/* Height is the only value not reused since it is too variable    * because of the result list.    */
 name|private
 operator|->
 name|height
@@ -1128,6 +1128,17 @@ modifier|*
 name|private
 parameter_list|)
 block|{
+name|GtkTreeView
+modifier|*
+name|tree_view
+init|=
+name|GTK_TREE_VIEW
+argument_list|(
+name|private
+operator|->
+name|results_list
+argument_list|)
+decl_stmt|;
 name|gchar
 modifier|*
 name|entry_text
@@ -1232,12 +1243,7 @@ name|GTK_LIST_STORE
 argument_list|(
 name|gtk_tree_view_get_model
 argument_list|(
-name|GTK_TREE_VIEW
-argument_list|(
-name|private
-operator|->
-name|results_list
-argument_list|)
+name|tree_view
 argument_list|)
 argument_list|)
 argument_list|)
@@ -1260,12 +1266,7 @@ name|gtk_tree_selection_select_path
 argument_list|(
 name|gtk_tree_view_get_selection
 argument_list|(
-name|GTK_TREE_VIEW
-argument_list|(
-name|private
-operator|->
-name|results_list
-argument_list|)
+name|tree_view
 argument_list|)
 argument_list|,
 name|gtk_tree_path_new_from_string
@@ -1318,12 +1319,7 @@ name|GTK_LIST_STORE
 argument_list|(
 name|gtk_tree_view_get_model
 argument_list|(
-name|GTK_TREE_VIEW
-argument_list|(
-name|private
-operator|->
-name|results_list
-argument_list|)
+name|tree_view
 argument_list|)
 argument_list|)
 argument_list|)
@@ -1346,12 +1342,7 @@ name|gtk_tree_selection_select_path
 argument_list|(
 name|gtk_tree_view_get_selection
 argument_list|(
-name|GTK_TREE_VIEW
-argument_list|(
-name|private
-operator|->
-name|results_list
-argument_list|)
+name|tree_view
 argument_list|)
 argument_list|,
 name|gtk_tree_path_new_from_string
@@ -1378,12 +1369,7 @@ name|selection
 operator|=
 name|gtk_tree_view_get_selection
 argument_list|(
-name|GTK_TREE_VIEW
-argument_list|(
-name|private
-operator|->
-name|results_list
-argument_list|)
+name|tree_view
 argument_list|)
 expr_stmt|;
 name|gtk_tree_selection_set_mode
@@ -1467,7 +1453,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|result_selected (GtkWidget * widget,GdkEventKey * pKey,SearchDialog * private)
+DECL|function|result_selected (GtkWidget * widget,GdkEventKey * kevent,SearchDialog * private)
 name|result_selected
 parameter_list|(
 name|GtkWidget
@@ -1476,7 +1462,7 @@ name|widget
 parameter_list|,
 name|GdkEventKey
 modifier|*
-name|pKey
+name|kevent
 parameter_list|,
 name|SearchDialog
 modifier|*
@@ -1485,7 +1471,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|pKey
+name|kevent
 operator|->
 name|type
 operator|==
@@ -1494,7 +1480,7 @@ condition|)
 block|{
 switch|switch
 condition|(
-name|pKey
+name|kevent
 operator|->
 name|keyval
 condition|)
@@ -1739,7 +1725,7 @@ operator|(
 name|GdkEvent
 operator|*
 operator|)
-name|pKey
+name|kevent
 argument_list|)
 expr_stmt|;
 block|}
@@ -2357,7 +2343,7 @@ name|section
 argument_list|,
 name|IS_SENSITIVE
 argument_list|,
-name|gtk_action_get_sensitive
+name|gtk_action_is_sensitive
 argument_list|(
 name|action
 argument_list|)
@@ -2477,7 +2463,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gtk_action_get_sensitive
+name|gtk_action_is_sensitive
 argument_list|(
 name|action
 argument_list|)
@@ -2514,13 +2500,13 @@ modifier|*
 name|private
 parameter_list|)
 block|{
-name|GList
-modifier|*
-name|list
-decl_stmt|;
 name|GimpUIManager
 modifier|*
 name|manager
+decl_stmt|;
+name|GList
+modifier|*
+name|list
 decl_stmt|;
 name|GList
 modifier|*
@@ -2731,7 +2717,7 @@ continue|continue;
 if|if
 condition|(
 operator|!
-name|gtk_action_get_sensitive
+name|gtk_action_is_sensitive
 argument_list|(
 name|action
 argument_list|)
@@ -2763,7 +2749,7 @@ name|GList
 modifier|*
 name|list3
 decl_stmt|;
-comment|/* A matching action. Check if we have not already added it as an history action. */
+comment|/* A matching action. Check if we have not already added                * it as an history action.                */
 for|for
 control|(
 name|list3
@@ -2919,7 +2905,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * Returns: a newly allocated lowercased string, which replaced any  * spacing characters into a single space and stripped out any leading  * and trailing space. */
+comment|/*  * Returns: a newly allocated lowercased string, which replaced any  * spacing characters into a single space and stripped out any leading  * and trailing space.  */
 end_comment
 
 begin_function
@@ -3073,7 +3059,7 @@ operator|==
 name|NULL
 condition|)
 block|{
-comment|/* As a special exception, a NULL keyword means          any action matches. */
+comment|/* As a special exception, a NULL keyword means any action        * matches.        */
 if|if
 condition|(
 name|section
@@ -3118,7 +3104,7 @@ argument_list|(
 name|tmp
 argument_list|)
 expr_stmt|;
-comment|/* If keyword is two characters,      then match them with first letters of first and second word in the labels.      For instance 'gb' will list 'Gaussian Blur...' */
+comment|/* If keyword is two characters, then match them with first letters    * of first and second word in the labels.  For instance 'gb' will    * list 'Gaussian Blur...'    */
 if|if
 condition|(
 name|strlen
@@ -3460,6 +3446,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|action_search_finalizer (SearchDialog * private)
 name|action_search_finalizer
