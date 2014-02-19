@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276838d40108
+DECL|struct|__anon2c1d5e9f0108
 block|{
 DECL|member|action
 name|GtkAction
@@ -99,7 +99,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon276838d40208
+DECL|struct|__anon2c1d5e9f0208
 block|{
 DECL|member|config
 name|GimpGuiConfig
@@ -549,6 +549,13 @@ parameter_list|)
 block|{
 return|return
 operator|(
+name|action_name
+index|[
+literal|0
+index|]
+operator|==
+literal|'<'
+operator|||
 name|g_str_has_suffix
 argument_list|(
 name|action_name
