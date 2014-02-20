@@ -2092,12 +2092,6 @@ expr_stmt|;
 undef|#
 directive|undef
 name|PREFERENCES
-comment|/*  the preferences group  */
-name|group
-operator|=
-name|ige_mac_menu_add_app_menu_group
-argument_list|()
-expr_stmt|;
 name|item
 operator|=
 name|gtk_separator_menu_item_new
