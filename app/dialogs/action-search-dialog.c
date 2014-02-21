@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c420fd90103
+DECL|enum|__anon2a3e15cb0103
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -148,7 +148,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c420fd90208
+DECL|struct|__anon2a3e15cb0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -192,7 +192,7 @@ end_typedef
 begin_function_decl
 specifier|static
 name|void
-name|key_released
+name|action_search_entry_key_released
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -212,7 +212,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|result_selected
+name|action_search_list_key_pressed
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -232,7 +232,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|row_activated
+name|action_search_list_row_activated
 parameter_list|(
 name|GtkTreeView
 modifier|*
@@ -390,7 +390,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|action_search_finalizer
+name|action_search_hide
 parameter_list|(
 name|SearchDialog
 modifier|*
@@ -402,7 +402,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|window_configured
+name|action_search_window_configured
 parameter_list|(
 name|GtkWindow
 modifier|*
@@ -737,29 +737,13 @@ name|g_signal_connect
 argument_list|(
 name|private
 operator|->
-name|results_list
-argument_list|,
-literal|"row-activated"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|row_activated
-argument_list|)
-argument_list|,
-name|private
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|private
-operator|->
 name|keyword_entry
 argument_list|,
 literal|"key-release-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|key_released
+name|action_search_entry_key_released
 argument_list|)
 argument_list|,
 name|private
@@ -775,7 +759,23 @@ literal|"key-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|result_selected
+name|action_search_list_key_pressed
+argument_list|)
+argument_list|,
+name|private
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|private
+operator|->
+name|results_list
+argument_list|,
+literal|"row-activated"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|action_search_list_row_activated
 argument_list|)
 argument_list|,
 name|private
@@ -791,7 +791,7 @@ literal|"configure-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|window_configured
+name|action_search_window_configured
 argument_list|)
 argument_list|,
 name|private
@@ -922,8 +922,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|key_released (GtkWidget * widget,GdkEventKey * event,SearchDialog * private)
-name|key_released
+DECL|function|action_search_entry_key_released (GtkWidget * widget,GdkEventKey * event,SearchDialog * private)
+name|action_search_entry_key_released
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1000,7 +1000,7 @@ case|case
 name|GDK_Escape
 case|:
 block|{
-name|action_search_finalizer
+name|action_search_hide
 argument_list|(
 name|private
 argument_list|)
@@ -1263,8 +1263,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|result_selected (GtkWidget * widget,GdkEventKey * kevent,SearchDialog * private)
-name|result_selected
+DECL|function|action_search_list_key_pressed (GtkWidget * widget,GdkEventKey * kevent,SearchDialog * private)
+name|action_search_list_key_pressed
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1278,15 +1278,6 @@ name|SearchDialog
 modifier|*
 name|private
 parameter_list|)
-block|{
-if|if
-condition|(
-name|kevent
-operator|->
-name|type
-operator|==
-name|GDK_KEY_PRESS
-condition|)
 block|{
 switch|switch
 condition|(
@@ -1310,7 +1301,7 @@ case|case
 name|GDK_Escape
 case|:
 block|{
-name|action_search_finalizer
+name|action_search_hide
 argument_list|(
 name|private
 argument_list|)
@@ -1538,7 +1529,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-block|}
 return|return
 name|FALSE
 return|;
@@ -1548,8 +1538,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|row_activated (GtkTreeView * treeview,GtkTreePath * path,GtkTreeViewColumn * col,SearchDialog * private)
-name|row_activated
+DECL|function|action_search_list_row_activated (GtkTreeView * treeview,GtkTreePath * path,GtkTreeViewColumn * col,SearchDialog * private)
+name|action_search_list_row_activated
 parameter_list|(
 name|GtkTreeView
 modifier|*
@@ -2302,7 +2292,7 @@ name|action
 argument_list|)
 condition|)
 block|{
-name|action_search_finalizer
+name|action_search_hide
 argument_list|(
 name|private
 argument_list|)
@@ -3291,8 +3281,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|action_search_finalizer (SearchDialog * private)
-name|action_search_finalizer
+DECL|function|action_search_hide (SearchDialog * private)
+name|action_search_hide
 parameter_list|(
 name|SearchDialog
 modifier|*
@@ -3358,8 +3348,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|window_configured (GtkWindow * window,GdkEvent * event,SearchDialog * private)
-name|window_configured
+DECL|function|action_search_window_configured (GtkWindow * window,GdkEvent * event,SearchDialog * private)
+name|action_search_window_configured
 parameter_list|(
 name|GtkWindow
 modifier|*
