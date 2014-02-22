@@ -196,6 +196,22 @@ name|STR_LENGTH
 value|64
 end_define
 
+begin_define
+DECL|macro|MIN_RESOLUTION
+define|#
+directive|define
+name|MIN_RESOLUTION
+value|5
+end_define
+
+begin_define
+DECL|macro|MAX_RESOLUTION
+define|#
+directive|define
+name|MAX_RESOLUTION
+value|8192
+end_define
+
 begin_comment
 comment|/* Load info */
 end_comment
@@ -203,7 +219,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2951f7c90108
+DECL|struct|__anon2bbd1b850108
 block|{
 DECL|member|resolution
 name|guint
@@ -314,7 +330,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2951f7c90208
+DECL|struct|__anon2bbd1b850208
 block|{
 DECL|member|width
 DECL|member|height
@@ -929,7 +945,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2951f7c90308
+DECL|struct|__anon2bbd1b850308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1797,7 +1813,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2951f7c90408
+DECL|struct|__anon2bbd1b850408
 block|{
 DECL|member|eol
 name|long
@@ -5043,13 +5059,13 @@ name|plvals
 operator|.
 name|resolution
 operator|<
-literal|5
+name|MIN_RESOLUTION
 condition|)
 name|plvals
 operator|.
 name|resolution
 operator|=
-literal|5
+name|MIN_RESOLUTION
 expr_stmt|;
 elseif|else
 if|if
@@ -5058,13 +5074,13 @@ name|plvals
 operator|.
 name|resolution
 operator|>
-literal|1440
+name|MAX_RESOLUTION
 condition|)
 name|plvals
 operator|.
 name|resolution
 operator|=
-literal|1440
+name|MAX_RESOLUTION
 expr_stmt|;
 if|if
 condition|(
@@ -14484,9 +14500,9 @@ name|plvals
 operator|.
 name|resolution
 argument_list|,
-literal|5
+name|MIN_RESOLUTION
 argument_list|,
-literal|1440
+name|MAX_RESOLUTION
 argument_list|,
 literal|1
 argument_list|,
