@@ -356,8 +356,8 @@ name|i
 operator|<
 name|height
 condition|;
-operator|++
 name|i
+operator|++
 control|)
 block|{
 if|if
@@ -1283,11 +1283,11 @@ operator|=
 literal|0
 init|;
 name|i
-operator|<=
+operator|<
 name|height
 condition|;
-operator|++
 name|i
+operator|++
 control|)
 block|{
 if|if
