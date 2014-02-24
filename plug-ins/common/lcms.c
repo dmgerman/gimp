@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac599460103
+DECL|enum|__anon29b171460103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac599460203
+DECL|enum|__anon29b171460203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -166,7 +166,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac599460308
+DECL|struct|__anon29b171460308
 block|{
 DECL|member|name
 specifier|const
@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac599460408
+DECL|struct|__anon29b171460408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -2196,7 +2196,7 @@ name|cmsGetProfileInfoASCII
 argument_list|(
 name|profile
 argument_list|,
-name|cmsInfoModel
+name|cmsInfoCopyright
 argument_list|,
 literal|"en"
 argument_list|,
@@ -2231,7 +2231,7 @@ name|cmsGetProfileInfoASCII
 argument_list|(
 name|profile
 argument_list|,
-name|cmsInfoModel
+name|cmsInfoCopyright
 argument_list|,
 literal|"en"
 argument_list|,
@@ -2914,7 +2914,7 @@ name|desc
 operator|=
 name|g_strdup
 argument_list|(
-literal|"sRGB made with the correct white point and primaries"
+literal|"GIMP built-in sRGB"
 argument_list|)
 expr_stmt|;
 if|if
@@ -2928,7 +2928,7 @@ name|g_strdup
 argument_list|(
 name|_
 argument_list|(
-literal|"Default RGB working space"
+literal|"Default GIMP RGB working space"
 argument_list|)
 argument_list|)
 expr_stmt|;
