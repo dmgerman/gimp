@@ -287,6 +287,10 @@ literal|"use-opencl"
 argument_list|,
 name|FALSE
 argument_list|,
+literal|"application-license"
+argument_list|,
+literal|"GPL3"
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
