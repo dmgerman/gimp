@@ -2026,7 +2026,7 @@ operator|)
 operator|&
 name|config
 operator|->
-name|gimp_reserved_5
+name|use_opencl
 argument_list|,
 literal|1
 argument_list|,
@@ -2558,7 +2558,7 @@ operator|)
 operator|&
 name|config
 operator|->
-name|gimp_reserved_5
+name|use_opencl
 argument_list|,
 literal|1
 argument_list|,
