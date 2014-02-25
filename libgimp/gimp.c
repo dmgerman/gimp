@@ -441,7 +441,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bbc4d880103
+DECL|enum|__anon29e9398a0103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -6006,6 +6006,10 @@ argument_list|,
 name|config
 operator|->
 name|use_opencl
+argument_list|,
+literal|"application-license"
+argument_list|,
+literal|"GPL3"
 argument_list|,
 name|NULL
 argument_list|)
