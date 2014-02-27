@@ -152,7 +152,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c23b89a0103
+DECL|enum|__anon296cea3b0103
 block|{
 DECL|enumerator|BRUSH_SET
 name|BRUSH_SET
@@ -165,7 +165,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c23b89a0203
+DECL|enum|__anon296cea3b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3234,7 +3234,7 @@ argument_list|,
 name|GDK_ACTION_COPY
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+name|g_signal_connect_swapped
 argument_list|(
 name|priv
 operator|->
@@ -3247,7 +3247,7 @@ argument_list|(
 name|gimp_brush_select_drag_data_received
 argument_list|)
 argument_list|,
-name|hbox
+name|brush_button
 argument_list|)
 expr_stmt|;
 name|button
