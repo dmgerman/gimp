@@ -202,7 +202,7 @@ literal|"en"
 argument_list|,
 literal|"US"
 argument_list|,
-literal|"sRGB made with the correct white point and primaries."
+literal|"GIMP built-in sRGB"
 argument_list|)
 expr_stmt|;
 name|cmsWriteTag
