@@ -282,6 +282,8 @@ name|NULL
 argument_list|,
 name|add_on
 argument_list|,
+name|NULL
+argument_list|,
 name|feather_radius_x
 argument_list|,
 name|feather_radius_y
@@ -498,6 +500,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|add_on
+argument_list|,
+name|NULL
 argument_list|,
 name|feather_radius_x
 argument_list|,
@@ -728,6 +732,8 @@ name|NULL
 argument_list|,
 name|add_on
 argument_list|,
+name|NULL
+argument_list|,
 name|feather_radius_x
 argument_list|,
 name|feather_radius_y
@@ -954,6 +960,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|add_on
+argument_list|,
+name|NULL
 argument_list|,
 name|feather_radius_x
 argument_list|,
@@ -1417,6 +1425,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|add_on2
+argument_list|,
+name|NULL
 argument_list|,
 name|feather_radius_x
 argument_list|,
