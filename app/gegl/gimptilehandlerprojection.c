@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c41d81c0103
+DECL|enum|__anon2c069ed80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1239,7 +1239,7 @@ operator|=
 literal|1
 init|;
 name|tile_z
-operator|<
+operator|<=
 name|projection
 operator|->
 name|max_z
