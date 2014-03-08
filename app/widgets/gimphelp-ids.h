@@ -798,6 +798,14 @@ value|"gimp-image-convert-float"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_IMAGE_CONVERT_DOUBLE
+define|#
+directive|define
+name|GIMP_HELP_IMAGE_CONVERT_DOUBLE
+value|"gimp-image-convert-double"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_IMAGE_CONVERT_PRECISION
 define|#
 directive|define

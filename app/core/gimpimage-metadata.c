@@ -257,6 +257,17 @@ literal|32
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|GIMP_COMPONENT_TYPE_DOUBLE
+case|:
+name|gimp_metadata_set_bits_per_sample
+argument_list|(
+name|metadata
+argument_list|,
+literal|64
+argument_list|)
+expr_stmt|;
+break|break;
 block|}
 name|gimp_image_get_resolution
 argument_list|(

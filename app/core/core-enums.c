@@ -258,6 +258,14 @@ literal|"float"
 block|}
 block|,
 block|{
+name|GIMP_COMPONENT_TYPE_DOUBLE
+block|,
+literal|"GIMP_COMPONENT_TYPE_DOUBLE"
+block|,
+literal|"double"
+block|}
+block|,
+block|{
 literal|0
 block|,
 name|NULL
@@ -333,6 +341,19 @@ argument_list|(
 literal|"component-type"
 argument_list|,
 literal|"32-bit floating point"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_COMPONENT_TYPE_DOUBLE
+block|,
+name|NC_
+argument_list|(
+literal|"component-type"
+argument_list|,
+literal|"64-bit floating point"
 argument_list|)
 block|,
 name|NULL
@@ -4348,6 +4369,22 @@ literal|"float-gamma"
 block|}
 block|,
 block|{
+name|GIMP_PRECISION_DOUBLE_LINEAR
+block|,
+literal|"GIMP_PRECISION_DOUBLE_LINEAR"
+block|,
+literal|"double-linear"
+block|}
+block|,
+block|{
+name|GIMP_PRECISION_DOUBLE_GAMMA
+block|,
+literal|"GIMP_PRECISION_DOUBLE_GAMMA"
+block|,
+literal|"double-gamma"
+block|}
+block|,
+block|{
 literal|0
 block|,
 name|NULL
@@ -4488,6 +4525,32 @@ argument_list|(
 literal|"precision"
 argument_list|,
 literal|"32-bit gamma floating point"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_PRECISION_DOUBLE_LINEAR
+block|,
+name|NC_
+argument_list|(
+literal|"precision"
+argument_list|,
+literal|"64-bit linear floating point"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_PRECISION_DOUBLE_GAMMA
+block|,
+name|NC_
+argument_list|(
+literal|"precision"
+argument_list|,
+literal|"64-bit gamma floating point"
 argument_list|)
 block|,
 name|NULL

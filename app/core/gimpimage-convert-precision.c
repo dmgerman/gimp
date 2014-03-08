@@ -331,6 +331,32 @@ literal|"Convert Image to 32 bit gamma floating point"
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|GIMP_PRECISION_DOUBLE_LINEAR
+case|:
+name|undo_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Convert Image to 64 bit linear floating point"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_PRECISION_DOUBLE_GAMMA
+case|:
+name|undo_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Convert Image to 64 bit gamma floating point"
+argument_list|)
+expr_stmt|;
+break|break;
 block|}
 if|if
 condition|(

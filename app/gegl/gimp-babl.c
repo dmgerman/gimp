@@ -885,6 +885,150 @@ name|babl_format_new
 argument_list|(
 literal|"name"
 argument_list|,
+literal|"R double"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"RGBA"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"double"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"R"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
+literal|"R' double"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"R'G'B'A"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"double"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"R'"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
+literal|"G double"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"RGBA"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"double"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"G"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
+literal|"G' double"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"R'G'B'A"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"double"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"G'"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
+literal|"B double"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"RGBA"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"double"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"B"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
+literal|"B' double"
+argument_list|,
+name|babl_model
+argument_list|(
+literal|"R'G'B'A"
+argument_list|)
+argument_list|,
+name|babl_type
+argument_list|(
+literal|"double"
+argument_list|)
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"B'"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|babl_format_new
+argument_list|(
+literal|"name"
+argument_list|,
 literal|"A double"
 argument_list|,
 name|babl_model
@@ -912,7 +1056,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28ecfc650108
+DECL|struct|__anon2c36dd000108
 block|{
 DECL|member|name
 specifier|const
@@ -1023,6 +1167,24 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"RGB double"
+block|,
+name|N_
+argument_list|(
+literal|"RGB"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"R'G'B' double"
+block|,
+name|N_
+argument_list|(
+literal|"RGB"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"RGBA u8"
 block|,
 name|N_
@@ -1105,6 +1267,24 @@ block|}
 block|,
 block|{
 literal|"R'G'B'A float"
+block|,
+name|N_
+argument_list|(
+literal|"RGB-alpha"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"RGBA double"
+block|,
+name|N_
+argument_list|(
+literal|"RGB-alpha"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"R'G'B'A double"
 block|,
 name|N_
 argument_list|(
@@ -1203,6 +1383,24 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"Y double"
+block|,
+name|N_
+argument_list|(
+literal|"Grayscale"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"Y' double"
+block|,
+name|N_
+argument_list|(
+literal|"Grayscale"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"YA u8"
 block|,
 name|N_
@@ -1285,6 +1483,24 @@ block|}
 block|,
 block|{
 literal|"Y'A float"
+block|,
+name|N_
+argument_list|(
+literal|"Grayscale-alpha"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"YA double"
+block|,
+name|N_
+argument_list|(
+literal|"Grayscale-alpha"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"Y'A double"
 block|,
 name|N_
 argument_list|(
@@ -1383,6 +1599,24 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"R double"
+block|,
+name|N_
+argument_list|(
+literal|"Red component"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"R' double"
+block|,
+name|N_
+argument_list|(
+literal|"Red component"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"G u8"
 block|,
 name|N_
@@ -1473,6 +1707,24 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"G double"
+block|,
+name|N_
+argument_list|(
+literal|"Green component"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"G' double"
+block|,
+name|N_
+argument_list|(
+literal|"Green component"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"B u8"
 block|,
 name|N_
@@ -1555,6 +1807,24 @@ block|}
 block|,
 block|{
 literal|"B' float"
+block|,
+name|N_
+argument_list|(
+literal|"Blue component"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"B double"
+block|,
+name|N_
+argument_list|(
+literal|"Blue component"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"B' double"
 block|,
 name|N_
 argument_list|(
@@ -2009,6 +2279,19 @@ condition|)
 return|return
 name|GIMP_COMPONENT_TYPE_FLOAT
 return|;
+elseif|else
+if|if
+condition|(
+name|type
+operator|==
+name|babl_type
+argument_list|(
+literal|"double"
+argument_list|)
+condition|)
+return|return
+name|GIMP_COMPONENT_TYPE_DOUBLE
+return|;
 name|g_return_val_if_reached
 argument_list|(
 operator|-
@@ -2125,6 +2408,19 @@ condition|)
 return|return
 name|GIMP_PRECISION_FLOAT_LINEAR
 return|;
+elseif|else
+if|if
+condition|(
+name|type
+operator|==
+name|babl_type
+argument_list|(
+literal|"double"
+argument_list|)
+condition|)
+return|return
+name|GIMP_PRECISION_DOUBLE_LINEAR
+return|;
 block|}
 else|else
 block|{
@@ -2191,6 +2487,19 @@ argument_list|)
 condition|)
 return|return
 name|GIMP_PRECISION_FLOAT_GAMMA
+return|;
+elseif|else
+if|if
+condition|(
+name|type
+operator|==
+name|babl_type
+argument_list|(
+literal|"double"
+argument_list|)
+condition|)
+return|return
+name|GIMP_PRECISION_DOUBLE_GAMMA
 return|;
 block|}
 name|g_return_val_if_reached
@@ -2385,6 +2694,15 @@ case|:
 return|return
 name|GIMP_COMPONENT_TYPE_FLOAT
 return|;
+case|case
+name|GIMP_PRECISION_DOUBLE_LINEAR
+case|:
+case|case
+name|GIMP_PRECISION_DOUBLE_GAMMA
+case|:
+return|return
+name|GIMP_COMPONENT_TYPE_DOUBLE
+return|;
 block|}
 name|g_return_val_if_reached
 argument_list|(
@@ -2481,6 +2799,20 @@ return|;
 else|else
 return|return
 name|GIMP_PRECISION_FLOAT_GAMMA
+return|;
+case|case
+name|GIMP_COMPONENT_TYPE_DOUBLE
+case|:
+if|if
+condition|(
+name|linear
+condition|)
+return|return
+name|GIMP_PRECISION_DOUBLE_LINEAR
+return|;
+else|else
+return|return
+name|GIMP_PRECISION_DOUBLE_GAMMA
 return|;
 default|default:
 break|break;
@@ -2724,6 +3056,46 @@ argument_list|(
 literal|"R'G'B' float"
 argument_list|)
 return|;
+case|case
+name|GIMP_PRECISION_DOUBLE_LINEAR
+case|:
+if|if
+condition|(
+name|with_alpha
+condition|)
+return|return
+name|babl_format
+argument_list|(
+literal|"RGBA double"
+argument_list|)
+return|;
+else|else
+return|return
+name|babl_format
+argument_list|(
+literal|"RGB double"
+argument_list|)
+return|;
+case|case
+name|GIMP_PRECISION_DOUBLE_GAMMA
+case|:
+if|if
+condition|(
+name|with_alpha
+condition|)
+return|return
+name|babl_format
+argument_list|(
+literal|"R'G'B'A double"
+argument_list|)
+return|;
+else|else
+return|return
+name|babl_format
+argument_list|(
+literal|"R'G'B' double"
+argument_list|)
+return|;
 default|default:
 break|break;
 block|}
@@ -2936,6 +3308,46 @@ argument_list|(
 literal|"Y' float"
 argument_list|)
 return|;
+case|case
+name|GIMP_PRECISION_DOUBLE_LINEAR
+case|:
+if|if
+condition|(
+name|with_alpha
+condition|)
+return|return
+name|babl_format
+argument_list|(
+literal|"YA double"
+argument_list|)
+return|;
+else|else
+return|return
+name|babl_format
+argument_list|(
+literal|"Y double"
+argument_list|)
+return|;
+case|case
+name|GIMP_PRECISION_DOUBLE_GAMMA
+case|:
+if|if
+condition|(
+name|with_alpha
+condition|)
+return|return
+name|babl_format
+argument_list|(
+literal|"Y'A double"
+argument_list|)
+return|;
+else|else
+return|return
+name|babl_format
+argument_list|(
+literal|"Y' double"
+argument_list|)
+return|;
 default|default:
 break|break;
 block|}
@@ -3016,6 +3428,15 @@ return|return
 name|babl_format
 argument_list|(
 literal|"Y float"
+argument_list|)
+return|;
+case|case
+name|GIMP_COMPONENT_TYPE_DOUBLE
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"Y double"
 argument_list|)
 return|;
 block|}
@@ -3537,6 +3958,102 @@ default|default:
 break|break;
 block|}
 break|break;
+case|case
+name|GIMP_PRECISION_DOUBLE_LINEAR
+case|:
+switch|switch
+condition|(
+name|index
+condition|)
+block|{
+case|case
+literal|0
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"R double"
+argument_list|)
+return|;
+case|case
+literal|1
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"G double"
+argument_list|)
+return|;
+case|case
+literal|2
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"B double"
+argument_list|)
+return|;
+case|case
+literal|3
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"A double"
+argument_list|)
+return|;
+default|default:
+break|break;
+block|}
+break|break;
+case|case
+name|GIMP_PRECISION_DOUBLE_GAMMA
+case|:
+switch|switch
+condition|(
+name|index
+condition|)
+block|{
+case|case
+literal|0
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"R' double"
+argument_list|)
+return|;
+case|case
+literal|1
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"G' double"
+argument_list|)
+return|;
+case|case
+literal|2
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"B' double"
+argument_list|)
+return|;
+case|case
+literal|3
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"A double"
+argument_list|)
+return|;
+default|default:
+break|break;
+block|}
+break|break;
 default|default:
 break|break;
 block|}
@@ -3843,6 +4360,66 @@ return|return
 name|babl_format
 argument_list|(
 literal|"A float"
+argument_list|)
+return|;
+default|default:
+break|break;
+block|}
+break|break;
+case|case
+name|GIMP_PRECISION_DOUBLE_LINEAR
+case|:
+switch|switch
+condition|(
+name|index
+condition|)
+block|{
+case|case
+literal|0
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"Y double"
+argument_list|)
+return|;
+case|case
+literal|1
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"A double"
+argument_list|)
+return|;
+default|default:
+break|break;
+block|}
+break|break;
+case|case
+name|GIMP_PRECISION_DOUBLE_GAMMA
+case|:
+switch|switch
+condition|(
+name|index
+condition|)
+block|{
+case|case
+literal|0
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"Y' double"
+argument_list|)
+return|;
+case|case
+literal|1
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"A double"
 argument_list|)
 return|;
 default|default:
@@ -4199,6 +4776,49 @@ name|GIMP_COMPONENT_TYPE_FLOAT
 case|:
 block|{
 name|gfloat
+modifier|*
+name|color
+init|=
+name|pixel
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|n_components
+condition|;
+name|i
+operator|++
+control|)
+name|strings
+index|[
+name|i
+index|]
+operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"%0.6f"
+argument_list|,
+name|color
+index|[
+name|i
+index|]
+argument_list|)
+expr_stmt|;
+block|}
+break|break;
+case|case
+name|GIMP_COMPONENT_TYPE_DOUBLE
+case|:
+block|{
+name|gdouble
 modifier|*
 name|color
 init|=

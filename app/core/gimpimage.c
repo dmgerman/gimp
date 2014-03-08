@@ -370,7 +370,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9f6d080103
+DECL|enum|__anon29c5bd420103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -467,7 +467,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9f6d080203
+DECL|enum|__anon29c5bd420203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5363,6 +5363,17 @@ argument_list|(
 name|metadata
 argument_list|,
 literal|32
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_COMPONENT_TYPE_DOUBLE
+case|:
+name|gimp_metadata_set_bits_per_sample
+argument_list|(
+name|metadata
+argument_list|,
+literal|64
 argument_list|)
 expr_stmt|;
 break|break;

@@ -846,6 +846,25 @@ argument_list|,
 name|save_version
 argument_list|)
 expr_stmt|;
+comment|/* need version 7 for double precision images */
+if|if
+condition|(
+name|gimp_image_get_component_type
+argument_list|(
+name|image
+argument_list|)
+operator|!=
+name|GIMP_COMPONENT_TYPE_DOUBLE
+condition|)
+name|save_version
+operator|=
+name|MAX
+argument_list|(
+literal|7
+argument_list|,
+name|save_version
+argument_list|)
+expr_stmt|;
 name|info
 operator|->
 name|file_version
@@ -7327,7 +7346,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2d0abe0108
+DECL|struct|__anon2c35733f0108
 block|{
 DECL|member|info
 name|XcfInfo

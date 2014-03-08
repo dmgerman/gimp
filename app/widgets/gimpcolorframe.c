@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fbd2b30103
+DECL|enum|__anon27d4540a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2066,6 +2066,12 @@ name|GIMP_PRECISION_FLOAT_LINEAR
 case|:
 case|case
 name|GIMP_PRECISION_FLOAT_GAMMA
+case|:
+case|case
+name|GIMP_PRECISION_DOUBLE_LINEAR
+case|:
+case|case
+name|GIMP_PRECISION_DOUBLE_GAMMA
 case|:
 name|print_format
 operator|=
