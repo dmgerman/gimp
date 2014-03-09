@@ -827,7 +827,7 @@ argument_list|,
 name|save_version
 argument_list|)
 expr_stmt|;
-comment|/* need version 5 for high bit depth images */
+comment|/* need version 7 for high bit depth images */
 if|if
 condition|(
 name|gimp_image_get_precision
@@ -7327,7 +7327,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0c104b0108
+DECL|struct|__anon275848a70108
 block|{
 DECL|member|info
 name|XcfInfo
