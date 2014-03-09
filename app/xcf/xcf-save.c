@@ -810,25 +810,6 @@ name|save_version
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* need version 5 for high bit depth images */
-if|if
-condition|(
-name|gimp_image_get_precision
-argument_list|(
-name|image
-argument_list|)
-operator|!=
-name|GIMP_PRECISION_U8_GAMMA
-condition|)
-name|save_version
-operator|=
-name|MAX
-argument_list|(
-literal|5
-argument_list|,
-name|save_version
-argument_list|)
-expr_stmt|;
 comment|/* need version 6 for new metadata */
 if|if
 condition|(
@@ -846,15 +827,15 @@ argument_list|,
 name|save_version
 argument_list|)
 expr_stmt|;
-comment|/* need version 7 for double precision images */
+comment|/* need version 5 for high bit depth images */
 if|if
 condition|(
-name|gimp_image_get_component_type
+name|gimp_image_get_precision
 argument_list|(
 name|image
 argument_list|)
 operator|!=
-name|GIMP_COMPONENT_TYPE_DOUBLE
+name|GIMP_PRECISION_U8_GAMMA
 condition|)
 name|save_version
 operator|=
@@ -7346,7 +7327,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c35733f0108
+DECL|struct|__anon2c0c104b0108
 block|{
 DECL|member|info
 name|XcfInfo
