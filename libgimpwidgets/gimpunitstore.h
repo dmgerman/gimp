@@ -46,7 +46,7 @@ end_define
 begin_decl_stmt
 name|G_BEGIN_DECLS
 name|enum
-DECL|enum|__anon28f655990103
+DECL|enum|__anon29e56d350103
 type|{
 DECL|enumerator|GIMP_UNIT_STORE_UNIT
 name|GIMP_UNIT_STORE_UNIT
@@ -397,6 +397,17 @@ modifier|*
 name|first_value
 parameter_list|,
 modifier|...
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|_gimp_unit_store_sync_units
+parameter_list|(
+name|GimpUnitStore
+modifier|*
+name|store
 parameter_list|)
 function_decl|;
 end_function_decl
