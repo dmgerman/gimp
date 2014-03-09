@@ -435,7 +435,7 @@ argument_list|)
 argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
 argument_list|,
-name|GEGL_ABYSS_NONE
+name|GEGL_ABYSS_CLAMP
 argument_list|)
 expr_stmt|;
 return|return
