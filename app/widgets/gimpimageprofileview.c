@@ -692,6 +692,12 @@ argument_list|(
 name|info
 argument_list|)
 expr_stmt|;
+name|view
+operator|->
+name|idle_id
+operator|=
+literal|0
+expr_stmt|;
 return|return
 name|FALSE
 return|;
