@@ -3113,9 +3113,14 @@ break|break;
 case|case
 name|GIMP_ALIGN_REFERENCE_ACTIVE_PATH
 case|:
-name|g_print
+name|reference_object
+operator|=
+name|G_OBJECT
 argument_list|(
-literal|"reference = active path not yet handled.\n"
+name|gimp_image_get_active_vectors
+argument_list|(
+name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
