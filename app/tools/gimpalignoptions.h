@@ -27,7 +27,7 @@ DECL|macro|ALIGN_OPTIONS_N_BUTTONS
 define|#
 directive|define
 name|ALIGN_OPTIONS_N_BUTTONS
-value|12
+value|14
 end_define
 
 begin_define

@@ -197,6 +197,16 @@ define|#
 directive|define
 name|GIMP_STOCK_VCENTER
 value|"gimp-vcenter"
+DECL|macro|GIMP_STOCK_HFILL
+define|#
+directive|define
+name|GIMP_STOCK_HFILL
+value|"gimp-hfill"
+DECL|macro|GIMP_STOCK_VFILL
+define|#
+directive|define
+name|GIMP_STOCK_VFILL
+value|"gimp-vfill"
 DECL|macro|GIMP_STOCK_HCHAIN
 define|#
 directive|define

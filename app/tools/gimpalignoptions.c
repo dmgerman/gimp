@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b307580103
+DECL|enum|__anon29a4c4fd0103
 block|{
 DECL|enumerator|ALIGN_BUTTON_CLICKED
 name|ALIGN_BUTTON_CLICKED
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b307580203
+DECL|enum|__anon29a4c4fd0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -706,6 +706,22 @@ case|:
 name|stock_id
 operator|=
 name|GIMP_STOCK_GRAVITY_SOUTH
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_ARRANGE_HFILL
+case|:
+name|stock_id
+operator|=
+name|GIMP_STOCK_HFILL
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_ARRANGE_VFILL
+case|:
+name|stock_id
+operator|=
+name|GIMP_STOCK_VFILL
 expr_stmt|;
 break|break;
 default|default:
@@ -1345,6 +1361,28 @@ literal|"Distribute right edges of targets"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|options
+operator|->
+name|button
+index|[
+name|n
+operator|++
+index|]
+operator|=
+name|gimp_align_options_button_new
+argument_list|(
+name|options
+argument_list|,
+name|GIMP_ARRANGE_HFILL
+argument_list|,
+name|hbox
+argument_list|,
+name|_
+argument_list|(
+literal|"Distribute targets evenly in the horizontal"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|hbox
 operator|=
 name|gtk_box_new
@@ -1438,6 +1476,28 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Distribute bottoms of targets"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|options
+operator|->
+name|button
+index|[
+name|n
+operator|++
+index|]
+operator|=
+name|gimp_align_options_button_new
+argument_list|(
+name|options
+argument_list|,
+name|GIMP_ARRANGE_VFILL
+argument_list|,
+name|hbox
+argument_list|,
+name|_
+argument_list|(
+literal|"Distribute targets evenly in the vertical"
 argument_list|)
 argument_list|)
 expr_stmt|;

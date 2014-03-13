@@ -2979,6 +2979,12 @@ case|:
 case|case
 name|GIMP_ARRANGE_BOTTOM
 case|:
+case|case
+name|GIMP_ARRANGE_HFILL
+case|:
+case|case
+name|GIMP_ARRANGE_VFILL
+case|:
 name|offset
 operator|=
 name|options
