@@ -305,7 +305,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ce31160103
+DECL|enum|__anon2925ee4e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -418,7 +418,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ce31160208
+DECL|struct|__anon2925ee4e0208
 block|{
 DECL|member|x
 name|gint
@@ -7273,10 +7273,7 @@ name|private
 operator|->
 name|shells
 argument_list|,
-name|GIMP_DISPLAY_SHELL
-argument_list|(
 name|widget
-argument_list|)
 argument_list|)
 decl_stmt|;
 if|if
@@ -7315,7 +7312,7 @@ name|page_num
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* We need to reorder the displays as well in order to update the    * numbered accelerators (alt-1, alt-2, etc.). */
+comment|/* We need to reorder the displays as well in order to update the    * numbered accelerators (alt-1, alt-2, etc.).    */
 name|gimp_container_reorder
 argument_list|(
 name|displays
