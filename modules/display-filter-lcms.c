@@ -2079,7 +2079,7 @@ argument_list|(
 name|managed
 argument_list|)
 operator|&&
-name|gtk_widget_is_drawable
+name|gtk_widget_get_window
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
