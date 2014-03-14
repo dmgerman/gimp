@@ -721,7 +721,7 @@ block|}
 operator|*
 name|info
 operator|=
-name|gimp_lcms_profile_get_manufacturer
+name|gimp_lcms_profile_get_summary
 argument_list|(
 name|profile
 argument_list|)
