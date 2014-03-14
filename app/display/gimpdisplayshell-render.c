@@ -546,7 +546,7 @@ name|shell
 operator|->
 name|filter_stride
 argument_list|,
-name|GEGL_ABYSS_NONE
+name|GEGL_ABYSS_CLAMP
 argument_list|)
 expr_stmt|;
 name|gimp_color_display_stack_convert_buffer
@@ -607,7 +607,7 @@ name|data
 argument_list|,
 name|stride
 argument_list|,
-name|GEGL_ABYSS_NONE
+name|GEGL_ABYSS_CLAMP
 argument_list|)
 expr_stmt|;
 block|}
@@ -659,7 +659,7 @@ name|data
 argument_list|,
 name|stride
 argument_list|,
-name|GEGL_ABYSS_NONE
+name|GEGL_ABYSS_CLAMP
 argument_list|)
 expr_stmt|;
 block|}
@@ -782,7 +782,7 @@ name|data
 argument_list|,
 name|stride
 argument_list|,
-name|GEGL_ABYSS_NONE
+name|GEGL_ABYSS_CLAMP
 argument_list|)
 expr_stmt|;
 comment|/* invert the mask so what is *not* the foreground object is masked */
