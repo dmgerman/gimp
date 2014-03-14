@@ -104,6 +104,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gchar
+modifier|*
+name|gimp_lcms_profile_get_summary
+parameter_list|(
+name|GimpColorProfile
+name|profile
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpColorProfile
 name|gimp_lcms_create_srgb_profile
 parameter_list|(
