@@ -162,12 +162,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpprofilechooserdialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimppropwidgets.h"
 end_include
 
@@ -3134,10 +3128,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|prefs_profile_combo_dialog_response (GimpProfileChooserDialog * dialog,gint response,GimpColorProfileComboBox * combo)
+DECL|function|prefs_profile_combo_dialog_response (GimpColorProfileChooserDialog * dialog,gint response,GimpColorProfileComboBox * combo)
 name|prefs_profile_combo_dialog_response
 parameter_list|(
-name|GimpProfileChooserDialog
+name|GimpColorProfileChooserDialog
 modifier|*
 name|dialog
 parameter_list|,
@@ -3179,7 +3173,7 @@ name|gchar
 modifier|*
 name|label
 init|=
-name|gimp_profile_chooser_dialog_get_desc
+name|gimp_color_profile_chooser_dialog_get_desc
 argument_list|(
 name|dialog
 argument_list|,
@@ -3342,13 +3336,9 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|prefs_profile_combo_box_new (Gimp * gimp,GObject * config,GtkListStore * store,const gchar * label,const gchar * property_name)
+DECL|function|prefs_profile_combo_box_new (GObject * config,GtkListStore * store,const gchar * label,const gchar * property_name)
 name|prefs_profile_combo_box_new
 parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
 name|GObject
 modifier|*
 name|config
@@ -3372,10 +3362,8 @@ name|GtkWidget
 modifier|*
 name|dialog
 init|=
-name|gimp_profile_chooser_dialog_new
+name|gimp_color_profile_chooser_dialog_new
 argument_list|(
-name|gimp
-argument_list|,
 name|label
 argument_list|)
 decl_stmt|;
@@ -8922,7 +8910,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c40fb0a0108
+DECL|struct|__anon27ce06c80108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10178,7 +10166,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c40fb0a0208
+DECL|struct|__anon27ce06c80208
 block|{
 DECL|member|label
 specifier|const
@@ -10381,8 +10369,6 @@ name|button
 operator|=
 name|prefs_profile_combo_box_new
 argument_list|(
-name|gimp
-argument_list|,
 name|color_config
 argument_list|,
 name|store
@@ -11390,7 +11376,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c40fb0a0308
+DECL|struct|__anon27ce06c80308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11545,7 +11531,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c40fb0a0408
+DECL|struct|__anon27ce06c80408
 block|{
 DECL|member|tree_label
 specifier|const

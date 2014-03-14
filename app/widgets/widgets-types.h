@@ -747,15 +747,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpProfileChooserDialog
-typedef|typedef
-name|struct
-name|_GimpProfileChooserDialog
-name|GimpProfileChooserDialog
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpProgressDialog
 typedef|typedef
 name|struct

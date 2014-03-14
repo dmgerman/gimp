@@ -136,6 +136,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpColorProfileChooserDialog
+typedef|typedef
+name|struct
+name|_GimpColorProfileChooserDialog
+name|GimpColorProfileChooserDialog
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColorProfileComboBox
 typedef|typedef
 name|struct

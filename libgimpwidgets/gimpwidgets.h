@@ -104,6 +104,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimpcolorprofilechooserdialog.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimpcolorprofilecombobox.h>
 end_include
 
