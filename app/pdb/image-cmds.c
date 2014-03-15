@@ -11044,22 +11044,14 @@ condition|(
 name|success
 condition|)
 block|{
-comment|/* XXX do we really want to return this, or the name as in the title? */
-specifier|const
-name|gchar
-modifier|*
-name|uri
-init|=
-name|gimp_image_get_uri_or_untitled
+name|name
+operator|=
+name|g_strdup
+argument_list|(
+name|gimp_image_get_display_name
 argument_list|(
 name|image
 argument_list|)
-decl_stmt|;
-name|name
-operator|=
-name|file_utils_uri_display_basename
-argument_list|(
-name|uri
 argument_list|)
 expr_stmt|;
 block|}
@@ -20857,7 +20849,7 @@ literal|"gimp-image-get-name"
 argument_list|,
 literal|"Returns the specified image's name."
 argument_list|,
-literal|"This procedure returns the image's name. If the image has a filename or an URI, then this is the base name (the last component of the path). Otherwise it is the translated string \"Untitled\"."
+literal|"This procedure returns the image's name. If the image has a filename or an URI, then the returned name contains the filename's or URI's base name (the last component of the path). Otherwise it is the translated string \"Untitled\". The returned name is formatted like the image name in the image window title, it may contain '[]', '(imported)' etc. and should only be used to label user interface elements. Never use it to construct filenames."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
