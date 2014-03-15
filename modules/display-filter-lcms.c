@@ -1590,29 +1590,6 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
-DECL|function|cdisplay_lcms_profile_is_rgb (cmsHPROFILE profile)
-name|cdisplay_lcms_profile_is_rgb
-parameter_list|(
-name|cmsHPROFILE
-name|profile
-parameter_list|)
-block|{
-return|return
-operator|(
-name|cmsGetColorSpace
-argument_list|(
-name|profile
-argument_list|)
-operator|==
-name|cmsSigRgbData
-operator|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
 name|cmsHPROFILE
 DECL|function|cdisplay_lcms_get_rgb_profile (CdisplayLcms * lcms)
 name|cdisplay_lcms_get_rgb_profile
@@ -1687,7 +1664,7 @@ condition|(
 name|profile
 operator|&&
 operator|!
-name|cdisplay_lcms_profile_is_rgb
+name|gimp_lcms_profile_is_rgb
 argument_list|(
 name|profile
 argument_list|)

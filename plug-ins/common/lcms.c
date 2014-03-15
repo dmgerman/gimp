@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4eb54f0103
+DECL|enum|__anon2bd1f27b0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4eb54f0203
+DECL|enum|__anon2bd1f27b0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -166,7 +166,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4eb54f0308
+DECL|struct|__anon2bd1f27b0308
 block|{
 DECL|member|name
 specifier|const
@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4eb54f0408
+DECL|struct|__anon2bd1f27b0408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -1956,29 +1956,6 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
-DECL|function|lcms_icc_profile_is_rgb (cmsHPROFILE profile)
-name|lcms_icc_profile_is_rgb
-parameter_list|(
-name|cmsHPROFILE
-name|profile
-parameter_list|)
-block|{
-return|return
-operator|(
-name|cmsGetColorSpace
-argument_list|(
-name|profile
-argument_list|)
-operator|==
-name|cmsSigRgbData
-operator|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
 name|GimpPDBStatusType
 DECL|function|lcms_icc_set (GimpColorConfig * config,gint32 image,const gchar * filename)
 name|lcms_icc_set
@@ -2168,7 +2145,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|lcms_icc_profile_is_rgb
+name|gimp_lcms_profile_is_rgb
 argument_list|(
 name|dest_profile
 argument_list|)
@@ -2213,7 +2190,7 @@ condition|(
 name|src_profile
 operator|&&
 operator|!
-name|lcms_icc_profile_is_rgb
+name|gimp_lcms_profile_is_rgb
 argument_list|(
 name|src_profile
 argument_list|)
@@ -2491,7 +2468,7 @@ condition|(
 name|profile
 operator|&&
 operator|!
-name|lcms_icc_profile_is_rgb
+name|gimp_lcms_profile_is_rgb
 argument_list|(
 name|profile
 argument_list|)
@@ -5483,7 +5460,7 @@ condition|(
 name|src_profile
 operator|&&
 operator|!
-name|lcms_icc_profile_is_rgb
+name|gimp_lcms_profile_is_rgb
 argument_list|(
 name|src_profile
 argument_list|)
@@ -6092,7 +6069,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|lcms_icc_profile_is_rgb
+name|gimp_lcms_profile_is_rgb
 argument_list|(
 name|dest_profile
 argument_list|)
