@@ -163,6 +163,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpColorProfileView
+typedef|typedef
+name|struct
+name|_GimpColorProfileView
+name|GimpColorProfileView
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColorScale
 typedef|typedef
 name|struct
