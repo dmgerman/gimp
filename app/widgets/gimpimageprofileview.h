@@ -103,14 +103,10 @@ DECL|member|parent_instance
 name|GimpImageParasiteView
 name|parent_instance
 decl_stmt|;
-DECL|member|buffer
-name|GtkTextBuffer
+DECL|member|profile_view
+name|GimpColorProfileView
 modifier|*
-name|buffer
-decl_stmt|;
-DECL|member|idle_id
-name|guint
-name|idle_id
+name|profile_view
 decl_stmt|;
 block|}
 struct|;
