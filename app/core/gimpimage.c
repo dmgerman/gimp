@@ -186,6 +186,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-profile.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage-quick-mask.h"
 end_include
 
@@ -370,7 +376,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c5bd420103
+DECL|enum|__anon2c9756070103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -467,7 +473,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c5bd420203
+DECL|enum|__anon2c9756070203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -792,7 +798,7 @@ specifier|static
 specifier|const
 name|guint8
 modifier|*
-name|gimp_image_get_icc_profile
+name|gimp_image_color_managed_get_icc_profile
 parameter_list|(
 name|GimpColorManaged
 modifier|*
@@ -2670,7 +2676,7 @@ name|iface
 operator|->
 name|get_icc_profile
 operator|=
-name|gimp_image_get_icc_profile
+name|gimp_image_color_managed_get_icc_profile
 expr_stmt|;
 block|}
 end_function
@@ -5687,8 +5693,8 @@ specifier|static
 specifier|const
 name|guint8
 modifier|*
-DECL|function|gimp_image_get_icc_profile (GimpColorManaged * managed,gsize * len)
-name|gimp_image_get_icc_profile
+DECL|function|gimp_image_color_managed_get_icc_profile (GimpColorManaged * managed,gsize * len)
+name|gimp_image_color_managed_get_icc_profile
 parameter_list|(
 name|GimpColorManaged
 modifier|*
@@ -5706,14 +5712,12 @@ name|parasite
 decl_stmt|;
 name|parasite
 operator|=
-name|gimp_image_parasite_find
+name|gimp_image_get_icc_profile
 argument_list|(
 name|GIMP_IMAGE
 argument_list|(
 name|managed
 argument_list|)
-argument_list|,
-literal|"icc-profile"
 argument_list|)
 expr_stmt|;
 if|if
@@ -12256,7 +12260,7 @@ name|parasite
 operator|->
 name|name
 argument_list|,
-literal|"icc-profile"
+name|GIMP_ICC_PROFILE_PARASITE_NAME
 argument_list|)
 operator|==
 literal|0
@@ -12385,7 +12389,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"icc-profile"
+name|GIMP_ICC_PROFILE_PARASITE_NAME
 argument_list|)
 operator|==
 literal|0

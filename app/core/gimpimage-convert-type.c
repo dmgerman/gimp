@@ -120,6 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-profile.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage-undo.h"
 end_include
 
@@ -413,7 +419,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c65d4b80103
+DECL|enum|__anon2b712c6d0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1514,7 +1520,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c65d4b80208
+DECL|struct|__anon2b712c6d0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1757,7 +1763,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c65d4b80308
+DECL|struct|__anon2b712c6d0308
 block|{
 DECL|member|used_count
 name|signed
@@ -4062,22 +4068,22 @@ name|old_type
 operator|==
 name|GIMP_GRAY
 condition|)
-name|gimp_image_parasite_detach
+name|gimp_image_set_icc_profile
 argument_list|(
 name|image
 argument_list|,
-literal|"icc-profile"
+name|NULL
 argument_list|)
 expr_stmt|;
 break|break;
 case|case
 name|GIMP_GRAY
 case|:
-name|gimp_image_parasite_detach
+name|gimp_image_set_icc_profile
 argument_list|(
 name|image
 argument_list|,
-literal|"icc-profile"
+name|NULL
 argument_list|)
 expr_stmt|;
 break|break;

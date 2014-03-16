@@ -94,6 +94,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-profile.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimageprofileview.h"
 end_include
 
@@ -304,7 +310,7 @@ name|image
 argument_list|,
 literal|"parasite"
 argument_list|,
-literal|"icc-profile"
+name|GIMP_ICC_PROFILE_PARASITE_NAME
 argument_list|,
 name|NULL
 argument_list|)

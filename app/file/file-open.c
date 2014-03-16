@@ -167,6 +167,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-profile.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-undo.h"
 end_include
 
@@ -2923,11 +2929,9 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|gimp_image_parasite_find
+name|gimp_image_get_icc_profile
 argument_list|(
 name|image
-argument_list|,
-literal|"icc-profile"
 argument_list|)
 condition|)
 block|{
