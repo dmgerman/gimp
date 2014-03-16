@@ -122,6 +122,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimpcolorprofileview.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimpcolorscale.h>
 end_include
 
