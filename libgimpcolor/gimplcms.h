@@ -43,31 +43,14 @@ directive|define
 name|__GIMP_LCMS_H__
 end_define
 
-begin_macro
+begin_function_decl
 name|G_BEGIN_DECLS
-end_macro
-
-begin_comment
 comment|/* For information look into the C source or the html documentation */
-end_comment
-
-begin_typedef
-DECL|typedef|GimpColorProfile
-typedef|typedef
-name|gpointer
-name|GimpColorProfile
-typedef|;
-end_typedef
-
-begin_define
 DECL|macro|GIMP_LCMS_MD5_DIGEST_LENGTH
 define|#
 directive|define
 name|GIMP_LCMS_MD5_DIGEST_LENGTH
 value|16
-end_define
-
-begin_function_decl
 name|GimpColorProfile
 name|gimp_lcms_profile_open_from_file
 parameter_list|(

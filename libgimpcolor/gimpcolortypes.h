@@ -44,6 +44,14 @@ DECL|typedef|GimpColorManaged
 comment|/* dummy typedef */
 end_comment
 
+begin_typedef
+DECL|typedef|GimpColorProfile
+typedef|typedef
+name|gpointer
+name|GimpColorProfile
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  usually we don't keep the structure definitions in the types file  *  but GimpRGB appears in too many header files...  */
 end_comment
