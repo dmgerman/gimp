@@ -376,7 +376,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9756070103
+DECL|enum|__anon2bb684210103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -473,7 +473,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9756070203
+DECL|enum|__anon2bb684210203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -12247,18 +12247,20 @@ index|]
 argument_list|,
 literal|0
 argument_list|,
+name|gimp_parasite_name
+argument_list|(
 name|parasite
-operator|->
-name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|strcmp
 argument_list|(
+name|gimp_parasite_name
+argument_list|(
 name|parasite
-operator|->
-name|name
+argument_list|)
 argument_list|,
 name|GIMP_ICC_PROFILE_PARASITE_NAME
 argument_list|)
