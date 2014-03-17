@@ -395,6 +395,13 @@ name|name
 operator|==
 name|NULL
 operator|||
+operator|*
+name|parasite
+operator|->
+name|name
+operator|==
+literal|'\0'
+operator|||
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -729,7 +736,12 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
+operator|(
 name|name
+operator|&&
+operator|*
+name|name
+operator|)
 condition|)
 return|return
 name|NULL
