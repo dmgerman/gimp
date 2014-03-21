@@ -21,6 +21,27 @@ comment|/* some wrappers to access gimp->parasites, mainly for the PDB */
 end_comment
 
 begin_function_decl
+name|gboolean
+name|gimp_parasite_validate
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+specifier|const
+name|GimpParasite
+modifier|*
+name|parasite
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_parasite_attach
 parameter_list|(
