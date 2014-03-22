@@ -20,12 +20,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<unistd.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gegl.h>
 end_include
 
@@ -366,7 +360,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b7ac5d20108
+DECL|struct|__anon2c8095a00108
 typedef|typedef
 struct|struct
 block|{
@@ -388,7 +382,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b7ac5d20208
+DECL|struct|__anon2c8095a00208
 typedef|typedef
 struct|struct
 block|{

@@ -21,23 +21,6 @@ directive|include
 file|<string.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_UNISTD_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<unistd.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_include
 include|#
 directive|include
@@ -61,23 +44,6 @@ include|#
 directive|include
 file|"libgimpconfig/gimpconfig.h"
 end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|"libgimpbase/gimpwin32-io.h"
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
@@ -141,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c84f5e30103
+DECL|enum|__anon2b8a28e20103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
