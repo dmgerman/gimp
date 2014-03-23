@@ -194,7 +194,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc989520103
+DECL|enum|__anon2c946caf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1472,7 +1472,9 @@ return|return;
 name|rgb_profile
 operator|=
 name|gimp_lcms_create_srgb_profile
-argument_list|()
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 name|proof_profile
 operator|=

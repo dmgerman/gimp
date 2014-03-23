@@ -174,7 +174,9 @@ begin_function_decl
 name|GimpColorProfile
 name|gimp_lcms_create_srgb_profile
 parameter_list|(
-name|void
+name|guint8
+modifier|*
+name|md5_digest
 parameter_list|)
 function_decl|;
 end_function_decl
