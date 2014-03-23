@@ -155,23 +155,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|gchar
-modifier|*
-name|gimp_color_profile_chooser_dialog_get_desc
-parameter_list|(
-name|GimpColorProfileChooserDialog
-modifier|*
-name|dialog
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|filename
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
