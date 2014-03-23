@@ -376,7 +376,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4cad980103
+DECL|enum|__anon2901a8910103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -473,7 +473,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4cad980203
+DECL|enum|__anon2901a8910203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -12151,6 +12151,11 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|name
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -12184,6 +12189,36 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|name
+operator|=
+name|gimp_parasite_name
+argument_list|(
+name|parasite
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|GIMP_ICC_PROFILE_PARASITE_NAME
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+return|return
+name|gimp_image_validate_icc_profile
+argument_list|(
+name|image
+argument_list|,
+name|parasite
+argument_list|,
+name|error
+argument_list|)
+return|;
+block|}
 return|return
 name|TRUE
 return|;

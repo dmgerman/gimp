@@ -25,6 +25,27 @@ value|"icc-profile"
 end_define
 
 begin_function_decl
+name|gboolean
+name|gimp_image_validate_icc_profile
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+specifier|const
+name|GimpParasite
+modifier|*
+name|icc_profile
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 specifier|const
 name|GimpParasite
 modifier|*
