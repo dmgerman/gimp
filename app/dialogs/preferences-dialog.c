@@ -3522,6 +3522,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|dialog
@@ -9006,7 +9011,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bcada9c0108
+DECL|struct|__anon286e759f0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10262,7 +10267,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bcada9c0208
+DECL|struct|__anon286e759f0208
 block|{
 DECL|member|label
 specifier|const
@@ -11472,7 +11477,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bcada9c0308
+DECL|struct|__anon286e759f0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11627,7 +11632,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bcada9c0408
+DECL|struct|__anon286e759f0408
 block|{
 DECL|member|tree_label
 specifier|const
