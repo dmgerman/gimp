@@ -59,10 +59,6 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|guint8
-modifier|*
-name|md5_digest
-parameter_list|,
 name|GError
 modifier|*
 modifier|*
@@ -82,10 +78,6 @@ name|data
 parameter_list|,
 name|gsize
 name|length
-parameter_list|,
-name|guint8
-modifier|*
-name|md5_digest
 parameter_list|,
 name|GError
 modifier|*
@@ -152,6 +144,19 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_lcms_profile_is_equal
+parameter_list|(
+name|GimpColorProfile
+name|profile1
+parameter_list|,
+name|GimpColorProfile
+name|profile2
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_lcms_profile_is_rgb
 parameter_list|(
 name|GimpColorProfile
@@ -174,9 +179,7 @@ begin_function_decl
 name|GimpColorProfile
 name|gimp_lcms_create_srgb_profile
 parameter_list|(
-name|guint8
-modifier|*
-name|md5_digest
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl

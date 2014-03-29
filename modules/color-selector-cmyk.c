@@ -1557,9 +1557,7 @@ condition|?
 name|profile
 else|:
 name|gimp_lcms_create_srgb_profile
-argument_list|(
-name|NULL
-argument_list|)
+argument_list|()
 return|;
 block|}
 end_function

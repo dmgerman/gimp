@@ -357,8 +357,6 @@ name|gimp_image_get_profile
 argument_list|(
 name|image
 argument_list|,
-name|NULL
-argument_list|,
 operator|&
 name|error
 argument_list|)
@@ -395,9 +393,7 @@ condition|)
 name|profile
 operator|=
 name|gimp_lcms_create_srgb_profile
-argument_list|(
-name|NULL
-argument_list|)
+argument_list|()
 expr_stmt|;
 name|gimp_color_profile_view_set_profile
 argument_list|(

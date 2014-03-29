@@ -721,8 +721,6 @@ name|gimp_lcms_profile_open_from_file
 argument_list|(
 name|filename
 argument_list|,
-name|NULL
-argument_list|,
 operator|&
 name|error
 argument_list|)

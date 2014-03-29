@@ -280,8 +280,6 @@ argument_list|(
 name|icc_profile
 argument_list|)
 argument_list|,
-name|NULL
-argument_list|,
 name|error
 argument_list|)
 expr_stmt|;
@@ -447,16 +445,12 @@ end_function
 
 begin_function
 name|GimpColorProfile
-DECL|function|gimp_image_get_profile (GimpImage * image,guint8 * md5_digest,GError ** error)
+DECL|function|gimp_image_get_profile (GimpImage * image,GError ** error)
 name|gimp_image_get_profile
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
-parameter_list|,
-name|guint8
-modifier|*
-name|md5_digest
 parameter_list|,
 name|GError
 modifier|*
@@ -538,8 +532,6 @@ argument_list|(
 name|parasite
 argument_list|)
 argument_list|,
-name|md5_digest
-argument_list|,
 name|error
 argument_list|)
 return|;
@@ -559,8 +551,6 @@ argument_list|(
 name|config
 operator|->
 name|rgb_profile
-argument_list|,
-name|md5_digest
 argument_list|,
 name|error
 argument_list|)

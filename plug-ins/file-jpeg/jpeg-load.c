@@ -2140,9 +2140,7 @@ block|{
 name|rgb_profile
 operator|=
 name|gimp_lcms_create_srgb_profile
-argument_list|(
-name|NULL
-argument_list|)
+argument_list|()
 expr_stmt|;
 block|}
 if|if

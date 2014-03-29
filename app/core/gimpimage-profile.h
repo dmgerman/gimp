@@ -82,10 +82,6 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|guint8
-modifier|*
-name|md5_digest
-parameter_list|,
 name|GError
 modifier|*
 modifier|*
