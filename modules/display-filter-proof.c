@@ -194,7 +194,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc989520103
+DECL|enum|__anon2ab28c850103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -997,19 +997,7 @@ condition|)
 block|{
 name|label
 operator|=
-name|gimp_lcms_profile_get_description
-argument_list|(
-name|profile
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|label
-condition|)
-name|label
-operator|=
-name|gimp_lcms_profile_get_model
+name|gimp_lcms_profile_get_label
 argument_list|(
 name|profile
 argument_list|)

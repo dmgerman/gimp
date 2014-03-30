@@ -1642,7 +1642,7 @@ name|cmyk_profile
 decl_stmt|;
 name|gchar
 modifier|*
-name|name
+name|label
 decl_stmt|;
 name|gchar
 modifier|*
@@ -1750,21 +1750,9 @@ condition|)
 goto|goto
 name|out
 goto|;
-name|name
+name|label
 operator|=
-name|gimp_lcms_profile_get_description
-argument_list|(
-name|cmyk_profile
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|name
-condition|)
-name|name
-operator|=
-name|gimp_lcms_profile_get_model
+name|gimp_lcms_profile_get_label
 argument_list|(
 name|cmyk_profile
 argument_list|)
@@ -1785,7 +1773,7 @@ argument_list|(
 literal|"Profile: %s"
 argument_list|)
 argument_list|,
-name|name
+name|label
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_text
@@ -1818,7 +1806,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|name
+name|label
 argument_list|)
 expr_stmt|;
 name|g_free

@@ -654,7 +654,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|cdisplay_lcms_profile_get_info (cmsHPROFILE profile,gchar ** name,gchar ** info)
+DECL|function|cdisplay_lcms_profile_get_info (cmsHPROFILE profile,gchar ** label,gchar ** summary)
 name|cdisplay_lcms_profile_get_info
 parameter_list|(
 name|cmsHPROFILE
@@ -663,12 +663,12 @@ parameter_list|,
 name|gchar
 modifier|*
 modifier|*
-name|name
+name|label
 parameter_list|,
 name|gchar
 modifier|*
 modifier|*
-name|info
+name|summary
 parameter_list|)
 block|{
 if|if
@@ -677,49 +677,15 @@ name|profile
 condition|)
 block|{
 operator|*
-name|name
+name|label
 operator|=
-name|gimp_lcms_profile_get_description
+name|gimp_lcms_profile_get_label
 argument_list|(
 name|profile
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
 operator|*
-name|name
-condition|)
-operator|*
-name|name
-operator|=
-name|gimp_lcms_profile_get_model
-argument_list|(
-name|profile
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-operator|*
-name|name
-condition|)
-block|{
-comment|/* a color profile without a name */
-operator|*
-name|name
-operator|=
-name|g_strdup
-argument_list|(
-name|_
-argument_list|(
-literal|"(unnamed profile)"
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-operator|*
-name|info
+name|summary
 operator|=
 name|gimp_lcms_profile_get_summary
 argument_list|(
@@ -730,7 +696,7 @@ block|}
 else|else
 block|{
 operator|*
-name|name
+name|label
 operator|=
 name|g_strdup
 argument_list|(
@@ -741,7 +707,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 operator|*
-name|info
+name|summary
 operator|=
 name|NULL
 expr_stmt|;

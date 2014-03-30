@@ -3194,19 +3194,7 @@ condition|)
 block|{
 name|label
 operator|=
-name|gimp_lcms_profile_get_description
-argument_list|(
-name|profile
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|label
-condition|)
-name|label
-operator|=
-name|gimp_lcms_profile_get_model
+name|gimp_lcms_profile_get_label
 argument_list|(
 name|profile
 argument_list|)
@@ -9011,7 +8999,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon286e759f0108
+DECL|struct|__anon294f1a3d0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10267,7 +10255,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon286e759f0208
+DECL|struct|__anon294f1a3d0208
 block|{
 DECL|member|label
 specifier|const
@@ -11477,7 +11465,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon286e759f0308
+DECL|struct|__anon294f1a3d0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11632,7 +11620,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon286e759f0408
+DECL|struct|__anon294f1a3d0408
 block|{
 DECL|member|tree_label
 specifier|const
