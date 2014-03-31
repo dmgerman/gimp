@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28daf0890103
+DECL|enum|__anon2baeb45a0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28daf0890203
+DECL|enum|__anon2baeb45a0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -166,7 +166,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28daf0890308
+DECL|struct|__anon2baeb45a0308
 block|{
 DECL|member|name
 specifier|const
@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28daf0890408
+DECL|struct|__anon2baeb45a0408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -3541,10 +3541,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-ifdef|#
-directive|ifdef
-name|TYPE_RGB_HALF_FLT
-comment|/* half float types are only in lcms 2.4 and newer */
 elseif|else
 if|if
 condition|(
@@ -3557,6 +3553,10 @@ argument_list|)
 condition|)
 comment|/* 16-bit floating point (half) */
 block|{
+ifdef|#
+directive|ifdef
+name|TYPE_RGB_HALF_FLT
+comment|/* half float types are only in lcms 2.4 and newer */
 if|if
 condition|(
 name|has_alpha
@@ -3584,14 +3584,53 @@ name|iter_format
 operator|=
 name|babl_format
 argument_list|(
+literal|"R'G'B' float"
+argument_list|)
+expr_stmt|;
+block|}
+else|#
+directive|else
+comment|/* ! TYPE_RGB_HALF_FLT */
+name|g_printerr
+argument_list|(
+literal|"lcms: half float not supported, falling back to float\n"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|has_alpha
+condition|)
+block|{
+name|lcms_format
+operator|=
+name|TYPE_RGBA_FLT
+expr_stmt|;
+name|iter_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A float"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|lcms_format
+operator|=
+name|TYPE_RGB_FLT
+expr_stmt|;
+name|iter_format
+operator|=
+name|babl_format
+argument_list|(
 literal|"R'G'B' half"
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 endif|#
 directive|endif
 comment|/* TYPE_RGB_HALF_FLT */
+block|}
 elseif|else
 if|if
 condition|(
@@ -3635,13 +3674,113 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-else|else
-block|{
-name|g_warning
+elseif|else
+if|if
+condition|(
+name|type
+operator|==
+name|babl_type
 argument_list|(
-literal|"layer format has not been coded yet; unable to create transform"
+literal|"double"
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|has_alpha
+condition|)
+block|{
+ifdef|#
+directive|ifdef
+name|TYPE_RGBA_DBL
+comment|/* RGBA double not implemented in lcms */
+name|lcms_format
+operator|=
+name|TYPE_RGBA_DBL
+expr_stmt|;
+name|iter_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A double"
 argument_list|)
 expr_stmt|;
+else|#
+directive|else
+comment|/* ! TYPE_RGBA_DBL */
+name|g_printerr
+argument_list|(
+literal|"lcms: RGBA double not supported, falling back to float\n"
+argument_list|)
+expr_stmt|;
+name|lcms_format
+operator|=
+name|TYPE_RGBA_FLT
+expr_stmt|;
+name|iter_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A float"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+comment|/* TYPE_RGBA_DBL */
+block|}
+else|else
+block|{
+name|lcms_format
+operator|=
+name|TYPE_RGB_DBL
+expr_stmt|;
+name|iter_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B' double"
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+name|g_printerr
+argument_list|(
+literal|"lcms: layer format not supported, falling back to float\n"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|has_alpha
+condition|)
+block|{
+name|lcms_format
+operator|=
+name|TYPE_RGBA_FLT
+expr_stmt|;
+name|iter_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A float"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|lcms_format
+operator|=
+name|TYPE_RGB_FLT
+expr_stmt|;
+name|iter_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B' float"
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
