@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baeb45a0103
+DECL|enum|__anon2943178d0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baeb45a0203
+DECL|enum|__anon2943178d0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -166,7 +166,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baeb45a0308
+DECL|struct|__anon2943178d0308
 block|{
 DECL|member|name
 specifier|const
@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baeb45a0408
+DECL|struct|__anon2943178d0408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -3334,16 +3334,6 @@ name|gboolean
 name|bpc
 parameter_list|)
 block|{
-name|cmsHTRANSFORM
-name|transform
-init|=
-name|NULL
-decl_stmt|;
-name|cmsUInt32Number
-name|lcms_format
-init|=
-literal|0
-decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -3386,6 +3376,16 @@ specifier|const
 name|Babl
 modifier|*
 name|iter_format
+init|=
+name|NULL
+decl_stmt|;
+name|cmsUInt32Number
+name|lcms_format
+init|=
+literal|0
+decl_stmt|;
+name|cmsHTRANSFORM
+name|transform
 init|=
 name|NULL
 decl_stmt|;
@@ -3588,45 +3588,6 @@ literal|"R'G'B' float"
 argument_list|)
 expr_stmt|;
 block|}
-else|#
-directive|else
-comment|/* ! TYPE_RGB_HALF_FLT */
-name|g_printerr
-argument_list|(
-literal|"lcms: half float not supported, falling back to float\n"
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|has_alpha
-condition|)
-block|{
-name|lcms_format
-operator|=
-name|TYPE_RGBA_FLT
-expr_stmt|;
-name|iter_format
-operator|=
-name|babl_format
-argument_list|(
-literal|"R'G'B'A float"
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|lcms_format
-operator|=
-name|TYPE_RGB_FLT
-expr_stmt|;
-name|iter_format
-operator|=
-name|babl_format
-argument_list|(
-literal|"R'G'B' half"
-argument_list|)
-expr_stmt|;
-block|}
 endif|#
 directive|endif
 comment|/* TYPE_RGB_HALF_FLT */
@@ -3705,25 +3666,6 @@ argument_list|(
 literal|"R'G'B'A double"
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
-comment|/* ! TYPE_RGBA_DBL */
-name|g_printerr
-argument_list|(
-literal|"lcms: RGBA double not supported, falling back to float\n"
-argument_list|)
-expr_stmt|;
-name|lcms_format
-operator|=
-name|TYPE_RGBA_FLT
-expr_stmt|;
-name|iter_format
-operator|=
-name|babl_format
-argument_list|(
-literal|"R'G'B'A float"
-argument_list|)
-expr_stmt|;
 endif|#
 directive|endif
 comment|/* TYPE_RGBA_DBL */
@@ -3743,11 +3685,22 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-else|else
+if|if
+condition|(
+name|lcms_format
+operator|==
+literal|0
+condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"lcms: layer format not supported, falling back to float\n"
+literal|"lcms: layer format %s not supported, "
+literal|"falling back to float\n"
+argument_list|,
+name|babl_get_name
+argument_list|(
+name|layer_format
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -3782,13 +3735,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-if|if
-condition|(
-name|lcms_format
-operator|!=
-literal|0
-condition|)
-block|{
 name|transform
 operator|=
 name|cmsCreateTransform
@@ -3966,7 +3912,7 @@ name|iter
 argument_list|)
 condition|)
 block|{
-comment|/*  lcms doesn't touch the alpha channel, simply                    *  copy everything to dest before the transform                    */
+comment|/*  lcms doesn't touch the alpha channel, simply                *  copy everything to dest before the transform                */
 if|if
 condition|(
 name|layer_alpha
@@ -4082,7 +4028,6 @@ argument_list|(
 name|transform
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 block|}
