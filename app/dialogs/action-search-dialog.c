@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acbdd610103
+DECL|enum|__anon28c799cf0103
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -136,7 +136,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acbdd610208
+DECL|struct|__anon28c799cf0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -551,9 +551,9 @@ argument_list|)
 expr_stmt|;
 name|main_vbox
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-name|FALSE
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|2
 argument_list|)
@@ -847,7 +847,7 @@ name|keyval
 condition|)
 block|{
 case|case
-name|GDK_Escape
+name|GDK_KEY_Escape
 case|:
 name|action_search_hide
 argument_list|(
@@ -856,7 +856,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 case|case
-name|GDK_Return
+name|GDK_KEY_Return
 case|:
 name|action_search_run_selected
 argument_list|(
@@ -949,7 +949,7 @@ name|event
 operator|->
 name|keyval
 operator|==
-name|GDK_Down
+name|GDK_KEY_Down
 operator|)
 condition|)
 block|{
@@ -1133,7 +1133,7 @@ name|keyval
 condition|)
 block|{
 case|case
-name|GDK_Return
+name|GDK_KEY_Return
 case|:
 block|{
 name|action_search_run_selected
@@ -1144,7 +1144,7 @@ expr_stmt|;
 break|break;
 block|}
 case|case
-name|GDK_Escape
+name|GDK_KEY_Escape
 case|:
 block|{
 name|action_search_hide
@@ -1157,7 +1157,7 @@ name|TRUE
 return|;
 block|}
 case|case
-name|GDK_Up
+name|GDK_KEY_Up
 case|:
 block|{
 name|gboolean
@@ -1300,7 +1300,7 @@ name|event_processed
 return|;
 block|}
 case|case
-name|GDK_Down
+name|GDK_KEY_Down
 case|:
 block|{
 return|return
