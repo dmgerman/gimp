@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a067dbd0103
+DECL|enum|__anon2ae9fe620103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1435,6 +1435,10 @@ operator|=
 name|NULL
 expr_stmt|;
 break|break;
+case|case
+name|GIMP_TOOL_ACTION_COMMIT
+case|:
+break|break;
 block|}
 block|}
 end_function
@@ -2388,6 +2392,24 @@ expr_stmt|;
 name|gimp_tool_clear_status
 argument_list|(
 name|tool
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_TOOL_ACTION_COMMIT
+case|:
+name|GIMP_TOOL_GET_CLASS
+argument_list|(
+name|tool
+argument_list|)
+operator|->
+name|control
+argument_list|(
+name|tool
+argument_list|,
+name|action
+argument_list|,
+name|display
 argument_list|)
 expr_stmt|;
 break|break;

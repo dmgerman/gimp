@@ -233,7 +233,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b8677f0103
+DECL|enum|__anon277c55750103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -844,6 +844,10 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* TODO: If we have any tool options that should be reset, here is        *       a good place to do so.        */
+break|break;
+case|case
+name|GIMP_TOOL_ACTION_COMMIT
+case|:
 break|break;
 block|}
 name|GIMP_TOOL_CLASS

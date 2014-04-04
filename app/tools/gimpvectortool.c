@@ -1010,6 +1010,10 @@ name|NULL
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|GIMP_TOOL_ACTION_COMMIT
+case|:
+break|break;
 block|}
 name|GIMP_TOOL_CLASS
 argument_list|(

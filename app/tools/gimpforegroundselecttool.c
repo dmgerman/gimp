@@ -192,7 +192,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2945a9fe0108
+DECL|struct|__anon29a179ad0108
 block|{
 DECL|member|width
 name|gint
@@ -1116,7 +1116,6 @@ break|break;
 case|case
 name|GIMP_TOOL_ACTION_HALT
 case|:
-block|{
 name|gimp_foreground_select_tool_drop_masks
 argument_list|(
 name|fg_select
@@ -1143,7 +1142,10 @@ operator|->
 name|gui
 argument_list|)
 expr_stmt|;
-block|}
+break|break;
+case|case
+name|GIMP_TOOL_ACTION_COMMIT
+case|:
 break|break;
 block|}
 name|GIMP_TOOL_CLASS

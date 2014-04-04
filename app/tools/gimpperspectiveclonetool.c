@@ -123,7 +123,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c0e23e0103
+DECL|enum|__anon2c1d01f20103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -1145,6 +1145,10 @@ argument_list|(
 name|clone_tool
 argument_list|)
 expr_stmt|;
+break|break;
+case|case
+name|GIMP_TOOL_ACTION_COMMIT
+case|:
 break|break;
 block|}
 name|GIMP_TOOL_CLASS

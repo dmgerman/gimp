@@ -2341,15 +2341,54 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-comment|/*  disconnect the old tool's context  */
 if|if
 condition|(
 name|tool_manager
 operator|->
 name|active_tool
-operator|&&
+condition|)
+block|{
+name|GimpTool
+modifier|*
+name|active_tool
+init|=
 name|tool_manager
 operator|->
+name|active_tool
+decl_stmt|;
+name|GimpDisplay
+modifier|*
+name|display
+decl_stmt|;
+comment|/*  NULL image returns any display (if there is any)  */
+name|display
+operator|=
+name|gimp_tool_has_image
+argument_list|(
+name|active_tool
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+comment|/*  commit the old tool's operation  */
+if|if
+condition|(
+name|display
+condition|)
+name|tool_manager_control_active
+argument_list|(
+name|user_context
+operator|->
+name|gimp
+argument_list|,
+name|GIMP_TOOL_ACTION_COMMIT
+argument_list|,
+name|display
+argument_list|)
+expr_stmt|;
+comment|/*  disconnect the old tool's context  */
+if|if
+condition|(
 name|active_tool
 operator|->
 name|tool_info
@@ -2361,13 +2400,12 @@ name|tool_manager
 argument_list|,
 name|user_context
 argument_list|,
-name|tool_manager
-operator|->
 name|active_tool
 operator|->
 name|tool_info
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/*  connect the new tool's context  */
 name|tool_manager_connect_options

@@ -184,7 +184,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b204dfd0108
+DECL|struct|__anon29d60ce50108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -3772,6 +3772,10 @@ name|n_segment_indices
 operator|=
 literal|0
 expr_stmt|;
+break|break;
+case|case
+name|GIMP_TOOL_ACTION_COMMIT
+case|:
 break|break;
 block|}
 name|GIMP_TOOL_CLASS
