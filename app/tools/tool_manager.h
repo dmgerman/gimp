@@ -52,21 +52,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tool_manager_select_tool
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|GimpTool
-modifier|*
-name|tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|tool_manager_push_tool
 parameter_list|(
 name|Gimp
