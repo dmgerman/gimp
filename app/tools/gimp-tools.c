@@ -300,6 +300,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpmybrushtool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpnpointdeformationtool.h"
 end_include
 
@@ -541,6 +547,8 @@ block|,
 name|gimp_heal_tool_register
 block|,
 name|gimp_clone_tool_register
+block|,
+name|gimp_mybrush_tool_register
 block|,
 name|gimp_ink_tool_register
 block|,
@@ -2001,6 +2009,19 @@ block|{
 name|paint_core_name
 operator|=
 literal|"gimp-ink"
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|tool_type
+operator|==
+name|GIMP_TYPE_MYBRUSH_TOOL
+condition|)
+block|{
+name|paint_core_name
+operator|=
+literal|"gimp-mybrush"
 expr_stmt|;
 block|}
 else|else

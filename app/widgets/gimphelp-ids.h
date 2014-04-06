@@ -2046,6 +2046,14 @@ value|"gimp-tool-move"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TOOL_MYBRUSH
+define|#
+directive|define
+name|GIMP_HELP_TOOL_MYBRUSH
+value|"gimp-tool-mybrush"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TOOL_N_POINT_DEFORMATION
 define|#
 directive|define

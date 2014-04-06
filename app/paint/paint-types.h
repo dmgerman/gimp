@@ -123,6 +123,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpMybrush
+typedef|typedef
+name|struct
+name|_GimpMybrush
+name|GimpMybrush
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPaintbrush
 typedef|typedef
 name|struct
@@ -231,6 +240,15 @@ typedef|typedef
 name|struct
 name|_GimpInkOptions
 name|GimpInkOptions
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpMybrushOptions
+typedef|typedef
+name|struct
+name|_GimpMybrushOptions
+name|GimpMybrushOptions
 typedef|;
 end_typedef
 

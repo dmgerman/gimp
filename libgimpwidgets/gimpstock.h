@@ -487,6 +487,11 @@ define|#
 directive|define
 name|GIMP_STOCK_TOOL_MOVE
 value|"gimp-tool-move"
+DECL|macro|GIMP_STOCK_TOOL_MYBRUSH
+define|#
+directive|define
+name|GIMP_STOCK_TOOL_MYBRUSH
+value|"gimp-tool-mybrush"
 DECL|macro|GIMP_STOCK_TOOL_N_POINT_DEFORMATION
 define|#
 directive|define
