@@ -70,7 +70,6 @@ file|"gimp-intl.h"
 end_include
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpInkTool,gimp_ink_tool,GIMP_TYPE_PAINT_TOOL)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpInkTool
@@ -89,8 +88,21 @@ name|parent_class
 value|gimp_ink_tool_parent_class
 end_define
 
+begin_function_decl
+specifier|static
+name|void
+name|gimp_ink_tool_draw
+parameter_list|(
+name|GimpDrawTool
+modifier|*
+name|draw_tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function
 name|void
+DECL|function|gimp_ink_tool_register (GimpToolRegisterCallback callback,gpointer data)
 name|gimp_ink_tool_register
 parameter_list|(
 name|GimpToolRegisterCallback
@@ -160,7 +172,23 @@ name|GimpInkToolClass
 modifier|*
 name|klass
 parameter_list|)
-block|{ }
+block|{
+name|GimpDrawToolClass
+modifier|*
+name|draw_tool_class
+init|=
+name|GIMP_DRAW_TOOL_CLASS
+argument_list|(
+name|klass
+argument_list|)
+decl_stmt|;
+name|draw_tool_class
+operator|->
+name|draw
+operator|=
+name|gimp_ink_tool_draw
+expr_stmt|;
+block|}
 end_function
 
 begin_function
@@ -227,6 +255,59 @@ name|ink_tool
 argument_list|)
 argument_list|,
 name|GIMP_COLOR_PICK_MODE_FOREGROUND
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_ink_tool_draw (GimpDrawTool * draw_tool)
+name|gimp_ink_tool_draw
+parameter_list|(
+name|GimpDrawTool
+modifier|*
+name|draw_tool
+parameter_list|)
+block|{
+name|GimpPaintTool
+modifier|*
+name|paint_tool
+init|=
+name|GIMP_PAINT_TOOL
+argument_list|(
+name|draw_tool
+argument_list|)
+decl_stmt|;
+name|GimpInkOptions
+modifier|*
+name|options
+init|=
+name|GIMP_INK_TOOL_GET_OPTIONS
+argument_list|(
+name|draw_tool
+argument_list|)
+decl_stmt|;
+name|gimp_paint_tool_set_draw_circle
+argument_list|(
+name|paint_tool
+argument_list|,
+name|TRUE
+argument_list|,
+name|options
+operator|->
+name|size
+argument_list|)
+expr_stmt|;
+name|GIMP_DRAW_TOOL_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|draw
+argument_list|(
+name|draw_tool
 argument_list|)
 expr_stmt|;
 block|}
