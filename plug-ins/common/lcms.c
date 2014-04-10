@@ -18,16 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
-end_include
-
-begin_comment
-comment|/* lcms.h uses the "inline" keyword */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|<lcms2.h>
 end_include
 
@@ -115,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1d7c710103
+DECL|enum|__anon29d2c32b0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -137,7 +127,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1d7c710203
+DECL|enum|__anon29d2c32b0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -166,7 +156,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1d7c710308
+DECL|struct|__anon29d2c32b0308
 block|{
 DECL|member|name
 specifier|const
@@ -188,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1d7c710408
+DECL|struct|__anon29d2c32b0408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent

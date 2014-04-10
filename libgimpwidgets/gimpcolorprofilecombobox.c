@@ -12,16 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
-end_include
-
-begin_comment
-comment|/* lcms.h uses the "inline" keyword */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|<lcms2.h>
 end_include
 
@@ -79,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2c1fd50103
+DECL|enum|__anon27b2f8fd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -96,7 +86,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2c1fd50208
+DECL|struct|__anon27b2f8fd0208
 block|{
 DECL|member|last_path
 name|GtkTreePath

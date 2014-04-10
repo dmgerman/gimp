@@ -12,16 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
-end_include
-
-begin_comment
-comment|/* lcms.h uses the "inline" keyword */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|<lcms2.h>
 end_include
 

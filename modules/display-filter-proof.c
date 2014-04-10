@@ -12,16 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
-end_include
-
-begin_comment
-comment|/* lcms.h uses the "inline" keyword */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|<lcms2.h>
 end_include
 
@@ -194,7 +184,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon29aa1d1f0103
+DECL|enum|__anon2b5722c20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
