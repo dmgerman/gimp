@@ -423,7 +423,7 @@ DECL|macro|TILE_MAP_SIZE
 define|#
 directive|define
 name|TILE_MAP_SIZE
-value|(_tile_width * _tile_height * 16)
+value|(_tile_width * _tile_height * 32)
 end_define
 
 begin_define
@@ -441,7 +441,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e9398a0103
+DECL|enum|__anon275e6b030103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
