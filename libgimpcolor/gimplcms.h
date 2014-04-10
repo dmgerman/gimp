@@ -46,11 +46,6 @@ end_define
 begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
-DECL|macro|GIMP_LCMS_MD5_DIGEST_LENGTH
-define|#
-directive|define
-name|GIMP_LCMS_MD5_DIGEST_LENGTH
-value|16
 name|GimpColorProfile
 name|gimp_lcms_profile_open_from_file
 parameter_list|(

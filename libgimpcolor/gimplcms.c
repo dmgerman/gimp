@@ -71,6 +71,14 @@ begin_comment
 comment|/**  * SECTION: gimplcms  * @title: GimpLcms  * @short_description: Definitions and Functions relating to LCMS.  *  * Definitions and Functions relating to LCMS.  **/
 end_comment
 
+begin_define
+DECL|macro|GIMP_LCMS_MD5_DIGEST_LENGTH
+define|#
+directive|define
+name|GIMP_LCMS_MD5_DIGEST_LENGTH
+value|16
+end_define
+
 begin_function
 specifier|static
 name|GQuark
