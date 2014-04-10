@@ -88,6 +88,26 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|guint8
+modifier|*
+name|gimp_lcms_profile_save_to_data
+parameter_list|(
+name|GimpColorProfile
+name|profile
+parameter_list|,
+name|gsize
+modifier|*
+name|length
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_lcms_profile_get_description
