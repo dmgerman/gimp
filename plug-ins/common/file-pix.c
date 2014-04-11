@@ -468,7 +468,7 @@ argument_list|(
 literal|"Alias Pix image"
 argument_list|)
 argument_list|,
-literal|"RGB*, GRAY*"
+literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
@@ -763,6 +763,8 @@ argument_list|,
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_GRAY
+operator||
+name|GIMP_EXPORT_CAN_HANDLE_INDEXED
 argument_list|)
 expr_stmt|;
 if|if
@@ -1937,7 +1939,8 @@ argument_list|)
 expr_stmt|;
 name|savingColor
 operator|=
-name|gimp_drawable_is_rgb
+operator|!
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable_ID
 argument_list|)
@@ -1963,9 +1966,9 @@ argument_list|)
 expr_stmt|;
 name|depth
 operator|=
-name|gimp_drawable_bpp
+name|babl_format_get_bytes_per_pixel
 argument_list|(
-name|drawable_ID
+name|format
 argument_list|)
 expr_stmt|;
 comment|/* Write the image header */
