@@ -2103,8 +2103,6 @@ operator|(
 name|height
 operator|-
 name|i
-operator|-
-literal|1
 operator|)
 operator|)
 condition|?
@@ -2114,8 +2112,6 @@ operator|(
 name|height
 operator|-
 name|i
-operator|-
-literal|1
 operator|)
 expr_stmt|;
 name|gegl_buffer_get
@@ -2450,8 +2446,6 @@ operator|(
 name|height
 operator|-
 name|i
-operator|-
-literal|1
 operator|)
 operator|)
 condition|?
@@ -2461,8 +2455,6 @@ operator|(
 name|height
 operator|-
 name|i
-operator|-
-literal|1
 operator|)
 expr_stmt|;
 name|gegl_buffer_get
