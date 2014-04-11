@@ -80,6 +80,11 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+name|cairo_save
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
 name|gimp_text_layout_get_offsets
 argument_list|(
 name|layout
@@ -140,6 +145,11 @@ argument_list|(
 name|cr
 argument_list|,
 name|pango_layout
+argument_list|)
+expr_stmt|;
+name|cairo_restore
+argument_list|(
+name|cr
 argument_list|)
 expr_stmt|;
 block|}
