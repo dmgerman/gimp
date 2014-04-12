@@ -123,6 +123,10 @@ DECL|member|draw_line
 name|gboolean
 name|draw_line
 decl_stmt|;
+DECL|member|show_cursor
+name|gboolean
+name|show_cursor
+decl_stmt|;
 DECL|member|draw_circle
 name|gboolean
 name|draw_circle

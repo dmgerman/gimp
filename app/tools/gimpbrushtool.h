@@ -103,10 +103,6 @@ DECL|member|parent_instance
 name|GimpPaintTool
 name|parent_instance
 decl_stmt|;
-DECL|member|show_cursor
-name|gboolean
-name|show_cursor
-decl_stmt|;
 DECL|member|draw_brush
 name|gboolean
 name|draw_brush

@@ -833,7 +833,7 @@ define|#
 directive|define
 name|SHOW_PAINT_TOOL_CURSOR_BLURB
 define|\
-value|N_("When enabled, the mouse pointer will be shown over the image while " \     "using a brush-based paint tool.")
+value|N_("When enabled, the mouse pointer will be shown over the image while " \    "using a paint tool.")
 end_define
 
 begin_define
