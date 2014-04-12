@@ -192,7 +192,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a179ad0108
+DECL|struct|__anon2aeb05300108
 block|{
 DECL|member|width
 name|gint
@@ -3204,7 +3204,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|1.0
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gimp_scan_convert_free
