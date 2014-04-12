@@ -815,7 +815,7 @@ define|#
 directive|define
 name|SHOW_BRUSH_OUTLINE_BLURB
 define|\
-value|N_("When enabled, all brush-based paint tools will show a preview of the current " \    "brush's outline.")
+value|N_("When enabled, all paint tools will show a preview of the current " \    "brush's outline.")
 end_define
 
 begin_define
