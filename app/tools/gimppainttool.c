@@ -3317,7 +3317,7 @@ name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
-name|GIMP_HANDLE_CROSS
+name|GIMP_HANDLE_CIRCLE
 argument_list|,
 name|cur_x
 argument_list|,
