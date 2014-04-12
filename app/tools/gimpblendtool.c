@@ -1627,7 +1627,24 @@ argument_list|(
 name|draw_tool
 argument_list|)
 decl_stmt|;
-comment|/*  Draw start target  */
+name|GimpCanvasGroup
+modifier|*
+name|group
+decl_stmt|;
+name|group
+operator|=
+name|gimp_draw_tool_add_stroke_group
+argument_list|(
+name|draw_tool
+argument_list|)
+expr_stmt|;
+name|gimp_draw_tool_push_group
+argument_list|(
+name|draw_tool
+argument_list|,
+name|group
+argument_list|)
+expr_stmt|;
 name|blend_tool
 operator|->
 name|start_handle
@@ -1636,7 +1653,7 @@ name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
-name|GIMP_HANDLE_CROSS
+name|GIMP_HANDLE_CIRCLE
 argument_list|,
 name|blend_tool
 operator|->
@@ -1646,14 +1663,13 @@ name|blend_tool
 operator|->
 name|start_y
 argument_list|,
-name|GIMP_TOOL_HANDLE_SIZE_CROSS
+name|GIMP_TOOL_HANDLE_SIZE_CIRCLE
 argument_list|,
-name|GIMP_TOOL_HANDLE_SIZE_CROSS
+name|GIMP_TOOL_HANDLE_SIZE_CIRCLE
 argument_list|,
 name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
-comment|/*  Draw the line between the start and end coords  */
 name|blend_tool
 operator|->
 name|line
@@ -1679,7 +1695,6 @@ operator|->
 name|end_y
 argument_list|)
 expr_stmt|;
-comment|/*  Draw end target  */
 name|blend_tool
 operator|->
 name|end_handle
@@ -1688,7 +1703,7 @@ name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
-name|GIMP_HANDLE_CROSS
+name|GIMP_HANDLE_CIRCLE
 argument_list|,
 name|blend_tool
 operator|->
@@ -1698,11 +1713,16 @@ name|blend_tool
 operator|->
 name|end_y
 argument_list|,
-name|GIMP_TOOL_HANDLE_SIZE_CROSS
+name|GIMP_TOOL_HANDLE_SIZE_CIRCLE
 argument_list|,
-name|GIMP_TOOL_HANDLE_SIZE_CROSS
+name|GIMP_TOOL_HANDLE_SIZE_CIRCLE
 argument_list|,
 name|GIMP_HANDLE_ANCHOR_CENTER
+argument_list|)
+expr_stmt|;
+name|gimp_draw_tool_pop_group
+argument_list|(
+name|draw_tool
 argument_list|)
 expr_stmt|;
 block|}
