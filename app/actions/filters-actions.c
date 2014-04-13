@@ -163,6 +163,28 @@ comment|/* FIXME GIMP_HELP_FILTER_APPLY_CANVAS */
 block|}
 block|,
 block|{
+literal|"filters-apply-lens"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Apply _Lens..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:apply-lens"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_APPLY_LENS */
+block|}
+block|,
+block|{
 literal|"filters-bump-map"
 block|,
 name|GIMP_STOCK_GEGL
@@ -1520,6 +1542,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-apply-canvas"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-apply-lens"
 argument_list|,
 name|writable
 argument_list|)
