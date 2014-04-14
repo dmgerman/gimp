@@ -908,10 +908,10 @@ decl_stmt|;
 name|gdouble
 name|refraction
 decl_stmt|;
-name|gint32
+name|gboolean
 name|keep_surroundings
 decl_stmt|;
-name|gint32
+name|gboolean
 name|set_background
 decl_stmt|;
 name|drawable
@@ -942,7 +942,7 @@ argument_list|)
 expr_stmt|;
 name|keep_surroundings
 operator|=
-name|g_value_get_int
+name|g_value_get_boolean
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -954,7 +954,7 @@ argument_list|)
 expr_stmt|;
 name|set_background
 operator|=
-name|g_value_get_int
+name|g_value_get_boolean
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -8595,7 +8595,7 @@ literal|"plug-in-applylens"
 argument_list|,
 literal|"Simulate an elliptical lens over the image"
 argument_list|,
-literal|"This plug-in uses Snell's law to draw an ellipsoid lens over the image"
+literal|"This plug-in uses Snell's law to draw an ellipsoid lens over the image."
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:apply-lens' for credits."
 argument_list|,
@@ -8696,19 +8696,15 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_boolean
 argument_list|(
 literal|"keep-surroundings"
 argument_list|,
 literal|"keep surroundings"
 argument_list|,
-literal|"Keep lens surroundings { TRUE, FALSE }"
+literal|"Keep lens surroundings"
 argument_list|,
-literal|0
-argument_list|,
-literal|1
-argument_list|,
-literal|0
+name|FALSE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -8718,19 +8714,15 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_boolean
 argument_list|(
 literal|"set-background"
 argument_list|,
 literal|"set background"
 argument_list|,
-literal|"Set lens surroundings to BG value { TRUE, FALSE }"
+literal|"Set lens surroundings to BG value"
 argument_list|,
-literal|0
-argument_list|,
-literal|1
-argument_list|,
-literal|0
+name|FALSE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -8740,19 +8732,15 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_boolean
 argument_list|(
 literal|"set-transparent"
 argument_list|,
 literal|"set transparent"
 argument_list|,
-literal|"Set lens surroundings transparent { TRUE, FALSE }"
+literal|"Set lens surroundings transparent"
 argument_list|,
-literal|0
-argument_list|,
-literal|1
-argument_list|,
-literal|0
+name|FALSE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
