@@ -120,6 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpmybrushtool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppaintoptions-gui.h"
 end_include
 
@@ -494,6 +500,10 @@ name|GIMP_TYPE_HEAL_TOOL
 operator|||
 name|tool_type
 operator|==
+name|GIMP_TYPE_MYBRUSH_TOOL
+operator|||
+name|tool_type
+operator|==
 name|GIMP_TYPE_SMUDGE_TOOL
 condition|)
 block|{
@@ -569,6 +579,10 @@ name|tool_type
 argument_list|,
 name|GIMP_TYPE_PAINT_TOOL
 argument_list|)
+operator|&&
+name|tool_type
+operator|!=
+name|GIMP_TYPE_MYBRUSH_TOOL
 condition|)
 block|{
 name|GtkWidget
