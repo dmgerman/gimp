@@ -385,6 +385,10 @@ name|GIMP_TYPE_DODGE_BURN_TOOL
 operator|||
 name|tool_type
 operator|==
+name|GIMP_TYPE_HEAL_TOOL
+operator|||
+name|tool_type
+operator|==
 name|GIMP_TYPE_SMUDGE_TOOL
 condition|)
 block|{
