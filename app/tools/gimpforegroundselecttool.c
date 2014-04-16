@@ -192,7 +192,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9df0030108
+DECL|struct|__anon2978703b0108
 block|{
 DECL|member|width
 name|gint
@@ -1684,7 +1684,7 @@ name|fg_select
 operator|->
 name|state
 operator|==
-name|MATTING_STATE_PAINT_TRIMAP
+name|MATTING_STATE_FREE_SELECT
 condition|)
 block|{
 return|return
