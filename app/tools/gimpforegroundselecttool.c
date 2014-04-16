@@ -192,7 +192,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b16c6b40108
+DECL|struct|__anon2c46a9e40108
 block|{
 DECL|member|width
 name|gint
@@ -2120,16 +2120,6 @@ else|else
 name|gimp_foreground_select_tool_set_trimap
 argument_list|(
 name|fg_select
-argument_list|,
-name|display
-argument_list|)
-expr_stmt|;
-name|gimp_free_select_tool_select
-argument_list|(
-name|GIMP_FREE_SELECT_TOOL
-argument_list|(
-name|tool
-argument_list|)
 argument_list|,
 name|display
 argument_list|)
