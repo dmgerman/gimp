@@ -422,7 +422,7 @@ name|GIMP_PLUGIN_PRINT_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"Cannot handle the size (either width or height) of the Image."
+literal|"Cannot handle the size (either width or height) of the image."
 argument_list|)
 argument_list|)
 expr_stmt|;
