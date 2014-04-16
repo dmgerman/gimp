@@ -53,6 +53,11 @@ name|print_surface_from_drawable
 parameter_list|(
 name|gint32
 name|drawable_ID
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -83,7 +88,7 @@ end_function_decl
 
 begin_function
 name|gboolean
-DECL|function|print_draw_page (GtkPrintContext * context,PrintData * data)
+DECL|function|print_draw_page (GtkPrintContext * context,PrintData * data,GError ** error)
 name|print_draw_page
 parameter_list|(
 name|GtkPrintContext
@@ -93,6 +98,11 @@ parameter_list|,
 name|PrintData
 modifier|*
 name|data
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|cairo_t
@@ -127,8 +137,15 @@ argument_list|(
 name|data
 operator|->
 name|drawable_id
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|surface
+condition|)
+block|{
 name|width
 operator|=
 name|cairo_image_surface_get_width
@@ -248,17 +265,29 @@ return|return
 name|TRUE
 return|;
 block|}
+else|else
+block|{
+return|return
+name|FALSE
+return|;
+block|}
+block|}
 end_function
 
 begin_function
 specifier|static
 name|cairo_surface_t
 modifier|*
-DECL|function|print_surface_from_drawable (gint32 drawable_ID)
+DECL|function|print_surface_from_drawable (gint32 drawable_ID,GError ** error)
 name|print_surface_from_drawable
 parameter_list|(
 name|gint32
 name|drawable_ID
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GeglBuffer
@@ -278,6 +307,9 @@ decl_stmt|;
 name|cairo_surface_t
 modifier|*
 name|surface
+decl_stmt|;
+name|cairo_status_t
+name|status
 decl_stmt|;
 specifier|const
 name|gint
@@ -358,6 +390,66 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
+name|status
+operator|=
+name|cairo_surface_status
+argument_list|(
+name|surface
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|status
+operator|!=
+name|CAIRO_STATUS_SUCCESS
+condition|)
+block|{
+switch|switch
+condition|(
+name|status
+condition|)
+block|{
+case|case
+name|CAIRO_STATUS_INVALID_SIZE
+case|:
+name|g_set_error_literal
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_PLUGIN_PRINT_ERROR
+argument_list|,
+name|GIMP_PLUGIN_PRINT_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"Cannot handle the size (either width or height) of the Image."
+argument_list|)
+argument_list|)
+expr_stmt|;
+break|break;
+default|default:
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_PLUGIN_PRINT_ERROR
+argument_list|,
+name|GIMP_PLUGIN_PRINT_ERROR_FAILED
+argument_list|,
+literal|"Cairo error: %s"
+argument_list|,
+name|cairo_status_to_string
+argument_list|(
+name|status
+argument_list|)
+argument_list|)
+expr_stmt|;
+break|break;
+block|}
+return|return
+name|NULL
+return|;
+block|}
 name|pixels
 operator|=
 name|cairo_image_surface_get_data
