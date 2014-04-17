@@ -184,7 +184,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d60ce50108
+DECL|struct|__anon29c173a70108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -4318,13 +4318,6 @@ name|display
 operator|=
 name|display
 expr_stmt|;
-name|gimp_draw_tool_start
-argument_list|(
-name|draw_tool
-argument_list|,
-name|display
-argument_list|)
-expr_stmt|;
 comment|/* We want to apply the selection operation that was current when        * the tool was started, so we save this information        */
 name|priv
 operator|->
@@ -4335,6 +4328,21 @@ operator|->
 name|operation
 expr_stmt|;
 block|}
+if|if
+condition|(
+operator|!
+name|gimp_draw_tool_is_active
+argument_list|(
+name|draw_tool
+argument_list|)
+condition|)
+name|gimp_draw_tool_start
+argument_list|(
+name|draw_tool
+argument_list|,
+name|display
+argument_list|)
+expr_stmt|;
 name|gimp_tool_control_activate
 argument_list|(
 name|tool
