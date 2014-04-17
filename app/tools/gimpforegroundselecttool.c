@@ -192,7 +192,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2978703b0108
+DECL|struct|__anon2967b1bf0108
 block|{
 DECL|member|width
 name|gint
@@ -2328,6 +2328,15 @@ argument_list|,
 name|RESPONSE_RESET
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_tool_gui_set_overlay
+argument_list|(
+name|fg_select
+operator|->
+name|gui
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
