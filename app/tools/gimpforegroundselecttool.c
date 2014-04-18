@@ -190,7 +190,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2932de820108
+DECL|struct|__anon2a0e4d120108
 block|{
 DECL|member|width
 name|gint
@@ -1563,7 +1563,7 @@ name|status_mode
 operator|=
 name|_
 argument_list|(
-literal|"Selecting foreground, "
+literal|"Selecting foreground,"
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -1579,7 +1579,7 @@ name|status_mode
 operator|=
 name|_
 argument_list|(
-literal|"Selecting background, "
+literal|"Selecting background,"
 argument_list|)
 expr_stmt|;
 else|else
@@ -1587,7 +1587,7 @@ name|status_mode
 operator|=
 name|_
 argument_list|(
-literal|"Selecting unknown, "
+literal|"Selecting unknown,"
 argument_list|)
 expr_stmt|;
 if|if
@@ -1631,7 +1631,7 @@ name|tool
 argument_list|,
 name|display
 argument_list|,
-literal|"%s%s"
+literal|"%s %s"
 argument_list|,
 name|status_mode
 argument_list|,
