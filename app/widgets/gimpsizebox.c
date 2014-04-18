@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d725790103
+DECL|enum|__anon290d041f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1002,6 +1002,9 @@ operator|->
 name|edit_resolution
 condition|)
 block|{
+name|gboolean
+name|chain_active
+decl_stmt|;
 name|hbox
 operator|=
 name|gtk_box_new
@@ -1032,6 +1035,21 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
+name|chain_active
+operator|=
+name|ABS
+argument_list|(
+name|box
+operator|->
+name|xresolution
+operator|-
+name|box
+operator|->
+name|yresolution
+argument_list|)
+operator|<
+name|GIMP_MIN_RESOLUTION
+expr_stmt|;
 name|entry
 operator|=
 name|gimp_coordinates_new
@@ -1053,7 +1071,7 @@ name|SB_WIDTH
 argument_list|,
 name|GIMP_SIZE_ENTRY_UPDATE_RESOLUTION
 argument_list|,
-name|TRUE
+name|chain_active
 argument_list|,
 name|FALSE
 argument_list|,
