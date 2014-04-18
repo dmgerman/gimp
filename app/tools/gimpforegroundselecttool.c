@@ -172,14 +172,6 @@ file|"gimp-intl.h"
 end_include
 
 begin_define
-DECL|macro|RESPONSE_RESET
-define|#
-directive|define
-name|RESPONSE_RESET
-value|1
-end_define
-
-begin_define
 DECL|macro|RESPONSE_PREVIEW
 define|#
 directive|define
@@ -198,7 +190,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0a2e7b0108
+DECL|struct|__anon2932de820108
 block|{
 DECL|member|width
 name|gint
@@ -1213,6 +1205,10 @@ argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
+name|GTK_STOCK_CANCEL
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
 name|_
 argument_list|(
 literal|"Toggle Preview"
@@ -1226,10 +1222,6 @@ literal|"Apply"
 argument_list|)
 argument_list|,
 name|RESPONSE_APPLY
-argument_list|,
-name|GIMP_STOCK_RESET
-argument_list|,
-name|RESPONSE_RESET
 argument_list|,
 name|NULL
 argument_list|)
@@ -2019,7 +2011,7 @@ name|fg_select
 operator|->
 name|gui
 argument_list|,
-name|RESPONSE_RESET
+name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|fg_select
 argument_list|)
@@ -2412,13 +2404,14 @@ name|tool
 operator|->
 name|display
 decl_stmt|;
-if|if
+switch|switch
 condition|(
 name|response_id
-operator|==
-name|RESPONSE_PREVIEW
 condition|)
 block|{
+case|case
+name|RESPONSE_PREVIEW
+case|:
 if|if
 condition|(
 name|fg_select
@@ -2442,15 +2435,10 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|response_id
-operator|==
+break|break;
+case|case
 name|RESPONSE_APPLY
-condition|)
-block|{
+case|:
 if|if
 condition|(
 name|fg_select
@@ -2473,15 +2461,8 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|response_id
-operator|==
-name|RESPONSE_RESET
-condition|)
-block|{
+break|break;
+default|default:
 name|gimp_tool_control
 argument_list|(
 name|tool
@@ -2491,12 +2472,8 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
+break|break;
 block|}
-name|gimp_foreground_select_tool_update_gui
-argument_list|(
-name|fg_select
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -3498,6 +3475,11 @@ name|state
 operator|=
 name|MATTING_STATE_PAINT_TRIMAP
 expr_stmt|;
+name|gimp_foreground_select_tool_update_gui
+argument_list|(
+name|fg_select
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -3603,6 +3585,11 @@ operator|->
 name|state
 operator|=
 name|MATTING_STATE_PREVIEW_MASK
+expr_stmt|;
+name|gimp_foreground_select_tool_update_gui
+argument_list|(
+name|fg_select
+argument_list|)
 expr_stmt|;
 block|}
 end_function
