@@ -2453,7 +2453,10 @@ block|,
 block|{
 name|GIMP_STOCK_TOOL_FOREGROUND_SELECT
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"_Select"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -2784,7 +2787,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27dc89ff0108
+DECL|struct|__anon27439d5b0108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3668,7 +3671,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27dc89ff0208
+DECL|struct|__anon27439d5b0208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4632,7 +4635,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27dc89ff0308
+DECL|struct|__anon27439d5b0308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4735,7 +4738,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27dc89ff0408
+DECL|struct|__anon27439d5b0408
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4886,7 +4889,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27dc89ff0508
+DECL|struct|__anon27439d5b0508
 block|{
 DECL|member|stock_id
 specifier|const
