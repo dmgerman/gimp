@@ -509,6 +509,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 specifier|const
 name|gchar
 modifier|*
@@ -526,6 +527,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 specifier|const
 name|gchar
 modifier|*
@@ -543,6 +545,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|gboolean
 name|gimp_transform_tool_undo
 parameter_list|(
@@ -558,6 +561,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|gboolean
 name|gimp_transform_tool_redo
 parameter_list|(
@@ -3286,6 +3290,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 specifier|const
 name|gchar
 modifier|*
@@ -3352,6 +3357,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 specifier|const
 name|gchar
 modifier|*
@@ -3411,6 +3417,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gboolean
 DECL|function|gimp_transform_tool_undo (GimpTool * tool,GimpDisplay * display)
 name|gimp_transform_tool_undo
@@ -3573,6 +3580,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gboolean
 DECL|function|gimp_transform_tool_redo (GimpTool * tool,GimpDisplay * display)
 name|gimp_transform_tool_redo
