@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d5451b0103
+DECL|enum|__anon2a4be5a50103
 block|{
 DECL|enumerator|MATTING_STATE_FREE_SELECT
 name|MATTING_STATE_FREE_SELECT
@@ -166,6 +166,16 @@ DECL|member|mask
 name|GeglBuffer
 modifier|*
 name|mask
+decl_stmt|;
+DECL|member|undo_stack
+name|GList
+modifier|*
+name|undo_stack
+decl_stmt|;
+DECL|member|redo_stack
+name|GList
+modifier|*
+name|redo_stack
 decl_stmt|;
 DECL|member|gui
 name|GimpToolGui
