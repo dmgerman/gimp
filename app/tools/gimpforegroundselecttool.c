@@ -176,21 +176,13 @@ DECL|macro|RESPONSE_PREVIEW
 define|#
 directive|define
 name|RESPONSE_PREVIEW
-value|2
-end_define
-
-begin_define
-DECL|macro|RESPONSE_APPLY
-define|#
-directive|define
-name|RESPONSE_APPLY
-value|3
+value|1
 end_define
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a21a43b0108
+DECL|struct|__anon2b7b301a0108
 block|{
 DECL|member|width
 name|gint
@@ -1208,12 +1200,9 @@ argument_list|)
 argument_list|,
 name|RESPONSE_PREVIEW
 argument_list|,
-name|_
-argument_list|(
-literal|"Apply"
-argument_list|)
+name|GIMP_STOCK_TOOL_FOREGROUND_SELECT
 argument_list|,
-name|RESPONSE_APPLY
+name|GTK_RESPONSE_APPLY
 argument_list|,
 name|NULL
 argument_list|)
@@ -1273,7 +1262,7 @@ name|fg_select
 operator|->
 name|gui
 argument_list|,
-name|RESPONSE_APPLY
+name|GTK_RESPONSE_APPLY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1987,7 +1976,7 @@ name|fg_select
 operator|->
 name|gui
 argument_list|,
-name|RESPONSE_APPLY
+name|GTK_RESPONSE_APPLY
 argument_list|,
 name|fg_select
 argument_list|)
@@ -4348,7 +4337,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|RESPONSE_APPLY
+name|GTK_RESPONSE_APPLY
 case|:
 name|gimp_tool_control
 argument_list|(
@@ -4448,7 +4437,7 @@ name|fg_select
 operator|->
 name|gui
 argument_list|,
-name|RESPONSE_APPLY
+name|GTK_RESPONSE_APPLY
 argument_list|,
 name|TRUE
 argument_list|)
