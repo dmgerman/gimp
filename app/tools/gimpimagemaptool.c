@@ -3222,6 +3222,8 @@ expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|new_tool_id
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -3265,6 +3267,18 @@ operator|->
 name|tool_info_list
 argument_list|,
 name|new_tool_id
+argument_list|)
+expr_stmt|;
+name|gimp_tool_control
+argument_list|(
+name|GIMP_TOOL
+argument_list|(
+name|im_tool
+argument_list|)
+argument_list|,
+name|GIMP_TOOL_ACTION_HALT
+argument_list|,
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_context_set_tool
