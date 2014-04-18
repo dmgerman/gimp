@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298eeab30108
+DECL|struct|__anon2772496e0108
 block|{
 DECL|member|data
 name|PrintData
@@ -127,7 +127,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon298eeab30203
+DECL|enum|__anon2772496e0203
 block|{
 DECL|enumerator|BOTTOM
 name|BOTTOM
@@ -1728,6 +1728,21 @@ argument_list|(
 name|GIMP_CHAIN_RIGHT
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|ABS
+argument_list|(
+name|data
+operator|->
+name|xres
+operator|-
+name|data
+operator|->
+name|yres
+argument_list|)
+operator|<
+name|GIMP_MIN_RESOLUTION
+condition|)
 name|gimp_chain_button_set_active
 argument_list|(
 name|GIMP_CHAIN_BUTTON
