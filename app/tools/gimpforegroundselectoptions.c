@@ -93,7 +93,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon292e59eb0103
+DECL|enum|__anon28d59d970103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -229,7 +229,7 @@ argument_list|)
 argument_list|,
 name|GIMP_TYPE_MATTING_DRAW_MODE
 argument_list|,
-name|GIMP_MATTING_DRAW_MODE_UNKNOWN
+name|GIMP_MATTING_DRAW_MODE_FOREGROUND
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
