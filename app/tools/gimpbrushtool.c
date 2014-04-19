@@ -395,7 +395,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-literal|"context/context-brush-aspect-set"
+literal|"tools/tools-paint-brush-aspect-ratio-set"
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_action_value_4
@@ -404,7 +404,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-literal|"context/context-brush-angle-set"
+literal|"tools/tools-paint-brush-angle-set"
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_action_object_1
