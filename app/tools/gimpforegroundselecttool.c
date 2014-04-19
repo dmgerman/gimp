@@ -625,10 +625,6 @@ parameter_list|(
 name|GimpForegroundSelectTool
 modifier|*
 name|fg_select
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -641,10 +637,6 @@ parameter_list|(
 name|GimpForegroundSelectTool
 modifier|*
 name|fg_select
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -657,10 +649,6 @@ parameter_list|(
 name|GimpForegroundSelectTool
 modifier|*
 name|fg_select
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1891,16 +1879,12 @@ condition|)
 name|gimp_foreground_select_tool_preview
 argument_list|(
 name|fg_select
-argument_list|,
-name|display
 argument_list|)
 expr_stmt|;
 else|else
 name|gimp_foreground_select_tool_set_trimap
 argument_list|(
 name|fg_select
-argument_list|,
-name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -2951,16 +2935,12 @@ condition|)
 name|gimp_foreground_select_tool_preview
 argument_list|(
 name|fg_select
-argument_list|,
-name|display
 argument_list|)
 expr_stmt|;
 else|else
 name|gimp_foreground_select_tool_set_trimap
 argument_list|(
 name|fg_select
-argument_list|,
-name|display
 argument_list|)
 expr_stmt|;
 return|return
@@ -3060,16 +3040,12 @@ condition|)
 name|gimp_foreground_select_tool_preview
 argument_list|(
 name|fg_select
-argument_list|,
-name|display
 argument_list|)
 expr_stmt|;
 else|else
 name|gimp_foreground_select_tool_set_trimap
 argument_list|(
 name|fg_select
-argument_list|,
-name|display
 argument_list|)
 expr_stmt|;
 return|return
@@ -3152,10 +3128,6 @@ condition|)
 name|gimp_foreground_select_tool_set_trimap
 argument_list|(
 name|fg_select
-argument_list|,
-name|tool
-operator|->
-name|display
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -3170,10 +3142,6 @@ condition|)
 name|gimp_foreground_select_tool_set_preview
 argument_list|(
 name|fg_select
-argument_list|,
-name|tool
-operator|->
-name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -3202,10 +3170,6 @@ condition|)
 name|gimp_foreground_select_tool_preview
 argument_list|(
 name|fg_select
-argument_list|,
-name|tool
-operator|->
-name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -3240,10 +3204,6 @@ condition|)
 name|gimp_foreground_select_tool_preview
 argument_list|(
 name|fg_select
-argument_list|,
-name|tool
-operator|->
-name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -3288,10 +3248,6 @@ condition|)
 name|gimp_foreground_select_tool_preview
 argument_list|(
 name|fg_select
-argument_list|,
-name|tool
-operator|->
-name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -3852,8 +3808,6 @@ expr_stmt|;
 name|gimp_foreground_select_tool_set_trimap
 argument_list|(
 name|fg_select
-argument_list|,
-name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -4136,10 +4090,6 @@ condition|)
 name|gimp_foreground_select_tool_preview
 argument_list|(
 name|fg_select
-argument_list|,
-name|tool
-operator|->
-name|display
 argument_list|)
 expr_stmt|;
 name|gimp_channel_select_buffer
@@ -4195,16 +4145,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_foreground_select_tool_set_trimap (GimpForegroundSelectTool * fg_select,GimpDisplay * display)
+DECL|function|gimp_foreground_select_tool_set_trimap (GimpForegroundSelectTool * fg_select)
 name|gimp_foreground_select_tool_set_trimap
 parameter_list|(
 name|GimpForegroundSelectTool
 modifier|*
 name|fg_select
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 block|{
 name|GimpTool
@@ -4251,6 +4197,8 @@ name|gimp_display_shell_set_mask
 argument_list|(
 name|gimp_display_get_shell
 argument_list|(
+name|tool
+operator|->
 name|display
 argument_list|)
 argument_list|,
@@ -4306,16 +4254,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_foreground_select_tool_set_preview (GimpForegroundSelectTool * fg_select,GimpDisplay * display)
+DECL|function|gimp_foreground_select_tool_set_preview (GimpForegroundSelectTool * fg_select)
 name|gimp_foreground_select_tool_set_preview
 parameter_list|(
 name|GimpForegroundSelectTool
 modifier|*
 name|fg_select
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 block|{
 name|GimpTool
@@ -4362,6 +4306,8 @@ name|gimp_display_shell_set_mask
 argument_list|(
 name|gimp_display_get_shell
 argument_list|(
+name|tool
+operator|->
 name|display
 argument_list|)
 argument_list|,
@@ -4417,16 +4363,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_foreground_select_tool_preview (GimpForegroundSelectTool * fg_select,GimpDisplay * display)
+DECL|function|gimp_foreground_select_tool_preview (GimpForegroundSelectTool * fg_select)
 name|gimp_foreground_select_tool_preview
 parameter_list|(
 name|GimpForegroundSelectTool
 modifier|*
 name|fg_select
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|)
 block|{
 name|GimpTool
@@ -4453,6 +4395,8 @@ name|image
 init|=
 name|gimp_display_get_image
 argument_list|(
+name|tool
+operator|->
 name|display
 argument_list|)
 decl_stmt|;
@@ -4765,8 +4709,6 @@ expr_stmt|;
 name|gimp_foreground_select_tool_set_preview
 argument_list|(
 name|fg_select
-argument_list|,
-name|display
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -5220,15 +5162,6 @@ operator|!=
 name|MATTING_STATE_FREE_SELECT
 condition|)
 block|{
-name|GimpTool
-modifier|*
-name|tool
-init|=
-name|GIMP_TOOL
-argument_list|(
-name|fg_select
-argument_list|)
-decl_stmt|;
 if|if
 condition|(
 name|gtk_toggle_button_get_active
@@ -5248,10 +5181,6 @@ condition|)
 name|gimp_foreground_select_tool_preview
 argument_list|(
 name|fg_select
-argument_list|,
-name|tool
-operator|->
-name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -5268,10 +5197,6 @@ condition|)
 name|gimp_foreground_select_tool_set_trimap
 argument_list|(
 name|fg_select
-argument_list|,
-name|tool
-operator|->
-name|display
 argument_list|)
 expr_stmt|;
 block|}
