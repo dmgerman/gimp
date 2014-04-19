@@ -247,25 +247,25 @@ literal|1
 expr_stmt|;
 name|control
 operator|->
-name|action_value_1
+name|action_opacity
 operator|=
 name|NULL
 expr_stmt|;
 name|control
 operator|->
-name|action_value_2
+name|action_size
 operator|=
 name|NULL
 expr_stmt|;
 name|control
 operator|->
-name|action_value_3
+name|action_aspect
 operator|=
 name|NULL
 expr_stmt|;
 name|control
 operator|->
-name|action_value_4
+name|action_size
 operator|=
 name|NULL
 expr_stmt|;
@@ -315,28 +315,28 @@ name|g_free
 argument_list|(
 name|control
 operator|->
-name|action_value_1
+name|action_opacity
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
 name|control
 operator|->
-name|action_value_2
+name|action_size
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
 name|control
 operator|->
-name|action_value_3
+name|action_aspect
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
 name|control
 operator|->
-name|action_value_4
+name|action_angle
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1861,8 +1861,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_control_set_action_value_1 (GimpToolControl * control,const gchar * action)
-name|gimp_tool_control_set_action_value_1
+DECL|function|gimp_tool_control_set_action_opacity (GimpToolControl * control,const gchar * action)
+name|gimp_tool_control_set_action_opacity
 parameter_list|(
 name|GimpToolControl
 modifier|*
@@ -1888,19 +1888,19 @@ name|action
 operator|!=
 name|control
 operator|->
-name|action_value_1
+name|action_opacity
 condition|)
 block|{
 name|g_free
 argument_list|(
 name|control
 operator|->
-name|action_value_1
+name|action_opacity
 argument_list|)
 expr_stmt|;
 name|control
 operator|->
-name|action_value_1
+name|action_opacity
 operator|=
 name|g_strdup
 argument_list|(
@@ -1915,8 +1915,8 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_tool_control_get_action_value_1 (GimpToolControl * control)
-name|gimp_tool_control_get_action_value_1
+DECL|function|gimp_tool_control_get_action_opacity (GimpToolControl * control)
+name|gimp_tool_control_get_action_opacity
 parameter_list|(
 name|GimpToolControl
 modifier|*
@@ -1936,15 +1936,15 @@ expr_stmt|;
 return|return
 name|control
 operator|->
-name|action_value_1
+name|action_opacity
 return|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_control_set_action_value_2 (GimpToolControl * control,const gchar * action)
-name|gimp_tool_control_set_action_value_2
+DECL|function|gimp_tool_control_set_action_size (GimpToolControl * control,const gchar * action)
+name|gimp_tool_control_set_action_size
 parameter_list|(
 name|GimpToolControl
 modifier|*
@@ -1970,19 +1970,19 @@ name|action
 operator|!=
 name|control
 operator|->
-name|action_value_2
+name|action_size
 condition|)
 block|{
 name|g_free
 argument_list|(
 name|control
 operator|->
-name|action_value_2
+name|action_size
 argument_list|)
 expr_stmt|;
 name|control
 operator|->
-name|action_value_2
+name|action_size
 operator|=
 name|g_strdup
 argument_list|(
@@ -1997,8 +1997,8 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_tool_control_get_action_value_2 (GimpToolControl * control)
-name|gimp_tool_control_get_action_value_2
+DECL|function|gimp_tool_control_get_action_size (GimpToolControl * control)
+name|gimp_tool_control_get_action_size
 parameter_list|(
 name|GimpToolControl
 modifier|*
@@ -2018,15 +2018,15 @@ expr_stmt|;
 return|return
 name|control
 operator|->
-name|action_value_2
+name|action_size
 return|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_control_set_action_value_3 (GimpToolControl * control,const gchar * action)
-name|gimp_tool_control_set_action_value_3
+DECL|function|gimp_tool_control_set_action_aspect (GimpToolControl * control,const gchar * action)
+name|gimp_tool_control_set_action_aspect
 parameter_list|(
 name|GimpToolControl
 modifier|*
@@ -2052,19 +2052,19 @@ name|action
 operator|!=
 name|control
 operator|->
-name|action_value_3
+name|action_aspect
 condition|)
 block|{
 name|g_free
 argument_list|(
 name|control
 operator|->
-name|action_value_3
+name|action_aspect
 argument_list|)
 expr_stmt|;
 name|control
 operator|->
-name|action_value_3
+name|action_aspect
 operator|=
 name|g_strdup
 argument_list|(
@@ -2079,8 +2079,8 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_tool_control_get_action_value_3 (GimpToolControl * control)
-name|gimp_tool_control_get_action_value_3
+DECL|function|gimp_tool_control_get_action_aspect (GimpToolControl * control)
+name|gimp_tool_control_get_action_aspect
 parameter_list|(
 name|GimpToolControl
 modifier|*
@@ -2100,15 +2100,15 @@ expr_stmt|;
 return|return
 name|control
 operator|->
-name|action_value_3
+name|action_aspect
 return|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_control_set_action_value_4 (GimpToolControl * control,const gchar * action)
-name|gimp_tool_control_set_action_value_4
+DECL|function|gimp_tool_control_set_action_angle (GimpToolControl * control,const gchar * action)
+name|gimp_tool_control_set_action_angle
 parameter_list|(
 name|GimpToolControl
 modifier|*
@@ -2134,19 +2134,19 @@ name|action
 operator|!=
 name|control
 operator|->
-name|action_value_4
+name|action_angle
 condition|)
 block|{
 name|g_free
 argument_list|(
 name|control
 operator|->
-name|action_value_4
+name|action_angle
 argument_list|)
 expr_stmt|;
 name|control
 operator|->
-name|action_value_4
+name|action_angle
 operator|=
 name|g_strdup
 argument_list|(
@@ -2161,8 +2161,8 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_tool_control_get_action_value_4 (GimpToolControl * control)
-name|gimp_tool_control_get_action_value_4
+DECL|function|gimp_tool_control_get_action_angle (GimpToolControl * control)
+name|gimp_tool_control_get_action_angle
 parameter_list|(
 name|GimpToolControl
 modifier|*
@@ -2182,7 +2182,7 @@ expr_stmt|;
 return|return
 name|control
 operator|->
-name|action_value_4
+name|action_angle
 return|;
 block|}
 end_function

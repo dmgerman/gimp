@@ -380,7 +380,7 @@ argument_list|(
 name|brush_tool
 argument_list|)
 decl_stmt|;
-name|gimp_tool_control_set_action_value_2
+name|gimp_tool_control_set_action_size
 argument_list|(
 name|tool
 operator|->
@@ -389,7 +389,7 @@ argument_list|,
 literal|"tools/tools-paint-brush-size-set"
 argument_list|)
 expr_stmt|;
-name|gimp_tool_control_set_action_value_3
+name|gimp_tool_control_set_action_aspect
 argument_list|(
 name|tool
 operator|->
@@ -398,7 +398,7 @@ argument_list|,
 literal|"tools/tools-paint-brush-aspect-ratio-set"
 argument_list|)
 expr_stmt|;
-name|gimp_tool_control_set_action_value_4
+name|gimp_tool_control_set_action_angle
 argument_list|(
 name|tool
 operator|->

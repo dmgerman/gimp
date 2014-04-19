@@ -190,7 +190,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tools_value_1_cmd_callback
+name|tools_opacity_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -207,7 +207,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tools_value_2_cmd_callback
+name|tools_size_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -224,7 +224,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tools_value_3_cmd_callback
+name|tools_aspect_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -241,7 +241,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tools_value_4_cmd_callback
+name|tools_angle_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

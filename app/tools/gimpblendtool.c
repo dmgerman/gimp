@@ -543,7 +543,7 @@ argument_list|,
 name|GIMP_TOOL_CURSOR_BLEND
 argument_list|)
 expr_stmt|;
-name|gimp_tool_control_set_action_value_1
+name|gimp_tool_control_set_action_opacity
 argument_list|(
 name|tool
 operator|->

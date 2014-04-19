@@ -1698,25 +1698,21 @@ block|, }
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/* tools-value-1 is effectively used to control  * opacity of the active tool  */
-end_comment
-
 begin_decl_stmt
-DECL|variable|tools_value_1_actions
+DECL|variable|tools_opacity_actions
 specifier|static
 specifier|const
 name|GimpEnumActionEntry
-name|tools_value_1_actions
+name|tools_opacity_actions
 index|[]
 init|=
 block|{
 block|{
-literal|"tools-value-1-set"
+literal|"tools-opacity-set"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Set Value 1"
+literal|"Set Opacity"
 block|,
 name|NULL
 block|,
@@ -1730,11 +1726,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-1-set-to-default"
+literal|"tools-opacity-set-to-default"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Set Value 1 To Default Value"
+literal|"Set Opacity To Default Value"
 block|,
 name|NULL
 block|,
@@ -1748,11 +1744,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-1-minimum"
+literal|"tools-opacity-minimum"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Minimize Value 1"
+literal|"Minimize Opacity"
 block|,
 name|NULL
 block|,
@@ -1766,11 +1762,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-1-maximum"
+literal|"tools-opacity-maximum"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Maximize Value 1"
+literal|"Maximize Opacity"
 block|,
 name|NULL
 block|,
@@ -1784,11 +1780,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-1-decrease"
+literal|"tools-opacity-decrease"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Decrease Value 1"
+literal|"Decrease Opacity"
 block|,
 literal|"less"
 block|,
@@ -1802,11 +1798,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-1-increase"
+literal|"tools-opacity-increase"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Increase Value 1"
+literal|"Increase Opacity"
 block|,
 literal|"greater"
 block|,
@@ -1820,11 +1816,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-1-decrease-skip"
+literal|"tools-opacity-decrease-skip"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Decrease Value 1 More"
+literal|"Decrease Opacity More"
 block|,
 literal|"<primary>less"
 block|,
@@ -1838,11 +1834,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-1-increase-skip"
+literal|"tools-opacity-increase-skip"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Increase Value 1 More"
+literal|"Increase Opacity More"
 block|,
 literal|"<primary>greater"
 block|,
@@ -1856,11 +1852,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-1-decrease-percent"
+literal|"tools-opacity-decrease-percent"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Decrease Value 1 Relative"
+literal|"Decrease Opacity Relative"
 block|,
 name|NULL
 block|,
@@ -1874,11 +1870,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-1-increase-percent"
+literal|"tools-opacity-increase-percent"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Increase Value 1 Relative"
+literal|"Increase Opacity Relative"
 block|,
 name|NULL
 block|,
@@ -1894,25 +1890,21 @@ block|, }
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/* tools-value-2 is effectively used to control  * the tip size of the active tool  */
-end_comment
-
 begin_decl_stmt
-DECL|variable|tools_value_2_actions
+DECL|variable|tools_size_actions
 specifier|static
 specifier|const
 name|GimpEnumActionEntry
-name|tools_value_2_actions
+name|tools_size_actions
 index|[]
 init|=
 block|{
 block|{
-literal|"tools-value-2-set"
+literal|"tools-size-set"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Set Value 2"
+literal|"Set Size"
 block|,
 name|NULL
 block|,
@@ -1926,11 +1918,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-2-set-to-default"
+literal|"tools-size-set-to-default"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Set Value 2 To Default Value"
+literal|"Set Size To Default Value"
 block|,
 literal|"backslash"
 block|,
@@ -1944,11 +1936,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-2-minimum"
+literal|"tools-size-minimum"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Minimize Value 2"
+literal|"Minimize Size"
 block|,
 name|NULL
 block|,
@@ -1962,11 +1954,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-2-maximum"
+literal|"tools-size-maximum"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Maximize Value 2"
+literal|"Maximize Size"
 block|,
 name|NULL
 block|,
@@ -1980,11 +1972,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-2-decrease"
+literal|"tools-size-decrease"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Decrease Value 2"
+literal|"Decrease Size"
 block|,
 literal|"bracketleft"
 block|,
@@ -1998,11 +1990,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-2-increase"
+literal|"tools-size-increase"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Increase Value 2"
+literal|"Increase Size"
 block|,
 literal|"bracketright"
 block|,
@@ -2016,11 +2008,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-2-decrease-skip"
+literal|"tools-size-decrease-skip"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Decrease Value 2 More"
+literal|"Decrease Size More"
 block|,
 literal|"<shift>bracketleft"
 block|,
@@ -2034,11 +2026,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-2-increase-skip"
+literal|"tools-size-increase-skip"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Increase Value 2 More"
+literal|"Increase Size More"
 block|,
 literal|"<shift>bracketright"
 block|,
@@ -2052,11 +2044,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-2-decrease-percent"
+literal|"tools-size-decrease-percent"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Decrease Value 2 Relative"
+literal|"Decrease Size Relative"
 block|,
 name|NULL
 block|,
@@ -2070,11 +2062,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-2-increase-percent"
+literal|"tools-size-increase-percent"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Increase Value 2 Relative"
+literal|"Increase Size Relative"
 block|,
 name|NULL
 block|,
@@ -2091,20 +2083,20 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|tools_value_3_actions
+DECL|variable|tools_aspect_actions
 specifier|static
 specifier|const
 name|GimpEnumActionEntry
-name|tools_value_3_actions
+name|tools_aspect_actions
 index|[]
 init|=
 block|{
 block|{
-literal|"tools-value-3-set"
+literal|"tools-aspect-set"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Set Value 3"
+literal|"Set Aspect Ratio"
 block|,
 name|NULL
 block|,
@@ -2118,11 +2110,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-3-set-to-default"
+literal|"tools-aspect-set-to-default"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Set Value 3 To Default Value"
+literal|"Set Aspect Ratio To Default Value"
 block|,
 name|NULL
 block|,
@@ -2136,11 +2128,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-3-minimum"
+literal|"tools-aspect-minimum"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Minimize Value 3"
+literal|"Minimize Aspect Ratio"
 block|,
 name|NULL
 block|,
@@ -2154,11 +2146,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-3-maximum"
+literal|"tools-aspect-maximum"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Maximize Value 3"
+literal|"Maximize Aspect Ratio"
 block|,
 name|NULL
 block|,
@@ -2172,11 +2164,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-3-decrease"
+literal|"tools-aspect-decrease"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Decrease Value 3"
+literal|"Decrease Aspect Ratio"
 block|,
 name|NULL
 block|,
@@ -2190,11 +2182,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-3-increase"
+literal|"tools-aspect-increase"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Increase Value 3"
+literal|"Increase Aspect Ratio"
 block|,
 name|NULL
 block|,
@@ -2208,11 +2200,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-3-decrease-skip"
+literal|"tools-aspect-decrease-skip"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Decrease Value 3 More"
+literal|"Decrease Aspect Ratio More"
 block|,
 name|NULL
 block|,
@@ -2226,11 +2218,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-3-increase-skip"
+literal|"tools-aspect-increase-skip"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Increase Value 3 More"
+literal|"Increase Aspect Ratio More"
 block|,
 name|NULL
 block|,
@@ -2244,11 +2236,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-3-decrease-percent"
+literal|"tools-aspect-decrease-percent"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Decrease Value 3 Relative"
+literal|"Decrease Aspect Ratio Relative"
 block|,
 name|NULL
 block|,
@@ -2262,11 +2254,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-3-increase-percent"
+literal|"tools-aspect-increase-percent"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Increase Value 3 Relative"
+literal|"Increase Aspect Ratio Relative"
 block|,
 name|NULL
 block|,
@@ -2283,20 +2275,20 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|tools_value_4_actions
+DECL|variable|tools_angle_actions
 specifier|static
 specifier|const
 name|GimpEnumActionEntry
-name|tools_value_4_actions
+name|tools_angle_actions
 index|[]
 init|=
 block|{
 block|{
-literal|"tools-value-4-set"
+literal|"tools-angle-set"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Set Value 4"
+literal|"Set Angle"
 block|,
 name|NULL
 block|,
@@ -2310,11 +2302,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-4-set-to-default"
+literal|"tools-angle-set-to-default"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Set Value 4 To Default Value"
+literal|"Set Angle To Default Value"
 block|,
 name|NULL
 block|,
@@ -2328,11 +2320,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-4-minimum"
+literal|"tools-angle-minimum"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Minimize Value 4"
+literal|"Minimize Angle"
 block|,
 name|NULL
 block|,
@@ -2346,11 +2338,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-4-maximum"
+literal|"tools-angle-maximum"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Maximize Value 4"
+literal|"Maximize Angle"
 block|,
 name|NULL
 block|,
@@ -2364,11 +2356,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-4-decrease"
+literal|"tools-angle-decrease"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Decrease Value 4"
+literal|"Decrease Angle"
 block|,
 name|NULL
 block|,
@@ -2382,11 +2374,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-4-increase"
+literal|"tools-angle-increase"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Increase Value 4"
+literal|"Increase Angle"
 block|,
 name|NULL
 block|,
@@ -2400,11 +2392,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-4-decrease-skip"
+literal|"tools-angle-decrease-skip"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Decrease Value 4 More"
+literal|"Decrease Angle More"
 block|,
 name|NULL
 block|,
@@ -2418,11 +2410,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-4-increase-skip"
+literal|"tools-angle-increase-skip"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Increase Value 4 More"
+literal|"Increase Angle More"
 block|,
 name|NULL
 block|,
@@ -2436,11 +2428,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-4-decrease-percent"
+literal|"tools-angle-decrease-percent"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Decrease Value 4 Relative"
+literal|"Decrease Angle Relative"
 block|,
 name|NULL
 block|,
@@ -2454,11 +2446,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-value-4-increase-percent"
+literal|"tools-angle-increase-percent"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Increase Value 4 Relative"
+literal|"Increase Angle Relative"
 block|,
 name|NULL
 block|,
@@ -2925,16 +2917,16 @@ name|group
 argument_list|,
 name|NULL
 argument_list|,
-name|tools_value_1_actions
+name|tools_opacity_actions
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
-name|tools_value_1_actions
+name|tools_opacity_actions
 argument_list|)
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|tools_value_1_cmd_callback
+name|tools_opacity_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2944,16 +2936,16 @@ name|group
 argument_list|,
 name|NULL
 argument_list|,
-name|tools_value_2_actions
+name|tools_size_actions
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
-name|tools_value_2_actions
+name|tools_size_actions
 argument_list|)
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|tools_value_2_cmd_callback
+name|tools_size_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2963,16 +2955,16 @@ name|group
 argument_list|,
 name|NULL
 argument_list|,
-name|tools_value_3_actions
+name|tools_aspect_actions
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
-name|tools_value_3_actions
+name|tools_aspect_actions
 argument_list|)
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|tools_value_3_cmd_callback
+name|tools_aspect_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2982,16 +2974,16 @@ name|group
 argument_list|,
 name|NULL
 argument_list|,
-name|tools_value_4_actions
+name|tools_angle_actions
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
-name|tools_value_4_actions
+name|tools_angle_actions
 argument_list|)
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|tools_value_4_cmd_callback
+name|tools_angle_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;

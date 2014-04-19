@@ -1095,8 +1095,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_value_1_cmd_callback (GtkAction * action,gint value,gpointer data)
-name|tools_value_1_cmd_callback
+DECL|function|tools_opacity_cmd_callback (GtkAction * action,gint value,gpointer data)
+name|tools_opacity_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -1145,7 +1145,7 @@ name|action_desc
 decl_stmt|;
 name|action_desc
 operator|=
-name|gimp_tool_control_get_action_value_1
+name|gimp_tool_control_get_action_opacity
 argument_list|(
 name|tool
 operator|->
@@ -1169,8 +1169,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_value_2_cmd_callback (GtkAction * action,gint value,gpointer data)
-name|tools_value_2_cmd_callback
+DECL|function|tools_size_cmd_callback (GtkAction * action,gint value,gpointer data)
+name|tools_size_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -1219,7 +1219,7 @@ name|action_desc
 decl_stmt|;
 name|action_desc
 operator|=
-name|gimp_tool_control_get_action_value_2
+name|gimp_tool_control_get_action_size
 argument_list|(
 name|tool
 operator|->
@@ -1243,8 +1243,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_value_3_cmd_callback (GtkAction * action,gint value,gpointer data)
-name|tools_value_3_cmd_callback
+DECL|function|tools_aspect_cmd_callback (GtkAction * action,gint value,gpointer data)
+name|tools_aspect_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -1293,7 +1293,7 @@ name|action_desc
 decl_stmt|;
 name|action_desc
 operator|=
-name|gimp_tool_control_get_action_value_3
+name|gimp_tool_control_get_action_aspect
 argument_list|(
 name|tool
 operator|->
@@ -1317,8 +1317,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_value_4_cmd_callback (GtkAction * action,gint value,gpointer data)
-name|tools_value_4_cmd_callback
+DECL|function|tools_angle_cmd_callback (GtkAction * action,gint value,gpointer data)
+name|tools_angle_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -1367,7 +1367,7 @@ name|action_desc
 decl_stmt|;
 name|action_desc
 operator|=
-name|gimp_tool_control_get_action_value_4
+name|gimp_tool_control_get_action_angle
 argument_list|(
 name|tool
 operator|->

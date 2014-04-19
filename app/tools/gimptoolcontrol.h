@@ -214,25 +214,25 @@ DECL|member|toggle_cursor_modifier
 name|GimpCursorModifier
 name|toggle_cursor_modifier
 decl_stmt|;
-DECL|member|action_value_1
+DECL|member|action_opacity
 name|gchar
 modifier|*
-name|action_value_1
+name|action_opacity
 decl_stmt|;
-DECL|member|action_value_2
+DECL|member|action_size
 name|gchar
 modifier|*
-name|action_value_2
+name|action_size
 decl_stmt|;
-DECL|member|action_value_3
+DECL|member|action_aspect
 name|gchar
 modifier|*
-name|action_value_3
+name|action_aspect
 decl_stmt|;
-DECL|member|action_value_4
+DECL|member|action_angle
 name|gchar
 modifier|*
-name|action_value_4
+name|action_angle
 decl_stmt|;
 DECL|member|action_object_1
 name|gchar
@@ -831,7 +831,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_tool_control_set_action_value_1
+name|gimp_tool_control_set_action_opacity
 parameter_list|(
 name|GimpToolControl
 modifier|*
@@ -849,7 +849,7 @@ begin_function_decl
 specifier|const
 name|gchar
 modifier|*
-name|gimp_tool_control_get_action_value_1
+name|gimp_tool_control_get_action_opacity
 parameter_list|(
 name|GimpToolControl
 modifier|*
@@ -860,7 +860,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_tool_control_set_action_value_2
+name|gimp_tool_control_set_action_size
 parameter_list|(
 name|GimpToolControl
 modifier|*
@@ -878,7 +878,7 @@ begin_function_decl
 specifier|const
 name|gchar
 modifier|*
-name|gimp_tool_control_get_action_value_2
+name|gimp_tool_control_get_action_size
 parameter_list|(
 name|GimpToolControl
 modifier|*
@@ -889,7 +889,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_tool_control_set_action_value_3
+name|gimp_tool_control_set_action_aspect
 parameter_list|(
 name|GimpToolControl
 modifier|*
@@ -907,7 +907,7 @@ begin_function_decl
 specifier|const
 name|gchar
 modifier|*
-name|gimp_tool_control_get_action_value_3
+name|gimp_tool_control_get_action_aspect
 parameter_list|(
 name|GimpToolControl
 modifier|*
@@ -918,7 +918,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_tool_control_set_action_value_4
+name|gimp_tool_control_set_action_angle
 parameter_list|(
 name|GimpToolControl
 modifier|*
@@ -936,7 +936,7 @@ begin_function_decl
 specifier|const
 name|gchar
 modifier|*
-name|gimp_tool_control_get_action_value_4
+name|gimp_tool_control_get_action_angle
 parameter_list|(
 name|GimpToolControl
 modifier|*

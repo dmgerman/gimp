@@ -231,7 +231,7 @@ argument_list|,
 name|GIMP_TOOL_CURSOR_INK
 argument_list|)
 expr_stmt|;
-name|gimp_tool_control_set_action_value_2
+name|gimp_tool_control_set_action_size
 argument_list|(
 name|tool
 operator|->
@@ -240,7 +240,7 @@ argument_list|,
 literal|"tools/tools-ink-blob-size-set"
 argument_list|)
 expr_stmt|;
-name|gimp_tool_control_set_action_value_3
+name|gimp_tool_control_set_action_aspect
 argument_list|(
 name|tool
 operator|->
@@ -249,7 +249,7 @@ argument_list|,
 literal|"tools/tools-ink-blob-aspect-set"
 argument_list|)
 expr_stmt|;
-name|gimp_tool_control_set_action_value_4
+name|gimp_tool_control_set_action_angle
 argument_list|(
 name|tool
 operator|->
