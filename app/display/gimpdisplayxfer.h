@@ -16,10 +16,6 @@ directive|define
 name|__GIMP_DISPLAY_XFER_H__
 end_define
 
-begin_comment
-comment|/* #define GIMP_DISPLAY_RENDER_ENABLE_SCALING 1 */
-end_comment
-
 begin_define
 DECL|macro|GIMP_DISPLAY_RENDER_BUF_WIDTH
 define|#
@@ -36,37 +32,13 @@ name|GIMP_DISPLAY_RENDER_BUF_HEIGHT
 value|256
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|GIMP_DISPLAY_RENDER_ENABLE_SCALING
-end_ifdef
-
 begin_define
 DECL|macro|GIMP_DISPLAY_RENDER_MAX_SCALE
 define|#
 directive|define
 name|GIMP_DISPLAY_RENDER_MAX_SCALE
-value|2.0
+value|4.0
 end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_define
-DECL|macro|GIMP_DISPLAY_RENDER_MAX_SCALE
-define|#
-directive|define
-name|GIMP_DISPLAY_RENDER_MAX_SCALE
-value|1.0
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_function_decl
 name|GimpDisplayXfer
