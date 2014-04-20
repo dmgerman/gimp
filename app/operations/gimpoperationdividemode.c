@@ -352,9 +352,9 @@ name|gfloat
 name|comp
 init|=
 operator|(
-literal|256.0
+literal|4294967296.0
 operator|/
-literal|255.0
+literal|4294967295.0
 operator|*
 name|in
 index|[
@@ -365,7 +365,7 @@ operator|/
 operator|(
 literal|1.0
 operator|/
-literal|255.0
+literal|4294967295.0
 operator|+
 name|layer
 index|[
@@ -375,9 +375,11 @@ operator|)
 decl_stmt|;
 name|comp
 operator|=
-name|MIN
+name|CLAMP
 argument_list|(
 name|comp
+argument_list|,
+literal|0.0
 argument_list|,
 literal|1.0
 argument_list|)
