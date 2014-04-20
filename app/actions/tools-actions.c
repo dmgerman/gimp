@@ -268,7 +268,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-color-average-set-to-default"
+literal|"tools-color-average-radius-set-to-default"
 block|,
 name|GIMP_STOCK_TOOL_COLOR_PICKER
 block|,
