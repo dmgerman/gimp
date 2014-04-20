@@ -191,7 +191,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be5fb470103
+DECL|enum|__anon2adfa0220103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -210,7 +210,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2be5fb470208
+DECL|struct|__anon2adfa0220208
 block|{
 DECL|member|name
 specifier|const
@@ -1773,22 +1773,22 @@ comment|/* The regexp pattern of all options changed from menurc of GIMP 2.8.  *
 end_comment
 
 begin_define
-DECL|macro|MENURC_28_UPDATE_PATTERN
+DECL|macro|MENURC_OVER20_UPDATE_PATTERN
 define|#
 directive|define
-name|MENURC_28_UPDATE_PATTERN
-value|"\"<Actions>/file/file-export-to\"|" \                                  "\"<Actions>/file/file-export\""
+name|MENURC_OVER20_UPDATE_PATTERN
+value|"\"<Actions>/file/file-export-to\"         |" \                                      "\"<Actions>/file/file-export\"            |" \                                      "\"<Actions>/tools/tools-value-[1-4]-.*\""
 end_define
 
 begin_comment
-comment|/**  * callback to use for updating a menurc from GIMP 2.8.  * data is unused (always NULL).  * The updated value will be matched line by line.  */
+comment|/**  * callback to use for updating a menurc from GIMP over 2.0.  * data is unused (always NULL).  * The updated value will be matched line by line.  */
 end_comment
 
 begin_function
 specifier|static
 name|gboolean
-DECL|function|user_update_menurc_28 (const GMatchInfo * matched_value,GString * new_value,gpointer data)
-name|user_update_menurc_28
+DECL|function|user_update_menurc_over20 (const GMatchInfo * matched_value,GString * new_value,gpointer data)
+name|user_update_menurc_over20
 parameter_list|(
 specifier|const
 name|GMatchInfo
@@ -1816,10 +1816,10 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/* This is an example of how to use it.    * If view-close were to be renamed to file-close for instance, we'd add:    if (strcmp (match, "\"<Actions>/view/view-close\"") == 0)     g_string_append (new_value, "\"<Actions>/file/file-close\"");   */
+comment|/* file-export-* changes to follow file-save-* patterns.    * Actions available since GIMP 2.8, changed for 2.10 in commit 4b14ed2. */
 if|if
 condition|(
-name|strcmp
+name|g_strcmp0
 argument_list|(
 name|match
 argument_list|,
@@ -1840,7 +1840,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcmp
+name|g_strcmp0
 argument_list|(
 name|match
 argument_list|,
@@ -1858,9 +1858,122 @@ literal|"\"<Actions>/file/file-export\""
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* Tools settings renamed more user-friendly.    * Actions available since GIMP 2.4, changed for 2.10 in commit 0bdb747. */
+elseif|else
+if|if
+condition|(
+name|g_str_has_prefix
+argument_list|(
+name|match
+argument_list|,
+literal|"\"<Actions>/tools/tools-value-1-"
+argument_list|)
+condition|)
+block|{
+name|g_string_append
+argument_list|(
+name|new_value
+argument_list|,
+literal|"\"<Actions>/tools/tools-opacity-"
+argument_list|)
+expr_stmt|;
+name|g_string_append
+argument_list|(
+name|new_value
+argument_list|,
+name|match
+operator|+
+literal|31
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|g_str_has_prefix
+argument_list|(
+name|match
+argument_list|,
+literal|"\"<Actions>/tools/tools-value-2-"
+argument_list|)
+condition|)
+block|{
+name|g_string_append
+argument_list|(
+name|new_value
+argument_list|,
+literal|"\"<Actions>/tools/tools-size-"
+argument_list|)
+expr_stmt|;
+name|g_string_append
+argument_list|(
+name|new_value
+argument_list|,
+name|match
+operator|+
+literal|31
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|g_str_has_prefix
+argument_list|(
+name|match
+argument_list|,
+literal|"\"<Actions>/tools/tools-value-3-"
+argument_list|)
+condition|)
+block|{
+name|g_string_append
+argument_list|(
+name|new_value
+argument_list|,
+literal|"\"<Actions>/tools/tools-aspect-"
+argument_list|)
+expr_stmt|;
+name|g_string_append
+argument_list|(
+name|new_value
+argument_list|,
+name|match
+operator|+
+literal|31
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|g_str_has_prefix
+argument_list|(
+name|match
+argument_list|,
+literal|"\"<Actions>/tools/tools-value-4-"
+argument_list|)
+condition|)
+block|{
+name|g_string_append
+argument_list|(
+name|new_value
+argument_list|,
+literal|"\"<Actions>/tools/tools-angle-"
+argument_list|)
+expr_stmt|;
+name|g_string_append
+argument_list|(
+name|new_value
+argument_list|,
+name|match
+operator|+
+literal|31
+argument_list|)
+expr_stmt|;
+block|}
+comment|/* Should not happen. Just in case we match something unexpected by mistake. */
 else|else
 block|{
-comment|/* Should not happen. Just in case we match something unexpected by mistake. */
 name|g_string_append
 argument_list|(
 name|new_value
@@ -2559,16 +2672,14 @@ goto|goto
 name|next_file
 goto|;
 break|break;
-case|case
-literal|8
-case|:
+default|default:
 name|update_pattern
 operator|=
-name|MENURC_28_UPDATE_PATTERN
+name|MENURC_OVER20_UPDATE_PATTERN
 expr_stmt|;
 name|update_callback
 operator|=
-name|user_update_menurc_28
+name|user_update_menurc_over20
 expr_stmt|;
 break|break;
 block|}
