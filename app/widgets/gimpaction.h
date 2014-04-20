@@ -190,6 +190,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_action_is_gui_blacklisted
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|action_name
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
