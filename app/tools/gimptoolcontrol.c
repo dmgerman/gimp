@@ -265,7 +265,7 @@ name|NULL
 expr_stmt|;
 name|control
 operator|->
-name|action_size
+name|action_angle
 operator|=
 name|NULL
 expr_stmt|;
