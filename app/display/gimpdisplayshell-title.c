@@ -622,6 +622,10 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+name|GimpDrawable
+modifier|*
+name|drawable
+decl_stmt|;
 name|gint
 name|num
 decl_stmt|,
@@ -668,6 +672,13 @@ return|return
 literal|0
 return|;
 block|}
+name|drawable
+operator|=
+name|gimp_image_get_active_drawable
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 name|gimp_zoom_model_get_fraction
 argument_list|(
 name|shell
@@ -851,16 +862,11 @@ case|case
 literal|'T'
 case|:
 comment|/* drawable type */
-block|{
-name|GimpDrawable
-modifier|*
+if|if
+condition|(
 name|drawable
-init|=
-name|gimp_image_get_active_drawable
-argument_list|(
-name|image
-argument_list|)
-decl_stmt|;
+condition|)
+block|{
 specifier|const
 name|Babl
 modifier|*
@@ -871,10 +877,6 @@ argument_list|(
 name|drawable
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|drawable
-condition|)
 name|i
 operator|+=
 name|print
@@ -1293,16 +1295,6 @@ case|case
 literal|'n'
 case|:
 comment|/* active drawable name */
-block|{
-name|GimpDrawable
-modifier|*
-name|drawable
-init|=
-name|gimp_image_get_active_drawable
-argument_list|(
-name|image
-argument_list|)
-decl_stmt|;
 if|if
 condition|(
 name|drawable
@@ -1366,22 +1358,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 break|break;
 case|case
 literal|'P'
 case|:
 comment|/* active drawable PDB id */
-block|{
-name|GimpDrawable
-modifier|*
-name|drawable
-init|=
-name|gimp_image_get_active_drawable
-argument_list|(
-name|image
-argument_list|)
-decl_stmt|;
 if|if
 condition|(
 name|drawable
@@ -1426,7 +1407,6 @@ literal|"(none)"
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 break|break;
 case|case
 literal|'W'
@@ -1704,6 +1684,8 @@ case|:
 comment|/* drawable width in real world units */
 if|if
 condition|(
+name|drawable
+operator|&&
 name|shell
 operator|->
 name|unit
@@ -1722,15 +1704,6 @@ name|unit_format
 index|[
 literal|8
 index|]
-decl_stmt|;
-name|GimpDrawable
-modifier|*
-name|drawable
-init|=
-name|gimp_image_get_active_drawable
-argument_list|(
-name|image
-argument_list|)
 decl_stmt|;
 name|gimp_image_get_resolution
 argument_list|(
@@ -1790,7 +1763,7 @@ name|shell
 operator|->
 name|unit
 argument_list|,
-name|yres
+name|xres
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1801,16 +1774,10 @@ case|case
 literal|'x'
 case|:
 comment|/* drawable width in pixels */
-block|{
-name|GimpDrawable
-modifier|*
+if|if
+condition|(
 name|drawable
-init|=
-name|gimp_image_get_active_drawable
-argument_list|(
-name|image
-argument_list|)
-decl_stmt|;
+condition|)
 name|i
 operator|+=
 name|print
@@ -1832,7 +1799,6 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 break|break;
 case|case
 literal|'Y'
@@ -1840,6 +1806,8 @@ case|:
 comment|/* drawable height in real world units */
 if|if
 condition|(
+name|drawable
+operator|&&
 name|shell
 operator|->
 name|unit
@@ -1858,15 +1826,6 @@ name|unit_format
 index|[
 literal|8
 index|]
-decl_stmt|;
-name|GimpDrawable
-modifier|*
-name|drawable
-init|=
-name|gimp_image_get_active_drawable
-argument_list|(
-name|image
-argument_list|)
 decl_stmt|;
 name|gimp_image_get_resolution
 argument_list|(
@@ -1937,16 +1896,10 @@ case|case
 literal|'y'
 case|:
 comment|/* drawable height in pixels */
-block|{
-name|GimpDrawable
-modifier|*
+if|if
+condition|(
 name|drawable
-init|=
-name|gimp_image_get_active_drawable
-argument_list|(
-name|image
-argument_list|)
-decl_stmt|;
+condition|)
 name|i
 operator|+=
 name|print
@@ -1968,7 +1921,6 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 break|break;
 case|case
 literal|'\xc3'
