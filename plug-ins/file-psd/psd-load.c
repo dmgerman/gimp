@@ -8803,6 +8803,7 @@ name|lm_y
 expr_stmt|;
 block|}
 else|else
+block|{
 name|memcpy
 argument_list|(
 name|pixels
@@ -8817,6 +8818,11 @@ argument_list|,
 name|layer_size
 argument_list|)
 expr_stmt|;
+name|i
+operator|=
+name|layer_size
+expr_stmt|;
+block|}
 name|g_free
 argument_list|(
 name|lyr_chn
@@ -8827,7 +8833,14 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
-comment|/* Draw layer mask data */
+comment|/* Draw layer mask data, if any */
+if|if
+condition|(
+name|i
+operator|>
+literal|0
+condition|)
+block|{
 name|IFDBG
 argument_list|(
 literal|3
@@ -8968,6 +8981,11 @@ operator|.
 name|disabled
 argument_list|)
 expr_stmt|;
+block|}
+if|if
+condition|(
+name|pixels
+condition|)
 name|g_free
 argument_list|(
 name|pixels
