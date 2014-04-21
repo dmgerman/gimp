@@ -8789,6 +8789,8 @@ block|,
 literal|"%f-%p.%i (%t) %d:%s"
 block|,
 literal|"%f-%p.%i (%t) %wx%h"
+block|,
+literal|"%f-%p-%i (%t) %wx%h (%xx%y)"
 block|}
 decl_stmt|;
 specifier|const
@@ -8822,10 +8824,15 @@ name|N_
 argument_list|(
 literal|"Show image size"
 argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"Show drawable size"
+argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b6f17980108
+DECL|struct|__anon2a0662cd0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10081,7 +10088,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b6f17980208
+DECL|struct|__anon2a0662cd0208
 block|{
 DECL|member|label
 specifier|const
@@ -11291,7 +11298,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b6f17980308
+DECL|struct|__anon2a0662cd0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11446,7 +11453,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b6f17980408
+DECL|struct|__anon2a0662cd0408
 block|{
 DECL|member|tree_label
 specifier|const
