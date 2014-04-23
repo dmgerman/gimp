@@ -488,7 +488,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a5151f30108
+DECL|struct|__anon2954d7590108
 block|{
 DECL|member|command
 name|gchar
@@ -512,7 +512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a5151f30208
+DECL|struct|__anon2954d7590208
 block|{
 DECL|member|ip_entry
 name|GtkWidget
@@ -556,7 +556,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2a5151f3030a
+DECL|union|__anon2954d759030a
 block|{
 DECL|member|family
 name|sa_family_t
@@ -1018,7 +1018,7 @@ argument_list|(
 operator|(
 name|params
 index|[
-literal|3
+literal|1
 index|]
 operator|.
 name|data
@@ -1029,7 +1029,7 @@ name|strlen
 argument_list|(
 name|params
 index|[
-literal|3
+literal|1
 index|]
 operator|.
 name|data
@@ -1040,7 +1040,7 @@ operator|)
 condition|?
 name|params
 index|[
-literal|3
+literal|1
 index|]
 operator|.
 name|data
@@ -1051,7 +1051,7 @@ literal|"127.0.0.1"
 argument_list|,
 name|params
 index|[
-literal|1
+literal|2
 index|]
 operator|.
 name|data
@@ -1060,7 +1060,7 @@ name|d_int32
 argument_list|,
 name|params
 index|[
-literal|2
+literal|3
 index|]
 operator|.
 name|data
