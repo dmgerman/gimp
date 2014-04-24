@@ -185,7 +185,7 @@ parameter_list|)
 block|{
 name|dialog
 operator|->
-name|private
+name|priv
 operator|=
 name|G_TYPE_INSTANCE_GET_PRIVATE
 argument_list|(
@@ -472,7 +472,7 @@ argument_list|)
 expr_stmt|;
 name|dialog
 operator|->
-name|private
+name|priv
 operator|->
 name|profile_view
 operator|=
@@ -696,7 +696,7 @@ name|gimp_color_profile_view_set_profile
 argument_list|(
 name|dialog
 operator|->
-name|private
+name|priv
 operator|->
 name|profile_view
 argument_list|,
@@ -725,7 +725,7 @@ name|gimp_color_profile_view_set_error
 argument_list|(
 name|dialog
 operator|->
-name|private
+name|priv
 operator|->
 name|profile_view
 argument_list|,
@@ -747,7 +747,7 @@ name|gimp_color_profile_view_set_profile
 argument_list|(
 name|dialog
 operator|->
-name|private
+name|priv
 operator|->
 name|profile_view
 argument_list|,

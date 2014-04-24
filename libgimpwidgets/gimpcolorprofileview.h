@@ -110,10 +110,10 @@ DECL|member|parent_instance
 name|GtkTextView
 name|parent_instance
 decl_stmt|;
-DECL|member|private
+DECL|member|priv
 name|GimpColorProfileViewPrivate
 modifier|*
-name|private
+name|priv
 decl_stmt|;
 block|}
 struct|;
@@ -222,6 +222,10 @@ name|message
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

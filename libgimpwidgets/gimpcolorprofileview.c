@@ -148,7 +148,7 @@ parameter_list|)
 block|{
 name|view
 operator|->
-name|private
+name|priv
 operator|=
 name|G_TYPE_INSTANCE_GET_PRIVATE
 argument_list|(
@@ -357,7 +357,7 @@ argument_list|)
 expr_stmt|;
 name|view
 operator|->
-name|private
+name|priv
 operator|->
 name|profile
 operator|=
