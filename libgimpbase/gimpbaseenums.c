@@ -3334,14 +3334,6 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_REPEAT_TRUNCATE
-block|,
-literal|"GIMP_REPEAT_TRUNCATE"
-block|,
-literal|"truncate"
-block|}
-block|,
-block|{
 name|GIMP_REPEAT_NONE
 block|,
 literal|"GIMP_REPEAT_NONE"
@@ -3366,6 +3358,14 @@ literal|"triangular"
 block|}
 block|,
 block|{
+name|GIMP_REPEAT_TRUNCATE
+block|,
+literal|"GIMP_REPEAT_TRUNCATE"
+block|,
+literal|"truncate"
+block|}
+block|,
+block|{
 literal|0
 block|,
 name|NULL
@@ -3382,26 +3382,13 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_REPEAT_TRUNCATE
-block|,
-name|NC_
-argument_list|(
-literal|"repeat-mode"
-argument_list|,
-literal|"Truncate blending"
-argument_list|)
-block|,
-name|NULL
-block|}
-block|,
-block|{
 name|GIMP_REPEAT_NONE
 block|,
 name|NC_
 argument_list|(
 literal|"repeat-mode"
 argument_list|,
-literal|"None"
+literal|"None (extend)"
 argument_list|)
 block|,
 name|NULL
@@ -3428,6 +3415,19 @@ argument_list|(
 literal|"repeat-mode"
 argument_list|,
 literal|"Triangular wave"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_REPEAT_TRUNCATE
+block|,
+name|NC_
+argument_list|(
+literal|"repeat-mode"
+argument_list|,
+literal|"Truncate"
 argument_list|)
 block|,
 name|NULL

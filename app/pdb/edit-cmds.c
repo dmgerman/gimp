@@ -5854,7 +5854,7 @@ literal|"Repeat mode"
 argument_list|,
 name|GIMP_TYPE_REPEAT_MODE
 argument_list|,
-name|GIMP_REPEAT_TRUNCATE
+name|GIMP_REPEAT_NONE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
