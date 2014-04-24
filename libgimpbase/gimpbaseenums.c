@@ -3334,6 +3334,14 @@ index|[]
 init|=
 block|{
 block|{
+name|GIMP_REPEAT_TRUNCATE
+block|,
+literal|"GIMP_REPEAT_TRUNCATE"
+block|,
+literal|"truncate"
+block|}
+block|,
+block|{
 name|GIMP_REPEAT_NONE
 block|,
 literal|"GIMP_REPEAT_NONE"
@@ -3373,6 +3381,19 @@ name|descs
 index|[]
 init|=
 block|{
+block|{
+name|GIMP_REPEAT_TRUNCATE
+block|,
+name|NC_
+argument_list|(
+literal|"repeat-mode"
+argument_list|,
+literal|"Truncate blending"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
 block|{
 name|GIMP_REPEAT_NONE
 block|,
