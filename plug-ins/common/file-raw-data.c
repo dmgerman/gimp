@@ -140,7 +140,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297404750103
+DECL|enum|__anon2c62d0e50103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -198,7 +198,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297404750203
+DECL|enum|__anon2c62d0e50203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -216,7 +216,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297404750308
+DECL|struct|__anon2c62d0e50308
 block|{
 DECL|member|file_offset
 name|gint32
@@ -257,7 +257,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297404750408
+DECL|struct|__anon2c62d0e50408
 block|{
 DECL|member|fp
 name|FILE
@@ -1311,7 +1311,7 @@ argument_list|,
 operator|&
 name|drawable_id
 argument_list|,
-name|NULL
+literal|"RAW"
 argument_list|,
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
