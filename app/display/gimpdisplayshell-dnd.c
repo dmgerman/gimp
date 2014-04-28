@@ -1333,15 +1333,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_dnd_bucket_fill (GimpDisplayShell * shell,GimpBucketFillMode fill_mode,const GimpRGB * color,GimpPattern * pattern)
-name|gimp_display_shell_dnd_bucket_fill
+DECL|function|gimp_display_shell_dnd_fill (GimpDisplayShell * shell,const GimpRGB * color,GimpPattern * pattern)
+name|gimp_display_shell_dnd_fill
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
-parameter_list|,
-name|GimpBucketFillMode
-name|fill_mode
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -1583,14 +1580,12 @@ argument_list|(
 name|viewable
 argument_list|)
 condition|)
-name|gimp_display_shell_dnd_bucket_fill
+name|gimp_display_shell_dnd_fill
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|data
 argument_list|)
-argument_list|,
-name|GIMP_PATTERN_BUCKET_FILL
 argument_list|,
 name|NULL
 argument_list|,
@@ -1635,14 +1630,12 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_dnd_bucket_fill
+name|gimp_display_shell_dnd_fill
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|data
 argument_list|)
-argument_list|,
-name|GIMP_FG_BUCKET_FILL
 argument_list|,
 name|color
 argument_list|,
