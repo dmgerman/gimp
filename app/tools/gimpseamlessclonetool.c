@@ -233,7 +233,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fb1bad0103
+DECL|enum|__anon28e719d10103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -958,8 +958,23 @@ condition|(
 operator|!
 name|buffer
 condition|)
-comment|/* TODO: prompt for some error message */
+block|{
+name|gimp_tool_push_status
+argument_list|(
+name|tool
+argument_list|,
+name|display
+argument_list|,
+literal|"%s"
+argument_list|,
+name|_
+argument_list|(
+literal|"There is no image data in the clipboard to paste."
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return;
+block|}
 name|sc
 operator|->
 name|paste
