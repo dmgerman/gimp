@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5e7be10103
+DECL|enum|__anon2ad5b44e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -390,12 +390,6 @@ operator|->
 name|dispose
 operator|=
 name|gimp_pdb_dialog_dispose
-expr_stmt|;
-name|object_class
-operator|->
-name|set_property
-operator|=
-name|gimp_pdb_dialog_set_property
 expr_stmt|;
 name|object_class
 operator|->

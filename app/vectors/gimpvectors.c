@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c558b7d0103
+DECL|enum|__anon2abb28c90103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -4518,11 +4518,11 @@ literal|0.0
 expr_stmt|;
 name|vectors
 operator|->
-name|bounds_x1
+name|bounds_y1
 operator|=
 name|vectors
 operator|->
-name|bounds_x2
+name|bounds_y2
 operator|=
 literal|0.0
 expr_stmt|;

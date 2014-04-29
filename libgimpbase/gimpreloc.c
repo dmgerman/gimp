@@ -480,7 +480,7 @@ expr_stmt|;
 if|if
 condition|(
 name|buf_size
-operator|<=
+operator|==
 literal|0
 condition|)
 block|{

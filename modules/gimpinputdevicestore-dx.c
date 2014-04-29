@@ -100,7 +100,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c550c2e0103
+DECL|enum|__anon2b1c79f20103
 block|{
 DECL|enumerator|COLUMN_GUID
 name|COLUMN_GUID
@@ -119,7 +119,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c550c2e0203
+DECL|enum|__anon2b1c79f20203
 block|{
 DECL|enumerator|DEVICE_ADDED
 name|DEVICE_ADDED
@@ -449,35 +449,14 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpInputDeviceStore
-modifier|*
-name|store
-init|=
-operator|(
-name|GimpInputDeviceStore
-operator|*
-operator|)
-name|data
-decl_stmt|;
-specifier|const
-name|MSG
-modifier|*
-name|msg
-init|=
-operator|(
-name|MSG
-operator|*
-operator|)
-name|xevent
-decl_stmt|;
+if|#
+directive|if
+literal|0
+block|GimpInputDeviceStore *store = (GimpInputDeviceStore *) data;   const MSG *msg = (MSG *) xevent;
 comment|/* Look for deviced being added or removed */
-switch|switch
-condition|(
-name|msg
-operator|->
-name|message
-condition|)
-block|{     }
+block|switch (msg->message)     {     }
+endif|#
+directive|endif
 return|return
 name|GDK_FILTER_REMOVE
 return|;

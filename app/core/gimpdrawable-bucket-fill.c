@@ -229,6 +229,10 @@ parameter_list|)
 block|{
 name|GimpRGB
 name|color
+init|=
+block|{
+literal|0
+block|, }
 decl_stmt|;
 name|GimpPattern
 modifier|*

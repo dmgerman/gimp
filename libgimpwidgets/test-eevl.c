@@ -34,7 +34,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a2f9a30108
+DECL|struct|__anon2ab3c5cf0108
 block|{
 DECL|member|string
 specifier|const
@@ -462,11 +462,6 @@ index|]
 operator|.
 name|result
 decl_stmt|;
-name|gboolean
-name|success
-init|=
-name|FALSE
-decl_stmt|;
 name|GimpEevlQuantity
 name|result
 init|=
@@ -500,8 +495,6 @@ name|error_pos
 init|=
 literal|0
 decl_stmt|;
-name|success
-operator|=
 name|gimp_eevl_evaluate
 argument_list|(
 name|test

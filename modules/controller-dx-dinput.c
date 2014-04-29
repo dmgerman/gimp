@@ -116,7 +116,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f4e1b60103
+DECL|enum|__anon2911b0180103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3316,9 +3316,6 @@ name|format
 operator|->
 name|rgodf
 decl_stmt|;
-name|HRESULT
-name|hresult
-decl_stmt|;
 name|guchar
 modifier|*
 name|data
@@ -3346,9 +3343,6 @@ if|if
 condition|(
 name|FAILED
 argument_list|(
-operator|(
-name|hresult
-operator|=
 name|IDirectInputDevice8_GetDeviceState
 argument_list|(
 name|input
@@ -3361,7 +3355,6 @@ name|dwDataSize
 argument_list|,
 name|data
 argument_list|)
-operator|)
 argument_list|)
 condition|)
 block|{
