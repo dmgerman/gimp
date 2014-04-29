@@ -2611,7 +2611,7 @@ block|{
 name|GimpFillType
 name|fill_type
 init|=
-name|GIMP_FG_BUCKET_FILL
+name|GIMP_FOREGROUND_FILL
 decl_stmt|;
 switch|switch
 condition|(
@@ -2619,7 +2619,7 @@ name|fill_mode
 condition|)
 block|{
 case|case
-name|GIMP_FG_BUCKET_FILL
+name|GIMP_BUCKET_FILL_FG
 case|:
 name|fill_type
 operator|=
@@ -2627,7 +2627,7 @@ name|GIMP_FOREGROUND_FILL
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_BG_BUCKET_FILL
+name|GIMP_BUCKET_FILL_BG
 case|:
 name|fill_type
 operator|=
@@ -2635,7 +2635,7 @@ name|GIMP_BACKGROUND_FILL
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_PATTERN_BUCKET_FILL
+name|GIMP_BUCKET_FILL_PATTERN
 case|:
 name|fill_type
 operator|=
@@ -2974,7 +2974,7 @@ block|{
 name|GimpFillType
 name|fill_type
 init|=
-name|GIMP_FG_BUCKET_FILL
+name|GIMP_FOREGROUND_FILL
 decl_stmt|;
 switch|switch
 condition|(
@@ -2982,7 +2982,7 @@ name|fill_mode
 condition|)
 block|{
 case|case
-name|GIMP_FG_BUCKET_FILL
+name|GIMP_BUCKET_FILL_FG
 case|:
 name|fill_type
 operator|=
@@ -2990,7 +2990,7 @@ name|GIMP_FOREGROUND_FILL
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_BG_BUCKET_FILL
+name|GIMP_BUCKET_FILL_BG
 case|:
 name|fill_type
 operator|=
@@ -2998,7 +2998,7 @@ name|GIMP_BACKGROUND_FILL
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_PATTERN_BUCKET_FILL
+name|GIMP_BUCKET_FILL_PATTERN
 case|:
 name|fill_type
 operator|=
@@ -5274,7 +5274,7 @@ literal|"The type of fill"
 argument_list|,
 name|GIMP_TYPE_BUCKET_FILL_MODE
 argument_list|,
-name|GIMP_FG_BUCKET_FILL
+name|GIMP_BUCKET_FILL_FG
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -5493,7 +5493,7 @@ literal|"The type of fill"
 argument_list|,
 name|GIMP_TYPE_BUCKET_FILL_MODE
 argument_list|,
-name|GIMP_FG_BUCKET_FILL
+name|GIMP_BUCKET_FILL_FG
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -5750,7 +5750,7 @@ literal|"The type of blend"
 argument_list|,
 name|GIMP_TYPE_BLEND_MODE
 argument_list|,
-name|GIMP_FG_BG_RGB_MODE
+name|GIMP_BLEND_FG_BG_RGB
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4580cd0103
+DECL|enum|__anon291096c10103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -192,7 +192,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4580cd0203
+DECL|enum|__anon291096c10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6121,7 +6121,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|add_mask_type
 operator|!=
-name|GIMP_ADD_CHANNEL_MASK
+name|GIMP_ADD_MASK_CHANNEL
 operator|||
 name|GIMP_IS_CHANNEL
 argument_list|(
@@ -6200,7 +6200,7 @@ name|add_mask_type
 condition|)
 block|{
 case|case
-name|GIMP_ADD_WHITE_MASK
+name|GIMP_ADD_MASK_WHITE
 case|:
 name|gimp_channel_all
 argument_list|(
@@ -6216,7 +6216,7 @@ return|return
 name|mask
 return|;
 case|case
-name|GIMP_ADD_BLACK_MASK
+name|GIMP_ADD_MASK_BLACK
 case|:
 name|gimp_channel_clear
 argument_list|(
@@ -6242,17 +6242,17 @@ name|add_mask_type
 condition|)
 block|{
 case|case
-name|GIMP_ADD_WHITE_MASK
+name|GIMP_ADD_MASK_WHITE
 case|:
 case|case
-name|GIMP_ADD_BLACK_MASK
+name|GIMP_ADD_MASK_BLACK
 case|:
 break|break;
 case|case
-name|GIMP_ADD_ALPHA_MASK
+name|GIMP_ADD_MASK_ALPHA
 case|:
 case|case
-name|GIMP_ADD_ALPHA_TRANSFER_MASK
+name|GIMP_ADD_MASK_ALPHA_TRANSFER
 case|:
 if|if
 condition|(
@@ -6322,7 +6322,7 @@ if|if
 condition|(
 name|add_mask_type
 operator|==
-name|GIMP_ADD_ALPHA_TRANSFER_MASK
+name|GIMP_ADD_MASK_ALPHA_TRANSFER
 condition|)
 block|{
 name|gimp_drawable_push_undo
@@ -6376,10 +6376,10 @@ block|}
 block|}
 break|break;
 case|case
-name|GIMP_ADD_SELECTION_MASK
+name|GIMP_ADD_MASK_SELECTION
 case|:
 case|case
-name|GIMP_ADD_CHANNEL_MASK
+name|GIMP_ADD_MASK_CHANNEL
 case|:
 block|{
 name|gboolean
@@ -6404,7 +6404,7 @@ if|if
 condition|(
 name|add_mask_type
 operator|==
-name|GIMP_ADD_SELECTION_MASK
+name|GIMP_ADD_MASK_SELECTION
 condition|)
 name|channel
 operator|=
@@ -6593,7 +6593,7 @@ block|}
 block|}
 break|break;
 case|case
-name|GIMP_ADD_COPY_MASK
+name|GIMP_ADD_MASK_COPY
 case|:
 block|{
 name|GeglBuffer

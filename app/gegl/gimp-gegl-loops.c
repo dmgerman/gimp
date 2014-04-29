@@ -1006,7 +1006,7 @@ if|if
 condition|(
 name|type
 operator|==
-name|GIMP_BURN
+name|GIMP_DODGE_BURN_TYPE_BURN
 condition|)
 name|exposure
 operator|=
@@ -1062,7 +1062,7 @@ name|gfloat
 name|factor
 decl_stmt|;
 case|case
-name|GIMP_HIGHLIGHTS
+name|GIMP_TRANSFER_HIGHLIGHTS
 case|:
 name|factor
 operator|=
@@ -1159,7 +1159,7 @@ block|}
 block|}
 break|break;
 case|case
-name|GIMP_MIDTONES
+name|GIMP_TRANSFER_MIDTONES
 case|:
 if|if
 condition|(
@@ -1282,7 +1282,7 @@ block|}
 block|}
 break|break;
 case|case
-name|GIMP_SHADOWS
+name|GIMP_TRANSFER_SHADOWS
 case|:
 if|if
 condition|(

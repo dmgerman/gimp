@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297c40c90103
+DECL|enum|__anon29358d760103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -270,7 +270,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_BUCKET_FILL_MODE
 argument_list|,
-name|GIMP_FG_BUCKET_FILL
+name|GIMP_BUCKET_FILL_FG
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -860,7 +860,7 @@ argument_list|)
 argument_list|,
 name|hbox
 argument_list|,
-name|GIMP_PATTERN_BUCKET_FILL
+name|GIMP_BUCKET_FILL_PATTERN
 argument_list|,
 name|TRUE
 argument_list|)

@@ -638,7 +638,7 @@ name|clone_type
 condition|)
 block|{
 case|case
-name|GIMP_IMAGE_CLONE
+name|GIMP_CLONE_IMAGE
 case|:
 block|{
 name|GimpPickable
@@ -758,7 +758,7 @@ block|}
 block|}
 break|break;
 case|case
-name|GIMP_PATTERN_CLONE
+name|GIMP_CLONE_PATTERN
 case|:
 block|{
 name|GimpPattern
@@ -1523,7 +1523,7 @@ name|clone_type
 condition|)
 block|{
 case|case
-name|GIMP_IMAGE_CLONE
+name|GIMP_CLONE_IMAGE
 case|:
 if|if
 condition|(
@@ -1573,7 +1573,7 @@ return|;
 block|}
 break|break;
 case|case
-name|GIMP_PATTERN_CLONE
+name|GIMP_CLONE_PATTERN
 case|:
 name|gegl_node_set
 argument_list|(

@@ -535,7 +535,7 @@ specifier|static
 name|GimpAddMaskType
 name|layer_add_mask_type
 init|=
-name|GIMP_ADD_WHITE_MASK
+name|GIMP_ADD_MASK_WHITE
 decl_stmt|;
 end_decl_stmt
 
@@ -4442,7 +4442,7 @@ name|dialog
 operator|->
 name|add_mask_type
 operator|==
-name|GIMP_ADD_CHANNEL_MASK
+name|GIMP_ADD_MASK_CHANNEL
 operator|&&
 operator|!
 name|dialog

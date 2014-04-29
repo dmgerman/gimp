@@ -4752,7 +4752,7 @@ literal|"Transfer mode"
 argument_list|,
 name|GIMP_TYPE_TRANSFER_MODE
 argument_list|,
-name|GIMP_SHADOWS
+name|GIMP_TRANSFER_SHADOWS
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

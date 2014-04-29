@@ -1061,7 +1061,7 @@ name|drawable
 argument_list|,
 name|context
 argument_list|,
-name|GIMP_CUSTOM_MODE
+name|GIMP_BLEND_CUSTOM
 argument_list|,
 name|gimp_context_get_paint_mode
 argument_list|(

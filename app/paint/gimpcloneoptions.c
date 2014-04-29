@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9ebccb0103
+DECL|enum|__anon275802730103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -168,7 +168,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_CLONE_TYPE
 argument_list|,
-name|GIMP_IMAGE_CLONE
+name|GIMP_CLONE_IMAGE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)

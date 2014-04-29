@@ -321,7 +321,7 @@ name|NULL
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|GIMP_IMAGE_CLONE
+name|GIMP_CLONE_IMAGE
 argument_list|)
 argument_list|,
 name|NULL
@@ -381,7 +381,7 @@ name|NULL
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|GIMP_PATTERN_CLONE
+name|GIMP_CLONE_PATTERN
 argument_list|)
 argument_list|,
 name|NULL

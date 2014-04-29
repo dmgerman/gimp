@@ -437,7 +437,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9029af0108
+DECL|struct|__anon2a06d39b0108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -8095,7 +8095,7 @@ name|drawable_ID
 argument_list|,
 name|drawable_ID
 argument_list|,
-name|GIMP_PATTERN_CLONE
+name|GIMP_CLONE_PATTERN
 argument_list|,
 literal|0.0
 argument_list|,
@@ -8472,7 +8472,7 @@ name|FILL_COLOR
 case|:
 name|fill_mode
 operator|=
-name|GIMP_BG_BUCKET_FILL
+name|GIMP_BUCKET_FILL_FG
 expr_stmt|;
 break|break;
 case|case
@@ -8480,7 +8480,7 @@ name|FILL_PATTERN
 case|:
 name|fill_mode
 operator|=
-name|GIMP_PATTERN_BUCKET_FILL
+name|GIMP_BUCKET_FILL_PATTERN
 expr_stmt|;
 break|break;
 case|case
@@ -8492,7 +8492,7 @@ name|gfig_context
 operator|->
 name|drawable_id
 argument_list|,
-name|GIMP_CUSTOM_MODE
+name|GIMP_BLEND_CUSTOM
 argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|,
@@ -8542,7 +8542,7 @@ name|gfig_context
 operator|->
 name|drawable_id
 argument_list|,
-name|GIMP_CUSTOM_MODE
+name|GIMP_BLEND_CUSTOM
 argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|,
@@ -8583,7 +8583,7 @@ name|gfig_context
 operator|->
 name|drawable_id
 argument_list|,
-name|GIMP_CUSTOM_MODE
+name|GIMP_BLEND_CUSTOM
 argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|,

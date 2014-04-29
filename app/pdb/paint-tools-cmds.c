@@ -4636,7 +4636,7 @@ literal|"The type of clone"
 argument_list|,
 name|GIMP_TYPE_CLONE_TYPE
 argument_list|,
-name|GIMP_IMAGE_CLONE
+name|GIMP_CLONE_IMAGE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -5202,7 +5202,7 @@ literal|"The type either dodge or burn"
 argument_list|,
 name|GIMP_TYPE_DODGE_BURN_TYPE
 argument_list|,
-name|GIMP_DODGE
+name|GIMP_DODGE_BURN_TYPE_DODGE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -5222,7 +5222,7 @@ literal|"The mode"
 argument_list|,
 name|GIMP_TYPE_TRANSFER_MODE
 argument_list|,
-name|GIMP_SHADOWS
+name|GIMP_TRANSFER_SHADOWS
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

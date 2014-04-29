@@ -287,7 +287,7 @@ if|if
 condition|(
 name|fill_mode
 operator|==
-name|GIMP_FG_BUCKET_FILL
+name|GIMP_BUCKET_FILL_FG
 condition|)
 block|{
 name|gimp_context_get_foreground
@@ -304,7 +304,7 @@ if|if
 condition|(
 name|fill_mode
 operator|==
-name|GIMP_BG_BUCKET_FILL
+name|GIMP_BUCKET_FILL_BG
 condition|)
 block|{
 name|gimp_context_get_background
@@ -321,7 +321,7 @@ if|if
 condition|(
 name|fill_mode
 operator|==
-name|GIMP_PATTERN_BUCKET_FILL
+name|GIMP_BUCKET_FILL_PATTERN
 condition|)
 block|{
 name|pattern
@@ -511,7 +511,7 @@ name|g_return_if_fail
 argument_list|(
 name|fill_mode
 operator|!=
-name|GIMP_PATTERN_BUCKET_FILL
+name|GIMP_BUCKET_FILL_PATTERN
 operator|||
 name|GIMP_IS_PATTERN
 argument_list|(
@@ -523,7 +523,7 @@ name|g_return_if_fail
 argument_list|(
 name|fill_mode
 operator|==
-name|GIMP_PATTERN_BUCKET_FILL
+name|GIMP_BUCKET_FILL_PATTERN
 operator|||
 name|color
 operator|!=
@@ -870,10 +870,10 @@ name|fill_mode
 condition|)
 block|{
 case|case
-name|GIMP_FG_BUCKET_FILL
+name|GIMP_BUCKET_FILL_FG
 case|:
 case|case
-name|GIMP_BG_BUCKET_FILL
+name|GIMP_BUCKET_FILL_BG
 case|:
 block|{
 name|GeglColor
@@ -902,7 +902,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GIMP_PATTERN_BUCKET_FILL
+name|GIMP_BUCKET_FILL_PATTERN
 case|:
 block|{
 name|GeglBuffer

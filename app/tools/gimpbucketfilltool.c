@@ -736,7 +736,7 @@ condition|)
 block|{
 default|default:
 case|case
-name|GIMP_FG_BUCKET_FILL
+name|GIMP_BUCKET_FILL_FG
 case|:
 name|fill_type
 operator|=
@@ -744,7 +744,7 @@ name|GIMP_FOREGROUND_FILL
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_BG_BUCKET_FILL
+name|GIMP_BUCKET_FILL_BG
 case|:
 name|fill_type
 operator|=
@@ -752,7 +752,7 @@ name|GIMP_BACKGROUND_FILL
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_PATTERN_BUCKET_FILL
+name|GIMP_BUCKET_FILL_PATTERN
 case|:
 name|fill_type
 operator|=
@@ -964,7 +964,7 @@ name|fill_mode
 condition|)
 block|{
 case|case
-name|GIMP_FG_BUCKET_FILL
+name|GIMP_BUCKET_FILL_FG
 case|:
 name|g_object_set
 argument_list|(
@@ -972,14 +972,14 @@ name|options
 argument_list|,
 literal|"fill-mode"
 argument_list|,
-name|GIMP_BG_BUCKET_FILL
+name|GIMP_BUCKET_FILL_BG
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_BG_BUCKET_FILL
+name|GIMP_BUCKET_FILL_BG
 case|:
 name|g_object_set
 argument_list|(
@@ -987,7 +987,7 @@ name|options
 argument_list|,
 literal|"fill-mode"
 argument_list|,
-name|GIMP_FG_BUCKET_FILL
+name|GIMP_BUCKET_FILL_FG
 argument_list|,
 name|NULL
 argument_list|)
@@ -1131,7 +1131,7 @@ name|fill_mode
 condition|)
 block|{
 case|case
-name|GIMP_FG_BUCKET_FILL
+name|GIMP_BUCKET_FILL_FG
 case|:
 name|modifier
 operator|=
@@ -1139,7 +1139,7 @@ name|GIMP_CURSOR_MODIFIER_FOREGROUND
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_BG_BUCKET_FILL
+name|GIMP_BUCKET_FILL_BG
 case|:
 name|modifier
 operator|=
@@ -1147,7 +1147,7 @@ name|GIMP_CURSOR_MODIFIER_BACKGROUND
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_PATTERN_BUCKET_FILL
+name|GIMP_BUCKET_FILL_PATTERN
 case|:
 name|modifier
 operator|=

@@ -408,7 +408,7 @@ name|options
 operator|->
 name|clone_type
 operator|==
-name|GIMP_PATTERN_CLONE
+name|GIMP_CLONE_PATTERN
 condition|)
 block|{
 if|if
@@ -620,7 +620,7 @@ name|options
 operator|->
 name|clone_type
 operator|==
-name|GIMP_PATTERN_CLONE
+name|GIMP_CLONE_PATTERN
 condition|)
 block|{
 name|GimpPattern
@@ -787,7 +787,7 @@ argument_list|)
 operator|->
 name|clone_type
 operator|==
-name|GIMP_IMAGE_CLONE
+name|GIMP_CLONE_IMAGE
 return|;
 block|}
 end_function

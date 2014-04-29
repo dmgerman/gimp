@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf6d1b20108
+DECL|struct|__anon298ad6910108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -226,7 +226,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf6d1b20208
+DECL|struct|__anon298ad6910208
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -3154,7 +3154,7 @@ name|rbd
 operator|->
 name|blend_mode
 operator|==
-name|GIMP_CUSTOM_MODE
+name|GIMP_BLEND_CUSTOM
 condition|)
 block|{
 ifdef|#
@@ -3334,7 +3334,7 @@ name|rbd
 operator|->
 name|blend_mode
 operator|==
-name|GIMP_FG_BG_HSV_MODE
+name|GIMP_BLEND_FG_BG_HSV
 condition|)
 block|{
 name|GimpHSV
@@ -3868,11 +3868,11 @@ name|blend_mode
 condition|)
 block|{
 case|case
-name|GIMP_FG_BG_RGB_MODE
+name|GIMP_BLEND_FG_BG_RGB
 case|:
 break|break;
 case|case
-name|GIMP_FG_BG_HSV_MODE
+name|GIMP_BLEND_FG_BG_HSV
 case|:
 comment|/* Convert to HSV */
 block|{
@@ -3939,7 +3939,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GIMP_FG_TRANSPARENT_MODE
+name|GIMP_BLEND_FG_TRANSPARENT
 case|:
 comment|/* Color does not change, just the opacity */
 name|rbd
@@ -3960,7 +3960,7 @@ name|GIMP_OPACITY_TRANSPARENT
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_CUSTOM_MODE
+name|GIMP_BLEND_CUSTOM
 case|:
 break|break;
 default|default:

@@ -44,7 +44,7 @@ DECL|macro|DODGE_BURN_DEFAULT_TYPE
 define|#
 directive|define
 name|DODGE_BURN_DEFAULT_TYPE
-value|GIMP_DODGE
+value|GIMP_DODGE_BURN_TYPE_DODGE
 end_define
 
 begin_define
@@ -52,7 +52,7 @@ DECL|macro|DODGE_BURN_DEFAULT_MODE
 define|#
 directive|define
 name|DODGE_BURN_DEFAULT_MODE
-value|GIMP_MIDTONES
+value|GIMP_TRANSFER_MIDTONES
 end_define
 
 begin_define
@@ -65,7 +65,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d5880d0103
+DECL|enum|__anon289260fd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

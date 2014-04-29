@@ -343,7 +343,7 @@ name|gimp_dodge_burn_tool_status_update
 argument_list|(
 name|tool
 argument_list|,
-name|GIMP_BURN
+name|GIMP_DODGE_BURN_TYPE_BURN
 argument_list|)
 expr_stmt|;
 block|}
@@ -458,7 +458,7 @@ name|type
 condition|)
 block|{
 case|case
-name|GIMP_DODGE
+name|GIMP_DODGE_BURN_TYPE_DODGE
 case|:
 name|g_object_set
 argument_list|(
@@ -466,14 +466,14 @@ name|options
 argument_list|,
 literal|"type"
 argument_list|,
-name|GIMP_BURN
+name|GIMP_DODGE_BURN_TYPE_BURN
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_BURN
+name|GIMP_DODGE_BURN_TYPE_BURN
 case|:
 name|g_object_set
 argument_list|(
@@ -481,7 +481,7 @@ name|options
 argument_list|,
 literal|"type"
 argument_list|,
-name|GIMP_DODGE
+name|GIMP_DODGE_BURN_TYPE_DODGE
 argument_list|,
 name|NULL
 argument_list|)
@@ -550,13 +550,11 @@ name|tool
 operator|->
 name|control
 argument_list|,
-operator|(
 name|options
 operator|->
 name|type
 operator|==
-name|GIMP_BURN
-operator|)
+name|GIMP_DODGE_BURN_TYPE_BURN
 argument_list|)
 expr_stmt|;
 name|GIMP_TOOL_CLASS
@@ -672,7 +670,7 @@ name|type
 condition|)
 block|{
 case|case
-name|GIMP_DODGE
+name|GIMP_DODGE_BURN_TYPE_DODGE
 case|:
 name|paint_tool
 operator|->
@@ -703,7 +701,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_BURN
+name|GIMP_DODGE_BURN_TYPE_BURN
 case|:
 name|paint_tool
 operator|->

@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8aa38c0103
+DECL|enum|__anon2a2b03670103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -309,7 +309,7 @@ literal|"The affected range"
 argument_list|,
 name|GIMP_TYPE_TRANSFER_MODE
 argument_list|,
-name|GIMP_MIDTONES
+name|GIMP_TRANSFER_MIDTONES
 argument_list|,
 literal|0
 argument_list|)
@@ -805,11 +805,11 @@ for|for
 control|(
 name|range
 operator|=
-name|GIMP_SHADOWS
+name|GIMP_TRANSFER_SHADOWS
 init|;
 name|range
 operator|<=
-name|GIMP_HIGHLIGHTS
+name|GIMP_TRANSFER_HIGHLIGHTS
 condition|;
 name|range
 operator|++
@@ -1007,11 +1007,11 @@ for|for
 control|(
 name|range
 operator|=
-name|GIMP_SHADOWS
+name|GIMP_TRANSFER_SHADOWS
 init|;
 name|range
 operator|<=
-name|GIMP_HIGHLIGHTS
+name|GIMP_TRANSFER_HIGHLIGHTS
 condition|;
 name|range
 operator|++
@@ -1112,11 +1112,11 @@ for|for
 control|(
 name|range
 operator|=
-name|GIMP_SHADOWS
+name|GIMP_TRANSFER_SHADOWS
 init|;
 name|range
 operator|<=
-name|GIMP_HIGHLIGHTS
+name|GIMP_TRANSFER_HIGHLIGHTS
 condition|;
 name|range
 operator|++
@@ -1200,11 +1200,11 @@ for|for
 control|(
 name|range
 operator|=
-name|GIMP_SHADOWS
+name|GIMP_TRANSFER_SHADOWS
 init|;
 name|range
 operator|<=
-name|GIMP_HIGHLIGHTS
+name|GIMP_TRANSFER_HIGHLIGHTS
 condition|;
 name|range
 operator|++

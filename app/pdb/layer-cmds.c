@@ -2617,7 +2617,7 @@ if|if
 condition|(
 name|mask_type
 operator|==
-name|GIMP_ADD_CHANNEL_MASK
+name|GIMP_ADD_MASK_CHANNEL
 condition|)
 block|{
 name|channel
@@ -6437,7 +6437,7 @@ literal|"The type of mask"
 argument_list|,
 name|GIMP_TYPE_ADD_MASK_TYPE
 argument_list|,
-name|GIMP_ADD_WHITE_MASK
+name|GIMP_ADD_MASK_WHITE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

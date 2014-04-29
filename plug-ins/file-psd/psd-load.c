@@ -8356,7 +8356,7 @@ name|gimp_layer_create_mask
 argument_list|(
 name|layer_id
 argument_list|,
-name|GIMP_ADD_WHITE_MASK
+name|GIMP_ADD_MASK_WHITE
 argument_list|)
 expr_stmt|;
 else|else
@@ -8366,7 +8366,7 @@ name|gimp_layer_create_mask
 argument_list|(
 name|layer_id
 argument_list|,
-name|GIMP_ADD_BLACK_MASK
+name|GIMP_ADD_MASK_BLACK
 argument_list|)
 expr_stmt|;
 name|gimp_layer_add_mask
@@ -8894,7 +8894,7 @@ name|gimp_layer_create_mask
 argument_list|(
 name|layer_id
 argument_list|,
-name|GIMP_ADD_WHITE_MASK
+name|GIMP_ADD_MASK_WHITE
 argument_list|)
 expr_stmt|;
 else|else
@@ -8904,7 +8904,7 @@ name|gimp_layer_create_mask
 argument_list|(
 name|layer_id
 argument_list|,
-name|GIMP_ADD_BLACK_MASK
+name|GIMP_ADD_MASK_BLACK
 argument_list|)
 expr_stmt|;
 name|IFDBG

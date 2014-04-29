@@ -490,7 +490,7 @@ argument_list|)
 argument_list|,
 name|combo
 argument_list|,
-name|GIMP_ADD_CHANNEL_MASK
+name|GIMP_ADD_MASK_CHANNEL
 argument_list|,
 name|TRUE
 argument_list|)
