@@ -910,7 +910,7 @@ name|type
 condition|)
 block|{
 case|case
-name|GIMP_BLUR_CONVOLVE
+name|GIMP_CONVOLVE_BLUR
 case|:
 name|convolve
 operator|->
@@ -931,7 +931,7 @@ operator|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_SHARPEN_CONVOLVE
+name|GIMP_CONVOLVE_SHARPEN
 case|:
 name|convolve
 operator|->

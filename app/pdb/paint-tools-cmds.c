@@ -4942,7 +4942,7 @@ literal|"Convolve type"
 argument_list|,
 name|GIMP_TYPE_CONVOLVE_TYPE
 argument_list|,
-name|GIMP_BLUR_CONVOLVE
+name|GIMP_CONVOLVE_BLUR
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

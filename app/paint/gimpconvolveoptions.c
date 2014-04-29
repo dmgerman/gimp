@@ -44,7 +44,7 @@ DECL|macro|DEFAULT_CONVOLVE_TYPE
 define|#
 directive|define
 name|DEFAULT_CONVOLVE_TYPE
-value|GIMP_BLUR_CONVOLVE
+value|GIMP_CONVOLVE_BLUR
 end_define
 
 begin_define
@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2780561f0103
+DECL|enum|__anon28c049600103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

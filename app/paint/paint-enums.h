@@ -44,7 +44,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  * these enums that are registered with the type system  */
+comment|/*  * enums that are registered with the type system  */
 end_comment
 
 begin_define
@@ -68,7 +68,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5cfa830103
+DECL|enum|__anon29aded2c0103
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -107,7 +107,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c5cfa830203
+DECL|enum|__anon29aded2c0203
 block|{
 DECL|enumerator|GIMP_PERSPECTIVE_CLONE_MODE_ADJUST
 name|GIMP_PERSPECTIVE_CLONE_MODE_ADJUST
@@ -144,7 +144,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c5cfa830303
+DECL|enum|__anon29aded2c0303
 block|{
 DECL|enumerator|GIMP_SOURCE_ALIGN_NO
 name|GIMP_SOURCE_ALIGN_NO
@@ -167,82 +167,6 @@ name|GimpSourceAlignMode
 typedef|;
 end_typedef
 
-begin_define
-DECL|macro|GIMP_TYPE_CONVOLVE_TYPE
-define|#
-directive|define
-name|GIMP_TYPE_CONVOLVE_TYPE
-value|(gimp_convolve_type_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_convolve_type_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2c5cfa830403
-block|{
-DECL|enumerator|GIMP_BLUR_CONVOLVE
-name|GIMP_BLUR_CONVOLVE
-block|,
-comment|/*< desc="Blur">*/
-DECL|enumerator|GIMP_SHARPEN_CONVOLVE
-name|GIMP_SHARPEN_CONVOLVE
-comment|/*< desc="Sharpen">*/
-DECL|typedef|GimpConvolveType
-block|}
-name|GimpConvolveType
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_TYPE_INK_BLOB_TYPE
-define|#
-directive|define
-name|GIMP_TYPE_INK_BLOB_TYPE
-value|(gimp_ink_blob_type_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_ink_blob_type_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2c5cfa830503
-block|{
-DECL|enumerator|GIMP_INK_BLOB_TYPE_CIRCLE
-name|GIMP_INK_BLOB_TYPE_CIRCLE
-block|,
-comment|/*< desc="Circle">*/
-DECL|enumerator|GIMP_INK_BLOB_TYPE_SQUARE
-name|GIMP_INK_BLOB_TYPE_SQUARE
-block|,
-comment|/*< desc="Square">*/
-DECL|enumerator|GIMP_INK_BLOB_TYPE_DIAMOND
-name|GIMP_INK_BLOB_TYPE_DIAMOND
-comment|/*< desc="Diamond">*/
-DECL|typedef|GimpInkBlobType
-block|}
-name|GimpInkBlobType
-typedef|;
-end_typedef
-
 begin_comment
 comment|/*  * non-registered enums; register them if needed  */
 end_comment
@@ -251,7 +175,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip, pdb-skip>*/
-DECL|enum|__anon2c5cfa830603
+DECL|enum|__anon29aded2c0403
 block|{
 DECL|enumerator|GIMP_PAINT_STATE_INIT
 name|GIMP_PAINT_STATE_INIT
