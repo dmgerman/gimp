@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimppropwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpspinscale.h"
 end_include
 
@@ -65,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf01df10103
+DECL|enum|__anon277949d30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
