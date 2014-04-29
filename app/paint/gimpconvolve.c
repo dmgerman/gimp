@@ -951,10 +951,6 @@ name|MIN_SHARPEN
 operator|)
 expr_stmt|;
 break|break;
-case|case
-name|GIMP_CUSTOM_CONVOLVE
-case|:
-break|break;
 block|}
 name|convolve
 operator|->

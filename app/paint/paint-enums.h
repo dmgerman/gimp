@@ -68,7 +68,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c13b9470103
+DECL|enum|__anon2c5cfa830103
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -107,7 +107,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c13b9470203
+DECL|enum|__anon2c5cfa830203
 block|{
 DECL|enumerator|GIMP_PERSPECTIVE_CLONE_MODE_ADJUST
 name|GIMP_PERSPECTIVE_CLONE_MODE_ADJUST
@@ -144,7 +144,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c13b9470303
+DECL|enum|__anon2c5cfa830303
 block|{
 DECL|enumerator|GIMP_SOURCE_ALIGN_NO
 name|GIMP_SOURCE_ALIGN_NO
@@ -188,7 +188,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c13b9470403
+DECL|enum|__anon2c5cfa830403
 block|{
 DECL|enumerator|GIMP_BLUR_CONVOLVE
 name|GIMP_BLUR_CONVOLVE
@@ -196,11 +196,7 @@ block|,
 comment|/*< desc="Blur">*/
 DECL|enumerator|GIMP_SHARPEN_CONVOLVE
 name|GIMP_SHARPEN_CONVOLVE
-block|,
 comment|/*< desc="Sharpen">*/
-DECL|enumerator|GIMP_CUSTOM_CONVOLVE
-name|GIMP_CUSTOM_CONVOLVE
-comment|/*< pdb-skip, skip>*/
 DECL|typedef|GimpConvolveType
 block|}
 name|GimpConvolveType
@@ -228,7 +224,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c13b9470503
+DECL|enum|__anon2c5cfa830503
 block|{
 DECL|enumerator|GIMP_INK_BLOB_TYPE_CIRCLE
 name|GIMP_INK_BLOB_TYPE_CIRCLE
@@ -255,7 +251,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip, pdb-skip>*/
-DECL|enum|__anon2c13b9470603
+DECL|enum|__anon2c5cfa830603
 block|{
 DECL|enumerator|GIMP_PAINT_STATE_INIT
 name|GIMP_PAINT_STATE_INIT
