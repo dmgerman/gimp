@@ -28,8 +28,9 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpBlendMode
-name|blend_mode
+name|GimpGradient
+modifier|*
+name|gradient
 parameter_list|,
 name|GimpLayerModeEffects
 name|paint_mode
