@@ -1003,11 +1003,11 @@ name|flags
 operator|&
 operator|(
 name|GIMP_METADATA_SAVE_EXIF
-operator|||
+operator||
 name|GIMP_METADATA_SAVE_XMP
-operator|||
+operator||
 name|GIMP_METADATA_SAVE_IPTC
-operator|||
+operator||
 name|GIMP_METADATA_SAVE_THUMBNAIL
 operator|)
 operator|)
