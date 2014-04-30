@@ -82,7 +82,7 @@ DECL|macro|FG_BG_HARDEDGE_KEY
 define|#
 directive|define
 name|FG_BG_HARDEDGE_KEY
-value|"gimp-gradient-fg-bg-rgb"
+value|"gimp-gradient-fg-bg-rgb-hardedge"
 end_define
 
 begin_define
