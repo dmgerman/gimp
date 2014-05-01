@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0c92750103
+DECL|enum|__anon28f813db0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -543,7 +543,7 @@ literal|"input"
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y float"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -657,7 +657,7 @@ name|input_format
 init|=
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y float"
 argument_list|)
 decl_stmt|;
 specifier|const
@@ -766,10 +766,10 @@ name|gfloat
 modifier|*
 name|tmp
 decl_stmt|;
-name|gint
+name|gfloat
 name|src
 init|=
-literal|0
+literal|0.0
 decl_stmt|;
 name|gint
 name|j
@@ -871,30 +871,32 @@ argument_list|,
 name|min_prev
 argument_list|)
 decl_stmt|;
-name|gint
+name|gfloat
 name|fraction
 init|=
-literal|255
+literal|1.0
 decl_stmt|;
 name|gint
 name|k
 decl_stmt|;
-comment|/*  This might need to be changed to 0               instead of k = (min) ? (min - 1) : 0  */
+DECL|macro|EPSILON
+define|#
+directive|define
+name|EPSILON
+value|0.0001
+comment|/*  This loop used to start at "k = (min) ? (min - 1) : 0"            *  and this comment suggested it might have to be changed to            *  "k = 0", but "k = 0" increases processing time significantly.            *            *  When porting this to float, i noticed that starting at            *  "min - 2" gets rid of a lot of 8-bit artifacts, while starting            *  at "min - 3" or smaller would introduce different artifacts.            *            *  Note that I didn't really understand the entire algorithm,            *  I just "blindly" ported it to float :) --mitch            */
 for|for
 control|(
 name|k
 operator|=
-operator|(
-name|min
-operator|)
-condition|?
-operator|(
+name|MAX
+argument_list|(
 name|min
 operator|-
-literal|1
-operator|)
-else|:
+literal|2
+argument_list|,
 literal|0
+argument_list|)
 init|;
 name|k
 operator|<=
@@ -930,9 +932,6 @@ operator|>=
 name|end
 condition|)
 block|{
-name|guchar
-name|src_uchar
-decl_stmt|;
 if|#
 directive|if
 literal|1
@@ -948,7 +947,7 @@ argument_list|,
 name|NULL
 argument_list|,
 operator|&
-name|src_uchar
+name|src
 argument_list|,
 name|input_format
 argument_list|,
@@ -979,7 +978,7 @@ argument_list|,
 name|input_format
 argument_list|,
 operator|&
-name|src_uchar
+name|src
 argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
 argument_list|,
@@ -988,15 +987,14 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-name|src
-operator|=
-name|src_uchar
-expr_stmt|;
 if|if
 condition|(
+name|ABS
+argument_list|(
 name|src
-operator|==
-literal|0
+argument_list|)
+operator|<
+name|EPSILON
 condition|)
 block|{
 name|min
@@ -1031,8 +1029,8 @@ block|}
 if|if
 condition|(
 name|src
-operator|!=
-literal|0
+operator|>
+name|EPSILON
 condition|)
 block|{
 comment|/*  If min_left != min_prev use the previous fraction                *   if it is less than the one found                */
@@ -1043,31 +1041,27 @@ operator|!=
 name|min
 condition|)
 block|{
-name|gint
+name|gfloat
 name|prev_frac
 init|=
-call|(
-name|int
-call|)
-argument_list|(
-literal|255
-operator|*
-operator|(
 name|min_prev
 operator|-
 name|min
-operator|)
-argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|ABS
+argument_list|(
 name|prev_frac
-operator|==
-literal|255
+operator|-
+literal|1.0
+argument_list|)
+operator|<
+name|EPSILON
 condition|)
 name|prev_frac
 operator|=
-literal|0
+literal|0.0
 expr_stmt|;
 name|fraction
 operator|=
@@ -1093,8 +1087,12 @@ operator|=
 name|min
 operator|+
 name|fraction
-operator|/
-literal|256.0
+operator|*
+operator|(
+literal|1.0
+operator|-
+name|EPSILON
+operator|)
 expr_stmt|;
 if|if
 condition|(
