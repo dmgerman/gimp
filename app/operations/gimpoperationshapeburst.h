@@ -112,9 +112,9 @@ DECL|member|parent_instance
 name|GeglOperationFilter
 name|parent_instance
 decl_stmt|;
-DECL|member|max_iterations
-name|gdouble
-name|max_iterations
+DECL|member|normalize
+name|gboolean
+name|normalize
 decl_stmt|;
 DECL|member|progress
 name|gdouble
