@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f813db0103
+DECL|enum|__anon276d4c530103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -932,10 +932,7 @@ operator|>=
 name|end
 condition|)
 block|{
-if|#
-directive|if
-literal|1
-comment|/* FIXME: this should be much faster, it converts                    * to 32 bit rgba intermediately, bah...                    */
+comment|/* FIXME: this should be much faster, it converts to                    * 32 bit rgba intermediately, bah...                    */
 name|gegl_buffer_sample
 argument_list|(
 name|input
@@ -956,37 +953,6 @@ argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
-name|gegl_buffer_get
-argument_list|(
-name|input
-argument_list|,
-name|GEGL_RECTANGLE
-argument_list|(
-name|x
-argument_list|,
-name|y
-argument_list|,
-literal|1
-argument_list|,
-literal|1
-argument_list|)
-argument_list|,
-literal|1.0
-argument_list|,
-name|input_format
-argument_list|,
-operator|&
-name|src
-argument_list|,
-name|GEGL_AUTO_ROWSTRIDE
-argument_list|,
-name|GEGL_ABYSS_NONE
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 if|if
 condition|(
 name|ABS
