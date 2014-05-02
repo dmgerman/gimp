@@ -82,7 +82,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bddedd20108
+DECL|struct|__anon2c5fdccb0108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -333,11 +333,18 @@ end_comment
 
 begin_function
 name|void
-DECL|function|splash_create (gboolean be_verbose)
+DECL|function|splash_create (gboolean be_verbose,GdkScreen * screen,gint monitor)
 name|splash_create
 parameter_list|(
 name|gboolean
 name|be_verbose
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|)
 block|{
 name|GtkWidget
@@ -352,15 +359,19 @@ name|GdkPixbufAnimation
 modifier|*
 name|pixbuf
 decl_stmt|;
-name|GdkScreen
-modifier|*
-name|screen
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|splash
 operator|==
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GDK_IS_SCREEN
+argument_list|(
+name|screen
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|pixbuf
@@ -410,6 +421,10 @@ literal|"role"
 argument_list|,
 literal|"gimp-startup"
 argument_list|,
+literal|"screen"
+argument_list|,
+name|screen
+argument_list|,
 literal|"window-position"
 argument_list|,
 name|GTK_WIN_POS_CENTER
@@ -438,15 +453,6 @@ name|GINT_TO_POINTER
 argument_list|(
 literal|0
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|screen
-operator|=
-name|gtk_widget_get_screen
-argument_list|(
-name|splash
-operator|->
-name|window
 argument_list|)
 expr_stmt|;
 name|splash

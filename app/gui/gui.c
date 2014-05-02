@@ -660,6 +660,27 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|initial_screen
+specifier|static
+name|GdkScreen
+modifier|*
+name|initial_screen
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|initial_monitor
+specifier|static
+name|gint
+name|initial_monitor
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  public functions  */
 end_comment
@@ -846,10 +867,6 @@ name|status_callback
 init|=
 name|NULL
 decl_stmt|;
-name|GdkScreen
-modifier|*
-name|screen
-decl_stmt|;
 name|gchar
 modifier|*
 name|abort_message
@@ -960,16 +977,19 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-name|screen
+name|initial_monitor
 operator|=
-name|gdk_screen_get_default
-argument_list|()
+name|gimp_get_monitor_at_pointer
+argument_list|(
+operator|&
+name|initial_screen
+argument_list|)
 expr_stmt|;
 name|gtk_widget_set_default_colormap
 argument_list|(
 name|gdk_screen_get_rgb_colormap
 argument_list|(
-name|screen
+name|initial_screen
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -984,6 +1004,10 @@ argument_list|(
 name|gimp
 operator|->
 name|be_verbose
+argument_list|,
+name|initial_screen
+argument_list|,
+name|initial_monitor
 argument_list|)
 expr_stmt|;
 name|status_callback
@@ -2244,6 +2268,10 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|toplevel
+decl_stmt|;
 comment|/*  create the empty display  */
 name|display
 operator|=
@@ -2259,11 +2287,12 @@ name|GIMP_UNIT_PIXEL
 argument_list|,
 literal|1.0
 argument_list|,
-name|NULL
+name|G_OBJECT
+argument_list|(
+name|initial_screen
+argument_list|)
 argument_list|,
-comment|/* FIXME monitor */
-literal|0
-comment|/* FIXME monitor */
+name|initial_monitor
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2283,13 +2312,15 @@ condition|)
 name|session_restore
 argument_list|(
 name|gimp
+argument_list|,
+name|initial_screen
+argument_list|,
+name|initial_monitor
 argument_list|)
 expr_stmt|;
 comment|/*  move keyboard focus to the display  */
-name|gtk_window_present
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
+name|toplevel
+operator|=
 name|gtk_widget_get_toplevel
 argument_list|(
 name|GTK_WIDGET
@@ -2297,6 +2328,12 @@ argument_list|(
 name|shell
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|gtk_window_present
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|toplevel
 argument_list|)
 argument_list|)
 expr_stmt|;
