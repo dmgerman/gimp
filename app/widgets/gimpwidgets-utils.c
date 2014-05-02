@@ -4841,9 +4841,6 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|gint
-name|monitor
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|screen
