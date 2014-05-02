@@ -328,7 +328,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_group_new:  * @image_ID: The image to which to add the layer group.  *  * Create a new layer group.  *  * This procedure creates a new layer group. Attributes such as layer  * mode and opacity should be set with explicit procedure calls. Add  * the new layer group (which is a kind of layer) with the  * gimp_image_insert_layer() command.  *  * Returns: The newly created layer group.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_layer_group_new:  * @image_ID: The image to which to add the layer group.  *  * Create a new layer group.  *  * This procedure creates a new layer group. Attributes such as layer  * mode and opacity should be set with explicit procedure calls. Add  * the new layer group (which is a kind of layer) with the  * gimp_image_insert_layer() command.  *  * Other procedures useful with layer groups: gimp_image_reorder_item(),  * gimp_item_get_parent(), gimp_item_get_children(), gimp_item_is_group().  *  * Returns: The newly created layer group.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
