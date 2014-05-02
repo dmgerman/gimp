@@ -242,6 +242,21 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|void
+name|app_restore_after_callback
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GimpInitStatusFunc
+name|status_callback
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|gboolean
 name|app_exit_after_callback
 parameter_list|(
@@ -259,6 +274,31 @@ name|loop
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*  local variables  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|initial_screen
+specifier|static
+name|GObject
+modifier|*
+name|initial_screen
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|initial_monitor
+specifier|static
+name|gint
+name|initial_monitor
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/*  public functions  */
@@ -727,6 +767,21 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
+comment|/*  Connect our restore_after callback before gui_init() connects    *  theirs, so ours runs first and can grab the initial monitor    *  before the GUI's restore_after callback resets it.    */
+name|g_signal_connect_after
+argument_list|(
+name|gimp
+argument_list|,
+literal|"restore"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|app_restore_after_callback
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 ifndef|#
 directive|ifndef
 name|GIMP_CONSOLE_COMPILATION
@@ -851,11 +906,9 @@ index|]
 argument_list|,
 name|as_new
 argument_list|,
-name|NULL
+name|initial_screen
 argument_list|,
-comment|/* FIXME monitor */
-literal|0
-comment|/* FIXME monitor */
+name|initial_monitor
 argument_list|)
 expr_stmt|;
 block|}
@@ -941,6 +994,41 @@ name|percentage
 parameter_list|)
 block|{
 comment|/*  deliberately do nothing  */
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|app_restore_after_callback (Gimp * gimp,GimpInitStatusFunc status_callback)
+name|app_restore_after_callback
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GimpInitStatusFunc
+name|status_callback
+parameter_list|)
+block|{
+comment|/*  Getting the display name for a -1 display returns the initial    *  monitor during startup. Need to call this from a restore_after    *  callback, because before restore(), the GUI can't return anything,    *  after after restore() the initial monitor gets reset.    */
+name|g_free
+argument_list|(
+name|gimp_get_display_name
+argument_list|(
+name|gimp
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+operator|&
+name|initial_screen
+argument_list|,
+operator|&
+name|initial_monitor
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

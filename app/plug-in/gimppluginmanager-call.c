@@ -613,6 +613,10 @@ decl_stmt|;
 name|gint
 name|display_ID
 decl_stmt|;
+name|GObject
+modifier|*
+name|screen
+decl_stmt|;
 name|gint
 name|monitor
 decl_stmt|;
@@ -868,6 +872,9 @@ operator|->
 name|gimp
 argument_list|,
 name|display_ID
+argument_list|,
+operator|&
+name|screen
 argument_list|,
 operator|&
 name|monitor

@@ -27,6 +27,26 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  this function lives in gui.c but must only be used from gui-vtable.c;  *  also, gui.h can't contain any Gdk types.  */
+end_comment
+
+begin_function_decl
+name|gint
+name|gui_get_initial_monitor
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GdkScreen
+modifier|*
+modifier|*
+name|screen
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

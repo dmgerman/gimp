@@ -884,7 +884,7 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_get_display_name (Gimp * gimp,gint display_ID,gint * monitor_number)
+DECL|function|gimp_get_display_name (Gimp * gimp,gint display_ID,GObject ** screen,gint * monitor)
 name|gimp_get_display_name
 parameter_list|(
 name|Gimp
@@ -894,9 +894,14 @@ parameter_list|,
 name|gint
 name|display_ID
 parameter_list|,
+name|GObject
+modifier|*
+modifier|*
+name|screen
+parameter_list|,
 name|gint
 modifier|*
-name|monitor_number
+name|monitor
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -911,7 +916,16 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|monitor_number
+name|screen
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|monitor
 operator|!=
 name|NULL
 argument_list|,
@@ -937,11 +951,18 @@ name|gimp
 argument_list|,
 name|display_ID
 argument_list|,
-name|monitor_number
+name|screen
+argument_list|,
+name|monitor
 argument_list|)
 return|;
 operator|*
-name|monitor_number
+name|screen
+operator|=
+name|NULL
+expr_stmt|;
+operator|*
+name|monitor
 operator|=
 literal|0
 expr_stmt|;

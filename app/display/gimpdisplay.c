@@ -168,7 +168,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c457f970103
+DECL|enum|__anon27cca9100103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1782,6 +1782,10 @@ argument_list|,
 name|scale
 argument_list|,
 name|popup_manager
+argument_list|,
+name|screen
+argument_list|,
+name|monitor
 argument_list|)
 expr_stmt|;
 name|shell
