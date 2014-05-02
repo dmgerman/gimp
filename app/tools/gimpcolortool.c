@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpwindowstrategy.h"
 end_include
 
@@ -205,7 +211,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c508520103
+DECL|enum|__anon288a7fcd0103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -2629,6 +2635,17 @@ name|shell
 argument_list|)
 argument_list|)
 decl_stmt|;
+name|gint
+name|monitor
+init|=
+name|gimp_widget_get_monitor
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|shell
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|dockable
@@ -2659,6 +2676,8 @@ name|gimp_dialog_factory_get_singleton
 argument_list|()
 argument_list|,
 name|screen
+argument_list|,
+name|monitor
 argument_list|,
 literal|"gimp-palette-editor"
 argument_list|)

@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpwindowstrategy.h"
 end_include
 
@@ -106,6 +112,11 @@ name|gimp_dialog_factory_get_singleton
 argument_list|()
 argument_list|,
 name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+name|gimp_widget_get_monitor
 argument_list|(
 name|widget
 argument_list|)
@@ -184,6 +195,11 @@ name|gimp_dialog_factory_get_singleton
 argument_list|()
 argument_list|,
 name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+name|gimp_widget_get_monitor
 argument_list|(
 name|widget
 argument_list|)

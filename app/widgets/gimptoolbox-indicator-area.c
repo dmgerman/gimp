@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdialogfactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdnd.h"
 end_include
 
@@ -103,6 +97,12 @@ begin_include
 include|#
 directive|include
 file|"gimptoolbox-indicator-area.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpwidgets-utils.h"
 end_include
 
 begin_include
@@ -225,6 +225,11 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
+name|gimp_widget_get_monitor
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
 literal|"gimp-brush-grid|gimp-brush-list"
 argument_list|)
 expr_stmt|;
@@ -333,6 +338,11 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
+name|gimp_widget_get_monitor
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
 literal|"gimp-pattern-grid|gimp-pattern-list"
 argument_list|)
 expr_stmt|;
@@ -437,6 +447,11 @@ argument_list|)
 argument_list|)
 argument_list|,
 name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+name|gimp_widget_get_monitor
 argument_list|(
 name|widget
 argument_list|)

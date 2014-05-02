@@ -595,6 +595,8 @@ argument_list|,
 name|gdk_screen_get_default
 argument_list|()
 argument_list|,
+literal|0
+argument_list|,
 literal|"gimp-image-new-dialog"
 argument_list|,
 operator|-

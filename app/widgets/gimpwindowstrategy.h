@@ -100,6 +100,9 @@ name|GdkScreen
 modifier|*
 name|screen
 parameter_list|,
+name|gint
+name|monitor
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -140,6 +143,9 @@ parameter_list|,
 name|GdkScreen
 modifier|*
 name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|,
 specifier|const
 name|gchar

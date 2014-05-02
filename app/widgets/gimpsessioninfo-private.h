@@ -51,6 +51,10 @@ DECL|member|bottom_align
 name|gboolean
 name|bottom_align
 decl_stmt|;
+DECL|member|monitor
+name|gint
+name|monitor
+decl_stmt|;
 comment|/*  only valid while restoring and saving the session  */
 DECL|member|open
 name|gboolean

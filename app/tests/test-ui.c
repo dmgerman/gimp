@@ -497,6 +497,11 @@ argument_list|(
 name|toplevel
 argument_list|)
 argument_list|,
+name|gimp_widget_get_monitor
+argument_list|(
+name|toplevel
+argument_list|)
+argument_list|,
 name|NULL
 comment|/*ui_manager*/
 argument_list|,
@@ -2300,6 +2305,8 @@ argument_list|,
 name|gdk_screen_get_default
 argument_list|()
 argument_list|,
+literal|0
+argument_list|,
 name|FALSE
 comment|/*toolbox*/
 argument_list|)
@@ -2313,6 +2320,8 @@ argument_list|()
 argument_list|,
 name|gdk_screen_get_default
 argument_list|()
+argument_list|,
+literal|0
 argument_list|,
 name|TRUE
 comment|/*toolbox*/

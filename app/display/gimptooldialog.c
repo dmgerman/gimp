@@ -260,12 +260,19 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_tool_dialog_new (GimpToolInfo * tool_info,const gchar * desc,...)
+DECL|function|gimp_tool_dialog_new (GimpToolInfo * tool_info,GdkScreen * screen,gint monitor,const gchar * desc,...)
 name|gimp_tool_dialog_new
 parameter_list|(
 name|GimpToolInfo
 modifier|*
 name|tool_info
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|,
 specifier|const
 name|gchar
@@ -401,6 +408,10 @@ argument_list|,
 name|identifier
 argument_list|,
 name|dialog
+argument_list|,
+name|screen
+argument_list|,
+name|monitor
 argument_list|)
 expr_stmt|;
 name|g_free

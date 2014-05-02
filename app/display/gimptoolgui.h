@@ -159,6 +159,13 @@ name|gchar
 operator|*
 name|description
 argument_list|,
+name|GdkScreen
+operator|*
+name|screen
+argument_list|,
+name|gint
+name|monitor
+argument_list|,
 name|gboolean
 name|overlay
 argument_list|,
@@ -267,6 +274,13 @@ parameter_list|(
 name|GimpToolGui
 modifier|*
 name|gui
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|,
 name|gboolean
 name|overlay

@@ -2038,6 +2038,11 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
+name|gimp_widget_get_monitor
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
 literal|"gimp-input-devices-dialog"
 argument_list|,
 literal|0
@@ -2067,6 +2072,11 @@ name|gimp_dialog_factory_get_singleton
 argument_list|()
 argument_list|,
 name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+name|gimp_widget_get_monitor
 argument_list|(
 name|widget
 argument_list|)
@@ -8832,7 +8842,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2a0662cd0108
+DECL|struct|__anon299fd9d20108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10088,7 +10098,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a0662cd0208
+DECL|struct|__anon299fd9d20208
 block|{
 DECL|member|label
 specifier|const
@@ -11176,6 +11186,23 @@ name|vbox2
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|prefs_check_button_add
+argument_list|(
+name|object
+argument_list|,
+literal|"restore-monitor"
+argument_list|,
+name|_
+argument_list|(
+literal|"Open windows on the same _monitor they were open before"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|button
 operator|=
 name|prefs_button_add
@@ -11298,7 +11325,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a0662cd0308
+DECL|struct|__anon299fd9d20308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11453,7 +11480,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a0662cd0408
+DECL|struct|__anon299fd9d20408
 block|{
 DECL|member|tree_label
 specifier|const

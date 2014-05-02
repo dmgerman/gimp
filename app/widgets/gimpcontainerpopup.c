@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpwindowstrategy.h"
 end_include
 
@@ -125,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275523270103
+DECL|enum|__anon2b341f2e0103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -2749,6 +2755,11 @@ operator|->
 name|dialog_factory
 argument_list|,
 name|gtk_widget_get_screen
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+name|gimp_widget_get_monitor
 argument_list|(
 name|button
 argument_list|)

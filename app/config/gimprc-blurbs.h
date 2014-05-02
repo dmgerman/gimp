@@ -765,6 +765,15 @@ value|N_("Let GIMP try to restore your last saved session on each startup.")
 end_define
 
 begin_define
+DECL|macro|RESTORE_MONITOR_BLURB
+define|#
+directive|define
+name|RESTORE_MONITOR_BLURB
+define|\
+value|N_("When enabled, GIMP will try to restore windows on the monitor they " \    "were open before.  When disabled, windows will appear on the currently " \    "used monitor.")
+end_define
+
+begin_define
 DECL|macro|SAVE_DEVICE_STATUS_BLURB
 define|#
 directive|define

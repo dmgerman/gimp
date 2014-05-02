@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ba3d8a0103
+DECL|enum|__anon291961080103
 block|{
 DECL|enumerator|SESSION_INFO_SIDE
 name|SESSION_INFO_SIDE
@@ -992,7 +992,7 @@ end_function
 begin_function
 name|GimpDock
 modifier|*
-DECL|function|gimp_session_info_dock_restore (GimpSessionInfoDock * dock_info,GimpDialogFactory * factory,GdkScreen * screen,GimpDockContainer * dock_container)
+DECL|function|gimp_session_info_dock_restore (GimpSessionInfoDock * dock_info,GimpDialogFactory * factory,GdkScreen * screen,gint monitor,GimpDockContainer * dock_container)
 name|gimp_session_info_dock_restore
 parameter_list|(
 name|GimpSessionInfoDock
@@ -1006,6 +1006,9 @@ parameter_list|,
 name|GdkScreen
 modifier|*
 name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|,
 name|GimpDockContainer
 modifier|*
@@ -1063,6 +1066,8 @@ argument_list|(
 name|factory
 argument_list|,
 name|screen
+argument_list|,
+name|monitor
 argument_list|,
 name|ui_manager
 argument_list|,

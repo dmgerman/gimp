@@ -174,6 +174,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplay.h"
 end_include
 
@@ -305,7 +311,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2925ee4e0103
+DECL|enum|__anon297d0d2b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -418,7 +424,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2925ee4e0208
+DECL|struct|__anon297d0d2b0208
 block|{
 DECL|member|x
 name|gint
@@ -776,6 +782,13 @@ specifier|const
 name|gchar
 modifier|*
 name|entry_id
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -797,6 +810,13 @@ specifier|const
 name|gchar
 modifier|*
 name|new_entry_id
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2139,6 +2159,13 @@ name|gimp_image_window_config_to_entry_id
 argument_list|(
 name|config
 argument_list|)
+argument_list|,
+name|gdk_screen_get_default
+argument_list|()
+argument_list|,
+comment|/* FIXME monitor */
+literal|0
+comment|/* FIXME monitor */
 argument_list|)
 expr_stmt|;
 block|}
@@ -6669,6 +6696,22 @@ name|gimp_image_window_config_to_entry_id
 argument_list|(
 name|config
 argument_list|)
+argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|window
+argument_list|)
+argument_list|)
+argument_list|,
+name|gimp_widget_get_monitor
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|window
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -7128,6 +7171,22 @@ name|active_display
 argument_list|,
 name|NULL
 comment|/*new_entry_id*/
+argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|window
+argument_list|)
+argument_list|)
+argument_list|,
+name|gimp_widget_get_monitor
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|window
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_context_set_display
@@ -7508,6 +7567,22 @@ name|display
 argument_list|,
 name|NULL
 comment|/*new_entry_id*/
+argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|window
+argument_list|)
+argument_list|)
+argument_list|,
+name|gimp_widget_get_monitor
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|window
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|tab_label
@@ -7635,7 +7710,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_window_session_apply (GimpImageWindow * window,const gchar * entry_id)
+DECL|function|gimp_image_window_session_apply (GimpImageWindow * window,const gchar * entry_id,GdkScreen * screen,gint monitor)
 name|gimp_image_window_session_apply
 parameter_list|(
 name|GimpImageWindow
@@ -7646,6 +7721,13 @@ specifier|const
 name|gchar
 modifier|*
 name|entry_id
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|)
 block|{
 name|GimpImageWindowPrivate
@@ -7756,6 +7838,10 @@ name|GTK_WIDGET
 argument_list|(
 name|window
 argument_list|)
+argument_list|,
+name|screen
+argument_list|,
+name|monitor
 argument_list|)
 expr_stmt|;
 name|gtk_window_unmaximize
@@ -7784,7 +7870,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_window_session_update (GimpImageWindow * window,GimpDisplay * new_display,const gchar * new_entry_id)
+DECL|function|gimp_image_window_session_update (GimpImageWindow * window,GimpDisplay * new_display,const gchar * new_entry_id,GdkScreen * screen,gint monitor)
 name|gimp_image_window_session_update
 parameter_list|(
 name|GimpImageWindow
@@ -7799,6 +7885,13 @@ specifier|const
 name|gchar
 modifier|*
 name|new_entry_id
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|)
 block|{
 name|GimpImageWindowPrivate
@@ -7842,6 +7935,10 @@ argument_list|(
 name|window
 argument_list|,
 name|new_entry_id
+argument_list|,
+name|screen
+argument_list|,
+name|monitor
 argument_list|)
 expr_stmt|;
 block|}
@@ -7917,6 +8014,10 @@ argument_list|(
 name|window
 argument_list|,
 name|new_entry_id
+argument_list|,
+name|screen
+argument_list|,
+name|monitor
 argument_list|)
 expr_stmt|;
 block|}
@@ -7940,6 +8041,10 @@ argument_list|(
 name|window
 argument_list|,
 name|new_entry_id
+argument_list|,
+name|screen
+argument_list|,
+name|monitor
 argument_list|)
 expr_stmt|;
 block|}
@@ -8010,6 +8115,10 @@ argument_list|,
 name|private
 operator|->
 name|entry_id
+argument_list|,
+name|screen
+argument_list|,
+name|monitor
 argument_list|)
 expr_stmt|;
 block|}

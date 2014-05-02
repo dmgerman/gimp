@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -113,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b329120103
+DECL|enum|__anon28d94b8d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1165,6 +1171,17 @@ name|dock_columns
 argument_list|)
 argument_list|)
 decl_stmt|;
+name|gint
+name|monitor
+init|=
+name|gimp_widget_get_monitor
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|dock_columns
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|GList
 modifier|*
 name|docks
@@ -1277,6 +1294,8 @@ name|gimp_dialog_factory_get_singleton
 argument_list|()
 argument_list|,
 name|screen
+argument_list|,
+name|monitor
 argument_list|,
 name|NULL
 comment|/*ui_manager*/

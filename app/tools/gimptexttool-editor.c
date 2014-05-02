@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -4911,6 +4917,33 @@ argument_list|,
 name|text_tool
 operator|->
 name|editor_dialog
+argument_list|,
+name|parent
+condition|?
+name|gtk_widget_get_screen
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|parent
+argument_list|)
+argument_list|)
+else|:
+name|gdk_screen_get_default
+argument_list|()
+argument_list|,
+comment|/* FIXME monitor */
+name|parent
+condition|?
+name|gimp_widget_get_monitor
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|parent
+argument_list|)
+argument_list|)
+else|:
+literal|0
+comment|/* FIXME monitor */
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

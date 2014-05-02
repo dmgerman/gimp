@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2b987a0103
+DECL|enum|__anon2a06ca8b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3384,6 +3384,14 @@ name|gimp_dialog_factory_get_singleton
 argument_list|()
 argument_list|,
 name|gtk_widget_get_screen
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|dockable
+argument_list|)
+argument_list|)
+argument_list|,
+name|gimp_widget_get_monitor
 argument_list|(
 name|GTK_WIDGET
 argument_list|(

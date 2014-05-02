@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae5f1060103
+DECL|enum|__anon2b56783e0103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -243,6 +243,13 @@ parameter_list|(
 name|GimpToolGui
 modifier|*
 name|gui
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -728,7 +735,7 @@ end_comment
 begin_function
 name|GimpToolGui
 modifier|*
-DECL|function|gimp_tool_gui_new (GimpToolInfo * tool_info,const gchar * description,gboolean overlay,...)
+DECL|function|gimp_tool_gui_new (GimpToolInfo * tool_info,const gchar * description,GdkScreen * screen,gint monitor,gboolean overlay,...)
 name|gimp_tool_gui_new
 parameter_list|(
 name|GimpToolInfo
@@ -739,6 +746,13 @@ specifier|const
 name|gchar
 modifier|*
 name|description
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|,
 name|gboolean
 name|overlay
@@ -883,6 +897,10 @@ expr_stmt|;
 name|gimp_tool_gui_create_dialog
 argument_list|(
 name|gui
+argument_list|,
+name|screen
+argument_list|,
+name|monitor
 argument_list|)
 expr_stmt|;
 return|return
@@ -1415,12 +1433,19 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_gui_set_overlay (GimpToolGui * gui,gboolean overlay)
+DECL|function|gimp_tool_gui_set_overlay (GimpToolGui * gui,GdkScreen * screen,gint monitor,gboolean overlay)
 name|gimp_tool_gui_set_overlay
 parameter_list|(
 name|GimpToolGui
 modifier|*
 name|gui
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|,
 name|gboolean
 name|overlay
@@ -1526,6 +1551,10 @@ expr_stmt|;
 name|gimp_tool_gui_create_dialog
 argument_list|(
 name|gui
+argument_list|,
+name|screen
+argument_list|,
+name|monitor
 argument_list|)
 expr_stmt|;
 if|if
@@ -1998,12 +2027,19 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_gui_create_dialog (GimpToolGui * gui)
+DECL|function|gimp_tool_gui_create_dialog (GimpToolGui * gui,GdkScreen * screen,gint monitor)
 name|gimp_tool_gui_create_dialog
 parameter_list|(
 name|GimpToolGui
 modifier|*
 name|gui
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|)
 block|{
 name|GimpToolGuiPrivate
@@ -2198,6 +2234,10 @@ argument_list|(
 name|private
 operator|->
 name|tool_info
+argument_list|,
+name|screen
+argument_list|,
+name|monitor
 argument_list|,
 name|private
 operator|->

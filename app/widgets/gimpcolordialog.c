@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -117,7 +123,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af9bf750103
+DECL|enum|__anon2754e9090103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1258,6 +1264,7 @@ if|if
 condition|(
 name|dialog_factory
 condition|)
+block|{
 name|gimp_dialog_factory_add_foreign
 argument_list|(
 name|dialog_factory
@@ -1268,8 +1275,19 @@ name|GTK_WIDGET
 argument_list|(
 name|dialog
 argument_list|)
+argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|parent
+argument_list|)
+argument_list|,
+name|gimp_widget_get_monitor
+argument_list|(
+name|parent
+argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_color_selection_set_show_alpha
 argument_list|(
 name|GIMP_COLOR_SELECTION

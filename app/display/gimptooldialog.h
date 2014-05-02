@@ -126,6 +126,13 @@ name|GimpToolInfo
 operator|*
 name|tool_info
 argument_list|,
+name|GdkScreen
+operator|*
+name|screen
+argument_list|,
+name|gint
+name|monitor
+argument_list|,
 specifier|const
 name|gchar
 operator|*

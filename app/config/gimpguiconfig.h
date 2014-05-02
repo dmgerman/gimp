@@ -116,6 +116,10 @@ DECL|member|restore_session
 name|gboolean
 name|restore_session
 decl_stmt|;
+DECL|member|restore_monitor
+name|gboolean
+name|restore_monitor
+decl_stmt|;
 DECL|member|save_tool_options
 name|gboolean
 name|save_tool_options

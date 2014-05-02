@@ -471,6 +471,9 @@ name|GdkScreen
 modifier|*
 name|screen
 parameter_list|,
+name|gint
+name|monitor
+parameter_list|,
 name|gboolean
 name|toolbox
 parameter_list|)
@@ -539,6 +542,17 @@ name|writer
 parameter_list|,
 name|gint
 name|position
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
+name|gimp_widget_get_monitor
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|)
 function_decl|;
 end_function_decl
