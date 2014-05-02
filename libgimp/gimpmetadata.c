@@ -1430,9 +1430,9 @@ name|thumbw
 operator|=
 name|EXIF_THUMBNAIL_SIZE
 operator|*
-name|image_height
-operator|/
 name|image_width
+operator|/
+name|image_height
 expr_stmt|;
 block|}
 name|thumb_pixbuf
