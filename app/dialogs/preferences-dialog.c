@@ -1864,9 +1864,17 @@ condition|(
 name|from_gdk
 condition|)
 block|{
-name|gimp_get_screen_resolution
+name|gimp_get_monitor_resolution
 argument_list|(
-name|NULL
+name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+name|gimp_widget_get_monitor
+argument_list|(
+name|widget
+argument_list|)
 argument_list|,
 operator|&
 name|xres
@@ -8842,7 +8850,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon299fd9d20108
+DECL|struct|__anon2883efe10108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9713,10 +9721,15 @@ name|gchar
 modifier|*
 name|str
 decl_stmt|;
-name|gimp_get_screen_resolution
+name|gimp_get_monitor_resolution
 argument_list|(
-name|NULL
+name|gdk_screen_get_default
+argument_list|()
 argument_list|,
+comment|/* FIXME monitor */
+literal|0
+argument_list|,
+comment|/* FIXME monitor */
 operator|&
 name|xres
 argument_list|,
@@ -10098,7 +10111,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon299fd9d20208
+DECL|struct|__anon2883efe10208
 block|{
 DECL|member|label
 specifier|const
@@ -11325,7 +11338,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon299fd9d20308
+DECL|struct|__anon2883efe10308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11480,7 +11493,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon299fd9d20408
+DECL|struct|__anon2883efe10408
 block|{
 DECL|member|tree_label
 specifier|const

@@ -1612,9 +1612,11 @@ name|xres
 decl_stmt|,
 name|yres
 decl_stmt|;
-name|gimp_get_screen_resolution
+name|gimp_get_monitor_resolution
 argument_list|(
-name|NULL
+name|initial_screen
+argument_list|,
+name|initial_monitor
 argument_list|,
 operator|&
 name|xres

@@ -360,7 +360,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1f143d0103
+DECL|enum|__anon29b3b7f50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -388,7 +388,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1f143d0203
+DECL|enum|__anon29b3b7f50203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1626,10 +1626,14 @@ operator|->
 name|monitor_res_from_gdk
 condition|)
 block|{
-name|gimp_get_screen_resolution
+name|gimp_get_monitor_resolution
 argument_list|(
 name|screen
 argument_list|,
+comment|/* FIXME monitor */
+literal|0
+argument_list|,
+comment|/* FIXME monitor */
 operator|&
 name|shell
 operator|->
@@ -4040,9 +4044,14 @@ operator|->
 name|monitor_res_from_gdk
 condition|)
 block|{
-name|gimp_get_screen_resolution
+name|gimp_get_monitor_resolution
 argument_list|(
 name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+name|gimp_widget_get_monitor
 argument_list|(
 name|widget
 argument_list|)

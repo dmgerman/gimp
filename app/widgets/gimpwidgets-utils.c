@@ -2634,17 +2634,20 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_screen_resolution:  * @screen: a #GdkScreen or %NULL  * @xres: returns the horizontal screen resolution (in dpi)  * @yres: returns the vertical screen resolution (in dpi)  *  * Retrieves the screen resolution from GDK. If @screen is %NULL, the  * default screen is used.  **/
+comment|/**  * gimp_get_monitor_resolution:  * @screen: a #GdkScreen  * @monitor: a monitor number  * @xres: returns the horizontal monitor resolution (in dpi)  * @yres: returns the vertical monitor resolution (in dpi)  *  * Retrieves the monitor's resolution from GDK.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_get_screen_resolution (GdkScreen * screen,gdouble * xres,gdouble * yres)
-name|gimp_get_screen_resolution
+DECL|function|gimp_get_monitor_resolution (GdkScreen * screen,gint monitor,gdouble * xres,gdouble * yres)
+name|gimp_get_monitor_resolution
 parameter_list|(
 name|GdkScreen
 modifier|*
 name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|,
 name|gdouble
 modifier|*
@@ -2655,10 +2658,8 @@ modifier|*
 name|yres
 parameter_list|)
 block|{
-name|gint
-name|width
-decl_stmt|,
-name|height
+name|GdkRectangle
+name|size_pixels
 decl_stmt|;
 name|gint
 name|width_mm
@@ -2677,10 +2678,6 @@ literal|0.0
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|screen
-operator|==
-name|NULL
-operator|||
 name|GDK_IS_SCREEN
 argument_list|(
 name|screen
@@ -2701,42 +2698,32 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|screen
-condition|)
-name|screen
-operator|=
-name|gdk_screen_get_default
-argument_list|()
-expr_stmt|;
-name|width
-operator|=
-name|gdk_screen_get_width
+name|gdk_screen_get_monitor_geometry
 argument_list|(
 name|screen
-argument_list|)
-expr_stmt|;
-name|height
-operator|=
-name|gdk_screen_get_height
-argument_list|(
-name|screen
+argument_list|,
+name|monitor
+argument_list|,
+operator|&
+name|size_pixels
 argument_list|)
 expr_stmt|;
 name|width_mm
 operator|=
-name|gdk_screen_get_width_mm
+name|gdk_screen_get_monitor_width_mm
 argument_list|(
 name|screen
+argument_list|,
+name|monitor
 argument_list|)
 expr_stmt|;
 name|height_mm
 operator|=
-name|gdk_screen_get_height_mm
+name|gdk_screen_get_monitor_height_mm
 argument_list|(
 name|screen
+argument_list|,
+name|monitor
 argument_list|)
 expr_stmt|;
 comment|/*    * From xdpyinfo.c:    *    * there are 2.54 centimeters to an inch; so there are 25.4 millimeters.    *    *     dpi = N pixels / (M millimeters / (25.4 millimeters / 1 inch))    *         = N pixels / (M inch / 25.4)    *         = N * 25.4 pixels / M inch    */
@@ -2754,6 +2741,8 @@ block|{
 name|x
 operator|=
 operator|(
+name|size_pixels
+operator|.
 name|width
 operator|*
 literal|25.4
@@ -2767,6 +2756,8 @@ expr_stmt|;
 name|y
 operator|=
 operator|(
+name|size_pixels
+operator|.
 name|height
 operator|*
 literal|25.4
@@ -2799,7 +2790,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"GDK returned bogus values for the screen resolution, "
+literal|"GDK returned bogus values for the monitor resolution, "
 literal|"using 96 dpi instead."
 argument_list|)
 expr_stmt|;

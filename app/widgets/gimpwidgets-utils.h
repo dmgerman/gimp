@@ -286,11 +286,14 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_get_screen_resolution
+name|gimp_get_monitor_resolution
 parameter_list|(
 name|GdkScreen
 modifier|*
 name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|,
 name|gdouble
 modifier|*
