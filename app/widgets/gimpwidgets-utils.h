@@ -557,6 +557,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gint
+name|gimp_get_monitor_at_pointer
+parameter_list|(
+name|GdkScreen
+modifier|*
+modifier|*
+name|screen
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
