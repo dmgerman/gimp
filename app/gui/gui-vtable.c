@@ -519,6 +519,13 @@ name|unit
 parameter_list|,
 name|gdouble
 name|scale
+parameter_list|,
+name|GObject
+modifier|*
+name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1550,7 +1557,7 @@ begin_function
 specifier|static
 name|GimpObject
 modifier|*
-DECL|function|gui_display_create (Gimp * gimp,GimpImage * image,GimpUnit unit,gdouble scale)
+DECL|function|gui_display_create (Gimp * gimp,GimpImage * image,GimpUnit unit,gdouble scale,GObject * screen,gint monitor)
 name|gui_display_create
 parameter_list|(
 name|Gimp
@@ -1566,6 +1573,13 @@ name|unit
 parameter_list|,
 name|gdouble
 name|scale
+parameter_list|,
+name|GObject
+modifier|*
+name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|)
 block|{
 name|GimpContext
@@ -1589,6 +1603,24 @@ name|gimp
 argument_list|)
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|screen
+condition|)
+name|monitor
+operator|=
+name|gimp_get_monitor_at_pointer
+argument_list|(
+operator|(
+name|GdkScreen
+operator|*
+operator|*
+operator|)
+operator|&
+name|screen
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|display
@@ -1646,6 +1678,13 @@ name|data
 argument_list|,
 name|gimp_dialog_factory_get_singleton
 argument_list|()
+argument_list|,
+name|GDK_SCREEN
+argument_list|(
+name|screen
+argument_list|)
+argument_list|,
+name|monitor
 argument_list|)
 expr_stmt|;
 block|}

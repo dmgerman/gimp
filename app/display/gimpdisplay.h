@@ -170,6 +170,13 @@ parameter_list|,
 name|GimpDialogFactory
 modifier|*
 name|dialog_factory
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|)
 function_decl|;
 end_function_decl

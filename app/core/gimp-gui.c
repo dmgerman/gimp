@@ -1310,7 +1310,7 @@ end_function
 begin_function
 name|GimpObject
 modifier|*
-DECL|function|gimp_create_display (Gimp * gimp,GimpImage * image,GimpUnit unit,gdouble scale)
+DECL|function|gimp_create_display (Gimp * gimp,GimpImage * image,GimpUnit unit,gdouble scale,GObject * screen,gint monitor)
 name|gimp_create_display
 parameter_list|(
 name|Gimp
@@ -1326,6 +1326,13 @@ name|unit
 parameter_list|,
 name|gdouble
 name|scale
+parameter_list|,
+name|GObject
+modifier|*
+name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -1347,6 +1354,20 @@ operator|||
 name|GIMP_IS_IMAGE
 argument_list|(
 name|image
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|screen
+operator|==
+name|NULL
+operator|||
+name|G_IS_OBJECT
+argument_list|(
+name|screen
 argument_list|)
 argument_list|,
 name|NULL
@@ -1374,6 +1395,10 @@ argument_list|,
 name|unit
 argument_list|,
 name|scale
+argument_list|,
+name|screen
+argument_list|,
+name|monitor
 argument_list|)
 return|;
 return|return

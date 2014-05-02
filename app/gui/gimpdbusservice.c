@@ -66,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9a18480108
+DECL|struct|__anon27d63da10108
 block|{
 DECL|member|uri
 name|gchar
@@ -941,6 +941,12 @@ argument_list|,
 name|data
 operator|->
 name|as_new
+argument_list|,
+name|NULL
+argument_list|,
+comment|/* FIXME monitor */
+literal|0
+comment|/* FIXME monitor */
 argument_list|)
 expr_stmt|;
 name|gimp_dbus_service_open_data_free

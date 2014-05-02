@@ -850,6 +850,12 @@ name|i
 index|]
 argument_list|,
 name|as_new
+argument_list|,
+name|NULL
+argument_list|,
+comment|/* FIXME monitor */
+literal|0
+comment|/* FIXME monitor */
 argument_list|)
 expr_stmt|;
 block|}

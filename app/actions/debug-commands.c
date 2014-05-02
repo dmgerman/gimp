@@ -96,24 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/gimpdisplayshell.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/gimpimagewindow.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpaction.h"
 end_include
 
@@ -127,6 +109,24 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimpuimanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpimagewindow.h"
 end_include
 
 begin_include
@@ -1228,6 +1228,10 @@ argument_list|,
 name|GIMP_UNIT_PIXEL
 argument_list|,
 literal|1.0
+argument_list|,
+name|NULL
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 comment|/* Cleanup */

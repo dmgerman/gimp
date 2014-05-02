@@ -1559,7 +1559,7 @@ end_function
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|file_open_with_display (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * uri,gboolean as_new,GimpPDBStatusType * status,GError ** error)
+DECL|function|file_open_with_display (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * uri,gboolean as_new,GObject * screen,gint monitor,GimpPDBStatusType * status,GError ** error)
 name|file_open_with_display
 parameter_list|(
 name|Gimp
@@ -1581,6 +1581,13 @@ name|uri
 parameter_list|,
 name|gboolean
 name|as_new
+parameter_list|,
+name|GObject
+modifier|*
+name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|,
 name|GimpPDBStatusType
 modifier|*
@@ -1609,6 +1616,10 @@ name|as_new
 argument_list|,
 name|NULL
 argument_list|,
+name|screen
+argument_list|,
+name|monitor
+argument_list|,
 name|status
 argument_list|,
 name|error
@@ -1620,7 +1631,7 @@ end_function
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|file_open_with_proc_and_display (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * uri,const gchar * entered_filename,gboolean as_new,GimpPlugInProcedure * file_proc,GimpPDBStatusType * status,GError ** error)
+DECL|function|file_open_with_proc_and_display (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * uri,const gchar * entered_filename,gboolean as_new,GimpPlugInProcedure * file_proc,GObject * screen,gint monitor,GimpPDBStatusType * status,GError ** error)
 name|file_open_with_proc_and_display
 parameter_list|(
 name|Gimp
@@ -1651,6 +1662,13 @@ parameter_list|,
 name|GimpPlugInProcedure
 modifier|*
 name|file_proc
+parameter_list|,
+name|GObject
+modifier|*
+name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|,
 name|GimpPDBStatusType
 modifier|*
@@ -1702,6 +1720,20 @@ operator|||
 name|GIMP_IS_PROGRESS
 argument_list|(
 name|progress
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|screen
+operator|==
+name|NULL
+operator|||
+name|G_IS_OBJECT
+argument_list|(
+name|screen
 argument_list|)
 argument_list|,
 name|NULL
@@ -1838,6 +1870,10 @@ argument_list|,
 name|GIMP_UNIT_PIXEL
 argument_list|,
 literal|1.0
+argument_list|,
+name|screen
+argument_list|,
+name|monitor
 argument_list|)
 condition|)
 block|{
@@ -2271,7 +2307,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|file_open_from_command_line (Gimp * gimp,const gchar * filename,gboolean as_new)
+DECL|function|file_open_from_command_line (Gimp * gimp,const gchar * filename,gboolean as_new,GObject * screen,gint monitor)
 name|file_open_from_command_line
 parameter_list|(
 name|Gimp
@@ -2285,6 +2321,13 @@ name|filename
 parameter_list|,
 name|gboolean
 name|as_new
+parameter_list|,
+name|GObject
+modifier|*
+name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|)
 block|{
 name|GError
@@ -2317,6 +2360,20 @@ argument_list|(
 name|filename
 operator|!=
 name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|screen
+operator|==
+name|NULL
+operator|||
+name|G_IS_OBJECT
+argument_list|(
+name|screen
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2408,6 +2465,10 @@ argument_list|,
 name|uri
 argument_list|,
 name|as_new
+argument_list|,
+name|screen
+argument_list|,
+name|monitor
 argument_list|,
 operator|&
 name|status

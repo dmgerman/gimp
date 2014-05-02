@@ -292,6 +292,13 @@ name|unit
 parameter_list|,
 name|gdouble
 name|scale
+parameter_list|,
+name|GObject
+modifier|*
+name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|)
 function_decl|;
 DECL|member|display_delete
@@ -620,6 +627,13 @@ name|unit
 parameter_list|,
 name|gdouble
 name|scale
+parameter_list|,
+name|GObject
+modifier|*
+name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|)
 function_decl|;
 end_function_decl

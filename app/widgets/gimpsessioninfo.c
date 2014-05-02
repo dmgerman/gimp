@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f510150103
+DECL|enum|__anon2ba5137a0103
 block|{
 DECL|enumerator|SESSION_INFO_FACTORY_ENTRY
 name|SESSION_INFO_FACTORY_ENTRY
@@ -176,7 +176,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f510150208
+DECL|struct|__anon2ba5137a0208
 block|{
 DECL|member|info
 name|GimpSessionInfo
@@ -2332,6 +2332,12 @@ name|info
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+name|g_printerr
+argument_list|(
+literal|"EEEEK\n"
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|GIMP_IS_SESSION_MANAGED

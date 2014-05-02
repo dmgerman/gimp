@@ -168,7 +168,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2795d8380103
+DECL|enum|__anon2c457f970103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1542,7 +1542,7 @@ end_comment
 begin_function
 name|GimpDisplay
 modifier|*
-DECL|function|gimp_display_new (Gimp * gimp,GimpImage * image,GimpUnit unit,gdouble scale,GimpMenuFactory * menu_factory,GimpUIManager * popup_manager,GimpDialogFactory * dialog_factory)
+DECL|function|gimp_display_new (Gimp * gimp,GimpImage * image,GimpUnit unit,gdouble scale,GimpMenuFactory * menu_factory,GimpUIManager * popup_manager,GimpDialogFactory * dialog_factory,GdkScreen * screen,gint monitor)
 name|gimp_display_new
 parameter_list|(
 name|Gimp
@@ -1570,6 +1570,13 @@ parameter_list|,
 name|GimpDialogFactory
 modifier|*
 name|dialog_factory
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|,
+name|gint
+name|monitor
 parameter_list|)
 block|{
 name|GimpDisplay
@@ -1609,6 +1616,16 @@ operator|||
 name|GIMP_IS_IMAGE
 argument_list|(
 name|image
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GDK_IS_SCREEN
+argument_list|(
+name|screen
 argument_list|)
 argument_list|,
 name|NULL
@@ -1744,6 +1761,10 @@ argument_list|,
 name|menu_factory
 argument_list|,
 name|dialog_factory
+argument_list|,
+name|screen
+argument_list|,
+name|monitor
 argument_list|)
 expr_stmt|;
 block|}

@@ -120,6 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"dialogs/template-options-dialog.h"
 end_include
 
@@ -144,7 +150,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276d3d3a0108
+DECL|struct|__anon2c3a337d0108
 block|{
 DECL|member|context
 name|GimpContext
@@ -329,6 +335,15 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
+name|GtkWidget
+modifier|*
+name|widget
+init|=
+name|GTK_WIDGET
+argument_list|(
+name|editor
+argument_list|)
+decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -356,6 +371,19 @@ name|template
 argument_list|)
 argument_list|,
 literal|1.0
+argument_list|,
+name|G_OBJECT
+argument_list|(
+name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
+argument_list|,
+name|gimp_widget_get_monitor
+argument_list|(
+name|widget
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_unref

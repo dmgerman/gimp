@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d94b8d0103
+DECL|enum|__anon28b1cfe40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1513,6 +1513,22 @@ name|global_menu_factory
 argument_list|,
 name|gimp_dialog_factory_get_singleton
 argument_list|()
+argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|source_image_window
+argument_list|)
+argument_list|)
+argument_list|,
+name|gimp_widget_get_monitor
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|source_image_window
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Move the shell there */

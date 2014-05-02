@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file-open-dialog.h"
 end_include
 
@@ -721,6 +727,19 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|load_proc
+argument_list|,
+name|G_OBJECT
+argument_list|(
+name|gtk_widget_get_screen
+argument_list|(
+name|open_dialog
+argument_list|)
+argument_list|)
+argument_list|,
+name|gimp_widget_get_monitor
+argument_list|(
+name|open_dialog
+argument_list|)
 argument_list|,
 operator|&
 name|status

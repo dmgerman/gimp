@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -162,7 +168,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c9ca8e0108
+DECL|struct|__anon2ae61e400108
 block|{
 DECL|member|name
 specifier|const
@@ -1319,6 +1325,19 @@ argument_list|,
 name|uri
 argument_list|,
 name|FALSE
+argument_list|,
+name|G_OBJECT
+argument_list|(
+name|gtk_widget_get_screen
+argument_list|(
+name|editor
+argument_list|)
+argument_list|)
+argument_list|,
+name|gimp_widget_get_monitor
+argument_list|(
+name|editor
+argument_list|)
 argument_list|,
 operator|&
 name|status
