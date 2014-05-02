@@ -4695,7 +4695,8 @@ name|GIMP_LOG
 argument_list|(
 name|DND
 argument_list|,
-literal|"stream %p, length %d"
+literal|"stream %p, length %"
+name|G_GSIZE_FORMAT
 argument_list|,
 name|stream
 argument_list|,
@@ -4774,7 +4775,8 @@ name|GIMP_LOG
 argument_list|(
 name|DND
 argument_list|,
-literal|"stream %p, length %d"
+literal|"stream %p, length %"
+name|G_GSIZE_FORMAT
 argument_list|,
 name|stream
 argument_list|,
