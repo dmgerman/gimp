@@ -311,7 +311,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f75df80103
+DECL|enum|__anon2b680fd90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -439,7 +439,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f75df80208
+DECL|struct|__anon2b680fd90208
 block|{
 DECL|member|x
 name|gint
@@ -3346,6 +3346,34 @@ name|list
 argument_list|)
 control|)
 block|{
+comment|/*  hack, this should live here, and screen_changed call        *  monitor_changed        */
+name|g_signal_emit_by_name
+argument_list|(
+name|list
+operator|->
+name|data
+argument_list|,
+literal|"screen-changed"
+argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|list
+operator|->
+name|data
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/*  make it fetch the new monitor's resolution  */
+name|gimp_display_shell_scale_changed
+argument_list|(
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|list
+operator|->
+name|data
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  make it fetch the right monitor profile  */
 name|gimp_color_managed_profile_changed
 argument_list|(
