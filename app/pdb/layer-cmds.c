@@ -5287,7 +5287,8 @@ literal|"gimp-layer-group-new"
 argument_list|,
 literal|"Create a new layer group."
 argument_list|,
-literal|"This procedure creates a new layer group. Attributes such as layer mode and opacity should be set with explicit procedure calls. Add the new layer group (which is a kind of layer) with the 'gimp-image-insert-layer' command."
+literal|"This procedure creates a new layer group. Attributes such as layer mode and opacity should be set with explicit procedure calls. Add the new layer group (which is a kind of layer) with the 'gimp-image-insert-layer' command.\n"
+literal|"Other procedures useful with layer groups: 'gimp-image-reorder-item', 'gimp-item-get-parent', 'gimp-item-get-children', 'gimp-item-is-group'."
 argument_list|,
 literal|"Barak Itkin<lightningismyname@gmail.com>"
 argument_list|,
