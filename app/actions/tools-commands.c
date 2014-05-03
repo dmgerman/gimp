@@ -413,8 +413,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_paint_brush_size_cmd_callback (GtkAction * action,gint value,gpointer data)
-name|tools_paint_brush_size_cmd_callback
+DECL|function|tools_paintbrush_size_cmd_callback (GtkAction * action,gint value,gpointer data)
+name|tools_paintbrush_size_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -499,8 +499,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_paint_brush_angle_cmd_callback (GtkAction * action,gint value,gpointer data)
-name|tools_paint_brush_angle_cmd_callback
+DECL|function|tools_paintbrush_angle_cmd_callback (GtkAction * action,gint value,gpointer data)
+name|tools_paintbrush_angle_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -585,8 +585,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_paint_brush_aspect_ratio_cmd_callback (GtkAction * action,gint value,gpointer data)
-name|tools_paint_brush_aspect_ratio_cmd_callback
+DECL|function|tools_paintbrush_aspect_ratio_cmd_callback (GtkAction * action,gint value,gpointer data)
+name|tools_paintbrush_aspect_ratio_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

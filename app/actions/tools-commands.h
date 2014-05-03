@@ -54,7 +54,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tools_paint_brush_size_cmd_callback
+name|tools_paintbrush_size_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -71,7 +71,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tools_paint_brush_angle_cmd_callback
+name|tools_paintbrush_angle_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -88,7 +88,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tools_paint_brush_aspect_ratio_cmd_callback
+name|tools_paintbrush_aspect_ratio_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

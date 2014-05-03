@@ -105,7 +105,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297f5b460103
+DECL|enum|__anon28cb85b70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1214,11 +1214,11 @@ literal|"<"
 block|,
 literal|"tools-color-average-radius-"
 block|,
-literal|"tools-paint-brush-size-"
+literal|"tools-paintbrush-size-"
 block|,
-literal|"tools-paint-brush-angle-"
+literal|"tools-paintbrush-angle-"
 block|,
-literal|"tools-paint-brush-aspect-ratio-"
+literal|"tools-paintbrush-aspect-ratio-"
 block|,
 literal|"tools-ink-blob-size-"
 block|,
