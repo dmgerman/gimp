@@ -441,7 +441,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a22a62c0103
+DECL|enum|__anon278268720103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -3783,7 +3783,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_run_procedure2:  * @name:          the name of the procedure to run  * @n_return_vals: return location for the number of return values  * @n_params:      the number of parameters the procedure takes.  * @params:        the procedure's parameters array.  *  * This function calls a GIMP procedure and returns its return values.  * To get more information about the available procedures and the  * parameters they expect, please have a look at the Procedure Browser  * as found in the Xtns menu in GIMP's toolbox.  *  * As soon as you don't need the return values any longer, you should  * free them using gimp_destroy_params().  *  * Return value: the procedure's return values unless there was an error,  * in which case the zero-th return value will be the error status, and  * the first return value will be a string detailing the error.  **/
+comment|/**  * gimp_run_procedure2:  * @name:          the name of the procedure to run  * @n_return_vals: return location for the number of return values  * @n_params:      the number of parameters the procedure takes.  * @params:        the procedure's parameters array.  *  * This function calls a GIMP procedure and returns its return values.  * To get more information about the available procedures and the  * parameters they expect, please have a look at the Procedure Browser  * as found in the Xtns menu in GIMP's toolbox.  *  * As soon as you don't need the return values any longer, you should  * free them using gimp_destroy_params().  *  * Return value: the procedure's return values unless there was an error,  * in which case the zero-th return value will be the error status, and  * if there are two values returned, the other return value will be a  * string detailing the error.  **/
 end_comment
 
 begin_function
