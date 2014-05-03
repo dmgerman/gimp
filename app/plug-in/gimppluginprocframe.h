@@ -10,10 +10,10 @@ name|__GIMP_PLUG_IN_PROC_FRAME_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_PLUG_IN_PRON_FRAME_H__
+DECL|macro|__GIMP_PLUG_IN_PROC_FRAME_H__
 define|#
 directive|define
-name|__GIMP_PLUG_IN_PRON_FRAME_H__
+name|__GIMP_PLUG_IN_PROC_FRAME_H__
 end_define
 
 begin_struct
