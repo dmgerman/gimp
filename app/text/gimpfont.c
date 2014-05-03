@@ -137,7 +137,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ca1e540103
+DECL|enum|__anon29494d4a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1459,7 +1459,7 @@ comment|/* This is a table of scripts and corresponding short sample strings    
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28ca1e540208
+DECL|struct|__anon29494d4a0208
 block|{
 DECL|member|script
 specifier|const
