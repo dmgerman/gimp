@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpsessioninfo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpsessioninfo-aux.h"
 end_include
 
@@ -107,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291961080103
+DECL|enum|__anon297dfb420103
 block|{
 DECL|enumerator|SESSION_INFO_SIDE
 name|SESSION_INFO_SIDE

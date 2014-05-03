@@ -54,16 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpsessioninfo.h"
-end_include
-
-begin_comment
-comment|/* for gimp_session_info_class_apply_position_accuracy() */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|"gimpsessioninfo-book.h"
 end_include
 
@@ -81,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad45eee0103
+DECL|enum|__anon27f038ab0103
 block|{
 DECL|enumerator|SESSION_INFO_BOOK_POSITION
 name|SESSION_INFO_BOOK_POSITION
