@@ -105,7 +105,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cb85b70103
+DECL|enum|__anon27daa9810103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1229,6 +1229,8 @@ block|,
 literal|"tools-foreground-select-brush-size-"
 block|,
 literal|"tools-transform-preview-opacity-"
+block|,
+literal|"tools-warp-effect-size-"
 block|}
 decl_stmt|;
 name|gint
