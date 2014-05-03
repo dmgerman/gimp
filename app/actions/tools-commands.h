@@ -190,6 +190,23 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|tools_mybrush_radius_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gint
+name|value
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|tools_fg_select_brush_size_cmd_callback
 parameter_list|(
 name|GtkAction

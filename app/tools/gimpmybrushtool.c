@@ -237,6 +237,15 @@ argument_list|,
 name|GIMP_TOOL_CURSOR_INK
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_action_size
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+literal|"tools/tools-mybrush-radius-set"
+argument_list|)
+expr_stmt|;
 name|gimp_paint_tool_enable_color_picker
 argument_list|(
 name|GIMP_PAINT_TOOL

@@ -105,7 +105,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b86ab6a0103
+DECL|enum|__anon27b45a570103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1199,6 +1199,8 @@ block|,
 literal|"tools-ink-blob-aspect-"
 block|,
 literal|"tools-ink-blob-angle-"
+block|,
+literal|"tools-mybrush-radius-"
 block|,
 literal|"tools-foreground-select-brush-size-"
 block|,
