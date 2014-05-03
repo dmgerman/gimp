@@ -2788,10 +2788,10 @@ operator|>
 name|GIMP_MAX_RESOLUTION
 condition|)
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
-literal|"GDK returned bogus values for the monitor resolution, "
-literal|"using 96 dpi instead."
+literal|"gimp_get_monitor_resolution(): GDK returned bogus "
+literal|"values for the monitor resolution, using 96 dpi instead."
 argument_list|)
 expr_stmt|;
 name|x
