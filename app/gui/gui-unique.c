@@ -368,7 +368,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be4b05b0108
+DECL|struct|__anon27e96eb20108
 block|{
 DECL|member|name
 name|gchar
@@ -883,6 +883,10 @@ argument_list|,
 name|path
 argument_list|,
 name|FALSE
+argument_list|,
+name|NULL
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
