@@ -735,6 +735,28 @@ comment|/* FIXME GIMP_HELP_FILTER_MOTION_BLUR_ZOOM */
 block|}
 block|,
 block|{
+literal|"filters-noise-cell"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Cell Noise..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:noise-cell"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_NOISE_CELL */
+block|}
+block|,
+block|{
 literal|"filters-noise-cie-lch"
 block|,
 name|GIMP_STOCK_GEGL
@@ -842,6 +864,28 @@ literal|"gegl:noise-rgb"
 block|,
 name|NULL
 comment|/* FIXME GIMP_HELP_FILTER_NOISE_RGB */
+block|}
+block|,
+block|{
+literal|"filters-noise-reduction"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Noise R_eduction..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:noise-reduction"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_NOISE_REDUCTION */
 block|}
 block|,
 block|{
@@ -1732,6 +1776,13 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
+literal|"filters-noise-cell"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
 literal|"filters-noise-cie-lch"
 argument_list|,
 name|writable
@@ -1757,6 +1808,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-noise-pick"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-noise-reduction"
 argument_list|,
 name|writable
 argument_list|)
