@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpoperationcastformat.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpoperationcagecoefcalc.h"
 end_include
 
@@ -332,6 +338,11 @@ block|{
 name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_OPERATION_BORDER
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_CAST_FORMAT
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref
