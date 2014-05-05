@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpconfig/gimpconfig.h"
 end_include
 
@@ -49,6 +55,12 @@ begin_include
 include|#
 directive|include
 file|"gimptoolpreset-load.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
 end_include
 
 begin_function
@@ -151,6 +163,16 @@ name|error
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|tool_preset
+operator|->
+name|tool_options
+argument_list|)
+condition|)
+block|{
 return|return
 name|g_list_prepend
 argument_list|(
@@ -159,6 +181,29 @@ argument_list|,
 name|tool_preset
 argument_list|)
 return|;
+block|}
+else|else
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_CONFIG_ERROR
+argument_list|,
+name|GIMP_CONFIG_ERROR_PARSE
+argument_list|,
+name|_
+argument_list|(
+literal|"Error while parsing '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 name|g_object_unref
 argument_list|(

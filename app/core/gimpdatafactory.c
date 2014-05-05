@@ -1265,7 +1265,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a07e7650108
+DECL|struct|__anon287eda550108
 block|{
 DECL|member|factory
 name|GimpDataFactory
@@ -3733,6 +3733,7 @@ name|data_list
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*  not else { ... } because loader->load_func() can return a list    *  of data objects *and* an error message if loading failed after    *  something was already loaded    */
 if|if
 condition|(
 name|G_UNLIKELY
