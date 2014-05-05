@@ -87,7 +87,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3f945a0103
+DECL|enum|__anon2a2d446f0103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1132,7 +1132,7 @@ name|filter_node
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gimp:cast-format"
+literal|"gegl:cast-format"
 argument_list|,
 literal|"input-format"
 argument_list|,
@@ -1155,7 +1155,7 @@ name|filter_node
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gimp:cast-format"
+literal|"gegl:cast-format"
 argument_list|,
 literal|"input-format"
 argument_list|,

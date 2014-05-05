@@ -287,7 +287,7 @@ name|new_node
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gimp:cast-format"
+literal|"gegl:cast-format"
 argument_list|,
 literal|"input-format"
 argument_list|,
@@ -308,7 +308,7 @@ name|new_node
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gimp:cast-format"
+literal|"gegl:cast-format"
 argument_list|,
 literal|"input-format"
 argument_list|,
