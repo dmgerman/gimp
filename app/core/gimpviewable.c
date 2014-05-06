@@ -95,13 +95,17 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2924089b0103
+DECL|enum|__anon297205bc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
 block|,
 DECL|enumerator|PROP_STOCK_ID
 name|PROP_STOCK_ID
+block|,
+comment|/* compat */
+DECL|enumerator|PROP_ICON_NAME
+name|PROP_ICON_NAME
 block|,
 DECL|enumerator|PROP_ICON_PIXBUF
 name|PROP_ICON_PIXBUF
@@ -114,7 +118,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2924089b0203
+DECL|enum|__anon297205bc0203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -142,10 +146,10 @@ DECL|struct|_GimpViewablePrivate
 struct|struct
 name|_GimpViewablePrivate
 block|{
-DECL|member|stock_id
+DECL|member|icon_name
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 DECL|member|icon_pixbuf
 name|GdkPixbuf
@@ -614,7 +618,7 @@ name|gimp_viewable_get_memsize
 expr_stmt|;
 name|klass
 operator|->
-name|default_stock_id
+name|default_icon_name
 operator|=
 literal|"gimp-question"
 expr_stmt|;
@@ -702,6 +706,7 @@ name|get_expanded
 operator|=
 name|NULL
 expr_stmt|;
+comment|/* compat property */
 name|GIMP_CONFIG_INSTALL_PROP_STRING
 argument_list|(
 name|object_class
@@ -709,6 +714,21 @@ argument_list|,
 name|PROP_STOCK_ID
 argument_list|,
 literal|"stock-id"
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
+name|GIMP_CONFIG_INSTALL_PROP_STRING
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_ICON_NAME
+argument_list|,
+literal|"icon-name"
 argument_list|,
 name|NULL
 argument_list|,
@@ -830,19 +850,19 @@ if|if
 condition|(
 name|private
 operator|->
-name|stock_id
+name|icon_name
 condition|)
 block|{
 name|g_free
 argument_list|(
 name|private
 operator|->
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 name|private
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|NULL
 expr_stmt|;
@@ -972,7 +992,10 @@ block|{
 case|case
 name|PROP_STOCK_ID
 case|:
-name|gimp_viewable_set_stock_id
+case|case
+name|PROP_ICON_NAME
+case|:
+name|gimp_viewable_set_icon_name
 argument_list|(
 name|viewable
 argument_list|,
@@ -1081,11 +1104,14 @@ block|{
 case|case
 name|PROP_STOCK_ID
 case|:
+case|case
+name|PROP_ICON_NAME
+case|:
 name|g_value_set_string
 argument_list|(
 name|value
 argument_list|,
-name|gimp_viewable_get_stock_id
+name|gimp_viewable_get_icon_name
 argument_list|(
 name|viewable
 argument_list|)
@@ -1597,11 +1623,17 @@ block|{
 case|case
 name|PROP_STOCK_ID
 case|:
+return|return
+name|TRUE
+return|;
+case|case
+name|PROP_ICON_NAME
+case|:
 if|if
 condition|(
 name|private
 operator|->
-name|stock_id
+name|icon_name
 condition|)
 block|{
 name|gimp_config_writer_open
@@ -1619,7 +1651,7 @@ name|writer
 argument_list|,
 name|private
 operator|->
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 name|gimp_config_writer_close
@@ -3870,15 +3902,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_viewable_get_stock_id:  * @viewable: viewable object for which to retrieve a stock ID.  *  * Gets the current value of the object's stock ID, for use in  * constructing an iconic representation of the object.  *  * Returns: a pointer to the string containing the stock ID.  The  *          contents must not be altered or freed.  **/
+comment|/**  * gimp_viewable_get_icon_name:  * @viewable: viewable object for which to retrieve a icon name.  *  * Gets the current value of the object's icon name, for use in  * constructing an iconic representation of the object.  *  * Returns: a pointer to the string containing the icon name.  The  *          contents must not be altered or freed.  **/
 end_comment
 
 begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_viewable_get_stock_id (GimpViewable * viewable)
-name|gimp_viewable_get_stock_id
+DECL|function|gimp_viewable_get_icon_name (GimpViewable * viewable)
+name|gimp_viewable_get_icon_name
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -3910,7 +3942,7 @@ if|if
 condition|(
 name|private
 operator|->
-name|stock_id
+name|icon_name
 condition|)
 return|return
 operator|(
@@ -3920,7 +3952,7 @@ operator|*
 operator|)
 name|private
 operator|->
-name|stock_id
+name|icon_name
 return|;
 return|return
 name|GIMP_VIEWABLE_GET_CLASS
@@ -3928,19 +3960,19 @@ argument_list|(
 name|viewable
 argument_list|)
 operator|->
-name|default_stock_id
+name|default_icon_name
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_viewable_set_stock_id:  * @viewable: viewable object to assign the specified stock ID.  * @stock_id: string containing a stock identifier.  *  * Seta the object's stock ID, for use in constructing iconic smbols  * of the object.  The contents of @stock_id are copied, so you can  * free it when you are done with it.  **/
+comment|/**  * gimp_viewable_set_icon_name:  * @viewable: viewable object to assign the specified icon name.  * @icon_name: string containing an icon name identifier.  *  * Seta the object's icon name, for use in constructing iconic smbols  * of the object.  The contents of @icon_name are copied, so you can  * free it when you are done with it.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_viewable_set_stock_id (GimpViewable * viewable,const gchar * stock_id)
-name|gimp_viewable_set_stock_id
+DECL|function|gimp_viewable_set_icon_name (GimpViewable * viewable,const gchar * icon_name)
+name|gimp_viewable_set_icon_name
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -3949,7 +3981,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|)
 block|{
 name|GimpViewablePrivate
@@ -3979,12 +4011,12 @@ name|g_free
 argument_list|(
 name|private
 operator|->
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 name|private
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|NULL
 expr_stmt|;
@@ -3997,33 +4029,33 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|stock_id
+name|icon_name
 condition|)
 block|{
 if|if
 condition|(
 name|viewable_class
 operator|->
-name|default_stock_id
+name|default_icon_name
 operator|==
 name|NULL
 operator|||
 name|strcmp
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|,
 name|viewable_class
 operator|->
-name|default_stock_id
+name|default_icon_name
 argument_list|)
 condition|)
 name|private
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|g_strdup
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 block|}
@@ -4039,7 +4071,7 @@ argument_list|(
 name|viewable
 argument_list|)
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|)
 expr_stmt|;
 block|}

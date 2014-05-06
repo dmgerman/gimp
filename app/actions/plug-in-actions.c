@@ -1978,7 +1978,7 @@ name|entry
 operator|.
 name|icon_name
 operator|=
-name|gimp_plug_in_procedure_get_stock_id
+name|gimp_plug_in_procedure_get_icon_name
 argument_list|(
 name|proc
 argument_list|)
@@ -2605,7 +2605,7 @@ name|label
 argument_list|,
 literal|"icon-name"
 argument_list|,
-name|gimp_plug_in_procedure_get_stock_id
+name|gimp_plug_in_procedure_get_icon_name
 argument_list|(
 name|proc
 argument_list|)

@@ -352,7 +352,7 @@ end_function
 begin_function
 name|GimpPaintInfo
 modifier|*
-DECL|function|gimp_paint_info_new (Gimp * gimp,GType paint_type,GType paint_options_type,const gchar * identifier,const gchar * blurb,const gchar * stock_id)
+DECL|function|gimp_paint_info_new (Gimp * gimp,GType paint_type,GType paint_options_type,const gchar * identifier,const gchar * blurb,const gchar * icon_name)
 name|gimp_paint_info_new
 parameter_list|(
 name|Gimp
@@ -378,7 +378,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|)
 block|{
 name|GimpPaintInfo
@@ -415,7 +415,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|stock_id
+name|icon_name
 operator|!=
 name|NULL
 argument_list|,
@@ -432,9 +432,9 @@ literal|"name"
 argument_list|,
 name|identifier
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|NULL
 argument_list|)

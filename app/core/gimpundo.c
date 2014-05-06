@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1f2d0e0103
+DECL|enum|__anon2b1efdfb0103
 block|{
 DECL|enumerator|POP
 name|POP
@@ -117,7 +117,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1f2d0e0203
+DECL|enum|__anon2b1efdfb0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -514,7 +514,7 @@ name|gimp_undo_get_memsize
 expr_stmt|;
 name|viewable_class
 operator|->
-name|default_stock_id
+name|default_icon_name
 operator|=
 literal|"gtk-undo"
 expr_stmt|;

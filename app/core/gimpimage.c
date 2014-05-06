@@ -376,7 +376,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2901a8910103
+DECL|enum|__anon2b677c5c0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -473,7 +473,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2901a8910203
+DECL|enum|__anon2b677c5c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2259,7 +2259,7 @@ name|gimp_image_get_memsize
 expr_stmt|;
 name|viewable_class
 operator|->
-name|default_stock_id
+name|default_icon_name
 operator|=
 literal|"gimp-image"
 expr_stmt|;

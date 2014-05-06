@@ -902,7 +902,7 @@ name|gimp_group_layer_get_memsize
 expr_stmt|;
 name|viewable_class
 operator|->
-name|default_stock_id
+name|default_icon_name
 operator|=
 literal|"gtk-directory"
 expr_stmt|;

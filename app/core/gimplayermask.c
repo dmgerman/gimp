@@ -277,7 +277,7 @@ argument_list|)
 decl_stmt|;
 name|viewable_class
 operator|->
-name|default_stock_id
+name|default_icon_name
 operator|=
 literal|"gimp-layer-mask"
 expr_stmt|;

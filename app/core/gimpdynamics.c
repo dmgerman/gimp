@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4695c30103
+DECL|enum|__anon2b4fcd880103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -445,7 +445,7 @@ name|gimp_dynamics_dispatch_properties_changed
 expr_stmt|;
 name|viewable_class
 operator|->
-name|default_stock_id
+name|default_icon_name
 operator|=
 literal|"gimp-dynamics"
 expr_stmt|;

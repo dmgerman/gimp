@@ -394,7 +394,7 @@ name|gimp_palette_get_memsize
 expr_stmt|;
 name|viewable_class
 operator|->
-name|default_stock_id
+name|default_icon_name
 operator|=
 literal|"gtk-select-color"
 expr_stmt|;

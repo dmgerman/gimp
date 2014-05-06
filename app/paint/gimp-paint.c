@@ -155,7 +155,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -351,7 +351,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paint_register (Gimp * gimp,GType paint_type,GType paint_options_type,const gchar * identifier,const gchar * blurb,const gchar * stock_id)
+DECL|function|gimp_paint_register (Gimp * gimp,GType paint_type,GType paint_options_type,const gchar * identifier,const gchar * blurb,const gchar * icon_name)
 name|gimp_paint_register
 parameter_list|(
 name|Gimp
@@ -377,7 +377,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|)
 block|{
 name|GimpPaintInfo
@@ -440,7 +440,7 @@ name|identifier
 argument_list|,
 name|blurb
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 name|gimp_container_add

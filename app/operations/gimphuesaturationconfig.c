@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac2cd9d0103
+DECL|enum|__anon290661260103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -281,7 +281,7 @@ name|gimp_hue_saturation_config_get_property
 expr_stmt|;
 name|viewable_class
 operator|->
-name|default_stock_id
+name|default_icon_name
 operator|=
 literal|"gimp-tool-hue-saturation"
 expr_stmt|;

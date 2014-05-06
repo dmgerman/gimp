@@ -168,10 +168,10 @@ name|GdkPixbuf
 modifier|*
 name|pixbuf
 decl_stmt|;
-DECL|member|bg_stock_id
+DECL|member|bg_icon_name
 name|gchar
 modifier|*
-name|bg_stock_id
+name|bg_icon_name
 decl_stmt|;
 DECL|member|size
 name|gint
@@ -490,7 +490,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -630,7 +630,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_view_renderer_render_stock
+name|gimp_view_renderer_render_icon
 parameter_list|(
 name|GimpViewRenderer
 modifier|*
@@ -643,7 +643,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|)
 function_decl|;
 end_function_decl

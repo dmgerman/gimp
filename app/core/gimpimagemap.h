@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a03bb90103
+DECL|enum|__anon2a31a4900103
 block|{
 DECL|enumerator|GIMP_IMAGE_MAP_REGION_SELECTION
 name|GIMP_IMAGE_MAP_REGION_SELECTION
@@ -174,7 +174,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b97e1820103
+DECL|enum|__anon29fca8580103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -639,7 +639,7 @@ name|NULL
 expr_stmt|;
 name|renderer
 operator|->
-name|bg_stock_id
+name|bg_icon_name
 operator|=
 name|NULL
 expr_stmt|;
@@ -816,19 +816,19 @@ if|if
 condition|(
 name|renderer
 operator|->
-name|bg_stock_id
+name|bg_icon_name
 condition|)
 block|{
 name|g_free
 argument_list|(
 name|renderer
 operator|->
-name|bg_stock_id
+name|bg_icon_name
 argument_list|)
 expr_stmt|;
 name|renderer
 operator|->
-name|bg_stock_id
+name|bg_icon_name
 operator|=
 name|NULL
 expr_stmt|;
@@ -1979,7 +1979,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_view_renderer_set_background (GimpViewRenderer * renderer,const gchar * stock_id)
+DECL|function|gimp_view_renderer_set_background (GimpViewRenderer * renderer,const gchar * icon_name)
 name|gimp_view_renderer_set_background
 parameter_list|(
 name|GimpViewRenderer
@@ -1989,7 +1989,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -2004,22 +2004,22 @@ if|if
 condition|(
 name|renderer
 operator|->
-name|bg_stock_id
+name|bg_icon_name
 condition|)
 name|g_free
 argument_list|(
 name|renderer
 operator|->
-name|bg_stock_id
+name|bg_icon_name
 argument_list|)
 expr_stmt|;
 name|renderer
 operator|->
-name|bg_stock_id
+name|bg_icon_name
 operator|=
 name|g_strdup
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 if|if
@@ -2389,7 +2389,7 @@ operator|->
 name|viewable_type
 argument_list|)
 expr_stmt|;
-name|gimp_view_renderer_render_stock
+name|gimp_view_renderer_render_icon
 argument_list|(
 name|renderer
 argument_list|,
@@ -2397,7 +2397,7 @@ name|widget
 argument_list|,
 name|viewable_class
 operator|->
-name|default_stock_id
+name|default_icon_name
 argument_list|)
 expr_stmt|;
 name|g_type_class_unref
@@ -2704,7 +2704,7 @@ if|if
 condition|(
 name|renderer
 operator|->
-name|bg_stock_id
+name|bg_icon_name
 condition|)
 block|{
 if|if
@@ -2975,7 +2975,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 name|pixbuf
 operator|=
@@ -3047,22 +3047,22 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|stock_id
+name|icon_name
 operator|=
-name|gimp_viewable_get_stock_id
+name|gimp_viewable_get_icon_name
 argument_list|(
 name|renderer
 operator|->
 name|viewable
 argument_list|)
 expr_stmt|;
-name|gimp_view_renderer_render_stock
+name|gimp_view_renderer_render_icon
 argument_list|(
 name|renderer
 argument_list|,
 name|widget
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 block|}
@@ -3419,8 +3419,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_view_renderer_render_stock (GimpViewRenderer * renderer,GtkWidget * widget,const gchar * stock_id)
-name|gimp_view_renderer_render_stock
+DECL|function|gimp_view_renderer_render_icon (GimpViewRenderer * renderer,GtkWidget * widget,const gchar * icon_name)
+name|gimp_view_renderer_render_icon
 parameter_list|(
 name|GimpViewRenderer
 modifier|*
@@ -3433,7 +3433,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|)
 block|{
 name|GdkPixbuf
@@ -3463,7 +3463,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|stock_id
+name|icon_name
 operator|!=
 name|NULL
 argument_list|)
@@ -3516,7 +3516,7 @@ name|gimp_get_icon_size
 argument_list|(
 name|widget
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|GTK_ICON_SIZE_INVALID
 argument_list|,
@@ -3539,7 +3539,7 @@ name|gtk_widget_render_icon
 argument_list|(
 name|widget
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|icon_size
 argument_list|,
@@ -4441,7 +4441,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* This function creates a background pattern from a stock icon  * if renderer->bg_stock_id is set.  */
+comment|/* This function creates a background pattern from a named icon  * if renderer->bg_icon_name is set.  */
 end_comment
 
 begin_function
@@ -4470,7 +4470,7 @@ if|if
 condition|(
 name|renderer
 operator|->
-name|bg_stock_id
+name|bg_icon_name
 condition|)
 block|{
 name|GdkPixbuf
@@ -4483,7 +4483,7 @@ name|widget
 argument_list|,
 name|renderer
 operator|->
-name|bg_stock_id
+name|bg_icon_name
 argument_list|,
 name|GTK_ICON_SIZE_DIALOG
 argument_list|,

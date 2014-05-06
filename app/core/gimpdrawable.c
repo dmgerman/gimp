@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1ef2e90103
+DECL|enum|__anon28da38e50103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -213,7 +213,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1ef2e90203
+DECL|enum|__anon28da38e50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3970,7 +3970,7 @@ argument_list|(
 literal|"Floating Selection"
 argument_list|)
 expr_stmt|;
-name|gimp_viewable_set_stock_id
+name|gimp_viewable_set_icon_name
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(

@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b118be0103
+DECL|enum|__anon289328cb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -190,7 +190,7 @@ name|gimp_colorize_config_get_property
 expr_stmt|;
 name|viewable_class
 operator|->
-name|default_stock_id
+name|default_icon_name
 operator|=
 literal|"gimp-tool-colorize"
 expr_stmt|;

@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2b03670103
+DECL|enum|__anon2a358f680103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -293,7 +293,7 @@ name|gimp_color_balance_config_get_property
 expr_stmt|;
 name|viewable_class
 operator|->
-name|default_stock_id
+name|default_icon_name
 operator|=
 literal|"gimp-tool-color-balance"
 expr_stmt|;

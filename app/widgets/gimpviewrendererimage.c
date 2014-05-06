@@ -174,7 +174,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 comment|/* The conditions checked here are mostly a hack to hide the fact that    * we are creating the channel preview from the image preview and turning    * off visibility of a channel has the side-effect of painting the channel    * preview all black. See bug #459518 for details.    */
 if|if
@@ -511,7 +511,7 @@ block|{
 case|case
 name|GIMP_RED_CHANNEL
 case|:
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_CHANNEL_RED
 expr_stmt|;
@@ -519,7 +519,7 @@ break|break;
 case|case
 name|GIMP_GREEN_CHANNEL
 case|:
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_CHANNEL_GREEN
 expr_stmt|;
@@ -527,7 +527,7 @@ break|break;
 case|case
 name|GIMP_BLUE_CHANNEL
 case|:
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_CHANNEL_BLUE
 expr_stmt|;
@@ -535,7 +535,7 @@ break|break;
 case|case
 name|GIMP_GRAY_CHANNEL
 case|:
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_CHANNEL_GRAY
 expr_stmt|;
@@ -543,7 +543,7 @@ break|break;
 case|case
 name|GIMP_INDEXED_CHANNEL
 case|:
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_CHANNEL_INDEXED
 expr_stmt|;
@@ -551,15 +551,15 @@ break|break;
 case|case
 name|GIMP_ALPHA_CHANNEL
 case|:
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_CHANNEL_ALPHA
 expr_stmt|;
 break|break;
 default|default:
-name|stock_id
+name|icon_name
 operator|=
-name|gimp_viewable_get_stock_id
+name|gimp_viewable_get_icon_name
 argument_list|(
 name|renderer
 operator|->
@@ -568,13 +568,13 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-name|gimp_view_renderer_render_stock
+name|gimp_view_renderer_render_icon
 argument_list|(
 name|renderer
 argument_list|,
 name|widget
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 block|}

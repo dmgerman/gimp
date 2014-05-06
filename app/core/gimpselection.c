@@ -678,7 +678,7 @@ argument_list|)
 decl_stmt|;
 name|viewable_class
 operator|->
-name|default_stock_id
+name|default_icon_name
 operator|=
 literal|"gimp-selection"
 expr_stmt|;

@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b2ca300103
+DECL|enum|__anon2a446fcf0103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -134,7 +134,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b2ca300203
+DECL|enum|__anon2a446fcf0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -373,7 +373,7 @@ name|gimp_device_info_get_property
 expr_stmt|;
 name|viewable_class
 operator|->
-name|default_stock_id
+name|default_icon_name
 operator|=
 name|GIMP_STOCK_INPUT_DEVICE
 expr_stmt|;
@@ -1817,7 +1817,7 @@ operator|&&
 operator|!
 name|strcmp
 argument_list|(
-name|gimp_viewable_get_stock_id
+name|gimp_viewable_get_icon_name
 argument_list|(
 name|viewable
 argument_list|)
@@ -1827,14 +1827,14 @@ argument_list|(
 name|viewable
 argument_list|)
 operator|->
-name|default_stock_id
+name|default_icon_name
 argument_list|)
 condition|)
 block|{
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 init|=
 name|NULL
 decl_stmt|;
@@ -1863,7 +1863,7 @@ literal|"eraser"
 argument_list|)
 condition|)
 block|{
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_TOOL_ERASER
 expr_stmt|;
@@ -1879,7 +1879,7 @@ literal|"pen"
 argument_list|)
 condition|)
 block|{
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 expr_stmt|;
@@ -1895,7 +1895,7 @@ literal|"airbrush"
 argument_list|)
 condition|)
 block|{
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_TOOL_AIRBRUSH
 expr_stmt|;
@@ -1939,7 +1939,7 @@ literal|"trackpoint"
 argument_list|)
 condition|)
 block|{
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_CURSOR
 expr_stmt|;
@@ -1951,13 +1951,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|stock_id
+name|icon_name
 condition|)
-name|gimp_viewable_set_stock_id
+name|gimp_viewable_set_icon_name
 argument_list|(
 name|viewable
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 block|}

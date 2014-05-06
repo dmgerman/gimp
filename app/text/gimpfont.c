@@ -137,7 +137,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29494d4a0103
+DECL|enum|__anon2770894d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -407,7 +407,7 @@ name|gimp_font_get_new_preview
 expr_stmt|;
 name|viewable_class
 operator|->
-name|default_stock_id
+name|default_icon_name
 operator|=
 literal|"gtk-select-font"
 expr_stmt|;
@@ -1459,7 +1459,7 @@ comment|/* This is a table of scripts and corresponding short sample strings    
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29494d4a0208
+DECL|struct|__anon2770894d0208
 block|{
 DECL|member|script
 specifier|const

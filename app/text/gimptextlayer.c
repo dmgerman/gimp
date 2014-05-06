@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27defcee0103
+DECL|enum|__anon2792d3f80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -542,7 +542,7 @@ name|gimp_text_layer_get_memsize
 expr_stmt|;
 name|viewable_class
 operator|->
-name|default_stock_id
+name|default_icon_name
 operator|=
 literal|"gimp-text-layer"
 expr_stmt|;
@@ -561,7 +561,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|item_class->scale                = gimp_text_layer_scale;   item_class->flip                 = gimp_text_layer_flip;   item_class->rotate               = gimp_text_layer_rotate;   item_class->transform            = gimp_text_layer_transform;
+block|item_class->scale                 = gimp_text_layer_scale;   item_class->flip                  = gimp_text_layer_flip;   item_class->rotate                = gimp_text_layer_rotate;   item_class->transform             = gimp_text_layer_transform;
 endif|#
 directive|endif
 name|item_class

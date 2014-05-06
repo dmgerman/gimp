@@ -87,7 +87,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2d446f0103
+DECL|enum|__anon28815ede0103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -122,10 +122,10 @@ name|GeglNode
 modifier|*
 name|operation
 decl_stmt|;
-DECL|member|stock_id
+DECL|member|icon_name
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 DECL|member|region
 name|GimpImageMapRegion
@@ -479,19 +479,19 @@ if|if
 condition|(
 name|image_map
 operator|->
-name|stock_id
+name|icon_name
 condition|)
 block|{
 name|g_free
 argument_list|(
 name|image_map
 operator|->
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 name|image_map
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|NULL
 expr_stmt|;
@@ -575,7 +575,7 @@ end_function
 begin_function
 name|GimpImageMap
 modifier|*
-DECL|function|gimp_image_map_new (GimpDrawable * drawable,const gchar * undo_desc,GeglNode * operation,const gchar * stock_id)
+DECL|function|gimp_image_map_new (GimpDrawable * drawable,const gchar * undo_desc,GeglNode * operation,const gchar * icon_name)
 name|gimp_image_map_new
 parameter_list|(
 name|GimpDrawable
@@ -594,7 +594,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|)
 block|{
 name|GimpImageMap
@@ -672,11 +672,11 @@ argument_list|)
 expr_stmt|;
 name|image_map
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|g_strdup
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 name|gimp_viewable_preview_freeze
@@ -978,7 +978,7 @@ operator|->
 name|undo_desc
 argument_list|)
 expr_stmt|;
-name|gimp_viewable_set_stock_id
+name|gimp_viewable_set_icon_name
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
@@ -989,7 +989,7 @@ argument_list|)
 argument_list|,
 name|image_map
 operator|->
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 name|filter_node

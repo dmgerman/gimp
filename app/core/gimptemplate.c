@@ -83,7 +83,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c383010103
+DECL|enum|__anon294936340103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -354,7 +354,7 @@ name|gimp_template_notify
 expr_stmt|;
 name|viewable_class
 operator|->
-name|default_stock_id
+name|default_icon_name
 operator|=
 literal|"gimp-template"
 expr_stmt|;
@@ -1234,7 +1234,7 @@ name|pspec
 operator|->
 name|name
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|)
 condition|)
 name|gimp_viewable_invalidate_preview

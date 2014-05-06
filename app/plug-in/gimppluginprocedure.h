@@ -453,7 +453,7 @@ begin_function_decl
 specifier|const
 name|gchar
 modifier|*
-name|gimp_plug_in_procedure_get_stock_id
+name|gimp_plug_in_procedure_get_icon_name
 parameter_list|(
 specifier|const
 name|GimpPlugInProcedure

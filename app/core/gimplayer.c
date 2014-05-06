@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291096c10103
+DECL|enum|__anon275dd1fe0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -192,7 +192,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291096c10203
+DECL|enum|__anon275dd1fe0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1243,7 +1243,7 @@ name|gimp_layer_get_memsize
 expr_stmt|;
 name|viewable_class
 operator|->
-name|default_stock_id
+name|default_icon_name
 operator|=
 literal|"gimp-layer"
 expr_stmt|;

@@ -78,7 +78,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba74ce40103
+DECL|enum|__anon27dc54bc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -100,7 +100,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba74ce40203
+DECL|enum|__anon27dc54bc0203
 block|{
 DECL|enumerator|EVENT_MAPPED
 name|EVENT_MAPPED
@@ -346,7 +346,7 @@ name|gimp_controller_info_get_property
 expr_stmt|;
 name|viewable_class
 operator|->
-name|default_stock_id
+name|default_icon_name
 operator|=
 name|GIMP_STOCK_CONTROLLER
 expr_stmt|;
@@ -737,13 +737,14 @@ operator|->
 name|controller
 argument_list|)
 expr_stmt|;
-name|gimp_viewable_set_stock_id
+name|gimp_viewable_set_icon_name
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
 name|info
 argument_list|)
 argument_list|,
+comment|/* FIXME icon name */
 name|controller_class
 operator|->
 name|stock_id

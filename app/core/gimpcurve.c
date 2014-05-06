@@ -93,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc3f0ef0103
+DECL|enum|__anon2c16100d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -597,9 +597,9 @@ name|gimp_curve_get_memsize
 expr_stmt|;
 name|viewable_class
 operator|->
-name|default_stock_id
+name|default_icon_name
 operator|=
-literal|"FIXME"
+literal|"FIXME icon name"
 expr_stmt|;
 name|viewable_class
 operator|->

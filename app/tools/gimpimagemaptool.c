@@ -2833,7 +2833,7 @@ name|tool
 operator|->
 name|operation
 argument_list|,
-name|gimp_viewable_get_stock_id
+name|gimp_viewable_get_icon_name
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
@@ -3642,7 +3642,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_image_map_tool_add_color_picker (GimpImageMapTool * tool,gpointer identifier,const gchar * stock_id,const gchar * tooltip)
+DECL|function|gimp_image_map_tool_add_color_picker (GimpImageMapTool * tool,gpointer identifier,const gchar * icon_name,const gchar * tooltip)
 name|gimp_image_map_tool_add_color_picker
 parameter_list|(
 name|GimpImageMapTool
@@ -3655,7 +3655,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -3683,7 +3683,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|stock_id
+name|icon_name
 operator|!=
 name|NULL
 argument_list|,
@@ -3705,9 +3705,9 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

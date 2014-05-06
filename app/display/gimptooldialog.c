@@ -289,7 +289,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 name|gchar
 modifier|*
@@ -308,9 +308,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|stock_id
+name|icon_name
 operator|=
-name|gimp_viewable_get_stock_id
+name|gimp_viewable_get_icon_name
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
@@ -347,9 +347,9 @@ name|tool_info
 operator|->
 name|help_id
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 literal|"description"
 argument_list|,

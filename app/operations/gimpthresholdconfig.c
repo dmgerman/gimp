@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4129da0103
+DECL|enum|__anon2913093f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -166,7 +166,7 @@ name|gimp_threshold_config_get_property
 expr_stmt|;
 name|viewable_class
 operator|->
-name|default_stock_id
+name|default_icon_name
 operator|=
 literal|"gimp-tool-threshold"
 expr_stmt|;

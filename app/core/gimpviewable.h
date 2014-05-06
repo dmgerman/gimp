@@ -156,11 +156,11 @@ DECL|member|parent_class
 name|GimpObjectClass
 name|parent_class
 decl_stmt|;
-DECL|member|default_stock_id
+DECL|member|default_icon_name
 specifier|const
 name|gchar
 modifier|*
-name|default_stock_id
+name|default_icon_name
 decl_stmt|;
 DECL|member|name_changed_signal
 specifier|const
@@ -726,7 +726,7 @@ begin_function_decl
 specifier|const
 name|gchar
 modifier|*
-name|gimp_viewable_get_stock_id
+name|gimp_viewable_get_icon_name
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -737,7 +737,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_viewable_set_stock_id
+name|gimp_viewable_set_icon_name
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -746,7 +746,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|)
 function_decl|;
 end_function_decl

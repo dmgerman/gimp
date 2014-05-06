@@ -292,7 +292,7 @@ name|gimp_pattern_get_memsize
 expr_stmt|;
 name|viewable_class
 operator|->
-name|default_stock_id
+name|default_icon_name
 operator|=
 literal|"gimp-tool-bucket-fill"
 expr_stmt|;

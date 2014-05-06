@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3756080103
+DECL|enum|__anon27f209670103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3756080203
+DECL|enum|__anon27f209670203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -535,7 +535,7 @@ name|gimp_brush_get_memsize
 expr_stmt|;
 name|viewable_class
 operator|->
-name|default_stock_id
+name|default_icon_name
 operator|=
 literal|"gimp-tool-paintbrush"
 expr_stmt|;

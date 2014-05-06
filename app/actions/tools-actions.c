@@ -1945,7 +1945,7 @@ name|name
 decl_stmt|;
 name|icon_name
 operator|=
-name|gimp_viewable_get_stock_id
+name|gimp_viewable_get_icon_name
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(

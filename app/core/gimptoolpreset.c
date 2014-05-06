@@ -139,7 +139,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbd365b0103
+DECL|enum|__anon27c321080103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1847,7 +1847,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -1875,9 +1875,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|stock_id
+name|icon_name
 operator|=
-name|gimp_viewable_get_stock_id
+name|gimp_viewable_get_icon_name
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
@@ -1896,9 +1896,9 @@ name|tool_info
 operator|->
 name|blurb
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 literal|"gimp"
 argument_list|,

@@ -1298,7 +1298,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 name|gchar
 modifier|*
@@ -1355,9 +1355,9 @@ name|tool_options
 operator|->
 name|tool_info
 expr_stmt|;
-name|stock_id
+name|icon_name
 operator|=
-name|gimp_viewable_get_stock_id
+name|gimp_viewable_get_icon_name
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
@@ -1379,7 +1379,7 @@ operator|->
 name|blurb
 argument_list|)
 expr_stmt|;
-name|gtk_image_set_from_stock
+name|gtk_image_set_from_icon_name
 argument_list|(
 name|GTK_IMAGE
 argument_list|(
@@ -1388,7 +1388,7 @@ operator|->
 name|tool_icon
 argument_list|)
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)

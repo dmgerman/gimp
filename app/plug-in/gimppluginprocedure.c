@@ -114,7 +114,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af808680103
+DECL|enum|__anon289061670103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -2730,8 +2730,8 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_plug_in_procedure_get_stock_id (const GimpPlugInProcedure * proc)
-name|gimp_plug_in_procedure_get_stock_id
+DECL|function|gimp_plug_in_procedure_get_icon_name (const GimpPlugInProcedure * proc)
+name|gimp_plug_in_procedure_get_icon_name
 parameter_list|(
 specifier|const
 name|GimpPlugInProcedure

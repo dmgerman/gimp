@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a6f29e0103
+DECL|enum|__anon273971cf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -164,7 +164,7 @@ expr_stmt|;
 comment|/*FIXME: change string when a desaturate icon gets added */
 name|viewable_class
 operator|->
-name|default_stock_id
+name|default_icon_name
 operator|=
 literal|"gimp-convert-grayscale"
 expr_stmt|;

@@ -1520,15 +1520,15 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 name|GimpUIManager
 modifier|*
 name|ui_manager
 decl_stmt|;
-name|stock_id
+name|icon_name
 operator|=
-name|gimp_viewable_get_stock_id
+name|gimp_viewable_get_icon_name
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
@@ -1542,7 +1542,7 @@ name|gtk_radio_tool_button_new_from_stock
 argument_list|(
 name|item_group
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 name|item_group

@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cb4c1c0103
+DECL|enum|__anon2b0afc700103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -832,7 +832,7 @@ end_function
 begin_function
 name|GimpToolInfo
 modifier|*
-DECL|function|gimp_tool_info_new (Gimp * gimp,GType tool_type,GType tool_options_type,GimpContextPropMask context_props,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_label,const gchar * menu_accel,const gchar * help_domain,const gchar * help_id,const gchar * paint_core_name,const gchar * stock_id)
+DECL|function|gimp_tool_info_new (Gimp * gimp,GType tool_type,GType tool_options_type,GimpContextPropMask context_props,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_label,const gchar * menu_accel,const gchar * help_domain,const gchar * help_id,const gchar * paint_core_name,const gchar * icon_name)
 name|gimp_tool_info_new
 parameter_list|(
 name|Gimp
@@ -891,7 +891,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|)
 block|{
 name|GimpPaintInfo
@@ -968,7 +968,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|stock_id
+name|icon_name
 operator|!=
 name|NULL
 argument_list|,
@@ -1010,9 +1010,9 @@ literal|"name"
 argument_list|,
 name|identifier
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|NULL
 argument_list|)
