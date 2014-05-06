@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2892a9000103
+DECL|enum|__anon2924089b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -114,7 +114,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2892a9000203
+DECL|enum|__anon2924089b0203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -3639,7 +3639,7 @@ argument_list|(
 operator|-
 literal|1
 argument_list|,
-name|stock_question_64
+name|gimp_question_64
 argument_list|,
 name|FALSE
 argument_list|,
