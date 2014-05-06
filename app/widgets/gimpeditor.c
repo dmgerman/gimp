@@ -109,7 +109,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f0f3890103
+DECL|enum|__anon2b2b199b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1879,7 +1879,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_editor_add_button (GimpEditor * editor,const gchar * stock_id,const gchar * tooltip,const gchar * help_id,GCallback callback,GCallback extended_callback,gpointer callback_data)
+DECL|function|gimp_editor_add_button (GimpEditor * editor,const gchar * icon_name,const gchar * tooltip,const gchar * help_id,GCallback callback,GCallback extended_callback,gpointer callback_data)
 name|gimp_editor_add_button
 parameter_list|(
 name|GimpEditor
@@ -1889,7 +1889,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -1937,7 +1937,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|stock_id
+name|icon_name
 operator|!=
 name|NULL
 argument_list|,
@@ -1956,16 +1956,8 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|g_object_new
-argument_list|(
-name|GIMP_TYPE_BUTTON
-argument_list|,
-literal|"use-stock"
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
-argument_list|)
+name|gimp_button_new
+argument_list|()
 expr_stmt|;
 name|gtk_button_set_relief
 argument_list|(
@@ -2049,9 +2041,9 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|,
 name|button_icon_size
 argument_list|)
@@ -2080,7 +2072,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_editor_add_stock_box (GimpEditor * editor,GType enum_type,const gchar * stock_prefix,GCallback callback,gpointer callback_data)
+DECL|function|gimp_editor_add_stock_box (GimpEditor * editor,GType enum_type,const gchar * icon_prefix,GCallback callback,gpointer callback_data)
 name|gimp_editor_add_stock_box
 parameter_list|(
 name|GimpEditor
@@ -2093,7 +2085,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_prefix
+name|icon_prefix
 parameter_list|,
 name|GCallback
 name|callback
@@ -2148,7 +2140,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|stock_prefix
+name|icon_prefix
 operator|!=
 name|NULL
 argument_list|,
@@ -2171,7 +2163,7 @@ name|gimp_enum_stock_box_new
 argument_list|(
 name|enum_type
 argument_list|,
-name|stock_prefix
+name|icon_prefix
 argument_list|,
 name|button_icon_size
 argument_list|,
@@ -2292,7 +2284,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f0f3890208
+DECL|struct|__anon2b2b199b0208
 block|{
 DECL|member|mod_mask
 name|GdkModifierType
@@ -2501,7 +2493,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 name|gchar
 modifier|*
@@ -2634,9 +2626,9 @@ argument_list|,
 name|button_relief
 argument_list|)
 expr_stmt|;
-name|stock_id
+name|icon_name
 operator|=
-name|gtk_action_get_stock_id
+name|gtk_action_get_icon_name
 argument_list|(
 name|action
 argument_list|)
@@ -2684,9 +2676,9 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|,
 name|button_icon_size
 argument_list|)
@@ -3197,10 +3189,25 @@ block|{
 name|GtkIconSize
 name|old_size
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
+comment|/* FIXME icon_name */
+if|if
+condition|(
+name|gtk_image_get_storage_type
+argument_list|(
+name|GTK_IMAGE
+argument_list|(
+name|child
+argument_list|)
+argument_list|)
+operator|==
+name|GTK_IMAGE_STOCK
+condition|)
+block|{
 name|gtk_image_get_stock
 argument_list|(
 name|GTK_IMAGE
@@ -3209,26 +3216,51 @@ name|child
 argument_list|)
 argument_list|,
 operator|&
-name|stock_id
+name|icon_name
 argument_list|,
 operator|&
 name|old_size
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|button_icon_size
-operator|!=
-name|old_size
-condition|)
-name|gtk_image_set_from_stock
+name|g_printerr
+argument_list|(
+literal|"EEEEK: %s used in GimpEditor\n"
+argument_list|,
+name|icon_name
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|gtk_image_get_icon_name
 argument_list|(
 name|GTK_IMAGE
 argument_list|(
 name|child
 argument_list|)
 argument_list|,
-name|stock_id
+operator|&
+name|icon_name
+argument_list|,
+operator|&
+name|old_size
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|button_icon_size
+operator|!=
+name|old_size
+condition|)
+name|gtk_image_set_from_icon_name
+argument_list|(
+name|GTK_IMAGE
+argument_list|(
+name|child
+argument_list|)
+argument_list|,
+name|icon_name
 argument_list|,
 name|button_icon_size
 argument_list|)

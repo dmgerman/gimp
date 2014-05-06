@@ -828,7 +828,7 @@ argument_list|)
 expr_stmt|;
 name|entry
 operator|.
-name|stock_id
+name|icon_name
 operator|=
 name|gimp_viewable_get_stock_id
 argument_list|(

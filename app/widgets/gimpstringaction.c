@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288acae90103
+DECL|enum|__anon287c44490103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -48,7 +48,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon288acae90203
+DECL|enum|__anon287c44490203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -488,7 +488,7 @@ end_function
 begin_function
 name|GimpStringAction
 modifier|*
-DECL|function|gimp_string_action_new (const gchar * name,const gchar * label,const gchar * tooltip,const gchar * stock_id,const gchar * value)
+DECL|function|gimp_string_action_new (const gchar * name,const gchar * label,const gchar * tooltip,const gchar * icon_name,const gchar * value)
 name|gimp_string_action_new
 parameter_list|(
 specifier|const
@@ -509,7 +509,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -539,9 +539,9 @@ literal|"tooltip"
 argument_list|,
 name|tooltip
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 literal|"value"
 argument_list|,
@@ -550,32 +550,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|stock_id
-condition|)
-block|{
-if|if
-condition|(
-name|gtk_icon_theme_has_icon
-argument_list|(
-name|gtk_icon_theme_get_default
-argument_list|()
-argument_list|,
-name|stock_id
-argument_list|)
-condition|)
-name|gtk_action_set_icon_name
-argument_list|(
-name|GTK_ACTION
-argument_list|(
-name|action
-argument_list|)
-argument_list|,
-name|stock_id
-argument_list|)
-expr_stmt|;
-block|}
 return|return
 name|action
 return|;

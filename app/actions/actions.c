@@ -1186,7 +1186,7 @@ index|[
 name|i
 index|]
 operator|.
-name|stock_id
+name|icon_name
 argument_list|,
 name|action_groups
 index|[
@@ -3058,7 +3058,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 init|=
 name|NULL
 decl_stmt|;
@@ -3084,7 +3084,7 @@ argument_list|)
 operator|->
 name|tool_info
 decl_stmt|;
-name|stock_id
+name|icon_name
 operator|=
 name|gimp_viewable_get_stock_id
 argument_list|(
@@ -3104,7 +3104,7 @@ name|object
 argument_list|)
 condition|)
 block|{
-name|stock_id
+name|icon_name
 operator|=
 name|gimp_viewable_get_stock_id
 argument_list|(
@@ -3128,7 +3128,7 @@ name|statusbar
 argument_list|,
 name|GIMP_MESSAGE_INFO
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|format
 argument_list|,

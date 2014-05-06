@@ -1413,7 +1413,7 @@ name|action_name
 expr_stmt|;
 name|entry
 operator|.
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_IMAGE
 expr_stmt|;
@@ -1810,7 +1810,7 @@ name|action_name
 expr_stmt|;
 name|entry
 operator|.
-name|stock_id
+name|icon_name
 operator|=
 name|NULL
 expr_stmt|;
@@ -2187,7 +2187,7 @@ name|action_name
 expr_stmt|;
 name|entry
 operator|.
-name|stock_id
+name|icon_name
 operator|=
 name|NULL
 expr_stmt|;

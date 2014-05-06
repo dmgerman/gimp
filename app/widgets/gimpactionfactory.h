@@ -46,10 +46,10 @@ name|gchar
 modifier|*
 name|label
 decl_stmt|;
-DECL|member|stock_id
+DECL|member|icon_name
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 DECL|member|setup_func
 name|GimpActionGroupSetupFunc
@@ -214,7 +214,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 name|GimpActionGroupSetupFunc
 name|setup_func

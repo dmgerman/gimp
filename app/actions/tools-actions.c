@@ -1928,7 +1928,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 specifier|const
 name|gchar
@@ -1943,7 +1943,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|stock_id
+name|icon_name
 operator|=
 name|gimp_viewable_get_stock_id
 argument_list|(
@@ -2004,9 +2004,9 @@ name|name
 expr_stmt|;
 name|entry
 operator|.
-name|stock_id
+name|icon_name
 operator|=
-name|stock_id
+name|icon_name
 expr_stmt|;
 name|entry
 operator|.

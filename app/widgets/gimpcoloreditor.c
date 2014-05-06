@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0ee4930103
+DECL|enum|__anon28c4d5980103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -953,7 +953,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|selector_class
 operator|->

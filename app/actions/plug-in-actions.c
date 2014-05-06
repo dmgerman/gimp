@@ -943,7 +943,7 @@ index|[
 name|i
 index|]
 operator|.
-name|stock_id
+name|icon_name
 operator|=
 name|NULL
 expr_stmt|;
@@ -1976,7 +1976,7 @@ argument_list|)
 expr_stmt|;
 name|entry
 operator|.
-name|stock_id
+name|icon_name
 operator|=
 name|gimp_plug_in_procedure_get_stock_id
 argument_list|(
@@ -2603,7 +2603,7 @@ literal|"label"
 argument_list|,
 name|label
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
 name|gimp_plug_in_procedure_get_stock_id
 argument_list|(

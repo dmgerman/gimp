@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292720e10103
+DECL|enum|__anon2ae6a3ca0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -48,7 +48,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon292720e10203
+DECL|enum|__anon2ae6a3ca0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -468,7 +468,7 @@ end_function
 begin_function
 name|GimpEnumAction
 modifier|*
-DECL|function|gimp_enum_action_new (const gchar * name,const gchar * label,const gchar * tooltip,const gchar * stock_id,gint value,gboolean value_variable)
+DECL|function|gimp_enum_action_new (const gchar * name,const gchar * label,const gchar * tooltip,const gchar * icon_name,gint value,gboolean value_variable)
 name|gimp_enum_action_new
 parameter_list|(
 specifier|const
@@ -489,7 +489,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 name|gint
 name|value
@@ -515,9 +515,9 @@ literal|"tooltip"
 argument_list|,
 name|tooltip
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 literal|"value"
 argument_list|,

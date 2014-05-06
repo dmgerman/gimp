@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c799cf0103
+DECL|enum|__anon29b3fe340103
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -136,7 +136,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c799cf0208
+DECL|struct|__anon29b3fe340208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -580,7 +580,7 @@ operator|=
 name|gtk_entry_new
 argument_list|()
 expr_stmt|;
-name|gtk_entry_set_icon_from_stock
+name|gtk_entry_set_icon_from_icon_name
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
@@ -1651,7 +1651,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 name|gchar
 modifier|*
@@ -1745,21 +1745,21 @@ name|action
 argument_list|)
 argument_list|)
 condition|)
-name|stock_id
+name|icon_name
 operator|=
 name|GTK_STOCK_OK
 expr_stmt|;
 else|else
-name|stock_id
+name|icon_name
 operator|=
 name|GTK_STOCK_NO
 expr_stmt|;
 block|}
 else|else
 block|{
-name|stock_id
+name|icon_name
 operator|=
-name|gtk_action_get_stock_id
+name|gtk_action_get_icon_name
 argument_list|(
 name|action
 argument_list|)
@@ -1988,7 +1988,7 @@ name|iter
 argument_list|,
 name|COLUMN_ICON
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|COLUMN_MARKUP
 argument_list|,
@@ -3388,7 +3388,7 @@ name|NULL
 argument_list|,
 name|cell
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
 name|COLUMN_ICON
 argument_list|,

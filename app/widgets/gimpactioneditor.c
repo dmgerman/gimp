@@ -261,7 +261,7 @@ argument_list|,
 name|entry
 argument_list|)
 expr_stmt|;
-name|gtk_entry_set_icon_from_stock
+name|gtk_entry_set_icon_from_icon_name
 argument_list|(
 name|GTK_ENTRY
 argument_list|(

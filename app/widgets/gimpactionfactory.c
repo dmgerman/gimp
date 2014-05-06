@@ -211,7 +211,7 @@ name|g_free
 argument_list|(
 name|entry
 operator|->
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 name|g_slice_free
@@ -296,7 +296,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_action_factory_group_register (GimpActionFactory * factory,const gchar * identifier,const gchar * label,const gchar * stock_id,GimpActionGroupSetupFunc setup_func,GimpActionGroupUpdateFunc update_func)
+DECL|function|gimp_action_factory_group_register (GimpActionFactory * factory,const gchar * identifier,const gchar * label,const gchar * icon_name,GimpActionGroupSetupFunc setup_func,GimpActionGroupUpdateFunc update_func)
 name|gimp_action_factory_group_register
 parameter_list|(
 name|GimpActionFactory
@@ -316,7 +316,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 name|GimpActionGroupSetupFunc
 name|setup_func
@@ -392,11 +392,11 @@ argument_list|)
 expr_stmt|;
 name|entry
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|g_strdup
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 name|entry
@@ -530,7 +530,7 @@ name|label
 argument_list|,
 name|entry
 operator|->
-name|stock_id
+name|icon_name
 argument_list|,
 name|user_data
 argument_list|,

@@ -603,7 +603,7 @@ index|[
 name|i
 index|]
 operator|.
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_MOVE_TO_SCREEN
 expr_stmt|;

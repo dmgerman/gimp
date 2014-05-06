@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d29b2c0103
+DECL|enum|__anon28fda27b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -136,7 +136,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d29b2c0203
+DECL|enum|__anon28fda27b0203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -144,8 +144,8 @@ block|,
 DECL|enumerator|COLUMN_BLURB
 name|COLUMN_BLURB
 block|,
-DECL|enumerator|COLUMN_STOCK_ID
-name|COLUMN_STOCK_ID
+DECL|enumerator|COLUMN_ICON_NAME
+name|COLUMN_ICON_NAME
 block|,
 DECL|enumerator|COLUMN_ACTION
 name|COLUMN_ACTION
@@ -1380,7 +1380,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 init|=
 name|NULL
 decl_stmt|;
@@ -1437,9 +1437,9 @@ if|if
 condition|(
 name|action
 condition|)
-name|stock_id
+name|icon_name
 operator|=
-name|gtk_action_get_stock_id
+name|gtk_action_get_icon_name
 argument_list|(
 name|action
 argument_list|)
@@ -1468,9 +1468,9 @@ name|COLUMN_BLURB
 argument_list|,
 name|event_blurb
 argument_list|,
-name|COLUMN_STOCK_ID
+name|COLUMN_ICON_NAME
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|COLUMN_ACTION
 argument_list|,
@@ -1550,9 +1550,9 @@ name|column
 argument_list|,
 name|cell
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
-name|COLUMN_STOCK_ID
+name|COLUMN_ICON_NAME
 argument_list|,
 name|NULL
 argument_list|)
@@ -3207,7 +3207,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|COLUMN_STOCK_ID
+name|COLUMN_ICON_NAME
 argument_list|,
 name|NULL
 argument_list|,
@@ -3311,7 +3311,7 @@ name|NULL
 decl_stmt|;
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 init|=
 name|NULL
 decl_stmt|;
@@ -3343,10 +3343,10 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|GIMP_ACTION_VIEW_COLUMN_STOCK_ID
+name|GIMP_ACTION_VIEW_COLUMN_ICON_NAME
 argument_list|,
 operator|&
-name|stock_id
+name|icon_name
 argument_list|,
 name|GIMP_ACTION_VIEW_COLUMN_NAME
 argument_list|,
@@ -3424,9 +3424,9 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|COLUMN_STOCK_ID
+name|COLUMN_ICON_NAME
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|COLUMN_ACTION
 argument_list|,
@@ -3444,7 +3444,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 name|g_free

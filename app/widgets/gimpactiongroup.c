@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277c9e5d0103
+DECL|enum|__anon27a8fe270103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -112,8 +112,8 @@ block|,
 DECL|enumerator|PROP_LABEL
 name|PROP_LABEL
 block|,
-DECL|enumerator|PROP_STOCK_ID
-name|PROP_STOCK_ID
+DECL|enumerator|PROP_ICON_NAME
+name|PROP_ICON_NAME
 block|}
 enum|;
 end_enum
@@ -318,11 +318,11 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_STOCK_ID
+name|PROP_ICON_NAME
 argument_list|,
 name|g_param_spec_string
 argument_list|(
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
 name|NULL
 argument_list|,
@@ -637,19 +637,19 @@ if|if
 condition|(
 name|group
 operator|->
-name|stock_id
+name|icon_name
 condition|)
 block|{
 name|g_free
 argument_list|(
 name|group
 operator|->
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 name|group
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|NULL
 expr_stmt|;
@@ -731,11 +731,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_STOCK_ID
+name|PROP_ICON_NAME
 case|:
 name|group
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|g_value_dup_string
 argument_list|(
@@ -821,7 +821,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_STOCK_ID
+name|PROP_ICON_NAME
 case|:
 name|g_value_set_string
 argument_list|(
@@ -829,7 +829,7 @@ name|value
 argument_list|,
 name|group
 operator|->
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 break|break;
@@ -906,13 +906,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_action_group_new:  * @gimp:        the @Gimp instance this action group belongs to  * @name:        the name of the action group.  * @label:       the user visible label of the action group.  * @stock_id:    the icon of the action group.  * @user_data:   the user_data for #GtkAction callbacks.  * @update_func: the function that will be called on  *               gimp_action_group_update().  *  * Creates a new #GimpActionGroup object. The name of the action group  * is used when associating<link linkend="Action-Accel">keybindings</link>  * with the actions.  *  * Returns: the new #GimpActionGroup  */
+comment|/**  * gimp_action_group_new:  * @gimp:        the @Gimp instance this action group belongs to  * @name:        the name of the action group.  * @label:       the user visible label of the action group.  * @icon_name:   the icon of the action group.  * @user_data:   the user_data for #GtkAction callbacks.  * @update_func: the function that will be called on  *               gimp_action_group_update().  *  * Creates a new #GimpActionGroup object. The name of the action group  * is used when associating<link linkend="Action-Accel">keybindings</link>  * with the actions.  *  * Returns: the new #GimpActionGroup  */
 end_comment
 
 begin_function
 name|GimpActionGroup
 modifier|*
-DECL|function|gimp_action_group_new (Gimp * gimp,const gchar * name,const gchar * label,const gchar * stock_id,gpointer user_data,GimpActionGroupUpdateFunc update_func)
+DECL|function|gimp_action_group_new (Gimp * gimp,const gchar * name,const gchar * label,const gchar * icon_name,gpointer user_data,GimpActionGroupUpdateFunc update_func)
 name|gimp_action_group_new
 parameter_list|(
 name|Gimp
@@ -932,7 +932,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 name|gpointer
 name|user_data
@@ -982,9 +982,9 @@ literal|"label"
 argument_list|,
 name|label
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|NULL
 argument_list|)
@@ -1278,7 +1278,7 @@ index|[
 name|i
 index|]
 operator|.
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 if|if
@@ -1545,7 +1545,7 @@ index|[
 name|i
 index|]
 operator|.
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_action_set_active
@@ -1843,7 +1843,7 @@ index|[
 name|i
 index|]
 operator|.
-name|stock_id
+name|icon_name
 argument_list|,
 name|entries
 index|[
@@ -2160,7 +2160,7 @@ index|[
 name|i
 index|]
 operator|.
-name|stock_id
+name|icon_name
 argument_list|,
 name|entries
 index|[
@@ -2434,7 +2434,7 @@ index|[
 name|i
 index|]
 operator|.
-name|stock_id
+name|icon_name
 argument_list|,
 name|entries
 index|[
@@ -2620,7 +2620,7 @@ index|[
 name|i
 index|]
 operator|.
-name|stock_id
+name|icon_name
 argument_list|,
 name|entries
 index|[

@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d8b47f0103
+DECL|enum|__anon29c2b2f90103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -54,7 +54,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d8b47f0203
+DECL|enum|__anon29c2b2f90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -734,7 +734,7 @@ end_comment
 begin_function
 name|GimpPlugInAction
 modifier|*
-DECL|function|gimp_plug_in_action_new (const gchar * name,const gchar * label,const gchar * tooltip,const gchar * stock_id,GimpPlugInProcedure * procedure)
+DECL|function|gimp_plug_in_action_new (const gchar * name,const gchar * label,const gchar * tooltip,const gchar * icon_name,GimpPlugInProcedure * procedure)
 name|gimp_plug_in_action_new
 parameter_list|(
 specifier|const
@@ -755,7 +755,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 name|GimpPlugInProcedure
 modifier|*
@@ -779,9 +779,9 @@ literal|"tooltip"
 argument_list|,
 name|tooltip
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 literal|"procedure"
 argument_list|,

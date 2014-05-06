@@ -769,7 +769,7 @@ argument_list|,
 comment|/* COLUMN_ACTION         */
 name|G_TYPE_STRING
 argument_list|,
-comment|/* COLUMN_STOCK_ID       */
+comment|/* COLUMN_ICON_NAME      */
 name|G_TYPE_STRING
 argument_list|,
 comment|/* COLUMN_LABEL          */
@@ -857,11 +857,11 @@ argument_list|,
 operator|&
 name|group_iter
 argument_list|,
-name|GIMP_ACTION_VIEW_COLUMN_STOCK_ID
+name|GIMP_ACTION_VIEW_COLUMN_ICON_NAME
 argument_list|,
 name|group
 operator|->
-name|stock_id
+name|icon_name
 argument_list|,
 name|GIMP_ACTION_VIEW_COLUMN_LABEL
 argument_list|,
@@ -932,9 +932,9 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 init|=
-name|gtk_action_get_stock_id
+name|gtk_action_get_icon_name
 argument_list|(
 name|action
 argument_list|)
@@ -1108,9 +1108,9 @@ name|GIMP_ACTION_VIEW_COLUMN_ACTION
 argument_list|,
 name|action
 argument_list|,
-name|GIMP_ACTION_VIEW_COLUMN_STOCK_ID
+name|GIMP_ACTION_VIEW_COLUMN_ICON_NAME
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|GIMP_ACTION_VIEW_COLUMN_LABEL
 argument_list|,
@@ -1299,9 +1299,9 @@ name|column
 argument_list|,
 name|cell
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
-name|GIMP_ACTION_VIEW_COLUMN_STOCK_ID
+name|GIMP_ACTION_VIEW_COLUMN_ICON_NAME
 argument_list|,
 name|NULL
 argument_list|)
@@ -2336,7 +2336,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed93de0108
+DECL|struct|__anon2a4d9d2b0108
 block|{
 DECL|member|manager
 name|GimpUIManager
