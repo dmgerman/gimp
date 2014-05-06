@@ -342,7 +342,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GIMP_STOCK_WEB
 argument_list|,
