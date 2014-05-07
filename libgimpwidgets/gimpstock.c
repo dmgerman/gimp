@@ -2793,7 +2793,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c78e97f0108
+DECL|struct|__anon2c33e7de0108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3677,7 +3677,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c78e97f0208
+DECL|struct|__anon2c33e7de0208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4641,7 +4641,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c78e97f0308
+DECL|struct|__anon2c33e7de0308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4744,7 +4744,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c78e97f0408
+DECL|struct|__anon2c33e7de0408
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4895,7 +4895,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c78e97f0508
+DECL|struct|__anon2c33e7de0508
 block|{
 DECL|member|stock_id
 specifier|const
@@ -5212,7 +5212,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_icon_theme_append_search_path
+name|gtk_icon_theme_prepend_search_path
 argument_list|(
 name|gtk_icon_theme_get_default
 argument_list|()
