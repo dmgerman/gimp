@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bb944d0103
+DECL|enum|__anon28d5195e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -455,7 +455,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_combo_box_set_icon_prefix:  * @combo_box:   a #GimpEnumComboBox  * @icon_prefix: a prefix to create icon names from enum values  *  * Attempts to create icons for all items in the @combo_box. See  * gimp_enum_store_set_icon_prefix() to find out what to use as  * @icon_prefix.  *  * Since: GIMP 2.4  *  * Deprecated: GIMP 2.10  **/
+comment|/**  * gimp_enum_combo_box_set_icon_prefix:  * @combo_box:   a #GimpEnumComboBox  * @icon_prefix: a prefix to create icon names from enum values  *  * Attempts to create icons for all items in the @combo_box. See  * gimp_enum_store_set_icon_prefix() to find out what to use as  * @icon_prefix.  *  * Since: GIMP 2.10  **/
 end_comment
 
 begin_function
