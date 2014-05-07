@@ -98,7 +98,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0d146c0103
+DECL|enum|__anon2c3e0bd40103
 block|{
 DECL|enumerator|COLOR_PICKED
 name|COLOR_PICKED
@@ -384,7 +384,7 @@ name|image
 decl_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GIMP_STOCK_COLOR_PICK_FROM_SCREEN
 argument_list|,

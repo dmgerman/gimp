@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon288d906c0103
+DECL|enum|__anon27bb944d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -426,7 +426,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_combo_box_set_stock_prefix:  * @combo_box:    a #GimpEnumComboBox  * @stock_prefix: a prefix to create icon stock ID from enum values  *  * Attempts to create stock icons for all items in the @combo_box. See  * gimp_enum_store_set_stock_prefix() to find out what to use as  * @stock_prefix.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_enum_combo_box_set_stock_prefix:  * @combo_box:    a #GimpEnumComboBox  * @stock_prefix: a prefix to create icon stock ID from enum values  *  * Attempts to create stock icons for all items in the @combo_box. See  * gimp_enum_store_set_stock_prefix() to find out what to use as  * @stock_prefix.  *  * Since: GIMP 2.4  *  * Deprecated: GIMP 2.10  **/
 end_comment
 
 begin_function
@@ -442,6 +442,35 @@ specifier|const
 name|gchar
 modifier|*
 name|stock_prefix
+parameter_list|)
+block|{
+name|gimp_enum_combo_box_set_icon_prefix
+argument_list|(
+name|combo_box
+argument_list|,
+name|stock_prefix
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_enum_combo_box_set_icon_prefix:  * @combo_box:   a #GimpEnumComboBox  * @icon_prefix: a prefix to create icon names from enum values  *  * Attempts to create icons for all items in the @combo_box. See  * gimp_enum_store_set_icon_prefix() to find out what to use as  * @icon_prefix.  *  * Since: GIMP 2.4  *  * Deprecated: GIMP 2.10  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_enum_combo_box_set_icon_prefix (GimpEnumComboBox * combo_box,const gchar * icon_prefix)
+name|gimp_enum_combo_box_set_icon_prefix
+parameter_list|(
+name|GimpEnumComboBox
+modifier|*
+name|combo_box
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|icon_prefix
 parameter_list|)
 block|{
 name|GtkTreeModel
@@ -466,14 +495,14 @@ name|combo_box
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_enum_store_set_stock_prefix
+name|gimp_enum_store_set_icon_prefix
 argument_list|(
 name|GIMP_ENUM_STORE
 argument_list|(
 name|model
 argument_list|)
 argument_list|,
-name|stock_prefix
+name|icon_prefix
 argument_list|)
 expr_stmt|;
 block|}

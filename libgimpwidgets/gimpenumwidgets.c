@@ -635,7 +635,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_stock_box_new:  * @enum_type:     the #GType of an enum.  * @stock_prefix:  the prefix of the group of stock ids to use.  * @icon_size:     the icon size for the stock icons  * @callback:      a callback to connect to the "toggled" signal of each  *                 #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button:  returns the first button in the created group.  *  * Creates a horizontal box of radio buttons with stock icons.  The  * stock_id for each icon is created by appending the enum_value's  * nick to the given @stock_prefix.  *  * Return value: a new #GtkHBox holding a group of #GtkRadioButtons.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_enum_stock_box_new:  * @enum_type:     the #GType of an enum.  * @stock_prefix:  the prefix of the group of stock ids to use.  * @icon_size:     the icon size for the stock icons  * @callback:      a callback to connect to the "toggled" signal of each  *                 #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button:  returns the first button in the created group.  *  * Creates a horizontal box of radio buttons with stock icons.  The  * stock_id for each icon is created by appending the enum_value's  * nick to the given @stock_prefix.  *  * Return value: a new #GtkHBox holding a group of #GtkRadioButtons.  *  * Since: GIMP 2.4  *  * Deprecated: GIMP 2.10  **/
 end_comment
 
 begin_function
@@ -651,6 +651,152 @@ specifier|const
 name|gchar
 modifier|*
 name|stock_prefix
+parameter_list|,
+name|GtkIconSize
+name|icon_size
+parameter_list|,
+name|GCallback
+name|callback
+parameter_list|,
+name|gpointer
+name|callback_data
+parameter_list|,
+name|GtkWidget
+modifier|*
+modifier|*
+name|first_button
+parameter_list|)
+block|{
+return|return
+name|gimp_enum_icon_box_new
+argument_list|(
+name|enum_type
+argument_list|,
+name|stock_prefix
+argument_list|,
+name|icon_size
+argument_list|,
+name|callback
+argument_list|,
+name|callback_data
+argument_list|,
+name|first_button
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_enum_stock_box_new_with_range:  * @enum_type:     the #GType of an enum.  * @minimum:       the minumim enum value  * @maximum:       the maximum enum value  * @stock_prefix:  the prefix of the group of stock ids to use.  * @icon_size:     the icon size for the stock icons  * @callback:      a callback to connect to the "toggled" signal of each  *                 #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button:  returns the first button in the created group.  *  * Just like gimp_enum_stock_box_new(), this function creates a group  * of radio buttons, but additionally it supports limiting the range  * of available enum values.  *  * Return value: a new #GtkHBox holding a group of #GtkRadioButtons.  *  * Since: GIMP 2.4  *  * Deprecated: GIMP 2.10  **/
+end_comment
+
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|gimp_enum_stock_box_new_with_range (GType enum_type,gint minimum,gint maximum,const gchar * stock_prefix,GtkIconSize icon_size,GCallback callback,gpointer callback_data,GtkWidget ** first_button)
+name|gimp_enum_stock_box_new_with_range
+parameter_list|(
+name|GType
+name|enum_type
+parameter_list|,
+name|gint
+name|minimum
+parameter_list|,
+name|gint
+name|maximum
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|stock_prefix
+parameter_list|,
+name|GtkIconSize
+name|icon_size
+parameter_list|,
+name|GCallback
+name|callback
+parameter_list|,
+name|gpointer
+name|callback_data
+parameter_list|,
+name|GtkWidget
+modifier|*
+modifier|*
+name|first_button
+parameter_list|)
+block|{
+return|return
+name|gimp_enum_icon_box_new_with_range
+argument_list|(
+name|enum_type
+argument_list|,
+name|minimum
+argument_list|,
+name|maximum
+argument_list|,
+name|stock_prefix
+argument_list|,
+name|icon_size
+argument_list|,
+name|callback
+argument_list|,
+name|callback_data
+argument_list|,
+name|first_button
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_enum_stock_box_set_child_padding:  * @stock_box: a stock box widget  * @xpad:      horizontal padding  * @ypad:      vertical padding  *  * Sets the padding of all buttons in a box created by  * gimp_enum_stock_box_new().  *  * Since: GIMP 2.4  *  * Deprecated: GIMP 2.10  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_enum_stock_box_set_child_padding (GtkWidget * stock_box,gint xpad,gint ypad)
+name|gimp_enum_stock_box_set_child_padding
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|stock_box
+parameter_list|,
+name|gint
+name|xpad
+parameter_list|,
+name|gint
+name|ypad
+parameter_list|)
+block|{
+name|gimp_enum_icon_box_set_child_padding
+argument_list|(
+name|stock_box
+argument_list|,
+name|xpad
+argument_list|,
+name|ypad
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_enum_icon_box_new:  * @enum_type:     the #GType of an enum.  * @icon_prefix:   the prefix of the group of icon names to use.  * @icon_size:     the icon size for the icons  * @callback:      a callback to connect to the "toggled" signal of each  *                 #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button:  returns the first button in the created group.  *  * Creates a horizontal box of radio buttons with named icons. The  * icon name for each icon is created by appending the enum_value's  * nick to the given @icon_prefix.  *  * Return value: a new #GtkHBox holding a group of #GtkRadioButtons.  *  * Since: GIMP 2.10  **/
+end_comment
+
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|gimp_enum_icon_box_new (GType enum_type,const gchar * icon_prefix,GtkIconSize icon_size,GCallback callback,gpointer callback_data,GtkWidget ** first_button)
+name|gimp_enum_icon_box_new
+parameter_list|(
+name|GType
+name|enum_type
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|icon_prefix
 parameter_list|,
 name|GtkIconSize
 name|icon_size
@@ -694,7 +840,7 @@ argument_list|)
 expr_stmt|;
 name|box
 operator|=
-name|gimp_enum_stock_box_new_with_range
+name|gimp_enum_icon_box_new_with_range
 argument_list|(
 name|enum_type
 argument_list|,
@@ -706,7 +852,7 @@ name|enum_class
 operator|->
 name|maximum
 argument_list|,
-name|stock_prefix
+name|icon_prefix
 argument_list|,
 name|icon_size
 argument_list|,
@@ -729,14 +875,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_stock_box_new_with_range:  * @enum_type:     the #GType of an enum.  * @minimum:       the minumim enum value  * @maximum:       the maximum enum value  * @stock_prefix:  the prefix of the group of stock ids to use.  * @icon_size:     the icon size for the stock icons  * @callback:      a callback to connect to the "toggled" signal of each  *                 #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button:  returns the first button in the created group.  *  * Just like gimp_enum_stock_box_new(), this function creates a group  * of radio buttons, but additionally it supports limiting the range  * of available enum values.  *  * Return value: a new #GtkHBox holding a group of #GtkRadioButtons.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_enum_icon_box_new_with_range:  * @enum_type:     the #GType of an enum.  * @minimum:       the minumim enum value  * @maximum:       the maximum enum value  * @icon_prefix:   the prefix of the group of icon names to use.  * @icon_size:     the icon size for the icons  * @callback:      a callback to connect to the "toggled" signal of each  *                 #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button:  returns the first button in the created group.  *  * Just like gimp_enum_icon_box_new(), this function creates a group  * of radio buttons, but additionally it supports limiting the range  * of available enum values.  *  * Return value: a new #GtkHBox holding a group of #GtkRadioButtons.  *  * Since: GIMP 2.10  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_enum_stock_box_new_with_range (GType enum_type,gint minimum,gint maximum,const gchar * stock_prefix,GtkIconSize icon_size,GCallback callback,gpointer callback_data,GtkWidget ** first_button)
-name|gimp_enum_stock_box_new_with_range
+DECL|function|gimp_enum_icon_box_new_with_range (GType enum_type,gint minimum,gint maximum,const gchar * icon_prefix,GtkIconSize icon_size,GCallback callback,gpointer callback_data,GtkWidget ** first_button)
+name|gimp_enum_icon_box_new_with_range
 parameter_list|(
 name|GType
 name|enum_type
@@ -750,7 +896,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_prefix
+name|icon_prefix
 parameter_list|,
 name|GtkIconSize
 name|icon_size
@@ -789,7 +935,7 @@ name|value
 decl_stmt|;
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 name|GSList
 modifier|*
@@ -809,7 +955,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|stock_prefix
+name|icon_prefix
 operator|!=
 name|NULL
 argument_list|,
@@ -928,11 +1074,11 @@ name|first_button
 operator|=
 name|button
 expr_stmt|;
-name|stock_id
+name|icon_name
 operator|=
 name|g_strconcat
 argument_list|(
-name|stock_prefix
+name|icon_prefix
 argument_list|,
 literal|"-"
 argument_list|,
@@ -943,38 +1089,18 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gtk_icon_theme_has_icon
-argument_list|(
-name|gtk_icon_theme_get_default
-argument_list|()
-argument_list|,
-name|stock_id
-argument_list|)
-condition|)
 name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|stock_id
-argument_list|,
-name|icon_size
-argument_list|)
-expr_stmt|;
-else|else
-name|image
-operator|=
-name|gtk_image_new_from_stock
-argument_list|(
-name|stock_id
+name|icon_name
 argument_list|,
 name|icon_size
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 if|if
@@ -1083,17 +1209,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_stock_box_set_child_padding:  * @stock_box: a stock box widget  * @xpad:      horizontal padding  * @ypad:      vertical padding  *  * Sets the padding of all buttons in a box created by  * gimp_enum_stock_box_new().  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_enum_icon_box_set_child_padding:  * @icon_box: an icon box widget  * @xpad:     horizontal padding  * @ypad:     vertical padding  *  * Sets the padding of all buttons in a box created by  * gimp_enum_icon_box_new().  *  * Since: GIMP 2.10  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_enum_stock_box_set_child_padding (GtkWidget * stock_box,gint xpad,gint ypad)
-name|gimp_enum_stock_box_set_child_padding
+DECL|function|gimp_enum_icon_box_set_child_padding (GtkWidget * icon_box,gint xpad,gint ypad)
+name|gimp_enum_icon_box_set_child_padding
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|stock_box
+name|icon_box
 parameter_list|,
 name|gint
 name|xpad
@@ -1114,7 +1240,7 @@ name|g_return_if_fail
 argument_list|(
 name|GTK_IS_CONTAINER
 argument_list|(
-name|stock_box
+name|icon_box
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1124,7 +1250,7 @@ name|gtk_container_get_children
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|stock_box
+name|icon_box
 argument_list|)
 argument_list|)
 expr_stmt|;

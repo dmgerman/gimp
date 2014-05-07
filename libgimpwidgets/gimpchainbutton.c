@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9cd3840103
+DECL|enum|__anon2bae92510103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -52,7 +52,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9cd3840203
+DECL|enum|__anon2bae92510203
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
@@ -199,13 +199,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|gimp_chain_stock_items
+DECL|variable|gimp_chain_icon_names
 specifier|static
 specifier|const
 name|gchar
 modifier|*
 specifier|const
-name|gimp_chain_stock_items
+name|gimp_chain_icon_names
 index|[]
 init|=
 block|{
@@ -1004,7 +1004,7 @@ else|:
 literal|1
 operator|)
 expr_stmt|;
-name|gtk_image_set_from_stock
+name|gtk_image_set_from_icon_name
 argument_list|(
 name|GTK_IMAGE
 argument_list|(
@@ -1013,7 +1013,7 @@ operator|->
 name|image
 argument_list|)
 argument_list|,
-name|gimp_chain_stock_items
+name|gimp_chain_icon_names
 index|[
 name|i
 index|]

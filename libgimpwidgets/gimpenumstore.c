@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4a39040103
+DECL|enum|__anon2a21e12c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -828,7 +828,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_store_set_stock_prefix:  * @store:        a #GimpEnumStore  * @stock_prefix: a prefix to create icon stock ID from enum values  *  * Creates a stock ID for each enum value in the @store by appending  * the value's nick to the given @stock_prefix, separated by a hyphen.  *  * See also: gimp_enum_combo_box_set_stock_prefix().  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_enum_store_set_stock_prefix:  * @store:        a #GimpEnumStore  * @stock_prefix: a prefix to create icon stock ID from enum values  *  * Creates a stock ID for each enum value in the @store by appending  * the value's nick to the given @stock_prefix, separated by a hyphen.  *  * See also: gimp_enum_combo_box_set_stock_prefix().  *  * Since: GIMP 2.4  *  * Deprecated: GIMP 2.10  **/
 end_comment
 
 begin_function
@@ -844,6 +844,35 @@ specifier|const
 name|gchar
 modifier|*
 name|stock_prefix
+parameter_list|)
+block|{
+name|gimp_enum_store_set_icon_prefix
+argument_list|(
+name|store
+argument_list|,
+name|stock_prefix
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_enum_store_set_icon_prefix:  * @store:       a #GimpEnumStore  * @icon_prefix: a prefix to create icon names from enum values  *  * Creates an icon name for each enum value in the @store by appending  * the value's nick to the given @icon_prefix, separated by a hyphen.  *  * See also: gimp_enum_combo_box_set_icon_prefix().  *  * Since: GIMP 2.10  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_enum_store_set_icon_prefix (GimpEnumStore * store,const gchar * icon_prefix)
+name|gimp_enum_store_set_icon_prefix
+parameter_list|(
+name|GimpEnumStore
+modifier|*
+name|store
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|icon_prefix
 parameter_list|)
 block|{
 name|GtkTreeModel
@@ -898,13 +927,13 @@ control|)
 block|{
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 init|=
 name|NULL
 decl_stmt|;
 if|if
 condition|(
-name|stock_prefix
+name|icon_prefix
 condition|)
 block|{
 name|GEnumValue
@@ -941,11 +970,11 @@ argument_list|,
 name|value
 argument_list|)
 expr_stmt|;
-name|stock_id
+name|icon_name
 operator|=
 name|g_strconcat
 argument_list|(
-name|stock_prefix
+name|icon_prefix
 argument_list|,
 literal|"-"
 argument_list|,
@@ -967,9 +996,9 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|GIMP_INT_STORE_STOCK_ID
+name|GIMP_INT_STORE_ICON_NAME
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 operator|-
 literal|1
@@ -977,11 +1006,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|stock_id
+name|icon_name
 condition|)
 name|g_free
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 block|}

@@ -267,6 +267,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_enum_store_set_icon_prefix
+argument_list|)
+end_macro
+
 begin_function_decl
 name|void
 name|gimp_enum_store_set_stock_prefix
@@ -279,6 +286,22 @@ specifier|const
 name|gchar
 modifier|*
 name|stock_prefix
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_enum_store_set_icon_prefix
+parameter_list|(
+name|GimpEnumStore
+modifier|*
+name|store
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|icon_prefix
 parameter_list|)
 function_decl|;
 end_function_decl

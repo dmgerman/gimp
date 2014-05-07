@@ -156,7 +156,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -330,7 +330,7 @@ begin_function
 specifier|static
 name|QueryBox
 modifier|*
-DECL|function|create_query_box (const gchar * title,GtkWidget * parent,GimpHelpFunc help_func,const gchar * help_id,GCallback response_callback,const gchar * stock_id,const gchar * message,const gchar * ok_button,const gchar * cancel_button,GObject * object,const gchar * signal,GCallback callback,gpointer callback_data)
+DECL|function|create_query_box (const gchar * title,GtkWidget * parent,GimpHelpFunc help_func,const gchar * help_id,GCallback response_callback,const gchar * icon_name,const gchar * message,const gchar * ok_button,const gchar * cancel_button,GObject * object,const gchar * signal,GCallback callback,gpointer callback_data)
 name|create_query_box
 parameter_list|(
 specifier|const
@@ -356,7 +356,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -587,7 +587,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|stock_id
+name|icon_name
 condition|)
 block|{
 name|GtkWidget
@@ -652,9 +652,9 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|,
 name|GTK_ICON_SIZE_DIALOG
 argument_list|)
@@ -1729,13 +1729,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_query_boolean_box:  * @title:        The query box dialog's title.  * @parent:       The dialog's parent widget.  * @help_func:    The help function to show this dialog's help page.  * @help_id:      A string identifying this dialog's help page.  * @stock_id:     A stock_id to specify an icon to appear on the left  *                on the dialog's message.  * @message:      A string which will be shown in the query box.  * @true_button:  The string to be shown in the dialog's left button.  * @false_button: The string to be shown in the dialog's right button.  * @object:       The object this query box is associated with.  * @signal:       The object's signal which will cause the query box  *                to be closed.  * @callback:     The function which will be called when the user clicks one  *                of the buttons.  * @data:         The callback's user data.  *  * Creates a new #GtkDialog that asks the user to do a boolean decision.  *  * Returns: A pointer to the new #GtkDialog.  **/
+comment|/**  * gimp_query_boolean_box:  * @title:        The query box dialog's title.  * @parent:       The dialog's parent widget.  * @help_func:    The help function to show this dialog's help page.  * @help_id:      A string identifying this dialog's help page.  * @icon_name:    An icon name to specify an icon to appear on the left  *                on the dialog's message.  * @message:      A string which will be shown in the query box.  * @true_button:  The string to be shown in the dialog's left button.  * @false_button: The string to be shown in the dialog's right button.  * @object:       The object this query box is associated with.  * @signal:       The object's signal which will cause the query box  *                to be closed.  * @callback:     The function which will be called when the user clicks one  *                of the buttons.  * @data:         The callback's user data.  *  * Creates a new #GtkDialog that asks the user to do a boolean decision.  *  * Returns: A pointer to the new #GtkDialog.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_query_boolean_box (const gchar * title,GtkWidget * parent,GimpHelpFunc help_func,const gchar * help_id,const gchar * stock_id,const gchar * message,const gchar * true_button,const gchar * false_button,GObject * object,const gchar * signal,GimpQueryBooleanCallback callback,gpointer data)
+DECL|function|gimp_query_boolean_box (const gchar * title,GtkWidget * parent,GimpHelpFunc help_func,const gchar * help_id,const gchar * icon_name,const gchar * message,const gchar * true_button,const gchar * false_button,GObject * object,const gchar * signal,GimpQueryBooleanCallback callback,gpointer data)
 name|gimp_query_boolean_box
 parameter_list|(
 specifier|const
@@ -1758,7 +1758,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -1812,7 +1812,7 @@ argument_list|(
 name|boolean_query_box_response
 argument_list|)
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|message
 argument_list|,

@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon292221280103
+DECL|enum|__anon2aad0abb0103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -350,7 +350,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GTK_STOCK_OPEN
 argument_list|,
@@ -623,7 +623,7 @@ name|entry
 operator|->
 name|file_exists
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GTK_STOCK_NO
 argument_list|,
@@ -1508,7 +1508,7 @@ argument_list|(
 name|filename
 argument_list|)
 expr_stmt|;
-name|gtk_image_set_from_stock
+name|gtk_image_set_from_icon_name
 argument_list|(
 name|GTK_IMAGE
 argument_list|(

@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f17d500103
+DECL|enum|__anon289453b00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -59,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f17d500208
+DECL|struct|__anon289453b00208
 block|{
 DECL|member|user_data_type
 name|GType
@@ -439,7 +439,7 @@ name|G_TYPE_STRING
 expr_stmt|;
 name|types
 index|[
-name|GIMP_INT_STORE_STOCK_ID
+name|GIMP_INT_STORE_ICON_NAME
 index|]
 operator|=
 name|G_TYPE_STRING

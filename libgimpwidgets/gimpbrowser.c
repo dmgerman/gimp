@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a84b320103
+DECL|enum|__anon297d66220103
 block|{
 DECL|enumerator|SEARCH
 name|SEARCH
@@ -440,7 +440,7 @@ argument_list|,
 name|browser
 argument_list|)
 expr_stmt|;
-name|gtk_entry_set_icon_from_stock
+name|gtk_entry_set_icon_from_icon_name
 argument_list|(
 name|GTK_ENTRY
 argument_list|(

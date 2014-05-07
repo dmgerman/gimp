@@ -175,7 +175,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af9bce40103
+DECL|enum|__anon2b90f9bf0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -188,7 +188,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af9bce40203
+DECL|enum|__anon2b90f9bf0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1157,7 +1157,7 @@ literal|"tooltip"
 argument_list|,
 name|tooltip
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
 name|actions
 index|[

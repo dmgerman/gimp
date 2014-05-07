@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d338e90103
+DECL|enum|__anon2ae7c96c0103
 block|{
 DECL|enumerator|ZOOMED
 name|ZOOMED
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d338e90203
+DECL|enum|__anon2ae7c96c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -112,7 +112,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d338e90308
+DECL|struct|__anon2ae7c96c0308
 block|{
 DECL|member|value
 name|gdouble
@@ -1469,13 +1469,13 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|zoom_button_new (const gchar * stock_id,GtkIconSize icon_size)
+DECL|function|zoom_button_new (const gchar * icon_name,GtkIconSize icon_size)
 name|zoom_button_new
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 name|GtkIconSize
 name|icon_size
@@ -1485,24 +1485,25 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-if|if
-condition|(
-name|icon_size
-operator|>
-literal|0
-condition|)
-block|{
 name|GtkWidget
 modifier|*
 name|image
-init|=
-name|gtk_image_new_from_stock
+decl_stmt|;
+name|image
+operator|=
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|,
 name|icon_size
+operator|>
+literal|0
+condition|?
+name|icon_size
+else|:
+name|GTK_ICON_SIZE_BUTTON
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|button
 operator|=
 name|gtk_button_new
@@ -1523,17 +1524,6 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|button
-operator|=
-name|gtk_button_new_from_stock
-argument_list|(
-name|stock_id
-argument_list|)
-expr_stmt|;
-block|}
 return|return
 name|button
 return|;

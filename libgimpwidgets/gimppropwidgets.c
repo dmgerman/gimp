@@ -2926,7 +2926,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_enum_stock_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of enum property controlled by the radio buttons.  * @stock_prefix:  The prefix of the group of stock ids to use.  * @minimum:       Smallest value of enum to be included.  * @maximum:       Largest value of enum to be included.  *  * Creates a horizontal box of radio buttons with stock icons, which  * function to set and display the value of the specified Enum  * property.  The stock_id for each icon is created by appending the  * enum_value's nick to the given @stock_prefix.  See  * gimp_enum_stock_box_new() for more information.  *  * Return value: A #libgimpwidgets-gimpenumstockbox containing the radio buttons.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_enum_stock_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of enum property controlled by the radio buttons.  * @stock_prefix:  The prefix of the group of stock ids to use.  * @minimum:       Smallest value of enum to be included.  * @maximum:       Largest value of enum to be included.  *  * Creates a horizontal box of radio buttons with stock icons, which  * function to set and display the value of the specified Enum  * property.  The stock_id for each icon is created by appending the  * enum_value's nick to the given @stock_prefix.  See  * gimp_enum_stock_box_new() for more information.  *  * Return value: A #libgimpwidgets-gimpenumstockbox containing the radio buttons.  *  * Since GIMP 2.4  *  * Deprecated: GIMP 2.10  */
 end_comment
 
 begin_function
@@ -2948,6 +2948,54 @@ specifier|const
 name|gchar
 modifier|*
 name|stock_prefix
+parameter_list|,
+name|gint
+name|minimum
+parameter_list|,
+name|gint
+name|maximum
+parameter_list|)
+block|{
+return|return
+name|gimp_prop_enum_icon_box_new
+argument_list|(
+name|config
+argument_list|,
+name|property_name
+argument_list|,
+name|stock_prefix
+argument_list|,
+name|minimum
+argument_list|,
+name|maximum
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_prop_enum_icon_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of enum property controlled by the radio buttons.  * @icon_prefix:   The prefix of the group of icon names to use.  * @minimum:       Smallest value of enum to be included.  * @maximum:       Largest value of enum to be included.  *  * Creates a horizontal box of radio buttons with named icons, which  * function to set and display the value of the specified Enum  * property.  The icon name for each icon is created by appending the  * enum_value's nick to the given @icon_prefix.  See  * gimp_enum_icon_box_new() for more information.  *  * Return value: A #libgimpwidgets-gimpenumiconbox containing the radio buttons.  *  * Since GIMP 2.10  */
+end_comment
+
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|gimp_prop_enum_icon_box_new (GObject * config,const gchar * property_name,const gchar * icon_prefix,gint minimum,gint maximum)
+name|gimp_prop_enum_icon_box_new
+parameter_list|(
+name|GObject
+modifier|*
+name|config
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|property_name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|icon_prefix
 parameter_list|,
 name|gint
 name|minimum
@@ -3032,7 +3080,7 @@ condition|)
 block|{
 name|box
 operator|=
-name|gimp_enum_stock_box_new_with_range
+name|gimp_enum_icon_box_new_with_range
 argument_list|(
 name|param_spec
 operator|->
@@ -3042,7 +3090,7 @@ name|minimum
 argument_list|,
 name|maximum
 argument_list|,
-name|stock_prefix
+name|icon_prefix
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|,
@@ -3062,13 +3110,13 @@ else|else
 block|{
 name|box
 operator|=
-name|gimp_enum_stock_box_new
+name|gimp_enum_icon_box_new
 argument_list|(
 name|param_spec
 operator|->
 name|value_type
 argument_list|,
-name|stock_prefix
+name|icon_prefix
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|,
