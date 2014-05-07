@@ -42,7 +42,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd470900108
+DECL|struct|__anon295aa6af0108
 block|{
 DECL|member|parent_instance
 name|GtkBox
@@ -82,7 +82,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd470900203
+DECL|enum|__anon295aa6af0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -346,7 +346,7 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|GtkImage
+name|GtkWidget
 modifier|*
 name|image
 init|=
