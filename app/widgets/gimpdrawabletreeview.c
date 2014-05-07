@@ -417,7 +417,7 @@ name|gimp_drawable_tree_view_set_image
 expr_stmt|;
 name|item_view_class
 operator|->
-name|lock_content_stock_id
+name|lock_content_icon_name
 operator|=
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 expr_stmt|;
@@ -432,7 +432,7 @@ argument_list|)
 expr_stmt|;
 name|item_view_class
 operator|->
-name|lock_position_stock_id
+name|lock_position_icon_name
 operator|=
 name|GIMP_STOCK_TOOL_MOVE
 expr_stmt|;

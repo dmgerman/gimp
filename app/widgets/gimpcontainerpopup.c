@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b341f2e0103
+DECL|enum|__anon2b1d35900103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -703,19 +703,19 @@ if|if
 condition|(
 name|popup
 operator|->
-name|dialog_stock_id
+name|dialog_icon_name
 condition|)
 block|{
 name|g_free
 argument_list|(
 name|popup
 operator|->
-name|dialog_stock_id
+name|dialog_icon_name
 argument_list|)
 expr_stmt|;
 name|popup
 operator|->
-name|dialog_stock_id
+name|dialog_icon_name
 operator|=
 name|NULL
 expr_stmt|;
@@ -1373,7 +1373,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_container_popup_new (GimpContainer * container,GimpContext * context,GimpViewType view_type,gint default_view_size,gint view_size,gint view_border_width,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const gchar * dialog_stock_id,const gchar * dialog_tooltip)
+DECL|function|gimp_container_popup_new (GimpContainer * container,GimpContext * context,GimpViewType view_type,gint default_view_size,gint view_size,gint view_border_width,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const gchar * dialog_icon_name,const gchar * dialog_tooltip)
 name|gimp_container_popup_new
 parameter_list|(
 name|GimpContainer
@@ -1408,7 +1408,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|dialog_stock_id
+name|dialog_icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -1509,7 +1509,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|dialog_stock_id
+name|dialog_icon_name
 operator|!=
 name|NULL
 argument_list|,
@@ -1644,11 +1644,11 @@ argument_list|)
 expr_stmt|;
 name|popup
 operator|->
-name|dialog_stock_id
+name|dialog_icon_name
 operator|=
 name|g_strdup
 argument_list|(
-name|dialog_stock_id
+name|dialog_icon_name
 argument_list|)
 expr_stmt|;
 name|popup
@@ -2503,7 +2503,7 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gimp_editor_add_stock_box
+name|gimp_editor_add_icon_box
 argument_list|(
 name|editor
 argument_list|,
@@ -2543,7 +2543,7 @@ name|editor
 argument_list|,
 name|popup
 operator|->
-name|dialog_stock_id
+name|dialog_icon_name
 argument_list|,
 name|popup
 operator|->

@@ -421,7 +421,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_error_dialog_add (GimpErrorDialog * dialog,const gchar * stock_id,const gchar * domain,const gchar * message)
+DECL|function|gimp_error_dialog_add (GimpErrorDialog * dialog,const gchar * icon_name,const gchar * domain,const gchar * message)
 name|gimp_error_dialog_add
 parameter_list|(
 name|GimpErrorDialog
@@ -431,7 +431,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -548,7 +548,7 @@ name|overflow
 operator|=
 name|TRUE
 expr_stmt|;
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_WILBER_EEK
 expr_stmt|;
@@ -608,9 +608,9 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_MESSAGE_BOX
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|NULL
 argument_list|)

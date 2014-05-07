@@ -134,7 +134,7 @@ end_comment
 begin_function
 name|ChannelOptionsDialog
 modifier|*
-DECL|function|channel_options_dialog_new (GimpImage * image,GimpChannel * channel,GimpContext * context,GtkWidget * parent,const GimpRGB * channel_color,const gchar * channel_name,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * desc,const gchar * help_id,const gchar * color_label,const gchar * opacity_label,gboolean show_from_sel)
+DECL|function|channel_options_dialog_new (GimpImage * image,GimpChannel * channel,GimpContext * context,GtkWidget * parent,const GimpRGB * channel_color,const gchar * channel_name,const gchar * title,const gchar * role,const gchar * icon_name,const gchar * desc,const gchar * help_id,const gchar * color_label,const gchar * opacity_label,gboolean show_from_sel)
 name|channel_options_dialog_new
 parameter_list|(
 name|GimpImage
@@ -176,7 +176,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -299,7 +299,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|stock_id
+name|icon_name
 operator|!=
 name|NULL
 argument_list|,
@@ -429,7 +429,7 @@ name|title
 argument_list|,
 name|role
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|desc
 argument_list|,

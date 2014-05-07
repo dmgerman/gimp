@@ -753,8 +753,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_table_attach_stock (GtkTable * table,gint row,const gchar * stock_id,GtkWidget * widget,gint colspan,gboolean left_align)
-name|gimp_table_attach_stock
+DECL|function|gimp_table_attach_icon (GtkTable * table,gint row,const gchar * icon_name,GtkWidget * widget,gint colspan,gboolean left_align)
+name|gimp_table_attach_icon
 parameter_list|(
 name|GtkTable
 modifier|*
@@ -766,7 +766,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -793,7 +793,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|stock_id
+name|icon_name
 operator|!=
 name|NULL
 argument_list|)
@@ -808,9 +808,9 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -1443,7 +1443,7 @@ end_function
 
 begin_function
 name|GtkIconSize
-DECL|function|gimp_get_icon_size (GtkWidget * widget,const gchar * stock_id,GtkIconSize max_size,gint width,gint height)
+DECL|function|gimp_get_icon_size (GtkWidget * widget,const gchar * icon_name,GtkIconSize max_size,gint width,gint height)
 name|gimp_get_icon_size
 parameter_list|(
 name|GtkWidget
@@ -1453,7 +1453,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 name|GtkIconSize
 name|max_size
@@ -1516,7 +1516,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|stock_id
+name|icon_name
 operator|!=
 name|NULL
 argument_list|,
@@ -1550,7 +1550,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 if|if
@@ -3746,8 +3746,8 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_get_message_stock_id (GimpMessageSeverity severity)
-name|gimp_get_message_stock_id
+DECL|function|gimp_get_message_icon_name (GimpMessageSeverity severity)
+name|gimp_get_message_icon_name
 parameter_list|(
 name|GimpMessageSeverity
 name|severity

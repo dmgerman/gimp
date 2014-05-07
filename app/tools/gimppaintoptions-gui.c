@@ -667,7 +667,7 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gimp_stock_button_new
+name|gimp_icon_button_new
 argument_list|(
 name|GIMP_STOCK_RESET
 argument_list|,
@@ -684,7 +684,7 @@ argument_list|,
 name|GTK_RELIEF_NONE
 argument_list|)
 expr_stmt|;
-name|gtk_image_set_from_stock
+name|gtk_image_set_from_icon_name
 argument_list|(
 name|GTK_IMAGE
 argument_list|(
@@ -822,7 +822,7 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gimp_stock_button_new
+name|gimp_icon_button_new
 argument_list|(
 name|GIMP_STOCK_RESET
 argument_list|,
@@ -839,7 +839,7 @@ argument_list|,
 name|GTK_RELIEF_NONE
 argument_list|)
 expr_stmt|;
-name|gtk_image_set_from_stock
+name|gtk_image_set_from_icon_name
 argument_list|(
 name|GTK_IMAGE
 argument_list|(
@@ -977,7 +977,7 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gimp_stock_button_new
+name|gimp_icon_button_new
 argument_list|(
 name|GIMP_STOCK_RESET
 argument_list|,
@@ -994,7 +994,7 @@ argument_list|,
 name|GTK_RELIEF_NONE
 argument_list|)
 expr_stmt|;
-name|gtk_image_set_from_stock
+name|gtk_image_set_from_icon_name
 argument_list|(
 name|GTK_IMAGE
 argument_list|(

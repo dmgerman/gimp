@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d6b9e60103
+DECL|enum|__anon2af9252b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -239,7 +239,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -1073,7 +1073,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GTK_STOCK_CLEAR
 argument_list|,
@@ -2848,7 +2848,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_text_style_editor_create_toggle (GimpTextStyleEditor * editor,GtkTextTag * tag,const gchar * stock_id,const gchar * tooltip)
+DECL|function|gimp_text_style_editor_create_toggle (GimpTextStyleEditor * editor,GtkTextTag * tag,const gchar * icon_name,const gchar * tooltip)
 name|gimp_text_style_editor_create_toggle
 parameter_list|(
 name|GimpTextStyleEditor
@@ -2862,7 +2862,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -2963,9 +2963,9 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)

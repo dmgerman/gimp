@@ -538,13 +538,13 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_stock_button_new (const gchar * stock_id,const gchar * label)
-name|gimp_stock_button_new
+DECL|function|gimp_icon_button_new (const gchar * icon_name,const gchar * label)
+name|gimp_icon_button_new
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -604,9 +604,9 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -675,9 +675,9 @@ else|else
 block|{
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

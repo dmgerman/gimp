@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2396fc0103
+DECL|enum|__anon2ad122f60103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -106,10 +106,10 @@ name|gchar
 modifier|*
 name|blurb
 decl_stmt|;
-DECL|member|stock_id
+DECL|member|icon_name
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 DECL|member|help_id
 name|gchar
@@ -368,7 +368,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar

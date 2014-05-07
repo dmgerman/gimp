@@ -81,7 +81,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a423f860103
+DECL|enum|__anon290c1e3b0103
 block|{
 DECL|enumerator|SRC_COLUMN_NAME
 name|SRC_COLUMN_NAME
@@ -100,7 +100,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a423f860203
+DECL|enum|__anon290c1e3b0203
 block|{
 DECL|enumerator|DEST_COLUMN_ENABLED
 name|DEST_COLUMN_ENABLED
@@ -674,7 +674,7 @@ name|column
 argument_list|,
 name|rend
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
 name|SRC_COLUMN_ICON
 argument_list|,
@@ -834,7 +834,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GTK_STOCK_GO_FORWARD
 argument_list|,
@@ -917,7 +917,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GTK_STOCK_GO_BACK
 argument_list|,
@@ -1216,7 +1216,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GIMP_STOCK_VISIBLE
 argument_list|,
@@ -1280,7 +1280,7 @@ name|column
 argument_list|,
 name|rend
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
 name|DEST_COLUMN_ICON
 argument_list|,
@@ -1955,7 +1955,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 name|enabled
 operator|=
@@ -1973,7 +1973,7 @@ argument_list|)
 operator|->
 name|name
 expr_stmt|;
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_COLOR_DISPLAY_GET_CLASS
 argument_list|(
@@ -2007,7 +2007,7 @@ name|enabled
 argument_list|,
 name|DEST_COLUMN_ICON
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|DEST_COLUMN_NAME
 argument_list|,
@@ -2840,7 +2840,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 name|enabled
 operator|=
@@ -2858,7 +2858,7 @@ argument_list|)
 operator|->
 name|name
 expr_stmt|;
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_COLOR_DISPLAY_GET_CLASS
 argument_list|(
@@ -2894,7 +2894,7 @@ name|enabled
 argument_list|,
 name|DEST_COLUMN_ICON
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|DEST_COLUMN_NAME
 argument_list|,

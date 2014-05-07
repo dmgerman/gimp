@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b834f5e0103
+DECL|enum|__anon2bf3faec0103
 block|{
 DECL|enumerator|RESPONSE_PREVIOUS
 name|RESPONSE_PREVIOUS
@@ -511,7 +511,7 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|,
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GTK_STOCK_GO_BACK
 argument_list|,
@@ -543,7 +543,7 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|,
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GTK_STOCK_GO_FORWARD
 argument_list|,
@@ -725,7 +725,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GIMP_STOCK_INFO
 argument_list|,

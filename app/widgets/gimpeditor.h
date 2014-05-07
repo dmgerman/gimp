@@ -232,7 +232,7 @@ end_function_decl
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_editor_add_stock_box
+name|gimp_editor_add_icon_box
 parameter_list|(
 name|GimpEditor
 modifier|*
@@ -244,7 +244,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_prefix
+name|icon_prefix
 parameter_list|,
 name|GCallback
 name|callback

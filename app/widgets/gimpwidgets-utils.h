@@ -63,7 +63,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_table_attach_stock
+name|gimp_table_attach_icon
 parameter_list|(
 name|GtkTable
 modifier|*
@@ -75,7 +75,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -143,7 +143,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 name|GtkIconSize
 name|max_size
@@ -411,7 +411,7 @@ begin_function_decl
 specifier|const
 name|gchar
 modifier|*
-name|gimp_get_message_stock_id
+name|gimp_get_message_icon_name
 parameter_list|(
 name|GimpMessageSeverity
 name|severity

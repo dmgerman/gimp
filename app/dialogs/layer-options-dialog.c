@@ -138,7 +138,7 @@ end_comment
 begin_function
 name|LayerOptionsDialog
 modifier|*
-DECL|function|layer_options_dialog_new (GimpImage * image,GimpLayer * layer,GimpContext * context,GtkWidget * parent,const gchar * layer_name,GimpFillType layer_fill_type,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * desc,const gchar * help_id)
+DECL|function|layer_options_dialog_new (GimpImage * image,GimpLayer * layer,GimpContext * context,GtkWidget * parent,const gchar * layer_name,GimpFillType layer_fill_type,const gchar * title,const gchar * role,const gchar * icon_name,const gchar * desc,const gchar * help_id)
 name|layer_options_dialog_new
 parameter_list|(
 name|GimpImage
@@ -178,7 +178,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -335,7 +335,7 @@ name|title
 argument_list|,
 name|role
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|desc
 argument_list|,

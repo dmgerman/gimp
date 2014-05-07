@@ -3404,13 +3404,13 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|prefs_button_add (const gchar * stock_id,const gchar * label,GtkBox * box)
+DECL|function|prefs_button_add (const gchar * icon_name,const gchar * label,GtkBox * box)
 name|prefs_button_add
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -3428,9 +3428,9 @@ name|button
 decl_stmt|;
 name|button
 operator|=
-name|gimp_stock_button_new
+name|gimp_icon_button_new
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|,
 name|label
 argument_list|)
@@ -3537,7 +3537,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|prefs_check_button_add_with_icon (GObject * config,const gchar * property_name,const gchar * label,const gchar * stock_id,GtkBox * vbox,GtkSizeGroup * group)
+DECL|function|prefs_check_button_add_with_icon (GObject * config,const gchar * property_name,const gchar * label,const gchar * icon_name,GtkBox * vbox,GtkSizeGroup * group)
 name|prefs_check_button_add_with_icon
 parameter_list|(
 name|GObject
@@ -3557,7 +3557,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 name|GtkBox
 modifier|*
@@ -3628,9 +3628,9 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -6999,7 +6999,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|icon
 argument_list|,
@@ -8850,7 +8850,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2883efe10108
+DECL|struct|__anon2887fc8f0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10111,7 +10111,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2883efe10208
+DECL|struct|__anon2887fc8f0208
 block|{
 DECL|member|label
 specifier|const
@@ -11338,7 +11338,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2883efe10308
+DECL|struct|__anon2887fc8f0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11493,7 +11493,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2883efe10408
+DECL|struct|__anon2887fc8f0408
 block|{
 DECL|member|tree_label
 specifier|const

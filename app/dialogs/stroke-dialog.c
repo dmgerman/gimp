@@ -149,7 +149,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|stroke_dialog_new (GimpItem * item,GimpContext * context,const gchar * title,const gchar * stock_id,const gchar * help_id,GtkWidget * parent)
+DECL|function|stroke_dialog_new (GimpItem * item,GimpContext * context,const gchar * title,const gchar * icon_name,const gchar * help_id,GtkWidget * parent)
 name|stroke_dialog_new
 parameter_list|(
 name|GimpItem
@@ -168,7 +168,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -242,7 +242,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|stock_id
+name|icon_name
 operator|!=
 name|NULL
 argument_list|,
@@ -340,7 +340,7 @@ name|title
 argument_list|,
 literal|"gimp-stroke-options"
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|_
 argument_list|(
@@ -361,7 +361,7 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a4c4fd0103
+DECL|enum|__anon2b0751940103
 block|{
 DECL|enumerator|ALIGN_BUTTON_CLICKED
 name|ALIGN_BUTTON_CLICKED
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a4c4fd0203
+DECL|enum|__anon2b0751940203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -603,7 +603,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 init|=
 name|NULL
 decl_stmt|;
@@ -615,7 +615,7 @@ block|{
 case|case
 name|GIMP_ALIGN_LEFT
 case|:
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_GRAVITY_WEST
 expr_stmt|;
@@ -623,7 +623,7 @@ break|break;
 case|case
 name|GIMP_ALIGN_HCENTER
 case|:
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_HCENTER
 expr_stmt|;
@@ -631,7 +631,7 @@ break|break;
 case|case
 name|GIMP_ALIGN_RIGHT
 case|:
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_GRAVITY_EAST
 expr_stmt|;
@@ -639,7 +639,7 @@ break|break;
 case|case
 name|GIMP_ALIGN_TOP
 case|:
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_GRAVITY_NORTH
 expr_stmt|;
@@ -647,7 +647,7 @@ break|break;
 case|case
 name|GIMP_ALIGN_VCENTER
 case|:
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_VCENTER
 expr_stmt|;
@@ -655,7 +655,7 @@ break|break;
 case|case
 name|GIMP_ALIGN_BOTTOM
 case|:
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_GRAVITY_SOUTH
 expr_stmt|;
@@ -663,7 +663,7 @@ break|break;
 case|case
 name|GIMP_ARRANGE_LEFT
 case|:
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_GRAVITY_WEST
 expr_stmt|;
@@ -671,7 +671,7 @@ break|break;
 case|case
 name|GIMP_ARRANGE_HCENTER
 case|:
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_HCENTER
 expr_stmt|;
@@ -679,7 +679,7 @@ break|break;
 case|case
 name|GIMP_ARRANGE_RIGHT
 case|:
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_GRAVITY_EAST
 expr_stmt|;
@@ -687,7 +687,7 @@ break|break;
 case|case
 name|GIMP_ARRANGE_TOP
 case|:
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_GRAVITY_NORTH
 expr_stmt|;
@@ -695,7 +695,7 @@ break|break;
 case|case
 name|GIMP_ARRANGE_VCENTER
 case|:
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_VCENTER
 expr_stmt|;
@@ -703,7 +703,7 @@ break|break;
 case|case
 name|GIMP_ARRANGE_BOTTOM
 case|:
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_GRAVITY_SOUTH
 expr_stmt|;
@@ -711,7 +711,7 @@ break|break;
 case|case
 name|GIMP_ARRANGE_HFILL
 case|:
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_HFILL
 expr_stmt|;
@@ -719,7 +719,7 @@ break|break;
 case|case
 name|GIMP_ARRANGE_VFILL
 case|:
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_VFILL
 expr_stmt|;
@@ -751,9 +751,9 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

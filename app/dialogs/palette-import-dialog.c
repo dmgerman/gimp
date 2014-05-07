@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29592dc30103
+DECL|enum|__anon2ac3fbdf0103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29592dc30208
+DECL|struct|__anon2ac3fbdf0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -681,7 +681,7 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|,
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GTK_STOCK_CONVERT
 argument_list|,

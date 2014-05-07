@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e12a510108
+DECL|struct|__anon2b71edae0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -583,7 +583,7 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|,
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GIMP_STOCK_CONVERT_INDEXED
 argument_list|,

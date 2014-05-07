@@ -123,7 +123,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2754e9090103
+DECL|enum|__anon2b091e210103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1016,7 +1016,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_color_dialog_new (GimpViewable * viewable,GimpContext * context,const gchar * title,const gchar * stock_id,const gchar * desc,GtkWidget * parent,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const GimpRGB * color,gboolean wants_updates,gboolean show_alpha)
+DECL|function|gimp_color_dialog_new (GimpViewable * viewable,GimpContext * context,const gchar * title,const gchar * icon_name,const gchar * desc,GtkWidget * parent,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const GimpRGB * color,gboolean wants_updates,gboolean show_alpha)
 name|gimp_color_dialog_new
 parameter_list|(
 name|GimpViewable
@@ -1035,7 +1035,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -1190,9 +1190,9 @@ literal|"help-id"
 argument_list|,
 name|GIMP_HELP_COLOR_DIALOG
 argument_list|,
-literal|"stock-id"
+literal|"icon_name"
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 literal|"description"
 argument_list|,

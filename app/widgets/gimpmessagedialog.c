@@ -89,7 +89,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_message_dialog_new (const gchar * title,const gchar * stock_id,GtkWidget * parent,GtkDialogFlags flags,GimpHelpFunc help_func,const gchar * help_id,...)
+DECL|function|gimp_message_dialog_new (const gchar * title,const gchar * icon_name,GtkWidget * parent,GtkDialogFlags flags,GimpHelpFunc help_func,const gchar * help_id,...)
 name|gimp_message_dialog_new
 parameter_list|(
 specifier|const
@@ -100,7 +100,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -288,9 +288,9 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_MESSAGE_BOX
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|NULL
 argument_list|)

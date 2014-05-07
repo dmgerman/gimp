@@ -109,7 +109,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2b199b0103
+DECL|enum|__anon27920f280103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2072,8 +2072,8 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_editor_add_stock_box (GimpEditor * editor,GType enum_type,const gchar * icon_prefix,GCallback callback,gpointer callback_data)
-name|gimp_editor_add_stock_box
+DECL|function|gimp_editor_add_icon_box (GimpEditor * editor,GType enum_type,const gchar * icon_prefix,GCallback callback,gpointer callback_data)
+name|gimp_editor_add_icon_box
 parameter_list|(
 name|GimpEditor
 modifier|*
@@ -2284,7 +2284,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2b199b0208
+DECL|struct|__anon27920f280208
 block|{
 DECL|member|mod_mask
 name|GdkModifierType
@@ -3194,44 +3194,6 @@ name|gchar
 modifier|*
 name|icon_name
 decl_stmt|;
-comment|/* FIXME icon_name */
-if|if
-condition|(
-name|gtk_image_get_storage_type
-argument_list|(
-name|GTK_IMAGE
-argument_list|(
-name|child
-argument_list|)
-argument_list|)
-operator|==
-name|GTK_IMAGE_STOCK
-condition|)
-block|{
-name|gtk_image_get_stock
-argument_list|(
-name|GTK_IMAGE
-argument_list|(
-name|child
-argument_list|)
-argument_list|,
-operator|&
-name|icon_name
-argument_list|,
-operator|&
-name|old_size
-argument_list|)
-expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"EEEEK: %s used in GimpEditor\n"
-argument_list|,
-name|icon_name
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
 name|gtk_image_get_icon_name
 argument_list|(
 name|GTK_IMAGE
@@ -3246,7 +3208,6 @@ operator|&
 name|old_size
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|button_icon_size

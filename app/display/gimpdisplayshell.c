@@ -360,7 +360,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon289410800103
+DECL|enum|__anon28a7d2780103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -394,7 +394,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon289410800203
+DECL|enum|__anon28a7d2780203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2001,7 +2001,7 @@ argument_list|()
 expr_stmt|;
 name|gtk_image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GIMP_STOCK_MENU_RIGHT
 argument_list|,
@@ -2577,7 +2577,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GIMP_STOCK_ZOOM_FOLLOW_WINDOW
 argument_list|,
@@ -2671,7 +2671,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GIMP_STOCK_QUICK_MASK_OFF
 argument_list|,
@@ -2778,7 +2778,7 @@ argument_list|()
 expr_stmt|;
 name|gtk_image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GIMP_STOCK_NAVIGATION
 argument_list|,

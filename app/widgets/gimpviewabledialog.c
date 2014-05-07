@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acea5ba0103
+DECL|enum|__anon297eb2c10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,8 +88,8 @@ block|,
 DECL|enumerator|PROP_CONTEXT
 name|PROP_CONTEXT
 block|,
-DECL|enumerator|PROP_STOCK_ID
-name|PROP_STOCK_ID
+DECL|enumerator|PROP_ICON_NAME
+name|PROP_ICON_NAME
 block|,
 DECL|enumerator|PROP_DESC
 name|PROP_DESC
@@ -285,11 +285,11 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_STOCK_ID
+name|PROP_ICON_NAME
 argument_list|,
 name|g_param_spec_string
 argument_list|(
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
 name|NULL
 argument_list|,
@@ -781,9 +781,9 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_STOCK_ID
+name|PROP_ICON_NAME
 case|:
-name|gtk_image_set_from_stock
+name|gtk_image_set_from_icon_name
 argument_list|(
 name|GTK_IMAGE
 argument_list|(
@@ -926,7 +926,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_viewable_dialog_new (GimpViewable * viewable,GimpContext * context,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * desc,GtkWidget * parent,GimpHelpFunc help_func,const gchar * help_id,...)
+DECL|function|gimp_viewable_dialog_new (GimpViewable * viewable,GimpContext * context,const gchar * title,const gchar * role,const gchar * icon_name,const gchar * desc,GtkWidget * parent,GimpHelpFunc help_func,const gchar * help_id,...)
 name|gimp_viewable_dialog_new
 parameter_list|(
 name|GimpViewable
@@ -950,7 +950,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -1079,9 +1079,9 @@ literal|"help-id"
 argument_list|,
 name|help_id
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 literal|"description"
 argument_list|,

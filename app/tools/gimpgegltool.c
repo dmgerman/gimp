@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2901d7cf0103
+DECL|enum|__anon2c51c80f0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -97,8 +97,8 @@ block|,
 DECL|enumerator|COLUMN_LABEL
 name|COLUMN_LABEL
 block|,
-DECL|enumerator|COLUMN_STOCK_ID
-name|COLUMN_STOCK_ID
+DECL|enumerator|COLUMN_ICON_NAME
+name|COLUMN_ICON_NAME
 block|,
 DECL|enumerator|N_COLUMNS
 name|N_COLUMNS
@@ -1020,7 +1020,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 specifier|const
 name|gchar
@@ -1050,7 +1050,7 @@ argument_list|(
 literal|"gegl:"
 argument_list|)
 expr_stmt|;
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_GEGL
 expr_stmt|;
@@ -1063,7 +1063,7 @@ name|opclass
 operator|->
 name|name
 expr_stmt|;
-name|stock_id
+name|icon_name
 operator|=
 name|NULL
 expr_stmt|;
@@ -1087,9 +1087,9 @@ name|COLUMN_LABEL
 argument_list|,
 name|label
 argument_list|,
-name|COLUMN_STOCK_ID
+name|COLUMN_ICON_NAME
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 operator|-
 literal|1
@@ -1163,9 +1163,9 @@ argument_list|)
 argument_list|,
 name|cell
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
-name|COLUMN_STOCK_ID
+name|COLUMN_ICON_NAME
 argument_list|)
 expr_stmt|;
 name|cell

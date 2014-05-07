@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3477220103
+DECL|enum|__anon2ac74c720103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -425,19 +425,19 @@ if|if
 condition|(
 name|button
 operator|->
-name|dialog_stock_id
+name|dialog_icon_name
 condition|)
 block|{
 name|g_free
 argument_list|(
 name|button
 operator|->
-name|dialog_stock_id
+name|dialog_icon_name
 argument_list|)
 expr_stmt|;
 name|button
 operator|->
-name|dialog_stock_id
+name|dialog_icon_name
 operator|=
 name|NULL
 expr_stmt|;
@@ -879,7 +879,7 @@ name|dialog_identifier
 argument_list|,
 name|viewable_button
 operator|->
-name|dialog_stock_id
+name|dialog_icon_name
 argument_list|,
 name|viewable_button
 operator|->
@@ -975,7 +975,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_viewable_button_new (GimpContainer * container,GimpContext * context,GimpViewType view_type,gint button_view_size,gint view_size,gint view_border_width,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const gchar * dialog_stock_id,const gchar * dialog_tooltip)
+DECL|function|gimp_viewable_button_new (GimpContainer * container,GimpContext * context,GimpViewType view_type,gint button_view_size,gint view_size,gint view_border_width,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const gchar * dialog_icon_name,const gchar * dialog_tooltip)
 name|gimp_viewable_button_new
 parameter_list|(
 name|GimpContainer
@@ -1010,7 +1010,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|dialog_stock_id
+name|dialog_icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -1103,7 +1103,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|dialog_stock_id
+name|dialog_icon_name
 operator|!=
 name|NULL
 argument_list|,
@@ -1183,11 +1183,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|->
-name|dialog_stock_id
+name|dialog_icon_name
 operator|=
 name|g_strdup
 argument_list|(
-name|dialog_stock_id
+name|dialog_icon_name
 argument_list|)
 expr_stmt|;
 name|button

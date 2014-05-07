@@ -183,7 +183,7 @@ comment|/* name             */
 value|, \     NULL
 comment|/* blurb            */
 value|, \     NULL
-comment|/* stock_id         */
+comment|/* icon_name        */
 value|, \     NULL
 comment|/* help_id          */
 value|, \     NULL
@@ -229,7 +229,7 @@ comment|/* name             */
 value|, \     NULL
 comment|/* blurb            */
 value|, \     NULL
-comment|/* stock_id         */
+comment|/* icon_name        */
 value|, \     NULL
 comment|/* help_id          */
 value|, \     NULL
@@ -279,7 +279,7 @@ comment|/* name             */
 value|, \     NULL
 comment|/* blurb            */
 value|, \     NULL
-comment|/* stock_id         */
+comment|/* icon_name        */
 value|, \     NULL
 comment|/* help_id          */
 value|, \     new_func
@@ -306,7 +306,7 @@ value|}
 end_define
 
 begin_define
-DECL|macro|DOCKABLE (id,name,blurb,stock_id,help_id,new_func,view_size,singleton)
+DECL|macro|DOCKABLE (id,name,blurb,icon_name,help_id,new_func,view_size,singleton)
 define|#
 directive|define
 name|DOCKABLE
@@ -317,7 +317,7 @@ name|name
 parameter_list|,
 name|blurb
 parameter_list|,
-name|stock_id
+name|icon_name
 parameter_list|,
 name|help_id
 parameter_list|,
@@ -334,8 +334,8 @@ value|, \     name
 comment|/* name             */
 value|, \     blurb
 comment|/* blurb            */
-value|, \     stock_id
-comment|/* stock_id         */
+value|, \     icon_name
+comment|/* icon_name        */
 value|, \     help_id
 comment|/* help_id          */
 value|, \     new_func
@@ -379,7 +379,7 @@ comment|/* name             */
 value|, \     NULL
 comment|/* blurb            */
 value|, \     NULL
-comment|/* stock_id         */
+comment|/* icon_name        */
 value|, \     NULL
 comment|/* help_id          */
 value|, \     new_func
@@ -423,7 +423,7 @@ comment|/* name             */
 value|, \     NULL
 comment|/* blurb            */
 value|, \     NULL
-comment|/* stock_id         */
+comment|/* icon_name        */
 value|, \     NULL
 comment|/* help_id          */
 value|, \     new_func
@@ -450,7 +450,7 @@ value|}
 end_define
 
 begin_define
-DECL|macro|LISTGRID (id,name,blurb,stock_id,help_id,view_size)
+DECL|macro|LISTGRID (id,name,blurb,icon_name,help_id,view_size)
 define|#
 directive|define
 name|LISTGRID
@@ -461,7 +461,7 @@ name|name
 parameter_list|,
 name|blurb
 parameter_list|,
-name|stock_id
+name|icon_name
 parameter_list|,
 name|help_id
 parameter_list|,
@@ -474,8 +474,8 @@ value|,  \     name
 comment|/* name             */
 value|,  \     blurb
 comment|/* blurb            */
-value|,  \     stock_id
-comment|/* stock_id         */
+value|,  \     icon_name
+comment|/* icon_name        */
 value|,  \     help_id
 comment|/* help_id          */
 value|,  \     dialogs_##id##_list_view_new
@@ -504,8 +504,8 @@ value|,  \     name
 comment|/* name             */
 value|,  \     blurb
 comment|/* blurb            */
-value|,  \     stock_id
-comment|/* stock_id         */
+value|,  \     icon_name
+comment|/* icon_name        */
 value|,  \     help_id
 comment|/* help_id          */
 value|,  \     dialogs_##id##_grid_view_new
@@ -532,7 +532,7 @@ value|}
 end_define
 
 begin_define
-DECL|macro|LIST (id,new_func,name,blurb,stock_id,help_id,view_size)
+DECL|macro|LIST (id,new_func,name,blurb,icon_name,help_id,view_size)
 define|#
 directive|define
 name|LIST
@@ -545,7 +545,7 @@ name|name
 parameter_list|,
 name|blurb
 parameter_list|,
-name|stock_id
+name|icon_name
 parameter_list|,
 name|help_id
 parameter_list|,
@@ -558,8 +558,8 @@ value|, \     name
 comment|/* name             */
 value|, \     blurb
 comment|/* blurb            */
-value|, \     stock_id
-comment|/* stock_id         */
+value|, \     icon_name
+comment|/* icon_name         */
 value|, \     help_id
 comment|/* help_id          */
 value|, \     dialogs_##new_func##_list_view_new
@@ -2129,7 +2129,7 @@ index|[
 name|i
 index|]
 operator|.
-name|stock_id
+name|icon_name
 argument_list|,
 name|entries
 index|[

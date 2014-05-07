@@ -1186,7 +1186,7 @@ block|{
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 specifier|const
 name|gchar
@@ -1203,7 +1203,7 @@ block|{
 case|case
 name|PICK_LOW_INPUT
 case|:
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_COLOR_PICKER_BLACK
 expr_stmt|;
@@ -1218,7 +1218,7 @@ break|break;
 case|case
 name|PICK_GAMMA
 case|:
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_COLOR_PICKER_GRAY
 expr_stmt|;
@@ -1233,7 +1233,7 @@ break|break;
 case|case
 name|PICK_HIGH_INPUT
 case|:
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_COLOR_PICKER_WHITE
 expr_stmt|;
@@ -1263,7 +1263,7 @@ argument_list|(
 name|value
 argument_list|)
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|help
 argument_list|)
@@ -3070,7 +3070,7 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gimp_stock_button_new
+name|gimp_icon_button_new
 argument_list|(
 name|GIMP_STOCK_TOOL_CURVES
 argument_list|,

@@ -380,11 +380,11 @@ modifier|*
 name|delete_action
 decl_stmt|;
 comment|/*  lock content button appearance  */
-DECL|member|lock_content_stock_id
+DECL|member|lock_content_icon_name
 specifier|const
 name|gchar
 modifier|*
-name|lock_content_stock_id
+name|lock_content_icon_name
 decl_stmt|;
 DECL|member|lock_content_tooltip
 specifier|const
@@ -399,11 +399,11 @@ modifier|*
 name|lock_content_help_id
 decl_stmt|;
 comment|/* lock position (translation and transformation) button appearance */
-DECL|member|lock_position_stock_id
+DECL|member|lock_position_icon_name
 specifier|const
 name|gchar
 modifier|*
-name|lock_position_stock_id
+name|lock_position_icon_name
 decl_stmt|;
 DECL|member|lock_position_tooltip
 specifier|const

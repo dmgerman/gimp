@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297db6650103
+DECL|enum|__anon29328e720103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -104,7 +104,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297db6650203
+DECL|enum|__anon29328e720203
 block|{
 DECL|enumerator|INFO_AUTHOR
 name|INFO_AUTHOR
@@ -130,7 +130,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297db6650308
+DECL|struct|__anon29328e720308
 block|{
 DECL|member|gimp
 name|Gimp
@@ -865,7 +865,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GIMP_STOCK_WARNING
 argument_list|,

@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c0cf650103
+DECL|enum|__anon2abf9ed90103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1189,7 +1189,7 @@ name|NULL
 expr_stmt|;
 name|klass
 operator|->
-name|lock_content_stock_id
+name|lock_content_icon_name
 operator|=
 name|NULL
 expr_stmt|;
@@ -1207,7 +1207,7 @@ name|NULL
 expr_stmt|;
 name|klass
 operator|->
-name|lock_position_stock_id
+name|lock_position_icon_name
 operator|=
 name|NULL
 expr_stmt|;
@@ -2142,11 +2142,11 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|item_view_class
 operator|->
-name|lock_content_stock_id
+name|lock_content_icon_name
 argument_list|,
 name|icon_size
 argument_list|)
@@ -2262,11 +2262,11 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|item_view_class
 operator|->
-name|lock_position_stock_id
+name|lock_position_icon_name
 argument_list|,
 name|icon_size
 argument_list|)
@@ -2601,11 +2601,12 @@ block|{
 name|GtkIconSize
 name|old_size
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
-name|gtk_image_get_stock
+name|gtk_image_get_icon_name
 argument_list|(
 name|GTK_IMAGE
 argument_list|(
@@ -2613,7 +2614,7 @@ name|image
 argument_list|)
 argument_list|,
 operator|&
-name|stock_id
+name|icon_name
 argument_list|,
 operator|&
 name|old_size
@@ -2625,14 +2626,14 @@ name|button_icon_size
 operator|!=
 name|old_size
 condition|)
-name|gtk_image_set_from_stock
+name|gtk_image_set_from_icon_name
 argument_list|(
 name|GTK_IMAGE
 argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|button_icon_size
 argument_list|)

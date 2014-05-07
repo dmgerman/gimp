@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3a14f20103
+DECL|enum|__anon276787aa0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2399,7 +2399,7 @@ argument_list|,
 literal|5
 argument_list|)
 expr_stmt|;
-name|gimp_table_attach_stock
+name|gimp_table_attach_icon
 argument_list|(
 name|GTK_TABLE
 argument_list|(
@@ -2443,7 +2443,7 @@ argument_list|,
 literal|5
 argument_list|)
 expr_stmt|;
-name|gimp_table_attach_stock
+name|gimp_table_attach_icon
 argument_list|(
 name|GTK_TABLE
 argument_list|(
@@ -2487,7 +2487,7 @@ argument_list|,
 literal|5
 argument_list|)
 expr_stmt|;
-name|gimp_table_attach_stock
+name|gimp_table_attach_icon
 argument_list|(
 name|GTK_TABLE
 argument_list|(

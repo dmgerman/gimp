@@ -101,10 +101,10 @@ DECL|member|parent_instance
 name|GtkBox
 name|parent_instance
 decl_stmt|;
-DECL|member|stock_id
+DECL|member|icon_name
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 DECL|member|repeat
 name|gint
@@ -158,7 +158,7 @@ parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|)
 function_decl|;
 end_function_decl

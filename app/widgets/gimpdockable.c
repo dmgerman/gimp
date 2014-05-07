@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a06ca8b0103
+DECL|enum|__anon2ad7527c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -163,10 +163,10 @@ name|gchar
 modifier|*
 name|blurb
 decl_stmt|;
-DECL|member|stock_id
+DECL|member|icon_name
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 DECL|member|help_id
 name|gchar
@@ -904,7 +904,7 @@ name|dockable
 operator|->
 name|p
 operator|->
-name|stock_id
+name|icon_name
 condition|)
 block|{
 name|g_free
@@ -913,14 +913,14 @@ name|dockable
 operator|->
 name|p
 operator|->
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 name|dockable
 operator|->
 name|p
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|NULL
 expr_stmt|;
@@ -2048,7 +2048,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dockable_new (const gchar * name,const gchar * blurb,const gchar * stock_id,const gchar * help_id)
+DECL|function|gimp_dockable_new (const gchar * name,const gchar * blurb,const gchar * icon_name,const gchar * help_id)
 name|gimp_dockable_new
 parameter_list|(
 specifier|const
@@ -2064,7 +2064,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -2087,7 +2087,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|stock_id
+name|icon_name
 operator|!=
 name|NULL
 argument_list|,
@@ -2127,11 +2127,11 @@ name|dockable
 operator|->
 name|p
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|g_strdup
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 name|dockable
@@ -2436,8 +2436,8 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_dockable_get_stock_id (GimpDockable * dockable)
-name|gimp_dockable_get_stock_id
+DECL|function|gimp_dockable_get_icon_name (GimpDockable * dockable)
+name|gimp_dockable_get_icon_name
 parameter_list|(
 name|GimpDockable
 modifier|*
@@ -2459,7 +2459,7 @@ name|dockable
 operator|->
 name|p
 operator|->
-name|stock_id
+name|icon_name
 return|;
 block|}
 end_function
@@ -2478,41 +2478,16 @@ name|GtkIconSize
 name|size
 parameter_list|)
 block|{
-name|GdkScreen
-modifier|*
-name|screen
-init|=
-name|gtk_widget_get_screen
+name|g_return_val_if_fail
 argument_list|(
-name|GTK_WIDGET
+name|GIMP_IS_DOCKABLE
 argument_list|(
 name|dockable
 argument_list|)
-argument_list|)
-decl_stmt|;
-name|GtkIconTheme
-modifier|*
-name|theme
-init|=
-name|gtk_icon_theme_get_for_screen
-argument_list|(
-name|screen
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|gtk_icon_theme_has_icon
-argument_list|(
-name|theme
 argument_list|,
-name|dockable
-operator|->
-name|p
-operator|->
-name|stock_id
+name|NULL
 argument_list|)
-condition|)
-block|{
+expr_stmt|;
 return|return
 name|gtk_image_new_from_icon_name
 argument_list|(
@@ -2520,20 +2495,7 @@ name|dockable
 operator|->
 name|p
 operator|->
-name|stock_id
-argument_list|,
-name|size
-argument_list|)
-return|;
-block|}
-return|return
-name|gtk_image_new_from_stock
-argument_list|(
-name|dockable
-operator|->
-name|p
-operator|->
-name|stock_id
+name|icon_name
 argument_list|,
 name|size
 argument_list|)

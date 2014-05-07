@@ -133,10 +133,10 @@ name|gchar
 modifier|*
 name|dialog_identifier
 decl_stmt|;
-DECL|member|dialog_stock_id
+DECL|member|dialog_icon_name
 name|gchar
 modifier|*
-name|dialog_stock_id
+name|dialog_icon_name
 decl_stmt|;
 DECL|member|dialog_tooltip
 name|gchar
@@ -212,7 +212,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|dialog_stock_id
+name|dialog_icon_name
 parameter_list|,
 specifier|const
 name|gchar

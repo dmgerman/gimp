@@ -1259,7 +1259,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_file_dialog_new (Gimp * gimp,GimpFileChooserAction action,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * help_id)
+DECL|function|gimp_file_dialog_new (Gimp * gimp,GimpFileChooserAction action,const gchar * title,const gchar * role,const gchar * icon_name,const gchar * help_id)
 name|gimp_file_dialog_new
 parameter_list|(
 name|Gimp
@@ -1282,7 +1282,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -1362,7 +1362,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|stock_id
+name|icon_name
 operator|!=
 name|NULL
 argument_list|,
@@ -1558,7 +1558,7 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

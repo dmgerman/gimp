@@ -1166,7 +1166,7 @@ name|scale
 expr_stmt|;
 name|button
 operator|=
-name|gimp_stock_button_new
+name|gimp_icon_button_new
 argument_list|(
 name|GIMP_STOCK_TOOL_LEVELS
 argument_list|,

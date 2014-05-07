@@ -179,7 +179,7 @@ argument_list|,
 specifier|const
 name|gchar
 operator|*
-name|stock_id
+name|icon_name
 argument_list|,
 specifier|const
 name|gchar

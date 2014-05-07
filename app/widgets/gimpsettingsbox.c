@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0cf9300103
+DECL|enum|__anon296ae8c60103
 block|{
 DECL|enumerator|FILE_DIALOG_SETUP
 name|FILE_DIALOG_SETUP
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0cf9300203
+DECL|enum|__anon296ae8c60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -358,7 +358,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -1234,7 +1234,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GTK_STOCK_ADD
 argument_list|,
@@ -1327,7 +1327,7 @@ argument_list|)
 expr_stmt|;
 name|arrow
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GIMP_STOCK_MENU_LEFT
 argument_list|,
@@ -2205,7 +2205,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_settings_box_menu_item_add (GimpSettingsBox * box,const gchar * stock_id,const gchar * label,GCallback callback)
+DECL|function|gimp_settings_box_menu_item_add (GimpSettingsBox * box,const gchar * icon_name,const gchar * label,GCallback callback)
 name|gimp_settings_box_menu_item_add
 parameter_list|(
 name|GimpSettingsBox
@@ -2215,7 +2215,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -2257,9 +2257,9 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)

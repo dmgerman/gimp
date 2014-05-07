@@ -166,7 +166,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|dialog_stock_id
+name|dialog_icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -1257,7 +1257,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GIMP_STOCK_FLIP_HORIZONTAL
 argument_list|,
@@ -2074,7 +2074,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_viewable_box_new (GimpContainer * container,GimpContext * context,const gchar * label,gint spacing,GimpViewType view_type,GimpViewType button_view_size,GimpViewSize view_size,const gchar * dialog_identifier,const gchar * dialog_stock_id,const gchar * dialog_tooltip,const gchar * editor_id)
+DECL|function|gimp_viewable_box_new (GimpContainer * container,GimpContext * context,const gchar * label,gint spacing,GimpViewType view_type,GimpViewType button_view_size,GimpViewSize view_size,const gchar * dialog_identifier,const gchar * dialog_icon_name,const gchar * dialog_tooltip,const gchar * editor_id)
 name|gimp_viewable_box_new
 parameter_list|(
 name|GimpContainer
@@ -2110,7 +2110,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|dialog_stock_id
+name|dialog_icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -2179,7 +2179,7 @@ argument_list|()
 argument_list|,
 name|dialog_identifier
 argument_list|,
-name|dialog_stock_id
+name|dialog_icon_name
 argument_list|,
 name|dialog_tooltip
 argument_list|)
@@ -2471,7 +2471,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GIMP_STOCK_EDIT
 argument_list|,

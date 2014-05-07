@@ -61,13 +61,13 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d59b740103
+DECL|enum|__anon27a474350103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
 block|,
-DECL|enumerator|PROP_STOCK_ID
-name|PROP_STOCK_ID
+DECL|enumerator|PROP_ICON_NAME
+name|PROP_ICON_NAME
 block|}
 enum|;
 end_enum
@@ -381,11 +381,11 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_STOCK_ID
+name|PROP_ICON_NAME
 argument_list|,
 name|g_param_spec_string
 argument_list|(
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
 name|NULL
 argument_list|,
@@ -601,7 +601,7 @@ if|if
 condition|(
 name|box
 operator|->
-name|stock_id
+name|icon_name
 condition|)
 block|{
 name|gtk_widget_push_composite_child
@@ -611,11 +611,11 @@ name|box
 operator|->
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|box
 operator|->
-name|stock_id
+name|icon_name
 argument_list|,
 name|GTK_ICON_SIZE_DIALOG
 argument_list|)
@@ -738,19 +738,19 @@ if|if
 condition|(
 name|box
 operator|->
-name|stock_id
+name|icon_name
 condition|)
 block|{
 name|g_free
 argument_list|(
 name|box
 operator|->
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 name|box
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|NULL
 expr_stmt|;
@@ -806,11 +806,11 @@ name|property_id
 condition|)
 block|{
 case|case
-name|PROP_STOCK_ID
+name|PROP_ICON_NAME
 case|:
 name|box
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|g_value_dup_string
 argument_list|(
@@ -870,7 +870,7 @@ name|property_id
 condition|)
 block|{
 case|case
-name|PROP_STOCK_ID
+name|PROP_ICON_NAME
 case|:
 name|g_value_set_string
 argument_list|(
@@ -878,7 +878,7 @@ name|value
 argument_list|,
 name|box
 operator|->
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1546,13 +1546,13 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_message_box_new (const gchar * stock_id)
+DECL|function|gimp_message_box_new (const gchar * icon_name)
 name|gimp_message_box_new
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|)
 block|{
 return|return
@@ -1560,9 +1560,9 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_MESSAGE_BOX
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|NULL
 argument_list|)

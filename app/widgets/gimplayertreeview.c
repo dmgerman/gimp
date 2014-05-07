@@ -1515,7 +1515,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GIMP_STOCK_TRANSPARENCY
 argument_list|,
@@ -2271,7 +2271,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296b06950108
+DECL|struct|__anon2959b4350108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2665,7 +2665,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296b06950208
+DECL|struct|__anon2959b4350208
 block|{
 DECL|member|mask_column
 name|gint

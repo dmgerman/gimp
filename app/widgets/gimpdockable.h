@@ -168,7 +168,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -259,7 +259,7 @@ begin_function_decl
 specifier|const
 name|gchar
 modifier|*
-name|gimp_dockable_get_stock_id
+name|gimp_dockable_get_icon_name
 parameter_list|(
 name|GimpDockable
 modifier|*

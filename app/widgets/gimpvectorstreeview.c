@@ -438,7 +438,7 @@ literal|"vectors-delete"
 expr_stmt|;
 name|iv_class
 operator|->
-name|lock_content_stock_id
+name|lock_content_icon_name
 operator|=
 name|GIMP_STOCK_TOOL_PATH
 expr_stmt|;
@@ -459,7 +459,7 @@ name|GIMP_HELP_PATH_LOCK_STROKES
 expr_stmt|;
 name|iv_class
 operator|->
-name|lock_position_stock_id
+name|lock_position_icon_name
 operator|=
 name|GIMP_STOCK_TOOL_MOVE
 expr_stmt|;

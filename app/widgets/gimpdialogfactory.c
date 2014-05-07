@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b84ecc60103
+DECL|enum|__anon28c817b30103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -814,7 +814,7 @@ name|g_free
 argument_list|(
 name|entry
 operator|->
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1018,7 +1018,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dialog_factory_register_entry (GimpDialogFactory * factory,const gchar * identifier,const gchar * name,const gchar * blurb,const gchar * stock_id,const gchar * help_id,GimpDialogNewFunc new_func,GimpDialogRestoreFunc restore_func,gint view_size,gboolean singleton,gboolean session_managed,gboolean remember_size,gboolean remember_if_open,gboolean hideable,gboolean image_window,gboolean dockable)
+DECL|function|gimp_dialog_factory_register_entry (GimpDialogFactory * factory,const gchar * identifier,const gchar * name,const gchar * blurb,const gchar * icon_name,const gchar * help_id,GimpDialogNewFunc new_func,GimpDialogRestoreFunc restore_func,gint view_size,gboolean singleton,gboolean session_managed,gboolean remember_size,gboolean remember_if_open,gboolean hideable,gboolean image_window,gboolean dockable)
 name|gimp_dialog_factory_register_entry
 parameter_list|(
 name|GimpDialogFactory
@@ -1043,7 +1043,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -1136,11 +1136,11 @@ argument_list|)
 expr_stmt|;
 name|entry
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|g_strdup
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 name|entry
@@ -4398,7 +4398,7 @@ name|blurb
 argument_list|,
 name|entry
 operator|->
-name|stock_id
+name|icon_name
 argument_list|,
 name|entry
 operator|->

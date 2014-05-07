@@ -168,7 +168,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b771460103
+DECL|enum|__anon2a1fb6320103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -181,7 +181,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b771460203
+DECL|enum|__anon2a1fb6320203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -788,7 +788,7 @@ name|column
 argument_list|,
 name|cell
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
 name|COLUMN_ICON
 argument_list|,
@@ -1087,7 +1087,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GTK_STOCK_GO_FORWARD
 argument_list|,
@@ -1188,7 +1188,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GTK_STOCK_GO_BACK
 argument_list|,

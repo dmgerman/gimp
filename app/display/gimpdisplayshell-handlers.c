@@ -2498,7 +2498,7 @@ if|if
 condition|(
 name|quick_mask_state
 condition|)
-name|gtk_image_set_from_stock
+name|gtk_image_set_from_icon_name
 argument_list|(
 name|gtk_image
 argument_list|,
@@ -2508,7 +2508,7 @@ name|GTK_ICON_SIZE_MENU
 argument_list|)
 expr_stmt|;
 else|else
-name|gtk_image_set_from_stock
+name|gtk_image_set_from_icon_name
 argument_list|(
 name|gtk_image
 argument_list|,

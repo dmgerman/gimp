@@ -120,7 +120,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3eb4a10108
+DECL|struct|__anon299df0270108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -490,7 +490,7 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|,
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GIMP_STOCK_CONVERT_PRECISION
 argument_list|,

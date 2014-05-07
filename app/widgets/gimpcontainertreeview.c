@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6312850103
+DECL|enum|__anon27d854300103
 block|{
 DECL|enumerator|EDIT_NAME
 name|EDIT_NAME
@@ -3405,7 +3405,7 @@ control|)
 block|{
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 name|GtkIconSize
 name|icon_size
@@ -3416,17 +3416,17 @@ name|list
 operator|->
 name|data
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
 operator|&
-name|stock_id
+name|icon_name
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|stock_id
+name|icon_name
 condition|)
 block|{
 name|GtkStyle
@@ -3444,7 +3444,7 @@ name|gimp_get_icon_size
 argument_list|(
 name|tree_widget
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|,
@@ -3480,7 +3480,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 block|}

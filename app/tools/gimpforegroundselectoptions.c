@@ -93,7 +93,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d59d970103
+DECL|enum|__anon2b0431ef0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -973,7 +973,7 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gimp_stock_button_new
+name|gimp_icon_button_new
 argument_list|(
 name|GIMP_STOCK_RESET
 argument_list|,
@@ -990,7 +990,7 @@ argument_list|,
 name|GTK_RELIEF_NONE
 argument_list|)
 expr_stmt|;
-name|gtk_image_set_from_stock
+name|gtk_image_set_from_icon_name
 argument_list|(
 name|GTK_IMAGE
 argument_list|(

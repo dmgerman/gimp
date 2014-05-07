@@ -33,12 +33,12 @@ end_function_decl
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_stock_button_new
+name|gimp_icon_button_new
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar

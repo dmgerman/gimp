@@ -897,7 +897,7 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-name|gimp_get_message_stock_id
+name|gimp_get_message_icon_name
 argument_list|(
 name|severity
 argument_list|)
