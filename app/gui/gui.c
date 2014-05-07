@@ -1956,25 +1956,13 @@ name|message_handler
 operator|=
 name|GIMP_MESSAGE_BOX
 expr_stmt|;
-name|g_object_set
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|gtk_settings_get_default
-argument_list|()
-argument_list|)
-argument_list|,
-literal|"gtk-button-images"
-argument_list|,
-name|TRUE
-argument_list|,
-literal|"gtk-menu-images"
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+comment|/*  enable this to always have icons everywhere  */
+block|g_object_set (G_OBJECT (gtk_settings_get_default ()),                 "gtk-button-images", TRUE,                 "gtk-menu-images", TRUE,                 NULL);
+endif|#
+directive|endif
 if|if
 condition|(
 name|gui_config
