@@ -47,7 +47,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon296a3af90103
+DECL|enum|__anon2c0c77060103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -60,10 +60,13 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296a3af90203
+DECL|enum|__anon2c0c77060203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
+block|,
+DECL|enumerator|PROP_ICON_NAME
+name|PROP_ICON_NAME
 block|,
 DECL|enumerator|PROP_STOCK_ID
 name|PROP_STOCK_ID
@@ -396,6 +399,28 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
+name|PROP_ICON_NAME
+argument_list|,
+name|g_param_spec_string
+argument_list|(
+literal|"icon-name"
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_PARAM_READWRITE
+operator||
+name|G_PARAM_CONSTRUCT
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_class_install_property
+argument_list|(
+name|object_class
+argument_list|,
 name|PROP_STOCK_ID
 argument_list|,
 name|g_param_spec_string
@@ -568,6 +593,20 @@ name|param_id
 condition|)
 block|{
 case|case
+name|PROP_ICON_NAME
+case|:
+comment|/* FIXME icon name */
+name|g_value_set_string
+argument_list|(
+name|value
+argument_list|,
+name|toggle
+operator|->
+name|stock_id
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|PROP_STOCK_ID
 case|:
 name|g_value_set_string
@@ -645,6 +684,33 @@ condition|(
 name|param_id
 condition|)
 block|{
+case|case
+name|PROP_ICON_NAME
+case|:
+comment|/* FIXME icon name */
+if|if
+condition|(
+name|toggle
+operator|->
+name|stock_id
+condition|)
+name|g_free
+argument_list|(
+name|toggle
+operator|->
+name|stock_id
+argument_list|)
+expr_stmt|;
+name|toggle
+operator|->
+name|stock_id
+operator|=
+name|g_value_dup_string
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
 case|case
 name|PROP_STOCK_ID
 case|:
@@ -1669,6 +1735,15 @@ operator|->
 name|pixbuf
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|FALSE
+condition|)
+block|{
+comment|/* FIXME icon name */
+block|}
+else|else
+block|{
 name|toggle
 operator|->
 name|pixbuf
@@ -1688,6 +1763,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -1712,7 +1788,7 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_CELL_RENDERER_TOGGLE
 argument_list|,
-literal|"stock_id"
+literal|"stock-id"
 argument_list|,
 name|stock_id
 argument_list|,
