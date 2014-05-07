@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"themes/Default/images/gimp-stock-pixbufs.h"
+file|"icons/gimp-stock-pixbufs.h"
 end_include
 
 begin_include
@@ -2793,7 +2793,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c33e7de0108
+DECL|struct|__anon27c597ae0108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3677,7 +3677,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c33e7de0208
+DECL|struct|__anon27c597ae0208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4641,7 +4641,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c33e7de0308
+DECL|struct|__anon27c597ae0308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4744,7 +4744,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c33e7de0408
+DECL|struct|__anon27c597ae0408
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4895,7 +4895,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c33e7de0508
+DECL|struct|__anon27c597ae0508
 block|{
 DECL|member|stock_id
 specifier|const
@@ -5202,10 +5202,6 @@ name|g_build_filename
 argument_list|(
 name|gimp_data_directory
 argument_list|()
-argument_list|,
-literal|"themes"
-argument_list|,
-literal|"Default"
 argument_list|,
 literal|"icons"
 argument_list|,

@@ -90,12 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"themes/Default/images/gimp-core-pixbufs.h"
+file|"icons/gimp-core-pixbufs.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297205bc0103
+DECL|enum|__anon2a351e470103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -118,7 +118,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297205bc0203
+DECL|enum|__anon2a351e470203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
