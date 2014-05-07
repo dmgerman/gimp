@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2937ca6e0103
+DECL|enum|__anon2c72f9610103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -785,7 +785,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_enum_combo_box_set_stock_prefix
+name|gimp_enum_combo_box_set_icon_prefix
 argument_list|(
 name|GIMP_ENUM_COMBO_BOX
 argument_list|(

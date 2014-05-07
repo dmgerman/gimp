@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1ae0c60103
+DECL|enum|__anon29d3bb090103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -3235,7 +3235,7 @@ name|private
 operator|->
 name|aspect_button_box
 operator|=
-name|gimp_prop_enum_stock_box_new
+name|gimp_prop_enum_icon_box_new
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -3588,7 +3588,7 @@ name|private
 operator|->
 name|size_button_box
 operator|=
-name|gimp_prop_enum_stock_box_new
+name|gimp_prop_enum_icon_box_new
 argument_list|(
 name|G_OBJECT
 argument_list|(

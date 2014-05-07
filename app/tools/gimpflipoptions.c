@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f6cf310103
+DECL|enum|__anon2a106e390103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -451,7 +451,7 @@ argument_list|)
 expr_stmt|;
 name|box
 operator|=
-name|gimp_prop_enum_stock_box_new
+name|gimp_prop_enum_icon_box_new
 argument_list|(
 name|config
 argument_list|,

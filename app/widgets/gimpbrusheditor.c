@@ -596,7 +596,7 @@ argument_list|)
 expr_stmt|;
 name|box
 operator|=
-name|gimp_enum_stock_box_new
+name|gimp_enum_icon_box_new
 argument_list|(
 name|GIMP_TYPE_BRUSH_GENERATED_SHAPE
 argument_list|,

@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5d14ad0103
+DECL|enum|__anon299a73980103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -674,7 +674,7 @@ argument_list|)
 expr_stmt|;
 name|box
 operator|=
-name|gimp_prop_enum_stock_box_new
+name|gimp_prop_enum_icon_box_new
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -720,7 +720,7 @@ argument_list|)
 expr_stmt|;
 name|box
 operator|=
-name|gimp_prop_enum_stock_box_new
+name|gimp_prop_enum_icon_box_new
 argument_list|(
 name|G_OBJECT
 argument_list|(

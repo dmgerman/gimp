@@ -109,7 +109,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27920f280103
+DECL|enum|__anon288c6c260103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2159,7 +2159,7 @@ argument_list|)
 expr_stmt|;
 name|hbox
 operator|=
-name|gimp_enum_stock_box_new
+name|gimp_enum_icon_box_new
 argument_list|(
 name|enum_type
 argument_list|,
@@ -2284,7 +2284,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27920f280208
+DECL|struct|__anon288c6c260208
 block|{
 DECL|member|mod_mask
 name|GdkModifierType

@@ -529,7 +529,7 @@ expr_stmt|;
 comment|/* Blob type radiobuttons */
 name|blob_box
 operator|=
-name|gimp_prop_enum_stock_box_new
+name|gimp_prop_enum_icon_box_new
 argument_list|(
 name|config
 argument_list|,

@@ -110,7 +110,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon278cc91a0103
+DECL|enum|__anon292193a30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1155,7 +1155,7 @@ argument_list|)
 expr_stmt|;
 name|aspect_box
 operator|=
-name|gimp_enum_stock_box_new
+name|gimp_enum_icon_box_new
 argument_list|(
 name|GIMP_TYPE_ASPECT_TYPE
 argument_list|,
