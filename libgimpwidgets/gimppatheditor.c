@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1ec2130103
+DECL|enum|__anon299d869e0103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -85,7 +85,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1ec2130203
+DECL|enum|__anon299d869e0203
 block|{
 DECL|enumerator|COLUMN_UTF8
 name|COLUMN_UTF8
@@ -508,7 +508,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GTK_STOCK_NEW
 argument_list|,
@@ -583,7 +583,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GTK_STOCK_GO_UP
 argument_list|,
@@ -658,7 +658,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GTK_STOCK_GO_DOWN
 argument_list|,
@@ -733,7 +733,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GTK_STOCK_DELETE
 argument_list|,
