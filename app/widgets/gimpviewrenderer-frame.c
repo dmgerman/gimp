@@ -51,6 +51,12 @@ directive|include
 file|"gimpviewrenderer-frame.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpwidgets-utils.h"
+end_include
+
 begin_comment
 comment|/* utility to stretch a frame to the desired size */
 end_comment
