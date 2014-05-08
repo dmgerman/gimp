@@ -1524,7 +1524,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"gimp_widget_load_icon (): icon theme has no icon '%s'\n"
+literal|"gimp_widget_load_icon(): icon theme has no icon '%s'.\n"
 argument_list|,
 name|icon_name
 argument_list|)
@@ -2999,7 +2999,7 @@ block|{
 name|g_printerr
 argument_list|(
 literal|"gimp_get_monitor_resolution(): GDK returned bogus "
-literal|"values for the monitor resolution, using 96 dpi instead."
+literal|"values for the monitor resolution, using 96 dpi instead.\n"
 argument_list|)
 expr_stmt|;
 name|x
