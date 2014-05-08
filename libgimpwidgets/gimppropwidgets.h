@@ -896,13 +896,40 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  GParamString (stock_id)  */
+comment|/*  GParamString (icon name)  */
 end_comment
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_prop_stock_image_new
+argument_list|)
+end_macro
 
 begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_prop_stock_image_new
+parameter_list|(
+name|GObject
+modifier|*
+name|config
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|property_name
+parameter_list|,
+name|GtkIconSize
+name|icon_size
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_prop_icon_image_new
 parameter_list|(
 name|GObject
 modifier|*

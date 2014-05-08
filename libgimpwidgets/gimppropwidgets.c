@@ -12552,21 +12552,21 @@ block|}
 end_function
 
 begin_comment
-comment|/*****************/
+comment|/***************/
 end_comment
 
 begin_comment
-comment|/*  stock image  */
+comment|/*  icon name  */
 end_comment
 
 begin_comment
-comment|/*****************/
+comment|/***************/
 end_comment
 
 begin_function_decl
 specifier|static
 name|void
-name|gimp_prop_stock_image_notify
+name|gimp_prop_icon_image_notify
 parameter_list|(
 name|GObject
 modifier|*
@@ -12584,7 +12584,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_stock_image_new:  * @config:        Object to which property is attached.  * @property_name: Name of string property.  * @icon_size:     Size of desired stock image.  *  * Creates a widget to display a stock image representing the value of the  * specified string property, which should encode a Stock ID.  * See gtk_image_new_from_stock() for more information.  *  * Return value:  A new #GtkImage widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_stock_image_new:  * @config:        Object to which property is attached.  * @property_name: Name of string property.  * @icon_size:     Size of desired stock image.  *  * Creates a widget to display a stock image representing the value of the  * specified string property, which should encode a Stock ID.  * See gtk_image_new_from_stock() for more information.  *  * Return value:  A new #GtkImage widget.  *  * Since GIMP 2.4  *  * Deprecated: GIMP 2.10  */
 end_comment
 
 begin_function
@@ -12592,6 +12592,42 @@ name|GtkWidget
 modifier|*
 DECL|function|gimp_prop_stock_image_new (GObject * config,const gchar * property_name,GtkIconSize icon_size)
 name|gimp_prop_stock_image_new
+parameter_list|(
+name|GObject
+modifier|*
+name|config
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|property_name
+parameter_list|,
+name|GtkIconSize
+name|icon_size
+parameter_list|)
+block|{
+return|return
+name|gimp_prop_icon_image_new
+argument_list|(
+name|config
+argument_list|,
+name|property_name
+argument_list|,
+name|icon_size
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_prop_icom_image_new:  * @config:        Object to which property is attached.  * @property_name: Name of string property.  * @icon_size:     Size of desired icon image.  *  * Creates a widget to display a icon image representing the value of the  * specified string property, which should encode an icon name.  * See gtk_image_new_from_icon_name() for more information.  *  * Return value:  A new #GtkImage widget.  *  * Since GIMP 2.10  */
+end_comment
+
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|gimp_prop_icon_image_new (GObject * config,const gchar * property_name,GtkIconSize icon_size)
+name|gimp_prop_icon_image_new
 parameter_list|(
 name|GObject
 modifier|*
@@ -12616,7 +12652,7 @@ name|image
 decl_stmt|;
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 name|param_spec
 operator|=
@@ -12646,27 +12682,27 @@ argument_list|,
 name|property_name
 argument_list|,
 operator|&
-name|stock_id
+name|icon_name
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|,
 name|icon_size
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|stock_id
+name|icon_name
 condition|)
 name|g_free
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 name|set_param_spec
@@ -12689,7 +12725,7 @@ name|property_name
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_prop_stock_image_notify
+name|gimp_prop_icon_image_notify
 argument_list|)
 argument_list|,
 name|image
@@ -12704,8 +12740,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_prop_stock_image_notify (GObject * config,GParamSpec * param_spec,GtkWidget * image)
-name|gimp_prop_stock_image_notify
+DECL|function|gimp_prop_icon_image_notify (GObject * config,GParamSpec * param_spec,GtkWidget * image)
+name|gimp_prop_icon_image_notify
 parameter_list|(
 name|GObject
 modifier|*
@@ -12722,7 +12758,7 @@ parameter_list|)
 block|{
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 name|GtkIconSize
 name|icon_size
@@ -12736,12 +12772,12 @@ operator|->
 name|name
 argument_list|,
 operator|&
-name|stock_id
+name|icon_name
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_image_get_stock
+name|gtk_image_get_icon_name
 argument_list|(
 name|GTK_IMAGE
 argument_list|(
@@ -12754,25 +12790,25 @@ operator|&
 name|icon_size
 argument_list|)
 expr_stmt|;
-name|gtk_image_set_from_stock
+name|gtk_image_set_from_icon_name
 argument_list|(
 name|GTK_IMAGE
 argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|icon_size
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|stock_id
+name|icon_name
 condition|)
 name|g_free
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 block|}
