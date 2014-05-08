@@ -63,6 +63,12 @@ directive|include
 file|"gimpviewrenderer-frame.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpwidgets-utils.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -285,11 +291,11 @@ begin_function
 specifier|static
 name|GdkPixbuf
 modifier|*
-DECL|function|get_icon_for_mime_type (const char * mime_type,gint pixel_size)
+DECL|function|get_icon_for_mime_type (const gchar * mime_type,gint pixel_size)
 name|get_icon_for_mime_type
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|mime_type
 parameter_list|,

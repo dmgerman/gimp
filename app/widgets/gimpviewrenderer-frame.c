@@ -732,15 +732,13 @@ name|class
 operator|->
 name|frame
 operator|=
-name|gtk_widget_render_icon
+name|gimp_widget_load_icon
 argument_list|(
 name|widget
 argument_list|,
 name|GIMP_STOCK_FRAME
 argument_list|,
-name|GTK_ICON_SIZE_DIALOG
-argument_list|,
-name|NULL
+literal|48
 argument_list|)
 expr_stmt|;
 comment|/*  FIXME: shouldn't be hardcoded  */

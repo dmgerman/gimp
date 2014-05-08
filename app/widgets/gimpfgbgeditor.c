@@ -69,9 +69,15 @@ directive|include
 file|"gimpfgbgeditor.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpwidgets-utils.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon2989f2060103
+DECL|enum|__anon275c0eaf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -87,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2989f2060203
+DECL|enum|__anon275c0eaf0203
 block|{
 DECL|enumerator|COLOR_CLICKED
 name|COLOR_CLICKED
@@ -101,7 +107,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2989f2060303
+DECL|enum|__anon275c0eaf0303
 block|{
 DECL|enumerator|INVALID_AREA
 name|INVALID_AREA
@@ -930,15 +936,13 @@ name|editor
 operator|->
 name|default_icon
 operator|=
-name|gtk_widget_render_icon
+name|gimp_widget_load_icon
 argument_list|(
 name|widget
 argument_list|,
 name|GIMP_STOCK_DEFAULT_COLORS
 argument_list|,
-name|GTK_ICON_SIZE_MENU
-argument_list|,
-name|NULL
+literal|12
 argument_list|)
 expr_stmt|;
 name|default_w
@@ -1016,15 +1020,13 @@ name|editor
 operator|->
 name|swap_icon
 operator|=
-name|gtk_widget_render_icon
+name|gimp_widget_load_icon
 argument_list|(
 name|widget
 argument_list|,
 name|GIMP_STOCK_SWAP_COLORS
 argument_list|,
-name|GTK_ICON_SIZE_MENU
-argument_list|,
-name|NULL
+literal|12
 argument_list|)
 expr_stmt|;
 name|swap_w

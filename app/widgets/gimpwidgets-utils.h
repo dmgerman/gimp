@@ -133,6 +133,26 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GdkPixbuf
+modifier|*
+name|gimp_widget_load_icon
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|icon_name
+parameter_list|,
+name|gint
+name|size
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GtkIconSize
 name|gimp_get_icon_size
 parameter_list|(
