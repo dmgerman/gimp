@@ -113,7 +113,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4b792b0103
+DECL|enum|__anon295a3df30103
 block|{
 DECL|enumerator|FONT_SET
 name|FONT_SET
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4b792b0203
+DECL|enum|__anon295a3df30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1375,7 +1375,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GIMP_STOCK_FONT
 argument_list|,

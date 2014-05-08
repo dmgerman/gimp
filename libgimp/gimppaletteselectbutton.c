@@ -113,7 +113,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6576d70103
+DECL|enum|__anon2af8adf80103
 block|{
 DECL|enumerator|PALETTE_SET
 name|PALETTE_SET
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6576d70203
+DECL|enum|__anon2af8adf80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1422,7 +1422,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GIMP_STOCK_PALETTE
 argument_list|,
