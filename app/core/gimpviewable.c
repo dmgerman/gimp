@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a351e470103
+DECL|enum|__anon2c3d316e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -118,7 +118,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a351e470203
+DECL|enum|__anon2c3d316e0203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -992,6 +992,15 @@ block|{
 case|case
 name|PROP_STOCK_ID
 case|:
+if|if
+condition|(
+operator|!
+name|g_value_get_string
+argument_list|(
+name|value
+argument_list|)
+condition|)
+break|break;
 case|case
 name|PROP_ICON_NAME
 case|:
