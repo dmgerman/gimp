@@ -81,7 +81,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon293f11130103
+DECL|enum|__anon29fd98e60103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -97,7 +97,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293f11130203
+DECL|enum|__anon29fd98e60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293f11130303
+DECL|enum|__anon29fd98e60303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -133,7 +133,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293f11130408
+DECL|struct|__anon29fd98e60408
 block|{
 DECL|member|n_pages
 name|gint
@@ -1303,16 +1303,16 @@ name|priv
 operator|->
 name|default_thumbnail
 operator|=
-name|gtk_widget_render_icon
+name|gtk_icon_theme_load_icon
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|selector
-argument_list|)
+name|gtk_icon_theme_get_default
+argument_list|()
 argument_list|,
 name|GTK_STOCK_FILE
 argument_list|,
-name|GTK_ICON_SIZE_DND
+literal|32
+argument_list|,
+literal|0
 argument_list|,
 name|NULL
 argument_list|)
@@ -4714,13 +4714,16 @@ condition|)
 block|{
 name|frame
 operator|=
-name|gtk_widget_render_icon
+name|gtk_icon_theme_load_icon
 argument_list|(
-name|widget
+name|gtk_icon_theme_get_default
+argument_list|()
 argument_list|,
 name|GIMP_STOCK_FRAME
 argument_list|,
-name|GTK_ICON_SIZE_DIALOG
+literal|64
+argument_list|,
+literal|0
 argument_list|,
 name|NULL
 argument_list|)
