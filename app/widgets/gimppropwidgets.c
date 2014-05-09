@@ -2990,7 +2990,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fbe4da0108
+DECL|struct|__anon289c4dc00108
 block|{
 DECL|member|config
 name|GObject
@@ -4594,7 +4594,7 @@ name|NULL
 decl_stmt|;
 name|gchar
 modifier|*
-name|stock_id_value
+name|icon_name_value
 init|=
 name|NULL
 decl_stmt|;
@@ -4609,10 +4609,10 @@ name|g_object_get
 argument_list|(
 name|object
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
 operator|&
-name|stock_id_value
+name|icon_name_value
 argument_list|,
 literal|"icon-pixbuf"
 argument_list|,
@@ -4622,14 +4622,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_icon_picker_set_stock_id
+name|gimp_icon_picker_set_icon_name
 argument_list|(
 name|GIMP_ICON_PICKER
 argument_list|(
 name|picker
 argument_list|)
 argument_list|,
-name|stock_id_value
+name|icon_name_value
 argument_list|)
 expr_stmt|;
 name|gimp_icon_picker_set_icon_pixbuf
@@ -4660,7 +4660,7 @@ name|g_signal_connect
 argument_list|(
 name|picker
 argument_list|,
-literal|"notify::stock-id"
+literal|"notify::icon-name"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4674,7 +4674,7 @@ name|connect_notify
 argument_list|(
 name|object
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4700,11 +4700,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|stock_id_value
+name|icon_name_value
 condition|)
 name|g_free
 argument_list|(
-name|stock_id_value
+name|icon_name_value
 argument_list|)
 expr_stmt|;
 if|if
@@ -4759,7 +4759,7 @@ name|param_spec
 operator|->
 name|name
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|)
 condition|)
 block|{
@@ -4768,7 +4768,7 @@ name|gchar
 modifier|*
 name|value
 init|=
-name|gimp_icon_picker_get_stock_id
+name|gimp_icon_picker_get_icon_name
 argument_list|(
 name|GIMP_ICON_PICKER
 argument_list|(
@@ -4780,7 +4780,7 @@ name|g_object_set
 argument_list|(
 name|config
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
 name|value
 argument_list|,
@@ -4875,7 +4875,7 @@ name|param_spec
 operator|->
 name|name
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|)
 condition|)
 block|{
@@ -4889,7 +4889,7 @@ name|g_object_get
 argument_list|(
 name|config
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
 operator|&
 name|value
@@ -4897,7 +4897,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_icon_picker_set_stock_id
+name|gimp_icon_picker_set_icon_name
 argument_list|(
 name|GIMP_ICON_PICKER
 argument_list|(

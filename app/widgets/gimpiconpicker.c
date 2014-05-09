@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279fb21e0103
+DECL|enum|__anon2c73866d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -109,8 +109,8 @@ block|,
 DECL|enumerator|PROP_GIMP
 name|PROP_GIMP
 block|,
-DECL|enumerator|PROP_STOCK_ID
-name|PROP_STOCK_ID
+DECL|enumerator|PROP_ICON_NAME
+name|PROP_ICON_NAME
 block|,
 DECL|enumerator|PROP_ICON_PIXBUF
 name|PROP_ICON_PIXBUF
@@ -137,10 +137,10 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
-DECL|member|stock_id
+DECL|member|icon_name
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 DECL|member|icon_pixbuf
 name|GdkPixbuf
@@ -152,15 +152,15 @@ name|GimpViewable
 modifier|*
 name|preview
 decl_stmt|;
-DECL|member|stock_id_container
+DECL|member|icon_name_container
 name|GimpContainer
 modifier|*
-name|stock_id_container
+name|icon_name_container
 decl_stmt|;
-DECL|member|stock_id_context
+DECL|member|icon_name_context
 name|GimpContext
 modifier|*
-name|stock_id_context
+name|icon_name_context
 decl_stmt|;
 DECL|member|null_template_object
 name|GimpObject
@@ -177,10 +177,10 @@ name|GtkWidget
 modifier|*
 name|menu_item_file_icon
 decl_stmt|;
-DECL|member|menu_item_stock_icon
+DECL|member|menu_item_name_icon
 name|GtkWidget
 modifier|*
-name|menu_item_stock_icon
+name|menu_item_name_icon
 decl_stmt|;
 DECL|member|menu_item_copy
 name|GtkWidget
@@ -340,7 +340,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_icon_picker_menu_from_stock
+name|gimp_icon_picker_menu_from_name
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -483,11 +483,11 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_STOCK_ID
+name|PROP_ICON_NAME
 argument_list|,
 name|g_param_spec_string
 argument_list|(
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
 name|NULL
 argument_list|,
@@ -572,11 +572,11 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_VIEWABLE
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
 name|private
 operator|->
-name|stock_id
+name|icon_name
 argument_list|,
 literal|"icon-pixbuf"
 argument_list|,
@@ -627,11 +627,11 @@ name|GtkWidget
 modifier|*
 name|viewable_view
 decl_stmt|;
-name|GSList
+name|GList
 modifier|*
-name|stock_list
+name|icon_list
 decl_stmt|;
-name|GSList
+name|GList
 modifier|*
 name|list
 decl_stmt|;
@@ -655,10 +655,10 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* Set up the stock icon picker */
+comment|/* Set up the icon picker */
 name|private
 operator|->
-name|stock_id_container
+name|icon_name_container
 operator|=
 name|gimp_list_new
 argument_list|(
@@ -669,7 +669,7 @@ argument_list|)
 expr_stmt|;
 name|private
 operator|->
-name|stock_id_context
+name|icon_name_context
 operator|=
 name|gimp_context_new
 argument_list|(
@@ -686,7 +686,7 @@ name|g_signal_connect
 argument_list|(
 name|private
 operator|->
-name|stock_id_context
+name|icon_name_context
 argument_list|,
 literal|"template-changed"
 argument_list|,
@@ -698,22 +698,46 @@ argument_list|,
 name|picker
 argument_list|)
 expr_stmt|;
-name|stock_list
+name|icon_list
 operator|=
-name|gtk_stock_list_ids
+name|gtk_icon_theme_list_icons
+argument_list|(
+name|gtk_icon_theme_get_default
 argument_list|()
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|icon_list
+operator|=
+name|g_list_sort
+argument_list|(
+name|icon_list
+argument_list|,
+operator|(
+name|GCompareFunc
+operator|)
+name|g_strcmp0
+argument_list|)
+expr_stmt|;
+name|icon_list
+operator|=
+name|g_list_reverse
+argument_list|(
+name|icon_list
+argument_list|)
 expr_stmt|;
 for|for
 control|(
 name|list
 operator|=
-name|stock_list
+name|icon_list
 init|;
 name|list
 condition|;
 name|list
 operator|=
-name|g_slist_next
+name|g_list_next
 argument_list|(
 name|list
 argument_list|)
@@ -733,7 +757,7 @@ name|list
 operator|->
 name|data
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
 name|list
 operator|->
@@ -746,7 +770,7 @@ name|gimp_container_add
 argument_list|(
 name|private
 operator|->
-name|stock_id_container
+name|icon_name_container
 argument_list|,
 name|object
 argument_list|)
@@ -760,7 +784,7 @@ if|if
 condition|(
 name|private
 operator|->
-name|stock_id
+name|icon_name
 operator|&&
 name|strcmp
 argument_list|(
@@ -770,7 +794,7 @@ name|data
 argument_list|,
 name|private
 operator|->
-name|stock_id
+name|icon_name
 argument_list|)
 operator|==
 literal|0
@@ -779,7 +803,7 @@ name|gimp_context_set_template
 argument_list|(
 name|private
 operator|->
-name|stock_id_context
+name|icon_name_context
 argument_list|,
 name|GIMP_TEMPLATE
 argument_list|(
@@ -788,7 +812,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* An extra template object, use to make all stock icons clickable    * when a pixbuf icon is set.    */
+comment|/* An extra template object, use to make all icons clickable when a    * pixbuf icon is set.    */
 name|private
 operator|->
 name|null_template_object
@@ -801,7 +825,7 @@ literal|"name"
 argument_list|,
 literal|""
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
 literal|""
 argument_list|,
@@ -819,7 +843,7 @@ name|gimp_context_set_template
 argument_list|(
 name|private
 operator|->
-name|stock_id_context
+name|icon_name_context
 argument_list|,
 name|GIMP_TEMPLATE
 argument_list|(
@@ -830,9 +854,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|g_slist_free_full
+name|g_list_free_full
 argument_list|(
-name|stock_list
+name|icon_list
 argument_list|,
 operator|(
 name|GDestroyNotify
@@ -887,7 +911,7 @@ name|gimp_view_new
 argument_list|(
 name|private
 operator|->
-name|stock_id_context
+name|icon_name_context
 argument_list|,
 name|private
 operator|->
@@ -987,13 +1011,13 @@ argument_list|)
 expr_stmt|;
 name|private
 operator|->
-name|menu_item_stock_icon
+name|menu_item_name_icon
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"From Stock Icons..."
+literal|"From Named Icons..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1010,7 +1034,7 @@ name|GTK_WIDGET
 argument_list|(
 name|private
 operator|->
-name|menu_item_stock_icon
+name|menu_item_name_icon
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1018,13 +1042,13 @@ name|g_signal_connect
 argument_list|(
 name|private
 operator|->
-name|menu_item_stock_icon
+name|menu_item_name_icon
 argument_list|,
 literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_icon_picker_menu_from_stock
+name|gimp_icon_picker_menu_from_name
 argument_list|)
 argument_list|,
 name|object
@@ -1157,19 +1181,19 @@ if|if
 condition|(
 name|private
 operator|->
-name|stock_id
+name|icon_name
 condition|)
 block|{
 name|g_free
 argument_list|(
 name|private
 operator|->
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 name|private
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|NULL
 expr_stmt|;
@@ -1178,19 +1202,19 @@ if|if
 condition|(
 name|private
 operator|->
-name|stock_id_container
+name|icon_name_container
 condition|)
 block|{
 name|g_object_unref
 argument_list|(
 name|private
 operator|->
-name|stock_id_container
+name|icon_name_container
 argument_list|)
 expr_stmt|;
 name|private
 operator|->
-name|stock_id_container
+name|icon_name_container
 operator|=
 name|NULL
 expr_stmt|;
@@ -1199,19 +1223,19 @@ if|if
 condition|(
 name|private
 operator|->
-name|stock_id_context
+name|icon_name_context
 condition|)
 block|{
 name|g_object_unref
 argument_list|(
 name|private
 operator|->
-name|stock_id_context
+name|icon_name_context
 argument_list|)
 expr_stmt|;
 name|private
 operator|->
-name|stock_id_context
+name|icon_name_context
 operator|=
 name|NULL
 expr_stmt|;
@@ -1344,9 +1368,9 @@ expr_stmt|;
 comment|/* don't ref */
 break|break;
 case|case
-name|PROP_STOCK_ID
+name|PROP_ICON_NAME
 case|:
-name|gimp_icon_picker_set_stock_id
+name|gimp_icon_picker_set_icon_name
 argument_list|(
 name|GIMP_ICON_PICKER
 argument_list|(
@@ -1442,7 +1466,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_STOCK_ID
+name|PROP_ICON_NAME
 case|:
 name|g_value_set_string
 argument_list|(
@@ -1450,7 +1474,7 @@ name|value
 argument_list|,
 name|private
 operator|->
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1522,8 +1546,8 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_icon_picker_get_stock_id (GimpIconPicker * picker)
-name|gimp_icon_picker_get_stock_id
+DECL|function|gimp_icon_picker_get_icon_name (GimpIconPicker * picker)
+name|gimp_icon_picker_get_icon_name
 parameter_list|(
 name|GimpIconPicker
 modifier|*
@@ -1546,15 +1570,15 @@ argument_list|(
 name|picker
 argument_list|)
 operator|->
-name|stock_id
+name|icon_name
 return|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|gimp_icon_picker_set_stock_id (GimpIconPicker * picker,const gchar * stock_id)
-name|gimp_icon_picker_set_stock_id
+DECL|function|gimp_icon_picker_set_icon_name (GimpIconPicker * picker,const gchar * icon_name)
+name|gimp_icon_picker_set_icon_name
 parameter_list|(
 name|GimpIconPicker
 modifier|*
@@ -1563,7 +1587,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|)
 block|{
 name|GimpIconPickerPrivate
@@ -1580,7 +1604,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|stock_id
+name|icon_name
 operator|!=
 name|NULL
 argument_list|)
@@ -1596,23 +1620,23 @@ name|g_free
 argument_list|(
 name|private
 operator|->
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 name|private
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|g_strdup
 argument_list|(
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|private
 operator|->
-name|stock_id_container
+name|icon_name_container
 condition|)
 block|{
 name|GimpObject
@@ -1625,9 +1649,9 @@ name|gimp_container_get_child_by_name
 argument_list|(
 name|private
 operator|->
-name|stock_id_container
+name|icon_name_container
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 if|if
@@ -1638,7 +1662,7 @@ name|gimp_context_set_template
 argument_list|(
 name|private
 operator|->
-name|stock_id_context
+name|icon_name_context
 argument_list|,
 name|GIMP_TEMPLATE
 argument_list|(
@@ -1653,11 +1677,11 @@ name|private
 operator|->
 name|preview
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
 name|private
 operator|->
-name|stock_id
+name|icon_name
 argument_list|,
 name|NULL
 argument_list|)
@@ -1669,7 +1693,7 @@ argument_list|(
 name|picker
 argument_list|)
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1789,7 +1813,7 @@ name|gimp_context_set_template
 argument_list|(
 name|private
 operator|->
-name|stock_id_context
+name|icon_name_context
 argument_list|,
 name|GIMP_TEMPLATE
 argument_list|(
@@ -1812,11 +1836,11 @@ name|gimp_container_get_child_by_name
 argument_list|(
 name|private
 operator|->
-name|stock_id_container
+name|icon_name_container
 argument_list|,
 name|private
 operator|->
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 if|if
@@ -1827,7 +1851,7 @@ name|gimp_context_set_template
 argument_list|(
 name|private
 operator|->
-name|stock_id_context
+name|icon_name_context
 argument_list|,
 name|GIMP_TEMPLATE
 argument_list|(
@@ -1915,7 +1939,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_icon_picker_set_stock_id
+name|gimp_icon_picker_set_icon_name
 argument_list|(
 name|picker
 argument_list|,
@@ -2414,8 +2438,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_icon_picker_menu_from_stock (GtkWidget * widget,GdkEventButton * event,gpointer object)
-name|gimp_icon_picker_menu_from_stock
+DECL|function|gimp_icon_picker_menu_from_name (GtkWidget * widget,GdkEventButton * event,gpointer object)
+name|gimp_icon_picker_menu_from_name
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2458,11 +2482,11 @@ name|gimp_container_popup_new
 argument_list|(
 name|private
 operator|->
-name|stock_id_container
+name|icon_name_container
 argument_list|,
 name|private
 operator|->
-name|stock_id_context
+name|icon_name_context
 argument_list|,
 name|GIMP_VIEW_TYPE_LIST
 argument_list|,

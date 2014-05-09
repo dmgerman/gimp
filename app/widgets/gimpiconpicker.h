@@ -140,7 +140,7 @@ begin_function_decl
 specifier|const
 name|gchar
 modifier|*
-name|gimp_icon_picker_get_stock_id
+name|gimp_icon_picker_get_icon_name
 parameter_list|(
 name|GimpIconPicker
 modifier|*
@@ -151,7 +151,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_icon_picker_set_stock_id
+name|gimp_icon_picker_set_icon_name
 parameter_list|(
 name|GimpIconPicker
 modifier|*
