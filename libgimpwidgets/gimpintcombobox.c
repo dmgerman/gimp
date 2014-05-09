@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon289a4ba30103
+DECL|enum|__anon2771bd7a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -62,7 +62,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289a4ba30208
+DECL|struct|__anon2771bd7a0208
 block|{
 DECL|member|pixbuf_renderer
 name|GtkCellRenderer
@@ -1991,9 +1991,9 @@ name|priv
 operator|->
 name|pixbuf_renderer
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
-name|GIMP_INT_STORE_STOCK_ID
+name|GIMP_INT_STORE_ICON_NAME
 argument_list|,
 literal|"pixbuf"
 argument_list|,
