@@ -78,7 +78,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dc54bc0103
+DECL|enum|__anon29ae36e00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -100,7 +100,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dc54bc0203
+DECL|enum|__anon29ae36e00203
 block|{
 DECL|enumerator|EVENT_MAPPED
 name|EVENT_MAPPED
@@ -744,10 +744,9 @@ argument_list|(
 name|info
 argument_list|)
 argument_list|,
-comment|/* FIXME icon name */
 name|controller_class
 operator|->
-name|stock_id
+name|icon_name
 argument_list|)
 expr_stmt|;
 block|}

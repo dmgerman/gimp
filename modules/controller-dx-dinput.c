@@ -116,7 +116,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2911b0180103
+DECL|enum|__anon279659e80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -778,7 +778,7 @@ literal|"gimp-controller-directx-directinput"
 expr_stmt|;
 name|controller_class
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_CONTROLLER_LINUX_INPUT
 expr_stmt|;

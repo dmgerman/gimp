@@ -48,7 +48,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4a62d00103
+DECL|enum|__anon27e922a70103
 block|{
 DECL|enumerator|GIMP_CONTROLLER_EVENT_TRIGGER
 name|GIMP_CONTROLLER_EVENT_TRIGGER
@@ -379,11 +379,11 @@ modifier|*
 name|event
 parameter_list|)
 function_decl|;
-DECL|member|stock_id
+DECL|member|icon_name
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 decl_stmt|;
 comment|/* Padding for future expansion */
 DECL|member|_gimp_reserved2

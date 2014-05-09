@@ -70,7 +70,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f1e7900103
+DECL|enum|__anon2c7be2d10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f1e7900203
+DECL|enum|__anon2c7be2d10203
 block|{
 DECL|enumerator|EVENT
 name|EVENT
@@ -249,7 +249,7 @@ name|NULL
 expr_stmt|;
 name|klass
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_CONTROLLER
 expr_stmt|;

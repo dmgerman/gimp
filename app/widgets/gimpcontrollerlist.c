@@ -168,7 +168,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1fb6320103
+DECL|enum|__anon2933f05e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -181,7 +181,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1fb6320203
+DECL|enum|__anon2933f05e0203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -974,7 +974,7 @@ name|COLUMN_ICON
 argument_list|,
 name|controller_class
 operator|->
-name|stock_id
+name|icon_name
 argument_list|,
 name|COLUMN_NAME
 argument_list|,

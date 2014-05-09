@@ -698,7 +698,7 @@ name|GIMP_HELP_CONTROLLER_KEYBOARD
 expr_stmt|;
 name|controller_class
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_CONTROLLER_KEYBOARD
 expr_stmt|;
