@@ -771,7 +771,7 @@ name|gtk_image_new_from_icon_name
 argument_list|(
 name|selector_class
 operator|->
-name|stock_id
+name|icon_name
 argument_list|,
 name|icon_size
 argument_list|)
@@ -1513,7 +1513,7 @@ name|gtk_image_new_from_icon_name
 argument_list|(
 name|selector_class
 operator|->
-name|stock_id
+name|icon_name
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
@@ -1578,7 +1578,7 @@ name|gtk_image_new_from_icon_name
 argument_list|(
 name|selector_class
 operator|->
-name|stock_id
+name|icon_name
 argument_list|,
 name|DEFAULT_TAB_ICON_SIZE
 argument_list|)

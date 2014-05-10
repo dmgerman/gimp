@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2da4390103
+DECL|enum|__anon28f794560103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -230,7 +230,7 @@ name|NULL
 expr_stmt|;
 name|klass
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|GTK_STOCK_SELECT_COLOR
 expr_stmt|;

@@ -205,12 +205,23 @@ name|gchar
 modifier|*
 name|help_id
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|GIMP_DISABLE_DEPRECATED
+DECL|member|deprecated_stock_id
+name|gpointer
+name|deprecated_stock_id
+decl_stmt|;
+else|#
+directive|else
 DECL|member|stock_id
 specifier|const
 name|gchar
 modifier|*
 name|stock_id
 decl_stmt|;
+endif|#
+directive|endif
 comment|/*  virtual functions  */
 DECL|member|set_toggles_visible
 name|void
@@ -349,17 +360,14 @@ modifier|*
 name|config
 parameter_list|)
 function_decl|;
-comment|/* Padding for future expansion */
-DECL|member|_gimp_reserved2
-name|void
-function_decl|(
+comment|/*  icon name  */
+DECL|member|icon_name
+specifier|const
+name|gchar
 modifier|*
-name|_gimp_reserved2
-function_decl|)
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
+name|icon_name
+decl_stmt|;
+comment|/* Padding for future expansion */
 DECL|member|_gimp_reserved3
 name|void
 function_decl|(

@@ -410,7 +410,7 @@ literal|"gimp-colorselector-cmyk"
 expr_stmt|;
 name|selector_class
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|GTK_STOCK_PRINT
 expr_stmt|;

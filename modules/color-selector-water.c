@@ -411,7 +411,7 @@ literal|"gimp-colorselector-watercolor"
 expr_stmt|;
 name|selector_class
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 expr_stmt|;

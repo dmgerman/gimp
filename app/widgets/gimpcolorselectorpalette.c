@@ -169,7 +169,7 @@ literal|"gimp-colorselector-palette"
 expr_stmt|;
 name|selector_class
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_PALETTE
 expr_stmt|;

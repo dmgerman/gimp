@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c4d5980103
+DECL|enum|__anon2bb99e4a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -957,7 +957,7 @@ name|gtk_image_new_from_icon_name
 argument_list|(
 name|selector_class
 operator|->
-name|stock_id
+name|icon_name
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

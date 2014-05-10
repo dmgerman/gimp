@@ -339,7 +339,7 @@ literal|"gimp-colorselector-triangle"
 expr_stmt|;
 name|selector_class
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_COLOR_TRIANGLE
 expr_stmt|;
