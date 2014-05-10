@@ -535,7 +535,7 @@ literal|"gimp-colordisplay-lcms"
 expr_stmt|;
 name|display_class
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_DISPLAY_FILTER_LCMS
 expr_stmt|;

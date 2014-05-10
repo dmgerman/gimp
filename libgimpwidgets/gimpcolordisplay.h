@@ -275,12 +275,23 @@ modifier|*
 name|display
 parameter_list|)
 function_decl|;
+ifdef|#
+directive|ifdef
+name|GIMP_DISABLE_DEPRECATED
+DECL|member|deprecated_stock_id
+name|gpointer
+name|deprecated_stock_id
+decl_stmt|;
+else|#
+directive|else
 DECL|member|stock_id
 specifier|const
 name|gchar
 modifier|*
 name|stock_id
 decl_stmt|;
+endif|#
+directive|endif
 comment|/*  implementing the GimpColorDisplay::convert_surface method is deprecated  */
 DECL|member|convert_surface
 name|void
@@ -318,17 +329,13 @@ modifier|*
 name|area
 parameter_list|)
 function_decl|;
-comment|/* Padding for future expansion */
-DECL|member|_gimp_reserved4
-name|void
-function_decl|(
+comment|/*  icon name  */
+DECL|member|icon_name
+specifier|const
+name|gchar
 modifier|*
-name|_gimp_reserved4
-function_decl|)
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
+name|icon_name
+decl_stmt|;
 block|}
 struct|;
 end_struct

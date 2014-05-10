@@ -57,12 +57,6 @@ directive|include
 file|"gimpstock.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GIMP_DISABLE_DEPRECATED
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -75,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bce5c2c0103
+DECL|enum|__anon2bdad65f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bce5c2c0203
+DECL|enum|__anon2bdad65f0203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -108,7 +102,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bce5c2c0308
+DECL|struct|__anon2bdad65f0308
 block|{
 DECL|member|config
 name|GimpColorConfig
@@ -443,7 +437,7 @@ name|NULL
 expr_stmt|;
 name|klass
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_DISPLAY_FILTER
 expr_stmt|;

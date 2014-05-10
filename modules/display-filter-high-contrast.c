@@ -167,7 +167,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0b4d910103
+DECL|enum|__anon2beefc280103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -439,7 +439,7 @@ literal|"gimp-colordisplay-contrast"
 expr_stmt|;
 name|display_class
 operator|->
-name|stock_id
+name|icon_name
 operator|=
 name|GIMP_STOCK_DISPLAY_FILTER_CONTRAST
 expr_stmt|;

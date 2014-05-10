@@ -81,7 +81,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290c1e3b0103
+DECL|enum|__anon292c7cb00103
 block|{
 DECL|enumerator|SRC_COLUMN_NAME
 name|SRC_COLUMN_NAME
@@ -100,7 +100,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon290c1e3b0203
+DECL|enum|__anon292c7cb00203
 block|{
 DECL|enumerator|DEST_COLUMN_ENABLED
 name|DEST_COLUMN_ENABLED
@@ -1885,7 +1885,7 @@ name|SRC_COLUMN_ICON
 argument_list|,
 name|display_class
 operator|->
-name|stock_id
+name|icon_name
 argument_list|,
 name|SRC_COLUMN_NAME
 argument_list|,
@@ -1980,7 +1980,7 @@ argument_list|(
 name|display
 argument_list|)
 operator|->
-name|stock_id
+name|icon_name
 expr_stmt|;
 name|gtk_list_store_append
 argument_list|(
@@ -2865,7 +2865,7 @@ argument_list|(
 name|display
 argument_list|)
 operator|->
-name|stock_id
+name|icon_name
 expr_stmt|;
 name|gtk_list_store_insert
 argument_list|(
