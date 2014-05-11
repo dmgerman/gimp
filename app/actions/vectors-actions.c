@@ -144,7 +144,7 @@ block|,
 block|{
 literal|"vectors-edit-attributes"
 block|,
-name|GTK_STOCK_EDIT
+literal|"gtk-edit"
 block|,
 name|NC_
 argument_list|(
@@ -173,7 +173,7 @@ block|,
 block|{
 literal|"vectors-new"
 block|,
-name|GTK_STOCK_NEW
+literal|"document-new"
 block|,
 name|NC_
 argument_list|(
@@ -182,7 +182,7 @@ argument_list|,
 literal|"_New Path..."
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -202,7 +202,7 @@ block|,
 block|{
 literal|"vectors-new-last-values"
 block|,
-name|GTK_STOCK_NEW
+literal|"document-new"
 block|,
 name|NC_
 argument_list|(
@@ -211,7 +211,7 @@ argument_list|,
 literal|"_New Path with last values"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -260,7 +260,7 @@ block|,
 block|{
 literal|"vectors-delete"
 block|,
-name|GTK_STOCK_DELETE
+literal|"edit-delete"
 block|,
 name|NC_
 argument_list|(
@@ -269,7 +269,7 @@ argument_list|,
 literal|"_Delete Path"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -313,7 +313,7 @@ block|,
 block|{
 literal|"vectors-raise"
 block|,
-name|GTK_STOCK_GO_UP
+literal|"go-up"
 block|,
 name|NC_
 argument_list|(
@@ -322,7 +322,7 @@ argument_list|,
 literal|"_Raise Path"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -342,7 +342,7 @@ block|,
 block|{
 literal|"vectors-raise-to-top"
 block|,
-name|GTK_STOCK_GOTO_TOP
+literal|"go-top"
 block|,
 name|NC_
 argument_list|(
@@ -351,7 +351,7 @@ argument_list|,
 literal|"Raise Path to _Top"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -371,7 +371,7 @@ block|,
 block|{
 literal|"vectors-lower"
 block|,
-name|GTK_STOCK_GO_DOWN
+literal|"go-down"
 block|,
 name|NC_
 argument_list|(
@@ -380,7 +380,7 @@ argument_list|,
 literal|"_Lower Path"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -400,7 +400,7 @@ block|,
 block|{
 literal|"vectors-lower-to-bottom"
 block|,
-name|GTK_STOCK_GOTO_BOTTOM
+literal|"go-bottom"
 block|,
 name|NC_
 argument_list|(
@@ -409,7 +409,7 @@ argument_list|,
 literal|"Lower Path to _Bottom"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -487,7 +487,7 @@ block|,
 block|{
 literal|"vectors-copy"
 block|,
-name|GTK_STOCK_COPY
+literal|"edit-copy"
 block|,
 name|NC_
 argument_list|(
@@ -511,7 +511,7 @@ block|,
 block|{
 literal|"vectors-paste"
 block|,
-name|GTK_STOCK_PASTE
+literal|"edit-paste"
 block|,
 name|NC_
 argument_list|(
@@ -535,7 +535,7 @@ block|,
 block|{
 literal|"vectors-export"
 block|,
-name|GTK_STOCK_SAVE
+literal|"document-save"
 block|,
 name|NC_
 argument_list|(
@@ -559,7 +559,7 @@ block|,
 block|{
 literal|"vectors-import"
 block|,
-name|GTK_STOCK_OPEN
+literal|"document-open"
 block|,
 name|NC_
 argument_list|(

@@ -102,7 +102,7 @@ block|,
 block|{
 literal|"error-console-clear"
 block|,
-name|GTK_STOCK_CLEAR
+literal|"edit-clear"
 block|,
 name|NC_
 argument_list|(
@@ -111,7 +111,7 @@ argument_list|,
 literal|"_Clear"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -172,7 +172,7 @@ block|{
 block|{
 literal|"error-console-save-all"
 block|,
-name|GTK_STOCK_SAVE_AS
+literal|"document-save-as"
 block|,
 name|NC_
 argument_list|(
@@ -181,7 +181,7 @@ argument_list|,
 literal|"_Save Error Log to File..."
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -200,7 +200,7 @@ block|,
 block|{
 literal|"error-console-save-selection"
 block|,
-name|GTK_STOCK_SAVE_AS
+literal|"document-save-as"
 block|,
 name|NC_
 argument_list|(
@@ -209,7 +209,7 @@ argument_list|,
 literal|"Save S_election to File..."
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(

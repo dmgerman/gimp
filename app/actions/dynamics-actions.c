@@ -114,7 +114,7 @@ block|,
 block|{
 literal|"dynamics-new"
 block|,
-name|GTK_STOCK_NEW
+literal|"document-new"
 block|,
 name|NC_
 argument_list|(
@@ -123,7 +123,7 @@ argument_list|,
 literal|"_New Dynamics"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -172,7 +172,7 @@ block|,
 block|{
 literal|"dynamics-copy-location"
 block|,
-name|GTK_STOCK_COPY
+literal|"edit-copy"
 block|,
 name|NC_
 argument_list|(
@@ -181,7 +181,7 @@ argument_list|,
 literal|"Copy Dynamics _Location"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -201,7 +201,7 @@ block|,
 block|{
 literal|"dynamics-delete"
 block|,
-name|GTK_STOCK_DELETE
+literal|"edit-delete"
 block|,
 name|NC_
 argument_list|(
@@ -210,7 +210,7 @@ argument_list|,
 literal|"_Delete Dynamics"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -230,7 +230,7 @@ block|,
 block|{
 literal|"dynamics-refresh"
 block|,
-name|GTK_STOCK_REFRESH
+literal|"view-refresh"
 block|,
 name|NC_
 argument_list|(
@@ -239,7 +239,7 @@ argument_list|,
 literal|"_Refresh Dynamics"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -271,7 +271,7 @@ block|{
 block|{
 literal|"dynamics-edit"
 block|,
-name|GTK_STOCK_EDIT
+literal|"gtk-edit"
 block|,
 name|NC_
 argument_list|(

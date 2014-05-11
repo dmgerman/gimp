@@ -126,7 +126,7 @@ block|,
 block|{
 literal|"tool-presets-new"
 block|,
-name|GTK_STOCK_NEW
+literal|"document-new"
 block|,
 name|NC_
 argument_list|(
@@ -135,7 +135,7 @@ argument_list|,
 literal|"_New Tool Preset"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -184,7 +184,7 @@ block|,
 block|{
 literal|"tool-presets-copy-location"
 block|,
-name|GTK_STOCK_COPY
+literal|"edit-copy"
 block|,
 name|NC_
 argument_list|(
@@ -193,7 +193,7 @@ argument_list|,
 literal|"Copy Tool Preset _Location"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -213,7 +213,7 @@ block|,
 block|{
 literal|"tool-presets-delete"
 block|,
-name|GTK_STOCK_DELETE
+literal|"edit-delete"
 block|,
 name|NC_
 argument_list|(
@@ -222,7 +222,7 @@ argument_list|,
 literal|"_Delete Tool Preset"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -242,7 +242,7 @@ block|,
 block|{
 literal|"tool-presets-refresh"
 block|,
-name|GTK_STOCK_REFRESH
+literal|"view-refresh"
 block|,
 name|NC_
 argument_list|(
@@ -251,7 +251,7 @@ argument_list|,
 literal|"_Refresh Tool Presets"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -283,7 +283,7 @@ block|{
 block|{
 literal|"tool-presets-edit"
 block|,
-name|GTK_STOCK_EDIT
+literal|"gtk-edit"
 block|,
 name|NC_
 argument_list|(

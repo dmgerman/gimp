@@ -163,7 +163,7 @@ block|,
 block|{
 literal|"tool-options-save-preset-menu"
 block|,
-name|GTK_STOCK_SAVE
+literal|"document-save"
 block|,
 name|NC_
 argument_list|(
@@ -184,7 +184,7 @@ block|,
 block|{
 literal|"tool-options-restore-preset-menu"
 block|,
-name|GTK_STOCK_REVERT_TO_SAVED
+literal|"document-revert"
 block|,
 name|NC_
 argument_list|(
@@ -205,7 +205,7 @@ block|,
 block|{
 literal|"tool-options-edit-preset-menu"
 block|,
-name|GTK_STOCK_EDIT
+literal|"gtk-edit"
 block|,
 name|NC_
 argument_list|(
@@ -226,7 +226,7 @@ block|,
 block|{
 literal|"tool-options-delete-preset-menu"
 block|,
-name|GTK_STOCK_DELETE
+literal|"edit-delete"
 block|,
 name|NC_
 argument_list|(
@@ -247,7 +247,7 @@ block|,
 block|{
 literal|"tool-options-save-new-preset"
 block|,
-name|GTK_STOCK_NEW
+literal|"document-new"
 block|,
 name|NC_
 argument_list|(
@@ -280,7 +280,7 @@ argument_list|,
 literal|"R_eset Tool Options"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -309,7 +309,7 @@ argument_list|,
 literal|"Reset _all Tool Options"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(

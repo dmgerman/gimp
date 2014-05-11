@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1d35900103
+DECL|enum|__anon28f4819b0103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -2459,7 +2459,7 @@ name|gimp_editor_add_button
 argument_list|(
 name|editor
 argument_list|,
-name|GTK_STOCK_ZOOM_OUT
+literal|"zoom-out"
 argument_list|,
 name|_
 argument_list|(
@@ -2482,7 +2482,7 @@ name|gimp_editor_add_button
 argument_list|(
 name|editor
 argument_list|,
-name|GTK_STOCK_ZOOM_IN
+literal|"zoom-in"
 argument_list|,
 name|_
 argument_list|(

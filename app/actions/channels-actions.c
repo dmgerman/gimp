@@ -120,7 +120,7 @@ block|,
 block|{
 literal|"channels-edit-attributes"
 block|,
-name|GTK_STOCK_EDIT
+literal|"gtk-edit"
 block|,
 name|NC_
 argument_list|(
@@ -149,7 +149,7 @@ block|,
 block|{
 literal|"channels-new"
 block|,
-name|GTK_STOCK_NEW
+literal|"document-new"
 block|,
 name|NC_
 argument_list|(
@@ -158,7 +158,7 @@ argument_list|,
 literal|"_New Channel..."
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -178,7 +178,7 @@ block|,
 block|{
 literal|"channels-new-last-values"
 block|,
-name|GTK_STOCK_NEW
+literal|"document-new"
 block|,
 name|NC_
 argument_list|(
@@ -187,7 +187,7 @@ argument_list|,
 literal|"_New Channel"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -236,7 +236,7 @@ block|,
 block|{
 literal|"channels-delete"
 block|,
-name|GTK_STOCK_DELETE
+literal|"edit-delete"
 block|,
 name|NC_
 argument_list|(
@@ -245,7 +245,7 @@ argument_list|,
 literal|"_Delete Channel"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -265,7 +265,7 @@ block|,
 block|{
 literal|"channels-raise"
 block|,
-name|GTK_STOCK_GO_UP
+literal|"go-up"
 block|,
 name|NC_
 argument_list|(
@@ -274,7 +274,7 @@ argument_list|,
 literal|"_Raise Channel"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -294,7 +294,7 @@ block|,
 block|{
 literal|"channels-raise-to-top"
 block|,
-name|GTK_STOCK_GOTO_TOP
+literal|"go-top"
 block|,
 name|NC_
 argument_list|(
@@ -303,7 +303,7 @@ argument_list|,
 literal|"Raise Channel to _Top"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -323,7 +323,7 @@ block|,
 block|{
 literal|"channels-lower"
 block|,
-name|GTK_STOCK_GO_DOWN
+literal|"go-down"
 block|,
 name|NC_
 argument_list|(
@@ -332,7 +332,7 @@ argument_list|,
 literal|"_Lower Channel"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -352,7 +352,7 @@ block|,
 block|{
 literal|"channels-lower-to-bottom"
 block|,
-name|GTK_STOCK_GOTO_BOTTOM
+literal|"go-bottom"
 block|,
 name|NC_
 argument_list|(
@@ -361,7 +361,7 @@ argument_list|,
 literal|"Lower Channel to _Bottom"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(

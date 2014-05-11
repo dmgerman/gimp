@@ -291,7 +291,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-channel-edit"
 argument_list|,
-name|GTK_STOCK_EDIT
+literal|"gtk-edit"
 argument_list|,
 name|_
 argument_list|(

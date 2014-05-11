@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ee3fd00103
+DECL|enum|__anon2b3b44590103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -631,7 +631,7 @@ operator|->
 name|treeview
 argument_list|)
 argument_list|,
-name|GTK_STOCK_DELETE
+literal|"edit-delete"
 argument_list|,
 name|_
 argument_list|(

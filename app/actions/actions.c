@@ -690,7 +690,7 @@ argument_list|(
 literal|"Edit"
 argument_list|)
 block|,
-name|GTK_STOCK_EDIT
+literal|"gtk-edit"
 block|,
 name|edit_actions_setup
 block|,
@@ -720,7 +720,7 @@ argument_list|(
 literal|"File"
 argument_list|)
 block|,
-name|GTK_STOCK_FILE
+literal|"text-x-generic"
 block|,
 name|file_actions_setup
 block|,
@@ -825,7 +825,7 @@ argument_list|(
 literal|"Help"
 argument_list|)
 block|,
-name|GTK_STOCK_HELP
+literal|"help-browser"
 block|,
 name|help_actions_setup
 block|,
@@ -1005,7 +1005,7 @@ argument_list|(
 literal|"Text Tool"
 argument_list|)
 block|,
-name|GTK_STOCK_EDIT
+literal|"gtk-edit"
 block|,
 name|text_tool_actions_setup
 block|,
@@ -1020,7 +1020,7 @@ argument_list|(
 literal|"Text Editor"
 argument_list|)
 block|,
-name|GTK_STOCK_EDIT
+literal|"gtk-edit"
 block|,
 name|text_editor_actions_setup
 block|,

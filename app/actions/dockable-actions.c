@@ -150,7 +150,7 @@ block|,
 block|{
 literal|"dockable-menu"
 block|,
-name|GTK_STOCK_MISSING_IMAGE
+literal|"image-mising"
 block|,
 literal|""
 block|}
@@ -197,7 +197,7 @@ block|,
 block|{
 literal|"dockable-close-tab"
 block|,
-name|GTK_STOCK_CLOSE
+literal|"window-close"
 block|,
 name|NC_
 argument_list|(

@@ -114,7 +114,7 @@ block|,
 block|{
 literal|"brushes-open-as-image"
 block|,
-name|GTK_STOCK_OPEN
+literal|"document-open"
 block|,
 name|NC_
 argument_list|(
@@ -123,7 +123,7 @@ argument_list|,
 literal|"_Open Brush as Image"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -143,7 +143,7 @@ block|,
 block|{
 literal|"brushes-new"
 block|,
-name|GTK_STOCK_NEW
+literal|"document-new"
 block|,
 name|NC_
 argument_list|(
@@ -152,7 +152,7 @@ argument_list|,
 literal|"_New Brush"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -201,7 +201,7 @@ block|,
 block|{
 literal|"brushes-copy-location"
 block|,
-name|GTK_STOCK_COPY
+literal|"edit-copy"
 block|,
 name|NC_
 argument_list|(
@@ -210,7 +210,7 @@ argument_list|,
 literal|"Copy Brush _Location"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -230,7 +230,7 @@ block|,
 block|{
 literal|"brushes-delete"
 block|,
-name|GTK_STOCK_DELETE
+literal|"edit-delete"
 block|,
 name|NC_
 argument_list|(
@@ -239,7 +239,7 @@ argument_list|,
 literal|"_Delete Brush"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -259,7 +259,7 @@ block|,
 block|{
 literal|"brushes-refresh"
 block|,
-name|GTK_STOCK_REFRESH
+literal|"view-refresh"
 block|,
 name|NC_
 argument_list|(
@@ -268,7 +268,7 @@ argument_list|,
 literal|"_Refresh Brushes"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -300,7 +300,7 @@ block|{
 block|{
 literal|"brushes-edit"
 block|,
-name|GTK_STOCK_EDIT
+literal|"gtk-edit"
 block|,
 name|NC_
 argument_list|(

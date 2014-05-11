@@ -272,7 +272,7 @@ block|,
 block|{
 literal|"file-open"
 block|,
-name|GTK_STOCK_OPEN
+literal|"document-open"
 block|,
 name|NC_
 argument_list|(
@@ -281,7 +281,7 @@ argument_list|,
 literal|"_Open..."
 argument_list|)
 block|,
-name|NULL
+literal|"<primary>O"
 block|,
 name|NC_
 argument_list|(
@@ -388,7 +388,7 @@ block|,
 block|{
 literal|"file-revert"
 block|,
-name|GTK_STOCK_REVERT_TO_SAVED
+literal|"document-revert"
 block|,
 name|NC_
 argument_list|(
@@ -417,7 +417,7 @@ block|,
 block|{
 literal|"file-close-all"
 block|,
-name|GTK_STOCK_CLOSE
+literal|"window-close"
 block|,
 name|NC_
 argument_list|(
@@ -446,7 +446,7 @@ block|,
 block|{
 literal|"file-quit"
 block|,
-name|GTK_STOCK_QUIT
+literal|"application-exit"
 block|,
 name|NC_
 argument_list|(
@@ -487,7 +487,7 @@ block|{
 block|{
 literal|"file-save"
 block|,
-name|GTK_STOCK_SAVE
+literal|"document-save"
 block|,
 name|NC_
 argument_list|(
@@ -515,7 +515,7 @@ block|,
 block|{
 literal|"file-save-as"
 block|,
-name|GTK_STOCK_SAVE_AS
+literal|"document-save-as"
 block|,
 name|NC_
 argument_list|(
@@ -558,7 +558,8 @@ name|NC_
 argument_list|(
 literal|"file-action"
 argument_list|,
-literal|"Save a copy of this image, without affecting the source file (if any) or the current state of the image"
+literal|"Save a copy of this image, without affecting the source file "
+literal|"(if any) or the current state of the image"
 argument_list|)
 block|,
 name|GIMP_SAVE_MODE_SAVE_A_COPY
@@ -795,7 +796,7 @@ index|]
 operator|.
 name|icon_name
 operator|=
-name|GTK_STOCK_OPEN
+literal|"document-open"
 expr_stmt|;
 name|entries
 index|[
@@ -874,7 +875,10 @@ index|]
 operator|.
 name|accelerator
 operator|=
+name|g_strdup
+argument_list|(
 literal|"<primary>0"
+argument_list|)
 expr_stmt|;
 else|else
 name|entries
@@ -884,7 +888,7 @@ index|]
 operator|.
 name|accelerator
 operator|=
-literal|""
+name|NULL
 expr_stmt|;
 block|}
 name|gimp_action_group_add_enum_actions
@@ -998,9 +1002,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|entries
+index|[
 name|i
-operator|<
-literal|9
+index|]
+operator|.
+name|accelerator
 condition|)
 name|g_free
 argument_list|(

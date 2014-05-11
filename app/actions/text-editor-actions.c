@@ -81,7 +81,7 @@ block|{
 block|{
 literal|"text-editor-toolbar"
 block|,
-name|GTK_STOCK_EDIT
+literal|"gtk-edit"
 block|,
 literal|"Text Editor Toolbar"
 block|,
@@ -97,7 +97,7 @@ block|,
 block|{
 literal|"text-editor-load"
 block|,
-name|GTK_STOCK_OPEN
+literal|"document-open"
 block|,
 name|NC_
 argument_list|(
@@ -106,7 +106,7 @@ argument_list|,
 literal|"Open"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -126,7 +126,7 @@ block|,
 block|{
 literal|"text-editor-clear"
 block|,
-name|GTK_STOCK_CLEAR
+literal|"edit-clear"
 block|,
 name|NC_
 argument_list|(
@@ -135,7 +135,7 @@ argument_list|,
 literal|"Clear"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -176,7 +176,7 @@ argument_list|,
 literal|"LTR"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -202,7 +202,7 @@ argument_list|,
 literal|"RTL"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(

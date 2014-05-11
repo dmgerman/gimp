@@ -1457,7 +1457,7 @@ name|icon
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GTK_STOCK_DELETE
+literal|"edit-delete"
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

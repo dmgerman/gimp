@@ -108,7 +108,7 @@ block|,
 block|{
 literal|"buffers-paste"
 block|,
-name|GTK_STOCK_PASTE
+literal|"edit-paste"
 block|,
 name|NC_
 argument_list|(
@@ -117,7 +117,7 @@ argument_list|,
 literal|"_Paste Buffer"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -195,7 +195,7 @@ block|,
 block|{
 literal|"buffers-delete"
 block|,
-name|GTK_STOCK_DELETE
+literal|"edit-delete"
 block|,
 name|NC_
 argument_list|(
@@ -204,7 +204,7 @@ argument_list|,
 literal|"_Delete Buffer"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(

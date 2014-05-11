@@ -1178,7 +1178,7 @@ argument_list|(
 name|tree_view
 argument_list|)
 argument_list|,
-name|GTK_STOCK_GO_UP
+literal|"go-up"
 argument_list|,
 name|_
 argument_list|(
@@ -1214,7 +1214,7 @@ argument_list|(
 name|tree_view
 argument_list|)
 argument_list|,
-name|GTK_STOCK_GO_DOWN
+literal|"go-down"
 argument_list|,
 name|_
 argument_list|(

@@ -120,7 +120,7 @@ block|,
 block|{
 literal|"gradients-new"
 block|,
-name|GTK_STOCK_NEW
+literal|"document-new"
 block|,
 name|NC_
 argument_list|(
@@ -129,7 +129,7 @@ argument_list|,
 literal|"_New Gradient"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -178,7 +178,7 @@ block|,
 block|{
 literal|"gradients-copy-location"
 block|,
-name|GTK_STOCK_COPY
+literal|"edit-copy"
 block|,
 name|NC_
 argument_list|(
@@ -187,7 +187,7 @@ argument_list|,
 literal|"Copy Gradient _Location"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -207,7 +207,7 @@ block|,
 block|{
 literal|"gradients-save-as-pov"
 block|,
-name|GTK_STOCK_SAVE_AS
+literal|"document-save-as"
 block|,
 name|NC_
 argument_list|(
@@ -216,7 +216,7 @@ argument_list|,
 literal|"Save as _POV-Ray..."
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -236,7 +236,7 @@ block|,
 block|{
 literal|"gradients-delete"
 block|,
-name|GTK_STOCK_DELETE
+literal|"edit-delete"
 block|,
 name|NC_
 argument_list|(
@@ -245,7 +245,7 @@ argument_list|,
 literal|"_Delete Gradient"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -265,7 +265,7 @@ block|,
 block|{
 literal|"gradients-refresh"
 block|,
-name|GTK_STOCK_REFRESH
+literal|"view-refresh"
 block|,
 name|NC_
 argument_list|(
@@ -274,7 +274,7 @@ argument_list|,
 literal|"_Refresh Gradients"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -306,7 +306,7 @@ block|{
 block|{
 literal|"gradients-edit"
 block|,
-name|GTK_STOCK_EDIT
+literal|"gtk-edit"
 block|,
 name|NC_
 argument_list|(

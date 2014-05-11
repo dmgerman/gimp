@@ -168,7 +168,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a4d0660103
+DECL|enum|__anon2990cfd20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -553,7 +553,7 @@ argument_list|(
 name|status
 argument_list|)
 argument_list|,
-name|GTK_STOCK_SAVE
+literal|"document-save"
 argument_list|,
 name|_
 argument_list|(

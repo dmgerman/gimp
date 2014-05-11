@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b3fe340103
+DECL|enum|__anon2942222d0103
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -136,7 +136,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b3fe340208
+DECL|struct|__anon2942222d0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -591,7 +591,7 @@ argument_list|)
 argument_list|,
 name|GTK_ENTRY_ICON_PRIMARY
 argument_list|,
-name|GTK_STOCK_FIND
+literal|"edit-find"
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1747,12 +1747,12 @@ argument_list|)
 condition|)
 name|icon_name
 operator|=
-name|GTK_STOCK_OK
+literal|"gtk-ok"
 expr_stmt|;
 else|else
 name|icon_name
 operator|=
-name|GTK_STOCK_NO
+literal|"gtk-no"
 expr_stmt|;
 block|}
 else|else

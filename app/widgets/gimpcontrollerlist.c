@@ -168,7 +168,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2933f05e0103
+DECL|enum|__anon2aafcdcd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -181,7 +181,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2933f05e0203
+DECL|enum|__anon2aafcdcd0203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -1089,7 +1089,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GTK_STOCK_GO_FORWARD
+literal|"go-next"
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -1190,7 +1190,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GTK_STOCK_GO_BACK
+literal|"go-previous"
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -1391,7 +1391,7 @@ operator|->
 name|dest
 argument_list|)
 argument_list|,
-name|GTK_STOCK_PROPERTIES
+literal|"document-properties"
 argument_list|,
 name|_
 argument_list|(
@@ -1423,7 +1423,7 @@ operator|->
 name|dest
 argument_list|)
 argument_list|,
-name|GTK_STOCK_GO_UP
+literal|"go-up"
 argument_list|,
 name|_
 argument_list|(
@@ -1455,7 +1455,7 @@ operator|->
 name|dest
 argument_list|)
 argument_list|,
-name|GTK_STOCK_GO_DOWN
+literal|"go-down"
 argument_list|,
 name|_
 argument_list|(

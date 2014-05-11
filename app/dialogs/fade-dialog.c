@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c4793a0108
+DECL|struct|__anon27463d090108
 block|{
 DECL|member|image
 name|GimpImage
@@ -421,7 +421,7 @@ name|title
 argument_list|,
 literal|"gimp-edit-fade"
 argument_list|,
-name|GTK_STOCK_UNDO
+literal|"edit-undo"
 argument_list|,
 name|title
 argument_list|,

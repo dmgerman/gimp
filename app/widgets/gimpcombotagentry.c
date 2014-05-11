@@ -332,7 +332,7 @@ argument_list|)
 argument_list|,
 name|GTK_ENTRY_ICON_SECONDARY
 argument_list|,
-name|GTK_STOCK_GO_DOWN
+literal|"go-down"
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

@@ -114,7 +114,7 @@ block|,
 block|{
 literal|"images-raise-views"
 block|,
-name|GTK_STOCK_GOTO_TOP
+literal|"go-top"
 block|,
 name|NC_
 argument_list|(
@@ -123,7 +123,7 @@ argument_list|,
 literal|"_Raise Views"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -143,7 +143,7 @@ block|,
 block|{
 literal|"images-new-view"
 block|,
-name|GTK_STOCK_NEW
+literal|"document-new"
 block|,
 name|NC_
 argument_list|(
@@ -152,7 +152,7 @@ argument_list|,
 literal|"_New View"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -172,7 +172,7 @@ block|,
 block|{
 literal|"images-delete"
 block|,
-name|GTK_STOCK_DELETE
+literal|"edit-delete"
 block|,
 name|NC_
 argument_list|(
@@ -181,7 +181,7 @@ argument_list|,
 literal|"_Delete Image"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(

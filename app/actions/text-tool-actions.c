@@ -159,7 +159,7 @@ block|,
 block|{
 literal|"text-tool-cut"
 block|,
-name|GTK_STOCK_CUT
+literal|"edit-cut"
 block|,
 name|NC_
 argument_list|(
@@ -170,7 +170,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"<primary>X"
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -183,7 +183,7 @@ block|,
 block|{
 literal|"text-tool-copy"
 block|,
-name|GTK_STOCK_COPY
+literal|"edit-copy"
 block|,
 name|NC_
 argument_list|(
@@ -194,7 +194,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"<primary>C"
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -207,7 +207,7 @@ block|,
 block|{
 literal|"text-tool-paste"
 block|,
-name|GTK_STOCK_PASTE
+literal|"edit-paste"
 block|,
 name|NC_
 argument_list|(
@@ -218,7 +218,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"<primary>V"
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -231,7 +231,7 @@ block|,
 block|{
 literal|"text-tool-delete"
 block|,
-name|GTK_STOCK_DELETE
+literal|"edit-delete"
 block|,
 name|NC_
 argument_list|(
@@ -255,7 +255,7 @@ block|,
 block|{
 literal|"text-tool-load"
 block|,
-name|GTK_STOCK_OPEN
+literal|"document-open"
 block|,
 name|NC_
 argument_list|(
@@ -279,7 +279,7 @@ block|,
 block|{
 literal|"text-tool-clear"
 block|,
-name|GTK_STOCK_CLEAR
+literal|"edit-clear"
 block|,
 name|NC_
 argument_list|(
@@ -288,7 +288,7 @@ argument_list|,
 literal|"Cl_ear"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(

@@ -218,7 +218,7 @@ literal|0
 condition|)
 name|icon_name
 operator|=
-name|GTK_STOCK_DIRECTORY
+literal|"folder"
 expr_stmt|;
 block|}
 if|if

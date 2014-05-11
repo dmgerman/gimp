@@ -176,7 +176,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-image-properties"
 argument_list|,
-name|GTK_STOCK_INFO
+literal|"dialog-information"
 argument_list|,
 name|_
 argument_list|(

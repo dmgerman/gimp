@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon299d869e0103
+DECL|enum|__anon2b9998780103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -85,7 +85,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299d869e0203
+DECL|enum|__anon2b9998780203
 block|{
 DECL|enumerator|COLUMN_UTF8
 name|COLUMN_UTF8
@@ -510,7 +510,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GTK_STOCK_NEW
+literal|"document-new"
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -585,7 +585,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GTK_STOCK_GO_UP
+literal|"go-up"
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -660,7 +660,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GTK_STOCK_GO_DOWN
+literal|"go-down"
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -735,7 +735,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GTK_STOCK_DELETE
+literal|"edit-delete"
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

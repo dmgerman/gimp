@@ -909,7 +909,7 @@ block|{
 block|{
 literal|"dialogs-preferences"
 block|,
-name|GTK_STOCK_PREFERENCES
+literal|"preferences-system"
 block|,
 name|NC_
 argument_list|(
@@ -987,7 +987,7 @@ block|,
 block|{
 literal|"dialogs-module-dialog"
 block|,
-name|GTK_STOCK_EXECUTE
+literal|"system-run"
 block|,
 name|NC_
 argument_list|(
@@ -1039,7 +1039,7 @@ block|,
 block|{
 literal|"dialogs-about"
 block|,
-name|GTK_STOCK_ABOUT
+literal|"help-about"
 block|,
 if|#
 directive|if
@@ -1089,7 +1089,7 @@ block|,
 block|{
 literal|"help-action-search"
 block|,
-name|GTK_STOCK_FIND
+literal|"edit-find"
 block|,
 name|NC_
 argument_list|(

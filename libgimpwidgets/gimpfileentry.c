@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aad0abb0103
+DECL|enum|__anon293cf0cf0103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -352,7 +352,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GTK_STOCK_OPEN
+literal|"document-open"
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -625,7 +625,7 @@ name|file_exists
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GTK_STOCK_NO
+literal|"gtk-no"
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -1519,9 +1519,9 @@ argument_list|)
 argument_list|,
 name|exists
 condition|?
-name|GTK_STOCK_YES
+literal|"gtk-yes"
 else|:
-name|GTK_STOCK_NO
+literal|"gtk-no"
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

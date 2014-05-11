@@ -145,7 +145,7 @@ block|,
 block|{
 literal|"gradient-editor-load-left-color"
 block|,
-name|GTK_STOCK_REVERT_TO_SAVED
+literal|"document-revert"
 block|,
 name|NC_
 argument_list|(
@@ -158,7 +158,7 @@ block|,
 block|{
 literal|"gradient-editor-save-left-color"
 block|,
-name|GTK_STOCK_SAVE
+literal|"document-save"
 block|,
 name|NC_
 argument_list|(
@@ -184,7 +184,7 @@ block|,
 block|{
 literal|"gradient-editor-load-right-color"
 block|,
-name|GTK_STOCK_REVERT_TO_SAVED
+literal|"document-revert"
 block|,
 name|NC_
 argument_list|(
@@ -197,7 +197,7 @@ block|,
 block|{
 literal|"gradient-editor-save-right-color"
 block|,
-name|GTK_STOCK_SAVE
+literal|"document-save"
 block|,
 name|NC_
 argument_list|(
@@ -350,7 +350,7 @@ block|,
 block|{
 literal|"gradient-editor-delete"
 block|,
-name|GTK_STOCK_DELETE
+literal|"edit-delete"
 block|,
 literal|"delete"
 block|,
@@ -1605,7 +1605,7 @@ block|{
 block|{
 literal|"gradient-editor-zoom-in"
 block|,
-name|GTK_STOCK_ZOOM_IN
+literal|"zoom-in"
 block|,
 name|N_
 argument_list|(
@@ -1629,7 +1629,7 @@ block|,
 block|{
 literal|"gradient-editor-zoom-out"
 block|,
-name|GTK_STOCK_ZOOM_OUT
+literal|"zoom-out"
 block|,
 name|N_
 argument_list|(
@@ -1653,7 +1653,7 @@ block|,
 block|{
 literal|"gradient-editor-zoom-all"
 block|,
-name|GTK_STOCK_ZOOM_FIT
+literal|"zoom-fit-best"
 block|,
 name|N_
 argument_list|(

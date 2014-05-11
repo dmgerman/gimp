@@ -209,7 +209,7 @@ block|,
 block|{
 literal|"layers-properties-menu"
 block|,
-name|GTK_STOCK_PROPERTIES
+literal|"document-properties"
 block|,
 name|NC_
 argument_list|(
@@ -277,7 +277,7 @@ block|,
 block|{
 literal|"layers-edit-attributes"
 block|,
-name|GTK_STOCK_EDIT
+literal|"gtk-edit"
 block|,
 name|NC_
 argument_list|(
@@ -306,7 +306,7 @@ block|,
 block|{
 literal|"layers-new"
 block|,
-name|GTK_STOCK_NEW
+literal|"document-new"
 block|,
 name|NC_
 argument_list|(
@@ -335,7 +335,7 @@ block|,
 block|{
 literal|"layers-new-last-values"
 block|,
-name|GTK_STOCK_NEW
+literal|"document-new"
 block|,
 name|NC_
 argument_list|(
@@ -344,7 +344,7 @@ argument_list|,
 literal|"_New Layer"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -393,7 +393,7 @@ block|,
 block|{
 literal|"layers-new-group"
 block|,
-name|GTK_STOCK_DIRECTORY
+literal|"folder"
 block|,
 name|NC_
 argument_list|(
@@ -451,7 +451,7 @@ block|,
 block|{
 literal|"layers-delete"
 block|,
-name|GTK_STOCK_DELETE
+literal|"edit-delete"
 block|,
 name|NC_
 argument_list|(
@@ -460,7 +460,7 @@ argument_list|,
 literal|"_Delete Layer"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -480,7 +480,7 @@ block|,
 block|{
 literal|"layers-raise"
 block|,
-name|GTK_STOCK_GO_UP
+literal|"go-up"
 block|,
 name|NC_
 argument_list|(
@@ -489,7 +489,7 @@ argument_list|,
 literal|"_Raise Layer"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -509,7 +509,7 @@ block|,
 block|{
 literal|"layers-raise-to-top"
 block|,
-name|GTK_STOCK_GOTO_TOP
+literal|"go-top"
 block|,
 name|NC_
 argument_list|(
@@ -518,7 +518,7 @@ argument_list|,
 literal|"Layer to _Top"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -538,7 +538,7 @@ block|,
 block|{
 literal|"layers-lower"
 block|,
-name|GTK_STOCK_GO_DOWN
+literal|"go-down"
 block|,
 name|NC_
 argument_list|(
@@ -547,7 +547,7 @@ argument_list|,
 literal|"_Lower Layer"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -567,7 +567,7 @@ block|,
 block|{
 literal|"layers-lower-to-bottom"
 block|,
-name|GTK_STOCK_GOTO_BOTTOM
+literal|"go-bottom"
 block|,
 name|NC_
 argument_list|(
@@ -576,7 +576,7 @@ argument_list|,
 literal|"Layer to _Bottom"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -1103,7 +1103,7 @@ block|,
 block|{
 literal|"layers-mask-edit"
 block|,
-name|GTK_STOCK_EDIT
+literal|"gtk-edit"
 block|,
 name|NC_
 argument_list|(
@@ -1231,7 +1231,7 @@ block|,
 block|{
 literal|"layers-mask-delete"
 block|,
-name|GTK_STOCK_DELETE
+literal|"edit-delete"
 block|,
 name|NC_
 argument_list|(
@@ -1240,7 +1240,7 @@ argument_list|,
 literal|"Delete Layer Mas_k"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(

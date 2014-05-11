@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af9252b0103
+DECL|enum|__anon2b5cd9d70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1075,7 +1075,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GTK_STOCK_CLEAR
+literal|"edit-clear"
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
@@ -1581,7 +1581,7 @@ name|buffer
 operator|->
 name|bold_tag
 argument_list|,
-name|GTK_STOCK_BOLD
+literal|"format-text-bold"
 argument_list|,
 name|_
 argument_list|(
@@ -1599,7 +1599,7 @@ name|buffer
 operator|->
 name|italic_tag
 argument_list|,
-name|GTK_STOCK_ITALIC
+literal|"format-text-italic"
 argument_list|,
 name|_
 argument_list|(
@@ -1617,7 +1617,7 @@ name|buffer
 operator|->
 name|underline_tag
 argument_list|,
-name|GTK_STOCK_UNDERLINE
+literal|"format-text-underline"
 argument_list|,
 name|_
 argument_list|(
@@ -1635,7 +1635,7 @@ name|buffer
 operator|->
 name|strikethrough_tag
 argument_list|,
-name|GTK_STOCK_STRIKETHROUGH
+literal|"format-edit-strikethrough"
 argument_list|,
 name|_
 argument_list|(

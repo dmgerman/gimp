@@ -120,7 +120,7 @@ block|,
 block|{
 literal|"colormap-edit-color"
 block|,
-name|GTK_STOCK_EDIT
+literal|"gtk-edit"
 block|,
 name|NC_
 argument_list|(
@@ -161,7 +161,7 @@ block|{
 block|{
 literal|"colormap-add-color-from-fg"
 block|,
-name|GTK_STOCK_ADD
+literal|"list-add"
 block|,
 name|NC_
 argument_list|(
@@ -189,7 +189,7 @@ block|,
 block|{
 literal|"colormap-add-color-from-bg"
 block|,
-name|GTK_STOCK_ADD
+literal|"list-add"
 block|,
 name|NC_
 argument_list|(

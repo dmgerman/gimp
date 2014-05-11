@@ -114,7 +114,7 @@ block|,
 block|{
 literal|"fonts-refresh"
 block|,
-name|GTK_STOCK_REFRESH
+literal|"view-refresh"
 block|,
 name|NC_
 argument_list|(
@@ -123,7 +123,7 @@ argument_list|,
 literal|"_Rescan Font List"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(

@@ -679,7 +679,7 @@ name|gchar
 modifier|*
 name|icon_name
 init|=
-name|GTK_STOCK_FILE
+literal|"text-x-generic"
 decl_stmt|;
 if|if
 condition|(
@@ -691,7 +691,7 @@ name|GIMP_THUMB_STATE_FOLDER
 condition|)
 name|icon_name
 operator|=
-name|GTK_STOCK_DIRECTORY
+literal|"folder"
 expr_stmt|;
 name|pixbuf
 operator|=

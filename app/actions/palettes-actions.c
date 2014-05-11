@@ -120,7 +120,7 @@ block|,
 block|{
 literal|"palettes-new"
 block|,
-name|GTK_STOCK_NEW
+literal|"document-new"
 block|,
 name|NC_
 argument_list|(
@@ -129,7 +129,7 @@ argument_list|,
 literal|"_New Palette"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -149,7 +149,7 @@ block|,
 block|{
 literal|"palettes-import"
 block|,
-name|GTK_STOCK_CONVERT
+literal|"gtk-convert"
 block|,
 name|NC_
 argument_list|(
@@ -158,7 +158,7 @@ argument_list|,
 literal|"_Import Palette..."
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -236,7 +236,7 @@ block|,
 block|{
 literal|"palettes-copy-location"
 block|,
-name|GTK_STOCK_COPY
+literal|"edit-copy"
 block|,
 name|NC_
 argument_list|(
@@ -245,7 +245,7 @@ argument_list|,
 literal|"Copy Palette _Location"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -265,7 +265,7 @@ block|,
 block|{
 literal|"palettes-delete"
 block|,
-name|GTK_STOCK_DELETE
+literal|"edit-delete"
 block|,
 name|NC_
 argument_list|(
@@ -274,7 +274,7 @@ argument_list|,
 literal|"_Delete Palette"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -294,7 +294,7 @@ block|,
 block|{
 literal|"palettes-refresh"
 block|,
-name|GTK_STOCK_REFRESH
+literal|"view-refresh"
 block|,
 name|NC_
 argument_list|(
@@ -303,7 +303,7 @@ argument_list|,
 literal|"_Refresh Palettes"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -335,7 +335,7 @@ block|{
 block|{
 literal|"palettes-edit"
 block|,
-name|GTK_STOCK_EDIT
+literal|"gtk-edit"
 block|,
 name|NC_
 argument_list|(

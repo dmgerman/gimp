@@ -564,7 +564,7 @@ block|{
 block|{
 literal|"windows-tabs-position-top"
 block|,
-name|GTK_STOCK_GOTO_TOP
+literal|"to-top"
 block|,
 name|NC_
 argument_list|(
@@ -590,7 +590,7 @@ block|,
 block|{
 literal|"windows-tabs-position-bottom"
 block|,
-name|GTK_STOCK_GOTO_BOTTOM
+literal|"go-bottom"
 block|,
 name|NC_
 argument_list|(
@@ -616,7 +616,7 @@ block|,
 block|{
 literal|"windows-tabs-position-left"
 block|,
-name|GTK_STOCK_GOTO_FIRST
+literal|"go-first"
 block|,
 name|NC_
 argument_list|(
@@ -642,7 +642,7 @@ block|,
 block|{
 literal|"windows-tabs-position-right"
 block|,
-name|GTK_STOCK_GOTO_LAST
+literal|"go-last"
 block|,
 name|NC_
 argument_list|(

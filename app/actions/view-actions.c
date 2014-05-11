@@ -306,7 +306,7 @@ block|,
 block|{
 literal|"view-new"
 block|,
-name|GTK_STOCK_NEW
+literal|"window-new"
 block|,
 name|NC_
 argument_list|(
@@ -315,7 +315,7 @@ argument_list|,
 literal|"_New View"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -335,7 +335,7 @@ block|,
 block|{
 literal|"view-close"
 block|,
-name|GTK_STOCK_CLOSE
+literal|"window-close"
 block|,
 name|NC_
 argument_list|(
@@ -364,7 +364,7 @@ block|,
 block|{
 literal|"view-zoom-fit-in"
 block|,
-name|GTK_STOCK_ZOOM_FIT
+literal|"zoom-fit-best"
 block|,
 name|NC_
 argument_list|(
@@ -393,7 +393,7 @@ block|,
 block|{
 literal|"view-zoom-fill"
 block|,
-name|GTK_STOCK_ZOOM_FIT
+literal|"zoom-fit-best"
 block|,
 name|NC_
 argument_list|(
@@ -567,7 +567,7 @@ block|,
 block|{
 literal|"view-shrink-wrap"
 block|,
-name|GTK_STOCK_ZOOM_FIT
+literal|"zoom-fit-best"
 block|,
 name|NC_
 argument_list|(
@@ -1071,7 +1071,7 @@ block|,
 block|{
 literal|"view-fullscreen"
 block|,
-name|GTK_STOCK_FULLSCREEN
+literal|"view-fullscreen"
 block|,
 name|NC_
 argument_list|(
@@ -1132,7 +1132,7 @@ block|,
 block|{
 literal|"view-zoom-minimum"
 block|,
-name|GTK_STOCK_ZOOM_OUT
+literal|"zoom-out"
 block|,
 literal|"Zoom out as far as possible"
 block|,
@@ -1150,7 +1150,7 @@ block|,
 block|{
 literal|"view-zoom-maximum"
 block|,
-name|GTK_STOCK_ZOOM_IN
+literal|"zoom-in"
 block|,
 literal|"Zoom in as far as possible"
 block|,
@@ -1168,7 +1168,7 @@ block|,
 block|{
 literal|"view-zoom-out"
 block|,
-name|GTK_STOCK_ZOOM_OUT
+literal|"zoom-out"
 block|,
 name|NC_
 argument_list|(
@@ -1196,7 +1196,7 @@ block|,
 block|{
 literal|"view-zoom-in"
 block|,
-name|GTK_STOCK_ZOOM_IN
+literal|"zoom-in"
 block|,
 name|NC_
 argument_list|(
@@ -1280,7 +1280,7 @@ block|,
 block|{
 literal|"view-zoom-out-skip"
 block|,
-name|GTK_STOCK_ZOOM_OUT
+literal|"zoom-out"
 block|,
 literal|"Zoom out a lot"
 block|,
@@ -1298,7 +1298,7 @@ block|,
 block|{
 literal|"view-zoom-in-skip"
 block|,
-name|GTK_STOCK_ZOOM_IN
+literal|"zoom-in"
 block|,
 literal|"Zoom in a lot"
 block|,
@@ -1536,7 +1536,7 @@ block|,
 block|{
 literal|"view-zoom-1-1"
 block|,
-name|GTK_STOCK_ZOOM_100
+literal|"zoom-original"
 block|,
 name|NC_
 argument_list|(
@@ -1562,7 +1562,7 @@ block|,
 block|{
 literal|"view-zoom-1-1-accel"
 block|,
-name|GTK_STOCK_ZOOM_100
+literal|"zoom-original"
 block|,
 name|NC_
 argument_list|(
@@ -1910,7 +1910,7 @@ block|,
 block|{
 literal|"view-padding-color-custom"
 block|,
-name|GTK_STOCK_SELECT_COLOR
+literal|"gtk-select-color"
 block|,
 name|NC_
 argument_list|(

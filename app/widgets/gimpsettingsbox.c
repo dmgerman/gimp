@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296ae8c60103
+DECL|enum|__anon2c6aeca90103
 block|{
 DECL|enumerator|FILE_DIALOG_SETUP
 name|FILE_DIALOG_SETUP
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296ae8c60203
+DECL|enum|__anon2c6aeca90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1236,7 +1236,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GTK_STOCK_ADD
+literal|"list-add"
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
@@ -1393,7 +1393,7 @@ name|gimp_settings_box_menu_item_add
 argument_list|(
 name|box
 argument_list|,
-name|GTK_STOCK_OPEN
+literal|"document-open"
 argument_list|,
 name|_
 argument_list|(
@@ -1414,7 +1414,7 @@ name|gimp_settings_box_menu_item_add
 argument_list|(
 name|box
 argument_list|,
-name|GTK_STOCK_SAVE
+literal|"document-save"
 argument_list|,
 name|_
 argument_list|(
@@ -1442,7 +1442,7 @@ name|gimp_settings_box_menu_item_add
 argument_list|(
 name|box
 argument_list|,
-name|GTK_STOCK_EDIT
+literal|"gtk-edit"
 argument_list|,
 name|_
 argument_list|(

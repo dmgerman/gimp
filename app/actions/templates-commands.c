@@ -150,7 +150,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3a337d0108
+DECL|struct|__anon28b737ce0108
 block|{
 DECL|member|context
 name|GimpContext
@@ -724,7 +724,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-template-edit"
 argument_list|,
-name|GTK_STOCK_EDIT
+literal|"gtk-edit"
 argument_list|,
 name|_
 argument_list|(
@@ -875,7 +875,7 @@ argument_list|(
 literal|"Delete Template"
 argument_list|)
 argument_list|,
-name|GTK_STOCK_DELETE
+literal|"edit-delete"
 argument_list|,
 name|GTK_WIDGET
 argument_list|(

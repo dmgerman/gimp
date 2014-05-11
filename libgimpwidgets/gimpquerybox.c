@@ -966,7 +966,7 @@ argument_list|(
 name|string_query_box_response
 argument_list|)
 argument_list|,
-name|GTK_STOCK_DIALOG_QUESTION
+literal|"dialog-question"
 argument_list|,
 name|message
 argument_list|,
@@ -1151,7 +1151,7 @@ argument_list|(
 name|int_query_box_response
 argument_list|)
 argument_list|,
-name|GTK_STOCK_DIALOG_QUESTION
+literal|"dialog-question"
 argument_list|,
 name|message
 argument_list|,
@@ -1344,7 +1344,7 @@ argument_list|(
 name|double_query_box_response
 argument_list|)
 argument_list|,
-name|GTK_STOCK_DIALOG_QUESTION
+literal|"dialog-question"
 argument_list|,
 name|message
 argument_list|,
@@ -1546,7 +1546,7 @@ argument_list|(
 name|size_query_box_response
 argument_list|)
 argument_list|,
-name|GTK_STOCK_DIALOG_QUESTION
+literal|"dialog-question"
 argument_list|,
 name|message
 argument_list|,

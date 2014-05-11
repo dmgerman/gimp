@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fda27b0103
+DECL|enum|__anon2bc8e4c70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -136,7 +136,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fda27b0203
+DECL|enum|__anon2bc8e4c70203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -2861,7 +2861,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-controller-action-dialog"
 argument_list|,
-name|GTK_STOCK_EDIT
+literal|"gtk-edit"
 argument_list|,
 name|title
 argument_list|,

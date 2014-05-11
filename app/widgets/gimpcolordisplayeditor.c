@@ -81,7 +81,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon292c7cb00103
+DECL|enum|__anon2ac58b1d0103
 block|{
 DECL|enumerator|SRC_COLUMN_NAME
 name|SRC_COLUMN_NAME
@@ -100,7 +100,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon292c7cb00203
+DECL|enum|__anon2ac58b1d0203
 block|{
 DECL|enumerator|DEST_COLUMN_ENABLED
 name|DEST_COLUMN_ENABLED
@@ -836,7 +836,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GTK_STOCK_GO_FORWARD
+literal|"go-next"
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -919,7 +919,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GTK_STOCK_GO_BACK
+literal|"go-previous"
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -994,7 +994,7 @@ argument_list|(
 name|ed
 argument_list|)
 argument_list|,
-name|GTK_STOCK_GO_UP
+literal|"go-up"
 argument_list|,
 name|_
 argument_list|(
@@ -1024,7 +1024,7 @@ argument_list|(
 name|ed
 argument_list|)
 argument_list|,
-name|GTK_STOCK_GO_DOWN
+literal|"go-down"
 argument_list|,
 name|_
 argument_list|(

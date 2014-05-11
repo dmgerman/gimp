@@ -566,7 +566,7 @@ name|gimp_message_dialog_new
 argument_list|(
 name|title
 argument_list|,
-name|GTK_STOCK_SAVE
+literal|"document-save"
 argument_list|,
 name|GTK_WIDGET
 argument_list|(

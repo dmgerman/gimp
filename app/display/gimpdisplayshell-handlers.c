@@ -3317,7 +3317,7 @@ name|statusbar
 argument_list|,
 name|GIMP_MESSAGE_INFO
 argument_list|,
-name|GTK_STOCK_SAVE
+literal|"document-save"
 argument_list|,
 name|_
 argument_list|(
@@ -3379,7 +3379,7 @@ name|statusbar
 argument_list|,
 name|GIMP_MESSAGE_INFO
 argument_list|,
-name|GTK_STOCK_SAVE
+literal|"document-save"
 argument_list|,
 name|_
 argument_list|(

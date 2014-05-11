@@ -302,7 +302,7 @@ block|,
 block|{
 literal|"image-new"
 block|,
-name|GTK_STOCK_NEW
+literal|"document-new"
 block|,
 name|NC_
 argument_list|(
@@ -650,7 +650,7 @@ block|,
 block|{
 literal|"image-properties"
 block|,
-name|GTK_STOCK_INFO
+literal|"dialog-information"
 block|,
 name|NC_
 argument_list|(

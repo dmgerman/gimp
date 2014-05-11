@@ -267,7 +267,7 @@ argument_list|(
 literal|"Delete Object"
 argument_list|)
 argument_list|,
-name|GTK_STOCK_DELETE
+literal|"edit-delete"
 argument_list|,
 name|gtk_widget_get_toplevel
 argument_list|(

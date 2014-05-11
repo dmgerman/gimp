@@ -6118,7 +6118,7 @@ name|button
 operator|=
 name|prefs_button_add
 argument_list|(
-name|GTK_STOCK_PREFERENCES
+literal|"preferences-system"
 argument_list|,
 name|_
 argument_list|(
@@ -6166,7 +6166,7 @@ name|button
 operator|=
 name|prefs_button_add
 argument_list|(
-name|GTK_STOCK_SAVE
+literal|"document-save"
 argument_list|,
 name|_
 argument_list|(
@@ -6240,7 +6240,7 @@ name|button
 operator|=
 name|prefs_button_add
 argument_list|(
-name|GTK_STOCK_CLEAR
+literal|"edit-clear"
 argument_list|,
 name|_
 argument_list|(
@@ -6721,7 +6721,7 @@ name|button
 operator|=
 name|prefs_button_add
 argument_list|(
-name|GTK_STOCK_REFRESH
+literal|"view-refresh"
 argument_list|,
 name|_
 argument_list|(
@@ -7226,7 +7226,7 @@ name|button
 operator|=
 name|prefs_button_add
 argument_list|(
-name|GTK_STOCK_CLEAR
+literal|"edit-clear"
 argument_list|,
 name|_
 argument_list|(
@@ -7353,7 +7353,7 @@ name|button
 operator|=
 name|prefs_button_add
 argument_list|(
-name|GTK_STOCK_SAVE
+literal|"document-save"
 argument_list|,
 name|_
 argument_list|(
@@ -8850,7 +8850,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2887fc8f0108
+DECL|struct|__anon28bf54f70108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10111,7 +10111,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2887fc8f0208
+DECL|struct|__anon28bf54f70208
 block|{
 DECL|member|label
 specifier|const
@@ -10839,7 +10839,7 @@ name|button
 operator|=
 name|prefs_button_add
 argument_list|(
-name|GTK_STOCK_PREFERENCES
+literal|"preferences-system"
 argument_list|,
 name|_
 argument_list|(
@@ -10887,7 +10887,7 @@ name|button
 operator|=
 name|prefs_button_add
 argument_list|(
-name|GTK_STOCK_SAVE
+literal|"document-save"
 argument_list|,
 name|_
 argument_list|(
@@ -11220,7 +11220,7 @@ name|button
 operator|=
 name|prefs_button_add
 argument_list|(
-name|GTK_STOCK_SAVE
+literal|"document-save"
 argument_list|,
 name|_
 argument_list|(
@@ -11338,7 +11338,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2887fc8f0308
+DECL|struct|__anon28bf54f70308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11493,7 +11493,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2887fc8f0408
+DECL|struct|__anon28bf54f70408
 block|{
 DECL|member|tree_label
 specifier|const

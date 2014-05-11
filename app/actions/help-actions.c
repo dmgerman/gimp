@@ -88,7 +88,7 @@ block|,
 block|{
 literal|"help-help"
 block|,
-name|GTK_STOCK_HELP
+literal|"help-browser"
 block|,
 name|NC_
 argument_list|(
@@ -117,7 +117,7 @@ block|,
 block|{
 literal|"help-context-help"
 block|,
-name|GTK_STOCK_HELP
+literal|"help-browser"
 block|,
 name|NC_
 argument_list|(

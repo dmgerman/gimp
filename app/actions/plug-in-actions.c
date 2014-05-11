@@ -613,7 +613,7 @@ block|{
 block|{
 literal|"plug-in-repeat"
 block|,
-name|GTK_STOCK_EXECUTE
+literal|"system-run"
 block|,
 name|NC_
 argument_list|(

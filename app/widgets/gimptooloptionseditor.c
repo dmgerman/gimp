@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4fe13f0103
+DECL|enum|__anon2ae4ecf90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -885,7 +885,7 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-name|GTK_STOCK_SAVE
+literal|"document-save"
 argument_list|,
 name|_
 argument_list|(
@@ -917,7 +917,7 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-name|GTK_STOCK_REVERT_TO_SAVED
+literal|"document-revert"
 argument_list|,
 name|_
 argument_list|(
@@ -949,7 +949,7 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-name|GTK_STOCK_DELETE
+literal|"edit-delete"
 argument_list|,
 name|_
 argument_list|(

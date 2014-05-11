@@ -412,7 +412,7 @@ name|selector_class
 operator|->
 name|icon_name
 operator|=
-name|GTK_STOCK_PRINT
+literal|"document-print"
 expr_stmt|;
 comment|/* FIXME */
 name|selector_class

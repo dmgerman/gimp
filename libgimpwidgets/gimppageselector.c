@@ -81,7 +81,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fd98e60103
+DECL|enum|__anon28eae7510103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -97,7 +97,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fd98e60203
+DECL|enum|__anon28eae7510203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fd98e60303
+DECL|enum|__anon28eae7510303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -133,7 +133,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fd98e60408
+DECL|struct|__anon28eae7510408
 block|{
 DECL|member|n_pages
 name|gint
@@ -1308,7 +1308,7 @@ argument_list|(
 name|gtk_icon_theme_get_default
 argument_list|()
 argument_list|,
-name|GTK_STOCK_FILE
+literal|"text-x-generic"
 argument_list|,
 literal|32
 argument_list|,

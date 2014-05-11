@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c1c2360103
+DECL|enum|__anon29c265c50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -887,7 +887,7 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-name|GTK_STOCK_SAVE
+literal|"document-save"
 argument_list|,
 name|_
 argument_list|(
@@ -917,7 +917,7 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-name|GTK_STOCK_REVERT_TO_SAVED
+literal|"document-revert"
 argument_list|,
 name|_
 argument_list|(

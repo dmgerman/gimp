@@ -270,7 +270,7 @@ argument_list|)
 argument_list|,
 name|GTK_ENTRY_ICON_SECONDARY
 argument_list|,
-name|GTK_STOCK_CLEAR
+literal|"edit-clear"
 argument_list|)
 expr_stmt|;
 name|gtk_entry_set_icon_activatable

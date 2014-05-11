@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae7c96c0103
+DECL|enum|__anon2b42100b0103
 block|{
 DECL|enumerator|ZOOMED
 name|ZOOMED
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae7c96c0203
+DECL|enum|__anon2b42100b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -112,7 +112,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae7c96c0308
+DECL|struct|__anon2b42100b0308
 block|{
 DECL|member|value
 name|gdouble
@@ -1671,7 +1671,7 @@ name|button
 operator|=
 name|zoom_button_new
 argument_list|(
-name|GTK_STOCK_ZOOM_IN
+literal|"zoom-in"
 argument_list|,
 name|icon_size
 argument_list|)
@@ -1714,7 +1714,7 @@ name|button
 operator|=
 name|zoom_button_new
 argument_list|(
-name|GTK_STOCK_ZOOM_OUT
+literal|"zoom-out"
 argument_list|,
 name|icon_size
 argument_list|)

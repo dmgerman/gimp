@@ -108,7 +108,7 @@ block|,
 block|{
 literal|"documents-open"
 block|,
-name|GTK_STOCK_OPEN
+literal|"document-open"
 block|,
 name|NC_
 argument_list|(
@@ -117,7 +117,7 @@ argument_list|,
 literal|"_Open Image"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -146,7 +146,7 @@ argument_list|,
 literal|"_Raise or Open Image"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -175,7 +175,7 @@ argument_list|,
 literal|"File Open _Dialog"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -195,7 +195,7 @@ block|,
 block|{
 literal|"documents-copy-location"
 block|,
-name|GTK_STOCK_COPY
+literal|"edit-copy"
 block|,
 name|NC_
 argument_list|(
@@ -204,7 +204,7 @@ argument_list|,
 literal|"Copy Image _Location"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -224,7 +224,7 @@ block|,
 block|{
 literal|"documents-remove"
 block|,
-name|GTK_STOCK_REMOVE
+literal|"list-remove"
 block|,
 name|NC_
 argument_list|(
@@ -233,7 +233,7 @@ argument_list|,
 literal|"Remove _Entry"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -253,7 +253,7 @@ block|,
 block|{
 literal|"documents-clear"
 block|,
-name|GTK_STOCK_CLEAR
+literal|"edit-clear"
 block|,
 name|NC_
 argument_list|(
@@ -262,7 +262,7 @@ argument_list|,
 literal|"_Clear History"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -282,7 +282,7 @@ block|,
 block|{
 literal|"documents-recreate-preview"
 block|,
-name|GTK_STOCK_REFRESH
+literal|"view-refresh"
 block|,
 name|NC_
 argument_list|(
@@ -291,7 +291,7 @@ argument_list|,
 literal|"Recreate _Preview"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -320,7 +320,7 @@ argument_list|,
 literal|"Reload _all Previews"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -349,7 +349,7 @@ argument_list|,
 literal|"Remove Dangling E_ntries"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(

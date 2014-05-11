@@ -168,7 +168,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae61e400108
+DECL|struct|__anon27806eca0108
 block|{
 DECL|member|name
 specifier|const
@@ -757,7 +757,7 @@ argument_list|(
 literal|"Clear Document History"
 argument_list|)
 argument_list|,
-name|GTK_STOCK_CLEAR
+literal|"edit-clear"
 argument_list|,
 name|GTK_WIDGET
 argument_list|(

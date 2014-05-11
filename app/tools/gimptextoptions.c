@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29518fcc0103
+DECL|enum|__anon2ae2f9490103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2409,7 +2409,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-name|GTK_STOCK_INDENT
+literal|"format-indent-more"
 argument_list|,
 name|spinbutton
 argument_list|,

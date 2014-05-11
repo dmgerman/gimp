@@ -120,7 +120,7 @@ block|,
 block|{
 literal|"palette-editor-edit-color"
 block|,
-name|GTK_STOCK_EDIT
+literal|"gtk-edit"
 block|,
 name|NC_
 argument_list|(
@@ -129,7 +129,7 @@ argument_list|,
 literal|"_Edit Color..."
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -149,7 +149,7 @@ block|,
 block|{
 literal|"palette-editor-delete-color"
 block|,
-name|GTK_STOCK_DELETE
+literal|"edit-delete"
 block|,
 name|NC_
 argument_list|(
@@ -158,7 +158,7 @@ argument_list|,
 literal|"_Delete Color"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -228,7 +228,7 @@ block|{
 block|{
 literal|"palette-editor-new-color-fg"
 block|,
-name|GTK_STOCK_NEW
+literal|"document-new"
 block|,
 name|NC_
 argument_list|(
@@ -237,7 +237,7 @@ argument_list|,
 literal|"New Color from _FG"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -256,7 +256,7 @@ block|,
 block|{
 literal|"palette-editor-new-color-bg"
 block|,
-name|GTK_STOCK_NEW
+literal|"document-new"
 block|,
 name|NC_
 argument_list|(
@@ -265,7 +265,7 @@ argument_list|,
 literal|"New Color from _BG"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -296,14 +296,14 @@ block|{
 block|{
 literal|"palette-editor-zoom-in"
 block|,
-name|GTK_STOCK_ZOOM_IN
+literal|"zoom-in"
 block|,
 name|N_
 argument_list|(
 literal|"Zoom _In"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|N_
 argument_list|(
@@ -320,14 +320,14 @@ block|,
 block|{
 literal|"palette-editor-zoom-out"
 block|,
-name|GTK_STOCK_ZOOM_OUT
+literal|"zoom-out"
 block|,
 name|N_
 argument_list|(
 literal|"Zoom _Out"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|N_
 argument_list|(
@@ -344,14 +344,14 @@ block|,
 block|{
 literal|"palette-editor-zoom-all"
 block|,
-name|GTK_STOCK_ZOOM_FIT
+literal|"zoom-fit-best"
 block|,
 name|N_
 argument_list|(
 literal|"Zoom _All"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|N_
 argument_list|(

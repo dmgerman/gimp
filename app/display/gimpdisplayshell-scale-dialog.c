@@ -117,7 +117,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294376d20108
+DECL|struct|__anon2b750b950108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -375,7 +375,7 @@ argument_list|)
 argument_list|,
 literal|"display_scale"
 argument_list|,
-name|GTK_STOCK_ZOOM_100
+literal|"zoom-original"
 argument_list|,
 name|_
 argument_list|(

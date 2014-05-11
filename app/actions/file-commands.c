@@ -1551,7 +1551,7 @@ argument_list|(
 literal|"Revert Image"
 argument_list|)
 argument_list|,
-name|GTK_STOCK_REVERT_TO_SAVED
+literal|"document-revert"
 argument_list|,
 name|GTK_WIDGET
 argument_list|(

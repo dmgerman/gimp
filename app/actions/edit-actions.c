@@ -252,7 +252,7 @@ block|,
 block|{
 literal|"undo-popup"
 block|,
-name|GTK_STOCK_UNDO
+literal|"edit-undo"
 block|,
 name|NC_
 argument_list|(
@@ -273,7 +273,7 @@ block|,
 block|{
 literal|"edit-undo"
 block|,
-name|GTK_STOCK_UNDO
+literal|"edit-undo"
 block|,
 name|NC_
 argument_list|(
@@ -302,7 +302,7 @@ block|,
 block|{
 literal|"edit-redo"
 block|,
-name|GTK_STOCK_REDO
+literal|"edit-redo"
 block|,
 name|NC_
 argument_list|(
@@ -331,7 +331,7 @@ block|,
 block|{
 literal|"edit-strong-undo"
 block|,
-name|GTK_STOCK_UNDO
+literal|"edit-undo"
 block|,
 name|NC_
 argument_list|(
@@ -360,7 +360,7 @@ block|,
 block|{
 literal|"edit-strong-redo"
 block|,
-name|GTK_STOCK_REDO
+literal|"edit-redo"
 block|,
 name|NC_
 argument_list|(
@@ -389,7 +389,7 @@ block|,
 block|{
 literal|"edit-undo-clear"
 block|,
-name|GTK_STOCK_CLEAR
+literal|"edit-clear"
 block|,
 name|NC_
 argument_list|(
@@ -398,7 +398,7 @@ argument_list|,
 literal|"_Clear Undo History"
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -418,7 +418,7 @@ block|,
 block|{
 literal|"edit-fade"
 block|,
-name|GTK_STOCK_UNDO
+literal|"edit-undo"
 block|,
 name|NC_
 argument_list|(
@@ -427,7 +427,7 @@ argument_list|,
 literal|"_Fade..."
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -447,7 +447,7 @@ block|,
 block|{
 literal|"edit-cut"
 block|,
-name|GTK_STOCK_CUT
+literal|"edit-cut"
 block|,
 name|NC_
 argument_list|(
@@ -476,7 +476,7 @@ block|,
 block|{
 literal|"edit-copy"
 block|,
-name|GTK_STOCK_COPY
+literal|"edit-copy"
 block|,
 name|NC_
 argument_list|(
@@ -535,7 +535,7 @@ block|,
 block|{
 literal|"edit-paste"
 block|,
-name|GTK_STOCK_PASTE
+literal|"edit-paste"
 block|,
 name|NC_
 argument_list|(
@@ -680,7 +680,7 @@ block|,
 block|{
 literal|"edit-named-cut"
 block|,
-name|GTK_STOCK_CUT
+literal|"edit-cut"
 block|,
 name|NC_
 argument_list|(
@@ -689,7 +689,7 @@ argument_list|,
 literal|"Cu_t Named..."
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -709,7 +709,7 @@ block|,
 block|{
 literal|"edit-named-copy"
 block|,
-name|GTK_STOCK_COPY
+literal|"edit-copy"
 block|,
 name|NC_
 argument_list|(
@@ -718,7 +718,7 @@ argument_list|,
 literal|"_Copy Named..."
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -768,7 +768,7 @@ block|,
 block|{
 literal|"edit-named-paste"
 block|,
-name|GTK_STOCK_PASTE
+literal|"edit-paste"
 block|,
 name|NC_
 argument_list|(
@@ -777,7 +777,7 @@ argument_list|,
 literal|"_Paste Named..."
 argument_list|)
 block|,
-literal|""
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -797,7 +797,7 @@ block|,
 block|{
 literal|"edit-clear"
 block|,
-name|GTK_STOCK_CLEAR
+literal|"edit-clear"
 block|,
 name|NC_
 argument_list|(

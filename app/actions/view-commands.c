@@ -2421,7 +2421,7 @@ argument_list|(
 literal|"Set Canvas Padding Color"
 argument_list|)
 argument_list|,
-name|GTK_STOCK_SELECT_COLOR
+literal|"gtk-select-color"
 argument_list|,
 name|_
 argument_list|(

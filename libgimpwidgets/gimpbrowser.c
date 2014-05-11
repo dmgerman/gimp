@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon297d66220103
+DECL|enum|__anon2bc1730a0103
 block|{
 DECL|enumerator|SEARCH
 name|SEARCH
@@ -451,7 +451,7 @@ argument_list|)
 argument_list|,
 name|GTK_ENTRY_ICON_SECONDARY
 argument_list|,
-name|GTK_STOCK_CLEAR
+literal|"edit-clear"
 argument_list|)
 expr_stmt|;
 name|gtk_entry_set_icon_activatable
