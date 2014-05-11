@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb167d30108
+DECL|struct|__anon2a1a83640108
 block|{
 DECL|member|width
 name|gint
@@ -136,7 +136,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb167d30203
+DECL|enum|__anon2a1a83640203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -1641,19 +1641,25 @@ modifier|*
 name|window
 parameter_list|)
 block|{
-specifier|const
-name|GtkIconSize
+name|GtkIconTheme
+modifier|*
+name|theme
+init|=
+name|gtk_icon_theme_get_default
+argument_list|()
+decl_stmt|;
+name|gint
 name|sizes
 index|[]
 init|=
 block|{
-name|GTK_ICON_SIZE_MENU
+literal|16
 block|,
-name|GTK_ICON_SIZE_BUTTON
+literal|24
 block|,
-name|GTK_ICON_SIZE_DND
+literal|32
 block|,
-name|GTK_ICON_SIZE_DIALOG
+literal|64
 block|}
 decl_stmt|;
 name|GList
@@ -1687,9 +1693,9 @@ name|g_list_prepend
 argument_list|(
 name|list
 argument_list|,
-name|gtk_widget_render_icon
+name|gtk_icon_theme_load_icon
 argument_list|(
-name|window
+name|theme
 argument_list|,
 name|GIMP_STOCK_USER_MANUAL
 argument_list|,
@@ -1697,6 +1703,8 @@ name|sizes
 index|[
 name|i
 index|]
+argument_list|,
+literal|0
 argument_list|,
 name|NULL
 argument_list|)
@@ -2661,7 +2669,7 @@ block|{
 block|{
 literal|"back"
 block|,
-name|GTK_STOCK_GO_BACK
+literal|"go-previous"
 block|,
 name|NULL
 block|,
@@ -2681,7 +2689,7 @@ block|,
 block|{
 literal|"forward"
 block|,
-name|GTK_STOCK_GO_FORWARD
+literal|"go-next"
 block|,
 name|NULL
 block|,
@@ -2701,7 +2709,7 @@ block|,
 block|{
 literal|"reload"
 block|,
-name|GTK_STOCK_REFRESH
+literal|"view-refresh"
 block|,
 name|N_
 argument_list|(
@@ -2724,7 +2732,7 @@ block|,
 block|{
 literal|"stop"
 block|,
-name|GTK_STOCK_CANCEL
+literal|"process-stop"
 block|,
 name|N_
 argument_list|(
@@ -2747,7 +2755,7 @@ block|,
 block|{
 literal|"home"
 block|,
-name|GTK_STOCK_HOME
+literal|"go-home"
 block|,
 name|NULL
 block|,
@@ -2767,7 +2775,7 @@ block|,
 block|{
 literal|"copy-location"
 block|,
-name|GTK_STOCK_COPY
+literal|"edit-copy"
 block|,
 name|N_
 argument_list|(
@@ -2790,7 +2798,7 @@ block|,
 block|{
 literal|"copy-selection"
 block|,
-name|GTK_STOCK_COPY
+literal|"edit-copy"
 block|,
 name|NULL
 block|,
@@ -2807,7 +2815,7 @@ block|,
 block|{
 literal|"zoom-in"
 block|,
-name|GTK_STOCK_ZOOM_IN
+literal|"zoom-in"
 block|,
 name|NULL
 block|,
@@ -2824,7 +2832,7 @@ block|,
 block|{
 literal|"zoom-out"
 block|,
-name|GTK_STOCK_ZOOM_OUT
+literal|"zoom-out"
 block|,
 name|NULL
 block|,
@@ -2841,7 +2849,7 @@ block|,
 block|{
 literal|"find"
 block|,
-name|GTK_STOCK_FIND
+literal|"edit-find"
 block|,
 name|NULL
 block|,
@@ -2881,7 +2889,7 @@ block|,
 block|{
 literal|"close"
 block|,
-name|GTK_STOCK_CLOSE
+literal|"window-close"
 block|,
 name|NULL
 block|,
@@ -2898,7 +2906,7 @@ block|,
 block|{
 literal|"quit"
 block|,
-name|GTK_STOCK_QUIT
+literal|"application-exit"
 block|,
 name|NULL
 block|,
@@ -4982,9 +4990,9 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|,
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|GTK_STOCK_GO_BACK
+literal|"go-previous"
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -5054,9 +5062,9 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|,
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|GTK_STOCK_GO_FORWARD
+literal|"go-next"
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

@@ -264,7 +264,7 @@ argument_list|(
 name|action
 argument_list|)
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|)
 expr_stmt|;
 name|gimp_throbber_action_sync_property
@@ -280,7 +280,7 @@ name|g_signal_connect_object
 argument_list|(
 name|action
 argument_list|,
-literal|"notify::stock-id"
+literal|"notify::icon-name"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -397,7 +397,7 @@ end_function
 begin_function
 name|GtkAction
 modifier|*
-DECL|function|gimp_throbber_action_new (const gchar * name,const gchar * label,const gchar * tooltip,const gchar * stock_id)
+DECL|function|gimp_throbber_action_new (const gchar * name,const gchar * label,const gchar * tooltip,const gchar * icon_name)
 name|gimp_throbber_action_new
 parameter_list|(
 specifier|const
@@ -418,7 +418,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|)
 block|{
 return|return
@@ -438,9 +438,9 @@ literal|"tooltip"
 argument_list|,
 name|tooltip
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
-name|stock_id
+name|icon_name
 argument_list|,
 name|NULL
 argument_list|)

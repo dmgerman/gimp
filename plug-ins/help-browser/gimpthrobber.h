@@ -173,14 +173,14 @@ parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_throbber_set_stock_id
+name|gimp_throbber_set_icon_name
 parameter_list|(
 name|GimpThrobber
 modifier|*
@@ -189,7 +189,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|icon_name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -198,7 +198,7 @@ begin_function_decl
 specifier|const
 name|gchar
 modifier|*
-name|gimp_throbber_get_stock_id
+name|gimp_throbber_get_icon_name
 parameter_list|(
 name|GimpThrobber
 modifier|*
