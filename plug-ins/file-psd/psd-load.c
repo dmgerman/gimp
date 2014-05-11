@@ -6542,7 +6542,7 @@ operator|==
 literal|3
 condition|)
 block|{
-comment|/* the</Layer group> marker layers are used to                    assemble the layer structure in a single pass */
+comment|/* the</Layer group> marker layers are used to                    * assemble the layer structure in a single pass                    */
 name|layer_id
 operator|=
 name|gimp_layer_group_new
@@ -6553,6 +6553,13 @@ expr_stmt|;
 block|}
 else|else
 comment|/* group-type == 1 || group_type == 2 */
+block|{
+if|if
+condition|(
+name|parent_group_stack
+operator|->
+name|len
+condition|)
 block|{
 name|layer_id
 operator|=
@@ -6569,7 +6576,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* since the layers are stored in reverse, the group                      layer start marker actually means we're done with                      that layer group */
+comment|/* since the layers are stored in reverse, the group                        * layer start marker actually means we're done with                        * that layer group                        */
 name|g_array_remove_index
 argument_list|(
 name|parent_group_stack
@@ -6581,6 +6588,15 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|layer_id
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+block|}
 block|}
 block|}
 comment|/* Empty layer */
@@ -7518,6 +7534,14 @@ name|img_a
 operator|->
 name|rows
 expr_stmt|;
+if|if
+condition|(
+name|parent_group_stack
+operator|->
+name|len
+operator|>
+literal|0
+condition|)
 name|parent_group_id
 operator|=
 name|g_array_index
@@ -7533,6 +7557,13 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+else|else
+name|parent_group_id
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+comment|/* root */
 name|IFDBG
 argument_list|(
 literal|3
@@ -7712,6 +7743,14 @@ argument_list|,
 name|layer_id
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|layer_id
+operator|!=
+operator|-
+literal|1
+condition|)
+block|{
 name|layer_mode
 operator|=
 name|psd_to_gimp_blend_mode
@@ -7804,6 +7843,7 @@ operator|->
 name|id
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 elseif|else
