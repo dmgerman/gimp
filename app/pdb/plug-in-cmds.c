@@ -2394,7 +2394,7 @@ literal|"The type of the icon"
 argument_list|,
 name|GIMP_TYPE_ICON_TYPE
 argument_list|,
-name|GIMP_ICON_TYPE_STOCK_ID
+name|GIMP_ICON_TYPE_ICON_NAME
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

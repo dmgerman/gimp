@@ -67,7 +67,7 @@ name|icon_type
 condition|)
 block|{
 case|case
-name|GIMP_ICON_TYPE_STOCK_ID
+name|GIMP_ICON_TYPE_ICON_NAME
 case|:
 case|case
 name|GIMP_ICON_TYPE_IMAGE_FILE

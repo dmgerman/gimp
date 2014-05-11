@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1867530103
+DECL|enum|__anon2af89dc10103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -111,7 +111,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1867530208
+DECL|struct|__anon2af89dc10208
 block|{
 DECL|member|title
 specifier|const
@@ -562,7 +562,7 @@ name|gimp_plugin_icon_register
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-name|GIMP_ICON_TYPE_STOCK_ID
+name|GIMP_ICON_TYPE_ICON_NAME
 argument_list|,
 operator|(
 specifier|const

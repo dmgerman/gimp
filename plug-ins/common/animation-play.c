@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276978050103
+DECL|enum|__anon27ea03470103
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -98,7 +98,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276978050208
+DECL|struct|__anon27ea03470208
 block|{
 DECL|member|duration_index
 name|gint
@@ -125,7 +125,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276978050308
+DECL|struct|__anon27ea03470308
 block|{
 DECL|member|x
 DECL|member|y
@@ -1157,14 +1157,14 @@ name|gimp_plugin_icon_register
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-name|GIMP_ICON_TYPE_STOCK_ID
+name|GIMP_ICON_TYPE_ICON_NAME
 argument_list|,
 operator|(
 specifier|const
 name|guint8
 operator|*
 operator|)
-name|GTK_STOCK_MEDIA_PLAY
+literal|"media-playback-start"
 argument_list|)
 expr_stmt|;
 block|}

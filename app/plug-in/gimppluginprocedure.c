@@ -114,7 +114,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289061670103
+DECL|enum|__anon29b007740103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -660,7 +660,7 @@ name|icon_type
 condition|)
 block|{
 case|case
-name|GIMP_ICON_TYPE_STOCK_ID
+name|GIMP_ICON_TYPE_ICON_NAME
 case|:
 case|case
 name|GIMP_ICON_TYPE_IMAGE_FILE
@@ -2671,7 +2671,7 @@ name|icon_type
 condition|)
 block|{
 case|case
-name|GIMP_ICON_TYPE_STOCK_ID
+name|GIMP_ICON_TYPE_ICON_NAME
 case|:
 case|case
 name|GIMP_ICON_TYPE_IMAGE_FILE
@@ -2757,7 +2757,7 @@ name|icon_type
 condition|)
 block|{
 case|case
-name|GIMP_ICON_TYPE_STOCK_ID
+name|GIMP_ICON_TYPE_ICON_NAME
 case|:
 return|return
 operator|(

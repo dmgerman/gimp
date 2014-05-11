@@ -2605,11 +2605,11 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_ICON_TYPE_STOCK_ID
+name|GIMP_ICON_TYPE_ICON_NAME
 block|,
-literal|"GIMP_ICON_TYPE_STOCK_ID"
+literal|"GIMP_ICON_TYPE_ICON_NAME"
 block|,
-literal|"stock-id"
+literal|"icon-name"
 block|}
 block|,
 block|{
@@ -2645,13 +2645,13 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_ICON_TYPE_STOCK_ID
+name|GIMP_ICON_TYPE_ICON_NAME
 block|,
 name|NC_
 argument_list|(
 literal|"icon-type"
 argument_list|,
-literal|"Stock ID"
+literal|"Icon name"
 argument_list|)
 block|,
 name|NULL

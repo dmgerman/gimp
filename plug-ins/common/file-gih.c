@@ -110,7 +110,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon295784dd0108
+DECL|struct|__anon2a16bdc70108
 block|{
 DECL|member|spacing
 name|guint
@@ -186,7 +186,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295784dd0208
+DECL|struct|__anon2a16bdc70208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -680,7 +680,7 @@ name|gimp_plugin_icon_register
 argument_list|(
 name|LOAD_PROC
 argument_list|,
-name|GIMP_ICON_TYPE_STOCK_ID
+name|GIMP_ICON_TYPE_ICON_NAME
 argument_list|,
 operator|(
 specifier|const
@@ -757,7 +757,7 @@ name|gimp_plugin_icon_register
 argument_list|(
 name|SAVE_PROC
 argument_list|,
-name|GIMP_ICON_TYPE_STOCK_ID
+name|GIMP_ICON_TYPE_ICON_NAME
 argument_list|,
 operator|(
 specifier|const

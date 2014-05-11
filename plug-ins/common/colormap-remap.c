@@ -338,7 +338,7 @@ name|gimp_plugin_icon_register
 argument_list|(
 name|PLUG_IN_PROC_REMAP
 argument_list|,
-name|GIMP_ICON_TYPE_STOCK_ID
+name|GIMP_ICON_TYPE_ICON_NAME
 argument_list|,
 operator|(
 specifier|const
@@ -1729,7 +1729,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aac62b10103
+DECL|enum|__anon2c5e280d0103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX

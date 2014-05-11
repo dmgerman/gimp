@@ -360,7 +360,7 @@ name|gimp_plugin_icon_register
 argument_list|(
 name|LOAD_PROC
 argument_list|,
-name|GIMP_ICON_TYPE_STOCK_ID
+name|GIMP_ICON_TYPE_ICON_NAME
 argument_list|,
 operator|(
 specifier|const
@@ -433,7 +433,7 @@ name|gimp_plugin_icon_register
 argument_list|(
 name|SAVE_PROC
 argument_list|,
-name|GIMP_ICON_TYPE_STOCK_ID
+name|GIMP_ICON_TYPE_ICON_NAME
 argument_list|,
 operator|(
 specifier|const

@@ -331,7 +331,7 @@ name|gimp_plug_in_procedure_set_icon
 argument_list|(
 name|proc
 argument_list|,
-name|GIMP_ICON_TYPE_STOCK_ID
+name|GIMP_ICON_TYPE_ICON_NAME
 argument_list|,
 operator|(
 specifier|const
@@ -590,7 +590,7 @@ name|gimp_plug_in_procedure_set_icon
 argument_list|(
 name|proc
 argument_list|,
-name|GIMP_ICON_TYPE_STOCK_ID
+name|GIMP_ICON_TYPE_ICON_NAME
 argument_list|,
 operator|(
 specifier|const

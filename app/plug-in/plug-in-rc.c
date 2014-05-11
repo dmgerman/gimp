@@ -80,7 +80,7 @@ DECL|macro|PLUG_IN_RC_FILE_VERSION
 define|#
 directive|define
 name|PLUG_IN_RC_FILE_VERSION
-value|2
+value|3
 end_define
 
 begin_comment
@@ -255,7 +255,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2746f49a0103
+DECL|enum|__anon28da35290103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -2127,7 +2127,7 @@ name|icon_type
 condition|)
 block|{
 case|case
-name|GIMP_ICON_TYPE_STOCK_ID
+name|GIMP_ICON_TYPE_ICON_NAME
 case|:
 case|case
 name|GIMP_ICON_TYPE_IMAGE_FILE
@@ -3472,7 +3472,7 @@ name|icon_type
 condition|)
 block|{
 case|case
-name|GIMP_ICON_TYPE_STOCK_ID
+name|GIMP_ICON_TYPE_ICON_NAME
 case|:
 case|case
 name|GIMP_ICON_TYPE_IMAGE_FILE
