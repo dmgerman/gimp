@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af89dc10103
+DECL|enum|__anon2b62ddda0103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -111,7 +111,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af89dc10208
+DECL|struct|__anon2b62ddda0208
 block|{
 DECL|member|title
 specifier|const
@@ -443,7 +443,7 @@ block|,
 block|{
 literal|"unit-editor-new"
 block|,
-name|GTK_STOCK_NEW
+literal|"document-new"
 block|,
 name|NULL
 block|,

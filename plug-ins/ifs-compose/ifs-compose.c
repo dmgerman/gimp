@@ -138,7 +138,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ce7fe40103
+DECL|enum|__anon28e2cc1e0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ce7fe40203
+DECL|enum|__anon28e2cc1e0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ce7fe40308
+DECL|struct|__anon28e2cc1e0308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -200,7 +200,7 @@ name|guint
 name|timeout_id
 decl_stmt|;
 union|union
-DECL|union|__anon29ce7fe4040a
+DECL|union|__anon28e2cc1e040a
 block|{
 DECL|member|d
 name|gdouble
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ce7fe40508
+DECL|struct|__anon28e2cc1e0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -255,7 +255,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ce7fe40608
+DECL|struct|__anon28e2cc1e0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -290,7 +290,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ce7fe40708
+DECL|struct|__anon28e2cc1e0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -326,7 +326,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ce7fe40808
+DECL|struct|__anon28e2cc1e0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -388,7 +388,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ce7fe40908
+DECL|struct|__anon28e2cc1e0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -537,7 +537,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ce7fe40a08
+DECL|struct|__anon28e2cc1e0a08
 block|{
 DECL|member|run
 name|gboolean
@@ -5352,7 +5352,7 @@ block|,
 block|{
 literal|"new"
 block|,
-name|GTK_STOCK_NEW
+literal|"document-new"
 block|,
 name|NULL
 block|,
@@ -5369,7 +5369,7 @@ block|,
 block|{
 literal|"delete"
 block|,
-name|GTK_STOCK_DELETE
+literal|"edit-delete"
 block|,
 name|NULL
 block|,
@@ -5386,7 +5386,7 @@ block|,
 block|{
 literal|"undo"
 block|,
-name|GTK_STOCK_UNDO
+literal|"edit-undo"
 block|,
 name|NULL
 block|,
@@ -5403,7 +5403,7 @@ block|,
 block|{
 literal|"redo"
 block|,
-name|GTK_STOCK_REDO
+literal|"edit-redo"
 block|,
 name|NULL
 block|,
@@ -5463,7 +5463,7 @@ block|,
 block|{
 literal|"options"
 block|,
-name|GTK_STOCK_PREFERENCES
+literal|"preferences-system"
 block|,
 name|N_
 argument_list|(
