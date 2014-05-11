@@ -545,9 +545,9 @@ argument_list|()
 expr_stmt|;
 name|icon
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|GTK_STOCK_OPEN
+literal|"document-open"
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

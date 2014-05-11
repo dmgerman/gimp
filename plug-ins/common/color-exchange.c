@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2906cd140108
+DECL|struct|__anon27e50e380108
 block|{
 DECL|member|from
 name|GimpRGB
@@ -1712,7 +1712,7 @@ expr_stmt|;
 comment|/*  Red  */
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GIMP_STOCK_CHANNEL_RED
 argument_list|,
@@ -2074,7 +2074,7 @@ block|}
 comment|/*  Green  */
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GIMP_STOCK_CHANNEL_GREEN
 argument_list|,
@@ -2436,7 +2436,7 @@ block|}
 comment|/*  Blue  */
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GIMP_STOCK_CHANNEL_BLUE
 argument_list|,

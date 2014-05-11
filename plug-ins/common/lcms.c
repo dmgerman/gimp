@@ -105,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d2c32b0103
+DECL|enum|__anon28c1d8580103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -127,7 +127,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d2c32b0203
+DECL|enum|__anon28c1d8580203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -156,7 +156,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d2c32b0308
+DECL|struct|__anon28c1d8580308
 block|{
 DECL|member|name
 specifier|const
@@ -178,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d2c32b0408
+DECL|struct|__anon28c1d8580408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -4534,9 +4534,9 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|,
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|GTK_STOCK_CONVERT
+literal|"gtk-convert"
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

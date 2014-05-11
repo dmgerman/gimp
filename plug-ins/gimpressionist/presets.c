@@ -5514,9 +5514,9 @@ argument_list|(
 name|presetsavebutton
 argument_list|)
 argument_list|,
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|GTK_STOCK_SAVE
+literal|"document-save"
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

@@ -811,7 +811,7 @@ argument_list|)
 expr_stmt|;
 name|icon
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|icon_name
 argument_list|,

@@ -80,7 +80,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276d89a00108
+DECL|struct|__anon2b5d75f60108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -1781,7 +1781,7 @@ argument_list|)
 expr_stmt|;
 name|eek
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
 name|GIMP_STOCK_WILBER_EEK
 argument_list|,
