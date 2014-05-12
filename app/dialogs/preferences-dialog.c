@@ -5062,13 +5062,9 @@ begin_function
 specifier|static
 name|GdkPixbuf
 modifier|*
-DECL|function|prefs_get_pixbufs (Gimp * gimp,GtkWidget * widget,const gchar * name,GdkPixbuf ** small_pixbuf)
+DECL|function|prefs_get_pixbufs (GtkWidget * widget,const gchar * name,GdkPixbuf ** small_pixbuf)
 name|prefs_get_pixbufs
 parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
 name|GtkWidget
 modifier|*
 name|widget
@@ -5427,8 +5423,6 @@ name|pixbuf
 operator|=
 name|prefs_get_pixbufs
 argument_list|(
-name|gimp
-argument_list|,
 name|dialog
 argument_list|,
 literal|"environment"
@@ -5806,8 +5800,6 @@ name|pixbuf
 operator|=
 name|prefs_get_pixbufs
 argument_list|(
-name|gimp
-argument_list|,
 name|dialog
 argument_list|,
 literal|"interface"
@@ -6175,8 +6167,6 @@ name|pixbuf
 operator|=
 name|prefs_get_pixbufs
 argument_list|(
-name|gimp
-argument_list|,
 name|dialog
 argument_list|,
 literal|"theme"
@@ -6658,8 +6648,6 @@ name|pixbuf
 operator|=
 name|prefs_get_pixbufs
 argument_list|(
-name|gimp
-argument_list|,
 name|dialog
 argument_list|,
 literal|"help-system"
@@ -7174,8 +7162,6 @@ name|pixbuf
 operator|=
 name|prefs_get_pixbufs
 argument_list|(
-name|gimp
-argument_list|,
 name|dialog
 argument_list|,
 literal|"tool-options"
@@ -7612,8 +7598,6 @@ name|pixbuf
 operator|=
 name|prefs_get_pixbufs
 argument_list|(
-name|gimp
-argument_list|,
 name|dialog
 argument_list|,
 literal|"toolbox"
@@ -7815,8 +7799,6 @@ name|pixbuf
 operator|=
 name|prefs_get_pixbufs
 argument_list|(
-name|gimp
-argument_list|,
 name|dialog
 argument_list|,
 literal|"new-image"
@@ -8080,8 +8062,6 @@ name|pixbuf
 operator|=
 name|prefs_get_pixbufs
 argument_list|(
-name|gimp
-argument_list|,
 name|dialog
 argument_list|,
 literal|"default-grid"
@@ -8178,8 +8158,6 @@ name|pixbuf
 operator|=
 name|prefs_get_pixbufs
 argument_list|(
-name|gimp
-argument_list|,
 name|dialog
 argument_list|,
 literal|"image-windows"
@@ -8574,8 +8552,6 @@ name|pixbuf
 operator|=
 name|prefs_get_pixbufs
 argument_list|(
-name|gimp
-argument_list|,
 name|dialog
 argument_list|,
 literal|"image-windows"
@@ -8667,8 +8643,6 @@ name|pixbuf
 operator|=
 name|prefs_get_pixbufs
 argument_list|(
-name|gimp
-argument_list|,
 name|dialog
 argument_list|,
 literal|"image-title"
@@ -8769,7 +8743,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27b6961f0108
+DECL|struct|__anon2b37abda0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9232,8 +9206,6 @@ name|pixbuf
 operator|=
 name|prefs_get_pixbufs
 argument_list|(
-name|gimp
-argument_list|,
 name|dialog
 argument_list|,
 literal|"tool-options"
@@ -9325,8 +9297,6 @@ name|pixbuf
 operator|=
 name|prefs_get_pixbufs
 argument_list|(
-name|gimp
-argument_list|,
 name|dialog
 argument_list|,
 literal|"display"
@@ -9982,8 +9952,6 @@ name|pixbuf
 operator|=
 name|prefs_get_pixbufs
 argument_list|(
-name|gimp
-argument_list|,
 name|dialog
 argument_list|,
 literal|"color-management"
@@ -10036,7 +10004,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27b6961f0208
+DECL|struct|__anon2b37abda0208
 block|{
 DECL|member|label
 specifier|const
@@ -10706,8 +10674,6 @@ name|pixbuf
 operator|=
 name|prefs_get_pixbufs
 argument_list|(
-name|gimp
-argument_list|,
 name|dialog
 argument_list|,
 literal|"input-devices"
@@ -10892,8 +10858,6 @@ name|pixbuf
 operator|=
 name|prefs_get_pixbufs
 argument_list|(
-name|gimp
-argument_list|,
 name|dialog
 argument_list|,
 literal|"controllers"
@@ -10969,8 +10933,6 @@ name|pixbuf
 operator|=
 name|prefs_get_pixbufs
 argument_list|(
-name|gimp
-argument_list|,
 name|dialog
 argument_list|,
 literal|"window-management"
@@ -11229,8 +11191,6 @@ name|pixbuf
 operator|=
 name|prefs_get_pixbufs
 argument_list|(
-name|gimp
-argument_list|,
 name|dialog
 argument_list|,
 literal|"folders"
@@ -11271,7 +11231,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27b6961f0308
+DECL|struct|__anon2b37abda0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11426,7 +11386,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27b6961f0408
+DECL|struct|__anon2b37abda0408
 block|{
 DECL|member|tree_label
 specifier|const
@@ -11826,8 +11786,6 @@ name|pixbuf
 operator|=
 name|prefs_get_pixbufs
 argument_list|(
-name|gimp
-argument_list|,
 name|dialog
 argument_list|,
 name|paths
