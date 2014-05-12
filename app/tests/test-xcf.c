@@ -1337,7 +1337,7 @@ name|gimp_layer_create_mask
 argument_list|(
 name|layer
 argument_list|,
-name|GIMP_ADD_BLACK_MASK
+name|GIMP_ADD_MASK_BLACK
 argument_list|,
 name|NULL
 comment|/*channel*/
