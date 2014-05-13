@@ -2019,13 +2019,6 @@ literal|"Fill with Pattern"
 argument_list|)
 expr_stmt|;
 break|break;
-case|case
-name|GIMP_NO_FILL
-case|:
-return|return
-name|TRUE
-return|;
-comment|/*  nothing to do, but the fill succeeded  */
 default|default:
 name|g_warning
 argument_list|(

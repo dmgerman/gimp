@@ -83,7 +83,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon294936340103
+DECL|enum|__anon28ffbf810103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1722,7 +1722,7 @@ argument_list|(
 name|template
 argument_list|)
 argument_list|,
-name|GIMP_NO_FILL
+name|GIMP_BACKGROUND_FILL
 argument_list|)
 expr_stmt|;
 return|return

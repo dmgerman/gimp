@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28da38e50103
+DECL|enum|__anon2b14d3dd0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -213,7 +213,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28da38e50203
+DECL|enum|__anon2b14d3dd0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6628,10 +6628,6 @@ name|context
 argument_list|)
 expr_stmt|;
 break|break;
-case|case
-name|GIMP_NO_FILL
-case|:
-return|return;
 default|default:
 name|g_warning
 argument_list|(
