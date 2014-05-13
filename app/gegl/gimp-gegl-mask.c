@@ -263,6 +263,7 @@ literal|1
 index|]
 condition|)
 block|{
+comment|/*  "ex/ey - 1" because the internal variables are the                *  right/bottom pixel of the mask's contents, not one                *  right/below it like the return values.                */
 if|if
 condition|(
 name|roi
@@ -286,6 +287,8 @@ condition|)
 name|tx2
 operator|=
 name|ex
+operator|-
+literal|1
 expr_stmt|;
 if|if
 condition|(
@@ -310,6 +313,8 @@ condition|)
 name|ty2
 operator|=
 name|ey
+operator|-
+literal|1
 expr_stmt|;
 block|}
 else|else
