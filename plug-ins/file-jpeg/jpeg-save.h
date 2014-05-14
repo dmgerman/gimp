@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f9d7500108
+DECL|struct|__anon2a10bc970108
 block|{
 DECL|member|quality
 name|gdouble
@@ -32,6 +32,10 @@ decl_stmt|;
 DECL|member|optimize
 name|gboolean
 name|optimize
+decl_stmt|;
+DECL|member|arithmetic_coding
+name|gboolean
+name|arithmetic_coding
 decl_stmt|;
 DECL|member|progressive
 name|gboolean

@@ -165,6 +165,14 @@ value|TRUE
 end_define
 
 begin_define
+DECL|macro|DEFAULT_ARITHMETIC_CODING
+define|#
+directive|define
+name|DEFAULT_ARITHMETIC_CODING
+value|FALSE
+end_define
+
+begin_define
 DECL|macro|DEFAULT_PROGRESSIVE
 define|#
 directive|define
@@ -271,7 +279,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28aceec30108
+DECL|struct|__anon2a9b1d0f0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -348,7 +356,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28aceec30208
+DECL|struct|__anon2a9b1d0f0208
 block|{
 DECL|member|run
 name|gboolean
@@ -392,7 +400,13 @@ name|GtkWidget
 modifier|*
 name|optimize
 decl_stmt|;
-comment|/*optimize togle*/
+comment|/*optimize toggle*/
+DECL|member|arithmetic_coding
+name|GtkWidget
+modifier|*
+name|arithmetic_coding
+decl_stmt|;
+comment|/*arithmetic coding toggle*/
 DECL|member|progressive
 name|GtkWidget
 modifier|*
@@ -1594,6 +1608,24 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+ifdef|#
+directive|ifdef
+name|C_ARITH_CODING_SUPPORTED
+name|cinfo
+operator|.
+name|arith_code
+operator|=
+name|jsvals
+operator|.
+name|arithmetic_coding
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|jsvals
+operator|.
+name|arithmetic_coding
+condition|)
 name|cinfo
 operator|.
 name|optimize_coding
@@ -1602,6 +1634,19 @@ name|jsvals
 operator|.
 name|optimize
 expr_stmt|;
+else|#
+directive|else
+name|cinfo
+operator|.
+name|optimize_coding
+operator|=
+name|jsvals
+operator|.
+name|optimize
+expr_stmt|;
+endif|#
+directive|endif
+comment|/* C_ARITH_CODING_SUPPORTED */
 name|subsampling
 operator|=
 operator|(
@@ -2725,6 +2770,57 @@ block|}
 block|}
 end_function
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|C_ARITH_CODING_SUPPORTED
+end_ifdef
+
+begin_function
+specifier|static
+name|void
+DECL|function|toggle_arithmetic_coding (GtkToggleButton * togglebutton,gpointer user_data)
+name|toggle_arithmetic_coding
+parameter_list|(
+name|GtkToggleButton
+modifier|*
+name|togglebutton
+parameter_list|,
+name|gpointer
+name|user_data
+parameter_list|)
+block|{
+name|GtkWidget
+modifier|*
+name|optimize
+init|=
+name|GTK_WIDGET
+argument_list|(
+name|user_data
+argument_list|)
+decl_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|optimize
+argument_list|,
+operator|!
+name|jsvals
+operator|.
+name|arithmetic_coding
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* C_ARITH_CODING_SUPPORTED */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|save_dialog (void)
@@ -2803,6 +2899,9 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|text
+decl_stmt|;
+name|gint
+name|row
 decl_stmt|;
 name|dialog
 operator|=
@@ -3723,6 +3822,11 @@ operator|.
 name|scale_data
 argument_list|)
 expr_stmt|;
+name|row
+operator|=
+literal|0
+expr_stmt|;
+comment|/* Optimize */
 name|pg
 operator|.
 name|optimize
@@ -3750,8 +3854,10 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
-literal|0
+name|row
 argument_list|,
+name|row
+operator|+
 literal|1
 argument_list|,
 name|GTK_FILL
@@ -3811,6 +3917,153 @@ operator|.
 name|optimize
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|C_ARITH_CODING_SUPPORTED
+name|gtk_widget_set_sensitive
+argument_list|(
+name|toggle
+argument_list|,
+operator|!
+name|jsvals
+operator|.
+name|arithmetic_coding
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+comment|/* C_ARITH_CODING_SUPPORTED */
+name|row
+operator|++
+expr_stmt|;
+ifdef|#
+directive|ifdef
+name|C_ARITH_CODING_SUPPORTED
+comment|/* Arithmetic coding */
+name|pg
+operator|.
+name|arithmetic_coding
+operator|=
+name|toggle
+operator|=
+name|gtk_check_button_new_with_mnemonic
+argument_list|(
+name|_
+argument_list|(
+literal|"Use arithmetic _coding"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_tooltip_text
+argument_list|(
+name|toggle
+argument_list|,
+name|_
+argument_list|(
+literal|"Older software may have trouble opening "
+literal|"arithmetic-coded images"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_table_attach
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+name|toggle
+argument_list|,
+literal|0
+argument_list|,
+literal|1
+argument_list|,
+name|row
+argument_list|,
+name|row
+operator|+
+literal|1
+argument_list|,
+name|GTK_FILL
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|toggle
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|toggle
+argument_list|,
+literal|"toggled"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_toggle_button_update
+argument_list|)
+argument_list|,
+operator|&
+name|jsvals
+operator|.
+name|arithmetic_coding
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|toggle
+argument_list|,
+literal|"toggled"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|make_preview
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|toggle
+argument_list|,
+literal|"toggled"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|toggle_arithmetic_coding
+argument_list|)
+argument_list|,
+name|pg
+operator|.
+name|optimize
+argument_list|)
+expr_stmt|;
+name|gtk_toggle_button_set_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|toggle
+argument_list|)
+argument_list|,
+name|jsvals
+operator|.
+name|arithmetic_coding
+argument_list|)
+expr_stmt|;
+name|row
+operator|++
+expr_stmt|;
+endif|#
+directive|endif
+comment|/* C_ARITH_CODING_SUPPORTED */
+comment|/* Progressive */
 name|pg
 operator|.
 name|progressive
@@ -3838,9 +4091,11 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
-literal|1
+name|row
 argument_list|,
-literal|2
+name|row
+operator|+
+literal|1
 argument_list|,
 name|GTK_FILL
 argument_list|,
@@ -3899,6 +4154,10 @@ operator|.
 name|progressive
 argument_list|)
 expr_stmt|;
+name|row
+operator|++
+expr_stmt|;
+comment|/* Save EXIF data */
 name|pg
 operator|.
 name|save_exif
@@ -3938,9 +4197,11 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
-literal|2
+name|row
 argument_list|,
-literal|3
+name|row
+operator|+
+literal|1
 argument_list|,
 name|GTK_FILL
 argument_list|,
@@ -3994,6 +4255,10 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|row
+operator|++
+expr_stmt|;
+comment|/* Save thumbnail */
 name|pg
 operator|.
 name|save_thumbnail
@@ -4033,9 +4298,11 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
-literal|3
+name|row
 argument_list|,
-literal|4
+name|row
+operator|+
+literal|1
 argument_list|,
 name|GTK_FILL
 argument_list|,
@@ -4081,6 +4348,9 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+name|row
+operator|++
 expr_stmt|;
 comment|/* XMP metadata */
 name|pg
@@ -4122,9 +4392,11 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
-literal|4
+name|row
 argument_list|,
-literal|5
+name|row
+operator|+
+literal|1
 argument_list|,
 name|GTK_FILL
 argument_list|,
@@ -4178,6 +4450,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|row
+operator|++
+expr_stmt|;
 comment|/* IPTC metadata */
 name|pg
 operator|.
@@ -4218,9 +4493,11 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
-literal|5
+name|row
 argument_list|,
-literal|6
+name|row
+operator|+
+literal|1
 argument_list|,
 name|GTK_FILL
 argument_list|,
@@ -4274,6 +4551,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|row
+operator|++
+expr_stmt|;
 comment|/* custom quantization tables - now used also for original quality */
 name|pg
 operator|.
@@ -4303,9 +4583,11 @@ literal|0
 argument_list|,
 literal|4
 argument_list|,
-literal|6
+name|row
 argument_list|,
-literal|7
+name|row
+operator|+
+literal|1
 argument_list|,
 name|GTK_FILL
 argument_list|,
@@ -5306,6 +5588,12 @@ name|DEFAULT_OPTIMIZE
 expr_stmt|;
 name|jsvals
 operator|.
+name|arithmetic_coding
+operator|=
+name|DEFAULT_ARITHMETIC_CODING
+expr_stmt|;
+name|jsvals
+operator|.
 name|progressive
 operator|=
 name|DEFAULT_PROGRESSIVE
@@ -5409,7 +5697,7 @@ name|sscanf
 argument_list|(
 name|def_str
 argument_list|,
-literal|"%lf %lf %d %d %d %d %d %d %d %d %d %d %d %d"
+literal|"%lf %lf %d %d %d %d %d %d %d %d %d %d %d %d %d"
 argument_list|,
 operator|&
 name|tmpvals
@@ -5425,6 +5713,11 @@ operator|&
 name|tmpvals
 operator|.
 name|optimize
+argument_list|,
+operator|&
+name|tmpvals
+operator|.
+name|arithmetic_coding
 argument_list|,
 operator|&
 name|tmpvals
@@ -5541,7 +5834,7 @@ name|def_str
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%lf %lf %d %d %d %d %d %d %d %d %d %d %d %d"
+literal|"%lf %lf %d %d %d %d %d %d %d %d %d %d %d %d %d"
 argument_list|,
 name|jsvals
 operator|.
@@ -5554,6 +5847,10 @@ argument_list|,
 name|jsvals
 operator|.
 name|optimize
+argument_list|,
+name|jsvals
+operator|.
+name|arithmetic_coding
 argument_list|,
 name|jsvals
 operator|.
