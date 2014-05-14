@@ -279,7 +279,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a202f860108
+DECL|struct|__anon27bce6950108
 block|{
 DECL|member|cinfo
 name|struct
@@ -356,7 +356,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a202f860208
+DECL|struct|__anon27bce6950208
 block|{
 DECL|member|run
 name|gboolean
@@ -5718,11 +5718,6 @@ argument_list|,
 operator|&
 name|tmpvals
 operator|.
-name|arithmetic_coding
-argument_list|,
-operator|&
-name|tmpvals
-operator|.
 name|progressive
 argument_list|,
 operator|&
@@ -5772,6 +5767,11 @@ operator|&
 name|tmpvals
 operator|.
 name|save_iptc
+argument_list|,
+operator|&
+name|tmpvals
+operator|.
+name|arithmetic_coding
 argument_list|)
 expr_stmt|;
 name|tmpvals
@@ -5851,10 +5851,6 @@ name|optimize
 argument_list|,
 name|jsvals
 operator|.
-name|arithmetic_coding
-argument_list|,
-name|jsvals
-operator|.
 name|progressive
 argument_list|,
 operator|(
@@ -5899,6 +5895,10 @@ argument_list|,
 name|jsvals
 operator|.
 name|save_iptc
+argument_list|,
+name|jsvals
+operator|.
+name|arithmetic_coding
 argument_list|)
 expr_stmt|;
 name|parasite
