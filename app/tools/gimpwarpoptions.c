@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c338cca0103
+DECL|enum|__anon2bbfbaf10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -197,7 +197,7 @@ name|PROP_BEHAVIOR
 argument_list|,
 literal|"behavior"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Behavior"
 argument_list|)

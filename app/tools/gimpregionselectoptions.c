@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2c75b50103
+DECL|enum|__anon27839f8c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -242,7 +242,7 @@ name|PROP_SELECT_TRANSPARENT
 argument_list|,
 literal|"select-transparent"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Allow completely transparent regions "
 literal|"to be selected"
@@ -261,7 +261,7 @@ name|PROP_SAMPLE_MERGED
 argument_list|,
 literal|"sample-merged"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Base selection on all visible layers"
 argument_list|)
@@ -279,7 +279,7 @@ name|PROP_THRESHOLD
 argument_list|,
 literal|"threshold"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Maximum color difference"
 argument_list|)
@@ -301,7 +301,7 @@ name|PROP_SELECT_CRITERION
 argument_list|,
 literal|"select-criterion"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Selection criterion"
 argument_list|)

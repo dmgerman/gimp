@@ -87,9 +87,15 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon2c08ad790103
+DECL|enum|__anon275e75c70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -360,7 +366,10 @@ name|PROP_CHANNEL
 argument_list|,
 literal|"channel"
 argument_list|,
+name|_
+argument_list|(
 literal|"The affected channel"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_HISTOGRAM_CHANNEL
 argument_list|,
@@ -377,7 +386,10 @@ name|PROP_CURVE
 argument_list|,
 literal|"curve"
 argument_list|,
+name|_
+argument_list|(
 literal|"Curve"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_CURVE
 argument_list|,

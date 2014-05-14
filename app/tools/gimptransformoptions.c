@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc14f6e0103
+DECL|enum|__anon2c085c120103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -343,7 +343,7 @@ name|PROP_DIRECTION
 argument_list|,
 literal|"direction"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Direction of transformation"
 argument_list|)
@@ -363,7 +363,7 @@ name|PROP_INTERPOLATION
 argument_list|,
 literal|"interpolation"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Interpolation method"
 argument_list|)
@@ -383,7 +383,7 @@ name|PROP_CLIP
 argument_list|,
 literal|"clip"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"How to clip"
 argument_list|)
@@ -403,7 +403,7 @@ name|PROP_SHOW_PREVIEW
 argument_list|,
 literal|"show-preview"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Show a preview of the transformed image"
 argument_list|)
@@ -421,7 +421,7 @@ name|PROP_PREVIEW_OPACITY
 argument_list|,
 literal|"preview-opacity"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Opacity of the preview image"
 argument_list|)
@@ -443,7 +443,7 @@ name|PROP_GRID_TYPE
 argument_list|,
 literal|"grid-type"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Composition guides such as rule of thirds"
 argument_list|)
@@ -463,9 +463,10 @@ name|PROP_GRID_SIZE
 argument_list|,
 literal|"grid-size"
 argument_list|,
-name|N_
+name|_
 argument_list|(
-literal|"Size of a grid cell for variable number of composition guides"
+literal|"Size of a grid cell for variable number "
+literal|"of composition guides"
 argument_list|)
 argument_list|,
 literal|1
@@ -1902,7 +1903,7 @@ name|gimp_get_constrain_behavior_mask
 argument_list|()
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bc14f6e0208
+DECL|struct|__anon2c085c120208
 block|{
 DECL|member|mod
 name|GdkModifierType

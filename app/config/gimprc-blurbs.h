@@ -26,7 +26,7 @@ define|#
 directive|define
 name|ACTIVATE_ON_FOCUS_BLURB
 define|\
-value|N_("When enabled, an image will become the active image when its image " \    "window receives the focus. This is useful for window managers using " \    "\"click to focus\".")
+value|_("When enabled, an image will become the active image when its image " \   "window receives the focus. This is useful for window managers using " \   "\"click to focus\".")
 end_define
 
 begin_define
@@ -52,7 +52,7 @@ define|#
 directive|define
 name|DYNAMICS_PATH_BLURB
 define|\
-value|N_("Sets the dynamics search path.")
+value|_("Sets the dynamics search path.")
 end_define
 
 begin_define
@@ -69,7 +69,7 @@ define|#
 directive|define
 name|TOOL_PRESET_PATH_BLURB
 define|\
-value|N_("Sets the dynamics search path.")
+value|_("Sets the dynamics search path.")
 end_define
 
 begin_define
@@ -86,7 +86,7 @@ define|#
 directive|define
 name|CANVAS_PADDING_COLOR_BLURB
 define|\
-value|N_("Sets the canvas padding color used if the padding mode is set to " \    "custom color.")
+value|_("Sets the canvas padding color used if the padding mode is set to " \   "custom color.")
 end_define
 
 begin_define
@@ -95,7 +95,7 @@ define|#
 directive|define
 name|CANVAS_PADDING_MODE_BLURB
 define|\
-value|N_("Specifies how the area around the image should be drawn.")
+value|_("Specifies how the area around the image should be drawn.")
 end_define
 
 begin_define
@@ -113,7 +113,7 @@ define|#
 directive|define
 name|COLOR_PROFILE_POLICY_BLURB
 define|\
-value|N_("How to handle embedded color profiles when opening a file.")
+value|_("How to handle embedded color profiles when opening a file.")
 end_define
 
 begin_define
@@ -122,7 +122,7 @@ define|#
 directive|define
 name|CURSOR_FORMAT_BLURB
 define|\
-value|N_("Sets the pixel format to use for mouse pointers.")
+value|_("Sets the pixel format to use for mouse pointers.")
 end_define
 
 begin_define
@@ -131,7 +131,7 @@ define|#
 directive|define
 name|CURSOR_MODE_BLURB
 define|\
-value|N_("Sets the type of mouse pointers to use.")
+value|_("Sets the type of mouse pointers to use.")
 end_define
 
 begin_define
@@ -140,7 +140,7 @@ define|#
 directive|define
 name|CURSOR_HANDEDNESS_BLURB
 define|\
-value|N_("Sets the handedness for cursor positioning.")
+value|_("Sets the handedness for cursor positioning.")
 end_define
 
 begin_define
@@ -149,7 +149,7 @@ define|#
 directive|define
 name|CURSOR_UPDATING_BLURB
 define|\
-value|N_("Context-dependent mouse pointers are helpful.  They are enabled by " \    "default.  However, they require overhead that you may want to do without.")
+value|_("Context-dependent mouse pointers are helpful.  They are enabled by " \   "default.  However, they require overhead that you may want to do without.")
 end_define
 
 begin_define
@@ -185,7 +185,7 @@ define|#
 directive|define
 name|DEFAULT_DOT_FOR_DOT_BLURB
 define|\
-value|N_("When enabled, this will ensure that each pixel of an image gets " \    "mapped to a pixel on the screen.")
+value|_("When enabled, this will ensure that each pixel of an image gets " \   "mapped to a pixel on the screen.")
 end_define
 
 begin_define
@@ -248,7 +248,7 @@ define|#
 directive|define
 name|DEFAULT_SNAP_DISTANCE_BLURB
 define|\
-value|N_("This is the distance in pixels where Guide and Grid snapping " \    "activates.")
+value|_("This is the distance in pixels where Guide and Grid snapping " \   "activates.")
 end_define
 
 begin_define
@@ -293,7 +293,7 @@ define|#
 directive|define
 name|DEFAULT_THRESHOLD_BLURB
 define|\
-value|N_("Tools such as fuzzy-select and bucket fill find regions based on a " \    "seed-fill algorithm.  The seed fill starts at the initially selected " \    "pixel and progresses in all directions until the difference of pixel " \    "intensity from the original is greater than a specified threshold. " \    "This value represents the default threshold.")
+value|_("Tools such as fuzzy-select and bucket fill find regions based on a " \   "seed-fill algorithm.  The seed fill starts at the initially selected " \   "pixel and progresses in all directions until the difference of pixel " \   "intensity from the original is greater than a specified threshold. " \   "This value represents the default threshold.")
 end_define
 
 begin_define
@@ -320,7 +320,7 @@ define|#
 directive|define
 name|DOCK_WINDOW_HINT_BLURB
 define|\
-value|N_("The window type hint that is set on dock windows and the toolbox " \    "window. This may affect the way your window manager decorates and " \    "handles these windows.")
+value|_("The window type hint that is set on dock windows and the toolbox " \   "window. This may affect the way your window manager decorates and " \   "handles these windows.")
 end_define
 
 begin_define
@@ -395,7 +395,7 @@ define|#
 directive|define
 name|GLOBAL_BRUSH_BLURB
 define|\
-value|N_("When enabled, the selected brush will be used for all tools.")
+value|_("When enabled, the selected brush will be used for all tools.")
 end_define
 
 begin_define
@@ -404,7 +404,7 @@ define|#
 directive|define
 name|GLOBAL_DYNAMICS_BLURB
 define|\
-value|N_("When enabled, the selected dynamics will be used for all tools.")
+value|_("When enabled, the selected dynamics will be used for all tools.")
 end_define
 
 begin_define
@@ -422,7 +422,7 @@ define|#
 directive|define
 name|GLOBAL_GRADIENT_BLURB
 define|\
-value|N_("When enabled, the selected gradient will be used for all tools.")
+value|_("When enabled, the selected gradient will be used for all tools.")
 end_define
 
 begin_define
@@ -431,7 +431,7 @@ define|#
 directive|define
 name|GLOBAL_PATTERN_BLURB
 define|\
-value|N_("When enabled, the selected pattern will be used for all tools.")
+value|_("When enabled, the selected pattern will be used for all tools.")
 end_define
 
 begin_define
@@ -475,7 +475,7 @@ define|#
 directive|define
 name|HELP_BROWSER_BLURB
 define|\
-value|N_("Sets the browser used by the help system.")
+value|_("Sets the browser used by the help system.")
 end_define
 
 begin_define
@@ -502,7 +502,7 @@ define|#
 directive|define
 name|IMAGE_STATUS_FORMAT_BLURB
 define|\
-value|N_("Sets the text to appear in image window status bars.")
+value|_("Sets the text to appear in image window status bars.")
 end_define
 
 begin_define
@@ -511,7 +511,7 @@ define|#
 directive|define
 name|IMAGE_TITLE_FORMAT_BLURB
 define|\
-value|N_("Sets the text to appear in image window titles.")
+value|_("Sets the text to appear in image window titles.")
 end_define
 
 begin_define
@@ -520,7 +520,7 @@ define|#
 directive|define
 name|INITIAL_ZOOM_TO_FIT_BLURB
 define|\
-value|N_("When enabled, this will ensure that the full image is visible after a " \    "file is opened, otherwise it will be displayed with a scale of 1:1.")
+value|_("When enabled, this will ensure that the full image is visible after a " \   "file is opened, otherwise it will be displayed with a scale of 1:1.")
 end_define
 
 begin_define
@@ -529,7 +529,7 @@ define|#
 directive|define
 name|INTERPOLATION_TYPE_BLURB
 define|\
-value|N_("Sets the level of interpolation used for scaling and other " \    "transformations.")
+value|_("Sets the level of interpolation used for scaling and other " \   "transformations.")
 end_define
 
 begin_define
@@ -547,7 +547,7 @@ define|#
 directive|define
 name|LANGUAGE_BLURB
 define|\
-value|N_("Specifies the language to use for the user interface.")
+value|_("Specifies the language to use for the user interface.")
 end_define
 
 begin_define
@@ -556,7 +556,7 @@ define|#
 directive|define
 name|LAST_OPENED_SIZE_BLURB
 define|\
-value|N_("How many recently opened image filenames to keep on the File menu.")
+value|_("How many recently opened image filenames to keep on the File menu.")
 end_define
 
 begin_define
@@ -565,7 +565,7 @@ define|#
 directive|define
 name|MARCHING_ANTS_SPEED_BLURB
 define|\
-value|N_("Speed of marching ants in the selection outline.  This value is in " \    "milliseconds (less time indicates faster marching).")
+value|_("Speed of marching ants in the selection outline.  This value is in " \   "milliseconds (less time indicates faster marching).")
 end_define
 
 begin_define
@@ -574,7 +574,7 @@ define|#
 directive|define
 name|MAX_NEW_IMAGE_SIZE_BLURB
 define|\
-value|N_("GIMP will warn the user if an attempt is made to create an image that " \    "would take more memory than the size specified here.")
+value|_("GIMP will warn the user if an attempt is made to create an image that " \   "would take more memory than the size specified here.")
 end_define
 
 begin_define
@@ -601,7 +601,7 @@ define|#
 directive|define
 name|MONITOR_XRESOLUTION_BLURB
 define|\
-value|N_("Sets the monitor's horizontal resolution, in dots per inch.  If set to " \    "0, forces the X server to be queried for both horizontal and vertical " \    "resolution information.")
+value|_("Sets the monitor's horizontal resolution, in dots per inch.  If set to " \   "0, forces the X server to be queried for both horizontal and vertical " \   "resolution information.")
 end_define
 
 begin_define
@@ -610,7 +610,7 @@ define|#
 directive|define
 name|MONITOR_YRESOLUTION_BLURB
 define|\
-value|N_("Sets the monitor's vertical resolution, in dots per inch.  If set to " \    "0, forces the X server to be queried for both horizontal and vertical " \    "resolution information.")
+value|_("Sets the monitor's vertical resolution, in dots per inch.  If set to " \   "0, forces the X server to be queried for both horizontal and vertical " \   "resolution information.")
 end_define
 
 begin_define
@@ -619,7 +619,7 @@ define|#
 directive|define
 name|MOVE_TOOL_CHANGES_ACTIVE_BLURB
 define|\
-value|N_("If enabled, the move tool sets the edited layer or path as active.  " \    "This used to be the default behaviour in older versions.")
+value|_("If enabled, the move tool sets the edited layer or path as active.  " \   "This used to be the default behaviour in older versions.")
 end_define
 
 begin_define
@@ -628,7 +628,7 @@ define|#
 directive|define
 name|NAVIGATION_PREVIEW_SIZE_BLURB
 define|\
-value|N_("Sets the size of the navigation preview available in the lower right " \    "corner of the image window.")
+value|_("Sets the size of the navigation preview available in the lower right " \   "corner of the image window.")
 end_define
 
 begin_define
@@ -637,7 +637,7 @@ define|#
 directive|define
 name|NUM_PROCESSORS_BLURB
 define|\
-value|N_("Sets how many processors GIMP should try to use simultaneously.")
+value|_("Sets how many processors GIMP should try to use simultaneously.")
 end_define
 
 begin_define
@@ -680,7 +680,7 @@ define|#
 directive|define
 name|PERFECT_MOUSE_BLURB
 define|\
-value|N_("When enabled, the X server is queried for the mouse's current position " \    "on each motion event, rather than relying on the position hint.  This " \    "means painting with large brushes should be more accurate, but it may " \    "be slower.  Conversely, on some X servers enabling this option results " \    "in faster painting.")
+value|_("When enabled, the X server is queried for the mouse's current position " \   "on each motion event, rather than relying on the position hint.  This " \   "means painting with large brushes should be more accurate, but it may " \   "be slower.  Conversely, on some X servers enabling this option results " \   "in faster painting.")
 end_define
 
 begin_define
@@ -716,7 +716,7 @@ define|#
 directive|define
 name|LAYER_PREVIEWS_BLURB
 define|\
-value|N_("Sets whether GIMP should create previews of layers and channels. " \    "Previews in the layers and channels dialog are nice to have but they " \    "can slow things down when working with large images.")
+value|_("Sets whether GIMP should create previews of layers and channels. " \   "Previews in the layers and channels dialog are nice to have but they " \   "can slow things down when working with large images.")
 end_define
 
 begin_define
@@ -725,7 +725,7 @@ define|#
 directive|define
 name|LAYER_PREVIEW_SIZE_BLURB
 define|\
-value|N_("Sets the preview size used for layers and channel previews in newly " \    "created dialogs.")
+value|_("Sets the preview size used for layers and channel previews in newly " \   "created dialogs.")
 end_define
 
 begin_define
@@ -734,7 +734,7 @@ define|#
 directive|define
 name|QUICK_MASK_COLOR_BLURB
 define|\
-value|N_("Sets the default quick mask color.")
+value|_("Sets the default quick mask color.")
 end_define
 
 begin_define
@@ -743,7 +743,7 @@ define|#
 directive|define
 name|RESIZE_WINDOWS_ON_RESIZE_BLURB
 define|\
-value|N_("When enabled, the image window will automatically resize itself " \    "whenever the physical image size changes.")
+value|_("When enabled, the image window will automatically resize itself " \   "whenever the physical image size changes.")
 end_define
 
 begin_define
@@ -752,7 +752,7 @@ define|#
 directive|define
 name|RESIZE_WINDOWS_ON_ZOOM_BLURB
 define|\
-value|N_("When enabled, the image window will automatically resize itself " \    "when zooming into and out of images.")
+value|_("When enabled, the image window will automatically resize itself " \   "when zooming into and out of images.")
 end_define
 
 begin_define
@@ -761,7 +761,7 @@ define|#
 directive|define
 name|RESTORE_SESSION_BLURB
 define|\
-value|N_("Let GIMP try to restore your last saved session on each startup.")
+value|_("Let GIMP try to restore your last saved session on each startup.")
 end_define
 
 begin_define
@@ -770,7 +770,7 @@ define|#
 directive|define
 name|RESTORE_MONITOR_BLURB
 define|\
-value|N_("When enabled, GIMP will try to restore windows on the monitor they " \    "were open before.  When disabled, windows will appear on the currently " \    "used monitor.")
+value|_("When enabled, GIMP will try to restore windows on the monitor they " \   "were open before.  When disabled, windows will appear on the currently " \   "used monitor.")
 end_define
 
 begin_define
@@ -779,7 +779,7 @@ define|#
 directive|define
 name|SAVE_DEVICE_STATUS_BLURB
 define|\
-value|N_("Remember the current tool, pattern, color, and brush across GIMP " \    "sessions.")
+value|_("Remember the current tool, pattern, color, and brush across GIMP " \   "sessions.")
 end_define
 
 begin_define
@@ -788,7 +788,7 @@ define|#
 directive|define
 name|SAVE_DOCUMENT_HISTORY_BLURB
 define|\
-value|N_("Keep a permanent record of all opened and saved files in the Recent " \    "Documents list.")
+value|_("Keep a permanent record of all opened and saved files in the Recent " \   "Documents list.")
 end_define
 
 begin_define
@@ -797,7 +797,7 @@ define|#
 directive|define
 name|SAVE_SESSION_INFO_BLURB
 define|\
-value|N_("Save the positions and sizes of the main dialogs when GIMP exits.")
+value|_("Save the positions and sizes of the main dialogs when GIMP exits.")
 end_define
 
 begin_define
@@ -806,7 +806,7 @@ define|#
 directive|define
 name|SAVE_TOOL_OPTIONS_BLURB
 define|\
-value|N_("Save the tool options when GIMP exits.")
+value|_("Save the tool options when GIMP exits.")
 end_define
 
 begin_define
@@ -824,7 +824,7 @@ define|#
 directive|define
 name|SHOW_BRUSH_OUTLINE_BLURB
 define|\
-value|N_("When enabled, all paint tools will show a preview of the current " \    "brush's outline.")
+value|_("When enabled, all paint tools will show a preview of the current " \   "brush's outline.")
 end_define
 
 begin_define
@@ -833,7 +833,7 @@ define|#
 directive|define
 name|SHOW_HELP_BUTTON_BLURB
 define|\
-value|N_("When enabled, dialogs will show a help button that gives access to " \    "the related help page.  Without this button, the help page can still " \    "be reached by pressing F1.")
+value|_("When enabled, dialogs will show a help button that gives access to " \   "the related help page.  Without this button, the help page can still " \   "be reached by pressing F1.")
 end_define
 
 begin_define
@@ -842,7 +842,7 @@ define|#
 directive|define
 name|SHOW_PAINT_TOOL_CURSOR_BLURB
 define|\
-value|N_("When enabled, the mouse pointer will be shown over the image while " \    "using a paint tool.")
+value|_("When enabled, the mouse pointer will be shown over the image while " \   "using a paint tool.")
 end_define
 
 begin_define
@@ -851,7 +851,7 @@ define|#
 directive|define
 name|SHOW_MENUBAR_BLURB
 define|\
-value|N_("When enabled, the menubar is visible by default. This can also be " \    "toggled with the \"View->Show Menubar\" command.")
+value|_("When enabled, the menubar is visible by default. This can also be " \   "toggled with the \"View->Show Menubar\" command.")
 end_define
 
 begin_define
@@ -860,7 +860,7 @@ define|#
 directive|define
 name|SHOW_RULERS_BLURB
 define|\
-value|N_("When enabled, the rulers are visible by default. This can also be " \    "toggled with the \"View->Show Rulers\" command.")
+value|_("When enabled, the rulers are visible by default. This can also be " \   "toggled with the \"View->Show Rulers\" command.")
 end_define
 
 begin_define
@@ -869,7 +869,7 @@ define|#
 directive|define
 name|SHOW_SCROLLBARS_BLURB
 define|\
-value|N_("When enabled, the scrollbars are visible by default. This can also be " \    "toggled with the \"View->Show Scrollbars\" command.")
+value|_("When enabled, the scrollbars are visible by default. This can also be " \   "toggled with the \"View->Show Scrollbars\" command.")
 end_define
 
 begin_define
@@ -878,7 +878,7 @@ define|#
 directive|define
 name|SHOW_STATUSBAR_BLURB
 define|\
-value|N_("When enabled, the statusbar is visible by default. This can also be " \    "toggled with the \"View->Show Statusbar\" command.")
+value|_("When enabled, the statusbar is visible by default. This can also be " \   "toggled with the \"View->Show Statusbar\" command.")
 end_define
 
 begin_define
@@ -887,7 +887,7 @@ define|#
 directive|define
 name|SHOW_SELECTION_BLURB
 define|\
-value|N_("When enabled, the selection is visible by default. This can also be " \    "toggled with the \"View->Show Selection\" command.")
+value|_("When enabled, the selection is visible by default. This can also be " \   "toggled with the \"View->Show Selection\" command.")
 end_define
 
 begin_define
@@ -896,7 +896,7 @@ define|#
 directive|define
 name|SHOW_LAYER_BOUNDARY_BLURB
 define|\
-value|N_("When enabled, the layer boundary is visible by default. This can also " \    "be toggled with the \"View->Show Layer Boundary\" command.")
+value|_("When enabled, the layer boundary is visible by default. This can also " \   "be toggled with the \"View->Show Layer Boundary\" command.")
 end_define
 
 begin_define
@@ -905,7 +905,7 @@ define|#
 directive|define
 name|SHOW_GUIDES_BLURB
 define|\
-value|N_("When enabled, the guides are visible by default. This can also be " \    "toggled with the \"View->Show Guides\" command.")
+value|_("When enabled, the guides are visible by default. This can also be " \   "toggled with the \"View->Show Guides\" command.")
 end_define
 
 begin_define
@@ -914,7 +914,7 @@ define|#
 directive|define
 name|SHOW_GRID_BLURB
 define|\
-value|N_("When enabled, the grid is visible by default. This can also be toggled " \    "with the \"View->Show Grid\" command.")
+value|_("When enabled, the grid is visible by default. This can also be toggled " \   "with the \"View->Show Grid\" command.")
 end_define
 
 begin_define
@@ -923,7 +923,7 @@ define|#
 directive|define
 name|SHOW_SAMPLE_POINTS_BLURB
 define|\
-value|N_("When enabled, the sample points are visible by default. This can also be " \    "toggled with the \"View->Show Sample Points\" command.")
+value|_("When enabled, the sample points are visible by default. This can also be " \   "toggled with the \"View->Show Sample Points\" command.")
 end_define
 
 begin_define
@@ -932,7 +932,7 @@ define|#
 directive|define
 name|SHOW_TOOLTIPS_BLURB
 define|\
-value|N_("Show a tooltip when the pointer hovers over an item.")
+value|_("Show a tooltip when the pointer hovers over an item.")
 end_define
 
 begin_define
@@ -941,7 +941,7 @@ define|#
 directive|define
 name|SINGLE_WINDOW_MODE_BLURB
 define|\
-value|N_("Use GIMP in a single-window mode.")
+value|_("Use GIMP in a single-window mode.")
 end_define
 
 begin_define
@@ -950,7 +950,7 @@ define|#
 directive|define
 name|HIDE_DOCKS_BLURB
 define|\
-value|N_("Hide docks and other windows, leaving only image windows.")
+value|_("Hide docks and other windows, leaving only image windows.")
 end_define
 
 begin_define
@@ -959,7 +959,7 @@ define|#
 directive|define
 name|SPACE_BAR_ACTION_BLURB
 define|\
-value|N_("What to do when the space bar is pressed in the image window.")
+value|_("What to do when the space bar is pressed in the image window.")
 end_define
 
 begin_define
@@ -968,7 +968,7 @@ define|#
 directive|define
 name|SWAP_PATH_BLURB
 define|\
-value|N_("Sets the swap file location. GIMP uses a tile based memory allocation " \    "scheme. The swap file is used to quickly and easily swap tiles out to " \    "disk and back in. Be aware that the swap file can easily get very large " \    "if GIMP is used with large images. " \    "Also, things can get horribly slow if the swap file is created on " \    "a folder that is mounted over NFS.  For these reasons, it may be " \    "desirable to put your swap file in \"/tmp\".")
+value|_("Sets the swap file location. GIMP uses a tile based memory allocation " \   "scheme. The swap file is used to quickly and easily swap tiles out to " \   "disk and back in. Be aware that the swap file can easily get very large " \   "if GIMP is used with large images. " \   "Also, things can get horribly slow if the swap file is created on " \   "a folder that is mounted over NFS.  For these reasons, it may be " \   "desirable to put your swap file in \"/tmp\".")
 end_define
 
 begin_define
@@ -977,7 +977,7 @@ define|#
 directive|define
 name|TEAROFF_MENUS_BLURB
 define|\
-value|N_("When enabled, menus can be torn off.")
+value|_("When enabled, menus can be torn off.")
 end_define
 
 begin_define
@@ -986,7 +986,7 @@ define|#
 directive|define
 name|CAN_CHANGE_ACCELS_BLURB
 define|\
-value|N_("When enabled, you can change keyboard shortcuts for menu items " \    "by hitting a key combination while the menu item is highlighted.")
+value|_("When enabled, you can change keyboard shortcuts for menu items " \   "by hitting a key combination while the menu item is highlighted.")
 end_define
 
 begin_define
@@ -995,7 +995,7 @@ define|#
 directive|define
 name|SAVE_ACCELS_BLURB
 define|\
-value|N_("Save changed keyboard shortcuts when GIMP exits.")
+value|_("Save changed keyboard shortcuts when GIMP exits.")
 end_define
 
 begin_define
@@ -1004,7 +1004,7 @@ define|#
 directive|define
 name|RESTORE_ACCELS_BLURB
 define|\
-value|N_("Restore saved keyboard shortcuts on each GIMP startup.")
+value|_("Restore saved keyboard shortcuts on each GIMP startup.")
 end_define
 
 begin_define
@@ -1013,7 +1013,7 @@ define|#
 directive|define
 name|TEMP_PATH_BLURB
 define|\
-value|N_("Sets the folder for temporary storage. Files will appear here " \    "during the course of running GIMP.  Most files will disappear " \    "when GIMP exits, but some files are likely to remain, so it " \    "is best if this folder not be one that is shared by other users.")
+value|_("Sets the folder for temporary storage. Files will appear here " \   "during the course of running GIMP.  Most files will disappear " \   "when GIMP exits, but some files are likely to remain, so it " \   "is best if this folder not be one that is shared by other users.")
 end_define
 
 begin_define
@@ -1040,7 +1040,7 @@ define|#
 directive|define
 name|THUMBNAIL_SIZE_BLURB
 define|\
-value|N_("Sets the size of the thumbnail shown in the Open dialog.")
+value|_("Sets the size of the thumbnail shown in the Open dialog.")
 end_define
 
 begin_define
@@ -1049,7 +1049,7 @@ define|#
 directive|define
 name|THUMBNAIL_FILESIZE_LIMIT_BLURB
 define|\
-value|N_("The thumbnail in the Open dialog will be automatically updated " \    "if the file being previewed is smaller than the size set here.")
+value|_("The thumbnail in the Open dialog will be automatically updated " \   "if the file being previewed is smaller than the size set here.")
 end_define
 
 begin_define
@@ -1058,7 +1058,7 @@ define|#
 directive|define
 name|TILE_CACHE_SIZE_BLURB
 define|\
-value|N_("When the amount of pixel data exceeds this limit, GIMP will start to " \    "swap tiles to disk.  This is a lot slower but it makes it possible to " \    "work on images that wouldn't fit into memory otherwise.  If you have a " \    "lot of RAM, you may want to set this to a higher value.")
+value|_("When the amount of pixel data exceeds this limit, GIMP will start to " \   "swap tiles to disk.  This is a lot slower but it makes it possible to " \   "work on images that wouldn't fit into memory otherwise.  If you have a " \   "lot of RAM, you may want to set this to a higher value.")
 end_define
 
 begin_define
@@ -1067,7 +1067,7 @@ define|#
 directive|define
 name|TOOLBOX_COLOR_AREA_BLURB
 define|\
-value|N_("Show the current foreground and background colors in the toolbox.")
+value|_("Show the current foreground and background colors in the toolbox.")
 end_define
 
 begin_define
@@ -1076,7 +1076,7 @@ define|#
 directive|define
 name|TOOLBOX_FOO_AREA_BLURB
 define|\
-value|N_("Show the currently selected brush, pattern and gradient in the toolbox.")
+value|_("Show the currently selected brush, pattern and gradient in the toolbox.")
 end_define
 
 begin_define
@@ -1085,7 +1085,7 @@ define|#
 directive|define
 name|TOOLBOX_IMAGE_AREA_BLURB
 define|\
-value|N_("Show the currently active image in the toolbox.")
+value|_("Show the currently active image in the toolbox.")
 end_define
 
 begin_define
@@ -1103,7 +1103,7 @@ define|#
 directive|define
 name|TRANSPARENCY_TYPE_BLURB
 define|\
-value|N_("Sets the manner in which transparency is displayed in images.")
+value|_("Sets the manner in which transparency is displayed in images.")
 end_define
 
 begin_define
@@ -1112,7 +1112,7 @@ define|#
 directive|define
 name|TRANSPARENCY_SIZE_BLURB
 define|\
-value|N_("Sets the size of the checkerboard used to display transparency.")
+value|_("Sets the size of the checkerboard used to display transparency.")
 end_define
 
 begin_define
@@ -1121,7 +1121,7 @@ define|#
 directive|define
 name|TRUST_DIRTY_FLAG_BLURB
 define|\
-value|N_("When enabled, GIMP will not save an image if it has not been changed " \    "since it was opened.")
+value|_("When enabled, GIMP will not save an image if it has not been changed " \   "since it was opened.")
 end_define
 
 begin_define
@@ -1130,7 +1130,7 @@ define|#
 directive|define
 name|UNDO_LEVELS_BLURB
 define|\
-value|N_("Sets the minimal number of operations that can be undone. More undo " \    "levels are kept available until the undo-size limit is reached.")
+value|_("Sets the minimal number of operations that can be undone. More undo " \   "levels are kept available until the undo-size limit is reached.")
 end_define
 
 begin_define
@@ -1139,7 +1139,7 @@ define|#
 directive|define
 name|UNDO_SIZE_BLURB
 define|\
-value|N_("Sets an upper limit to the memory that is used per image to keep " \    "operations on the undo stack. Regardless of this setting, at least " \    "as many undo-levels as configured can be undone.")
+value|_("Sets an upper limit to the memory that is used per image to keep " \   "operations on the undo stack. Regardless of this setting, at least " \   "as many undo-levels as configured can be undone.")
 end_define
 
 begin_define
@@ -1148,7 +1148,7 @@ define|#
 directive|define
 name|UNDO_PREVIEW_SIZE_BLURB
 define|\
-value|N_("Sets the size of the previews in the Undo History.")
+value|_("Sets the size of the previews in the Undo History.")
 end_define
 
 begin_define
@@ -1157,7 +1157,7 @@ define|#
 directive|define
 name|USE_HELP_BLURB
 define|\
-value|N_("When enabled, pressing F1 will open the help browser.")
+value|_("When enabled, pressing F1 will open the help browser.")
 end_define
 
 begin_define
@@ -1166,7 +1166,7 @@ define|#
 directive|define
 name|USE_OPENCL_BLURB
 define|\
-value|N_("When enabled, uses OpenCL for some operations.")
+value|_("When enabled, uses OpenCL for some operations.")
 end_define
 
 begin_define

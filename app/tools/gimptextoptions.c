@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae2f9490103
+DECL|enum|__anon2c7db3510103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -452,7 +452,7 @@ name|PROP_UNIT
 argument_list|,
 literal|"font-size-unit"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Font size unit"
 argument_list|)
@@ -474,7 +474,7 @@ name|PROP_FONT_SIZE
 argument_list|,
 literal|"font-size"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Font size"
 argument_list|)
@@ -511,7 +511,7 @@ name|PROP_HINT_STYLE
 argument_list|,
 literal|"hint-style"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Hinting alters the font outline to "
 literal|"produce a crisp bitmap at small "
@@ -533,7 +533,7 @@ name|PROP_LANGUAGE
 argument_list|,
 literal|"language"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"The text language may have an effect "
 literal|"on the way the text is rendered."
@@ -575,7 +575,7 @@ name|PROP_JUSTIFICATION
 argument_list|,
 literal|"justify"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Text alignment"
 argument_list|)
@@ -595,7 +595,7 @@ name|PROP_INDENTATION
 argument_list|,
 literal|"indent"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Indentation of the first line"
 argument_list|)
@@ -620,7 +620,7 @@ name|PROP_LINE_SPACING
 argument_list|,
 literal|"line-spacing"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Adjust line spacing"
 argument_list|)
@@ -645,7 +645,7 @@ name|PROP_LETTER_SPACING
 argument_list|,
 literal|"letter-spacing"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Adjust letter spacing"
 argument_list|)
@@ -670,7 +670,7 @@ name|PROP_BOX_MODE
 argument_list|,
 literal|"box-mode"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Whether text flows into rectangular shape or "
 literal|"moves into a new line when you press Enter"
@@ -691,7 +691,7 @@ name|PROP_USE_EDITOR
 argument_list|,
 literal|"use-editor"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Use an external editor window for text "
 literal|"entry"

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277949d30103
+DECL|enum|__anon27b387640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -188,7 +188,7 @@ name|PROP_MAX_REFINE_STEPS
 argument_list|,
 literal|"max-refine-steps"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Maximal amount of refinement points to be used for the interpolation mesh"
 argument_list|)

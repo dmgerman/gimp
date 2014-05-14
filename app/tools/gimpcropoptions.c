@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c266c5a0103
+DECL|enum|__anon2bd2862f0103
 block|{
 DECL|enumerator|PROP_LAYER_ONLY
 name|PROP_LAYER_ONLY
@@ -205,7 +205,7 @@ name|GIMP_RECTANGLE_OPTIONS_PROP_HIGHLIGHT
 argument_list|,
 literal|"highlight"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Dim everything outside selection"
 argument_list|)
@@ -223,7 +223,7 @@ name|PROP_LAYER_ONLY
 argument_list|,
 literal|"layer-only"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Crop only currently selected layer"
 argument_list|)
@@ -241,7 +241,7 @@ name|PROP_ALLOW_GROWING
 argument_list|,
 literal|"allow-growing"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Allow resizing canvas by dragging cropping frame "
 literal|"beyond image boundary"

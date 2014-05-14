@@ -51,9 +51,15 @@ directive|include
 file|"gimplevelsconfig.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon29ffea140103
+DECL|enum|__anon28fe99150103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -190,7 +196,10 @@ name|PROP_BRIGHTNESS
 argument_list|,
 literal|"brightness"
 argument_list|,
+name|_
+argument_list|(
 literal|"Brightness"
+argument_list|)
 argument_list|,
 operator|-
 literal|1.0
@@ -210,7 +219,10 @@ name|PROP_CONTRAST
 argument_list|,
 literal|"contrast"
 argument_list|,
+name|_
+argument_list|(
 literal|"Contrast"
+argument_list|)
 argument_list|,
 operator|-
 literal|1.0

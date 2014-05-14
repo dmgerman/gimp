@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29358d760103
+DECL|enum|__anon28fdff0d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -283,7 +283,7 @@ name|PROP_FILL_SELECTION
 argument_list|,
 literal|"fill-selection"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Which area will be filled"
 argument_list|)
@@ -301,7 +301,7 @@ name|PROP_FILL_TRANSPARENT
 argument_list|,
 literal|"fill-transparent"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Allow completely transparent regions "
 literal|"to be filled"
@@ -320,7 +320,7 @@ name|PROP_SAMPLE_MERGED
 argument_list|,
 literal|"sample-merged"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Base filled area on all visible "
 literal|"layers"
@@ -339,7 +339,7 @@ name|PROP_THRESHOLD
 argument_list|,
 literal|"threshold"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Maximum color difference"
 argument_list|)
@@ -361,7 +361,7 @@ name|PROP_FILL_CRITERION
 argument_list|,
 literal|"fill-criterion"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Criterion used for determining color similarity"
 argument_list|)

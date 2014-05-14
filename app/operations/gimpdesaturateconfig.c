@@ -39,9 +39,15 @@ directive|include
 file|"gimpdesaturateconfig.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon273971cf0103
+DECL|enum|__anon276d59e20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -176,7 +182,10 @@ name|PROP_MODE
 argument_list|,
 literal|"mode"
 argument_list|,
+name|_
+argument_list|(
 literal|"Desaturate mode"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_DESATURATE_MODE
 argument_list|,

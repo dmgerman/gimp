@@ -93,7 +93,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0431ef0103
+DECL|enum|__anon2c385db60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -221,7 +221,7 @@ name|PROP_DRAW_MODE
 argument_list|,
 literal|"draw-mode"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Paint over areas to mark color values for "
 literal|"inclusion or exclusion from selection"
@@ -242,7 +242,7 @@ name|PROP_STROKE_WIDTH
 argument_list|,
 literal|"stroke-width"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Size of the brush used for refinements"
 argument_list|)
@@ -264,7 +264,7 @@ name|PROP_MASK_COLOR
 argument_list|,
 literal|"mask-color"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Color of selection preview mask"
 argument_list|)
@@ -284,7 +284,7 @@ name|PROP_ENGINE
 argument_list|,
 literal|"engine"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Matting engine to use"
 argument_list|)
@@ -304,7 +304,7 @@ name|PROP_LEVELS
 argument_list|,
 literal|"levels"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Parameter for matting-levin"
 argument_list|)
@@ -326,7 +326,7 @@ name|PROP_ACTIVE_LEVELS
 argument_list|,
 literal|"active-levels"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Parameter for matting-levin"
 argument_list|)
@@ -348,7 +348,7 @@ name|PROP_ITERATIONS
 argument_list|,
 literal|"iterations"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Parameter for matting-global"
 argument_list|)

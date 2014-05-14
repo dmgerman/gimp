@@ -91,7 +91,7 @@ define|#
 directive|define
 name|COLOR_MANAGEMENT_MODE_BLURB
 define|\
-value|N_("Mode of operation for color management.")
+value|_("Mode of operation for color management.")
 end_define
 
 begin_define
@@ -100,7 +100,7 @@ define|#
 directive|define
 name|DISPLAY_PROFILE_BLURB
 define|\
-value|N_("The color profile of your (primary) monitor.")
+value|_("The color profile of your (primary) monitor.")
 end_define
 
 begin_define
@@ -109,7 +109,7 @@ define|#
 directive|define
 name|DISPLAY_PROFILE_FROM_GDK_BLURB
 define|\
-value|N_("When enabled, GIMP will try to use the display color profile from " \      "the windowing system.  The configured monitor profile is then only " \      "used as a fallback.")
+value|_("When enabled, GIMP will try to use the display color profile from " \     "the windowing system.  The configured monitor profile is then only " \     "used as a fallback.")
 end_define
 
 begin_define
@@ -118,7 +118,7 @@ define|#
 directive|define
 name|RGB_PROFILE_BLURB
 define|\
-value|N_("The default RGB working space color profile.")
+value|_("The default RGB working space color profile.")
 end_define
 
 begin_define
@@ -127,7 +127,7 @@ define|#
 directive|define
 name|CMYK_PROFILE_BLURB
 define|\
-value|N_("The CMYK color profile used to convert between RGB and CMYK.")
+value|_("The CMYK color profile used to convert between RGB and CMYK.")
 end_define
 
 begin_define
@@ -136,7 +136,7 @@ define|#
 directive|define
 name|PRINTER_PROFILE_BLURB
 define|\
-value|N_("The color profile to use for soft proofing from your image's " \      "color space to some other color space, including " \      "soft proofing to a printer or other output device profile. ")
+value|_("The color profile to use for soft proofing from your image's " \     "color space to some other color space, including "             \     "soft proofing to a printer or other output device profile. ")
 end_define
 
 begin_define
@@ -145,7 +145,7 @@ define|#
 directive|define
 name|DISPLAY_RENDERING_INTENT_BLURB
 define|\
-value|N_("How colors are converted from your image's color space to your display device. " \      "Relative colorimetric is usually the best choice. " \      "Unless you use a LUT monitor profile (most monitor profiles are matrix), " \      "choosing perceptual intent really gives you relative colorimetric." )
+value|_("How colors are converted from your image's color space to your display device. " \     "Relative colorimetric is usually the best choice. "                \     "Unless you use a LUT monitor profile (most monitor profiles are matrix), " \     "choosing perceptual intent really gives you relative colorimetric." )
 end_define
 
 begin_define
@@ -154,7 +154,7 @@ define|#
 directive|define
 name|DISPLAY_USE_BPC_BLURB
 define|\
-value|N_("Do use black point compensation (unless you know you have a reason not to). ")
+value|_("Do use black point compensation (unless you know you have a reason not to). ")
 end_define
 
 begin_define
@@ -163,7 +163,7 @@ define|#
 directive|define
 name|SIMULATION_RENDERING_INTENT_BLURB
 define|\
-value|N_("How colors are converted from your image's color space to the " \      "output simulation device (usually your monitor). " \      "Try them all and choose what looks the best. ")
+value|_("How colors are converted from your image's color space to the "  \     "output simulation device (usually your monitor). "               \     "Try them all and choose what looks the best. ")
 end_define
 
 begin_define
@@ -172,7 +172,7 @@ define|#
 directive|define
 name|SIMULATION_USE_BPC_BLURB
 define|\
-value|N_("Try with and without black point compensation "\      "and choose what looks best. ")
+value|_("Try with and without black point compensation "\     "and choose what looks best. ")
 end_define
 
 begin_define
@@ -181,7 +181,7 @@ define|#
 directive|define
 name|SIMULATION_GAMUT_CHECK_BLURB
 define|\
-value|N_("When enabled, the print simulation will mark colors " \      "which can not be represented in the target color space.")
+value|_("When enabled, the print simulation will mark colors " \     "which can not be represented in the target color space.")
 end_define
 
 begin_define
@@ -190,12 +190,12 @@ define|#
 directive|define
 name|OUT_OF_GAMUT_COLOR_BLURB
 define|\
-value|N_("The color to use for marking colors which are out of gamut.")
+value|_("The color to use for marking colors which are out of gamut.")
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dab20f0103
+DECL|enum|__anon2c3a9cd40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

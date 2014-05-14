@@ -83,7 +83,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ffbf810103
+DECL|enum|__anon2a0e8f360103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -404,7 +404,7 @@ name|PROP_UNIT
 argument_list|,
 literal|"unit"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"The unit used for coordinate display "
 literal|"when not in dot-for-dot mode."
@@ -427,7 +427,7 @@ name|PROP_XRESOLUTION
 argument_list|,
 literal|"xresolution"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"The horizontal image resolution."
 argument_list|)
@@ -447,7 +447,7 @@ name|PROP_YRESOLUTION
 argument_list|,
 literal|"yresolution"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"The vertical image resolution."
 argument_list|)

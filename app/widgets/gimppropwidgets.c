@@ -2990,7 +2990,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289c4dc00108
+DECL|struct|__anon2b3ccbb30108
 block|{
 DECL|member|config
 name|GObject
@@ -5331,10 +5331,7 @@ name|gimp_help_set_help_data
 argument_list|(
 name|widget
 argument_list|,
-name|gettext
-argument_list|(
 name|blurb
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

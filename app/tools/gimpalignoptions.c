@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0751940103
+DECL|enum|__anon2a5206260103
 block|{
 DECL|enumerator|ALIGN_BUTTON_CLICKED
 name|ALIGN_BUTTON_CLICKED
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0751940203
+DECL|enum|__anon2a5206260203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -263,7 +263,7 @@ name|PROP_ALIGN_REFERENCE
 argument_list|,
 literal|"align-reference"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Reference image object a layer will be aligned on"
 argument_list|)
@@ -283,7 +283,7 @@ name|PROP_OFFSET_X
 argument_list|,
 literal|"offset-x"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Horizontal offset for distribution"
 argument_list|)
@@ -306,7 +306,7 @@ name|PROP_OFFSET_Y
 argument_list|,
 literal|"offset-y"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Vertical offset for distribution"
 argument_list|)

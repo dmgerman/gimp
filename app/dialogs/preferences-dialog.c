@@ -3257,13 +3257,7 @@ name|gimp_help_set_help_data
 argument_list|(
 name|combo
 argument_list|,
-name|dgettext
-argument_list|(
-name|GETTEXT_PACKAGE
-literal|"-libgimp"
-argument_list|,
 name|blurb
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -8743,7 +8737,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b37abda0108
+DECL|struct|__anon2769bfcf0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10004,7 +9998,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b37abda0208
+DECL|struct|__anon2769bfcf0208
 block|{
 DECL|member|label
 specifier|const
@@ -11231,7 +11225,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b37abda0308
+DECL|struct|__anon2769bfcf0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11386,7 +11380,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b37abda0408
+DECL|struct|__anon2769bfcf0408
 block|{
 DECL|member|tree_label
 specifier|const

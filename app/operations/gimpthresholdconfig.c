@@ -39,9 +39,15 @@ directive|include
 file|"gimpthresholdconfig.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon2913093f0103
+DECL|enum|__anon2950d8910103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -178,7 +184,10 @@ name|PROP_LOW
 argument_list|,
 literal|"low"
 argument_list|,
+name|_
+argument_list|(
 literal|"Low threshold"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -197,7 +206,10 @@ name|PROP_HIGH
 argument_list|,
 literal|"high"
 argument_list|,
+name|_
+argument_list|(
 literal|"High threshold"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,

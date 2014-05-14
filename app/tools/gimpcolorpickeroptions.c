@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2855bf0103
+DECL|enum|__anon2bc396c60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -176,7 +176,7 @@ name|PROP_SAMPLE_AVERAGE
 argument_list|,
 literal|"sample-average"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Use accumulated color value from "
 literal|"all composited visible layers"
@@ -195,7 +195,7 @@ name|PROP_PICK_MODE
 argument_list|,
 literal|"pick-mode"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Choose what color picker will do"
 argument_list|)
@@ -215,7 +215,7 @@ name|PROP_USE_INFO_WINDOW
 argument_list|,
 literal|"use-info-window"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Open a floating dialog to view picked "
 literal|"color values in various color models"

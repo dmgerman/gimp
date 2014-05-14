@@ -57,9 +57,15 @@ directive|include
 file|"gimpcolorbalanceconfig.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon2a358f680103
+DECL|enum|__anon29b31f350103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -305,7 +311,10 @@ name|PROP_RANGE
 argument_list|,
 literal|"range"
 argument_list|,
+name|_
+argument_list|(
 literal|"The affected range"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_TRANSFER_MODE
 argument_list|,
@@ -322,7 +331,10 @@ name|PROP_CYAN_RED
 argument_list|,
 literal|"cyan-red"
 argument_list|,
+name|_
+argument_list|(
 literal|"Cyan-Red"
+argument_list|)
 argument_list|,
 operator|-
 literal|1.0
@@ -342,7 +354,10 @@ name|PROP_MAGENTA_GREEN
 argument_list|,
 literal|"magenta-green"
 argument_list|,
+name|_
+argument_list|(
 literal|"Magenta-Green"
+argument_list|)
 argument_list|,
 operator|-
 literal|1.0
@@ -362,7 +377,10 @@ name|PROP_YELLOW_BLUE
 argument_list|,
 literal|"yellow-blue"
 argument_list|,
+name|_
+argument_list|(
 literal|"Yellow-Blue"
+argument_list|)
 argument_list|,
 operator|-
 literal|1.0
@@ -382,7 +400,10 @@ name|PROP_PRESERVE_LUMINOSITY
 argument_list|,
 literal|"preserve-luminosity"
 argument_list|,
+name|_
+argument_list|(
 literal|"Preserve Luminosity"
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|,

@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276feba00103
+DECL|enum|__anon2ad6cd1f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -356,7 +356,10 @@ name|PROP_CHANNEL
 argument_list|,
 literal|"channel"
 argument_list|,
+name|_
+argument_list|(
 literal|"The affected channel"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_HISTOGRAM_CHANNEL
 argument_list|,
@@ -373,7 +376,10 @@ name|PROP_GAMMA
 argument_list|,
 literal|"gamma"
 argument_list|,
+name|_
+argument_list|(
 literal|"Gamma"
+argument_list|)
 argument_list|,
 literal|0.1
 argument_list|,
@@ -392,7 +398,10 @@ name|PROP_LOW_INPUT
 argument_list|,
 literal|"low-input"
 argument_list|,
+name|_
+argument_list|(
 literal|"Low Input"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -411,7 +420,10 @@ name|PROP_HIGH_INPUT
 argument_list|,
 literal|"high-input"
 argument_list|,
+name|_
+argument_list|(
 literal|"High Input"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -430,7 +442,10 @@ name|PROP_LOW_OUTPUT
 argument_list|,
 literal|"low-output"
 argument_list|,
+name|_
+argument_list|(
 literal|"Low Output"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -449,7 +464,10 @@ name|PROP_HIGH_OUTPUT
 argument_list|,
 literal|"high-output"
 argument_list|,
+name|_
+argument_list|(
 literal|"High Output"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,

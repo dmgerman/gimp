@@ -45,9 +45,15 @@ directive|include
 file|"gimphuesaturationconfig.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon290661260103
+DECL|enum|__anon2a0a5bee0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -293,7 +299,10 @@ name|PROP_RANGE
 argument_list|,
 literal|"range"
 argument_list|,
+name|_
+argument_list|(
 literal|"The affected range"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_HUE_RANGE
 argument_list|,
@@ -310,7 +319,10 @@ name|PROP_HUE
 argument_list|,
 literal|"hue"
 argument_list|,
+name|_
+argument_list|(
 literal|"Hue"
+argument_list|)
 argument_list|,
 operator|-
 literal|1.0
@@ -330,7 +342,10 @@ name|PROP_SATURATION
 argument_list|,
 literal|"saturation"
 argument_list|,
+name|_
+argument_list|(
 literal|"Saturation"
+argument_list|)
 argument_list|,
 operator|-
 literal|1.0
@@ -350,7 +365,10 @@ name|PROP_LIGHTNESS
 argument_list|,
 literal|"lightness"
 argument_list|,
+name|_
+argument_list|(
 literal|"Lightness"
+argument_list|)
 argument_list|,
 operator|-
 literal|1.0
@@ -370,7 +388,10 @@ name|PROP_OVERLAP
 argument_list|,
 literal|"overlap"
 argument_list|,
+name|_
+argument_list|(
 literal|"Overlap"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,

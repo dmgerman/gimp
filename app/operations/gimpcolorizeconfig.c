@@ -51,9 +51,15 @@ directive|include
 file|"gimpcolorizeconfig.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon289328cb0103
+DECL|enum|__anon2c0a86a20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -202,7 +208,10 @@ name|PROP_HUE
 argument_list|,
 literal|"hue"
 argument_list|,
+name|_
+argument_list|(
 literal|"Hue"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -221,7 +230,10 @@ name|PROP_SATURATION
 argument_list|,
 literal|"saturation"
 argument_list|,
+name|_
+argument_list|(
 literal|"Saturation"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -240,7 +252,10 @@ name|PROP_LIGHTNESS
 argument_list|,
 literal|"lightness"
 argument_list|,
+name|_
+argument_list|(
 literal|"Lightness"
+argument_list|)
 argument_list|,
 operator|-
 literal|1.0
