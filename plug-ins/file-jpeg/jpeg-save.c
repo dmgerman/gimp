@@ -279,7 +279,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9b1d0f0108
+DECL|struct|__anon2a202f860108
 block|{
 DECL|member|cinfo
 name|struct
@@ -356,7 +356,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9b1d0f0208
+DECL|struct|__anon2a202f860208
 block|{
 DECL|member|run
 name|gboolean
@@ -2804,9 +2804,10 @@ argument_list|(
 name|optimize
 argument_list|,
 operator|!
-name|jsvals
-operator|.
-name|arithmetic_coding
+name|gtk_toggle_button_get_active
+argument_list|(
+name|togglebutton
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
