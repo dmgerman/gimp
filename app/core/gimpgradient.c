@@ -435,7 +435,7 @@ name|viewable_class
 operator|->
 name|default_icon_name
 operator|=
-literal|"gimp-gradient"
+literal|"gimp-tool-blend"
 expr_stmt|;
 name|viewable_class
 operator|->
