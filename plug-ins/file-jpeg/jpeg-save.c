@@ -128,6 +128,42 @@ directive|include
 file|"jpeg-settings.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|C_ARITH_CODING_SUPPORTED
+end_ifdef
+
+begin_decl_stmt
+DECL|variable|arithc_supported
+specifier|static
+name|gboolean
+name|arithc_supported
+init|=
+name|TRUE
+decl_stmt|;
+end_decl_stmt
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_decl_stmt
+DECL|variable|arithc_supported
+specifier|static
+name|gboolean
+name|arithc_supported
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_define
 DECL|macro|SCALE_WIDTH
 define|#
@@ -279,7 +315,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bce6950108
+DECL|struct|__anon2ad09f490108
 block|{
 DECL|member|cinfo
 name|struct
@@ -356,7 +392,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bce6950208
+DECL|struct|__anon2ad09f490208
 block|{
 DECL|member|run
 name|gboolean
@@ -1608,9 +1644,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-ifdef|#
-directive|ifdef
-name|C_ARITH_CODING_SUPPORTED
+if|if
+condition|(
+name|arithc_supported
+condition|)
+block|{
 name|cinfo
 operator|.
 name|arith_code
@@ -1634,8 +1672,8 @@ name|jsvals
 operator|.
 name|optimize
 expr_stmt|;
-else|#
-directive|else
+block|}
+else|else
 name|cinfo
 operator|.
 name|optimize_coding
@@ -1644,9 +1682,6 @@ name|jsvals
 operator|.
 name|optimize
 expr_stmt|;
-endif|#
-directive|endif
-comment|/* C_ARITH_CODING_SUPPORTED */
 name|subsampling
 operator|=
 operator|(
@@ -2770,12 +2805,6 @@ block|}
 block|}
 end_function
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|C_ARITH_CODING_SUPPORTED
-end_ifdef
-
 begin_function
 specifier|static
 name|void
@@ -2812,15 +2841,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* C_ARITH_CODING_SUPPORTED */
-end_comment
 
 begin_function
 name|gboolean
@@ -3918,9 +3938,10 @@ operator|.
 name|optimize
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|C_ARITH_CODING_SUPPORTED
+if|if
+condition|(
+name|arithc_supported
+condition|)
 name|gtk_widget_set_sensitive
 argument_list|(
 name|toggle
@@ -3931,15 +3952,14 @@ operator|.
 name|arithmetic_coding
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
-comment|/* C_ARITH_CODING_SUPPORTED */
 name|row
 operator|++
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|C_ARITH_CODING_SUPPORTED
+if|if
+condition|(
+name|arithc_supported
+condition|)
+block|{
 comment|/* Arithmetic coding */
 name|pg
 operator|.
@@ -4061,9 +4081,7 @@ expr_stmt|;
 name|row
 operator|++
 expr_stmt|;
-endif|#
-directive|endif
-comment|/* C_ARITH_CODING_SUPPORTED */
+block|}
 comment|/* Progressive */
 name|pg
 operator|.
