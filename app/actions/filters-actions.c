@@ -823,6 +823,28 @@ comment|/* FIXME GIMP_HELP_FILTER_NOISE_HURL */
 block|}
 block|,
 block|{
+literal|"filters-noise-perlin"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Perlin Noise..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:perlin-noise"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_NOISE_PERLIIN */
+block|}
+block|,
+block|{
 literal|"filters-noise-pick"
 block|,
 name|GIMP_STOCK_GEGL
@@ -886,6 +908,28 @@ literal|"gegl:noise-reduction"
 block|,
 name|NULL
 comment|/* FIXME GIMP_HELP_FILTER_NOISE_REDUCTION */
+block|}
+block|,
+block|{
+literal|"filters-noise-simplex"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Simplex Noise..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:simplex-noise"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_NOISE_SIMPLEX */
 block|}
 block|,
 block|{
@@ -1829,6 +1873,13 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
+literal|"filters-noise-perlin"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
 literal|"filters-noise-pick"
 argument_list|,
 name|writable
@@ -1844,6 +1895,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-noise-rgb"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-noise-simplex"
 argument_list|,
 name|writable
 argument_list|)

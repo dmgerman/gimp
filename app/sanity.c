@@ -1601,6 +1601,8 @@ literal|"gegl:opacity"
 block|,
 literal|"gegl:over"
 block|,
+literal|"gegl:perlin-noise"
+block|,
 literal|"gegl:photocopy"
 block|,
 literal|"gegl:pixelize"
@@ -1616,6 +1618,8 @@ block|,
 literal|"gegl:seamless-clone"
 block|,
 literal|"gegl:shift"
+block|,
+literal|"gegl:simplex-noise"
 block|,
 literal|"gegl:softglow"
 block|,

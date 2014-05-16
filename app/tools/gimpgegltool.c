@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29614bd60103
+DECL|enum|__anon294af04f0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -401,6 +401,8 @@ literal|"gegl:noise-slur"
 block|,
 literal|"gegl:noise-spread"
 block|,
+literal|"gegl:perlin-noise"
+block|,
 literal|"gegl:photocopy"
 block|,
 literal|"gegl:pixelize"
@@ -412,6 +414,8 @@ block|,
 literal|"gegl:red-eye-removal"
 block|,
 literal|"gegl:ripple"
+block|,
+literal|"gegl:simplex-noise"
 block|,
 literal|"gegl:shift"
 block|,
