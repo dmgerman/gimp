@@ -222,6 +222,12 @@ directive|ifndef
 name|GIMP_CONSOLE_COMPILATION
 end_ifndef
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
+end_ifndef
+
 begin_function
 specifier|static
 name|void
@@ -475,6 +481,15 @@ expr_stmt|;
 block|}
 end_function
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* G_OS_WIN32 */
+end_comment
+
 begin_function
 specifier|static
 name|Gimp
@@ -589,9 +604,14 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
 name|gimp_init_icon_theme_for_testing
 argument_list|()
 expr_stmt|;
+endif|#
+directive|endif
 name|gimp_initialize
 argument_list|(
 name|gimp
