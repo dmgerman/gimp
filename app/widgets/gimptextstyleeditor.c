@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5cd9d70103
+DECL|enum|__anon2b27f4840103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1635,7 +1635,7 @@ name|buffer
 operator|->
 name|strikethrough_tag
 argument_list|,
-literal|"format-edit-strikethrough"
+literal|"format-text-strikethrough"
 argument_list|,
 name|_
 argument_list|(
