@@ -2348,7 +2348,7 @@ name|pspec
 argument_list|,
 literal|"role"
 argument_list|,
-literal|"foreground"
+literal|"color-primary"
 argument_list|)
 condition|)
 block|{
@@ -2392,7 +2392,7 @@ name|pspec
 argument_list|,
 literal|"role"
 argument_list|,
-literal|"background"
+literal|"color-secondary"
 argument_list|)
 condition|)
 block|{
