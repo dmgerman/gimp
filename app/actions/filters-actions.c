@@ -1197,6 +1197,28 @@ comment|/* FIXME GIMP_HELP_FILTER_POLAR_COORDINATES */
 block|}
 block|,
 block|{
+literal|"filters-tile-glass"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Glass Tile..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:tile-glass"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_TILE_GLASS */
+block|}
+block|,
+block|{
 literal|"filters-tile-seamless"
 block|,
 name|GIMP_STOCK_GEGL
@@ -1936,6 +1958,13 @@ argument_list|,
 name|writable
 operator|&&
 name|alpha
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-tile-glass"
+argument_list|,
+name|writable
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
