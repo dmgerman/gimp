@@ -2287,7 +2287,7 @@ name|pspec
 argument_list|,
 literal|"axis"
 argument_list|,
-literal|"x"
+literal|"y"
 argument_list|)
 condition|)
 block|{
