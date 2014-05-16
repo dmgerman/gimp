@@ -66,6 +66,27 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_gegl_param_spec_has_key
+parameter_list|(
+name|GParamSpec
+modifier|*
+name|pspec
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|key
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|value
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
