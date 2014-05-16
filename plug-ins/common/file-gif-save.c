@@ -82,6 +82,14 @@ value|"file-gif-save"
 end_define
 
 begin_define
+DECL|macro|SAVE2_PROC
+define|#
+directive|define
+name|SAVE2_PROC
+value|"file-gif-save2"
+end_define
+
+begin_define
 DECL|macro|PLUG_IN_BINARY
 define|#
 directive|define
@@ -107,7 +115,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3595ad0103
+DECL|enum|__anon28a0f9b90103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -120,7 +128,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3595ad0203
+DECL|enum|__anon28a0f9b90203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -137,7 +145,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3595ad0308
+DECL|struct|__anon28a0f9b90308
 block|{
 DECL|member|interlace
 name|gint
@@ -419,6 +427,15 @@ name|MAIN
 argument_list|()
 end_macro
 
+begin_define
+DECL|macro|COMMON_SAVE_ARGS
+define|#
+directive|define
+name|COMMON_SAVE_ARGS
+define|\
+value|{ GIMP_PDB_INT32,    "run-mode",        "The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }" }, \     { GIMP_PDB_IMAGE,    "image",           "Image to save" }, \     { GIMP_PDB_DRAWABLE, "drawable",        "Drawable to save" }, \     { GIMP_PDB_STRING,   "filename",        "The name of the file to save the image in" }, \     { GIMP_PDB_STRING,   "raw-filename",    "The name entered" }, \     { GIMP_PDB_INT32,    "interlace",       "Try to save as interlaced" }, \     { GIMP_PDB_INT32,    "loop",            "(animated gif) loop infinitely" }, \     { GIMP_PDB_INT32,    "default-delay",   "(animated gif) Default delay between framese in milliseconds" }, \     { GIMP_PDB_INT32,    "default-dispose", "(animated gif) Default disposal type (0=`don't care`, 1=combine, 2=replace)" }
+end_define
+
 begin_function
 specifier|static
 name|void
@@ -434,76 +451,40 @@ name|save_args
 index|[]
 init|=
 block|{
+name|COMMON_SAVE_ARGS
+block|}
+decl_stmt|;
+specifier|static
+specifier|const
+name|GimpParamDef
+name|save2_args
+index|[]
+init|=
+block|{
+name|COMMON_SAVE_ARGS
+block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run-mode"
+literal|"as-animation"
 block|,
-literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
-block|}
-block|,
-block|{
-name|GIMP_PDB_IMAGE
-block|,
-literal|"image"
-block|,
-literal|"Image to save"
-block|}
-block|,
-block|{
-name|GIMP_PDB_DRAWABLE
-block|,
-literal|"drawable"
-block|,
-literal|"Drawable to save"
-block|}
-block|,
-block|{
-name|GIMP_PDB_STRING
-block|,
-literal|"filename"
-block|,
-literal|"The name of the file to save the image in"
-block|}
-block|,
-block|{
-name|GIMP_PDB_STRING
-block|,
-literal|"raw-filename"
-block|,
-literal|"The name entered"
+literal|"Save GIF as animation?"
 block|}
 block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"interlace"
+literal|"force-delay"
 block|,
-literal|"Try to save as interlaced"
+literal|"(animated gif) Use specified delay for all frames?"
 block|}
 block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"loop"
+literal|"force-dispose"
 block|,
-literal|"(animated gif) loop infinitely"
-block|}
-block|,
-block|{
-name|GIMP_PDB_INT32
-block|,
-literal|"default-delay"
-block|,
-literal|"(animated gif) Default delay between framese in milliseconds"
-block|}
-block|,
-block|{
-name|GIMP_PDB_INT32
-block|,
-literal|"default-dispose"
-block|,
-literal|"(animated gif) Default disposal type (0=`don't care`, 1=combine, 2=replace)"
+literal|"(animated gif) Use specified disposal for all frames?"
 block|}
 block|}
 decl_stmt|;
@@ -516,7 +497,7 @@ argument_list|,
 literal|"Save a file in Compuserve GIF format, with "
 literal|"possible animation, transparency, and comment.  "
 literal|"To save an animation, operate on a multi-layer "
-literal|"file.  The plug-in will intrepret<50% alpha as "
+literal|"file.  The plug-in will interpret<50% alpha as "
 literal|"transparent.  When run non-interactively, the "
 literal|"value for the comment is taken from the "
 literal|"'gimp-comment' parasite.  "
@@ -544,6 +525,48 @@ argument_list|,
 literal|0
 argument_list|,
 name|save_args
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+name|SAVE2_PROC
+argument_list|,
+literal|"saves files in Compuserve GIF file format"
+argument_list|,
+literal|"Save a file in Compuserve GIF format, with "
+literal|"possible animation, transparency, and comment.  "
+literal|"To save an animation, operate on a multi-layer "
+literal|"file and give the 'as-animation' parameter "
+literal|"as TRUE.  The plug-in will interpret<50% "
+literal|"alpha as transparent.  When run "
+literal|"non-interactively, the value for the comment "
+literal|"is taken from the 'gimp-comment' parasite.  "
+argument_list|,
+literal|"Spencer Kimball, Peter Mattis, Adam Moss, David Koblas"
+argument_list|,
+literal|"Spencer Kimball, Peter Mattis, Adam Moss, David Koblas"
+argument_list|,
+literal|"1995-1997"
+argument_list|,
+name|N_
+argument_list|(
+literal|"GIF image"
+argument_list|)
+argument_list|,
+literal|"INDEXED*, GRAY*"
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|save2_args
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|save2_args
 argument_list|,
 name|NULL
 argument_list|)
@@ -677,6 +700,15 @@ argument_list|(
 name|name
 argument_list|,
 name|SAVE_PROC
+argument_list|)
+operator|==
+literal|0
+operator|||
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|SAVE2_PROC
 argument_list|)
 operator|==
 literal|0
@@ -818,6 +850,10 @@ condition|(
 name|nparams
 operator|!=
 literal|9
+operator|&&
+name|nparams
+operator|!=
+literal|12
 condition|)
 block|{
 name|status
@@ -898,6 +934,71 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+if|if
+condition|(
+name|nparams
+operator|==
+literal|12
+condition|)
+block|{
+name|gsvals
+operator|.
+name|as_animation
+operator|=
+operator|(
+name|param
+index|[
+literal|9
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+operator|)
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
+name|gsvals
+operator|.
+name|always_use_default_delay
+operator|=
+operator|(
+name|param
+index|[
+literal|10
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+operator|)
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
+name|gsvals
+operator|.
+name|always_use_default_dispose
+operator|=
+operator|(
+name|param
+index|[
+literal|11
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+operator|)
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
+block|}
 block|}
 break|break;
 case|case
