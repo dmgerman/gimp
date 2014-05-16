@@ -1601,6 +1601,8 @@ literal|"gegl:opacity"
 block|,
 literal|"gegl:over"
 block|,
+literal|"gegl:panorama-projection"
+block|,
 literal|"gegl:perlin-noise"
 block|,
 literal|"gegl:photocopy"

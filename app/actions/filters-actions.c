@@ -977,6 +977,28 @@ comment|/* FIXME GIMP_HELP_FILTER_NOISE_SPREAD */
 block|}
 block|,
 block|{
+literal|"filters-panorama-projection"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Panorama Projection..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:panorama-projection"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_PANORAMA_PROJECTION */
+block|}
+block|,
+block|{
 literal|"filters-photocopy"
 block|,
 name|GIMP_STOCK_GEGL
@@ -1923,6 +1945,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-lens-distortion"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-panorama-projection"
 argument_list|,
 name|writable
 argument_list|)
