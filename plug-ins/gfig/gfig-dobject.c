@@ -2042,7 +2042,7 @@ name|g_warning
 argument_list|(
 name|_
 argument_list|(
-literal|"Hey where has the object gone ?"
+literal|"Hey, where has the object gone?"
 argument_list|)
 argument_list|)
 expr_stmt|;
