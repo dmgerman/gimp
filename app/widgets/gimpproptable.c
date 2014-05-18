@@ -1328,6 +1328,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|HAS_KEY
+argument_list|(
+name|pspec
+argument_list|,
+literal|"unit"
+argument_list|,
+literal|"pixel-distance"
+argument_list|)
+operator|&&
 name|gtk_adjustment_get_value
 argument_list|(
 name|last_x_adj
