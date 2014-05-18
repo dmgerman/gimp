@@ -113,7 +113,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac6c7010108
+DECL|struct|__anon2b76c2070108
 block|{
 DECL|member|tilable
 name|gboolean
@@ -546,7 +546,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"<Image>/Filters/Render/Clouds"
+literal|"<Image>/Filters/Render/Noise"
 argument_list|)
 expr_stmt|;
 block|}
