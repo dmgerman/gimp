@@ -750,7 +750,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-literal|"gegl:noise-cell"
+literal|"gegl:cell-noise"
 block|,
 name|NULL
 comment|/* FIXME GIMP_HELP_FILTER_NOISE_CELL */

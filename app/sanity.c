@@ -1525,6 +1525,8 @@ literal|"gegl:c2g"
 block|,
 literal|"gegl:cartoon"
 block|,
+literal|"gegl:cell-noise"
+block|,
 literal|"gegl:checkerboard"
 block|,
 literal|"gegl:color"

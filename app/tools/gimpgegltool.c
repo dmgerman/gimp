@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f90c1b0103
+DECL|enum|__anon276745d00103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -333,6 +333,8 @@ literal|"gegl:c2g"
 block|,
 literal|"gegl:cartoon"
 block|,
+literal|"gegl:cell-noise"
+block|,
 literal|"gegl:channel-mixer"
 block|,
 literal|"gegl:checkerboard"
@@ -382,8 +384,6 @@ block|,
 literal|"gegl:motion-blur-linear"
 block|,
 literal|"gegl:motion-blur-zoom"
-block|,
-literal|"gegl:noise-cell"
 block|,
 literal|"gegl:noise-cie-lch"
 block|,
