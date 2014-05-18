@@ -4984,6 +4984,16 @@ name|NULL
 decl_stmt|;
 if|if
 condition|(
+name|angle
+operator|>
+literal|180.0
+condition|)
+name|angle
+operator|-=
+literal|360.0
+expr_stmt|;
+if|if
+condition|(
 name|type
 operator|==
 literal|0
