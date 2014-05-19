@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui-types.h"
 end_include
 
@@ -119,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf83b790103
+DECL|enum|__anon2bee8ea80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1231,7 +1237,7 @@ name|dock_columns
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gdk_screen_get_monitor_geometry
+name|gdk_screen_get_monitor_workarea
 argument_list|(
 name|screen
 argument_list|,

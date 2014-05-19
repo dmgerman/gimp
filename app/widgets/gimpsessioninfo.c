@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets-types.h"
 end_include
 
@@ -125,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27466de90103
+DECL|enum|__anon2c0602440103
 block|{
 DECL|enumerator|SESSION_INFO_FACTORY_ENTRY
 name|SESSION_INFO_FACTORY_ENTRY
@@ -176,7 +182,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27466de90208
+DECL|struct|__anon2c0602440208
 block|{
 DECL|member|info
 name|GimpSessionInfo
@@ -2465,6 +2471,9 @@ block|{
 name|GdkRectangle
 name|rect
 decl_stmt|;
+name|GdkRectangle
+name|work_rect
+decl_stmt|;
 name|gchar
 name|geom
 index|[
@@ -2576,6 +2585,16 @@ operator|&
 name|rect
 argument_list|)
 expr_stmt|;
+name|gdk_screen_get_monitor_workarea
+argument_list|(
+name|screen
+argument_list|,
+name|monitor
+argument_list|,
+operator|&
+name|work_rect
+argument_list|)
+expr_stmt|;
 name|info
 operator|->
 name|p
@@ -2681,15 +2700,15 @@ name|p
 operator|->
 name|x
 argument_list|,
-name|rect
+name|work_rect
 operator|.
 name|x
 argument_list|,
-name|rect
+name|work_rect
 operator|.
 name|x
 operator|+
-name|rect
+name|work_rect
 operator|.
 name|width
 operator|-
@@ -2710,15 +2729,15 @@ name|p
 operator|->
 name|y
 argument_list|,
-name|rect
+name|work_rect
 operator|.
 name|y
 argument_list|,
-name|rect
+name|work_rect
 operator|.
 name|y
 operator|+
-name|rect
+name|work_rect
 operator|.
 name|height
 operator|-

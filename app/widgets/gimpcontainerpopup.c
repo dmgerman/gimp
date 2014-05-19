@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f4819b0103
+DECL|enum|__anon2c4ce0020103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -1806,7 +1806,7 @@ argument_list|,
 name|orig_y
 argument_list|)
 expr_stmt|;
-name|gdk_screen_get_monitor_geometry
+name|gdk_screen_get_monitor_workarea
 argument_list|(
 name|screen
 argument_list|,

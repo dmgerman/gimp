@@ -311,7 +311,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290168e90103
+DECL|enum|__anon28927a120103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -439,7 +439,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290168e90208
+DECL|struct|__anon28927a120208
 block|{
 DECL|member|x
 name|gint
@@ -4650,7 +4650,7 @@ index|[
 literal|32
 index|]
 decl_stmt|;
-name|gdk_screen_get_monitor_geometry
+name|gdk_screen_get_monitor_workarea
 argument_list|(
 name|screen
 argument_list|,
@@ -5878,7 +5878,7 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gdk_screen_get_monitor_geometry
+name|gdk_screen_get_monitor_workarea
 argument_list|(
 name|screen
 argument_list|,

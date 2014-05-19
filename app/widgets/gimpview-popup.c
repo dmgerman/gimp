@@ -921,7 +921,7 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
-name|gdk_screen_get_monitor_geometry
+name|gdk_screen_get_monitor_workarea
 argument_list|(
 name|screen
 argument_list|,

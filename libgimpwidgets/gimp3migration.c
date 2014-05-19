@@ -676,5 +676,34 @@ return|;
 block|}
 end_function
 
+begin_function
+name|void
+DECL|function|gdk_screen_get_monitor_workarea (GdkScreen * screen,gint monitor_num,GdkRectangle * dest)
+name|gdk_screen_get_monitor_workarea
+parameter_list|(
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|,
+name|gint
+name|monitor_num
+parameter_list|,
+name|GdkRectangle
+modifier|*
+name|dest
+parameter_list|)
+block|{
+name|gdk_screen_get_monitor_geometry
+argument_list|(
+name|screen
+argument_list|,
+name|monitor_num
+argument_list|,
+name|dest
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 end_unit
 
