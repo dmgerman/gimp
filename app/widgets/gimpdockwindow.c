@@ -233,7 +233,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1e22580103
+DECL|enum|__anon2b05448a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1057,7 +1057,6 @@ name|name
 init|=
 name|NULL
 decl_stmt|;
-comment|/* Initialize members */
 name|dock_window
 operator|->
 name|p
@@ -1088,7 +1087,6 @@ name|auto_follow_active
 operator|=
 name|TRUE
 expr_stmt|;
-comment|/* Initialize theming and style-setting stuff */
 name|name
 operator|=
 name|g_strdup_printf
@@ -1117,7 +1115,6 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
-comment|/* Misc */
 name|gtk_window_set_resizable
 argument_list|(
 name|GTK_WINDOW
@@ -1129,6 +1126,16 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_focus_on_map
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dock_window
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_skip_taskbar_hint
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
