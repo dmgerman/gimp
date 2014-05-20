@@ -2990,7 +2990,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3ccbb30108
+DECL|struct|__anon27df228c0108
 block|{
 DECL|member|config
 name|GObject
