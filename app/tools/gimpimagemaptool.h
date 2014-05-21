@@ -144,6 +144,10 @@ name|GimpImageMap
 modifier|*
 name|image_map
 decl_stmt|;
+DECL|member|notify_timeout_id
+name|guint
+name|notify_timeout_id
+decl_stmt|;
 comment|/* dialog */
 DECL|member|overlay
 name|gboolean
