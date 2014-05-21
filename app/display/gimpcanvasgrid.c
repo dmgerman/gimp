@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eacb740103
+DECL|enum|__anon28abe89e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -878,11 +878,12 @@ name|yspacing
 expr_stmt|;
 switch|switch
 condition|(
+name|gimp_grid_get_style
+argument_list|(
 name|private
 operator|->
 name|grid
-operator|->
-name|style
+argument_list|)
 condition|)
 block|{
 case|case
