@@ -850,15 +850,6 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|GimpImageMapTool
-modifier|*
-name|im_tool
-init|=
-name|GIMP_IMAGE_MAP_TOOL
-argument_list|(
-name|tool
-argument_list|)
-decl_stmt|;
 name|gimp_tool_control_halt
 argument_list|(
 name|tool
@@ -895,11 +886,6 @@ name|bc_tool
 operator|->
 name|config
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_image_map_tool_preview
-argument_list|(
-name|im_tool
 argument_list|)
 expr_stmt|;
 block|}
