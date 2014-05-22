@@ -583,7 +583,7 @@ block|,
 block|{
 literal|"filters-grid"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_STOCK_GRID
 block|,
 name|NC_
 argument_list|(
