@@ -193,6 +193,22 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_tool_gui_set_icon_name
+parameter_list|(
+name|GimpToolGui
+modifier|*
+name|gui
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|icon_name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_tool_gui_set_shell
 parameter_list|(
 name|GimpToolGui
