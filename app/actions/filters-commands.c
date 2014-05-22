@@ -301,6 +301,11 @@ argument_list|,
 name|operation
 argument_list|,
 name|label
+argument_list|,
+name|gtk_action_get_icon_name
+argument_list|(
+name|action
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|tool_manager_initialize_active

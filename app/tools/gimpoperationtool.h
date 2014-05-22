@@ -122,6 +122,11 @@ name|gchar
 modifier|*
 name|undo_desc
 decl_stmt|;
+DECL|member|icon_name
+name|gchar
+modifier|*
+name|icon_name
+decl_stmt|;
 DECL|member|config
 name|GimpObject
 modifier|*
@@ -210,6 +215,11 @@ specifier|const
 name|gchar
 modifier|*
 name|undo_desc
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|icon_name
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276745d00103
+DECL|enum|__anon29802a2a0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -1491,6 +1491,8 @@ name|tool
 argument_list|)
 argument_list|,
 name|operation
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
