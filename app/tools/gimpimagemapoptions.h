@@ -107,6 +107,10 @@ DECL|member|preview
 name|gboolean
 name|preview
 decl_stmt|;
+DECL|member|region
+name|GimpImageMapRegion
+name|region
+decl_stmt|;
 DECL|member|settings
 name|gchar
 modifier|*

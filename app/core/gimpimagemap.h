@@ -22,22 +22,6 @@ directive|include
 file|"gimpobject.h"
 end_include
 
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2a31a4900103
-block|{
-DECL|enumerator|GIMP_IMAGE_MAP_REGION_SELECTION
-name|GIMP_IMAGE_MAP_REGION_SELECTION
-block|,
-DECL|enumerator|GIMP_IMAGE_MAP_REGION_DRAWABLE
-name|GIMP_IMAGE_MAP_REGION_DRAWABLE
-DECL|typedef|GimpImageMapRegion
-block|}
-name|GimpImageMapRegion
-typedef|;
-end_typedef
-
 begin_define
 DECL|macro|GIMP_TYPE_IMAGE_MAP
 define|#
