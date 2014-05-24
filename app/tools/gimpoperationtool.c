@@ -995,9 +995,13 @@ name|NULL
 argument_list|)
 return|;
 return|return
-name|g_object_new
+name|gegl_node_new_child
 argument_list|(
-name|GEGL_TYPE_NODE
+name|NULL
+argument_list|,
+literal|"operation"
+argument_list|,
+literal|"gegl:nop"
 argument_list|,
 name|NULL
 argument_list|)
