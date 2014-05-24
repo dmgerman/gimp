@@ -441,7 +441,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278268720103
+DECL|enum|__anon28f9bf2e0103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -4347,7 +4347,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_name:  *  * Returns the display to be used for plug-in windows.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the display name  **/
+comment|/**  * gimp_display_name:  *  * Returns the display to be used for plug-in windows.  *  * This is a constant value given at plug-in configuration time.  * Will return #NULL if GIMP has been started with no GUI, either  * via "--no-interface" flag, or a console build.  *  * Return value: the display name  **/
 end_comment
 
 begin_function
