@@ -159,6 +159,11 @@ name|GtkWidget
 modifier|*
 name|settings_box
 decl_stmt|;
+DECL|member|region_combo
+name|GtkWidget
+modifier|*
+name|region_combo
+decl_stmt|;
 DECL|member|label_group
 name|GtkSizeGroup
 modifier|*
