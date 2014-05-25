@@ -962,6 +962,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDial
+typedef|typedef
+name|struct
+name|_GimpDial
+name|GimpDial
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDynamicsOutputEditor
 typedef|typedef
 name|struct
