@@ -83,7 +83,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon278667c80103
+DECL|enum|__anon2bb6827f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -106,7 +106,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278667c80203
+DECL|enum|__anon2bb6827f0203
 block|{
 DECL|enumerator|DIAL_TARGET_ALPHA
 name|DIAL_TARGET_ALPHA
@@ -1662,8 +1662,8 @@ end_function
 begin_function
 specifier|static
 name|gdouble
-DECL|function|angle_mod_2PI (gdouble angle)
-name|angle_mod_2PI
+DECL|function|normalize_angle (gdouble angle)
+name|normalize_angle
 parameter_list|(
 name|gdouble
 name|angle
@@ -1723,7 +1723,7 @@ name|ABS
 argument_list|(
 name|MIN
 argument_list|(
-name|angle_mod_2PI
+name|normalize_angle
 argument_list|(
 name|alpha
 operator|-
@@ -1734,7 +1734,7 @@ literal|2
 operator|*
 name|G_PI
 operator|-
-name|angle_mod_2PI
+name|normalize_angle
 argument_list|(
 name|alpha
 operator|-
@@ -2323,7 +2323,7 @@ name|dial
 argument_list|,
 literal|"alpha"
 argument_list|,
-name|angle_mod_2PI
+name|normalize_angle
 argument_list|(
 name|dial
 operator|->
@@ -2336,7 +2336,7 @@ argument_list|)
 argument_list|,
 literal|"beta"
 argument_list|,
-name|angle_mod_2PI
+name|normalize_angle
 argument_list|(
 name|dial
 operator|->
