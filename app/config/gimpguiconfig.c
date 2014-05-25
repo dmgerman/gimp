@@ -51,6 +51,12 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_WEBKIT
+end_ifdef
+
 begin_define
 DECL|macro|DEFAULT_HELP_BROWSER
 define|#
@@ -58,6 +64,24 @@ directive|define
 name|DEFAULT_HELP_BROWSER
 value|GIMP_HELP_BROWSER_GIMP
 end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|DEFAULT_HELP_BROWSER
+define|#
+directive|define
+name|DEFAULT_HELP_BROWSER
+value|GIMP_HELP_BROWSER_WEB_BROWSER
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_define
 DECL|macro|DEFAULT_THEME
@@ -78,7 +102,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b70a670103
+DECL|enum|__anon28c104980103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
