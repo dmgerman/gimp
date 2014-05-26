@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b741fdd0103
+DECL|enum|__anon2c15c7870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -90,7 +90,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b741fdd0203
+DECL|enum|__anon2c15c7870203
 block|{
 DECL|enumerator|DIAL_TARGET_NONE
 name|DIAL_TARGET_NONE
@@ -1023,6 +1023,9 @@ name|cairo_translate
 argument_list|(
 name|cr
 argument_list|,
+operator|(
+name|gdouble
+operator|)
 name|allocation
 operator|.
 name|x
@@ -1035,8 +1038,11 @@ operator|-
 name|size
 operator|)
 operator|/
-literal|2
+literal|2.0
 argument_list|,
+operator|(
+name|gdouble
+operator|)
 name|allocation
 operator|.
 name|y
@@ -1049,7 +1055,7 @@ operator|-
 name|size
 operator|)
 operator|/
-literal|2
+literal|2.0
 argument_list|)
 expr_stmt|;
 name|gimp_dial_draw_arrows
@@ -2008,14 +2014,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dial_draw_arrow (cairo_t * cr,gint radius,gdouble angle)
+DECL|function|gimp_dial_draw_arrow (cairo_t * cr,gdouble radius,gdouble angle)
 name|gimp_dial_draw_arrow
 parameter_list|(
 name|cairo_t
 modifier|*
 name|cr
 parameter_list|,
-name|gint
+name|gdouble
 name|radius
 parameter_list|,
 name|gdouble
@@ -2045,8 +2051,6 @@ name|cairo_line_to
 argument_list|(
 name|cr
 argument_list|,
-name|ROUND
-argument_list|(
 name|radius
 operator|+
 name|radius
@@ -2055,10 +2059,7 @@ name|cos
 argument_list|(
 name|angle
 argument_list|)
-argument_list|)
 argument_list|,
-name|ROUND
-argument_list|(
 name|radius
 operator|-
 name|radius
@@ -2066,7 +2067,6 @@ operator|*
 name|sin
 argument_list|(
 name|angle
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2097,8 +2097,6 @@ name|cairo_line_to
 argument_list|(
 name|cr
 argument_list|,
-name|ROUND
-argument_list|(
 name|radius
 operator|+
 name|radius
@@ -2111,10 +2109,7 @@ name|angle
 operator|-
 name|DEL
 argument_list|)
-argument_list|)
 argument_list|,
-name|ROUND
-argument_list|(
 name|radius
 operator|-
 name|radius
@@ -2126,7 +2121,6 @@ argument_list|(
 name|angle
 operator|-
 name|DEL
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2157,8 +2151,6 @@ name|cairo_line_to
 argument_list|(
 name|cr
 argument_list|,
-name|ROUND
-argument_list|(
 name|radius
 operator|+
 name|radius
@@ -2171,10 +2163,7 @@ name|angle
 operator|+
 name|DEL
 argument_list|)
-argument_list|)
 argument_list|,
-name|ROUND
-argument_list|(
 name|radius
 operator|-
 name|radius
@@ -2186,7 +2175,6 @@ argument_list|(
 name|angle
 operator|+
 name|DEL
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2196,24 +2184,24 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dial_draw_segment (cairo_t * cr,gint radius,gboolean clockwise,gdouble alpha,gdouble beta)
+DECL|function|gimp_dial_draw_segment (cairo_t * cr,gdouble radius,gdouble alpha,gdouble beta,gboolean clockwise)
 name|gimp_dial_draw_segment
 parameter_list|(
 name|cairo_t
 modifier|*
 name|cr
 parameter_list|,
-name|gint
+name|gdouble
 name|radius
-parameter_list|,
-name|gboolean
-name|clockwise
 parameter_list|,
 name|gdouble
 name|alpha
 parameter_list|,
 name|gdouble
 name|beta
+parameter_list|,
+name|gboolean
+name|clockwise
 parameter_list|)
 block|{
 name|gint
@@ -2277,8 +2265,6 @@ name|cairo_line_to
 argument_list|(
 name|cr
 argument_list|,
-name|ROUND
-argument_list|(
 name|radius
 operator|+
 name|segment_dist
@@ -2296,10 +2282,7 @@ name|sin
 argument_list|(
 name|beta
 argument_list|)
-argument_list|)
 argument_list|,
-name|ROUND
-argument_list|(
 name|radius
 operator|-
 name|segment_dist
@@ -2316,7 +2299,6 @@ operator|*
 name|cos
 argument_list|(
 name|beta
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2396,15 +2378,16 @@ name|gboolean
 name|draw_beta
 parameter_list|)
 block|{
-name|gint
+name|gdouble
 name|radius
 init|=
 name|size
 operator|/
 literal|2.0
 operator|-
-literal|1.5
+literal|2.0
 decl_stmt|;
+comment|/* half the broad line with and half a px */
 name|cairo_save
 argument_list|(
 name|cr
@@ -2414,12 +2397,12 @@ name|cairo_translate
 argument_list|(
 name|cr
 argument_list|,
-literal|1.5
+literal|2.0
 argument_list|,
-literal|1.5
+literal|2.0
 argument_list|)
 expr_stmt|;
-comment|/* half the broad line width */
+comment|/* half the broad line width and half a px*/
 name|cairo_set_line_cap
 argument_list|(
 name|cr
@@ -2498,11 +2481,11 @@ name|cr
 argument_list|,
 name|radius
 argument_list|,
-name|clockwise
-argument_list|,
 name|alpha
 argument_list|,
 name|beta
+argument_list|,
+name|clockwise
 argument_list|)
 expr_stmt|;
 block|}
@@ -2615,11 +2598,11 @@ name|cr
 argument_list|,
 name|radius
 argument_list|,
-name|clockwise
-argument_list|,
 name|alpha
 argument_list|,
 name|beta
+argument_list|,
+name|clockwise
 argument_list|)
 expr_stmt|;
 block|}
