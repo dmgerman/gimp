@@ -148,6 +148,27 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gdouble
+name|_gimp_circle_get_angle_and_distance
+parameter_list|(
+name|GimpCircle
+modifier|*
+name|circle
+parameter_list|,
+name|gdouble
+name|event_x
+parameter_list|,
+name|gdouble
+name|event_y
+parameter_list|,
+name|gdouble
+modifier|*
+name|distance
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
