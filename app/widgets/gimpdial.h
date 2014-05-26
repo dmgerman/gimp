@@ -16,6 +16,12 @@ directive|define
 name|__GIMP_DIAL_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"gimpcircle.h"
+end_include
+
 begin_define
 DECL|macro|GIMP_TYPE_DIAL
 define|#
@@ -103,7 +109,7 @@ struct|struct
 name|_GimpDial
 block|{
 DECL|member|parent_instance
-name|GtkWidget
+name|GimpCircle
 name|parent_instance
 decl_stmt|;
 DECL|member|priv
@@ -121,7 +127,7 @@ struct|struct
 name|_GimpDialClass
 block|{
 DECL|member|parent_class
-name|GtkWidgetClass
+name|GimpCircleClass
 name|parent_class
 decl_stmt|;
 block|}

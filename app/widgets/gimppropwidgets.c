@@ -2851,13 +2851,13 @@ literal|"border-width"
 argument_list|,
 literal|0
 argument_list|,
+literal|"background"
+argument_list|,
+name|GIMP_CIRCLE_BACKGROUND_PLAIN
+argument_list|,
 literal|"draw-beta"
 argument_list|,
 name|FALSE
-argument_list|,
-literal|"background"
-argument_list|,
-name|GIMP_DIAL_BACKGROUND_PLAIN
 argument_list|,
 name|NULL
 argument_list|)
@@ -3373,7 +3373,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0bd5b70108
+DECL|struct|__anon27bc44f30108
 block|{
 DECL|member|config
 name|GObject

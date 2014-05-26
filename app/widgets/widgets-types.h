@@ -863,6 +863,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpCircle
+typedef|typedef
+name|struct
+name|_GimpCircle
+name|GimpCircle
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColorBar
 typedef|typedef
 name|struct
