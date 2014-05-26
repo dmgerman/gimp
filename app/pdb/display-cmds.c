@@ -891,7 +891,7 @@ literal|"gimp-display-new"
 argument_list|,
 literal|"Create a new display for the specified image."
 argument_list|,
-literal|"Creates a new display for the specified image. If the image already has a display, another is added. Multiple displays are handled transparently by GIMP. The newly created display is returned and can be subsequently destroyed with a call to 'gimp-display-delete'. This procedure only makes sense for use with the GIMP UI."
+literal|"Creates a new display for the specified image. If the image already has a display, another is added. Multiple displays are handled transparently by GIMP. The newly created display is returned and can be subsequently destroyed with a call to 'gimp-display-delete'. This procedure only makes sense for use with the GIMP UI, and will result in an execution error if called when GIMP has no UI."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,

@@ -102,7 +102,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_new:  * @image_ID: The image.  *  * Create a new display for the specified image.  *  * Creates a new display for the specified image. If the image already  * has a display, another is added. Multiple displays are handled  * transparently by GIMP. The newly created display is returned and can  * be subsequently destroyed with a call to gimp_display_delete(). This  * procedure only makes sense for use with the GIMP UI.  *  * Returns: The new display.  **/
+comment|/**  * gimp_display_new:  * @image_ID: The image.  *  * Create a new display for the specified image.  *  * Creates a new display for the specified image. If the image already  * has a display, another is added. Multiple displays are handled  * transparently by GIMP. The newly created display is returned and can  * be subsequently destroyed with a call to gimp_display_delete(). This  * procedure only makes sense for use with the GIMP UI, and will result  * in an execution error if called when GIMP has no UI.  *  * Returns: The new display.  **/
 end_comment
 
 begin_function
