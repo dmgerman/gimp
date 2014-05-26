@@ -10,10 +10,10 @@ name|__GIMP_TRANSFORM_OPTIONS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_TRANSFORM_OPTIONS_H_
+DECL|macro|__GIMP_TRANSFORM_OPTIONS_H__
 define|#
 directive|define
-name|__GIMP_TRANSFORM_OPTIONS_H_
+name|__GIMP_TRANSFORM_OPTIONS_H__
 end_define
 
 begin_include

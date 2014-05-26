@@ -6,7 +6,7 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_CANVAS_POLYGON_H__
+name|__GIMP_CANVAS_PATH_H__
 end_ifndef
 
 begin_define

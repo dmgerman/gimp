@@ -6,7 +6,7 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_CONTROLLER_WHELL_H__
+name|__GIMP_CONTROLLER_MOUSE_H__
 end_ifndef
 
 begin_define
