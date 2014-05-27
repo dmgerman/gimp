@@ -1184,7 +1184,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2770d5f60108
+DECL|struct|__anon2ade81d40108
 block|{
 DECL|member|config_type
 specifier|const
@@ -1211,7 +1211,7 @@ block|,
 block|{
 literal|"GimpGegl-gegl-convolution-matrix-config"
 block|,
-name|_gimp_prop_gui_new_generic
+name|_gimp_prop_gui_new_convolution_matrix
 block|}
 block|,
 block|{
