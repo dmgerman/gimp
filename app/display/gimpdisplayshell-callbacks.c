@@ -1896,11 +1896,24 @@ name|shell
 operator|->
 name|canvas
 argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|pango_layout_set_markup
+argument_list|(
+name|layout
+argument_list|,
 name|_
 argument_list|(
-literal|"Unstable Development\n"
-literal|"Version"
+literal|"<big>Unstable Development Version</big>\n\n"
+literal|"<small>Please build latest "
+literal|"git master before\n"
+literal|"reporting any bugs against "
+literal|"this version</small>"
 argument_list|)
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|pango_layout_set_alignment
