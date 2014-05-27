@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29802a2a0103
+DECL|enum|__anon2b2d4aa50103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -1297,7 +1297,7 @@ expr_stmt|;
 comment|/*  The options vbox  */
 name|o_tool
 operator|->
-name|options_table
+name|options_gui
 operator|=
 name|gtk_label_new
 argument_list|(
@@ -1313,7 +1313,7 @@ name|GTK_LABEL
 argument_list|(
 name|o_tool
 operator|->
-name|options_table
+name|options_gui
 argument_list|)
 argument_list|,
 name|PANGO_ATTR_STYLE
@@ -1330,7 +1330,7 @@ name|GTK_MISC
 argument_list|(
 name|o_tool
 operator|->
-name|options_table
+name|options_gui
 argument_list|)
 argument_list|,
 literal|0
@@ -1349,14 +1349,14 @@ argument_list|)
 argument_list|,
 name|o_tool
 operator|->
-name|options_table
+name|options_gui
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|o_tool
 operator|->
-name|options_table
+name|options_gui
 argument_list|)
 expr_stmt|;
 block|}

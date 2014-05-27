@@ -143,10 +143,10 @@ name|GtkWidget
 modifier|*
 name|options_box
 decl_stmt|;
-DECL|member|options_table
+DECL|member|options_gui
 name|GtkWidget
 modifier|*
-name|options_table
+name|options_gui
 decl_stmt|;
 DECL|member|aux_input_box
 name|GtkWidget

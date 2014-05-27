@@ -156,7 +156,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpproptable.h"
+file|"widgets/gimppropgui.h"
 end_include
 
 begin_include
@@ -1156,7 +1156,7 @@ if|if
 condition|(
 name|tool
 operator|->
-name|options_table
+name|options_gui
 condition|)
 block|{
 name|gtk_box_pack_start
@@ -1170,7 +1170,7 @@ argument_list|)
 argument_list|,
 name|tool
 operator|->
-name|options_table
+name|options_gui
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1183,7 +1183,7 @@ name|gtk_widget_show
 argument_list|(
 name|tool
 operator|->
-name|options_table
+name|options_gui
 argument_list|)
 expr_stmt|;
 block|}
@@ -2716,19 +2716,19 @@ if|if
 condition|(
 name|tool
 operator|->
-name|options_table
+name|options_gui
 condition|)
 block|{
 name|gtk_widget_destroy
 argument_list|(
 name|tool
 operator|->
-name|options_table
+name|options_gui
 argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|options_table
+name|options_gui
 operator|=
 name|NULL
 expr_stmt|;
@@ -2976,9 +2976,9 @@ condition|)
 block|{
 name|tool
 operator|->
-name|options_table
+name|options_gui
 operator|=
-name|gimp_prop_table_new
+name|gimp_prop_gui_new
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -3028,7 +3028,7 @@ argument_list|)
 argument_list|,
 name|tool
 operator|->
-name|options_table
+name|options_gui
 argument_list|,
 name|FALSE
 argument_list|,
@@ -3041,7 +3041,7 @@ name|gtk_widget_show
 argument_list|(
 name|tool
 operator|->
-name|options_table
+name|options_gui
 argument_list|)
 expr_stmt|;
 block|}
