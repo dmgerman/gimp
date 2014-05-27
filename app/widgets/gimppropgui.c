@@ -1184,7 +1184,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ade81d40108
+DECL|struct|__anon278c82f80108
 block|{
 DECL|member|config_type
 specifier|const
@@ -1205,7 +1205,7 @@ block|{
 block|{
 literal|"GimpGegl-gegl-color-rotate-config"
 block|,
-name|_gimp_prop_gui_new_generic
+name|_gimp_prop_gui_new_color_rotate
 block|}
 block|,
 block|{
