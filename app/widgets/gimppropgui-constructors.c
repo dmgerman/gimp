@@ -1849,7 +1849,7 @@ index|]
 operator|=
 literal|"abcde"
 index|[
-name|y
+name|x
 index|]
 expr_stmt|;
 name|prop_name
@@ -1859,7 +1859,7 @@ index|]
 operator|=
 literal|"12345"
 index|[
-name|x
+name|y
 index|]
 expr_stmt|;
 name|spin
