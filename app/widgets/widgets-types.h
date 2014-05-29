@@ -1160,6 +1160,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPolar
+typedef|typedef
+name|struct
+name|_GimpPolar
+name|GimpPolar
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPrefsBox
 typedef|typedef
 name|struct
