@@ -1261,7 +1261,7 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
-literal|"Invert Segment"
+literal|"Invert Range"
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
