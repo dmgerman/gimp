@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon274b456c0103
+DECL|enum|__anon27edfc060103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -84,7 +84,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274b456c0203
+DECL|enum|__anon27edfc060203
 block|{
 DECL|enumerator|POLAR_TARGET_NONE
 name|POLAR_TARGET_NONE
@@ -1300,6 +1300,7 @@ operator|<
 literal|0.2
 operator|)
 operator|||
+operator|(
 name|dist_angle
 operator|<
 operator|(
@@ -1311,6 +1312,7 @@ operator|&&
 name|dist_radius
 operator|<
 literal|0.2
+operator|)
 condition|)
 block|{
 name|target
