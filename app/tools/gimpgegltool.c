@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2d4aa50103
+DECL|enum|__anon2bd3cee40103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -346,6 +346,8 @@ block|,
 literal|"gegl:color-temperature"
 block|,
 literal|"gegl:color-to-alpha"
+block|,
+literal|"gegl:convolution-matrix"
 block|,
 literal|"gegl:cubism"
 block|,

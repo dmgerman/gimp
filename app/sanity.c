@@ -1537,6 +1537,8 @@ literal|"gegl:color-temperature"
 block|,
 literal|"gegl:color-to-alpha"
 block|,
+literal|"gegl:convolution-matrix"
+block|,
 literal|"gegl:crop"
 block|,
 literal|"gegl:cubism"
