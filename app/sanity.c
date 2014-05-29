@@ -1533,6 +1533,8 @@ literal|"gegl:color"
 block|,
 literal|"gegl:color-reduction"
 block|,
+literal|"gegl:color-rotate"
+block|,
 literal|"gegl:color-temperature"
 block|,
 literal|"gegl:color-to-alpha"

@@ -317,6 +317,28 @@ comment|/* FIXME GIMP_HELP_FILTER_COLOR_TEMPERATURE */
 block|}
 block|,
 block|{
+literal|"filters-color-rotate"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Rotate Colors..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:color-rotate"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_COLOR_ROTATE */
+block|}
+block|,
+block|{
 literal|"filters-color-temperature"
 block|,
 name|GIMP_STOCK_GEGL
@@ -1741,6 +1763,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-color-reduction"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-color-rotate"
 argument_list|,
 name|writable
 argument_list|)
