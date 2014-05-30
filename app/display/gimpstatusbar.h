@@ -137,6 +137,11 @@ name|GdkPixbuf
 modifier|*
 name|icon
 decl_stmt|;
+DECL|member|icon_hash
+name|GHashTable
+modifier|*
+name|icon_hash
+decl_stmt|;
 DECL|member|temp_context_id
 name|guint
 name|temp_context_id
