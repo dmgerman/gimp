@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1efdfb0103
+DECL|enum|__anon2781a1f10103
 block|{
 DECL|enumerator|POP
 name|POP
@@ -117,7 +117,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1efdfb0203
+DECL|enum|__anon2781a1f10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -516,7 +516,7 @@ name|viewable_class
 operator|->
 name|default_icon_name
 operator|=
-literal|"gtk-undo"
+literal|"edit-undo"
 expr_stmt|;
 name|viewable_class
 operator|->
