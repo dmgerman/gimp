@@ -1028,15 +1028,6 @@ comment|/*  non-object types  */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpArea
-typedef|typedef
-name|struct
-name|_GimpArea
-name|GimpArea
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpBoundSeg
 typedef|typedef
 name|struct
