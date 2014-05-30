@@ -472,9 +472,11 @@ argument_list|(
 name|filter
 argument_list|)
 expr_stmt|;
+comment|/* FIXME: disabled because it is unacceptable to run the        * filter twice, need to use whatever cached result        */
 if|if
 condition|(
-name|applicator
+name|FALSE
+comment|/* applicator */
 condition|)
 block|{
 name|GimpImage
