@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon279d54910103
+DECL|enum|__anon28ae77a70103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -158,7 +158,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon279d54910203
+DECL|enum|__anon28ae77a70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -220,15 +220,6 @@ comment|/*  flushed update region */
 block|}
 struct|;
 end_struct
-
-begin_typedef
-DECL|typedef|GimpProjectionPrivate
-typedef|typedef
-name|struct
-name|_GimpProjectionPrivate
-name|GimpProjectionPrivate
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpProjectionPrivate
