@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-contiguous-region.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpitem.h"
 end_include
 
@@ -67,6 +61,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimppickable.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimppickable-contiguous-region.h"
 end_include
 
 begin_include
@@ -429,15 +429,9 @@ name|color
 argument_list|)
 condition|)
 return|return
-name|gimp_image_contiguous_region_by_color
+name|gimp_pickable_contiguous_region_by_color
 argument_list|(
-name|image
-argument_list|,
-name|drawable
-argument_list|,
-name|options
-operator|->
-name|sample_merged
+name|pickable
 argument_list|,
 name|sel_options
 operator|->

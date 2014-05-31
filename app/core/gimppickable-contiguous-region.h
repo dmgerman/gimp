@@ -6,31 +6,24 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_IMAGE_CONTIGUOUS_REGION_H__
+name|__GIMP_PICKABLE_CONTIGUOUS_REGION_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_IMAGE_CONTIGUOUS_REGION_H__
+DECL|macro|__GIMP_PICKABLE_CONTIGUOUS_REGION_H__
 define|#
 directive|define
-name|__GIMP_IMAGE_CONTIGUOUS_REGION_H__
+name|__GIMP_PICKABLE_CONTIGUOUS_REGION_H__
 end_define
 
 begin_function_decl
 name|GeglBuffer
 modifier|*
-name|gimp_image_contiguous_region_by_seed
+name|gimp_pickable_contiguous_region_by_seed
 parameter_list|(
-name|GimpImage
+name|GimpPickable
 modifier|*
-name|image
-parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|gboolean
-name|sample_merged
+name|pickable
 parameter_list|,
 name|gboolean
 name|antialias
@@ -56,18 +49,11 @@ end_function_decl
 begin_function_decl
 name|GeglBuffer
 modifier|*
-name|gimp_image_contiguous_region_by_color
+name|gimp_pickable_contiguous_region_by_color
 parameter_list|(
-name|GimpImage
+name|GimpPickable
 modifier|*
-name|image
-parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|gboolean
-name|sample_merged
+name|pickable
 parameter_list|,
 name|gboolean
 name|antialias
@@ -95,7 +81,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_IMAGE_CONTIGUOUS_REGION_H__ */
+comment|/*  __GIMP_PICKABLE_CONTIGUOUS_REGION_H__ */
 end_comment
 
 end_unit
