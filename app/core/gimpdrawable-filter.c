@@ -377,10 +377,6 @@ name|GimpApplicator
 modifier|*
 name|applicator
 decl_stmt|;
-name|GeglNode
-modifier|*
-name|node
-decl_stmt|;
 name|gimp_drawable_push_undo
 argument_list|(
 name|drawable
@@ -406,13 +402,6 @@ operator|.
 name|height
 argument_list|)
 expr_stmt|;
-name|node
-operator|=
-name|gimp_filter_get_node
-argument_list|(
-name|filter
-argument_list|)
-expr_stmt|;
 name|applicator
 operator|=
 name|gimp_filter_get_applicator
@@ -420,11 +409,9 @@ argument_list|(
 name|filter
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: disabled because it is unacceptable to run the        * filter twice, need to use whatever cached result        */
 if|if
 condition|(
-name|FALSE
-comment|/* applicator */
+name|applicator
 condition|)
 block|{
 name|GimpImage
@@ -499,7 +486,10 @@ name|progress
 argument_list|,
 name|undo_desc
 argument_list|,
-name|node
+name|gimp_filter_get_node
+argument_list|(
+name|filter
+argument_list|)
 argument_list|,
 name|gimp_drawable_get_buffer
 argument_list|(
