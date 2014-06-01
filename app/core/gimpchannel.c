@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2910b6760103
+DECL|enum|__anon2a19fc320103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -2776,12 +2776,6 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-name|GimpChannel
-modifier|*
-name|tmp_mask
-init|=
-name|NULL
-decl_stmt|;
 name|GeglBuffer
 modifier|*
 name|tmp_buffer
@@ -2968,28 +2962,28 @@ operator|!=
 literal|0
 condition|)
 block|{
-comment|/*  copy the portion of the mask we will keep to a        *  temporary buffer        */
-name|tmp_mask
+comment|/*  copy the portion of the mask we will keep to a temporary        *  buffer        */
+name|tmp_buffer
 operator|=
-name|gimp_channel_new_mask
+name|gegl_buffer_new
 argument_list|(
-name|gimp_item_get_image
+name|GEGL_RECTANGLE
 argument_list|(
-name|item
-argument_list|)
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|width
 argument_list|,
 name|height
 argument_list|)
-expr_stmt|;
-name|tmp_buffer
-operator|=
-name|gimp_drawable_get_buffer
+argument_list|,
+name|gimp_drawable_get_format
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
-name|tmp_mask
+name|channel
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3088,7 +3082,7 @@ expr_stmt|;
 comment|/*  free the temporary mask  */
 name|g_object_unref
 argument_list|(
-name|tmp_mask
+name|tmp_buffer
 argument_list|)
 expr_stmt|;
 block|}
