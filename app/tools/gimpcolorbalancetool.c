@@ -666,6 +666,16 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gimp_spin_scale_set_label
+argument_list|(
+name|GIMP_SPIN_SCALE
+argument_list|(
+name|scale
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_prop_widget_set_factor
 argument_list|(
 name|scale

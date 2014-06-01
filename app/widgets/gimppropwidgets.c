@@ -1614,6 +1614,18 @@ name|digits
 operator|=
 literal|0
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|label
+condition|)
+name|label
+operator|=
+name|g_param_spec_get_nick
+argument_list|(
+name|param_spec
+argument_list|)
+expr_stmt|;
 name|adjustment
 operator|=
 name|gtk_adjustment_new
@@ -3708,7 +3720,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b85821f0108
+DECL|struct|__anon2b0afe280108
 block|{
 DECL|member|config
 name|GObject

@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpspinscale.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpwidgets-utils.h"
 end_include
 
@@ -107,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c085c120103
+DECL|enum|__anon29c7f1140103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1785,6 +1791,16 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gimp_spin_scale_set_label
+argument_list|(
+name|GIMP_SPIN_SCALE
+argument_list|(
+name|scale
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
@@ -1903,7 +1919,7 @@ name|gimp_get_constrain_behavior_mask
 argument_list|()
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c085c120208
+DECL|struct|__anon29c7f1140208
 block|{
 DECL|member|mod
 name|GdkModifierType
