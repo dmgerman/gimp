@@ -1541,6 +1541,8 @@ literal|"gegl:color-to-alpha"
 block|,
 literal|"gegl:convolution-matrix"
 block|,
+literal|"gegl:copy-buffer"
+block|,
 literal|"gegl:crop"
 block|,
 literal|"gegl:cubism"

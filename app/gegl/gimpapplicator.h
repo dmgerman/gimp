@@ -140,6 +140,11 @@ name|GeglNode
 modifier|*
 name|apply_offset_node
 decl_stmt|;
+DECL|member|dup_apply_buffer_node
+name|GeglNode
+modifier|*
+name|dup_apply_buffer_node
+decl_stmt|;
 DECL|member|opacity
 name|gdouble
 name|opacity
