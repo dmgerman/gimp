@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be1a2660103
+DECL|enum|__anon2b28955a0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -213,7 +213,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be1a2660203
+DECL|enum|__anon2b28955a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6558,7 +6558,7 @@ name|fill_type
 condition|)
 block|{
 case|case
-name|GIMP_FOREGROUND_FILL
+name|GIMP_FILL_FOREGROUND
 case|:
 name|gimp_context_get_foreground
 argument_list|(
@@ -6570,7 +6570,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_BACKGROUND_FILL
+name|GIMP_FILL_BACKGROUND
 case|:
 name|gimp_context_get_background
 argument_list|(
@@ -6582,7 +6582,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_WHITE_FILL
+name|GIMP_FILL_WHITE
 case|:
 name|gimp_rgba_set
 argument_list|(
@@ -6600,7 +6600,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_TRANSPARENT_FILL
+name|GIMP_FILL_TRANSPARENT
 case|:
 name|gimp_rgba_set
 argument_list|(
@@ -6618,7 +6618,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_PATTERN_FILL
+name|GIMP_FILL_PATTERN
 case|:
 name|pattern
 operator|=

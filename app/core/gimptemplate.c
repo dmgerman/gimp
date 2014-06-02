@@ -83,7 +83,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0e8f360103
+DECL|enum|__anon2b667aef0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -525,7 +525,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_FILL_TYPE
 argument_list|,
-name|GIMP_BACKGROUND_FILL
+name|GIMP_FILL_BACKGROUND
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -1146,7 +1146,7 @@ name|private
 operator|->
 name|fill_type
 operator|==
-name|GIMP_TRANSPARENT_FILL
+name|GIMP_FILL_TRANSPARENT
 argument_list|)
 expr_stmt|;
 name|bytes
@@ -1722,7 +1722,7 @@ argument_list|(
 name|template
 argument_list|)
 argument_list|,
-name|GIMP_BACKGROUND_FILL
+name|GIMP_FILL_BACKGROUND
 argument_list|)
 expr_stmt|;
 return|return

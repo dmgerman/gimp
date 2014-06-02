@@ -1910,7 +1910,7 @@ name|fill_type
 condition|)
 block|{
 case|case
-name|GIMP_FOREGROUND_FILL
+name|GIMP_FILL_FOREGROUND
 case|:
 name|gimp_context_get_foreground
 argument_list|(
@@ -1931,7 +1931,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_BACKGROUND_FILL
+name|GIMP_FILL_BACKGROUND
 case|:
 name|gimp_context_get_background
 argument_list|(
@@ -1952,7 +1952,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_WHITE_FILL
+name|GIMP_FILL_WHITE
 case|:
 name|gimp_rgba_set
 argument_list|(
@@ -1979,7 +1979,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_TRANSPARENT_FILL
+name|GIMP_FILL_TRANSPARENT
 case|:
 name|gimp_context_get_background
 argument_list|(
@@ -2000,7 +2000,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_PATTERN_FILL
+name|GIMP_FILL_PATTERN
 case|:
 name|pattern
 operator|=
@@ -2036,7 +2036,7 @@ name|drawable
 argument_list|,
 name|context
 argument_list|,
-name|GIMP_BACKGROUND_FILL
+name|GIMP_FILL_BACKGROUND
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,

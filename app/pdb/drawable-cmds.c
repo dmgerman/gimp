@@ -6574,7 +6574,7 @@ literal|"The type of fill"
 argument_list|,
 name|GIMP_TYPE_FILL_TYPE
 argument_list|,
-name|GIMP_FOREGROUND_FILL
+name|GIMP_FILL_FOREGROUND
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

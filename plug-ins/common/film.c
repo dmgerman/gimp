@@ -108,7 +108,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298d38f30108
+DECL|struct|__anon2c03b6f40108
 block|{
 DECL|member|film_height
 name|gint
@@ -212,7 +212,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298d38f30208
+DECL|struct|__anon2c03b6f40208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -1862,7 +1862,7 @@ name|gimp_drawable_fill
 argument_list|(
 name|layer_ID_dst
 argument_list|,
-name|GIMP_BACKGROUND_FILL
+name|GIMP_FILL_BACKGROUND
 argument_list|)
 expr_stmt|;
 comment|/* Draw all the holes */

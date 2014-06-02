@@ -405,7 +405,7 @@ block|{
 name|int
 name|fill
 init|=
-name|GIMP_FOREGROUND_FILL
+name|GIMP_FILL_FOREGROUND
 decl_stmt|;
 specifier|static
 name|char

@@ -856,7 +856,7 @@ argument_list|,
 literal|"Fill the selection using the foreground color"
 argument_list|)
 block|,
-name|GIMP_FOREGROUND_FILL
+name|GIMP_FILL_FOREGROUND
 block|,
 name|FALSE
 block|,
@@ -884,7 +884,7 @@ argument_list|,
 literal|"Fill the selection using the background color"
 argument_list|)
 block|,
-name|GIMP_BACKGROUND_FILL
+name|GIMP_FILL_BACKGROUND
 block|,
 name|FALSE
 block|,
@@ -912,7 +912,7 @@ argument_list|,
 literal|"Fill the selection using the active pattern"
 argument_list|)
 block|,
-name|GIMP_PATTERN_FILL
+name|GIMP_FILL_PATTERN
 block|,
 name|FALSE
 block|,

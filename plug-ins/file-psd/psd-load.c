@@ -7855,7 +7855,7 @@ name|gimp_drawable_fill
 argument_list|(
 name|layer_id
 argument_list|,
-name|GIMP_TRANSPARENT_FILL
+name|GIMP_FILL_TRANSPARENT
 argument_list|)
 expr_stmt|;
 name|gimp_item_set_visible

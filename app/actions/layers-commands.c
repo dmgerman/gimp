@@ -483,7 +483,7 @@ specifier|static
 name|GimpFillType
 name|layer_fill_type
 init|=
-name|GIMP_TRANSPARENT_FILL
+name|GIMP_FILL_TRANSPARENT
 decl_stmt|;
 end_decl_stmt
 

@@ -740,7 +740,7 @@ name|GIMP_BUCKET_FILL_FG
 case|:
 name|fill_type
 operator|=
-name|GIMP_FOREGROUND_FILL
+name|GIMP_FILL_FOREGROUND
 expr_stmt|;
 break|break;
 case|case
@@ -748,7 +748,7 @@ name|GIMP_BUCKET_FILL_BG
 case|:
 name|fill_type
 operator|=
-name|GIMP_BACKGROUND_FILL
+name|GIMP_FILL_BACKGROUND
 expr_stmt|;
 break|break;
 case|case
@@ -756,7 +756,7 @@ name|GIMP_BUCKET_FILL_PATTERN
 case|:
 name|fill_type
 operator|=
-name|GIMP_PATTERN_FILL
+name|GIMP_FILL_PATTERN
 expr_stmt|;
 break|break;
 block|}

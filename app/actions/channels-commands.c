@@ -611,7 +611,7 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|,
-name|GIMP_TRANSPARENT_FILL
+name|GIMP_FILL_TRANSPARENT
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_channel
@@ -1362,7 +1362,7 @@ name|options
 operator|->
 name|context
 argument_list|,
-name|GIMP_TRANSPARENT_FILL
+name|GIMP_FILL_TRANSPARENT
 argument_list|)
 expr_stmt|;
 block|}

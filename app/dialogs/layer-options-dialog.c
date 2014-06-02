@@ -1025,9 +1025,9 @@ name|gimp_enum_radio_frame_new_with_range
 argument_list|(
 name|GIMP_TYPE_FILL_TYPE
 argument_list|,
-name|GIMP_FOREGROUND_FILL
+name|GIMP_FILL_FOREGROUND
 argument_list|,
-name|GIMP_TRANSPARENT_FILL
+name|GIMP_FILL_TRANSPARENT
 argument_list|,
 name|gtk_label_new
 argument_list|(

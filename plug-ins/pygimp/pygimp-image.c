@@ -741,9 +741,9 @@ name|fill_mode
 operator|=
 name|alpha
 condition|?
-name|GIMP_TRANSPARENT_FILL
+name|GIMP_FILL_TRANSPARENT
 else|:
-name|GIMP_BACKGROUND_FILL
+name|GIMP_FILL_BACKGROUND
 expr_stmt|;
 name|layer_id
 operator|=

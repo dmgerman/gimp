@@ -472,7 +472,7 @@ argument_list|(
 name|template
 argument_list|)
 operator|==
-name|GIMP_TRANSPARENT_FILL
+name|GIMP_FILL_TRANSPARENT
 condition|)
 name|has_alpha
 operator|=
