@@ -492,7 +492,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_boundary_find:  * @maskPR:    any PixelRegion  * @format:    a #Babl float format representing the component to analyze  * @type:      type of bounds  * @x1:        left side of bounds  * @y1:        top side of bounds  * @x2:        right side of bounds  * @y2:        botton side of bounds  * @threshold: pixel value of boundary line  * @num_segs:  number of returned #GimpBoundSeg's  *  * This function returns an array of #GimpBoundSeg's which describe all  * outlines along pixel value @threahold, optionally within specified  * bounds instead of the whole region.  *  * The @maskPR paramater can be any PixelRegion.  If the region has  * more than 1 bytes/pixel, the last byte of each pixel is used to  * determine the boundary outline.  *  * Return value: the boundary array.  **/
+comment|/**  * gimp_boundary_find:  * @buffer:    a #GeglBuffer  * @format:    a #Babl float format representing the component to analyze  * @type:      type of bounds  * @x1:        left side of bounds  * @y1:        top side of bounds  * @x2:        right side of bounds  * @y2:        botton side of bounds  * @threshold: pixel value of boundary line  * @num_segs:  number of returned #GimpBoundSeg's  *  * This function returns an array of #GimpBoundSeg's which describe all  * outlines along pixel value @threahold, optionally within specified  * bounds instead of the whole region.  *  * The @maskPR paramater can be any PixelRegion.  If the region has  * more than 1 bytes/pixel, the last byte of each pixel is used to  * determine the boundary outline.  *  * Return value: the boundary array.  **/
 end_comment
 
 begin_function
@@ -766,7 +766,7 @@ condition|)
 return|return
 name|NULL
 return|;
-comment|/* prepare arrays with GimpBoundSeg pointers sorted by xy1 and xy2 accordingly */
+comment|/* prepare arrays with GimpBoundSeg pointers sorted by xy1 and xy2    * accordingly    */
 name|segs_ptrs_by_xy1
 operator|=
 name|g_new
@@ -1535,6 +1535,29 @@ block|{
 name|gint
 name|i
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+operator|(
+name|segs
+operator|==
+name|NULL
+operator|&&
+name|num_segs
+operator|==
+literal|0
+operator|)
+operator|||
+operator|(
+name|segs
+operator|!=
+name|NULL
+operator|&&
+name|num_segs
+operator|>
+literal|0
+operator|)
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i

@@ -1387,6 +1387,8 @@ decl_stmt|;
 name|GimpBoundSeg
 modifier|*
 name|segs
+init|=
+name|NULL
 decl_stmt|;
 name|gimp_display_shell_set_override_cursor
 argument_list|(
@@ -1426,27 +1428,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|region_sel
 operator|->
 name|region_mask
 condition|)
 block|{
-name|gimp_display_shell_unset_override_cursor
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
-operator|*
-name|n_segs
-operator|=
-literal|0
-expr_stmt|;
-return|return
-name|NULL
-return|;
-block|}
-comment|/*  calculate and allocate a new segment array which represents the    *  boundary of the contiguous region    */
+comment|/*  calculate and allocate a new segment array which represents        *  the boundary of the contiguous region        */
 name|segs
 operator|=
 name|gimp_boundary_find
@@ -1487,6 +1474,15 @@ argument_list|,
 name|n_segs
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+operator|*
+name|n_segs
+operator|=
+literal|0
+expr_stmt|;
+block|}
 name|gimp_display_shell_unset_override_cursor
 argument_list|(
 name|shell
