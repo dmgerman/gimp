@@ -138,7 +138,7 @@ value|128
 end_define
 
 begin_comment
-comment|/*  how much time, in seconds, do we allow chunk rendering to take  */
+comment|/*  how much time, in seconds, do we allow chunk rendering to take,  *  aiming for 15fps  */
 end_comment
 
 begin_define
@@ -146,12 +146,12 @@ DECL|macro|GIMP_PROJECTION_CHUNK_TIME
 define|#
 directive|define
 name|GIMP_PROJECTION_CHUNK_TIME
-value|0.01
+value|0.0666
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon298784cf0103
+DECL|enum|__anon2945b3220103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -164,7 +164,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon298784cf0203
+DECL|enum|__anon2945b3220203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
