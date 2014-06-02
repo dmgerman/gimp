@@ -945,12 +945,25 @@ operator|->
 name|item
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+literal|0
+block|gimp_display_shell_flush (shell, TRUE);
+endif|#
+directive|endif
 name|draw_tool
 operator|->
 name|last_draw_time
 operator|=
-name|now
+name|g_get_monotonic_time
+argument_list|()
 expr_stmt|;
+if|#
+directive|if
+literal|0
+block|g_printerr ("drawing tool stuff took %f seconds\n",                   (draw_tool->last_draw_time - now) / 1000000.0);
+endif|#
+directive|endif
 block|}
 block|}
 end_function
