@@ -1228,6 +1228,14 @@ argument_list|(
 name|cursor
 argument_list|)
 expr_stmt|;
+name|gdk_display_flush
+argument_list|(
+name|gtk_widget_get_display
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
