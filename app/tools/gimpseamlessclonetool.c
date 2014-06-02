@@ -233,7 +233,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e719d10103
+DECL|enum|__anon27459c0e0103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -780,15 +780,6 @@ operator|->
 name|control
 argument_list|,
 name|GIMP_TOOL_CURSOR_MOVE
-argument_list|)
-expr_stmt|;
-name|gimp_tool_control_set_motion_mode
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|,
-name|GIMP_MOTION_MODE_COMPRESS
 argument_list|)
 expr_stmt|;
 name|self

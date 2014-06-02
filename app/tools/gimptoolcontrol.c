@@ -138,7 +138,7 @@ name|control
 operator|->
 name|motion_mode
 operator|=
-name|GIMP_MOTION_MODE_EXACT
+name|GIMP_MOTION_MODE_COMPRESS
 expr_stmt|;
 name|control
 operator|->

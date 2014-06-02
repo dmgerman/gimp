@@ -386,15 +386,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_tool_control_set_motion_mode
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|,
-name|GIMP_MOTION_MODE_COMPRESS
-argument_list|)
-expr_stmt|;
 name|region_select
 operator|->
 name|x
