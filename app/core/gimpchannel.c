@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a19fc320103
+DECL|enum|__anon2aca1f6a0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -7327,9 +7327,9 @@ name|gegl_buffer_set_format
 argument_list|(
 name|dest_buffer
 argument_list|,
-name|gimp_image_get_component_format
+name|gimp_drawable_get_component_format
 argument_list|(
-name|image
+name|drawable
 argument_list|,
 name|GIMP_ALPHA_CHANNEL
 argument_list|)
