@@ -28,8 +28,8 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpBucketFillMode
-name|fill_mode
+name|GimpFillType
+name|fill_type
 parameter_list|,
 name|gint
 name|paint_mode
