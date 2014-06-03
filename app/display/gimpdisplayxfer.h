@@ -16,21 +16,19 @@ directive|define
 name|__GIMP_DISPLAY_XFER_H__
 end_define
 
-begin_define
-DECL|macro|GIMP_DISPLAY_RENDER_BUF_WIDTH
-define|#
-directive|define
+begin_decl_stmt
+specifier|extern
+name|gint
 name|GIMP_DISPLAY_RENDER_BUF_WIDTH
-value|256
-end_define
+decl_stmt|;
+end_decl_stmt
 
-begin_define
-DECL|macro|GIMP_DISPLAY_RENDER_BUF_HEIGHT
-define|#
-directive|define
+begin_decl_stmt
+specifier|extern
+name|gint
 name|GIMP_DISPLAY_RENDER_BUF_HEIGHT
-value|256
-end_define
+decl_stmt|;
+end_decl_stmt
 
 begin_define
 DECL|macro|GIMP_DISPLAY_RENDER_MAX_SCALE
