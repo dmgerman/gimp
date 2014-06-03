@@ -2369,6 +2369,8 @@ argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
 name|GIMP_NORMAL_MODE
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 block|}
@@ -2663,6 +2665,8 @@ argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
 name|GIMP_NORMAL_MODE
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 block|}
@@ -3025,6 +3029,8 @@ argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
 name|GIMP_NORMAL_MODE
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 block|}

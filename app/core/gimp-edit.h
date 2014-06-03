@@ -257,6 +257,11 @@ name|opacity
 parameter_list|,
 name|GimpLayerModeEffects
 name|paint_mode
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl

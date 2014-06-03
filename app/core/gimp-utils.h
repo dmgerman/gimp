@@ -386,6 +386,34 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_get_fill_params
+parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|GimpFillType
+name|fill_type
+parameter_list|,
+name|GimpRGB
+modifier|*
+name|color
+parameter_list|,
+name|GimpPattern
+modifier|*
+modifier|*
+name|pattern
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* Common values for the n_snap_lines parameter of  * gimp_constrain_line.  */
 end_comment
