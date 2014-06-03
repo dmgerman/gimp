@@ -3156,7 +3156,8 @@ argument_list|,
 name|error
 argument_list|)
 condition|)
-name|gimp_drawable_fill_by_type
+block|{
+name|gimp_drawable_fill
 argument_list|(
 name|drawable
 argument_list|,
@@ -3168,6 +3169,7 @@ operator|)
 name|fill_type
 argument_list|)
 expr_stmt|;
+block|}
 else|else
 name|success
 operator|=

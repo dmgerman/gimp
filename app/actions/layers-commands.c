@@ -1259,7 +1259,7 @@ argument_list|,
 name|mode
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_fill_by_type
+name|gimp_drawable_fill
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -4158,7 +4158,7 @@ condition|(
 name|layer
 condition|)
 block|{
-name|gimp_drawable_fill_by_type
+name|gimp_drawable_fill
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

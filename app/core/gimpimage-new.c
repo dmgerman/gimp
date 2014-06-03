@@ -510,7 +510,7 @@ argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_fill_by_type
+name|gimp_drawable_fill
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
