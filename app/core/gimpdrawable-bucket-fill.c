@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpchannel-combine.h"
 end_include
 
@@ -287,6 +293,8 @@ operator|!
 name|gimp_get_fill_params
 argument_list|(
 name|context
+argument_list|,
+name|fill_type
 argument_list|,
 operator|&
 name|color
