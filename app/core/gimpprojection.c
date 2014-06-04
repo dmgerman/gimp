@@ -169,7 +169,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d61ae20103
+DECL|enum|__anon2b2a3c4f0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -182,7 +182,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d61ae20203
+DECL|enum|__anon2b2a3c4f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -883,6 +883,8 @@ operator|=
 name|atoi
 argument_list|(
 name|env
+operator|+
+literal|1
 argument_list|)
 expr_stmt|;
 if|if
