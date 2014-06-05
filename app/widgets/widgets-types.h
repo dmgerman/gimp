@@ -1160,6 +1160,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPickablePopup
+typedef|typedef
+name|struct
+name|_GimpPickablePopup
+name|GimpPickablePopup
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPolar
 typedef|typedef
 name|struct
