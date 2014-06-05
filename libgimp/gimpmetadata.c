@@ -2088,6 +2088,13 @@ case|case
 name|GEXIV2_ORIENTATION_NORMAL
 case|:
 comment|/* standard orientation, do nothing */
+name|rotated
+operator|=
+name|g_object_ref
+argument_list|(
+name|pixbuf
+argument_list|)
+expr_stmt|;
 break|break;
 case|case
 name|GEXIV2_ORIENTATION_HFLIP
