@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c73866d0103
+DECL|enum|__anon2b5b74ed0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2515,9 +2515,9 @@ argument_list|,
 name|GIMP_VIEW_TYPE_GRID
 argument_list|)
 expr_stmt|;
-name|gimp_container_popup_show
+name|gimp_popup_show
 argument_list|(
-name|GIMP_CONTAINER_POPUP
+name|GIMP_POPUP
 argument_list|(
 name|popup
 argument_list|)

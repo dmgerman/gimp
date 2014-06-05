@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpcontainerpopup.h  * Copyright (C) 2003-2005 Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpcontainerpopup.h  * Copyright (C) 2003-2014 Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_ifndef
@@ -15,6 +15,12 @@ define|#
 directive|define
 name|__GIMP_CONTAINER_POPUP_H__
 end_define
+
+begin_include
+include|#
+directive|include
+file|"gimppopup.h"
+end_include
 
 begin_define
 DECL|macro|GIMP_TYPE_CONTAINER_POPUP
@@ -94,7 +100,7 @@ struct|struct
 name|_GimpContainerPopup
 block|{
 DECL|member|parent_instance
-name|GtkWindow
+name|GimpPopup
 name|parent_instance
 decl_stmt|;
 DECL|member|container
@@ -168,33 +174,9 @@ struct|struct
 name|_GimpContainerPopupClass
 block|{
 DECL|member|parent_instance
-name|GtkWindowClass
+name|GimpPopupClass
 name|parent_instance
 decl_stmt|;
-DECL|member|cancel
-name|void
-function_decl|(
-modifier|*
-name|cancel
-function_decl|)
-parameter_list|(
-name|GimpContainerPopup
-modifier|*
-name|popup
-parameter_list|)
-function_decl|;
-DECL|member|confirm
-name|void
-function_decl|(
-modifier|*
-name|confirm
-function_decl|)
-parameter_list|(
-name|GimpContainerPopup
-modifier|*
-name|popup
-parameter_list|)
-function_decl|;
 block|}
 struct|;
 end_struct
@@ -252,21 +234,6 @@ specifier|const
 name|gchar
 modifier|*
 name|dialog_tooltip
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_container_popup_show
-parameter_list|(
-name|GimpContainerPopup
-modifier|*
-name|popup
-parameter_list|,
-name|GtkWidget
-modifier|*
-name|widget
 parameter_list|)
 function_decl|;
 end_function_decl

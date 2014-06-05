@@ -1169,6 +1169,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPopup
+typedef|typedef
+name|struct
+name|_GimpPopup
+name|GimpPopup
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPrefsBox
 typedef|typedef
 name|struct
