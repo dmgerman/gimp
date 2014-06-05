@@ -450,7 +450,7 @@ end_comment
 begin_function
 name|GimpMetadata
 modifier|*
-DECL|function|gimp_image_metadata_save_prepare (gint32 image_ID,const gchar * mime_type)
+DECL|function|gimp_image_metadata_save_prepare (gint32 image_ID,const gchar * mime_type,GimpMetadataSaveFlags * suggested_flags)
 name|gimp_image_metadata_save_prepare
 parameter_list|(
 name|gint32
@@ -460,6 +460,10 @@ specifier|const
 name|gchar
 modifier|*
 name|mime_type
+parameter_list|,
+name|GimpMetadataSaveFlags
+modifier|*
+name|suggested_flags
 parameter_list|)
 block|{
 name|GimpMetadata
@@ -483,6 +487,20 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|suggested_flags
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+operator|*
+name|suggested_flags
+operator|=
+name|GIMP_METADATA_SAVE_ALL
 expr_stmt|;
 name|metadata
 operator|=
@@ -570,6 +588,20 @@ name|comment_parasite
 argument_list|)
 expr_stmt|;
 comment|/* Exif */
+if|if
+condition|(
+operator|!
+name|gexiv2_metadata_has_exif
+argument_list|(
+name|metadata
+argument_list|)
+condition|)
+operator|*
+name|suggested_flags
+operator|&=
+operator|~
+name|GIMP_METADATA_SAVE_EXIF
+expr_stmt|;
 if|if
 condition|(
 name|comment
@@ -689,6 +721,20 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* XMP */
+if|if
+condition|(
+operator|!
+name|gexiv2_metadata_has_xmp
+argument_list|(
+name|metadata
+argument_list|)
+condition|)
+operator|*
+name|suggested_flags
+operator|&=
+operator|~
+name|GIMP_METADATA_SAVE_XMP
+expr_stmt|;
 name|gexiv2_metadata_set_tag_string
 argument_list|(
 name|metadata
@@ -809,6 +855,20 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* IPTC */
+if|if
+condition|(
+operator|!
+name|gexiv2_metadata_has_iptc
+argument_list|(
+name|metadata
+argument_list|)
+condition|)
+operator|*
+name|suggested_flags
+operator|&=
+operator|~
+name|GIMP_METADATA_SAVE_IPTC
+expr_stmt|;
 name|g_snprintf
 argument_list|(
 name|buffer
@@ -895,6 +955,18 @@ name|g_date_time_unref
 argument_list|(
 name|datetime
 argument_list|)
+expr_stmt|;
+comment|/* Thumbnail */
+if|if
+condition|(
+name|FALSE
+comment|/* FIXME if (original image had a thumbnail) */
+condition|)
+operator|*
+name|suggested_flags
+operator|&=
+operator|~
+name|GIMP_METADATA_SAVE_THUMBNAIL
 expr_stmt|;
 block|}
 return|return
