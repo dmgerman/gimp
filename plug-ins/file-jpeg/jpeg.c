@@ -659,17 +659,9 @@ decl_stmt|;
 name|gint32
 name|drawable_ID
 decl_stmt|;
-name|gint32
-name|orig_image_ID
-decl_stmt|;
 name|GimpParasite
 modifier|*
 name|parasite
-decl_stmt|;
-name|GimpExportReturn
-name|export
-init|=
-name|GIMP_EXPORT_CANCEL
 decl_stmt|;
 name|GError
 modifier|*
@@ -1166,9 +1158,15 @@ decl_stmt|;
 name|GimpMetadataSaveFlags
 name|metadata_flags
 decl_stmt|;
-name|image_ID
-operator|=
+name|gint32
 name|orig_image_ID
+decl_stmt|;
+name|GimpExportReturn
+name|export
+init|=
+name|GIMP_EXPORT_CANCEL
+decl_stmt|;
+name|image_ID
 operator|=
 name|param
 index|[
@@ -1190,7 +1188,10 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-comment|/*  eventually export the image */
+name|orig_image_ID
+operator|=
+name|image_ID
+expr_stmt|;
 switch|switch
 condition|(
 name|run_mode

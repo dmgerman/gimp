@@ -155,7 +155,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dc6eab0108
+DECL|struct|__anon2791fde00108
 block|{
 DECL|member|compression
 name|gint
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dc6eab0208
+DECL|struct|__anon2791fde00208
 block|{
 DECL|member|ID
 name|gint32
@@ -860,8 +860,6 @@ name|export
 init|=
 name|GIMP_EXPORT_CANCEL
 decl_stmt|;
-comment|/* Do this right this time, if POSSIBLE query for parasites, otherwise          or if there isn't one, choose the default comment from the gimprc. */
-comment|/*  eventually export the image */
 switch|switch
 condition|(
 name|run_mode

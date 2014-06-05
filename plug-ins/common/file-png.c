@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29798d160108
+DECL|struct|__anon2acf2a610108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29798d160208
+DECL|struct|__anon2acf2a610208
 block|{
 DECL|member|run
 name|gboolean
@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29798d160308
+DECL|struct|__anon2acf2a610308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -1124,14 +1124,6 @@ decl_stmt|;
 name|gint32
 name|drawable_ID
 decl_stmt|;
-name|gint32
-name|orig_image_ID
-decl_stmt|;
-name|GimpExportReturn
-name|export
-init|=
-name|GIMP_EXPORT_CANCEL
-decl_stmt|;
 name|GError
 modifier|*
 name|error
@@ -1417,12 +1409,18 @@ decl_stmt|;
 name|GimpMetadataSaveFlags
 name|metadata_flags
 decl_stmt|;
+name|gint32
+name|orig_image_ID
+decl_stmt|;
+name|GimpExportReturn
+name|export
+init|=
+name|GIMP_EXPORT_CANCEL
+decl_stmt|;
 name|gboolean
 name|alpha
 decl_stmt|;
 name|image_ID
-operator|=
-name|orig_image_ID
 operator|=
 name|param
 index|[
@@ -1444,7 +1442,10 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-comment|/*  eventually export the image */
+name|orig_image_ID
+operator|=
+name|image_ID
+expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -1584,7 +1585,7 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-comment|/*            * Possibly retrieve data...            */
+comment|/* possibly retrieve data */
 name|gimp_get_data
 argument_list|(
 name|SAVE_PROC
@@ -1600,7 +1601,7 @@ argument_list|(
 name|drawable_ID
 argument_list|)
 expr_stmt|;
-comment|/*            * If the image has no transparency, then there is usually            * no need to save a bKGD chunk.  For more information, see:            * http://bugzilla.gnome.org/show_bug.cgi?id=92395            */
+comment|/* If the image has no transparency, then there is usually            * no need to save a bKGD chunk.  For more information, see:            * http://bugzilla.gnome.org/show_bug.cgi?id=92395            */
 if|if
 condition|(
 operator|!
@@ -1612,7 +1613,7 @@ name|bkgd
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/*            * Then acquire information with a dialog...            */
+comment|/* Then acquire information with a dialog...            */
 if|if
 condition|(
 operator|!
@@ -1823,7 +1824,7 @@ break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-comment|/*            * Possibly retrieve data...            */
+comment|/* possibly retrieve data */
 name|gimp_get_data
 argument_list|(
 name|SAVE_PROC

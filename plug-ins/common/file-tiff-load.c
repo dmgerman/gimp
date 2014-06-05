@@ -147,7 +147,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cdb2830108
+DECL|struct|__anon29b5564e0108
 block|{
 DECL|member|compression
 name|gint
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cdb2830208
+DECL|struct|__anon29b5564e0208
 block|{
 DECL|member|ID
 name|gint32
@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cdb2830308
+DECL|struct|__anon29b5564e0308
 block|{
 DECL|member|o_pages
 name|gint
@@ -710,9 +710,6 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
-name|gint32
-name|image
-decl_stmt|;
 name|TiffSelectedPages
 name|pages
 decl_stmt|;
@@ -995,6 +992,9 @@ condition|(
 name|run_it
 condition|)
 block|{
+name|gint32
+name|image
+decl_stmt|;
 name|gboolean
 name|resolution_loaded
 init|=
