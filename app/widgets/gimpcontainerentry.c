@@ -1163,13 +1163,11 @@ argument_list|(
 name|view
 argument_list|)
 decl_stmt|;
-comment|/* happens in dispose() */
+comment|/* model is NULL in dispose() */
 if|if
 condition|(
-operator|!
 name|model
 condition|)
-return|return;
 name|gimp_container_tree_store_clear_items
 argument_list|(
 name|GIMP_CONTAINER_TREE_STORE
