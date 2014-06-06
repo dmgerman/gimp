@@ -4392,10 +4392,8 @@ block|{
 name|guint32
 name|index
 decl_stmt|;
-name|info
-operator|->
-name|cp
-operator|+=
+if|if
+condition|(
 name|xcf_read_int32
 argument_list|(
 name|info
@@ -4407,6 +4405,24 @@ name|index
 argument_list|,
 literal|1
 argument_list|)
+operator|!=
+literal|4
+condition|)
+block|{
+name|g_list_free
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
+name|info
+operator|->
+name|cp
+operator|+=
+literal|4
 expr_stmt|;
 name|path
 operator|=
@@ -6499,13 +6515,7 @@ modifier|*
 name|format
 decl_stmt|;
 name|guint32
-name|saved_pos
-decl_stmt|;
-name|guint32
 name|offset
-decl_stmt|;
-name|guint32
-name|junk
 decl_stmt|;
 name|gint
 name|width
@@ -6610,7 +6620,6 @@ condition|)
 return|return
 name|FALSE
 return|;
-comment|/* load in the levels...we make sure that the number of levels    *  calculated when the TileManager was created is the same    *  as the number of levels found in the file.    */
 name|info
 operator|->
 name|cp
@@ -6628,40 +6637,6 @@ literal|1
 argument_list|)
 expr_stmt|;
 comment|/* top level */
-comment|/* discard offsets for layers below first, if any.    */
-do|do
-block|{
-name|info
-operator|->
-name|cp
-operator|+=
-name|xcf_read_int32
-argument_list|(
-name|info
-operator|->
-name|input
-argument_list|,
-operator|&
-name|junk
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-block|}
-do|while
-condition|(
-name|junk
-operator|!=
-literal|0
-condition|)
-do|;
-comment|/* save the current position as it is where the    *  next level offset is stored.    */
-name|saved_pos
-operator|=
-name|info
-operator|->
-name|cp
-expr_stmt|;
 comment|/* seek to the level offset */
 if|if
 condition|(
@@ -6692,22 +6667,7 @@ condition|)
 return|return
 name|FALSE
 return|;
-comment|/* restore the saved position so we'll be ready to    *  read the next offset.    */
-if|if
-condition|(
-operator|!
-name|xcf_seek_pos
-argument_list|(
-name|info
-argument_list|,
-name|saved_pos
-argument_list|,
-name|NULL
-argument_list|)
-condition|)
-return|return
-name|FALSE
-return|;
+comment|/* discard levels below first.    */
 return|return
 name|TRUE
 return|;
