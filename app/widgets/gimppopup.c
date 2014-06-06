@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c6190e0103
+DECL|enum|__anon2c4a127a0103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -750,9 +750,9 @@ name|binding_set
 operator|=
 name|gtk_binding_set_by_class
 argument_list|(
-name|GIMP_POPUP_GET_CLASS
+name|g_type_class_peek
 argument_list|(
-name|widget
+name|GIMP_TYPE_POPUP
 argument_list|)
 argument_list|)
 expr_stmt|;
