@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b55c5b20103
+DECL|enum|__anon27d6893a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -230,22 +230,6 @@ name|void
 name|gimp_pickable_button_clicked
 parameter_list|(
 name|GtkButton
-modifier|*
-name|button
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_pickable_button_popup_cancel
-parameter_list|(
-name|GimpPickablePopup
-modifier|*
-name|popup
-parameter_list|,
-name|GimpPickableButton
 modifier|*
 name|button
 parameter_list|)
@@ -983,20 +967,6 @@ name|g_signal_connect
 argument_list|(
 name|popup
 argument_list|,
-literal|"cancel"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gimp_pickable_button_popup_cancel
-argument_list|)
-argument_list|,
-name|button
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|popup
-argument_list|,
 literal|"confirm"
 argument_list|,
 name|G_CALLBACK
@@ -1026,23 +996,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_pickable_button_popup_cancel (GimpPickablePopup * popup,GimpPickableButton * button)
-name|gimp_pickable_button_popup_cancel
-parameter_list|(
-name|GimpPickablePopup
-modifier|*
-name|popup
-parameter_list|,
-name|GimpPickableButton
-modifier|*
-name|button
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|gimp_pickable_button_popup_confirm (GimpPickablePopup * popup,GimpPickableButton * button)
 name|gimp_pickable_button_popup_confirm
 parameter_list|(
@@ -1054,7 +1007,28 @@ name|GimpPickableButton
 modifier|*
 name|button
 parameter_list|)
-block|{ }
+block|{
+name|GimpPickable
+modifier|*
+name|pickable
+init|=
+name|gimp_pickable_popup_get_pickable
+argument_list|(
+name|popup
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|pickable
+condition|)
+name|gimp_pickable_button_set_pickable
+argument_list|(
+name|button
+argument_list|,
+name|pickable
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_function
