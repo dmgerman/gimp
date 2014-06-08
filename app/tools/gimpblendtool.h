@@ -22,6 +22,28 @@ directive|include
 file|"gimpdrawtool.h"
 end_include
 
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2ae109420103
+block|{
+comment|/* POINT_NONE evaluates to FALSE */
+DECL|enumerator|POINT_NONE
+name|POINT_NONE
+init|=
+literal|0
+block|,
+DECL|enumerator|POINT_START
+name|POINT_START
+block|,
+DECL|enumerator|POINT_END
+name|POINT_END
+DECL|typedef|GimpBlendToolPoint
+block|}
+name|GimpBlendToolPoint
+typedef|;
+end_typedef
+
 begin_define
 DECL|macro|GIMP_TYPE_BLEND_TOOL
 define|#
@@ -122,6 +144,10 @@ block|{
 DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
+decl_stmt|;
+DECL|member|grabbed_point
+name|GimpBlendToolPoint
+name|grabbed_point
 decl_stmt|;
 DECL|member|start_x
 name|gdouble
