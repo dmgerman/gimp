@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae109420103
+DECL|enum|__anon2bf839a30103
 block|{
 comment|/* POINT_NONE evaluates to FALSE */
 DECL|enumerator|POINT_NONE
@@ -169,16 +169,6 @@ name|gdouble
 name|end_y
 decl_stmt|;
 comment|/*  ending y coord    */
-DECL|member|last_x
-name|gdouble
-name|last_x
-decl_stmt|;
-comment|/*  last x coord      */
-DECL|member|last_y
-name|gdouble
-name|last_y
-decl_stmt|;
-comment|/*  last y coord      */
 DECL|member|mouse_x
 name|gdouble
 name|mouse_x
