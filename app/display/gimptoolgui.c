@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5b5ddc0103
+DECL|enum|__anon29a16bc60103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -1014,7 +1014,19 @@ operator|->
 name|overlay
 condition|)
 block|{
-comment|/* TODO */
+name|g_object_set
+argument_list|(
+name|private
+operator|->
+name|dialog
+argument_list|,
+literal|"title"
+argument_list|,
+name|description
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -1111,17 +1123,6 @@ name|tool_info
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|private
-operator|->
-name|overlay
-condition|)
-block|{
-comment|/* TODO */
-block|}
-else|else
-block|{
 name|g_object_set
 argument_list|(
 name|private
@@ -1135,7 +1136,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 

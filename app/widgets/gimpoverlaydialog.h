@@ -127,6 +127,16 @@ name|GtkWidget
 modifier|*
 name|header
 decl_stmt|;
+DECL|member|icon_image
+name|GtkWidget
+modifier|*
+name|icon_image
+decl_stmt|;
+DECL|member|title_label
+name|GtkWidget
+modifier|*
+name|title_label
+decl_stmt|;
 DECL|member|close_button
 name|GtkWidget
 modifier|*
