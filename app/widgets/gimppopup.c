@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae244c20103
+DECL|enum|__anon28a77cf20103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -846,7 +846,7 @@ name|kevent
 operator|->
 name|state
 argument_list|,
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
