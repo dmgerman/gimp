@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b54eaaf0103
+DECL|enum|__anon29f158640103
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -424,10 +424,6 @@ specifier|const
 name|gchar
 modifier|*
 name|progress_text
-decl_stmt|;
-DECL|member|overlay
-name|gboolean
-name|overlay
 decl_stmt|;
 DECL|member|gui
 name|GimpToolGui

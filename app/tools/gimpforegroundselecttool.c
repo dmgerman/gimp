@@ -1363,6 +1363,15 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_tool_gui_set_auto_overlay
+argument_list|(
+name|fg_select
+operator|->
+name|gui
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|fg_select
