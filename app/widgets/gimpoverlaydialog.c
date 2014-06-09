@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28baa30b0103
+DECL|enum|__anon278300cd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -75,7 +75,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28baa30b0203
+DECL|enum|__anon278300cd0203
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -1643,8 +1643,6 @@ operator|=
 name|header_requisition
 operator|.
 name|height
-operator|,
-literal|0
 expr_stmt|;
 name|gtk_widget_size_allocate
 argument_list|(
@@ -1706,8 +1704,6 @@ operator|=
 name|action_requisition
 operator|.
 name|height
-operator|,
-literal|0
 expr_stmt|;
 name|gtk_widget_size_allocate
 argument_list|(
