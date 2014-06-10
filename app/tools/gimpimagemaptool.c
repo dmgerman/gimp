@@ -28,16 +28,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gegl-plugin.h>
-end_include
-
-begin_comment
-comment|/* FIXME: gegl_operation_get_key() */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
