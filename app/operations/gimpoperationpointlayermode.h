@@ -16,6 +16,12 @@ directive|define
 name|__GIMP_OPERATION_POINT_LAYER_MODE_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|<gegl-plugin.h>
+end_include
+
 begin_define
 DECL|macro|GIMP_TYPE_OPERATION_POINT_LAYER_MODE
 define|#

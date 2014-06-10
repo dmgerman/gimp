@@ -21,6 +21,10 @@ directive|include
 file|<gegl-plugin.h>
 end_include
 
+begin_comment
+comment|/* gegl_operation_invalidate() */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -233,7 +237,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27459c0e0103
+DECL|enum|__anon29456a680103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
