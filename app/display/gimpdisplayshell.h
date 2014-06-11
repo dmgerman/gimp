@@ -735,6 +735,10 @@ DECL|member|mask_color
 name|GimpRGB
 name|mask_color
 decl_stmt|;
+DECL|member|mask_inverted
+name|gboolean
+name|mask_inverted
+decl_stmt|;
 DECL|member|motion_buffer
 name|GimpMotionBuffer
 modifier|*
@@ -1186,6 +1190,9 @@ specifier|const
 name|GimpRGB
 modifier|*
 name|color
+parameter_list|,
+name|gboolean
+name|inverted
 parameter_list|)
 function_decl|;
 end_function_decl

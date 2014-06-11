@@ -360,7 +360,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon278293c10103
+DECL|enum|__anon292f2e9a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -394,7 +394,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon278293c10203
+DECL|enum|__anon292f2e9a0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -7768,12 +7768,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_set_mask:  * @shell: a #GimpDisplayShell  * @mask:  a #GimpDrawable (1 byte per pixel)  * @color: the color to use for drawing the mask  *  * Previews a selection (used by the foreground selection tool).  * Pixels that are not selected (> 127) in the mask are tinted with  * the given color.  **/
+comment|/**  * gimp_display_shell_set_mask:  * @shell: a #GimpDisplayShell  * @mask:  a #GimpDrawable (1 byte per pixel)  * @color: the color to use for drawing the mask  * @inverted: #TRUE if the mask should be drawn inverted  *  * Previews an image-sized mask. Depending on @inverted, pixels that  * are selected or not selected are tinted with the given color.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_mask (GimpDisplayShell * shell,GeglBuffer * mask,const GimpRGB * color)
+DECL|function|gimp_display_shell_set_mask (GimpDisplayShell * shell,GeglBuffer * mask,const GimpRGB * color,gboolean inverted)
 name|gimp_display_shell_set_mask
 parameter_list|(
 name|GimpDisplayShell
@@ -7788,6 +7788,9 @@ specifier|const
 name|GimpRGB
 modifier|*
 name|color
+parameter_list|,
+name|gboolean
+name|inverted
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -7859,6 +7862,12 @@ name|mask_color
 operator|=
 operator|*
 name|color
+expr_stmt|;
+name|shell
+operator|->
+name|mask_inverted
+operator|=
+name|inverted
 expr_stmt|;
 name|gimp_display_shell_expose_full
 argument_list|(

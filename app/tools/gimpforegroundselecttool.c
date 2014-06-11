@@ -3977,6 +3977,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_tool_cursor
@@ -4239,6 +4241,8 @@ name|trimap
 argument_list|,
 operator|&
 name|color
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_tool_cursor
@@ -4348,6 +4352,8 @@ name|mask
 argument_list|,
 operator|&
 name|color
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_tool_cursor

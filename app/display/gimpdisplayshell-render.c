@@ -770,9 +770,6 @@ operator|->
 name|mask
 condition|)
 block|{
-name|gint
-name|mask_height
-decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -865,11 +862,18 @@ argument_list|,
 name|GEGL_ABYSS_CLAMP
 argument_list|)
 expr_stmt|;
-comment|/* invert the mask so what is *not* the foreground object is masked */
+if|if
+condition|(
+name|shell
+operator|->
+name|mask_inverted
+condition|)
+block|{
+name|gint
 name|mask_height
-operator|=
+init|=
 name|scaled_height
-expr_stmt|;
+decl_stmt|;
 while|while
 condition|(
 name|mask_height
@@ -912,6 +916,7 @@ name|data
 operator|+=
 name|stride
 expr_stmt|;
+block|}
 block|}
 block|}
 comment|/*  put it to the screen  */
