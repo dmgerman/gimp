@@ -128,6 +128,10 @@ DECL|member|select_criterion
 name|GimpSelectCriterion
 name|select_criterion
 decl_stmt|;
+DECL|member|draw_mask
+name|gboolean
+name|draw_mask
+decl_stmt|;
 block|}
 struct|;
 end_struct
