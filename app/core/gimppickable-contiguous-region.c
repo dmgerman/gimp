@@ -811,7 +811,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"RGBA float"
+literal|"R'G'B'A float"
 argument_list|)
 expr_stmt|;
 else|else
@@ -824,7 +824,7 @@ argument_list|(
 name|format
 argument_list|)
 argument_list|,
-name|GIMP_PRECISION_FLOAT_LINEAR
+name|GIMP_PRECISION_FLOAT_GAMMA
 argument_list|,
 operator|*
 name|has_alpha
@@ -844,7 +844,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"RGBA float"
+literal|"R'G'B'A float"
 argument_list|)
 expr_stmt|;
 break|break;
