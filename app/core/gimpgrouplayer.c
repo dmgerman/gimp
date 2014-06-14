@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-babl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpgrouplayer.h"
 end_include
 
@@ -549,6 +555,9 @@ specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpComponentType
+name|component_type
 parameter_list|,
 name|gint
 name|width
@@ -3518,13 +3527,16 @@ end_function
 begin_function
 specifier|static
 name|gint64
-DECL|function|gimp_group_layer_estimate_memsize (const GimpDrawable * drawable,gint width,gint height)
+DECL|function|gimp_group_layer_estimate_memsize (const GimpDrawable * drawable,GimpComponentType component_type,gint width,gint height)
 name|gimp_group_layer_estimate_memsize
 parameter_list|(
 specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpComponentType
+name|component_type
 parameter_list|,
 name|gint
 name|width
@@ -3642,6 +3654,8 @@ name|gimp_drawable_estimate_memsize
 argument_list|(
 name|child
 argument_list|,
+name|component_type
+argument_list|,
 name|child_width
 argument_list|,
 name|child_height
@@ -3661,9 +3675,11 @@ name|gimp_projection_estimate_memsize
 argument_list|(
 name|base_type
 argument_list|,
-name|gimp_drawable_get_precision
+name|gimp_babl_precision
 argument_list|(
-name|drawable
+name|component_type
+argument_list|,
+name|FALSE
 argument_list|)
 argument_list|,
 name|width
@@ -3682,6 +3698,8 @@ operator|->
 name|estimate_memsize
 argument_list|(
 name|drawable
+argument_list|,
+name|component_type
 argument_list|,
 name|width
 argument_list|,

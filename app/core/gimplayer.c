@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eb27db0103
+DECL|enum|__anon2aa285ac0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -192,7 +192,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eb27db0203
+DECL|enum|__anon2aa285ac0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -697,6 +697,9 @@ specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpComponentType
+name|component_type
 parameter_list|,
 name|gint
 name|width
@@ -4254,13 +4257,16 @@ end_function
 begin_function
 specifier|static
 name|gint64
-DECL|function|gimp_layer_estimate_memsize (const GimpDrawable * drawable,gint width,gint height)
+DECL|function|gimp_layer_estimate_memsize (const GimpDrawable * drawable,GimpComponentType component_type,gint width,gint height)
 name|gimp_layer_estimate_memsize
 parameter_list|(
 specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpComponentType
+name|component_type
 parameter_list|,
 name|gint
 name|width
@@ -4300,6 +4306,8 @@ operator|->
 name|mask
 argument_list|)
 argument_list|,
+name|component_type
+argument_list|,
 name|width
 argument_list|,
 name|height
@@ -4316,6 +4324,8 @@ operator|->
 name|estimate_memsize
 argument_list|(
 name|drawable
+argument_list|,
+name|component_type
 argument_list|,
 name|width
 argument_list|,

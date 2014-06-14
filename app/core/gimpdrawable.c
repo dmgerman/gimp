@@ -201,7 +201,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bff34950103
+DECL|enum|__anon2ab3084c0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -217,7 +217,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bff34950203
+DECL|enum|__anon2ab3084c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -609,6 +609,9 @@ specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpComponentType
+name|component_type
 parameter_list|,
 name|gint
 name|width
@@ -3225,13 +3228,16 @@ end_function
 begin_function
 specifier|static
 name|gint64
-DECL|function|gimp_drawable_real_estimate_memsize (const GimpDrawable * drawable,gint width,gint height)
+DECL|function|gimp_drawable_real_estimate_memsize (const GimpDrawable * drawable,GimpComponentType component_type,gint width,gint height)
 name|gimp_drawable_real_estimate_memsize
 parameter_list|(
 specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpComponentType
+name|component_type
 parameter_list|,
 name|gint
 name|width
@@ -3244,12 +3250,29 @@ specifier|const
 name|Babl
 modifier|*
 name|format
-init|=
-name|gimp_drawable_get_format
+decl_stmt|;
+name|format
+operator|=
+name|gimp_babl_format
+argument_list|(
+name|gimp_drawable_get_base_type
 argument_list|(
 name|drawable
 argument_list|)
-decl_stmt|;
+argument_list|,
+name|gimp_babl_precision
+argument_list|(
+name|component_type
+argument_list|,
+name|FALSE
+argument_list|)
+argument_list|,
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
 operator|(
 name|gint64
@@ -4989,13 +5012,16 @@ end_function
 
 begin_function
 name|gint64
-DECL|function|gimp_drawable_estimate_memsize (const GimpDrawable * drawable,gint width,gint height)
+DECL|function|gimp_drawable_estimate_memsize (const GimpDrawable * drawable,GimpComponentType component_type,gint width,gint height)
 name|gimp_drawable_estimate_memsize
 parameter_list|(
 specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpComponentType
+name|component_type
 parameter_list|,
 name|gint
 name|width
@@ -5023,6 +5049,8 @@ operator|->
 name|estimate_memsize
 argument_list|(
 name|drawable
+argument_list|,
+name|component_type
 argument_list|,
 name|width
 argument_list|,

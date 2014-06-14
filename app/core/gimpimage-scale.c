@@ -1079,6 +1079,11 @@ name|gimp_drawable_estimate_memsize
 argument_list|(
 name|drawable
 argument_list|,
+name|gimp_drawable_get_component_type
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
 name|width
 argument_list|,
 name|height
@@ -1089,6 +1094,11 @@ operator|+=
 name|gimp_drawable_estimate_memsize
 argument_list|(
 name|drawable
+argument_list|,
+name|gimp_drawable_get_component_type
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|,
 name|width
 operator|*

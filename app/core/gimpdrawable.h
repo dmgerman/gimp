@@ -180,6 +180,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
+name|GimpComponentType
+name|component_type
+parameter_list|,
 name|gint
 name|width
 parameter_list|,
@@ -514,6 +517,9 @@ specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpComponentType
+name|component_type
 parameter_list|,
 name|gint
 name|width
