@@ -169,7 +169,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2a3c4f0103
+DECL|enum|__anon27b6496f0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -182,7 +182,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2a3c4f0203
+DECL|enum|__anon27b6496f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1212,19 +1212,19 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_projection_estimate_memsize:  * @type:      the projectable's base type  * @precision: the projectable's precision  * @width:     projection width  * @height:    projection height  *  * Calculates a rough estimate of the memory that is required for the  * projection of an image with the given @width and @height.  *  * Return value: a rough estimate of the memory requirements.  **/
+comment|/**  * gimp_projection_estimate_memsize:  * @type:           the projectable's base type  * @component_type: the projectable's component type  * @width:          projection width  * @height:         projection height  *  * Calculates a rough estimate of the memory that is required for the  * projection of an image with the given @width and @height.  *  * Return value: a rough estimate of the memory requirements.  **/
 end_comment
 
 begin_function
 name|gint64
-DECL|function|gimp_projection_estimate_memsize (GimpImageBaseType type,GimpPrecision precision,gint width,gint height)
+DECL|function|gimp_projection_estimate_memsize (GimpImageBaseType type,GimpComponentType component_type,gint width,gint height)
 name|gimp_projection_estimate_memsize
 parameter_list|(
 name|GimpImageBaseType
 name|type
 parameter_list|,
-name|GimpPrecision
-name|precision
+name|GimpComponentType
+name|component_type
 parameter_list|,
 name|gint
 name|width
@@ -1257,7 +1257,12 @@ name|gimp_babl_format
 argument_list|(
 name|type
 argument_list|,
-name|precision
+name|gimp_babl_precision
+argument_list|(
+name|component_type
+argument_list|,
+name|FALSE
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|)

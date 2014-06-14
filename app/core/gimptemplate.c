@@ -83,7 +83,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b667aef0103
+DECL|enum|__anon2b19cf430103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1212,9 +1212,12 @@ name|private
 operator|->
 name|base_type
 argument_list|,
+name|gimp_babl_component_type
+argument_list|(
 name|private
 operator|->
 name|precision
+argument_list|)
 argument_list|,
 name|private
 operator|->

@@ -3675,12 +3675,7 @@ name|gimp_projection_estimate_memsize
 argument_list|(
 name|base_type
 argument_list|,
-name|gimp_babl_precision
-argument_list|(
 name|component_type
-argument_list|,
-name|FALSE
-argument_list|)
 argument_list|,
 name|width
 argument_list|,

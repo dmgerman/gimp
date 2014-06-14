@@ -1134,7 +1134,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|gimp_image_get_precision
+name|gimp_image_get_component_type
 argument_list|(
 name|image
 argument_list|)
@@ -1159,7 +1159,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|gimp_image_get_precision
+name|gimp_image_get_component_type
 argument_list|(
 name|image
 argument_list|)
