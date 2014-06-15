@@ -596,6 +596,27 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gint64
+name|gimp_image_estimate_memsize
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|GimpComponentType
+name|component_type
+parameter_list|,
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|height
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpImageBaseType
 name|gimp_image_get_base_type
 parameter_list|(
