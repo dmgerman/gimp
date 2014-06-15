@@ -225,6 +225,17 @@ end_function_decl
 
 begin_function_decl
 name|gint64
+name|gimp_gegl_pyramid_get_memsize
+parameter_list|(
+name|GeglBuffer
+modifier|*
+name|buffer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint64
 name|gimp_string_get_memsize
 parameter_list|(
 specifier|const

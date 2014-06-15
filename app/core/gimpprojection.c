@@ -169,7 +169,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b6496f0103
+DECL|enum|__anon2a3680540103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -182,7 +182,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b6496f0203
+DECL|enum|__anon2a3680540203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1184,7 +1184,7 @@ literal|0
 decl_stmt|;
 name|memsize
 operator|+=
-name|gimp_gegl_buffer_get_memsize
+name|gimp_gegl_pyramid_get_memsize
 argument_list|(
 name|projection
 operator|->
