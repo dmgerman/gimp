@@ -83,7 +83,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b19cf430103
+DECL|enum|__anon2b0dea8e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1159,15 +1159,11 @@ expr_stmt|;
 comment|/* the selection */
 name|format
 operator|=
-name|gimp_babl_format
+name|gimp_babl_mask_format
 argument_list|(
-name|GIMP_GRAY
-argument_list|,
 name|private
 operator|->
 name|precision
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|bytes
@@ -1226,26 +1222,6 @@ argument_list|,
 name|private
 operator|->
 name|height
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|strcmp
-argument_list|(
-name|pspec
-operator|->
-name|name
-argument_list|,
-literal|"icon-name"
-argument_list|)
-condition|)
-name|gimp_viewable_invalidate_preview
-argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
-name|object
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
