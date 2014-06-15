@@ -451,9 +451,10 @@ index|[
 name|ALPHA
 index|]
 operator|=
-name|rgb
-operator|.
-name|a
+name|src
+index|[
+name|ALPHA
+index|]
 expr_stmt|;
 name|src
 operator|+=
