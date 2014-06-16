@@ -147,7 +147,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b5564e0108
+DECL|struct|__anon2b88369f0108
 block|{
 DECL|member|compression
 name|gint
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b5564e0208
+DECL|struct|__anon2b88369f0208
 block|{
 DECL|member|ID
 name|gint32
@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b5564e0308
+DECL|struct|__anon2b88369f0308
 block|{
 DECL|member|o_pages
 name|gint
@@ -933,6 +933,14 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
+else|else
+name|gimp_ui_init
+argument_list|(
+name|PLUG_IN_BINARY
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|pages
@@ -1622,13 +1630,6 @@ decl_stmt|;
 name|gboolean
 name|run
 decl_stmt|;
-name|gimp_ui_init
-argument_list|(
-name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|dialog
 operator|=
 name|gimp_dialog_new
