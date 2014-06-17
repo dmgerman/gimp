@@ -118,7 +118,7 @@ file|"gimp-log.h"
 end_include
 
 begin_comment
-comment|/*  just a bit less than GDK_PRIORITY_REDRAW  */
+comment|/*  just a bit less than GDK_PRIORITY_REDRAW, also see  *  GIMP_DISPLAY_SHELL_FILL_IDLE_PRIORITY in gimpdisplayshell.c  */
 end_comment
 
 begin_define
@@ -126,7 +126,7 @@ DECL|macro|GIMP_PROJECTION_IDLE_PRIORITY
 define|#
 directive|define
 name|GIMP_PROJECTION_IDLE_PRIORITY
-value|(G_PRIORITY_HIGH_IDLE + 20 + 1)
+value|(G_PRIORITY_HIGH_IDLE + 20 + 2)
 end_define
 
 begin_comment
@@ -169,7 +169,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3680540103
+DECL|enum|__anon27eb81680103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -182,7 +182,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3680540203
+DECL|enum|__anon27eb81680203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

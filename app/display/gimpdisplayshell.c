@@ -346,7 +346,7 @@ file|"gimp-intl.h"
 end_include
 
 begin_comment
-comment|/*  halfway between G_PRIORITY_HIGH_IDLE and G_PRIORITY_DEFAULT_IDLE - 1,  *  so a bit higher than projection construction  */
+comment|/* a bit higher than projection construction, see gimpprojection.c  */
 end_comment
 
 begin_define
@@ -354,13 +354,12 @@ DECL|macro|GIMP_DISPLAY_SHELL_FILL_IDLE_PRIORITY
 define|#
 directive|define
 name|GIMP_DISPLAY_SHELL_FILL_IDLE_PRIORITY
-define|\
-value|((G_PRIORITY_HIGH_IDLE + G_PRIORITY_DEFAULT_IDLE) / 2 - 1)
+value|(G_PRIORITY_HIGH_IDLE + 20 + 1)
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon292f2e9a0103
+DECL|enum|__anon2ba6233f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -394,7 +393,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon292f2e9a0203
+DECL|enum|__anon2ba6233f0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
