@@ -120,12 +120,12 @@ name|GimpHistogramChannel
 name|channel
 parameter_list|,
 name|gint
-name|num_bytes
+name|num_values
 parameter_list|,
 specifier|const
-name|guint8
+name|gdouble
 modifier|*
-name|curve
+name|values
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -144,9 +144,9 @@ name|gint
 name|num_points
 parameter_list|,
 specifier|const
-name|guint8
+name|gdouble
 modifier|*
-name|control_pts
+name|points
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -295,12 +295,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_curves_explicit:  * @drawable_ID: The drawable.  * @channel: The channel to modify.  * @num_bytes: The number of bytes in the new curve (always 256).  * @curve: The explicit curve.  *  * Modifies the intensity curve(s) for specified drawable.  *  * Modifies the intensity mapping for one channel in the specified  * drawable. The drawable must be either grayscale or RGB, and the  * channel can be either an intensity component, or the value. The  * 'curve' parameter is an array of bytes which explicitly defines how  * each pixel value in the drawable will be modified. Use the  * gimp_curves_spline() function to modify intensity levels with  * Catmull Rom splines.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_drawable_curves_explicit:  * @drawable_ID: The drawable.  * @channel: The channel to modify.  * @num_values: The number of values in the new curve.  * @values: The explicit curve.  *  * Modifies the intensity curve(s) for specified drawable.  *  * Modifies the intensity mapping for one channel in the specified  * drawable. The channel can be either an intensity component, or the  * value. The 'values' parameter is an array of doubles which  * explicitly defines how each pixel value in the drawable will be  * modified. Use the gimp_curves_spline() function to modify intensity  * levels with Catmull Rom splines.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.10  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_curves_explicit (gint32 drawable_ID,GimpHistogramChannel channel,gint num_bytes,const guint8 * curve)
+DECL|function|gimp_drawable_curves_explicit (gint32 drawable_ID,GimpHistogramChannel channel,gint num_values,const gdouble * values)
 name|gimp_drawable_curves_explicit
 parameter_list|(
 name|gint32
@@ -310,12 +310,12 @@ name|GimpHistogramChannel
 name|channel
 parameter_list|,
 name|gint
-name|num_bytes
+name|num_values
 parameter_list|,
 specifier|const
-name|guint8
+name|gdouble
 modifier|*
-name|curve
+name|values
 parameter_list|)
 block|{
 name|GimpParam
@@ -349,11 +349,11 @@ name|channel
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
-name|num_bytes
+name|num_values
 argument_list|,
-name|GIMP_PDB_INT8ARRAY
+name|GIMP_PDB_FLOATARRAY
 argument_list|,
-name|curve
+name|values
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
@@ -385,12 +385,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_curves_spline:  * @drawable_ID: The drawable.  * @channel: The channel to modify.  * @num_points: The number of values in the control point array.  * @control_pts: The spline control points: { cp1.x, cp1.y, cp2.x, cp2.y, ... }.  *  * Modifies the intensity curve(s) for specified drawable.  *  * Modifies the intensity mapping for one channel in the specified  * drawable. The drawable must be either grayscale or RGB, and the  * channel can be either an intensity component, or the value. The  * 'control_pts' parameter is an array of integers which define a set  * of control points which describe a Catmull Rom spline which yields  * the final intensity curve. Use the gimp_curves_explicit() function  * to explicitly modify intensity levels.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_drawable_curves_spline:  * @drawable_ID: The drawable.  * @channel: The channel to modify.  * @num_points: The number of values in the control point array.  * @points: The spline control points: { cp1.x, cp1.y, cp2.x, cp2.y, ... }.  *  * Modifies the intensity curve(s) for specified drawable.  *  * Modifies the intensity mapping for one channel in the specified  * drawable. The channel can be either an intensity component, or the  * value. The 'points' parameter is an array of doubles which define a  * set of control points which describe a Catmull Rom spline which  * yields the final intensity curve. Use the gimp_curves_explicit()  * function to explicitly modify intensity levels.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.10  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_curves_spline (gint32 drawable_ID,GimpHistogramChannel channel,gint num_points,const guint8 * control_pts)
+DECL|function|gimp_drawable_curves_spline (gint32 drawable_ID,GimpHistogramChannel channel,gint num_points,const gdouble * points)
 name|gimp_drawable_curves_spline
 parameter_list|(
 name|gint32
@@ -403,9 +403,9 @@ name|gint
 name|num_points
 parameter_list|,
 specifier|const
-name|guint8
+name|gdouble
 modifier|*
-name|control_pts
+name|points
 parameter_list|)
 block|{
 name|GimpParam
@@ -441,9 +441,9 @@ name|GIMP_PDB_INT32
 argument_list|,
 name|num_points
 argument_list|,
-name|GIMP_PDB_INT8ARRAY
+name|GIMP_PDB_FLOATARRAY
 argument_list|,
-name|control_pts
+name|points
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)

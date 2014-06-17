@@ -4447,17 +4447,17 @@ name|procedure
 argument_list|,
 literal|"gimp-curves-spline"
 argument_list|,
-literal|"Modifies the intensity curve(s) for specified drawable."
+literal|"Deprecated: Use 'gimp-drawable-curves-spline' instead."
 argument_list|,
-literal|"Modifies the intensity mapping for one channel in the specified drawable. The drawable must be either grayscale or RGB, and the channel can be either an intensity component, or the value. The 'control_pts' parameter is an array of integers which define a set of control points which describe a Catmull Rom spline which yields the final intensity curve. Use the 'gimp-curves-explicit' function to explicitly modify intensity levels."
+literal|"Deprecated: Use 'gimp-drawable-curves-spline' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-drawable-curves-spline"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -4576,17 +4576,17 @@ name|procedure
 argument_list|,
 literal|"gimp-curves-explicit"
 argument_list|,
-literal|"Modifies the intensity curve(s) for specified drawable."
+literal|"Deprecated: Use 'gimp-drawable-curves-explicit' instead."
 argument_list|,
-literal|"Modifies the intensity mapping for one channel in the specified drawable. The drawable must be either grayscale or RGB, and the channel can be either an intensity component, or the value. The 'curve' parameter is an array of bytes which explicitly defines how each pixel value in the drawable will be modified. Use the 'gimp-curves-spline' function to modify intensity levels with Catmull Rom splines."
+literal|"Deprecated: Use 'gimp-drawable-curves-explicit' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-drawable-curves-explicit"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

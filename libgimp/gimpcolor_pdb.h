@@ -225,6 +225,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_curves_spline
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_curves_spline
@@ -245,6 +252,13 @@ name|control_pts
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_curves_explicit
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean

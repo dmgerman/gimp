@@ -893,12 +893,12 @@ name|gint32
 name|channel
 decl_stmt|;
 name|gint32
-name|num_bytes
+name|num_values
 decl_stmt|;
 specifier|const
-name|guint8
+name|gdouble
 modifier|*
-name|curve
+name|values
 decl_stmt|;
 name|drawable
 operator|=
@@ -926,7 +926,7 @@ literal|1
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|num_bytes
+name|num_values
 operator|=
 name|g_value_get_int
 argument_list|(
@@ -938,9 +938,9 @@ literal|2
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|curve
+name|values
 operator|=
-name|gimp_value_get_int8array
+name|gimp_value_get_floatarray
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -982,9 +982,15 @@ name|error
 argument_list|)
 operator|&&
 operator|(
-name|num_bytes
-operator|==
+name|num_values
+operator|>=
 literal|256
+operator|)
+operator|&&
+operator|(
+name|num_values
+operator|<=
+literal|4096
 operator|)
 operator|&&
 operator|(
@@ -1019,13 +1025,13 @@ name|GObject
 modifier|*
 name|config
 init|=
-name|gimp_curves_config_new_explicit_cruft
+name|gimp_curves_config_new_explicit
 argument_list|(
 name|channel
 argument_list|,
-name|curve
+name|values
 argument_list|,
-name|num_bytes
+name|num_values
 argument_list|)
 decl_stmt|;
 name|gimp_drawable_apply_operation_by_name
@@ -1126,9 +1132,9 @@ name|gint32
 name|num_points
 decl_stmt|;
 specifier|const
-name|guint8
+name|gdouble
 modifier|*
-name|control_pts
+name|points
 decl_stmt|;
 name|drawable
 operator|=
@@ -1168,9 +1174,9 @@ literal|2
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|control_pts
+name|points
 operator|=
-name|gimp_value_get_int8array
+name|gimp_value_get_floatarray
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1250,11 +1256,11 @@ name|GObject
 modifier|*
 name|config
 init|=
-name|gimp_curves_config_new_spline_cruft
+name|gimp_curves_config_new_spline
 argument_list|(
 name|channel
 argument_list|,
-name|control_pts
+name|points
 argument_list|,
 name|num_points
 operator|/
@@ -3754,7 +3760,7 @@ literal|"gimp-drawable-curves-explicit"
 argument_list|,
 literal|"Modifies the intensity curve(s) for specified drawable."
 argument_list|,
-literal|"Modifies the intensity mapping for one channel in the specified drawable. The drawable must be either grayscale or RGB, and the channel can be either an intensity component, or the value. The 'curve' parameter is an array of bytes which explicitly defines how each pixel value in the drawable will be modified. Use the 'gimp-curves-spline' function to modify intensity levels with Catmull Rom splines."
+literal|"Modifies the intensity mapping for one channel in the specified drawable. The channel can be either an intensity component, or the value. The 'values' parameter is an array of doubles which explicitly defines how each pixel value in the drawable will be modified. Use the 'gimp-curves-spline' function to modify intensity levels with Catmull Rom splines."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -3813,17 +3819,17 @@ name|procedure
 argument_list|,
 name|gimp_param_spec_int32
 argument_list|(
-literal|"num-bytes"
+literal|"num-values"
 argument_list|,
-literal|"num bytes"
+literal|"num values"
 argument_list|,
-literal|"The number of bytes in the new curve (always 256)"
+literal|"The number of values in the new curve"
 argument_list|,
-literal|0
+literal|256
 argument_list|,
-name|G_MAXINT32
+literal|2096
 argument_list|,
-literal|0
+literal|256
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -3833,11 +3839,11 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8_array
+name|gimp_param_spec_float_array
 argument_list|(
-literal|"curve"
+literal|"values"
 argument_list|,
-literal|"curve"
+literal|"values"
 argument_list|,
 literal|"The explicit curve"
 argument_list|,
@@ -3883,7 +3889,7 @@ literal|"gimp-drawable-curves-spline"
 argument_list|,
 literal|"Modifies the intensity curve(s) for specified drawable."
 argument_list|,
-literal|"Modifies the intensity mapping for one channel in the specified drawable. The drawable must be either grayscale or RGB, and the channel can be either an intensity component, or the value. The 'control_pts' parameter is an array of integers which define a set of control points which describe a Catmull Rom spline which yields the final intensity curve. Use the 'gimp-curves-explicit' function to explicitly modify intensity levels."
+literal|"Modifies the intensity mapping for one channel in the specified drawable. The channel can be either an intensity component, or the value. The 'points' parameter is an array of doubles which define a set of control points which describe a Catmull Rom spline which yields the final intensity curve. Use the 'gimp-curves-explicit' function to explicitly modify intensity levels."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -3950,7 +3956,7 @@ literal|"The number of values in the control point array"
 argument_list|,
 literal|4
 argument_list|,
-literal|34
+literal|2048
 argument_list|,
 literal|4
 argument_list|,
@@ -3962,11 +3968,11 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8_array
+name|gimp_param_spec_float_array
 argument_list|(
-literal|"control-pts"
+literal|"points"
 argument_list|,
-literal|"control pts"
+literal|"points"
 argument_list|,
 literal|"The spline control points: { cp1.x, cp1.y, cp2.x, cp2.y, ... }"
 argument_list|,
