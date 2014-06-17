@@ -1019,7 +1019,7 @@ name|GObject
 modifier|*
 name|config
 init|=
-name|gimp_curves_config_new_explicit
+name|gimp_curves_config_new_explicit_cruft
 argument_list|(
 name|channel
 argument_list|,
@@ -1250,13 +1250,15 @@ name|GObject
 modifier|*
 name|config
 init|=
-name|gimp_curves_config_new_spline
+name|gimp_curves_config_new_spline_cruft
 argument_list|(
 name|channel
 argument_list|,
 name|control_pts
 argument_list|,
 name|num_points
+operator|/
+literal|2
 argument_list|)
 decl_stmt|;
 name|gimp_drawable_apply_operation_by_name

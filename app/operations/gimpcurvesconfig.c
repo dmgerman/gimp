@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275e75c70103
+DECL|enum|__anon28bf1e430103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1306,8 +1306,8 @@ end_comment
 begin_function
 name|GObject
 modifier|*
-DECL|function|gimp_curves_config_new_spline (gint32 channel,const guint8 * points,gint n_points)
-name|gimp_curves_config_new_spline
+DECL|function|gimp_curves_config_new_spline_cruft (gint32 channel,const guint8 * points,gint n_points)
+name|gimp_curves_config_new_spline_cruft
 parameter_list|(
 name|gint32
 name|channel
@@ -1345,6 +1345,28 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|points
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|n_points
+operator|>=
+literal|2
+operator|&&
+name|n_points
+operator|<=
+literal|1024
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|config
 operator|=
 name|g_object_new
@@ -1371,7 +1393,20 @@ name|curve
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: create a curves object with the right number of points */
+name|gimp_curve_set_curve_type
+argument_list|(
+name|curve
+argument_list|,
+name|GIMP_CURVE_SMOOTH
+argument_list|)
+expr_stmt|;
+name|gimp_curve_set_n_samples
+argument_list|(
+name|curve
+argument_list|,
+name|n_points
+argument_list|)
+expr_stmt|;
 comment|/*  unset the last point  */
 name|gimp_curve_set_point
 argument_list|(
@@ -1384,23 +1419,10 @@ operator|-
 literal|1
 argument_list|,
 operator|-
-literal|1
+literal|1.0
 argument_list|,
 operator|-
-literal|1
-argument_list|)
-expr_stmt|;
-name|n_points
-operator|=
-name|MIN
-argument_list|(
-name|n_points
-operator|/
-literal|2
-argument_list|,
-name|curve
-operator|->
-name|n_points
+literal|1.0
 argument_list|)
 expr_stmt|;
 for|for
@@ -1469,8 +1491,8 @@ end_function
 begin_function
 name|GObject
 modifier|*
-DECL|function|gimp_curves_config_new_explicit (gint32 channel,const guint8 * points,gint n_points)
-name|gimp_curves_config_new_explicit
+DECL|function|gimp_curves_config_new_explicit_cruft (gint32 channel,const guint8 * samples,gint n_samples)
+name|gimp_curves_config_new_explicit_cruft
 parameter_list|(
 name|gint32
 name|channel
@@ -1478,10 +1500,10 @@ parameter_list|,
 specifier|const
 name|guint8
 modifier|*
-name|points
+name|samples
 parameter_list|,
 name|gint
-name|n_points
+name|n_samples
 parameter_list|)
 block|{
 name|GimpCurvesConfig
@@ -1504,6 +1526,28 @@ operator|&&
 name|channel
 operator|<=
 name|GIMP_HISTOGRAM_ALPHA
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|samples
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|n_samples
+operator|>=
+literal|2
+operator|&&
+name|n_samples
+operator|<=
+literal|4096
 argument_list|,
 name|NULL
 argument_list|)
@@ -1541,6 +1585,13 @@ argument_list|,
 name|GIMP_CURVE_FREE
 argument_list|)
 expr_stmt|;
+name|gimp_curve_set_n_samples
+argument_list|(
+name|curve
+argument_list|,
+name|n_samples
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -1549,7 +1600,7 @@ literal|0
 init|;
 name|i
 operator|<
-literal|256
+name|n_samples
 condition|;
 name|i
 operator|++
@@ -1568,7 +1619,7 @@ argument_list|,
 operator|(
 name|gdouble
 operator|)
-name|points
+name|samples
 index|[
 name|i
 index|]
@@ -1903,6 +1954,13 @@ argument_list|(
 name|curve
 argument_list|,
 name|GIMP_CURVE_SMOOTH
+argument_list|)
+expr_stmt|;
+name|gimp_curve_set_n_points
+argument_list|(
+name|curve
+argument_list|,
+name|GIMP_CURVE_N_CRUFT_POINTS
 argument_list|)
 expr_stmt|;
 name|gimp_curve_reset

@@ -145,7 +145,7 @@ end_decl_stmt
 begin_function_decl
 name|GObject
 modifier|*
-name|gimp_curves_config_new_spline
+name|gimp_curves_config_new_spline_cruft
 parameter_list|(
 name|gint32
 name|channel
@@ -164,7 +164,7 @@ end_function_decl
 begin_function_decl
 name|GObject
 modifier|*
-name|gimp_curves_config_new_explicit
+name|gimp_curves_config_new_explicit_cruft
 parameter_list|(
 name|gint32
 name|channel
