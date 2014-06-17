@@ -1019,7 +1019,7 @@ name|GObject
 modifier|*
 name|config
 init|=
-name|gimp_curves_config_new_spline
+name|gimp_curves_config_new_explicit
 argument_list|(
 name|channel
 argument_list|,
