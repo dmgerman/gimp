@@ -1278,13 +1278,9 @@ block|}
 block|}
 end_function
 
-begin_define
-DECL|macro|FETCH_ROW
-define|#
-directive|define
-name|FETCH_ROW
-value|1
-end_define
+begin_comment
+comment|/* #define FETCH_ROW 1 */
+end_comment
 
 begin_function
 specifier|static
