@@ -93,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c16100d0103
+DECL|enum|__anon29592de60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -429,36 +429,6 @@ name|dest
 parameter_list|,
 name|GParamFlags
 name|flags
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_curve_set_n_points
-parameter_list|(
-name|GimpCurve
-modifier|*
-name|curve
-parameter_list|,
-name|gint
-name|n_points
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_curve_set_n_samples
-parameter_list|(
-name|GimpCurve
-modifier|*
-name|curve
-parameter_list|,
-name|gint
-name|n_samples
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2753,7 +2723,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|gimp_curve_set_n_points (GimpCurve * curve,gint n_points)
 name|gimp_curve_set_n_points
@@ -2772,6 +2741,20 @@ name|GIMP_IS_CURVE
 argument_list|(
 name|curve
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|n_points
+operator|>=
+literal|2
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|n_points
+operator|<=
+literal|1024
 argument_list|)
 expr_stmt|;
 if|if
@@ -2987,7 +2970,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|gimp_curve_set_n_samples (GimpCurve * curve,gint n_samples)
 name|gimp_curve_set_n_samples
@@ -3006,6 +2988,20 @@ name|GIMP_IS_CURVE
 argument_list|(
 name|curve
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|n_samples
+operator|>=
+literal|256
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|n_samples
+operator|<=
+literal|4096
 argument_list|)
 expr_stmt|;
 if|if
