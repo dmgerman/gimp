@@ -201,7 +201,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab3084c0103
+DECL|enum|__anon2919f88b0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -217,7 +217,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab3084c0203
+DECL|enum|__anon2919f88b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4085,6 +4085,8 @@ argument_list|(
 name|node
 argument_list|,
 name|linear
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|private

@@ -468,6 +468,8 @@ name|gimp_drawable_get_linear
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
