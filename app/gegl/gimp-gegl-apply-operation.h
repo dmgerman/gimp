@@ -17,7 +17,7 @@ name|__GIMP_GEGL_APPLY_OPERATION_H__
 end_define
 
 begin_comment
-comment|/*  generic function, also used by the specific ones below  */
+comment|/*  generic functions, also used by the specific ones below  */
 end_comment
 
 begin_function_decl
@@ -49,6 +49,51 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|dest_rect
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_gegl_apply_cached_operation
+parameter_list|(
+name|GeglBuffer
+modifier|*
+name|src_buffer
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
+parameter_list|,
+name|GeglNode
+modifier|*
+name|operation
+parameter_list|,
+name|GeglBuffer
+modifier|*
+name|dest_buffer
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|dest_rect
+parameter_list|,
+name|GeglBuffer
+modifier|*
+name|cache
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|valid_rects
+parameter_list|,
+name|gint
+name|n_valid_rects
 parameter_list|)
 function_decl|;
 end_function_decl
