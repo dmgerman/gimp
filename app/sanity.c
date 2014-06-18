@@ -1523,6 +1523,8 @@ literal|"gegl:buffer-source"
 block|,
 literal|"gegl:c2g"
 block|,
+literal|"gegl:cache"
+block|,
 literal|"gegl:cartoon"
 block|,
 literal|"gegl:cell-noise"
