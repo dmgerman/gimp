@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f007d70103
+DECL|enum|__anon2af8cfe60103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -343,7 +343,7 @@ literal|"gegl:color"
 block|,
 literal|"gegl:color-reduction"
 block|,
-literal|"gegl:color-rotation"
+literal|"gegl:color-rotate"
 block|,
 literal|"gegl:color-temperature"
 block|,
@@ -457,7 +457,7 @@ block|,
 comment|/* pointless */
 literal|"gegl:fill-path"
 block|,
-literal|"gegl:grey"
+literal|"gegl:gray"
 block|,
 comment|/* we use gimp's op */
 literal|"gegl:hstack"
