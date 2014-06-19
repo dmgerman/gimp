@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28daf4800103
+DECL|enum|__anon2b6fbcc00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -73,7 +73,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28daf4800203
+DECL|enum|__anon2b6fbcc00203
 block|{
 DECL|enumerator|TARGET_NUMBER
 name|TARGET_NUMBER
@@ -2645,15 +2645,31 @@ argument_list|(
 name|spin_button
 argument_list|)
 expr_stmt|;
-comment|/*  round the value to the possible precision of the spinbutton, so    *  a focus-out will not change the value again, causing inadvertend    *  adjustment signals.    */
+if|if
+condition|(
+name|digits
+operator|>
+literal|0
+condition|)
+block|{
+name|gint
+name|power
+init|=
+literal|1
+decl_stmt|;
+while|while
+condition|(
+name|digits
+operator|--
+condition|)
+name|power
+operator|*=
+literal|10
+expr_stmt|;
+comment|/*  round the value to the possible precision of the spinbutton, so        *  a focus-out will not change the value again, causing inadvertend        *  adjustment signals.        */
 name|value
 operator|*=
-name|powl
-argument_list|(
-literal|10
-argument_list|,
-name|digits
-argument_list|)
+name|power
 expr_stmt|;
 name|value
 operator|=
@@ -2664,13 +2680,9 @@ argument_list|)
 expr_stmt|;
 name|value
 operator|/=
-name|powl
-argument_list|(
-literal|10
-argument_list|,
-name|digits
-argument_list|)
+name|power
 expr_stmt|;
+block|}
 name|gtk_adjustment_set_value
 argument_list|(
 name|adjustment
