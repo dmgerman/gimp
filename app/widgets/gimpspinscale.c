@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dfdc200103
+DECL|enum|__anon28daf4800103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -73,7 +73,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dfdc200203
+DECL|enum|__anon28daf4800203
 block|{
 DECL|enumerator|TARGET_NUMBER
 name|TARGET_NUMBER
@@ -2487,6 +2487,9 @@ decl_stmt|;
 name|gdouble
 name|value
 decl_stmt|;
+name|gint
+name|digits
+decl_stmt|;
 name|gimp_spin_scale_get_limits
 argument_list|(
 name|GIMP_SPIN_SCALE
@@ -2635,6 +2638,39 @@ operator|+
 name|lower
 expr_stmt|;
 block|}
+name|digits
+operator|=
+name|gtk_spin_button_get_digits
+argument_list|(
+name|spin_button
+argument_list|)
+expr_stmt|;
+comment|/*  round the value to the possible precision of the spinbutton, so    *  a focus-out will not change the value again, causing inadvertend    *  adjustment signals.    */
+name|value
+operator|*=
+name|powl
+argument_list|(
+literal|10
+argument_list|,
+name|digits
+argument_list|)
+expr_stmt|;
+name|value
+operator|=
+name|RINT
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+name|value
+operator|/=
+name|powl
+argument_list|(
+literal|10
+argument_list|,
+name|digits
+argument_list|)
+expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
 name|adjustment
