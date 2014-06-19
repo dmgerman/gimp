@@ -956,7 +956,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"<Image>/Filters/Render"
+literal|"<Image>/Filters/Render/Fractals"
 argument_list|)
 expr_stmt|;
 block|}

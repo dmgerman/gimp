@@ -155,7 +155,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2ae3cf270108
+DECL|struct|__anon2acc57b90108
 block|{
 DECL|member|randomize
 name|gint
@@ -595,7 +595,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"<Image>/Filters/Render/Nature"
+literal|"<Image>/Filters/Render/Fractals"
 argument_list|)
 expr_stmt|;
 block|}
