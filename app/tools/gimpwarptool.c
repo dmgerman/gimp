@@ -337,6 +337,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|gboolean
 name|gimp_warp_tool_undo
 parameter_list|(
@@ -352,6 +353,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|gboolean
 name|gimp_warp_tool_redo
 parameter_list|(
@@ -362,6 +364,27 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_warp_tool_options_notify
+parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
+parameter_list|,
+name|GimpToolOptions
+modifier|*
+name|options
+parameter_list|,
+specifier|const
+name|GParamSpec
+modifier|*
+name|pspec
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -696,6 +719,12 @@ operator|->
 name|redo
 operator|=
 name|gimp_warp_tool_redo
+expr_stmt|;
+name|tool_class
+operator|->
+name|options_notify
+operator|=
+name|gimp_warp_tool_options_notify
 expr_stmt|;
 name|draw_tool_class
 operator|->
@@ -1830,6 +1859,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gboolean
 DECL|function|gimp_warp_tool_undo (GimpTool * tool,GimpDisplay * display)
 name|gimp_warp_tool_undo
@@ -1977,6 +2007,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gboolean
 DECL|function|gimp_warp_tool_redo (GimpTool * tool,GimpDisplay * display)
 name|gimp_warp_tool_redo
@@ -2063,6 +2094,73 @@ expr_stmt|;
 return|return
 name|TRUE
 return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_warp_tool_options_notify (GimpTool * tool,GimpToolOptions * options,const GParamSpec * pspec)
+name|gimp_warp_tool_options_notify
+parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
+parameter_list|,
+name|GimpToolOptions
+modifier|*
+name|options
+parameter_list|,
+specifier|const
+name|GParamSpec
+modifier|*
+name|pspec
+parameter_list|)
+block|{
+name|GIMP_TOOL_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|options_notify
+argument_list|(
+name|tool
+argument_list|,
+name|options
+argument_list|,
+name|pspec
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|strcmp
+argument_list|(
+name|pspec
+operator|->
+name|name
+argument_list|,
+literal|"effect-size"
+argument_list|)
+condition|)
+block|{
+name|gimp_draw_tool_pause
+argument_list|(
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_draw_tool_resume
+argument_list|(
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
