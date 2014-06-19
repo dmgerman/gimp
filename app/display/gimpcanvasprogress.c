@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7fe0450103
+DECL|enum|__anon2c5f82070103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -943,6 +943,19 @@ argument_list|,
 name|width
 argument_list|,
 name|height
+argument_list|)
+expr_stmt|;
+operator|*
+name|width
+operator|=
+name|MAX
+argument_list|(
+operator|*
+name|width
+argument_list|,
+literal|2
+operator|*
+name|RADIUS
 argument_list|)
 expr_stmt|;
 operator|*
