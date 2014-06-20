@@ -1052,7 +1052,7 @@ if|if
 condition|(
 name|keys
 condition|)
-name|g_param_spec_set_qdata
+name|g_param_spec_set_qdata_full
 argument_list|(
 name|copy
 argument_list|,
@@ -1062,6 +1062,11 @@ name|g_hash_table_ref
 argument_list|(
 name|keys
 argument_list|)
+argument_list|,
+operator|(
+name|GDestroyNotify
+operator|)
+name|g_hash_table_unref
 argument_list|)
 expr_stmt|;
 block|}
