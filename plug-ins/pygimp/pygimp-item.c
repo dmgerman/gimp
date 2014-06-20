@@ -640,6 +640,25 @@ argument_list|(
 name|ID
 argument_list|)
 condition|)
+block|{
+if|if
+condition|(
+name|gimp_item_is_group
+argument_list|(
+name|ID
+argument_list|)
+condition|)
+block|{
+name|self
+operator|=
+name|pygimp_group_layer_new
+argument_list|(
+name|ID
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|self
 operator|=
 name|pygimp_drawable_new
@@ -649,6 +668,8 @@ argument_list|,
 name|ID
 argument_list|)
 expr_stmt|;
+block|}
+block|}
 else|else
 comment|/* Vectors */
 name|self
