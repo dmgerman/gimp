@@ -1031,6 +1031,11 @@ argument_list|(
 name|buffer
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|buffer
+argument_list|)
+expr_stmt|;
 name|widget
 operator|=
 name|gtk_scrolled_window_new
@@ -1362,7 +1367,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28d580240108
+DECL|struct|__anon2b792d980108
 block|{
 DECL|member|config_type
 specifier|const
@@ -1905,7 +1910,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon28d580240208
+DECL|struct|__anon2b792d980208
 block|{
 DECL|member|kelvin
 name|gdouble
