@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf839a30103
+DECL|enum|__anon291aa1a00103
 block|{
 comment|/* POINT_NONE evaluates to FALSE */
 DECL|enumerator|POINT_NONE
@@ -193,6 +193,21 @@ DECL|member|end_handle
 name|GimpCanvasItem
 modifier|*
 name|end_handle
+decl_stmt|;
+DECL|member|graph
+name|GeglNode
+modifier|*
+name|graph
+decl_stmt|;
+DECL|member|render_node
+name|GeglNode
+modifier|*
+name|render_node
+decl_stmt|;
+DECL|member|image_map
+name|GimpImageMap
+modifier|*
+name|image_map
 decl_stmt|;
 block|}
 struct|;
