@@ -7805,27 +7805,14 @@ begin_comment
 comment|/* No need to expose "gimp_export_dialog_get_content_area",  * because one just have to call the "get_content_area" method  * on the returned export_dialog  */
 end_comment
 
-begin_decl_stmt
-specifier|static
-name|PyObject
-modifier|*
-name|pygimp_export_dialog_
-argument_list|(
-name|PyObject
-operator|*
-name|self
-argument_list|,
-name|PyObject
-operator|*
-name|args
-argument_list|,
-name|PyObject
-operator|*
-name|kwargs
-argument_list|)
+begin_comment
 comment|/* List of methods defined in the module */
+end_comment
+
+begin_decl_stmt
 DECL|variable|gimp_methods
-decl|static struct
+specifier|static
+name|struct
 name|PyMethodDef
 name|gimp_methods
 index|[]
