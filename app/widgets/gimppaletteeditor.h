@@ -113,10 +113,10 @@ name|GtkWidget
 modifier|*
 name|color_name
 decl_stmt|;
-DECL|member|columns_data
+DECL|member|columns_adj
 name|GtkAdjustment
 modifier|*
-name|columns_data
+name|columns_adj
 decl_stmt|;
 DECL|member|color_dialog
 name|GtkWidget
