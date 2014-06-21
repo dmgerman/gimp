@@ -482,6 +482,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gtk_spin_button_new
+argument_list|)
+end_macro
+
 begin_function_decl
 name|GtkWidget
 modifier|*
