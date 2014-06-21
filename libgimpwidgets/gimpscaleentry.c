@@ -563,7 +563,7 @@ name|page_increment
 argument_list|,
 literal|0.0
 argument_list|,
-literal|1.0
+name|step_increment
 argument_list|,
 name|digits
 argument_list|)
@@ -632,7 +632,7 @@ name|page_increment
 argument_list|,
 literal|0.0
 argument_list|,
-literal|1.0
+name|step_increment
 argument_list|,
 name|digits
 argument_list|)
