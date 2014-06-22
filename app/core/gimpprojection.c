@@ -160,7 +160,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|GIMP_PROJECTION_CHUNK_TIME
 specifier|static
-name|gint
+name|gdouble
 name|GIMP_PROJECTION_CHUNK_TIME
 init|=
 literal|0.0666
@@ -169,7 +169,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27eb81680103
+DECL|enum|__anon2c2e92ad0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -182,7 +182,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27eb81680203
+DECL|enum|__anon2c2e92ad0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
