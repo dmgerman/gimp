@@ -193,6 +193,23 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_image_map_set_mode
+parameter_list|(
+name|GimpImageMap
+modifier|*
+name|image_map
+parameter_list|,
+name|gdouble
+name|opacity
+parameter_list|,
+name|GimpLayerModeEffects
+name|paint_mode
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_image_map_apply
 parameter_list|(
 name|GimpImageMap
