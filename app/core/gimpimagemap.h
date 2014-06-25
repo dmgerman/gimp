@@ -124,7 +124,7 @@ comment|/*  Image Map functions  */
 end_comment
 
 begin_comment
-comment|/*  Successive image_map_apply functions can be called, but eventually  *  MUST be followed with an image_map_commit or an image_map_abort call  *  The image map is no longer valid after a call to commit or abort.  */
+comment|/*  Successive image_map_apply functions can be called, but eventually  *  MUST be followed with an image_map_commit or an image_map_abort call,  *  both of which will remove the live filter from the drawable.  */
 end_comment
 
 begin_decl_stmt

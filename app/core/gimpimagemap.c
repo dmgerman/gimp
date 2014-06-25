@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* This file contains the code necessary for generating on canvas  * previews, either by connecting a function to process the pixels or  * by connecting a specified GEGL operation to do the processing. It  * keeps an undo buffer to allow direct modification of the pixel data  * (so that it will show up in the projection) and it will restore the  * source in case the mapping procedure was cancelled.  *  * To create a tool that uses this, see /tools/gimpimagemaptool.c for  * the interface and /tools/gimpcolorbalancetool.c for an example of  * using that interface.  *  * Note that when talking about on canvas preview, we are speaking  * about non destructive image editing where the operation is previewd  * before being applied.  */
+comment|/* This file contains the code necessary for generating on canvas  * previews, by connecting a specified GEGL operation to do the  * processing. It uses drawable filters that allow for non-destructive  * manupulation of drawable data, with live preview on screen.  *  * To create a tool that uses this, see /tools/gimpimagemaptool.c for  * the interface and /tools/gimpcolorbalancetool.c for an example of  * using that interface.  */
 end_comment
 
 begin_include
@@ -87,7 +87,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299b0a650103
+DECL|enum|__anon27c2e0d40103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -131,14 +131,6 @@ DECL|member|region
 name|GimpImageMapRegion
 name|region
 decl_stmt|;
-DECL|member|gamma_hack
-name|gboolean
-name|gamma_hack
-decl_stmt|;
-DECL|member|filter_area
-name|GeglRectangle
-name|filter_area
-decl_stmt|;
 DECL|member|opacity
 name|gdouble
 name|opacity
@@ -146,6 +138,14 @@ decl_stmt|;
 DECL|member|paint_mode
 name|GimpLayerModeEffects
 name|paint_mode
+decl_stmt|;
+DECL|member|gamma_hack
+name|gboolean
+name|gamma_hack
+decl_stmt|;
+DECL|member|filter_area
+name|GeglRectangle
+name|filter_area
 decl_stmt|;
 DECL|member|filter
 name|GimpFilter
