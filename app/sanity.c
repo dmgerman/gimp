@@ -1585,6 +1585,8 @@ literal|"gegl:matting-global"
 block|,
 comment|/*  "gegl:matting-levin",*/
 comment|/* XXX: do we want to require this? */
+literal|"gegl:mirrors"
+block|,
 literal|"gegl:mono-mixer"
 block|,
 literal|"gegl:motion-blur-circular"
