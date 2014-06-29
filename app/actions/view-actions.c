@@ -2330,7 +2330,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-literal|"view-rotate-action"
+literal|"view-action"
 argument_list|,
 name|view_rotate_actions
 argument_list|,
