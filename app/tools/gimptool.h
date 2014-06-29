@@ -193,6 +193,11 @@ name|GimpDisplay
 modifier|*
 name|progress_display
 decl_stmt|;
+DECL|member|progress_grab_widget
+name|GtkWidget
+modifier|*
+name|progress_grab_widget
+decl_stmt|;
 block|}
 struct|;
 end_struct
