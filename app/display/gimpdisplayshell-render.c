@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpprojection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplay.h"
 end_include
 
@@ -162,10 +156,6 @@ block|{
 name|GimpImage
 modifier|*
 name|image
-decl_stmt|;
-name|GimpProjection
-modifier|*
-name|projection
 decl_stmt|;
 name|GeglBuffer
 modifier|*
@@ -272,20 +262,13 @@ operator|->
 name|display
 argument_list|)
 expr_stmt|;
-name|projection
-operator|=
-name|gimp_image_get_projection
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
 name|buffer
 operator|=
 name|gimp_pickable_get_buffer
 argument_list|(
 name|GIMP_PICKABLE
 argument_list|(
-name|projection
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
