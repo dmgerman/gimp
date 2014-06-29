@@ -388,7 +388,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e44a5e0103
+DECL|enum|__anon2ae504b80103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -485,7 +485,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e44a5e0203
+DECL|enum|__anon2ae504b80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -16007,23 +16007,6 @@ name|children
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-operator|!
-name|new_active
-operator|&&
-name|private
-operator|->
-name|layer_stack
-condition|)
-name|new_active
-operator|=
-name|private
-operator|->
-name|layer_stack
-operator|->
-name|data
-expr_stmt|;
 name|new_active
 operator|=
 name|GIMP_LAYER
