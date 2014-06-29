@@ -110,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294918d00108
+DECL|struct|__anon2b1c4b420108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -857,7 +857,7 @@ argument_list|,
 literal|0.0
 argument_list|)
 expr_stmt|;
-return|return;
+break|break;
 case|case
 name|GTK_RESPONSE_CANCEL
 case|:
@@ -874,8 +874,6 @@ argument_list|)
 expr_stmt|;
 comment|/* fall thru */
 default|default:
-break|break;
-block|}
 name|gtk_widget_destroy
 argument_list|(
 name|dialog
@@ -885,6 +883,8 @@ operator|->
 name|rotate_dialog
 argument_list|)
 expr_stmt|;
+break|break;
+block|}
 block|}
 end_function
 
