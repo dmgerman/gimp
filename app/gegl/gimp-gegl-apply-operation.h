@@ -54,7 +54,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_gegl_apply_cached_operation
 parameter_list|(
 name|GeglBuffer
@@ -94,6 +94,9 @@ name|valid_rects
 parameter_list|,
 name|gint
 name|n_valid_rects
+parameter_list|,
+name|gboolean
+name|cancelable
 parameter_list|)
 function_decl|;
 end_function_decl
