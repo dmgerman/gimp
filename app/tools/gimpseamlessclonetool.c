@@ -237,7 +237,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29456a680103
+DECL|enum|__anon2afcae390103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -1247,6 +1247,8 @@ name|GIMP_PROGRESS
 argument_list|(
 name|tool
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1833,6 +1835,8 @@ name|GIMP_PROGRESS
 argument_list|(
 name|tool
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_unref

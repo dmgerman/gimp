@@ -225,7 +225,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_image_map_commit
 parameter_list|(
 name|GimpImageMap
@@ -235,6 +235,9 @@ parameter_list|,
 name|GimpProgress
 modifier|*
 name|progress
+parameter_list|,
+name|gboolean
+name|cancelable
 parameter_list|)
 function_decl|;
 end_function_decl

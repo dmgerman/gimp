@@ -301,8 +301,8 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|gimp_drawable_merge_filter (GimpDrawable * drawable,GimpFilter * filter,GimpProgress * progress,const gchar * undo_desc)
+name|gboolean
+DECL|function|gimp_drawable_merge_filter (GimpDrawable * drawable,GimpFilter * filter,GimpProgress * progress,const gchar * undo_desc,gboolean cancelable)
 name|gimp_drawable_merge_filter
 parameter_list|(
 name|GimpDrawable
@@ -321,10 +321,18 @@ specifier|const
 name|gchar
 modifier|*
 name|undo_desc
+parameter_list|,
+name|gboolean
+name|cancelable
 parameter_list|)
 block|{
 name|GeglRectangle
 name|rect
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -608,7 +616,7 @@ name|rects
 argument_list|,
 name|n_rects
 argument_list|,
-name|TRUE
+name|cancelable
 argument_list|)
 condition|)
 block|{
@@ -734,6 +742,11 @@ literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* canceled by the user */
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 name|g_object_unref
 argument_list|(
@@ -778,6 +791,9 @@ name|height
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+name|success
+return|;
 block|}
 end_function
 

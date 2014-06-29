@@ -74,7 +74,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_drawable_merge_filter
 parameter_list|(
 name|GimpDrawable
@@ -93,6 +93,9 @@ specifier|const
 name|gchar
 modifier|*
 name|undo_desc
+parameter_list|,
+name|gboolean
+name|cancelable
 parameter_list|)
 function_decl|;
 end_function_decl

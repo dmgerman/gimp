@@ -2620,6 +2620,8 @@ name|GIMP_PROGRESS
 argument_list|(
 name|tool
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_unref

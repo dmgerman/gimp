@@ -165,7 +165,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8df5d60103
+DECL|enum|__anon2c2c7f050103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -3638,6 +3638,8 @@ name|GIMP_PROGRESS
 argument_list|(
 name|tool
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_unref

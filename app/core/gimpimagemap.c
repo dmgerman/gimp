@@ -87,7 +87,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c2e0d40103
+DECL|enum|__anon29f097180103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1494,8 +1494,8 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|gimp_image_map_commit (GimpImageMap * image_map,GimpProgress * progress)
+name|gboolean
+DECL|function|gimp_image_map_commit (GimpImageMap * image_map,GimpProgress * progress,gboolean cancelable)
 name|gimp_image_map_commit
 parameter_list|(
 name|GimpImageMap
@@ -1505,8 +1505,16 @@ parameter_list|,
 name|GimpProgress
 modifier|*
 name|progress
+parameter_list|,
+name|gboolean
+name|cancelable
 parameter_list|)
 block|{
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE_MAP
@@ -1535,6 +1543,8 @@ name|image_map
 argument_list|)
 condition|)
 block|{
+name|success
+operator|=
 name|gimp_drawable_merge_filter
 argument_list|(
 name|image_map
@@ -1550,6 +1560,8 @@ argument_list|,
 name|image_map
 operator|->
 name|undo_desc
+argument_list|,
+name|cancelable
 argument_list|)
 expr_stmt|;
 name|gimp_image_map_remove_filter
@@ -1570,6 +1582,9 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+name|success
+return|;
 block|}
 end_function
 
