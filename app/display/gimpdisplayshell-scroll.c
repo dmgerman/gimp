@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpprojection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcanvas.h"
 end_include
 
@@ -124,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9dd8f70108
+DECL|struct|__anon2b2621c00108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
