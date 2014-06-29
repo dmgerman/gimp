@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291aa1a00103
+DECL|enum|__anon2769640c0103
 block|{
 comment|/* POINT_NONE evaluates to FALSE */
 DECL|enumerator|POINT_NONE
@@ -148,6 +148,11 @@ decl_stmt|;
 DECL|member|grabbed_point
 name|GimpBlendToolPoint
 name|grabbed_point
+decl_stmt|;
+DECL|member|gradient
+name|GimpGradient
+modifier|*
+name|gradient
 decl_stmt|;
 DECL|member|start_x
 name|gdouble
