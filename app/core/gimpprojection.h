@@ -208,6 +208,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_projection_stop_rendering
+parameter_list|(
+name|GimpProjection
+modifier|*
+name|proj
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_projection_flush
 parameter_list|(
 name|GimpProjection
