@@ -87,7 +87,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f097180103
+DECL|enum|__anon2b3044860103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1515,15 +1515,17 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE_MAP
 argument_list|(
 name|image_map
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|progress
 operator|==
@@ -1533,6 +1535,8 @@ name|GIMP_IS_PROGRESS
 argument_list|(
 name|progress
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
