@@ -169,7 +169,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ea92870103
+DECL|enum|__anon2b9955490103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -182,7 +182,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ea92870203
+DECL|enum|__anon2b9955490203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3229,7 +3229,7 @@ name|chunk_render
 operator|->
 name|work_x
 operator|+=
-name|GIMP_PROJECTION_CHUNK_WIDTH
+name|work_w
 expr_stmt|;
 if|if
 condition|(
@@ -3258,7 +3258,7 @@ name|chunk_render
 operator|->
 name|work_y
 operator|+=
-name|GIMP_PROJECTION_CHUNK_HEIGHT
+name|work_h
 expr_stmt|;
 if|if
 condition|(
