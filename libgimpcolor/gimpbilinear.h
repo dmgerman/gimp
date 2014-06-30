@@ -149,6 +149,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GIMP_DEPRECATED
 name|void
 name|gimp_bilinear_pixels_8
 parameter_list|(
