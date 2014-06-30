@@ -303,15 +303,6 @@ name|config
 operator|->
 name|saturation
 expr_stmt|;
-name|hsl
-operator|.
-name|a
-operator|=
-name|src
-index|[
-name|ALPHA
-index|]
-expr_stmt|;
 while|while
 condition|(
 name|samples
@@ -424,7 +415,7 @@ name|rgb
 operator|.
 name|r
 expr_stmt|;
-comment|/* * lum; */
+comment|/* * lum */
 name|dest
 index|[
 name|GREEN
@@ -434,7 +425,7 @@ name|rgb
 operator|.
 name|g
 expr_stmt|;
-comment|/* * lum; */
+comment|/* * lum */
 name|dest
 index|[
 name|BLUE
@@ -445,7 +436,6 @@ operator|.
 name|b
 expr_stmt|;
 comment|/* * lum */
-empty_stmt|;
 name|dest
 index|[
 name|ALPHA
