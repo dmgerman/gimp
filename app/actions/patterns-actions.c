@@ -406,10 +406,9 @@ name|data
 init|=
 name|NULL
 decl_stmt|;
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 init|=
 name|NULL
 decl_stmt|;
@@ -452,9 +451,9 @@ argument_list|(
 name|pattern
 argument_list|)
 expr_stmt|;
-name|filename
+name|file
 operator|=
-name|gimp_data_get_filename
+name|gimp_data_get_file
 argument_list|(
 name|data
 argument_list|)
@@ -487,7 +486,7 @@ literal|"patterns-open-as-image"
 argument_list|,
 name|pattern
 operator|&&
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -510,7 +509,7 @@ literal|"patterns-copy-location"
 argument_list|,
 name|pattern
 operator|&&
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

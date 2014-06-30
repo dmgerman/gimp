@@ -79,6 +79,10 @@ name|error
 parameter_list|)
 block|{
 comment|/* GimpCurve *curve; */
+name|gchar
+modifier|*
+name|path
+decl_stmt|;
 name|FILE
 modifier|*
 name|file
@@ -108,14 +112,21 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* curve = GIMP_CURVE (data); */
+name|path
+operator|=
+name|g_file_get_path
+argument_list|(
+name|gimp_data_get_file
+argument_list|(
+name|data
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|file
 operator|=
 name|g_fopen
 argument_list|(
-name|gimp_data_get_filename
-argument_list|(
-name|data
-argument_list|)
+name|path
 argument_list|,
 literal|"wb"
 argument_list|)
@@ -141,10 +152,7 @@ argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|gimp_data_get_filename
-argument_list|(
-name|data
-argument_list|)
+name|path
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -153,10 +161,20 @@ name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
 block|}
+name|g_free
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
 comment|/* FIXME: write curve */
 name|fclose
 argument_list|(
