@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdrawable.h"
 end_include
 
@@ -421,6 +427,12 @@ name|applicator
 decl_stmt|;
 name|GeglBuffer
 modifier|*
+name|apply_buffer
+init|=
+name|NULL
+decl_stmt|;
+name|GeglBuffer
+modifier|*
 name|cache
 init|=
 name|NULL
@@ -513,6 +525,18 @@ condition|(
 name|applicator
 condition|)
 block|{
+comment|/*  the apply_buffer will make a copy of the region that is            *  actually processed in gimp_gegl_apply_cached_operation()            *  below.            */
+name|apply_buffer
+operator|=
+name|gimp_applicator_dup_apply_buffer
+argument_list|(
+name|applicator
+argument_list|,
+operator|&
+name|rect
+argument_list|)
+expr_stmt|;
+comment|/*  the cache and its valid rectangles are the region that            *  has already been processed by this applicator.            */
 name|cache
 operator|=
 name|gimp_applicator_get_cache_buffer
@@ -547,6 +571,7 @@ condition|;
 name|i
 operator|++
 control|)
+block|{
 name|g_printerr
 argument_list|(
 literal|"valid: %d %d %d %d\n"
@@ -580,6 +605,50 @@ operator|.
 name|height
 argument_list|)
 expr_stmt|;
+comment|/*  we have to copy the cached region to the apply_buffer,                    *  because this region is not going to be processed.                    */
+name|gegl_buffer_copy
+argument_list|(
+name|cache
+argument_list|,
+operator|&
+name|rects
+index|[
+name|i
+index|]
+argument_list|,
+name|apply_buffer
+argument_list|,
+name|GEGL_RECTANGLE
+argument_list|(
+name|rects
+index|[
+name|i
+index|]
+operator|.
+name|x
+operator|-
+name|rect
+operator|.
+name|x
+argument_list|,
+name|rects
+index|[
+name|i
+index|]
+operator|.
+name|y
+operator|-
+name|rect
+operator|.
+name|y
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 name|gimp_projection_stop_rendering
@@ -626,6 +695,7 @@ name|cancelable
 argument_list|)
 condition|)
 block|{
+comment|/*  finished successfully  */
 name|gimp_drawable_push_undo
 argument_list|(
 name|drawable
@@ -695,19 +765,18 @@ name|undo
 operator|->
 name|applied_buffer
 operator|=
-name|gimp_applicator_dup_apply_buffer
-argument_list|(
-name|applicator
-argument_list|,
-operator|&
-name|rect
-argument_list|)
+name|apply_buffer
+expr_stmt|;
+name|apply_buffer
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 block|}
 block|}
 else|else
 block|{
+comment|/*  canceled by the user  */
 name|gegl_buffer_copy
 argument_list|(
 name|undo_buffer
@@ -748,7 +817,6 @@ literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* canceled by the user */
 name|success
 operator|=
 name|FALSE
@@ -757,6 +825,15 @@ block|}
 name|g_object_unref
 argument_list|(
 name|undo_buffer
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|apply_buffer
+condition|)
+name|g_object_unref
+argument_list|(
+name|apply_buffer
 argument_list|)
 expr_stmt|;
 if|if
