@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gio/gio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
@@ -94,7 +100,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f08fbd0103
+DECL|enum|__anon2b0684fe0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -119,7 +125,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f08fbd0203
+DECL|enum|__anon2b0684fe0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -136,7 +142,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f08fbd0308
+DECL|struct|__anon2b0684fe0308
 block|{
 DECL|member|signame
 name|gchar
@@ -1280,7 +1286,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f08fbd0408
+DECL|struct|__anon2b0684fe0408
 block|{
 DECL|member|writer
 name|GimpConfigWriter
