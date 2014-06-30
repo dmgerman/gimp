@@ -147,6 +147,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GIMP_DEPRECATED
 name|void
 name|gimp_rgb_to_hwb
 parameter_list|(
@@ -171,6 +172,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GIMP_DEPRECATED
 name|void
 name|gimp_hwb_to_rgb
 parameter_list|(
@@ -194,6 +196,13 @@ begin_comment
 comment|/*  gint functions  */
 end_comment
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_rgb_to_hsv
+argument_list|)
+end_macro
+
 begin_function_decl
 name|void
 name|gimp_rgb_to_hsv_int
@@ -216,6 +225,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_hsv_to_rgb
+argument_list|)
+end_macro
+
 begin_function_decl
 name|void
 name|gimp_hsv_to_rgb_int
@@ -237,6 +253,13 @@ comment|/* returns blue       */
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_rgb_to_cmyk
+argument_list|)
+end_macro
 
 begin_function_decl
 name|void
@@ -265,6 +288,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_cmyk_to_rgb
+argument_list|)
+end_macro
+
 begin_function_decl
 name|void
 name|gimp_cmyk_to_rgb_int
@@ -292,6 +322,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_rgb_to_hsl
+argument_list|)
+end_macro
+
 begin_function_decl
 name|void
 name|gimp_rgb_to_hsl_int
@@ -314,6 +351,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_rgb_to_hsl
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gint
 name|gimp_rgb_to_l_int
@@ -329,6 +373,13 @@ name|blue
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_hsl_to_rgb
+argument_list|)
+end_macro
 
 begin_function_decl
 name|void
@@ -356,6 +407,13 @@ begin_comment
 comment|/*  gdouble functions  */
 end_comment
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_rgb_to_hsv
+argument_list|)
+end_macro
+
 begin_function_decl
 name|void
 name|gimp_rgb_to_hsv4
@@ -379,6 +437,13 @@ name|value
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_hsv_to_rgb
+argument_list|)
+end_macro
 
 begin_function_decl
 name|void
