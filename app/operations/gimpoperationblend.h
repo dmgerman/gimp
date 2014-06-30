@@ -112,6 +112,11 @@ DECL|member|parent_instance
 name|GeglOperationSource
 name|parent_instance
 decl_stmt|;
+DECL|member|context
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 DECL|member|gradient
 name|GimpGradient
 modifier|*
