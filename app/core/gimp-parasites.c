@@ -419,9 +419,9 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 decl_stmt|;
 name|GError
 modifier|*
@@ -437,9 +437,9 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|filename
+name|file
 operator|=
-name|gimp_personal_rc_file
+name|gimp_personal_rc_gfile
 argument_list|(
 literal|"parasiterc"
 argument_list|)
@@ -454,16 +454,16 @@ name|g_print
 argument_list|(
 literal|"Parsing '%s'\n"
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_config_deserialize_file
+name|gimp_config_deserialize_gfile
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
@@ -472,7 +472,7 @@ operator|->
 name|parasites
 argument_list|)
 argument_list|,
-name|filename
+name|file
 argument_list|,
 name|NULL
 argument_list|,
@@ -508,9 +508,9 @@ name|error
 argument_list|)
 expr_stmt|;
 block|}
-name|g_free
+name|g_object_unref
 argument_list|(
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 block|}
@@ -542,9 +542,9 @@ name|footer
 init|=
 literal|"end of parasiterc"
 decl_stmt|;
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 decl_stmt|;
 name|GError
 modifier|*
@@ -570,9 +570,9 @@ name|parasites
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|filename
+name|file
 operator|=
-name|gimp_personal_rc_file
+name|gimp_personal_rc_gfile
 argument_list|(
 literal|"parasiterc"
 argument_list|)
@@ -587,16 +587,16 @@ name|g_print
 argument_list|(
 literal|"Writing '%s'\n"
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_config_serialize_to_file
+name|gimp_config_serialize_to_gfile
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
@@ -605,7 +605,7 @@ operator|->
 name|parasites
 argument_list|)
 argument_list|,
-name|filename
+name|file
 argument_list|,
 name|header
 argument_list|,
@@ -637,9 +637,9 @@ name|error
 argument_list|)
 expr_stmt|;
 block|}
-name|g_free
+name|g_object_unref
 argument_list|(
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 block|}

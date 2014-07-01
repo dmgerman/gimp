@@ -2335,10 +2335,10 @@ end_function
 
 begin_function
 specifier|static
-name|char
+name|GFile
 modifier|*
-DECL|function|dialogs_get_dockrc_filename (void)
-name|dialogs_get_dockrc_filename
+DECL|function|dialogs_get_dockrc_file (void)
+name|dialogs_get_dockrc_file
 parameter_list|(
 name|void
 parameter_list|)
@@ -2365,7 +2365,7 @@ operator|=
 literal|"dockrc"
 expr_stmt|;
 return|return
-name|gimp_personal_rc_file
+name|gimp_personal_rc_gfile
 argument_list|(
 name|basename
 argument_list|)
@@ -2383,9 +2383,9 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 decl_stmt|;
 name|GError
 modifier|*
@@ -2401,9 +2401,9 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|filename
+name|file
 operator|=
-name|dialogs_get_dockrc_filename
+name|dialogs_get_dockrc_file
 argument_list|()
 expr_stmt|;
 if|if
@@ -2416,23 +2416,23 @@ name|g_print
 argument_list|(
 literal|"Parsing '%s'\n"
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_config_deserialize_file
+name|gimp_config_deserialize_gfile
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
 name|global_recent_docks
 argument_list|)
 argument_list|,
-name|filename
+name|file
 argument_list|,
 name|NULL
 argument_list|,
@@ -2469,6 +2469,11 @@ name|error
 argument_list|)
 expr_stmt|;
 block|}
+name|g_object_unref
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 comment|/* In GIMP 2.6 dockrc did not contain the factory entries for the    * session infos, so set that up manually if needed    */
 name|gimp_container_foreach
 argument_list|(
@@ -2490,11 +2495,6 @@ name|global_recent_docks
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -2508,9 +2508,9 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 decl_stmt|;
 name|GError
 modifier|*
@@ -2526,9 +2526,9 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|filename
+name|file
 operator|=
-name|dialogs_get_dockrc_filename
+name|dialogs_get_dockrc_file
 argument_list|()
 expr_stmt|;
 if|if
@@ -2541,23 +2541,23 @@ name|g_print
 argument_list|(
 literal|"Writing '%s'\n"
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_config_serialize_to_file
+name|gimp_config_serialize_to_gfile
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
 name|global_recent_docks
 argument_list|)
 argument_list|,
-name|filename
+name|file
 argument_list|,
 literal|"recently closed docks"
 argument_list|,
@@ -2590,9 +2590,9 @@ name|error
 argument_list|)
 expr_stmt|;
 block|}
-name|g_free
+name|g_object_unref
 argument_list|(
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 block|}

@@ -115,7 +115,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2277890103
+DECL|enum|__anon2bc931160103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1407,10 +1407,7 @@ argument_list|,
 operator|&
 name|my_error
 argument_list|)
-condition|)
-block|{
-if|if
-condition|(
+operator|&&
 name|my_error
 operator|->
 name|code
@@ -1452,7 +1449,6 @@ operator|&
 name|my_error
 argument_list|)
 expr_stmt|;
-block|}
 name|g_object_unref
 argument_list|(
 name|file
