@@ -58,7 +58,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gio/gio.h>
 end_include
 
 begin_include
@@ -1587,7 +1587,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_personal_rc_file:  * @basename: The basename of a rc_file.  *  * Returns the name of a file in the user-specific GIMP settings directory.  *  * The returned string is allocated dynamically and *SHOULD* be freed  * with g_free() after use. The returned string is in the encoding  * used for filenames by GLib, which isn't necessarily  * UTF-8. (On Windows it always is UTF-8.)  *  * Returns: The name of a file in the user-specific GIMP settings directory.  **/
+comment|/**  * gimp_personal_rc_file:  * @basename: The basename of a rc_file.  *  * Returns the name of a file in the user-specific GIMP settings directory.  *  * The returned string is newly allocated and should be freed with  * g_free() after use. The returned string is in the encoding used for  * filenames by GLib, which isn't necessarily UTF-8. (On Windows it  * always is UTF-8.)  *  * Returns: The name of a file in the user-specific GIMP settings directory.  **/
 end_comment
 
 begin_function
@@ -1612,6 +1612,53 @@ name|basename
 argument_list|,
 name|NULL
 argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_personal_rc_gfile:  * @basename: The basename of a rc_file.  *  * Returns a #GFile in the user-specific GIMP settings directory.  *  * The returned #GFile is newly allocated and should be freed with  * g_object_unref() after use.  *  * See gimp_personal_rc_file().  *  * Since: GIMP 2.10  *  * Returns: A #GFile in the user-specific GIMP settings directory.  **/
+end_comment
+
+begin_function
+name|GFile
+modifier|*
+DECL|function|gimp_personal_rc_gfile (const gchar * basename)
+name|gimp_personal_rc_gfile
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|basename
+parameter_list|)
+block|{
+name|gchar
+modifier|*
+name|path
+init|=
+name|gimp_personal_rc_file
+argument_list|(
+name|basename
+argument_list|)
+decl_stmt|;
+name|GFile
+modifier|*
+name|file
+decl_stmt|;
+name|file
+operator|=
+name|g_file_new_for_path
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
+return|return
+name|file
 return|;
 block|}
 end_function

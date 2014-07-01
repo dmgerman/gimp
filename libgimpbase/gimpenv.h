@@ -236,6 +236,19 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
+name|GFile
+modifier|*
+name|gimp_personal_rc_gfile
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|basename
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GList
 modifier|*
 name|gimp_path_parse
