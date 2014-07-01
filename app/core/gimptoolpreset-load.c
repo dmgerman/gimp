@@ -174,15 +174,6 @@ return|;
 block|}
 else|else
 block|{
-name|gchar
-modifier|*
-name|path
-init|=
-name|g_file_get_path
-argument_list|(
-name|file
-argument_list|)
-decl_stmt|;
 name|g_set_error
 argument_list|(
 name|error
@@ -196,15 +187,10 @@ argument_list|(
 literal|"Error while parsing '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
 argument_list|)
 expr_stmt|;
 block|}

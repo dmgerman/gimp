@@ -215,6 +215,11 @@ argument_list|,
 literal|"rb"
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -234,20 +239,15 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
 name|errno
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
 argument_list|)
 expr_stmt|;
 return|return
@@ -260,7 +260,7 @@ name|gimp_palette_load_gpl
 argument_list|(
 name|context
 argument_list|,
-name|path
+name|file
 argument_list|,
 name|f
 argument_list|,
@@ -281,21 +281,20 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_palette_load_gpl (GimpContext * context,const gchar * filename,FILE * file,GError ** error)
+DECL|function|gimp_palette_load_gpl (GimpContext * context,GFile * file,FILE * f,GError ** error)
 name|gimp_palette_load_gpl
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|,
 name|GError
 modifier|*
@@ -333,18 +332,9 @@ name|linenum
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|filename
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
+name|G_IS_FILE
 argument_list|(
-name|g_path_is_absolute
-argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|NULL
@@ -388,7 +378,7 @@ argument_list|(
 name|str
 argument_list|)
 argument_list|,
-name|file
+name|f
 argument_list|)
 condition|)
 block|{
@@ -406,9 +396,9 @@ literal|"Fatal parse error in palette file '%s': "
 literal|"Read error in line %d."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|linenum
@@ -443,9 +433,9 @@ literal|"Fatal parse error in palette file '%s': "
 literal|"Missing magic header."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -481,7 +471,7 @@ argument_list|(
 name|str
 argument_list|)
 argument_list|,
-name|file
+name|f
 argument_list|)
 condition|)
 block|{
@@ -499,9 +489,9 @@ literal|"Fatal parse error in palette file '%s': "
 literal|"Read error in line %d."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|linenum
@@ -552,9 +542,9 @@ argument_list|(
 literal|"Invalid UTF-8 string in palette file '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -583,7 +573,7 @@ argument_list|(
 name|str
 argument_list|)
 argument_list|,
-name|file
+name|f
 argument_list|)
 condition|)
 block|{
@@ -601,9 +591,9 @@ literal|"Fatal parse error in palette file '%s': "
 literal|"Read error in line %d."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|linenum
@@ -666,9 +656,9 @@ literal|"Invalid number of columns in line %d. "
 literal|"Using default value."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|linenum
@@ -701,7 +691,7 @@ argument_list|(
 name|str
 argument_list|)
 argument_list|,
-name|file
+name|f
 argument_list|)
 condition|)
 block|{
@@ -719,9 +709,9 @@ literal|"Fatal parse error in palette file '%s': "
 literal|"Read error in line %d."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|linenum
@@ -748,9 +738,12 @@ argument_list|(
 name|palette
 argument_list|)
 argument_list|,
-name|g_filename_display_basename
+name|g_path_get_basename
 argument_list|(
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -760,7 +753,7 @@ condition|(
 operator|!
 name|feof
 argument_list|(
-name|file
+name|f
 argument_list|)
 condition|)
 block|{
@@ -810,9 +803,9 @@ literal|"Reading palette file '%s': "
 literal|"Missing RED component in line %d."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|linenum
@@ -847,9 +840,9 @@ literal|"Reading palette file '%s': "
 literal|"Missing GREEN component in line %d."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|linenum
@@ -884,9 +877,9 @@ literal|"Reading palette file '%s': "
 literal|"Missing BLUE component in line %d."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|linenum
@@ -936,9 +929,9 @@ literal|"Reading palette file '%s': "
 literal|"RGB value out of range in line %d."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|linenum
@@ -1036,7 +1029,7 @@ argument_list|(
 name|str
 argument_list|)
 argument_list|,
-name|file
+name|f
 argument_list|)
 condition|)
 block|{
@@ -1044,7 +1037,7 @@ if|if
 condition|(
 name|feof
 argument_list|(
-name|file
+name|f
 argument_list|)
 condition|)
 break|break;
@@ -1062,9 +1055,9 @@ literal|"Fatal parse error in palette file '%s': "
 literal|"Read error in line %d."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|linenum
@@ -1105,21 +1098,20 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_palette_load_act (GimpContext * context,const gchar * filename,FILE * file,GError ** error)
+DECL|function|gimp_palette_load_act (GimpContext * context,GFile * file,FILE * f,GError ** error)
 name|gimp_palette_load_act
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|,
 name|GError
 modifier|*
@@ -1140,7 +1132,7 @@ name|fd
 init|=
 name|fileno
 argument_list|(
-name|file
+name|f
 argument_list|)
 decl_stmt|;
 name|guchar
@@ -1151,18 +1143,9 @@ index|]
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|filename
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
+name|G_IS_FILE
 argument_list|(
-name|g_path_is_absolute
-argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|NULL
@@ -1184,9 +1167,12 @@ argument_list|)
 expr_stmt|;
 name|palette_name
 operator|=
-name|g_filename_display_basename
+name|g_path_get_basename
 argument_list|(
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|palette
@@ -1274,21 +1260,20 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_palette_load_riff (GimpContext * context,const gchar * filename,FILE * file,GError ** error)
+DECL|function|gimp_palette_load_riff (GimpContext * context,GFile * file,FILE * f,GError ** error)
 name|gimp_palette_load_riff
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|,
 name|GError
 modifier|*
@@ -1309,7 +1294,7 @@ name|fd
 init|=
 name|fileno
 argument_list|(
-name|file
+name|f
 argument_list|)
 decl_stmt|;
 name|guchar
@@ -1320,18 +1305,9 @@ index|]
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|filename
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
+name|G_IS_FILE
 argument_list|(
-name|g_path_is_absolute
-argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|NULL
@@ -1353,9 +1329,12 @@ argument_list|)
 expr_stmt|;
 name|palette_name
 operator|=
-name|g_filename_display_basename
+name|g_path_get_basename
 argument_list|(
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|palette
@@ -1458,21 +1437,20 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_palette_load_psp (GimpContext * context,const gchar * filename,FILE * file,GError ** error)
+DECL|function|gimp_palette_load_psp (GimpContext * context,GFile * file,FILE * f,GError ** error)
 name|gimp_palette_load_psp
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|,
 name|GError
 modifier|*
@@ -1493,7 +1471,7 @@ name|fd
 init|=
 name|fileno
 argument_list|(
-name|file
+name|f
 argument_list|)
 decl_stmt|;
 name|guchar
@@ -1535,18 +1513,9 @@ name|ascii_colors
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|filename
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
+name|G_IS_FILE
 argument_list|(
-name|g_path_is_absolute
-argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|NULL
@@ -1568,9 +1537,12 @@ argument_list|)
 expr_stmt|;
 name|palette_name
 operator|=
-name|g_filename_display_basename
+name|g_path_get_basename
 argument_list|(
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|palette
@@ -1674,9 +1646,9 @@ name|g_printerr
 argument_list|(
 literal|"Premature end of file reading %s."
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1730,9 +1702,9 @@ name|g_printerr
 argument_list|(
 literal|"Corrupted palette file %s."
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1826,21 +1798,20 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_palette_load_aco (GimpContext * context,const gchar * filename,FILE * file,GError ** error)
+DECL|function|gimp_palette_load_aco (GimpContext * context,GFile * file,FILE * f,GError ** error)
 name|gimp_palette_load_aco
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|,
 name|GError
 modifier|*
@@ -1861,7 +1832,7 @@ name|fd
 init|=
 name|fileno
 argument_list|(
-name|file
+name|f
 argument_list|)
 decl_stmt|;
 name|gint
@@ -1896,18 +1867,9 @@ name|status
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|filename
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
+name|G_IS_FILE
 argument_list|(
-name|g_path_is_absolute
-argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|NULL
@@ -1964,9 +1926,9 @@ argument_list|(
 literal|"Could not read header from palette file '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1976,9 +1938,12 @@ return|;
 block|}
 name|palette_name
 operator|=
-name|g_filename_display_basename
+name|g_path_get_basename
 argument_list|(
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|palette
@@ -2097,9 +2062,9 @@ argument_list|(
 literal|"Fatal parse error in palette file '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2619,9 +2584,9 @@ literal|"Unsupported color space (%d) in ACO file %s\n"
 argument_list|,
 name|color_space
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2669,9 +2634,9 @@ argument_list|(
 literal|"Fatal parse error in palette file '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2744,21 +2709,20 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_palette_load_css (GimpContext * context,const gchar * filename,FILE * file,GError ** error)
+DECL|function|gimp_palette_load_css (GimpContext * context,GFile * file,FILE * f,GError ** error)
 name|gimp_palette_load_css
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|,
 name|GError
 modifier|*
@@ -2783,18 +2747,9 @@ name|color
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|filename
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
+name|G_IS_FILE
 argument_list|(
-name|g_path_is_absolute
-argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|NULL
@@ -2837,9 +2792,12 @@ name|NULL
 return|;
 name|name
 operator|=
-name|g_filename_display_basename
+name|g_path_get_basename
 argument_list|(
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|palette
@@ -2882,7 +2840,7 @@ argument_list|(
 name|buf
 argument_list|)
 argument_list|,
-name|file
+name|f
 argument_list|)
 operator|!=
 name|NULL
@@ -2970,7 +2928,7 @@ condition|(
 operator|!
 name|feof
 argument_list|(
-name|file
+name|f
 argument_list|)
 condition|)
 do|;
@@ -2992,17 +2950,16 @@ end_function
 
 begin_function
 name|GimpPaletteFileFormat
-DECL|function|gimp_palette_load_detect_format (const gchar * filename,FILE * file)
+DECL|function|gimp_palette_load_detect_format (GFile * file,FILE * f)
 name|gimp_palette_load_detect_format
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|)
 block|{
 name|GimpPaletteFileFormat
@@ -3015,7 +2972,7 @@ name|fd
 init|=
 name|fileno
 argument_list|(
-name|file
+name|f
 argument_list|)
 decl_stmt|;
 name|gchar
@@ -3037,7 +2994,7 @@ argument_list|(
 name|header
 argument_list|)
 argument_list|,
-name|file
+name|f
 argument_list|)
 operator|==
 sizeof|sizeof
@@ -3118,7 +3075,10 @@ name|lower_filename
 init|=
 name|g_ascii_strdown
 argument_list|(
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -3201,7 +3161,7 @@ block|}
 block|}
 name|rewind
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 return|return

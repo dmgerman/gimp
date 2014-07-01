@@ -282,6 +282,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|fd
@@ -303,20 +308,15 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
 name|errno
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
 argument_list|)
 expr_stmt|;
 return|return
@@ -359,9 +359,9 @@ literal|"Fatal parse error in pattern file '%s': "
 literal|"File appears truncated."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -475,9 +475,9 @@ literal|"Fatal parse error in pattern file '%s': "
 literal|"Unknown pattern format version %d."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|header
@@ -520,9 +520,9 @@ literal|"Unsupported pattern depth %d.\n"
 literal|"GIMP Patterns must be GRAY or RGB."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|header
@@ -596,9 +596,9 @@ literal|"Fatal parse error in pattern file '%s': "
 literal|"File appears truncated."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -625,9 +625,9 @@ argument_list|(
 literal|"Invalid UTF-8 string in pattern file '%s'."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -800,9 +800,9 @@ literal|"Fatal parse error in pattern file '%s': "
 literal|"File appears truncated."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -813,11 +813,6 @@ block|}
 name|close
 argument_list|(
 name|fd
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
 argument_list|)
 expr_stmt|;
 return|return
@@ -842,11 +837,6 @@ expr_stmt|;
 name|close
 argument_list|(
 name|fd
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
 argument_list|)
 expr_stmt|;
 return|return
@@ -941,21 +931,19 @@ argument_list|,
 name|error
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|pixbuf
-condition|)
-block|{
 name|g_free
 argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|pixbuf
+condition|)
 return|return
 name|NULL
 return|;
-block|}
 name|name
 operator|=
 name|g_strdup
@@ -992,9 +980,12 @@ name|name
 condition|)
 name|name
 operator|=
-name|g_filename_display_basename
+name|g_path_get_basename
 argument_list|(
-name|path
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|pattern
@@ -1034,11 +1025,6 @@ expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|pixbuf
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
 argument_list|)
 expr_stmt|;
 return|return

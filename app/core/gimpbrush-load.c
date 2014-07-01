@@ -282,16 +282,15 @@ name|gimp_brush_load_abr_v12
 parameter_list|(
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|,
 name|AbrHeader
 modifier|*
 name|abr_hdr
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|path
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -309,16 +308,15 @@ name|gimp_brush_load_abr_v6
 parameter_list|(
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|,
 name|AbrHeader
 modifier|*
 name|abr_hdr
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|path
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -336,7 +334,7 @@ name|gimp_brush_load_abr_brush_v12
 parameter_list|(
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|,
 name|AbrHeader
 modifier|*
@@ -345,10 +343,9 @@ parameter_list|,
 name|gint
 name|index
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|path
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -366,7 +363,7 @@ name|gimp_brush_load_abr_brush_v6
 parameter_list|(
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|,
 name|AbrHeader
 modifier|*
@@ -378,10 +375,9 @@ parameter_list|,
 name|gint
 name|index
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|path
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -398,7 +394,7 @@ name|abr_read_char
 parameter_list|(
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -410,7 +406,7 @@ name|abr_read_short
 parameter_list|(
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -422,7 +418,7 @@ name|abr_read_long
 parameter_list|(
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -435,7 +431,7 @@ name|abr_read_ucs2_text
 parameter_list|(
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -449,10 +445,9 @@ name|AbrHeader
 modifier|*
 name|abr_hdr
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|path
+name|f
 parameter_list|,
 name|GError
 modifier|*
@@ -486,7 +481,7 @@ name|abr_rle_decode
 parameter_list|(
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|,
 name|gchar
 modifier|*
@@ -587,6 +582,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|fd
@@ -608,20 +608,15 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
 name|errno
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
 argument_list|)
 expr_stmt|;
 return|return
@@ -634,9 +629,9 @@ name|gimp_brush_load_brush
 argument_list|(
 name|context
 argument_list|,
-name|fd
+name|file
 argument_list|,
-name|path
+name|fd
 argument_list|,
 name|error
 argument_list|)
@@ -644,11 +639,6 @@ expr_stmt|;
 name|close
 argument_list|(
 name|fd
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
 argument_list|)
 expr_stmt|;
 if|if
@@ -673,20 +663,19 @@ end_function
 begin_function
 name|GimpBrush
 modifier|*
-DECL|function|gimp_brush_load_brush (GimpContext * context,gint fd,const gchar * path,GError ** error)
+DECL|function|gimp_brush_load_brush (GimpContext * context,GFile * file,gint fd,GError ** error)
 name|gimp_brush_load_brush
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
+name|GFile
+modifier|*
+name|file
+parameter_list|,
 name|gint
 name|fd
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|path
 parameter_list|,
 name|GError
 modifier|*
@@ -730,9 +719,10 @@ name|TRUE
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|path
-operator|!=
-name|NULL
+name|G_IS_FILE
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -814,9 +804,9 @@ argument_list|(
 name|header
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -931,9 +921,9 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"Width = 0."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -964,9 +954,9 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"Height = 0."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -997,9 +987,9 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"Bytes = 0."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1079,9 +1069,9 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"Unknown depth %d."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|header
@@ -1121,9 +1111,9 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"Unknown version %d."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|header
@@ -1197,9 +1187,9 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"File appears truncated."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1226,9 +1216,9 @@ argument_list|(
 literal|"Invalid UTF-8 string in brush file '%s'."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1443,7 +1433,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon290cfe0b010a
+DECL|union|__anon2bc94022010a
 block|{
 DECL|member|u
 name|guint16
@@ -1559,9 +1549,9 @@ literal|"This might be an obsolete GIMP brush file, try "
 literal|"loading it as image and save it again."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|header
@@ -1762,9 +1752,9 @@ literal|"Unsupported brush depth %d\n"
 literal|"GIMP brushes must be GRAY or RGBA."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|header
@@ -1801,9 +1791,9 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"File appears truncated."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1952,6 +1942,11 @@ argument_list|,
 literal|"rb"
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1971,20 +1966,15 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
 name|errno
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
 argument_list|)
 expr_stmt|;
 return|return
@@ -2017,7 +2007,7 @@ argument_list|(
 operator|&
 name|abr_hdr
 argument_list|,
-name|path
+name|file
 argument_list|,
 name|error
 argument_list|)
@@ -2045,7 +2035,7 @@ argument_list|,
 operator|&
 name|abr_hdr
 argument_list|,
-name|path
+name|file
 argument_list|,
 name|error
 argument_list|)
@@ -2063,7 +2053,7 @@ argument_list|,
 operator|&
 name|abr_hdr
 argument_list|,
-name|path
+name|file
 argument_list|,
 name|error
 argument_list|)
@@ -2102,19 +2092,14 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"unable to decode abr format version %d."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|abr_hdr
 operator|.
 name|version
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
 argument_list|)
 expr_stmt|;
 return|return
@@ -2134,21 +2119,20 @@ begin_function
 specifier|static
 name|GList
 modifier|*
-DECL|function|gimp_brush_load_abr_v12 (FILE * file,AbrHeader * abr_hdr,const gchar * path,GError ** error)
+DECL|function|gimp_brush_load_abr_v12 (FILE * f,AbrHeader * abr_hdr,GFile * file,GError ** error)
 name|gimp_brush_load_abr_v12
 parameter_list|(
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|,
 name|AbrHeader
 modifier|*
 name|abr_hdr
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|path
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -2195,13 +2179,13 @@ name|brush
 operator|=
 name|gimp_brush_load_abr_brush_v12
 argument_list|(
-name|file
+name|f
 argument_list|,
 name|abr_hdr
 argument_list|,
 name|i
 argument_list|,
-name|path
+name|file
 argument_list|,
 operator|&
 name|my_error
@@ -2249,21 +2233,20 @@ begin_function
 specifier|static
 name|GList
 modifier|*
-DECL|function|gimp_brush_load_abr_v6 (FILE * file,AbrHeader * abr_hdr,const gchar * path,GError ** error)
+DECL|function|gimp_brush_load_abr_v6 (FILE * f,AbrHeader * abr_hdr,GFile * file,GError ** error)
 name|gimp_brush_load_abr_v6
 parameter_list|(
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|,
 name|AbrHeader
 modifier|*
 name|abr_hdr
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|path
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -2293,7 +2276,7 @@ condition|(
 operator|!
 name|abr_reach_8bim_section
 argument_list|(
-name|file
+name|f
 argument_list|,
 literal|"samp"
 argument_list|)
@@ -2305,7 +2288,7 @@ name|sample_section_size
 operator|=
 name|abr_read_long
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 name|sample_section_end
@@ -2314,14 +2297,14 @@ name|sample_section_size
 operator|+
 name|ftell
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 while|while
 condition|(
 name|ftell
 argument_list|(
-name|file
+name|f
 argument_list|)
 operator|<
 name|sample_section_end
@@ -2341,7 +2324,7 @@ name|brush
 operator|=
 name|gimp_brush_load_abr_brush_v6
 argument_list|(
-name|file
+name|f
 argument_list|,
 name|abr_hdr
 argument_list|,
@@ -2349,7 +2332,7 @@ name|sample_section_end
 argument_list|,
 name|i
 argument_list|,
-name|path
+name|file
 argument_list|,
 operator|&
 name|my_error
@@ -2400,12 +2383,12 @@ begin_function
 specifier|static
 name|GimpBrush
 modifier|*
-DECL|function|gimp_brush_load_abr_brush_v12 (FILE * file,AbrHeader * abr_hdr,gint index,const gchar * path,GError ** error)
+DECL|function|gimp_brush_load_abr_brush_v12 (FILE * f,AbrHeader * abr_hdr,gint index,GFile * file,GError ** error)
 name|gimp_brush_load_abr_brush_v12
 parameter_list|(
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|,
 name|AbrHeader
 modifier|*
@@ -2414,10 +2397,9 @@ parameter_list|,
 name|gint
 name|index
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|path
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -2434,36 +2416,13 @@ decl_stmt|;
 name|AbrBrushHeader
 name|abr_brush_hdr
 decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|path
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|error
-operator|==
-name|NULL
-operator|||
-operator|*
-name|error
-operator|==
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|abr_brush_hdr
 operator|.
 name|type
 operator|=
 name|abr_read_short
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 name|abr_brush_hdr
@@ -2472,7 +2431,7 @@ name|size
 operator|=
 name|abr_read_long
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 comment|/*  g_print(" + BRUSH\n |<< type: %i  block size: %i bytes\n",    *          abr_brush_hdr.type, abr_brush_hdr.size);    */
@@ -2495,7 +2454,7 @@ argument_list|)
 expr_stmt|;
 name|fseek
 argument_list|(
-name|file
+name|f
 argument_list|,
 name|abr_brush_hdr
 operator|.
@@ -2554,7 +2513,7 @@ name|misc
 operator|=
 name|abr_read_long
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 name|abr_sampled_brush_hdr
@@ -2563,7 +2522,7 @@ name|spacing
 operator|=
 name|abr_read_short
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 if|if
@@ -2578,7 +2537,7 @@ name|sample_name
 operator|=
 name|abr_read_ucs2_text
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 name|abr_sampled_brush_hdr
@@ -2587,7 +2546,7 @@ name|antialiasing
 operator|=
 name|abr_read_char
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 for|for
@@ -2612,7 +2571,7 @@ index|]
 operator|=
 name|abr_read_short
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 for|for
@@ -2637,7 +2596,7 @@ index|]
 operator|=
 name|abr_read_long
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 name|abr_sampled_brush_hdr
@@ -2646,7 +2605,7 @@ name|depth
 operator|=
 name|abr_read_short
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 name|height
@@ -2726,9 +2685,9 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"Wide brushes are not supported."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2738,9 +2697,12 @@ return|;
 block|}
 name|tmp
 operator|=
-name|g_filename_display_basename
+name|g_path_get_basename
 argument_list|(
-name|path
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2891,7 +2853,7 @@ name|compress
 operator|=
 name|abr_read_char
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 comment|/* g_print(" |<< size: %dx%d %d bit (%d bytes) %s\n",          *         width, height, abr_sampled_brush_hdr.depth, size,          *         comppres ? "compressed" : "raw");          */
@@ -2908,13 +2870,13 @@ name|size
 argument_list|,
 literal|1
 argument_list|,
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 else|else
 name|abr_rle_decode
 argument_list|(
-name|file
+name|f
 argument_list|,
 operator|(
 name|gchar
@@ -2935,7 +2897,7 @@ argument_list|)
 expr_stmt|;
 name|fseek
 argument_list|(
-name|file
+name|f
 argument_list|,
 name|abr_brush_hdr
 operator|.
@@ -2956,12 +2918,12 @@ begin_function
 specifier|static
 name|GimpBrush
 modifier|*
-DECL|function|gimp_brush_load_abr_brush_v6 (FILE * file,AbrHeader * abr_hdr,gint32 max_offset,gint index,const gchar * path,GError ** error)
+DECL|function|gimp_brush_load_abr_brush_v6 (FILE * f,AbrHeader * abr_hdr,gint32 max_offset,gint index,GFile * file,GError ** error)
 name|gimp_brush_load_abr_brush_v6
 parameter_list|(
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|,
 name|AbrHeader
 modifier|*
@@ -2973,10 +2935,9 @@ parameter_list|,
 name|gint
 name|index
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|path
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -3041,7 +3002,7 @@ name|brush_size
 operator|=
 name|abr_read_long
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 name|brush_end
@@ -3064,7 +3025,7 @@ name|next_brush
 operator|=
 name|ftell
 argument_list|(
-name|file
+name|f
 argument_list|)
 operator|+
 name|brush_end
@@ -3082,7 +3043,7 @@ name|r
 operator|=
 name|fseek
 argument_list|(
-name|file
+name|f
 argument_list|,
 literal|47
 argument_list|,
@@ -3095,7 +3056,7 @@ name|r
 operator|=
 name|fseek
 argument_list|(
-name|file
+name|f
 argument_list|,
 literal|301
 argument_list|,
@@ -3124,9 +3085,9 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"File appears truncated."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3138,42 +3099,42 @@ name|top
 operator|=
 name|abr_read_long
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 name|left
 operator|=
 name|abr_read_long
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 name|bottom
 operator|=
 name|abr_read_long
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 name|right
 operator|=
 name|abr_read_long
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 name|depth
 operator|=
 name|abr_read_short
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 name|compress
 operator|=
 name|abr_read_char
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 name|width
@@ -3202,9 +3163,12 @@ name|height
 expr_stmt|;
 name|tmp
 operator|=
-name|g_filename_display_basename
+name|g_path_get_basename
 argument_list|(
-name|path
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|name
@@ -3329,13 +3293,13 @@ name|size
 argument_list|,
 literal|1
 argument_list|,
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 else|else
 name|abr_rle_decode
 argument_list|(
-name|file
+name|f
 argument_list|,
 operator|(
 name|gchar
@@ -3348,7 +3312,7 @@ argument_list|)
 expr_stmt|;
 name|fseek
 argument_list|(
-name|file
+name|f
 argument_list|,
 name|next_brush
 argument_list|,
@@ -3364,18 +3328,18 @@ end_function
 begin_function
 specifier|static
 name|gchar
-DECL|function|abr_read_char (FILE * file)
+DECL|function|abr_read_char (FILE * f)
 name|abr_read_char
 parameter_list|(
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|)
 block|{
 return|return
 name|fgetc
 argument_list|(
-name|file
+name|f
 argument_list|)
 return|;
 block|}
@@ -3384,12 +3348,12 @@ end_function
 begin_function
 specifier|static
 name|gint16
-DECL|function|abr_read_short (FILE * file)
+DECL|function|abr_read_short (FILE * f)
 name|abr_read_short
 parameter_list|(
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|)
 block|{
 name|gint16
@@ -3407,7 +3371,7 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 return|return
@@ -3422,12 +3386,12 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|abr_read_long (FILE * file)
+DECL|function|abr_read_long (FILE * f)
 name|abr_read_long
 parameter_list|(
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|)
 block|{
 name|gint32
@@ -3445,7 +3409,7 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 return|return
@@ -3461,12 +3425,12 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|abr_read_ucs2_text (FILE * file)
+DECL|function|abr_read_ucs2_text (FILE * f)
 name|abr_read_ucs2_text
 parameter_list|(
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|)
 block|{
 name|gchar
@@ -3490,7 +3454,7 @@ literal|2
 operator|*
 name|abr_read_long
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 if|if
@@ -3531,7 +3495,7 @@ index|]
 operator|=
 name|abr_read_char
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 name|name_utf8
@@ -3567,17 +3531,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|abr_supported (AbrHeader * abr_hdr,const gchar * path,GError ** error)
+DECL|function|abr_supported (AbrHeader * abr_hdr,GFile * file,GError ** error)
 name|abr_supported
 parameter_list|(
 name|AbrHeader
 modifier|*
 name|abr_hdr
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|path
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -3647,9 +3610,9 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"unable to decode abr format version %d."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 comment|/* horrid subversion display, but better than                       * having yet another translatable string for                       * this                       */
@@ -3835,12 +3798,12 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|abr_rle_decode (FILE * file,gchar * buffer,gint32 height)
+DECL|function|abr_rle_decode (FILE * f,gchar * buffer,gint32 height)
 name|abr_rle_decode
 parameter_list|(
 name|FILE
 modifier|*
-name|file
+name|f
 parameter_list|,
 name|gchar
 modifier|*
@@ -3900,7 +3863,7 @@ index|]
 operator|=
 name|abr_read_short
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 comment|/* unpack each scanline data */
@@ -3938,7 +3901,7 @@ name|n
 init|=
 name|abr_read_char
 argument_list|(
-name|file
+name|f
 argument_list|)
 decl_stmt|;
 name|j
@@ -3983,7 +3946,7 @@ name|ch
 operator|=
 name|abr_read_char
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 name|j
@@ -4040,7 +4003,7 @@ name|data
 operator|=
 name|abr_read_char
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 block|}

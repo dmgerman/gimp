@@ -219,6 +219,11 @@ argument_list|,
 literal|"rb"
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -238,20 +243,15 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
 name|errno
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
 argument_list|)
 expr_stmt|;
 return|return
@@ -310,9 +310,9 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"Not a GIMP brush file."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -382,9 +382,9 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"Unknown GIMP brush version in line %d."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|linenum
@@ -472,9 +472,9 @@ argument_list|(
 literal|"Invalid UTF-8 string in brush file '%s'."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -558,9 +558,9 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"Unknown GIMP brush shape in line %d."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|linenum
@@ -836,11 +836,6 @@ name|spacing
 operator|=
 name|spacing
 expr_stmt|;
-name|g_free
-argument_list|(
-name|path
-argument_list|)
-expr_stmt|;
 return|return
 name|g_list_prepend
 argument_list|(
@@ -926,9 +921,9 @@ argument_list|(
 literal|"Error while reading brush file '%s': %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|msg
@@ -940,11 +935,6 @@ name|msg
 argument_list|)
 expr_stmt|;
 block|}
-name|g_free
-argument_list|(
-name|path
-argument_list|)
-expr_stmt|;
 return|return
 name|NULL
 return|;

@@ -78,13 +78,12 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
+name|GFile
+modifier|*
+name|file
+parameter_list|,
 name|gint
 name|fd
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|path
 parameter_list|,
 name|GError
 modifier|*

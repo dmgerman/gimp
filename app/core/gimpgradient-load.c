@@ -194,6 +194,11 @@ argument_list|,
 literal|"rb"
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -213,20 +218,15 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
 name|errno
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
 argument_list|)
 expr_stmt|;
 return|return
@@ -267,9 +267,9 @@ literal|"Fatal parse error in gradient file '%s': "
 literal|"Read error in line %d."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|linenum
@@ -278,11 +278,6 @@ expr_stmt|;
 name|fclose
 argument_list|(
 name|f
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
 argument_list|)
 expr_stmt|;
 return|return
@@ -314,20 +309,15 @@ literal|"Fatal parse error in gradient file '%s': "
 literal|"Not a GIMP gradient file."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|fclose
 argument_list|(
 name|f
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
 argument_list|)
 expr_stmt|;
 return|return
@@ -380,9 +370,9 @@ literal|"Fatal parse error in gradient file '%s': "
 literal|"Read error in line %d."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|linenum
@@ -391,11 +381,6 @@ expr_stmt|;
 name|fclose
 argument_list|(
 name|f
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -443,9 +428,9 @@ argument_list|(
 literal|"Invalid UTF-8 string in gradient file '%s'."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -492,9 +477,9 @@ literal|"Fatal parse error in gradient file '%s': "
 literal|"Read error in line %d."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|linenum
@@ -503,11 +488,6 @@ expr_stmt|;
 name|fclose
 argument_list|(
 name|f
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -530,9 +510,12 @@ argument_list|(
 name|gradient
 argument_list|)
 argument_list|,
-name|g_filename_display_basename
+name|g_path_get_basename
 argument_list|(
-name|path
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -565,9 +548,9 @@ literal|"Fatal parse error in gradient file '%s': "
 literal|"File is corrupt in line %d."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|linenum
@@ -581,11 +564,6 @@ expr_stmt|;
 name|fclose
 argument_list|(
 name|f
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
 argument_list|)
 expr_stmt|;
 return|return
@@ -691,9 +669,9 @@ literal|"Fatal parse error in gradient file '%s': "
 literal|"Read error in line %d."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|linenum
@@ -702,11 +680,6 @@ expr_stmt|;
 name|fclose
 argument_list|(
 name|f
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1034,9 +1007,9 @@ literal|"Fatal parse error in gradient file '%s': "
 literal|"Corrupt segment %d in line %d."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|i
@@ -1052,11 +1025,6 @@ expr_stmt|;
 name|fclose
 argument_list|(
 name|f
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
 argument_list|)
 expr_stmt|;
 return|return
@@ -1080,9 +1048,9 @@ literal|"Fatal parse error in gradient file '%s': "
 literal|"Corrupt segment %d in line %d."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|i
@@ -1098,11 +1066,6 @@ expr_stmt|;
 name|fclose
 argument_list|(
 name|f
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
 argument_list|)
 expr_stmt|;
 return|return
@@ -1153,9 +1116,9 @@ literal|"Gradient file '%s' is corrupt: "
 literal|"Segments do not span the range 0-1."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1167,11 +1130,6 @@ expr_stmt|;
 name|fclose
 argument_list|(
 name|f
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
 argument_list|)
 expr_stmt|;
 return|return
@@ -1206,9 +1164,9 @@ literal|"Gradient file '%s' is corrupt: "
 literal|"Segments do not span the range 0-1."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1222,11 +1180,6 @@ argument_list|(
 name|f
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|path
-argument_list|)
-expr_stmt|;
 return|return
 name|NULL
 return|;
@@ -1234,11 +1187,6 @@ block|}
 name|fclose
 argument_list|(
 name|f
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
 argument_list|)
 expr_stmt|;
 return|return
@@ -1259,7 +1207,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c71e410108
+DECL|struct|__anon293359b10108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -1287,7 +1235,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c71e410208
+DECL|struct|__anon293359b10208
 block|{
 DECL|member|offset
 name|gdouble
@@ -1454,10 +1402,6 @@ block|{
 name|NULL
 block|, }
 decl_stmt|;
-name|gchar
-modifier|*
-name|path
-decl_stmt|;
 name|gboolean
 name|success
 decl_stmt|;
@@ -1466,23 +1410,6 @@ argument_list|(
 name|G_IS_FILE
 argument_list|(
 name|file
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|path
-operator|=
-name|g_file_get_path
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|g_path_is_absolute
-argument_list|(
-name|path
 argument_list|)
 argument_list|,
 name|NULL
@@ -1552,9 +1479,9 @@ argument_list|(
 literal|"No linear gradients found in '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1595,9 +1522,9 @@ argument_list|(
 literal|"Failed to import gradients from '%s': %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|file
 argument_list|)
 argument_list|,
 name|msg
@@ -1667,11 +1594,6 @@ name|stops
 argument_list|)
 expr_stmt|;
 block|}
-name|g_free
-argument_list|(
-name|path
-argument_list|)
-expr_stmt|;
 return|return
 name|g_list_reverse
 argument_list|(

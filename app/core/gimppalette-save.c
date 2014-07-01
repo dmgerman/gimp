@@ -159,6 +159,11 @@ argument_list|,
 literal|"wb"
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -178,9 +183,12 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|path
+name|gimp_data_get_file
+argument_list|(
+name|data
+argument_list|)
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -189,20 +197,10 @@ name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|path
-argument_list|)
-expr_stmt|;
 return|return
 name|FALSE
 return|;
 block|}
-name|g_free
-argument_list|(
-name|path
-argument_list|)
-expr_stmt|;
 name|fprintf
 argument_list|(
 name|file
