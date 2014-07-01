@@ -130,10 +130,9 @@ name|GimpSettingsBox
 modifier|*
 name|box
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImageMapTool
 modifier|*
@@ -151,10 +150,9 @@ name|GimpSettingsBox
 modifier|*
 name|box
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImageMapTool
 modifier|*
@@ -170,7 +168,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_image_map_tool_real_get_settings_ui (GimpImageMapTool * image_map_tool,GimpContainer * settings,const gchar * settings_filename,const gchar * import_dialog_title,const gchar * export_dialog_title,const gchar * file_dialog_help_id,const gchar * default_folder,GtkWidget ** settings_box)
+DECL|function|gimp_image_map_tool_real_get_settings_ui (GimpImageMapTool * image_map_tool,GimpContainer * settings,GFile * settings_file,const gchar * import_dialog_title,const gchar * export_dialog_title,const gchar * file_dialog_help_id,const gchar * default_folder,GtkWidget ** settings_box)
 name|gimp_image_map_tool_real_get_settings_ui
 parameter_list|(
 name|GimpImageMapTool
@@ -181,10 +179,9 @@ name|GimpContainer
 modifier|*
 name|settings
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|settings_filename
+name|settings_file
 parameter_list|,
 specifier|const
 name|gchar
@@ -310,7 +307,7 @@ name|config
 argument_list|,
 name|settings
 argument_list|,
-name|settings_filename
+name|settings_file
 argument_list|,
 name|import_dialog_title
 argument_list|,
@@ -407,17 +404,16 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_map_tool_real_settings_import (GimpImageMapTool * tool,const gchar * filename,GError ** error)
+DECL|function|gimp_image_map_tool_real_settings_import (GimpImageMapTool * tool,GFile * file,GError ** error)
 name|gimp_image_map_tool_real_settings_import
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
 name|tool
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -445,15 +441,15 @@ name|g_print
 argument_list|(
 literal|"Parsing '%s'\n"
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|success
 operator|=
-name|gimp_config_deserialize_file
+name|gimp_config_deserialize_gfile
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
@@ -462,7 +458,7 @@ operator|->
 name|config
 argument_list|)
 argument_list|,
-name|filename
+name|file
 argument_list|,
 name|NULL
 argument_list|,
@@ -477,17 +473,16 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_map_tool_real_settings_export (GimpImageMapTool * tool,const gchar * filename,GError ** error)
+DECL|function|gimp_image_map_tool_real_settings_export (GimpImageMapTool * tool,GFile * file,GError ** error)
 name|gimp_image_map_tool_real_settings_export
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
 name|tool
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -554,15 +549,15 @@ name|g_print
 argument_list|(
 literal|"Writing '%s'\n"
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|success
 operator|=
-name|gimp_config_serialize_to_file
+name|gimp_config_serialize_to_gfile
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
@@ -571,7 +566,7 @@ operator|->
 name|config
 argument_list|)
 argument_list|,
-name|filename
+name|file
 argument_list|,
 name|header
 argument_list|,
@@ -605,17 +600,16 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_image_map_tool_settings_import (GimpSettingsBox * box,const gchar * filename,GimpImageMapTool * tool)
+DECL|function|gimp_image_map_tool_settings_import (GimpSettingsBox * box,GFile * file,GimpImageMapTool * tool)
 name|gimp_image_map_tool_settings_import
 parameter_list|(
 name|GimpSettingsBox
 modifier|*
 name|box
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImageMapTool
 modifier|*
@@ -657,7 +651,7 @@ name|settings_import
 argument_list|(
 name|tool
 argument_list|,
-name|filename
+name|file
 argument_list|,
 operator|&
 name|error
@@ -716,7 +710,7 @@ argument_list|)
 argument_list|,
 literal|"settings"
 argument_list|,
-name|filename
+name|file
 argument_list|,
 name|NULL
 argument_list|)
@@ -730,17 +724,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_image_map_tool_settings_export (GimpSettingsBox * box,const gchar * filename,GimpImageMapTool * tool)
+DECL|function|gimp_image_map_tool_settings_export (GimpSettingsBox * box,GFile * file,GimpImageMapTool * tool)
 name|gimp_image_map_tool_settings_export
 parameter_list|(
 name|GimpSettingsBox
 modifier|*
 name|box
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImageMapTool
 modifier|*
@@ -762,10 +755,6 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
-name|gchar
-modifier|*
-name|display_name
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|tool_class
@@ -786,7 +775,7 @@ name|settings_export
 argument_list|(
 name|tool
 argument_list|,
-name|filename
+name|file
 argument_list|,
 operator|&
 name|error
@@ -831,13 +820,6 @@ return|return
 name|FALSE
 return|;
 block|}
-name|display_name
-operator|=
-name|g_filename_display_name
-argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
 name|gimp_message
 argument_list|(
 name|GIMP_TOOL
@@ -866,12 +848,10 @@ argument_list|(
 literal|"Settings saved to '%s'"
 argument_list|)
 argument_list|,
-name|display_name
-argument_list|)
-expr_stmt|;
-name|g_free
+name|gimp_file_get_utf8_name
 argument_list|(
-name|display_name
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_set
@@ -883,7 +863,7 @@ argument_list|)
 argument_list|,
 literal|"settings"
 argument_list|,
-name|filename
+name|file
 argument_list|,
 name|NULL
 argument_list|)

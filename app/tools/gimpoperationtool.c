@@ -312,10 +312,9 @@ name|GimpContainer
 modifier|*
 name|settings
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|settings_filename
+name|settings_file
 parameter_list|,
 specifier|const
 name|gchar
@@ -1286,7 +1285,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_operation_tool_get_settings_ui (GimpImageMapTool * image_map_tool,GimpContainer * settings,const gchar * settings_filename,const gchar * import_dialog_title,const gchar * export_dialog_title,const gchar * file_dialog_help_id,const gchar * default_folder,GtkWidget ** settings_box)
+DECL|function|gimp_operation_tool_get_settings_ui (GimpImageMapTool * image_map_tool,GimpContainer * settings,GFile * settings_file,const gchar * import_dialog_title,const gchar * export_dialog_title,const gchar * file_dialog_help_id,const gchar * default_folder,GtkWidget ** settings_box)
 name|gimp_operation_tool_get_settings_ui
 parameter_list|(
 name|GimpImageMapTool
@@ -1297,10 +1296,9 @@ name|GimpContainer
 modifier|*
 name|settings
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|settings_filename
+name|settings_file
 parameter_list|,
 specifier|const
 name|gchar
@@ -1358,6 +1356,10 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|filename
+decl_stmt|;
+name|GFile
+modifier|*
+name|file
 decl_stmt|;
 name|gchar
 modifier|*
@@ -1433,6 +1435,18 @@ argument_list|(
 name|basename
 argument_list|)
 expr_stmt|;
+name|file
+operator|=
+name|g_file_new_for_path
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 name|import_title
 operator|=
 name|g_strdup_printf
@@ -1474,7 +1488,7 @@ name|image_map_tool
 argument_list|,
 name|settings
 argument_list|,
-name|filename
+name|file
 argument_list|,
 name|import_title
 argument_list|,
@@ -1490,17 +1504,17 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
 name|import_title
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
 name|export_title
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|file
 argument_list|)
 expr_stmt|;
 return|return

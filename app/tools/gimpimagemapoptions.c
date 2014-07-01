@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e84cc40103
+DECL|enum|__anon274d5ced0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -219,7 +219,7 @@ name|object_class
 argument_list|,
 name|PROP_SETTINGS
 argument_list|,
-name|g_param_spec_string
+name|g_param_spec_object
 argument_list|(
 literal|"settings"
 argument_list|,
@@ -227,7 +227,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|G_TYPE_FILE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -276,7 +276,7 @@ operator|->
 name|settings
 condition|)
 block|{
-name|g_free
+name|g_object_unref
 argument_list|(
 name|options
 operator|->
@@ -369,7 +369,13 @@ break|break;
 case|case
 name|PROP_SETTINGS
 case|:
-name|g_free
+if|if
+condition|(
+name|options
+operator|->
+name|settings
+condition|)
+name|g_object_unref
 argument_list|(
 name|options
 operator|->
@@ -380,7 +386,7 @@ name|options
 operator|->
 name|settings
 operator|=
-name|g_value_dup_string
+name|g_value_dup_object
 argument_list|(
 name|value
 argument_list|)
@@ -466,7 +472,7 @@ break|break;
 case|case
 name|PROP_SETTINGS
 case|:
-name|g_value_set_string
+name|g_value_set_object
 argument_list|(
 name|value
 argument_list|,

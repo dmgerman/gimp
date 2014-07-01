@@ -1547,6 +1547,10 @@ name|gchar
 modifier|*
 name|default_folder
 decl_stmt|;
+name|GFile
+modifier|*
+name|settings_file
+decl_stmt|;
 name|settings_filename
 operator|=
 name|gimp_tool_info_build_options_filename
@@ -1570,6 +1574,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|settings_file
+operator|=
+name|g_file_new_for_path
+argument_list|(
+name|settings_filename
+argument_list|)
+expr_stmt|;
 name|settings_ui
 operator|=
 name|klass
@@ -1582,7 +1593,7 @@ name|klass
 operator|->
 name|recent_settings
 argument_list|,
-name|settings_filename
+name|settings_file
 argument_list|,
 name|klass
 operator|->
@@ -1602,6 +1613,11 @@ operator|&
 name|image_map_tool
 operator|->
 name|settings_box
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|settings_file
 argument_list|)
 expr_stmt|;
 name|g_free

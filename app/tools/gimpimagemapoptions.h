@@ -112,7 +112,7 @@ name|GimpImageMapRegion
 name|region
 decl_stmt|;
 DECL|member|settings
-name|gchar
+name|GFile
 modifier|*
 name|settings
 decl_stmt|;
