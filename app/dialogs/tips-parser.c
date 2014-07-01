@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gio/gio.h>
 end_include
 
 begin_include
@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b447d670103
+DECL|enum|__anon2c3873f10103
 block|{
 DECL|enumerator|TIPS_START
 name|TIPS_START
@@ -73,7 +73,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b447d670203
+DECL|enum|__anon2c3873f10203
 block|{
 DECL|enumerator|TIPS_LOCALE_NONE
 name|TIPS_LOCALE_NONE
@@ -92,7 +92,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b447d670308
+DECL|struct|__anon2c3873f10308
 block|{
 DECL|member|state
 name|TipsParserState
