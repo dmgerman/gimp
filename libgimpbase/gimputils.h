@@ -105,6 +105,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|const
+name|gchar
+modifier|*
+name|gimp_file_get_utf8_name
+parameter_list|(
+name|GFile
+modifier|*
+name|file
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_decl_stmt
 name|gchar
 modifier|*

@@ -539,6 +539,66 @@ block|}
 end_function
 
 begin_comment
+comment|/**  * gimp_file_get_utf8_name:  * @file: a #GFile  *  * This function works like gimp_filename_to_utf8() and returns  * a UTF-8 encoded string that does not need to be freed.  *  * It converts a #GFile's path or uri to UTF-8 temporarily.  The  * return value is a pointer to a string that is guaranteed to be  * valid only during the current iteration of the main loop or until  * the next call to gimp_file_get_utf8_name().  *  * The only purpose of this function is to provide an easy way to pass  * a #GFile's name to a function that expects an UTF-8 encoded string.  *  * See g_file_get_parse_name().  *  * Since: GIMP 2.10  *  * Return value: A temporarily valid UTF-8 representation of @file's name.  *               This string must not be changed or freed.  **/
+end_comment
+
+begin_function
+specifier|const
+name|gchar
+modifier|*
+DECL|function|gimp_file_get_utf8_name (GFile * file)
+name|gimp_file_get_utf8_name
+parameter_list|(
+name|GFile
+modifier|*
+name|file
+parameter_list|)
+block|{
+name|gchar
+modifier|*
+name|name
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|G_IS_FILE
+argument_list|(
+name|file
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|name
+operator|=
+name|g_file_get_parse_name
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
+name|g_object_set_data_full
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|file
+argument_list|)
+argument_list|,
+literal|"gimp-parse-name"
+argument_list|,
+name|name
+argument_list|,
+operator|(
+name|GDestroyNotify
+operator|)
+name|g_free
+argument_list|)
+expr_stmt|;
+return|return
+name|name
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_strip_uline:  * @str: underline infested string (or %NULL)  *  * This function returns a copy of @str stripped of underline  * characters. This comes in handy when needing to strip mnemonics  * from menu paths etc.  *  * In some languages, mnemonics are handled by adding the mnemonic  * character in brackets (like "File (_F)"). This function recognizes  * this construct and removes the whole bracket construction to get  * rid of the mnemonic (see bug 157561).  *  * Return value: A (possibly stripped) copy of @str which should be  *               freed using g_free() when it is not needed any longer.  **/
 end_comment
 
