@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fa3f820103
+DECL|enum|__anon29715b430103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fa3f820208
+DECL|struct|__anon29715b430208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -3772,9 +3772,9 @@ case|case
 name|FILE_IMPORT
 case|:
 block|{
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 decl_stmt|;
 name|GError
 modifier|*
@@ -3782,9 +3782,9 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
-name|filename
+name|file
 operator|=
-name|gtk_file_chooser_get_filename
+name|gtk_file_chooser_get_file
 argument_list|(
 name|GTK_FILE_CHOOSER
 argument_list|(
@@ -3802,7 +3802,7 @@ name|dialog
 operator|->
 name|context
 argument_list|,
-name|filename
+name|file
 argument_list|,
 name|palette_name
 argument_list|,
@@ -3810,9 +3810,9 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_object_unref
 argument_list|(
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 if|if

@@ -550,17 +550,16 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_gradient_save_pov (GimpGradient * gradient,const gchar * filename,GError ** error)
+DECL|function|gimp_gradient_save_pov (GimpGradient * gradient,GFile * file,GError ** error)
 name|gimp_gradient_save_pov
 parameter_list|(
 name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -568,9 +567,13 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|path
+decl_stmt|;
 name|FILE
 modifier|*
-name|file
+name|f
 decl_stmt|;
 name|GimpGradientSegment
 modifier|*
@@ -603,9 +606,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|filename
-operator|!=
-name|NULL
+name|G_IS_FILE
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -624,19 +628,31 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|path
+operator|=
+name|g_file_get_path
+argument_list|(
 name|file
+argument_list|)
+expr_stmt|;
+name|f
 operator|=
 name|g_fopen
 argument_list|(
-name|filename
+name|path
 argument_list|,
 literal|"wb"
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|path
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 operator|!
-name|file
+name|f
 condition|)
 block|{
 name|g_set_error
@@ -652,9 +668,9 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -671,21 +687,21 @@ else|else
 block|{
 name|fprintf
 argument_list|(
-name|file
+name|f
 argument_list|,
 literal|"/* color_map file created by GIMP */\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
-name|file
+name|f
 argument_list|,
 literal|"/* http://www.gimp.org/           */\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
-name|file
+name|f
 argument_list|,
 literal|"color_map {\n"
 argument_list|)
@@ -797,7 +813,7 @@ argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
-name|file
+name|f
 argument_list|,
 literal|"\t[%s color rgbt<%s, %s, %s, %s>]\n"
 argument_list|,
@@ -954,7 +970,7 @@ argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
-name|file
+name|f
 argument_list|,
 literal|"\t[%s color rgbt<%s, %s, %s, %s>]\n"
 argument_list|,
@@ -1071,7 +1087,7 @@ argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
-name|file
+name|f
 argument_list|,
 literal|"\t[%s color rgbt<%s, %s, %s, %s>]\n"
 argument_list|,
@@ -1101,14 +1117,14 @@ expr_stmt|;
 block|}
 name|fprintf
 argument_list|(
-name|file
+name|f
 argument_list|,
 literal|"} /* color_map */\n"
 argument_list|)
 expr_stmt|;
 name|fclose
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 block|}

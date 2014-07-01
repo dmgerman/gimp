@@ -1261,7 +1261,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ace20930108
+DECL|struct|__anon2c79c2320108
 block|{
 DECL|member|factory
 name|GimpDataFactory
@@ -1597,7 +1597,7 @@ argument_list|,
 name|cache
 argument_list|)
 expr_stmt|;
-comment|/*  Now the cache contains a filename => list-of-objects mapping of    *  the old objects. So we should now traverse the directory and for    *  each file load it only if its mtime is newer.    *    *  Once a file was added, it is removed from the cache, so the only    *  objects remaining there will be those that are not present on    *  the disk (that have to be destroyed)    */
+comment|/*  Now the cache contains a GFile => list-of-objects mapping of    *  the old objects. So we should now traverse the directory and for    *  each file load it only if its mtime is newer.    *    *  Once a file was added, it is removed from the cache, so the only    *  objects remaining there will be those that are not present on    *  the disk (that have to be destroyed)    */
 name|gimp_data_factory_data_load
 argument_list|(
 name|factory
