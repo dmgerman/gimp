@@ -57,10 +57,9 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -85,7 +84,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|path
 parameter_list|,
 name|GError
 modifier|*
@@ -104,10 +103,9 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*

@@ -291,7 +291,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|path
 parameter_list|,
 name|GError
 modifier|*
@@ -318,7 +318,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|path
 parameter_list|,
 name|GError
 modifier|*
@@ -348,7 +348,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|path
 parameter_list|,
 name|GError
 modifier|*
@@ -381,7 +381,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|path
 parameter_list|,
 name|GError
 modifier|*
@@ -452,7 +452,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|path
 parameter_list|,
 name|GError
 modifier|*
@@ -505,17 +505,16 @@ end_comment
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_brush_load (GimpContext * context,const gchar * filename,GError ** error)
+DECL|function|gimp_brush_load (GimpContext * context,GFile * file,GError ** error)
 name|gimp_brush_load
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -527,23 +526,35 @@ name|GimpBrush
 modifier|*
 name|brush
 decl_stmt|;
+name|gchar
+modifier|*
+name|path
+decl_stmt|;
 name|gint
 name|fd
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|filename
-operator|!=
-name|NULL
+name|G_IS_FILE
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|path
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|g_path_is_absolute
 argument_list|(
-name|filename
+name|path
 argument_list|)
 argument_list|,
 name|NULL
@@ -567,7 +578,7 @@ name|fd
 operator|=
 name|g_open
 argument_list|(
-name|filename
+name|path
 argument_list|,
 name|O_RDONLY
 operator||
@@ -599,13 +610,18 @@ argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|filename
+name|path
 argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
 name|errno
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|path
 argument_list|)
 expr_stmt|;
 return|return
@@ -620,7 +636,7 @@ name|context
 argument_list|,
 name|fd
 argument_list|,
-name|filename
+name|path
 argument_list|,
 name|error
 argument_list|)
@@ -628,6 +644,11 @@ expr_stmt|;
 name|close
 argument_list|(
 name|fd
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|path
 argument_list|)
 expr_stmt|;
 if|if
@@ -652,7 +673,7 @@ end_function
 begin_function
 name|GimpBrush
 modifier|*
-DECL|function|gimp_brush_load_brush (GimpContext * context,gint fd,const gchar * filename,GError ** error)
+DECL|function|gimp_brush_load_brush (GimpContext * context,gint fd,const gchar * path,GError ** error)
 name|gimp_brush_load_brush
 parameter_list|(
 name|GimpContext
@@ -665,7 +686,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|path
 parameter_list|,
 name|GError
 modifier|*
@@ -709,7 +730,7 @@ name|TRUE
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|filename
+name|path
 operator|!=
 name|NULL
 argument_list|,
@@ -795,7 +816,7 @@ argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|filename
+name|path
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -912,7 +933,7 @@ argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|filename
+name|path
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -945,7 +966,7 @@ argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|filename
+name|path
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -978,7 +999,7 @@ argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|filename
+name|path
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1060,7 +1081,7 @@ argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|filename
+name|path
 argument_list|)
 argument_list|,
 name|header
@@ -1102,7 +1123,7 @@ argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|filename
+name|path
 argument_list|)
 argument_list|,
 name|header
@@ -1178,7 +1199,7 @@ argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|filename
+name|path
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1207,7 +1228,7 @@ argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|filename
+name|path
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1422,7 +1443,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2c23b1a9010a
+DECL|union|__anon290cfe0b010a
 block|{
 DECL|member|u
 name|guint16
@@ -1540,7 +1561,7 @@ argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|filename
+name|path
 argument_list|)
 argument_list|,
 name|header
@@ -1743,7 +1764,7 @@ argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|filename
+name|path
 argument_list|)
 argument_list|,
 name|header
@@ -1782,7 +1803,7 @@ argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|filename
+name|path
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1847,17 +1868,16 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_brush_load_abr (GimpContext * context,const gchar * filename,GError ** error)
+DECL|function|gimp_brush_load_abr (GimpContext * context,GFile * file,GError ** error)
 name|gimp_brush_load_abr
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -1865,9 +1885,13 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|path
+decl_stmt|;
 name|FILE
 modifier|*
-name|file
+name|f
 decl_stmt|;
 name|AbrHeader
 name|abr_hdr
@@ -1880,18 +1904,26 @@ name|NULL
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|filename
-operator|!=
-name|NULL
+name|G_IS_FILE
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|path
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|g_path_is_absolute
 argument_list|(
-name|filename
+name|path
 argument_list|)
 argument_list|,
 name|NULL
@@ -1911,11 +1943,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|file
+name|f
 operator|=
 name|g_fopen
 argument_list|(
-name|filename
+name|path
 argument_list|,
 literal|"rb"
 argument_list|)
@@ -1923,7 +1955,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|file
+name|f
 condition|)
 block|{
 name|g_set_error
@@ -1941,13 +1973,18 @@ argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|filename
+name|path
 argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
 name|errno
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|path
 argument_list|)
 expr_stmt|;
 return|return
@@ -1960,7 +1997,7 @@ name|version
 operator|=
 name|abr_read_short
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 name|abr_hdr
@@ -1969,7 +2006,7 @@ name|count
 operator|=
 name|abr_read_short
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 comment|/* sub-version for ABR v6 */
@@ -1980,7 +2017,7 @@ argument_list|(
 operator|&
 name|abr_hdr
 argument_list|,
-name|filename
+name|path
 argument_list|,
 name|error
 argument_list|)
@@ -2003,12 +2040,12 @@ name|brush_list
 operator|=
 name|gimp_brush_load_abr_v12
 argument_list|(
-name|file
+name|f
 argument_list|,
 operator|&
 name|abr_hdr
 argument_list|,
-name|filename
+name|path
 argument_list|,
 name|error
 argument_list|)
@@ -2021,12 +2058,12 @@ name|brush_list
 operator|=
 name|gimp_brush_load_abr_v6
 argument_list|(
-name|file
+name|f
 argument_list|,
 operator|&
 name|abr_hdr
 argument_list|,
-name|filename
+name|path
 argument_list|,
 name|error
 argument_list|)
@@ -2035,7 +2072,7 @@ block|}
 block|}
 name|fclose
 argument_list|(
-name|file
+name|f
 argument_list|)
 expr_stmt|;
 if|if
@@ -2067,12 +2104,17 @@ argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|filename
+name|path
 argument_list|)
 argument_list|,
 name|abr_hdr
 operator|.
 name|version
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|path
 argument_list|)
 expr_stmt|;
 return|return
@@ -2092,7 +2134,7 @@ begin_function
 specifier|static
 name|GList
 modifier|*
-DECL|function|gimp_brush_load_abr_v12 (FILE * file,AbrHeader * abr_hdr,const gchar * filename,GError ** error)
+DECL|function|gimp_brush_load_abr_v12 (FILE * file,AbrHeader * abr_hdr,const gchar * path,GError ** error)
 name|gimp_brush_load_abr_v12
 parameter_list|(
 name|FILE
@@ -2106,7 +2148,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|path
 parameter_list|,
 name|GError
 modifier|*
@@ -2159,7 +2201,7 @@ name|abr_hdr
 argument_list|,
 name|i
 argument_list|,
-name|filename
+name|path
 argument_list|,
 operator|&
 name|my_error
@@ -2207,7 +2249,7 @@ begin_function
 specifier|static
 name|GList
 modifier|*
-DECL|function|gimp_brush_load_abr_v6 (FILE * file,AbrHeader * abr_hdr,const gchar * filename,GError ** error)
+DECL|function|gimp_brush_load_abr_v6 (FILE * file,AbrHeader * abr_hdr,const gchar * path,GError ** error)
 name|gimp_brush_load_abr_v6
 parameter_list|(
 name|FILE
@@ -2221,7 +2263,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|path
 parameter_list|,
 name|GError
 modifier|*
@@ -2307,7 +2349,7 @@ name|sample_section_end
 argument_list|,
 name|i
 argument_list|,
-name|filename
+name|path
 argument_list|,
 operator|&
 name|my_error
@@ -2358,7 +2400,7 @@ begin_function
 specifier|static
 name|GimpBrush
 modifier|*
-DECL|function|gimp_brush_load_abr_brush_v12 (FILE * file,AbrHeader * abr_hdr,gint index,const gchar * filename,GError ** error)
+DECL|function|gimp_brush_load_abr_brush_v12 (FILE * file,AbrHeader * abr_hdr,gint index,const gchar * path,GError ** error)
 name|gimp_brush_load_abr_brush_v12
 parameter_list|(
 name|FILE
@@ -2375,7 +2417,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|path
 parameter_list|,
 name|GError
 modifier|*
@@ -2394,7 +2436,7 @@ name|abr_brush_hdr
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|filename
+name|path
 operator|!=
 name|NULL
 argument_list|,
@@ -2686,7 +2728,7 @@ argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|filename
+name|path
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2698,7 +2740,7 @@ name|tmp
 operator|=
 name|g_filename_display_basename
 argument_list|(
-name|filename
+name|path
 argument_list|)
 expr_stmt|;
 if|if
@@ -2914,7 +2956,7 @@ begin_function
 specifier|static
 name|GimpBrush
 modifier|*
-DECL|function|gimp_brush_load_abr_brush_v6 (FILE * file,AbrHeader * abr_hdr,gint32 max_offset,gint index,const gchar * filename,GError ** error)
+DECL|function|gimp_brush_load_abr_brush_v6 (FILE * file,AbrHeader * abr_hdr,gint32 max_offset,gint index,const gchar * path,GError ** error)
 name|gimp_brush_load_abr_brush_v6
 parameter_list|(
 name|FILE
@@ -2934,7 +2976,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|path
 parameter_list|,
 name|GError
 modifier|*
@@ -3084,7 +3126,7 @@ argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|filename
+name|path
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3162,7 +3204,7 @@ name|tmp
 operator|=
 name|g_filename_display_basename
 argument_list|(
-name|filename
+name|path
 argument_list|)
 expr_stmt|;
 name|name
@@ -3525,7 +3567,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|abr_supported (AbrHeader * abr_hdr,const gchar * filename,GError ** error)
+DECL|function|abr_supported (AbrHeader * abr_hdr,const gchar * path,GError ** error)
 name|abr_supported
 parameter_list|(
 name|AbrHeader
@@ -3535,7 +3577,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|path
 parameter_list|,
 name|GError
 modifier|*
@@ -3607,7 +3649,7 @@ argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|filename
+name|path
 argument_list|)
 argument_list|,
 comment|/* horrid subversion display, but better than                       * having yet another translatable string for                       * this                       */
