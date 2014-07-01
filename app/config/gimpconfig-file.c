@@ -795,13 +795,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_file_backup_on_error (const gchar * filename,const gchar * name,GError ** error)
+DECL|function|gimp_config_file_backup_on_error (GFile * file,const gchar * name,GError ** error)
 name|gimp_config_file_backup_on_error
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 specifier|const
 name|gchar
@@ -816,6 +815,10 @@ parameter_list|)
 block|{
 name|gchar
 modifier|*
+name|path
+decl_stmt|;
+name|gchar
+modifier|*
 name|backup
 decl_stmt|;
 name|gboolean
@@ -823,9 +826,10 @@ name|success
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|filename
-operator|!=
-name|NULL
+name|G_IS_FILE
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -853,11 +857,18 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|path
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 name|backup
 operator|=
 name|g_strconcat
 argument_list|(
-name|filename
+name|path
 argument_list|,
 literal|"~"
 argument_list|,
@@ -868,7 +879,7 @@ name|success
 operator|=
 name|gimp_config_file_copy
 argument_list|(
-name|filename
+name|path
 argument_list|,
 name|backup
 argument_list|,
@@ -903,6 +914,11 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|backup
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|path
 argument_list|)
 expr_stmt|;
 return|return

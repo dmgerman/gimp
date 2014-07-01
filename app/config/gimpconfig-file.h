@@ -50,10 +50,9 @@ begin_function_decl
 name|gboolean
 name|gimp_config_file_backup_on_error
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 specifier|const
 name|gchar

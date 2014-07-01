@@ -152,7 +152,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fe0f8b0103
+DECL|enum|__anon27fe8f910103
 block|{
 DECL|enumerator|UNIT_INFO
 name|UNIT_INFO
@@ -528,10 +528,6 @@ operator|!=
 name|G_TOKEN_LEFT_PAREN
 condition|)
 block|{
-name|gchar
-modifier|*
-name|tmp
-decl_stmt|;
 name|g_scanner_get_next_token
 argument_list|(
 name|scanner
@@ -576,25 +572,13 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
-name|tmp
-operator|=
-name|g_file_get_path
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
 name|gimp_config_file_backup_on_error
 argument_list|(
-name|tmp
+name|file
 argument_list|,
 literal|"unitrc"
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|tmp
 argument_list|)
 expr_stmt|;
 block|}

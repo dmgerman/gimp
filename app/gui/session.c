@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298ea1c90103
+DECL|enum|__anon2770edd60103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -897,10 +897,6 @@ condition|(
 name|error
 condition|)
 block|{
-name|gchar
-modifier|*
-name|tmp
-decl_stmt|;
 name|gimp_message_literal
 argument_list|(
 name|gimp
@@ -920,25 +916,13 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
-name|tmp
-operator|=
-name|g_file_get_path
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
 name|gimp_config_file_backup_on_error
 argument_list|(
-name|tmp
+name|file
 argument_list|,
 literal|"sessionrc"
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|tmp
 argument_list|)
 expr_stmt|;
 block|}
