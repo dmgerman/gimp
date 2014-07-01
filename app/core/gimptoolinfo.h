@@ -290,9 +290,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gchar
+name|GFile
 modifier|*
-name|gimp_tool_info_build_options_filename
+name|gimp_tool_info_get_options_file
 parameter_list|(
 name|GimpToolInfo
 modifier|*

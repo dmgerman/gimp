@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0afc700103
+DECL|enum|__anon2990551f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1315,10 +1315,10 @@ block|}
 end_function
 
 begin_function
-name|gchar
+name|GFile
 modifier|*
-DECL|function|gimp_tool_info_build_options_filename (GimpToolInfo * tool_info,const gchar * suffix)
-name|gimp_tool_info_build_options_filename
+DECL|function|gimp_tool_info_get_options_file (GimpToolInfo * tool_info,const gchar * suffix)
+name|gimp_tool_info_get_options_file
 parameter_list|(
 name|GimpToolInfo
 modifier|*
@@ -1330,11 +1330,6 @@ modifier|*
 name|suffix
 parameter_list|)
 block|{
-specifier|const
-name|gchar
-modifier|*
-name|name
-decl_stmt|;
 name|gchar
 modifier|*
 name|filename
@@ -1342,6 +1337,10 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|basename
+decl_stmt|;
+name|GFile
+modifier|*
+name|file
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -1353,34 +1352,19 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|name
-operator|=
-name|gimp_object_get_name
-argument_list|(
-name|tool_info
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|suffix
-condition|)
+comment|/* also works for a NULL suffix */
 name|basename
 operator|=
 name|g_strconcat
 argument_list|(
-name|name
+name|gimp_object_get_name
+argument_list|(
+name|tool_info
+argument_list|)
 argument_list|,
 name|suffix
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-else|else
-name|basename
-operator|=
-name|g_strdup
-argument_list|(
-name|name
 argument_list|)
 expr_stmt|;
 name|filename
@@ -1402,8 +1386,20 @@ argument_list|(
 name|basename
 argument_list|)
 expr_stmt|;
-return|return
+name|file
+operator|=
+name|g_file_new_for_path
+argument_list|(
 name|filename
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+return|return
+name|file
 return|;
 block|}
 end_function
