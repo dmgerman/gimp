@@ -752,10 +752,9 @@ name|GimpTextBuffer
 modifier|*
 name|buffer
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -773,10 +772,9 @@ name|GimpTextBuffer
 modifier|*
 name|buffer
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gboolean
 name|selection_only
