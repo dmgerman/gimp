@@ -750,11 +750,10 @@ name|writer
 operator|->
 name|output
 operator|=
-name|g_win32_input_stream_new
+name|g_win32_output_stream_new
 argument_list|(
 operator|(
-name|HANDLE
-operator|*
+name|gpointer
 operator|)
 name|fd
 argument_list|,
