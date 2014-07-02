@@ -284,8 +284,9 @@ name|GimpLevelsConfig
 modifier|*
 name|config
 parameter_list|,
-name|gpointer
-name|fp
+name|GFile
+modifier|*
+name|file
 parameter_list|,
 name|GError
 modifier|*

@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e602510103
+DECL|enum|__anon278059030103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2842,7 +2842,7 @@ name|GIMP_DATA_ERROR_WRITE
 argument_list|,
 name|_
 argument_list|(
-literal|"Writing brush file '%s' failed: %s"
+literal|"Writing curves file '%s' failed: %s"
 argument_list|)
 argument_list|,
 name|gimp_file_get_utf8_name
