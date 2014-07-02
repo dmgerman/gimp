@@ -105,9 +105,15 @@ directive|include
 file|"gimpwidgets-utils.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-priorities.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon27ef8a6c0103
+DECL|enum|__anon27adb86f0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2101,7 +2107,7 @@ name|idle_id
 operator|=
 name|g_idle_add_full
 argument_list|(
-name|GIMP_VIEWABLE_PRIORITY_IDLE
+name|GIMP_PRIORITY_VIEWABLE_IDLE
 argument_list|,
 operator|(
 name|GSourceFunc
@@ -2207,7 +2213,7 @@ name|idle_id
 operator|=
 name|g_idle_add_full
 argument_list|(
-name|GIMP_VIEWABLE_PRIORITY_IDLE
+name|GIMP_PRIORITY_VIEWABLE_IDLE
 argument_list|,
 operator|(
 name|GSourceFunc

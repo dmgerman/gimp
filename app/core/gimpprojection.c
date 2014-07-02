@@ -117,17 +117,11 @@ directive|include
 file|"gimp-log.h"
 end_include
 
-begin_comment
-comment|/*  just a bit less than GDK_PRIORITY_REDRAW, also see  *  GIMP_DISPLAY_SHELL_FILL_IDLE_PRIORITY in gimpdisplayshell.c  */
-end_comment
-
-begin_define
-DECL|macro|GIMP_PROJECTION_IDLE_PRIORITY
-define|#
-directive|define
-name|GIMP_PROJECTION_IDLE_PRIORITY
-value|(G_PRIORITY_HIGH_IDLE + 20 + 2)
-end_define
+begin_include
+include|#
+directive|include
+file|"gimp-priorities.h"
+end_include
 
 begin_comment
 comment|/*  chunk size for one iteration of the chunk renderer  */
@@ -169,7 +163,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9955490103
+DECL|enum|__anon2bb641330103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -182,7 +176,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9955490203
+DECL|enum|__anon2bb641330203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2779,7 +2773,7 @@ name|idle_id
 operator|=
 name|g_idle_add_full
 argument_list|(
-name|GIMP_PROJECTION_IDLE_PRIORITY
+name|GIMP_PRIORITY_PROJECTION_IDLE
 argument_list|,
 name|gimp_projection_chunk_render_callback
 argument_list|,

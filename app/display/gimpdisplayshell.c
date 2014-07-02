@@ -342,24 +342,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-priorities.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_comment
-comment|/* a bit higher than projection construction, see gimpprojection.c  */
-end_comment
-
-begin_define
-DECL|macro|GIMP_DISPLAY_SHELL_FILL_IDLE_PRIORITY
-define|#
-directive|define
-name|GIMP_DISPLAY_SHELL_FILL_IDLE_PRIORITY
-value|(G_PRIORITY_HIGH_IDLE + 20 + 1)
-end_define
-
 begin_enum
 enum|enum
-DECL|enum|__anon2ba6233f0103
+DECL|enum|__anon29c74d4e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -393,7 +387,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba6233f0203
+DECL|enum|__anon29c74d4e0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -6152,7 +6146,7 @@ name|fill_idle_id
 operator|=
 name|g_idle_add_full
 argument_list|(
-name|GIMP_DISPLAY_SHELL_FILL_IDLE_PRIORITY
+name|GIMP_PRIORITY_DISPLAY_SHELL_FILL_IDLE
 argument_list|,
 operator|(
 name|GSourceFunc
