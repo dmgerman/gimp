@@ -1860,7 +1860,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcfb2c30103
+DECL|enum|__anon2b79b7430103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START
@@ -2660,7 +2660,7 @@ argument_list|(
 literal|"Y float"
 argument_list|)
 argument_list|,
-name|GEGL_BUFFER_READWRITE
+name|GEGL_ACCESS_READWRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)

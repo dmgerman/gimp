@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4c8c340103
+DECL|enum|__anon2b4ac3b60103
 block|{
 DECL|enumerator|GRADIENT_MODE
 name|GRADIENT_MODE
@@ -885,7 +885,7 @@ literal|0
 argument_list|,
 name|format_shadow
 argument_list|,
-name|GEGL_BUFFER_WRITE
+name|GEGL_ACCESS_WRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -904,7 +904,7 @@ literal|0
 argument_list|,
 name|format_buffer
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)

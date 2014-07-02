@@ -100,10 +100,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279cf5800108
+DECL|struct|__anon278ed1c30108
 block|{
 union|union
-DECL|union|__anon279cf580020a
+DECL|union|__anon278ed1c3020a
 block|{
 DECL|member|ID
 name|gint32
@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279cf5800308
+DECL|struct|__anon278ed1c30308
 block|{
 DECL|member|babl_name
 specifier|const
@@ -187,7 +187,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279cf5800408
+DECL|struct|__anon278ed1c30408
 block|{
 DECL|member|babl_model
 specifier|const
@@ -964,7 +964,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279cf5800508
+DECL|struct|__anon278ed1c30508
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1004,7 +1004,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279cf5800608
+DECL|struct|__anon278ed1c30608
 block|{
 DECL|member|width
 DECL|member|height
@@ -2565,7 +2565,7 @@ literal|0
 argument_list|,
 name|NULL
 argument_list|,
-name|GEGL_BUFFER_READWRITE
+name|GEGL_ACCESS_READWRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -2683,7 +2683,7 @@ literal|0
 argument_list|,
 name|NULL
 argument_list|,
-name|GEGL_BUFFER_WRITE
+name|GEGL_ACCESS_WRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -2726,7 +2726,7 @@ literal|0
 argument_list|,
 name|NULL
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)

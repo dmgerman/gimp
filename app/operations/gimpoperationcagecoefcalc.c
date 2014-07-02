@@ -843,7 +843,7 @@ literal|0
 argument_list|,
 name|format
 argument_list|,
-name|GEGL_BUFFER_READWRITE
+name|GEGL_ACCESS_READWRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)

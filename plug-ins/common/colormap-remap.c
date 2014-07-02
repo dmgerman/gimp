@@ -1416,7 +1416,7 @@ literal|0
 argument_list|,
 name|format
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -1452,7 +1452,7 @@ literal|0
 argument_list|,
 name|format
 argument_list|,
-name|GEGL_BUFFER_WRITE
+name|GEGL_ACCESS_WRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -1729,7 +1729,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5e280d0103
+DECL|enum|__anon2c77f3e90103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX

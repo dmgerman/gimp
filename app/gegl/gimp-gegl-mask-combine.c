@@ -626,7 +626,7 @@ argument_list|(
 literal|"Y float"
 argument_list|)
 argument_list|,
-name|GEGL_BUFFER_READWRITE
+name|GEGL_ACCESS_READWRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -1425,7 +1425,7 @@ argument_list|(
 literal|"Y float"
 argument_list|)
 argument_list|,
-name|GEGL_BUFFER_READWRITE
+name|GEGL_ACCESS_READWRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -1458,7 +1458,7 @@ argument_list|(
 literal|"Y float"
 argument_list|)
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)

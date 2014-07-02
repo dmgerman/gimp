@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acf2a610108
+DECL|struct|__anon291d4b2f0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acf2a610208
+DECL|struct|__anon291d4b2f0208
 block|{
 DECL|member|run
 name|gboolean
@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acf2a610308
+DECL|struct|__anon291d4b2f0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -4606,7 +4606,7 @@ literal|0
 argument_list|,
 name|file_format
 argument_list|,
-name|GEGL_BUFFER_READWRITE
+name|GEGL_ACCESS_READWRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -7209,7 +7209,7 @@ literal|0
 argument_list|,
 name|format
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -7379,7 +7379,7 @@ literal|0
 argument_list|,
 name|format
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)

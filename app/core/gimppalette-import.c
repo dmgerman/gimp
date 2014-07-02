@@ -1222,7 +1222,7 @@ literal|0
 argument_list|,
 name|format
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -1303,7 +1303,7 @@ literal|0
 argument_list|,
 name|format
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)

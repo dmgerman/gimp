@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a6dbff0108
+DECL|struct|__anon296d717c0108
 block|{
 comment|/* the babl_component names of the channels */
 DECL|member|babl_name
@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a6dbff0208
+DECL|struct|__anon296d717c0208
 block|{
 DECL|member|type
 specifier|const
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a6dbff0308
+DECL|struct|__anon296d717c0308
 block|{
 DECL|member|extract_type
 name|gchar
@@ -3043,7 +3043,7 @@ literal|0
 argument_list|,
 name|NULL
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -3077,7 +3077,7 @@ literal|0
 argument_list|,
 name|NULL
 argument_list|,
-name|GEGL_BUFFER_READWRITE
+name|GEGL_ACCESS_READWRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -3319,7 +3319,7 @@ literal|0
 argument_list|,
 name|NULL
 argument_list|,
-name|GEGL_BUFFER_READWRITE
+name|GEGL_ACCESS_READWRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)

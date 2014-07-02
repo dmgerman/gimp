@@ -349,7 +349,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c9756af0103
+DECL|enum|__anon275bb1870103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -368,7 +368,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9756af0208
+DECL|struct|__anon275bb1870208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -3479,7 +3479,7 @@ argument_list|(
 literal|"R'G'B'A u8"
 argument_list|)
 argument_list|,
-name|GEGL_BUFFER_READWRITE
+name|GEGL_ACCESS_READWRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)

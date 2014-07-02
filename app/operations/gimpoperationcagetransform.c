@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e6f7a50103
+DECL|enum|__anon29fef7e30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -953,7 +953,7 @@ literal|0
 argument_list|,
 name|NULL
 argument_list|,
-name|GEGL_BUFFER_WRITE
+name|GEGL_ACCESS_WRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)

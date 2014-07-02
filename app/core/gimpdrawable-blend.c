@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b3d9a10108
+DECL|struct|__anon276b637b0108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -215,7 +215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b3d9a10208
+DECL|struct|__anon276b637b0208
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -3981,7 +3981,7 @@ argument_list|(
 literal|"R'G'B'A float"
 argument_list|)
 argument_list|,
-name|GEGL_BUFFER_WRITE
+name|GEGL_ACCESS_WRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)

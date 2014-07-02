@@ -419,7 +419,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b712c6d0103
+DECL|enum|__anon2ae97f3b0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1520,7 +1520,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b712c6d0208
+DECL|struct|__anon2ae97f3b0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1763,7 +1763,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b712c6d0308
+DECL|struct|__anon2ae97f3b0308
 block|{
 DECL|member|used_count
 name|signed
@@ -2558,7 +2558,7 @@ literal|0
 argument_list|,
 name|NULL
 argument_list|,
-name|GEGL_BUFFER_READWRITE
+name|GEGL_ACCESS_READWRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -4300,7 +4300,7 @@ literal|0
 argument_list|,
 name|format
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -4565,7 +4565,7 @@ literal|0
 argument_list|,
 name|format
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -10803,7 +10803,7 @@ literal|0
 argument_list|,
 name|NULL
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -10830,7 +10830,7 @@ literal|0
 argument_list|,
 name|NULL
 argument_list|,
-name|GEGL_BUFFER_WRITE
+name|GEGL_ACCESS_WRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -11265,7 +11265,7 @@ literal|0
 argument_list|,
 name|NULL
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -11292,7 +11292,7 @@ literal|0
 argument_list|,
 name|NULL
 argument_list|,
-name|GEGL_BUFFER_WRITE
+name|GEGL_ACCESS_WRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -12028,7 +12028,7 @@ literal|0
 argument_list|,
 name|NULL
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -12055,7 +12055,7 @@ literal|0
 argument_list|,
 name|NULL
 argument_list|,
-name|GEGL_BUFFER_WRITE
+name|GEGL_ACCESS_WRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -12651,7 +12651,7 @@ literal|0
 argument_list|,
 name|NULL
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -12678,7 +12678,7 @@ literal|0
 argument_list|,
 name|NULL
 argument_list|,
-name|GEGL_BUFFER_WRITE
+name|GEGL_ACCESS_WRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -13646,7 +13646,7 @@ literal|0
 argument_list|,
 name|NULL
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -13673,7 +13673,7 @@ literal|0
 argument_list|,
 name|NULL
 argument_list|,
-name|GEGL_BUFFER_WRITE
+name|GEGL_ACCESS_WRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)

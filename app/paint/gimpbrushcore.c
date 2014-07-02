@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b72e1e20103
+DECL|enum|__anon29403f080103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -6953,7 +6953,7 @@ argument_list|(
 literal|"RGBA float"
 argument_list|)
 argument_list|,
-name|GEGL_BUFFER_WRITE
+name|GEGL_ACCESS_WRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)

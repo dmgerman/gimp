@@ -226,7 +226,7 @@ literal|0
 argument_list|,
 name|src_format
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -253,7 +253,7 @@ literal|0
 argument_list|,
 name|dest_format
 argument_list|,
-name|GEGL_BUFFER_WRITE
+name|GEGL_ACCESS_WRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -1028,7 +1028,7 @@ argument_list|(
 literal|"R'G'B'A float"
 argument_list|)
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -1048,7 +1048,7 @@ argument_list|(
 literal|"R'G'B'A float"
 argument_list|)
 argument_list|,
-name|GEGL_BUFFER_WRITE
+name|GEGL_ACCESS_WRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -1600,7 +1600,7 @@ argument_list|(
 literal|"RGBA float"
 argument_list|)
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -1620,7 +1620,7 @@ argument_list|(
 literal|"RGBA float"
 argument_list|)
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -1640,7 +1640,7 @@ argument_list|(
 literal|"RGBA float"
 argument_list|)
 argument_list|,
-name|GEGL_BUFFER_WRITE
+name|GEGL_ACCESS_WRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -1895,7 +1895,7 @@ argument_list|(
 literal|"Y float"
 argument_list|)
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -1915,7 +1915,7 @@ argument_list|(
 literal|"RGBA float"
 argument_list|)
 argument_list|,
-name|GEGL_BUFFER_READWRITE
+name|GEGL_ACCESS_READWRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -2033,7 +2033,7 @@ argument_list|(
 literal|"Y float"
 argument_list|)
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -2053,7 +2053,7 @@ argument_list|(
 literal|"Y float"
 argument_list|)
 argument_list|,
-name|GEGL_BUFFER_READWRITE
+name|GEGL_ACCESS_READWRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -2172,7 +2172,7 @@ argument_list|(
 literal|"Y float"
 argument_list|)
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -2192,7 +2192,7 @@ argument_list|(
 literal|"Y float"
 argument_list|)
 argument_list|,
-name|GEGL_BUFFER_READWRITE
+name|GEGL_ACCESS_READWRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -2394,7 +2394,7 @@ argument_list|(
 literal|"RGBA float"
 argument_list|)
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -2414,7 +2414,7 @@ argument_list|(
 literal|"RGBA float"
 argument_list|)
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -2434,7 +2434,7 @@ argument_list|(
 literal|"Y float"
 argument_list|)
 argument_list|,
-name|GEGL_BUFFER_READ
+name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -2454,7 +2454,7 @@ argument_list|(
 literal|"RGBA float"
 argument_list|)
 argument_list|,
-name|GEGL_BUFFER_WRITE
+name|GEGL_ACCESS_WRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)

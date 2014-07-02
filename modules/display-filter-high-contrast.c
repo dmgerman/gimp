@@ -167,7 +167,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2beefc280103
+DECL|enum|__anon27c742ff0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -674,7 +674,7 @@ argument_list|(
 literal|"R'G'B'A float"
 argument_list|)
 argument_list|,
-name|GEGL_BUFFER_READWRITE
+name|GEGL_ACCESS_READWRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)

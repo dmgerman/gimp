@@ -66,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292377bc0103
+DECL|enum|__anon2be3e6f00103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_PROTANOPIA
 name|COLORBLIND_DEFICIENCY_PROTANOPIA
@@ -341,7 +341,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon292377bc0203
+DECL|enum|__anon2be3e6f00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1053,7 +1053,7 @@ literal|"RGBA float"
 argument_list|)
 comment|/* linear! */
 argument_list|,
-name|GEGL_BUFFER_READWRITE
+name|GEGL_ACCESS_READWRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
