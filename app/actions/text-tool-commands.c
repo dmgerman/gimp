@@ -752,9 +752,9 @@ operator|==
 name|GTK_RESPONSE_OK
 condition|)
 block|{
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 decl_stmt|;
 name|GError
 modifier|*
@@ -762,9 +762,9 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
-name|filename
+name|file
 operator|=
-name|gtk_file_chooser_get_filename
+name|gtk_file_chooser_get_file
 argument_list|(
 name|GTK_FILE_CHOOSER
 argument_list|(
@@ -781,7 +781,7 @@ name|tool
 operator|->
 name|buffer
 argument_list|,
-name|filename
+name|file
 argument_list|,
 operator|&
 name|error
@@ -811,9 +811,9 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|error
@@ -827,16 +827,16 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_object_unref
 argument_list|(
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|g_free
+name|g_object_unref
 argument_list|(
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 block|}
