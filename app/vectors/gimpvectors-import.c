@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1814550108
+DECL|struct|__anon2c59bd7d0108
 block|{
 DECL|member|stack
 name|GQueue
@@ -228,7 +228,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1814550208
+DECL|struct|__anon2c59bd7d0208
 block|{
 DECL|member|id
 name|gchar
@@ -255,10 +255,9 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 specifier|const
 name|gchar
@@ -756,22 +755,21 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_vectors_import_file:  * @image:    the #GimpImage to add the paths to  * @filename: name of a SVG file  * @merge:    should multiple paths be merged into a single #GimpVectors object  * @scale:    should the SVG be scaled to fit the image dimensions  * @position: position in the image's vectors stack where to add the vectors  * @error:    location to store possible errors  *  * Imports one or more paths and basic shapes from a SVG file.  *  * Return value: %TRUE on success, %FALSE if an error occurred  **/
+comment|/**  * gimp_vectors_import_file:  * @image:    the #GimpImage to add the paths to  * @file:     a SVG file  * @merge:    should multiple paths be merged into a single #GimpVectors object  * @scale:    should the SVG be scaled to fit the image dimensions  * @position: position in the image's vectors stack where to add the vectors  * @error:    location to store possible errors  *  * Imports one or more paths and basic shapes from a SVG file.  *  * Return value: %TRUE on success, %FALSE if an error occurred  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_vectors_import_file (GimpImage * image,const gchar * filename,gboolean merge,gboolean scale,GimpVectors * parent,gint position,GList ** ret_vectors,GError ** error)
+DECL|function|gimp_vectors_import_file (GimpImage * image,GFile * file,gboolean merge,gboolean scale,GimpVectors * parent,gint position,GList ** ret_vectors,GError ** error)
 name|gimp_vectors_import_file
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gboolean
 name|merge
@@ -809,9 +807,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|filename
-operator|!=
-name|NULL
+name|G_IS_FILE
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -932,7 +931,7 @@ name|gimp_vectors_import
 argument_list|(
 name|image
 argument_list|,
-name|filename
+name|file
 argument_list|,
 name|NULL
 argument_list|,
@@ -1163,17 +1162,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_vectors_import (GimpImage * image,const gchar * filename,const gchar * str,gsize len,gboolean merge,gboolean scale,GimpVectors * parent,gint position,GList ** ret_vectors,GError ** error)
+DECL|function|gimp_vectors_import (GimpImage * image,GFile * file,const gchar * str,gsize len,gboolean merge,gboolean scale,GimpVectors * parent,gint position,GList ** ret_vectors,GError ** error)
 name|gimp_vectors_import
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 specifier|const
 name|gchar
@@ -1306,15 +1304,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|filename
+name|file
 condition|)
 name|success
 operator|=
-name|gimp_xml_parser_parse_file
+name|gimp_xml_parser_parse_gfile
 argument_list|(
 name|xml_parser
 argument_list|,
-name|filename
+name|file
 argument_list|,
 name|error
 argument_list|)
@@ -1571,7 +1569,7 @@ else|else
 block|{
 if|if
 condition|(
-name|filename
+name|file
 condition|)
 name|g_set_error
 argument_list|(
@@ -1586,9 +1584,9 @@ argument_list|(
 literal|"No paths found in '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1621,7 +1619,7 @@ operator|&&
 operator|*
 name|error
 operator|&&
-name|filename
+name|file
 condition|)
 comment|/*  parser reported an error  */
 block|{
@@ -1650,9 +1648,9 @@ argument_list|(
 literal|"Failed to import paths from '%s': %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|msg
@@ -6247,7 +6245,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1814550308
+DECL|struct|__anon2c59bd7d0308
 block|{
 DECL|member|strokes
 name|GList

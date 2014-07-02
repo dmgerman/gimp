@@ -2873,9 +2873,9 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 decl_stmt|;
 name|GError
 modifier|*
@@ -2895,9 +2895,9 @@ name|dialog
 operator|->
 name|scale_vectors
 expr_stmt|;
-name|filename
+name|file
 operator|=
-name|gtk_file_chooser_get_filename
+name|gtk_file_chooser_get_file
 argument_list|(
 name|chooser
 argument_list|)
@@ -2910,7 +2910,7 @@ name|dialog
 operator|->
 name|image
 argument_list|,
-name|filename
+name|file
 argument_list|,
 name|vectors_import_merge
 argument_list|,
@@ -2967,9 +2967,9 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|g_free
+name|g_object_unref
 argument_list|(
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 name|g_object_set_data_full
