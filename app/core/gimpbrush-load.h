@@ -82,8 +82,9 @@ name|GFile
 modifier|*
 name|file
 parameter_list|,
-name|gint
-name|fd
+name|GInputStream
+modifier|*
+name|input
 parameter_list|,
 name|GError
 modifier|*
