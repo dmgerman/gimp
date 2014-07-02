@@ -255,7 +255,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon28da35290103
+DECL|enum|__anon2a4818c50103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -319,17 +319,16 @@ end_enum
 begin_function
 name|GSList
 modifier|*
-DECL|function|plug_in_rc_parse (Gimp * gimp,const gchar * filename,GError ** error)
+DECL|function|plug_in_rc_parse (Gimp * gimp,GFile * file,GError ** error)
 name|plug_in_rc_parse
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -376,9 +375,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|filename
-operator|!=
-name|NULL
+name|G_IS_FILE
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -399,9 +399,9 @@ argument_list|)
 expr_stmt|;
 name|scanner
 operator|=
-name|gimp_scanner_new_file
+name|gimp_scanner_new_gfile
 argument_list|(
-name|filename
+name|file
 argument_list|,
 name|error
 argument_list|)
@@ -912,9 +912,9 @@ argument_list|(
 literal|"Skipping '%s': wrong GIMP protocol version."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -940,9 +940,9 @@ argument_list|(
 literal|"Skipping '%s': wrong pluginrc file format version."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3009,17 +3009,16 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|plug_in_rc_write (GSList * plug_in_defs,const gchar * filename,GError ** error)
+DECL|function|plug_in_rc_write (GSList * plug_in_defs,GFile * file,GError ** error)
 name|plug_in_rc_write
 parameter_list|(
 name|GSList
 modifier|*
 name|plug_in_defs
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -3041,9 +3040,9 @@ name|list
 decl_stmt|;
 name|writer
 operator|=
-name|gimp_config_writer_new_file
+name|gimp_config_writer_new_gfile
 argument_list|(
-name|filename
+name|file
 argument_list|,
 name|FALSE
 argument_list|,

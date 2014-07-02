@@ -153,7 +153,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gchar
+name|GFile
 modifier|*
 name|gimp_plug_in_manager_get_pluginrc
 parameter_list|(
@@ -173,10 +173,9 @@ name|GimpPlugInManager
 modifier|*
 name|manager
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|pluginrc
+name|file
 parameter_list|,
 name|GimpInitStatusFunc
 name|status_callback
@@ -343,7 +342,7 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
-name|gchar
+name|GFile
 modifier|*
 name|pluginrc
 decl_stmt|;
@@ -519,7 +518,7 @@ name|g_print
 argument_list|(
 literal|"Writing '%s'\n"
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
 name|pluginrc
 argument_list|)
@@ -568,7 +567,7 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
-name|g_free
+name|g_object_unref
 argument_list|(
 name|pluginrc
 argument_list|)
@@ -944,7 +943,7 @@ end_function
 
 begin_function
 specifier|static
-name|gchar
+name|GFile
 modifier|*
 DECL|function|gimp_plug_in_manager_get_pluginrc (GimpPlugInManager * manager)
 name|gimp_plug_in_manager_get_pluginrc
@@ -962,7 +961,7 @@ name|manager
 operator|->
 name|gimp
 decl_stmt|;
-name|gchar
+name|GFile
 modifier|*
 name|pluginrc
 decl_stmt|;
@@ -975,7 +974,11 @@ operator|->
 name|plug_in_rc_path
 condition|)
 block|{
-name|pluginrc
+name|gchar
+modifier|*
+name|path
+decl_stmt|;
+name|path
 operator|=
 name|gimp_config_path_expand
 argument_list|(
@@ -995,7 +998,7 @@ condition|(
 operator|!
 name|g_path_is_absolute
 argument_list|(
-name|pluginrc
+name|path
 argument_list|)
 condition|)
 block|{
@@ -1008,27 +1011,39 @@ argument_list|(
 name|gimp_directory
 argument_list|()
 argument_list|,
-name|pluginrc
+name|path
 argument_list|,
 name|NULL
 argument_list|)
 decl_stmt|;
 name|g_free
 argument_list|(
-name|pluginrc
+name|path
 argument_list|)
 expr_stmt|;
-name|pluginrc
+name|path
 operator|=
 name|str
 expr_stmt|;
 block|}
+name|pluginrc
+operator|=
+name|g_file_new_for_path
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
 name|pluginrc
 operator|=
-name|gimp_personal_rc_file
+name|gimp_personal_rc_gfile
 argument_list|(
 literal|"pluginrc"
 argument_list|)
@@ -1047,15 +1062,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_plug_in_manager_read_pluginrc (GimpPlugInManager * manager,const gchar * pluginrc,GimpInitStatusFunc status_callback)
+DECL|function|gimp_plug_in_manager_read_pluginrc (GimpPlugInManager * manager,GFile * pluginrc,GimpInitStatusFunc status_callback)
 name|gimp_plug_in_manager_read_pluginrc
 parameter_list|(
 name|GimpPlugInManager
 modifier|*
 name|manager
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|pluginrc
 parameter_list|,
@@ -1080,7 +1094,7 @@ argument_list|(
 literal|"Resource configuration"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
 name|pluginrc
 argument_list|)
@@ -1100,7 +1114,7 @@ name|g_print
 argument_list|(
 literal|"Parsing '%s'\n"
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
 name|pluginrc
 argument_list|)
