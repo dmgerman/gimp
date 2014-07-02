@@ -1165,6 +1165,8 @@ decl_stmt|;
 name|GimpPlugInProcedure
 modifier|*
 name|export_proc
+init|=
+name|NULL
 decl_stmt|;
 name|gboolean
 name|overwrite
@@ -1181,6 +1183,13 @@ block|{
 name|uri
 operator|=
 name|gimp_image_get_exported_uri
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+name|export_proc
+operator|=
+name|gimp_image_get_export_proc
 argument_list|(
 name|image
 argument_list|)
@@ -1231,6 +1240,9 @@ block|}
 if|if
 condition|(
 name|uri
+operator|&&
+operator|!
+name|export_proc
 condition|)
 block|{
 name|export_proc

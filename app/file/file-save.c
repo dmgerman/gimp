@@ -662,6 +662,13 @@ argument_list|,
 name|uri
 argument_list|)
 expr_stmt|;
+name|gimp_image_set_export_proc
+argument_list|(
+name|image
+argument_list|,
+name|file_proc
+argument_list|)
+expr_stmt|;
 comment|/* An image can not be considered both exported and imported            * at the same time, so stop consider it as imported now            * that we consider it exported.            */
 name|gimp_image_set_imported_uri
 argument_list|(

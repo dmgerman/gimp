@@ -81,6 +81,12 @@ modifier|*
 name|save_proc
 decl_stmt|;
 comment|/*  last save procedure used     */
+DECL|member|export_proc
+name|GimpPlugInProcedure
+modifier|*
+name|export_proc
+decl_stmt|;
+comment|/*  last export procedure used   */
 DECL|member|display_name
 name|gchar
 modifier|*
