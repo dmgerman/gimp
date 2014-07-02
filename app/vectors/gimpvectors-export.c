@@ -167,12 +167,12 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_vectors_export_file:  * @image: the #GimpImage from which to export vectors  * @vectors: a #GimpVectors object or %NULL to export all vectors in @image  * @filename: the name of the file to write  * @error: return location for errors  *  * Exports one or more vectors to a SVG file.  *  * Return value: %TRUE on success,  *               %FALSE if there was an error writing the file  **/
+comment|/**  * gimp_vectors_export_file:  * @image: the #GimpImage from which to export vectors  * @vectors: a #GimpVectors object or %NULL to export all vectors in @image  * @file: the file to write  * @error: return location for errors  *  * Exports one or more vectors to a SVG file.  *  * Return value: %TRUE on success,  *               %FALSE if there was an error writing the file  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_vectors_export_file (const GimpImage * image,const GimpVectors * vectors,const gchar * filename,GError ** error)
+DECL|function|gimp_vectors_export_file (const GimpImage * image,const GimpVectors * vectors,GFile * file,GError ** error)
 name|gimp_vectors_export_file
 parameter_list|(
 specifier|const
@@ -185,10 +185,9 @@ name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -196,9 +195,13 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|path
+decl_stmt|;
 name|FILE
 modifier|*
-name|file
+name|f
 decl_stmt|;
 name|GString
 modifier|*
@@ -230,9 +233,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|filename
-operator|!=
-name|NULL
+name|G_IS_FILE
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -251,19 +255,31 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|path
+operator|=
+name|g_file_get_path
+argument_list|(
 name|file
+argument_list|)
+expr_stmt|;
+name|f
 operator|=
 name|g_fopen
 argument_list|(
-name|filename
+name|path
 argument_list|,
 literal|"w"
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|path
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 operator|!
-name|file
+name|f
 condition|)
 block|{
 name|g_set_error
@@ -282,9 +298,9 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -308,7 +324,7 @@ argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
-name|file
+name|f
 argument_list|,
 literal|"%s"
 argument_list|,
@@ -328,7 +344,7 @@ if|if
 condition|(
 name|fclose
 argument_list|(
-name|file
+name|f
 argument_list|)
 condition|)
 block|{
@@ -348,9 +364,9 @@ argument_list|(
 literal|"Error while writing '%s': %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
