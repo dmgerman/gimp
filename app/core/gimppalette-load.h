@@ -27,7 +27,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a5de610103
+DECL|enum|__anon2979fb670103
 block|{
 DECL|enumerator|GIMP_PALETTE_FILE_FORMAT_UNKNOWN
 name|GIMP_PALETTE_FILE_FORMAT_UNKNOWN
@@ -94,10 +94,6 @@ parameter_list|,
 name|GFile
 modifier|*
 name|file
-parameter_list|,
-name|FILE
-modifier|*
-name|f
 parameter_list|,
 name|GError
 modifier|*
