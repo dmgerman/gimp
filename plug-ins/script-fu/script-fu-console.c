@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aaaea9d0108
+DECL|struct|__anon2882dd640108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -122,10 +122,6 @@ name|GtkWidget
 modifier|*
 name|save_dialog
 decl_stmt|;
-DECL|member|input_id
-name|gint32
-name|input_id
-decl_stmt|;
 DECL|member|history
 name|GList
 modifier|*
@@ -151,7 +147,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aaaea9d0203
+DECL|enum|__anon2882dd640203
 block|{
 DECL|enumerator|RESPONSE_CLEAR
 name|RESPONSE_CLEAR
@@ -445,13 +441,6 @@ literal|"script-fu"
 argument_list|,
 name|FALSE
 argument_list|)
-expr_stmt|;
-name|console
-operator|.
-name|input_id
-operator|=
-operator|-
-literal|1
 expr_stmt|;
 name|console
 operator|.
@@ -1108,13 +1097,6 @@ argument_list|)
 expr_stmt|;
 name|gtk_main
 argument_list|()
-expr_stmt|;
-name|g_source_remove
-argument_list|(
-name|console
-operator|.
-name|input_id
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
