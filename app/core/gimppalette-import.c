@@ -2378,7 +2378,7 @@ name|gimp_palette_load_detect_format
 argument_list|(
 name|file
 argument_list|,
-name|f
+name|input
 argument_list|)
 condition|)
 block|{
