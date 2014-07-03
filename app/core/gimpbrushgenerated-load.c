@@ -998,12 +998,6 @@ argument_list|,
 name|linenum
 argument_list|)
 expr_stmt|;
-name|g_clear_error
-argument_list|(
-operator|&
-name|my_error
-argument_list|)
-expr_stmt|;
 name|g_set_error
 argument_list|(
 name|error
@@ -1031,6 +1025,12 @@ name|msg
 argument_list|)
 expr_stmt|;
 block|}
+name|g_clear_error
+argument_list|(
+operator|&
+name|my_error
+argument_list|)
+expr_stmt|;
 return|return
 name|NULL
 return|;
