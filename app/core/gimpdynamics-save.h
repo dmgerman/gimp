@@ -28,6 +28,10 @@ name|GimpData
 modifier|*
 name|data
 parameter_list|,
+name|GOutputStream
+modifier|*
+name|output
+parameter_list|,
 name|GError
 modifier|*
 modifier|*

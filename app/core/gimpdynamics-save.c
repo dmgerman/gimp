@@ -47,12 +47,16 @@ end_include
 
 begin_function
 name|gboolean
-DECL|function|gimp_dynamics_save (GimpData * data,GError ** error)
+DECL|function|gimp_dynamics_save (GimpData * data,GOutputStream * output,GError ** error)
 name|gimp_dynamics_save
 parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+name|GOutputStream
+modifier|*
+name|output
 parameter_list|,
 name|GError
 modifier|*
@@ -85,17 +89,14 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
-name|gimp_config_serialize_to_gfile
+name|gimp_config_serialize_to_stream
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
 name|data
 argument_list|)
 argument_list|,
-name|gimp_data_get_file
-argument_list|(
-name|data
-argument_list|)
+name|output
 argument_list|,
 literal|"GIMP dynamics file"
 argument_list|,
