@@ -3033,7 +3033,7 @@ argument_list|,
 literal|1
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0
 argument_list|,
 name|format
 argument_list|,
