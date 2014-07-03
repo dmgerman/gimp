@@ -2444,7 +2444,7 @@ name|context
 argument_list|,
 name|file
 argument_list|,
-name|f
+name|input
 argument_list|,
 name|error
 argument_list|)
