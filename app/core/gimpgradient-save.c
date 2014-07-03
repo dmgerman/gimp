@@ -118,7 +118,8 @@ name|G_FILE_CREATE_NONE
 argument_list|,
 name|NULL
 argument_list|,
-name|error
+operator|&
+name|my_error
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -734,7 +735,8 @@ name|G_FILE_CREATE_NONE
 argument_list|,
 name|NULL
 argument_list|,
-name|error
+operator|&
+name|my_error
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ed93dd0103
+DECL|enum|__anon2ac2f57a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3666,7 +3666,8 @@ name|G_FILE_CREATE_NONE
 argument_list|,
 name|NULL
 argument_list|,
-name|error
+operator|&
+name|my_error
 argument_list|)
 argument_list|)
 expr_stmt|;
