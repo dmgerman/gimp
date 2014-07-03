@@ -12,35 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<errno.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_UNISTD_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<unistd.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
 file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
@@ -53,31 +24,8 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib/gstdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|"libgimpbase/gimpwin32-io.h"
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
@@ -123,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b0b1390103
+DECL|enum|__anon2923f6520103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -136,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b0b1390203
+DECL|enum|__anon2923f6520203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
