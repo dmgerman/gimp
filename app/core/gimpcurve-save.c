@@ -12,19 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<errno.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gdk-pixbuf/gdk-pixbuf.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -36,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpbase.h"
+file|"libgimpconfig/gimpconfig.h"
 end_include
 
 begin_include
@@ -57,12 +45,6 @@ directive|include
 file|"gimpcurve-save.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimp-intl.h"
-end_include
-
 begin_function
 name|gboolean
 DECL|function|gimp_curve_save (GimpData * data,GError ** error)
@@ -78,15 +60,6 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-comment|/* GimpCurve *curve; */
-name|gchar
-modifier|*
-name|path
-decl_stmt|;
-name|FILE
-modifier|*
-name|file
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_CURVE
@@ -111,76 +84,27 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* curve = GIMP_CURVE (data); */
-name|path
-operator|=
-name|g_file_get_path
+return|return
+name|gimp_config_serialize_to_gfile
 argument_list|(
+name|GIMP_CONFIG
+argument_list|(
+name|data
+argument_list|)
+argument_list|,
 name|gimp_data_get_file
 argument_list|(
 name|data
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|file
-operator|=
-name|g_fopen
-argument_list|(
-name|path
 argument_list|,
-literal|"wb"
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|file
-condition|)
-block|{
-name|g_set_error
-argument_list|(
+literal|"GIMP curve file"
+argument_list|,
+literal|"end of GIMP curve file"
+argument_list|,
+name|NULL
+argument_list|,
 name|error
-argument_list|,
-name|GIMP_DATA_ERROR
-argument_list|,
-name|GIMP_DATA_ERROR_OPEN
-argument_list|,
-name|_
-argument_list|(
-literal|"Could not open '%s' for writing: %s"
 argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|gimp_data_get_file
-argument_list|(
-name|data
-argument_list|)
-argument_list|)
-argument_list|,
-name|g_strerror
-argument_list|(
-name|errno
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
-comment|/* FIXME: write curve */
-name|fclose
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
-return|return
-name|TRUE
 return|;
 block|}
 end_function
