@@ -1049,7 +1049,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Line %d: %s"
+literal|"Error in line %d: %s"
 argument_list|)
 argument_list|,
 name|linenum
