@@ -1256,7 +1256,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2c2e1fb9010a
+DECL|union|__anon2a088dbe010a
 block|{
 DECL|member|u
 name|guint16
@@ -1887,6 +1887,10 @@ name|version
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|my_error
+condition|)
 name|g_propagate_error
 argument_list|(
 name|error
