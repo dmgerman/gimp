@@ -237,8 +237,9 @@ name|GimpCurvesConfig
 modifier|*
 name|config
 parameter_list|,
-name|gpointer
-name|fp
+name|GInputStream
+modifier|*
+name|input
 parameter_list|,
 name|GError
 modifier|*
