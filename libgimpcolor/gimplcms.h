@@ -49,10 +49,9 @@ comment|/* For information look into the C source or the html documentation */
 name|GimpColorProfile
 name|gimp_lcms_profile_open_from_file
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*

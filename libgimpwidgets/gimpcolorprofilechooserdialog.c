@@ -666,9 +666,9 @@ block|{
 name|GimpColorProfile
 name|profile
 decl_stmt|;
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 decl_stmt|;
 name|GError
 modifier|*
@@ -676,9 +676,9 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
-name|filename
+name|file
 operator|=
-name|gtk_file_chooser_get_preview_filename
+name|gtk_file_chooser_get_preview_file
 argument_list|(
 name|GTK_FILE_CHOOSER
 argument_list|(
@@ -689,7 +689,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|filename
+name|file
 condition|)
 block|{
 name|gimp_color_profile_view_set_profile
@@ -709,7 +709,7 @@ name|profile
 operator|=
 name|gimp_lcms_profile_open_from_file
 argument_list|(
-name|filename
+name|file
 argument_list|,
 operator|&
 name|error
@@ -760,9 +760,9 @@ name|profile
 argument_list|)
 expr_stmt|;
 block|}
-name|g_free
+name|g_object_unref
 argument_list|(
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 block|}

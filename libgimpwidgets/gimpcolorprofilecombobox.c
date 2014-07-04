@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b2f8fd0103
+DECL|enum|__anon290db2620103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -86,7 +86,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b2f8fd0208
+DECL|struct|__anon290db2620208
 block|{
 DECL|member|last_path
 name|GtkTreePath
@@ -1191,6 +1191,10 @@ name|label
 operator|)
 condition|)
 block|{
+name|GFile
+modifier|*
+name|file
+decl_stmt|;
 name|cmsHPROFILE
 name|profile
 decl_stmt|;
@@ -1200,14 +1204,26 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
+name|file
+operator|=
+name|g_file_new_for_path
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 name|profile
 operator|=
 name|gimp_lcms_profile_open_from_file
 argument_list|(
-name|filename
+name|file
 argument_list|,
 operator|&
 name|error
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|file
 argument_list|)
 expr_stmt|;
 if|if
