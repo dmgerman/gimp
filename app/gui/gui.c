@@ -1768,24 +1768,6 @@ name|GIMP_TYPE_COLOR_SELECTOR_PALETTE
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  initialize the document history  */
-name|status_callback
-argument_list|(
-name|NULL
-argument_list|,
-name|_
-argument_list|(
-literal|"Documents"
-argument_list|)
-argument_list|,
-literal|0.9
-argument_list|)
-expr_stmt|;
-name|gimp_recent_list_load
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
 name|status_callback
 argument_list|(
 name|NULL
@@ -1955,6 +1937,24 @@ operator|->
 name|message_handler
 operator|=
 name|GIMP_MESSAGE_BOX
+expr_stmt|;
+comment|/*  load the recent documents after gimp_real_restore() because we    *  need the mime-types implemented by plug-ins    */
+name|status_callback
+argument_list|(
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Documents"
+argument_list|)
+argument_list|,
+literal|0.9
+argument_list|)
+expr_stmt|;
+name|gimp_recent_list_load
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 comment|/*  enable this to always have icons everywhere  */
 if|if
