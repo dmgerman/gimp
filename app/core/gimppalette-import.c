@@ -2300,7 +2300,7 @@ name|GIMP_PALETTE_FILE_FORMAT_GPL
 case|:
 name|palette_list
 operator|=
-name|gimp_palette_load_gpl
+name|gimp_palette_load
 argument_list|(
 name|context
 argument_list|,

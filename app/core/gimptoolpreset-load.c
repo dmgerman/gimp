@@ -66,7 +66,7 @@ end_include
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_tool_preset_load (GimpContext * context,GFile * file,GError ** error)
+DECL|function|gimp_tool_preset_load (GimpContext * context,GFile * file,GInputStream * input,GError ** error)
 name|gimp_tool_preset_load
 parameter_list|(
 name|GimpContext
@@ -76,6 +76,10 @@ parameter_list|,
 name|GFile
 modifier|*
 name|file
+parameter_list|,
+name|GInputStream
+modifier|*
+name|input
 parameter_list|,
 name|GError
 modifier|*
@@ -102,6 +106,16 @@ argument_list|(
 name|G_IS_FILE
 argument_list|(
 name|file
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|G_IS_INPUT_STREAM
+argument_list|(
+name|input
 argument_list|)
 argument_list|,
 name|NULL
@@ -138,14 +152,14 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_config_deserialize_gfile
+name|gimp_config_deserialize_stream
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
 name|tool_preset
 argument_list|)
 argument_list|,
-name|file
+name|input
 argument_list|,
 name|NULL
 argument_list|,

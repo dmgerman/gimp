@@ -61,6 +61,10 @@ name|GFile
 modifier|*
 name|file
 parameter_list|,
+name|GInputStream
+modifier|*
+name|input
+parameter_list|,
 name|GError
 modifier|*
 modifier|*
@@ -106,6 +110,10 @@ parameter_list|,
 name|GFile
 modifier|*
 name|file
+parameter_list|,
+name|GInputStream
+modifier|*
+name|input
 parameter_list|,
 name|GError
 modifier|*
