@@ -188,7 +188,7 @@ return|;
 block|}
 else|else
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
@@ -198,12 +198,7 @@ name|GIMP_CONFIG_ERROR_PARSE
 argument_list|,
 name|_
 argument_list|(
-literal|"Error while parsing '%s'"
-argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|file
+literal|"Tool preset file is corrupt."
 argument_list|)
 argument_list|)
 expr_stmt|;

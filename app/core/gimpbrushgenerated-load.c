@@ -135,12 +135,6 @@ decl_stmt|;
 name|gdouble
 name|angle
 decl_stmt|;
-name|GError
-modifier|*
-name|my_error
-init|=
-name|NULL
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|G_IS_FILE
@@ -202,8 +196,7 @@ name|string_len
 argument_list|,
 name|NULL
 argument_list|,
-operator|&
-name|my_error
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -235,13 +228,7 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal parse error in brush file '%s': "
 literal|"Not a GIMP brush file."
-argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -278,8 +265,7 @@ name|string_len
 argument_list|,
 name|NULL
 argument_list|,
-operator|&
-name|my_error
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -322,16 +308,8 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal parse error in brush file '%s': "
-literal|"Unknown GIMP brush version in line %d."
+literal|"Unknown GIMP brush version."
 argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|file
-argument_list|)
-argument_list|,
-name|linenum
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -375,8 +353,7 @@ name|string_len
 argument_list|,
 name|NULL
 argument_list|,
-operator|&
-name|my_error
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -481,8 +458,7 @@ name|string_len
 argument_list|,
 name|NULL
 argument_list|,
-operator|&
-name|my_error
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -523,16 +499,8 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal parse error in brush file '%s': "
-literal|"Unknown GIMP brush shape in line %d."
+literal|"Unknown GIMP brush shape."
 argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|file
-argument_list|)
-argument_list|,
-name|linenum
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -575,8 +543,7 @@ name|string_len
 argument_list|,
 name|NULL
 argument_list|,
-operator|&
-name|my_error
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -620,8 +587,7 @@ name|string_len
 argument_list|,
 name|NULL
 argument_list|,
-operator|&
-name|my_error
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -670,8 +636,7 @@ name|string_len
 argument_list|,
 name|NULL
 argument_list|,
-operator|&
-name|my_error
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -721,8 +686,7 @@ name|string_len
 argument_list|,
 name|NULL
 argument_list|,
-operator|&
-name|my_error
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -766,8 +730,7 @@ name|string_len
 argument_list|,
 name|NULL
 argument_list|,
-operator|&
-name|my_error
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -811,8 +774,7 @@ name|string_len
 argument_list|,
 name|NULL
 argument_list|,
-operator|&
-name|my_error
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -899,84 +861,16 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|error
-operator|&&
-operator|*
-name|error
-operator|==
-name|NULL
-condition|)
-block|{
-name|gchar
-modifier|*
-name|msg
-decl_stmt|;
-if|if
-condition|(
-name|my_error
-condition|)
-name|msg
-operator|=
-name|g_strdup_printf
+name|g_prefix_error
 argument_list|(
+name|error
+argument_list|,
 name|_
 argument_list|(
-literal|"Line %d: %s"
+literal|"In line %d of brush file: "
 argument_list|)
 argument_list|,
 name|linenum
-argument_list|,
-name|my_error
-operator|->
-name|message
-argument_list|)
-expr_stmt|;
-else|else
-name|msg
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"File is truncated in line %d"
-argument_list|)
-argument_list|,
-name|linenum
-argument_list|)
-expr_stmt|;
-name|g_set_error
-argument_list|(
-name|error
-argument_list|,
-name|GIMP_DATA_ERROR
-argument_list|,
-name|GIMP_DATA_ERROR_READ
-argument_list|,
-name|_
-argument_list|(
-literal|"Error while reading brush file '%s': %s"
-argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|file
-argument_list|)
-argument_list|,
-name|msg
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|msg
-argument_list|)
-expr_stmt|;
-block|}
-name|g_clear_error
-argument_list|(
-operator|&
-name|my_error
 argument_list|)
 expr_stmt|;
 return|return

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c729b50103
+DECL|enum|__anon2953bd6d0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c729b50203
+DECL|enum|__anon2953bd6d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2022,7 +2022,10 @@ expr_stmt|;
 if|if
 condition|(
 name|success
-operator|&&
+condition|)
+block|{
+if|if
+condition|(
 operator|!
 name|g_output_stream_close
 argument_list|(
@@ -2040,7 +2043,7 @@ name|error
 argument_list|,
 name|_
 argument_list|(
-literal|"Error writing '%s': "
+literal|"Error saving '%s': "
 argument_list|)
 argument_list|,
 name|gimp_file_get_utf8_name
@@ -2054,6 +2057,58 @@ expr_stmt|;
 name|success
 operator|=
 name|FALSE
+expr_stmt|;
+block|}
+block|}
+elseif|else
+if|if
+condition|(
+name|error
+operator|&&
+operator|*
+name|error
+condition|)
+block|{
+name|g_prefix_error
+argument_list|(
+name|error
+argument_list|,
+name|_
+argument_list|(
+literal|"Error saving '%s': "
+argument_list|)
+argument_list|,
+name|gimp_file_get_utf8_name
+argument_list|(
+name|private
+operator|->
+name|file
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_WRITE
+argument_list|,
+name|_
+argument_list|(
+literal|"Error saving '%s'"
+argument_list|)
+argument_list|,
+name|gimp_file_get_utf8_name
+argument_list|(
+name|private
+operator|->
+name|file
+argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 name|g_object_unref

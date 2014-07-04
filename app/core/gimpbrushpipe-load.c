@@ -1001,12 +1001,6 @@ operator|<
 name|num_of_brushes
 condition|)
 block|{
-name|GError
-modifier|*
-name|my_error
-init|=
-name|NULL
-decl_stmt|;
 name|pipe
 operator|->
 name|brushes
@@ -1024,8 +1018,7 @@ name|file
 argument_list|,
 name|input
 argument_list|,
-operator|&
-name|my_error
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -1060,13 +1053,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_propagate_error
-argument_list|(
-name|error
-argument_list|,
-name|my_error
-argument_list|)
-expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|pipe

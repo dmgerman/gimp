@@ -102,12 +102,6 @@ decl_stmt|;
 name|gsize
 name|bytes_written
 decl_stmt|;
-name|GError
-modifier|*
-name|my_error
-init|=
-name|NULL
-decl_stmt|;
 name|string
 operator|=
 name|g_string_new
@@ -120,7 +114,8 @@ argument_list|(
 name|string
 argument_list|,
 literal|"Name: %s\n"
-literal|"Columns: %d\n#\n"
+literal|"Columns: %d\n"
+literal|"#\n"
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
@@ -229,8 +224,7 @@ name|bytes_written
 argument_list|,
 name|NULL
 argument_list|,
-operator|&
-name|my_error
+name|error
 argument_list|)
 operator|||
 name|bytes_written
@@ -240,38 +234,6 @@ operator|->
 name|len
 condition|)
 block|{
-name|g_set_error
-argument_list|(
-name|error
-argument_list|,
-name|GIMP_DATA_ERROR
-argument_list|,
-name|GIMP_DATA_ERROR_WRITE
-argument_list|,
-name|_
-argument_list|(
-literal|"Writing palette file '%s' failed: %s"
-argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|gimp_data_get_file
-argument_list|(
-name|data
-argument_list|)
-argument_list|)
-argument_list|,
-name|my_error
-operator|->
-name|message
-argument_list|)
-expr_stmt|;
-name|g_clear_error
-argument_list|(
-operator|&
-name|my_error
-argument_list|)
-expr_stmt|;
 name|g_string_free
 argument_list|(
 name|string

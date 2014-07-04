@@ -370,10 +370,6 @@ name|AbrHeader
 modifier|*
 name|abr_hdr
 parameter_list|,
-name|GFile
-modifier|*
-name|f
-parameter_list|,
 name|GError
 modifier|*
 modifier|*
@@ -582,12 +578,6 @@ name|i
 decl_stmt|,
 name|size
 decl_stmt|;
-name|GError
-modifier|*
-name|my_error
-init|=
-name|NULL
-decl_stmt|;
 name|gboolean
 name|success
 init|=
@@ -648,8 +638,7 @@ name|bytes_read
 argument_list|,
 name|NULL
 argument_list|,
-operator|&
-name|my_error
+name|error
 argument_list|)
 operator|||
 name|bytes_read
@@ -660,53 +649,6 @@ name|header
 argument_list|)
 condition|)
 block|{
-name|g_set_error
-argument_list|(
-name|error
-argument_list|,
-name|GIMP_DATA_ERROR
-argument_list|,
-name|GIMP_DATA_ERROR_READ
-argument_list|,
-name|ngettext
-argument_list|(
-literal|"Could not read %d byte from '%s': %s"
-argument_list|,
-literal|"Could not read %d bytes from '%s': %s"
-argument_list|,
-operator|(
-name|gint
-operator|)
-sizeof|sizeof
-argument_list|(
-name|header
-argument_list|)
-argument_list|)
-argument_list|,
-operator|(
-name|gint
-operator|)
-sizeof|sizeof
-argument_list|(
-name|header
-argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|file
-argument_list|)
-argument_list|,
-name|my_error
-operator|->
-name|message
-argument_list|)
-expr_stmt|;
-name|g_clear_error
-argument_list|(
-operator|&
-name|my_error
-argument_list|)
-expr_stmt|;
 return|return
 name|NULL
 return|;
@@ -809,13 +751,7 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal parse error in brush file '%s': "
-literal|"Width = 0."
-argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|file
+literal|"Fatal parse error in brush file: Width = 0."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -842,13 +778,7 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal parse error in brush file '%s': "
-literal|"Height = 0."
-argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|file
+literal|"Fatal parse error in brush file: Height = 0."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -875,13 +805,7 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal parse error in brush file '%s': "
-literal|"Bytes = 0."
-argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|file
+literal|"Fatal parse error in brush file: Bytes = 0."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -970,13 +894,7 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal parse error in brush file '%s': "
-literal|"Unknown depth %d."
-argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|file
+literal|"Fatal parse error in brush file: Unknown depth %d."
 argument_list|)
 argument_list|,
 name|header
@@ -1012,13 +930,7 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal parse error in brush file '%s': "
-literal|"Unknown version %d."
-argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|file
+literal|"Fatal parse error in brush file: Unknown version %d."
 argument_list|)
 argument_list|,
 name|header
@@ -1078,7 +990,7 @@ name|bytes_read
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 operator|||
 name|bytes_read
@@ -1086,26 +998,6 @@ operator|!=
 name|bn_size
 condition|)
 block|{
-name|g_set_error
-argument_list|(
-name|error
-argument_list|,
-name|GIMP_DATA_ERROR
-argument_list|,
-name|GIMP_DATA_ERROR_READ
-argument_list|,
-name|_
-argument_list|(
-literal|"Fatal parse error in brush file '%s': "
-literal|"File appears truncated."
-argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|file
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
 name|name
@@ -1251,7 +1143,7 @@ name|bytes_read
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 operator|&&
 name|bytes_read
@@ -1318,7 +1210,7 @@ name|bytes_read
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 operator|&&
 name|bytes_read
@@ -1364,7 +1256,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon27b36e3f010a
+DECL|union|__anon2c2e1fb9010a
 block|{
 DECL|member|u
 name|guint16
@@ -1473,16 +1365,11 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal parse error in brush file '%s': "
+literal|"Fatal parse error in brush file:\n"
 literal|"Unsupported brush depth %d\n"
 literal|"GIMP brushes must be GRAY or RGBA.\n"
 literal|"This might be an obsolete GIMP brush file, try "
 literal|"loading it as image and save it again."
-argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|file
 argument_list|)
 argument_list|,
 name|header
@@ -1580,7 +1467,7 @@ name|bytes_read
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 operator|&&
 name|bytes_read
@@ -1687,14 +1574,9 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal parse error in brush file '%s': "
+literal|"Fatal parse error in brush file:\n"
 literal|"Unsupported brush depth %d\n"
 literal|"GIMP brushes must be GRAY or RGBA."
-argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|file
 argument_list|)
 argument_list|,
 name|header
@@ -1715,26 +1597,6 @@ block|{
 name|g_object_unref
 argument_list|(
 name|brush
-argument_list|)
-expr_stmt|;
-name|g_set_error
-argument_list|(
-name|error
-argument_list|,
-name|GIMP_DATA_ERROR
-argument_list|,
-name|GIMP_DATA_ERROR_READ
-argument_list|,
-name|_
-argument_list|(
-literal|"Fatal parse error in brush file '%s': "
-literal|"File appears truncated."
-argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|file
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1932,8 +1794,6 @@ argument_list|(
 operator|&
 name|abr_hdr
 argument_list|,
-name|file
-argument_list|,
 operator|&
 name|my_error
 argument_list|)
@@ -2026,37 +1886,11 @@ operator|.
 name|version
 argument_list|)
 expr_stmt|;
-name|g_set_error
+block|}
+name|g_propagate_error
 argument_list|(
 name|error
 argument_list|,
-name|my_error
-operator|->
-name|domain
-argument_list|,
-name|my_error
-operator|->
-name|code
-argument_list|,
-name|_
-argument_list|(
-literal|"Fatal parse error in brush file '%s': %s"
-argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|file
-argument_list|)
-argument_list|,
-name|my_error
-operator|->
-name|message
-argument_list|)
-expr_stmt|;
-block|}
-name|g_clear_error
-argument_list|(
-operator|&
 name|my_error
 argument_list|)
 expr_stmt|;
@@ -2768,13 +2602,8 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal parse error in brush file '%s': "
+literal|"Fatal parse error in brush file: "
 literal|"Wide brushes are not supported."
-argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3274,13 +3103,8 @@ name|error
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal parse error in brush file '%s': "
+literal|"Fatal parse error in brush file : "
 literal|"File appears truncated: "
-argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3869,16 +3693,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|abr_supported (AbrHeader * abr_hdr,GFile * file,GError ** error)
+DECL|function|abr_supported (AbrHeader * abr_hdr,GError ** error)
 name|abr_supported
 parameter_list|(
 name|AbrHeader
 modifier|*
 name|abr_hdr
-parameter_list|,
-name|GFile
-modifier|*
-name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -3934,13 +3754,8 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal parse error in brush file '%s': "
-literal|"unable to decode abr format version %d."
-argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|file
+literal|"Fatal parse error in brush file: "
+literal|"Unable to decode abr format version %d."
 argument_list|)
 argument_list|,
 comment|/* horrid subversion display, but better than                     * having yet another translatable string for                     * this                     */
