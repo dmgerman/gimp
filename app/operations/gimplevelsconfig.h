@@ -285,9 +285,9 @@ name|GimpLevelsConfig
 modifier|*
 name|config
 parameter_list|,
-name|GFile
+name|GOutputStream
 modifier|*
-name|file
+name|output
 parameter_list|,
 name|GError
 modifier|*

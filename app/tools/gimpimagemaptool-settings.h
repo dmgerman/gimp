@@ -69,9 +69,9 @@ name|GimpImageMapTool
 modifier|*
 name|tool
 parameter_list|,
-name|GFile
+name|GInputStream
 modifier|*
-name|file
+name|input
 parameter_list|,
 name|GError
 modifier|*
@@ -89,9 +89,9 @@ name|GimpImageMapTool
 modifier|*
 name|tool
 parameter_list|,
-name|GFile
+name|GOutputStream
 modifier|*
-name|file
+name|output
 parameter_list|,
 name|GError
 modifier|*
