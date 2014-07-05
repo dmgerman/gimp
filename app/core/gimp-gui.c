@@ -271,7 +271,7 @@ name|gimp
 operator|->
 name|gui
 operator|.
-name|recent_list_add_uri
+name|recent_list_add_file
 operator|=
 name|NULL
 expr_stmt|;
@@ -2020,17 +2020,16 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_recent_list_add_uri (Gimp * gimp,const gchar * uri,const gchar * mime_type)
-name|gimp_recent_list_add_uri
+DECL|function|gimp_recent_list_add_file (Gimp * gimp,GFile * file,const gchar * mime_type)
+name|gimp_recent_list_add_file
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|,
 specifier|const
 name|gchar
@@ -2050,9 +2049,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|uri
-operator|!=
-name|NULL
+name|G_IS_FILE
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2063,18 +2063,18 @@ name|gimp
 operator|->
 name|gui
 operator|.
-name|recent_list_add_uri
+name|recent_list_add_file
 condition|)
 return|return
 name|gimp
 operator|->
 name|gui
 operator|.
-name|recent_list_add_uri
+name|recent_list_add_file
 argument_list|(
 name|gimp
 argument_list|,
-name|uri
+name|file
 argument_list|,
 name|mime_type
 argument_list|)
