@@ -171,6 +171,26 @@ modifier|*
 name|metadata
 decl_stmt|;
 comment|/*  image's metadata             */
+DECL|member|file
+name|GFile
+modifier|*
+name|file
+decl_stmt|;
+DECL|member|imported_file
+name|GFile
+modifier|*
+name|imported_file
+decl_stmt|;
+DECL|member|exported_file
+name|GFile
+modifier|*
+name|exported_file
+decl_stmt|;
+DECL|member|save_a_copy_file
+name|GFile
+modifier|*
+name|save_a_copy_file
+decl_stmt|;
 DECL|member|dirty
 name|gint
 name|dirty

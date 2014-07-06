@@ -21,27 +21,27 @@ comment|/* Data keys for Gimp */
 end_comment
 
 begin_define
-DECL|macro|GIMP_FILE_OPEN_LAST_URI_KEY
+DECL|macro|GIMP_FILE_OPEN_LAST_FILE_KEY
 define|#
 directive|define
-name|GIMP_FILE_OPEN_LAST_URI_KEY
-value|"gimp-file-open-last-uri"
+name|GIMP_FILE_OPEN_LAST_FILE_KEY
+value|"gimp-file-open-last-file"
 end_define
 
 begin_define
-DECL|macro|GIMP_FILE_SAVE_LAST_URI_KEY
+DECL|macro|GIMP_FILE_SAVE_LAST_FILE_KEY
 define|#
 directive|define
-name|GIMP_FILE_SAVE_LAST_URI_KEY
-value|"gimp-file-save-last-uri"
+name|GIMP_FILE_SAVE_LAST_FILE_KEY
+value|"gimp-file-save-last-file"
 end_define
 
 begin_define
-DECL|macro|GIMP_FILE_EXPORT_LAST_URI_KEY
+DECL|macro|GIMP_FILE_EXPORT_LAST_FILE_KEY
 define|#
 directive|define
-name|GIMP_FILE_EXPORT_LAST_URI_KEY
-value|"gimp-file-export-last-uri"
+name|GIMP_FILE_EXPORT_LAST_FILE_KEY
+value|"gimp-file-export-last-file"
 end_define
 
 begin_endif

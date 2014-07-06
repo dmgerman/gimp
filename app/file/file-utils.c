@@ -332,11 +332,9 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GError
+name|GFile
 modifier|*
-name|temp_error
-init|=
-name|NULL
+name|file
 decl_stmt|;
 name|gchar
 modifier|*
@@ -345,6 +343,12 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|uri
+decl_stmt|;
+name|GError
+modifier|*
+name|temp_error
+init|=
+name|NULL
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -379,6 +383,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|file
+operator|=
+name|g_file_new_for_uri
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 comment|/*  check for prefixes like http or ftp  */
 if|if
 condition|(
@@ -390,7 +401,7 @@ name|plug_in_manager
 operator|->
 name|load_procs
 argument_list|,
-name|filename
+name|file
 argument_list|)
 condition|)
 block|{
@@ -407,6 +418,11 @@ name|NULL
 argument_list|)
 condition|)
 block|{
+name|g_object_unref
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 return|return
 name|g_strdup
 argument_list|(
@@ -430,6 +446,11 @@ literal|"Invalid character sequence in URI"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 return|return
 name|NULL
 return|;
@@ -447,6 +468,11 @@ name|temp_error
 argument_list|)
 condition|)
 block|{
+name|g_object_unref
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 return|return
 name|g_strdup
 argument_list|(
@@ -467,10 +493,20 @@ argument_list|,
 name|temp_error
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 return|return
 name|NULL
 return|;
 block|}
+name|g_object_unref
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -539,10 +575,10 @@ block|}
 end_function
 
 begin_function
-name|gchar
+name|GFile
 modifier|*
-DECL|function|file_utils_any_to_uri (Gimp * gimp,const gchar * filename_or_uri,GError ** error)
-name|file_utils_any_to_uri
+DECL|function|file_utils_any_to_file (Gimp * gimp,const gchar * filename_or_uri,GError ** error)
+name|file_utils_any_to_file
 parameter_list|(
 name|Gimp
 modifier|*
@@ -559,6 +595,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|GFile
+modifier|*
+name|file
+decl_stmt|;
 name|gchar
 modifier|*
 name|uri
@@ -640,8 +680,20 @@ name|error
 argument_list|)
 expr_stmt|;
 block|}
-return|return
+name|file
+operator|=
+name|g_file_new_for_uri
+argument_list|(
 name|uri
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|uri
+argument_list|)
+expr_stmt|;
+return|return
+name|file
 return|;
 block|}
 end_function

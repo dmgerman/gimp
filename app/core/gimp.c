@@ -333,7 +333,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd6c8960103
+DECL|enum|__anon288be40f0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -712,13 +712,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__STRING
+name|gimp_marshal_VOID__OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|G_TYPE_STRING
+name|G_TYPE_FILE
 argument_list|)
 expr_stmt|;
 name|object_class
@@ -5289,17 +5289,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_opened (Gimp * gimp,const gchar * uri)
+DECL|function|gimp_image_opened (Gimp * gimp,GFile * file)
 name|gimp_image_opened
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -5312,9 +5311,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|uri
-operator|!=
-name|NULL
+name|G_IS_FILE
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_emit
@@ -5328,7 +5328,7 @@ index|]
 argument_list|,
 literal|0
 argument_list|,
-name|uri
+name|file
 argument_list|)
 expr_stmt|;
 block|}

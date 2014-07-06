@@ -56,9 +56,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gchar
+name|GFile
 modifier|*
-name|file_utils_any_to_uri
+name|file_utils_any_to_file
 parameter_list|(
 name|Gimp
 modifier|*
@@ -86,6 +86,18 @@ specifier|const
 name|gchar
 modifier|*
 name|uri
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gchar
+modifier|*
+name|file_utils_filename_from_file
+parameter_list|(
+name|GFile
+modifier|*
+name|file
 parameter_list|)
 function_decl|;
 end_function_decl

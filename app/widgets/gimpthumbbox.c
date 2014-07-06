@@ -3086,12 +3086,11 @@ operator|->
 name|imagefile
 argument_list|)
 decl_stmt|;
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 init|=
-name|gimp_object_get_name
+name|gimp_imagefile_get_file
 argument_list|(
 name|box
 operator|->
@@ -3154,7 +3153,7 @@ name|plug_in_manager
 operator|->
 name|load_procs
 argument_list|,
-name|uri
+name|file
 argument_list|)
 condition|)
 block|{

@@ -2271,7 +2271,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2959b4350108
+DECL|struct|__anon28f91a570108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2665,7 +2665,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2959b4350208
+DECL|struct|__anon28f91a570208
 block|{
 DECL|member|mask_column
 name|gint
@@ -3157,6 +3157,15 @@ name|list
 operator|->
 name|data
 decl_stmt|;
+name|GFile
+modifier|*
+name|file
+init|=
+name|g_file_new_for_uri
+argument_list|(
+name|uri
+argument_list|)
+decl_stmt|;
 name|GList
 modifier|*
 name|new_layers
@@ -3189,7 +3198,7 @@ name|image
 argument_list|,
 name|FALSE
 argument_list|,
-name|uri
+name|file
 argument_list|,
 name|GIMP_RUN_INTERACTIVE
 argument_list|,
@@ -3258,15 +3267,6 @@ operator|!=
 name|GIMP_PDB_CANCEL
 condition|)
 block|{
-name|gchar
-modifier|*
-name|filename
-init|=
-name|file_utils_uri_display_name
-argument_list|(
-name|uri
-argument_list|)
-decl_stmt|;
 name|gimp_message
 argument_list|(
 name|image
@@ -3285,7 +3285,10 @@ argument_list|(
 literal|"Opening '%s' failed:\n\n%s"
 argument_list|)
 argument_list|,
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 name|error
 operator|->
@@ -3298,12 +3301,12 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
-name|g_free
+block|}
+name|g_object_unref
 argument_list|(
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|gimp_image_flush
 argument_list|(

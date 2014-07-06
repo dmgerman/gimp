@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpthumb/gimpthumb.h"
 end_include
 
@@ -168,7 +174,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27806eca0108
+DECL|struct|__anon28d3d8410108
 block|{
 DECL|member|name
 specifier|const
@@ -549,7 +555,7 @@ name|context
 operator|->
 name|gimp
 argument_list|,
-name|gimp_object_get_name
+name|gimp_imagefile_get_file
 argument_list|(
 name|imagefile
 argument_list|)
@@ -1285,10 +1291,9 @@ modifier|*
 name|imagefile
 parameter_list|)
 block|{
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 decl_stmt|;
 name|GimpImage
 modifier|*
@@ -1303,9 +1308,9 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
-name|uri
+name|file
 operator|=
-name|gimp_object_get_name
+name|gimp_imagefile_get_file
 argument_list|(
 name|imagefile
 argument_list|)
@@ -1322,7 +1327,7 @@ name|context
 argument_list|,
 name|NULL
 argument_list|,
-name|uri
+name|file
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1356,15 +1361,6 @@ operator|!=
 name|GIMP_PDB_CANCEL
 condition|)
 block|{
-name|gchar
-modifier|*
-name|filename
-init|=
-name|file_utils_uri_display_name
-argument_list|(
-name|uri
-argument_list|)
-decl_stmt|;
 name|gimp_message
 argument_list|(
 name|context
@@ -1383,7 +1379,10 @@ argument_list|(
 literal|"Opening '%s' failed:\n\n%s"
 argument_list|)
 argument_list|,
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 name|error
 operator|->
@@ -1394,11 +1393,6 @@ name|g_clear_error
 argument_list|(
 operator|&
 name|error
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|filename
 argument_list|)
 expr_stmt|;
 block|}

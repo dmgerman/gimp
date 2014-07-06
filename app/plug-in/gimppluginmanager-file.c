@@ -957,17 +957,16 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_plug_in_manager_uri_has_exporter (GimpPlugInManager * manager,const gchar * uri)
-name|gimp_plug_in_manager_uri_has_exporter
+DECL|function|gimp_plug_in_manager_file_has_exporter (GimpPlugInManager * manager,GFile * file)
+name|gimp_plug_in_manager_file_has_exporter
 parameter_list|(
 name|GimpPlugInManager
 modifier|*
 name|manager
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|)
 block|{
 return|return
@@ -977,7 +976,7 @@ name|manager
 operator|->
 name|export_procs
 argument_list|,
-name|uri
+name|file
 argument_list|,
 name|NULL
 argument_list|)

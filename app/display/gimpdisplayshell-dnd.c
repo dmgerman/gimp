@@ -2049,14 +2049,16 @@ name|list
 argument_list|)
 control|)
 block|{
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 init|=
+name|g_file_new_for_uri
+argument_list|(
 name|list
 operator|->
 name|data
+argument_list|)
 decl_stmt|;
 name|GimpPDBStatusType
 name|status
@@ -2081,6 +2083,11 @@ name|display
 condition|)
 block|{
 comment|/* It seems as if GIMP is being torn down for quitting. Bail out. */
+name|g_object_unref
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 if|if
@@ -2115,7 +2122,7 @@ name|image
 argument_list|,
 name|FALSE
 argument_list|,
-name|uri
+name|file
 argument_list|,
 name|GIMP_RUN_INTERACTIVE
 argument_list|,
@@ -2235,7 +2242,7 @@ name|context
 argument_list|,
 name|NULL
 argument_list|,
-name|uri
+name|file
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2295,7 +2302,7 @@ operator|->
 name|display
 argument_list|)
 argument_list|,
-name|uri
+name|file
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2343,15 +2350,6 @@ operator|->
 name|display
 condition|)
 block|{
-name|gchar
-modifier|*
-name|filename
-init|=
-name|file_utils_uri_display_name
-argument_list|(
-name|uri
-argument_list|)
-decl_stmt|;
 name|gimp_message
 argument_list|(
 name|shell
@@ -2374,7 +2372,10 @@ argument_list|(
 literal|"Opening '%s' failed:\n\n%s"
 argument_list|)
 argument_list|,
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 name|error
 operator|->
@@ -2387,12 +2388,12 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
-name|g_free
+block|}
+name|g_object_unref
 argument_list|(
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 if|if
 condition|(

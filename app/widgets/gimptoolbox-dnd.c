@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -506,14 +512,16 @@ name|list
 argument_list|)
 control|)
 block|{
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 init|=
+name|g_file_new_for_uri
+argument_list|(
 name|list
 operator|->
 name|data
+argument_list|)
 decl_stmt|;
 name|GimpImage
 modifier|*
@@ -540,7 +548,7 @@ name|context
 argument_list|,
 name|NULL
 argument_list|,
-name|uri
+name|file
 argument_list|,
 name|FALSE
 argument_list|,
@@ -574,15 +582,6 @@ operator|!=
 name|GIMP_PDB_CANCEL
 condition|)
 block|{
-name|gchar
-modifier|*
-name|filename
-init|=
-name|file_utils_uri_display_name
-argument_list|(
-name|uri
-argument_list|)
-decl_stmt|;
 name|gimp_message
 argument_list|(
 name|context
@@ -601,7 +600,10 @@ argument_list|(
 literal|"Opening '%s' failed:\n\n%s"
 argument_list|)
 argument_list|,
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 name|error
 operator|->
@@ -614,12 +616,12 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
-name|g_free
+block|}
+name|g_object_unref
 argument_list|(
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 end_function

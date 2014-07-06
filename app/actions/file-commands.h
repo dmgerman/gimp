@@ -156,10 +156,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|,
 name|GtkWidget
 modifier|*

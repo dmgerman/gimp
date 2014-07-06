@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b09def0103
+DECL|enum|__anon2969a0bc0103
 block|{
 DECL|enumerator|FILE_PROCEDURE_GROUP_ANY
 name|FILE_PROCEDURE_GROUP_ANY
@@ -47,10 +47,9 @@ name|GSList
 modifier|*
 name|procs
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -69,10 +68,9 @@ name|GSList
 modifier|*
 name|procs
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -86,10 +84,9 @@ name|GSList
 modifier|*
 name|procs
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|)
 function_decl|;
 end_function_decl
