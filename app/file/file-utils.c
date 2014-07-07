@@ -776,7 +776,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|ext_uri
+name|ext_file
 condition|)
 block|{
 name|ext_uri
