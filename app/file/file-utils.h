@@ -81,19 +81,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gchar
+name|GFile
 modifier|*
-name|file_utils_uri_with_new_ext
+name|file_utils_file_with_new_ext
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri_with_ext
+name|ext_file
 parameter_list|)
 function_decl|;
 end_function_decl

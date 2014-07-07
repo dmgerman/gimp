@@ -166,7 +166,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_duplicate_save_source_uri
+name|gimp_image_duplicate_save_source_file
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -489,7 +489,7 @@ name|new_image
 argument_list|)
 expr_stmt|;
 comment|/*  Store the source uri to be used by the save dialog  */
-name|gimp_image_duplicate_save_source_uri
+name|gimp_image_duplicate_save_source_file
 argument_list|(
 name|image
 argument_list|,
@@ -716,8 +716,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_duplicate_save_source_uri (GimpImage * image,GimpImage * new_image)
-name|gimp_image_duplicate_save_source_uri
+DECL|function|gimp_image_duplicate_save_source_file (GimpImage * image,GimpImage * new_image)
+name|gimp_image_duplicate_save_source_file
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -728,6 +728,19 @@ modifier|*
 name|new_image
 parameter_list|)
 block|{
+name|GFile
+modifier|*
+name|file
+init|=
+name|gimp_image_get_file
+argument_list|(
+name|image
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|file
+condition|)
 name|g_object_set_data_full
 argument_list|(
 name|G_OBJECT
@@ -735,20 +748,17 @@ argument_list|(
 name|new_image
 argument_list|)
 argument_list|,
-literal|"gimp-image-source-uri"
+literal|"gimp-image-source-file"
 argument_list|,
-name|g_strdup
+name|g_object_ref
 argument_list|(
-name|gimp_image_get_uri
-argument_list|(
-name|image
-argument_list|)
+name|file
 argument_list|)
 argument_list|,
 operator|(
 name|GDestroyNotify
 operator|)
-name|g_free
+name|g_object_unref
 argument_list|)
 expr_stmt|;
 block|}

@@ -546,11 +546,11 @@ condition|(
 name|change_saved_state
 condition|)
 block|{
-name|gimp_image_set_uri
+name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
-name|uri
+name|file
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_save_proc
@@ -561,7 +561,7 @@ name|file_proc
 argument_list|)
 expr_stmt|;
 comment|/* Forget the import source when we save. We interpret a            * save as that the user is not interested in being able            * to quickly export back to the original any longer            */
-name|gimp_image_set_imported_uri
+name|gimp_image_set_imported_file
 argument_list|(
 name|image
 argument_list|,
@@ -602,11 +602,11 @@ name|export_forward
 condition|)
 block|{
 comment|/* Remember the last entered Export URI for the image. We            * only need to do this explicitly when exporting. It            * happens implicitly when saving since the GimpObject name            * of a GimpImage is the last-save URI            */
-name|gimp_image_set_exported_uri
+name|gimp_image_set_exported_file
 argument_list|(
 name|image
 argument_list|,
-name|uri
+name|file
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_export_proc
@@ -617,7 +617,7 @@ name|file_proc
 argument_list|)
 expr_stmt|;
 comment|/* An image can not be considered both exported and imported            * at the same time, so stop consider it as imported now            * that we consider it exported.            */
-name|gimp_image_set_imported_uri
+name|gimp_image_set_imported_file
 argument_list|(
 name|image
 argument_list|,
@@ -640,7 +640,7 @@ name|gimp_image_exported
 argument_list|(
 name|image
 argument_list|,
-name|uri
+name|file
 argument_list|)
 expr_stmt|;
 else|else
@@ -648,7 +648,7 @@ name|gimp_image_saved
 argument_list|(
 name|image
 argument_list|,
-name|uri
+name|file
 argument_list|)
 expr_stmt|;
 name|documents

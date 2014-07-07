@@ -1312,11 +1312,14 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_uri
+name|gimp_image_set_file
 argument_list|(
 name|new_image
 argument_list|,
+name|g_file_new_for_uri
+argument_list|(
 name|new_name
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|layer

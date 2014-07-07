@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpcolor/gimpcolor.h"
 end_include
 
@@ -127,12 +133,6 @@ begin_include
 include|#
 directive|include
 file|"vectors/gimpvectors.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"file/file-utils.h"
 end_include
 
 begin_include
@@ -574,10 +574,9 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|,
 name|GimpDisplayShell
 modifier|*
@@ -595,10 +594,9 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|,
 name|GimpDisplayShell
 modifier|*
@@ -3276,17 +3274,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_saved_handler (GimpImage * image,const gchar * uri,GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_saved_handler (GimpImage * image,GFile * file,GimpDisplayShell * shell)
 name|gimp_display_shell_saved_handler
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|,
 name|GimpDisplayShell
 modifier|*
@@ -3300,15 +3297,6 @@ init|=
 name|gimp_display_shell_get_statusbar
 argument_list|(
 name|shell
-argument_list|)
-decl_stmt|;
-name|gchar
-modifier|*
-name|filename
-init|=
-name|file_utils_uri_display_name
-argument_list|(
-name|uri
 argument_list|)
 decl_stmt|;
 name|gimp_statusbar_push_temp
@@ -3324,12 +3312,10 @@ argument_list|(
 literal|"Image saved to '%s'"
 argument_list|)
 argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
-name|g_free
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3338,17 +3324,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_exported_handler (GimpImage * image,const gchar * uri,GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_exported_handler (GimpImage * image,GFile * file,GimpDisplayShell * shell)
 name|gimp_display_shell_exported_handler
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|,
 name|GimpDisplayShell
 modifier|*
@@ -3364,15 +3349,6 @@ argument_list|(
 name|shell
 argument_list|)
 decl_stmt|;
-name|gchar
-modifier|*
-name|filename
-init|=
-name|file_utils_uri_display_name
-argument_list|(
-name|uri
-argument_list|)
-decl_stmt|;
 name|gimp_statusbar_push_temp
 argument_list|(
 name|statusbar
@@ -3386,12 +3362,10 @@ argument_list|(
 literal|"Image exported to '%s'"
 argument_list|)
 argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
-name|g_free
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
