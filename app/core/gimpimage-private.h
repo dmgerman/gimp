@@ -195,6 +195,12 @@ modifier|*
 name|save_a_copy_file
 decl_stmt|;
 comment|/*  the image's save-a-copy file */
+DECL|member|untitled_file
+name|GFile
+modifier|*
+name|untitled_file
+decl_stmt|;
+comment|/*  a file saying "Untitled"     */
 DECL|member|dirty
 name|gint
 name|dirty

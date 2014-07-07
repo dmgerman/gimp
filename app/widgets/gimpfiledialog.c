@@ -2291,13 +2291,11 @@ condition|(
 operator|!
 name|name_file
 condition|)
-comment|/* XXX leak */
 name|name_file
 operator|=
-name|g_file_new_for_uri
+name|gimp_image_get_untitled_file
 argument_list|(
-name|gimp_image_get_string_untitled
-argument_list|()
+name|image
 argument_list|)
 expr_stmt|;
 comment|/* Priority of default type/extension for Save:        *        *   1. Type of last Save        *   2. .xcf (which we don't explicitly append)        */
@@ -2453,13 +2451,11 @@ condition|(
 operator|!
 name|name_file
 condition|)
-comment|/* XXX leak */
 name|name_file
 operator|=
-name|g_file_new_for_uri
+name|gimp_image_get_untitled_file
 argument_list|(
-name|gimp_image_get_string_untitled
-argument_list|()
+name|image
 argument_list|)
 expr_stmt|;
 comment|/* Priority of default type/extension for Export:        *        *   1. Type of last Export        *   2. Type of the image Import        *   3. Type of latest Export of any document        *   4. .png        */
