@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file/file-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdnd-xds.h"
 end_include
 
@@ -144,10 +138,9 @@ name|GtkWidget
 modifier|*
 name|parent
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -555,7 +548,7 @@ name|gimp_file_overwrite_dialog
 argument_list|(
 name|NULL
 argument_list|,
-name|uri
+name|file
 argument_list|)
 condition|)
 block|{
@@ -737,26 +730,21 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_file_overwrite_dialog (GtkWidget * parent,const gchar * uri)
+DECL|function|gimp_file_overwrite_dialog (GtkWidget * parent,GFile * file)
 name|gimp_file_overwrite_dialog
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|parent
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
 name|dialog
-decl_stmt|;
-name|gchar
-modifier|*
-name|filename
 decl_stmt|;
 name|gboolean
 name|overwrite
@@ -811,13 +799,6 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|filename
-operator|=
-name|file_utils_uri_display_name
-argument_list|(
-name|uri
-argument_list|)
-expr_stmt|;
 name|gimp_message_box_set_primary_text
 argument_list|(
 name|GIMP_MESSAGE_DIALOG
@@ -832,12 +813,10 @@ argument_list|(
 literal|"A file named '%s' already exists."
 argument_list|)
 argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
-name|g_free
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_message_box_set_text
