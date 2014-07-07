@@ -114,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file/file-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpactiongroup.h"
 end_include
 
@@ -2271,7 +2265,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f91a570108
+DECL|struct|__anon2be8681f0108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2665,7 +2659,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f91a570208
+DECL|struct|__anon2be8681f0208
 block|{
 DECL|member|mask_column
 name|gint

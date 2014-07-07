@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file/file-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpclipboard.h"
 end_include
 
@@ -174,7 +168,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d3d8410108
+DECL|struct|__anon2c1e18360108
 block|{
 DECL|member|name
 specifier|const

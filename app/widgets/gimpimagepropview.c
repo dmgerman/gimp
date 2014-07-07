@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file/file-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"plug-in/gimppluginmanager.h"
 end_include
 
@@ -125,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2756d7840103
+DECL|enum|__anon2b4efe3e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

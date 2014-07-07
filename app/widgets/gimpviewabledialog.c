@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file/file-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpview.h"
 end_include
 
@@ -77,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2780dc580103
+DECL|enum|__anon27cdacd60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
