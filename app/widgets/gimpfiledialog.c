@@ -3764,7 +3764,7 @@ modifier|*
 name|dialog
 parameter_list|)
 block|{
-name|gimp_thumb_box_take_uris
+name|gimp_thumb_box_take_files
 argument_list|(
 name|GIMP_THUMB_BOX
 argument_list|(
@@ -3773,7 +3773,7 @@ operator|->
 name|thumb_box
 argument_list|)
 argument_list|,
-name|gtk_file_chooser_get_uris
+name|gtk_file_chooser_get_files
 argument_list|(
 name|chooser
 argument_list|)
@@ -3797,7 +3797,7 @@ modifier|*
 name|dialog
 parameter_list|)
 block|{
-name|gimp_thumb_box_take_uri
+name|gimp_thumb_box_take_file
 argument_list|(
 name|GIMP_THUMB_BOX
 argument_list|(
@@ -3806,7 +3806,7 @@ operator|->
 name|thumb_box
 argument_list|)
 argument_list|,
-name|gtk_file_chooser_get_preview_uri
+name|gtk_file_chooser_get_preview_file
 argument_list|(
 name|chooser
 argument_list|)

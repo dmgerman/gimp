@@ -102,12 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file/file-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpfiledialog.h"
 end_include
 
@@ -413,10 +407,9 @@ name|GimpThumbBox
 modifier|*
 name|box
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|,
 name|GimpThumbnailSize
 name|size
@@ -680,7 +673,7 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|gimp_thumb_box_take_uris
+name|gimp_thumb_box_take_files
 argument_list|(
 name|box
 argument_list|,
@@ -2057,16 +2050,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_thumb_box_take_uri (GimpThumbBox * box,gchar * uri)
-name|gimp_thumb_box_take_uri
+DECL|function|gimp_thumb_box_take_file (GimpThumbBox * box,GFile * file)
+name|gimp_thumb_box_take_file
 parameter_list|(
 name|GimpThumbBox
 modifier|*
 name|box
 parameter_list|,
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -2074,6 +2067,14 @@ argument_list|(
 name|GIMP_IS_THUMB_BOX
 argument_list|(
 name|box
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|G_IS_FILE
+argument_list|(
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2098,30 +2099,30 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-name|gimp_object_take_name
-argument_list|(
-name|GIMP_OBJECT
+name|gimp_imagefile_set_file
 argument_list|(
 name|box
 operator|->
 name|imagefile
-argument_list|)
 argument_list|,
-name|uri
+name|file
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|uri
+name|file
 condition|)
 block|{
 name|gchar
 modifier|*
 name|basename
 init|=
-name|file_utils_uri_display_basename
+name|g_path_get_basename
 argument_list|(
-name|uri
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|gtk_label_set_text
@@ -2167,7 +2168,7 @@ argument_list|(
 name|box
 argument_list|)
 argument_list|,
-name|uri
+name|file
 operator|!=
 name|NULL
 argument_list|)
@@ -2184,8 +2185,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_thumb_box_take_uris (GimpThumbBox * box,GSList * uris)
-name|gimp_thumb_box_take_uris
+DECL|function|gimp_thumb_box_take_files (GimpThumbBox * box,GSList * files)
+name|gimp_thumb_box_take_files
 parameter_list|(
 name|GimpThumbBox
 modifier|*
@@ -2193,7 +2194,7 @@ name|box
 parameter_list|,
 name|GSList
 modifier|*
-name|uris
+name|files
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -2208,33 +2209,33 @@ if|if
 condition|(
 name|box
 operator|->
-name|uris
+name|files
 condition|)
 block|{
 name|g_slist_free_full
 argument_list|(
 name|box
 operator|->
-name|uris
+name|files
 argument_list|,
 operator|(
 name|GDestroyNotify
 operator|)
-name|g_free
+name|g_object_unref
 argument_list|)
 expr_stmt|;
 name|box
 operator|->
-name|uris
+name|files
 operator|=
 name|NULL
 expr_stmt|;
 block|}
 name|box
 operator|->
-name|uris
+name|files
 operator|=
-name|uris
+name|files
 expr_stmt|;
 block|}
 end_function
@@ -2470,7 +2471,7 @@ modifier|*
 name|list
 decl_stmt|;
 name|gint
-name|n_uris
+name|n_files
 decl_stmt|;
 name|gint
 name|i
@@ -2538,7 +2539,7 @@ if|if
 condition|(
 name|box
 operator|->
-name|uris
+name|files
 condition|)
 block|{
 name|gtk_widget_hide
@@ -2556,18 +2557,18 @@ name|progress
 argument_list|)
 expr_stmt|;
 block|}
-name|n_uris
+name|n_files
 operator|=
 name|g_slist_length
 argument_list|(
 name|box
 operator|->
-name|uris
+name|files
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|n_uris
+name|n_files
 operator|>
 literal|1
 condition|)
@@ -2607,7 +2608,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-name|n_uris
+name|n_files
 argument_list|)
 expr_stmt|;
 for|for
@@ -2616,7 +2617,7 @@ name|list
 operator|=
 name|box
 operator|->
-name|uris
+name|files
 operator|->
 name|next
 operator|,
@@ -2648,7 +2649,7 @@ argument_list|)
 argument_list|,
 name|i
 argument_list|,
-name|n_uris
+name|n_files
 argument_list|)
 expr_stmt|;
 name|gtk_progress_bar_set_text
@@ -2722,7 +2723,7 @@ argument_list|)
 argument_list|,
 name|i
 argument_list|,
-name|n_uris
+name|n_files
 argument_list|)
 expr_stmt|;
 block|}
@@ -2735,9 +2736,9 @@ argument_list|(
 literal|"Thumbnail %d of %d"
 argument_list|)
 argument_list|,
-name|n_uris
+name|n_files
 argument_list|,
-name|n_uris
+name|n_files
 argument_list|)
 expr_stmt|;
 name|gtk_progress_bar_set_text
@@ -2777,7 +2778,7 @@ if|if
 condition|(
 name|box
 operator|->
-name|uris
+name|files
 condition|)
 block|{
 name|gimp_thumb_box_create_thumbnail
@@ -2786,7 +2787,7 @@ name|box
 argument_list|,
 name|box
 operator|->
-name|uris
+name|files
 operator|->
 name|data
 argument_list|,
@@ -2813,7 +2814,7 @@ name|canceled
 label|:
 if|if
 condition|(
-name|n_uris
+name|n_files
 operator|>
 literal|1
 condition|)
@@ -2848,7 +2849,7 @@ if|if
 condition|(
 name|box
 operator|->
-name|uris
+name|files
 condition|)
 block|{
 name|gtk_widget_hide
@@ -2896,17 +2897,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_thumb_box_create_thumbnail (GimpThumbBox * box,const gchar * uri,GimpThumbnailSize size,gboolean force,GimpProgress * progress)
+DECL|function|gimp_thumb_box_create_thumbnail (GimpThumbBox * box,GFile * file,GimpThumbnailSize size,gboolean force,GimpProgress * progress)
 name|gimp_thumb_box_create_thumbnail
 parameter_list|(
 name|GimpThumbBox
 modifier|*
 name|box
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|,
 name|GimpThumbnailSize
 name|size
@@ -2936,9 +2936,12 @@ name|basename
 decl_stmt|;
 name|basename
 operator|=
-name|file_utils_uri_display_basename
+name|g_path_get_basename
 argument_list|(
-name|uri
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_text
@@ -2958,16 +2961,13 @@ argument_list|(
 name|basename
 argument_list|)
 expr_stmt|;
-name|gimp_object_set_name
-argument_list|(
-name|GIMP_OBJECT
+name|gimp_imagefile_set_file
 argument_list|(
 name|box
 operator|->
 name|imagefile
-argument_list|)
 argument_list|,
-name|uri
+name|file
 argument_list|)
 expr_stmt|;
 if|if

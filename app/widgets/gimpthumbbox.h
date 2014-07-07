@@ -107,10 +107,10 @@ name|GimpImagefile
 modifier|*
 name|imagefile
 decl_stmt|;
-DECL|member|uris
+DECL|member|files
 name|GSList
 modifier|*
-name|uris
+name|files
 decl_stmt|;
 DECL|member|preview
 name|GtkWidget
@@ -181,22 +181,22 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_thumb_box_take_uri
+name|gimp_thumb_box_take_file
 parameter_list|(
 name|GimpThumbBox
 modifier|*
 name|box
 parameter_list|,
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_thumb_box_take_uris
+name|gimp_thumb_box_take_files
 parameter_list|(
 name|GimpThumbBox
 modifier|*
@@ -204,7 +204,7 @@ name|box
 parameter_list|,
 name|GSList
 modifier|*
-name|uris
+name|files
 parameter_list|)
 function_decl|;
 end_function_decl
