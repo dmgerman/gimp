@@ -171,6 +171,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_imagefile_set_file
+parameter_list|(
+name|GimpImagefile
+modifier|*
+name|imagefile
+parameter_list|,
+name|GFile
+modifier|*
+name|file
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpThumbnail
 modifier|*
 name|gimp_imagefile_get_thumbnail
