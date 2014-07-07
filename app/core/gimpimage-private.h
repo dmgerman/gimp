@@ -176,21 +176,25 @@ name|GFile
 modifier|*
 name|file
 decl_stmt|;
+comment|/*  the image's XCF file         */
 DECL|member|imported_file
 name|GFile
 modifier|*
 name|imported_file
 decl_stmt|;
+comment|/*  the image's source file      */
 DECL|member|exported_file
 name|GFile
 modifier|*
 name|exported_file
 decl_stmt|;
+comment|/*  the image's export file      */
 DECL|member|save_a_copy_file
 name|GFile
 modifier|*
 name|save_a_copy_file
 decl_stmt|;
+comment|/*  the image's save-a-copy file */
 DECL|member|dirty
 name|gint
 name|dirty
