@@ -272,14 +272,14 @@ function_decl|;
 end_typedef
 
 begin_comment
-comment|/**  * new_file_has_no_uris:  * @data:  *  * Tests that the URIs are correct for a newly created image.  **/
+comment|/**  * new_file_has_no_files:  * @data:  *  * Tests that the URIs are correct for a newly created image.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|new_file_has_no_uris (gconstpointer data)
-name|new_file_has_no_uris
+DECL|function|new_file_has_no_files (gconstpointer data)
+name|new_file_has_no_files
 parameter_list|(
 name|gconstpointer
 name|data
@@ -305,7 +305,7 @@ argument_list|)
 decl_stmt|;
 name|g_assert
 argument_list|(
-name|gimp_image_get_uri
+name|gimp_image_get_file
 argument_list|(
 name|image
 argument_list|)
@@ -315,7 +315,7 @@ argument_list|)
 expr_stmt|;
 name|g_assert
 argument_list|(
-name|gimp_image_get_imported_uri
+name|gimp_image_get_imported_file
 argument_list|(
 name|image
 argument_list|)
@@ -325,7 +325,7 @@ argument_list|)
 expr_stmt|;
 name|g_assert
 argument_list|(
-name|gimp_image_get_exported_uri
+name|gimp_image_get_exported_file
 argument_list|(
 name|image
 argument_list|)
@@ -337,14 +337,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * opened_xcf_file_uris:  * @data:  *  * Tests that GimpImage URIs are correct for an XCF file that has just  * been opened.  **/
+comment|/**  * opened_xcf_file_files:  * @data:  *  * Tests that GimpImage URIs are correct for an XCF file that has just  * been opened.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|opened_xcf_file_uris (gconstpointer data)
-name|opened_xcf_file_uris
+DECL|function|opened_xcf_file_files (gconstpointer data)
+name|opened_xcf_file_files
 parameter_list|(
 name|gconstpointer
 name|data
@@ -363,9 +363,9 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 decl_stmt|;
 name|gchar
 modifier|*
@@ -388,15 +388,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|uri
+name|file
 operator|=
-name|g_filename_to_uri
+name|g_file_new_for_path
 argument_list|(
 name|filename
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 name|image
@@ -413,9 +414,9 @@ argument_list|,
 name|NULL
 comment|/*progress*/
 argument_list|,
-name|uri
+name|file
 argument_list|,
-name|filename
+name|file
 argument_list|,
 name|FALSE
 comment|/*as_new*/
@@ -439,24 +440,18 @@ name|g_assert
 argument_list|(
 name|g_file_equal
 argument_list|(
-name|g_file_new_for_uri
-argument_list|(
-name|gimp_image_get_uri
+name|gimp_image_get_file
 argument_list|(
 name|image
-argument_list|)
 argument_list|)
 argument_list|,
-name|g_file_new_for_uri
-argument_list|(
-name|uri
-argument_list|)
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_assert
 argument_list|(
-name|gimp_image_get_imported_uri
+name|gimp_image_get_imported_file
 argument_list|(
 name|image
 argument_list|)
@@ -466,7 +461,7 @@ argument_list|)
 expr_stmt|;
 name|g_assert
 argument_list|(
-name|gimp_image_get_exported_uri
+name|gimp_image_get_exported_file
 argument_list|(
 name|image
 argument_list|)
@@ -474,19 +469,23 @@ operator|==
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* Don't bother g_free()ing strings */
+name|g_object_unref
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * imported_file_uris:  * @data:  *  * Tests that URIs are correct for an imported image.  **/
+comment|/**  * imported_file_files:  * @data:  *  * Tests that URIs are correct for an imported image.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|imported_file_uris (gconstpointer data)
-name|imported_file_uris
+DECL|function|imported_file_files (gconstpointer data)
+name|imported_file_files
 parameter_list|(
 name|gconstpointer
 name|data
@@ -505,9 +504,9 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 decl_stmt|;
 name|gchar
 modifier|*
@@ -540,15 +539,16 @@ name|G_FILE_TEST_EXISTS
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|uri
+name|file
 operator|=
-name|g_filename_to_uri
+name|g_file_new_for_path
 argument_list|(
 name|filename
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 name|image
@@ -565,9 +565,9 @@ argument_list|,
 name|NULL
 comment|/*progress*/
 argument_list|,
-name|uri
+name|file
 argument_list|,
-name|filename
+name|file
 argument_list|,
 name|FALSE
 comment|/*as_new*/
@@ -589,7 +589,7 @@ argument_list|)
 expr_stmt|;
 name|g_assert
 argument_list|(
-name|gimp_image_get_uri
+name|gimp_image_get_file
 argument_list|(
 name|image
 argument_list|)
@@ -601,24 +601,18 @@ name|g_assert
 argument_list|(
 name|g_file_equal
 argument_list|(
-name|g_file_new_for_uri
-argument_list|(
-name|gimp_image_get_imported_uri
+name|gimp_image_get_imported_file
 argument_list|(
 name|image
 argument_list|)
-argument_list|)
 argument_list|,
-name|g_file_new_for_uri
-argument_list|(
-name|uri
-argument_list|)
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_assert
 argument_list|(
-name|gimp_image_get_exported_uri
+name|gimp_image_get_exported_file
 argument_list|(
 name|image
 argument_list|)
@@ -626,18 +620,23 @@ operator|==
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * saved_imported_file_uris:  * @data:  *  * Tests that the URIs are correct for an image that has been imported  * and then saved.  **/
+comment|/**  * saved_imported_file_files:  * @data:  *  * Tests that the URIs are correct for an image that has been imported  * and then saved.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|saved_imported_file_uris (gconstpointer data)
-name|saved_imported_file_uris
+DECL|function|saved_imported_file_files (gconstpointer data)
+name|saved_imported_file_files
 parameter_list|(
 name|gconstpointer
 name|data
@@ -656,17 +655,17 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gchar
+name|GFile
 modifier|*
-name|import_uri
+name|import_file
 decl_stmt|;
 name|gchar
 modifier|*
 name|import_filename
 decl_stmt|;
-name|gchar
+name|GFile
 modifier|*
-name|save_uri
+name|save_file
 decl_stmt|;
 name|gchar
 modifier|*
@@ -693,15 +692,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|import_uri
+name|import_file
 operator|=
-name|g_filename_to_uri
+name|g_file_new_for_path
 argument_list|(
 name|import_filename
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|import_filename
 argument_list|)
 expr_stmt|;
 name|save_filename
@@ -716,15 +716,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|save_uri
+name|save_file
 operator|=
-name|g_filename_to_uri
+name|g_file_new_for_path
 argument_list|(
 name|save_filename
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|save_filename
 argument_list|)
 expr_stmt|;
 comment|/* Import */
@@ -742,9 +743,9 @@ argument_list|,
 name|NULL
 comment|/*progress*/
 argument_list|,
-name|import_uri
+name|import_file
 argument_list|,
-name|import_filename
+name|import_file
 argument_list|,
 name|FALSE
 comment|/*as_new*/
@@ -764,6 +765,11 @@ name|NULL
 comment|/*error*/
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|import_file
+argument_list|)
+expr_stmt|;
 comment|/* Save */
 name|proc
 operator|=
@@ -777,7 +783,7 @@ name|plug_in_manager
 operator|->
 name|save_procs
 argument_list|,
-name|save_uri
+name|save_file
 argument_list|,
 name|NULL
 comment|/*error*/
@@ -792,7 +798,7 @@ argument_list|,
 name|NULL
 comment|/*progress*/
 argument_list|,
-name|save_uri
+name|save_file
 argument_list|,
 name|proc
 argument_list|,
@@ -816,24 +822,18 @@ name|g_assert
 argument_list|(
 name|g_file_equal
 argument_list|(
-name|g_file_new_for_uri
-argument_list|(
-name|gimp_image_get_uri
+name|gimp_image_get_file
 argument_list|(
 name|image
-argument_list|)
 argument_list|)
 argument_list|,
-name|g_file_new_for_uri
-argument_list|(
-name|save_uri
-argument_list|)
+name|save_file
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_assert
 argument_list|(
-name|gimp_image_get_imported_uri
+name|gimp_image_get_imported_file
 argument_list|(
 name|image
 argument_list|)
@@ -843,7 +843,7 @@ argument_list|)
 expr_stmt|;
 name|g_assert
 argument_list|(
-name|gimp_image_get_exported_uri
+name|gimp_image_get_exported_file
 argument_list|(
 name|image
 argument_list|)
@@ -851,31 +851,40 @@ operator|==
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_unlink
+name|g_file_delete
 argument_list|(
-name|save_filename
+name|save_file
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|save_file
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * new_file_has_no_uris:  * @data:  *  * Tests that the URIs for an exported, newly created file are  * correct.  **/
+comment|/**  * exported_file_files:  * @data:  *  * Tests that the URIs for an exported, newly created file are  * correct.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|exported_file_uris (gconstpointer data)
-name|exported_file_uris
+DECL|function|exported_file_files (gconstpointer data)
+name|exported_file_files
 parameter_list|(
 name|gconstpointer
 name|data
 parameter_list|)
 block|{
-name|gchar
+name|GFile
 modifier|*
-name|save_uri
+name|save_file
 decl_stmt|;
 name|gchar
 modifier|*
@@ -915,15 +924,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|save_uri
+name|save_file
 operator|=
-name|g_filename_to_uri
+name|g_file_new_for_path
 argument_list|(
 name|save_filename
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|save_filename
 argument_list|)
 expr_stmt|;
 name|proc
@@ -938,7 +948,7 @@ name|plug_in_manager
 operator|->
 name|export_procs
 argument_list|,
-name|save_uri
+name|save_file
 argument_list|,
 name|NULL
 comment|/*error*/
@@ -953,7 +963,7 @@ argument_list|,
 name|NULL
 comment|/*progress*/
 argument_list|,
-name|save_uri
+name|save_file
 argument_list|,
 name|proc
 argument_list|,
@@ -974,7 +984,7 @@ argument_list|)
 expr_stmt|;
 name|g_assert
 argument_list|(
-name|gimp_image_get_uri
+name|gimp_image_get_file
 argument_list|(
 name|image
 argument_list|)
@@ -984,7 +994,7 @@ argument_list|)
 expr_stmt|;
 name|g_assert
 argument_list|(
-name|gimp_image_get_imported_uri
+name|gimp_image_get_imported_file
 argument_list|(
 name|image
 argument_list|)
@@ -996,38 +1006,41 @@ name|g_assert
 argument_list|(
 name|g_file_equal
 argument_list|(
-name|g_file_new_for_uri
-argument_list|(
-name|gimp_image_get_exported_uri
+name|gimp_image_get_exported_file
 argument_list|(
 name|image
 argument_list|)
-argument_list|)
 argument_list|,
-name|g_file_new_for_uri
-argument_list|(
-name|save_uri
-argument_list|)
+name|save_file
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_unlink
+name|g_file_delete
 argument_list|(
-name|save_filename
+name|save_file
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|save_file
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * clear_import_uri_after_export:  * @data:  *  * Tests that after a XCF file that was imported has been exported,  * the import URI is cleared. An image can not be considered both  * imported and exported at the same time.  **/
+comment|/**  * clear_import_file_after_export:  * @data:  *  * Tests that after a XCF file that was imported has been exported,  * the import URI is cleared. An image can not be considered both  * imported and exported at the same time.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|clear_import_uri_after_export (gconstpointer data)
-name|clear_import_uri_after_export
+DECL|function|clear_import_file_after_export (gconstpointer data)
+name|clear_import_file_after_export
 parameter_list|(
 name|gconstpointer
 name|data
@@ -1046,17 +1059,17 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 decl_stmt|;
 name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|gchar
+name|GFile
 modifier|*
-name|save_uri
+name|save_file
 decl_stmt|;
 name|gchar
 modifier|*
@@ -1083,15 +1096,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|uri
+name|file
 operator|=
-name|g_filename_to_uri
+name|g_file_new_for_path
 argument_list|(
 name|filename
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 name|image
@@ -1108,9 +1122,9 @@ argument_list|,
 name|NULL
 comment|/*progress*/
 argument_list|,
-name|uri
+name|file
 argument_list|,
-name|filename
+name|file
 argument_list|,
 name|FALSE
 comment|/*as_new*/
@@ -1132,7 +1146,7 @@ argument_list|)
 expr_stmt|;
 name|g_assert
 argument_list|(
-name|gimp_image_get_uri
+name|gimp_image_get_file
 argument_list|(
 name|image
 argument_list|)
@@ -1144,29 +1158,28 @@ name|g_assert
 argument_list|(
 name|g_file_equal
 argument_list|(
-name|g_file_new_for_uri
-argument_list|(
-name|gimp_image_get_imported_uri
+name|gimp_image_get_imported_file
 argument_list|(
 name|image
 argument_list|)
-argument_list|)
 argument_list|,
-name|g_file_new_for_uri
-argument_list|(
-name|uri
-argument_list|)
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_assert
 argument_list|(
-name|gimp_image_get_exported_uri
+name|gimp_image_get_exported_file
 argument_list|(
 name|image
 argument_list|)
 operator|==
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|file
 argument_list|)
 expr_stmt|;
 name|save_filename
@@ -1181,15 +1194,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|save_uri
+name|save_file
 operator|=
-name|g_filename_to_uri
+name|g_file_new_for_path
 argument_list|(
 name|save_filename
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|save_filename
 argument_list|)
 expr_stmt|;
 name|proc
@@ -1204,7 +1218,7 @@ name|plug_in_manager
 operator|->
 name|export_procs
 argument_list|,
-name|save_uri
+name|save_file
 argument_list|,
 name|NULL
 comment|/*error*/
@@ -1219,7 +1233,7 @@ argument_list|,
 name|NULL
 comment|/*progress*/
 argument_list|,
-name|save_uri
+name|save_file
 argument_list|,
 name|proc
 argument_list|,
@@ -1240,7 +1254,7 @@ argument_list|)
 expr_stmt|;
 name|g_assert
 argument_list|(
-name|gimp_image_get_uri
+name|gimp_image_get_file
 argument_list|(
 name|image
 argument_list|)
@@ -1250,7 +1264,7 @@ argument_list|)
 expr_stmt|;
 name|g_assert
 argument_list|(
-name|gimp_image_get_imported_uri
+name|gimp_image_get_imported_file
 argument_list|(
 name|image
 argument_list|)
@@ -1262,32 +1276,35 @@ name|g_assert
 argument_list|(
 name|g_file_equal
 argument_list|(
-name|g_file_new_for_uri
-argument_list|(
-name|gimp_image_get_exported_uri
+name|gimp_image_get_exported_file
 argument_list|(
 name|image
 argument_list|)
-argument_list|)
 argument_list|,
-name|g_file_new_for_uri
-argument_list|(
-name|save_uri
-argument_list|)
+name|save_file
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_unlink
+name|g_file_delete
 argument_list|(
-name|save_filename
+name|save_file
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|save_file
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|main (int argc,char ** argv)
 name|int
+DECL|function|main (int argc,char ** argv)
 name|main
 parameter_list|(
 name|int
@@ -1349,32 +1366,32 @@ argument_list|()
 expr_stmt|;
 name|ADD_TEST
 argument_list|(
-name|new_file_has_no_uris
+name|new_file_has_no_files
 argument_list|)
 expr_stmt|;
 name|ADD_TEST
 argument_list|(
-name|opened_xcf_file_uris
+name|opened_xcf_file_files
 argument_list|)
 expr_stmt|;
 name|ADD_TEST
 argument_list|(
-name|imported_file_uris
+name|imported_file_files
 argument_list|)
 expr_stmt|;
 name|ADD_TEST
 argument_list|(
-name|saved_imported_file_uris
+name|saved_imported_file_files
 argument_list|)
 expr_stmt|;
 name|ADD_TEST
 argument_list|(
-name|exported_file_uris
+name|exported_file_files
 argument_list|)
 expr_stmt|;
 name|ADD_TEST
 argument_list|(
-name|clear_import_uri_after_export
+name|clear_import_file_after_export
 argument_list|)
 expr_stmt|;
 comment|/* Run the tests and return status */
