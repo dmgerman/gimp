@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6460c00103
+DECL|enum|__anon28dca79e0103
 block|{
 DECL|enumerator|PLUG_IN_OPENED
 name|PLUG_IN_OPENED
@@ -382,13 +382,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__STRING_STRING_STRING
+name|gimp_marshal_VOID__OBJECT_STRING_STRING
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|G_TYPE_STRING
+name|G_TYPE_FILE
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
@@ -1402,11 +1402,11 @@ argument_list|(
 name|tmp_proc
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
 name|tmp_proc
 operator|->
-name|prog
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;

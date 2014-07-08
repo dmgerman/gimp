@@ -200,7 +200,7 @@ name|NULL
 argument_list|,
 name|plug_in_def
 operator|->
-name|prog
+name|file
 argument_list|)
 expr_stmt|;
 if|if
@@ -348,7 +348,7 @@ name|NULL
 argument_list|,
 name|plug_in_def
 operator|->
-name|prog
+name|file
 argument_list|)
 expr_stmt|;
 if|if

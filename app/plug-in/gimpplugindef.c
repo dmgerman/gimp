@@ -169,11 +169,11 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|g_free
+name|g_object_unref
 argument_list|(
 name|plug_in_def
 operator|->
-name|prog
+name|file
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -260,11 +260,14 @@ literal|0
 decl_stmt|;
 name|memsize
 operator|+=
-name|gimp_string_get_memsize
+name|gimp_g_object_get_memsize
+argument_list|(
+name|G_OBJECT
 argument_list|(
 name|plug_in_def
 operator|->
-name|prog
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|memsize
@@ -339,13 +342,12 @@ end_comment
 begin_function
 name|GimpPlugInDef
 modifier|*
-DECL|function|gimp_plug_in_def_new (const gchar * prog)
+DECL|function|gimp_plug_in_def_new (GFile * file)
 name|gimp_plug_in_def_new
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|prog
+name|file
 parameter_list|)
 block|{
 name|GimpPlugInDef
@@ -354,9 +356,10 @@ name|plug_in_def
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|prog
-operator|!=
-name|NULL
+name|G_IS_FILE
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -372,11 +375,11 @@ argument_list|)
 expr_stmt|;
 name|plug_in_def
 operator|->
-name|prog
+name|file
 operator|=
-name|g_strdup
+name|g_object_ref
 argument_list|(
-name|prog
+name|file
 argument_list|)
 expr_stmt|;
 return|return

@@ -944,7 +944,7 @@ name|plug_in_manager
 argument_list|,
 name|plug_in
 operator|->
-name|prog
+name|file
 argument_list|,
 name|menu_path
 argument_list|,

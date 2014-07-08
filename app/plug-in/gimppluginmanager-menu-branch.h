@@ -21,10 +21,10 @@ DECL|struct|_GimpPlugInMenuBranch
 struct|struct
 name|_GimpPlugInMenuBranch
 block|{
-DECL|member|prog_name
-name|gchar
+DECL|member|file
+name|GFile
 modifier|*
-name|prog_name
+name|file
 decl_stmt|;
 DECL|member|menu_path
 name|gchar
@@ -63,10 +63,9 @@ name|GimpPlugInManager
 modifier|*
 name|manager
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|prog_name
+name|file
 parameter_list|,
 specifier|const
 name|gchar

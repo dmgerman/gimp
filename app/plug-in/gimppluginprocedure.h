@@ -104,10 +104,10 @@ name|GimpProcedure
 name|parent_instance
 decl_stmt|;
 comment|/*  common members  */
-DECL|member|prog
-name|gchar
+DECL|member|file
+name|GFile
 modifier|*
-name|prog
+name|file
 decl_stmt|;
 DECL|member|locale_domain
 name|GQuark
@@ -225,13 +225,12 @@ name|GimpProcedureClass
 name|parent_class
 decl_stmt|;
 comment|/*  virtual functions  */
-DECL|member|get_progname
-specifier|const
-name|gchar
+DECL|member|get_file
+name|GFile
 modifier|*
 function_decl|(
 modifier|*
-name|get_progname
+name|get_file
 function_decl|)
 parameter_list|(
 specifier|const
@@ -280,10 +279,9 @@ parameter_list|(
 name|GimpPDBProcType
 name|proc_type
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|prog
+name|file
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -306,10 +304,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|gimp_plug_in_procedure_get_progname
+name|gimp_plug_in_procedure_get_file
 parameter_list|(
 specifier|const
 name|GimpPlugInProcedure

@@ -273,6 +273,10 @@ name|GimpPlugInProcedure
 modifier|*
 name|proc
 decl_stmt|;
+name|GFile
+modifier|*
+name|file
+decl_stmt|;
 name|GimpProcedure
 modifier|*
 name|procedure
@@ -287,13 +291,25 @@ argument_list|)
 expr_stmt|;
 comment|/* So this is sort of a hack, but its better than it was before.  To    * do this right there would be a file load-save handler type and    * the whole interface would change but there isn't, and currently    * the plug-in structure contains all the load-save info, so it    * makes sense to use that for the XCF load/save handlers, even    * though they are internal.  The only thing it requires is using a    * PlugInProcDef struct.  -josh    */
 comment|/*  gimp-xcf-save  */
+name|file
+operator|=
+name|g_file_new_for_path
+argument_list|(
+literal|"gimp-xcf-save"
+argument_list|)
+expr_stmt|;
 name|procedure
 operator|=
 name|gimp_plug_in_procedure_new
 argument_list|(
 name|GIMP_PLUGIN
 argument_list|,
-literal|"gimp-xcf-save"
+name|file
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|file
 argument_list|)
 expr_stmt|;
 name|procedure
@@ -546,13 +562,25 @@ name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*  gimp-xcf-load  */
+name|file
+operator|=
+name|g_file_new_for_path
+argument_list|(
+literal|"gimp-xcf-load"
+argument_list|)
+expr_stmt|;
 name|procedure
 operator|=
 name|gimp_plug_in_procedure_new
 argument_list|(
 name|GIMP_PLUGIN
 argument_list|,
-literal|"gimp-xcf-load"
+name|file
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|file
 argument_list|)
 expr_stmt|;
 name|procedure

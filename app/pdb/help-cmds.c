@@ -194,7 +194,7 @@ name|manager
 operator|->
 name|current_plug_in
 operator|->
-name|prog
+name|file
 argument_list|,
 name|NULL
 argument_list|)

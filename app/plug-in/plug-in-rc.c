@@ -121,10 +121,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|prog
+name|file
 parameter_list|,
 name|GimpPlugInProcedure
 modifier|*
@@ -255,7 +254,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4818c50103
+DECL|enum|__anon290861310103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -1047,6 +1046,10 @@ name|gchar
 modifier|*
 name|path
 decl_stmt|;
+name|GFile
+modifier|*
+name|file
+decl_stmt|;
 name|gint64
 name|mtime
 decl_stmt|;
@@ -1083,9 +1086,9 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
-name|plug_in_def
+name|file
 operator|=
-name|gimp_plug_in_def_new
+name|g_file_new_for_path
 argument_list|(
 name|path
 argument_list|)
@@ -1093,6 +1096,18 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|path
+argument_list|)
+expr_stmt|;
+name|plug_in_def
+operator|=
+name|gimp_plug_in_def_new
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|file
 argument_list|)
 expr_stmt|;
 if|if
@@ -1184,7 +1199,7 @@ name|gimp
 argument_list|,
 name|plug_in_def
 operator|->
-name|prog
+name|file
 argument_list|,
 operator|&
 name|proc
@@ -1319,7 +1334,7 @@ end_function
 begin_function
 specifier|static
 name|GTokenType
-DECL|function|plug_in_procedure_deserialize (GScanner * scanner,Gimp * gimp,const gchar * prog,GimpPlugInProcedure ** proc)
+DECL|function|plug_in_procedure_deserialize (GScanner * scanner,Gimp * gimp,GFile * file,GimpPlugInProcedure ** proc)
 name|plug_in_procedure_deserialize
 parameter_list|(
 name|GScanner
@@ -1330,10 +1345,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|prog
+name|file
 parameter_list|,
 name|GimpPlugInProcedure
 modifier|*
@@ -1408,7 +1422,7 @@ name|gimp_plug_in_procedure_new
 argument_list|(
 name|proc_type
 argument_list|,
-name|prog
+name|file
 argument_list|)
 expr_stmt|;
 operator|*
@@ -3152,15 +3166,26 @@ name|list2
 decl_stmt|;
 name|gchar
 modifier|*
+name|path
+decl_stmt|;
+name|gchar
+modifier|*
 name|utf8
 decl_stmt|;
+name|path
+operator|=
+name|g_file_get_path
+argument_list|(
+name|plug_in_def
+operator|->
+name|file
+argument_list|)
+expr_stmt|;
 name|utf8
 operator|=
 name|g_filename_to_utf8
 argument_list|(
-name|plug_in_def
-operator|->
-name|prog
+name|path
 argument_list|,
 operator|-
 literal|1
@@ -3170,6 +3195,11 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|path
 argument_list|)
 expr_stmt|;
 if|if

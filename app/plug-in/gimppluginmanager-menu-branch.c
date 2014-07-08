@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gio/gio.h>
 end_include
 
 begin_include
@@ -90,11 +90,11 @@ name|list
 operator|->
 name|data
 decl_stmt|;
-name|g_free
+name|g_object_unref
 argument_list|(
 name|branch
 operator|->
-name|prog_name
+name|file
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -137,17 +137,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_plug_in_manager_add_menu_branch (GimpPlugInManager * manager,const gchar * prog_name,const gchar * menu_path,const gchar * menu_label)
+DECL|function|gimp_plug_in_manager_add_menu_branch (GimpPlugInManager * manager,GFile * file,const gchar * menu_path,const gchar * menu_label)
 name|gimp_plug_in_manager_add_menu_branch
 parameter_list|(
 name|GimpPlugInManager
 modifier|*
 name|manager
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|prog_name
+name|file
 parameter_list|,
 specifier|const
 name|gchar
@@ -174,9 +173,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|prog_name
-operator|!=
-name|NULL
+name|G_IS_FILE
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -202,11 +202,11 @@ argument_list|)
 expr_stmt|;
 name|branch
 operator|->
-name|prog_name
+name|file
 operator|=
-name|g_strdup
+name|g_object_ref
 argument_list|(
-name|prog_name
+name|file
 argument_list|)
 expr_stmt|;
 name|branch
@@ -250,7 +250,7 @@ literal|"menu-branch-added"
 argument_list|,
 name|branch
 operator|->
-name|prog_name
+name|file
 argument_list|,
 name|branch
 operator|->

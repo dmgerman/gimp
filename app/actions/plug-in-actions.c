@@ -154,10 +154,9 @@ name|GimpPlugInManager
 modifier|*
 name|manager
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|progname
+name|file
 parameter_list|,
 specifier|const
 name|gchar
@@ -799,7 +798,7 @@ name|manager
 argument_list|,
 name|branch
 operator|->
-name|prog_name
+name|file
 argument_list|,
 name|branch
 operator|->
@@ -859,7 +858,7 @@ if|if
 condition|(
 name|plug_in_proc
 operator|->
-name|prog
+name|file
 condition|)
 name|plug_in_actions_register_procedure
 argument_list|(
@@ -1375,17 +1374,16 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_actions_menu_branch_added (GimpPlugInManager * manager,const gchar * progname,const gchar * menu_path,const gchar * menu_label,GimpActionGroup * group)
+DECL|function|plug_in_actions_menu_branch_added (GimpPlugInManager * manager,GFile * file,const gchar * menu_path,const gchar * menu_label,GimpActionGroup * group)
 name|plug_in_actions_menu_branch_added
 parameter_list|(
 name|GimpPlugInManager
 modifier|*
 name|manager
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|progname
+name|file
 parameter_list|,
 specifier|const
 name|gchar
@@ -1431,7 +1429,7 @@ name|gimp_plug_in_manager_get_locale_domain
 argument_list|(
 name|manager
 argument_list|,
-name|progname
+name|file
 argument_list|,
 name|NULL
 argument_list|)

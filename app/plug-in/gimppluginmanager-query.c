@@ -325,7 +325,7 @@ if|if
 condition|(
 name|proc
 operator|->
-name|prog
+name|file
 operator|&&
 name|proc
 operator|->
@@ -595,11 +595,11 @@ index|[
 name|i
 index|]
 operator|=
-name|g_strdup
+name|g_file_get_path
 argument_list|(
 name|proc
 operator|->
-name|prog
+name|file
 argument_list|)
 expr_stmt|;
 operator|(

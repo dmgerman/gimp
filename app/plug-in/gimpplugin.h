@@ -111,10 +111,10 @@ name|GimpPlugInManager
 modifier|*
 name|manager
 decl_stmt|;
-DECL|member|prog
-name|gchar
+DECL|member|file
+name|GFile
 modifier|*
-name|prog
+name|file
 decl_stmt|;
 comment|/*  Plug-in's full path name          */
 DECL|member|call_mode
@@ -263,10 +263,9 @@ name|GimpPlugInProcedure
 modifier|*
 name|procedure
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|prog
+name|file
 parameter_list|)
 function_decl|;
 end_function_decl

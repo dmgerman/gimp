@@ -487,7 +487,7 @@ condition|(
 operator|!
 name|plug_in_proc
 operator|->
-name|prog
+name|file
 condition|)
 continue|continue;
 name|g_signal_connect_object
@@ -563,10 +563,9 @@ argument_list|(
 name|PlugInMenuEntry
 argument_list|)
 decl_stmt|;
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|progname
+name|file
 decl_stmt|;
 specifier|const
 name|gchar
@@ -587,9 +586,9 @@ name|path
 operator|->
 name|data
 expr_stmt|;
-name|progname
+name|file
 operator|=
-name|gimp_plug_in_procedure_get_progname
+name|gimp_plug_in_procedure_get_file
 argument_list|(
 name|plug_in_proc
 argument_list|)
@@ -600,7 +599,7 @@ name|gimp_plug_in_manager_get_locale_domain
 argument_list|(
 name|plug_in_manager
 argument_list|,
-name|progname
+name|file
 argument_list|,
 name|NULL
 argument_list|)

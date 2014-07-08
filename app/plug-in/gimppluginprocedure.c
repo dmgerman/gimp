@@ -114,7 +114,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b007740103
+DECL|enum|__anon2b1e16c10103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -220,10 +220,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|gimp_plug_in_procedure_real_get_progname
+name|gimp_plug_in_procedure_real_get_file
 parameter_list|(
 specifier|const
 name|GimpPlugInProcedure
@@ -366,9 +365,9 @@ name|gimp_plug_in_procedure_execute_async
 expr_stmt|;
 name|klass
 operator|->
-name|get_progname
+name|get_file
 operator|=
-name|gimp_plug_in_procedure_real_get_progname
+name|gimp_plug_in_procedure_real_get_file
 expr_stmt|;
 name|klass
 operator|->
@@ -435,11 +434,11 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|g_free
+name|g_object_unref
 argument_list|(
 name|proc
 operator|->
-name|prog
+name|file
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -605,11 +604,14 @@ name|slist
 decl_stmt|;
 name|memsize
 operator|+=
-name|gimp_string_get_memsize
+name|gimp_g_object_get_memsize
+argument_list|(
+name|G_OBJECT
 argument_list|(
 name|proc
 operator|->
-name|prog
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|memsize
@@ -1026,11 +1028,10 @@ block|}
 end_function
 
 begin_function
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-DECL|function|gimp_plug_in_procedure_real_get_progname (const GimpPlugInProcedure * procedure)
-name|gimp_plug_in_procedure_real_get_progname
+DECL|function|gimp_plug_in_procedure_real_get_file (const GimpPlugInProcedure * procedure)
+name|gimp_plug_in_procedure_real_get_file
 parameter_list|(
 specifier|const
 name|GimpPlugInProcedure
@@ -1041,7 +1042,7 @@ block|{
 return|return
 name|procedure
 operator|->
-name|prog
+name|file
 return|;
 block|}
 end_function
@@ -1053,16 +1054,15 @@ end_comment
 begin_function
 name|GimpProcedure
 modifier|*
-DECL|function|gimp_plug_in_procedure_new (GimpPDBProcType proc_type,const gchar * prog)
+DECL|function|gimp_plug_in_procedure_new (GimpPDBProcType proc_type,GFile * file)
 name|gimp_plug_in_procedure_new
 parameter_list|(
 name|GimpPDBProcType
 name|proc_type
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|prog
+name|file
 parameter_list|)
 block|{
 name|GimpPlugInProcedure
@@ -1084,9 +1084,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|prog
-operator|!=
-name|NULL
+name|G_IS_FILE
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1102,11 +1103,11 @@ argument_list|)
 expr_stmt|;
 name|proc
 operator|->
-name|prog
+name|file
 operator|=
-name|g_strdup
+name|g_object_ref
 argument_list|(
-name|prog
+name|file
 argument_list|)
 expr_stmt|;
 name|GIMP_PROCEDURE
@@ -1198,11 +1199,10 @@ block|}
 end_function
 
 begin_function
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-DECL|function|gimp_plug_in_procedure_get_progname (const GimpPlugInProcedure * proc)
-name|gimp_plug_in_procedure_get_progname
+DECL|function|gimp_plug_in_procedure_get_file (const GimpPlugInProcedure * proc)
+name|gimp_plug_in_procedure_get_file
 parameter_list|(
 specifier|const
 name|GimpPlugInProcedure
@@ -1226,7 +1226,7 @@ argument_list|(
 name|proc
 argument_list|)
 operator|->
-name|get_progname
+name|get_file
 argument_list|(
 name|proc
 argument_list|)
@@ -1496,11 +1496,14 @@ condition|)
 block|{
 name|basename
 operator|=
-name|g_filename_display_basename
+name|g_path_get_basename
+argument_list|(
+name|gimp_file_get_utf8_name
 argument_list|(
 name|proc
 operator|->
-name|prog
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_set_error
@@ -1519,11 +1522,11 @@ literal|"or \"<Prefix>/path/to/item\"."
 argument_list|,
 name|basename
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
 name|proc
 operator|->
-name|prog
+name|file
 argument_list|)
 argument_list|,
 name|gimp_object_get_name
@@ -2138,11 +2141,14 @@ else|else
 block|{
 name|basename
 operator|=
-name|g_filename_display_basename
+name|g_path_get_basename
+argument_list|(
+name|gimp_file_get_utf8_name
 argument_list|(
 name|proc
 operator|->
-name|prog
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_set_error
@@ -2164,11 +2170,11 @@ literal|"\"<ToolPresets>\", \"<Fonts>\" or \"<Buffers>\"."
 argument_list|,
 name|basename
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
 name|proc
 operator|->
-name|prog
+name|file
 argument_list|)
 argument_list|,
 name|gimp_object_get_name
@@ -2261,11 +2267,14 @@ literal|'\0'
 expr_stmt|;
 name|basename
 operator|=
-name|g_filename_display_basename
+name|g_path_get_basename
+argument_list|(
+name|gimp_file_get_utf8_name
 argument_list|(
 name|proc
 operator|->
-name|prog
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_set_error
@@ -2283,11 +2292,11 @@ literal|"arguments: (%s)."
 argument_list|,
 name|basename
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
 name|proc
 operator|->
-name|prog
+name|file
 argument_list|)
 argument_list|,
 name|prefix

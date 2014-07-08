@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gio/gio.h>
 end_include
 
 begin_include
@@ -53,10 +53,10 @@ DECL|struct|_GimpPlugInHelpDomain
 struct|struct
 name|_GimpPlugInHelpDomain
 block|{
-DECL|member|prog_name
-name|gchar
+DECL|member|file
+name|GFile
 modifier|*
-name|prog_name
+name|file
 decl_stmt|;
 DECL|member|domain_name
 name|gchar
@@ -119,11 +119,11 @@ name|list
 operator|->
 name|data
 decl_stmt|;
-name|g_free
+name|g_object_unref
 argument_list|(
 name|domain
 operator|->
-name|prog_name
+name|file
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -166,17 +166,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_plug_in_manager_add_help_domain (GimpPlugInManager * manager,const gchar * prog_name,const gchar * domain_name,const gchar * domain_uri)
+DECL|function|gimp_plug_in_manager_add_help_domain (GimpPlugInManager * manager,GFile * file,const gchar * domain_name,const gchar * domain_uri)
 name|gimp_plug_in_manager_add_help_domain
 parameter_list|(
 name|GimpPlugInManager
 modifier|*
 name|manager
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|prog_name
+name|file
 parameter_list|,
 specifier|const
 name|gchar
@@ -203,9 +202,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|prog_name
-operator|!=
-name|NULL
+name|G_IS_FILE
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -224,11 +224,11 @@ argument_list|)
 expr_stmt|;
 name|domain
 operator|->
-name|prog_name
+name|file
 operator|=
-name|g_strdup
+name|g_object_ref
 argument_list|(
-name|prog_name
+name|file
 argument_list|)
 expr_stmt|;
 name|domain
@@ -299,17 +299,16 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_plug_in_manager_get_help_domain (GimpPlugInManager * manager,const gchar * prog_name,const gchar ** domain_uri)
+DECL|function|gimp_plug_in_manager_get_help_domain (GimpPlugInManager * manager,GFile * file,const gchar ** domain_uri)
 name|gimp_plug_in_manager_get_help_domain
 parameter_list|(
 name|GimpPlugInManager
 modifier|*
 name|manager
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|prog_name
+name|file
 parameter_list|,
 specifier|const
 name|gchar
@@ -332,6 +331,20 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|file
+operator|==
+name|NULL
+operator|||
+name|G_IS_FILE
+argument_list|(
+name|file
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|domain_uri
@@ -345,7 +358,7 @@ comment|/*  A NULL prog_name is GIMP itself, return the default domain  */
 if|if
 condition|(
 operator|!
-name|prog_name
+name|file
 condition|)
 return|return
 name|NULL
@@ -381,16 +394,15 @@ name|domain
 operator|&&
 name|domain
 operator|->
-name|prog_name
+name|file
 operator|&&
-operator|!
-name|strcmp
+name|g_file_equal
 argument_list|(
 name|domain
 operator|->
-name|prog_name
+name|file
 argument_list|,
-name|prog_name
+name|file
 argument_list|)
 condition|)
 block|{

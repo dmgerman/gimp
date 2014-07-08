@@ -39,10 +39,9 @@ name|GimpPlugInManager
 modifier|*
 name|manager
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|prog_name
+name|file
 parameter_list|,
 specifier|const
 name|gchar
@@ -71,10 +70,9 @@ name|GimpPlugInManager
 modifier|*
 name|manager
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|prog_name
+name|file
 parameter_list|,
 specifier|const
 name|gchar

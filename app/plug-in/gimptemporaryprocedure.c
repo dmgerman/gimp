@@ -149,10 +149,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|const
-name|gchar
+specifier|static
+name|GFile
 modifier|*
-name|gimp_temporary_procedure_get_progname
+name|gimp_temporary_procedure_get_file
 parameter_list|(
 specifier|const
 name|GimpPlugInProcedure
@@ -239,9 +239,9 @@ name|gimp_temporary_procedure_execute_async
 expr_stmt|;
 name|plug_class
 operator|->
-name|get_progname
+name|get_file
 operator|=
-name|gimp_temporary_procedure_get_progname
+name|gimp_temporary_procedure_get_file
 expr_stmt|;
 block|}
 end_function
@@ -445,11 +445,11 @@ block|}
 end_function
 
 begin_function
-specifier|const
-name|gchar
+specifier|static
+name|GFile
 modifier|*
-DECL|function|gimp_temporary_procedure_get_progname (const GimpPlugInProcedure * procedure)
-name|gimp_temporary_procedure_get_progname
+DECL|function|gimp_temporary_procedure_get_file (const GimpPlugInProcedure * procedure)
+name|gimp_temporary_procedure_get_file
 parameter_list|(
 specifier|const
 name|GimpPlugInProcedure
@@ -465,7 +465,7 @@ argument_list|)
 operator|->
 name|plug_in
 operator|->
-name|prog
+name|file
 return|;
 block|}
 end_function
@@ -519,9 +519,9 @@ argument_list|(
 name|proc
 argument_list|)
 operator|->
-name|prog
+name|file
 operator|=
-name|g_strdup
+name|g_file_new_for_path
 argument_list|(
 literal|"none"
 argument_list|)
