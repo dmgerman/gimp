@@ -288,10 +288,10 @@ block|}
 end_function
 
 begin_function
-name|gchar
+name|GFile
 modifier|*
-DECL|function|file_utils_filename_to_uri (Gimp * gimp,const gchar * filename,GError ** error)
-name|file_utils_filename_to_uri
+DECL|function|file_utils_filename_to_file (Gimp * gimp,const gchar * filename,GError ** error)
+name|file_utils_filename_to_file
 parameter_list|(
 name|Gimp
 modifier|*
@@ -394,16 +394,8 @@ name|NULL
 argument_list|)
 condition|)
 block|{
-name|g_object_unref
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
 return|return
-name|g_strdup
-argument_list|(
-name|filename
-argument_list|)
+name|file
 return|;
 block|}
 else|else
@@ -420,11 +412,6 @@ name|_
 argument_list|(
 literal|"Invalid character sequence in URI"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|file
 argument_list|)
 expr_stmt|;
 return|return
@@ -444,16 +431,8 @@ name|temp_error
 argument_list|)
 condition|)
 block|{
-name|g_object_unref
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
 return|return
-name|g_strdup
-argument_list|(
-name|filename
-argument_list|)
+name|file
 return|;
 block|}
 elseif|else
@@ -478,11 +457,6 @@ return|return
 name|NULL
 return|;
 block|}
-name|g_object_unref
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -528,15 +502,11 @@ name|filename
 argument_list|)
 expr_stmt|;
 block|}
-name|uri
+name|file
 operator|=
-name|g_filename_to_uri
+name|g_file_new_for_path
 argument_list|(
 name|absolute
-argument_list|,
-name|NULL
-argument_list|,
-name|error
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -545,7 +515,7 @@ name|absolute
 argument_list|)
 expr_stmt|;
 return|return
-name|uri
+name|file
 return|;
 block|}
 end_function

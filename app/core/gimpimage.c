@@ -360,7 +360,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2996650103
+DECL|enum|__anon275b41120103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -457,7 +457,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2996650203
+DECL|enum|__anon275b41120203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7787,34 +7787,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_image_take_uri (GimpImage * image,gchar * uri)
-name|gimp_image_take_uri
-parameter_list|(
-name|GimpImage
-modifier|*
-name|image
-parameter_list|,
-name|gchar
-modifier|*
-name|uri
-parameter_list|)
-block|{
-name|gimp_object_take_name
-argument_list|(
-name|GIMP_OBJECT
-argument_list|(
-name|image
-argument_list|)
-argument_list|,
-name|uri
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
 begin_comment
 comment|/**  * gimp_image_get_untitled_file:  *  * Returns: A #GFile saying "Untitled" for newly created images.  **/
 end_comment
@@ -7986,6 +7958,12 @@ modifier|*
 name|filename
 parameter_list|)
 block|{
+name|GFile
+modifier|*
+name|file
+init|=
+name|NULL
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -8003,12 +7981,9 @@ argument_list|(
 name|filename
 argument_list|)
 condition|)
-block|{
-name|gimp_image_take_uri
-argument_list|(
-name|image
-argument_list|,
-name|file_utils_filename_to_uri
+name|file
+operator|=
+name|file_utils_filename_to_file
 argument_list|(
 name|image
 operator|->
@@ -8018,19 +7993,23 @@ name|filename
 argument_list|,
 name|NULL
 argument_list|)
-argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
 name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
-name|NULL
+name|file
 argument_list|)
 expr_stmt|;
-block|}
+if|if
+condition|(
+name|file
+condition|)
+name|g_object_unref
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

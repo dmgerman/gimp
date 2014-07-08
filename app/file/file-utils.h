@@ -17,9 +17,9 @@ name|__FILE_UTILS_H__
 end_define
 
 begin_function_decl
-name|gchar
+name|GFile
 modifier|*
-name|file_utils_filename_to_uri
+name|file_utils_filename_to_file
 parameter_list|(
 name|Gimp
 modifier|*
