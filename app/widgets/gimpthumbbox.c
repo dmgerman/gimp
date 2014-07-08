@@ -2072,6 +2072,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|file
+operator|==
+name|NULL
+operator|||
 name|G_IS_FILE
 argument_list|(
 name|file
