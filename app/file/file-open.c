@@ -458,8 +458,14 @@ condition|)
 return|return
 name|NULL
 return|;
+comment|/* FIXME enable these tests for remote files again, needs testing */
 if|if
 condition|(
+name|g_file_is_native
+argument_list|(
+name|file
+argument_list|)
+operator|&&
 name|g_file_query_exists
 argument_list|(
 name|file
@@ -550,6 +556,9 @@ literal|"Premission denied"
 argument_list|)
 argument_list|)
 expr_stmt|;
+return|return
+name|NULL
+return|;
 block|}
 block|}
 if|if

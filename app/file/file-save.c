@@ -295,8 +295,14 @@ condition|)
 return|return
 name|GIMP_PDB_EXECUTION_ERROR
 return|;
+comment|/* FIXME enable these tests for remote files again, needs testing */
 if|if
 condition|(
+name|g_file_is_native
+argument_list|(
+name|file
+argument_list|)
+operator|&&
 name|g_file_query_exists
 argument_list|(
 name|file
