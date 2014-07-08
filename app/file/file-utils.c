@@ -94,6 +94,7 @@ file|"gimp-intl.h"
 end_include
 
 begin_function
+specifier|static
 name|gboolean
 DECL|function|file_utils_filename_is_uri (const gchar * filename,GError ** error)
 name|file_utils_filename_is_uri
