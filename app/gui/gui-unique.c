@@ -86,6 +86,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file/file-open.h"
 end_include
 
@@ -368,7 +374,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297c22860108
+DECL|struct|__anon2b0262020108
 block|{
 DECL|member|file
 name|GFile
@@ -610,7 +616,7 @@ name|data
 decl_stmt|;
 name|file
 operator|=
-name|g_file_new_for_path
+name|g_file_new_for_uri
 argument_list|(
 name|copydata
 operator|->
@@ -654,7 +660,10 @@ argument_list|)
 expr_stmt|;
 name|g_object_watch_closure
 argument_list|(
+name|G_OBJECT
+argument_list|(
 name|unique_gimp
+argument_list|)
 argument_list|,
 name|closure
 argument_list|)
