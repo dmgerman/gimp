@@ -72,15 +72,13 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|const
 name|gchar
 modifier|*
-name|file_utils_uri_get_ext
+name|file_utils_file_get_ext
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|)
 function_decl|;
 end_function_decl
