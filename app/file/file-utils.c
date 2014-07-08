@@ -316,10 +316,6 @@ name|gchar
 modifier|*
 name|absolute
 decl_stmt|;
-name|gchar
-modifier|*
-name|uri
-decl_stmt|;
 name|GError
 modifier|*
 name|temp_error
@@ -457,6 +453,11 @@ return|return
 name|NULL
 return|;
 block|}
+name|g_object_unref
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
