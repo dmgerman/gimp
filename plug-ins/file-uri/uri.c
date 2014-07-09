@@ -470,6 +470,11 @@ name|uri_backend_get_load_protocols
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|gimp_register_file_handler_uri
+argument_list|(
+name|LOAD_PROC
+argument_list|)
+expr_stmt|;
 block|}
 if|if
 condition|(
@@ -535,6 +540,11 @@ literal|""
 argument_list|,
 name|uri_backend_get_save_protocols
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_uri
+argument_list|(
+name|SAVE_PROC
 argument_list|)
 expr_stmt|;
 block|}
