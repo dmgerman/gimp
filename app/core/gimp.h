@@ -115,7 +115,7 @@ modifier|*
 name|session_name
 decl_stmt|;
 DECL|member|default_folder
-name|gchar
+name|GFile
 modifier|*
 name|default_folder
 decl_stmt|;
@@ -472,8 +472,7 @@ name|gchar
 modifier|*
 name|session_name
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|default_folder
 parameter_list|,

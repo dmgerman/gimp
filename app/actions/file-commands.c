@@ -1960,7 +1960,7 @@ name|gimp
 operator|->
 name|default_folder
 condition|)
-name|gtk_file_chooser_set_current_folder_uri
+name|gtk_file_chooser_set_current_folder_file
 argument_list|(
 name|GTK_FILE_CHOOSER
 argument_list|(
@@ -1970,6 +1970,8 @@ argument_list|,
 name|gimp
 operator|->
 name|default_folder
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_file_dialog_set_open_image

@@ -333,7 +333,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288be40f0103
+DECL|enum|__anon292463190103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -1846,7 +1846,7 @@ operator|->
 name|default_folder
 condition|)
 block|{
-name|g_free
+name|g_object_unref
 argument_list|(
 name|gimp
 operator|->
@@ -3125,7 +3125,7 @@ end_function
 begin_function
 name|Gimp
 modifier|*
-DECL|function|gimp_new (const gchar * name,const gchar * session_name,const gchar * default_folder,gboolean be_verbose,gboolean no_data,gboolean no_fonts,gboolean no_interface,gboolean use_shm,gboolean use_cpu_accel,gboolean console_messages,GimpStackTraceMode stack_trace_mode,GimpPDBCompatMode pdb_compat_mode)
+DECL|function|gimp_new (const gchar * name,const gchar * session_name,GFile * default_folder,gboolean be_verbose,gboolean no_data,gboolean no_fonts,gboolean no_interface,gboolean use_shm,gboolean use_cpu_accel,gboolean console_messages,GimpStackTraceMode stack_trace_mode,GimpPDBCompatMode pdb_compat_mode)
 name|gimp_new
 parameter_list|(
 specifier|const
@@ -3138,8 +3138,7 @@ name|gchar
 modifier|*
 name|session_name
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|default_folder
 parameter_list|,
@@ -3197,22 +3196,26 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|default_folder
+condition|)
 name|gimp
 operator|->
-name|session_name
+name|default_folder
 operator|=
-name|g_strdup
+name|g_object_ref
 argument_list|(
-name|session_name
+name|default_folder
 argument_list|)
 expr_stmt|;
 name|gimp
 operator|->
-name|default_folder
+name|session_name
 operator|=
 name|g_strdup
 argument_list|(
-name|default_folder
+name|session_name
 argument_list|)
 expr_stmt|;
 name|gimp
