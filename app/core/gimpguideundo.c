@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c695f8b0103
+DECL|enum|__anon2b67a0900103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -541,8 +541,7 @@ if|if
 condition|(
 name|position
 operator|==
-operator|-
-literal|1
+name|GIMP_GUIDE_POSITION_UNDEFINED
 condition|)
 block|{
 name|gimp_image_add_guide
@@ -568,8 +567,7 @@ name|guide_undo
 operator|->
 name|position
 operator|==
-operator|-
-literal|1
+name|GIMP_GUIDE_POSITION_UNDEFINED
 condition|)
 block|{
 name|gimp_image_remove_guide

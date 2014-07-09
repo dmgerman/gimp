@@ -466,8 +466,8 @@ decl_stmt|;
 name|gint
 name|position
 init|=
-operator|-
-literal|1
+name|G_MININT
+comment|/* GIMP_GUIDE_POSITION_UNDEFINED */
 decl_stmt|;
 name|return_vals
 operator|=

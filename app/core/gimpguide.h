@@ -23,6 +23,14 @@ file|"gimpobject.h"
 end_include
 
 begin_define
+DECL|macro|GIMP_GUIDE_POSITION_UNDEFINED
+define|#
+directive|define
+name|GIMP_GUIDE_POSITION_UNDEFINED
+value|G_MININT
+end_define
+
+begin_define
 DECL|macro|GIMP_TYPE_GUIDE
 define|#
 directive|define
@@ -86,6 +94,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_GUIDE, GimpGuideClass))
 end_define
 
 begin_typedef
+DECL|typedef|GimpGuidePrivate
+typedef|typedef
+name|struct
+name|_GimpGuidePrivate
+name|GimpGuidePrivate
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpGuideClass
 typedef|typedef
 name|struct
@@ -103,17 +120,10 @@ DECL|member|parent_instance
 name|GObject
 name|parent_instance
 decl_stmt|;
-DECL|member|guide_ID
-name|guint32
-name|guide_ID
-decl_stmt|;
-DECL|member|orientation
-name|GimpOrientationType
-name|orientation
-decl_stmt|;
-DECL|member|position
-name|gint
-name|position
+DECL|member|priv
+name|GimpGuidePrivate
+modifier|*
+name|priv
 decl_stmt|;
 block|}
 struct|;

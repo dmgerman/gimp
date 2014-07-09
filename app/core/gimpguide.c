@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd88a790103
+DECL|enum|__anon29517bff0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -60,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd88a790203
+DECL|enum|__anon29517bff0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -76,6 +76,27 @@ name|PROP_POSITION
 block|}
 enum|;
 end_enum
+
+begin_struct
+DECL|struct|_GimpGuidePrivate
+struct|struct
+name|_GimpGuidePrivate
+block|{
+DECL|member|guide_ID
+name|guint32
+name|guide_ID
+decl_stmt|;
+DECL|member|orientation
+name|GimpOrientationType
+name|orientation
+decl_stmt|;
+DECL|member|position
+name|gint
+name|position
+decl_stmt|;
+block|}
+struct|;
+end_struct
 
 begin_function_decl
 specifier|static
@@ -274,15 +295,23 @@ literal|"position"
 argument_list|,
 name|NULL
 argument_list|,
-operator|-
-literal|1
+name|GIMP_GUIDE_POSITION_UNDEFINED
 argument_list|,
 name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
-operator|-
-literal|1
+name|GIMP_GUIDE_POSITION_UNDEFINED
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|g_type_class_add_private
+argument_list|(
+name|klass
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|GimpGuidePrivate
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -298,7 +327,21 @@ name|GimpGuide
 modifier|*
 name|guide
 parameter_list|)
-block|{ }
+block|{
+name|guide
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|guide
+argument_list|,
+name|GIMP_TYPE_GUIDE
+argument_list|,
+name|GimpGuidePrivate
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_function
@@ -346,6 +389,8 @@ name|value
 argument_list|,
 name|guide
 operator|->
+name|priv
+operator|->
 name|guide_ID
 argument_list|)
 expr_stmt|;
@@ -359,6 +404,8 @@ name|value
 argument_list|,
 name|guide
 operator|->
+name|priv
+operator|->
 name|orientation
 argument_list|)
 expr_stmt|;
@@ -371,6 +418,8 @@ argument_list|(
 name|value
 argument_list|,
 name|guide
+operator|->
+name|priv
 operator|->
 name|position
 argument_list|)
@@ -433,6 +482,8 @@ name|PROP_ID
 case|:
 name|guide
 operator|->
+name|priv
+operator|->
 name|guide_ID
 operator|=
 name|g_value_get_uint
@@ -446,6 +497,8 @@ name|PROP_ORIENTATION
 case|:
 name|guide
 operator|->
+name|priv
+operator|->
 name|orientation
 operator|=
 name|g_value_get_enum
@@ -458,6 +511,8 @@ case|case
 name|PROP_POSITION
 case|:
 name|guide
+operator|->
+name|priv
 operator|->
 name|position
 operator|=
@@ -537,6 +592,8 @@ expr_stmt|;
 return|return
 name|guide
 operator|->
+name|priv
+operator|->
 name|guide_ID
 return|;
 block|}
@@ -565,6 +622,8 @@ expr_stmt|;
 return|return
 name|guide
 operator|->
+name|priv
+operator|->
 name|orientation
 return|;
 block|}
@@ -592,6 +651,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 name|guide
+operator|->
+name|priv
 operator|->
 name|orientation
 operator|=
@@ -627,12 +688,13 @@ argument_list|(
 name|guide
 argument_list|)
 argument_list|,
-operator|-
-literal|1
+name|GIMP_GUIDE_POSITION_UNDEFINED
 argument_list|)
 expr_stmt|;
 return|return
 name|guide
+operator|->
+name|priv
 operator|->
 name|position
 return|;
@@ -661,6 +723,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 name|guide
+operator|->
+name|priv
 operator|->
 name|position
 operator|=

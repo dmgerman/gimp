@@ -196,14 +196,6 @@ file|"gimp-intl.h"
 end_include
 
 begin_define
-DECL|macro|GUIDE_POSITION_INVALID
-define|#
-directive|define
-name|GUIDE_POSITION_INVALID
-value|G_MININT
-end_define
-
-begin_define
 DECL|macro|SWAP_ORIENT (orient)
 define|#
 directive|define
@@ -658,7 +650,7 @@ name|move_tool
 operator|->
 name|guide_position
 operator|=
-name|GUIDE_POSITION_INVALID
+name|GIMP_GUIDE_POSITION_UNDEFINED
 expr_stmt|;
 name|move_tool
 operator|->
@@ -1659,7 +1651,7 @@ name|move
 operator|->
 name|guide_position
 operator|=
-name|GUIDE_POSITION_INVALID
+name|GIMP_GUIDE_POSITION_UNDEFINED
 expr_stmt|;
 name|move
 operator|->
@@ -1690,7 +1682,7 @@ name|move
 operator|->
 name|guide_position
 operator|==
-name|GUIDE_POSITION_INVALID
+name|GIMP_GUIDE_POSITION_UNDEFINED
 operator|||
 name|move
 operator|->
@@ -1718,7 +1710,7 @@ name|move
 operator|->
 name|guide_position
 operator|==
-name|GUIDE_POSITION_INVALID
+name|GIMP_GUIDE_POSITION_UNDEFINED
 operator|||
 name|move
 operator|->
@@ -1870,7 +1862,7 @@ name|move
 operator|->
 name|guide_position
 operator|=
-name|GUIDE_POSITION_INVALID
+name|GIMP_GUIDE_POSITION_UNDEFINED
 expr_stmt|;
 name|move
 operator|->
@@ -2126,7 +2118,7 @@ name|move
 operator|->
 name|guide_position
 operator|=
-name|GUIDE_POSITION_INVALID
+name|GIMP_GUIDE_POSITION_UNDEFINED
 expr_stmt|;
 name|delete_guide
 operator|=
@@ -3268,7 +3260,7 @@ name|move
 operator|->
 name|guide_position
 operator|!=
-name|GUIDE_POSITION_INVALID
+name|GIMP_GUIDE_POSITION_UNDEFINED
 condition|)
 block|{
 name|gimp_draw_tool_add_guide
@@ -3471,7 +3463,7 @@ name|move
 operator|->
 name|guide_position
 operator|=
-name|GUIDE_POSITION_INVALID
+name|GIMP_GUIDE_POSITION_UNDEFINED
 expr_stmt|;
 name|move
 operator|->
