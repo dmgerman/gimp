@@ -256,6 +256,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-log.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -980,6 +986,25 @@ name|p
 expr_stmt|;
 block|}
 block|}
+name|GIMP_LOG
+argument_list|(
+name|XCF
+argument_list|,
+literal|"version=%d, width=%d, height=%d, image_type=%d, precision=%d"
+argument_list|,
+name|info
+operator|->
+name|file_version
+argument_list|,
+name|width
+argument_list|,
+name|height
+argument_list|,
+name|image_type
+argument_list|,
+name|precision
+argument_list|)
+expr_stmt|;
 name|image
 operator|=
 name|gimp_create_image
@@ -1021,6 +1046,13 @@ condition|)
 goto|goto
 name|hard_error
 goto|;
+name|GIMP_LOG
+argument_list|(
+name|XCF
+argument_list|,
+literal|"image props loaded"
+argument_list|)
+expr_stmt|;
 comment|/* check for a GimpGrid parasite */
 name|parasite
 operator|=
@@ -2514,6 +2546,15 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|XCF
+argument_list|,
+literal|"prop colormap n_colors=%d"
+argument_list|,
+name|n_colors
+argument_list|)
+expr_stmt|;
 block|}
 break|break;
 case|case
@@ -2602,6 +2643,15 @@ operator|->
 name|compression
 operator|=
 name|compression
+expr_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|XCF
+argument_list|,
+literal|"prop compression=%d"
+argument_list|,
+name|compression
+argument_list|)
 expr_stmt|;
 block|}
 break|break;
@@ -2701,6 +2751,17 @@ operator|<
 literal|0
 condition|)
 continue|continue;
+name|GIMP_LOG
+argument_list|(
+name|XCF
+argument_list|,
+literal|"prop guide orientation=%d position=%d"
+argument_list|,
+name|orientation
+argument_list|,
+name|position
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|orientation
@@ -2846,6 +2907,17 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|XCF
+argument_list|,
+literal|"prop sample point x=%d y=%d"
+argument_list|,
+name|x
+argument_list|,
+name|y
+argument_list|)
+expr_stmt|;
 name|gimp_image_add_sample_point_at_pos
 argument_list|(
 name|image
@@ -2899,6 +2971,17 @@ operator|&
 name|yres
 argument_list|,
 literal|1
+argument_list|)
+expr_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|XCF
+argument_list|,
+literal|"prop resolution x=%f y=%f"
+argument_list|,
+name|xres
+argument_list|,
+name|yres
 argument_list|)
 expr_stmt|;
 if|if
@@ -2996,6 +3079,17 @@ operator|->
 name|tattoo_state
 argument_list|,
 literal|1
+argument_list|)
+expr_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|XCF
+argument_list|,
+literal|"prop tattoo state=%d"
+argument_list|,
+name|info
+operator|->
+name|tattoo_state
 argument_list|)
 expr_stmt|;
 block|}
@@ -3155,6 +3249,15 @@ operator|&
 name|unit
 argument_list|,
 literal|1
+argument_list|)
+expr_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|XCF
+argument_list|,
+literal|"prop unit=%d"
+argument_list|,
+name|unit
 argument_list|)
 expr_stmt|;
 if|if
@@ -5509,6 +5612,21 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|XCF
+argument_list|,
+literal|"width=%d, height=%d, type=%d, name='%s'"
+argument_list|,
+name|width
+argument_list|,
+name|height
+argument_list|,
+name|type
+argument_list|,
+name|name
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|type
@@ -5688,6 +5806,13 @@ condition|)
 goto|goto
 name|error
 goto|;
+name|GIMP_LOG
+argument_list|(
+name|XCF
+argument_list|,
+literal|"layer props loaded"
+argument_list|)
+expr_stmt|;
 name|xcf_progress_update
 argument_list|(
 name|info
@@ -5815,6 +5940,13 @@ condition|)
 goto|goto
 name|error
 goto|;
+name|GIMP_LOG
+argument_list|(
+name|XCF
+argument_list|,
+literal|"loading buffer"
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -5834,6 +5966,13 @@ condition|)
 goto|goto
 name|error
 goto|;
+name|GIMP_LOG
+argument_list|(
+name|XCF
+argument_list|,
+literal|"buffer loaded"
+argument_list|)
+expr_stmt|;
 name|xcf_progress_update
 argument_list|(
 name|info
@@ -7034,6 +7173,19 @@ operator|&
 name|rect
 argument_list|)
 expr_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|XCF
+argument_list|,
+literal|"loading tile %d/%d"
+argument_list|,
+name|i
+operator|+
+literal|1
+argument_list|,
+name|ntiles
+argument_list|)
+expr_stmt|;
 comment|/* read in the tile */
 switch|switch
 condition|(
@@ -7126,6 +7278,19 @@ condition|)
 return|return
 name|FALSE
 return|;
+name|GIMP_LOG
+argument_list|(
+name|XCF
+argument_list|,
+literal|"loaded tile %d/%d"
+argument_list|,
+name|i
+operator|+
+literal|1
+argument_list|,
+name|ntiles
+argument_list|)
+expr_stmt|;
 comment|/* restore the saved position so we'll be ready to        *  read the next offset.        */
 if|if
 condition|(

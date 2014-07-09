@@ -155,6 +155,12 @@ literal|"projection"
 block|,
 name|GIMP_LOG_PROJECTION
 block|}
+block|,
+block|{
+literal|"xcf"
+block|,
+name|GIMP_LOG_XCF
+block|}
 block|}
 decl_stmt|;
 end_decl_stmt
