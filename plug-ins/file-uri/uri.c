@@ -366,6 +366,14 @@ name|NULL
 decl_stmt|;
 if|if
 condition|(
+name|g_getenv
+argument_list|(
+literal|"GIMP_HANDLE_REMOTE_FILES"
+argument_list|)
+condition|)
+return|return;
+if|if
+condition|(
 operator|!
 name|uri_backend_init
 argument_list|(
