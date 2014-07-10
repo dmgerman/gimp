@@ -100,10 +100,9 @@ name|GFile
 modifier|*
 name|file
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|tmpname
+name|local_file
 parameter_list|,
 name|GimpRunMode
 name|run_mode
@@ -124,10 +123,9 @@ name|GFile
 modifier|*
 name|file
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|tmpname
+name|local_file
 parameter_list|,
 name|GimpRunMode
 name|run_mode
@@ -141,7 +139,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gchar
+name|GFile
 modifier|*
 name|uri_backend_map_image
 parameter_list|(

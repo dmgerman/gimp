@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3db4b80103
+DECL|enum|__anon2c949f690103
 block|{
 DECL|enumerator|DOWNLOAD
 name|DOWNLOAD
@@ -75,7 +75,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|copy_uri
+name|copy_file
 parameter_list|(
 name|GFile
 modifier|*
@@ -266,17 +266,16 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|uri_backend_load_image (GFile * file,const gchar * tmpname,GimpRunMode run_mode,GError ** error)
+DECL|function|uri_backend_load_image (GFile * file,GFile * local_file,GimpRunMode run_mode,GError ** error)
 name|uri_backend_load_image
 parameter_list|(
 name|GFile
 modifier|*
 name|file
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|tmpname
+name|local_file
 parameter_list|,
 name|GimpRunMode
 name|run_mode
@@ -287,27 +286,12 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GFile
-modifier|*
-name|dest_file
-decl_stmt|;
-name|gboolean
-name|success
-decl_stmt|;
-name|dest_file
-operator|=
-name|g_file_new_for_path
-argument_list|(
-name|tmpname
-argument_list|)
-expr_stmt|;
-name|success
-operator|=
-name|copy_uri
+return|return
+name|copy_file
 argument_list|(
 name|file
 argument_list|,
-name|dest_file
+name|local_file
 argument_list|,
 name|DOWNLOAD
 argument_list|,
@@ -315,31 +299,22 @@ name|run_mode
 argument_list|,
 name|error
 argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|dest_file
-argument_list|)
-expr_stmt|;
-return|return
-name|success
 return|;
 block|}
 end_function
 
 begin_function
 name|gboolean
-DECL|function|uri_backend_save_image (GFile * file,const gchar * tmpname,GimpRunMode run_mode,GError ** error)
+DECL|function|uri_backend_save_image (GFile * file,GFile * local_file,GimpRunMode run_mode,GError ** error)
 name|uri_backend_save_image
 parameter_list|(
 name|GFile
 modifier|*
 name|file
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|tmpname
+name|local_file
 parameter_list|,
 name|GimpRunMode
 name|run_mode
@@ -350,25 +325,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GFile
-modifier|*
-name|src_file
-decl_stmt|;
-name|gboolean
-name|success
-decl_stmt|;
-name|src_file
-operator|=
-name|g_file_new_for_path
+return|return
+name|copy_file
 argument_list|(
-name|tmpname
-argument_list|)
-expr_stmt|;
-name|success
-operator|=
-name|copy_uri
-argument_list|(
-name|src_file
+name|local_file
 argument_list|,
 name|file
 argument_list|,
@@ -378,20 +338,12 @@ name|run_mode
 argument_list|,
 name|error
 argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|src_file
-argument_list|)
-expr_stmt|;
-return|return
-name|success
 return|;
 block|}
 end_function
 
 begin_function
-name|gchar
+name|GFile
 modifier|*
 DECL|function|uri_backend_map_image (GFile * file,GimpRunMode run_mode)
 name|uri_backend_map_image
@@ -404,12 +356,6 @@ name|GimpRunMode
 name|run_mode
 parameter_list|)
 block|{
-name|gchar
-modifier|*
-name|path
-init|=
-name|NULL
-decl_stmt|;
 name|gboolean
 name|success
 init|=
@@ -468,16 +414,20 @@ block|}
 if|if
 condition|(
 name|success
-condition|)
-name|path
-operator|=
-name|g_file_get_path
+operator|&&
+name|g_file_is_native
 argument_list|(
 name|file
 argument_list|)
-expr_stmt|;
+condition|)
 return|return
-name|path
+name|g_object_ref
+argument_list|(
+name|file
+argument_list|)
+return|;
+return|return
+name|NULL
 return|;
 block|}
 end_function
@@ -587,7 +537,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3db4b80208
+DECL|struct|__anon2c949f690208
 block|{
 DECL|member|mode
 name|Mode
@@ -948,8 +898,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|copy_uri (GFile * src_file,GFile * dest_file,Mode mode,GimpRunMode run_mode,GError ** error)
-name|copy_uri
+DECL|function|copy_file (GFile * src_file,GFile * dest_file,Mode mode,GimpRunMode run_mode,GError ** error)
+name|copy_file
 parameter_list|(
 name|GFile
 modifier|*
