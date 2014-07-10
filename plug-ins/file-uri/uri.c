@@ -155,10 +155,9 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|,
 name|GimpRunMode
 name|run_mode
@@ -176,10 +175,9 @@ specifier|static
 name|GimpPDBStatusType
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|,
 name|gint32
 name|image_ID
@@ -204,10 +202,9 @@ name|gchar
 modifier|*
 name|get_temp_name
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|,
 name|gboolean
 modifier|*
@@ -723,6 +720,8 @@ name|image_ID
 operator|=
 name|load_image
 argument_list|(
+name|g_file_new_for_uri
+argument_list|(
 name|param
 index|[
 literal|2
@@ -731,6 +730,7 @@ operator|.
 name|data
 operator|.
 name|d_string
+argument_list|)
 argument_list|,
 name|run_mode
 argument_list|,
@@ -796,6 +796,8 @@ name|status
 operator|=
 name|save_image
 argument_list|(
+name|g_file_new_for_uri
+argument_list|(
 name|param
 index|[
 literal|3
@@ -804,6 +806,7 @@ operator|.
 name|data
 operator|.
 name|d_string
+argument_list|)
 argument_list|,
 name|param
 index|[
@@ -894,13 +897,12 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (const gchar * uri,GimpRunMode run_mode,GError ** error)
+DECL|function|load_image (GFile * file,GimpRunMode run_mode,GError ** error)
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|,
 name|GimpRunMode
 name|run_mode
@@ -935,7 +937,7 @@ name|tmpname
 operator|=
 name|uri_backend_map_image
 argument_list|(
-name|uri
+name|file
 argument_list|,
 name|run_mode
 argument_list|)
@@ -956,7 +958,7 @@ name|tmpname
 operator|=
 name|get_temp_name
 argument_list|(
-name|uri
+name|file
 argument_list|,
 operator|&
 name|name_image
@@ -967,7 +969,7 @@ condition|(
 operator|!
 name|uri_backend_load_image
 argument_list|(
-name|uri
+name|file
 argument_list|,
 name|tmpname
 argument_list|,
@@ -1010,7 +1012,10 @@ name|gimp_image_set_filename
 argument_list|(
 name|image_ID
 argument_list|,
-name|uri
+name|g_file_get_uri
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -1063,13 +1068,12 @@ end_function
 begin_function
 specifier|static
 name|GimpPDBStatusType
-DECL|function|save_image (const gchar * uri,gint32 image_ID,gint32 drawable_ID,gint32 run_mode,GError ** error)
+DECL|function|save_image (GFile * file,gint32 image_ID,gint32 drawable_ID,gint32 run_mode,GError ** error)
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|,
 name|gint32
 name|image_ID
@@ -1104,7 +1108,7 @@ name|tmpname
 operator|=
 name|uri_backend_map_image
 argument_list|(
-name|uri
+name|file
 argument_list|,
 name|run_mode
 argument_list|)
@@ -1122,7 +1126,7 @@ name|tmpname
 operator|=
 name|get_temp_name
 argument_list|(
-name|uri
+name|file
 argument_list|,
 name|NULL
 argument_list|)
@@ -1166,7 +1170,7 @@ if|if
 condition|(
 name|uri_backend_save_image
 argument_list|(
-name|uri
+name|file
 argument_list|,
 name|tmpname
 argument_list|,
@@ -1247,13 +1251,12 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|get_temp_name (const gchar * uri,gboolean * name_image)
+DECL|function|get_temp_name (GFile * file,gboolean * name_image)
 name|get_temp_name
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|,
 name|gboolean
 modifier|*
@@ -1283,7 +1286,10 @@ name|basename
 operator|=
 name|g_path_get_basename
 argument_list|(
-name|uri
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
