@@ -886,9 +886,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gchar
+name|GFile
 modifier|*
-name|gimp_get_temp_filename
+name|gimp_get_temp_file
 parameter_list|(
 name|Gimp
 modifier|*

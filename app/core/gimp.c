@@ -333,7 +333,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292463190103
+DECL|enum|__anon2aefda890103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -5338,10 +5338,10 @@ block|}
 end_function
 
 begin_function
-name|gchar
+name|GFile
 modifier|*
-DECL|function|gimp_get_temp_filename (Gimp * gimp,const gchar * extension)
-name|gimp_get_temp_filename
+DECL|function|gimp_get_temp_file (Gimp * gimp,const gchar * extension)
+name|gimp_get_temp_file
 parameter_list|(
 name|Gimp
 modifier|*
@@ -5374,6 +5374,10 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|path
+decl_stmt|;
+name|GFile
+modifier|*
+name|file
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -5466,8 +5470,20 @@ argument_list|(
 name|basename
 argument_list|)
 expr_stmt|;
-return|return
+name|file
+operator|=
+name|g_file_new_for_path
+argument_list|(
 name|filename
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+return|return
+name|file
 return|;
 block|}
 end_function
