@@ -66,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297c36d30103
+DECL|enum|__anon29a3bbc10103
 block|{
 DECL|enumerator|DOWNLOAD
 name|DOWNLOAD
@@ -82,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297c36d30208
+DECL|struct|__anon29a3bbc10208
 block|{
 DECL|member|mode
 name|RemoteCopyMode
@@ -1102,6 +1102,16 @@ condition|(
 name|progress
 condition|)
 block|{
+name|g_signal_handlers_disconnect_by_func
+argument_list|(
+name|progress
+argument_list|,
+name|file_remote_copy_file_cancel
+argument_list|,
+operator|&
+name|remote_progress
+argument_list|)
+expr_stmt|;
 name|gimp_progress_end
 argument_list|(
 name|progress
