@@ -186,6 +186,8 @@ name|return_vals
 decl_stmt|;
 name|GimpPDBStatusType
 name|status
+init|=
+name|GIMP_PDB_EXECUTION_ERROR
 decl_stmt|;
 name|GFile
 modifier|*
@@ -297,6 +299,12 @@ argument_list|,
 name|GIMP_PDB_CALLING_ERROR
 argument_list|)
 expr_stmt|;
+comment|/* ref the image, so it can't get deleted during save */
+name|g_object_ref
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 name|drawable
 operator|=
 name|gimp_image_get_active_drawable
@@ -309,9 +317,9 @@ condition|(
 operator|!
 name|drawable
 condition|)
-return|return
-name|GIMP_PDB_EXECUTION_ERROR
-return|;
+goto|goto
+name|out
+goto|;
 comment|/* FIXME enable these tests for remote files again, needs testing */
 if|if
 condition|(
@@ -354,15 +362,9 @@ condition|(
 operator|!
 name|info
 condition|)
-block|{
-name|status
-operator|=
-name|GIMP_PDB_EXECUTION_ERROR
-expr_stmt|;
 goto|goto
 name|out
 goto|;
-block|}
 if|if
 condition|(
 name|g_file_info_get_file_type
@@ -386,10 +388,6 @@ argument_list|(
 literal|"Not a regular file"
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|status
-operator|=
-name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 goto|goto
 name|out
@@ -419,10 +417,6 @@ argument_list|(
 literal|"Premission denied"
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|status
-operator|=
-name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 goto|goto
 name|out
@@ -530,12 +524,6 @@ operator|=
 name|g_file_get_uri
 argument_list|(
 name|file
-argument_list|)
-expr_stmt|;
-comment|/* ref the image, so it can't get deleted during save */
-name|g_object_ref
-argument_list|(
-name|image
 argument_list|)
 expr_stmt|;
 name|image_ID
@@ -657,6 +645,10 @@ name|my_error
 argument_list|)
 condition|)
 block|{
+name|status
+operator|=
+name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
 if|if
 condition|(
 name|my_error
@@ -914,13 +906,13 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+name|out
+label|:
 name|g_object_unref
 argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|out
-label|:
 name|g_free
 argument_list|(
 name|path
