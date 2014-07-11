@@ -1399,7 +1399,6 @@ name|automatic_help_id
 operator|=
 name|GIMP_HELP_FILE_OPEN_BY_EXTENSION
 expr_stmt|;
-comment|/* FIXME */
 name|local_only
 operator|=
 operator|(
@@ -1413,6 +1412,12 @@ literal|"file-uri-load"
 argument_list|)
 operator|==
 name|NULL
+operator|&&
+operator|!
+name|g_getenv
+argument_list|(
+literal|"GIMP_HANDLE_REMOTE_FILES"
+argument_list|)
 operator|)
 expr_stmt|;
 break|break;
@@ -1477,7 +1482,6 @@ name|automatic_help_id
 operator|=
 name|GIMP_HELP_FILE_SAVE_BY_EXTENSION
 expr_stmt|;
-comment|/* FIXME */
 name|local_only
 operator|=
 operator|(
@@ -1491,6 +1495,12 @@ literal|"file-uri-save"
 argument_list|)
 operator|==
 name|NULL
+operator|&&
+operator|!
+name|g_getenv
+argument_list|(
+literal|"GIMP_HANDLE_REMOTE_FILES"
+argument_list|)
 operator|)
 expr_stmt|;
 break|break;
