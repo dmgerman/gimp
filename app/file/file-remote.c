@@ -66,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a3bbc10103
+DECL|enum|__anon2a3ba9360103
 block|{
 DECL|enumerator|DOWNLOAD
 name|DOWNLOAD
@@ -82,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a3bbc10208
+DECL|struct|__anon2a3ba9360208
 block|{
 DECL|member|mode
 name|RemoteCopyMode
@@ -1005,6 +1005,8 @@ operator|!
 name|gimp
 operator|->
 name|no_interface
+operator|&&
+name|my_error
 operator|&&
 name|my_error
 operator|->
