@@ -35,7 +35,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a16e8bc0103
+DECL|enum|__anon2c050cf00103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -210,7 +210,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a16e8bc0203
+DECL|enum|__anon2c050cf00203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -242,7 +242,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a16e8bc0303
+DECL|enum|__anon2c050cf00303
 block|{
 DECL|enumerator|XCF_ORIENTATION_HORIZONTAL
 name|XCF_ORIENTATION_HORIZONTAL
@@ -262,7 +262,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a16e8bc0403
+DECL|enum|__anon2c050cf00403
 block|{
 DECL|enumerator|XCF_STROKETYPE_STROKE
 name|XCF_STROKETYPE_STROKE
@@ -282,7 +282,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a16e8bc0503
+DECL|enum|__anon2c050cf00503
 block|{
 DECL|enumerator|XCF_GROUP_ITEM_EXPANDED
 name|XCF_GROUP_ITEM_EXPANDED
@@ -370,15 +370,6 @@ decl_stmt|;
 DECL|member|floating_sel_offset
 name|guint
 name|floating_sel_offset
-decl_stmt|;
-DECL|member|swap_num
-name|gint
-name|swap_num
-decl_stmt|;
-DECL|member|ref_count
-name|gint
-modifier|*
-name|ref_count
 decl_stmt|;
 DECL|member|compression
 name|XcfCompressionType
