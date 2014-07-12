@@ -36,19 +36,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libmypaint/mypaint-brush.h"
+file|<mypaint-brush.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libmypaint/mypaint-tiled-surface.h"
+file|<mypaint-tiled-surface.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libmypaint/gegl/mypaint-gegl-surface.h"
+file|<mypaint-gegl-surface.h>
 end_include
 
 begin_include
