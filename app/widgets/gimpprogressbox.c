@@ -97,13 +97,13 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+name|gboolean
+name|cancellable
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
 name|message
-parameter_list|,
-name|gboolean
-name|cancelable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -491,20 +491,20 @@ begin_function
 specifier|static
 name|GimpProgress
 modifier|*
-DECL|function|gimp_progress_box_progress_start (GimpProgress * progress,const gchar * message,gboolean cancelable)
+DECL|function|gimp_progress_box_progress_start (GimpProgress * progress,gboolean cancellable,const gchar * message)
 name|gimp_progress_box_progress_start
 parameter_list|(
 name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+name|gboolean
+name|cancellable
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
 name|message
-parameter_list|,
-name|gboolean
-name|cancelable
 parameter_list|)
 block|{
 name|GimpProgressBox
@@ -572,9 +572,9 @@ name|TRUE
 expr_stmt|;
 name|box
 operator|->
-name|cancelable
+name|cancellable
 operator|=
-name|cancelable
+name|cancellable
 expr_stmt|;
 name|box
 operator|->
@@ -679,7 +679,7 @@ name|FALSE
 expr_stmt|;
 name|box
 operator|->
-name|cancelable
+name|cancellable
 operator|=
 name|FALSE
 expr_stmt|;

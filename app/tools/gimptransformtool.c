@@ -5486,11 +5486,13 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
+name|FALSE
+argument_list|,
+literal|"%s"
+argument_list|,
 name|tr_tool
 operator|->
 name|progress_text
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if

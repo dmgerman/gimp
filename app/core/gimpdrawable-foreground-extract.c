@@ -191,12 +191,12 @@ name|gimp_progress_start
 argument_list|(
 name|progress
 argument_list|,
+name|FALSE
+argument_list|,
 name|_
 argument_list|(
 literal|"Computing alpha of unknown pixels"
 argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|drawable_buffer

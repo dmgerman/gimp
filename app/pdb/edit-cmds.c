@@ -3463,12 +3463,12 @@ name|gimp_progress_start
 argument_list|(
 name|progress
 argument_list|,
+name|FALSE
+argument_list|,
 name|_
 argument_list|(
 literal|"Blending"
 argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 switch|switch

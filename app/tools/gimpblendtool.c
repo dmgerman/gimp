@@ -1033,12 +1033,12 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
+name|FALSE
+argument_list|,
 name|_
 argument_list|(
 literal|"Blending"
 argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_item_get_offset

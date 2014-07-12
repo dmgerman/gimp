@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d0e1ac0103
+DECL|enum|__anon2a44843f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -210,13 +210,13 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+name|gboolean
+name|cancellable
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
 name|message
-parameter_list|,
-name|gboolean
-name|cancelable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1158,20 +1158,20 @@ begin_function
 specifier|static
 name|GimpProgress
 modifier|*
-DECL|function|gimp_pdb_progress_progress_start (GimpProgress * progress,const gchar * message,gboolean cancelable)
+DECL|function|gimp_pdb_progress_progress_start (GimpProgress * progress,gboolean cancellable,const gchar * message)
 name|gimp_pdb_progress_progress_start
 parameter_list|(
 name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+name|gboolean
+name|cancellable
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
 name|message
-parameter_list|,
-name|gboolean
-name|cancelable
 parameter_list|)
 block|{
 name|GimpPdbProgress

@@ -120,7 +120,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299df0270108
+DECL|struct|__anon27edcd730108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1169,12 +1169,12 @@ name|dialog
 operator|->
 name|progress
 argument_list|,
+name|FALSE
+argument_list|,
 name|_
 argument_list|(
 literal|"Converting to lower bit depth"
 argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_image_convert_precision

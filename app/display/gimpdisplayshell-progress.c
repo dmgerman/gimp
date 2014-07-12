@@ -61,20 +61,20 @@ begin_function
 specifier|static
 name|GimpProgress
 modifier|*
-DECL|function|gimp_display_shell_progress_start (GimpProgress * progress,const gchar * message,gboolean cancelable)
+DECL|function|gimp_display_shell_progress_start (GimpProgress * progress,gboolean cancellable,const gchar * message)
 name|gimp_display_shell_progress_start
 parameter_list|(
 name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+name|gboolean
+name|cancellable
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
 name|message
-parameter_list|,
-name|gboolean
-name|cancelable
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -103,9 +103,11 @@ argument_list|(
 name|statusbar
 argument_list|)
 argument_list|,
-name|message
+name|cancellable
 argument_list|,
-name|cancelable
+literal|"%s"
+argument_list|,
+name|message
 argument_list|)
 return|;
 block|}
@@ -232,6 +234,8 @@ name|GIMP_PROGRESS
 argument_list|(
 name|statusbar
 argument_list|)
+argument_list|,
+literal|"%s"
 argument_list|,
 name|message
 argument_list|)

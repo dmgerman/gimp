@@ -140,7 +140,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_gegl_apply_cached_operation (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglNode * operation,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect,GeglBuffer * cache,const GeglRectangle * valid_rects,gint n_valid_rects,gboolean cancelable)
+DECL|function|gimp_gegl_apply_cached_operation (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglNode * operation,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect,GeglBuffer * cache,const GeglRectangle * valid_rects,gint n_valid_rects,gboolean cancellable)
 name|gimp_gegl_apply_cached_operation
 parameter_list|(
 name|GeglBuffer
@@ -182,7 +182,7 @@ name|gint
 name|n_valid_rects
 parameter_list|,
 name|gboolean
-name|cancelable
+name|cancellable
 parameter_list|)
 block|{
 name|GeglNode
@@ -494,6 +494,8 @@ name|gimp_progress_set_text
 argument_list|(
 name|progress
 argument_list|,
+literal|"%s"
+argument_list|,
 name|undo_desc
 argument_list|)
 expr_stmt|;
@@ -501,7 +503,7 @@ name|progress_started
 operator|=
 name|FALSE
 expr_stmt|;
-name|cancelable
+name|cancellable
 operator|=
 name|FALSE
 expr_stmt|;
@@ -512,14 +514,16 @@ name|gimp_progress_start
 argument_list|(
 name|progress
 argument_list|,
-name|undo_desc
+name|cancellable
 argument_list|,
-name|cancelable
+literal|"%s"
+argument_list|,
+name|undo_desc
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|cancelable
+name|cancellable
 condition|)
 name|g_signal_connect
 argument_list|(
@@ -795,7 +799,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|cancelable
+name|cancellable
 condition|)
 while|while
 condition|(
@@ -882,7 +886,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|cancelable
+name|cancellable
 condition|)
 while|while
 condition|(
@@ -951,7 +955,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|cancelable
+name|cancellable
 condition|)
 name|g_signal_handlers_disconnect_by_func
 argument_list|(

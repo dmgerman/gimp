@@ -95,7 +95,7 @@ modifier|*
 name|undo_desc
 parameter_list|,
 name|gboolean
-name|cancelable
+name|cancellable
 parameter_list|)
 function_decl|;
 end_function_decl

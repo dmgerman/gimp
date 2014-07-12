@@ -205,13 +205,13 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+name|gboolean
+name|cancellable
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
 name|message
-parameter_list|,
-name|gboolean
-name|cancelable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -844,20 +844,20 @@ begin_function
 specifier|static
 name|GimpProgress
 modifier|*
-DECL|function|gimp_thumb_box_progress_start (GimpProgress * progress,const gchar * message,gboolean cancelable)
+DECL|function|gimp_thumb_box_progress_start (GimpProgress * progress,gboolean cancellable,const gchar * message)
 name|gimp_thumb_box_progress_start
 parameter_list|(
 name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+name|gboolean
+name|cancellable
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
 name|message
-parameter_list|,
-name|gboolean
-name|cancelable
 parameter_list|)
 block|{
 name|GimpThumbBox
@@ -941,7 +941,7 @@ argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|cancelable
+name|cancellable
 argument_list|)
 expr_stmt|;
 return|return
@@ -2588,9 +2588,11 @@ argument_list|(
 name|box
 argument_list|)
 argument_list|,
-literal|""
-argument_list|,
 name|TRUE
+argument_list|,
+literal|"%s"
+argument_list|,
+literal|""
 argument_list|)
 expr_stmt|;
 name|progress

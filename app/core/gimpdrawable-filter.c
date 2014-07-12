@@ -308,7 +308,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_merge_filter (GimpDrawable * drawable,GimpFilter * filter,GimpProgress * progress,const gchar * undo_desc,gboolean cancelable)
+DECL|function|gimp_drawable_merge_filter (GimpDrawable * drawable,GimpFilter * filter,GimpProgress * progress,const gchar * undo_desc,gboolean cancellable)
 name|gimp_drawable_merge_filter
 parameter_list|(
 name|GimpDrawable
@@ -329,7 +329,7 @@ modifier|*
 name|undo_desc
 parameter_list|,
 name|gboolean
-name|cancelable
+name|cancellable
 parameter_list|)
 block|{
 name|GeglRectangle
@@ -691,7 +691,7 @@ name|rects
 argument_list|,
 name|n_rects
 argument_list|,
-name|cancelable
+name|cancellable
 argument_list|)
 condition|)
 block|{

@@ -280,9 +280,11 @@ name|gimp_progress_start
 argument_list|(
 name|progress
 argument_list|,
-name|text
-argument_list|,
 name|FALSE
+argument_list|,
+literal|"%s"
+argument_list|,
+name|text
 argument_list|)
 expr_stmt|;
 return|return;

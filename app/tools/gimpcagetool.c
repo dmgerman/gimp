@@ -165,7 +165,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2c7f050103
+DECL|enum|__anon29de7f590103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -4289,12 +4289,12 @@ argument_list|(
 name|ct
 argument_list|)
 argument_list|,
+name|FALSE
+argument_list|,
 name|_
 argument_list|(
 literal|"Computing Cage Coefficients"
 argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if

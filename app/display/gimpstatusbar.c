@@ -295,13 +295,13 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+name|gboolean
+name|cancellable
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
 name|message
-parameter_list|,
-name|gboolean
-name|cancelable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1940,20 +1940,20 @@ begin_function
 specifier|static
 name|GimpProgress
 modifier|*
-DECL|function|gimp_statusbar_progress_start (GimpProgress * progress,const gchar * message,gboolean cancelable)
+DECL|function|gimp_statusbar_progress_start (GimpProgress * progress,gboolean cancellable,const gchar * message)
 name|gimp_statusbar_progress_start
 parameter_list|(
 name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+name|gboolean
+name|cancellable
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
 name|message
-parameter_list|,
-name|gboolean
-name|cancelable
 parameter_list|)
 block|{
 name|GimpStatusbar
@@ -2022,12 +2022,12 @@ name|statusbar
 operator|->
 name|cancel_button
 argument_list|,
-name|cancelable
+name|cancellable
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|cancelable
+name|cancellable
 condition|)
 block|{
 if|if

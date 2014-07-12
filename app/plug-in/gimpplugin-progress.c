@@ -391,6 +391,8 @@ name|proc_frame
 operator|->
 name|progress
 argument_list|,
+literal|"%s"
+argument_list|,
 name|message
 argument_list|)
 expr_stmt|;
@@ -423,13 +425,15 @@ name|proc_frame
 operator|->
 name|progress
 argument_list|,
+name|TRUE
+argument_list|,
+literal|"%s"
+argument_list|,
 name|message
 condition|?
 name|message
 else|:
 literal|""
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -608,6 +612,8 @@ argument_list|(
 name|proc_frame
 operator|->
 name|progress
+argument_list|,
+literal|"%s"
 argument_list|,
 name|message
 argument_list|)

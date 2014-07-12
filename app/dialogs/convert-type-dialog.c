@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3786130108
+DECL|struct|__anon2955a32f0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1427,12 +1427,12 @@ name|dialog
 operator|->
 name|progress
 argument_list|,
+name|FALSE
+argument_list|,
 name|_
 argument_list|(
 literal|"Converting to indexed colors"
 argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  Convert the image to indexed color  */

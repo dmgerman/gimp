@@ -105,9 +105,9 @@ DECL|member|active
 name|gboolean
 name|active
 decl_stmt|;
-DECL|member|cancelable
+DECL|member|cancellable
 name|gboolean
-name|cancelable
+name|cancellable
 decl_stmt|;
 DECL|member|value
 name|gdouble

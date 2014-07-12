@@ -366,9 +366,11 @@ name|gimp_progress_start
 argument_list|(
 name|progress
 argument_list|,
-name|undo_desc
-argument_list|,
 name|FALSE
+argument_list|,
+literal|"%s"
+argument_list|,
+name|undo_desc
 argument_list|)
 expr_stmt|;
 name|g_object_freeze_notify

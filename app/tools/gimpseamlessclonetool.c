@@ -237,7 +237,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afcae390103
+DECL|enum|__anon273a3fea0103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -2779,12 +2779,12 @@ argument_list|(
 name|sc
 argument_list|)
 argument_list|,
+name|FALSE
+argument_list|,
 name|_
 argument_list|(
-literal|"Cloning the foreground object..."
+literal|"Cloning the foreground object"
 argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* Find out at which x,y is the top left corner of the currently    * displayed part */
