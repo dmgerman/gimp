@@ -1024,16 +1024,6 @@ if|if
 condition|(
 name|progress
 condition|)
-block|{
-name|gchar
-modifier|*
-name|name
-init|=
-name|g_filename_display_name
-argument_list|(
-name|filename
-argument_list|)
-decl_stmt|;
 name|gimp_progress_start
 argument_list|(
 name|progress
@@ -1045,15 +1035,9 @@ argument_list|(
 literal|"Opening '%s'"
 argument_list|)
 argument_list|,
-name|name
+name|filename
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|name
-argument_list|)
-expr_stmt|;
-block|}
 name|success
 operator|=
 name|TRUE
@@ -1515,16 +1499,6 @@ if|if
 condition|(
 name|progress
 condition|)
-block|{
-name|gchar
-modifier|*
-name|name
-init|=
-name|g_filename_display_name
-argument_list|(
-name|filename
-argument_list|)
-decl_stmt|;
 name|gimp_progress_start
 argument_list|(
 name|progress
@@ -1536,15 +1510,9 @@ argument_list|(
 literal|"Saving '%s'"
 argument_list|)
 argument_list|,
-name|name
+name|filename
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|name
-argument_list|)
-expr_stmt|;
-block|}
 name|xcf_save_choose_format
 argument_list|(
 operator|&
