@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3e99aa0103
+DECL|enum|__anon28a2ceae0103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -1322,6 +1322,18 @@ name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|GET_PRIVATE
+argument_list|(
+name|imagefile
+argument_list|)
+operator|->
+name|file
+operator|!=
+name|file
+condition|)
+block|{
 name|gimp_object_take_name
 argument_list|(
 name|GIMP_OBJECT
@@ -1339,6 +1351,7 @@ else|:
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
