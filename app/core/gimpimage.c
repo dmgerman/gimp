@@ -360,7 +360,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon275b41120103
+DECL|enum|__anon292c364e0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -457,7 +457,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275b41120203
+DECL|enum|__anon292c364e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7747,6 +7747,10 @@ modifier|*
 name|file
 parameter_list|)
 block|{
+name|GimpImagePrivate
+modifier|*
+name|private
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -7767,6 +7771,22 @@ name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|private
+operator|=
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|private
+operator|->
+name|file
+operator|!=
+name|file
+condition|)
+block|{
 name|gimp_object_take_name
 argument_list|(
 name|GIMP_OBJECT
@@ -7784,6 +7804,7 @@ else|:
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
