@@ -299,10 +299,15 @@ argument_list|,
 name|GIMP_PDB_CALLING_ERROR
 argument_list|)
 expr_stmt|;
-comment|/* ref the image, so it can't get deleted during save */
+comment|/*  ref image and file, so they can't get deleted during save  */
 name|g_object_ref
 argument_list|(
 name|image
+argument_list|)
+expr_stmt|;
+name|g_object_ref
+argument_list|(
+name|file
 argument_list|)
 expr_stmt|;
 name|drawable
@@ -908,6 +913,11 @@ argument_list|)
 expr_stmt|;
 name|out
 label|:
+name|g_object_unref
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|image
