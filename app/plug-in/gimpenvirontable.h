@@ -97,6 +97,10 @@ DECL|member|parent_instance
 name|GObject
 name|parent_instance
 decl_stmt|;
+DECL|member|verbose
+name|gboolean
+name|verbose
+decl_stmt|;
 DECL|member|vars
 name|GHashTable
 modifier|*
@@ -145,7 +149,8 @@ name|GimpEnvironTable
 modifier|*
 name|gimp_environ_table_new
 parameter_list|(
-name|void
+name|gboolean
+name|verbose
 parameter_list|)
 function_decl|;
 end_function_decl
