@@ -445,8 +445,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|gui_get_theme_dir
 parameter_list|(
@@ -1387,8 +1386,7 @@ end_function
 
 begin_function
 specifier|static
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 DECL|function|gui_get_theme_dir (Gimp * gimp)
 name|gui_get_theme_dir

@@ -1029,8 +1029,7 @@ block|}
 end_function
 
 begin_function
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 DECL|function|gimp_get_theme_dir (Gimp * gimp)
 name|gimp_get_theme_dir

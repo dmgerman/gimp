@@ -56,8 +56,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|themes_get_theme_dir
 parameter_list|(
@@ -74,7 +73,7 @@ function_decl|;
 end_function_decl
 
 begin_decl_stmt
-name|gchar
+name|GFile
 modifier|*
 name|themes_get_theme_file
 argument_list|(

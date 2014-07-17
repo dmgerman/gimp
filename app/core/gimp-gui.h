@@ -197,8 +197,7 @@ name|gimp
 parameter_list|)
 function_decl|;
 DECL|member|get_theme_dir
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 function_decl|(
 modifier|*
@@ -867,8 +866,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|gimp_get_theme_dir
 parameter_list|(
