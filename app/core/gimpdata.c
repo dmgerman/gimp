@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2953bd6d0103
+DECL|enum|__anon290fa0a60103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2953bd6d0203
+DECL|enum|__anon290fa0a60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2792,7 +2792,10 @@ comment|/* and we can write it */
 if|if
 condition|(
 name|info
-operator|&&
+condition|)
+block|{
+if|if
+condition|(
 name|g_file_info_get_attribute_boolean
 argument_list|(
 name|info
@@ -2820,6 +2823,12 @@ condition|?
 name|TRUE
 else|:
 name|FALSE
+expr_stmt|;
+block|}
+name|g_object_unref
+argument_list|(
+name|info
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -2856,7 +2865,10 @@ comment|/* and we can write to its parent directory */
 if|if
 condition|(
 name|info
-operator|&&
+condition|)
+block|{
+if|if
+condition|(
 name|g_file_info_get_attribute_boolean
 argument_list|(
 name|info
@@ -2884,6 +2896,12 @@ condition|?
 name|TRUE
 else|:
 name|FALSE
+expr_stmt|;
+block|}
+name|g_object_unref
+argument_list|(
+name|file
+argument_list|)
 expr_stmt|;
 block|}
 name|g_object_unref

@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3d316e0103
+DECL|enum|__anon27a2fd800103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -118,7 +118,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3d316e0203
+DECL|enum|__anon27a2fd800203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -1955,6 +1955,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|g_free
+argument_list|(
+name|encoded_image
+argument_list|)
+expr_stmt|;
 name|g_value_take_object
 argument_list|(
 name|value

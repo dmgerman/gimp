@@ -241,6 +241,11 @@ goto|goto
 name|failed
 goto|;
 block|}
+name|g_free
+argument_list|(
+name|str
+argument_list|)
+expr_stmt|;
 name|palette
 operator|=
 name|g_object_new

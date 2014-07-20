@@ -2625,6 +2625,11 @@ argument_list|(
 name|basename1
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|path1
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 name|g_free
