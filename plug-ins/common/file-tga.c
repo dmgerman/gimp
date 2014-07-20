@@ -109,7 +109,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d436dd0103
+DECL|enum|__anon2c6080410103
 block|{
 DECL|enumerator|ORIGIN_TOP_LEFT
 name|ORIGIN_TOP_LEFT
@@ -2919,7 +2919,7 @@ init|;
 name|x
 operator|*
 literal|2
-operator|<=
+operator|<
 name|info
 operator|->
 name|width
