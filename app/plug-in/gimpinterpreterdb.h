@@ -172,10 +172,9 @@ name|GimpInterpreterDB
 modifier|*
 name|db
 parameter_list|,
-specifier|const
-name|gchar
+name|GList
 modifier|*
-name|interp_path
+name|path
 parameter_list|)
 function_decl|;
 end_function_decl

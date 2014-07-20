@@ -163,10 +163,9 @@ name|GimpEnvironTable
 modifier|*
 name|environ_table
 parameter_list|,
-specifier|const
-name|gchar
+name|GList
 modifier|*
-name|env_path
+name|path
 parameter_list|)
 function_decl|;
 end_function_decl
