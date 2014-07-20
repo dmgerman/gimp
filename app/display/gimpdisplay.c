@@ -162,7 +162,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e9fdbb0103
+DECL|enum|__anon2a444e990103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1208,7 +1208,7 @@ name|private
 operator|->
 name|shell
 condition|)
-name|gimp_progress_set_text
+name|gimp_progress_set_text_literal
 argument_list|(
 name|GIMP_PROGRESS
 argument_list|(
@@ -1216,8 +1216,6 @@ name|private
 operator|->
 name|shell
 argument_list|)
-argument_list|,
-literal|"%s"
 argument_list|,
 name|message
 argument_list|)

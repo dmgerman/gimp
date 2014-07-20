@@ -867,7 +867,7 @@ operator|->
 name|progress_display
 argument_list|)
 decl_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_set_text_literal
 argument_list|(
 name|GIMP_PROGRESS
 argument_list|(
@@ -875,8 +875,6 @@ name|tool
 operator|->
 name|progress
 argument_list|)
-argument_list|,
-literal|"%s"
 argument_list|,
 name|message
 argument_list|)

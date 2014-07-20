@@ -309,7 +309,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|message
+name|format
 parameter_list|,
 modifier|...
 parameter_list|)
@@ -324,6 +324,22 @@ begin_empty_stmt
 unit|)
 empty_stmt|;
 end_empty_stmt
+
+begin_function_decl
+name|void
+name|gimp_progress_set_text_literal
+parameter_list|(
+name|GimpProgress
+modifier|*
+name|progress
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|message
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void

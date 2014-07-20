@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276b637b0108
+DECL|struct|__anon2a325e550108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -215,7 +215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276b637b0208
+DECL|struct|__anon2a325e550208
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -2252,7 +2252,7 @@ name|GeglNode
 modifier|*
 name|shapeburst
 decl_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_set_text_literal
 argument_list|(
 name|progress
 argument_list|,
@@ -3784,7 +3784,7 @@ argument_list|,
 name|progress
 argument_list|)
 expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_set_text_literal
 argument_list|(
 name|progress
 argument_list|,

@@ -228,14 +228,12 @@ argument_list|(
 name|shell
 argument_list|)
 decl_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_set_text_literal
 argument_list|(
 name|GIMP_PROGRESS
 argument_list|(
 name|statusbar
 argument_list|)
-argument_list|,
-literal|"%s"
 argument_list|,
 name|message
 argument_list|)

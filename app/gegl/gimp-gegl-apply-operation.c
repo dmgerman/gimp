@@ -490,11 +490,9 @@ if|if
 condition|(
 name|undo_desc
 condition|)
-name|gimp_progress_set_text
+name|gimp_progress_set_text_literal
 argument_list|(
 name|progress
-argument_list|,
-literal|"%s"
 argument_list|,
 name|undo_desc
 argument_list|)
