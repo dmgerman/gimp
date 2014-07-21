@@ -597,11 +597,6 @@ if|if
 condition|(
 operator|!
 name|path
-operator|&&
-name|g_getenv
-argument_list|(
-literal|"GIMP_HANDLE_REMOTE_FILES"
-argument_list|)
 condition|)
 block|{
 name|GError
