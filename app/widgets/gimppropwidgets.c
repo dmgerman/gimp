@@ -1542,7 +1542,7 @@ name|GParamSpec
 modifier|*
 name|param_spec
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adjustment
 decl_stmt|;
@@ -1628,6 +1628,10 @@ argument_list|)
 expr_stmt|;
 name|adjustment
 operator|=
+operator|(
+name|GtkAdjustment
+operator|*
+operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|value
@@ -1647,10 +1651,7 @@ name|scale
 operator|=
 name|gimp_spin_scale_new
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|adjustment
-argument_list|)
 argument_list|,
 name|label
 argument_list|,
@@ -3899,7 +3900,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b34bd70108
+DECL|struct|__anon2b6d28b80108
 block|{
 DECL|member|config
 name|GObject

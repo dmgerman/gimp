@@ -170,9 +170,9 @@ specifier|static
 name|void
 name|gimp_combo_tag_entry_popup_destroy
 parameter_list|(
-name|GtkObject
+name|GtkWidget
 modifier|*
-name|object
+name|widget
 parameter_list|,
 name|GimpComboTagEntry
 modifier|*
@@ -1248,12 +1248,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_combo_tag_entry_popup_destroy (GtkObject * object,GimpComboTagEntry * entry)
+DECL|function|gimp_combo_tag_entry_popup_destroy (GtkWidget * widget,GimpComboTagEntry * entry)
 name|gimp_combo_tag_entry_popup_destroy
 parameter_list|(
-name|GtkObject
+name|GtkWidget
 modifier|*
-name|object
+name|widget
 parameter_list|,
 name|GimpComboTagEntry
 modifier|*

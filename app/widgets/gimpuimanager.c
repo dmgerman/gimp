@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f656300103
+DECL|enum|__anon2c9ab27d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -117,7 +117,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f656300203
+DECL|enum|__anon2c9ab27d0203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -400,9 +400,9 @@ specifier|static
 name|void
 name|gimp_ui_manager_delete_popdown_data
 parameter_list|(
-name|GtkObject
+name|GtkWidget
 modifier|*
-name|object
+name|widget
 parameter_list|,
 name|GimpUIManager
 modifier|*
@@ -2169,7 +2169,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f656300308
+DECL|struct|__anon2c9ab27d0308
 block|{
 DECL|member|x
 name|guint
@@ -3414,12 +3414,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_ui_manager_delete_popdown_data (GtkObject * object,GimpUIManager * manager)
+DECL|function|gimp_ui_manager_delete_popdown_data (GtkWidget * widget,GimpUIManager * manager)
 name|gimp_ui_manager_delete_popdown_data
 parameter_list|(
-name|GtkObject
+name|GtkWidget
 modifier|*
-name|object
+name|widget
 parameter_list|,
 name|GimpUIManager
 modifier|*
@@ -3428,7 +3428,7 @@ parameter_list|)
 block|{
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|object
+name|widget
 argument_list|,
 name|gimp_ui_manager_delete_popdown_data
 argument_list|,
