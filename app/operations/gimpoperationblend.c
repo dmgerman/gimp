@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a03aa990103
+DECL|enum|__anon276d439d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -128,7 +128,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a03aa990208
+DECL|struct|__anon276d439d0208
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a03aa990308
+DECL|struct|__anon276d439d0308
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -4379,7 +4379,7 @@ argument_list|(
 literal|"R'G'B'A float"
 argument_list|)
 argument_list|,
-name|GEGL_BUFFER_WRITE
+name|GEGL_ACCESS_WRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
