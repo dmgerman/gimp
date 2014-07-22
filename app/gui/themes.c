@@ -266,6 +266,8 @@ name|g_file_enumerate_children
 argument_list|(
 name|dir
 argument_list|,
+name|G_FILE_ATTRIBUTE_STANDARD_NAME
+literal|","
 name|G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN
 literal|","
 name|G_FILE_ATTRIBUTE_STANDARD_TYPE
