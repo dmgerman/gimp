@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0711aa0103
+DECL|enum|__anon27c1f7a60103
 block|{
 DECL|enumerator|RESPONSE_PREVIOUS
 name|RESPONSE_PREVIOUS
@@ -266,6 +266,10 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
+name|GFile
+modifier|*
+name|file
+decl_stmt|;
 name|filename
 operator|=
 name|g_build_filename
@@ -280,11 +284,23 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|file
+operator|=
+name|g_file_new_for_path
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 name|tips
 operator|=
 name|gimp_tips_from_file
 argument_list|(
-name|filename
+name|file
 argument_list|,
 operator|&
 name|error
@@ -345,9 +361,9 @@ literal|"There should be a file called '%s'. "
 literal|"Please check your installation."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -391,7 +407,10 @@ name|g_printerr
 argument_list|(
 literal|"Error while parsing '%s': %s\n"
 argument_list|,
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 name|error
 operator|->
@@ -405,9 +424,9 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_object_unref
 argument_list|(
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 block|}

@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3873f10103
+DECL|enum|__anon2a35de470103
 block|{
 DECL|enumerator|TIPS_START
 name|TIPS_START
@@ -73,7 +73,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3873f10203
+DECL|enum|__anon2a35de470203
 block|{
 DECL|enumerator|TIPS_LOCALE_NONE
 name|TIPS_LOCALE_NONE
@@ -92,7 +92,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3873f10308
+DECL|struct|__anon2a35de470308
 block|{
 DECL|member|state
 name|TipsParserState
@@ -547,19 +547,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tips_from_file:  * @filename: the name of the tips file to parse  * @error: return location for a #GError  *  * Reads a gimp-tips XML file, creates a new #GimpTip for  * each tip entry and returns a #GList of them. If a parser  * error occurs at some point, the uncompleted list is  * returned and @error is set (unless @error is %NULL).  * The message set in @error contains a detailed description  * of the problem.  *  * Return value: a #Glist of #GimpTips.  **/
+comment|/**  * gimp_tips_from_file:  * @file:  the tips file to parse  * @error: return location for a #GError  *  * Reads a gimp-tips XML file, creates a new #GimpTip for  * each tip entry and returns a #GList of them. If a parser  * error occurs at some point, the uncompleted list is  * returned and @error is set (unless @error is %NULL).  * The message set in @error contains a detailed description  * of the problem.  *  * Return value: a #Glist of #GimpTips.  **/
 end_comment
 
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_tips_from_file (const gchar * filename,GError ** error)
+DECL|function|gimp_tips_from_file (GFile * file,GError ** error)
 name|gimp_tips_from_file
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -591,9 +590,10 @@ name|NULL
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|filename
-operator|!=
-name|NULL
+name|G_IS_FILE
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -682,11 +682,11 @@ operator|&
 name|parser
 argument_list|)
 expr_stmt|;
-name|gimp_xml_parser_parse_file
+name|gimp_xml_parser_parse_gfile
 argument_list|(
 name|xml_parser
 argument_list|,
-name|filename
+name|file
 argument_list|,
 name|error
 argument_list|)

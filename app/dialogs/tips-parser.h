@@ -89,10 +89,9 @@ name|GList
 modifier|*
 name|gimp_tips_from_file
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
