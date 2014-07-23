@@ -7297,6 +7297,19 @@ argument_list|(
 name|layers
 argument_list|)
 expr_stmt|;
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Saving '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|fd
 operator|=
 name|g_fopen
@@ -7344,19 +7357,6 @@ return|return
 name|FALSE
 return|;
 block|}
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Saving '%s'"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|IFDBG
 name|g_print
 argument_list|(

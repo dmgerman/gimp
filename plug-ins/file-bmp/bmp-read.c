@@ -1055,6 +1055,19 @@ index|[
 literal|4
 index|]
 decl_stmt|;
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|name
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|filename
 operator|=
 name|name
@@ -1105,19 +1118,6 @@ goto|goto
 name|out
 goto|;
 block|}
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Opening '%s'"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|name
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/* It is a File. Now is it a Bitmap? Read the shortest possible header */
 if|if
 condition|(

@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b79bcb20108
+DECL|struct|__anon2a0d94bc0108
 block|{
 DECL|member|description
 name|gchar
@@ -1248,6 +1248,19 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s'"
+argument_list|)
+argument_list|,
+name|g_file_get_parse_name
+argument_list|(
+name|file
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|input
 operator|=
 name|G_INPUT_STREAM
@@ -1271,19 +1284,6 @@ return|return
 operator|-
 literal|1
 return|;
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Opening '%s'"
-argument_list|)
-argument_list|,
-name|g_file_get_parse_name
-argument_list|(
-name|file
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|size
 operator|=
 name|G_STRUCT_OFFSET
@@ -2267,7 +2267,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2b79bcb2020a
+DECL|union|__anon2a0d94bc020a
 block|{
 DECL|member|u
 name|guint16
@@ -2768,6 +2768,19 @@ argument_list|(
 name|format
 argument_list|)
 expr_stmt|;
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Saving '%s'"
+argument_list|)
+argument_list|,
+name|g_file_get_parse_name
+argument_list|(
+name|file
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|output
 operator|=
 name|G_OUTPUT_STREAM
@@ -2796,19 +2809,6 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Saving '%s'"
-argument_list|)
-argument_list|,
-name|g_file_get_parse_name
-argument_list|(
-name|file
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|buffer
 operator|=
 name|gimp_drawable_get_buffer

@@ -110,7 +110,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bd6139d0108
+DECL|struct|__anon2960d7890108
 block|{
 DECL|member|spacing
 name|guint
@@ -186,7 +186,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd6139d0208
+DECL|struct|__anon2960d7890208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -2818,6 +2818,19 @@ decl_stmt|;
 name|gsize
 name|bytes_read
 decl_stmt|;
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s'"
+argument_list|)
+argument_list|,
+name|g_file_get_parse_name
+argument_list|(
+name|file
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|input
 operator|=
 name|G_INPUT_STREAM
@@ -2841,19 +2854,6 @@ return|return
 operator|-
 literal|1
 return|;
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Opening '%s'"
-argument_list|)
-argument_list|,
-name|g_file_get_parse_name
-argument_list|(
-name|file
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/* The file format starts with a painfully simple text header */
 comment|/*  get the name  */
 name|buffer
@@ -6200,6 +6200,19 @@ argument_list|(
 name|image_ID
 argument_list|)
 expr_stmt|;
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Saving '%s'"
+argument_list|)
+argument_list|,
+name|g_file_get_parse_name
+argument_list|(
+name|file
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|output
 operator|=
 name|G_OUTPUT_STREAM
@@ -6228,19 +6241,6 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Saving '%s'"
-argument_list|)
-argument_list|,
-name|g_file_get_parse_name
-argument_list|(
-name|file
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|parstring
 operator|=
 name|gimp_pixpipe_params_build

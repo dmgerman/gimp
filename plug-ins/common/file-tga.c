@@ -109,7 +109,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6080410103
+DECL|enum|__anon2b666fd80103
 block|{
 DECL|enumerator|ORIGIN_TOP_LEFT
 name|ORIGIN_TOP_LEFT
@@ -1370,6 +1370,19 @@ init|=
 operator|-
 literal|1
 decl_stmt|;
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|fp
 operator|=
 name|g_fopen
@@ -1417,19 +1430,6 @@ operator|-
 literal|1
 return|;
 block|}
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Opening '%s'"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/* Is file big enough for a footer? */
 if|if
 condition|(
@@ -4811,6 +4811,19 @@ argument_list|(
 name|buffer
 argument_list|)
 expr_stmt|;
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Saving '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|(
@@ -4858,19 +4871,6 @@ return|return
 name|FALSE
 return|;
 block|}
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Saving '%s'"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|header
 index|[
 literal|0

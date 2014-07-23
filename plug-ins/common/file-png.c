@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291d4b2f0108
+DECL|struct|__anon2bf975ff0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291d4b2f0208
+DECL|struct|__anon2bf975ff0208
 block|{
 DECL|member|run
 name|gboolean
@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291d4b2f0308
+DECL|struct|__anon2bf975ff0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -2840,6 +2840,19 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/*    * Open the file and initialize the PNG read "engine"...    */
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|fp
 operator|=
 name|g_fopen
@@ -2893,19 +2906,6 @@ argument_list|(
 name|pp
 argument_list|,
 name|fp
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Opening '%s'"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*    * Get the image dimensions and create the image...    */
@@ -5275,6 +5275,19 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/*    * Open the file and initialize the PNG write "engine"...    */
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Saving '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|fp
 operator|=
 name|g_fopen
@@ -5327,19 +5340,6 @@ argument_list|(
 name|pp
 argument_list|,
 name|fp
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Saving '%s'"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*    * Get the buffer for the current image...    */

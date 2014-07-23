@@ -333,7 +333,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab609c0108
+DECL|struct|__anon2b773b7b0108
 block|{
 DECL|member|raw
 name|gint
@@ -801,7 +801,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2aab609c0208
+DECL|struct|__anon2b773b7b0208
 block|{
 DECL|member|name
 name|gchar
@@ -2056,7 +2056,19 @@ decl_stmt|;
 name|int
 name|ctr
 decl_stmt|;
-comment|/* open the file */
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s'"
+argument_list|)
+argument_list|,
+name|g_file_get_parse_name
+argument_list|(
+name|file
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|input
 operator|=
 name|G_INPUT_STREAM
@@ -2080,19 +2092,6 @@ return|return
 operator|-
 literal|1
 return|;
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Opening '%s'"
-argument_list|)
-argument_list|,
-name|g_file_get_parse_name
-argument_list|(
-name|file
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/* allocate the necessary structures */
 name|pnminfo
 operator|=
@@ -4988,6 +4987,19 @@ return|return
 name|FALSE
 return|;
 block|}
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Saving '%s'"
+argument_list|)
+argument_list|,
+name|g_file_get_parse_name
+argument_list|(
+name|file
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* open the file */
 name|output
 operator|=
@@ -5017,19 +5029,6 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Saving '%s'"
-argument_list|)
-argument_list|,
-name|g_file_get_parse_name
-argument_list|(
-name|file
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|buffer
 operator|=
 name|gimp_drawable_get_buffer

@@ -1019,6 +1019,19 @@ name|rows
 decl_stmt|;
 comment|/* SGI image data */
 comment|/*   * Open the file for reading...   */
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|sgip
 operator|=
 name|sgiOpen
@@ -1070,19 +1083,6 @@ literal|1
 return|;
 block|}
 empty_stmt|;
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Opening '%s'"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/*    * Get the image dimensions and create the image...    */
 comment|/* Sanitize dimensions (note that they are unsigned short and can    * thus never be larger than GIMP_MAX_IMAGE_SIZE    */
 if|if
@@ -2001,6 +2001,19 @@ name|FALSE
 return|;
 block|}
 comment|/*    * Open the file for writing...    */
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Saving '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|sgip
 operator|=
 name|sgiOpen
@@ -2051,19 +2064,6 @@ name|FALSE
 return|;
 block|}
 empty_stmt|;
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Saving '%s'"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/*    * Allocate memory for "tile_height" rows...    */
 name|tile_height
 operator|=

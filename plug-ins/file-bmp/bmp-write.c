@@ -82,7 +82,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298b92d60103
+DECL|enum|__anon28ffdf550103
 block|{
 DECL|enumerator|RGB_565
 name|RGB_565
@@ -110,7 +110,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon298b92d60208
+DECL|struct|__anon28ffdf550208
 block|{
 DECL|member|rgb_format
 name|RGBMode
@@ -1162,6 +1162,20 @@ name|BMPSaveData
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* Let's begin the progress */
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Saving '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* Let's take some file */
 name|outfile
 operator|=
@@ -1252,20 +1266,6 @@ expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|buffer
-argument_list|)
-expr_stmt|;
-comment|/* And let's begin the progress */
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Saving '%s'"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|cur_progress

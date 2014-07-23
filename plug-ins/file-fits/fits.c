@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b5d4050108
+DECL|struct|__anon2b56ee900108
 block|{
 DECL|member|replace
 name|gint
@@ -1700,6 +1700,19 @@ operator|)
 return|;
 break|break;
 block|}
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Saving '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* Open the output file. */
 name|ofp
 operator|=
@@ -1749,19 +1762,6 @@ name|FALSE
 operator|)
 return|;
 block|}
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Saving '%s'"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|retval
 operator|=
 name|save_fits

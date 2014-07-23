@@ -140,7 +140,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c62d0e50103
+DECL|enum|__anon2a1061ba0103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -198,7 +198,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c62d0e50203
+DECL|enum|__anon2a1061ba0203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -216,7 +216,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c62d0e50308
+DECL|struct|__anon2a1061ba0308
 block|{
 DECL|member|file_offset
 name|gint32
@@ -257,7 +257,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c62d0e50408
+DECL|struct|__anon2a1061ba0408
 block|{
 DECL|member|fp
 name|FILE
@@ -4031,6 +4031,19 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|data
 operator|->
 name|fp
@@ -4082,19 +4095,6 @@ operator|-
 literal|1
 return|;
 block|}
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Opening '%s'"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|size
 operator|=
 name|get_file_info

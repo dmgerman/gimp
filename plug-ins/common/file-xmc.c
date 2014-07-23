@@ -308,7 +308,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a525cea0108
+DECL|struct|__anon2b8bfffc0108
 block|{
 DECL|member|crop
 name|gboolean
@@ -839,7 +839,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a525cea0208
+DECL|struct|__anon2b8bfffc0208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -2509,6 +2509,19 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* Open the file and check it is a valid X cursor */
 name|fp
 operator|=
@@ -2597,19 +2610,6 @@ operator|-
 literal|1
 return|;
 block|}
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Opening '%s'"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/* check dimension is valid. */
 for|for
 control|(
@@ -6296,6 +6296,19 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Saving '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*    * Open the file pointer.    */
 name|DM_XMC
 argument_list|(
@@ -6349,19 +6362,6 @@ return|return
 name|FALSE
 return|;
 block|}
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Saving '%s'"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/* get layers */
 name|orig_layers
 operator|=
@@ -9126,7 +9126,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2a525cea0308
+DECL|struct|__anon2b8bfffc0308
 block|{
 DECL|member|size
 name|guint32

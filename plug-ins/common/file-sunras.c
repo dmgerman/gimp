@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c970ed20108
+DECL|struct|__anon2af4ab470108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -224,7 +224,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c970ed20208
+DECL|struct|__anon2af4ab470208
 block|{
 DECL|member|val
 name|gint
@@ -877,7 +877,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c970ed20308
+DECL|struct|__anon2af4ab470308
 block|{
 DECL|member|rle
 name|gboolean
@@ -1651,6 +1651,19 @@ name|suncolmap
 init|=
 name|NULL
 decl_stmt|;
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|ifp
 operator|=
 name|g_fopen
@@ -2145,19 +2158,6 @@ operator|-
 literal|1
 return|;
 block|}
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Opening '%s'"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
-argument_list|)
-expr_stmt|;
 switch|switch
 condition|(
 name|sunhdr
@@ -2387,6 +2387,19 @@ name|FALSE
 return|;
 break|break;
 block|}
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Saving '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* Open the output file. */
 name|ofp
 operator|=
@@ -2434,19 +2447,6 @@ return|return
 name|FALSE
 return|;
 block|}
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Saving '%s'"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|drawable_type

@@ -1040,7 +1040,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2951e4610108
+DECL|struct|__anon2aeaf0740108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1117,7 +1117,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon2951e4610208
+DECL|struct|__anon2aeaf0740208
 specifier|static
 struct|struct
 block|{
@@ -1495,6 +1495,19 @@ index|[
 literal|128
 index|]
 decl_stmt|;
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|fd
 operator|=
 name|g_fopen
@@ -1542,19 +1555,6 @@ operator|-
 literal|1
 return|;
 block|}
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Opening '%s'"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|fread

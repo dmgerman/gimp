@@ -108,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2961112a0108
+DECL|struct|__anon2c47df700108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -4845,6 +4845,19 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|pixels
 operator|=
 name|wmf_load_file
@@ -4869,19 +4882,6 @@ return|return
 operator|-
 literal|1
 return|;
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Opening '%s'"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|image
 operator|=
 name|gimp_image_new

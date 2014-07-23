@@ -80,7 +80,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e513320108
+DECL|struct|__anon277be5890108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -803,6 +803,19 @@ argument_list|(
 name|buffer
 argument_list|)
 expr_stmt|;
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Saving '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|fp
 operator|=
 name|g_fopen
@@ -920,19 +933,6 @@ argument_list|,
 name|gtmvals
 operator|.
 name|captiontxt
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Saving '%s'"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|buf

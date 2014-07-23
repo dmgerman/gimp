@@ -1203,7 +1203,19 @@ name|in_sequence
 init|=
 literal|0
 decl_stmt|;
-comment|/* open the file */
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|DICOM
 operator|=
 name|g_fopen
@@ -1251,19 +1263,6 @@ operator|-
 literal|1
 return|;
 block|}
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Opening '%s'"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/* allocate the necessary structures */
 name|dicominfo
 operator|=
@@ -3107,7 +3106,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28881aab0108
+DECL|struct|__anon28c980de0108
 block|{
 DECL|member|group_word
 name|guint16
@@ -5643,7 +5642,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-DECL|struct|__anon28881aab0208
+DECL|struct|__anon28c980de0208
 struct|struct
 block|{
 DECL|member|DICOM
@@ -5771,7 +5770,7 @@ modifier|*
 name|elements
 parameter_list|)
 block|{
-DECL|struct|__anon28881aab0308
+DECL|struct|__anon28c980de0308
 struct|struct
 block|{
 DECL|member|DICOM

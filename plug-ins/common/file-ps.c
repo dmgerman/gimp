@@ -219,7 +219,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293083660108
+DECL|struct|__anon2bff050c0108
 block|{
 DECL|member|resolution
 name|guint
@@ -330,7 +330,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293083660208
+DECL|struct|__anon2bff050c0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -945,7 +945,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293083660308
+DECL|struct|__anon2bff050c0308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -1813,7 +1813,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293083660408
+DECL|struct|__anon2bff050c0408
 block|{
 DECL|member|eol
 name|long
@@ -4160,6 +4160,19 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* Try to see if PostScript file is available */
 name|ifp
 operator|=
@@ -4212,19 +4225,6 @@ block|}
 name|fclose
 argument_list|(
 name|ifp
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Opening '%s'"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|ifp
@@ -4893,6 +4893,19 @@ name|FALSE
 return|;
 break|break;
 block|}
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Saving '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* Open the output file. */
 name|ofp
 operator|=
@@ -4940,19 +4953,6 @@ return|return
 name|FALSE
 return|;
 block|}
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Saving '%s'"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|save_ps_header
 argument_list|(
 name|ofp

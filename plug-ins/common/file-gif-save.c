@@ -115,7 +115,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f8cd3a0103
+DECL|enum|__anon2921a3640103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -128,7 +128,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f8cd3a0203
+DECL|enum|__anon2921a3640203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -145,7 +145,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f8cd3a0308
+DECL|struct|__anon2921a3640308
 block|{
 DECL|member|interlace
 name|gint
@@ -3085,6 +3085,20 @@ name|local_error
 expr_stmt|;
 block|}
 block|}
+comment|/* init the progress meter */
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Saving '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* open the destination file for writing */
 name|outfile
 operator|=
@@ -3132,20 +3146,6 @@ return|return
 name|FALSE
 return|;
 block|}
-comment|/* init the progress meter */
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Saving '%s'"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/* write the GIFheader */
 if|if
 condition|(

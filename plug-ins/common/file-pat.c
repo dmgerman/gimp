@@ -1150,6 +1150,19 @@ decl_stmt|;
 name|gsize
 name|bytes_read
 decl_stmt|;
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s'"
+argument_list|)
+argument_list|,
+name|g_file_get_parse_name
+argument_list|(
+name|file
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|input
 operator|=
 name|G_INPUT_STREAM
@@ -1173,19 +1186,6 @@ return|return
 operator|-
 literal|1
 return|;
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Opening '%s'"
-argument_list|)
-argument_list|,
-name|g_file_get_parse_name
-argument_list|(
-name|file
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -2048,6 +2048,19 @@ return|return
 name|FALSE
 return|;
 block|}
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Saving '%s'"
+argument_list|)
+argument_list|,
+name|g_file_get_parse_name
+argument_list|(
+name|file
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|output
 operator|=
 name|G_OUTPUT_STREAM
@@ -2076,19 +2089,6 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Saving '%s'"
-argument_list|)
-argument_list|,
-name|g_file_get_parse_name
-argument_list|(
-name|file
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|buffer
 operator|=
 name|gimp_drawable_get_buffer

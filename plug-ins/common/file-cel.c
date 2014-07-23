@@ -1279,6 +1279,19 @@ name|size_t
 name|n_read
 decl_stmt|;
 comment|/* Number of items read from file */
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|file
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* Open the file for reading */
 name|fp
 operator|=
@@ -1328,19 +1341,6 @@ operator|-
 literal|1
 return|;
 block|}
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Opening '%s'"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|file
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/* Get the image dimensions and create the image... */
 name|n_read
 operator|=
@@ -3356,6 +3356,19 @@ argument_list|(
 name|buffer
 argument_list|)
 expr_stmt|;
+name|gimp_progress_init_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Saving '%s'"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|file
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* Open the file for writing */
 name|fp
 operator|=
@@ -3404,19 +3417,6 @@ return|return
 name|FALSE
 return|;
 block|}
-name|gimp_progress_init_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Saving '%s'"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|file
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/* Headers */
 name|memset
 argument_list|(
