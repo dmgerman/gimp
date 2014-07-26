@@ -462,7 +462,7 @@ name|list
 operator|=
 name|g_slist_next
 argument_list|(
-name|files
+name|list
 argument_list|)
 control|)
 block|{
