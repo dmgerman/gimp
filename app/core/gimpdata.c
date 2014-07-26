@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c53f9520103
+DECL|enum|__anon289a6b050103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c53f9520203
+DECL|enum|__anon289a6b050203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2899,6 +2899,11 @@ else|:
 name|FALSE
 expr_stmt|;
 block|}
+name|g_object_unref
+argument_list|(
+name|info
+argument_list|)
+expr_stmt|;
 block|}
 name|g_object_unref
 argument_list|(
