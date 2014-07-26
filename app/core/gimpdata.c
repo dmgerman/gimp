@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290fa0a60103
+DECL|enum|__anon2c03254c0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon290fa0a60203
+DECL|enum|__anon2c03254c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1953,11 +1953,12 @@ return|;
 block|}
 name|g_return_val_if_fail
 argument_list|(
+name|G_IS_FILE
+argument_list|(
 name|private
 operator|->
 name|file
-operator|!=
-name|NULL
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2898,11 +2899,6 @@ else|:
 name|FALSE
 expr_stmt|;
 block|}
-name|g_object_unref
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
 block|}
 name|g_object_unref
 argument_list|(
