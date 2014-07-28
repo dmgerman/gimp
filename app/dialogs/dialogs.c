@@ -2365,9 +2365,11 @@ operator|=
 literal|"dockrc"
 expr_stmt|;
 return|return
-name|gimp_personal_rc_gfile
+name|gimp_directory_file
 argument_list|(
 name|basename
+argument_list|,
+name|NULL
 argument_list|)
 return|;
 block|}

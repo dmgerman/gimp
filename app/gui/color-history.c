@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bcb18f0103
+DECL|enum|__anon28fd7ba30103
 block|{
 DECL|enumerator|COLOR_HISTORY
 name|COLOR_HISTORY
@@ -143,9 +143,11 @@ argument_list|)
 expr_stmt|;
 name|file
 operator|=
-name|gimp_personal_rc_gfile
+name|gimp_directory_file
 argument_list|(
 literal|"colorrc"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -392,9 +394,11 @@ argument_list|)
 expr_stmt|;
 name|file
 operator|=
-name|gimp_personal_rc_gfile
+name|gimp_directory_file
 argument_list|(
 literal|"colorrc"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if

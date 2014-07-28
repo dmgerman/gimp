@@ -208,9 +208,11 @@ name|be_verbose
 expr_stmt|;
 name|file
 operator|=
-name|gimp_personal_rc_gfile
+name|gimp_directory_file
 argument_list|(
 literal|"modulerc"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -633,9 +635,11 @@ literal|""
 expr_stmt|;
 name|file
 operator|=
-name|gimp_personal_rc_gfile
+name|gimp_directory_file
 argument_list|(
 literal|"modulerc"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if

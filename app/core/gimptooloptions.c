@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ea65290103
+DECL|enum|__anon2b803aa90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1428,9 +1428,11 @@ name|GFile
 modifier|*
 name|file
 init|=
-name|gimp_personal_rc_gfile
+name|gimp_directory_file
 argument_list|(
 literal|"tool-options"
+argument_list|,
+name|NULL
 argument_list|)
 decl_stmt|;
 name|g_file_make_directory

@@ -918,9 +918,11 @@ argument_list|)
 expr_stmt|;
 name|themerc
 operator|=
-name|gimp_personal_rc_gfile
+name|gimp_directory_file
 argument_list|(
 literal|"themerc"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -1058,9 +1060,11 @@ expr_stmt|;
 block|}
 name|gtkrc_user
 operator|=
-name|gimp_personal_rc_gfile
+name|gimp_directory_file
 argument_list|(
 literal|"gtkrc"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|tmp

@@ -1043,9 +1043,11 @@ else|else
 block|{
 name|pluginrc
 operator|=
-name|gimp_personal_rc_gfile
+name|gimp_directory_file
 argument_list|(
 literal|"pluginrc"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

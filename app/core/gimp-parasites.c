@@ -439,9 +439,11 @@ argument_list|)
 expr_stmt|;
 name|file
 operator|=
-name|gimp_personal_rc_gfile
+name|gimp_directory_file
 argument_list|(
 literal|"parasiterc"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -572,9 +574,11 @@ argument_list|)
 expr_stmt|;
 name|file
 operator|=
-name|gimp_personal_rc_gfile
+name|gimp_directory_file
 argument_list|(
 literal|"parasiterc"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
