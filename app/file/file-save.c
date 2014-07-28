@@ -420,7 +420,7 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"Premission denied"
+literal|"Permission denied"
 argument_list|)
 argument_list|)
 expr_stmt|;
