@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2990551f0103
+DECL|enum|__anon2a4132a90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1332,10 +1332,6 @@ parameter_list|)
 block|{
 name|gchar
 modifier|*
-name|filename
-decl_stmt|;
-name|gchar
-modifier|*
 name|basename
 decl_stmt|;
 name|GFile
@@ -1367,13 +1363,10 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|filename
+name|file
 operator|=
-name|g_build_filename
+name|gimp_directory_file
 argument_list|(
-name|gimp_directory
-argument_list|()
-argument_list|,
 literal|"tool-options"
 argument_list|,
 name|basename
@@ -1384,18 +1377,6 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|basename
-argument_list|)
-expr_stmt|;
-name|file
-operator|=
-name|g_file_new_for_path
-argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|filename
 argument_list|)
 expr_stmt|;
 return|return
