@@ -152,7 +152,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f4ac440103
+DECL|enum|__anon278200c70103
 block|{
 DECL|enumerator|GIMP_PLUGIN_PDF_SAVE_ERROR_FAILED
 name|GIMP_PLUGIN_PDF_SAVE_ERROR_FAILED
@@ -174,7 +174,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f4ac440203
+DECL|enum|__anon278200c70203
 block|{
 DECL|enumerator|SA_RUN_MODE
 name|SA_RUN_MODE
@@ -219,7 +219,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f4ac440303
+DECL|enum|__anon278200c70303
 block|{
 DECL|enumerator|SMA_RUN_MODE
 name|SMA_RUN_MODE
@@ -256,7 +256,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f4ac440408
+DECL|struct|__anon278200c70408
 block|{
 DECL|member|vectorize
 name|gboolean
@@ -279,7 +279,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f4ac440508
+DECL|struct|__anon278200c70508
 block|{
 DECL|member|images
 name|gint32
@@ -308,7 +308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f4ac440608
+DECL|struct|__anon278200c70608
 block|{
 DECL|member|optimize
 name|PdfOptimize
@@ -327,7 +327,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f4ac440703
+DECL|enum|__anon278200c70703
 block|{
 DECL|enumerator|THUMB
 name|THUMB
@@ -347,7 +347,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f4ac440808
+DECL|struct|__anon278200c70808
 block|{
 DECL|member|thumb
 name|GdkPixbuf
@@ -1274,6 +1274,26 @@ argument_list|,
 literal|"wb"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|fp
+operator|==
+name|NULL
+condition|)
+block|{
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
+return|return;
+block|}
 name|pdf_file
 operator|=
 name|cairo_pdf_surface_create_for_stream
