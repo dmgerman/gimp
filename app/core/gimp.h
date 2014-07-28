@@ -539,13 +539,11 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|alternate_system_gimprc
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|alternate_gimprc
 parameter_list|)

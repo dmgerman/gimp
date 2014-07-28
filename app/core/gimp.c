@@ -333,7 +333,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3d77dd0103
+DECL|enum|__anon2b9354180103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -358,7 +358,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3d77dd0203
+DECL|enum|__anon2b9354180203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3836,20 +3836,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_load_config (Gimp * gimp,const gchar * alternate_system_gimprc,const gchar * alternate_gimprc)
+DECL|function|gimp_load_config (Gimp * gimp,GFile * alternate_system_gimprc,GFile * alternate_gimprc)
 name|gimp_load_config
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|alternate_system_gimprc
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|alternate_gimprc
 parameter_list|)
@@ -3863,6 +3861,30 @@ argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|alternate_system_gimprc
+operator|==
+name|NULL
+operator|||
+name|G_IS_FILE
+argument_list|(
+name|alternate_system_gimprc
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|alternate_gimprc
+operator|==
+name|NULL
+operator|||
+name|G_IS_FILE
+argument_list|(
+name|alternate_gimprc
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -434,7 +434,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|app_run (const gchar * full_prog_name,const gchar ** filenames,const gchar * alternate_system_gimprc,const gchar * alternate_gimprc,const gchar * session_name,const gchar * batch_interpreter,const gchar ** batch_commands,gboolean as_new,gboolean no_interface,gboolean no_data,gboolean no_fonts,gboolean no_splash,gboolean be_verbose,gboolean use_shm,gboolean use_cpu_accel,gboolean console_messages,gboolean use_debug_handler,GimpStackTraceMode stack_trace_mode,GimpPDBCompatMode pdb_compat_mode)
+DECL|function|app_run (const gchar * full_prog_name,const gchar ** filenames,GFile * alternate_system_gimprc,GFile * alternate_gimprc,const gchar * session_name,const gchar * batch_interpreter,const gchar ** batch_commands,gboolean as_new,gboolean no_interface,gboolean no_data,gboolean no_fonts,gboolean no_splash,gboolean be_verbose,gboolean use_shm,gboolean use_cpu_accel,gboolean console_messages,gboolean use_debug_handler,GimpStackTraceMode stack_trace_mode,GimpPDBCompatMode pdb_compat_mode)
 name|app_run
 parameter_list|(
 specifier|const
@@ -448,13 +448,11 @@ modifier|*
 modifier|*
 name|filenames
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|alternate_system_gimprc
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|alternate_gimprc
 parameter_list|,
