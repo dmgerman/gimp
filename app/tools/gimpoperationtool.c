@@ -331,8 +331,7 @@ name|gchar
 modifier|*
 name|file_dialog_help_id
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|default_folder
 parameter_list|,
@@ -1285,7 +1284,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_operation_tool_get_settings_ui (GimpImageMapTool * image_map_tool,GimpContainer * settings,GFile * settings_file,const gchar * import_dialog_title,const gchar * export_dialog_title,const gchar * file_dialog_help_id,const gchar * default_folder,GtkWidget ** settings_box)
+DECL|function|gimp_operation_tool_get_settings_ui (GimpImageMapTool * image_map_tool,GimpContainer * settings,GFile * settings_file,const gchar * import_dialog_title,const gchar * export_dialog_title,const gchar * file_dialog_help_id,GFile * default_folder,GtkWidget ** settings_box)
 name|gimp_operation_tool_get_settings_ui
 parameter_list|(
 name|GimpImageMapTool
@@ -1315,8 +1314,7 @@ name|gchar
 modifier|*
 name|file_dialog_help_id
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|default_folder
 parameter_list|,
@@ -1477,9 +1475,9 @@ name|export_title
 argument_list|,
 literal|"help-foo"
 argument_list|,
-name|g_get_home_dir
-argument_list|()
+name|NULL
 argument_list|,
+comment|/* sic */
 name|settings_box
 argument_list|)
 expr_stmt|;

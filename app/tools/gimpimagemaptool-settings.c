@@ -168,7 +168,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_image_map_tool_real_get_settings_ui (GimpImageMapTool * image_map_tool,GimpContainer * settings,GFile * settings_file,const gchar * import_dialog_title,const gchar * export_dialog_title,const gchar * file_dialog_help_id,const gchar * default_folder,GtkWidget ** settings_box)
+DECL|function|gimp_image_map_tool_real_get_settings_ui (GimpImageMapTool * image_map_tool,GimpContainer * settings,GFile * settings_file,const gchar * import_dialog_title,const gchar * export_dialog_title,const gchar * file_dialog_help_id,GFile * default_folder,GtkWidget ** settings_box)
 name|gimp_image_map_tool_real_get_settings_ui
 parameter_list|(
 name|GimpImageMapTool
@@ -198,8 +198,7 @@ name|gchar
 modifier|*
 name|file_dialog_help_id
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|default_folder
 parameter_list|,

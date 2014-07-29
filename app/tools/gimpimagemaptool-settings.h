@@ -48,8 +48,7 @@ name|gchar
 modifier|*
 name|file_dialog_help_id
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|default_folder
 parameter_list|,

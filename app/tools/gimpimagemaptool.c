@@ -1539,7 +1539,7 @@ name|GtkWidget
 modifier|*
 name|settings_ui
 decl_stmt|;
-name|gchar
+name|GFile
 modifier|*
 name|default_folder
 decl_stmt|;
@@ -1558,11 +1558,8 @@ argument_list|)
 expr_stmt|;
 name|default_folder
 operator|=
-name|g_build_filename
+name|gimp_directory_file
 argument_list|(
-name|gimp_directory
-argument_list|()
-argument_list|,
 name|klass
 operator|->
 name|settings_name
@@ -1604,7 +1601,7 @@ operator|->
 name|settings_box
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_object_unref
 argument_list|(
 name|default_folder
 argument_list|)
