@@ -682,14 +682,19 @@ expr_stmt|;
 comment|/*  Check if the user's gimp_directory exists    */
 if|if
 condition|(
-operator|!
-name|g_file_test
+name|g_file_query_file_type
 argument_list|(
-name|gimp_directory
-argument_list|()
-argument_list|,
-name|G_FILE_TEST_IS_DIR
+name|gimp_directory_file
+argument_list|(
+name|NULL
 argument_list|)
+argument_list|,
+name|G_FILE_QUERY_INFO_NONE
+argument_list|,
+name|NULL
+argument_list|)
+operator|!=
+name|G_FILE_TYPE_DIRECTORY
 condition|)
 block|{
 name|GimpUserInstall
