@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon288071220103
+DECL|enum|__anon287adf150103
 block|{
 DECL|enumerator|HISTORY_ITEM
 name|HISTORY_ITEM
@@ -92,7 +92,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288071220208
+DECL|struct|__anon287adf150208
 block|{
 DECL|member|action
 name|GtkAction
@@ -118,7 +118,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon288071220308
+DECL|struct|__anon287adf150308
 block|{
 DECL|member|items
 name|GList
@@ -274,6 +274,22 @@ argument_list|(
 name|GIMP_ACTION_HISTORY_FILENAME
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
+name|g_print
+argument_list|(
+literal|"Parsing '%s'\n"
+argument_list|,
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|scanner
@@ -669,6 +685,22 @@ argument_list|(
 name|GIMP_ACTION_HISTORY_FILENAME
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
+name|g_print
+argument_list|(
+literal|"Writing '%s'\n"
+argument_list|,
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|writer
