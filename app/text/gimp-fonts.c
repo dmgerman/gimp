@@ -80,7 +80,7 @@ name|FcConfig
 modifier|*
 name|config
 parameter_list|,
-name|gchar
+name|GFile
 modifier|*
 name|fonts_conf
 parameter_list|)
@@ -177,7 +177,7 @@ name|FcConfig
 modifier|*
 name|config
 decl_stmt|;
-name|gchar
+name|GFile
 modifier|*
 name|fonts_conf
 decl_stmt|;
@@ -246,9 +246,11 @@ name|cleanup
 goto|;
 name|fonts_conf
 operator|=
-name|gimp_personal_rc_file
+name|gimp_directory_file
 argument_list|(
 name|CONF_FNAME
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -266,11 +268,8 @@ name|cleanup
 goto|;
 name|fonts_conf
 operator|=
-name|g_build_filename
+name|gimp_sysconf_directory_file
 argument_list|(
-name|gimp_sysconf_directory
-argument_list|()
-argument_list|,
 name|CONF_FNAME
 argument_list|,
 name|NULL
@@ -407,18 +406,27 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_fonts_load_fonts_conf (FcConfig * config,gchar * fonts_conf)
+DECL|function|gimp_fonts_load_fonts_conf (FcConfig * config,GFile * fonts_conf)
 name|gimp_fonts_load_fonts_conf
 parameter_list|(
 name|FcConfig
 modifier|*
 name|config
 parameter_list|,
-name|gchar
+name|GFile
 modifier|*
 name|fonts_conf
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|path
+init|=
+name|g_file_get_path
+argument_list|(
+name|fonts_conf
+argument_list|)
+decl_stmt|;
 name|gboolean
 name|ret
 init|=
@@ -436,7 +444,7 @@ specifier|const
 name|guchar
 operator|*
 operator|)
-name|fonts_conf
+name|path
 argument_list|,
 name|FcFalse
 argument_list|)
@@ -453,6 +461,11 @@ name|FALSE
 expr_stmt|;
 block|}
 name|g_free
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
+name|g_object_unref
 argument_list|(
 name|fonts_conf
 argument_list|)
