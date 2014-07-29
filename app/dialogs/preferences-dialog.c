@@ -539,14 +539,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|prefs_search_empty_callback
+name|prefs_search_clear_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gpointer
-name|user_data
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2618,19 +2619,22 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|prefs_search_empty_callback (GtkWidget * widget,gpointer user_data)
-name|prefs_search_empty_callback
+DECL|function|prefs_search_clear_callback (GtkWidget * widget,Gimp * gimp)
+name|prefs_search_clear_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gpointer
-name|user_data
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
-name|gimp_action_history_empty
-argument_list|()
+name|gimp_action_history_clear
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -7139,10 +7143,10 @@ literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|prefs_search_empty_callback
+name|prefs_search_clear_callback
 argument_list|)
 argument_list|,
-name|NULL
+name|gimp
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -8742,7 +8746,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon296d1eea0108
+DECL|struct|__anon2a3abc840108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10003,7 +10007,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon296d1eea0208
+DECL|struct|__anon2a3abc840208
 block|{
 DECL|member|label
 specifier|const
@@ -11230,7 +11234,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon296d1eea0308
+DECL|struct|__anon2a3abc840308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11385,7 +11389,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon296d1eea0408
+DECL|struct|__anon2a3abc840408
 block|{
 DECL|member|tree_label
 specifier|const

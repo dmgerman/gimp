@@ -2042,7 +2042,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_action_history_init
 argument_list|(
-name|gui_config
+name|gimp
 argument_list|)
 expr_stmt|;
 ifdef|#
@@ -2693,12 +2693,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_action_history_exit
 argument_list|(
-name|GIMP_GUI_CONFIG
-argument_list|(
 name|gimp
-operator|->
-name|config
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_unref
