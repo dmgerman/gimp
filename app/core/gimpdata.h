@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c986f80103
+DECL|enum|__anon29312f180103
 block|{
 DECL|enumerator|GIMP_DATA_ERROR_OPEN
 name|GIMP_DATA_ERROR_OPEN
@@ -385,8 +385,7 @@ name|GimpData
 modifier|*
 name|data
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|top_directory
 parameter_list|)

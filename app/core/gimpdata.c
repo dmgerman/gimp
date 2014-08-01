@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289a6b050103
+DECL|enum|__anon2c5cb3490103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon289a6b050203
+DECL|enum|__anon2c5cb3490203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3276,20 +3276,19 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/**  * gimp_data_set_folder_tags:  * @data:          a #Gimpdata object.  * @top_directory: the top directory of the currently processed data  *                 hierarchy, or %NULL if that top directory is  *                 currently processed itself  *  * Sets tags based on all folder names below top_directory. So if the  * data's filename is /home/foo/.gimp/brushes/Flowers/Roses/rose.gbr,  * it will add "Flowers" and "Roses" tags.  *  * if the top directory (as passed, or as derived from the data's  * filename) does not end with one of the default data directory names  * (brushes, patterns etc), its name will be added as tag too.  **/
+comment|/**  * gimp_data_set_folder_tags:  * @data:          a #Gimpdata object.  * @top_directory: the top directory of the currently processed data  *                 hierarchy.  *  * Sets tags based on all folder names below top_directory. So if the  * data's filename is e.g.  * /home/foo/.config/GIMP/X.Y/brushes/Flowers/Roses/rose.gbr, it will  * add "Flowers" and "Roses" tags.  *  * if the top directory (as passed, or as derived from the data's  * filename) does not end with one of the default data directory names  * (brushes, patterns etc), its name will be added as tag too.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_data_set_folder_tags (GimpData * data,const gchar * top_directory)
+DECL|function|gimp_data_set_folder_tags (GimpData * data,GFile * top_directory)
 name|gimp_data_set_folder_tags
 parameter_list|(
 name|GimpData
 modifier|*
 name|data
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|top_directory
 parameter_list|)
@@ -3300,17 +3299,29 @@ name|private
 decl_stmt|;
 name|gchar
 modifier|*
-name|path
+name|tmp
 decl_stmt|;
 name|gchar
 modifier|*
 name|dirname
+decl_stmt|;
+name|gchar
+modifier|*
+name|top_path
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DATA
 argument_list|(
 name|data
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|G_IS_FILE
+argument_list|(
+name|top_directory
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3337,7 +3348,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|path
+name|tmp
 operator|=
 name|g_file_get_path
 argument_list|(
@@ -3350,56 +3361,41 @@ name|dirname
 operator|=
 name|g_path_get_dirname
 argument_list|(
-name|path
+name|tmp
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|path
+name|tmp
 argument_list|)
 expr_stmt|;
-comment|/*  if this data is in a subfolder, walk up the hierarchy and    *  set each folder on the way as tag, except the top_directory    */
-if|if
-condition|(
-name|top_directory
-condition|)
-block|{
-name|size_t
-name|top_directory_len
-init|=
-name|strlen
+name|top_path
+operator|=
+name|g_file_get_path
 argument_list|(
 name|top_directory
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|g_str_has_prefix
 argument_list|(
 name|dirname
 argument_list|,
-name|top_directory
+name|top_path
 argument_list|)
-operator|&&
-operator|(
-name|dirname
-index|[
-name|top_directory_len
-index|]
-operator|==
-literal|'\0'
-operator|||
-name|G_IS_DIR_SEPARATOR
-argument_list|(
-name|dirname
-index|[
-name|top_directory_len
-index|]
-argument_list|)
-operator|)
 argument_list|)
 expr_stmt|;
-do|do
+comment|/*  walk up the hierarchy and set each folder on the way as tag,    *  except the top_directory    */
+while|while
+condition|(
+name|strcmp
+argument_list|(
+name|dirname
+argument_list|,
+name|top_path
+argument_list|)
+condition|)
 block|{
 name|gchar
 modifier|*
@@ -3418,10 +3414,6 @@ name|gimp_tag_new
 argument_list|(
 name|basename
 argument_list|)
-decl_stmt|;
-name|gchar
-modifier|*
-name|tmp
 decl_stmt|;
 name|gimp_tag_set_internal
 argument_list|(
@@ -3467,17 +3459,11 @@ operator|=
 name|tmp
 expr_stmt|;
 block|}
-do|while
-condition|(
-name|strcmp
+name|g_free
 argument_list|(
-name|dirname
-argument_list|,
-name|top_directory
+name|top_path
 argument_list|)
-condition|)
-do|;
-block|}
+expr_stmt|;
 if|if
 condition|(
 name|dirname
