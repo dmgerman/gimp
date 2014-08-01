@@ -30,7 +30,7 @@ argument_list|,
 specifier|const
 name|Babl
 operator|*
-name|fomat
+name|format
 argument_list|)
 name|G_GNUC_WARN_UNUSED_RESULT
 decl_stmt|;
