@@ -749,7 +749,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|g_strrstr
+name|g_str_has_suffix
 argument_list|(
 name|uri
 argument_list|,
@@ -765,7 +765,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|g_strrstr
+name|g_str_has_suffix
 argument_list|(
 name|uri
 argument_list|,
@@ -781,7 +781,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|g_strrstr
+name|g_str_has_suffix
 argument_list|(
 name|uri
 argument_list|,
