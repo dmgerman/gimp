@@ -3313,10 +3313,6 @@ name|data_list
 init|=
 name|NULL
 decl_stmt|;
-name|gchar
-modifier|*
-name|uri
-decl_stmt|;
 name|GInputStream
 modifier|*
 name|input
@@ -3330,13 +3326,6 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
-name|uri
-operator|=
-name|g_file_get_uri
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|i
@@ -3375,9 +3364,9 @@ name|loader
 operator|->
 name|extension
 operator|||
-name|gimp_datafiles_check_extension
+name|gimp_file_has_extension
 argument_list|(
-name|uri
+name|file
 argument_list|,
 name|loader
 operator|->
@@ -3390,11 +3379,6 @@ name|insert
 goto|;
 block|}
 block|}
-name|g_free
-argument_list|(
-name|uri
-argument_list|)
-expr_stmt|;
 return|return;
 name|insert
 label|:
@@ -3467,11 +3451,6 @@ argument_list|,
 name|list
 operator|->
 name|data
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|uri
 argument_list|)
 expr_stmt|;
 return|return;
@@ -3600,6 +3579,10 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
+name|gchar
+modifier|*
+name|uri
+decl_stmt|;
 name|gboolean
 name|obsolete
 decl_stmt|;
@@ -3613,6 +3596,13 @@ name|deletable
 init|=
 name|FALSE
 decl_stmt|;
+name|uri
+operator|=
+name|g_file_get_uri
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 name|obsolete
 operator|=
 operator|(
@@ -3625,6 +3615,11 @@ argument_list|)
 operator|!=
 literal|0
 operator|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|uri
+argument_list|)
 expr_stmt|;
 comment|/* obsolete files are immutable, don't check their writability */
 if|if
@@ -3760,11 +3755,6 @@ name|data_list
 argument_list|)
 expr_stmt|;
 block|}
-name|g_free
-argument_list|(
-name|uri
-argument_list|)
-expr_stmt|;
 comment|/*  not else { ... } because loader->load_func() can return a list    *  of data objects *and* an error message if loading failed after    *  something was already loaded    */
 if|if
 condition|(
