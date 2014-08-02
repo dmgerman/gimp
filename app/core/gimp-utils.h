@@ -478,6 +478,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gint
+name|gimp_file_compare
+parameter_list|(
+name|GFile
+modifier|*
+name|file1
+parameter_list|,
+name|GFile
+modifier|*
+name|file2
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_create_image_from_buffer
 parameter_list|(
