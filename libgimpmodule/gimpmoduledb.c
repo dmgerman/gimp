@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon299d79500103
+DECL|enum|__anon2c30d0db0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -68,9 +68,13 @@ block|}
 enum|;
 end_enum
 
-begin_comment
-comment|/*  #define DUMP_DB 1  */
-end_comment
+begin_define
+DECL|macro|DUMP_DB
+define|#
+directive|define
+name|DUMP_DB
+value|FALSE
+end_define
 
 begin_function_decl
 specifier|static
@@ -118,16 +122,10 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|DUMP_DB
-end_ifdef
-
 begin_function_decl
 specifier|static
 name|void
-name|gimp_module_db_dump_module
+name|gimp_module_db_module_dump_func
 parameter_list|(
 name|gpointer
 name|data
@@ -137,11 +135,6 @@ name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_function_decl
 specifier|static
@@ -843,22 +836,21 @@ argument_list|,
 name|db
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
+if|if
+condition|(
 name|DUMP_DB
+condition|)
 name|g_list_foreach
 argument_list|(
 name|db
 operator|->
 name|modules
 argument_list|,
-name|gimp_module_db_dump_module
+name|gimp_module_db_module_dump_func
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 block|}
 end_function
 
@@ -1143,17 +1135,11 @@ return|;
 block|}
 end_function
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|DUMP_DB
-end_ifdef
-
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_module_db_dump_module (gpointer data,gpointer user_data)
-name|gimp_module_db_dump_module
+DECL|function|gimp_module_db_module_dump_func (gpointer data,gpointer user_data)
+name|gimp_module_db_module_dump_func
 parameter_list|(
 name|gpointer
 name|data
@@ -1216,7 +1202,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|i
+name|module
 operator|->
 name|info
 condition|)
@@ -1303,11 +1289,6 @@ expr_stmt|;
 block|}
 block|}
 end_function
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_function
 specifier|static
