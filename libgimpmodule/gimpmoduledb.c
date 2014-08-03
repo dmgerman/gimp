@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4439050103
+DECL|enum|__anon29f815580103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -809,7 +809,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_db_load:  * @db:          A #GimpModuleDB.  * @module_path: A #G_SEARCHPATH_SEPARATOR delimited list of directories  *               to load modules from.  *  * Scans the directories contained in @module_path using  * gimp_datafiles_read_directories() and creates a #GimpModule  * instance for every loadable module contained in the directories.  **/
+comment|/**  * gimp_module_db_load:  * @db:          A #GimpModuleDB.  * @module_path: A #G_SEARCHPATH_SEPARATOR delimited list of directories  *               to load modules from.  *  * Scans the directories contained in @module_path and creates a  * #GimpModule instance for every loadable module contained in the  * directories.  **/
 end_comment
 
 begin_function
