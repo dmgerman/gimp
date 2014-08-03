@@ -289,7 +289,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b572de60108
+DECL|struct|__anon2afd8d2d0108
 block|{
 DECL|member|name
 specifier|const
@@ -737,11 +737,10 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|tinyscheme_init (const gchar * path,gboolean register_scripts)
+DECL|function|tinyscheme_init (GList * path,gboolean register_scripts)
 name|tinyscheme_init
 parameter_list|(
-specifier|const
-name|gchar
+name|GList
 modifier|*
 name|path
 parameter_list|,
@@ -825,28 +824,13 @@ condition|)
 block|{
 name|GList
 modifier|*
-name|dir_list
-init|=
-name|gimp_path_parse
-argument_list|(
-name|path
-argument_list|,
-literal|256
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
-argument_list|)
-decl_stmt|;
-name|GList
-modifier|*
 name|list
 decl_stmt|;
 for|for
 control|(
 name|list
 operator|=
-name|dir_list
+name|path
 init|;
 name|list
 condition|;
@@ -858,13 +842,22 @@ name|list
 argument_list|)
 control|)
 block|{
-if|if
-condition|(
-name|ts_load_file
+name|gchar
+modifier|*
+name|dir
+init|=
+name|g_file_get_path
 argument_list|(
 name|list
 operator|->
 name|data
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|ts_load_file
+argument_list|(
+name|dir
 argument_list|,
 literal|"script-fu.init"
 argument_list|)
@@ -873,9 +866,7 @@ block|{
 comment|/*  To improve compatibility with older Script-Fu scripts,                *  load script-fu-compat.init from the same directory.                */
 name|ts_load_file
 argument_list|(
-name|list
-operator|->
-name|data
+name|dir
 argument_list|,
 literal|"script-fu-compat.init"
 argument_list|)
@@ -883,15 +874,23 @@ expr_stmt|;
 comment|/*  To improve compatibility with older GIMP version,                *  load plug-in-compat.init from the same directory.                */
 name|ts_load_file
 argument_list|(
-name|list
-operator|->
-name|data
+name|dir
 argument_list|,
 literal|"plug-in-compat.init"
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|dir
+argument_list|)
+expr_stmt|;
 break|break;
 block|}
+name|g_free
+argument_list|(
+name|dir
+argument_list|)
+expr_stmt|;
 block|}
 if|if
 condition|(
@@ -902,11 +901,6 @@ condition|)
 name|g_printerr
 argument_list|(
 literal|"Unable to read initialization file script-fu.init\n"
-argument_list|)
-expr_stmt|;
-name|gimp_path_free
-argument_list|(
-name|dir_list
 argument_list|)
 expr_stmt|;
 block|}

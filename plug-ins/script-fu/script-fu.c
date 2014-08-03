@@ -133,7 +133,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gchar
+name|GList
 modifier|*
 name|script_fu_search_path
 parameter_list|(
@@ -546,7 +546,7 @@ modifier|*
 name|return_vals
 parameter_list|)
 block|{
-name|gchar
+name|GList
 modifier|*
 name|path
 decl_stmt|;
@@ -622,9 +622,14 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_list_free_full
 argument_list|(
 name|path
+argument_list|,
+operator|(
+name|GDestroyNotify
+operator|)
+name|g_object_unref
 argument_list|)
 expr_stmt|;
 if|if
@@ -810,7 +815,7 @@ end_function
 
 begin_function
 specifier|static
-name|gchar
+name|GList
 modifier|*
 DECL|function|script_fu_search_path (void)
 name|script_fu_search_path
@@ -822,7 +827,7 @@ name|gchar
 modifier|*
 name|path_str
 decl_stmt|;
-name|gchar
+name|GList
 modifier|*
 name|path
 init|=
@@ -848,16 +853,9 @@ name|NULL
 decl_stmt|;
 name|path
 operator|=
-name|g_filename_from_utf8
+name|gimp_config_path_expand_to_files
 argument_list|(
 name|path_str
-argument_list|,
-operator|-
-literal|1
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 operator|&
 name|error
@@ -883,8 +881,9 @@ operator|->
 name|message
 argument_list|)
 expr_stmt|;
-name|g_error_free
+name|g_clear_error
 argument_list|(
+operator|&
 name|error
 argument_list|)
 expr_stmt|;
@@ -1154,7 +1153,7 @@ block|}
 else|else
 block|{
 comment|/*  Reload all of the available scripts  */
-name|gchar
+name|GList
 modifier|*
 name|path
 init|=
@@ -1166,9 +1165,14 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_list_free_full
 argument_list|(
 name|path
+argument_list|,
+operator|(
+name|GDestroyNotify
+operator|)
+name|g_object_unref
 argument_list|)
 expr_stmt|;
 name|status

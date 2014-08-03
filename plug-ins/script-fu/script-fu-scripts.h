@@ -20,8 +20,7 @@ begin_function_decl
 name|void
 name|script_fu_find_scripts
 parameter_list|(
-specifier|const
-name|gchar
+name|GList
 modifier|*
 name|path
 parameter_list|)

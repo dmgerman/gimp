@@ -26,8 +26,7 @@ begin_function_decl
 name|void
 name|tinyscheme_init
 parameter_list|(
-specifier|const
-name|gchar
+name|GList
 modifier|*
 name|path
 parameter_list|,
