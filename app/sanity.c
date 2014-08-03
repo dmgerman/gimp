@@ -1553,6 +1553,8 @@ literal|"gegl:deinterlace"
 block|,
 literal|"gegl:difference-of-gaussians"
 block|,
+literal|"gegl:distance-transform"
+block|,
 literal|"gegl:dropshadow"
 block|,
 literal|"gegl:edge-laplace"

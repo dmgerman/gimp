@@ -465,6 +465,28 @@ comment|/* FIXME GIMP_HELP_FILTER_DIFFERENCE_OF_GAUSSIANS */
 block|}
 block|,
 block|{
+literal|"filters-distance-map"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Distance Map..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:distance-transform"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_DISTANCE_MAP */
+block|}
+block|,
+block|{
 literal|"filters-dropshadow"
 block|,
 name|GIMP_STOCK_GEGL
@@ -1836,6 +1858,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-difference-of-gaussians"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-distance-map"
 argument_list|,
 name|writable
 argument_list|)
