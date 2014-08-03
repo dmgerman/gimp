@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2957136c0103
+DECL|enum|__anon2b4439050103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1147,6 +1147,18 @@ decl_stmt|;
 name|gboolean
 name|load_inhibit
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp_file_has_extension
+argument_list|(
+name|file
+argument_list|,
+literal|"."
+name|G_MODULE_SUFFIX
+argument_list|)
+condition|)
+return|return;
 name|path
 operator|=
 name|g_file_get_path
@@ -1154,25 +1166,6 @@ argument_list|(
 name|file
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|gimp_datafiles_check_extension
-argument_list|(
-name|path
-argument_list|,
-literal|"."
-name|G_MODULE_SUFFIX
-argument_list|)
-condition|)
-block|{
-name|g_free
-argument_list|(
-name|path
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
 comment|/* don't load if we already know about it */
 if|if
 condition|(

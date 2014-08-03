@@ -118,6 +118,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_file_has_extension
+parameter_list|(
+name|GFile
+modifier|*
+name|file
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|extension
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_decl_stmt
 name|gchar
 modifier|*
