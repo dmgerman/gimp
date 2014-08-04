@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd322df0103
+DECL|enum|__anon278007240103
 block|{
 comment|/* POINT_NONE evaluates to FALSE */
 DECL|enumerator|POINT_NONE
@@ -38,6 +38,9 @@ name|POINT_START
 block|,
 DECL|enumerator|POINT_END
 name|POINT_END
+block|,
+DECL|enumerator|POINT_INIT_MODE
+name|POINT_INIT_MODE
 block|,
 DECL|enumerator|POINT_FILL_MODE
 name|POINT_FILL_MODE
