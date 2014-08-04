@@ -97,6 +97,7 @@ struct|;
 end_struct
 
 begin_function_decl
+name|GIMP_DEPRECATED
 name|gboolean
 name|gimp_datafiles_check_extension
 parameter_list|(
@@ -112,6 +113,13 @@ name|extension
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|GFileEnumerator
+argument_list|)
+end_macro
 
 begin_function_decl
 name|void
