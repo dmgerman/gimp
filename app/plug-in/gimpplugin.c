@@ -1687,11 +1687,6 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|progname
-argument_list|)
-expr_stmt|;
 goto|goto
 name|cleanup
 goto|;
