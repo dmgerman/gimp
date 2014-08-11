@@ -362,6 +362,18 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+name|io
+operator|=
+name|g_io_channel_win32_new_fd
+argument_list|(
+name|fd
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|io
 operator|=
 name|g_io_channel_unix_new
@@ -369,6 +381,8 @@ argument_list|(
 name|fd
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|success
 operator|=
 name|gimp_xml_parser_parse_io_channel
