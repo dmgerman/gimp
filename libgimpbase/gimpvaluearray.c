@@ -738,7 +738,7 @@ name|value_array
 operator|->
 name|n_values
 condition|)
-name|g_memmove
+name|memmove
 argument_list|(
 name|value_array
 operator|->
@@ -902,7 +902,7 @@ name|value_array
 operator|->
 name|n_values
 condition|)
-name|g_memmove
+name|memmove
 argument_list|(
 name|value_array
 operator|->

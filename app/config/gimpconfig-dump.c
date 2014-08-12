@@ -677,7 +677,7 @@ decl_stmt|;
 name|guint
 name|i
 decl_stmt|;
-name|gimp_output_stream_printf
+name|g_output_stream_printf
 argument_list|(
 name|output
 argument_list|,
@@ -757,7 +757,7 @@ operator|&
 name|GIMP_CONFIG_PARAM_IGNORE
 condition|)
 continue|continue;
-name|gimp_output_stream_printf
+name|g_output_stream_printf
 argument_list|(
 name|output
 argument_list|,
@@ -782,7 +782,7 @@ name|writer
 argument_list|)
 condition|)
 block|{
-name|gimp_output_stream_printf
+name|g_output_stream_printf
 argument_list|(
 name|output
 argument_list|,
@@ -809,7 +809,7 @@ argument_list|,
 name|desc
 argument_list|)
 expr_stmt|;
-name|gimp_output_stream_printf
+name|g_output_stream_printf
 argument_list|(
 name|output
 argument_list|,
@@ -834,7 +834,7 @@ argument_list|(
 name|property_specs
 argument_list|)
 expr_stmt|;
-name|gimp_output_stream_printf
+name|g_output_stream_printf
 argument_list|(
 name|output
 argument_list|,
@@ -849,7 +849,7 @@ argument_list|,
 name|man_page_path
 argument_list|)
 expr_stmt|;
-name|gimp_output_stream_printf
+name|g_output_stream_printf
 argument_list|(
 name|output
 argument_list|,
@@ -1471,7 +1471,7 @@ name|text
 operator|==
 literal|'\''
 condition|)
-name|gimp_output_stream_printf
+name|g_output_stream_printf
 argument_list|(
 name|output
 argument_list|,
@@ -1570,7 +1570,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_output_stream_printf
+name|g_output_stream_printf
 argument_list|(
 name|output
 argument_list|,
@@ -1590,7 +1590,7 @@ name|t
 operator|==
 literal|'\n'
 condition|)
-name|gimp_output_stream_printf
+name|g_output_stream_printf
 argument_list|(
 name|output
 argument_list|,

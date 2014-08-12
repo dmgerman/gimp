@@ -1040,7 +1040,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2aeaf0740108
+DECL|struct|__anon27efc7c10108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1117,7 +1117,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon2aeaf0740208
+DECL|struct|__anon27efc7c10208
 specifier|static
 struct|struct
 block|{
@@ -1327,7 +1327,7 @@ name|i
 operator|++
 control|)
 block|{
-name|g_memmove
+name|memmove
 argument_list|(
 name|pcx_header_buf_xlate
 index|[
@@ -1399,7 +1399,7 @@ name|i
 operator|++
 control|)
 block|{
-name|g_memmove
+name|memmove
 argument_list|(
 name|buf
 operator|+

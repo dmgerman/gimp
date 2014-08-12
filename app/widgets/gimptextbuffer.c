@@ -5745,7 +5745,7 @@ operator|)
 operator|-
 name|leftover
 expr_stmt|;
-name|g_memmove
+name|memmove
 argument_list|(
 name|buf
 argument_list|,

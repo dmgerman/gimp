@@ -1112,7 +1112,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_output_stream_printf
+name|g_output_stream_printf
 argument_list|(
 name|output
 argument_list|,

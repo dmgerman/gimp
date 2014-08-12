@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5546190108
+DECL|struct|__anon2b7a23e50108
 block|{
 DECL|member|prefixed_name
 name|gchar
@@ -1307,7 +1307,7 @@ argument_list|)
 expr_stmt|;
 name|success
 operator|=
-name|gimp_output_stream_vprintf
+name|g_output_stream_vprintf
 argument_list|(
 name|stream
 argument_list|,
