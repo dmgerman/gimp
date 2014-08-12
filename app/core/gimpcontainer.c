@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-utils.h"
+file|"gimp-memsize.h"
 end_include
 
 begin_include
@@ -100,7 +100,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0684fe0103
+DECL|enum|__anon299da9e50103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -125,7 +125,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0684fe0203
+DECL|enum|__anon299da9e50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -142,7 +142,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0684fe0308
+DECL|struct|__anon299da9e50308
 block|{
 DECL|member|signame
 name|gchar
@@ -1286,7 +1286,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0684fe0408
+DECL|struct|__anon299da9e50408
 block|{
 DECL|member|writer
 name|GimpConfigWriter

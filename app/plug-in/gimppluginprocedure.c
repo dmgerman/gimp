@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp-utils.h"
+file|"core/gimp-memsize.h"
 end_include
 
 begin_include
@@ -114,7 +114,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1e16c10103
+DECL|enum|__anon2c76fcaa0103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED

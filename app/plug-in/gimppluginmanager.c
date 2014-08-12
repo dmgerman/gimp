@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp-utils.h"
+file|"core/gimp-memsize.h"
 end_include
 
 begin_include
@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c8369a0103
+DECL|enum|__anon29b4920d0103
 block|{
 DECL|enumerator|PLUG_IN_OPENED
 name|PLUG_IN_OPENED

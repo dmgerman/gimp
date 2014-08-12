@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-memsize.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpitem.h"
 end_include
 
@@ -49,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpitemundo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimp-utils.h"
 end_include
 
 begin_include
@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a06e6f30103
+DECL|enum|__anon2b04df3f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -72,6 +72,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-memsize.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpmarshal.h"
 end_include
 
@@ -84,18 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimptext.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbc90540103
+DECL|enum|__anon28d912a30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -181,7 +187,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbc90540203
+DECL|enum|__anon28d912a30203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED

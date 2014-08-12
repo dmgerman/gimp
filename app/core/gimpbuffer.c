@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-utils.h"
+file|"gimp-memsize.h"
 end_include
 
 begin_include

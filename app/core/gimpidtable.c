@@ -30,13 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpidtable.h"
+file|"gimp-memsize.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimp-utils.h"
+file|"gimpidtable.h"
 end_include
 
 begin_define

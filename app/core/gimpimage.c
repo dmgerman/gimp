@@ -96,13 +96,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-parasites.h"
+file|"gimp-memsize.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimp-utils.h"
+file|"gimp-parasites.h"
 end_include
 
 begin_include
@@ -360,7 +360,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon292c364e0103
+DECL|enum|__anon2b4539f50103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -457,7 +457,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon292c364e0203
+DECL|enum|__anon2b4539f50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

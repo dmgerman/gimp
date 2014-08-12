@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-utils.h"
+file|"gimp-memsize.h"
 end_include
 
 begin_include
@@ -163,7 +163,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb641330103
+DECL|enum|__anon292e68430103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -176,7 +176,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb641330203
+DECL|enum|__anon292e68430203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

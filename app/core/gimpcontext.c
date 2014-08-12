@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-utils.h"
+file|"gimp-memsize.h"
 end_include
 
 begin_include
@@ -1460,7 +1460,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b2568f0103
+DECL|enum|__anon296961f90103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1474,7 +1474,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b2568f0203
+DECL|enum|__anon296961f90203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0

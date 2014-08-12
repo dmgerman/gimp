@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp-utils.h"
+file|"core/gimp-memsize.h"
 end_include
 
 begin_include
@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c896a8e0103
+DECL|enum|__anon27719f790103
 block|{
 DECL|enumerator|REGISTER_PROCEDURE
 name|REGISTER_PROCEDURE
