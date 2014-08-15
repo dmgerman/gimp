@@ -114,7 +114,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c76fcaa0103
+DECL|enum|__anon2aead9c60103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -3469,33 +3469,26 @@ argument_list|,
 name|type_spec
 argument_list|)
 expr_stmt|;
+comment|/* skip to next token */
 while|while
 condition|(
 operator|*
 name|image_types
 operator|&&
-operator|(
-operator|(
 operator|*
 name|image_types
 operator|!=
 literal|' '
-operator|)
-operator|||
-operator|(
+operator|&&
 operator|*
 name|image_types
 operator|!=
 literal|'\t'
-operator|)
-operator|||
-operator|(
+operator|&&
 operator|*
 name|image_types
 operator|!=
 literal|','
-operator|)
-operator|)
 condition|)
 block|{
 name|image_types
