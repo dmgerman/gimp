@@ -207,7 +207,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d6b1660103
+DECL|enum|__anon2c94ef460103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -223,7 +223,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d6b1660203
+DECL|enum|__anon2c94ef460203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3252,6 +3252,26 @@ name|gint
 name|height
 parameter_list|)
 block|{
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|gboolean
+name|linear
+init|=
+name|gimp_drawable_get_linear
+argument_list|(
+name|drawable
+argument_list|)
+decl_stmt|;
 specifier|const
 name|Babl
 modifier|*
@@ -3259,8 +3279,10 @@ name|format
 decl_stmt|;
 name|format
 operator|=
-name|gimp_babl_format
+name|gimp_image_get_format
 argument_list|(
+name|image
+argument_list|,
 name|gimp_drawable_get_base_type
 argument_list|(
 name|drawable
@@ -3270,7 +3292,7 @@ name|gimp_babl_precision
 argument_list|(
 name|component_type
 argument_list|,
-name|FALSE
+name|linear
 argument_list|)
 argument_list|,
 name|gimp_drawable_has_alpha
