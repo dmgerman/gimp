@@ -199,7 +199,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c175bb80108
+DECL|struct|__anon2bebb1ac0108
 block|{
 DECL|member|func
 name|GimpMemsizeFunc
@@ -714,12 +714,12 @@ name|array
 condition|)
 name|memsize
 operator|+=
-operator|(
 sizeof|sizeof
 argument_list|(
 name|GimpArray
 argument_list|)
 operator|+
+operator|(
 name|array
 operator|->
 name|static_data

@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dd36f50108
+DECL|struct|__anon2afd982b0108
 block|{
 DECL|member|script
 name|SFScript
@@ -4130,7 +4130,7 @@ block|{
 comment|/*  for backward compatibility, we fiddle with some menu paths  */
 specifier|const
 struct|struct
-DECL|struct|__anon28dd36f50208
+DECL|struct|__anon2afd982b0208
 block|{
 DECL|member|old
 specifier|const
@@ -4252,10 +4252,9 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-operator|!
 operator|*
 name|suffix
-operator|==
+operator|!=
 literal|'/'
 condition|)
 continue|continue;
