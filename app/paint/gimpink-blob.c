@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb1de4c0103
+DECL|enum|__anon293d70d40103
 block|{
 DECL|enumerator|EDGE_NONE
 name|EDGE_NONE
@@ -614,9 +614,9 @@ name|xp
 operator|*
 name|yq
 operator|-
-name|yq
+name|xq
 operator|*
-name|xp
+name|yp
 operator|<
 literal|0
 condition|)
@@ -789,9 +789,9 @@ name|xp
 operator|*
 name|yq
 operator|-
-name|yq
+name|xq
 operator|*
-name|xp
+name|yp
 operator|<
 literal|0
 condition|)
@@ -1094,9 +1094,9 @@ name|xp
 operator|*
 name|yq
 operator|-
-name|yq
+name|xq
 operator|*
-name|xp
+name|yp
 operator|<
 literal|0
 condition|)
