@@ -137,7 +137,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2770894d0103
+DECL|enum|__anon2bf7dc5a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1459,7 +1459,7 @@ comment|/* This is a table of scripts and corresponding short sample strings    
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2770894d0208
+DECL|struct|__anon2bf7dc5a0208
 block|{
 DECL|member|script
 specifier|const
@@ -2037,11 +2037,6 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
-if|if
-condition|(
-name|slist
-condition|)
-block|{
 for|for
 control|(
 name|i
@@ -2100,6 +2095,7 @@ name|k
 operator|==
 name|n_ot_alts
 condition|)
+block|{
 for|for
 control|(
 name|j
@@ -2191,12 +2187,12 @@ directive|undef
 name|TAG
 block|}
 block|}
+block|}
 name|g_free
 argument_list|(
 name|slist
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|hb_face_destroy
 argument_list|(
