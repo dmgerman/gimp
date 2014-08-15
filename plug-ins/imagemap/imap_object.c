@@ -52,7 +52,7 @@ file|"imap_string.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2a8c7be40108
+DECL|struct|__anon287165700108
 typedef|typedef
 struct|struct
 block|{
@@ -2594,6 +2594,14 @@ name|GList
 modifier|*
 name|p
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|src
+condition|)
+return|return
+name|des
+return|;
 for|for
 control|(
 name|p
@@ -2630,13 +2638,7 @@ name|object_list_set_changed
 argument_list|(
 name|des
 argument_list|,
-operator|(
-name|src
-operator|)
-condition|?
 name|TRUE
-else|:
-name|FALSE
 argument_list|)
 expr_stmt|;
 return|return

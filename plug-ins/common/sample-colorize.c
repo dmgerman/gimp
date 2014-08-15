@@ -349,7 +349,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afc52c80108
+DECL|struct|__anon29fbda9e0108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -418,7 +418,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afc52c80208
+DECL|struct|__anon29fbda9e0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -526,7 +526,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afc52c80308
+DECL|struct|__anon29fbda9e0308
 block|{
 DECL|member|color
 name|guchar
@@ -555,7 +555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afc52c80408
+DECL|struct|__anon29fbda9e0408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -582,7 +582,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afc52c80508
+DECL|struct|__anon29fbda9e0508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -3907,11 +3907,16 @@ name|printf
 argument_list|(
 literal|"UPD PREVIEWS   ID:%d ENABLE_UPD:%d\n"
 argument_list|,
+name|id_ptr
+condition|?
 operator|(
 name|int
 operator|)
 operator|*
 name|id_ptr
+else|:
+operator|-
+literal|1
 argument_list|,
 operator|(
 name|int

@@ -8982,10 +8982,6 @@ name|disabled
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|pixels
-condition|)
 name|g_free
 argument_list|(
 name|pixels
