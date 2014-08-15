@@ -287,6 +287,34 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
+if|#
+directive|if
+name|defined
+argument_list|(
+name|G_OS_WIN32
+argument_list|)
+comment|/* g_test_init() sets warnings always fatal, which is a usually a good      testing default. Nevertheless the Windows platform may have a few      quirks generating warnings, yet we want to finish tests. So we      allow some relaxed rules on this platform. */
+name|GLogLevelFlags
+name|fatal_mask
+decl_stmt|;
+name|fatal_mask
+operator|=
+call|(
+name|GLogLevelFlags
+call|)
+argument_list|(
+name|G_LOG_FATAL_MASK
+operator||
+name|G_LOG_LEVEL_CRITICAL
+argument_list|)
+expr_stmt|;
+name|g_log_set_always_fatal
+argument_list|(
+name|fatal_mask
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 comment|/* from main() */
 name|gimp_log_init
 argument_list|()
