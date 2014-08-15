@@ -4502,7 +4502,7 @@ name|NULL
 expr_stmt|;
 if|if
 condition|(
-name|ret_segment_start
+name|ret_segment_end
 condition|)
 operator|*
 name|ret_segment_end

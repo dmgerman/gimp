@@ -391,7 +391,7 @@ name|item
 argument_list|)
 expr_stmt|;
 operator|*
-name|popup_width
+name|popup_height
 operator|=
 name|gimp_item_get_height
 argument_list|(

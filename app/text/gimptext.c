@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d912a30103
+DECL|enum|__anon2c3d712c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -187,7 +187,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d912a30203
+DECL|enum|__anon2c3d712c0203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -2295,7 +2295,7 @@ index|[
 literal|2
 index|]
 index|[
-literal|1
+literal|2
 index|]
 operator|=
 literal|1.0
