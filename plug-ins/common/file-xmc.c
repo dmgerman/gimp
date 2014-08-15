@@ -308,7 +308,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8bfffc0108
+DECL|struct|__anon2800e38d0108
 block|{
 DECL|member|crop
 name|gboolean
@@ -839,7 +839,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b8bfffc0208
+DECL|struct|__anon2800e38d0208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -3507,10 +3507,17 @@ argument_list|)
 comment|/* is this image is more preferred than selected before? */
 name|diff
 operator|=
-name|ABS
+name|MAX
 argument_list|(
 name|thumb_size
+argument_list|,
+name|size
+argument_list|)
 operator|-
+name|MIN
+argument_list|(
+name|thumb_size
+argument_list|,
 name|size
 argument_list|)
 expr_stmt|;
@@ -9126,7 +9133,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2b8bfffc0308
+DECL|struct|__anon2800e38d0308
 block|{
 DECL|member|size
 name|guint32

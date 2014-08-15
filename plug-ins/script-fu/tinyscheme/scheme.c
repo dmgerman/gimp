@@ -11240,8 +11240,20 @@ expr_stmt|;
 if|if
 condition|(
 name|c
-operator|>=
-literal|0
+operator|!=
+operator|(
+name|gunichar
+operator|)
+operator|-
+literal|1
+operator|&&
+name|c
+operator|!=
+operator|(
+name|gunichar
+operator|)
+operator|-
+literal|2
 condition|)
 comment|/* Valid UTF-8 character? */
 block|{
@@ -12292,7 +12304,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon27c123510103
+DECL|enum|__anon2bf515260103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -30720,7 +30732,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon27c123510208
+DECL|struct|__anon2bf515260208
 specifier|static
 struct|struct
 block|{
@@ -30955,7 +30967,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon27c123510308
+DECL|struct|__anon2bf515260308
 typedef|typedef
 struct|struct
 block|{
