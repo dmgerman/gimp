@@ -1025,7 +1025,7 @@ argument_list|)
 expr_stmt|;
 name|close
 argument_list|(
-name|rs
+name|fd
 argument_list|)
 expr_stmt|;
 name|gimp_quit
