@@ -3380,6 +3380,7 @@ name|border
 operator|=
 name|GEGL_ABYSS_CLAMP
 expr_stmt|;
+break|break;
 case|case
 literal|1
 case|:
@@ -3387,6 +3388,7 @@ name|border
 operator|=
 name|GEGL_ABYSS_LOOP
 expr_stmt|;
+break|break;
 case|case
 literal|2
 case|:
@@ -3394,6 +3396,7 @@ name|border
 operator|=
 name|GEGL_ABYSS_NONE
 expr_stmt|;
+break|break;
 block|}
 name|node
 operator|=
