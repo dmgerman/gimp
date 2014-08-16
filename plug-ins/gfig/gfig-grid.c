@@ -202,7 +202,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299aec980108
+DECL|struct|__anon2c74189f0108
 block|{
 DECL|member|product
 name|gint
@@ -1604,13 +1604,13 @@ literal|0.5
 operator|+
 name|preview_width
 operator|/
-literal|2
+literal|2.0
 argument_list|,
 literal|0.5
 operator|+
 name|preview_height
 operator|/
-literal|2
+literal|2.0
 argument_list|,
 name|outer_radius
 argument_list|,
@@ -1726,7 +1726,7 @@ operator|+
 operator|(
 name|preview_width
 operator|/
-literal|2
+literal|2.0
 operator|+
 name|inner_radius
 operator|*
@@ -1738,7 +1738,7 @@ operator|+
 operator|(
 name|preview_height
 operator|/
-literal|2
+literal|2.0
 operator|-
 name|inner_radius
 operator|*
@@ -1755,7 +1755,7 @@ operator|+
 operator|(
 name|preview_width
 operator|/
-literal|2
+literal|2.0
 operator|+
 name|outer_radius
 operator|*
@@ -1767,7 +1767,7 @@ operator|+
 operator|(
 name|preview_height
 operator|/
-literal|2
+literal|2.0
 operator|-
 name|outer_radius
 operator|*
