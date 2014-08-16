@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon287adf150103
+DECL|enum|__anon2913ee110103
 block|{
 DECL|enumerator|HISTORY_ITEM
 name|HISTORY_ITEM
@@ -92,7 +92,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287adf150208
+DECL|struct|__anon2913ee110208
 block|{
 DECL|member|action
 name|GtkAction
@@ -118,7 +118,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon287adf150308
+DECL|struct|__anon2913ee110308
 block|{
 DECL|member|items
 name|GList
@@ -226,6 +226,8 @@ name|token
 decl_stmt|;
 name|gint
 name|count
+init|=
+literal|0
 decl_stmt|;
 name|gint
 name|n_items
