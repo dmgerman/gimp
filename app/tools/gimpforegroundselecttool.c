@@ -3516,9 +3516,8 @@ name|options
 operator|->
 name|stroke_width
 operator|/
-literal|2
+literal|2.0f
 decl_stmt|;
-empty_stmt|;
 if|if
 condition|(
 name|fg_select
