@@ -12304,7 +12304,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2bf515260103
+DECL|enum|__anon2906b7d50103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -30732,7 +30732,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2bf515260208
+DECL|struct|__anon2906b7d50208
 specifier|static
 struct|struct
 block|{
@@ -30967,7 +30967,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2bf515260308
+DECL|struct|__anon2906b7d50308
 typedef|typedef
 struct|struct
 block|{
@@ -33548,6 +33548,22 @@ name|filename
 argument_list|,
 literal|0
 argument_list|)
+expr_stmt|;
+else|else
+name|sc
+operator|->
+name|load_stack
+index|[
+literal|0
+index|]
+operator|.
+name|rep
+operator|.
+name|stdio
+operator|.
+name|filename
+operator|=
+name|NULL
 expr_stmt|;
 endif|#
 directive|endif
