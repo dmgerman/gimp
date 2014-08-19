@@ -839,6 +839,9 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
 specifier|const
 name|gchar
 modifier|*
@@ -849,7 +852,7 @@ argument_list|(
 literal|"PATHEXT"
 argument_list|)
 decl_stmt|;
-comment|/*  If PATHEXT is set, we are likely on Windows and need to add    *  the known file extensions.    */
+comment|/*  On Windows, we need to add the known file extensions in PATHEXT. */
 if|if
 condition|(
 name|pathext
@@ -911,6 +914,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+endif|#
+directive|endif
+comment|/* G_OS_WIN32 */
 name|status_callback
 argument_list|(
 name|_
