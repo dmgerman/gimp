@@ -127,7 +127,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae1b6570108
+DECL|struct|__anon2c0809160108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -2991,6 +2991,43 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|unset_transient_for (GtkWidget * dialog)
+name|unset_transient_for
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|dialog
+parameter_list|)
+block|{
+name|GdkWindow
+modifier|*
+name|window
+init|=
+name|gtk_widget_get_window
+argument_list|(
+name|dialog
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|window
+condition|)
+name|gdk_property_delete
+argument_list|(
+name|window
+argument_list|,
+name|gdk_atom_intern_static_string
+argument_list|(
+literal|"WM_TRANSIENT_FOR"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
 DECL|function|script_fu_response (GtkWidget * widget,gint response_id,SFScript * script)
 name|script_fu_response
 parameter_list|(
@@ -3095,6 +3132,14 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
+comment|/*        * The script could have created a new GimpImageWindow, so        * unset the transient-for property not to focus the        * ImageWindow from which the script was started        */
+name|unset_transient_for
+argument_list|(
+name|sf_interface
+operator|->
+name|dialog
+argument_list|)
+expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|sf_interface
