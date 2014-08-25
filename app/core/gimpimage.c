@@ -360,7 +360,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4539f50103
+DECL|enum|__anon2ac2cbe90103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -457,7 +457,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4539f50203
+DECL|enum|__anon2ac2cbe90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -12219,7 +12219,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gint64
 DECL|function|gimp_image_get_dirty_time (const GimpImage * image)
 name|gimp_image_get_dirty_time
 parameter_list|(

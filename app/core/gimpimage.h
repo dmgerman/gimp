@@ -1723,7 +1723,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|gint64
 name|gimp_image_get_dirty_time
 parameter_list|(
 specifier|const

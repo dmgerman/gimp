@@ -257,7 +257,7 @@ specifier|static
 name|void
 name|gimp_time_since
 parameter_list|(
-name|guint
+name|gint64
 name|then
 parameter_list|,
 name|gint
@@ -1105,7 +1105,7 @@ argument_list|,
 literal|"gimp-image"
 argument_list|)
 decl_stmt|;
-name|gint
+name|gint64
 name|dirty_time
 init|=
 name|gimp_image_get_dirty_time
@@ -1495,10 +1495,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_time_since (guint then,gint * hours,gint * minutes)
+DECL|function|gimp_time_since (gint64 then,gint * hours,gint * minutes)
 name|gimp_time_since
 parameter_list|(
-name|guint
+name|gint64
 name|then
 parameter_list|,
 name|gint
@@ -1510,7 +1510,7 @@ modifier|*
 name|minutes
 parameter_list|)
 block|{
-name|guint
+name|gint64
 name|now
 init|=
 name|time
@@ -1518,7 +1518,7 @@ argument_list|(
 name|NULL
 argument_list|)
 decl_stmt|;
-name|guint
+name|gint64
 name|diff
 init|=
 literal|1

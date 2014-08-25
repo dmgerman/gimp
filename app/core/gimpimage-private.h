@@ -207,7 +207,7 @@ name|dirty
 decl_stmt|;
 comment|/*  dirty flag -- # of ops       */
 DECL|member|dirty_time
-name|guint
+name|gint64
 name|dirty_time
 decl_stmt|;
 comment|/*  time when image became dirty */
