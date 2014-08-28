@@ -267,14 +267,13 @@ begin_function
 specifier|static
 name|Gimp
 modifier|*
-DECL|function|gimp_init_for_gui_testing_internal (gboolean show_gui,const gchar * gimprc)
+DECL|function|gimp_init_for_gui_testing_internal (gboolean show_gui,GFile * gimprc)
 name|gimp_init_for_gui_testing_internal
 parameter_list|(
 name|gboolean
 name|show_gui
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|gimprc
 parameter_list|)
@@ -465,14 +464,13 @@ end_comment
 begin_function
 name|Gimp
 modifier|*
-DECL|function|gimp_init_for_gui_testing_with_rc (gboolean show_gui,const gchar * gimprc)
+DECL|function|gimp_init_for_gui_testing_with_rc (gboolean show_gui,GFile * gimprc)
 name|gimp_init_for_gui_testing_with_rc
 parameter_list|(
 name|gboolean
 name|show_gui
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|gimprc
 parameter_list|)

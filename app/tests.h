@@ -57,8 +57,7 @@ parameter_list|(
 name|gboolean
 name|show_gui
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|gimprc
 parameter_list|)
