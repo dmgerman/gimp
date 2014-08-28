@@ -3015,8 +3015,8 @@ directive|ifdef
 name|DEBUG
 name|printf
 argument_list|(
-literal|"\nSize: %u, Colors: %u, Bits: %u, Width: %u, Height: %u, "
-literal|"Comp: %u, Zeile: %u\n"
+literal|"\nSize: %lu, Colors: %lu, Bits: %hu, Width: %ld, Height: %ld, "
+literal|"Comp: %lu, Zeile: %d\n"
 argument_list|,
 name|Bitmap_File_Head
 operator|.
