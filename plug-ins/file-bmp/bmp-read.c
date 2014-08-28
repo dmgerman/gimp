@@ -3745,10 +3745,6 @@ name|temp
 operator|++
 operator|)
 operator|=
-call|(
-name|guchar
-call|)
-argument_list|(
 operator|(
 name|px32
 operator|&
@@ -3766,7 +3762,6 @@ literal|0
 index|]
 operator|.
 name|shiftin
-argument_list|)
 expr_stmt|;
 operator|*
 operator|(
@@ -3774,10 +3769,6 @@ name|temp
 operator|++
 operator|)
 operator|=
-call|(
-name|guchar
-call|)
-argument_list|(
 operator|(
 name|px32
 operator|&
@@ -3795,7 +3786,6 @@ literal|1
 index|]
 operator|.
 name|shiftin
-argument_list|)
 expr_stmt|;
 operator|*
 operator|(
@@ -3803,10 +3793,6 @@ name|temp
 operator|++
 operator|)
 operator|=
-call|(
-name|guchar
-call|)
-argument_list|(
 operator|(
 name|px32
 operator|&
@@ -3824,7 +3810,6 @@ literal|2
 index|]
 operator|.
 name|shiftin
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -3838,10 +3823,6 @@ name|temp
 operator|++
 operator|)
 operator|=
-call|(
-name|guchar
-call|)
-argument_list|(
 operator|(
 name|px32
 operator|&
@@ -3859,7 +3840,6 @@ literal|3
 index|]
 operator|.
 name|shiftin
-argument_list|)
 expr_stmt|;
 block|}
 if|if
@@ -4085,10 +4065,6 @@ name|temp
 operator|++
 operator|)
 operator|=
-call|(
-name|guchar
-call|)
-argument_list|(
 operator|(
 operator|(
 name|rgb
@@ -4119,7 +4095,6 @@ operator|.
 name|max_value
 operator|+
 literal|0.5
-argument_list|)
 expr_stmt|;
 operator|*
 operator|(
@@ -4127,10 +4102,6 @@ name|temp
 operator|++
 operator|)
 operator|=
-call|(
-name|guchar
-call|)
-argument_list|(
 operator|(
 operator|(
 name|rgb
@@ -4161,7 +4132,6 @@ operator|.
 name|max_value
 operator|+
 literal|0.5
-argument_list|)
 expr_stmt|;
 operator|*
 operator|(
@@ -4169,10 +4139,6 @@ name|temp
 operator|++
 operator|)
 operator|=
-call|(
-name|guchar
-call|)
-argument_list|(
 operator|(
 operator|(
 name|rgb
@@ -4203,7 +4169,6 @@ operator|.
 name|max_value
 operator|+
 literal|0.5
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -4217,10 +4182,6 @@ name|temp
 operator|++
 operator|)
 operator|=
-call|(
-name|guchar
-call|)
-argument_list|(
 operator|(
 operator|(
 name|rgb
@@ -4251,7 +4212,6 @@ operator|.
 name|max_value
 operator|+
 literal|0.5
-argument_list|)
 expr_stmt|;
 block|}
 if|if
@@ -4546,9 +4506,6 @@ break|break;
 block|}
 if|if
 condition|(
-operator|(
-name|guchar
-operator|)
 name|row_buf
 index|[
 literal|0
@@ -4571,9 +4528,6 @@ name|guchar
 operator|)
 name|j
 operator|<
-operator|(
-name|guchar
-operator|)
 name|row_buf
 index|[
 literal|0
@@ -4631,10 +4585,6 @@ name|guchar
 operator|)
 name|j
 operator|<
-operator|(
-name|unsigned
-name|char
-operator|)
 name|row_buf
 index|[
 literal|0
@@ -4732,9 +4682,6 @@ block|}
 if|if
 condition|(
 operator|(
-operator|(
-name|guchar
-operator|)
 name|row_buf
 index|[
 literal|0
@@ -4744,9 +4691,6 @@ literal|0
 operator|)
 operator|&&
 operator|(
-operator|(
-name|guchar
-operator|)
 name|row_buf
 index|[
 literal|1
@@ -4947,9 +4891,6 @@ block|}
 if|if
 condition|(
 operator|(
-operator|(
-name|guchar
-operator|)
 name|row_buf
 index|[
 literal|0
@@ -4959,9 +4900,6 @@ literal|0
 operator|)
 operator|&&
 operator|(
-operator|(
-name|guchar
-operator|)
 name|row_buf
 index|[
 literal|1
@@ -5009,9 +4947,6 @@ block|}
 if|if
 condition|(
 operator|(
-operator|(
-name|guchar
-operator|)
 name|row_buf
 index|[
 literal|0
@@ -5021,9 +4956,6 @@ literal|0
 operator|)
 operator|&&
 operator|(
-operator|(
-name|guchar
-operator|)
 name|row_buf
 index|[
 literal|1
@@ -5039,9 +4971,6 @@ block|}
 if|if
 condition|(
 operator|(
-operator|(
-name|guchar
-operator|)
 name|row_buf
 index|[
 literal|0
@@ -5051,9 +4980,6 @@ literal|0
 operator|)
 operator|&&
 operator|(
-operator|(
-name|guchar
-operator|)
 name|row_buf
 index|[
 literal|1
@@ -5089,9 +5015,6 @@ break|break;
 block|}
 name|xpos
 operator|+=
-operator|(
-name|guchar
-operator|)
 name|row_buf
 index|[
 literal|0
@@ -5099,9 +5022,6 @@ index|]
 expr_stmt|;
 name|ypos
 operator|-=
-operator|(
-name|guchar
-operator|)
 name|row_buf
 index|[
 literal|1
