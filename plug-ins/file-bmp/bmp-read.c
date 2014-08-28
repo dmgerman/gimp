@@ -1880,6 +1880,16 @@ operator|==
 name|BI_BITFIELDS
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|DEBUG
+name|g_print
+argument_list|(
+literal|"Got BI_BITFIELDS compression\n"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 operator|!
@@ -1995,6 +2005,16 @@ operator|==
 name|BI_RGB
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|DEBUG
+name|g_print
+argument_list|(
+literal|"Got BI_RGB compression\n"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 name|setMasksDefault
 argument_list|(
 name|Bitmap_Head
@@ -2050,6 +2070,16 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+ifdef|#
+directive|ifdef
+name|DEBUG
+name|g_print
+argument_list|(
+literal|"Got BI_RLE4 or BI_RLE8 compression\n"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 block|}
 elseif|else
 if|if
@@ -2600,6 +2630,16 @@ operator|==
 name|BI_BITFIELDS
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|DEBUG
+name|g_print
+argument_list|(
+literal|"Got BI_BITFIELDS compression\n"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 name|ReadChannelMasks
 argument_list|(
 operator|&
@@ -2626,6 +2666,16 @@ operator|==
 name|BI_RGB
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|DEBUG
+name|g_print
+argument_list|(
+literal|"Got BI_RGB compression\n"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 name|setMasksDefault
 argument_list|(
 name|Bitmap_Head
