@@ -3305,6 +3305,8 @@ name|node
 decl_stmt|;
 name|GeglAbyssPolicy
 name|border
+init|=
+name|GEGL_ABYSS_CLAMP
 decl_stmt|;
 name|gboolean
 name|r
