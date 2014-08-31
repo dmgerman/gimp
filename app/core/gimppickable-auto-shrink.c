@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29aa17d70103
+DECL|enum|__anon2b8917ed0103
 block|{
 DECL|enumerator|AUTO_SHRINK_NOTHING
 name|AUTO_SHRINK_NOTHING
@@ -171,7 +171,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-name|gboolean
+name|GimpAutoShrink
 DECL|function|gimp_pickable_auto_shrink (GimpPickable * pickable,gint start_x1,gint start_y1,gint start_x2,gint start_y2,gint * shrunk_x1,gint * shrunk_y1,gint * shrunk_x2,gint * shrunk_y2)
 name|gimp_pickable_auto_shrink
 parameter_list|(
@@ -266,10 +266,10 @@ name|y
 decl_stmt|,
 name|abort
 decl_stmt|;
-name|gboolean
+name|GimpAutoShrink
 name|retval
 init|=
-name|FALSE
+name|GIMP_AUTO_SHRINK_UNSHRINKABLE
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -570,9 +570,15 @@ operator|&&
 operator|!
 name|abort
 condition|)
+block|{
+name|retval
+operator|=
+name|GIMP_AUTO_SHRINK_EMPTY
+expr_stmt|;
 goto|goto
 name|FINISH
 goto|;
+block|}
 name|y1
 operator|=
 name|y
@@ -911,8 +917,6 @@ name|x
 operator|+
 literal|1
 expr_stmt|;
-name|FINISH
-label|:
 if|if
 condition|(
 name|x1
@@ -954,9 +958,11 @@ name|y2
 expr_stmt|;
 name|retval
 operator|=
-name|TRUE
+name|GIMP_AUTO_SHRINK_SHRINK
 expr_stmt|;
 block|}
+name|FINISH
+label|:
 name|g_free
 argument_list|(
 name|buf

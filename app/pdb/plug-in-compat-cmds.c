@@ -1792,7 +1792,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-if|if
+switch|switch
 condition|(
 name|gimp_pickable_auto_shrink
 argument_list|(
@@ -1834,6 +1834,10 @@ operator|&
 name|y2
 argument_list|)
 condition|)
+block|{
+case|case
+name|GIMP_AUTO_SHRINK_SHRINK
+case|:
 block|{
 name|gint
 name|off_x
@@ -1910,6 +1914,10 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+block|}
+break|break;
+default|default:
+break|break;
 block|}
 block|}
 else|else
@@ -2054,7 +2062,10 @@ decl_stmt|;
 if|if
 condition|(
 name|layer
-operator|&&
+condition|)
+block|{
+switch|switch
+condition|(
 name|gimp_pickable_auto_shrink
 argument_list|(
 name|GIMP_PICKABLE
@@ -2096,6 +2107,9 @@ name|y2
 argument_list|)
 condition|)
 block|{
+case|case
+name|GIMP_AUTO_SHRINK_SHRINK
+case|:
 name|gimp_image_undo_group_start
 argument_list|(
 name|image
@@ -2137,6 +2151,10 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+break|break;
+default|default:
+break|break;
+block|}
 block|}
 block|}
 else|else
