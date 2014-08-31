@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b120df0103
+DECL|enum|__anon278defb70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b120df0203
+DECL|enum|__anon278defb70203
 block|{
 DECL|enumerator|DASH_INFO_CHANGED
 name|DASH_INFO_CHANGED
@@ -2130,11 +2130,6 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|paint_options
 argument_list|)
 expr_stmt|;
 block|}
