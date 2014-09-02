@@ -510,7 +510,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_blend_tool_start
+name|gimp_blend_tool_start_preview
 parameter_list|(
 name|GimpBlendTool
 modifier|*
@@ -526,7 +526,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_blend_tool_halt
+name|gimp_blend_tool_halt_preview
 parameter_list|(
 name|GimpBlendTool
 modifier|*
@@ -1222,7 +1222,7 @@ break|break;
 case|case
 name|GIMP_TOOL_ACTION_HALT
 case|:
-name|gimp_blend_tool_halt
+name|gimp_blend_tool_halt_preview
 argument_list|(
 name|blend_tool
 argument_list|)
@@ -1390,7 +1390,7 @@ operator|->
 name|display
 argument_list|)
 expr_stmt|;
-name|gimp_blend_tool_halt
+name|gimp_blend_tool_halt_preview
 argument_list|(
 name|blend_tool
 argument_list|)
@@ -1493,21 +1493,6 @@ name|state
 operator|&
 name|gimp_get_constrain_behavior_mask
 argument_list|()
-argument_list|)
-expr_stmt|;
-comment|/*    * gimp_blend_tool_start comes after determining what point is grabbed, so    * whenever we're starting the tool, gimp_blend_tool_get_point_under_cursor()    * returns POINT_NONE    */
-if|if
-condition|(
-operator|!
-name|tool
-operator|->
-name|display
-condition|)
-name|gimp_blend_tool_start
-argument_list|(
-name|blend_tool
-argument_list|,
-name|display
 argument_list|)
 expr_stmt|;
 name|tool
@@ -1757,29 +1742,17 @@ operator|==
 name|POINT_INIT_MODE
 condition|)
 block|{
-name|GimpDrawTool
-modifier|*
-name|draw_tool
-init|=
-name|GIMP_DRAW_TOOL
-argument_list|(
-name|blend_tool
-argument_list|)
-decl_stmt|;
-name|gimp_draw_tool_pause
-argument_list|(
-name|draw_tool
-argument_list|)
-expr_stmt|;
 name|blend_tool
 operator|->
 name|grabbed_point
 operator|=
 name|POINT_END
 expr_stmt|;
-name|gimp_draw_tool_resume
+name|gimp_blend_tool_start_preview
 argument_list|(
-name|draw_tool
+name|blend_tool
+argument_list|,
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1863,15 +1836,6 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|GIMP_IS_CANVAS_LINE
-argument_list|(
-name|blend_tool
-operator|->
-name|line
-argument_list|)
-condition|)
 name|gimp_blend_tool_update_items
 argument_list|(
 name|blend_tool
@@ -2387,21 +2351,6 @@ argument_list|(
 name|draw_tool
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|blend_tool
-operator|->
-name|grabbed_point
-operator|!=
-name|POINT_FILL_MODE
-operator|&&
-name|blend_tool
-operator|->
-name|grabbed_point
-operator|!=
-name|POINT_INIT_MODE
-condition|)
-block|{
 name|blend_tool
 operator|->
 name|line
@@ -2542,7 +2491,6 @@ name|blend_tool
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 end_function
 
 begin_function
@@ -2565,18 +2513,6 @@ argument_list|(
 name|blend_tool
 argument_list|)
 argument_list|)
-operator|&&
-name|blend_tool
-operator|->
-name|grabbed_point
-operator|!=
-name|POINT_FILL_MODE
-operator|&&
-name|blend_tool
-operator|->
-name|grabbed_point
-operator|!=
-name|POINT_INIT_MODE
 condition|)
 block|{
 name|gimp_canvas_line_set
@@ -3001,8 +2937,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_blend_tool_start (GimpBlendTool * blend_tool,GimpDisplay * display)
-name|gimp_blend_tool_start
+DECL|function|gimp_blend_tool_start_preview (GimpBlendTool * blend_tool,GimpDisplay * display)
+name|gimp_blend_tool_start_preview
 parameter_list|(
 name|GimpBlendTool
 modifier|*
@@ -3137,8 +3073,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_blend_tool_halt (GimpBlendTool * blend_tool)
-name|gimp_blend_tool_halt
+DECL|function|gimp_blend_tool_halt_preview (GimpBlendTool * blend_tool)
+name|gimp_blend_tool_halt_preview
 parameter_list|(
 name|GimpBlendTool
 modifier|*
