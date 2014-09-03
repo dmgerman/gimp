@@ -906,7 +906,8 @@ literal|"%U  unit abbreviation\n"
 literal|"%x  the width of the active layer/channel in pixels\n"
 literal|"%X  the width of the active layer/channel in real-world units\n"
 literal|"%y  the height of the active layer/channel in pixels\n"
-literal|"%Y  the height of the active layer/channel in real-world units\n\n"
+literal|"%Y  the height of the active layer/channel in real-world units\n"
+literal|"%o  the name of the image's color profile\n\n"
 decl_stmt|;
 end_decl_stmt
 

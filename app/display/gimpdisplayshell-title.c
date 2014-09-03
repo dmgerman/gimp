@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<lcms2.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
@@ -31,6 +37,12 @@ begin_include
 include|#
 directive|include
 file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpcolor/gimpcolor.h"
 end_include
 
 begin_include
@@ -79,6 +91,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpimage-profile.h"
 end_include
 
 begin_include
@@ -1923,6 +1941,57 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+literal|'o'
+case|:
+comment|/* image's color profile name */
+block|{
+name|GimpColorProfile
+modifier|*
+name|profile
+init|=
+name|gimp_image_get_profile
+argument_list|(
+name|image
+argument_list|,
+name|NULL
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|profile
+condition|)
+name|profile
+operator|=
+name|gimp_lcms_create_srgb_profile
+argument_list|()
+expr_stmt|;
+name|i
+operator|+=
+name|print
+argument_list|(
+name|title
+argument_list|,
+name|title_len
+argument_list|,
+name|i
+argument_list|,
+literal|"%s"
+argument_list|,
+name|gimp_lcms_profile_get_label
+argument_list|(
+name|profile
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|cmsCloseProfile
+argument_list|(
+name|profile
+argument_list|)
+expr_stmt|;
+block|}
+break|break;
+case|case
 literal|'\xc3'
 case|:
 comment|/* utf-8 extended char */
@@ -1939,7 +2008,6 @@ block|{
 case|case
 literal|'\xbe'
 case|:
-block|{
 comment|/* line actually written at 23:55 on an Easter Sunday */
 name|i
 operator|+=
@@ -1954,7 +2022,6 @@ argument_list|,
 literal|"42"
 argument_list|)
 expr_stmt|;
-block|}
 break|break;
 default|default:
 comment|/* in the case of an unhandled utf-8 extended char format                      * leave the format string parsing as it was                     */
@@ -1965,7 +2032,7 @@ break|break;
 block|}
 block|}
 break|break;
-comment|/* Other cool things to be added:                * %r = xresolution                * %R = yresolution                * %ø = image's fractal dimension                * # %þ = the answer to everything - (implemented)                */
+comment|/* Other cool things to be added:                * %r = xresolution                * %R = yresolution                * %ø = image's fractal dimension                * %þ = the answer to everything - (implemented)                */
 default|default:
 comment|/* format string contains unknown %-sequence, print it literally */
 name|i
