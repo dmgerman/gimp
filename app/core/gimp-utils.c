@@ -1926,7 +1926,7 @@ argument_list|(
 name|context
 argument_list|)
 argument_list|,
-name|NULL
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -1935,7 +1935,7 @@ name|color
 operator|!=
 name|NULL
 argument_list|,
-name|NULL
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -1944,7 +1944,7 @@ name|pattern
 operator|!=
 name|NULL
 argument_list|,
-name|NULL
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -1958,7 +1958,7 @@ name|error
 operator|==
 name|NULL
 argument_list|,
-name|NULL
+name|FALSE
 argument_list|)
 expr_stmt|;
 operator|*
