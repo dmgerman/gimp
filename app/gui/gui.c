@@ -303,6 +303,10 @@ directive|ifdef
 name|GDK_WINDOWING_QUARTZ
 end_ifdef
 
+begin_empty
+empty|#import<AppKit/AppKit.h>
+end_empty
+
 begin_include
 include|#
 directive|include
@@ -2061,6 +2065,21 @@ name|GtkWidget
 modifier|*
 name|item
 decl_stmt|;
+index|[
+index|[
+name|NSUserDefaults
+name|standardUserDefaults
+index|]
+name|setObject
+operator|:
+expr|@
+literal|"NO"
+name|forKey
+operator|:
+expr|@
+literal|"NSTreatUnknownArgumentsAsOpen"
+expr|]
+expr_stmt|;
 name|osx_app
 operator|=
 name|gtkosx_application_get
