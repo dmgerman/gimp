@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278007240103
+DECL|enum|__anon2888328e0103
 block|{
 comment|/* POINT_NONE evaluates to FALSE */
 DECL|enumerator|POINT_NONE
@@ -190,31 +190,6 @@ name|gdouble
 name|mouse_y
 decl_stmt|;
 comment|/*  pointer y coord   */
-DECL|member|line
-name|GimpCanvasItem
-modifier|*
-name|line
-decl_stmt|;
-DECL|member|start_handle_circle
-name|GimpCanvasItem
-modifier|*
-name|start_handle_circle
-decl_stmt|;
-DECL|member|start_handle_cross
-name|GimpCanvasItem
-modifier|*
-name|start_handle_cross
-decl_stmt|;
-DECL|member|end_handle_circle
-name|GimpCanvasItem
-modifier|*
-name|end_handle_circle
-decl_stmt|;
-DECL|member|end_handle_cross
-name|GimpCanvasItem
-modifier|*
-name|end_handle_cross
-decl_stmt|;
 DECL|member|graph
 name|GeglNode
 modifier|*
