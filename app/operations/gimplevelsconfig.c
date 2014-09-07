@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c4e6b10103
+DECL|enum|__anon2b92612f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3665,9 +3665,6 @@ name|GString
 modifier|*
 name|string
 decl_stmt|;
-name|gsize
-name|bytes_written
-decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -3827,19 +3824,12 @@ name|string
 operator|->
 name|len
 argument_list|,
-operator|&
-name|bytes_written
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
 name|error
 argument_list|)
-operator|||
-name|bytes_written
-operator|!=
-name|string
-operator|->
-name|len
 condition|)
 block|{
 name|g_prefix_error

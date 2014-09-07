@@ -1862,9 +1862,6 @@ name|GString
 modifier|*
 name|string
 decl_stmt|;
-name|gsize
-name|bytes_written
-decl_stmt|;
 name|gint
 name|num
 init|=
@@ -2622,8 +2619,7 @@ name|string
 operator|->
 name|len
 argument_list|,
-operator|&
-name|bytes_written
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

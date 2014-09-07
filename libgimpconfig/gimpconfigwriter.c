@@ -197,9 +197,6 @@ modifier|*
 name|writer
 parameter_list|)
 block|{
-name|gsize
-name|bytes_written
-decl_stmt|;
 name|GError
 modifier|*
 name|error
@@ -235,8 +232,7 @@ name|buffer
 operator|->
 name|len
 argument_list|,
-operator|&
-name|bytes_written
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -1908,9 +1904,6 @@ operator|->
 name|comment
 condition|)
 block|{
-name|gsize
-name|bytes_written
-decl_stmt|;
 name|GError
 modifier|*
 name|error
@@ -1930,8 +1923,7 @@ literal|"\n"
 argument_list|,
 literal|1
 argument_list|,
-operator|&
-name|bytes_written
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
