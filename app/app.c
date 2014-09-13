@@ -434,7 +434,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|app_run (const gchar * full_prog_name,const gchar ** filenames,GFile * alternate_system_gimprc,GFile * alternate_gimprc,const gchar * session_name,const gchar * batch_interpreter,const gchar ** batch_commands,gboolean as_new,gboolean no_interface,gboolean no_data,gboolean no_fonts,gboolean no_splash,gboolean be_verbose,gboolean use_shm,gboolean use_cpu_accel,gboolean console_messages,gboolean use_debug_handler,GimpStackTraceMode stack_trace_mode,GimpPDBCompatMode pdb_compat_mode)
+DECL|function|app_run (const gchar * full_prog_name,const gchar ** filenames,GFile * alternate_system_gimprc,GFile * alternate_gimprc,const gchar * session_name,const gchar * batch_interpreter,const gchar ** batch_commands,gboolean as_new,gboolean no_interface,gboolean no_data,gboolean no_fonts,gboolean no_splash,gboolean be_verbose,gboolean use_shm,gboolean use_cpu_accel,gboolean console_messages,gboolean use_debug_handler,gboolean show_playground,GimpStackTraceMode stack_trace_mode,GimpPDBCompatMode pdb_compat_mode)
 name|app_run
 parameter_list|(
 specifier|const
@@ -501,6 +501,9 @@ name|console_messages
 parameter_list|,
 name|gboolean
 name|use_debug_handler
+parameter_list|,
+name|gboolean
+name|show_playground
 parameter_list|,
 name|GimpStackTraceMode
 name|stack_trace_mode
@@ -643,6 +646,8 @@ argument_list|,
 name|use_cpu_accel
 argument_list|,
 name|console_messages
+argument_list|,
+name|show_playground
 argument_list|,
 name|stack_trace_mode
 argument_list|,

@@ -155,6 +155,10 @@ DECL|member|console_messages
 name|gboolean
 name|console_messages
 decl_stmt|;
+DECL|member|show_playground
+name|gboolean
+name|show_playground
+decl_stmt|;
 DECL|member|stack_trace_mode
 name|GimpStackTraceMode
 name|stack_trace_mode
@@ -496,6 +500,9 @@ name|use_cpu_accel
 parameter_list|,
 name|gboolean
 name|console_messages
+parameter_list|,
+name|gboolean
+name|show_playground
 parameter_list|,
 name|GimpStackTraceMode
 name|stack_trace_mode

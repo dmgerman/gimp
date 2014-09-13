@@ -143,6 +143,9 @@ parameter_list|,
 name|gboolean
 name|use_debug_handler
 parameter_list|,
+name|gboolean
+name|show_playground
+parameter_list|,
 name|GimpStackTraceMode
 name|stack_trace_mode
 parameter_list|,

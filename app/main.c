@@ -698,6 +698,16 @@ name|GIMP_UNSTABLE
 end_ifdef
 
 begin_decl_stmt
+DECL|variable|show_playground
+specifier|static
+name|gboolean
+name|show_playground
+init|=
+name|TRUE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|stack_trace_mode
 specifier|static
 name|GimpStackTraceMode
@@ -721,6 +731,16 @@ begin_else
 else|#
 directive|else
 end_else
+
+begin_decl_stmt
+DECL|variable|show_playground
+specifier|static
+name|gboolean
+name|show_playground
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|stack_trace_mode
@@ -1250,6 +1270,26 @@ block|,
 name|N_
 argument_list|(
 literal|"Output a sorted list of deprecated procedures in the PDB"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"show-playground"
+block|,
+literal|0
+block|,
+name|G_OPTION_FLAG_HIDDEN
+block|,
+name|G_OPTION_ARG_NONE
+block|,
+operator|&
+name|show_playground
+block|,
+name|N_
+argument_list|(
+literal|"Show a preferences page with experimental features"
 argument_list|)
 block|,
 name|NULL
@@ -1975,6 +2015,8 @@ argument_list|,
 name|console_messages
 argument_list|,
 name|use_debug_handler
+argument_list|,
+name|show_playground
 argument_list|,
 name|stack_trace_mode
 argument_list|,
