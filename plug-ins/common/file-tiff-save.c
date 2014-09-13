@@ -28,77 +28,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<fcntl.h>
-end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_UNISTD_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<unistd.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|<glib/gstdio.h>
-end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<libgimpbase/gimpwin32-io.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|_O_BINARY
-end_ifndef
-
-begin_define
-DECL|macro|_O_BINARY
-define|#
-directive|define
-name|_O_BINARY
-value|0
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
 file|<tiffio.h>
 end_include
 
@@ -155,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc0b7740108
+DECL|struct|__anon2a42ce440108
 block|{
 DECL|member|compression
 name|gint
@@ -194,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc0b7740208
+DECL|struct|__anon2a42ce440208
 block|{
 DECL|member|ID
 name|gint32
@@ -530,16 +459,6 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|run_mode
-specifier|static
-name|GimpRunMode
-name|run_mode
-init|=
-name|GIMP_RUN_INTERACTIVE
-decl_stmt|;
-end_decl_stmt
-
 begin_macro
 DECL|function|MAIN ()
 name|MAIN
@@ -716,6 +635,9 @@ name|values
 index|[
 literal|2
 index|]
+decl_stmt|;
+name|GimpRunMode
+name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType
 name|status
@@ -2891,7 +2813,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* ** pnmtotiff.c - converts a portable anymap to a Tagged Image File ** ** Derived by Jef Poskanzer from ras2tif.c, which is: ** ** Copyright (c) 1990 by Sun Microsystems, Inc. ** ** Author: Patrick J. Naughton ** naughton@wind.sun.com ** ** This file is provided AS IS with no warranties of any kind.  The author ** shall have no liability with respect to the infringement of copyrights, ** trade secrets or any patents by this file or any part thereof.  In no ** event will the author be liable for any lost revenue or profits or ** other special, indirect and consequential damages. */
+comment|/*  * pnmtotiff.c - converts a portable anymap to a Tagged Image File  *  * Derived by Jef Poskanzer from ras2tif.c, which is:  *  * Copyright (c) 1990 by Sun Microsystems, Inc.  *  * Author: Patrick J. Naughton  * naughton@wind.sun.com  *  * This file is provided AS IS with no warranties of any kind.  The author  * shall have no liability with respect to the infringement of copyrights,  * trade secrets or any patents by this file or any part thereof.  In no  * event will the author be liable for any lost revenue or profits or  * other special, indirect and consequential damages.  */
 end_comment
 
 begin_function
@@ -3004,10 +2926,6 @@ name|sampleformat
 decl_stmt|;
 name|gint
 name|bytesperrow
-decl_stmt|;
-name|guchar
-modifier|*
-name|t
 decl_stmt|;
 name|guchar
 modifier|*
@@ -4532,8 +4450,10 @@ name|row
 operator|++
 control|)
 block|{
+name|guchar
+modifier|*
 name|t
-operator|=
+init|=
 name|src
 operator|+
 name|bytesperrow
@@ -4543,7 +4463,7 @@ name|row
 operator|-
 name|y
 operator|)
-expr_stmt|;
+decl_stmt|;
 switch|switch
 condition|(
 name|drawable_type
