@@ -28,77 +28,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<fcntl.h>
-end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_UNISTD_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<unistd.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|<glib/gstdio.h>
-end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<libgimpbase/gimpwin32-io.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|_O_BINARY
-end_ifndef
-
-begin_define
-DECL|macro|_O_BINARY
-define|#
-directive|define
-name|_O_BINARY
-value|0
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
 file|<tiffio.h>
 end_include
 
@@ -147,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a36c030108
+DECL|struct|__anon2af2d5a50108
 block|{
 DECL|member|compression
 name|gint
@@ -170,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a36c030208
+DECL|struct|__anon2af2d5a50208
 block|{
 DECL|member|ID
 name|gint32
@@ -197,16 +126,16 @@ name|guchar
 modifier|*
 name|pixel
 decl_stmt|;
-DECL|typedef|channel_data
+DECL|typedef|ChannelData
 block|}
-name|channel_data
+name|ChannelData
 typedef|;
 end_typedef
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a36c030308
+DECL|struct|__anon2af2d5a50308
 block|{
 DECL|member|o_pages
 name|gint
@@ -326,7 +255,7 @@ name|TIFF
 modifier|*
 name|tif
 parameter_list|,
-name|channel_data
+name|ChannelData
 modifier|*
 name|channel
 parameter_list|)
@@ -342,7 +271,7 @@ name|TIFF
 modifier|*
 name|tif
 parameter_list|,
-name|channel_data
+name|ChannelData
 modifier|*
 name|channel
 parameter_list|,
@@ -372,7 +301,7 @@ name|TIFF
 modifier|*
 name|tif
 parameter_list|,
-name|channel_data
+name|ChannelData
 modifier|*
 name|channel
 parameter_list|,
@@ -529,16 +458,6 @@ name|TRUE
 block|,
 comment|/*  alpha handling */
 block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|run_mode
-specifier|static
-name|GimpRunMode
-name|run_mode
-init|=
-name|GIMP_RUN_INTERACTIVE
 decl_stmt|;
 end_decl_stmt
 
@@ -709,6 +628,9 @@ index|[
 literal|2
 index|]
 decl_stmt|;
+name|GimpRunMode
+name|run_mode
+decl_stmt|;
 name|GimpPDBStatusType
 name|status
 init|=
@@ -813,7 +735,9 @@ decl_stmt|;
 name|TIFF
 modifier|*
 name|tif
-init|=
+decl_stmt|;
+name|tif
+operator|=
 name|tiff_open
 argument_list|(
 name|filename
@@ -823,7 +747,7 @@ argument_list|,
 operator|&
 name|error
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|tif
@@ -1074,7 +998,13 @@ block|{
 name|GFile
 modifier|*
 name|file
-init|=
+decl_stmt|;
+name|GimpMetadata
+modifier|*
+name|metadata
+decl_stmt|;
+name|file
+operator|=
 name|g_file_new_for_path
 argument_list|(
 name|param
@@ -1086,11 +1016,7 @@ name|data
 operator|.
 name|d_string
 argument_list|)
-decl_stmt|;
-name|GimpMetadata
-modifier|*
-name|metadata
-decl_stmt|;
+expr_stmt|;
 name|metadata
 operator|=
 name|gimp_image_metadata_load_prepare
@@ -2009,14 +1935,16 @@ name|gint
 name|image
 init|=
 literal|0
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|image_type
 init|=
 name|GIMP_RGB
 decl_stmt|;
 name|gint
 name|layer
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|layer_type
 init|=
 name|GIMP_RGB_IMAGE
@@ -2075,11 +2003,12 @@ literal|0
 decl_stmt|;
 name|gushort
 name|extra
-decl_stmt|,
+decl_stmt|;
+name|gushort
 modifier|*
 name|extra_types
 decl_stmt|;
-name|channel_data
+name|ChannelData
 modifier|*
 name|channel
 init|=
@@ -2124,22 +2053,9 @@ modifier|*
 name|images_list
 init|=
 name|NULL
-decl_stmt|,
-modifier|*
-name|images_list_temp
 decl_stmt|;
 name|gint
 name|li
-decl_stmt|;
-name|gboolean
-name|flip_horizontal
-init|=
-name|FALSE
-decl_stmt|;
-name|gboolean
-name|flip_vertical
-init|=
-name|FALSE
 decl_stmt|;
 ifdef|#
 directive|ifdef
@@ -3695,7 +3611,7 @@ if|#
 directive|if
 literal|0
 comment|/* Install colormap for INDEXED images only */
-block|if (image_type == GIMP_INDEXED)         {           guchar cmap[768];            if (is_bw)             {               if (photomet == PHOTOMETRIC_MINISWHITE)                 {                   cmap[0] = cmap[1] = cmap[2] = 255;                   cmap[3] = cmap[4] = cmap[5] = 0;                 }               else                 {                   cmap[0] = cmap[1] = cmap[2] = 0;                   cmap[3] = cmap[4] = cmap[5] = 255;                 }             }           else             {               gushort *redmap, *greenmap, *bluemap;                if (!TIFFGetField (tif, TIFFTAG_COLORMAP,&redmap,&greenmap,&bluemap))                 {                   g_message ("Could not get colormaps from '%s'",                              gimp_filename_to_utf8 (filename));                   return -1;                 }                for (i = 0, j = 0; i< (1<< bps); i++)                 {                   cmap[j++] = redmap[i]>> 8;                   cmap[j++] = greenmap[i]>> 8;                   cmap[j++] = bluemap[i]>> 8;                 }             }            gimp_image_set_colormap (image, cmap, (1<< bps));         }
+block|if (image_type == GIMP_INDEXED)         {           guchar cmap[768];            if (is_bw)             {               if (photomet == PHOTOMETRIC_MINISWHITE)                 {                   cmap[0] = cmap[1] = cmap[2] = 255;                   cmap[3] = cmap[4] = cmap[5] = 0;                 }               else                 {                   cmap[0] = cmap[1] = cmap[2] = 0;                   cmap[3] = cmap[4] = cmap[5] = 255;                 }             }           else             {               gushort *redmap, *greenmap, *bluemap;                if (! TIFFGetField (tif, TIFFTAG_COLORMAP,&redmap,&greenmap,&bluemap))                 {                   g_message ("Could not get colormaps from '%s'",                              gimp_filename_to_utf8 (filename));                   return -1;                 }                for (i = 0, j = 0; i< (1<< bps); i++)                 {                   cmap[j++] = redmap[i]>> 8;                   cmap[j++] = greenmap[i]>> 8;                   cmap[j++] = bluemap[i]>> 8;                 }             }            gimp_image_set_colormap (image, cmap, (1<< bps));         }
 endif|#
 directive|endif
 name|load_paths
@@ -3705,12 +3621,12 @@ argument_list|,
 name|image
 argument_list|)
 expr_stmt|;
-comment|/* Allocate channel_data for all channels, even the background layer */
+comment|/* Allocate ChannelData for all channels, even the background layer */
 name|channel
 operator|=
 name|g_new0
 argument_list|(
-name|channel_data
+name|ChannelData
 argument_list|,
 name|extra
 operator|+
@@ -4024,6 +3940,16 @@ name|orientation
 argument_list|)
 condition|)
 block|{
+name|gboolean
+name|flip_horizontal
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
+name|flip_vertical
+init|=
+name|FALSE
+decl_stmt|;
 switch|switch
 condition|(
 name|orientation
@@ -4032,14 +3958,6 @@ block|{
 case|case
 name|ORIENTATION_TOPLEFT
 case|:
-name|flip_horizontal
-operator|=
-name|FALSE
-expr_stmt|;
-name|flip_vertical
-operator|=
-name|FALSE
-expr_stmt|;
 break|break;
 case|case
 name|ORIENTATION_TOPRIGHT
@@ -4047,10 +3965,6 @@ case|:
 name|flip_horizontal
 operator|=
 name|TRUE
-expr_stmt|;
-name|flip_vertical
-operator|=
-name|FALSE
 expr_stmt|;
 break|break;
 case|case
@@ -4068,24 +3982,12 @@ break|break;
 case|case
 name|ORIENTATION_BOTLEFT
 case|:
-name|flip_horizontal
-operator|=
-name|FALSE
-expr_stmt|;
 name|flip_vertical
 operator|=
 name|TRUE
 expr_stmt|;
 break|break;
 default|default:
-name|flip_horizontal
-operator|=
-name|FALSE
-expr_stmt|;
-name|flip_vertical
-operator|=
-name|FALSE
-expr_stmt|;
 name|g_warning
 argument_list|(
 literal|"Orientation %d not handled yet!"
@@ -4324,10 +4226,12 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|GList
+modifier|*
 name|images_list_temp
-operator|=
+init|=
 name|images_list
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|images_list
@@ -4386,14 +4290,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_rgba (TIFF * tif,channel_data * channel)
+DECL|function|load_rgba (TIFF * tif,ChannelData * channel)
 name|load_rgba
 parameter_list|(
 name|TIFF
 modifier|*
 name|tif
 parameter_list|,
-name|channel_data
+name|ChannelData
 modifier|*
 name|channel
 parameter_list|)
@@ -4643,7 +4547,8 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|bytes
-decl_stmt|,
+decl_stmt|;
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
@@ -4782,7 +4687,7 @@ literal|1
 condition|)
 break|break;
 comment|/* block not big enough */
-comment|/*        * do we have the UTF-marker? is it valid UTF-8?        * if so, we assume an utf-8 encoded name, otherwise we        * assume iso8859-1        */
+comment|/* do we have the UTF-marker? is it valid UTF-8?        * if so, we assume an utf-8 encoded name, otherwise we        * assume iso8859-1        */
 name|name
 operator|=
 name|bytes
@@ -5357,14 +5262,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_contiguous (TIFF * tif,channel_data * channel,const Babl * type,gushort bps,gushort spp,gint extra)
+DECL|function|load_contiguous (TIFF * tif,ChannelData * channel,const Babl * type,gushort bps,gushort spp,gint extra)
 name|load_contiguous
 parameter_list|(
 name|TIFF
 modifier|*
 name|tif
 parameter_list|,
-name|channel_data
+name|ChannelData
 modifier|*
 name|channel
 parameter_list|,
@@ -5402,7 +5307,7 @@ name|rows
 decl_stmt|,
 name|cols
 decl_stmt|;
-name|int
+name|gint
 name|bytes_per_pixel
 decl_stmt|;
 name|GeglBuffer
@@ -5426,7 +5331,8 @@ name|gdouble
 name|progress
 init|=
 literal|0.0
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 name|one_row
 decl_stmt|;
 name|gint
@@ -5912,14 +5818,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_separate (TIFF * tif,channel_data * channel,const Babl * type,gushort bps,gushort spp,gint extra)
+DECL|function|load_separate (TIFF * tif,ChannelData * channel,const Babl * type,gushort bps,gushort spp,gint extra)
 name|load_separate
 parameter_list|(
 name|TIFF
 modifier|*
 name|tif
 parameter_list|,
-name|channel_data
+name|ChannelData
 modifier|*
 name|channel
 parameter_list|,
@@ -5938,26 +5844,22 @@ name|gint
 name|extra
 parameter_list|)
 block|{
-name|uint32
+name|guint32
 name|imageWidth
 decl_stmt|,
 name|imageLength
 decl_stmt|;
-name|uint32
+name|guint32
 name|tileWidth
 decl_stmt|,
 name|tileLength
 decl_stmt|;
-name|uint32
-name|x
-decl_stmt|,
-name|y
-decl_stmt|,
+name|guint32
 name|rows
 decl_stmt|,
 name|cols
 decl_stmt|;
-name|int
+name|gint
 name|bytes_per_pixel
 decl_stmt|;
 name|GeglBuffer
@@ -5981,7 +5883,8 @@ name|gdouble
 name|progress
 init|=
 literal|0.0
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 name|one_row
 decl_stmt|;
 name|gint
@@ -6222,6 +6125,11 @@ name|j
 operator|++
 control|)
 block|{
+name|guint32
+name|y
+decl_stmt|,
+name|x
+decl_stmt|;
 for|for
 control|(
 name|y
