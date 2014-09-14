@@ -339,7 +339,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a213efb0103
+DECL|enum|__anon296c4a660103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -364,7 +364,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a213efb0203
+DECL|enum|__anon296c4a660203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2603,6 +2603,7 @@ block|{
 name|gimp_pattern_load_pixbuf
 block|,
 name|NULL
+comment|/* fallback loader */
 block|,
 name|FALSE
 block|}
@@ -2630,15 +2631,6 @@ name|GIMP_GRADIENT_SVG_FILE_EXTENSION
 block|,
 name|FALSE
 block|}
-block|,
-block|{
-name|gimp_gradient_load
-block|,
-name|NULL
-comment|/* legacy loader */
-block|,
-name|TRUE
-block|}
 block|}
 decl_stmt|;
 specifier|static
@@ -2652,15 +2644,6 @@ block|{
 name|gimp_palette_load
 block|,
 name|GIMP_PALETTE_FILE_EXTENSION
-block|,
-name|TRUE
-block|}
-block|,
-block|{
-name|gimp_palette_load
-block|,
-name|NULL
-comment|/* legacy loader */
 block|,
 name|TRUE
 block|}
