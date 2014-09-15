@@ -7247,7 +7247,7 @@ break|break;
 case|case
 name|COMPRESS_ZLIB
 case|:
-name|g_error
+name|g_warning
 argument_list|(
 literal|"xcf: zlib compression unimplemented"
 argument_list|)
@@ -7260,9 +7260,20 @@ break|break;
 case|case
 name|COMPRESS_FRACTAL
 case|:
-name|g_error
+name|g_warning
 argument_list|(
 literal|"xcf: fractal compression unimplemented"
+argument_list|)
+expr_stmt|;
+name|fail
+operator|=
+name|TRUE
+expr_stmt|;
+break|break;
+default|default:
+name|g_warning
+argument_list|(
+literal|"xcf: unknown compression"
 argument_list|)
 expr_stmt|;
 name|fail
