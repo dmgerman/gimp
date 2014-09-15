@@ -254,7 +254,10 @@ name|xcf_load_image
 block|,
 comment|/* version 6 */
 name|xcf_load_image
+block|,
 comment|/* version 7 */
+name|xcf_load_image
+comment|/* version 8 */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1493,7 +1496,7 @@ name|info
 operator|.
 name|compression
 operator|=
-name|COMPRESS_RLE
+name|COMPRESS_ZLIB
 expr_stmt|;
 if|if
 condition|(
