@@ -38,8 +38,9 @@ name|gint
 modifier|*
 name|section
 parameter_list|,
-name|gboolean
-name|match_fuzzy
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_typedef
