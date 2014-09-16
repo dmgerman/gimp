@@ -6556,12 +6556,14 @@ break|break;
 case|case
 name|COMPRESS_FRACTAL
 case|:
-name|g_error
+name|g_warning
 argument_list|(
 literal|"xcf: fractal compression unimplemented"
 argument_list|)
 expr_stmt|;
-break|break;
+return|return
+name|FALSE
+return|;
 block|}
 comment|/* seek back to where we are to write out the next        *  tile offset and write it out.        */
 name|xcf_check_error
@@ -7680,7 +7682,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3ae72b0108
+DECL|struct|__anon2b3383ce0108
 block|{
 DECL|member|info
 name|XcfInfo

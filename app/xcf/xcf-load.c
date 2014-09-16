@@ -7308,9 +7308,10 @@ break|break;
 case|case
 name|COMPRESS_FRACTAL
 case|:
-name|g_warning
+name|g_printerr
 argument_list|(
-literal|"xcf: fractal compression unimplemented"
+literal|"xcf: fractal compression unimplemented. "
+literal|"Possibly corrupt XCF file."
 argument_list|)
 expr_stmt|;
 name|fail
@@ -7319,9 +7320,10 @@ name|TRUE
 expr_stmt|;
 break|break;
 default|default:
-name|g_warning
+name|g_printerr
 argument_list|(
-literal|"xcf: unknown compression"
+literal|"xcf: unknown compression. "
+literal|"Possibly corrupt XCF file."
 argument_list|)
 expr_stmt|;
 name|fail
@@ -8359,7 +8361,7 @@ operator|>
 name|MAX_XCF_PARASITE_DATA_LEN
 condition|)
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
 literal|"Maximum parasite data length (%ld bytes) exceeded. "
 literal|"Possibly corrupt XCF file."
@@ -8772,7 +8774,7 @@ operator|!=
 literal|1
 condition|)
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
 literal|"Unknown path type. Possibly corrupt XCF file"
 argument_list|)
