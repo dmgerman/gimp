@@ -66,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b970acb0103
+DECL|enum|__anon291cc6ed0103
 block|{
 DECL|enumerator|ISO_CODES_START
 name|ISO_CODES_START
@@ -88,7 +88,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b970acb0208
+DECL|struct|__anon291cc6ed0208
 block|{
 DECL|member|state
 name|IsoCodesParserState
@@ -1127,9 +1127,17 @@ operator|&
 name|parser
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
+if|#
+directive|if
+name|defined
+argument_list|(
 name|G_OS_WIN32
+argument_list|)
+operator|||
+name|defined
+argument_list|(
+name|PLATFORM_OSX
+argument_list|)
 name|file
 operator|=
 name|gimp_data_directory_file
