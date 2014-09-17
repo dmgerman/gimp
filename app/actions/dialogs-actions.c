@@ -1047,7 +1047,15 @@ name|defined
 argument_list|(
 name|G_OS_WIN32
 argument_list|)
-operator|||
+name|NC_
+argument_list|(
+literal|"dialogs-action"
+argument_list|,
+literal|"About GIMP"
+argument_list|)
+block|,
+elif|#
+directive|elif
 name|defined
 argument_list|(
 name|PLATFORM_OSX
@@ -1056,7 +1064,7 @@ name|NC_
 argument_list|(
 literal|"dialogs-action"
 argument_list|,
-literal|"About GIMP"
+literal|"About"
 argument_list|)
 block|,
 else|#
@@ -1071,7 +1079,6 @@ argument_list|)
 block|,
 endif|#
 directive|endif
-comment|/* G_OS_WIN32 */
 name|NULL
 block|,
 name|NC_
