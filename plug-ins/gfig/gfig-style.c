@@ -2268,6 +2268,9 @@ argument_list|(
 name|brush_name
 argument_list|)
 expr_stmt|;
+name|gimp_context_set_brush_default_size
+argument_list|()
+expr_stmt|;
 name|gfig_paint_callback
 argument_list|()
 expr_stmt|;
@@ -2660,6 +2663,9 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
+name|gimp_context_set_brush_default_size
+argument_list|()
+expr_stmt|;
 name|gimp_context_set_pattern
 argument_list|(
 name|style
@@ -2945,6 +2951,9 @@ name|style
 operator|->
 name|brush_name
 argument_list|)
+expr_stmt|;
+name|gimp_context_set_brush_default_size
+argument_list|()
 expr_stmt|;
 name|gimp_brush_select_button_set_brush
 argument_list|(
