@@ -357,10 +357,17 @@ index|[
 name|ALPHA
 index|]
 operator|=
+name|RINT
+argument_list|(
 name|src
 index|[
 name|ALPHA
 index|]
+operator|*
+name|levels
+argument_list|)
+operator|/
+name|levels
 expr_stmt|;
 name|src
 operator|+=
