@@ -942,7 +942,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b8b91490108
+DECL|struct|__anon2bf9cb920108
 block|{
 DECL|member|Width
 name|guint
@@ -986,7 +986,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b8b91490208
+DECL|struct|__anon2bf9cb920208
 block|{
 DECL|member|transparent
 name|gint
@@ -3145,6 +3145,8 @@ name|clear_code
 operator|+
 literal|2
 expr_stmt|;
+if|if
+condition|(
 name|GetCode
 argument_list|(
 name|fd
@@ -3153,7 +3155,15 @@ literal|0
 argument_list|,
 name|TRUE
 argument_list|)
-expr_stmt|;
+operator|<
+literal|0
+condition|)
+block|{
+return|return
+operator|-
+literal|1
+return|;
+block|}
 name|fresh
 operator|=
 name|TRUE
