@@ -942,7 +942,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2882dcd50108
+DECL|struct|__anon2aa1bd270108
 block|{
 DECL|member|Width
 name|guint
@@ -986,7 +986,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2882dcd50208
+DECL|struct|__anon2aa1bd270208
 block|{
 DECL|member|transparent
 name|gint
@@ -1158,6 +1158,10 @@ name|screenwidth
 parameter_list|,
 name|guint
 name|screenheight
+parameter_list|,
+name|gint32
+modifier|*
+name|image_ID
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1223,6 +1227,9 @@ name|image_ID
 init|=
 operator|-
 literal|1
+decl_stmt|;
+name|gboolean
+name|status
 decl_stmt|;
 name|gimp_progress_init_printf
 argument_list|(
@@ -1779,7 +1786,7 @@ name|image_ID
 return|;
 comment|/* will be -1 if failed on first image! */
 block|}
-name|image_ID
+name|status
 operator|=
 name|ReadImage
 argument_list|(
@@ -1870,12 +1877,15 @@ argument_list|,
 name|GifScreen
 operator|.
 name|Height
+argument_list|,
+operator|&
+name|image_ID
 argument_list|)
 expr_stmt|;
 block|}
 else|else
 block|{
-name|image_ID
+name|status
 operator|=
 name|ReadImage
 argument_list|(
@@ -1972,14 +1982,16 @@ argument_list|,
 name|GifScreen
 operator|.
 name|Height
+argument_list|,
+operator|&
+name|image_ID
 argument_list|)
 expr_stmt|;
 block|}
 if|if
 condition|(
-name|image_ID
-operator|<
-literal|0
+operator|!
+name|status
 condition|)
 block|{
 break|break;
@@ -3779,8 +3791,8 @@ end_function
 
 begin_function
 specifier|static
-name|gint32
-DECL|function|ReadImage (FILE * fd,const gchar * filename,gint len,gint height,CMap cmap,gint ncols,gint format,gint interlace,gint number,guint leftpos,guint toppos,guint screenwidth,guint screenheight)
+name|gboolean
+DECL|function|ReadImage (FILE * fd,const gchar * filename,gint len,gint height,CMap cmap,gint ncols,gint format,gint interlace,gint number,guint leftpos,guint toppos,guint screenwidth,guint screenheight,gint32 * image_ID)
 name|ReadImage
 parameter_list|(
 name|FILE
@@ -3824,15 +3836,12 @@ name|screenwidth
 parameter_list|,
 name|guint
 name|screenheight
+parameter_list|,
+name|gint32
+modifier|*
+name|image_ID
 parameter_list|)
 block|{
-specifier|static
-name|gint32
-name|image_ID
-init|=
-operator|-
-literal|1
-decl_stmt|;
 specifier|static
 name|gint
 name|frame_number
@@ -3916,9 +3925,14 @@ argument_list|(
 literal|"Bogus frame dimensions"
 argument_list|)
 expr_stmt|;
-return|return
+operator|*
+name|image_ID
+operator|=
 operator|-
 literal|1
+expr_stmt|;
+return|return
+name|FALSE
 return|;
 block|}
 comment|/*    **  Initialize the Compression routines    */
@@ -3941,9 +3955,14 @@ argument_list|(
 literal|"EOF / read error on image data"
 argument_list|)
 expr_stmt|;
-return|return
+operator|*
+name|image_ID
+operator|=
 operator|-
 literal|1
+expr_stmt|;
+return|return
+name|FALSE
 return|;
 block|}
 if|if
@@ -3965,9 +3984,14 @@ argument_list|(
 literal|"Error while reading"
 argument_list|)
 expr_stmt|;
-return|return
+operator|*
+name|image_ID
+operator|=
 operator|-
 literal|1
+expr_stmt|;
+return|return
+name|FALSE
 return|;
 block|}
 if|if
@@ -3998,6 +4022,7 @@ name|screenheight
 operator|=
 name|height
 expr_stmt|;
+operator|*
 name|image_ID
 operator|=
 name|gimp_image_new
@@ -4011,6 +4036,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_set_filename
 argument_list|(
+operator|*
 name|image_ID
 argument_list|,
 name|filename
@@ -4103,6 +4129,7 @@ expr_stmt|;
 block|}
 name|gimp_image_set_colormap
 argument_list|(
+operator|*
 name|image_ID
 argument_list|,
 name|gimp_cmap
@@ -4167,6 +4194,7 @@ name|layer_ID
 operator|=
 name|gimp_layer_new
 argument_list|(
+operator|*
 name|image_ID
 argument_list|,
 name|framename
@@ -4189,6 +4217,7 @@ name|layer_ID
 operator|=
 name|gimp_layer_new
 argument_list|(
+operator|*
 name|image_ID
 argument_list|,
 name|framename
@@ -4332,6 +4361,7 @@ endif|#
 directive|endif
 name|gimp_image_convert_rgb
 argument_list|(
+operator|*
 name|image_ID
 argument_list|)
 expr_stmt|;
@@ -4528,6 +4558,7 @@ name|layer_ID
 operator|=
 name|gimp_layer_new
 argument_list|(
+operator|*
 name|image_ID
 argument_list|,
 name|framename
@@ -4562,6 +4593,7 @@ operator|++
 expr_stmt|;
 name|gimp_image_insert_layer
 argument_list|(
+operator|*
 name|image_ID
 argument_list|,
 name|layer_ID
@@ -4630,9 +4662,14 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return
+operator|*
+name|image_ID
+operator|=
 operator|-
 literal|1
+expr_stmt|;
+return|return
+name|FALSE
 return|;
 block|}
 if|if
@@ -5121,30 +5158,11 @@ literal|0
 condition|)
 block|{
 return|return
-operator|-
-literal|1
+name|FALSE
 return|;
 block|}
 name|fini
 label|:
-if|if
-condition|(
-name|LZWReadByte
-argument_list|(
-name|fd
-argument_list|,
-name|FALSE
-argument_list|,
-name|c
-argument_list|)
-operator|>=
-literal|0
-condition|)
-name|g_print
-argument_list|(
-literal|"GIF: too much input data, ignoring extra...\n"
-argument_list|)
-expr_stmt|;
 name|buffer
 operator|=
 name|gimp_drawable_get_buffer
@@ -5191,8 +5209,31 @@ argument_list|(
 literal|1.0
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|LZWReadByte
+argument_list|(
+name|fd
+argument_list|,
+name|FALSE
+argument_list|,
+name|c
+argument_list|)
+operator|>=
+literal|0
+condition|)
+block|{
+name|g_print
+argument_list|(
+literal|"GIF: too much input data, ignoring extra...\n"
+argument_list|)
+expr_stmt|;
 return|return
-name|image_ID
+name|FALSE
+return|;
+block|}
+return|return
+name|TRUE
 return|;
 block|}
 end_function
