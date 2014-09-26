@@ -942,7 +942,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2aa1bd270108
+DECL|struct|__anon2b545f770108
 block|{
 DECL|member|Width
 name|guint
@@ -986,7 +986,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2aa1bd270208
+DECL|struct|__anon2b545f770208
 block|{
 DECL|member|transparent
 name|gint
@@ -1114,7 +1114,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint32
+name|gboolean
 name|ReadImage
 parameter_list|(
 name|FILE
