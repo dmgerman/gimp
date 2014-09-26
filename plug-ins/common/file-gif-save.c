@@ -115,7 +115,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a108780103
+DECL|enum|__anon2921a3640103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -128,7 +128,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a108780203
+DECL|enum|__anon2921a3640203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -145,7 +145,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a108780308
+DECL|struct|__anon2921a3640308
 block|{
 DECL|member|interlace
 name|gint
@@ -1015,17 +1015,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_warning
-argument_list|(
-literal|"Unhandled run_mode (%d)"
-argument_list|,
-name|run_mode
-argument_list|)
-expr_stmt|;
-name|status
-operator|=
-name|GIMP_PDB_CALLING_ERROR
-expr_stmt|;
+break|break;
 block|}
 block|}
 comment|/* Create an exportable image based on the export options */
@@ -1036,9 +1026,6 @@ condition|)
 block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
-case|:
-case|case
-name|GIMP_RUN_NONINTERACTIVE
 case|:
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
@@ -1110,10 +1097,7 @@ block|}
 block|}
 break|break;
 default|default:
-name|status
-operator|=
-name|GIMP_PDB_CALLING_ERROR
-expr_stmt|;
+break|break;
 block|}
 comment|/* Write the image to file */
 if|if
