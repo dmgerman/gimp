@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290c5f8d0103
+DECL|enum|__anon29bf1bde0103
 block|{
 DECL|enumerator|COLUMN_SCALE
 name|COLUMN_SCALE
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon290c5f8d0203
+DECL|enum|__anon29bf1bde0203
 block|{
 DECL|enumerator|ENTRY_ACTIVATED
 name|ENTRY_ACTIVATED
@@ -1408,7 +1408,25 @@ index|[
 literal|32
 index|]
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+comment|/*  use a normal space until pango's windows backend uses harfbuzz,    *  see bug #735505    */
+DECL|macro|PERCENT_SPACE
+define|#
+directive|define
+name|PERCENT_SPACE
+value|" "
+else|#
+directive|else
 comment|/*  use U+2009 THIN SPACE to separate the percent sign from the number */
+DECL|macro|PERCENT_SPACE
+define|#
+directive|define
+name|PERCENT_SPACE
+value|"\342\200\211"
+endif|#
+directive|endif
 if|if
 condition|(
 name|scale
@@ -1424,7 +1442,9 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|"%d\342\200\211%%"
+literal|"%d"
+name|PERCENT_SPACE
+literal|"%%"
 argument_list|,
 operator|(
 name|gint
@@ -1447,7 +1467,9 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|"%.3g\342\200\211%%"
+literal|"%.3g"
+name|PERCENT_SPACE
+literal|"%%"
 argument_list|,
 literal|100.0
 operator|*
