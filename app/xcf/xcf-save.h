@@ -17,22 +17,7 @@ name|__XCF_SAVE_H__
 end_define
 
 begin_function_decl
-name|void
-name|xcf_save_choose_format
-parameter_list|(
-name|XcfInfo
-modifier|*
-name|info
-parameter_list|,
-name|GimpImage
-modifier|*
-name|image
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gint
+name|gboolean
 name|xcf_save_image
 parameter_list|(
 name|XcfInfo
