@@ -66,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d4a12f0103
+DECL|enum|__anon2bde48d80103
 block|{
 DECL|enumerator|DOWNLOAD
 name|DOWNLOAD
@@ -82,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d4a12f0208
+DECL|struct|__anon2bde48d80208
 block|{
 DECL|member|progress
 name|GimpProgress
@@ -117,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d4a12f0308
+DECL|struct|__anon2bde48d80308
 block|{
 DECL|member|mode
 name|RemoteCopyMode
@@ -786,7 +786,7 @@ argument_list|(
 name|gimp
 argument_list|)
 argument_list|,
-name|NULL
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -796,7 +796,7 @@ argument_list|(
 name|file
 argument_list|)
 argument_list|,
-name|NULL
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -806,7 +806,7 @@ argument_list|(
 name|local_file
 argument_list|)
 argument_list|,
-name|NULL
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -820,7 +820,7 @@ argument_list|(
 name|progress
 argument_list|)
 argument_list|,
-name|NULL
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -834,7 +834,7 @@ name|error
 operator|==
 name|NULL
 argument_list|,
-name|NULL
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if

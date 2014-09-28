@@ -230,7 +230,7 @@ directive|endif
 end_endif
 
 begin_struct
-DECL|struct|__anon2c6d19fa0108
+DECL|struct|__anon2ba472650108
 specifier|static
 struct|struct
 block|{
@@ -1528,16 +1528,17 @@ argument_list|,
 name|cmd
 argument_list|)
 expr_stmt|;
+comment|/* system() declared with attribute warn_unused_result.    * Trick to get rid of the compilation warning without using the result.    */
 if|if
 condition|(
-operator|!
 name|dry_run
-condition|)
+operator|||
 name|system
 argument_list|(
 name|cmd
 argument_list|)
-expr_stmt|;
+condition|)
+empty_stmt|;
 block|}
 end_function
 
