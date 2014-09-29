@@ -2628,6 +2628,11 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|file_type
+operator|==
+name|G_FILE_TYPE_REGULAR
+operator|&&
+operator|(
 name|g_file_info_get_attribute_boolean
 argument_list|(
 name|info
@@ -2635,13 +2640,6 @@ argument_list|,
 name|G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE
 argument_list|)
 operator|||
-operator|(
-operator|(
-name|file_type
-operator|==
-name|G_FILE_TYPE_REGULAR
-operator|)
-operator|&&
 name|is_script
 argument_list|(
 name|filename
