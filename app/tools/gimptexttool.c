@@ -3040,7 +3040,14 @@ name|layer
 operator|->
 name|text
 condition|)
+block|{
+name|gimp_text_tool_editor_update_im_rect
+argument_list|(
+name|text_tool
+argument_list|)
+expr_stmt|;
 return|return;
+block|}
 name|gimp_text_tool_ensure_layout
 argument_list|(
 name|text_tool
@@ -3156,6 +3163,11 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_text_tool_editor_update_im_rect
+argument_list|(
+name|text_tool
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
