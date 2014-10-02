@@ -391,6 +391,12 @@ name|gint
 name|b
 decl_stmt|;
 name|gfloat
+name|out_tmp
+index|[
+literal|3
+index|]
+decl_stmt|;
+name|gfloat
 name|ratio
 init|=
 name|comp_alpha
@@ -440,7 +446,7 @@ operator|&
 name|out_rgb
 argument_list|)
 expr_stmt|;
-name|out
+name|out_tmp
 index|[
 literal|0
 index|]
@@ -449,7 +455,7 @@ name|out_rgb
 operator|.
 name|r
 expr_stmt|;
-name|out
+name|out_tmp
 index|[
 literal|1
 index|]
@@ -458,7 +464,7 @@ name|out_rgb
 operator|.
 name|g
 expr_stmt|;
-name|out
+name|out_tmp
 index|[
 literal|2
 index|]
@@ -486,7 +492,7 @@ index|[
 name|b
 index|]
 operator|=
-name|out
+name|out_tmp
 index|[
 name|b
 index|]
