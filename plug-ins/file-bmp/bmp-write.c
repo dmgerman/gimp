@@ -82,7 +82,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ffdf550103
+DECL|enum|__anon29b32b420103
 block|{
 DECL|enumerator|RGB_565
 name|RGB_565
@@ -110,7 +110,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28ffdf550208
+DECL|struct|__anon29b32b420208
 block|{
 DECL|member|rgb_format
 name|RGBMode
@@ -187,6 +187,12 @@ name|MapSize
 parameter_list|,
 name|RGBMode
 name|rgb_format
+parameter_list|,
+name|gint
+name|mask_info_size
+parameter_list|,
+name|gint
+name|color_space_size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1389,10 +1395,6 @@ operator|)
 operator|*
 literal|4
 expr_stmt|;
-name|color_space_size
-operator|=
-literal|0
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1403,6 +1405,11 @@ condition|)
 name|color_space_size
 operator|=
 literal|68
+expr_stmt|;
+else|else
+name|color_space_size
+operator|=
+literal|0
 expr_stmt|;
 name|Bitmap_File_Head
 operator|.
@@ -2347,6 +2354,10 @@ argument_list|,
 name|BMPSaveData
 operator|.
 name|rgb_format
+argument_list|,
+name|mask_info_size
+argument_list|,
+name|color_space_size
 argument_list|)
 expr_stmt|;
 comment|/* ... and exit normally */
@@ -2607,7 +2618,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|write_image (FILE * f,guchar * src,gint width,gint height,gint use_run_length_encoding,gint channels,gint bpp,gint spzeile,gint MapSize,RGBMode rgb_format)
+DECL|function|write_image (FILE * f,guchar * src,gint width,gint height,gint use_run_length_encoding,gint channels,gint bpp,gint spzeile,gint MapSize,RGBMode rgb_format,gint mask_info_size,gint color_space_size)
 name|write_image
 parameter_list|(
 name|FILE
@@ -2641,6 +2652,12 @@ name|MapSize
 parameter_list|,
 name|RGBMode
 name|rgb_format
+parameter_list|,
+name|gint
+name|mask_info_size
+parameter_list|,
+name|gint
+name|color_space_size
 parameter_list|)
 block|{
 name|guchar
@@ -4229,6 +4246,10 @@ operator|(
 literal|0x36
 operator|+
 name|MapSize
+operator|+
+name|mask_info_size
+operator|+
+name|color_space_size
 operator|)
 expr_stmt|;
 name|FromL
