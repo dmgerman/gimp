@@ -76,6 +76,9 @@ name|gboolean
 name|export_forward
 parameter_list|,
 name|gboolean
+name|xcf_compat
+parameter_list|,
+name|gboolean
 name|verbose_cancel
 parameter_list|)
 function_decl|;

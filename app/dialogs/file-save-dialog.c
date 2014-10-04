@@ -156,7 +156,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2917bdd60103
+DECL|enum|__anon28b301480103
 block|{
 DECL|enumerator|CHECK_URI_FAIL
 name|CHECK_URI_FAIL
@@ -722,6 +722,15 @@ argument_list|,
 name|dialog
 operator|->
 name|export
+argument_list|,
+operator|!
+name|dialog
+operator|->
+name|export
+operator|&&
+name|dialog
+operator|->
+name|compat
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2542,7 +2551,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|file_save_dialog_save_image (GimpProgress * progress,Gimp * gimp,GimpImage * image,GFile * file,GimpPlugInProcedure * save_proc,GimpRunMode run_mode,gboolean change_saved_state,gboolean export_backward,gboolean export_forward,gboolean verbose_cancel)
+DECL|function|file_save_dialog_save_image (GimpProgress * progress,Gimp * gimp,GimpImage * image,GFile * file,GimpPlugInProcedure * save_proc,GimpRunMode run_mode,gboolean change_saved_state,gboolean export_backward,gboolean export_forward,gboolean xcf_compat,gboolean verbose_cancel)
 name|file_save_dialog_save_image
 parameter_list|(
 name|GimpProgress
@@ -2576,6 +2585,9 @@ name|export_backward
 parameter_list|,
 name|gboolean
 name|export_forward
+parameter_list|,
+name|gboolean
+name|xcf_compat
 parameter_list|,
 name|gboolean
 name|verbose_cancel
@@ -2630,6 +2642,17 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|xcf_compat
+condition|)
+name|gimp_image_set_xcf_compat_mode
+argument_list|(
+name|image
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|status
 operator|=
 name|file_save
@@ -2654,6 +2677,17 @@ name|export_forward
 argument_list|,
 operator|&
 name|error
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|xcf_compat
+condition|)
+name|gimp_image_set_xcf_compat_mode
+argument_list|(
+name|image
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 switch|switch

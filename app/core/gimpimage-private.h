@@ -201,6 +201,11 @@ modifier|*
 name|untitled_file
 decl_stmt|;
 comment|/*  a file saying "Untitled"     */
+DECL|member|xcf_compat_mode
+name|gboolean
+name|xcf_compat_mode
+decl_stmt|;
+comment|/*  if possible, save compat XCF */
 DECL|member|dirty
 name|gint
 name|dirty

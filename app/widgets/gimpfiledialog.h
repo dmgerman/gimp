@@ -123,6 +123,10 @@ DECL|member|export
 name|gboolean
 name|export
 decl_stmt|;
+DECL|member|compat
+name|gboolean
+name|compat
+decl_stmt|;
 DECL|member|close_after_saving
 name|gboolean
 name|close_after_saving
@@ -136,6 +140,16 @@ DECL|member|thumb_box
 name|GtkWidget
 modifier|*
 name|thumb_box
+decl_stmt|;
+DECL|member|extra_vbox
+name|GtkWidget
+modifier|*
+name|extra_vbox
+decl_stmt|;
+DECL|member|compat_toggle
+name|GtkWidget
+modifier|*
+name|compat_toggle
 decl_stmt|;
 DECL|member|proc_expander
 name|GtkWidget
