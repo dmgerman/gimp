@@ -104,7 +104,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|output_printf
+name|print
 parameter_list|(
 name|GOutputStream
 modifier|*
@@ -611,8 +611,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|output_printf (GOutputStream * output,GError ** error,const gchar * format,...)
-name|output_printf
+DECL|function|print (GOutputStream * output,GError ** error,const gchar * format,...)
+name|print
 parameter_list|(
 name|GOutputStream
 modifier|*
@@ -854,7 +854,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|output_printf
+name|print
 argument_list|(
 name|output
 argument_list|,
@@ -877,7 +877,7 @@ argument_list|)
 argument_list|)
 operator|||
 operator|!
-name|output_printf
+name|print
 argument_list|(
 name|output
 argument_list|,
@@ -889,7 +889,7 @@ name|width
 argument_list|)
 operator|||
 operator|!
-name|output_printf
+name|print
 argument_list|(
 name|output
 argument_list|,
@@ -901,7 +901,7 @@ name|height
 argument_list|)
 operator|||
 operator|!
-name|output_printf
+name|print
 argument_list|(
 name|output
 argument_list|,
@@ -926,7 +926,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|output_printf
+name|print
 argument_list|(
 name|output
 argument_list|,
@@ -940,7 +940,7 @@ literal|"data += 4; \\\n}\n"
 argument_list|)
 operator|||
 operator|!
-name|output_printf
+name|print
 argument_list|(
 name|output
 argument_list|,
@@ -1177,7 +1177,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|output_printf
+name|print
 argument_list|(
 name|output
 argument_list|,
@@ -1206,7 +1206,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|output_printf
+name|print
 argument_list|(
 name|output
 argument_list|,
@@ -1226,7 +1226,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|output_printf
+name|print
 argument_list|(
 name|output
 argument_list|,
@@ -1258,7 +1258,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|output_printf
+name|print
 argument_list|(
 name|output
 argument_list|,
@@ -1282,7 +1282,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|output_printf
+name|print
 argument_list|(
 name|output
 argument_list|,
@@ -1301,7 +1301,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|output_printf
+name|print
 argument_list|(
 name|output
 argument_list|,
@@ -1333,7 +1333,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|output_printf
+name|print
 argument_list|(
 name|output
 argument_list|,
@@ -1343,7 +1343,7 @@ literal|"static char header_data_cmap[256][3] = {"
 argument_list|)
 operator|||
 operator|!
-name|output_printf
+name|print
 argument_list|(
 name|output
 argument_list|,
@@ -1398,7 +1398,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|output_printf
+name|print
 argument_list|(
 name|output
 argument_list|,
@@ -1462,7 +1462,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|output_printf
+name|print
 argument_list|(
 name|output
 argument_list|,
@@ -1479,7 +1479,7 @@ comment|/* close bracket */
 if|if
 condition|(
 operator|!
-name|output_printf
+name|print
 argument_list|(
 name|output
 argument_list|,
@@ -1500,7 +1500,7 @@ comment|/* save image */
 if|if
 condition|(
 operator|!
-name|output_printf
+name|print
 argument_list|(
 name|output
 argument_list|,
@@ -1594,7 +1594,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|output_printf
+name|print
 argument_list|(
 name|output
 argument_list|,
@@ -1627,7 +1627,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|output_printf
+name|print
 argument_list|(
 name|output
 argument_list|,
@@ -1657,7 +1657,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|output_printf
+name|print
 argument_list|(
 name|output
 argument_list|,
@@ -1683,7 +1683,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|output_printf
+name|print
 argument_list|(
 name|output
 argument_list|,
@@ -1713,7 +1713,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|output_printf
+name|print
 argument_list|(
 name|output
 argument_list|,
