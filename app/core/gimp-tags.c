@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290241d70108
+DECL|struct|__anon2a9001220108
 block|{
 DECL|member|locale
 specifier|const
@@ -477,15 +477,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-name|_
-argument_list|(
-literal|"Could not open '%s' for writing: %s"
-argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|file
-argument_list|)
+literal|"%s\n"
 argument_list|,
 name|error
 operator|->

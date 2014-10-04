@@ -113,7 +113,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2621230103
+DECL|enum|__anon2bc061fe0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -127,7 +127,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2621230208
+DECL|struct|__anon2bc061fe0208
 block|{
 DECL|member|identifier
 name|GQuark
@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2621230308
+DECL|struct|__anon2bc061fe0308
 block|{
 DECL|member|records
 name|GArray
@@ -1748,15 +1748,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-name|_
-argument_list|(
-literal|"Could not open '%s' for writing: %s"
-argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|file
-argument_list|)
+literal|"%s\n"
 argument_list|,
 name|error
 operator|->
@@ -1804,7 +1796,7 @@ name|g_printerr
 argument_list|(
 name|_
 argument_list|(
-literal|"Error writing '%s': %s"
+literal|"Error writing '%s': %s\n"
 argument_list|)
 argument_list|,
 name|gimp_file_get_utf8_name

@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7a23e50108
+DECL|struct|__anon2a1c0f2e0108
 block|{
 DECL|member|prefixed_name
 name|gchar
@@ -1833,7 +1833,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|G_FILE_CREATE_NONE
 argument_list|,
 name|NULL
 argument_list|,

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e4d1ea0103
+DECL|enum|__anon2b9de64e0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e4d1ea0203
+DECL|enum|__anon2b9de64e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2115,26 +2115,6 @@ block|}
 name|g_object_unref
 argument_list|(
 name|output
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|g_prefix_error
-argument_list|(
-name|error
-argument_list|,
-name|_
-argument_list|(
-literal|"Could not open '%s' for writing: "
-argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|private
-operator|->
-name|file
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

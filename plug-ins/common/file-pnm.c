@@ -333,7 +333,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a33f7080108
+DECL|struct|__anon2c4fcb4b0108
 block|{
 DECL|member|raw
 name|gint
@@ -801,7 +801,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a33f7080208
+DECL|struct|__anon2c4fcb4b0208
 block|{
 DECL|member|name
 name|gchar
@@ -4995,7 +4995,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|G_FILE_CREATE_NONE
 argument_list|,
 name|NULL
 argument_list|,

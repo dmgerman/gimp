@@ -968,23 +968,13 @@ operator|!
 name|output
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|gimp
 argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_MESSAGE_ERROR
-argument_list|,
-name|_
-argument_list|(
-literal|"Could not open '%s' for writing: %s"
-argument_list|)
-argument_list|,
-name|gimp_file_get_utf8_name
-argument_list|(
-name|themerc
-argument_list|)
 argument_list|,
 name|error
 operator|->

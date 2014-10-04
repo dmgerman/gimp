@@ -1447,7 +1447,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|G_FILE_CREATE_NONE
 argument_list|,
 name|NULL
 argument_list|,
@@ -1617,23 +1617,6 @@ condition|)
 name|gimp_progress_end
 argument_list|(
 name|progress
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|g_propagate_prefixed_error
-argument_list|(
-name|error
-argument_list|,
-name|my_error
-argument_list|,
-name|_
-argument_list|(
-literal|"Could not open '%s' for writing: "
-argument_list|)
-argument_list|,
-name|filename
 argument_list|)
 expr_stmt|;
 block|}

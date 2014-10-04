@@ -110,7 +110,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28fbb9240108
+DECL|struct|__anon2a42b0190108
 block|{
 DECL|member|spacing
 name|guint
@@ -186,7 +186,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fbb9240208
+DECL|struct|__anon2a42b0190208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -6192,7 +6192,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|G_FILE_CREATE_NONE
 argument_list|,
 name|NULL
 argument_list|,
