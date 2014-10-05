@@ -80,7 +80,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277be5890108
+DECL|struct|__anon28ed231a0108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -143,53 +143,6 @@ block|}
 name|GTMValues
 typedef|;
 end_typedef
-
-begin_comment
-comment|/* Variables */
-end_comment
-
-begin_decl_stmt
-DECL|variable|gtmvals
-specifier|static
-name|GTMValues
-name|gtmvals
-init|=
-block|{
-literal|"Made with GIMP Table Magic"
-block|,
-comment|/* caption text */
-literal|"&nbsp;"
-block|,
-comment|/* cellcontent text */
-literal|""
-block|,
-comment|/* cell width text */
-literal|""
-block|,
-comment|/* cell height text */
-name|TRUE
-block|,
-comment|/* fulldoc */
-name|FALSE
-block|,
-comment|/* caption */
-literal|2
-block|,
-comment|/* border */
-name|FALSE
-block|,
-comment|/* spantags */
-name|FALSE
-block|,
-comment|/* tdcomp */
-literal|4
-block|,
-comment|/* cellpadding */
-literal|0
-comment|/* cellspacing */
-block|}
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
 comment|/* Declare some local functions */
@@ -287,62 +240,65 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gtm_caption_callback
+name|entry_changed_callback
 parameter_list|(
-name|GtkWidget
+name|GtkEntry
 modifier|*
-name|widget
+name|entry
 parameter_list|,
-name|gpointer
-name|data
+name|gchar
+modifier|*
+name|string
 parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|gtm_cellcontent_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_comment
+comment|/* Variables */
+end_comment
 
-begin_function_decl
+begin_decl_stmt
+DECL|variable|gtmvals
 specifier|static
-name|void
-name|gtm_clwidth_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gtm_clheight_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
+name|GTMValues
+name|gtmvals
+init|=
+block|{
+literal|"Made with GIMP Table Magic"
+block|,
+comment|/* caption text */
+literal|"&nbsp;"
+block|,
+comment|/* cellcontent text */
+literal|""
+block|,
+comment|/* cell width text */
+literal|""
+block|,
+comment|/* cell height text */
+name|TRUE
+block|,
+comment|/* fulldoc */
+name|FALSE
+block|,
+comment|/* caption */
+literal|2
+block|,
+comment|/* border */
+name|FALSE
+block|,
+comment|/* spantags */
+name|FALSE
+block|,
+comment|/* tdcomp */
+literal|4
+block|,
+comment|/* cellpadding */
+literal|0
+comment|/* cellspacing */
+block|}
+decl_stmt|;
+end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
@@ -596,9 +552,7 @@ block|{
 name|GeglBuffer
 modifier|*
 name|buffer
-decl_stmt|;
-name|buffer
-operator|=
+init|=
 name|gimp_drawable_get_buffer
 argument_list|(
 name|param
@@ -610,7 +564,7 @@ name|data
 operator|.
 name|d_int32
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|save_image
@@ -751,11 +705,13 @@ name|gint
 name|row
 decl_stmt|,
 name|col
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|cols
 decl_stmt|,
 name|rows
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -2373,10 +2329,12 @@ literal|"changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gtm_caption_callback
+name|entry_changed_callback
 argument_list|)
 argument_list|,
-name|NULL
+name|gtmvals
+operator|.
+name|captiontxt
 argument_list|)
 expr_stmt|;
 name|g_object_bind_property
@@ -2471,10 +2429,12 @@ literal|"changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gtm_cellcontent_callback
+name|entry_changed_callback
 argument_list|)
 argument_list|,
-name|NULL
+name|gtmvals
+operator|.
+name|cellcontent
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2730,10 +2690,12 @@ literal|"changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gtm_clwidth_callback
+name|entry_changed_callback
 argument_list|)
 argument_list|,
-name|NULL
+name|gtmvals
+operator|.
+name|clwidth
 argument_list|)
 expr_stmt|;
 name|entry
@@ -2811,10 +2773,12 @@ literal|"changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gtm_clheight_callback
+name|entry_changed_callback
 argument_list|)
 argument_list|,
-name|NULL
+name|gtmvals
+operator|.
+name|clheight
 argument_list|)
 expr_stmt|;
 name|adj
@@ -3115,131 +3079,25 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gtm_caption_callback (GtkWidget * widget,gpointer data)
-name|gtm_caption_callback
+DECL|function|entry_changed_callback (GtkEntry * entry,gchar * string)
+name|entry_changed_callback
 parameter_list|(
-name|GtkWidget
+name|GtkEntry
 modifier|*
-name|widget
+name|entry
 parameter_list|,
-name|gpointer
-name|data
+name|gchar
+modifier|*
+name|string
 parameter_list|)
 block|{
 name|strncpy
 argument_list|(
-name|gtmvals
-operator|.
-name|captiontxt
+name|string
 argument_list|,
 name|gtk_entry_get_text
 argument_list|(
-name|GTK_ENTRY
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-argument_list|,
-literal|255
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gtm_cellcontent_callback (GtkWidget * widget,gpointer data)
-name|gtm_cellcontent_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|strncpy
-argument_list|(
-name|gtmvals
-operator|.
-name|cellcontent
-argument_list|,
-name|gtk_entry_get_text
-argument_list|(
-name|GTK_ENTRY
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-argument_list|,
-literal|255
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gtm_clwidth_callback (GtkWidget * widget,gpointer data)
-name|gtm_clwidth_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|strncpy
-argument_list|(
-name|gtmvals
-operator|.
-name|clwidth
-argument_list|,
-name|gtk_entry_get_text
-argument_list|(
-name|GTK_ENTRY
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-argument_list|,
-literal|255
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gtm_clheight_callback (GtkWidget * widget,gpointer data)
-name|gtm_clheight_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|strncpy
-argument_list|(
-name|gtmvals
-operator|.
-name|clheight
-argument_list|,
-name|gtk_entry_get_text
-argument_list|(
-name|GTK_ENTRY
-argument_list|(
-name|widget
-argument_list|)
+name|entry
 argument_list|)
 argument_list|,
 literal|255
