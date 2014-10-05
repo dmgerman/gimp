@@ -16,19 +16,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<errno.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -80,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296c5d4c0108
+DECL|struct|__anon29808d700108
 block|{
 DECL|member|captiontxt
 name|gchar
