@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c304a7e0103
+DECL|enum|__anon2893baf80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -73,7 +73,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c304a7e0203
+DECL|enum|__anon2893baf80203
 block|{
 DECL|enumerator|TARGET_NUMBER
 name|TARGET_NUMBER
@@ -4179,11 +4179,9 @@ name|private
 operator|->
 name|label_text
 operator|=
-name|g_strdup
-argument_list|(
 name|text
-argument_list|)
 expr_stmt|;
+comment|/* don't dup */
 name|g_free
 argument_list|(
 name|private
@@ -4195,11 +4193,9 @@ name|private
 operator|->
 name|label_pattern
 operator|=
-name|g_strdup
-argument_list|(
 name|pattern
-argument_list|)
 expr_stmt|;
+comment|/* don't dup */
 if|if
 condition|(
 name|private
