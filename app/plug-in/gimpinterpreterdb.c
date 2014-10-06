@@ -1200,6 +1200,11 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|buffer
+argument_list|)
+expr_stmt|;
 name|name
 operator|=
 name|tokens
