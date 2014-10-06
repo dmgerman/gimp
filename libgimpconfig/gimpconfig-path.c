@@ -727,6 +727,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|expanded
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|list
