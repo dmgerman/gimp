@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon289453b00103
+DECL|enum|__anon29ae1bf10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -59,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289453b00208
+DECL|struct|__anon29ae1bf10208
 block|{
 DECL|member|user_data_type
 name|GType
@@ -751,6 +751,19 @@ operator|->
 name|empty_iter
 argument_list|)
 expr_stmt|;
+name|gtk_tree_iter_free
+argument_list|(
+name|store
+operator|->
+name|empty_iter
+argument_list|)
+expr_stmt|;
+name|store
+operator|->
+name|empty_iter
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 block|}
 end_function
@@ -770,15 +783,6 @@ modifier|*
 name|path
 parameter_list|)
 block|{
-name|GimpIntStore
-modifier|*
-name|store
-init|=
-name|GIMP_INT_STORE
-argument_list|(
-name|model
-argument_list|)
-decl_stmt|;
 if|if
 condition|(
 name|parent_iface
@@ -794,22 +798,6 @@ argument_list|,
 name|path
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|store
-operator|->
-name|empty_iter
-condition|)
-block|{
-comment|/* freeing here crashes, no clue why. will be freed in finalize() */
-comment|/* gtk_tree_iter_free (store->empty_iter); */
-name|store
-operator|->
-name|empty_iter
-operator|=
-name|NULL
-expr_stmt|;
-block|}
 block|}
 end_function
 
