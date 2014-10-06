@@ -535,6 +535,10 @@ name|default_folder
 init|=
 name|NULL
 decl_stmt|;
+name|GFile
+modifier|*
+name|gimpdir
+decl_stmt|;
 if|if
 condition|(
 name|filenames
@@ -685,14 +689,18 @@ name|gimp
 argument_list|)
 expr_stmt|;
 comment|/*  Check if the user's gimp_directory exists    */
-if|if
-condition|(
-name|g_file_query_file_type
-argument_list|(
+name|gimpdir
+operator|=
 name|gimp_directory_file
 argument_list|(
 name|NULL
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|g_file_query_file_type
+argument_list|(
+name|gimpdir
 argument_list|,
 name|G_FILE_QUERY_INFO_NONE
 argument_list|,
@@ -751,6 +759,11 @@ name|install
 argument_list|)
 expr_stmt|;
 block|}
+name|g_object_unref
+argument_list|(
+name|gimpdir
+argument_list|)
+expr_stmt|;
 name|gimp_load_config
 argument_list|(
 name|gimp
