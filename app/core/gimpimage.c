@@ -360,7 +360,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ece2220103
+DECL|enum|__anon2c12f82a0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -457,7 +457,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ece2220203
+DECL|enum|__anon2c12f82a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -8691,7 +8691,10 @@ condition|)
 block|{
 name|display_file
 operator|=
+name|g_object_ref
+argument_list|(
 name|file
+argument_list|)
 expr_stmt|;
 name|uri_format
 operator|=
@@ -8797,9 +8800,12 @@ name|display_file
 condition|)
 name|display_file
 operator|=
+name|g_object_ref
+argument_list|(
 name|gimp_image_get_untitled_file
 argument_list|(
 name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -8825,6 +8831,11 @@ name|gimp_file_get_utf8_name
 argument_list|(
 name|display_file
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|display_file
 argument_list|)
 expr_stmt|;
 name|format_string
