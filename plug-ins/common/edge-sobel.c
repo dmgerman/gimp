@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc364eb0108
+DECL|struct|__anon28b2bb480108
 block|{
 DECL|member|horizontal
 name|gboolean
@@ -550,7 +550,7 @@ operator|=
 operator|(
 name|param
 index|[
-literal|4
+literal|3
 index|]
 operator|.
 name|data
@@ -569,7 +569,7 @@ operator|=
 operator|(
 name|param
 index|[
-literal|5
+literal|4
 index|]
 operator|.
 name|data
@@ -588,7 +588,7 @@ operator|=
 operator|(
 name|param
 index|[
-literal|6
+literal|5
 index|]
 operator|.
 name|data
