@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2943a6fe0103
+DECL|enum|__anon2bf36eb30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1101,13 +1101,6 @@ name|list
 argument_list|)
 control|)
 block|{
-name|g_object_ref
-argument_list|(
-name|list
-operator|->
-name|data
-argument_list|)
-expr_stmt|;
 name|gtk_container_remove
 argument_list|(
 name|GTK_CONTAINER
