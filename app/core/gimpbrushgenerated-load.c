@@ -831,11 +831,12 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
+name|gimp_brush_set_spacing
+argument_list|(
 name|brush
-operator|->
+argument_list|,
 name|spacing
-operator|=
-name|spacing
+argument_list|)
 expr_stmt|;
 return|return
 name|g_list_prepend

@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpbrush-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptempbuf.h"
 end_include
 
@@ -1076,6 +1082,8 @@ argument_list|)
 expr_stmt|;
 name|brush
 operator|->
+name|priv
+operator|->
 name|mask
 operator|=
 name|gimp_temp_buf_new
@@ -1099,6 +1107,8 @@ operator|=
 name|gimp_temp_buf_get_data
 argument_list|(
 name|brush
+operator|->
+name|priv
 operator|->
 name|mask
 argument_list|)
@@ -1256,7 +1266,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2a088dbe010a
+DECL|union|__anon27b22c84010a
 block|{
 DECL|member|u
 name|guint16
@@ -1395,6 +1405,8 @@ index|]
 decl_stmt|;
 name|brush
 operator|->
+name|priv
+operator|->
 name|pixmap
 operator|=
 name|gimp_temp_buf_new
@@ -1418,6 +1430,8 @@ operator|=
 name|gimp_temp_buf_get_data
 argument_list|(
 name|brush
+operator|->
+name|priv
 operator|->
 name|pixmap
 argument_list|)
@@ -1605,6 +1619,8 @@ return|;
 block|}
 name|brush
 operator|->
+name|priv
+operator|->
 name|spacing
 operator|=
 name|header
@@ -1612,6 +1628,8 @@ operator|.
 name|spacing
 expr_stmt|;
 name|brush
+operator|->
+name|priv
 operator|->
 name|x_axis
 operator|.
@@ -1625,6 +1643,8 @@ literal|2.0
 expr_stmt|;
 name|brush
 operator|->
+name|priv
+operator|->
 name|x_axis
 operator|.
 name|y
@@ -1633,6 +1653,8 @@ literal|0.0
 expr_stmt|;
 name|brush
 operator|->
+name|priv
+operator|->
 name|y_axis
 operator|.
 name|x
@@ -1640,6 +1662,8 @@ operator|=
 literal|0.0
 expr_stmt|;
 name|brush
+operator|->
+name|priv
 operator|->
 name|y_axis
 operator|.
@@ -2692,6 +2716,8 @@ argument_list|)
 expr_stmt|;
 name|brush
 operator|->
+name|priv
+operator|->
 name|spacing
 operator|=
 name|abr_sampled_brush_hdr
@@ -2699,6 +2725,8 @@ operator|.
 name|spacing
 expr_stmt|;
 name|brush
+operator|->
+name|priv
 operator|->
 name|x_axis
 operator|.
@@ -2710,6 +2738,8 @@ literal|2.0
 expr_stmt|;
 name|brush
 operator|->
+name|priv
+operator|->
 name|x_axis
 operator|.
 name|y
@@ -2718,6 +2748,8 @@ literal|0.0
 expr_stmt|;
 name|brush
 operator|->
+name|priv
+operator|->
 name|y_axis
 operator|.
 name|x
@@ -2725,6 +2757,8 @@ operator|=
 literal|0.0
 expr_stmt|;
 name|brush
+operator|->
+name|priv
 operator|->
 name|y_axis
 operator|.
@@ -2735,6 +2769,8 @@ operator|/
 literal|2.0
 expr_stmt|;
 name|brush
+operator|->
+name|priv
 operator|->
 name|mask
 operator|=
@@ -2755,6 +2791,8 @@ operator|=
 name|gimp_temp_buf_get_data
 argument_list|(
 name|brush
+operator|->
+name|priv
 operator|->
 name|mask
 argument_list|)
@@ -3305,12 +3343,16 @@ argument_list|)
 expr_stmt|;
 name|brush
 operator|->
+name|priv
+operator|->
 name|spacing
 operator|=
 literal|25
 expr_stmt|;
 comment|/* real value needs 8BIMdesc section parser */
 name|brush
+operator|->
+name|priv
 operator|->
 name|x_axis
 operator|.
@@ -3322,6 +3364,8 @@ literal|2.0
 expr_stmt|;
 name|brush
 operator|->
+name|priv
+operator|->
 name|x_axis
 operator|.
 name|y
@@ -3330,6 +3374,8 @@ literal|0.0
 expr_stmt|;
 name|brush
 operator|->
+name|priv
+operator|->
 name|y_axis
 operator|.
 name|x
@@ -3337,6 +3383,8 @@ operator|=
 literal|0.0
 expr_stmt|;
 name|brush
+operator|->
+name|priv
 operator|->
 name|y_axis
 operator|.
@@ -3347,6 +3395,8 @@ operator|/
 literal|2.0
 expr_stmt|;
 name|brush
+operator|->
+name|priv
 operator|->
 name|mask
 operator|=
@@ -3367,6 +3417,8 @@ operator|=
 name|gimp_temp_buf_get_data
 argument_list|(
 name|brush
+operator|->
+name|priv
 operator|->
 name|mask
 argument_list|)

@@ -2191,12 +2191,13 @@ name|spacing_data
 expr_stmt|;
 name|value
 operator|=
+name|gimp_brush_get_spacing
+argument_list|(
 name|GIMP_BRUSH
 argument_list|(
 name|brush
 argument_list|)
-operator|->
-name|spacing
+argument_list|)
 expr_stmt|;
 block|}
 if|if

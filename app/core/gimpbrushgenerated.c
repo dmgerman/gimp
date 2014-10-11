@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpbrush-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpbrushgenerated.h"
 end_include
 
@@ -79,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb221320103
+DECL|enum|__anon27b695a10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -964,16 +970,22 @@ if|if
 condition|(
 name|gbrush
 operator|->
+name|priv
+operator|->
 name|mask
 condition|)
 name|gimp_temp_buf_unref
 argument_list|(
 name|gbrush
 operator|->
+name|priv
+operator|->
 name|mask
 argument_list|)
 expr_stmt|;
 name|gbrush
+operator|->
+name|priv
 operator|->
 name|mask
 operator|=
@@ -1008,10 +1020,14 @@ argument_list|,
 operator|&
 name|gbrush
 operator|->
+name|priv
+operator|->
 name|x_axis
 argument_list|,
 operator|&
 name|gbrush
+operator|->
+name|priv
 operator|->
 name|y_axis
 argument_list|)

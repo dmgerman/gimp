@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpbrush-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpbrushpipe.h"
 end_include
 
@@ -512,6 +518,8 @@ argument_list|(
 name|pipe
 argument_list|)
 operator|->
+name|priv
+operator|->
 name|mask
 operator|=
 name|NULL
@@ -520,6 +528,8 @@ name|GIMP_BRUSH
 argument_list|(
 name|pipe
 argument_list|)
+operator|->
+name|priv
 operator|->
 name|pixmap
 operator|=

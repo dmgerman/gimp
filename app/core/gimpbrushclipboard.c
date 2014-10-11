@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpbrush-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpbrushclipboard.h"
 end_include
 
@@ -65,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b654f0f0103
+DECL|enum|__anon2b2069570103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -567,6 +573,8 @@ if|if
 condition|(
 name|brush
 operator|->
+name|priv
+operator|->
 name|mask
 condition|)
 block|{
@@ -574,10 +582,14 @@ name|gimp_temp_buf_unref
 argument_list|(
 name|brush
 operator|->
+name|priv
+operator|->
 name|mask
 argument_list|)
 expr_stmt|;
 name|brush
+operator|->
+name|priv
 operator|->
 name|mask
 operator|=
@@ -588,6 +600,8 @@ if|if
 condition|(
 name|brush
 operator|->
+name|priv
+operator|->
 name|pixmap
 condition|)
 block|{
@@ -595,10 +609,14 @@ name|gimp_temp_buf_unref
 argument_list|(
 name|brush
 operator|->
+name|priv
+operator|->
 name|pixmap
 argument_list|)
 expr_stmt|;
 name|brush
+operator|->
+name|priv
 operator|->
 name|pixmap
 operator|=
@@ -667,6 +685,8 @@ argument_list|)
 expr_stmt|;
 name|brush
 operator|->
+name|priv
+operator|->
 name|mask
 operator|=
 name|gimp_temp_buf_new
@@ -682,6 +702,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 name|brush
+operator|->
+name|priv
 operator|->
 name|pixmap
 operator|=
@@ -711,6 +733,8 @@ operator|=
 name|gimp_temp_buf_create_buffer
 argument_list|(
 name|brush
+operator|->
+name|priv
 operator|->
 name|mask
 argument_list|)
@@ -750,6 +774,8 @@ name|gimp_temp_buf_get_data
 argument_list|(
 name|brush
 operator|->
+name|priv
+operator|->
 name|mask
 argument_list|)
 argument_list|,
@@ -767,6 +793,8 @@ operator|=
 name|gimp_temp_buf_create_buffer
 argument_list|(
 name|brush
+operator|->
+name|priv
 operator|->
 name|pixmap
 argument_list|)
@@ -800,6 +828,8 @@ literal|17
 expr_stmt|;
 name|brush
 operator|->
+name|priv
+operator|->
 name|mask
 operator|=
 name|gimp_temp_buf_new
@@ -818,11 +848,15 @@ name|gimp_temp_buf_data_clear
 argument_list|(
 name|brush
 operator|->
+name|priv
+operator|->
 name|mask
 argument_list|)
 expr_stmt|;
 block|}
 name|brush
+operator|->
+name|priv
 operator|->
 name|x_axis
 operator|.
@@ -834,6 +868,8 @@ literal|2
 expr_stmt|;
 name|brush
 operator|->
+name|priv
+operator|->
 name|x_axis
 operator|.
 name|y
@@ -842,6 +878,8 @@ literal|0
 expr_stmt|;
 name|brush
 operator|->
+name|priv
+operator|->
 name|y_axis
 operator|.
 name|x
@@ -849,6 +887,8 @@ operator|=
 literal|0
 expr_stmt|;
 name|brush
+operator|->
+name|priv
 operator|->
 name|y_axis
 operator|.

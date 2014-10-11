@@ -555,11 +555,12 @@ name|brush_core
 operator|->
 name|brush
 operator|&&
+name|gimp_brush_get_pixmap
+argument_list|(
 name|brush_core
 operator|->
 name|brush
-operator|->
-name|pixmap
+argument_list|)
 condition|)
 block|{
 comment|/* otherwise check if the brush has a pixmap and use that to        * color the area        */
