@@ -1611,6 +1611,8 @@ literal|"gegl:noise-slur"
 block|,
 literal|"gegl:noise-spread"
 block|,
+literal|"gegl:oilify"
+block|,
 literal|"gegl:opacity"
 block|,
 literal|"gegl:over"
