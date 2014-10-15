@@ -5975,6 +5975,8 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|rlebuf
+init|=
+name|NULL
 decl_stmt|;
 name|GError
 modifier|*
@@ -6045,6 +6047,14 @@ operator|->
 name|cp
 expr_stmt|;
 comment|/* allocate a temporary buffer to store the rle data before it is    * written to disk    */
+if|if
+condition|(
+name|info
+operator|->
+name|compression
+operator|==
+name|COMPRESS_RLE
+condition|)
 name|rlebuf
 operator|=
 name|g_alloca
@@ -7337,7 +7347,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eb77b90108
+DECL|struct|__anon2985f4300108
 block|{
 DECL|member|info
 name|XcfInfo
