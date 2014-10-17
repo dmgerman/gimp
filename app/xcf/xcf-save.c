@@ -642,6 +642,19 @@ value|G_STMT_START {  \   info->cp += xcf_write_int32 (info->output, data, count
 end_define
 
 begin_define
+DECL|macro|xcf_write_zero_int32_check_error (info,count)
+define|#
+directive|define
+name|xcf_write_zero_int32_check_error
+parameter_list|(
+name|info
+parameter_list|,
+name|count
+parameter_list|)
+value|G_STMT_START {  \   info->cp += xcf_write_zero_int32 (info->output, count,&tmp_error); \   if (tmp_error)                                                      \     {                                                                 \       g_propagate_error (error, tmp_error);                           \       return FALSE;                                                   \     }                                                                 \   } G_STMT_END
+end_define
+
+begin_define
 DECL|macro|xcf_write_int8_check_error (info,data,count)
 define|#
 directive|define
@@ -720,17 +733,6 @@ name|info
 parameter_list|)
 value|G_STMT_START  \   {                                             \     progress++;                                 \     if (info->progress)                         \       gimp_progress_set_value (info->progress,  \                                (gdouble) progress / (gdouble) max_progress); \   } G_STMT_END
 end_define
-
-begin_decl_stmt
-DECL|variable|zero
-specifier|static
-specifier|const
-name|guint32
-name|zero
-init|=
-literal|0
-decl_stmt|;
-end_decl_stmt
 
 begin_function
 name|gboolean
@@ -1037,22 +1039,31 @@ argument_list|(
 name|info
 argument_list|)
 expr_stmt|;
-comment|/* 'offset' is where we will write the next layer or channel, which    * is after the offset table    */
-name|offset
+comment|/* 'saved_pos' is the next slot in the offset table */
+name|saved_pos
 operator|=
 name|info
 operator|->
 name|cp
-operator|+
-operator|(
+expr_stmt|;
+comment|/* write an empty offset table */
+name|xcf_write_zero_int32_check_error
+argument_list|(
+name|info
+argument_list|,
 name|n_layers
 operator|+
 name|n_channels
 operator|+
 literal|2
-operator|)
-operator|*
-literal|4
+argument_list|)
+expr_stmt|;
+comment|/* 'offset' is where we will write the next layer or channel */
+name|offset
+operator|=
+name|info
+operator|->
+name|cp
 expr_stmt|;
 for|for
 control|(
@@ -1078,7 +1089,19 @@ name|list
 operator|->
 name|data
 decl_stmt|;
-comment|/* write the offset of the layer */
+comment|/* seek back to the next slot in the offset table and write the        * offset of the layer        */
+name|xcf_check_error
+argument_list|(
+name|xcf_seek_pos
+argument_list|(
+name|info
+argument_list|,
+name|saved_pos
+argument_list|,
+name|error
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
@@ -1089,7 +1112,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* 'saved_pos' is the next slot in the layer offset table */
+comment|/* remember the next slot in the offset table */
 name|saved_pos
 operator|=
 name|info
@@ -1130,35 +1153,16 @@ name|info
 operator|->
 name|cp
 expr_stmt|;
-comment|/* seek back to the next slot in the offset table */
-name|xcf_check_error
-argument_list|(
-name|xcf_seek_pos
-argument_list|(
-name|info
-argument_list|,
-name|saved_pos
-argument_list|,
-name|error
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|xcf_progress_update
 argument_list|(
 name|info
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* write out a '0' offset to indicate the end of the layer offsets */
-name|xcf_write_int32_check_error
-argument_list|(
-name|info
-argument_list|,
-operator|&
-name|zero
-argument_list|,
-literal|1
-argument_list|)
+comment|/* skip a '0' in the offset table to indicate the end of the layer    * offsets    */
+name|saved_pos
+operator|+=
+literal|4
 expr_stmt|;
 for|for
 control|(
@@ -1184,7 +1188,19 @@ name|list
 operator|->
 name|data
 decl_stmt|;
-comment|/* write the offset of the channel */
+comment|/* seek back to the next slot in the offset table and write the        * offset of the channel        */
+name|xcf_check_error
+argument_list|(
+name|xcf_seek_pos
+argument_list|(
+name|info
+argument_list|,
+name|saved_pos
+argument_list|,
+name|error
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
@@ -1195,7 +1211,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* 'saved_pos' is the next slot in the channel offset table */
+comment|/* remember the next slot in the offset table */
 name|saved_pos
 operator|=
 name|info
@@ -1229,25 +1245,12 @@ name|error
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* the next channels's offset is after the layer we just wrote */
+comment|/* the next channels's offset is after the channel we just wrote */
 name|offset
 operator|=
 name|info
 operator|->
 name|cp
-expr_stmt|;
-comment|/* seek back to the next slot in the offset table */
-name|xcf_check_error
-argument_list|(
-name|xcf_seek_pos
-argument_list|(
-name|info
-argument_list|,
-name|saved_pos
-argument_list|,
-name|error
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|xcf_progress_update
 argument_list|(
@@ -1255,17 +1258,7 @@ name|info
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* write out a '0' offset to indicate the end of the channel offsets */
-name|xcf_write_int32_check_error
-argument_list|(
-name|info
-argument_list|,
-operator|&
-name|zero
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
+comment|/* there is already a '0' at the end of the offset table to indicate    * the end of the channel offsets    */
 name|g_list_free
 argument_list|(
 name|all_layers
@@ -5147,7 +5140,7 @@ argument_list|,
 name|error
 argument_list|)
 expr_stmt|;
-comment|/*  write out the layer tile hierarchy  */
+comment|/* write out the layer tile hierarchy */
 name|offset
 operator|=
 name|info
@@ -5172,16 +5165,12 @@ name|info
 operator|->
 name|cp
 expr_stmt|;
-name|xcf_check_error
-argument_list|(
-name|xcf_seek_pos
+comment|/* write a zero layer mask offset */
+name|xcf_write_zero_int32_check_error
 argument_list|(
 name|info
 argument_list|,
-name|offset
-argument_list|,
-name|error
-argument_list|)
+literal|1
 argument_list|)
 expr_stmt|;
 name|xcf_check_error
@@ -5208,18 +5197,6 @@ name|info
 operator|->
 name|cp
 expr_stmt|;
-name|xcf_check_error
-argument_list|(
-name|xcf_seek_pos
-argument_list|(
-name|info
-argument_list|,
-name|saved_pos
-argument_list|,
-name|error
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/* write out the layer mask */
 if|if
 condition|(
@@ -5238,6 +5215,18 @@ argument_list|(
 name|layer
 argument_list|)
 decl_stmt|;
+name|xcf_check_error
+argument_list|(
+name|xcf_seek_pos
+argument_list|(
+name|info
+argument_list|,
+name|saved_pos
+argument_list|,
+name|error
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
@@ -5272,31 +5261,6 @@ name|GIMP_CHANNEL
 argument_list|(
 name|mask
 argument_list|)
-argument_list|,
-name|error
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|xcf_write_int32_check_error
-argument_list|(
-name|info
-argument_list|,
-operator|&
-name|zero
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|xcf_check_error
-argument_list|(
-name|xcf_seek_pos
-argument_list|(
-name|info
-argument_list|,
-name|offset
 argument_list|,
 name|error
 argument_list|)
@@ -5730,20 +5694,29 @@ argument_list|,
 name|tmp2
 argument_list|)
 expr_stmt|;
-comment|/* 'offset' is where we will save the next level, which is after the    * level offset table    */
+comment|/* 'saved_pos' is the next slot in the offset table */
+name|saved_pos
+operator|=
+name|info
+operator|->
+name|cp
+expr_stmt|;
+comment|/* write an empty offset table */
+name|xcf_write_zero_int32_check_error
+argument_list|(
+name|info
+argument_list|,
+name|nlevels
+operator|+
+literal|1
+argument_list|)
+expr_stmt|;
+comment|/* 'offset' is where we will write the next level */
 name|offset
 operator|=
 name|info
 operator|->
 name|cp
-operator|+
-operator|(
-literal|1
-operator|+
-name|nlevels
-operator|)
-operator|*
-literal|4
 expr_stmt|;
 for|for
 control|(
@@ -5759,7 +5732,19 @@ name|i
 operator|++
 control|)
 block|{
-comment|/* write the offset of the level */
+comment|/* seek back to the next slot in the offset table and write the        * offset of the level        */
+name|xcf_check_error
+argument_list|(
+name|xcf_seek_pos
+argument_list|(
+name|info
+argument_list|,
+name|saved_pos
+argument_list|,
+name|error
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
@@ -5770,7 +5755,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* 'saved_pos' is the next slot in the level offset table */
+comment|/* remember the next slot in the offset table */
 name|saved_pos
 operator|=
 name|info
@@ -5876,44 +5861,8 @@ name|info
 operator|->
 name|cp
 expr_stmt|;
-comment|/* seek back to the next slot in the offset table */
-name|xcf_check_error
-argument_list|(
-name|xcf_seek_pos
-argument_list|(
-name|info
-argument_list|,
-name|saved_pos
-argument_list|,
-name|error
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
-comment|/* write out a '0' offset to indicate the end of the level offsets */
-name|xcf_write_int32_check_error
-argument_list|(
-name|info
-argument_list|,
-operator|&
-name|zero
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-comment|/* seek to after the last level we just wrote */
-name|xcf_check_error
-argument_list|(
-name|xcf_seek_pos
-argument_list|(
-name|info
-argument_list|,
-name|offset
-argument_list|,
-name|error
-argument_list|)
-argument_list|)
-expr_stmt|;
+comment|/* there is already a '0' at the end of the offset table to indicate    * the end of the level offsets    */
 return|return
 name|TRUE
 return|;
@@ -6092,20 +6041,29 @@ name|n_tile_rows
 operator|*
 name|n_tile_cols
 expr_stmt|;
-comment|/* 'offset' is where we will write the next tile, which is after the    * tile offset table    */
+comment|/* 'saved_pos' is the next slot in the offset table */
+name|saved_pos
+operator|=
+name|info
+operator|->
+name|cp
+expr_stmt|;
+comment|/* write an empty offset table */
+name|xcf_write_zero_int32_check_error
+argument_list|(
+name|info
+argument_list|,
+name|ntiles
+operator|+
+literal|1
+argument_list|)
+expr_stmt|;
+comment|/* 'offset' is where we will write the next tile */
 name|offset
 operator|=
 name|info
 operator|->
 name|cp
-operator|+
-operator|(
-name|ntiles
-operator|+
-literal|1
-operator|)
-operator|*
-literal|4
 expr_stmt|;
 for|for
 control|(
@@ -6124,7 +6082,19 @@ block|{
 name|GeglRectangle
 name|rect
 decl_stmt|;
-comment|/* write the offset of the tile */
+comment|/* seek back to the next slot in the offset table and write the        * offset of the tile        */
+name|xcf_check_error
+argument_list|(
+name|xcf_seek_pos
+argument_list|(
+name|info
+argument_list|,
+name|saved_pos
+argument_list|,
+name|error
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
@@ -6135,7 +6105,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* 'saved_pos' is the next slot in the tile offset table */
+comment|/* remember the next slot in the offset table */
 name|saved_pos
 operator|=
 name|info
@@ -6261,44 +6231,8 @@ name|info
 operator|->
 name|cp
 expr_stmt|;
-comment|/* seek back to the next slot in the offset table */
-name|xcf_check_error
-argument_list|(
-name|xcf_seek_pos
-argument_list|(
-name|info
-argument_list|,
-name|saved_pos
-argument_list|,
-name|error
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
-comment|/* write out a '0' offset to indicate the end of the tile offsets */
-name|xcf_write_int32_check_error
-argument_list|(
-name|info
-argument_list|,
-operator|&
-name|zero
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-comment|/* seek to after the last tile we just wrote */
-name|xcf_check_error
-argument_list|(
-name|xcf_seek_pos
-argument_list|(
-name|info
-argument_list|,
-name|offset
-argument_list|,
-name|error
-argument_list|)
-argument_list|)
-expr_stmt|;
+comment|/* there is already a '0' at the end of the offset table to indicate    * the end of the tile offsets    */
 return|return
 name|TRUE
 return|;
@@ -7347,7 +7281,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2985f4300108
+DECL|struct|__anon290dd9060108
 block|{
 DECL|member|info
 name|XcfInfo

@@ -42,6 +42,25 @@ end_function_decl
 
 begin_function_decl
 name|guint
+name|xcf_write_zero_int32
+parameter_list|(
+name|GOutputStream
+modifier|*
+name|output
+parameter_list|,
+name|gint
+name|count
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|guint
 name|xcf_write_float
 parameter_list|(
 name|GOutputStream
