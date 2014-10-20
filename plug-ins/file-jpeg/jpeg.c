@@ -405,7 +405,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"optimize"
 block|,
-literal|"Optimization of entropy encoding parameters (0/1)"
+literal|"Use optimized tables during Huffman coding (0/1)"
 block|}
 block|,
 block|{
@@ -413,7 +413,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"progressive"
 block|,
-literal|"Enable progressive jpeg image loading (0/1)"
+literal|"Create progressive JPEG images (0/1)"
 block|}
 block|,
 block|{
@@ -429,7 +429,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"subsmp"
 block|,
-literal|"The subsampling option number"
+literal|"Sub-sampling type { 0, 1, 2, 3 } 0 == 4:2:0 (chroma quartered), 1 == 4:2:2 Horizontal (chroma halved), 2 == 4:4:4 (best quality), 3 == 4:2:2 Vertical (chroma halved)"
 block|}
 block|,
 block|{
@@ -453,7 +453,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"dct"
 block|,
-literal|"DCT algorithm to use (speed/quality tradeoff)"
+literal|"DCT method to use { INTEGER (0), FIXED (1), FLOAT (2) }"
 block|}
 block|}
 decl_stmt|;
