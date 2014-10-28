@@ -315,7 +315,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aeadbc30108
+DECL|struct|__anon29f3d7cb0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -392,7 +392,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aeadbc30208
+DECL|struct|__anon29f3d7cb0208
 block|{
 DECL|member|run
 name|gboolean
@@ -5727,6 +5727,19 @@ expr_stmt|;
 name|gimp_parasite_free
 argument_list|(
 name|parasite
+argument_list|)
+expr_stmt|;
+comment|/* Initialize tmpvals in case fewer fields exist in the parasite      (e.g., when importing from a previous version of GIMP). */
+name|memcpy
+argument_list|(
+operator|&
+name|tmpvals
+argument_list|,
+operator|&
+name|jsvals
+argument_list|,
+sizeof|sizeof
+name|jsvals
 argument_list|)
 expr_stmt|;
 name|num_fields
