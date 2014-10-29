@@ -12304,7 +12304,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon29b5766e0103
+DECL|enum|__anon2b3f70160103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -14220,6 +14220,7 @@ name|p
 operator|=
 literal|"#\\space"
 expr_stmt|;
+break|break;
 case|case
 literal|'\n'
 case|:
@@ -14227,6 +14228,7 @@ name|p
 operator|=
 literal|"#\\newline"
 expr_stmt|;
+break|break;
 case|case
 literal|'\r'
 case|:
@@ -14234,6 +14236,7 @@ name|p
 operator|=
 literal|"#\\return"
 expr_stmt|;
+break|break;
 case|case
 literal|'\t'
 case|:
@@ -14241,6 +14244,7 @@ name|p
 operator|=
 literal|"#\\tab"
 expr_stmt|;
+break|break;
 default|default:
 if|#
 directive|if
@@ -14317,6 +14321,7 @@ argument_list|,
 name|c
 argument_list|)
 expr_stmt|;
+break|break;
 break|break;
 block|}
 block|}
@@ -30692,7 +30697,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon29b5766e0208
+DECL|struct|__anon2b3f70160208
 specifier|static
 struct|struct
 block|{
@@ -30927,7 +30932,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon29b5766e0308
+DECL|struct|__anon2b3f70160308
 typedef|typedef
 struct|struct
 block|{
