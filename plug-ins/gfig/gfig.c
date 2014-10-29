@@ -1650,6 +1650,11 @@ argument_list|(
 name|gfig
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 return|return
 name|NULL
 return|;
@@ -1775,6 +1780,11 @@ argument_list|(
 name|gfig
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 return|return
 name|NULL
 return|;
@@ -1804,6 +1814,11 @@ expr_stmt|;
 name|gfig_free
 argument_list|(
 name|gfig
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
 argument_list|)
 expr_stmt|;
 return|return
@@ -1851,6 +1866,11 @@ expr_stmt|;
 name|gfig_free
 argument_list|(
 name|gfig
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
 argument_list|)
 expr_stmt|;
 return|return
