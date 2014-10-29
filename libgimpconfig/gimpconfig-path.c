@@ -1497,7 +1497,6 @@ literal|2
 expr_stmt|;
 while|while
 condition|(
-operator|*
 name|p
 operator|&&
 operator|(
