@@ -1497,6 +1497,7 @@ literal|2
 expr_stmt|;
 while|while
 condition|(
+operator|*
 name|p
 operator|&&
 operator|(
@@ -1516,6 +1517,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
+operator|*
 name|p
 condition|)
 return|return
