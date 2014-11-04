@@ -2240,7 +2240,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-comment|/* NOTE: The following code assumes inverted CYMK values, even when an      APP14 marker doesn't exist. This is the behavior of recent versions      of PhotoShop as well. */
+comment|/* NOTE: The following code assumes inverted CMYK values, even when an      APP14 marker doesn't exist. This is the behavior of recent versions      of PhotoShop as well. */
 while|while
 condition|(
 name|pixels
