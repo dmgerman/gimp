@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpoperationscalarmultiply.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpoperationsemiflatten.h"
 end_include
 
@@ -379,6 +385,11 @@ expr_stmt|;
 name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_OPERATION_MASK_COMPONENTS
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_SCALAR_MULTIPLY
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref
