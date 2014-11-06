@@ -393,10 +393,21 @@ name|guint
 name|keyval
 parameter_list|)
 block|{
-ifdef|#
-directive|ifdef
+if|#
+directive|if
+name|defined
 name|G_OS_WIN32
-comment|/* gdk_test_simulate_key() has no implementation for win32 currently.    * Use this for now. */
+operator|&&
+operator|!
+name|GTK_CHECK_VERSION
+argument_list|(
+literal|2
+operator|,
+literal|24
+operator|,
+literal|25
+argument_list|)
+comment|/* gdk_test_simulate_key() has no implementation for win32 until    * GTK+ 2.24.25.    * TODO: remove the below hack when our GTK+ requirement is over 2.24.25. */
 name|GdkKeymapKey
 modifier|*
 name|keys
@@ -730,7 +741,7 @@ expr_stmt|;
 block|}
 else|#
 directive|else
-comment|/* G_OS_WIN32 */
+comment|/* G_OS_WIN32&& ! GTK_CHECK_VERSION (2, 24, 25) */
 name|gdk_test_simulate_key
 argument_list|(
 name|gtk_widget_get_window
@@ -777,7 +788,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-comment|/* G_OS_WIN32 */
+comment|/* G_OS_WIN32&& ! GTK_CHECK_VERSION (2, 24, 25) */
 block|}
 end_function
 
