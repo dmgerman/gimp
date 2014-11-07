@@ -128,6 +128,16 @@ DECL|member|effect_hardness
 name|gdouble
 name|effect_hardness
 decl_stmt|;
+DECL|member|n_animation_frames
+name|gint
+name|n_animation_frames
+decl_stmt|;
+comment|/*  options gui  */
+DECL|member|animate_button
+name|GtkWidget
+modifier|*
+name|animate_button
+decl_stmt|;
 block|}
 struct|;
 end_struct
