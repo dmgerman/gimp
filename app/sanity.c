@@ -1533,6 +1533,8 @@ literal|"gegl:checkerboard"
 block|,
 literal|"gegl:color"
 block|,
+literal|"gegl:color-exchange"
+block|,
 literal|"gegl:color-reduction"
 block|,
 literal|"gegl:color-rotate"

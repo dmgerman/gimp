@@ -289,6 +289,28 @@ comment|/* FIXME GIMP_HELP_FILTER_CHECKERBOARD */
 block|}
 block|,
 block|{
+literal|"filters-color-exchange"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Color Exchange..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:color-exchange"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_COLOR_EXCHANGE */
+block|}
+block|,
+block|{
 literal|"filters-color-reduction"
 block|,
 name|GIMP_STOCK_GEGL
@@ -1816,6 +1838,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-checkerboard"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-color-exchange"
 argument_list|,
 name|writable
 argument_list|)
