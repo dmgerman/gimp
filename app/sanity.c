@@ -1659,6 +1659,8 @@ literal|"gegl:unsharp-mask"
 block|,
 literal|"gegl:value-invert"
 block|,
+literal|"gegl:video-degradation"
+block|,
 literal|"gegl:vignette"
 block|,
 literal|"gegl:warp"

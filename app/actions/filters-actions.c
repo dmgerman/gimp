@@ -1455,6 +1455,28 @@ comment|/* FIXME GIMP_HELP_FILTER_UNSHARP_MASK */
 block|}
 block|,
 block|{
+literal|"filters-video-degradation"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Vi_deo Degradation..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:video-degradation"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_VIDEO_DEGRADATION */
+block|}
+block|,
+block|{
 literal|"filters-vignette"
 block|,
 name|GIMP_STOCK_GEGL
@@ -2232,6 +2254,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-unsharp-mask"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-video-degradation"
 argument_list|,
 name|writable
 argument_list|)
