@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a997a990103
+DECL|enum|__anon2a0942f60103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -1682,14 +1682,11 @@ operator|=
 operator|(
 name|gdouble
 operator|)
-name|gimp_brush_get_spacing
-argument_list|(
-name|core
+name|paint_options
 operator|->
-name|main_brush
-argument_list|)
+name|brush_spacing
 operator|/
-literal|100.0
+literal|100
 expr_stmt|;
 name|core
 operator|->
