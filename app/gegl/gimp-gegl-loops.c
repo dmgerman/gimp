@@ -932,10 +932,9 @@ index|[
 name|b
 index|]
 expr_stmt|;
-name|total
-index|[
-name|b
-index|]
+operator|*
+name|d
+operator|++
 operator|=
 name|CLAMP
 argument_list|(
