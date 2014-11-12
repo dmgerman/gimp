@@ -463,7 +463,7 @@ name|PyModule_AddIntConstant
 argument_list|(
 name|m
 argument_list|,
-literal|"FOREGROUND-FILL"
+literal|"FOREGROUND_FILL"
 argument_list|,
 name|GIMP_FILL_FOREGROUND
 argument_list|)
@@ -472,7 +472,7 @@ name|PyModule_AddIntConstant
 argument_list|(
 name|m
 argument_list|,
-literal|"BACKGROUND-FILL"
+literal|"BACKGROUND_FILL"
 argument_list|,
 name|GIMP_FILL_BACKGROUND
 argument_list|)
@@ -481,7 +481,7 @@ name|PyModule_AddIntConstant
 argument_list|(
 name|m
 argument_list|,
-literal|"WHITE-FILL"
+literal|"WHITE_FILL"
 argument_list|,
 name|GIMP_FILL_WHITE
 argument_list|)
@@ -490,7 +490,7 @@ name|PyModule_AddIntConstant
 argument_list|(
 name|m
 argument_list|,
-literal|"TRANSPARENT-FILL"
+literal|"TRANSPARENT_FILL"
 argument_list|,
 name|GIMP_FILL_TRANSPARENT
 argument_list|)
@@ -499,7 +499,7 @@ name|PyModule_AddIntConstant
 argument_list|(
 name|m
 argument_list|,
-literal|"PATTERN-FILL"
+literal|"PATTERN_FILL"
 argument_list|,
 name|GIMP_FILL_PATTERN
 argument_list|)
