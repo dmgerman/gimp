@@ -240,10 +240,6 @@ DECL|member|brush_size
 name|gdouble
 name|brush_size
 decl_stmt|;
-DECL|member|brush_spacing
-name|gdouble
-name|brush_spacing
-decl_stmt|;
 DECL|member|brush_angle
 name|gdouble
 name|brush_angle
@@ -251,6 +247,10 @@ decl_stmt|;
 DECL|member|brush_aspect_ratio
 name|gdouble
 name|brush_aspect_ratio
+decl_stmt|;
+DECL|member|brush_spacing
+name|gdouble
+name|brush_spacing
 decl_stmt|;
 DECL|member|application_mode
 name|GimpPaintApplicationMode
