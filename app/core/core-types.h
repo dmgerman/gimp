@@ -227,11 +227,27 @@ value|0.0
 end_define
 
 begin_define
+DECL|macro|GIMP_COORDS_DEFAULT_XSCALE
+define|#
+directive|define
+name|GIMP_COORDS_DEFAULT_XSCALE
+value|1.0
+end_define
+
+begin_define
+DECL|macro|GIMP_COORDS_DEFAULT_YSCALE
+define|#
+directive|define
+name|GIMP_COORDS_DEFAULT_YSCALE
+value|1.0
+end_define
+
+begin_define
 DECL|macro|GIMP_COORDS_DEFAULT_VALUES
 define|#
 directive|define
 name|GIMP_COORDS_DEFAULT_VALUES
-value|{ 0.0, 0.0, \                                         GIMP_COORDS_DEFAULT_PRESSURE, \                                         GIMP_COORDS_DEFAULT_TILT,     \                                         GIMP_COORDS_DEFAULT_TILT,     \                                         GIMP_COORDS_DEFAULT_WHEEL,    \                                         GIMP_COORDS_DEFAULT_VELOCITY, \                                         GIMP_COORDS_DEFAULT_DIRECTION }
+value|{ 0.0, 0.0, \                                         GIMP_COORDS_DEFAULT_PRESSURE, \                                         GIMP_COORDS_DEFAULT_TILT,     \                                         GIMP_COORDS_DEFAULT_TILT,     \                                         GIMP_COORDS_DEFAULT_WHEEL,    \                                         GIMP_COORDS_DEFAULT_VELOCITY, \                                         GIMP_COORDS_DEFAULT_DIRECTION,\                                         GIMP_COORDS_DEFAULT_XSCALE,   \                                         GIMP_COORDS_DEFAULT_YSCALE }
 end_define
 
 begin_comment
@@ -1243,6 +1259,15 @@ decl_stmt|;
 DECL|member|direction
 name|gdouble
 name|direction
+decl_stmt|;
+DECL|member|xscale
+name|gdouble
+name|xscale
+decl_stmt|;
+comment|/*some tools my care about the shell they passed through*/
+DECL|member|yscale
+name|gdouble
+name|yscale
 decl_stmt|;
 block|}
 struct|;

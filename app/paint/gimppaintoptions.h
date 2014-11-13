@@ -240,6 +240,10 @@ DECL|member|brush_size
 name|gdouble
 name|brush_size
 decl_stmt|;
+DECL|member|brush_zoom
+name|gboolean
+name|brush_zoom
+decl_stmt|;
 DECL|member|brush_angle
 name|gdouble
 name|brush_angle

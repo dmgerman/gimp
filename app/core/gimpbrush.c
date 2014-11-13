@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2784af720103
+DECL|enum|__anon2a07027c0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -132,7 +132,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2784af720203
+DECL|enum|__anon2a07027c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2645,7 +2645,6 @@ operator|->
 name|mask
 argument_list|)
 expr_stmt|;
-empty_stmt|;
 return|return;
 block|}
 name|GIMP_BRUSH_GET_CLASS

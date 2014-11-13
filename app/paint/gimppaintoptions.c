@@ -108,6 +108,14 @@ value|20.0
 end_define
 
 begin_define
+DECL|macro|DEFAULT_BRUSH_ZOOM
+define|#
+directive|define
+name|DEFAULT_BRUSH_ZOOM
+value|FALSE
+end_define
+
+begin_define
 DECL|macro|DEFAULT_BRUSH_ASPECT_RATIO
 define|#
 directive|define
@@ -269,7 +277,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon275df8500103
+DECL|enum|__anon2757f7f50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -283,6 +291,9 @@ block|,
 comment|/* temp debug */
 DECL|enumerator|PROP_BRUSH_SIZE
 name|PROP_BRUSH_SIZE
+block|,
+DECL|enumerator|PROP_BRUSH_ZOOM
+name|PROP_BRUSH_ZOOM
 block|,
 DECL|enumerator|PROP_BRUSH_ASPECT_RATIO
 name|PROP_BRUSH_ASPECT_RATIO
@@ -552,9 +563,27 @@ argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
-literal|10000.0
+name|GIMP_BRUSH_MAX_SIZE
 argument_list|,
 name|DEFAULT_BRUSH_SIZE
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
+name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_BRUSH_ZOOM
+argument_list|,
+literal|"brush-zoom"
+argument_list|,
+name|_
+argument_list|(
+literal|"Link brush with zoom"
+argument_list|)
+argument_list|,
+name|DEFAULT_BRUSH_ZOOM
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -1312,6 +1341,19 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|PROP_BRUSH_ZOOM
+case|:
+name|options
+operator|->
+name|brush_zoom
+operator|=
+name|g_value_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|PROP_BRUSH_ASPECT_RATIO
 case|:
 name|options
@@ -1748,6 +1790,19 @@ argument_list|,
 name|options
 operator|->
 name|brush_size
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_BRUSH_ZOOM
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|options
+operator|->
+name|brush_zoom
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2874,6 +2929,9 @@ decl_stmt|;
 name|gdouble
 name|brush_aspect_ratio
 decl_stmt|;
+name|gboolean
+name|brush_zoom
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_PAINT_OPTIONS
@@ -2899,6 +2957,11 @@ argument_list|,
 operator|&
 name|brush_size
 argument_list|,
+literal|"brush-zoom"
+argument_list|,
+operator|&
+name|brush_zoom
+argument_list|,
 literal|"brush-angle"
 argument_list|,
 operator|&
@@ -2919,6 +2982,10 @@ argument_list|,
 literal|"brush-size"
 argument_list|,
 name|brush_size
+argument_list|,
+literal|"brush-zoom"
+argument_list|,
+name|brush_zoom
 argument_list|,
 literal|"brush-angle"
 argument_list|,

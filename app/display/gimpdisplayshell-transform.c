@@ -2137,6 +2137,22 @@ name|shell
 operator|->
 name|scale_y
 expr_stmt|;
+name|image_coords
+operator|->
+name|xscale
+operator|=
+name|shell
+operator|->
+name|scale_x
+expr_stmt|;
+name|image_coords
+operator|->
+name|yscale
+operator|=
+name|shell
+operator|->
+name|scale_y
+expr_stmt|;
 block|}
 end_function
 
