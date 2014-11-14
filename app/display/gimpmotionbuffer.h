@@ -283,12 +283,6 @@ parameter_list|,
 name|guint32
 name|time
 parameter_list|,
-name|gdouble
-name|scale_x
-parameter_list|,
-name|gdouble
-name|scale_y
-parameter_list|,
 name|gboolean
 name|event_fill
 parameter_list|)
