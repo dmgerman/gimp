@@ -288,22 +288,22 @@ modifier|*
 name|reset_tooltip
 parameter_list|,
 name|gdouble
-name|minor_step
+name|step_increment
 parameter_list|,
 name|gdouble
-name|major_step
+name|page_increment
 parameter_list|,
 name|gdouble
-name|min
+name|scale_min
 parameter_list|,
 name|gdouble
-name|max
+name|scale_max
 parameter_list|,
 name|gdouble
 name|gamma
 parameter_list|,
 name|GCallback
-name|callback
+name|reset_callback
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -631,7 +631,6 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
-comment|/*Size spinner*/
 name|hbox
 operator|=
 name|gimp_paint_options_gui_scale_with_reset_button
@@ -687,7 +686,6 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
-comment|/*Aspect ratio spinner*/
 name|hbox
 operator|=
 name|gimp_paint_options_gui_scale_with_reset_button
@@ -703,7 +701,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Reset size to brush's native size"
+literal|"Reset aspect ratio to brush's native"
 argument_list|)
 argument_list|,
 literal|0.1
@@ -744,7 +742,6 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
-comment|/*Brush angle spinner*/
 name|hbox
 operator|=
 name|gimp_paint_options_gui_scale_with_reset_button
@@ -801,7 +798,6 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
-comment|/*Brush spacing spinner*/
 name|hbox
 operator|=
 name|gimp_paint_options_gui_scale_with_reset_button
@@ -817,7 +813,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Reset spacing to zero"
+literal|"Reset spacing to brush's native spacing"
 argument_list|)
 argument_list|,
 literal|0.1
@@ -1986,7 +1982,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_paint_options_gui_scale_with_reset_button (GObject * config,gchar * prop_name,gchar * prop_descr,gchar * reset_tooltip,gdouble minor_step,gdouble major_step,gdouble min,gdouble max,gdouble gamma,GCallback callback)
+DECL|function|gimp_paint_options_gui_scale_with_reset_button (GObject * config,gchar * prop_name,gchar * prop_descr,gchar * reset_tooltip,gdouble step_increment,gdouble page_increment,gdouble scale_min,gdouble scale_max,gdouble gamma,GCallback reset_callback)
 name|gimp_paint_options_gui_scale_with_reset_button
 parameter_list|(
 name|GObject
@@ -2006,22 +2002,22 @@ modifier|*
 name|reset_tooltip
 parameter_list|,
 name|gdouble
-name|minor_step
+name|step_increment
 parameter_list|,
 name|gdouble
-name|major_step
+name|page_increment
 parameter_list|,
 name|gdouble
-name|min
+name|scale_min
 parameter_list|,
 name|gdouble
-name|max
+name|scale_max
 parameter_list|,
 name|gdouble
 name|gamma
 parameter_list|,
 name|GCallback
-name|callback
+name|reset_callback
 parameter_list|)
 block|{
 name|GtkWidget
@@ -2055,9 +2051,9 @@ name|prop_name
 argument_list|,
 name|prop_descr
 argument_list|,
-name|minor_step
+name|step_increment
 argument_list|,
-name|major_step
+name|page_increment
 argument_list|,
 literal|2
 argument_list|)
@@ -2069,9 +2065,9 @@ argument_list|(
 name|scale
 argument_list|)
 argument_list|,
-name|min
+name|scale_min
 argument_list|,
-name|max
+name|scale_max
 argument_list|)
 expr_stmt|;
 name|gimp_spin_scale_set_gamma
@@ -2169,7 +2165,7 @@ name|button
 argument_list|,
 literal|"clicked"
 argument_list|,
-name|callback
+name|reset_callback
 argument_list|,
 name|config
 argument_list|)
