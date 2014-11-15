@@ -269,7 +269,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c17a3400103
+DECL|enum|__anon275df8500103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -552,7 +552,7 @@ argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
-name|GIMP_BRUSH_MAX_SIZE
+literal|10000.0
 argument_list|,
 name|DEFAULT_BRUSH_SIZE
 argument_list|,
