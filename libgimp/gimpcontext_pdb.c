@@ -1850,7 +1850,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_brush_spacing:  *  * Get brush spacing as percent of size.  *  * Get the brush spacing as percent of size for brush based paint  * tools.  *  * Returns: brush spacing as percent of size.  *  * Since: GIMP 2.9  **/
+comment|/**  * gimp_context_get_brush_spacing:  *  * Get brush spacing as percent of size.  *  * Get the brush spacing as percent of size for brush based paint  * tools.  *  * Returns: brush spacing as percent of size.  *  * Since: GIMP 2.10  **/
 end_comment
 
 begin_function
@@ -1923,7 +1923,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_brush_spacing:  * @spacing: brush spacing as percent of size.  *  * Set brush spacing as percent of size.  *  * Set the brush spacing as percent of size for brush based paint  * tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.9  **/
+comment|/**  * gimp_context_set_brush_spacing:  * @spacing: brush spacing as percent of size.  *  * Set brush spacing as percent of size.  *  * Set the brush spacing as percent of size for brush based paint  * tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.10  **/
 end_comment
 
 begin_function
@@ -1990,7 +1990,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_brush_default_spacing:  *  * Set brush spacing to its default.  *  * Set the brush spacing to the default for paintbrush, airbrush, or  * pencil tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.9  **/
+comment|/**  * gimp_context_set_brush_default_spacing:  *  * Set brush spacing to its default.  *  * Set the brush spacing to the default for paintbrush, airbrush, or  * pencil tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.10  **/
 end_comment
 
 begin_function
