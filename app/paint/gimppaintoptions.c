@@ -277,7 +277,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2757f7f50103
+DECL|enum|__anon2ad4731e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2929,6 +2929,9 @@ decl_stmt|;
 name|gdouble
 name|brush_aspect_ratio
 decl_stmt|;
+name|gdouble
+name|brush_spacing
+decl_stmt|;
 name|gboolean
 name|brush_zoom
 decl_stmt|;
@@ -2972,6 +2975,11 @@ argument_list|,
 operator|&
 name|brush_aspect_ratio
 argument_list|,
+literal|"brush-spacing"
+argument_list|,
+operator|&
+name|brush_spacing
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -2994,6 +3002,10 @@ argument_list|,
 literal|"brush-aspect-ratio"
 argument_list|,
 name|brush_aspect_ratio
+argument_list|,
+literal|"brush-spacing"
+argument_list|,
+name|brush_spacing
 argument_list|,
 name|NULL
 argument_list|)
