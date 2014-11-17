@@ -150,7 +150,7 @@ DECL|macro|DEFAULT_BRUSH_HARDNESS
 define|#
 directive|define
 name|DEFAULT_BRUSH_HARDNESS
-value|1.0
+value|100.0
 end_define
 
 begin_comment
@@ -163,7 +163,7 @@ DECL|macro|DEFAULT_BRUSH_FORCE
 define|#
 directive|define
 name|DEFAULT_BRUSH_FORCE
-value|0.0
+value|50.0
 end_define
 
 begin_define
@@ -304,7 +304,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297bc93a0103
+DECL|enum|__anon296c16ca0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -704,7 +704,7 @@ argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
-literal|1.0
+literal|100.0
 argument_list|,
 name|DEFAULT_BRUSH_HARDNESS
 argument_list|,
@@ -726,7 +726,7 @@ argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
-literal|1.0
+literal|100.0
 argument_list|,
 name|DEFAULT_BRUSH_FORCE
 argument_list|,
@@ -3131,6 +3131,8 @@ name|gimp_brush_generated_get_hardness
 argument_list|(
 name|generated_brush
 argument_list|)
+operator|*
+literal|100.0
 argument_list|,
 name|NULL
 argument_list|)

@@ -904,13 +904,13 @@ argument_list|(
 literal|"Reset hardness to default"
 argument_list|)
 argument_list|,
-literal|0.01
-argument_list|,
 literal|0.1
+argument_list|,
+literal|1.0
 argument_list|,
 literal|0.0
 argument_list|,
-literal|1.0
+literal|100.0
 argument_list|,
 literal|1.0
 argument_list|,
@@ -960,13 +960,13 @@ argument_list|(
 literal|"Reset force to default"
 argument_list|)
 argument_list|,
-literal|0.01
-argument_list|,
 literal|0.1
+argument_list|,
+literal|1.0
 argument_list|,
 literal|0.0
 argument_list|,
-literal|1.0
+literal|100.0
 argument_list|,
 literal|1.0
 argument_list|,
@@ -2235,7 +2235,7 @@ name|paint_options
 argument_list|,
 literal|"brush-force"
 argument_list|,
-literal|0.0
+literal|50.0
 argument_list|,
 name|NULL
 argument_list|)
