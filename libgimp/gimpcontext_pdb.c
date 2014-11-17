@@ -1368,7 +1368,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_brush_size:  *  * Get brush size in pixels.  *  * Get the brush size in pixels for brush based paint tools.  *  * Returns: brush size in pixels.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_brush_size:  *  * Get brush size in pixels.  *  * Get the brush size in pixels for brush based paint tools.  *  * Returns: Brush size in pixels.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -1441,7 +1441,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_brush_size:  * @size: brush size in pixels.  *  * Set brush size in pixels.  *  * Set the brush size in pixels for brush based paint tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_brush_size:  * @size: Brush size in pixels.  *  * Set brush size in pixels.  *  * Set the brush size in pixels for brush based paint tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -1570,7 +1570,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_brush_aspect_ratio:  *  * Get brush aspect ratio.  *  * Set the aspect ratio for brush based paint tools.  *  * Returns: aspect ratio.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_brush_aspect_ratio:  *  * Get brush aspect ratio.  *  * Set the aspect ratio for brush based paint tools.  *  * Returns: Aspect ratio.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -1643,7 +1643,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_brush_aspect_ratio:  * @aspect: aspect ratio.  *  * Set brush aspect ratio.  *  * Set the aspect ratio for brush based paint tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_brush_aspect_ratio:  * @aspect: Aspect ratio.  *  * Set brush aspect ratio.  *  * Set the aspect ratio for brush based paint tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -1710,7 +1710,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_brush_angle:  *  * Get brush angle in degrees.  *  * Set the angle in degrees for brush based paint tools.  *  * Returns: angle in degrees.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_brush_angle:  *  * Get brush angle in degrees.  *  * Set the angle in degrees for brush based paint tools.  *  * Returns: Angle in degrees.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -1783,7 +1783,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_brush_angle:  * @angle: angle in degrees.  *  * Set brush angle in degrees.  *  * Set the angle in degrees for brush based paint tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_brush_angle:  * @angle: Angle in degrees.  *  * Set brush angle in degrees.  *  * Set the angle in degrees for brush based paint tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -1850,7 +1850,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_brush_spacing:  *  * Get brush spacing as percent of size.  *  * Get the brush spacing as percent of size for brush based paint  * tools.  *  * Returns: brush spacing as percent of size.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_context_get_brush_spacing:  *  * Get brush spacing as percent of size.  *  * Get the brush spacing as percent of size for brush based paint  * tools.  *  * Returns: Brush spacing as percent of size.  *  * Since: GIMP 2.10  **/
 end_comment
 
 begin_function
@@ -1923,7 +1923,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_brush_spacing:  * @spacing: brush spacing as percent of size.  *  * Set brush spacing as percent of size.  *  * Set the brush spacing as percent of size for brush based paint  * tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_context_set_brush_spacing:  * @spacing: Brush spacing as percent of size.  *  * Set brush spacing as percent of size.  *  * Set the brush spacing as percent of size for brush based paint  * tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.10  **/
 end_comment
 
 begin_function
@@ -2052,7 +2052,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_brush_hardness:  *  * Get brush hardness in paint options.  *  * Get the brush hardness for brush based paint tools.  *  * Returns: brush hardness.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_context_get_brush_hardness:  *  * Get brush hardness in paint options.  *  * Get the brush hardness for brush based paint tools.  *  * Returns: Brush hardness.  *  * Since: GIMP 2.10  **/
 end_comment
 
 begin_function
@@ -2125,7 +2125,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_brush_hardness:  * @hardness: brush hardness.  *  * Set brush hardness.  *  * Set the brush hardness for brush based paint tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_context_set_brush_hardness:  * @hardness: Brush hardness.  *  * Set brush hardness.  *  * Set the brush hardness for brush based paint tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.10  **/
 end_comment
 
 begin_function
@@ -2254,7 +2254,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_brush_force:  *  * Get brush force in paint options.  *  * Get the brush application force for brush based paint tools.  *  * Returns: brush application force.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_context_get_brush_force:  *  * Get brush force in paint options.  *  * Get the brush application force for brush based paint tools.  *  * Returns: Brush application force.  *  * Since: GIMP 2.10  **/
 end_comment
 
 begin_function
@@ -2327,7 +2327,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_brush_force:  * @force: brush application force.  *  * Set brush application force.  *  * Set the brush application force for brush based paint tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_context_set_brush_force:  * @force: Brush application force.  *  * Set brush application force.  *  * Set the brush application force for brush based paint tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.10  **/
 end_comment
 
 begin_function

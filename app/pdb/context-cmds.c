@@ -3225,7 +3225,7 @@ name|list
 operator|->
 name|data
 argument_list|,
-literal|"brush-spacing"
+literal|"brush-hardness"
 argument_list|,
 operator|(
 name|gdouble
@@ -3605,7 +3605,7 @@ name|list
 operator|->
 name|data
 argument_list|,
-literal|"brush-spacing"
+literal|"brush-force"
 argument_list|,
 operator|(
 name|gdouble
@@ -9990,7 +9990,7 @@ literal|"size"
 argument_list|,
 literal|"size"
 argument_list|,
-literal|"brush size in pixels"
+literal|"Brush size in pixels"
 argument_list|,
 literal|0
 argument_list|,
@@ -10061,7 +10061,7 @@ literal|"size"
 argument_list|,
 literal|"size"
 argument_list|,
-literal|"brush size in pixels"
+literal|"Brush size in pixels"
 argument_list|,
 literal|0
 argument_list|,
@@ -10181,7 +10181,7 @@ literal|"aspect"
 argument_list|,
 literal|"aspect"
 argument_list|,
-literal|"aspect ratio"
+literal|"Aspect ratio"
 argument_list|,
 operator|-
 literal|20
@@ -10254,7 +10254,7 @@ literal|"aspect"
 argument_list|,
 literal|"aspect"
 argument_list|,
-literal|"aspect ratio"
+literal|"Aspect ratio"
 argument_list|,
 operator|-
 literal|20
@@ -10327,7 +10327,7 @@ literal|"angle"
 argument_list|,
 literal|"angle"
 argument_list|,
-literal|"angle in degrees"
+literal|"Angle in degrees"
 argument_list|,
 operator|-
 literal|180
@@ -10400,7 +10400,7 @@ literal|"angle"
 argument_list|,
 literal|"angle"
 argument_list|,
-literal|"angle in degrees"
+literal|"Angle in degrees"
 argument_list|,
 operator|-
 literal|180
@@ -10473,7 +10473,7 @@ literal|"spacing"
 argument_list|,
 literal|"spacing"
 argument_list|,
-literal|"brush spacing as percent of size"
+literal|"Brush spacing as percent of size"
 argument_list|,
 literal|0
 argument_list|,
@@ -10544,7 +10544,7 @@ literal|"spacing"
 argument_list|,
 literal|"spacing"
 argument_list|,
-literal|"brush spacing as percent of size"
+literal|"Brush spacing as percent of size"
 argument_list|,
 literal|0
 argument_list|,
@@ -10664,13 +10664,13 @@ literal|"hardness"
 argument_list|,
 literal|"hardness"
 argument_list|,
-literal|"brush hardness"
+literal|"Brush hardness"
 argument_list|,
-literal|0
+literal|0.0
 argument_list|,
-name|G_MAXDOUBLE
+literal|1.0
 argument_list|,
-literal|0
+literal|0.0
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -10735,13 +10735,13 @@ literal|"hardness"
 argument_list|,
 literal|"hardness"
 argument_list|,
-literal|"brush hardness"
+literal|"Brush hardness"
 argument_list|,
-literal|0
+literal|0.0
 argument_list|,
-name|G_MAXDOUBLE
+literal|1.0
 argument_list|,
-literal|0
+literal|0.0
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -10855,13 +10855,13 @@ literal|"force"
 argument_list|,
 literal|"force"
 argument_list|,
-literal|"brush application force"
+literal|"Brush application force"
 argument_list|,
-literal|0
+literal|0.0
 argument_list|,
-name|G_MAXDOUBLE
+literal|1.0
 argument_list|,
-literal|0
+literal|0.0
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -10926,13 +10926,13 @@ literal|"force"
 argument_list|,
 literal|"force"
 argument_list|,
-literal|"brush application force"
+literal|"Brush application force"
 argument_list|,
-literal|0
+literal|0.0
 argument_list|,
-name|G_MAXDOUBLE
+literal|1.0
 argument_list|,
-literal|0
+literal|0.0
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
