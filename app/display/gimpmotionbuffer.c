@@ -88,7 +88,7 @@ DECL|macro|DIRECTION_RADIUS
 define|#
 directive|define
 name|DIRECTION_RADIUS
-value|(1.5 / MAX (scale_x, scale_y))
+value|(1.0 / MAX (scale_x, scale_y))
 end_define
 
 begin_define
@@ -101,7 +101,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6fe76d0103
+DECL|enum|__anon2b5fb0a80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6fe76d0203
+DECL|enum|__anon2b5fb0a80203
 block|{
 DECL|enumerator|STROKE
 name|STROKE
@@ -1194,7 +1194,22 @@ block|{
 name|gint
 name|x
 init|=
+name|CLAMP
+argument_list|(
+operator|(
+name|buffer
+operator|->
+name|event_history
+operator|->
+name|len
+operator|-
+literal|1
+operator|)
+argument_list|,
 literal|3
+argument_list|,
+literal|15
+argument_list|)
 decl_stmt|;
 while|while
 condition|(
