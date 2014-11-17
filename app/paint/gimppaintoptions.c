@@ -298,7 +298,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2802d18e0103
+DECL|enum|__anon274c30610103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2794,6 +2794,8 @@ name|force_output
 decl_stmt|;
 name|gboolean
 name|dynamic_force
+init|=
+name|FALSE
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -2835,14 +2837,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|force_output
 condition|)
-name|dynamic_force
-operator|=
-name|FALSE
-expr_stmt|;
-else|else
 name|dynamic_force
 operator|=
 name|gimp_dynamics_output_is_enabled
