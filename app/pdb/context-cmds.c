@@ -10473,13 +10473,13 @@ literal|"spacing"
 argument_list|,
 literal|"spacing"
 argument_list|,
-literal|"Brush spacing as percent of size"
+literal|"Brush spacing as fraction of size"
 argument_list|,
-literal|0
+literal|0.01
 argument_list|,
-name|G_MAXDOUBLE
+literal|50.0
 argument_list|,
-literal|0
+literal|0.01
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -10544,13 +10544,13 @@ literal|"spacing"
 argument_list|,
 literal|"spacing"
 argument_list|,
-literal|"Brush spacing as percent of size"
+literal|"Brush spacing as fraction of size"
 argument_list|,
-literal|0
+literal|0.01
 argument_list|,
-name|G_MAXDOUBLE
+literal|50.0
 argument_list|,
-literal|0
+literal|0.01
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

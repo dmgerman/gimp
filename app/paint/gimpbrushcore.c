@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0b38550103
+DECL|enum|__anon2b6691f40103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -1743,14 +1743,9 @@ name|core
 operator|->
 name|spacing
 operator|=
-operator|(
-name|gdouble
-operator|)
 name|paint_options
 operator|->
 name|brush_spacing
-operator|/
-literal|100
 expr_stmt|;
 name|core
 operator|->

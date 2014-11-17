@@ -136,7 +136,7 @@ DECL|macro|DEFAULT_BRUSH_SPACING
 define|#
 directive|define
 name|DEFAULT_BRUSH_SPACING
-value|10.0
+value|0.1
 end_define
 
 begin_define
@@ -298,7 +298,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon274c30610103
+DECL|enum|__anon288b0e450103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -674,9 +674,9 @@ argument_list|(
 literal|"Brush Spacing"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.01
 argument_list|,
-literal|5000.0
+literal|50.0
 argument_list|,
 name|DEFAULT_BRUSH_SPACING
 argument_list|,
@@ -3034,6 +3034,8 @@ name|gimp_brush_get_spacing
 argument_list|(
 name|brush
 argument_list|)
+operator|/
+literal|100.0
 argument_list|,
 name|NULL
 argument_list|)

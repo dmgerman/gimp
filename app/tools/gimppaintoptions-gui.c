@@ -870,13 +870,13 @@ literal|0.1
 argument_list|,
 literal|1.0
 argument_list|,
-literal|2
+literal|1
 argument_list|,
 literal|1.0
 argument_list|,
 literal|200.0
 argument_list|,
-literal|1.0
+literal|100.0
 argument_list|,
 literal|1.7
 argument_list|,
@@ -925,11 +925,11 @@ argument_list|(
 literal|"Reset hardness to default"
 argument_list|)
 argument_list|,
-literal|0.001
+literal|0.1
 argument_list|,
-literal|0.01
+literal|1.0
 argument_list|,
-literal|3
+literal|1
 argument_list|,
 literal|0.0
 argument_list|,
@@ -984,11 +984,11 @@ argument_list|(
 literal|"Reset force to default"
 argument_list|)
 argument_list|,
-literal|0.001
+literal|0.1
 argument_list|,
-literal|0.01
+literal|1.0
 argument_list|,
-literal|2
+literal|1
 argument_list|,
 literal|0.0
 argument_list|,
