@@ -668,7 +668,7 @@ argument_list|)
 expr_stmt|;
 name|force
 operator|=
-literal|0.0
+literal|0.5
 expr_stmt|;
 name|option_force
 operator|=
@@ -682,8 +682,8 @@ if|if
 condition|(
 operator|(
 name|option_force
-operator|>
-literal|0.0
+operator|!=
+literal|0.5
 operator|)
 operator|&&
 name|gimp_dynamics_output_is_enabled
@@ -707,8 +707,8 @@ elseif|else
 if|if
 condition|(
 name|option_force
-operator|>
-literal|0.0
+operator|!=
+literal|0.5
 condition|)
 name|force
 operator|=
