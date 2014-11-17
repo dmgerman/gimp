@@ -632,6 +632,12 @@ expr_stmt|;
 block|}
 name|force
 operator|=
+name|MAX
+argument_list|(
+name|paint_options
+operator|->
+name|brush_force
+argument_list|,
 name|gimp_dynamics_get_linear_value
 argument_list|(
 name|dynamics
@@ -643,6 +649,7 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|fade_point
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* finally, let the brush core paste the colored area on the canvas */

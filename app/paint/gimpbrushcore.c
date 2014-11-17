@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5b77690103
+DECL|enum|__anon2b20d6b30103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -6663,6 +6663,14 @@ name|paint_options
 operator|->
 name|brush_aspect_ratio
 expr_stmt|;
+name|core
+operator|->
+name|hardness
+operator|=
+name|paint_options
+operator|->
+name|brush_hardness
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -6779,7 +6787,7 @@ expr_stmt|;
 name|core
 operator|->
 name|hardness
-operator|=
+operator|*=
 name|gimp_dynamics_get_linear_value
 argument_list|(
 name|core
