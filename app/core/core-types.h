@@ -1264,7 +1264,7 @@ DECL|member|xscale
 name|gdouble
 name|xscale
 decl_stmt|;
-comment|/*some tools my care about the shell they passed through*/
+comment|/* the view scale */
 DECL|member|yscale
 name|gdouble
 name|yscale

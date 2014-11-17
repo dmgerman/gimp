@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpbrush.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpbrushgenerated.h"
 end_include
 
@@ -155,7 +149,7 @@ end_define
 
 begin_comment
 DECL|macro|DEFAULT_BRUSH_HARDNESS
-comment|/*Generated brushes have their own*/
+comment|/* Generated brushes have their own */
 end_comment
 
 begin_define
@@ -304,7 +298,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon296c16ca0103
+DECL|enum|__anon2948c74d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -613,7 +607,7 @@ literal|"brush-zoom"
 argument_list|,
 name|_
 argument_list|(
-literal|"Link brush with zoom"
+literal|"Link brush size with canvas zoom"
 argument_list|)
 argument_list|,
 name|DEFAULT_BRUSH_ZOOM
@@ -3172,6 +3166,9 @@ block|{
 name|gdouble
 name|brush_size
 decl_stmt|;
+name|gboolean
+name|brush_zoom
+decl_stmt|;
 name|gdouble
 name|brush_angle
 decl_stmt|;
@@ -3186,9 +3183,6 @@ name|brush_hardness
 decl_stmt|;
 name|gdouble
 name|brush_force
-decl_stmt|;
-name|gboolean
-name|brush_zoom
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(

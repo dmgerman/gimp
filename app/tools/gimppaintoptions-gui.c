@@ -885,7 +885,6 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
-comment|/*Brush hardness spinner*/
 name|hbox
 operator|=
 name|gimp_paint_options_gui_scale_with_reset_button
@@ -941,7 +940,6 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
-comment|/*Brush hardness spinner*/
 name|hbox
 operator|=
 name|gimp_paint_options_gui_scale_with_reset_button

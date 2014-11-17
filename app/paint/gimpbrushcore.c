@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acc31d70103
+DECL|enum|__anon2785a18f0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -6614,7 +6614,7 @@ operator|->
 name|yscale
 argument_list|)
 expr_stmt|;
-comment|/*Cap transform result for brushes or OOM can occur*/
+comment|/* Cap transform result for brushes or OOM can occur */
 if|if
 condition|(
 operator|(
