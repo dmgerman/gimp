@@ -680,12 +680,6 @@ literal|100.0
 expr_stmt|;
 if|if
 condition|(
-operator|(
-name|option_force
-operator|!=
-literal|0.5
-operator|)
-operator|&&
 name|gimp_dynamics_output_is_enabled
 argument_list|(
 name|dyn_output
@@ -693,14 +687,6 @@ argument_list|)
 condition|)
 name|force
 operator|=
-name|option_force
-operator|+
-operator|(
-literal|1
-operator|-
-name|option_force
-operator|)
-operator|*
 name|dyn_force
 expr_stmt|;
 elseif|else
