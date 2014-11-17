@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2785a18f0103
+DECL|enum|__anon2b0b38550103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -6670,8 +6670,6 @@ operator|=
 name|paint_options
 operator|->
 name|brush_hardness
-operator|/
-literal|100.0
 expr_stmt|;
 if|if
 condition|(

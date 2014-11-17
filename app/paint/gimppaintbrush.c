@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdynamicsoutput.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpgradient.h"
 end_include
 
@@ -675,8 +681,6 @@ operator|=
 name|paint_options
 operator|->
 name|brush_force
-operator|/
-literal|100.0
 expr_stmt|;
 if|if
 condition|(
