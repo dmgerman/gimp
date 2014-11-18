@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d72a9c0103
+DECL|enum|__anon278d86780103
 block|{
 DECL|enumerator|GIMP_CURSOR_PRECISION_PIXEL_CENTER
 name|GIMP_CURSOR_PRECISION_PIXEL_CENTER
@@ -74,7 +74,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d72a9c0203
+DECL|enum|__anon278d86780203
 block|{
 DECL|enumerator|GIMP_GUIDES_NONE
 name|GIMP_GUIDES_NONE
@@ -134,7 +134,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d72a9c0303
+DECL|enum|__anon278d86780303
 block|{
 DECL|enumerator|GIMP_HANDLE_SQUARE
 name|GIMP_HANDLE_SQUARE
@@ -156,6 +156,9 @@ name|GIMP_HANDLE_FILLED_DIAMOND
 block|,
 DECL|enumerator|GIMP_HANDLE_CROSS
 name|GIMP_HANDLE_CROSS
+block|,
+DECL|enumerator|GIMP_HANDLE_CROSSHAIR
+name|GIMP_HANDLE_CROSSHAIR
 DECL|typedef|GimpHandleType
 block|}
 name|GimpHandleType
@@ -183,7 +186,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d72a9c0403
+DECL|enum|__anon278d86780403
 block|{
 DECL|enumerator|GIMP_HANDLE_ANCHOR_CENTER
 name|GIMP_HANDLE_ANCHOR_CENTER
@@ -238,7 +241,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d72a9c0503
+DECL|enum|__anon278d86780503
 block|{
 DECL|enumerator|GIMP_PATH_STYLE_DEFAULT
 name|GIMP_PATH_STYLE_DEFAULT
@@ -275,7 +278,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d72a9c0603
+DECL|enum|__anon278d86780603
 block|{
 comment|/* Make a best guess */
 DECL|enumerator|GIMP_ZOOM_FOCUS_BEST_GUESS

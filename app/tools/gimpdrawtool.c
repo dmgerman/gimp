@@ -3662,6 +3662,9 @@ case|:
 case|case
 name|GIMP_HANDLE_CROSS
 case|:
+case|case
+name|GIMP_HANDLE_CROSSHAIR
+case|:
 name|gimp_canvas_item_shift_to_north_west
 argument_list|(
 name|anchor

@@ -39,6 +39,14 @@ value|15
 end_define
 
 begin_define
+DECL|macro|GIMP_TOOL_HANDLE_SIZE_CROSSHAIR
+define|#
+directive|define
+name|GIMP_TOOL_HANDLE_SIZE_CROSSHAIR
+value|43
+end_define
+
+begin_define
 DECL|macro|GIMP_TOOL_HANDLE_SIZE_LARGE
 define|#
 directive|define
