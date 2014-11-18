@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f979d00103
+DECL|enum|__anon2ae2c27c0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -438,6 +438,8 @@ block|,
 literal|"gegl:stretch-contrast"
 block|,
 literal|"gegl:stretch-contrast-hsv"
+block|,
+literal|"gegl:supernova"
 block|,
 literal|"gegl:texturize-canvas"
 block|,

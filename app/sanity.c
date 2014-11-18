@@ -1643,6 +1643,12 @@ literal|"gegl:simplex-noise"
 block|,
 literal|"gegl:softglow"
 block|,
+literal|"gegl:stretch-contrast"
+block|,
+literal|"gegl:stretch-contrast-hsv"
+block|,
+literal|"gegl:supernova"
+block|,
 literal|"gegl:threshold"
 block|,
 literal|"gegl:tile"

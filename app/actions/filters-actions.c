@@ -1367,6 +1367,28 @@ comment|/* FIXME GIMP_HELP_FILTER_STRETCH_CONTRAST_HSV */
 block|}
 block|,
 block|{
+literal|"filters-supernova"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Super_nova..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:supernova"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_SUPERNOVA */
+block|}
+block|,
+block|{
 literal|"filters-threshold-alpha"
 block|,
 name|GIMP_STOCK_GEGL
@@ -1385,7 +1407,7 @@ block|,
 literal|"gimp:threshold-alpha"
 block|,
 name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_POLAR_COORDINATES */
+comment|/* FIXME GIMP_HELP_FILTER_THRESHOLD_ALPHA */
 block|}
 block|,
 block|{
@@ -2224,6 +2246,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-stretch-contrast-hsv"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-supernova"
 argument_list|,
 name|writable
 argument_list|)
