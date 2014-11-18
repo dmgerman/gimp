@@ -988,7 +988,7 @@ argument_list|(
 name|brush_tool
 argument_list|)
 expr_stmt|;
-name|gimp_paint_tool_set_draw_circle
+name|gimp_paint_tool_set_draw_fallback
 argument_list|(
 name|paint_tool
 argument_list|,
