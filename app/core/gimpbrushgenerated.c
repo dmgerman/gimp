@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon275649f40103
+DECL|enum|__anon2c4f8b9b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1358,10 +1358,6 @@ name|brush
 operator|->
 name|spikes
 argument_list|,
-name|brush
-operator|->
-name|hardness
-operator|*
 name|hardness
 argument_list|,
 name|ratio
