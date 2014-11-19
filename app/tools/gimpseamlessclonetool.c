@@ -237,7 +237,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon273a3fea0103
+DECL|enum|__anon2ad40f930103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -648,7 +648,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_SEAMLESS_CLONE
 argument_list|,
-name|GIMP_STOCK_TOOL_MOVE
+name|GIMP_STOCK_TOOL_SEAMLESS_CLONE
 argument_list|,
 name|data
 argument_list|)
