@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae2c27c0103
+DECL|enum|__anon2af6fd280103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -432,6 +432,8 @@ block|,
 literal|"gegl:simplex-noise"
 block|,
 literal|"gegl:shift"
+block|,
+literal|"gegl:sinus"
 block|,
 literal|"gegl:softglow"
 block|,

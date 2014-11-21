@@ -1641,6 +1641,10 @@ literal|"gegl:shift"
 block|,
 literal|"gegl:simplex-noise"
 block|,
+literal|"gegl:shift"
+block|,
+literal|"gegl:sinus"
+block|,
 literal|"gegl:softglow"
 block|,
 literal|"gegl:stretch-contrast"
