@@ -1059,6 +1059,28 @@ comment|/* FIXME GIMP_HELP_FILTER_NOISE_SLUR */
 block|}
 block|,
 block|{
+literal|"filters-noise-solid"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Solid Noise..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:noise-solid"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_NOISE_SOLID */
+block|}
+block|,
+block|{
 literal|"filters-noise-spread"
 block|,
 name|GIMP_STOCK_GEGL
@@ -2165,6 +2187,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-noise-slur"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-noise-solid"
 argument_list|,
 name|writable
 argument_list|)
