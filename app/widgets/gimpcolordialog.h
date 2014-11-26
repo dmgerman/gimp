@@ -22,11 +22,13 @@ directive|include
 file|"gimpviewabledialog.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gui/color-history.h"
-end_include
+begin_define
+DECL|macro|GIMP_COLOR_DIALOG_HISTORY_SIZE
+define|#
+directive|define
+name|GIMP_COLOR_DIALOG_HISTORY_SIZE
+value|12
+end_define
 
 begin_define
 DECL|macro|GIMP_TYPE_COLOR_DIALOG
@@ -123,7 +125,7 @@ name|GtkWidget
 modifier|*
 name|history
 index|[
-name|COLOR_HISTORY_SIZE
+name|GIMP_COLOR_DIALOG_HISTORY_SIZE
 index|]
 decl_stmt|;
 block|}

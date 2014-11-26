@@ -572,6 +572,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPaletteMru
+typedef|typedef
+name|struct
+name|_GimpPaletteMru
+name|GimpPaletteMru
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPattern
 typedef|typedef
 name|struct

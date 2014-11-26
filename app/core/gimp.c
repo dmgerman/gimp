@@ -136,6 +136,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-palettes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-parasites.h"
 end_include
 
@@ -339,7 +345,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a22f510103
+DECL|enum|__anon2c25415a0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -364,7 +370,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a22f510203
+DECL|enum|__anon2c25415a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3108,6 +3114,12 @@ argument_list|)
 expr_stmt|;
 comment|/*  add the builtin FG -> BG etc. gradients  */
 name|gimp_gradients_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+comment|/*  add the color history palette  */
+name|gimp_palettes_init
 argument_list|(
 name|gimp
 argument_list|)
