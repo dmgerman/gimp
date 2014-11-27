@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276cb7150103
+DECL|enum|__anon2ae9717b0103
 block|{
 DECL|enumerator|COLOR_HISTORY
 name|COLOR_HISTORY
@@ -653,19 +653,23 @@ decl_stmt|;
 name|gint
 name|max_changed
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_PALETTE_MRU
 argument_list|(
 name|mru
 argument_list|)
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|color
 operator|!=
 name|NULL
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|palette
