@@ -251,7 +251,6 @@ end_include
 
 begin_define
 DECL|macro|RESPONSE_RESET
-DECL|macro|RESPONSE_RESET
 define|#
 directive|define
 name|RESPONSE_RESET
@@ -259,7 +258,6 @@ value|1
 end_define
 
 begin_define
-DECL|macro|MIN_HANDLE_SIZE
 DECL|macro|MIN_HANDLE_SIZE
 define|#
 directive|define
@@ -898,7 +896,6 @@ end_function_decl
 
 begin_macro
 DECL|function|G_DEFINE_TYPE (GimpTransformTool,gimp_transform_tool,GIMP_TYPE_DRAW_TOOL)
-DECL|function|G_DEFINE_TYPE (GimpTransformTool,gimp_transform_tool,GIMP_TYPE_DRAW_TOOL)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpTransformTool
@@ -910,7 +907,6 @@ argument_list|)
 end_macro
 
 begin_define
-DECL|macro|parent_class
 DECL|macro|parent_class
 define|#
 directive|define
@@ -1118,7 +1114,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|gimp_transform_tool_init (GimpTransformTool * tr_tool)
-DECL|function|gimp_transform_tool_init (GimpTransformTool * tr_tool)
 name|gimp_transform_tool_init
 parameter_list|(
 name|GimpTransformTool
@@ -1216,7 +1211,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|gimp_transform_tool_finalize (GObject * object)
-DECL|function|gimp_transform_tool_finalize (GObject * object)
 name|gimp_transform_tool_finalize
 parameter_list|(
 name|GObject
@@ -1270,7 +1264,6 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_transform_tool_initialize (GimpTool * tool,GimpDisplay * display,GError ** error)
 DECL|function|gimp_transform_tool_initialize (GimpTool * tool,GimpDisplay * display,GError ** error)
 name|gimp_transform_tool_initialize
 parameter_list|(
@@ -1538,7 +1531,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|gimp_transform_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * display)
-DECL|function|gimp_transform_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * display)
 name|gimp_transform_tool_control
 parameter_list|(
 name|GimpTool
@@ -1628,7 +1620,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_button_press (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonPressType press_type,GimpDisplay * display)
 DECL|function|gimp_transform_tool_button_press (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonPressType press_type,GimpDisplay * display)
 name|gimp_transform_tool_button_press
 parameter_list|(
@@ -1813,7 +1804,6 @@ end_function
 begin_function
 name|void
 DECL|function|gimp_transform_tool_push_internal_undo (GimpTransformTool * tr_tool)
-DECL|function|gimp_transform_tool_push_internal_undo (GimpTransformTool * tr_tool)
 name|gimp_transform_tool_push_internal_undo
 parameter_list|(
 name|GimpTransformTool
@@ -1979,7 +1969,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|gimp_transform_tool_button_release (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonReleaseType release_type,GimpDisplay * display)
-DECL|function|gimp_transform_tool_button_release (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonReleaseType release_type,GimpDisplay * display)
 name|gimp_transform_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -2143,7 +2132,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|gimp_transform_tool_motion (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
-DECL|function|gimp_transform_tool_motion (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_transform_tool_motion
 parameter_list|(
 name|GimpTool
@@ -2272,7 +2260,6 @@ begin_function
 specifier|static
 name|gboolean
 DECL|function|gimp_transform_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * display)
-DECL|function|gimp_transform_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * display)
 name|gimp_transform_tool_key_press
 parameter_list|(
 name|GimpTool
@@ -2384,7 +2371,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * display)
 DECL|function|gimp_transform_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * display)
 name|gimp_transform_tool_modifier_key
 parameter_list|(
@@ -2565,7 +2551,6 @@ end_function
 begin_function
 specifier|static
 name|TransformAction
-DECL|function|gimp_transform_tool_real_pick_function (GimpTransformTool * tr_tool,const GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 DECL|function|gimp_transform_tool_real_pick_function (GimpTransformTool * tr_tool,const GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_transform_tool_real_pick_function
 parameter_list|(
@@ -2959,7 +2944,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|gimp_transform_tool_oper_update (GimpTool * tool,const GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
-DECL|function|gimp_transform_tool_oper_update (GimpTool * tool,const GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
 name|gimp_transform_tool_oper_update
 parameter_list|(
 name|GimpTool
@@ -3060,7 +3044,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_cursor_update (GimpTool * tool,const GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 DECL|function|gimp_transform_tool_cursor_update (GimpTool * tool,const GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_transform_tool_cursor_update
 parameter_list|(
@@ -3304,7 +3287,6 @@ specifier|const
 name|gchar
 modifier|*
 DECL|function|gimp_transform_tool_get_undo_desc (GimpTool * tool,GimpDisplay * display)
-DECL|function|gimp_transform_tool_get_undo_desc (GimpTool * tool,GimpDisplay * display)
 name|gimp_transform_tool_get_undo_desc
 parameter_list|(
 name|GimpTool
@@ -3372,7 +3354,6 @@ specifier|const
 name|gchar
 modifier|*
 DECL|function|gimp_transform_tool_get_redo_desc (GimpTool * tool,GimpDisplay * display)
-DECL|function|gimp_transform_tool_get_redo_desc (GimpTool * tool,GimpDisplay * display)
 name|gimp_transform_tool_get_redo_desc
 parameter_list|(
 name|GimpTool
@@ -3430,7 +3411,6 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_transform_tool_undo (GimpTool * tool,GimpDisplay * display)
 DECL|function|gimp_transform_tool_undo (GimpTool * tool,GimpDisplay * display)
 name|gimp_transform_tool_undo
 parameter_list|(
@@ -3595,7 +3575,6 @@ begin_function
 specifier|static
 name|gboolean
 DECL|function|gimp_transform_tool_redo (GimpTool * tool,GimpDisplay * display)
-DECL|function|gimp_transform_tool_redo (GimpTool * tool,GimpDisplay * display)
 name|gimp_transform_tool_redo
 parameter_list|(
 name|GimpTool
@@ -3755,7 +3734,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_options_notify (GimpTool * tool,GimpToolOptions * options,const GParamSpec * pspec)
 DECL|function|gimp_transform_tool_options_notify (GimpTool * tool,GimpToolOptions * options,const GParamSpec * pspec)
 name|gimp_transform_tool_options_notify
 parameter_list|(
@@ -3962,7 +3940,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_real_draw_gui (GimpTransformTool * tr_tool,gint handle_w,gint handle_h)
 DECL|function|gimp_transform_tool_real_draw_gui (GimpTransformTool * tr_tool,gint handle_w,gint handle_h)
 name|gimp_transform_tool_real_draw_gui
 parameter_list|(
@@ -4536,7 +4513,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_draw (GimpDrawTool * draw_tool)
 DECL|function|gimp_transform_tool_draw (GimpDrawTool * draw_tool)
 name|gimp_transform_tool_draw
 parameter_list|(
@@ -5388,7 +5364,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|gimp_transform_tool_dialog_update (GimpTransformTool * tr_tool)
-DECL|function|gimp_transform_tool_dialog_update (GimpTransformTool * tr_tool)
 name|gimp_transform_tool_dialog_update
 parameter_list|(
 name|GimpTransformTool
@@ -5428,7 +5403,6 @@ begin_function
 specifier|static
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_transform_tool_real_transform (GimpTransformTool * tr_tool,GimpItem * active_item,GeglBuffer * orig_buffer,gint orig_offset_x,gint orig_offset_y,gint * new_offset_x,gint * new_offset_y)
 DECL|function|gimp_transform_tool_real_transform (GimpTransformTool * tr_tool,GimpItem * active_item,GeglBuffer * orig_buffer,gint orig_offset_x,gint orig_offset_y,gint * new_offset_x,gint * new_offset_y)
 name|gimp_transform_tool_real_transform
 parameter_list|(
@@ -5677,7 +5651,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_transform (GimpTransformTool * tr_tool,GimpDisplay * display)
 DECL|function|gimp_transform_tool_transform (GimpTransformTool * tr_tool,GimpDisplay * display)
 name|gimp_transform_tool_transform
 parameter_list|(
@@ -6122,7 +6095,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|gimp_transform_tool_halt (GimpTransformTool * tr_tool)
-DECL|function|gimp_transform_tool_halt (GimpTransformTool * tr_tool)
 name|gimp_transform_tool_halt
 parameter_list|(
 name|GimpTransformTool
@@ -6247,7 +6219,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|gimp_transform_tool_set_function (GimpTransformTool * tr_tool,TransformAction function)
-DECL|function|gimp_transform_tool_set_function (GimpTransformTool * tr_tool,TransformAction function)
 name|gimp_transform_tool_set_function
 parameter_list|(
 name|GimpTransformTool
@@ -6350,7 +6321,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_transform_bounding_box (GimpTransformTool * tr_tool)
 DECL|function|gimp_transform_tool_transform_bounding_box (GimpTransformTool * tr_tool)
 name|gimp_transform_tool_transform_bounding_box
 parameter_list|(
@@ -6569,7 +6539,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|gimp_transform_tool_bounds (GimpTransformTool * tr_tool,GimpDisplay * display)
-DECL|function|gimp_transform_tool_bounds (GimpTransformTool * tr_tool,GimpDisplay * display)
 name|gimp_transform_tool_bounds
 parameter_list|(
 name|GimpTransformTool
@@ -6769,7 +6738,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_handles_recalc (GimpTransformTool * tr_tool,GimpDisplay * display,gint * handle_w,gint * handle_h)
 DECL|function|gimp_transform_tool_handles_recalc (GimpTransformTool * tr_tool,GimpDisplay * display,gint * handle_w,gint * handle_h)
 name|gimp_transform_tool_handles_recalc
 parameter_list|(
@@ -7003,7 +6971,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|gimp_transform_tool_dialog (GimpTransformTool * tr_tool)
-DECL|function|gimp_transform_tool_dialog (GimpTransformTool * tr_tool)
 name|gimp_transform_tool_dialog
 parameter_list|(
 name|GimpTransformTool
@@ -7188,7 +7155,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|gimp_transform_tool_prepare (GimpTransformTool * tr_tool,GimpDisplay * display)
-DECL|function|gimp_transform_tool_prepare (GimpTransformTool * tr_tool,GimpDisplay * display)
 name|gimp_transform_tool_prepare
 parameter_list|(
 name|GimpTransformTool
@@ -7277,7 +7243,6 @@ end_function
 begin_function
 name|void
 DECL|function|gimp_transform_tool_recalc_matrix (GimpTransformTool * tr_tool)
-DECL|function|gimp_transform_tool_recalc_matrix (GimpTransformTool * tr_tool)
 name|gimp_transform_tool_recalc_matrix
 parameter_list|(
 name|GimpTransformTool
@@ -7341,7 +7306,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_response (GimpToolGui * gui,gint response_id,GimpTransformTool * tr_tool)
 DECL|function|gimp_transform_tool_response (GimpToolGui * gui,gint response_id,GimpTransformTool * tr_tool)
 name|gimp_transform_tool_response
 parameter_list|(
@@ -7571,7 +7535,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|gimp_transform_tool_free_trans (gpointer data)
-DECL|function|gimp_transform_tool_free_trans (gpointer data)
 name|gimp_transform_tool_free_trans
 parameter_list|(
 name|gpointer
@@ -7591,7 +7554,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_update_sensitivity (GimpTransformTool * tr_tool)
 DECL|function|gimp_transform_tool_update_sensitivity (GimpTransformTool * tr_tool)
 name|gimp_transform_tool_update_sensitivity
 parameter_list|(
@@ -7633,7 +7595,6 @@ begin_function
 specifier|static
 name|GimpItem
 modifier|*
-DECL|function|gimp_transform_tool_get_active_item (GimpTransformTool * tr_tool,GimpImage * image)
 DECL|function|gimp_transform_tool_get_active_item (GimpTransformTool * tr_tool,GimpImage * image)
 name|gimp_transform_tool_get_active_item
 parameter_list|(
@@ -7705,8 +7666,7 @@ name|GIMP_ITEM
 argument_list|(
 name|selection_mask
 argument_list|)
-block|)
-empty_stmt|;
+return|;
 block|}
 case|case
 name|GIMP_TRANSFORM_TYPE_PATH
@@ -7721,18 +7681,17 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-end_function
-
-begin_return
 return|return
 name|NULL
 return|;
-end_return
+block|}
+end_function
 
 begin_function
-unit|}  static
+specifier|static
 name|GimpItem
 modifier|*
+DECL|function|gimp_transform_tool_check_active_item (GimpTransformTool * tr_tool,GimpImage * image,GError ** error)
 name|gimp_transform_tool_check_active_item
 parameter_list|(
 name|GimpTransformTool
