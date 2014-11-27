@@ -345,7 +345,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c25415a0103
+DECL|enum|__anon29b0eeb40103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -370,7 +370,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c25415a0203
+DECL|enum|__anon29b0eeb40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3395,6 +3395,11 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
+name|gimp_palettes_save
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 name|gimp_templates_save
 argument_list|(
 name|gimp
@@ -4455,6 +4460,12 @@ operator|->
 name|no_fonts
 condition|)
 name|gimp_fonts_load
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+comment|/*  initialize the color history   */
+name|gimp_palettes_load
 argument_list|(
 name|gimp
 argument_list|)
