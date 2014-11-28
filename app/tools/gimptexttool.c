@@ -2203,6 +2203,16 @@ block|}
 elseif|else
 if|if
 condition|(
+name|text_tool
+operator|->
+name|moving
+condition|)
+block|{
+comment|/*  the user has moved the text layer with Alt-drag, fall        *  through and let rectangle-change-complete do its job of        *  setting text layer's new position.        */
+block|}
+elseif|else
+if|if
+condition|(
 name|gimp_rectangle_tool_get_function
 argument_list|(
 name|rect_tool
