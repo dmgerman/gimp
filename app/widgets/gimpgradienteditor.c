@@ -500,7 +500,10 @@ modifier|*
 name|editor
 parameter_list|,
 name|GimpColorPickMode
-name|mode
+name|pick_mode
+parameter_list|,
+name|GimpColorPickState
+name|pick_state
 parameter_list|,
 name|gint
 name|x
@@ -3614,6 +3617,8 @@ name|GIMP_COLOR_PICK_MODE_BACKGROUND
 else|:
 name|GIMP_COLOR_PICK_MODE_FOREGROUND
 argument_list|,
+name|GIMP_COLOR_PICK_STATE_UPDATE
+argument_list|,
 name|mevent
 operator|->
 name|x
@@ -3719,6 +3724,8 @@ condition|?
 name|GIMP_COLOR_PICK_MODE_BACKGROUND
 else|:
 name|GIMP_COLOR_PICK_MODE_FOREGROUND
+argument_list|,
+name|GIMP_COLOR_PICK_STATE_START
 argument_list|,
 name|bevent
 operator|->
@@ -3921,6 +3928,8 @@ condition|?
 name|GIMP_COLOR_PICK_MODE_BACKGROUND
 else|:
 name|GIMP_COLOR_PICK_MODE_FOREGROUND
+argument_list|,
+name|GIMP_COLOR_PICK_STATE_END
 argument_list|,
 name|bevent
 operator|->
@@ -4177,7 +4186,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|view_pick_color (GimpGradientEditor * editor,GimpColorPickMode mode,gint x)
+DECL|function|view_pick_color (GimpGradientEditor * editor,GimpColorPickMode pick_mode,GimpColorPickState pick_state,gint x)
 name|view_pick_color
 parameter_list|(
 name|GimpGradientEditor
@@ -4185,7 +4194,10 @@ modifier|*
 name|editor
 parameter_list|,
 name|GimpColorPickMode
-name|mode
+name|pick_mode
+parameter_list|,
+name|GimpColorPickState
+name|pick_state
 parameter_list|,
 name|gint
 name|x
@@ -4323,7 +4335,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|mode
+name|pick_mode
 operator|==
 name|GIMP_COLOR_PICK_MODE_FOREGROUND
 condition|)

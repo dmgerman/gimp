@@ -2106,7 +2106,7 @@ name|pick_state
 condition|)
 block|{
 case|case
-name|GIMP_COLOR_PICK_STATE_NEW
+name|GIMP_COLOR_PICK_STATE_START
 case|:
 if|if
 condition|(
@@ -2155,6 +2155,9 @@ expr_stmt|;
 break|break;
 case|case
 name|GIMP_COLOR_PICK_STATE_UPDATE
+case|:
+case|case
+name|GIMP_COLOR_PICK_STATE_END
 case|:
 name|gimp_palette_set_entry_color
 argument_list|(

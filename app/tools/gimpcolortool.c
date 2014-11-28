@@ -211,7 +211,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon288a7fcd0103
+DECL|enum|__anon2b9a1db20103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -1001,7 +1001,7 @@ name|gimp_color_tool_pick
 argument_list|(
 name|color_tool
 argument_list|,
-name|GIMP_COLOR_PICK_STATE_NEW
+name|GIMP_COLOR_PICK_STATE_START
 argument_list|,
 name|coords
 operator|->
@@ -1350,6 +1350,21 @@ name|GIMP_DRAW_TOOL
 argument_list|(
 name|tool
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_color_tool_pick
+argument_list|(
+name|color_tool
+argument_list|,
+name|GIMP_COLOR_PICK_STATE_END
+argument_list|,
+name|coords
+operator|->
+name|x
+argument_list|,
+name|coords
+operator|->
+name|y
 argument_list|)
 expr_stmt|;
 block|}
@@ -2699,8 +2714,8 @@ comment|/* don't blink like mad when updating */
 if|if
 condition|(
 name|pick_state
-operator|==
-name|GIMP_COLOR_PICK_STATE_UPDATE
+operator|!=
+name|GIMP_COLOR_PICK_STATE_START
 condition|)
 name|gimp_dockable_blink_cancel
 argument_list|(
