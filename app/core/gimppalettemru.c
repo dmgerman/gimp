@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae9717b0103
+DECL|enum|__anon28c517590103
 block|{
 DECL|enumerator|COLOR_HISTORY
 name|COLOR_HISTORY
@@ -622,7 +622,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|void
 DECL|function|gimp_palette_mru_add (GimpPaletteMru * mru,const GimpRGB * color)
 name|gimp_palette_mru_add
 parameter_list|(
@@ -650,26 +650,19 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-name|gint
-name|max_changed
-decl_stmt|;
-name|g_return_val_if_fail
+name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_PALETTE_MRU
 argument_list|(
 name|mru
 argument_list|)
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
+name|g_return_if_fail
 argument_list|(
 name|color
 operator|!=
 name|NULL
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|palette
@@ -677,13 +670,6 @@ operator|=
 name|GIMP_PALETTE
 argument_list|(
 name|mru
-argument_list|)
-expr_stmt|;
-name|max_changed
-operator|=
-name|gimp_palette_get_n_colors
-argument_list|(
-name|palette
 argument_list|)
 expr_stmt|;
 comment|/*  is the added color already there?  */
@@ -838,13 +824,6 @@ if|if
 condition|(
 name|found
 condition|)
-block|{
-name|max_changed
-operator|=
-name|found
-operator|->
-name|position
-expr_stmt|;
 name|gimp_palette_delete_entry
 argument_list|(
 name|palette
@@ -852,7 +831,6 @@ argument_list|,
 name|found
 argument_list|)
 expr_stmt|;
-block|}
 name|found
 operator|=
 name|gimp_palette_add_entry
@@ -869,9 +847,6 @@ argument_list|,
 name|color
 argument_list|)
 expr_stmt|;
-return|return
-name|max_changed
-return|;
 block|}
 end_function
 

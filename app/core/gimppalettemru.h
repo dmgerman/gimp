@@ -174,7 +174,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|void
 name|gimp_palette_mru_add
 parameter_list|(
 name|GimpPaletteMru
