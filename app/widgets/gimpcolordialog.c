@@ -123,7 +123,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0564150103
+DECL|enum|__anon2a22e3220103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -897,7 +897,7 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+name|g_signal_connect_object
 argument_list|(
 name|history
 argument_list|,
@@ -908,7 +908,12 @@ argument_list|(
 name|gimp_color_history_changed
 argument_list|)
 argument_list|,
+name|G_OBJECT
+argument_list|(
 name|dialog
+argument_list|)
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_color_history_changed
