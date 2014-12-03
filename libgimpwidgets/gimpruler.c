@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29457d490103
+DECL|enum|__anon2b82839c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -100,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29457d490208
+DECL|struct|__anon2b82839c0208
 block|{
 DECL|member|orientation
 name|GtkOrientation
@@ -180,7 +180,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29457d490308
+DECL|struct|__anon2b82839c0308
 block|{
 DECL|member|ruler_scale
 specifier|const
@@ -459,6 +459,10 @@ parameter_list|(
 name|GimpRuler
 modifier|*
 name|ruler
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2105,6 +2109,8 @@ expr_stmt|;
 name|gimp_ruler_draw_pos
 argument_list|(
 name|ruler
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -3178,6 +3184,8 @@ expr_stmt|;
 name|gimp_ruler_draw_pos
 argument_list|(
 name|ruler
+argument_list|,
+name|cr
 argument_list|)
 expr_stmt|;
 name|cairo_destroy
@@ -4122,12 +4130,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_ruler_draw_pos (GimpRuler * ruler)
+DECL|function|gimp_ruler_draw_pos (GimpRuler * ruler,cairo_t * cr)
 name|gimp_ruler_draw_pos
 parameter_list|(
 name|GimpRuler
 modifier|*
 name|ruler
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
 parameter_list|)
 block|{
 name|GtkWidget
@@ -4320,18 +4332,6 @@ literal|0
 operator|)
 condition|)
 block|{
-name|cairo_t
-modifier|*
-name|cr
-init|=
-name|gdk_cairo_create
-argument_list|(
-name|gtk_widget_get_window
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-decl_stmt|;
 name|gdouble
 name|lower
 decl_stmt|;
@@ -4344,6 +4344,22 @@ decl_stmt|;
 name|gdouble
 name|increment
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|cr
+condition|)
+block|{
+name|cr
+operator|=
+name|gdk_cairo_create
+argument_list|(
+name|gtk_widget_get_window
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|cairo_rectangle
 argument_list|(
 name|cr
@@ -4422,6 +4438,15 @@ name|bs_height
 argument_list|)
 expr_stmt|;
 name|cairo_fill
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+name|cairo_reference
 argument_list|(
 name|cr
 argument_list|)
