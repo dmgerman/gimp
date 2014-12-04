@@ -1573,6 +1573,8 @@ literal|"gegl:gaussian-blur"
 block|,
 literal|"gegl:grid"
 block|,
+literal|"gegl:illusion"
+block|,
 literal|"gegl:introspect"
 block|,
 literal|"gegl:invert-gamma"
