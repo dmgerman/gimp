@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af2d5a50108
+DECL|struct|__anon29d9d9e20108
 block|{
 DECL|member|compression
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af2d5a50208
+DECL|struct|__anon29d9d9e20208
 block|{
 DECL|member|ID
 name|gint32
@@ -135,7 +135,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af2d5a50308
+DECL|struct|__anon29d9d9e20308
 block|{
 DECL|member|o_pages
 name|gint
@@ -2969,6 +2969,9 @@ name|COMPRESSION_PACKBITS
 case|:
 case|case
 name|COMPRESSION_DEFLATE
+case|:
+case|case
+name|COMPRESSION_ADOBE_DEFLATE
 case|:
 case|case
 name|COMPRESSION_JPEG
