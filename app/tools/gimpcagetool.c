@@ -165,7 +165,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29de7f590103
+DECL|enum|__anon2c5220600103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -1494,6 +1494,16 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|ct
+operator|->
+name|config
+condition|)
+return|return
+name|FALSE
+return|;
 switch|switch
 condition|(
 name|kevent
@@ -1513,6 +1523,17 @@ operator|==
 name|CAGE_STATE_WAIT
 condition|)
 block|{
+if|if
+condition|(
+name|gimp_cage_config_get_n_points
+argument_list|(
+name|ct
+operator|->
+name|config
+argument_list|)
+operator|!=
+literal|0
+condition|)
 name|gimp_cage_tool_remove_last_handle
 argument_list|(
 name|ct
@@ -3581,6 +3602,12 @@ operator|->
 name|display
 operator|=
 name|NULL
+expr_stmt|;
+name|ct
+operator|->
+name|tool_state
+operator|=
+name|CAGE_STATE_INIT
 expr_stmt|;
 name|g_object_set
 argument_list|(
