@@ -137,6 +137,11 @@ name|GeglNode
 modifier|*
 name|aux_input
 decl_stmt|;
+DECL|member|aux2_input
+name|GeglNode
+modifier|*
+name|aux2_input
+decl_stmt|;
 comment|/* dialog */
 DECL|member|options_box
 name|GtkWidget
@@ -157,6 +162,16 @@ DECL|member|aux_input_button
 name|GtkWidget
 modifier|*
 name|aux_input_button
+decl_stmt|;
+DECL|member|aux2_input_box
+name|GtkWidget
+modifier|*
+name|aux2_input_box
+decl_stmt|;
+DECL|member|aux2_input_button
+name|GtkWidget
+modifier|*
+name|aux2_input_button
 decl_stmt|;
 block|}
 struct|;
