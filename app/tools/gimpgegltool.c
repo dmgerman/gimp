@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a8cdf150103
+DECL|enum|__anon2a34ee250103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -368,6 +368,8 @@ block|,
 literal|"gegl:edge-sobel"
 block|,
 literal|"gegl:emboss"
+block|,
+literal|"gegl:engrave"
 block|,
 literal|"gegl:exposure"
 block|,

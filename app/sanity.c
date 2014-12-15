@@ -1565,6 +1565,8 @@ literal|"gegl:edge-sobel"
 block|,
 literal|"gegl:emboss"
 block|,
+literal|"gegl:engrave"
+block|,
 literal|"gegl:exposure"
 block|,
 literal|"gegl:fractal-trace"
