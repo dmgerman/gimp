@@ -509,7 +509,13 @@ argument_list|)
 expr_stmt|;
 comment|/* We can ignore the return value from jpeg_read_header since    *   (a) suspension is not possible with the stdio data source, and    *   (b) we passed TRUE to reject a tables-only JPEG file as an error.    * See libjpeg.doc for more info.    */
 comment|/* Step 4: set parameters for decompression */
-comment|/* In this example, we don't need to change any of the defaults set by    * jpeg_read_header(), so we do nothing here.    */
+comment|/* In this example, we don't need to change any of the defaults set by    * jpeg_read_header(), so we do nothing here, except set the DCT    * method.    */
+name|cinfo
+operator|.
+name|dct_method
+operator|=
+name|JDCT_FLOAT
+expr_stmt|;
 comment|/* Step 5: Start decompressor */
 name|jpeg_start_decompress
 argument_list|(
