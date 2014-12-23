@@ -944,12 +944,12 @@ name|g_direct_hash
 argument_list|,
 name|g_direct_equal
 argument_list|,
+name|NULL
+argument_list|,
 operator|(
 name|GDestroyNotify
 operator|)
-name|g_free
-argument_list|,
-name|NULL
+name|g_object_unref
 argument_list|)
 expr_stmt|;
 name|container
