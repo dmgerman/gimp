@@ -773,6 +773,28 @@ comment|/* FIXME GIMP_HELP_FILTER_LENS_DISTORTION */
 block|}
 block|,
 block|{
+literal|"filters-lens-flare"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Lens Flare..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:lens-flare"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_LENS_FLARE */
+block|}
+block|,
+block|{
 literal|"filters-mono-mixer"
 block|,
 name|GIMP_STOCK_GEGL
@@ -2134,6 +2156,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-lens-distortion"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-lens-flare"
 argument_list|,
 name|writable
 argument_list|)

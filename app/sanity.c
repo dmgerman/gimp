@@ -1585,6 +1585,8 @@ literal|"gegl:invert-linear"
 block|,
 literal|"gegl:lens-distortion"
 block|,
+literal|"gegl:lens-flare"
+block|,
 literal|"gegl:map-absolute"
 block|,
 literal|"gegl:map-relative"
