@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2768917e0103
+DECL|enum|__anon2b76d2030103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -838,6 +838,7 @@ argument_list|(
 name|parent
 argument_list|)
 condition|)
+block|{
 name|gtk_window_set_transient_for
 argument_list|(
 name|GTK_WINDOW
@@ -851,7 +852,9 @@ name|parent
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|gtk_window_set_screen
 argument_list|(
 name|GTK_WINDOW
@@ -865,6 +868,17 @@ name|parent
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gtk_window_set_position
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|object
+argument_list|)
+argument_list|,
+name|GTK_WIN_POS_MOUSE
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 break|break;
@@ -1724,7 +1738,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2768917e0208
+DECL|struct|__anon2b76d2030208
 block|{
 DECL|member|dialog
 name|GtkDialog
