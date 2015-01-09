@@ -66,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291cc6ed0103
+DECL|enum|__anon2935f2e60103
 block|{
 DECL|enumerator|ISO_CODES_START
 name|ISO_CODES_START
@@ -88,7 +88,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291cc6ed0208
+DECL|struct|__anon2935f2e60208
 block|{
 DECL|member|state
 name|IsoCodesParserState
@@ -129,6 +129,12 @@ name|error
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_ISO_CODES
+end_ifdef
 
 begin_function_decl
 specifier|static
@@ -225,6 +231,15 @@ name|parser
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* HAVE_ISO_CODES */
+end_comment
 
 begin_comment
 comment|/*  * Language lists that we want to generate only once at program startup:  * @l10n_lang_list: all available localizations self-localized;  * @all_lang_list: all known languages, in the user-selected language.  */
@@ -1197,11 +1212,18 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
+comment|/* HAVE_ISO_CODES */
 return|return
 name|success
 return|;
 block|}
 end_function
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_ISO_CODES
+end_ifdef
 
 begin_function
 specifier|static
@@ -1799,6 +1821,15 @@ name|last_known_state
 expr_stmt|;
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* HAVE_ISO_CODES */
+end_comment
 
 end_unit
 
