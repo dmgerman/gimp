@@ -2985,6 +2985,9 @@ name|gimp_thumbnail_peek_thumb
 argument_list|(
 name|thumb
 argument_list|,
+operator|(
+name|GimpThumbSize
+operator|)
 name|size
 argument_list|)
 operator|<

@@ -903,6 +903,9 @@ name|gimp_thumbnail_load_thumb
 argument_list|(
 name|thumbnail
 argument_list|,
+operator|(
+name|GimpThumbSize
+operator|)
 name|GIMP_THUMBNAIL_SIZE_NORMAL
 argument_list|,
 name|NULL

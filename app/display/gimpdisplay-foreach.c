@@ -1033,6 +1033,9 @@ name|gimp_display_shell_set_override_cursor
 argument_list|(
 name|shell
 argument_list|,
+operator|(
+name|GimpCursorType
+operator|)
 name|GDK_WATCH
 argument_list|)
 expr_stmt|;

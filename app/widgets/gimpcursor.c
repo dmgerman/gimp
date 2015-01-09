@@ -721,6 +721,9 @@ name|gdk_cursor_new_for_display
 argument_list|(
 name|display
 argument_list|,
+operator|(
+name|GdkCursorType
+operator|)
 name|cursor_type
 argument_list|)
 return|;

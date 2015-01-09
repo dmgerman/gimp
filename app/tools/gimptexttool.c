@@ -2716,6 +2716,9 @@ name|tool
 operator|->
 name|control
 argument_list|,
+operator|(
+name|GimpCursorType
+operator|)
 name|GDK_XTERM
 argument_list|)
 expr_stmt|;
@@ -2752,6 +2755,9 @@ name|tool
 operator|->
 name|control
 argument_list|,
+operator|(
+name|GimpCursorType
+operator|)
 name|GDK_XTERM
 argument_list|)
 expr_stmt|;

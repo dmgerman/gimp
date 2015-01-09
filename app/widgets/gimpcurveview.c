@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d22ed70103
+DECL|enum|__anon2adcc8420103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d22ed70203
+DECL|enum|__anon2adcc8420203
 block|{
 DECL|enumerator|CUT_CLIPBOARD
 name|CUT_CLIPBOARD
@@ -149,7 +149,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d22ed70308
+DECL|struct|__anon2adcc8420308
 block|{
 DECL|member|curve
 name|GimpCurve
@@ -4190,7 +4190,7 @@ decl_stmt|;
 name|GtkAllocation
 name|allocation
 decl_stmt|;
-name|GimpCursorType
+name|GdkCursorType
 name|new_cursor
 init|=
 name|GDK_X_CURSOR
