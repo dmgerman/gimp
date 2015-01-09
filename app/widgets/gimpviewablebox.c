@@ -152,7 +152,7 @@ parameter_list|,
 name|GimpViewType
 name|view_type
 parameter_list|,
-name|GimpViewType
+name|GimpViewSize
 name|button_view_size
 parameter_list|,
 name|GimpViewSize
@@ -2074,7 +2074,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_viewable_box_new (GimpContainer * container,GimpContext * context,const gchar * label,gint spacing,GimpViewType view_type,GimpViewType button_view_size,GimpViewSize view_size,const gchar * dialog_identifier,const gchar * dialog_icon_name,const gchar * dialog_tooltip,const gchar * editor_id)
+DECL|function|gimp_viewable_box_new (GimpContainer * container,GimpContext * context,const gchar * label,gint spacing,GimpViewType view_type,GimpViewSize button_view_size,GimpViewSize view_size,const gchar * dialog_identifier,const gchar * dialog_icon_name,const gchar * dialog_tooltip,const gchar * editor_id)
 name|gimp_viewable_box_new
 parameter_list|(
 name|GimpContainer
@@ -2096,7 +2096,7 @@ parameter_list|,
 name|GimpViewType
 name|view_type
 parameter_list|,
-name|GimpViewType
+name|GimpViewSize
 name|button_view_size
 parameter_list|,
 name|GimpViewSize
