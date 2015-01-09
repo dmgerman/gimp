@@ -138,6 +138,23 @@ name|GHashTable
 modifier|*
 name|groups
 decl_stmt|;
+comment|/* signals */
+DECL|member|action_added
+name|void
+function_decl|(
+modifier|*
+name|action_added
+function_decl|)
+parameter_list|(
+name|GimpActionGroup
+modifier|*
+name|group
+parameter_list|,
+name|GtkAction
+modifier|*
+name|action
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
