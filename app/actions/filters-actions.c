@@ -2023,6 +2023,9 @@ argument_list|(
 literal|"filters-color-enhance"
 argument_list|,
 name|writable
+operator|&&
+operator|!
+name|gray
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
