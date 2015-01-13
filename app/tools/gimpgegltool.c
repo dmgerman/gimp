@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab16c240103
+DECL|enum|__anon2c38fdde0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -340,6 +340,8 @@ block|,
 literal|"gegl:checkerboard"
 block|,
 literal|"gegl:color"
+block|,
+literal|"gegl:color-enhance"
 block|,
 literal|"gegl:color-exchange"
 block|,
