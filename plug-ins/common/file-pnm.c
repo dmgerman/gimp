@@ -355,7 +355,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2962054d0108
+DECL|struct|__anon2c3df4310108
 block|{
 DECL|member|raw
 name|gint
@@ -843,7 +843,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2962054d0208
+DECL|struct|__anon2c3df4310208
 block|{
 DECL|member|name
 name|gchar
@@ -2756,7 +2756,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Create a new image of the proper size and associate the filename with it.    */
+comment|/* Create a new image of the proper size and associate the filename      with it. */
 name|image_ID
 operator|=
 name|gimp_image_new_with_precision
@@ -2781,6 +2781,7 @@ name|GIMP_RGB
 else|:
 name|GIMP_GRAY
 argument_list|,
+operator|(
 name|pnminfo
 operator|->
 name|float_format
@@ -2788,6 +2789,7 @@ condition|?
 name|GIMP_PRECISION_FLOAT_LINEAR
 else|:
 name|GIMP_PRECISION_U8_GAMMA
+operator|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_filename
@@ -4436,7 +4438,7 @@ condition|(
 name|swap_byte_order
 condition|)
 block|{
-DECL|union|__anon2962054d030a
+DECL|union|__anon2c3df431030a
 DECL|member|f
 DECL|member|i
 union|union
@@ -4480,7 +4482,7 @@ operator|.
 name|f
 expr_stmt|;
 block|}
-comment|/* let's see if this is what people want, the PFM specs are a little vague            * about what the scale factor should be used for */
+comment|/* let's see if this is what people want, the PFM specs are a            * little vague about what the scale factor should be used            * for */
 name|data
 index|[
 name|x
