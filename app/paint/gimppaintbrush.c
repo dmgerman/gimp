@@ -407,9 +407,6 @@ name|dyn_output
 init|=
 name|NULL
 decl_stmt|;
-name|gdouble
-name|option_force
-decl_stmt|;
 name|image
 operator|=
 name|gimp_item_get_image
@@ -672,16 +669,6 @@ argument_list|,
 name|fade_point
 argument_list|)
 expr_stmt|;
-name|force
-operator|=
-literal|0.5
-expr_stmt|;
-name|option_force
-operator|=
-name|paint_options
-operator|->
-name|brush_force
-expr_stmt|;
 if|if
 condition|(
 name|gimp_dynamics_output_is_enabled
@@ -693,16 +680,12 @@ name|force
 operator|=
 name|dyn_force
 expr_stmt|;
-elseif|else
-if|if
-condition|(
-name|option_force
-operator|!=
-literal|0.5
-condition|)
+else|else
 name|force
 operator|=
-name|option_force
+name|paint_options
+operator|->
+name|brush_force
 expr_stmt|;
 comment|/* finally, let the brush core paste the colored area on the canvas */
 name|gimp_brush_core_paste_canvas
