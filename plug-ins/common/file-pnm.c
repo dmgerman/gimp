@@ -355,7 +355,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c18a8c70108
+DECL|struct|__anon2a2c367e0108
 block|{
 DECL|member|raw
 name|gint
@@ -843,7 +843,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c18a8c70208
+DECL|struct|__anon2a2c367e0208
 block|{
 DECL|member|name
 name|gchar
@@ -4438,7 +4438,7 @@ condition|(
 name|swap_byte_order
 condition|)
 block|{
-DECL|union|__anon2c18a8c7030a
+DECL|union|__anon2a2c367e030a
 DECL|member|f
 DECL|member|i
 union|union
@@ -4552,10 +4552,16 @@ literal|0
 condition|)
 name|gimp_progress_update
 argument_list|(
-operator|(
+call|(
 name|double
-operator|)
+call|)
+argument_list|(
+name|info
+operator|->
+name|yres
+operator|-
 name|y
+argument_list|)
 operator|/
 operator|(
 name|double
