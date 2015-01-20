@@ -509,6 +509,28 @@ comment|/* FIXME GIMP_HELP_FILTER_DIFFERENCE_OF_GAUSSIANS */
 block|}
 block|,
 block|{
+literal|"filters-diffraction-patterns"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Diffraction Patterns..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:diffraction-patterns"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_DIFFRACTION_PATTERNS */
+block|}
+block|,
+block|{
 literal|"filters-distance-map"
 block|,
 name|GIMP_STOCK_GEGL
@@ -2095,6 +2117,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-difference-of-gaussians"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-diffraction-patterns"
 argument_list|,
 name|writable
 argument_list|)
