@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d9d9e20108
+DECL|struct|__anon2be11f3b0108
 block|{
 DECL|member|compression
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d9d9e20208
+DECL|struct|__anon2be11f3b0208
 block|{
 DECL|member|ID
 name|gint32
@@ -135,7 +135,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d9d9e20308
+DECL|struct|__anon2be11f3b0308
 block|{
 DECL|member|o_pages
 name|gint
@@ -5622,7 +5622,9 @@ argument_list|,
 name|rows
 argument_list|)
 argument_list|,
-name|GEGL_AUTO_ROWSTRIDE
+name|tileWidth
+operator|*
+name|bytes_per_pixel
 argument_list|,
 name|NULL
 argument_list|,
