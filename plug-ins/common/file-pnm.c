@@ -363,7 +363,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd4c99c0108
+DECL|struct|__anon276868e30108
 block|{
 DECL|member|raw
 name|gint
@@ -846,7 +846,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bd4c99c0208
+DECL|struct|__anon276868e30208
 block|{
 DECL|member|name
 name|gchar
@@ -4651,7 +4651,7 @@ condition|(
 name|swap_byte_order
 condition|)
 block|{
-DECL|union|__anon2bd4c99c030a
+DECL|union|__anon276868e3030a
 DECL|member|f
 DECL|member|i
 union|union
@@ -6443,6 +6443,12 @@ name|cmap
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+operator|!
+name|float_format
+condition|)
+block|{
 comment|/* write out comment string */
 name|comment
 operator|=
@@ -6473,6 +6479,7 @@ condition|)
 goto|goto
 name|out
 goto|;
+block|}
 comment|/* write out resolution and maxval */
 if|if
 condition|(
