@@ -678,7 +678,7 @@ block|,
 literal|"xcf.xz,xcfxz"
 block|,
 comment|/* FIXME "xcf.xz,xz,xcfxz" */
-literal|"0,ustring,\3757zXZ\x00"
+literal|"0,string,\3757zXZ\x00"
 block|,
 literal|".xcfxz"
 block|,
