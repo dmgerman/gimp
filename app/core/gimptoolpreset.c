@@ -139,7 +139,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c321080103
+DECL|enum|__anon2c9c2cbf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1370,6 +1370,34 @@ operator|->
 name|gimp
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+comment|/*  Initialize all GimpContext object properties that can be          *  used by presets with some non-NULL object, so loading a          *  broken preset won't leave us with NULL objects that have          *  bad effects. See bug #742159.          */
+name|gimp_context_copy_properties
+argument_list|(
+name|gimp_get_user_context
+argument_list|(
+name|tool_preset
+operator|->
+name|gimp
+argument_list|)
+argument_list|,
+name|GIMP_CONTEXT
+argument_list|(
+name|options
+argument_list|)
+argument_list|,
+name|GIMP_CONTEXT_BRUSH_MASK
+operator||
+name|GIMP_CONTEXT_DYNAMICS_MASK
+operator||
+name|GIMP_CONTEXT_PATTERN_MASK
+operator||
+name|GIMP_CONTEXT_GRADIENT_MASK
+operator||
+name|GIMP_CONTEXT_PALETTE_MASK
+operator||
+name|GIMP_CONTEXT_FONT_MASK
 argument_list|)
 expr_stmt|;
 if|if
