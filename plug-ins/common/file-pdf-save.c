@@ -158,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2120490103
+DECL|enum|__anon2b2b08800103
 block|{
 DECL|enumerator|GIMP_PLUGIN_PDF_SAVE_ERROR_FAILED
 name|GIMP_PLUGIN_PDF_SAVE_ERROR_FAILED
@@ -180,7 +180,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2120490203
+DECL|enum|__anon2b2b08800203
 block|{
 DECL|enumerator|SA_RUN_MODE
 name|SA_RUN_MODE
@@ -225,7 +225,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2120490303
+DECL|enum|__anon2b2b08800303
 block|{
 DECL|enumerator|SMA_RUN_MODE
 name|SMA_RUN_MODE
@@ -262,7 +262,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2120490408
+DECL|struct|__anon2b2b08800408
 block|{
 DECL|member|vectorize
 name|gboolean
@@ -285,7 +285,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2120490508
+DECL|struct|__anon2b2b08800508
 block|{
 DECL|member|images
 name|gint32
@@ -314,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2120490608
+DECL|struct|__anon2b2b08800608
 block|{
 DECL|member|optimize
 name|PdfOptimize
@@ -333,7 +333,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2120490703
+DECL|enum|__anon2b2b08800703
 block|{
 DECL|enumerator|THUMB
 name|THUMB
@@ -353,7 +353,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2120490808
+DECL|struct|__anon2b2b08800808
 block|{
 DECL|member|thumb
 name|GdkPixbuf
@@ -5418,6 +5418,10 @@ init|=
 name|pango_attr_list_new
 argument_list|()
 decl_stmt|;
+name|PangoFontMap
+modifier|*
+name|fontmap
+decl_stmt|;
 name|cairo_save
 argument_list|(
 name|cr
@@ -5602,18 +5606,33 @@ name|CAIRO_ANTIALIAS_NONE
 argument_list|)
 expr_stmt|;
 comment|/* We are done with cairo's settings. It's time to create the    * context    */
-name|cairo_set_font_options
+name|fontmap
+operator|=
+name|pango_cairo_font_map_new_for_font_type
 argument_list|(
-name|cr
+name|CAIRO_FONT_TYPE_FT
+argument_list|)
+expr_stmt|;
+name|pango_cairo_font_map_set_resolution
+argument_list|(
+name|PANGO_CAIRO_FONT_MAP
+argument_list|(
+name|fontmap
+argument_list|)
 argument_list|,
-name|options
+name|y_res
 argument_list|)
 expr_stmt|;
 name|context
 operator|=
-name|pango_cairo_create_context
+name|pango_font_map_create_context
 argument_list|(
-name|cr
+name|fontmap
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|fontmap
 argument_list|)
 expr_stmt|;
 name|pango_cairo_context_set_font_options
@@ -5659,6 +5678,13 @@ operator|=
 name|pango_layout_new
 argument_list|(
 name|context
+argument_list|)
+expr_stmt|;
+name|pango_layout_set_wrap
+argument_list|(
+name|layout
+argument_list|,
+name|PANGO_WRAP_WORD_CHAR
 argument_list|)
 expr_stmt|;
 comment|/* Font */
@@ -5715,24 +5741,12 @@ argument_list|,
 name|font_description
 argument_list|)
 expr_stmt|;
-comment|/* Width and height */
+comment|/* Width */
 name|pango_layout_set_width
 argument_list|(
 name|layout
 argument_list|,
 name|gimp_drawable_width
-argument_list|(
-name|text_id
-argument_list|)
-operator|*
-name|PANGO_SCALE
-argument_list|)
-expr_stmt|;
-name|pango_layout_set_height
-argument_list|(
-name|layout
-argument_list|,
-name|gimp_drawable_height
 argument_list|(
 name|text_id
 argument_list|)
