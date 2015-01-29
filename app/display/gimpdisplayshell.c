@@ -353,7 +353,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c74d4e0103
+DECL|enum|__anon2b000b710103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -387,7 +387,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c74d4e0203
+DECL|enum|__anon2b000b710203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4437,6 +4437,11 @@ operator|->
 name|display
 condition|)
 return|return;
+name|gimp_display_shell_title_update
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 name|user_context
 operator|=
 name|gimp_get_user_context
@@ -4492,6 +4497,11 @@ operator|->
 name|display
 condition|)
 return|return;
+name|gimp_display_shell_title_update
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 name|user_context
 operator|=
 name|gimp_get_user_context
