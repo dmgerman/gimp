@@ -1367,7 +1367,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2958753f0108
+DECL|struct|__anon2c80d2af0108
 block|{
 DECL|member|config_type
 specifier|const
@@ -1401,6 +1401,12 @@ block|{
 literal|"GimpGegl-gegl-channel-mixer-config"
 block|,
 name|_gimp_prop_gui_new_channel_mixer
+block|}
+block|,
+block|{
+literal|"GimpGegl-gegl-diffraction-patterns-config"
+block|,
+name|_gimp_prop_gui_new_diffraction_patterns
 block|}
 block|,
 block|{
@@ -1916,7 +1922,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2958753f0208
+DECL|struct|__anon2c80d2af0208
 block|{
 DECL|member|kelvin
 name|gdouble
