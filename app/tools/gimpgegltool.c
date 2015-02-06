@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2802650103
+DECL|enum|__anon2c4c198f0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -464,6 +464,8 @@ block|,
 literal|"gegl:unsharp-mask"
 block|,
 literal|"gegl:value-invert"
+block|,
+literal|"gegl:value-propagate"
 block|,
 literal|"gegl:video-degradation"
 block|,

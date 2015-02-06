@@ -1681,6 +1681,8 @@ literal|"gegl:unsharp-mask"
 block|,
 literal|"gegl:value-invert"
 block|,
+literal|"gegl:value-propagate"
+block|,
 literal|"gegl:video-degradation"
 block|,
 literal|"gegl:vignette"

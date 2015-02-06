@@ -1631,6 +1631,28 @@ comment|/* FIXME GIMP_HELP_FILTER_UNSHARP_MASK */
 block|}
 block|,
 block|{
+literal|"filters-value-propagate"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Value Propagate..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:value-propagate"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_VALUE_PROPAGATE */
+block|}
+block|,
+block|{
 literal|"filters-video-degradation"
 block|,
 name|GIMP_STOCK_GEGL
@@ -1639,7 +1661,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"_Vi_deo Degradation..."
+literal|"Vi_deo Degradation..."
 argument_list|)
 block|,
 name|NULL
