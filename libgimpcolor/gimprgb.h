@@ -186,7 +186,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1bcf790103
+DECL|enum|__anon2c1904920103
 block|{
 DECL|enumerator|GIMP_RGB_COMPOSITE_NONE
 name|GIMP_RGB_COMPOSITE_NONE
@@ -790,11 +790,11 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  Map RGB to intensity  */
+comment|/*  Map D50-adapted sRGB to luminance  */
 end_comment
 
 begin_comment
-comment|/*  * The weights to compute true CIE luminance from linear red, green  * and blue, as defined by the ITU-R Recommendation BT.709, "Basic  * Parameter Values for the HDTV Standard for the Studio and for  * International Programme Exchange" (1990). Also suggested in the  * sRGB colorspace specification by the W3C.  */
+comment|/*  * The weights to compute true CIE luminance from linear red, green  * and blue as defined by the sRGB color space specs in an ICC profile  * color managed application. The weights below have been chromatically  * adapted from D65 (as specified by the sRGB color space specs)  * to D50 (as specified by D50 illuminant values in the ICC V4 specs).  */
 end_comment
 
 begin_define
@@ -802,7 +802,7 @@ DECL|macro|GIMP_RGB_LUMINANCE_RED
 define|#
 directive|define
 name|GIMP_RGB_LUMINANCE_RED
-value|(0.2126)
+value|(0.22248840)
 end_define
 
 begin_define
@@ -810,7 +810,7 @@ DECL|macro|GIMP_RGB_LUMINANCE_GREEN
 define|#
 directive|define
 name|GIMP_RGB_LUMINANCE_GREEN
-value|(0.7152)
+value|(0.71690369)
 end_define
 
 begin_define
@@ -818,7 +818,7 @@ DECL|macro|GIMP_RGB_LUMINANCE_BLUE
 define|#
 directive|define
 name|GIMP_RGB_LUMINANCE_BLUE
-value|(0.0722)
+value|(0.06060791)
 end_define
 
 begin_define
