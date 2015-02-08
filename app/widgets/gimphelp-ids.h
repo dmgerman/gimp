@@ -1142,6 +1142,22 @@ value|"gimp-layer-equalize"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_LAYER_DILATE
+define|#
+directive|define
+name|GIMP_HELP_LAYER_DILATE
+value|"gimp-layer-dilate"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_LAYER_ERODE
+define|#
+directive|define
+name|GIMP_HELP_LAYER_ERODE
+value|"gimp-layer-erode"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_LAYER_VISIBLE
 define|#
 directive|define

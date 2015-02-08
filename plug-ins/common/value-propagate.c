@@ -717,7 +717,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2889f3730108
+DECL|struct|__anon2c0344190108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -878,7 +878,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2889f3730208
+DECL|struct|__anon2c0344190208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -1356,20 +1356,6 @@ argument_list|(
 name|VPROPAGATE_PROC
 argument_list|,
 literal|"<Image>/Filters/Distorts"
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-name|ERODE_PROC
-argument_list|,
-literal|"<Image>/Filters/Generic"
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-name|DILATE_PROC
-argument_list|,
-literal|"<Image>/Filters/Generic"
 argument_list|)
 expr_stmt|;
 block|}
@@ -4074,7 +4060,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2889f3730308
+DECL|struct|__anon2c0344190308
 block|{
 DECL|member|min_modified
 name|gshort
