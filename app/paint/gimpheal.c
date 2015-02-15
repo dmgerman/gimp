@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdynamicsoutput.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimperror.h"
 end_include
 
@@ -949,7 +955,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-DECL|union|__anon27b585ff010a
+DECL|union|__anon2b715a7f010a
 DECL|member|v
 DECL|member|f
 union|union
