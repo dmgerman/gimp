@@ -2294,6 +2294,14 @@ value|"gimp-brush-copy-location"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_BRUSH_SHOW_IN_FILE_MANAGER
+define|#
+directive|define
+name|GIMP_HELP_BRUSH_SHOW_IN_FILE_MANAGER
+value|"gimp-brush-show-in-file-manager"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_BRUSH_DELETE
 define|#
 directive|define
@@ -2382,6 +2390,14 @@ value|"gimp-dynamics-copy-location"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_DYNAMICS_SHOW_IN_FILE_MANAGER
+define|#
+directive|define
+name|GIMP_HELP_DYNAMICS_SHOW_IN_FILE_MANAGER
+value|"gimp-dynamics-show-in-file-manager"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_DYNAMICS_DELETE
 define|#
 directive|define
@@ -2446,6 +2462,14 @@ value|"gimp-pattern-copy-location"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_PATTERN_SHOW_IN_FILE_MANAGER
+define|#
+directive|define
+name|GIMP_HELP_PATTERN_SHOW_IN_FILE_MANAGER
+value|"gimp-pattern-show-in-file-manager"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_PATTERN_DELETE
 define|#
 directive|define
@@ -2499,6 +2523,14 @@ define|#
 directive|define
 name|GIMP_HELP_GRADIENT_COPY_LOCATION
 value|"gimp-gradient-copy-location"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_GRADIENT_SHOW_IN_FILE_MANAGER
+define|#
+directive|define
+name|GIMP_HELP_GRADIENT_SHOW_IN_FILE_MANAGER
+value|"gimp-gradient-show-in-file-manager"
 end_define
 
 begin_define
@@ -2742,6 +2774,14 @@ value|"gimp-palette-copy-location"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_PALETTE_SHOW_IN_FILE_MANAGER
+define|#
+directive|define
+name|GIMP_HELP_PALETTE_SHOW_IN_FILE_MANAGER
+value|"gimp-palette-show-in-file-manager"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_PALETTE_DELETE
 define|#
 directive|define
@@ -2950,6 +2990,14 @@ value|"gimp-tool-preset-copy-location"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TOOL_PRESET_SHOW_IN_FILE_MANAGER
+define|#
+directive|define
+name|GIMP_HELP_TOOL_PRESET_SHOW_IN_FILE_MANAGER
+value|"gimp-tool-preset-show-in-file-manager"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TOOL_PRESET_DELETE
 define|#
 directive|define
@@ -2979,6 +3027,14 @@ define|#
 directive|define
 name|GIMP_HELP_DOCUMENT_COPY_LOCATION
 value|"gimp-document-copy-location"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_DOCUMENT_SHOW_IN_FILE_MANAGER
+define|#
+directive|define
+name|GIMP_HELP_DOCUMENT_SHOW_IN_FILE_MANAGER
+value|"gimp-document-show-in-file-manager"
 end_define
 
 begin_define
