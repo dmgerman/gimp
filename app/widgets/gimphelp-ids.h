@@ -161,6 +161,14 @@ value|"gimp-file-close-all"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FILE_SHOW_IN_FILE_MANAGER
+define|#
+directive|define
+name|GIMP_HELP_FILE_SHOW_IN_FILE_MANAGER
+value|"gimp-file-show-in-file-manager"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_FILE_CREATE_TEMPLATE
 define|#
 directive|define
