@@ -443,6 +443,35 @@ name|GIMP_HELP_FILE_CLOSE_ALL
 block|}
 block|,
 block|{
+literal|"file-copy-location"
+block|,
+literal|"edit-copy"
+block|,
+name|NC_
+argument_list|(
+literal|"file-action"
+argument_list|,
+literal|"Copy _Image Location"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"file-action"
+argument_list|,
+literal|"Copy image file location to clipboard"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|file_copy_location_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_FILE_COPY_LOCATION
+block|}
+block|,
+block|{
 literal|"file-show-in-file-manager"
 block|,
 literal|"gtk-directory"
@@ -451,7 +480,7 @@ name|NC_
 argument_list|(
 literal|"file-action"
 argument_list|,
-literal|"Show in File Manager"
+literal|"Show in _File Manager"
 argument_list|)
 block|,
 literal|"<primary><alt>F"
@@ -1396,6 +1425,17 @@ argument_list|(
 literal|"file-create-template"
 argument_list|,
 name|image
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"file-copy-location"
+argument_list|,
+name|file
+operator|||
+name|source
+operator|||
+name|export
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

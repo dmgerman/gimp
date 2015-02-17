@@ -161,6 +161,14 @@ value|"gimp-file-close-all"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FILE_COPY_LOCATION
+define|#
+directive|define
+name|GIMP_HELP_FILE_COPY_LOCATION
+value|"gimp-file-copy-location"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_FILE_SHOW_IN_FILE_MANAGER
 define|#
 directive|define
