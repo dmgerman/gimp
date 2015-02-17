@@ -236,7 +236,7 @@ name|NC_
 argument_list|(
 literal|"brushes-action"
 argument_list|,
-literal|"Show Brush in _File Manager"
+literal|"Show in _File Manager"
 argument_list|)
 block|,
 name|NULL
@@ -245,7 +245,7 @@ name|NC_
 argument_list|(
 literal|"brushes-action"
 argument_list|,
-literal|"Show the brush file location in the file manager"
+literal|"Show brush file location in the file manager"
 argument_list|)
 block|,
 name|G_CALLBACK

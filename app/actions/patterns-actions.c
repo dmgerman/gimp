@@ -236,7 +236,7 @@ name|NC_
 argument_list|(
 literal|"patterns-action"
 argument_list|,
-literal|"Show Pattern in _File Manager"
+literal|"Show in _File Manager"
 argument_list|)
 block|,
 name|NULL

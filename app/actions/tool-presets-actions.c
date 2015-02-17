@@ -219,7 +219,7 @@ name|NC_
 argument_list|(
 literal|"tool-presets-action"
 argument_list|,
-literal|"Show Tool Preset in _File Manager"
+literal|"Show in _File Manager"
 argument_list|)
 block|,
 name|NULL

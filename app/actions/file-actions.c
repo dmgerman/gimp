@@ -460,7 +460,7 @@ name|NC_
 argument_list|(
 literal|"file-action"
 argument_list|,
-literal|"Show in File Manager"
+literal|"Show image file location in the file manager"
 argument_list|)
 block|,
 name|G_CALLBACK

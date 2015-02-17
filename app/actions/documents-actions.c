@@ -230,7 +230,7 @@ name|NC_
 argument_list|(
 literal|"documents-action"
 argument_list|,
-literal|"Show Image in _File Manager"
+literal|"Show in _File Manager"
 argument_list|)
 block|,
 name|NULL

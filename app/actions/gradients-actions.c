@@ -213,7 +213,7 @@ name|NC_
 argument_list|(
 literal|"gradients-action"
 argument_list|,
-literal|"Show Gradient in _File Manager"
+literal|"Show in _File Manager"
 argument_list|)
 block|,
 name|NULL
