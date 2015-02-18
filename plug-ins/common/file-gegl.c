@@ -225,6 +225,32 @@ block|{
 block|{
 name|N_
 argument_list|(
+literal|"OpenEXR image"
+argument_list|)
+block|,
+literal|"image/x-exr"
+block|,
+literal|"exr"
+block|,
+literal|"0,lelong,20000630"
+block|,
+comment|/* no EXR saving (implemented in native GIMP plug-in) */
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"file-exr-save"
+block|,
+literal|"Saves files in the OpenEXR file format"
+block|,
+literal|"This procedure saves images in the OpenEXR format, using gegl:save"
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
 literal|"NEF image"
 argument_list|)
 block|,
@@ -440,6 +466,13 @@ index|[
 name|i
 index|]
 decl_stmt|;
+if|if
+condition|(
+name|format
+operator|->
+name|load_proc
+condition|)
+block|{
 name|gimp_install_procedure
 argument_list|(
 name|format
@@ -511,6 +544,7 @@ operator|->
 name|magic
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|format
