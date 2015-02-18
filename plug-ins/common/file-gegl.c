@@ -234,7 +234,7 @@ literal|"exr"
 block|,
 literal|"0,lelong,20000630"
 block|,
-comment|/* no EXR saving (implemented in native GIMP plug-in) */
+comment|/* no EXR loading (implemented in native GIMP plug-in) */
 name|NULL
 block|,
 name|NULL
