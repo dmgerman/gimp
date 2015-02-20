@@ -105,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d9dc520103
+DECL|enum|__anon29fb3a1e0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -127,7 +127,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d9dc520203
+DECL|enum|__anon29fb3a1e0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -156,7 +156,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d9dc520308
+DECL|struct|__anon29fb3a1e0308
 block|{
 DECL|member|name
 specifier|const
@@ -178,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d9dc520408
+DECL|struct|__anon29fb3a1e0408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -3611,10 +3611,6 @@ argument_list|)
 condition|)
 comment|/* 16-bit floating point (half) */
 block|{
-ifdef|#
-directive|ifdef
-name|TYPE_RGB_HALF_FLT
-comment|/* half float types are only in lcms 2.4 and newer */
 if|if
 condition|(
 name|has_alpha
@@ -3646,9 +3642,6 @@ literal|"R'G'B' float"
 argument_list|)
 expr_stmt|;
 block|}
-endif|#
-directive|endif
-comment|/* TYPE_RGB_HALF_FLT */
 block|}
 elseif|else
 if|if
