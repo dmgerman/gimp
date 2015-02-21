@@ -80,6 +80,12 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<gegl.h>
+end_include
+
 begin_decl_stmt
 DECL|variable|pygimp_error
 name|PyObject
@@ -9188,6 +9194,14 @@ comment|/* set the default python encoding to utf-8 */
 name|PyUnicode_SetDefaultEncoding
 argument_list|(
 literal|"utf-8"
+argument_list|)
+expr_stmt|;
+comment|/* initialize gegl */
+name|gegl_init
+argument_list|(
+literal|0
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Create the module and add the functions */
