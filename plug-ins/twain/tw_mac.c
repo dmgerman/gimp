@@ -419,10 +419,12 @@ block|}
 end_function
 
 begin_function
-DECL|function|twainQuitApplication ()
+DECL|function|twainQuitApplication (void)
 name|void
 name|twainQuitApplication
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|QuitApplicationEventLoop
 argument_list|()
@@ -633,9 +635,11 @@ end_function
 
 begin_function
 name|int
-DECL|function|twainMain ()
+DECL|function|twainMain (void)
 name|twainMain
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|EventLoopTimerRef
 name|timer

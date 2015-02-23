@@ -57,7 +57,9 @@ end_function_decl
 begin_function_decl
 name|void
 name|twainQuitApplication
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
@@ -114,14 +116,18 @@ end_function_decl
 begin_function_decl
 name|int
 name|twainMain
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|int
 name|scanImage
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
