@@ -1652,6 +1652,8 @@ argument_list|)
 decl_stmt|;
 name|gboolean
 name|dropped
+init|=
+name|FALSE
 decl_stmt|;
 if|if
 condition|(
