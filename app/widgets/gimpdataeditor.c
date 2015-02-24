@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c265c50103
+DECL|enum|__anon274d6f800103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2356,6 +2356,18 @@ condition|(
 name|strlen
 argument_list|(
 name|new_name
+argument_list|)
+operator|&&
+name|g_strcmp0
+argument_list|(
+name|new_name
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|editor
+operator|->
+name|data
+argument_list|)
 argument_list|)
 condition|)
 block|{
