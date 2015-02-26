@@ -345,7 +345,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b0eeb40103
+DECL|enum|__anon29c270620103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -370,7 +370,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b0eeb40203
+DECL|enum|__anon29c270620203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4659,6 +4659,49 @@ argument_list|,
 literal|0
 argument_list|,
 name|status_callback
+argument_list|)
+expr_stmt|;
+comment|/* when done, make sure everything is clean, to clean out dirty    * states from data object which reference each other and got    * dirtied by loading the referenced object    */
+name|gimp_data_factory_data_clean
+argument_list|(
+name|gimp
+operator|->
+name|brush_factory
+argument_list|)
+expr_stmt|;
+name|gimp_data_factory_data_clean
+argument_list|(
+name|gimp
+operator|->
+name|dynamics_factory
+argument_list|)
+expr_stmt|;
+name|gimp_data_factory_data_clean
+argument_list|(
+name|gimp
+operator|->
+name|pattern_factory
+argument_list|)
+expr_stmt|;
+name|gimp_data_factory_data_clean
+argument_list|(
+name|gimp
+operator|->
+name|palette_factory
+argument_list|)
+expr_stmt|;
+name|gimp_data_factory_data_clean
+argument_list|(
+name|gimp
+operator|->
+name|gradient_factory
+argument_list|)
+expr_stmt|;
+name|gimp_data_factory_data_clean
+argument_list|(
+name|gimp
+operator|->
+name|tool_preset_factory
 argument_list|)
 expr_stmt|;
 block|}
