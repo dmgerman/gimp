@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb6f6170103
+DECL|enum|__anon289e77ed0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3382,6 +3382,7 @@ index|]
 expr_stmt|;
 block|}
 block|}
+block|}
 switch|switch
 condition|(
 name|inter
@@ -3558,7 +3559,6 @@ literal|8
 expr_stmt|;
 block|}
 break|break;
-block|}
 block|}
 block|}
 name|src1
