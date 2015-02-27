@@ -873,8 +873,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"NULL path passed to "
-literal|"gimp_file_show_in_file_manager()."
+literal|"File path is NULL"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -917,8 +916,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Error converting UTF-8 filename in "
-literal|"gimp_file_show_in_file_manager()."
+literal|"Error converting UTF-8 filename to wide char"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -984,8 +982,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Error converting UTF-8 filename in "
-literal|"gimp_file_show_in_file_manager()."
+literal|"Error converting UTF-8 filename to wide char"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1016,8 +1013,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"ILCreateFromPath() failed in "
-literal|"gimp_file_show_in_file_manager()."
+literal|"ILCreateFromPath() failed"
 argument_list|)
 argument_list|)
 expr_stmt|;
