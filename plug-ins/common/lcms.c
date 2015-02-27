@@ -105,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fb3a1e0103
+DECL|enum|__anon27c83f850103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -127,7 +127,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fb3a1e0203
+DECL|enum|__anon27c83f850203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -156,7 +156,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fb3a1e0308
+DECL|struct|__anon27c83f850308
 block|{
 DECL|member|name
 specifier|const
@@ -178,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fb3a1e0408
+DECL|struct|__anon27c83f850408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -3638,7 +3638,7 @@ name|iter_format
 operator|=
 name|babl_format
 argument_list|(
-literal|"R'G'B' float"
+literal|"R'G'B' half"
 argument_list|)
 expr_stmt|;
 block|}
