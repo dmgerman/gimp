@@ -192,14 +192,14 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_n_point_deformation_options_init_some_widgets
+name|gimp_n_point_deformation_options_set_sensitivity
 parameter_list|(
 name|GimpNPointDeformationOptions
 modifier|*
 name|npd_options
 parameter_list|,
 name|gboolean
-name|is_tool_active
+name|tool_active
 parameter_list|)
 function_decl|;
 end_function_decl

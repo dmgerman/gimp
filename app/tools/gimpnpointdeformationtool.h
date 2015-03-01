@@ -135,11 +135,6 @@ DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
-DECL|member|display
-name|GimpDisplay
-modifier|*
-name|display
-decl_stmt|;
 DECL|member|draw_timeout_id
 name|guint
 name|draw_timeout_id
@@ -174,16 +169,6 @@ name|GeglBuffer
 modifier|*
 name|preview_buffer
 decl_stmt|;
-DECL|member|source_buffer
-name|GeglBuffer
-modifier|*
-name|source_buffer
-decl_stmt|;
-DECL|member|drawable
-name|GimpDrawable
-modifier|*
-name|drawable
-decl_stmt|;
 DECL|member|model
 name|NPDModel
 modifier|*
@@ -194,7 +179,7 @@ name|NPDControlPoint
 modifier|*
 name|selected_cp
 decl_stmt|;
-comment|/* last selected control point */
+comment|/* last selected control point     */
 DECL|member|selected_cps
 name|GList
 modifier|*
@@ -220,11 +205,11 @@ name|gdouble
 name|cursor_y
 decl_stmt|;
 DECL|member|offset_x
-name|gdouble
+name|gint
 name|offset_x
 decl_stmt|;
 DECL|member|offset_y
-name|gdouble
+name|gint
 name|offset_y
 decl_stmt|;
 DECL|member|movement_start_x
@@ -239,13 +224,13 @@ DECL|member|cp_scaled_radius
 name|gfloat
 name|cp_scaled_radius
 decl_stmt|;
-comment|/* radius of a control point scaled                                              * according to display shell's scale */
+comment|/* radius of a control point scaled                                              * according to display shell's scale                                              */
 DECL|member|previous_cps_positions
 name|GList
 modifier|*
 name|previous_cps_positions
 decl_stmt|;
-comment|/* list of NPDPoints holding previous                                              * positions of control points */
+comment|/* list of NPDPoints holding previous                                              * positions of control points                                              */
 DECL|member|active
 name|gboolean
 name|active
@@ -258,10 +243,6 @@ decl_stmt|;
 DECL|member|rubber_band
 name|gboolean
 name|rubber_band
-decl_stmt|;
-DECL|member|apply_deformation
-name|gboolean
-name|apply_deformation
 decl_stmt|;
 block|}
 struct|;
@@ -276,19 +257,6 @@ DECL|member|parent_class
 name|GimpDrawToolClass
 name|parent_class
 decl_stmt|;
-comment|/*  virtual function  */
-DECL|member|perform_deformation
-name|void
-function_decl|(
-modifier|*
-name|perform_deformation
-function_decl|)
-parameter_list|(
-name|GimpNPointDeformationTool
-modifier|*
-name|npd_tool
-parameter_list|)
-function_decl|;
 block|}
 struct|;
 end_struct
