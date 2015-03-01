@@ -196,6 +196,22 @@ name|GimpVector2
 modifier|*
 name|lattice_points
 decl_stmt|;
+DECL|member|start_x
+name|gdouble
+name|start_x
+decl_stmt|;
+DECL|member|start_y
+name|gdouble
+name|start_y
+decl_stmt|;
+DECL|member|last_x
+name|gdouble
+name|last_x
+decl_stmt|;
+DECL|member|last_y
+name|gdouble
+name|last_y
+decl_stmt|;
 DECL|member|cursor_x
 name|gdouble
 name|cursor_x
@@ -212,25 +228,11 @@ DECL|member|offset_y
 name|gint
 name|offset_y
 decl_stmt|;
-DECL|member|movement_start_x
-name|gdouble
-name|movement_start_x
-decl_stmt|;
-DECL|member|movement_start_y
-name|gdouble
-name|movement_start_y
-decl_stmt|;
 DECL|member|cp_scaled_radius
 name|gfloat
 name|cp_scaled_radius
 decl_stmt|;
-comment|/* radius of a control point scaled                                              * according to display shell's scale                                              */
-DECL|member|previous_cps_positions
-name|GList
-modifier|*
-name|previous_cps_positions
-decl_stmt|;
-comment|/* list of NPDPoints holding previous                                              * positions of control points                                              */
+comment|/* radius of a control point scaled                                         * according to display shell's scale                                         */
 DECL|member|active
 name|gboolean
 name|active
