@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298dac4b0103
+DECL|enum|__anon2afd228e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -245,7 +245,7 @@ name|object_class
 argument_list|,
 name|PROP_ASAP_DEFORMATION
 argument_list|,
-literal|"ASAP-deformation"
+literal|"asap-deformation"
 argument_list|,
 name|_
 argument_list|(
@@ -263,7 +263,7 @@ name|object_class
 argument_list|,
 name|PROP_MLS_WEIGHTS
 argument_list|,
-literal|"MLS-weights"
+literal|"mls-weights"
 argument_list|,
 name|_
 argument_list|(
@@ -281,7 +281,7 @@ name|object_class
 argument_list|,
 name|PROP_MLS_WEIGHTS_ALPHA
 argument_list|,
-literal|"MLS-weights-alpha"
+literal|"mls-weights-alpha"
 argument_list|,
 name|_
 argument_list|(
@@ -401,7 +401,7 @@ name|PROP_ASAP_DEFORMATION
 case|:
 name|options
 operator|->
-name|ASAP_deformation
+name|asap_deformation
 operator|=
 name|g_value_get_boolean
 argument_list|(
@@ -414,7 +414,7 @@ name|PROP_MLS_WEIGHTS
 case|:
 name|options
 operator|->
-name|MLS_weights
+name|mls_weights
 operator|=
 name|g_value_get_boolean
 argument_list|(
@@ -427,7 +427,7 @@ name|PROP_MLS_WEIGHTS_ALPHA
 case|:
 name|options
 operator|->
-name|MLS_weights_alpha
+name|mls_weights_alpha
 operator|=
 name|g_value_get_double
 argument_list|(
@@ -536,7 +536,7 @@ name|value
 argument_list|,
 name|options
 operator|->
-name|ASAP_deformation
+name|asap_deformation
 argument_list|)
 expr_stmt|;
 break|break;
@@ -549,7 +549,7 @@ name|value
 argument_list|,
 name|options
 operator|->
-name|MLS_weights
+name|mls_weights
 argument_list|)
 expr_stmt|;
 break|break;
@@ -562,7 +562,7 @@ name|value
 argument_list|,
 name|options
 operator|->
-name|MLS_weights_alpha
+name|mls_weights_alpha
 argument_list|)
 expr_stmt|;
 break|break;
@@ -818,7 +818,7 @@ name|gimp_prop_boolean_radio_frame_new
 argument_list|(
 name|config
 argument_list|,
-literal|"ASAP-deformation"
+literal|"asap-deformation"
 argument_list|,
 name|_
 argument_list|(
@@ -827,12 +827,12 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"scale"
+literal|"Scale"
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"rigid (rubber)"
+literal|"Rigid (Rubber)"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -870,7 +870,7 @@ name|gimp_prop_check_button_new
 argument_list|(
 name|config
 argument_list|,
-literal|"MLS-weights"
+literal|"mls-weights"
 argument_list|,
 name|_
 argument_list|(
@@ -912,7 +912,7 @@ name|gimp_prop_spin_scale_new
 argument_list|(
 name|config
 argument_list|,
-literal|"MLS-weights-alpha"
+literal|"mls-weights-alpha"
 argument_list|,
 name|_
 argument_list|(
@@ -925,12 +925,6 @@ literal|0.1
 argument_list|,
 literal|1
 argument_list|)
-expr_stmt|;
-name|npd_options
-operator|->
-name|scale_MLS_weights_alpha
-operator|=
-name|widget
 expr_stmt|;
 name|gimp_spin_scale_set_scale_limits
 argument_list|(
@@ -967,15 +961,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_sensitive
-argument_list|(
-name|widget
-argument_list|,
-name|npd_options
-operator|->
-name|MLS_weights
-argument_list|)
-expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|widget
@@ -985,7 +970,7 @@ name|g_object_bind_property
 argument_list|(
 name|config
 argument_list|,
-literal|"MLS-weights"
+literal|"mls-weights"
 argument_list|,
 name|widget
 argument_list|,

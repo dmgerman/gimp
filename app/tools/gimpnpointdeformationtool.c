@@ -1705,7 +1705,7 @@ name|npd_tool
 operator|->
 name|npd_node
 argument_list|,
-literal|"square size"
+literal|"square-size"
 argument_list|,
 operator|(
 name|gint
@@ -1723,23 +1723,23 @@ name|npd_options
 operator|->
 name|rigidity
 argument_list|,
-literal|"ASAP deformation"
+literal|"asap-deformation"
 argument_list|,
 name|npd_options
 operator|->
-name|ASAP_deformation
+name|asap_deformation
 argument_list|,
-literal|"MLS weights"
-argument_list|,
-name|npd_options
-operator|->
-name|MLS_weights
-argument_list|,
-literal|"MLS weights alpha"
+literal|"mls-weights"
 argument_list|,
 name|npd_options
 operator|->
-name|MLS_weights_alpha
+name|mls_weights
+argument_list|,
+literal|"mls-weights-alpha"
+argument_list|,
+name|npd_options
+operator|->
+name|mls_weights_alpha
 argument_list|,
 name|NULL
 argument_list|)
