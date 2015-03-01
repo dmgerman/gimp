@@ -1625,6 +1625,8 @@ literal|"gegl:noise-solid"
 block|,
 literal|"gegl:noise-spread"
 block|,
+literal|"gegl:npd"
+block|,
 literal|"gegl:oilify"
 block|,
 literal|"gegl:opacity"
