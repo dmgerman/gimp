@@ -954,6 +954,15 @@ value|_("Hide docks and other windows, leaving only image windows.")
 end_define
 
 begin_define
+DECL|macro|PLAYGROUND_NPD_TOOL_BLURB
+define|#
+directive|define
+name|PLAYGROUND_NPD_TOOL_BLURB
+define|\
+value|_("Enable the N-Point Deformation tool.")
+end_define
+
+begin_define
 DECL|macro|SPACE_BAR_ACTION_BLURB
 define|#
 directive|define

@@ -195,7 +195,7 @@ DECL|member|help_browser
 name|GimpHelpBrowserType
 name|help_browser
 decl_stmt|;
-comment|/* Action Search preferences. */
+comment|/* action search preferences */
 DECL|member|search_show_unavailable
 name|gboolean
 name|search_show_unavailable
@@ -225,6 +225,11 @@ decl_stmt|;
 DECL|member|cursor_handedness
 name|GimpHandedness
 name|cursor_handedness
+decl_stmt|;
+comment|/* experimental playground */
+DECL|member|playground_npd_tool
+name|gboolean
+name|playground_npd_tool
 decl_stmt|;
 comment|/* saved in sessionrc */
 DECL|member|hide_docks
