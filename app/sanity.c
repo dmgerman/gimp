@@ -1563,6 +1563,8 @@ literal|"gegl:distance-transform"
 block|,
 literal|"gegl:dropshadow"
 block|,
+literal|"gegl:edge"
+block|,
 literal|"gegl:edge-laplace"
 block|,
 literal|"gegl:edge-sobel"

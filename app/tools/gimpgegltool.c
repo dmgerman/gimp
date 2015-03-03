@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4c198f0103
+DECL|enum|__anon29c8b10f0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -366,6 +366,8 @@ block|,
 literal|"gegl:distance-transform"
 block|,
 literal|"gegl:dropshadow"
+block|,
+literal|"gegl:edge"
 block|,
 literal|"gegl:edge-laplace"
 block|,
