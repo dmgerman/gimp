@@ -240,6 +240,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphandletransformtool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimphealtool.h"
 end_include
 
@@ -564,6 +570,8 @@ block|,
 name|gimp_flip_tool_register
 block|,
 name|gimp_perspective_tool_register
+block|,
+name|gimp_handle_transform_tool_register
 block|,
 name|gimp_shear_tool_register
 block|,

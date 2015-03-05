@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f158640103
+DECL|enum|__anon275f94450103
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -121,7 +121,7 @@ DECL|macro|TRANS_INFO_SIZE
 define|#
 directive|define
 name|TRANS_INFO_SIZE
-value|10
+value|17
 end_define
 
 begin_typedef

@@ -447,6 +447,11 @@ define|#
 directive|define
 name|GIMP_STOCK_TOOL_FUZZY_SELECT
 value|"gimp-tool-fuzzy-select"
+DECL|macro|GIMP_STOCK_TOOL_HANDLE_TRANSFORM
+define|#
+directive|define
+name|GIMP_STOCK_TOOL_HANDLE_TRANSFORM
+value|"gimp-tool-handle-transform"
 DECL|macro|GIMP_STOCK_TOOL_HEAL
 define|#
 directive|define

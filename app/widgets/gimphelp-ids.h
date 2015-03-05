@@ -1982,6 +1982,14 @@ value|"gimp-tool-gegl"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TOOL_HANDLE_TRANSFORM
+define|#
+directive|define
+name|GIMP_HELP_TOOL_HANDLE_TRANSFORM
+value|"gimp-tool-handle-transform"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TOOL_HEAL
 define|#
 directive|define
