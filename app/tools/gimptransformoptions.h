@@ -194,7 +194,7 @@ struct|struct
 name|_GimpTransformOptionsClass
 block|{
 DECL|member|parent_class
-name|GimpToolOptions
+name|GimpToolOptionsClass
 name|parent_class
 decl_stmt|;
 block|}
