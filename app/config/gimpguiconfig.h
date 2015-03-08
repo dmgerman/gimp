@@ -231,6 +231,10 @@ DECL|member|playground_npd_tool
 name|gboolean
 name|playground_npd_tool
 decl_stmt|;
+DECL|member|playground_handle_transform_tool
+name|gboolean
+name|playground_handle_transform_tool
+decl_stmt|;
 comment|/* saved in sessionrc */
 DECL|member|hide_docks
 name|gboolean

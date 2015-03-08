@@ -963,6 +963,15 @@ value|_("Enable the N-Point Deformation tool.")
 end_define
 
 begin_define
+DECL|macro|PLAYGROUND_HANDLE_TRANSFORM_TOOL_BLURB
+define|#
+directive|define
+name|PLAYGROUND_HANDLE_TRANSFORM_TOOL_BLURB
+define|\
+value|_("Enable the Handle Transform tool.")
+end_define
+
+begin_define
 DECL|macro|SPACE_BAR_ACTION_BLURB
 define|#
 directive|define

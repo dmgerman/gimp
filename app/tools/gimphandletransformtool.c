@@ -48,6 +48,26 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpguiconfig.h"
+end_include
+
+begin_comment
+comment|/* playground */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"core/gimp.h"
+end_include
+
+begin_comment
+comment|/* playground */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -109,7 +129,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon294f9fe80103
+DECL|enum|__anon295d554f0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -538,6 +558,21 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+comment|/* we should not know that "data" is a Gimp*, but what the heck this    * is experimental playground stuff    */
+if|if
+condition|(
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|GIMP
+argument_list|(
+name|data
+argument_list|)
+operator|->
+name|config
+argument_list|)
+operator|->
+name|playground_handle_transform_tool
+condition|)
 call|(
 modifier|*
 name|callback
