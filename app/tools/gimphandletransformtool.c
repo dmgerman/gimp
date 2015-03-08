@@ -100,7 +100,7 @@ file|"gimp-intl.h"
 end_include
 
 begin_comment
-comment|/* the transformation is defined by 8 points:  *  * 4 points on the original image and 4 corresponding points on the  * transformed image. The first NUM points on the transformed image  * are visible as handles.  *  * For these handles, the constants TRANSFORM_HANDLE_N,  * TRANSFORM_HANDLE_S, TRANSFORM_HANDLE_E and TRANSFORM_HANDLE_W are  * used. Actually, it makes no sense to name the handles with north,  * south, east, and west.  But this way, we don't need to define even  * more enum constants.  */
+comment|/* the transformation is defined by 8 points:  *  * 4 points on the original image and 4 corresponding points on the  * transformed image. The first N_HANDLES points on the transformed  * image are visible as handles.  *  * For these handles, the constants TRANSFORM_HANDLE_N,  * TRANSFORM_HANDLE_S, TRANSFORM_HANDLE_E and TRANSFORM_HANDLE_W are  * used. Actually, it makes no sense to name the handles with north,  * south, east, and west.  But this way, we don't need to define even  * more enum constants.  */
 end_comment
 
 begin_comment
@@ -109,7 +109,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae2b7e10103
+DECL|enum|__anon294f9fe80103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -159,8 +159,8 @@ block|,
 DECL|enumerator|OY3
 name|OY3
 block|,
-DECL|enumerator|NUM
-name|NUM
+DECL|enumerator|N_HANDLES
+name|N_HANDLES
 block|}
 enum|;
 end_enum
@@ -783,7 +783,7 @@ modifier|*
 name|options
 decl_stmt|;
 name|gint
-name|num
+name|n_handles
 decl_stmt|;
 name|gint
 name|active_handle
@@ -795,7 +795,7 @@ argument_list|(
 name|tr_tool
 argument_list|)
 expr_stmt|;
-name|num
+name|n_handles
 operator|=
 operator|(
 name|gint
@@ -804,7 +804,7 @@ name|tr_tool
 operator|->
 name|trans_info
 index|[
-name|NUM
+name|N_HANDLES
 index|]
 expr_stmt|;
 name|active_handle
@@ -859,7 +859,7 @@ block|{
 comment|/* add handle */
 if|if
 condition|(
-name|num
+name|n_handles
 operator|<
 literal|4
 operator|&&
@@ -878,7 +878,7 @@ name|X0
 operator|+
 literal|2
 operator|*
-name|num
+name|n_handles
 index|]
 operator|=
 name|coords
@@ -893,7 +893,7 @@ name|Y0
 operator|+
 literal|2
 operator|*
-name|num
+name|n_handles
 index|]
 operator|=
 name|coords
@@ -906,13 +906,13 @@ name|function
 operator|=
 name|TRANSFORM_HANDLE_N
 operator|+
-name|num
+name|n_handles
 expr_stmt|;
 name|tr_tool
 operator|->
 name|trans_info
 index|[
-name|NUM
+name|N_HANDLES
 index|]
 operator|++
 expr_stmt|;
@@ -935,7 +935,7 @@ name|handle_mode
 operator|==
 name|GIMP_HANDLE_MODE_REMOVE
 operator|&&
-name|num
+name|n_handles
 operator|>
 literal|0
 operator|&&
@@ -1008,14 +1008,14 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|num
+name|n_handles
 operator|--
 expr_stmt|;
 name|tr_tool
 operator|->
 name|trans_info
 index|[
-name|NUM
+name|N_HANDLES
 index|]
 operator|--
 expr_stmt|;
@@ -1027,7 +1027,7 @@ name|active_handle
 init|;
 name|i
 operator|<
-name|num
+name|n_handles
 condition|;
 name|i
 operator|++
@@ -1130,7 +1130,7 @@ name|X0
 operator|+
 literal|2
 operator|*
-name|num
+name|n_handles
 index|]
 operator|=
 name|tempx
@@ -1143,7 +1143,7 @@ name|Y0
 operator|+
 literal|2
 operator|*
-name|num
+name|n_handles
 index|]
 operator|=
 name|tempy
@@ -1156,7 +1156,7 @@ name|OX0
 operator|+
 literal|2
 operator|*
-name|num
+name|n_handles
 index|]
 operator|=
 name|tempox
@@ -1169,7 +1169,7 @@ name|OY0
 operator|+
 literal|2
 operator|*
-name|num
+name|n_handles
 index|]
 operator|=
 name|tempoy
@@ -1627,7 +1627,7 @@ parameter_list|)
 block|{
 name|GimpHandleTransformTool
 modifier|*
-name|handle_transform
+name|ht_tool
 init|=
 name|GIMP_HANDLE_TRANSFORM_TOOL
 argument_list|(
@@ -1742,6 +1742,7 @@ condition|;
 name|y
 operator|++
 control|)
+block|{
 for|for
 control|(
 name|x
@@ -1822,7 +1823,7 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-name|handle_transform
+name|ht_tool
 operator|->
 name|label
 index|[
@@ -1834,6 +1835,7 @@ index|]
 operator|=
 name|label
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function
@@ -2192,7 +2194,7 @@ name|tr_tool
 operator|->
 name|trans_info
 index|[
-name|NUM
+name|N_HANDLES
 index|]
 operator|=
 literal|0
@@ -2222,10 +2224,10 @@ modifier|*
 name|options
 decl_stmt|;
 name|gint
-name|active_handle
+name|n_handles
 decl_stmt|;
 name|gint
-name|num
+name|active_handle
 decl_stmt|;
 name|options
 operator|=
@@ -2234,15 +2236,7 @@ argument_list|(
 name|tr_tool
 argument_list|)
 expr_stmt|;
-name|active_handle
-operator|=
-name|tr_tool
-operator|->
-name|function
-operator|-
-name|TRANSFORM_HANDLE_N
-expr_stmt|;
-name|num
+name|n_handles
 operator|=
 operator|(
 name|gint
@@ -2251,8 +2245,16 @@ name|tr_tool
 operator|->
 name|trans_info
 index|[
-name|NUM
+name|N_HANDLES
 index|]
+expr_stmt|;
+name|active_handle
+operator|=
+name|tr_tool
+operator|->
+name|function
+operator|-
+name|TRANSFORM_HANDLE_N
 expr_stmt|;
 if|if
 condition|(
@@ -2395,7 +2397,7 @@ if|if
 condition|(
 name|i
 operator|<
-name|num
+name|n_handles
 operator|&&
 name|i
 operator|!=
@@ -2531,7 +2533,7 @@ name|mousey
 expr_stmt|;
 switch|switch
 condition|(
-name|num
+name|n_handles
 condition|)
 block|{
 case|case
@@ -2960,6 +2962,15 @@ modifier|*
 name|tr_tool
 parameter_list|)
 block|{
+name|GimpHandleTransformTool
+modifier|*
+name|ht_tool
+init|=
+name|GIMP_HANDLE_TRANSFORM_TOOL
+argument_list|(
+name|tr_tool
+argument_list|)
+decl_stmt|;
 name|gdouble
 name|coeff
 index|[
@@ -2974,15 +2985,13 @@ index|[
 literal|8
 index|]
 decl_stmt|;
-name|int
-name|i
-decl_stmt|;
 name|gdouble
 name|opos_x
 index|[
 literal|4
 index|]
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 name|opos_y
 index|[
 literal|4
@@ -2993,24 +3002,19 @@ name|pos_x
 index|[
 literal|4
 index|]
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 name|pos_y
 index|[
 literal|4
 index|]
 decl_stmt|;
-name|GimpHandleTransformTool
-modifier|*
-name|handle_transform
-init|=
-name|GIMP_HANDLE_TRANSFORM_TOOL
-argument_list|(
-name|tr_tool
-argument_list|)
+name|gint
+name|i
 decl_stmt|;
 if|if
 condition|(
-name|handle_transform
+name|ht_tool
 operator|->
 name|matrix_recalculation
 condition|)
@@ -3562,7 +3566,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* this should not happen            * reset the matrix so the user sees that something went wrong */
+comment|/* this should not happen reset the matrix so the user sees            * that something went wrong            */
 name|gimp_matrix3_identity
 argument_list|(
 operator|&
@@ -3765,7 +3769,7 @@ name|tr_tool
 operator|->
 name|trans_info
 index|[
-name|NUM
+name|N_HANDLES
 index|]
 condition|)
 block|{
@@ -3897,7 +3901,7 @@ if|#
 directive|if
 literal|0
 comment|/* show additional points for debugging */
-block|for (i = tr_tool->trans_info[NUM]; i< 4; i++)     {       gimp_draw_tool_add_handle (draw_tool,                                  GIMP_HANDLE_FILLED_CIRCLE,                                  tr_tool->trans_info[X0+2*i],                                  tr_tool->trans_info[Y0+2*i],                                  GIMP_TOOL_HANDLE_SIZE_CIRCLE,                                  GIMP_TOOL_HANDLE_SIZE_CIRCLE,                                  GIMP_HANDLE_ANCHOR_CENTER);       gimp_draw_tool_add_handle (draw_tool,                                  GIMP_HANDLE_FILLED_DIAMOND,                                  tr_tool->trans_info[OX0+2*i],                                  tr_tool->trans_info[OY0+2*i],                                  GIMP_TOOL_HANDLE_SIZE_CIRCLE,                                  GIMP_TOOL_HANDLE_SIZE_CIRCLE,                                  GIMP_HANDLE_ANCHOR_CENTER);       }    for (i = 0; i< tr_tool->trans_info[NUM]; i++)     {       tr_tool->handles[TRANSFORM_HANDLE_N + i] =         gimp_draw_tool_add_handle (draw_tool,                                    GIMP_HANDLE_DIAMOND,                                    tr_tool->trans_info[OX0+2*i],                                    tr_tool->trans_info[OY0+2*i],                                    GIMP_TOOL_HANDLE_SIZE_CIRCLE,                                    GIMP_TOOL_HANDLE_SIZE_CIRCLE,                                    GIMP_HANDLE_ANCHOR_CENTER);     }
+block|for (i = tr_tool->trans_info[N_HANDLES]; i< 4; i++)     {       gimp_draw_tool_add_handle (draw_tool,                                  GIMP_HANDLE_FILLED_CIRCLE,                                  tr_tool->trans_info[X0 + 2 * i],                                  tr_tool->trans_info[Y0 + 2 * i],                                  GIMP_TOOL_HANDLE_SIZE_CIRCLE,                                  GIMP_TOOL_HANDLE_SIZE_CIRCLE,                                  GIMP_HANDLE_ANCHOR_CENTER);       gimp_draw_tool_add_handle (draw_tool,                                  GIMP_HANDLE_FILLED_DIAMOND,                                  tr_tool->trans_info[OX0 + 2 * i],                                  tr_tool->trans_info[OY0 + 2 * i],                                  GIMP_TOOL_HANDLE_SIZE_CIRCLE,                                  GIMP_TOOL_HANDLE_SIZE_CIRCLE,                                  GIMP_HANDLE_ANCHOR_CENTER);       }    for (i = 0; i< tr_tool->trans_info[N_HANDLES]; i++)     {       tr_tool->handles[TRANSFORM_HANDLE_N + i] =         gimp_draw_tool_add_handle (draw_tool,                                    GIMP_HANDLE_DIAMOND,                                    tr_tool->trans_info[OX0 + 2 * i],                                    tr_tool->trans_info[OY0 + 2 * i],                                    GIMP_TOOL_HANDLE_SIZE_CIRCLE,                                    GIMP_TOOL_HANDLE_SIZE_CIRCLE,                                    GIMP_HANDLE_ANCHOR_CENTER);     }
 endif|#
 directive|endif
 for|for
@@ -3912,7 +3916,7 @@ name|tr_tool
 operator|->
 name|trans_info
 index|[
-name|NUM
+name|N_HANDLES
 index|]
 condition|;
 name|i
@@ -3998,7 +4002,7 @@ name|tr_tool
 operator|->
 name|trans_info
 index|[
-name|NUM
+name|N_HANDLES
 index|]
 operator|<
 literal|3
@@ -4015,7 +4019,7 @@ name|tr_tool
 operator|->
 name|trans_info
 index|[
-name|NUM
+name|N_HANDLES
 index|]
 operator|==
 literal|3
@@ -4089,7 +4093,7 @@ operator|)
 operator|)
 return|;
 block|}
-comment|/* tr_tool->trans_info[NUM] == 4 */
+comment|/* tr_tool->trans_info[N_HANDLES] == 4 */
 for|for
 control|(
 name|i
