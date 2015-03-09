@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0602440103
+DECL|enum|__anon2c3d30c40103
 block|{
 DECL|enumerator|SESSION_INFO_FACTORY_ENTRY
 name|SESSION_INFO_FACTORY_ENTRY
@@ -182,7 +182,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0602440208
+DECL|struct|__anon2c3d30c40208
 block|{
 DECL|member|info
 name|GimpSessionInfo
@@ -2978,15 +2978,6 @@ decl_stmt|;
 name|GdkScreen
 modifier|*
 name|screen
-init|=
-name|gtk_widget_get_screen
-argument_list|(
-name|info
-operator|->
-name|p
-operator|->
-name|widget
-argument_list|)
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
