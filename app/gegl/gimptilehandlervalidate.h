@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_TILE_HANDLER_PROJECTION_H__
+name|__GIMP_TILE_HANDLER_VALIDATE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_TILE_HANDLER_PROJECTION_H__
+DECL|macro|__GIMP_TILE_HANDLER_VALIDATE_H__
 define|#
 directive|define
-name|__GIMP_TILE_HANDLER_PROJECTION_H__
+name|__GIMP_TILE_HANDLER_VALIDATE_H__
 end_define
 
 begin_include
@@ -23,7 +23,7 @@ file|<gegl-buffer-backend.h>
 end_include
 
 begin_comment
-comment|/***  * GimpTileHandlerProjection is a GeglTileHandler that renders the  * projection.  */
+comment|/***  * GimpTileHandlerValidate is a GeglTileHandler that renders the  * projection.  */
 end_comment
 
 begin_macro
@@ -31,90 +31,90 @@ name|G_BEGIN_DECLS
 end_macro
 
 begin_define
-DECL|macro|GIMP_TYPE_TILE_HANDLER_PROJECTION
+DECL|macro|GIMP_TYPE_TILE_HANDLER_VALIDATE
 define|#
 directive|define
-name|GIMP_TYPE_TILE_HANDLER_PROJECTION
-value|(gimp_tile_handler_projection_get_type ())
+name|GIMP_TYPE_TILE_HANDLER_VALIDATE
+value|(gimp_tile_handler_validate_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_TILE_HANDLER_PROJECTION (obj)
+DECL|macro|GIMP_TILE_HANDLER_VALIDATE (obj)
 define|#
 directive|define
-name|GIMP_TILE_HANDLER_PROJECTION
+name|GIMP_TILE_HANDLER_VALIDATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_TILE_HANDLER_PROJECTION, GimpTileHandlerProjection))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_TILE_HANDLER_VALIDATE, GimpTileHandlerValidate))
 end_define
 
 begin_define
-DECL|macro|GIMP_TILE_HANDLER_PROJECTION_CLASS (klass)
+DECL|macro|GIMP_TILE_HANDLER_VALIDATE_CLASS (klass)
 define|#
 directive|define
-name|GIMP_TILE_HANDLER_PROJECTION_CLASS
+name|GIMP_TILE_HANDLER_VALIDATE_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GIMP_TYPE_TILE_HANDLER_PROJECTION, GimpTileHandlerProjectionClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GIMP_TYPE_TILE_HANDLER_VALIDATE, GimpTileHandlerValidateClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_TILE_HANDLER_PROJECTION (obj)
+DECL|macro|GIMP_IS_TILE_HANDLER_VALIDATE (obj)
 define|#
 directive|define
-name|GIMP_IS_TILE_HANDLER_PROJECTION
+name|GIMP_IS_TILE_HANDLER_VALIDATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_TILE_HANDLER_PROJECTION))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_TILE_HANDLER_VALIDATE))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_TILE_HANDLER_PROJECTION_CLASS (klass)
+DECL|macro|GIMP_IS_TILE_HANDLER_VALIDATE_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_TILE_HANDLER_PROJECTION_CLASS
+name|GIMP_IS_TILE_HANDLER_VALIDATE_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass),  GIMP_TYPE_TILE_HANDLER_PROJECTION))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass),  GIMP_TYPE_TILE_HANDLER_VALIDATE))
 end_define
 
 begin_define
-DECL|macro|GIMP_TILE_HANDLER_PROJECTION_GET_CLASS (obj)
+DECL|macro|GIMP_TILE_HANDLER_VALIDATE_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_TILE_HANDLER_PROJECTION_GET_CLASS
+name|GIMP_TILE_HANDLER_VALIDATE_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_TILE_HANDLER_PROJECTION, GimpTileHandlerProjectionClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_TILE_HANDLER_VALIDATE, GimpTileHandlerValidateClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpTileHandlerProjection
+DECL|typedef|GimpTileHandlerValidate
 typedef|typedef
 name|struct
-name|_GimpTileHandlerProjection
-name|GimpTileHandlerProjection
+name|_GimpTileHandlerValidate
+name|GimpTileHandlerValidate
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpTileHandlerProjectionClass
+DECL|typedef|GimpTileHandlerValidateClass
 typedef|typedef
 name|struct
-name|_GimpTileHandlerProjectionClass
-name|GimpTileHandlerProjectionClass
+name|_GimpTileHandlerValidateClass
+name|GimpTileHandlerValidateClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpTileHandlerProjection
+DECL|struct|_GimpTileHandlerValidate
 struct|struct
-name|_GimpTileHandlerProjection
+name|_GimpTileHandlerValidate
 block|{
 DECL|member|parent_instance
 name|GeglTileHandler
@@ -144,38 +144,62 @@ DECL|member|tile_height
 name|gint
 name|tile_height
 decl_stmt|;
-DECL|member|proj_width
-name|gint
-name|proj_width
-decl_stmt|;
-DECL|member|proj_height
-name|gint
-name|proj_height
-decl_stmt|;
 DECL|member|max_z
 name|gint
 name|max_z
+decl_stmt|;
+DECL|member|whole_tile
+name|gboolean
+name|whole_tile
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpTileHandlerProjectionClass
+DECL|struct|_GimpTileHandlerValidateClass
 struct|struct
-name|_GimpTileHandlerProjectionClass
+name|_GimpTileHandlerValidateClass
 block|{
 DECL|member|parent_class
 name|GeglTileHandlerClass
 name|parent_class
 decl_stmt|;
+DECL|member|validate
+name|void
+function_decl|(
+modifier|*
+name|validate
+function_decl|)
+parameter_list|(
+name|GimpTileHandlerValidate
+modifier|*
+name|validate
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|rect
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|format
+parameter_list|,
+name|gpointer
+name|dest_buf
+parameter_list|,
+name|gint
+name|dest_stride
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_tile_handler_projection_get_type
+name|gimp_tile_handler_validate_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -186,28 +210,22 @@ end_decl_stmt
 begin_function_decl
 name|GeglTileHandler
 modifier|*
-name|gimp_tile_handler_projection_new
+name|gimp_tile_handler_validate_new
 parameter_list|(
 name|GeglNode
 modifier|*
 name|graph
-parameter_list|,
-name|gint
-name|proj_width
-parameter_list|,
-name|gint
-name|proj_height
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_tile_handler_projection_assign
+name|gimp_tile_handler_validate_assign
 parameter_list|(
-name|GimpTileHandlerProjection
+name|GimpTileHandlerValidate
 modifier|*
-name|projection
+name|validate
 parameter_list|,
 name|GeglBuffer
 modifier|*
@@ -218,11 +236,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_tile_handler_projection_invalidate
+name|gimp_tile_handler_validate_invalidate
 parameter_list|(
-name|GimpTileHandlerProjection
+name|GimpTileHandlerValidate
 modifier|*
-name|projection
+name|validate
 parameter_list|,
 name|gint
 name|x
@@ -241,11 +259,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_tile_handler_projection_undo_invalidate
+name|gimp_tile_handler_validate_undo_invalidate
 parameter_list|(
-name|GimpTileHandlerProjection
+name|GimpTileHandlerValidate
 modifier|*
-name|projection
+name|validate
 parameter_list|,
 name|gint
 name|x
@@ -272,7 +290,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_TILE_HANDLER_PROJECTION_H__ */
+comment|/* __GIMP_TILE_HANDLER_VALIDATE_H__ */
 end_comment
 
 end_unit

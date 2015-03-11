@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimptilehandlerprojection.h"
+file|"gegl/gimptilehandlervalidate.h"
 end_include
 
 begin_include
@@ -163,7 +163,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon292e68430103
+DECL|enum|__anon29ff57ea0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -176,7 +176,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon292e68430203
+DECL|enum|__anon29ff57ea0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -255,7 +255,8 @@ modifier|*
 name|buffer
 decl_stmt|;
 DECL|member|validate_handler
-name|gpointer
+name|GimpTileHandlerValidate
+modifier|*
 name|validate_handler
 decl_stmt|;
 DECL|member|update_region
@@ -1533,16 +1534,15 @@ name|priv
 operator|->
 name|validate_handler
 operator|=
-name|gimp_tile_handler_projection_new
+name|GIMP_TILE_HANDLER_VALIDATE
+argument_list|(
+name|gimp_tile_handler_validate_new
 argument_list|(
 name|graph
-argument_list|,
-name|width
-argument_list|,
-name|height
+argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_tile_handler_projection_assign
+name|gimp_tile_handler_validate_assign
 argument_list|(
 name|proj
 operator|->
@@ -1557,7 +1557,7 @@ operator|->
 name|buffer
 argument_list|)
 expr_stmt|;
-comment|/*  This used to call gimp_tile_handler_projection_invalidate()        *  which forced the entire projection to be constructed in one        *  go for new images, causing a potentially huge delay. Now we        *  initially validate stuff the normal way, which makes the        *  image appear incrementally, but it keeps everything        *  responsive.        */
+comment|/*  This used to call gimp_tile_handler_validate_invalidate()        *  which forced the entire projection to be constructed in one        *  go for new images, causing a potentially huge delay. Now we        *  initially validate stuff the normal way, which makes the        *  image appear incrementally, but it keeps everything        *  responsive.        */
 name|gimp_projection_add_update_area
 argument_list|(
 name|proj
@@ -3638,7 +3638,7 @@ name|priv
 operator|->
 name|validate_handler
 condition|)
-name|gimp_tile_handler_projection_invalidate
+name|gimp_tile_handler_validate_invalidate
 argument_list|(
 name|proj
 operator|->
@@ -3681,7 +3681,7 @@ name|priv
 operator|->
 name|validate_handler
 condition|)
-name|gimp_tile_handler_projection_undo_invalidate
+name|gimp_tile_handler_validate_undo_invalidate
 argument_list|(
 name|proj
 operator|->
