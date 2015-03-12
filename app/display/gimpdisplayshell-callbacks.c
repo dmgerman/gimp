@@ -150,6 +150,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"git-version.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -1876,6 +1882,19 @@ name|PangoLayout
 modifier|*
 name|layout
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|version
+decl_stmt|;
+name|gchar
+modifier|*
+name|short_hash
+decl_stmt|;
+name|gchar
+modifier|*
+name|msg
+decl_stmt|;
 name|GtkAllocation
 name|allocation
 decl_stmt|;
@@ -1899,21 +1918,59 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|version
+operator|=
+name|GIMP_GIT_VERSION
+expr_stmt|;
+name|short_hash
+operator|=
+name|g_strdup
+argument_list|(
+name|version
+operator|+
+name|strlen
+argument_list|(
+name|version
+argument_list|)
+operator|-
+literal|7
+argument_list|)
+expr_stmt|;
+name|msg
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"<big>Unstable Development Version</big>\n\n"
+literal|"<small>commit<tt>%s</tt></small>\n\n"
+literal|"<small>Please build latest "
+literal|"git master before\n"
+literal|"reporting any bugs against "
+literal|"this version.</small>"
+argument_list|)
+argument_list|,
+name|short_hash
+argument_list|)
+expr_stmt|;
 name|pango_layout_set_markup
 argument_list|(
 name|layout
 argument_list|,
-name|_
-argument_list|(
-literal|"<big>Unstable Development Version</big>\n\n"
-literal|"<small>Please build latest "
-literal|"git master before\n"
-literal|"reporting any bugs against "
-literal|"this version</small>"
-argument_list|)
+name|msg
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|msg
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|short_hash
 argument_list|)
 expr_stmt|;
 name|pango_layout_set_alignment
