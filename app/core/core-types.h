@@ -880,6 +880,15 @@ name|GimpMirror
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpTiling
+typedef|typedef
+name|struct
+name|_GimpTiling
+name|GimpTiling
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  misc objects  */
 end_comment

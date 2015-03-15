@@ -57,6 +57,12 @@ directive|include
 file|"gimpsymmetry-mirror.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpsymmetry-tiling.h"
+end_include
+
 begin_comment
 comment|/**  * gimp_image_symmetry_list:  *  * Returns a list of #GType of all existing symmetries.  **/
 end_comment
@@ -85,6 +91,18 @@ argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
 name|GIMP_TYPE_MIRROR
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|list
+operator|=
+name|g_list_prepend
+argument_list|(
+name|list
+argument_list|,
+name|GINT_TO_POINTER
+argument_list|(
+name|GIMP_TYPE_TILING
 argument_list|)
 argument_list|)
 expr_stmt|;
