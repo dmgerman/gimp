@@ -235,6 +235,10 @@ DECL|member|playground_handle_transform_tool
 name|gboolean
 name|playground_handle_transform_tool
 decl_stmt|;
+DECL|member|playground_mybrush_tool
+name|gboolean
+name|playground_mybrush_tool
+decl_stmt|;
 comment|/* saved in sessionrc */
 DECL|member|hide_docks
 name|gboolean

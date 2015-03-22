@@ -42,6 +42,16 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpguiconfig.h"
+end_include
+
+begin_comment
+comment|/* playground */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -2059,6 +2069,19 @@ name|tools_airbrush_flow_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|group
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
+name|playground_mybrush_tool
+condition|)
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group

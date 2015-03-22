@@ -78,6 +78,22 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpguiconfig.h"
+end_include
+
+begin_comment
+comment|/* playground */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -231,6 +247,17 @@ name|GimpPaintRegisterCallback
 name|callback
 parameter_list|)
 block|{
+if|if
+condition|(
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
+name|playground_mybrush_tool
+condition|)
 call|(
 modifier|*
 name|callback

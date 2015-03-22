@@ -42,7 +42,23 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpguiconfig.h"
+end_include
+
+begin_comment
+comment|/* playground */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"paint/gimpmybrushoptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -150,6 +166,21 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+comment|/* we should not know that "data" is a Gimp*, but what the heck this    * is experimental playground stuff    */
+if|if
+condition|(
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|GIMP
+argument_list|(
+name|data
+argument_list|)
+operator|->
+name|config
+argument_list|)
+operator|->
+name|playground_mybrush_tool
+condition|)
 call|(
 modifier|*
 name|callback
