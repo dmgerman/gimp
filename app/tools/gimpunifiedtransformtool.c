@@ -48,25 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpchannel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp-transform-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpdrawable-transform.h"
 end_include
 
 begin_include
@@ -78,13 +60,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|"vectors/gimpvectors.h"
+file|"core/gimpchannel.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpdrawable-transform.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpimage.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"vectors/gimpstroke.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"vectors/gimpvectors.h"
 end_include
 
 begin_include
@@ -132,12 +132,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpunifiedtransformtool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimptoolcontrol.h"
 end_include
 
@@ -145,6 +139,12 @@ begin_include
 include|#
 directive|include
 file|"gimptransformoptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpunifiedtransformtool.h"
 end_include
 
 begin_include
@@ -159,7 +159,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29699baf0103
+DECL|enum|__anon2bf0a1960103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -515,7 +515,13 @@ name|TRUE
 expr_stmt|;
 name|tr_tool
 operator|->
-name|use_handles
+name|use_corner_handles
+operator|=
+name|TRUE
+expr_stmt|;
+name|tr_tool
+operator|->
+name|does_perspective
 operator|=
 name|TRUE
 expr_stmt|;
@@ -1228,8 +1234,8 @@ begin_function
 specifier|static
 specifier|inline
 name|GimpVector2
-DECL|function|getpivotdelta (GimpTransformTool * tr_tool,GimpVector2 * oldpos,GimpVector2 * newpos,GimpVector2 pivot)
-name|getpivotdelta
+DECL|function|get_pivot_delta (GimpTransformTool * tr_tool,GimpVector2 * oldpos,GimpVector2 * newpos,GimpVector2 pivot)
+name|get_pivot_delta
 parameter_list|(
 name|GimpTransformTool
 modifier|*
@@ -1517,7 +1523,7 @@ name|gdouble
 name|py
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -1744,6 +1750,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 DECL|function|get_friendly_operation_name (TransformAction op)
@@ -2072,8 +2079,8 @@ end_return
 begin_function
 unit|}  static
 name|void
-DECL|function|gethandlegeometry (GimpTransformTool * tr_tool,GimpVector2 * position,gdouble * angle)
-name|gethandlegeometry
+DECL|function|get_handle_geometry (GimpTransformTool * tr_tool,GimpVector2 * position,gdouble * angle)
+name|get_handle_geometry
 parameter_list|(
 name|GimpTransformTool
 modifier|*
@@ -2157,7 +2164,8 @@ operator|->
 name|ty4
 block|}
 block|}
-decl_stmt|,
+decl_stmt|;
+name|GimpVector2
 name|right
 init|=
 block|{
@@ -2171,7 +2179,8 @@ name|y
 operator|=
 literal|0.0
 block|}
-decl_stmt|,
+decl_stmt|;
+name|GimpVector2
 name|up
 init|=
 block|{
@@ -2423,7 +2432,7 @@ name|modifier
 parameter_list|)
 block|{
 name|GimpToolCursorType
-name|toolcursor
+name|tool_cursor
 init|=
 name|GIMP_TOOL_CURSOR_NONE
 decl_stmt|;
@@ -2456,12 +2465,14 @@ name|gboolean
 name|flip
 init|=
 name|FALSE
-decl_stmt|,
+decl_stmt|;
+name|gboolean
 name|side
 init|=
 name|FALSE
-decl_stmt|,
-name|setcursor
+decl_stmt|;
+name|gboolean
+name|set_cursor
 init|=
 name|TRUE
 decl_stmt|;
@@ -2521,7 +2532,7 @@ index|]
 operator|=
 name|GIMP_CURSOR_CORNER_LEFT
 expr_stmt|;
-name|gethandlegeometry
+name|get_handle_geometry
 argument_list|(
 name|tr_tool
 argument_list|,
@@ -2555,11 +2566,11 @@ index|[
 name|i
 index|]
 operator|*
-literal|180.
+literal|180.0
 operator|/
 name|G_PI
 operator|/
-literal|45.
+literal|45.0
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -2914,7 +2925,7 @@ name|TRUE
 expr_stmt|;
 break|break;
 default|default:
-name|setcursor
+name|set_cursor
 operator|=
 name|FALSE
 expr_stmt|;
@@ -2922,7 +2933,7 @@ break|break;
 block|}
 if|if
 condition|(
-name|setcursor
+name|set_cursor
 condition|)
 block|{
 name|i
@@ -3169,7 +3180,7 @@ case|:
 case|case
 name|TRANSFORM_CREATING
 case|:
-name|toolcursor
+name|tool_cursor
 operator|=
 name|GIMP_TOOL_CURSOR_NONE
 expr_stmt|;
@@ -3186,7 +3197,7 @@ case|:
 case|case
 name|TRANSFORM_HANDLE_SE_P
 case|:
-name|toolcursor
+name|tool_cursor
 operator|=
 name|GIMP_TOOL_CURSOR_PERSPECTIVE
 expr_stmt|;
@@ -3215,7 +3226,7 @@ case|:
 case|case
 name|TRANSFORM_HANDLE_W
 case|:
-name|toolcursor
+name|tool_cursor
 operator|=
 name|GIMP_TOOL_CURSOR_RESIZE
 expr_stmt|;
@@ -3223,7 +3234,7 @@ break|break;
 case|case
 name|TRANSFORM_HANDLE_CENTER
 case|:
-name|toolcursor
+name|tool_cursor
 operator|=
 name|GIMP_TOOL_CURSOR_MOVE
 expr_stmt|;
@@ -3231,7 +3242,7 @@ break|break;
 case|case
 name|TRANSFORM_HANDLE_PIVOT
 case|:
-name|toolcursor
+name|tool_cursor
 operator|=
 name|GIMP_TOOL_CURSOR_ROTATE
 expr_stmt|;
@@ -3253,7 +3264,7 @@ case|:
 case|case
 name|TRANSFORM_HANDLE_W_S
 case|:
-name|toolcursor
+name|tool_cursor
 operator|=
 name|GIMP_TOOL_CURSOR_SHEAR
 expr_stmt|;
@@ -3261,7 +3272,7 @@ break|break;
 case|case
 name|TRANSFORM_HANDLE_ROTATION
 case|:
-name|toolcursor
+name|tool_cursor
 operator|=
 name|GIMP_TOOL_CURSOR_ROTATE
 expr_stmt|;
@@ -3281,7 +3292,7 @@ argument_list|)
 operator|->
 name|control
 argument_list|,
-name|toolcursor
+name|tool_cursor
 argument_list|)
 expr_stmt|;
 block|}
@@ -3339,7 +3350,7 @@ index|[
 literal|4
 index|]
 decl_stmt|;
-name|gethandlegeometry
+name|get_handle_geometry
 argument_list|(
 name|tr_tool
 argument_list|,
@@ -3916,15 +3927,6 @@ argument_list|(
 name|draw_tool
 argument_list|)
 expr_stmt|;
-comment|/* draw an item at 40,80 in screen coordinates */
-comment|//gint x, y;
-comment|//gimp_display_shell_untransform_xy (gimp_display_get_shell (tool->display),
-comment|//                                 40, 80,&x,&y, TRUE);
-comment|//gimp_draw_tool_add_handle (draw_tool,
-comment|//                           GIMP_HANDLE_SQUARE,
-comment|//                           x, y,
-comment|//                           5, 5,
-comment|//                           GIMP_HANDLE_ANCHOR_CENTER);
 block|}
 end_function
 
@@ -4798,7 +4800,7 @@ comment|/* snap to 45 degree vectors from starting point */
 name|gdouble
 name|angle
 init|=
-literal|16.
+literal|16.0
 operator|*
 name|calcangle
 argument_list|(
@@ -4806,16 +4808,16 @@ operator|(
 name|GimpVector2
 operator|)
 block|{
-literal|1.
+literal|1.0
 block|,
-literal|0.
+literal|0.0
 block|}
 argument_list|,
 name|d
 argument_list|)
 operator|/
 operator|(
-literal|2.
+literal|2.0
 operator|*
 name|G_PI
 operator|)
@@ -5232,7 +5234,7 @@ operator|==
 name|TRANSFORM_HANDLE_SW
 condition|)
 block|{
-comment|/* Scaling through scale handles means translating one corner point,        * with all sides at constant angles. */
+comment|/* Scaling through scale handles means translating one corner point,        * with all sides at constant angles.        */
 name|gint
 name|this
 decl_stmt|,
@@ -5506,12 +5508,12 @@ name|oldpos
 argument_list|)
 condition|)
 block|{
-comment|/* transform the pivot point before the interaction and after, and move everything by            * this difference */
+comment|/* transform the pivot point before the interaction and            * after, and move everything by this difference            */
 comment|//TODO the handle doesn't actually end up where the mouse cursor is
 name|GimpVector2
 name|delta
 init|=
-name|getpivotdelta
+name|get_pivot_delta
 argument_list|(
 name|transform_tool
 argument_list|,
@@ -5774,7 +5776,7 @@ literal|0.5
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* get the difference between the distance from the pivot to where            * interaction started and the distance from the pivot to where            * cursor is now, and scale all corners distance from the pivot            * with this factor */
+comment|/* get the difference between the distance from the pivot to            * where interaction started and the distance from the pivot            * to where cursor is now, and scale all corners distance            * from the pivot with this factor            */
 name|before
 operator|=
 name|vectorsubtract
@@ -5922,7 +5924,7 @@ block|{
 name|GimpVector2
 name|delta
 init|=
-name|getpivotdelta
+name|get_pivot_delta
 argument_list|(
 name|transform_tool
 argument_list|,
@@ -6148,7 +6150,7 @@ block|{
 name|GimpVector2
 name|delta
 init|=
-name|getpivotdelta
+name|get_pivot_delta
 argument_list|(
 name|transform_tool
 argument_list|,
@@ -6514,7 +6516,7 @@ block|{
 name|GimpVector2
 name|delta
 init|=
-name|getpivotdelta
+name|get_pivot_delta
 argument_list|(
 name|transform_tool
 argument_list|,
@@ -6627,7 +6629,7 @@ block|{
 name|GimpVector2
 name|delta
 init|=
-name|getpivotdelta
+name|get_pivot_delta
 argument_list|(
 name|transform_tool
 argument_list|,

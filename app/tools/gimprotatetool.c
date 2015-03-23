@@ -117,7 +117,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon276b61540103
+DECL|enum|__anon29fbf9a80103
 block|{
 DECL|enumerator|ANGLE
 name|ANGLE
@@ -483,7 +483,7 @@ name|TRUE
 expr_stmt|;
 name|tr_tool
 operator|->
-name|use_pivot
+name|use_pivot_handle
 operator|=
 name|TRUE
 expr_stmt|;

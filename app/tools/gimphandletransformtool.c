@@ -129,7 +129,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon295d554f0103
+DECL|enum|__anon2b6978ac0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -754,6 +754,12 @@ expr_stmt|;
 name|tr_tool
 operator|->
 name|use_grid
+operator|=
+name|TRUE
+expr_stmt|;
+name|tr_tool
+operator|->
+name|does_perspective
 operator|=
 name|TRUE
 expr_stmt|;

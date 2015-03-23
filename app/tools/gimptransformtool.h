@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275f94450103
+DECL|enum|__anon2794b86b0103
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -231,42 +231,42 @@ DECL|member|curx
 name|gdouble
 name|curx
 decl_stmt|;
-comment|/*  current x coord                   */
+comment|/*  current x coord                    */
 DECL|member|cury
 name|gdouble
 name|cury
 decl_stmt|;
-comment|/*  current y coord                   */
+comment|/*  current y coord                    */
 DECL|member|lastx
 name|gdouble
 name|lastx
 decl_stmt|;
-comment|/*  last x coord                      */
+comment|/*  last x coord                       */
 DECL|member|lasty
 name|gdouble
 name|lasty
 decl_stmt|;
-comment|/*  last y coord                      */
+comment|/*  last y coord                       */
 DECL|member|previousx
 name|gdouble
 name|previousx
 decl_stmt|;
-comment|/*  previous x coord                  */
+comment|/*  previous x coord                   */
 DECL|member|previousy
 name|gdouble
 name|previousy
 decl_stmt|;
-comment|/*  previous y coord                  */
+comment|/*  previous y coord                   */
 DECL|member|mousex
 name|gdouble
 name|mousex
 decl_stmt|;
-comment|/*  x coord where mouse was clicked   */
+comment|/*  x coord where mouse was clicked    */
 DECL|member|mousey
 name|gdouble
 name|mousey
 decl_stmt|;
-comment|/*  y coord where mouse was clicked   */
+comment|/*  y coord where mouse was clicked    */
 DECL|member|x1
 DECL|member|y1
 name|gint
@@ -274,7 +274,7 @@ name|x1
 decl_stmt|,
 name|y1
 decl_stmt|;
-comment|/*  upper left hand coordinate        */
+comment|/*  upper left hand coordinate         */
 DECL|member|x2
 DECL|member|y2
 name|gint
@@ -282,7 +282,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-comment|/*  lower right hand coords           */
+comment|/*  lower right hand coords            */
 DECL|member|cx
 DECL|member|cy
 name|gdouble
@@ -290,7 +290,7 @@ name|cx
 decl_stmt|,
 name|cy
 decl_stmt|;
-comment|/*  center point (for moving)         */
+comment|/*  center point (for moving)          */
 DECL|member|px
 DECL|member|py
 name|gdouble
@@ -298,12 +298,12 @@ name|px
 decl_stmt|,
 name|py
 decl_stmt|;
-comment|/*  pivot point (for rotation/scaling)*/
+comment|/*  pivot point (for rotation/scaling) */
 DECL|member|aspect
 name|gdouble
 name|aspect
 decl_stmt|;
-comment|/*  original aspect ratio             */
+comment|/*  original aspect ratio              */
 DECL|member|tx1
 DECL|member|ty1
 name|gdouble
@@ -311,7 +311,7 @@ name|tx1
 decl_stmt|,
 name|ty1
 decl_stmt|;
-comment|/*  transformed handle coords         */
+comment|/*  transformed handle coords          */
 DECL|member|tx2
 DECL|member|ty2
 name|gdouble
@@ -351,66 +351,71 @@ DECL|member|transform
 name|GimpMatrix3
 name|transform
 decl_stmt|;
-comment|/*  transformation matrix             */
+comment|/*  transformation matrix              */
 DECL|member|trans_info
 name|TransInfo
 name|trans_info
 decl_stmt|;
-comment|/*  transformation info               */
+comment|/*  transformation info                */
 DECL|member|old_trans_info
 name|TransInfo
 modifier|*
 name|old_trans_info
 decl_stmt|;
-comment|/*  for resetting everything          */
+comment|/*  for resetting everything           */
 DECL|member|prev_trans_info
 name|TransInfo
 modifier|*
 name|prev_trans_info
 decl_stmt|;
-comment|/*  the current finished state        */
+comment|/*  the current finished state         */
 DECL|member|undo_list
 name|GList
 modifier|*
 name|undo_list
 decl_stmt|;
-comment|/*  list of all states,                                        head is current == prev_trans_info,                                        tail is original == old_trans_info*/
+comment|/*  list of all states,                                           head is current == prev_trans_info,                                           tail is original == old_trans_info */
 DECL|member|redo_list
 name|GList
 modifier|*
 name|redo_list
 decl_stmt|;
-comment|/*  list of all undone states,                                        NULL when nothing undone */
+comment|/*  list of all undone states,                                           NULL when nothing undone */
 DECL|member|function
 name|TransformAction
 name|function
 decl_stmt|;
-comment|/*  current tool activity             */
+comment|/*  current tool activity              */
 DECL|member|use_grid
 name|gboolean
 name|use_grid
 decl_stmt|;
-comment|/*  does the tool use the grid        */
-DECL|member|use_handles
+comment|/*  does the tool use the grid         */
+DECL|member|use_corner_handles
 name|gboolean
-name|use_handles
+name|use_corner_handles
 decl_stmt|;
-comment|/*  uses the corner handles           */
-DECL|member|use_center
+comment|/*  uses the corner handles            */
+DECL|member|use_side_handles
 name|gboolean
-name|use_center
+name|use_side_handles
 decl_stmt|;
-comment|/*  uses the center handle            */
-DECL|member|use_mid_handles
+comment|/*  use handles at midpoints of edges  */
+DECL|member|use_center_handle
 name|gboolean
-name|use_mid_handles
+name|use_center_handle
 decl_stmt|;
-comment|/*  use handles at midpoints of edges */
-DECL|member|use_pivot
+comment|/*  uses the center handle             */
+DECL|member|use_pivot_handle
 name|gboolean
-name|use_pivot
+name|use_pivot_handle
 decl_stmt|;
-comment|/*  use pivot point                   */
+comment|/*  use the pivot point handle         */
+DECL|member|does_perspective
+name|gboolean
+name|does_perspective
+decl_stmt|;
+comment|/*  does the tool do non-affine                                           transformations                    */
 DECL|member|handles
 name|GimpCanvasItem
 modifier|*

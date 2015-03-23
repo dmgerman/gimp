@@ -111,7 +111,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1e0fa50103
+DECL|enum|__anon2a0bdcae0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -399,13 +399,19 @@ name|TRUE
 expr_stmt|;
 name|tr_tool
 operator|->
-name|use_handles
+name|use_corner_handles
 operator|=
 name|TRUE
 expr_stmt|;
 name|tr_tool
 operator|->
-name|use_center
+name|use_center_handle
+operator|=
+name|TRUE
+expr_stmt|;
+name|tr_tool
+operator|->
+name|does_perspective
 operator|=
 name|TRUE
 expr_stmt|;
