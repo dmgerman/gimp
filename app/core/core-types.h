@@ -889,6 +889,15 @@ name|GimpTiling
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpMandala
+typedef|typedef
+name|struct
+name|_GimpMandala
+name|GimpMandala
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  misc objects  */
 end_comment

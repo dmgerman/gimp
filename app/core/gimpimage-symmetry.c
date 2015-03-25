@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpsymmetry-mandala.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpsymmetry-mirror.h"
 end_include
 
@@ -103,6 +109,18 @@ argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
 name|GIMP_TYPE_TILING
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|list
+operator|=
+name|g_list_prepend
+argument_list|(
+name|list
+argument_list|,
+name|GINT_TO_POINTER
+argument_list|(
+name|GIMP_TYPE_MANDALA
 argument_list|)
 argument_list|)
 expr_stmt|;
