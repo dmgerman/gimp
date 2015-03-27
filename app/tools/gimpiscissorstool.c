@@ -278,9 +278,9 @@ value|((x)& 0x000000ff)
 end_define
 
 begin_struct
-DECL|struct|_ICurve
+DECL|struct|_ISegment
 struct|struct
-name|_ICurve
+name|_ISegment
 block|{
 DECL|member|x1
 DECL|member|y1
@@ -632,15 +632,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|calculate_curve
+name|calculate_segment
 parameter_list|(
 name|GimpIscissorsTool
 modifier|*
 name|iscissors
 parameter_list|,
-name|ICurve
+name|ISegment
 modifier|*
-name|curve
+name|segment
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -648,15 +648,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|iscissors_draw_curve
+name|iscissors_draw_segment
 parameter_list|(
 name|GimpDrawTool
 modifier|*
 name|draw_tool
 parameter_list|,
-name|ICurve
+name|ISegment
 modifier|*
-name|curve
+name|segment
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -701,7 +701,7 @@ begin_function_decl
 specifier|static
 name|GList
 modifier|*
-name|mouse_over_curve
+name|mouse_over_segment
 parameter_list|(
 name|GimpIscissorsTool
 modifier|*
@@ -719,7 +719,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|clicked_on_curve
+name|clicked_on_segment
 parameter_list|(
 name|GimpIscissorsTool
 modifier|*
@@ -771,9 +771,9 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|ICurve
+name|ISegment
 modifier|*
-name|icurve_new
+name|isegment_new
 parameter_list|(
 name|gint
 name|x1
@@ -793,11 +793,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|icurve_free
+name|isegment_free
 parameter_list|(
-name|ICurve
+name|ISegment
 modifier|*
-name|curve
+name|segment
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1951,9 +1951,9 @@ name|list
 argument_list|)
 control|)
 block|{
-name|ICurve
+name|ISegment
 modifier|*
-name|icurve
+name|segment
 init|=
 name|list
 operator|->
@@ -1961,7 +1961,7 @@ name|data
 decl_stmt|;
 name|n_total_points
 operator|+=
-name|icurve
+name|segment
 operator|->
 name|points
 operator|->
@@ -1981,7 +1981,7 @@ name|n_total_points
 operator|=
 literal|0
 expr_stmt|;
-comment|/* go over the curves in reverse order, adding the points we have */
+comment|/* go over the segments in reverse order, adding the points we have */
 for|for
 control|(
 name|list
@@ -2003,9 +2003,9 @@ name|list
 argument_list|)
 control|)
 block|{
-name|ICurve
+name|ISegment
 modifier|*
-name|icurve
+name|segment
 init|=
 name|list
 operator|->
@@ -2019,7 +2019,7 @@ name|i
 decl_stmt|;
 name|n_points
 operator|=
-name|icurve
+name|segment
 operator|->
 name|points
 operator|->
@@ -2046,7 +2046,7 @@ name|GPOINTER_TO_INT
 argument_list|(
 name|g_ptr_array_index
 argument_list|(
-name|icurve
+name|segment
 operator|->
 name|points
 argument_list|,
@@ -2246,7 +2246,7 @@ block|{
 case|case
 name|SEED_PLACEMENT
 case|:
-comment|/*  Add a new icurve  */
+comment|/*  Add a new segment  */
 if|if
 condition|(
 operator|!
@@ -2267,9 +2267,9 @@ name|curves
 argument_list|)
 condition|)
 block|{
-name|ICurve
+name|ISegment
 modifier|*
-name|curve
+name|segment
 init|=
 name|g_queue_peek_head
 argument_list|(
@@ -2299,11 +2299,11 @@ name|y
 argument_list|,
 name|GIMP_HANDLE_CIRCLE
 argument_list|,
-name|curve
+name|segment
 operator|->
 name|x1
 argument_list|,
-name|curve
+name|segment
 operator|->
 name|y1
 argument_list|,
@@ -2319,7 +2319,7 @@ name|iscissors
 operator|->
 name|x
 operator|=
-name|curve
+name|segment
 operator|->
 name|x1
 expr_stmt|;
@@ -2327,7 +2327,7 @@ name|iscissors
 operator|->
 name|y
 operator|=
-name|curve
+name|segment
 operator|->
 name|y1
 expr_stmt|;
@@ -2359,11 +2359,11 @@ operator|->
 name|y
 condition|)
 block|{
-name|ICurve
+name|ISegment
 modifier|*
-name|curve
+name|segment
 init|=
-name|icurve_new
+name|isegment_new
 argument_list|(
 name|iscissors
 operator|->
@@ -2404,14 +2404,14 @@ name|iscissors
 operator|->
 name|curves
 argument_list|,
-name|curve
+name|segment
 argument_list|)
 expr_stmt|;
-name|calculate_curve
+name|calculate_segment
 argument_list|(
 name|iscissors
 argument_list|,
-name|curve
+name|segment
 argument_list|)
 expr_stmt|;
 block|}
@@ -2430,17 +2430,17 @@ break|break;
 case|case
 name|SEED_ADJUSTMENT
 case|:
-comment|/*  recalculate both curves  */
+comment|/*  recalculate both segments  */
 if|if
 condition|(
 name|iscissors
 operator|->
-name|curve1
+name|segment1
 condition|)
 block|{
 name|iscissors
 operator|->
-name|curve1
+name|segment1
 operator|->
 name|x1
 operator|=
@@ -2450,7 +2450,7 @@ name|nx
 expr_stmt|;
 name|iscissors
 operator|->
-name|curve1
+name|segment1
 operator|->
 name|y1
 operator|=
@@ -2458,13 +2458,13 @@ name|iscissors
 operator|->
 name|ny
 expr_stmt|;
-name|calculate_curve
+name|calculate_segment
 argument_list|(
 name|iscissors
 argument_list|,
 name|iscissors
 operator|->
-name|curve1
+name|segment1
 argument_list|)
 expr_stmt|;
 block|}
@@ -2472,12 +2472,12 @@ if|if
 condition|(
 name|iscissors
 operator|->
-name|curve2
+name|segment2
 condition|)
 block|{
 name|iscissors
 operator|->
-name|curve2
+name|segment2
 operator|->
 name|x2
 operator|=
@@ -2487,7 +2487,7 @@ name|nx
 expr_stmt|;
 name|iscissors
 operator|->
-name|curve2
+name|segment2
 operator|->
 name|y2
 operator|=
@@ -2495,13 +2495,13 @@ name|iscissors
 operator|->
 name|ny
 expr_stmt|;
-name|calculate_curve
+name|calculate_segment
 argument_list|(
 name|iscissors
 argument_list|,
 name|iscissors
 operator|->
-name|curve2
+name|segment2
 argument_list|)
 expr_stmt|;
 block|}
@@ -2985,7 +2985,7 @@ name|iscissors
 operator|->
 name|livewire
 condition|)
-name|icurve_free
+name|isegment_free
 argument_list|(
 name|iscissors
 operator|->
@@ -2996,7 +2996,7 @@ name|iscissors
 operator|->
 name|livewire
 operator|=
-name|icurve_new
+name|isegment_new
 argument_list|(
 name|iscissors
 operator|->
@@ -3015,7 +3015,7 @@ operator|->
 name|y
 argument_list|)
 expr_stmt|;
-name|calculate_curve
+name|calculate_segment
 argument_list|(
 name|iscissors
 argument_list|,
@@ -3025,8 +3025,8 @@ name|livewire
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  plot the curve  */
-name|iscissors_draw_curve
+comment|/*  plot the segment  */
+name|iscissors_draw_segment
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3081,7 +3081,7 @@ name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  Go through the list of icurves, and render each one...  */
+comment|/*  Go through the list of isegments, and render each one...  */
 for|for
 control|(
 name|list
@@ -3103,9 +3103,9 @@ name|list
 argument_list|)
 control|)
 block|{
-name|ICurve
+name|ISegment
 modifier|*
-name|curve
+name|segment
 init|=
 name|list
 operator|->
@@ -3120,14 +3120,14 @@ operator|==
 name|SEED_ADJUSTMENT
 condition|)
 block|{
-comment|/*  don't draw curve1 at all  */
+comment|/*  don't draw segment1 at all  */
 if|if
 condition|(
-name|curve
+name|segment
 operator|==
 name|iscissors
 operator|->
-name|curve1
+name|segment1
 condition|)
 continue|continue;
 block|}
@@ -3137,11 +3137,11 @@ name|draw_tool
 argument_list|,
 name|GIMP_HANDLE_FILLED_CIRCLE
 argument_list|,
-name|curve
+name|segment
 operator|->
 name|x1
 argument_list|,
-name|curve
+name|segment
 operator|->
 name|y1
 argument_list|,
@@ -3161,23 +3161,23 @@ operator|==
 name|SEED_ADJUSTMENT
 condition|)
 block|{
-comment|/*  draw only the start handle of curve2  */
+comment|/*  draw only the start handle of segment2  */
 if|if
 condition|(
-name|curve
+name|segment
 operator|==
 name|iscissors
 operator|->
-name|curve2
+name|segment2
 condition|)
 continue|continue;
 block|}
-comment|/*  plot the curve  */
-name|iscissors_draw_curve
+comment|/*  plot the segment  */
+name|iscissors_draw_segment
 argument_list|(
 name|draw_tool
 argument_list|,
-name|curve
+name|segment
 argument_list|)
 expr_stmt|;
 block|}
@@ -3191,12 +3191,12 @@ operator|==
 name|SEED_ADJUSTMENT
 condition|)
 block|{
-comment|/*  plot both curves, and the control point between them  */
+comment|/*  plot both segments, and the control point between them  */
 if|if
 condition|(
 name|iscissors
 operator|->
-name|curve1
+name|segment1
 condition|)
 block|{
 name|gimp_draw_tool_add_line
@@ -3205,13 +3205,13 @@ name|draw_tool
 argument_list|,
 name|iscissors
 operator|->
-name|curve1
+name|segment1
 operator|->
 name|x2
 argument_list|,
 name|iscissors
 operator|->
-name|curve1
+name|segment1
 operator|->
 name|y2
 argument_list|,
@@ -3229,7 +3229,7 @@ if|if
 condition|(
 name|iscissors
 operator|->
-name|curve2
+name|segment2
 condition|)
 block|{
 name|gimp_draw_tool_add_line
@@ -3238,13 +3238,13 @@ name|draw_tool
 argument_list|,
 name|iscissors
 operator|->
-name|curve2
+name|segment2
 operator|->
 name|x1
 argument_list|,
 name|iscissors
 operator|->
-name|curve2
+name|segment2
 operator|->
 name|y1
 argument_list|,
@@ -3286,16 +3286,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|iscissors_draw_curve (GimpDrawTool * draw_tool,ICurve * curve)
-name|iscissors_draw_curve
+DECL|function|iscissors_draw_segment (GimpDrawTool * draw_tool,ISegment * segment)
+name|iscissors_draw_segment
 parameter_list|(
 name|GimpDrawTool
 modifier|*
 name|draw_tool
 parameter_list|,
-name|ICurve
+name|ISegment
 modifier|*
-name|curve
+name|segment
 parameter_list|)
 block|{
 name|GimpVector2
@@ -3314,14 +3314,14 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|curve
+name|segment
 operator|->
 name|points
 condition|)
 return|return;
 name|len
 operator|=
-name|curve
+name|segment
 operator|->
 name|points
 operator|->
@@ -3344,7 +3344,7 @@ literal|0
 operator|,
 name|point
 operator|=
-name|curve
+name|segment
 operator|->
 name|points
 operator|->
@@ -3542,7 +3542,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|mouse_over_curve
+name|mouse_over_segment
 argument_list|(
 name|iscissors
 argument_list|,
@@ -3556,9 +3556,9 @@ name|y
 argument_list|)
 condition|)
 block|{
-name|ICurve
+name|ISegment
 modifier|*
-name|curve
+name|segment
 init|=
 name|g_queue_peek_head
 argument_list|(
@@ -3594,11 +3594,11 @@ argument_list|)
 argument_list|,
 name|GIMP_HANDLE_CIRCLE
 argument_list|,
-name|curve
+name|segment
 operator|->
 name|x1
 argument_list|,
-name|curve
+name|segment
 operator|->
 name|y1
 argument_list|,
@@ -4126,7 +4126,7 @@ name|curves
 argument_list|)
 condition|)
 block|{
-name|icurve_free
+name|isegment_free
 argument_list|(
 name|g_queue_pop_head
 argument_list|(
@@ -4183,13 +4183,13 @@ expr_stmt|;
 block|}
 name|iscissors
 operator|->
-name|curve1
+name|segment1
 operator|=
 name|NULL
 expr_stmt|;
 name|iscissors
 operator|->
-name|curve2
+name|segment2
 operator|=
 name|NULL
 expr_stmt|;
@@ -4362,18 +4362,18 @@ modifier|*
 name|list
 decl_stmt|;
 name|gint
-name|curves_found
+name|segments_found
 init|=
 literal|0
 decl_stmt|;
-comment|/*  traverse through the list, returning non-zero if the current cursor    *  position is on an existing curve vertex.  Set the curve1 and curve2    *  variables to the two curves containing the vertex in question    */
+comment|/*  traverse through the list, returning non-zero if the current cursor    *  position is on an existing curve vertex.  Set the segment1 and segment2    *  variables to the two segments containing the vertex in question    */
 name|iscissors
 operator|->
-name|curve1
+name|segment1
 operator|=
 name|iscissors
 operator|->
-name|curve2
+name|segment2
 operator|=
 name|NULL
 expr_stmt|;
@@ -4398,9 +4398,9 @@ name|list
 argument_list|)
 control|)
 block|{
-name|ICurve
+name|ISegment
 modifier|*
-name|curve
+name|segment
 init|=
 name|list
 operator|->
@@ -4428,11 +4428,11 @@ name|y
 argument_list|,
 name|GIMP_HANDLE_CIRCLE
 argument_list|,
-name|curve
+name|segment
 operator|->
 name|x1
 argument_list|,
-name|curve
+name|segment
 operator|->
 name|y1
 argument_list|,
@@ -4446,17 +4446,17 @@ condition|)
 block|{
 name|iscissors
 operator|->
-name|curve1
+name|segment1
 operator|=
-name|curve
+name|segment
 expr_stmt|;
 if|if
 condition|(
-name|curves_found
+name|segments_found
 operator|++
 condition|)
 return|return
-name|curves_found
+name|segments_found
 return|;
 block|}
 elseif|else
@@ -4482,11 +4482,11 @@ name|y
 argument_list|,
 name|GIMP_HANDLE_CIRCLE
 argument_list|,
-name|curve
+name|segment
 operator|->
 name|x2
 argument_list|,
-name|curve
+name|segment
 operator|->
 name|y2
 argument_list|,
@@ -4500,22 +4500,22 @@ condition|)
 block|{
 name|iscissors
 operator|->
-name|curve2
+name|segment2
 operator|=
-name|curve
+name|segment
 expr_stmt|;
 if|if
 condition|(
-name|curves_found
+name|segments_found
 operator|++
 condition|)
 return|return
-name|curves_found
+name|segments_found
 return|;
 block|}
 block|}
 return|return
-name|curves_found
+name|segments_found
 return|;
 block|}
 end_function
@@ -4538,7 +4538,7 @@ name|y
 parameter_list|)
 block|{
 name|gint
-name|curves_found
+name|segments_found
 init|=
 name|mouse_over_vertex
 argument_list|(
@@ -4551,17 +4551,17 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|curves_found
+name|segments_found
 operator|>
 literal|1
 condition|)
 return|return
 name|TRUE
 return|;
-comment|/*  if only one curve was found, the curves are unconnected, and    *  the user only wants to move either the first or last point    *  disallow this for now.    */
+comment|/*  if only one segment was found, the segments are unconnected, and    *  the user only wants to move either the first or last point    *  disallow this for now.    */
 if|if
 condition|(
-name|curves_found
+name|segments_found
 operator|==
 literal|1
 condition|)
@@ -4569,7 +4569,7 @@ return|return
 name|FALSE
 return|;
 return|return
-name|clicked_on_curve
+name|clicked_on_segment
 argument_list|(
 name|iscissors
 argument_list|,
@@ -4585,8 +4585,8 @@ begin_function
 specifier|static
 name|GList
 modifier|*
-DECL|function|mouse_over_curve (GimpIscissorsTool * iscissors,gdouble x,gdouble y)
-name|mouse_over_curve
+DECL|function|mouse_over_segment (GimpIscissorsTool * iscissors,gdouble x,gdouble y)
+name|mouse_over_segment
 parameter_list|(
 name|GimpIscissorsTool
 modifier|*
@@ -4625,9 +4625,9 @@ name|list
 argument_list|)
 control|)
 block|{
-name|ICurve
+name|ISegment
 modifier|*
-name|curve
+name|segment
 init|=
 name|list
 operator|->
@@ -4642,7 +4642,7 @@ name|len
 decl_stmt|;
 name|pt
 operator|=
-name|curve
+name|segment
 operator|->
 name|points
 operator|->
@@ -4650,7 +4650,7 @@ name|pdata
 expr_stmt|;
 name|len
 operator|=
-name|curve
+name|segment
 operator|->
 name|points
 operator|->
@@ -4691,7 +4691,7 @@ name|coords
 operator|>>
 literal|16
 expr_stmt|;
-comment|/*  Is the specified point close enough to the curve?  */
+comment|/*  Is the specified point close enough to the segment?  */
 if|if
 condition|(
 name|gimp_draw_tool_calc_distance_square
@@ -4740,8 +4740,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|clicked_on_curve (GimpIscissorsTool * iscissors,gdouble x,gdouble y)
-name|clicked_on_curve
+DECL|function|clicked_on_segment (GimpIscissorsTool * iscissors,gdouble x,gdouble y)
+name|clicked_on_segment
 parameter_list|(
 name|GimpIscissorsTool
 modifier|*
@@ -4758,7 +4758,7 @@ name|GList
 modifier|*
 name|list
 init|=
-name|mouse_over_curve
+name|mouse_over_segment
 argument_list|(
 name|iscissors
 argument_list|,
@@ -4767,28 +4767,28 @@ argument_list|,
 name|y
 argument_list|)
 decl_stmt|;
-comment|/*  traverse through the list, getting back the curve segment's list    *  element if the current cursor position is on a curve...    *  If this occurs, replace the curve with two new curves,    *  separated by a new vertex.    */
+comment|/*  traverse through the list, getting back the curve segment's list    *  element if the current cursor position is on a segment...    *  If this occurs, replace the segment with two new segments,    *  separated by a new vertex.    */
 if|if
 condition|(
 name|list
 condition|)
 block|{
-name|ICurve
+name|ISegment
 modifier|*
-name|curve
+name|segment
 init|=
 name|list
 operator|->
 name|data
 decl_stmt|;
-name|ICurve
+name|ISegment
 modifier|*
-name|new_curve
+name|new_segment
 decl_stmt|;
-comment|/*  Create the new curve  */
-name|new_curve
+comment|/*  Create the new segment  */
+name|new_segment
 operator|=
-name|icurve_new
+name|isegment_new
 argument_list|(
 name|iscissors
 operator|->
@@ -4798,16 +4798,16 @@ name|iscissors
 operator|->
 name|y
 argument_list|,
-name|curve
+name|segment
 operator|->
 name|x2
 argument_list|,
-name|curve
+name|segment
 operator|->
 name|y2
 argument_list|)
 expr_stmt|;
-name|curve
+name|segment
 operator|->
 name|x2
 operator|=
@@ -4815,7 +4815,7 @@ name|iscissors
 operator|->
 name|x
 expr_stmt|;
-name|curve
+name|segment
 operator|->
 name|y2
 operator|=
@@ -4823,7 +4823,7 @@ name|iscissors
 operator|->
 name|y
 expr_stmt|;
-comment|/*  Create the new link and supply the new curve as data  */
+comment|/*  Create the new link and supply the new segment as data  */
 name|g_queue_insert_after
 argument_list|(
 name|iscissors
@@ -4832,20 +4832,20 @@ name|curves
 argument_list|,
 name|list
 argument_list|,
-name|new_curve
+name|new_segment
 argument_list|)
 expr_stmt|;
 name|iscissors
 operator|->
-name|curve1
+name|segment1
 operator|=
-name|new_curve
+name|new_segment
 expr_stmt|;
 name|iscissors
 operator|->
-name|curve2
+name|segment2
 operator|=
-name|curve
+name|segment
 expr_stmt|;
 return|return
 name|TRUE
@@ -4860,16 +4860,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|calculate_curve (GimpIscissorsTool * iscissors,ICurve * curve)
-name|calculate_curve
+DECL|function|calculate_segment (GimpIscissorsTool * iscissors,ISegment * segment)
+name|calculate_segment
 parameter_list|(
 name|GimpIscissorsTool
 modifier|*
 name|iscissors
 parameter_list|,
-name|ICurve
+name|ISegment
 modifier|*
-name|curve
+name|segment
 parameter_list|)
 block|{
 name|GimpDisplay
@@ -4927,13 +4927,13 @@ name|ewidth
 decl_stmt|,
 name|eheight
 decl_stmt|;
-comment|/*  Calculate the lowest cost path from one vertex to the next as specified    *  by the parameter "curve".    *    Here are the steps:    *      1)  Calculate the appropriate working area for this operation    *      2)  Allocate a temp buf for the dynamic programming array    *      3)  Run the dynamic programming algorithm to find the optimal path    *      4)  Translate the optimal path into pixels in the icurve data    *            structure.    */
+comment|/*  Calculate the lowest cost path from one vertex to the next as specified    *  by the parameter "segment".    *    Here are the steps:    *      1)  Calculate the appropriate working area for this operation    *      2)  Allocate a temp buf for the dynamic programming array    *      3)  Run the dynamic programming algorithm to find the optimal path    *      4)  Translate the optimal path into pixels in the isegment data    *            structure.    */
 comment|/*  Get the bounding box  */
 name|xs
 operator|=
 name|CLAMP
 argument_list|(
-name|curve
+name|segment
 operator|->
 name|x1
 argument_list|,
@@ -4951,7 +4951,7 @@ name|ys
 operator|=
 name|CLAMP
 argument_list|(
-name|curve
+name|segment
 operator|->
 name|y1
 argument_list|,
@@ -4969,7 +4969,7 @@ name|xe
 operator|=
 name|CLAMP
 argument_list|(
-name|curve
+name|segment
 operator|->
 name|x2
 argument_list|,
@@ -4987,7 +4987,7 @@ name|ye
 operator|=
 name|CLAMP
 argument_list|(
-name|curve
+name|segment
 operator|->
 name|y2
 argument_list|,
@@ -5042,7 +5042,7 @@ argument_list|)
 operator|+
 literal|1
 expr_stmt|;
-comment|/*  expand the boundaries past the ending points by    *  some percentage of width and height.  This serves the following purpose:    *  It gives the algorithm more area to search so better solutions    *  are found.  This is particularly helpful in finding "bumps" which    *  fall outside the bounding box represented by the start and end    *  coordinates of the "curve".    */
+comment|/*  expand the boundaries past the ending points by    *  some percentage of width and height.  This serves the following purpose:    *  It gives the algorithm more area to search so better solutions    *  are found.  This is particularly helpful in finding "bumps" which    *  fall outside the bounding box represented by the start and end    *  coordinates of the "segment".    */
 name|ewidth
 operator|=
 operator|(
@@ -5138,21 +5138,21 @@ expr_stmt|;
 comment|/* blow away any previous points list we might have */
 if|if
 condition|(
-name|curve
+name|segment
 operator|->
 name|points
 condition|)
 block|{
 name|g_ptr_array_free
 argument_list|(
-name|curve
+name|segment
 operator|->
 name|points
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|curve
+name|segment
 operator|->
 name|points
 operator|=
@@ -5263,7 +5263,7 @@ name|ys
 argument_list|)
 expr_stmt|;
 comment|/*  get a list of the pixels in the optimal path  */
-name|curve
+name|segment
 operator|->
 name|points
 operator|=
@@ -5320,7 +5320,7 @@ literal|1
 else|:
 literal|1
 expr_stmt|;
-name|curve
+name|segment
 operator|->
 name|points
 operator|=
@@ -5336,7 +5336,7 @@ condition|)
 block|{
 name|g_ptr_array_add
 argument_list|(
-name|curve
+name|segment
 operator|->
 name|points
 argument_list|,
@@ -5389,7 +5389,7 @@ literal|1
 else|:
 literal|1
 expr_stmt|;
-name|curve
+name|segment
 operator|->
 name|points
 operator|=
@@ -5405,7 +5405,7 @@ condition|)
 block|{
 name|g_ptr_array_add
 argument_list|(
-name|curve
+name|segment
 operator|->
 name|points
 argument_list|,
@@ -7098,10 +7098,10 @@ end_function
 
 begin_function
 specifier|static
-name|ICurve
+name|ISegment
 modifier|*
-DECL|function|icurve_new (gint x1,gint y1,gint x2,gint y2)
-name|icurve_new
+DECL|function|isegment_new (gint x1,gint y1,gint x2,gint y2)
+name|isegment_new
 parameter_list|(
 name|gint
 name|x1
@@ -7116,41 +7116,41 @@ name|gint
 name|y2
 parameter_list|)
 block|{
-name|ICurve
+name|ISegment
 modifier|*
-name|curve
+name|segment
 init|=
 name|g_slice_new0
 argument_list|(
-name|ICurve
+name|ISegment
 argument_list|)
 decl_stmt|;
-name|curve
+name|segment
 operator|->
 name|x1
 operator|=
 name|x1
 expr_stmt|;
-name|curve
+name|segment
 operator|->
 name|y1
 operator|=
 name|y1
 expr_stmt|;
-name|curve
+name|segment
 operator|->
 name|x2
 operator|=
 name|x2
 expr_stmt|;
-name|curve
+name|segment
 operator|->
 name|y2
 operator|=
 name|y2
 expr_stmt|;
 return|return
-name|curve
+name|segment
 return|;
 block|}
 end_function
@@ -7158,23 +7158,23 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|icurve_free (ICurve * curve)
-name|icurve_free
+DECL|function|isegment_free (ISegment * segment)
+name|isegment_free
 parameter_list|(
-name|ICurve
+name|ISegment
 modifier|*
-name|curve
+name|segment
 parameter_list|)
 block|{
 if|if
 condition|(
-name|curve
+name|segment
 operator|->
 name|points
 condition|)
 name|g_ptr_array_free
 argument_list|(
-name|curve
+name|segment
 operator|->
 name|points
 argument_list|,
@@ -7183,9 +7183,9 @@ argument_list|)
 expr_stmt|;
 name|g_slice_free
 argument_list|(
-name|ICurve
+name|ISegment
 argument_list|,
-name|curve
+name|segment
 argument_list|)
 expr_stmt|;
 block|}

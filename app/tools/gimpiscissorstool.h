@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27925c590103
+DECL|enum|__anon2b98677a0103
 block|{
 DECL|enumerator|NO_ACTION
 name|NO_ACTION
@@ -55,7 +55,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27925c590203
+DECL|enum|__anon2b98677a0203
 block|{
 DECL|enumerator|ISCISSORS_OP_NONE
 name|ISCISSORS_OP_NONE
@@ -81,11 +81,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|ICurve
+DECL|typedef|ISegment
 typedef|typedef
 name|struct
-name|_ICurve
-name|ICurve
+name|_ISegment
+name|ISegment
 typedef|;
 end_typedef
 
@@ -201,7 +201,7 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-comment|/*  upper left hand coordinate            */
+comment|/*  upper left hand coordinate              */
 DECL|member|ix
 DECL|member|iy
 name|gint
@@ -209,7 +209,7 @@ name|ix
 decl_stmt|,
 name|iy
 decl_stmt|;
-comment|/*  initial coordinates                   */
+comment|/*  initial coordinates                     */
 DECL|member|nx
 DECL|member|ny
 name|gint
@@ -217,65 +217,65 @@ name|nx
 decl_stmt|,
 name|ny
 decl_stmt|;
-comment|/*  new coordinates                       */
+comment|/*  new coordinates                         */
 DECL|member|dp_buf
 name|GimpTempBuf
 modifier|*
 name|dp_buf
 decl_stmt|;
-comment|/*  dynamic programming buffer            */
+comment|/*  dynamic programming buffer              */
 DECL|member|livewire
-name|ICurve
+name|ISegment
 modifier|*
 name|livewire
 decl_stmt|;
-comment|/*  livewire boundary curve               */
-DECL|member|curve1
-name|ICurve
+comment|/*  livewire boundary segment               */
+DECL|member|segment1
+name|ISegment
 modifier|*
-name|curve1
+name|segment1
 decl_stmt|;
-comment|/*  1st curve connected to current point  */
-DECL|member|curve2
-name|ICurve
+comment|/*  1st segment connected to current point  */
+DECL|member|segment2
+name|ISegment
 modifier|*
-name|curve2
+name|segment2
 decl_stmt|;
-comment|/*  2nd curve connected to current point  */
+comment|/*  2nd segment connected to current point  */
 DECL|member|curves
 name|GQueue
 modifier|*
 name|curves
 decl_stmt|;
-comment|/*  the list of curves                    */
+comment|/*  the list of segments                    */
 DECL|member|first_point
 name|gboolean
 name|first_point
 decl_stmt|;
-comment|/*  is this the first point?              */
+comment|/*  is this the first point?                */
 DECL|member|connected
 name|gboolean
 name|connected
 decl_stmt|;
-comment|/*  is the region closed?                 */
+comment|/*  is the region closed?                   */
 DECL|member|state
 name|IscissorsState
 name|state
 decl_stmt|;
-comment|/*  state of iscissors                    */
+comment|/*  state of iscissors                      */
 comment|/* XXX might be useful */
 DECL|member|mask
 name|GimpChannel
 modifier|*
 name|mask
 decl_stmt|;
-comment|/*  selection mask                        */
+comment|/*  selection mask                          */
 DECL|member|gradient_map
 name|GeglBuffer
 modifier|*
 name|gradient_map
 decl_stmt|;
-comment|/*  lazily filled gradient map            */
+comment|/*  lazily filled gradient map              */
 block|}
 struct|;
 end_struct
