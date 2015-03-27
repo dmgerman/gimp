@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b98677a0103
+DECL|enum|__anon2bcf51f00103
 block|{
 DECL|enumerator|NO_ACTION
 name|NO_ACTION
@@ -55,7 +55,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b98677a0203
+DECL|enum|__anon2bcf51f00203
 block|{
 DECL|enumerator|ISCISSORS_OP_NONE
 name|ISCISSORS_OP_NONE
@@ -86,6 +86,15 @@ typedef|typedef
 name|struct
 name|_ISegment
 name|ISegment
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|ICurve
+typedef|typedef
+name|struct
+name|_ICurve
+name|ICurve
 typedef|;
 end_typedef
 
@@ -242,22 +251,12 @@ modifier|*
 name|segment2
 decl_stmt|;
 comment|/*  2nd segment connected to current point  */
-DECL|member|curves
-name|GQueue
+DECL|member|curve
+name|ICurve
 modifier|*
-name|curves
+name|curve
 decl_stmt|;
-comment|/*  the list of segments                    */
-DECL|member|first_point
-name|gboolean
-name|first_point
-decl_stmt|;
-comment|/*  is this the first point?                */
-DECL|member|connected
-name|gboolean
-name|connected
-decl_stmt|;
-comment|/*  is the region closed?                   */
+comment|/*  the curve                               */
 DECL|member|state
 name|IscissorsState
 name|state
