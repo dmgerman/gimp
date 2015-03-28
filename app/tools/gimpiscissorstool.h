@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c7d87e0103
+DECL|enum|__anon298f41b70103
 block|{
 DECL|enumerator|NO_ACTION
 name|NO_ACTION
@@ -55,7 +55,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c7d87e0203
+DECL|enum|__anon298f41b70203
 block|{
 DECL|enumerator|ISCISSORS_OP_NONE
 name|ISCISSORS_OP_NONE
@@ -68,6 +68,9 @@ name|ISCISSORS_OP_MOVE_POINT
 block|,
 DECL|enumerator|ISCISSORS_OP_ADD_POINT
 name|ISCISSORS_OP_ADD_POINT
+block|,
+DECL|enumerator|ISCISSORS_OP_REMOVE_POINT
+name|ISCISSORS_OP_REMOVE_POINT
 block|,
 DECL|enumerator|ISCISSORS_OP_CONNECT
 name|ISCISSORS_OP_CONNECT
