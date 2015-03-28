@@ -4038,7 +4038,7 @@ name|iscissors
 operator|->
 name|op
 operator|=
-name|ISCISSORS_OP_MOVE_POINT
+name|ISCISSORS_OP_REMOVE_POINT
 expr_stmt|;
 block|}
 else|else
