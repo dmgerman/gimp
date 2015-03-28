@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bcf51f00103
+DECL|enum|__anon27c7d87e0103
 block|{
 DECL|enumerator|NO_ACTION
 name|NO_ACTION
@@ -55,7 +55,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bcf51f00203
+DECL|enum|__anon27c7d87e0203
 block|{
 DECL|enumerator|ISCISSORS_OP_NONE
 name|ISCISSORS_OP_NONE
@@ -210,35 +210,7 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-comment|/*  upper left hand coordinate              */
-DECL|member|ix
-DECL|member|iy
-name|gint
-name|ix
-decl_stmt|,
-name|iy
-decl_stmt|;
-comment|/*  initial coordinates                     */
-DECL|member|nx
-DECL|member|ny
-name|gint
-name|nx
-decl_stmt|,
-name|ny
-decl_stmt|;
-comment|/*  new coordinates                         */
-DECL|member|dp_buf
-name|GimpTempBuf
-modifier|*
-name|dp_buf
-decl_stmt|;
-comment|/*  dynamic programming buffer              */
-DECL|member|livewire
-name|ISegment
-modifier|*
-name|livewire
-decl_stmt|;
-comment|/*  livewire boundary segment               */
+comment|/*  mouse coordinates                       */
 DECL|member|segment1
 name|ISegment
 modifier|*
@@ -257,24 +229,41 @@ modifier|*
 name|curve
 decl_stmt|;
 comment|/*  the curve                               */
+DECL|member|undo_stack
+name|GList
+modifier|*
+name|undo_stack
+decl_stmt|;
+comment|/*  stack of ICurves for undo               */
+DECL|member|redo_stack
+name|GList
+modifier|*
+name|redo_stack
+decl_stmt|;
+comment|/*  stack of ICurves for redo               */
 DECL|member|state
 name|IscissorsState
 name|state
 decl_stmt|;
 comment|/*  state of iscissors                      */
-comment|/* XXX might be useful */
-DECL|member|mask
-name|GimpChannel
-modifier|*
-name|mask
-decl_stmt|;
-comment|/*  selection mask                          */
 DECL|member|gradient_map
 name|GeglBuffer
 modifier|*
 name|gradient_map
 decl_stmt|;
 comment|/*  lazily filled gradient map              */
+DECL|member|dp_buf
+name|GimpTempBuf
+modifier|*
+name|dp_buf
+decl_stmt|;
+comment|/*  dynamic programming buffer              */
+DECL|member|mask
+name|GimpChannel
+modifier|*
+name|mask
+decl_stmt|;
+comment|/*  selection mask                          */
 block|}
 struct|;
 end_struct
