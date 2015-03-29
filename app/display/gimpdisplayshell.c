@@ -353,7 +353,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b000b710103
+DECL|enum|__anon2ad0c9d50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -387,7 +387,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b000b710203
+DECL|enum|__anon2ad0c9d50203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1320,7 +1320,7 @@ name|shell
 operator|->
 name|icon_size
 operator|=
-literal|32
+literal|64
 expr_stmt|;
 name|shell
 operator|->
