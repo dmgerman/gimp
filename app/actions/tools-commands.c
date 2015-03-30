@@ -1111,6 +1111,12 @@ block|}
 block|}
 end_function
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_LIBMYPAINT
+end_ifdef
+
 begin_function
 name|void
 DECL|function|tools_mybrush_radius_cmd_callback (GtkAction * action,gint value,gpointer data)
@@ -1196,6 +1202,11 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function
 name|void

@@ -736,6 +736,12 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_LIBMYPAINT
+end_ifdef
+
 begin_decl_stmt
 DECL|variable|tools_mybrush_radius_actions
 specifier|static
@@ -765,6 +771,11 @@ block|}
 block|}
 decl_stmt|;
 end_decl_stmt
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_decl_stmt
 DECL|variable|tools_foreground_select_brush_size_actions
@@ -2069,6 +2080,9 @@ name|tools_airbrush_flow_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|HAVE_LIBMYPAINT
 if|if
 condition|(
 name|GIMP_GUI_CONFIG
@@ -2101,6 +2115,8 @@ name|tools_mybrush_radius_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group

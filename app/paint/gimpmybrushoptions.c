@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_LIBMYPAINT
+end_ifdef
+
 begin_include
 include|#
 directive|include
@@ -65,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b67ea610103
+DECL|enum|__anon2c519b5b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -432,6 +438,11 @@ break|break;
 block|}
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 end_unit
 

@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_LIBMYPAINT
+end_ifdef
+
 begin_include
 include|#
 directive|include
@@ -1074,6 +1080,11 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 end_unit
 

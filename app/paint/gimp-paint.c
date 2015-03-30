@@ -197,8 +197,13 @@ name|gimp_heal_register
 block|,
 name|gimp_clone_register
 block|,
+ifdef|#
+directive|ifdef
+name|HAVE_LIBMYPAINT
 name|gimp_mybrush_register
 block|,
+endif|#
+directive|endif
 name|gimp_ink_register
 block|,
 name|gimp_airbrush_register

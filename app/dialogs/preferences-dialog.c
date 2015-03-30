@@ -6266,6 +6266,9 @@ name|vbox2
 argument_list|)
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|HAVE_LIBMYPAINT
 name|button
 operator|=
 name|prefs_check_button_add
@@ -6285,6 +6288,8 @@ name|vbox2
 argument_list|)
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 comment|/***********/
 comment|/*  Theme  */
@@ -8874,7 +8879,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon292451b00108
+DECL|struct|__anon2a323e420108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10135,7 +10140,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon292451b00208
+DECL|struct|__anon2a323e420208
 block|{
 DECL|member|label
 specifier|const
@@ -11362,7 +11367,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon292451b00308
+DECL|struct|__anon2a323e420308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11517,7 +11522,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon292451b00408
+DECL|struct|__anon2a323e420408
 block|{
 DECL|member|tree_label
 specifier|const

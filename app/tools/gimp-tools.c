@@ -548,8 +548,13 @@ name|gimp_heal_tool_register
 block|,
 name|gimp_clone_tool_register
 block|,
+ifdef|#
+directive|ifdef
+name|HAVE_LIBMYPAINT
 name|gimp_mybrush_tool_register
 block|,
+endif|#
+directive|endif
 name|gimp_ink_tool_register
 block|,
 name|gimp_airbrush_tool_register
@@ -2011,6 +2016,9 @@ operator|=
 literal|"gimp-ink"
 expr_stmt|;
 block|}
+ifdef|#
+directive|ifdef
+name|HAVE_LIBMYPAINT
 elseif|else
 if|if
 condition|(
@@ -2024,6 +2032,8 @@ operator|=
 literal|"gimp-mybrush"
 expr_stmt|;
 block|}
+endif|#
+directive|endif
 else|else
 block|{
 name|paint_core_name
