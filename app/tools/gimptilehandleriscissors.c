@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbfc8c00103
+DECL|enum|__anon2b08b7260103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -909,6 +909,10 @@ argument_list|)
 expr_stmt|;
 name|maxgrad_conv1
 operator|=
+operator|(
+name|guchar
+operator|*
+operator|)
 name|gegl_buffer_linear_open
 argument_list|(
 name|temp1
@@ -936,6 +940,10 @@ argument_list|)
 expr_stmt|;
 name|maxgrad_conv2
 operator|=
+operator|(
+name|guchar
+operator|*
+operator|)
 name|gegl_buffer_linear_open
 argument_list|(
 name|temp2
