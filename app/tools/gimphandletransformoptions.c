@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277d19690103
+DECL|enum|__anon2b324dad0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -207,7 +207,7 @@ argument_list|)
 argument_list|,
 name|GIMP_TYPE_TRANSFORM_HANDLE_MODE
 argument_list|,
-name|GIMP_HANDLE_MODE_TRANSFORM
+name|GIMP_HANDLE_MODE_ADD_TRANSFORM
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -533,7 +533,22 @@ name|i
 condition|)
 block|{
 case|case
-name|GIMP_HANDLE_MODE_ADD_MOVE
+name|GIMP_HANDLE_MODE_ADD_TRANSFORM
+case|:
+name|modifier
+operator|=
+literal|0
+expr_stmt|;
+name|tooltip
+operator|=
+name|_
+argument_list|(
+literal|"Add handles and transform the image"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_HANDLE_MODE_MOVE
 case|:
 name|modifier
 operator|=
@@ -541,7 +556,10 @@ name|shift
 expr_stmt|;
 name|tooltip
 operator|=
-literal|"Add or move transform handles"
+name|_
+argument_list|(
+literal|"Move transform handles"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -553,19 +571,10 @@ name|ctrl
 expr_stmt|;
 name|tooltip
 operator|=
+name|_
+argument_list|(
 literal|"Remove transform handles"
-expr_stmt|;
-break|break;
-case|case
-name|GIMP_HANDLE_MODE_TRANSFORM
-case|:
-name|modifier
-operator|=
-literal|0
-expr_stmt|;
-name|tooltip
-operator|=
-literal|"Transform image by moving handles"
+argument_list|)
 expr_stmt|;
 break|break;
 block|}
