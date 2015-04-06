@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294b69400103
+DECL|enum|__anon28d4bf1b0103
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -98,7 +98,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294b69400208
+DECL|struct|__anon28d4bf1b0208
 block|{
 DECL|member|duration_index
 name|gint
@@ -125,7 +125,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294b69400308
+DECL|struct|__anon28d4bf1b0308
 block|{
 DECL|member|x
 DECL|member|y
@@ -6357,11 +6357,11 @@ if|if
 condition|(
 name|zoom
 operator|>
-literal|300.0
+literal|400.0
 condition|)
 name|zoom
 operator|=
-literal|300.0
+literal|400.0
 expr_stmt|;
 elseif|else
 if|if
