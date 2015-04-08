@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0a86a20103
+DECL|enum|__anon2b3405700103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -78,6 +78,18 @@ name|PROP_COLOR
 block|}
 enum|;
 end_enum
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_colorize_config_iface_init
+parameter_list|(
+name|GimpConfigInterface
+modifier|*
+name|iface
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -126,8 +138,24 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|gboolean
+name|gimp_colorize_config_equal
+parameter_list|(
+name|GimpConfig
+modifier|*
+name|a
+parameter_list|,
+name|GimpConfig
+modifier|*
+name|b
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpColorizeConfig,gimp_colorize_config,GIMP_TYPE_SETTINGS,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,NULL))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpColorizeConfig,gimp_colorize_config,GIMP_TYPE_SETTINGS,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,gimp_colorize_config_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpColorizeConfig
@@ -136,7 +164,7 @@ argument|gimp_colorize_config
 argument_list|,
 argument|GIMP_TYPE_SETTINGS
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 gimp_colorize_config_iface_init)
 argument_list|)
 end_macro
 
@@ -318,6 +346,26 @@ argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
 argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_colorize_config_iface_init (GimpConfigInterface * iface)
+name|gimp_colorize_config_iface_init
+parameter_list|(
+name|GimpConfigInterface
+modifier|*
+name|iface
+parameter_list|)
+block|{
+name|iface
+operator|->
+name|equal
+operator|=
+name|gimp_colorize_config_equal
 expr_stmt|;
 block|}
 end_function
@@ -692,6 +740,76 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|gimp_colorize_config_equal (GimpConfig * a,GimpConfig * b)
+name|gimp_colorize_config_equal
+parameter_list|(
+name|GimpConfig
+modifier|*
+name|a
+parameter_list|,
+name|GimpConfig
+modifier|*
+name|b
+parameter_list|)
+block|{
+name|GimpColorizeConfig
+modifier|*
+name|config_a
+init|=
+name|GIMP_COLORIZE_CONFIG
+argument_list|(
+name|a
+argument_list|)
+decl_stmt|;
+name|GimpColorizeConfig
+modifier|*
+name|config_b
+init|=
+name|GIMP_COLORIZE_CONFIG
+argument_list|(
+name|b
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|config_a
+operator|->
+name|hue
+operator|!=
+name|config_b
+operator|->
+name|hue
+operator|||
+name|config_a
+operator|->
+name|saturation
+operator|!=
+name|config_b
+operator|->
+name|saturation
+operator|||
+name|config_a
+operator|->
+name|lightness
+operator|!=
+name|config_b
+operator|->
+name|lightness
+condition|)
+block|{
+return|return
+name|FALSE
+return|;
+block|}
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 

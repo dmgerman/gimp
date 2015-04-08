@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fe99150103
+DECL|enum|__anon2893b5120103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -72,6 +72,18 @@ name|PROP_CONTRAST
 block|}
 enum|;
 end_enum
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_brightness_contrast_config_iface_init
+parameter_list|(
+name|GimpConfigInterface
+modifier|*
+name|iface
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -120,8 +132,24 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|gboolean
+name|gimp_brightness_contrast_config_equal
+parameter_list|(
+name|GimpConfig
+modifier|*
+name|a
+parameter_list|,
+name|GimpConfig
+modifier|*
+name|b
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpBrightnessContrastConfig,gimp_brightness_contrast_config,GIMP_TYPE_SETTINGS,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,NULL))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpBrightnessContrastConfig,gimp_brightness_contrast_config,GIMP_TYPE_SETTINGS,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,gimp_brightness_contrast_config_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpBrightnessContrastConfig
@@ -130,7 +158,7 @@ argument|gimp_brightness_contrast_config
 argument_list|,
 argument|GIMP_TYPE_SETTINGS
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 gimp_brightness_contrast_config_iface_init)
 argument_list|)
 end_macro
 
@@ -233,6 +261,26 @@ literal|0.0
 argument_list|,
 literal|0
 argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_brightness_contrast_config_iface_init (GimpConfigInterface * iface)
+name|gimp_brightness_contrast_config_iface_init
+parameter_list|(
+name|GimpConfigInterface
+modifier|*
+name|iface
+parameter_list|)
+block|{
+name|iface
+operator|->
+name|equal
+operator|=
+name|gimp_brightness_contrast_config_equal
 expr_stmt|;
 block|}
 end_function
@@ -402,6 +450,68 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|gimp_brightness_contrast_config_equal (GimpConfig * a,GimpConfig * b)
+name|gimp_brightness_contrast_config_equal
+parameter_list|(
+name|GimpConfig
+modifier|*
+name|a
+parameter_list|,
+name|GimpConfig
+modifier|*
+name|b
+parameter_list|)
+block|{
+name|GimpBrightnessContrastConfig
+modifier|*
+name|config_a
+init|=
+name|GIMP_BRIGHTNESS_CONTRAST_CONFIG
+argument_list|(
+name|a
+argument_list|)
+decl_stmt|;
+name|GimpBrightnessContrastConfig
+modifier|*
+name|config_b
+init|=
+name|GIMP_BRIGHTNESS_CONTRAST_CONFIG
+argument_list|(
+name|b
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|config_a
+operator|->
+name|brightness
+operator|!=
+name|config_b
+operator|->
+name|brightness
+operator|||
+name|config_a
+operator|->
+name|contrast
+operator|!=
+name|config_b
+operator|->
+name|contrast
+condition|)
+block|{
+return|return
+name|FALSE
+return|;
+block|}
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
