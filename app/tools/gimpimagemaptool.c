@@ -3376,7 +3376,7 @@ name|image_map_tool
 operator|->
 name|region_combo
 condition|)
-name|gtk_widget_show
+name|gtk_widget_hide
 argument_list|(
 name|image_map_tool
 operator|->
