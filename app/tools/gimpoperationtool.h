@@ -127,11 +127,6 @@ name|gchar
 modifier|*
 name|icon_name
 decl_stmt|;
-DECL|member|config
-name|GimpObject
-modifier|*
-name|config
-decl_stmt|;
 DECL|member|aux_input
 name|GeglNode
 modifier|*
