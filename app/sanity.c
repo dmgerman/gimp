@@ -1079,12 +1079,12 @@ DECL|macro|GDK_PIXBUF_REQUIRED_MINOR
 define|#
 directive|define
 name|GDK_PIXBUF_REQUIRED_MINOR
-value|24
+value|30
 DECL|macro|GDK_PIXBUF_REQUIRED_MICRO
 define|#
 directive|define
 name|GDK_PIXBUF_REQUIRED_MICRO
-value|1
+value|8
 if|if
 condition|(
 operator|!
