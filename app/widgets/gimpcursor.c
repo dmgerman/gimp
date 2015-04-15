@@ -288,7 +288,7 @@ name|cursor_default_y_hot
 block|}
 block|,
 block|{
-literal|"cursor-sid-_top.png"
+literal|"cursor-side-top.png"
 block|,
 name|cursor_default_x_hot
 block|,
