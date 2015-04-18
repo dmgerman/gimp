@@ -4895,6 +4895,8 @@ argument_list|(
 name|GIMP_PARASITE_ICC_PROFILE
 argument_list|,
 name|GIMP_PARASITE_PERSISTENT
+operator||
+name|GIMP_PARASITE_UNDOABLE
 argument_list|,
 name|res_a
 operator|->
