@@ -175,6 +175,20 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_dynamics_is_output_enabled
+parameter_list|(
+name|GimpDynamics
+modifier|*
+name|dynamics
+parameter_list|,
+name|GimpDynamicsOutputType
+name|type
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gdouble
 name|gimp_dynamics_get_linear_value
 parameter_list|(

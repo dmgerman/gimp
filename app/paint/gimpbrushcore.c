@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6691f40103
+DECL|enum|__anon2c11dd5e0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -6687,15 +6687,6 @@ operator|->
 name|handles_dynamic_transforming_brush
 condition|)
 block|{
-name|GimpDynamicsOutput
-modifier|*
-name|output
-decl_stmt|;
-name|gdouble
-name|dyn_aspect_ratio
-init|=
-literal|0.0
-decl_stmt|;
 name|gdouble
 name|fade_point
 init|=
@@ -6798,9 +6789,9 @@ argument_list|,
 name|fade_point
 argument_list|)
 expr_stmt|;
-name|output
-operator|=
-name|gimp_dynamics_get_output
+if|if
+condition|(
+name|gimp_dynamics_is_output_enabled
 argument_list|(
 name|core
 operator|->
@@ -6808,12 +6799,20 @@ name|dynamics
 argument_list|,
 name|GIMP_DYNAMICS_OUTPUT_ASPECT_RATIO
 argument_list|)
-expr_stmt|;
-name|dyn_aspect_ratio
+condition|)
+block|{
+name|gdouble
+name|dyn_aspect
+decl_stmt|;
+name|dyn_aspect
 operator|=
-name|gimp_dynamics_output_get_aspect_value
+name|gimp_dynamics_get_aspect_value
 argument_list|(
-name|output
+name|core
+operator|->
+name|dynamics
+argument_list|,
+name|GIMP_DYNAMICS_OUTPUT_ASPECT_RATIO
 argument_list|,
 name|coords
 argument_list|,
@@ -6822,15 +6821,7 @@ argument_list|,
 name|fade_point
 argument_list|)
 expr_stmt|;
-comment|/* Zero aspect ratio is special cased to half of all ar range,        * to force dynamics to have any effect. Forcing to full results        * in disapearing stamp if applied to maximum.        */
-if|if
-condition|(
-name|gimp_dynamics_output_is_enabled
-argument_list|(
-name|output
-argument_list|)
-condition|)
-block|{
+comment|/* Zero aspect ratio is special cased to half of all ar range,            * to force dynamics to have any effect. Forcing to full results            * in disapearing stamp if applied to maximum.            */
 if|if
 condition|(
 name|core
@@ -6845,14 +6836,14 @@ name|aspect_ratio
 operator|=
 literal|10.0
 operator|*
-name|dyn_aspect_ratio
+name|dyn_aspect
 expr_stmt|;
 else|else
 name|core
 operator|->
 name|aspect_ratio
 operator|*=
-name|dyn_aspect_ratio
+name|dyn_aspect
 expr_stmt|;
 block|}
 block|}

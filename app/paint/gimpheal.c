@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdynamicsoutput.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimperror.h"
 end_include
 
@@ -955,7 +949,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-DECL|union|__anon28a1c662010a
+DECL|union|__anon2afc7f59010a
 DECL|member|v
 DECL|member|f
 union|union
@@ -2166,10 +2160,6 @@ decl_stmt|;
 name|gdouble
 name|fade_point
 decl_stmt|;
-name|GimpDynamicsOutput
-modifier|*
-name|force_output
-decl_stmt|;
 name|gdouble
 name|force
 decl_stmt|;
@@ -2192,20 +2182,13 @@ operator|->
 name|pixel_dist
 argument_list|)
 expr_stmt|;
-name|force_output
-operator|=
-name|gimp_dynamics_get_output
+if|if
+condition|(
+name|gimp_dynamics_is_output_enabled
 argument_list|(
 name|dynamics
 argument_list|,
 name|GIMP_DYNAMICS_OUTPUT_FORCE
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|gimp_dynamics_output_is_enabled
-argument_list|(
-name|force_output
 argument_list|)
 condition|)
 name|force

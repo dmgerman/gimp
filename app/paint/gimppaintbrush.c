@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdynamicsoutput.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpgradient.h"
 end_include
 
@@ -395,10 +389,6 @@ decl_stmt|;
 name|gdouble
 name|grad_point
 decl_stmt|;
-name|GimpDynamicsOutput
-modifier|*
-name|force_output
-decl_stmt|;
 name|gdouble
 name|force
 decl_stmt|;
@@ -640,20 +630,13 @@ name|color
 argument_list|)
 expr_stmt|;
 block|}
-name|force_output
-operator|=
-name|gimp_dynamics_get_output
+if|if
+condition|(
+name|gimp_dynamics_is_output_enabled
 argument_list|(
 name|dynamics
 argument_list|,
 name|GIMP_DYNAMICS_OUTPUT_FORCE
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|gimp_dynamics_output_is_enabled
-argument_list|(
-name|force_output
 argument_list|)
 condition|)
 name|force
