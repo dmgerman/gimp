@@ -167,7 +167,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b19bc3a0103
+DECL|enum|__anon2a3ed0d40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1237,7 +1237,7 @@ name|PROP_MYPAINT_BRUSH_PATH_WRITABLE
 argument_list|,
 literal|"mypaint-brush-path-writable"
 argument_list|,
-name|NULL
+name|MYPAINT_BRUSH_PATH_WRITABLE_BLURB
 argument_list|,
 name|GIMP_CONFIG_PATH_DIR_LIST
 argument_list|,
