@@ -826,6 +826,16 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
+name|gegl_init
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -1070,11 +1080,6 @@ expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|file
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|metadata
 argument_list|)
 expr_stmt|;
 block|}
@@ -5900,7 +5905,7 @@ name|tile_height
 argument_list|)
 argument_list|)
 argument_list|,
-literal|0
+literal|1.0
 argument_list|,
 name|format
 argument_list|,
@@ -6240,7 +6245,7 @@ name|tile_height
 argument_list|)
 argument_list|)
 argument_list|,
-literal|0
+literal|1.0
 argument_list|,
 name|format
 argument_list|,
