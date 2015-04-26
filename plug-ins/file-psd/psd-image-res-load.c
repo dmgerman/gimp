@@ -4571,7 +4571,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"R'G'B'A u8"
+literal|"R'G'B' u8"
 argument_list|)
 expr_stmt|;
 comment|/* Step 6: while (scan lines remain to be read) */
@@ -4606,6 +4606,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|res_a
@@ -4741,7 +4742,6 @@ argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
 argument_list|)
 expr_stmt|;
-block|}
 comment|/* Step 7: Finish decompression */
 name|jpeg_finish_decompress
 argument_list|(
