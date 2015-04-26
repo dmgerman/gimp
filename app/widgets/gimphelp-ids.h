@@ -3446,6 +3446,14 @@ value|"gimp-prefs-folders-tool-presets"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_PREFS_FOLDERS_MYPAINT_BRUSHES
+define|#
+directive|define
+name|GIMP_HELP_PREFS_FOLDERS_MYPAINT_BRUSHES
+value|"gimp-prefs-folders-mypaint-brushes"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_PREFS_FOLDERS_PLUG_INS
 define|#
 directive|define

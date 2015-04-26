@@ -225,6 +225,15 @@ value|"Sets the default image in the \"File/New\" dialog."
 end_define
 
 begin_define
+DECL|macro|DEFAULT_MYPAINT_BRUSH_BLURB
+define|#
+directive|define
+name|DEFAULT_MYPAINT_BRUSH_BLURB
+define|\
+value|"Specify a default MyPaint brush."
+end_define
+
+begin_define
 DECL|macro|DEFAULT_PATTERN_BLURB
 define|#
 directive|define
@@ -620,6 +629,23 @@ directive|define
 name|MOVE_TOOL_CHANGES_ACTIVE_BLURB
 define|\
 value|_("If enabled, the move tool sets the edited layer or path as active.  " \   "This used to be the default behaviour in older versions.")
+end_define
+
+begin_define
+DECL|macro|MYPAINT_BRUSH_PATH_BLURB
+define|#
+directive|define
+name|MYPAINT_BRUSH_PATH_BLURB
+define|\
+value|"Sets the brush search path."
+end_define
+
+begin_define
+DECL|macro|MYPAINT_BRUSH_PATH_WRITABLE_BLURB
+define|#
+directive|define
+name|MYPAINT_BRUSH_PATH_WRITABLE_BLURB
+value|""
 end_define
 
 begin_define

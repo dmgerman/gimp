@@ -54,6 +54,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint/gimpmybrushoptions.h"
 end_include
 
@@ -671,7 +683,16 @@ name|path
 operator|=
 name|gimp_config_path_expand_to_files
 argument_list|(
-literal|"/usr/share/mypaint/brushes"
+name|GIMP_CONTEXT
+argument_list|(
+name|config
+argument_list|)
+operator|->
+name|gimp
+operator|->
+name|config
+operator|->
+name|mypaint_brush_path
 argument_list|,
 name|NULL
 argument_list|)
