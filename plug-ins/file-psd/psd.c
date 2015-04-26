@@ -42,25 +42,14 @@ end_include
 begin_include
 include|#
 directive|include
-file|"psd-thumb-load.h"
+file|"psd-save.h"
 end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|PSD_SAVE
-end_ifdef
 
 begin_include
 include|#
 directive|include
-file|"psd-save.h"
+file|"psd-thumb-load.h"
 end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
@@ -152,7 +141,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-comment|/* Register parameters */
 comment|/* File Load */
 specifier|static
 specifier|const
@@ -259,9 +247,6 @@ literal|"Height of full-sized image"
 block|}
 block|}
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|PSD_SAVE
 comment|/* File save */
 specifier|static
 specifier|const
@@ -309,12 +294,24 @@ literal|"raw-filename"
 block|,
 literal|"The name of the file to save the image in"
 block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"compression"
+block|,
+literal|"Compression type: { NONE (0), LZW (1), PACKBITS (2)"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"fill-order"
+block|,
+literal|"Fill Order: { MSB to LSB (0), LSB to MSB (1)"
+block|}
 block|}
 decl_stmt|;
-endif|#
-directive|endif
-comment|/* PSD_SAVE */
-comment|/* Register procedures */
 comment|/* File load */
 name|gimp_install_procedure
 argument_list|(
@@ -417,24 +414,19 @@ argument_list|,
 name|LOAD_THUMB_PROC
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|PSD_SAVE
-comment|/* File save*/
 name|gimp_install_procedure
 argument_list|(
 name|SAVE_PROC
 argument_list|,
-literal|"Saves images to the Photoshop PSD file format"
+literal|"saves files in the Photoshop(tm) PSD file format"
 argument_list|,
-literal|"This plug-in saves images in Adobe "
-literal|"Photoshop (TM) native PSD format."
+literal|"This filter saves files of Adobe Photoshop(tm) native PSD format.  These files may be of any image type supported by GIMP, with or without layers, layer masks, aux channels and guides."
 argument_list|,
-literal|"John Marshall"
+literal|"Monigotes"
 argument_list|,
-literal|"John Marshall"
+literal|"Monigotes"
 argument_list|,
-literal|"2007"
+literal|"2000"
 argument_list|,
 name|N_
 argument_list|(
@@ -457,6 +449,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+name|SAVE_PROC
+argument_list|,
+literal|"image/x-psd"
+argument_list|)
+expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
 name|SAVE_PROC
@@ -466,16 +465,6 @@ argument_list|,
 literal|""
 argument_list|)
 expr_stmt|;
-name|gimp_register_file_handler_mime
-argument_list|(
-name|SAVE_PROC
-argument_list|,
-literal|"image/x-psd"
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* PSD_SAVE */
 block|}
 end_function
 
@@ -532,20 +521,6 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|PSD_SAVE
-name|gint32
-name|drawable_ID
-decl_stmt|;
-name|GimpExportReturn
-name|export
-init|=
-name|GIMP_EXPORT_CANCEL
-decl_stmt|;
-endif|#
-directive|endif
-comment|/* PSD_SAVE */
 name|run_mode
 operator|=
 name|param
@@ -597,7 +572,6 @@ name|d_status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
-comment|/* File load */
 if|if
 condition|(
 name|strcmp
@@ -786,7 +760,6 @@ name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
-comment|/* Thumbnail load */
 elseif|else
 if|if
 condition|(
@@ -937,10 +910,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-ifdef|#
-directive|ifdef
-name|PSD_SAVE
-comment|/* File save */
 elseif|else
 if|if
 condition|(
@@ -954,6 +923,39 @@ operator|==
 literal|0
 condition|)
 block|{
+name|gint32
+name|drawable_id
+decl_stmt|;
+name|GimpMetadata
+modifier|*
+name|metadata
+decl_stmt|;
+name|GimpMetadataSaveFlags
+name|metadata_flags
+decl_stmt|;
+name|GimpExportReturn
+name|export
+init|=
+name|GIMP_EXPORT_IGNORE
+decl_stmt|;
+name|IFDBG
+argument_list|(
+literal|2
+argument_list|)
+name|g_debug
+argument_list|(
+literal|"\n---------------- %s ----------------\n"
+argument_list|,
+name|param
+index|[
+literal|3
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+argument_list|)
+expr_stmt|;
 name|image_ID
 operator|=
 name|param
@@ -965,7 +967,7 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-name|drawable_ID
+name|drawable_id
 operator|=
 name|param
 index|[
@@ -1002,7 +1004,7 @@ operator|&
 name|image_ID
 argument_list|,
 operator|&
-name|drawable_ID
+name|drawable_id
 argument_list|,
 literal|"PSD"
 argument_list|,
@@ -1043,13 +1045,18 @@ break|break;
 default|default:
 break|break;
 block|}
-if|if
-condition|(
-name|status
-operator|==
-name|GIMP_PDB_SUCCESS
-condition|)
-block|{
+name|metadata
+operator|=
+name|gimp_image_metadata_save_prepare
+argument_list|(
+name|image_ID
+argument_list|,
+literal|"image/x-psd"
+argument_list|,
+operator|&
+name|metadata_flags
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|save_image
@@ -1065,18 +1072,118 @@ name|d_string
 argument_list|,
 name|image_ID
 argument_list|,
-name|drawable_ID
-argument_list|,
 operator|&
 name|error
 argument_list|)
 condition|)
-block|{             }
+block|{
+if|if
+condition|(
+name|metadata
+condition|)
+block|{
+name|GFile
+modifier|*
+name|file
+decl_stmt|;
+name|gimp_metadata_set_bits_per_sample
+argument_list|(
+name|metadata
+argument_list|,
+literal|8
+argument_list|)
+expr_stmt|;
+name|file
+operator|=
+name|g_file_new_for_path
+argument_list|(
+name|param
+index|[
+literal|3
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+argument_list|)
+expr_stmt|;
+name|gimp_image_metadata_save_finish
+argument_list|(
+name|image_ID
+argument_list|,
+literal|"image/x-psd"
+argument_list|,
+name|metadata
+argument_list|,
+name|metadata_flags
+argument_list|,
+name|file
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
+block|}
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
+block|}
 else|else
 block|{
-name|status
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
+if|if
+condition|(
+name|error
+condition|)
+block|{
+operator|*
+name|nreturn_vals
+operator|=
+literal|2
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_STRING
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+operator|=
+name|error
+operator|->
+name|message
 expr_stmt|;
 block|}
 block|}
@@ -1091,10 +1198,16 @@ argument_list|(
 name|image_ID
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|metadata
+condition|)
+name|g_object_unref
+argument_list|(
+name|metadata
+argument_list|)
+expr_stmt|;
 block|}
-endif|#
-directive|endif
-comment|/* PSD_SAVE */
 comment|/* Unknown procedure */
 else|else
 block|{
