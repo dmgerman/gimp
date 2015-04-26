@@ -6542,7 +6542,7 @@ operator|==
 literal|3
 condition|)
 block|{
-comment|/* the</Layer group> marker layers are used to 		   assemble the layer structure in a single pass */
+comment|/* the</Layer group> marker layers are used to                    assemble the layer structure in a single pass */
 name|layer_id
 operator|=
 name|gimp_layer_group_new
@@ -6569,7 +6569,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* since the layers are stored in reverse, the group 		     layer start marker actually means we're done with 		     that layer group */
+comment|/* since the layers are stored in reverse, the group                      layer start marker actually means we're done with                      that layer group */
 name|g_array_remove_index
 argument_list|(
 name|parent_group_stack
