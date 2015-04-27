@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a553b650108
+DECL|struct|__anon2c941e270108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -215,7 +215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a553b650208
+DECL|struct|__anon2c941e270208
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -481,9 +481,6 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|region
-parameter_list|,
-name|gdouble
-name|dist
 parameter_list|,
 name|GimpProgress
 modifier|*
@@ -2212,7 +2209,7 @@ begin_function
 specifier|static
 name|GeglBuffer
 modifier|*
-DECL|function|gradient_precalc_shapeburst (GimpImage * image,GimpDrawable * drawable,const GeglRectangle * region,gdouble dist,GimpProgress * progress)
+DECL|function|gradient_precalc_shapeburst (GimpImage * image,GimpDrawable * drawable,const GeglRectangle * region,GimpProgress * progress)
 name|gradient_precalc_shapeburst
 parameter_list|(
 name|GimpImage
@@ -2227,9 +2224,6 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|region
-parameter_list|,
-name|gdouble
-name|dist
 parameter_list|,
 name|GimpProgress
 modifier|*
@@ -3789,10 +3783,6 @@ argument_list|,
 name|drawable
 argument_list|,
 name|buffer_region
-argument_list|,
-name|rbd
-operator|.
-name|dist
 argument_list|,
 name|progress
 argument_list|)
