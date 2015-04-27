@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon290fe5870103
+DECL|enum|__anon28b4e5bb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -128,7 +128,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290fe5870208
+DECL|struct|__anon28b4e5bb0208
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290fe5870308
+DECL|struct|__anon28b4e5bb0308
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -590,6 +590,10 @@ name|operation
 parameter_list|,
 name|GeglBuffer
 modifier|*
+name|input
+parameter_list|,
+name|GeglBuffer
+modifier|*
 name|output
 parameter_list|,
 specifier|const
@@ -604,14 +608,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationBlend,gimp_operation_blend,GEGL_TYPE_OPERATION_SOURCE)
+DECL|function|G_DEFINE_TYPE (GimpOperationBlend,gimp_operation_blend,GEGL_TYPE_OPERATION_FILTER)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpOperationBlend
 argument_list|,
 argument|gimp_operation_blend
 argument_list|,
-argument|GEGL_TYPE_OPERATION_SOURCE
+argument|GEGL_TYPE_OPERATION_FILTER
 argument_list|)
 end_macro
 
@@ -651,11 +655,11 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|GeglOperationSourceClass
+name|GeglOperationFilterClass
 modifier|*
-name|source_class
+name|filter_class
 init|=
-name|GEGL_OPERATION_SOURCE_CLASS
+name|GEGL_OPERATION_FILTER_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -690,7 +694,7 @@ name|get_bounding_box
 operator|=
 name|gimp_operation_blend_get_bounding_box
 expr_stmt|;
-name|source_class
+name|filter_class
 operator|->
 name|process
 operator|=
@@ -3817,12 +3821,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_blend_process (GeglOperation * operation,GeglBuffer * output,const GeglRectangle * result,gint level)
+DECL|function|gimp_operation_blend_process (GeglOperation * operation,GeglBuffer * input,GeglBuffer * output,const GeglRectangle * result,gint level)
 name|gimp_operation_blend_process
 parameter_list|(
 name|GeglOperation
 modifier|*
 name|operation
+parameter_list|,
+name|GeglBuffer
+modifier|*
+name|input
 parameter_list|,
 name|GeglBuffer
 modifier|*

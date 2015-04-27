@@ -109,7 +109,7 @@ struct|struct
 name|_GimpOperationBlend
 block|{
 DECL|member|parent_instance
-name|GeglOperationSource
+name|GeglOperationFilter
 name|parent_instance
 decl_stmt|;
 DECL|member|context
@@ -177,7 +177,7 @@ struct|struct
 name|_GimpOperationBlendClass
 block|{
 DECL|member|parent_class
-name|GeglOperationSourceClass
+name|GeglOperationFilterClass
 name|parent_class
 decl_stmt|;
 block|}
