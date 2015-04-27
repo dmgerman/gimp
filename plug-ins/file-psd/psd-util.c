@@ -2574,32 +2574,9 @@ operator|==
 literal|0
 condition|)
 comment|/* Overlay (ps3) */
-block|{
-if|if
-condition|(
-name|CONVERSION_WARNINGS
-condition|)
-block|{
-specifier|static
-name|gchar
-modifier|*
-name|mode_name
-init|=
-literal|"OVERLAY"
-decl_stmt|;
-name|g_message
-argument_list|(
-literal|"Gimp uses a different equation to photoshop for "
-literal|"blend mode: %s. Results will differ."
-argument_list|,
-name|mode_name
-argument_list|)
-expr_stmt|;
-block|}
 return|return
-name|GIMP_OVERLAY_MODE
+name|GIMP_NEW_OVERLAY_MODE
 return|;
-block|}
 if|if
 condition|(
 name|g_ascii_strncasecmp
@@ -3097,23 +3074,8 @@ expr_stmt|;
 comment|/* Screen (ps3) */
 break|break;
 case|case
-name|GIMP_OVERLAY_MODE
+name|GIMP_NEW_OVERLAY_MODE
 case|:
-if|if
-condition|(
-name|CONVERSION_WARNINGS
-condition|)
-name|g_message
-argument_list|(
-literal|"Gimp uses a different equation to photoshop for "
-literal|"blend mode: %s. Results will differ."
-argument_list|,
-name|gimp_layer_mode_effects_name
-argument_list|(
-name|gimp_layer_mode
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|psd_mode
 operator|=
 name|g_strndup
@@ -3363,6 +3325,9 @@ argument_list|)
 expr_stmt|;
 comment|/* Hard Light (ps3) */
 break|break;
+case|case
+name|GIMP_OVERLAY_MODE
+case|:
 case|case
 name|GIMP_SOFTLIGHT_MODE
 case|:

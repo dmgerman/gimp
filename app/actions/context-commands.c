@@ -158,7 +158,7 @@ name|GIMP_DIVIDE_MODE
 block|,
 name|GIMP_SCREEN_MODE
 block|,
-name|GIMP_OVERLAY_MODE
+name|GIMP_NEW_OVERLAY_MODE
 block|,
 name|GIMP_DODGE_MODE
 block|,

@@ -381,6 +381,13 @@ name|b
 operator|++
 control|)
 block|{
+if|#
+directive|if
+literal|0
+comment|/* softlight is now used for what GIMP formerly called                * OVERLAY.  We fixed OVERLAY to use the right math                * (under the name NEW_OVERLAY), and redirect uses of                * the old OVERLAY blend mode here. This math was                * formerly used for OVERLAY and is exactly the same as                * the multiply, screen, comp math used below.                * See bug #673501.                */
+block|gfloat comp = in[b] * (in[b] + (2.0 * layer[b]) * (1.0 - in[b]));
+endif|#
+directive|endif
 name|gfloat
 name|multiply
 init|=

@@ -532,7 +532,7 @@ name|GIMP_OVERLAY_MODE
 case|:
 name|operation
 operator|=
-literal|"gimp:overlay-mode"
+literal|"gimp:softlight-mode"
 expr_stmt|;
 break|break;
 case|case
@@ -669,6 +669,14 @@ case|:
 name|operation
 operator|=
 literal|"gimp:color-erase-mode"
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_NEW_OVERLAY_MODE
+case|:
+name|operation
+operator|=
+literal|"gimp:overlay-mode"
 expr_stmt|;
 break|break;
 case|case

@@ -360,7 +360,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cff1040103
+DECL|enum|__anon294119140103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -457,7 +457,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cff1040203
+DECL|enum|__anon294119140203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9307,6 +9307,20 @@ name|version
 argument_list|)
 expr_stmt|;
 break|break;
+comment|/* new layer modes not supported by gimp-2.8 */
+case|case
+name|GIMP_NEW_OVERLAY_MODE
+case|:
+name|version
+operator|=
+name|MAX
+argument_list|(
+literal|9
+argument_list|,
+name|version
+argument_list|)
+expr_stmt|;
+break|break;
 default|default:
 break|break;
 block|}
@@ -9450,6 +9464,9 @@ literal|7
 case|:
 case|case
 literal|8
+case|:
+case|case
+literal|9
 case|:
 if|if
 condition|(

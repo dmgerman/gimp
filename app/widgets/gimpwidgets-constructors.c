@@ -334,7 +334,7 @@ name|GIMP_MULTIPLY_MODE
 argument_list|,
 name|GIMP_BURN_MODE
 argument_list|,
-name|GIMP_OVERLAY_MODE
+name|GIMP_NEW_OVERLAY_MODE
 argument_list|,
 name|GIMP_SOFTLIGHT_MODE
 argument_list|,

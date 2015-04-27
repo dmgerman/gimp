@@ -253,7 +253,7 @@ name|GIMP_OVERLAY_MODE
 case|:
 name|func
 operator|=
-name|gimp_operation_overlay_mode_process_pixels
+name|gimp_operation_softlight_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
@@ -390,6 +390,14 @@ case|:
 name|func
 operator|=
 name|gimp_operation_color_erase_mode_process_pixels
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_NEW_OVERLAY_MODE
+case|:
+name|func
+operator|=
+name|gimp_operation_overlay_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case

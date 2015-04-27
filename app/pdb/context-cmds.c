@@ -1485,6 +1485,16 @@ condition|(
 name|success
 condition|)
 block|{
+if|if
+condition|(
+name|paint_mode
+operator|==
+name|GIMP_OVERLAY_MODE
+condition|)
+name|paint_mode
+operator|=
+name|GIMP_SOFTLIGHT_MODE
+expr_stmt|;
 name|gimp_context_set_paint_mode
 argument_list|(
 name|context

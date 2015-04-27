@@ -1404,6 +1404,14 @@ literal|"color-erase-mode"
 block|}
 block|,
 block|{
+name|GIMP_NEW_OVERLAY_MODE
+block|,
+literal|"GIMP_NEW_OVERLAY_MODE"
+block|,
+literal|"new-overlay-mode"
+block|}
+block|,
+block|{
 name|GIMP_ERASE_MODE
 block|,
 literal|"GIMP_ERASE_MODE"
@@ -1515,7 +1523,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode-effects"
 argument_list|,
-literal|"Overlay"
+literal|"Old broken Overlay"
 argument_list|)
 block|,
 name|NULL
@@ -1737,6 +1745,19 @@ argument_list|(
 literal|"layer-mode-effects"
 argument_list|,
 literal|"Color erase"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_NEW_OVERLAY_MODE
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode-effects"
+argument_list|,
+literal|"Overlay"
 argument_list|)
 block|,
 name|NULL

@@ -817,6 +817,16 @@ name|brush
 decl_stmt|;
 if|if
 condition|(
+name|paint_mode
+operator|==
+name|GIMP_OVERLAY_MODE
+condition|)
+name|paint_mode
+operator|=
+name|GIMP_SOFTLIGHT_MODE
+expr_stmt|;
+if|if
+condition|(
 name|name
 operator|&&
 name|strlen

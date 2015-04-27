@@ -257,7 +257,10 @@ name|xcf_load_image
 block|,
 comment|/* version 7 */
 name|xcf_load_image
+block|,
 comment|/* version 8 */
+name|xcf_load_image
+comment|/* version 9 */
 block|}
 decl_stmt|;
 end_decl_stmt

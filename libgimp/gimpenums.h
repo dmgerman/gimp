@@ -39,7 +39,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b8e6f60103
+DECL|enum|__anon290b972d0103
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -73,7 +73,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b8e6f60203
+DECL|enum|__anon290b972d0203
 block|{
 DECL|enumerator|GIMP_NO_DITHER
 name|GIMP_NO_DITHER
@@ -113,7 +113,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b8e6f60303
+DECL|enum|__anon290b972d0303
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -156,7 +156,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b8e6f60403
+DECL|enum|__anon290b972d0403
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE
@@ -226,6 +226,9 @@ name|GIMP_GRAIN_MERGE_MODE
 block|,
 DECL|enumerator|GIMP_COLOR_ERASE_MODE
 name|GIMP_COLOR_ERASE_MODE
+block|,
+DECL|enumerator|GIMP_NEW_OVERLAY_MODE
+name|GIMP_NEW_OVERLAY_MODE
 DECL|typedef|GimpLayerModeEffects
 block|}
 name|GimpLayerModeEffects

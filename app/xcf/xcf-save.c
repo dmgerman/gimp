@@ -3071,6 +3071,16 @@ name|size
 operator|=
 literal|4
 expr_stmt|;
+if|if
+condition|(
+name|mode
+operator|==
+name|GIMP_OVERLAY_MODE
+condition|)
+name|mode
+operator|=
+name|GIMP_SOFTLIGHT_MODE
+expr_stmt|;
 name|xcf_write_prop_type_check_error
 argument_list|(
 name|info
@@ -7328,7 +7338,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e582a00108
+DECL|struct|__anon29a400c80108
 block|{
 DECL|member|info
 name|XcfInfo

@@ -4253,6 +4253,16 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|mode
+operator|==
+name|GIMP_OVERLAY_MODE
+condition|)
+name|mode
+operator|=
+name|GIMP_SOFTLIGHT_MODE
+expr_stmt|;
 name|gimp_layer_set_mode
 argument_list|(
 operator|*

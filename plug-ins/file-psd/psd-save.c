@@ -695,6 +695,9 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|GIMP_OVERLAY_MODE
+case|:
+case|case
 name|GIMP_SOFTLIGHT_MODE
 case|:
 name|strcpy
@@ -706,7 +709,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_OVERLAY_MODE
+name|GIMP_NEW_OVERLAY_MODE
 case|:
 name|strcpy
 argument_list|(
