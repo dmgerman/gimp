@@ -1673,6 +1673,8 @@ literal|"gegl:threshold"
 block|,
 literal|"gegl:tile"
 block|,
+literal|"gegl:tile-paper"
+block|,
 literal|"gegl:tile-glass"
 block|,
 literal|"gegl:tile-seamless"

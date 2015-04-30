@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c8b10f0103
+DECL|enum|__anon2b56de9b0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -460,6 +460,8 @@ block|,
 literal|"gegl:texturize-canvas"
 block|,
 literal|"gegl:tile-glass"
+block|,
+literal|"gegl:tile-paper"
 block|,
 literal|"gegl:tile-seamless"
 block|,
