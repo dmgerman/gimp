@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aeb06e60103
+DECL|enum|__anon276007800103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -3104,6 +3104,40 @@ modifier|*
 name|gui
 parameter_list|)
 block|{
+if|if
+condition|(
+name|response_id
+operator|==
+name|GIMP_RESPONSE_DETACH
+condition|)
+block|{
+name|gimp_tool_gui_set_auto_overlay
+argument_list|(
+name|gui
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gimp_tool_gui_set_overlay
+argument_list|(
+name|gui
+argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|gimp_widget_get_monitor
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|g_signal_emit
 argument_list|(
 name|gui
@@ -3118,6 +3152,7 @@ argument_list|,
 name|response_id
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

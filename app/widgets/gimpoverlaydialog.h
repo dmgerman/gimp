@@ -23,6 +23,14 @@ file|"gimpoverlayframe.h"
 end_include
 
 begin_define
+DECL|macro|GIMP_RESPONSE_DETACH
+define|#
+directive|define
+name|GIMP_RESPONSE_DETACH
+value|100
+end_define
+
+begin_define
 DECL|macro|GIMP_TYPE_OVERLAY_DIALOG
 define|#
 directive|define
@@ -137,6 +145,11 @@ name|GtkWidget
 modifier|*
 name|title_label
 decl_stmt|;
+DECL|member|detach_button
+name|GtkWidget
+modifier|*
+name|detach_button
+decl_stmt|;
 DECL|member|close_button
 name|GtkWidget
 modifier|*
@@ -173,6 +186,18 @@ name|overlay
 parameter_list|,
 name|gint
 name|response_id
+parameter_list|)
+function_decl|;
+DECL|member|detach
+name|void
+function_decl|(
+modifier|*
+name|detach
+function_decl|)
+parameter_list|(
+name|GimpOverlayDialog
+modifier|*
+name|overlay
 parameter_list|)
 function_decl|;
 DECL|member|close
