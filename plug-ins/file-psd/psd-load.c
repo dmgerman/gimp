@@ -11035,8 +11035,8 @@ name|columns
 operator|+
 literal|7
 operator|)
-operator|>>
-literal|3
+operator|/
+literal|8
 operator|)
 expr_stmt|;
 else|else
@@ -11048,8 +11048,8 @@ operator|->
 name|columns
 operator|*
 name|bps
-operator|>>
-literal|3
+operator|/
+literal|8
 operator|)
 expr_stmt|;
 name|IFDBG
@@ -11106,8 +11106,8 @@ operator|/
 name|MAX
 argument_list|(
 name|bps
-operator|>>
-literal|3
+operator|/
+literal|8
 argument_list|,
 literal|1
 argument_list|)
@@ -11490,8 +11490,8 @@ name|columns
 operator|+
 literal|7
 operator|)
-operator|>>
-literal|3
+operator|/
+literal|8
 operator|)
 condition|;
 operator|++
