@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a306100103
+DECL|enum|__anon29fd062a0103
 block|{
 DECL|enumerator|C_XMP_TAG
 name|C_XMP_TAG
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a306100203
+DECL|enum|__anon29fd062a0203
 block|{
 DECL|enumerator|C_EXIF_TAG
 name|C_EXIF_TAG
@@ -132,7 +132,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a306100308
+DECL|struct|__anon29fd062a0308
 block|{
 DECL|member|tag
 name|gchar
@@ -698,7 +698,7 @@ name|title
 decl_stmt|;
 name|gchar
 modifier|*
-name|fname
+name|name
 decl_stmt|;
 name|GError
 modifier|*
@@ -780,14 +780,11 @@ argument_list|(
 name|ui_file
 argument_list|)
 expr_stmt|;
-name|fname
+name|name
 operator|=
-name|g_filename_display_basename
-argument_list|(
-name|gimp_image_get_uri
+name|gimp_image_get_name
 argument_list|(
 name|image_id
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|title
@@ -796,12 +793,12 @@ name|g_strdup_printf
 argument_list|(
 literal|"Metadata: %s"
 argument_list|,
-name|fname
+name|name
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|fname
+name|name
 argument_list|)
 expr_stmt|;
 name|dialog
