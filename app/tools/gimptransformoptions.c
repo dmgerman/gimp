@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c7f1140103
+DECL|enum|__anon27a6c1b60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1919,7 +1919,7 @@ name|gimp_get_constrain_behavior_mask
 argument_list|()
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29c7f1140208
+DECL|struct|__anon27a6c1b60208
 block|{
 DECL|member|mod
 name|GdkModifierType
@@ -1950,7 +1950,10 @@ name|shift
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Constrain  (%s)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -1958,9 +1961,15 @@ name|shift
 block|,
 literal|"constrain-move"
 block|,
+name|N_
+argument_list|(
 literal|"Move"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Constrain movement to 45 degree angles from center  (%s)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -1968,9 +1977,15 @@ name|shift
 block|,
 literal|"constrain-scale"
 block|,
+name|N_
+argument_list|(
 literal|"Scale"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Maintain aspect ratio when scaling  (%s)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -1978,9 +1993,15 @@ name|shift
 block|,
 literal|"constrain-rotate"
 block|,
+name|N_
+argument_list|(
 literal|"Rotate"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Constrain rotation to 15 degree increments  (%s)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -1988,9 +2009,15 @@ name|shift
 block|,
 literal|"constrain-shear"
 block|,
+name|N_
+argument_list|(
 literal|"Shear"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Shear along edge direction only  (%s)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -1998,9 +2025,15 @@ name|shift
 block|,
 literal|"constrain-perspective"
 block|,
+name|N_
+argument_list|(
 literal|"Perspective"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Constrain perspective handles to move along edges and diagonal  (%s)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2008,7 +2041,10 @@ name|ctrl
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"From pivot  (%s)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2016,9 +2052,15 @@ name|ctrl
 block|,
 literal|"frompivot-scale"
 block|,
+name|N_
+argument_list|(
 literal|"Scale"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Scale from pivot point  (%s)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2026,9 +2068,15 @@ name|ctrl
 block|,
 literal|"frompivot-shear"
 block|,
+name|N_
+argument_list|(
 literal|"Shear"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Shear opposite edge by same amount  (%s)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2036,9 +2084,15 @@ name|ctrl
 block|,
 literal|"frompivot-perspective"
 block|,
+name|N_
+argument_list|(
 literal|"Perspective"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Maintain position of pivot while changing perspective  (%s)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2046,7 +2100,10 @@ literal|0
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Pivot"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2054,9 +2111,15 @@ name|shift
 block|,
 literal|"cornersnap"
 block|,
+name|N_
+argument_list|(
 literal|"Snap  (%s)"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Snap pivot to corners and center  (%s)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2064,9 +2127,15 @@ literal|0
 block|,
 literal|"fixedpivot"
 block|,
+name|N_
+argument_list|(
 literal|"Lock"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Lock pivot position to canvas"
+argument_list|)
 block|}
 block|,       }
 struct|;
@@ -2131,12 +2200,15 @@ name|label
 operator|=
 name|g_strdup_printf
 argument_list|(
+name|gettext
+argument_list|(
 name|opt_list
 index|[
 name|i
 index|]
 operator|.
 name|desc
+argument_list|)
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
@@ -2209,12 +2281,15 @@ name|label
 operator|=
 name|g_strdup_printf
 argument_list|(
+name|gettext
+argument_list|(
 name|opt_list
 index|[
 name|i
 index|]
 operator|.
 name|tip
+argument_list|)
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
