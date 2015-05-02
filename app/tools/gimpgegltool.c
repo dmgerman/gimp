@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b56de9b0103
+DECL|enum|__anon274ca34d0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -501,6 +501,9 @@ comment|/* pointless */
 literal|"gegl:layer"
 block|,
 comment|/* we use gimp's ops */
+literal|"gegl:linear-gradient"
+block|,
+comment|/* we use the blend tool */
 literal|"gegl:matting-global"
 block|,
 comment|/* used in the foreground select tool */
@@ -512,6 +515,9 @@ block|,
 literal|"gegl:posterize"
 block|,
 comment|/* we use gimp's op */
+literal|"gegl:radial-gradient"
+block|,
+comment|/* we use the blend tool */
 literal|"gegl:seamless-clone"
 block|,
 comment|/* used in the seamless clone tool */
