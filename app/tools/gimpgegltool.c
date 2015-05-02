@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274ca34d0103
+DECL|enum|__anon2b869d9b0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -501,6 +501,9 @@ comment|/* pointless */
 literal|"gegl:layer"
 block|,
 comment|/* we use gimp's ops */
+literal|"gegl:lcms-from-profile"
+block|,
+comment|/* not usable here */
 literal|"gegl:linear-gradient"
 block|,
 comment|/* we use the blend tool */
