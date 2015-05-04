@@ -12304,7 +12304,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2b3f70160103
+DECL|enum|__anon2b62dc540103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -20648,6 +20648,22 @@ argument_list|,
 name|sc
 operator|->
 name|value
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+operator|!
+name|sc
+operator|->
+name|code
+condition|)
+block|{
+name|Error_0
+argument_list|(
+name|sc
+argument_list|,
+literal|"syntax error in cond"
 argument_list|)
 expr_stmt|;
 block|}
@@ -30697,7 +30713,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2b3f70160208
+DECL|struct|__anon2b62dc540208
 specifier|static
 struct|struct
 block|{
@@ -30932,7 +30948,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2b3f70160308
+DECL|struct|__anon2b62dc540308
 typedef|typedef
 struct|struct
 block|{
