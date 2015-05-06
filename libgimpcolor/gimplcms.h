@@ -102,6 +102,16 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_lcms_profile_close
+parameter_list|(
+name|GimpColorProfile
+name|profile
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_lcms_profile_get_description

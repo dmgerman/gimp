@@ -604,6 +604,30 @@ block|}
 end_function
 
 begin_function
+name|void
+DECL|function|gimp_lcms_profile_close (GimpColorProfile profile)
+name|gimp_lcms_profile_close
+parameter_list|(
+name|GimpColorProfile
+name|profile
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|profile
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|cmsCloseProfile
+argument_list|(
+name|profile
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 specifier|static
 name|gchar
 modifier|*
@@ -1525,7 +1549,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|cmsCloseProfile
+name|gimp_lcms_profile_close
 argument_list|(
 name|profile
 argument_list|)
