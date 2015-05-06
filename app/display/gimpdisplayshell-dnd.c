@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display-types.h"
 end_include
 
@@ -151,12 +157,6 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimpdnd.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpwidgets-utils.h"
 end_include
 
 begin_include

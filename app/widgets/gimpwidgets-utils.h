@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_WIDGETS_UTILS_H__
+name|__APP_GIMP_WIDGETS_UTILS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_WIDGETS_UTILS_H__
+DECL|macro|__APP_GIMP_WIDGETS_UTILS_H__
 define|#
 directive|define
-name|__GIMP_WIDGETS_UTILS_H__
+name|__APP_GIMP_WIDGETS_UTILS_H__
 end_define
 
 begin_function_decl
@@ -569,36 +569,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|gint
-name|gimp_widget_get_monitor
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gint
-name|gimp_get_monitor_at_pointer
-parameter_list|(
-name|GdkScreen
-modifier|*
-modifier|*
-name|screen
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_WIDGETS_UTILS_H__ */
+comment|/* __APP_GIMP_WIDGETS_UTILS_H__ */
 end_comment
 
 end_unit
