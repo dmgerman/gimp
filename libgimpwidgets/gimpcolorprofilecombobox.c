@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<lcms2.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gegl.h>
 end_include
 
@@ -69,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon290db2620103
+DECL|enum|__anon28d573a10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -86,7 +80,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290db2620208
+DECL|struct|__anon28d573a10208
 block|{
 DECL|member|last_path
 name|GtkTreePath
@@ -1195,7 +1189,7 @@ name|GFile
 modifier|*
 name|file
 decl_stmt|;
-name|cmsHPROFILE
+name|GimpColorProfile
 name|profile
 decl_stmt|;
 name|GError
@@ -1257,7 +1251,7 @@ argument_list|(
 name|profile
 argument_list|)
 expr_stmt|;
-name|cmsCloseProfile
+name|gimp_lcms_profile_close
 argument_list|(
 name|profile
 argument_list|)

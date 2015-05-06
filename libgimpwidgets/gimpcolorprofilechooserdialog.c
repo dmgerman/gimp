@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<lcms2.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gegl.h>
 end_include
 
@@ -754,7 +748,7 @@ argument_list|,
 name|profile
 argument_list|)
 expr_stmt|;
-name|cmsCloseProfile
+name|gimp_lcms_profile_close
 argument_list|(
 name|profile
 argument_list|)
