@@ -874,9 +874,6 @@ name|brushix
 decl_stmt|,
 name|ix
 decl_stmt|;
-name|gdouble
-name|velocity
-decl_stmt|;
 if|if
 condition|(
 name|pipe
@@ -987,22 +984,13 @@ break|break;
 case|case
 name|PIPE_SELECT_VELOCITY
 case|:
-name|velocity
-operator|=
-name|current_coords
-operator|->
-name|velocity
-expr_stmt|;
-comment|/* Max velocity is 3.0, picking stamp as a ratio*/
 name|ix
 operator|=
 name|ROUND
 argument_list|(
-operator|(
-literal|3.0
-operator|/
+name|current_coords
+operator|->
 name|velocity
-operator|)
 operator|*
 name|pipe
 operator|->
