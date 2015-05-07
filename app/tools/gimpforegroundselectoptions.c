@@ -93,7 +93,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c385db60103
+DECL|enum|__anon29bf16360103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -306,7 +306,7 @@ literal|"levels"
 argument_list|,
 name|_
 argument_list|(
-literal|"Parameter for matting-levin"
+literal|"Number of downsampled levels to use"
 argument_list|)
 argument_list|,
 literal|1
@@ -328,7 +328,7 @@ literal|"active-levels"
 argument_list|,
 name|_
 argument_list|(
-literal|"Parameter for matting-levin"
+literal|"Number of levels to perform solving"
 argument_list|)
 argument_list|,
 literal|1
@@ -350,7 +350,7 @@ literal|"iterations"
 argument_list|,
 name|_
 argument_list|(
-literal|"Parameter for matting-global"
+literal|"Number of iterations to perform"
 argument_list|)
 argument_list|,
 literal|1
