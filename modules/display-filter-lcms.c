@@ -1658,9 +1658,12 @@ argument_list|)
 condition|)
 name|widget
 operator|=
+name|gtk_widget_get_toplevel
+argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|managed
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|profile
