@@ -61,6 +61,10 @@ begin_comment
 comment|/**  * SECTION: gimplcms  * @title: GimpLcms  * @short_description: Definitions and Functions relating to LCMS.  *  * Definitions and Functions relating to LCMS.  **/
 end_comment
 
+begin_comment
+comment|/**  * GimpColorProfile:  *  * Simply a typedef to #gpointer, but actually is a cmsHPROFILE. It's  * used in public GIMP APIs in order to avoid having to include LCMS  * headers.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_LCMS_MD5_DIGEST_LENGTH
 define|#
@@ -105,6 +109,10 @@ name|quark
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_lcms_profile_open_from_file:  * @file:  a #GFile  * @error: return location for #GError  *  * This function opens an ICC color profile from @file.  *  * Return value: the #GimpColorProfile, or %NULL. On error, %NULL is  *               returned and @error is set.  *  * Since: GIMP 2.10  **/
+end_comment
 
 begin_function
 name|GimpColorProfile
@@ -389,6 +397,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_lcms_profile_open_from_data:  * @data:   pointer to memory containing an ICC profile  * @length: lenght of the profile in memory, in bytes  * @error:  return location for #GError  *  * This function opens an ICC color profile from memory. On error,  * %NULL is returned and @error is set.  *  * Return value: the #GimpColorProfile, or %NULL.  *  * Since: GIMP 2.10  **/
+end_comment
+
 begin_function
 name|GimpColorProfile
 DECL|function|gimp_lcms_profile_open_from_data (const guint8 * data,gsize length,GError ** error)
@@ -477,6 +489,10 @@ name|profile
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_lcms_profile_dave_to_data:  * @profile: a #GimpColorProfile  * @length:  return location for the number of bytes written  * @error:   return location for #GError  *  * This function saves @profile to an ICC color profile in newly  * allocated memory. On error, %NULL is returned and @error is set.  *  * Return value: a pointer to the written IIC profile in memory, or  *               %NULL. Free with g_free().  *  * Since: GIMP 2.10  **/
+end_comment
 
 begin_function
 name|guint8
@@ -602,6 +618,10 @@ name|NULL
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_lcms_profile_close:  * @profile: a #GimpColorProfile  *  * This function closes a #GimpColorProfile and frees its memory.  *  * Since: GIMP 2.10  **/
+end_comment
 
 begin_function
 name|void
@@ -743,6 +763,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_lcms_profile_get_description:  * @profile: a #GimpColorProfile  *  * Return value: a newly allocated string containing @profile's  *               description. Free with g_free().  *  * Since: GIMP 2.10  **/
+end_comment
+
 begin_function
 name|gchar
 modifier|*
@@ -763,6 +787,10 @@ argument_list|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_lcms_profile_get_manufacturer:  * @profile: a #GimpColorProfile  *  * Return value: a newly allocated string containing @profile's  *               manufacturer. Free with g_free().  *  * Since: GIMP 2.10  **/
+end_comment
 
 begin_function
 name|gchar
@@ -785,6 +813,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_lcms_profile_get_model:  * @profile: a #GimpColorProfile  *  * Return value: a newly allocated string containing @profile's  *               model. Free with g_free().  *  * Since: GIMP 2.10  **/
+end_comment
+
 begin_function
 name|gchar
 modifier|*
@@ -806,6 +838,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_lcms_profile_get_copyright:  * @profile: a #GimpColorProfile  *  * Return value: a newly allocated string containing @profile's  *               copyright. Free with g_free().  *  * Since: GIMP 2.10  **/
+end_comment
+
 begin_function
 name|gchar
 modifier|*
@@ -826,6 +862,10 @@ argument_list|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_lcms_profile_get_label:  * @profile: a #GimpColorProfile  *  * This function returns a newly allocated string containing  * @profile's "title", a string that can be used to label the profile  * in a user interface.  *  * Return value: the @profile's label. Free with g_free().  *  * Since: GIMP 2.10  **/
+end_comment
 
 begin_function
 name|gchar
@@ -931,6 +971,10 @@ name|label
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_lcms_profile_get_summary:  * @profile: a #GimpColorProfile  *  * This function return a newly allocated string containing a  * multi-line summary of @profile's description, model, manufacturer  * and copyright, to be used as detailled information about the  * prpfile in a user interface.  *  * Return value: the @profile's summary. Free with g_free().  *  * Since: GIMP 2.10  **/
+end_comment
 
 begin_function
 name|gchar
@@ -1107,6 +1151,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_lcms_profile_is_equal:  * @profile1: a #GimpColorProfile  * @profile2: a #GimpColorProfile  *  * Compares two profiles.  *  * Return value: %TRUE if the profiles are equal, %FALSE otherwise.  *  * Since: GIMP 2.10  **/
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_lcms_profile_is_equal (GimpColorProfile profile1,GimpColorProfile profile2)
@@ -1199,6 +1247,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_lcms_profile_is_rgb:  * @profile: a #GimpColorProfile  *  * Return value: %TRUE if the profile's color space is RGB, %FALSE  * otherwise.  *  * Since: GIMP 2.10  **/
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_lcms_profile_is_rgb (GimpColorProfile profile)
@@ -1229,6 +1281,10 @@ operator|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_lcms_profile_is_cmyk:  * @profile: a #GimpColorProfile  *  * Return value: %TRUE if the profile's color space is CMYK, %FALSE  * otherwise.  *  * Since: GIMP 2.10  **/
+end_comment
 
 begin_function
 name|gboolean
