@@ -219,6 +219,24 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|const
+name|Babl
+modifier|*
+name|gimp_lcms_get_format
+parameter_list|(
+specifier|const
+name|Babl
+modifier|*
+name|format
+parameter_list|,
+name|guint32
+modifier|*
+name|lcms_format
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
