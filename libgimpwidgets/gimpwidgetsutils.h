@@ -150,10 +150,12 @@ parameter_list|,
 specifier|const
 name|Babl
 modifier|*
+modifier|*
 name|src_format
 parameter_list|,
 specifier|const
 name|Babl
+modifier|*
 modifier|*
 name|dest_format
 parameter_list|)

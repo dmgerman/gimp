@@ -1669,7 +1669,7 @@ end_function
 
 begin_function
 name|GimpColorTransform
-DECL|function|gimp_widget_get_color_transform (GtkWidget * widget,GimpColorManaged * managed,GimpColorConfig * config,const Babl * src_format,const Babl * dest_format)
+DECL|function|gimp_widget_get_color_transform (GtkWidget * widget,GimpColorManaged * managed,GimpColorConfig * config,const Babl ** src_format,const Babl ** dest_format)
 name|gimp_widget_get_color_transform
 parameter_list|(
 name|GtkWidget
@@ -1687,10 +1687,12 @@ parameter_list|,
 specifier|const
 name|Babl
 modifier|*
+modifier|*
 name|src_format
 parameter_list|,
 specifier|const
 name|Babl
+modifier|*
 modifier|*
 name|dest_format
 parameter_list|)
@@ -1832,20 +1834,24 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+operator|*
 name|src_format
 operator|=
 name|gimp_lcms_get_format
 argument_list|(
+operator|*
 name|src_format
 argument_list|,
 operator|&
 name|lcms_src_format
 argument_list|)
 expr_stmt|;
+operator|*
 name|dest_format
 operator|=
 name|gimp_lcms_get_format
 argument_list|(
+operator|*
 name|dest_format
 argument_list|,
 operator|&

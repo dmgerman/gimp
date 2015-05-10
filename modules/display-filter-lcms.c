@@ -224,6 +224,18 @@ DECL|member|transform
 name|GimpColorTransform
 name|transform
 decl_stmt|;
+DECL|member|src_format
+specifier|const
+name|Babl
+modifier|*
+name|src_format
+decl_stmt|;
+DECL|member|dest_format
+specifier|const
+name|Babl
+modifier|*
+name|dest_format
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -1060,10 +1072,9 @@ name|area
 argument_list|,
 literal|0
 argument_list|,
-name|babl_format
-argument_list|(
-literal|"R'G'B'A float"
-argument_list|)
+name|lcms
+operator|->
+name|src_format
 argument_list|,
 name|GEGL_ACCESS_READWRITE
 argument_list|,
@@ -1205,6 +1216,24 @@ argument_list|)
 expr_stmt|;
 name|lcms
 operator|->
+name|src_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A float"
+argument_list|)
+expr_stmt|;
+name|lcms
+operator|->
+name|dest_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A float"
+argument_list|)
+expr_stmt|;
+name|lcms
+operator|->
 name|transform
 operator|=
 name|gimp_widget_get_color_transform
@@ -1215,15 +1244,15 @@ name|managed
 argument_list|,
 name|config
 argument_list|,
-name|babl_format
-argument_list|(
-literal|"R'G'B'A float"
-argument_list|)
+operator|&
+name|lcms
+operator|->
+name|src_format
 argument_list|,
-name|babl_format
-argument_list|(
-literal|"R'G'B'A float"
-argument_list|)
+operator|&
+name|lcms
+operator|->
+name|dest_format
 argument_list|)
 expr_stmt|;
 block|}
