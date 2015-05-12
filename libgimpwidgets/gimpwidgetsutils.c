@@ -1639,7 +1639,15 @@ parameter_list|)
 block|{
 name|GimpColorProfile
 name|profile
+init|=
+name|NULL
 decl_stmt|;
+if|if
+condition|(
+name|config
+operator|->
+name|display_profile_from_gdk
+condition|)
 name|profile
 operator|=
 name|gimp_widget_get_color_profile
