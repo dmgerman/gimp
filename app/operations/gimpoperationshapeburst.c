@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a042af50103
+DECL|enum|__anon29c1dc360103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -922,8 +922,16 @@ argument_list|(
 name|input
 argument_list|,
 name|x1
+operator|+
+name|roi
+operator|->
+name|x
 argument_list|,
 name|y1
+operator|+
+name|roi
+operator|->
+name|y
 argument_list|,
 name|NULL
 argument_list|,
