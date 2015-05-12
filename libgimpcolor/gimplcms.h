@@ -220,6 +220,15 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpColorProfile
+name|gimp_lcms_create_linear_rgb_profile
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 specifier|const
 name|Babl
 modifier|*
