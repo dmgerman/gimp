@@ -142,6 +142,19 @@ modifier|*
 name|managed
 parameter_list|)
 function_decl|;
+comment|/*  virtual functions  */
+DECL|member|get_color_profile
+name|GimpColorProfile
+function_decl|(
+modifier|*
+name|get_color_profile
+function_decl|)
+parameter_list|(
+name|GimpColorManaged
+modifier|*
+name|managed
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
@@ -169,6 +182,17 @@ parameter_list|,
 name|gsize
 modifier|*
 name|len
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpColorProfile
+name|gimp_color_managed_get_color_profile
+parameter_list|(
+name|GimpColorManaged
+modifier|*
+name|managed
 parameter_list|)
 function_decl|;
 end_function_decl
