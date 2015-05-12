@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275644230103
+DECL|enum|__anon2be27ba80103
 block|{
 comment|/* POINT_NONE evaluates to FALSE */
 DECL|enumerator|POINT_NONE
@@ -240,22 +240,10 @@ name|GeglNode
 modifier|*
 name|dist_node
 decl_stmt|;
-DECL|member|translate_node
-name|GeglNode
-modifier|*
-name|translate_node
-decl_stmt|;
 DECL|member|dist_buffer
 name|GeglBuffer
 modifier|*
 name|dist_buffer
-decl_stmt|;
-DECL|member|dist_buffer_off_x
-DECL|member|dist_buffer_off_y
-name|gint
-name|dist_buffer_off_x
-decl_stmt|,
-name|dist_buffer_off_y
 decl_stmt|;
 DECL|member|image_map
 name|GimpImageMap
