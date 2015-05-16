@@ -199,7 +199,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|view_rotate_cmd_callback
+name|view_rotate_relative_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

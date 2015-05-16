@@ -1719,14 +1719,42 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|view_rotate_actions
+DECL|variable|view_rotate_relative_actions
 specifier|static
 specifier|const
 name|GimpEnumActionEntry
-name|view_rotate_actions
+name|view_rotate_relative_actions
 index|[]
 init|=
 block|{
+block|{
+literal|"view-rotate-15"
+block|,
+name|GIMP_STOCK_ROTATE_90
+block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
+literal|"Rotate 15Â° _clockwise"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
+literal|"Rotate 15 degrees to the right"
+argument_list|)
+block|,
+name|GIMP_ACTION_SELECT_NEXT
+block|,
+name|FALSE
+block|,
+name|GIMP_HELP_VIEW_ROTATE_15
+block|}
+block|,
 block|{
 literal|"view-rotate-90"
 block|,
@@ -1748,7 +1776,7 @@ argument_list|,
 literal|"Rotate 90 degrees to the right"
 argument_list|)
 block|,
-name|GIMP_ROTATE_90
+name|GIMP_ACTION_SELECT_SKIP_NEXT
 block|,
 name|FALSE
 block|,
@@ -1776,7 +1804,7 @@ argument_list|,
 literal|"Turn upside-down"
 argument_list|)
 block|,
-name|GIMP_ROTATE_180
+name|GIMP_ACTION_SELECT_LAST
 block|,
 name|FALSE
 block|,
@@ -1804,11 +1832,39 @@ argument_list|,
 literal|"Rotate 90 degrees to the left"
 argument_list|)
 block|,
-name|GIMP_ROTATE_270
+name|GIMP_ACTION_SELECT_SKIP_PREVIOUS
 block|,
 name|FALSE
 block|,
 name|GIMP_HELP_VIEW_ROTATE_270
+block|}
+block|,
+block|{
+literal|"view-rotate-345"
+block|,
+name|GIMP_STOCK_ROTATE_270
+block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
+literal|"Rotate 15Â° counter-clock_wise"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
+literal|"Rotate 15 degrees to the left"
+argument_list|)
+block|,
+name|GIMP_ACTION_SELECT_PREVIOUS
+block|,
+name|FALSE
+block|,
+name|GIMP_HELP_VIEW_ROTATE_345
 block|}
 block|}
 decl_stmt|;
@@ -2332,16 +2388,16 @@ name|group
 argument_list|,
 literal|"view-action"
 argument_list|,
-name|view_rotate_actions
+name|view_rotate_relative_actions
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
-name|view_rotate_actions
+name|view_rotate_relative_actions
 argument_list|)
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|view_rotate_cmd_callback
+name|view_rotate_relative_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2942,6 +2998,20 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"view-rotate-reset"
+argument_list|,
+name|image
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"view-rotate-15"
+argument_list|,
+name|image
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"view-rotate-345"
 argument_list|,
 name|image
 argument_list|)

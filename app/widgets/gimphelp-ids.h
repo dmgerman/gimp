@@ -518,6 +518,14 @@ value|"gimp-view-rotate-reset"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_VIEW_ROTATE_15
+define|#
+directive|define
+name|GIMP_HELP_VIEW_ROTATE_15
+value|"gimp-view-rotate-15"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_VIEW_ROTATE_90
 define|#
 directive|define
@@ -539,6 +547,14 @@ define|#
 directive|define
 name|GIMP_HELP_VIEW_ROTATE_270
 value|"gimp-view-rotate-270"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_VIEW_ROTATE_345
+define|#
+directive|define
+name|GIMP_HELP_VIEW_ROTATE_345
+value|"gimp-view-rotate-345"
 end_define
 
 begin_define
