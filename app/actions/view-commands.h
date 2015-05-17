@@ -185,11 +185,14 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|view_rotate_reset_cmd_callback
+name|view_rotate_absolute_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
 name|action
+parameter_list|,
+name|gint
+name|value
 parameter_list|,
 name|gpointer
 name|data
