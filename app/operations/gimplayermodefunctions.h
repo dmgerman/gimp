@@ -22,6 +22,9 @@ name|get_layer_mode_function
 parameter_list|(
 name|GimpLayerModeEffects
 name|paint_mode
+parameter_list|,
+name|gboolean
+name|linear_mode
 parameter_list|)
 function_decl|;
 end_function_decl

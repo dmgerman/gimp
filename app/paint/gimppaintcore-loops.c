@@ -1591,6 +1591,8 @@ init|=
 name|get_layer_mode_function
 argument_list|(
 name|paint_mode
+argument_list|,
+name|linear_mode
 argument_list|)
 decl_stmt|;
 if|if

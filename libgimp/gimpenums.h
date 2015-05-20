@@ -39,7 +39,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290b972d0103
+DECL|enum|__anon27ff62340103
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -73,7 +73,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290b972d0203
+DECL|enum|__anon27ff62340203
 block|{
 DECL|enumerator|GIMP_NO_DITHER
 name|GIMP_NO_DITHER
@@ -113,7 +113,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290b972d0303
+DECL|enum|__anon27ff62340303
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -156,7 +156,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290b972d0403
+DECL|enum|__anon27ff62340403
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE
@@ -229,6 +229,18 @@ name|GIMP_COLOR_ERASE_MODE
 block|,
 DECL|enumerator|GIMP_NEW_OVERLAY_MODE
 name|GIMP_NEW_OVERLAY_MODE
+block|,
+DECL|enumerator|GIMP_LCH_HUE_MODE
+name|GIMP_LCH_HUE_MODE
+block|,
+DECL|enumerator|GIMP_LCH_CHROMA_MODE
+name|GIMP_LCH_CHROMA_MODE
+block|,
+DECL|enumerator|GIMP_LCH_COLOR_MODE
+name|GIMP_LCH_COLOR_MODE
+block|,
+DECL|enumerator|GIMP_LCH_LIGHTNESS_MODE
+name|GIMP_LCH_LIGHTNESS_MODE
 DECL|typedef|GimpLayerModeEffects
 block|}
 name|GimpLayerModeEffects

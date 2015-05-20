@@ -317,6 +317,14 @@ block|,
 name|GIMP_COLOR_MODE
 block|,
 name|GIMP_VALUE_MODE
+block|,
+name|GIMP_LCH_HUE_MODE
+block|,
+name|GIMP_LCH_CHROMA_MODE
+block|,
+name|GIMP_LCH_COLOR_MODE
+block|,
+name|GIMP_LCH_LIGHTNESS_MODE
 block|}
 decl_stmt|;
 end_decl_stmt

@@ -1412,6 +1412,38 @@ literal|"new-overlay-mode"
 block|}
 block|,
 block|{
+name|GIMP_LCH_HUE_MODE
+block|,
+literal|"GIMP_LCH_HUE_MODE"
+block|,
+literal|"lch-hue-mode"
+block|}
+block|,
+block|{
+name|GIMP_LCH_CHROMA_MODE
+block|,
+literal|"GIMP_LCH_CHROMA_MODE"
+block|,
+literal|"lch-chroma-mode"
+block|}
+block|,
+block|{
+name|GIMP_LCH_COLOR_MODE
+block|,
+literal|"GIMP_LCH_COLOR_MODE"
+block|,
+literal|"lch-color-mode"
+block|}
+block|,
+block|{
+name|GIMP_LCH_LIGHTNESS_MODE
+block|,
+literal|"GIMP_LCH_LIGHTNESS_MODE"
+block|,
+literal|"lch-lightness-mode"
+block|}
+block|,
+block|{
 name|GIMP_ERASE_MODE
 block|,
 literal|"GIMP_ERASE_MODE"
@@ -1601,7 +1633,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode-effects"
 argument_list|,
-literal|"Hue"
+literal|"Hue (HSV)"
 argument_list|)
 block|,
 name|NULL
@@ -1614,7 +1646,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode-effects"
 argument_list|,
-literal|"Saturation"
+literal|"Saturation (HSV)"
 argument_list|)
 block|,
 name|NULL
@@ -1627,7 +1659,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode-effects"
 argument_list|,
-literal|"Color"
+literal|"Color (HSV)"
 argument_list|)
 block|,
 name|NULL
@@ -1640,7 +1672,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode-effects"
 argument_list|,
-literal|"Value"
+literal|"Value (HSV)"
 argument_list|)
 block|,
 name|NULL
@@ -1758,6 +1790,58 @@ argument_list|(
 literal|"layer-mode-effects"
 argument_list|,
 literal|"Overlay"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LCH_HUE_MODE
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode-effects"
+argument_list|,
+literal|"Hue (LCH)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LCH_CHROMA_MODE
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode-effects"
+argument_list|,
+literal|"Chroma (LCH)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LCH_COLOR_MODE
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode-effects"
+argument_list|,
+literal|"Color (LCH)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LCH_LIGHTNESS_MODE
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode-effects"
+argument_list|,
+literal|"Lightness (LCH)"
 argument_list|)
 block|,
 name|NULL
