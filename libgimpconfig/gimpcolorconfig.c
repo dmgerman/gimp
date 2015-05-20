@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpconfig-error.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpconfig-iface.h"
 end_include
 
@@ -195,7 +201,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9269640103
+DECL|enum|__anon2ae699250103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1385,13 +1391,13 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_CONFIG_ERROR
 argument_list|,
 literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Color profile '%s' is not for RGB color space"
+literal|"Color profile '%s' is not for RGB color space."
 argument_list|)
 argument_list|,
 name|gimp_file_get_utf8_name
@@ -1508,13 +1514,13 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_CONFIG_ERROR
 argument_list|,
 literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Color profile '%s' is not for RGB color space"
+literal|"Color profile '%s' is not for CMYK color space."
 argument_list|)
 argument_list|,
 name|gimp_file_get_utf8_name
@@ -1776,7 +1782,7 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_CONFIG_ERROR
 argument_list|,
 literal|0
 argument_list|,
@@ -1910,7 +1916,7 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_CONFIG_ERROR
 argument_list|,
 literal|0
 argument_list|,
