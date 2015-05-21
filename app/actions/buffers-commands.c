@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"actions-types.h"
 end_include
 
@@ -79,12 +85,6 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimpcontainerview-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpwidgets-utils.h"
 end_include
 
 begin_include
