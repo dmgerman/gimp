@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a20d0140103
+DECL|enum|__anon27b98b4f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -452,6 +452,8 @@ operator|-
 name|y1
 argument_list|)
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|mask_undo
 operator|->
 name|buffer
@@ -837,6 +839,8 @@ operator|-
 name|y1
 argument_list|)
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|new_buffer
 argument_list|,
 name|GEGL_RECTANGLE
@@ -998,6 +1002,8 @@ operator|->
 name|buffer
 argument_list|,
 name|NULL
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|gimp_drawable_get_buffer
 argument_list|(

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2069570103
+DECL|enum|__anon2bc09cf00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -755,6 +755,8 @@ name|buffer
 argument_list|,
 name|NULL
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|dest_buffer
 argument_list|,
 name|NULL
@@ -804,6 +806,8 @@ argument_list|(
 name|buffer
 argument_list|,
 name|NULL
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|dest_buffer
 argument_list|,

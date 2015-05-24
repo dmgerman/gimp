@@ -615,6 +615,8 @@ argument_list|,
 name|paint_area_height
 argument_list|)
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|paint_buffer
 argument_list|,
 name|GEGL_RECTANGLE

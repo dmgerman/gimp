@@ -1568,14 +1568,6 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME is this still needed?
-endif|#
-directive|endif
 if|#
 directive|if
 literal|0
@@ -2626,6 +2618,8 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|gimp_drawable_get_buffer
 argument_list|(
 name|GIMP_DRAWABLE
@@ -3149,6 +3143,8 @@ name|y2
 operator|-
 name|y1
 argument_list|)
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|dest_buffer
 argument_list|,

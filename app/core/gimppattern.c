@@ -657,6 +657,8 @@ argument_list|,
 name|copy_height
 argument_list|)
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|dest_buffer
 argument_list|,
 name|GEGL_RECTANGLE

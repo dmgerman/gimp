@@ -571,6 +571,8 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|buffer
 argument_list|,
 name|NULL

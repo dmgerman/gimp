@@ -481,6 +481,8 @@ argument_list|,
 name|height
 argument_list|)
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|new_buffer
 argument_list|,
 name|GEGL_RECTANGLE
@@ -694,6 +696,8 @@ name|offset_y
 argument_list|)
 argument_list|)
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|new_buffer
 argument_list|,
 name|GEGL_RECTANGLE
@@ -839,6 +843,8 @@ argument_list|,
 operator|&
 name|src_rect
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|new_buffer
 argument_list|,
 operator|&
@@ -975,6 +981,8 @@ name|src_buffer
 argument_list|,
 operator|&
 name|src_rect
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|new_buffer
 argument_list|,

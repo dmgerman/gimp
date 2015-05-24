@@ -617,6 +617,8 @@ name|valid_rects
 operator|+
 name|i
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|dest_buffer
 argument_list|,
 name|valid_rects

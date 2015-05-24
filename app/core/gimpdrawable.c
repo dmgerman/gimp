@@ -207,7 +207,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c94ef460103
+DECL|enum|__anon275527af0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -223,7 +223,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c94ef460203
+DECL|enum|__anon275527af0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2629,6 +2629,8 @@ argument_list|,
 name|copy_height
 argument_list|)
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|new_buffer
 argument_list|,
 name|GEGL_RECTANGLE
@@ -3420,6 +3422,8 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|dest_buffer
 argument_list|,
 name|NULL
@@ -3722,6 +3726,8 @@ argument_list|,
 name|height
 argument_list|)
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|buffer
 argument_list|,
 name|GEGL_RECTANGLE
@@ -3840,6 +3846,8 @@ argument_list|,
 name|height
 argument_list|)
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|buffer
 argument_list|,
 name|GEGL_RECTANGLE
@@ -3868,6 +3876,8 @@ name|width
 argument_list|,
 name|height
 argument_list|)
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|gimp_drawable_get_buffer
 argument_list|(

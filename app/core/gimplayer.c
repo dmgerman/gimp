@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa285ac0103
+DECL|enum|__anon2ba619540103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -192,7 +192,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa285ac0203
+DECL|enum|__anon2ba619540203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4429,6 +4429,8 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|dest_buffer
 argument_list|,
 name|NULL
@@ -5357,6 +5359,8 @@ argument_list|(
 name|buffer
 argument_list|,
 name|NULL
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|dest
 argument_list|,
@@ -6288,6 +6292,8 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|dest_buffer
 argument_list|,
 name|NULL
@@ -6544,6 +6550,8 @@ argument_list|,
 name|copy_height
 argument_list|)
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|dest
 argument_list|,
 name|GEGL_RECTANGLE
@@ -6650,6 +6658,8 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|src_buffer
 argument_list|,
 name|NULL
@@ -6728,6 +6738,8 @@ argument_list|(
 name|src_buffer
 argument_list|,
 name|NULL
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|dest_buffer
 argument_list|,
@@ -7912,6 +7924,8 @@ name|drawable
 argument_list|)
 argument_list|,
 name|NULL
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|new_buffer
 argument_list|,

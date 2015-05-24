@@ -499,6 +499,8 @@ operator|.
 name|height
 argument_list|)
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|undo_buffer
 argument_list|,
 name|GEGL_RECTANGLE
@@ -615,6 +617,8 @@ name|rects
 index|[
 name|i
 index|]
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|apply_buffer
 argument_list|,
@@ -795,6 +799,8 @@ name|rect
 operator|.
 name|height
 argument_list|)
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|gimp_drawable_get_buffer
 argument_list|(

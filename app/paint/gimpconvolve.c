@@ -691,6 +691,8 @@ name|paint_buffer
 argument_list|)
 argument_list|)
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|convolve_buffer
 argument_list|,
 name|GEGL_RECTANGLE

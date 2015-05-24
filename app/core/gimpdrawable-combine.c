@@ -440,6 +440,8 @@ argument_list|,
 name|height
 argument_list|)
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|undo
 operator|->
 name|applied_buffer
@@ -921,6 +923,8 @@ name|width
 argument_list|,
 name|height
 argument_list|)
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|dest_buffer
 argument_list|,

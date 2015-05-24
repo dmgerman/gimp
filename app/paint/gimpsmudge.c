@@ -821,6 +821,8 @@ name|paint_buffer
 argument_list|)
 argument_list|)
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|smudge
 operator|->
 name|accum_buffer
@@ -1153,6 +1155,8 @@ name|paint_buffer_width
 argument_list|,
 name|paint_buffer_height
 argument_list|)
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|paint_buffer
 argument_list|,

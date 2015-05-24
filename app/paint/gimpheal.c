@@ -949,7 +949,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-DECL|union|__anon2afc7f59010a
+DECL|union|__anon2b29ef36010a
 DECL|member|v
 DECL|member|f
 union|union
@@ -2286,6 +2286,8 @@ name|src_buffer
 argument_list|,
 name|src_rect
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|src_copy
 argument_list|,
 name|GEGL_RECTANGLE
@@ -2327,6 +2329,8 @@ argument_list|(
 name|paint_buffer
 argument_list|)
 argument_list|)
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|paint_buffer
 argument_list|,

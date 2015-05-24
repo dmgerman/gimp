@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aca1f6a0103
+DECL|enum|__anon2bd6dbd90103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -3012,6 +3012,8 @@ argument_list|,
 name|height
 argument_list|)
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|tmp_buffer
 argument_list|,
 name|GEGL_RECTANGLE
@@ -3058,6 +3060,8 @@ argument_list|(
 name|tmp_buffer
 argument_list|,
 name|NULL
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|gimp_drawable_get_buffer
 argument_list|(
@@ -4057,6 +4061,8 @@ name|drawable
 argument_list|)
 argument_list|,
 name|NULL
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|dest_buffer
 argument_list|,
@@ -7189,6 +7195,8 @@ name|buffer
 argument_list|,
 name|NULL
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|dest
 argument_list|,
 name|NULL
@@ -7343,6 +7351,8 @@ name|drawable
 argument_list|)
 argument_list|,
 name|NULL
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|dest_buffer
 argument_list|,
@@ -7512,6 +7522,8 @@ argument_list|(
 name|src_buffer
 argument_list|,
 name|NULL
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|dest_buffer
 argument_list|,

@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a042e830108
+DECL|struct|__anon27f128d20108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -215,7 +215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a042e830208
+DECL|struct|__anon27f128d20208
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -2405,6 +2405,8 @@ argument_list|,
 name|height
 argument_list|)
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|temp_buffer
 argument_list|,
 name|GEGL_RECTANGLE
@@ -2476,6 +2478,8 @@ name|region
 operator|->
 name|height
 argument_list|)
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|temp_buffer
 argument_list|,

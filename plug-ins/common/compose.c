@@ -100,10 +100,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278ed1c30108
+DECL|struct|__anon2b76de970108
 block|{
 union|union
-DECL|union|__anon278ed1c3020a
+DECL|union|__anon2b76de97020a
 block|{
 DECL|member|ID
 name|gint32
@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278ed1c30308
+DECL|struct|__anon2b76de970308
 block|{
 DECL|member|babl_name
 specifier|const
@@ -187,7 +187,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278ed1c30408
+DECL|struct|__anon2b76de970408
 block|{
 DECL|member|babl_model
 specifier|const
@@ -964,7 +964,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278ed1c30508
+DECL|struct|__anon2b76de970508
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1004,7 +1004,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278ed1c30608
+DECL|struct|__anon2b76de970608
 block|{
 DECL|member|width
 DECL|member|height
@@ -3116,6 +3116,8 @@ index|]
 argument_list|,
 name|NULL
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|temp
 index|[
 name|i
@@ -3297,6 +3299,8 @@ argument_list|(
 name|dst_temp
 argument_list|,
 name|NULL
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|buffer_dst
 argument_list|,

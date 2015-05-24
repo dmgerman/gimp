@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27adb86f0103
+DECL|enum|__anon2a0816bc0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -4003,6 +4003,8 @@ argument_list|,
 name|height
 argument_list|)
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|dest_buffer
 argument_list|,
 name|GEGL_RECTANGLE
@@ -4130,6 +4132,8 @@ name|width
 argument_list|,
 name|height
 argument_list|)
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|dest_buffer
 argument_list|,

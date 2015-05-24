@@ -1037,6 +1037,8 @@ argument_list|,
 literal|1
 argument_list|)
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|shadow_buffer
 argument_list|,
 name|GEGL_RECTANGLE
@@ -1103,6 +1105,8 @@ literal|1
 argument_list|,
 name|height
 argument_list|)
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|shadow_buffer
 argument_list|,

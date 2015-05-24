@@ -5333,6 +5333,8 @@ argument_list|,
 name|height
 argument_list|)
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|undo
 operator|->
 name|saved_trimap
@@ -5445,6 +5447,8 @@ argument_list|,
 name|height
 argument_list|)
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|undo
 operator|->
 name|saved_trimap
@@ -5475,6 +5479,8 @@ name|width
 argument_list|,
 name|height
 argument_list|)
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|trimap
 argument_list|,

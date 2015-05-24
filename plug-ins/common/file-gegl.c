@@ -1638,6 +1638,8 @@ name|src_buf
 argument_list|,
 name|NULL
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|dest_buf
 argument_list|,
 name|NULL

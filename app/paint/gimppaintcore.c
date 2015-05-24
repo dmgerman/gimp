@@ -163,7 +163,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be2bdb00103
+DECL|enum|__anon29c5b4470103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2183,6 +2183,8 @@ argument_list|,
 name|height
 argument_list|)
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|buffer
 argument_list|,
 name|GEGL_RECTANGLE
@@ -2423,6 +2425,8 @@ name|width
 argument_list|,
 name|height
 argument_list|)
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|gimp_drawable_get_buffer
 argument_list|(
