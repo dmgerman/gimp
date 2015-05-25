@@ -476,6 +476,8 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
+name|GEGL_ABYSS_NONE
+argument_list|,
 name|buffer
 argument_list|,
 name|NULL
@@ -979,6 +981,8 @@ operator|*
 operator|)
 operator|&
 name|rect
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|gimp_drawable_get_buffer
 argument_list|(
