@@ -421,41 +421,6 @@ modifier|*
 name|statusbar
 decl_stmt|;
 comment|/*  statusbar                          */
-DECL|member|xfer
-name|GimpDisplayXfer
-modifier|*
-name|xfer
-decl_stmt|;
-comment|/*  manages image buffer transfers     */
-DECL|member|mask_surface
-name|cairo_surface_t
-modifier|*
-name|mask_surface
-decl_stmt|;
-comment|/*  buffer for rendering the mask      */
-DECL|member|checkerboard
-name|cairo_pattern_t
-modifier|*
-name|checkerboard
-decl_stmt|;
-comment|/*  checkerboard pattern               */
-DECL|member|filter_buffer
-name|GeglBuffer
-modifier|*
-name|filter_buffer
-decl_stmt|;
-comment|/*  buffer for display filters         */
-DECL|member|filter_data
-name|guchar
-modifier|*
-name|filter_data
-decl_stmt|;
-comment|/*  filter_buffer's pixels             */
-DECL|member|filter_stride
-name|gint
-name|filter_stride
-decl_stmt|;
-comment|/*  filter_buffer's stride             */
 DECL|member|canvas_item
 name|GimpCanvasItem
 modifier|*
@@ -624,6 +589,39 @@ modifier|*
 name|grid_dialog
 decl_stmt|;
 comment|/*  grid configuration dialog          */
+DECL|member|profile_transform
+name|GimpColorTransform
+name|profile_transform
+decl_stmt|;
+DECL|member|profile_src_format
+specifier|const
+name|Babl
+modifier|*
+name|profile_src_format
+decl_stmt|;
+DECL|member|profile_dest_format
+specifier|const
+name|Babl
+modifier|*
+name|profile_dest_format
+decl_stmt|;
+DECL|member|profile_buffer
+name|GeglBuffer
+modifier|*
+name|profile_buffer
+decl_stmt|;
+comment|/*  buffer for profile transform       */
+DECL|member|profile_data
+name|guchar
+modifier|*
+name|profile_data
+decl_stmt|;
+comment|/*  profile_buffer's pixels            */
+DECL|member|profile_stride
+name|gint
+name|profile_stride
+decl_stmt|;
+comment|/*  profile_buffer's stride            */
 DECL|member|filter_stack
 name|GimpColorDisplayStack
 modifier|*
@@ -640,6 +638,41 @@ modifier|*
 name|filters_dialog
 decl_stmt|;
 comment|/* color display filter dialog       */
+DECL|member|filter_buffer
+name|GeglBuffer
+modifier|*
+name|filter_buffer
+decl_stmt|;
+comment|/*  buffer for display filters         */
+DECL|member|filter_data
+name|guchar
+modifier|*
+name|filter_data
+decl_stmt|;
+comment|/*  filter_buffer's pixels             */
+DECL|member|filter_stride
+name|gint
+name|filter_stride
+decl_stmt|;
+comment|/*  filter_buffer's stride             */
+DECL|member|xfer
+name|GimpDisplayXfer
+modifier|*
+name|xfer
+decl_stmt|;
+comment|/*  manages image buffer transfers     */
+DECL|member|mask_surface
+name|cairo_surface_t
+modifier|*
+name|mask_surface
+decl_stmt|;
+comment|/*  buffer for rendering the mask      */
+DECL|member|checkerboard
+name|cairo_pattern_t
+modifier|*
+name|checkerboard
+decl_stmt|;
+comment|/*  checkerboard pattern               */
 DECL|member|paused_count
 name|gint
 name|paused_count
