@@ -63,6 +63,12 @@ directive|include
 file|"gimpdisplayshell-filter.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpdisplayshell-profile.h"
+end_include
+
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -338,6 +344,11 @@ name|shell
 init|=
 name|data
 decl_stmt|;
+name|gimp_display_shell_profile_update
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_expose_full
 argument_list|(
 name|shell
