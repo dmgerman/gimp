@@ -435,8 +435,8 @@ end_function
 
 begin_function
 name|GimpColorProfile
-DECL|function|gimp_image_get_profile (GimpImage * image,GError ** error)
-name|gimp_image_get_profile
+DECL|function|gimp_image_get_color_profile (GimpImage * image,GError ** error)
+name|gimp_image_get_color_profile
 parameter_list|(
 name|GimpImage
 modifier|*

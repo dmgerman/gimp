@@ -76,7 +76,7 @@ end_function_decl
 
 begin_function_decl
 name|GimpColorProfile
-name|gimp_image_get_profile
+name|gimp_image_get_color_profile
 parameter_list|(
 name|GimpImage
 modifier|*

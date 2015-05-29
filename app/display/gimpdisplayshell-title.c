@@ -1949,7 +1949,7 @@ name|GimpColorProfile
 modifier|*
 name|profile
 init|=
-name|gimp_image_get_profile
+name|gimp_image_get_color_profile
 argument_list|(
 name|image
 argument_list|,
