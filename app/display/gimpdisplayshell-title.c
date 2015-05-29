@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<lcms2.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gegl.h>
 end_include
 
@@ -91,12 +85,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpimage-profile.h"
 end_include
 
 begin_include
@@ -1945,26 +1933,25 @@ literal|'o'
 case|:
 comment|/* image's color profile name */
 block|{
+name|GimpColorManaged
+modifier|*
+name|managed
+init|=
+name|GIMP_COLOR_MANAGED
+argument_list|(
+name|image
+argument_list|)
+decl_stmt|;
 name|GimpColorProfile
 modifier|*
 name|profile
-init|=
-name|gimp_image_get_color_profile
-argument_list|(
-name|image
-argument_list|,
-name|NULL
-argument_list|)
 decl_stmt|;
-if|if
-condition|(
-operator|!
-name|profile
-condition|)
 name|profile
 operator|=
-name|gimp_lcms_create_srgb_profile
-argument_list|()
+name|gimp_color_managed_get_color_profile
+argument_list|(
+name|managed
+argument_list|)
 expr_stmt|;
 name|i
 operator|+=
@@ -1984,7 +1971,7 @@ name|profile
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|cmsCloseProfile
+name|gimp_lcms_profile_close
 argument_list|(
 name|profile
 argument_list|)
