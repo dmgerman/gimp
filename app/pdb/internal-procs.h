@@ -279,17 +279,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|register_guides_procs
-parameter_list|(
-name|GimpPDB
-modifier|*
-name|pdb
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|register_help_procs
 parameter_list|(
 name|GimpPDB
@@ -324,6 +313,17 @@ end_function_decl
 begin_function_decl
 name|void
 name|register_image_grid_procs
+parameter_list|(
+name|GimpPDB
+modifier|*
+name|pdb
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|register_image_guides_procs
 parameter_list|(
 name|GimpPDB
 modifier|*

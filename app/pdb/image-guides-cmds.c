@@ -1047,8 +1047,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|register_guides_procs (GimpPDB * pdb)
-name|register_guides_procs
+DECL|function|register_image_guides_procs (GimpPDB * pdb)
+name|register_image_guides_procs
 parameter_list|(
 name|GimpPDB
 modifier|*

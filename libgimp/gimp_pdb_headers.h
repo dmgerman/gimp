@@ -182,12 +182,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpguides_pdb.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimphelp_pdb.h>
 end_include
 
@@ -207,6 +201,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpimagegrid_pdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpimageguides_pdb.h>
 end_include
 
 begin_include
