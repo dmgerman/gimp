@@ -218,6 +218,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpimagetransform_pdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpimageundo_pdb.h>
 end_include
 

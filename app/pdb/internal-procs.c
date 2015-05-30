@@ -199,6 +199,11 @@ argument_list|(
 name|pdb
 argument_list|)
 expr_stmt|;
+name|register_image_transform_procs
+argument_list|(
+name|pdb
+argument_list|)
+expr_stmt|;
 name|register_image_undo_procs
 argument_list|(
 name|pdb
