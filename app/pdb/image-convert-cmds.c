@@ -1046,8 +1046,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|register_convert_procs (GimpPDB * pdb)
-name|register_convert_procs
+DECL|function|register_image_convert_procs (GimpPDB * pdb)
+name|register_image_convert_procs
 parameter_list|(
 name|GimpPDB
 modifier|*

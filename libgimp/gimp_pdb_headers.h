@@ -98,12 +98,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpconvert_pdb.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimpdisplay_pdb.h>
 end_include
 
@@ -207,6 +201,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpimage_pdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpimageconvert_pdb.h>
 end_include
 
 begin_include

@@ -94,11 +94,6 @@ argument_list|(
 name|pdb
 argument_list|)
 expr_stmt|;
-name|register_convert_procs
-argument_list|(
-name|pdb
-argument_list|)
-expr_stmt|;
 name|register_display_procs
 argument_list|(
 name|pdb
@@ -190,6 +185,11 @@ name|pdb
 argument_list|)
 expr_stmt|;
 name|register_image_procs
+argument_list|(
+name|pdb
+argument_list|)
+expr_stmt|;
+name|register_image_convert_procs
 argument_list|(
 name|pdb
 argument_list|)
