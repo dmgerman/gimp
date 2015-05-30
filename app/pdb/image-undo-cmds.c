@@ -974,8 +974,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|register_undo_procs (GimpPDB * pdb)
-name|register_undo_procs
+DECL|function|register_image_undo_procs (GimpPDB * pdb)
+name|register_image_undo_procs
 parameter_list|(
 name|GimpPDB
 modifier|*
