@@ -753,7 +753,6 @@ name|GIMP_STOCK_INDEXED_PALETTE
 value|"gimp-colormap"
 endif|#
 directive|endif
-comment|/* GIMP_DISABLE_DEPRECATED */
 DECL|macro|GIMP_STOCK_IMAGES
 define|#
 directive|define
@@ -829,7 +828,6 @@ name|GIMP_STOCK_QMASK_ON
 value|"gimp-quick-mask-on"
 endif|#
 directive|endif
-comment|/* GIMP_DISABLE_DEPRECATED */
 DECL|macro|GIMP_STOCK_HISTOGRAM
 define|#
 directive|define
