@@ -359,7 +359,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae84a290103
+DECL|enum|__anon29a536390103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -393,7 +393,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae84a290203
+DECL|enum|__anon29a536390203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4694,9 +4694,12 @@ name|image
 argument_list|)
 argument_list|)
 return|;
+comment|/* never return a NULL profile */
 return|return
-name|NULL
+name|gimp_lcms_create_srgb_profile
+argument_list|()
 return|;
+empty_stmt|;
 block|}
 end_function
 

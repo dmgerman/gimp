@@ -12,7 +12,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gio/gio.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gegl.h>
 end_include
 
 begin_include
@@ -27,13 +33,19 @@ directive|include
 file|"gimpcolormanaged.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimplcms.h"
+end_include
+
 begin_comment
 comment|/**  * SECTION: gimpcolormanaged  * @title: GimpColorManaged  * @short_description: An interface dealing with color profiles.  *  * An interface dealing with color profiles.  **/
 end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2960f50103
+DECL|enum|__anon296a033d0103
 block|{
 DECL|enumerator|PROFILE_CHANGED
 name|PROFILE_CHANGED
@@ -301,7 +313,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_managed_get_color_profile:  * @managed: an object the implements the #GimpColorManaged interface  *  * This function, if implemented, always returns a #GimpColorProfile.  *  * Return value: The @managed's #GimpColorProfile.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_color_managed_get_color_profile:  * @managed: an object the implements the #GimpColorManaged interface  *  * This function always returns a #GimpColorProfile and falls back to  * gimp_lcms_create_srgb_profile() if the method is not implemented.  *  * Return value: The @managed's #GimpColorProfile.  *  * Since: GIMP 2.10  **/
 end_comment
 
 begin_function
@@ -349,8 +361,10 @@ argument_list|(
 name|managed
 argument_list|)
 return|;
+comment|/* never return a NULL profile */
 return|return
-name|NULL
+name|gimp_lcms_create_srgb_profile
+argument_list|()
 return|;
 block|}
 end_function
