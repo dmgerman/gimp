@@ -167,7 +167,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3ed0d40103
+DECL|enum|__anon2c7dfb6c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -497,14 +497,12 @@ name|gchar
 modifier|*
 name|path
 decl_stmt|;
-name|gchar
-modifier|*
-name|dir1
-decl_stmt|;
-name|gchar
-modifier|*
-name|dir2
-decl_stmt|;
+if|#
+directive|if
+literal|0
+block|gchar        *dir1;   gchar        *dir2;
+endif|#
+directive|endif
 name|GimpRGB
 name|red
 init|=
@@ -1139,34 +1137,13 @@ operator||
 name|GIMP_CONFIG_PARAM_IGNORE
 argument_list|)
 expr_stmt|;
-comment|/* FIXME */
-name|dir1
-operator|=
-name|g_build_filename
-argument_list|(
-name|DATADIR
-argument_list|,
-literal|"mypaint"
-argument_list|,
-literal|"brushes"
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|dir2
-operator|=
-name|g_build_filename
-argument_list|(
-name|g_get_user_data_dir
-argument_list|()
-argument_list|,
-literal|"mypaint"
-argument_list|,
-literal|"brushes"
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+comment|/* FIXME these are useful dirs, disabled until we figure how to    * properly generate a default gimprc    */
+block|dir1 = g_build_filename (DATADIR, "mypaint", "brushes", NULL);   dir2 = g_build_filename (g_get_user_data_dir (), "mypaint", "brushes", NULL);
+endif|#
+directive|endif
 name|path
 operator|=
 name|g_build_path
@@ -1177,10 +1154,12 @@ literal|"/usr/share/mypaint/brushes"
 argument_list|,
 literal|"/usr/local/share/mypaint/brushes"
 argument_list|,
-name|dir1
-argument_list|,
-name|dir2
-argument_list|,
+if|#
+directive|if
+literal|0
+argument_list|dir1,                        dir2,
+endif|#
+directive|endif
 literal|"~/.mypaint/brushes"
 argument_list|,
 name|NULL
@@ -1210,20 +1189,25 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|dir1
-argument_list|)
-expr_stmt|;
-comment|/* FIXME */
+if|#
+directive|if
+literal|0
+block|g_free (dir1);
+endif|#
+directive|endif
 name|path
 operator|=
 name|g_build_path
 argument_list|(
 name|G_SEARCHPATH_SEPARATOR_S
 argument_list|,
-name|dir2
-argument_list|,
+if|#
+directive|if
+literal|0
+comment|/* FIXME see above */
+argument_list|dir2,
+endif|#
+directive|endif
 literal|"~/.mypaint/brushes"
 argument_list|,
 name|NULL
@@ -1253,11 +1237,12 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|dir2
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|g_free (dir2);
+endif|#
+directive|endif
 name|GIMP_CONFIG_INSTALL_PROP_STRING
 argument_list|(
 name|object_class
