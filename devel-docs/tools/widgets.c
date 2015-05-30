@@ -788,7 +788,7 @@ expr_stmt|;
 return|return
 name|new_widget_info
 argument_list|(
-literal|"gimp-browser"
+literal|"gimp-widget-browser"
 argument_list|,
 name|vbox
 argument_list|,
@@ -860,7 +860,7 @@ expr_stmt|;
 return|return
 name|new_widget_info
 argument_list|(
-literal|"gimp-button"
+literal|"gimp-widget-button"
 argument_list|,
 name|align
 argument_list|,
@@ -1284,7 +1284,7 @@ expr_stmt|;
 return|return
 name|new_widget_info
 argument_list|(
-literal|"gimp-chain-button"
+literal|"gimp-widget-chain-button"
 argument_list|,
 name|vbox
 argument_list|,
@@ -1427,7 +1427,7 @@ expr_stmt|;
 return|return
 name|new_widget_info
 argument_list|(
-literal|"gimp-color-area"
+literal|"gimp-widget-color-area"
 argument_list|,
 name|vbox
 argument_list|,
@@ -1554,7 +1554,7 @@ expr_stmt|;
 return|return
 name|new_widget_info
 argument_list|(
-literal|"gimp-color-button"
+literal|"gimp-widget-color-button"
 argument_list|,
 name|vbox
 argument_list|,
@@ -1681,7 +1681,7 @@ expr_stmt|;
 return|return
 name|new_widget_info
 argument_list|(
-literal|"gimp-color-hex-entry"
+literal|"gimp-widget-color-hex-entry"
 argument_list|,
 name|vbox
 argument_list|,
@@ -1815,7 +1815,7 @@ expr_stmt|;
 return|return
 name|new_widget_info
 argument_list|(
-literal|"gimp-color-profile-combo-box"
+literal|"gimp-widget-color-profile-combo-box"
 argument_list|,
 name|vbox
 argument_list|,
@@ -1971,7 +1971,7 @@ expr_stmt|;
 return|return
 name|new_widget_info
 argument_list|(
-literal|"gimp-color-scale"
+literal|"gimp-widget-color-scale"
 argument_list|,
 name|vbox
 argument_list|,
@@ -2118,7 +2118,7 @@ expr_stmt|;
 return|return
 name|new_widget_info
 argument_list|(
-literal|"gimp-color-selection"
+literal|"gimp-widget-color-selection"
 argument_list|,
 name|vbox
 argument_list|,
@@ -2160,7 +2160,7 @@ name|gimp_dialog_new
 argument_list|(
 literal|"Gimp Dialog"
 argument_list|,
-literal|"gimp-dialog"
+literal|"gimp-widget-dialog"
 argument_list|,
 name|NULL
 argument_list|,
@@ -2217,7 +2217,7 @@ name|info
 operator|=
 name|new_widget_info
 argument_list|(
-literal|"gimp-dialog"
+literal|"gimp-widget-dialog"
 argument_list|,
 name|widget
 argument_list|,
@@ -2345,7 +2345,7 @@ expr_stmt|;
 return|return
 name|new_widget_info
 argument_list|(
-literal|"gimp-enum-combo-box"
+literal|"gimp-widget-enum-combo-box"
 argument_list|,
 name|vbox
 argument_list|,
@@ -2456,7 +2456,7 @@ expr_stmt|;
 return|return
 name|new_widget_info
 argument_list|(
-literal|"gimp-enum-label"
+literal|"gimp-widget-enum-label"
 argument_list|,
 name|vbox
 argument_list|,
@@ -2571,7 +2571,7 @@ expr_stmt|;
 return|return
 name|new_widget_info
 argument_list|(
-literal|"gimp-file-entry"
+literal|"gimp-widget-file-entry"
 argument_list|,
 name|vbox
 argument_list|,
@@ -2638,7 +2638,7 @@ expr_stmt|;
 return|return
 name|new_widget_info
 argument_list|(
-literal|"gimp-frame"
+literal|"gimp-widget-frame"
 argument_list|,
 name|frame
 argument_list|,
@@ -2670,7 +2670,7 @@ decl_stmt|;
 return|return
 name|new_widget_info
 argument_list|(
-literal|"gimp-hint-box"
+literal|"gimp-widget-hint-box"
 argument_list|,
 name|box
 argument_list|,
@@ -2797,7 +2797,7 @@ expr_stmt|;
 return|return
 name|new_widget_info
 argument_list|(
-literal|"gimp-number-pair-entry"
+literal|"gimp-widget-number-pair-entry"
 argument_list|,
 name|vbox
 argument_list|,
@@ -2940,7 +2940,7 @@ expr_stmt|;
 return|return
 name|new_widget_info
 argument_list|(
-literal|"gimp-int-combo-box"
+literal|"gimp-widget-int-combo-box"
 argument_list|,
 name|vbox
 argument_list|,
@@ -3065,7 +3065,7 @@ expr_stmt|;
 return|return
 name|new_widget_info
 argument_list|(
-literal|"gimp-memsize-entry"
+literal|"gimp-widget-memsize-entry"
 argument_list|,
 name|vbox
 argument_list|,
@@ -3231,7 +3231,7 @@ expr_stmt|;
 return|return
 name|new_widget_info
 argument_list|(
-literal|"gimp-offset-area"
+literal|"gimp-widget-offset-area"
 argument_list|,
 name|vbox
 argument_list|,
@@ -3341,7 +3341,7 @@ expr_stmt|;
 return|return
 name|new_widget_info
 argument_list|(
-literal|"gimp-page-selector"
+literal|"gimp-widget-page-selector"
 argument_list|,
 name|vbox
 argument_list|,
@@ -3494,7 +3494,7 @@ expr_stmt|;
 return|return
 name|new_widget_info
 argument_list|(
-literal|"gimp-path-editor"
+literal|"gimp-widget-path-editor"
 argument_list|,
 name|vbox
 argument_list|,
@@ -3601,7 +3601,7 @@ expr_stmt|;
 return|return
 name|new_widget_info
 argument_list|(
-literal|"gimp-pick-button"
+literal|"gimp-widget-pick-button"
 argument_list|,
 name|vbox
 argument_list|,
@@ -3820,7 +3820,7 @@ expr_stmt|;
 return|return
 name|new_widget_info
 argument_list|(
-literal|"gimp-preview-area"
+literal|"gimp-widget-preview-area"
 argument_list|,
 name|vbox
 argument_list|,
@@ -3996,7 +3996,7 @@ expr_stmt|;
 return|return
 name|new_widget_info
 argument_list|(
-literal|"gimp-string-combo-box"
+literal|"gimp-widget-string-combo-box"
 argument_list|,
 name|vbox
 argument_list|,
@@ -4113,7 +4113,7 @@ expr_stmt|;
 return|return
 name|new_widget_info
 argument_list|(
-literal|"gimp-unit-menu"
+literal|"gimp-widget-unit-menu"
 argument_list|,
 name|vbox
 argument_list|,
