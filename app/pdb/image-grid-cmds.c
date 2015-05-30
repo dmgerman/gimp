@@ -1520,8 +1520,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|register_grid_procs (GimpPDB * pdb)
-name|register_grid_procs
+DECL|function|register_image_grid_procs (GimpPDB * pdb)
+name|register_image_grid_procs
 parameter_list|(
 name|GimpPDB
 modifier|*

@@ -169,11 +169,6 @@ argument_list|(
 name|pdb
 argument_list|)
 expr_stmt|;
-name|register_grid_procs
-argument_list|(
-name|pdb
-argument_list|)
-expr_stmt|;
 name|register_guides_procs
 argument_list|(
 name|pdb
@@ -190,6 +185,11 @@ name|pdb
 argument_list|)
 expr_stmt|;
 name|register_image_convert_procs
+argument_list|(
+name|pdb
+argument_list|)
+expr_stmt|;
+name|register_image_grid_procs
 argument_list|(
 name|pdb
 argument_list|)
