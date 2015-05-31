@@ -358,7 +358,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_set:  * @rgb:    a #GimpRGB struct  * @format: a Babl format  * @pixel:  pointer to the source pixel  *  * Sets the red, green and blue components of @rgb from the color  * stored in @pixel. The pixel format of @pixel is determined by  * @format.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_rgb_set_pixel:  * @rgb:    a #GimpRGB struct  * @format: a Babl format  * @pixel:  pointer to the source pixel  *  * Sets the red, green and blue components of @rgb from the color  * stored in @pixel. The pixel format of @pixel is determined by  * @format.  *  * Since: GIMP 2.10  **/
 end_comment
 
 begin_function
@@ -423,7 +423,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_get:  * @rgb:    a #GimpRGB struct  * @format: a Babl format  * @pixel:  pointer to the destination pixel  *  * Writes the red, green, blue and alpha components of @rgb to the  * color stored in @pixel. The pixel format of @pixel is determined by  * @format.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_rgb_get_pixel:  * @rgb:    a #GimpRGB struct  * @format: a Babl format  * @pixel:  pointer to the destination pixel  *  * Writes the red, green, blue and alpha components of @rgb to the  * color stored in @pixel. The pixel format of @pixel is determined by  * @format.  *  * Since: GIMP 2.10  **/
 end_comment
 
 begin_function
@@ -1625,7 +1625,7 @@ comment|/*  RGBA functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_rgba_set:  * @rgba:   a #GimpRGB struct  * @format: a Babl format  * @pixel:  pointer to the source pixel  *  * Sets the red, green, blue and alpha components of @rgba from the  * color stored in @pixel. The pixel format of @pixel is determined  * by @format.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_rgba_set_pixel:  * @rgba:   a #GimpRGB struct  * @format: a Babl format  * @pixel:  pointer to the source pixel  *  * Sets the red, green, blue and alpha components of @rgba from the  * color stored in @pixel. The pixel format of @pixel is determined  * by @format.  *  * Since: GIMP 2.10  **/
 end_comment
 
 begin_function
@@ -1690,7 +1690,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgba_get:  * @rgba:   a #GimpRGB struct  * @format: a Babl format  * @pixel:  pointer to the destination pixel  *  * Writes the red, green, blue and alpha components of @rgba to the  * color stored in @pixel. The pixel format of @pixel is determined by  * @format.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_rgba_get_pixel:  * @rgba:   a #GimpRGB struct  * @format: a Babl format  * @pixel:  pointer to the destination pixel  *  * Writes the red, green, blue and alpha components of @rgba to the  * color stored in @pixel. The pixel format of @pixel is determined by  * @format.  *  * Since: GIMP 2.10  **/
 end_comment
 
 begin_function
