@@ -817,7 +817,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_progress_bar_new:  *  * Creates a new #GimpProgressBar widget.  *  * Return value: the new widget.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_progress_bar_new:  *  * Creates a new #GimpProgressBar widget.  *  * Return value: the new widget.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

@@ -167,7 +167,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_progress_pulse:  *  * Pulses the progress bar for the current plug-in.  *  * Updates the progress bar for the current plug-in. It is only valid  * to call this procedure from a plug-in. Use this function instead of  * gimp_progress_update() if you cannot tell how much progress has been  * made. This usually causes the the progress bar to enter \"activity  * mode\", where a block bounces back and forth.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_progress_pulse:  *  * Pulses the progress bar for the current plug-in.  *  * Updates the progress bar for the current plug-in. It is only valid  * to call this procedure from a plug-in. Use this function instead of  * gimp_progress_update() if you cannot tell how much progress has been  * made. This usually causes the the progress bar to enter \"activity  * mode\", where a block bounces back and forth.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -229,7 +229,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_progress_set_text:  * @message: Message to use in the progress dialog.  *  * Changes the text in the progress bar for the current plug-in.  *  * This function changes the text in the progress bar for the current  * plug-in. Unlike gimp_progress_init() it does not change the  * displayed value.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_progress_set_text:  * @message: Message to use in the progress dialog.  *  * Changes the text in the progress bar for the current plug-in.  *  * This function changes the text in the progress bar for the current  * plug-in. Unlike gimp_progress_init() it does not change the  * displayed value.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -298,7 +298,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_progress_end:  *  * Ends the progress bar for the current plug-in.  *  * Ends the progress display for the current plug-in. Most plug-ins  * don't need to call this, they just exit when the work is done. It is  * only valid to call this procedure from a plug-in.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_progress_end:  *  * Ends the progress bar for the current plug-in.  *  * Ends the progress display for the current plug-in. Most plug-ins  * don't need to call this, they just exit when the work is done. It is  * only valid to call this procedure from a plug-in.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -360,7 +360,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_progress_get_window_handle:  *  * Returns the native window ID of the toplevel window this plug-in's  * progress is displayed in.  *  * This function returns the native window ID of the toplevel window  * this plug-in\'s progress is displayed in.  *  * Returns: The progress bar's toplevel window.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_progress_get_window_handle:  *  * Returns the native window ID of the toplevel window this plug-in's  * progress is displayed in.  *  * This function returns the native window ID of the toplevel window  * this plug-in\'s progress is displayed in.  *  * Returns: The progress bar's toplevel window.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -433,7 +433,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_progress_install:  * @progress_callback: The callback PDB proc to call.  *  * Installs a progress callback for the current plug-in.  *  * This function installs a temporary PDB procedure which will handle  * all progress calls made by this plug-in and any procedure it calls.  * Calling this function multiple times simply replaces the old  * progress callbacks.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * _gimp_progress_install:  * @progress_callback: The callback PDB proc to call.  *  * Installs a progress callback for the current plug-in.  *  * This function installs a temporary PDB procedure which will handle  * all progress calls made by this plug-in and any procedure it calls.  * Calling this function multiple times simply replaces the old  * progress callbacks.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -502,7 +502,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_progress_uninstall:  * @progress_callback: The name of the callback registered for this progress.  *  * Uninstalls the progress callback for the current plug-in.  *  * This function uninstalls any progress callback installed with  * gimp_progress_install() before.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * _gimp_progress_uninstall:  * @progress_callback: The name of the callback registered for this progress.  *  * Uninstalls the progress callback for the current plug-in.  *  * This function uninstalls any progress callback installed with  * gimp_progress_install() before.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -571,7 +571,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_progress_cancel:  * @progress_callback: The name of the callback registered for this progress.  *  * Cancels a running progress.  *  * This function cancels the currently running progress.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_progress_cancel:  * @progress_callback: The name of the callback registered for this progress.  *  * Cancels a running progress.  *  * This function cancels the currently running progress.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

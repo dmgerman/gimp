@@ -59,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae6cd530103
+DECL|enum|__anon297ae8580103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -73,7 +73,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae6cd530208
+DECL|struct|__anon297ae8580208
 block|{
 DECL|member|x
 name|gint
@@ -364,7 +364,7 @@ name|draw_buffer
 operator|=
 name|gimp_drawable_preview_draw_buffer
 expr_stmt|;
-comment|/**    * GimpDrawablePreview:drawable:    *    * Since: GIMP 2.4    */
+comment|/**    * GimpDrawablePreview:drawable:    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -2330,7 +2330,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_preview_new:  * @drawable: a #GimpDrawable  * @toggle:   unused  *  * Creates a new #GimpDrawablePreview widget for @drawable.  *  * In GIMP 2.2 the @toggle parameter was provided to conviently access  * the state of the "Preview" check-button. This is not any longer  * necessary as the preview itself now stores this state, as well as  * the scroll offset.  *  * Returns: A pointer to the new #GimpDrawablePreview widget.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_drawable_preview_new:  * @drawable: a #GimpDrawable  * @toggle:   unused  *  * Creates a new #GimpDrawablePreview widget for @drawable.  *  * In GIMP 2.2 the @toggle parameter was provided to conviently access  * the state of the "Preview" check-button. This is not any longer  * necessary as the preview itself now stores this state, as well as  * the scroll offset.  *  * Returns: A pointer to the new #GimpDrawablePreview widget.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2373,7 +2373,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_preview_get_drawable:  * @preview:   a #GimpDrawablePreview widget  *  * Return value: the #GimpDrawable that has been passed to  *               gimp_drawable_preview_new().  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_drawable_preview_get_drawable:  * @preview:   a #GimpDrawablePreview widget  *  * Return value: the #GimpDrawable that has been passed to  *               gimp_drawable_preview_new().  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2406,7 +2406,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_preview_draw_region:  * @preview: a #GimpDrawablePreview widget  * @region:  a #GimpPixelRgn  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_drawable_preview_draw_region:  * @preview: a #GimpDrawablePreview widget  * @region:  a #GimpPixelRgn  *  * Since: 2.2  **/
 end_comment
 
 begin_function

@@ -431,7 +431,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_ui_get_display_window:  * @gdisp_ID: a #GimpDisplay ID.  *  * Returns the #GdkWindow of a display window. The purpose is to allow  * to make plug-in dialogs transient to the image display as explained  * with gdk_window_set_transient_for().  *  * You shouldn't have to call this function directly. Use  * gimp_window_set_transient_for_display() instead.  *  * Return value: A reference to a #GdkWindow or %NULL. You should  *               unref the window using g_object_unref() as soon as  *               you don't need it any longer.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_ui_get_display_window:  * @gdisp_ID: a #GimpDisplay ID.  *  * Returns the #GdkWindow of a display window. The purpose is to allow  * to make plug-in dialogs transient to the image display as explained  * with gdk_window_set_transient_for().  *  * You shouldn't have to call this function directly. Use  * gimp_window_set_transient_for_display() instead.  *  * Return value: A reference to a #GdkWindow or %NULL. You should  *               unref the window using g_object_unref() as soon as  *               you don't need it any longer.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -478,7 +478,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_ui_get_progress_window:  *  * Returns the #GdkWindow of the window this plug-in's progress bar is  * shown in. Use it to make plug-in dialogs transient to this window  * as explained with gdk_window_set_transient_for().  *  * You shouldn't have to call this function directly. Use  * gimp_window_set_transient() instead.  *  * Return value: A reference to a #GdkWindow or %NULL. You should  *               unref the window using g_object_unref() as soon as  *               you don't need it any longer.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_ui_get_progress_window:  *  * Returns the #GdkWindow of the window this plug-in's progress bar is  * shown in. Use it to make plug-in dialogs transient to this window  * as explained with gdk_window_set_transient_for().  *  * You shouldn't have to call this function directly. Use  * gimp_window_set_transient() instead.  *  * Return value: A reference to a #GdkWindow or %NULL. You should  *               unref the window using g_object_unref() as soon as  *               you don't need it any longer.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -563,7 +563,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/**  * gimp_window_set_transient_for_display:  * @window:   the #GtkWindow that should become transient  * @gdisp_ID: display ID of the image window that should become the parent  *  * Indicates to the window manager that @window is a transient dialog  * associated with the GIMP image window that is identified by it's  * display ID.  See gdk_window_set_transient_for () for more information.  *  * Most of the time you will want to use the convenience function  * gimp_window_set_transient().  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_window_set_transient_for_display:  * @window:   the #GtkWindow that should become transient  * @gdisp_ID: display ID of the image window that should become the parent  *  * Indicates to the window manager that @window is a transient dialog  * associated with the GIMP image window that is identified by it's  * display ID.  See gdk_window_set_transient_for () for more information.  *  * Most of the time you will want to use the convenience function  * gimp_window_set_transient().  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -638,7 +638,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_window_set_transient:  * @window: the #GtkWindow that should become transient  *  * Indicates to the window manager that @window is a transient dialog  * associated with the GIMP window that the plug-in has been  * started from. See also gimp_window_set_transient_for_display().  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_window_set_transient:  * @window: the #GtkWindow that should become transient  *  * Indicates to the window manager that @window is a transient dialog  * associated with the GIMP window that the plug-in has been  * started from. See also gimp_window_set_transient_for_display().  *  * Since: 2.4  */
 end_comment
 
 begin_function

@@ -441,7 +441,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b32cf610103
+DECL|enum|__anon2c5f42bf0103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -4249,7 +4249,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_pdb_error:  *  * Retrieves the error message from the last procedure call.  *  * If a procedure call fails, then it might pass an error message with  * the return values. Plug-ins that are using the libgimp C wrappers  * don't access the procedure return values directly. Thus ligimp  * stores the error message and makes it available with this  * function. The next procedure call unsets the error message again.  *  * The returned string is owned by libgimp and must not be freed or  * modified.  *  * Return value: the error message  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_get_pdb_error:  *  * Retrieves the error message from the last procedure call.  *  * If a procedure call fails, then it might pass an error message with  * the return values. Plug-ins that are using the libgimp C wrappers  * don't access the procedure return values directly. Thus ligimp  * stores the error message and makes it available with this  * function. The next procedure call unsets the error message again.  *  * The returned string is owned by libgimp and must not be freed or  * modified.  *  * Return value: the error message  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -4473,7 +4473,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_show_help_button:  *  * Returns whether or not GimpDialog should automatically add a help  * button if help_func and help_id are given.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the show_help_button boolean  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_show_help_button:  *  * Returns whether or not GimpDialog should automatically add a help  * button if help_func and help_id are given.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the show_help_button boolean  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -4491,7 +4491,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_check_size:  *  * Returns the size of the checkerboard to be used in previews.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the check_size value  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_check_size:  *  * Returns the size of the checkerboard to be used in previews.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the check_size value  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -4509,7 +4509,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_check_type:  *  * Returns the type of the checkerboard to be used in previews.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the check_type value  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_check_type:  *  * Returns the type of the checkerboard to be used in previews.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the check_type value  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -4603,7 +4603,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_user_time:  *  * Returns the timestamp of the user interaction that should be set on  * the plug-in window. This is handled transparently, plug-in authors  * do not have to care about it.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: timestamp for plug-in window  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_user_time:  *  * Returns the timestamp of the user interaction that should be set on  * the plug-in window. This is handled transparently, plug-in authors  * do not have to care about it.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: timestamp for plug-in window  *  * Since: 2.6  **/
 end_comment
 
 begin_function

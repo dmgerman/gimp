@@ -938,7 +938,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_heal:  * @drawable_ID: The affected drawable.  * @src_drawable_ID: The source drawable.  * @src_x: The x coordinate in the source image.  * @src_y: The y coordinate in the source image.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Heal from the source to the dest drawable using the current brush  *  * This tool heals the source drawable starting at the specified source  * coordinates to the dest drawable. For image healing, if the sum of  * the src coordinates and subsequent stroke offsets exceeds the  * extents of the src drawable, then no paint is transferred. The  * healing tool is capable of transforming between any image types  * except RGB-&gt;Indexed.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_heal:  * @drawable_ID: The affected drawable.  * @src_drawable_ID: The source drawable.  * @src_x: The x coordinate in the source image.  * @src_y: The y coordinate in the source image.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Heal from the source to the dest drawable using the current brush  *  * This tool heals the source drawable starting at the specified source  * coordinates to the dest drawable. For image healing, if the sum of  * the src coordinates and subsequent stroke offsets exceeds the  * extents of the src drawable, then no paint is transferred. The  * healing tool is capable of transforming between any image types  * except RGB-&gt;Indexed.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1042,7 +1042,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_heal_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Heal from the source to the dest drawable using the current brush  *  * This tool heals from the source drawable starting at the specified  * source coordinates to the dest drawable. This function performs  * exactly the same as the gimp_heal() function except that the tools  * arguments are obtained from the healing option dialog. It this  * dialog has not been activated then the dialogs default values will  * be used.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_heal_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Heal from the source to the dest drawable using the current brush  *  * This tool heals from the source drawable starting at the specified  * source coordinates to the dest drawable. This function performs  * exactly the same as the gimp_heal() function except that the tools  * arguments are obtained from the healing option dialog. It this  * dialog has not been activated then the dialogs default values will  * be used.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

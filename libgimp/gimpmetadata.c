@@ -128,7 +128,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_image_metadata_load_prepare:  * @image_ID:  The image  * @mime_type: The loaded file's mime-type  * @file:      The file to load the metadata from  * @error:     Return location for error  *  * Loads and returns metadata from @file to be passed into  * gimp_image_metadata_load_finish().  *  * Returns: The file's metadata.  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_image_metadata_load_prepare:  * @image_ID:  The image  * @mime_type: The loaded file's mime-type  * @file:      The file to load the metadata from  * @error:     Return location for error  *  * Loads and returns metadata from @file to be passed into  * gimp_image_metadata_load_finish().  *  * Returns: The file's metadata.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -234,7 +234,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_metadata_load_finish:  * @image_ID:    The image  * @mime_type:   The loaded file's mime-type  * @metadata:    The metadata to set on the image  * @flags:       Flags to specify what of the metadata to apply to the image  * @interactive: Whether this function is allowed to query info with dialogs  *  * Applies the @metadata previously loaded with  * gimp_image_metadata_load_prepare() to the image, taking into account  * the passed @flags.  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_image_metadata_load_finish:  * @image_ID:    The image  * @mime_type:   The loaded file's mime-type  * @metadata:    The metadata to set on the image  * @flags:       Flags to specify what of the metadata to apply to the image  * @interactive: Whether this function is allowed to query info with dialogs  *  * Applies the @metadata previously loaded with  * gimp_image_metadata_load_prepare() to the image, taking into account  * the passed @flags.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -444,7 +444,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_metadata_save_prepare:  * @image_ID:        The image  * @mime_type:       The saved file's mime-type  * @suggested_flags: Suggested default values for the @flags passed to  *                   gimp_image_metadata_save_finish()  *  * Gets the image metadata for saving it using  * gimp_image_metadata_save_finish().  *  * The @suggested_flags are determined from what kind of metadata  * (Exif, XMP, ...) is actually present in the image. The suggested  * value for GIMP_METADATA_SAVE_THUMBNAIL is determined by whether  * there was a thumbnail in the previously imported image.  *  * Returns: The image's metadata, prepared for saving.  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_image_metadata_save_prepare:  * @image_ID:        The image  * @mime_type:       The saved file's mime-type  * @suggested_flags: Suggested default values for the @flags passed to  *                   gimp_image_metadata_save_finish()  *  * Gets the image metadata for saving it using  * gimp_image_metadata_save_finish().  *  * The @suggested_flags are determined from what kind of metadata  * (Exif, XMP, ...) is actually present in the image. The suggested  * value for GIMP_METADATA_SAVE_THUMBNAIL is determined by whether  * there was a thumbnail in the previously imported image.  *  * Returns: The image's metadata, prepared for saving.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -976,7 +976,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_metadata_save_finish:  * @image_ID:  The image  * @mime_type: The saved file's mime-type  * @metadata:  The metadata to set on the image  * @flags:     Flags to specify what of the metadata to save  * @file:      The file to load the metadata from  * @error:     Return location for error message  *  * Saves the @metadata retrieved from the image with  * gimp_image_metadata_save_prepare() to @file, taking into account  * the passed @flags.  *  * Return value: Whether the save was successful.  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_image_metadata_save_finish:  * @image_ID:  The image  * @mime_type: The saved file's mime-type  * @metadata:  The metadata to set on the image  * @flags:     Flags to specify what of the metadata to save  * @file:      The file to load the metadata from  * @error:     Return location for error message  *  * Saves the @metadata retrieved from the image with  * gimp_image_metadata_save_prepare() to @file, taking into account  * the passed @flags.  *  * Return value: Whether the save was successful.  *  * Since: 2.10  */
 end_comment
 
 begin_function

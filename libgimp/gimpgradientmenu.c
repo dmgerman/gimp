@@ -46,7 +46,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bacbd2e0108
+DECL|struct|__anon2b073e210108
 block|{
 DECL|member|callback
 name|GimpRunGradientCallback
@@ -107,7 +107,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_gradient_select_widget_new:  * @title:         Title of the dialog to use or %NULL to use the default title.  * @gradient_name: Initial gradient name.  * @callback:      A function to call when the selected gradient changes.  * @data:          A pointer to arbitrary data to be used in the call to @callback.  *  * Creates a new #GtkWidget that completely controls the selection of  * a gradient.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_select_widget_new:  * @title:         Title of the dialog to use or %NULL to use the default title.  * @gradient_name: Initial gradient name.  * @callback:      A function to call when the selected gradient changes.  * @data:          A pointer to arbitrary data to be used in the call to @callback.  *  * Creates a new #GtkWidget that completely controls the selection of  * a gradient.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  *  * Since: 2.2  */
 end_comment
 
 begin_function

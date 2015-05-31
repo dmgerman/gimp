@@ -71,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a30b2040103
+DECL|enum|__anon297f94d00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -326,7 +326,7 @@ name|get_property
 operator|=
 name|gimp_color_profile_store_get_property
 expr_stmt|;
-comment|/**    * GimpColorProfileStore:history:    *    * Filename of the color history used to populate the profile store.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpColorProfileStore:history:    *    * Filename of the color history used to populate the profile store.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -735,7 +735,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_store_new:  * @history: filename of the profilerc (or %NULL for no history)  *  * Creates a new #GimpColorProfileStore object and populates it with  * last used profiles read from the file @history. The updated history  * is written back to disk when the store is disposed.  *  * The filename passed as @history is typically created using the  * following code snippet:  *<informalexample><programlisting>  *  gchar *history = gimp_personal_rc_file ("profilerc");  *</programlisting></informalexample>  *  * Return value: a new #GimpColorProfileStore  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_color_profile_store_new:  * @history: filename of the profilerc (or %NULL for no history)  *  * Creates a new #GimpColorProfileStore object and populates it with  * last used profiles read from the file @history. The updated history  * is written back to disk when the store is disposed.  *  * The filename passed as @history is typically created using the  * following code snippet:  *<informalexample><programlisting>  *  gchar *history = gimp_personal_rc_file ("profilerc");  *</programlisting></informalexample>  *  * Return value: a new #GimpColorProfileStore  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -766,7 +766,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_store_add:  * @store:    a #GimpColorProfileStore  * @filename: filename of the profile to add (or %NULL)  * @label:    label to use for the profile  *            (may only be %NULL if @filename is %NULL)  *  * Adds a color profile item to the #GimpColorProfileStore. Items  * added with this function will be kept at the top, separated from  * the history of last used color profiles.  *  * This function is often used to add a selectable item for the %NULL  * filename. If you pass %NULL for both @filename and @label, the  * @label will be set to the string "None" for you (and translated for  * the user).  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_color_profile_store_add:  * @store:    a #GimpColorProfileStore  * @filename: filename of the profile to add (or %NULL)  * @label:    label to use for the profile  *            (may only be %NULL if @filename is %NULL)  *  * Adds a color profile item to the #GimpColorProfileStore. Items  * added with this function will be kept at the top, separated from  * the history of last used color profiles.  *  * This function is often used to add a selectable item for the %NULL  * filename. If you pass %NULL for both @filename and @label, the  * @label will be set to the string "None" for you (and translated for  * the user).  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -890,7 +890,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_color_profile_store_history_add:  * @store:    a #GimpColorProfileStore  * @filename: filename of the profile to add (or %NULL)  * @label:    label to use for the profile (or %NULL)  * @iter:     a #GtkTreeIter  *  * Return value: %TRUE if the iter is valid and pointing to the item  *  * Since: GIMP 2.4  **/
+comment|/**  * _gimp_color_profile_store_history_add:  * @store:    a #GimpColorProfileStore  * @filename: filename of the profile to add (or %NULL)  * @label:    label to use for the profile (or %NULL)  * @iter:     a #GtkTreeIter  *  * Return value: %TRUE if the iter is valid and pointing to the item  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1176,7 +1176,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_color_profile_store_history_reorder  * @store: a #GimpColorProfileStore  * @iter:  a #GtkTreeIter  *  * Moves the entry pointed to by @iter to the front of the MRU list.  *  * Since: GIMP 2.4  **/
+comment|/**  * _gimp_color_profile_store_history_reorder  * @store: a #GimpColorProfileStore  * @iter:  a #GtkTreeIter  *  * Moves the entry pointed to by @iter to the front of the MRU list.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

@@ -526,7 +526,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_label_set_attributes:  * @label: a #GtkLabel  * @...:   a list of PangoAttrType and value pairs terminated by -1.  *  * Sets Pango attributes on a #GtkLabel in a more convenient way than  * gtk_label_set_attributes().  *  * This function is useful if you want to change the font attributes  * of a #GtkLabel. This is an alternative to using PangoMarkup which  * is slow to parse and akward to handle in an i18n-friendly way.  *  * The attributes are set on the complete label, from start to end. If  * you need to set attributes on part of the label, you will have to  * use the PangoAttributes API directly.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_label_set_attributes:  * @label: a #GtkLabel  * @...:   a list of PangoAttrType and value pairs terminated by -1.  *  * Sets Pango attributes on a #GtkLabel in a more convenient way than  * gtk_label_set_attributes().  *  * This function is useful if you want to change the font attributes  * of a #GtkLabel. This is an alternative to using PangoMarkup which  * is slow to parse and akward to handle in an i18n-friendly way.  *  * The attributes are set on the complete label, from start to end. If  * you need to set attributes on part of the label, you will have to  * use the PangoAttributes API directly.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

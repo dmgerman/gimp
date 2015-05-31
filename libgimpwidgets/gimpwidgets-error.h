@@ -50,7 +50,7 @@ end_macro
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289d292d0103
+DECL|enum|__anon2b6648620103
 block|{
 DECL|enumerator|GIMP_WIDGETS_PARSE_ERROR
 name|GIMP_WIDGETS_PARSE_ERROR
@@ -61,7 +61,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * GIMP_WIDGETS_ERROR:  *  * The GIMP widgets error domain.  *  * Since: GIMP 2.8  */
+comment|/**  * GIMP_WIDGETS_ERROR:  *  * The GIMP widgets error domain.  *  * Since: 2.8  */
 end_comment
 
 begin_define

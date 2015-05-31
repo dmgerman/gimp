@@ -147,7 +147,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_visible:  * @image_ID: The source image from where the content is copied.  * @dest_image_ID: The destination image to which to add the layer.  * @name: The layer name.  *  * Create a new layer from what is visible in an image.  *  * This procedure creates a new layer from what is visible in the given  * image. The new layer still needs to be added to the destination  * image, as this is not automatic. Add the new layer with the  * gimp_image_insert_layer() command. Other attributes such as layer  * mask modes, and offsets should be set with explicit procedure calls.  *  * Returns: The newly created layer.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_layer_new_from_visible:  * @image_ID: The source image from where the content is copied.  * @dest_image_ID: The destination image to which to add the layer.  * @name: The layer name.  *  * Create a new layer from what is visible in an image.  *  * This procedure creates a new layer from what is visible in the given  * image. The new layer still needs to be added to the destination  * image, as this is not automatic. Add the new layer with the  * gimp_image_insert_layer() command. Other attributes such as layer  * mask modes, and offsets should be set with explicit procedure calls.  *  * Returns: The newly created layer.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -328,7 +328,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_group_new:  * @image_ID: The image to which to add the layer group.  *  * Create a new layer group.  *  * This procedure creates a new layer group. Attributes such as layer  * mode and opacity should be set with explicit procedure calls. Add  * the new layer group (which is a kind of layer) with the  * gimp_image_insert_layer() command.  * Other procedures useful with layer groups:  * gimp_image_reorder_item(), gimp_item_get_parent(),  * gimp_item_get_children(), gimp_item_is_group().  *  * Returns: The newly created layer group.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_layer_group_new:  * @image_ID: The image to which to add the layer group.  *  * Create a new layer group.  *  * This procedure creates a new layer group. Attributes such as layer  * mode and opacity should be set with explicit procedure calls. Add  * the new layer group (which is a kind of layer) with the  * gimp_image_insert_layer() command.  * Other procedures useful with layer groups:  * gimp_image_reorder_item(), gimp_item_get_parent(),  * gimp_item_get_children(), gimp_item_is_group().  *  * Returns: The newly created layer group.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -560,7 +560,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_flatten:  * @layer_ID: The layer.  *  * Remove the alpha channel from the layer if it has one.  *  * This procedure removes the alpha channel from a layer, blending all  * (partially) transparent pixels in the layer against the background  * color. This transforms layers of type RGBA to RGB, GRAYA to GRAY,  * and INDEXEDA to INDEXED.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_layer_flatten:  * @layer_ID: The layer.  *  * Remove the alpha channel from the layer if it has one.  *  * This procedure removes the alpha channel from a layer, blending all  * (partially) transparent pixels in the layer against the background  * color. This transforms layers of type RGBA to RGB, GRAYA to GRAY,  * and INDEXEDA to INDEXED.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -715,7 +715,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_scale_full:  * @layer_ID: The layer.  * @new_width: New layer width.  * @new_height: New layer height.  * @local_origin: Use a local origin (as opposed to the image origin).  * @interpolation: Type of interpolation.  *  * Deprecated: Use gimp_layer_scale() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_layer_scale_full:  * @layer_ID: The layer.  * @new_width: New layer width.  * @new_height: New layer height.  * @local_origin: Use a local origin (as opposed to the image origin).  * @interpolation: Type of interpolation.  *  * Deprecated: Use gimp_layer_scale() instead.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -1299,7 +1299,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_from_mask:  * @mask_ID: Mask for which to return the layer.  *  * Get the specified mask's layer.  *  * This procedure returns the specified mask's layer , or -1 if none  * exists.  *  * Returns: The mask's layer.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_layer_from_mask:  * @mask_ID: Mask for which to return the layer.  *  * Get the specified mask's layer.  *  * This procedure returns the specified mask's layer , or -1 if none  * exists.  *  * Returns: The mask's layer.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

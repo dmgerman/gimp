@@ -119,7 +119,7 @@ comment|/*  HSL functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_hsl_set:  * @hsl:  * @h:  * @s:  * @l:  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_hsl_set:  * @hsl:  * @h:  * @s:  * @l:  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -170,7 +170,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_hsl_set_alpha:  * @hsl:  * @a:  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_hsl_set_alpha:  * @hsl:  * @a:  *  * Since: 2.10  **/
 end_comment
 
 begin_function

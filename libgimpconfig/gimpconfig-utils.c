@@ -509,7 +509,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_diff:  * @a: a #GObject  * @b: another #GObject object  * @flags: a mask of GParamFlags  *  * Compares all properties of @a and @b that have all @flags set. If  * @flags is 0, all properties are compared.  *  * If the two objects are not of the same type, only properties that  * exist in both object classes and are of the same value_type are  * compared.  *  * Return value: a GList of differing GParamSpecs.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_diff:  * @a: a #GObject  * @b: another #GObject object  * @flags: a mask of GParamFlags  *  * Compares all properties of @a and @b that have all @flags set. If  * @flags is 0, all properties are compared.  *  * If the two objects are not of the same type, only properties that  * exist in both object classes and are of the same value_type are  * compared.  *  * Return value: a GList of differing GParamSpecs.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -599,7 +599,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_sync:  * @src: a #GObject  * @dest: another #GObject  * @flags: a mask of GParamFlags  *  * Compares all read- and write-able properties from @src and @dest  * that have all @flags set. Differing values are then copied from  * @src to @dest. If @flags is 0, all differing read/write properties.  *  * Properties marked as "construct-only" are not touched.  *  * If the two objects are not of the same type, only properties that  * exist in both object classes and are of the same value_type are  * synchronized  *  * Return value: %TRUE if @dest was modified, %FALSE otherwise  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_sync:  * @src: a #GObject  * @dest: another #GObject  * @flags: a mask of GParamFlags  *  * Compares all read- and write-able properties from @src and @dest  * that have all @flags set. Differing values are then copied from  * @src to @dest. If @flags is 0, all differing read/write properties.  *  * Properties marked as "construct-only" are not touched.  *  * If the two objects are not of the same type, only properties that  * exist in both object classes and are of the same value_type are  * synchronized  *  * Return value: %TRUE if @dest was modified, %FALSE otherwise  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -807,7 +807,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_reset_properties:  * @object: a #GObject  *  * Resets all writable properties of @object to the default values as  * defined in their #GParamSpec. Properties marked as "construct-only"  * are not touched.  *  * If you want to reset a #GimpConfig object, please use gimp_config_reset().  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_reset_properties:  * @object: a #GObject  *  * Resets all writable properties of @object to the default values as  * defined in their #GParamSpec. Properties marked as "construct-only"  * are not touched.  *  * If you want to reset a #GimpConfig object, please use gimp_config_reset().  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1056,7 +1056,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_reset_property:  * @object: a #GObject  * @property_name: name of the property to reset  *  * Resets the property named @property_name to its default value.  The  * property must be writable and must not be marked as "construct-only".  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_reset_property:  * @object: a #GObject  * @property_name: name of the property to reset  *  * Resets the property named @property_name to its default value.  The  * property must be writable and must not be marked as "construct-only".  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1272,7 +1272,7 @@ comment|/*  * GimpConfig string utilities  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_config_string_append_escaped:  * @string: pointer to a #GString  * @val: a string to append or %NULL  *  * Escapes and quotes @val and appends it to @string. The escape  * algorithm is different from the one used by g_strescape() since it  * leaves non-ASCII characters intact and thus preserves UTF-8  * strings. Only control characters and quotes are being escaped.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_string_append_escaped:  * @string: pointer to a #GString  * @val: a string to append or %NULL  *  * Escapes and quotes @val and appends it to @string. The escape  * algorithm is different from the one used by g_strescape() since it  * leaves non-ASCII characters intact and thus preserves UTF-8  * strings. Only control characters and quotes are being escaped.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

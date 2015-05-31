@@ -106,7 +106,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_config_serialize_properties:  * @config: a #GimpConfig.  * @writer: a #GimpConfigWriter.  *  * This function writes all object properties to the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_serialize_properties:  * @config: a #GimpConfig.  * @writer: a #GimpConfigWriter.  *  * This function writes all object properties to the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -236,7 +236,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_changed_properties:  * @config: a #GimpConfig.  * @writer: a #GimpConfigWriter.  *  * This function writes all object properties that have been changed from  * their default values to the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_serialize_changed_properties:  * @config: a #GimpConfig.  * @writer: a #GimpConfigWriter.  *  * This function writes all object properties that have been changed from  * their default values to the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -417,7 +417,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_property:  * @config:     a #GimpConfig.  * @param_spec: a #GParamSpec.  * @writer:     a #GimpConfigWriter.  *  * This function serializes a single object property to the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_serialize_property:  * @config:     a #GimpConfig.  * @param_spec: a #GParamSpec.  * @writer:     a #GimpConfigWriter.  *  * This function serializes a single object property to the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -925,7 +925,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_property_by_name:  * @config:    a #GimpConfig.  * @prop_name: the property's name.  * @writer:    a #GimpConfigWriter.  *  * This function serializes a single object property to the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_config_serialize_property_by_name:  * @config:    a #GimpConfig.  * @prop_name: the property's name.  * @writer:    a #GimpConfigWriter.  *  * This function serializes a single object property to the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -985,7 +985,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_value:  * @value: a #GValue.  * @str: a #GString.  * @escaped: whether to escape string values.  *  * This utility function appends a string representation of #GValue to @str.  *  * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_serialize_value:  * @value: a #GValue.  * @str: a #GString.  * @escaped: whether to escape string values.  *  * This utility function appends a string representation of #GValue to @str.  *  * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

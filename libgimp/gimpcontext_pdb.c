@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpcontext  * @title: gimpcontext  * @short_description
 end_comment
 
 begin_comment
-comment|/**  * gimp_context_push:  *  * Pushes a context to the top of the plug-in's context stack.  *  * This procedure creates a new context by copying the current context.  * This copy becomes the new current context for the calling plug-in  * until it is popped again using gimp_context_pop().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_context_push:  *  * Pushes a context to the top of the plug-in's context stack.  *  * This procedure creates a new context by copying the current context.  * This copy becomes the new current context for the calling plug-in  * until it is popped again using gimp_context_pop().  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -86,7 +86,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_pop:  *  * Pops the topmost context from the plug-in's context stack.  *  * This procedure removes the topmost context from the plug-in's  * context stack. The context that was active before the corresponding  * call to gimp_context_push() becomes the new current context of the  * plug-in.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_context_pop:  *  * Pops the topmost context from the plug-in's context stack.  *  * This procedure removes the topmost context from the plug-in's  * context stack. The context that was active before the corresponding  * call to gimp_context_push() becomes the new current context of the  * plug-in.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -148,7 +148,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_defaults:  *  * Reset context settings to their default values.  *  * This procedure resets context settings used by various procedures to  * their default value. This procedure will usually be called after a  * context push so that a script which calls procedures affected by  * context settings will not be affected by changes in the global  * context.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_defaults:  *  * Reset context settings to their default values.  *  * This procedure resets context settings used by various procedures to  * their default value. This procedure will usually be called after a  * context push so that a script which calls procedures affected by  * context settings will not be affected by changes in the global  * context.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -210,7 +210,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_list_paint_methods:  * @num_paint_methods: The number of the available paint methods.  * @paint_methods: The names of the available paint methods.  *  * Lists the available paint methods.  *  * This procedure lists the names of the available paint methods. Any  * of the results can be used for gimp_context_set_paint_method().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_context_list_paint_methods:  * @num_paint_methods: The number of the available paint methods.  * @paint_methods: The names of the available paint methods.  *  * Lists the available paint methods.  *  * This procedure lists the names of the available paint methods. Any  * of the results can be used for gimp_context_set_paint_method().  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -372,7 +372,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_paint_method:  *  * Retrieve the currently active paint method.  *  * This procedure returns the name of the currently active paint  * method.  *  * Returns: The name of the active paint method.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_context_get_paint_method:  *  * Retrieve the currently active paint method.  *  * This procedure returns the name of the currently active paint  * method.  *  * Returns: The name of the active paint method.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -450,7 +450,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_paint_method:  * @name: The name of the paint method.  *  * Set the specified paint method as the active paint method.  *  * This procedure allows the active paint method to be set by  * specifying its name. The name is simply a string which corresponds  * to one of the names of the available paint methods. If there is no  * matching method found, this procedure will return an error.  * Otherwise, the specified method becomes active and will be used in  * all subsequent paint operations.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_context_set_paint_method:  * @name: The name of the paint method.  *  * Set the specified paint method as the active paint method.  *  * This procedure allows the active paint method to be set by  * specifying its name. The name is simply a string which corresponds  * to one of the names of the available paint methods. If there is no  * matching method found, this procedure will return an error.  * Otherwise, the specified method becomes active and will be used in  * all subsequent paint operations.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -519,7 +519,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_foreground:  * @foreground: The foreground color.  *  * Get the current GIMP foreground color.  *  * This procedure returns the current GIMP foreground color. The  * foreground color is used in a variety of tools such as paint tools,  * blending, and bucket fill.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_context_get_foreground:  * @foreground: The foreground color.  *  * Get the current GIMP foreground color.  *  * This procedure returns the current GIMP foreground color. The  * foreground color is used in a variety of tools such as paint tools,  * blending, and bucket fill.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -599,7 +599,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_foreground:  * @foreground: The foreground color.  *  * Set the current GIMP foreground color.  *  * This procedure sets the current GIMP foreground color. After this is  * set, operations which use foreground such as paint tools, blending,  * and bucket fill will use the new value.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_context_set_foreground:  * @foreground: The foreground color.  *  * Set the current GIMP foreground color.  *  * This procedure sets the current GIMP foreground color. After this is  * set, operations which use foreground such as paint tools, blending,  * and bucket fill will use the new value.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -668,7 +668,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_background:  * @background: The background color.  *  * Get the current GIMP background color.  *  * This procedure returns the current GIMP background color. The  * background color is used in a variety of tools such as blending,  * erasing (with non-alpha images), and image filling.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_context_get_background:  * @background: The background color.  *  * Get the current GIMP background color.  *  * This procedure returns the current GIMP background color. The  * background color is used in a variety of tools such as blending,  * erasing (with non-alpha images), and image filling.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -748,7 +748,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_background:  * @background: The background color.  *  * Set the current GIMP background color.  *  * This procedure sets the current GIMP background color. After this is  * set, operations which use background such as blending, filling  * images, clearing, and erasing (in non-alpha images) will use the new  * value.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_context_set_background:  * @background: The background color.  *  * Set the current GIMP background color.  *  * This procedure sets the current GIMP background color. After this is  * set, operations which use background such as blending, filling  * images, clearing, and erasing (in non-alpha images) will use the new  * value.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -817,7 +817,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_default_colors:  *  * Set the current GIMP foreground and background colors to black and  * white.  *  * This procedure sets the current GIMP foreground and background  * colors to their initial default values, black and white.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_context_set_default_colors:  *  * Set the current GIMP foreground and background colors to black and  * white.  *  * This procedure sets the current GIMP foreground and background  * colors to their initial default values, black and white.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -879,7 +879,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_swap_colors:  *  * Swap the current GIMP foreground and background colors.  *  * This procedure swaps the current GIMP foreground and background  * colors, so that the new foreground color becomes the old background  * color and vice versa.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_context_swap_colors:  *  * Swap the current GIMP foreground and background colors.  *  * This procedure swaps the current GIMP foreground and background  * colors, so that the new foreground color becomes the old background  * color and vice versa.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -941,7 +941,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_opacity:  *  * Get the opacity.  *  * This procedure returns the opacity setting. The return value is a  * floating point number between 0 and 100.  *  * Returns: The opacity.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_context_get_opacity:  *  * Get the opacity.  *  * This procedure returns the opacity setting. The return value is a  * floating point number between 0 and 100.  *  * Returns: The opacity.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1014,7 +1014,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_opacity:  * @opacity: The opacity.  *  * Set the opacity.  *  * This procedure modifies the opacity setting. The value should be a  * floating point number between 0 and 100.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_context_set_opacity:  * @opacity: The opacity.  *  * Set the opacity.  *  * This procedure modifies the opacity setting. The value should be a  * floating point number between 0 and 100.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1081,7 +1081,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_paint_mode:  *  * Get the paint mode.  *  * This procedure returns the paint-mode setting. The return value is  * an integer which corresponds to the values listed in the argument  * description.  *  * Returns: The paint mode.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_context_get_paint_mode:  *  * Get the paint mode.  *  * This procedure returns the paint-mode setting. The return value is  * an integer which corresponds to the values listed in the argument  * description.  *  * Returns: The paint mode.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1154,7 +1154,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_paint_mode:  * @paint_mode: The paint mode.  *  * Set the paint mode.  *  * This procedure modifies the paint_mode setting.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_context_set_paint_mode:  * @paint_mode: The paint mode.  *  * Set the paint mode.  *  * This procedure modifies the paint_mode setting.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1221,7 +1221,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_brush:  *  * Retrieve the currently active brush.  *  * This procedure returns the name of the currently active brush. All  * paint operations and stroke operations use this brush to control the  * application of paint to the image.  *  * Returns: The name of the active brush.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_context_get_brush:  *  * Retrieve the currently active brush.  *  * This procedure returns the name of the currently active brush. All  * paint operations and stroke operations use this brush to control the  * application of paint to the image.  *  * Returns: The name of the active brush.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1299,7 +1299,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_brush:  * @name: The name of the brush.  *  * Set the specified brush as the active brush.  *  * This procedure allows the active brush to be set by specifying its  * name. The name is simply a string which corresponds to one of the  * names of the installed brushes. If there is no matching brush found,  * this procedure will return an error. Otherwise, the specified brush  * becomes active and will be used in all subsequent paint operations.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_context_set_brush:  * @name: The name of the brush.  *  * Set the specified brush as the active brush.  *  * This procedure allows the active brush to be set by specifying its  * name. The name is simply a string which corresponds to one of the  * names of the installed brushes. If there is no matching brush found,  * this procedure will return an error. Otherwise, the specified brush  * becomes active and will be used in all subsequent paint operations.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1368,7 +1368,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_brush_size:  *  * Get brush size in pixels.  *  * Get the brush size in pixels for brush based paint tools.  *  * Returns: Brush size in pixels.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_brush_size:  *  * Get brush size in pixels.  *  * Get the brush size in pixels for brush based paint tools.  *  * Returns: Brush size in pixels.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1441,7 +1441,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_brush_size:  * @size: Brush size in pixels.  *  * Set brush size in pixels.  *  * Set the brush size in pixels for brush based paint tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_brush_size:  * @size: Brush size in pixels.  *  * Set brush size in pixels.  *  * Set the brush size in pixels for brush based paint tools.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1508,7 +1508,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_brush_default_size:  *  * Set brush size to its default.  *  * Set the brush size to the default (max of width and height) for  * paintbrush, airbrush, or pencil tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_brush_default_size:  *  * Set brush size to its default.  *  * Set the brush size to the default (max of width and height) for  * paintbrush, airbrush, or pencil tools.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1570,7 +1570,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_brush_aspect_ratio:  *  * Get brush aspect ratio.  *  * Set the aspect ratio for brush based paint tools.  *  * Returns: Aspect ratio.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_brush_aspect_ratio:  *  * Get brush aspect ratio.  *  * Set the aspect ratio for brush based paint tools.  *  * Returns: Aspect ratio.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1643,7 +1643,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_brush_aspect_ratio:  * @aspect: Aspect ratio.  *  * Set brush aspect ratio.  *  * Set the aspect ratio for brush based paint tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_brush_aspect_ratio:  * @aspect: Aspect ratio.  *  * Set brush aspect ratio.  *  * Set the aspect ratio for brush based paint tools.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1710,7 +1710,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_brush_angle:  *  * Get brush angle in degrees.  *  * Set the angle in degrees for brush based paint tools.  *  * Returns: Angle in degrees.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_brush_angle:  *  * Get brush angle in degrees.  *  * Set the angle in degrees for brush based paint tools.  *  * Returns: Angle in degrees.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1783,7 +1783,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_brush_angle:  * @angle: Angle in degrees.  *  * Set brush angle in degrees.  *  * Set the angle in degrees for brush based paint tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_brush_angle:  * @angle: Angle in degrees.  *  * Set brush angle in degrees.  *  * Set the angle in degrees for brush based paint tools.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1850,7 +1850,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_brush_spacing:  *  * Get brush spacing as percent of size.  *  * Get the brush spacing as percent of size for brush based paint  * tools.  *  * Returns: Brush spacing as fraction of size.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_context_get_brush_spacing:  *  * Get brush spacing as percent of size.  *  * Get the brush spacing as percent of size for brush based paint  * tools.  *  * Returns: Brush spacing as fraction of size.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1923,7 +1923,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_brush_spacing:  * @spacing: Brush spacing as fraction of size.  *  * Set brush spacing as percent of size.  *  * Set the brush spacing as percent of size for brush based paint  * tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_context_set_brush_spacing:  * @spacing: Brush spacing as fraction of size.  *  * Set brush spacing as percent of size.  *  * Set the brush spacing as percent of size for brush based paint  * tools.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1990,7 +1990,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_brush_default_spacing:  *  * Set brush spacing to its default.  *  * Set the brush spacing to the default for paintbrush, airbrush, or  * pencil tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_context_set_brush_default_spacing:  *  * Set brush spacing to its default.  *  * Set the brush spacing to the default for paintbrush, airbrush, or  * pencil tools.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -2052,7 +2052,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_brush_hardness:  *  * Get brush hardness in paint options.  *  * Get the brush hardness for brush based paint tools.  *  * Returns: Brush hardness.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_context_get_brush_hardness:  *  * Get brush hardness in paint options.  *  * Get the brush hardness for brush based paint tools.  *  * Returns: Brush hardness.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -2125,7 +2125,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_brush_hardness:  * @hardness: Brush hardness.  *  * Set brush hardness.  *  * Set the brush hardness for brush based paint tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_context_set_brush_hardness:  * @hardness: Brush hardness.  *  * Set brush hardness.  *  * Set the brush hardness for brush based paint tools.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -2192,7 +2192,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_brush_default_hardness:  *  * Set brush spacing to its default.  *  * Set the brush spacing to the default for paintbrush, airbrush, or  * pencil tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_context_set_brush_default_hardness:  *  * Set brush spacing to its default.  *  * Set the brush spacing to the default for paintbrush, airbrush, or  * pencil tools.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -2254,7 +2254,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_brush_force:  *  * Get brush force in paint options.  *  * Get the brush application force for brush based paint tools.  *  * Returns: Brush application force.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_context_get_brush_force:  *  * Get brush force in paint options.  *  * Get the brush application force for brush based paint tools.  *  * Returns: Brush application force.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -2327,7 +2327,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_brush_force:  * @force: Brush application force.  *  * Set brush application force.  *  * Set the brush application force for brush based paint tools.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_context_set_brush_force:  * @force: Brush application force.  *  * Set brush application force.  *  * Set the brush application force for brush based paint tools.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -2394,7 +2394,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_dynamics:  *  * Retrieve the currently active paint dynamics.  *  * This procedure returns the name of the currently active paint  * dynamics. All paint operations and stroke operations use this paint  * dynamics to control the application of paint to the image.  *  * Returns: The name of the active paint dynamics.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_dynamics:  *  * Retrieve the currently active paint dynamics.  *  * This procedure returns the name of the currently active paint  * dynamics. All paint operations and stroke operations use this paint  * dynamics to control the application of paint to the image.  *  * Returns: The name of the active paint dynamics.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -2472,7 +2472,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_dynamics:  * @name: The name of the paint dynamics.  *  * Set the specified paint dynamics as the active paint dynamics.  *  * This procedure allows the active paint dynamics to be set by  * specifying its name. The name is simply a string which corresponds  * to one of the names of the installed paint dynamics. If there is no  * matching paint dynamics found, this procedure will return an error.  * Otherwise, the specified paint dynamics becomes active and will be  * used in all subsequent paint operations.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_dynamics:  * @name: The name of the paint dynamics.  *  * Set the specified paint dynamics as the active paint dynamics.  *  * This procedure allows the active paint dynamics to be set by  * specifying its name. The name is simply a string which corresponds  * to one of the names of the installed paint dynamics. If there is no  * matching paint dynamics found, this procedure will return an error.  * Otherwise, the specified paint dynamics becomes active and will be  * used in all subsequent paint operations.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -2541,7 +2541,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_pattern:  *  * Retrieve the currently active pattern.  *  * This procedure returns name of the the currently active pattern. All  * clone and bucket-fill operations with patterns will use this pattern  * to control the application of paint to the image.  *  * Returns: The name of the active pattern.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_context_get_pattern:  *  * Retrieve the currently active pattern.  *  * This procedure returns name of the the currently active pattern. All  * clone and bucket-fill operations with patterns will use this pattern  * to control the application of paint to the image.  *  * Returns: The name of the active pattern.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2619,7 +2619,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_pattern:  * @name: The name of the pattern.  *  * Set the specified pattern as the active pattern.  *  * This procedure allows the active pattern to be set by specifying its  * name. The name is simply a string which corresponds to one of the  * names of the installed patterns. If there is no matching pattern  * found, this procedure will return an error. Otherwise, the specified  * pattern becomes active and will be used in all subsequent paint  * operations.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_context_set_pattern:  * @name: The name of the pattern.  *  * Set the specified pattern as the active pattern.  *  * This procedure allows the active pattern to be set by specifying its  * name. The name is simply a string which corresponds to one of the  * names of the installed patterns. If there is no matching pattern  * found, this procedure will return an error. Otherwise, the specified  * pattern becomes active and will be used in all subsequent paint  * operations.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2688,7 +2688,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_gradient:  *  * Retrieve the currently active gradient.  *  * This procedure returns the name of the currently active gradient.  *  * Returns: The name of the active gradient.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_context_get_gradient:  *  * Retrieve the currently active gradient.  *  * This procedure returns the name of the currently active gradient.  *  * Returns: The name of the active gradient.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2766,7 +2766,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_gradient:  * @name: The name of the gradient.  *  * Sets the specified gradient as the active gradient.  *  * This procedure lets you set the specified gradient as the active or  * \"current\" one. The name is simply a string which corresponds to  * one of the loaded gradients. If no matching gradient is found, this  * procedure will return an error. Otherwise, the specified gradient  * will become active and will be used for subsequent custom gradient  * operations.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_context_set_gradient:  * @name: The name of the gradient.  *  * Sets the specified gradient as the active gradient.  *  * This procedure lets you set the specified gradient as the active or  * \"current\" one. The name is simply a string which corresponds to  * one of the loaded gradients. If no matching gradient is found, this  * procedure will return an error. Otherwise, the specified gradient  * will become active and will be used for subsequent custom gradient  * operations.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2835,7 +2835,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_palette:  *  * Retrieve the currently active palette.  *  * This procedure returns the name of the the currently active palette.  *  * Returns: The name of the active palette.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_context_get_palette:  *  * Retrieve the currently active palette.  *  * This procedure returns the name of the the currently active palette.  *  * Returns: The name of the active palette.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2913,7 +2913,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_palette:  * @name: The name of the palette.  *  * Set the specified palette as the active palette.  *  * This procedure allows the active palette to be set by specifying its  * name. The name is simply a string which corresponds to one of the  * names of the installed palettes. If no matching palette is found,  * this procedure will return an error. Otherwise, the specified  * palette becomes active and will be used in all subsequent palette  * operations.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_context_set_palette:  * @name: The name of the palette.  *  * Set the specified palette as the active palette.  *  * This procedure allows the active palette to be set by specifying its  * name. The name is simply a string which corresponds to one of the  * names of the installed palettes. If no matching palette is found,  * this procedure will return an error. Otherwise, the specified  * palette becomes active and will be used in all subsequent palette  * operations.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2982,7 +2982,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_font:  *  * Retrieve the currently active font.  *  * This procedure returns the name of the currently active font.  *  * Returns: The name of the active font.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_context_get_font:  *  * Retrieve the currently active font.  *  * This procedure returns the name of the currently active font.  *  * Returns: The name of the active font.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -3060,7 +3060,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_font:  * @name: The name of the font.  *  * Set the specified font as the active font.  *  * This procedure allows the active font to be set by specifying its  * name. The name is simply a string which corresponds to one of the  * names of the installed fonts. If no matching font is found, this  * procedure will return an error. Otherwise, the specified font  * becomes active and will be used in all subsequent font operations.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_context_set_font:  * @name: The name of the font.  *  * Set the specified font as the active font.  *  * This procedure allows the active font to be set by specifying its  * name. The name is simply a string which corresponds to one of the  * names of the installed fonts. If no matching font is found, this  * procedure will return an error. Otherwise, the specified font  * becomes active and will be used in all subsequent font operations.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -3129,7 +3129,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_antialias:  *  * Get the antialias setting.  *  * This procedure returns the antialias setting.  *  * Returns: The antialias setting.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_antialias:  *  * Get the antialias setting.  *  * This procedure returns the antialias setting.  *  * Returns: The antialias setting.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -3202,7 +3202,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_antialias:  * @antialias: The antialias setting.  *  * Set the antialias setting.  *  * This procedure modifies the antialias setting. If antialiasing is  * turned on, the edges of selected region will contain intermediate  * values which give the appearance of a sharper, less pixelized edge.  * This should be set as TRUE most of the time unless a binary-only  * selection is wanted.  * This settings affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color(),  * gimp_image_select_round_rectangle(), gimp_image_select_ellipse(),  * gimp_image_select_polygon(), gimp_image_select_item().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_antialias:  * @antialias: The antialias setting.  *  * Set the antialias setting.  *  * This procedure modifies the antialias setting. If antialiasing is  * turned on, the edges of selected region will contain intermediate  * values which give the appearance of a sharper, less pixelized edge.  * This should be set as TRUE most of the time unless a binary-only  * selection is wanted.  * This settings affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color(),  * gimp_image_select_round_rectangle(), gimp_image_select_ellipse(),  * gimp_image_select_polygon(), gimp_image_select_item().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -3269,7 +3269,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_feather:  *  * Get the feather setting.  *  * This procedure returns the feather setting.  *  * Returns: The feather setting.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_feather:  *  * Get the feather setting.  *  * This procedure returns the feather setting.  *  * Returns: The feather setting.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -3342,7 +3342,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_feather:  * @feather: The feather setting.  *  * Set the feather setting.  *  * This procedure modifies the feather setting. If the feather option  * is enabled, selections will be blurred before combining. The blur is  * a gaussian blur; its radii can be controlled using  * gimp_context_set_feather_radius().  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color(),  * gimp_image_select_rectangle(), gimp_image_select_round_rectangle(),  * gimp_image_select_ellipse(), gimp_image_select_polygon(),  * gimp_image_select_item().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_feather:  * @feather: The feather setting.  *  * Set the feather setting.  *  * This procedure modifies the feather setting. If the feather option  * is enabled, selections will be blurred before combining. The blur is  * a gaussian blur; its radii can be controlled using  * gimp_context_set_feather_radius().  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color(),  * gimp_image_select_rectangle(), gimp_image_select_round_rectangle(),  * gimp_image_select_ellipse(), gimp_image_select_polygon(),  * gimp_image_select_item().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -3409,7 +3409,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_feather_radius:  * @feather_radius_x: The horizontal feather radius.  * @feather_radius_y: The vertical feather radius.  *  * Get the feather radius setting.  *  * This procedure returns the feather radius setting.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_feather_radius:  * @feather_radius_x: The horizontal feather radius.  * @feather_radius_y: The vertical feather radius.  *  * Get the feather radius setting.  *  * This procedure returns the feather radius setting.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -3517,7 +3517,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_feather_radius:  * @feather_radius_x: The horizontal feather radius.  * @feather_radius_y: The vertical feather radius.  *  * Set the feather radius setting.  *  * This procedure modifies the feather radius setting.  * This setting affects all procedures that are affected by  * gimp_context_set_feather().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_feather_radius:  * @feather_radius_x: The horizontal feather radius.  * @feather_radius_y: The vertical feather radius.  *  * Set the feather radius setting.  *  * This procedure modifies the feather radius setting.  * This setting affects all procedures that are affected by  * gimp_context_set_feather().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -3591,7 +3591,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_sample_merged:  *  * Get the sample merged setting.  *  * This procedure returns the sample merged setting.  *  * Returns: The sample merged setting.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_sample_merged:  *  * Get the sample merged setting.  *  * This procedure returns the sample merged setting.  *  * Returns: The sample merged setting.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -3664,7 +3664,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_sample_merged:  * @sample_merged: The sample merged setting.  *  * Set the sample merged setting.  *  * This procedure modifies the sample merged setting. If an operation  * depends on the colors of the pixels present in a drawable, like when  * doing a seed fill, this setting controls whether the pixel data from  * the specified drawable is used ('sample-merged' is FALSE), or the  * pixel data from the composite image ('sample-merged' is TRUE. This  * is equivalent to sampling for colors after merging all visible  * layers).  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_sample_merged:  * @sample_merged: The sample merged setting.  *  * Set the sample merged setting.  *  * This procedure modifies the sample merged setting. If an operation  * depends on the colors of the pixels present in a drawable, like when  * doing a seed fill, this setting controls whether the pixel data from  * the specified drawable is used ('sample-merged' is FALSE), or the  * pixel data from the composite image ('sample-merged' is TRUE. This  * is equivalent to sampling for colors after merging all visible  * layers).  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -3731,7 +3731,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_sample_criterion:  *  * Get the sample criterion setting.  *  * This procedure returns the sample criterion setting.  *  * Returns: The sample criterion setting.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_sample_criterion:  *  * Get the sample criterion setting.  *  * This procedure returns the sample criterion setting.  *  * Returns: The sample criterion setting.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -3804,7 +3804,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_sample_criterion:  * @sample_criterion: The sample criterion setting.  *  * Set the sample criterion setting.  *  * This procedure modifies the sample criterion setting. If an  * operation depends on the colors of the pixels present in a drawable,  * like when doing a seed fill, this setting controls how color  * similarity is determined. SELECT_CRITERION_COMPOSITE is the default  * value.  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_sample_criterion:  * @sample_criterion: The sample criterion setting.  *  * Set the sample criterion setting.  *  * This procedure modifies the sample criterion setting. If an  * operation depends on the colors of the pixels present in a drawable,  * like when doing a seed fill, this setting controls how color  * similarity is determined. SELECT_CRITERION_COMPOSITE is the default  * value.  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -3871,7 +3871,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_sample_threshold:  *  * Get the sample threshold setting.  *  * This procedure returns the sample threshold setting.  *  * Returns: The sample threshold setting.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_sample_threshold:  *  * Get the sample threshold setting.  *  * This procedure returns the sample threshold setting.  *  * Returns: The sample threshold setting.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -3944,7 +3944,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_sample_threshold:  * @sample_threshold: The sample threshold setting.  *  * Set the sample threshold setting.  *  * This procedure modifies the sample threshold setting. If an  * operation depends on the colors of the pixels present in a drawable,  * like when doing a seed fill, this setting controls what is  * \"sufficiently close\" to be considered a similar color. If the  * sample threshold has not been set explicitly, the default threshold  * set in gimprc will be used.  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_sample_threshold:  * @sample_threshold: The sample threshold setting.  *  * Set the sample threshold setting.  *  * This procedure modifies the sample threshold setting. If an  * operation depends on the colors of the pixels present in a drawable,  * like when doing a seed fill, this setting controls what is  * \"sufficiently close\" to be considered a similar color. If the  * sample threshold has not been set explicitly, the default threshold  * set in gimprc will be used.  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -4011,7 +4011,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_sample_threshold_int:  *  * Get the sample threshold setting as an integer value.  *  * This procedure returns the sample threshold setting as an integer  * value. See gimp_context_get_sample_threshold().  *  * Returns: The sample threshold setting.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_sample_threshold_int:  *  * Get the sample threshold setting as an integer value.  *  * This procedure returns the sample threshold setting as an integer  * value. See gimp_context_get_sample_threshold().  *  * Returns: The sample threshold setting.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -4084,7 +4084,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_sample_threshold_int:  * @sample_threshold: The sample threshold setting.  *  * Set the sample threshold setting as an integer value.  *  * This procedure modifies the sample threshold setting as an integer  * value. See gimp_context_set_sample_threshold().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_sample_threshold_int:  * @sample_threshold: The sample threshold setting.  *  * Set the sample threshold setting as an integer value.  *  * This procedure modifies the sample threshold setting as an integer  * value. See gimp_context_set_sample_threshold().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -4151,7 +4151,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_sample_transparent:  *  * Get the sample transparent setting.  *  * This procedure returns the sample transparent setting.  *  * Returns: The sample transparent setting.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_sample_transparent:  *  * Get the sample transparent setting.  *  * This procedure returns the sample transparent setting.  *  * Returns: The sample transparent setting.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -4224,7 +4224,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_sample_transparent:  * @sample_transparent: The sample transparent setting.  *  * Set the sample transparent setting.  *  * This procedure modifies the sample transparent setting. If an  * operation depends on the colors of the pixels present in a drawable,  * like when doing a seed fill, this setting controls whether  * transparency is considered to be a unique selectable color. When  * this setting is TRUE, transparent areas can be selected or filled.  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_sample_transparent:  * @sample_transparent: The sample transparent setting.  *  * Set the sample transparent setting.  *  * This procedure modifies the sample transparent setting. If an  * operation depends on the colors of the pixels present in a drawable,  * like when doing a seed fill, this setting controls whether  * transparency is considered to be a unique selectable color. When  * this setting is TRUE, transparent areas can be selected or filled.  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -4291,7 +4291,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_interpolation:  *  * Get the interpolation type.  *  * This procedure returns the interpolation setting. The return value  * is an integer which corresponds to the values listed in the argument  * description. If the interpolation has not been set explicitly by  * gimp_context_set_interpolation(), the default interpolation set in  * gimprc will be used.  *  * Returns: The interpolation type.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_interpolation:  *  * Get the interpolation type.  *  * This procedure returns the interpolation setting. The return value  * is an integer which corresponds to the values listed in the argument  * description. If the interpolation has not been set explicitly by  * gimp_context_set_interpolation(), the default interpolation set in  * gimprc will be used.  *  * Returns: The interpolation type.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -4364,7 +4364,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_interpolation:  * @interpolation: The interpolation type.  *  * Set the interpolation type.  *  * This procedure modifies the interpolation setting.  * This setting affects affects the following procedures:  * gimp_item_transform_flip(), gimp_item_transform_perspective(),  * gimp_item_transform_rotate(), gimp_item_transform_scale(),  * gimp_item_transform_shear(), gimp_item_transform_2d(),  * gimp_item_transform_matrix(), gimp_image_scale(),  * gimp_layer_scale().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_interpolation:  * @interpolation: The interpolation type.  *  * Set the interpolation type.  *  * This procedure modifies the interpolation setting.  * This setting affects affects the following procedures:  * gimp_item_transform_flip(), gimp_item_transform_perspective(),  * gimp_item_transform_rotate(), gimp_item_transform_scale(),  * gimp_item_transform_shear(), gimp_item_transform_2d(),  * gimp_item_transform_matrix(), gimp_image_scale(),  * gimp_layer_scale().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -4431,7 +4431,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_transform_direction:  *  * Get the transform direction.  *  * This procedure returns the transform direction. The return value is  * an integer which corresponds to the values listed in the argument  * description.  *  * Returns: The transform direction.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_transform_direction:  *  * Get the transform direction.  *  * This procedure returns the transform direction. The return value is  * an integer which corresponds to the values listed in the argument  * description.  *  * Returns: The transform direction.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -4504,7 +4504,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_transform_direction:  * @transform_direction: The transform direction.  *  * Set the transform direction.  *  * This procedure modifies the transform direction setting.  * This setting affects affects the following procedures:  * gimp_item_transform_flip(), gimp_item_transform_perspective(),  * gimp_item_transform_rotate(), gimp_item_transform_scale(),  * gimp_item_transform_shear(), gimp_item_transform_2d(),  * gimp_item_transform_matrix().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_transform_direction:  * @transform_direction: The transform direction.  *  * Set the transform direction.  *  * This procedure modifies the transform direction setting.  * This setting affects affects the following procedures:  * gimp_item_transform_flip(), gimp_item_transform_perspective(),  * gimp_item_transform_rotate(), gimp_item_transform_scale(),  * gimp_item_transform_shear(), gimp_item_transform_2d(),  * gimp_item_transform_matrix().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -4571,7 +4571,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_transform_resize:  *  * Get the transform resize type.  *  * This procedure returns the transform resize setting. The return  * value is an integer which corresponds to the values listed in the  * argument description.  *  * Returns: The transform resize type.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_transform_resize:  *  * Get the transform resize type.  *  * This procedure returns the transform resize setting. The return  * value is an integer which corresponds to the values listed in the  * argument description.  *  * Returns: The transform resize type.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -4644,7 +4644,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_transform_resize:  * @transform_resize: The transform resize type.  *  * Set the transform resize type.  *  * This procedure modifies the transform resize setting. When  * transforming pixels, if the result of a transform operation has a  * different size than the original area, this setting determines how  * the resulting area is sized.  * This setting affects affects the following procedures:  * gimp_item_transform_flip(), gimp_item_transform_flip_simple(),  * gimp_item_transform_perspective(), gimp_item_transform_rotate(),  * gimp_item_transform_rotate_simple(), gimp_item_transform_scale(),  * gimp_item_transform_shear(), gimp_item_transform_2d(),  * gimp_item_transform_matrix().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_transform_resize:  * @transform_resize: The transform resize type.  *  * Set the transform resize type.  *  * This procedure modifies the transform resize setting. When  * transforming pixels, if the result of a transform operation has a  * different size than the original area, this setting determines how  * the resulting area is sized.  * This setting affects affects the following procedures:  * gimp_item_transform_flip(), gimp_item_transform_flip_simple(),  * gimp_item_transform_perspective(), gimp_item_transform_rotate(),  * gimp_item_transform_rotate_simple(), gimp_item_transform_scale(),  * gimp_item_transform_shear(), gimp_item_transform_2d(),  * gimp_item_transform_matrix().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -4851,7 +4851,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_ink_size:  *  * Get ink blob size in pixels.  *  * Get the ink blob size in pixels for ink tool.  *  * Returns: ink blob size in pixels.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_ink_size:  *  * Get ink blob size in pixels.  *  * Get the ink blob size in pixels for ink tool.  *  * Returns: ink blob size in pixels.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -4924,7 +4924,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_ink_size:  * @size: ink blob size in pixels.  *  * Set ink blob size in pixels.  *  * Set the ink blob size in pixels for ink tool.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_ink_size:  * @size: ink blob size in pixels.  *  * Set ink blob size in pixels.  *  * Set the ink blob size in pixels for ink tool.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -4991,7 +4991,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_ink_angle:  *  * Get ink angle in degrees.  *  * Get the ink angle in degrees for ink tool.  *  * Returns: ink angle in degrees.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_ink_angle:  *  * Get ink angle in degrees.  *  * Get the ink angle in degrees for ink tool.  *  * Returns: ink angle in degrees.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -5064,7 +5064,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_ink_angle:  * @angle: ink angle in degrees.  *  * Set ink angle in degrees.  *  * Set the ink angle in degrees for ink tool.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_ink_angle:  * @angle: ink angle in degrees.  *  * Set ink angle in degrees.  *  * Set the ink angle in degrees for ink tool.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -5131,7 +5131,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_ink_size_sensitivity:  *  * Get ink size sensitivity.  *  * Get the ink size sensitivity for ink tool.  *  * Returns: ink size sensitivity.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_ink_size_sensitivity:  *  * Get ink size sensitivity.  *  * Get the ink size sensitivity for ink tool.  *  * Returns: ink size sensitivity.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -5204,7 +5204,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_ink_size_sensitivity:  * @size: ink size sensitivity.  *  * Set ink size sensitivity.  *  * Set the ink size sensitivity for ink tool.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_ink_size_sensitivity:  * @size: ink size sensitivity.  *  * Set ink size sensitivity.  *  * Set the ink size sensitivity for ink tool.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -5271,7 +5271,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_ink_tilt_sensitivity:  *  * Get ink tilt sensitivity.  *  * Get the ink tilt sensitivity for ink tool.  *  * Returns: ink tilt sensitivity.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_ink_tilt_sensitivity:  *  * Get ink tilt sensitivity.  *  * Get the ink tilt sensitivity for ink tool.  *  * Returns: ink tilt sensitivity.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -5344,7 +5344,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_ink_tilt_sensitivity:  * @tilt: ink tilt sensitivity.  *  * Set ink tilt sensitivity.  *  * Set the ink tilt sensitivity for ink tool.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_ink_tilt_sensitivity:  * @tilt: ink tilt sensitivity.  *  * Set ink tilt sensitivity.  *  * Set the ink tilt sensitivity for ink tool.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -5411,7 +5411,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_ink_speed_sensitivity:  *  * Get ink speed sensitivity.  *  * Get the ink speed sensitivity for ink tool.  *  * Returns: ink speed sensitivity.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_ink_speed_sensitivity:  *  * Get ink speed sensitivity.  *  * Get the ink speed sensitivity for ink tool.  *  * Returns: ink speed sensitivity.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -5484,7 +5484,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_ink_speed_sensitivity:  * @speed: ink speed sensitivity.  *  * Set ink speed sensitivity.  *  * Set the ink speed sensitivity for ink tool.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_ink_speed_sensitivity:  * @speed: ink speed sensitivity.  *  * Set ink speed sensitivity.  *  * Set the ink speed sensitivity for ink tool.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -5551,7 +5551,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_ink_blob_type:  *  * Get ink blob type.  *  * Get the ink blob type for ink tool.  *  * Returns: Ink blob type.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_ink_blob_type:  *  * Get ink blob type.  *  * Get the ink blob type for ink tool.  *  * Returns: Ink blob type.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -5624,7 +5624,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_ink_blob_type:  * @type: Ink blob type.  *  * Set ink blob type.  *  * Set the ink blob type for ink tool.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_ink_blob_type:  * @type: Ink blob type.  *  * Set ink blob type.  *  * Set the ink blob type for ink tool.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -5691,7 +5691,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_ink_blob_aspect_ratio:  *  * Get ink blob aspect ratio.  *  * Get the ink blob aspect ratio for ink tool.  *  * Returns: ink blob aspect ratio.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_ink_blob_aspect_ratio:  *  * Get ink blob aspect ratio.  *  * Get the ink blob aspect ratio for ink tool.  *  * Returns: ink blob aspect ratio.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -5764,7 +5764,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_ink_blob_aspect_ratio:  * @aspect: ink blob aspect ratio.  *  * Set ink blob aspect ratio.  *  * Set the ink blob aspect ratio for ink tool.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_ink_blob_aspect_ratio:  * @aspect: ink blob aspect ratio.  *  * Set ink blob aspect ratio.  *  * Set the ink blob aspect ratio for ink tool.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -5831,7 +5831,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_ink_blob_angle:  *  * Get ink blob angle in degrees.  *  * Get the ink blob angle in degrees for ink tool.  *  * Returns: ink blob angle in degrees.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_ink_blob_angle:  *  * Get ink blob angle in degrees.  *  * Get the ink blob angle in degrees for ink tool.  *  * Returns: ink blob angle in degrees.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -5904,7 +5904,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_ink_blob_angle:  * @angle: ink blob angle in degrees.  *  * Set ink blob angle in degrees.  *  * Set the ink blob angle in degrees for ink tool.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_ink_blob_angle:  * @angle: ink blob angle in degrees.  *  * Set ink blob angle in degrees.  *  * Set the ink blob angle in degrees for ink tool.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function

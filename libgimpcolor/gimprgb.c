@@ -358,7 +358,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_set_pixel:  * @rgb:    a #GimpRGB struct  * @format: a Babl format  * @pixel:  pointer to the source pixel  *  * Sets the red, green and blue components of @rgb from the color  * stored in @pixel. The pixel format of @pixel is determined by  * @format.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_rgb_set_pixel:  * @rgb:    a #GimpRGB struct  * @format: a Babl format  * @pixel:  pointer to the source pixel  *  * Sets the red, green and blue components of @rgb from the color  * stored in @pixel. The pixel format of @pixel is determined by  * @format.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -423,7 +423,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_get_pixel:  * @rgb:    a #GimpRGB struct  * @format: a Babl format  * @pixel:  pointer to the destination pixel  *  * Writes the red, green, blue and alpha components of @rgb to the  * color stored in @pixel. The pixel format of @pixel is determined by  * @format.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_rgb_get_pixel:  * @rgb:    a #GimpRGB struct  * @format: a Babl format  * @pixel:  pointer to the destination pixel  *  * Writes the red, green, blue and alpha components of @rgb to the  * color stored in @pixel. The pixel format of @pixel is determined by  * @format.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1189,7 +1189,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_luminance:  * @rgb: a #GimpRGB struct  *  * Return value: the luminous intensity of the range from 0.0 to 1.0.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_rgb_luminance:  * @rgb: a #GimpRGB struct  *  * Return value: the luminous intensity of the range from 0.0 to 1.0.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1246,7 +1246,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_luminance_uchar:  * @rgb: a #GimpRGB struct  *  * Return value: the luminous intensity in the range from 0 to 255.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_rgb_luminance_uchar:  * @rgb: a #GimpRGB struct  *  * Return value: the luminous intensity in the range from 0 to 255.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1625,7 +1625,7 @@ comment|/*  RGBA functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_rgba_set_pixel:  * @rgba:   a #GimpRGB struct  * @format: a Babl format  * @pixel:  pointer to the source pixel  *  * Sets the red, green, blue and alpha components of @rgba from the  * color stored in @pixel. The pixel format of @pixel is determined  * by @format.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_rgba_set_pixel:  * @rgba:   a #GimpRGB struct  * @format: a Babl format  * @pixel:  pointer to the source pixel  *  * Sets the red, green, blue and alpha components of @rgba from the  * color stored in @pixel. The pixel format of @pixel is determined  * by @format.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1690,7 +1690,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgba_get_pixel:  * @rgba:   a #GimpRGB struct  * @format: a Babl format  * @pixel:  pointer to the destination pixel  *  * Writes the red, green, blue and alpha components of @rgba to the  * color stored in @pixel. The pixel format of @pixel is determined by  * @format.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_rgba_get_pixel:  * @rgba:   a #GimpRGB struct  * @format: a Babl format  * @pixel:  pointer to the destination pixel  *  * Writes the red, green, blue and alpha components of @rgba to the  * color stored in @pixel. The pixel format of @pixel is determined by  * @format.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -2407,7 +2407,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_param_rgb_get_type:  *  * Reveals the object type  *  * Returns: the #GType for a GimpParamRGB object  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_param_rgb_get_type:  *  * Reveals the object type  *  * Returns: the #GType for a GimpParamRGB object  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -2984,7 +2984,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_rgb:  * @name:          Canonical name of the param  * @nick:          Nickname of the param  * @blurb:         Brief desciption of param.  * @has_alpha:     %TRUE if the alpha channel has relevance.  * @default_value: Value to use if none is assigned.  * @flags:         a combination of #GParamFlags  *  * Creates a param spec to hold an #GimpRGB value.  * See g_param_spec_internal() for more information.  *  * Returns: a newly allocated #GParamSpec instance  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_param_spec_rgb:  * @name:          Canonical name of the param  * @nick:          Nickname of the param  * @blurb:         Brief desciption of param.  * @has_alpha:     %TRUE if the alpha channel has relevance.  * @default_value: Value to use if none is assigned.  * @flags:         a combination of #GParamFlags  *  * Creates a param spec to hold an #GimpRGB value.  * See g_param_spec_internal() for more information.  *  * Returns: a newly allocated #GParamSpec instance  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -3066,7 +3066,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_rgb_has_alpha:  * @pspec: a #GParamSpec to hold an #GimpRGB value.  *  * Returns: %TRUE if the alpha channel is relevant.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_param_spec_rgb_has_alpha:  * @pspec: a #GParamSpec to hold an #GimpRGB value.  *  * Returns: %TRUE if the alpha channel is relevant.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

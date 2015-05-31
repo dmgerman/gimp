@@ -45,7 +45,7 @@ end_define
 
 begin_decl_stmt
 name|G_BEGIN_DECLS
-comment|/**  * GIMP_TYPE_VALUE_ARRAY:  *  * The type ID of the "GimpValueArray" type which is a boxed type,  * used to pass around pointers to GimpValueArrays.  *  * Since: GIMP 2.10  */
+comment|/**  * GIMP_TYPE_VALUE_ARRAY:  *  * The type ID of the "GimpValueArray" type which is a boxed type,  * used to pass around pointers to GimpValueArrays.  *  * Since: 2.10  */
 DECL|macro|GIMP_TYPE_VALUE_ARRAY
 define|#
 directive|define

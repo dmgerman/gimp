@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon296a033d0103
+DECL|enum|__anon2c97bb2c0103
 block|{
 DECL|enumerator|PROFILE_CHANGED
 name|PROFILE_CHANGED
@@ -236,7 +236,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_managed_get_icc_profile:  * @managed: an object the implements the #GimpColorManaged interface  * @len:     return location for the number of bytes in the profile data  *  * Return value: A pointer to a blob of data that represents an ICC  *               color profile.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_color_managed_get_icc_profile:  * @managed: an object the implements the #GimpColorManaged interface  * @len:     return location for the number of bytes in the profile data  *  * Return value: A pointer to a blob of data that represents an ICC  *               color profile.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -313,7 +313,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_managed_get_color_profile:  * @managed: an object the implements the #GimpColorManaged interface  *  * This function always returns a #GimpColorProfile and falls back to  * gimp_lcms_create_srgb_profile() if the method is not implemented.  *  * Return value: The @managed's #GimpColorProfile.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_color_managed_get_color_profile:  * @managed: an object the implements the #GimpColorManaged interface  *  * This function always returns a #GimpColorProfile and falls back to  * gimp_lcms_create_srgb_profile() if the method is not implemented.  *  * Return value: The @managed's #GimpColorProfile.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -370,7 +370,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_managed_profile_changed:  * @managed: an object the implements the #GimpColorManaged interface  *  * Emits the "profile-changed" signal.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_color_managed_profile_changed:  * @managed: an object the implements the #GimpColorManaged interface  *  * Emits the "profile-changed" signal.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

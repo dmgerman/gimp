@@ -50,7 +50,7 @@ comment|/**  * SECTION: gimpcairo-utils  * @title: GimpCairo-utils  * @short_des
 end_comment
 
 begin_comment
-comment|/**  * gimp_cairo_set_focus_line_pattern:  * @cr:     Cairo context  * @widget: widget to draw the focus indicator on  *  * Sets color and dash pattern for stroking a focus line on the given  * @cr. The line pattern is taken from @widget.  *  * Return value: %TRUE if the widget style has a focus line pattern,  *               %FALSE otherwise  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_cairo_set_focus_line_pattern:  * @cr:     Cairo context  * @widget: widget to draw the focus indicator on  *  * Sets color and dash pattern for stroking a focus line on the given  * @cr. The line pattern is taken from @widget.  *  * Return value: %TRUE if the widget style has a focus line pattern,  *               %FALSE otherwise  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -217,7 +217,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_cairo_surface_create_from_pixbuf:  * @pixbuf: a #GdkPixbuf  *  * Create a Cairo image surface from a GdkPixbuf.  *  * You should avoid calling this function as there are probably more  * efficient ways of achieving the result you are looking for.  *  * Returns: a #cairo_surface_t.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_cairo_surface_create_from_pixbuf:  * @pixbuf: a #GdkPixbuf  *  * Create a Cairo image surface from a GdkPixbuf.  *  * You should avoid calling this function as there are probably more  * efficient ways of achieving the result you are looking for.  *  * Returns: a #cairo_surface_t.  *  * Since: 2.6  **/
 end_comment
 
 begin_function

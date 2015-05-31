@@ -292,7 +292,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_combo_box_new:  * @constraint: a #GimpImageConstraintFunc or %NULL  * @data:       a pointer that is passed to @constraint  *  * Creates a new #GimpIntComboBox filled with all currently opened  * images. If a @constraint function is specified, it is called for  * each image and only if the function returns %TRUE, the image is  * added to the combobox.  *  * You should use gimp_int_combo_box_connect() to initialize and  * connect the combo. Use gimp_int_combo_box_set_active() to get the  * active image ID and gimp_int_combo_box_get_active() to retrieve the  * ID of the selected image.  *  * Return value: a new #GimpIntComboBox.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_image_combo_box_new:  * @constraint: a #GimpImageConstraintFunc or %NULL  * @data:       a pointer that is passed to @constraint  *  * Creates a new #GimpIntComboBox filled with all currently opened  * images. If a @constraint function is specified, it is called for  * each image and only if the function returns %TRUE, the image is  * added to the combobox.  *  * You should use gimp_int_combo_box_connect() to initialize and  * connect the combo. Use gimp_int_combo_box_set_active() to get the  * active image ID and gimp_int_combo_box_get_active() to retrieve the  * ID of the selected image.  *  * Return value: a new #GimpIntComboBox.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

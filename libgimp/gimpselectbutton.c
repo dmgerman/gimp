@@ -156,7 +156,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_select_button_close_popup:  * @button: A #GimpSelectButton  *  * Closes the popup window associated with @button.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_select_button_close_popup:  * @button: A #GimpSelectButton  *  * Closes the popup window associated with @button.  *  * Since: 2.4  */
 end_comment
 
 begin_function

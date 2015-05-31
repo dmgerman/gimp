@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdad65f0103
+DECL|enum|__anon2b0cd9910103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdad65f0203
+DECL|enum|__anon2b0cd9910203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -102,7 +102,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdad65f0308
+DECL|struct|__anon2b0cd9910308
 block|{
 DECL|member|config
 name|GimpColorConfig
@@ -1112,7 +1112,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_display_convert_buffer:  * @display: a #GimpColorDisplay  * @buffer:  a #GeglBuffer  * @area:    area in @buffer to convert  *  * Converts all pixels in @area of @buffer.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_color_display_convert_buffer:  * @display: a #GimpColorDisplay  * @buffer:  a #GeglBuffer  * @area:    area in @buffer to convert  *  * Converts all pixels in @area of @buffer.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1182,7 +1182,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_display_convert_surface:  * @display: a #GimpColorDisplay  * @surface: a #cairo_image_surface_t of type ARGB32  *  * Converts all pixels in @surface.  *  * Since: GIMP 2.8  *  * Deprecated: GIMP 2.8: Use gimp_color_display_convert_buffer() instead.  **/
+comment|/**  * gimp_color_display_convert_surface:  * @display: a #GimpColorDisplay  * @surface: a #cairo_image_surface_t of type ARGB32  *  * Converts all pixels in @surface.  *  * Since: 2.8  *  * Deprecated: GIMP 2.8: Use gimp_color_display_convert_buffer() instead.  **/
 end_comment
 
 begin_function
@@ -1721,7 +1721,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_display_get_config:  * @display:  *  * Return value: a pointer to the #GimpColorConfig object or %NULL.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_color_display_get_config:  * @display:  *  * Return value: a pointer to the #GimpColorConfig object or %NULL.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1757,7 +1757,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_display_get_managed:  * @display:  *  * Return value: a pointer to the #GimpColorManaged object or %NULL.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_color_display_get_managed:  * @display:  *  * Return value: a pointer to the #GimpColorManaged object or %NULL.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

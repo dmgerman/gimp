@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc1730a0103
+DECL|enum|__anon2952d9bf0103
 block|{
 DECL|enumerator|SEARCH
 name|SEARCH
@@ -721,7 +721,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_browser_new:  *  * Create a new #GimpBrowser widget.  *  * Return Value: a newly created #GimpBrowser.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_browser_new:  *  * Create a new #GimpBrowser widget.  *  * Return Value: a newly created #GimpBrowser.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -745,7 +745,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_browser_add_search_types:  * @browser:          a #GimpBrowser widget  * @first_type_label: the label of the first search type  * @first_type_id:    an integer that identifies the first search type  * @...:              a %NULL-terminated list of more labels and ids.  *  * Populates the #GtkComboBox with search types.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_browser_add_search_types:  * @browser:          a #GimpBrowser widget  * @first_type_label: the label of the first search type  * @first_type_id:    an integer that identifies the first search type  * @...:              a %NULL-terminated list of more labels and ids.  *  * Populates the #GtkComboBox with search types.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -929,7 +929,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_browser_set_widget:  * @browser: a #GimpBrowser widget  * @widget:  a #GtkWidget  *  * Sets the widget to appear on the right side of the @browser.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_browser_set_widget:  * @browser: a #GimpBrowser widget  * @widget:  a #GtkWidget  *  * Sets the widget to appear on the right side of the @browser.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1034,7 +1034,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_browser_show_message:  * @browser: a #GimpBrowser widget  * @message: text message  *  * Displays @message in the right side of the @browser. Unless the right  * side already contains a #GtkLabel, the widget previously added with  * gimp_browser_set_widget() is removed and replaced by a #GtkLabel.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_browser_show_message:  * @browser: a #GimpBrowser widget  * @message: text message  *  * Displays @message in the right side of the @browser. Unless the right  * side already contains a #GtkLabel, the widget previously added with  * gimp_browser_set_widget() is removed and replaced by a #GtkLabel.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

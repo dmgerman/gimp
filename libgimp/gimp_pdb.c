@@ -102,7 +102,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_getpid:  *  * Returns the PID of the host GIMP process.  *  * This procedure returns the process ID of the currently running GIMP.  *  * Returns: The PID.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_getpid:  *  * Returns the PID of the host GIMP process.  *  * This procedure returns the process ID of the currently running GIMP.  *  * Returns: The PID.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -175,7 +175,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_attach_parasite:  * @parasite: The parasite to attach.  *  * Add a global parasite.  *  * This procedure attaches a global parasite. It has no return values.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_attach_parasite:  * @parasite: The parasite to attach.  *  * Add a global parasite.  *  * This procedure attaches a global parasite. It has no return values.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -244,7 +244,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_detach_parasite:  * @name: The name of the parasite to detach.  *  * Removes a global parasite.  *  * This procedure detaches a global parasite from. It has no return  * values.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_detach_parasite:  * @name: The name of the parasite to detach.  *  * Removes a global parasite.  *  * This procedure detaches a global parasite from. It has no return  * values.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -313,7 +313,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_parasite:  * @name: The name of the parasite to find.  *  * Look up a global parasite.  *  * Finds and returns the global parasite that was previously attached.  *  * Returns: The found parasite.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_get_parasite:  * @name: The name of the parasite to find.  *  * Look up a global parasite.  *  * Finds and returns the global parasite that was previously attached.  *  * Returns: The found parasite.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -399,7 +399,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_parasite_list:  * @num_parasites: The number of attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached global parasites.  *  * Returns: The names of currently attached parasites. The returned  * value must be freed with g_strfreev().  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_get_parasite_list:  * @num_parasites: The number of attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached global parasites.  *  * Returns: The names of currently attached parasites. The returned  * value must be freed with g_strfreev().  *  * Since: 2.8  **/
 end_comment
 
 begin_function

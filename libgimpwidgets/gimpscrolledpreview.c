@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e70c000108
+DECL|struct|__anon2c24ce9b0108
 block|{
 DECL|member|hscr_policy
 name|GtkPolicyType
@@ -3532,7 +3532,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scrolled_preview_set_position:  * @preview: a #GimpScrolledPreview  * @x:       horizontal scroll offset  * @y:       vertical scroll offset  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_scrolled_preview_set_position:  * @preview: a #GimpScrolledPreview  * @x:       horizontal scroll offset  * @y:       vertical scroll offset  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -3639,7 +3639,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scrolled_preview_set_policy  * @preview:           a #GimpScrolledPreview  * @hscrollbar_policy: policy for horizontal scrollbar  * @vscrollbar_policy: policy for vertical scrollbar  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_scrolled_preview_set_policy  * @preview:           a #GimpScrolledPreview  * @hscrollbar_policy: policy for horizontal scrollbar  * @vscrollbar_policy: policy for vertical scrollbar  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -3703,7 +3703,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scrolled_preview_freeze:  * @preview: a #GimpScrolledPreview  *  * While the @preview is frozen, it is not going to redraw itself in  * response to scroll events.  *  * This function should only be used to implement widgets derived from  * #GimpScrolledPreview. There is no point in calling this from a plug-in.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_scrolled_preview_freeze:  * @preview: a #GimpScrolledPreview  *  * While the @preview is frozen, it is not going to redraw itself in  * response to scroll events.  *  * This function should only be used to implement widgets derived from  * #GimpScrolledPreview. There is no point in calling this from a plug-in.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -3744,7 +3744,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scrolled_preview_thaw:  * @preview: a #GimpScrolledPreview  *  * While the @preview is frozen, it is not going to redraw itself in  * response to scroll events.  *  * This function should only be used to implement widgets derived from  * #GimpScrolledPreview. There is no point in calling this from a plug-in.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_scrolled_preview_thaw:  * @preview: a #GimpScrolledPreview  *  * While the @preview is frozen, it is not going to redraw itself in  * response to scroll events.  *  * This function should only be used to implement widgets derived from  * #GimpScrolledPreview. There is no point in calling this from a plug-in.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2771bd7a0103
+DECL|enum|__anon278d20d60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -62,7 +62,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2771bd7a0208
+DECL|struct|__anon278d20d60208
 block|{
 DECL|member|pixbuf_renderer
 name|GtkCellRenderer
@@ -273,7 +273,7 @@ name|get_property
 operator|=
 name|gimp_int_combo_box_get_property
 expr_stmt|;
-comment|/**    * GimpIntComboBox:ellipsize:    *    * Specifies the preferred place to ellipsize text in the combo-box,    * if the cell renderer does not have enough room to display the    * entire string.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpIntComboBox:ellipsize:    *    * Specifies the preferred place to ellipsize text in the combo-box,    * if the cell renderer does not have enough room to display the    * entire string.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -296,7 +296,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpIntComboBox:label:    *    * Sets a label on the combo-box, see gimp_int_combo_box_set_label().    *    * Since: GIMP 2.10    */
+comment|/**    * GimpIntComboBox:label:    *    * Sets a label on the combo-box, see gimp_int_combo_box_set_label().    *    * Since: 2.10    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -650,7 +650,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_combo_box_new:  * @first_label: the label of the first item  * @first_value: the value of the first item  * @...: a %NULL terminated list of more label, value pairs  *  * Creates a GtkComboBox that has integer values associated with each  * item. The items to fill the combo box with are specified as a %NULL  * terminated list of label/value pairs.  *  * If you need to construct an empty #GimpIntComboBox, it's best to use  * g_object_new (GIMP_TYPE_INT_COMBO_BOX, NULL).  *  * Return value: a new #GimpIntComboBox.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_int_combo_box_new:  * @first_label: the label of the first item  * @first_value: the value of the first item  * @...: a %NULL terminated list of more label, value pairs  *  * Creates a GtkComboBox that has integer values associated with each  * item. The items to fill the combo box with are specified as a %NULL  * terminated list of label/value pairs.  *  * If you need to construct an empty #GimpIntComboBox, it's best to use  * g_object_new (GIMP_TYPE_INT_COMBO_BOX, NULL).  *  * Return value: a new #GimpIntComboBox.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -707,7 +707,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_combo_box_new_valist:  * @first_label: the label of the first item  * @first_value: the value of the first item  * @values: a va_list with more values  *  * A variant of gimp_int_combo_box_new() that takes a va_list of  * label/value pairs. Probably only useful for language bindings.  *  * Return value: a new #GimpIntComboBox.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_int_combo_box_new_valist:  * @first_label: the label of the first item  * @first_value: the value of the first item  * @values: a va_list with more values  *  * A variant of gimp_int_combo_box_new() that takes a va_list of  * label/value pairs. Probably only useful for language bindings.  *  * Return value: a new #GimpIntComboBox.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -841,7 +841,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_combo_box_new_array:  * @n_values: the number of values  * @labels:   an array of labels (array length must be @n_values)  *  * A variant of gimp_int_combo_box_new() that takes an array of labels.  * The array indices are used as values.  *  * Return value: a new #GimpIntComboBox.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_int_combo_box_new_array:  * @n_values: the number of values  * @labels:   an array of labels (array length must be @n_values)  *  * A variant of gimp_int_combo_box_new() that takes an array of labels.  * The array indices are used as values.  *  * Return value: a new #GimpIntComboBox.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -982,7 +982,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_combo_box_prepend:  * @combo_box: a #GimpIntComboBox  * @...:       pairs of column number and value, terminated with -1  *  * This function provides a convenient way to prepend items to a  * #GimpIntComboBox. It prepends a row to the @combo_box's list store  * and calls gtk_list_store_set() for you.  *  * The column number must be taken from the enum #GimpIntStoreColumns.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_int_combo_box_prepend:  * @combo_box: a #GimpIntComboBox  * @...:       pairs of column number and value, terminated with -1  *  * This function provides a convenient way to prepend items to a  * #GimpIntComboBox. It prepends a row to the @combo_box's list store  * and calls gtk_list_store_set() for you.  *  * The column number must be taken from the enum #GimpIntStoreColumns.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1062,7 +1062,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_combo_box_append:  * @combo_box: a #GimpIntComboBox  * @...:       pairs of column number and value, terminated with -1  *  * This function provides a convenient way to append items to a  * #GimpIntComboBox. It appends a row to the @combo_box's list store  * and calls gtk_list_store_set() for you.  *  * The column number must be taken from the enum #GimpIntStoreColumns.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_int_combo_box_append:  * @combo_box: a #GimpIntComboBox  * @...:       pairs of column number and value, terminated with -1  *  * This function provides a convenient way to append items to a  * #GimpIntComboBox. It appends a row to the @combo_box's list store  * and calls gtk_list_store_set() for you.  *  * The column number must be taken from the enum #GimpIntStoreColumns.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1142,7 +1142,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_combo_box_set_active:  * @combo_box: a #GimpIntComboBox  * @value:     an integer value  *  * Looks up the item that belongs to the given @value and makes it the  * selected item in the @combo_box.  *  * Return value: %TRUE on success or %FALSE if there was no item for  *               this value.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_int_combo_box_set_active:  * @combo_box: a #GimpIntComboBox  * @value:     an integer value  *  * Looks up the item that belongs to the given @value and makes it the  * selected item in the @combo_box.  *  * Return value: %TRUE on success or %FALSE if there was no item for  *               this value.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1220,7 +1220,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_combo_box_get_active:  * @combo_box: a #GimpIntComboBox  * @value:     return location for the integer value  *  * Retrieves the value of the selected (active) item in the @combo_box.  *  * Return value: %TRUE if @value has been set or %FALSE if no item was  *               active.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_int_combo_box_get_active:  * @combo_box: a #GimpIntComboBox  * @value:     return location for the integer value  *  * Retrieves the value of the selected (active) item in the @combo_box.  *  * Return value: %TRUE if @value has been set or %FALSE if no item was  *               active.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1305,7 +1305,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_combo_box_connect:  * @combo_box: a #GimpIntComboBox  * @value:     the value to set  * @callback:  a callback to connect to the @combo_box's "changed" signal  * @data:      a pointer passed as data to g_signal_connect()  *  * A convenience function that sets the initial @value of a  * #GimpIntComboBox and connects @callback to the "changed"  * signal.  *  * This function also calls the @callback once after setting the  * initial @value. This is often convenient when working with combo  * boxes that select a default active item, like for example  * gimp_drawable_combo_box_new(). If you pass an invalid initial  * @value, the @callback will be called with the default item active.  *  * Return value: the signal handler ID as returned by g_signal_connect()  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_int_combo_box_connect:  * @combo_box: a #GimpIntComboBox  * @value:     the value to set  * @callback:  a callback to connect to the @combo_box's "changed" signal  * @data:      a pointer passed as data to g_signal_connect()  *  * A convenience function that sets the initial @value of a  * #GimpIntComboBox and connects @callback to the "changed"  * signal.  *  * This function also calls the @callback once after setting the  * initial @value. This is often convenient when working with combo  * boxes that select a default active item, like for example  * gimp_drawable_combo_box_new(). If you pass an invalid initial  * @value, the @callback will be called with the default item active.  *  * Return value: the signal handler ID as returned by g_signal_connect()  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1385,7 +1385,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_combo_box_set_label:  * @combo_box: a #GimpIntComboBox  * @label:     a string to be shown as label  *  * Sets a caption on the @combo_box that will be displayed  * left-aligned inside the box. When a label is set, the remaining  * contents of the box will be right-aligned. This is useful for  * places where screen estate is rare, like in tool options.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_int_combo_box_set_label:  * @combo_box: a #GimpIntComboBox  * @label:     a string to be shown as label  *  * Sets a caption on the @combo_box that will be displayed  * left-aligned inside the box. When a label is set, the remaining  * contents of the box will be right-aligned. This is useful for  * places where screen estate is rare, like in tool options.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1509,7 +1509,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_combo_box_get_label:  * @combo_box: a #GimpIntComboBox  *  * Returns the label previously set with gimp_int_combo_box_set_label(),  * or %NULL,  *  * Return value: the @combo_box' label.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_int_combo_box_get_label:  * @combo_box: a #GimpIntComboBox  *  * Returns the label previously set with gimp_int_combo_box_set_label(),  * or %NULL,  *  * Return value: the @combo_box' label.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1546,7 +1546,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_combo_box_set_sensitivity:  * @combo_box: a #GimpIntComboBox  * @func: a function that returns a boolean value, or %NULL to unset  * @data: data to pass to @func  * @destroy: destroy notification for @data  *  * Sets a function that is used to decide about the sensitivity of  * rows in the @combo_box. Use this if you want to set certain rows  * insensitive.  *  * Calling gtk_widget_queue_draw() on the @combo_box will cause the  * sensitivity to be updated.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_int_combo_box_set_sensitivity:  * @combo_box: a #GimpIntComboBox  * @func: a function that returns a boolean value, or %NULL to unset  * @data: data to pass to @func  * @destroy: destroy notification for @data  *  * Sets a function that is used to decide about the sensitivity of  * rows in the @combo_box. Use this if you want to set certain rows  * insensitive.  *  * Calling gtk_widget_queue_draw() on the @combo_box will cause the  * sensitivity to be updated.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

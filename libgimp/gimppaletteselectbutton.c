@@ -113,7 +113,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af8adf80103
+DECL|enum|__anon29f5c4a10103
 block|{
 DECL|enumerator|PALETTE_SET
 name|PALETTE_SET
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af8adf80203
+DECL|enum|__anon29f5c4a10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -379,7 +379,7 @@ name|palette_set
 operator|=
 name|NULL
 expr_stmt|;
-comment|/**    * GimpPaletteSelectButton:title:    *    * The title to be used for the palette selection popup dialog.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpPaletteSelectButton:title:    *    * The title to be used for the palette selection popup dialog.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -405,7 +405,7 @@ name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpPaletteSelectButton:palette-name:    *    * The name of the currently selected palette.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpPaletteSelectButton:palette-name:    *    * The name of the currently selected palette.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -426,7 +426,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpPaletteSelectButton::palette-set:    * @widget: the object which received the signal.    * @palette_name: the name of the currently selected palette.    * @dialog_closing: whether the dialog was closed or not.    *    * The ::palette-set signal is emitted when the user selects a palette.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpPaletteSelectButton::palette-set:    * @widget: the object which received the signal.    * @palette_name: the name of the currently selected palette.    * @dialog_closing: whether the dialog was closed or not.    *    * The ::palette-set signal is emitted when the user selects a palette.    *    * Since: 2.4    */
 name|palette_button_signals
 index|[
 name|PALETTE_SET
@@ -531,7 +531,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_select_button_new:  * @title:        Title of the dialog to use or %NULL to use the default title.  * @palette_name: Initial palette name.  *  * Creates a new #GtkWidget that completely controls the selection of  * a palette.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_palette_select_button_new:  * @title:        Title of the dialog to use or %NULL to use the default title.  * @palette_name: Initial palette name.  *  * Creates a new #GtkWidget that completely controls the selection of  * a palette.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -597,7 +597,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_select_button_get_palette:  * @button: A #GimpPaletteSelectButton  *  * Retrieves the name of currently selected palette.  *  * Returns: an internal copy of the palette name which must not be freed.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_palette_select_button_get_palette:  * @button: A #GimpPaletteSelectButton  *  * Retrieves the name of currently selected palette.  *  * Returns: an internal copy of the palette name which must not be freed.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -642,7 +642,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_select_button_set_palette:  * @button: A #GimpPaletteSelectButton  * @palette_name: Palette name to set; %NULL means no change.  *  * Sets the current palette for the palette select button.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_palette_select_button_set_palette:  * @button: A #GimpPaletteSelectButton  * @palette_name: Palette name to set; %NULL means no change.  *  * Sets the current palette for the palette select button.  *  * Since: 2.4  */
 end_comment
 
 begin_function

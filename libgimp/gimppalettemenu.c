@@ -46,7 +46,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a132830108
+DECL|struct|__anon2b0f07410108
 block|{
 DECL|member|callback
 name|GimpRunPaletteCallback
@@ -99,7 +99,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_palette_select_widget_new:  * @title:        Title of the dialog to use or %NULL to use the default title.  * @palette_name: Initial palette name.  * @callback:     A function to call when the selected palette changes.  * @data:         A pointer to arbitrary data to be used in the call to @callback.  *  * Creates a new #GtkWidget that completely controls the selection of  * a palette.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_palette_select_widget_new:  * @title:        Title of the dialog to use or %NULL to use the default title.  * @palette_name: Initial palette name.  * @callback:     A function to call when the selected palette changes.  * @data:         A pointer to arbitrary data to be used in the call to @callback.  *  * Creates a new #GtkWidget that completely controls the selection of  * a palette.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  *  * Since: 2.2  */
 end_comment
 
 begin_function
@@ -198,7 +198,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_select_widget_close:  * @widget: A palette select widget.  *  * Closes the popup window associated with @widget.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_palette_select_widget_close:  * @widget: A palette select widget.  *  * Closes the popup window associated with @widget.  *  * Since: 2.2  */
 end_comment
 
 begin_function
@@ -230,7 +230,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_select_widget_set:  * @widget:       A palette select widget.  * @palette_name: Palette name to set; %NULL means no change.  *  * Sets the current palette for the palette select widget.  Calls the  * callback function if one was supplied in the call to  * gimp_palette_select_widget_new().  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_palette_select_widget_set:  * @widget:       A palette select widget.  * @palette_name: Palette name to set; %NULL means no change.  *  * Sets the current palette for the palette select widget.  Calls the  * callback function if one was supplied in the call to  * gimp_palette_select_widget_new().  *  * Since: 2.2  */
 end_comment
 
 begin_function

@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a233c3f0103
+DECL|enum|__anon29f730650103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -80,7 +80,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a233c3f0203
+DECL|enum|__anon29f730650203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a233c3f0308
+DECL|struct|__anon29f730650308
 block|{
 DECL|member|controls
 name|GtkWidget
@@ -2268,7 +2268,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_set_update:  * @preview: a #GimpPreview widget  * @update: %TRUE if the preview should invalidate itself when being  *          scrolled or when gimp_preview_invalidate() is being called  *  * Sets the state of the "Preview" check button.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_preview_set_update:  * @preview: a #GimpPreview widget  * @update: %TRUE if the preview should invalidate itself when being  *          scrolled or when gimp_preview_invalidate() is being called  *  * Sets the state of the "Preview" check button.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2307,7 +2307,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_get_update:  * @preview: a #GimpPreview widget  *  * Return value: the state of the "Preview" check button.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_preview_get_update:  * @preview: a #GimpPreview widget  *  * Return value: the state of the "Preview" check button.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2339,7 +2339,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_set_bounds:  * @preview: a #GimpPreview widget  * @xmin:    the minimum X value  * @ymin:    the minimum Y value  * @xmax:    the maximum X value  * @ymax:    the maximum Y value  *  * Sets the lower and upper limits for the previewed area. The  * difference between the upper and lower value is used to set the  * maximum size of the #GimpPreviewArea used in the @preview.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_preview_set_bounds:  * @preview: a #GimpPreview widget  * @xmin:    the minimum X value  * @ymin:    the minimum Y value  * @xmax:    the maximum X value  * @ymax:    the maximum Y value  *  * Sets the lower and upper limits for the previewed area. The  * difference between the upper and lower value is used to set the  * maximum size of the #GimpPreviewArea used in the @preview.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2432,7 +2432,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_get_size:  * @preview: a #GimpPreview widget  * @width:   return location for the preview area width  * @height:  return location for the preview area height  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_preview_get_size:  * @preview: a #GimpPreview widget  * @width:   return location for the preview area width  * @height:  return location for the preview area height  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2487,7 +2487,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_get_position:  * @preview: a #GimpPreview widget  * @x:       return location for the horizontal offset  * @y:       return location for the vertical offset  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_preview_get_position:  * @preview: a #GimpPreview widget  * @x:       return location for the horizontal offset  * @y:       return location for the vertical offset  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2550,7 +2550,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_transform:  * @preview: a #GimpPreview widget  * @src_x:   horizontal position on the previewed image  * @src_y:   vertical position on the previewed image  * @dest_x:  returns the transformed horizontal position  * @dest_y:  returns the transformed vertical position  *  * Transforms from image to widget coordinates.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_preview_transform:  * @preview: a #GimpPreview widget  * @src_x:   horizontal position on the previewed image  * @src_y:   vertical position on the previewed image  * @dest_x:  returns the transformed horizontal position  * @dest_y:  returns the transformed vertical position  *  * Transforms from image to widget coordinates.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -2618,7 +2618,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_untransform:  * @preview: a #GimpPreview widget  * @src_x:   horizontal position relative to the preview area's origin  * @src_y:   vertical position relative to  preview area's origin  * @dest_x:  returns the untransformed horizontal position  * @dest_y:  returns the untransformed vertical position  *  * Transforms from widget to image coordinates.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_preview_untransform:  * @preview: a #GimpPreview widget  * @src_x:   horizontal position relative to the preview area's origin  * @src_y:   vertical position relative to  preview area's origin  * @dest_x:  returns the untransformed horizontal position  * @dest_y:  returns the untransformed vertical position  *  * Transforms from widget to image coordinates.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -2686,7 +2686,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_get_area:  * @preview: a #GimpPreview widget  *  * In most cases, you shouldn't need to access the #GimpPreviewArea  * that is being used in the @preview. Sometimes however, you need to.  * For example if you want to receive mouse events from the area. In  * such cases, use gimp_preview_get_area().  *  * Return value: a pointer to the #GimpPreviewArea used in the @preview.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_preview_get_area:  * @preview: a #GimpPreview widget  *  * In most cases, you shouldn't need to access the #GimpPreviewArea  * that is being used in the @preview. Sometimes however, you need to.  * For example if you want to receive mouse events from the area. In  * such cases, use gimp_preview_get_area().  *  * Return value: a pointer to the #GimpPreviewArea used in the @preview.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -2719,7 +2719,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_draw:  * @preview: a #GimpPreview widget  *  * Calls the GimpPreview::draw method. GimpPreview itself doesn't  * implement a default draw method so the behaviour is determined by  * the derived class implementing this method.  *  * #GimpDrawablePreview implements gimp_preview_draw() by drawing the  * original, unmodified drawable to the @preview.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_preview_draw:  * @preview: a #GimpPreview widget  *  * Calls the GimpPreview::draw method. GimpPreview itself doesn't  * implement a default draw method so the behaviour is determined by  * the derived class implementing this method.  *  * #GimpDrawablePreview implements gimp_preview_draw() by drawing the  * original, unmodified drawable to the @preview.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2758,7 +2758,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_draw_buffer:  * @preview:   a #GimpPreview widget  * @buffer:    a pixel buffer the size of the preview  * @rowstride: the @buffer's rowstride  *  * Calls the GimpPreview::draw_buffer method. GimpPreview itself  * doesn't implement this method so the behaviour is determined by the  * derived class implementing this method.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_preview_draw_buffer:  * @preview:   a #GimpPreview widget  * @buffer:    a pixel buffer the size of the preview  * @rowstride: the @buffer's rowstride  *  * Calls the GimpPreview::draw_buffer method. GimpPreview itself  * doesn't implement this method so the behaviour is determined by the  * derived class implementing this method.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2809,7 +2809,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_invalidate:  * @preview: a #GimpPreview widget  *  * This function starts or renews a short low-priority timeout. When  * the timeout expires, the GimpPreview::invalidated signal is emitted  * which will usually cause the @preview to be updated.  *  * This function does nothing unless the "Preview" button is checked.  *  * During the emission of the signal a busy cursor is set on the  * toplevel window containing the @preview and on the preview area  * itself.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_preview_invalidate:  * @preview: a #GimpPreview widget  *  * This function starts or renews a short low-priority timeout. When  * the timeout expires, the GimpPreview::invalidated signal is emitted  * which will usually cause the @preview to be updated.  *  * This function does nothing unless the "Preview" button is checked.  *  * During the emission of the signal a busy cursor is set on the  * toplevel window containing the @preview and on the preview area  * itself.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2875,7 +2875,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_set_default_cursor:  * @preview: a #GimpPreview widget  * @cursor:  a #GdkCursor or %NULL  *  * Sets the default mouse cursor for the preview.  Note that this will  * be overriden by a %GDK_FLEUR if the preview has scrollbars, or by a  * %GDK_WATCH when the preview is invalidated.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_preview_set_default_cursor:  * @preview: a #GimpPreview widget  * @cursor:  a #GdkCursor or %NULL  *  * Sets the default mouse cursor for the preview.  Note that this will  * be overriden by a %GDK_FLEUR if the preview has scrollbars, or by a  * %GDK_WATCH when the preview is invalidated.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2932,7 +2932,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_get_controls:  * @preview: a #GimpPreview widget  *  * Gives access to the #GtkHBox at the bottom of the preview that  * contains the update toggle. Derived widgets can use this function  * if they need to add controls to this area.  *  * Return value: the #GtkHBox at the bottom of the preview.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_preview_get_controls:  * @preview: a #GimpPreview widget  *  * Gives access to the #GtkHBox at the bottom of the preview that  * contains the update toggle. Derived widgets can use this function  * if they need to add controls to this area.  *  * Return value: the #GtkHBox at the bottom of the preview.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

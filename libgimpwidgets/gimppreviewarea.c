@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon289e77ed0103
+DECL|enum|__anon279853010103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -8722,7 +8722,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_area_set_offsets:  * @area: a #GimpPreviewArea  * @x:    horizontal offset  * @y:    vertical offset  *  * Sets the offsets of the previewed area. This information is used  * when drawing the checkerboard and to determine the dither offsets.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_preview_area_set_offsets:  * @area: a #GimpPreviewArea  * @x:    horizontal offset  * @y:    vertical offset  *  * Sets the offsets of the previewed area. This information is used  * when drawing the checkerboard and to determine the dither offsets.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -8890,7 +8890,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_area_set_max_size:  * @area:   a #GimpPreviewArea widget  * @width:  the maximum width in pixels or -1 to unset the limit  * @height: the maximum height in pixels or -1 to unset the limit  *  * Usually a #GimpPreviewArea fills the size that it is  * allocated. This function allows you to limit the preview area to a  * maximum size. If a larger size is allocated for the widget, the  * preview will draw itself centered into the allocated area.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_preview_area_set_max_size:  * @area:   a #GimpPreviewArea widget  * @width:  the maximum width in pixels or -1 to unset the limit  * @height: the maximum height in pixels or -1 to unset the limit  *  * Usually a #GimpPreviewArea fills the size that it is  * allocated. This function allows you to limit the preview area to a  * maximum size. If a larger size is allocated for the widget, the  * preview will draw itself centered into the allocated area.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -9270,7 +9270,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_area_menu_popup:  * @area:  a #GimpPreviewArea  * @event: the button event that causes the menu to popup or %NULL  *  * Creates a popup menu that allows one to configure the size and type of  * the checkerboard pattern that the @area uses to visualize transparency.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_preview_area_menu_popup:  * @area:  a #GimpPreviewArea  * @event: the button event that causes the menu to popup or %NULL  *  * Creates a popup menu that allows one to configure the size and type of  * the checkerboard pattern that the @area uses to visualize transparency.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

@@ -73,7 +73,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/**  * gimp_cpu_accel_get_support:  *  * Query for CPU acceleration support.  *  * Return value: #GimpCpuAccelFlags as supported by the CPU.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_cpu_accel_get_support:  *  * Query for CPU acceleration support.  *  * Return value: #GimpCpuAccelFlags as supported by the CPU.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -96,7 +96,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_cpu_accel_set_use:  * @use:  whether to use CPU acceleration features or not  *  * This function is for internal use only.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_cpu_accel_set_use:  * @use:  whether to use CPU acceleration features or not  *  * This function is for internal use only.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -149,7 +149,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2951cf6f0103
+DECL|enum|__anon2773f3c10103
 block|{
 DECL|enumerator|ARCH_X86_VENDOR_NONE
 name|ARCH_X86_VENDOR_NONE
@@ -196,7 +196,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2951cf6f0203
+DECL|enum|__anon2773f3c10203
 block|{
 DECL|enumerator|ARCH_X86_INTEL_FEATURE_MMX
 name|ARCH_X86_INTEL_FEATURE_MMX
@@ -273,7 +273,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2951cf6f0303
+DECL|enum|__anon2773f3c10303
 block|{
 DECL|enumerator|ARCH_X86_INTEL_FEATURE_PNI
 name|ARCH_X86_INTEL_FEATURE_PNI
@@ -403,7 +403,7 @@ name|ecx
 decl_stmt|,
 name|edx
 decl_stmt|;
-DECL|union|__anon2951cf6f040a
+DECL|union|__anon2773f3c1040a
 union|union
 block|{
 DECL|member|idaschar

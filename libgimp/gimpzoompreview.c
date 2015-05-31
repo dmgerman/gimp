@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon296bb8780103
+DECL|enum|__anon2c482d870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296bb8780208
+DECL|struct|__anon2c482d870208
 block|{
 DECL|member|update
 name|gboolean
@@ -607,7 +607,7 @@ name|GimpZoomPreviewPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpZoomPreview:drawable:    *    * The drawable the #GimpZoomPreview is attached to.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpZoomPreview:drawable:    *    * The drawable the #GimpZoomPreview is attached to.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -628,7 +628,7 @@ name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpZoomPreview:model:    *    * The #GimpZoomModel used by this #GimpZoomPreview.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpZoomPreview:model:    *    * The #GimpZoomModel used by this #GimpZoomPreview.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -3114,7 +3114,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_preview_new:  * @drawable: a #GimpDrawable  *  * Creates a new #GimpZoomPreview widget for @drawable.  *  * Since: GIMP 2.4  *  * Returns: a new #GimpZoomPreview.  **/
+comment|/**  * gimp_zoom_preview_new:  * @drawable: a #GimpDrawable  *  * Creates a new #GimpZoomPreview widget for @drawable.  *  * Since: 2.4  *  * Returns: a new #GimpZoomPreview.  **/
 end_comment
 
 begin_function
@@ -3153,7 +3153,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_preview_new_with_model:  * @drawable: a #GimpDrawable  * @model:    a #GimpZoomModel  *  * Creates a new #GimpZoomPreview widget for @drawable using the  * given @model.  *  * This variant of gimp_zoom_preview_new() allows you to create a  * preview using an existing zoom model. This may be useful if for  * example you want to have two zoom previews that keep their zoom  * factor in sync.  *  * Since: GIMP 2.4  *  * Returns: a new #GimpZoomPreview.  **/
+comment|/**  * gimp_zoom_preview_new_with_model:  * @drawable: a #GimpDrawable  * @model:    a #GimpZoomModel  *  * Creates a new #GimpZoomPreview widget for @drawable using the  * given @model.  *  * This variant of gimp_zoom_preview_new() allows you to create a  * preview using an existing zoom model. This may be useful if for  * example you want to have two zoom previews that keep their zoom  * factor in sync.  *  * Since: 2.4  *  * Returns: a new #GimpZoomPreview.  **/
 end_comment
 
 begin_function
@@ -3210,7 +3210,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_preview_get_drawable:  * @preview: a #GimpZoomPreview widget  *  * Returns the #GimpDrawable the #GimpZoomPreview is attached to.  *  * Return Value: the #GimpDrawable that was passed to gimp_zoom_preview_new().  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_zoom_preview_get_drawable:  * @preview: a #GimpZoomPreview widget  *  * Returns the #GimpDrawable the #GimpZoomPreview is attached to.  *  * Return Value: the #GimpDrawable that was passed to gimp_zoom_preview_new().  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -3246,7 +3246,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_preview_get_model:  * @preview: a #GimpZoomPreview widget  *  * Returns the #GimpZoomModel the preview is using.  *  * Return Value: a pointer to the #GimpZoomModel owned by the @preview  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_zoom_preview_get_model:  * @preview: a #GimpZoomPreview widget  *  * Returns the #GimpZoomModel the preview is using.  *  * Return Value: a pointer to the #GimpZoomModel owned by the @preview  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -3282,7 +3282,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_preview_get_factor:  * @preview: a #GimpZoomPreview widget  *  * Returns the zoom factor the preview is currently using.  *  * Return Value: the current zoom factor  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_zoom_preview_get_factor:  * @preview: a #GimpZoomPreview widget  *  * Returns the zoom factor the preview is currently using.  *  * Return Value: the current zoom factor  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -3334,7 +3334,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_preview_get_source:  * @preview: a #GimpZoomPreview widget  * @width: a pointer to an int where the current width of the zoom widget  *         will be put.  * @height: a pointer to an int where the current width of the zoom widget  *          will be put.  * @bpp: return location for the number of bytes per pixel  *  * Returns the scaled image data of the part of the drawable the  * #GimpZoomPreview is currently showing, as a newly allocated array of guchar.  * This function also allow to get the current width, height and bpp of the  * #GimpZoomPreview.  *  * Return Value: newly allocated data that should be released using g_free()  *               when it is not any longer needed  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_zoom_preview_get_source:  * @preview: a #GimpZoomPreview widget  * @width: a pointer to an int where the current width of the zoom widget  *         will be put.  * @height: a pointer to an int where the current width of the zoom widget  *          will be put.  * @bpp: return location for the number of bytes per pixel  *  * Returns the scaled image data of the part of the drawable the  * #GimpZoomPreview is currently showing, as a newly allocated array of guchar.  * This function also allow to get the current width, height and bpp of the  * #GimpZoomPreview.  *  * Return Value: newly allocated data that should be released using g_free()  *               when it is not any longer needed  *  * Since: 2.4  */
 end_comment
 
 begin_function

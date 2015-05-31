@@ -82,7 +82,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b30f170108
+DECL|struct|__anon276a94330108
 block|{
 DECL|member|name
 name|gchar
@@ -166,7 +166,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_scanner_new_file:  * @filename:  * @error:  *  * Return value:  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_scanner_new_file:  * @filename:  * @error:  *  * Return value:  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -245,7 +245,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_new_gfile:  * @file: a #GFile  * @error: return location for #GError, or %NULL  *  * Return value: The new #GScanner.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_scanner_new_gfile:  * @file: a #GFile  * @error: return location for #GError, or %NULL  *  * Return value: The new #GScanner.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -509,7 +509,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_new_stream:  * @input: a #GInputStream  * @error: return location for #GError, or %NULL  *  * Return value: The new #GScanner.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_scanner_new_stream:  * @input: a #GInputStream  * @error: return location for #GError, or %NULL  *  * Return value: The new #GScanner.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -770,7 +770,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_new_string:  * @text:  * @text_len:  * @error:  *  * Return value:  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_scanner_new_string:  * @text:  * @text_len:  * @error:  *  * Return value:  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -999,7 +999,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_destroy:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_scanner_destroy:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1078,7 +1078,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_parse_token:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @token: Return location for the parsed token  *  * Return value: %TRUE on success  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_scanner_parse_token:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @token: Return location for the parsed token  *  * Return value: %TRUE on success  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1118,7 +1118,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_parse_identifier:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @identifier: Return location for the parsed identifier  *  * Return value: %TRUE on success  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_scanner_parse_identifier:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @identifier: Return location for the parsed identifier  *  * Return value: %TRUE on success  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1176,7 +1176,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_parse_string:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Return location for the parsed string  *  * Return value: %TRUE on success  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_scanner_parse_string:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Return location for the parsed string  *  * Return value: %TRUE on success  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1281,7 +1281,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_parse_string_no_validate:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Return location for the parsed string  *  * Return value: %TRUE on success  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_scanner_parse_string_no_validate:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Return location for the parsed string  *  * Return value: %TRUE on success  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1350,7 +1350,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_parse_data:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @length: Length of tha data to parse  * @dest: Return location for the parsed data  *  * Return value: %TRUE on success  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_scanner_parse_data:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @length: Length of tha data to parse  * @dest: Return location for the parsed data  *  * Return value: %TRUE on success  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1423,7 +1423,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_parse_int:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Return location for the parsed integer  *  * Return value: %TRUE on success  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_scanner_parse_int:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Return location for the parsed integer  *  * Return value: %TRUE on success  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1513,7 +1513,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_parse_int64:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Return location for the parsed integer  *  * Return value: %TRUE on success  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_scanner_parse_int64:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Return location for the parsed integer  *  * Return value: %TRUE on success  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1603,7 +1603,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_parse_float:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Return location for the parsed float  *  * Return value: %TRUE on success  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_scanner_parse_float:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Return location for the parsed float  *  * Return value: %TRUE on success  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1653,7 +1653,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_parse_boolean:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Return location for the parsed boolean  *  * Return value: %TRUE on success  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_scanner_parse_boolean:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Return location for the parsed boolean  *  * Return value: %TRUE on success  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1785,7 +1785,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b30f170203
+DECL|enum|__anon276a94330203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB
@@ -1805,7 +1805,7 @@ enum|;
 end_enum
 
 begin_comment
-comment|/**  * gimp_scanner_parse_color:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Pointer to a color to store the result  *  * Return value: %TRUE on success  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_scanner_parse_color:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Pointer to a color to store the result  *  * Return value: %TRUE on success  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -2242,7 +2242,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_parse_matrix2:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Pointer to a matrix to store the result  *  * Return value: %TRUE on success  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_scanner_parse_matrix2:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Pointer to a matrix to store the result  *  * Return value: %TRUE on success  *  * Since: 2.4  **/
 end_comment
 
 begin_function

@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon277df70e0103
+DECL|enum|__anon295105580103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -344,7 +344,7 @@ name|expose_event
 operator|=
 name|gimp_color_scale_expose
 expr_stmt|;
-comment|/**    * GimpColorScale:channel:    *    * The channel which is edited by the color scale.    *    * Since: GIMP 2.8    */
+comment|/**    * GimpColorScale:channel:    *    * The channel which is edited by the color scale.    *    * Since: 2.8    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class

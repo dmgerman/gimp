@@ -175,7 +175,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b90f9bf0103
+DECL|enum|__anon2b164fb80103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -188,7 +188,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b90f9bf0203
+DECL|enum|__anon2b164fb80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -819,7 +819,7 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpColorButton:title:    *    * The title to be used for the color selection dialog.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpColorButton:title:    *    * The title to be used for the color selection dialog.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -842,7 +842,7 @@ name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpColorButton:color:    *    * The color displayed in the button's color area.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpColorButton:color:    *    * The color displayed in the button's color area.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -868,7 +868,7 @@ name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpColorButton:type:    *    * The type of the button's color area.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpColorButton:type:    *    * The type of the button's color area.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -893,7 +893,7 @@ name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpColorButton:continuous-update:    *    * The update policy of the color button.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpColorButton:continuous-update:    *    * The update policy of the color button.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -916,7 +916,7 @@ name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpColorButton:area-width:    *    * The minimum width of the button's #GimpColorArea.    *    * Since: GIMP 2.8    */
+comment|/**    * GimpColorButton:area-width:    *    * The minimum width of the button's #GimpColorArea.    *    * Since: 2.8    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -943,7 +943,7 @@ name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpColorButton:area-height:    *    * The minimum height of the button's #GimpColorArea.    *    * Since: GIMP 2.8    */
+comment|/**    * GimpColorButton:area-height:    *    * The minimum height of the button's #GimpColorArea.    *    * Since: 2.8    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class

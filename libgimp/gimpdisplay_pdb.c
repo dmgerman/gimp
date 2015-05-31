@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpdisplay  * @title: gimpdisplay  * @short_description
 end_comment
 
 begin_comment
-comment|/**  * gimp_display_is_valid:  * @display_ID: The display to check.  *  * Returns TRUE if the display is valid.  *  * This procedure checks if the given display ID is valid and refers to  * an existing display.  *  * Returns: Whether the display ID is valid.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_display_is_valid:  * @display_ID: The display to check.  *  * Returns TRUE if the display is valid.  *  * This procedure checks if the given display ID is valid and refers to  * an existing display.  *  * Returns: Whether the display ID is valid.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -248,7 +248,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_get_window_handle:  * @display_ID: The display to get the window handle from.  *  * Get a handle to the native window for an image display.  *  * This procedure returns a handle to the native window for a given  * image display. For example in the X backend of GDK, a native window  * handle is an Xlib XID. A value of 0 is returned for an invalid  * display or if this function is unimplemented for the windowing  * system that is being used.  *  * Returns: The native window handle or 0.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_display_get_window_handle:  * @display_ID: The display to get the window handle from.  *  * Get a handle to the native window for an image display.  *  * This procedure returns a handle to the native window for a given  * image display. For example in the X backend of GDK, a native window  * handle is an Xlib XID. A value of 0 is returned for an invalid  * display or if this function is unimplemented for the windowing  * system that is being used.  *  * Returns: The native window handle or 0.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

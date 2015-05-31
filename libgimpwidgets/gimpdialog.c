@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b76d2030103
+DECL|enum|__anon2b89795f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -363,7 +363,7 @@ name|close
 operator|=
 name|gimp_dialog_close
 expr_stmt|;
-comment|/**    * GimpDialog:help-func:    *    * Since: GIMP 2.2    **/
+comment|/**    * GimpDialog:help-func:    *    * Since: 2.2    **/
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -384,7 +384,7 @@ name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpDialog:help-id:    *    * Since: GIMP 2.2    **/
+comment|/**    * GimpDialog:help-id:    *    * Since: 2.2    **/
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -407,7 +407,7 @@ name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpDialog:parent:    *    * Since: GIMP 2.8    **/
+comment|/**    * GimpDialog:parent:    *    * Since: 2.8    **/
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -1738,7 +1738,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b76d2030208
+DECL|struct|__anon2b89795f0208
 block|{
 DECL|member|dialog
 name|GtkDialog
@@ -2128,7 +2128,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialogs_show_help_button:  * @show: whether a help button should be added when creating a GimpDialog  *  * This function is for internal use only.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_dialogs_show_help_button:  * @show: whether a help button should be added when creating a GimpDialog  *  * This function is for internal use only.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

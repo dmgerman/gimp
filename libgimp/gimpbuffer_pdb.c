@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpbuffer  * @title: gimpbuffer  * @short_description: 
 end_comment
 
 begin_comment
-comment|/**  * gimp_buffers_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_buffers: The number of buffers.  *  * Retrieve a complete listing of the available buffers.  *  * This procedure returns a complete listing of available named  * buffers.  *  * Returns: The list of buffer names. The returned value must be freed  * with g_strfreev().  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_buffers_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_buffers: The number of buffers.  *  * Retrieve a complete listing of the available buffers.  *  * This procedure returns a complete listing of available named  * buffers.  *  * Returns: The list of buffer names. The returned value must be freed  * with g_strfreev().  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -177,7 +177,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_buffer_rename:  * @buffer_name: The buffer name.  * @new_name: The buffer's new name.  *  * Renames a named buffer.  *  * This procedure renames a named buffer.  *  * Returns: The real name given to the buffer.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_buffer_rename:  * @buffer_name: The buffer name.  * @new_name: The buffer's new name.  *  * Renames a named buffer.  *  * This procedure renames a named buffer.  *  * Returns: The real name given to the buffer.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -271,7 +271,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_buffer_delete:  * @buffer_name: The buffer name.  *  * Deletes a named buffer.  *  * This procedure deletes a named buffer.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_buffer_delete:  * @buffer_name: The buffer name.  *  * Deletes a named buffer.  *  * This procedure deletes a named buffer.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -340,7 +340,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_buffer_get_width:  * @buffer_name: The buffer name.  *  * Retrieves the specified buffer's width.  *  * This procedure retrieves the specified named buffer's width.  *  * Returns: The buffer width.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_buffer_get_width:  * @buffer_name: The buffer name.  *  * Retrieves the specified buffer's width.  *  * This procedure retrieves the specified named buffer's width.  *  * Returns: The buffer width.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -420,7 +420,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_buffer_get_height:  * @buffer_name: The buffer name.  *  * Retrieves the specified buffer's height.  *  * This procedure retrieves the specified named buffer's height.  *  * Returns: The buffer height.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_buffer_get_height:  * @buffer_name: The buffer name.  *  * Retrieves the specified buffer's height.  *  * This procedure retrieves the specified named buffer's height.  *  * Returns: The buffer height.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -500,7 +500,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_buffer_get_bytes:  * @buffer_name: The buffer name.  *  * Retrieves the specified buffer's bytes.  *  * This procedure retrieves the specified named buffer's bytes.  *  * Returns: The buffer bpp.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_buffer_get_bytes:  * @buffer_name: The buffer name.  *  * Retrieves the specified buffer's bytes.  *  * This procedure retrieves the specified named buffer's bytes.  *  * Returns: The buffer bpp.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -580,7 +580,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_buffer_get_image_type:  * @buffer_name: The buffer name.  *  * Retrieves the specified buffer's image type.  *  * This procedure retrieves the specified named buffer's image type.  *  * Returns: The buffer image type.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_buffer_get_image_type:  * @buffer_name: The buffer name.  *  * Retrieves the specified buffer's image type.  *  * This procedure retrieves the specified named buffer's image type.  *  * Returns: The buffer image type.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

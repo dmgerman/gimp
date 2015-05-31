@@ -111,7 +111,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_open_from_file:  * @file:  a #GFile  * @error: return location for #GError  *  * This function opens an ICC color profile from @file.  *  * Return value: the #GimpColorProfile, or %NULL. On error, %NULL is  *               returned and @error is set.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_lcms_profile_open_from_file:  * @file:  a #GFile  * @error: return location for #GError  *  * This function opens an ICC color profile from @file.  *  * Return value: the #GimpColorProfile, or %NULL. On error, %NULL is  *               returned and @error is set.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -398,7 +398,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_open_from_data:  * @data:   pointer to memory containing an ICC profile  * @length: lenght of the profile in memory, in bytes  * @error:  return location for #GError  *  * This function opens an ICC color profile from memory. On error,  * %NULL is returned and @error is set.  *  * Return value: the #GimpColorProfile, or %NULL.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_lcms_profile_open_from_data:  * @data:   pointer to memory containing an ICC profile  * @length: lenght of the profile in memory, in bytes  * @error:  return location for #GError  *  * This function opens an ICC color profile from memory. On error,  * %NULL is returned and @error is set.  *  * Return value: the #GimpColorProfile, or %NULL.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -491,7 +491,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_dave_to_data:  * @profile: a #GimpColorProfile  * @length:  return location for the number of bytes written  * @error:   return location for #GError  *  * This function saves @profile to an ICC color profile in newly  * allocated memory. On error, %NULL is returned and @error is set.  *  * Return value: a pointer to the written IIC profile in memory, or  *               %NULL. Free with g_free().  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_lcms_profile_dave_to_data:  * @profile: a #GimpColorProfile  * @length:  return location for the number of bytes written  * @error:   return location for #GError  *  * This function saves @profile to an ICC color profile in newly  * allocated memory. On error, %NULL is returned and @error is set.  *  * Return value: a pointer to the written IIC profile in memory, or  *               %NULL. Free with g_free().  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -620,7 +620,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_close:  * @profile: a #GimpColorProfile  *  * This function closes a #GimpColorProfile and frees its memory.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_lcms_profile_close:  * @profile: a #GimpColorProfile  *  * This function closes a #GimpColorProfile and frees its memory.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -764,7 +764,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_get_description:  * @profile: a #GimpColorProfile  *  * Return value: a newly allocated string containing @profile's  *               description. Free with g_free().  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_lcms_profile_get_description:  * @profile: a #GimpColorProfile  *  * Return value: a newly allocated string containing @profile's  *               description. Free with g_free().  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -789,7 +789,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_get_manufacturer:  * @profile: a #GimpColorProfile  *  * Return value: a newly allocated string containing @profile's  *               manufacturer. Free with g_free().  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_lcms_profile_get_manufacturer:  * @profile: a #GimpColorProfile  *  * Return value: a newly allocated string containing @profile's  *               manufacturer. Free with g_free().  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -814,7 +814,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_get_model:  * @profile: a #GimpColorProfile  *  * Return value: a newly allocated string containing @profile's  *               model. Free with g_free().  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_lcms_profile_get_model:  * @profile: a #GimpColorProfile  *  * Return value: a newly allocated string containing @profile's  *               model. Free with g_free().  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -839,7 +839,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_get_copyright:  * @profile: a #GimpColorProfile  *  * Return value: a newly allocated string containing @profile's  *               copyright. Free with g_free().  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_lcms_profile_get_copyright:  * @profile: a #GimpColorProfile  *  * Return value: a newly allocated string containing @profile's  *               copyright. Free with g_free().  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -864,7 +864,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_get_label:  * @profile: a #GimpColorProfile  *  * This function returns a newly allocated string containing  * @profile's "title", a string that can be used to label the profile  * in a user interface.  *  * Return value: the @profile's label. Free with g_free().  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_lcms_profile_get_label:  * @profile: a #GimpColorProfile  *  * This function returns a newly allocated string containing  * @profile's "title", a string that can be used to label the profile  * in a user interface.  *  * Return value: the @profile's label. Free with g_free().  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -973,7 +973,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_get_summary:  * @profile: a #GimpColorProfile  *  * This function return a newly allocated string containing a  * multi-line summary of @profile's description, model, manufacturer  * and copyright, to be used as detailled information about the  * prpfile in a user interface.  *  * Return value: the @profile's summary. Free with g_free().  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_lcms_profile_get_summary:  * @profile: a #GimpColorProfile  *  * This function return a newly allocated string containing a  * multi-line summary of @profile's description, model, manufacturer  * and copyright, to be used as detailled information about the  * prpfile in a user interface.  *  * Return value: the @profile's summary. Free with g_free().  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1152,7 +1152,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_is_equal:  * @profile1: a #GimpColorProfile  * @profile2: a #GimpColorProfile  *  * Compares two profiles.  *  * Return value: %TRUE if the profiles are equal, %FALSE otherwise.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_lcms_profile_is_equal:  * @profile1: a #GimpColorProfile  * @profile2: a #GimpColorProfile  *  * Compares two profiles.  *  * Return value: %TRUE if the profiles are equal, %FALSE otherwise.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1248,7 +1248,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_is_rgb:  * @profile: a #GimpColorProfile  *  * Return value: %TRUE if the profile's color space is RGB, %FALSE  * otherwise.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_lcms_profile_is_rgb:  * @profile: a #GimpColorProfile  *  * Return value: %TRUE if the profile's color space is RGB, %FALSE  * otherwise.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1283,7 +1283,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_is_cmyk:  * @profile: a #GimpColorProfile  *  * Return value: %TRUE if the profile's color space is CMYK, %FALSE  * otherwise.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_lcms_profile_is_cmyk:  * @profile: a #GimpColorProfile  *  * Return value: %TRUE if the profile's color space is CMYK, %FALSE  * otherwise.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1551,7 +1551,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_create_srgb_profile:  *  * This function is a replacement for cmsCreate_sRGBProfile() and  * returns an sRGB profile that is functionally the same as the  * ArgyllCMS sRGB.icm profile. "Functionally the same" means it has  * the same red, green, and blue colorants and the V4 "chad"  * equivalent of the ArgyllCMS V2 white point. The profile TRC is also  * functionally equivalent to the ArgyllCMS sRGB.icm TRC and is the  * same as the LCMS sRGB built-in profile TRC.  *  * The actual primaries in the sRGB specification are  * red xy:   {0.6400, 0.3300, 1.0}  * green xy: {0.3000, 0.6000, 1.0}  * blue xy:  {0.1500, 0.0600, 1.0}  *  * The sRGB primaries given below are "pre-quantized" to compensate  * for hexadecimal quantization during the profile-making process.  * Unless the profile-making code compensates for this quantization,  * the resulting profile's red, green, and blue colorants will deviate  * slightly from the correct XYZ values.  *  * LCMS2 doesn't compensate for hexadecimal quantization. The  * "pre-quantized" primaries below were back-calculated from the  * ArgyllCMS sRGB.icm profile. The resulting sRGB profile's colorants  * exactly matches the ArgyllCMS sRGB.icm profile colorants.  *  * Return value: the sRGB cmsHPROFILE.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_lcms_create_srgb_profile:  *  * This function is a replacement for cmsCreate_sRGBProfile() and  * returns an sRGB profile that is functionally the same as the  * ArgyllCMS sRGB.icm profile. "Functionally the same" means it has  * the same red, green, and blue colorants and the V4 "chad"  * equivalent of the ArgyllCMS V2 white point. The profile TRC is also  * functionally equivalent to the ArgyllCMS sRGB.icm TRC and is the  * same as the LCMS sRGB built-in profile TRC.  *  * The actual primaries in the sRGB specification are  * red xy:   {0.6400, 0.3300, 1.0}  * green xy: {0.3000, 0.6000, 1.0}  * blue xy:  {0.1500, 0.0600, 1.0}  *  * The sRGB primaries given below are "pre-quantized" to compensate  * for hexadecimal quantization during the profile-making process.  * Unless the profile-making code compensates for this quantization,  * the resulting profile's red, green, and blue colorants will deviate  * slightly from the correct XYZ values.  *  * LCMS2 doesn't compensate for hexadecimal quantization. The  * "pre-quantized" primaries below were back-calculated from the  * ArgyllCMS sRGB.icm profile. The resulting sRGB profile's colorants  * exactly matches the ArgyllCMS sRGB.icm profile colorants.  *  * Return value: the sRGB cmsHPROFILE.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1779,7 +1779,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_create_linear_rgb_profile:  *  * This function creates a profile for babl_model("RGB"). Please  * somebody write someting smarter here.  *  * Return value: the linear RGB cmsHPROFILE.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_lcms_create_linear_rgb_profile:  *  * This function creates a profile for babl_model("RGB"). Please  * somebody write someting smarter here.  *  * Return value: the linear RGB cmsHPROFILE.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1853,7 +1853,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_get_format:  * @format:      a #Babl format  * @lcms_format: return location for an lcms format  *  * This function takes a #Babl format and returns the lcms format to  * be used with that @format. It also returns a #Babl format to be  * used instead of the passed @format, which usually is the same as  * @format, unless lcms doesn't support @format.  *  * Note that this function currently only supports RGB, RGBA, R'G'B' and  * R'G'B'A formats.  *  * Return value: the #Babl format to be used instead of @format, or %NULL  *               is the passed @format is not supported at all.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_lcms_get_format:  * @format:      a #Babl format  * @lcms_format: return location for an lcms format  *  * This function takes a #Babl format and returns the lcms format to  * be used with that @format. It also returns a #Babl format to be  * used instead of the passed @format, which usually is the same as  * @format, unless lcms doesn't support @format.  *  * Note that this function currently only supports RGB, RGBA, R'G'B' and  * R'G'B'A formats.  *  * Return value: the #Babl format to be used instead of @format, or %NULL  *               is the passed @format is not supported at all.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bae92510103
+DECL|enum|__anon2bff8c310103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -52,7 +52,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bae92510203
+DECL|enum|__anon2bff8c310203
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
@@ -298,7 +298,7 @@ name|toggled
 operator|=
 name|NULL
 expr_stmt|;
-comment|/**    * GimpChainButton:position:    *    * The position in which the chain button will be used.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpChainButton:position:    *    * The position in which the chain button will be used.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class

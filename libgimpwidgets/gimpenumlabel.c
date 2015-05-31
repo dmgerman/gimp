@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6823ee0103
+DECL|enum|__anon288a650d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -169,7 +169,7 @@ name|set_property
 operator|=
 name|gimp_enum_label_set_property
 expr_stmt|;
-comment|/**    * GimpEnumLabel:enum-type:    *    * The #GType of the enum.    *    * Since: GIMP 2.8    **/
+comment|/**    * GimpEnumLabel:enum-type:    *    * The #GType of the enum.    *    * Since: 2.8    **/
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -192,7 +192,7 @@ name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpEnumLabel:enum-value:    *    * The value to display.    *    * Since: GIMP 2.8    **/
+comment|/**    * GimpEnumLabel:enum-value:    *    * The value to display.    *    * Since: 2.8    **/
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -445,7 +445,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_label_new:  * @enum_type: the #GType of an enum.  * @value:  *  * Return value: a new #GimpEnumLabel.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_enum_label_new:  * @enum_type: the #GType of an enum.  * @value:  *  * Return value: a new #GimpEnumLabel.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -491,7 +491,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_label_set_value  * @label: a #GimpEnumLabel  * @value:  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_enum_label_set_value  * @label: a #GimpEnumLabel  * @value:  *  * Since: 2.4  **/
 end_comment
 
 begin_function

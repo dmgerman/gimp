@@ -50,7 +50,7 @@ comment|/**  * SECTION: gimpcairo  * @title: GimpCairo  * @short_description: Co
 end_comment
 
 begin_comment
-comment|/**  * gimp_cairo_set_source_rgb:  * @cr:    Cairo context  * @color: GimpRGB color  *  * Sets the source pattern within @cr to the solid opaque color  * described by @color.  *  * This function calls cairo_set_source_rgb() for you.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_cairo_set_source_rgb:  * @cr:    Cairo context  * @color: GimpRGB color  *  * Sets the source pattern within @cr to the solid opaque color  * described by @color.  *  * This function calls cairo_set_source_rgb() for you.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -89,7 +89,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_cairo_set_source_rgba:  * @cr:    Cairo context  * @color: GimpRGB color  *  * Sets the source pattern within @cr to the solid translucent color  * described by @color.  *  * This function calls cairo_set_source_rgba() for you.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_cairo_set_source_rgba:  * @cr:    Cairo context  * @color: GimpRGB color  *  * Sets the source pattern within @cr to the solid translucent color  * described by @color.  *  * This function calls cairo_set_source_rgba() for you.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -132,7 +132,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_cairo_checkerboard_create:  * @cr:    Cairo context  * @size:  check size  * @light: light check color or %NULL to use the default light gray  * @dark:  dark check color or %NULL to use the default dark gray  *  * Create a repeating checkerboard pattern.  *  * Return value: a new Cairo pattern that can be used as a source on @cr.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_cairo_checkerboard_create:  * @cr:    Cairo context  * @size:  check size  * @light: light check color or %NULL to use the default light gray  * @dark:  dark check color or %NULL to use the default dark gray  *  * Create a repeating checkerboard pattern.  *  * Return value: a new Cairo pattern that can be used as a source on @cr.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -355,7 +355,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_cairo_surface_get_format:  * @surface: a Cairo surface  *  * This function returns a #Babl format that corresponds to @surface's  * pixel format.  *  * Return value: the #Babl format of @surface.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_cairo_surface_get_format:  * @surface: a Cairo surface  *  * This function returns a #Babl format that corresponds to @surface's  * pixel format.  *  * Return value: the #Babl format of @surface.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -429,7 +429,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_cairo_surface_create_buffer:  * @surface: a Cairo surface  *  * This function returns a #GeglBuffer which wraps @surface's pixels.  * It must only be called on image surfaces, calling it on other surface  * types is an error.  *  * Return value: a #GeglBuffer  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_cairo_surface_create_buffer:  * @surface: a Cairo surface  *  * This function returns a #GeglBuffer which wraps @surface's pixels.  * It must only be called on image surfaces, calling it on other surface  * types is an error.  *  * Return value: a #GeglBuffer  *  * Since: 2.10  **/
 end_comment
 
 begin_function

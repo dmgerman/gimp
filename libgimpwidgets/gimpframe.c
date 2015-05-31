@@ -1301,7 +1301,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_frame_new:  * @label: text to set as the frame's title label (or %NULL for no title)  *  * Creates a #GimpFrame widget. A #GimpFrame is a HIG-compliant  * variant of #GtkFrame. It doesn't render a frame at all but  * otherwise behaves like a frame. The frame's title is rendered in  * bold and the frame content is indented four spaces as suggested by  * the GNOME HIG (see http://developer.gnome.org/projects/gup/hig/).  *  * Return value: a new #GimpFrame widget  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_frame_new:  * @label: text to set as the frame's title label (or %NULL for no title)  *  * Creates a #GimpFrame widget. A #GimpFrame is a HIG-compliant  * variant of #GtkFrame. It doesn't render a frame at all but  * otherwise behaves like a frame. The frame's title is rendered in  * bold and the frame content is indented four spaces as suggested by  * the GNOME HIG (see http://developer.gnome.org/projects/gup/hig/).  *  * Return value: a new #GimpFrame widget  *  * Since: 2.2  **/
 end_comment
 
 begin_function

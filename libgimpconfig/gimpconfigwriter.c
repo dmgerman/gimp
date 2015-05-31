@@ -365,7 +365,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_new_file:  * @filename: a filename  * @atomic: if %TRUE the file is written atomically  * @header: text to include as comment at the top of the file  * @error: return location for errors  *  * Creates a new #GimpConfigWriter and sets it up to write to  * @filename. If @atomic is %TRUE, a temporary file is used to avoid  * possible race conditions. The temporary file is then moved to  * @filename when the writer is closed.  *  * Return value: a new #GimpConfigWriter or %NULL in case of an error  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_writer_new_file:  * @filename: a filename  * @atomic: if %TRUE the file is written atomically  * @header: text to include as comment at the top of the file  * @error: return location for errors  *  * Creates a new #GimpConfigWriter and sets it up to write to  * @filename. If @atomic is %TRUE, a temporary file is used to avoid  * possible race conditions. The temporary file is then moved to  * @filename when the writer is closed.  *  * Return value: a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -456,7 +456,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_new_gfile:  * @file: a #GFile  * @atomic: if %TRUE the file is written atomically  * @header: text to include as comment at the top of the file  * @error: return location for errors  *  * Creates a new #GimpConfigWriter and sets it up to write to  * @file. If @atomic is %TRUE, a temporary file is used to avoid  * possible race conditions. The temporary file is then moved to @file  * when the writer is closed.  *  * Return value: a new #GimpConfigWriter or %NULL in case of an error  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_config_writer_new_gfile:  * @file: a #GFile  * @atomic: if %TRUE the file is written atomically  * @header: text to include as comment at the top of the file  * @error: return location for errors  *  * Creates a new #GimpConfigWriter and sets it up to write to  * @file. If @atomic is %TRUE, a temporary file is used to avoid  * possible race conditions. The temporary file is then moved to @file  * when the writer is closed.  *  * Return value: a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -648,7 +648,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_new_stream:  * @output: a #GOutputStream  * @header: text to include as comment at the top of the file  * @error: return location for errors  *  * Creates a new #GimpConfigWriter and sets it up to write to  * @output.  *  * Return value: a new #GimpConfigWriter or %NULL in case of an error  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_config_writer_new_stream:  * @output: a #GOutputStream  * @header: text to include as comment at the top of the file  * @error: return location for errors  *  * Creates a new #GimpConfigWriter and sets it up to write to  * @output.  *  * Return value: a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -750,7 +750,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_new_fd:  * @fd:  *  * Return value: a new #GimpConfigWriter or %NULL in case of an error  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_writer_new_fd:  * @fd:  *  * Return value: a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -831,7 +831,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_new_string:  * @string:  *  * Return value: a new #GimpConfigWriter or %NULL in case of an error  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_writer_new_string:  * @string:  *  * Return value: a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -878,7 +878,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_comment_mode:  * @writer: a #GimpConfigWriter  * @enable: %TRUE to enable comment mode, %FALSE to disable it  *  * This function toggles whether the @writer should create commented  * or uncommented output. This feature is used to generate the  * system-wide installed gimprc that documents the default settings.  *  * Since comments have to start at the beginning of a line, this  * function will insert a newline if necessary.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_writer_comment_mode:  * @writer: a #GimpConfigWriter  * @enable: %TRUE to enable comment mode, %FALSE to disable it  *  * This function toggles whether the @writer should create commented  * or uncommented output. This feature is used to generate the  * system-wide installed gimprc that documents the default settings.  *  * Since comments have to start at the beginning of a line, this  * function will insert a newline if necessary.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -970,7 +970,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_open:  * @writer: a #GimpConfigWriter  * @name: name of the element to open  *  * This function writes the opening parenthese followed by @name.  * It also increases the indentation level and sets a mark that  * can be used by gimp_config_writer_revert().  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_writer_open:  * @writer: a #GimpConfigWriter  * @name: name of the element to open  *  * This function writes the opening parenthese followed by @name.  * It also increases the indentation level and sets a mark that  * can be used by gimp_config_writer_revert().  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1053,7 +1053,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_print:  * @writer: a #GimpConfigWriter  * @string: a string to write  * @len: number of bytes from @string or -1 if @string is NUL-terminated.  *  * Appends a space followed by @string to the @writer. Note that string  * must not contain any special characters that might need to be escaped.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_writer_print:  * @writer: a #GimpConfigWriter  * @string: a string to write  * @len: number of bytes from @string or -1 if @string is NUL-terminated.  *  * Appends a space followed by @string to the @writer. Note that string  * must not contain any special characters that might need to be escaped.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1142,7 +1142,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_printf:  * @writer: a #GimpConfigWriter  * @format: a format string as described for g_strdup_printf().  * @...: list of arguments according to @format  *  * A printf-like function for #GimpConfigWriter.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_writer_printf:  * @writer: a #GimpConfigWriter  * @format: a format string as described for g_strdup_printf().  * @...: list of arguments according to @format  *  * A printf-like function for #GimpConfigWriter.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1238,7 +1238,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_string:  * @writer: a #GimpConfigWriter  * @string: a NUL-terminated string  *  * Writes a string value to @writer. The @string is quoted and special  * characters are escaped.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_writer_string:  * @writer: a #GimpConfigWriter  * @string: a NUL-terminated string  *  * Writes a string value to @writer. The @string is quoted and special  * characters are escaped.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1292,7 +1292,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_identifier:  * @writer:     a #GimpConfigWriter  * @identifier: a NUL-terminated string  *  * Writes an identifier to @writer. The @string is *not* quoted and special  * characters are *not* escaped.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_writer_identifier:  * @writer:     a #GimpConfigWriter  * @identifier: a NUL-terminated string  *  * Writes an identifier to @writer. The @string is *not* quoted and special  * characters are *not* escaped.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1346,7 +1346,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_data:  * @writer: a #GimpConfigWriter  * @length:  * @data:  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_writer_data:  * @writer: a #GimpConfigWriter  * @length:  * @data:  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1472,7 +1472,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_revert:  * @writer: a #GimpConfigWriter  *  * Reverts all changes to @writer that were done since the last call  * to gimp_config_writer_open(). This can only work if you didn't call  * gimp_config_writer_close() yet.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_writer_revert:  * @writer: a #GimpConfigWriter  *  * Reverts all changes to @writer that were done since the last call  * to gimp_config_writer_open(). This can only work if you didn't call  * gimp_config_writer_close() yet.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1545,7 +1545,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_close:  * @writer: a #GimpConfigWriter  *  * Closes an element opened with gimp_config_writer_open().  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_writer_close:  * @writer: a #GimpConfigWriter  *  * Closes an element opened with gimp_config_writer_open().  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1619,7 +1619,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_finish:  * @writer: a #GimpConfigWriter  * @footer: text to include as comment at the bottom of the file  * @error: return location for possible errors  *  * This function finishes the work of @writer and frees it afterwards.  * It closes all open elements, appends an optional comment and  * releases all resources allocated by @writer. You must not access  * the @writer afterwards.  *  * Return value: %TRUE if everything could be successfully written,  *               %FALSE otherwise  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_writer_finish:  * @writer: a #GimpConfigWriter  * @footer: text to include as comment at the bottom of the file  * @error: return location for possible errors  *  * This function finishes the work of @writer and frees it afterwards.  * It closes all open elements, appends an optional comment and  * releases all resources allocated by @writer. You must not access  * the @writer afterwards.  *  * Return value: %TRUE if everything could be successfully written,  *               %FALSE otherwise  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1934,7 +1934,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_comment:  * @writer: a #GimpConfigWriter  * @comment: the comment to write (ASCII only)  *  * Appends the @comment to @str and inserts linebreaks and hash-marks to  * format it as a comment. Note that this function does not handle non-ASCII  * characters.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_writer_comment:  * @writer: a #GimpConfigWriter  * @comment: the comment to write (ASCII only)  *  * Appends the @comment to @str and inserts linebreaks and hash-marks to  * format it as a comment. Note that this function does not handle non-ASCII  * characters.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

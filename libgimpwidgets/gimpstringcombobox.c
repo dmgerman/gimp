@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6072700103
+DECL|enum|__anon2bdd5bab0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -59,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6072700208
+DECL|struct|__anon2bdd5bab0208
 block|{
 DECL|member|id_column
 name|gint
@@ -208,7 +208,7 @@ name|get_property
 operator|=
 name|gimp_string_combo_box_get_property
 expr_stmt|;
-comment|/**    * GimpStringComboBox:id-column:    *    * The column in the associated GtkTreeModel that holds unique    * string IDs.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpStringComboBox:id-column:    *    * The column in the associated GtkTreeModel that holds unique    * string IDs.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -235,7 +235,7 @@ name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpStringComboBox:id-column:    *    * The column in the associated GtkTreeModel that holds strings to    * be used as labels in the combo-box.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpStringComboBox:id-column:    *    * The column in the associated GtkTreeModel that holds strings to    * be used as labels in the combo-box.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -262,7 +262,7 @@ name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpStringComboBox:ellipsize:    *    * Specifies the preferred place to ellipsize text in the combo-box,    * if the cell renderer does not have enough room to display the    * entire string.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpStringComboBox:ellipsize:    *    * Specifies the preferred place to ellipsize text in the combo-box,    * if the cell renderer does not have enough room to display the    * entire string.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -714,7 +714,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_string_combo_box_new:  * @id_column:  * @label_column:  *  * Return value: a new #GimpStringComboBox.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_string_combo_box_new:  * @id_column:  * @label_column:  *  * Return value: a new #GimpStringComboBox.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -796,7 +796,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_string_combo_box_set_active:  * @combo_box: a #GimpStringComboBox  * @id:        the ID of the item to select  *  * Looks up the item that belongs to the given @id and makes it the  * selected item in the @combo_box.  *  * Return value: %TRUE on success or %FALSE if there was no item for  *               this value.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_string_combo_box_set_active:  * @combo_box: a #GimpStringComboBox  * @id:        the ID of the item to select  *  * Looks up the item that belongs to the given @id and makes it the  * selected item in the @combo_box.  *  * Return value: %TRUE on success or %FALSE if there was no item for  *               this value.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -913,7 +913,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_string_combo_box_get_active:  * @combo_box: a #GimpStringComboBox  *  * Retrieves the value of the selected (active) item in the @combo_box.  *  * Return value: newly allocated ID string or %NULL if nothing was selected  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_string_combo_box_get_active:  * @combo_box: a #GimpStringComboBox  *  * Retrieves the value of the selected (active) item in the @combo_box.  *  * Return value: newly allocated ID string or %NULL if nothing was selected  *  * Since: 2.4  **/
 end_comment
 
 begin_function

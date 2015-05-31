@@ -1148,7 +1148,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_is_valid:  * @drawable_ID: The drawable to check.  *  * Deprecated: Use gimp_item_is_valid() instead.  *  * Returns: Whether the drawable ID is valid.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_drawable_is_valid:  * @drawable_ID: The drawable to check.  *  * Deprecated: Use gimp_item_is_valid() instead.  *  * Returns: Whether the drawable ID is valid.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -1192,7 +1192,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_is_text_layer:  * @drawable_ID: The drawable.  *  * Deprecated: Use gimp_item_is_text_layer() instead.  *  * Returns: TRUE if the drawable is a text layer, FALSE otherwise.  *  * Since: GIMP 2.6  */
+comment|/**  * gimp_drawable_is_text_layer:  * @drawable_ID: The drawable.  *  * Deprecated: Use gimp_item_is_text_layer() instead.  *  * Returns: TRUE if the drawable is a text layer, FALSE otherwise.  *  * Since: 2.6  */
 end_comment
 
 begin_function
@@ -1696,7 +1696,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_buffer:  * @drawable_ID: the ID of the #GimpDrawable to get the buffer for.  *  * Returns a #GeglBuffer of a specified drawable. The buffer can be used  * like any other GEGL buffer. Its data will we synced back with the core  * drawable when the buffer gets destroyed, or when gegl_buffer_flush()  * is called.  *  * Return value: The #GeglBuffer.  *  * See Also: gimp_drawable_get_shadow_buffer()  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_drawable_get_buffer:  * @drawable_ID: the ID of the #GimpDrawable to get the buffer for.  *  * Returns a #GeglBuffer of a specified drawable. The buffer can be used  * like any other GEGL buffer. Its data will we synced back with the core  * drawable when the buffer gets destroyed, or when gegl_buffer_flush()  * is called.  *  * Return value: The #GeglBuffer.  *  * See Also: gimp_drawable_get_shadow_buffer()  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -1779,7 +1779,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_shadow_buffer:  * @drawable_ID: the ID of the #GimpDrawable to get the buffer for.  *  * Returns a #GeglBuffer of a specified drawable's shadow tiles. The  * buffer can be used like any other GEGL buffer. Its data will we  * synced back with the core drawable's shadow tiles when the buffer  * gets destroyed, or when gegl_buffer_flush() is called.  *  * Return value: The #GeglBuffer.  *  * See Also: gimp_drawable_get_shadow_buffer()  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_drawable_get_shadow_buffer:  * @drawable_ID: the ID of the #GimpDrawable to get the buffer for.  *  * Returns a #GeglBuffer of a specified drawable's shadow tiles. The  * buffer can be used like any other GEGL buffer. Its data will we  * synced back with the core drawable's shadow tiles when the buffer  * gets destroyed, or when gegl_buffer_flush() is called.  *  * Return value: The #GeglBuffer.  *  * See Also: gimp_drawable_get_shadow_buffer()  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -1853,7 +1853,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_format:  * @drawable_ID: the ID of the #GimpDrawable to get the format for.  *  * Returns the #Babl format of the drawable.  *  * Return value: The #Babl format.  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_drawable_get_format:  * @drawable_ID: the ID of the #GimpDrawable to get the format for.  *  * Returns the #Babl format of the drawable.  *  * Return value: The #Babl format.  *  * Since: 2.10  */
 end_comment
 
 begin_function

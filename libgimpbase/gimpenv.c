@@ -397,7 +397,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/**  * gimp_env_init:  * @plug_in: must be %TRUE if this function is called from a plug-in  *  * You don't need to care about this function. It is being called for  * you automatically (by means of the MAIN() macro that every plug-in  * runs). Calling it again will cause a fatal error.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_env_init:  * @plug_in: must be %TRUE if this function is called from a plug-in  *  * You don't need to care about this function. It is being called for  * you automatically (by means of the MAIN() macro that every plug-in  * runs). Calling it again will cause a fatal error.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -1048,7 +1048,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/**  * gimp_installation_directory:  *  * Returns the top installation directory of GIMP. On Unix the  * compile-time defined installation prefix is used. On Windows, the  * installation directory as deduced from the executable's full  * filename is used. On OSX we ask [NSBundle mainBundle] for the  * resource path to check if GIMP is part of a relocatable bundle.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * GLib, which isn't necessarily UTF-8. (On Windows it always is  * UTF-8.)  *  * Since: GIMP 2.8  *  * Returns: The toplevel installation directory of GIMP.  **/
+comment|/**  * gimp_installation_directory:  *  * Returns the top installation directory of GIMP. On Unix the  * compile-time defined installation prefix is used. On Windows, the  * installation directory as deduced from the executable's full  * filename is used. On OSX we ask [NSBundle mainBundle] for the  * resource path to check if GIMP is part of a relocatable bundle.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * GLib, which isn't necessarily UTF-8. (On Windows it always is  * UTF-8.)  *  * Since: 2.8  *  * Returns: The toplevel installation directory of GIMP.  **/
 end_comment
 
 begin_function
@@ -1636,7 +1636,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_directory_file:  * @first_element: the first element of a path to a file in the  *                 user's GIMP directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the user's GIMP directory, or the data  * directory itself if @first_element is %NULL.  *  * See also: gimp_directory().  *  * Since: GIMP 2.10  *  * Returns: a new @GFile for the path, Free with g_object_unref().  **/
+comment|/**  * gimp_directory_file:  * @first_element: the first element of a path to a file in the  *                 user's GIMP directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the user's GIMP directory, or the data  * directory itself if @first_element is %NULL.  *  * See also: gimp_directory().  *  * Since: 2.10  *  * Returns: a new @GFile for the path, Free with g_object_unref().  **/
 end_comment
 
 begin_function
@@ -1691,7 +1691,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_data_directory_file:  * @first_element: the first element of a path to a file in the  *                 data directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the data directory, or the data directory  * itself if @first_element is %NULL.  *  * See also: gimp_data_directory().  *  * Since: GIMP 2.10  *  * Returns: a new @GFile for the path, Free with g_object_unref().  **/
+comment|/**  * gimp_data_directory_file:  * @first_element: the first element of a path to a file in the  *                 data directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the data directory, or the data directory  * itself if @first_element is %NULL.  *  * See also: gimp_data_directory().  *  * Since: 2.10  *  * Returns: a new @GFile for the path, Free with g_object_unref().  **/
 end_comment
 
 begin_function
@@ -1746,7 +1746,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_locale_directory_file:  * @first_element: the first element of a path to a file in the  *                 locale directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the locale directory, or the locale directory  * itself if @first_element is %NULL.  *  * See also: gimp_locale_directory().  *  * Since: GIMP 2.10  *  * Returns: a new @GFile for the path, Free with g_object_unref().  **/
+comment|/**  * gimp_locale_directory_file:  * @first_element: the first element of a path to a file in the  *                 locale directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the locale directory, or the locale directory  * itself if @first_element is %NULL.  *  * See also: gimp_locale_directory().  *  * Since: 2.10  *  * Returns: a new @GFile for the path, Free with g_object_unref().  **/
 end_comment
 
 begin_function
@@ -1801,7 +1801,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_sysconf_directory_file:  * @first_element: the first element of a path to a file in the  *                 sysconf directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the sysconf directory, or the sysconf directory  * itself if @first_element is %NULL.  *  * See also: gimp_sysconf_directory().  *  * Since: GIMP 2.10  *  * Returns: a new @GFile for the path, Free with g_object_unref().  **/
+comment|/**  * gimp_sysconf_directory_file:  * @first_element: the first element of a path to a file in the  *                 sysconf directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the sysconf directory, or the sysconf directory  * itself if @first_element is %NULL.  *  * See also: gimp_sysconf_directory().  *  * Since: 2.10  *  * Returns: a new @GFile for the path, Free with g_object_unref().  **/
 end_comment
 
 begin_function
@@ -1856,7 +1856,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plug_in_directory_file:  * @first_element: the first element of a path to a file in the  *                 plug-in directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the plug-in directory, or the plug-in directory  * itself if @first_element is %NULL.  *  * See also: gimp_plug_in_directory().  *  * Since: GIMP 2.10  *  * Returns: a new @GFile for the path, Free with g_object_unref().  **/
+comment|/**  * gimp_plug_in_directory_file:  * @first_element: the first element of a path to a file in the  *                 plug-in directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the plug-in directory, or the plug-in directory  * itself if @first_element is %NULL.  *  * See also: gimp_plug_in_directory().  *  * Since: 2.10  *  * Returns: a new @GFile for the path, Free with g_object_unref().  **/
 end_comment
 
 begin_function
@@ -1911,7 +1911,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_user_directory:  * @type: the type of user directory to retrieve  *  * This procedure is deprecated! Use g_get_user_special_dir() instead.  *  * Returns: The path to the specified user directory, or %NULL if the  *          logical ID was not found.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_user_directory:  * @type: the type of user directory to retrieve  *  * This procedure is deprecated! Use g_get_user_special_dir() instead.  *  * Returns: The path to the specified user directory, or %NULL if the  *          logical ID was not found.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

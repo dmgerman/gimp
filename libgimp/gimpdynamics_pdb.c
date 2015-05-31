@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpdynamics  * @title: gimpdynamics  * @short_descripti
 end_comment
 
 begin_comment
-comment|/**  * gimp_dynamics_refresh:  *  * Refresh current paint dynamics. This function always succeeds.  *  * This procedure retrieves all paint dynamics currently in the user's  * paint dynamics path and updates the paint dynamics dialogs  * accordingly.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_dynamics_refresh:  *  * Refresh current paint dynamics. This function always succeeds.  *  * This procedure retrieves all paint dynamics currently in the user's  * paint dynamics path and updates the paint dynamics dialogs  * accordingly.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -86,7 +86,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dynamics_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_dynamics: The number of available paint dynamics.  *  * Retrieve the list of loaded paint dynamics.  *  * This procedure returns a list of the paint dynamics that are  * currently available.  *  * Returns: The list of paint dynamics names. The returned value must  * be freed with g_strfreev().  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_dynamics_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_dynamics: The number of available paint dynamics.  *  * Retrieve the list of loaded paint dynamics.  *  * This procedure returns a list of the paint dynamics that are  * currently available.  *  * Returns: The list of paint dynamics names. The returned value must  * be freed with g_strfreev().  *  * Since: 2.8  **/
 end_comment
 
 begin_function

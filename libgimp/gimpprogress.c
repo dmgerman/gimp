@@ -49,7 +49,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be538ed0108
+DECL|struct|__anon2afd381e0108
 block|{
 DECL|member|progress_callback
 name|gchar
@@ -161,7 +161,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_progress_install:  * @start_callback: the function to call when progress starts  * @end_callback:   the function to call when progress finishes  * @text_callback:  the function to call to change the text  * @value_callback: the function to call to change the value  * @user_data:      a pointer that is returned when uninstalling the progress  *  * Note that since GIMP 2.4, @value_callback can be called with  * negative values. This is triggered by calls to gimp_progress_pulse().  * The callback should then implement a progress indicating business,  * e.g. by calling gtk_progress_bar_pulse().  *  * Return value: the name of the temporary procedure that's been installed  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_progress_install:  * @start_callback: the function to call when progress starts  * @end_callback:   the function to call when progress finishes  * @text_callback:  the function to call to change the text  * @value_callback: the function to call to change the value  * @user_data:      a pointer that is returned when uninstalling the progress  *  * Note that since GIMP 2.4, @value_callback can be called with  * negative values. This is triggered by calls to gimp_progress_pulse().  * The callback should then implement a progress indicating business,  * e.g. by calling gtk_progress_bar_pulse().  *  * Return value: the name of the temporary procedure that's been installed  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -267,7 +267,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_progress_install_vtable:  * @vtable:    a pointer to a @GimpProgressVtable.  * @user_data: a pointer that is passed as user_data to all vtable functions.  *  * Return value: the name of the temporary procedure that's been installed  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_progress_install_vtable:  * @vtable:    a pointer to a @GimpProgressVtable.  * @user_data: a pointer that is passed as user_data to all vtable functions.  *  * Return value: the name of the temporary procedure that's been installed  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -582,7 +582,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_progress_uninstall:  * @progress_callback: the name of the temporary procedure to uninstall  *  * Uninstalls a temporary progress procedure that was installed using  * gimp_progress_install().  *  * Return value: the @user_data that was passed to gimp_progress_install().  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_progress_uninstall:  * @progress_callback: the name of the temporary procedure to uninstall  *  * Uninstalls a temporary progress procedure that was installed using  * gimp_progress_install().  *  * Return value: the @user_data that was passed to gimp_progress_install().  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -706,7 +706,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_progress_init_printf:  * @format: a standard printf() format string  * @...: arguments for @format  *  * Initializes the progress bar for the current plug-in.  *  * Initializes the progress bar for the current plug-in. It is only  * valid to call this procedure from a plug-in.  *  * Returns: %TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_progress_init_printf:  * @format: a standard printf() format string  * @...: arguments for @format  *  * Initializes the progress bar for the current plug-in.  *  * Initializes the progress bar for the current plug-in. It is only  * valid to call this procedure from a plug-in.  *  * Returns: %TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -781,7 +781,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_progress_set_text_printf:  * @format: a standard printf() format string  * @...: arguments for @format  *  * Changes the text in the progress bar for the current plug-in.  *  * This function changes the text in the progress bar for the current  * plug-in. Unlike gimp_progress_init() it does not change the  * displayed value.  *  * Returns: %TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_progress_set_text_printf:  * @format: a standard printf() format string  * @...: arguments for @format  *  * Changes the text in the progress bar for the current plug-in.  *  * This function changes the text in the progress bar for the current  * plug-in. Unlike gimp_progress_init() it does not change the  * displayed value.  *  * Returns: %TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

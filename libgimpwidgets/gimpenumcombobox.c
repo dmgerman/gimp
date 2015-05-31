@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d5195e0103
+DECL|enum|__anon2a1afa840103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -323,7 +323,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_combo_box_new:  * @enum_type: the #GType of an enum.  *  * Creates a #GtkComboBox readily filled with all enum values from a  * given @enum_type. The enum needs to be registered to the type  * system. It should also have %GimpEnumDesc descriptions registered  * that contain translatable value names. This is the case for the  * enums used in the GIMP PDB functions.  *  * This is just a convenience function. If you need more control over  * the enum values that appear in the combo_box, you can create your  * own #GimpEnumStore and use gimp_enum_combo_box_new_with_model().  *  * Return value: a new #GimpEnumComboBox.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_enum_combo_box_new:  * @enum_type: the #GType of an enum.  *  * Creates a #GtkComboBox readily filled with all enum values from a  * given @enum_type. The enum needs to be registered to the type  * system. It should also have %GimpEnumDesc descriptions registered  * that contain translatable value names. This is the case for the  * enums used in the GIMP PDB functions.  *  * This is just a convenience function. If you need more control over  * the enum values that appear in the combo_box, you can create your  * own #GimpEnumStore and use gimp_enum_combo_box_new_with_model().  *  * Return value: a new #GimpEnumComboBox.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -386,7 +386,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_combo_box_new_with_model  * @enum_store: a #GimpEnumStore to use as the model  *  * Creates a #GtkComboBox for the given @enum_store.  *  * Return value: a new #GimpEnumComboBox.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_enum_combo_box_new_with_model  * @enum_store: a #GimpEnumStore to use as the model  *  * Creates a #GtkComboBox for the given @enum_store.  *  * Return value: a new #GimpEnumComboBox.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -426,7 +426,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_combo_box_set_stock_prefix:  * @combo_box:    a #GimpEnumComboBox  * @stock_prefix: a prefix to create icon stock ID from enum values  *  * Attempts to create stock icons for all items in the @combo_box. See  * gimp_enum_store_set_stock_prefix() to find out what to use as  * @stock_prefix.  *  * Since: GIMP 2.4  *  * Deprecated: GIMP 2.10  **/
+comment|/**  * gimp_enum_combo_box_set_stock_prefix:  * @combo_box:    a #GimpEnumComboBox  * @stock_prefix: a prefix to create icon stock ID from enum values  *  * Attempts to create stock icons for all items in the @combo_box. See  * gimp_enum_store_set_stock_prefix() to find out what to use as  * @stock_prefix.  *  * Since: 2.4  *  * Deprecated: GIMP 2.10  **/
 end_comment
 
 begin_function
@@ -455,7 +455,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_combo_box_set_icon_prefix:  * @combo_box:   a #GimpEnumComboBox  * @icon_prefix: a prefix to create icon names from enum values  *  * Attempts to create icons for all items in the @combo_box. See  * gimp_enum_store_set_icon_prefix() to find out what to use as  * @icon_prefix.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_enum_combo_box_set_icon_prefix:  * @combo_box:   a #GimpEnumComboBox  * @icon_prefix: a prefix to create icon names from enum values  *  * Attempts to create icons for all items in the @combo_box. See  * gimp_enum_store_set_icon_prefix() to find out what to use as  * @icon_prefix.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

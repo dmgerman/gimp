@@ -65,7 +65,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d478170103
+DECL|enum|__anon2ba2aa370103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d478170203
+DECL|enum|__anon2ba2aa370203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -128,7 +128,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d478170303
+DECL|enum|__anon2ba2aa370303
 block|{
 DECL|enumerator|PARSE_VALID
 name|PARSE_VALID
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d478170408
+DECL|struct|__anon2ba2aa370408
 block|{
 comment|/* The current number pair displayed in the widget. */
 DECL|member|left_number
@@ -1122,7 +1122,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_new:  * @separators:           The allowed separators.  * @allow_simplification: Whether to do simplification on the entered term.  * @min_valid_value:      The minimum allowed result value.  * @max_valid_value:      The maximum allowed result value.  *  * Creates a new #GimpNumberPairEntry widget, which is a GtkEntry that  * accepts two numbers separated by a separator. Typical input example  * with a 'x' separator: "377x233".  *  * The widget supports simplification of the entered ratio when the  * input ends in '=', if "allow-simplification" is TRUE.  *  * The "separators" property contains a string of characters valid as  * separators when parsing input. The first separator is used when  * displaying the current values.  *  * It is possible to specify what range of values that shall be  * considered as valid when parsing user input, by changing  * "min-valid-value" and "max-valid-value".  *  * The first separator of @separators is used to display the current  * value.  *  * Return value: The new #GimpNumberPairEntry widget.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_number_pair_entry_new:  * @separators:           The allowed separators.  * @allow_simplification: Whether to do simplification on the entered term.  * @min_valid_value:      The minimum allowed result value.  * @max_valid_value:      The maximum allowed result value.  *  * Creates a new #GimpNumberPairEntry widget, which is a GtkEntry that  * accepts two numbers separated by a separator. Typical input example  * with a 'x' separator: "377x233".  *  * The widget supports simplification of the entered ratio when the  * input ends in '=', if "allow-simplification" is TRUE.  *  * The "separators" property contains a string of characters valid as  * separators when parsing input. The first separator is used when  * displaying the current values.  *  * It is possible to specify what range of values that shall be  * considered as valid when parsing user input, by changing  * "min-valid-value" and "max-valid-value".  *  * The first separator of @separators is used to display the current  * value.  *  * Return value: The new #GimpNumberPairEntry widget.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1355,7 +1355,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_set_ratio:  * @entry: A #GimpNumberPairEntry widget.  * @ratio: Ratio to set in the widget.  *  * Sets the numbers of the #GimpNumberPairEntry to have the desired  * ratio. If the new ratio is different than the previous ratio, the  * "ratio-changed" signal is emitted.  *  * An attempt is made to convert the decimal number into a fraction  * with left_number and right_number< 1000.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_number_pair_entry_set_ratio:  * @entry: A #GimpNumberPairEntry widget.  * @ratio: Ratio to set in the widget.  *  * Sets the numbers of the #GimpNumberPairEntry to have the desired  * ratio. If the new ratio is different than the previous ratio, the  * "ratio-changed" signal is emitted.  *  * An attempt is made to convert the decimal number into a fraction  * with left_number and right_number< 1000.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1409,7 +1409,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_get_ratio:  * @entry: A #GimpNumberPairEntry widget.  *  * Retrieves the ratio of the numbers displayed by a #GimpNumberPairEntry.  *  * Returns: The ratio value.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_number_pair_entry_get_ratio:  * @entry: A #GimpNumberPairEntry widget.  *  * Retrieves the ratio of the numbers displayed by a #GimpNumberPairEntry.  *  * Returns: The ratio value.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1456,7 +1456,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_set_values:  * @entry: A #GimpNumberPairEntry widget.  * @left:  Left number in the entry.  * @right: Right number in the entry.  *  * Forces setting the numbers displayed by a #GimpNumberPairEntry,  * ignoring if the user has set his/her own value. The state of  * user-override will not be changed.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_number_pair_entry_set_values:  * @entry: A #GimpNumberPairEntry widget.  * @left:  Left number in the entry.  * @right: Right number in the entry.  *  * Forces setting the numbers displayed by a #GimpNumberPairEntry,  * ignoring if the user has set his/her own value. The state of  * user-override will not be changed.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1706,7 +1706,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_get_values:  * @entry: A #GimpNumberPairEntry widget.  * @left:  Pointer of where to store the left number (may be %NULL).  * @right: Pointer of to store the right number (may be %NULL).  *  * Gets the numbers displayed by a #GimpNumberPairEntry.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_number_pair_entry_get_values:  * @entry: A #GimpNumberPairEntry widget.  * @left:  Pointer of where to store the left number (may be %NULL).  * @right: Pointer of to store the right number (may be %NULL).  *  * Gets the numbers displayed by a #GimpNumberPairEntry.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1776,7 +1776,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_set_default_text:  * @entry:  A #GimpNumberPairEntry widget.  * @string: Default string.  *  * Causes the entry to show a given string when in automatic mode,  * instead of the default numbers. The only thing this does is making  * the #GimpNumberPairEntry showing this string, the internal state  * and API calls are not affected.  *  * Set the default string to %NULL to display default values as  * normal.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_number_pair_entry_set_default_text:  * @entry:  A #GimpNumberPairEntry widget.  * @string: Default string.  *  * Causes the entry to show a given string when in automatic mode,  * instead of the default numbers. The only thing this does is making  * the #GimpNumberPairEntry showing this string, the internal state  * and API calls are not affected.  *  * Set the default string to %NULL to display default values as  * normal.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -1848,7 +1848,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_get_default_text:  * @entry:  A #GimpNumberPairEntry widget.  *  * Returns: the string manully set to be shown, or %NULL if values are  *          shown in a normal fashion.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_number_pair_entry_get_default_text:  * @entry:  A #GimpNumberPairEntry widget.  *  * Returns: the string manully set to be shown, or %NULL if values are  *          shown in a normal fashion.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -1893,7 +1893,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_set_aspect:  * @entry:  A #GimpNumberPairEntry widget.  * @aspect: The new aspect.  *  * Sets the aspect of the ratio by swapping the left_number and  * right_number if necessary (or setting them to 1.0 in case that  * @aspect is %GIMP_ASPECT_SQUARE).  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_number_pair_entry_set_aspect:  * @entry:  A #GimpNumberPairEntry widget.  * @aspect: The new aspect.  *  * Sets the aspect of the ratio by swapping the left_number and  * right_number if necessary (or setting them to 1.0 in case that  * @aspect is %GIMP_ASPECT_SQUARE).  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1985,7 +1985,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_get_aspect:  * @entry: A #GimpNumberPairEntry widget.  *  * Gets the aspect of the ratio displayed by a #GimpNumberPairEntry.  *  * Returns: The entry's current aspect.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_number_pair_entry_get_aspect:  * @entry: A #GimpNumberPairEntry widget.  *  * Gets the aspect of the ratio displayed by a #GimpNumberPairEntry.  *  * Returns: The entry's current aspect.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -2181,7 +2181,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_set_user_override:  * @entry:         A #GimpNumberPairEntry widget.  * @user_override: %TRUE sets the entry in user overridden mode,  *                 %FALSE disables.  *  * When the entry is not in user overridden mode, the values will  * change when the default values are changed. When in user overridden  * mode, setting default values will not affect the active values.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_number_pair_entry_set_user_override:  * @entry:         A #GimpNumberPairEntry widget.  * @user_override: %TRUE sets the entry in user overridden mode,  *                 %FALSE disables.  *  * When the entry is not in user overridden mode, the values will  * change when the default values are changed. When in user overridden  * mode, setting default values will not affect the active values.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -2264,7 +2264,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_get_user_override:  * @entry: A #GimpNumberPairEntry widget.  *  * Returns: Whether or not the the widget is in user overridden mode.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_number_pair_entry_get_user_override:  * @entry: A #GimpNumberPairEntry widget.  *  * Returns: Whether or not the the widget is in user overridden mode.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -3646,7 +3646,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_set_default_values:  * @entry: A #GimpNumberPairEntry widget.  * @left:  Default left value in the entry.  * @right: Default right value in the entry.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_number_pair_entry_set_default_values:  * @entry: A #GimpNumberPairEntry widget.  * @left:  Default left value in the entry.  * @right: Default right value in the entry.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -3722,7 +3722,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_get_default_values:  * @entry: A #GimpNumberPairEntry widget.  * @left:  Pointer of where to put left value.  * @right: Pointer of where to put right value.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_number_pair_entry_get_default_values:  * @entry: A #GimpNumberPairEntry widget.  * @left:  Pointer of where to put left value.  * @right: Pointer of where to put right value.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae7b2440103
+DECL|enum|__anon2b6550cc0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae7b2440203
+DECL|enum|__anon2b6550cc0203
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -494,7 +494,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_hex_entry_new:  *  * Return value: a new #GimpColorHexEntry widget  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_color_hex_entry_new:  *  * Return value: a new #GimpColorHexEntry widget  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -518,7 +518,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_hex_entry_set_color:  * @entry: a #GimpColorHexEntry widget  * @color: pointer to a #GimpRGB  *  * Sets the color displayed by a #GimpColorHexEntry. If the new color  * is different to the previously set color, the "color-changed"  * signal is emitted.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_color_hex_entry_set_color:  * @entry: a #GimpColorHexEntry widget  * @color: pointer to a #GimpRGB  *  * Sets the color displayed by a #GimpColorHexEntry. If the new color  * is different to the previously set color, the "color-changed"  * signal is emitted.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -681,7 +681,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_hex_entry_get_color:  * @entry: a #GimpColorHexEntry widget  * @color: pointer to a #GimpRGB  *  * Retrieves the color value displayed by a #GimpColorHexEntry.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_color_hex_entry_get_color:  * @entry: a #GimpColorHexEntry widget  * @color: pointer to a #GimpRGB  *  * Retrieves the color value displayed by a #GimpColorHexEntry.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

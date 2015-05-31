@@ -76,7 +76,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2064bf0103
+DECL|enum|__anon2a2414430103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -5131,7 +5131,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_show_unit_menu:  * @gse: a #GimpSizeEntry  * @show: Boolean  *  * Controls whether a unit menu is shown in the size entry.  If  * @show is #TRUE, the menu is shown; otherwise it is hidden.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_size_entry_show_unit_menu:  * @gse: a #GimpSizeEntry  * @show: Boolean  *  * Controls whether a unit menu is shown in the size entry.  If  * @show is #TRUE, the menu is shown; otherwise it is hidden.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -5290,7 +5290,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_set_activates_default:  * @gse:     A #GimpSizeEntry  * @setting: %TRUE to activate window's default widget on Enter keypress  *  * Iterates over all entries in the #GimpSizeEntry and calls  * gtk_entry_set_activates_default() on them.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_size_entry_set_activates_default:  * @gse:     A #GimpSizeEntry  * @setting: %TRUE to activate window's default widget on Enter keypress  *  * Iterates over all entries in the #GimpSizeEntry and calls  * gtk_entry_set_activates_default() on them.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

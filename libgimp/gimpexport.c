@@ -69,7 +69,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b428f6a0108
+DECL|struct|__anon27978b1d0108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -3761,7 +3761,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_export_dialog_new:  * @format_name: The short name of the image_format (e.g. JPEG or PNG).  * @role:        The dialog's @role which will be set with  *               gtk_window_set_role().  * @help_id:     The GIMP help id.  *  * Creates a new export dialog. All file plug-ins should use this  * dialog to get a consistent look on the export dialogs. Use  * gimp_export_dialog_get_content_area() to get a #GtkVBox to be  * filled with export options. The export dialog is a wrapped  * #GimpDialog.  *  * The dialog response when the user clicks on the Export button is  * %GTK_RESPONSE_OK, and when the Cancel button is clicked it is  * %GTK_RESPONSE_CANCEL.  *  * Returns: The new export dialog.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_export_dialog_new:  * @format_name: The short name of the image_format (e.g. JPEG or PNG).  * @role:        The dialog's @role which will be set with  *               gtk_window_set_role().  * @help_id:     The GIMP help id.  *  * Creates a new export dialog. All file plug-ins should use this  * dialog to get a consistent look on the export dialogs. Use  * gimp_export_dialog_get_content_area() to get a #GtkVBox to be  * filled with export options. The export dialog is a wrapped  * #GimpDialog.  *  * The dialog response when the user clicks on the Export button is  * %GTK_RESPONSE_OK, and when the Cancel button is clicked it is  * %GTK_RESPONSE_CANCEL.  *  * Returns: The new export dialog.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -3904,7 +3904,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_export_dialog_get_content_area:  * @dialog: A dialog created with gimp_export_dialog_new()  *  * Returns the #GtkVBox of the passed export dialog to be filled with  * export options.  *  * Returns: The #GtkVBox to fill with export options.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_export_dialog_get_content_area:  * @dialog: A dialog created with gimp_export_dialog_new()  *  * Returns the #GtkVBox of the passed export dialog to be filled with  * export options.  *  * Returns: The #GtkVBox to fill with export options.  *  * Since: 2.8  **/
 end_comment
 
 begin_function

@@ -142,7 +142,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_by_color_select_full:  * @drawable_ID: The affected drawable.  * @color: The color to select.  * @threshold: Threshold in intensity levels.  * @operation: The selection operation.  * @antialias: Antialiasing.  * @feather: Feather option for selections.  * @feather_radius_x: Radius for feather operation in X direction.  * @feather_radius_y: Radius for feather operation in Y direction.  * @sample_merged: Use the composite image, not the drawable.  * @select_transparent: Whether to consider transparent pixels for selection. If TRUE, transparency is considered as a unique selectable color.  * @select_criterion: The criterion used to determine color similarity. SELECT_CRITERION_COMPOSITE is the standard choice.  *  * Deprecated: Use gimp_image_select_color() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_by_color_select_full:  * @drawable_ID: The affected drawable.  * @color: The color to select.  * @threshold: Threshold in intensity levels.  * @operation: The selection operation.  * @antialias: Antialiasing.  * @feather: Feather option for selections.  * @feather_radius_x: Radius for feather operation in X direction.  * @feather_radius_y: Radius for feather operation in Y direction.  * @sample_merged: Use the composite image, not the drawable.  * @select_transparent: Whether to consider transparent pixels for selection. If TRUE, transparency is considered as a unique selectable color.  * @select_criterion: The criterion used to determine color similarity. SELECT_CRITERION_COMPOSITE is the standard choice.  *  * Deprecated: Use gimp_image_select_color() instead.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -638,7 +638,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_fuzzy_select_full:  * @drawable_ID: The affected drawable.  * @x: x coordinate of initial seed fill point: (image coordinates).  * @y: y coordinate of initial seed fill point: (image coordinates).  * @threshold: Threshold in intensity levels.  * @operation: The selection operation.  * @antialias: Antialiasing.  * @feather: Feather option for selections.  * @feather_radius_x: Radius for feather operation in X direction.  * @feather_radius_y: Radius for feather operation in Y direction.  * @sample_merged: Use the composite image, not the drawable.  * @select_transparent: Whether to consider transparent pixels for selection. If TRUE, transparency is considered as a unique selectable color.  * @select_criterion: The criterion used to determine color similarity. SELECT_CRITERION_COMPOSITE is the standard choice.  *  * Deprecated: Use gimp_image_select_contiguous_color() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_fuzzy_select_full:  * @drawable_ID: The affected drawable.  * @x: x coordinate of initial seed fill point: (image coordinates).  * @y: y coordinate of initial seed fill point: (image coordinates).  * @threshold: Threshold in intensity levels.  * @operation: The selection operation.  * @antialias: Antialiasing.  * @feather: Feather option for selections.  * @feather_radius_x: Radius for feather operation in X direction.  * @feather_radius_y: Radius for feather operation in Y direction.  * @sample_merged: Use the composite image, not the drawable.  * @select_transparent: Whether to consider transparent pixels for selection. If TRUE, transparency is considered as a unique selectable color.  * @select_criterion: The criterion used to determine color similarity. SELECT_CRITERION_COMPOSITE is the standard choice.  *  * Deprecated: Use gimp_image_select_contiguous_color() instead.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -898,7 +898,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_round_rect_select:  * @image_ID: The image.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @width: The width of the rectangle.  * @height: The height of the rectangle.  * @corner_radius_x: The corner radius in X direction.  * @corner_radius_y: The corner radius in Y direction.  * @operation: The selection operation.  * @antialias: Antialiasing.  * @feather: Feather option for selections.  * @feather_radius_x: Radius for feather operation in X direction.  * @feather_radius_y: Radius for feather operation in Y direction.  *  * Deprecated: Use gimp_image_select_round_rectangle() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_round_rect_select:  * @image_ID: The image.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @width: The width of the rectangle.  * @height: The height of the rectangle.  * @corner_radius_x: The corner radius in X direction.  * @corner_radius_y: The corner radius in Y direction.  * @operation: The selection operation.  * @antialias: Antialiasing.  * @feather: Feather option for selections.  * @feather_radius_x: Radius for feather operation in X direction.  * @feather_radius_y: Radius for feather operation in Y direction.  *  * Deprecated: Use gimp_image_select_round_rectangle() instead.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b82839c0103
+DECL|enum|__anon29fc508d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -100,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b82839c0208
+DECL|struct|__anon29fc508d0208
 block|{
 DECL|member|orientation
 name|GtkOrientation
@@ -180,7 +180,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b82839c0308
+DECL|struct|__anon29fc508d0308
 block|{
 DECL|member|ruler_scale
 specifier|const
@@ -1253,7 +1253,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_ruler_new:  * @orientation: the ruler's orientation.  *  * Creates a new ruler.  *  * Return value: a new #GimpRuler widget.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_ruler_new:  * @orientation: the ruler's orientation.  *  * Creates a new ruler.  *  * Return value: a new #GimpRuler widget.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1742,7 +1742,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_ruler_add_track_widget:  * @ruler: a #GimpRuler  * @widget: the track widget to add  *  * Adds a "track widget" to the ruler. The ruler will connect to  * GtkWidget:motion-notify-event: on the track widget and update its  * position marker accordingly. The marker is correctly updated also  * for the track widget's children, regardless of whether they are  * ordinary children of off-screen children.  *  * Since: GIMP 2.8  */
+comment|/**  * gimp_ruler_add_track_widget:  * @ruler: a #GimpRuler  * @widget: the track widget to add  *  * Adds a "track widget" to the ruler. The ruler will connect to  * GtkWidget:motion-notify-event: on the track widget and update its  * position marker accordingly. The marker is correctly updated also  * for the track widget's children, regardless of whether they are  * ordinary children of off-screen children.  *  * Since: 2.8  */
 end_comment
 
 begin_function
@@ -1845,7 +1845,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_ruler_remove_track_widget:  * @ruler: a #GimpRuler  * @widget: the track widget to remove  *  * Removes a previously added track widget from the ruler. See  * gimp_ruler_add_track_widget().  *  * Since: GIMP 2.8  */
+comment|/**  * gimp_ruler_remove_track_widget:  * @ruler: a #GimpRuler  * @widget: the track widget to remove  *  * Removes a previously added track widget from the ruler. See  * gimp_ruler_add_track_widget().  *  * Since: 2.8  */
 end_comment
 
 begin_function
@@ -1938,7 +1938,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_ruler_set_unit:  * @ruler: a #GimpRuler  * @unit:  the #GimpUnit to set the ruler to  *  * This sets the unit of the ruler.  *  * Since: GIMP 2.8  */
+comment|/**  * gimp_ruler_set_unit:  * @ruler: a #GimpRuler  * @unit:  the #GimpUnit to set the ruler to  *  * This sets the unit of the ruler.  *  * Since: 2.8  */
 end_comment
 
 begin_function
@@ -2011,7 +2011,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_ruler_get_unit:  * @ruler: a #GimpRuler  *  * Return value: the unit currently used in the @ruler widget.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_ruler_get_unit:  * @ruler: a #GimpRuler  *  * Return value: the unit currently used in the @ruler widget.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -2046,7 +2046,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_ruler_set_position:  * @ruler: a #GimpRuler  * @position: the position to set the ruler to  *  * This sets the position of the ruler.  *  * Since: GIMP 2.8  */
+comment|/**  * gimp_ruler_set_position:  * @ruler: a #GimpRuler  * @position: the position to set the ruler to  *  * This sets the position of the ruler.  *  * Since: 2.8  */
 end_comment
 
 begin_function
@@ -2118,7 +2118,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_ruler_get_position:  * @ruler: a #GimpRuler  *  * Return value: the current position of the @ruler widget.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_ruler_get_position:  * @ruler: a #GimpRuler  *  * Return value: the current position of the @ruler widget.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -2153,7 +2153,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_ruler_set_range:  * @ruler: a #GimpRuler  * @lower: the lower limit of the ruler  * @upper: the upper limit of the ruler  * @max_size: the maximum size of the ruler used when calculating the space to  * leave for the text  *  * This sets the range of the ruler.  *  * Since: GIMP 2.8  */
+comment|/**  * gimp_ruler_set_range:  * @ruler: a #GimpRuler  * @lower: the lower limit of the ruler  * @upper: the upper limit of the ruler  * @max_size: the maximum size of the ruler used when calculating the space to  * leave for the text  *  * This sets the range of the ruler.  *  * Since: 2.8  */
 end_comment
 
 begin_function
@@ -2300,7 +2300,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_ruler_get_range:  * @ruler: a #GimpRuler  * @lower: location to store lower limit of the ruler, or %NULL  * @upper: location to store upper limit of the ruler, or %NULL  * @max_size: location to store the maximum size of the ruler used when  *            calculating the space to leave for the text, or %NULL.  *  * Retrieves values indicating the range and current position of a #GimpRuler.  * See gimp_ruler_set_range().  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_ruler_get_range:  * @ruler: a #GimpRuler  * @lower: location to store lower limit of the ruler, or %NULL  * @upper: location to store upper limit of the ruler, or %NULL  * @max_size: location to store the maximum size of the ruler used when  *            calculating the space to leave for the text, or %NULL.  *  * Retrieves values indicating the range and current position of a #GimpRuler.  * See gimp_ruler_set_range().  *  * Since: 2.8  **/
 end_comment
 
 begin_function

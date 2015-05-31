@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5e39ec0103
+DECL|enum|__anon2b8a07fe0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -941,7 +941,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_selector_set_config:  * @selector: a #GimpColorSelector widget.  * @config:   a #GimpColorConfig object.  *  * Sets the color management configuration to use with this color selector.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_color_selector_set_config:  * @selector: a #GimpColorSelector widget.  * @config:   a #GimpColorConfig object.  *  * Sets the color management configuration to use with this color selector.  *  * Since: 2.4  */
 end_comment
 
 begin_function

@@ -113,7 +113,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon295a3df30103
+DECL|enum|__anon2c3abb230103
 block|{
 DECL|enumerator|FONT_SET
 name|FONT_SET
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon295a3df30203
+DECL|enum|__anon2c3abb230203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -379,7 +379,7 @@ name|font_set
 operator|=
 name|NULL
 expr_stmt|;
-comment|/**    * GimpFontSelectButton:title:    *    * The title to be used for the font selection popup dialog.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpFontSelectButton:title:    *    * The title to be used for the font selection popup dialog.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -405,7 +405,7 @@ name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpFontSelectButton:font-name:    *    * The name of the currently selected font.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpFontSelectButton:font-name:    *    * The name of the currently selected font.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -429,7 +429,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpFontSelectButton::font-set:    * @widget: the object which received the signal.    * @font_name: the name of the currently selected font.    * @dialog_closing: whether the dialog was closed or not.    *    * The ::font-set signal is emitted when the user selects a font.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpFontSelectButton::font-set:    * @widget: the object which received the signal.    * @font_name: the name of the currently selected font.    * @dialog_closing: whether the dialog was closed or not.    *    * The ::font-set signal is emitted when the user selects a font.    *    * Since: 2.4    */
 name|font_button_signals
 index|[
 name|FONT_SET
@@ -534,7 +534,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_font_select_button_new:  * @title:     Title of the dialog to use or %NULL to use the default title.  * @font_name: Initial font name.  *  * Creates a new #GtkWidget that completely controls the selection of  * a font.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_font_select_button_new:  * @title:     Title of the dialog to use or %NULL to use the default title.  * @font_name: Initial font name.  *  * Creates a new #GtkWidget that completely controls the selection of  * a font.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -600,7 +600,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_font_select_button_get_font:  * @button: A #GimpFontSelectButton  *  * Retrieves the name of currently selected font.  *  * Returns: an internal copy of the font name which must not be freed.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_font_select_button_get_font:  * @button: A #GimpFontSelectButton  *  * Retrieves the name of currently selected font.  *  * Returns: an internal copy of the font name which must not be freed.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -645,7 +645,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_font_select_button_set_font:  * @button: A #GimpFontSelectButton  * @font_name: Font name to set; %NULL means no change.  *  * Sets the current font for the font select button.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_font_select_button_set_font:  * @button: A #GimpFontSelectButton  * @font_name: Font name to set; %NULL means no change.  *  * Sets the current font for the font select button.  *  * Since: 2.4  */
 end_comment
 
 begin_function

@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0e4d2c0103
+DECL|enum|__anon2bf434580103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -165,7 +165,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0e4d2c0203
+DECL|enum|__anon2bf434580203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -178,7 +178,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0e4d2c0303
+DECL|enum|__anon2bf434580303
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2034,7 +2034,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_selection_set_config:  * @selection: A #GimpColorSelection widget.  * @config:    A #GimpColorConfig object.  *  * Sets the color management configuration to use with this color selection.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_color_selection_set_config:  * @selection: A #GimpColorSelection widget.  * @config:    A #GimpColorConfig object.  *  * Sets the color management configuration to use with this color selection.  *  * Since: 2.4  */
 end_comment
 
 begin_function

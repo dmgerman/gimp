@@ -145,7 +145,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_memsize_serialize:  * @memsize: memory size in bytes  *  * Creates a string representation of a given memory size. This string  * can be parsed by gimp_memsize_deserialize() and can thus be used in  * config files. It should not be displayed to the user. If you need a  * nice human-readable string please use g_format_size().  *  * Return value: A newly allocated string representation of @memsize.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_memsize_serialize:  * @memsize: memory size in bytes  *  * Creates a string representation of a given memory size. This string  * can be parsed by gimp_memsize_deserialize() and can thus be used in  * config files. It should not be displayed to the user. If you need a  * nice human-readable string please use g_format_size().  *  * Return value: A newly allocated string representation of @memsize.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -270,7 +270,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_memsize_deserialize:  * @string:  a string as returned by gimp_memsize_serialize()  * @memsize: return location for memory size in bytes  *  * Parses a string representation of a memory size as returned by  * gimp_memsize_serialize().  *  * Return value: %TRUE if the @string was successfully parsed and  *               @memsize has been set, %FALSE otherwise.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_memsize_deserialize:  * @string:  a string as returned by gimp_memsize_serialize()  * @memsize: return location for memory size in bytes  *  * Parses a string representation of a memory size as returned by  * gimp_memsize_serialize().  *  * Return value: %TRUE if the @string was successfully parsed and  *               @memsize has been set, %FALSE otherwise.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -573,7 +573,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_param_memsize_get_type:  *  * Reveals the object type  *  * Returns: the #GType for a memsize object  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_param_memsize_get_type:  *  * Reveals the object type  *  * Returns: the #GType for a memsize object  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -673,7 +673,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_memsize:  * @name:          Canonical name of the param  * @nick:          Nickname of the param  * @blurb:         Brief desciption of param.  * @minimum:       Smallest allowed value of the parameter.  * @maximum:       Largest allowed value of the parameter.  * @default_value: Value to use if none is assigned.  * @flags:         a combination of #GParamFlags  *  * Creates a param spec to hold a memory size value.  * See g_param_spec_internal() for more information.  *  * Returns: a newly allocated #GParamSpec instance  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_param_spec_memsize:  * @name:          Canonical name of the param  * @nick:          Nickname of the param  * @blurb:         Brief desciption of param.  * @minimum:       Smallest allowed value of the parameter.  * @maximum:       Largest allowed value of the parameter.  * @default_value: Value to use if none is assigned.  * @flags:         a combination of #GParamFlags  *  * Creates a param spec to hold a memory size value.  * See g_param_spec_internal() for more information.  *  * Returns: a newly allocated #GParamSpec instance  *  * Since: 2.4  **/
 end_comment
 
 begin_function

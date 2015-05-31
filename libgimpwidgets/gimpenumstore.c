@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a21e12c0103
+DECL|enum|__anon289183370103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -182,7 +182,7 @@ name|get_property
 operator|=
 name|gimp_enum_store_get_property
 expr_stmt|;
-comment|/**    * GimpEnumStore:enum-type:    *    * Sets the #GType of the enum to be used in the store.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpEnumStore:enum-type:    *    * Sets the #GType of the enum to be used in the store.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -493,7 +493,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_store_new:  * @enum_type: the #GType of an enum.  *  * Creates a new #GimpEnumStore, derived from #GtkListStore and fills  * it with enum values. The enum needs to be registered to the type  * system and should have translatable value names.  *  * Return value: a new #GimpEnumStore.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_enum_store_new:  * @enum_type: the #GType of an enum.  *  * Creates a new #GimpEnumStore, derived from #GtkListStore and fills  * it with enum values. The enum needs to be registered to the type  * system and should have translatable value names.  *  * Return value: a new #GimpEnumStore.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -558,7 +558,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_store_new_with_range:  * @enum_type: the #GType of an enum.  * @minimum: the minimum value to include  * @maximum: the maximum value to include  *  * Creates a new #GimpEnumStore like gimp_enum_store_new() but allows  * to limit the enum values to a certain range. Values smaller than  * @minimum or larger than @maximum are not added to the store.  *  * Return value: a new #GimpEnumStore.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_enum_store_new_with_range:  * @enum_type: the #GType of an enum.  * @minimum: the minimum value to include  * @maximum: the maximum value to include  *  * Creates a new #GimpEnumStore like gimp_enum_store_new() but allows  * to limit the enum values to a certain range. Values smaller than  * @minimum or larger than @maximum are not added to the store.  *  * Return value: a new #GimpEnumStore.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -659,7 +659,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_store_new_with_values  * @enum_type: the #GType of an enum.  * @n_values:  the number of enum values to include  * @...:       a list of enum values (exactly @n_values)  *  * Creates a new #GimpEnumStore like gimp_enum_store_new() but allows  * to expliticely list the enum values that should be added to the  * store.  *  * Return value: a new #GimpEnumStore.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_enum_store_new_with_values  * @enum_type: the #GType of an enum.  * @n_values:  the number of enum values to include  * @...:       a list of enum values (exactly @n_values)  *  * Creates a new #GimpEnumStore like gimp_enum_store_new() but allows  * to expliticely list the enum values that should be added to the  * store.  *  * Return value: a new #GimpEnumStore.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -714,7 +714,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_store_new_with_values_valist:  * @enum_type: the #GType of an enum.  * @n_values:  the number of enum values to include  * @args:      a va_list of enum values (exactly @n_values)  *  * See gimp_enum_store_new_with_values().  *  * Return value: a new #GimpEnumStore.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_enum_store_new_with_values_valist:  * @enum_type: the #GType of an enum.  * @n_values:  the number of enum values to include  * @args:      a va_list of enum values (exactly @n_values)  *  * See gimp_enum_store_new_with_values().  *  * Return value: a new #GimpEnumStore.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -828,7 +828,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_store_set_stock_prefix:  * @store:        a #GimpEnumStore  * @stock_prefix: a prefix to create icon stock ID from enum values  *  * Creates a stock ID for each enum value in the @store by appending  * the value's nick to the given @stock_prefix, separated by a hyphen.  *  * See also: gimp_enum_combo_box_set_stock_prefix().  *  * Since: GIMP 2.4  *  * Deprecated: GIMP 2.10  **/
+comment|/**  * gimp_enum_store_set_stock_prefix:  * @store:        a #GimpEnumStore  * @stock_prefix: a prefix to create icon stock ID from enum values  *  * Creates a stock ID for each enum value in the @store by appending  * the value's nick to the given @stock_prefix, separated by a hyphen.  *  * See also: gimp_enum_combo_box_set_stock_prefix().  *  * Since: 2.4  *  * Deprecated: GIMP 2.10  **/
 end_comment
 
 begin_function
@@ -857,7 +857,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_store_set_icon_prefix:  * @store:       a #GimpEnumStore  * @icon_prefix: a prefix to create icon names from enum values  *  * Creates an icon name for each enum value in the @store by appending  * the value's nick to the given @icon_prefix, separated by a hyphen.  *  * See also: gimp_enum_combo_box_set_icon_prefix().  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_enum_store_set_icon_prefix:  * @store:       a #GimpEnumStore  * @icon_prefix: a prefix to create icon names from enum values  *  * Creates an icon name for each enum value in the @store by appending  * the value's nick to the given @icon_prefix, separated by a hyphen.  *  * See also: gimp_enum_combo_box_set_icon_prefix().  *  * Since: 2.10  **/
 end_comment
 
 begin_function

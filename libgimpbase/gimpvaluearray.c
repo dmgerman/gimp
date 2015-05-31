@@ -51,7 +51,7 @@ comment|/* power of 2 !! */
 end_comment
 
 begin_comment
-comment|/**  * GimpValueArray:  *  * A #GimpValueArray contains an array of #GValue elements.  *  * Since: GIMP 2.10  */
+comment|/**  * GimpValueArray:  *  * A #GimpValueArray contains an array of #GValue elements.  *  * Since: 2.10  */
 end_comment
 
 begin_struct
@@ -95,7 +95,7 @@ argument_list|)
 end_macro
 
 begin_comment
-comment|/**  * gimp_value_array_index:  * @value_array: #GimpValueArray to get a value from  * @index: index of the value of interest  *  * Return a pointer to the value at @index containd in @value_array.  *  * Returns: (transfer none): pointer to a value at @index in @value_array  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_value_array_index:  * @value_array: #GimpValueArray to get a value from  * @index: index of the value of interest  *  * Return a pointer to the value at @index containd in @value_array.  *  * Returns: (transfer none): pointer to a value at @index in @value_array  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -349,7 +349,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_value_array_new:  * @n_prealloced: number of values to preallocate space for  *  * Allocate and initialize a new #GimpValueArray, optionally preserve space  * for @n_prealloced elements. New arrays always contain 0 elements,  * regardless of the value of @n_prealloced.  *  * Returns: a newly allocated #GimpValueArray with 0 values  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_value_array_new:  * @n_prealloced: number of values to preallocate space for  *  * Allocate and initialize a new #GimpValueArray, optionally preserve space  * for @n_prealloced elements. New arrays always contain 0 elements,  * regardless of the value of @n_prealloced.  *  * Returns: a newly allocated #GimpValueArray with 0 values  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -417,7 +417,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_value_array_ref:  * @value_array: #GimpValueArray to ref  *  * Adds a reference to a #GimpValueArray.  *  * Return value: the same @value_array  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_value_array_ref:  * @value_array: #GimpValueArray to ref  *  * Adds a reference to a #GimpValueArray.  *  * Return value: the same @value_array  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -452,7 +452,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_value_array_unref:  * @value_array: #GimpValueArray to unref  *  * Unref a #GimpValueArray. If the reference count drops to zero, the  * array including its contents are freed.  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_value_array_unref:  * @value_array: #GimpValueArray to unref  *  * Unref a #GimpValueArray. If the reference count drops to zero, the  * array including its contents are freed.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -578,7 +578,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_value_array_prepend:  * @value_array: #GimpValueArray to add an element to  * @value: (allow-none): #GValue to copy into #GimpValueArray, or %NULL  *  * Insert a copy of @value as first element of @value_array. If @value is  * %NULL, an uninitialized value is prepended.  *  * Returns: (transfer none): the #GimpValueArray passed in as @value_array  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_value_array_prepend:  * @value_array: #GimpValueArray to add an element to  * @value: (allow-none): #GValue to copy into #GimpValueArray, or %NULL  *  * Insert a copy of @value as first element of @value_array. If @value is  * %NULL, an uninitialized value is prepended.  *  * Returns: (transfer none): the #GimpValueArray passed in as @value_array  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -620,7 +620,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_value_array_append:  * @value_array: #GimpValueArray to add an element to  * @value: (allow-none): #GValue to copy into #GimpValueArray, or %NULL  *  * Insert a copy of @value as last element of @value_array. If @value is  * %NULL, an uninitialized value is appended.  *  * Returns: (transfer none): the #GimpValueArray passed in as @value_array  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_value_array_append:  * @value_array: #GimpValueArray to add an element to  * @value: (allow-none): #GValue to copy into #GimpValueArray, or %NULL  *  * Insert a copy of @value as last element of @value_array. If @value is  * %NULL, an uninitialized value is appended.  *  * Returns: (transfer none): the #GimpValueArray passed in as @value_array  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -664,7 +664,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_value_array_insert:  * @value_array: #GimpValueArray to add an element to  * @index: insertion position, must be&lt;= gimp_value_array_length()  * @value: (allow-none): #GValue to copy into #GimpValueArray, or %NULL  *  * Insert a copy of @value at specified position into @value_array. If @value  * is %NULL, an uninitialized value is inserted.  *  * Returns: (transfer none): the #GimpValueArray passed in as @value_array  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_value_array_insert:  * @value_array: #GimpValueArray to add an element to  * @index: insertion position, must be&lt;= gimp_value_array_length()  * @value: (allow-none): #GValue to copy into #GimpValueArray, or %NULL  *  * Insert a copy of @value at specified position into @value_array. If @value  * is %NULL, an uninitialized value is inserted.  *  * Returns: (transfer none): the #GimpValueArray passed in as @value_array  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -830,7 +830,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_value_array_remove:  * @value_array: #GimpValueArray to remove an element from  * @index: position of value to remove, which must be less than  *         gimp_value_array_length()  *  * Remove the value at position @index from @value_array.  *  * Returns: (transfer none): the #GimpValueArray passed in as @value_array  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_value_array_remove:  * @value_array: #GimpValueArray to remove an element from  * @index: position of value to remove, which must be less than  *         gimp_value_array_length()  *  * Remove the value at position @index from @value_array.  *  * Returns: (transfer none): the #GimpValueArray passed in as @value_array  *  * Since: 2.10  */
 end_comment
 
 begin_function

@@ -30,7 +30,7 @@ comment|/**  * SECTION: gimpdrawable  * @title: gimpdrawable  * @short_descripti
 end_comment
 
 begin_comment
-comment|/**  * _gimp_drawable_get_format:  * @drawable_ID: The drawable.  *  * Returns the drawable's Babl format  *  * This procedure returns the drawable's Babl format.  *  * Returns: The drawable's Babl format.  *  * Since: GIMP 2.10  **/
+comment|/**  * _gimp_drawable_get_format:  * @drawable_ID: The drawable.  *  * Returns the drawable's Babl format  *  * This procedure returns the drawable's Babl format.  *  * Returns: The drawable's Babl format.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1148,7 +1148,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_mask_intersect:  * @drawable_ID: The drawable.  * @x: x coordinate of the upper left corner of the intersection.  * @y: y coordinate of the upper left corner of the intersection.  * @width: width of the intersection.  * @height: height of the intersection.  *  * Find the bounding box of the current selection in relation to the  * specified drawable.  *  * This procedure returns whether there is an intersection between the  * drawable and the selection. Unlike gimp_drawable_mask_bounds(), the  * intersection's bounds are returned as x, y, width, height.  * If there is no selection this function returns TRUE and the returned  * bounds are the extents of the whole drawable.  *  * Returns: TRUE if the returned area is not empty.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_drawable_mask_intersect:  * @drawable_ID: The drawable.  * @x: x coordinate of the upper left corner of the intersection.  * @y: y coordinate of the upper left corner of the intersection.  * @width: width of the intersection.  * @height: height of the intersection.  *  * Find the bounding box of the current selection in relation to the  * specified drawable.  *  * This procedure returns whether there is an intersection between the  * drawable and the selection. Unlike gimp_drawable_mask_bounds(), the  * intersection's bounds are returned as x, y, width, height.  * If there is no selection this function returns TRUE and the returned  * bounds are the extents of the whole drawable.  *  * Returns: TRUE if the returned area is not empty.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1366,7 +1366,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_free_shadow:  * @drawable_ID: The drawable.  *  * Free the specified drawable's shadow data (if it exists).  *  * This procedure is intended as a memory saving device. If any shadow  * memory has been allocated, it will be freed automatically when the  * drawable is removed from the image, or when the plug-in procedure  * which allocated it returns.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_drawable_free_shadow:  * @drawable_ID: The drawable.  *  * Free the specified drawable's shadow data (if it exists).  *  * This procedure is intended as a memory saving device. If any shadow  * memory has been allocated, it will be freed automatically when the  * drawable is removed from the image, or when the plug-in procedure  * which allocated it returns.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -2147,7 +2147,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_drawable_sub_thumbnail:  * @drawable_ID: The drawable.  * @src_x: The x coordinate of the area.  * @src_y: The y coordinate of the area.  * @src_width: The width of the area.  * @src_height: The height of the area.  * @dest_width: The thumbnail width.  * @dest_height: The thumbnail height.  * @width: The previews width.  * @height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of a sub-area of a drawable drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bytes in the image.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * _gimp_drawable_sub_thumbnail:  * @drawable_ID: The drawable.  * @src_x: The x coordinate of the area.  * @src_y: The y coordinate of the area.  * @src_width: The width of the area.  * @src_height: The height of the area.  * @dest_width: The thumbnail width.  * @dest_height: The thumbnail height.  * @width: The previews width.  * @height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of a sub-area of a drawable drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bytes in the image.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2390,7 +2390,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_foreground_extract:  * @drawable_ID: The drawable.  * @mode: The algorithm to use.  * @mask_ID: Tri-Map.  *  * Extract the foreground of a drawable using a given trimap.  *  * Image Segmentation by Uniform Color Clustering, see  * http://www.inf.fu-berlin.de/inst/pubs/tr-b-05-07.pdf  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_drawable_foreground_extract:  * @drawable_ID: The drawable.  * @mode: The algorithm to use.  * @mask_ID: Tri-Map.  *  * Extract the foreground of a drawable using a given trimap.  *  * Image Segmentation by Uniform Color Clustering, see  * http://www.inf.fu-berlin.de/inst/pubs/tr-b-05-07.pdf  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

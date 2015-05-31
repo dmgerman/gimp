@@ -30,7 +30,7 @@ comment|/**  * SECTION: gimpitem  * @title: gimpitem  * @short_description: Func
 end_comment
 
 begin_comment
-comment|/**  * gimp_item_is_valid:  * @item_ID: The item to check.  *  * Returns TRUE if the item is valid.  *  * This procedure checks if the given item ID is valid and refers to an  * existing item.  *  * Returns: Whether the item ID is valid.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_is_valid:  * @item_ID: The item to check.  *  * Returns TRUE if the item is valid.  *  * This procedure checks if the given item ID is valid and refers to an  * existing item.  *  * Returns: Whether the item ID is valid.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -108,7 +108,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_get_image:  * @item_ID: The item.  *  * Returns the item's image.  *  * This procedure returns the item's image.  *  * Returns: The item's image.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_get_image:  * @item_ID: The item.  *  * Returns the item's image.  *  * This procedure returns the item's image.  *  * Returns: The item's image.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -187,7 +187,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_delete:  * @item_ID: The item to delete.  *  * Delete a item.  *  * This procedure deletes the specified item. This must not be done if  * the image containing this item was already deleted or if the item  * was already removed from the image. The only case in which this  * procedure is useful is if you want to get rid of a item which has  * not yet been added to an image.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_delete:  * @item_ID: The item to delete.  *  * Delete a item.  *  * This procedure deletes the specified item. This must not be done if  * the image containing this item was already deleted or if the item  * was already removed from the image. The only case in which this  * procedure is useful is if you want to get rid of a item which has  * not yet been added to an image.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -254,7 +254,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_is_drawable:  * @item_ID: The item.  *  * Returns whether the item is a drawable.  *  * This procedure returns TRUE if the specified item is a drawable.  *  * Returns: TRUE if the item is a drawable, FALSE otherwise.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_is_drawable:  * @item_ID: The item.  *  * Returns whether the item is a drawable.  *  * This procedure returns TRUE if the specified item is a drawable.  *  * Returns: TRUE if the item is a drawable, FALSE otherwise.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -332,7 +332,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_is_layer:  * @item_ID: The item.  *  * Returns whether the item is a layer.  *  * This procedure returns TRUE if the specified item is a layer.  *  * Returns: TRUE if the item is a layer, FALSE otherwise.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_is_layer:  * @item_ID: The item.  *  * Returns whether the item is a layer.  *  * This procedure returns TRUE if the specified item is a layer.  *  * Returns: TRUE if the item is a layer, FALSE otherwise.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -410,7 +410,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_is_text_layer:  * @item_ID: The item.  *  * Returns whether the item is a text layer.  *  * This procedure returns TRUE if the specified item is a text layer.  *  * Returns: TRUE if the item is a text layer, FALSE otherwise.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_is_text_layer:  * @item_ID: The item.  *  * Returns whether the item is a text layer.  *  * This procedure returns TRUE if the specified item is a text layer.  *  * Returns: TRUE if the item is a text layer, FALSE otherwise.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -488,7 +488,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_is_channel:  * @item_ID: The item.  *  * Returns whether the item is a channel.  *  * This procedure returns TRUE if the specified item is a channel.  *  * Returns: TRUE if the item is a channel, FALSE otherwise.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_is_channel:  * @item_ID: The item.  *  * Returns whether the item is a channel.  *  * This procedure returns TRUE if the specified item is a channel.  *  * Returns: TRUE if the item is a channel, FALSE otherwise.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -566,7 +566,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_is_layer_mask:  * @item_ID: The item.  *  * Returns whether the item is a layer mask.  *  * This procedure returns TRUE if the specified item is a layer mask.  *  * Returns: TRUE if the item is a layer mask, FALSE otherwise.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_is_layer_mask:  * @item_ID: The item.  *  * Returns whether the item is a layer mask.  *  * This procedure returns TRUE if the specified item is a layer mask.  *  * Returns: TRUE if the item is a layer mask, FALSE otherwise.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -644,7 +644,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_is_selection:  * @item_ID: The item.  *  * Returns whether the item is a selection.  *  * This procedure returns TRUE if the specified item is a selection.  *  * Returns: TRUE if the item is a selection, FALSE otherwise.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_is_selection:  * @item_ID: The item.  *  * Returns whether the item is a selection.  *  * This procedure returns TRUE if the specified item is a selection.  *  * Returns: TRUE if the item is a selection, FALSE otherwise.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -722,7 +722,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_is_vectors:  * @item_ID: The item.  *  * Returns whether the item is a vectors.  *  * This procedure returns TRUE if the specified item is a vectors.  *  * Returns: TRUE if the item is a vectors, FALSE otherwise.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_is_vectors:  * @item_ID: The item.  *  * Returns whether the item is a vectors.  *  * This procedure returns TRUE if the specified item is a vectors.  *  * Returns: TRUE if the item is a vectors, FALSE otherwise.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -800,7 +800,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_is_group:  * @item_ID: The item.  *  * Returns whether the item is a group item.  *  * This procedure returns TRUE if the specified item is a group item  * which can have children.  *  * Returns: TRUE if the item is a group, FALSE otherwise.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_is_group:  * @item_ID: The item.  *  * Returns whether the item is a group item.  *  * This procedure returns TRUE if the specified item is a group item  * which can have children.  *  * Returns: TRUE if the item is a group, FALSE otherwise.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -878,7 +878,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_get_parent:  * @item_ID: The item.  *  * Returns the item's parent item.  *  * This procedure returns the item's parent item, if any.  *  * Returns: The item's parent item.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_get_parent:  * @item_ID: The item.  *  * Returns the item's parent item.  *  * This procedure returns the item's parent item, if any.  *  * Returns: The item's parent item.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -957,7 +957,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_get_children:  * @item_ID: The item.  * @num_children: The item's number of children.  *  * Returns the item's list of children.  *  * This procedure returns the list of items which are children of the  * specified item. The order is topmost to bottommost.  *  * Returns: The item's list of children.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_get_children:  * @item_ID: The item.  * @num_children: The item's number of children.  *  * Returns the item's list of children.  *  * This procedure returns the list of items which are children of the  * specified item. The order is topmost to bottommost.  *  * Returns: The item's list of children.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1081,7 +1081,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_get_name:  * @item_ID: The item.  *  * Get the name of the specified item.  *  * This procedure returns the specified item's name.  *  * Returns: The item name.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_get_name:  * @item_ID: The item.  *  * Get the name of the specified item.  *  * This procedure returns the specified item's name.  *  * Returns: The item name.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1164,7 +1164,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_set_name:  * @item_ID: The item.  * @name: The new item name.  *  * Set the name of the specified item.  *  * This procedure sets the specified item's name.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_set_name:  * @item_ID: The item.  * @name: The new item name.  *  * Set the name of the specified item.  *  * This procedure sets the specified item's name.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1240,7 +1240,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_get_visible:  * @item_ID: The item.  *  * Get the visibility of the specified item.  *  * This procedure returns the specified item's visibility.  *  * Returns: The item visibility.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_get_visible:  * @item_ID: The item.  *  * Get the visibility of the specified item.  *  * This procedure returns the specified item's visibility.  *  * Returns: The item visibility.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1318,7 +1318,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_set_visible:  * @item_ID: The item.  * @visible: The new item visibility.  *  * Set the visibility of the specified item.  *  * This procedure sets the specified item's visibility.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_set_visible:  * @item_ID: The item.  * @visible: The new item visibility.  *  * Set the visibility of the specified item.  *  * This procedure sets the specified item's visibility.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1392,7 +1392,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_get_linked:  * @item_ID: The item.  *  * Get the linked state of the specified item.  *  * This procedure returns the specified item's linked state.  *  * Returns: The item linked state (for moves).  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_get_linked:  * @item_ID: The item.  *  * Get the linked state of the specified item.  *  * This procedure returns the specified item's linked state.  *  * Returns: The item linked state (for moves).  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1470,7 +1470,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_set_linked:  * @item_ID: The item.  * @linked: The new item linked state.  *  * Set the linked state of the specified item.  *  * This procedure sets the specified item's linked state.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_set_linked:  * @item_ID: The item.  * @linked: The new item linked state.  *  * Set the linked state of the specified item.  *  * This procedure sets the specified item's linked state.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1544,7 +1544,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_get_lock_content:  * @item_ID: The item.  *  * Get the 'lock content' state of the specified item.  *  * This procedure returns the specified item's lock content state.  *  * Returns: Whether the item's contents are locked.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_get_lock_content:  * @item_ID: The item.  *  * Get the 'lock content' state of the specified item.  *  * This procedure returns the specified item's lock content state.  *  * Returns: Whether the item's contents are locked.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1622,7 +1622,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_set_lock_content:  * @item_ID: The item.  * @lock_content: The new item 'lock content' state.  *  * Set the 'lock content' state of the specified item.  *  * This procedure sets the specified item's lock content state.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_set_lock_content:  * @item_ID: The item.  * @lock_content: The new item 'lock content' state.  *  * Set the 'lock content' state of the specified item.  *  * This procedure sets the specified item's lock content state.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1696,7 +1696,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_get_lock_position:  * @item_ID: The item.  *  * Get the 'lock position' state of the specified item.  *  * This procedure returns the specified item's lock position state.  *  * Returns: Whether the item's position is locked.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_item_get_lock_position:  * @item_ID: The item.  *  * Get the 'lock position' state of the specified item.  *  * This procedure returns the specified item's lock position state.  *  * Returns: Whether the item's position is locked.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1774,7 +1774,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_set_lock_position:  * @item_ID: The item.  * @lock_position: The new item 'lock position' state.  *  * Set the 'lock position' state of the specified item.  *  * This procedure sets the specified item's lock position state.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_item_set_lock_position:  * @item_ID: The item.  * @lock_position: The new item 'lock position' state.  *  * Set the 'lock position' state of the specified item.  *  * This procedure sets the specified item's lock position state.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1848,7 +1848,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_get_tattoo:  * @item_ID: The item.  *  * Get the tattoo of the specified item.  *  * This procedure returns the specified item's tattoo. A tattoo is a  * unique and permanent identifier attached to a item that can be used  * to uniquely identify a item within an image even between sessions.  *  * Returns: The item tattoo.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_get_tattoo:  * @item_ID: The item.  *  * Get the tattoo of the specified item.  *  * This procedure returns the specified item's tattoo. A tattoo is a  * unique and permanent identifier attached to a item that can be used  * to uniquely identify a item within an image even between sessions.  *  * Returns: The item tattoo.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1926,7 +1926,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_set_tattoo:  * @item_ID: The item.  * @tattoo: The new item tattoo.  *  * Set the tattoo of the specified item.  *  * This procedure sets the specified item's tattoo. A tattoo is a  * unique and permanent identifier attached to a item that can be used  * to uniquely identify a item within an image even between sessions.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_set_tattoo:  * @item_ID: The item.  * @tattoo: The new item tattoo.  *  * Set the tattoo of the specified item.  *  * This procedure sets the specified item's tattoo. A tattoo is a  * unique and permanent identifier attached to a item that can be used  * to uniquely identify a item within an image even between sessions.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -2000,7 +2000,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_attach_parasite:  * @item_ID: The item.  * @parasite: The parasite to attach to the item.  *  * Add a parasite to an item.  *  * This procedure attaches a parasite to an item. It has no return  * values.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_attach_parasite:  * @item_ID: The item.  * @parasite: The parasite to attach to the item.  *  * Add a parasite to an item.  *  * This procedure attaches a parasite to an item. It has no return  * values.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -2076,7 +2076,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_detach_parasite:  * @item_ID: The item.  * @name: The name of the parasite to detach from the item.  *  * Removes a parasite from an item.  *  * This procedure detaches a parasite from an item. It has no return  * values.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_detach_parasite:  * @item_ID: The item.  * @name: The name of the parasite to detach from the item.  *  * Removes a parasite from an item.  *  * This procedure detaches a parasite from an item. It has no return  * values.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -2152,7 +2152,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_get_parasite:  * @item_ID: The item.  * @name: The name of the parasite to find.  *  * Look up a parasite in an item  *  * Finds and returns the parasite that is attached to an item.  *  * Returns: The found parasite.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_get_parasite:  * @item_ID: The item.  * @name: The name of the parasite to find.  *  * Look up a parasite in an item  *  * Finds and returns the parasite that is attached to an item.  *  * Returns: The found parasite.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -2245,7 +2245,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_get_parasite_list:  * @item_ID: The item.  * @num_parasites: The number of attached parasites.  *  * List all parasites.  *  * Returns a list of all parasites currently attached the an item.  *  * Returns: The names of currently attached parasites. The returned  * value must be freed with g_strfreev().  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_item_get_parasite_list:  * @item_ID: The item.  * @num_parasites: The number of attached parasites.  *  * List all parasites.  *  * Returns a list of all parasites currently attached the an item.  *  * Returns: The names of currently attached parasites. The returned  * value must be freed with g_strfreev().  *  * Since: 2.8  **/
 end_comment
 
 begin_function

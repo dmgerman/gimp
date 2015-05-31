@@ -144,7 +144,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cab0ec0103
+DECL|enum|__anon29bd79330103
 block|{
 DECL|enumerator|PATTERN_SET
 name|PATTERN_SET
@@ -157,7 +157,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cab0ec0203
+DECL|enum|__anon29bd79330203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -512,7 +512,7 @@ name|pattern_set
 operator|=
 name|NULL
 expr_stmt|;
-comment|/**    * GimpPatternSelectButton:title:    *    * The title to be used for the pattern selection popup dialog.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpPatternSelectButton:title:    *    * The title to be used for the pattern selection popup dialog.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -538,7 +538,7 @@ name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpPatternSelectButton:pattern-name:    *    * The name of the currently selected pattern.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpPatternSelectButton:pattern-name:    *    * The name of the currently selected pattern.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -559,7 +559,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpPatternSelectButton::pattern-set:    * @widget: the object which received the signal.    * @pattern_name: the name of the currently selected pattern.    * @width: width of the pattern    * @height: height of the pattern    * @bpp: bpp of the pattern    * @mask_data: pattern mask data    * @dialog_closing: whether the dialog was closed or not.    *    * The ::pattern-set signal is emitted when the user selects a pattern.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpPatternSelectButton::pattern-set:    * @widget: the object which received the signal.    * @pattern_name: the name of the currently selected pattern.    * @width: width of the pattern    * @height: height of the pattern    * @bpp: bpp of the pattern    * @mask_data: pattern mask data    * @dialog_closing: whether the dialog was closed or not.    *    * The ::pattern-set signal is emitted when the user selects a pattern.    *    * Since: 2.4    */
 name|pattern_button_signals
 index|[
 name|PATTERN_SET
@@ -712,7 +712,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pattern_select_button_new:  * @title:        Title of the dialog to use or %NULL to use the default title.  * @pattern_name: Initial pattern name or %NULL to use current selection.  *  * Creates a new #GtkWidget that completely controls the selection of  * a pattern.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_pattern_select_button_new:  * @title:        Title of the dialog to use or %NULL to use the default title.  * @pattern_name: Initial pattern name or %NULL to use current selection.  *  * Creates a new #GtkWidget that completely controls the selection of  * a pattern.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -778,7 +778,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pattern_select_button_get_pattern:  * @button: A #GimpPatternSelectButton  *  * Retrieves the name of currently selected pattern.  *  * Returns: an internal copy of the pattern name which must not be freed.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_pattern_select_button_get_pattern:  * @button: A #GimpPatternSelectButton  *  * Retrieves the name of currently selected pattern.  *  * Returns: an internal copy of the pattern name which must not be freed.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -823,7 +823,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pattern_select_button_set_pattern:  * @button: A #GimpPatternSelectButton  * @pattern_name: Pattern name to set; %NULL means no change.  *  * Sets the current pattern for the pattern select button.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_pattern_select_button_set_pattern:  * @button: A #GimpPatternSelectButton  * @pattern_name: Pattern name to set; %NULL means no change.  *  * Sets the current pattern for the pattern select button.  *  * Since: 2.4  */
 end_comment
 
 begin_function

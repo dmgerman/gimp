@@ -30,7 +30,7 @@ comment|/**  * SECTION: gimpimage  * @title: gimpimage  * @short_description: Op
 end_comment
 
 begin_comment
-comment|/**  * gimp_image_is_valid:  * @image_ID: The image to check.  *  * Returns TRUE if the image is valid.  *  * This procedure checks if the given image ID is valid and refers to  * an existing image.  *  * Returns: Whether the image ID is valid.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_image_is_valid:  * @image_ID: The image to check.  *  * Returns TRUE if the image is valid.  *  * This procedure checks if the given image ID is valid and refers to  * an existing image.  *  * Returns: Whether the image ID is valid.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -318,7 +318,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_new_with_precision:  * @width: The width of the image.  * @height: The height of the image.  * @type: The type of image.  * @precision: The precision.  *  * Creates a new image with the specified width, height, type and  * precision.  *  * Creates a new image, undisplayed with the specified extents, type  * and precision. Indexed images can only be created at  * GIMP_PRECISION_U8_GAMMA precision. See gimp_image_new() for further  * details.  *  * Returns: The ID of the newly created image.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_image_new_with_precision:  * @width: The width of the image.  * @height: The height of the image.  * @type: The type of image.  * @precision: The precision.  *  * Creates a new image with the specified width, height, type and  * precision.  *  * Creates a new image, undisplayed with the specified extents, type  * and precision. Indexed images can only be created at  * GIMP_PRECISION_U8_GAMMA precision. See gimp_image_new() for further  * details.  *  * Returns: The ID of the newly created image.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -642,7 +642,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_precision:  * @image_ID: The image.  *  * Get the precision of the image.  *  * This procedure returns the image's precision.  *  * Returns: The image's precision.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_image_get_precision:  * @image_ID: The image.  *  * Get the precision of the image.  *  * This procedure returns the image's precision.  *  * Returns: The image's precision.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1191,7 +1191,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_vectors:  * @image_ID: The image.  * @num_vectors: The number of vectors contained in the image.  *  * Returns the list of vectors contained in the specified image.  *  * This procedure returns the list of vectors contained in the  * specified image.  *  * Returns: The list of vectors contained in the image. The returned  * value must be freed with g_free().  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_image_get_vectors:  * @image_ID: The image.  * @num_vectors: The number of vectors contained in the image.  *  * Returns the list of vectors contained in the specified image.  *  * This procedure returns the list of vectors contained in the  * specified image.  *  * Returns: The list of vectors contained in the image. The returned  * value must be freed with g_free().  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -2496,7 +2496,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_remove_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors object.  *  * Remove the specified path from the image.  *  * This procedure removes the specified path from the image. If the  * path doesn't exist, an error is returned.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_image_remove_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors object.  *  * Remove the specified path from the image.  *  * This procedure removes the specified path from the image. If the  * path doesn't exist, an error is returned.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -2570,7 +2570,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_item_position:  * @image_ID: The image.  * @item_ID: The item.  *  * Returns the position of the item in its level of its item tree.  *  * This procedure determines the position of the specified item in its  * level in its item tree in the image. If the item doesn't exist in  * the image, or the item is not part of an item tree, an error is  * returned.  *  * Returns: The position of the item in its level in the item tree.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_get_item_position:  * @image_ID: The image.  * @item_ID: The item.  *  * Returns the position of the item in its level of its item tree.  *  * This procedure determines the position of the specified item in its  * level in its item tree in the image. If the item doesn't exist in  * the image, or the item is not part of an item tree, an error is  * returned.  *  * Returns: The position of the item in its level in the item tree.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -2655,7 +2655,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_raise_item:  * @image_ID: The image.  * @item_ID: The item to raise.  *  * Raise the specified item in its level in its item tree  *  * This procedure raises the specified item one step in the item tree.  * The procecure call will fail if there is no item above it.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_raise_item:  * @image_ID: The image.  * @item_ID: The item to raise.  *  * Raise the specified item in its level in its item tree  *  * This procedure raises the specified item one step in the item tree.  * The procecure call will fail if there is no item above it.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -2729,7 +2729,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_lower_item:  * @image_ID: The image.  * @item_ID: The item to lower.  *  * Lower the specified item in its level in its item tree  *  * This procedure lowers the specified item one step in the item tree.  * The procecure call will fail if there is no item below it.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_lower_item:  * @image_ID: The image.  * @item_ID: The item to lower.  *  * Lower the specified item in its level in its item tree  *  * This procedure lowers the specified item one step in the item tree.  * The procecure call will fail if there is no item below it.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -2803,7 +2803,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_raise_item_to_top:  * @image_ID: The image.  * @item_ID: The item to raise to top.  *  * Raise the specified item to the top of its level in its item tree  *  * This procedure raises the specified item to top of its level in the  * item tree. It will not move the item if there is no item above it.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_raise_item_to_top:  * @image_ID: The image.  * @item_ID: The item to raise to top.  *  * Raise the specified item to the top of its level in its item tree  *  * This procedure raises the specified item to top of its level in the  * item tree. It will not move the item if there is no item above it.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -2877,7 +2877,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_lower_item_to_bottom:  * @image_ID: The image.  * @item_ID: The item to lower to bottom.  *  * Lower the specified item to the bottom of its level in its item tree  *  * This procedure lowers the specified item to bottom of its level in  * the item tree. It will not move the layer if there is no layer below  * it.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_lower_item_to_bottom:  * @image_ID: The image.  * @item_ID: The item to lower to bottom.  *  * Lower the specified item to the bottom of its level in its item tree  *  * This procedure lowers the specified item to bottom of its level in  * the item tree. It will not move the layer if there is no layer below  * it.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -2951,7 +2951,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_reorder_item:  * @image_ID: The image.  * @item_ID: The item to reorder.  * @parent_ID: The new parent item.  * @position: The new position of the item.  *  * Reorder the specified item within its item tree  *  * This procedure reorders the specified item within its item tree.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_reorder_item:  * @image_ID: The image.  * @item_ID: The item to reorder.  * @parent_ID: The new parent item.  * @position: The new position of the item.  *  * Reorder the specified item within its item tree  *  * This procedure reorders the specified item within its item tree.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -5052,7 +5052,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_uri:  * @image_ID: The image.  *  * Returns the URI for the specified image.  *  * This procedure returns the URI associated with the specified image.  * The image has an URI only if it was loaded or imported from a file  * or has since been saved or exported. Otherwise, this function  * returns %NULL. See also gimp-image-get-imported-uri to get the URI  * of the current file if it was imported from a non-GIMP file format  * and not yet saved, or gimp-image-get-exported-uri if the image has  * been exported to a non-GIMP file format.  *  * Returns: The URI. The returned value must be freed with g_free().  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_get_uri:  * @image_ID: The image.  *  * Returns the URI for the specified image.  *  * This procedure returns the URI associated with the specified image.  * The image has an URI only if it was loaded or imported from a file  * or has since been saved or exported. Otherwise, this function  * returns %NULL. See also gimp-image-get-imported-uri to get the URI  * of the current file if it was imported from a non-GIMP file format  * and not yet saved, or gimp-image-get-exported-uri if the image has  * been exported to a non-GIMP file format.  *  * Returns: The URI. The returned value must be freed with g_free().  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -5135,7 +5135,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_xcf_uri:  * @image_ID: The image.  *  * Returns the XCF URI for the specified image.  *  * This procedure returns the XCF URI associated with the image. If  * there is no such URI, this procedure returns %NULL.  *  * Returns: The imported URI. The returned value must be freed with  * g_free().  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_get_xcf_uri:  * @image_ID: The image.  *  * Returns the XCF URI for the specified image.  *  * This procedure returns the XCF URI associated with the image. If  * there is no such URI, this procedure returns %NULL.  *  * Returns: The imported URI. The returned value must be freed with  * g_free().  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -5218,7 +5218,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_imported_uri:  * @image_ID: The image.  *  * Returns the imported URI for the specified image.  *  * This procedure returns the URI associated with the specified image  * if the image was imported from a non-native Gimp format. If the  * image was not imported, or has since been saved in the native Gimp  * format, this procedure returns %NULL.  *  * Returns: The imported URI. The returned value must be freed with  * g_free().  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_get_imported_uri:  * @image_ID: The image.  *  * Returns the imported URI for the specified image.  *  * This procedure returns the URI associated with the specified image  * if the image was imported from a non-native Gimp format. If the  * image was not imported, or has since been saved in the native Gimp  * format, this procedure returns %NULL.  *  * Returns: The imported URI. The returned value must be freed with  * g_free().  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -5301,7 +5301,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_exported_uri:  * @image_ID: The image.  *  * Returns the exported URI for the specified image.  *  * This procedure returns the URI associated with the specified image  * if the image was exported a non-native GIMP format. If the image was  * not exported, this procedure returns %NULL.  *  * Returns: The exported URI. The returned value must be freed with  * g_free().  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_get_exported_uri:  * @image_ID: The image.  *  * Returns the exported URI for the specified image.  *  * This procedure returns the URI associated with the specified image  * if the image was exported a non-native GIMP format. If the image was  * not exported, this procedure returns %NULL.  *  * Returns: The exported URI. The returned value must be freed with  * g_free().  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -6139,7 +6139,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_vectors_by_tattoo:  * @image_ID: The image.  * @tattoo: The tattoo of the vectors to find.  *  * Find a vectors with a given tattoo in an image.  *  * This procedure returns the vectors with the given tattoo in the  * specified image.  *  * Returns: The vectors with the specified tattoo.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_image_get_vectors_by_tattoo:  * @image_ID: The image.  * @tattoo: The tattoo of the vectors to find.  *  * Find a vectors with a given tattoo in an image.  *  * This procedure returns the vectors with the given tattoo in the  * specified image.  *  * Returns: The vectors with the specified tattoo.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -6225,7 +6225,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_layer_by_name:  * @image_ID: The image.  * @name: The name of the layer to find.  *  * Find a layer with a given name in an image.  *  * This procedure returns the layer with the given name in the  * specified image.  *  * Returns: The layer with the specified name.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_get_layer_by_name:  * @image_ID: The image.  * @name: The name of the layer to find.  *  * Find a layer with a given name in an image.  *  * This procedure returns the layer with the given name in the  * specified image.  *  * Returns: The layer with the specified name.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -6313,7 +6313,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_channel_by_name:  * @image_ID: The image.  * @name: The name of the channel to find.  *  * Find a channel with a given name in an image.  *  * This procedure returns the channel with the given name in the  * specified image.  *  * Returns: The channel with the specified name.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_get_channel_by_name:  * @image_ID: The image.  * @name: The name of the channel to find.  *  * Find a channel with a given name in an image.  *  * This procedure returns the channel with the given name in the  * specified image.  *  * Returns: The channel with the specified name.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -6401,7 +6401,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_vectors_by_name:  * @image_ID: The image.  * @name: The name of the vectors to find.  *  * Find a vectors with a given name in an image.  *  * This procedure returns the vectors with the given name in the  * specified image.  *  * Returns: The vectors with the specified name.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_get_vectors_by_name:  * @image_ID: The image.  * @name: The name of the vectors to find.  *  * Find a vectors with a given name in an image.  *  * This procedure returns the vectors with the given name in the  * specified image.  *  * Returns: The vectors with the specified name.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -6489,7 +6489,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_attach_parasite:  * @image_ID: The image.  * @parasite: The parasite to attach to an image.  *  * Add a parasite to an image.  *  * This procedure attaches a parasite to an image. It has no return  * values.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_attach_parasite:  * @image_ID: The image.  * @parasite: The parasite to attach to an image.  *  * Add a parasite to an image.  *  * This procedure attaches a parasite to an image. It has no return  * values.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -6565,7 +6565,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_detach_parasite:  * @image_ID: The image.  * @name: The name of the parasite to detach from an image.  *  * Removes a parasite from an image.  *  * This procedure detaches a parasite from an image. It has no return  * values.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_detach_parasite:  * @image_ID: The image.  * @name: The name of the parasite to detach from an image.  *  * Removes a parasite from an image.  *  * This procedure detaches a parasite from an image. It has no return  * values.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -6641,7 +6641,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_parasite:  * @image_ID: The image.  * @name: The name of the parasite to find.  *  * Look up a parasite in an image  *  * Finds and returns the parasite that was previously attached to an  * image.  *  * Returns: The found parasite.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_get_parasite:  * @image_ID: The image.  * @name: The name of the parasite to find.  *  * Look up a parasite in an image  *  * Finds and returns the parasite that was previously attached to an  * image.  *  * Returns: The found parasite.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -6734,7 +6734,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_parasite_list:  * @image_ID: The image.  * @num_parasites: The number of attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached parasites.  *  * Returns: The names of currently attached parasites. The returned  * value must be freed with g_strfreev().  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_image_get_parasite_list:  * @image_ID: The image.  * @num_parasites: The number of attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached parasites.  *  * Returns: The names of currently attached parasites. The returned  * value must be freed with g_strfreev().  *  * Since: 2.8  **/
 end_comment
 
 begin_function

@@ -48,7 +48,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_matrix2_get_type:  *  * Reveals the object type  *  * Returns: the #GType for Matrix2 objects  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_matrix2_get_type:  *  * Reveals the object type  *  * Returns: the #GType for Matrix2 objects  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -197,7 +197,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/**  * gimp_param_matrix2_get_type:  *  * Reveals the object type  *  * Returns: the #GType for a GimpMatrix2 object  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_param_matrix2_get_type:  *  * Reveals the object type  *  * Returns: the #GType for a GimpMatrix2 object  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -519,7 +519,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_matrix2:  * @name:          Canonical name of the param  * @nick:          Nickname of the param  * @blurb:         Brief desciption of param.  * @default_value: Value to use if none is assigned.  * @flags:         a combination of #GParamFlags  *  * Creates a param spec to hold a #GimpMatrix2 value.  * See g_param_spec_internal() for more information.  *  * Returns: a newly allocated #GParamSpec instance  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_param_spec_matrix2:  * @name:          Canonical name of the param  * @nick:          Nickname of the param  * @blurb:         Brief desciption of param.  * @default_value: Value to use if none is assigned.  * @flags:         a combination of #GParamFlags  *  * Creates a param spec to hold a #GimpMatrix2 value.  * See g_param_spec_internal() for more information.  *  * Returns: a newly allocated #GParamSpec instance  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -923,7 +923,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_matrix3_get_type:  *  * Reveals the object type  *  * Returns: the #GType for Matrix3 objects  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_matrix3_get_type:  *  * Reveals the object type  *  * Returns: the #GType for Matrix3 objects  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1072,7 +1072,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/**  * gimp_param_matrix3_get_type:  *  * Reveals the object type  *  * Returns: the #GType for a GimpMatrix3 object  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_param_matrix3_get_type:  *  * Reveals the object type  *  * Returns: the #GType for a GimpMatrix3 object  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1394,7 +1394,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_matrix3:  * @name:          Canonical name of the param  * @nick:          Nickname of the param  * @blurb:         Brief desciption of param.  * @default_value: Value to use if none is assigned.  * @flags:         a combination of #GParamFlags  *  * Creates a param spec to hold a #GimpMatrix3 value.  * See g_param_spec_internal() for more information.  *  * Returns: a newly allocated #GParamSpec instance  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_param_spec_matrix3:  * @name:          Canonical name of the param  * @nick:          Nickname of the param  * @blurb:         Brief desciption of param.  * @default_value: Value to use if none is assigned.  * @flags:         a combination of #GParamFlags  *  * Creates a param spec to hold a #GimpMatrix3 value.  * See g_param_spec_internal() for more information.  *  * Returns: a newly allocated #GParamSpec instance  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -3615,7 +3615,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix3_is_affine:  * @matrix: The matrix that is to be tested.  *  * Checks if the given matrix defines an affine transformation.  *  * Returns: %TRUE if the matrix defines an affine transformation,  *          %FALSE otherwise  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_matrix3_is_affine:  * @matrix: The matrix that is to be tested.  *  * Checks if the given matrix defines an affine transformation.  *  * Returns: %TRUE if the matrix defines an affine transformation,  *          %FALSE otherwise  *  * Since: 2.4  */
 end_comment
 
 begin_function

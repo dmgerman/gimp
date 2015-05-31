@@ -186,7 +186,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_metadata:  * @image_ID: The image.  *  * Returns the image's metadata.  *  * Returns exif/iptc/xmp metadata from the image.  *  * Returns: The exif/ptc/xmp metadata, or %NULL if there is none.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_image_get_metadata:  * @image_ID: The image.  *  * Returns the image's metadata.  *  * Returns exif/iptc/xmp metadata from the image.  *  * Returns: The exif/ptc/xmp metadata, or %NULL if there is none.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -241,7 +241,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_metadata:  * @image_ID: The image.  * @metadata: The exif/ptc/xmp metadata.  *  * Set the image's metadata.  *  * Sets exif/iptc/xmp metadata on the image, or deletes it if  * @metadata is %NULL.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_image_set_metadata:  * @image_ID: The image.  * @metadata: The exif/ptc/xmp metadata.  *  * Set the image's metadata.  *  * Sets exif/iptc/xmp metadata on the image, or deletes it if  * @metadata is %NULL.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -365,7 +365,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_layer_position:  * @image_ID: The image.  * @layer_ID: The layer.  *  * Deprecated: Use gimp_image_get_item_position() instead.  *  * Returns: The position of the layer in the layer stack.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_image_get_layer_position:  * @image_ID: The image.  * @layer_ID: The layer.  *  * Deprecated: Use gimp_image_get_item_position() instead.  *  * Returns: The position of the layer in the layer stack.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -500,7 +500,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_channel_position:  * @image_ID: The image.  * @channel_ID: The channel.  *  * Deprecated: Use gimp_image_get_item_position() instead.  *  * Returns: The position of the channel in the channel stack.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_image_get_channel_position:  * @image_ID: The image.  * @channel_ID: The channel.  *  * Deprecated: Use gimp_image_get_item_position() instead.  *  * Returns: The position of the channel in the channel stack.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -581,7 +581,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_vectors_position:  * @image_ID: The image.  * @vectors_ID: The vectors object.  *  * Deprecated: Use gimp_image_get_item_position() instead.  *  * Returns: The position of the vectors object in the vectors stack.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_image_get_vectors_position:  * @image_ID: The image.  * @vectors_ID: The vectors object.  *  * Deprecated: Use gimp_image_get_item_position() instead.  *  * Returns: The position of the vectors object in the vectors stack.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -608,7 +608,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_raise_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors object to raise.  *  * Deprecated: Use gimp_image_raise_item() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_image_raise_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors object to raise.  *  * Deprecated: Use gimp_image_raise_item() instead.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -635,7 +635,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_lower_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors object to lower.  *  * Deprecated: Use gimp_image_lower_item() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_image_lower_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors object to lower.  *  * Deprecated: Use gimp_image_lower_item() instead.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -662,7 +662,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_raise_vectors_to_top:  * @image_ID: The image.  * @vectors_ID: The vectors object to raise to top.  *  * Deprecated: Use gimp_image_raise_item_to_top() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_image_raise_vectors_to_top:  * @image_ID: The image.  * @vectors_ID: The vectors object to raise to top.  *  * Deprecated: Use gimp_image_raise_item_to_top() instead.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -689,7 +689,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_lower_vectors_to_bottom:  * @image_ID: The image.  * @vectors_ID: The vectors object to lower to bottom.  *  * Deprecated: Use gimp_image_lower_item_to_bottom() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_image_lower_vectors_to_bottom:  * @image_ID: The image.  * @vectors_ID: The vectors object to lower to bottom.  *  * Deprecated: Use gimp_image_lower_item_to_bottom() instead.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

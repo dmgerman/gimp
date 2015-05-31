@@ -103,7 +103,7 @@ comment|/*  some useful macros for writing directly to a Cairo surface  */
 end_comment
 
 begin_comment
-comment|/**  * GIMP_CAIRO_RGB24_SET_PIXEL:  * @d: pointer to the destination buffer  * @r: red component  * @g: green component  * @b: blue component  *  * Sets a single pixel in an Cairo image surface in %CAIRO_FORMAT_RGB24.  *  * Since: GIMP 2.6  **/
+comment|/**  * GIMP_CAIRO_RGB24_SET_PIXEL:  * @d: pointer to the destination buffer  * @r: red component  * @g: green component  * @b: blue component  *  * Sets a single pixel in an Cairo image surface in %CAIRO_FORMAT_RGB24.  *  * Since: 2.6  **/
 end_comment
 
 begin_if
@@ -161,7 +161,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/**  * GIMP_CAIRO_RGB24_GET_PIXEL:  * @s: pointer to the source buffer  * @r: red component  * @g: green component  * @b: blue component  *  * Gets a single pixel from a Cairo image surface in %CAIRO_FORMAT_RGB24.  *  * Since: GIMP 2.8  **/
+comment|/**  * GIMP_CAIRO_RGB24_GET_PIXEL:  * @s: pointer to the source buffer  * @r: red component  * @g: green component  * @b: blue component  *  * Gets a single pixel from a Cairo image surface in %CAIRO_FORMAT_RGB24.  *  * Since: 2.8  **/
 end_comment
 
 begin_if
@@ -219,7 +219,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/**  * GIMP_CAIRO_ARGB32_SET_PIXEL:  * @d: pointer to the destination buffer  * @r: red component, not pre-multiplied  * @g: green component, not pre-multiplied  * @b: blue component, not pre-multiplied  * @a: alpha component  *  * Sets a single pixel in an Cairo image surface in %CAIRO_FORMAT_ARGB32.  *  * Since: GIMP 2.6  **/
+comment|/**  * GIMP_CAIRO_ARGB32_SET_PIXEL:  * @d: pointer to the destination buffer  * @r: red component, not pre-multiplied  * @g: green component, not pre-multiplied  * @b: blue component, not pre-multiplied  * @a: alpha component  *  * Sets a single pixel in an Cairo image surface in %CAIRO_FORMAT_ARGB32.  *  * Since: 2.6  **/
 end_comment
 
 begin_if
@@ -281,7 +281,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/**  * GIMP_CAIRO_ARGB32_GET_PIXEL:  * @s: pointer to the source buffer  * @r: red component, not pre-multiplied  * @g: green component, not pre-multiplied  * @b: blue component, not pre-multiplied  * @a: alpha component  *  * Gets a single pixel from a Cairo image surface in %CAIRO_FORMAT_ARGB32.  *  * Since: GIMP 2.8  **/
+comment|/**  * GIMP_CAIRO_ARGB32_GET_PIXEL:  * @s: pointer to the source buffer  * @r: red component, not pre-multiplied  * @g: green component, not pre-multiplied  * @b: blue component, not pre-multiplied  * @a: alpha component  *  * Gets a single pixel from a Cairo image surface in %CAIRO_FORMAT_ARGB32.  *  * Since: 2.8  **/
 end_comment
 
 begin_if

@@ -180,7 +180,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_copy_visible:  * @image_ID: The image to copy from.  *  * Copy from the projection.  *  * If there is a selection in the image, then the area specified by the  * selection is copied from the projection and placed in an internal  * GIMP edit buffer. It can subsequently be retrieved using the  * gimp_edit_paste() command. If there is no selection, then the  * projection's contents will be stored in the internal GIMP edit  * buffer.  *  * Returns: TRUE if the copy was successful.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_edit_copy_visible:  * @image_ID: The image to copy from.  *  * Copy from the projection.  *  * If there is a selection in the image, then the area specified by the  * selection is copied from the projection and placed in an internal  * GIMP edit buffer. It can subsequently be retrieved using the  * gimp_edit_paste() command. If there is no selection, then the  * projection's contents will be stored in the internal GIMP edit  * buffer.  *  * Returns: TRUE if the copy was successful.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -344,7 +344,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_paste_as_new:  *  * Paste buffer to a new image.  *  * This procedure pastes a copy of the internal GIMP edit buffer to a  * new image. The GIMP edit buffer will be empty unless a call was  * previously made to either gimp_edit_cut() or gimp_edit_copy(). This  * procedure returns the new image or -1 if the edit buffer was empty.  *  * Returns: The new image.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_edit_paste_as_new:  *  * Paste buffer to a new image.  *  * This procedure pastes a copy of the internal GIMP edit buffer to a  * new image. The GIMP edit buffer will be empty unless a call was  * previously made to either gimp_edit_cut() or gimp_edit_copy(). This  * procedure returns the new image or -1 if the edit buffer was empty.  *  * Returns: The new image.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -418,7 +418,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_named_cut:  * @drawable_ID: The drawable to cut from.  * @buffer_name: The name of the buffer to create.  *  * Cut into a named buffer.  *  * This procedure works like gimp_edit_cut(), but additionally stores  * the cut buffer into a named buffer that will stay available for  * later pasting, regardless of any intermediate copy or cut  * operations.  *  * Returns: The real name given to the buffer, or NULL if the cut  * failed.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_edit_named_cut:  * @drawable_ID: The drawable to cut from.  * @buffer_name: The name of the buffer to create.  *  * Cut into a named buffer.  *  * This procedure works like gimp_edit_cut(), but additionally stores  * the cut buffer into a named buffer that will stay available for  * later pasting, regardless of any intermediate copy or cut  * operations.  *  * Returns: The real name given to the buffer, or NULL if the cut  * failed.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -510,7 +510,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_named_copy:  * @drawable_ID: The drawable to copy from.  * @buffer_name: The name of the buffer to create.  *  * Copy into a named buffer.  *  * This procedure works like gimp_edit_copy(), but additionally stores  * the copied buffer into a named buffer that will stay available for  * later pasting, regardless of any intermediate copy or cut  * operations.  *  * Returns: The real name given to the buffer, or NULL if the copy  * failed.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_edit_named_copy:  * @drawable_ID: The drawable to copy from.  * @buffer_name: The name of the buffer to create.  *  * Copy into a named buffer.  *  * This procedure works like gimp_edit_copy(), but additionally stores  * the copied buffer into a named buffer that will stay available for  * later pasting, regardless of any intermediate copy or cut  * operations.  *  * Returns: The real name given to the buffer, or NULL if the copy  * failed.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -602,7 +602,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_named_copy_visible:  * @image_ID: The image to copy from.  * @buffer_name: The name of the buffer to create.  *  * Copy from the projection into a named buffer.  *  * This procedure works like gimp_edit_copy_visible(), but additionally  * stores the copied buffer into a named buffer that will stay  * available for later pasting, regardless of any intermediate copy or  * cut operations.  *  * Returns: The real name given to the buffer, or NULL if the copy  * failed.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_edit_named_copy_visible:  * @image_ID: The image to copy from.  * @buffer_name: The name of the buffer to create.  *  * Copy from the projection into a named buffer.  *  * This procedure works like gimp_edit_copy_visible(), but additionally  * stores the copied buffer into a named buffer that will stay  * available for later pasting, regardless of any intermediate copy or  * cut operations.  *  * Returns: The real name given to the buffer, or NULL if the copy  * failed.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -694,7 +694,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_named_paste:  * @drawable_ID: The drawable to paste to.  * @buffer_name: The name of the buffer to paste.  * @paste_into: Clear selection, or paste behind it?  *  * Paste named buffer to the specified drawable.  *  * This procedure works like gimp_edit_paste() but pastes a named  * buffer instead of the global buffer.  *  * Returns: The new floating selection.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_edit_named_paste:  * @drawable_ID: The drawable to paste to.  * @buffer_name: The name of the buffer to paste.  * @paste_into: Clear selection, or paste behind it?  *  * Paste named buffer to the specified drawable.  *  * This procedure works like gimp_edit_paste() but pastes a named  * buffer instead of the global buffer.  *  * Returns: The new floating selection.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -789,7 +789,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_named_paste_as_new:  * @buffer_name: The name of the buffer to paste.  *  * Paste named buffer to a new image.  *  * This procedure works like gimp_edit_paste_as_new() but pastes a  * named buffer instead of the global buffer.  *  * Returns: The new image.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_edit_named_paste_as_new:  * @buffer_name: The name of the buffer to paste.  *  * Paste named buffer to a new image.  *  * This procedure works like gimp_edit_paste_as_new() but pastes a  * named buffer instead of the global buffer.  *  * Returns: The new image.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1127,7 +1127,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_bucket_fill_full:  * @drawable_ID: The affected drawable.  * @fill_mode: The type of fill.  * @paint_mode: The paint application mode.  * @opacity: The opacity of the final bucket fill.  * @threshold: The threshold determines how extensive the seed fill will be. It's value is specified in terms of intensity levels. This parameter is only valid when there is no selection in the specified image.  * @sample_merged: Use the composite image, not the drawable.  * @fill_transparent: Whether to consider transparent pixels for filling. If TRUE, transparency is considered as a unique fillable color.  * @select_criterion: The criterion used to determine color similarity. SELECT_CRITERION_COMPOSITE is the standard choice.  * @x: The x coordinate of this bucket fill's application. This parameter is only valid when there is no selection in the specified image.  * @y: The y coordinate of this bucket fill's application. This parameter is only valid when there is no selection in the specified image.  *  * Fill the area specified either by the current selection if there is  * one, or by a seed fill starting at the specified coordinates.  *  * This tool requires information on the paint application mode, and  * the fill mode, which can either be in the foreground color, or in  * the currently active pattern. If there is no selection, a seed fill  * is executed at the specified coordinates and extends outward in  * keeping with the threshold parameter. If there is a selection in the  * target image, the threshold, sample merged, x, and y arguments are  * unused. If the sample_merged parameter is TRUE, the data of the  * composite image will be used instead of that for the specified  * drawable. This is equivalent to sampling for colors after merging  * all visible layers. In the case of merged sampling, the x and y  * coordinates are relative to the image's origin; otherwise, they are  * relative to the drawable's origin.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_edit_bucket_fill_full:  * @drawable_ID: The affected drawable.  * @fill_mode: The type of fill.  * @paint_mode: The paint application mode.  * @opacity: The opacity of the final bucket fill.  * @threshold: The threshold determines how extensive the seed fill will be. It's value is specified in terms of intensity levels. This parameter is only valid when there is no selection in the specified image.  * @sample_merged: Use the composite image, not the drawable.  * @fill_transparent: Whether to consider transparent pixels for filling. If TRUE, transparency is considered as a unique fillable color.  * @select_criterion: The criterion used to determine color similarity. SELECT_CRITERION_COMPOSITE is the standard choice.  * @x: The x coordinate of this bucket fill's application. This parameter is only valid when there is no selection in the specified image.  * @y: The y coordinate of this bucket fill's application. This parameter is only valid when there is no selection in the specified image.  *  * Fill the area specified either by the current selection if there is  * one, or by a seed fill starting at the specified coordinates.  *  * This tool requires information on the paint application mode, and  * the fill mode, which can either be in the foreground color, or in  * the currently active pattern. If there is no selection, a seed fill  * is executed at the specified coordinates and extends outward in  * keeping with the threshold parameter. If there is a selection in the  * target image, the threshold, sample merged, x, and y arguments are  * unused. If the sample_merged parameter is TRUE, the data of the  * composite image will be used instead of that for the specified  * drawable. This is equivalent to sampling for colors after merging  * all visible layers. In the case of merged sampling, the x and y  * coordinates are relative to the image's origin; otherwise, they are  * relative to the drawable's origin.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1496,7 +1496,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_stroke_vectors:  * @drawable_ID: The drawable to stroke to.  * @vectors_ID: The vectors object.  *  * Stroke the specified vectors object  *  * This procedure strokes the specified vectors object, painting along  * the path with the active brush and foreground color.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_edit_stroke_vectors:  * @drawable_ID: The drawable to stroke to.  * @vectors_ID: The vectors object.  *  * Stroke the specified vectors object  *  * This procedure strokes the specified vectors object, painting along  * the path with the active brush and foreground color.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

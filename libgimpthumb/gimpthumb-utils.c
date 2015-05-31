@@ -599,7 +599,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumb_get_thumb_base_dir:  *  * Returns the base directory of thumbnails cache.  * It uses the Freedesktop Thumbnail Managing Standard on UNIX,  * "~/Library/Caches/org.freedesktop.thumbnails" on OSX, and a cache  * folder determined by glib on Windows (currently the common repository  * for temporary Internet files).  * The returned string belongs to GIMP and must not be changed nor freed.  *  * Returns: the thumbnails cache directory.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_thumb_get_thumb_base_dir:  *  * Returns the base directory of thumbnails cache.  * It uses the Freedesktop Thumbnail Managing Standard on UNIX,  * "~/Library/Caches/org.freedesktop.thumbnails" on OSX, and a cache  * folder determined by glib on Windows (currently the common repository  * for temporary Internet files).  * The returned string belongs to GIMP and must not be changed nor freed.  *  * Returns: the thumbnails cache directory.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -664,7 +664,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumb_get_thumb_dir_local:  * @dirname: the basename of the dir, without the actual dirname itself  * @size:    a GimpThumbSize  *  * Retrieve the name of the local thumbnail folder for a specific  * size.  Unlike gimp_thumb_get_thumb_dir() the returned string is not  * constant and should be free'd when it is not any longer needed.  *  * Return value: the thumbnail directory in the encoding of the filesystem  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_thumb_get_thumb_dir_local:  * @dirname: the basename of the dir, without the actual dirname itself  * @size:    a GimpThumbSize  *  * Retrieve the name of the local thumbnail folder for a specific  * size.  Unlike gimp_thumb_get_thumb_dir() the returned string is not  * constant and should be free'd when it is not any longer needed.  *  * Return value: the thumbnail directory in the encoding of the filesystem  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -889,7 +889,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumb_ensure_thumb_dir_local:  * @dirname: the basename of the dir, without the actual dirname itself  * @size:    a GimpThumbSize  * @error:   return location for possible errors  *  * This function checks if the directory that is required to store  * local thumbnails for a particular @size exist and attempts to  * create it if necessary.  *  * You shouldn't have to call this function directly since  * gimp_thumbnail_save_thumb_local() will do this for you.  *  * Return value: %TRUE is the directory exists, %FALSE if it could not  *               be created  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_thumb_ensure_thumb_dir_local:  * @dirname: the basename of the dir, without the actual dirname itself  * @size:    a GimpThumbSize  * @error:   return location for possible errors  *  * This function checks if the directory that is required to store  * local thumbnails for a particular @size exist and attempts to  * create it if necessary.  *  * You shouldn't have to call this function directly since  * gimp_thumbnail_save_thumb_local() will do this for you.  *  * Return value: %TRUE is the directory exists, %FALSE if it could not  *               be created  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1183,7 +1183,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumb_name_from_uri_local:  * @uri: an escaped URI  * @size: a #GimpThumbSize  *  * Creates the name of a local thumbnail file of the specified @size  * that belongs to an image file located at the given @uri. Local  * thumbnails have been introduced with version 0.7 of the spec.  *  * Return value: a newly allocated filename in the encoding of the  *               filesystem or %NULL if @uri is a remote file or  *               points to the user's thumbnail repository.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_thumb_name_from_uri_local:  * @uri: an escaped URI  * @size: a #GimpThumbSize  *  * Creates the name of a local thumbnail file of the specified @size  * that belongs to an image file located at the given @uri. Local  * thumbnails have been introduced with version 0.7 of the spec.  *  * Return value: a newly allocated filename in the encoding of the  *               filesystem or %NULL if @uri is a remote file or  *               points to the user's thumbnail repository.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1703,7 +1703,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumbs_delete_for_uri:  * @uri: an escaped URI  *  * Deletes all thumbnails for the image file specified by @uri from the  * user's thumbnail repository.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_thumbs_delete_for_uri:  * @uri: an escaped URI  *  * Deletes all thumbnails for the image file specified by @uri from the  * user's thumbnail repository.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1781,7 +1781,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumbs_delete_for_uri_local:  * @uri: an escaped URI  *  * Deletes all thumbnails for the image file specified by @uri from  * the local thumbnail repository.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_thumbs_delete_for_uri_local:  * @uri: an escaped URI  *  * Deletes all thumbnails for the image file specified by @uri from  * the local thumbnail repository.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

@@ -51,7 +51,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_image_get_thumbnail:  * @image_ID: the image ID  * @width:    the requested thumbnail width  (<= 1024 pixels)  * @height:   the requested thumbnail height (<= 1024 pixels)  * @alpha:    how to handle an alpha channel  *  * Retrieves a thumbnail pixbuf for the image identified by @image_ID.  * The thumbnail will be not larger than the requested size.  *  * Return value: a new #GdkPixbuf  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_image_get_thumbnail:  * @image_ID: the image ID  * @width:    the requested thumbnail width  (<= 1024 pixels)  * @height:   the requested thumbnail height (<= 1024 pixels)  * @alpha:    how to handle an alpha channel  *  * Retrieves a thumbnail pixbuf for the image identified by @image_ID.  * The thumbnail will be not larger than the requested size.  *  * Return value: a new #GdkPixbuf  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -158,7 +158,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_thumbnail:  * @drawable_ID: the drawable ID  * @width:       the requested thumbnail width  (<= 1024 pixels)  * @height:      the requested thumbnail height (<= 1024 pixels)  * @alpha:       how to handle an alpha channel  *  * Retrieves a thumbnail pixbuf for the drawable identified by  * @drawable_ID. The thumbnail will be not larger than the requested  * size.  *  * Return value: a new #GdkPixbuf  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_drawable_get_thumbnail:  * @drawable_ID: the drawable ID  * @width:       the requested thumbnail width  (<= 1024 pixels)  * @height:      the requested thumbnail height (<= 1024 pixels)  * @alpha:       how to handle an alpha channel  *  * Retrieves a thumbnail pixbuf for the drawable identified by  * @drawable_ID. The thumbnail will be not larger than the requested  * size.  *  * Return value: a new #GdkPixbuf  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -264,7 +264,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_sub_thumbnail:  * @drawable_ID: the drawable ID  * @src_x:       the x coordinate of the area  * @src_y:       the y coordinate of the area  * @src_width:   the width of the area  * @src_height:  the height of the area  * @dest_width:  the requested thumbnail width  (<= 1024 pixels)  * @dest_height: the requested thumbnail height (<= 1024 pixels)  * @alpha:       how to handle an alpha channel  *  * Retrieves a thumbnail pixbuf for the drawable identified by  * @drawable_ID. The thumbnail will be not larger than the requested  * size.  *  * Return value: a new #GdkPixbuf  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_drawable_get_sub_thumbnail:  * @drawable_ID: the drawable ID  * @src_x:       the x coordinate of the area  * @src_y:       the y coordinate of the area  * @src_width:   the width of the area  * @src_height:  the height of the area  * @dest_width:  the requested thumbnail width  (<= 1024 pixels)  * @dest_height: the requested thumbnail height (<= 1024 pixels)  * @alpha:       how to handle an alpha channel  *  * Retrieves a thumbnail pixbuf for the drawable identified by  * @drawable_ID. The thumbnail will be not larger than the requested  * size.  *  * Return value: a new #GdkPixbuf  *  * Since: 2.2  **/
 end_comment
 
 begin_function

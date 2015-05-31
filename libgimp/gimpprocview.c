@@ -103,7 +103,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_proc_view_new:  * @name:  * @menu_path:  * @blurb:  * @help:  * @author:  * @copyright:  * @date:  * @type:  * @n_params:  * @n_return_vals:  * @params:  * @return_vals:  *  * Return value: a new widget providing a view on a GIMP procedure  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_proc_view_new:  * @name:  * @menu_path:  * @blurb:  * @help:  * @author:  * @copyright:  * @date:  * @type:  * @n_params:  * @n_return_vals:  * @params:  * @return_vals:  *  * Return value: a new widget providing a view on a GIMP procedure  *  * Since: 2.4  **/
 end_comment
 
 begin_function

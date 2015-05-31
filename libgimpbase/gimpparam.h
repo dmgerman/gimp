@@ -21,7 +21,7 @@ comment|/**  * SECTION: gimpparam  * @title: gimpparam  * @short_description: De
 end_comment
 
 begin_comment
-comment|/**  * GIMP_PARAM_STATIC_STRINGS:  *  * Since: GIMP 2.4  **/
+comment|/**  * GIMP_PARAM_STATIC_STRINGS:  *  * Since: 2.4  **/
 end_comment
 
 begin_define
@@ -33,7 +33,7 @@ value|(G_PARAM_STATIC_NAME | \                                    G_PARAM_STATIC
 end_define
 
 begin_comment
-comment|/**  * GIMP_PARAM_READABLE:  *  * Since: GIMP 2.4  **/
+comment|/**  * GIMP_PARAM_READABLE:  *  * Since: 2.4  **/
 end_comment
 
 begin_define
@@ -45,7 +45,7 @@ value|(G_PARAM_READABLE    | \                                    GIMP_PARAM_STA
 end_define
 
 begin_comment
-comment|/**  * GIMP_PARAM_WRITABLE:  *  * Since: GIMP 2.4  **/
+comment|/**  * GIMP_PARAM_WRITABLE:  *  * Since: 2.4  **/
 end_comment
 
 begin_define
@@ -57,7 +57,7 @@ value|(G_PARAM_WRITABLE    | \                                    GIMP_PARAM_STA
 end_define
 
 begin_comment
-comment|/**  * GIMP_PARAM_READWRITE:  *  * Since: GIMP 2.4  **/
+comment|/**  * GIMP_PARAM_READWRITE:  *  * Since: 2.4  **/
 end_comment
 
 begin_define

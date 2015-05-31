@@ -886,7 +886,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_format_string:  * @format: A printf-like format string which is used to create the unit  *          string.  * @unit:   A unit.  *  * The @format string supports the following percent expansions:  *  *<informaltable pgwide="1" frame="none" role="enum">  *<tgroup cols="2"><colspec colwidth="1*"/><colspec colwidth="8*"/>  *<tbody>  *<row>  *<entry>% f</entry>  *<entry>Factor (how many units make up an inch)</entry>  *</row>  *<row>  *<entry>% y</entry>  *<entry>Symbol (e.g. "''" for GIMP_UNIT_INCH)</entry>  *</row>  *<row>  *<entry>% a</entry>  *<entry>Abbreviation</entry>  *</row>  *<row>  *<entry>% s</entry>  *<entry>Singular</entry>  *</row>  *<row>  *<entry>% p</entry>  *<entry>Plural</entry>  *</row>  *<row>  *<entry>%%</entry>  *<entry>Literal percent</entry>  *</row>  *</tbody>  *</tgroup>  *</informaltable>  *  * Returns: A newly allocated string with above percent expressions  *          replaced with the resp. strings for @unit.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_unit_format_string:  * @format: A printf-like format string which is used to create the unit  *          string.  * @unit:   A unit.  *  * The @format string supports the following percent expansions:  *  *<informaltable pgwide="1" frame="none" role="enum">  *<tgroup cols="2"><colspec colwidth="1*"/><colspec colwidth="8*"/>  *<tbody>  *<row>  *<entry>% f</entry>  *<entry>Factor (how many units make up an inch)</entry>  *</row>  *<row>  *<entry>% y</entry>  *<entry>Symbol (e.g. "''" for GIMP_UNIT_INCH)</entry>  *</row>  *<row>  *<entry>% a</entry>  *<entry>Abbreviation</entry>  *</row>  *<row>  *<entry>% s</entry>  *<entry>Singular</entry>  *</row>  *<row>  *<entry>% p</entry>  *<entry>Plural</entry>  *</row>  *<row>  *<entry>%%</entry>  *<entry>Literal percent</entry>  *</row>  *</tbody>  *</tgroup>  *</informaltable>  *  * Returns: A newly allocated string with above percent expressions  *          replaced with the resp. strings for @unit.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1259,7 +1259,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_param_unit_get_type:  *  * Reveals the object type  *  * Returns: the #GType for a unit param object  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_param_unit_get_type:  *  * Reveals the object type  *  * Returns: the #GType for a unit param object  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1477,7 +1477,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_unit:  * @name:          Canonical name of the param  * @nick:          Nickname of the param  * @blurb:         Brief desciption of param.  * @allow_pixels:  Whether "pixels" is an allowed unit.  * @allow_percent: Whether "perecent" is an allowed unit.  * @default_value: Unit to use if none is assigned.  * @flags:         a combination of #GParamFlags  *  * Creates a param spec to hold a units param.  * See g_param_spec_internal() for more information.  *  * Returns: a newly allocated #GParamSpec instance  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_param_spec_unit:  * @name:          Canonical name of the param  * @nick:          Nickname of the param  * @blurb:         Brief desciption of param.  * @allow_pixels:  Whether "pixels" is an allowed unit.  * @allow_percent: Whether "perecent" is an allowed unit.  * @default_value: Unit to use if none is assigned.  * @flags:         a combination of #GParamFlags  *  * Creates a param spec to hold a units param.  * See g_param_spec_internal() for more information.  *  * Returns: a newly allocated #GParamSpec instance  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1584,7 +1584,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pixels_to_units:  * @pixels:     value in pixels  * @unit:       unit to convert to  * @resolution: resloution in DPI  *  * Converts a @value specified in pixels to @unit.  *  * Returns: @pixels converted to units.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_pixels_to_units:  * @pixels:     value in pixels  * @unit:       unit to convert to  * @resolution: resloution in DPI  *  * Converts a @value specified in pixels to @unit.  *  * Returns: @pixels converted to units.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1625,7 +1625,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_units_to_pixels:  * @value:      value in units  * @unit:       unit of @value  * @resolution: resloution in DPI  *  * Converts a @value specified in @unit to pixels.  *  * Returns: @value converted to pixels.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_units_to_pixels:  * @value:      value in units  * @unit:       unit of @value  * @resolution: resloution in DPI  *  * Converts a @value specified in @unit to pixels.  *  * Returns: @value converted to pixels.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1666,7 +1666,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_units_to_points:  * @value:      value in units  * @unit:       unit of @value  * @resolution: resloution in DPI  *  * Converts a @value specified in @unit to points.  *  * Returns: @value converted to points.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_units_to_points:  * @value:      value in units  * @unit:       unit of @value  * @resolution: resloution in DPI  *  * Converts a @value specified in @unit to points.  *  * Returns: @value converted to points.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1730,7 +1730,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_is_metric:  * @unit: The unit  *  * Checks if the given @unit is metric. A simplistic test is used  * that looks at the unit's factor and checks if it is 2.54 multiplied  * by some common powers of 10. Currently it checks for mm, cm, dm, m.  *  * See also: gimp_unit_get_factor()  *  * Returns: %TRUE if the @unit is metric.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_unit_is_metric:  * @unit: The unit  *  * Checks if the given @unit is metric. A simplistic test is used  * that looks at the unit's factor and checks if it is 2.54 multiplied  * by some common powers of 10. Currently it checks for mm, cm, dm, m.  *  * See also: gimp_unit_get_factor()  *  * Returns: %TRUE if the @unit is metric.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

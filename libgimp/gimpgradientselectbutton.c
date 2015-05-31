@@ -147,7 +147,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon28edf2d80103
+DECL|enum|__anon2ba616ca0103
 block|{
 DECL|enumerator|GRADIENT_SET
 name|GRADIENT_SET
@@ -160,7 +160,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28edf2d80203
+DECL|enum|__anon2ba616ca0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -461,7 +461,7 @@ name|gradient_set
 operator|=
 name|NULL
 expr_stmt|;
-comment|/**    * GimpGradientSelectButton:title:    *    * The title to be used for the gradient selection popup dialog.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpGradientSelectButton:title:    *    * The title to be used for the gradient selection popup dialog.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -487,7 +487,7 @@ name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpGradientSelectButton:gradient-name:    *    * The name of the currently selected gradient.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpGradientSelectButton:gradient-name:    *    * The name of the currently selected gradient.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -508,7 +508,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpGradientSelectButton::gradient-set:    * @widget: the object which received the signal.    * @gradient_name: the name of the currently selected gradient.    * @width: width of the gradient    * @grad_data: gradient data    * @dialog_closing: whether the dialog was closed or not.    *    * The ::gradient-set signal is emitted when the user selects a gradient.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpGradientSelectButton::gradient-set:    * @widget: the object which received the signal.    * @gradient_name: the name of the currently selected gradient.    * @width: width of the gradient    * @grad_data: gradient data    * @dialog_closing: whether the dialog was closed or not.    *    * The ::gradient-set signal is emitted when the user selects a gradient.    *    * Since: 2.4    */
 name|gradient_button_signals
 index|[
 name|GRADIENT_SET
@@ -630,7 +630,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_select_button_new:  * @title:         Title of the dialog to use or %NULL to use the default title.  * @gradient_name: Initial gradient name.  *  * Creates a new #GtkWidget that completely controls the selection of  * a gradient.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_gradient_select_button_new:  * @title:         Title of the dialog to use or %NULL to use the default title.  * @gradient_name: Initial gradient name.  *  * Creates a new #GtkWidget that completely controls the selection of  * a gradient.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -696,7 +696,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_select_button_get_gradient:  * @button: A #GimpGradientSelectButton  *  * Retrieves the name of currently selected gradient.  *  * Returns: an internal copy of the gradient name which must not be freed.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_gradient_select_button_get_gradient:  * @button: A #GimpGradientSelectButton  *  * Retrieves the name of currently selected gradient.  *  * Returns: an internal copy of the gradient name which must not be freed.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -741,7 +741,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_select_button_set_gradient:  * @button: A #GimpGradientSelectButton  * @gradient_name: Gradient name to set.  *  * Sets the current gradient for the gradient select button.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_gradient_select_button_set_gradient:  * @button: A #GimpGradientSelectButton  * @gradient_name: Gradient name to set.  *  * Sets the current gradient for the gradient select button.  *  * Since: 2.4  */
 end_comment
 
 begin_function

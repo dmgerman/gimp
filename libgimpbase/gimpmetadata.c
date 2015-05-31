@@ -936,7 +936,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/**  * gimp_metadata_new:  *  * Creates a new #GimpMetadata instance.  *  * Return value: The new #GimpMetadata.  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_metadata_new:  *  * Creates a new #GimpMetadata instance.  *  * Return value: The new #GimpMetadata.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -997,7 +997,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_duplicate:  * @metadata: The object to duplicate, or %NULL.  *  * Duplicates a #GimpMetadata instance.  *  * Return value: The new #GimpMetadata, or %NULL if @metadata is %NULL.  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_metadata_duplicate:  * @metadata: The object to duplicate, or %NULL.  *  * Duplicates a #GimpMetadata instance.  *  * Return value: The new #GimpMetadata, or %NULL if @metadata is %NULL.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -1069,7 +1069,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ee7dec0108
+DECL|struct|__anon2b5652180108
 block|{
 DECL|member|name
 name|gchar
@@ -1520,7 +1520,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_deserialize:  * @metadata_xml: A string of serialized metadata XML.  *  * Deserializes a string of XML that has been created by  * gimp_metadata_serialize().  *  * Return value: The new #GimpMetadata.  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_metadata_deserialize:  * @metadata_xml: A string of serialized metadata XML.  *  * Deserializes a string of XML that has been created by  * gimp_metadata_serialize().  *  * Return value: The new #GimpMetadata.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -1802,7 +1802,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_serialize:  * @metadata: A #GimpMetadata instance.  *  * Serializes @metadata into an XML string that can later be deserialized  * using gimp_metadata_deserialize().  *  * Return value: The serialized XML string.  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_metadata_serialize:  * @metadata: A #GimpMetadata instance.  *  * Serializes @metadata into an XML string that can later be deserialized  * using gimp_metadata_deserialize().  *  * Return value: The serialized XML string.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -2151,7 +2151,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_load_from_file:  * @file:  The #GFile to load the metadata from  * @error: Return location for error message  *  * Loads #GimpMetadata from @file.  *  * Return value: The loaded #GimpMetadata.  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_metadata_load_from_file:  * @file:  The #GFile to load the metadata from  * @error: Return location for error message  *  * Loads #GimpMetadata from @file.  *  * Return value: The loaded #GimpMetadata.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -2317,7 +2317,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_save_to_file:  * @metadata: A #GimpMetadata instance.  * @file:     The file to save the metadata to  * @error:    Return location for error message  *  * Saves @metadata to @file.  *  * Return value: %TRUE on success, %FALSE otherwise.  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_metadata_save_to_file:  * @metadata: A #GimpMetadata instance.  * @file:     The file to save the metadata to  * @error:    Return location for error message  *  * Saves @metadata to @file.  *  * Return value: %TRUE on success, %FALSE otherwise.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -2465,7 +2465,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_set_from_exif:  * @metadata:         A #GimpMetadata instance.  * @exif_data:        The blob of Exif data to set  * @exif_data_length: Length of @exif_data, in bytes  * @error:            Return location for error message  *  * Sets the tags from a piece of Exif data on @metadata.  *  * Return value: %TRUE on success, %FALSE otherwise.  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_metadata_set_from_exif:  * @metadata:         A #GimpMetadata instance.  * @exif_data:        The blob of Exif data to set  * @exif_data_length: Length of @exif_data, in bytes  * @error:            Return location for error message  *  * Sets the tags from a piece of Exif data on @metadata.  *  * Return value: %TRUE on success, %FALSE otherwise.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -2735,7 +2735,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_set_from_xmp:  * @metadata:        A #GimpMetadata instance.  * @xmp_data:        The blob of Exif data to set  * @xmp_data_length: Length of @exif_data, in bytes  * @error:           Return location for error message  *  * Sets the tags from a piece of XMP data on @metadata.  *  * Return value: %TRUE on success, %FALSE otherwise.  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_metadata_set_from_xmp:  * @metadata:        A #GimpMetadata instance.  * @xmp_data:        The blob of Exif data to set  * @xmp_data_length: Length of @exif_data, in bytes  * @error:           Return location for error message  *  * Sets the tags from a piece of XMP data on @metadata.  *  * Return value: %TRUE on success, %FALSE otherwise.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -2896,7 +2896,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_set_pixel_size:  * @metadata: A #GimpMetadata instance.  * @width:    Width in pixels  * @height:   Height in pixels  *  * Sets Exif.Image.ImageWidth and Exif.Image.ImageLength on @metadata.  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_metadata_set_pixel_size:  * @metadata: A #GimpMetadata instance.  * @width:    Width in pixels  * @height:   Height in pixels  *  * Sets Exif.Image.ImageWidth and Exif.Image.ImageLength on @metadata.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -2979,7 +2979,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_set_bits_per_sample:  * @metadata:        A #GimpMetadata instance.  * @bits_per_sample: Bits per pixel, per component  *  * Sets Exif.Image.BitsPerSample on @metadata.  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_metadata_set_bits_per_sample:  * @metadata:        A #GimpMetadata instance.  * @bits_per_sample: Bits per pixel, per component  *  * Sets Exif.Image.BitsPerSample on @metadata.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -3040,7 +3040,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_get_resolution:  * @metadata: A #GimpMetadata instance.  * @xres:     Return location for the X Resolution, in ppi  * @yres:     Return location for the Y Resolution, in ppi  * @unit:     Return location for the unit unit  *  * Returns values based on Exif.Image.XResolution,  * Exif.Image.YResolution and Exif.Image.ResolutionUnit of @metadata.  *  * Return value: %TRUE on success, %FALSE otherwise.  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_metadata_get_resolution:  * @metadata: A #GimpMetadata instance.  * @xres:     Return location for the X Resolution, in ppi  * @yres:     Return location for the Y Resolution, in ppi  * @unit:     Return location for the unit unit  *  * Returns values based on Exif.Image.XResolution,  * Exif.Image.YResolution and Exif.Image.ResolutionUnit of @metadata.  *  * Return value: %TRUE on success, %FALSE otherwise.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -3284,7 +3284,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_set_resolution:  * @metadata: A #GimpMetadata instance.  * @xres:     The image's X Resolution, in ppi  * @yres:     The image's Y Resolution, in ppi  * @unit:     The image's unit  *  * Sets Exif.Image.XResolution, Exif.Image.YResolution and  * Exif.Image.ResolutionUnit @metadata.  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_metadata_set_resolution:  * @metadata: A #GimpMetadata instance.  * @xres:     The image's X Resolution, in ppi  * @yres:     The image's Y Resolution, in ppi  * @unit:     The image's unit  *  * Sets Exif.Image.XResolution, Exif.Image.YResolution and  * Exif.Image.ResolutionUnit @metadata.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -3464,7 +3464,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_is_tag_supported:  * @tag:       A metadata tag name  * @mime_type: A mime type  *  * Returns whether @tag is supported in a file of type @mime_type.  *  * Return value: %TRUE if the @tag supported with @mime_type, %FALSE otherwise.  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_metadata_is_tag_supported:  * @tag:       A metadata tag name  * @mime_type: A mime type  *  * Returns whether @tag is supported in a file of type @mime_type.  *  * Return value: %TRUE if the @tag supported with @mime_type, %FALSE otherwise.  *  * Since: 2.10  */
 end_comment
 
 begin_function

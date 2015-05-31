@@ -28,7 +28,7 @@ file|"gimpvectors.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_vectors_is_valid:  * @vectors_ID: The vectors object to check.  *  * Deprecated: Use gimp_item_is_valid() instead.  *  * Returns: Whether the vectors ID is valid.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_is_valid:  * @vectors_ID: The vectors object to check.  *  * Deprecated: Use gimp_item_is_valid() instead.  *  * Returns: Whether the vectors ID is valid.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -50,7 +50,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_get_image:  * @vectors_ID: The vectors object.  *  * Deprecated: Use gimp_item_get_image() instead.  *  * Returns: The vectors image.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_get_image:  * @vectors_ID: The vectors object.  *  * Deprecated: Use gimp_item_get_image() instead.  *  * Returns: The vectors image.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -72,7 +72,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_get_name:  * @vectors_ID: The vectors object.  *  * Deprecated: Use gimp_item_get_name() instead.  *  * Returns: The name of the vectors object.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_get_name:  * @vectors_ID: The vectors object.  *  * Deprecated: Use gimp_item_get_name() instead.  *  * Returns: The name of the vectors object.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -95,7 +95,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_set_name:  * @vectors_ID: The vectors object.  * @name: the new name of the path.  *  * Deprecated: Use gimp_item_set_name() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_set_name:  * @vectors_ID: The vectors object.  * @name: the new name of the path.  *  * Deprecated: Use gimp_item_set_name() instead.  *  * Returns: TRUE on success.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -124,7 +124,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_get_visible:  * @vectors_ID: The vectors object.  *  * Deprecated: Use gimp_item_get_visible() instead.  *  * Returns: TRUE if the path is visible, FALSE otherwise.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_get_visible:  * @vectors_ID: The vectors object.  *  * Deprecated: Use gimp_item_get_visible() instead.  *  * Returns: TRUE if the path is visible, FALSE otherwise.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -146,7 +146,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_set_visible:  * @vectors_ID: The vectors object.  * @visible: Whether the path is visible.  *  * Deprecated: Use gimp_item_set_visible() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_set_visible:  * @vectors_ID: The vectors object.  * @visible: Whether the path is visible.  *  * Deprecated: Use gimp_item_set_visible() instead.  *  * Returns: TRUE on success.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -173,7 +173,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_get_linked:  * @vectors_ID: The vectors object.  *  * Deprecated: Use gimp_item_get_linked() instead.  *  * Returns: TRUE if the path is linked, FALSE otherwise.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_get_linked:  * @vectors_ID: The vectors object.  *  * Deprecated: Use gimp_item_get_linked() instead.  *  * Returns: TRUE if the path is linked, FALSE otherwise.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -195,7 +195,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_set_linked:  * @vectors_ID: The vectors object.  * @linked: Whether the path is linked.  *  * Deprecated: Use gimp_item_set_linked() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_set_linked:  * @vectors_ID: The vectors object.  * @linked: Whether the path is linked.  *  * Deprecated: Use gimp_item_set_linked() instead.  *  * Returns: TRUE on success.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -222,7 +222,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_get_tattoo:  * @vectors_ID: The vectors object.  *  * Deprecated: Use gimp_item_get_tattoo() instead.  *  * Returns: The vectors tattoo.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_get_tattoo:  * @vectors_ID: The vectors object.  *  * Deprecated: Use gimp_item_get_tattoo() instead.  *  * Returns: The vectors tattoo.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -244,7 +244,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_set_tattoo:  * @vectors_ID: The vectors object.  * @tattoo: the new tattoo.  *  * Deprecated: Use gimp_item_set_tattoo() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_set_tattoo:  * @vectors_ID: The vectors object.  * @tattoo: the new tattoo.  *  * Deprecated: Use gimp_item_set_tattoo() instead.  *  * Returns: TRUE on success.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -271,7 +271,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_parasite_find:  * @vectors_ID: The vectors object.  * @name: The name of the parasite to find.  *  * Deprecated: Use gimp_item_get_parasite() instead.  *  * Returns: The found parasite.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_vectors_parasite_find:  * @vectors_ID: The vectors object.  * @name: The name of the parasite to find.  *  * Deprecated: Use gimp_item_get_parasite() instead.  *  * Returns: The found parasite.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -301,7 +301,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_parasite_attach:  * @vectors_ID: The vectors object.  * @parasite: The parasite to attach to a vectors object.  *  * Deprecated: Use gimp_item_attach_parasite() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_vectors_parasite_attach:  * @vectors_ID: The vectors object.  * @parasite: The parasite to attach to a vectors object.  *  * Deprecated: Use gimp_item_attach_parasite() instead.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -330,7 +330,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_parasite_detach:  * @vectors_ID: The vectors object.  * @name: The name of the parasite to detach from a vectors object.  *  * Deprecated: Use gimp_item_detach_parasite() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_vectors_parasite_detach:  * @vectors_ID: The vectors object.  * @name: The name of the parasite to detach from a vectors object.  *  * Deprecated: Use gimp_item_detach_parasite() instead.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -359,7 +359,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_parasite_list:  * @vectors_ID: The vectors object.  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * Deprecated: Use gimp_item_get_parasite_list() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_vectors_parasite_list:  * @vectors_ID: The vectors object.  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * Deprecated: Use gimp_item_get_parasite_list() instead.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

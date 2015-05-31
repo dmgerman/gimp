@@ -16,7 +16,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_get_color_configuration:  *  * Retrieve a copy of the current color management configuration.  *  * Returns: A copy of the core's #GimpColorConfig. You should unref  *          this copy if you don't need it any longer.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_get_color_configuration:  *  * Retrieve a copy of the current color management configuration.  *  * Returns: A copy of the core's #GimpColorConfig. You should unref  *          this copy if you don't need it any longer.  *  * Since: 2.4  */
 end_comment
 
 begin_function

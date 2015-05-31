@@ -265,7 +265,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_default_unit:  *  * Get the default unit (taken from the user's locale).  *  * Returns the default unit's integer ID.  *  * Returns: Default unit.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_get_default_unit:  *  * Get the default unit (taken from the user's locale).  *  * Returns the default unit's integer ID.  *  * Returns: Default unit.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -524,7 +524,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_get_color_configuration:  *  * Get a serialized version of the color management configuration.  *  * Returns a string that can be deserialized into a GimpColorConfig  * object representing the current color management configuration.  *  * Returns: Serialized color management configuration.  *  * Since: GIMP 2.4  **/
+comment|/**  * _gimp_get_color_configuration:  *  * Get a serialized version of the color management configuration.  *  * Returns a string that can be deserialized into a GimpColorConfig  * object representing the current color management configuration.  *  * Returns: Serialized color management configuration.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

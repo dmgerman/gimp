@@ -402,7 +402,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedural_db_proc_exists:  * @procedure_name: The procedure name.  *  * Checks if the specified procedure exists in the procedural database  *  * This procedure checks if the specified procedure is registered in  * the procedural database.  *  * Returns: Whether a procedure of that name is registered.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_procedural_db_proc_exists:  * @procedure_name: The procedure name.  *  * Checks if the specified procedure exists in the procedural database  *  * This procedure checks if the specified procedure is registered in  * the procedural database.  *  * Returns: Whether a procedure of that name is registered.  *  * Since: 2.6  **/
 end_comment
 
 begin_function

@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2949a6a40103
+DECL|enum|__anon275b46c60103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2949a6a40203
+DECL|enum|__anon275b46c60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -543,7 +543,7 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpColorArea:color:    *    * The color displayed in the color area.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpColorArea:color:    *    * The color displayed in the color area.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -569,7 +569,7 @@ name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpColorArea:type:    *    * The type of the color area.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpColorArea:type:    *    * The type of the color area.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -594,7 +594,7 @@ name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpColorArea:drag-type:    *    * The event_mask that should trigger drags.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpColorArea:drag-type:    *    * The event_mask that should trigger drags.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -619,7 +619,7 @@ name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpColorArea:draw-border:    *    * Whether to draw a thin border in the foreground color around the area.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpColorArea:draw-border:    *    * Whether to draw a thin border in the foreground color around the area.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class

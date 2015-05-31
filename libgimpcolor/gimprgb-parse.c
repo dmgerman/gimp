@@ -145,7 +145,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb71d130108
+DECL|struct|__anon2b1f07600108
 block|{
 DECL|member|name
 specifier|const
@@ -1657,7 +1657,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/**  * gimp_rgb_parse_name:  * @rgb:  a #GimpRGB struct used to return the parsed color  * @name: a color name (in UTF-8 encoding)  * @len:  the length of @name, in bytes. or -1 if @name is nul-terminated  *  * Attempts to parse a color name. This function accepts<ulink  * url="http://www.w3.org/TR/SVG/types.html#ColorKeywords">SVG 1.0  * color keywords</ulink>.  *  * This function does not touch the alpha component of @rgb.  *  * Return value: %TRUE if @name was parsed successfully and @rgb has  *               been set, %FALSE otherwise  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_rgb_parse_name:  * @rgb:  a #GimpRGB struct used to return the parsed color  * @name: a color name (in UTF-8 encoding)  * @len:  the length of @name, in bytes. or -1 if @name is nul-terminated  *  * Attempts to parse a color name. This function accepts<ulink  * url="http://www.w3.org/TR/SVG/types.html#ColorKeywords">SVG 1.0  * color keywords</ulink>.  *  * This function does not touch the alpha component of @rgb.  *  * Return value: %TRUE if @name was parsed successfully and @rgb has  *               been set, %FALSE otherwise  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1733,7 +1733,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_parse_hex:  * @rgb: a #GimpRGB struct used to return the parsed color  * @hex: a string describing a color in hexadecimal notation  * @len: the length of @hex, in bytes. or -1 if @hex is nul-terminated  *  * Attempts to parse a string describing an RGB color in hexadecimal  * notation (optionally prefixed with a '#').  *  * This function does not touch the alpha component of @rgb.  *  * Return value: %TRUE if @hex was parsed successfully and @rgb has  *               been set, %FALSE otherwise  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_rgb_parse_hex:  * @rgb: a #GimpRGB struct used to return the parsed color  * @hex: a string describing a color in hexadecimal notation  * @len: the length of @hex, in bytes. or -1 if @hex is nul-terminated  *  * Attempts to parse a string describing an RGB color in hexadecimal  * notation (optionally prefixed with a '#').  *  * This function does not touch the alpha component of @rgb.  *  * Return value: %TRUE if @hex was parsed successfully and @rgb has  *               been set, %FALSE otherwise  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1809,7 +1809,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_parse_css:  * @rgb: a #GimpRGB struct used to return the parsed color  * @css: a string describing a color in CSS notation  * @len: the length of @hex, in bytes. or -1 if @hex is nul-terminated  *  * Attempts to parse a string describing an RGB color in CSS  * notation. This can be either a numerical representation  * (<code>rgb(255,0,0)</code> or<code>rgb(100%,0%,0%)</code>)  * or a hexadecimal notation as parsed by gimp_rgb_parse_hex()  * (<code>##ff0000</code>) or a color name as parsed by  * gimp_rgb_parse_name() (<code>red</code>).  *  * This function does not touch the alpha component of @rgb.  *  * Return value: %TRUE if @css was parsed successfully and @rgb has been  *               set, %FALSE otherwise  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_rgb_parse_css:  * @rgb: a #GimpRGB struct used to return the parsed color  * @css: a string describing a color in CSS notation  * @len: the length of @hex, in bytes. or -1 if @hex is nul-terminated  *  * Attempts to parse a string describing an RGB color in CSS  * notation. This can be either a numerical representation  * (<code>rgb(255,0,0)</code> or<code>rgb(100%,0%,0%)</code>)  * or a hexadecimal notation as parsed by gimp_rgb_parse_hex()  * (<code>##ff0000</code>) or a color name as parsed by  * gimp_rgb_parse_name() (<code>red</code>).  *  * This function does not touch the alpha component of @rgb.  *  * Return value: %TRUE if @css was parsed successfully and @rgb has been  *               set, %FALSE otherwise  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1885,7 +1885,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgba_parse_css:  * @rgba: a #GimpRGB struct used to return the parsed color  * @css: a string describing a color in CSS notation  * @len: the length of @hex, in bytes. or -1 if @hex is nul-terminated  *  * Similar to gimp_rgb_parse_css() but handles RGB colors with alpha  * channel in the numerical CSS notation (<code>rgba(255,0,0,255)</code>  * or<code>rgba(100%,0%,0%,1000%)</code>).  *  * It doesn't handle the hexadecimal notation or color names because  * they leave the alpha channel unspecified.  *  * Return value: %TRUE if @css was parsed successfully and @rgb has been  *               set, %FALSE otherwise  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_rgba_parse_css:  * @rgba: a #GimpRGB struct used to return the parsed color  * @css: a string describing a color in CSS notation  * @len: the length of @hex, in bytes. or -1 if @hex is nul-terminated  *  * Similar to gimp_rgb_parse_css() but handles RGB colors with alpha  * channel in the numerical CSS notation (<code>rgba(255,0,0,255)</code>  * or<code>rgba(100%,0%,0%,1000%)</code>).  *  * It doesn't handle the hexadecimal notation or color names because  * they leave the alpha channel unspecified.  *  * Return value: %TRUE if @css was parsed successfully and @rgb has been  *               set, %FALSE otherwise  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2007,7 +2007,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_list_names:  * @names:  return location for an array of color names  * @colors: return location for an array of GimpRGB structs  *  * Returns the list of<ulink  * url="http://www.w3.org/TR/SVG/types.html">SVG 1.0 color  * keywords</ulink> that is used by gimp_rgb_parse_name().  *  * The returned strings are const and must not be freed. Only the two  * arrays are allocated dynamically. You must call g_free() on the  * @names and @colors arrays when they are not any longer needed.  *  * Return value: the number of named colors  *               (i.e. the length of the returned arrays)  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_rgb_list_names:  * @names:  return location for an array of color names  * @colors: return location for an array of GimpRGB structs  *  * Returns the list of<ulink  * url="http://www.w3.org/TR/SVG/types.html">SVG 1.0 color  * keywords</ulink> that is used by gimp_rgb_parse_name().  *  * The returned strings are const and must not be freed. Only the two  * arrays are allocated dynamically. You must call g_free() on the  * @names and @colors arrays when they are not any longer needed.  *  * Return value: the number of named colors  *               (i.e. the length of the returned arrays)  *  * Since: 2.2  **/
 end_comment
 
 begin_function

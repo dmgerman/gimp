@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29761e680103
+DECL|enum|__anon2bc893650103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -71,7 +71,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29761e680208
+DECL|struct|__anon2bc893650208
 block|{
 DECL|member|update
 name|gboolean
@@ -390,7 +390,7 @@ name|untransform
 operator|=
 name|gimp_aspect_preview_untransform
 expr_stmt|;
-comment|/**    * GimpAspectPreview:drawable:    *    * Since: GIMP 2.4    */
+comment|/**    * GimpAspectPreview:drawable:    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -1462,7 +1462,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_aspect_preview_new:  * @drawable: a #GimpDrawable  * @toggle:   unused  *  * Creates a new #GimpAspectPreview widget for @drawable. See also  * gimp_drawable_preview_new().  *  * In GIMP 2.2 the @toggle parameter was provided to conviently access  * the state of the "Preview" check-button. This is not any longer  * necessary as the preview itself now stores this state, as well as  * the scroll offset.  *  * Since: GIMP 2.2  *  * Returns: a new #GimpAspectPreview.  **/
+comment|/**  * gimp_aspect_preview_new:  * @drawable: a #GimpDrawable  * @toggle:   unused  *  * Creates a new #GimpAspectPreview widget for @drawable. See also  * gimp_drawable_preview_new().  *  * In GIMP 2.2 the @toggle parameter was provided to conviently access  * the state of the "Preview" check-button. This is not any longer  * necessary as the preview itself now stores this state, as well as  * the scroll offset.  *  * Since: 2.2  *  * Returns: a new #GimpAspectPreview.  **/
 end_comment
 
 begin_function

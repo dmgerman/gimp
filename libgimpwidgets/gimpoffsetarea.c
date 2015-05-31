@@ -47,7 +47,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f773a90103
+DECL|enum|__anon27c58da00103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -407,7 +407,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_offset_area_set_pixbuf:  * @offset_area: a #GimpOffsetArea.  * @pixbuf: a #GdkPixbuf.  *  * Sets the pixbuf which represents the original image/drawable which  * is being offset.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_offset_area_set_pixbuf:  * @offset_area: a #GimpOffsetArea.  * @pixbuf: a #GdkPixbuf.  *  * Sets the pixbuf which represents the original image/drawable which  * is being offset.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

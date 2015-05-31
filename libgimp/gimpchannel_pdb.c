@@ -142,7 +142,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_channel_new_from_component:  * @image_ID: The image to which to add the channel.  * @component: The image component.  * @name: The channel name.  *  * Create a new channel from a color component  *  * This procedure creates a new channel from a color component.  * The new channel still needs to be added to the image, as this is not  * automatic. Add the new channel with gimp_image_insert_channel().  * Other attributes, such as channel visibility, should be set with  * explicit procedure calls.  *  * Returns: The newly created channel.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_channel_new_from_component:  * @image_ID: The image to which to add the channel.  * @component: The image component.  * @name: The channel name.  *  * Create a new channel from a color component  *  * This procedure creates a new channel from a color component.  * The new channel still needs to be added to the image, as this is not  * automatic. Add the new channel with gimp_image_insert_channel().  * Other attributes, such as channel visibility, should be set with  * explicit procedure calls.  *  * Returns: The newly created channel.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

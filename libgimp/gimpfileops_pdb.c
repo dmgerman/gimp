@@ -127,7 +127,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_load_layer:  * @run_mode: The run mode.  * @image_ID: Destination image.  * @filename: The name of the file to load.  *  * Loads an image file as a layer for an existing image.  *  * This procedure behaves like the file-load procedure but opens the  * specified image as a layer for an existing image. The returned layer  * needs to be added to the existing image with  * gimp_image_insert_layer().  *  * Returns: The layer created when loading the image file.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_file_load_layer:  * @run_mode: The run mode.  * @image_ID: Destination image.  * @filename: The name of the file to load.  *  * Loads an image file as a layer for an existing image.  *  * This procedure behaves like the file-load procedure but opens the  * specified image as a layer for an existing image. The returned layer  * needs to be added to the existing image with  * gimp_image_insert_layer().  *  * Returns: The layer created when loading the image file.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -222,7 +222,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_load_layers:  * @run_mode: The run mode.  * @image_ID: Destination image.  * @filename: The name of the file to load.  * @num_layers: The number of loaded layers.  *  * Loads an image file as layers for an existing image.  *  * This procedure behaves like the file-load procedure but opens the  * specified image as layers for an existing image. The returned layers  * needs to be added to the existing image with  * gimp_image_insert_layer().  *  * Returns: The list of loaded layers.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_file_load_layers:  * @run_mode: The run mode.  * @image_ID: Destination image.  * @filename: The name of the file to load.  * @num_layers: The number of loaded layers.  *  * Loads an image file as layers for an existing image.  *  * This procedure behaves like the file-load procedure but opens the  * specified image as layers for an existing image. The returned layers  * needs to be added to the existing image with  * gimp_image_insert_layer().  *  * Returns: The list of loaded layers.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -892,7 +892,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_register_file_handler_mime:  * @procedure_name: The name of the procedure to associate a MIME type with.  * @mime_type: A single MIME type, like for example \"image/jpeg\".  *  * Associates a MIME type with a file handler procedure.  *  * Registers a MIME type for a file handler procedure. This allows GIMP  * to determine the MIME type of the file opened or saved using this  * procedure.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_register_file_handler_mime:  * @procedure_name: The name of the procedure to associate a MIME type with.  * @mime_type: A single MIME type, like for example \"image/jpeg\".  *  * Associates a MIME type with a file handler procedure.  *  * Registers a MIME type for a file handler procedure. This allows GIMP  * to determine the MIME type of the file opened or saved using this  * procedure.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -970,7 +970,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_register_file_handler_uri:  * @procedure_name: The name of the procedure to enable URIs for.  *  * Registers a file handler procedure as capable of handling URIs.  *  * Registers a file handler procedure as capable of handling URIs. This  * allows GIMP to call the procecure directly for all kinds of URIs,  * and the 'filename' traditionally passed to file procesures turns  * into an URI.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_register_file_handler_uri:  * @procedure_name: The name of the procedure to enable URIs for.  *  * Registers a file handler procedure as capable of handling URIs.  *  * Registers a file handler procedure as capable of handling URIs. This  * allows GIMP to call the procecure directly for all kinds of URIs,  * and the 'filename' traditionally passed to file procesures turns  * into an URI.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1039,7 +1039,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_register_thumbnail_loader:  * @load_proc: The name of the procedure the thumbnail loader with.  * @thumb_proc: The name of the thumbnail load procedure.  *  * Associates a thumbnail loader with a file load procedure.  *  * Some file formats allow for embedded thumbnails, other file formats  * contain a scalable image or provide the image data in different  * resolutions. A file plug-in for such a format may register a special  * procedure that allows GIMP to load a thumbnail preview of the image.  * This procedure is then associated with the standard load procedure  * using this function.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_register_thumbnail_loader:  * @load_proc: The name of the procedure the thumbnail loader with.  * @thumb_proc: The name of the thumbnail load procedure.  *  * Associates a thumbnail loader with a file load procedure.  *  * Some file formats allow for embedded thumbnails, other file formats  * contain a scalable image or provide the image data in different  * resolutions. A file plug-in for such a format may register a special  * procedure that allows GIMP to load a thumbnail preview of the image.  * This procedure is then associated with the standard load procedure  * using this function.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

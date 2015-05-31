@@ -26,7 +26,7 @@ comment|/**  * SECTION: gimpconfig-error  * @title: GimpConfig-error  * @short_d
 end_comment
 
 begin_comment
-comment|/**  * gimp_config_error_quark:  *  * This function is never called directly. Use GIMP_CONFIG_ERROR() instead.  *  * Return value: the #GQuark that defines the GimpConfig error domain.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_error_quark:  *  * This function is never called directly. Use GIMP_CONFIG_ERROR() instead.  *  * Return value: the #GQuark that defines the GimpConfig error domain.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

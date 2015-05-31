@@ -152,7 +152,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon296cea3b0103
+DECL|enum|__anon27fb38b60103
 block|{
 DECL|enumerator|BRUSH_SET
 name|BRUSH_SET
@@ -165,7 +165,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296cea3b0203
+DECL|enum|__anon27fb38b60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -564,7 +564,7 @@ name|brush_set
 operator|=
 name|NULL
 expr_stmt|;
-comment|/**    * GimpBrushSelectButton:title:    *    * The title to be used for the brush selection popup dialog.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpBrushSelectButton:title:    *    * The title to be used for the brush selection popup dialog.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -590,7 +590,7 @@ name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpBrushSelectButton:brush-name:    *    * The name of the currently selected brush.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpBrushSelectButton:brush-name:    *    * The name of the currently selected brush.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -611,7 +611,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpBrushSelectButton:opacity:    *    * The opacity of the currently selected brush.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpBrushSelectButton:opacity:    *    * The opacity of the currently selected brush.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -638,7 +638,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpBrushSelectButton:spacing:    *    * The spacing of the currently selected brush.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpBrushSelectButton:spacing:    *    * The spacing of the currently selected brush.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -665,7 +665,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpBrushSelectButton:paint-mode:    *    * The name of the currently selected brush.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpBrushSelectButton:paint-mode:    *    * The name of the currently selected brush.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -692,7 +692,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpBrushSelectButton::brush-set:    * @widget: the object which received the signal.    * @brush_name: the name of the currently selected brush.    * @opacity: opacity of the brush    * @spacing: spacing of the brush    * @paint_mode: paint mode of the brush    * @width: width of the brush    * @height: height of the brush    * @mask_data: brush mask data    * @dialog_closing: whether the dialog was closed or not.    *    * The ::brush-set signal is emitted when the user selects a brush.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpBrushSelectButton::brush-set:    * @widget: the object which received the signal.    * @brush_name: the name of the currently selected brush.    * @opacity: opacity of the brush    * @spacing: spacing of the brush    * @paint_mode: paint mode of the brush    * @width: width of the brush    * @height: height of the brush    * @mask_data: brush mask data    * @dialog_closing: whether the dialog was closed or not.    *    * The ::brush-set signal is emitted when the user selects a brush.    *    * Since: 2.4    */
 name|brush_button_signals
 index|[
 name|BRUSH_SET
@@ -878,7 +878,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_select_button_new:  * @title:      Title of the dialog to use or %NULL means to use the default  *              title.  * @brush_name: Initial brush name or %NULL to use current selection.  * @opacity:    Initial opacity. -1 means to use current opacity.  * @spacing:    Initial spacing. -1 means to use current spacing.  * @paint_mode: Initial paint mode.  -1 means to use current paint mode.  *  * Creates a new #GtkWidget that completely controls the selection of  * a #GimpBrush.  This widget is suitable for placement in a table in  * a plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_brush_select_button_new:  * @title:      Title of the dialog to use or %NULL means to use the default  *              title.  * @brush_name: Initial brush name or %NULL to use current selection.  * @opacity:    Initial opacity. -1 means to use current opacity.  * @spacing:    Initial spacing. -1 means to use current spacing.  * @paint_mode: Initial paint mode.  -1 means to use current paint mode.  *  * Creates a new #GtkWidget that completely controls the selection of  * a #GimpBrush.  This widget is suitable for placement in a table in  * a plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -977,7 +977,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_select_button_get_brush:  * @button: A #GimpBrushSelectButton  * @opacity: Opacity of the selected brush.  * @spacing: Spacing of the selected brush.  * @paint_mode: Paint mode of the selected brush.  *  * Retrieves the properties of currently selected brush.  *  * Returns: an internal copy of the brush name which must not be freed.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_brush_select_button_get_brush:  * @button: A #GimpBrushSelectButton  * @opacity: Opacity of the selected brush.  * @spacing: Spacing of the selected brush.  * @paint_mode: Paint mode of the selected brush.  *  * Retrieves the properties of currently selected brush.  *  * Returns: an internal copy of the brush name which must not be freed.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -1067,7 +1067,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_select_button_set_brush:  * @button: A #GimpBrushSelectButton  * @brush_name: Brush name to set; %NULL means no change.  * @opacity:    Opacity to set. -1.0 means no change.  * @spacing:    Spacing to set. -1 means no change.  * @paint_mode: Paint mode to set.  -1 means no change.  *  * Sets the current brush and other values for the brush select  * button.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_brush_select_button_set_brush:  * @button: A #GimpBrushSelectButton  * @brush_name: Brush name to set; %NULL means no change.  * @opacity:    Opacity to set. -1.0 means no change.  * @spacing:    Spacing to set. -1 means no change.  * @paint_mode: Paint mode to set.  -1 means no change.  *  * Sets the current brush and other values for the brush select  * button.  *  * Since: 2.4  */
 end_comment
 
 begin_function

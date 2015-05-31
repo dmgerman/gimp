@@ -52,7 +52,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba6fe3f0103
+DECL|enum|__anon2c0761a20103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TOOLTIP
 name|GIMP_WIDGET_HELP_TOOLTIP
@@ -592,7 +592,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_help_set_help_data_with_markup:  * @widget:  The #GtkWidget you want to set a @tooltip and/or @help_id for.  * @tooltip: The markup for this widget's tooltip (or %NULL).  * @help_id: The @help_id for the #GtkTipsQuery tooltips inspector.  *  * Just like gimp_help_set_help_data(), but supports to pass text  * which is marked up with<link linkend="PangoMarkupFormat">Pango  * text markup language</link>.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_help_set_help_data_with_markup:  * @widget:  The #GtkWidget you want to set a @tooltip and/or @help_id for.  * @tooltip: The markup for this widget's tooltip (or %NULL).  * @help_id: The @help_id for the #GtkTipsQuery tooltips inspector.  *  * Just like gimp_help_set_help_data(), but supports to pass text  * which is marked up with<link linkend="PangoMarkupFormat">Pango  * text markup language</link>.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -705,7 +705,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_help_id_quark:  *  * This function returns the #GQuark which should be used as key when  * attaching help IDs to widgets and objects.  *  * Return value: The #GQuark.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_help_id_quark:  *  * This function returns the #GQuark which should be used as key when  * attaching help IDs to widgets and objects.  *  * Return value: The #GQuark.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

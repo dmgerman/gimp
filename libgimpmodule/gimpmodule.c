@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdcab050103
+DECL|enum|__anon2b1e5e810103
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -1267,7 +1267,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_error_quark:  *  * This function is never called directly. Use GIMP_MODULE_ERROR() instead.  *  * Return value: the #GQuark that defines the GIMP module error domain.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_module_error_quark:  *  * This function is never called directly. Use GIMP_MODULE_ERROR() instead.  *  * Return value: the #GQuark that defines the GIMP module error domain.  *  * Since: 2.8  **/
 end_comment
 
 begin_function

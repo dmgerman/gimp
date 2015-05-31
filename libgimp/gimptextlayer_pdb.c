@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimptextlayer  * @title: gimptextlayer  * @short_descrip
 end_comment
 
 begin_comment
-comment|/**  * gimp_text_layer_new:  * @image_ID: The image.  * @text: The text to generate (in UTF-8 encoding).  * @fontname: The name of the font.  * @size: The size of text in either pixels or points.  * @unit: The units of specified size.  *  * Creates a new text layer.  *  * This procedure creates a new text layer. The arguments are kept as  * simple as necessary for the normal case. All text attributes,  * however, can be modified with the appropriate  * gimp_text_layer_set_*() procedures. The new layer still needs to be  * added to the image, as this is not automatic. Add the new layer  * using gimp_image_insert_layer().  *  * Returns: The new text layer.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_new:  * @image_ID: The image.  * @text: The text to generate (in UTF-8 encoding).  * @fontname: The name of the font.  * @size: The size of text in either pixels or points.  * @unit: The units of specified size.  *  * Creates a new text layer.  *  * This procedure creates a new text layer. The arguments are kept as  * simple as necessary for the normal case. All text attributes,  * however, can be modified with the appropriate  * gimp_text_layer_set_*() procedures. The new layer still needs to be  * added to the image, as this is not automatic. Add the new layer  * using gimp_image_insert_layer().  *  * Returns: The new text layer.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -135,7 +135,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_text:  * @layer_ID: The text layer.  *  * Get the text from a text layer as string.  *  * This procedure returns the text from a text layer as a string.  *  * Returns: The text from the specified text layer.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_get_text:  * @layer_ID: The text layer.  *  * Get the text from a text layer as string.  *  * This procedure returns the text from a text layer as a string.  *  * Returns: The text from the specified text layer.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -218,7 +218,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_set_text:  * @layer_ID: The text layer.  * @text: The new text to set.  *  * Set the text of a text layer.  *  * This procedure changes the text of a text layer.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_set_text:  * @layer_ID: The text layer.  * @text: The new text to set.  *  * Set the text of a text layer.  *  * This procedure changes the text of a text layer.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -294,7 +294,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_markup:  * @layer_ID: The text layer.  *  * Get the markup from a text layer as string.  *  * This procedure returns the markup of the styles from a text layer.  * The markup will be in the form of Pango's markup - See  * http://www.pango.org/ for more information about Pango and its  * markup. Note: Setting the markup of a text layer using Pango's  * markup is not supported for now.  *  * Returns: The markup which represents the style of the specified text  * layer.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_text_layer_get_markup:  * @layer_ID: The text layer.  *  * Get the markup from a text layer as string.  *  * This procedure returns the markup of the styles from a text layer.  * The markup will be in the form of Pango's markup - See  * http://www.pango.org/ for more information about Pango and its  * markup. Note: Setting the markup of a text layer using Pango's  * markup is not supported for now.  *  * Returns: The markup which represents the style of the specified text  * layer.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -377,7 +377,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_font:  * @layer_ID: The text layer.  *  * Get the font from a text layer as string.  *  * This procedure returns the name of the font from a text layer.  *  * Returns: The font which is used in the specified text layer.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_get_font:  * @layer_ID: The text layer.  *  * Get the font from a text layer as string.  *  * This procedure returns the name of the font from a text layer.  *  * Returns: The font which is used in the specified text layer.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -460,7 +460,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_set_font:  * @layer_ID: The text layer.  * @font: The new font to use.  *  * Set the font of a text layer.  *  * This procedure modifies the font used in the specified text layer.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_set_font:  * @layer_ID: The text layer.  * @font: The new font to use.  *  * Set the font of a text layer.  *  * This procedure modifies the font used in the specified text layer.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -536,7 +536,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_font_size:  * @layer_ID: The text layer.  * @unit: The unit used for the font size.  *  * Get the font size from a text layer.  *  * This procedure returns the size of the font which is used in a text  * layer. You will receive the size as a float 'font-size' in 'unit'  * units.  *  * Returns: The font size.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_get_font_size:  * @layer_ID: The text layer.  * @unit: The unit used for the font size.  *  * Get the font size from a text layer.  *  * This procedure returns the size of the font which is used in a text  * layer. You will receive the size as a float 'font-size' in 'unit'  * units.  *  * Returns: The font size.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -632,7 +632,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_set_font_size:  * @layer_ID: The text layer.  * @font_size: The font size.  * @unit: The unit to use for the font size.  *  * Set the font size.  *  * This procedure changes the font size of a text layer. The size of  * your font will be a double 'font-size' of 'unit' units.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_set_font_size:  * @layer_ID: The text layer.  * @font_size: The font size.  * @unit: The unit to use for the font size.  *  * Set the font size.  *  * This procedure changes the font size of a text layer. The size of  * your font will be a double 'font-size' of 'unit' units.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -713,7 +713,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_antialias:  * @layer_ID: The text layer.  *  * Check if antialiasing is used in the text layer.  *  * This procedure checks if antialiasing is enabled in the specified  * text layer.  *  * Returns: A flag which is true if antialiasing is used for rendering  * the font in the text layer.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_get_antialias:  * @layer_ID: The text layer.  *  * Check if antialiasing is used in the text layer.  *  * This procedure checks if antialiasing is enabled in the specified  * text layer.  *  * Returns: A flag which is true if antialiasing is used for rendering  * the font in the text layer.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -791,7 +791,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_set_antialias:  * @layer_ID: The text layer.  * @antialias: Enable/disable antialiasing of the text.  *  * Enable/disable anti-aliasing in a text layer.  *  * This procedure enables or disables anti-aliasing of the text in a  * text layer.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_set_antialias:  * @layer_ID: The text layer.  * @antialias: Enable/disable antialiasing of the text.  *  * Enable/disable anti-aliasing in a text layer.  *  * This procedure enables or disables anti-aliasing of the text in a  * text layer.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -865,7 +865,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_hint_style:  * @layer_ID: The text layer.  *  * Get information about hinting in the specified text layer.  *  * This procedure provides information about the hinting that is being  * used in a text layer. Hinting can be optimized for fidelity or  * contrast or it can be turned entirely off.  *  * Returns: The hint style used for font outlines.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_text_layer_get_hint_style:  * @layer_ID: The text layer.  *  * Get information about hinting in the specified text layer.  *  * This procedure provides information about the hinting that is being  * used in a text layer. Hinting can be optimized for fidelity or  * contrast or it can be turned entirely off.  *  * Returns: The hint style used for font outlines.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -943,7 +943,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_set_hint_style:  * @layer_ID: The text layer.  * @style: The new hint style.  *  * Control how font outlines are hinted in a text layer.  *  * This procedure sets the hint style for font outlines in a text  * layer. This controls whether to fit font outlines to the pixel grid,  * and if so, whether to optimize for fidelity or contrast.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_text_layer_set_hint_style:  * @layer_ID: The text layer.  * @style: The new hint style.  *  * Control how font outlines are hinted in a text layer.  *  * This procedure sets the hint style for font outlines in a text  * layer. This controls whether to fit font outlines to the pixel grid,  * and if so, whether to optimize for fidelity or contrast.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1017,7 +1017,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_kerning:  * @layer_ID: The text layer.  *  * Check if kerning is used in the text layer.  *  * This procedure checks if kerning is enabled in the specified text  * layer.  *  * Returns: A flag which is true if kerning is used in the text layer.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_get_kerning:  * @layer_ID: The text layer.  *  * Check if kerning is used in the text layer.  *  * This procedure checks if kerning is enabled in the specified text  * layer.  *  * Returns: A flag which is true if kerning is used in the text layer.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -1095,7 +1095,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_set_kerning:  * @layer_ID: The text layer.  * @kerning: Enable/disable kerning in the text.  *  * Enable/disable kerning in a text layer.  *  * This procedure enables or disables kerning in a text layer.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_set_kerning:  * @layer_ID: The text layer.  * @kerning: Enable/disable kerning in the text.  *  * Enable/disable kerning in a text layer.  *  * This procedure enables or disables kerning in a text layer.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -1169,7 +1169,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_language:  * @layer_ID: The text layer.  *  * Get the language used in the text layer.  *  * This procedure returns the language string which is set for the text  * in the text layer.  *  * Returns: The language used in the text layer.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_get_language:  * @layer_ID: The text layer.  *  * Get the language used in the text layer.  *  * This procedure returns the language string which is set for the text  * in the text layer.  *  * Returns: The language used in the text layer.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -1252,7 +1252,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_set_language:  * @layer_ID: The text layer.  * @language: The new language to use for the text layer.  *  * Set the language of the text layer.  *  * This procedure sets the language of the text in text layer. For some  * scripts the language has an influence of how the text is rendered.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_set_language:  * @layer_ID: The text layer.  * @language: The new language to use for the text layer.  *  * Set the language of the text layer.  *  * This procedure sets the language of the text in text layer. For some  * scripts the language has an influence of how the text is rendered.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -1328,7 +1328,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_base_direction:  * @layer_ID: The text layer.  *  * Get the base direction used for rendering the text layer.  *  * This procedure returns the base direction used for rendering the  * text in the text layer  *  * Returns: The based direction used for the text layer.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_get_base_direction:  * @layer_ID: The text layer.  *  * Get the base direction used for rendering the text layer.  *  * This procedure returns the base direction used for rendering the  * text in the text layer  *  * Returns: The based direction used for the text layer.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -1406,7 +1406,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_set_base_direction:  * @layer_ID: The text layer.  * @direction: The base direction of the text.  *  * Set the base direction in the text layer.  *  * This procedure sets the base direction used in applying the Unicode  * bidirectional algorithm when rendering the text.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_set_base_direction:  * @layer_ID: The text layer.  * @direction: The base direction of the text.  *  * Set the base direction in the text layer.  *  * This procedure sets the base direction used in applying the Unicode  * bidirectional algorithm when rendering the text.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -1480,7 +1480,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_justification:  * @layer_ID: The text layer.  *  * Get the text justification information of the text layer.  *  * This procedure returns the alignment of the lines in the text layer  * relative to each other.  *  * Returns: The justification used in the text layer.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_get_justification:  * @layer_ID: The text layer.  *  * Get the text justification information of the text layer.  *  * This procedure returns the alignment of the lines in the text layer  * relative to each other.  *  * Returns: The justification used in the text layer.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -1558,7 +1558,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_set_justification:  * @layer_ID: The text layer.  * @justify: The justification for your text.  *  * Set the justification of the text in a text layer.  *  * This procedure sets the alignment of the lines in the text layer  * relative to each other.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_set_justification:  * @layer_ID: The text layer.  * @justify: The justification for your text.  *  * Set the justification of the text in a text layer.  *  * This procedure sets the alignment of the lines in the text layer  * relative to each other.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -1632,7 +1632,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_color:  * @layer_ID: The text layer.  * @color: The color of the text.  *  * Get the color of the text in a text layer.  *  * This procedure returns the color of the text in a text layer.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_get_color:  * @layer_ID: The text layer.  * @color: The color of the text.  *  * Get the color of the text in a text layer.  *  * This procedure returns the color of the text in a text layer.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -1719,7 +1719,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_set_color:  * @layer_ID: The text layer.  * @color: The color to use for the text.  *  * Set the color of the text in the text layer.  *  * This procedure sets the text color in the text layer 'layer'.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_set_color:  * @layer_ID: The text layer.  * @color: The color to use for the text.  *  * Set the color of the text in the text layer.  *  * This procedure sets the text color in the text layer 'layer'.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -1795,7 +1795,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_indent:  * @layer_ID: The text layer.  *  * Get the line indentation of text layer.  *  * This procedure returns the indentation of the first line in a text  * layer.  *  * Returns: The indentation value of the first line.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_get_indent:  * @layer_ID: The text layer.  *  * Get the line indentation of text layer.  *  * This procedure returns the indentation of the first line in a text  * layer.  *  * Returns: The indentation value of the first line.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -1873,7 +1873,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_set_indent:  * @layer_ID: The text layer.  * @indent: The indentation for the first line.  *  * Set the indentation of the first line in a text layer.  *  * This procedure sets the indentation of the first line in the text  * layer.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_set_indent:  * @layer_ID: The text layer.  * @indent: The indentation for the first line.  *  * Set the indentation of the first line in a text layer.  *  * This procedure sets the indentation of the first line in the text  * layer.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -1947,7 +1947,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_line_spacing:  * @layer_ID: The text layer.  *  * Get the spacing between lines of text.  *  * This procedure returns the line-spacing between lines of text in a  * text layer.  *  * Returns: The line-spacing value.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_get_line_spacing:  * @layer_ID: The text layer.  *  * Get the spacing between lines of text.  *  * This procedure returns the line-spacing between lines of text in a  * text layer.  *  * Returns: The line-spacing value.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -2025,7 +2025,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_set_line_spacing:  * @layer_ID: The text layer.  * @line_spacing: The additional line spacing to use.  *  * Adjust the line spacing in a text layer.  *  * This procedure sets the additional spacing used between lines a text  * layer.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_set_line_spacing:  * @layer_ID: The text layer.  * @line_spacing: The additional line spacing to use.  *  * Adjust the line spacing in a text layer.  *  * This procedure sets the additional spacing used between lines a text  * layer.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -2099,7 +2099,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_letter_spacing:  * @layer_ID: The text layer.  *  * Get the letter spacing used in a text layer.  *  * This procedure returns the additional spacing between the single  * glyps in a text layer.  *  * Returns: The letter-spacing value.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_get_letter_spacing:  * @layer_ID: The text layer.  *  * Get the letter spacing used in a text layer.  *  * This procedure returns the additional spacing between the single  * glyps in a text layer.  *  * Returns: The letter-spacing value.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -2177,7 +2177,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_set_letter_spacing:  * @layer_ID: The text layer.  * @letter_spacing: The additional letter spacing to use.  *  * Adjust the letter spacing in a text layer.  *  * This procedure sets the additional spacing between the single glyphs  * in a text layer.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_set_letter_spacing:  * @layer_ID: The text layer.  * @letter_spacing: The additional letter spacing to use.  *  * Adjust the letter spacing in a text layer.  *  * This procedure sets the additional spacing between the single glyphs  * in a text layer.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -2251,7 +2251,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_resize:  * @layer_ID: The text layer.  * @width: The new box width in pixels.  * @height: The new box height in pixels.  *  * Resize the box of a text layer.  *  * This procedure changes the width and height of a text layer while  * keeping it as a text layer and not converting it to a bitmap like  * gimp_layer_resize() would do.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_text_layer_resize:  * @layer_ID: The text layer.  * @width: The new box width in pixels.  * @height: The new box height in pixels.  *  * Resize the box of a text layer.  *  * This procedure changes the width and height of a text layer while  * keeping it as a text layer and not converting it to a bitmap like  * gimp_layer_resize() would do.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -2428,7 +2428,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_set_hinting:  * @layer_ID: The text layer.  * @hinting: Enable/disable the use of hinting on the text.  * @autohint: Force the use of the autohinter provided through FreeType.  *  * Deprecated: Use gimp_text_layer_set_hint_style() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_text_layer_set_hinting:  * @layer_ID: The text layer.  * @hinting: Enable/disable the use of hinting on the text.  * @autohint: Force the use of the autohinter provided through FreeType.  *  * Deprecated: Use gimp_text_layer_set_hint_style() instead.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
 end_comment
 
 begin_function

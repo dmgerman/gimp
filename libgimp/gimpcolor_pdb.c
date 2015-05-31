@@ -489,7 +489,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_desaturate_full:  * @drawable_ID: The drawable.  * @desaturate_mode: The formula to use to desaturate.  *  * Deprecated: Use gimp_drawable_desaturate() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_desaturate_full:  * @drawable_ID: The drawable.  * @desaturate_mode: The formula to use to desaturate.  *  * Deprecated: Use gimp_drawable_desaturate() instead.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

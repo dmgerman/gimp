@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ae1bf10103
+DECL|enum|__anon28c8b51c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -59,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ae1bf10208
+DECL|struct|__anon28c8b51c0208
 block|{
 DECL|member|user_data_type
 name|GType
@@ -289,7 +289,7 @@ name|get_property
 operator|=
 name|gimp_int_store_get_property
 expr_stmt|;
-comment|/**    * GimpIntStore:user-data-type:    *    * Sets the #GType for the GIMP_INT_STORE_USER_DATA column.    *    * You need to set this property when constructing the store if you want    * to use the GIMP_INT_STORE_USER_DATA column and want to have the store    * handle ref-counting of your user data.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpIntStore:user-data-type:    *    * Sets the #GType for the GIMP_INT_STORE_USER_DATA column.    *    * You need to set this property when constructing the store if you want    * to use the GIMP_INT_STORE_USER_DATA column and want to have the store    * handle ref-counting of your user data.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -882,7 +882,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_store_new:  *  * Creates a #GtkListStore with a number of useful columns.  * #GimpIntStore is especially useful if the items you want to store  * are identified using an integer value.  *  * Return value: a new #GimpIntStore.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_int_store_new:  *  * Creates a #GtkListStore with a number of useful columns.  * #GimpIntStore is especially useful if the items you want to store  * are identified using an integer value.  *  * Return value: a new #GimpIntStore.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -906,7 +906,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_store_lookup_by_value:  * @model: a #GimpIntStore  * @value: an integer value to lookup in the @model  * @iter:  return location for the iter of the given @value  *  * Iterate over the @model looking for @value.  *  * Return value: %TRUE if the value has been located and @iter is  *               valid, %FALSE otherwise.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_int_store_lookup_by_value:  * @model: a #GimpIntStore  * @value: an integer value to lookup in the @model  * @iter:  return location for the iter of the given @value  *  * Iterate over the @model looking for @value.  *  * Return value: %TRUE if the value has been located and @iter is  *               valid, %FALSE otherwise.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

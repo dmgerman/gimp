@@ -490,7 +490,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_combo_box_new:  * @constraint: a #GimpDrawableConstraintFunc or %NULL  * @data:       a pointer that is passed to @constraint  *  * Creates a new #GimpIntComboBox filled with all currently opened  * drawables. If a @constraint function is specified, it is called for  * each drawable and only if the function returns %TRUE, the drawable  * is added to the combobox.  *  * You should use gimp_int_combo_box_connect() to initialize and connect  * the combo.  Use gimp_int_combo_box_set_active() to get the active  * drawable ID and gimp_int_combo_box_get_active() to retrieve the ID  * of the selected drawable.  *  * Return value: a new #GimpIntComboBox.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_drawable_combo_box_new:  * @constraint: a #GimpDrawableConstraintFunc or %NULL  * @data:       a pointer that is passed to @constraint  *  * Creates a new #GimpIntComboBox filled with all currently opened  * drawables. If a @constraint function is specified, it is called for  * each drawable and only if the function returns %TRUE, the drawable  * is added to the combobox.  *  * You should use gimp_int_combo_box_connect() to initialize and connect  * the combo.  Use gimp_int_combo_box_set_active() to get the active  * drawable ID and gimp_int_combo_box_get_active() to retrieve the ID  * of the selected drawable.  *  * Return value: a new #GimpIntComboBox.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -616,7 +616,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_channel_combo_box_new:  * @constraint: a #GimpDrawableConstraintFunc or %NULL  * @data:       a pointer that is passed to @constraint  *  * Creates a new #GimpIntComboBox filled with all currently opened  * channels. See gimp_drawable_combo_box_new() for more information.  *  * Return value: a new #GimpIntComboBox.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_channel_combo_box_new:  * @constraint: a #GimpDrawableConstraintFunc or %NULL  * @data:       a pointer that is passed to @constraint  *  * Creates a new #GimpIntComboBox filled with all currently opened  * channels. See gimp_drawable_combo_box_new() for more information.  *  * Return value: a new #GimpIntComboBox.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -744,7 +744,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_combo_box_new:  * @constraint: a #GimpDrawableConstraintFunc or %NULL  * @data:       a pointer that is passed to @constraint  *  * Creates a new #GimpIntComboBox filled with all currently opened  * layers. See gimp_drawable_combo_box_new() for more information.  *  * Return value: a new #GimpIntComboBox.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_layer_combo_box_new:  * @constraint: a #GimpDrawableConstraintFunc or %NULL  * @data:       a pointer that is passed to @constraint  *  * Creates a new #GimpIntComboBox filled with all currently opened  * layers. See gimp_drawable_combo_box_new() for more information.  *  * Return value: a new #GimpIntComboBox.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -872,7 +872,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_combo_box_new:  * @constraint: a #GimpVectorsConstraintFunc or %NULL  * @data:       a pointer that is passed to @constraint  *  * Creates a new #GimpIntComboBox filled with all currently opened  * vectors objects. If a @constraint function is specified, it is called for  * each vectors object and only if the function returns %TRUE, the vectors  * object is added to the combobox.  *  * You should use gimp_int_combo_box_connect() to initialize and connect  * the combo.  Use gimp_int_combo_box_set_active() to set the active  * vectors ID and gimp_int_combo_box_get_active() to retrieve the ID  * of the selected vectors object.  *  * Return value: a new #GimpIntComboBox.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_vectors_combo_box_new:  * @constraint: a #GimpVectorsConstraintFunc or %NULL  * @data:       a pointer that is passed to @constraint  *  * Creates a new #GimpIntComboBox filled with all currently opened  * vectors objects. If a @constraint function is specified, it is called for  * each vectors object and only if the function returns %TRUE, the vectors  * object is added to the combobox.  *  * You should use gimp_int_combo_box_connect() to initialize and connect  * the combo.  Use gimp_int_combo_box_set_active() to set the active  * vectors ID and gimp_int_combo_box_get_active() to retrieve the ID  * of the selected vectors object.  *  * Return value: a new #GimpIntComboBox.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

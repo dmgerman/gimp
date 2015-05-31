@@ -260,7 +260,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b65c7b70103
+DECL|enum|__anon289e69870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -604,7 +604,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpThumbnail::image-mimetype:    *    * Image mimetype    *    * Since: GIMP 2.2    **/
+comment|/**    * GimpThumbnail::image-mimetype:    *    * Image mimetype    *    * Since: 2.2    **/
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -1944,7 +1944,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumbnail_check_thumb:  * @thumbnail: a #GimpThumbnail object  * @size: the preferred size of the thumbnail image  *  * Checks if a thumbnail file for the @thumbnail exists, loads it and  * verifies it is valid and uptodate for the image file asosciated  * with the @thumbnail.  *  * Return value: the thumbnail's #GimpThumbState after the update  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_thumbnail_check_thumb:  * @thumbnail: a #GimpThumbnail object  * @size: the preferred size of the thumbnail image  *  * Checks if a thumbnail file for the @thumbnail exists, loads it and  * verifies it is valid and uptodate for the image file asosciated  * with the @thumbnail.  *  * Return value: the thumbnail's #GimpThumbState after the update  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -4055,7 +4055,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumbnail_save_thumb_local:  * @thumbnail: a #GimpThumbnail object  * @pixbuf: a #GdkPixbuf representing the preview thumbnail  * @software: a string describing the software saving the thumbnail  * @error: return location for possible errors  *  * Saves a preview thumbnail for the image associated with @thumbnail  * to the local thumbnail repository. Local thumbnails have been added  * with version 0.7 of the spec.  *  * Please see also gimp_thumbnail_save_thumb(). The notes made there  * apply here as well.  *  * Return value: %TRUE if a thumbnail was successfully written,  *               %FALSE otherwise  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_thumbnail_save_thumb_local:  * @thumbnail: a #GimpThumbnail object  * @pixbuf: a #GdkPixbuf representing the preview thumbnail  * @software: a string describing the software saving the thumbnail  * @error: return location for possible errors  *  * Saves a preview thumbnail for the image associated with @thumbnail  * to the local thumbnail repository. Local thumbnails have been added  * with version 0.7 of the spec.  *  * Please see also gimp_thumbnail_save_thumb(). The notes made there  * apply here as well.  *  * Return value: %TRUE if a thumbnail was successfully written,  *               %FALSE otherwise  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -4590,7 +4590,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumbnail_delete_failure:  * @thumbnail: a #GimpThumbnail object  *  * Removes a failure thumbnail if one exists. This function should be  * used after a thumbnail has been successfully created.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_thumbnail_delete_failure:  * @thumbnail: a #GimpThumbnail object  *  * Removes a failure thumbnail if one exists. This function should be  * used after a thumbnail has been successfully created.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -4660,7 +4660,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumbnail_delete_others:  * @thumbnail: a #GimpThumbnail object  * @size: the thumbnail size which should not be deleted  *  * Removes all other thumbnails from the global thumbnail  * repository. Only the thumbnail for @size is not deleted.  This  * function should be used after a thumbnail has been successfully  * updated. See the spec for a more detailed description on when to  * delete thumbnails.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_thumbnail_delete_others:  * @thumbnail: a #GimpThumbnail object  * @size: the thumbnail size which should not be deleted  *  * Removes all other thumbnails from the global thumbnail  * repository. Only the thumbnail for @size is not deleted.  This  * function should be used after a thumbnail has been successfully  * updated. See the spec for a more detailed description on when to  * delete thumbnails.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -4711,7 +4711,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumbnail_has_failed:  * @thumbnail: a #GimpThumbnail object  *  * Checks if a valid failure thumbnail for the given thumbnail exists  * in the global thumbnail repository. This may be the case even if  * gimp_thumbnail_peek_thumb() doesn't return %GIMP_THUMB_STATE_FAILED  * since there might be a real thumbnail and a failure thumbnail for  * the same image file.  *  * The application should not attempt to create the thumbnail if a  * valid failure thumbnail exists.  *  * Return value: %TRUE if a failure thumbnail exists or  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_thumbnail_has_failed:  * @thumbnail: a #GimpThumbnail object  *  * Checks if a valid failure thumbnail for the given thumbnail exists  * in the global thumbnail repository. This may be the case even if  * gimp_thumbnail_peek_thumb() doesn't return %GIMP_THUMB_STATE_FAILED  * since there might be a real thumbnail and a failure thumbnail for  * the same image file.  *  * The application should not attempt to create the thumbnail if a  * valid failure thumbnail exists.  *  * Return value: %TRUE if a failure thumbnail exists or  *  * Since: 2.2  **/
 end_comment
 
 begin_function

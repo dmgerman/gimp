@@ -59,7 +59,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/**  * gimp_type_set_translation_domain:  * @type:   a #GType  * @domain: a constant string that identifies a translation domain or %NULL  *  * This function attaches a constant string as a gettext translation  * domain identifier to a #GType. The only purpose of this function is  * to use it when registering a #G_TYPE_ENUM with translatable value  * names.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_type_set_translation_domain:  * @type:   a #GType  * @domain: a constant string that identifies a translation domain or %NULL  *  * This function attaches a constant string as a gettext translation  * domain identifier to a #GType. The only purpose of this function is  * to use it when registering a #G_TYPE_ENUM with translatable value  * names.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -93,7 +93,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_type_get_translation_domain:  * @type: a #GType  *  * Retrieves the gettext translation domain identifier that has been  * previously set using gimp_type_set_translation_domain(). You should  * not need to use this function directly, use gimp_enum_get_value()  * or gimp_enum_value_get_desc() instead.  *  * Return value: the translation domain associated with @type  *               or %NULL if no domain was set  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_type_get_translation_domain:  * @type: a #GType  *  * Retrieves the gettext translation domain identifier that has been  * previously set using gimp_type_set_translation_domain(). You should  * not need to use this function directly, use gimp_enum_get_value()  * or gimp_enum_value_get_desc() instead.  *  * Return value: the translation domain associated with @type  *               or %NULL if no domain was set  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -125,7 +125,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_type_set_translation_context:  * @type:    a #GType  * @context: a constant string that identifies a translation context or %NULL  *  * This function attaches a constant string as a translation context  * to a #GType. The only purpose of this function is to use it when  * registering a #G_TYPE_ENUM with translatable value names.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_type_set_translation_context:  * @type:    a #GType  * @context: a constant string that identifies a translation context or %NULL  *  * This function attaches a constant string as a translation context  * to a #GType. The only purpose of this function is to use it when  * registering a #G_TYPE_ENUM with translatable value names.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -159,7 +159,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_type_get_translation_context:  * @type: a #GType  *  * Retrieves the translation context that has been previously set  * using gimp_type_set_translation_context(). You should not need to  * use this function directly, use gimp_enum_get_value() or  * gimp_enum_value_get_desc() instead.  *  * Return value: the translation context associated with @type  *               or %NULL if no context was set  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_type_get_translation_context:  * @type: a #GType  *  * Retrieves the translation context that has been previously set  * using gimp_type_set_translation_context(). You should not need to  * use this function directly, use gimp_enum_get_value() or  * gimp_enum_value_get_desc() instead.  *  * Return value: the translation context associated with @type  *               or %NULL if no context was set  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -191,7 +191,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_set_value_descriptions:  * @enum_type:    a #GType  * @descriptions: a %NULL terminated constant static array of #GimpEnumDesc  *  * Sets the array of human readable and translatable descriptions  * and help texts for enum values.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_enum_set_value_descriptions:  * @enum_type:    a #GType  * @descriptions: a %NULL terminated constant static array of #GimpEnumDesc  *  * Sets the array of human readable and translatable descriptions  * and help texts for enum values.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -242,7 +242,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_get_value_descriptions:  * @enum_type: a #GType  *  * Retreives the array of human readable and translatable descriptions  * and help texts for enum values.  *  * Returns: a %NULL terminated constant array of #GimpEnumDesc  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_enum_get_value_descriptions:  * @enum_type: a #GType  *  * Retreives the array of human readable and translatable descriptions  * and help texts for enum values.  *  * Returns: a %NULL terminated constant array of #GimpEnumDesc  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -286,7 +286,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_flags_set_value_descriptions:  * @flags_type:   a #GType  * @descriptions: a %NULL terminated constant static array of #GimpFlagsDesc  *  * Sets the array of human readable and translatable descriptions  * and help texts for flags values.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_flags_set_value_descriptions:  * @flags_type:   a #GType  * @descriptions: a %NULL terminated constant static array of #GimpFlagsDesc  *  * Sets the array of human readable and translatable descriptions  * and help texts for flags values.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -337,7 +337,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_flags_get_value_descriptions:  * @flags_type: a #GType  *  * Retreives the array of human readable and translatable descriptions  * and help texts for flags values.  *  * Returns: a %NULL terminated constant array of #GimpFlagsDesc  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_flags_get_value_descriptions:  * @flags_type: a #GType  *  * Retreives the array of human readable and translatable descriptions  * and help texts for flags values.  *  * Returns: a %NULL terminated constant array of #GimpFlagsDesc  *  * Since: 2.2  **/
 end_comment
 
 begin_function
