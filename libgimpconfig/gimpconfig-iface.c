@@ -1207,7 +1207,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_to_stream:  * @config: a #GObject that implements the #GimpConfigInterface.  * @stream: the #GOutputStream to write the configuration to.  * @header: optional file header (must be ASCII only)  * @footer: optional file footer (must be ASCII only)  * @data: user data passed to the serialize implementation.  * @error: return location for a possible error  *  * Serializes the object properties of @config to the stream specified  * by @stream.  *  * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_config_serialize_to_stream:  * @config: a #GObject that implements the #GimpConfigInterface.  * @output: the #GOutputStream to write the configuration to.  * @header: optional file header (must be ASCII only)  * @footer: optional file footer (must be ASCII only)  * @data: user data passed to the serialize implementation.  * @error: return location for a possible error  *  * Serializes the object properties of @config to the stream specified  * by @output.  *  * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  *  * Since: GIMP 2.10  **/
 end_comment
 
 begin_function

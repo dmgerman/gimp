@@ -1069,7 +1069,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e7962b0108
+DECL|struct|__anon28ee7dec0108
 block|{
 DECL|member|name
 name|gchar
@@ -2979,12 +2979,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_set_bits_per_sample:  * @metadata: A #GimpMetadata instance.  * @bps:      Bytes per pixel, per component  *  * Sets Exif.Image.BitsPerSample on @metadata.  *  * Since: GIMP 2.10  */
+comment|/**  * gimp_metadata_set_bits_per_sample:  * @metadata:        A #GimpMetadata instance.  * @bits_per_sample: Bits per pixel, per component  *  * Sets Exif.Image.BitsPerSample on @metadata.  *  * Since: GIMP 2.10  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_metadata_set_bits_per_sample (GimpMetadata * metadata,gint bps)
+DECL|function|gimp_metadata_set_bits_per_sample (GimpMetadata * metadata,gint bits_per_sample)
 name|gimp_metadata_set_bits_per_sample
 parameter_list|(
 name|GimpMetadata
@@ -2992,7 +2992,7 @@ modifier|*
 name|metadata
 parameter_list|,
 name|gint
-name|bps
+name|bits_per_sample
 parameter_list|)
 block|{
 name|gchar
@@ -3020,11 +3020,11 @@ argument_list|)
 argument_list|,
 literal|"%d %d %d"
 argument_list|,
-name|bps
+name|bits_per_sample
 argument_list|,
-name|bps
+name|bits_per_sample
 argument_list|,
-name|bps
+name|bits_per_sample
 argument_list|)
 expr_stmt|;
 name|gexiv2_metadata_set_tag_string
