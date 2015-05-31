@@ -1543,7 +1543,7 @@ argument_list|,
 literal|"Public Domain"
 argument_list|)
 expr_stmt|;
-comment|/**    * The following line produces a V2 profile with a point curve TRC.    * Profiles with point curve TRCs can't be used in LCMS2 unbounded    * mode ICC profile conversions. A V2 profile might be appropriate    * for embedding in sRGB images saved to disk, if the image is to be    * opened by an image editing application that doesn't understand V4    * profiles.    *    * cmsSetProfileVersion (srgb_profile, 2.1);    **/
+comment|/* The following line produces a V2 profile with a point curve TRC.    * Profiles with point curve TRCs can't be used in LCMS2 unbounded    * mode ICC profile conversions. A V2 profile might be appropriate    * for embedding in sRGB images saved to disk, if the image is to be    * opened by an image editing application that doesn't understand V4    * profiles.    *    * cmsSetProfileVersion (srgb_profile, 2.1);    */
 return|return
 name|srgb_profile
 return|;

@@ -354,6 +354,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_cairo_surface_get_format:  * @surface: a Cairo surface  *  * This function returns a #Babl format that corresponds to @surface's  * pixel format.  *  * Return value: the #Babl format of @surface.  *  * Since: GIMP 2.10  **/
+end_comment
+
 begin_function
 specifier|const
 name|Babl
@@ -423,6 +427,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_cairo_surface_create_buffer:  * @surface: a Cairo surface  *  * This function returns a #GeglBuffer which wraps @surface's pixels.  * It must only be called on image surfaces, calling it on other surface  * types is an error.  *  * Return value: a #GeglBuffer  *  * Since: GIMP 2.10  **/
+end_comment
 
 begin_function
 name|GeglBuffer
