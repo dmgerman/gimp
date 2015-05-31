@@ -770,7 +770,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_show_in_file_manager:  * @file:  a #GFile  * @error: return location for a #GError  *  * Shows @file in the system file manager.  *  * Since: GIMP 2.10  *  * Return value: %TRUE on success, %FALSE otherwise. On %FASLE, @error  *               is set.  **/
+comment|/**  * gimp_file_show_in_file_manager:  * @file:  a #GFile  * @error: return location for a #GError  *  * Shows @file in the system file manager.  *  * Since: GIMP 2.10  *  * Return value: %TRUE on success, %FALSE otherwise. On %FALSE, @error  *               is set.  **/
 end_comment
 
 begin_function
