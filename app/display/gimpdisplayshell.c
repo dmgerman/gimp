@@ -359,7 +359,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a536390103
+DECL|enum|__anon2b95af690103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -393,7 +393,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a536390203
+DECL|enum|__anon2b95af690203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1401,6 +1401,15 @@ name|GimpCursorType
 operator|)
 operator|-
 literal|1
+expr_stmt|;
+name|shell
+operator|->
+name|filter_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A float"
+argument_list|)
 expr_stmt|;
 name|shell
 operator|->

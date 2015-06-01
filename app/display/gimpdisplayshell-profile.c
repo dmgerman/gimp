@@ -300,10 +300,9 @@ argument_list|)
 condition|)
 name|dest_format
 operator|=
-name|babl_format
-argument_list|(
-literal|"R'G'B'A float"
-argument_list|)
+name|shell
+operator|->
+name|filter_format
 expr_stmt|;
 else|else
 name|dest_format

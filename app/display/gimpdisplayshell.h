@@ -638,6 +638,13 @@ modifier|*
 name|filters_dialog
 decl_stmt|;
 comment|/* color display filter dialog       */
+DECL|member|filter_format
+specifier|const
+name|Babl
+modifier|*
+name|filter_format
+decl_stmt|;
+comment|/*  filter_buffer's format             */
 DECL|member|filter_buffer
 name|GeglBuffer
 modifier|*

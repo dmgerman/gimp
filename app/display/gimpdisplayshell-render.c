@@ -187,16 +187,6 @@ name|node
 decl_stmt|;
 endif|#
 directive|endif
-specifier|const
-name|Babl
-modifier|*
-name|filter_format
-init|=
-name|babl_format
-argument_list|(
-literal|"R'G'B'A float"
-argument_list|)
-decl_stmt|;
 name|gdouble
 name|scale_x
 init|=
@@ -662,6 +652,8 @@ name|h
 operator|*
 name|babl_format_get_bytes_per_pixel
 argument_list|(
+name|shell
+operator|->
 name|filter_format
 argument_list|)
 argument_list|)
@@ -674,6 +666,8 @@ name|w
 operator|*
 name|babl_format_get_bytes_per_pixel
 argument_list|(
+name|shell
+operator|->
 name|filter_format
 argument_list|)
 expr_stmt|;
@@ -687,6 +681,8 @@ name|shell
 operator|->
 name|filter_data
 argument_list|,
+name|shell
+operator|->
 name|filter_format
 argument_list|,
 name|GEGL_RECTANGLE
@@ -898,6 +894,8 @@ argument_list|)
 argument_list|,
 name|buffer_scale
 argument_list|,
+name|shell
+operator|->
 name|filter_format
 argument_list|,
 name|shell
@@ -930,6 +928,8 @@ argument_list|,
 name|scaled_height
 argument_list|)
 argument_list|,
+name|shell
+operator|->
 name|filter_format
 argument_list|,
 name|shell
