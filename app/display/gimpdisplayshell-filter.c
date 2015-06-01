@@ -210,6 +210,40 @@ block|}
 end_function
 
 begin_function
+name|gboolean
+DECL|function|gimp_display_shell_has_filter (GimpDisplayShell * shell)
+name|gimp_display_shell_has_filter
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|shell
+operator|->
+name|filter_stack
+operator|&&
+name|shell
+operator|->
+name|filter_stack
+operator|->
+name|filters
+return|;
+block|}
+end_function
+
+begin_function
 name|GimpColorDisplayStack
 modifier|*
 DECL|function|gimp_display_shell_filter_new (GimpDisplayShell * shell,GimpColorConfig * config)
