@@ -105,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b87739b0103
+DECL|enum|__anon28cfd14b0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -127,7 +127,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b87739b0203
+DECL|enum|__anon28cfd14b0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -156,7 +156,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b87739b0308
+DECL|struct|__anon28cfd14b0308
 block|{
 DECL|member|name
 specifier|const
@@ -178,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b87739b0408
+DECL|struct|__anon28cfd14b0408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -2179,7 +2179,7 @@ name|NULL
 decl_stmt|;
 name|dest_profile
 operator|=
-name|gimp_lcms_profile_open_from_file
+name|gimp_color_profile_open_from_file
 argument_list|(
 name|file
 argument_list|,
@@ -2215,7 +2215,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|gimp_lcms_profile_is_rgb
+name|gimp_color_profile_is_rgb
 argument_list|(
 name|dest_profile
 argument_list|)
@@ -2234,7 +2234,7 @@ name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_lcms_profile_close
+name|gimp_color_profile_close
 argument_list|(
 name|dest_profile
 argument_list|)
@@ -2300,7 +2300,7 @@ name|src_profile
 condition|)
 name|src_profile
 operator|=
-name|gimp_lcms_create_srgb_profile
+name|gimp_color_profile_new_srgb
 argument_list|()
 expr_stmt|;
 if|if
@@ -2310,12 +2310,12 @@ name|dest_profile
 condition|)
 name|dest_profile
 operator|=
-name|gimp_lcms_create_srgb_profile
+name|gimp_color_profile_new_srgb
 argument_list|()
 expr_stmt|;
 if|if
 condition|(
-name|gimp_lcms_profile_is_equal
+name|gimp_color_profile_is_equal
 argument_list|(
 name|src_profile
 argument_list|,
@@ -2327,7 +2327,7 @@ name|gchar
 modifier|*
 name|src_label
 init|=
-name|gimp_lcms_profile_get_label
+name|gimp_color_profile_get_label
 argument_list|(
 name|src_profile
 argument_list|)
@@ -2336,17 +2336,17 @@ name|gchar
 modifier|*
 name|dest_label
 init|=
-name|gimp_lcms_profile_get_label
+name|gimp_color_profile_get_label
 argument_list|(
 name|dest_profile
 argument_list|)
 decl_stmt|;
-name|gimp_lcms_profile_close
+name|gimp_color_profile_close
 argument_list|(
 name|src_profile
 argument_list|)
 expr_stmt|;
-name|gimp_lcms_profile_close
+name|gimp_color_profile_close
 argument_list|(
 name|dest_profile
 argument_list|)
@@ -2445,12 +2445,12 @@ operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
-name|gimp_lcms_profile_close
+name|gimp_color_profile_close
 argument_list|(
 name|src_profile
 argument_list|)
 expr_stmt|;
-name|gimp_lcms_profile_close
+name|gimp_color_profile_close
 argument_list|(
 name|dest_profile
 argument_list|)
@@ -2568,7 +2568,7 @@ name|profile
 condition|)
 name|profile
 operator|=
-name|gimp_lcms_create_srgb_profile
+name|gimp_color_profile_new_srgb
 argument_list|()
 expr_stmt|;
 if|if
@@ -2578,7 +2578,7 @@ condition|)
 operator|*
 name|name
 operator|=
-name|gimp_lcms_profile_get_model
+name|gimp_color_profile_get_model
 argument_list|(
 name|profile
 argument_list|)
@@ -2590,7 +2590,7 @@ condition|)
 operator|*
 name|desc
 operator|=
-name|gimp_lcms_profile_get_description
+name|gimp_color_profile_get_description
 argument_list|(
 name|profile
 argument_list|)
@@ -2602,12 +2602,12 @@ condition|)
 operator|*
 name|info
 operator|=
-name|gimp_lcms_profile_get_summary
+name|gimp_color_profile_get_summary
 argument_list|(
 name|profile
 argument_list|)
 expr_stmt|;
-name|gimp_lcms_profile_close
+name|gimp_color_profile_close
 argument_list|(
 name|profile
 argument_list|)
@@ -2654,7 +2654,7 @@ name|profile
 decl_stmt|;
 name|profile
 operator|=
-name|gimp_lcms_profile_open_from_file
+name|gimp_color_profile_open_from_file
 argument_list|(
 name|file
 argument_list|,
@@ -2672,7 +2672,7 @@ return|;
 operator|*
 name|name
 operator|=
-name|gimp_lcms_profile_get_model
+name|gimp_color_profile_get_model
 argument_list|(
 name|profile
 argument_list|)
@@ -2680,7 +2680,7 @@ expr_stmt|;
 operator|*
 name|desc
 operator|=
-name|gimp_lcms_profile_get_description
+name|gimp_color_profile_get_description
 argument_list|(
 name|profile
 argument_list|)
@@ -2688,12 +2688,12 @@ expr_stmt|;
 operator|*
 name|info
 operator|=
-name|gimp_lcms_profile_get_summary
+name|gimp_color_profile_get_summary
 argument_list|(
 name|profile
 argument_list|)
 expr_stmt|;
-name|gimp_lcms_profile_close
+name|gimp_color_profile_close
 argument_list|(
 name|profile
 argument_list|)
@@ -2758,7 +2758,7 @@ condition|)
 block|{
 name|profile
 operator|=
-name|gimp_lcms_profile_open_from_data
+name|gimp_color_profile_open_from_data
 argument_list|(
 name|gimp_parasite_data
 argument_list|(
@@ -2867,7 +2867,7 @@ decl_stmt|;
 comment|/* check that this file is actually an ICC profile */
 name|file_profile
 operator|=
-name|gimp_lcms_profile_open_from_file
+name|gimp_color_profile_open_from_file
 argument_list|(
 name|file
 argument_list|,
@@ -2902,7 +2902,7 @@ return|;
 block|}
 name|profile_data
 operator|=
-name|gimp_lcms_profile_save_to_data
+name|gimp_color_profile_save_to_data
 argument_list|(
 name|file_profile
 argument_list|,
@@ -2913,7 +2913,7 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
-name|gimp_lcms_profile_close
+name|gimp_color_profile_close
 argument_list|(
 name|file_profile
 argument_list|)
@@ -3083,14 +3083,14 @@ return|;
 block|}
 name|src_label
 operator|=
-name|gimp_lcms_profile_get_label
+name|gimp_color_profile_get_label
 argument_list|(
 name|src_profile
 argument_list|)
 expr_stmt|;
 name|dest_label
 operator|=
-name|gimp_lcms_profile_get_label
+name|gimp_color_profile_get_label
 argument_list|(
 name|dest_profile
 argument_list|)
@@ -3416,7 +3416,7 @@ continue|continue;
 block|}
 name|iter_format
 operator|=
-name|gimp_lcms_get_format
+name|gimp_color_profile_get_format
 argument_list|(
 name|gimp_drawable_get_format
 argument_list|(
@@ -3963,7 +3963,7 @@ argument_list|)
 expr_stmt|;
 name|name
 operator|=
-name|gimp_lcms_profile_get_label
+name|gimp_color_profile_get_label
 argument_list|(
 name|profile
 argument_list|)
@@ -4073,7 +4073,7 @@ name|text
 decl_stmt|;
 name|name
 operator|=
-name|gimp_lcms_profile_get_label
+name|gimp_color_profile_get_label
 argument_list|(
 name|profile
 argument_list|)
@@ -4601,12 +4601,12 @@ name|profile
 condition|)
 name|profile
 operator|=
-name|gimp_lcms_create_srgb_profile
+name|gimp_color_profile_new_srgb
 argument_list|()
 expr_stmt|;
 name|name
 operator|=
-name|gimp_lcms_profile_get_label
+name|gimp_color_profile_get_label
 argument_list|(
 name|profile
 argument_list|)
@@ -4628,7 +4628,7 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
-name|gimp_lcms_profile_close
+name|gimp_color_profile_close
 argument_list|(
 name|profile
 argument_list|)
@@ -4774,7 +4774,7 @@ name|src_profile
 condition|)
 name|src_profile
 operator|=
-name|gimp_lcms_create_srgb_profile
+name|gimp_color_profile_new_srgb
 argument_list|()
 expr_stmt|;
 name|gimp_ui_init
@@ -4934,7 +4934,7 @@ argument_list|)
 expr_stmt|;
 name|name
 operator|=
-name|gimp_lcms_profile_get_label
+name|gimp_color_profile_get_label
 argument_list|(
 name|src_profile
 argument_list|)
@@ -5342,7 +5342,7 @@ name|NULL
 decl_stmt|;
 name|dest_profile
 operator|=
-name|gimp_lcms_profile_open_from_file
+name|gimp_color_profile_open_from_file
 argument_list|(
 name|file
 argument_list|,
@@ -5377,7 +5377,7 @@ else|else
 block|{
 name|dest_profile
 operator|=
-name|gimp_lcms_create_srgb_profile
+name|gimp_color_profile_new_srgb
 argument_list|()
 expr_stmt|;
 block|}
@@ -5388,7 +5388,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_lcms_profile_is_rgb
+name|gimp_color_profile_is_rgb
 argument_list|(
 name|dest_profile
 argument_list|)
@@ -5443,7 +5443,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_lcms_profile_close
+name|gimp_color_profile_close
 argument_list|(
 name|dest_profile
 argument_list|)
@@ -5477,7 +5477,7 @@ argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
-name|gimp_lcms_profile_close
+name|gimp_color_profile_close
 argument_list|(
 name|src_profile
 argument_list|)

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Spencer Kimball and Peter Mattis  *  * gimplcms.h  * Copyright (C) 2014  Michael Natterer<mitch@gimp.org>  *                     Elle Stone<ellestone@ninedegreesbelow.com>  *  * This library is free software: you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 3 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library.  If not, see  *<http://www.gnu.org/licenses/>.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Spencer Kimball and Peter Mattis  *  * gimpcolorprofile.h  * Copyright (C) 2014  Michael Natterer<mitch@gimp.org>  *                     Elle Stone<ellestone@ninedegreesbelow.com>  *  * This library is free software: you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 3 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library.  If not, see  *<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_if
@@ -33,21 +33,21 @@ end_endif
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_LCMS_H__
+name|__GIMP_COLOR_PROFILE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_LCMS_H__
+DECL|macro|__GIMP_COLOR_PROFILE_H__
 define|#
 directive|define
-name|__GIMP_LCMS_H__
+name|__GIMP_COLOR_PROFILE_H__
 end_define
 
 begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|GimpColorProfile
-name|gimp_lcms_profile_open_from_file
+name|gimp_color_profile_open_from_file
 parameter_list|(
 name|GFile
 modifier|*
@@ -63,7 +63,7 @@ end_function_decl
 
 begin_function_decl
 name|GimpColorProfile
-name|gimp_lcms_profile_open_from_data
+name|gimp_color_profile_open_from_data
 parameter_list|(
 specifier|const
 name|guint8
@@ -84,7 +84,7 @@ end_function_decl
 begin_function_decl
 name|guint8
 modifier|*
-name|gimp_lcms_profile_save_to_data
+name|gimp_color_profile_save_to_data
 parameter_list|(
 name|GimpColorProfile
 name|profile
@@ -103,7 +103,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_lcms_profile_close
+name|gimp_color_profile_close
 parameter_list|(
 name|GimpColorProfile
 name|profile
@@ -114,7 +114,7 @@ end_function_decl
 begin_function_decl
 name|gchar
 modifier|*
-name|gimp_lcms_profile_get_description
+name|gimp_color_profile_get_description
 parameter_list|(
 name|GimpColorProfile
 name|profile
@@ -125,7 +125,7 @@ end_function_decl
 begin_function_decl
 name|gchar
 modifier|*
-name|gimp_lcms_profile_get_manufacturer
+name|gimp_color_profile_get_manufacturer
 parameter_list|(
 name|GimpColorProfile
 name|profile
@@ -136,7 +136,7 @@ end_function_decl
 begin_function_decl
 name|gchar
 modifier|*
-name|gimp_lcms_profile_get_model
+name|gimp_color_profile_get_model
 parameter_list|(
 name|GimpColorProfile
 name|profile
@@ -147,7 +147,7 @@ end_function_decl
 begin_function_decl
 name|gchar
 modifier|*
-name|gimp_lcms_profile_get_copyright
+name|gimp_color_profile_get_copyright
 parameter_list|(
 name|GimpColorProfile
 name|profile
@@ -158,7 +158,7 @@ end_function_decl
 begin_function_decl
 name|gchar
 modifier|*
-name|gimp_lcms_profile_get_label
+name|gimp_color_profile_get_label
 parameter_list|(
 name|GimpColorProfile
 name|profile
@@ -169,7 +169,7 @@ end_function_decl
 begin_function_decl
 name|gchar
 modifier|*
-name|gimp_lcms_profile_get_summary
+name|gimp_color_profile_get_summary
 parameter_list|(
 name|GimpColorProfile
 name|profile
@@ -179,7 +179,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_lcms_profile_is_equal
+name|gimp_color_profile_is_equal
 parameter_list|(
 name|GimpColorProfile
 name|profile1
@@ -192,7 +192,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_lcms_profile_is_rgb
+name|gimp_color_profile_is_rgb
 parameter_list|(
 name|GimpColorProfile
 name|profile
@@ -202,7 +202,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_lcms_profile_is_cmyk
+name|gimp_color_profile_is_cmyk
 parameter_list|(
 name|GimpColorProfile
 name|profile
@@ -212,7 +212,7 @@ end_function_decl
 
 begin_function_decl
 name|GimpColorProfile
-name|gimp_lcms_create_srgb_profile
+name|gimp_color_profile_new_srgb
 parameter_list|(
 name|void
 parameter_list|)
@@ -221,7 +221,7 @@ end_function_decl
 
 begin_function_decl
 name|GimpColorProfile
-name|gimp_lcms_create_linear_rgb_profile
+name|gimp_color_profile_new_linear_rgb
 parameter_list|(
 name|void
 parameter_list|)
@@ -232,7 +232,7 @@ begin_function_decl
 specifier|const
 name|Babl
 modifier|*
-name|gimp_lcms_get_format
+name|gimp_color_profile_get_format
 parameter_list|(
 specifier|const
 name|Babl
@@ -256,7 +256,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_LCMS_H__ */
+comment|/* __GIMP_COLOR_PROFILE_H__ */
 end_comment
 
 end_unit

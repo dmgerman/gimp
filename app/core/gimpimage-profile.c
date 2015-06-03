@@ -252,7 +252,7 @@ return|;
 block|}
 name|profile
 operator|=
-name|gimp_lcms_profile_open_from_data
+name|gimp_color_profile_open_from_data
 argument_list|(
 name|gimp_parasite_data
 argument_list|(
@@ -290,7 +290,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|gimp_lcms_profile_is_rgb
+name|gimp_color_profile_is_rgb
 argument_list|(
 name|profile
 argument_list|)
@@ -311,7 +311,7 @@ literal|"Color profile is not for RGB color space"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_lcms_profile_close
+name|gimp_color_profile_close
 argument_list|(
 name|profile
 argument_list|)
@@ -320,7 +320,7 @@ return|return
 name|FALSE
 return|;
 block|}
-name|gimp_lcms_profile_close
+name|gimp_color_profile_close
 argument_list|(
 name|profile
 argument_list|)
@@ -483,7 +483,7 @@ condition|(
 name|parasite
 condition|)
 return|return
-name|gimp_lcms_profile_open_from_data
+name|gimp_color_profile_open_from_data
 argument_list|(
 name|gimp_parasite_data
 argument_list|(
@@ -566,7 +566,7 @@ name|length
 decl_stmt|;
 name|data
 operator|=
-name|gimp_lcms_profile_save_to_data
+name|gimp_color_profile_save_to_data
 argument_list|(
 name|profile
 argument_list|,

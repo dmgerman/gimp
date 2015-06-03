@@ -716,7 +716,7 @@ name|G_FILE_TYPE_REGULAR
 case|:
 name|profile
 operator|=
-name|gimp_lcms_profile_open_from_file
+name|gimp_color_profile_open_from_file
 argument_list|(
 name|file
 argument_list|,
@@ -763,7 +763,7 @@ argument_list|,
 name|profile
 argument_list|)
 expr_stmt|;
-name|gimp_lcms_profile_close
+name|gimp_color_profile_close
 argument_list|(
 name|profile
 argument_list|)

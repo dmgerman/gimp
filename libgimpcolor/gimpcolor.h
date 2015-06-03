@@ -56,6 +56,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpcolor/gimpcolorprofile.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpcolor/gimpcolorspace.h>
 end_include
 
@@ -75,12 +81,6 @@ begin_include
 include|#
 directive|include
 file|<libgimpcolor/gimphsv.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimpcolor/gimplcms.h>
 end_include
 
 begin_include

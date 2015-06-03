@@ -355,7 +355,7 @@ argument_list|,
 name|profile
 argument_list|)
 expr_stmt|;
-name|gimp_lcms_profile_close
+name|gimp_color_profile_close
 argument_list|(
 name|profile
 argument_list|)

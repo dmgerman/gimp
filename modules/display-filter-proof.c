@@ -184,7 +184,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbde9200103
+DECL|enum|__anon2b5d2eb50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1302,7 +1302,7 @@ condition|)
 return|return;
 name|rgb_profile
 operator|=
-name|gimp_lcms_create_srgb_profile
+name|gimp_color_profile_new_srgb
 argument_list|()
 expr_stmt|;
 name|file
@@ -1316,7 +1316,7 @@ argument_list|)
 expr_stmt|;
 name|proof_profile
 operator|=
-name|gimp_lcms_profile_open_from_file
+name|gimp_color_profile_open_from_file
 argument_list|(
 name|file
 argument_list|,
@@ -1375,13 +1375,13 @@ argument_list|,
 name|flags
 argument_list|)
 expr_stmt|;
-name|cmsCloseProfile
+name|gimp_color_profile_close
 argument_list|(
 name|proof_profile
 argument_list|)
 expr_stmt|;
 block|}
-name|cmsCloseProfile
+name|gimp_color_profile_close
 argument_list|(
 name|rgb_profile
 argument_list|)

@@ -1647,14 +1647,14 @@ condition|)
 block|{
 name|text
 operator|=
-name|gimp_lcms_profile_get_label
+name|gimp_color_profile_get_label
 argument_list|(
 name|profile
 argument_list|)
 expr_stmt|;
 name|tooltip
 operator|=
-name|gimp_lcms_profile_get_summary
+name|gimp_color_profile_get_summary
 argument_list|(
 name|profile
 argument_list|)
@@ -1710,7 +1710,7 @@ if|if
 condition|(
 name|profile
 condition|)
-name|gimp_lcms_profile_close
+name|gimp_color_profile_close
 argument_list|(
 name|profile
 argument_list|)

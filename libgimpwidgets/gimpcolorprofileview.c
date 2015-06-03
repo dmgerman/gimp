@@ -373,14 +373,14 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gimp_lcms_profile_get_label
+name|gimp_color_profile_get_label
 argument_list|(
 name|profile
 argument_list|)
 expr_stmt|;
 name|summary
 operator|=
-name|gimp_lcms_profile_get_summary
+name|gimp_color_profile_get_summary
 argument_list|(
 name|profile
 argument_list|)

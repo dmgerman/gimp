@@ -1664,7 +1664,7 @@ name|rgb_profile
 condition|)
 name|rgb_profile
 operator|=
-name|gimp_lcms_create_srgb_profile
+name|gimp_color_profile_new_srgb
 argument_list|()
 expr_stmt|;
 if|if
@@ -1677,14 +1677,14 @@ name|out
 goto|;
 name|label
 operator|=
-name|gimp_lcms_profile_get_label
+name|gimp_color_profile_get_label
 argument_list|(
 name|cmyk_profile
 argument_list|)
 expr_stmt|;
 name|summary
 operator|=
-name|gimp_lcms_profile_get_summary
+name|gimp_color_profile_get_summary
 argument_list|(
 name|cmyk_profile
 argument_list|)
@@ -1801,7 +1801,7 @@ if|if
 condition|(
 name|rgb_profile
 condition|)
-name|gimp_lcms_profile_close
+name|gimp_color_profile_close
 argument_list|(
 name|rgb_profile
 argument_list|)
@@ -1810,7 +1810,7 @@ if|if
 condition|(
 name|cmyk_profile
 condition|)
-name|gimp_lcms_profile_close
+name|gimp_color_profile_close
 argument_list|(
 name|cmyk_profile
 argument_list|)

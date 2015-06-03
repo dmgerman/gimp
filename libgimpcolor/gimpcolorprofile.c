@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Spencer Kimball and Peter Mattis  *  * gimplcms.c  * Copyright (C) 2014  Michael Natterer<mitch@gimp.org>  *                     Elle Stone<ellestone@ninedegreesbelow.com>  *  * This library is free software: you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 3 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library.  If not, see  *<http://www.gnu.org/licenses/>.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Spencer Kimball and Peter Mattis  *  * gimpcolorprofile.c  * Copyright (C) 2014  Michael Natterer<mitch@gimp.org>  *                     Elle Stone<ellestone@ninedegreesbelow.com>  *  * This library is free software: you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 3 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library.  If not, see  *<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimplcms.h"
+file|"gimpcolorprofile.h"
 end_include
 
 begin_include
@@ -58,7 +58,7 @@ file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimplcms  * @title: GimpLcms  * @short_description: Definitions and Functions relating to LCMS.  *  * Definitions and Functions relating to LCMS.  **/
+comment|/**  * SECTION: gimpcolorprofile  * @title: GimpColorProfile  * @short_description: Definitions and Functions relating to LCMS.  *  * Definitions and Functions relating to LCMS.  **/
 end_comment
 
 begin_comment
@@ -76,8 +76,8 @@ end_define
 begin_function
 specifier|static
 name|GQuark
-DECL|function|gimp_lcms_error_quark (void)
-name|gimp_lcms_error_quark
+DECL|function|gimp_color_profile_error_quark (void)
+name|gimp_color_profile_error_quark
 parameter_list|(
 name|void
 parameter_list|)
@@ -101,7 +101,7 @@ name|quark
 operator|=
 name|g_quark_from_static_string
 argument_list|(
-literal|"gimp-lcms-error-quark"
+literal|"gimp-color-profile-error-quark"
 argument_list|)
 expr_stmt|;
 return|return
@@ -111,13 +111,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_open_from_file:  * @file:  a #GFile  * @error: return location for #GError  *  * This function opens an ICC color profile from @file.  *  * Return value: the #GimpColorProfile, or %NULL. On error, %NULL is  *               returned and @error is set.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_open_from_file:  * @file:  a #GFile  * @error: return location for #GError  *  * This function opens an ICC color profile from @file.  *  * Return value: the #GimpColorProfile, or %NULL. On error, %NULL is  *               returned and @error is set.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|GimpColorProfile
-DECL|function|gimp_lcms_profile_open_from_file (GFile * file,GError ** error)
-name|gimp_lcms_profile_open_from_file
+DECL|function|gimp_color_profile_open_from_file (GFile * file,GError ** error)
+name|gimp_color_profile_open_from_file
 parameter_list|(
 name|GFile
 modifier|*
@@ -375,7 +375,7 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-name|gimp_lcms_error_quark
+name|gimp_color_profile_error_quark
 argument_list|()
 argument_list|,
 literal|0
@@ -398,13 +398,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_open_from_data:  * @data:   pointer to memory containing an ICC profile  * @length: lenght of the profile in memory, in bytes  * @error:  return location for #GError  *  * This function opens an ICC color profile from memory. On error,  * %NULL is returned and @error is set.  *  * Return value: the #GimpColorProfile, or %NULL.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_open_from_data:  * @data:   pointer to memory containing an ICC profile  * @length: lenght of the profile in memory, in bytes  * @error:  return location for #GError  *  * This function opens an ICC color profile from memory. On error,  * %NULL is returned and @error is set.  *  * Return value: the #GimpColorProfile, or %NULL.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|GimpColorProfile
-DECL|function|gimp_lcms_profile_open_from_data (const guint8 * data,gsize length,GError ** error)
-name|gimp_lcms_profile_open_from_data
+DECL|function|gimp_color_profile_open_from_data (const guint8 * data,gsize length,GError ** error)
+name|gimp_color_profile_open_from_data
 parameter_list|(
 specifier|const
 name|guint8
@@ -473,7 +473,7 @@ name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
-name|gimp_lcms_error_quark
+name|gimp_color_profile_error_quark
 argument_list|()
 argument_list|,
 literal|0
@@ -491,14 +491,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_dave_to_data:  * @profile: a #GimpColorProfile  * @length:  return location for the number of bytes written  * @error:   return location for #GError  *  * This function saves @profile to an ICC color profile in newly  * allocated memory. On error, %NULL is returned and @error is set.  *  * Return value: a pointer to the written IIC profile in memory, or  *               %NULL. Free with g_free().  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_dave_to_data:  * @profile: a #GimpColorProfile  * @length:  return location for the number of bytes written  * @error:   return location for #GError  *  * This function saves @profile to an ICC color profile in newly  * allocated memory. On error, %NULL is returned and @error is set.  *  * Return value: a pointer to the written IIC profile in memory, or  *               %NULL. Free with g_free().  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|guint8
 modifier|*
-DECL|function|gimp_lcms_profile_save_to_data (GimpColorProfile profile,gsize * length,GError ** error)
-name|gimp_lcms_profile_save_to_data
+DECL|function|gimp_color_profile_save_to_data (GimpColorProfile profile,gsize * length,GError ** error)
+name|gimp_color_profile_save_to_data
 parameter_list|(
 name|GimpColorProfile
 name|profile
@@ -602,7 +602,7 @@ name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
-name|gimp_lcms_error_quark
+name|gimp_color_profile_error_quark
 argument_list|()
 argument_list|,
 literal|0
@@ -620,13 +620,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_close:  * @profile: a #GimpColorProfile  *  * This function closes a #GimpColorProfile and frees its memory.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_close:  * @profile: a #GimpColorProfile  *  * This function closes a #GimpColorProfile and frees its memory.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_lcms_profile_close (GimpColorProfile profile)
-name|gimp_lcms_profile_close
+DECL|function|gimp_color_profile_close (GimpColorProfile profile)
+name|gimp_color_profile_close
 parameter_list|(
 name|GimpColorProfile
 name|profile
@@ -651,8 +651,8 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_lcms_profile_get_info (GimpColorProfile profile,cmsInfoType info)
-name|gimp_lcms_profile_get_info
+DECL|function|gimp_color_profile_get_info (GimpColorProfile profile,cmsInfoType info)
+name|gimp_color_profile_get_info
 parameter_list|(
 name|GimpColorProfile
 name|profile
@@ -764,21 +764,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_get_description:  * @profile: a #GimpColorProfile  *  * Return value: a newly allocated string containing @profile's  *               description. Free with g_free().  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_get_description:  * @profile: a #GimpColorProfile  *  * Return value: a newly allocated string containing @profile's  *               description. Free with g_free().  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_lcms_profile_get_description (GimpColorProfile profile)
-name|gimp_lcms_profile_get_description
+DECL|function|gimp_color_profile_get_description (GimpColorProfile profile)
+name|gimp_color_profile_get_description
 parameter_list|(
 name|GimpColorProfile
 name|profile
 parameter_list|)
 block|{
 return|return
-name|gimp_lcms_profile_get_info
+name|gimp_color_profile_get_info
 argument_list|(
 name|profile
 argument_list|,
@@ -789,21 +789,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_get_manufacturer:  * @profile: a #GimpColorProfile  *  * Return value: a newly allocated string containing @profile's  *               manufacturer. Free with g_free().  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_get_manufacturer:  * @profile: a #GimpColorProfile  *  * Return value: a newly allocated string containing @profile's  *               manufacturer. Free with g_free().  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_lcms_profile_get_manufacturer (GimpColorProfile profile)
-name|gimp_lcms_profile_get_manufacturer
+DECL|function|gimp_color_profile_get_manufacturer (GimpColorProfile profile)
+name|gimp_color_profile_get_manufacturer
 parameter_list|(
 name|GimpColorProfile
 name|profile
 parameter_list|)
 block|{
 return|return
-name|gimp_lcms_profile_get_info
+name|gimp_color_profile_get_info
 argument_list|(
 name|profile
 argument_list|,
@@ -814,21 +814,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_get_model:  * @profile: a #GimpColorProfile  *  * Return value: a newly allocated string containing @profile's  *               model. Free with g_free().  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_get_model:  * @profile: a #GimpColorProfile  *  * Return value: a newly allocated string containing @profile's  *               model. Free with g_free().  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_lcms_profile_get_model (GimpColorProfile profile)
-name|gimp_lcms_profile_get_model
+DECL|function|gimp_color_profile_get_model (GimpColorProfile profile)
+name|gimp_color_profile_get_model
 parameter_list|(
 name|GimpColorProfile
 name|profile
 parameter_list|)
 block|{
 return|return
-name|gimp_lcms_profile_get_info
+name|gimp_color_profile_get_info
 argument_list|(
 name|profile
 argument_list|,
@@ -839,21 +839,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_get_copyright:  * @profile: a #GimpColorProfile  *  * Return value: a newly allocated string containing @profile's  *               copyright. Free with g_free().  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_get_copyright:  * @profile: a #GimpColorProfile  *  * Return value: a newly allocated string containing @profile's  *               copyright. Free with g_free().  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_lcms_profile_get_copyright (GimpColorProfile profile)
-name|gimp_lcms_profile_get_copyright
+DECL|function|gimp_color_profile_get_copyright (GimpColorProfile profile)
+name|gimp_color_profile_get_copyright
 parameter_list|(
 name|GimpColorProfile
 name|profile
 parameter_list|)
 block|{
 return|return
-name|gimp_lcms_profile_get_info
+name|gimp_color_profile_get_info
 argument_list|(
 name|profile
 argument_list|,
@@ -864,14 +864,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_get_label:  * @profile: a #GimpColorProfile  *  * This function returns a newly allocated string containing  * @profile's "title", a string that can be used to label the profile  * in a user interface.  *  * Return value: the @profile's label. Free with g_free().  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_get_label:  * @profile: a #GimpColorProfile  *  * This function returns a newly allocated string containing  * @profile's "title", a string that can be used to label the profile  * in a user interface.  *  * Return value: the @profile's label. Free with g_free().  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_lcms_profile_get_label (GimpColorProfile profile)
-name|gimp_lcms_profile_get_label
+DECL|function|gimp_color_profile_get_label (GimpColorProfile profile)
+name|gimp_color_profile_get_label
 parameter_list|(
 name|GimpColorProfile
 name|profile
@@ -892,7 +892,7 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gimp_lcms_profile_get_description
+name|gimp_color_profile_get_description
 argument_list|(
 name|profile
 argument_list|)
@@ -925,7 +925,7 @@ name|label
 condition|)
 name|label
 operator|=
-name|gimp_lcms_profile_get_model
+name|gimp_color_profile_get_model
 argument_list|(
 name|profile
 argument_list|)
@@ -973,14 +973,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_get_summary:  * @profile: a #GimpColorProfile  *  * This function return a newly allocated string containing a  * multi-line summary of @profile's description, model, manufacturer  * and copyright, to be used as detailled information about the  * prpfile in a user interface.  *  * Return value: the @profile's summary. Free with g_free().  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_get_summary:  * @profile: a #GimpColorProfile  *  * This function return a newly allocated string containing a  * multi-line summary of @profile's description, model, manufacturer  * and copyright, to be used as detailled information about the  * prpfile in a user interface.  *  * Return value: the @profile's summary. Free with g_free().  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_lcms_profile_get_summary (GimpColorProfile profile)
-name|gimp_lcms_profile_get_summary
+DECL|function|gimp_color_profile_get_summary (GimpColorProfile profile)
+name|gimp_color_profile_get_summary
 parameter_list|(
 name|GimpColorProfile
 name|profile
@@ -1012,7 +1012,7 @@ argument_list|)
 expr_stmt|;
 name|text
 operator|=
-name|gimp_lcms_profile_get_description
+name|gimp_color_profile_get_description
 argument_list|(
 name|profile
 argument_list|)
@@ -1037,7 +1037,7 @@ expr_stmt|;
 block|}
 name|text
 operator|=
-name|gimp_lcms_profile_get_model
+name|gimp_color_profile_get_model
 argument_list|(
 name|profile
 argument_list|)
@@ -1072,7 +1072,7 @@ expr_stmt|;
 block|}
 name|text
 operator|=
-name|gimp_lcms_profile_get_manufacturer
+name|gimp_color_profile_get_manufacturer
 argument_list|(
 name|profile
 argument_list|)
@@ -1107,7 +1107,7 @@ expr_stmt|;
 block|}
 name|text
 operator|=
-name|gimp_lcms_profile_get_copyright
+name|gimp_color_profile_get_copyright
 argument_list|(
 name|profile
 argument_list|)
@@ -1152,13 +1152,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_is_equal:  * @profile1: a #GimpColorProfile  * @profile2: a #GimpColorProfile  *  * Compares two profiles.  *  * Return value: %TRUE if the profiles are equal, %FALSE otherwise.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_is_equal:  * @profile1: a #GimpColorProfile  * @profile2: a #GimpColorProfile  *  * Compares two profiles.  *  * Return value: %TRUE if the profiles are equal, %FALSE otherwise.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_lcms_profile_is_equal (GimpColorProfile profile1,GimpColorProfile profile2)
-name|gimp_lcms_profile_is_equal
+DECL|function|gimp_color_profile_is_equal (GimpColorProfile profile1,GimpColorProfile profile2)
+name|gimp_color_profile_is_equal
 parameter_list|(
 name|GimpColorProfile
 name|profile1
@@ -1248,13 +1248,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_is_rgb:  * @profile: a #GimpColorProfile  *  * Return value: %TRUE if the profile's color space is RGB, %FALSE  * otherwise.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_is_rgb:  * @profile: a #GimpColorProfile  *  * Return value: %TRUE if the profile's color space is RGB, %FALSE  * otherwise.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_lcms_profile_is_rgb (GimpColorProfile profile)
-name|gimp_lcms_profile_is_rgb
+DECL|function|gimp_color_profile_is_rgb (GimpColorProfile profile)
+name|gimp_color_profile_is_rgb
 parameter_list|(
 name|GimpColorProfile
 name|profile
@@ -1283,13 +1283,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_profile_is_cmyk:  * @profile: a #GimpColorProfile  *  * Return value: %TRUE if the profile's color space is CMYK, %FALSE  * otherwise.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_is_cmyk:  * @profile: a #GimpColorProfile  *  * Return value: %TRUE if the profile's color space is CMYK, %FALSE  * otherwise.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_lcms_profile_is_cmyk (GimpColorProfile profile)
-name|gimp_lcms_profile_is_cmyk
+DECL|function|gimp_color_profile_is_cmyk (GimpColorProfile profile)
+name|gimp_color_profile_is_cmyk
 parameter_list|(
 name|GimpColorProfile
 name|profile
@@ -1320,8 +1320,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_lcms_profile_set_tag (cmsHPROFILE profile,cmsTagSignature sig,const gchar * tag)
-name|gimp_lcms_profile_set_tag
+DECL|function|gimp_color_profile_set_tag (cmsHPROFILE profile,cmsTagSignature sig,const gchar * tag)
+name|gimp_color_profile_set_tag
 parameter_list|(
 name|cmsHPROFILE
 name|profile
@@ -1379,8 +1379,8 @@ end_function
 begin_function
 specifier|static
 name|GimpColorProfile
-DECL|function|gimp_lcms_create_srgb_profile_internal (void)
-name|gimp_lcms_create_srgb_profile_internal
+DECL|function|gimp_color_profile_new_srgb_internal (void)
+name|gimp_color_profile_new_srgb_internal
 parameter_list|(
 name|void
 parameter_list|)
@@ -1507,7 +1507,7 @@ argument_list|(
 name|srgb_parametric_curve
 argument_list|)
 expr_stmt|;
-name|gimp_lcms_profile_set_tag
+name|gimp_color_profile_set_tag
 argument_list|(
 name|srgb_profile
 argument_list|,
@@ -1516,7 +1516,7 @@ argument_list|,
 literal|"GIMP built-in sRGB"
 argument_list|)
 expr_stmt|;
-name|gimp_lcms_profile_set_tag
+name|gimp_color_profile_set_tag
 argument_list|(
 name|srgb_profile
 argument_list|,
@@ -1525,7 +1525,7 @@ argument_list|,
 literal|"GIMP"
 argument_list|)
 expr_stmt|;
-name|gimp_lcms_profile_set_tag
+name|gimp_color_profile_set_tag
 argument_list|(
 name|srgb_profile
 argument_list|,
@@ -1534,7 +1534,7 @@ argument_list|,
 literal|"sRGB"
 argument_list|)
 expr_stmt|;
-name|gimp_lcms_profile_set_tag
+name|gimp_color_profile_set_tag
 argument_list|(
 name|srgb_profile
 argument_list|,
@@ -1551,13 +1551,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_create_srgb_profile:  *  * This function is a replacement for cmsCreate_sRGBProfile() and  * returns an sRGB profile that is functionally the same as the  * ArgyllCMS sRGB.icm profile. "Functionally the same" means it has  * the same red, green, and blue colorants and the V4 "chad"  * equivalent of the ArgyllCMS V2 white point. The profile TRC is also  * functionally equivalent to the ArgyllCMS sRGB.icm TRC and is the  * same as the LCMS sRGB built-in profile TRC.  *  * The actual primaries in the sRGB specification are  * red xy:   {0.6400, 0.3300, 1.0}  * green xy: {0.3000, 0.6000, 1.0}  * blue xy:  {0.1500, 0.0600, 1.0}  *  * The sRGB primaries given below are "pre-quantized" to compensate  * for hexadecimal quantization during the profile-making process.  * Unless the profile-making code compensates for this quantization,  * the resulting profile's red, green, and blue colorants will deviate  * slightly from the correct XYZ values.  *  * LCMS2 doesn't compensate for hexadecimal quantization. The  * "pre-quantized" primaries below were back-calculated from the  * ArgyllCMS sRGB.icm profile. The resulting sRGB profile's colorants  * exactly matches the ArgyllCMS sRGB.icm profile colorants.  *  * Return value: the sRGB cmsHPROFILE.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_new_srgb:  *  * This function is a replacement for cmsCreate_sRGBProfile() and  * returns an sRGB profile that is functionally the same as the  * ArgyllCMS sRGB.icm profile. "Functionally the same" means it has  * the same red, green, and blue colorants and the V4 "chad"  * equivalent of the ArgyllCMS V2 white point. The profile TRC is also  * functionally equivalent to the ArgyllCMS sRGB.icm TRC and is the  * same as the LCMS sRGB built-in profile TRC.  *  * The actual primaries in the sRGB specification are  * red xy:   {0.6400, 0.3300, 1.0}  * green xy: {0.3000, 0.6000, 1.0}  * blue xy:  {0.1500, 0.0600, 1.0}  *  * The sRGB primaries given below are "pre-quantized" to compensate  * for hexadecimal quantization during the profile-making process.  * Unless the profile-making code compensates for this quantization,  * the resulting profile's red, green, and blue colorants will deviate  * slightly from the correct XYZ values.  *  * LCMS2 doesn't compensate for hexadecimal quantization. The  * "pre-quantized" primaries below were back-calculated from the  * ArgyllCMS sRGB.icm profile. The resulting sRGB profile's colorants  * exactly matches the ArgyllCMS sRGB.icm profile colorants.  *  * Return value: the sRGB cmsHPROFILE.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|GimpColorProfile
-DECL|function|gimp_lcms_create_srgb_profile (void)
-name|gimp_lcms_create_srgb_profile
+DECL|function|gimp_color_profile_new_srgb (void)
+name|gimp_color_profile_new_srgb
 parameter_list|(
 name|void
 parameter_list|)
@@ -1590,12 +1590,12 @@ name|profile
 decl_stmt|;
 name|profile
 operator|=
-name|gimp_lcms_create_srgb_profile_internal
+name|gimp_color_profile_new_srgb_internal
 argument_list|()
 expr_stmt|;
 name|profile_data
 operator|=
-name|gimp_lcms_profile_save_to_data
+name|gimp_color_profile_save_to_data
 argument_list|(
 name|profile
 argument_list|,
@@ -1605,14 +1605,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_lcms_profile_close
+name|gimp_color_profile_close
 argument_list|(
 name|profile
 argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|gimp_lcms_profile_open_from_data
+name|gimp_color_profile_open_from_data
 argument_list|(
 name|profile_data
 argument_list|,
@@ -1627,8 +1627,8 @@ end_function
 begin_function
 specifier|static
 name|GimpColorProfile
-DECL|function|gimp_lcms_create_linear_rgb_profile_internal (void)
-name|gimp_lcms_create_linear_rgb_profile_internal
+DECL|function|gimp_color_profile_new_linear_rgb_internal (void)
+name|gimp_color_profile_new_linear_rgb_internal
 parameter_list|(
 name|void
 parameter_list|)
@@ -1736,7 +1736,7 @@ literal|0
 index|]
 argument_list|)
 expr_stmt|;
-name|gimp_lcms_profile_set_tag
+name|gimp_color_profile_set_tag
 argument_list|(
 name|profile
 argument_list|,
@@ -1745,7 +1745,7 @@ argument_list|,
 literal|"GIMP built-in Linear RGB"
 argument_list|)
 expr_stmt|;
-name|gimp_lcms_profile_set_tag
+name|gimp_color_profile_set_tag
 argument_list|(
 name|profile
 argument_list|,
@@ -1754,7 +1754,7 @@ argument_list|,
 literal|"GIMP"
 argument_list|)
 expr_stmt|;
-name|gimp_lcms_profile_set_tag
+name|gimp_color_profile_set_tag
 argument_list|(
 name|profile
 argument_list|,
@@ -1763,7 +1763,7 @@ argument_list|,
 literal|"Linear RGB"
 argument_list|)
 expr_stmt|;
-name|gimp_lcms_profile_set_tag
+name|gimp_color_profile_set_tag
 argument_list|(
 name|profile
 argument_list|,
@@ -1779,13 +1779,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_create_linear_rgb_profile:  *  * This function creates a profile for babl_model("RGB"). Please  * somebody write someting smarter here.  *  * Return value: the linear RGB cmsHPROFILE.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_new_linear_rgb:  *  * This function creates a profile for babl_model("RGB"). Please  * somebody write someting smarter here.  *  * Return value: the linear RGB cmsHPROFILE.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|GimpColorProfile
-DECL|function|gimp_lcms_create_linear_rgb_profile (void)
-name|gimp_lcms_create_linear_rgb_profile
+DECL|function|gimp_color_profile_new_linear_rgb (void)
+name|gimp_color_profile_new_linear_rgb
 parameter_list|(
 name|void
 parameter_list|)
@@ -1818,12 +1818,12 @@ name|profile
 decl_stmt|;
 name|profile
 operator|=
-name|gimp_lcms_create_linear_rgb_profile_internal
+name|gimp_color_profile_new_linear_rgb_internal
 argument_list|()
 expr_stmt|;
 name|profile_data
 operator|=
-name|gimp_lcms_profile_save_to_data
+name|gimp_color_profile_save_to_data
 argument_list|(
 name|profile
 argument_list|,
@@ -1833,14 +1833,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_lcms_profile_close
+name|gimp_color_profile_close
 argument_list|(
 name|profile
 argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|gimp_lcms_profile_open_from_data
+name|gimp_color_profile_open_from_data
 argument_list|(
 name|profile_data
 argument_list|,
@@ -1853,15 +1853,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lcms_get_format:  * @format:      a #Babl format  * @lcms_format: return location for an lcms format  *  * This function takes a #Babl format and returns the lcms format to  * be used with that @format. It also returns a #Babl format to be  * used instead of the passed @format, which usually is the same as  * @format, unless lcms doesn't support @format.  *  * Note that this function currently only supports RGB, RGBA, R'G'B' and  * R'G'B'A formats.  *  * Return value: the #Babl format to be used instead of @format, or %NULL  *               is the passed @format is not supported at all.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_get_format:  * @format:      a #Babl format  * @lcms_format: return location for an lcms format  *  * This function takes a #Babl format and returns the lcms format to  * be used with that @format. It also returns a #Babl format to be  * used instead of the passed @format, which usually is the same as  * @format, unless lcms doesn't support @format.  *  * Note that this function currently only supports RGB, RGBA, R'G'B' and  * R'G'B'A formats.  *  * Return value: the #Babl format to be used instead of @format, or %NULL  *               is the passed @format is not supported at all.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_lcms_get_format (const Babl * format,guint32 * lcms_format)
-name|gimp_lcms_get_format
+DECL|function|gimp_color_profile_get_format (const Babl * format,guint32 * lcms_format)
+name|gimp_color_profile_get_format
 parameter_list|(
 specifier|const
 name|Babl

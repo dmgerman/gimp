@@ -360,7 +360,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bffd30b0103
+DECL|enum|__anon2a1fa2e20103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -457,7 +457,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bffd30b0203
+DECL|enum|__anon2a1fa2e20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5993,13 +5993,13 @@ argument_list|)
 condition|)
 name|profile
 operator|=
-name|gimp_lcms_create_linear_rgb_profile
+name|gimp_color_profile_new_linear_rgb
 argument_list|()
 expr_stmt|;
 else|else
 name|profile
 operator|=
-name|gimp_lcms_create_srgb_profile
+name|gimp_color_profile_new_srgb
 argument_list|()
 expr_stmt|;
 block|}
