@@ -1641,7 +1641,7 @@ name|out
 goto|;
 name|rgb_profile
 operator|=
-name|gimp_color_config_get_rgb_profile
+name|gimp_color_config_get_rgb_color_profile
 argument_list|(
 name|config
 argument_list|,
@@ -1650,7 +1650,7 @@ argument_list|)
 expr_stmt|;
 name|cmyk_profile
 operator|=
-name|gimp_color_config_get_cmyk_profile
+name|gimp_color_config_get_cmyk_color_profile
 argument_list|(
 name|config
 argument_list|,

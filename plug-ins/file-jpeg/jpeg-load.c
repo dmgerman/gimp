@@ -2036,7 +2036,7 @@ name|cmyk_profile
 condition|)
 name|cmyk_profile
 operator|=
-name|gimp_color_config_get_cmyk_profile
+name|gimp_color_config_get_cmyk_color_profile
 argument_list|(
 name|config
 argument_list|,
@@ -2062,7 +2062,7 @@ block|}
 comment|/*  try to load the RGB profile configured in the prefs  */
 name|rgb_profile
 operator|=
-name|gimp_color_config_get_rgb_profile
+name|gimp_color_config_get_rgb_color_profile
 argument_list|(
 name|config
 argument_list|,

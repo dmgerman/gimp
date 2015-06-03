@@ -201,7 +201,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon292dec110103
+DECL|enum|__anon27d9b1a80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1298,8 +1298,8 @@ end_function
 
 begin_function
 name|GimpColorProfile
-DECL|function|gimp_color_config_get_rgb_profile (GimpColorConfig * config,GError ** error)
-name|gimp_color_config_get_rgb_profile
+DECL|function|gimp_color_config_get_rgb_color_profile (GimpColorConfig * config,GError ** error)
+name|gimp_color_config_get_rgb_color_profile
 parameter_list|(
 name|GimpColorConfig
 modifier|*
@@ -1421,8 +1421,8 @@ end_function
 
 begin_function
 name|GimpColorProfile
-DECL|function|gimp_color_config_get_cmyk_profile (GimpColorConfig * config,GError ** error)
-name|gimp_color_config_get_cmyk_profile
+DECL|function|gimp_color_config_get_cmyk_color_profile (GimpColorConfig * config,GError ** error)
+name|gimp_color_config_get_cmyk_color_profile
 parameter_list|(
 name|GimpColorConfig
 modifier|*
@@ -1544,8 +1544,8 @@ end_function
 
 begin_function
 name|GimpColorProfile
-DECL|function|gimp_color_config_get_display_profile (GimpColorConfig * config,GError ** error)
-name|gimp_color_config_get_display_profile
+DECL|function|gimp_color_config_get_display_color_profile (GimpColorConfig * config,GError ** error)
+name|gimp_color_config_get_display_color_profile
 parameter_list|(
 name|GimpColorConfig
 modifier|*
@@ -1627,8 +1627,8 @@ end_function
 
 begin_function
 name|GimpColorProfile
-DECL|function|gimp_color_config_get_printer_profile (GimpColorConfig * config,GError ** error)
-name|gimp_color_config_get_printer_profile
+DECL|function|gimp_color_config_get_printer_color_profile (GimpColorConfig * config,GError ** error)
+name|gimp_color_config_get_printer_color_profile
 parameter_list|(
 name|GimpColorConfig
 modifier|*

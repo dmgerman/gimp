@@ -1568,7 +1568,7 @@ name|profile
 condition|)
 name|profile
 operator|=
-name|gimp_color_config_get_display_profile
+name|gimp_color_config_get_display_color_profile
 argument_list|(
 name|config
 argument_list|,
@@ -1727,7 +1727,7 @@ name|GIMP_COLOR_MANAGEMENT_SOFTPROOF
 case|:
 name|proof_profile
 operator|=
-name|gimp_color_config_get_printer_profile
+name|gimp_color_config_get_printer_color_profile
 argument_list|(
 name|config
 argument_list|,

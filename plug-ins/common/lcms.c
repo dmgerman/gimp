@@ -105,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cfd14b0103
+DECL|enum|__anon291a73d90103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -127,7 +127,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cfd14b0203
+DECL|enum|__anon291a73d90203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -156,7 +156,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cfd14b0308
+DECL|struct|__anon291a73d90308
 block|{
 DECL|member|name
 specifier|const
@@ -178,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cfd14b0408
+DECL|struct|__anon291a73d90408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -2798,7 +2798,7 @@ else|else
 block|{
 name|profile
 operator|=
-name|gimp_color_config_get_rgb_profile
+name|gimp_color_config_get_rgb_color_profile
 argument_list|(
 name|config
 argument_list|,
@@ -4552,7 +4552,7 @@ argument_list|)
 expr_stmt|;
 name|profile
 operator|=
-name|gimp_color_config_get_rgb_profile
+name|gimp_color_config_get_rgb_color_profile
 argument_list|(
 name|config
 argument_list|,

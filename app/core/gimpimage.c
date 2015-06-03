@@ -360,7 +360,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1fa2e20103
+DECL|enum|__anon296ea0540103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -457,7 +457,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1fa2e20203
+DECL|enum|__anon296ea0540203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5958,7 +5958,7 @@ name|color_management
 decl_stmt|;
 name|profile
 operator|=
-name|gimp_color_config_get_rgb_profile
+name|gimp_color_config_get_rgb_color_profile
 argument_list|(
 name|config
 argument_list|,
