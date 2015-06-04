@@ -4801,7 +4801,7 @@ literal|"operation"
 argument_list|,
 literal|"gegl:edge"
 argument_list|,
-literal|"algorihm"
+literal|"algorithm"
 argument_list|,
 name|edgemode
 argument_list|,
