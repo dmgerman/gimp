@@ -105,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291a73d90103
+DECL|enum|__anon27ec8bea0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -127,7 +127,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291a73d90203
+DECL|enum|__anon27ec8bea0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -156,7 +156,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291a73d90308
+DECL|struct|__anon27ec8bea0308
 block|{
 DECL|member|name
 specifier|const
@@ -178,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291a73d90408
+DECL|struct|__anon27ec8bea0408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -349,7 +349,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|cmsHPROFILE
+name|GimpColorProfile
 name|lcms_image_get_profile
 parameter_list|(
 name|GimpColorConfig
@@ -2706,7 +2706,7 @@ end_function
 
 begin_function
 specifier|static
-name|cmsHPROFILE
+name|GimpColorProfile
 DECL|function|lcms_image_get_profile (GimpColorConfig * config,gint32 image,GError ** error)
 name|lcms_image_get_profile
 parameter_list|(
@@ -2723,14 +2723,8 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GimpParasite
-modifier|*
-name|parasite
-decl_stmt|;
-name|cmsHPROFILE
+name|GimpColorProfile
 name|profile
-init|=
-name|NULL
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -2742,35 +2736,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|parasite
-operator|=
-name|gimp_image_get_parasite
-argument_list|(
-name|image
-argument_list|,
-literal|"icc-profile"
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|parasite
-condition|)
-block|{
 name|profile
 operator|=
-name|gimp_color_profile_open_from_data
+name|gimp_image_get_color_profile
 argument_list|(
-name|gimp_parasite_data
-argument_list|(
-name|parasite
-argument_list|)
-argument_list|,
-name|gimp_parasite_data_size
-argument_list|(
-name|parasite
-argument_list|)
-argument_list|,
-name|error
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -2778,24 +2748,6 @@ condition|(
 operator|!
 name|profile
 condition|)
-name|g_prefix_error
-argument_list|(
-name|error
-argument_list|,
-name|_
-argument_list|(
-literal|"Error parsing 'icc-profile': "
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_parasite_free
-argument_list|(
-name|parasite
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
 name|profile
 operator|=
 name|gimp_color_config_get_rgb_color_profile
@@ -2805,7 +2757,6 @@ argument_list|,
 name|error
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|profile
 return|;
