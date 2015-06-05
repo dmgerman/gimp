@@ -194,6 +194,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpimagecolorprofile_pdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpimageconvert_pdb.h>
 end_include
 

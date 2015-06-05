@@ -134,6 +134,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpimagecolorprofile.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimplayer.h>
 end_include
 
