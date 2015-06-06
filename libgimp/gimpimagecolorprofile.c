@@ -16,7 +16,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_image_get_color_profile:  * @image_ID: The image.  *  * Returns the image's color profile  *  * This procedure returns the image's color profile.  *  * Returns: The image's color profile. The returned value  *          must be freed with gimp_color_profile_close().  *  * Since: 2.10  **/
+comment|/**  * gimp_image_get_color_profile:  * @image_ID: The image.  *  * Returns the image's color profile  *  * This procedure returns the image's color profile, or NULL if the  * image has no color profile assigned.  *  * Returns: The image's color profile. The returned value  *          must be freed with gimp_color_profile_close().  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -160,6 +160,70 @@ argument_list|)
 expr_stmt|;
 return|return
 name|success
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_image_get_effective_color_profile:  * @image_ID: The image.  *  * Returns the color profile that is used for the image.  *  * This procedure returns the color profile that is actually used for  * this image, which is the profile returned by  * gimp_image_get_color_profile() if the image has a profile assigned,  * or the default RGB profile from preferences if no profile is  * assigned to the image. If there is no default RGB profile configured  * in preferences either, a generated default RGB profile is returned.  *  * Returns: The color profile. The returned value  *          must be freed with gimp_color_profile_close().  *  * Since: 2.10  **/
+end_comment
+
+begin_function
+name|GimpColorProfile
+DECL|function|gimp_image_get_effective_color_profile (gint32 image_ID)
+name|gimp_image_get_effective_color_profile
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|)
+block|{
+name|guint8
+modifier|*
+name|data
+decl_stmt|;
+name|gint
+name|length
+decl_stmt|;
+name|data
+operator|=
+name|_gimp_image_get_effective_color_profile
+argument_list|(
+name|image_ID
+argument_list|,
+operator|&
+name|length
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|data
+condition|)
+block|{
+name|GimpColorProfile
+name|profile
+decl_stmt|;
+name|profile
+operator|=
+name|gimp_color_profile_open_from_data
+argument_list|(
+name|data
+argument_list|,
+name|length
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
+return|return
+name|profile
+return|;
+block|}
+return|return
+name|NULL
 return|;
 block|}
 end_function

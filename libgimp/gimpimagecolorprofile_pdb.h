@@ -84,6 +84,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|G_GNUC_INTERNAL
+name|guint8
+modifier|*
+name|_gimp_image_get_effective_color_profile
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+name|gint
+modifier|*
+name|num_bytes
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
