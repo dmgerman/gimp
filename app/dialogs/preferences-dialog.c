@@ -8650,7 +8650,7 @@ literal|"initial-zoom-to-fit"
 argument_list|,
 name|_
 argument_list|(
-literal|"Fit to window"
+literal|"Show entire image"
 argument_list|)
 argument_list|,
 literal|"1:1"
@@ -9046,7 +9046,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b0d638d0108
+DECL|struct|__anon2af2cf960108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10307,7 +10307,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b0d638d0208
+DECL|struct|__anon2af2cf960208
 block|{
 DECL|member|label
 specifier|const
@@ -11534,7 +11534,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b0d638d0308
+DECL|struct|__anon2af2cf960308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11689,7 +11689,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b0d638d0408
+DECL|struct|__anon2af2cf960408
 block|{
 DECL|member|tree_label
 specifier|const
