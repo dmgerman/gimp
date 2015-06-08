@@ -1559,6 +1559,8 @@ literal|"gegl:difference-of-gaussians"
 block|,
 literal|"gegl:diffraction-patterns"
 block|,
+literal|"gegl:displace"
+block|,
 literal|"gegl:distance-transform"
 block|,
 literal|"gegl:dropshadow"

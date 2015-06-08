@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b869d9b0103
+DECL|enum|__anon2ae1741e0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -362,6 +362,8 @@ block|,
 literal|"gegl:difference-of-gaussians"
 block|,
 literal|"gegl:diffraction-patterns"
+block|,
+literal|"gegl:displace"
 block|,
 literal|"gegl:distance-transform"
 block|,
