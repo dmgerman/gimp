@@ -315,7 +315,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b4f41a0108
+DECL|struct|__anon2c756d490108
 block|{
 DECL|member|cinfo
 name|struct
@@ -392,7 +392,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b4f41a0208
+DECL|struct|__anon2c756d490208
 block|{
 DECL|member|run
 name|gboolean
@@ -420,13 +420,13 @@ name|gulong
 name|handler_id_restart
 decl_stmt|;
 DECL|member|quality
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|quality
 decl_stmt|;
 comment|/*quality slidebar*/
 DECL|member|smoothing
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|smoothing
 decl_stmt|;
@@ -540,7 +540,7 @@ name|GtkWidget
 modifier|*
 name|combo
 parameter_list|,
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|entry
 parameter_list|)
@@ -552,7 +552,7 @@ specifier|static
 name|void
 name|quality_changed
 parameter_list|(
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|scale_entry
 parameter_list|,
@@ -568,7 +568,7 @@ specifier|static
 name|void
 name|subsampling_changed2
 parameter_list|(
-name|GtkObject
+name|GtkWidget
 modifier|*
 name|combo
 parameter_list|,
@@ -588,7 +588,7 @@ name|GtkWidget
 modifier|*
 name|toggle
 parameter_list|,
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|scale_entry
 parameter_list|)
@@ -2877,7 +2877,7 @@ name|GtkWidget
 modifier|*
 name|vbox
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|entry
 decl_stmt|;
@@ -3084,6 +3084,10 @@ name|quality
 operator|=
 name|entry
 operator|=
+operator|(
+name|GtkAdjustment
+operator|*
+operator|)
 name|gimp_scale_entry_new
 argument_list|(
 name|GTK_TABLE
@@ -3539,6 +3543,10 @@ name|smoothing
 operator|=
 name|entry
 operator|=
+operator|(
+name|GtkAdjustment
+operator|*
+operator|)
 name|gimp_scale_entry_new
 argument_list|(
 name|GTK_TABLE
@@ -6288,14 +6296,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|subsampling_changed (GtkWidget * combo,GtkObject * entry)
+DECL|function|subsampling_changed (GtkWidget * combo,GtkAdjustment * entry)
 name|subsampling_changed
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|combo
 parameter_list|,
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|entry
 parameter_list|)
@@ -6323,6 +6331,9 @@ expr_stmt|;
 comment|/*  smoothing is not supported with nonstandard sampling ratios  */
 name|gimp_scale_entry_set_sensitive
 argument_list|(
+operator|(
+name|gpointer
+operator|)
 name|entry
 argument_list|,
 name|jsvals
@@ -6347,10 +6358,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|quality_changed (GtkObject * scale_entry,GtkWidget * toggle)
+DECL|function|quality_changed (GtkAdjustment * scale_entry,GtkWidget * toggle)
 name|quality_changed
 parameter_list|(
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|scale_entry
 parameter_list|,
@@ -6383,10 +6394,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|subsampling_changed2 (GtkObject * combo,GtkWidget * toggle)
+DECL|function|subsampling_changed2 (GtkWidget * combo,GtkWidget * toggle)
 name|subsampling_changed2
 parameter_list|(
-name|GtkObject
+name|GtkWidget
 modifier|*
 name|combo
 parameter_list|,
@@ -6425,14 +6436,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|use_orig_qual_changed (GtkWidget * toggle,GtkObject * scale_entry)
+DECL|function|use_orig_qual_changed (GtkWidget * toggle,GtkAdjustment * scale_entry)
 name|use_orig_qual_changed
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|toggle
 parameter_list|,
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|scale_entry
 parameter_list|)
@@ -6459,10 +6470,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|scale_entry
-argument_list|)
 argument_list|,
 name|orig_quality
 argument_list|)
