@@ -2175,8 +2175,10 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"gimp_lcms_get_format: layer format %s not supported, "
+literal|"%s: layer format %s not supported, "
 literal|"falling back to float\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|,
 name|babl_get_name
 argument_list|(
