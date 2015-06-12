@@ -611,14 +611,29 @@ name|shell
 argument_list|)
 condition|)
 block|{
+name|gboolean
+name|can_convert_to_u8
+decl_stmt|;
 comment|/*  if there is a profile transform or a display filter, we need        *  to use temp buffers        */
+name|can_convert_to_u8
+operator|=
+name|gimp_display_shell_profile_can_convert_to_u8
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 comment|/*  create the filter buffer if we have filters        */
 if|if
 condition|(
+operator|(
 name|gimp_display_shell_has_filter
 argument_list|(
 name|shell
 argument_list|)
+operator|||
+operator|!
+name|can_convert_to_u8
+operator|)
 operator|&&
 operator|!
 name|shell
@@ -794,6 +809,9 @@ name|gimp_display_shell_has_filter
 argument_list|(
 name|shell
 argument_list|)
+operator|||
+operator|!
+name|can_convert_to_u8
 condition|)
 block|{
 comment|/*  if there are filters, convert the pixels from the                *  profile_buffer to the filter_buffer                */
@@ -977,6 +995,18 @@ name|scaled_height
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+if|if
+condition|(
+name|gimp_display_shell_has_filter
+argument_list|(
+name|shell
+argument_list|)
+operator|||
+operator|!
+name|can_convert_to_u8
+condition|)
+block|{
 comment|/*  finally, copy the filter buffer to the cairo-ARGB32 buffer            */
 name|gegl_buffer_get
 argument_list|(
