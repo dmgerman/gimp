@@ -6457,6 +6457,25 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
+name|button
+operator|=
+name|prefs_check_button_add
+argument_list|(
+name|object
+argument_list|,
+literal|"playground-seamless-clone-tool"
+argument_list|,
+name|_
+argument_list|(
+literal|"_Seamless Clone tool"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 comment|/***********/
 comment|/*  Theme  */
@@ -9046,7 +9065,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2af2cf960108
+DECL|struct|__anon2bf512900108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10307,7 +10326,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2af2cf960208
+DECL|struct|__anon2bf512900208
 block|{
 DECL|member|label
 specifier|const
@@ -11534,7 +11553,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2af2cf960308
+DECL|struct|__anon2bf512900308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11689,7 +11708,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2af2cf960408
+DECL|struct|__anon2bf512900408
 block|{
 DECL|member|tree_label
 specifier|const

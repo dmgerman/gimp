@@ -58,6 +58,16 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpguiconfig.h"
+end_include
+
+begin_comment
+comment|/* playground */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -237,7 +247,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad40f930103
+DECL|enum|__anon292ddfb70103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -612,6 +622,21 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+comment|/* we should not know that "data" is a Gimp*, but what the heck this    * is experimental playground stuff    */
+if|if
+condition|(
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|GIMP
+argument_list|(
+name|data
+argument_list|)
+operator|->
+name|config
+argument_list|)
+operator|->
+name|playground_seamless_clone_tool
+condition|)
 call|(
 modifier|*
 name|callback
