@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fc508d0103
+DECL|enum|__anon2c2318e00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -100,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fc508d0208
+DECL|struct|__anon2c2318e00208
 block|{
 DECL|member|orientation
 name|GtkOrientation
@@ -180,7 +180,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29fc508d0308
+DECL|struct|__anon2c2318e00308
 block|{
 DECL|member|ruler_scale
 specifier|const
@@ -653,7 +653,7 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_LOWER
+name|PROP_UNIT
 argument_list|,
 name|gimp_param_spec_unit
 argument_list|(
