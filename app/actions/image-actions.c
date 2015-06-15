@@ -196,6 +196,19 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"image-color-management-menu"
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"image-action"
+argument_list|,
+literal|"_Color Management"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"image-transform-menu"
 block|,
 name|NULL

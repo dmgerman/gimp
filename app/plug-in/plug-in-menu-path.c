@@ -229,6 +229,14 @@ literal|"<Image>/File/Create"
 block|}
 block|,
 block|{
+literal|"<Image>/Image/Mode/Color Profile"
+block|,
+name|NULL
+block|,
+literal|"<Image>/Image/Color Management"
+block|}
+block|,
+block|{
 name|NULL
 block|,
 name|NULL

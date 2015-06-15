@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c987bcb0103
+DECL|enum|__anon2791c9450103
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -112,7 +112,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c987bcb0208
+DECL|struct|__anon2791c9450208
 block|{
 DECL|member|name
 specifier|const
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c987bcb0308
+DECL|struct|__anon2791c9450308
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -699,14 +699,14 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_PROC_SET
 argument_list|,
-literal|"<Image>/Image/Mode/Color Profile"
+literal|"<Image>/Image/Color Management"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_PROC_APPLY
 argument_list|,
-literal|"<Image>/Image/Mode/Color Profile"
+literal|"<Image>/Image/Color Management"
 argument_list|)
 expr_stmt|;
 block|}
