@@ -1788,12 +1788,8 @@ block|{
 name|cmsUInt32Number
 name|softproof_flags
 init|=
-literal|0
-decl_stmt|;
-name|softproof_flags
-operator||=
 name|cmsFLAGS_SOFTPROOFING
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|config
