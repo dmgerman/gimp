@@ -70,6 +70,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|guint8
+modifier|*
+name|gimp_pixbuf_get_icc_profile
+parameter_list|(
+name|GdkPixbuf
+modifier|*
+name|pixbuf
+parameter_list|,
+name|gsize
+modifier|*
+name|length
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
