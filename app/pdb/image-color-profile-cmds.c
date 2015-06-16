@@ -176,8 +176,6 @@ operator|=
 name|gimp_image_get_color_profile
 argument_list|(
 name|image
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 if|if

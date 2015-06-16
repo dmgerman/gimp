@@ -888,17 +888,12 @@ end_function
 
 begin_function
 name|GimpColorProfile
-DECL|function|gimp_image_get_color_profile (GimpImage * image,GError ** error)
+DECL|function|gimp_image_get_color_profile (GimpImage * image)
 name|gimp_image_get_color_profile
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
-parameter_list|,
-name|GError
-modifier|*
-modifier|*
-name|error
 parameter_list|)
 block|{
 specifier|const
@@ -912,20 +907,6 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|image
 argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|error
-operator|==
-name|NULL
-operator|||
-operator|*
-name|error
-operator|==
-name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -954,7 +935,7 @@ argument_list|(
 name|parasite
 argument_list|)
 argument_list|,
-name|error
+name|NULL
 argument_list|)
 return|;
 return|return
