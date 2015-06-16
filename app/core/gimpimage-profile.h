@@ -26,7 +26,7 @@ end_define
 
 begin_function_decl
 name|gboolean
-name|gimp_image_validate_icc_profile
+name|gimp_image_validate_icc_parasite
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -49,7 +49,7 @@ begin_function_decl
 specifier|const
 name|GimpParasite
 modifier|*
-name|gimp_image_get_icc_profile
+name|gimp_image_get_icc_parasite
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -60,7 +60,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_set_icc_profile
+name|gimp_image_set_icc_parasite
 parameter_list|(
 name|GimpImage
 modifier|*

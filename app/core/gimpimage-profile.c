@@ -195,8 +195,8 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_validate_icc_profile (GimpImage * image,const GimpParasite * icc_profile,GError ** error)
-name|gimp_image_validate_icc_profile
+DECL|function|gimp_image_validate_icc_parasite (GimpImage * image,const GimpParasite * icc_profile,GError ** error)
+name|gimp_image_validate_icc_parasite
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -391,8 +391,8 @@ begin_function
 specifier|const
 name|GimpParasite
 modifier|*
-DECL|function|gimp_image_get_icc_profile (GimpImage * image)
-name|gimp_image_get_icc_profile
+DECL|function|gimp_image_get_icc_parasite (GimpImage * image)
+name|gimp_image_get_icc_parasite
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -422,8 +422,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_icc_profile (GimpImage * image,const GimpParasite * icc_profile)
-name|gimp_image_set_icc_profile
+DECL|function|gimp_image_set_icc_parasite (GimpImage * image,const GimpParasite * icc_profile)
+name|gimp_image_set_icc_parasite
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -450,7 +450,7 @@ condition|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|gimp_image_validate_icc_profile
+name|gimp_image_validate_icc_parasite
 argument_list|(
 name|image
 argument_list|,
@@ -643,7 +643,7 @@ argument_list|)
 expr_stmt|;
 name|parasite
 operator|=
-name|gimp_image_get_icc_profile
+name|gimp_image_get_icc_parasite
 argument_list|(
 name|image
 argument_list|)
@@ -790,7 +790,7 @@ name|data
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_image_set_icc_profile
+name|gimp_image_set_icc_parasite
 argument_list|(
 name|image
 argument_list|,

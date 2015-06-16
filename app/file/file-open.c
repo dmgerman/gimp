@@ -3124,7 +3124,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|gimp_image_get_icc_profile
+name|gimp_image_get_icc_parasite
 argument_list|(
 name|image
 argument_list|)

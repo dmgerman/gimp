@@ -360,7 +360,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon296ea0540103
+DECL|enum|__anon2afbf9370103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -457,7 +457,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296ea0540203
+DECL|enum|__anon2afbf9370203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5859,7 +5859,7 @@ name|parasite
 decl_stmt|;
 name|parasite
 operator|=
-name|gimp_image_get_icc_profile
+name|gimp_image_get_icc_parasite
 argument_list|(
 name|GIMP_IMAGE
 argument_list|(
@@ -13301,7 +13301,7 @@ literal|0
 condition|)
 block|{
 return|return
-name|gimp_image_validate_icc_profile
+name|gimp_image_validate_icc_parasite
 argument_list|(
 name|image
 argument_list|,
