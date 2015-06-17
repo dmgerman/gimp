@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimplayer-new.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplayermask.h"
 end_include
 
@@ -2265,7 +2271,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be8681f0108
+DECL|struct|__anon2972e06f0108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2659,7 +2665,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be8681f0208
+DECL|struct|__anon2972e06f0208
 block|{
 DECL|member|mask_column
 name|gint

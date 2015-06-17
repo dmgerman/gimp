@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimplayer-new.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tests.h"
 end_include
 

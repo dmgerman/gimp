@@ -138,6 +138,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimplayer-new.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppickable.h"
 end_include
 

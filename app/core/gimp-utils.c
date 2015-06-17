@@ -2686,6 +2686,12 @@ directive|include
 file|"gimplayer.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimplayer-new.h"
+end_include
+
 begin_function
 name|void
 DECL|function|gimp_create_image_from_buffer (Gimp * gimp,GeglBuffer * buffer)

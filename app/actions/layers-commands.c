@@ -120,6 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimplayer-new.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimppickable.h"
 end_include
 
