@@ -2693,8 +2693,9 @@ file|"gimplayer-new.h"
 end_include
 
 begin_function
-name|void
-DECL|function|gimp_create_image_from_buffer (Gimp * gimp,GeglBuffer * buffer)
+name|GimpImage
+modifier|*
+DECL|function|gimp_create_image_from_buffer (Gimp * gimp,GeglBuffer * buffer,const gchar * image_name)
 name|gimp_create_image_from_buffer
 parameter_list|(
 name|Gimp
@@ -2704,6 +2705,11 @@ parameter_list|,
 name|GeglBuffer
 modifier|*
 name|buffer
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|image_name
 parameter_list|)
 block|{
 name|GimpImage
@@ -2719,21 +2725,34 @@ name|Babl
 modifier|*
 name|format
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GEGL_IS_BUFFER
 argument_list|(
 name|buffer
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|image_name
+condition|)
+name|image_name
+operator|=
+literal|"Debug Image"
 expr_stmt|;
 name|format
 operator|=
@@ -2781,7 +2800,7 @@ name|image
 argument_list|,
 name|format
 argument_list|,
-literal|"Debug Image"
+name|image_name
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
@@ -2818,11 +2837,28 @@ literal|0
 argument_list|)
 expr_stmt|;
 comment|/* unref the image unconditionally, even when no display was created */
+name|g_object_add_weak_pointer
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+operator|&
+name|image
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+return|return
+name|image
+return|;
 block|}
 end_function
 

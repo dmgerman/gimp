@@ -315,7 +315,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|GimpImage
+modifier|*
 name|gimp_create_image_from_buffer
 parameter_list|(
 name|Gimp
@@ -325,6 +326,11 @@ parameter_list|,
 name|GeglBuffer
 modifier|*
 name|buffer
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|image_name
 parameter_list|)
 function_decl|;
 end_function_decl
