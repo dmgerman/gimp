@@ -3591,7 +3591,7 @@ expr_stmt|;
 comment|/* Create a new layer from the buffer, using the drawable's type    *  because it may be different from the image's type if we cut from    *  a channel or layer mask    */
 name|layer
 operator|=
-name|gimp_layer_new_from_buffer
+name|gimp_layer_new_from_gegl_buffer
 argument_list|(
 name|buffer
 argument_list|,

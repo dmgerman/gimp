@@ -1388,10 +1388,7 @@ name|layer
 operator|=
 name|gimp_layer_new_from_buffer
 argument_list|(
-name|gimp_buffer_get_buffer
-argument_list|(
 name|buffer
-argument_list|)
 argument_list|,
 name|image
 argument_list|,

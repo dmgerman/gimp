@@ -627,7 +627,7 @@ argument_list|)
 expr_stmt|;
 name|layer
 operator|=
-name|gimp_layer_new_from_buffer
+name|gimp_layer_new_from_gegl_buffer
 argument_list|(
 name|gimp_pickable_get_buffer
 argument_list|(

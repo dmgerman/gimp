@@ -3665,7 +3665,7 @@ name|w
 decl_stmt|,
 name|h
 decl_stmt|;
-comment|/* set the keep_indexed flag to FALSE here, since we use        * gimp_layer_new_from_buffer() later which assumes that the buffer        * are either RGB or GRAY.  Eeek!!!              (Sven)        */
+comment|/* set the keep_indexed flag to FALSE here, since we use        * gimp_layer_new_from_gegl_buffer() later which assumes that        * the buffer are either RGB or GRAY.  Eeek!!!  (Sven)        */
 if|if
 condition|(
 name|gimp_item_mask_intersect
@@ -3940,7 +3940,7 @@ condition|)
 block|{
 name|layer
 operator|=
-name|gimp_layer_new_from_buffer
+name|gimp_layer_new_from_gegl_buffer
 argument_list|(
 name|buffer
 argument_list|,
