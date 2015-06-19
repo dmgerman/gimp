@@ -10726,6 +10726,8 @@ name|cidx
 index|]
 operator|.
 name|rows
+operator|*
+name|bps
 argument_list|)
 expr_stmt|;
 name|memcpy
@@ -10752,6 +10754,8 @@ name|cidx
 index|]
 operator|.
 name|rows
+operator|*
+name|bps
 argument_list|)
 expr_stmt|;
 name|channel_id
