@@ -1399,6 +1399,11 @@ argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
 name|GIMP_NORMAL_MODE
+argument_list|,
+name|NULL
+argument_list|,
+literal|0
+comment|/* same image */
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_layer
