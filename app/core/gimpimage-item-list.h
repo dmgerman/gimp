@@ -173,9 +173,6 @@ parameter_list|,
 name|GList
 modifier|*
 name|list
-parameter_list|,
-name|gboolean
-name|remove_children
 parameter_list|)
 function_decl|;
 end_function_decl

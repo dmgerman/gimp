@@ -883,7 +883,7 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_image_item_list_filter (const GimpItem * exclude,GList * list,gboolean remove_children)
+DECL|function|gimp_image_item_list_filter (const GimpItem * exclude,GList * list)
 name|gimp_image_item_list_filter
 parameter_list|(
 specifier|const
@@ -894,9 +894,6 @@ parameter_list|,
 name|GList
 modifier|*
 name|list
-parameter_list|,
-name|gboolean
-name|remove_children
 parameter_list|)
 block|{
 name|GList
@@ -925,11 +922,6 @@ condition|)
 return|return
 name|NULL
 return|;
-if|if
-condition|(
-name|remove_children
-condition|)
-block|{
 if|if
 condition|(
 name|exclude
@@ -999,7 +991,6 @@ name|prev
 operator|=
 name|l
 expr_stmt|;
-block|}
 block|}
 return|return
 name|list
