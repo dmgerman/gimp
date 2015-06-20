@@ -1407,8 +1407,6 @@ argument_list|,
 name|linked
 argument_list|,
 name|TRUE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  Expand the rectangle to include all linked layers as well  */
@@ -1591,8 +1589,6 @@ argument_list|,
 name|linked
 argument_list|,
 name|TRUE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 for|for
@@ -2115,8 +2111,6 @@ argument_list|,
 name|linked
 argument_list|,
 name|TRUE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_image_item_list_translate
@@ -2564,8 +2558,6 @@ argument_list|,
 name|linked
 argument_list|,
 name|TRUE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_image_item_list_translate
@@ -3352,8 +3344,6 @@ argument_list|,
 name|linked
 argument_list|,
 name|TRUE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 for|for
@@ -3569,8 +3559,6 @@ argument_list|,
 name|linked
 argument_list|,
 name|TRUE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 for|for

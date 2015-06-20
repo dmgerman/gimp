@@ -176,9 +176,6 @@ name|list
 parameter_list|,
 name|gboolean
 name|remove_children
-parameter_list|,
-name|gboolean
-name|remove_locked
 parameter_list|)
 function_decl|;
 end_function_decl

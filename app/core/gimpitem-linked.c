@@ -154,8 +154,6 @@ argument_list|,
 name|list
 argument_list|,
 name|TRUE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 for|for
@@ -301,8 +299,6 @@ argument_list|,
 name|list
 argument_list|,
 name|TRUE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_image_item_list_translate
@@ -415,8 +411,6 @@ argument_list|,
 name|list
 argument_list|,
 name|TRUE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_image_item_list_flip
@@ -536,8 +530,6 @@ argument_list|,
 name|list
 argument_list|,
 name|TRUE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_image_item_list_rotate
@@ -590,8 +582,6 @@ argument_list|,
 name|list
 argument_list|,
 name|TRUE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_image_item_list_rotate
@@ -729,8 +719,6 @@ argument_list|,
 name|list
 argument_list|,
 name|TRUE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_image_item_list_transform
