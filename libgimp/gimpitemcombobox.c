@@ -1518,6 +1518,7 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|gimp_item_is_group
@@ -1571,7 +1572,6 @@ argument_list|(
 name|children
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 name|g_free
