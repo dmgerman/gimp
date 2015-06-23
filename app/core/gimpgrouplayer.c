@@ -5085,6 +5085,20 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
+comment|/*  see comment in gimp_group_layer_stack_update() below  */
+name|gimp_pickable_flush
+argument_list|(
+name|GIMP_PICKABLE
+argument_list|(
+name|GET_PRIVATE
+argument_list|(
+name|group
+argument_list|)
+operator|->
+name|projection
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 block|}
