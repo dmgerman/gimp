@@ -5979,7 +5979,7 @@ literal|32
 case|:
 name|precision
 operator|=
-name|GIMP_PRECISION_U32_LINEAR
+name|GIMP_PRECISION_U32_GAMMA
 expr_stmt|;
 break|break;
 case|case
@@ -5987,7 +5987,7 @@ literal|16
 case|:
 name|precision
 operator|=
-name|GIMP_PRECISION_U16_LINEAR
+name|GIMP_PRECISION_U16_GAMMA
 expr_stmt|;
 break|break;
 case|case
@@ -5998,7 +5998,7 @@ literal|1
 case|:
 name|precision
 operator|=
-name|GIMP_PRECISION_U8_LINEAR
+name|GIMP_PRECISION_U8_GAMMA
 expr_stmt|;
 break|break;
 default|default:
@@ -12508,7 +12508,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"Y u32"
+literal|"Y' u32"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -12519,7 +12519,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"Y u16"
+literal|"Y' u16"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -12533,7 +12533,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y' u8"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -12561,7 +12561,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"YA u32"
+literal|"Y'A u32"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -12572,7 +12572,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"YA u16"
+literal|"Y'A u16"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -12586,7 +12586,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"YA u8"
+literal|"Y'A u8"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -12600,9 +12600,6 @@ break|break;
 case|case
 name|GIMP_RGB_IMAGE
 case|:
-case|case
-name|GIMP_INDEXED_IMAGE
-case|:
 switch|switch
 condition|(
 name|img_a
@@ -12617,7 +12614,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"RGB u32"
+literal|"R'G'B' u32"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -12628,7 +12625,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"RGB u16"
+literal|"R'G'B' u16"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -12642,7 +12639,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"RGB u8"
+literal|"R'G'B' u8"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -12656,9 +12653,6 @@ break|break;
 case|case
 name|GIMP_RGBA_IMAGE
 case|:
-case|case
-name|GIMP_INDEXEDA_IMAGE
-case|:
 switch|switch
 condition|(
 name|img_a
@@ -12673,7 +12667,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"RGBA u32"
+literal|"R'G'B'A u32"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -12684,7 +12678,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"RGBA u16"
+literal|"R'G'B'A u16"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -12698,7 +12692,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"RGBA u8"
+literal|"R'G'B'A u8"
 argument_list|)
 expr_stmt|;
 break|break;

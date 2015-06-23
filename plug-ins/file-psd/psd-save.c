@@ -528,6 +528,32 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+specifier|const
+name|Babl
+modifier|*
+name|get_channel_format
+parameter_list|(
+name|gint32
+name|drawableID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+specifier|const
+name|Babl
+modifier|*
+name|get_mask_format
+parameter_list|(
+name|gint32
+name|drawableID
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function
 specifier|static
 name|void
@@ -4929,12 +4955,33 @@ specifier|const
 name|Babl
 modifier|*
 name|format
-init|=
+decl_stmt|;
+if|if
+condition|(
+name|gimp_item_is_channel
+argument_list|(
+name|drawableID
+argument_list|)
+condition|)
+block|{
+name|format
+operator|=
+name|get_channel_format
+argument_list|(
+name|drawableID
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|format
+operator|=
 name|get_pixel_format
 argument_list|(
 name|drawableID
 argument_list|)
-decl_stmt|;
+expr_stmt|;
+block|}
 name|gint32
 name|tile_height
 init|=
@@ -5464,6 +5511,16 @@ argument_list|(
 name|maskID
 argument_list|)
 decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|mformat
+init|=
+name|get_mask_format
+argument_list|(
+name|maskID
+argument_list|)
+decl_stmt|;
 name|len
 operator|=
 literal|0
@@ -5612,7 +5669,7 @@ argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
-name|format
+name|mformat
 argument_list|,
 name|data
 argument_list|,
@@ -6027,6 +6084,7 @@ operator|*
 name|chan
 argument_list|)
 expr_stmt|;
+comment|//check how imgs are channels here
 name|chan
 operator|++
 expr_stmt|;
@@ -6856,7 +6914,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y' u8"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -6867,35 +6925,43 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"YA u8"
+literal|"Y'A u8"
 argument_list|)
 expr_stmt|;
 break|break;
 case|case
 name|GIMP_RGB_IMAGE
 case|:
-case|case
-name|GIMP_INDEXED_IMAGE
-case|:
 name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"RGB u8"
+literal|"R'G'B' u8"
 argument_list|)
 expr_stmt|;
 break|break;
 case|case
 name|GIMP_RGBA_IMAGE
 case|:
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_INDEXED_IMAGE
+case|:
 case|case
 name|GIMP_INDEXEDA_IMAGE
 case|:
 name|format
 operator|=
-name|babl_format
+name|gimp_drawable_get_format
 argument_list|(
-literal|"RGBA u8"
+name|drawableID
 argument_list|)
 expr_stmt|;
 break|break;
@@ -6905,6 +6971,68 @@ name|NULL
 return|;
 break|break;
 block|}
+return|return
+name|format
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+specifier|const
+name|Babl
+modifier|*
+DECL|function|get_channel_format (gint32 drawableID)
+name|get_channel_format
+parameter_list|(
+name|gint32
+name|drawableID
+parameter_list|)
+block|{
+specifier|const
+name|Babl
+modifier|*
+name|format
+decl_stmt|;
+comment|/* eventually we'll put a switch statement for bit depth here to    * support higher depth exports */
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
+expr_stmt|;
+return|return
+name|format
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+specifier|const
+name|Babl
+modifier|*
+DECL|function|get_mask_format (gint32 drawableID)
+name|get_mask_format
+parameter_list|(
+name|gint32
+name|drawableID
+parameter_list|)
+block|{
+specifier|const
+name|Babl
+modifier|*
+name|format
+decl_stmt|;
+comment|/* eventually we'll put a switch statement for bit depth here to    * support higher depth exports */
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
+expr_stmt|;
 return|return
 name|format
 return|;
