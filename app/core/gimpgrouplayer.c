@@ -5090,10 +5090,7 @@ name|gimp_pickable_flush
 argument_list|(
 name|GIMP_PICKABLE
 argument_list|(
-name|GET_PRIVATE
-argument_list|(
-name|group
-argument_list|)
+name|private
 operator|->
 name|projection
 argument_list|)
