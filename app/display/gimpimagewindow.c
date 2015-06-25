@@ -311,7 +311,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27424db20103
+DECL|enum|__anon28f52de70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -439,7 +439,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27424db20208
+DECL|struct|__anon28f52de70208
 block|{
 DECL|member|x
 name|gint
@@ -1566,6 +1566,16 @@ name|GimpGuiConfig
 modifier|*
 name|config
 decl_stmt|;
+name|G_OBJECT_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|constructed
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
 name|g_assert
 argument_list|(
 name|GIMP_IS_GIMP
