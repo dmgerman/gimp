@@ -1327,8 +1327,6 @@ name|gimp_image_item_list_get_list
 argument_list|(
 name|image
 argument_list|,
-name|NULL
-argument_list|,
 name|GIMP_ITEM_TYPE_LAYERS
 argument_list|,
 name|GIMP_ITEM_SET_LINKED
@@ -1338,8 +1336,6 @@ name|linked
 operator|=
 name|gimp_image_item_list_filter
 argument_list|(
-name|NULL
-argument_list|,
 name|linked
 argument_list|)
 expr_stmt|;
@@ -1506,8 +1502,6 @@ name|gimp_image_item_list_get_list
 argument_list|(
 name|image
 argument_list|,
-name|NULL
-argument_list|,
 name|GIMP_ITEM_TYPE_VECTORS
 argument_list|,
 name|GIMP_ITEM_SET_LINKED
@@ -1517,8 +1511,6 @@ name|linked
 operator|=
 name|gimp_image_item_list_filter
 argument_list|(
-name|NULL
-argument_list|,
 name|linked
 argument_list|)
 expr_stmt|;
@@ -1742,8 +1734,6 @@ name|gimp_image_item_list_get_list
 argument_list|(
 name|image
 argument_list|,
-name|NULL
-argument_list|,
 name|GIMP_ITEM_TYPE_LAYERS
 operator||
 name|GIMP_ITEM_TYPE_VECTORS
@@ -1757,8 +1747,6 @@ name|live_items
 operator|=
 name|gimp_image_item_list_filter
 argument_list|(
-name|NULL
-argument_list|,
 name|edit_select
 operator|->
 name|live_items
@@ -1772,8 +1760,6 @@ name|gimp_image_item_list_get_list
 argument_list|(
 name|image
 argument_list|,
-name|NULL
-argument_list|,
 name|GIMP_ITEM_TYPE_CHANNELS
 argument_list|,
 name|GIMP_ITEM_SET_LINKED
@@ -1785,8 +1771,6 @@ name|delayed_items
 operator|=
 name|gimp_image_item_list_filter
 argument_list|(
-name|NULL
-argument_list|,
 name|edit_select
 operator|->
 name|delayed_items
@@ -3178,8 +3162,6 @@ name|gimp_image_item_list_get_list
 argument_list|(
 name|image
 argument_list|,
-name|NULL
-argument_list|,
 name|GIMP_ITEM_TYPE_LAYERS
 argument_list|,
 name|GIMP_ITEM_SET_LINKED
@@ -3189,8 +3171,6 @@ name|linked
 operator|=
 name|gimp_image_item_list_filter
 argument_list|(
-name|NULL
-argument_list|,
 name|linked
 argument_list|)
 expr_stmt|;
@@ -3377,8 +3357,6 @@ name|gimp_image_item_list_get_list
 argument_list|(
 name|image
 argument_list|,
-name|NULL
-argument_list|,
 name|GIMP_ITEM_TYPE_VECTORS
 argument_list|,
 name|GIMP_ITEM_SET_LINKED
@@ -3388,8 +3366,6 @@ name|linked
 operator|=
 name|gimp_image_item_list_filter
 argument_list|(
-name|NULL
-argument_list|,
 name|linked
 argument_list|)
 expr_stmt|;

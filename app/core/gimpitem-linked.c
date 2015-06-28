@@ -150,8 +150,6 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|item
-argument_list|,
 name|GIMP_ITEM_TYPE_ALL
 argument_list|,
 name|GIMP_ITEM_SET_LINKED
@@ -161,8 +159,6 @@ name|list
 operator|=
 name|gimp_image_item_list_filter
 argument_list|(
-name|item
-argument_list|,
 name|list
 argument_list|)
 expr_stmt|;
@@ -301,8 +297,6 @@ name|gimp_image_item_list_get_list
 argument_list|(
 name|image
 argument_list|,
-name|NULL
-argument_list|,
 name|GIMP_ITEM_TYPE_ALL
 argument_list|,
 name|GIMP_ITEM_SET_LINKED
@@ -312,8 +306,6 @@ name|items
 operator|=
 name|gimp_image_item_list_filter
 argument_list|(
-name|NULL
-argument_list|,
 name|items
 argument_list|)
 expr_stmt|;
@@ -419,8 +411,6 @@ name|gimp_image_item_list_get_list
 argument_list|(
 name|image
 argument_list|,
-name|NULL
-argument_list|,
 name|GIMP_ITEM_TYPE_ALL
 argument_list|,
 name|GIMP_ITEM_SET_LINKED
@@ -430,8 +420,6 @@ name|items
 operator|=
 name|gimp_image_item_list_filter
 argument_list|(
-name|NULL
-argument_list|,
 name|items
 argument_list|)
 expr_stmt|;
@@ -543,8 +531,6 @@ name|gimp_image_item_list_get_list
 argument_list|(
 name|image
 argument_list|,
-name|NULL
-argument_list|,
 name|GIMP_ITEM_TYPE_LAYERS
 operator||
 name|GIMP_ITEM_TYPE_VECTORS
@@ -556,8 +542,6 @@ name|items
 operator|=
 name|gimp_image_item_list_filter
 argument_list|(
-name|NULL
-argument_list|,
 name|items
 argument_list|)
 expr_stmt|;
@@ -566,8 +550,6 @@ operator|=
 name|gimp_image_item_list_get_list
 argument_list|(
 name|image
-argument_list|,
-name|NULL
 argument_list|,
 name|GIMP_ITEM_TYPE_CHANNELS
 argument_list|,
@@ -578,8 +560,6 @@ name|channels
 operator|=
 name|gimp_image_item_list_filter
 argument_list|(
-name|NULL
-argument_list|,
 name|channels
 argument_list|)
 expr_stmt|;
@@ -760,8 +740,6 @@ name|gimp_image_item_list_get_list
 argument_list|(
 name|image
 argument_list|,
-name|NULL
-argument_list|,
 name|GIMP_ITEM_TYPE_ALL
 argument_list|,
 name|GIMP_ITEM_SET_LINKED
@@ -771,8 +749,6 @@ name|items
 operator|=
 name|gimp_image_item_list_filter
 argument_list|(
-name|NULL
-argument_list|,
 name|items
 argument_list|)
 expr_stmt|;

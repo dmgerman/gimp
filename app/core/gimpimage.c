@@ -360,7 +360,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd43bd10103
+DECL|enum|__anon29a32fbb0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -457,7 +457,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd43bd10203
+DECL|enum|__anon29a32fbb0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7218,8 +7218,6 @@ name|gimp_image_item_list_get_list
 argument_list|(
 name|image
 argument_list|,
-name|NULL
-argument_list|,
 name|GIMP_ITEM_TYPE_LAYERS
 operator||
 name|GIMP_ITEM_TYPE_CHANNELS
@@ -7229,8 +7227,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_item_list_filter
 argument_list|(
-name|NULL
-argument_list|,
 name|drawables
 argument_list|)
 expr_stmt|;

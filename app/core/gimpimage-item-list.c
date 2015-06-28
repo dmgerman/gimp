@@ -574,24 +574,19 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_item_list_get_list:  * @image:   An @image.  * @exclude: An item to exclude.  * @type:    Which type of items to return.  * @set:     Set the returned items are part of.  *  * This function returns a #GList of #GimpItem<!-- -->s for which the  * @type and @set criterions match.  *  * Return value: The list of items, excluding @exclude.  **/
+comment|/**  * gimp_image_item_list_get_list:  * @image:   An @image.  * @type:    Which type of items to return.  * @set:     Set the returned items are part of.  *  * This function returns a #GList of #GimpItem<!-- -->s for which the  * @type and @set criterions match.  *  * Return value: The list of items.  **/
 end_comment
 
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_image_item_list_get_list (const GimpImage * image,const GimpItem * exclude,GimpItemTypeMask type,GimpItemSet set)
+DECL|function|gimp_image_item_list_get_list (const GimpImage * image,GimpItemTypeMask type,GimpItemSet set)
 name|gimp_image_item_list_get_list
 parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
 name|image
-parameter_list|,
-specifier|const
-name|GimpItem
-modifier|*
-name|exclude
 parameter_list|,
 name|GimpItemTypeMask
 name|type
@@ -619,20 +614,6 @@ argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|image
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|exclude
-operator|==
-name|NULL
-operator|||
-name|GIMP_IS_ITEM
-argument_list|(
-name|exclude
 argument_list|)
 argument_list|,
 name|NULL
@@ -678,10 +659,6 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-name|item
-operator|!=
-name|exclude
-operator|&&
 name|gimp_item_is_in_set
 argument_list|(
 name|item
@@ -745,10 +722,6 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-name|item
-operator|!=
-name|exclude
-operator|&&
 name|gimp_item_is_in_set
 argument_list|(
 name|item
@@ -812,10 +785,6 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-name|item
-operator|!=
-name|exclude
-operator|&&
 name|gimp_item_is_in_set
 argument_list|(
 name|item
@@ -927,14 +896,9 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_image_item_list_filter (const GimpItem * exclude,GList * list)
+DECL|function|gimp_image_item_list_filter (GList * list)
 name|gimp_image_item_list_filter
 parameter_list|(
-specifier|const
-name|GimpItem
-modifier|*
-name|exclude
-parameter_list|,
 name|GList
 modifier|*
 name|list
@@ -944,20 +908,6 @@ name|GList
 modifier|*
 name|l
 decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|exclude
-operator|==
-name|NULL
-operator|||
-name|GIMP_IS_ITEM
-argument_list|(
-name|exclude
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -966,19 +916,6 @@ condition|)
 return|return
 name|NULL
 return|;
-if|if
-condition|(
-name|exclude
-condition|)
-name|list
-operator|=
-name|gimp_image_item_list_remove_children
-argument_list|(
-name|list
-argument_list|,
-name|exclude
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|l

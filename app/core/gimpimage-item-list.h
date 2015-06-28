@@ -146,11 +146,6 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
-name|GimpItem
-modifier|*
-name|exclude
-parameter_list|,
 name|GimpItemTypeMask
 name|type
 parameter_list|,
@@ -165,11 +160,6 @@ name|GList
 modifier|*
 name|gimp_image_item_list_filter
 parameter_list|(
-specifier|const
-name|GimpItem
-modifier|*
-name|exclude
-parameter_list|,
 name|GList
 modifier|*
 name|list

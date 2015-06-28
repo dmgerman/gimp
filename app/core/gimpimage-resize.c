@@ -320,8 +320,6 @@ name|gimp_image_item_list_get_list
 argument_list|(
 name|image
 argument_list|,
-name|NULL
-argument_list|,
 name|GIMP_ITEM_TYPE_LAYERS
 argument_list|,
 name|layer_set
