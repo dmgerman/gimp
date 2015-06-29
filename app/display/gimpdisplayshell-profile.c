@@ -515,12 +515,13 @@ block|{
 case|case
 name|GIMP_COMPONENT_TYPE_U8
 case|:
-case|case
-name|GIMP_COMPONENT_TYPE_U16
-case|:
-case|case
-name|GIMP_COMPONENT_TYPE_U32
-case|:
+if|#
+directive|if
+literal|0
+comment|/* would like to convert directly for these too, but it            * produces inferior results, see bug 750874            */
+block|case GIMP_COMPONENT_TYPE_U16:         case GIMP_COMPONENT_TYPE_U32:
+endif|#
+directive|endif
 return|return
 name|TRUE
 return|;
