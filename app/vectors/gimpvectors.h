@@ -794,33 +794,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|gboolean
-name|gimp_vectors_bounds
-parameter_list|(
-name|GimpVectors
-modifier|*
-name|vectors
-parameter_list|,
-name|gdouble
-modifier|*
-name|x1
-parameter_list|,
-name|gdouble
-modifier|*
-name|y1
-parameter_list|,
-name|gdouble
-modifier|*
-name|x2
-parameter_list|,
-name|gdouble
-modifier|*
-name|y2
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/* returns the number of valid coordinates */
 end_comment
