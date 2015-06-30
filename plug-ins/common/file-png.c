@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf975ff0108
+DECL|struct|__anon28dbe31c0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf975ff0208
+DECL|struct|__anon28dbe31c0208
 block|{
 DECL|member|run
 name|gboolean
@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf975ff0308
+DECL|struct|__anon28dbe31c0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -2538,6 +2538,13 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|g_object_unref
+argument_list|(
+name|error_data
+operator|->
+name|buffer
+argument_list|)
+expr_stmt|;
 name|longjmp
 argument_list|(
 name|png_jmpbuf
@@ -2906,6 +2913,13 @@ argument_list|(
 name|pp
 argument_list|,
 name|fp
+argument_list|)
+expr_stmt|;
+name|png_set_compression_buffer_size
+argument_list|(
+name|pp
+argument_list|,
+literal|512
 argument_list|)
 expr_stmt|;
 comment|/*    * Get the image dimensions and create the image...    */
