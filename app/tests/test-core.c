@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimplayer-new.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"operations/gimplevelsconfig.h"
 end_include
 
@@ -104,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b80e8ee0108
+DECL|struct|__anon2c5c26660108
 block|{
 DECL|member|image
 name|GimpImage
