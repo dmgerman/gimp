@@ -1133,31 +1133,19 @@ block|active_layer = gimp_image_get_active_layer (image);
 comment|/* Find the layer tree view to click in. Note that there is a    * potential problem with gtk_test_find_widget and GtkNotebook: it    * will return e.g. a GtkTreeView from another page if that page is    * "on top" of the reference label.    */
 block|dockable = gimp_ui_find_window (gimp_dialog_factory_get_singleton (),                                   gimp_ui_is_gimp_layer_list);   gtk_tree_view = gtk_test_find_widget (dockable,                                         "Lock:",                                         GTK_TYPE_TREE_VIEW);
 comment|/* First make sure there is no selection */
-block|g_assert (! gimp_channel_bounds (selection,                                    NULL, NULL,
-comment|/*x1, y1*/
-block|NULL, NULL
-comment|/*x2, y2*/
-block|));
+block|g_assert (gimp_channel_is_empty (selection));
 comment|/* Now simulate alt-click on the background layer */
 block|g_assert (gimp_ui_synthesize_click (gtk_tree_view,                                       assumed_layer_x,                                       assumed_background_layer_y,                                       1
 comment|/*button*/
 block|,                                       GDK_MOD1_MASK));   gimp_test_run_mainloop_until_idle ();
 comment|/* Make sure we got a selection and that the active layer didn't    * change    */
-block|g_assert (gimp_channel_bounds (selection,                                  NULL, NULL,
-comment|/*x1, y1*/
-block|NULL, NULL
-comment|/*x2, y2*/
-block|));   g_assert (gimp_image_get_active_layer (image) == active_layer);
+block|g_assert (! gimp_channel_is_empty (selection));   g_assert (gimp_image_get_active_layer (image) == active_layer);
 comment|/* Now simulate alt-click on the empty layer */
 block|g_assert (gimp_ui_synthesize_click (gtk_tree_view,                                       assumed_layer_x,                                       assumed_empty_layer_y,                                       1
 comment|/*button*/
 block|,                                       GDK_MOD1_MASK));   gimp_test_run_mainloop_until_idle ();
 comment|/* Make sure that emptied the selection and that the active layer    * still didn't change    */
-block|g_assert (! gimp_channel_bounds (selection,                                    NULL, NULL,
-comment|/*x1, y1*/
-block|NULL, NULL
-comment|/*x2, y2*/
-block|));   g_assert (gimp_image_get_active_layer (image) == active_layer);
+block|g_assert (gimp_channel_is_empty (selection));   g_assert (gimp_image_get_active_layer (image) == active_layer);
 endif|#
 directive|endif
 block|}
