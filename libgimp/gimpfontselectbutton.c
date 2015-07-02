@@ -113,7 +113,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3abb230103
+DECL|enum|__anon296d25ec0103
 block|{
 DECL|enumerator|FONT_SET
 name|FONT_SET
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3abb230203
+DECL|enum|__anon296d25ec0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -422,7 +422,7 @@ literal|"The name of the currently selected font"
 argument_list|,
 name|_
 argument_list|(
-literal|"Sans"
+literal|"Sans-serif"
 argument_list|)
 argument_list|,
 name|GIMP_PARAM_READWRITE

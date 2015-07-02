@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3d712c0103
+DECL|enum|__anon2aa11bc90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -187,7 +187,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3d712c0203
+DECL|enum|__anon2aa11bc90203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -498,7 +498,7 @@ literal|"font"
 argument_list|,
 name|NULL
 argument_list|,
-literal|"Sans"
+literal|"Sans-serif"
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)

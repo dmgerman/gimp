@@ -146,7 +146,7 @@ DECL|macro|DEFAULT_FONT
 define|#
 directive|define
 name|DEFAULT_FONT
-value|"Sans"
+value|"Sans-serif"
 end_define
 
 begin_define
@@ -167,7 +167,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7dfb6c0103
+DECL|enum|__anon289544770103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

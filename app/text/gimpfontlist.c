@@ -579,7 +579,7 @@ name|families
 index|[]
 init|=
 block|{
-literal|"Sans"
+literal|"Sans-serif"
 block|,
 literal|"Serif"
 block|,

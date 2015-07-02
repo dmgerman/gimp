@@ -137,7 +137,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf7dc5a0103
+DECL|enum|__anon29fca9d60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1301,7 +1301,7 @@ name|GIMP_TYPE_FONT
 argument_list|,
 literal|"name"
 argument_list|,
-literal|"Sans"
+literal|"Sans-serif"
 argument_list|,
 name|NULL
 argument_list|)
@@ -1459,7 +1459,7 @@ comment|/* This is a table of scripts and corresponding short sample strings    
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bf7dc5a0208
+DECL|struct|__anon29fca9d60208
 block|{
 DECL|member|script
 specifier|const
