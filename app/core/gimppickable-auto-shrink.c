@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8917ed0103
+DECL|enum|__anon298caa6c0103
 block|{
 DECL|enumerator|AUTO_SHRINK_NOTHING
 name|AUTO_SHRINK_NOTHING
@@ -381,6 +381,27 @@ argument_list|(
 name|buffer
 argument_list|)
 argument_list|)
+expr_stmt|;
+comment|/* By default, return the start values */
+operator|*
+name|shrunk_x1
+operator|=
+name|x1
+expr_stmt|;
+operator|*
+name|shrunk_y1
+operator|=
+name|y1
+expr_stmt|;
+operator|*
+name|shrunk_x2
+operator|=
+name|x2
+expr_stmt|;
+operator|*
+name|shrunk_y2
+operator|=
+name|y2
 expr_stmt|;
 name|format
 operator|=
