@@ -1380,12 +1380,8 @@ argument_list|,
 name|y
 argument_list|,
 name|w
-operator|+
-name|x
 argument_list|,
 name|h
-operator|+
-name|y
 argument_list|,
 name|TRUE
 argument_list|)

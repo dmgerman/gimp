@@ -862,12 +862,8 @@ name|offx
 argument_list|,
 name|offy
 argument_list|,
-name|offx
-operator|+
 name|new_width
 argument_list|,
-name|offy
-operator|+
 name|new_height
 argument_list|,
 name|TRUE

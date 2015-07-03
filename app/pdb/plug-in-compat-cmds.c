@@ -2488,8 +2488,12 @@ argument_list|,
 name|y1
 argument_list|,
 name|x2
+operator|-
+name|x1
 argument_list|,
 name|y2
+operator|-
+name|y1
 argument_list|,
 name|TRUE
 argument_list|)
