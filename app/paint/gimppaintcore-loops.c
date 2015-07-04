@@ -1651,7 +1651,7 @@ operator|=
 name|roi
 operator|.
 name|x
-operator|+
+operator|-
 name|mask_x_offset
 expr_stmt|;
 name|mask_roi
@@ -1661,7 +1661,7 @@ operator|=
 name|roi
 operator|.
 name|y
-operator|+
+operator|-
 name|mask_y_offset
 expr_stmt|;
 name|mask_roi
