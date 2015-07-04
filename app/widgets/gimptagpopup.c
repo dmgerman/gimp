@@ -165,7 +165,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2932a7dd0103
+DECL|enum|__anon27c23ea60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1714,9 +1714,7 @@ name|scroll_height
 operator|=
 name|height
 operator|-
-name|popup_rect
-operator|.
-name|height
+name|popup_height
 expr_stmt|;
 name|popup
 operator|->
