@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b27af10103
+DECL|enum|__anon278438c70103
 block|{
 DECL|enumerator|PROFILE_CHANGED
 name|PROFILE_CHANGED
@@ -318,6 +318,7 @@ end_comment
 
 begin_function
 name|GimpColorProfile
+modifier|*
 DECL|function|gimp_color_managed_get_color_profile (GimpColorManaged * managed)
 name|gimp_color_managed_get_color_profile
 parameter_list|(

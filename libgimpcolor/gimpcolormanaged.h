@@ -145,6 +145,7 @@ function_decl|;
 comment|/*  virtual functions  */
 DECL|member|get_color_profile
 name|GimpColorProfile
+modifier|*
 function_decl|(
 modifier|*
 name|get_color_profile
@@ -188,6 +189,7 @@ end_function_decl
 
 begin_function_decl
 name|GimpColorProfile
+modifier|*
 name|gimp_color_managed_get_color_profile
 parameter_list|(
 name|GimpColorManaged

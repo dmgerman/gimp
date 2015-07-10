@@ -148,6 +148,7 @@ modifier|*
 name|image
 parameter_list|,
 name|GimpColorProfile
+modifier|*
 name|profile
 parameter_list|,
 name|GError
@@ -160,6 +161,7 @@ end_function_decl
 
 begin_function_decl
 name|GimpColorProfile
+modifier|*
 name|gimp_image_get_color_profile
 parameter_list|(
 name|GimpImage
@@ -178,6 +180,7 @@ modifier|*
 name|image
 parameter_list|,
 name|GimpColorProfile
+modifier|*
 name|profile
 parameter_list|,
 name|GError
@@ -197,6 +200,7 @@ modifier|*
 name|image
 parameter_list|,
 name|GimpColorProfile
+modifier|*
 name|dest_profile
 parameter_list|,
 name|GimpColorRenderingIntent

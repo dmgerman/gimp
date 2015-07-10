@@ -322,6 +322,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|GimpColorProfile
+modifier|*
 name|cdisplay_lcms_get_display_profile
 parameter_list|(
 name|CdisplayLcms
@@ -1249,6 +1250,7 @@ end_function
 begin_function
 specifier|static
 name|GimpColorProfile
+modifier|*
 DECL|function|cdisplay_lcms_get_display_profile (CdisplayLcms * lcms)
 name|cdisplay_lcms_get_display_profile
 parameter_list|(
@@ -1272,6 +1274,7 @@ init|=
 name|NULL
 decl_stmt|;
 name|GimpColorProfile
+modifier|*
 name|profile
 init|=
 name|NULL
@@ -1522,6 +1525,7 @@ modifier|*
 name|label
 decl_stmt|;
 name|GimpColorProfile
+modifier|*
 name|profile
 init|=
 name|NULL
@@ -1710,7 +1714,7 @@ if|if
 condition|(
 name|profile
 condition|)
-name|gimp_color_profile_close
+name|g_object_unref
 argument_list|(
 name|profile
 argument_list|)

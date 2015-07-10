@@ -122,6 +122,7 @@ end_function_decl
 
 begin_function_decl
 name|GimpColorProfile
+modifier|*
 name|gimp_widget_get_color_profile
 parameter_list|(
 name|GtkWidget

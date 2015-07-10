@@ -202,6 +202,7 @@ modifier|*
 name|view
 parameter_list|,
 name|GimpColorProfile
+modifier|*
 name|profile
 parameter_list|)
 function_decl|;

@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<lcms2.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -89,7 +83,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2791c9450103
+DECL|enum|__anon295a30450103
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -112,7 +106,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2791c9450208
+DECL|struct|__anon295a30450208
 block|{
 DECL|member|name
 specifier|const
@@ -134,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2791c9450308
+DECL|struct|__anon295a30450308
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -264,10 +258,12 @@ parameter_list|(
 name|gint32
 name|image
 parameter_list|,
-name|cmsHPROFILE
+name|GimpColorProfile
+modifier|*
 name|src_profile
 parameter_list|,
-name|cmsHPROFILE
+name|GimpColorProfile
+modifier|*
 name|dest_profile
 parameter_list|,
 name|gboolean
@@ -1481,11 +1477,13 @@ init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|GimpColorProfile
+modifier|*
 name|src_profile
 init|=
 name|NULL
 decl_stmt|;
 name|GimpColorProfile
+modifier|*
 name|dest_profile
 init|=
 name|NULL
@@ -1548,7 +1546,7 @@ name|NULL
 decl_stmt|;
 name|dest_profile
 operator|=
-name|gimp_color_profile_open_from_file
+name|gimp_color_profile_new_from_file
 argument_list|(
 name|file
 argument_list|,
@@ -1603,7 +1601,7 @@ name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_color_profile_close
+name|g_object_unref
 argument_list|(
 name|dest_profile
 argument_list|)
@@ -1663,12 +1661,12 @@ argument_list|(
 name|dest_profile
 argument_list|)
 decl_stmt|;
-name|gimp_color_profile_close
+name|g_object_unref
 argument_list|(
 name|src_profile
 argument_list|)
 expr_stmt|;
-name|gimp_color_profile_close
+name|g_object_unref
 argument_list|(
 name|dest_profile
 argument_list|)
@@ -1763,12 +1761,12 @@ operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
-name|gimp_color_profile_close
+name|g_object_unref
 argument_list|(
 name|src_profile
 argument_list|)
 expr_stmt|;
-name|gimp_color_profile_close
+name|g_object_unref
 argument_list|(
 name|dest_profile
 argument_list|)
@@ -1803,6 +1801,7 @@ name|file
 parameter_list|)
 block|{
 name|GimpColorProfile
+modifier|*
 name|profile
 init|=
 name|NULL
@@ -1830,7 +1829,7 @@ name|NULL
 decl_stmt|;
 name|profile
 operator|=
-name|gimp_color_profile_open_from_file
+name|gimp_color_profile_new_from_file
 argument_list|(
 name|file
 argument_list|,
@@ -1892,7 +1891,7 @@ if|if
 condition|(
 name|profile
 condition|)
-name|gimp_color_profile_close
+name|g_object_unref
 argument_list|(
 name|profile
 argument_list|)
@@ -1907,13 +1906,14 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|lcms_icc_profile_src_label_new (gint32 image,cmsHPROFILE profile)
+DECL|function|lcms_icc_profile_src_label_new (gint32 image,GimpColorProfile * profile)
 name|lcms_icc_profile_src_label_new
 parameter_list|(
 name|gint32
 name|image
 parameter_list|,
-name|cmsHPROFILE
+name|GimpColorProfile
+modifier|*
 name|profile
 parameter_list|)
 block|{
@@ -2112,10 +2112,11 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|lcms_icc_profile_dest_label_new (cmsHPROFILE profile)
+DECL|function|lcms_icc_profile_dest_label_new (GimpColorProfile * profile)
 name|lcms_icc_profile_dest_label_new
 parameter_list|(
-name|cmsHPROFILE
+name|GimpColorProfile
+modifier|*
 name|profile
 parameter_list|)
 block|{
@@ -2198,16 +2199,18 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|lcms_icc_apply_dialog (gint32 image,cmsHPROFILE src_profile,cmsHPROFILE dest_profile,gboolean * dont_ask)
+DECL|function|lcms_icc_apply_dialog (gint32 image,GimpColorProfile * src_profile,GimpColorProfile * dest_profile,gboolean * dont_ask)
 name|lcms_icc_apply_dialog
 parameter_list|(
 name|gint32
 name|image
 parameter_list|,
-name|cmsHPROFILE
+name|GimpColorProfile
+modifier|*
 name|src_profile
 parameter_list|,
-name|cmsHPROFILE
+name|GimpColorProfile
+modifier|*
 name|dest_profile
 parameter_list|,
 name|gboolean
@@ -2568,7 +2571,8 @@ name|rgb_filename
 init|=
 name|NULL
 decl_stmt|;
-name|cmsHPROFILE
+name|GimpColorProfile
+modifier|*
 name|profile
 init|=
 name|NULL
@@ -2688,7 +2692,7 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
-name|gimp_color_profile_close
+name|g_object_unref
 argument_list|(
 name|profile
 argument_list|)
@@ -2774,6 +2778,7 @@ modifier|*
 name|combo
 decl_stmt|;
 name|GimpColorProfile
+modifier|*
 name|src_profile
 decl_stmt|;
 name|gchar
@@ -3327,6 +3332,7 @@ init|=
 name|NULL
 decl_stmt|;
 name|GimpColorProfile
+modifier|*
 name|dest_profile
 decl_stmt|;
 name|gtk_widget_set_sensitive
@@ -3367,7 +3373,7 @@ name|NULL
 decl_stmt|;
 name|dest_profile
 operator|=
-name|gimp_color_profile_open_from_file
+name|gimp_color_profile_new_from_file
 argument_list|(
 name|file
 argument_list|,
@@ -3462,7 +3468,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_color_profile_close
+name|g_object_unref
 argument_list|(
 name|dest_profile
 argument_list|)
@@ -3496,7 +3502,7 @@ argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
-name|gimp_color_profile_close
+name|g_object_unref
 argument_list|(
 name|src_profile
 argument_list|)

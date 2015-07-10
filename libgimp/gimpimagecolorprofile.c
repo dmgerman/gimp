@@ -16,11 +16,12 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_image_get_color_profile:  * @image_ID: The image.  *  * Returns the image's color profile  *  * This procedure returns the image's color profile, or NULL if the  * image has no color profile assigned.  *  * Returns: The image's color profile. The returned value  *          must be freed with gimp_color_profile_close().  *  * Since: 2.10  **/
+comment|/**  * gimp_image_get_color_profile:  * @image_ID: The image.  *  * Returns the image's color profile  *  * This procedure returns the image's color profile, or NULL if the  * image has no color profile assigned.  *  * Returns: The image's color profile. The returned value  *          must be freed with g_object_unref().  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|GimpColorProfile
+modifier|*
 DECL|function|gimp_image_get_color_profile (gint32 image_ID)
 name|gimp_image_get_color_profile
 parameter_list|(
@@ -51,11 +52,12 @@ name|data
 condition|)
 block|{
 name|GimpColorProfile
+modifier|*
 name|profile
 decl_stmt|;
 name|profile
 operator|=
-name|gimp_color_profile_open_from_data
+name|gimp_color_profile_new_from_icc_profile
 argument_list|(
 name|data
 argument_list|,
@@ -85,16 +87,18 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_set_color_profile (gint32 image_ID,GimpColorProfile profile)
+DECL|function|gimp_image_set_color_profile (gint32 image_ID,GimpColorProfile * profile)
 name|gimp_image_set_color_profile
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
 name|GimpColorProfile
+modifier|*
 name|profile
 parameter_list|)
 block|{
+specifier|const
 name|guint8
 modifier|*
 name|data
@@ -106,9 +110,20 @@ name|length
 init|=
 literal|0
 decl_stmt|;
-name|gboolean
-name|success
-decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|profile
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_COLOR_PROFILE
+argument_list|(
+name|profile
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|profile
@@ -119,31 +134,20 @@ name|l
 decl_stmt|;
 name|data
 operator|=
-name|gimp_color_profile_save_to_data
+name|gimp_color_profile_get_icc_profile
 argument_list|(
 name|profile
 argument_list|,
 operator|&
 name|l
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|length
 operator|=
 name|l
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|data
-condition|)
-return|return
-name|FALSE
-return|;
 block|}
-name|success
-operator|=
+return|return
 name|_gimp_image_set_color_profile
 argument_list|(
 name|image_ID
@@ -152,24 +156,17 @@ name|length
 argument_list|,
 name|data
 argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
-return|return
-name|success
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_effective_color_profile:  * @image_ID: The image.  *  * Returns the color profile that is used for the image.  *  * This procedure returns the color profile that is actually used for  * this image, which is the profile returned by  * gimp_image_get_color_profile() if the image has a profile assigned,  * or the default RGB profile from preferences if no profile is  * assigned to the image. If there is no default RGB profile configured  * in preferences either, a generated default RGB profile is returned.  *  * Returns: The color profile. The returned value  *          must be freed with gimp_color_profile_close().  *  * Since: 2.10  **/
+comment|/**  * gimp_image_get_effective_color_profile:  * @image_ID: The image.  *  * Returns the color profile that is used for the image.  *  * This procedure returns the color profile that is actually used for  * this image, which is the profile returned by  * gimp_image_get_color_profile() if the image has a profile assigned,  * or the default RGB profile from preferences if no profile is  * assigned to the image. If there is no default RGB profile configured  * in preferences either, a generated default RGB profile is returned.  *  * Returns: The color profile. The returned value  *          must be freed with g_object_unref().  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|GimpColorProfile
+modifier|*
 DECL|function|gimp_image_get_effective_color_profile (gint32 image_ID)
 name|gimp_image_get_effective_color_profile
 parameter_list|(
@@ -200,11 +197,12 @@ name|data
 condition|)
 block|{
 name|GimpColorProfile
+modifier|*
 name|profile
 decl_stmt|;
 name|profile
 operator|=
-name|gimp_color_profile_open_from_data
+name|gimp_color_profile_new_from_icc_profile
 argument_list|(
 name|data
 argument_list|,
@@ -229,18 +227,19 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_convert_color_profile:  * @image_ID: The image.  * @profile: The color profile to convert to.  * @intent: Rendering intent.  * @bpc: Black point compensation.  *  * Convert the image's layers to a color profile  *  * This procedure converts from the image's color profile (or the  * default RGB profile if none is set) to the given color profile. Only  * RGB color profiles are accepted.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_image_convert_color_profile:  * @image_ID: The image.  * @profile:  The color profile to convert to.  * @intent:   Rendering intent.  * @bpc:      Black point compensation.  *  * Convert the image's layers to a color profile  *  * This procedure converts from the image's color profile (or the  * default RGB profile if none is set) to the given color profile. Only  * RGB color profiles are accepted.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_convert_color_profile (gint32 image_ID,GimpColorProfile profile,GimpColorRenderingIntent intent,gboolean bpc)
+DECL|function|gimp_image_convert_color_profile (gint32 image_ID,GimpColorProfile * profile,GimpColorRenderingIntent intent,gboolean bpc)
 name|gimp_image_convert_color_profile
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
 name|GimpColorProfile
+modifier|*
 name|profile
 parameter_list|,
 name|GimpColorRenderingIntent
@@ -250,6 +249,7 @@ name|gboolean
 name|bpc
 parameter_list|)
 block|{
+specifier|const
 name|guint8
 modifier|*
 name|data
@@ -261,9 +261,20 @@ name|length
 init|=
 literal|0
 decl_stmt|;
-name|gboolean
-name|success
-decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|profile
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_COLOR_PROFILE
+argument_list|(
+name|profile
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|profile
@@ -274,31 +285,20 @@ name|l
 decl_stmt|;
 name|data
 operator|=
-name|gimp_color_profile_save_to_data
+name|gimp_color_profile_get_icc_profile
 argument_list|(
 name|profile
 argument_list|,
 operator|&
 name|l
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|length
 operator|=
 name|l
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|data
-condition|)
-return|return
-name|FALSE
-return|;
 block|}
-name|success
-operator|=
+return|return
 name|_gimp_image_convert_color_profile
 argument_list|(
 name|image_ID
@@ -311,14 +311,6 @@ name|intent
 argument_list|,
 name|bpc
 argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
-return|return
-name|success
 return|;
 block|}
 end_function

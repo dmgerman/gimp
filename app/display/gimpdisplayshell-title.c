@@ -1971,7 +1971,7 @@ name|profile
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_color_profile_close
+name|g_object_unref
 argument_list|(
 name|profile
 argument_list|)

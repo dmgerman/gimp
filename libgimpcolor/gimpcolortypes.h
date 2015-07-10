@@ -47,7 +47,8 @@ end_comment
 begin_typedef
 DECL|typedef|GimpColorProfile
 typedef|typedef
-name|gpointer
+name|struct
+name|_GimpColorProfile
 name|GimpColorProfile
 typedef|;
 end_typedef

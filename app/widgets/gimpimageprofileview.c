@@ -323,6 +323,7 @@ modifier|*
 name|managed
 decl_stmt|;
 name|GimpColorProfile
+modifier|*
 name|profile
 decl_stmt|;
 name|image
@@ -355,7 +356,7 @@ argument_list|,
 name|profile
 argument_list|)
 expr_stmt|;
-name|gimp_color_profile_close
+name|g_object_unref
 argument_list|(
 name|profile
 argument_list|)

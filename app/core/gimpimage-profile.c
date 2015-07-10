@@ -143,9 +143,11 @@ modifier|*
 name|image
 parameter_list|,
 name|GimpColorProfile
+modifier|*
 name|src_profile
 parameter_list|,
 name|GimpColorProfile
+modifier|*
 name|dest_profile
 parameter_list|,
 name|GimpColorRenderingIntent
@@ -171,9 +173,11 @@ modifier|*
 name|image
 parameter_list|,
 name|GimpColorProfile
+modifier|*
 name|src_profile
 parameter_list|,
 name|GimpColorProfile
+modifier|*
 name|dest_profile
 parameter_list|,
 name|GimpColorRenderingIntent
@@ -454,6 +458,7 @@ name|error
 parameter_list|)
 block|{
 name|GimpColorProfile
+modifier|*
 name|profile
 decl_stmt|;
 name|g_return_val_if_fail
@@ -500,7 +505,7 @@ argument_list|)
 expr_stmt|;
 name|profile
 operator|=
-name|gimp_color_profile_open_from_data
+name|gimp_color_profile_new_from_icc_profile
 argument_list|(
 name|data
 argument_list|,
@@ -542,7 +547,7 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|gimp_color_profile_close
+name|g_object_unref
 argument_list|(
 name|profile
 argument_list|)
@@ -551,7 +556,7 @@ return|return
 name|FALSE
 return|;
 block|}
-name|gimp_color_profile_close
+name|g_object_unref
 argument_list|(
 name|profile
 argument_list|)
@@ -774,7 +779,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_validate_color_profile (GimpImage * image,GimpColorProfile profile,GError ** error)
+DECL|function|gimp_image_validate_color_profile (GimpImage * image,GimpColorProfile * profile,GError ** error)
 name|gimp_image_validate_color_profile
 parameter_list|(
 name|GimpImage
@@ -782,6 +787,7 @@ modifier|*
 name|image
 parameter_list|,
 name|GimpColorProfile
+modifier|*
 name|profile
 parameter_list|,
 name|GError
@@ -802,9 +808,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_COLOR_PROFILE
+argument_list|(
 name|profile
-operator|!=
-name|NULL
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -888,6 +895,7 @@ end_function
 
 begin_function
 name|GimpColorProfile
+modifier|*
 DECL|function|gimp_image_get_color_profile (GimpImage * image)
 name|gimp_image_get_color_profile
 parameter_list|(
@@ -923,7 +931,7 @@ condition|(
 name|parasite
 condition|)
 return|return
-name|gimp_color_profile_open_from_data
+name|gimp_color_profile_new_from_icc_profile
 argument_list|(
 name|gimp_parasite_data
 argument_list|(
@@ -946,7 +954,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_set_color_profile (GimpImage * image,GimpColorProfile profile,GError ** error)
+DECL|function|gimp_image_set_color_profile (GimpImage * image,GimpColorProfile * profile,GError ** error)
 name|gimp_image_set_color_profile
 parameter_list|(
 name|GimpImage
@@ -954,6 +962,7 @@ modifier|*
 name|image
 parameter_list|,
 name|GimpColorProfile
+modifier|*
 name|profile
 parameter_list|,
 name|GError
@@ -962,6 +971,7 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+specifier|const
 name|guint8
 modifier|*
 name|data
@@ -985,6 +995,20 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|profile
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_COLOR_PROFILE
+argument_list|(
+name|profile
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|error
 operator|==
 name|NULL
@@ -1001,31 +1025,17 @@ if|if
 condition|(
 name|profile
 condition|)
-block|{
 name|data
 operator|=
-name|gimp_color_profile_save_to_data
+name|gimp_color_profile_get_icc_profile
 argument_list|(
 name|profile
 argument_list|,
 operator|&
 name|length
-argument_list|,
-name|error
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|data
-condition|)
 return|return
-name|FALSE
-return|;
-block|}
-if|if
-condition|(
-operator|!
 name|gimp_image_set_icc_profile
 argument_list|(
 name|image
@@ -1036,31 +1046,13 @@ name|length
 argument_list|,
 name|error
 argument_list|)
-condition|)
-block|{
-name|g_free
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
-name|g_free
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
-return|return
-name|TRUE
 return|;
 block|}
 end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_convert_color_profile (GimpImage * image,GimpColorProfile dest_profile,GimpColorRenderingIntent intent,gboolean bpc,GimpProgress * progress,GError ** error)
+DECL|function|gimp_image_convert_color_profile (GimpImage * image,GimpColorProfile * dest_profile,GimpColorRenderingIntent intent,gboolean bpc,GimpProgress * progress,GError ** error)
 name|gimp_image_convert_color_profile
 parameter_list|(
 name|GimpImage
@@ -1068,6 +1060,7 @@ modifier|*
 name|image
 parameter_list|,
 name|GimpColorProfile
+modifier|*
 name|dest_profile
 parameter_list|,
 name|GimpColorRenderingIntent
@@ -1087,9 +1080,11 @@ name|error
 parameter_list|)
 block|{
 name|GimpColorProfile
+modifier|*
 name|src_profile
 decl_stmt|;
 name|GimpColorProfile
+modifier|*
 name|builtin_profile
 decl_stmt|;
 specifier|const
@@ -1187,7 +1182,7 @@ name|dest_profile
 argument_list|)
 condition|)
 block|{
-name|gimp_color_profile_close
+name|g_object_unref
 argument_list|(
 name|src_profile
 argument_list|)
@@ -1312,7 +1307,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_color_profile_close
+name|g_object_unref
 argument_list|(
 name|builtin_profile
 argument_list|)
@@ -1390,7 +1385,7 @@ argument_list|(
 name|progress
 argument_list|)
 expr_stmt|;
-name|gimp_color_profile_close
+name|g_object_unref
 argument_list|(
 name|src_profile
 argument_list|)
@@ -1408,7 +1403,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_convert_profile_rgb (GimpImage * image,GimpColorProfile src_profile,GimpColorProfile dest_profile,GimpColorRenderingIntent intent,gboolean bpc,GimpProgress * progress)
+DECL|function|gimp_image_convert_profile_rgb (GimpImage * image,GimpColorProfile * src_profile,GimpColorProfile * dest_profile,GimpColorRenderingIntent intent,gboolean bpc,GimpProgress * progress)
 name|gimp_image_convert_profile_rgb
 parameter_list|(
 name|GimpImage
@@ -1416,9 +1411,11 @@ modifier|*
 name|image
 parameter_list|,
 name|GimpColorProfile
+modifier|*
 name|src_profile
 parameter_list|,
 name|GimpColorProfile
+modifier|*
 name|dest_profile
 parameter_list|,
 name|GimpColorRenderingIntent
@@ -1491,6 +1488,12 @@ name|list
 operator|->
 name|data
 decl_stmt|;
+name|cmsHPROFILE
+name|src_lcms
+decl_stmt|;
+name|cmsHPROFILE
+name|dest_lcms
+decl_stmt|;
 specifier|const
 name|Babl
 modifier|*
@@ -1516,6 +1519,20 @@ argument_list|)
 argument_list|)
 condition|)
 continue|continue;
+name|src_lcms
+operator|=
+name|gimp_color_profile_get_lcms_profile
+argument_list|(
+name|src_profile
+argument_list|)
+expr_stmt|;
+name|dest_lcms
+operator|=
+name|gimp_color_profile_get_lcms_profile
+argument_list|(
+name|dest_profile
+argument_list|)
+expr_stmt|;
 name|iter_format
 operator|=
 name|gimp_color_profile_get_format
@@ -1545,11 +1562,11 @@ name|transform
 operator|=
 name|cmsCreateTransform
 argument_list|(
-name|src_profile
+name|src_lcms
 argument_list|,
 name|lcms_format
 argument_list|,
-name|dest_profile
+name|dest_lcms
 argument_list|,
 name|lcms_format
 argument_list|,
@@ -1706,7 +1723,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_convert_profile_indexed (GimpImage * image,GimpColorProfile src_profile,GimpColorProfile dest_profile,GimpColorRenderingIntent intent,gboolean bpc,GimpProgress * progress)
+DECL|function|gimp_image_convert_profile_indexed (GimpImage * image,GimpColorProfile * src_profile,GimpColorProfile * dest_profile,GimpColorRenderingIntent intent,gboolean bpc,GimpProgress * progress)
 name|gimp_image_convert_profile_indexed
 parameter_list|(
 name|GimpImage
@@ -1714,9 +1731,11 @@ modifier|*
 name|image
 parameter_list|,
 name|GimpColorProfile
+modifier|*
 name|src_profile
 parameter_list|,
 name|GimpColorProfile
+modifier|*
 name|dest_profile
 parameter_list|,
 name|GimpColorRenderingIntent
@@ -1730,8 +1749,11 @@ modifier|*
 name|progress
 parameter_list|)
 block|{
-name|GimpColorTransform
-name|transform
+name|cmsHPROFILE
+name|src_lcms
+decl_stmt|;
+name|cmsHPROFILE
+name|dest_lcms
 decl_stmt|;
 name|guchar
 modifier|*
@@ -1740,6 +1762,23 @@ decl_stmt|;
 name|gint
 name|n_colors
 decl_stmt|;
+name|GimpColorTransform
+name|transform
+decl_stmt|;
+name|src_lcms
+operator|=
+name|gimp_color_profile_get_lcms_profile
+argument_list|(
+name|src_profile
+argument_list|)
+expr_stmt|;
+name|dest_lcms
+operator|=
+name|gimp_color_profile_get_lcms_profile
+argument_list|(
+name|dest_profile
+argument_list|)
+expr_stmt|;
 name|n_colors
 operator|=
 name|gimp_image_get_colormap_size
@@ -1765,11 +1804,11 @@ name|transform
 operator|=
 name|cmsCreateTransform
 argument_list|(
-name|src_profile
+name|src_lcms
 argument_list|,
 name|TYPE_RGB_8
 argument_list|,
-name|dest_profile
+name|dest_lcms
 argument_list|,
 name|TYPE_RGB_8
 argument_list|,

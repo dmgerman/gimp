@@ -359,7 +359,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cc18cf0103
+DECL|enum|__anon2ae9e8f40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -393,7 +393,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cc18cf0203
+DECL|enum|__anon2ae9e8f40203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -647,6 +647,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|GimpColorProfile
+modifier|*
 name|gimp_display_shell_get_color_profile
 parameter_list|(
 name|GimpColorManaged
@@ -4662,6 +4663,7 @@ end_function
 begin_function
 specifier|static
 name|GimpColorProfile
+modifier|*
 DECL|function|gimp_display_shell_get_color_profile (GimpColorManaged * managed)
 name|gimp_display_shell_get_color_profile
 parameter_list|(

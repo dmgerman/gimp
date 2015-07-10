@@ -47,6 +47,7 @@ begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|GimpColorProfile
+modifier|*
 name|gimp_image_get_color_profile
 parameter_list|(
 name|gint32
@@ -63,6 +64,7 @@ name|gint32
 name|image_ID
 parameter_list|,
 name|GimpColorProfile
+modifier|*
 name|profile
 parameter_list|)
 function_decl|;
@@ -70,6 +72,7 @@ end_function_decl
 
 begin_function_decl
 name|GimpColorProfile
+modifier|*
 name|gimp_image_get_effective_color_profile
 parameter_list|(
 name|gint32
@@ -86,6 +89,7 @@ name|gint32
 name|image_ID
 parameter_list|,
 name|GimpColorProfile
+modifier|*
 name|profile
 parameter_list|,
 name|GimpColorRenderingIntent

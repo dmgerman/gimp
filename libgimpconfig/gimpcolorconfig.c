@@ -201,7 +201,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d9b1a80103
+DECL|enum|__anon2af444050103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1298,6 +1298,7 @@ end_function
 
 begin_function
 name|GimpColorProfile
+modifier|*
 DECL|function|gimp_color_config_get_rgb_color_profile (GimpColorConfig * config,GError ** error)
 name|gimp_color_config_get_rgb_color_profile
 parameter_list|(
@@ -1312,6 +1313,7 @@ name|error
 parameter_list|)
 block|{
 name|GimpColorProfile
+modifier|*
 name|profile
 init|=
 name|NULL
@@ -1360,7 +1362,7 @@ argument_list|)
 decl_stmt|;
 name|profile
 operator|=
-name|gimp_color_profile_open_from_file
+name|gimp_color_profile_new_from_file
 argument_list|(
 name|file
 argument_list|,
@@ -1378,7 +1380,7 @@ name|profile
 argument_list|)
 condition|)
 block|{
-name|gimp_color_profile_close
+name|g_object_unref
 argument_list|(
 name|profile
 argument_list|)
@@ -1421,6 +1423,7 @@ end_function
 
 begin_function
 name|GimpColorProfile
+modifier|*
 DECL|function|gimp_color_config_get_cmyk_color_profile (GimpColorConfig * config,GError ** error)
 name|gimp_color_config_get_cmyk_color_profile
 parameter_list|(
@@ -1435,6 +1438,7 @@ name|error
 parameter_list|)
 block|{
 name|GimpColorProfile
+modifier|*
 name|profile
 init|=
 name|NULL
@@ -1483,7 +1487,7 @@ argument_list|)
 decl_stmt|;
 name|profile
 operator|=
-name|gimp_color_profile_open_from_file
+name|gimp_color_profile_new_from_file
 argument_list|(
 name|file
 argument_list|,
@@ -1501,7 +1505,7 @@ name|profile
 argument_list|)
 condition|)
 block|{
-name|gimp_color_profile_close
+name|g_object_unref
 argument_list|(
 name|profile
 argument_list|)
@@ -1544,6 +1548,7 @@ end_function
 
 begin_function
 name|GimpColorProfile
+modifier|*
 DECL|function|gimp_color_config_get_display_color_profile (GimpColorConfig * config,GError ** error)
 name|gimp_color_config_get_display_color_profile
 parameter_list|(
@@ -1558,6 +1563,7 @@ name|error
 parameter_list|)
 block|{
 name|GimpColorProfile
+modifier|*
 name|profile
 init|=
 name|NULL
@@ -1606,7 +1612,7 @@ argument_list|)
 decl_stmt|;
 name|profile
 operator|=
-name|gimp_color_profile_open_from_file
+name|gimp_color_profile_new_from_file
 argument_list|(
 name|file
 argument_list|,
@@ -1627,6 +1633,7 @@ end_function
 
 begin_function
 name|GimpColorProfile
+modifier|*
 DECL|function|gimp_color_config_get_printer_color_profile (GimpColorConfig * config,GError ** error)
 name|gimp_color_config_get_printer_color_profile
 parameter_list|(
@@ -1641,6 +1648,7 @@ name|error
 parameter_list|)
 block|{
 name|GimpColorProfile
+modifier|*
 name|profile
 init|=
 name|NULL
@@ -1689,7 +1697,7 @@ argument_list|)
 decl_stmt|;
 name|profile
 operator|=
-name|gimp_color_profile_open_from_file
+name|gimp_color_profile_new_from_file
 argument_list|(
 name|file
 argument_list|,
@@ -1744,6 +1752,7 @@ name|filename
 condition|)
 block|{
 name|GimpColorProfile
+modifier|*
 name|profile
 decl_stmt|;
 name|GFile
@@ -1757,7 +1766,7 @@ argument_list|)
 decl_stmt|;
 name|profile
 operator|=
-name|gimp_color_profile_open_from_file
+name|gimp_color_profile_new_from_file
 argument_list|(
 name|file
 argument_list|,
@@ -1802,7 +1811,7 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
-name|gimp_color_profile_close
+name|g_object_unref
 argument_list|(
 name|profile
 argument_list|)
@@ -1878,6 +1887,7 @@ name|filename
 condition|)
 block|{
 name|GimpColorProfile
+modifier|*
 name|profile
 decl_stmt|;
 name|GFile
@@ -1891,7 +1901,7 @@ argument_list|)
 decl_stmt|;
 name|profile
 operator|=
-name|gimp_color_profile_open_from_file
+name|gimp_color_profile_new_from_file
 argument_list|(
 name|file
 argument_list|,
@@ -1936,7 +1946,7 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
-name|gimp_color_profile_close
+name|g_object_unref
 argument_list|(
 name|profile
 argument_list|)
@@ -2012,6 +2022,7 @@ name|filename
 condition|)
 block|{
 name|GimpColorProfile
+modifier|*
 name|profile
 decl_stmt|;
 name|GFile
@@ -2025,7 +2036,7 @@ argument_list|)
 decl_stmt|;
 name|profile
 operator|=
-name|gimp_color_profile_open_from_file
+name|gimp_color_profile_new_from_file
 argument_list|(
 name|file
 argument_list|,
@@ -2037,7 +2048,7 @@ condition|(
 name|profile
 condition|)
 block|{
-name|gimp_color_profile_close
+name|g_object_unref
 argument_list|(
 name|profile
 argument_list|)
@@ -2113,6 +2124,7 @@ name|filename
 condition|)
 block|{
 name|GimpColorProfile
+modifier|*
 name|profile
 decl_stmt|;
 name|GFile
@@ -2126,7 +2138,7 @@ argument_list|)
 decl_stmt|;
 name|profile
 operator|=
-name|gimp_color_profile_open_from_file
+name|gimp_color_profile_new_from_file
 argument_list|(
 name|file
 argument_list|,
@@ -2138,7 +2150,7 @@ condition|(
 name|profile
 condition|)
 block|{
-name|gimp_color_profile_close
+name|g_object_unref
 argument_list|(
 name|profile
 argument_list|)

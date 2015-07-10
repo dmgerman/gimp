@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28712ca90103
+DECL|enum|__anon2b8c47bb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -80,7 +80,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28712ca90208
+DECL|struct|__anon2b8c47bb0208
 block|{
 DECL|member|last_path
 name|GtkTreePath
@@ -1190,6 +1190,7 @@ modifier|*
 name|file
 decl_stmt|;
 name|GimpColorProfile
+modifier|*
 name|profile
 decl_stmt|;
 name|GError
@@ -1207,7 +1208,7 @@ argument_list|)
 expr_stmt|;
 name|profile
 operator|=
-name|gimp_color_profile_open_from_file
+name|gimp_color_profile_new_from_file
 argument_list|(
 name|file
 argument_list|,
@@ -1251,7 +1252,7 @@ argument_list|(
 name|profile
 argument_list|)
 expr_stmt|;
-name|gimp_color_profile_close
+name|g_object_unref
 argument_list|(
 name|profile
 argument_list|)
