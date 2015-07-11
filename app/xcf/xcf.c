@@ -507,9 +507,8 @@ literal|"Filename"
 argument_list|,
 literal|"The name of the file "
 literal|"to save the image in, "
-literal|"in the on-disk "
-literal|"character set and "
-literal|"encoding"
+literal|"in URI format and "
+literal|"UTF-8 encoding"
 argument_list|,
 name|TRUE
 argument_list|,
