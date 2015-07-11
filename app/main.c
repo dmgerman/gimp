@@ -2104,6 +2104,17 @@ literal|"Another GIMP instance is already running."
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|batch_commands
+condition|)
+name|gimp_unique_batch_run
+argument_list|(
+name|batch_interpreter
+argument_list|,
+name|batch_commands
+argument_list|)
+expr_stmt|;
 name|gdk_notify_startup_complete
 argument_list|()
 expr_stmt|;

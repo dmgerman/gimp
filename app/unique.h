@@ -32,6 +32,24 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_unique_batch_run
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|batch_interpreter
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+modifier|*
+name|batch_commands
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
