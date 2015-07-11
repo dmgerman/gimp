@@ -1603,6 +1603,23 @@ name|progress
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|g_propagate_prefixed_error
+argument_list|(
+name|error
+argument_list|,
+name|my_error
+argument_list|,
+name|_
+argument_list|(
+literal|"Error creating '%s': "
+argument_list|)
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+block|}
 name|g_free
 argument_list|(
 name|filename
