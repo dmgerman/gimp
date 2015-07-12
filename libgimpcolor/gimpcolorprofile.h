@@ -317,6 +317,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|gchar
 modifier|*
 name|gimp_color_profile_get_description
@@ -329,6 +330,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|gchar
 modifier|*
 name|gimp_color_profile_get_manufacturer
@@ -341,6 +343,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|gchar
 modifier|*
 name|gimp_color_profile_get_model
@@ -353,6 +356,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|gchar
 modifier|*
 name|gimp_color_profile_get_copyright
@@ -365,6 +369,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|gchar
 modifier|*
 name|gimp_color_profile_get_label
@@ -377,6 +382,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|gchar
 modifier|*
 name|gimp_color_profile_get_summary

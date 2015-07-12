@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8c47bb0103
+DECL|enum|__anon274c78560103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -80,7 +80,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8c47bb0208
+DECL|struct|__anon274c78560208
 block|{
 DECL|member|last_path
 name|GtkTreePath
@@ -1148,12 +1148,6 @@ decl_stmt|;
 name|GtkTreeIter
 name|iter
 decl_stmt|;
-name|gchar
-modifier|*
-name|l
-init|=
-name|NULL
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_COLOR_PROFILE_COMBO_BOX
@@ -1245,7 +1239,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|l
+name|label
 operator|=
 name|gimp_color_profile_get_label
 argument_list|(
@@ -1259,16 +1253,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-else|else
-block|{
-name|l
-operator|=
-name|g_strdup
-argument_list|(
-name|label
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|_gimp_color_profile_store_history_add
@@ -1280,7 +1264,7 @@ argument_list|)
 argument_list|,
 name|filename
 argument_list|,
-name|l
+name|label
 argument_list|,
 operator|&
 name|iter
@@ -1299,11 +1283,6 @@ name|iter
 argument_list|)
 expr_stmt|;
 block|}
-name|g_free
-argument_list|(
-name|l
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

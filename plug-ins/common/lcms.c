@@ -83,7 +83,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon295a30450103
+DECL|enum|__anon2be3df4f0103
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -106,7 +106,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295a30450208
+DECL|struct|__anon2be3df4f0208
 block|{
 DECL|member|name
 specifier|const
@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295a30450308
+DECL|struct|__anon2be3df4f0308
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -1643,24 +1643,23 @@ name|dest_profile
 argument_list|)
 condition|)
 block|{
-name|gchar
-modifier|*
-name|src_label
-init|=
+name|g_printerr
+argument_list|(
+literal|"lcms: skipping conversion because profiles are equal:\n"
+literal|" %s\n"
+literal|" %s\n"
+argument_list|,
 name|gimp_color_profile_get_label
 argument_list|(
 name|src_profile
 argument_list|)
-decl_stmt|;
-name|gchar
-modifier|*
-name|dest_label
-init|=
+argument_list|,
 name|gimp_color_profile_get_label
 argument_list|(
 name|dest_profile
 argument_list|)
-decl_stmt|;
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|src_profile
@@ -1669,35 +1668,6 @@ expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|dest_profile
-argument_list|)
-expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"lcms: skipping conversion because profiles seem to be equal:\n"
-argument_list|)
-expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|" %s\n"
-argument_list|,
-name|src_label
-argument_list|)
-expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|" %s\n"
-argument_list|,
-name|dest_label
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|src_label
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|dest_label
 argument_list|)
 expr_stmt|;
 if|if
@@ -2021,13 +1991,6 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-name|name
-operator|=
-name|gimp_color_profile_get_label
-argument_list|(
-name|profile
-argument_list|)
-expr_stmt|;
 name|label
 operator|=
 name|g_object_new
@@ -2036,7 +1999,10 @@ name|GTK_TYPE_LABEL
 argument_list|,
 literal|"label"
 argument_list|,
-name|name
+name|gimp_color_profile_get_label
+argument_list|(
+name|profile
+argument_list|)
 argument_list|,
 literal|"wrap"
 argument_list|,
@@ -2059,11 +2025,6 @@ argument_list|,
 literal|24
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|name
 argument_list|)
 expr_stmt|;
 name|gimp_label_set_attributes
@@ -2126,19 +2087,8 @@ name|label
 decl_stmt|;
 name|gchar
 modifier|*
-name|name
-decl_stmt|;
-name|gchar
-modifier|*
 name|text
 decl_stmt|;
-name|name
-operator|=
-name|gimp_color_profile_get_label
-argument_list|(
-name|profile
-argument_list|)
-expr_stmt|;
 name|text
 operator|=
 name|g_strdup_printf
@@ -2148,12 +2098,10 @@ argument_list|(
 literal|"Convert the image to the RGB working space (%s)?"
 argument_list|)
 argument_list|,
-name|name
-argument_list|)
-expr_stmt|;
-name|g_free
+name|gimp_color_profile_get_label
 argument_list|(
-name|name
+name|profile
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|label
@@ -2560,10 +2508,6 @@ name|gchar
 modifier|*
 name|label
 decl_stmt|;
-name|gchar
-modifier|*
-name|name
-decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
@@ -2668,13 +2612,6 @@ operator|=
 name|gimp_color_profile_new_srgb
 argument_list|()
 expr_stmt|;
-name|name
-operator|=
-name|gimp_color_profile_get_label
-argument_list|(
-name|profile
-argument_list|)
-expr_stmt|;
 name|label
 operator|=
 name|g_strdup_printf
@@ -2684,12 +2621,10 @@ argument_list|(
 literal|"RGB workspace (%s)"
 argument_list|)
 argument_list|,
-name|name
-argument_list|)
-expr_stmt|;
-name|g_free
+name|gimp_color_profile_get_label
 argument_list|(
-name|name
+name|profile
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -2780,10 +2715,6 @@ decl_stmt|;
 name|GimpColorProfile
 modifier|*
 name|src_profile
-decl_stmt|;
-name|gchar
-modifier|*
-name|name
 decl_stmt|;
 name|gboolean
 name|success
@@ -2955,18 +2886,14 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-name|name
-operator|=
-name|gimp_color_profile_get_label
-argument_list|(
-name|src_profile
-argument_list|)
-expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-name|name
+name|gimp_color_profile_get_label
+argument_list|(
+name|src_profile
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2994,11 +2921,6 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|label
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|name
 argument_list|)
 expr_stmt|;
 name|frame
