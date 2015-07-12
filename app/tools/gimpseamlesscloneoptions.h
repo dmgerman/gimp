@@ -112,9 +112,9 @@ DECL|member|parent_instance
 name|GimpToolOptions
 name|parent_instance
 decl_stmt|;
-DECL|member|max_refine_steps
+DECL|member|max_refine_scale
 name|gint
-name|max_refine_steps
+name|max_refine_scale
 decl_stmt|;
 DECL|member|temp
 name|gboolean

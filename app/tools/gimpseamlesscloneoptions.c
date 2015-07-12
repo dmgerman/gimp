@@ -71,13 +71,13 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b387640103
+DECL|enum|__anon2c0272bf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
 block|,
-DECL|enumerator|PROP_MAX_REFINE_STEPS
-name|PROP_MAX_REFINE_STEPS
+DECL|enumerator|PROP_MAX_REFINE_SCALE
+name|PROP_MAX_REFINE_SCALE
 block|, }
 enum|;
 end_enum
@@ -184,20 +184,20 @@ name|GIMP_CONFIG_INSTALL_PROP_INT
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_MAX_REFINE_STEPS
+name|PROP_MAX_REFINE_SCALE
 argument_list|,
-literal|"max-refine-steps"
+literal|"max-refine-scale"
 argument_list|,
 name|_
 argument_list|(
-literal|"Maximal amount of refinement points to be used for the interpolation mesh"
+literal|"Maximal scale of refinement points to be used for the interpolation mesh"
 argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|100000
+literal|50
 argument_list|,
-literal|2000
+literal|5
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -256,11 +256,11 @@ name|property_id
 condition|)
 block|{
 case|case
-name|PROP_MAX_REFINE_STEPS
+name|PROP_MAX_REFINE_SCALE
 case|:
 name|options
 operator|->
-name|max_refine_steps
+name|max_refine_scale
 operator|=
 name|g_value_get_int
 argument_list|(
@@ -320,7 +320,7 @@ name|property_id
 condition|)
 block|{
 case|case
-name|PROP_MAX_REFINE_STEPS
+name|PROP_MAX_REFINE_SCALE
 case|:
 name|g_value_set_int
 argument_list|(
@@ -328,7 +328,7 @@ name|value
 argument_list|,
 name|options
 operator|->
-name|max_refine_steps
+name|max_refine_scale
 argument_list|)
 expr_stmt|;
 break|break;
@@ -386,11 +386,11 @@ name|gimp_prop_spin_scale_new
 argument_list|(
 name|config
 argument_list|,
-literal|"max-refine-steps"
+literal|"max-refine-scale"
 argument_list|,
 name|_
 argument_list|(
-literal|"Refinement points"
+literal|"Refinement scale"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -409,7 +409,7 @@ argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
-literal|100000.0
+literal|50.0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

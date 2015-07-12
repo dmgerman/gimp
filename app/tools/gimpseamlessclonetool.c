@@ -247,7 +247,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon292ddfb70103
+DECL|enum|__anon278c62290103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -2159,7 +2159,7 @@ name|pspec
 operator|->
 name|name
 argument_list|,
-literal|"max-refine-steps"
+literal|"max-refine-scale"
 argument_list|)
 condition|)
 block|{
@@ -2349,11 +2349,11 @@ literal|"operation"
 argument_list|,
 literal|"gegl:seamless-clone"
 argument_list|,
-literal|"max-refine-steps"
+literal|"max-refine-scale"
 argument_list|,
 name|options
 operator|->
-name|max_refine_steps
+name|max_refine_scale
 argument_list|,
 name|NULL
 argument_list|)
@@ -2458,7 +2458,7 @@ parameter_list|)
 block|{
 specifier|static
 name|gint
-name|rendered__max_refine_steps
+name|rendered__max_refine_scale
 init|=
 operator|-
 literal|1
@@ -2503,11 +2503,11 @@ decl_stmt|;
 comment|/* All properties stay the same. No need to update. */
 if|if
 condition|(
-name|rendered__max_refine_steps
+name|rendered__max_refine_scale
 operator|==
 name|options
 operator|->
-name|max_refine_steps
+name|max_refine_scale
 operator|&&
 name|rendered_xoff
 operator|==
@@ -2566,23 +2566,23 @@ name|yoff
 operator|-
 name|off_y
 argument_list|,
-literal|"max-refine-steps"
+literal|"max-refine-scale"
 argument_list|,
 operator|(
 name|gint
 operator|)
 name|options
 operator|->
-name|max_refine_steps
+name|max_refine_scale
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|rendered__max_refine_steps
+name|rendered__max_refine_scale
 operator|=
 name|options
 operator|->
-name|max_refine_steps
+name|max_refine_scale
 expr_stmt|;
 name|rendered_xoff
 operator|=
