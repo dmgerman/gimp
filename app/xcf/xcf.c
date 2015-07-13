@@ -886,10 +886,6 @@ name|gchar
 modifier|*
 name|uri
 decl_stmt|;
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
 name|GFile
 modifier|*
 name|file
@@ -933,13 +929,6 @@ operator|=
 name|g_file_new_for_uri
 argument_list|(
 name|uri
-argument_list|)
-expr_stmt|;
-name|filename
-operator|=
-name|g_file_get_parse_name
-argument_list|(
-name|file
 argument_list|)
 expr_stmt|;
 name|info
@@ -991,9 +980,9 @@ name|progress
 expr_stmt|;
 name|info
 operator|.
-name|filename
+name|file
 operator|=
-name|filename
+name|file
 expr_stmt|;
 name|info
 operator|.
@@ -1016,7 +1005,10 @@ argument_list|(
 literal|"Opening '%s'"
 argument_list|)
 argument_list|,
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|success
@@ -1222,15 +1214,13 @@ argument_list|(
 literal|"Could not open '%s' for reading: "
 argument_list|)
 argument_list|,
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|g_free
-argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|file
@@ -1333,10 +1323,6 @@ name|gchar
 modifier|*
 name|uri
 decl_stmt|;
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
 name|GFile
 modifier|*
 name|file
@@ -1388,13 +1374,6 @@ operator|=
 name|g_file_new_for_uri
 argument_list|(
 name|uri
-argument_list|)
-expr_stmt|;
-name|filename
-operator|=
-name|g_file_get_parse_name
-argument_list|(
-name|file
 argument_list|)
 expr_stmt|;
 name|info
@@ -1460,9 +1439,9 @@ name|progress
 expr_stmt|;
 name|info
 operator|.
-name|filename
+name|file
 operator|=
-name|filename
+name|file
 expr_stmt|;
 if|if
 condition|(
@@ -1515,7 +1494,10 @@ argument_list|(
 literal|"Saving '%s'"
 argument_list|)
 argument_list|,
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|success
@@ -1549,7 +1531,10 @@ argument_list|(
 literal|"Closing '%s'"
 argument_list|)
 argument_list|,
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|success
@@ -1583,7 +1568,10 @@ argument_list|(
 literal|"Error writing '%s': "
 argument_list|)
 argument_list|,
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1616,15 +1604,13 @@ argument_list|(
 literal|"Error creating '%s': "
 argument_list|)
 argument_list|,
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|g_free
-argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|file

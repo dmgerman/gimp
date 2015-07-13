@@ -1995,13 +1995,13 @@ operator|->
 name|active_channel
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
 name|info
 operator|->
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 if|if

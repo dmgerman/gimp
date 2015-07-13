@@ -35,7 +35,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c050cf00103
+DECL|enum|__anon2bb94e1b0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -210,7 +210,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c050cf00203
+DECL|enum|__anon2bb94e1b0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -242,7 +242,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c050cf00303
+DECL|enum|__anon2bb94e1b0303
 block|{
 DECL|enumerator|XCF_ORIENTATION_HORIZONTAL
 name|XCF_ORIENTATION_HORIZONTAL
@@ -262,7 +262,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c050cf00403
+DECL|enum|__anon2bb94e1b0403
 block|{
 DECL|enumerator|XCF_STROKETYPE_STROKE
 name|XCF_STROKETYPE_STROKE
@@ -282,7 +282,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c050cf00503
+DECL|enum|__anon2bb94e1b0503
 block|{
 DECL|enumerator|XCF_GROUP_ITEM_EXPANDED
 name|XCF_GROUP_ITEM_EXPANDED
@@ -337,11 +337,10 @@ DECL|member|cp
 name|guint
 name|cp
 decl_stmt|;
-DECL|member|filename
-specifier|const
-name|gchar
+DECL|member|file
+name|GFile
 modifier|*
-name|filename
+name|file
 decl_stmt|;
 DECL|member|tattoo_state
 name|GimpTattoo

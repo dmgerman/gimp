@@ -897,22 +897,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_image_set_filename
-parameter_list|(
-name|GimpImage
-modifier|*
-name|image
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|filename
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 specifier|const
 name|gchar
 modifier|*
