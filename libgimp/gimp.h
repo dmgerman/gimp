@@ -1217,7 +1217,7 @@ end_function_decl
 begin_macro
 name|GIMP_DEPRECATED_FOR
 argument_list|(
-argument|gimp_parasite_attach
+argument|gimp_attach_parasite
 argument_list|)
 end_macro
 
@@ -1236,7 +1236,7 @@ end_function_decl
 begin_macro
 name|GIMP_DEPRECATED_FOR
 argument_list|(
-argument|gimp_parasite_detach
+argument|gimp_detach_parasite
 argument_list|)
 end_macro
 
@@ -1279,7 +1279,7 @@ end_function_decl
 begin_macro
 name|GIMP_DEPRECATED_FOR
 argument_list|(
-argument|gimp_parasite_attach
+argument|gimp_attach_parasite
 argument_list|)
 end_macro
 
