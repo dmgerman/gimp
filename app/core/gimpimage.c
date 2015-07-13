@@ -360,7 +360,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29abdd070103
+DECL|enum|__anon2bc90a4f0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -457,7 +457,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29abdd070203
+DECL|enum|__anon2bc90a4f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -8585,56 +8585,6 @@ name|save_a_copy_file
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-name|gchar
-modifier|*
-DECL|function|gimp_image_get_filename (const GimpImage * image)
-name|gimp_image_get_filename
-parameter_list|(
-specifier|const
-name|GimpImage
-modifier|*
-name|image
-parameter_list|)
-block|{
-name|GFile
-modifier|*
-name|file
-decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_IMAGE
-argument_list|(
-name|image
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|file
-operator|=
-name|gimp_image_get_file
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|file
-condition|)
-return|return
-name|NULL
-return|;
-return|return
-name|g_file_get_path
-argument_list|(
-name|file
-argument_list|)
-return|;
 block|}
 end_function
 
