@@ -12313,7 +12313,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2b0d99120103
+DECL|enum|__anon2989403f0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -14330,7 +14330,6 @@ argument_list|,
 name|c
 argument_list|)
 expr_stmt|;
-break|break;
 break|break;
 block|}
 block|}
@@ -30722,7 +30721,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2b0d99120208
+DECL|struct|__anon2989403f0208
 specifier|static
 struct|struct
 block|{
@@ -30957,7 +30956,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2b0d99120308
+DECL|struct|__anon2989403f0308
 typedef|typedef
 struct|struct
 block|{
