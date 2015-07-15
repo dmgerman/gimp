@@ -108,9 +108,9 @@ DECL|struct|_GimpCropOptions
 struct|struct
 name|_GimpCropOptions
 block|{
-DECL|member|parent_instence
+DECL|member|parent_instance
 name|GimpToolOptions
-name|parent_instence
+name|parent_instance
 decl_stmt|;
 comment|/* Work on the current layer rather than the image. */
 DECL|member|layer_only

@@ -116,9 +116,9 @@ DECL|struct|_GimpAlignOptions
 struct|struct
 name|_GimpAlignOptions
 block|{
-DECL|member|parent_instence
+DECL|member|parent_instance
 name|GimpToolOptions
-name|parent_instence
+name|parent_instance
 decl_stmt|;
 DECL|member|align_reference
 name|GimpAlignReferenceType

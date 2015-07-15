@@ -108,9 +108,9 @@ DECL|struct|_GimpMoveOptions
 struct|struct
 name|_GimpMoveOptions
 block|{
-DECL|member|parent_instence
+DECL|member|parent_instance
 name|GimpToolOptions
-name|parent_instence
+name|parent_instance
 decl_stmt|;
 DECL|member|move_type
 name|GimpTransformType

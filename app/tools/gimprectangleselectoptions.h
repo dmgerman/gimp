@@ -108,9 +108,9 @@ DECL|struct|_GimpRectangleSelectOptions
 struct|struct
 name|_GimpRectangleSelectOptions
 block|{
-DECL|member|parent_instence
+DECL|member|parent_instance
 name|GimpSelectionOptions
-name|parent_instence
+name|parent_instance
 decl_stmt|;
 DECL|member|round_corners
 name|gboolean
