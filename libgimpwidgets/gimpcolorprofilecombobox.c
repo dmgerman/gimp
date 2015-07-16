@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon274c78560103
+DECL|enum|__anon28ed29f70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -80,7 +80,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274c78560208
+DECL|struct|__anon28ed29f70208
 block|{
 DECL|member|last_path
 name|GtkTreePath
@@ -1141,6 +1141,12 @@ modifier|*
 name|label
 parameter_list|)
 block|{
+name|GimpColorProfile
+modifier|*
+name|profile
+init|=
+name|NULL
+decl_stmt|;
 name|GtkTreeModel
 modifier|*
 name|model
@@ -1182,10 +1188,6 @@ block|{
 name|GFile
 modifier|*
 name|file
-decl_stmt|;
-name|GimpColorProfile
-modifier|*
-name|profile
 decl_stmt|;
 name|GError
 modifier|*
@@ -1246,11 +1248,6 @@ argument_list|(
 name|profile
 argument_list|)
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|profile
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 if|if
@@ -1283,6 +1280,15 @@ name|iter
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|profile
+condition|)
+name|g_object_unref
+argument_list|(
+name|profile
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
