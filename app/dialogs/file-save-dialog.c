@@ -156,7 +156,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274cada60103
+DECL|enum|__anon27ecd2cf0103
 block|{
 DECL|enumerator|CHECK_URI_FAIL
 name|CHECK_URI_FAIL
@@ -638,6 +638,13 @@ argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
+name|g_object_ref
+argument_list|(
+name|dialog
+operator|->
+name|image
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|file_save_dialog_check_file
@@ -902,6 +909,13 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+name|g_object_unref
+argument_list|(
+name|dialog
+operator|->
+name|image
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|dialog
