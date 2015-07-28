@@ -101,6 +101,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_image_set_color_profile_from_file
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|uri
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|G_GNUC_INTERNAL
 name|gboolean
 name|_gimp_image_convert_color_profile
