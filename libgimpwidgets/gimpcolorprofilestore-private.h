@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fd76720103
+DECL|enum|__anon27e0abc40103
 block|{
 DECL|enumerator|GIMP_COLOR_PROFILE_STORE_ITEM_FILE
 name|GIMP_COLOR_PROFILE_STORE_ITEM_FILE
@@ -41,7 +41,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fd76720203
+DECL|enum|__anon27e0abc40203
 block|{
 DECL|enumerator|GIMP_COLOR_PROFILE_STORE_ITEM_TYPE
 name|GIMP_COLOR_PROFILE_STORE_ITEM_TYPE
@@ -49,8 +49,8 @@ block|,
 DECL|enumerator|GIMP_COLOR_PROFILE_STORE_LABEL
 name|GIMP_COLOR_PROFILE_STORE_LABEL
 block|,
-DECL|enumerator|GIMP_COLOR_PROFILE_STORE_FILENAME
-name|GIMP_COLOR_PROFILE_STORE_FILENAME
+DECL|enumerator|GIMP_COLOR_PROFILE_STORE_FILE
+name|GIMP_COLOR_PROFILE_STORE_FILE
 block|,
 DECL|enumerator|GIMP_COLOR_PROFILE_STORE_INDEX
 name|GIMP_COLOR_PROFILE_STORE_INDEX
@@ -69,10 +69,9 @@ name|GimpColorProfileStore
 modifier|*
 name|store
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 specifier|const
 name|gchar
