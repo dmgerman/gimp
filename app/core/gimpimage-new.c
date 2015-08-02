@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-color-profile.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage-colormap.h"
 end_include
 
@@ -103,12 +109,6 @@ begin_include
 include|#
 directive|include
 file|"gimpimage-new.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimage-profile.h"
 end_include
 
 begin_include

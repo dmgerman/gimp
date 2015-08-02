@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-profile.h"
+file|"core/gimpimage-color-profile.h"
 end_include
 
 begin_include

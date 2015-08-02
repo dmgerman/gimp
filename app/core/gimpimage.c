@@ -150,6 +150,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-color-profile.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage-colormap.h"
 end_include
 
@@ -187,12 +193,6 @@ begin_include
 include|#
 directive|include
 file|"gimpimage-private.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimage-profile.h"
 end_include
 
 begin_include
@@ -360,7 +360,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2a17b30103
+DECL|enum|__anon28c138af0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -457,7 +457,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2a17b30203
+DECL|enum|__anon28c138af0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

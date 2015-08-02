@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-color-profile.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-convert-precision.h"
 end_include
 
@@ -103,12 +109,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage-merge.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpimage-profile.h"
 end_include
 
 begin_include
@@ -286,7 +286,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9aee460108
+DECL|struct|__anon27b98bb30108
 block|{
 DECL|member|context
 name|GimpContext
