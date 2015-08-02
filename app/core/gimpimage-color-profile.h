@@ -192,6 +192,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpColorProfile
+modifier|*
+name|gimp_image_get_builtin_color_profile
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_convert_color_profile
 parameter_list|(
