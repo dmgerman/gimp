@@ -359,7 +359,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae9e8f40103
+DECL|enum|__anon28ec9b990103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -393,7 +393,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae9e8f40203
+DECL|enum|__anon28ec9b990203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4710,7 +4710,6 @@ return|return
 name|gimp_color_profile_new_srgb
 argument_list|()
 return|;
-empty_stmt|;
 block|}
 end_function
 
