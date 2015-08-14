@@ -2651,6 +2651,11 @@ name|GIMP_IS_LAYER
 argument_list|(
 name|pickable
 argument_list|)
+operator|||
+name|GIMP_IS_IMAGE
+argument_list|(
+name|pickable
+argument_list|)
 condition|)
 block|{
 specifier|const
