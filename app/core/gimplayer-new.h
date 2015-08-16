@@ -111,13 +111,9 @@ parameter_list|,
 name|GimpLayerModeEffects
 name|mode
 parameter_list|,
-specifier|const
-name|guint8
+name|GimpColorProfile
 modifier|*
-name|buffer_icc_data
-parameter_list|,
-name|gsize
-name|buffer_icc_length
+name|buffer_profile
 parameter_list|)
 function_decl|;
 end_function_decl
