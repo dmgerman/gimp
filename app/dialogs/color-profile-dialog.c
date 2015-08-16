@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4885f20108
+DECL|struct|__anon275397cb0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1636,6 +1636,20 @@ name|dest_profile
 argument_list|,
 operator|&
 name|error
+argument_list|)
+expr_stmt|;
+comment|/*  omg...  */
+if|if
+condition|(
+name|success
+condition|)
+name|gimp_image_parasite_detach
+argument_list|(
+name|dialog
+operator|->
+name|image
+argument_list|,
+literal|"icc-profile-name"
 argument_list|)
 expr_stmt|;
 block|}
