@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpmath/gimpmath.h"
 end_include
 
@@ -66,6 +72,16 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpcoreconfig.h"
+end_include
+
+begin_comment
+comment|/* FIXME profile convert config */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"gegl/gimp-gegl-apply-operation.h"
 end_include
 
@@ -74,6 +90,16 @@ include|#
 directive|include
 file|"gegl/gimp-gegl-nodes.h"
 end_include
+
+begin_include
+include|#
+directive|include
+file|"gimp.h"
+end_include
+
+begin_comment
+comment|/* FIXME profile convert config */
+end_comment
 
 begin_include
 include|#
@@ -161,7 +187,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a043bee0103
+DECL|enum|__anon2a9072370103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -192,7 +218,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a043bee0203
+DECL|enum|__anon2a9072370203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -463,6 +489,9 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|dest_image
+parameter_list|,
+name|GType
+name|old_type
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -739,6 +768,9 @@ name|layer_dither_type
 parameter_list|,
 name|gint
 name|mask_dither_type
+parameter_list|,
+name|gboolean
+name|convert_type
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -3275,7 +3307,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_convert (GimpItem * item,GimpImage * dest_image)
+DECL|function|gimp_layer_convert (GimpItem * item,GimpImage * dest_image,GType old_type)
 name|gimp_layer_convert
 parameter_list|(
 name|GimpItem
@@ -3285,6 +3317,9 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|dest_image
+parameter_list|,
+name|GType
+name|old_type
 parameter_list|)
 block|{
 name|GimpLayer
@@ -3305,6 +3340,30 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|GimpColorConfig
+modifier|*
+name|config
+init|=
+name|image
+operator|->
+name|gimp
+operator|->
+name|config
+operator|->
+name|color_management
+decl_stmt|;
 name|GimpImageBaseType
 name|old_base_type
 decl_stmt|;
@@ -3316,6 +3375,9 @@ name|old_precision
 decl_stmt|;
 name|GimpPrecision
 name|new_precision
+decl_stmt|;
+name|gboolean
+name|convert_profile
 decl_stmt|;
 name|old_base_type
 operator|=
@@ -3345,6 +3407,26 @@ argument_list|(
 name|dest_image
 argument_list|)
 expr_stmt|;
+name|convert_profile
+operator|=
+operator|(
+name|g_type_is_a
+argument_list|(
+name|old_type
+argument_list|,
+name|GIMP_TYPE_LAYER
+argument_list|)
+operator|&&
+comment|/*  FIXME: this is the wrong check, need                       *  something like file import conversion config                       */
+operator|(
+name|config
+operator|->
+name|mode
+operator|!=
+name|GIMP_COLOR_MANAGEMENT_OFF
+operator|)
+operator|)
+expr_stmt|;
 if|if
 condition|(
 name|old_base_type
@@ -3354,6 +3436,8 @@ operator|||
 name|old_precision
 operator|!=
 name|new_precision
+operator|||
+name|convert_profile
 condition|)
 block|{
 name|gimp_drawable_convert_type
@@ -3369,6 +3453,8 @@ argument_list|,
 literal|0
 argument_list|,
 literal|0
+argument_list|,
+name|convert_profile
 argument_list|,
 name|FALSE
 argument_list|)
@@ -3402,6 +3488,8 @@ argument_list|(
 name|item
 argument_list|,
 name|dest_image
+argument_list|,
+name|old_type
 argument_list|)
 expr_stmt|;
 block|}
@@ -4338,7 +4426,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean push_undo)
+DECL|function|gimp_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean convert_profile,gboolean push_undo)
 name|gimp_layer_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -4365,6 +4453,9 @@ name|layer_dither_type
 parameter_list|,
 name|gint
 name|mask_dither_type
+parameter_list|,
+name|gboolean
+name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -4530,6 +4621,8 @@ argument_list|,
 name|layer_dither_type
 argument_list|,
 name|mask_dither_type
+argument_list|,
+name|convert_profile
 argument_list|,
 name|push_undo
 argument_list|)

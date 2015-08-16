@@ -480,6 +480,8 @@ name|dither_type
 argument_list|,
 name|mask_dither_type
 argument_list|,
+name|FALSE
+argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;

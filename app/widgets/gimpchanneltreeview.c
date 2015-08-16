@@ -1140,6 +1140,8 @@ argument_list|(
 name|new_item
 argument_list|,
 name|image
+argument_list|,
+name|GIMP_TYPE_CHANNEL
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_channel

@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e243da0103
+DECL|enum|__anon29ff994c0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -355,6 +355,9 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|dest_image
+parameter_list|,
+name|GType
+name|old_type
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -614,6 +617,9 @@ name|layer_dither_type
 parameter_list|,
 name|gint
 name|mask_dither_type
+parameter_list|,
+name|gboolean
+name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -2627,7 +2633,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_convert (GimpItem * item,GimpImage * dest_image)
+DECL|function|gimp_channel_convert (GimpItem * item,GimpImage * dest_image,GType old_type)
 name|gimp_channel_convert
 parameter_list|(
 name|GimpItem
@@ -2637,6 +2643,9 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|dest_image
+parameter_list|,
+name|GType
+name|old_type
 parameter_list|)
 block|{
 name|GimpChannel
@@ -2682,6 +2691,8 @@ argument_list|,
 literal|0
 argument_list|,
 literal|0
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2880,6 +2891,8 @@ argument_list|(
 name|item
 argument_list|,
 name|dest_image
+argument_list|,
+name|old_type
 argument_list|)
 expr_stmt|;
 block|}
@@ -4129,7 +4142,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean push_undo)
+DECL|function|gimp_channel_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean convert_profile,gboolean push_undo)
 name|gimp_channel_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -4156,6 +4169,9 @@ name|layer_dither_type
 parameter_list|,
 name|gint
 name|mask_dither_type
+parameter_list|,
+name|gboolean
+name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo

@@ -375,6 +375,9 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|dest_image
+parameter_list|,
+name|GType
+name|old_type
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -597,6 +600,9 @@ name|layer_dither_type
 parameter_list|,
 name|gint
 name|mask_dither_type
+parameter_list|,
+name|gboolean
+name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -2188,7 +2194,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_group_layer_convert (GimpItem * item,GimpImage * dest_image)
+DECL|function|gimp_group_layer_convert (GimpItem * item,GimpImage * dest_image,GType old_type)
 name|gimp_group_layer_convert
 parameter_list|(
 name|GimpItem
@@ -2198,6 +2204,9 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|dest_image
+parameter_list|,
+name|GType
+name|old_type
 parameter_list|)
 block|{
 name|GimpGroupLayerPrivate
@@ -2255,6 +2264,11 @@ argument_list|(
 name|child
 argument_list|,
 name|dest_image
+argument_list|,
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
+name|child
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2268,6 +2282,8 @@ argument_list|(
 name|item
 argument_list|,
 name|dest_image
+argument_list|,
+name|old_type
 argument_list|)
 expr_stmt|;
 block|}
@@ -3786,7 +3802,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_group_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean push_undo)
+DECL|function|gimp_group_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean convert_profile,gboolean push_undo)
 name|gimp_group_layer_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -3814,6 +3830,9 @@ name|layer_dither_type
 parameter_list|,
 name|gint
 name|mask_dither_type
+parameter_list|,
+name|gboolean
+name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -3994,6 +4013,8 @@ argument_list|,
 name|layer_dither_type
 argument_list|,
 name|mask_dither_type
+argument_list|,
+name|convert_profile
 argument_list|,
 name|push_undo
 argument_list|)

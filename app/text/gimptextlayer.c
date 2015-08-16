@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5c2d660103
+DECL|enum|__anon2c0337660103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -331,6 +331,9 @@ name|layer_dither_type
 parameter_list|,
 name|gint
 name|mask_dither_type
+parameter_list|,
+name|gboolean
+name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -1236,7 +1239,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean push_undo)
+DECL|function|gimp_text_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean convert_profile,gboolean push_undo)
 name|gimp_text_layer_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -1263,6 +1266,9 @@ name|layer_dither_type
 parameter_list|,
 name|gint
 name|mask_dither_type
+parameter_list|,
+name|gboolean
+name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -1325,6 +1331,8 @@ argument_list|,
 name|layer_dither_type
 argument_list|,
 name|mask_dither_type
+argument_list|,
+name|convert_profile
 argument_list|,
 name|push_undo
 argument_list|)

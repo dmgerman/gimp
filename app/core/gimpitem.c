@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bead020103
+DECL|enum|__anon2ae7c8d70103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -186,7 +186,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bead020203
+DECL|enum|__anon2ae7c8d70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -517,6 +517,9 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|dest_image
+parameter_list|,
+name|GType
+name|old_type
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2446,7 +2449,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_item_real_convert (GimpItem * item,GimpImage * dest_image)
+DECL|function|gimp_item_real_convert (GimpItem * item,GimpImage * dest_image,GType old_type)
 name|gimp_item_real_convert
 parameter_list|(
 name|GimpItem
@@ -2456,6 +2459,9 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|dest_image
+parameter_list|,
+name|GType
+name|old_type
 parameter_list|)
 block|{
 name|gimp_item_set_image
@@ -3947,6 +3953,9 @@ name|GimpItem
 modifier|*
 name|new_item
 decl_stmt|;
+name|GType
+name|old_type
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_ITEM
@@ -3994,6 +4003,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|old_type
+operator|=
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
+name|item
+argument_list|)
+expr_stmt|;
 name|new_item
 operator|=
 name|gimp_item_duplicate
@@ -4017,6 +4033,8 @@ argument_list|(
 name|new_item
 argument_list|,
 name|dest_image
+argument_list|,
+name|old_type
 argument_list|)
 expr_stmt|;
 return|return

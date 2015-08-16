@@ -265,6 +265,9 @@ name|gint
 name|mask_dither_type
 parameter_list|,
 name|gboolean
+name|convert_profile
+parameter_list|,
+name|gboolean
 name|push_undo
 parameter_list|)
 function_decl|;
@@ -626,6 +629,9 @@ name|layer_dither_type
 parameter_list|,
 name|gint
 name|mask_dither_type
+parameter_list|,
+name|gboolean
+name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo

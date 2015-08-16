@@ -300,6 +300,9 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|dest_image
+parameter_list|,
+name|GType
+name|old_type
 parameter_list|)
 function_decl|;
 DECL|member|rename

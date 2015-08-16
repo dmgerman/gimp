@@ -207,7 +207,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a5326520103
+DECL|enum|__anon29343b5c0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -223,7 +223,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a5326520203
+DECL|enum|__anon29343b5c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -657,6 +657,9 @@ name|layer_dither_type
 parameter_list|,
 name|gint
 name|mask_dither_type
+parameter_list|,
+name|gboolean
+name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -3326,7 +3329,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_real_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean push_undo)
+DECL|function|gimp_drawable_real_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean convert_type,gboolean push_undo)
 name|gimp_drawable_real_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -3355,6 +3358,9 @@ name|gint
 name|mask_dither_type
 parameter_list|,
 name|gboolean
+name|convert_type
+parameter_list|,
+name|gboolean
 name|push_undo
 parameter_list|)
 block|{
@@ -3362,27 +3368,6 @@ name|GeglBuffer
 modifier|*
 name|dest_buffer
 decl_stmt|;
-specifier|const
-name|Babl
-modifier|*
-name|format
-decl_stmt|;
-name|format
-operator|=
-name|gimp_image_get_format
-argument_list|(
-name|dest_image
-argument_list|,
-name|new_base_type
-argument_list|,
-name|new_precision
-argument_list|,
-name|gimp_drawable_has_alpha
-argument_list|(
-name|drawable
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|dest_buffer
 operator|=
 name|gegl_buffer_new
@@ -3410,7 +3395,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 argument_list|,
-name|format
+name|new_format
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
@@ -5360,7 +5345,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean push_undo)
+DECL|function|gimp_drawable_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean convert_profile,gboolean push_undo)
 name|gimp_drawable_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -5382,6 +5367,9 @@ name|layer_dither_type
 parameter_list|,
 name|gint
 name|mask_dither_type
+parameter_list|,
+name|gboolean
+name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -5423,6 +5411,8 @@ name|gimp_drawable_get_precision
 argument_list|(
 name|drawable
 argument_list|)
+operator|||
+name|convert_profile
 argument_list|)
 expr_stmt|;
 if|if
@@ -5476,6 +5466,8 @@ argument_list|,
 name|layer_dither_type
 argument_list|,
 name|mask_dither_type
+argument_list|,
+name|convert_profile
 argument_list|,
 name|push_undo
 argument_list|)
