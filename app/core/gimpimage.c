@@ -360,7 +360,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad6da790103
+DECL|enum|__anon2afc9d410103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -457,7 +457,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad6da790203
+DECL|enum|__anon2afc9d410203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -13179,7 +13179,7 @@ parameter_list|)
 block|{
 name|GimpImagePrivate
 modifier|*
-name|priv
+name|private
 decl_stmt|;
 name|GimpParasite
 name|copy
@@ -13199,7 +13199,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|priv
+name|private
 operator|=
 name|GIMP_IMAGE_GET_PRIVATE
 argument_list|(
@@ -13239,7 +13239,7 @@ expr_stmt|;
 comment|/*  We used to push an cantundo on te stack here. This made the undo stack    *  unusable (NULL on the stack) and prevented people from undoing after a    *  save (since most save plug-ins attach an undoable comment parasite).    *  Now we simply attach the parasite without pushing an undo. That way    *  it's undoable but does not block the undo system.   --Sven    */
 name|gimp_parasite_list_add
 argument_list|(
-name|priv
+name|private
 operator|->
 name|parasites
 argument_list|,
@@ -13328,18 +13328,18 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|priv
+name|private
 operator|->
 name|color_profile
 condition|)
 name|g_object_unref
 argument_list|(
-name|priv
+name|private
 operator|->
 name|color_profile
 argument_list|)
 expr_stmt|;
-name|priv
+name|private
 operator|->
 name|color_profile
 operator|=
@@ -13475,6 +13475,28 @@ argument_list|)
 operator|==
 literal|0
 condition|)
+block|{
+if|if
+condition|(
+name|private
+operator|->
+name|color_profile
+condition|)
+block|{
+name|g_object_unref
+argument_list|(
+name|private
+operator|->
+name|color_profile
+argument_list|)
+expr_stmt|;
+name|private
+operator|->
+name|color_profile
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 name|gimp_color_managed_profile_changed
 argument_list|(
 name|GIMP_COLOR_MANAGED
@@ -13483,6 +13505,7 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
