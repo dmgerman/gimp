@@ -215,11 +215,6 @@ name|num_bytes
 operator|=
 name|length
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|profile
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 name|return_vals

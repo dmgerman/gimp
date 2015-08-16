@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ebba430108
+DECL|struct|__anon2c4885f20108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1307,6 +1307,7 @@ condition|(
 operator|!
 name|profile
 condition|)
+block|{
 name|profile
 operator|=
 name|gimp_image_get_builtin_color_profile
@@ -1316,6 +1317,12 @@ operator|->
 name|image
 argument_list|)
 expr_stmt|;
+name|g_object_ref
+argument_list|(
+name|profile
+argument_list|)
+expr_stmt|;
+block|}
 name|label
 operator|=
 name|g_strdup_printf
@@ -1507,6 +1514,11 @@ argument_list|(
 name|dialog
 operator|->
 name|image
+argument_list|)
+expr_stmt|;
+name|g_object_ref
+argument_list|(
+name|dest_profile
 argument_list|)
 expr_stmt|;
 block|}

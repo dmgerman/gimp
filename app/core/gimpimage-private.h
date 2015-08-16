@@ -165,6 +165,12 @@ modifier|*
 name|babl_palette_rgba
 decl_stmt|;
 comment|/*  palette's RGBA Babl format   */
+DECL|member|color_profile
+name|GimpColorProfile
+modifier|*
+name|color_profile
+decl_stmt|;
+comment|/*  image's color profile        */
 DECL|member|metadata
 name|GimpMetadata
 modifier|*
