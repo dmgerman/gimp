@@ -205,7 +205,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_validate_icc_parasite (GimpImage * image,const GimpParasite * icc_parasite,GError ** error)
+DECL|function|gimp_image_validate_icc_parasite (GimpImage * image,const GimpParasite * icc_parasite,gboolean * is_builtin,GError ** error)
 name|gimp_image_validate_icc_parasite
 parameter_list|(
 name|GimpImage
@@ -216,6 +216,10 @@ specifier|const
 name|GimpParasite
 modifier|*
 name|icc_parasite
+parameter_list|,
+name|gboolean
+modifier|*
+name|is_builtin
 parameter_list|,
 name|GError
 modifier|*
@@ -338,6 +342,8 @@ argument_list|(
 name|icc_parasite
 argument_list|)
 argument_list|,
+name|is_builtin
+argument_list|,
 name|error
 argument_list|)
 return|;
@@ -414,6 +420,8 @@ argument_list|,
 name|icc_parasite
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 operator|==
 name|TRUE
@@ -442,7 +450,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_validate_icc_profile (GimpImage * image,const guint8 * data,gsize length,GError ** error)
+DECL|function|gimp_image_validate_icc_profile (GimpImage * image,const guint8 * data,gsize length,gboolean * is_builtin,GError ** error)
 name|gimp_image_validate_icc_profile
 parameter_list|(
 name|GimpImage
@@ -456,6 +464,10 @@ name|data
 parameter_list|,
 name|gsize
 name|length
+parameter_list|,
+name|gboolean
+modifier|*
+name|is_builtin
 parameter_list|,
 name|GError
 modifier|*
@@ -548,6 +560,8 @@ argument_list|(
 name|image
 argument_list|,
 name|profile
+argument_list|,
+name|is_builtin
 argument_list|,
 name|error
 argument_list|)
@@ -723,6 +737,9 @@ condition|(
 name|data
 condition|)
 block|{
+name|gboolean
+name|is_builtin
+decl_stmt|;
 name|parasite
 operator|=
 name|gimp_parasite_new
@@ -747,6 +764,9 @@ name|image
 argument_list|,
 name|parasite
 argument_list|,
+operator|&
+name|is_builtin
+argument_list|,
 name|error
 argument_list|)
 condition|)
@@ -759,6 +779,22 @@ expr_stmt|;
 return|return
 name|FALSE
 return|;
+block|}
+comment|/*  don't tag the image with the built-in profile  */
+if|if
+condition|(
+name|is_builtin
+condition|)
+block|{
+name|gimp_parasite_free
+argument_list|(
+name|parasite
+argument_list|)
+expr_stmt|;
+name|parasite
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 block|}
 name|gimp_image_set_icc_parasite
@@ -785,7 +821,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_validate_color_profile (GimpImage * image,GimpColorProfile * profile,GError ** error)
+DECL|function|gimp_image_validate_color_profile (GimpImage * image,GimpColorProfile * profile,gboolean * is_builtin,GError ** error)
 name|gimp_image_validate_color_profile
 parameter_list|(
 name|GimpImage
@@ -795,6 +831,10 @@ parameter_list|,
 name|GimpColorProfile
 modifier|*
 name|profile
+parameter_list|,
+name|gboolean
+modifier|*
+name|is_builtin
 parameter_list|,
 name|GError
 modifier|*
@@ -892,6 +932,33 @@ expr_stmt|;
 return|return
 name|FALSE
 return|;
+block|}
+if|if
+condition|(
+name|is_builtin
+condition|)
+block|{
+name|GimpColorProfile
+modifier|*
+name|builtin
+decl_stmt|;
+name|builtin
+operator|=
+name|gimp_image_get_builtin_color_profile
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+operator|*
+name|is_builtin
+operator|=
+name|gimp_color_profile_is_equal
+argument_list|(
+name|profile
+argument_list|,
+name|builtin
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|TRUE
@@ -1201,10 +1268,6 @@ name|GimpColorProfile
 modifier|*
 name|src_profile
 decl_stmt|;
-name|GimpColorProfile
-modifier|*
-name|builtin_profile
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -1260,6 +1323,8 @@ argument_list|(
 name|image
 argument_list|,
 name|dest_profile
+argument_list|,
+name|NULL
 argument_list|,
 name|error
 argument_list|)
@@ -1334,36 +1399,6 @@ literal|"Color profile conversion"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|builtin_profile
-operator|=
-name|gimp_image_get_builtin_color_profile
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|gimp_color_profile_is_equal
-argument_list|(
-name|dest_profile
-argument_list|,
-name|builtin_profile
-argument_list|)
-condition|)
-block|{
-comment|/*  don't tag the image with the built-in profile  */
-name|gimp_image_set_color_profile
-argument_list|(
-name|image
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
 name|gimp_image_set_color_profile
 argument_list|(
 name|image
@@ -1373,7 +1408,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 comment|/*  omg...  */
 name|gimp_image_parasite_detach
 argument_list|(

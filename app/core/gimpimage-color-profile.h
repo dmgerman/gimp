@@ -37,6 +37,10 @@ name|GimpParasite
 modifier|*
 name|icc_parasite
 parameter_list|,
+name|gboolean
+modifier|*
+name|is_builtin
+parameter_list|,
 name|GError
 modifier|*
 modifier|*
@@ -89,6 +93,10 @@ name|data
 parameter_list|,
 name|gsize
 name|length
+parameter_list|,
+name|gboolean
+modifier|*
+name|is_builtin
 parameter_list|,
 name|GError
 modifier|*
@@ -150,6 +158,10 @@ parameter_list|,
 name|GimpColorProfile
 modifier|*
 name|profile
+parameter_list|,
+name|gboolean
+modifier|*
+name|is_builtin
 parameter_list|,
 name|GError
 modifier|*
