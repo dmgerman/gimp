@@ -818,7 +818,7 @@ name|dest_profile
 argument_list|,
 name|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
