@@ -237,6 +237,16 @@ end_function_decl
 begin_function_decl
 name|GimpColorProfile
 modifier|*
+name|gimp_color_profile_new_adobe_rgb
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpColorProfile
+modifier|*
 name|gimp_color_profile_new_from_file
 parameter_list|(
 name|GFile
