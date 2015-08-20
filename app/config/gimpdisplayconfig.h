@@ -27,7 +27,7 @@ DECL|macro|GIMP_CONFIG_DEFAULT_IMAGE_TITLE_FORMAT
 define|#
 directive|define
 name|GIMP_CONFIG_DEFAULT_IMAGE_TITLE_FORMAT
-value|"%D*%f-%p.%i (%t, %L) %wx%h"
+value|"%D*%f-%p.%i (%t, %o, %L) %wx%h"
 end_define
 
 begin_define
