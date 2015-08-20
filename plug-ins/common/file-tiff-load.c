@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be11f3b0108
+DECL|struct|__anon27b7db260108
 block|{
 DECL|member|compression
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be11f3b0208
+DECL|struct|__anon27b7db260208
 block|{
 DECL|member|ID
 name|gint32
@@ -135,7 +135,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be11f3b0308
+DECL|struct|__anon27b7db260308
 block|{
 DECL|member|o_pages
 name|gint
@@ -3242,11 +3242,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/* attach a parasite containing an ICC profile - if found in the TIFF */
+comment|/* set the ICC profile - if found in the TIFF */
 ifdef|#
 directive|ifdef
 name|TIFFTAG_ICCPROFILE
-comment|/* If TIFFTAG_ICCPROFILE is defined we are dealing with a libtiff version        * that can handle ICC profiles. Otherwise just ignore this section. */
+comment|/* If TIFFTAG_ICCPROFILE is defined we are dealing with a        * libtiff version that can handle ICC profiles. Otherwise just        * ignore this section.        */
 if|if
 condition|(
 name|TIFFGetField
@@ -3263,33 +3263,39 @@ name|icc_profile
 argument_list|)
 condition|)
 block|{
-name|parasite
+name|GimpColorProfile
+modifier|*
+name|profile
+decl_stmt|;
+name|profile
 operator|=
-name|gimp_parasite_new
+name|gimp_color_profile_new_from_icc_profile
 argument_list|(
-literal|"icc-profile"
-argument_list|,
-name|GIMP_PARASITE_PERSISTENT
-operator||
-name|GIMP_PARASITE_UNDOABLE
+name|icc_profile
 argument_list|,
 name|profile_size
 argument_list|,
-name|icc_profile
+name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_image_attach_parasite
+if|if
+condition|(
+name|profile
+condition|)
+block|{
+name|gimp_image_set_color_profile
 argument_list|(
 name|image
 argument_list|,
-name|parasite
+name|profile
 argument_list|)
 expr_stmt|;
-name|gimp_parasite_free
+name|g_object_unref
 argument_list|(
-name|parasite
+name|profile
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 endif|#
 directive|endif
