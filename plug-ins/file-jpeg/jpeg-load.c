@@ -2069,22 +2069,7 @@ return|return
 name|NULL
 return|;
 block|}
-comment|/*  try to load the RGB profile configured in the prefs  */
-name|rgb_profile
-operator|=
-name|gimp_color_config_get_rgb_color_profile
-argument_list|(
-name|config
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-comment|/*  make the real sRGB profile as a fallback  */
-if|if
-condition|(
-operator|!
-name|rgb_profile
-condition|)
+comment|/*  always convert to sRGB  */
 name|rgb_profile
 operator|=
 name|gimp_color_profile_new_srgb
