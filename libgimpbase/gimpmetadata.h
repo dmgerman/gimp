@@ -23,7 +23,7 @@ end_macro
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298ca6b40103
+DECL|enum|__anon298377430103
 block|{
 DECL|enumerator|GIMP_METADATA_LOAD_COMMENT
 name|GIMP_METADATA_LOAD_COMMENT
@@ -46,6 +46,13 @@ literal|1
 operator|<<
 literal|2
 block|,
+DECL|enumerator|GIMP_METADATA_LOAD_COLORSPACE
+name|GIMP_METADATA_LOAD_COLORSPACE
+init|=
+literal|1
+operator|<<
+literal|3
+block|,
 DECL|enumerator|GIMP_METADATA_LOAD_ALL
 name|GIMP_METADATA_LOAD_ALL
 init|=
@@ -59,7 +66,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298ca6b40203
+DECL|enum|__anon298377430203
 block|{
 DECL|enumerator|GIMP_METADATA_SAVE_EXIF
 name|GIMP_METADATA_SAVE_EXIF
