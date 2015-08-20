@@ -124,7 +124,7 @@ define|#
 directive|define
 name|RGB_PROFILE_BLURB
 define|\
-value|_("The default RGB working space color profile.")
+value|_("The preferred RGB working space color profile. It will be offered " \     "next to the built-in RGB profile when a color profile can be chosen.")
 end_define
 
 begin_define
@@ -142,7 +142,7 @@ define|#
 directive|define
 name|PRINTER_PROFILE_BLURB
 define|\
-value|_("The color profile to use for soft proofing from your image's " \     "color space to some other color space, including "             \     "soft proofing to a printer or other output device profile. ")
+value|_("The color profile to use for soft proofing from your image's " \     "color space to some other color space, including " \     "soft proofing to a printer or other output device profile. ")
 end_define
 
 begin_define
@@ -151,7 +151,7 @@ define|#
 directive|define
 name|DISPLAY_RENDERING_INTENT_BLURB
 define|\
-value|_("How colors are converted from your image's color space to your display device. " \     "Relative colorimetric is usually the best choice. "                \     "Unless you use a LUT monitor profile (most monitor profiles are matrix), " \     "choosing perceptual intent really gives you relative colorimetric." )
+value|_("How colors are converted from your image's color space to your " \     "display device. Relative colorimetric is usually the best choice. " \     "Unless you use a LUT monitor profile (most monitor profiles are " \     "matrix), choosing perceptual intent really gives you relative " \     "colorimetric." )
 end_define
 
 begin_define
@@ -160,7 +160,7 @@ define|#
 directive|define
 name|DISPLAY_USE_BPC_BLURB
 define|\
-value|_("Do use black point compensation (unless you know you have a reason not to). ")
+value|_("Do use black point compensation (unless you know you have a reason " \     "not to). ")
 end_define
 
 begin_define
@@ -169,7 +169,7 @@ define|#
 directive|define
 name|SIMULATION_RENDERING_INTENT_BLURB
 define|\
-value|_("How colors are converted from your image's color space to the "  \     "output simulation device (usually your monitor). "               \     "Try them all and choose what looks the best. ")
+value|_("How colors are converted from your image's color space to the "  \     "output simulation device (usually your monitor). " \     "Try them all and choose what looks the best. ")
 end_define
 
 begin_define
@@ -201,7 +201,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af444050103
+DECL|enum|__anon2b65f4d80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

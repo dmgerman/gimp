@@ -9147,7 +9147,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b04dd480108
+DECL|struct|__anon28ad55f80108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10408,7 +10408,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b04dd480208
+DECL|struct|__anon28ad55f80208
 block|{
 DECL|member|label
 specifier|const
@@ -10436,7 +10436,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"_RGB profile:"
+literal|"Preferred _RGB profile:"
 argument_list|)
 block|,
 name|N_
@@ -11635,7 +11635,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b04dd480308
+DECL|struct|__anon28ad55f80308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11790,7 +11790,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b04dd480408
+DECL|struct|__anon28ad55f80408
 block|{
 DECL|member|tree_label
 specifier|const
