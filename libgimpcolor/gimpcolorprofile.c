@@ -1491,7 +1491,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_get_label:  * @profile: a #GimpColorProfile  *  * This function returns a string containing @profile's "title", a  * string that can be used to label the profile in a user interface.  *  * Return value: the @profile's label. The returned value belongs to  *               @profile and must not be modified or freed.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_get_label:  * @profile: a #GimpColorProfile  *  * This function returns a string containing @profile's "title", a  * string that can be used to label the profile in a user interface.  *  * Unlike gimp_color_profile_get_description(), this function always  * returns a string (as a fallback, it returns "(unnamed profile)".  *  * Return value: the @profile's label. The returned value belongs to  *               @profile and must not be modified or freed.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1536,24 +1536,6 @@ argument_list|(
 name|profile
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-operator|!
-name|label
-operator|||
-operator|!
-name|strlen
-argument_list|(
-name|label
-argument_list|)
-condition|)
-name|label
-operator|=
-name|gimp_color_profile_get_model
-argument_list|(
-name|profile
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1689,9 +1671,14 @@ argument_list|,
 literal|"\n"
 argument_list|)
 expr_stmt|;
-name|g_string_append
+name|g_string_append_printf
 argument_list|(
 name|string
+argument_list|,
+name|_
+argument_list|(
+literal|"Model: %s"
+argument_list|)
 argument_list|,
 name|text
 argument_list|)
@@ -1724,9 +1711,14 @@ argument_list|,
 literal|"\n"
 argument_list|)
 expr_stmt|;
-name|g_string_append
+name|g_string_append_printf
 argument_list|(
 name|string
+argument_list|,
+name|_
+argument_list|(
+literal|"Manufacturer: %s"
+argument_list|)
 argument_list|,
 name|text
 argument_list|)
@@ -1757,6 +1749,18 @@ argument_list|(
 name|string
 argument_list|,
 literal|"\n"
+argument_list|)
+expr_stmt|;
+name|g_string_append_printf
+argument_list|(
+name|string
+argument_list|,
+name|_
+argument_list|(
+literal|"Copyright: %s"
+argument_list|)
+argument_list|,
+name|text
 argument_list|)
 expr_stmt|;
 block|}
