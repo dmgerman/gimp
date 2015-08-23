@@ -48,6 +48,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_color_profile_label_new
+parameter_list|(
+name|GimpColorProfile
+modifier|*
+name|profile
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

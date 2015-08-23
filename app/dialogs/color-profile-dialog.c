@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-constructors.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"color-profile-dialog.h"
 end_include
 
@@ -120,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274b8fbe0108
+DECL|struct|__anon297a941a0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -816,24 +822,9 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
-argument_list|(
-name|gimp_color_profile_get_label
+name|gimp_color_profile_label_new
 argument_list|(
 name|src_profile
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_misc_set_alignment
-argument_list|(
-name|GTK_MISC
-argument_list|(
-name|label
-argument_list|)
-argument_list|,
-literal|0.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
