@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b65efcc0103
+DECL|enum|__anon2c2be9880103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1922,11 +1922,14 @@ name|Babl
 modifier|*
 name|format
 decl_stmt|;
+name|guchar
+name|pixel
+index|[
+literal|32
+index|]
+decl_stmt|;
 name|GimpRGB
 name|color
-decl_stmt|;
-name|gint
-name|color_index
 decl_stmt|;
 name|editor
 operator|->
@@ -1978,11 +1981,10 @@ argument_list|,
 operator|&
 name|format
 argument_list|,
-operator|&
-name|color
+name|pixel
 argument_list|,
 operator|&
-name|color_index
+name|color
 argument_list|)
 condition|)
 block|{
@@ -1990,12 +1992,14 @@ name|gimp_color_frame_set_color
 argument_list|(
 name|color_frame
 argument_list|,
+name|FALSE
+argument_list|,
 name|format
+argument_list|,
+name|pixel
 argument_list|,
 operator|&
 name|color
-argument_list|,
-name|color_index
 argument_list|)
 expr_stmt|;
 block|}

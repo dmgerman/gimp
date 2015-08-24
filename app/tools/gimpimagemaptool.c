@@ -371,13 +371,12 @@ modifier|*
 modifier|*
 name|sample_format
 parameter_list|,
+name|gpointer
+name|pixel
+parameter_list|,
 name|GimpRGB
 modifier|*
 name|color
-parameter_list|,
-name|gint
-modifier|*
-name|color_index
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -405,13 +404,13 @@ name|Babl
 modifier|*
 name|sample_format
 parameter_list|,
+name|gpointer
+name|pixel
+parameter_list|,
 specifier|const
 name|GimpRGB
 modifier|*
 name|color
-parameter_list|,
-name|gint
-name|color_index
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2192,7 +2191,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_image_map_tool_pick_color (GimpColorTool * color_tool,gint x,gint y,const Babl ** sample_format,GimpRGB * color,gint * color_index)
+DECL|function|gimp_image_map_tool_pick_color (GimpColorTool * color_tool,gint x,gint y,const Babl ** sample_format,gpointer pixel,GimpRGB * color)
 name|gimp_image_map_tool_pick_color
 parameter_list|(
 name|GimpColorTool
@@ -2211,13 +2210,12 @@ modifier|*
 modifier|*
 name|sample_format
 parameter_list|,
+name|gpointer
+name|pixel
+parameter_list|,
 name|GimpRGB
 modifier|*
 name|color
-parameter_list|,
-name|gint
-modifier|*
-name|color_index
 parameter_list|)
 block|{
 name|GimpImageMapTool
@@ -2290,9 +2288,9 @@ name|options
 operator|->
 name|average_radius
 argument_list|,
-name|color
+name|pixel
 argument_list|,
-name|color_index
+name|color
 argument_list|)
 return|;
 block|}
@@ -2301,7 +2299,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_map_tool_color_picked (GimpColorTool * color_tool,GimpColorPickState pick_state,gdouble x,gdouble y,const Babl * sample_format,const GimpRGB * color,gint color_index)
+DECL|function|gimp_image_map_tool_color_picked (GimpColorTool * color_tool,GimpColorPickState pick_state,gdouble x,gdouble y,const Babl * sample_format,gpointer pixel,const GimpRGB * color)
 name|gimp_image_map_tool_color_picked
 parameter_list|(
 name|GimpColorTool
@@ -2322,13 +2320,13 @@ name|Babl
 modifier|*
 name|sample_format
 parameter_list|,
+name|gpointer
+name|pixel
+parameter_list|,
 specifier|const
 name|GimpRGB
 modifier|*
 name|color
-parameter_list|,
-name|gint
-name|color_index
 parameter_list|)
 block|{
 name|GimpImageMapTool

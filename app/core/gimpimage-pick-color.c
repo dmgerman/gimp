@@ -53,7 +53,7 @@ end_include
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_pick_color (GimpImage * image,GimpDrawable * drawable,gint x,gint y,gboolean sample_merged,gboolean sample_average,gdouble average_radius,const Babl ** sample_format,GimpRGB * color,gint * color_index)
+DECL|function|gimp_image_pick_color (GimpImage * image,GimpDrawable * drawable,gint x,gint y,gboolean sample_merged,gboolean sample_average,gdouble average_radius,const Babl ** sample_format,gpointer pixel,GimpRGB * color)
 name|gimp_image_pick_color
 parameter_list|(
 name|GimpImage
@@ -85,13 +85,12 @@ modifier|*
 modifier|*
 name|sample_format
 parameter_list|,
+name|gpointer
+name|pixel
+parameter_list|,
 name|GimpRGB
 modifier|*
 name|color
-parameter_list|,
-name|gint
-modifier|*
-name|color_index
 parameter_list|)
 block|{
 name|GimpPickable
@@ -244,9 +243,9 @@ name|sample_average
 argument_list|,
 name|average_radius
 argument_list|,
-name|color
+name|pixel
 argument_list|,
-name|color_index
+name|color
 argument_list|)
 return|;
 block|}

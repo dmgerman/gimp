@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d4540a0103
+DECL|enum|__anon2aa94a650103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1689,30 +1689,33 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_frame_set_color:  * @frame:         The #GimpColorFrame.  * @sample_format: The format of the #GimpDrawable or #GimpImage the @color  *                 was picked from.  * @color:         The @color to set.  * @color_index:   The @color's index. This value is ignored unless  *                 @sample_format is an indexed format.  *  * Sets the color sample to display in the #GimpColorFrame.  **/
+comment|/**  * gimp_color_frame_set_color:  * @frame:          The #GimpColorFrame.  * @sample_average: The set @color is the result of averaging  * @sample_format:  The format of the #GimpDrawable or #GimpImage the @color  *                  was picked from.  * @pixel:          The raw pixel in @sample_format.  * @color:          The @color to set.  *  * Sets the color sample to display in the #GimpColorFrame. if  * @sample_average is %TRUE, @pixel represents the sample at the  * center of the average area and will not be displayed.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_color_frame_set_color (GimpColorFrame * frame,const Babl * sample_format,const GimpRGB * color,gint color_index)
+DECL|function|gimp_color_frame_set_color (GimpColorFrame * frame,gboolean sample_average,const Babl * sample_format,gpointer pixel,const GimpRGB * color)
 name|gimp_color_frame_set_color
 parameter_list|(
 name|GimpColorFrame
 modifier|*
 name|frame
 parameter_list|,
+name|gboolean
+name|sample_average
+parameter_list|,
 specifier|const
 name|Babl
 modifier|*
 name|sample_format
 parameter_list|,
+name|gpointer
+name|pixel
+parameter_list|,
 specifier|const
 name|GimpRGB
 modifier|*
 name|color
-parameter_list|,
-name|gint
-name|color_index
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1738,15 +1741,15 @@ name|sample_valid
 operator|&&
 name|frame
 operator|->
-name|sample_format
+name|sample_average
 operator|==
-name|sample_format
+name|sample_average
 operator|&&
 name|frame
 operator|->
-name|color_index
+name|sample_format
 operator|==
-name|color_index
+name|sample_format
 operator|&&
 name|gimp_rgba_distance
 argument_list|(
@@ -1778,6 +1781,12 @@ name|TRUE
 expr_stmt|;
 name|frame
 operator|->
+name|sample_average
+operator|=
+name|sample_average
+expr_stmt|;
+name|frame
+operator|->
 name|sample_format
 operator|=
 name|sample_format
@@ -1789,11 +1798,19 @@ operator|=
 operator|*
 name|color
 expr_stmt|;
+name|memcpy
+argument_list|(
 name|frame
 operator|->
-name|color_index
-operator|=
-name|color_index
+name|pixel
+argument_list|,
+name|pixel
+argument_list|,
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|sample_format
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gimp_color_frame_update
 argument_list|(
@@ -2111,6 +2128,14 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+if|if
+condition|(
+name|frame
+operator|->
+name|sample_average
+condition|)
+block|{
+comment|/* FIXME: this is broken: can't use the averaged sRGB GimpRGB                  * value for displaying pixel values when color management                  * is enabled                  */
 name|gimp_rgba_get_pixel
 argument_list|(
 operator|&
@@ -2123,6 +2148,30 @@ argument_list|,
 name|print_pixel
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|babl_process
+argument_list|(
+name|babl_fish
+argument_list|(
+name|frame
+operator|->
+name|sample_format
+argument_list|,
+name|print_format
+argument_list|)
+argument_list|,
+name|frame
+operator|->
+name|pixel
+argument_list|,
+name|print_pixel
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
 name|values
 operator|=
 name|gimp_babl_print_pixel
@@ -2282,14 +2331,12 @@ argument_list|(
 name|tmp
 argument_list|)
 expr_stmt|;
-comment|/* color_index will be -1 for an averaged sample */
 if|if
 condition|(
+operator|!
 name|frame
 operator|->
-name|color_index
-operator|>=
-literal|0
+name|sample_average
 condition|)
 name|values
 index|[
@@ -2302,7 +2349,10 @@ literal|"%d"
 argument_list|,
 name|frame
 operator|->
-name|color_index
+name|pixel
+index|[
+literal|0
+index|]
 argument_list|)
 expr_stmt|;
 block|}

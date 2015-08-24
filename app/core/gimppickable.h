@@ -344,13 +344,12 @@ parameter_list|,
 name|gdouble
 name|average_radius
 parameter_list|,
+name|gpointer
+name|pixel
+parameter_list|,
 name|GimpRGB
 modifier|*
 name|color
-parameter_list|,
-name|gint
-modifier|*
-name|color_index
 parameter_list|)
 function_decl|;
 end_function_decl

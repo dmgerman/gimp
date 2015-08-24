@@ -211,7 +211,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290909300103
+DECL|enum|__anon2ba6fe4f0103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -409,13 +409,12 @@ modifier|*
 modifier|*
 name|sample_format
 parameter_list|,
+name|gpointer
+name|pixel
+parameter_list|,
 name|GimpRGB
 modifier|*
 name|color
-parameter_list|,
-name|gint
-modifier|*
-name|color_index
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -443,13 +442,13 @@ name|Babl
 modifier|*
 name|sample_format
 parameter_list|,
+name|gpointer
+name|pixel
+parameter_list|,
 specifier|const
 name|GimpRGB
 modifier|*
 name|color
-parameter_list|,
-name|gint
-name|color_index
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -575,7 +574,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__ENUM_DOUBLE_DOUBLE_POINTER_BOXED_INT
+name|gimp_marshal_VOID__ENUM_DOUBLE_DOUBLE_POINTER_POINTER_BOXED
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -589,11 +588,11 @@ name|G_TYPE_DOUBLE
 argument_list|,
 name|G_TYPE_POINTER
 argument_list|,
+name|G_TYPE_POINTER
+argument_list|,
 name|GIMP_TYPE_RGB
 operator||
 name|G_SIGNAL_TYPE_STATIC_SCOPE
-argument_list|,
-name|G_TYPE_INT
 argument_list|)
 expr_stmt|;
 name|object_class
@@ -2284,7 +2283,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_color_tool_real_pick (GimpColorTool * color_tool,gint x,gint y,const Babl ** sample_format,GimpRGB * color,gint * color_index)
+DECL|function|gimp_color_tool_real_pick (GimpColorTool * color_tool,gint x,gint y,const Babl ** sample_format,gpointer pixel,GimpRGB * color)
 name|gimp_color_tool_real_pick
 parameter_list|(
 name|GimpColorTool
@@ -2303,13 +2302,12 @@ modifier|*
 modifier|*
 name|sample_format
 parameter_list|,
+name|gpointer
+name|pixel
+parameter_list|,
 name|GimpRGB
 modifier|*
 name|color
-parameter_list|,
-name|gint
-modifier|*
-name|color_index
 parameter_list|)
 block|{
 name|GimpTool
@@ -2387,9 +2385,9 @@ name|average_radius
 argument_list|,
 name|sample_format
 argument_list|,
-name|color
+name|pixel
 argument_list|,
-name|color_index
+name|color
 argument_list|)
 return|;
 block|}
@@ -2398,7 +2396,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_tool_real_picked (GimpColorTool * color_tool,GimpColorPickState pick_state,gdouble x,gdouble y,const Babl * sample_format,const GimpRGB * color,gint color_index)
+DECL|function|gimp_color_tool_real_picked (GimpColorTool * color_tool,GimpColorPickState pick_state,gdouble x,gdouble y,const Babl * sample_format,gpointer pixel,const GimpRGB * color)
 name|gimp_color_tool_real_picked
 parameter_list|(
 name|GimpColorTool
@@ -2419,13 +2417,13 @@ name|Babl
 modifier|*
 name|sample_format
 parameter_list|,
+name|gpointer
+name|pixel
+parameter_list|,
 specifier|const
 name|GimpRGB
 modifier|*
 name|color
-parameter_list|,
-name|gint
-name|color_index
 parameter_list|)
 block|{
 name|GimpTool
@@ -2506,6 +2504,12 @@ name|widget
 argument_list|)
 argument_list|)
 decl_stmt|;
+name|guchar
+modifier|*
+name|index
+init|=
+name|pixel
+decl_stmt|;
 name|gimp_colormap_editor_set_index
 argument_list|(
 name|GIMP_COLORMAP_EDITOR
@@ -2513,7 +2517,8 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-name|color_index
+operator|*
+name|index
 argument_list|,
 name|NULL
 argument_list|)
@@ -2813,11 +2818,14 @@ name|Babl
 modifier|*
 name|sample_format
 decl_stmt|;
+name|guchar
+name|pixel
+index|[
+literal|32
+index|]
+decl_stmt|;
 name|GimpRGB
 name|color
-decl_stmt|;
-name|gint
-name|color_index
 decl_stmt|;
 name|klass
 operator|=
@@ -2845,11 +2853,10 @@ argument_list|,
 operator|&
 name|sample_format
 argument_list|,
-operator|&
-name|color
+name|pixel
 argument_list|,
 operator|&
-name|color_index
+name|color
 argument_list|)
 condition|)
 block|{
@@ -2878,10 +2885,10 @@ name|y
 argument_list|,
 name|sample_format
 argument_list|,
+name|pixel
+argument_list|,
 operator|&
 name|color
-argument_list|,
-name|color_index
 argument_list|)
 expr_stmt|;
 block|}

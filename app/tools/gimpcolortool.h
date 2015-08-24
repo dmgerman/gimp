@@ -189,13 +189,12 @@ modifier|*
 modifier|*
 name|sample_format
 parameter_list|,
+name|gpointer
+name|pixel
+parameter_list|,
 name|GimpRGB
 modifier|*
 name|color
-parameter_list|,
-name|gint
-modifier|*
-name|color_index
 parameter_list|)
 function_decl|;
 comment|/*  signals  */
@@ -224,13 +223,13 @@ name|Babl
 modifier|*
 name|sample_format
 parameter_list|,
+name|gpointer
+name|pixel
+parameter_list|,
 specifier|const
 name|GimpRGB
 modifier|*
 name|color
-parameter_list|,
-name|gint
-name|color_index
 parameter_list|)
 function_decl|;
 block|}
