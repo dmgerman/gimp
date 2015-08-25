@@ -320,13 +320,13 @@ name|Babl
 modifier|*
 name|sample_format
 parameter_list|,
+name|gpointer
+name|pixel
+parameter_list|,
 specifier|const
 name|GimpRGB
 modifier|*
 name|color
-parameter_list|,
-name|gint
-name|color_index
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1473,7 +1473,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_curves_tool_color_picked (GimpColorTool * color_tool,GimpColorPickState pick_state,gdouble x,gdouble y,const Babl * sample_format,const GimpRGB * color,gint color_index)
+DECL|function|gimp_curves_tool_color_picked (GimpColorTool * color_tool,GimpColorPickState pick_state,gdouble x,gdouble y,const Babl * sample_format,gpointer pixel,const GimpRGB * color)
 name|gimp_curves_tool_color_picked
 parameter_list|(
 name|GimpColorTool
@@ -1494,13 +1494,13 @@ name|Babl
 modifier|*
 name|sample_format
 parameter_list|,
+name|gpointer
+name|pixel
+parameter_list|,
 specifier|const
 name|GimpRGB
 modifier|*
 name|color
-parameter_list|,
-name|gint
-name|color_index
 parameter_list|)
 block|{
 name|GimpCurvesTool
