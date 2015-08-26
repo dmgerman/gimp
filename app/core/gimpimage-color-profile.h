@@ -267,6 +267,26 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  internal API, to be called only from the icc-profile parasite setters  */
+end_comment
+
+begin_function_decl
+name|void
+name|_gimp_image_update_color_profile
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+specifier|const
+name|GimpParasite
+modifier|*
+name|icc_parasite
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
