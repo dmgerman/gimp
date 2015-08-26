@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9ac5de0103
+DECL|enum|__anon290fe5870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -128,7 +128,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9ac5de0208
+DECL|struct|__anon290fe5870208
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9ac5de0308
+DECL|struct|__anon290fe5870308
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -3010,6 +3010,15 @@ decl_stmt|;
 name|gdouble
 name|factor
 decl_stmt|;
+comment|/*  we want to calculate the color at the pixel's center  */
+name|x
+operator|+=
+literal|0.5
+expr_stmt|;
+name|y
+operator|+=
+literal|0.5
+expr_stmt|;
 comment|/* Calculate blending factor */
 switch|switch
 condition|(

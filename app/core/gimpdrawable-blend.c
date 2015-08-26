@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f128d20108
+DECL|struct|__anon2a4b9ea90108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -215,7 +215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f128d20208
+DECL|struct|__anon2a4b9ea90208
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -2617,6 +2617,15 @@ decl_stmt|;
 name|gdouble
 name|factor
 decl_stmt|;
+comment|/*  we want to calculate the color at the pixel's center  */
+name|x
+operator|+=
+literal|0.5
+expr_stmt|;
+name|y
+operator|+=
+literal|0.5
+expr_stmt|;
 comment|/* Calculate blending factor */
 switch|switch
 condition|(
