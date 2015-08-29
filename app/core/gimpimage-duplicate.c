@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-color-profile.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage-colormap.h"
 end_include
 
@@ -407,6 +413,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|gimp_image_duplicate_color_profile
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|GimpImage
+modifier|*
+name|new_image
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function
 name|GimpImage
 modifier|*
@@ -506,6 +528,21 @@ argument_list|)
 expr_stmt|;
 comment|/*  Copy resolution information  */
 name|gimp_image_duplicate_resolution
+argument_list|(
+name|image
+argument_list|,
+name|new_image
+argument_list|)
+expr_stmt|;
+comment|/*  Copy parasites first so we have a color profile  */
+name|gimp_image_duplicate_parasites
+argument_list|(
+name|image
+argument_list|,
+name|new_image
+argument_list|)
+expr_stmt|;
+name|gimp_image_duplicate_color_profile
 argument_list|(
 name|image
 argument_list|,
@@ -634,14 +671,6 @@ argument_list|)
 expr_stmt|;
 comment|/*  Copy the quick mask info  */
 name|gimp_image_duplicate_quick_mask
-argument_list|(
-name|image
-argument_list|,
-name|new_image
-argument_list|)
-expr_stmt|;
-comment|/*  Copy parasites  */
-name|gimp_image_duplicate_parasites
 argument_list|(
 name|image
 argument_list|,
@@ -2062,6 +2091,42 @@ name|parasites
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_image_duplicate_color_profile (GimpImage * image,GimpImage * new_image)
+name|gimp_image_duplicate_color_profile
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|GimpImage
+modifier|*
+name|new_image
+parameter_list|)
+block|{
+name|GimpColorProfile
+modifier|*
+name|profile
+init|=
+name|gimp_image_get_color_profile
+argument_list|(
+name|image
+argument_list|)
+decl_stmt|;
+name|gimp_image_set_color_profile
+argument_list|(
+name|new_image
+argument_list|,
+name|profile
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
