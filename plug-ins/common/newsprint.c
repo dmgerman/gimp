@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d283c70108
+DECL|struct|__anon28945db00108
 block|{
 DECL|member|name
 specifier|const
@@ -619,7 +619,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d283c70208
+DECL|struct|__anon28945db00208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -692,7 +692,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d283c70308
+DECL|struct|__anon28945db00308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -722,7 +722,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d283c70408
+DECL|struct|__anon28945db00408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -829,7 +829,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d283c70508
+DECL|struct|__anon28945db00508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -994,7 +994,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d283c70608
+DECL|struct|__anon28945db00608
 block|{
 DECL|member|name
 specifier|const
@@ -7092,7 +7092,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d283c70708
+DECL|struct|__anon28945db00708
 block|{
 DECL|member|index
 name|gint
@@ -7754,7 +7754,15 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_drawable_mask_bounds
+name|gint
+name|w
+decl_stmt|,
+name|h
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp_drawable_mask_intersect
 argument_list|(
 name|drawable
 operator|->
@@ -7767,11 +7775,24 @@ operator|&
 name|y1
 argument_list|,
 operator|&
-name|x2
+name|w
 argument_list|,
 operator|&
-name|y2
+name|h
 argument_list|)
+condition|)
+return|return;
+name|x2
+operator|=
+name|x1
+operator|+
+name|w
+expr_stmt|;
+name|y2
+operator|=
+name|y1
+operator|+
+name|h
 expr_stmt|;
 block|}
 name|has_alpha

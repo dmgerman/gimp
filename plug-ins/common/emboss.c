@@ -59,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29004bc40103
+DECL|enum|__anon2ad1496c0103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -77,7 +77,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29004bc40208
+DECL|struct|__anon2ad1496c0208
 block|{
 DECL|member|azimuth
 name|gdouble
@@ -1501,7 +1501,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_drawable_mask_bounds
+if|if
+condition|(
+operator|!
+name|gimp_drawable_mask_intersect
 argument_list|(
 name|drawable
 operator|->
@@ -1514,12 +1517,13 @@ operator|&
 name|y1
 argument_list|,
 operator|&
-name|x2
+name|width
 argument_list|,
 operator|&
-name|y2
+name|height
 argument_list|)
-expr_stmt|;
+condition|)
+return|return
 comment|/* expand the bounds a little */
 name|x1
 operator|=
@@ -1533,7 +1537,7 @@ name|evals
 operator|.
 name|depth
 argument_list|)
-expr_stmt|;
+return|;
 name|y1
 operator|=
 name|MAX
@@ -1555,7 +1559,9 @@ name|drawable
 operator|->
 name|width
 argument_list|,
-name|x2
+name|x1
+operator|+
+name|width
 operator|+
 name|evals
 operator|.
@@ -1570,7 +1576,9 @@ name|drawable
 operator|->
 name|height
 argument_list|,
-name|y2
+name|y1
+operator|+
+name|height
 operator|+
 name|evals
 operator|.
