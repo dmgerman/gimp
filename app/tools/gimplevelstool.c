@@ -1179,6 +1179,17 @@ name|gchar
 modifier|*
 name|help
 decl_stmt|;
+name|gboolean
+name|all_channels
+init|=
+operator|(
+name|value
+operator|&
+name|PICK_ALL_CHANNELS
+operator|)
+operator|!=
+literal|0
+decl_stmt|;
 switch|switch
 condition|(
 name|value
@@ -1193,11 +1204,23 @@ name|icon_name
 operator|=
 name|GIMP_STOCK_COLOR_PICKER_BLACK
 expr_stmt|;
+if|if
+condition|(
+name|all_channels
+condition|)
 name|help
 operator|=
 name|_
 argument_list|(
-literal|"Pick black point"
+literal|"Pick black point for all channels"
+argument_list|)
+expr_stmt|;
+else|else
+name|help
+operator|=
+name|_
+argument_list|(
+literal|"Pick black point for the selected channel"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1208,11 +1231,23 @@ name|icon_name
 operator|=
 name|GIMP_STOCK_COLOR_PICKER_GRAY
 expr_stmt|;
+if|if
+condition|(
+name|all_channels
+condition|)
 name|help
 operator|=
 name|_
 argument_list|(
-literal|"Pick gray point"
+literal|"Pick gray point for all channels"
+argument_list|)
+expr_stmt|;
+else|else
+name|help
+operator|=
+name|_
+argument_list|(
+literal|"Pick gray point for the selected channel"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1223,11 +1258,23 @@ name|icon_name
 operator|=
 name|GIMP_STOCK_COLOR_PICKER_WHITE
 expr_stmt|;
+if|if
+condition|(
+name|all_channels
+condition|)
 name|help
 operator|=
 name|_
 argument_list|(
-literal|"Pick white point"
+literal|"Pick white point for all channels"
+argument_list|)
+expr_stmt|;
+else|else
+name|help
+operator|=
+name|_
+argument_list|(
+literal|"Pick whitw point for the selected channel"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2933,7 +2980,7 @@ name|button
 argument_list|,
 name|_
 argument_list|(
-literal|"Adjust levels automatically"
+literal|"Adjust levels for all channels automatically"
 argument_list|)
 argument_list|,
 name|NULL
