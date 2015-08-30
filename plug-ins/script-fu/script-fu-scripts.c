@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afd982b0108
+DECL|struct|__anon298e95d00108
 block|{
 DECL|member|script
 name|SFScript
@@ -3190,9 +3190,15 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+operator|(
 name|file_type
 operator|==
 name|G_FILE_TYPE_REGULAR
+operator|||
+name|file_type
+operator|==
+name|G_FILE_TYPE_DIRECTORY
+operator|)
 operator|&&
 operator|!
 name|g_file_info_get_is_hidden
@@ -3212,6 +3218,18 @@ argument_list|,
 name|info
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|file_type
+operator|==
+name|G_FILE_TYPE_DIRECTORY
+condition|)
+name|script_fu_load_directory
+argument_list|(
+name|child
+argument_list|)
+expr_stmt|;
+else|else
 name|script_fu_load_script
 argument_list|(
 name|child
@@ -4130,7 +4148,7 @@ block|{
 comment|/*  for backward compatibility, we fiddle with some menu paths  */
 specifier|const
 struct|struct
-DECL|struct|__anon2afd982b0208
+DECL|struct|__anon298e95d00208
 block|{
 DECL|member|old
 specifier|const
