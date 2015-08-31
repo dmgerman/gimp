@@ -1944,10 +1944,9 @@ name|_
 argument_list|(
 literal|"<big>Unstable Development Version</big>\n\n"
 literal|"<small>commit<tt>%s</tt></small>\n\n"
-literal|"<small>Please build latest "
-literal|"git master before\n"
-literal|"reporting any bugs against "
-literal|"this version.</small>"
+literal|"<small>Please test bugs against "
+literal|"latest git master branch\n"
+literal|"before reporting them.</small>"
 argument_list|)
 argument_list|,
 name|short_hash
