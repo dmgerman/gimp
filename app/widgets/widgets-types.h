@@ -707,6 +707,46 @@ typedef|;
 end_typedef
 
 begin_comment
+comment|/*  file dialogs  */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpExportDialog
+typedef|typedef
+name|struct
+name|_GimpExportDialog
+name|GimpExportDialog
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpFileDialog
+typedef|typedef
+name|struct
+name|_GimpFileDialog
+name|GimpFileDialog
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpOpenDialog
+typedef|typedef
+name|struct
+name|_GimpOpenDialog
+name|GimpOpenDialog
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpSaveDialog
+typedef|typedef
+name|struct
+name|_GimpSaveDialog
+name|GimpSaveDialog
+typedef|;
+end_typedef
+
+begin_comment
 comment|/*  misc dialogs  */
 end_comment
 
@@ -725,15 +765,6 @@ typedef|typedef
 name|struct
 name|_GimpErrorDialog
 name|GimpErrorDialog
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpFileDialog
-typedef|typedef
-name|struct
-name|_GimpFileDialog
-name|GimpFileDialog
 typedef|;
 end_typedef
 
