@@ -193,7 +193,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2793c1300103
+DECL|enum|__anon2a56cba80103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -224,7 +224,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2793c1300203
+DECL|enum|__anon2a56cba80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2197,6 +2197,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|layer
+operator|->
+name|mask
+operator|&&
 name|layer
 operator|->
 name|show_mask
@@ -6972,6 +6976,11 @@ literal|"aux2"
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_layer_update_mode_node
+argument_list|(
+name|layer
+argument_list|)
+expr_stmt|;
 block|}
 comment|/*  If applying actually changed the view  */
 if|if
