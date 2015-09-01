@@ -1597,20 +1597,20 @@ end_function
 
 begin_function
 name|GimpColorTransform
-DECL|function|gimp_widget_get_color_transform (GtkWidget * widget,GimpColorManaged * managed,GimpColorConfig * config,const Babl ** src_format,const Babl ** dest_format)
+DECL|function|gimp_widget_get_color_transform (GtkWidget * widget,GimpColorConfig * config,GimpColorProfile * src_profile,const Babl ** src_format,const Babl ** dest_format)
 name|gimp_widget_get_color_transform
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpColorManaged
-modifier|*
-name|managed
-parameter_list|,
 name|GimpColorConfig
 modifier|*
 name|config
+parameter_list|,
+name|GimpColorProfile
+modifier|*
+name|src_profile
 parameter_list|,
 specifier|const
 name|Babl
@@ -1627,12 +1627,6 @@ parameter_list|)
 block|{
 name|GimpColorTransform
 name|transform
-init|=
-name|NULL
-decl_stmt|;
-name|GimpColorProfile
-modifier|*
-name|src_profile
 init|=
 name|NULL
 decl_stmt|;
@@ -1686,9 +1680,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_COLOR_MANAGED
+name|GIMP_IS_COLOR_PROFILE
 argument_list|(
-name|managed
+name|src_profile
 argument_list|)
 argument_list|,
 name|NULL
@@ -1751,13 +1745,6 @@ comment|/*  fallthru  */
 case|case
 name|GIMP_COLOR_MANAGEMENT_DISPLAY
 case|:
-name|src_profile
-operator|=
-name|gimp_color_managed_get_color_profile
-argument_list|(
-name|managed
-argument_list|)
-expr_stmt|;
 name|dest_profile
 operator|=
 name|get_display_profile
@@ -1996,11 +1983,6 @@ name|display_flags
 argument_list|)
 expr_stmt|;
 block|}
-name|g_object_unref
-argument_list|(
-name|src_profile
-argument_list|)
-expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|dest_profile

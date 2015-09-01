@@ -140,13 +140,13 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpColorManaged
-modifier|*
-name|managed
-parameter_list|,
 name|GimpColorConfig
 modifier|*
 name|config
+parameter_list|,
+name|GimpColorProfile
+modifier|*
+name|src_profile
 parameter_list|,
 specifier|const
 name|Babl
