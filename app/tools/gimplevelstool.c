@@ -1274,7 +1274,7 @@ name|help
 operator|=
 name|_
 argument_list|(
-literal|"Pick whitw point for the selected channel"
+literal|"Pick white point for the selected channel"
 argument_list|)
 expr_stmt|;
 break|break;
