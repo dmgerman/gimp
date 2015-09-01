@@ -2663,6 +2663,15 @@ name|compat_toggle
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|gtk_widget_get_sensitive
+argument_list|(
+name|dialog
+operator|->
+name|compat_toggle
+argument_list|)
+condition|)
 name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
@@ -2672,7 +2681,10 @@ operator|->
 name|compat_toggle
 argument_list|)
 argument_list|,
-name|FALSE
+name|gimp_image_get_xcf_compat_mode
+argument_list|(
+name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

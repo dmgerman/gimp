@@ -1057,7 +1057,10 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|FALSE
+name|gimp_image_get_xcf_compat_mode
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|)
