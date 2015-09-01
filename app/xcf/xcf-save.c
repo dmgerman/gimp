@@ -1705,7 +1705,7 @@ name|compat_parasite
 operator|=
 name|gimp_parasite_new
 argument_list|(
-literal|"gimp-compatibility-mode"
+literal|"gimp-xcf-foo"
 argument_list|,
 name|GIMP_PARASITE_PERSISTENT
 argument_list|,
@@ -7398,7 +7398,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a4a2cb0108
+DECL|struct|__anon2c0bf2a50108
 block|{
 DECL|member|info
 name|XcfInfo
