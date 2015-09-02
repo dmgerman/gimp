@@ -1579,7 +1579,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-literal|"gimp-xcf-foo"
+literal|"gimp-xcf-compatibility-mode"
 argument_list|)
 expr_stmt|;
 if|if
