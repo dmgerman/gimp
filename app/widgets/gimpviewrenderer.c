@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0816bc0103
+DECL|enum|__anon29fe050d0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -248,9 +248,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|cairo_pattern_t
-modifier|*
-name|gimp_view_renderer_create_background
+name|void
+name|gimp_view_render_temp_buf_to_surface
 parameter_list|(
 name|GimpViewRenderer
 modifier|*
@@ -259,18 +258,6 @@ parameter_list|,
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_view_render_temp_buf_to_surface
-parameter_list|(
-name|GimpViewRenderer
-modifier|*
-name|renderer
 parameter_list|,
 name|GimpTempBuf
 modifier|*
@@ -300,6 +287,23 @@ name|dest_width
 parameter_list|,
 name|gint
 name|dest_height
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|cairo_pattern_t
+modifier|*
+name|gimp_view_renderer_create_background
+parameter_list|(
+name|GimpViewRenderer
+modifier|*
+name|renderer
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3013,6 +3017,8 @@ name|gimp_view_renderer_render_pixbuf
 argument_list|(
 name|renderer
 argument_list|,
+name|widget
+argument_list|,
 name|pixbuf
 argument_list|)
 expr_stmt|;
@@ -3047,6 +3053,8 @@ block|{
 name|gimp_view_renderer_render_temp_buf_simple
 argument_list|(
 name|renderer
+argument_list|,
+name|widget
 argument_list|,
 name|temp_buf
 argument_list|)
@@ -3125,12 +3133,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_view_renderer_render_temp_buf_simple (GimpViewRenderer * renderer,GimpTempBuf * temp_buf)
+DECL|function|gimp_view_renderer_render_temp_buf_simple (GimpViewRenderer * renderer,GtkWidget * widget,GimpTempBuf * temp_buf)
 name|gimp_view_renderer_render_temp_buf_simple
 parameter_list|(
 name|GimpViewRenderer
 modifier|*
 name|renderer
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|,
 name|GimpTempBuf
 modifier|*
@@ -3226,6 +3238,8 @@ name|gimp_view_renderer_render_temp_buf
 argument_list|(
 name|renderer
 argument_list|,
+name|widget
+argument_list|,
 name|temp_buf
 argument_list|,
 name|temp_buf_x
@@ -3245,12 +3259,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_view_renderer_render_temp_buf (GimpViewRenderer * renderer,GimpTempBuf * temp_buf,gint temp_buf_x,gint temp_buf_y,gint channel,GimpViewBG inside_bg,GimpViewBG outside_bg)
+DECL|function|gimp_view_renderer_render_temp_buf (GimpViewRenderer * renderer,GtkWidget * widget,GimpTempBuf * temp_buf,gint temp_buf_x,gint temp_buf_y,gint channel,GimpViewBG inside_bg,GimpViewBG outside_bg)
 name|gimp_view_renderer_render_temp_buf
 parameter_list|(
 name|GimpViewRenderer
 modifier|*
 name|renderer
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|,
 name|GimpTempBuf
 modifier|*
@@ -3321,6 +3339,8 @@ name|gimp_view_render_temp_buf_to_surface
 argument_list|(
 name|renderer
 argument_list|,
+name|widget
+argument_list|,
 name|temp_buf
 argument_list|,
 name|temp_buf_x
@@ -3357,12 +3377,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_view_renderer_render_pixbuf (GimpViewRenderer * renderer,GdkPixbuf * pixbuf)
+DECL|function|gimp_view_renderer_render_pixbuf (GimpViewRenderer * renderer,GtkWidget * widget,GdkPixbuf * pixbuf)
 name|gimp_view_renderer_render_pixbuf
 parameter_list|(
 name|GimpViewRenderer
 modifier|*
 name|renderer
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|,
 name|GdkPixbuf
 modifier|*
@@ -3642,12 +3666,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_view_render_temp_buf_to_surface (GimpViewRenderer * renderer,GimpTempBuf * temp_buf,gint temp_buf_x,gint temp_buf_y,gint channel,GimpViewBG inside_bg,GimpViewBG outside_bg,cairo_surface_t * surface,gint surface_width,gint surface_height)
+DECL|function|gimp_view_render_temp_buf_to_surface (GimpViewRenderer * renderer,GtkWidget * widget,GimpTempBuf * temp_buf,gint temp_buf_x,gint temp_buf_y,gint channel,GimpViewBG inside_bg,GimpViewBG outside_bg,cairo_surface_t * surface,gint surface_width,gint surface_height)
 name|gimp_view_render_temp_buf_to_surface
 parameter_list|(
 name|GimpViewRenderer
 modifier|*
 name|renderer
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|,
 name|GimpTempBuf
 modifier|*

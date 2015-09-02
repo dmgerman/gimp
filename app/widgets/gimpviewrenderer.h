@@ -576,6 +576,10 @@ name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
 name|GimpTempBuf
 modifier|*
 name|temp_buf
@@ -590,6 +594,10 @@ parameter_list|(
 name|GimpViewRenderer
 modifier|*
 name|renderer
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|,
 name|GimpTempBuf
 modifier|*
@@ -620,6 +628,10 @@ parameter_list|(
 name|GimpViewRenderer
 modifier|*
 name|renderer
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|,
 name|GdkPixbuf
 modifier|*

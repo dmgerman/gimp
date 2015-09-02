@@ -111,6 +111,12 @@ DECL|member|pipe_animation_index
 name|gint
 name|pipe_animation_index
 decl_stmt|;
+comment|/* for the pipe render animation timeout */
+DECL|member|widget
+name|GtkWidget
+modifier|*
+name|widget
+decl_stmt|;
 block|}
 struct|;
 end_struct

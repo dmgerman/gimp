@@ -247,6 +247,8 @@ name|gimp_view_renderer_render_pixbuf
 argument_list|(
 name|renderer
 argument_list|,
+name|widget
+argument_list|,
 name|pixbuf
 argument_list|)
 expr_stmt|;

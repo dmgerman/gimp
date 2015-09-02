@@ -416,6 +416,8 @@ name|gimp_view_renderer_render_temp_buf
 argument_list|(
 name|renderer
 argument_list|,
+name|widget
+argument_list|,
 name|temp_buf
 argument_list|,
 name|temp_buf_x
@@ -447,6 +449,12 @@ condition|)
 block|{
 name|renderbrush
 operator|->
+name|widget
+operator|=
+name|widget
+expr_stmt|;
+name|renderbrush
+operator|->
 name|pipe_animation_index
 operator|=
 literal|0
@@ -470,6 +478,8 @@ block|}
 name|gimp_view_renderer_render_temp_buf
 argument_list|(
 name|renderer
+argument_list|,
+name|widget
 argument_list|,
 name|temp_buf
 argument_list|,
@@ -696,6 +706,10 @@ expr_stmt|;
 name|gimp_view_renderer_render_temp_buf
 argument_list|(
 name|renderer
+argument_list|,
+name|renderbrush
+operator|->
+name|widget
 argument_list|,
 name|temp_buf
 argument_list|,

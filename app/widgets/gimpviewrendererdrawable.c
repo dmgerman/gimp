@@ -886,6 +886,8 @@ name|gimp_view_renderer_render_temp_buf
 argument_list|(
 name|renderer
 argument_list|,
+name|widget
+argument_list|,
 name|render_buf
 argument_list|,
 name|render_buf_x
