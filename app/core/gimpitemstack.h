@@ -238,6 +238,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_item_stack_profile_changed
+parameter_list|(
+name|GimpItemStack
+modifier|*
+name|stack
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
