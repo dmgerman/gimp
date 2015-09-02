@@ -352,14 +352,6 @@ name|GimpColorProfile
 modifier|*
 name|profile
 decl_stmt|;
-specifier|const
-name|guint8
-modifier|*
-name|data
-decl_stmt|;
-name|gsize
-name|length
-decl_stmt|;
 name|profile
 operator|=
 name|gimp_color_managed_get_color_profile
@@ -370,6 +362,19 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|profile
+condition|)
+block|{
+specifier|const
+name|guint8
+modifier|*
+name|data
+decl_stmt|;
+name|gsize
+name|length
+decl_stmt|;
 name|data
 operator|=
 name|gimp_color_profile_get_icc_profile
@@ -393,11 +398,7 @@ name|num_bytes
 operator|=
 name|length
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|profile
-argument_list|)
-expr_stmt|;
+block|}
 block|}
 name|return_vals
 operator|=
@@ -1350,7 +1351,7 @@ literal|"gimp-image-get-effective-color-profile"
 argument_list|,
 literal|"Returns the color profile that is used for the image"
 argument_list|,
-literal|"This procedure returns the color profile that is actually used for this image, which is the profile returned by 'gimp-image-get-color-profile' if the image has a profile assigned, or the default RGB profile from preferences if no profile is assigned to the image. If there is no default RGB profile configured in preferences either, a generated default RGB profile is returned."
+literal|"This procedure returns the color profile that is actually used for this image, which is the profile returned by 'gimp-image-get-color-profile' if the image has a profile assigned, or a generated default RGB profile. If the image is not RGB or INDEXED, NULL is returned."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

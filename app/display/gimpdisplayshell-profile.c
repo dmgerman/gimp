@@ -282,6 +282,12 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|src_profile
+condition|)
+return|return;
 name|src_format
 operator|=
 name|gimp_babl_format

@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon278438c70103
+DECL|enum|__anon2c01e7680103
 block|{
 DECL|enumerator|PROFILE_CHANGED
 name|PROFILE_CHANGED
@@ -362,10 +362,8 @@ argument_list|(
 name|managed
 argument_list|)
 return|;
-comment|/* never return a NULL profile */
 return|return
-name|gimp_color_profile_new_srgb
-argument_list|()
+name|NULL
 return|;
 block|}
 end_function

@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc704dc0108
+DECL|struct|__anon29d845d60108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -869,11 +869,6 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|label
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|src_profile
 argument_list|)
 expr_stmt|;
 name|frame

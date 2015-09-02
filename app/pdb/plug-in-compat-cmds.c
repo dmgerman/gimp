@@ -8494,6 +8494,11 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|profile
+condition|)
+block|{
 name|profile_name
 operator|=
 name|g_strdup
@@ -8524,11 +8529,7 @@ name|profile
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|profile
-argument_list|)
-expr_stmt|;
+block|}
 block|}
 name|return_vals
 operator|=

@@ -356,11 +356,6 @@ argument_list|,
 name|profile
 argument_list|)
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|profile
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

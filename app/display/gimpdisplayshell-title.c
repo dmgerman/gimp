@@ -1953,6 +1953,10 @@ argument_list|(
 name|managed
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|profile
+condition|)
 name|i
 operator|+=
 name|print
@@ -1969,11 +1973,6 @@ name|gimp_color_profile_get_label
 argument_list|(
 name|profile
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|profile
 argument_list|)
 expr_stmt|;
 block|}

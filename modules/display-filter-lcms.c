@@ -1214,6 +1214,11 @@ argument_list|(
 name|managed
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|src_profile
+condition|)
+block|{
 name|lcms
 operator|->
 name|src_format
@@ -1255,11 +1260,7 @@ operator|->
 name|dest_format
 argument_list|)
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|src_profile
-argument_list|)
-expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -1611,6 +1612,15 @@ operator|=
 name|gimp_color_managed_get_color_profile
 argument_list|(
 name|managed
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|profile
+condition|)
+name|g_object_ref
+argument_list|(
+name|profile
 argument_list|)
 expr_stmt|;
 block|}
