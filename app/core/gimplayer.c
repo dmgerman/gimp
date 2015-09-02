@@ -193,7 +193,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ce987e0103
+DECL|enum|__anon2a56cba80103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -224,7 +224,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ce987e0203
+DECL|enum|__anon2a56cba80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -852,19 +852,6 @@ name|offset_x
 parameter_list|,
 name|gint
 name|offset_y
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|GimpColorProfile
-modifier|*
-name|gimp_layer_get_color_profile
-parameter_list|(
-name|GimpPickable
-modifier|*
-name|pickable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1860,12 +1847,6 @@ modifier|*
 name|iface
 parameter_list|)
 block|{
-name|iface
-operator|->
-name|get_color_profile
-operator|=
-name|gimp_layer_get_color_profile
-expr_stmt|;
 name|iface
 operator|->
 name|get_opacity_at
@@ -5126,42 +5107,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-specifier|static
-name|GimpColorProfile
-modifier|*
-DECL|function|gimp_layer_get_color_profile (GimpPickable * pickable)
-name|gimp_layer_get_color_profile
-parameter_list|(
-name|GimpPickable
-modifier|*
-name|pickable
-parameter_list|)
-block|{
-name|GimpImage
-modifier|*
-name|image
-init|=
-name|gimp_item_get_image
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|pickable
-argument_list|)
-argument_list|)
-decl_stmt|;
-return|return
-name|gimp_pickable_get_color_profile
-argument_list|(
-name|GIMP_PICKABLE
-argument_list|(
-name|image
-argument_list|)
-argument_list|)
-return|;
 block|}
 end_function
 

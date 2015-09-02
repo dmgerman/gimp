@@ -163,7 +163,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afb8b310103
+DECL|enum|__anon29ff57ea0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -176,7 +176,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afb8b310203
+DECL|enum|__anon29ff57ea0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -402,19 +402,6 @@ specifier|const
 name|Babl
 modifier|*
 name|gimp_projection_get_format
-parameter_list|(
-name|GimpPickable
-modifier|*
-name|pickable
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|GimpColorProfile
-modifier|*
-name|gimp_projection_get_color_profile
 parameter_list|(
 name|GimpPickable
 modifier|*
@@ -992,12 +979,6 @@ expr_stmt|;
 comment|/* sic */
 name|iface
 operator|->
-name|get_color_profile
-operator|=
-name|gimp_projection_get_color_profile
-expr_stmt|;
-name|iface
-operator|->
 name|get_buffer
 operator|=
 name|gimp_projection_get_buffer
@@ -1432,40 +1413,6 @@ argument_list|)
 decl_stmt|;
 return|return
 name|gimp_projectable_get_format
-argument_list|(
-name|proj
-operator|->
-name|priv
-operator|->
-name|projectable
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|GimpColorProfile
-modifier|*
-DECL|function|gimp_projection_get_color_profile (GimpPickable * pickable)
-name|gimp_projection_get_color_profile
-parameter_list|(
-name|GimpPickable
-modifier|*
-name|pickable
-parameter_list|)
-block|{
-name|GimpProjection
-modifier|*
-name|proj
-init|=
-name|GIMP_PROJECTION
-argument_list|(
-name|pickable
-argument_list|)
-decl_stmt|;
-return|return
-name|gimp_projectable_get_color_profile
 argument_list|(
 name|proj
 operator|->
