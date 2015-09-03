@@ -115,7 +115,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfab9930103
+DECL|enum|__anon2c421b350103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -128,7 +128,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfab9930203
+DECL|enum|__anon2c421b350203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -145,7 +145,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfab9930308
+DECL|struct|__anon2c421b350308
 block|{
 DECL|member|interlace
 name|gint
@@ -1018,6 +1018,13 @@ default|default:
 break|break;
 block|}
 block|}
+if|if
+condition|(
+name|status
+operator|==
+name|GIMP_PDB_SUCCESS
+condition|)
+block|{
 comment|/* Create an exportable image based on the export options */
 switch|switch
 condition|(
@@ -1100,13 +1107,6 @@ default|default:
 break|break;
 block|}
 comment|/* Write the image to file */
-if|if
-condition|(
-name|status
-operator|==
-name|GIMP_PDB_SUCCESS
-condition|)
-block|{
 if|if
 condition|(
 name|save_image
