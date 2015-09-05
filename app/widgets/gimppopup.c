@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4a127a0103
+DECL|enum|__anon2772051c0103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -69,12 +69,16 @@ end_enum
 
 begin_function_decl
 specifier|static
-name|void
-name|gimp_popup_map
+name|gboolean
+name|gimp_popup_map_event
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|GdkEventAny
+modifier|*
+name|event
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -262,9 +266,9 @@ argument_list|)
 expr_stmt|;
 name|widget_class
 operator|->
-name|map
+name|map_event
 operator|=
-name|gimp_popup_map
+name|gimp_popup_map_event
 expr_stmt|;
 name|widget_class
 operator|->
@@ -467,13 +471,18 @@ end_function
 
 begin_function
 specifier|static
-name|void
-DECL|function|gimp_popup_map (GtkWidget * widget)
-name|gimp_popup_map
+name|gboolean
+DECL|function|gimp_popup_map_event (GtkWidget * widget,G_GNUC_UNUSED GdkEventAny * event)
+name|gimp_popup_map_event
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|G_GNUC_UNUSED
+name|GdkEventAny
+modifier|*
+name|event
 parameter_list|)
 block|{
 name|GTK_WIDGET_CLASS
@@ -481,9 +490,11 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|map
+name|map_event
 argument_list|(
 name|widget
+argument_list|,
+name|event
 argument_list|)
 expr_stmt|;
 comment|/*  grab with owner_events == TRUE so the popup's widgets can    *  receive events. we filter away events outside this toplevel    *  away in button_press()    */
@@ -564,7 +575,9 @@ argument_list|,
 name|widget
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|FALSE
+return|;
 block|}
 else|else
 block|{
@@ -593,6 +606,9 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 
