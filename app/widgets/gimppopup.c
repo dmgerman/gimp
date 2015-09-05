@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2772051c0103
+DECL|enum|__anon28e7aad50103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -522,7 +522,7 @@ argument_list|,
 name|GDK_CURRENT_TIME
 argument_list|)
 operator|==
-literal|0
+name|GDK_GRAB_SUCCESS
 condition|)
 block|{
 if|if
@@ -539,7 +539,7 @@ argument_list|,
 name|GDK_CURRENT_TIME
 argument_list|)
 operator|==
-literal|0
+name|GDK_GRAB_SUCCESS
 condition|)
 block|{
 name|gtk_grab_add
