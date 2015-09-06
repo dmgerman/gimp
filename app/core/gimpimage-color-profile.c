@@ -1401,23 +1401,6 @@ literal|"Color profile conversion"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_color_profile
-argument_list|(
-name|image
-argument_list|,
-name|dest_profile
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-comment|/*  omg...  */
-name|gimp_image_parasite_detach
-argument_list|(
-name|image
-argument_list|,
-literal|"icc-profile-name"
-argument_list|)
-expr_stmt|;
 switch|switch
 condition|(
 name|gimp_image_get_base_type
@@ -1469,6 +1452,23 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+name|gimp_image_set_color_profile
+argument_list|(
+name|image
+argument_list|,
+name|dest_profile
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+comment|/*  omg...  */
+name|gimp_image_parasite_detach
+argument_list|(
+name|image
+argument_list|,
+literal|"icc-profile-name"
+argument_list|)
+expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
 name|image
