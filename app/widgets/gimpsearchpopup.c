@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c941ce20103
+DECL|enum|__anon2b2b01ce0103
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c941ce20203
+DECL|enum|__anon2b2b01ce0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2247,7 +2247,7 @@ name|popup
 parameter_list|)
 block|{
 comment|/* These keys are already managed by key bindings. */
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|kevent
 operator|->
@@ -2272,6 +2272,8 @@ operator|->
 name|keyval
 operator|!=
 name|GDK_KEY_ISO_Enter
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 switch|switch
