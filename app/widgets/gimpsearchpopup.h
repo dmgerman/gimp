@@ -86,7 +86,7 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_SEARCH_POPUP, GimpSearchPopup
 end_define
 
 begin_comment
-comment|/**  * GimpSearchPopupCallback:  * @popup:  the #GimpSearchPopup to operate on.  * @search: the text searched.  *   * Callback used by @popup to fill in its result list.  * It should make use of gimp_search_popup_add_result() to fill in  * results.  */
+comment|/**  * GimpSearchPopupCallback:  * @popup:  the #GimpSearchPopup to operate on.  * @search: the text searched.  *  * Callback used by @popup to fill in its result list.  * It should make use of gimp_search_popup_add_result() to fill in  * results.  */
 end_comment
 
 begin_typedef
