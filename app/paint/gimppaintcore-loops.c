@@ -2188,7 +2188,7 @@ operator|=
 operator|(
 name|mask
 operator|&
-name|GIMP_COMPONENT_RED
+name|GIMP_COMPONENT_MASK_RED
 operator|)
 condition|?
 name|aux
@@ -2209,7 +2209,7 @@ operator|=
 operator|(
 name|mask
 operator|&
-name|GIMP_COMPONENT_GREEN
+name|GIMP_COMPONENT_MASK_GREEN
 operator|)
 condition|?
 name|aux
@@ -2230,7 +2230,7 @@ operator|=
 operator|(
 name|mask
 operator|&
-name|GIMP_COMPONENT_BLUE
+name|GIMP_COMPONENT_MASK_BLUE
 operator|)
 condition|?
 name|aux
@@ -2251,7 +2251,7 @@ operator|=
 operator|(
 name|mask
 operator|&
-name|GIMP_COMPONENT_ALPHA
+name|GIMP_COMPONENT_MASK_ALPHA
 operator|)
 condition|?
 name|aux

@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d02fbc0103
+DECL|enum|__anon2ba943040103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -285,7 +285,7 @@ literal|"The component mask"
 argument_list|,
 name|GIMP_TYPE_COMPONENT_MASK
 argument_list|,
-name|GIMP_COMPONENT_ALL
+name|GIMP_COMPONENT_MASK_ALL
 argument_list|,
 name|G_PARAM_READWRITE
 operator||
@@ -618,7 +618,7 @@ name|self
 operator|->
 name|mask
 operator|==
-name|GIMP_COMPONENT_ALL
+name|GIMP_COMPONENT_MASK_ALL
 condition|)
 block|{
 name|GObject
@@ -778,7 +778,7 @@ operator|=
 operator|(
 name|mask
 operator|&
-name|GIMP_COMPONENT_RED
+name|GIMP_COMPONENT_MASK_RED
 operator|)
 condition|?
 name|aux
@@ -799,7 +799,7 @@ operator|=
 operator|(
 name|mask
 operator|&
-name|GIMP_COMPONENT_GREEN
+name|GIMP_COMPONENT_MASK_GREEN
 operator|)
 condition|?
 name|aux
@@ -820,7 +820,7 @@ operator|=
 operator|(
 name|mask
 operator|&
-name|GIMP_COMPONENT_BLUE
+name|GIMP_COMPONENT_MASK_BLUE
 operator|)
 condition|?
 name|aux
@@ -841,7 +841,7 @@ operator|=
 operator|(
 name|mask
 operator|&
-name|GIMP_COMPONENT_ALPHA
+name|GIMP_COMPONENT_MASK_ALPHA
 operator|)
 condition|?
 name|aux

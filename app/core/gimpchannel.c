@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ff994c0103
+DECL|enum|__anon28edc6710103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -4365,7 +4365,7 @@ parameter_list|)
 block|{
 comment|/*  Return all, because that skips the component mask op when painting  */
 return|return
-name|GIMP_COMPONENT_ALL
+name|GIMP_COMPONENT_MASK_ALL
 return|;
 block|}
 end_function

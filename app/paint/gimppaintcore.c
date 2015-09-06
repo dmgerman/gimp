@@ -163,7 +163,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c5b4470103
+DECL|enum|__anon2af112110103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1793,7 +1793,7 @@ argument_list|(
 name|drawable
 argument_list|)
 operator|!=
-name|GIMP_COMPONENT_ALL
+name|GIMP_COMPONENT_MASK_ALL
 condition|)
 block|{
 specifier|const

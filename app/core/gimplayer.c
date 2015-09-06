@@ -193,7 +193,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297d41160103
+DECL|enum|__anon2bbf409e0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -224,7 +224,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297d41160203
+DECL|enum|__anon2bbf409e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5085,7 +5085,7 @@ condition|)
 name|mask
 operator|&=
 operator|~
-name|GIMP_COMPONENT_ALPHA
+name|GIMP_COMPONENT_MASK_ALPHA
 expr_stmt|;
 return|return
 name|mask

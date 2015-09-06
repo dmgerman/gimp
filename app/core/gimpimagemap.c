@@ -87,7 +87,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5cd5d40103
+DECL|enum|__anon2b9d5ec70103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1917,7 +1917,7 @@ condition|)
 name|active_mask
 operator|&=
 operator|~
-name|GIMP_COMPONENT_ALPHA
+name|GIMP_COMPONENT_MASK_ALPHA
 expr_stmt|;
 name|gimp_applicator_set_affect
 argument_list|(

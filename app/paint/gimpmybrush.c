@@ -734,7 +734,7 @@ argument_list|,
 operator|(
 name|active_mask
 operator|&
-name|GIMP_COMPONENT_ALPHA
+name|GIMP_COMPONENT_MASK_ALPHA
 operator|)
 condition|?
 name|FALSE

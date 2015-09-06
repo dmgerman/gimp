@@ -360,7 +360,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon299f1a2b0103
+DECL|enum|__anon2ba05f4e0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -457,7 +457,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299f1a2b0203
+DECL|enum|__anon2ba05f4e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6557,7 +6557,7 @@ argument_list|(
 name|image
 argument_list|)
 operator|&
-name|GIMP_COMPONENT_ALL
+name|GIMP_COMPONENT_MASK_ALL
 expr_stmt|;
 name|private
 operator|->
@@ -10939,7 +10939,7 @@ name|RED
 index|]
 operator|)
 condition|?
-name|GIMP_COMPONENT_RED
+name|GIMP_COMPONENT_MASK_RED
 else|:
 literal|0
 expr_stmt|;
@@ -10954,7 +10954,7 @@ name|GREEN
 index|]
 operator|)
 condition|?
-name|GIMP_COMPONENT_GREEN
+name|GIMP_COMPONENT_MASK_GREEN
 else|:
 literal|0
 expr_stmt|;
@@ -10969,7 +10969,7 @@ name|BLUE
 index|]
 operator|)
 condition|?
-name|GIMP_COMPONENT_BLUE
+name|GIMP_COMPONENT_MASK_BLUE
 else|:
 literal|0
 expr_stmt|;
@@ -10984,7 +10984,7 @@ name|ALPHA
 index|]
 operator|)
 condition|?
-name|GIMP_COMPONENT_ALPHA
+name|GIMP_COMPONENT_MASK_ALPHA
 else|:
 literal|0
 expr_stmt|;
@@ -11006,7 +11006,7 @@ name|GRAY
 index|]
 operator|)
 condition|?
-name|GIMP_COMPONENT_RED
+name|GIMP_COMPONENT_MASK_RED
 else|:
 literal|0
 expr_stmt|;
@@ -11021,7 +11021,7 @@ name|GRAY
 index|]
 operator|)
 condition|?
-name|GIMP_COMPONENT_GREEN
+name|GIMP_COMPONENT_MASK_GREEN
 else|:
 literal|0
 expr_stmt|;
@@ -11036,7 +11036,7 @@ name|GRAY
 index|]
 operator|)
 condition|?
-name|GIMP_COMPONENT_BLUE
+name|GIMP_COMPONENT_MASK_BLUE
 else|:
 literal|0
 expr_stmt|;
@@ -11051,7 +11051,7 @@ name|ALPHA_G
 index|]
 operator|)
 condition|?
-name|GIMP_COMPONENT_ALPHA
+name|GIMP_COMPONENT_MASK_ALPHA
 else|:
 literal|0
 expr_stmt|;
@@ -11161,7 +11161,7 @@ argument_list|(
 name|image
 argument_list|)
 operator|&
-name|GIMP_COMPONENT_ALL
+name|GIMP_COMPONENT_MASK_ALL
 expr_stmt|;
 name|gegl_node_set
 argument_list|(
@@ -11408,7 +11408,7 @@ name|RED
 index|]
 operator|)
 condition|?
-name|GIMP_COMPONENT_RED
+name|GIMP_COMPONENT_MASK_RED
 else|:
 literal|0
 expr_stmt|;
@@ -11423,7 +11423,7 @@ name|GREEN
 index|]
 operator|)
 condition|?
-name|GIMP_COMPONENT_GREEN
+name|GIMP_COMPONENT_MASK_GREEN
 else|:
 literal|0
 expr_stmt|;
@@ -11438,7 +11438,7 @@ name|BLUE
 index|]
 operator|)
 condition|?
-name|GIMP_COMPONENT_BLUE
+name|GIMP_COMPONENT_MASK_BLUE
 else|:
 literal|0
 expr_stmt|;
@@ -11453,7 +11453,7 @@ name|ALPHA
 index|]
 operator|)
 condition|?
-name|GIMP_COMPONENT_ALPHA
+name|GIMP_COMPONENT_MASK_ALPHA
 else|:
 literal|0
 expr_stmt|;
@@ -11475,7 +11475,7 @@ name|GRAY
 index|]
 operator|)
 condition|?
-name|GIMP_COMPONENT_RED
+name|GIMP_COMPONENT_MASK_RED
 else|:
 literal|0
 expr_stmt|;
@@ -11490,7 +11490,7 @@ name|GRAY
 index|]
 operator|)
 condition|?
-name|GIMP_COMPONENT_GREEN
+name|GIMP_COMPONENT_MASK_GREEN
 else|:
 literal|0
 expr_stmt|;
@@ -11505,7 +11505,7 @@ name|GRAY
 index|]
 operator|)
 condition|?
-name|GIMP_COMPONENT_BLUE
+name|GIMP_COMPONENT_MASK_BLUE
 else|:
 literal|0
 expr_stmt|;
@@ -11520,7 +11520,7 @@ name|ALPHA
 index|]
 operator|)
 condition|?
-name|GIMP_COMPONENT_ALPHA
+name|GIMP_COMPONENT_MASK_ALPHA
 else|:
 literal|0
 expr_stmt|;

@@ -179,7 +179,7 @@ name|applicator
 operator|->
 name|affect
 operator|=
-name|GIMP_COMPONENT_ALL
+name|GIMP_COMPONENT_MASK_ALL
 expr_stmt|;
 block|}
 end_function
