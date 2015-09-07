@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2802845c0103
+DECL|enum|__anon2c193c780103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1394,7 +1394,7 @@ argument_list|,
 name|GIMP_CURVE_SMOOTH
 argument_list|)
 expr_stmt|;
-name|gimp_curve_set_n_samples
+name|gimp_curve_set_n_points
 argument_list|(
 name|curve
 argument_list|,
