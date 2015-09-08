@@ -1284,7 +1284,7 @@ operator|->
 name|tool_options
 argument_list|)
 argument_list|,
-name|GIMP_CONTEXT_ALL_PROPS_MASK
+name|GIMP_CONTEXT_PROP_MASK_ALL
 operator|&
 operator|~
 operator|(
@@ -1292,9 +1292,9 @@ name|tool_info
 operator|->
 name|context_props
 operator||
-name|GIMP_CONTEXT_TOOL_MASK
+name|GIMP_CONTEXT_PROP_MASK_TOOL
 operator||
-name|GIMP_CONTEXT_PAINT_INFO_MASK
+name|GIMP_CONTEXT_PROP_MASK_PAINT_INFO
 operator|)
 argument_list|)
 expr_stmt|;

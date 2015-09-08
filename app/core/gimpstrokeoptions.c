@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aaaff8f0103
+DECL|enum|__anon2c14f4630103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aaaff8f0203
+DECL|enum|__anon2c14f4630203
 block|{
 DECL|enumerator|DASH_INFO_CHANGED
 name|DASH_INFO_CHANGED
@@ -1443,9 +1443,9 @@ argument_list|(
 name|options
 argument_list|)
 argument_list|,
-name|GIMP_CONTEXT_FOREGROUND_MASK
+name|GIMP_CONTEXT_PROP_MASK_FOREGROUND
 operator||
-name|GIMP_CONTEXT_PATTERN_MASK
+name|GIMP_CONTEXT_PROP_MASK_PATTERN
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1994,7 +1994,7 @@ argument_list|(
 name|paint_options
 argument_list|)
 argument_list|,
-name|GIMP_CONTEXT_PAINT_PROPS_MASK
+name|GIMP_CONTEXT_PROP_MASK_PAINT
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2047,11 +2047,11 @@ expr_stmt|;
 comment|/*  FG and BG are always shared between all tools  */
 name|global_props
 operator||=
-name|GIMP_CONTEXT_FOREGROUND_MASK
+name|GIMP_CONTEXT_PROP_MASK_FOREGROUND
 expr_stmt|;
 name|global_props
 operator||=
-name|GIMP_CONTEXT_BACKGROUND_MASK
+name|GIMP_CONTEXT_PROP_MASK_BACKGROUND
 expr_stmt|;
 if|if
 condition|(
@@ -2061,7 +2061,7 @@ name|global_brush
 condition|)
 name|global_props
 operator||=
-name|GIMP_CONTEXT_BRUSH_MASK
+name|GIMP_CONTEXT_PROP_MASK_BRUSH
 expr_stmt|;
 if|if
 condition|(
@@ -2071,7 +2071,7 @@ name|global_dynamics
 condition|)
 name|global_props
 operator||=
-name|GIMP_CONTEXT_DYNAMICS_MASK
+name|GIMP_CONTEXT_PROP_MASK_DYNAMICS
 expr_stmt|;
 if|if
 condition|(
@@ -2081,7 +2081,7 @@ name|global_pattern
 condition|)
 name|global_props
 operator||=
-name|GIMP_CONTEXT_PATTERN_MASK
+name|GIMP_CONTEXT_PROP_MASK_PATTERN
 expr_stmt|;
 if|if
 condition|(
@@ -2091,7 +2091,7 @@ name|global_palette
 condition|)
 name|global_props
 operator||=
-name|GIMP_CONTEXT_PALETTE_MASK
+name|GIMP_CONTEXT_PROP_MASK_PALETTE
 expr_stmt|;
 if|if
 condition|(
@@ -2101,7 +2101,7 @@ name|global_gradient
 condition|)
 name|global_props
 operator||=
-name|GIMP_CONTEXT_GRADIENT_MASK
+name|GIMP_CONTEXT_PROP_MASK_GRADIENT
 expr_stmt|;
 if|if
 condition|(
@@ -2111,7 +2111,7 @@ name|global_font
 condition|)
 name|global_props
 operator||=
-name|GIMP_CONTEXT_FONT_MASK
+name|GIMP_CONTEXT_PROP_MASK_FONT
 expr_stmt|;
 name|gimp_context_copy_properties
 argument_list|(

@@ -1440,7 +1440,7 @@ argument_list|,
 operator|(
 name|serialize_props
 operator|&
-name|GIMP_CONTEXT_FOREGROUND_MASK
+name|GIMP_CONTEXT_PROP_MASK_FOREGROUND
 operator|)
 operator|!=
 literal|0
@@ -1455,7 +1455,7 @@ argument_list|,
 operator|(
 name|serialize_props
 operator|&
-name|GIMP_CONTEXT_BRUSH_MASK
+name|GIMP_CONTEXT_PROP_MASK_BRUSH
 operator|)
 operator|!=
 literal|0
@@ -1470,7 +1470,7 @@ argument_list|,
 operator|(
 name|serialize_props
 operator|&
-name|GIMP_CONTEXT_DYNAMICS_MASK
+name|GIMP_CONTEXT_PROP_MASK_DYNAMICS
 operator|)
 operator|!=
 literal|0
@@ -1485,7 +1485,7 @@ argument_list|,
 operator|(
 name|serialize_props
 operator|&
-name|GIMP_CONTEXT_GRADIENT_MASK
+name|GIMP_CONTEXT_PROP_MASK_GRADIENT
 operator|)
 operator|!=
 literal|0
@@ -1500,7 +1500,7 @@ argument_list|,
 operator|(
 name|serialize_props
 operator|&
-name|GIMP_CONTEXT_PATTERN_MASK
+name|GIMP_CONTEXT_PROP_MASK_PATTERN
 operator|)
 operator|!=
 literal|0
@@ -1515,7 +1515,7 @@ argument_list|,
 operator|(
 name|serialize_props
 operator|&
-name|GIMP_CONTEXT_PALETTE_MASK
+name|GIMP_CONTEXT_PROP_MASK_PALETTE
 operator|)
 operator|!=
 literal|0
@@ -1530,7 +1530,7 @@ argument_list|,
 operator|(
 name|serialize_props
 operator|&
-name|GIMP_CONTEXT_FONT_MASK
+name|GIMP_CONTEXT_PROP_MASK_FONT
 operator|)
 operator|!=
 literal|0

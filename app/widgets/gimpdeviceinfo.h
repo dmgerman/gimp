@@ -31,7 +31,7 @@ DECL|macro|GIMP_DEVICE_INFO_CONTEXT_MASK
 define|#
 directive|define
 name|GIMP_DEVICE_INFO_CONTEXT_MASK
-value|(GIMP_CONTEXT_TOOL_MASK       | \                                        GIMP_CONTEXT_PAINT_INFO_MASK | \                                        GIMP_CONTEXT_FOREGROUND_MASK | \                                        GIMP_CONTEXT_BACKGROUND_MASK | \                                        GIMP_CONTEXT_BRUSH_MASK      | \                                        GIMP_CONTEXT_DYNAMICS_MASK   | \                                        GIMP_CONTEXT_PATTERN_MASK    | \                                        GIMP_CONTEXT_GRADIENT_MASK)
+value|(GIMP_CONTEXT_PROP_MASK_TOOL       | \                                        GIMP_CONTEXT_PROP_MASK_PAINT_INFO | \                                        GIMP_CONTEXT_PROP_MASK_FOREGROUND | \                                        GIMP_CONTEXT_PROP_MASK_BACKGROUND | \                                        GIMP_CONTEXT_PROP_MASK_BRUSH      | \                                        GIMP_CONTEXT_PROP_MASK_DYNAMICS   | \                                        GIMP_CONTEXT_PROP_MASK_PATTERN    | \                                        GIMP_CONTEXT_PROP_MASK_GRADIENT)
 end_define
 
 begin_define

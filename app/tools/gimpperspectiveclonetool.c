@@ -123,7 +123,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1d01f20103
+DECL|enum|__anon27d333ba0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -528,7 +528,7 @@ name|gimp_perspective_clone_options_gui
 argument_list|,
 name|GIMP_PAINT_OPTIONS_CONTEXT_MASK
 operator||
-name|GIMP_CONTEXT_PATTERN_MASK
+name|GIMP_CONTEXT_PROP_MASK_PATTERN
 argument_list|,
 literal|"gimp-perspective-clone-tool"
 argument_list|,

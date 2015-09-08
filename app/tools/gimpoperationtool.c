@@ -432,9 +432,9 @@ name|GIMP_TYPE_COLOR_OPTIONS
 argument_list|,
 name|gimp_color_options_gui
 argument_list|,
-name|GIMP_CONTEXT_FOREGROUND_MASK
+name|GIMP_CONTEXT_PROP_MASK_FOREGROUND
 operator||
-name|GIMP_CONTEXT_BACKGROUND_MASK
+name|GIMP_CONTEXT_PROP_MASK_BACKGROUND
 argument_list|,
 literal|"gimp-operation-tool"
 argument_list|,

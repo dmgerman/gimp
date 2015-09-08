@@ -111,7 +111,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0bdcae0103
+DECL|enum|__anon2b2f1aa40103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -251,7 +251,7 @@ name|GIMP_TYPE_TRANSFORM_OPTIONS
 argument_list|,
 name|gimp_transform_options_gui
 argument_list|,
-name|GIMP_CONTEXT_BACKGROUND_MASK
+name|GIMP_CONTEXT_PROP_MASK_BACKGROUND
 argument_list|,
 literal|"gimp-perspective-tool"
 argument_list|,

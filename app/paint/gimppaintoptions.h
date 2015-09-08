@@ -27,7 +27,7 @@ DECL|macro|GIMP_PAINT_OPTIONS_CONTEXT_MASK
 define|#
 directive|define
 name|GIMP_PAINT_OPTIONS_CONTEXT_MASK
-value|GIMP_CONTEXT_FOREGROUND_MASK | \                                         GIMP_CONTEXT_BACKGROUND_MASK | \                                         GIMP_CONTEXT_OPACITY_MASK    | \                                         GIMP_CONTEXT_PAINT_MODE_MASK | \                                         GIMP_CONTEXT_BRUSH_MASK      | \                                         GIMP_CONTEXT_DYNAMICS_MASK   | \                                         GIMP_CONTEXT_PALETTE_MASK
+value|GIMP_CONTEXT_PROP_MASK_FOREGROUND | \                                         GIMP_CONTEXT_PROP_MASK_BACKGROUND | \                                         GIMP_CONTEXT_PROP_MASK_OPACITY    | \                                         GIMP_CONTEXT_PROP_MASK_PAINT_MODE | \                                         GIMP_CONTEXT_PROP_MASK_BRUSH      | \                                         GIMP_CONTEXT_PROP_MASK_DYNAMICS   | \                                         GIMP_CONTEXT_PROP_MASK_PALETTE
 end_define
 
 begin_typedef

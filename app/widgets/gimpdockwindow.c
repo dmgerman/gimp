@@ -233,7 +233,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b05448a0103
+DECL|enum|__anon2b1a8a040103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1483,13 +1483,13 @@ name|p
 operator|->
 name|context
 argument_list|,
-name|GIMP_CONTEXT_ALL_PROPS_MASK
+name|GIMP_CONTEXT_PROP_MASK_ALL
 operator|&
 operator|~
 operator|(
-name|GIMP_CONTEXT_IMAGE_MASK
+name|GIMP_CONTEXT_PROP_MASK_IMAGE
 operator||
-name|GIMP_CONTEXT_DISPLAY_MASK
+name|GIMP_CONTEXT_PROP_MASK_DISPLAY
 operator|)
 argument_list|,
 name|FALSE
@@ -4449,9 +4449,9 @@ name|p
 operator|->
 name|context
 argument_list|,
-name|GIMP_CONTEXT_DISPLAY_MASK
+name|GIMP_CONTEXT_PROP_MASK_DISPLAY
 operator||
-name|GIMP_CONTEXT_IMAGE_MASK
+name|GIMP_CONTEXT_PROP_MASK_IMAGE
 argument_list|)
 expr_stmt|;
 block|}

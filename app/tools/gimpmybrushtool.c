@@ -198,13 +198,13 @@ name|GIMP_TYPE_MYBRUSH_OPTIONS
 argument_list|,
 name|gimp_mybrush_options_gui
 argument_list|,
-name|GIMP_CONTEXT_FOREGROUND_MASK
+name|GIMP_CONTEXT_PROP_MASK_FOREGROUND
 operator||
-name|GIMP_CONTEXT_BACKGROUND_MASK
+name|GIMP_CONTEXT_PROP_MASK_BACKGROUND
 operator||
-name|GIMP_CONTEXT_OPACITY_MASK
+name|GIMP_CONTEXT_PROP_MASK_OPACITY
 operator||
-name|GIMP_CONTEXT_PAINT_MODE_MASK
+name|GIMP_CONTEXT_PROP_MASK_PAINT_MODE
 argument_list|,
 literal|"gimp-mybrush-tool"
 argument_list|,

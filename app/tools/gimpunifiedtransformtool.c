@@ -159,7 +159,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf0a1960103
+DECL|enum|__anon2b2b9b0a0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -367,7 +367,7 @@ name|GIMP_TYPE_TRANSFORM_OPTIONS
 argument_list|,
 name|gimp_transform_options_gui
 argument_list|,
-name|GIMP_CONTEXT_BACKGROUND_MASK
+name|GIMP_CONTEXT_PROP_MASK_BACKGROUND
 argument_list|,
 literal|"gimp-unified-transform-tool"
 argument_list|,

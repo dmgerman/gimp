@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdbcdca0103
+DECL|enum|__anon27947cbf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1145,7 +1145,7 @@ argument_list|(
 name|context
 argument_list|)
 argument_list|,
-name|GIMP_CONTEXT_ALL_PROPS_MASK
+name|GIMP_CONTEXT_PROP_MASK_ALL
 argument_list|,
 name|FALSE
 argument_list|)

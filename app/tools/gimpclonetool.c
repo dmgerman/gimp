@@ -125,7 +125,7 @@ name|gimp_clone_options_gui
 argument_list|,
 name|GIMP_PAINT_OPTIONS_CONTEXT_MASK
 operator||
-name|GIMP_CONTEXT_PATTERN_MASK
+name|GIMP_CONTEXT_PROP_MASK_PATTERN
 argument_list|,
 literal|"gimp-clone-tool"
 argument_list|,

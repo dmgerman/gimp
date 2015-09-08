@@ -205,7 +205,7 @@ argument_list|(
 name|options
 argument_list|)
 argument_list|,
-name|GIMP_CONTEXT_PAINT_PROPS_MASK
+name|GIMP_CONTEXT_PROP_MASK_PAINT
 argument_list|,
 name|FALSE
 argument_list|)

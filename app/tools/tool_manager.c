@@ -2838,11 +2838,11 @@ decl_stmt|;
 comment|/*  FG and BG are always shared between all tools  */
 name|global_props
 operator||=
-name|GIMP_CONTEXT_FOREGROUND_MASK
+name|GIMP_CONTEXT_PROP_MASK_FOREGROUND
 expr_stmt|;
 name|global_props
 operator||=
-name|GIMP_CONTEXT_BACKGROUND_MASK
+name|GIMP_CONTEXT_PROP_MASK_BACKGROUND
 expr_stmt|;
 if|if
 condition|(
@@ -2852,7 +2852,7 @@ name|global_brush
 condition|)
 name|global_props
 operator||=
-name|GIMP_CONTEXT_BRUSH_MASK
+name|GIMP_CONTEXT_PROP_MASK_BRUSH
 expr_stmt|;
 if|if
 condition|(
@@ -2862,7 +2862,7 @@ name|global_dynamics
 condition|)
 name|global_props
 operator||=
-name|GIMP_CONTEXT_DYNAMICS_MASK
+name|GIMP_CONTEXT_PROP_MASK_DYNAMICS
 expr_stmt|;
 if|if
 condition|(
@@ -2872,7 +2872,7 @@ name|global_pattern
 condition|)
 name|global_props
 operator||=
-name|GIMP_CONTEXT_PATTERN_MASK
+name|GIMP_CONTEXT_PROP_MASK_PATTERN
 expr_stmt|;
 if|if
 condition|(
@@ -2882,7 +2882,7 @@ name|global_palette
 condition|)
 name|global_props
 operator||=
-name|GIMP_CONTEXT_PALETTE_MASK
+name|GIMP_CONTEXT_PROP_MASK_PALETTE
 expr_stmt|;
 if|if
 condition|(
@@ -2892,7 +2892,7 @@ name|global_gradient
 condition|)
 name|global_props
 operator||=
-name|GIMP_CONTEXT_GRADIENT_MASK
+name|GIMP_CONTEXT_PROP_MASK_GRADIENT
 expr_stmt|;
 if|if
 condition|(
@@ -2902,7 +2902,7 @@ name|global_font
 condition|)
 name|global_props
 operator||=
-name|GIMP_CONTEXT_FONT_MASK
+name|GIMP_CONTEXT_PROP_MASK_FONT
 expr_stmt|;
 name|gimp_context_copy_properties
 argument_list|(

@@ -117,7 +117,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fbf9a80103
+DECL|enum|__anon28d9fd900103
 block|{
 DECL|enumerator|ANGLE
 name|ANGLE
@@ -321,7 +321,7 @@ name|GIMP_TYPE_TRANSFORM_OPTIONS
 argument_list|,
 name|gimp_transform_options_gui
 argument_list|,
-name|GIMP_CONTEXT_BACKGROUND_MASK
+name|GIMP_CONTEXT_PROP_MASK_BACKGROUND
 argument_list|,
 literal|"gimp-rotate-tool"
 argument_list|,

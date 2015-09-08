@@ -836,11 +836,11 @@ name|GIMP_TYPE_TEXT_OPTIONS
 argument_list|,
 name|gimp_text_options_gui
 argument_list|,
-name|GIMP_CONTEXT_FOREGROUND_MASK
+name|GIMP_CONTEXT_PROP_MASK_FOREGROUND
 operator||
-name|GIMP_CONTEXT_FONT_MASK
+name|GIMP_CONTEXT_PROP_MASK_FONT
 operator||
-name|GIMP_CONTEXT_PALETTE_MASK
+name|GIMP_CONTEXT_PROP_MASK_PALETTE
 comment|/* for the color popup's palette tab */
 argument_list|,
 literal|"gimp-text-tool"

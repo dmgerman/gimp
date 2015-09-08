@@ -139,7 +139,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c409d50103
+DECL|enum|__anon291d6cd60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1406,17 +1406,17 @@ argument_list|(
 name|options
 argument_list|)
 argument_list|,
-name|GIMP_CONTEXT_BRUSH_MASK
+name|GIMP_CONTEXT_PROP_MASK_BRUSH
 operator||
-name|GIMP_CONTEXT_DYNAMICS_MASK
+name|GIMP_CONTEXT_PROP_MASK_DYNAMICS
 operator||
-name|GIMP_CONTEXT_PATTERN_MASK
+name|GIMP_CONTEXT_PROP_MASK_PATTERN
 operator||
-name|GIMP_CONTEXT_GRADIENT_MASK
+name|GIMP_CONTEXT_PROP_MASK_GRADIENT
 operator||
-name|GIMP_CONTEXT_PALETTE_MASK
+name|GIMP_CONTEXT_PROP_MASK_PALETTE
 operator||
-name|GIMP_CONTEXT_FONT_MASK
+name|GIMP_CONTEXT_PROP_MASK_FONT
 argument_list|)
 expr_stmt|;
 if|if
@@ -1545,7 +1545,7 @@ argument_list|)
 argument_list|,
 name|serialize_props
 operator||
-name|GIMP_CONTEXT_TOOL_MASK
+name|GIMP_CONTEXT_PROP_MASK_TOOL
 argument_list|)
 expr_stmt|;
 name|g_value_take_object
@@ -1672,7 +1672,7 @@ argument_list|)
 argument_list|,
 name|serialize_props
 operator||
-name|GIMP_CONTEXT_TOOL_MASK
+name|GIMP_CONTEXT_PROP_MASK_TOOL
 argument_list|)
 expr_stmt|;
 if|if
@@ -1681,7 +1681,7 @@ operator|!
 operator|(
 name|serialize_props
 operator|&
-name|GIMP_CONTEXT_FOREGROUND_MASK
+name|GIMP_CONTEXT_PROP_MASK_FOREGROUND
 operator|)
 condition|)
 name|g_object_set
@@ -1701,7 +1701,7 @@ operator|!
 operator|(
 name|serialize_props
 operator|&
-name|GIMP_CONTEXT_BRUSH_MASK
+name|GIMP_CONTEXT_PROP_MASK_BRUSH
 operator|)
 condition|)
 name|g_object_set
@@ -1721,7 +1721,7 @@ operator|!
 operator|(
 name|serialize_props
 operator|&
-name|GIMP_CONTEXT_DYNAMICS_MASK
+name|GIMP_CONTEXT_PROP_MASK_DYNAMICS
 operator|)
 condition|)
 name|g_object_set
@@ -1741,7 +1741,7 @@ operator|!
 operator|(
 name|serialize_props
 operator|&
-name|GIMP_CONTEXT_GRADIENT_MASK
+name|GIMP_CONTEXT_PROP_MASK_GRADIENT
 operator|)
 condition|)
 name|g_object_set
@@ -1761,7 +1761,7 @@ operator|!
 operator|(
 name|serialize_props
 operator|&
-name|GIMP_CONTEXT_PATTERN_MASK
+name|GIMP_CONTEXT_PROP_MASK_PATTERN
 operator|)
 condition|)
 name|g_object_set
@@ -1781,7 +1781,7 @@ operator|!
 operator|(
 name|serialize_props
 operator|&
-name|GIMP_CONTEXT_PALETTE_MASK
+name|GIMP_CONTEXT_PROP_MASK_PALETTE
 operator|)
 condition|)
 name|g_object_set
@@ -1801,7 +1801,7 @@ operator|!
 operator|(
 name|serialize_props
 operator|&
-name|GIMP_CONTEXT_FONT_MASK
+name|GIMP_CONTEXT_PROP_MASK_FONT
 operator|)
 condition|)
 name|g_object_set
@@ -2158,7 +2158,7 @@ block|{
 name|use_props
 operator||=
 operator|(
-name|GIMP_CONTEXT_FOREGROUND_MASK
+name|GIMP_CONTEXT_PROP_MASK_FOREGROUND
 operator|&
 name|serialize_props
 operator|)
@@ -2166,7 +2166,7 @@ expr_stmt|;
 name|use_props
 operator||=
 operator|(
-name|GIMP_CONTEXT_BACKGROUND_MASK
+name|GIMP_CONTEXT_PROP_MASK_BACKGROUND
 operator|&
 name|serialize_props
 operator|)
@@ -2181,7 +2181,7 @@ condition|)
 name|use_props
 operator||=
 operator|(
-name|GIMP_CONTEXT_BRUSH_MASK
+name|GIMP_CONTEXT_PROP_MASK_BRUSH
 operator|&
 name|serialize_props
 operator|)
@@ -2195,7 +2195,7 @@ condition|)
 name|use_props
 operator||=
 operator|(
-name|GIMP_CONTEXT_DYNAMICS_MASK
+name|GIMP_CONTEXT_PROP_MASK_DYNAMICS
 operator|&
 name|serialize_props
 operator|)
@@ -2209,7 +2209,7 @@ condition|)
 name|use_props
 operator||=
 operator|(
-name|GIMP_CONTEXT_PATTERN_MASK
+name|GIMP_CONTEXT_PROP_MASK_PATTERN
 operator|&
 name|serialize_props
 operator|)
@@ -2223,7 +2223,7 @@ condition|)
 name|use_props
 operator||=
 operator|(
-name|GIMP_CONTEXT_PALETTE_MASK
+name|GIMP_CONTEXT_PROP_MASK_PALETTE
 operator|&
 name|serialize_props
 operator|)
@@ -2237,7 +2237,7 @@ condition|)
 name|use_props
 operator||=
 operator|(
-name|GIMP_CONTEXT_GRADIENT_MASK
+name|GIMP_CONTEXT_PROP_MASK_GRADIENT
 operator|&
 name|serialize_props
 operator|)
@@ -2251,7 +2251,7 @@ condition|)
 name|use_props
 operator||=
 operator|(
-name|GIMP_CONTEXT_FONT_MASK
+name|GIMP_CONTEXT_PROP_MASK_FONT
 operator|&
 name|serialize_props
 operator|)
