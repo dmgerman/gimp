@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a0adcf0103
+DECL|enum|__anon28ff82e50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a0adcf0203
+DECL|enum|__anon28ff82e50203
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -992,7 +992,7 @@ name|gimp_help_set_help_data
 argument_list|(
 name|dialog
 operator|->
-name|close_button
+name|detach_button
 argument_list|,
 name|_
 argument_list|(
