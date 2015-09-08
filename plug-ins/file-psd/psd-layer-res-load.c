@@ -4952,10 +4952,13 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|'Invalid version layer'
+literal|"Invalid version layer"
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+literal|0
+return|;
 block|}
 end_function
 
@@ -5038,6 +5041,9 @@ literal|1
 return|;
 block|}
 comment|/* nowadays psd files, layer name are encoded in unicode, cf "luni"    * moreover lnsr info is encoded in MacRoman, see    * https://bugzilla.gnome.org/show_bug.cgi?id=753986#c4    */
+return|return
+literal|0
+return|;
 block|}
 end_function
 
