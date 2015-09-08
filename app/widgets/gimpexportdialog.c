@@ -661,9 +661,5 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  private functions  */
-end_comment
-
 end_unit
 

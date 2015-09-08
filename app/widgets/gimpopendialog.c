@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimppdb.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"plug-in/gimppluginmanager.h"
 end_include
 
@@ -301,10 +295,6 @@ name|open_as_layers
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*  private functions  */
-end_comment
 
 end_unit
 
