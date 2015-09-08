@@ -2743,7 +2743,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_dnd_data_source_remove (GimpDndType data_type,GtkWidget * widget)
 name|gimp_dnd_data_source_remove
 parameter_list|(
@@ -2762,6 +2762,11 @@ name|dnd_data
 decl_stmt|;
 name|gboolean
 name|drag_connected
+decl_stmt|;
+name|gboolean
+name|list_changed
+init|=
+name|FALSE
 decl_stmt|;
 name|drag_connected
 operator|=
@@ -2971,6 +2976,33 @@ argument_list|,
 name|n_targets
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|g_list_length
+argument_list|(
+name|target_list
+operator|->
+name|list
+argument_list|)
+operator|!=
+name|g_list_length
+argument_list|(
+name|new_list
+operator|->
+name|list
+argument_list|)
+condition|)
+block|{
+name|list_changed
+operator|=
+name|TRUE
+expr_stmt|;
+if|if
+condition|(
+name|new_list
+operator|->
+name|list
+condition|)
 name|gtk_drag_source_set_target_list
 argument_list|(
 name|widget
@@ -2978,6 +3010,15 @@ argument_list|,
 name|new_list
 argument_list|)
 expr_stmt|;
+else|else
+name|gtk_drag_source_set_target_list
+argument_list|(
+name|widget
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
 name|gtk_target_list_unref
 argument_list|(
 name|new_list
@@ -2985,6 +3026,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+return|return
+name|list_changed
+return|;
 block|}
 end_function
 
@@ -6741,15 +6785,13 @@ condition|)
 return|return
 name|FALSE
 return|;
+return|return
 name|gimp_dnd_data_source_remove
 argument_list|(
 name|dnd_type
 argument_list|,
 name|widget
 argument_list|)
-expr_stmt|;
-return|return
-name|TRUE
 return|;
 block|}
 end_function
