@@ -191,7 +191,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2adfa0220103
+DECL|enum|__anon2bdf93670103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -210,7 +210,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2adfa0220208
+DECL|struct|__anon2bdf93670208
 block|{
 DECL|member|name
 specifier|const
@@ -1777,7 +1777,7 @@ DECL|macro|MENURC_OVER20_UPDATE_PATTERN
 define|#
 directive|define
 name|MENURC_OVER20_UPDATE_PATTERN
-value|"\"<Actions>/file/file-export-to\"         |" \                                      "\"<Actions>/file/file-export\"            |" \                                      "\"<Actions>/tools/tools-value-[1-4]-.*\""
+value|"\"<Actions>/file/file-export-to\""         "|" \                                      "\"<Actions>/file/file-export\""            "|" \                                      "\"<Actions>/tools/tools-value-[1-4]-.*\""
 end_define
 
 begin_comment
