@@ -160,7 +160,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af4e4af0103
+DECL|enum|__anon2b749f470103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2681,12 +2681,14 @@ modifier|*
 name|dialog
 parameter_list|)
 block|{
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_FILE_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|GIMP_FILE_DIALOG_GET_CLASS
