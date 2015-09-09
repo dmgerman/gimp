@@ -15,6 +15,16 @@ directive|include
 file|<gegl.h>
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GDK_MULTIHEAD_SAFE
+end_undef
+
+begin_comment
+comment|/* for gdk_keymap_get_default() */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -769,6 +779,13 @@ operator|!
 name|events_initialized
 condition|)
 block|{
+name|GdkKeymap
+modifier|*
+name|keymap
+init|=
+name|gdk_keymap_get_default
+argument_list|()
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -813,6 +830,16 @@ operator|->
 name|modifier_string
 argument_list|,
 name|NULL
+argument_list|,
+operator|&
+name|wevent
+operator|->
+name|modifiers
+argument_list|)
+expr_stmt|;
+name|gdk_keymap_map_virtual_modifiers
+argument_list|(
+name|keymap
 argument_list|,
 operator|&
 name|wevent
