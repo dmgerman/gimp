@@ -162,7 +162,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2912427b0103
+DECL|enum|__anon2a0920eb0103
 block|{
 DECL|enumerator|CHECK_URI_FAIL
 name|CHECK_URI_FAIL
@@ -189,7 +189,7 @@ name|file_save_dialog_confirm_overwrite
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|save_dialog
+name|dialog
 parameter_list|,
 name|Gimp
 modifier|*
@@ -205,7 +205,7 @@ name|file_save_dialog_response
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|save_dialog
+name|dialog
 parameter_list|,
 name|gint
 name|response_id
@@ -435,12 +435,12 @@ end_comment
 begin_function
 specifier|static
 name|GtkFileChooserConfirmation
-DECL|function|file_save_dialog_confirm_overwrite (GtkWidget * save_dialog,Gimp * gimp)
+DECL|function|file_save_dialog_confirm_overwrite (GtkWidget * dialog,Gimp * gimp)
 name|file_save_dialog_confirm_overwrite
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|save_dialog
+name|dialog
 parameter_list|,
 name|Gimp
 modifier|*
@@ -449,18 +449,18 @@ parameter_list|)
 block|{
 name|GimpFileDialog
 modifier|*
-name|dialog
+name|file_dialog
 init|=
 name|GIMP_FILE_DIALOG
 argument_list|(
-name|save_dialog
+name|dialog
 argument_list|)
 decl_stmt|;
 if|if
 condition|(
 name|file_save_dialog_no_overwrite_confirmation
 argument_list|(
-name|dialog
+name|file_dialog
 argument_list|,
 name|gimp
 argument_list|)
@@ -479,12 +479,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_save_dialog_response (GtkWidget * save_dialog,gint response_id,Gimp * gimp)
+DECL|function|file_save_dialog_response (GtkWidget * dialog,gint response_id,Gimp * gimp)
 name|file_save_dialog_response
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|save_dialog
+name|dialog
 parameter_list|,
 name|gint
 name|response_id
@@ -496,11 +496,11 @@ parameter_list|)
 block|{
 name|GimpFileDialog
 modifier|*
-name|dialog
+name|file_dialog
 init|=
 name|GIMP_FILE_DIALOG
 argument_list|(
-name|save_dialog
+name|dialog
 argument_list|)
 decl_stmt|;
 name|GFile
@@ -525,7 +525,7 @@ condition|)
 block|{
 name|gimp_file_dialog_save_state
 argument_list|(
-name|dialog
+name|file_dialog
 argument_list|,
 literal|"gimp-file-save-dialog-state"
 argument_list|)
@@ -536,7 +536,7 @@ comment|/* GIMP_IS_EXPORT_DIALOG (dialog) */
 block|{
 name|gimp_file_dialog_save_state
 argument_list|(
-name|dialog
+name|file_dialog
 argument_list|,
 literal|"gimp-file-export-dialog-state"
 argument_list|)
@@ -552,25 +552,25 @@ block|{
 if|if
 condition|(
 operator|!
-name|dialog
+name|file_dialog
 operator|->
 name|busy
 condition|)
 name|gtk_widget_destroy
 argument_list|(
-name|save_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 return|return;
 block|}
 name|g_object_ref
 argument_list|(
-name|dialog
+name|file_dialog
 argument_list|)
 expr_stmt|;
 name|g_object_ref
 argument_list|(
-name|dialog
+name|file_dialog
 operator|->
 name|image
 argument_list|)
@@ -579,7 +579,7 @@ switch|switch
 condition|(
 name|file_save_dialog_check_file
 argument_list|(
-name|save_dialog
+name|dialog
 argument_list|,
 name|gimp
 argument_list|,
@@ -603,7 +603,7 @@ name|CHECK_URI_OK
 case|:
 name|gimp_file_dialog_set_sensitive
 argument_list|(
-name|dialog
+name|file_dialog
 argument_list|,
 name|FALSE
 argument_list|)
@@ -614,12 +614,12 @@ name|file_save_dialog_save_image
 argument_list|(
 name|GIMP_PROGRESS
 argument_list|(
-name|save_dialog
+name|dialog
 argument_list|)
 argument_list|,
 name|gimp
 argument_list|,
-name|dialog
+name|file_dialog
 operator|->
 name|image
 argument_list|,
@@ -674,24 +674,18 @@ name|dialog
 argument_list|)
 condition|)
 block|{
-name|GimpSaveDialog
-modifier|*
-name|save_dialog
-init|=
+if|if
+condition|(
 name|GIMP_SAVE_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|save_dialog
 operator|->
 name|save_a_copy
 condition|)
 name|gimp_image_set_save_a_copy_file
 argument_list|(
-name|dialog
+name|file_dialog
 operator|->
 name|image
 argument_list|,
@@ -702,7 +696,7 @@ name|g_object_set_data_full
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|dialog
+name|file_dialog
 operator|->
 name|image
 operator|->
@@ -729,7 +723,7 @@ name|g_object_set_data_full
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|dialog
+name|file_dialog
 operator|->
 name|image
 operator|->
@@ -753,7 +747,7 @@ block|}
 comment|/*  make sure the menus are updated with the keys we've just set  */
 name|gimp_image_flush
 argument_list|(
-name|dialog
+name|file_dialog
 operator|->
 name|image
 argument_list|)
@@ -816,7 +810,7 @@ block|}
 block|}
 name|gtk_widget_destroy
 argument_list|(
-name|save_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 block|}
@@ -832,7 +826,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_file_dialog_set_sensitive
 argument_list|(
-name|dialog
+name|file_dialog
 argument_list|,
 name|TRUE
 argument_list|)
@@ -841,7 +835,7 @@ break|break;
 case|case
 name|CHECK_URI_SWITCH_DIALOGS
 case|:
-name|dialog
+name|file_dialog
 operator|->
 name|busy
 operator|=
@@ -858,7 +852,7 @@ argument_list|,
 name|FILE_SAVE_RESPONSE_OTHER_DIALOG
 argument_list|)
 expr_stmt|;
-name|dialog
+name|file_dialog
 operator|->
 name|busy
 operator|=
@@ -866,21 +860,21 @@ name|FALSE
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
-name|save_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 break|break;
 block|}
 name|g_object_unref
 argument_list|(
-name|dialog
+name|file_dialog
 operator|->
 name|image
 argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|dialog
+name|file_dialog
 argument_list|)
 expr_stmt|;
 block|}
@@ -893,12 +887,12 @@ end_comment
 begin_function
 specifier|static
 name|CheckUriResult
-DECL|function|file_save_dialog_check_file (GtkWidget * save_dialog,Gimp * gimp,GFile ** ret_file,gchar ** ret_basename,GimpPlugInProcedure ** ret_save_proc)
+DECL|function|file_save_dialog_check_file (GtkWidget * dialog,Gimp * gimp,GFile ** ret_file,gchar ** ret_basename,GimpPlugInProcedure ** ret_save_proc)
 name|file_save_dialog_check_file
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|save_dialog
+name|dialog
 parameter_list|,
 name|Gimp
 modifier|*
@@ -922,11 +916,11 @@ parameter_list|)
 block|{
 name|GimpFileDialog
 modifier|*
-name|dialog
+name|file_dialog
 init|=
 name|GIMP_FILE_DIALOG
 argument_list|(
-name|save_dialog
+name|dialog
 argument_list|)
 decl_stmt|;
 name|GFile
@@ -994,7 +988,7 @@ argument_list|)
 expr_stmt|;
 name|save_proc
 operator|=
-name|dialog
+name|file_dialog
 operator|->
 name|file_proc
 expr_stmt|;
@@ -1004,7 +998,7 @@ name|file_procedure_find
 argument_list|(
 name|file_save_dialog_get_procs
 argument_list|(
-name|dialog
+name|file_dialog
 argument_list|,
 name|gimp
 argument_list|)
@@ -1020,7 +1014,7 @@ name|file_procedure_find
 argument_list|(
 name|file_save_dialog_get_procs
 argument_list|(
-name|dialog
+name|file_dialog
 argument_list|,
 name|gimp
 argument_list|)
@@ -1256,7 +1250,7 @@ name|gtk_file_chooser_set_current_name
 argument_list|(
 name|GTK_FILE_CHOOSER
 argument_list|(
-name|save_dialog
+name|dialog
 argument_list|)
 argument_list|,
 name|utf8
@@ -1281,7 +1275,7 @@ name|gtk_dialog_response
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|save_dialog
+name|dialog
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
@@ -1332,7 +1326,7 @@ if|if
 condition|(
 name|file_save_dialog_switch_dialogs
 argument_list|(
-name|dialog
+name|file_dialog
 argument_list|,
 name|gimp
 argument_list|,
@@ -1415,7 +1409,7 @@ if|if
 condition|(
 name|file_save_dialog_switch_dialogs
 argument_list|(
-name|dialog
+name|file_dialog
 argument_list|,
 name|gimp
 argument_list|,
@@ -1516,7 +1510,7 @@ name|gimp
 argument_list|,
 name|G_OBJECT
 argument_list|(
-name|save_dialog
+name|dialog
 argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_WARNING
@@ -1550,7 +1544,7 @@ condition|(
 operator|!
 name|file_save_dialog_use_extension
 argument_list|(
-name|save_dialog
+name|dialog
 argument_list|,
 name|file
 argument_list|)
@@ -1669,12 +1663,12 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|file_save_dialog_no_overwrite_confirmation (GimpFileDialog * dialog,Gimp * gimp)
+DECL|function|file_save_dialog_no_overwrite_confirmation (GimpFileDialog * file_dialog,Gimp * gimp)
 name|file_save_dialog_no_overwrite_confirmation
 parameter_list|(
 name|GimpFileDialog
 modifier|*
-name|dialog
+name|file_dialog
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1713,7 +1707,7 @@ name|gtk_file_chooser_get_file
 argument_list|(
 name|GTK_FILE_CHOOSER
 argument_list|(
-name|dialog
+name|file_dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1744,7 +1738,7 @@ argument_list|)
 expr_stmt|;
 name|save_proc
 operator|=
-name|dialog
+name|file_dialog
 operator|->
 name|file_proc
 expr_stmt|;
@@ -1754,7 +1748,7 @@ name|file_procedure_find
 argument_list|(
 name|file_save_dialog_get_procs
 argument_list|(
-name|dialog
+name|file_dialog
 argument_list|,
 name|gimp
 argument_list|)
@@ -1825,12 +1819,12 @@ begin_function
 specifier|static
 name|GSList
 modifier|*
-DECL|function|file_save_dialog_get_procs (GimpFileDialog * dialog,Gimp * gimp)
+DECL|function|file_save_dialog_get_procs (GimpFileDialog * file_dialog,Gimp * gimp)
 name|file_save_dialog_get_procs
 parameter_list|(
 name|GimpFileDialog
 modifier|*
-name|dialog
+name|file_dialog
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1841,7 +1835,7 @@ return|return
 operator|(
 name|GIMP_IS_SAVE_DIALOG
 argument_list|(
-name|dialog
+name|file_dialog
 argument_list|)
 condition|?
 name|gimp
