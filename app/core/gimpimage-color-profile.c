@@ -1286,9 +1286,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_COLOR_PROFILE
+argument_list|(
 name|dest_profile
-operator|!=
-name|NULL
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
