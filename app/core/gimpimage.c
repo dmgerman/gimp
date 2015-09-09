@@ -360,7 +360,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba05f4e0103
+DECL|enum|__anon2b858eae0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -457,7 +457,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba05f4e0203
+DECL|enum|__anon2b858eae0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5966,7 +5966,7 @@ argument_list|(
 name|image
 argument_list|)
 operator|!=
-name|GIMP_INDEXED
+name|GIMP_GRAY
 condition|)
 name|profile
 operator|=
