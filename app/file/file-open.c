@@ -826,13 +826,6 @@ condition|(
 name|image
 condition|)
 block|{
-name|file_open_sanitize_image
-argument_list|(
-name|image
-argument_list|,
-name|as_new
-argument_list|)
-expr_stmt|;
 comment|/* Only set the load procedure if it hasn't already been set. */
 if|if
 condition|(
@@ -952,6 +945,11 @@ condition|(
 name|image
 condition|)
 block|{
+name|gimp_image_undo_disable
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 name|gimp_image_import_color_profile
 argument_list|(
 name|image
@@ -994,6 +992,14 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* Enables undo again */
+name|file_open_sanitize_image
+argument_list|(
+name|image
+argument_list|,
+name|as_new
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|image
@@ -2766,16 +2772,12 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-comment|/* XXX this is not needed any longer, remove it when sure */
-comment|/* make sure the entire projection is properly constructed, because    * load plug-ins are not required to call gimp_drawable_update() or    * anything.    */
-block|gimp_image_invalidate (image,                          0, 0,                          gimp_image_get_width  (image),                          gimp_image_get_height (image));   gimp_image_flush (image);
-comment|/* same for drawable previews */
-block|gimp_image_invalidate_previews (image);
-endif|#
-directive|endif
+comment|/* Make sure all image states are up-to-date */
+name|gimp_image_flush
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
