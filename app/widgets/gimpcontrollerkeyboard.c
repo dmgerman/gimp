@@ -239,7 +239,7 @@ literal|"<Primary>"
 block|,
 literal|0
 block|,
-literal|"cursor-up-control"
+literal|"cursor-up-primary"
 block|,
 name|N_
 argument_list|(
@@ -269,7 +269,7 @@ literal|"<Shift><Primary>"
 block|,
 literal|0
 block|,
-literal|"cursor-up-shift-control"
+literal|"cursor-up-shift-primary"
 block|,
 name|N_
 argument_list|(
@@ -299,7 +299,7 @@ literal|"<Primary><Alt>"
 block|,
 literal|0
 block|,
-literal|"cursor-up-control-alt"
+literal|"cursor-up-primary-alt"
 block|,
 name|N_
 argument_list|(
@@ -314,7 +314,7 @@ literal|"<Shift><Primary><Alt>"
 block|,
 literal|0
 block|,
-literal|"cursor-up-shift-control-alt"
+literal|"cursor-up-shift-primary-alt"
 block|,
 name|N_
 argument_list|(
@@ -359,7 +359,7 @@ literal|"<Primary>"
 block|,
 literal|0
 block|,
-literal|"cursor-down-control"
+literal|"cursor-down-primary"
 block|,
 name|N_
 argument_list|(
@@ -389,7 +389,7 @@ literal|"<Shift><Primary>"
 block|,
 literal|0
 block|,
-literal|"cursor-down-shift-control"
+literal|"cursor-down-shift-primary"
 block|,
 name|N_
 argument_list|(
@@ -419,7 +419,7 @@ literal|"<Primary><Alt>"
 block|,
 literal|0
 block|,
-literal|"cursor-down-control-alt"
+literal|"cursor-down-primary-alt"
 block|,
 name|N_
 argument_list|(
@@ -434,7 +434,7 @@ literal|"<Shift><Primary><Alt>"
 block|,
 literal|0
 block|,
-literal|"cursor-down-shift-control-alt"
+literal|"cursor-down-shift-primary-alt"
 block|,
 name|N_
 argument_list|(
@@ -479,7 +479,7 @@ literal|"<Primary>"
 block|,
 literal|0
 block|,
-literal|"cursor-left-control"
+literal|"cursor-left-primary"
 block|,
 name|N_
 argument_list|(
@@ -509,7 +509,7 @@ literal|"<Shift><Primary>"
 block|,
 literal|0
 block|,
-literal|"cursor-left-shift-control"
+literal|"cursor-left-shift-primary"
 block|,
 name|N_
 argument_list|(
@@ -539,7 +539,7 @@ literal|"<Primary><Alt>"
 block|,
 literal|0
 block|,
-literal|"cursor-left-control-alt"
+literal|"cursor-left-primary-alt"
 block|,
 name|N_
 argument_list|(
@@ -554,7 +554,7 @@ literal|"<Shift><Primary><Alt>"
 block|,
 literal|0
 block|,
-literal|"cursor-left-shift-control-alt"
+literal|"cursor-left-shift-primary-alt"
 block|,
 name|N_
 argument_list|(
@@ -599,7 +599,7 @@ literal|"<Primary>"
 block|,
 literal|0
 block|,
-literal|"cursor-right-control"
+literal|"cursor-right-primary"
 block|,
 name|N_
 argument_list|(
@@ -629,7 +629,7 @@ literal|"<Shift><Primary>"
 block|,
 literal|0
 block|,
-literal|"cursor-right-shift-control"
+literal|"cursor-right-shift-primary"
 block|,
 name|N_
 argument_list|(
@@ -659,7 +659,7 @@ literal|"<Primary><Alt>"
 block|,
 literal|0
 block|,
-literal|"cursor-right-control-alt"
+literal|"cursor-right-primary-alt"
 block|,
 name|N_
 argument_list|(
@@ -674,7 +674,7 @@ literal|"<Shift><Primary><Alt>"
 block|,
 literal|0
 block|,
-literal|"cursor-right-shift-control-alt"
+literal|"cursor-right-shift-primary-alt"
 block|,
 name|N_
 argument_list|(
