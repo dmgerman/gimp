@@ -335,17 +335,19 @@ expr_stmt|;
 block|}
 name|g_printerr
 argument_list|(
-literal|"src_format: %s\n"
+literal|"src_profile: %s\n"
+literal|"src_format:  %s\n"
+literal|"dest_format: %s\n"
+argument_list|,
+name|gimp_color_profile_get_label
+argument_list|(
+name|src_profile
+argument_list|)
 argument_list|,
 name|babl_get_name
 argument_list|(
-name|src_format
+name|dest_format
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"dest_format: %s\n"
 argument_list|,
 name|babl_get_name
 argument_list|(
