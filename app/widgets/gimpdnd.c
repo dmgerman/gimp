@@ -2788,7 +2788,9 @@ condition|(
 operator|!
 name|drag_connected
 condition|)
-return|return;
+return|return
+name|FALSE
+return|;
 name|dnd_data
 operator|=
 name|dnd_data_defs
