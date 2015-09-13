@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0c91dd0108
+DECL|struct|__anon294651cf0108
 block|{
 DECL|member|compression
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0c91dd0208
+DECL|struct|__anon294651cf0208
 block|{
 DECL|member|ID
 name|gint32
@@ -135,7 +135,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0c91dd0308
+DECL|struct|__anon294651cf0308
 block|{
 DECL|member|o_pages
 name|gint
@@ -4482,20 +4482,6 @@ name|layer_offset_y_pixel
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|ilayer
-operator|>
-literal|0
-operator|&&
-operator|!
-name|alpha
-condition|)
-name|gimp_layer_add_alpha
-argument_list|(
-name|layer
-argument_list|)
-expr_stmt|;
 name|gimp_image_insert_layer
 argument_list|(
 name|image
