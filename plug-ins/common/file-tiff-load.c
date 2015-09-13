@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29263deb0108
+DECL|struct|__anon28c8f6f50108
 block|{
 DECL|member|compression
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29263deb0208
+DECL|struct|__anon28c8f6f50208
 block|{
 DECL|member|ID
 name|gint32
@@ -135,7 +135,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29263deb0308
+DECL|struct|__anon28c8f6f50308
 block|{
 DECL|member|o_pages
 name|gint
@@ -1712,6 +1712,15 @@ name|selector
 operator|=
 name|gimp_page_selector_new
 argument_list|()
+expr_stmt|;
+name|gtk_widget_set_size_request
+argument_list|(
+name|selector
+argument_list|,
+literal|300
+argument_list|,
+literal|200
+argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
@@ -4096,7 +4105,7 @@ operator|!
 name|worst_case
 condition|)
 block|{
-comment|/* Add alpha channels as appropriate */
+comment|/* Add extra channels as appropriate */
 for|for
 control|(
 name|i
@@ -4182,10 +4191,15 @@ name|babl_format_new
 argument_list|(
 name|babl_model
 argument_list|(
-literal|"A"
+literal|"Y'"
 argument_list|)
 argument_list|,
 name|type
+argument_list|,
+name|babl_component
+argument_list|(
+literal|"Y'"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
