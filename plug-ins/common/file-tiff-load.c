@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294651cf0108
+DECL|struct|__anon2af838320108
 block|{
 DECL|member|compression
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294651cf0208
+DECL|struct|__anon2af838320208
 block|{
 DECL|member|ID
 name|gint32
@@ -135,7 +135,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294651cf0308
+DECL|struct|__anon2af838320308
 block|{
 DECL|member|o_pages
 name|gint
@@ -4737,7 +4737,7 @@ name|row_end
 init|=
 name|row_start
 operator|+
-name|image_wigth
+name|image_width
 decl_stmt|;
 name|guint32
 name|i
@@ -4789,7 +4789,7 @@ name|row
 operator|-
 literal|1
 argument_list|,
-name|image_height
+name|image_width
 argument_list|,
 literal|1
 argument_list|)
