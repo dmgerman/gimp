@@ -262,9 +262,8 @@ name|GimpPreviewArea
 modifier|*
 name|area
 parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
+name|gint32
+name|drawable_ID
 parameter_list|,
 name|gint
 name|width
@@ -280,9 +279,8 @@ name|G_GNUC_INTERNAL
 name|gboolean
 name|_gimp_drawable_preview_get_bounds
 parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
+name|gint32
+name|drawable_ID
 parameter_list|,
 name|gint
 modifier|*

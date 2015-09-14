@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c482d870103
+DECL|enum|__anon28dcea890103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c482d870208
+DECL|struct|__anon28dcea890208
 block|{
 DECL|member|update
 name|gboolean
@@ -1585,6 +1585,8 @@ condition|(
 name|_gimp_drawable_preview_get_bounds
 argument_list|(
 name|drawable
+operator|->
+name|drawable_id
 argument_list|,
 operator|&
 name|x1
@@ -2276,6 +2278,8 @@ argument_list|(
 name|area
 argument_list|,
 name|drawable
+operator|->
+name|drawable_id
 argument_list|,
 name|width
 argument_list|,
