@@ -59,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a18cbc0103
+DECL|enum|__anon29004bc40103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -77,7 +77,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a18cbc0208
+DECL|struct|__anon29004bc40208
 block|{
 DECL|member|azimuth
 name|gdouble
@@ -2177,11 +2177,11 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_drawable_preview_new
+name|gimp_drawable_preview_new_from_drawable_id
 argument_list|(
 name|drawable
-argument_list|,
-name|NULL
+operator|->
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

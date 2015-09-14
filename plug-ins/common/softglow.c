@@ -107,7 +107,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab37d690108
+DECL|struct|__anon29db52540108
 block|{
 DECL|member|glow_radius
 name|gdouble
@@ -3514,11 +3514,11 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_drawable_preview_new
+name|gimp_drawable_preview_new_from_drawable_id
 argument_list|(
 name|drawable
-argument_list|,
-name|NULL
+operator|->
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

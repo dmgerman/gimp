@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2e5c8c0108
+DECL|struct|__anon2c154ad70108
 block|{
 DECL|member|inner
 name|gdouble
@@ -1179,11 +1179,11 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_drawable_preview_new
+name|gimp_drawable_preview_new_from_drawable_id
 argument_list|(
 name|drawable
-argument_list|,
-name|NULL
+operator|->
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
