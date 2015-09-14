@@ -144,7 +144,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c84388f0103
+DECL|enum|__anon2ad195950103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -162,7 +162,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c84388f0208
+DECL|struct|__anon2ad195950208
 block|{
 DECL|member|max_p
 name|gint
@@ -524,7 +524,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c84388f0308
+DECL|struct|__anon2ad195950308
 block|{
 DECL|member|init_value
 name|gint
@@ -1094,9 +1094,11 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_zoom_preview_new
+name|gimp_zoom_preview_new_from_drawable_id
 argument_list|(
 name|drawable
+operator|->
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

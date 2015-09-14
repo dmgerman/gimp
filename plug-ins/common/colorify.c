@@ -153,7 +153,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29da9bb70108
+DECL|struct|__anon2c16f03d0108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -1166,9 +1166,11 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_zoom_preview_new
+name|gimp_zoom_preview_new_from_drawable_id
 argument_list|(
 name|drawable
+operator|->
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

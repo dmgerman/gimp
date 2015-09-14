@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcde4e60108
+DECL|struct|__anon27a2e2fd0108
 block|{
 DECL|member|scale
 name|gint
@@ -127,7 +127,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bcde4e60203
+DECL|enum|__anon27a2e2fd0203
 block|{
 DECL|enumerator|filter_uniform
 name|filter_uniform
@@ -185,7 +185,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcde4e60308
+DECL|struct|__anon27a2e2fd0308
 block|{
 DECL|member|N
 name|gint
@@ -1130,9 +1130,11 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_zoom_preview_new
+name|gimp_zoom_preview_new_from_drawable_id
 argument_list|(
 name|drawable
+operator|->
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
