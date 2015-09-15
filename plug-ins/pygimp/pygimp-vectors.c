@@ -43,7 +43,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon29489f620108
+DECL|struct|__anon297d35060108
 typedef|typedef
 struct|struct
 block|{
@@ -3447,6 +3447,13 @@ modifier|*
 modifier|*
 name|parasites
 decl_stmt|;
+name|PyObject
+modifier|*
+name|ret
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
 name|parasites
 operator|=
 name|gimp_item_get_parasite_list
@@ -3459,18 +3466,6 @@ operator|&
 name|num_parasites
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|parasites
-condition|)
-block|{
-name|PyObject
-modifier|*
-name|ret
-decl_stmt|;
-name|gint
-name|i
-decl_stmt|;
 name|ret
 operator|=
 name|PyTuple_New
@@ -3491,7 +3486,6 @@ condition|;
 name|i
 operator|++
 control|)
-block|{
 name|PyTuple_SetItem
 argument_list|(
 name|ret
@@ -3507,7 +3501,6 @@ index|]
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 name|g_strfreev
 argument_list|(
 name|parasites
@@ -3515,21 +3508,6 @@ argument_list|)
 expr_stmt|;
 return|return
 name|ret
-return|;
-block|}
-name|PyErr_Format
-argument_list|(
-name|pygimp_error
-argument_list|,
-literal|"could not list parasites on vectors (ID %d)"
-argument_list|,
-name|self
-operator|->
-name|ID
-argument_list|)
-expr_stmt|;
-return|return
-name|NULL
 return|;
 block|}
 end_function
