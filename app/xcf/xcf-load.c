@@ -1569,7 +1569,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* check for a gimp-compatibility-mode parasite */
+comment|/* check for a gimp-xcf-compatibility-mode parasite */
 name|parasite
 operator|=
 name|gimp_image_parasite_find
