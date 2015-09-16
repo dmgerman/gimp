@@ -843,11 +843,11 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_aspect_preview_new
+name|gimp_aspect_preview_new_from_drawable_id
 argument_list|(
 name|drawable
-argument_list|,
-name|NULL
+operator|->
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
