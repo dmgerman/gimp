@@ -3457,6 +3457,9 @@ name|palette_len
 init|=
 literal|0
 decl_stmt|;
+name|guint8
+name|alpha_threshold
+decl_stmt|;
 name|D
 argument_list|(
 operator|(
@@ -3681,6 +3684,19 @@ operator|&
 name|and_len
 argument_list|)
 expr_stmt|;
+comment|/* 32-bit bitmaps have an alpha channel as well as a mask. Any partially or    * fully opaque pixel should have an opaque mask (some ICO code in Windows    * draws pixels as black if they have a transparent mask but a non-transparent    * alpha value).    *    * For bitmaps without an alpha channel, we use the normal threshold to build    * the mask, so that the mask is as close as possible to the original alpha    * channel.    */
+name|alpha_threshold
+operator|=
+name|header
+operator|.
+name|bpp
+operator|<
+literal|32
+condition|?
+name|ICO_ALPHA_THRESHOLD
+else|:
+literal|0
+expr_stmt|;
 for|for
 control|(
 name|y
@@ -3748,7 +3764,7 @@ index|[
 literal|3
 index|]
 operator|>
-name|ICO_ALPHA_THRESHOLD
+name|alpha_threshold
 condition|?
 literal|0
 else|:
