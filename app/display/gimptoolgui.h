@@ -262,6 +262,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_tool_gui_get_visible
+parameter_list|(
+name|GimpToolGui
+modifier|*
+name|gui
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_tool_gui_show
 parameter_list|(
