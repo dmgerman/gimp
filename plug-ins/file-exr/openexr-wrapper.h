@@ -28,6 +28,9 @@ literal|"C"
 block|{
 endif|#
 directive|endif
+include|#
+directive|include
+file|<lcms2.h>
 comment|/* This is fully opaque on purpose, as the calling C code must not be  * exposed to more than this.  */
 DECL|typedef|EXRLoader
 typedef|typedef
@@ -35,7 +38,7 @@ name|struct
 name|_EXRLoader
 name|EXRLoader
 typedef|;
-DECL|enum|__anon2c42ef5d0103
+DECL|enum|__anon2a1fe48c0103
 typedef|typedef
 enum|enum
 block|{
@@ -51,7 +54,7 @@ DECL|typedef|EXRPrecision
 block|}
 name|EXRPrecision
 typedef|;
-DECL|enum|__anon2c42ef5d0203
+DECL|enum|__anon2a1fe48c0203
 typedef|typedef
 enum|enum
 block|{
@@ -147,6 +150,14 @@ name|bpp
 parameter_list|,
 name|int
 name|row
+parameter_list|)
+function_decl|;
+name|cmsHPROFILE
+name|exr_loader_icc_read_profile
+parameter_list|(
+name|EXRLoader
+modifier|*
+name|loader
 parameter_list|)
 function_decl|;
 ifdef|#
