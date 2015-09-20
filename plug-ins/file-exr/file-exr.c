@@ -1109,8 +1109,7 @@ name|height
 argument_list|)
 expr_stmt|;
 block|}
-comment|// try to load an icc profile.
-comment|// this will be generated on the fly if chromaticities are given
+comment|/* try to load an icc profile, it will be generated on the fly if    * chromaticities are given    */
 if|if
 condition|(
 name|image_type
@@ -1120,18 +1119,10 @@ condition|)
 block|{
 name|cmsHPROFILE
 name|lcms_profile
-init|=
-name|NULL
-decl_stmt|;
-name|GimpColorProfile
-modifier|*
-name|profile
-init|=
-name|NULL
 decl_stmt|;
 name|lcms_profile
 operator|=
-name|exr_loader_icc_read_profile
+name|exr_loader_get_icc_profile
 argument_list|(
 name|loader
 argument_list|)
@@ -1141,6 +1132,10 @@ condition|(
 name|lcms_profile
 condition|)
 block|{
+name|GimpColorProfile
+modifier|*
+name|profile
+decl_stmt|;
 name|profile
 operator|=
 name|gimp_color_profile_new_from_lcms_profile
@@ -1148,6 +1143,11 @@ argument_list|(
 name|lcms_profile
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|cmsCloseProfile
+argument_list|(
+name|lcms_profile
 argument_list|)
 expr_stmt|;
 if|if
@@ -1168,11 +1168,6 @@ name|profile
 argument_list|)
 expr_stmt|;
 block|}
-name|cmsCloseProfile
-argument_list|(
-name|lcms_profile
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 name|gimp_progress_update

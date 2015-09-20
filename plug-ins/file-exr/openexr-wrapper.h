@@ -38,7 +38,7 @@ name|struct
 name|_EXRLoader
 name|EXRLoader
 typedef|;
-DECL|enum|__anon2a1fe48c0103
+DECL|enum|__anon275492cb0103
 typedef|typedef
 enum|enum
 block|{
@@ -54,7 +54,7 @@ DECL|typedef|EXRPrecision
 block|}
 name|EXRPrecision
 typedef|;
-DECL|enum|__anon2a1fe48c0203
+DECL|enum|__anon275492cb0203
 typedef|typedef
 enum|enum
 block|{
@@ -134,6 +134,14 @@ modifier|*
 name|loader
 parameter_list|)
 function_decl|;
+name|cmsHPROFILE
+name|exr_loader_get_icc_profile
+parameter_list|(
+name|EXRLoader
+modifier|*
+name|loader
+parameter_list|)
+function_decl|;
 name|int
 name|exr_loader_read_pixel_row
 parameter_list|(
@@ -150,14 +158,6 @@ name|bpp
 parameter_list|,
 name|int
 name|row
-parameter_list|)
-function_decl|;
-name|cmsHPROFILE
-name|exr_loader_icc_read_profile
-parameter_list|(
-name|EXRLoader
-modifier|*
-name|loader
 parameter_list|)
 function_decl|;
 ifdef|#
