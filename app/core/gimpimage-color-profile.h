@@ -267,9 +267,43 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_image_color_profile_pixel_to_srgb
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|pixel_format
+parameter_list|,
+name|gpointer
+name|pixel
+parameter_list|,
+name|GimpRGB
+modifier|*
+name|color
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
-comment|/*  internal API, to be called only from the icc-profile parasite setters  */
+comment|/*  internal API, to be called only from gimpimage.c  */
 end_comment
+
+begin_function_decl
+name|void
+name|_gimp_image_free_color_profile
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void

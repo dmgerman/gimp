@@ -171,6 +171,30 @@ modifier|*
 name|color_profile
 decl_stmt|;
 comment|/*  image's color profile        */
+DECL|member|transform_to_srgb
+name|GimpColorTransform
+name|transform_to_srgb
+decl_stmt|;
+comment|/*  from layer pixels to sRGB    */
+DECL|member|transform_from_srgb
+name|GimpColorTransform
+name|transform_from_srgb
+decl_stmt|;
+comment|/*  from sRGB to layer pixels    */
+DECL|member|transform_layer_format
+specifier|const
+name|Babl
+modifier|*
+name|transform_layer_format
+decl_stmt|;
+comment|/*  layer format for transforms  */
+DECL|member|transform_srgb_format
+specifier|const
+name|Babl
+modifier|*
+name|transform_srgb_format
+decl_stmt|;
+comment|/*  sRGB format for transforms   */
 DECL|member|metadata
 name|GimpMetadata
 modifier|*
