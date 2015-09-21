@@ -100,10 +100,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b76de970108
+DECL|struct|__anon2b8382dd0108
 block|{
 union|union
-DECL|union|__anon2b76de97020a
+DECL|union|__anon2b8382dd020a
 block|{
 DECL|member|ID
 name|gint32
@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b76de970308
+DECL|struct|__anon2b8382dd0308
 block|{
 DECL|member|babl_name
 specifier|const
@@ -187,7 +187,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b76de970408
+DECL|struct|__anon2b8382dd0408
 block|{
 DECL|member|babl_model
 specifier|const
@@ -656,7 +656,7 @@ DECL|macro|CPN_LAB_A
 define|#
 directive|define
 name|CPN_LAB_A
-value|{"CIE a", N_("_A:"), NULL, -128.0, 127.0, TRUE}
+value|{"CIE a", N_("_A:"), NULL, -127.5, 127.5, TRUE}
 end_define
 
 begin_define
@@ -664,7 +664,31 @@ DECL|macro|CPN_LAB_B
 define|#
 directive|define
 name|CPN_LAB_B
-value|{"CIE b", N_("_B:"), NULL, -128.0, 127.0, TRUE}
+value|{"CIE b", N_("_B:"), NULL, -127.5, 127.5, TRUE}
+end_define
+
+begin_define
+DECL|macro|CPN_LCH_L
+define|#
+directive|define
+name|CPN_LCH_L
+value|{"CIE L", N_("_L"), NULL, 0.0, 100.0, TRUE}
+end_define
+
+begin_define
+DECL|macro|CPN_LCH_C
+define|#
+directive|define
+name|CPN_LCH_C
+value|{"CIE C(ab)", N_("_C"), NULL, 0.0, 200.0, TRUE}
+end_define
+
+begin_define
+DECL|macro|CPN_LCH_H
+define|#
+directive|define
+name|CPN_LCH_H
+value|{"CIE H(ab)", N_("_H"), NULL, 0.0, 360.0, TRUE}
 end_define
 
 begin_define
@@ -875,6 +899,27 @@ literal|"lab-compose"
 block|}
 block|,
 block|{
+literal|"CIE LCH(ab)"
+block|,
+name|N_
+argument_list|(
+literal|"LCH"
+argument_list|)
+block|,
+literal|3
+block|,
+block|{
+name|CPN_LCH_L
+block|,
+name|CPN_LCH_C
+block|,
+name|CPN_LCH_H
+block|}
+block|,
+literal|"lch-compose"
+block|}
+block|,
+block|{
 literal|"Y'CbCr"
 block|,
 name|N_
@@ -964,7 +1009,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b76de970508
+DECL|struct|__anon2b8382dd0508
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1004,7 +1049,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b76de970608
+DECL|struct|__anon2b8382dd0608
 block|{
 DECL|member|width
 DECL|member|height

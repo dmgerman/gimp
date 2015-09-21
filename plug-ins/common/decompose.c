@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3115800108
+DECL|struct|__anon294edc510108
 block|{
 comment|/* the babl_component names of the channels */
 DECL|member|babl_name
@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3115800208
+DECL|struct|__anon294edc510208
 block|{
 DECL|member|type
 specifier|const
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3115800308
+DECL|struct|__anon294edc510308
 block|{
 DECL|member|extract_type
 name|gchar
@@ -386,6 +386,9 @@ name|min
 parameter_list|,
 name|gdouble
 name|max
+parameter_list|,
+name|gboolean
+name|clamp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -615,7 +618,7 @@ DECL|macro|CPN_LAB_A
 define|#
 directive|define
 name|CPN_LAB_A
-value|{"CIE a", N_("A"), -128.0, 127.0, TRUE}
+value|{"CIE a", N_("A"), -127.5, 127.5, TRUE}
 end_define
 
 begin_define
@@ -623,7 +626,31 @@ DECL|macro|CPN_LAB_B
 define|#
 directive|define
 name|CPN_LAB_B
-value|{"CIE b", N_("B"), -128.0, 127.0, TRUE}
+value|{"CIE b", N_("B"), -127.5, 127.5, TRUE}
+end_define
+
+begin_define
+DECL|macro|CPN_LCH_L
+define|#
+directive|define
+name|CPN_LCH_L
+value|{"CIE L", N_("L"), 0.0, 100.0, TRUE}
+end_define
+
+begin_define
+DECL|macro|CPN_LCH_C
+define|#
+directive|define
+name|CPN_LCH_C
+value|{"CIE C(ab)", N_("C"), 0.0, 200.0, TRUE}
+end_define
+
+begin_define
+DECL|macro|CPN_LCH_H
+define|#
+directive|define
+name|CPN_LCH_H
+value|{"CIE H(ab)", N_("H"), 0.0, 360.0, TRUE}
 end_define
 
 begin_define
@@ -1149,6 +1176,29 @@ block|,
 name|CPN_LAB_A
 block|,
 name|CPN_LAB_B
+block|}
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"LCH"
+argument_list|)
+block|,
+literal|"CIE LCH(ab)"
+block|,
+name|TRUE
+block|,
+literal|3
+block|,
+name|FALSE
+block|,
+block|{
+name|CPN_LCH_L
+block|,
+name|CPN_LCH_C
+block|,
+name|CPN_LCH_H
 block|}
 block|}
 block|,
@@ -3256,7 +3306,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|cpn_affine_transform_clamp (GeglBuffer * buffer,gdouble min,gdouble max)
+DECL|function|cpn_affine_transform_clamp (GeglBuffer * buffer,gdouble min,gdouble max,gboolean clamp)
 name|cpn_affine_transform_clamp
 parameter_list|(
 name|GeglBuffer
@@ -3268,6 +3318,9 @@ name|min
 parameter_list|,
 name|gdouble
 name|max
+parameter_list|,
+name|gboolean
+name|clamp
 parameter_list|)
 block|{
 name|GeglBufferIterator
@@ -3347,6 +3400,11 @@ index|[
 literal|0
 index|]
 expr_stmt|;
+if|if
+condition|(
+name|clamp
+condition|)
+block|{
 for|for
 control|(
 name|k
@@ -3386,6 +3444,43 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+for|for
+control|(
+name|k
+operator|=
+literal|0
+init|;
+name|k
+operator|<
+name|gi
+operator|->
+name|length
+condition|;
+name|k
+operator|++
+control|)
+block|{
+name|data
+index|[
+name|k
+index|]
+operator|=
+operator|(
+name|data
+index|[
+name|k
+index|]
+operator|+
+name|offset
+operator|)
+operator|*
+name|scale
+expr_stmt|;
+block|}
 block|}
 block|}
 block|}
@@ -3617,6 +3712,7 @@ literal|1.0
 operator|||
 name|clamp
 condition|)
+block|{
 name|cpn_affine_transform_clamp
 argument_list|(
 name|temp
@@ -3628,8 +3724,11 @@ argument_list|,
 name|component
 operator|.
 name|range_max
+argument_list|,
+name|clamp
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* This is our new "Y(') double" component buffer */
 name|gegl_buffer_set_format
 argument_list|(
