@@ -193,7 +193,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbf409e0103
+DECL|enum|__anon2b4b9e960103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -224,7 +224,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbf409e0203
+DECL|enum|__anon2b4b9e960203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -731,6 +731,18 @@ name|feather_radius_x
 parameter_list|,
 name|gdouble
 name|feather_radius_y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_layer_alpha_changed
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1614,6 +1626,12 @@ name|_
 argument_list|(
 literal|"Layer cannot be lowered more."
 argument_list|)
+expr_stmt|;
+name|drawable_class
+operator|->
+name|alpha_changed
+operator|=
+name|gimp_layer_alpha_changed
 expr_stmt|;
 name|drawable_class
 operator|->
@@ -4442,6 +4460,48 @@ argument_list|,
 name|feather_radius_x
 argument_list|,
 name|feather_radius_y
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_layer_alpha_changed (GimpDrawable * drawable)
+name|gimp_layer_alpha_changed
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+block|{
+if|if
+condition|(
+name|GIMP_DRAWABLE_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|alpha_changed
+condition|)
+name|GIMP_DRAWABLE_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|alpha_changed
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
+comment|/* When we add/remove alpha, whatever cached color transforms in    * view renderers need to be recreated because they cache the wrong    * lcms formats. See bug 478528.    */
+name|gimp_color_managed_profile_changed
+argument_list|(
+name|GIMP_COLOR_MANAGED
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
