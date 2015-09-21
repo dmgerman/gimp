@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b193c190103
+DECL|enum|__anon2c47a14a0103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -1467,12 +1467,14 @@ name|GimpToolGuiPrivate
 modifier|*
 name|private
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_TOOL_GUI
 argument_list|(
 name|gui
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|private
