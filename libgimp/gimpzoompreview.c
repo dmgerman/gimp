@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c61af060103
+DECL|enum|__anon277ec70d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -104,7 +104,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c61af060208
+DECL|struct|__anon277ec70d0208
 block|{
 DECL|member|update
 name|gboolean
@@ -3476,7 +3476,8 @@ argument_list|(
 name|preview
 argument_list|)
 argument_list|,
-name|NULL
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 return|return

@@ -59,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1f0d580103
+DECL|enum|__anon28b01cbb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -76,7 +76,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1f0d580208
+DECL|struct|__anon28b01cbb0208
 block|{
 DECL|member|drawable_ID
 name|gint32
@@ -91,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1f0d580308
+DECL|struct|__anon28b01cbb0308
 block|{
 DECL|member|x
 name|gint
@@ -2628,7 +2628,8 @@ argument_list|(
 name|preview
 argument_list|)
 argument_list|,
-name|NULL
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 return|return

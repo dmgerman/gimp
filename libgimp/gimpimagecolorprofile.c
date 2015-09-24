@@ -121,7 +121,7 @@ argument_list|(
 name|profile
 argument_list|)
 argument_list|,
-name|NULL
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -272,7 +272,7 @@ argument_list|(
 name|profile
 argument_list|)
 argument_list|,
-name|NULL
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
