@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-2000 Peter Mattis and Spencer Kimball  *  * gimpmetadata.h  *  * This library is free software: you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 3 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library.  If not, see  *<http://www.gnu.org/licenses/>.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-2000 Peter Mattis and Spencer Kimball  *  * gimpimagemetadata.h  *  * This library is free software: you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 3 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library.  If not, see  *<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_if
@@ -33,14 +33,14 @@ end_endif
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__LIBGIMP_GIMP_METADATA_H__
+name|__GIMP_IMAGE_METADATA_H__
 end_ifndef
 
 begin_define
-DECL|macro|__LIBGIMP_GIMP_METADATA_H__
+DECL|macro|__GIMP_IMAGE_METADATA_H__
 define|#
 directive|define
-name|__LIBGIMP_GIMP_METADATA_H__
+name|__GIMP_IMAGE_METADATA_H__
 end_define
 
 begin_function_decl
@@ -147,7 +147,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* this is experimental API, so be finished for 2.10 */
+comment|/* this is experimental API, to be finished for 2.10 */
 end_comment
 
 begin_function_decl
@@ -176,7 +176,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* ___LIBGIMP_GIMP_METADATA_H__ */
+comment|/* __GIMP_IMAGE_METADATA_H__ */
 end_comment
 
 end_unit
