@@ -360,7 +360,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c984cfd0103
+DECL|enum|__anon2c42f5fd0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -457,7 +457,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c984cfd0203
+DECL|enum|__anon2c42f5fd0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -13223,6 +13223,11 @@ decl_stmt|;
 name|GimpParasite
 name|copy
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|name
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -13245,15 +13250,19 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+name|name
+operator|=
+name|gimp_parasite_name
+argument_list|(
+name|parasite
+argument_list|)
+expr_stmt|;
 comment|/*  this is so ugly and is only for the PDB  */
 if|if
 condition|(
 name|strcmp
 argument_list|(
-name|gimp_parasite_name
-argument_list|(
-name|parasite
-argument_list|)
+name|name
 argument_list|,
 name|GIMP_ICC_PROFILE_PARASITE_NAME
 argument_list|)
@@ -13395,20 +13404,14 @@ index|]
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_parasite_name
-argument_list|(
-name|parasite
-argument_list|)
+name|name
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|strcmp
 argument_list|(
-name|gimp_parasite_name
-argument_list|(
-name|parasite
-argument_list|)
+name|name
 argument_list|,
 name|GIMP_ICC_PROFILE_PARASITE_NAME
 argument_list|)
