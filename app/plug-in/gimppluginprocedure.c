@@ -114,7 +114,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aead9c60103
+DECL|enum|__anon2b7443b80103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -4122,12 +4122,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|gimp_value_array_length
 argument_list|(
 name|return_vals
 argument_list|)
-operator|>
+operator|==
 literal|0
 operator|||
 name|G_VALUE_TYPE
