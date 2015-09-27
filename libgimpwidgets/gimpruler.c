@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be2d74d0103
+DECL|enum|__anon2be10af00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -108,7 +108,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be2d74d0208
+DECL|struct|__anon2be10af00208
 block|{
 DECL|member|orientation
 name|GtkOrientation
@@ -192,7 +192,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2be2d74d0308
+DECL|struct|__anon2be10af00308
 block|{
 DECL|member|ruler_scale
 specifier|const
@@ -4381,13 +4381,6 @@ name|gdouble
 name|position
 parameter_list|)
 block|{
-name|GdkRectangle
-name|rect
-init|=
-block|{
-literal|0
-block|, }
-decl_stmt|;
 name|GtkWidget
 modifier|*
 name|widget
@@ -4436,6 +4429,13 @@ name|lower
 decl_stmt|;
 name|gdouble
 name|increment
+decl_stmt|;
+name|GdkRectangle
+name|rect
+init|=
+block|{
+literal|0
+block|, }
 decl_stmt|;
 if|if
 condition|(
