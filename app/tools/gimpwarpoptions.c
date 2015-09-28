@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2973fbf90103
+DECL|enum|__anon27bc14e40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -876,11 +876,11 @@ argument_list|(
 literal|"Frames"
 argument_list|)
 argument_list|,
-literal|0.01
-argument_list|,
 literal|1.0
 argument_list|,
-literal|2
+literal|10.0
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_spin_scale_set_scale_limits
