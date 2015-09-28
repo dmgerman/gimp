@@ -1211,7 +1211,7 @@ name|NULL
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gegl:gaussian-blur"
+literal|"gegl:gaussian-blur-iir"
 argument_list|,
 literal|"std-dev-x"
 argument_list|,
@@ -1224,6 +1224,10 @@ argument_list|,
 name|vertical
 operator|*
 literal|0.32
+argument_list|,
+literal|"abyss-policy"
+argument_list|,
+literal|1
 argument_list|,
 name|NULL
 argument_list|)
