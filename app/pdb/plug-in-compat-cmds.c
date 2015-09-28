@@ -1211,7 +1211,7 @@ name|NULL
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gegl:gaussian-blur-iir"
+literal|"gegl:gaussian-blur"
 argument_list|,
 literal|"std-dev-x"
 argument_list|,
