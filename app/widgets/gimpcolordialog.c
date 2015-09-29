@@ -123,7 +123,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a22e3220103
+DECL|enum|__anon27ba9df40103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -974,13 +974,6 @@ break|break;
 case|case
 name|GTK_RESPONSE_OK
 case|:
-name|gimp_color_history_add_clicked
-argument_list|(
-name|NULL
-argument_list|,
-name|dialog
-argument_list|)
-expr_stmt|;
 name|gimp_color_selection_get_color
 argument_list|(
 name|GIMP_COLOR_SELECTION

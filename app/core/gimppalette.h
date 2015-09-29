@@ -219,6 +219,24 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_palette_move_entry
+parameter_list|(
+name|GimpPalette
+modifier|*
+name|palette
+parameter_list|,
+name|GimpPaletteEntry
+modifier|*
+name|entry
+parameter_list|,
+name|gint
+name|position
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpPaletteEntry
 modifier|*
 name|gimp_palette_add_entry

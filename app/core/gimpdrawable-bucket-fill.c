@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-palettes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-utils.h"
 end_include
 
@@ -233,12 +239,12 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GimpRGB
-name|color
-decl_stmt|;
 name|GimpPattern
 modifier|*
 name|pattern
+decl_stmt|;
+name|GimpRGB
+name|color
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -308,6 +314,16 @@ condition|)
 return|return
 name|FALSE
 return|;
+name|gimp_palettes_add_color_history
+argument_list|(
+name|context
+operator|->
+name|gimp
+argument_list|,
+operator|&
+name|color
+argument_list|)
+expr_stmt|;
 name|gimp_drawable_bucket_fill_internal
 argument_list|(
 name|drawable

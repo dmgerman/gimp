@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c517590103
+DECL|enum|__anon29c8f9ac0103
 block|{
 DECL|enumerator|COLOR_HISTORY
 name|COLOR_HISTORY
@@ -824,15 +824,29 @@ if|if
 condition|(
 name|found
 condition|)
-name|gimp_palette_delete_entry
+block|{
+name|gimp_palette_move_entry
 argument_list|(
 name|palette
 argument_list|,
 name|found
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
-name|found
-operator|=
+comment|/* Even though they are nearly the same color, let's make them exactly       * equal. */
+name|gimp_palette_set_entry_color
+argument_list|(
+name|palette
+argument_list|,
+literal|0
+argument_list|,
+name|color
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|gimp_palette_add_entry
 argument_list|(
 name|palette
@@ -847,6 +861,7 @@ argument_list|,
 name|color
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

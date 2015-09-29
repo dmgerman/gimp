@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-palettes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -547,6 +553,37 @@ block|{
 case|case
 name|GIMP_PAINT_STATE_INIT
 case|:
+block|{
+name|GimpContext
+modifier|*
+name|context
+init|=
+name|GIMP_CONTEXT
+argument_list|(
+name|paint_options
+argument_list|)
+decl_stmt|;
+name|GimpRGB
+name|foreground
+decl_stmt|;
+name|gimp_context_get_foreground
+argument_list|(
+name|context
+argument_list|,
+operator|&
+name|foreground
+argument_list|)
+expr_stmt|;
+name|gimp_palettes_add_color_history
+argument_list|(
+name|context
+operator|->
+name|gimp
+argument_list|,
+operator|&
+name|foreground
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|coords
@@ -643,6 +680,7 @@ operator|->
 name|last_blob
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 break|break;
 case|case
@@ -1860,7 +1898,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b79b7430103
+DECL|enum|__anon27dacdaf0103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START

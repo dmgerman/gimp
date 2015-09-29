@@ -349,6 +349,44 @@ return|;
 block|}
 end_function
 
+begin_function
+name|void
+DECL|function|gimp_palettes_add_color_history (Gimp * gimp,GimpRGB * color)
+name|gimp_palettes_add_color_history
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GimpRGB
+modifier|*
+name|color
+parameter_list|)
+block|{
+name|GimpPalette
+modifier|*
+name|history
+decl_stmt|;
+name|history
+operator|=
+name|gimp_palettes_get_color_history
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+name|gimp_palette_mru_add
+argument_list|(
+name|GIMP_PALETTE_MRU
+argument_list|(
+name|history
+argument_list|)
+argument_list|,
+name|color
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 begin_comment
 comment|/*  private functions  */
 end_comment
