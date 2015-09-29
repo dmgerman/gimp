@@ -42,25 +42,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"core-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimp.h"
+file|"gimp.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpparamspecs.h"
+file|"gimp-batch.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"batch.h"
+file|"gimpparamspecs.h"
 end_include
 
 begin_include
@@ -92,7 +92,7 @@ end_define
 begin_decl_stmt
 specifier|static
 name|void
-name|batch_exit_after_callback
+name|gimp_batch_exit_after_callback
 argument_list|(
 name|Gimp
 operator|*
@@ -105,7 +105,7 @@ end_decl_stmt
 begin_function_decl
 specifier|static
 name|void
-name|batch_run_cmd
+name|gimp_batch_run_cmd
 parameter_list|(
 name|Gimp
 modifier|*
@@ -133,8 +133,8 @@ end_function_decl
 
 begin_function
 name|void
-DECL|function|batch_run (Gimp * gimp,const gchar * batch_interpreter,const gchar ** batch_commands)
-name|batch_run
+DECL|function|gimp_batch_run (Gimp * gimp,const gchar * batch_interpreter,const gchar ** batch_commands)
+name|gimp_batch_run
 parameter_list|(
 name|Gimp
 modifier|*
@@ -177,7 +177,7 @@ literal|"exit"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|batch_exit_after_callback
+name|gimp_batch_exit_after_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -274,7 +274,7 @@ if|if
 condition|(
 name|procedure
 condition|)
-name|batch_run_cmd
+name|gimp_batch_run_cmd
 argument_list|(
 name|gimp
 argument_list|,
@@ -337,7 +337,7 @@ condition|;
 name|i
 operator|++
 control|)
-name|batch_run_cmd
+name|gimp_batch_run_cmd
 argument_list|(
 name|gimp
 argument_list|,
@@ -386,8 +386,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|batch_exit_after_callback (Gimp * gimp)
-name|batch_exit_after_callback
+DECL|function|gimp_batch_exit_after_callback (Gimp * gimp)
+name|gimp_batch_exit_after_callback
 parameter_list|(
 name|Gimp
 modifier|*
@@ -421,8 +421,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|batch_run_cmd (Gimp * gimp,const gchar * proc_name,GimpProcedure * procedure,GimpRunMode run_mode,const gchar * cmd)
-name|batch_run_cmd
+DECL|function|gimp_batch_run_cmd (Gimp * gimp,const gchar * proc_name,GimpProcedure * procedure,GimpRunMode run_mode,const gchar * cmd)
+name|gimp_batch_run_cmd
 parameter_list|(
 name|Gimp
 modifier|*

@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-batch.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -57,29 +63,6 @@ directive|include
 file|"display/gimpdisplayshell.h"
 end_include
 
-begin_comment
-comment|/* Dirty hack since we are not supposed to include batch.h  * from an app/ subdir. DBus is a special case. */
-end_comment
-
-begin_define
-DECL|macro|GIMP_APP_GLUE_COMPILATION
-define|#
-directive|define
-name|GIMP_APP_GLUE_COMPILATION
-end_define
-
-begin_include
-include|#
-directive|include
-file|"batch.h"
-end_include
-
-begin_undef
-undef|#
-directive|undef
-name|GIMP_APP_GLUE_COMPILATION
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -89,7 +72,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ddb3850108
+DECL|struct|__anon299b58b00108
 block|{
 DECL|member|file
 name|GFile
@@ -1261,7 +1244,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-name|batch_run
+name|gimp_batch_run
 argument_list|(
 name|service
 operator|->

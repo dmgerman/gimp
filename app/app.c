@@ -141,6 +141,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-batch.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp-user-install.h"
 end_include
 
@@ -177,12 +183,6 @@ begin_include
 include|#
 directive|include
 file|"app.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"batch.h"
 end_include
 
 begin_include
@@ -955,7 +955,7 @@ if|if
 condition|(
 name|run_loop
 condition|)
-name|batch_run
+name|gimp_batch_run
 argument_list|(
 name|gimp
 argument_list|,
