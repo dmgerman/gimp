@@ -451,6 +451,13 @@ argument_list|,
 name|return_vals
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_PROC
+argument_list|,
+literal|"<Image>/Colors/Info"
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -766,6 +773,10 @@ decl_stmt|,
 name|x2
 decl_stmt|,
 name|y2
+decl_stmt|,
+name|w
+decl_stmt|,
+name|h
 decl_stmt|;
 name|guchar
 name|r
@@ -813,7 +824,10 @@ literal|"Colorcube Analysis"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_mask_bounds
+if|if
+condition|(
+operator|!
+name|gimp_drawable_mask_intersect
 argument_list|(
 name|drawable
 operator|->
@@ -826,11 +840,24 @@ operator|&
 name|y1
 argument_list|,
 operator|&
-name|x2
+name|w
 argument_list|,
 operator|&
-name|y2
+name|h
 argument_list|)
+condition|)
+return|return;
+name|x2
+operator|=
+name|x1
+operator|+
+name|w
+expr_stmt|;
+name|y2
+operator|=
+name|y1
+operator|+
+name|h
 expr_stmt|;
 comment|/*    * Get the size of the input image (this will/must be the same    * as the size of the output image).    */
 name|width
@@ -1053,9 +1080,7 @@ literal|0
 init|;
 name|x
 operator|<
-name|x2
-operator|-
-name|x1
+name|w
 condition|;
 name|x
 operator|++
