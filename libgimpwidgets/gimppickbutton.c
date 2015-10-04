@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a34849b0103
+DECL|enum|__anon2946d7f60103
 block|{
 DECL|enumerator|COLOR_PICKED
 name|COLOR_PICKED
@@ -93,7 +93,7 @@ end_comment
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_pick_button_clicked
+name|_gimp_pick_button_clicked
 parameter_list|(
 name|GtkButton
 modifier|*
@@ -223,7 +223,7 @@ name|button_class
 operator|->
 name|clicked
 operator|=
-name|gimp_pick_button_clicked
+name|_gimp_pick_button_clicked
 expr_stmt|;
 name|klass
 operator|->

@@ -84,7 +84,7 @@ end_endif
 
 begin_function_decl
 name|void
-name|gimp_pick_button_clicked
+name|_gimp_pick_button_clicked
 parameter_list|(
 name|GtkButton
 modifier|*
@@ -1511,8 +1511,8 @@ unit|} @
 name|end
 comment|/* entrypoint to this file, called from gimppickbutton.c */
 name|void
-DECL|function|gimp_pick_button_clicked (GtkButton * gtk_button)
-name|gimp_pick_button_clicked
+DECL|function|_gimp_pick_button_clicked (GtkButton * gtk_button)
+name|_gimp_pick_button_clicked
 parameter_list|(
 name|GtkButton
 modifier|*
