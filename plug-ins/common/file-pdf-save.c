@@ -158,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8aaeee0103
+DECL|enum|__anon2afd2d930103
 block|{
 DECL|enumerator|GIMP_PLUGIN_PDF_SAVE_ERROR_FAILED
 name|GIMP_PLUGIN_PDF_SAVE_ERROR_FAILED
@@ -180,7 +180,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8aaeee0203
+DECL|enum|__anon2afd2d930203
 block|{
 DECL|enumerator|SA_RUN_MODE
 name|SA_RUN_MODE
@@ -225,16 +225,16 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8aaeee0303
+DECL|enum|__anon2afd2d930303
 block|{
 DECL|enumerator|SMA_RUN_MODE
 name|SMA_RUN_MODE
 block|,
-DECL|enumerator|SMA_IMAGES
-name|SMA_IMAGES
-block|,
 DECL|enumerator|SMA_COUNT
 name|SMA_COUNT
+block|,
+DECL|enumerator|SMA_IMAGES
+name|SMA_IMAGES
 block|,
 DECL|enumerator|SMA_VECTORIZE
 name|SMA_VECTORIZE
@@ -262,7 +262,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8aaeee0408
+DECL|struct|__anon2afd2d930408
 block|{
 DECL|member|vectorize
 name|gboolean
@@ -285,7 +285,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8aaeee0508
+DECL|struct|__anon2afd2d930508
 block|{
 DECL|member|images
 name|gint32
@@ -314,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8aaeee0608
+DECL|struct|__anon2afd2d930608
 block|{
 DECL|member|optimize
 name|PdfOptimize
@@ -333,7 +333,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8aaeee0703
+DECL|enum|__anon2afd2d930703
 block|{
 DECL|enumerator|THUMB
 name|THUMB
@@ -353,7 +353,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8aaeee0808
+DECL|struct|__anon2afd2d930808
 block|{
 DECL|member|thumb
 name|GdkPixbuf
@@ -831,19 +831,19 @@ literal|"Run mode"
 block|}
 block|,
 block|{
-name|GIMP_PDB_INT32ARRAY
-block|,
-literal|"images"
-block|,
-literal|"Input image for each page (An image can appear more than once)"
-block|}
-block|,
-block|{
 name|GIMP_PDB_INT32
 block|,
 literal|"count"
 block|,
 literal|"The amount of images entered (This will be the amount of pages). 1<= count<= MAX_PAGE_COUNT"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32ARRAY
+block|,
+literal|"images"
+block|,
+literal|"Input image for each page (An image can appear more than once)"
 block|}
 block|,
 block|{
