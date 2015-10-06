@@ -531,7 +531,7 @@ argument_list|)
 argument_list|,
 literal|2
 argument_list|,
-literal|3
+literal|5
 argument_list|)
 expr_stmt|;
 comment|/* hsv<-> rgb   */
@@ -544,7 +544,7 @@ argument_list|)
 argument_list|,
 literal|5
 argument_list|,
-literal|3
+literal|5
 argument_list|)
 expr_stmt|;
 comment|/* rgb<-> alpha */
