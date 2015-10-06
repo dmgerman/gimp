@@ -823,8 +823,6 @@ name|button
 argument_list|,
 literal|"color-picked"
 argument_list|,
-literal|0
-argument_list|,
 operator|&
 name|rgb
 argument_list|)
