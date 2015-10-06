@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2946d7f60103
+DECL|enum|__anon2b26e9ec0103
 block|{
 DECL|enumerator|COLOR_PICKED
 name|COLOR_PICKED
@@ -87,17 +87,27 @@ enum|;
 end_enum
 
 begin_comment
-comment|/* entry point to gimppickbutton-{default,quartz}.c */
+comment|/* entry points to gimppickbutton-{default,quartz}.c */
 end_comment
 
 begin_function_decl
-specifier|extern
 name|void
-name|_gimp_pick_button_clicked
+name|_gimp_pick_button_default_pick
 parameter_list|(
-name|GtkButton
+name|GimpPickButton
 modifier|*
-name|gtk_button
+name|button
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|_gimp_pick_button_quartz_pick
+parameter_list|(
+name|GimpPickButton
+modifier|*
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -110,6 +120,18 @@ parameter_list|(
 name|GObject
 modifier|*
 name|object
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_pick_button_clicked
+parameter_list|(
+name|GtkButton
+modifier|*
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -223,7 +245,7 @@ name|button_class
 operator|->
 name|clicked
 operator|=
-name|_gimp_pick_button_clicked
+name|gimp_pick_button_clicked
 expr_stmt|;
 name|klass
 operator|->
@@ -364,6 +386,43 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_pick_button_clicked (GtkButton * button)
+name|gimp_pick_button_clicked
+parameter_list|(
+name|GtkButton
+modifier|*
+name|button
+parameter_list|)
+block|{
+ifdef|#
+directive|ifdef
+name|GDK_WINDOWING_QUARTZ
+name|_gimp_pick_button_quartz_pick
+argument_list|(
+name|GIMP_PICK_BUTTON
+argument_list|(
+name|button
+argument_list|)
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
+name|_gimp_pick_button_default_pick
+argument_list|(
+name|GIMP_PICK_BUTTON
+argument_list|(
+name|button
+argument_list|)
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 block|}
 end_function
 

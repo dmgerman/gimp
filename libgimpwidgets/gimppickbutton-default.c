@@ -191,11 +191,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|_gimp_pick_button_clicked
+name|_gimp_pick_button_default_pick
 parameter_list|(
-name|GtkButton
+name|GimpPickButton
 modifier|*
-name|gtk_button
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -836,23 +836,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|_gimp_pick_button_clicked (GtkButton * gtk_button)
-name|_gimp_pick_button_clicked
+DECL|function|_gimp_pick_button_default_pick (GimpPickButton * button)
+name|_gimp_pick_button_default_pick
 parameter_list|(
-name|GtkButton
-modifier|*
-name|gtk_button
-parameter_list|)
-block|{
 name|GimpPickButton
 modifier|*
 name|button
-init|=
-name|GIMP_PICK_BUTTON
-argument_list|(
-name|gtk_button
-argument_list|)
-decl_stmt|;
+parameter_list|)
+block|{
 name|GtkWidget
 modifier|*
 name|widget
@@ -877,7 +868,7 @@ name|gtk_widget_get_display
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|gtk_button
+name|button
 argument_list|)
 argument_list|)
 argument_list|)

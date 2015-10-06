@@ -84,11 +84,11 @@ end_endif
 
 begin_function_decl
 name|void
-name|_gimp_pick_button_clicked
+name|_gimp_pick_button_quartz_pick
 parameter_list|(
-name|GtkButton
+name|GimpPickButton
 modifier|*
-name|gtk_button
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1509,25 +1509,16 @@ end_return
 begin_function
 unit|} @
 name|end
-comment|/* entrypoint to this file, called from gimppickbutton.c */
+comment|/* entry point to this file, called from gimppickbutton.c */
 name|void
-DECL|function|_gimp_pick_button_clicked (GtkButton * gtk_button)
-name|_gimp_pick_button_clicked
+DECL|function|_gimp_pick_button_quartz_pick (GimpPickButton * button)
+name|_gimp_pick_button_quartz_pick
 parameter_list|(
-name|GtkButton
-modifier|*
-name|gtk_button
-parameter_list|)
-block|{
 name|GimpPickButton
 modifier|*
 name|button
-init|=
-name|GIMP_PICK_BUTTON
-argument_list|(
-name|gtk_button
-argument_list|)
-decl_stmt|;
+parameter_list|)
+block|{
 name|GimpPickWindowController
 modifier|*
 name|controller
