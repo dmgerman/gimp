@@ -114,7 +114,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fd18390108
+DECL|struct|__anon2a442d570108
 block|{
 DECL|member|radius
 name|gdouble
@@ -212,6 +212,10 @@ parameter_list|(
 name|GimpPreview
 modifier|*
 name|preview
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -920,7 +924,7 @@ argument_list|(
 name|preview_update
 argument_list|)
 argument_list|,
-name|NULL
+name|drawable
 argument_list|)
 expr_stmt|;
 name|table
@@ -3240,18 +3244,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|preview_update (GimpPreview * preview)
+DECL|function|preview_update (GimpPreview * preview,GimpDrawable * drawable)
 name|preview_update
 parameter_list|(
 name|GimpPreview
 modifier|*
 name|preview
-parameter_list|)
-block|{
+parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
-decl_stmt|;
+parameter_list|)
+block|{
 name|glong
 name|bytes
 decl_stmt|;
@@ -3295,16 +3299,6 @@ name|gdouble
 name|radius
 decl_stmt|;
 comment|/* Get drawable info */
-name|drawable
-operator|=
-name|gimp_drawable_preview_get_drawable
-argument_list|(
-name|GIMP_DRAWABLE_PREVIEW
-argument_list|(
-name|preview
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|bytes
 operator|=
 name|drawable
