@@ -102,7 +102,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2938450c0103
+DECL|enum|__anon297eeee10103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -153,7 +153,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2938450c0203
+DECL|enum|__anon297eeee10203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -198,7 +198,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2938450c0303
+DECL|enum|__anon297eeee10303
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -3799,7 +3799,7 @@ name|buffer
 operator|=
 name|g_alloca
 argument_list|(
-name|csf
+name|allocation
 operator|.
 name|width
 operator|*
