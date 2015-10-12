@@ -1482,7 +1482,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a214b880103
+DECL|enum|__anon2b7c63cf0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1496,7 +1496,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a214b880203
+DECL|enum|__anon2b7c63cf0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -12994,7 +12994,7 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-comment|/*  disconnect from the old 's signals  */
+comment|/*  disconnect from the old tool preset's signals  */
 if|if
 condition|(
 name|context
