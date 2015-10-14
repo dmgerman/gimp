@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tool-presets-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -237,6 +243,35 @@ name|data_show_in_file_manager_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_TOOL_PRESET_SHOW_IN_FILE_MANAGER
+block|}
+block|,
+block|{
+literal|"tool-presets-restore"
+block|,
+literal|"document-revert"
+block|,
+name|NC_
+argument_list|(
+literal|"tool-presets-action"
+argument_list|,
+literal|"_Restore Tool Preset"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"tool-presets-action"
+argument_list|,
+literal|"Restore this tool preset"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|tool_presets_restore_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_TOOL_PRESET_RESTORE
 block|}
 block|,
 block|{
@@ -501,6 +536,13 @@ argument_list|(
 literal|"tool-presets-show-in-file-manager"
 argument_list|,
 name|file
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"tool-presets-restore"
+argument_list|,
+name|tool_preset
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

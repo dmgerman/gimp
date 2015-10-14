@@ -3078,6 +3078,14 @@ value|"gimp-tool-preset-show-in-file-manager"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TOOL_PRESET_RESTORE
+define|#
+directive|define
+name|GIMP_HELP_TOOL_PRESET_RESTORE
+value|"gimp-tool-preset-restore"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TOOL_PRESET_DELETE
 define|#
 directive|define
