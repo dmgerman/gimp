@@ -351,6 +351,8 @@ block|{
 name|gfloat
 name|comp
 init|=
+literal|1.0
+operator|-
 operator|(
 literal|1.0
 operator|-
@@ -392,8 +394,6 @@ index|]
 operator|=
 name|CLAMP
 argument_list|(
-literal|1.0
-operator|-
 name|out
 index|[
 name|b
