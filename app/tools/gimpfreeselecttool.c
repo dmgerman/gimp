@@ -184,7 +184,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a20d5570108
+DECL|struct|__anon2b03c3420108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -4853,13 +4853,18 @@ name|priv
 operator|->
 name|supress_handles
 operator|=
+operator|(
+operator|(
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|gimp_get_extend_selection_mask
+argument_list|()
+operator|)
 condition|?
 name|TRUE
 else|:
 name|FALSE
+operator|)
 expr_stmt|;
 name|gimp_draw_tool_resume
 argument_list|(

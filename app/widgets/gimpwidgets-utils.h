@@ -215,12 +215,12 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|shift_format
+name|extend_selection_format
 parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|control_format
+name|toggle_behavior_format
 parameter_list|,
 specifier|const
 name|gchar

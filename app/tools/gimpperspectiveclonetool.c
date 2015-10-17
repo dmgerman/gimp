@@ -123,7 +123,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d333ba0103
+DECL|enum|__anon29d3ff4c0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -1381,6 +1381,12 @@ name|GIMP_PERSPECTIVE_CLONE_MODE_PAINT
 case|:
 block|{
 name|GdkModifierType
+name|extend_mask
+init|=
+name|gimp_get_extend_selection_mask
+argument_list|()
+decl_stmt|;
+name|GdkModifierType
 name|toggle_mask
 init|=
 name|gimp_get_toggle_behavior_mask
@@ -1407,7 +1413,7 @@ operator|&
 operator|(
 name|toggle_mask
 operator||
-name|GDK_SHIFT_MASK
+name|extend_mask
 operator|)
 operator|)
 operator|==
@@ -2309,6 +2315,12 @@ block|}
 else|else
 block|{
 name|GdkModifierType
+name|extend_mask
+init|=
+name|gimp_get_extend_selection_mask
+argument_list|()
+decl_stmt|;
+name|GdkModifierType
 name|toggle_mask
 init|=
 name|gimp_get_toggle_behavior_mask
@@ -2322,7 +2334,7 @@ operator|&
 operator|(
 name|toggle_mask
 operator||
-name|GDK_SHIFT_MASK
+name|extend_mask
 operator|)
 operator|)
 operator|==

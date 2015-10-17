@@ -1885,7 +1885,8 @@ operator|!
 operator|(
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|gimp_get_extend_selection_mask
+argument_list|()
 operator|)
 condition|)
 name|find_max_gradient
@@ -3212,7 +3213,8 @@ operator|!
 operator|(
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|gimp_get_extend_selection_mask
+argument_list|()
 operator|)
 condition|)
 name|find_max_gradient
@@ -4010,6 +4012,12 @@ literal|1
 condition|)
 block|{
 name|GdkModifierType
+name|snap_mask
+init|=
+name|gimp_get_extend_selection_mask
+argument_list|()
+decl_stmt|;
+name|GdkModifierType
 name|remove_mask
 init|=
 name|gimp_get_modify_selection_mask
@@ -4055,7 +4063,7 @@ literal|"Click-Drag to move this point"
 argument_list|)
 argument_list|,
 operator|(
-name|GDK_SHIFT_MASK
+name|snap_mask
 operator||
 name|remove_mask
 operator|)
@@ -4327,6 +4335,12 @@ condition|(
 name|proximity
 condition|)
 block|{
+name|GdkModifierType
+name|snap_mask
+init|=
+name|gimp_get_extend_selection_mask
+argument_list|()
+decl_stmt|;
 name|gchar
 modifier|*
 name|status
@@ -4341,7 +4355,7 @@ literal|"Click or Click-Drag to add a"
 literal|" point"
 argument_list|)
 argument_list|,
-name|GDK_SHIFT_MASK
+name|snap_mask
 operator|&
 operator|~
 name|state

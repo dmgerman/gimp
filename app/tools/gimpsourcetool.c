@@ -723,6 +723,12 @@ name|core
 argument_list|)
 decl_stmt|;
 name|GdkModifierType
+name|extend_mask
+init|=
+name|gimp_get_extend_selection_mask
+argument_list|()
+decl_stmt|;
+name|GdkModifierType
 name|toggle_mask
 init|=
 name|gimp_get_toggle_behavior_mask
@@ -744,7 +750,7 @@ operator|&
 operator|(
 name|toggle_mask
 operator||
-name|GDK_SHIFT_MASK
+name|extend_mask
 operator|)
 operator|)
 operator|==
@@ -1142,6 +1148,12 @@ argument_list|)
 condition|)
 block|{
 name|GdkModifierType
+name|extend_mask
+init|=
+name|gimp_get_extend_selection_mask
+argument_list|()
+decl_stmt|;
+name|GdkModifierType
 name|toggle_mask
 init|=
 name|gimp_get_toggle_behavior_mask
@@ -1155,7 +1167,7 @@ operator|&
 operator|(
 name|toggle_mask
 operator||
-name|GDK_SHIFT_MASK
+name|extend_mask
 operator|)
 operator|)
 operator|==

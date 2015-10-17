@@ -3703,10 +3703,12 @@ name|state
 operator|&
 name|GDK_MOD1_MASK
 condition|)
+block|{
 name|translate_type
 operator|=
 name|GIMP_TRANSFORM_TYPE_SELECTION
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -3717,15 +3719,19 @@ operator|&
 name|gimp_get_toggle_behavior_mask
 argument_list|()
 condition|)
+block|{
 name|translate_type
 operator|=
 name|GIMP_TRANSFORM_TYPE_PATH
 expr_stmt|;
+block|}
 else|else
+block|{
 name|translate_type
 operator|=
 name|GIMP_TRANSFORM_TYPE_LAYER
 expr_stmt|;
+block|}
 return|return
 name|gimp_edit_selection_tool_translate
 argument_list|(
@@ -3813,6 +3819,12 @@ name|undo_desc
 init|=
 name|NULL
 decl_stmt|;
+name|GdkModifierType
+name|extend_mask
+init|=
+name|gimp_get_extend_selection_mask
+argument_list|()
+decl_stmt|;
 name|gint
 name|velocity
 decl_stmt|;
@@ -3872,7 +3884,7 @@ argument_list|,
 name|velocity
 argument_list|)
 expr_stmt|;
-comment|/*  check the event queue for key events with the same modifier mask    *  as the current event, allowing only GDK_SHIFT_MASK to vary between    *  them.    */
+comment|/*  check the event queue for key events with the same modifier mask    *  as the current event, allowing only extend_mask to vary between    *  them.    */
 name|inc_x
 operator|=
 name|process_event_queue_keys
@@ -3885,7 +3897,7 @@ name|kevent
 operator|->
 name|state
 operator||
-name|GDK_SHIFT_MASK
+name|extend_mask
 argument_list|,
 operator|-
 literal|1
@@ -3899,7 +3911,7 @@ operator|->
 name|state
 operator|&
 operator|~
-name|GDK_SHIFT_MASK
+name|extend_mask
 argument_list|,
 operator|-
 literal|1
@@ -3910,7 +3922,7 @@ name|kevent
 operator|->
 name|state
 operator||
-name|GDK_SHIFT_MASK
+name|extend_mask
 argument_list|,
 literal|1
 operator|*
@@ -3923,7 +3935,7 @@ operator|->
 name|state
 operator|&
 operator|~
-name|GDK_SHIFT_MASK
+name|extend_mask
 argument_list|,
 literal|1
 argument_list|,
@@ -3942,7 +3954,7 @@ name|kevent
 operator|->
 name|state
 operator||
-name|GDK_SHIFT_MASK
+name|extend_mask
 argument_list|,
 operator|-
 literal|1
@@ -3956,7 +3968,7 @@ operator|->
 name|state
 operator|&
 operator|~
-name|GDK_SHIFT_MASK
+name|extend_mask
 argument_list|,
 operator|-
 literal|1
@@ -3967,7 +3979,7 @@ name|kevent
 operator|->
 name|state
 operator||
-name|GDK_SHIFT_MASK
+name|extend_mask
 argument_list|,
 literal|1
 operator|*
@@ -3980,7 +3992,7 @@ operator|->
 name|state
 operator|&
 operator|~
-name|GDK_SHIFT_MASK
+name|extend_mask
 argument_list|,
 literal|1
 argument_list|,

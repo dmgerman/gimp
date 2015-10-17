@@ -2407,7 +2407,8 @@ operator|!
 operator|(
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|gimp_get_extend_selection_mask
+argument_list|()
 operator|)
 condition|)
 block|{
@@ -2431,7 +2432,8 @@ if|if
 condition|(
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|gimp_get_extend_selection_mask
+argument_list|()
 condition|)
 block|{
 comment|/* control point is selected and<SHIFT> is pressed -                * remove control point from selected points                */
@@ -2778,7 +2780,8 @@ operator|!
 operator|(
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|gimp_get_extend_selection_mask
+argument_list|()
 operator|)
 condition|)
 block|{

@@ -707,7 +707,8 @@ if|if
 condition|(
 name|key
 operator|==
-name|GDK_SHIFT_MASK
+name|gimp_get_extend_selection_mask
+argument_list|()
 condition|)
 block|{
 name|g_object_set
@@ -822,14 +823,6 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|GdkModifierType
-name|toggle_mask
-decl_stmt|;
-name|toggle_mask
-operator|=
-name|gimp_get_toggle_behavior_mask
-argument_list|()
-expr_stmt|;
 name|GIMP_COLOR_TOOL
 argument_list|(
 name|tool
@@ -860,9 +853,12 @@ init|=
 name|NULL
 decl_stmt|;
 name|GdkModifierType
-name|shift_mod
+name|extend_mask
 init|=
 literal|0
+decl_stmt|;
+name|GdkModifierType
+name|toggle_mask
 decl_stmt|;
 if|if
 condition|(
@@ -871,9 +867,15 @@ name|picker_tool
 operator|->
 name|gui
 condition|)
-name|shift_mod
+name|extend_mask
 operator|=
-name|GDK_SHIFT_MASK
+name|gimp_get_extend_selection_mask
+argument_list|()
+expr_stmt|;
+name|toggle_mask
+operator|=
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 expr_stmt|;
 switch|switch
 condition|(
@@ -895,7 +897,7 @@ literal|"Click in any image to view"
 literal|" its color"
 argument_list|)
 argument_list|,
-name|shift_mod
+name|extend_mask
 operator|&
 operator|~
 name|state
@@ -922,7 +924,7 @@ literal|" the foreground color"
 argument_list|)
 argument_list|,
 operator|(
-name|shift_mod
+name|extend_mask
 operator||
 name|toggle_mask
 operator|)
@@ -952,7 +954,7 @@ literal|" the background color"
 argument_list|)
 argument_list|,
 operator|(
-name|shift_mod
+name|extend_mask
 operator||
 name|toggle_mask
 operator|)
@@ -981,7 +983,7 @@ literal|"Click in any image to add"
 literal|" the color to the palette"
 argument_list|)
 argument_list|,
-name|shift_mod
+name|extend_mask
 operator|&
 operator|~
 name|state

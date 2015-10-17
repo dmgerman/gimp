@@ -2616,7 +2616,7 @@ operator|&&
 operator|(
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|GIMP_PAINT_TOOL_LINE_MASK
 operator|)
 condition|)
 block|{
@@ -2882,7 +2882,7 @@ name|display
 condition|)
 name|modifiers
 operator||=
-name|GDK_SHIFT_MASK
+name|GIMP_PAINT_TOOL_LINE_MASK
 expr_stmt|;
 name|status
 operator|=

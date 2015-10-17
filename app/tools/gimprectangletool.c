@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a0799a0103
+DECL|enum|__anon2c9970ae0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -243,7 +243,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a0799a0203
+DECL|enum|__anon2c9970ae0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -286,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a0799a0303
+DECL|enum|__anon2c9970ae0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -4207,7 +4207,8 @@ if|if
 condition|(
 name|key
 operator|==
-name|GDK_SHIFT_MASK
+name|gimp_get_extend_selection_mask
+argument_list|()
 condition|)
 block|{
 comment|/* Here we want to handle manualy when to update the rectangle, so we        * don't want gimp_rectangle_tool_options_notify to do anything.        */
@@ -4816,7 +4817,8 @@ name|kevent
 operator|->
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|gimp_get_extend_selection_mask
+argument_list|()
 condition|)
 block|{
 name|dx

@@ -192,7 +192,7 @@ DECL|macro|TOGGLE_MASK
 define|#
 directive|define
 name|TOGGLE_MASK
-value|GDK_SHIFT_MASK
+value|gimp_get_extend_selection_mask ()
 end_define
 
 begin_define
@@ -3194,7 +3194,8 @@ name|kevent
 operator|->
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|gimp_get_extend_selection_mask
+argument_list|()
 condition|)
 name|pixels
 operator|=
@@ -4506,6 +4507,18 @@ condition|(
 name|proximity
 condition|)
 block|{
+name|GdkModifierType
+name|extend_mask
+init|=
+name|gimp_get_extend_selection_mask
+argument_list|()
+decl_stmt|;
+name|GdkModifierType
+name|toggle_mask
+init|=
+name|gimp_get_toggle_behavior_mask
+argument_list|()
+decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
@@ -4571,7 +4584,7 @@ literal|"Click or Click-Drag to create "
 literal|"a new anchor"
 argument_list|)
 argument_list|,
-name|GDK_SHIFT_MASK
+name|extend_mask
 operator|&
 operator|~
 name|state
@@ -4600,12 +4613,6 @@ operator|!=
 name|GIMP_VECTOR_MODE_EDIT
 condition|)
 block|{
-name|GdkModifierType
-name|toggle_mask
-init|=
-name|gimp_get_toggle_behavior_mask
-argument_list|()
-decl_stmt|;
 name|status
 operator|=
 name|gimp_suggest_modifiers
@@ -4675,7 +4682,7 @@ literal|"Click-Drag to move the "
 literal|"handle around"
 argument_list|)
 argument_list|,
-name|GDK_SHIFT_MASK
+name|extend_mask
 operator|&
 operator|~
 name|state
@@ -4700,7 +4707,7 @@ literal|"Click-Drag to move the "
 literal|"handles around symmetrically"
 argument_list|)
 argument_list|,
-name|GDK_SHIFT_MASK
+name|extend_mask
 operator|&
 operator|~
 name|state
@@ -4740,7 +4747,7 @@ literal|"Click-Drag to move the "
 literal|"anchors around"
 argument_list|)
 argument_list|,
-name|GDK_SHIFT_MASK
+name|extend_mask
 operator|&
 operator|~
 name|state
@@ -4763,7 +4770,7 @@ literal|"Click-Drag to change the "
 literal|"shape of the curve"
 argument_list|)
 argument_list|,
-name|GDK_SHIFT_MASK
+name|extend_mask
 operator|&
 operator|~
 name|state
@@ -4796,7 +4803,7 @@ literal|"Click-Drag to move the "
 literal|"component around"
 argument_list|)
 argument_list|,
-name|GDK_SHIFT_MASK
+name|extend_mask
 operator|&
 operator|~
 name|state
@@ -4837,7 +4844,7 @@ literal|"Click-Drag to insert an anchor "
 literal|"on the path"
 argument_list|)
 argument_list|,
-name|GDK_SHIFT_MASK
+name|extend_mask
 operator|&
 operator|~
 name|state

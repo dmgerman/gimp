@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -165,7 +171,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae621ab0103
+DECL|enum|__anon275681890103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -2194,7 +2200,8 @@ if|if
 condition|(
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|gimp_get_extend_selection_mask
+argument_list|()
 condition|)
 block|{
 comment|/* Multiple selection */
@@ -2332,7 +2339,8 @@ if|if
 condition|(
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|gimp_get_extend_selection_mask
+argument_list|()
 condition|)
 block|{
 comment|/* Multiple selection */
@@ -2658,7 +2666,8 @@ if|if
 condition|(
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|gimp_get_extend_selection_mask
+argument_list|()
 condition|)
 block|{
 name|gimp_cage_config_select_add_area
@@ -2776,7 +2785,8 @@ if|if
 condition|(
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|gimp_get_extend_selection_mask
+argument_list|()
 condition|)
 block|{
 name|gimp_cage_config_select_add_area

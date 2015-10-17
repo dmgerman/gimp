@@ -876,6 +876,12 @@ literal|1
 condition|)
 block|{
 name|GdkModifierType
+name|extend_mask
+init|=
+name|gimp_get_extend_selection_mask
+argument_list|()
+decl_stmt|;
+name|GdkModifierType
 name|toggle_mask
 init|=
 name|gimp_get_toggle_behavior_mask
@@ -1073,7 +1079,7 @@ if|if
 condition|(
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|extend_mask
 condition|)
 name|measure
 operator|->
@@ -2356,6 +2362,12 @@ argument_list|)
 condition|)
 block|{
 name|GdkModifierType
+name|extend_mask
+init|=
+name|gimp_get_extend_selection_mask
+argument_list|()
+decl_stmt|;
+name|GdkModifierType
 name|toggle_mask
 init|=
 name|gimp_get_toggle_behavior_mask
@@ -2507,7 +2519,7 @@ condition|(
 operator|(
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|extend_mask
 operator|)
 operator|&&
 operator|!
@@ -2575,7 +2587,7 @@ operator|)
 condition|)
 name|state
 operator||=
-name|GDK_SHIFT_MASK
+name|extend_mask
 expr_stmt|;
 name|status
 operator|=
@@ -2588,7 +2600,7 @@ literal|"point"
 argument_list|)
 argument_list|,
 operator|(
-name|GDK_SHIFT_MASK
+name|extend_mask
 operator||
 name|toggle_mask
 operator||
@@ -2866,6 +2878,12 @@ literal|1
 condition|)
 block|{
 name|GdkModifierType
+name|extend_mask
+init|=
+name|gimp_get_extend_selection_mask
+argument_list|()
+decl_stmt|;
+name|GdkModifierType
 name|toggle_mask
 init|=
 name|gimp_get_toggle_behavior_mask
@@ -2913,7 +2931,7 @@ condition|(
 operator|(
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|extend_mask
 operator|)
 operator|&&
 operator|!

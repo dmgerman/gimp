@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fdff0d0103
+DECL|enum|__anon28ebf2ea0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -767,13 +767,17 @@ modifier|*
 name|str
 decl_stmt|;
 name|GdkModifierType
-name|toggle_mask
+name|extend_mask
+init|=
+name|gimp_get_extend_selection_mask
+argument_list|()
 decl_stmt|;
+name|GdkModifierType
 name|toggle_mask
-operator|=
+init|=
 name|gimp_get_toggle_behavior_mask
 argument_list|()
-expr_stmt|;
+decl_stmt|;
 comment|/*  fill type  */
 name|str
 operator|=
@@ -877,7 +881,7 @@ argument_list|)
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
-name|GDK_SHIFT_MASK
+name|extend_mask
 argument_list|)
 argument_list|)
 expr_stmt|;

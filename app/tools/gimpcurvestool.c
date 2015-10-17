@@ -1072,7 +1072,8 @@ if|if
 condition|(
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|gimp_get_extend_selection_mask
+argument_list|()
 condition|)
 block|{
 name|GimpCurve
@@ -1359,10 +1360,23 @@ block|{
 name|GimpColorPickMode
 name|mode
 decl_stmt|;
-specifier|const
 name|gchar
 modifier|*
 name|status
+init|=
+name|NULL
+decl_stmt|;
+name|GdkModifierType
+name|extend_mask
+init|=
+name|gimp_get_extend_selection_mask
+argument_list|()
+decl_stmt|;
+name|GdkModifierType
+name|toggle_mask
+init|=
+name|gimp_get_toggle_behavior_mask
+argument_list|()
 decl_stmt|;
 name|GIMP_TOOL_CLASS
 argument_list|(
@@ -1393,7 +1407,7 @@ if|if
 condition|(
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|extend_mask
 condition|)
 block|{
 name|mode
@@ -1402,9 +1416,12 @@ name|GIMP_COLOR_PICK_MODE_PALETTE
 expr_stmt|;
 name|status
 operator|=
+name|g_strdup
+argument_list|(
 name|_
 argument_list|(
 literal|"Click to add a control point"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1413,8 +1430,7 @@ if|if
 condition|(
 name|state
 operator|&
-name|gimp_get_toggle_behavior_mask
-argument_list|()
+name|toggle_mask
 condition|)
 block|{
 name|mode
@@ -1423,9 +1439,12 @@ name|GIMP_COLOR_PICK_MODE_PALETTE
 expr_stmt|;
 name|status
 operator|=
+name|g_strdup
+argument_list|(
 name|_
 argument_list|(
 literal|"Click to add control points to all channels"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1437,9 +1456,33 @@ name|GIMP_COLOR_PICK_MODE_NONE
 expr_stmt|;
 name|status
 operator|=
+name|gimp_suggest_modifiers
+argument_list|(
 name|_
 argument_list|(
-literal|"Click to locate on curve (try Shift, Ctrl)"
+literal|"Click to locate on curve"
+argument_list|)
+argument_list|,
+operator|(
+name|extend_mask
+operator||
+name|toggle_mask
+operator|)
+operator|&
+operator|~
+name|state
+argument_list|,
+name|_
+argument_list|(
+literal|"%s: add control point"
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"%s: add control points to all channels"
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1464,6 +1507,11 @@ name|display
 argument_list|,
 literal|"%s"
 argument_list|,
+name|status
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
 name|status
 argument_list|)
 expr_stmt|;

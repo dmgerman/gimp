@@ -23,6 +23,14 @@ file|"gimpcolortool.h"
 end_include
 
 begin_define
+DECL|macro|GIMP_PAINT_TOOL_LINE_MASK
+define|#
+directive|define
+name|GIMP_PAINT_TOOL_LINE_MASK
+value|(gimp_get_extend_selection_mask ())
+end_define
+
+begin_define
 DECL|macro|GIMP_TYPE_PAINT_TOOL
 define|#
 directive|define

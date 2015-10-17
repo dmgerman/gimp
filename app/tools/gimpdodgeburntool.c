@@ -392,13 +392,16 @@ name|tool
 argument_list|)
 decl_stmt|;
 name|GdkModifierType
-name|toggle_mask
+name|line_mask
+init|=
+name|GIMP_PAINT_TOOL_LINE_MASK
 decl_stmt|;
+name|GdkModifierType
 name|toggle_mask
-operator|=
+init|=
 name|gimp_get_toggle_behavior_mask
 argument_list|()
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 operator|(
@@ -410,7 +413,7 @@ operator|!
 operator|(
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|line_mask
 operator|)
 operator|&&
 comment|/* leave stuff untouched in line draw mode */
@@ -424,7 +427,7 @@ operator|||
 operator|(
 name|key
 operator|==
-name|GDK_SHIFT_MASK
+name|line_mask
 operator|&&
 comment|/* toggle back after keypresses CTRL(hold)->  */
 operator|!

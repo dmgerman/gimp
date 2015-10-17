@@ -1006,7 +1006,8 @@ if|if
 condition|(
 name|key
 operator|==
-name|GDK_SHIFT_MASK
+name|gimp_get_extend_selection_mask
+argument_list|()
 condition|)
 block|{
 name|g_object_set

@@ -2145,13 +2145,13 @@ value|100
 end_define
 
 begin_comment
-comment|/**  * gimp_suggest_modifiers:  * @message: initial text for the message  * @modifiers: bit mask of modifiers that should be suggested  * @shift_format: optional format string for the Shift modifier  * @control_format: optional format string for the Ctrl modifier  * @alt_format: optional format string for the Alt modifier  *  * Utility function to build a message suggesting to use some  * modifiers for performing different actions (only Shift, Ctrl and  * Alt are currently supported).  If some of these modifiers are  * already active, they will not be suggested.  The optional format  * strings #shift_format, #control_format and #alt_format may be used  * to describe what the modifier will do.  They must contain a single  * '%%s' which will be replaced by the name of the modifier.  They  * can also be %NULL if the modifier name should be left alone.  *  * Return value: a newly allocated string containing the message.  **/
+comment|/**  * gimp_suggest_modifiers:  * @message:                 initial text for the message  * @modifiers:               bit mask of modifiers that should be suggested  * @extend_selection_format: optional format string for the  *                           "Extend selection" modifier  * @toggle_behavior_format:  optional format string for the  *                           "Toggle behavior" modifier  * @alt_format:              optional format string for the Alt modifier  *  * Utility function to build a message suggesting to use some  * modifiers for performing different actions (only Shift, Ctrl and  * Alt are currently supported).  If some of these modifiers are  * already active, they will not be suggested.  The optional format  * strings #extend_selection_format, #toggle_behavior_format and  * #alt_format may be used to describe what the modifier will do.  * They must contain a single '%%s' which will be replaced by the name  * of the modifier.  They can also be %NULL if the modifier name  * should be left alone.  *  * Return value: a newly allocated string containing the message.  **/
 end_comment
 
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_suggest_modifiers (const gchar * message,GdkModifierType modifiers,const gchar * shift_format,const gchar * control_format,const gchar * alt_format)
+DECL|function|gimp_suggest_modifiers (const gchar * message,GdkModifierType modifiers,const gchar * extend_selection_format,const gchar * toggle_behavior_format,const gchar * alt_format)
 name|gimp_suggest_modifiers
 parameter_list|(
 specifier|const
@@ -2165,12 +2165,12 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|shift_format
+name|extend_selection_format
 parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|control_format
+name|toggle_behavior_format
 parameter_list|,
 specifier|const
 name|gchar
@@ -2178,6 +2178,18 @@ modifier|*
 name|alt_format
 parameter_list|)
 block|{
+name|GdkModifierType
+name|extend_mask
+init|=
+name|gimp_get_extend_selection_mask
+argument_list|()
+decl_stmt|;
+name|GdkModifierType
+name|toggle_mask
+init|=
+name|gimp_get_toggle_behavior_mask
+argument_list|()
+decl_stmt|;
 name|gchar
 name|msg_buf
 index|[
@@ -2201,15 +2213,15 @@ if|if
 condition|(
 name|modifiers
 operator|&
-name|GDK_SHIFT_MASK
+name|extend_mask
 condition|)
 block|{
 if|if
 condition|(
-name|shift_format
+name|extend_selection_format
 operator|&&
 operator|*
-name|shift_format
+name|extend_selection_format
 condition|)
 block|{
 name|g_snprintf
@@ -2221,11 +2233,11 @@ index|]
 argument_list|,
 name|BUF_SIZE
 argument_list|,
-name|shift_format
+name|extend_selection_format
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
-name|GDK_SHIFT_MASK
+name|extend_mask
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2241,7 +2253,7 @@ index|]
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
-name|GDK_SHIFT_MASK
+name|extend_mask
 argument_list|)
 argument_list|,
 name|BUF_SIZE
@@ -2256,21 +2268,19 @@ name|num_msgs
 operator|++
 expr_stmt|;
 block|}
-comment|/* FIXME: using toggle_behavior_mask is such a hack. The fact that    * it happens to do the right thing on all platforms doesn't make it    * any better.    */
 if|if
 condition|(
 name|modifiers
 operator|&
-name|gimp_get_toggle_behavior_mask
-argument_list|()
+name|toggle_mask
 condition|)
 block|{
 if|if
 condition|(
-name|control_format
+name|toggle_behavior_format
 operator|&&
 operator|*
-name|control_format
+name|toggle_behavior_format
 condition|)
 block|{
 name|g_snprintf
@@ -2282,12 +2292,11 @@ index|]
 argument_list|,
 name|BUF_SIZE
 argument_list|,
-name|control_format
+name|toggle_behavior_format
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
-name|gimp_get_toggle_behavior_mask
-argument_list|()
+name|toggle_mask
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2303,8 +2312,7 @@ index|]
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
-name|gimp_get_toggle_behavior_mask
-argument_list|()
+name|toggle_mask
 argument_list|)
 argument_list|,
 name|BUF_SIZE
