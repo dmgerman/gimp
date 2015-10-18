@@ -339,6 +339,10 @@ name|intent
 parameter_list|,
 name|gboolean
 name|bpc
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -377,6 +381,10 @@ name|dest_format
 parameter_list|,
 name|GimpColorTransform
 name|transform
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl

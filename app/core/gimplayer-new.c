@@ -804,6 +804,8 @@ argument_list|,
 name|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
 argument_list|,
 name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

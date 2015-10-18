@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2761ce290103
+DECL|enum|__anon2c4c32b00103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -4249,6 +4249,8 @@ argument_list|,
 name|renderer
 operator|->
 name|profile_transform
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -4453,6 +4455,8 @@ argument_list|,
 name|renderer
 operator|->
 name|profile_transform
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

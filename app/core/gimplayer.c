@@ -193,7 +193,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4b9e960103
+DECL|enum|__anon2c01b3350103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -224,7 +224,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4b9e960203
+DECL|enum|__anon2c01b3350203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4826,6 +4826,8 @@ argument_list|,
 name|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
 argument_list|,
 name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
