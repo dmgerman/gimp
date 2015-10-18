@@ -1209,7 +1209,7 @@ name|gdouble
 name|axis
 parameter_list|,
 name|gboolean
-name|flip_result
+name|clip_result
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1236,7 +1236,7 @@ name|gdouble
 name|center_y
 parameter_list|,
 name|gboolean
-name|flip_result
+name|clip_result
 parameter_list|)
 function_decl|;
 end_function_decl
