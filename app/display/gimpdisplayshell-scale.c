@@ -158,10 +158,10 @@ parameter_list|,
 name|gdouble
 name|scale
 parameter_list|,
-name|gint
+name|gdouble
 name|viewport_x
 parameter_list|,
-name|gint
+name|gdouble
 name|viewport_y
 parameter_list|)
 function_decl|;
@@ -254,11 +254,11 @@ parameter_list|,
 name|gdouble
 name|current_scale
 parameter_list|,
-name|gint
+name|gdouble
 modifier|*
 name|x
 parameter_list|,
-name|gint
+name|gdouble
 modifier|*
 name|y
 parameter_list|,
@@ -1266,11 +1266,6 @@ name|GimpZoomFocus
 name|zoom_focus
 parameter_list|)
 block|{
-name|gint
-name|x
-decl_stmt|,
-name|y
-decl_stmt|;
 name|gdouble
 name|current_scale
 decl_stmt|;
@@ -1403,6 +1398,11 @@ name|image_center_almost_centered_horiz
 decl_stmt|;
 name|gboolean
 name|image_center_almost_centered_vert
+decl_stmt|;
+name|gdouble
+name|x
+decl_stmt|,
+name|y
 decl_stmt|;
 name|gint
 name|image_center_x
@@ -2798,7 +2798,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_scale_to (GimpDisplayShell * shell,gdouble scale,gint viewport_x,gint viewport_y)
+DECL|function|gimp_display_shell_scale_to (GimpDisplayShell * shell,gdouble scale,gdouble viewport_x,gdouble viewport_y)
 name|gimp_display_shell_scale_to
 parameter_list|(
 name|GimpDisplayShell
@@ -2808,10 +2808,10 @@ parameter_list|,
 name|gdouble
 name|scale
 parameter_list|,
-name|gint
+name|gdouble
 name|viewport_x
 parameter_list|,
-name|gint
+name|gdouble
 name|viewport_y
 parameter_list|)
 block|{
@@ -2825,7 +2825,7 @@ name|image_focus_x
 decl_stmt|,
 name|image_focus_y
 decl_stmt|;
-name|gint
+name|gdouble
 name|target_offset_x
 decl_stmt|,
 name|target_offset_y
@@ -3292,7 +3292,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_scale_get_zoom_focus (GimpDisplayShell * shell,gdouble new_scale,gdouble current_scale,gint * x,gint * y,GimpZoomFocus zoom_focus)
+DECL|function|gimp_display_shell_scale_get_zoom_focus (GimpDisplayShell * shell,gdouble new_scale,gdouble current_scale,gdouble * x,gdouble * y,GimpZoomFocus zoom_focus)
 name|gimp_display_shell_scale_get_zoom_focus
 parameter_list|(
 name|GimpDisplayShell
@@ -3305,11 +3305,11 @@ parameter_list|,
 name|gdouble
 name|current_scale
 parameter_list|,
-name|gint
+name|gdouble
 modifier|*
 name|x
 parameter_list|,
-name|gint
+name|gdouble
 modifier|*
 name|y
 parameter_list|,
@@ -3360,7 +3360,7 @@ decl_stmt|;
 name|gboolean
 name|cursor_within_canvas
 decl_stmt|;
-name|gint
+name|gdouble
 name|canvas_pointer_x
 decl_stmt|,
 name|canvas_pointer_y
@@ -3416,6 +3416,11 @@ operator|==
 name|NULL
 condition|)
 block|{
+name|gint
+name|px
+decl_stmt|,
+name|py
+decl_stmt|;
 name|gtk_widget_get_pointer
 argument_list|(
 name|shell
@@ -3423,11 +3428,19 @@ operator|->
 name|canvas
 argument_list|,
 operator|&
-name|canvas_pointer_x
+name|px
 argument_list|,
 operator|&
-name|canvas_pointer_y
+name|py
 argument_list|)
+expr_stmt|;
+name|canvas_pointer_x
+operator|=
+name|px
+expr_stmt|;
+name|canvas_pointer_y
+operator|=
+name|py
 expr_stmt|;
 block|}
 else|else
