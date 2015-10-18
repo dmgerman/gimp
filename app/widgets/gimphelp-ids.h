@@ -502,6 +502,14 @@ value|"gimp-view-zoom-fill"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_VIEW_ZOOM_SELECTION
+define|#
+directive|define
+name|GIMP_HELP_VIEW_ZOOM_SELECTION
+value|"gimp-view-zoom-selection"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_VIEW_ZOOM_OTHER
 define|#
 directive|define
