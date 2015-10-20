@@ -432,11 +432,9 @@ argument_list|)
 expr_stmt|;
 name|old_profile
 operator|=
-name|gimp_image_get_color_profile
-argument_list|(
-name|image
-argument_list|)
+name|NULL
 expr_stmt|;
+comment|/* FIXME bug 751553 gimp_image_get_color_profile (image); */
 name|old_format
 operator|=
 name|gimp_image_get_layer_format
