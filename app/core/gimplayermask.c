@@ -217,6 +217,10 @@ name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -652,7 +656,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_mask_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean convert_profile,gboolean push_undo)
+DECL|function|gimp_layer_mask_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean convert_profile,gboolean push_undo,GimpProgress * progress)
 name|gimp_layer_mask_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -685,6 +689,10 @@ name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|new_format
@@ -718,6 +726,8 @@ argument_list|,
 name|convert_profile
 argument_list|,
 name|push_undo
+argument_list|,
+name|progress
 argument_list|)
 expr_stmt|;
 block|}

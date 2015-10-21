@@ -269,6 +269,10 @@ name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 DECL|member|apply_buffer
@@ -635,6 +639,10 @@ name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl

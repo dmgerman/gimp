@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28edc6710103
+DECL|enum|__anon27b8bdf90103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -623,6 +623,10 @@ name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2695,6 +2699,8 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -4142,7 +4148,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean convert_profile,gboolean push_undo)
+DECL|function|gimp_channel_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean convert_profile,gboolean push_undo,GimpProgress * progress)
 name|gimp_channel_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -4175,6 +4181,10 @@ name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|GeglBuffer

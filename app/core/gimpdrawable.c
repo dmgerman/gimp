@@ -207,7 +207,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29343b5c0103
+DECL|enum|__anon2be140e40103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -223,7 +223,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29343b5c0203
+DECL|enum|__anon2be140e40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -663,6 +663,10 @@ name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3329,7 +3333,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_real_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean convert_type,gboolean push_undo)
+DECL|function|gimp_drawable_real_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean convert_type,gboolean push_undo,GimpProgress * progress)
 name|gimp_drawable_real_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -3362,6 +3366,10 @@ name|convert_type
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|GeglBuffer
@@ -5345,7 +5353,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean convert_profile,gboolean push_undo)
+DECL|function|gimp_drawable_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean convert_profile,gboolean push_undo,GimpProgress * progress)
 name|gimp_drawable_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -5373,6 +5381,10 @@ name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 specifier|const
@@ -5413,6 +5425,18 @@ name|drawable
 argument_list|)
 operator|||
 name|convert_profile
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|progress
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_PROGRESS
+argument_list|(
+name|progress
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -5470,6 +5494,19 @@ argument_list|,
 name|convert_profile
 argument_list|,
 name|push_undo
+argument_list|,
+name|progress
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|progress
+condition|)
+name|gimp_progress_set_value
+argument_list|(
+name|progress
+argument_list|,
+literal|1.0
 argument_list|)
 expr_stmt|;
 block|}

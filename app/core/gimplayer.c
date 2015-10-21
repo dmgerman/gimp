@@ -205,7 +205,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af93ae90103
+DECL|enum|__anon2b4c37240103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -236,7 +236,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af93ae90203
+DECL|enum|__anon2b4c37240203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -816,6 +816,10 @@ name|convert_type
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3592,6 +3596,8 @@ argument_list|,
 name|convert_profile
 argument_list|,
 name|FALSE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -4603,7 +4609,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean convert_profile,gboolean push_undo)
+DECL|function|gimp_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean convert_profile,gboolean push_undo,GimpProgress * progress)
 name|gimp_layer_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -4636,6 +4642,10 @@ name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|GimpLayer
@@ -4955,7 +4965,7 @@ name|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
 argument_list|,
 name|TRUE
 argument_list|,
-name|NULL
+name|progress
 argument_list|)
 expr_stmt|;
 block|}
@@ -5046,6 +5056,8 @@ argument_list|,
 name|convert_profile
 argument_list|,
 name|push_undo
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
