@@ -2222,7 +2222,7 @@ index|]
 operator|=
 name|blue
 operator|->
-name|X
+name|Y
 expr_stmt|;
 name|matrix
 operator|->
@@ -2236,7 +2236,7 @@ index|]
 operator|=
 name|blue
 operator|->
-name|X
+name|Z
 expr_stmt|;
 block|}
 return|return
