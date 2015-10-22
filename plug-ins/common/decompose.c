@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3bb9880108
+DECL|struct|__anon27854f1f0108
 block|{
 comment|/* the babl_component names of the channels */
 DECL|member|babl_name
@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3bb9880208
+DECL|struct|__anon27854f1f0208
 block|{
 DECL|member|type
 specifier|const
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3bb9880308
+DECL|struct|__anon27854f1f0308
 block|{
 DECL|member|extract_type
 name|gchar
@@ -543,7 +543,7 @@ DECL|macro|CPN_HSL_L
 define|#
 directive|define
 name|CPN_HSL_L
-value|{"lightness", N_("value"), 0.0, 1.0, TRUE}
+value|{"lightness", N_("lightness"), 0.0, 1.0, TRUE}
 end_define
 
 begin_define
