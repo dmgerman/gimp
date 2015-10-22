@@ -308,7 +308,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2800e38d0108
+DECL|struct|__anon289e78800108
 block|{
 DECL|member|crop
 name|gboolean
@@ -839,7 +839,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2800e38d0208
+DECL|struct|__anon289e78800208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -3470,6 +3470,7 @@ name|type
 operator|!=
 name|XCURSOR_IMAGE_TYPE
 condition|)
+block|{
 comment|/* not a image */
 comment|/* skip rest of this content */
 name|fseek
@@ -3481,6 +3482,7 @@ argument_list|,
 name|SEEK_CUR
 argument_list|)
 expr_stmt|;
+block|}
 else|else
 block|{
 comment|/* this content is image */
@@ -4214,15 +4216,6 @@ modifier|*
 name|hotspotRange
 parameter_list|)
 block|{
-name|gint
-name|x1
-decl_stmt|,
-name|x2
-decl_stmt|,
-name|y1
-decl_stmt|,
-name|y2
-decl_stmt|;
 name|GtkWidget
 modifier|*
 name|dialog
@@ -4265,6 +4258,15 @@ init|=
 block|{
 literal|0
 block|,}
+decl_stmt|;
+name|gint
+name|x1
+decl_stmt|,
+name|x2
+decl_stmt|,
+name|y1
+decl_stmt|,
+name|y2
 decl_stmt|;
 name|gboolean
 name|run
@@ -7739,35 +7741,41 @@ return|;
 comment|/* resume separate alpha data. */
 name|red
 operator|=
-name|CLAMP0255
+name|MIN
 argument_list|(
 name|red
 operator|*
 literal|255
 operator|/
 name|alpha
+argument_list|,
+literal|255
 argument_list|)
 expr_stmt|;
 name|blue
 operator|=
-name|CLAMP0255
+name|MIN
 argument_list|(
 name|blue
 operator|*
 literal|255
 operator|/
 name|alpha
+argument_list|,
+literal|255
 argument_list|)
 expr_stmt|;
 name|green
 operator|=
-name|CLAMP0255
+name|MIN
 argument_list|(
 name|green
 operator|*
 literal|255
 operator|/
 name|alpha
+argument_list|,
+literal|255
 argument_list|)
 expr_stmt|;
 name|retval
@@ -9133,7 +9141,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2800e38d0308
+DECL|struct|__anon289e78800308
 block|{
 DECL|member|size
 name|guint32
