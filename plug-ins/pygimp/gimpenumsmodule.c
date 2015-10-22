@@ -553,6 +553,15 @@ name|PyModule_AddIntConstant
 argument_list|(
 name|m
 argument_list|,
+literal|"DESATURATE_LUMINOSITY"
+argument_list|,
+name|GIMP_DESATURATE_LUMA
+argument_list|)
+expr_stmt|;
+name|PyModule_AddIntConstant
+argument_list|(
+name|m
+argument_list|,
 literal|"EXPORT_CAN_HANDLE_RGB"
 argument_list|,
 name|GIMP_EXPORT_CAN_HANDLE_RGB

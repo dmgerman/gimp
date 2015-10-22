@@ -289,7 +289,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d4b1f60108
+DECL|struct|__anon2acc3d630108
 block|{
 DECL|member|name
 specifier|const
@@ -716,6 +716,12 @@ block|{
 literal|"HIGHLIGHTS"
 block|,
 name|GIMP_TRANSFER_HIGHLIGHTS
+block|}
+block|,
+block|{
+literal|"DESATURATE-LUMINOSITY"
+block|,
+name|GIMP_DESATURATE_LUMA
 block|}
 block|,
 block|{
