@@ -508,7 +508,12 @@ DECL|member|icon_size
 name|gint
 name|icon_size
 decl_stmt|;
-comment|/*  size of the icon pixmap            */
+comment|/*  size of the icon pixbuf            */
+DECL|member|icon_size_small
+name|gint
+name|icon_size_small
+decl_stmt|;
+comment|/*  size of the icon's wilber pixbuf   */
 DECL|member|icon_idle_id
 name|guint
 name|icon_idle_id
