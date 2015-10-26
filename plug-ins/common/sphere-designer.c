@@ -222,7 +222,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8406ba0103
+DECL|enum|__anon2b93f0cf0103
 block|{
 DECL|enumerator|TRIANGLE
 name|TRIANGLE
@@ -247,7 +247,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8406ba0203
+DECL|enum|__anon2b93f0cf0203
 block|{
 DECL|enumerator|SOLID
 name|SOLID
@@ -296,7 +296,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8406ba0303
+DECL|enum|__anon2b93f0cf0303
 block|{
 DECL|enumerator|PERSPECTIVE
 name|PERSPECTIVE
@@ -312,7 +312,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8406ba0403
+DECL|enum|__anon2b93f0cf0403
 block|{
 DECL|enumerator|FOG
 name|FOG
@@ -322,7 +322,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8406ba0503
+DECL|enum|__anon2b93f0cf0503
 block|{
 DECL|enumerator|TYPE
 name|TYPE
@@ -375,7 +375,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8406ba0608
+DECL|struct|__anon2b93f0cf0608
 block|{
 DECL|member|xsize
 DECL|member|ysize
@@ -398,7 +398,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8406ba0708
+DECL|struct|__anon2b93f0cf0708
 block|{
 DECL|member|numcol
 name|gshort
@@ -427,7 +427,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8406ba0808
+DECL|struct|__anon2b93f0cf0808
 block|{
 DECL|member|majtype
 name|gint
@@ -522,7 +522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8406ba0908
+DECL|struct|__anon2b93f0cf0908
 block|{
 DECL|member|type
 name|gshort
@@ -549,7 +549,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8406ba0a08
+DECL|struct|__anon2b93f0cf0a08
 block|{
 DECL|member|type
 name|gshort
@@ -590,7 +590,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8406ba0b08
+DECL|struct|__anon2b93f0cf0b08
 block|{
 DECL|member|com
 name|common
@@ -615,7 +615,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8406ba0c08
+DECL|struct|__anon2b93f0cf0c08
 block|{
 DECL|member|com
 name|common
@@ -641,7 +641,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8406ba0d08
+DECL|struct|__anon2b93f0cf0d08
 block|{
 DECL|member|com
 name|common
@@ -664,7 +664,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8406ba0e08
+DECL|struct|__anon2b93f0cf0e08
 block|{
 DECL|member|com
 name|common
@@ -689,7 +689,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8406ba0f08
+DECL|struct|__anon2b93f0cf0f08
 block|{
 DECL|member|com
 name|common
@@ -712,7 +712,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8406ba1008
+DECL|struct|__anon2b93f0cf1008
 block|{
 DECL|member|com
 name|common
@@ -735,7 +735,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8406ba1108
+DECL|struct|__anon2b93f0cf1108
 block|{
 DECL|member|v1
 DECL|member|v2
@@ -761,7 +761,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2c8406ba120a
+DECL|union|__anon2b93f0cf120a
 block|{
 DECL|member|com
 name|common
@@ -17264,18 +17264,14 @@ name|GimpVector4
 name|rcol
 decl_stmt|;
 name|gint
-name|tx
+name|width
 decl_stmt|,
-name|ty
+name|height
 decl_stmt|;
 name|gint
 name|x1
 decl_stmt|,
 name|y1
-decl_stmt|,
-name|x2
-decl_stmt|,
-name|y2
 decl_stmt|;
 name|guchar
 modifier|*
@@ -17316,6 +17312,29 @@ name|z
 operator|=
 literal|0.0
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp_drawable_mask_intersect
+argument_list|(
+name|drawable
+operator|->
+name|drawable_id
+argument_list|,
+operator|&
+name|x1
+argument_list|,
+operator|&
+name|y1
+argument_list|,
+operator|&
+name|width
+argument_list|,
+operator|&
+name|height
+argument_list|)
+condition|)
+return|return;
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -17376,25 +17395,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_mask_bounds
-argument_list|(
-name|drawable
-operator|->
-name|drawable_id
-argument_list|,
-operator|&
-name|x1
-argument_list|,
-operator|&
-name|y1
-argument_list|,
-operator|&
-name|x2
-argument_list|,
-operator|&
-name|y2
-argument_list|)
-expr_stmt|;
 name|bpp
 operator|=
 name|gimp_drawable_bpp
@@ -17408,11 +17408,7 @@ name|buffer
 operator|=
 name|g_malloc
 argument_list|(
-operator|(
-name|x2
-operator|-
-name|x1
-operator|)
+name|width
 operator|*
 literal|4
 argument_list|)
@@ -17421,26 +17417,10 @@ name|ibuffer
 operator|=
 name|g_malloc
 argument_list|(
-operator|(
-name|x2
-operator|-
-name|x1
-operator|)
+name|width
 operator|*
 literal|4
 argument_list|)
-expr_stmt|;
-name|tx
-operator|=
-name|x2
-operator|-
-name|x1
-expr_stmt|;
-name|ty
-operator|=
-name|y2
-operator|-
-name|y1
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
@@ -17458,7 +17438,7 @@ literal|0
 init|;
 name|y
 operator|<
-name|ty
+name|height
 condition|;
 name|y
 operator|++
@@ -17476,7 +17456,7 @@ literal|0
 init|;
 name|x
 operator|<
-name|tx
+name|width
 condition|;
 name|x
 operator|++
@@ -17503,7 +17483,7 @@ call|(
 name|float
 call|)
 argument_list|(
-name|tx
+name|width
 operator|-
 literal|1
 argument_list|)
@@ -17532,7 +17512,7 @@ call|(
 name|float
 call|)
 argument_list|(
-name|ty
+name|height
 operator|-
 literal|1
 argument_list|)
@@ -17627,9 +17607,7 @@ name|y1
 operator|+
 name|y
 argument_list|,
-name|x2
-operator|-
-name|x1
+name|width
 argument_list|)
 expr_stmt|;
 for|for
@@ -17640,11 +17618,7 @@ literal|0
 init|;
 name|x
 operator|<
-operator|(
-name|x2
-operator|-
-name|x1
-operator|)
+name|width
 condition|;
 name|x
 operator|++
@@ -17735,9 +17709,7 @@ name|y1
 operator|+
 name|y
 argument_list|,
-name|x2
-operator|-
-name|x1
+name|width
 argument_list|)
 expr_stmt|;
 name|gimp_progress_update
@@ -17750,7 +17722,7 @@ operator|/
 operator|(
 name|gdouble
 operator|)
-name|ty
+name|height
 argument_list|)
 expr_stmt|;
 block|}
@@ -17793,13 +17765,9 @@ name|x1
 argument_list|,
 name|y1
 argument_list|,
-name|x2
-operator|-
-name|x1
+name|width
 argument_list|,
-name|y2
-operator|-
-name|y1
+name|height
 argument_list|)
 expr_stmt|;
 block|}

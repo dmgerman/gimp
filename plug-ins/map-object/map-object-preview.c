@@ -416,6 +416,12 @@ decl_stmt|;
 name|init_compute
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|preview_surface
+condition|)
+return|return;
 name|p1
 operator|=
 name|int_to_pos

@@ -84,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fc718f0108
+DECL|struct|__anon2c6ecd2c0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fc718f0208
+DECL|struct|__anon2c6ecd2c0208
 block|{
 DECL|member|run
 name|gboolean
@@ -2065,9 +2065,9 @@ name|x1
 decl_stmt|,
 name|y1
 decl_stmt|,
-name|x2
+name|width
 decl_stmt|,
-name|y2
+name|height
 decl_stmt|;
 comment|/* initialize pixel regions */
 name|gimp_pixel_rgn_init
@@ -2119,7 +2119,10 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/* Get the input */
-name|gimp_drawable_mask_bounds
+if|if
+condition|(
+operator|!
+name|gimp_drawable_mask_intersect
 argument_list|(
 name|drawable
 operator|->
@@ -2132,12 +2135,13 @@ operator|&
 name|y1
 argument_list|,
 operator|&
-name|x2
+name|width
 argument_list|,
 operator|&
-name|y2
+name|height
 argument_list|)
-expr_stmt|;
+condition|)
+return|return;
 name|unsharp_region
 argument_list|(
 operator|&
@@ -2156,11 +2160,15 @@ name|amount
 argument_list|,
 name|x1
 argument_list|,
-name|x2
+name|x1
+operator|+
+name|width
 argument_list|,
 name|y1
 argument_list|,
-name|y2
+name|y1
+operator|+
+name|width
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2189,13 +2197,9 @@ name|x1
 argument_list|,
 name|y1
 argument_list|,
-name|x2
-operator|-
-name|x1
+name|width
 argument_list|,
-name|y2
-operator|-
-name|y1
+name|height
 argument_list|)
 expr_stmt|;
 block|}

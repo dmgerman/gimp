@@ -5688,13 +5688,15 @@ name|cursor
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
 name|image_setup
 argument_list|(
 name|drawable
 argument_list|,
 name|TRUE
 argument_list|)
-expr_stmt|;
+condition|)
 name|preview_compute
 argument_list|()
 expr_stmt|;
