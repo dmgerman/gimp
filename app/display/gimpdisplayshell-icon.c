@@ -495,7 +495,11 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-literal|0.0
+name|shell
+operator|->
+name|icon_size
+operator|-
+name|width
 argument_list|,
 literal|0.0
 argument_list|,
