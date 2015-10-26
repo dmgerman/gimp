@@ -444,7 +444,7 @@ argument_list|(
 name|shell
 argument_list|)
 argument_list|,
-literal|"gimp-wilber"
+literal|"gimp-wilber-outline"
 argument_list|,
 name|shell
 operator|->
