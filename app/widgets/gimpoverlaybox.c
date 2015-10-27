@@ -1485,7 +1485,7 @@ name|yalign
 argument_list|,
 literal|0.0
 argument_list|,
-literal|0.7
+literal|0.85
 argument_list|)
 expr_stmt|;
 name|box
