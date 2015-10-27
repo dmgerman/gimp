@@ -108,12 +108,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b27f4840103
+DECL|enum|__anon2c4101c80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1130,6 +1136,15 @@ argument_list|,
 literal|20
 argument_list|,
 literal|20
+argument_list|)
+expr_stmt|;
+name|gimp_widget_set_fully_opaque
+argument_list|(
+name|editor
+operator|->
+name|color_button
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end

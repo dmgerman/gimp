@@ -1456,6 +1456,13 @@ argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_widget_set_fully_opaque
+argument_list|(
+name|frame
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gtk_frame_set_shadow_type
 argument_list|(
 name|GTK_FRAME
