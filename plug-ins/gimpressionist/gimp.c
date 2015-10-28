@@ -350,6 +350,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_PROC
+argument_list|,
+literal|"<Image>/Filters/Artistic"
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

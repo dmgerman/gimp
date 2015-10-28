@@ -84,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6ecd2c0108
+DECL|struct|__anon28a06e900108
 block|{
 DECL|member|radius
 name|gdouble
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6ecd2c0208
+DECL|struct|__anon28a06e900208
 block|{
 DECL|member|run
 name|gboolean
@@ -493,6 +493,13 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_PROC
+argument_list|,
+literal|"<Image>/Filters/Enhance"
 argument_list|)
 expr_stmt|;
 block|}
