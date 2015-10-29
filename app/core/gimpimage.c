@@ -360,7 +360,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c42f5fd0103
+DECL|enum|__anon2ba6b5160103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -457,7 +457,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c42f5fd0203
+DECL|enum|__anon2ba6b5160203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9225,6 +9225,10 @@ parameter_list|)
 block|{
 name|GList
 modifier|*
+name|layers
+decl_stmt|;
+name|GList
+modifier|*
 name|list
 decl_stmt|;
 name|gint
@@ -9245,20 +9249,20 @@ name|version
 operator|=
 literal|1
 expr_stmt|;
+name|layers
+operator|=
+name|gimp_image_get_layer_list
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|list
 operator|=
-name|gimp_image_get_layer_iter
-argument_list|(
-name|image
-argument_list|)
+name|layers
 init|;
 name|list
-operator|&&
-name|version
-operator|<
-literal|3
 condition|;
 name|list
 operator|=
@@ -9348,6 +9352,11 @@ name|version
 argument_list|)
 expr_stmt|;
 block|}
+name|g_list_free
+argument_list|(
+name|layers
+argument_list|)
+expr_stmt|;
 comment|/* need version 6 for new metadata */
 if|if
 condition|(
