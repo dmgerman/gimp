@@ -1688,7 +1688,7 @@ block|{
 name|gint
 name|gimp_version
 decl_stmt|;
-comment|/* Save the GIMP version we are trying to get compatible with.        * This specific information is unused as of now though. */
+comment|/* Save the GIMP version we are trying to get compatible with.        * This specific information is unused as of now though.        */
 name|gimp_image_get_xcf_version
 argument_list|(
 name|image
@@ -1699,6 +1699,13 @@ operator|&
 name|gimp_version
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_version
+operator|=
+name|g_htonl
+argument_list|(
+name|gimp_version
 argument_list|)
 expr_stmt|;
 name|compat_parasite
@@ -7485,7 +7492,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c094c1d0108
+DECL|struct|__anon2c1df5ef0108
 block|{
 DECL|member|info
 name|XcfInfo
