@@ -308,7 +308,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289e78800108
+DECL|struct|__anon27a82dc10108
 block|{
 DECL|member|crop
 name|gboolean
@@ -484,7 +484,7 @@ specifier|const
 name|gint32
 name|image_ID
 parameter_list|,
-name|GimpParamRegion
+name|GeglRectangle
 modifier|*
 name|hotspotRange
 parameter_list|)
@@ -534,7 +534,7 @@ specifier|const
 name|gint32
 name|image_ID
 parameter_list|,
-name|GimpParamRegion
+name|GeglRectangle
 modifier|*
 name|hotspotRange
 parameter_list|)
@@ -707,7 +707,7 @@ specifier|static
 name|void
 name|get_cropped_region
 parameter_list|(
-name|GimpParamRegion
+name|GeglRectangle
 modifier|*
 name|retrun_rgn
 parameter_list|,
@@ -732,7 +732,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GimpParamRegion
+name|GeglRectangle
 modifier|*
 name|get_intersection_of_frames
 parameter_list|(
@@ -753,7 +753,7 @@ parameter_list|,
 name|gint32
 name|y
 parameter_list|,
-name|GimpParamRegion
+name|GeglRectangle
 modifier|*
 name|xmcrp
 parameter_list|)
@@ -839,7 +839,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon289e78800208
+DECL|struct|__anon27a82dc10208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -1385,7 +1385,7 @@ name|export
 init|=
 name|GIMP_EXPORT_CANCEL
 decl_stmt|;
-name|GimpParamRegion
+name|GeglRectangle
 modifier|*
 name|hotspotRange
 init|=
@@ -4204,14 +4204,14 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_dialog (const gint32 image_ID,GimpParamRegion * hotspotRange)
+DECL|function|save_dialog (const gint32 image_ID,GeglRectangle * hotspotRange)
 name|save_dialog
 parameter_list|(
 specifier|const
 name|gint32
 name|image_ID
 parameter_list|,
-name|GimpParamRegion
+name|GeglRectangle
 modifier|*
 name|hotspotRange
 parameter_list|)
@@ -6115,14 +6115,14 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|load_default_hotspot (const gint32 image_ID,GimpParamRegion * hotspotRange)
+DECL|function|load_default_hotspot (const gint32 image_ID,GeglRectangle * hotspotRange)
 name|load_default_hotspot
 parameter_list|(
 specifier|const
 name|gint32
 name|image_ID
 parameter_list|,
-name|GimpParamRegion
+name|GeglRectangle
 modifier|*
 name|hotspotRange
 parameter_list|)
@@ -6264,7 +6264,7 @@ modifier|*
 name|framename
 decl_stmt|;
 comment|/* framename of a layer */
-name|GimpParamRegion
+name|GeglRectangle
 name|save_rgn
 decl_stmt|;
 comment|/* region to save */
@@ -9141,7 +9141,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon289e78800308
+DECL|struct|__anon27a82dc10308
 block|{
 DECL|member|size
 name|guint32
@@ -9295,10 +9295,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|get_cropped_region (GimpParamRegion * return_rgn,GeglBuffer * buffer)
+DECL|function|get_cropped_region (GeglRectangle * return_rgn,GeglBuffer * buffer)
 name|get_cropped_region
 parameter_list|(
-name|GimpParamRegion
+name|GeglRectangle
 modifier|*
 name|return_rgn
 parameter_list|,
@@ -9873,7 +9873,7 @@ end_comment
 
 begin_function
 specifier|static
-name|GimpParamRegion
+name|GeglRectangle
 modifier|*
 DECL|function|get_intersection_of_frames (gint32 image_ID)
 name|get_intersection_of_frames
@@ -9882,7 +9882,7 @@ name|gint32
 name|image_ID
 parameter_list|)
 block|{
-name|GimpParamRegion
+name|GeglRectangle
 modifier|*
 name|iregion
 decl_stmt|;
@@ -10048,7 +10048,7 @@ name|iregion
 operator|=
 name|g_new
 argument_list|(
-name|GimpParamRegion
+name|GeglRectangle
 argument_list|,
 literal|1
 argument_list|)
@@ -10098,7 +10098,7 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|pix_in_region (gint32 x,gint32 y,GimpParamRegion * xmcrp)
+DECL|function|pix_in_region (gint32 x,gint32 y,GeglRectangle * xmcrp)
 name|pix_in_region
 parameter_list|(
 name|gint32
@@ -10107,7 +10107,7 @@ parameter_list|,
 name|gint32
 name|y
 parameter_list|,
-name|GimpParamRegion
+name|GeglRectangle
 modifier|*
 name|xmcrp
 parameter_list|)
