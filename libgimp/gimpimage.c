@@ -302,7 +302,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_cmap:  * @image_ID:   The image.  * @num_colors: Number of colors in the colormap array.  *  * This procedure is deprecated! Use gimp_image_get_colormap() instead.  *  * Returns: The image's colormap.  */
+comment|/**  * gimp_image_get_cmap:  * @image_ID:   The image.  * @num_colors: Number of colors in the colormap array.  *  * Deprecated: Use gimp_image_get_colormap() instead.  *  * Returns: The image's colormap.  */
 end_comment
 
 begin_function
@@ -331,7 +331,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_cmap:  * @image_ID:   The image.  * @cmap:       The new colormap values.  * @num_colors: Number of colors in the colormap array.  *  * This procedure is deprecated! Use gimp_image_set_colormap() instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_set_cmap:  * @image_ID:   The image.  * @cmap:       The new colormap values.  * @num_colors: Number of colors in the colormap array.  *  * Deprecated: Use gimp_image_set_colormap() instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
