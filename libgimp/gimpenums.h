@@ -39,7 +39,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ff62340103
+DECL|enum|__anon288dc3840103
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -73,7 +73,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ff62340203
+DECL|enum|__anon288dc3840203
 block|{
 DECL|enumerator|GIMP_NO_DITHER
 name|GIMP_NO_DITHER
@@ -113,7 +113,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ff62340303
+DECL|enum|__anon288dc3840303
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -129,6 +129,9 @@ name|GIMP_HISTOGRAM_BLUE
 block|,
 DECL|enumerator|GIMP_HISTOGRAM_ALPHA
 name|GIMP_HISTOGRAM_ALPHA
+block|,
+DECL|enumerator|GIMP_HISTOGRAM_LUMINANCE
+name|GIMP_HISTOGRAM_LUMINANCE
 DECL|typedef|GimpHistogramChannel
 block|}
 name|GimpHistogramChannel
@@ -156,7 +159,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ff62340403
+DECL|enum|__anon288dc3840403
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE

@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7641590103
+DECL|enum|__anon27ad2e810103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1045,6 +1045,9 @@ condition|)
 block|{
 case|case
 name|GIMP_HISTOGRAM_VALUE
+case|:
+case|case
+name|GIMP_HISTOGRAM_LUMINANCE
 case|:
 case|case
 name|GIMP_HISTOGRAM_ALPHA

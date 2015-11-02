@@ -537,6 +537,10 @@ argument_list|,
 name|error
 argument_list|)
 operator|&&
+name|channel
+operator|!=
+name|GIMP_HISTOGRAM_LUMINANCE
+operator|&&
 operator|(
 name|gimp_drawable_has_alpha
 argument_list|(
@@ -1844,6 +1848,10 @@ name|channel
 operator|==
 name|GIMP_HISTOGRAM_ALPHA
 operator|)
+operator|&&
+name|channel
+operator|!=
+name|GIMP_HISTOGRAM_LUMINANCE
 condition|)
 block|{
 name|GObject
@@ -2076,6 +2084,10 @@ name|channel
 operator|==
 name|GIMP_HISTOGRAM_ALPHA
 operator|)
+operator|&&
+name|channel
+operator|!=
+name|GIMP_HISTOGRAM_LUMINANCE
 condition|)
 block|{
 name|GObject

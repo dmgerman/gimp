@@ -3531,6 +3531,9 @@ case|:
 case|case
 name|GIMP_HISTOGRAM_RGB
 case|:
+case|case
+name|GIMP_HISTOGRAM_LUMINANCE
+case|:
 name|gimp_curve_get_uchar
 argument_list|(
 name|curve
@@ -4071,6 +4074,12 @@ argument_list|)
 return|;
 case|case
 name|GIMP_HISTOGRAM_RGB
+case|:
+return|return
+name|FALSE
+return|;
+case|case
+name|GIMP_HISTOGRAM_LUMINANCE
 case|:
 return|return
 name|FALSE

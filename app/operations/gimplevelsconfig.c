@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d5eb5c0103
+DECL|enum|__anon2c3ccf750103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2242,6 +2242,25 @@ name|color
 operator|->
 name|g
 argument_list|)
+argument_list|,
+name|color
+operator|->
+name|b
+argument_list|)
+return|;
+case|case
+name|GIMP_HISTOGRAM_LUMINANCE
+case|:
+return|return
+name|GIMP_RGB_LUMINANCE
+argument_list|(
+name|color
+operator|->
+name|r
+argument_list|,
+name|color
+operator|->
+name|g
 argument_list|,
 name|color
 operator|->

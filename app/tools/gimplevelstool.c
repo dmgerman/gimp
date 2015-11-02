@@ -4160,6 +4160,9 @@ case|:
 case|case
 name|GIMP_HISTOGRAM_RGB
 case|:
+case|case
+name|GIMP_HISTOGRAM_LUMINANCE
+case|:
 block|{
 name|guchar
 name|v
@@ -4545,6 +4548,12 @@ argument_list|)
 return|;
 case|case
 name|GIMP_HISTOGRAM_RGB
+case|:
+return|return
+name|FALSE
+return|;
+case|case
+name|GIMP_HISTOGRAM_LUMINANCE
 case|:
 return|return
 name|FALSE
