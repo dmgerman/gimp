@@ -201,6 +201,18 @@ end_comment
 
 begin_function_decl
 specifier|static
+name|void
+name|gimp_curves_tool_constructed
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|gboolean
 name|gimp_curves_tool_initialize
 parameter_list|(
@@ -644,6 +656,15 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
+name|GObjectClass
+modifier|*
+name|object_class
+init|=
+name|G_OBJECT_CLASS
+argument_list|(
+name|klass
+argument_list|)
+decl_stmt|;
 name|GimpToolClass
 modifier|*
 name|tool_class
@@ -671,6 +692,12 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
+name|object_class
+operator|->
+name|constructed
+operator|=
+name|gimp_curves_tool_constructed
+expr_stmt|;
 name|tool_class
 operator|->
 name|initialize
@@ -814,6 +841,44 @@ end_function
 
 begin_function
 specifier|static
+name|void
+DECL|function|gimp_curves_tool_constructed (GObject * object)
+name|gimp_curves_tool_constructed
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|)
+block|{
+name|G_OBJECT_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|constructed
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
+comment|/*  always pick colors  */
+name|gimp_color_tool_enable
+argument_list|(
+name|GIMP_COLOR_TOOL
+argument_list|(
+name|object
+argument_list|)
+argument_list|,
+name|GIMP_COLOR_TOOL_GET_OPTIONS
+argument_list|(
+name|object
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|gboolean
 DECL|function|gimp_curves_tool_initialize (GimpTool * tool,GimpDisplay * display,GError ** error)
 name|gimp_curves_tool_initialize
@@ -885,20 +950,6 @@ return|return
 name|FALSE
 return|;
 block|}
-comment|/*  always pick colors  */
-name|gimp_color_tool_enable
-argument_list|(
-name|GIMP_COLOR_TOOL
-argument_list|(
-name|tool
-argument_list|)
-argument_list|,
-name|GIMP_COLOR_TOOL_GET_OPTIONS
-argument_list|(
-name|tool
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_int_combo_box_set_sensitivity
 argument_list|(
 name|GIMP_INT_COMBO_BOX
