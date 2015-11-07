@@ -70,7 +70,7 @@ block|{
 return|return
 operator|(
 name|SCREENSHOT_CAN_SHOOT_DECORATIONS
-operator|||
+operator||
 name|SCREENSHOT_CAN_SHOOT_POINTER
 operator|)
 return|;
@@ -237,7 +237,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_set_filename
 argument_list|(
-name|image
+operator|*
+name|image_ID
 argument_list|,
 literal|"screenshot.png"
 argument_list|)
