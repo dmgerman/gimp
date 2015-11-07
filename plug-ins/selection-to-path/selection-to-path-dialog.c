@@ -331,7 +331,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"If two endpoints are closer than this,"
+literal|"If two endpoints are closer than this, "
 literal|"they are made to be equal."
 argument_list|)
 argument_list|,
