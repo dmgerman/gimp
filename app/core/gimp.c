@@ -345,7 +345,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c270620103
+DECL|enum|__anon2bc182370103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -370,7 +370,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c270620203
+DECL|enum|__anon2bc182370203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3316,6 +3316,10 @@ name|gboolean
 name|force
 parameter_list|)
 block|{
+name|GList
+modifier|*
+name|image_iter
+decl_stmt|;
 if|if
 condition|(
 name|gimp
@@ -3329,6 +3333,33 @@ argument_list|,
 name|G_STRFUNC
 argument_list|)
 expr_stmt|;
+comment|/* get rid of images without display */
+while|while
+condition|(
+operator|(
+name|image_iter
+operator|=
+name|gimp_get_image_iter
+argument_list|(
+name|gimp
+argument_list|)
+operator|)
+condition|)
+block|{
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|image_iter
+operator|->
+name|data
+decl_stmt|;
+name|g_object_unref
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+block|}
 name|gimp_plug_in_manager_exit
 argument_list|(
 name|gimp
