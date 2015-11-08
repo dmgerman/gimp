@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b8bdf90103
+DECL|enum|__anon2c2baa5a0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -3930,7 +3930,7 @@ argument_list|)
 condition|)
 block|{
 case|case
-name|GIMP_STROKE_METHOD_LIBART
+name|GIMP_STROKE_LINE
 case|:
 name|gimp_drawable_stroke_boundary
 argument_list|(
@@ -3955,7 +3955,7 @@ name|TRUE
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_STROKE_METHOD_PAINT_CORE
+name|GIMP_STROKE_PAINT_METHOD
 case|:
 block|{
 name|GimpPaintInfo

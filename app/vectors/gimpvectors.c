@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab0ec9d0103
+DECL|enum|__anon28a3087d0103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -2935,7 +2935,7 @@ argument_list|)
 condition|)
 block|{
 case|case
-name|GIMP_STROKE_METHOD_LIBART
+name|GIMP_STROKE_LINE
 case|:
 name|retval
 operator|=
@@ -2954,7 +2954,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_STROKE_METHOD_PAINT_CORE
+name|GIMP_STROKE_PAINT_METHOD
 case|:
 block|{
 name|GimpPaintInfo

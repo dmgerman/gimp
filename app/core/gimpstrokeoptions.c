@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c14f4630103
+DECL|enum|__anon28e2e2750103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c14f4630203
+DECL|enum|__anon28e2e2750203
 block|{
 DECL|enumerator|DASH_INFO_CHANGED
 name|DASH_INFO_CHANGED
@@ -463,7 +463,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_STROKE_METHOD
 argument_list|,
-name|GIMP_STROKE_METHOD_LIBART
+name|GIMP_STROKE_LINE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -1484,7 +1484,7 @@ argument_list|(
 name|options
 argument_list|)
 argument_list|,
-name|GIMP_STROKE_METHOD_LIBART
+name|GIMP_STROKE_LINE
 argument_list|)
 expr_stmt|;
 return|return
@@ -1954,11 +1954,11 @@ name|method
 condition|)
 block|{
 case|case
-name|GIMP_STROKE_METHOD_LIBART
+name|GIMP_STROKE_LINE
 case|:
 break|break;
 case|case
-name|GIMP_STROKE_METHOD_PAINT_CORE
+name|GIMP_STROKE_PAINT_METHOD
 case|:
 block|{
 name|GimpPaintInfo

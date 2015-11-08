@@ -3763,7 +3763,7 @@ name|options
 argument_list|,
 literal|"method"
 argument_list|,
-name|GIMP_STROKE_METHOD_PAINT_CORE
+name|GIMP_STROKE_PAINT_METHOD
 argument_list|,
 name|NULL
 argument_list|)
@@ -4004,7 +4004,7 @@ name|options
 argument_list|,
 literal|"method"
 argument_list|,
-name|GIMP_STROKE_METHOD_PAINT_CORE
+name|GIMP_STROKE_PAINT_METHOD
 argument_list|,
 name|NULL
 argument_list|)
