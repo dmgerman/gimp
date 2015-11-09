@@ -116,6 +116,25 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpStrokeMethod
+name|gimp_context_get_stroke_method
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_context_set_stroke_method
+parameter_list|(
+name|GimpStrokeMethod
+name|stroke_method
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_context_get_foreground
 parameter_list|(
