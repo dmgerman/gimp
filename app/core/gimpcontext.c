@@ -1482,7 +1482,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7c63cf0103
+DECL|enum|__anon277ca0e70103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1496,7 +1496,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7c63cf0203
+DECL|enum|__anon277ca0e70203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -6215,7 +6215,6 @@ modifier|*
 name|context
 parameter_list|)
 block|{
-comment|/*  copy from parent if the changed property is undefined  */
 if|if
 condition|(
 name|pspec
@@ -6223,15 +6222,36 @@ operator|->
 name|owner_type
 operator|==
 name|GIMP_TYPE_CONTEXT
+condition|)
+block|{
+name|GimpContextPropType
+name|prop
+init|=
+name|pspec
+operator|->
+name|param_id
+decl_stmt|;
+comment|/*  copy from parent if the changed property is undefined;        *  ignore properties that are not context properties, for        *  example notifications on the context's "gimp" property        */
+if|if
+condition|(
+operator|(
+name|prop
+operator|>=
+name|GIMP_CONTEXT_PROP_FIRST
+operator|)
+operator|&&
+operator|(
+name|prop
+operator|<=
+name|GIMP_CONTEXT_PROP_LAST
+operator|)
 operator|&&
 operator|!
 operator|(
 operator|(
 literal|1
 operator|<<
-name|pspec
-operator|->
-name|param_id
+name|prop
 operator|)
 operator|&
 name|context
@@ -6246,11 +6266,10 @@ name|parent
 argument_list|,
 name|context
 argument_list|,
-name|pspec
-operator|->
-name|param_id
+name|prop
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function
