@@ -1817,6 +1817,19 @@ name|help_id
 argument_list|)
 expr_stmt|;
 block|}
+name|gtk_widget_set_can_focus
+argument_list|(
+name|gtk_bin_get_child
+argument_list|(
+name|GTK_BIN
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 block|}
 comment|/* We only need to initialize tools once */
 name|g_signal_handlers_disconnect_by_func
