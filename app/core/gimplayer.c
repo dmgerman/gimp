@@ -205,7 +205,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4c37240103
+DECL|enum|__anon2b2013470103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -236,7 +236,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4c37240203
+DECL|enum|__anon2b2013470203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
