@@ -200,7 +200,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  rotate: functions to transform from unrotated but zoomed display  *  space to rotated display space and back  */
+comment|/*  rotate: functions to transform from unrotated and unflipped but  *  zoomed display space to rotated and filpped display space and back  */
 end_comment
 
 begin_function_decl
@@ -428,7 +428,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  transform: functions to transform from image space to rotated display  *  space and back, taking into account scroll offset, scale, and rotation  */
+comment|/*  transform: functions to transform from image space to rotated  *  display space and back, taking into account scroll offset, scale,  *  rotation and flipping  */
 end_comment
 
 begin_function_decl

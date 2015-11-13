@@ -265,7 +265,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"_Rotate"
+literal|"_Flip& Rotate"
 argument_list|)
 block|}
 block|,
@@ -1719,6 +1719,70 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|view_flip_actions
+specifier|static
+specifier|const
+name|GimpToggleActionEntry
+name|view_flip_actions
+index|[]
+init|=
+block|{
+block|{
+literal|"view-flip-horizontally"
+block|,
+name|GIMP_STOCK_FLIP_HORIZONTAL
+block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
+literal|"Flip Horizontally"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|G_CALLBACK
+argument_list|(
+name|view_flip_horizontally_cmd_callback
+argument_list|)
+block|,
+name|FALSE
+block|,
+name|GIMP_HELP_VIEW_FLIP
+block|}
+block|,
+block|{
+literal|"view-flip-vertically"
+block|,
+name|GIMP_STOCK_FLIP_VERTICAL
+block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
+literal|"Flip Vertically"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|G_CALLBACK
+argument_list|(
+name|view_flip_vertically_cmd_callback
+argument_list|)
+block|,
+name|FALSE
+block|,
+name|GIMP_HELP_VIEW_FLIP
+block|}
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|view_rotate_absolute_actions
 specifier|static
 specifier|const
@@ -1754,7 +1818,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"_Reset to 0Â°"
+literal|"_Reset Flip& Rotate"
 argument_list|)
 block|,
 literal|"exclam"
@@ -1763,7 +1827,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Reset the angle of rotation to 0Â°"
+literal|"Reset flipping to unflipped and the angle of rotation to 0Â°"
 argument_list|)
 block|,
 name|GIMP_ACTION_SELECT_SET_TO_DEFAULT
@@ -2440,6 +2504,20 @@ name|view_zoom_explicit_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_action_group_add_toggle_actions
+argument_list|(
+name|group
+argument_list|,
+literal|"view-action"
+argument_list|,
+name|view_flip_actions
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|view_flip_actions
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
@@ -2686,6 +2764,16 @@ init|=
 name|FALSE
 decl_stmt|;
 comment|/* able to revert zoom? */
+name|gboolean
+name|flip_horizontally
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
+name|flip_vertically
+init|=
+name|FALSE
+decl_stmt|;
 if|if
 condition|(
 name|display
@@ -2755,6 +2843,18 @@ name|gimp_display_shell_scale_can_revert
 argument_list|(
 name|shell
 argument_list|)
+expr_stmt|;
+name|flip_horizontally
+operator|=
+name|shell
+operator|->
+name|flip_horizontally
+expr_stmt|;
+name|flip_vertically
+operator|=
+name|shell
+operator|->
+name|flip_vertically
 expr_stmt|;
 block|}
 DECL|macro|SET_ACTIVE (action,condition)
@@ -3077,6 +3177,34 @@ argument_list|(
 literal|"view-zoom-other"
 argument_list|,
 name|image
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"view-flip-horizontally"
+argument_list|,
+name|image
+argument_list|)
+expr_stmt|;
+name|SET_ACTIVE
+argument_list|(
+literal|"view-flip-horizontally"
+argument_list|,
+name|flip_horizontally
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"view-flip-vertically"
+argument_list|,
+name|image
+argument_list|)
+expr_stmt|;
+name|SET_ACTIVE
+argument_list|(
+literal|"view-flip-vertically"
+argument_list|,
+name|flip_vertically
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -3850,18 +3978,86 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|flip
+decl_stmt|;
 name|gchar
 modifier|*
 name|label
 decl_stmt|;
+if|if
+condition|(
+name|shell
+operator|->
+name|flip_horizontally
+operator|&&
+name|shell
+operator|->
+name|flip_vertically
+condition|)
+block|{
+comment|/* please preserve the trailing space */
+name|flip
+operator|=
+name|_
+argument_list|(
+literal|"(H+V) "
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|shell
+operator|->
+name|flip_horizontally
+condition|)
+block|{
+comment|/* please preserve the trailing space */
+name|flip
+operator|=
+name|_
+argument_list|(
+literal|"(H) "
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|shell
+operator|->
+name|flip_vertically
+condition|)
+block|{
+comment|/* please preserve the trailing space */
+name|flip
+operator|=
+name|_
+argument_list|(
+literal|"(V) "
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|flip
+operator|=
+literal|""
+expr_stmt|;
+block|}
 name|label
 operator|=
 name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"_Rotate (%dÂ°)"
+literal|"_Flip %s& Rotate (%dÂ°)"
 argument_list|)
+argument_list|,
+name|flip
 argument_list|,
 operator|(
 name|gint

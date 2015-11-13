@@ -270,6 +270,14 @@ name|gdouble
 name|scale_y
 decl_stmt|;
 comment|/*  vertical scale factor              */
+DECL|member|flip_horizontally
+name|gboolean
+name|flip_horizontally
+decl_stmt|;
+DECL|member|flip_vertically
+name|gboolean
+name|flip_vertically
+decl_stmt|;
 DECL|member|rotate_angle
 name|gdouble
 name|rotate_angle

@@ -18,6 +18,23 @@ end_define
 
 begin_function_decl
 name|void
+name|gimp_display_shell_flip
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|gboolean
+name|flip_horizontally
+parameter_list|,
+name|gboolean
+name|flip_vertically
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_display_shell_rotate
 parameter_list|(
 name|GimpDisplayShell

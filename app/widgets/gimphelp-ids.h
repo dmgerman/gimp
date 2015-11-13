@@ -518,6 +518,14 @@ value|"gimp-view-zoom-other"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_VIEW_FLIP
+define|#
+directive|define
+name|GIMP_HELP_VIEW_FLIP
+value|"gimp-view-flip"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_VIEW_ROTATE_RESET
 define|#
 directive|define
