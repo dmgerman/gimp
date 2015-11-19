@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c912b090103
+DECL|enum|__anon29ada8400103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2646,18 +2646,13 @@ name|precision
 init|=
 literal|1
 decl_stmt|;
-name|gboolean
-name|hashed
-init|=
-name|TRUE
-decl_stmt|;
 name|GRegex
 modifier|*
 name|end_numbers
 init|=
 name|g_regex_new
 argument_list|(
-literal|"(^|[^0-9])([0-9]+)\\s*$"
+literal|" ?#([0-9]+)\\s*$"
 argument_list|,
 literal|0
 argument_list|,
@@ -2687,7 +2682,6 @@ name|match_info
 argument_list|)
 condition|)
 block|{
-comment|/* Allow counting styles without a hash as alternative. */
 name|gchar
 modifier|*
 name|match
@@ -2695,17 +2689,13 @@ decl_stmt|;
 name|gint
 name|start_pos
 decl_stmt|;
-name|hashed
-operator|=
-name|FALSE
-expr_stmt|;
 name|match
 operator|=
 name|g_match_info_fetch
 argument_list|(
 name|match_info
 argument_list|,
-literal|2
+literal|1
 argument_list|)
 expr_stmt|;
 if|if
@@ -2744,7 +2734,7 @@ name|g_match_info_fetch_pos
 argument_list|(
 name|match_info
 argument_list|,
-literal|2
+literal|0
 argument_list|,
 operator|&
 name|start_pos
@@ -2784,15 +2774,9 @@ name|new_name
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s%s%.*d"
+literal|"%s #%.*d"
 argument_list|,
 name|name
-argument_list|,
-name|hashed
-condition|?
-literal|" #"
-else|:
-literal|""
 argument_list|,
 name|precision
 argument_list|,

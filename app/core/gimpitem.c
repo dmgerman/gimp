@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae7c8d70103
+DECL|enum|__anon2773ebf50103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -186,7 +186,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae7c8d70203
+DECL|enum|__anon2773ebf50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2282,7 +2282,7 @@ operator|)
 operator|||
 name|g_regex_match_simple
 argument_list|(
-literal|"([0-9]+)\\s*$"
+literal|"#([0-9]+)\\s*$"
 argument_list|,
 name|name
 argument_list|,
