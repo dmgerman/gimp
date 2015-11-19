@@ -150,7 +150,7 @@ block|,
 block|{
 literal|"dockable-menu"
 block|,
-literal|"image-mising"
+literal|"image-missing"
 block|,
 literal|""
 block|}
