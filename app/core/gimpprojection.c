@@ -163,7 +163,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ff57ea0103
+DECL|enum|__anon2c4190590103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -176,7 +176,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ff57ea0203
+DECL|enum|__anon2c4190590203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3718,6 +3718,10 @@ name|w
 argument_list|,
 name|h
 argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 block|}
