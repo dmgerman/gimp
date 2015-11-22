@@ -854,6 +854,14 @@ value|"gimp-image-convert-double"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_IMAGE_CONVERT_GAMMA
+define|#
+directive|define
+name|GIMP_HELP_IMAGE_CONVERT_GAMMA
+value|"gimp-image-convert-gamma"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_IMAGE_CONVERT_PRECISION
 define|#
 directive|define

@@ -33,8 +33,8 @@ name|GtkWidget
 modifier|*
 name|parent
 parameter_list|,
-name|GimpPrecision
-name|precision
+name|GimpComponentType
+name|component_type
 parameter_list|,
 name|GimpProgress
 modifier|*
