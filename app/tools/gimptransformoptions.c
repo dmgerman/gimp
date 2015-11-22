@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a6c1b60103
+DECL|enum|__anon29556ca60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1851,7 +1851,7 @@ name|constrain_label
 operator|=
 name|_
 argument_list|(
-literal|"15 degrees  (%s)"
+literal|"15 degrees (%s)"
 argument_list|)
 expr_stmt|;
 name|constrain_tip
@@ -1882,7 +1882,7 @@ name|constrain_label
 operator|=
 name|_
 argument_list|(
-literal|"Keep aspect  (%s)"
+literal|"Keep aspect (%s)"
 argument_list|)
 expr_stmt|;
 name|constrain_tip
@@ -1919,7 +1919,7 @@ name|gimp_get_constrain_behavior_mask
 argument_list|()
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27a6c1b60208
+DECL|struct|__anon29556ca60208
 block|{
 DECL|member|mod
 name|GdkModifierType
@@ -1952,7 +1952,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Constrain  (%s)"
+literal|"Constrain (%s)"
 argument_list|)
 block|}
 block|,
@@ -1968,7 +1968,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Constrain movement to 45 degree angles from center  (%s)"
+literal|"Constrain movement to 45 degree angles from center (%s)"
 argument_list|)
 block|}
 block|,
@@ -1984,7 +1984,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Maintain aspect ratio when scaling  (%s)"
+literal|"Maintain aspect ratio when scaling (%s)"
 argument_list|)
 block|}
 block|,
@@ -2000,7 +2000,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Constrain rotation to 15 degree increments  (%s)"
+literal|"Constrain rotation to 15 degree increments (%s)"
 argument_list|)
 block|}
 block|,
@@ -2016,7 +2016,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Shear along edge direction only  (%s)"
+literal|"Shear along edge direction only (%s)"
 argument_list|)
 block|}
 block|,
@@ -2032,7 +2032,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Constrain perspective handles to move along edges and diagonal  (%s)"
+literal|"Constrain perspective handles to move along edges and diagonal (%s)"
 argument_list|)
 block|}
 block|,
@@ -2059,7 +2059,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Scale from pivot point  (%s)"
+literal|"Scale from pivot point (%s)"
 argument_list|)
 block|}
 block|,
@@ -2075,7 +2075,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Shear opposite edge by same amount  (%s)"
+literal|"Shear opposite edge by same amount (%s)"
 argument_list|)
 block|}
 block|,
@@ -2091,7 +2091,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Maintain position of pivot while changing perspective  (%s)"
+literal|"Maintain position of pivot while changing perspective (%s)"
 argument_list|)
 block|}
 block|,
@@ -2113,12 +2113,12 @@ literal|"cornersnap"
 block|,
 name|N_
 argument_list|(
-literal|"Snap  (%s)"
+literal|"Snap (%s)"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Snap pivot to corners and center  (%s)"
+literal|"Snap pivot to corners and center (%s)"
 argument_list|)
 block|}
 block|,
