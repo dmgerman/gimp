@@ -209,7 +209,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"Color to Gray..."
+literal|"_Color to Gray..."
 argument_list|)
 block|,
 name|NULL
@@ -913,7 +913,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"Mono Mixer..."
+literal|"_Mono Mixer..."
 argument_list|)
 block|,
 name|NULL
@@ -1474,6 +1474,28 @@ literal|"gimp:semi-flatten"
 block|,
 name|NULL
 comment|/* FIXME GIMP_HELP_FILTER_POLAR_COORDINATES */
+block|}
+block|,
+block|{
+literal|"filters-sepia"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Sepia..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:sepia"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_SEPIA */
 block|}
 block|,
 block|{
@@ -2550,6 +2572,16 @@ argument_list|,
 name|writable
 operator|&&
 name|alpha
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-sepia"
+argument_list|,
+name|writable
+operator|&&
+operator|!
+name|gray
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

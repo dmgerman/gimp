@@ -1657,6 +1657,8 @@ literal|"gegl:scale-ratio"
 block|,
 literal|"gegl:seamless-clone"
 block|,
+literal|"gegl:sepia"
+block|,
 literal|"gegl:shift"
 block|,
 literal|"gegl:simplex-noise"
