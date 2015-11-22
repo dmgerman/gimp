@@ -1094,13 +1094,13 @@ name|GIMP_HELP_ABOUT_DIALOG
 block|}
 block|,
 block|{
-literal|"help-action-search"
+literal|"dialogs-action-search"
 block|,
 literal|"edit-find"
 block|,
 name|NC_
 argument_list|(
-literal|"help-action"
+literal|"dialogs-action"
 argument_list|,
 literal|"_Search and Run a Command"
 argument_list|)
@@ -1109,7 +1109,7 @@ literal|"slash"
 block|,
 name|NC_
 argument_list|(
-literal|"help-action"
+literal|"dialogs-action"
 argument_list|,
 literal|"Search commands by keyword, and run them"
 argument_list|)
