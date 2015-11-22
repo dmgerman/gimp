@@ -456,6 +456,17 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_color_profile_is_linear
+parameter_list|(
+name|GimpColorProfile
+modifier|*
+name|profile
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_color_profile_is_cmyk
 parameter_list|(
 name|GimpColorProfile
