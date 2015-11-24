@@ -100,10 +100,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8382dd0108
+DECL|struct|__anon2c33521c0108
 block|{
 union|union
-DECL|union|__anon2b8382dd020a
+DECL|union|__anon2c33521c020a
 block|{
 DECL|member|ID
 name|gint32
@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8382dd0308
+DECL|struct|__anon2c33521c0308
 block|{
 DECL|member|babl_name
 specifier|const
@@ -187,7 +187,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8382dd0408
+DECL|struct|__anon2c33521c0408
 block|{
 DECL|member|babl_model
 specifier|const
@@ -512,7 +512,7 @@ DECL|macro|CPN_RGBA_R
 define|#
 directive|define
 name|CPN_RGBA_R
-value|{"R", N_("_Red:"),   GIMP_STOCK_CHANNEL_RED, 0.0, 1.0, FALSE}
+value|{ "R", N_("_Red:"),   GIMP_STOCK_CHANNEL_RED, 0.0, 1.0, FALSE}
 end_define
 
 begin_define
@@ -520,7 +520,7 @@ DECL|macro|CPN_RGBA_G
 define|#
 directive|define
 name|CPN_RGBA_G
-value|{"G", N_("_Green:"), GIMP_STOCK_CHANNEL_GREEN, 0.0, 1.0, FALSE}
+value|{ "G", N_("_Green:"), GIMP_STOCK_CHANNEL_GREEN, 0.0, 1.0, FALSE}
 end_define
 
 begin_define
@@ -528,7 +528,7 @@ DECL|macro|CPN_RGBA_B
 define|#
 directive|define
 name|CPN_RGBA_B
-value|{"B", N_("_Blue:"),  GIMP_STOCK_CHANNEL_BLUE, 0.0, 1.0, FALSE}
+value|{ "B", N_("_Blue:"),  GIMP_STOCK_CHANNEL_BLUE, 0.0, 1.0, FALSE}
 end_define
 
 begin_define
@@ -536,7 +536,7 @@ DECL|macro|CPN_RGBA_A
 define|#
 directive|define
 name|CPN_RGBA_A
-value|{"A", N_("_Alpha:"), GIMP_STOCK_CHANNEL_ALPHA, 0.0, 1.0, TRUE}
+value|{ "A", N_("_Alpha:"), GIMP_STOCK_CHANNEL_ALPHA, 0.0, 1.0, TRUE}
 end_define
 
 begin_define
@@ -544,7 +544,7 @@ DECL|macro|CPN_HSV_H
 define|#
 directive|define
 name|CPN_HSV_H
-value|{"hue", N_("_Hue:"), NULL, 0.0, 1.0, TRUE}
+value|{ "hue",        N_("_Hue:"),        NULL, 0.0, 1.0, TRUE}
 end_define
 
 begin_define
@@ -552,7 +552,7 @@ DECL|macro|CPN_HSV_S
 define|#
 directive|define
 name|CPN_HSV_S
-value|{"saturation", N_("_Saturation:"), NULL, 0.0, 1.0, TRUE}
+value|{ "saturation", N_("_Saturation:"), NULL, 0.0, 1.0, TRUE}
 end_define
 
 begin_define
@@ -560,7 +560,7 @@ DECL|macro|CPN_HSV_V
 define|#
 directive|define
 name|CPN_HSV_V
-value|{"value", N_("_Value:"), NULL, 0.0, 1.0, TRUE}
+value|{ "value",      N_("_Value:"),      NULL, 0.0, 1.0, TRUE}
 end_define
 
 begin_define
@@ -568,7 +568,7 @@ DECL|macro|CPN_HSL_H
 define|#
 directive|define
 name|CPN_HSL_H
-value|{"hue", N_("_Hue:"), NULL, 0.0, 1.0, TRUE}
+value|{ "hue",        N_("_Hue:"),        NULL, 0.0, 1.0, TRUE}
 end_define
 
 begin_define
@@ -576,7 +576,7 @@ DECL|macro|CPN_HSL_S
 define|#
 directive|define
 name|CPN_HSL_S
-value|{"saturation", N_("_Saturation:"), NULL, 0.0, 1.0, TRUE}
+value|{ "saturation", N_("_Saturation:"), NULL, 0.0, 1.0, TRUE}
 end_define
 
 begin_define
@@ -584,7 +584,7 @@ DECL|macro|CPN_HSL_L
 define|#
 directive|define
 name|CPN_HSL_L
-value|{"lightness", N_("_Lightness:"), NULL, 0.0, 1.0, TRUE}
+value|{ "lightness",  N_("_Lightness:"),  NULL, 0.0, 1.0, TRUE}
 end_define
 
 begin_define
@@ -592,7 +592,7 @@ DECL|macro|CPN_CMYK_C
 define|#
 directive|define
 name|CPN_CMYK_C
-value|{"cyan", N_("_Cyan:"), NULL, 0.0, 1.0, TRUE}
+value|{ "cyan",    N_("_Cyan:"),    NULL, 0.0, 1.0, TRUE}
 end_define
 
 begin_define
@@ -600,7 +600,7 @@ DECL|macro|CPN_CMYK_M
 define|#
 directive|define
 name|CPN_CMYK_M
-value|{"magenta", N_("_Magenta:"), NULL, 0.0, 1.0, TRUE}
+value|{ "magenta", N_("_Magenta:"), NULL, 0.0, 1.0, TRUE}
 end_define
 
 begin_define
@@ -608,7 +608,7 @@ DECL|macro|CPN_CMYK_Y
 define|#
 directive|define
 name|CPN_CMYK_Y
-value|{"yellow", N_("_Yellow:"), NULL, 0.0, 1.0, TRUE}
+value|{ "yellow",  N_("_Yellow:"),  NULL, 0.0, 1.0, TRUE}
 end_define
 
 begin_define
@@ -616,7 +616,7 @@ DECL|macro|CPN_CMYK_K
 define|#
 directive|define
 name|CPN_CMYK_K
-value|{"key", N_("_Black:"), NULL, 0.0, 1.0, TRUE}
+value|{ "key",     N_("_Black:"),   NULL, 0.0, 1.0, TRUE}
 end_define
 
 begin_define
@@ -624,7 +624,7 @@ DECL|macro|CPN_CMY_C
 define|#
 directive|define
 name|CPN_CMY_C
-value|{"cyan", N_("_Cyan:"), NULL, 0.0, 1.0, TRUE}
+value|{ "cyan",    N_("_Cyan:"),    NULL, 0.0, 1.0, TRUE}
 end_define
 
 begin_define
@@ -632,7 +632,7 @@ DECL|macro|CPN_CMY_M
 define|#
 directive|define
 name|CPN_CMY_M
-value|{"magenta", N_("_Magenta:"), NULL, 0.0, 1.0, TRUE}
+value|{ "magenta", N_("_Magenta:"), NULL, 0.0, 1.0, TRUE}
 end_define
 
 begin_define
@@ -640,7 +640,7 @@ DECL|macro|CPN_CMY_Y
 define|#
 directive|define
 name|CPN_CMY_Y
-value|{"yellow", N_("_Yellow:"), NULL, 0.0, 1.0, TRUE}
+value|{ "yellow",  N_("_Yellow:"),  NULL, 0.0, 1.0, TRUE}
 end_define
 
 begin_define
@@ -648,7 +648,7 @@ DECL|macro|CPN_LAB_L
 define|#
 directive|define
 name|CPN_LAB_L
-value|{"CIE L", N_("_L:"), NULL, 0.0, 100.0, TRUE}
+value|{ "CIE L", N_("_L:"), NULL, 0.0, 100.0, TRUE}
 end_define
 
 begin_define
@@ -656,7 +656,7 @@ DECL|macro|CPN_LAB_A
 define|#
 directive|define
 name|CPN_LAB_A
-value|{"CIE a", N_("_A:"), NULL, -127.5, 127.5, TRUE}
+value|{ "CIE a", N_("_A:"), NULL, -127.5, 127.5, TRUE}
 end_define
 
 begin_define
@@ -664,7 +664,7 @@ DECL|macro|CPN_LAB_B
 define|#
 directive|define
 name|CPN_LAB_B
-value|{"CIE b", N_("_B:"), NULL, -127.5, 127.5, TRUE}
+value|{ "CIE b", N_("_B:"), NULL, -127.5, 127.5, TRUE}
 end_define
 
 begin_define
@@ -672,7 +672,7 @@ DECL|macro|CPN_LCH_L
 define|#
 directive|define
 name|CPN_LCH_L
-value|{"CIE L", N_("_L"), NULL, 0.0, 100.0, TRUE}
+value|{ "CIE L",     N_("_L"), NULL, 0.0, 100.0, TRUE}
 end_define
 
 begin_define
@@ -680,7 +680,7 @@ DECL|macro|CPN_LCH_C
 define|#
 directive|define
 name|CPN_LCH_C
-value|{"CIE C(ab)", N_("_C"), NULL, 0.0, 200.0, TRUE}
+value|{ "CIE C(ab)", N_("_C"), NULL, 0.0, 200.0, TRUE}
 end_define
 
 begin_define
@@ -688,7 +688,7 @@ DECL|macro|CPN_LCH_H
 define|#
 directive|define
 name|CPN_LCH_H
-value|{"CIE H(ab)", N_("_H"), NULL, 0.0, 360.0, TRUE}
+value|{ "CIE H(ab)", N_("_H"), NULL, 0.0, 360.0, TRUE}
 end_define
 
 begin_define
@@ -696,7 +696,7 @@ DECL|macro|CPN_YCBCR_Y
 define|#
 directive|define
 name|CPN_YCBCR_Y
-value|{"Y'", N_("_Luma y470:"), NULL, 0.0, 1.0, TRUE}
+value|{ "Y'", N_("_Luma y470:"),      NULL,  0.0, 1.0, TRUE }
 end_define
 
 begin_define
@@ -704,7 +704,7 @@ DECL|macro|CPN_YCBCR_CB
 define|#
 directive|define
 name|CPN_YCBCR_CB
-value|{"Cb", N_("_Blueness cb470:"), NULL, -0.5, 0.5, TRUE}
+value|{ "Cb", N_("_Blueness cb470:"), NULL, -0.5, 0.5, TRUE }
 end_define
 
 begin_define
@@ -712,7 +712,7 @@ DECL|macro|CPN_YCBCR_CR
 define|#
 directive|define
 name|CPN_YCBCR_CR
-value|{"Cr", N_("_Redness cr470:"), NULL, -0.5, 0.5, TRUE}
+value|{ "Cr", N_("_Redness cr470:"),  NULL, -0.5, 0.5, TRUE }
 end_define
 
 begin_define
@@ -720,7 +720,7 @@ DECL|macro|CPN_YCBCR709_Y
 define|#
 directive|define
 name|CPN_YCBCR709_Y
-value|{"Y'", N_("_Luma y709:"), NULL, 0.0, 1.0, TRUE}
+value|{ "Y'", N_("_Luma y709:"),      NULL,  0.0, 1.0, TRUE }
 end_define
 
 begin_define
@@ -728,7 +728,7 @@ DECL|macro|CPN_YCBCR709_CB
 define|#
 directive|define
 name|CPN_YCBCR709_CB
-value|{"Cb", N_("_Blueness cb709:"), NULL, -0.5, 0.5, TRUE}
+value|{ "Cb", N_("_Blueness cb709:"), NULL, -0.5, 0.5, TRUE }
 end_define
 
 begin_define
@@ -736,7 +736,7 @@ DECL|macro|CPN_YCBCR709_CR
 define|#
 directive|define
 name|CPN_YCBCR709_CR
-value|{"Cr", N_("_Redness cr709:"), NULL, -0.5, 0.5, TRUE}
+value|{ "Cr", N_("_Redness cr709:"),  NULL, -0.5, 0.5, TRUE }
 end_define
 
 begin_decl_stmt
@@ -1002,14 +1002,14 @@ block|}
 block|,
 literal|"ycbcr709F-compose"
 block|}
-block|, }
+block|}
 decl_stmt|;
 end_decl_stmt
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8382dd0508
+DECL|struct|__anon2c33521c0508
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1049,7 +1049,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8382dd0608
+DECL|struct|__anon2c33521c0608
 block|{
 DECL|member|width
 DECL|member|height
@@ -1224,14 +1224,6 @@ comment|/* Image Ids or mask values from menus */
 literal|0
 comment|/* Compose type */
 block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|run_mode
-specifier|static
-name|GimpRunMode
-name|run_mode
 decl_stmt|;
 end_decl_stmt
 
@@ -1443,7 +1435,7 @@ name|GString
 modifier|*
 name|type_desc
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|type_desc
@@ -1736,6 +1728,9 @@ name|GimpPDBStatusType
 name|status
 init|=
 name|GIMP_PDB_SUCCESS
+decl_stmt|;
+name|GimpRunMode
+name|run_mode
 decl_stmt|;
 name|gint32
 name|image_ID
@@ -2623,26 +2618,20 @@ name|gi
 argument_list|)
 condition|)
 block|{
-name|guint
-name|k
-decl_stmt|;
-name|double
+name|gdouble
 modifier|*
 name|data
-decl_stmt|;
-name|data
-operator|=
-operator|(
-name|double
-operator|*
-operator|)
+init|=
 name|gi
 operator|->
 name|data
 index|[
 literal|0
 index|]
-expr_stmt|;
+decl_stmt|;
+name|guint
+name|k
+decl_stmt|;
 for|for
 control|(
 name|k
@@ -2785,23 +2774,17 @@ name|gi
 argument_list|)
 condition|)
 block|{
-name|gulong
-name|k
-decl_stmt|,
-name|count
-decl_stmt|;
 name|gdouble
 modifier|*
 name|src_data
 index|[
 name|MAX_COMPOSE_IMAGES
 index|]
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 modifier|*
 name|dst_data
-decl_stmt|;
-name|dst_data
-operator|=
+init|=
 operator|(
 name|gdouble
 operator|*
@@ -2812,7 +2795,12 @@ name|data
 index|[
 literal|0
 index|]
-expr_stmt|;
+decl_stmt|;
+name|gulong
+name|k
+decl_stmt|,
+name|count
+decl_stmt|;
 name|count
 operator|=
 literal|1
@@ -2892,6 +2880,7 @@ condition|;
 name|j
 operator|++
 control|)
+block|{
 if|if
 condition|(
 name|inputs
@@ -2929,6 +2918,7 @@ index|[
 name|j
 index|]
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
@@ -3448,7 +3438,8 @@ name|buffer_src
 index|[
 name|MAX_COMPOSE_IMAGES
 index|]
-decl_stmt|,
+decl_stmt|;
+name|GeglBuffer
 modifier|*
 name|buffer_dst
 decl_stmt|;

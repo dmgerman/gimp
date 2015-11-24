@@ -76,42 +76,42 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294edc510108
+DECL|struct|__anon289e3cad0108
 block|{
-comment|/* the babl_component names of the channels */
 DECL|member|babl_name
 specifier|const
 name|gchar
 modifier|*
 name|babl_name
 decl_stmt|;
-comment|/* Names of channels to extract */
+comment|/* channel's  babl_component name    */
 DECL|member|channel_name
 specifier|const
 name|gchar
 modifier|*
 name|channel_name
 decl_stmt|;
-comment|/* min and max */
+comment|/* name of channel to extract        */
 DECL|member|range_min
 specifier|const
 name|gdouble
 name|range_min
 decl_stmt|;
+comment|/* min and max                       */
 DECL|member|range_max
 specifier|const
 name|gdouble
 name|range_max
 decl_stmt|;
-comment|/* Make the channel "correct" in Y' space */
 DECL|member|perceptual_channel
 specifier|const
 name|gboolean
 name|perceptual_channel
 decl_stmt|;
-DECL|typedef|COMPONENT
+comment|/* "correct" the channel in Y' space */
+DECL|typedef|Component
 block|}
-name|COMPONENT
+name|Component
 typedef|;
 end_typedef
 
@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294edc510208
+DECL|struct|__anon289e3cad0208
 block|{
 DECL|member|type
 specifier|const
@@ -155,7 +155,7 @@ specifier|const
 name|gboolean
 name|dialog
 decl_stmt|;
-comment|/* Dialog-Flag. Set it to TRUE if you want to appear                                  * this extract function within the dialog */
+comment|/* Set to TRUE if you want                                  * this extract function in the dialog */
 DECL|member|num_images
 specifier|const
 name|gint
@@ -171,22 +171,22 @@ comment|/* clamping values in [0.0, 1.0] */
 comment|/* the babl_component names of the channels */
 DECL|member|component
 specifier|const
-name|COMPONENT
+name|Component
 name|component
 index|[
 name|MAX_EXTRACT_IMAGES
 index|]
 decl_stmt|;
-DECL|typedef|EXTRACT
+DECL|typedef|Extract
 block|}
-name|EXTRACT
+name|Extract
 typedef|;
 end_typedef
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294edc510308
+DECL|struct|__anon289e3cad0308
 block|{
 DECL|member|extract_type
 name|gchar
@@ -203,9 +203,9 @@ DECL|member|use_registration
 name|gboolean
 name|use_registration
 decl_stmt|;
-DECL|typedef|DecoVals
+DECL|typedef|DecomposeVals
 block|}
-name|DecoVals
+name|DecomposeVals
 typedef|;
 end_typedef
 
@@ -407,7 +407,7 @@ modifier|*
 modifier|*
 name|dst
 parameter_list|,
-name|EXTRACT
+name|Extract
 name|ext
 parameter_list|)
 function_decl|;
@@ -432,7 +432,7 @@ modifier|*
 name|model
 parameter_list|,
 specifier|const
-name|COMPONENT
+name|Component
 name|component
 parameter_list|,
 name|gboolean
@@ -474,7 +474,7 @@ DECL|macro|CPN_RGBA_R
 define|#
 directive|define
 name|CPN_RGBA_R
-value|{"R", N_("red"), 0.0, 1.0, FALSE}
+value|{ "R",          N_("red"),           0.0, 1.0, FALSE }
 end_define
 
 begin_define
@@ -482,7 +482,7 @@ DECL|macro|CPN_RGBA_G
 define|#
 directive|define
 name|CPN_RGBA_G
-value|{"G", N_("green"), 0.0, 1.0, FALSE}
+value|{ "G",          N_("green"),         0.0, 1.0, FALSE }
 end_define
 
 begin_define
@@ -490,7 +490,7 @@ DECL|macro|CPN_RGBA_B
 define|#
 directive|define
 name|CPN_RGBA_B
-value|{"B", N_("blue"), 0.0, 1.0, FALSE}
+value|{ "B",          N_("blue"),          0.0, 1.0, FALSE }
 end_define
 
 begin_define
@@ -498,7 +498,7 @@ DECL|macro|CPN_RGBA_A
 define|#
 directive|define
 name|CPN_RGBA_A
-value|{"A", N_("alpha"), 0.0, 1.0, TRUE}
+value|{ "A",          N_("alpha"),         0.0, 1.0, TRUE  }
 end_define
 
 begin_define
@@ -506,7 +506,7 @@ DECL|macro|CPN_HSV_H
 define|#
 directive|define
 name|CPN_HSV_H
-value|{"hue", N_("hue"), 0.0, 1.0, TRUE}
+value|{ "hue",        N_("hue"),           0.0, 1.0, TRUE }
 end_define
 
 begin_define
@@ -514,7 +514,7 @@ DECL|macro|CPN_HSV_S
 define|#
 directive|define
 name|CPN_HSV_S
-value|{"saturation", N_("saturation"), 0.0, 1.0, TRUE}
+value|{ "saturation", N_("saturation"),    0.0, 1.0, TRUE }
 end_define
 
 begin_define
@@ -522,7 +522,7 @@ DECL|macro|CPN_HSV_V
 define|#
 directive|define
 name|CPN_HSV_V
-value|{"value", N_("value"), 0.0, 1.0, TRUE}
+value|{ "value",      N_("value"),         0.0, 1.0, TRUE }
 end_define
 
 begin_define
@@ -530,7 +530,7 @@ DECL|macro|CPN_HSL_H
 define|#
 directive|define
 name|CPN_HSL_H
-value|{"hue", N_("hue"), 0.0, 1.0, TRUE}
+value|{ "hue",        N_("hue"),           0.0, 1.0, TRUE }
 end_define
 
 begin_define
@@ -538,7 +538,7 @@ DECL|macro|CPN_HSL_S
 define|#
 directive|define
 name|CPN_HSL_S
-value|{"saturation", N_("saturation"), 0.0, 1.0, TRUE}
+value|{ "saturation", N_("saturation"),    0.0, 1.0, TRUE }
 end_define
 
 begin_define
@@ -546,7 +546,7 @@ DECL|macro|CPN_HSL_L
 define|#
 directive|define
 name|CPN_HSL_L
-value|{"lightness", N_("lightness"), 0.0, 1.0, TRUE}
+value|{ "lightness",  N_("lightness"),     0.0, 1.0, TRUE }
 end_define
 
 begin_define
@@ -554,7 +554,7 @@ DECL|macro|CPN_CMYK_C
 define|#
 directive|define
 name|CPN_CMYK_C
-value|{"cyan", N_("cyan-k"), 0.0, 1.0, TRUE}
+value|{ "cyan",       N_("cyan-k"),        0.0, 1.0, TRUE }
 end_define
 
 begin_define
@@ -562,7 +562,7 @@ DECL|macro|CPN_CMYK_M
 define|#
 directive|define
 name|CPN_CMYK_M
-value|{"magenta", N_("magenta-k"), 0.0, 1.0, TRUE}
+value|{ "magenta",    N_("magenta-k"),     0.0, 1.0, TRUE }
 end_define
 
 begin_define
@@ -570,7 +570,7 @@ DECL|macro|CPN_CMYK_Y
 define|#
 directive|define
 name|CPN_CMYK_Y
-value|{"yellow", N_("yellow-k"), 0.0, 1.0, TRUE}
+value|{ "yellow",     N_("yellow-k"),      0.0, 1.0, TRUE }
 end_define
 
 begin_define
@@ -578,7 +578,7 @@ DECL|macro|CPN_CMYK_K
 define|#
 directive|define
 name|CPN_CMYK_K
-value|{"key", N_("black"), 0.0, 1.0, TRUE}
+value|{ "key",        N_("black"),         0.0, 1.0, TRUE }
 end_define
 
 begin_define
@@ -586,7 +586,7 @@ DECL|macro|CPN_CMY_C
 define|#
 directive|define
 name|CPN_CMY_C
-value|{"cyan", N_("cyan"), 0.0, 1.0, TRUE}
+value|{ "cyan",       N_("cyan"),          0.0, 1.0, TRUE }
 end_define
 
 begin_define
@@ -594,7 +594,7 @@ DECL|macro|CPN_CMY_M
 define|#
 directive|define
 name|CPN_CMY_M
-value|{"magenta", N_("magenta"), 0.0, 1.0, TRUE}
+value|{ "magenta",    N_("magenta"),       0.0, 1.0, TRUE }
 end_define
 
 begin_define
@@ -602,7 +602,7 @@ DECL|macro|CPN_CMY_Y
 define|#
 directive|define
 name|CPN_CMY_Y
-value|{"yellow", N_("yellow"), 0.0, 1.0, TRUE}
+value|{ "yellow",     N_("yellow"),        0.0, 1.0, TRUE }
 end_define
 
 begin_define
@@ -610,7 +610,7 @@ DECL|macro|CPN_LAB_L
 define|#
 directive|define
 name|CPN_LAB_L
-value|{"CIE L", N_("L"), 0.0, 100.0, TRUE}
+value|{ "CIE L",      N_("L"),             0.0, 100.0, TRUE }
 end_define
 
 begin_define
@@ -618,7 +618,7 @@ DECL|macro|CPN_LAB_A
 define|#
 directive|define
 name|CPN_LAB_A
-value|{"CIE a", N_("A"), -127.5, 127.5, TRUE}
+value|{ "CIE a",      N_("A"),          -127.5, 127.5, TRUE }
 end_define
 
 begin_define
@@ -626,7 +626,7 @@ DECL|macro|CPN_LAB_B
 define|#
 directive|define
 name|CPN_LAB_B
-value|{"CIE b", N_("B"), -127.5, 127.5, TRUE}
+value|{ "CIE b",      N_("B"),          -127.5, 127.5, TRUE }
 end_define
 
 begin_define
@@ -634,7 +634,7 @@ DECL|macro|CPN_LCH_L
 define|#
 directive|define
 name|CPN_LCH_L
-value|{"CIE L", N_("L"), 0.0, 100.0, TRUE}
+value|{ "CIE L",      N_("L"),             0.0, 100.0, TRUE }
 end_define
 
 begin_define
@@ -642,7 +642,7 @@ DECL|macro|CPN_LCH_C
 define|#
 directive|define
 name|CPN_LCH_C
-value|{"CIE C(ab)", N_("C"), 0.0, 200.0, TRUE}
+value|{ "CIE C(ab)",  N_("C"),             0.0, 200.0, TRUE }
 end_define
 
 begin_define
@@ -650,7 +650,7 @@ DECL|macro|CPN_LCH_H
 define|#
 directive|define
 name|CPN_LCH_H
-value|{"CIE H(ab)", N_("H"), 0.0, 360.0, TRUE}
+value|{ "CIE H(ab)",  N_("H"),             0.0, 360.0, TRUE }
 end_define
 
 begin_define
@@ -658,7 +658,7 @@ DECL|macro|CPN_YCBCR_Y
 define|#
 directive|define
 name|CPN_YCBCR_Y
-value|{"Y'", N_("luma-y470"), 0.0, 1.0, TRUE}
+value|{ "Y'",         N_("luma-y470"),       0.0, 1.0, TRUE }
 end_define
 
 begin_define
@@ -666,7 +666,7 @@ DECL|macro|CPN_YCBCR_CB
 define|#
 directive|define
 name|CPN_YCBCR_CB
-value|{"Cb", N_("blueness-cb470"), -0.5, 0.5, TRUE}
+value|{ "Cb",         N_("blueness-cb470"), -0.5, 0.5, TRUE }
 end_define
 
 begin_define
@@ -674,7 +674,7 @@ DECL|macro|CPN_YCBCR_CR
 define|#
 directive|define
 name|CPN_YCBCR_CR
-value|{"Cr", N_("redness-cr470"), -0.5, 0.5, TRUE}
+value|{ "Cr",         N_("redness-cr470"),  -0.5, 0.5, TRUE }
 end_define
 
 begin_define
@@ -682,7 +682,7 @@ DECL|macro|CPN_YCBCR709_Y
 define|#
 directive|define
 name|CPN_YCBCR709_Y
-value|{"Y'", N_("luma-y709"), 0.0, 1.0, TRUE}
+value|{ "Y'",         N_("luma-y709"),       0.0, 1.0, TRUE }
 end_define
 
 begin_define
@@ -690,7 +690,7 @@ DECL|macro|CPN_YCBCR709_CB
 define|#
 directive|define
 name|CPN_YCBCR709_CB
-value|{"Cb", N_("blueness-cb709"), -0.5, 0.5, TRUE}
+value|{ "Cb",         N_("blueness-cb709"), -0.5, 0.5, TRUE }
 end_define
 
 begin_define
@@ -698,14 +698,14 @@ DECL|macro|CPN_YCBCR709_CR
 define|#
 directive|define
 name|CPN_YCBCR709_CR
-value|{"Cr", N_("redness-cr709"), -0.5, 0.5, TRUE}
+value|{ "Cr",         N_("redness-cr709"),  -0.5, 0.5, TRUE }
 end_define
 
 begin_decl_stmt
 DECL|variable|extract
 specifier|static
 specifier|const
-name|EXTRACT
+name|Extract
 name|extract
 index|[]
 init|=
@@ -1323,7 +1323,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|decovals
 specifier|static
-name|DecoVals
+name|DecomposeVals
 name|decovals
 init|=
 block|{
@@ -1444,7 +1444,7 @@ name|GString
 modifier|*
 name|type_desc
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|type_desc
@@ -2190,7 +2190,7 @@ name|decovals
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|DecoVals
+name|DecomposeVals
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2282,7 +2282,8 @@ name|gboolean
 name|requirments
 init|=
 name|FALSE
-decl_stmt|,
+decl_stmt|;
+name|gboolean
 name|decomp_has_alpha
 init|=
 name|FALSE
@@ -2768,7 +2769,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Create an image. Sets layer_ID, drawable and rgn. Returns image_ID */
+comment|/* Create an image. Returns layer_ID and image_ID */
 end_comment
 
 begin_function
@@ -3021,16 +3022,20 @@ specifier|const
 name|Babl
 modifier|*
 name|src_format
-decl_stmt|,
+decl_stmt|;
+specifier|const
+name|Babl
 modifier|*
 name|dst_format
 decl_stmt|;
 name|gint
-name|i
-decl_stmt|,
 name|src_bpp
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|dst_bpp
+decl_stmt|;
+name|gint
+name|i
 decl_stmt|;
 name|gdouble
 name|white
@@ -3136,18 +3141,19 @@ name|gi
 argument_list|)
 condition|)
 block|{
-name|guint
-name|j
-decl_stmt|,
-name|k
-decl_stmt|;
 name|gpointer
 name|src_data
-decl_stmt|,
+decl_stmt|;
+name|gpointer
 name|dst_data
 index|[
 name|MAX_EXTRACT_IMAGES
 index|]
+decl_stmt|;
+name|gint
+name|j
+decl_stmt|,
+name|k
 decl_stmt|;
 name|src_data
 operator|=
@@ -3203,13 +3209,11 @@ control|)
 block|{
 name|gulong
 name|pos
-decl_stmt|;
-name|pos
-operator|=
+init|=
 name|k
 operator|*
 name|src_bpp
-expr_stmt|;
+decl_stmt|;
 name|gimp_rgba_set_pixel
 argument_list|(
 operator|&
@@ -3258,14 +3262,12 @@ control|)
 block|{
 name|gpointer
 name|data
-decl_stmt|;
-name|data
-operator|=
+init|=
 name|dst_data
 index|[
 name|j
 index|]
-expr_stmt|;
+decl_stmt|;
 name|babl_process
 argument_list|(
 name|babl_fish
@@ -3489,7 +3491,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|copy_n_components (GeglBuffer * src,GeglBuffer ** dst,EXTRACT ext)
+DECL|function|copy_n_components (GeglBuffer * src,GeglBuffer ** dst,Extract ext)
 name|copy_n_components
 parameter_list|(
 name|GeglBuffer
@@ -3501,7 +3503,7 @@ modifier|*
 modifier|*
 name|dst
 parameter_list|,
-name|EXTRACT
+name|Extract
 name|ext
 parameter_list|)
 block|{
@@ -3571,7 +3573,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|copy_one_component (GeglBuffer * src,GeglBuffer * dst,const gchar * model,const COMPONENT component,gboolean clamp)
+DECL|function|copy_one_component (GeglBuffer * src,GeglBuffer * dst,const gchar * model,const Component component,gboolean clamp)
 name|copy_one_component
 parameter_list|(
 name|GeglBuffer
@@ -3588,7 +3590,7 @@ modifier|*
 name|model
 parameter_list|,
 specifier|const
-name|COMPONENT
+name|Component
 name|component
 parameter_list|,
 name|gboolean
@@ -3599,7 +3601,9 @@ specifier|const
 name|Babl
 modifier|*
 name|component_format
-decl_stmt|,
+decl_stmt|;
+specifier|const
+name|Babl
 modifier|*
 name|dst_format
 decl_stmt|;
