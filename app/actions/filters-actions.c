@@ -773,6 +773,28 @@ comment|/* FIXME GIMP_HELP_FILTER_GAUSSIAN_BLUR */
 block|}
 block|,
 block|{
+literal|"filters-gaussian-blur-selective"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Selective Gaussian Blur..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:gaussian-blur-selective"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_GAUSSIAN_BLUR_SELECTIVE */
+block|}
+block|,
+block|{
 literal|"filters-grid"
 block|,
 name|GIMP_STOCK_GRID
@@ -2335,6 +2357,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-gaussian-blur"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-gaussian-blur-selective"
 argument_list|,
 name|writable
 argument_list|)

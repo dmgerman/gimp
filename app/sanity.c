@@ -1581,6 +1581,8 @@ literal|"gegl:fractal-trace"
 block|,
 literal|"gegl:gaussian-blur"
 block|,
+literal|"gegl:gaussian-blur-selective"
+block|,
 literal|"gegl:grid"
 block|,
 literal|"gegl:illusion"
