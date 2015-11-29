@@ -894,6 +894,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpBufferSourceBox
+typedef|typedef
+name|struct
+name|_GimpBufferSourceBox
+name|GimpBufferSourceBox
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpCircle
 typedef|typedef
 name|struct
