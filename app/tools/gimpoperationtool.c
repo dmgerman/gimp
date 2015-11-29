@@ -941,7 +941,7 @@ argument_list|,
 operator|(
 name|GFunc
 operator|)
-name|aux_input_clear
+name|gimp_operation_tool_aux_input_clear
 argument_list|,
 name|NULL
 argument_list|)
@@ -2519,8 +2519,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|aux_input_notify (GimpBufferSourceBox * box,const GParamSpec * pspec,GimpOperationTool * tool)
-name|aux_input_notify
+DECL|function|gimp_operation_tool_aux_input_notify (GimpBufferSourceBox * box,const GParamSpec * pspec,GimpOperationTool * tool)
+name|gimp_operation_tool_aux_input_notify
 parameter_list|(
 name|GimpBufferSourceBox
 modifier|*
@@ -2551,8 +2551,8 @@ begin_function
 specifier|static
 name|AuxInput
 modifier|*
-DECL|function|aux_input_new (GimpOperationTool * tool,GeglNode * operation,const gchar * input_pad,const gchar * label)
-name|aux_input_new
+DECL|function|gimp_operation_tool_aux_input_new (GimpOperationTool * tool,GeglNode * operation,const gchar * input_pad,const gchar * label)
+name|gimp_operation_tool_aux_input_new
 parameter_list|(
 name|GimpOperationTool
 modifier|*
@@ -2649,7 +2649,7 @@ literal|"notify::pickable"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|aux_input_notify
+name|gimp_operation_tool_aux_input_notify
 argument_list|)
 argument_list|,
 name|tool
@@ -2665,7 +2665,7 @@ literal|"notify::enabled"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|aux_input_notify
+name|gimp_operation_tool_aux_input_notify
 argument_list|)
 argument_list|,
 name|tool
@@ -2680,8 +2680,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|aux_input_clear (AuxInput * input)
-name|aux_input_clear
+DECL|function|gimp_operation_tool_aux_input_clear (AuxInput * input)
+name|gimp_operation_tool_aux_input_clear
 parameter_list|(
 name|AuxInput
 modifier|*
@@ -2707,8 +2707,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|aux_input_free (AuxInput * input)
-name|aux_input_free
+DECL|function|gimp_operation_tool_aux_input_free (AuxInput * input)
+name|gimp_operation_tool_aux_input_free
 parameter_list|(
 name|AuxInput
 modifier|*
@@ -2872,7 +2872,7 @@ argument_list|,
 operator|(
 name|GDestroyNotify
 operator|)
-name|aux_input_free
+name|gimp_operation_tool_aux_input_free
 argument_list|)
 expr_stmt|;
 name|tool
@@ -3061,8 +3061,10 @@ block|{
 name|AuxInput
 modifier|*
 name|input
-init|=
-name|aux_input_new
+decl_stmt|;
+name|input
+operator|=
+name|gimp_operation_tool_aux_input_new
 argument_list|(
 name|tool
 argument_list|,
@@ -3074,7 +3076,7 @@ name|pad
 argument_list|,
 name|label
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|tool
 operator|->
 name|aux_inputs
