@@ -1266,7 +1266,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon27b22c84010a
+DECL|union|__anon273bf065010a
 block|{
 DECL|member|u
 name|guint16
@@ -3145,7 +3145,7 @@ name|error
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal parse error in brush file : "
+literal|"Fatal parse error in brush file: "
 literal|"File appears truncated: "
 argument_list|)
 argument_list|)
