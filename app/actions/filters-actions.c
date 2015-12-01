@@ -693,7 +693,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"_En_grave..."
+literal|"En_grave..."
 argument_list|)
 block|,
 name|NULL
@@ -715,7 +715,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"_E_xposure..."
+literal|"E_xposure..."
 argument_list|)
 block|,
 name|NULL
@@ -1639,7 +1639,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"_Super_nova..."
+literal|"Super_nova..."
 argument_list|)
 block|,
 name|NULL
