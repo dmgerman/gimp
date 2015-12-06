@@ -1745,7 +1745,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_color_profile_combo_box_add
+name|gimp_color_profile_combo_box_add_file
 argument_list|(
 name|GIMP_COLOR_PROFILE_COMBO_BOX
 argument_list|(
