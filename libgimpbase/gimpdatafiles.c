@@ -57,20 +57,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-specifier|inline
-name|gboolean
-name|is_hidden
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|filename
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/*  public functions  */
 end_comment
@@ -308,14 +294,6 @@ name|GFileInfo
 modifier|*
 name|info
 decl_stmt|;
-if|if
-condition|(
-name|is_hidden
-argument_list|(
-name|dir_ent
-argument_list|)
-condition|)
-continue|continue;
 name|filename
 operator|=
 name|g_build_filename
@@ -340,6 +318,8 @@ name|g_file_query_info
 argument_list|(
 name|file
 argument_list|,
+name|G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN
+literal|","
 name|G_FILE_ATTRIBUTE_STANDARD_TYPE
 literal|","
 name|G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE
@@ -417,13 +397,22 @@ argument_list|)
 expr_stmt|;
 name|file_type
 operator|=
-name|g_file_info_get_attribute_uint32
+name|g_file_info_get_file_type
 argument_list|(
 name|info
-argument_list|,
-name|G_FILE_ATTRIBUTE_STANDARD_TYPE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|g_file_info_get_is_hidden
+argument_list|(
+name|info
+argument_list|)
+condition|)
+block|{
+comment|/* do nothing */
+block|}
+elseif|else
 if|if
 condition|(
 name|flags
@@ -750,33 +739,6 @@ directive|endif
 comment|/* G_OS_WIN32 */
 return|return
 name|FALSE
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-specifier|inline
-name|gboolean
-DECL|function|is_hidden (const gchar * filename)
-name|is_hidden
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|filename
-parameter_list|)
-block|{
-comment|/*  skip files starting with '.' so we don't try to parse    *  stuff like .DS_Store or other metadata storage files    */
-return|return
-operator|(
-name|filename
-index|[
-literal|0
-index|]
-operator|==
-literal|'.'
-operator|)
 return|;
 block|}
 end_function
