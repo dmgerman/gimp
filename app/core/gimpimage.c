@@ -360,7 +360,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon276959ba0103
+DECL|enum|__anon2c093b5b0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -457,7 +457,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon276959ba0203
+DECL|enum|__anon2c093b5b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9350,23 +9350,7 @@ argument_list|(
 name|layers
 argument_list|)
 expr_stmt|;
-comment|/* need version 6 for new metadata */
-if|if
-condition|(
-name|gimp_image_get_metadata
-argument_list|(
-name|image
-argument_list|)
-condition|)
-name|version
-operator|=
-name|MAX
-argument_list|(
-literal|6
-argument_list|,
-name|version
-argument_list|)
-expr_stmt|;
+comment|/* version 6 for new metadata has been dropped since they are    * saved through parasites, which is compatible with older versions.    */
 comment|/* need version 7 for high bit depth images */
 if|if
 condition|(
