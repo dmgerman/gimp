@@ -191,7 +191,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297ec6160103
+DECL|enum|__anon2760a4240103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -210,7 +210,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon297ec6160208
+DECL|struct|__anon2760a4240208
 block|{
 DECL|member|name
 specifier|const
@@ -320,6 +320,12 @@ block|}
 block|,
 block|{
 literal|"themes"
+block|,
+name|USER_INSTALL_MKDIR
+block|}
+block|,
+block|{
+literal|"icons"
 block|,
 name|USER_INSTALL_MKDIR
 block|}

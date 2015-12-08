@@ -276,6 +276,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"icon-themes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"session.h"
 end_include
 
@@ -972,6 +978,11 @@ name|gimp
 argument_list|)
 expr_stmt|;
 name|themes_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+name|icon_themes_init
 argument_list|(
 name|gimp
 argument_list|)

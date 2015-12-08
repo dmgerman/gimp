@@ -178,6 +178,16 @@ name|gchar
 modifier|*
 name|theme
 decl_stmt|;
+DECL|member|icon_theme_path
+name|gchar
+modifier|*
+name|icon_theme_path
+decl_stmt|;
+DECL|member|icon_theme
+name|gchar
+modifier|*
+name|icon_theme
+decl_stmt|;
 DECL|member|use_help
 name|gboolean
 name|use_help

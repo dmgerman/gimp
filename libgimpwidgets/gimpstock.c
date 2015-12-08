@@ -2865,6 +2865,10 @@ name|NULL
 decl_stmt|;
 name|gchar
 modifier|*
+name|icon_theme
+decl_stmt|;
+name|gchar
+modifier|*
 name|icons_dir
 decl_stmt|;
 name|gint
@@ -2991,6 +2995,14 @@ name|gimp_compat_stock_items
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|icon_theme
+operator|=
+name|g_strdup
+argument_list|(
+literal|"Default"
+argument_list|)
+expr_stmt|;
+comment|/* FIXME */
 name|icons_dir
 operator|=
 name|g_build_filename
@@ -3000,7 +3012,14 @@ argument_list|()
 argument_list|,
 literal|"icons"
 argument_list|,
+name|icon_theme
+argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|icon_theme
 argument_list|)
 expr_stmt|;
 name|gtk_icon_theme_prepend_search_path

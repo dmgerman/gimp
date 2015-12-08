@@ -1097,6 +1097,24 @@ value|"Sets the theme search path."
 end_define
 
 begin_define
+DECL|macro|ICON_THEME_BLURB
+define|#
+directive|define
+name|ICON_THEME_BLURB
+define|\
+value|"The name of the icon theme to use."
+end_define
+
+begin_define
+DECL|macro|ICON_THEME_PATH_BLURB
+define|#
+directive|define
+name|ICON_THEME_PATH_BLURB
+define|\
+value|"Sets the icon theme search path."
+end_define
+
+begin_define
 DECL|macro|THUMBNAIL_SIZE_BLURB
 define|#
 directive|define

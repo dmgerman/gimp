@@ -3358,6 +3358,14 @@ value|"gimp-prefs-theme"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_PREFS_ICON_THEME
+define|#
+directive|define
+name|GIMP_HELP_PREFS_ICON_THEME
+value|"gimp-prefs-icon-theme"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_PREFS_TOOL_OPTIONS
 define|#
 directive|define
@@ -3579,6 +3587,14 @@ define|#
 directive|define
 name|GIMP_HELP_PREFS_FOLDERS_THEMES
 value|"gimp-prefs-folders-themes"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_FOLDERS_ICON_THEMES
+define|#
+directive|define
+name|GIMP_HELP_PREFS_FOLDERS_ICON_THEMES
+value|"gimp-prefs-folders-icon-themes"
 end_define
 
 begin_define
