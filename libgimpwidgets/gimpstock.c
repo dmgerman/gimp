@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"icons/gimp-icon-pixbufs.c"
+file|"icons/Default/gimp-icon-pixbufs.c"
 end_include
 
 begin_include
