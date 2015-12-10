@@ -203,7 +203,7 @@ name|NC_
 argument_list|(
 literal|"image-action"
 argument_list|,
-literal|"_Precision"
+literal|"Pr_ecision"
 argument_list|)
 block|}
 block|,
@@ -216,7 +216,7 @@ name|NC_
 argument_list|(
 literal|"image-action"
 argument_list|,
-literal|"_Color Management"
+literal|"Color Ma_nagement"
 argument_list|)
 block|}
 block|,
