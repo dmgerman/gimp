@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abf9ed90103
+DECL|enum|__anon2912ee940103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -2647,6 +2647,37 @@ name|children
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* force the toggle cells to recreate their icon */
+name|g_object_set
+argument_list|(
+name|view
+operator|->
+name|priv
+operator|->
+name|eye_cell
+argument_list|,
+literal|"icon-name"
+argument_list|,
+name|GIMP_STOCK_VISIBLE
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_object_set
+argument_list|(
+name|view
+operator|->
+name|priv
+operator|->
+name|chain_cell
+argument_list|,
+literal|"icon-name"
+argument_list|,
+name|GIMP_STOCK_LINKED
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|GTK_WIDGET_CLASS
 argument_list|(
 name|parent_class
