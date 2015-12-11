@@ -113,6 +113,10 @@ DECL|member|radius
 name|gdouble
 name|radius
 decl_stmt|;
+DECL|member|opaque
+name|gdouble
+name|opaque
+decl_stmt|;
 DECL|member|hardness
 name|gdouble
 name|hardness
@@ -148,6 +152,19 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+specifier|const
+name|gchar
+modifier|*
+name|gimp_mybrush_options_get_brush_data
+parameter_list|(
+name|GimpMybrushOptions
+modifier|*
+name|options
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#
