@@ -950,6 +950,12 @@ expr_stmt|;
 name|gimp_language_store_parser_init
 argument_list|()
 expr_stmt|;
+comment|/*  initialize icon themes before gimp_widgets_init() so we avoid    *  setting the configured theme twice    */
+name|icon_themes_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 name|gimp_widgets_init
 argument_list|(
 name|gui_help_func
@@ -978,11 +984,6 @@ name|gimp
 argument_list|)
 expr_stmt|;
 name|themes_init
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
-name|icon_themes_init
 argument_list|(
 name|gimp
 argument_list|)

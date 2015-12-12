@@ -1153,6 +1153,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_stock_set_icon_theme
+parameter_list|(
+name|GFile
+modifier|*
+name|path
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
