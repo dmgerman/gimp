@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpstock.h"
+file|"gimpicons.h"
 end_include
 
 begin_include
@@ -226,7 +226,7 @@ name|_gimp_ensure_modules_func
 operator|=
 name|ensure_modules_func
 expr_stmt|;
-name|gimp_stock_init
+name|gimp_icons_init
 argument_list|()
 expr_stmt|;
 name|gtk_window_set_default_icon_name

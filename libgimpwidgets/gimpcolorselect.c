@@ -66,13 +66,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewarea.h"
+file|"gimpicons.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpstock.h"
+file|"gimppreviewarea.h"
 end_include
 
 begin_include
@@ -102,7 +102,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e7ba4e0103
+DECL|enum|__anon2abfff410103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -153,7 +153,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e7ba4e0203
+DECL|enum|__anon2abfff410203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -198,7 +198,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e7ba4e0303
+DECL|enum|__anon2abfff410303
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE

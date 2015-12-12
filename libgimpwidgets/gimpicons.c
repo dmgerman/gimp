@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpstock.c  * Copyright (C) 2001 Michael Natterer<mitch@gimp.org>  *  * This library is free software: you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 3 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library.  If not, see  *<http://www.gnu.org/licenses/>.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpicons.c  * Copyright (C) 2001-2015 Michael Natterer<mitch@gimp.org>  *  * This library is free software: you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 3 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library.  If not, see  *<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpstock.h"
+file|"gimpicons.h"
 end_include
 
 begin_include
@@ -2860,8 +2860,8 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_stock_change_icon_theme (GFile * path)
-name|gimp_stock_change_icon_theme
+DECL|function|gimp_icons_change_icon_theme (GFile * path)
+name|gimp_icons_change_icon_theme
 parameter_list|(
 name|GFile
 modifier|*
@@ -3049,8 +3049,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_stock_set_icon_theme (GFile * path)
-name|gimp_stock_set_icon_theme
+DECL|function|gimp_icons_set_icon_theme (GFile * path)
+name|gimp_icons_set_icon_theme
 parameter_list|(
 name|GFile
 modifier|*
@@ -3196,7 +3196,7 @@ name|icon_theme_path
 condition|)
 block|{
 comment|/*  this is an icon theme change  */
-name|gimp_stock_change_icon_theme
+name|gimp_icons_change_icon_theme
 argument_list|(
 name|path
 argument_list|)
@@ -3235,13 +3235,31 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_stock_init:  *  * Initializes the GIMP stock icon factory.  *  * You don't need to call this function as gimp_ui_init() already does  * this for you.  */
+comment|/**  * gimp_stock_init:  *  * Initializes the GIMP stock icon factory.  *  * You don't need to call this function as gimp_ui_init() already does  * this for you.  *  * Deprecated: 2.10: USe gimp_icons_init() instead.  */
 end_comment
 
 begin_function
 name|void
 DECL|function|gimp_stock_init (void)
 name|gimp_stock_init
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|gimp_icons_init
+argument_list|()
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_icons_init:  *  * Initializes the GIMP stock icon factory.  *  * You don't need to call this function as gimp_ui_init() already does  * this for you.  */
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_icons_init (void)
+name|gimp_icons_init
 parameter_list|(
 name|void
 parameter_list|)

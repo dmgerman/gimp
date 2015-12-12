@@ -352,7 +352,7 @@ name|gimp_get_icon_theme_dir
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|gimp_stock_set_icon_theme
+name|gimp_icons_set_icon_theme
 argument_list|(
 name|icon_theme
 argument_list|)

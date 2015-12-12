@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpstock.h"
+file|"gimpicons.h"
 end_include
 
 begin_include
@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf434580103
+DECL|enum|__anon28fbd7460103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -165,7 +165,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf434580203
+DECL|enum|__anon28fbd7460203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -178,7 +178,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf434580303
+DECL|enum|__anon28fbd7460303
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -61,7 +61,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpstock.h"
+file|"gimpicons.h"
 end_include
 
 begin_comment
@@ -70,7 +70,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7be2d10103
+DECL|enum|__anon2bf9fbff0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7be2d10203
+DECL|enum|__anon2bf9fbff0203
 block|{
 DECL|enumerator|EVENT
 name|EVENT

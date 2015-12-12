@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpstock.h"
+file|"gimpicons.h"
 end_include
 
 begin_comment
@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bff8c310103
+DECL|enum|__anon2947b8bb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -52,7 +52,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bff8c310203
+DECL|enum|__anon2947b8bb0203
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED

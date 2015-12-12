@@ -54,13 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppickbutton.h"
+file|"gimpicons.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpstock.h"
+file|"gimppickbutton.h"
 end_include
 
 begin_include

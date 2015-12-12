@@ -54,13 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpstock.h"
+file|"gimpcolordisplay.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpcolordisplay.h"
+file|"gimpicons.h"
 end_include
 
 begin_comment
@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0cd9910103
+DECL|enum|__anon2909b8280103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0cd9910203
+DECL|enum|__anon2909b8280203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -102,7 +102,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0cd9910308
+DECL|struct|__anon2909b8280308
 block|{
 DECL|member|config
 name|GimpColorConfig

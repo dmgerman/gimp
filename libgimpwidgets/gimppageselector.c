@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpicons.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppageselector.h"
 end_include
 
@@ -49,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"gimppropwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpstock.h"
 end_include
 
 begin_include
@@ -81,7 +81,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1c9dd60103
+DECL|enum|__anon2b978a680103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -97,7 +97,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1c9dd60203
+DECL|enum|__anon2b978a680203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1c9dd60303
+DECL|enum|__anon2b978a680303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -133,7 +133,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1c9dd60408
+DECL|struct|__anon2b978a680408
 block|{
 DECL|member|n_pages
 name|gint

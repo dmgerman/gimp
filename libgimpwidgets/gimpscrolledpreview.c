@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpicons.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppreviewarea.h"
 end_include
 
@@ -37,12 +43,6 @@ begin_include
 include|#
 directive|include
 file|"gimpscrolledpreview.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpstock.h"
 end_include
 
 begin_include
@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c24ce9b0108
+DECL|struct|__anon2bca3b8f0108
 block|{
 DECL|member|hscr_policy
 name|GtkPolicyType

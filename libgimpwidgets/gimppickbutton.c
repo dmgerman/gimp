@@ -54,13 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppickbutton.h"
+file|"gimpicons.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpstock.h"
+file|"gimppickbutton.h"
 end_include
 
 begin_include
@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b26e9ec0103
+DECL|enum|__anon28a3fe010103
 block|{
 DECL|enumerator|COLOR_PICKED
 name|COLOR_PICKED

@@ -212,6 +212,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimpicons.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimpintcombobox.h>
 end_include
 
@@ -309,12 +315,6 @@ begin_include
 include|#
 directive|include
 file|<libgimpwidgets/gimpsizeentry.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimpwidgets/gimpstock.h>
 end_include
 
 begin_include

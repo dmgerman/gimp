@@ -747,7 +747,7 @@ argument_list|,
 name|icon_theme_name
 argument_list|)
 expr_stmt|;
-name|gimp_stock_set_icon_theme
+name|gimp_icons_set_icon_theme
 argument_list|(
 name|icon_themes_get_theme_dir
 argument_list|(
