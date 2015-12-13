@@ -205,7 +205,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2013470103
+DECL|enum|__anon2b701a0f0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -236,7 +236,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2013470203
+DECL|enum|__anon2b701a0f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4901,7 +4901,7 @@ condition|)
 block|{
 name|dest_profile
 operator|=
-name|gimp_color_profile_new_linear_rgb_from_color_profile
+name|gimp_color_profile_new_linear_gamma_from_color_profile
 argument_list|(
 name|src_profile
 argument_list|)

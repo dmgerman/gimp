@@ -621,7 +621,7 @@ condition|)
 block|{
 name|new_profile
 operator|=
-name|gimp_color_profile_new_linear_rgb_from_color_profile
+name|gimp_color_profile_new_linear_gamma_from_color_profile
 argument_list|(
 name|old_profile
 argument_list|)

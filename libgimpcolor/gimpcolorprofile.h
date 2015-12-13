@@ -279,7 +279,7 @@ end_function_decl
 begin_function_decl
 name|GimpColorProfile
 modifier|*
-name|gimp_color_profile_new_linear_rgb_from_color_profile
+name|gimp_color_profile_new_linear_gamma_from_color_profile
 parameter_list|(
 name|GimpColorProfile
 modifier|*
