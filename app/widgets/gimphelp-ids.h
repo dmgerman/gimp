@@ -3454,19 +3454,19 @@ value|"gimp-prefs-window-management"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_PREFS_ENVIRONMENT
-define|#
-directive|define
-name|GIMP_HELP_PREFS_ENVIRONMENT
-value|"gimp-prefs-environment"
-end_define
-
-begin_define
 DECL|macro|GIMP_HELP_PREFS_SESSION
 define|#
 directive|define
 name|GIMP_HELP_PREFS_SESSION
 value|"gimp-prefs-session"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_SYSTEM_RESOURCES
+define|#
+directive|define
+name|GIMP_HELP_PREFS_SYSTEM_RESOURCES
+value|"gimp-prefs-system-resources"
 end_define
 
 begin_define

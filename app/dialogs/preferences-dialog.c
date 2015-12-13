@@ -5637,7 +5637,7 @@ argument_list|(
 name|prefs_box
 argument_list|)
 argument_list|,
-literal|"gimp-prefs-environment"
+literal|"gimp-prefs-system-resources"
 argument_list|,
 name|GTK_ICON_SIZE_DIALOG
 argument_list|,
@@ -5646,7 +5646,7 @@ argument_list|(
 literal|"System Resources"
 argument_list|)
 argument_list|,
-literal|"gimp-prefs-environment"
+literal|"gimp-prefs-system-resources"
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|,
@@ -5655,7 +5655,7 @@ argument_list|(
 literal|"System Resources"
 argument_list|)
 argument_list|,
-name|GIMP_HELP_PREFS_ENVIRONMENT
+name|GIMP_HELP_PREFS_SYSTEM_RESOURCES
 argument_list|,
 name|NULL
 argument_list|,
@@ -6051,7 +6051,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bad28150108
+DECL|struct|__anon27bcce400108
 block|{
 DECL|member|label
 specifier|const
@@ -11080,7 +11080,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bad28150208
+DECL|struct|__anon27bcce400208
 block|{
 DECL|member|current_setting
 name|gchar
@@ -11907,7 +11907,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bad28150308
+DECL|struct|__anon27bcce400308
 block|{
 DECL|member|property_name
 specifier|const
@@ -12062,7 +12062,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bad28150408
+DECL|struct|__anon27bcce400408
 block|{
 DECL|member|tree_label
 specifier|const
