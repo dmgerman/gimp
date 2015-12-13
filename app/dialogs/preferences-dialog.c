@@ -6051,7 +6051,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28dc1d2e0108
+DECL|struct|__anon2bad28150108
 block|{
 DECL|member|label
 specifier|const
@@ -11080,7 +11080,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon28dc1d2e0208
+DECL|struct|__anon2bad28150208
 block|{
 DECL|member|current_setting
 name|gchar
@@ -11907,7 +11907,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28dc1d2e0308
+DECL|struct|__anon2bad28150308
 block|{
 DECL|member|property_name
 specifier|const
@@ -12062,7 +12062,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28dc1d2e0408
+DECL|struct|__anon2bad28150408
 block|{
 DECL|member|tree_label
 specifier|const
@@ -12462,6 +12462,31 @@ literal|"Select Theme Folders"
 argument_list|)
 block|,
 literal|"theme-path"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"Icon Themes"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"Icon Theme Folders"
+argument_list|)
+block|,
+literal|"folders-icon-themes"
+block|,
+name|GIMP_HELP_PREFS_FOLDERS_ICON_THEMES
+block|,
+name|N_
+argument_list|(
+literal|"Select Icon Theme Folders"
+argument_list|)
+block|,
+literal|"icon-theme-path"
 block|,
 name|NULL
 block|}
