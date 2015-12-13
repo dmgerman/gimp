@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bef9ddf0103
+DECL|enum|__anon2bfd26fa0103
 block|{
 DECL|enumerator|COLUMN_TREE_ICON_NAME
 name|COLUMN_TREE_ICON_NAME
@@ -111,6 +111,14 @@ DECL|member|image
 name|GtkWidget
 modifier|*
 name|image
+decl_stmt|;
+DECL|member|tree_icon_size
+name|gint
+name|tree_icon_size
+decl_stmt|;
+DECL|member|notebook_icon_size
+name|gint
+name|notebook_icon_size
 decl_stmt|;
 DECL|member|page_index
 name|gint
@@ -260,6 +268,18 @@ name|GtkWidget
 modifier|*
 name|vbox
 decl_stmt|;
+name|private
+operator|->
+name|tree_icon_size
+operator|=
+name|GTK_ICON_SIZE_BUTTON
+expr_stmt|;
+name|private
+operator|->
+name|notebook_icon_size
+operator|=
+name|GTK_ICON_SIZE_DIALOG
+expr_stmt|;
 name|gtk_orientable_set_orientation
 argument_list|(
 name|GTK_ORIENTABLE
@@ -1226,7 +1246,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_prefs_box_add_page (GimpPrefsBox * box,const gchar * notebook_icon_name,const GtkIconSize notebook_icon_size,const gchar * notebook_label,const gchar * tree_icon_name,const GtkIconSize tree_icon_size,const gchar * tree_label,const gchar * help_id,GtkTreeIter * parent,GtkTreeIter * iter)
+DECL|function|gimp_prefs_box_add_page (GimpPrefsBox * box,const gchar * icon_name,const gchar * notebook_label,const gchar * tree_label,const gchar * help_id,GtkTreeIter * parent,GtkTreeIter * iter)
 name|gimp_prefs_box_add_page
 parameter_list|(
 name|GimpPrefsBox
@@ -1236,25 +1256,12 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|notebook_icon_name
-parameter_list|,
-specifier|const
-name|GtkIconSize
-name|notebook_icon_size
+name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
 modifier|*
 name|notebook_label
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|tree_icon_name
-parameter_list|,
-specifier|const
-name|GtkIconSize
-name|tree_icon_size
 parameter_list|,
 specifier|const
 name|gchar
@@ -1392,10 +1399,12 @@ name|iter
 argument_list|,
 name|COLUMN_TREE_ICON_NAME
 argument_list|,
-name|tree_icon_name
+name|icon_name
 argument_list|,
 name|COLUMN_TREE_ICON_SIZE
 argument_list|,
+name|private
+operator|->
 name|tree_icon_size
 argument_list|,
 name|COLUMN_TREE_LABEL
@@ -1404,10 +1413,12 @@ name|tree_label
 argument_list|,
 name|COLUMN_NOTEBOOK_ICON_NAME
 argument_list|,
-name|notebook_icon_name
+name|icon_name
 argument_list|,
 name|COLUMN_NOTEBOOK_ICON_SIZE
 argument_list|,
+name|private
+operator|->
 name|notebook_icon_size
 argument_list|,
 name|COLUMN_NOTEBOOK_LABEL

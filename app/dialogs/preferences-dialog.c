@@ -5639,16 +5639,10 @@ argument_list|)
 argument_list|,
 literal|"gimp-prefs-system-resources"
 argument_list|,
-name|GTK_ICON_SIZE_DIALOG
-argument_list|,
 name|_
 argument_list|(
 literal|"System Resources"
 argument_list|)
-argument_list|,
-literal|"gimp-prefs-system-resources"
-argument_list|,
-name|GTK_ICON_SIZE_BUTTON
 argument_list|,
 name|_
 argument_list|(
@@ -6011,16 +6005,10 @@ argument_list|)
 argument_list|,
 literal|"gimp-prefs-color-management"
 argument_list|,
-name|GTK_ICON_SIZE_DIALOG
-argument_list|,
 name|_
 argument_list|(
 literal|"Color Management"
 argument_list|)
-argument_list|,
-literal|"gimp-prefs-color-management"
-argument_list|,
-name|GTK_ICON_SIZE_BUTTON
 argument_list|,
 name|_
 argument_list|(
@@ -6051,7 +6039,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27bcce400108
+DECL|struct|__anon2bd0ea510108
 block|{
 DECL|member|label
 specifier|const
@@ -6735,16 +6723,10 @@ argument_list|)
 argument_list|,
 literal|"gimp-prefs-playground"
 argument_list|,
-name|GTK_ICON_SIZE_DIALOG
-argument_list|,
 name|_
 argument_list|(
 literal|"Experimental Playground"
 argument_list|)
-argument_list|,
-literal|"gimp-prefs-playground"
-argument_list|,
-name|GTK_ICON_SIZE_BUTTON
 argument_list|,
 name|_
 argument_list|(
@@ -6872,18 +6854,12 @@ argument_list|)
 argument_list|,
 literal|"gimp-prefs-tool-options"
 argument_list|,
-name|GTK_ICON_SIZE_DIALOG
-argument_list|,
 name|C_
 argument_list|(
 literal|"preferences"
 argument_list|,
 literal|"Tool Options"
 argument_list|)
-argument_list|,
-literal|"gimp-prefs-tool-options"
-argument_list|,
-name|GTK_ICON_SIZE_BUTTON
 argument_list|,
 name|C_
 argument_list|(
@@ -7305,16 +7281,10 @@ argument_list|)
 argument_list|,
 literal|"gimp-prefs-new-image"
 argument_list|,
-name|GTK_ICON_SIZE_DIALOG
-argument_list|,
 name|_
 argument_list|(
 literal|"Default New Image"
 argument_list|)
-argument_list|,
-literal|"gimp-prefs-new-image"
-argument_list|,
-name|GTK_ICON_SIZE_BUTTON
 argument_list|,
 name|_
 argument_list|(
@@ -7560,16 +7530,10 @@ argument_list|)
 argument_list|,
 literal|"gimp-prefs-default-grid"
 argument_list|,
-name|GTK_ICON_SIZE_DIALOG
-argument_list|,
 name|_
 argument_list|(
 literal|"Default Image Grid"
 argument_list|)
-argument_list|,
-literal|"gimp-prefs-default-grid"
-argument_list|,
-name|GTK_ICON_SIZE_BUTTON
 argument_list|,
 name|_
 argument_list|(
@@ -7649,16 +7613,10 @@ argument_list|)
 argument_list|,
 literal|"gimp-prefs-interface"
 argument_list|,
-name|GTK_ICON_SIZE_DIALOG
-argument_list|,
 name|_
 argument_list|(
 literal|"User Interface"
 argument_list|)
-argument_list|,
-literal|"gimp-prefs-interface"
-argument_list|,
-name|GTK_ICON_SIZE_BUTTON
 argument_list|,
 name|_
 argument_list|(
@@ -8008,16 +7966,10 @@ argument_list|)
 argument_list|,
 literal|"gimp-prefs-theme"
 argument_list|,
-name|GTK_ICON_SIZE_DIALOG
-argument_list|,
 name|_
 argument_list|(
 literal|"Theme"
 argument_list|)
-argument_list|,
-literal|"gimp-prefs-theme"
-argument_list|,
-name|GTK_ICON_SIZE_BUTTON
 argument_list|,
 name|_
 argument_list|(
@@ -8490,16 +8442,10 @@ argument_list|)
 argument_list|,
 literal|"gimp-prefs-icon-theme"
 argument_list|,
-name|GTK_ICON_SIZE_DIALOG
-argument_list|,
 name|_
 argument_list|(
 literal|"Icon Theme"
 argument_list|)
-argument_list|,
-literal|"gimp-prefs-icon-theme"
-argument_list|,
-name|GTK_ICON_SIZE_BUTTON
 argument_list|,
 name|_
 argument_list|(
@@ -8911,16 +8857,10 @@ argument_list|)
 argument_list|,
 literal|"gimp-prefs-toolbox"
 argument_list|,
-name|GTK_ICON_SIZE_DIALOG
-argument_list|,
 name|_
 argument_list|(
 literal|"Toolbox"
 argument_list|)
-argument_list|,
-literal|"gimp-prefs-toolbox"
-argument_list|,
-name|GTK_ICON_SIZE_BUTTON
 argument_list|,
 name|_
 argument_list|(
@@ -9108,16 +9048,10 @@ argument_list|)
 argument_list|,
 literal|"gimp-prefs-help-system"
 argument_list|,
-name|GTK_ICON_SIZE_DIALOG
-argument_list|,
 name|_
 argument_list|(
 literal|"Help System"
 argument_list|)
-argument_list|,
-literal|"gimp-prefs-help-system"
-argument_list|,
-name|GTK_ICON_SIZE_BUTTON
 argument_list|,
 name|_
 argument_list|(
@@ -9618,16 +9552,10 @@ argument_list|)
 argument_list|,
 literal|"gimp-prefs-display"
 argument_list|,
-name|GTK_ICON_SIZE_DIALOG
-argument_list|,
 name|_
 argument_list|(
 literal|"Display"
 argument_list|)
-argument_list|,
-literal|"gimp-prefs-display"
-argument_list|,
-name|GTK_ICON_SIZE_BUTTON
 argument_list|,
 name|_
 argument_list|(
@@ -10269,16 +10197,10 @@ argument_list|)
 argument_list|,
 literal|"gimp-prefs-window-management"
 argument_list|,
-name|GTK_ICON_SIZE_DIALOG
-argument_list|,
 name|_
 argument_list|(
 literal|"Window Management"
 argument_list|)
-argument_list|,
-literal|"gimp-prefs-window-management"
-argument_list|,
-name|GTK_ICON_SIZE_BUTTON
 argument_list|,
 name|_
 argument_list|(
@@ -10523,16 +10445,10 @@ argument_list|)
 argument_list|,
 literal|"gimp-prefs-image-windows"
 argument_list|,
-name|GTK_ICON_SIZE_DIALOG
-argument_list|,
 name|_
 argument_list|(
 literal|"Image Windows"
 argument_list|)
-argument_list|,
-literal|"gimp-prefs-image-windows"
-argument_list|,
-name|GTK_ICON_SIZE_BUTTON
 argument_list|,
 name|_
 argument_list|(
@@ -10912,16 +10828,10 @@ argument_list|)
 argument_list|,
 literal|"gimp-prefs-image-windows"
 argument_list|,
-name|GTK_ICON_SIZE_DIALOG
-argument_list|,
 name|_
 argument_list|(
 literal|"Image Window Appearance"
 argument_list|)
-argument_list|,
-literal|"gimp-prefs-image-windows"
-argument_list|,
-name|GTK_ICON_SIZE_BUTTON
 argument_list|,
 name|_
 argument_list|(
@@ -10995,16 +10905,10 @@ argument_list|)
 argument_list|,
 literal|"gimp-prefs-image-title"
 argument_list|,
-name|GTK_ICON_SIZE_DIALOG
-argument_list|,
 name|_
 argument_list|(
 literal|"Image Title& Statusbar Format"
 argument_list|)
-argument_list|,
-literal|"gimp-prefs-image-title"
-argument_list|,
-name|GTK_ICON_SIZE_BUTTON
 argument_list|,
 name|_
 argument_list|(
@@ -11080,7 +10984,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27bcce400208
+DECL|struct|__anon2bd0ea510208
 block|{
 DECL|member|current_setting
 name|gchar
@@ -11550,16 +11454,10 @@ argument_list|)
 argument_list|,
 literal|"gimp-prefs-tool-options"
 argument_list|,
-name|GTK_ICON_SIZE_DIALOG
-argument_list|,
 name|_
 argument_list|(
 literal|"Image Window Snapping Behavior"
 argument_list|)
-argument_list|,
-literal|"gimp-prefs-tool-options"
-argument_list|,
-name|GTK_ICON_SIZE_BUTTON
 argument_list|,
 name|_
 argument_list|(
@@ -11633,16 +11531,10 @@ argument_list|)
 argument_list|,
 literal|"gimp-prefs-input-devices"
 argument_list|,
-name|GTK_ICON_SIZE_DIALOG
-argument_list|,
 name|_
 argument_list|(
 literal|"Input Devices"
 argument_list|)
-argument_list|,
-literal|"gimp-prefs-input-devices"
-argument_list|,
-name|GTK_ICON_SIZE_BUTTON
 argument_list|,
 name|_
 argument_list|(
@@ -11812,16 +11704,10 @@ argument_list|)
 argument_list|,
 literal|"gimp-prefs-controllers"
 argument_list|,
-name|GTK_ICON_SIZE_DIALOG
-argument_list|,
 name|_
 argument_list|(
 literal|"Additional Input Controllers"
 argument_list|)
-argument_list|,
-literal|"gimp-prefs-controllers"
-argument_list|,
-name|GTK_ICON_SIZE_BUTTON
 argument_list|,
 name|_
 argument_list|(
@@ -11879,16 +11765,10 @@ argument_list|)
 argument_list|,
 literal|"gimp-prefs-folders"
 argument_list|,
-name|GTK_ICON_SIZE_DIALOG
-argument_list|,
 name|_
 argument_list|(
 literal|"Folders"
 argument_list|)
-argument_list|,
-literal|"gimp-prefs-folders"
-argument_list|,
-name|GTK_ICON_SIZE_BUTTON
 argument_list|,
 name|_
 argument_list|(
@@ -11907,7 +11787,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27bcce400308
+DECL|struct|__anon2bd0ea510308
 block|{
 DECL|member|property_name
 specifier|const
@@ -12062,7 +11942,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27bcce400408
+DECL|struct|__anon2bd0ea510408
 block|{
 DECL|member|tree_label
 specifier|const
@@ -12572,8 +12452,6 @@ argument_list|)
 argument_list|,
 name|icon_name
 argument_list|,
-name|GTK_ICON_SIZE_DIALOG
-argument_list|,
 name|gettext
 argument_list|(
 name|paths
@@ -12583,10 +12461,6 @@ index|]
 operator|.
 name|label
 argument_list|)
-argument_list|,
-name|icon_name
-argument_list|,
-name|GTK_ICON_SIZE_BUTTON
 argument_list|,
 name|gettext
 argument_list|(
