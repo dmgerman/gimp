@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac29a170103
+DECL|enum|__anon2c134da60103
 block|{
 DECL|enumerator|EDIT_NAME
 name|EDIT_NAME
@@ -187,15 +187,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_container_tree_view_style_set
+name|gimp_container_tree_view_style_updated
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GtkStyle
-modifier|*
-name|prev_style
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -771,9 +767,9 @@ name|gimp_container_tree_view_finalize
 expr_stmt|;
 name|widget_class
 operator|->
-name|style_set
+name|style_updated
 operator|=
-name|gimp_container_tree_view_style_set
+name|gimp_container_tree_view_style_updated
 expr_stmt|;
 name|widget_class
 operator|->
@@ -1697,8 +1693,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_container_tree_view_style_set_foreach (GtkTreeModel * model,GtkTreePath * path,GtkTreeIter * iter,gpointer data)
-name|gimp_container_tree_view_style_set_foreach
+DECL|function|gimp_container_tree_view_style_updated_foreach (GtkTreeModel * model,GtkTreePath * path,GtkTreeIter * iter,gpointer data)
+name|gimp_container_tree_view_style_updated_foreach
 parameter_list|(
 name|GtkTreeModel
 modifier|*
@@ -1760,16 +1756,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_tree_view_style_set (GtkWidget * widget,GtkStyle * prev_style)
-name|gimp_container_tree_view_style_set
+DECL|function|gimp_container_tree_view_style_updated (GtkWidget * widget)
+name|gimp_container_tree_view_style_updated
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GtkStyle
-modifier|*
-name|prev_style
 parameter_list|)
 block|{
 name|GimpContainerTreeView
@@ -1786,11 +1778,9 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|style_set
+name|style_updated
 argument_list|(
 name|widget
-argument_list|,
-name|prev_style
 argument_list|)
 expr_stmt|;
 if|if
@@ -1805,7 +1795,7 @@ name|tree_view
 operator|->
 name|model
 argument_list|,
-name|gimp_container_tree_view_style_set_foreach
+name|gimp_container_tree_view_style_updated_foreach
 argument_list|,
 name|NULL
 argument_list|)
