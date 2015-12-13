@@ -207,7 +207,7 @@ name|GtkWidget
 modifier|*
 name|view
 decl_stmt|;
-name|gimp_stock_init
+name|gimp_icons_init
 argument_list|()
 expr_stmt|;
 name|dialog
