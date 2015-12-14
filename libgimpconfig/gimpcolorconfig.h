@@ -171,6 +171,11 @@ DECL|member|simulation_use_black_point_compensation
 name|gboolean
 name|simulation_use_black_point_compensation
 decl_stmt|;
+DECL|member|gray_profile
+name|gchar
+modifier|*
+name|gray_profile
+decl_stmt|;
 comment|/*< private>*/
 comment|/* Padding for future expansion */
 if|#
@@ -180,18 +185,6 @@ name|GLIB_SIZEOF_VOID_P
 operator|==
 literal|8
 operator|)
-DECL|member|_gimp_reserved2
-name|void
-function_decl|(
-modifier|*
-name|_gimp_reserved2
-function_decl|)
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-endif|#
-directive|endif
 DECL|member|_gimp_reserved3
 name|void
 function_decl|(
@@ -202,6 +195,8 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+endif|#
+directive|endif
 DECL|member|_gimp_reserved4
 name|void
 function_decl|(
@@ -283,6 +278,23 @@ begin_function_decl
 name|GimpColorProfile
 modifier|*
 name|gimp_color_config_get_rgb_color_profile
+parameter_list|(
+name|GimpColorConfig
+modifier|*
+name|config
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpColorProfile
+modifier|*
+name|gimp_color_config_get_gray_color_profile
 parameter_list|(
 name|GimpColorConfig
 modifier|*
