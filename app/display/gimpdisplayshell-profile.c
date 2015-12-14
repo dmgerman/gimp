@@ -342,7 +342,7 @@ argument_list|)
 argument_list|,
 name|babl_get_name
 argument_list|(
-name|dest_format
+name|src_format
 argument_list|)
 argument_list|,
 name|babl_get_name
