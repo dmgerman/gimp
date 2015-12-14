@@ -3851,14 +3851,14 @@ block|{
 name|cmsHPROFILE
 name|profile
 decl_stmt|;
-comment|/* white point is D65 from the sRGB specs */
+comment|/* white point is D50 */
 name|cmsCIExyY
 name|whitepoint
 init|=
 block|{
-literal|0.3127
+literal|0.345702915
 block|,
-literal|0.3290
+literal|0.358538597
 block|,
 literal|1.0
 block|}
@@ -4051,14 +4051,14 @@ block|{
 name|cmsHPROFILE
 name|profile
 decl_stmt|;
-comment|/* white point is D65 from the sRGB specs */
+comment|/* white point is D50 */
 name|cmsCIExyY
 name|whitepoint
 init|=
 block|{
-literal|0.3127
+literal|0.345702915
 block|,
-literal|0.3290
+literal|0.358538597
 block|,
 literal|1.0
 block|}
