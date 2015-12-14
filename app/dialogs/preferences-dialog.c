@@ -6027,7 +6027,7 @@ name|table
 operator|=
 name|prefs_table_new
 argument_list|(
-literal|10
+literal|11
 argument_list|,
 name|GTK_CONTAINER
 argument_list|(
@@ -6039,7 +6039,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bd0ea510108
+DECL|struct|__anon2a1004540108
 block|{
 DECL|member|label
 specifier|const
@@ -6076,6 +6076,20 @@ literal|"Select RGB Color Profile"
 argument_list|)
 block|,
 literal|"rgb-profile"
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"Preferred _GRAY profile:"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"Select GRAY Color Profile"
+argument_list|)
+block|,
+literal|"gray-profile"
 block|}
 block|,
 block|{
@@ -6301,7 +6315,7 @@ if|if
 condition|(
 name|i
 operator|==
-literal|2
+literal|3
 condition|)
 comment|/* display profile */
 block|{
@@ -6448,7 +6462,7 @@ if|if
 condition|(
 name|i
 operator|==
-literal|3
+literal|4
 condition|)
 comment|/* printer profile */
 block|{
@@ -10984,7 +10998,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bd0ea510208
+DECL|struct|__anon2a1004540208
 block|{
 DECL|member|current_setting
 name|gchar
@@ -11787,7 +11801,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bd0ea510308
+DECL|struct|__anon2a1004540308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11942,7 +11956,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bd0ea510408
+DECL|struct|__anon2a1004540408
 block|{
 DECL|member|tree_label
 specifier|const
