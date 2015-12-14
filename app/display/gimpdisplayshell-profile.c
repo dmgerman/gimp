@@ -84,7 +84,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimppickable.h"
+file|"core/gimpprojectable.h"
 end_include
 
 begin_include
@@ -290,16 +290,12 @@ condition|)
 return|return;
 name|src_format
 operator|=
-name|gimp_babl_format
+name|gimp_projectable_get_format
 argument_list|(
-name|GIMP_RGB
-argument_list|,
-name|gimp_image_get_precision
+name|GIMP_PROJECTABLE
 argument_list|(
 name|image
 argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 if|if
