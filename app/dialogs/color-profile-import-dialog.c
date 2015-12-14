@@ -157,6 +157,16 @@ decl_stmt|;
 name|GimpColorProfilePolicy
 name|policy
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|title
+decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|frame_title
+decl_stmt|;
 name|gchar
 modifier|*
 name|text
@@ -219,6 +229,48 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_image_get_base_type
+argument_list|(
+name|image
+argument_list|)
+operator|==
+name|GIMP_GRAY
+condition|)
+block|{
+name|title
+operator|=
+name|_
+argument_list|(
+literal|"Convert to Grayscale Working Space?"
+argument_list|)
+expr_stmt|;
+name|frame_title
+operator|=
+name|_
+argument_list|(
+literal|"Convert the image to the grayscale working space?"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|title
+operator|=
+name|_
+argument_list|(
+literal|"Convert to RGB Working Space?"
+argument_list|)
+expr_stmt|;
+name|frame_title
+operator|=
+name|_
+argument_list|(
+literal|"Convert the image to the RGB working space?"
+argument_list|)
+expr_stmt|;
+block|}
 name|dialog
 operator|=
 name|gimp_viewable_dialog_new
@@ -230,10 +282,7 @@ argument_list|)
 argument_list|,
 name|context
 argument_list|,
-name|_
-argument_list|(
-literal|"Convert to RGB Working Space?"
-argument_list|)
+name|title
 argument_list|,
 literal|"gimp-image-color-profile-import"
 argument_list|,
@@ -412,10 +461,7 @@ name|frame
 operator|=
 name|gimp_frame_new
 argument_list|(
-name|_
-argument_list|(
-literal|"Convert the image to the RGB working space?"
-argument_list|)
+name|frame_title
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

@@ -1351,7 +1351,7 @@ literal|"gimp-image-get-effective-color-profile"
 argument_list|,
 literal|"Returns the color profile that is used for the image"
 argument_list|,
-literal|"This procedure returns the color profile that is actually used for this image, which is the profile returned by 'gimp-image-get-color-profile' if the image has a profile assigned, or a generated default RGB profile. If the image is not RGB or INDEXED, NULL is returned."
+literal|"This procedure returns the color profile that is actually used for this image, which is the profile returned by 'gimp-image-get-color-profile' if the image has a profile assigned, or a generated default RGB or GRAY profile, according to the image's type."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -1664,7 +1664,7 @@ literal|"gimp-image-convert-color-profile"
 argument_list|,
 literal|"Convert the image's layers to a color profile"
 argument_list|,
-literal|"This procedure converts from the image's color profile (or the default RGB profile if none is set) to the given color profile. Only RGB color profiles are accepted."
+literal|"This procedure converts from the image's color profile (or the default RGB or GRAY profile if none is set) to the given color profile. Only RGB and GRAY color profiles are accepted, according to the image's type."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -1811,7 +1811,7 @@ literal|"gimp-image-convert-color-profile-from-file"
 argument_list|,
 literal|"Convert the image's layers to a color profile"
 argument_list|,
-literal|"This procedure converts from the image's color profile (or the default RGB profile if none is set) to an ICC profile precified by 'uri'. Only RGB color profiles are accepted."
+literal|"This procedure converts from the image's color profile (or the default RGB or GRAY profile if none is set) to an ICC profile precified by 'uri'. Only RGB and GRAY color profiles are accepted, according to the image's type."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
