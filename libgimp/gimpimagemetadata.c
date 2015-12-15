@@ -487,7 +487,7 @@ name|GIMP_METADATA_COLORSPACE_ADOBERGB
 case|:
 name|profile
 operator|=
-name|gimp_color_profile_new_adobe_rgb
+name|gimp_color_profile_new_rgb_adobe
 argument_list|()
 expr_stmt|;
 break|break;

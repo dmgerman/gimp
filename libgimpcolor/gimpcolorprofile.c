@@ -3190,8 +3190,8 @@ begin_function
 specifier|static
 name|cmsHPROFILE
 modifier|*
-DECL|function|gimp_color_profile_new_srgb_internal (void)
-name|gimp_color_profile_new_srgb_internal
+DECL|function|gimp_color_profile_new_rgb_srgb_internal (void)
+name|gimp_color_profile_new_rgb_srgb_internal
 parameter_list|(
 name|void
 parameter_list|)
@@ -3368,14 +3368,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_new_srgb:  *  * This function is a replacement for cmsCreate_sRGBProfile() and  * returns an sRGB profile that is functionally the same as the  * ArgyllCMS sRGB.icm profile. "Functionally the same" means it has  * the same red, green, and blue colorants and the V4 "chad"  * equivalent of the ArgyllCMS V2 white point. The profile TRC is also  * functionally equivalent to the ArgyllCMS sRGB.icm TRC and is the  * same as the LCMS sRGB built-in profile TRC.  *  * The actual primaries in the sRGB specification are  * red xy:   {0.6400, 0.3300, 1.0}  * green xy: {0.3000, 0.6000, 1.0}  * blue xy:  {0.1500, 0.0600, 1.0}  *  * The sRGB primaries given below are "pre-quantized" to compensate  * for hexadecimal quantization during the profile-making process.  * Unless the profile-making code compensates for this quantization,  * the resulting profile's red, green, and blue colorants will deviate  * slightly from the correct XYZ values.  *  * LCMS2 doesn't compensate for hexadecimal quantization. The  * "pre-quantized" primaries below were back-calculated from the  * ArgyllCMS sRGB.icm profile. The resulting sRGB profile's colorants  * exactly matches the ArgyllCMS sRGB.icm profile colorants.  *  * Return value: the sRGB #GimpColorProfile.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_new_rgb_srgb:  *  * This function is a replacement for cmsCreate_sRGBProfile() and  * returns an sRGB profile that is functionally the same as the  * ArgyllCMS sRGB.icm profile. "Functionally the same" means it has  * the same red, green, and blue colorants and the V4 "chad"  * equivalent of the ArgyllCMS V2 white point. The profile TRC is also  * functionally equivalent to the ArgyllCMS sRGB.icm TRC and is the  * same as the LCMS sRGB built-in profile TRC.  *  * The actual primaries in the sRGB specification are  * red xy:   {0.6400, 0.3300, 1.0}  * green xy: {0.3000, 0.6000, 1.0}  * blue xy:  {0.1500, 0.0600, 1.0}  *  * The sRGB primaries given below are "pre-quantized" to compensate  * for hexadecimal quantization during the profile-making process.  * Unless the profile-making code compensates for this quantization,  * the resulting profile's red, green, and blue colorants will deviate  * slightly from the correct XYZ values.  *  * LCMS2 doesn't compensate for hexadecimal quantization. The  * "pre-quantized" primaries below were back-calculated from the  * ArgyllCMS sRGB.icm profile. The resulting sRGB profile's colorants  * exactly matches the ArgyllCMS sRGB.icm profile colorants.  *  * Return value: the sRGB #GimpColorProfile.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|GimpColorProfile
 modifier|*
-DECL|function|gimp_color_profile_new_srgb (void)
-name|gimp_color_profile_new_srgb
+DECL|function|gimp_color_profile_new_rgb_srgb (void)
+name|gimp_color_profile_new_rgb_srgb
 parameter_list|(
 name|void
 parameter_list|)
@@ -3408,7 +3408,7 @@ block|{
 name|cmsHPROFILE
 name|lcms_profile
 init|=
-name|gimp_color_profile_new_srgb_internal
+name|gimp_color_profile_new_rgb_srgb_internal
 argument_list|()
 decl_stmt|;
 name|profile
@@ -3452,8 +3452,8 @@ end_function
 begin_function
 specifier|static
 name|cmsHPROFILE
-DECL|function|gimp_color_profile_new_linear_rgb_internal (void)
-name|gimp_color_profile_new_linear_rgb_internal
+DECL|function|gimp_color_profile_new_rgb_srgb_linear_internal (void)
+name|gimp_color_profile_new_rgb_srgb_linear_internal
 parameter_list|(
 name|void
 parameter_list|)
@@ -3603,14 +3603,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_new_linear_rgb:  *  * This function creates a profile for babl_model("RGB"). Please  * somebody write someting smarter here.  *  * Return value: the linear RGB #GimpColorProfile.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_new_rgb_srgb_linear:  *  * This function creates a profile for babl_model("RGB"). Please  * somebody write someting smarter here.  *  * Return value: the linear RGB #GimpColorProfile.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|GimpColorProfile
 modifier|*
-DECL|function|gimp_color_profile_new_linear_rgb (void)
-name|gimp_color_profile_new_linear_rgb
+DECL|function|gimp_color_profile_new_rgb_srgb_linear (void)
+name|gimp_color_profile_new_rgb_srgb_linear
 parameter_list|(
 name|void
 parameter_list|)
@@ -3643,7 +3643,7 @@ block|{
 name|cmsHPROFILE
 name|lcms_profile
 init|=
-name|gimp_color_profile_new_linear_rgb_internal
+name|gimp_color_profile_new_rgb_srgb_linear_internal
 argument_list|()
 decl_stmt|;
 name|profile
@@ -3688,8 +3688,8 @@ begin_function
 specifier|static
 name|cmsHPROFILE
 modifier|*
-DECL|function|gimp_color_profile_new_adobe_rgb_internal (void)
-name|gimp_color_profile_new_adobe_rgb_internal
+DECL|function|gimp_color_profile_new_rgb_adobe_internal (void)
+name|gimp_color_profile_new_rgb_adobe_internal
 parameter_list|(
 name|void
 parameter_list|)
@@ -3833,14 +3833,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_new_adobe_rgb:  *  * This function creates a profile compatible with AbobeRGB (1998).  *  * Return value: the AdobeRGB-compatible #GimpColorProfile.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_new_rgb_adobe:  *  * This function creates a profile compatible with AbobeRGB (1998).  *  * Return value: the AdobeRGB-compatible #GimpColorProfile.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|GimpColorProfile
 modifier|*
-DECL|function|gimp_color_profile_new_adobe_rgb (void)
-name|gimp_color_profile_new_adobe_rgb
+DECL|function|gimp_color_profile_new_rgb_adobe (void)
+name|gimp_color_profile_new_rgb_adobe
 parameter_list|(
 name|void
 parameter_list|)
@@ -3873,7 +3873,7 @@ block|{
 name|cmsHPROFILE
 name|lcms_profile
 init|=
-name|gimp_color_profile_new_adobe_rgb_internal
+name|gimp_color_profile_new_rgb_adobe_internal
 argument_list|()
 decl_stmt|;
 name|profile
@@ -3918,8 +3918,8 @@ begin_function
 specifier|static
 name|cmsHPROFILE
 modifier|*
-DECL|function|gimp_color_profile_new_srgb_gray_internal (void)
-name|gimp_color_profile_new_srgb_gray_internal
+DECL|function|gimp_color_profile_new_gray_srgb_internal (void)
+name|gimp_color_profile_new_gray_srgb_internal
 parameter_list|(
 name|void
 parameter_list|)
@@ -4034,14 +4034,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_new_srgb_gray  *  * This function creates a grayscale #GimpColorProfile with an  * sRGB TRC. See gimp_color_profile_new_srgb().  *  * Return value: the sRGB-gamma grayscale #GimpColorProfile.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_new_gray_srgb  *  * This function creates a grayscale #GimpColorProfile with an  * sRGB TRC. See gimp_color_profile_new_srgb().  *  * Return value: the sRGB-gamma grayscale #GimpColorProfile.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|GimpColorProfile
 modifier|*
-DECL|function|gimp_color_profile_new_srgb_gray (void)
-name|gimp_color_profile_new_srgb_gray
+DECL|function|gimp_color_profile_new_gray_srgb (void)
+name|gimp_color_profile_new_gray_srgb
 parameter_list|(
 name|void
 parameter_list|)
@@ -4074,7 +4074,7 @@ block|{
 name|cmsHPROFILE
 name|lcms_profile
 init|=
-name|gimp_color_profile_new_srgb_gray_internal
+name|gimp_color_profile_new_gray_srgb_internal
 argument_list|()
 decl_stmt|;
 name|profile
@@ -4118,8 +4118,8 @@ end_function
 begin_function
 specifier|static
 name|cmsHPROFILE
-DECL|function|gimp_color_profile_new_linear_gray_internal (void)
-name|gimp_color_profile_new_linear_gray_internal
+DECL|function|gimp_color_profile_new_gray_srgb_linear_internal (void)
+name|gimp_color_profile_new_gray_srgb_linear_internal
 parameter_list|(
 name|void
 parameter_list|)
@@ -4208,14 +4208,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_new_linear_gray:  *  * This function creates a profile for babl_model("Y"). Please  * somebody write someting smarter here.  *  * Return value: the linear grayscale #GimpColorProfile.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_new_gray_srgb_linear_gray:  *  * This function creates a profile for babl_model("Y"). Please  * somebody write someting smarter here.  *  * Return value: the linear grayscale #GimpColorProfile.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|GimpColorProfile
 modifier|*
-DECL|function|gimp_color_profile_new_linear_gray (void)
-name|gimp_color_profile_new_linear_gray
+DECL|function|gimp_color_profile_new_gray_srgb_linear (void)
+name|gimp_color_profile_new_gray_srgb_linear
 parameter_list|(
 name|void
 parameter_list|)
@@ -4248,7 +4248,7 @@ block|{
 name|cmsHPROFILE
 name|lcms_profile
 init|=
-name|gimp_color_profile_new_linear_gray_internal
+name|gimp_color_profile_new_gray_srgb_linear_internal
 argument_list|()
 decl_stmt|;
 name|profile

@@ -1216,7 +1216,7 @@ condition|)
 block|{
 name|linear_gray_profile
 operator|=
-name|gimp_color_profile_new_linear_gray
+name|gimp_color_profile_new_gray_srgb_linear
 argument_list|()
 expr_stmt|;
 name|g_object_add_weak_pointer
@@ -1248,7 +1248,7 @@ condition|)
 block|{
 name|gray_profile
 operator|=
-name|gimp_color_profile_new_srgb_gray
+name|gimp_color_profile_new_gray_srgb
 argument_list|()
 expr_stmt|;
 name|g_object_add_weak_pointer
@@ -1289,7 +1289,7 @@ condition|)
 block|{
 name|linear_rgb_profile
 operator|=
-name|gimp_color_profile_new_linear_rgb
+name|gimp_color_profile_new_rgb_srgb_linear
 argument_list|()
 expr_stmt|;
 name|g_object_add_weak_pointer
@@ -1321,7 +1321,7 @@ condition|)
 block|{
 name|srgb_profile
 operator|=
-name|gimp_color_profile_new_srgb
+name|gimp_color_profile_new_rgb_srgb
 argument_list|()
 expr_stmt|;
 name|g_object_add_weak_pointer
@@ -2566,7 +2566,7 @@ name|flags
 decl_stmt|;
 name|srgb_profile
 operator|=
-name|gimp_color_profile_new_srgb
+name|gimp_color_profile_new_rgb_srgb
 argument_list|()
 expr_stmt|;
 name|image_lcms
