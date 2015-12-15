@@ -184,7 +184,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c01ae60103
+DECL|enum|__anon278f77350103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1344,7 +1344,7 @@ condition|)
 return|return;
 name|rgb_profile
 operator|=
-name|gimp_color_profile_new_srgb
+name|gimp_color_profile_new_rgb_srgb
 argument_list|()
 expr_stmt|;
 name|file

@@ -1658,7 +1658,7 @@ name|out
 goto|;
 name|rgb_profile
 operator|=
-name|gimp_color_profile_new_srgb
+name|gimp_color_profile_new_rgb_srgb
 argument_list|()
 expr_stmt|;
 name|text
