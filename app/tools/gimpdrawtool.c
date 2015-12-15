@@ -2115,7 +2115,7 @@ end_comment
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_draw_tool_add_guide (GimpDrawTool * draw_tool,GimpOrientationType orientation,gint position,gboolean guide_style)
+DECL|function|gimp_draw_tool_add_guide (GimpDrawTool * draw_tool,GimpOrientationType orientation,gint position,cairo_pattern_t * normal_style,cairo_pattern_t * active_style,gdouble line_width)
 name|gimp_draw_tool_add_guide
 parameter_list|(
 name|GimpDrawTool
@@ -2128,8 +2128,16 @@ parameter_list|,
 name|gint
 name|position
 parameter_list|,
-name|gboolean
-name|guide_style
+name|cairo_pattern_t
+modifier|*
+name|normal_style
+parameter_list|,
+name|cairo_pattern_t
+modifier|*
+name|active_style
+parameter_list|,
+name|gdouble
+name|line_width
 parameter_list|)
 block|{
 name|GimpCanvasItem
@@ -2161,7 +2169,11 @@ name|orientation
 argument_list|,
 name|position
 argument_list|,
-name|guide_style
+name|normal_style
+argument_list|,
+name|active_style
+argument_list|,
+name|line_width
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_item
@@ -2229,7 +2241,11 @@ name|GIMP_ORIENTATION_VERTICAL
 argument_list|,
 name|position_x
 argument_list|,
-name|FALSE
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_guide
@@ -2240,7 +2256,11 @@ name|GIMP_ORIENTATION_HORIZONTAL
 argument_list|,
 name|position_y
 argument_list|,
-name|FALSE
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_pop_group
