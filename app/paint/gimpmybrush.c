@@ -693,7 +693,8 @@ name|private
 operator|->
 name|lastTime
 operator|=
-literal|0
+operator|-
+literal|1
 expr_stmt|;
 block|}
 break|break;
@@ -819,7 +820,7 @@ operator|->
 name|private
 operator|->
 name|lastTime
-operator|==
+operator|<
 literal|0
 condition|)
 block|{
