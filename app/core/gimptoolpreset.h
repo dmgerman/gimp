@@ -125,6 +125,10 @@ DECL|member|use_dynamics
 name|gboolean
 name|use_dynamics
 decl_stmt|;
+DECL|member|use_mybrush
+name|gboolean
+name|use_mybrush
+decl_stmt|;
 DECL|member|use_gradient
 name|gboolean
 name|use_gradient
