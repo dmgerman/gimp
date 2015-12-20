@@ -563,6 +563,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpMybrush
+typedef|typedef
+name|struct
+name|_GimpMybrush
+name|GimpMybrush
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPalette
 typedef|typedef
 name|struct

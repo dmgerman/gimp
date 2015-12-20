@@ -285,6 +285,11 @@ name|GimpDataFactory
 modifier|*
 name|dynamics_factory
 decl_stmt|;
+DECL|member|mybrush_factory
+name|GimpDataFactory
+modifier|*
+name|mybrush_factory
+decl_stmt|;
 DECL|member|pattern_factory
 name|GimpDataFactory
 modifier|*

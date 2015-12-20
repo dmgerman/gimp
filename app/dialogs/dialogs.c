@@ -450,12 +450,14 @@ value|}
 end_define
 
 begin_define
-DECL|macro|LISTGRID (id,name,blurb,icon_name,help_id,view_size)
+DECL|macro|LISTGRID (id,new_func,name,blurb,icon_name,help_id,view_size)
 define|#
 directive|define
 name|LISTGRID
 parameter_list|(
 name|id
+parameter_list|,
+name|new_func
 parameter_list|,
 name|name
 parameter_list|,
@@ -478,7 +480,7 @@ value|,  \     icon_name
 comment|/* icon_name        */
 value|,  \     help_id
 comment|/* help_id          */
-value|,  \     dialogs_##id##_list_view_new
+value|,  \     dialogs_##new_func##_list_view_new
 comment|/* new_func         */
 value|,  \     NULL
 comment|/* restore_func     */
@@ -508,7 +510,7 @@ value|,  \     icon_name
 comment|/* icon_name        */
 value|,  \     help_id
 comment|/* help_id          */
-value|,  \     dialogs_##id##_grid_view_new
+value|,  \     dialogs_##new_func##_grid_view_new
 comment|/* new_func         */
 value|,  \     NULL
 comment|/* restore_func     */
@@ -1238,6 +1240,8 @@ name|LISTGRID
 argument_list|(
 name|image
 argument_list|,
+name|image
+argument_list|,
 name|N_
 argument_list|(
 literal|"Images"
@@ -1256,6 +1260,8 @@ name|LISTGRID
 argument_list|(
 name|brush
 argument_list|,
+name|brush
+argument_list|,
 name|N_
 argument_list|(
 literal|"Brushes"
@@ -1272,6 +1278,30 @@ argument_list|)
 block|,
 name|LISTGRID
 argument_list|(
+name|mypaint
+operator|-
+name|brush
+argument_list|,
+name|mypaint_brush
+argument_list|,
+name|N_
+argument_list|(
+literal|"MyPaint Brushes"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_STOCK_MYPAINT_BRUSH
+argument_list|,
+name|GIMP_HELP_MYPAINT_BRUSH_DIALOG
+argument_list|,
+name|GIMP_VIEW_SIZE_LARGE
+argument_list|)
+block|,
+name|LISTGRID
+argument_list|(
+name|pattern
+argument_list|,
 name|pattern
 argument_list|,
 name|N_
@@ -1292,6 +1322,8 @@ name|LISTGRID
 argument_list|(
 name|gradient
 argument_list|,
+name|gradient
+argument_list|,
 name|N_
 argument_list|(
 literal|"Gradients"
@@ -1308,6 +1340,8 @@ argument_list|)
 block|,
 name|LISTGRID
 argument_list|(
+name|palette
+argument_list|,
 name|palette
 argument_list|,
 name|N_
@@ -1328,6 +1362,8 @@ name|LISTGRID
 argument_list|(
 name|font
 argument_list|,
+name|font
+argument_list|,
 name|N_
 argument_list|(
 literal|"Fonts"
@@ -1346,6 +1382,8 @@ name|LISTGRID
 argument_list|(
 name|buffer
 argument_list|,
+name|buffer
+argument_list|,
 name|N_
 argument_list|(
 literal|"Buffers"
@@ -1362,6 +1400,8 @@ argument_list|)
 block|,
 name|LISTGRID
 argument_list|(
+name|document
+argument_list|,
 name|document
 argument_list|,
 name|N_
@@ -1383,6 +1423,8 @@ argument_list|)
 block|,
 name|LISTGRID
 argument_list|(
+name|template
+argument_list|,
 name|template
 argument_list|,
 name|N_

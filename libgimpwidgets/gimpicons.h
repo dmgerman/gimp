@@ -1125,6 +1125,11 @@ define|#
 directive|define
 name|GIMP_STOCK_GRADIENT
 value|GIMP_STOCK_TOOL_BLEND
+DECL|macro|GIMP_STOCK_MYPAINT_BRUSH
+define|#
+directive|define
+name|GIMP_STOCK_MYPAINT_BRUSH
+value|GIMP_STOCK_TOOL_MYBRUSH
 DECL|macro|GIMP_STOCK_PALETTE
 define|#
 directive|define

@@ -572,6 +572,32 @@ name|GIMP_HELP_DYNAMICS_EDITOR_DIALOG
 block|}
 block|,
 block|{
+literal|"dialogs-mypaint-brushes"
+block|,
+name|GIMP_STOCK_MYPAINT_BRUSH
+block|,
+name|NC_
+argument_list|(
+literal|"dialogs-action"
+argument_list|,
+literal|"_MyPaint Brushes"
+argument_list|)
+block|,
+literal|"<primary><shift>Y"
+block|,
+name|NC_
+argument_list|(
+literal|"dialogs-action"
+argument_list|,
+literal|"Open the mypaint brushes dialog"
+argument_list|)
+block|,
+literal|"gimp-mypaint-brush-grid|gimp-mapyint-brush-list"
+block|,
+name|GIMP_HELP_MYPAINT_BRUSH_DIALOG
+block|}
+block|,
+block|{
 literal|"dialogs-patterns"
 block|,
 name|GIMP_STOCK_PATTERN

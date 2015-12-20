@@ -324,6 +324,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"mypaint-brushes-actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"palette-editor-actions.h"
 end_include
 
@@ -875,6 +881,21 @@ block|,
 name|layers_actions_setup
 block|,
 name|layers_actions_update
+block|}
+block|,
+block|{
+literal|"mypaint-brushes"
+block|,
+name|N_
+argument_list|(
+literal|"MyPaint Brushes"
+argument_list|)
+block|,
+name|GIMP_STOCK_MYPAINT_BRUSH
+block|,
+name|mypaint_brushes_actions_setup
+block|,
+name|mypaint_brushes_actions_update
 block|}
 block|,
 block|{

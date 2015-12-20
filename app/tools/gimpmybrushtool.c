@@ -205,6 +205,8 @@ operator||
 name|GIMP_CONTEXT_PROP_MASK_OPACITY
 operator||
 name|GIMP_CONTEXT_PROP_MASK_PAINT_MODE
+operator||
+name|GIMP_CONTEXT_PROP_MYBRUSH
 argument_list|,
 literal|"gimp-mybrush-tool"
 argument_list|,
