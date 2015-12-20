@@ -151,6 +151,16 @@ name|gchar
 modifier|*
 name|dynamics_path_writable
 decl_stmt|;
+DECL|member|mypaint_brush_path
+name|gchar
+modifier|*
+name|mypaint_brush_path
+decl_stmt|;
+DECL|member|mypaint_brush_path_writable
+name|gchar
+modifier|*
+name|mypaint_brush_path_writable
+decl_stmt|;
 DECL|member|pattern_path
 name|gchar
 modifier|*
@@ -202,16 +212,6 @@ modifier|*
 name|font_path_writable
 decl_stmt|;
 comment|/*  unused  */
-DECL|member|mypaint_brush_path
-name|gchar
-modifier|*
-name|mypaint_brush_path
-decl_stmt|;
-DECL|member|mypaint_brush_path_writable
-name|gchar
-modifier|*
-name|mypaint_brush_path_writable
-decl_stmt|;
 DECL|member|default_brush
 name|gchar
 modifier|*
@@ -221,6 +221,11 @@ DECL|member|default_dynamics
 name|gchar
 modifier|*
 name|default_dynamics
+decl_stmt|;
+DECL|member|default_mypaint_brush
+name|gchar
+modifier|*
+name|default_mypaint_brush
 decl_stmt|;
 DECL|member|default_pattern
 name|gchar
@@ -246,11 +251,6 @@ DECL|member|default_font
 name|gchar
 modifier|*
 name|default_font
-decl_stmt|;
-DECL|member|default_mypaint_brush
-name|gchar
-modifier|*
-name|default_mypaint_brush
 decl_stmt|;
 DECL|member|global_brush
 name|gboolean
