@@ -125,6 +125,11 @@ name|GtkWidget
 modifier|*
 name|compat_toggle
 decl_stmt|;
+DECL|member|compat_info
+name|GtkWidget
+modifier|*
+name|compat_info
+decl_stmt|;
 DECL|member|compat
 name|gboolean
 name|compat
