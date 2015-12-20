@@ -2294,7 +2294,7 @@ name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
-name|GIMP_STOCK_TOOL_MYBRUSH
+name|GIMP_STOCK_TOOL_MYPAINT_BRUSH
 block|,
 name|NULL
 block|,

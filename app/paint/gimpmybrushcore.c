@@ -317,7 +317,7 @@ argument_list|(
 literal|"Mybrush"
 argument_list|)
 argument_list|,
-literal|"gimp-tool-mybrush"
+literal|"gimp-tool-mypaint-brush"
 argument_list|)
 expr_stmt|;
 block|}

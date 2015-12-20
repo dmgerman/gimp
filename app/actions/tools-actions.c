@@ -754,7 +754,7 @@ block|{
 block|{
 literal|"tools-mybrush-radius-set"
 block|,
-name|GIMP_STOCK_TOOL_MYBRUSH
+name|GIMP_STOCK_TOOL_MYPAINT_BRUSH
 block|,
 literal|"Set MyPaint Brush Radius"
 block|,

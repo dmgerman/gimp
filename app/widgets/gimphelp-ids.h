@@ -2118,11 +2118,11 @@ value|"gimp-tool-move"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_TOOL_MYBRUSH
+DECL|macro|GIMP_HELP_TOOL_MYPAINT_BRUSH
 define|#
 directive|define
-name|GIMP_HELP_TOOL_MYBRUSH
-value|"gimp-tool-mybrush"
+name|GIMP_HELP_TOOL_MYPAINT_BRUSH
+value|"gimp-tool-mypaint-brush"
 end_define
 
 begin_define

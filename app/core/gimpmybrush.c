@@ -310,7 +310,7 @@ name|viewable_class
 operator|->
 name|default_icon_name
 operator|=
-literal|"gimp-tool-mybrush"
+literal|"gimp-tool-mypaint-brush"
 expr_stmt|;
 name|viewable_class
 operator|->
