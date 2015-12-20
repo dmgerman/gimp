@@ -96,7 +96,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpmybrush.h"
+file|"gimpmybrushcore.h"
 end_include
 
 begin_include
@@ -200,7 +200,7 @@ block|,
 ifdef|#
 directive|ifdef
 name|HAVE_LIBMYPAINT
-name|gimp_mybrush_register
+name|gimp_mybrush_core_register
 block|,
 endif|#
 directive|endif

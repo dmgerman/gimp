@@ -123,11 +123,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpMybrush
+DECL|typedef|GimpMybrushCore
 typedef|typedef
 name|struct
-name|_GimpMybrush
-name|GimpMybrush
+name|_GimpMybrushCore
+name|GimpMybrushCore
 typedef|;
 end_typedef
 

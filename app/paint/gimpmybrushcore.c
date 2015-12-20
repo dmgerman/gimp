@@ -141,6 +141,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpmybrushcore.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpmybrushsurface.h"
 end_include
 
@@ -153,19 +159,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpmybrush.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_struct
-DECL|struct|_GimpMybrushPrivate
+DECL|struct|_GimpMybrushCorePrivate
 struct|struct
-name|_GimpMybrushPrivate
+name|_GimpMybrushCorePrivate
 block|{
 if|#
 directive|if
@@ -185,9 +185,9 @@ name|MyPaintBrush
 modifier|*
 name|brush
 decl_stmt|;
-DECL|member|lastTime
+DECL|member|last_time
 name|gint64
-name|lastTime
+name|last_time
 decl_stmt|;
 block|}
 struct|;
@@ -200,7 +200,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|gimp_mybrush_paint
+name|gimp_mybrush_core_paint
 parameter_list|(
 name|GimpPaintCore
 modifier|*
@@ -231,7 +231,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_mybrush_motion
+name|gimp_mybrush_core_motion
 parameter_list|(
 name|GimpPaintCore
 modifier|*
@@ -257,12 +257,12 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpMybrush,gimp_mybrush,GIMP_TYPE_PAINT_CORE)
+DECL|function|G_DEFINE_TYPE (GimpMybrushCore,gimp_mybrush_core,GIMP_TYPE_PAINT_CORE)
 name|G_DEFINE_TYPE
 argument_list|(
-argument|GimpMybrush
+argument|GimpMybrushCore
 argument_list|,
-argument|gimp_mybrush
+argument|gimp_mybrush_core
 argument_list|,
 argument|GIMP_TYPE_PAINT_CORE
 argument_list|)
@@ -273,12 +273,12 @@ DECL|macro|parent_class
 define|#
 directive|define
 name|parent_class
-value|gimp_mybrush_parent_class
+value|gimp_mybrush_core_parent_class
 end_define
 
 begin_function
 name|void
-name|gimp_mybrush_register
+name|gimp_mybrush_core_register
 parameter_list|(
 name|Gimp
 modifier|*
@@ -306,7 +306,7 @@ call|)
 argument_list|(
 name|gimp
 argument_list|,
-name|GIMP_TYPE_MYBRUSH
+name|GIMP_TYPE_MYBRUSH_CORE
 argument_list|,
 name|GIMP_TYPE_MYBRUSH_OPTIONS
 argument_list|,
@@ -326,10 +326,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_mybrush_class_init (GimpMybrushClass * klass)
-name|gimp_mybrush_class_init
+DECL|function|gimp_mybrush_core_class_init (GimpMybrushCoreClass * klass)
+name|gimp_mybrush_core_class_init
 parameter_list|(
-name|GimpMybrushClass
+name|GimpMybrushCoreClass
 modifier|*
 name|klass
 parameter_list|)
@@ -347,7 +347,7 @@ name|paint_core_class
 operator|->
 name|paint
 operator|=
-name|gimp_mybrush_paint
+name|gimp_mybrush_core_paint
 expr_stmt|;
 name|g_type_class_add_private
 argument_list|(
@@ -355,7 +355,7 @@ name|klass
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|GimpMybrushPrivate
+name|GimpMybrushCorePrivate
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -365,10 +365,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_mybrush_init (GimpMybrush * mybrush)
-name|gimp_mybrush_init
+DECL|function|gimp_mybrush_core_init (GimpMybrushCore * mybrush)
+name|gimp_mybrush_core_init
 parameter_list|(
-name|GimpMybrush
+name|GimpMybrushCore
 modifier|*
 name|mybrush
 parameter_list|)
@@ -381,9 +381,9 @@ name|G_TYPE_INSTANCE_GET_PRIVATE
 argument_list|(
 name|mybrush
 argument_list|,
-name|GIMP_TYPE_MYBRUSH
+name|GIMP_TYPE_MYBRUSH_CORE
 argument_list|,
-name|GimpMybrushPrivate
+name|GimpMybrushCorePrivate
 argument_list|)
 expr_stmt|;
 block|}
@@ -392,8 +392,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_mybrush_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,GimpPaintState paint_state,guint32 time)
-name|gimp_mybrush_paint
+DECL|function|gimp_mybrush_core_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,GimpPaintState paint_state,guint32 time)
+name|gimp_mybrush_core_paint
 parameter_list|(
 name|GimpPaintCore
 modifier|*
@@ -419,11 +419,11 @@ name|guint32
 name|time
 parameter_list|)
 block|{
-name|GimpMybrush
+name|GimpMybrushCore
 modifier|*
 name|mybrush
 init|=
-name|GIMP_MYBRUSH
+name|GIMP_MYBRUSH_CORE
 argument_list|(
 name|paint_core
 argument_list|)
@@ -433,6 +433,15 @@ modifier|*
 name|options
 init|=
 name|GIMP_MYBRUSH_OPTIONS
+argument_list|(
+name|paint_options
+argument_list|)
+decl_stmt|;
+name|GimpContext
+modifier|*
+name|context
+init|=
+name|GIMP_CONTEXT
 argument_list|(
 name|paint_options
 argument_list|)
@@ -462,25 +471,12 @@ block|{
 case|case
 name|GIMP_PAINT_STATE_INIT
 case|:
-block|{
-name|GimpContext
-modifier|*
-name|context
-init|=
-name|GIMP_CONTEXT
-argument_list|(
-name|paint_options
-argument_list|)
-decl_stmt|;
-name|GimpRGB
-name|foreground
-decl_stmt|;
 name|gimp_context_get_foreground
 argument_list|(
 name|context
 argument_list|,
 operator|&
-name|foreground
+name|fg
 argument_list|)
 expr_stmt|;
 name|gimp_palettes_add_color_history
@@ -490,13 +486,13 @@ operator|->
 name|gimp
 argument_list|,
 operator|&
-name|foreground
+name|fg
 argument_list|)
 expr_stmt|;
 if|#
 directive|if
 literal|0
-block|mybrush->private->surface = mypaint_gegl_tiled_surface_new ();            buffer = mypaint_gegl_tiled_surface_get_buffer (mybrush->private->surface);           buffer = gegl_buffer_new (GEGL_RECTANGLE (0, 0,                                                     gimp_item_get_width (GIMP_ITEM (drawable)),                                                     gimp_item_get_height (GIMP_ITEM (drawable))),                                     gegl_buffer_get_format (buffer));           gegl_buffer_copy (gimp_drawable_get_buffer (drawable), NULL,                             GEGL_ABYSS_NONE,                             buffer, NULL);           mypaint_gegl_tiled_surface_set_buffer (mybrush->private->surface, buffer);           g_object_unref (buffer);
+block|mybrush->private->surface = mypaint_gegl_tiled_surface_new ();        buffer = mypaint_gegl_tiled_surface_get_buffer (mybrush->private->surface);       buffer = gegl_buffer_new (GEGL_RECTANGLE (0, 0,                                                 gimp_item_get_width (GIMP_ITEM (drawable)),                                                 gimp_item_get_height (GIMP_ITEM (drawable))),                                 gegl_buffer_get_format (buffer));       gegl_buffer_copy (gimp_drawable_get_buffer (drawable), NULL,                         GEGL_ABYSS_NONE,                         buffer, NULL);       mypaint_gegl_tiled_surface_set_buffer (mybrush->private->surface, buffer);       g_object_unref (buffer);
 else|#
 directive|else
 name|mybrush
@@ -563,17 +559,9 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|active_mask = gimp_drawable_get_active_mask (drawable);            mypaint_brush_set_base_value (mybrush->private->brush,                                         MYPAINT_BRUSH_SETTING_LOCK_ALPHA,                                         (active_mask& GIMP_COMPONENT_MASK_ALPHA) ?                                         FALSE : TRUE);
+block|active_mask = gimp_drawable_get_active_mask (drawable);        mypaint_brush_set_base_value (mybrush->private->brush,                                     MYPAINT_BRUSH_SETTING_LOCK_ALPHA,                                     (active_mask& GIMP_COMPONENT_MASK_ALPHA) ?                                     FALSE : TRUE);
 endif|#
 directive|endif
-name|gimp_context_get_foreground
-argument_list|(
-name|context
-argument_list|,
-operator|&
-name|fg
-argument_list|)
-expr_stmt|;
 name|gimp_rgb_to_hsv
 argument_list|(
 operator|&
@@ -691,17 +679,16 @@ name|mybrush
 operator|->
 name|private
 operator|->
-name|lastTime
+name|last_time
 operator|=
 operator|-
 literal|1
 expr_stmt|;
-block|}
 break|break;
 case|case
 name|GIMP_PAINT_STATE_MOTION
 case|:
-name|gimp_mybrush_motion
+name|gimp_mybrush_core_motion
 argument_list|(
 name|paint_core
 argument_list|,
@@ -764,8 +751,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_mybrush_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,guint32 time)
-name|gimp_mybrush_motion
+DECL|function|gimp_mybrush_core_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,guint32 time)
+name|gimp_mybrush_core_motion
 parameter_list|(
 name|GimpPaintCore
 modifier|*
@@ -788,11 +775,11 @@ name|guint32
 name|time
 parameter_list|)
 block|{
-name|GimpMybrush
+name|GimpMybrushCore
 modifier|*
 name|mybrush
 init|=
-name|GIMP_MYBRUSH
+name|GIMP_MYBRUSH_CORE
 argument_list|(
 name|paint_core
 argument_list|)
@@ -819,7 +806,7 @@ name|mybrush
 operator|->
 name|private
 operator|->
-name|lastTime
+name|last_time
 operator|<
 literal|0
 condition|)
@@ -829,7 +816,7 @@ name|mybrush
 operator|->
 name|private
 operator|->
-name|lastTime
+name|last_time
 operator|=
 operator|(
 name|gint64
@@ -924,7 +911,7 @@ name|mybrush
 operator|->
 name|private
 operator|->
-name|lastTime
+name|last_time
 operator|)
 operator|*
 literal|0.001f
@@ -934,7 +921,7 @@ name|mybrush
 operator|->
 name|private
 operator|->
-name|lastTime
+name|last_time
 operator|=
 name|time
 expr_stmt|;

@@ -12,14 +12,14 @@ end_ifdef
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_MYBRUSH_H__
+name|__GIMP_MYBRUSH_CORE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_MYBRUSH_H__
+DECL|macro|__GIMP_MYBRUSH_CORE_H__
 define|#
 directive|define
-name|__GIMP_MYBRUSH_H__
+name|__GIMP_MYBRUSH_CORE_H__
 end_define
 
 begin_include
@@ -29,33 +29,33 @@ file|"gimppaintcore.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_MYBRUSH
+DECL|macro|GIMP_TYPE_MYBRUSH_CORE
 define|#
 directive|define
-name|GIMP_TYPE_MYBRUSH
-value|(gimp_mybrush_get_type ())
+name|GIMP_TYPE_MYBRUSH_CORE
+value|(gimp_mybrush_core_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_MYBRUSH (obj)
+DECL|macro|GIMP_MYBRUSH_CORE (obj)
 define|#
 directive|define
-name|GIMP_MYBRUSH
+name|GIMP_MYBRUSH_CORE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_MYBRUSH, GimpMybrush))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_MYBRUSH_CORE, GimpMybrushCore))
 end_define
 
 begin_define
-DECL|macro|GIMP_MYBRUSH_CLASS (klass)
+DECL|macro|GIMP_MYBRUSH_CORE_CLASS (klass)
 define|#
 directive|define
-name|GIMP_MYBRUSH_CLASS
+name|GIMP_MYBRUSH_CORE_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_MYBRUSH, GimpMybrushClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_MYBRUSH_CORE, GimpMybrushCoreClass))
 end_define
 
 begin_define
@@ -66,7 +66,7 @@ name|GIMP_IS_MYBRUSH
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_MYBRUSH))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_MYBRUSH_CORE))
 end_define
 
 begin_define
@@ -77,49 +77,49 @@ name|GIMP_IS_MYBRUSH_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_MYBRUSH))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_MYBRUSH_CORE))
 end_define
 
 begin_define
-DECL|macro|GIMP_MYBRUSH_GET_CLASS (obj)
+DECL|macro|GIMP_MYBRUSH_CORE_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_MYBRUSH_GET_CLASS
+name|GIMP_MYBRUSH_CORE_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_MYBRUSH, GimpMybrushClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_MYBRUSH_CORE, GimpMybrushCoreClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpMybrushPrivate
+DECL|typedef|GimpMybrushCorePrivate
 typedef|typedef
 name|struct
-name|_GimpMybrushPrivate
-name|GimpMybrushPrivate
+name|_GimpMybrushCorePrivate
+name|GimpMybrushCorePrivate
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpMybrushClass
+DECL|typedef|GimpMybrushCoreClass
 typedef|typedef
 name|struct
-name|_GimpMybrushClass
-name|GimpMybrushClass
+name|_GimpMybrushCoreClass
+name|GimpMybrushCoreClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpMybrush
+DECL|struct|_GimpMybrushCore
 struct|struct
-name|_GimpMybrush
+name|_GimpMybrushCore
 block|{
 DECL|member|parent_instance
 name|GimpPaintCore
 name|parent_instance
 decl_stmt|;
 DECL|member|private
-name|GimpMybrushPrivate
+name|GimpMybrushCorePrivate
 modifier|*
 name|private
 decl_stmt|;
@@ -128,9 +128,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpMybrushClass
+DECL|struct|_GimpMybrushCoreClass
 struct|struct
-name|_GimpMybrushClass
+name|_GimpMybrushCoreClass
 block|{
 DECL|member|parent_class
 name|GimpPaintCoreClass
@@ -142,7 +142,7 @@ end_struct
 
 begin_function_decl
 name|void
-name|gimp_mybrush_register
+name|gimp_mybrush_core_register
 parameter_list|(
 name|Gimp
 modifier|*
@@ -156,7 +156,7 @@ end_function_decl
 
 begin_decl_stmt
 name|GType
-name|gimp_mybrush_get_type
+name|gimp_mybrush_core_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -170,7 +170,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_MYBRUSH_H__  */
+comment|/*  __GIMP_MYBRUSH_CORE_H__  */
 end_comment
 
 begin_endif
