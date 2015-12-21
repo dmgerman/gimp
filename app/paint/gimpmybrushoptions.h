@@ -3,12 +3,6 @@ begin_comment
 comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_LIBMYPAINT
-end_ifdef
-
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -121,11 +115,6 @@ DECL|member|hardness
 name|gdouble
 name|hardness
 decl_stmt|;
-DECL|member|mybrush
-name|gchar
-modifier|*
-name|mybrush
-decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -153,19 +142,6 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
-begin_function_decl
-specifier|const
-name|gchar
-modifier|*
-name|gimp_mybrush_options_get_brush_data
-parameter_list|(
-name|GimpMybrushOptions
-modifier|*
-name|options
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
@@ -174,11 +150,6 @@ end_endif
 begin_comment
 comment|/*  __GIMP_MYBRUSH_OPTIONS_H__  */
 end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 end_unit
 

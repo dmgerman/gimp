@@ -9,12 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_LIBMYPAINT
-end_ifdef
-
 begin_include
 include|#
 directive|include
@@ -206,7 +200,7 @@ name|GIMP_CONTEXT_PROP_MASK_OPACITY
 operator||
 name|GIMP_CONTEXT_PROP_MASK_PAINT_MODE
 operator||
-name|GIMP_CONTEXT_PROP_MYBRUSH
+name|GIMP_CONTEXT_PROP_MASK_MYBRUSH
 argument_list|,
 literal|"gimp-mybrush-tool"
 argument_list|,
@@ -451,11 +445,6 @@ name|NULL
 return|;
 block|}
 end_function
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 end_unit
 

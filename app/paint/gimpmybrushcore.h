@@ -3,12 +3,6 @@ begin_comment
 comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_LIBMYPAINT
-end_ifdef
-
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -59,10 +53,10 @@ value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_MYBRUSH_CORE, GimpMybrushCore
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_MYBRUSH (obj)
+DECL|macro|GIMP_IS_MYBRUSH_CORE (obj)
 define|#
 directive|define
-name|GIMP_IS_MYBRUSH
+name|GIMP_IS_MYBRUSH_CORE
 parameter_list|(
 name|obj
 parameter_list|)
@@ -70,10 +64,10 @@ value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_MYBRUSH_CORE))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_MYBRUSH_CLASS (klass)
+DECL|macro|GIMP_IS_MYBRUSH_CORE_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_MYBRUSH_CLASS
+name|GIMP_IS_MYBRUSH_CORE_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
@@ -172,11 +166,6 @@ end_endif
 begin_comment
 comment|/*  __GIMP_MYBRUSH_CORE_H__  */
 end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 end_unit
 
