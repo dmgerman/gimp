@@ -188,12 +188,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_LIBMYPAINT
-end_ifdef
-
 begin_function_decl
 name|void
 name|tools_mybrush_radius_cmd_callback
@@ -210,11 +204,6 @@ name|data
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_function_decl
 name|void

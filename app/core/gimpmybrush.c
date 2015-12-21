@@ -27,22 +27,11 @@ directive|include
 file|<gegl.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_LIBMYPAINT
-end_ifdef
-
 begin_include
 include|#
 directive|include
 file|<mypaint-brush.h>
 end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
@@ -909,9 +898,6 @@ modifier|*
 name|brush
 parameter_list|)
 block|{
-ifdef|#
-directive|ifdef
-name|HAVE_LIBMYPAINT
 name|GFile
 modifier|*
 name|file
@@ -1061,8 +1047,6 @@ argument_list|(
 name|mypaint_brush
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|brush
 operator|->
 name|priv

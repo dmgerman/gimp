@@ -9,22 +9,10 @@ directive|include
 file|"config.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_LIBMYPAINT
-end_ifdef
-
 begin_include
 include|#
 directive|include
 file|<gegl.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpmybrushsurface.h"
 end_include
 
 begin_include
@@ -36,7 +24,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
+file|"paint-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpmybrushsurface.h"
 end_include
 
 begin_struct
@@ -2243,11 +2243,6 @@ name|surface
 return|;
 block|}
 end_function
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 end_unit
 

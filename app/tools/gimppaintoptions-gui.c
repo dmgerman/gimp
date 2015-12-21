@@ -117,22 +117,11 @@ directive|include
 file|"gimpinktool.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_LIBMYPAINT
-end_ifdef
-
 begin_include
 include|#
 directive|include
 file|"gimpmybrushtool.h"
 end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
@@ -509,15 +498,10 @@ name|tool_type
 operator|==
 name|GIMP_TYPE_HEAL_TOOL
 operator|||
-ifdef|#
-directive|ifdef
-name|HAVE_LIBMYPAINT
 name|tool_type
 operator|==
 name|GIMP_TYPE_MYBRUSH_TOOL
 operator|||
-endif|#
-directive|endif
 name|tool_type
 operator|==
 name|GIMP_TYPE_SMUDGE_TOOL
@@ -595,15 +579,10 @@ name|tool_type
 argument_list|,
 name|GIMP_TYPE_PAINT_TOOL
 argument_list|)
-ifdef|#
-directive|ifdef
-name|HAVE_LIBMYPAINT
 operator|&&
 name|tool_type
 operator|!=
 name|GIMP_TYPE_MYBRUSH_TOOL
-endif|#
-directive|endif
 condition|)
 block|{
 name|GtkWidget
