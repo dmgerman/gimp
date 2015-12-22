@@ -177,7 +177,7 @@ name|GIMP_CONTEXT_PROP_MASK_PAINT_MODE
 operator||
 name|GIMP_CONTEXT_PROP_MASK_MYBRUSH
 argument_list|,
-literal|"gimp-mybrush-tool"
+literal|"gimp-mypaint-brush-tool"
 argument_list|,
 name|_
 argument_list|(
@@ -287,7 +287,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-literal|"tools/tools-mybrush-radius-set"
+literal|"tools/tools-mypaint-brush-radius-set"
 argument_list|)
 expr_stmt|;
 name|gimp_paint_tool_enable_color_picker

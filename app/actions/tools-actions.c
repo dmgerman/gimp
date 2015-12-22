@@ -736,7 +736,7 @@ index|[]
 init|=
 block|{
 block|{
-literal|"tools-mybrush-radius-set"
+literal|"tools-mypaint-brush-radius-set"
 block|,
 name|GIMP_STOCK_TOOL_MYPAINT_BRUSH
 block|,
