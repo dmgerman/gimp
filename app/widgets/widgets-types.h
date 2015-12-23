@@ -939,6 +939,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpColorHistory
+typedef|typedef
+name|struct
+name|_GimpColorHistory
+name|GimpColorHistory
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColorPanel
 typedef|typedef
 name|struct

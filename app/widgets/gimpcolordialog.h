@@ -120,14 +120,6 @@ name|GtkWidget
 modifier|*
 name|selection
 decl_stmt|;
-DECL|member|history
-name|GtkWidget
-modifier|*
-name|history
-index|[
-name|GIMP_COLOR_DIALOG_HISTORY_SIZE
-index|]
-decl_stmt|;
 block|}
 struct|;
 end_struct
