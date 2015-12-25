@@ -205,7 +205,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b701a0f0103
+DECL|enum|__anon2c4cb2af0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -236,7 +236,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b701a0f0203
+DECL|enum|__anon2c4cb2af0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -812,7 +812,7 @@ name|gint
 name|mask_dither_type
 parameter_list|,
 name|gboolean
-name|convert_type
+name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -4867,7 +4867,6 @@ argument_list|(
 name|drawable
 argument_list|)
 decl_stmt|;
-comment|/* when converting between linear and gamma, we create a new            * profile using the original profile's chromacities and            * whitepoint, but a linear/sRGB-gamma TRC.            * gimp_image_convert_precision() will use the same profile.            */
 if|if
 condition|(
 name|gimp_babl_format_get_linear
@@ -4881,6 +4880,7 @@ name|new_format
 argument_list|)
 condition|)
 block|{
+comment|/* when converting between linear and gamma, we create a                * new profile using the original profile's chromacities                * and whitepoint, but a linear/sRGB-gamma TRC.                * gimp_image_convert_precision() will use the same                * profile.                */
 name|src_profile
 operator|=
 name|gimp_color_managed_get_color_profile
@@ -4917,7 +4917,7 @@ name|src_profile
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* if a new profile cannot be be generated, convert to the                * builtin profile, which is better than leaving the user                * with broken colors                */
+comment|/* if a new profile cannot be be generated, convert to                * the builtin profile, which is better than leaving the                * user with broken colors                */
 if|if
 condition|(
 operator|!
@@ -4937,6 +4937,54 @@ name|dest_profile
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+elseif|else
+if|if
+condition|(
+name|gimp_drawable_get_base_type
+argument_list|(
+name|drawable
+argument_list|)
+operator|!=
+name|new_base_type
+operator|&&
+operator|(
+name|gimp_drawable_get_base_type
+argument_list|(
+name|drawable
+argument_list|)
+operator|==
+name|GIMP_GRAY
+operator|||
+name|new_base_type
+operator|==
+name|GIMP_GRAY
+operator|)
+condition|)
+block|{
+comment|/* when converting to/from GRAY, convert to the new                * type's builtin profile because the conversion will                * get rid of the profile, see gimp_image_convert_type().                */
+name|src_profile
+operator|=
+name|gimp_color_managed_get_color_profile
+argument_list|(
+name|GIMP_COLOR_MANAGED
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|dest_profile
+operator|=
+name|gimp_image_get_builtin_color_profile
+argument_list|(
+name|dest_image
+argument_list|)
+expr_stmt|;
+name|g_object_ref
+argument_list|(
+name|dest_profile
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 block|}

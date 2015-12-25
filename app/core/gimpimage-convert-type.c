@@ -418,7 +418,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28e92a5d0103
+DECL|enum|__anon2981ca390103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1514,7 +1514,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e92a5d0208
+DECL|struct|__anon2981ca390208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1750,7 +1750,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e92a5d0308
+DECL|struct|__anon2981ca390308
 block|{
 DECL|member|used_count
 name|glong
@@ -4035,7 +4035,7 @@ expr_stmt|;
 block|}
 break|break;
 block|}
-comment|/* TODO: attach or remove the ICC profile */
+comment|/*  When converting to/from GRAY, remove the profile.    *  gimp_layer_convert_type() has converted the layers to    *  new_type's builtin profile.    */
 switch|switch
 condition|(
 name|new_type
@@ -4075,8 +4075,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-break|break;
-default|default:
 break|break;
 block|}
 comment|/*  Delete the quantizer object, if there is one */
