@@ -268,7 +268,7 @@ value|(BITS_IN_SAMPLE-PRECISION_B)
 end_define
 
 begin_comment
-comment|/* we've stretched our non-cubic L*a*b* volume to touch the    faces of the logical cube we've allocated for it, so re-scale    again in inverse proportion to get back to linear proportions. */
+comment|/* we've stretched our non-cubic L*a*b* volume to touch the  * faces of the logical cube we've allocated for it, so re-scale  * again in inverse proportion to get back to linear proportions.  */
 end_comment
 
 begin_define
@@ -329,12 +329,12 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|Pass1_Func
+DECL|typedef|Pass1Func
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|Pass1_Func
+name|Pass1Func
 function_decl|)
 parameter_list|(
 name|QuantizeObj
@@ -345,12 +345,12 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|Pass2i_Func
+DECL|typedef|Pass2InitFunc
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|Pass2i_Func
+name|Pass2InitFunc
 function_decl|)
 parameter_list|(
 name|QuantizeObj
@@ -361,12 +361,12 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|Pass2_Func
+DECL|typedef|Pass2Func
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|Pass2_Func
+name|Pass2Func
 function_decl|)
 parameter_list|(
 name|QuantizeObj
@@ -385,12 +385,12 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|Cleanup_Func
+DECL|typedef|CleanupFunc
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|Cleanup_Func
+name|CleanupFunc
 function_decl|)
 parameter_list|(
 name|QuantizeObj
@@ -403,8 +403,7 @@ end_typedef
 begin_typedef
 DECL|typedef|ColorFreq
 typedef|typedef
-name|unsigned
-name|long
+name|gulong
 name|ColorFreq
 typedef|;
 end_typedef
@@ -419,12 +418,12 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2a1779850103
+DECL|enum|__anon28e92a5d0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
 DECL|enumerator|AXIS_GREEN
-DECL|typedef|axisType
+DECL|typedef|AxisType
 typedef|typedef
 enum|enum
 block|{
@@ -436,7 +435,7 @@ name|AXIS_BLUE
 block|,
 name|AXIS_GREEN
 block|}
-name|axisType
+name|AxisType
 typedef|;
 end_typedef
 
@@ -619,9 +618,9 @@ end_comment
 begin_function
 specifier|static
 specifier|inline
-DECL|function|HIST_LIN (ColorFreq * hist_ptr,const int r,const int g,const int b)
 name|ColorFreq
 modifier|*
+DECL|function|HIST_LIN (ColorFreq * hist_ptr,const gint r,const gint g,const gint b)
 name|HIST_LIN
 parameter_list|(
 name|ColorFreq
@@ -629,15 +628,15 @@ modifier|*
 name|hist_ptr
 parameter_list|,
 specifier|const
-name|int
+name|gint
 name|r
 parameter_list|,
 specifier|const
-name|int
+name|gint
 name|g
 parameter_list|,
 specifier|const
-name|int
+name|gint
 name|b
 parameter_list|)
 block|{
@@ -785,46 +784,43 @@ end_decl_stmt
 begin_function
 specifier|static
 specifier|inline
-DECL|function|rgb_to_unshifted_lin (const unsigned char r,const unsigned char g,const unsigned char b,int * hr,int * hg,int * hb)
 name|void
+DECL|function|rgb_to_unshifted_lin (const guchar r,const guchar g,const guchar b,gint * hr,gint * hg,gint * hb)
 name|rgb_to_unshifted_lin
 parameter_list|(
 specifier|const
-name|unsigned
-name|char
+name|guchar
 name|r
 parameter_list|,
 specifier|const
-name|unsigned
-name|char
+name|guchar
 name|g
 parameter_list|,
 specifier|const
-name|unsigned
-name|char
+name|guchar
 name|b
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|hr
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|hg
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|hb
 parameter_list|)
 block|{
-name|int
+name|gint
 name|or
 decl_stmt|,
 name|og
 decl_stmt|,
 name|ob
 decl_stmt|;
-name|float
+name|gfloat
 name|rgb
 index|[
 literal|3
@@ -844,7 +840,7 @@ operator|/
 literal|255.0
 block|}
 decl_stmt|;
-name|float
+name|gfloat
 name|lab
 index|[
 literal|3
@@ -949,39 +945,36 @@ end_function
 begin_function
 specifier|static
 specifier|inline
-DECL|function|rgb_to_lin (const unsigned char r,const unsigned char g,const unsigned char b,int * hr,int * hg,int * hb)
 name|void
+DECL|function|rgb_to_lin (const guchar r,const guchar g,const guchar b,gint * hr,gint * hg,gint * hb)
 name|rgb_to_lin
 parameter_list|(
 specifier|const
-name|unsigned
-name|char
+name|guchar
 name|r
 parameter_list|,
 specifier|const
-name|unsigned
-name|char
+name|guchar
 name|g
 parameter_list|,
 specifier|const
-name|unsigned
-name|char
+name|guchar
 name|b
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|hr
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|hg
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|hb
 parameter_list|)
 block|{
-name|int
+name|gint
 name|or
 decl_stmt|,
 name|og
@@ -1101,9 +1094,9 @@ end_function
 begin_function
 specifier|static
 specifier|inline
-DECL|function|HIST_RGB (ColorFreq * hist_ptr,const int r,const int g,const int b)
 name|ColorFreq
 modifier|*
+DECL|function|HIST_RGB (ColorFreq * hist_ptr,const gint r,const gint g,const gint b)
 name|HIST_RGB
 parameter_list|(
 name|ColorFreq
@@ -1111,19 +1104,19 @@ modifier|*
 name|hist_ptr
 parameter_list|,
 specifier|const
-name|int
+name|gint
 name|r
 parameter_list|,
 specifier|const
-name|int
+name|gint
 name|g
 parameter_list|,
 specifier|const
-name|int
+name|gint
 name|b
 parameter_list|)
 block|{
-name|int
+name|gint
 name|hr
 decl_stmt|,
 name|hg
@@ -1149,7 +1142,6 @@ name|hb
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|HIST_LIN
 argument_list|(
 name|hist_ptr
@@ -1160,7 +1152,6 @@ name|hg
 argument_list|,
 name|hb
 argument_list|)
-operator|)
 return|;
 block|}
 end_function
@@ -1168,51 +1159,48 @@ end_function
 begin_function
 specifier|static
 specifier|inline
-DECL|function|lin_to_rgb (const double hr,const double hg,const double hb,unsigned char * r,unsigned char * g,unsigned char * b)
 name|void
+DECL|function|lin_to_rgb (const gdouble hr,const gdouble hg,const gdouble hb,guchar * r,guchar * g,guchar * b)
 name|lin_to_rgb
 parameter_list|(
 specifier|const
-name|double
+name|gdouble
 name|hr
 parameter_list|,
 specifier|const
-name|double
+name|gdouble
 name|hg
 parameter_list|,
 specifier|const
-name|double
+name|gdouble
 name|hb
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|r
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|g
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|b
 parameter_list|)
 block|{
-name|float
+name|gfloat
 name|rgb
 index|[
 literal|3
 index|]
 decl_stmt|;
-name|float
+name|gfloat
 name|lab
 index|[
 literal|3
 index|]
 decl_stmt|;
-name|double
+name|gdouble
 name|ir
 decl_stmt|,
 name|ig
@@ -1223,7 +1211,7 @@ name|ir
 operator|=
 operator|(
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 name|hr
@@ -1233,7 +1221,7 @@ operator|*
 literal|255.0F
 operator|/
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 name|HIST_R_ELEMS
@@ -1245,7 +1233,7 @@ name|ig
 operator|=
 operator|(
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 name|hg
@@ -1255,7 +1243,7 @@ operator|*
 literal|255.0F
 operator|/
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 name|HIST_G_ELEMS
@@ -1267,7 +1255,7 @@ name|ib
 operator|=
 operator|(
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 name|hb
@@ -1277,7 +1265,7 @@ operator|*
 literal|255.0F
 operator|/
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 name|HIST_B_ELEMS
@@ -1412,15 +1400,15 @@ struct|struct
 name|_Color
 block|{
 DECL|member|red
-name|int
+name|gint
 name|red
 decl_stmt|;
 DECL|member|green
-name|int
+name|gint
 name|green
 decl_stmt|;
 DECL|member|blue
-name|int
+name|gint
 name|blue
 decl_stmt|;
 block|}
@@ -1433,32 +1421,38 @@ struct|struct
 name|_QuantizeObj
 block|{
 DECL|member|first_pass
-name|Pass1_Func
+name|Pass1Func
 name|first_pass
 decl_stmt|;
 comment|/* first pass over image data creates colormap  */
 DECL|member|second_pass_init
-name|Pass2i_Func
+name|Pass2InitFunc
 name|second_pass_init
 decl_stmt|;
 comment|/* Initialize data which persists over invocations */
 DECL|member|second_pass
-name|Pass2_Func
+name|Pass2Func
 name|second_pass
 decl_stmt|;
 comment|/* second pass maps from image data to colormap */
 DECL|member|delete_func
-name|Cleanup_Func
+name|CleanupFunc
 name|delete_func
 decl_stmt|;
 comment|/* function to clean up data associated with private */
+DECL|member|custom_palette
+name|GimpPalette
+modifier|*
+name|custom_palette
+decl_stmt|;
+comment|/* The custom palette, if any        */
 DECL|member|desired_number_of_colors
-name|int
+name|gint
 name|desired_number_of_colors
 decl_stmt|;
 comment|/* Number of colors we will allow    */
 DECL|member|actual_number_of_colors
-name|int
+name|gint
 name|actual_number_of_colors
 decl_stmt|;
 comment|/* Number of colors actually needed  */
@@ -1485,7 +1479,7 @@ index|[
 literal|256
 index|]
 decl_stmt|;
-comment|/* how many times an index was used */
+comment|/* how many times an index was used  */
 DECL|member|histogram
 name|CFHistogram
 name|histogram
@@ -1496,7 +1490,7 @@ name|gboolean
 name|want_alpha_dither
 decl_stmt|;
 DECL|member|error_freedom
-name|int
+name|gint
 name|error_freedom
 decl_stmt|;
 comment|/* 0=much bleed, 1=controlled bleed */
@@ -1520,50 +1514,50 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1779850208
+DECL|struct|__anon28e92a5d0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
 DECL|member|Rmax
-name|int
+name|gint
 name|Rmin
 decl_stmt|,
 name|Rmax
 decl_stmt|;
 DECL|member|Rhalferror
-name|int
+name|gint
 name|Rhalferror
 decl_stmt|;
 DECL|member|Gmin
 DECL|member|Gmax
-name|int
+name|gint
 name|Gmin
 decl_stmt|,
 name|Gmax
 decl_stmt|;
 DECL|member|Ghalferror
-name|int
+name|gint
 name|Ghalferror
 decl_stmt|;
 DECL|member|Bmin
 DECL|member|Bmax
-name|int
+name|gint
 name|Bmin
 decl_stmt|,
 name|Bmax
 decl_stmt|;
 DECL|member|Bhalferror
-name|int
+name|gint
 name|Bhalferror
 decl_stmt|;
 comment|/*  The volume (actually 2-norm) of the box  */
 DECL|member|volume
-name|int
+name|gint
 name|volume
 decl_stmt|;
 comment|/*  The number of nonzero histogram cells within this box  */
 DECL|member|colorcount
-name|long
+name|glong
 name|colorcount
 decl_stmt|;
 comment|/* The sum of the weighted error within this box */
@@ -1683,6 +1677,10 @@ parameter_list|,
 name|GimpConvertPaletteType
 name|palette_type
 parameter_list|,
+name|GimpPalette
+modifier|*
+name|custom_palette
+parameter_list|,
 name|gboolean
 name|alpha_dither
 parameter_list|,
@@ -1745,17 +1743,6 @@ name|needs_quantize
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|theCustomPalette
-specifier|static
-name|GimpPalette
-modifier|*
-name|theCustomPalette
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/**********************************************************/
 end_comment
@@ -1763,21 +1750,19 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1779850308
+DECL|struct|__anon28e92a5d0308
 block|{
 DECL|member|used_count
-name|signed
-name|long
+name|glong
 name|used_count
 decl_stmt|;
 DECL|member|initial_index
-name|unsigned
-name|char
+name|guchar
 name|initial_index
 decl_stmt|;
-DECL|typedef|palentryStruct
+DECL|typedef|PalEntry
 block|}
-name|palentryStruct
+name|PalEntry
 typedef|;
 end_typedef
 
@@ -1798,22 +1783,22 @@ modifier|*
 name|b
 parameter_list|)
 block|{
-name|palentryStruct
+name|PalEntry
 modifier|*
 name|m1
 init|=
 operator|(
-name|palentryStruct
+name|PalEntry
 operator|*
 operator|)
 name|a
 decl_stmt|;
-name|palentryStruct
+name|PalEntry
 modifier|*
 name|m2
 init|=
 operator|(
-name|palentryStruct
+name|PalEntry
 operator|*
 operator|)
 name|b
@@ -1833,51 +1818,46 @@ block|}
 end_function
 
 begin_comment
-comment|/* FWIW, the make_remap_table() and mapping_compare() function source  * and palentryStruct may be re-used under the XFree86-style license.  *<adam@gimp.org>  */
+comment|/* FWIW, the make_remap_table() and mapping_compare() function source  * and PalEntry may be re-used under the XFree86-style license.  *<adam@gimp.org>  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|make_remap_table (const unsigned char old_palette[],unsigned char new_palette[],const unsigned long index_used_count[],unsigned char remap_table[],int * num_entries)
+DECL|function|make_remap_table (const guchar old_palette[],guchar new_palette[],const gulong index_used_count[],guchar remap_table[],gint * num_entries)
 name|make_remap_table
 parameter_list|(
 specifier|const
-name|unsigned
-name|char
+name|guchar
 name|old_palette
 index|[]
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 name|new_palette
 index|[]
 parameter_list|,
 specifier|const
-name|unsigned
-name|long
+name|gulong
 name|index_used_count
 index|[]
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 name|remap_table
 index|[]
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|num_entries
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
 decl_stmt|,
 name|k
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|temppal
 index|[
 literal|256
@@ -1885,25 +1865,23 @@ operator|*
 literal|3
 index|]
 decl_stmt|;
-name|unsigned
-name|long
+name|gulong
 name|tempuse
 index|[
 literal|256
 index|]
 decl_stmt|;
-name|unsigned
-name|long
+name|gulong
 name|transmap
 index|[
 literal|256
 index|]
 decl_stmt|;
-name|palentryStruct
+name|PalEntry
 modifier|*
 name|palentries
 decl_stmt|;
-name|int
+name|gint
 name|used
 init|=
 literal|0
@@ -1927,11 +1905,10 @@ literal|0
 argument_list|,
 literal|256
 operator|*
-expr|sizeof
-operator|(
-name|unsigned
-name|long
-operator|)
+sizeof|sizeof
+argument_list|(
+name|gulong
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|memset
@@ -1942,14 +1919,13 @@ literal|255
 argument_list|,
 literal|256
 operator|*
-expr|sizeof
-operator|(
-name|unsigned
-name|long
-operator|)
+sizeof|sizeof
+argument_list|(
+name|gulong
+argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* First pass - only collect entries which are marked as      being used at all in index_used_count. */
+comment|/* First pass - only collect entries which are marked as being used    * at all in index_used_count.    */
 for|for
 control|(
 name|i
@@ -2170,7 +2146,7 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
-comment|/* change all mappings from this dead index                  to the live one. */
+comment|/* change all mappings from this dead index to the live                * one.                */
 for|for
 control|(
 name|k
@@ -2213,12 +2189,12 @@ block|}
 block|}
 block|}
 block|}
-comment|/* Third pass - rank all used indicies to the beginning of the      palette. */
+comment|/* Third pass - rank all used indicies to the beginning of the    * palette.    */
 name|palentries
 operator|=
 name|g_new
 argument_list|(
-name|palentryStruct
+name|PalEntry
 argument_list|,
 name|used
 argument_list|)
@@ -2267,7 +2243,7 @@ name|used
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|palentryStruct
+name|PalEntry
 argument_list|)
 argument_list|,
 operator|&
@@ -2659,7 +2635,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|color_quicksort (const void * c1,const void * c2)
 name|color_quicksort
 parameter_list|(
@@ -2694,7 +2670,7 @@ operator|*
 operator|)
 name|c2
 decl_stmt|;
-name|double
+name|gdouble
 name|v1
 init|=
 name|GIMP_RGB_LUMINANCE
@@ -2712,7 +2688,7 @@ operator|->
 name|blue
 argument_list|)
 decl_stmt|;
-name|double
+name|gdouble
 name|v2
 init|=
 name|GIMP_RGB_LUMINANCE
@@ -2828,7 +2804,8 @@ name|NULL
 decl_stmt|;
 name|gint
 name|nth_layer
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|n_layers
 decl_stmt|;
 name|g_return_val_if_fail
@@ -2849,6 +2826,36 @@ name|gimp_image_get_base_type
 argument_list|(
 name|image
 argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|custom_palette
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_PALETTE
+argument_list|(
+name|custom_palette
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|custom_palette
+operator|==
+name|NULL
+operator|||
+name|gimp_palette_get_n_colors
+argument_list|(
+name|custom_palette
+argument_list|)
+operator|<=
+literal|256
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2888,36 +2895,6 @@ operator|==
 name|GIMP_CUSTOM_PALETTE
 condition|)
 block|{
-name|g_return_val_if_fail
-argument_list|(
-name|custom_palette
-operator|==
-name|NULL
-operator|||
-name|GIMP_IS_PALETTE
-argument_list|(
-name|custom_palette
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|custom_palette
-operator|==
-name|NULL
-operator|||
-name|gimp_palette_get_n_colors
-argument_list|(
-name|custom_palette
-argument_list|)
-operator|<=
-literal|256
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -2956,10 +2933,6 @@ name|FALSE
 return|;
 block|}
 block|}
-name|theCustomPalette
-operator|=
-name|custom_palette
-expr_stmt|;
 name|gimp_set_busy
 argument_list|(
 name|image
@@ -3145,6 +3118,8 @@ name|dither
 argument_list|,
 name|palette_type
 argument_list|,
+name|custom_palette
+argument_list|,
 name|alpha_dither
 argument_list|,
 name|progress
@@ -3225,6 +3200,7 @@ name|old_type
 operator|==
 name|GIMP_GRAY
 condition|)
+block|{
 name|generate_histogram_gray
 argument_list|(
 name|quantobj
@@ -3236,7 +3212,10 @@ argument_list|,
 name|alpha_dither
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
+comment|/* Note: generate_histogram_rgb may set                    * needs_quantize if the image contains more colors                    * than the limit specified by the user.                    */
 name|generate_histogram_rgb
 argument_list|(
 name|quantobj
@@ -3256,7 +3235,7 @@ argument_list|,
 name|n_layers
 argument_list|)
 expr_stmt|;
-comment|/* Note: generate_histogram_rgb may set needs_quantize if                *  the image contains more colors than the limit specified                *  by the user.                */
+block|}
 block|}
 block|}
 if|if
@@ -3306,6 +3285,8 @@ argument_list|,
 name|GIMP_NODESTRUCT_DITHER
 argument_list|,
 name|palette_type
+argument_list|,
+name|custom_palette
 argument_list|,
 name|alpha_dither
 argument_list|,
@@ -5037,7 +5018,7 @@ operator|>
 name|col_limit
 condition|)
 block|{
-comment|/* There are more colors in the image                            *  than were allowed.  We switch to plain                            *  histogram calculation with a view to                            *  quantizing at a later stage.                            */
+comment|/* There are more colors in the image than                            *  were allowed.  We switch to plain                            *  histogram calculation with a view to                            *  quantizing at a later stage.                            */
 name|needs_quantize
 operator|=
 name|TRUE
@@ -5171,7 +5152,7 @@ end_function
 begin_function
 specifier|static
 name|boxptr
-DECL|function|find_split_candidate (const boxptr boxlist,const int numboxes,axisType * which_axis,const int desired_colors)
+DECL|function|find_split_candidate (const boxptr boxlist,const gint numboxes,AxisType * which_axis,const gint desired_colors)
 name|find_split_candidate
 parameter_list|(
 specifier|const
@@ -5179,22 +5160,22 @@ name|boxptr
 name|boxlist
 parameter_list|,
 specifier|const
-name|int
+name|gint
 name|numboxes
 parameter_list|,
-name|axisType
+name|AxisType
 modifier|*
 name|which_axis
 parameter_list|,
 specifier|const
-name|int
+name|gint
 name|desired_colors
 parameter_list|)
 block|{
 name|boxptr
 name|boxp
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|etype
@@ -5207,7 +5188,7 @@ name|which
 init|=
 name|NULL
 decl_stmt|;
-name|double
+name|gdouble
 name|Lbias
 decl_stmt|;
 operator|*
@@ -5247,7 +5228,7 @@ literal|1.0F
 else|:
 operator|(
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 name|BIAS_NUMBER
@@ -5257,7 +5238,7 @@ argument_list|)
 operator|-
 operator|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|numboxes
 operator|)
@@ -5265,7 +5246,7 @@ operator|)
 operator|/
 operator|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|BIAS_NUMBER
 operator|/
@@ -5542,7 +5523,7 @@ end_comment
 begin_function
 specifier|static
 name|boxptr
-DECL|function|find_biggest_volume (const boxptr boxlist,const int numboxes)
+DECL|function|find_biggest_volume (const boxptr boxlist,const gint numboxes)
 name|find_biggest_volume
 parameter_list|(
 specifier|const
@@ -5550,17 +5531,17 @@ name|boxptr
 name|boxlist
 parameter_list|,
 specifier|const
-name|int
+name|gint
 name|numboxes
 parameter_list|)
 block|{
 name|boxptr
 name|boxp
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|int
+name|gint
 name|maxv
 init|=
 literal|0
@@ -5636,7 +5617,7 @@ name|boxptr
 name|boxp
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|min
@@ -5796,10 +5777,14 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/* Shrink the min/max bounds of a box to enclose only nonzero  * elements, and recompute its volume, population and error  */
+end_comment
+
 begin_function
 specifier|static
 name|void
-DECL|function|update_box_rgb (const CFHistogram histogram,boxptr boxp,const int cells_remaining)
+DECL|function|update_box_rgb (const CFHistogram histogram,boxptr boxp,const gint cells_remaining)
 name|update_box_rgb
 parameter_list|(
 specifier|const
@@ -5810,20 +5795,18 @@ name|boxptr
 name|boxp
 parameter_list|,
 specifier|const
-name|int
+name|gint
 name|cells_remaining
 parameter_list|)
-comment|/* Shrink the min/max bounds of a box to enclose only nonzero elements, */
-comment|/* and recompute its volume, population and error */
 block|{
-name|int
+name|gint
 name|R
 decl_stmt|,
 name|G
 decl_stmt|,
 name|B
 decl_stmt|;
-name|int
+name|gint
 name|Rmin
 decl_stmt|,
 name|Rmax
@@ -5836,7 +5819,7 @@ name|Bmin
 decl_stmt|,
 name|Bmax
 decl_stmt|;
-name|int
+name|gint
 name|dist0
 decl_stmt|,
 name|dist1
@@ -6785,21 +6768,22 @@ operator|&&
 name|dist2
 condition|)
 block|{
-name|axisType
+name|AxisType
 name|longest_ax
 init|=
 name|AXIS_UNDEF
 decl_stmt|;
-name|int
+name|gint
 name|longest_length
 init|=
 literal|0
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|longest_length2
 init|=
 literal|0
 decl_stmt|;
-name|int
+name|gint
 name|ratio
 decl_stmt|;
 comment|/*         fprintf(stderr, "[%d,%d,%d=%d,%d,%d] ",         (Rmax - Rmin), (Gmax - Gmin), (Bmax - Bmin),         dist0, dist1, dist2);       */
@@ -7148,10 +7132,14 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/* Repeatedly select and split the largest box until we have enough  * boxes  */
+end_comment
+
 begin_function
 specifier|static
-name|int
-DECL|function|median_cut_gray (CFHistogram histogram,boxptr boxlist,int numboxes,int desired_colors)
+name|gint
+DECL|function|median_cut_gray (CFHistogram histogram,boxptr boxlist,gint numboxes,gint desired_colors)
 name|median_cut_gray
 parameter_list|(
 name|CFHistogram
@@ -7160,15 +7148,14 @@ parameter_list|,
 name|boxptr
 name|boxlist
 parameter_list|,
-name|int
+name|gint
 name|numboxes
 parameter_list|,
-name|int
+name|gint
 name|desired_colors
 parameter_list|)
-comment|/* Repeatedly select and split the largest box until we have enough boxes */
 block|{
-name|int
+name|gint
 name|lb
 decl_stmt|;
 name|boxptr
@@ -7279,10 +7266,14 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/* Repeatedly select and split the largest box until we have enough  * boxes  */
+end_comment
+
 begin_function
 specifier|static
-name|int
-DECL|function|median_cut_rgb (CFHistogram histogram,boxptr boxlist,int numboxes,int desired_colors,GimpProgress * progress)
+name|gint
+DECL|function|median_cut_rgb (CFHistogram histogram,boxptr boxlist,gint numboxes,gint desired_colors,GimpProgress * progress)
 name|median_cut_rgb
 parameter_list|(
 name|CFHistogram
@@ -7291,19 +7282,18 @@ parameter_list|,
 name|boxptr
 name|boxlist
 parameter_list|,
-name|int
+name|gint
 name|numboxes
 parameter_list|,
-name|int
+name|gint
 name|desired_colors
 parameter_list|,
 name|GimpProgress
 modifier|*
 name|progress
 parameter_list|)
-comment|/* Repeatedly select and split the largest box until we have enough boxes */
 block|{
-name|int
+name|gint
 name|lb
 decl_stmt|;
 name|boxptr
@@ -7311,7 +7301,7 @@ name|b1
 decl_stmt|,
 name|b2
 decl_stmt|;
-name|axisType
+name|AxisType
 name|which_axis
 decl_stmt|;
 while|while
@@ -7610,6 +7600,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/* Compute representative color for a box, put it in colormap[icolor]  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -7629,9 +7623,8 @@ parameter_list|,
 name|int
 name|icolor
 parameter_list|)
-comment|/* Compute representative color for a box, put it in colormap[icolor] */
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|min
@@ -7755,8 +7748,8 @@ name|total
 expr_stmt|;
 block|}
 else|else
-comment|/* The only situation where total==0 is if the image was null or         *  all-transparent.  In that case we just put a dummy value in         *  the colormap.         */
 block|{
+comment|/* The only situation where total==0 is if the image was null or        *  all-transparent.  In that case we just put a dummy value in        *  the colormap.        */
 name|quantobj
 operator|->
 name|cmap
@@ -7790,6 +7783,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/* Compute representative color for a box, put it in colormap[icolor]  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -7809,28 +7806,27 @@ parameter_list|,
 name|int
 name|icolor
 parameter_list|)
-comment|/* Compute representative color for a box, put it in colormap[icolor] */
 block|{
 comment|/* Current algorithm: mean weighted by pixels (not colors) */
 comment|/* Note it is important to get the rounding correct! */
-name|int
+name|gint
 name|R
 decl_stmt|,
 name|G
 decl_stmt|,
 name|B
 decl_stmt|;
-name|int
+name|gint
 name|Rmin
 decl_stmt|,
 name|Rmax
 decl_stmt|;
-name|int
+name|gint
 name|Gmin
 decl_stmt|,
 name|Gmax
 decl_stmt|;
-name|int
+name|gint
 name|Bmin
 decl_stmt|,
 name|Bmax
@@ -7986,8 +7982,7 @@ operator|>
 literal|0
 condition|)
 block|{
-name|unsigned
-name|char
+name|guchar
 name|red
 decl_stmt|,
 name|green
@@ -8072,8 +8067,8 @@ name|blue
 expr_stmt|;
 block|}
 else|else
-comment|/* The only situation where total==0 is if the image was null or         *  all-transparent.  In that case we just put a dummy value in         *  the colormap.         */
 block|{
+comment|/* The only situation where total==0 is if the image was null or        *  all-transparent.  In that case we just put a dummy value in        *  the colormap.        */
 name|quantobj
 operator|->
 name|cmap
@@ -8111,10 +8106,14 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/* Compute representative color for a box, put it in colormap[icolor]  */
+end_comment
+
 begin_function
 specifier|static
 name|void
-DECL|function|compute_color_lin8 (QuantizeObj * quantobj,CFHistogram histogram,boxptr boxp,const int icolor)
+DECL|function|compute_color_lin8 (QuantizeObj * quantobj,CFHistogram histogram,boxptr boxp,const gint icolor)
 name|compute_color_lin8
 parameter_list|(
 name|QuantizeObj
@@ -8128,31 +8127,30 @@ name|boxptr
 name|boxp
 parameter_list|,
 specifier|const
-name|int
+name|gint
 name|icolor
 parameter_list|)
-comment|/* Compute representative color for a box, put it in colormap[icolor] */
 block|{
 comment|/* Current algorithm: mean weighted by pixels (not colors) */
 comment|/* Note it is important to get the rounding correct! */
-name|int
+name|gint
 name|R
 decl_stmt|,
 name|G
 decl_stmt|,
 name|B
 decl_stmt|;
-name|int
+name|gint
 name|Rmin
 decl_stmt|,
 name|Rmax
 decl_stmt|;
-name|int
+name|gint
 name|Gmin
 decl_stmt|,
 name|Gmax
 decl_stmt|;
-name|int
+name|gint
 name|Bmin
 decl_stmt|,
 name|Bmax
@@ -8385,8 +8383,8 @@ name|total
 expr_stmt|;
 block|}
 else|else
-comment|/* The only situation where total==0 is if the image was null or         *  all-transparent.  In that case we just put a dummy value in         *  the colormap.         */
 block|{
+comment|/* The only situation where total==0 is if the image was null or        *  all-transparent.  In that case we just put a dummy value in        *  the colormap.        */
 name|g_warning
 argument_list|(
 literal|"eep."
@@ -8429,6 +8427,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/* Master routine for color selection  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -8442,22 +8444,21 @@ parameter_list|,
 name|CFHistogram
 name|histogram
 parameter_list|)
-comment|/* Master routine for color selection */
 block|{
 name|boxptr
 name|boxlist
 decl_stmt|;
-name|int
+name|gint
 name|numboxes
 decl_stmt|;
-name|int
+name|gint
 name|desired
 init|=
 name|quantobj
 operator|->
 name|desired_number_of_colors
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 comment|/* Allocate workspace for box list */
@@ -8551,6 +8552,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/* Master routine for color selection  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -8564,22 +8569,21 @@ parameter_list|,
 name|CFHistogram
 name|histogram
 parameter_list|)
-comment|/* Master routine for color selection */
 block|{
 name|boxptr
 name|boxlist
 decl_stmt|;
-name|int
+name|gint
 name|numboxes
 decl_stmt|;
-name|int
+name|gint
 name|desired
 init|=
 name|quantobj
 operator|->
 name|desired_number_of_colors
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 comment|/* Allocate workspace for box list */
@@ -8830,12 +8834,16 @@ value|(B_SHIFT + BOX_B_LOG)
 end_define
 
 begin_comment
-comment|/*  * The next three routines implement inverse colormap filling.  They could  * all be folded into one big routine, but splitting them up this way saves  * some stack space (the mindist[] and bestdist[] arrays need not coexist)  * and may allow some compilers to produce better code by registerizing more  * inner-loop variables.  */
+comment|/*  * The next three routines implement inverse colormap filling.  They  * could all be folded into one big routine, but splitting them up  * this way saves some stack space (the mindist[] and bestdist[]  * arrays need not coexist) and may allow some compilers to produce  * better code by registerizing more inner-loop variables.  */
+end_comment
+
+begin_comment
+comment|/* Locate the colormap entries close enough to an update box to be  * candidates for the nearest entry to some cell(s) in the update box.  * The update box is specified by the center coordinates of its first  * cell.  The number of candidate colormap entries is returned, and  * their colormap indexes are placed in colorlist[].  *  * This routine uses Heckbert's "locally sorted search" criterion to  * select the colors that need further consideration.  */
 end_comment
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|find_nearby_colors (QuantizeObj * quantobj,int minR,int minG,int minB,int colorlist[])
 name|find_nearby_colors
 parameter_list|(
@@ -8856,7 +8864,6 @@ name|int
 name|colorlist
 index|[]
 parameter_list|)
-comment|/* Locate the colormap entries close enough to an update box to be candidates  * for the nearest entry to some cell(s) in the update box.  The update box  * is specified by the center coordinates of its first cell.  The number of  * candidate colormap entries is returned, and their colormap indexes are  * placed in colorlist[].  * This routine uses Heckbert's "locally sorted search" criterion to select  * the colors that need further consideration.  */
 block|{
 name|int
 name|numcolors
@@ -9496,80 +9503,83 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/* Find the closest colormap entry for each cell in the update box,  * given the list of candidate colors prepared by find_nearby_colors.  * Return the indexes of the closest entries in the bestcolor[] array.  * This routine uses Thomas' incremental distance calculation method  * to find the distance from a colormap entry to successive cells in  * the box.  */
+end_comment
+
 begin_function
 specifier|static
 name|void
-DECL|function|find_best_colors (QuantizeObj * quantobj,int minR,int minG,int minB,int numcolors,int colorlist[],int bestcolor[])
+DECL|function|find_best_colors (QuantizeObj * quantobj,gint minR,gint minG,gint minB,gint numcolors,gint colorlist[],gint bestcolor[])
 name|find_best_colors
 parameter_list|(
 name|QuantizeObj
 modifier|*
 name|quantobj
 parameter_list|,
-name|int
+name|gint
 name|minR
 parameter_list|,
-name|int
+name|gint
 name|minG
 parameter_list|,
-name|int
+name|gint
 name|minB
 parameter_list|,
-name|int
+name|gint
 name|numcolors
 parameter_list|,
-name|int
+name|gint
 name|colorlist
 index|[]
 parameter_list|,
-name|int
+name|gint
 name|bestcolor
 index|[]
 parameter_list|)
-comment|/* Find the closest colormap entry for each cell in the update box,  * given the list of candidate colors prepared by find_nearby_colors.  * Return the indexes of the closest entries in the bestcolor[] array.  * This routine uses Thomas' incremental distance calculation method to  * find the distance from a colormap entry to successive cells in the box.  */
 block|{
-name|int
+name|gint
 name|iR
 decl_stmt|,
 name|iG
 decl_stmt|,
 name|iB
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|icolor
 decl_stmt|;
-name|int
+name|gint
 modifier|*
 name|bptr
 decl_stmt|;
 comment|/* pointer into bestdist[] array */
-name|int
+name|gint
 modifier|*
 name|cptr
 decl_stmt|;
 comment|/* pointer into bestcolor[] array */
-name|int
+name|gint
 name|dist0
 decl_stmt|,
 name|dist1
 decl_stmt|;
 comment|/* initial distance values */
-name|int
+name|gint
 name|dist2
 decl_stmt|;
 comment|/* current distance in inner loop */
-name|int
+name|gint
 name|xx0
 decl_stmt|,
 name|xx1
 decl_stmt|;
 comment|/* distance increments */
-name|int
+name|gint
 name|xx2
 decl_stmt|;
-name|int
+name|gint
 name|inR
 decl_stmt|,
 name|inG
@@ -9578,7 +9588,7 @@ name|inB
 decl_stmt|;
 comment|/* initial values for increments */
 comment|/* This array holds the distance to the nearest-so-far color for each cell */
-name|int
+name|gint
 name|bestdist
 index|[
 name|BOX_R_ELEMS
@@ -9923,10 +9933,14 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/* Fill the inverse-colormap entries in the update box that contains  * histogram cell R/G/B.  (Only that one cell MUST be filled, but we  * can fill as many others as we wish.)  */
+end_comment
+
 begin_function
 specifier|static
 name|void
-DECL|function|fill_inverse_cmap_gray (QuantizeObj * quantobj,CFHistogram histogram,int pixel)
+DECL|function|fill_inverse_cmap_gray (QuantizeObj * quantobj,CFHistogram histogram,gint pixel)
 name|fill_inverse_cmap_gray
 parameter_list|(
 name|QuantizeObj
@@ -9936,35 +9950,27 @@ parameter_list|,
 name|CFHistogram
 name|histogram
 parameter_list|,
-name|int
+name|gint
 name|pixel
 parameter_list|)
-comment|/* Fill the inverse-colormap entries in the update box that contains */
-comment|/* histogram cell R/G/B.  (Only that one cell MUST be filled, but */
-comment|/* we can fill as many others as we wish.) */
 block|{
 name|Color
 modifier|*
 name|cmap
-decl_stmt|;
-name|long
-name|dist
-decl_stmt|;
-name|long
-name|mindist
-decl_stmt|;
-name|int
-name|mindisti
-decl_stmt|;
-name|int
-name|i
-decl_stmt|;
-name|cmap
-operator|=
+init|=
 name|quantobj
 operator|->
 name|cmap
-expr_stmt|;
+decl_stmt|;
+name|glong
+name|mindist
+decl_stmt|;
+name|gint
+name|mindisti
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
 name|mindist
 operator|=
 literal|65536
@@ -9990,8 +9996,9 @@ name|i
 operator|++
 control|)
 block|{
+name|glong
 name|dist
-operator|=
+init|=
 name|ABS
 argument_list|(
 name|pixel
@@ -10003,7 +10010,7 @@ index|]
 operator|.
 name|red
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|dist
@@ -10039,10 +10046,14 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/* Fill the inverse-colormap entries in the update box that contains  * histogram cell R/G/B.  (Only that one cell MUST be filled, but we  * can fill as many others as we wish.)  */
+end_comment
+
 begin_function
 specifier|static
 name|void
-DECL|function|fill_inverse_cmap_rgb (QuantizeObj * quantobj,CFHistogram histogram,int R,int G,int B)
+DECL|function|fill_inverse_cmap_rgb (QuantizeObj * quantobj,CFHistogram histogram,gint R,gint G,gint B)
 name|fill_inverse_cmap_rgb
 parameter_list|(
 name|QuantizeObj
@@ -10052,20 +10063,17 @@ parameter_list|,
 name|CFHistogram
 name|histogram
 parameter_list|,
-name|int
+name|gint
 name|R
 parameter_list|,
-name|int
+name|gint
 name|G
 parameter_list|,
-name|int
+name|gint
 name|B
 parameter_list|)
-comment|/* Fill the inverse-colormap entries in the update box that contains */
-comment|/* histogram cell R/G/B.  (Only that one cell MUST be filled, but */
-comment|/* we can fill as many others as we wish.) */
 block|{
-name|int
+name|gint
 name|minR
 decl_stmt|,
 name|minG
@@ -10073,31 +10081,31 @@ decl_stmt|,
 name|minB
 decl_stmt|;
 comment|/* lower left corner of update box */
-name|int
+name|gint
 name|iR
 decl_stmt|,
 name|iG
 decl_stmt|,
 name|iB
 decl_stmt|;
-name|int
+name|gint
 modifier|*
 name|cptr
 decl_stmt|;
 comment|/* pointer into bestcolor[] array */
 comment|/* This array lists the candidate colormap indexes. */
-name|int
+name|gint
 name|colorlist
 index|[
 name|MAXNUMCOLORS
 index|]
 decl_stmt|;
-name|int
+name|gint
 name|numcolors
 decl_stmt|;
 comment|/* number of candidate colors */
 comment|/* This array holds the actually closest colormap index for each cell. */
-name|int
+name|gint
 name|bestcolor
 index|[
 name|BOX_R_ELEMS
@@ -10560,7 +10568,9 @@ name|list
 operator|=
 name|gimp_palette_get_colors
 argument_list|(
-name|theCustomPalette
+name|quantobj
+operator|->
+name|custom_palette
 argument_list|)
 init|;
 name|list
@@ -10912,17 +10922,15 @@ name|col
 operator|++
 control|)
 block|{
+comment|/* get pixel value and index into the cache */
 name|gint
 name|pixel
-decl_stmt|;
-comment|/* get pixel value and index into the cache */
-name|pixel
-operator|=
+init|=
 name|src
 index|[
 name|GRAY
 index|]
-expr_stmt|;
+decl_stmt|;
 name|cachep
 operator|=
 operator|&
@@ -10931,8 +10939,7 @@ index|[
 name|pixel
 index|]
 expr_stmt|;
-comment|/* If we have not seen this color before, find nearest colormap entry */
-comment|/* and update the cache */
+comment|/* If we have not seen this color before, find nearest                * colormap entry and update the cache                */
 if|if
 condition|(
 operator|*
@@ -11378,7 +11385,7 @@ name|gint
 name|pixel
 decl_stmt|;
 specifier|const
-name|int
+name|gint
 name|dmval
 init|=
 name|DM
@@ -11425,8 +11432,7 @@ index|[
 name|pixel
 index|]
 expr_stmt|;
-comment|/* If we have not seen this color before, find nearest colormap entry */
-comment|/* and update the cache */
+comment|/* If we have not seen this color before, find nearest                * colormap entry and update the cache                */
 if|if
 condition|(
 operator|*
@@ -11514,7 +11520,7 @@ index|[
 name|R
 index|]
 expr_stmt|;
-comment|/* If we have not seen this color before, find nearest                          colormap entry and update the cache */
+comment|/* If we have not seen this color before, find                        * nearest colormap entry and update the cache                        */
 if|if
 condition|(
 operator|*
@@ -11522,7 +11528,6 @@ name|cachep
 operator|==
 literal|0
 condition|)
-block|{
 name|fill_inverse_cmap_gray
 argument_list|(
 name|quantobj
@@ -11532,7 +11537,6 @@ argument_list|,
 name|R
 argument_list|)
 expr_stmt|;
-block|}
 name|pixval2
 operator|=
 operator|*
@@ -12318,7 +12322,7 @@ argument_list|,
 name|B
 argument_list|)
 expr_stmt|;
-comment|/* If we have not seen this color before, find nearest                  colormap entry and update the cache */
+comment|/* If we have not seen this color before, find nearest                * colormap entry and update the cache                */
 if|if
 condition|(
 operator|*
@@ -12935,7 +12939,7 @@ argument_list|,
 name|B
 argument_list|)
 expr_stmt|;
-comment|/* If we have not seen this color before, find nearest                  colormap entry and update the cache */
+comment|/* If we have not seen this color before, find nearest                * colormap entry and update the cache                */
 if|if
 condition|(
 operator|*
@@ -12956,7 +12960,7 @@ argument_list|,
 name|B
 argument_list|)
 expr_stmt|;
-comment|/* We now try to find a color which, when mixed in some fashion                  with the closest match, yields something closer to the                  desired color.  We do this by repeatedly extrapolating the                  color vector from one to the other until we find another                  color cell.  Then we assess the distance of both mixer                  colors from the intended color to determine their relative                  probabilities of being chosen. */
+comment|/* We now try to find a color which, when mixed in some                * fashion with the closest match, yields something                * closer to the desired color.  We do this by                * repeatedly extrapolating the color vector from one to                * the other until we find another color cell.  Then we                * assess the distance of both mixer colors from the                * intended color to determine their relative                * probabilities of being chosen.                */
 name|pixval1
 operator|=
 operator|*
@@ -12984,7 +12988,7 @@ literal|2
 condition|)
 block|{
 specifier|const
-name|int
+name|gint
 name|re
 init|=
 name|src
@@ -12993,14 +12997,14 @@ name|red_pix
 index|]
 operator|-
 operator|(
-name|int
+name|gint
 operator|)
 name|color1
 operator|->
 name|red
 decl_stmt|;
 specifier|const
-name|int
+name|gint
 name|ge
 init|=
 name|src
@@ -13009,14 +13013,14 @@ name|green_pix
 index|]
 operator|-
 operator|(
-name|int
+name|gint
 operator|)
 name|color1
 operator|->
 name|green
 decl_stmt|;
 specifier|const
-name|int
+name|gint
 name|be
 init|=
 name|src
@@ -13025,13 +13029,13 @@ name|blue_pix
 index|]
 operator|-
 operator|(
-name|int
+name|gint
 operator|)
 name|color1
 operator|->
 name|blue
 decl_stmt|;
-name|int
+name|gint
 name|RV
 init|=
 name|src
@@ -13041,7 +13045,7 @@ index|]
 operator|+
 name|re
 decl_stmt|;
-name|int
+name|gint
 name|GV
 init|=
 name|src
@@ -13051,7 +13055,7 @@ index|]
 operator|+
 name|ge
 decl_stmt|;
-name|int
+name|gint
 name|BV
 init|=
 name|src
@@ -13109,7 +13113,7 @@ argument_list|,
 name|B
 argument_list|)
 expr_stmt|;
-comment|/* If we have not seen this color before, find nearest                          colormap entry and update the cache */
+comment|/* If we have not seen this color before, find                        * nearest colormap entry and update the cache                        */
 if|if
 condition|(
 operator|*
@@ -13117,7 +13121,6 @@ name|cachep
 operator|==
 literal|0
 condition|)
-block|{
 name|fill_inverse_cmap_rgb
 argument_list|(
 name|quantobj
@@ -13131,7 +13134,6 @@ argument_list|,
 name|B
 argument_list|)
 expr_stmt|;
-block|}
 name|pixval2
 operator|=
 operator|*
@@ -13313,7 +13315,7 @@ name|B2
 parameter_list|,
 name|D
 parameter_list|)
-value|do { \                 int spacer1, spaceg1, spaceb1; \                 int spacer2, spaceg2, spaceb2; \                 rgb_to_unshifted_lin(R1,G1,B1,&spacer1,&spaceg1,&spaceb1); \                 rgb_to_unshifted_lin(R2,G2,B2,&spacer2,&spaceg2,&spaceb2); \                 D = sqrt(R_SCALE * SQR((spacer1)-(spacer2)) +           \                          G_SCALE * SQR((spaceg1)-(spaceg2)) + \                          B_SCALE * SQR((spaceb1)-(spaceb2))); \               } while(0)
+value|do { \                 int spacer1, spaceg1, spaceb1; \                 int spacer2, spaceg2, spaceb2; \                 rgb_to_unshifted_lin (R1,G1,B1,&spacer1,&spaceg1,&spaceb1); \                 rgb_to_unshifted_lin (R2,G2,B2,&spacer2,&spaceg2,&spaceb2); \                 D = sqrt(R_SCALE * SQR((spacer1)-(spacer2)) +           \                          G_SCALE * SQR((spaceg1)-(spaceg2)) + \                          B_SCALE * SQR((spaceb1)-(spaceb2))); \               } while(0)
 comment|/* although LIN_DISTP is more correct, DISTP is much faster and                  barely distinguishable. */
 name|DISTP
 argument_list|(
@@ -14810,8 +14812,7 @@ index|[
 name|pixel
 index|]
 expr_stmt|;
-comment|/* If we have not seen this color before, find nearest colormap entry */
-comment|/* and update the cache */
+comment|/* If we have not seen this color before, find nearest            * colormap entry and update the cache            */
 if|if
 condition|(
 operator|*
@@ -15307,11 +15308,10 @@ literal|0
 argument_list|,
 literal|256
 operator|*
-expr|sizeof
-operator|(
-name|unsigned
-name|long
-operator|)
+sizeof|sizeof
+argument_list|(
+name|gulong
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Make a version of our discovered colormap in linear space */
@@ -15424,11 +15424,10 @@ literal|0
 argument_list|,
 literal|256
 operator|*
-expr|sizeof
-operator|(
-name|unsigned
-name|long
-operator|)
+sizeof|sizeof
+argument_list|(
+name|gulong
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -16641,7 +16640,7 @@ name|be
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* If we have not seen this color before, find nearest              colormap entry and update the cache */
+comment|/* If we have not seen this color before, find nearest            * colormap entry and update the cache            */
 if|if
 condition|(
 operator|*
@@ -17420,7 +17419,7 @@ begin_function
 specifier|static
 name|QuantizeObj
 modifier|*
-DECL|function|initialize_median_cut (GimpImageBaseType type,gint num_colors,GimpConvertDitherType dither_type,GimpConvertPaletteType palette_type,gboolean want_alpha_dither,GimpProgress * progress)
+DECL|function|initialize_median_cut (GimpImageBaseType type,gint num_colors,GimpConvertDitherType dither_type,GimpConvertPaletteType palette_type,GimpPalette * custom_palette,gboolean want_alpha_dither,GimpProgress * progress)
 name|initialize_median_cut
 parameter_list|(
 name|GimpImageBaseType
@@ -17434,6 +17433,10 @@ name|dither_type
 parameter_list|,
 name|GimpConvertPaletteType
 name|palette_type
+parameter_list|,
+name|GimpPalette
+modifier|*
+name|custom_palette
 parameter_list|,
 name|gboolean
 name|want_alpha_dither
@@ -17493,6 +17496,12 @@ name|HIST_G_ELEMS
 operator|*
 name|HIST_B_ELEMS
 argument_list|)
+expr_stmt|;
+name|quantobj
+operator|->
+name|custom_palette
+operator|=
+name|custom_palette
 expr_stmt|;
 name|quantobj
 operator|->
