@@ -418,7 +418,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2981ca390103
+DECL|enum|__anon2bc0fa190103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1514,7 +1514,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2981ca390208
+DECL|struct|__anon2bc0fa190208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1750,7 +1750,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2981ca390308
+DECL|struct|__anon2bc0fa190308
 block|{
 DECL|member|used_count
 name|glong
@@ -4053,6 +4053,14 @@ name|old_type
 operator|==
 name|GIMP_GRAY
 condition|)
+block|{
+if|if
+condition|(
+name|gimp_image_get_color_profile
+argument_list|(
+name|image
+argument_list|)
+condition|)
 name|gimp_image_set_color_profile
 argument_list|(
 name|image
@@ -4062,10 +4070,27 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+else|else
+name|gimp_color_managed_profile_changed
+argument_list|(
+name|GIMP_COLOR_MANAGED
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 break|break;
 case|case
 name|GIMP_GRAY
 case|:
+if|if
+condition|(
+name|gimp_image_get_color_profile
+argument_list|(
+name|image
+argument_list|)
+condition|)
 name|gimp_image_set_color_profile
 argument_list|(
 name|image
@@ -4073,6 +4098,15 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+else|else
+name|gimp_color_managed_profile_changed
+argument_list|(
+name|GIMP_COLOR_MANAGED
+argument_list|(
+name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
