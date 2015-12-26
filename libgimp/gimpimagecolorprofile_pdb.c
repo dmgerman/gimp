@@ -154,7 +154,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_get_effective_color_profile:  * @image_ID: The image.  * @num_bytes: Number of bytes in the color_profile array.  *  * Returns the color profile that is used for the image  *  * This procedure returns the color profile that is actually used for  * this image, which is the profile returned by  * gimp_image_get_color_profile() if the image has a profile assigned,  * or a generated default RGB or GRAY profile, according to the image's  * type.  *  * Returns: The image's serialized color profile. The returned value  * must be freed with g_free().  *  * Since: 2.10  **/
+comment|/**  * _gimp_image_get_effective_color_profile:  * @image_ID: The image.  * @num_bytes: Number of bytes in the color_profile array.  *  * Returns the color profile that is used for the image  *  * This procedure returns the color profile that is actually used for  * this image, which is the profile returned by  * gimp_image_get_color_profile() if the image has a profile assigned,  * or a generated default RGB or grayscale profile, according to the  * image's type.  *  * Returns: The image's serialized color profile. The returned value  * must be freed with g_free().  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -437,7 +437,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_convert_color_profile:  * @image_ID: The image.  * @num_bytes: Number of bytes in the color_profile array.  * @color_profile: The serialized color profile.  * @intent: Rendering intent.  * @bpc: Black point compensation.  *  * Convert the image's layers to a color profile  *  * This procedure converts from the image's color profile (or the  * default RGB or GRAY profile if none is set) to the given color  * profile. Only RGB and GRAY color profiles are accepted, according to  * the image's type.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * _gimp_image_convert_color_profile:  * @image_ID: The image.  * @num_bytes: Number of bytes in the color_profile array.  * @color_profile: The serialized color profile.  * @intent: Rendering intent.  * @bpc: Black point compensation.  *  * Convert the image's layers to a color profile  *  * This procedure converts from the image's color profile (or the  * default RGB or grayscale profile if none is set) to the given color  * profile. Only RGB and grayscale color profiles are accepted,  * according to the image's type.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -534,7 +534,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_convert_color_profile_from_file:  * @image_ID: The image.  * @uri: The URI of the file containing the new color profile.  * @intent: Rendering intent.  * @bpc: Black point compensation.  *  * Convert the image's layers to a color profile  *  * This procedure converts from the image's color profile (or the  * default RGB or GRAY profile if none is set) to an ICC profile  * precified by 'uri'. Only RGB and GRAY color profiles are accepted,  * according to the image's type.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_image_convert_color_profile_from_file:  * @image_ID: The image.  * @uri: The URI of the file containing the new color profile.  * @intent: Rendering intent.  * @bpc: Black point compensation.  *  * Convert the image's layers to a color profile  *  * This procedure converts from the image's color profile (or the  * default RGB or grayscale profile if none is set) to an ICC profile  * precified by 'uri'. Only RGB and grayscale color profiles are  * accepted, according to the image's type.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

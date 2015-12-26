@@ -6028,7 +6028,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bf3fccb0108
+DECL|struct|__anon2b81f0b50108
 block|{
 DECL|member|label
 specifier|const
@@ -6070,12 +6070,12 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Preferred _GRAY profile:"
+literal|"Preferred _grayscale profile:"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Select GRAY Color Profile"
+literal|"Select Grayscale Color Profile"
 argument_list|)
 block|,
 literal|"gray-profile"
@@ -10906,7 +10906,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bf3fccb0208
+DECL|struct|__anon2b81f0b50208
 block|{
 DECL|member|current_setting
 name|gchar
@@ -11766,7 +11766,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bf3fccb0308
+DECL|struct|__anon2b81f0b50308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11921,7 +11921,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bf3fccb0408
+DECL|struct|__anon2b81f0b50408
 block|{
 DECL|member|tree_label
 specifier|const

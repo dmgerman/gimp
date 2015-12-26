@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29642d2e0108
+DECL|struct|__anon2c13d04a0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1388,7 +1388,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Built-in GRAY (%s)"
+literal|"Built-in grayscale (%s)"
 argument_list|)
 argument_list|,
 name|gimp_color_profile_get_label
@@ -1493,7 +1493,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Preferred GRAY (%s)"
+literal|"Preferred grayscale (%s)"
 argument_list|)
 argument_list|,
 name|gimp_color_profile_get_label
