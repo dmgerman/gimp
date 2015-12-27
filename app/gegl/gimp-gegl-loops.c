@@ -1897,6 +1897,8 @@ index|[
 name|b
 index|]
 operator|)
+operator|/
+name|a
 expr_stmt|;
 name|dest
 index|[
