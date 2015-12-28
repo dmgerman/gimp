@@ -38,6 +38,10 @@ DECL|member|hardness
 name|gdouble
 name|hardness
 decl_stmt|;
+DECL|member|eraser
+name|gboolean
+name|eraser
+decl_stmt|;
 block|}
 struct|;
 end_struct

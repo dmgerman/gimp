@@ -175,6 +175,42 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
+comment|/* erase mode */
+name|scale
+operator|=
+name|gimp_prop_check_button_new
+argument_list|(
+name|config
+argument_list|,
+literal|"eraser"
+argument_list|,
+name|_
+argument_list|(
+literal|"Erase with this brush"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|scale
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|scale
+argument_list|)
+expr_stmt|;
 comment|/* radius */
 name|scale
 operator|=

@@ -219,6 +219,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_mybrush_get_is_eraser
+parameter_list|(
+name|GimpMybrush
+modifier|*
+name|brush
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
