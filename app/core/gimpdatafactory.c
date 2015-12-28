@@ -328,8 +328,9 @@ name|GFile
 modifier|*
 name|file
 parameter_list|,
-name|guint64
-name|mtime
+name|GFileInfo
+modifier|*
+name|info
 parameter_list|,
 name|GFile
 modifier|*
@@ -3359,18 +3360,6 @@ operator|==
 name|G_FILE_TYPE_REGULAR
 condition|)
 block|{
-name|guint64
-name|mtime
-decl_stmt|;
-name|mtime
-operator|=
-name|g_file_info_get_attribute_uint64
-argument_list|(
-name|info
-argument_list|,
-name|G_FILE_ATTRIBUTE_TIME_MODIFIED
-argument_list|)
-expr_stmt|;
 name|gimp_data_factory_load_data
 argument_list|(
 name|factory
@@ -3383,7 +3372,7 @@ name|dir_writable
 argument_list|,
 name|child
 argument_list|,
-name|mtime
+name|info
 argument_list|,
 name|top_directory
 argument_list|)
@@ -3412,7 +3401,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_data_factory_load_data (GimpDataFactory * factory,GimpContext * context,GHashTable * cache,gboolean dir_writable,GFile * file,guint64 mtime,GFile * top_directory)
+DECL|function|gimp_data_factory_load_data (GimpDataFactory * factory,GimpContext * context,GHashTable * cache,gboolean dir_writable,GFile * file,GFileInfo * info,GFile * top_directory)
 name|gimp_data_factory_load_data
 parameter_list|(
 name|GimpDataFactory
@@ -3434,8 +3423,9 @@ name|GFile
 modifier|*
 name|file
 parameter_list|,
-name|guint64
-name|mtime
+name|GFileInfo
+modifier|*
+name|info
 parameter_list|,
 name|GFile
 modifier|*
@@ -3458,6 +3448,9 @@ decl_stmt|;
 name|GInputStream
 modifier|*
 name|input
+decl_stmt|;
+name|guint64
+name|mtime
 decl_stmt|;
 name|gint
 name|i
@@ -3524,6 +3517,15 @@ block|}
 return|return;
 name|insert
 label|:
+name|mtime
+operator|=
+name|g_file_info_get_attribute_uint64
+argument_list|(
+name|info
+argument_list|,
+name|G_FILE_ATTRIBUTE_TIME_MODIFIED
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|cache
