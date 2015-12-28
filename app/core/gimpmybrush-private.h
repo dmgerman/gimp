@@ -21,10 +21,6 @@ DECL|struct|_GimpMybrushPrivate
 struct|struct
 name|_GimpMybrushPrivate
 block|{
-DECL|member|json_loaded
-name|gboolean
-name|json_loaded
-decl_stmt|;
 DECL|member|brush_json
 name|gchar
 modifier|*
