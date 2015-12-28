@@ -2032,7 +2032,7 @@ block|{
 name|GimpCoords
 name|last_motion
 decl_stmt|;
-comment|/* Use the last evaluated dynamic axes instead of the                  * button_press event's ones because the click is                  * usually at the same spot as the last motion event                  * which would give us bogus dynamics.                  */
+comment|/* Use the last evaluated velocity&direction instead of the                  * button_press event's ones because the click is                  * usually at the same spot as the last motion event                  * which would give us bogus derivate dynamics.                  */
 name|gimp_motion_buffer_begin_stroke
 argument_list|(
 name|shell
@@ -2044,6 +2044,22 @@ argument_list|,
 operator|&
 name|last_motion
 argument_list|)
+expr_stmt|;
+name|image_coords
+operator|.
+name|velocity
+operator|=
+name|last_motion
+operator|.
+name|velocity
+expr_stmt|;
+name|image_coords
+operator|.
+name|direction
+operator|=
+name|last_motion
+operator|.
+name|direction
 expr_stmt|;
 name|tool_manager_button_press_active
 argument_list|(
