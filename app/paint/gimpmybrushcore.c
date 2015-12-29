@@ -912,10 +912,6 @@ name|rect
 decl_stmt|;
 name|gdouble
 name|pressure
-init|=
-name|coords
-operator|->
-name|pressure
 decl_stmt|;
 name|mypaint_surface_begin_atomic
 argument_list|(
@@ -996,6 +992,13 @@ comment|/* Pretend the cursor hasn't moved in a while */
 argument_list|)
 expr_stmt|;
 block|}
+name|pressure
+operator|=
+name|coords
+operator|->
+name|pressure
+expr_stmt|;
+comment|/* libmypaint expects non-extended devices to default to 0.5 pressure */
 if|if
 condition|(
 operator|!
@@ -1003,13 +1006,10 @@ name|coords
 operator|->
 name|extended
 condition|)
-block|{
 name|pressure
 operator|=
 literal|0.5f
 expr_stmt|;
-comment|/* Mypaint expects non-extended devices to default to half pressure*/
-block|}
 name|mypaint_brush_stroke_to
 argument_list|(
 name|mybrush

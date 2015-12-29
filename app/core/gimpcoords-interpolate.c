@@ -1030,7 +1030,7 @@ name|coords
 init|=
 name|past_coords
 decl_stmt|;
-comment|/*Make sure we carry over things we do not interpolate*/
+comment|/* Make sure we carry over things                                         * we do not interpolate */
 name|gdouble
 name|velocity
 decl_stmt|;

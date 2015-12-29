@@ -915,7 +915,7 @@ operator|->
 name|direction
 operator|)
 return|;
-comment|/* Extended attribute was omitted from this comparison deliberately      - it describes the events origin, not it's value*/
+comment|/* Extended attribute was omitted from this comparison deliberately,    * it describes the events origin, not its value    */
 block|}
 end_function
 
