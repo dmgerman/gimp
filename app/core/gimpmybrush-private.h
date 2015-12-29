@@ -38,6 +38,10 @@ DECL|member|hardness
 name|gdouble
 name|hardness
 decl_stmt|;
+DECL|member|offset_by_random
+name|gdouble
+name|offset_by_random
+decl_stmt|;
 DECL|member|eraser
 name|gboolean
 name|eraser

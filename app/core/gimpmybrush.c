@@ -988,6 +988,36 @@ block|}
 end_function
 
 begin_function
+name|gdouble
+DECL|function|gimp_mybrush_get_offset_by_random (GimpMybrush * brush)
+name|gimp_mybrush_get_offset_by_random
+parameter_list|(
+name|GimpMybrush
+modifier|*
+name|brush
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_MYBRUSH
+argument_list|(
+name|brush
+argument_list|)
+argument_list|,
+literal|1.0
+argument_list|)
+expr_stmt|;
+return|return
+name|brush
+operator|->
+name|priv
+operator|->
+name|offset_by_random
+return|;
+block|}
+end_function
+
+begin_function
 name|gboolean
 DECL|function|gimp_mybrush_get_is_eraser (GimpMybrush * brush)
 name|gimp_mybrush_get_is_eraser
