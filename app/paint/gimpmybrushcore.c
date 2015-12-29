@@ -39,29 +39,6 @@ directive|include
 file|<mypaint-brush.h>
 end_include
 
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_include
-include|#
-directive|include
-file|<mypaint-tiled-surface.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<mypaint-gegl-surface.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_include
 include|#
 directive|include
@@ -551,12 +528,6 @@ name|gchar
 modifier|*
 name|brush_data
 decl_stmt|;
-if|#
-directive|if
-literal|0
-block|GeglBuffer         *buffer;   GimpComponentMask   active_mask;
-endif|#
-directive|endif
 name|GimpRGB
 name|fg
 decl_stmt|;
@@ -589,12 +560,6 @@ operator|&
 name|fg
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|mybrush->private->surface = mypaint_gegl_tiled_surface_new ();        buffer = mypaint_gegl_tiled_surface_get_buffer (mybrush->private->surface);       buffer = gegl_buffer_new (GEGL_RECTANGLE (0, 0,                                                 gimp_item_get_width (GIMP_ITEM (drawable)),                                                 gimp_item_get_height (GIMP_ITEM (drawable))),                                 gegl_buffer_get_format (buffer));       gegl_buffer_copy (gimp_drawable_get_buffer (drawable), NULL,                         GEGL_ABYSS_NONE,                         buffer, NULL);       mypaint_gegl_tiled_surface_set_buffer (mybrush->private->surface, buffer);       g_object_unref (buffer);
-else|#
-directive|else
 name|mybrush
 operator|->
 name|private
@@ -614,8 +579,6 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|mybrush
 operator|->
 name|private
@@ -660,12 +623,6 @@ argument_list|,
 name|brush_data
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|active_mask = gimp_drawable_get_active_mask (drawable);        mypaint_brush_set_base_value (mybrush->private->brush,                                     MYPAINT_BRUSH_SETTING_LOCK_ALPHA,                                     (active_mask& GIMP_COMPONENT_MASK_ALPHA) ?                                     FALSE : TRUE);
-endif|#
-directive|endif
 name|gimp_rgb_to_hsv
 argument_list|(
 operator|&
@@ -1098,12 +1055,6 @@ operator|>
 literal|0
 condition|)
 block|{
-if|#
-directive|if
-literal|0
-block|GeglBuffer *src;        src = mypaint_gegl_tiled_surface_get_buffer (mybrush->private->surface);        gegl_buffer_copy (src,                         (GeglRectangle *)&rect,                         GEGL_ABYSS_NONE,                         gimp_drawable_get_buffer (drawable),                         NULL);
-endif|#
-directive|endif
 name|paint_core
 operator|->
 name|x1
