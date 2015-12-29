@@ -121,18 +121,6 @@ DECL|member|parent_class
 name|GimpContextClass
 name|parent_class
 decl_stmt|;
-DECL|member|reset
-name|void
-function_decl|(
-modifier|*
-name|reset
-function_decl|)
-parameter_list|(
-name|GimpToolOptions
-modifier|*
-name|tool_options
-parameter_list|)
-function_decl|;
 block|}
 struct|;
 end_struct
@@ -146,17 +134,6 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
-
-begin_function_decl
-name|void
-name|gimp_tool_options_reset
-parameter_list|(
-name|GimpToolOptions
-modifier|*
-name|tool_options
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 name|gboolean

@@ -1158,11 +1158,14 @@ name|data
 argument_list|)
 decl_stmt|;
 comment|/*  get default values from prefs (see bug #120832)  */
-name|gimp_tool_options_reset
+name|gimp_config_reset
+argument_list|(
+name|GIMP_CONFIG
 argument_list|(
 name|tool_info
 operator|->
 name|tool_options
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

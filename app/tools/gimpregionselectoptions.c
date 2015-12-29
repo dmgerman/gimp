@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2946093e0103
+DECL|enum|__anon2b1f3c250103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,6 +111,18 @@ name|PROP_DRAW_MASK
 block|}
 enum|;
 end_enum
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_region_select_options_config_iface_init
+parameter_list|(
+name|GimpConfigInterface
+modifier|*
+name|config_iface
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -164,22 +176,23 @@ specifier|static
 name|void
 name|gimp_region_select_options_reset
 parameter_list|(
-name|GimpToolOptions
+name|GimpConfig
 modifier|*
-name|tool_options
+name|config
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpRegionSelectOptions,gimp_region_select_options,GIMP_TYPE_SELECTION_OPTIONS)
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpRegionSelectOptions
 argument_list|,
 argument|gimp_region_select_options
 argument_list|,
 argument|GIMP_TYPE_SELECTION_OPTIONS
+argument_list|,
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 gimp_region_select_options_config_iface_init)
 argument_list|)
 end_macro
 
@@ -191,9 +204,20 @@ name|parent_class
 value|gimp_region_select_options_parent_class
 end_define
 
+begin_decl_stmt
+specifier|static
+name|GimpConfigInterface
+modifier|*
+name|parent_config_iface
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 specifier|static
 name|void
+DECL|function|gimp_region_select_options_class_init (GimpRegionSelectOptionsClass * klass)
 name|gimp_region_select_options_class_init
 parameter_list|(
 name|GimpRegionSelectOptionsClass
@@ -210,15 +234,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|GimpToolOptionsClass
-modifier|*
-name|options_class
-init|=
-name|GIMP_TOOL_OPTIONS_CLASS
-argument_list|(
-name|klass
-argument_list|)
-decl_stmt|;
 name|object_class
 operator|->
 name|set_property
@@ -230,12 +245,6 @@ operator|->
 name|get_property
 operator|=
 name|gimp_region_select_options_get_property
-expr_stmt|;
-name|options_class
-operator|->
-name|reset
-operator|=
-name|gimp_region_select_options_reset
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
 argument_list|(
@@ -340,6 +349,33 @@ operator||
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_region_select_options_config_iface_init (GimpConfigInterface * config_iface)
+name|gimp_region_select_options_config_iface_init
+parameter_list|(
+name|GimpConfigInterface
+modifier|*
+name|config_iface
+parameter_list|)
+block|{
+name|parent_config_iface
+operator|=
+name|g_type_interface_peek_parent
+argument_list|(
+name|config_iface
+argument_list|)
+expr_stmt|;
+name|config_iface
+operator|->
+name|reset
+operator|=
+name|gimp_region_select_options_reset
 expr_stmt|;
 block|}
 end_function
@@ -593,14 +629,23 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_region_select_options_reset (GimpToolOptions * tool_options)
+DECL|function|gimp_region_select_options_reset (GimpConfig * config)
 name|gimp_region_select_options_reset
 parameter_list|(
+name|GimpConfig
+modifier|*
+name|config
+parameter_list|)
+block|{
 name|GimpToolOptions
 modifier|*
 name|tool_options
-parameter_list|)
-block|{
+init|=
+name|GIMP_TOOL_OPTIONS
+argument_list|(
+name|config
+argument_list|)
+decl_stmt|;
 name|GParamSpec
 modifier|*
 name|pspec
@@ -611,7 +656,7 @@ name|g_object_class_find_property
 argument_list|(
 name|G_OBJECT_GET_CLASS
 argument_list|(
-name|tool_options
+name|config
 argument_list|)
 argument_list|,
 literal|"threshold"
@@ -638,14 +683,11 @@ name|config
 operator|->
 name|default_threshold
 expr_stmt|;
-name|GIMP_TOOL_OPTIONS_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
+name|parent_config_iface
 operator|->
 name|reset
 argument_list|(
-name|tool_options
+name|config
 argument_list|)
 expr_stmt|;
 block|}

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ce35fe0103
+DECL|enum|__anon2bc41ad20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -169,11 +169,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_mybrush_options_config_reset
+name|gimp_mybrush_options_reset
 parameter_list|(
 name|GimpConfig
 modifier|*
-name|gimp_config
+name|config
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -352,7 +352,7 @@ name|config_iface
 operator|->
 name|reset
 operator|=
-name|gimp_mybrush_options_config_reset
+name|gimp_mybrush_options_reset
 expr_stmt|;
 block|}
 end_function
@@ -637,12 +637,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_mybrush_options_config_reset (GimpConfig * gimp_config)
-name|gimp_mybrush_options_config_reset
+DECL|function|gimp_mybrush_options_reset (GimpConfig * config)
+name|gimp_mybrush_options_reset
 parameter_list|(
 name|GimpConfig
 modifier|*
-name|gimp_config
+name|config
 parameter_list|)
 block|{
 name|GimpContext
@@ -651,7 +651,7 @@ name|context
 init|=
 name|GIMP_CONTEXT
 argument_list|(
-name|gimp_config
+name|config
 argument_list|)
 decl_stmt|;
 name|GimpMybrush
@@ -667,7 +667,7 @@ name|parent_config_iface
 operator|->
 name|reset
 argument_list|(
-name|gimp_config
+name|config
 argument_list|)
 expr_stmt|;
 name|gimp_mybrush_options_mybrush_changed

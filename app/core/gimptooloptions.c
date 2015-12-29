@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b803aa90103
+DECL|enum|__anon2c52c1d40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -152,18 +152,6 @@ parameter_list|,
 name|GParamSpec
 modifier|*
 name|pspec
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_tool_options_real_reset
-parameter_list|(
-name|GimpToolOptions
-modifier|*
-name|tool_options
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -254,12 +242,6 @@ operator|->
 name|get_property
 operator|=
 name|gimp_tool_options_get_property
-expr_stmt|;
-name|klass
-operator|->
-name|reset
-operator|=
-name|gimp_tool_options_real_reset
 expr_stmt|;
 name|g_object_class_override_property
 argument_list|(
@@ -831,28 +813,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_options_real_reset (GimpToolOptions * tool_options)
-name|gimp_tool_options_real_reset
-parameter_list|(
-name|GimpToolOptions
-modifier|*
-name|tool_options
-parameter_list|)
-block|{
-name|gimp_config_reset
-argument_list|(
-name|GIMP_CONFIG
-argument_list|(
-name|tool_options
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|gimp_tool_options_config_reset (GimpConfig * config)
 name|gimp_tool_options_config_reset
 parameter_list|(
@@ -976,37 +936,6 @@ end_function
 begin_comment
 comment|/*  public functions  */
 end_comment
-
-begin_function
-name|void
-DECL|function|gimp_tool_options_reset (GimpToolOptions * tool_options)
-name|gimp_tool_options_reset
-parameter_list|(
-name|GimpToolOptions
-modifier|*
-name|tool_options
-parameter_list|)
-block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_TOOL_OPTIONS
-argument_list|(
-name|tool_options
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|GIMP_TOOL_OPTIONS_GET_CLASS
-argument_list|(
-name|tool_options
-argument_list|)
-operator|->
-name|reset
-argument_list|(
-name|tool_options
-argument_list|)
-expr_stmt|;
-block|}
-end_function
 
 begin_function
 name|gboolean

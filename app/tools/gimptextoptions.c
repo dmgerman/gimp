@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7db3510103
+DECL|enum|__anon29c83f460103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -202,6 +202,18 @@ name|PROP_FONT_VIEW_SIZE
 block|}
 enum|;
 end_enum
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_text_options_config_iface_init
+parameter_list|(
+name|GimpConfigInterface
+modifier|*
+name|config_iface
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -267,9 +279,9 @@ specifier|static
 name|void
 name|gimp_text_options_reset
 parameter_list|(
-name|GimpToolOptions
+name|GimpConfig
 modifier|*
-name|tool_options
+name|config
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -355,7 +367,6 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpTextOptions,gimp_text_options,GIMP_TYPE_TOOL_OPTIONS,G_IMPLEMENT_INTERFACE (GIMP_TYPE_RECTANGLE_OPTIONS,NULL))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpTextOptions
@@ -364,7 +375,7 @@ argument|gimp_text_options
 argument_list|,
 argument|GIMP_TYPE_TOOL_OPTIONS
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_RECTANGLE_OPTIONS,                                                 NULL)
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 gimp_text_options_config_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_RECTANGLE_OPTIONS,                                                 NULL)
 argument_list|)
 end_macro
 
@@ -376,9 +387,20 @@ name|parent_class
 value|gimp_text_options_parent_class
 end_define
 
+begin_decl_stmt
+specifier|static
+name|GimpConfigInterface
+modifier|*
+name|parent_config_iface
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 specifier|static
 name|void
+DECL|function|gimp_text_options_class_init (GimpTextOptionsClass * klass)
 name|gimp_text_options_class_init
 parameter_list|(
 name|GimpTextOptionsClass
@@ -391,15 +413,6 @@ modifier|*
 name|object_class
 init|=
 name|G_OBJECT_CLASS
-argument_list|(
-name|klass
-argument_list|)
-decl_stmt|;
-name|GimpToolOptionsClass
-modifier|*
-name|options_class
-init|=
-name|GIMP_TOOL_OPTIONS_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -421,12 +434,6 @@ operator|->
 name|get_property
 operator|=
 name|gimp_text_options_get_property
-expr_stmt|;
-name|options_class
-operator|->
-name|reset
-operator|=
-name|gimp_text_options_reset
 expr_stmt|;
 comment|/* The 'highlight' property is defined here because we want different    * default values for the Crop, Text and the Rectangle Select tools.    */
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -742,6 +749,33 @@ name|gimp_rectangle_options_install_properties
 argument_list|(
 name|object_class
 argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_text_options_config_iface_init (GimpConfigInterface * config_iface)
+name|gimp_text_options_config_iface_init
+parameter_list|(
+name|GimpConfigInterface
+modifier|*
+name|config_iface
+parameter_list|)
+block|{
+name|parent_config_iface
+operator|=
+name|g_type_interface_peek_parent
+argument_list|(
+name|config_iface
+argument_list|)
+expr_stmt|;
+name|config_iface
+operator|->
+name|reset
+operator|=
+name|gimp_text_options_reset
 expr_stmt|;
 block|}
 end_function
@@ -1301,12 +1335,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_options_reset (GimpToolOptions * tool_options)
+DECL|function|gimp_text_options_reset (GimpConfig * config)
 name|gimp_text_options_reset
 parameter_list|(
-name|GimpToolOptions
+name|GimpConfig
 modifier|*
-name|tool_options
+name|config
 parameter_list|)
 block|{
 name|GObject
@@ -1315,7 +1349,7 @@ name|object
 init|=
 name|G_OBJECT
 argument_list|(
-name|tool_options
+name|config
 argument_list|)
 decl_stmt|;
 comment|/*  implement reset() ourselves because the default impl would    *  reset *all* properties, including all rectangle properties    *  of the text box    */
