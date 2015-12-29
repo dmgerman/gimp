@@ -1287,6 +1287,10 @@ DECL|member|yscale
 name|gdouble
 name|yscale
 decl_stmt|;
+DECL|member|extended
+name|gboolean
+name|extended
+decl_stmt|;
 block|}
 struct|;
 end_struct

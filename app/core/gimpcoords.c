@@ -206,6 +206,18 @@ name|b
 operator|->
 name|direction
 expr_stmt|;
+name|ret_val
+operator|->
+name|extended
+operator|=
+name|b
+operator|->
+name|extended
+operator|||
+name|a
+operator|->
+name|extended
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -288,6 +300,14 @@ operator|*
 name|a
 operator|->
 name|direction
+expr_stmt|;
+name|ret_val
+operator|->
+name|extended
+operator|=
+name|a
+operator|->
+name|extended
 expr_stmt|;
 block|}
 block|}
@@ -895,6 +915,7 @@ operator|->
 name|direction
 operator|)
 return|;
+comment|/* Extended attribute was omitted from this comparison deliberately      - it describes the events origin, not it's value*/
 block|}
 end_function
 
