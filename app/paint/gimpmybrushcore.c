@@ -127,19 +127,11 @@ name|GimpMybrush
 modifier|*
 name|mybrush
 decl_stmt|;
-if|#
-directive|if
-literal|0
-block|MyPaintGeglTiledSurface *surface;
-else|#
-directive|else
 DECL|member|surface
 name|GimpMybrushSurface
 modifier|*
 name|surface
 decl_stmt|;
-endif|#
-directive|endif
 DECL|member|brush
 name|MyPaintBrush
 modifier|*
