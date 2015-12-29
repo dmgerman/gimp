@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29368c000103
+DECL|enum|__anon29ce35fe0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -90,6 +90,18 @@ name|PROP_ERASER
 block|}
 enum|;
 end_enum
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_mybrush_options_config_iface_init
+parameter_list|(
+name|GimpConfigInterface
+modifier|*
+name|config_iface
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -157,30 +169,42 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_mybrush_options_reset
+name|gimp_mybrush_options_config_reset
 parameter_list|(
-name|GimpToolOptions
+name|GimpConfig
 modifier|*
-name|tool_options
+name|gimp_config
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpMybrushOptions,gimp_mybrush_options,GIMP_TYPE_PAINT_OPTIONS)
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpMybrushOptions
 argument_list|,
 argument|gimp_mybrush_options
 argument_list|,
 argument|GIMP_TYPE_PAINT_OPTIONS
+argument_list|,
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 gimp_mybrush_options_config_iface_init)
 argument_list|)
 end_macro
+
+begin_decl_stmt
+specifier|static
+name|GimpConfigInterface
+modifier|*
+name|parent_config_iface
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
 
 begin_function
 specifier|static
 name|void
+DECL|function|gimp_mybrush_options_class_init (GimpMybrushOptionsClass * klass)
 name|gimp_mybrush_options_class_init
 parameter_list|(
 name|GimpMybrushOptionsClass
@@ -206,15 +230,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|GimpToolOptionsClass
-modifier|*
-name|options_class
-init|=
-name|GIMP_TOOL_OPTIONS_CLASS
-argument_list|(
-name|klass
-argument_list|)
-decl_stmt|;
 name|object_class
 operator|->
 name|set_property
@@ -232,12 +247,6 @@ operator|->
 name|mybrush_changed
 operator|=
 name|gimp_mybrush_options_mybrush_changed
-expr_stmt|;
-name|options_class
-operator|->
-name|reset
-operator|=
-name|gimp_mybrush_options_reset
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
 argument_list|(
@@ -317,6 +326,33 @@ name|FALSE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_mybrush_options_config_iface_init (GimpConfigInterface * config_iface)
+name|gimp_mybrush_options_config_iface_init
+parameter_list|(
+name|GimpConfigInterface
+modifier|*
+name|config_iface
+parameter_list|)
+block|{
+name|parent_config_iface
+operator|=
+name|g_type_interface_peek_parent
+argument_list|(
+name|config_iface
+argument_list|)
+expr_stmt|;
+name|config_iface
+operator|->
+name|reset
+operator|=
+name|gimp_mybrush_options_config_reset
 expr_stmt|;
 block|}
 end_function
@@ -601,12 +637,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_mybrush_options_reset (GimpToolOptions * tool_options)
-name|gimp_mybrush_options_reset
+DECL|function|gimp_mybrush_options_config_reset (GimpConfig * gimp_config)
+name|gimp_mybrush_options_config_reset
 parameter_list|(
-name|GimpToolOptions
+name|GimpConfig
 modifier|*
-name|tool_options
+name|gimp_config
 parameter_list|)
 block|{
 name|GimpContext
@@ -615,7 +651,7 @@ name|context
 init|=
 name|GIMP_CONTEXT
 argument_list|(
-name|tool_options
+name|gimp_config
 argument_list|)
 decl_stmt|;
 name|GimpMybrush
@@ -627,14 +663,11 @@ argument_list|(
 name|context
 argument_list|)
 decl_stmt|;
-name|GIMP_TOOL_OPTIONS_CLASS
-argument_list|(
-name|gimp_mybrush_options_parent_class
-argument_list|)
+name|parent_config_iface
 operator|->
 name|reset
 argument_list|(
-name|tool_options
+name|gimp_config
 argument_list|)
 expr_stmt|;
 name|gimp_mybrush_options_mybrush_changed
