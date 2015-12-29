@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2965365b0103
+DECL|enum|__anon29368c000103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -627,6 +627,16 @@ argument_list|(
 name|context
 argument_list|)
 decl_stmt|;
+name|GIMP_TOOL_OPTIONS_CLASS
+argument_list|(
+name|gimp_mybrush_options_parent_class
+argument_list|)
+operator|->
+name|reset
+argument_list|(
+name|tool_options
+argument_list|)
+expr_stmt|;
 name|gimp_mybrush_options_mybrush_changed
 argument_list|(
 name|context
