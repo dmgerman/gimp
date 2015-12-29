@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gexiv2/gexiv2.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -1593,6 +1599,21 @@ name|GFile
 modifier|*
 name|file
 decl_stmt|;
+comment|/* See bug 758909: clear TIFFTAG_MIN/MAXSAMPLEVALUE because                    * exiv2 saves them with wrong type and the original values                    * could be invalid                    */
+name|gexiv2_metadata_clear_tag
+argument_list|(
+name|metadata
+argument_list|,
+literal|"Exif.Image.0x0118"
+argument_list|)
+expr_stmt|;
+name|gexiv2_metadata_clear_tag
+argument_list|(
+name|metadata
+argument_list|,
+literal|"Exif.Image.0x0119"
+argument_list|)
+expr_stmt|;
 name|gimp_metadata_set_bits_per_sample
 argument_list|(
 name|metadata
