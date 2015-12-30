@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpcolor/gimpcolor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpconfig/gimpconfig.h"
 end_include
 
@@ -119,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295906550103
+DECL|enum|__anon29538ef70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1236,12 +1242,44 @@ argument_list|(
 name|image
 argument_list|)
 condition|)
+block|{
+if|if
+condition|(
+operator|(
+name|image_undo
+operator|->
+name|base_type
+operator|==
+name|GIMP_GRAY
+operator|)
+operator|||
+operator|(
+name|gimp_image_get_base_type
+argument_list|(
+name|image
+argument_list|)
+operator|==
+name|GIMP_GRAY
+operator|)
+condition|)
+block|{
+comment|/* in case ther was no profile undo, we need to emit                  * profile-changed anyway                  */
+name|gimp_color_managed_profile_changed
+argument_list|(
+name|GIMP_COLOR_MANAGED
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 name|accum
 operator|->
 name|mode_changed
 operator|=
 name|TRUE
 expr_stmt|;
+block|}
 block|}
 break|break;
 case|case
