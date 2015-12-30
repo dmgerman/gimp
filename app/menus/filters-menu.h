@@ -6,66 +6,28 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__FILTERS_COMMANDS_H__
+name|__FILTERS_MENU_H__
 end_ifndef
 
 begin_define
-DECL|macro|__FILTERS_COMMANDS_H__
+DECL|macro|__FILTERS_MENU_H__
 define|#
 directive|define
-name|__FILTERS_COMMANDS_H__
+name|__FILTERS_MENU_H__
 end_define
 
 begin_function_decl
 name|void
-name|filters_filter_cmd_callback
+name|filters_menu_setup
 parameter_list|(
-name|GtkAction
+name|GimpUIManager
 modifier|*
-name|action
+name|manager
 parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|operation
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|filters_repeat_cmd_callback
-parameter_list|(
-name|GtkAction
-modifier|*
-name|action
-parameter_list|,
-name|gint
-name|value
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|filters_history_cmd_callback
-parameter_list|(
-name|GtkAction
-modifier|*
-name|action
-parameter_list|,
-name|GimpPlugInProcedure
-modifier|*
-name|proc
-parameter_list|,
-name|gpointer
-name|data
+name|ui_path
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -76,7 +38,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __FILTERS_COMMANDS_H__ */
+comment|/* __FILTERS_MENU_H__ */
 end_comment
 
 end_unit

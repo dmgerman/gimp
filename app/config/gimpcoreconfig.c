@@ -167,7 +167,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a6f1520103
+DECL|enum|__anon28ca17950103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -298,8 +298,8 @@ block|,
 DECL|enumerator|PROP_UNDO_PREVIEW_SIZE
 name|PROP_UNDO_PREVIEW_SIZE
 block|,
-DECL|enumerator|PROP_PLUG_IN_HISTORY_SIZE
-name|PROP_PLUG_IN_HISTORY_SIZE
+DECL|enumerator|PROP_FILTER_HISTORY_SIZE
+name|PROP_FILTER_HISTORY_SIZE
 block|,
 DECL|enumerator|PROP_PLUGINRC_PATH
 name|PROP_PLUGINRC_PATH
@@ -1580,11 +1580,12 @@ name|GIMP_CONFIG_INSTALL_PROP_INT
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_PLUG_IN_HISTORY_SIZE
+name|PROP_FILTER_HISTORY_SIZE
 argument_list|,
 literal|"plug-in-history-size"
 argument_list|,
-name|PLUG_IN_HISTORY_SIZE_BLURB
+comment|/* compat name */
+name|FILTER_HISTORY_SIZE_BLURB
 argument_list|,
 literal|0
 argument_list|,
@@ -2943,11 +2944,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_PLUG_IN_HISTORY_SIZE
+name|PROP_FILTER_HISTORY_SIZE
 case|:
 name|core_config
 operator|->
-name|plug_in_history_size
+name|filter_history_size
 operator|=
 name|g_value_get_int
 argument_list|(
@@ -3701,7 +3702,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_PLUG_IN_HISTORY_SIZE
+name|PROP_FILTER_HISTORY_SIZE
 case|:
 name|g_value_set_int
 argument_list|(
@@ -3709,7 +3710,7 @@ name|value
 argument_list|,
 name|core_config
 operator|->
-name|plug_in_history_size
+name|filter_history_size
 argument_list|)
 expr_stmt|;
 break|break;

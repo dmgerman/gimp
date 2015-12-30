@@ -710,12 +710,12 @@ value|_("When enabled, the X server is queried for the mouse's current position 
 end_define
 
 begin_define
-DECL|macro|PLUG_IN_HISTORY_SIZE_BLURB
+DECL|macro|FILTER_HISTORY_SIZE_BLURB
 define|#
 directive|define
-name|PLUG_IN_HISTORY_SIZE_BLURB
+name|FILTER_HISTORY_SIZE_BLURB
 define|\
-value|"How many recently used plug-ins to keep on the Filters menu."
+value|"How many recently used filters and plug-ins to keep on the Filters menu."
 end_define
 
 begin_define

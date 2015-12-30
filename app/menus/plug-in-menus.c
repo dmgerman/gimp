@@ -372,7 +372,7 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|plug_in_history_size
+name|filter_history_size
 condition|;
 name|i
 operator|++
@@ -390,7 +390,7 @@ name|action_name
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"plug-in-recent-%02d"
+literal|"filter-recent-%02d"
 argument_list|,
 name|i
 operator|+
