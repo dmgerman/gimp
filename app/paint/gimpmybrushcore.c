@@ -1098,7 +1098,6 @@ operator|->
 name|synthetic
 condition|)
 block|{
-comment|/* Moves the brush at a rate of 1 pixel / 5 ms */
 name|dt
 operator|=
 literal|0.0005
