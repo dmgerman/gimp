@@ -415,9 +415,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpPlugInActionEntry
+DECL|struct|_GimpProcedureActionEntry
 struct|struct
-name|_GimpPlugInActionEntry
+name|_GimpProcedureActionEntry
 block|{
 DECL|member|name
 specifier|const
@@ -450,7 +450,7 @@ modifier|*
 name|tooltip
 decl_stmt|;
 DECL|member|procedure
-name|GimpPlugInProcedure
+name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
@@ -673,14 +673,14 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_action_group_add_plug_in_actions
+name|gimp_action_group_add_procedure_actions
 parameter_list|(
 name|GimpActionGroup
 modifier|*
 name|group
 parameter_list|,
 specifier|const
-name|GimpPlugInActionEntry
+name|GimpProcedureActionEntry
 modifier|*
 name|entries
 parameter_list|,

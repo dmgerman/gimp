@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppluginaction.h"
+file|"gimpprocedureaction.h"
 end_include
 
 begin_include
@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b203a750103
+DECL|enum|__anon2bf51f7b0103
 block|{
 DECL|enumerator|ACTION_ADDED
 name|ACTION_ADDED
@@ -120,7 +120,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b203a750203
+DECL|enum|__anon2bf51f7b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2665,15 +2665,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_action_group_add_plug_in_actions (GimpActionGroup * group,const GimpPlugInActionEntry * entries,guint n_entries,GCallback callback)
-name|gimp_action_group_add_plug_in_actions
+DECL|function|gimp_action_group_add_procedure_actions (GimpActionGroup * group,const GimpProcedureActionEntry * entries,guint n_entries,GCallback callback)
+name|gimp_action_group_add_procedure_actions
 parameter_list|(
 name|GimpActionGroup
 modifier|*
 name|group
 parameter_list|,
 specifier|const
-name|GimpPlugInActionEntry
+name|GimpProcedureActionEntry
 modifier|*
 name|entries
 parameter_list|,
@@ -2709,7 +2709,7 @@ name|i
 operator|++
 control|)
 block|{
-name|GimpPlugInAction
+name|GimpProcedureAction
 modifier|*
 name|action
 decl_stmt|;
@@ -2731,7 +2731,7 @@ condition|)
 continue|continue;
 name|action
 operator|=
-name|gimp_plug_in_action_new
+name|gimp_procedure_action_new
 argument_list|(
 name|entries
 index|[

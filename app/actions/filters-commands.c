@@ -368,7 +368,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpPlugInProcedure
+name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
@@ -429,10 +429,7 @@ name|args
 operator|=
 name|gimp_procedure_get_arguments
 argument_list|(
-name|GIMP_PROCEDURE
-argument_list|(
 name|procedure
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_value_set_int
@@ -455,10 +452,7 @@ name|action
 argument_list|,
 name|display
 argument_list|,
-name|GIMP_PROCEDURE
-argument_list|(
 name|procedure
-argument_list|)
 operator|->
 name|args
 argument_list|,
@@ -491,14 +485,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|filters_history_cmd_callback (GtkAction * action,GimpPlugInProcedure * procedure,gpointer data)
+DECL|function|filters_history_cmd_callback (GtkAction * action,GimpProcedure * procedure,gpointer data)
 name|filters_history_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpPlugInProcedure
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
@@ -539,10 +533,7 @@ name|args
 operator|=
 name|gimp_procedure_get_arguments
 argument_list|(
-name|GIMP_PROCEDURE
-argument_list|(
 name|procedure
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_value_set_int
@@ -565,10 +556,7 @@ name|action
 argument_list|,
 name|display
 argument_list|,
-name|GIMP_PROCEDURE
-argument_list|(
 name|procedure
-argument_list|)
 operator|->
 name|args
 argument_list|,

@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e6d1d90103
+DECL|enum|__anon297a71e90103
 block|{
 DECL|enumerator|PLUG_IN_OPENED
 name|PLUG_IN_OPENED
@@ -1331,7 +1331,10 @@ name|manager
 operator|->
 name|gimp
 argument_list|,
+name|GIMP_PROCEDURE
+argument_list|(
 name|tmp_proc
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1473,7 +1476,7 @@ name|manager
 operator|->
 name|gimp
 argument_list|,
-name|GIMP_PLUG_IN_PROCEDURE
+name|GIMP_PROCEDURE
 argument_list|(
 name|procedure
 argument_list|)

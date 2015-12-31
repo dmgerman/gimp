@@ -24,7 +24,7 @@ name|GtkAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpPlugInProcedure
+name|GimpProcedure
 modifier|*
 name|proc
 parameter_list|,
@@ -56,7 +56,7 @@ begin_function_decl
 name|void
 name|plug_in_procedure_execute
 parameter_list|(
-name|GimpPlugInProcedure
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,

@@ -60,9 +60,9 @@ name|GtkAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpPlugInProcedure
+name|GimpProcedure
 modifier|*
-name|proc
+name|procedure
 parameter_list|,
 name|gpointer
 name|data

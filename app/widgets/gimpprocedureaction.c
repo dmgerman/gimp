@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimppluginaction.c  * Copyright (C) 2004 Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpprocedureaction.c  * Copyright (C) 2004-2016 Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -33,15 +33,19 @@ directive|include
 file|"plug-in/gimppluginprocedure.h"
 end_include
 
+begin_comment
+comment|/* FIXME history */
+end_comment
+
 begin_include
 include|#
 directive|include
-file|"gimppluginaction.h"
+file|"gimpprocedureaction.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c2b2f90103
+DECL|enum|__anon2c26655d0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -54,7 +58,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c2b2f90203
+DECL|enum|__anon2c26655d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -68,7 +72,7 @@ end_enum
 begin_function_decl
 specifier|static
 name|void
-name|gimp_plug_in_action_finalize
+name|gimp_procedure_action_finalize
 parameter_list|(
 name|GObject
 modifier|*
@@ -80,7 +84,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_plug_in_action_set_property
+name|gimp_procedure_action_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -104,7 +108,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_plug_in_action_get_property
+name|gimp_procedure_action_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -127,7 +131,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_plug_in_action_activate
+name|gimp_procedure_action_activate
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -139,7 +143,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_plug_in_action_connect_proxy
+name|gimp_procedure_action_connect_proxy
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -155,9 +159,9 @@ end_function_decl
 begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-argument|GimpPlugInAction
+argument|GimpProcedureAction
 argument_list|,
-argument|gimp_plug_in_action
+argument|gimp_procedure_action
 argument_list|,
 argument|GIMP_TYPE_ACTION
 argument_list|)
@@ -168,7 +172,7 @@ DECL|macro|parent_class
 define|#
 directive|define
 name|parent_class
-value|gimp_plug_in_action_parent_class
+value|gimp_procedure_action_parent_class
 end_define
 
 begin_decl_stmt
@@ -188,10 +192,10 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_plug_in_action_class_init (GimpPlugInActionClass * klass)
-name|gimp_plug_in_action_class_init
+DECL|function|gimp_procedure_action_class_init (GimpProcedureActionClass * klass)
+name|gimp_procedure_action_class_init
 parameter_list|(
-name|GimpPlugInActionClass
+name|GimpProcedureActionClass
 modifier|*
 name|klass
 parameter_list|)
@@ -218,31 +222,31 @@ name|object_class
 operator|->
 name|finalize
 operator|=
-name|gimp_plug_in_action_finalize
+name|gimp_procedure_action_finalize
 expr_stmt|;
 name|object_class
 operator|->
 name|set_property
 operator|=
-name|gimp_plug_in_action_set_property
+name|gimp_procedure_action_set_property
 expr_stmt|;
 name|object_class
 operator|->
 name|get_property
 operator|=
-name|gimp_plug_in_action_get_property
+name|gimp_procedure_action_get_property
 expr_stmt|;
 name|action_class
 operator|->
 name|activate
 operator|=
-name|gimp_plug_in_action_activate
+name|gimp_procedure_action_activate
 expr_stmt|;
 name|action_class
 operator|->
 name|connect_proxy
 operator|=
-name|gimp_plug_in_action_connect_proxy
+name|gimp_procedure_action_connect_proxy
 expr_stmt|;
 name|g_object_class_install_property
 argument_list|(
@@ -258,7 +262,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_TYPE_PLUG_IN_PROCEDURE
+name|GIMP_TYPE_PROCEDURE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -282,7 +286,7 @@ name|G_SIGNAL_RUN_FIRST
 argument_list|,
 name|G_STRUCT_OFFSET
 argument_list|(
-name|GimpPlugInActionClass
+name|GimpProcedureActionClass
 argument_list|,
 name|selected
 argument_list|)
@@ -297,7 +301,7 @@ name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|GIMP_TYPE_PLUG_IN_PROCEDURE
+name|GIMP_TYPE_PROCEDURE
 argument_list|)
 expr_stmt|;
 block|}
@@ -306,10 +310,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_plug_in_action_init (GimpPlugInAction * action)
-name|gimp_plug_in_action_init
+DECL|function|gimp_procedure_action_init (GimpProcedureAction * action)
+name|gimp_procedure_action_init
 parameter_list|(
-name|GimpPlugInAction
+name|GimpProcedureAction
 modifier|*
 name|action
 parameter_list|)
@@ -326,19 +330,19 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_plug_in_action_finalize (GObject * object)
-name|gimp_plug_in_action_finalize
+DECL|function|gimp_procedure_action_finalize (GObject * object)
+name|gimp_procedure_action_finalize
 parameter_list|(
 name|GObject
 modifier|*
 name|object
 parameter_list|)
 block|{
-name|GimpPlugInAction
+name|GimpProcedureAction
 modifier|*
 name|action
 init|=
-name|GIMP_PLUG_IN_ACTION
+name|GIMP_PROCEDURE_ACTION
 argument_list|(
 name|object
 argument_list|)
@@ -380,8 +384,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_plug_in_action_get_property (GObject * object,guint prop_id,GValue * value,GParamSpec * pspec)
-name|gimp_plug_in_action_get_property
+DECL|function|gimp_procedure_action_get_property (GObject * object,guint prop_id,GValue * value,GParamSpec * pspec)
+name|gimp_procedure_action_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -399,11 +403,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpPlugInAction
+name|GimpProcedureAction
 modifier|*
 name|action
 init|=
-name|GIMP_PLUG_IN_ACTION
+name|GIMP_PROCEDURE_ACTION
 argument_list|(
 name|object
 argument_list|)
@@ -444,8 +448,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_plug_in_action_set_property (GObject * object,guint prop_id,const GValue * value,GParamSpec * pspec)
-name|gimp_plug_in_action_set_property
+DECL|function|gimp_procedure_action_set_property (GObject * object,guint prop_id,const GValue * value,GParamSpec * pspec)
+name|gimp_procedure_action_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -464,11 +468,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpPlugInAction
+name|GimpProcedureAction
 modifier|*
 name|action
 init|=
-name|GIMP_PLUG_IN_ACTION
+name|GIMP_PROCEDURE_ACTION
 argument_list|(
 name|object
 argument_list|)
@@ -522,35 +526,35 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_plug_in_action_activate (GtkAction * action)
-name|gimp_plug_in_action_activate
+DECL|function|gimp_procedure_action_activate (GtkAction * action)
+name|gimp_procedure_action_activate
 parameter_list|(
 name|GtkAction
 modifier|*
 name|action
 parameter_list|)
 block|{
-name|GimpPlugInAction
+name|GimpProcedureAction
 modifier|*
-name|plug_in_action
+name|procedure_action
 init|=
-name|GIMP_PLUG_IN_ACTION
+name|GIMP_PROCEDURE_ACTION
 argument_list|(
 name|action
 argument_list|)
 decl_stmt|;
-comment|/* Not all actions have procedures associated with them, for example    * unused "plug-in-recent-[N]" actions, so check for NULL before we    * invoke the plug-in action    */
+comment|/* Not all actions have procedures associated with them, for example    * unused "plug-in-recent-[N]" actions, so check for NULL before we    * invoke the action    */
 if|if
 condition|(
-name|plug_in_action
+name|procedure_action
 operator|->
 name|procedure
 condition|)
-name|gimp_plug_in_action_selected
+name|gimp_procedure_action_selected
 argument_list|(
-name|plug_in_action
+name|procedure_action
 argument_list|,
-name|plug_in_action
+name|procedure_action
 operator|->
 name|procedure
 argument_list|)
@@ -561,8 +565,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_plug_in_action_connect_proxy (GtkAction * action,GtkWidget * proxy)
-name|gimp_plug_in_action_connect_proxy
+DECL|function|gimp_procedure_action_connect_proxy (GtkAction * action,GtkWidget * proxy)
+name|gimp_procedure_action_connect_proxy
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -573,11 +577,11 @@ modifier|*
 name|proxy
 parameter_list|)
 block|{
-name|GimpPlugInAction
+name|GimpProcedureAction
 modifier|*
-name|plug_in_action
+name|procedure_action
 init|=
-name|GIMP_PLUG_IN_ACTION
+name|GIMP_PROCEDURE_ACTION
 argument_list|(
 name|action
 argument_list|)
@@ -601,7 +605,7 @@ argument_list|(
 name|proxy
 argument_list|)
 operator|&&
-name|plug_in_action
+name|procedure_action
 operator|->
 name|procedure
 condition|)
@@ -610,13 +614,17 @@ name|GdkPixbuf
 modifier|*
 name|pixbuf
 decl_stmt|;
+comment|/* FIXME history */
 name|pixbuf
 operator|=
 name|gimp_plug_in_procedure_get_pixbuf
 argument_list|(
-name|plug_in_action
+name|GIMP_PLUG_IN_PROCEDURE
+argument_list|(
+name|procedure_action
 operator|->
 name|procedure
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -732,10 +740,10 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-name|GimpPlugInAction
+name|GimpProcedureAction
 modifier|*
-DECL|function|gimp_plug_in_action_new (const gchar * name,const gchar * label,const gchar * tooltip,const gchar * icon_name,GimpPlugInProcedure * procedure)
-name|gimp_plug_in_action_new
+DECL|function|gimp_procedure_action_new (const gchar * name,const gchar * label,const gchar * tooltip,const gchar * icon_name,GimpProcedure * procedure)
+name|gimp_procedure_action_new
 parameter_list|(
 specifier|const
 name|gchar
@@ -757,7 +765,7 @@ name|gchar
 modifier|*
 name|icon_name
 parameter_list|,
-name|GimpPlugInProcedure
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|)
@@ -765,7 +773,7 @@ block|{
 return|return
 name|g_object_new
 argument_list|(
-name|GIMP_TYPE_PLUG_IN_ACTION
+name|GIMP_TYPE_PROCEDURE_ACTION
 argument_list|,
 literal|"name"
 argument_list|,
@@ -795,21 +803,21 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_plug_in_action_selected (GimpPlugInAction * action,GimpPlugInProcedure * procedure)
-name|gimp_plug_in_action_selected
+DECL|function|gimp_procedure_action_selected (GimpProcedureAction * action,GimpProcedure * procedure)
+name|gimp_procedure_action_selected
 parameter_list|(
-name|GimpPlugInAction
+name|GimpProcedureAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpPlugInProcedure
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_PLUG_IN_ACTION
+name|GIMP_IS_PROCEDURE_ACTION
 argument_list|(
 name|action
 argument_list|)

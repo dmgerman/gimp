@@ -2306,7 +2306,7 @@ modifier|*
 name|group
 parameter_list|)
 block|{
-name|GimpPlugInActionEntry
+name|GimpProcedureActionEntry
 modifier|*
 name|entries
 decl_stmt|;
@@ -2441,7 +2441,7 @@ name|entries
 operator|=
 name|g_new0
 argument_list|(
-name|GimpPlugInActionEntry
+name|GimpProcedureActionEntry
 argument_list|,
 name|n_entries
 argument_list|)
@@ -2531,7 +2531,7 @@ operator|=
 name|GIMP_HELP_FILTER_RESHOW
 expr_stmt|;
 block|}
-name|gimp_action_group_add_plug_in_actions
+name|gimp_action_group_add_procedure_actions
 argument_list|(
 name|group
 argument_list|,
@@ -3362,7 +3362,7 @@ undef|#
 directive|undef
 name|SET_SENSITIVE
 block|{
-name|GimpPlugInProcedure
+name|GimpProcedure
 modifier|*
 name|proc
 init|=
@@ -3378,13 +3378,17 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+comment|/* FIXME history */
 if|if
 condition|(
 name|proc
 operator|&&
 name|gimp_plug_in_procedure_get_sensitive
 argument_list|(
+name|GIMP_PLUG_IN_PROCEDURE
+argument_list|(
 name|proc
+argument_list|)
 argument_list|,
 name|drawable
 argument_list|)
@@ -3476,11 +3480,15 @@ argument_list|,
 name|i
 argument_list|)
 expr_stmt|;
+comment|/* FIXME history */
 name|sensitive
 operator|=
 name|gimp_plug_in_procedure_get_sensitive
 argument_list|(
+name|GIMP_PLUG_IN_PROCEDURE
+argument_list|(
 name|proc
+argument_list|)
 argument_list|,
 name|drawable
 argument_list|)
@@ -3590,7 +3598,7 @@ modifier|*
 name|group
 parameter_list|)
 block|{
-name|GimpPlugInProcedure
+name|GimpProcedure
 modifier|*
 name|proc
 decl_stmt|;
@@ -3640,11 +3648,15 @@ name|sensitive
 init|=
 name|FALSE
 decl_stmt|;
+comment|/* FIXME history */
 name|label
 operator|=
 name|gimp_plug_in_procedure_get_label
 argument_list|(
+name|GIMP_PLUG_IN_PROCEDURE
+argument_list|(
 name|proc
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  copy the sensitivity of the plug-in procedure's actual action        *  instead of calling filters_actions_update() because doing the        *  latter would set the sensitivity of this image's action on        *  all images' actions. See bug #517683.        */
@@ -3870,9 +3882,13 @@ argument_list|,
 name|i
 argument_list|)
 expr_stmt|;
+comment|/* FIXME history */
 if|if
 condition|(
+name|GIMP_PLUG_IN_PROCEDURE
+argument_list|(
 name|proc
+argument_list|)
 operator|->
 name|menu_label
 condition|)
@@ -3883,10 +3899,16 @@ name|dgettext
 argument_list|(
 name|gimp_plug_in_procedure_get_locale_domain
 argument_list|(
+name|GIMP_PLUG_IN_PROCEDURE
+argument_list|(
 name|proc
 argument_list|)
+argument_list|)
 argument_list|,
+name|GIMP_PLUG_IN_PROCEDURE
+argument_list|(
 name|proc
+argument_list|)
 operator|->
 name|menu_label
 argument_list|)
@@ -3898,7 +3920,10 @@ name|label
 operator|=
 name|gimp_plug_in_procedure_get_label
 argument_list|(
+name|GIMP_PLUG_IN_PROCEDURE
+argument_list|(
 name|proc
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3961,14 +3986,20 @@ literal|"icon-name"
 argument_list|,
 name|gimp_plug_in_procedure_get_icon_name
 argument_list|(
+name|GIMP_PLUG_IN_PROCEDURE
+argument_list|(
 name|proc
+argument_list|)
 argument_list|)
 argument_list|,
 literal|"tooltip"
 argument_list|,
 name|gimp_plug_in_procedure_get_blurb
 argument_list|(
+name|GIMP_PLUG_IN_PROCEDURE
+argument_list|(
 name|proc
+argument_list|)
 argument_list|)
 argument_list|,
 name|NULL

@@ -48,17 +48,11 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/gimppluginmanager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in/gimppluginprocedure.h"
+file|"pdb/gimpprocedure.h"
 end_include
 
 begin_function
-name|guint
+name|gint
 DECL|function|gimp_filter_history_size (Gimp * gimp)
 name|gimp_filter_history_size
 parameter_list|(
@@ -93,7 +87,7 @@ block|}
 end_function
 
 begin_function
-name|guint
+name|gint
 DECL|function|gimp_filter_history_length (Gimp * gimp)
 name|gimp_filter_history_length
 parameter_list|(
@@ -124,7 +118,7 @@ block|}
 end_function
 
 begin_function
-name|GimpPlugInProcedure
+name|GimpProcedure
 modifier|*
 DECL|function|gimp_filter_history_nth (Gimp * gimp,gint n)
 name|gimp_filter_history_nth
@@ -162,14 +156,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_filter_history_add (Gimp * gimp,GimpPlugInProcedure * procedure)
+DECL|function|gimp_filter_history_add (Gimp * gimp,GimpProcedure * procedure)
 name|gimp_filter_history_add
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpPlugInProcedure
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|)
@@ -191,7 +185,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_PLUG_IN_PROCEDURE
+name|GIMP_IS_PROCEDURE
 argument_list|(
 name|procedure
 argument_list|)
@@ -334,14 +328,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_filter_history_remove (Gimp * gimp,GimpPlugInProcedure * procedure)
+DECL|function|gimp_filter_history_remove (Gimp * gimp,GimpProcedure * procedure)
 name|gimp_filter_history_remove
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpPlugInProcedure
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|)
@@ -360,7 +354,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_PLUG_IN_PROCEDURE
+name|GIMP_IS_PROCEDURE
 argument_list|(
 name|procedure
 argument_list|)

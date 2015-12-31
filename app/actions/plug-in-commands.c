@@ -212,7 +212,7 @@ literal|0
 end_if
 
 begin_endif
-unit|static void  plug_in_procedure_execute     (GimpPlugInProcedure *procedure,                                             Gimp                *gimp,                                             GimpDisplay         *display,                                             GimpValueArray      *args,                                             gint                 n_args);
+unit|static void  plug_in_procedure_execute     (GimpProcedure       *procedure,                                             Gimp                *gimp,                                             GimpDisplay         *display,                                             GimpValueArray      *args,                                             gint                 n_args);
 endif|#
 directive|endif
 end_endif
@@ -342,30 +342,21 @@ end_comment
 
 begin_function
 name|void
-DECL|function|plug_in_run_cmd_callback (GtkAction * action,GimpPlugInProcedure * proc,gpointer data)
+DECL|function|plug_in_run_cmd_callback (GtkAction * action,GimpProcedure * procedure,gpointer data)
 name|plug_in_run_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpPlugInProcedure
+name|GimpProcedure
 modifier|*
-name|proc
+name|procedure
 parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpProcedure
-modifier|*
-name|procedure
-init|=
-name|GIMP_PROCEDURE
-argument_list|(
-name|proc
-argument_list|)
-decl_stmt|;
 name|Gimp
 modifier|*
 name|gimp
@@ -691,7 +682,7 @@ literal|1
 condition|)
 name|plug_in_procedure_execute
 argument_list|(
-name|proc
+name|procedure
 argument_list|,
 name|gimp
 argument_list|,
@@ -831,10 +822,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|plug_in_procedure_execute (GimpPlugInProcedure * procedure,Gimp * gimp,GimpDisplay * display,GimpValueArray * args,gint n_args)
+DECL|function|plug_in_procedure_execute (GimpProcedure * procedure,Gimp * gimp,GimpDisplay * display,GimpValueArray * args,gint n_args)
 name|plug_in_procedure_execute
 parameter_list|(
-name|GimpPlugInProcedure
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
@@ -870,10 +861,7 @@ expr_stmt|;
 comment|/* run the plug-in procedure */
 name|gimp_procedure_execute_async
 argument_list|(
-name|GIMP_PROCEDURE
-argument_list|(
 name|procedure
-argument_list|)
 argument_list|,
 name|gimp
 argument_list|,
@@ -930,10 +918,7 @@ block|{
 comment|/* remember only image plug-ins */
 if|if
 condition|(
-name|GIMP_PROCEDURE
-argument_list|(
 name|procedure
-argument_list|)
 operator|->
 name|num_args
 operator|>=
@@ -941,10 +926,7 @@ literal|2
 operator|&&
 name|GIMP_IS_PARAM_SPEC_IMAGE_ID
 argument_list|(
-name|GIMP_PROCEDURE
-argument_list|(
 name|procedure
-argument_list|)
 operator|->
 name|args
 index|[

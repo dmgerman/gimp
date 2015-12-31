@@ -680,11 +680,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpPlugInAction
+DECL|typedef|GimpProcedureAction
 typedef|typedef
 name|struct
-name|_GimpPlugInAction
-name|GimpPlugInAction
+name|_GimpProcedureAction
+name|GimpProcedureAction
 typedef|;
 end_typedef
 
@@ -1638,11 +1638,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpPlugInActionEntry
+DECL|typedef|GimpProcedureActionEntry
 typedef|typedef
 name|struct
-name|_GimpPlugInActionEntry
-name|GimpPlugInActionEntry
+name|_GimpProcedureActionEntry
+name|GimpProcedureActionEntry
 typedef|;
 end_typedef
 

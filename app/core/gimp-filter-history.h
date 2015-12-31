@@ -17,7 +17,7 @@ name|__GIMP_FILTER_HISTORY_H__
 end_define
 
 begin_function_decl
-name|guint
+name|gint
 name|gimp_filter_history_size
 parameter_list|(
 name|Gimp
@@ -28,7 +28,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|guint
+name|gint
 name|gimp_filter_history_length
 parameter_list|(
 name|Gimp
@@ -39,7 +39,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpPlugInProcedure
+name|GimpProcedure
 modifier|*
 name|gimp_filter_history_nth
 parameter_list|(
@@ -61,7 +61,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpPlugInProcedure
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|)
@@ -76,7 +76,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpPlugInProcedure
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|)

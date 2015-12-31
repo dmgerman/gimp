@@ -1101,7 +1101,7 @@ modifier|*
 name|proc
 parameter_list|)
 block|{
-name|GimpPlugInActionEntry
+name|GimpProcedureActionEntry
 name|entry
 decl_stmt|;
 specifier|const
@@ -1321,7 +1321,10 @@ name|entry
 operator|.
 name|procedure
 operator|=
+name|GIMP_PROCEDURE
+argument_list|(
 name|proc
+argument_list|)
 expr_stmt|;
 name|entry
 operator|.
@@ -1338,7 +1341,7 @@ literal|0
 block|g_print ("adding plug-in action '%s' (%s)\n",            gimp_object_get_name (proc), label);
 endif|#
 directive|endif
-name|gimp_action_group_add_plug_in_actions
+name|gimp_action_group_add_procedure_actions
 argument_list|(
 name|group
 argument_list|,
