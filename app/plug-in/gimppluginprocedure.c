@@ -114,7 +114,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f9666e0103
+DECL|enum|__anon2b0751520103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -2765,6 +2765,13 @@ name|g_str_has_prefix
 argument_list|(
 name|menu_path
 argument_list|,
+literal|"<MyPaintBrushes>"
+argument_list|)
+operator|||
+name|g_str_has_prefix
+argument_list|(
+name|menu_path
+argument_list|,
 literal|"<Gradients>"
 argument_list|)
 operator|||
@@ -2863,8 +2870,9 @@ literal|"in the invalid menu location \"%s\".\n"
 literal|"Use either \"<Image>\", "
 literal|"\"<Layers>\", \"<Channels>\", \"<Vectors>\", "
 literal|"\"<Colormap>\", \"<Brushes>\", \"<Dynamics>\", "
-literal|"\"<Gradients>\", \"<Palettes>\", \"<Patterns>\", "
-literal|"\"<ToolPresets>\", \"<Fonts>\" or \"<Buffers>\"."
+literal|"\"<MyPaintBrushes>\", \"<Gradients>\", \"<Palettes>\", "
+literal|"\"<Patterns>\", \"<ToolPresets>\", \"<Fonts>\" "
+literal|"or \"<Buffers>\"."
 argument_list|,
 name|basename
 argument_list|,
