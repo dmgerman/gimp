@@ -54,12 +54,8 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/gimppluginprocedure.h"
+file|"pdb/gimpprocedure.h"
 end_include
-
-begin_comment
-comment|/* FIXME history */
-end_comment
 
 begin_include
 include|#
@@ -3385,19 +3381,18 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-comment|/* FIXME history */
 if|if
 condition|(
 name|proc
 operator|&&
-name|gimp_plug_in_procedure_get_sensitive
-argument_list|(
-name|GIMP_PLUG_IN_PROCEDURE
+name|gimp_procedure_get_sensitive
 argument_list|(
 name|proc
-argument_list|)
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|drawable
+argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -3487,17 +3482,16 @@ argument_list|,
 name|i
 argument_list|)
 expr_stmt|;
-comment|/* FIXME history */
 name|sensitive
 operator|=
-name|gimp_plug_in_procedure_get_sensitive
-argument_list|(
-name|GIMP_PLUG_IN_PROCEDURE
+name|gimp_procedure_get_sensitive
 argument_list|(
 name|proc
-argument_list|)
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|drawable
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_action_group_set_action_sensitive

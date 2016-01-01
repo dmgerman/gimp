@@ -454,22 +454,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
-name|gimp_plug_in_procedure_get_sensitive
-parameter_list|(
-specifier|const
-name|GimpPlugInProcedure
-modifier|*
-name|proc
-parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_plug_in_procedure_set_image_types
 parameter_list|(
