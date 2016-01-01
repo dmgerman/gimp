@@ -162,7 +162,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ba15f80103
+DECL|enum|__anon2b02bf1c0103
 block|{
 DECL|enumerator|CHECK_URI_FAIL
 name|CHECK_URI_FAIL
@@ -1089,14 +1089,14 @@ argument_list|,
 literal|"selected save_proc: %s"
 argument_list|,
 name|save_proc
-operator|&&
-name|save_proc
-operator|->
-name|menu_label
 condition|?
+name|gimp_procedure_get_label
+argument_list|(
+name|GIMP_PROCEDURE
+argument_list|(
 name|save_proc
-operator|->
-name|menu_label
+argument_list|)
+argument_list|)
 else|:
 literal|"NULL"
 argument_list|)
@@ -1109,9 +1109,13 @@ literal|"URI save_proc: %s"
 argument_list|,
 name|uri_proc
 condition|?
+name|gimp_procedure_get_label
+argument_list|(
+name|GIMP_PROCEDURE
+argument_list|(
 name|uri_proc
-operator|->
-name|menu_label
+argument_list|)
+argument_list|)
 else|:
 literal|"NULL"
 argument_list|)
@@ -1123,14 +1127,14 @@ argument_list|,
 literal|"basename save_proc: %s"
 argument_list|,
 name|basename_proc
-operator|&&
-name|basename_proc
-operator|->
-name|menu_label
 condition|?
+name|gimp_procedure_get_label
+argument_list|(
+name|GIMP_PROCEDURE
+argument_list|(
 name|basename_proc
-operator|->
-name|menu_label
+argument_list|)
+argument_list|)
 else|:
 literal|"NULL"
 argument_list|)
@@ -1459,15 +1463,13 @@ name|SAVE_DIALOG
 argument_list|,
 literal|"use URI's proc '%s' so indirect saving works"
 argument_list|,
+name|gimp_procedure_get_label
+argument_list|(
+name|GIMP_PROCEDURE
+argument_list|(
 name|uri_proc
-operator|->
-name|menu_label
-condition|?
-name|uri_proc
-operator|->
-name|menu_label
-else|:
-literal|"<unnamed>"
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  use the URI's proc if no save proc was selected  */
@@ -1484,15 +1486,13 @@ name|SAVE_DIALOG
 argument_list|,
 literal|"save_proc '%s' was selected from the list"
 argument_list|,
+name|gimp_procedure_get_label
+argument_list|(
+name|GIMP_PROCEDURE
+argument_list|(
 name|save_proc
-operator|->
-name|menu_label
-condition|?
-name|save_proc
-operator|->
-name|menu_label
-else|:
-literal|"<unnamed>"
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1508,13 +1508,13 @@ name|SAVE_DIALOG
 argument_list|,
 literal|"however the basename's proc is '%s'"
 argument_list|,
+name|gimp_procedure_get_label
+argument_list|(
+name|GIMP_PROCEDURE
+argument_list|(
 name|basename_proc
-condition|?
-name|basename_proc
-operator|->
-name|menu_label
-else|:
-literal|"NULL"
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1598,15 +1598,13 @@ name|SAVE_DIALOG
 argument_list|,
 literal|"use URI's proc '%s' so indirect saving works"
 argument_list|,
+name|gimp_procedure_get_label
+argument_list|(
+name|GIMP_PROCEDURE
+argument_list|(
 name|uri_proc
-operator|->
-name|menu_label
-condition|?
-name|uri_proc
-operator|->
-name|menu_label
-else|:
-literal|"<unnamed>"
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  need to use the URI's proc for saving because e.g.            *  the GIF plug-in can't save a GIF to sftp://            */
