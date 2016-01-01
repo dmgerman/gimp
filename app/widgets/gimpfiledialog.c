@@ -137,7 +137,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e7e7780103
+DECL|enum|__anon29eaf5860103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3290,9 +3290,12 @@ name|str
 operator|=
 name|g_string_new
 argument_list|(
-name|gimp_plug_in_procedure_get_label
+name|gimp_procedure_get_label
+argument_list|(
+name|GIMP_PROCEDURE
 argument_list|(
 name|file_proc
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

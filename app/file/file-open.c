@@ -885,9 +885,12 @@ literal|"%s plug-in returned SUCCESS but did not "
 literal|"return an image"
 argument_list|)
 argument_list|,
-name|gimp_plug_in_procedure_get_label
+name|gimp_procedure_get_label
+argument_list|(
+name|GIMP_PROCEDURE
 argument_list|(
 name|file_proc
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -928,9 +931,12 @@ argument_list|(
 literal|"%s plug-In could not open image"
 argument_list|)
 argument_list|,
-name|gimp_plug_in_procedure_get_label
+name|gimp_procedure_get_label
+argument_list|(
+name|GIMP_PROCEDURE
 argument_list|(
 name|file_proc
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

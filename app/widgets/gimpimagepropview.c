@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4efe3e0103
+DECL|enum|__anon297c0f550103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1524,9 +1524,12 @@ argument_list|)
 argument_list|,
 name|proc
 condition|?
-name|gimp_plug_in_procedure_get_label
+name|gimp_procedure_get_label
+argument_list|(
+name|GIMP_PROCEDURE
 argument_list|(
 name|proc
+argument_list|)
 argument_list|)
 else|:
 name|NULL

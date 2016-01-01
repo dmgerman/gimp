@@ -1315,9 +1315,12 @@ name|entry
 operator|.
 name|tooltip
 operator|=
-name|gimp_plug_in_procedure_get_blurb
+name|gimp_procedure_get_blurb
+argument_list|(
+name|GIMP_PROCEDURE
 argument_list|(
 name|proc
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|entry

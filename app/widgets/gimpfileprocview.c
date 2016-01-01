@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7751e90103
+DECL|enum|__anon2add6e1f0103
 block|{
 DECL|enumerator|COLUMN_PROC
 name|COLUMN_PROC
@@ -87,7 +87,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7751e90203
+DECL|enum|__anon2add6e1f0203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -437,9 +437,12 @@ name|gchar
 modifier|*
 name|label
 init|=
-name|gimp_plug_in_procedure_get_label
+name|gimp_procedure_get_label
+argument_list|(
+name|GIMP_PROCEDURE
 argument_list|(
 name|proc
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|gchar
