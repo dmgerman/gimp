@@ -24,7 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gio/gio.h>
+file|<gdk-pixbuf/gdk-pixbuf.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gegl.h>
 end_include
 
 begin_include

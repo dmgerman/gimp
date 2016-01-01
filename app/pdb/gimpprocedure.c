@@ -250,14 +250,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpProcedure,gimp_procedure,GIMP_TYPE_OBJECT)
+DECL|function|G_DEFINE_TYPE (GimpProcedure,gimp_procedure,GIMP_TYPE_VIEWABLE)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpProcedure
 argument_list|,
 argument|gimp_procedure
 argument_list|,
-argument|GIMP_TYPE_OBJECT
+argument|GIMP_TYPE_VIEWABLE
 argument_list|)
 end_macro
 

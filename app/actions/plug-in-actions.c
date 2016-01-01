@@ -1291,9 +1291,12 @@ name|entry
 operator|.
 name|icon_name
 operator|=
-name|gimp_plug_in_procedure_get_icon_name
+name|gimp_viewable_get_icon_name
+argument_list|(
+name|GIMP_VIEWABLE
 argument_list|(
 name|proc
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|entry

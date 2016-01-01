@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets-types.h"
 end_include
 
@@ -59,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2757d0df0103
+DECL|enum|__anon2b7751e90103
 block|{
 DECL|enumerator|COLUMN_PROC
 name|COLUMN_PROC
@@ -81,7 +87,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2757d0df0203
+DECL|enum|__anon2b7751e90203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED

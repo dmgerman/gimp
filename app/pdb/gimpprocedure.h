@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"core/gimpobject.h"
+file|"core/gimpviewable.h"
 end_include
 
 begin_typedef
@@ -139,7 +139,7 @@ struct|struct
 name|_GimpProcedure
 block|{
 DECL|member|parent_instance
-name|GimpObject
+name|GimpViewable
 name|parent_instance
 decl_stmt|;
 DECL|member|proc_type
@@ -233,7 +233,7 @@ struct|struct
 name|_GimpProcedureClass
 block|{
 DECL|member|parent_class
-name|GimpObjectClass
+name|GimpViewableClass
 name|parent_class
 decl_stmt|;
 DECL|member|execute

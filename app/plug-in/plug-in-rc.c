@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
@@ -254,7 +260,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon290861310103
+DECL|enum|__anon29333ae40103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -2204,23 +2210,16 @@ name|G_TOKEN_STRING
 return|;
 break|break;
 block|}
+name|gimp_plug_in_procedure_take_icon
+argument_list|(
 name|proc
-operator|->
+argument_list|,
 name|icon_type
-operator|=
-name|icon_type
-expr_stmt|;
-name|proc
-operator|->
-name|icon_data_length
-operator|=
-name|icon_data_length
-expr_stmt|;
-name|proc
-operator|->
+argument_list|,
 name|icon_data
-operator|=
-name|icon_data
+argument_list|,
+name|icon_data_length
+argument_list|)
 expr_stmt|;
 if|if
 condition|(

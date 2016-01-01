@@ -3984,9 +3984,9 @@ name|label
 argument_list|,
 literal|"icon-name"
 argument_list|,
-name|gimp_plug_in_procedure_get_icon_name
+name|gimp_viewable_get_icon_name
 argument_list|(
-name|GIMP_PLUG_IN_PROCEDURE
+name|GIMP_VIEWABLE
 argument_list|(
 name|proc
 argument_list|)

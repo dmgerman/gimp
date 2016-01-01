@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
@@ -66,7 +72,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274f0a720103
+DECL|enum|__anon2be516430103
 block|{
 DECL|enumerator|FILE_MATCH_NONE
 name|FILE_MATCH_NONE

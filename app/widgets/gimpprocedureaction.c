@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets-types.h"
 end_include
 
@@ -30,12 +36,8 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/gimppluginprocedure.h"
+file|"pdb/gimpprocedure.h"
 end_include
-
-begin_comment
-comment|/* FIXME history */
-end_comment
 
 begin_include
 include|#
@@ -45,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c26655d0103
+DECL|enum|__anon2c1c61d50103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -58,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c26655d0203
+DECL|enum|__anon2c1c61d50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -614,17 +616,18 @@ name|GdkPixbuf
 modifier|*
 name|pixbuf
 decl_stmt|;
-comment|/* FIXME history */
-name|pixbuf
-operator|=
-name|gimp_plug_in_procedure_get_pixbuf
-argument_list|(
-name|GIMP_PLUG_IN_PROCEDURE
+name|g_object_get
 argument_list|(
 name|procedure_action
 operator|->
 name|procedure
-argument_list|)
+argument_list|,
+literal|"icon-pixbuf"
+argument_list|,
+operator|&
+name|pixbuf
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
