@@ -143,13 +143,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/gimppluginmanager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"file/file-procedure.h"
+file|"plug-in/gimppluginmanager-file.h"
 end_include
 
 begin_include
@@ -3217,13 +3211,13 @@ if|if
 condition|(
 name|mime_type
 operator|&&
-name|file_procedure_find_by_mime_type
+name|gimp_plug_in_manager_file_procedure_find_by_mime_type
 argument_list|(
 name|gimp
 operator|->
 name|plug_in_manager
-operator|->
-name|load_procs
+argument_list|,
+name|GIMP_FILE_PROCEDURE_GROUP_OPEN
 argument_list|,
 name|mime_type
 argument_list|)

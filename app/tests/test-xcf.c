@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
 end_include
 
@@ -150,25 +156,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/gimppluginmanager-file.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file/file-open.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"file/file-procedure.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"file/file-save.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in/gimppluginmanager.h"
 end_include
 
 begin_include
@@ -928,13 +928,13 @@ name|unused
 decl_stmt|;
 name|proc
 operator|=
-name|file_procedure_find
+name|gimp_plug_in_manager_file_procedure_find
 argument_list|(
 name|gimp
 operator|->
 name|plug_in_manager
-operator|->
-name|load_procs
+argument_list|,
+name|GIMP_FILE_PROCEDURE_GROUP_OPEN
 argument_list|,
 name|file
 argument_list|,
@@ -1081,15 +1081,15 @@ argument_list|)
 expr_stmt|;
 name|proc
 operator|=
-name|file_procedure_find
+name|gimp_plug_in_manager_file_procedure_find
 argument_list|(
 name|image
 operator|->
 name|gimp
 operator|->
 name|plug_in_manager
-operator|->
-name|save_procs
+argument_list|,
+name|GIMP_FILE_PROCEDURE_GROUP_SAVE
 argument_list|,
 name|file
 argument_list|,
@@ -2706,7 +2706,7 @@ operator|==
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* Sample points, we rely on the same ordering as when we added    * them, although this ordering is not a necessaity    */
+comment|/* Sample points, we rely on the same ordering as when we added    * them, although this ordering is not a necessity    */
 name|iter
 operator|=
 name|gimp_image_get_sample_points

@@ -38,7 +38,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon291837f10103
+DECL|enum|__anon28ae81e30103
 block|{
 DECL|enumerator|GIMP_PLUG_IN_RGB_IMAGE
 name|GIMP_PLUG_IN_RGB_IMAGE
@@ -109,7 +109,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon291837f10203
+DECL|enum|__anon28ae81e30203
 block|{
 DECL|enumerator|GIMP_PLUG_IN_CALL_NONE
 name|GIMP_PLUG_IN_CALL_NONE
@@ -125,6 +125,47 @@ name|GIMP_PLUG_IN_CALL_INIT
 DECL|typedef|GimpPlugInCallMode
 block|}
 name|GimpPlugInCallMode
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_FILE_PROCEDURE_GROUP
+define|#
+directive|define
+name|GIMP_TYPE_FILE_PROCEDURE_GROUP
+value|(gimp_file_procedure_group_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_file_procedure_group_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+DECL|enum|__anon28ae81e30303
+block|{
+DECL|enumerator|GIMP_FILE_PROCEDURE_GROUP_ANY
+name|GIMP_FILE_PROCEDURE_GROUP_ANY
+block|,
+DECL|enumerator|GIMP_FILE_PROCEDURE_GROUP_OPEN
+name|GIMP_FILE_PROCEDURE_GROUP_OPEN
+block|,
+DECL|enumerator|GIMP_FILE_PROCEDURE_GROUP_SAVE
+name|GIMP_FILE_PROCEDURE_GROUP_SAVE
+block|,
+DECL|enumerator|GIMP_FILE_PROCEDURE_GROUP_EXPORT
+name|GIMP_FILE_PROCEDURE_GROUP_EXPORT
+DECL|typedef|GimpFileProcedureGroup
+block|}
+name|GimpFileProcedureGroup
 typedef|;
 end_typedef
 

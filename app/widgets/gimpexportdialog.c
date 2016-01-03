@@ -54,13 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage.h"
+file|"core/gimp-utils.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"file/file-utils.h"
+file|"core/gimpimage.h"
 end_include
 
 begin_include
@@ -551,7 +551,7 @@ name|GFile
 modifier|*
 name|tmp_file
 init|=
-name|file_utils_file_with_new_ext
+name|gimp_file_with_new_extension
 argument_list|(
 name|name_file
 argument_list|,

@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontext.h"
 end_include
 
@@ -300,12 +306,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file/file-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"vectors/gimpvectors.h"
 end_include
 
@@ -360,7 +360,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c093b5b0103
+DECL|enum|__anon2be6ab690103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -457,7 +457,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c093b5b0203
+DECL|enum|__anon2be6ab690203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -8777,7 +8777,7 @@ name|display_file
 condition|)
 name|display_file
 operator|=
-name|file_utils_file_with_new_ext
+name|gimp_file_with_new_extension
 argument_list|(
 name|display_file
 argument_list|,

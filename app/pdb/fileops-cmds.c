@@ -94,12 +94,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file/file-procedure.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"file/file-save.h"
 end_include
 
@@ -113,12 +107,6 @@ begin_include
 include|#
 directive|include
 file|"plug-in/gimppluginmanager-file.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in/gimppluginmanager.h"
 end_include
 
 begin_include
@@ -243,13 +231,13 @@ argument_list|)
 return|;
 name|file_proc
 operator|=
-name|file_procedure_find
+name|gimp_plug_in_manager_file_procedure_find
 argument_list|(
 name|gimp
 operator|->
 name|plug_in_manager
-operator|->
-name|load_procs
+argument_list|,
+name|GIMP_FILE_PROCEDURE_GROUP_OPEN
 argument_list|,
 name|file
 argument_list|,
@@ -1136,13 +1124,13 @@ argument_list|)
 return|;
 name|file_proc
 operator|=
-name|file_procedure_find
+name|gimp_plug_in_manager_file_procedure_find
 argument_list|(
 name|gimp
 operator|->
 name|plug_in_manager
-operator|->
-name|save_procs
+argument_list|,
+name|GIMP_FILE_PROCEDURE_GROUP_SAVE
 argument_list|,
 name|file
 argument_list|,
@@ -1156,13 +1144,13 @@ name|file_proc
 condition|)
 name|file_proc
 operator|=
-name|file_procedure_find
+name|gimp_plug_in_manager_file_procedure_find
 argument_list|(
 name|gimp
 operator|->
 name|plug_in_manager
-operator|->
-name|export_procs
+argument_list|,
+name|GIMP_FILE_PROCEDURE_GROUP_EXPORT
 argument_list|,
 name|file
 argument_list|,

@@ -126,7 +126,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/gimppluginmanager.h"
+file|"plug-in/gimppluginmanager-file.h"
 end_include
 
 begin_include
@@ -144,19 +144,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file-procedure.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"file-remote.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"file-utils.h"
 end_include
 
 begin_include
@@ -233,7 +221,6 @@ specifier|static
 name|gboolean
 name|file_open_file_proc_is_import
 parameter_list|(
-specifier|const
 name|GimpPlugInProcedure
 modifier|*
 name|file_proc
@@ -538,13 +525,13 @@ name|file_proc
 condition|)
 name|file_proc
 operator|=
-name|file_procedure_find
+name|gimp_plug_in_manager_file_procedure_find
 argument_list|(
 name|gimp
 operator|->
 name|plug_in_manager
-operator|->
-name|load_procs
+argument_list|,
+name|GIMP_FILE_PROCEDURE_GROUP_OPEN
 argument_list|,
 name|file
 argument_list|,
@@ -1206,13 +1193,13 @@ literal|1
 expr_stmt|;
 name|file_proc
 operator|=
-name|file_procedure_find
+name|gimp_plug_in_manager_file_procedure_find
 argument_list|(
 name|gimp
 operator|->
 name|plug_in_manager
-operator|->
-name|load_procs
+argument_list|,
+name|GIMP_FILE_PROCEDURE_GROUP_OPEN
 argument_list|,
 name|file
 argument_list|,
@@ -3020,10 +3007,9 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|file_open_file_proc_is_import (const GimpPlugInProcedure * file_proc)
+DECL|function|file_open_file_proc_is_import (GimpPlugInProcedure * file_proc)
 name|file_open_file_proc_is_import
 parameter_list|(
-specifier|const
 name|GimpPlugInProcedure
 modifier|*
 name|file_proc

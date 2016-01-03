@@ -90,13 +90,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/gimppluginmanager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"file/file-procedure.h"
+file|"plug-in/gimppluginmanager-file.h"
 end_include
 
 begin_include
@@ -3205,13 +3199,13 @@ argument_list|(
 name|thumb
 argument_list|)
 operator|&&
-name|file_procedure_find_by_extension
+name|gimp_plug_in_manager_file_procedure_find_by_extension
 argument_list|(
 name|gimp
 operator|->
 name|plug_in_manager
-operator|->
-name|load_procs
+argument_list|,
+name|GIMP_FILE_PROCEDURE_GROUP_OPEN
 argument_list|,
 name|file
 argument_list|)

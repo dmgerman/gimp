@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995, 1996, 1997 Spencer Kimball and Peter Mattis  * Copyright (C) 1997 Josh MacDonald  *  * file-procedure.c  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995, 1996, 1997 Spencer Kimball and Peter Mattis  * Copyright (C) 1997 Josh MacDonald  *  * gimppluginmanager-file-procedure.c  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -42,25 +42,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"plug-in-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"plug-in/gimppluginprocedure.h"
+file|"core/gimp-utils.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"file-procedure.h"
+file|"gimppluginmanager-file-procedure.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"file-utils.h"
+file|"gimppluginprocedure.h"
 end_include
 
 begin_include
@@ -72,7 +72,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be516430103
+DECL|enum|__anon276fdfd40103
 block|{
 DECL|enumerator|FILE_MATCH_NONE
 name|FILE_MATCH_NONE
@@ -835,123 +835,6 @@ return|;
 block|}
 end_function
 
-begin_function
-name|gboolean
-DECL|function|file_procedure_in_group (GimpPlugInProcedure * file_proc,FileProcedureGroup group)
-name|file_procedure_in_group
-parameter_list|(
-name|GimpPlugInProcedure
-modifier|*
-name|file_proc
-parameter_list|,
-name|FileProcedureGroup
-name|group
-parameter_list|)
-block|{
-specifier|const
-name|gchar
-modifier|*
-name|name
-init|=
-name|gimp_object_get_name
-argument_list|(
-name|file_proc
-argument_list|)
-decl_stmt|;
-name|gboolean
-name|is_xcf_save
-init|=
-name|FALSE
-decl_stmt|;
-name|gboolean
-name|is_filter
-init|=
-name|FALSE
-decl_stmt|;
-name|is_xcf_save
-operator|=
-operator|(
-name|strcmp
-argument_list|(
-name|name
-argument_list|,
-literal|"gimp-xcf-save"
-argument_list|)
-operator|==
-literal|0
-operator|)
-expr_stmt|;
-name|is_filter
-operator|=
-operator|(
-name|strcmp
-argument_list|(
-name|name
-argument_list|,
-literal|"file-gz-save"
-argument_list|)
-operator|==
-literal|0
-operator|||
-name|strcmp
-argument_list|(
-name|name
-argument_list|,
-literal|"file-bz2-save"
-argument_list|)
-operator|==
-literal|0
-operator|||
-name|strcmp
-argument_list|(
-name|name
-argument_list|,
-literal|"file-xz-save"
-argument_list|)
-operator|==
-literal|0
-operator|)
-expr_stmt|;
-switch|switch
-condition|(
-name|group
-condition|)
-block|{
-case|case
-name|FILE_PROCEDURE_GROUP_SAVE
-case|:
-comment|/* Only .xcf shall pass */
-return|return
-name|is_xcf_save
-operator|||
-name|is_filter
-return|;
-case|case
-name|FILE_PROCEDURE_GROUP_EXPORT
-case|:
-comment|/* Anything but .xcf shall pass */
-return|return
-operator|!
-name|is_xcf_save
-return|;
-case|case
-name|FILE_PROCEDURE_GROUP_OPEN
-case|:
-comment|/* No filter applied for Open */
-return|return
-name|TRUE
-return|;
-default|default:
-case|case
-name|FILE_PROCEDURE_GROUP_ANY
-case|:
-return|return
-name|TRUE
-return|;
-block|}
-block|}
-end_function
-
 begin_comment
 comment|/*  private functions  */
 end_comment
@@ -1103,7 +986,7 @@ name|gchar
 modifier|*
 name|ext
 init|=
-name|file_utils_file_get_ext
+name|gimp_file_get_extension
 argument_list|(
 name|file
 argument_list|)

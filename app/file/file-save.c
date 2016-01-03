@@ -114,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-file.h"
 end_include
 
