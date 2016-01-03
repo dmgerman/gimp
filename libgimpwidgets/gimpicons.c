@@ -3106,9 +3106,11 @@ name|NULL
 argument_list|)
 condition|)
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
-literal|"Icon theme path does not exist: %s"
+literal|"%s: Icon theme path does not exist: %s\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|,
 name|gimp_file_get_utf8_name
 argument_list|(
@@ -3141,9 +3143,11 @@ name|NULL
 argument_list|)
 condition|)
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
-literal|"Icon theme path has no 'hicolor' subdirectory: %s"
+literal|"%s: Icon theme path has no 'hicolor' subdirectory: %s\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|,
 name|gimp_file_get_utf8_name
 argument_list|(
@@ -3176,9 +3180,11 @@ name|NULL
 argument_list|)
 condition|)
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
-literal|"Icon theme path has no 'hicolor/index.theme': %s"
+literal|"%s: Icon theme path has no 'hicolor/index.theme': %s\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|,
 name|gimp_file_get_utf8_name
 argument_list|(
