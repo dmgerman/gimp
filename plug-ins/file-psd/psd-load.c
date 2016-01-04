@@ -8202,8 +8202,7 @@ name|layer_id
 argument_list|,
 name|parent_group_id
 argument_list|,
-operator|-
-literal|1
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_fill
@@ -8550,8 +8549,7 @@ name|layer_id
 argument_list|,
 name|parent_group_id
 argument_list|,
-operator|-
-literal|1
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_layer_set_offsets
