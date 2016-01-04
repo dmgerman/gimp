@@ -874,6 +874,9 @@ name|GimpImage
 modifier|*
 name|display
 parameter_list|,
+name|gboolean
+name|invisible_layer_ok
+parameter_list|,
 name|GError
 modifier|*
 modifier|*
@@ -1329,6 +1332,8 @@ argument_list|(
 name|tr_tool
 argument_list|,
 name|image
+argument_list|,
+name|FALSE
 argument_list|,
 name|error
 argument_list|)
@@ -3254,6 +3259,8 @@ argument_list|(
 name|tr_tool
 argument_list|,
 name|image
+argument_list|,
+name|TRUE
 argument_list|,
 name|NULL
 argument_list|)
@@ -5732,6 +5739,8 @@ name|tr_tool
 argument_list|,
 name|image
 argument_list|,
+name|TRUE
+argument_list|,
 operator|&
 name|error
 argument_list|)
@@ -7712,7 +7721,7 @@ begin_function
 specifier|static
 name|GimpItem
 modifier|*
-DECL|function|gimp_transform_tool_check_active_item (GimpTransformTool * tr_tool,GimpImage * image,GError ** error)
+DECL|function|gimp_transform_tool_check_active_item (GimpTransformTool * tr_tool,GimpImage * image,gboolean invisible_layer_ok,GError ** error)
 name|gimp_transform_tool_check_active_item
 parameter_list|(
 name|GimpTransformTool
@@ -7722,6 +7731,9 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|gboolean
+name|invisible_layer_ok
 parameter_list|,
 name|GError
 modifier|*
@@ -7806,9 +7818,13 @@ argument_list|(
 literal|"The active layer's position and size are locked."
 argument_list|)
 expr_stmt|;
+comment|/*  invisible_layer_ok is such a hack, see bug #759194 */
 if|if
 condition|(
 name|item
+operator|&&
+operator|!
+name|invisible_layer_ok
 operator|&&
 operator|!
 name|gimp_item_is_visible
