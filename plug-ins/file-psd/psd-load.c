@@ -373,7 +373,7 @@ name|FILE
 modifier|*
 name|f
 parameter_list|,
-name|guint16
+name|guint32
 name|comp_len
 parameter_list|,
 name|GError
@@ -11339,7 +11339,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|read_channel_data (PSDchannel * channel,guint16 bps,guint16 compression,const guint16 * rle_pack_len,FILE * f,guint16 comp_len,GError ** error)
+DECL|function|read_channel_data (PSDchannel * channel,guint16 bps,guint16 compression,const guint16 * rle_pack_len,FILE * f,guint32 comp_len,GError ** error)
 name|read_channel_data
 parameter_list|(
 name|PSDchannel
@@ -11361,7 +11361,7 @@ name|FILE
 modifier|*
 name|f
 parameter_list|,
-name|guint16
+name|guint32
 name|comp_len
 parameter_list|,
 name|GError
@@ -11815,16 +11815,18 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|psd_set_error
+name|g_set_error
 argument_list|(
-name|feof
-argument_list|(
-name|f
-argument_list|)
-argument_list|,
-name|errno
-argument_list|,
 name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"Failed to decompress data"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
