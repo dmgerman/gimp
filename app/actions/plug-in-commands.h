@@ -48,37 +48,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* FIXME history */
-end_comment
-
-begin_function_decl
-name|gint
-name|plug_in_collect_display_args
-parameter_list|(
-name|GtkAction
-modifier|*
-name|action
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
-parameter_list|,
-name|GParamSpec
-modifier|*
-modifier|*
-name|pspecs
-parameter_list|,
-name|GimpValueArray
-modifier|*
-name|args
-parameter_list|,
-name|gint
-name|n_args
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
