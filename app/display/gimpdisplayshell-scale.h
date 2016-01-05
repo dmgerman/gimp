@@ -54,25 +54,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_get_screen_resolution
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|,
-name|gdouble
-modifier|*
-name|xres
-parameter_list|,
-name|gdouble
-modifier|*
-name|yres
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_display_shell_scale_get_image_size
 parameter_list|(
 name|GimpDisplayShell
