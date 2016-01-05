@@ -233,6 +233,11 @@ operator|||
 name|y_offset
 condition|)
 block|{
+name|gimp_display_shell_scrolled
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 name|gimp_overlay_box_scroll
 argument_list|(
 name|GIMP_OVERLAY_BOX
@@ -247,11 +252,6 @@ name|x_offset
 argument_list|,
 operator|-
 name|y_offset
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_scrolled
-argument_list|(
-name|shell
 argument_list|)
 expr_stmt|;
 block|}
@@ -335,12 +335,12 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_expose_full
+name|gimp_display_shell_scrolled
 argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_scrolled
+name|gimp_display_shell_expose_full
 argument_list|(
 name|shell
 argument_list|)
@@ -1148,7 +1148,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8670920108
+DECL|struct|__anon276f26830108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
