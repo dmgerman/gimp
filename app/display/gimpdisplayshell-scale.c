@@ -2820,6 +2820,12 @@ operator|->
 name|display
 condition|)
 return|return;
+comment|/* freeze the active tool */
+name|gimp_display_shell_pause
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_untransform_xy_f
 argument_list|(
 name|shell
@@ -2879,6 +2885,12 @@ argument_list|,
 name|new_viewport_y
 operator|-
 name|viewport_y
+argument_list|)
+expr_stmt|;
+comment|/* re-enable the active tool */
+name|gimp_display_shell_resume
+argument_list|(
+name|shell
 argument_list|)
 expr_stmt|;
 block|}
