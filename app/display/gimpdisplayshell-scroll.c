@@ -307,7 +307,7 @@ operator|==
 name|offset_y
 condition|)
 return|return;
-name|gimp_display_shell_scale_handle_zoom_revert
+name|gimp_display_shell_scale_save_revert_values
 argument_list|(
 name|shell
 argument_list|)
@@ -1148,7 +1148,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273e92b00108
+DECL|struct|__anon2c8670920108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
