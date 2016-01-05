@@ -365,7 +365,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ec31ff0103
+DECL|enum|__anon2933c9d30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -399,7 +399,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ec31ff0203
+DECL|enum|__anon2933c9d30203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1505,7 +1505,7 @@ literal|"zoomed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_display_shell_scale_changed
+name|gimp_display_shell_scale_update
 argument_list|)
 argument_list|,
 name|shell
@@ -3258,7 +3258,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* make sure the information is up-to-date */
-name|gimp_display_shell_scale_changed
+name|gimp_display_shell_scale_update
 argument_list|(
 name|shell
 argument_list|)
@@ -6242,7 +6242,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_scale_changed
+name|gimp_display_shell_scale_update
 argument_list|(
 name|shell
 argument_list|)
@@ -6333,87 +6333,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/* We used to calculate the scale factor in the SCALEFACTOR_X() and  * SCALEFACTOR_Y() macros. But since these are rather frequently  * called and the values rarely change, we now store them in the  * shell and call this function whenever they need to be recalculated.  */
-end_comment
-
-begin_function
-name|void
-DECL|function|gimp_display_shell_scale_changed (GimpDisplayShell * shell)
-name|gimp_display_shell_scale_changed
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|)
-block|{
-name|GimpImage
-modifier|*
-name|image
-decl_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_DISPLAY_SHELL
-argument_list|(
-name|shell
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|image
-operator|=
-name|gimp_display_get_image
-argument_list|(
-name|shell
-operator|->
-name|display
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|image
-condition|)
-block|{
-name|gimp_display_shell_calculate_scale_x_and_y
-argument_list|(
-name|shell
-argument_list|,
-name|gimp_zoom_model_get_factor
-argument_list|(
-name|shell
-operator|->
-name|zoom
-argument_list|)
-argument_list|,
-operator|&
-name|shell
-operator|->
-name|scale_x
-argument_list|,
-operator|&
-name|shell
-operator|->
-name|scale_y
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|shell
-operator|->
-name|scale_x
-operator|=
-literal|1.0
-expr_stmt|;
-name|shell
-operator|->
-name|scale_y
-operator|=
-literal|1.0
-expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -7569,7 +7488,7 @@ name|shell
 argument_list|)
 expr_stmt|;
 comment|/* make sure the information is up-to-date */
-name|gimp_display_shell_scale_changed
+name|gimp_display_shell_scale_update
 argument_list|(
 name|shell
 argument_list|)
