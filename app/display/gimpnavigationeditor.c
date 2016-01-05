@@ -2177,7 +2177,7 @@ operator|->
 name|display
 argument_list|)
 condition|)
-name|gimp_display_shell_scroll_center_image_coordinate
+name|gimp_display_shell_scroll_center_image_xy
 argument_list|(
 name|editor
 operator|->

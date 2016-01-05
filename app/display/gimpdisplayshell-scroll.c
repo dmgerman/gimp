@@ -121,94 +121,17 @@ name|MINIMUM_STEP_AMOUNT
 value|1.0
 end_define
 
-begin_typedef
-typedef|typedef
-struct|struct
-DECL|struct|__anon2be3922c0108
-block|{
-DECL|member|shell
-name|GimpDisplayShell
-modifier|*
-name|shell
-decl_stmt|;
-DECL|member|vertically
-name|gboolean
-name|vertically
-decl_stmt|;
-DECL|member|horizontally
-name|gboolean
-name|horizontally
-decl_stmt|;
-DECL|typedef|SizeAllocateCallbackData
-block|}
-name|SizeAllocateCallbackData
-typedef|;
-end_typedef
-
-begin_comment
-comment|/**  * gimp_display_shell_scroll_center_image_coordinate:  * @shell:  * @image_x:  * @image_y:  *  * Center the viewport around the passed image coordinate  *  **/
-end_comment
-
-begin_function
+begin_function_decl
+specifier|static
 name|void
-DECL|function|gimp_display_shell_scroll_center_image_coordinate (GimpDisplayShell * shell,gdouble image_x,gdouble image_y)
-name|gimp_display_shell_scroll_center_image_coordinate
+name|gimp_display_shell_scroll_clamp_offsets
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
-parameter_list|,
-name|gdouble
-name|image_x
-parameter_list|,
-name|gdouble
-name|image_y
 parameter_list|)
-block|{
-name|gint
-name|viewport_x
-decl_stmt|;
-name|gint
-name|viewport_y
-decl_stmt|;
-name|gimp_display_shell_transform_xy
-argument_list|(
-name|shell
-argument_list|,
-name|image_x
-argument_list|,
-name|image_y
-argument_list|,
-operator|&
-name|viewport_x
-argument_list|,
-operator|&
-name|viewport_y
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_scroll
-argument_list|(
-name|shell
-argument_list|,
-name|viewport_x
-operator|-
-name|shell
-operator|->
-name|disp_width
-operator|/
-literal|2
-argument_list|,
-name|viewport_y
-operator|-
-name|shell
-operator|->
-name|disp_height
-operator|/
-literal|2
-argument_list|)
-expr_stmt|;
-block|}
-end_function
+function_decl|;
+end_function_decl
 
 begin_function
 name|void
@@ -472,6 +395,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_display_shell_scroll_clamp_offsets (GimpDisplayShell * shell)
 name|gimp_display_shell_scroll_clamp_offsets
@@ -852,7 +776,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scroll_unoverscrollify:  * @shell:  * @in_offset_x:  * @in_offset_y:  * @out_offset_x:  * @out_offset_y:  *  * Takes a scroll offset and returns the offset that will not result  * in a scroll beyond the image border. If the image is already  * overscrolled, the return value is 0 for that given axis.  *  **/
+comment|/**  * gimp_display_shell_scroll_unoverscrollify:  * @shell:  * @in_offset_x:  * @in_offset_y:  * @out_offset_x:  * @out_offset_y:  *  * Takes a scroll offset and returns the offset that will not result  * in a scroll beyond the image border. If the image is already  * overscrolled, the return value is 0 for that given axis.  **/
 end_comment
 
 begin_function
@@ -1070,7 +994,72 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scroll_center_image:  * @shell:  * @horizontally:  * @vertically:  *  * Centers the image in the display shell on the desired axes.  *  **/
+comment|/**  * gimp_display_shell_scroll_center_image_xy:  * @shell:  * @image_x:  * @image_y:  *  * Center the viewport around the passed image coordinate  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_display_shell_scroll_center_image_xy (GimpDisplayShell * shell,gdouble image_x,gdouble image_y)
+name|gimp_display_shell_scroll_center_image_xy
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|gdouble
+name|image_x
+parameter_list|,
+name|gdouble
+name|image_y
+parameter_list|)
+block|{
+name|gint
+name|viewport_x
+decl_stmt|;
+name|gint
+name|viewport_y
+decl_stmt|;
+name|gimp_display_shell_transform_xy
+argument_list|(
+name|shell
+argument_list|,
+name|image_x
+argument_list|,
+name|image_y
+argument_list|,
+operator|&
+name|viewport_x
+argument_list|,
+operator|&
+name|viewport_y
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_scroll
+argument_list|(
+name|shell
+argument_list|,
+name|viewport_x
+operator|-
+name|shell
+operator|->
+name|disp_width
+operator|/
+literal|2
+argument_list|,
+name|viewport_y
+operator|-
+name|shell
+operator|->
+name|disp_height
+operator|/
+literal|2
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_display_shell_scroll_center_image:  * @shell:  * @horizontally:  * @vertically:  *  * Centers the image in the display shell on the desired axes.  **/
 end_comment
 
 begin_function
@@ -1089,15 +1078,25 @@ name|gboolean
 name|vertically
 parameter_list|)
 block|{
-name|gint
-name|sw
-decl_stmt|,
-name|sh
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 name|gint
-name|target_offset_x
-decl_stmt|,
-name|target_offset_y
+name|center_x
+decl_stmt|;
+name|gint
+name|center_y
+decl_stmt|;
+name|gint
+name|offset_x
+init|=
+literal|0
+decl_stmt|;
+name|gint
+name|offset_y
+init|=
+literal|0
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -1131,81 +1130,108 @@ name|horizontally
 operator|)
 condition|)
 return|return;
-name|target_offset_x
+name|image
 operator|=
+name|gimp_display_get_image
+argument_list|(
 name|shell
 operator|->
-name|offset_x
+name|display
+argument_list|)
 expr_stmt|;
-name|target_offset_y
-operator|=
-name|shell
-operator|->
-name|offset_y
-expr_stmt|;
-name|gimp_display_shell_scale_get_image_size
+name|gimp_display_shell_transform_xy
 argument_list|(
 name|shell
 argument_list|,
-operator|&
-name|sw
+name|gimp_image_get_width
+argument_list|(
+name|image
+argument_list|)
+operator|/
+literal|2
+argument_list|,
+name|gimp_image_get_height
+argument_list|(
+name|image
+argument_list|)
+operator|/
+literal|2
 argument_list|,
 operator|&
-name|sh
+name|center_x
+argument_list|,
+operator|&
+name|center_y
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|horizontally
 condition|)
-block|{
-name|target_offset_x
+name|offset_x
 operator|=
-operator|(
-name|sw
+name|center_x
 operator|-
 name|shell
 operator|->
 name|disp_width
-operator|)
 operator|/
 literal|2
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|vertically
 condition|)
-block|{
-name|target_offset_y
+name|offset_y
 operator|=
-operator|(
-name|sh
+name|center_y
 operator|-
 name|shell
 operator|->
 name|disp_height
-operator|)
 operator|/
 literal|2
 expr_stmt|;
-block|}
-name|gimp_display_shell_scroll_set_offset
+name|gimp_display_shell_scroll
 argument_list|(
 name|shell
 argument_list|,
-name|target_offset_x
+name|offset_x
 argument_list|,
-name|target_offset_y
+name|offset_y
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
+begin_typedef
+typedef|typedef
+struct|struct
+DECL|struct|__anon29c2d3f20108
+block|{
+DECL|member|shell
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
+DECL|member|vertically
+name|gboolean
+name|vertically
+decl_stmt|;
+DECL|member|horizontally
+name|gboolean
+name|horizontally
+decl_stmt|;
+DECL|typedef|CenterImageData
+block|}
+name|CenterImageData
+typedef|;
+end_typedef
+
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_scroll_center_image_callback (GtkWidget * canvas,GtkAllocation * allocation,SizeAllocateCallbackData * data)
+DECL|function|gimp_display_shell_scroll_center_image_callback (GtkWidget * canvas,GtkAllocation * allocation,CenterImageData * data)
 name|gimp_display_shell_scroll_center_image_callback
 parameter_list|(
 name|GtkWidget
@@ -1216,11 +1242,20 @@ name|GtkAllocation
 modifier|*
 name|allocation
 parameter_list|,
-name|SizeAllocateCallbackData
+name|CenterImageData
 modifier|*
 name|data
 parameter_list|)
 block|{
+name|g_signal_handlers_disconnect_by_func
+argument_list|(
+name|canvas
+argument_list|,
+name|gimp_display_shell_scroll_center_image_callback
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_scroll_center_image
 argument_list|(
 name|data
@@ -1236,18 +1271,9 @@ operator|->
 name|vertically
 argument_list|)
 expr_stmt|;
-name|g_signal_handlers_disconnect_by_func
-argument_list|(
-name|canvas
-argument_list|,
-name|gimp_display_shell_scroll_center_image_callback
-argument_list|,
-name|data
-argument_list|)
-expr_stmt|;
 name|g_slice_free
 argument_list|(
-name|SizeAllocateCallbackData
+name|CenterImageData
 argument_list|,
 name|data
 argument_list|)
@@ -1256,13 +1282,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scroll_center_image_on_next_size_allocate:  * @shell:  *  * Centers the image in the display as soon as the canvas has got its  * new size.  *  * Only call this if you are sure the canvas size will change.  * (Otherwise the signal connection and centering will lurk until the  * canvas size is changed e.g. by toggling the rulers.)  *  **/
+comment|/**  * gimp_display_shell_scroll_center_image_on_size_allocate:  * @shell:  *  * Centers the image in the display as soon as the canvas has got its  * new size.  *  * Only call this if you are sure the canvas size will change.  * (Otherwise the signal connection and centering will lurk until the  * canvas size is changed e.g. by toggling the rulers.)  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_scroll_center_image_on_next_size_allocate (GimpDisplayShell * shell,gboolean horizontally,gboolean vertically)
-name|gimp_display_shell_scroll_center_image_on_next_size_allocate
+DECL|function|gimp_display_shell_scroll_center_image_on_size_allocate (GimpDisplayShell * shell,gboolean horizontally,gboolean vertically)
+name|gimp_display_shell_scroll_center_image_on_size_allocate
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
@@ -1275,7 +1301,7 @@ name|gboolean
 name|vertically
 parameter_list|)
 block|{
-name|SizeAllocateCallbackData
+name|CenterImageData
 modifier|*
 name|data
 decl_stmt|;
@@ -1291,14 +1317,9 @@ name|data
 operator|=
 name|g_slice_new
 argument_list|(
-name|SizeAllocateCallbackData
+name|CenterImageData
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|data
-condition|)
-block|{
 name|data
 operator|->
 name|shell
@@ -1334,19 +1355,17 @@ name|data
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scroll_get_scaled_viewport:  * @shell:  * @x:  * @y:  * @w:  * @h:  *  * Gets the viewport in screen coordinates, with origin at (0, 0) in  * the image  *  **/
+comment|/**  * gimp_display_shell_scroll_get_scaled_viewport:  * @shell:  * @x:  * @y:  * @w:  * @h:  *  * Gets the viewport in screen coordinates, with origin at (0, 0) in  * the image.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_scroll_get_scaled_viewport (const GimpDisplayShell * shell,gint * x,gint * y,gint * w,gint * h)
+DECL|function|gimp_display_shell_scroll_get_scaled_viewport (GimpDisplayShell * shell,gint * x,gint * y,gint * w,gint * h)
 name|gimp_display_shell_scroll_get_scaled_viewport
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -1408,15 +1427,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scroll_get_viewport:  * @shell:  * @x:  * @y:  * @w:  * @h:  *  * Gets the viewport in image coordinates  *  **/
+comment|/**  * gimp_display_shell_scroll_get_viewport:  * @shell:  * @x:  * @y:  * @w:  * @h:  *  * Gets the viewport in image coordinates.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_scroll_get_viewport (const GimpDisplayShell * shell,gdouble * x,gdouble * y,gdouble * w,gdouble * h)
+DECL|function|gimp_display_shell_scroll_get_viewport (GimpDisplayShell * shell,gdouble * x,gdouble * y,gdouble * w,gdouble * h)
 name|gimp_display_shell_scroll_get_viewport
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -1494,7 +1512,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scroll_setup_hscrollbar:  * @shell:  * @value:  *  * Setup the limits of the horizontal scrollbar  *  **/
+comment|/**  * gimp_display_shell_scroll_setup_hscrollbar:  * @shell:  * @value:  *  * Setup the limits of the horizontal scrollbar  **/
 end_comment
 
 begin_function
@@ -1664,7 +1682,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scroll_setup_vscrollbar:  * @shell:  * @value:  *  * Setup the limits of the vertical scrollbar  *  **/
+comment|/**  * gimp_display_shell_scroll_setup_vscrollbar:  * @shell:  * @value:  *  * Setup the limits of the vertical scrollbar  **/
 end_comment
 
 begin_function

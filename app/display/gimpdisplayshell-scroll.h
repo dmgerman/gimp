@@ -18,23 +18,6 @@ end_define
 
 begin_function_decl
 name|void
-name|gimp_display_shell_scroll_center_image_coordinate
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|,
-name|gdouble
-name|image_x
-parameter_list|,
-name|gdouble
-name|image_y
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_display_shell_scroll
 parameter_list|(
 name|GimpDisplayShell
@@ -63,17 +46,6 @@ name|offset_x
 parameter_list|,
 name|gint
 name|offset_y
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_display_shell_scroll_clamp_offsets
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -116,6 +88,23 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_display_shell_scroll_center_image_xy
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|gdouble
+name|image_x
+parameter_list|,
+name|gdouble
+name|image_y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_display_shell_scroll_center_image
 parameter_list|(
 name|GimpDisplayShell
@@ -133,7 +122,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_scroll_center_image_on_next_size_allocate
+name|gimp_display_shell_scroll_center_image_on_size_allocate
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
@@ -152,7 +141,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_scroll_get_scaled_viewport
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -180,7 +168,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_scroll_get_viewport
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
