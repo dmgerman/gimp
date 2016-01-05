@@ -3200,23 +3200,9 @@ argument_list|)
 decl_stmt|;
 name|gint
 name|scaled_previous_origin_x
-init|=
-name|SCALEX
-argument_list|(
-name|shell
-argument_list|,
-name|previous_origin_x
-argument_list|)
 decl_stmt|;
 name|gint
 name|scaled_previous_origin_y
-init|=
-name|SCALEY
-argument_list|(
-name|shell
-argument_list|,
-name|previous_origin_y
-argument_list|)
 decl_stmt|;
 name|gboolean
 name|horizontally
@@ -3224,6 +3210,24 @@ decl_stmt|;
 name|gboolean
 name|vertically
 decl_stmt|;
+name|scaled_previous_origin_x
+operator|=
+name|SCALEX
+argument_list|(
+name|shell
+argument_list|,
+name|previous_origin_x
+argument_list|)
+expr_stmt|;
+name|scaled_previous_origin_y
+operator|=
+name|SCALEY
+argument_list|(
+name|shell
+argument_list|,
+name|previous_origin_y
+argument_list|)
+expr_stmt|;
 name|horizontally
 operator|=
 operator|(
@@ -3302,7 +3306,7 @@ argument_list|,
 name|vertically
 argument_list|)
 expr_stmt|;
-comment|/* The above calls might not lead to a call to        * gimp_display_shell_scroll_clamp_and_update() in all cases we        * need it to be called, so simply call it explicitly here at        * the end        */
+comment|/* The above calls might not lead to a call to        * gimp_display_shell_scroll_clamp_and_update() and        * gimp_display_shell_expose_full() in all cases because when        * scaling the old and new scroll offset might be the same.        *        * We need them to be called in all cases, so simply call them        * explicitly here at the end        */
 name|gimp_display_shell_scroll_clamp_and_update
 argument_list|(
 name|shell

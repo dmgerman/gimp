@@ -133,6 +133,10 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/**  * gimp_display_shell_scroll:  * @shell:  * @x_offset:  * @y_offset:  *  * This function scrolls the image in the shell's viewport. It does  * actual scrolling of the pixels, so only the newly scrolled-in parts  * are freshly redrawn.  *  * Use it for incremental actual panning.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_display_shell_scroll (GimpDisplayShell * shell,gint x_offset,gint y_offset)
@@ -186,6 +190,12 @@ name|shell
 operator|->
 name|offset_y
 expr_stmt|;
+comment|/* freeze the active tool */
+name|gimp_display_shell_pause
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 name|shell
 operator|->
 name|offset_x
@@ -198,7 +208,7 @@ name|offset_y
 operator|+=
 name|y_offset
 expr_stmt|;
-name|gimp_display_shell_scroll_clamp_offsets
+name|gimp_display_shell_scroll_clamp_and_update
 argument_list|(
 name|shell
 argument_list|)
@@ -231,42 +241,6 @@ operator|||
 name|y_offset
 condition|)
 block|{
-comment|/*  reset the old values so that the tool can accurately redraw  */
-name|shell
-operator|->
-name|offset_x
-operator|=
-name|old_x
-expr_stmt|;
-name|shell
-operator|->
-name|offset_y
-operator|=
-name|old_y
-expr_stmt|;
-name|gimp_display_shell_pause
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
-comment|/*  set the offsets back to the new values  */
-name|shell
-operator|->
-name|offset_x
-operator|+=
-name|x_offset
-expr_stmt|;
-name|shell
-operator|->
-name|offset_y
-operator|+=
-name|y_offset
-expr_stmt|;
-name|gimp_display_shell_rotate_update_transform
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
 name|gimp_overlay_box_scroll
 argument_list|(
 name|GIMP_OVERLAY_BOX
@@ -283,30 +257,24 @@ operator|-
 name|y_offset
 argument_list|)
 expr_stmt|;
-comment|/*  Update scrollbars and rulers  */
-name|gimp_display_shell_scale_update_scrollbars
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_scale_update_rulers
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_resume
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
 name|gimp_display_shell_scrolled
 argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* re-enable the active tool */
+name|gimp_display_shell_resume
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_display_shell_scroll_set_offsets:  * @shell:  * @offset_x:  * @offset_y:  *  * This function scrolls the image in the shell's viewport. It redraws  * the entire canvas.  *  * Use it for setting the scroll offset on freshly scaled images or  * when the window is resized. For panning, use  * gimp_display_shell_scroll().  **/
+end_comment
 
 begin_function
 name|void
@@ -375,12 +343,12 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_scrolled
+name|gimp_display_shell_expose_full
 argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_expose_full
+name|gimp_display_shell_scrolled
 argument_list|(
 name|shell
 argument_list|)
@@ -1207,7 +1175,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c2d3f20108
+DECL|struct|__anon2c6601b40108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
