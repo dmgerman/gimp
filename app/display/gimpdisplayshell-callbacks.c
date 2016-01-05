@@ -120,6 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-scrollbars.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-selection.h"
 end_include
 
@@ -1376,7 +1382,7 @@ name|hsbdata
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_scroll_setup_hscrollbar
+name|gimp_display_shell_scrollbars_setup_horizontal
 argument_list|(
 name|shell
 argument_list|,
@@ -1464,7 +1470,7 @@ name|vsbdata
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_scroll_setup_vscrollbar
+name|gimp_display_shell_scrollbars_setup_vertical
 argument_list|(
 name|shell
 argument_list|,

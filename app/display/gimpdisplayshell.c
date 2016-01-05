@@ -282,6 +282,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-rulers.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-scale.h"
 end_include
 
@@ -359,7 +365,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297dc5600103
+DECL|enum|__anon29ec31ff0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -393,7 +399,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297dc5600203
+DECL|enum|__anon29ec31ff0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -6691,7 +6697,7 @@ name|unit
 operator|=
 name|unit
 expr_stmt|;
-name|gimp_display_shell_scale_update_rulers
+name|gimp_display_shell_rulers_update
 argument_list|(
 name|shell
 argument_list|)

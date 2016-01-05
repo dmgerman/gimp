@@ -222,6 +222,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-rulers.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-scale.h"
 end_include
 
@@ -2460,7 +2466,7 @@ operator|!=
 name|GIMP_UNIT_PIXEL
 condition|)
 block|{
-name|gimp_display_shell_scale_update_rulers
+name|gimp_display_shell_rulers_update
 argument_list|(
 name|shell
 argument_list|)
