@@ -121,18 +121,6 @@ name|MINIMUM_STEP_AMOUNT
 value|1.0
 end_define
 
-begin_function_decl
-specifier|static
-name|void
-name|gimp_display_shell_scroll_clamp_offsets
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/**  * gimp_display_shell_scroll:  * @shell:  * @x_offset:  * @y_offset:  *  * This function scrolls the image in the shell's viewport. It does  * actual scrolling of the pixels, so only the newly scrolled-in parts  * are freshly redrawn.  *  * Use it for incremental actual panning.  **/
 end_comment
@@ -362,11 +350,14 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_display_shell_scroll_clamp_and_update:  * @shell:  *  * Helper function for calling two functions that are commonly called  * in pairs.  **/
+end_comment
+
 begin_function
-specifier|static
 name|void
-DECL|function|gimp_display_shell_scroll_clamp_offsets (GimpDisplayShell * shell)
-name|gimp_display_shell_scroll_clamp_offsets
+DECL|function|gimp_display_shell_scroll_clamp_and_update (GimpDisplayShell * shell)
+name|gimp_display_shell_scroll_clamp_and_update
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
@@ -708,28 +699,6 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_display_shell_scroll_clamp_and_update:  * @shell:  *  * Helper function for calling two functions that are commonly called  * in pairs.  **/
-end_comment
-
-begin_function
-name|void
-DECL|function|gimp_display_shell_scroll_clamp_and_update (GimpDisplayShell * shell)
-name|gimp_display_shell_scroll_clamp_and_update
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|)
-block|{
-name|gimp_display_shell_scroll_clamp_offsets
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
 name|gimp_display_shell_scale_update_scrollbars
 argument_list|(
 name|shell
@@ -1175,7 +1144,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6601b40108
+DECL|struct|__anon279ca8590108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
