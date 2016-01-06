@@ -132,6 +132,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GSList
+modifier|*
+name|gimp_plug_in_manager_get_file_procedures
+parameter_list|(
+name|GimpPlugInManager
+modifier|*
+name|manager
+parameter_list|,
+name|GimpFileProcedureGroup
+name|group
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpPlugInProcedure
 modifier|*
 name|gimp_plug_in_manager_file_procedure_find
