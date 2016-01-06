@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ebb9ef0103
+DECL|enum|__anon295acf8e0103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -1915,7 +1915,7 @@ operator|->
 name|handles_uri
 condition|)
 block|{
-comment|/*  for file procedures that handle URIs, make sure that the        *  passed string actually is an URI, not just a file path        */
+comment|/*  for file procedures that handle URIs, make sure that the        *  passed string actually is an URI, not just a file path        *  (bug 758685)        */
 name|GimpProcedure
 modifier|*
 name|procedure
