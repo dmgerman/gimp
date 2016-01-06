@@ -2515,8 +2515,6 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-name|gimp
-argument_list|,
 name|image
 argument_list|,
 name|save_a_copy
@@ -2894,8 +2892,6 @@ name|GIMP_EXPORT_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|,
 name|image
 argument_list|)

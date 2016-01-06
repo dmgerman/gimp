@@ -181,10 +181,6 @@ name|GimpSaveDialog
 modifier|*
 name|dialog
 parameter_list|,
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
 name|GimpImage
 modifier|*
 name|image

@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gegl.h>
 end_include
 
@@ -73,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"file/gimp-file.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pdb/gimppdb.h"
 end_include
 
 begin_include
@@ -587,16 +575,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_save_dialog_set_image (GimpSaveDialog * dialog,Gimp * gimp,GimpImage * image,gboolean save_a_copy,gboolean close_after_saving,GimpObject * display)
+DECL|function|gimp_save_dialog_set_image (GimpSaveDialog * dialog,GimpImage * image,gboolean save_a_copy,gboolean close_after_saving,GimpObject * display)
 name|gimp_save_dialog_set_image
 parameter_list|(
 name|GimpSaveDialog
 modifier|*
 name|dialog
-parameter_list|,
-name|Gimp
-modifier|*
-name|gimp
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -772,6 +756,8 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
+name|file_dialog
+operator|->
 name|gimp
 argument_list|)
 argument_list|,
@@ -1044,7 +1030,7 @@ operator|->
 name|compat_info
 argument_list|)
 expr_stmt|;
-comment|/* We set the compatibility mode by default either if the image was   * previously saved with the compatibility mode, or if it has never been   * saved and the last GimpSaveDialogState had compatibility mode ON. */
+comment|/* We set the compatibility mode by default either if the image was    * previously saved with the compatibility mode, or if it has never    * been saved and the last GimpSaveDialogState had compatibility    * mode ON.    */
 name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON

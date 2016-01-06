@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gegl.h>
 end_include
 
@@ -67,12 +61,6 @@ begin_include
 include|#
 directive|include
 file|"file/gimp-file.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pdb/gimppdb.h"
 end_include
 
 begin_include
@@ -271,16 +259,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_export_dialog_set_image (GimpExportDialog * dialog,Gimp * gimp,GimpImage * image)
+DECL|function|gimp_export_dialog_set_image (GimpExportDialog * dialog,GimpImage * image)
 name|gimp_export_dialog_set_image
 parameter_list|(
 name|GimpExportDialog
 modifier|*
 name|dialog
-parameter_list|,
-name|Gimp
-modifier|*
-name|gimp
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -349,7 +333,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*    * Priority of default paths for Export:    *    *   1. Last Export path    *   2. Path of import source    *   3. Path of XCF source    *   4. Last path of any save to XCF    *   5. Last Export path of any document    *   6. The default path (usually the OS 'Documents' path)    */
+comment|/* Priority of default paths for Export:    *    *   1. Last Export path    *   2. Path of import source    *   3. Path of XCF source    *   4. Last path of any save to XCF    *   5. Last Export path of any document    *   6. The default path (usually the OS 'Documents' path)    */
 name|dir_file
 operator|=
 name|gimp_image_get_exported_file
@@ -409,6 +393,8 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
+name|file_dialog
+operator|->
 name|gimp
 argument_list|)
 argument_list|,
@@ -426,6 +412,8 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
+name|file_dialog
+operator|->
 name|gimp
 argument_list|)
 argument_list|,
@@ -519,6 +507,8 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
+name|file_dialog
+operator|->
 name|gimp
 argument_list|)
 argument_list|,
