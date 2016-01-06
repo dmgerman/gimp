@@ -137,7 +137,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon278a58c00103
+DECL|enum|__anon29f1e8350103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -849,7 +849,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_PARAM_READABLE
+name|GIMP_PARAM_WRITABLE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
@@ -871,7 +871,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_PARAM_READABLE
+name|GIMP_PARAM_WRITABLE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
@@ -893,7 +893,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_PARAM_READABLE
+name|GIMP_PARAM_WRITABLE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
@@ -915,7 +915,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_PARAM_READABLE
+name|GIMP_PARAM_WRITABLE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
@@ -935,7 +935,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_PARAM_READABLE
+name|GIMP_PARAM_WRITABLE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
@@ -955,7 +955,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_PARAM_READABLE
+name|GIMP_PARAM_WRITABLE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
