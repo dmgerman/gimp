@@ -2253,6 +2253,7 @@ if|if
 condition|(
 name|file
 condition|)
+block|{
 name|gtk_file_chooser_set_file
 argument_list|(
 name|GTK_FILE_CHOOSER
@@ -2265,6 +2266,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -2272,6 +2274,7 @@ name|gimp
 operator|->
 name|default_folder
 condition|)
+block|{
 name|gtk_file_chooser_set_current_folder_file
 argument_list|(
 name|GTK_FILE_CHOOSER
@@ -2284,6 +2287,17 @@ operator|->
 name|default_folder
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+name|gtk_window_set_title
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|title
 argument_list|)
 expr_stmt|;
 name|gimp_open_dialog_set_image
