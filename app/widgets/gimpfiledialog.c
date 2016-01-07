@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gegl.h>
 end_include
 
@@ -73,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"config/gimpguiconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pdb/gimppdb.h"
 end_include
 
 begin_include
@@ -143,7 +131,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2adc59ec0103
+DECL|enum|__anon2accaf2d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
