@@ -208,6 +208,10 @@ name|gchar
 modifier|*
 name|icon_theme
 decl_stmt|;
+DECL|member|icon_size
+name|GimpIconSize
+name|icon_size
+decl_stmt|;
 DECL|member|use_help
 name|gboolean
 name|use_help

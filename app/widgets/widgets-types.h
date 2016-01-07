@@ -1128,6 +1128,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpIconSizeScale
+typedef|typedef
+name|struct
+name|_GimpIconSizeScale
+name|GimpIconSizeScale
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpImageCommentEditor
 typedef|typedef
 name|struct

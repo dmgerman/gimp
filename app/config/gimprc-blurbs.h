@@ -1112,6 +1112,15 @@ value|"The name of the icon theme to use."
 end_define
 
 begin_define
+DECL|macro|ICON_SIZE_BLURB
+define|#
+directive|define
+name|ICON_SIZE_BLURB
+define|\
+value|"The size of the icons to use."
+end_define
+
+begin_define
 DECL|macro|ICON_THEME_PATH_BLURB
 define|#
 directive|define
