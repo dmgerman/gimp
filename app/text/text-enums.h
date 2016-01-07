@@ -37,8 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip>*/
-DECL|enum|__anon28f750a50103
+DECL|enum|__anon28be8ff10103
 block|{
 DECL|enumerator|GIMP_TEXT_BOX_DYNAMIC
 name|GIMP_TEXT_BOX_DYNAMIC
@@ -74,8 +73,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip>*/
-DECL|enum|__anon28f750a50203
+DECL|enum|__anon28be8ff10203
 block|{
 DECL|enumerator|GIMP_TEXT_OUTLINE_NONE
 name|GIMP_TEXT_OUTLINE_NONE

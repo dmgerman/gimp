@@ -19,8 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon298ee44c0103
+DECL|enum|__anon296ceb190103
 block|{
 DECL|enumerator|GIMP_ANCHOR_ANCHOR
 name|GIMP_ANCHOR_ANCHOR
@@ -36,8 +35,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon298ee44c0203
+DECL|enum|__anon296ceb190203
 block|{
 DECL|enumerator|GIMP_ANCHOR_FEATURE_NONE
 name|GIMP_ANCHOR_FEATURE_NONE
@@ -59,8 +57,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon298ee44c0303
+DECL|enum|__anon296ceb190303
 block|{
 DECL|enumerator|EXTEND_SIMPLE
 name|EXTEND_SIMPLE

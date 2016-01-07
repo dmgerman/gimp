@@ -37,8 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip>*/
-DECL|enum|__anon2c3e6eda0103
+DECL|enum|__anon2bb558e30103
 block|{
 DECL|enumerator|GIMP_PLUG_IN_RGB_IMAGE
 name|GIMP_PLUG_IN_RGB_IMAGE
@@ -108,8 +107,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip>*/
-DECL|enum|__anon2c3e6eda0203
+DECL|enum|__anon2bb558e30203
 block|{
 DECL|enumerator|GIMP_PLUG_IN_CALL_NONE
 name|GIMP_PLUG_IN_CALL_NONE
@@ -149,8 +147,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip>*/
-DECL|enum|__anon2c3e6eda0303
+DECL|enum|__anon2bb558e30303
 block|{
 DECL|enumerator|GIMP_FILE_PROCEDURE_GROUP_NONE
 name|GIMP_FILE_PROCEDURE_GROUP_NONE
