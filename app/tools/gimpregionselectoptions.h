@@ -120,6 +120,10 @@ DECL|member|sample_merged
 name|gboolean
 name|sample_merged
 decl_stmt|;
+DECL|member|diagonal_neighbors
+name|gboolean
+name|diagonal_neighbors
+decl_stmt|;
 DECL|member|threshold
 name|gdouble
 name|threshold
