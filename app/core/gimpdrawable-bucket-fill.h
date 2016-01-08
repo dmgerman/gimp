@@ -49,6 +49,9 @@ parameter_list|,
 name|gboolean
 name|sample_merged
 parameter_list|,
+name|gboolean
+name|diagonal_neighbors
+parameter_list|,
 name|gdouble
 name|x
 parameter_list|,

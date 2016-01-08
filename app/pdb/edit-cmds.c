@@ -2709,6 +2709,9 @@ literal|255.0
 argument_list|,
 name|sample_merged
 argument_list|,
+name|FALSE
+comment|/* no diagonal neighbors */
+argument_list|,
 name|x
 argument_list|,
 name|y
@@ -3081,6 +3084,9 @@ operator|/
 literal|255.0
 argument_list|,
 name|sample_merged
+argument_list|,
+name|FALSE
+comment|/* no diagonal neighbors */
 argument_list|,
 name|x
 argument_list|,

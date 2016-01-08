@@ -171,6 +171,9 @@ parameter_list|,
 name|gboolean
 name|sample_merged
 parameter_list|,
+name|gboolean
+name|diagonal_neighbors
+parameter_list|,
 name|gdouble
 name|x
 parameter_list|,
@@ -195,7 +198,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_bucket_fill (GimpDrawable * drawable,GimpContext * context,GimpFillType fill_type,gint paint_mode,gdouble opacity,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y,GError ** error)
+DECL|function|gimp_drawable_bucket_fill (GimpDrawable * drawable,GimpContext * context,GimpFillType fill_type,gint paint_mode,gdouble opacity,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gboolean diagonal_neighbors,gdouble x,gdouble y,GError ** error)
 name|gimp_drawable_bucket_fill
 parameter_list|(
 name|GimpDrawable
@@ -226,6 +229,9 @@ name|threshold
 parameter_list|,
 name|gboolean
 name|sample_merged
+parameter_list|,
+name|gboolean
+name|diagonal_neighbors
 parameter_list|,
 name|gdouble
 name|x
@@ -342,6 +348,8 @@ name|threshold
 argument_list|,
 name|sample_merged
 argument_list|,
+name|diagonal_neighbors
+argument_list|,
 name|x
 argument_list|,
 name|y
@@ -365,7 +373,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_bucket_fill_internal (GimpDrawable * drawable,GimpFillType fill_type,gint paint_mode,gdouble opacity,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y,const GimpRGB * color,GimpPattern * pattern)
+DECL|function|gimp_drawable_bucket_fill_internal (GimpDrawable * drawable,GimpFillType fill_type,gint paint_mode,gdouble opacity,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gboolean diagonal_neighbors,gdouble x,gdouble y,const GimpRGB * color,GimpPattern * pattern)
 name|gimp_drawable_bucket_fill_internal
 parameter_list|(
 name|GimpDrawable
@@ -392,6 +400,9 @@ name|threshold
 parameter_list|,
 name|gboolean
 name|sample_merged
+parameter_list|,
+name|gboolean
+name|diagonal_neighbors
 parameter_list|,
 name|gdouble
 name|x
@@ -577,8 +588,7 @@ name|fill_transparent
 argument_list|,
 name|fill_criterion
 argument_list|,
-name|FALSE
-comment|/* no diagonal neighbors */
+name|diagonal_neighbors
 argument_list|,
 operator|(
 name|gint

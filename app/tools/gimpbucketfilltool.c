@@ -836,6 +836,10 @@ name|options
 operator|->
 name|sample_merged
 argument_list|,
+name|options
+operator|->
+name|diagonal_neighbors
+argument_list|,
 name|x
 argument_list|,
 name|y
