@@ -245,6 +245,9 @@ parameter_list|,
 name|gfloat
 name|threshold
 parameter_list|,
+name|gboolean
+name|diagonal_neighbors
+parameter_list|,
 name|gint
 name|x
 parameter_list|,
@@ -266,7 +269,7 @@ end_comment
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_pickable_contiguous_region_by_seed (GimpPickable * pickable,gboolean antialias,gfloat threshold,gboolean select_transparent,GimpSelectCriterion select_criterion,gint x,gint y)
+DECL|function|gimp_pickable_contiguous_region_by_seed (GimpPickable * pickable,gboolean antialias,gfloat threshold,gboolean select_transparent,GimpSelectCriterion select_criterion,gboolean diagonal_neighbors,gint x,gint y)
 name|gimp_pickable_contiguous_region_by_seed
 parameter_list|(
 name|GimpPickable
@@ -284,6 +287,9 @@ name|select_transparent
 parameter_list|,
 name|GimpSelectCriterion
 name|select_criterion
+parameter_list|,
+name|gboolean
+name|diagonal_neighbors
 parameter_list|,
 name|gint
 name|x
@@ -493,6 +499,8 @@ argument_list|,
 name|antialias
 argument_list|,
 name|threshold
+argument_list|,
+name|diagonal_neighbors
 argument_list|,
 name|x
 argument_list|,
@@ -1804,7 +1812,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|find_contiguous_region (GeglBuffer * src_buffer,GeglBuffer * mask_buffer,const Babl * format,gint n_components,gboolean has_alpha,gboolean select_transparent,GimpSelectCriterion select_criterion,gboolean antialias,gfloat threshold,gint x,gint y,const gfloat * col)
+DECL|function|find_contiguous_region (GeglBuffer * src_buffer,GeglBuffer * mask_buffer,const Babl * format,gint n_components,gboolean has_alpha,gboolean select_transparent,GimpSelectCriterion select_criterion,gboolean antialias,gfloat threshold,gboolean diagonal_neighbors,gint x,gint y,const gfloat * col)
 name|find_contiguous_region
 parameter_list|(
 name|GeglBuffer
@@ -1837,6 +1845,9 @@ name|antialias
 parameter_list|,
 name|gfloat
 name|threshold
+parameter_list|,
+name|gboolean
+name|diagonal_neighbors
 parameter_list|,
 name|gint
 name|x
@@ -2054,6 +2065,33 @@ name|row
 argument_list|)
 condition|)
 continue|continue;
+if|if
+condition|(
+name|diagonal_neighbors
+condition|)
+block|{
+if|if
+condition|(
+name|new_start
+operator|>=
+literal|0
+condition|)
+name|new_start
+operator|--
+expr_stmt|;
+if|if
+condition|(
+name|new_end
+operator|<
+name|gegl_buffer_get_width
+argument_list|(
+name|src_buffer
+argument_list|)
+condition|)
+name|new_end
+operator|++
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|y

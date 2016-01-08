@@ -423,6 +423,9 @@ name|options
 operator|->
 name|select_criterion
 argument_list|,
+name|FALSE
+comment|/* no diagonal neighbors */
+argument_list|,
 name|x
 argument_list|,
 name|y

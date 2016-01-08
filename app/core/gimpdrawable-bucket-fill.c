@@ -577,6 +577,9 @@ name|fill_transparent
 argument_list|,
 name|fill_criterion
 argument_list|,
+name|FALSE
+comment|/* no diagonal neighbors */
+argument_list|,
 operator|(
 name|gint
 operator|)

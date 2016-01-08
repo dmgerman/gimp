@@ -37,6 +37,9 @@ parameter_list|,
 name|GimpSelectCriterion
 name|select_criterion
 parameter_list|,
+name|gboolean
+name|diagonal_neighbors
+parameter_list|,
 name|gint
 name|x
 parameter_list|,
