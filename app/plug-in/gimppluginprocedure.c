@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295acf8e0103
+DECL|enum|__anon28915ce10103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -3452,8 +3452,6 @@ argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
-name|proc
-operator|->
 name|icon_type
 condition|)
 block|{
@@ -3721,7 +3719,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"%s\n"
+literal|"gimp_plug_in_procedure_take_icon: %s\n"
 argument_list|,
 name|error
 operator|->
