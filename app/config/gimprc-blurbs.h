@@ -769,7 +769,7 @@ define|#
 directive|define
 name|RESIZE_WINDOWS_ON_RESIZE_BLURB
 define|\
-value|_("When enabled, the image window will automatically resize itself " \   "whenever the physical image size changes.")
+value|_("When enabled, the image window will automatically resize itself " \   "whenever the physical image size changes. This setting only takes " \   "effect in multi-window mode.")
 end_define
 
 begin_define
@@ -778,7 +778,7 @@ define|#
 directive|define
 name|RESIZE_WINDOWS_ON_ZOOM_BLURB
 define|\
-value|_("When enabled, the image window will automatically resize itself " \   "when zooming into and out of images.")
+value|_("When enabled, the image window will automatically resize itself " \   "when zooming into and out of images. This setting only takes " \   "effect in multi-window mode.")
 end_define
 
 begin_define

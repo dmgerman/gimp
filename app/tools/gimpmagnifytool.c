@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpguiconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -722,6 +728,9 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
+name|gboolean
+name|resize_window
+decl_stmt|;
 name|x
 operator|=
 operator|(
@@ -803,6 +812,25 @@ else|:
 name|magnify
 operator|->
 name|h
+expr_stmt|;
+comment|/* Resize windows only in multi-window mode */
+name|resize_window
+operator|=
+operator|(
+name|options
+operator|->
+name|auto_resize
+operator|&&
+operator|!
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|display
+operator|->
+name|config
+argument_list|)
+operator|->
+name|single_window_mode
+operator|)
 expr_stmt|;
 name|gimp_display_shell_scale_to_rectangle
 argument_list|(
@@ -820,9 +848,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|options
-operator|->
-name|auto_resize
+name|resize_window
 argument_list|)
 expr_stmt|;
 block|}
