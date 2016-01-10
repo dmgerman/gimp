@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fd733c0103
+DECL|enum|__anon27b9013e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1526,6 +1526,28 @@ name|options
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_config_copy
+argument_list|(
+name|GIMP_CONFIG
+argument_list|(
+name|GIMP_PDB_CONTEXT
+argument_list|(
+name|parent
+argument_list|)
+operator|->
+name|stroke_options
+argument_list|)
+argument_list|,
+name|GIMP_CONFIG
+argument_list|(
+name|context
+operator|->
+name|stroke_options
+argument_list|)
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|GIMP_CONTEXT
