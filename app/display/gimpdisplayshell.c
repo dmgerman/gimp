@@ -365,7 +365,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2933c9d30103
+DECL|enum|__anon291ac0760103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -399,7 +399,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2933c9d30203
+DECL|enum|__anon291ac0760203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3257,12 +3257,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* make sure the information is up-to-date */
-name|gimp_display_shell_scale_update
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -6242,11 +6236,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_scale_update
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
 name|gimp_display_shell_sync_config
 argument_list|(
 name|shell
@@ -7483,12 +7472,6 @@ modifier|*
 name|context
 decl_stmt|;
 name|gimp_display_shell_title_update
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
-comment|/* make sure the information is up-to-date */
-name|gimp_display_shell_scale_update
 argument_list|(
 name|shell
 argument_list|)
