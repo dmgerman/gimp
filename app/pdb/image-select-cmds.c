@@ -518,8 +518,9 @@ name|pdb_context
 operator|->
 name|sample_criterion
 argument_list|,
-name|FALSE
-comment|/* no diagonal neighnors */
+name|pdb_context
+operator|->
+name|diagonal_neighbors
 argument_list|,
 name|operation
 argument_list|,
@@ -1756,7 +1757,7 @@ argument_list|,
 literal|"Create a selection by selecting all pixels around specified coordinates with the same (or similar) color to that at the coordinates."
 argument_list|,
 literal|"This tool creates a contiguous selection over the specified image. A contiguous color selection is determined by a seed fill under the constraints of the current context settings. Essentially, the color at the specified coordinates (in the drawable) is measured and the selection expands outwards from that point to any adjacent pixels which are not significantly different (as determined by the threshold and criterion context settings). This process continues until no more expansion is possible. If antialiasing is turned on, the final selection mask will contain intermediate values based on close misses to the threshold bar at pixels along the seed fill boundary.\n"
-literal|"This procedure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius', 'gimp-context-set-sample-merged', 'gimp-context-set-sample-criterion', 'gimp-context-set-sample-threshold', 'gimp-context-set-sample-transparent'.\n"
+literal|"This procedure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius', 'gimp-context-set-sample-merged', 'gimp-context-set-sample-criterion', 'gimp-context-set-sample-threshold', 'gimp-context-set-sample-transparent', 'gimp-context-set-diagonal-neighbors'.\n"
 literal|"In the case of a merged sampling, the supplied drawable is ignored. If the sample is merged, the specified coordinates are relative to the image origin; otherwise, they are relative to the drawable's origin."
 argument_list|,
 literal|"David Gowers"
