@@ -84,22 +84,6 @@ directive|endif
 end_endif
 
 begin_define
-DECL|macro|DEFAULT_THEME
-define|#
-directive|define
-name|DEFAULT_THEME
-value|"Default"
-end_define
-
-begin_define
-DECL|macro|DEFAULT_ICON_THEME
-define|#
-directive|define
-name|DEFAULT_ICON_THEME
-value|"Default"
-end_define
-
-begin_define
 DECL|macro|DEFAULT_USER_MANUAL_ONLINE_URI
 define|#
 directive|define
@@ -110,7 +94,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a08bce60103
+DECL|enum|__anon2a40a02d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -728,7 +712,7 @@ literal|"theme"
 argument_list|,
 name|THEME_BLURB
 argument_list|,
-name|DEFAULT_THEME
+name|GIMP_CONFIG_DEFAULT_THEME
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -774,7 +758,7 @@ literal|"icon-theme"
 argument_list|,
 name|ICON_THEME_BLURB
 argument_list|,
-name|DEFAULT_ICON_THEME
+name|GIMP_CONFIG_DEFAULT_ICON_THEME
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)

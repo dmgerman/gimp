@@ -23,6 +23,22 @@ file|"config/gimpdisplayconfig.h"
 end_include
 
 begin_define
+DECL|macro|GIMP_CONFIG_DEFAULT_THEME
+define|#
+directive|define
+name|GIMP_CONFIG_DEFAULT_THEME
+value|"Default"
+end_define
+
+begin_define
+DECL|macro|GIMP_CONFIG_DEFAULT_ICON_THEME
+define|#
+directive|define
+name|GIMP_CONFIG_DEFAULT_ICON_THEME
+value|"Default"
+end_define
+
+begin_define
 DECL|macro|GIMP_TYPE_GUI_CONFIG
 define|#
 directive|define

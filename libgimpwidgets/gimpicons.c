@@ -59,6 +59,14 @@ name|GIMP_TOILET_PAPER
 value|"gimp-toilet-paper"
 end_define
 
+begin_define
+DECL|macro|GIMP_DEFAULT_ICON_THEME
+define|#
+directive|define
+name|GIMP_DEFAULT_ICON_THEME
+value|"Default"
+end_define
+
 begin_decl_stmt
 DECL|variable|gimp_stock_factory
 specifier|static
@@ -2879,7 +2887,7 @@ name|gimp_data_directory_file
 argument_list|(
 literal|"icons"
 argument_list|,
-literal|"Default"
+name|GIMP_DEFAULT_ICON_THEME
 argument_list|,
 name|NULL
 argument_list|)
@@ -3090,7 +3098,7 @@ argument_list|()
 argument_list|,
 literal|"icons"
 argument_list|,
-literal|"Default"
+name|GIMP_DEFAULT_ICON_THEME
 argument_list|,
 name|NULL
 argument_list|)
@@ -3426,7 +3434,7 @@ name|gimp_data_directory_file
 argument_list|(
 literal|"icons"
 argument_list|,
-literal|"Default"
+name|GIMP_DEFAULT_ICON_THEME
 argument_list|,
 name|NULL
 argument_list|)

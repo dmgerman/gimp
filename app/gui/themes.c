@@ -642,7 +642,7 @@ name|theme_name
 condition|)
 name|theme_name
 operator|=
-literal|"Default"
+name|GIMP_CONFIG_DEFAULT_THEME
 expr_stmt|;
 return|return
 name|g_hash_table_lookup

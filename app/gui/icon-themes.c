@@ -688,7 +688,7 @@ name|icon_theme_name
 condition|)
 name|icon_theme_name
 operator|=
-literal|"Default"
+name|GIMP_CONFIG_DEFAULT_ICON_THEME
 expr_stmt|;
 return|return
 name|g_hash_table_lookup
@@ -732,7 +732,7 @@ name|icon_theme_name
 condition|)
 name|icon_theme_name
 operator|=
-literal|"Default"
+name|GIMP_CONFIG_DEFAULT_ICON_THEME
 expr_stmt|;
 if|if
 condition|(
