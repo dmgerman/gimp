@@ -1280,6 +1280,9 @@ comment|/* don't select transparent */
 argument_list|,
 name|GIMP_SELECT_CRITERION_COMPOSITE
 argument_list|,
+name|FALSE
+comment|/* no diagonal neighbors */
+argument_list|,
 name|operation
 argument_list|,
 name|antialias
@@ -1571,6 +1574,9 @@ argument_list|,
 name|select_transparent
 argument_list|,
 name|select_criterion
+argument_list|,
+name|FALSE
+comment|/* no diagonal neighbors */
 argument_list|,
 name|operation
 argument_list|,

@@ -518,6 +518,9 @@ name|pdb_context
 operator|->
 name|sample_criterion
 argument_list|,
+name|FALSE
+comment|/* no diagonal neighnors */
+argument_list|,
 name|operation
 argument_list|,
 name|pdb_context

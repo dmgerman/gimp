@@ -1933,7 +1933,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_select_fuzzy (GimpChannel * channel,GimpDrawable * drawable,gboolean sample_merged,gint x,gint y,gfloat threshold,gboolean select_transparent,GimpSelectCriterion select_criterion,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_channel_select_fuzzy (GimpChannel * channel,GimpDrawable * drawable,gboolean sample_merged,gint x,gint y,gfloat threshold,gboolean select_transparent,GimpSelectCriterion select_criterion,gboolean diagonal_neighbors,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
 name|gimp_channel_select_fuzzy
 parameter_list|(
 name|GimpChannel
@@ -1961,6 +1961,9 @@ name|select_transparent
 parameter_list|,
 name|GimpSelectCriterion
 name|select_criterion
+parameter_list|,
+name|gboolean
+name|diagonal_neighbors
 parameter_list|,
 name|GimpChannelOps
 name|op
@@ -2062,8 +2065,7 @@ name|select_transparent
 argument_list|,
 name|select_criterion
 argument_list|,
-name|FALSE
-comment|/* no diagonal neighbors */
+name|diagonal_neighbors
 argument_list|,
 name|x
 argument_list|,
