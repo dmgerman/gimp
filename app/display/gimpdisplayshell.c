@@ -365,7 +365,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291ac0760103
+DECL|enum|__anon2bf6faeb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -399,7 +399,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291ac0760203
+DECL|enum|__anon2bf6faeb0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -6236,6 +6236,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/* center the image so subsequent stuff only moves it a little in    * the center    */
+name|gimp_display_shell_scroll_center_image
+argument_list|(
+name|shell
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_sync_config
 argument_list|(
 name|shell
@@ -6247,9 +6257,19 @@ operator|->
 name|config
 argument_list|)
 expr_stmt|;
+name|gimp_image_window_suspend_keep_pos
+argument_list|(
+name|window
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_appearance_update
 argument_list|(
 name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_image_window_resume_keep_pos
+argument_list|(
+name|window
 argument_list|)
 expr_stmt|;
 name|gimp_image_window_update_tabs
