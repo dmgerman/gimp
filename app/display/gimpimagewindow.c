@@ -317,7 +317,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4eecd40103
+DECL|enum|__anon29e0e9a00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -449,7 +449,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4eecd40208
+DECL|struct|__anon29e0e9a00208
 block|{
 DECL|member|canvas_x
 name|gint
@@ -3000,9 +3000,19 @@ else|:
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_image_window_suspend_keep_pos
+argument_list|(
+name|window
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_appearance_update
 argument_list|(
 name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_image_window_resume_keep_pos
+argument_list|(
+name|window
 argument_list|)
 expr_stmt|;
 block|}
