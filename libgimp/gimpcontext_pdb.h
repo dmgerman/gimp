@@ -838,6 +838,25 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_context_get_diagonal_neighbors
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_context_set_diagonal_neighbors
+parameter_list|(
+name|gboolean
+name|diagonal_neighbors
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpInterpolationType
 name|gimp_context_get_interpolation
 parameter_list|(

@@ -144,6 +144,10 @@ DECL|member|sample_transparent
 name|gboolean
 name|sample_transparent
 decl_stmt|;
+DECL|member|diagonal_neighbors
+name|gboolean
+name|diagonal_neighbors
+decl_stmt|;
 DECL|member|interpolation
 name|GimpInterpolationType
 name|interpolation
