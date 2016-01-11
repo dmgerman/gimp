@@ -64,7 +64,7 @@ DECL|macro|GIMP_DEFAULT_ICON_THEME
 define|#
 directive|define
 name|GIMP_DEFAULT_ICON_THEME
-value|"Default"
+value|"Color"
 end_define
 
 begin_decl_stmt
