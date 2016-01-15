@@ -10908,7 +10908,7 @@ literal|"algorithm-type"
 argument_list|,
 name|algorithm
 argument_list|,
-literal|"tilable"
+literal|"tileable"
 argument_list|,
 name|tileable
 argument_list|,
@@ -16970,7 +16970,7 @@ modifier|*
 name|drawable
 decl_stmt|;
 name|gboolean
-name|tilable
+name|tileable
 decl_stmt|;
 name|gboolean
 name|turbulent
@@ -17001,7 +17001,7 @@ argument_list|,
 name|gimp
 argument_list|)
 expr_stmt|;
-name|tilable
+name|tileable
 operator|=
 name|g_value_get_boolean
 argument_list|(
@@ -17160,9 +17160,9 @@ literal|"detail"
 argument_list|,
 name|detail
 argument_list|,
-literal|"tilable"
+literal|"tileable"
 argument_list|,
-name|tilable
+name|tileable
 argument_list|,
 literal|"turbulent"
 argument_list|,
@@ -23561,7 +23561,7 @@ literal|"plug-in-edge"
 argument_list|,
 literal|"Several simple methods for detecting edges"
 argument_list|,
-literal|"Perform edge detection on the contents of the specified drawable. AMOUNT is an arbitrary constant, WRAPMODE is like displace plug-in (useful for tilable image). EDGEMODE sets the kind of matrix transform applied to the pixels, SOBEL was the method used in older versions."
+literal|"Perform edge detection on the contents of the specified drawable. AMOUNT is an arbitrary constant, WRAPMODE is like displace plug-in (useful for tileable image). EDGEMODE sets the kind of matrix transform applied to the pixels, SOBEL was the method used in older versions."
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:edge' for credits."
 argument_list|,
@@ -31649,11 +31649,11 @@ name|procedure
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
-literal|"tilable"
+literal|"tileable"
 argument_list|,
-literal|"tilable"
+literal|"tileable"
 argument_list|,
-literal|"Create a tilable output"
+literal|"Create a tileable output"
 argument_list|,
 name|FALSE
 argument_list|,
