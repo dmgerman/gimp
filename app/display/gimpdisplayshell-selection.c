@@ -1287,6 +1287,16 @@ name|i
 operator|++
 control|)
 block|{
+if|if
+condition|(
+operator|!
+name|selection
+operator|->
+name|shell
+operator|->
+name|rotate_transform
+condition|)
+block|{
 name|dest_segs
 index|[
 name|i
@@ -1375,6 +1385,7 @@ argument_list|,
 name|yclamp
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  If this segment is a closing segment&& the segments lie inside        *  the region, OR if this is an opening segment and the segments        *  lie outside the region...        *  we need to transform it by one display pixel        */
 if|if
 condition|(
