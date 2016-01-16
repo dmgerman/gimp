@@ -1017,6 +1017,10 @@ name|tool
 operator|->
 name|operation
 argument_list|,
+name|tool
+operator|->
+name|icon_name
+argument_list|,
 name|GIMP_TYPE_SETTINGS
 argument_list|)
 argument_list|)

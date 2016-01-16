@@ -989,6 +989,14 @@ name|procedure
 operator|->
 name|original_name
 argument_list|,
+name|gimp_viewable_get_icon_name
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|procedure
+argument_list|)
+argument_list|)
+argument_list|,
 name|GIMP_TYPE_SETTINGS
 argument_list|)
 expr_stmt|;
