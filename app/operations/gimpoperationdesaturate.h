@@ -112,6 +112,10 @@ DECL|member|parent_instance
 name|GimpOperationPointFilter
 name|parent_instance
 decl_stmt|;
+DECL|member|mode
+name|GimpDesaturateMode
+name|mode
+decl_stmt|;
 block|}
 struct|;
 end_struct
