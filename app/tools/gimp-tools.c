@@ -336,12 +336,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpposterizetool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpthresholdtool.h"
 end_include
 
@@ -516,8 +510,6 @@ comment|/*  color tools  */
 name|gimp_operation_tool_register
 block|,
 name|gimp_gegl_tool_register
-block|,
-name|gimp_posterize_tool_register
 block|,
 name|gimp_curves_tool_register
 block|,

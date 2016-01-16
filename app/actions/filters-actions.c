@@ -1760,6 +1760,27 @@ comment|/* FIXME GIMP_HELP_FILTER_POLAR_COORDINATES */
 block|}
 block|,
 block|{
+literal|"filters-posterize"
+block|,
+name|GIMP_STOCK_TOOL_POSTERIZE
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Posterize..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gimp:posterize"
+block|,
+name|GIMP_HELP_TOOL_POSTERIZE
+block|}
+block|,
+block|{
 literal|"filters-red-eye-removal"
 block|,
 name|GIMP_STOCK_GEGL
@@ -1822,7 +1843,7 @@ block|,
 literal|"gimp:semi-flatten"
 block|,
 name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_POLAR_COORDINATES */
+comment|/* FIXME GIMP_HELP_FILTER_SEMI_FLATTEN */
 block|}
 block|,
 block|{
@@ -3200,6 +3221,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-polar-coordinates"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-posterize"
 argument_list|,
 name|writable
 argument_list|)
