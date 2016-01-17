@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c82c8b90103
+DECL|enum|__anon28e4cfbb0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -1640,9 +1640,16 @@ argument_list|)
 argument_list|,
 name|operation
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"GEGL Operation"
+argument_list|)
 argument_list|,
 name|NULL
+argument_list|,
+name|GIMP_STOCK_GEGL
+argument_list|,
+name|GIMP_HELP_TOOL_GEGL
 argument_list|)
 expr_stmt|;
 name|g_free
