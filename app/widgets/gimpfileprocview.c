@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2add6e1f0103
+DECL|enum|__anon2af38b900103
 block|{
 DECL|enumerator|COLUMN_PROC
 name|COLUMN_PROC
@@ -87,7 +87,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2add6e1f0203
+DECL|enum|__anon2af38b900203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -445,13 +445,17 @@ name|proc
 argument_list|)
 argument_list|)
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|help_id
 init|=
-name|gimp_plug_in_procedure_get_help_id
+name|gimp_procedure_get_help_id
+argument_list|(
+name|GIMP_PROCEDURE
 argument_list|(
 name|proc
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|GSList
@@ -501,11 +505,6 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
-name|g_free
-argument_list|(
-name|help_id
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|list2
