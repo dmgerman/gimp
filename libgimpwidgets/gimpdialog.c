@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b89795f0103
+DECL|enum|__anon29528fed0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -402,8 +402,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
-operator||
-name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -803,6 +801,13 @@ break|break;
 case|case
 name|PROP_HELP_ID
 case|:
+name|g_free
+argument_list|(
+name|private
+operator|->
+name|help_id
+argument_list|)
+expr_stmt|;
 name|private
 operator|->
 name|help_id
@@ -810,6 +815,20 @@ operator|=
 name|g_value_dup_string
 argument_list|(
 name|value
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|object
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|private
+operator|->
+name|help_id
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1738,7 +1757,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b89795f0208
+DECL|struct|__anon29528fed0208
 block|{
 DECL|member|dialog
 name|GtkDialog
