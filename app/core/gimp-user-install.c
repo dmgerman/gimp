@@ -191,7 +191,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2760a4240103
+DECL|enum|__anon2a1e95030103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -210,7 +210,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2760a4240208
+DECL|struct|__anon2a1e95030208
 block|{
 DECL|member|name
 specifier|const
@@ -2886,6 +2886,15 @@ argument_list|(
 name|basename
 argument_list|,
 literal|"tool-options"
+argument_list|)
+operator|==
+literal|0
+operator|||
+name|strcmp
+argument_list|(
+name|basename
+argument_list|,
+literal|"themes"
 argument_list|)
 operator|==
 literal|0
