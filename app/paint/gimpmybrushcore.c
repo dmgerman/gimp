@@ -522,7 +522,7 @@ argument_list|(
 name|paint_core
 argument_list|)
 decl_stmt|;
-comment|/* If this is the first motion the brush has recived then    * we're being asked to draw a syntetic stroke in line mode    */
+comment|/* If this is the first motion the brush has received then    * we're being asked to draw a synthetic stroke in line mode    */
 if|if
 condition|(
 name|mybrush
