@@ -17,6 +17,21 @@ name|__GIMP_GEGL_CONFIG_H__
 end_define
 
 begin_function_decl
+name|void
+name|gimp_gegl_config_register
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|operation
+parameter_list|,
+name|GType
+name|config_type
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpObject
 modifier|*
 name|gimp_gegl_config_new
