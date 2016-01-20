@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl-config-proxy.h"
+file|"gegl/gimp-gegl-config.h"
 end_include
 
 begin_include
@@ -1053,7 +1053,7 @@ name|config
 operator|=
 name|G_OBJECT
 argument_list|(
-name|gimp_gegl_get_config_proxy
+name|gimp_gegl_config_new
 argument_list|(
 name|tool
 operator|->
@@ -1135,7 +1135,7 @@ name|im_tool
 operator|->
 name|config
 condition|)
-name|gimp_gegl_config_proxy_sync
+name|gimp_gegl_config_sync_node
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
@@ -1527,7 +1527,7 @@ name|export_title
 decl_stmt|;
 name|settings
 operator|=
-name|gimp_gegl_get_config_container
+name|gimp_gegl_config_get_container
 argument_list|(
 name|type
 argument_list|)

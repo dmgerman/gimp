@@ -108,7 +108,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl-config-proxy.h"
+file|"gegl/gimp-gegl-config.h"
 end_include
 
 begin_include
@@ -3186,7 +3186,7 @@ name|drawable
 argument_list|)
 expr_stmt|;
 comment|/* Initially sync all of the properties */
-name|gimp_gegl_config_proxy_sync
+name|gimp_gegl_config_sync_node
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(

@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-gegl-config-proxy.h"
+file|"gimp-gegl-config.h"
 end_include
 
 begin_include
@@ -687,8 +687,8 @@ end_function
 begin_function
 name|GimpObject
 modifier|*
-DECL|function|gimp_gegl_get_config_proxy (const gchar * operation,const gchar * icon_name,GType parent_type)
-name|gimp_gegl_get_config_proxy
+DECL|function|gimp_gegl_config_new (const gchar * operation,const gchar * icon_name,GType parent_type)
+name|gimp_gegl_config_new
 parameter_list|(
 specifier|const
 name|gchar
@@ -955,8 +955,8 @@ end_function
 begin_function
 name|GimpContainer
 modifier|*
-DECL|function|gimp_gegl_get_config_container (GType config_type)
-name|gimp_gegl_get_config_container
+DECL|function|gimp_gegl_config_get_container (GType config_type)
+name|gimp_gegl_config_get_container
 parameter_list|(
 name|GType
 name|config_type
@@ -1047,8 +1047,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gegl_config_proxy_sync (GimpObject * proxy,GeglNode * node)
-name|gimp_gegl_config_proxy_sync
+DECL|function|gimp_gegl_config_sync_node (GimpObject * proxy,GeglNode * node)
+name|gimp_gegl_config_sync_node
 parameter_list|(
 name|GimpObject
 modifier|*
