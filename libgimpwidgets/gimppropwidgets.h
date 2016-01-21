@@ -174,6 +174,31 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/*  GParamGType  */
+end_comment
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_prop_pointer_combo_box_new
+parameter_list|(
+name|GObject
+modifier|*
+name|config
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|property_name
+parameter_list|,
+name|GimpIntStore
+modifier|*
+name|store
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  GParamEnum  */
 end_comment
 

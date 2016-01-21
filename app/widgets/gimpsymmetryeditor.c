@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a23acb60103
+DECL|enum|__anon2a2b995d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1023,7 +1023,7 @@ name|klass
 operator|->
 name|label
 argument_list|,
-name|GIMP_INT_STORE_VALUE
+name|GIMP_INT_STORE_USER_DATA
 argument_list|,
 name|sym_iter
 operator|->
@@ -1066,9 +1066,9 @@ argument_list|(
 literal|"None"
 argument_list|)
 argument_list|,
-name|GIMP_INT_STORE_VALUE
+name|GIMP_INT_STORE_USER_DATA
 argument_list|,
-name|G_TYPE_NONE
+name|GIMP_TYPE_SYMMETRY
 argument_list|,
 operator|-
 literal|1
@@ -1080,7 +1080,7 @@ name|p
 operator|->
 name|menu
 operator|=
-name|gimp_prop_int_combo_box_new
+name|gimp_prop_pointer_combo_box_new
 argument_list|(
 name|G_OBJECT
 argument_list|(

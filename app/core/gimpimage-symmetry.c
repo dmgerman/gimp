@@ -131,7 +131,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_symmetry_new:  * @image: the #GimpImage  * @type:  the #GType of the symmetry  *  * Creates a new #GimpSymmetry of @type attached to @image.  *  * Returns: the new #GimpSymmetry.  **/
+comment|/**  * gimp_image_symmetry_new:  * @image: the #GimpImage  * @type:  the #GType of the symmetry  *  * Creates a new #GimpSymmetry of @type attached to @image.  * @type must be a subtype of `GIMP_TYPE_SYMMETRY`.  * Note that using the base @type `GIMP_TYPE_SYMMETRY` creates an  * identity transformation.  *  * Returns: the new #GimpSymmetry.  **/
 end_comment
 
 begin_function
@@ -154,6 +154,18 @@ name|sym
 init|=
 name|NULL
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|g_type_is_a
+argument_list|(
+name|type
+argument_list|,
+name|GIMP_TYPE_SYMMETRY
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|type
@@ -432,20 +444,6 @@ modifier|*
 name|image
 parameter_list|)
 block|{
-specifier|static
-name|GimpImage
-modifier|*
-name|last_image
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|GimpSymmetry
-modifier|*
-name|identity
-init|=
-name|NULL
-decl_stmt|;
 name|GimpImagePrivate
 modifier|*
 name|private
@@ -460,32 +458,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|last_image
-operator|!=
-name|image
-condition|)
-block|{
-if|if
-condition|(
-name|identity
-condition|)
-name|g_object_unref
-argument_list|(
-name|identity
-argument_list|)
-expr_stmt|;
-name|identity
-operator|=
-name|gimp_image_symmetry_new
-argument_list|(
-name|image
-argument_list|,
-name|GIMP_TYPE_SYMMETRY
-argument_list|)
-expr_stmt|;
-block|}
 name|private
 operator|=
 name|GIMP_IMAGE_GET_PRIVATE
@@ -497,12 +469,6 @@ return|return
 name|private
 operator|->
 name|selected_symmetry
-condition|?
-name|private
-operator|->
-name|selected_symmetry
-else|:
-name|identity
 return|;
 block|}
 end_function

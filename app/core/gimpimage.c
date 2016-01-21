@@ -372,7 +372,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad4f48a0103
+DECL|enum|__anon2aa6a7b00103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -469,7 +469,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad4f48a0203
+DECL|enum|__anon2aa6a7b00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2678,7 +2678,7 @@ name|object_class
 argument_list|,
 name|PROP_SYMMETRY
 argument_list|,
-name|g_param_spec_int
+name|g_param_spec_gtype
 argument_list|(
 literal|"symmetry"
 argument_list|,
@@ -2689,13 +2689,11 @@ argument_list|(
 literal|"Symmetry"
 argument_list|)
 argument_list|,
-name|G_TYPE_NONE
-argument_list|,
-name|G_MAXINT
-argument_list|,
-name|G_TYPE_NONE
+name|GIMP_TYPE_SYMMETRY
 argument_list|,
 name|GIMP_PARAM_READWRITE
+operator||
+name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3877,10 +3875,14 @@ case|case
 name|PROP_SYMMETRY
 case|:
 block|{
+name|GList
+modifier|*
+name|iter
+decl_stmt|;
 name|GType
 name|type
 init|=
-name|g_value_get_int
+name|g_value_get_gtype
 argument_list|(
 name|value
 argument_list|)
@@ -3910,17 +3912,6 @@ name|selected_symmetry
 operator|=
 name|NULL
 expr_stmt|;
-if|if
-condition|(
-name|type
-operator|!=
-name|G_TYPE_NONE
-condition|)
-block|{
-name|GList
-modifier|*
-name|iter
-decl_stmt|;
 for|for
 control|(
 name|iter
@@ -3949,14 +3940,11 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-name|g_type_is_a
-argument_list|(
+name|type
+operator|==
 name|sym
 operator|->
 name|type
-argument_list|,
-name|type
-argument_list|)
 condition|)
 name|private
 operator|->
@@ -4016,7 +4004,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 break|break;
 default|default:
@@ -4191,7 +4178,7 @@ break|break;
 case|case
 name|PROP_SYMMETRY
 case|:
-name|g_value_set_int
+name|g_value_set_gtype
 argument_list|(
 name|value
 argument_list|,
@@ -4205,7 +4192,7 @@ name|selected_symmetry
 operator|->
 name|type
 else|:
-name|G_TYPE_NONE
+name|GIMP_TYPE_SYMMETRY
 argument_list|)
 expr_stmt|;
 break|break;
