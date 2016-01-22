@@ -4827,10 +4827,16 @@ name|tool
 operator|->
 name|tool_info
 argument_list|,
+name|NULL
+argument_list|,
 name|_
 argument_list|(
 literal|"Measure Distances and Angles"
 argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|,
 name|gtk_widget_get_screen
 argument_list|(
