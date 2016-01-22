@@ -1293,6 +1293,11 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
+name|gimp_procedure_get_label
+argument_list|(
+name|procedure
+argument_list|)
+argument_list|,
 name|gimp_viewable_get_icon_name
 argument_list|(
 name|GIMP_VIEWABLE

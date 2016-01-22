@@ -112,11 +112,6 @@ DECL|member|parent_instance
 name|GimpImageMapTool
 name|parent_instance
 decl_stmt|;
-DECL|member|config
-name|GimpBrightnessContrastConfig
-modifier|*
-name|config
-decl_stmt|;
 DECL|member|x
 DECL|member|y
 name|gdouble
