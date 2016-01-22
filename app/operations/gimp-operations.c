@@ -222,12 +222,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpthresholdconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpoperationpointlayermode.h"
 end_include
 
@@ -729,13 +723,6 @@ argument_list|(
 literal|"gimp:levels"
 argument_list|,
 name|GIMP_TYPE_LEVELS_CONFIG
-argument_list|)
-expr_stmt|;
-name|gimp_gegl_config_register
-argument_list|(
-literal|"gimp:threshold"
-argument_list|,
-name|GIMP_TYPE_THRESHOLD_CONFIG
 argument_list|)
 expr_stmt|;
 block|}
