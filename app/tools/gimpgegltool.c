@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b53d79d0103
+DECL|enum|__anon2c1790da0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -1037,9 +1037,9 @@ name|operation
 decl_stmt|;
 name|operation
 operator|=
-name|GIMP_IMAGE_MAP_TOOL_GET_CLASS
+name|GIMP_IMAGE_MAP_TOOL_CLASS
 argument_list|(
-name|im_tool
+name|parent_class
 argument_list|)
 operator|->
 name|get_operation
