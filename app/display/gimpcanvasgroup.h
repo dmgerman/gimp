@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_CANVAS_GROUP, GimpCanvasGroup
 end_define
 
 begin_typedef
+DECL|typedef|GimpCanvasGroupPrivate
+typedef|typedef
+name|struct
+name|_GimpCanvasGroupPrivate
+name|GimpCanvasGroupPrivate
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpCanvasGroupClass
 typedef|typedef
 name|struct
@@ -102,6 +111,11 @@ block|{
 DECL|member|parent_instance
 name|GimpCanvasItem
 name|parent_instance
+decl_stmt|;
+DECL|member|priv
+name|GimpCanvasGroupPrivate
+modifier|*
+name|priv
 decl_stmt|;
 block|}
 struct|;
