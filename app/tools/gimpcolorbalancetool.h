@@ -123,11 +123,6 @@ DECL|member|parent_instance
 name|GimpImageMapTool
 name|parent_instance
 decl_stmt|;
-DECL|member|config
-name|GimpColorBalanceConfig
-modifier|*
-name|config
-decl_stmt|;
 block|}
 struct|;
 end_struct

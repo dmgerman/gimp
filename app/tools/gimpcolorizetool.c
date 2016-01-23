@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"operations/gimpcolorizeconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -144,7 +138,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GeglNode
+name|gchar
 modifier|*
 name|gimp_colorize_tool_get_operation
 parameter_list|(
@@ -152,15 +146,30 @@ name|GimpImageMapTool
 modifier|*
 name|im_tool
 parameter_list|,
-name|GObject
+name|gchar
 modifier|*
 modifier|*
-name|config
+name|title
+parameter_list|,
+name|gchar
+modifier|*
+modifier|*
+name|description
 parameter_list|,
 name|gchar
 modifier|*
 modifier|*
 name|undo_desc
+parameter_list|,
+name|gchar
+modifier|*
+modifier|*
+name|icon_name
+parameter_list|,
+name|gchar
+modifier|*
+modifier|*
+name|help_id
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -320,15 +329,6 @@ name|gimp_colorize_tool_initialize
 expr_stmt|;
 name|im_tool_class
 operator|->
-name|dialog_desc
-operator|=
-name|_
-argument_list|(
-literal|"Colorize the Image"
-argument_list|)
-expr_stmt|;
-name|im_tool_class
-operator|->
 name|settings_name
 operator|=
 literal|"colorize"
@@ -477,51 +477,56 @@ end_function
 
 begin_function
 specifier|static
-name|GeglNode
+name|gchar
 modifier|*
-DECL|function|gimp_colorize_tool_get_operation (GimpImageMapTool * im_tool,GObject ** config,gchar ** undo_desc)
+DECL|function|gimp_colorize_tool_get_operation (GimpImageMapTool * im_tool,gchar ** title,gchar ** description,gchar ** undo_desc,gchar ** icon_name,gchar ** help_id)
 name|gimp_colorize_tool_get_operation
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
 name|im_tool
 parameter_list|,
-name|GObject
+name|gchar
 modifier|*
 modifier|*
-name|config
+name|title
+parameter_list|,
+name|gchar
+modifier|*
+modifier|*
+name|description
 parameter_list|,
 name|gchar
 modifier|*
 modifier|*
 name|undo_desc
+parameter_list|,
+name|gchar
+modifier|*
+modifier|*
+name|icon_name
+parameter_list|,
+name|gchar
+modifier|*
+modifier|*
+name|help_id
 parameter_list|)
 block|{
 operator|*
-name|config
+name|description
 operator|=
-name|g_object_new
+name|g_strdup
 argument_list|(
-name|GIMP_TYPE_COLORIZE_CONFIG
-argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Colorize the Image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-name|gegl_node_new_child
+name|g_strdup
 argument_list|(
-name|NULL
-argument_list|,
-literal|"operation"
-argument_list|,
 literal|"gimp:colorize"
-argument_list|,
-literal|"config"
-argument_list|,
-operator|*
-name|config
-argument_list|,
-name|NULL
 argument_list|)
 return|;
 block|}
@@ -542,12 +547,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_colorize_tool_dialog (GimpImageMapTool * image_map_tool)
+DECL|function|gimp_colorize_tool_dialog (GimpImageMapTool * im_tool)
 name|gimp_colorize_tool_dialog
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
-name|image_map_tool
+name|im_tool
 parameter_list|)
 block|{
 name|GimpColorizeTool
@@ -556,7 +561,7 @@ name|col_tool
 init|=
 name|GIMP_COLORIZE_TOOL
 argument_list|(
-name|image_map_tool
+name|im_tool
 argument_list|)
 decl_stmt|;
 name|GtkWidget
@@ -587,7 +592,7 @@ name|main_vbox
 operator|=
 name|gimp_image_map_tool_dialog_get_vbox
 argument_list|(
-name|image_map_tool
+name|im_tool
 argument_list|)
 expr_stmt|;
 name|frame
@@ -650,7 +655,7 @@ name|scale
 operator|=
 name|gimp_prop_spin_scale_new
 argument_list|(
-name|image_map_tool
+name|im_tool
 operator|->
 name|config
 argument_list|,
@@ -711,7 +716,7 @@ name|scale
 operator|=
 name|gimp_prop_spin_scale_new
 argument_list|(
-name|image_map_tool
+name|im_tool
 operator|->
 name|config
 argument_list|,
@@ -768,7 +773,7 @@ name|scale
 operator|=
 name|gimp_prop_spin_scale_new
 argument_list|(
-name|image_map_tool
+name|im_tool
 operator|->
 name|config
 argument_list|,
@@ -855,7 +860,7 @@ name|button
 operator|=
 name|gimp_prop_color_button_new
 argument_list|(
-name|image_map_tool
+name|im_tool
 operator|->
 name|config
 argument_list|,
@@ -924,7 +929,7 @@ name|button
 operator|=
 name|gimp_image_map_tool_add_color_picker
 argument_list|(
-name|image_map_tool
+name|im_tool
 argument_list|,
 literal|"colorize"
 argument_list|,

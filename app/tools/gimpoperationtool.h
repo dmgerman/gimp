@@ -122,6 +122,11 @@ name|gchar
 modifier|*
 name|title
 decl_stmt|;
+DECL|member|description
+name|gchar
+modifier|*
+name|description
+decl_stmt|;
 DECL|member|undo_desc
 name|gchar
 modifier|*
@@ -210,6 +215,11 @@ specifier|const
 name|gchar
 modifier|*
 name|title
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|description
 parameter_list|,
 specifier|const
 name|gchar

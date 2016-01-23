@@ -6,20 +6,35 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_GEGL_CONFIG_PROXY_H__
+name|__GIMP_GEGL_CONFIG_ARGH_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_GEGL_CONFIG_PROXY_H__
+DECL|macro|__GIMP_GEGL_CONFIG_ARGH_H__
 define|#
 directive|define
-name|__GIMP_GEGL_CONFIG_PROXY_H__
+name|__GIMP_GEGL_CONFIG_ARGH_H__
 end_define
+
+begin_function_decl
+name|void
+name|gimp_gegl_config_register
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|operation
+parameter_list|,
+name|GType
+name|config_type
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|GimpObject
 modifier|*
-name|gimp_gegl_get_config_proxy
+name|gimp_gegl_config_new
 parameter_list|(
 specifier|const
 name|gchar
@@ -40,7 +55,7 @@ end_function_decl
 begin_function_decl
 name|GimpContainer
 modifier|*
-name|gimp_gegl_get_config_container
+name|gimp_gegl_config_get_container
 parameter_list|(
 name|GType
 name|config_type
@@ -50,11 +65,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_gegl_config_proxy_sync
+name|gimp_gegl_config_sync_node
 parameter_list|(
 name|GimpObject
 modifier|*
-name|proxy
+name|config
 parameter_list|,
 name|GeglNode
 modifier|*
@@ -69,7 +84,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_GEGL_CONFIG_PROXY_H__ */
+comment|/* __GIMP_GEGL_CONFIG_ARGH_H__ */
 end_comment
 
 end_unit

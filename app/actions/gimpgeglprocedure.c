@@ -102,7 +102,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl-config-proxy.h"
+file|"gegl/gimp-gegl-config.h"
 end_include
 
 begin_include
@@ -1040,7 +1040,7 @@ name|container
 decl_stmt|;
 name|settings
 operator|=
-name|gimp_gegl_get_config_proxy
+name|gimp_gegl_config_new
 argument_list|(
 name|procedure
 operator|->
@@ -1059,7 +1059,7 @@ argument_list|)
 expr_stmt|;
 name|container
 operator|=
-name|gimp_gegl_get_config_container
+name|gimp_gegl_config_get_container
 argument_list|(
 name|G_TYPE_FROM_INSTANCE
 argument_list|(
@@ -1113,7 +1113,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_gegl_config_proxy_sync
+name|gimp_gegl_config_sync_node
 argument_list|(
 name|settings
 argument_list|,
@@ -1282,6 +1282,11 @@ argument_list|,
 name|procedure
 operator|->
 name|original_name
+argument_list|,
+name|gimp_procedure_get_label
+argument_list|(
+name|procedure
+argument_list|)
 argument_list|,
 name|gimp_procedure_get_label
 argument_list|(

@@ -7081,9 +7081,13 @@ name|gimp_tool_gui_new
 argument_list|(
 name|tool_info
 argument_list|,
-name|tool_info
-operator|->
-name|blurb
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|,
 name|gtk_widget_get_screen
 argument_list|(

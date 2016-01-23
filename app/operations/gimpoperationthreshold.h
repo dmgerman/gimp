@@ -112,6 +112,14 @@ DECL|member|parent_instance
 name|GimpOperationPointFilter
 name|parent_instance
 decl_stmt|;
+DECL|member|low
+name|gdouble
+name|low
+decl_stmt|;
+DECL|member|high
+name|gdouble
+name|high
+decl_stmt|;
 block|}
 struct|;
 end_struct

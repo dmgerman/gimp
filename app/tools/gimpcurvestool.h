@@ -101,11 +101,6 @@ DECL|member|parent_instance
 name|GimpImageMapTool
 name|parent_instance
 decl_stmt|;
-DECL|member|config
-name|GimpCurvesConfig
-modifier|*
-name|config
-decl_stmt|;
 comment|/* dialog */
 DECL|member|picked_color
 name|gdouble
