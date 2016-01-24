@@ -1655,6 +1655,8 @@ literal|"gegl:red-eye-removal"
 block|,
 literal|"gegl:ripple"
 block|,
+literal|"gegl:saturation"
+block|,
 literal|"gegl:scale-ratio"
 block|,
 literal|"gegl:seamless-clone"
