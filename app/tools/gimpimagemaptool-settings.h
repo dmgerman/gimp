@@ -23,7 +23,7 @@ name|gimp_image_map_tool_real_get_settings_ui
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
-name|tool
+name|im_tool
 parameter_list|,
 name|GimpContainer
 modifier|*
@@ -66,7 +66,7 @@ name|gimp_image_map_tool_real_settings_import
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
-name|tool
+name|im_tool
 parameter_list|,
 name|GInputStream
 modifier|*
@@ -86,7 +86,7 @@ name|gimp_image_map_tool_real_settings_export
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
-name|tool
+name|im_tool
 parameter_list|,
 name|GOutputStream
 modifier|*

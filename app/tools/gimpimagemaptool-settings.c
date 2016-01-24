@@ -136,7 +136,7 @@ name|file
 parameter_list|,
 name|GimpImageMapTool
 modifier|*
-name|tool
+name|im_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -156,7 +156,7 @@ name|file
 parameter_list|,
 name|GimpImageMapTool
 modifier|*
-name|tool
+name|im_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -168,12 +168,12 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_image_map_tool_real_get_settings_ui (GimpImageMapTool * image_map_tool,GimpContainer * settings,GFile * settings_file,const gchar * import_dialog_title,const gchar * export_dialog_title,const gchar * file_dialog_help_id,GFile * default_folder,GtkWidget ** settings_box)
+DECL|function|gimp_image_map_tool_real_get_settings_ui (GimpImageMapTool * im_tool,GimpContainer * settings,GFile * settings_file,const gchar * import_dialog_title,const gchar * export_dialog_title,const gchar * file_dialog_help_id,GFile * default_folder,GtkWidget ** settings_box)
 name|gimp_image_map_tool_real_get_settings_ui
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
-name|image_map_tool
+name|im_tool
 parameter_list|,
 name|GimpContainer
 modifier|*
@@ -212,10 +212,6 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
-name|GtkSizeGroup
-modifier|*
-name|label_group
-decl_stmt|;
 name|GtkWidget
 modifier|*
 name|hbox
@@ -232,7 +228,7 @@ name|tool_info
 operator|=
 name|GIMP_TOOL
 argument_list|(
-name|image_map_tool
+name|im_tool
 argument_list|)
 operator|->
 name|tool_info
@@ -244,13 +240,6 @@ argument_list|(
 name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|6
-argument_list|)
-expr_stmt|;
-name|label_group
-operator|=
-name|gimp_image_map_tool_dialog_get_label_group
-argument_list|(
-name|image_map_tool
 argument_list|)
 expr_stmt|;
 name|label
@@ -279,13 +268,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_size_group_add_widget
-argument_list|(
-name|label_group
-argument_list|,
-name|label
-argument_list|)
-expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|label
@@ -300,7 +282,7 @@ name|tool_info
 operator|->
 name|gimp
 argument_list|,
-name|image_map_tool
+name|im_tool
 operator|->
 name|config
 argument_list|,
@@ -365,7 +347,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|image_map_tool
+name|im_tool
 operator|->
 name|settings_box
 argument_list|,
@@ -376,12 +358,12 @@ argument_list|(
 name|gimp_image_map_tool_settings_import
 argument_list|)
 argument_list|,
-name|image_map_tool
+name|im_tool
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|image_map_tool
+name|im_tool
 operator|->
 name|settings_box
 argument_list|,
@@ -392,7 +374,7 @@ argument_list|(
 name|gimp_image_map_tool_settings_export
 argument_list|)
 argument_list|,
-name|image_map_tool
+name|im_tool
 argument_list|)
 expr_stmt|;
 return|return
@@ -403,12 +385,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_map_tool_real_settings_import (GimpImageMapTool * tool,GInputStream * input,GError ** error)
+DECL|function|gimp_image_map_tool_real_settings_import (GimpImageMapTool * im_tool,GInputStream * input,GError ** error)
 name|gimp_image_map_tool_real_settings_import
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
-name|tool
+name|im_tool
 parameter_list|,
 name|GInputStream
 modifier|*
@@ -425,7 +407,7 @@ name|gimp_config_deserialize_stream
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
-name|tool
+name|im_tool
 operator|->
 name|config
 argument_list|)
@@ -442,12 +424,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_map_tool_real_settings_export (GimpImageMapTool * tool,GOutputStream * output,GError ** error)
+DECL|function|gimp_image_map_tool_real_settings_export (GimpImageMapTool * im_tool,GOutputStream * output,GError ** error)
 name|gimp_image_map_tool_real_settings_export
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
-name|tool
+name|im_tool
 parameter_list|,
 name|GOutputStream
 modifier|*
@@ -465,7 +447,7 @@ name|klass
 init|=
 name|GIMP_IMAGE_MAP_TOOL_GET_CLASS
 argument_list|(
-name|tool
+name|im_tool
 argument_list|)
 decl_stmt|;
 name|gchar
@@ -507,7 +489,7 @@ name|gimp_config_serialize_to_stream
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
-name|tool
+name|im_tool
 operator|->
 name|config
 argument_list|)
@@ -546,7 +528,7 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_image_map_tool_settings_import (GimpSettingsBox * box,GFile * file,GimpImageMapTool * tool)
+DECL|function|gimp_image_map_tool_settings_import (GimpSettingsBox * box,GFile * file,GimpImageMapTool * im_tool)
 name|gimp_image_map_tool_settings_import
 parameter_list|(
 name|GimpSettingsBox
@@ -559,7 +541,7 @@ name|file
 parameter_list|,
 name|GimpImageMapTool
 modifier|*
-name|tool
+name|im_tool
 parameter_list|)
 block|{
 name|GimpImageMapToolClass
@@ -568,7 +550,7 @@ name|tool_class
 init|=
 name|GIMP_IMAGE_MAP_TOOL_GET_CLASS
 argument_list|(
-name|tool
+name|im_tool
 argument_list|)
 decl_stmt|;
 name|GInputStream
@@ -596,7 +578,7 @@ if|if
 condition|(
 name|GIMP_TOOL
 argument_list|(
-name|tool
+name|im_tool
 argument_list|)
 operator|->
 name|tool_info
@@ -640,7 +622,7 @@ name|gimp_message
 argument_list|(
 name|GIMP_TOOL
 argument_list|(
-name|tool
+name|im_tool
 argument_list|)
 operator|->
 name|tool_info
@@ -651,7 +633,7 @@ name|G_OBJECT
 argument_list|(
 name|gimp_tool_gui_get_dialog
 argument_list|(
-name|tool
+name|im_tool
 operator|->
 name|gui
 argument_list|)
@@ -691,7 +673,7 @@ name|tool_class
 operator|->
 name|settings_import
 argument_list|(
-name|tool
+name|im_tool
 argument_list|,
 name|input
 argument_list|,
@@ -704,7 +686,7 @@ name|gimp_message
 argument_list|(
 name|GIMP_TOOL
 argument_list|(
-name|tool
+name|im_tool
 argument_list|)
 operator|->
 name|tool_info
@@ -715,7 +697,7 @@ name|G_OBJECT
 argument_list|(
 name|gimp_tool_gui_get_dialog
 argument_list|(
-name|tool
+name|im_tool
 operator|->
 name|gui
 argument_list|)
@@ -760,14 +742,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_map_tool_preview
 argument_list|(
-name|tool
+name|im_tool
 argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
 name|GIMP_TOOL_GET_OPTIONS
 argument_list|(
-name|tool
+name|im_tool
 argument_list|)
 argument_list|,
 literal|"settings"
@@ -786,7 +768,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_image_map_tool_settings_export (GimpSettingsBox * box,GFile * file,GimpImageMapTool * tool)
+DECL|function|gimp_image_map_tool_settings_export (GimpSettingsBox * box,GFile * file,GimpImageMapTool * im_tool)
 name|gimp_image_map_tool_settings_export
 parameter_list|(
 name|GimpSettingsBox
@@ -799,7 +781,7 @@ name|file
 parameter_list|,
 name|GimpImageMapTool
 modifier|*
-name|tool
+name|im_tool
 parameter_list|)
 block|{
 name|GimpImageMapToolClass
@@ -808,7 +790,7 @@ name|tool_class
 init|=
 name|GIMP_IMAGE_MAP_TOOL_GET_CLASS
 argument_list|(
-name|tool
+name|im_tool
 argument_list|)
 decl_stmt|;
 name|GOutputStream
@@ -836,7 +818,7 @@ if|if
 condition|(
 name|GIMP_TOOL
 argument_list|(
-name|tool
+name|im_tool
 argument_list|)
 operator|->
 name|tool_info
@@ -886,7 +868,7 @@ name|gimp_message_literal
 argument_list|(
 name|GIMP_TOOL
 argument_list|(
-name|tool
+name|im_tool
 argument_list|)
 operator|->
 name|tool_info
@@ -897,7 +879,7 @@ name|G_OBJECT
 argument_list|(
 name|gimp_tool_gui_get_dialog
 argument_list|(
-name|tool
+name|im_tool
 operator|->
 name|gui
 argument_list|)
@@ -927,7 +909,7 @@ name|tool_class
 operator|->
 name|settings_export
 argument_list|(
-name|tool
+name|im_tool
 argument_list|,
 name|output
 argument_list|,
@@ -940,7 +922,7 @@ name|gimp_message
 argument_list|(
 name|GIMP_TOOL
 argument_list|(
-name|tool
+name|im_tool
 argument_list|)
 operator|->
 name|tool_info
@@ -951,7 +933,7 @@ name|G_OBJECT
 argument_list|(
 name|gimp_tool_gui_get_dialog
 argument_list|(
-name|tool
+name|im_tool
 operator|->
 name|gui
 argument_list|)
@@ -998,7 +980,7 @@ name|gimp_message
 argument_list|(
 name|GIMP_TOOL
 argument_list|(
-name|tool
+name|im_tool
 argument_list|)
 operator|->
 name|tool_info
@@ -1009,7 +991,7 @@ name|G_OBJECT
 argument_list|(
 name|GIMP_TOOL
 argument_list|(
-name|tool
+name|im_tool
 argument_list|)
 operator|->
 name|display
@@ -1032,7 +1014,7 @@ name|g_object_set
 argument_list|(
 name|GIMP_TOOL_GET_OPTIONS
 argument_list|(
-name|tool
+name|im_tool
 argument_list|)
 argument_list|,
 literal|"settings"

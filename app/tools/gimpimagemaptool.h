@@ -184,11 +184,6 @@ name|GtkWidget
 modifier|*
 name|region_combo
 decl_stmt|;
-DECL|member|label_group
-name|GtkSizeGroup
-modifier|*
-name|label_group
-decl_stmt|;
 DECL|member|active_picker
 name|GtkWidget
 modifier|*
@@ -241,7 +236,7 @@ function_decl|)
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
-name|image_map_tool
+name|im_tool
 parameter_list|,
 name|gchar
 modifier|*
@@ -303,7 +298,7 @@ function_decl|)
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
-name|image_map_tool
+name|im_tool
 parameter_list|,
 name|GimpContainer
 modifier|*
@@ -347,7 +342,7 @@ function_decl|)
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
-name|image_map_tool
+name|im_tool
 parameter_list|,
 name|GInputStream
 modifier|*
@@ -368,7 +363,7 @@ function_decl|)
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
-name|image_map_tool
+name|im_tool
 parameter_list|,
 name|GOutputStream
 modifier|*
@@ -389,7 +384,7 @@ function_decl|)
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
-name|image_map_tool
+name|im_tool
 parameter_list|,
 name|gpointer
 name|identifier
@@ -431,7 +426,7 @@ name|gimp_image_map_tool_preview
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
-name|image_map_tool
+name|im_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -442,7 +437,7 @@ name|gimp_image_map_tool_get_operation
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
-name|image_map_tool
+name|im_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -453,7 +448,7 @@ name|gimp_image_map_tool_edit_as
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
-name|image_map_tool
+name|im_tool
 parameter_list|,
 specifier|const
 name|gchar
@@ -478,19 +473,7 @@ name|gimp_image_map_tool_dialog_get_vbox
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
-name|tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GtkSizeGroup
-modifier|*
-name|gimp_image_map_tool_dialog_get_label_group
-parameter_list|(
-name|GimpImageMapTool
-modifier|*
-name|tool
+name|im_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -502,7 +485,7 @@ name|gimp_image_map_tool_add_color_picker
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
-name|tool
+name|im_tool
 parameter_list|,
 name|gpointer
 name|identifier
