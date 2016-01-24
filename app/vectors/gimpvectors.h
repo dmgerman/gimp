@@ -109,6 +109,12 @@ modifier|*
 name|strokes
 decl_stmt|;
 comment|/* The List of GimpStrokes      */
+DECL|member|stroke_to_list
+name|GHashTable
+modifier|*
+name|stroke_to_list
+decl_stmt|;
+comment|/* Map from GimpStroke to strokes listnode */
 DECL|member|last_stroke_ID
 name|gint
 name|last_stroke_ID
