@@ -1886,7 +1886,7 @@ block|,
 literal|"gegl:saturation"
 block|,
 name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_SEPIA */
+comment|/* FIXME GIMP_HELP_FILTER_SATURATION */
 block|}
 block|,
 block|{
