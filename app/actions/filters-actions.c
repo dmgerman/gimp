@@ -1165,6 +1165,28 @@ comment|/* FIXME GIMP_HELP_FILTER_GAUSSIAN_GRID */
 block|}
 block|,
 block|{
+literal|"filters-high-pass"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_High Pass..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:high-pass"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_HIGH_PASS */
+block|}
+block|,
+block|{
 literal|"filters-illusion"
 block|,
 name|GIMP_STOCK_GEGL
@@ -3072,6 +3094,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-grid"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-high-pass"
 argument_list|,
 name|writable
 argument_list|)

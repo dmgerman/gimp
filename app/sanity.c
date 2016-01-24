@@ -1585,6 +1585,8 @@ literal|"gegl:gaussian-blur-selective"
 block|,
 literal|"gegl:grid"
 block|,
+literal|"gegl:high-pass"
+block|,
 literal|"gegl:illusion"
 block|,
 literal|"gegl:introspect"

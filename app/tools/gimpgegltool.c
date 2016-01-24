@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdbd0f70103
+DECL|enum|__anon2c4582c10103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -423,6 +423,8 @@ block|,
 literal|"gegl:gaussian-blur-selective"
 block|,
 literal|"gegl:grid"
+block|,
+literal|"gegl:high-pass"
 block|,
 literal|"gegl:illusion"
 block|,
