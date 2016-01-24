@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpoperationflood.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpoperationgrow.h"
 end_include
 
@@ -436,6 +442,11 @@ expr_stmt|;
 name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_OPERATION_EQUALIZE
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_FLOOD
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref
