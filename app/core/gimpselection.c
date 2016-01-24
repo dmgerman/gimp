@@ -595,6 +595,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|gimp_selection_flood
+parameter_list|(
+name|GimpChannel
+modifier|*
+name|channel
+parameter_list|,
+name|gboolean
+name|push_undo
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 DECL|function|G_DEFINE_TYPE (GimpSelection,gimp_selection,GIMP_TYPE_CHANNEL)
 name|G_DEFINE_TYPE
@@ -820,6 +835,12 @@ name|gimp_selection_shrink
 expr_stmt|;
 name|channel_class
 operator|->
+name|flood
+operator|=
+name|gimp_selection_flood
+expr_stmt|;
+name|channel_class
+operator|->
 name|feather_desc
 operator|=
 name|C_
@@ -904,6 +925,17 @@ argument_list|(
 literal|"undo-type"
 argument_list|,
 literal|"Shrink Selection"
+argument_list|)
+expr_stmt|;
+name|channel_class
+operator|->
+name|flood_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Flood Selection"
 argument_list|)
 expr_stmt|;
 block|}
@@ -2242,6 +2274,35 @@ argument_list|,
 name|radius_y
 argument_list|,
 name|edge_lock
+argument_list|,
+name|push_undo
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_selection_flood (GimpChannel * channel,gboolean push_undo)
+name|gimp_selection_flood
+parameter_list|(
+name|GimpChannel
+modifier|*
+name|channel
+parameter_list|,
+name|gboolean
+name|push_undo
+parameter_list|)
+block|{
+name|GIMP_CHANNEL_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|flood
+argument_list|(
+name|channel
 argument_list|,
 name|push_undo
 argument_list|)

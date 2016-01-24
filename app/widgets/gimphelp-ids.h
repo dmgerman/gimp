@@ -414,6 +414,14 @@ value|"gimp-selection-border"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_SELECTION_FLOOD
+define|#
+directive|define
+name|GIMP_HELP_SELECTION_FLOOD
+value|"gimp-selection-flood"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_SELECTION_STROKE
 define|#
 directive|define
