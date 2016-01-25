@@ -7491,7 +7491,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b21d92a0108
+DECL|struct|__anon2c6553050108
 block|{
 DECL|member|info
 name|XcfInfo
@@ -8249,7 +8249,7 @@ argument_list|)
 expr_stmt|;
 name|num_strokes
 operator|=
-name|g_list_length
+name|g_queue_get_length
 argument_list|(
 name|vectors
 operator|->
@@ -8342,6 +8342,8 @@ argument_list|(
 name|vectors
 operator|->
 name|strokes
+operator|->
+name|head
 argument_list|)
 init|;
 name|stroke_list

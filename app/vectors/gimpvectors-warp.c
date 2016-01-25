@@ -185,6 +185,8 @@ operator|=
 name|vectors
 operator|->
 name|strokes
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -593,6 +595,8 @@ operator|=
 name|vectors_in
 operator|->
 name|strokes
+operator|->
+name|head
 init|;
 name|list
 condition|;

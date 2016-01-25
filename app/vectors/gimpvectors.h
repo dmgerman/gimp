@@ -104,11 +104,11 @@ name|GimpItem
 name|parent_instance
 decl_stmt|;
 DECL|member|strokes
-name|GList
+name|GQueue
 modifier|*
 name|strokes
 decl_stmt|;
-comment|/* The List of GimpStrokes      */
+comment|/* Queue of GimpStrokes         */
 DECL|member|stroke_to_list
 name|GHashTable
 modifier|*

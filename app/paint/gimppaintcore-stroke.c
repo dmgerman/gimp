@@ -1149,6 +1149,8 @@ operator|=
 name|vectors
 operator|->
 name|strokes
+operator|->
+name|head
 init|;
 name|stroke
 condition|;

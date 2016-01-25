@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29aec9340103
+DECL|enum|__anon2b0ae9060103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -1307,7 +1307,8 @@ name|vectors
 operator|->
 name|strokes
 operator|=
-name|NULL
+name|g_queue_new
+argument_list|()
 expr_stmt|;
 name|vectors
 operator|->
@@ -1401,7 +1402,7 @@ operator|->
 name|strokes
 condition|)
 block|{
-name|g_list_free_full
+name|g_queue_free_full
 argument_list|(
 name|vectors
 operator|->
@@ -1496,6 +1497,8 @@ operator|=
 name|vectors
 operator|->
 name|strokes
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -2162,6 +2165,8 @@ operator|=
 name|vectors
 operator|->
 name|strokes
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -2279,6 +2284,8 @@ operator|=
 name|vectors
 operator|->
 name|strokes
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -2452,6 +2459,8 @@ operator|=
 name|vectors
 operator|->
 name|strokes
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -2598,6 +2607,8 @@ operator|=
 name|vectors
 operator|->
 name|strokes
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -2722,6 +2733,8 @@ operator|=
 name|vectors
 operator|->
 name|strokes
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -2851,6 +2864,8 @@ operator|=
 name|vectors
 operator|->
 name|strokes
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -2934,10 +2949,12 @@ name|FALSE
 decl_stmt|;
 if|if
 condition|(
-operator|!
+name|g_queue_is_empty
+argument_list|(
 name|vectors
 operator|->
 name|strokes
+argument_list|)
 condition|)
 block|{
 name|g_set_error_literal
@@ -3460,14 +3477,7 @@ argument_list|(
 name|dest_vectors
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|dest_vectors
-operator|->
-name|strokes
-condition|)
-block|{
-name|g_list_free_full
+name|g_queue_free_full
 argument_list|(
 name|dest_vectors
 operator|->
@@ -3479,12 +3489,12 @@ operator|)
 name|g_object_unref
 argument_list|)
 expr_stmt|;
-block|}
 name|dest_vectors
 operator|->
 name|strokes
 operator|=
-name|NULL
+name|g_queue_new
+argument_list|()
 expr_stmt|;
 name|g_hash_table_remove_all
 argument_list|(
@@ -3565,6 +3575,8 @@ argument_list|(
 name|src_vectors
 operator|->
 name|strokes
+operator|->
+name|head
 argument_list|)
 expr_stmt|;
 for|for
@@ -3636,11 +3648,7 @@ name|stroke
 argument_list|)
 expr_stmt|;
 block|}
-name|dest_vectors
-operator|->
-name|strokes
-operator|=
-name|g_list_concat
+name|g_queue_push_tail_link
 argument_list|(
 name|dest_vectors
 operator|->
@@ -3727,31 +3735,14 @@ modifier|*
 name|stroke
 parameter_list|)
 block|{
-name|GList
-modifier|*
-name|newnode
-decl_stmt|;
-name|newnode
-operator|=
-name|g_list_prepend
+comment|/*    * Don't prepend into vector->strokes.  See ChangeLog 2003-05-21    * --Mitch    */
+name|g_queue_push_tail
 argument_list|(
-name|NULL
+name|vectors
+operator|->
+name|strokes
 argument_list|,
 name|stroke
-argument_list|)
-expr_stmt|;
-comment|/*    * Don't prepend into vector->strokes.  See ChangeLog 2003-05-21    * --Mitch    */
-name|vectors
-operator|->
-name|strokes
-operator|=
-name|g_list_concat
-argument_list|(
-name|vectors
-operator|->
-name|strokes
-argument_list|,
-name|newnode
 argument_list|)
 expr_stmt|;
 comment|/* Also add to {stroke: GList node} map */
@@ -3763,7 +3754,12 @@ name|stroke_to_list
 argument_list|,
 name|stroke
 argument_list|,
-name|newnode
+name|g_queue_peek_tail_link
+argument_list|(
+name|vectors
+operator|->
+name|strokes
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|vectors
@@ -3878,11 +3874,7 @@ condition|(
 name|list
 condition|)
 block|{
-name|vectors
-operator|->
-name|strokes
-operator|=
-name|g_list_delete_link
+name|g_queue_unlink
 argument_list|(
 name|vectors
 operator|->
@@ -3931,7 +3923,7 @@ literal|0
 argument_list|)
 expr_stmt|;
 return|return
-name|g_list_length
+name|g_queue_get_length
 argument_list|(
 name|vectors
 operator|->
@@ -4024,6 +4016,8 @@ operator|=
 name|vectors
 operator|->
 name|strokes
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -4157,6 +4151,8 @@ operator|=
 name|vectors
 operator|->
 name|strokes
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -4262,10 +4258,14 @@ return|return
 name|vectors
 operator|->
 name|strokes
+operator|->
+name|head
 condition|?
 name|vectors
 operator|->
 name|strokes
+operator|->
+name|head
 operator|->
 name|data
 else|:
@@ -4516,6 +4516,8 @@ operator|=
 name|vectors
 operator|->
 name|strokes
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -4722,6 +4724,8 @@ operator|=
 name|vectors
 operator|->
 name|strokes
+operator|->
+name|head
 init|;
 name|list
 condition|;

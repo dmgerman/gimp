@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c303e060103
+DECL|enum|__anon27734cc70103
 block|{
 DECL|enumerator|GIMP_VECTORS_COMPAT_ANCHOR
 name|GIMP_VECTORS_COMPAT_ANCHOR
@@ -471,6 +471,8 @@ operator|=
 name|vectors
 operator|->
 name|strokes
+operator|->
+name|head
 init|;
 name|strokes
 condition|;
@@ -625,6 +627,8 @@ operator|=
 name|vectors
 operator|->
 name|strokes
+operator|->
+name|head
 init|;
 name|strokes
 condition|;
@@ -735,6 +739,8 @@ operator|=
 name|vectors
 operator|->
 name|strokes
+operator|->
+name|head
 init|;
 name|strokes
 operator|||
