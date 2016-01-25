@@ -18,20 +18,6 @@ end_define
 
 begin_function_decl
 name|void
-name|select_invert_cmd_callback
-parameter_list|(
-name|GtkAction
-modifier|*
-name|action
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|select_all_cmd_callback
 parameter_list|(
 name|GtkAction
@@ -47,6 +33,20 @@ end_function_decl
 begin_function_decl
 name|void
 name|select_none_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|select_invert_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -116,7 +116,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|select_border_cmd_callback
+name|select_grow_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -130,7 +130,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|select_grow_cmd_callback
+name|select_border_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
