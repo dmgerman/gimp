@@ -36,6 +36,16 @@ name|buffer
 parameter_list|,
 name|GimpComponentMask
 name|component_mask
+parameter_list|,
+name|GeglBuffer
+modifier|*
+name|paint_mask
+parameter_list|,
+name|gint
+name|paint_mask_x
+parameter_list|,
+name|gint
+name|paint_mask_y
 parameter_list|)
 function_decl|;
 end_function_decl
