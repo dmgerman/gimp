@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"cairo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpguide.h"
 end_include
 

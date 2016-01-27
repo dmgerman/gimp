@@ -387,6 +387,10 @@ name|dynamic_hardness
 parameter_list|,
 name|GimpPaintApplicationMode
 name|mode
+parameter_list|,
+name|GeglNode
+modifier|*
+name|op
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -422,6 +426,10 @@ name|dynamic_hardness
 parameter_list|,
 name|GimpPaintApplicationMode
 name|mode
+parameter_list|,
+name|GeglNode
+modifier|*
+name|op
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -442,6 +450,10 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|GeglNode
+modifier|*
+name|op
 parameter_list|,
 name|GeglBuffer
 modifier|*
@@ -473,6 +485,10 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|GeglNode
+modifier|*
+name|op
 parameter_list|,
 name|GimpBrushApplicationMode
 name|brush_hardness

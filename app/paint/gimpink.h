@@ -109,24 +109,24 @@ DECL|member|parent_instance
 name|GimpPaintCore
 name|parent_instance
 decl_stmt|;
-DECL|member|start_blob
-name|GimpBlob
+DECL|member|start_blobs
+name|GList
 modifier|*
-name|start_blob
+name|start_blobs
 decl_stmt|;
-comment|/*  starting blob (for undo)       */
+comment|/*  starting blobs per stroke (for undo) */
 DECL|member|cur_blob
 name|GimpBlob
 modifier|*
 name|cur_blob
 decl_stmt|;
-comment|/*  current blob                   */
-DECL|member|last_blob
-name|GimpBlob
+comment|/*  current blob                         */
+DECL|member|last_blobs
+name|GList
 modifier|*
-name|last_blob
+name|last_blobs
 decl_stmt|;
-comment|/*  blob for last cursor position  */
+comment|/*  blobs for last stroke positions      */
 block|}
 struct|;
 end_struct

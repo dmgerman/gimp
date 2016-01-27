@@ -98,6 +98,8 @@ name|gimp_brush_transform_mask
 argument_list|(
 name|brush
 argument_list|,
+name|NULL
+argument_list|,
 name|scale
 argument_list|,
 name|aspect_ratio

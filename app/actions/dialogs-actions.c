@@ -182,6 +182,32 @@ name|GIMP_HELP_DEVICE_STATUS_DIALOG
 block|}
 block|,
 block|{
+literal|"dialogs-symmetry"
+block|,
+name|GIMP_STOCK_SYMMETRY
+block|,
+name|NC_
+argument_list|(
+literal|"dialogs-action"
+argument_list|,
+literal|"_Symmetry painting"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"dialogs-action"
+argument_list|,
+literal|"Open the symmetry dialog"
+argument_list|)
+block|,
+literal|"gimp-symmetry-editor"
+block|,
+name|GIMP_HELP_SYMMETRY_DIALOG
+block|}
+block|,
+block|{
 literal|"dialogs-layers"
 block|,
 name|GIMP_STOCK_LAYERS

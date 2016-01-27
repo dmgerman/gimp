@@ -998,6 +998,15 @@ value|_("Enable the Handle Transform tool.")
 end_define
 
 begin_define
+DECL|macro|PLAYGROUND_SYMMETRY_BLURB
+define|#
+directive|define
+name|PLAYGROUND_SYMMETRY_BLURB
+define|\
+value|_("Enable symmetry on painting.")
+end_define
+
+begin_define
 DECL|macro|PLAYGROUND_MYBRUSH_TOOL_BLURB
 define|#
 directive|define

@@ -908,6 +908,11 @@ define|#
 directive|define
 name|GIMP_STOCK_SAMPLE_POINT
 value|"gimp-sample-point"
+DECL|macro|GIMP_STOCK_SYMMETRY
+define|#
+directive|define
+name|GIMP_STOCK_SYMMETRY
+value|"gimp-symmetry"
 DECL|macro|GIMP_STOCK_DYNAMICS
 define|#
 directive|define

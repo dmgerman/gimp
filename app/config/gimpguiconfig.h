@@ -265,6 +265,10 @@ DECL|member|playground_seamless_clone_tool
 name|gboolean
 name|playground_seamless_clone_tool
 decl_stmt|;
+DECL|member|playground_symmetry
+name|gboolean
+name|playground_symmetry
+decl_stmt|;
 comment|/* saved in sessionrc */
 DECL|member|hide_docks
 name|gboolean

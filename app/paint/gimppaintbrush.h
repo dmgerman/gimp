@@ -164,10 +164,9 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-specifier|const
-name|GimpCoords
+name|GimpSymmetry
 modifier|*
-name|coords
+name|sym
 parameter_list|,
 name|gdouble
 name|opacity

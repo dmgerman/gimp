@@ -859,6 +859,28 @@ typedef|;
 end_typedef
 
 begin_comment
+comment|/* Symmetry transformations */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpSymmetry
+typedef|typedef
+name|struct
+name|_GimpSymmetry
+name|GimpSymmetry
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpMirror
+typedef|typedef
+name|struct
+name|_GimpMirror
+name|GimpMirror
+typedef|;
+end_typedef
+
+begin_comment
 comment|/*  misc objects  */
 end_comment
 

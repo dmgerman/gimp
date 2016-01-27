@@ -107,10 +107,10 @@ DECL|member|initialized
 name|gboolean
 name|initialized
 decl_stmt|;
-DECL|member|accum_buffer
-name|GeglBuffer
+DECL|member|accum_buffers
+name|GList
 modifier|*
-name|accum_buffer
+name|accum_buffers
 decl_stmt|;
 block|}
 struct|;

@@ -107,6 +107,11 @@ DECL|member|timeout_id
 name|guint
 name|timeout_id
 decl_stmt|;
+DECL|member|sym
+name|GimpSymmetry
+modifier|*
+name|sym
+decl_stmt|;
 DECL|member|drawable
 name|GimpDrawable
 modifier|*

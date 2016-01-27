@@ -3974,6 +3974,14 @@ value|"gimp-navigation-dialog"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_SYMMETRY_DIALOG
+define|#
+directive|define
+name|GIMP_HELP_SYMMETRY_DIALOG
+value|"gimp-symmetry-dialog"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TEXT_EDITOR_DIALOG
 define|#
 directive|define

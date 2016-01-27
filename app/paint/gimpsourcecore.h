@@ -255,6 +255,10 @@ name|GimpCoords
 modifier|*
 name|coords
 parameter_list|,
+name|GeglNode
+modifier|*
+name|op
+parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
@@ -349,10 +353,9 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-specifier|const
-name|GimpCoords
+name|GimpSymmetry
 modifier|*
-name|coords
+name|sym
 parameter_list|)
 function_decl|;
 end_function_decl

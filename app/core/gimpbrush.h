@@ -488,6 +488,10 @@ name|GimpBrush
 modifier|*
 name|brush
 parameter_list|,
+name|GeglNode
+modifier|*
+name|op
+parameter_list|,
 name|gdouble
 name|scale
 parameter_list|,
@@ -512,6 +516,10 @@ parameter_list|(
 name|GimpBrush
 modifier|*
 name|brush
+parameter_list|,
+name|GeglNode
+modifier|*
+name|op
 parameter_list|,
 name|gdouble
 name|scale

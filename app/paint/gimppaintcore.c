@@ -96,6 +96,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-guides.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpimage-symmetry.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-undo.h"
 end_include
 
@@ -109,6 +121,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpprojection.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpsymmetry.h"
 end_include
 
 begin_include
@@ -163,7 +181,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af112110103
+DECL|enum|__anon2c47b25b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -310,10 +328,9 @@ name|GimpPaintOptions
 modifier|*
 name|options
 parameter_list|,
-specifier|const
-name|GimpCoords
+name|GimpSymmetry
 modifier|*
-name|coords
+name|sym
 parameter_list|,
 name|GimpPaintState
 name|paint_state
@@ -403,6 +420,14 @@ parameter_list|,
 name|gint
 modifier|*
 name|paint_buffer_y
+parameter_list|,
+name|gint
+modifier|*
+name|paint_width
+parameter_list|,
+name|gint
+modifier|*
+name|paint_height
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -865,7 +890,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paint_core_real_paint (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,GimpPaintState paint_state,guint32 time)
+DECL|function|gimp_paint_core_real_paint (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpSymmetry * sym,GimpPaintState paint_state,guint32 time)
 name|gimp_paint_core_real_paint
 parameter_list|(
 name|GimpPaintCore
@@ -880,10 +905,9 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-specifier|const
-name|GimpCoords
+name|GimpSymmetry
 modifier|*
-name|coords
+name|sym
 parameter_list|,
 name|GimpPaintState
 name|paint_state
@@ -971,7 +995,7 @@ begin_function
 specifier|static
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_paint_core_real_get_paint_buffer (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,gint * paint_buffer_x,gint * paint_buffer_y)
+DECL|function|gimp_paint_core_real_get_paint_buffer (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,gint * paint_buffer_x,gint * paint_buffer_y,gint * paint_width,gint * paint_height)
 name|gimp_paint_core_real_get_paint_buffer
 parameter_list|(
 name|GimpPaintCore
@@ -998,6 +1022,14 @@ parameter_list|,
 name|gint
 modifier|*
 name|paint_buffer_y
+parameter_list|,
+name|gint
+modifier|*
+name|paint_width
+parameter_list|,
+name|gint
+modifier|*
+name|paint_height
 parameter_list|)
 block|{
 return|return
@@ -1142,6 +1174,32 @@ name|time
 argument_list|)
 condition|)
 block|{
+name|GimpSymmetry
+modifier|*
+name|sym
+decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+decl_stmt|;
+name|GimpItem
+modifier|*
+name|item
+decl_stmt|;
+name|item
+operator|=
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
+name|image
+operator|=
+name|gimp_item_get_image
+argument_list|(
+name|item
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|paint_state
@@ -1175,6 +1233,28 @@ operator|.
 name|y
 expr_stmt|;
 block|}
+name|sym
+operator|=
+name|g_object_ref
+argument_list|(
+name|gimp_image_symmetry_selected
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_symmetry_set_origin
+argument_list|(
+name|sym
+argument_list|,
+name|drawable
+argument_list|,
+operator|&
+name|core
+operator|->
+name|cur_coords
+argument_list|)
+expr_stmt|;
 name|core_class
 operator|->
 name|paint
@@ -1185,14 +1265,16 @@ name|drawable
 argument_list|,
 name|paint_options
 argument_list|,
-operator|&
-name|core
-operator|->
-name|cur_coords
+name|sym
 argument_list|,
 name|paint_state
 argument_list|,
 name|time
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|sym
 argument_list|)
 expr_stmt|;
 name|core_class
@@ -3022,7 +3104,7 @@ end_comment
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_paint_core_get_paint_buffer (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,gint * paint_buffer_x,gint * paint_buffer_y)
+DECL|function|gimp_paint_core_get_paint_buffer (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,gint * paint_buffer_x,gint * paint_buffer_y,gint * paint_width,gint * paint_height)
 name|gimp_paint_core_get_paint_buffer
 parameter_list|(
 name|GimpPaintCore
@@ -3049,6 +3131,14 @@ parameter_list|,
 name|gint
 modifier|*
 name|paint_buffer_y
+parameter_list|,
+name|gint
+modifier|*
+name|paint_width
+parameter_list|,
+name|gint
+modifier|*
+name|paint_height
 parameter_list|)
 block|{
 name|GeglBuffer
@@ -3145,6 +3235,10 @@ argument_list|,
 name|paint_buffer_x
 argument_list|,
 name|paint_buffer_y
+argument_list|,
+name|paint_width
+argument_list|,
+name|paint_height
 argument_list|)
 expr_stmt|;
 name|core
@@ -3327,6 +3421,15 @@ operator|!=
 name|NULL
 condition|)
 block|{
+name|GimpTempBuf
+modifier|*
+name|modified_mask
+init|=
+name|gimp_temp_buf_copy
+argument_list|(
+name|paint_mask
+argument_list|)
+decl_stmt|;
 name|GeglBuffer
 modifier|*
 name|paint_mask_buffer
@@ -3337,7 +3440,7 @@ operator|(
 name|GimpTempBuf
 operator|*
 operator|)
-name|paint_mask
+name|modified_mask
 argument_list|)
 decl_stmt|;
 name|gimp_gegl_combine_mask_weird
@@ -3385,6 +3488,11 @@ expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|paint_mask_buffer
+argument_list|)
+expr_stmt|;
+name|gimp_temp_buf_unref
+argument_list|(
+name|modified_mask
 argument_list|)
 expr_stmt|;
 block|}

@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpsymmetry.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpsourcecore.h"
 end_include
 
@@ -95,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292ef8780103
+DECL|enum|__anon29fab42d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -206,10 +212,9 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-specifier|const
-name|GimpCoords
+name|GimpSymmetry
 modifier|*
-name|coords
+name|sym
 parameter_list|,
 name|GimpPaintState
 name|paint_state
@@ -227,7 +232,7 @@ literal|0
 end_if
 
 begin_endif
-unit|static void     gimp_source_core_motion          (GimpSourceCore    *source_core,                                                   GimpDrawable      *drawable,                                                   GimpPaintOptions  *paint_options,                                                   const GimpCoords  *coords);
+unit|static void     gimp_source_core_motion          (GimpSourceCore    *source_core,                                                   GimpDrawable      *drawable,                                                   GimpPaintOptions  *paint_options,                                                   GimpSymmetry      *sym);
 endif|#
 directive|endif
 end_endif
@@ -913,7 +918,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_source_core_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,GimpPaintState paint_state,guint32 time)
+DECL|function|gimp_source_core_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpSymmetry * sym,GimpPaintState paint_state,guint32 time)
 name|gimp_source_core_paint
 parameter_list|(
 name|GimpPaintCore
@@ -928,10 +933,9 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-specifier|const
-name|GimpCoords
+name|GimpSymmetry
 modifier|*
-name|coords
+name|sym
 parameter_list|,
 name|GimpPaintState
 name|paint_state
@@ -958,6 +962,19 @@ argument_list|(
 name|paint_options
 argument_list|)
 decl_stmt|;
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
+decl_stmt|;
+comment|/* The source is based on the original stroke */
+name|coords
+operator|=
+name|gimp_symmetry_get_origin
+argument_list|(
+name|sym
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|paint_state
@@ -1208,7 +1225,7 @@ name|drawable
 argument_list|,
 name|paint_options
 argument_list|,
-name|coords
+name|sym
 argument_list|)
 expr_stmt|;
 block|}
@@ -1276,7 +1293,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_source_core_motion (GimpSourceCore * source_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords)
+DECL|function|gimp_source_core_motion (GimpSourceCore * source_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpSymmetry * sym)
 name|gimp_source_core_motion
 parameter_list|(
 name|GimpSourceCore
@@ -1291,10 +1308,9 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-specifier|const
-name|GimpCoords
+name|GimpSymmetry
 modifier|*
-name|coords
+name|sym
 parameter_list|)
 block|{
 name|GimpPaintCore
@@ -1354,6 +1370,12 @@ name|GeglRectangle
 name|src_rect
 decl_stmt|;
 name|gint
+name|base_src_offset_x
+decl_stmt|;
+name|gint
+name|base_src_offset_y
+decl_stmt|;
+name|gint
 name|src_offset_x
 decl_stmt|;
 name|gint
@@ -1387,6 +1409,24 @@ decl_stmt|;
 name|gdouble
 name|opacity
 decl_stmt|;
+name|GeglNode
+modifier|*
+name|op
+decl_stmt|;
+name|GimpCoords
+modifier|*
+name|origin
+decl_stmt|;
+name|GimpCoords
+modifier|*
+name|coords
+decl_stmt|;
+name|gint
+name|n_strokes
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
 name|fade_point
 operator|=
 name|gimp_paint_options_get_fade
@@ -1400,6 +1440,14 @@ operator|->
 name|pixel_dist
 argument_list|)
 expr_stmt|;
+name|origin
+operator|=
+name|gimp_symmetry_get_origin
+argument_list|(
+name|sym
+argument_list|)
+expr_stmt|;
+comment|/* Some settings are based on the original stroke. */
 name|opacity
 operator|=
 name|gimp_dynamics_get_linear_value
@@ -1408,7 +1456,7 @@ name|dynamics
 argument_list|,
 name|GIMP_DYNAMICS_OUTPUT_OPACITY
 argument_list|,
-name|coords
+name|origin
 argument_list|,
 name|paint_options
 argument_list|,
@@ -1422,13 +1470,13 @@ operator|==
 literal|0.0
 condition|)
 return|return;
-name|src_offset_x
+name|base_src_offset_x
 operator|=
 name|source_core
 operator|->
 name|offset_x
 expr_stmt|;
-name|src_offset_y
+name|base_src_offset_y
 operator|=
 name|source_core
 operator|->
@@ -1497,11 +1545,11 @@ operator|&
 name|off_y
 argument_list|)
 expr_stmt|;
-name|src_offset_x
+name|base_src_offset_x
 operator|+=
 name|off_x
 expr_stmt|;
-name|src_offset_y
+name|base_src_offset_y
 operator|+=
 name|off_y
 expr_stmt|;
@@ -1512,6 +1560,50 @@ name|src_pickable
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_brush_core_eval_transform_dynamics
+argument_list|(
+name|GIMP_BRUSH_CORE
+argument_list|(
+name|paint_core
+argument_list|)
+argument_list|,
+name|drawable
+argument_list|,
+name|paint_options
+argument_list|,
+name|origin
+argument_list|)
+expr_stmt|;
+name|n_strokes
+operator|=
+name|gimp_symmetry_get_size
+argument_list|(
+name|sym
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|n_strokes
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|coords
+operator|=
+name|gimp_symmetry_get_coords
+argument_list|(
+name|sym
+argument_list|,
+name|i
+argument_list|)
+expr_stmt|;
 name|paint_buffer
 operator|=
 name|gimp_paint_core_get_paint_buffer
@@ -1529,6 +1621,10 @@ name|paint_buffer_x
 argument_list|,
 operator|&
 name|paint_buffer_y
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -1536,7 +1632,7 @@ condition|(
 operator|!
 name|paint_buffer
 condition|)
-return|return;
+continue|continue;
 name|paint_area_offset_x
 operator|=
 literal|0
@@ -1559,6 +1655,14 @@ argument_list|(
 name|paint_buffer
 argument_list|)
 expr_stmt|;
+name|src_offset_x
+operator|=
+name|base_src_offset_x
+expr_stmt|;
+name|src_offset_y
+operator|=
+name|base_src_offset_y
+expr_stmt|;
 if|if
 condition|(
 name|gimp_source_core_use_source
@@ -1569,6 +1673,31 @@ name|options
 argument_list|)
 condition|)
 block|{
+comment|/* When using a source, use the same for every stroke. */
+name|src_offset_x
+operator|=
+name|src_offset_x
+operator|-
+name|coords
+operator|->
+name|x
+operator|+
+name|origin
+operator|->
+name|x
+expr_stmt|;
+name|src_offset_y
+operator|=
+name|src_offset_y
+operator|-
+name|coords
+operator|->
+name|y
+operator|+
+name|origin
+operator|->
+name|y
+expr_stmt|;
 name|src_buffer
 operator|=
 name|GIMP_SOURCE_CORE_GET_CLASS
@@ -1617,7 +1746,7 @@ condition|(
 operator|!
 name|src_buffer
 condition|)
-return|return;
+continue|continue;
 block|}
 comment|/*  Set the paint buffer to transparent  */
 name|gegl_buffer_clear
@@ -1625,6 +1754,25 @@ argument_list|(
 name|paint_buffer
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|op
+operator|=
+name|gimp_symmetry_get_operation
+argument_list|(
+name|sym
+argument_list|,
+name|i
+argument_list|,
+name|gegl_buffer_get_width
+argument_list|(
+name|paint_buffer
+argument_list|)
+argument_list|,
+name|gegl_buffer_get_height
+argument_list|(
+name|paint_buffer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GIMP_SOURCE_CORE_GET_CLASS
@@ -1641,6 +1789,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|coords
+argument_list|,
+name|op
 argument_list|,
 name|opacity
 argument_list|,
@@ -1679,6 +1829,7 @@ argument_list|(
 name|src_buffer
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

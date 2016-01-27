@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpsymmetry.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpperspectiveclone.h"
 end_include
 
@@ -140,10 +146,9 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-specifier|const
-name|GimpCoords
+name|GimpSymmetry
 modifier|*
-name|coords
+name|sym
 parameter_list|,
 name|GimpPaintState
 name|paint_state
@@ -412,7 +417,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_perspective_clone_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,GimpPaintState paint_state,guint32 time)
+DECL|function|gimp_perspective_clone_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpSymmetry * sym,GimpPaintState paint_state,guint32 time)
 name|gimp_perspective_clone_paint
 parameter_list|(
 name|GimpPaintCore
@@ -427,10 +432,9 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-specifier|const
-name|GimpCoords
+name|GimpSymmetry
 modifier|*
-name|coords
+name|sym
 parameter_list|,
 name|GimpPaintState
 name|paint_state
@@ -484,6 +488,19 @@ argument_list|(
 name|paint_options
 argument_list|)
 decl_stmt|;
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
+decl_stmt|;
+comment|/* The source is based on the original stroke */
+name|coords
+operator|=
+name|gimp_symmetry_get_origin
+argument_list|(
+name|sym
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|paint_state
@@ -991,6 +1008,42 @@ decl_stmt|;
 name|gint
 name|dest_y
 decl_stmt|;
+name|gint
+name|n_strokes
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
+name|n_strokes
+operator|=
+name|gimp_symmetry_get_size
+argument_list|(
+name|sym
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|n_strokes
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|coords
+operator|=
+name|gimp_symmetry_get_coords
+argument_list|(
+name|sym
+argument_list|,
+name|i
+argument_list|)
+expr_stmt|;
 name|dest_x
 operator|=
 name|coords
@@ -1114,6 +1167,7 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+block|}
 name|gimp_source_core_motion
 argument_list|(
 name|source_core
@@ -1122,7 +1176,7 @@ name|drawable
 argument_list|,
 name|paint_options
 argument_list|,
-name|coords
+name|sym
 argument_list|)
 expr_stmt|;
 block|}

@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c11dd5e0103
+DECL|enum|__anon29d72bad0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -292,6 +292,14 @@ parameter_list|,
 name|gint
 modifier|*
 name|paint_buffer_y
+parameter_list|,
+name|gint
+modifier|*
+name|paint_width
+parameter_list|,
+name|gint
+modifier|*
+name|paint_height
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -420,6 +428,10 @@ parameter_list|,
 name|GimpBrush
 modifier|*
 name|brush
+parameter_list|,
+name|GeglNode
+modifier|*
+name|op
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -438,6 +450,10 @@ parameter_list|,
 name|GimpBrush
 modifier|*
 name|brush
+parameter_list|,
+name|GeglNode
+modifier|*
+name|op
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3493,7 +3509,7 @@ begin_function
 specifier|static
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_brush_core_get_paint_buffer (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,gint * paint_buffer_x,gint * paint_buffer_y)
+DECL|function|gimp_brush_core_get_paint_buffer (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,gint * paint_buffer_x,gint * paint_buffer_y,gint * paint_width,gint * paint_height)
 name|gimp_brush_core_get_paint_buffer
 parameter_list|(
 name|GimpPaintCore
@@ -3520,6 +3536,14 @@ parameter_list|,
 name|gint
 modifier|*
 name|paint_buffer_y
+parameter_list|,
+name|gint
+modifier|*
+name|paint_width
+parameter_list|,
+name|gint
+modifier|*
+name|paint_height
 parameter_list|)
 block|{
 name|GimpBrushCore
@@ -3555,28 +3579,6 @@ name|brush_width
 decl_stmt|,
 name|brush_height
 decl_stmt|;
-if|if
-condition|(
-name|GIMP_BRUSH_CORE_GET_CLASS
-argument_list|(
-name|core
-argument_list|)
-operator|->
-name|handles_transforming_brush
-condition|)
-block|{
-name|gimp_brush_core_eval_transform_dynamics
-argument_list|(
-name|core
-argument_list|,
-name|drawable
-argument_list|,
-name|paint_options
-argument_list|,
-name|coords
-argument_list|)
-expr_stmt|;
-block|}
 name|gimp_brush_transform_size
 argument_list|(
 name|core
@@ -3601,6 +3603,24 @@ argument_list|,
 operator|&
 name|brush_height
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|paint_width
+condition|)
+operator|*
+name|paint_width
+operator|=
+name|brush_width
+expr_stmt|;
+if|if
+condition|(
+name|paint_height
+condition|)
+operator|*
+name|paint_height
+operator|=
+name|brush_height
 expr_stmt|;
 comment|/*  adjust the x and y coordinates to the upper left corner of the brush  */
 name|x
@@ -4177,7 +4197,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_brush_core_paste_canvas (GimpBrushCore * core,GimpDrawable * drawable,const GimpCoords * coords,gdouble brush_opacity,gdouble image_opacity,GimpLayerModeEffects paint_mode,GimpBrushApplicationMode brush_hardness,gdouble dynamic_force,GimpPaintApplicationMode mode)
+DECL|function|gimp_brush_core_paste_canvas (GimpBrushCore * core,GimpDrawable * drawable,const GimpCoords * coords,gdouble brush_opacity,gdouble image_opacity,GimpLayerModeEffects paint_mode,GimpBrushApplicationMode brush_hardness,gdouble dynamic_force,GimpPaintApplicationMode mode,GeglNode * op)
 name|gimp_brush_core_paste_canvas
 parameter_list|(
 name|GimpBrushCore
@@ -4210,6 +4230,10 @@ name|dynamic_force
 parameter_list|,
 name|GimpPaintApplicationMode
 name|mode
+parameter_list|,
+name|GeglNode
+modifier|*
+name|op
 parameter_list|)
 block|{
 specifier|const
@@ -4224,6 +4248,8 @@ argument_list|(
 name|core
 argument_list|,
 name|coords
+argument_list|,
+name|op
 argument_list|,
 name|brush_hardness
 argument_list|,
@@ -4355,7 +4381,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_brush_core_replace_canvas (GimpBrushCore * core,GimpDrawable * drawable,const GimpCoords * coords,gdouble brush_opacity,gdouble image_opacity,GimpBrushApplicationMode brush_hardness,gdouble dynamic_force,GimpPaintApplicationMode mode)
+DECL|function|gimp_brush_core_replace_canvas (GimpBrushCore * core,GimpDrawable * drawable,const GimpCoords * coords,gdouble brush_opacity,gdouble image_opacity,GimpBrushApplicationMode brush_hardness,gdouble dynamic_force,GimpPaintApplicationMode mode,GeglNode * op)
 name|gimp_brush_core_replace_canvas
 parameter_list|(
 name|GimpBrushCore
@@ -4385,6 +4411,10 @@ name|dynamic_force
 parameter_list|,
 name|GimpPaintApplicationMode
 name|mode
+parameter_list|,
+name|GeglNode
+modifier|*
+name|op
 parameter_list|)
 block|{
 specifier|const
@@ -4399,6 +4429,8 @@ argument_list|(
 name|core
 argument_list|,
 name|coords
+argument_list|,
+name|op
 argument_list|,
 name|brush_hardness
 argument_list|,
@@ -6214,7 +6246,7 @@ specifier|static
 specifier|const
 name|GimpTempBuf
 modifier|*
-DECL|function|gimp_brush_core_transform_mask (GimpBrushCore * core,GimpBrush * brush)
+DECL|function|gimp_brush_core_transform_mask (GimpBrushCore * core,GimpBrush * brush,GeglNode * op)
 name|gimp_brush_core_transform_mask
 parameter_list|(
 name|GimpBrushCore
@@ -6224,6 +6256,10 @@ parameter_list|,
 name|GimpBrush
 modifier|*
 name|brush
+parameter_list|,
+name|GeglNode
+modifier|*
+name|op
 parameter_list|)
 block|{
 specifier|const
@@ -6247,6 +6283,8 @@ operator|=
 name|gimp_brush_transform_mask
 argument_list|(
 name|brush
+argument_list|,
+name|op
 argument_list|,
 name|core
 operator|->
@@ -6307,7 +6345,7 @@ specifier|static
 specifier|const
 name|GimpTempBuf
 modifier|*
-DECL|function|gimp_brush_core_transform_pixmap (GimpBrushCore * core,GimpBrush * brush)
+DECL|function|gimp_brush_core_transform_pixmap (GimpBrushCore * core,GimpBrush * brush,GeglNode * op)
 name|gimp_brush_core_transform_pixmap
 parameter_list|(
 name|GimpBrushCore
@@ -6317,6 +6355,10 @@ parameter_list|,
 name|GimpBrush
 modifier|*
 name|brush
+parameter_list|,
+name|GeglNode
+modifier|*
+name|op
 parameter_list|)
 block|{
 specifier|const
@@ -6340,6 +6382,8 @@ operator|=
 name|gimp_brush_transform_pixmap
 argument_list|(
 name|brush
+argument_list|,
+name|op
 argument_list|,
 name|core
 operator|->
@@ -6393,7 +6437,7 @@ begin_function
 specifier|const
 name|GimpTempBuf
 modifier|*
-DECL|function|gimp_brush_core_get_brush_mask (GimpBrushCore * core,const GimpCoords * coords,GimpBrushApplicationMode brush_hardness,gdouble dynamic_force)
+DECL|function|gimp_brush_core_get_brush_mask (GimpBrushCore * core,const GimpCoords * coords,GeglNode * op,GimpBrushApplicationMode brush_hardness,gdouble dynamic_force)
 name|gimp_brush_core_get_brush_mask
 parameter_list|(
 name|GimpBrushCore
@@ -6404,6 +6448,10 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|GeglNode
+modifier|*
+name|op
 parameter_list|,
 name|GimpBrushApplicationMode
 name|brush_hardness
@@ -6426,6 +6474,8 @@ argument_list|,
 name|core
 operator|->
 name|brush
+argument_list|,
+name|op
 argument_list|)
 expr_stmt|;
 if|if
@@ -6864,7 +6914,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_brush_core_color_area_with_pixmap (GimpBrushCore * core,GimpDrawable * drawable,const GimpCoords * coords,GeglBuffer * area,gint area_x,gint area_y,GimpBrushApplicationMode mode)
+DECL|function|gimp_brush_core_color_area_with_pixmap (GimpBrushCore * core,GimpDrawable * drawable,const GimpCoords * coords,GeglNode * op,GeglBuffer * area,gint area_x,gint area_y,GimpBrushApplicationMode mode)
 name|gimp_brush_core_color_area_with_pixmap
 parameter_list|(
 name|GimpBrushCore
@@ -6879,6 +6929,10 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|GeglNode
+modifier|*
+name|op
 parameter_list|,
 name|GeglBuffer
 modifier|*
@@ -6956,6 +7010,8 @@ argument_list|,
 name|core
 operator|->
 name|brush
+argument_list|,
+name|op
 argument_list|)
 expr_stmt|;
 if|if
@@ -6979,6 +7035,8 @@ argument_list|,
 name|core
 operator|->
 name|brush
+argument_list|,
+name|op
 argument_list|)
 expr_stmt|;
 else|else

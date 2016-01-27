@@ -289,6 +289,18 @@ modifier|*
 name|visible_mask
 decl_stmt|;
 comment|/*  component visibility node    */
+DECL|member|symmetries
+name|GList
+modifier|*
+name|symmetries
+decl_stmt|;
+comment|/*  Painting symmetries          */
+DECL|member|selected_symmetry
+name|GimpSymmetry
+modifier|*
+name|selected_symmetry
+decl_stmt|;
+comment|/*  Selected symmetry            */
 DECL|member|guides
 name|GList
 modifier|*

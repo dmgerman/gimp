@@ -103,10 +103,10 @@ DECL|member|parent_instance
 name|GimpPaintCoreUndo
 name|parent_instance
 decl_stmt|;
-DECL|member|last_blob
-name|GimpBlob
+DECL|member|last_blobs
+name|GList
 modifier|*
-name|last_blob
+name|last_blobs
 decl_stmt|;
 block|}
 struct|;
