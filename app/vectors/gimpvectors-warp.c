@@ -526,6 +526,8 @@ operator|=
 name|stroke
 operator|->
 name|anchors
+operator|->
+name|head
 init|;
 name|list
 condition|;

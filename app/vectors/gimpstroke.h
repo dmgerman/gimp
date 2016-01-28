@@ -108,7 +108,7 @@ name|gint
 name|ID
 decl_stmt|;
 DECL|member|anchors
-name|GList
+name|GQueue
 modifier|*
 name|anchors
 decl_stmt|;

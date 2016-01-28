@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb2027b0103
+DECL|enum|__anon2a5370e20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1218,21 +1218,10 @@ parameter_list|)
 block|{
 name|stroke
 operator|->
-name|ID
-operator|=
-literal|0
-expr_stmt|;
-name|stroke
-operator|->
 name|anchors
 operator|=
-name|NULL
-expr_stmt|;
-name|stroke
-operator|->
-name|closed
-operator|=
-name|FALSE
+name|g_queue_new
+argument_list|()
 expr_stmt|;
 block|}
 end_function
@@ -1302,11 +1291,12 @@ name|PROP_CONTROL_POINTS
 case|:
 name|g_return_if_fail
 argument_list|(
+name|g_queue_is_empty
+argument_list|(
 name|stroke
 operator|->
 name|anchors
-operator|==
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -1372,11 +1362,7 @@ name|GIMP_TYPE_ANCHOR
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|stroke
-operator|->
-name|anchors
-operator|=
-name|g_list_append
+name|g_queue_push_tail
 argument_list|(
 name|stroke
 operator|->
@@ -1489,14 +1475,7 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|stroke
-operator|->
-name|anchors
-condition|)
-block|{
-name|g_list_free_full
+name|g_queue_free_full
 argument_list|(
 name|stroke
 operator|->
@@ -1514,7 +1493,6 @@ name|anchors
 operator|=
 name|NULL
 expr_stmt|;
-block|}
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -1559,7 +1537,7 @@ literal|0
 decl_stmt|;
 name|memsize
 operator|+=
-name|gimp_g_list_get_memsize
+name|gimp_g_queue_get_memsize
 argument_list|(
 name|stroke
 operator|->
@@ -2341,7 +2319,7 @@ condition|)
 block|{
 name|list
 operator|=
-name|g_list_find
+name|g_queue_find
 argument_list|(
 name|stroke
 operator|->
@@ -2369,6 +2347,8 @@ operator|=
 name|stroke
 operator|->
 name|anchors
+operator|->
+name|head
 expr_stmt|;
 block|}
 if|if
@@ -2460,13 +2440,13 @@ block|{
 name|GList
 modifier|*
 name|list
-decl_stmt|;
-name|list
-operator|=
+init|=
 name|stroke
 operator|->
 name|anchors
-expr_stmt|;
+operator|->
+name|head
+decl_stmt|;
 if|if
 condition|(
 name|exclusive
@@ -2499,7 +2479,7 @@ block|}
 block|}
 name|list
 operator|=
-name|g_list_find
+name|g_queue_find
 argument_list|(
 name|stroke
 operator|->
@@ -2565,7 +2545,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|g_list_find
+name|g_queue_find
 argument_list|(
 name|stroke
 operator|->
@@ -2679,7 +2659,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|g_list_find
+name|g_queue_find
 argument_list|(
 name|stroke
 operator|->
@@ -3019,11 +2999,14 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|g_queue_is_empty
+argument_list|(
 name|stroke
 operator|->
 name|anchors
-operator|!=
-name|NULL
+argument_list|)
+operator|==
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|GIMP_STROKE_GET_CLASS
@@ -3779,11 +3762,12 @@ name|stroke
 parameter_list|)
 block|{
 return|return
+name|g_queue_is_empty
+argument_list|(
 name|stroke
 operator|->
 name|anchors
-operator|==
-name|NULL
+argument_list|)
 return|;
 block|}
 end_function
@@ -3860,10 +3844,12 @@ name|difference
 decl_stmt|;
 if|if
 condition|(
-operator|!
+name|g_queue_is_empty
+argument_list|(
 name|stroke
 operator|->
 name|anchors
+argument_list|)
 condition|)
 return|return
 operator|-
@@ -4194,7 +4180,7 @@ name|new_stroke
 operator|->
 name|anchors
 operator|=
-name|g_list_copy
+name|g_queue_copy
 argument_list|(
 name|stroke
 operator|->
@@ -4208,6 +4194,8 @@ operator|=
 name|new_stroke
 operator|->
 name|anchors
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -4378,6 +4366,8 @@ operator|=
 name|stroke
 operator|->
 name|anchors
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -4486,6 +4476,8 @@ operator|=
 name|stroke
 operator|->
 name|anchors
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -4893,6 +4885,8 @@ operator|=
 name|stroke
 operator|->
 name|anchors
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -5013,6 +5007,8 @@ operator|=
 name|stroke
 operator|->
 name|anchors
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -5124,6 +5120,8 @@ operator|=
 name|stroke
 operator|->
 name|anchors
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -5199,7 +5197,7 @@ operator|->
 name|selected
 condition|)
 block|{
-comment|/* Ok, this is a hack.                * The idea is to give control points at the end of a                * stroke a higher priority for the interactive tool. */
+comment|/* Ok, this is a hack.                * The idea is to give control points at the end of a                * stroke a higher priority for the interactive tool.                */
 if|if
 condition|(
 name|prev
@@ -5347,6 +5345,8 @@ operator|=
 name|stroke
 operator|->
 name|anchors
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -5587,7 +5587,7 @@ name|list
 decl_stmt|;
 name|num_anchors
 operator|=
-name|g_list_length
+name|g_queue_get_length
 argument_list|(
 name|stroke
 operator|->
@@ -5614,12 +5614,11 @@ for|for
 control|(
 name|list
 operator|=
-name|g_list_first
-argument_list|(
 name|stroke
 operator|->
 name|anchors
-argument_list|)
+operator|->
+name|head
 init|;
 name|list
 condition|;

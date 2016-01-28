@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27734cc70103
+DECL|enum|__anon2adfa85f0103
 block|{
 DECL|enumerator|GIMP_VECTORS_COMPAT_ANCHOR
 name|GIMP_VECTORS_COMPAT_ANCHOR
@@ -695,7 +695,7 @@ block|}
 block|}
 name|n_anchors
 operator|=
-name|g_list_length
+name|g_queue_get_length
 argument_list|(
 name|stroke
 operator|->
@@ -811,6 +811,8 @@ operator|=
 name|stroke
 operator|->
 name|anchors
+operator|->
+name|head
 init|;
 name|anchors
 condition|;
@@ -858,6 +860,8 @@ operator|==
 name|stroke
 operator|->
 name|anchors
+operator|->
+name|head
 operator|&&
 operator|!
 name|first_stroke
@@ -940,13 +944,11 @@ condition|)
 block|{
 name|anchor
 operator|=
-name|GIMP_ANCHOR
+name|g_queue_peek_head
 argument_list|(
 name|stroke
 operator|->
 name|anchors
-operator|->
-name|data
 argument_list|)
 expr_stmt|;
 name|points
