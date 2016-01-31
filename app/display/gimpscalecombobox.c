@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bf1bde0103
+DECL|enum|__anon291246a80103
 block|{
 DECL|enumerator|COLUMN_SCALE
 name|COLUMN_SCALE
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bf1bde0203
+DECL|enum|__anon291246a80203
 block|{
 DECL|enumerator|ENTRY_ACTIVATED
 name|ENTRY_ACTIVATED
@@ -790,11 +790,19 @@ name|GtkRcStyle
 modifier|*
 name|rc_style
 decl_stmt|;
+name|PangoContext
+modifier|*
+name|context
+decl_stmt|;
+name|PangoFontDescription
+modifier|*
+name|font_desc
+decl_stmt|;
 name|gint
 name|font_size
 decl_stmt|;
 name|gdouble
-name|scale
+name|label_scale
 decl_stmt|;
 name|GTK_WIDGET_CLASS
 argument_list|(
@@ -815,7 +823,7 @@ argument_list|,
 literal|"label-scale"
 argument_list|,
 operator|&
-name|scale
+name|label_scale
 argument_list|,
 name|NULL
 argument_list|)
@@ -842,20 +850,17 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|rc_style
 operator|->
 name|font_desc
 condition|)
-block|{
-name|PangoContext
-modifier|*
-name|context
-decl_stmt|;
-name|PangoFontDescription
-modifier|*
+name|pango_font_description_free
+argument_list|(
+name|rc_style
+operator|->
 name|font_desc
-decl_stmt|;
+argument_list|)
+expr_stmt|;
 name|context
 operator|=
 name|gtk_widget_get_pango_context
@@ -879,7 +884,6 @@ argument_list|(
 name|font_desc
 argument_list|)
 expr_stmt|;
-block|}
 name|font_size
 operator|=
 name|pango_font_description_get_size
@@ -895,7 +899,7 @@ name|rc_style
 operator|->
 name|font_desc
 argument_list|,
-name|scale
+name|label_scale
 operator|*
 name|font_size
 argument_list|)
