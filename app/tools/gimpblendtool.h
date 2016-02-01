@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be27ba80103
+DECL|enum|__anon28b4ff5f0103
 block|{
 comment|/* POINT_NONE evaluates to FALSE */
 DECL|enumerator|POINT_NONE
@@ -38,6 +38,9 @@ name|POINT_START
 block|,
 DECL|enumerator|POINT_END
 name|POINT_END
+block|,
+DECL|enumerator|POINT_BOTH
+name|POINT_BOTH
 block|,
 DECL|enumerator|POINT_INIT_MODE
 name|POINT_INIT_MODE
@@ -151,14 +154,24 @@ DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
-DECL|member|grabbed_point
-name|GimpBlendToolPoint
-name|grabbed_point
-decl_stmt|;
 DECL|member|gradient
 name|GimpGradient
 modifier|*
 name|gradient
+decl_stmt|;
+DECL|member|mouse_x
+name|gdouble
+name|mouse_x
+decl_stmt|;
+comment|/*  pointer x coord   */
+DECL|member|mouse_y
+name|gdouble
+name|mouse_y
+decl_stmt|;
+comment|/*  pointer y coord   */
+DECL|member|grabbed_point
+name|GimpBlendToolPoint
+name|grabbed_point
 decl_stmt|;
 DECL|member|start_x
 name|gdouble
@@ -180,16 +193,6 @@ name|gdouble
 name|end_y
 decl_stmt|;
 comment|/*  ending y coord    */
-DECL|member|mouse_x
-name|gdouble
-name|mouse_x
-decl_stmt|;
-comment|/*  pointer x coord   */
-DECL|member|mouse_y
-name|gdouble
-name|mouse_y
-decl_stmt|;
-comment|/*  pointer y coord   */
 DECL|member|line
 name|GimpCanvasItem
 modifier|*
@@ -225,16 +228,12 @@ name|GeglNode
 modifier|*
 name|render_node
 decl_stmt|;
-DECL|member|subtract_node
-name|GeglNode
-modifier|*
-name|subtract_node
-decl_stmt|;
-DECL|member|divide_node
-name|GeglNode
-modifier|*
-name|divide_node
-decl_stmt|;
+if|#
+directive|if
+literal|0
+block|GeglNode           *subtract_node;   GeglNode           *divide_node;
+endif|#
+directive|endif
 DECL|member|dist_node
 name|GeglNode
 modifier|*
