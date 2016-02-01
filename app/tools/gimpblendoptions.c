@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c72f9610103
+DECL|enum|__anon2bcc877d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -295,9 +295,9 @@ literal|"supersample-depth"
 argument_list|,
 name|NULL
 argument_list|,
-literal|0
+literal|1
 argument_list|,
-literal|6
+literal|9
 argument_list|,
 literal|3
 argument_list|,
