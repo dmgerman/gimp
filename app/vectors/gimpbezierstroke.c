@@ -7683,7 +7683,7 @@ name|anchors
 argument_list|,
 name|gimp_anchor_new
 argument_list|(
-name|GIMP_ANCHOR_CONTROL
+name|GIMP_ANCHOR_ANCHOR
 argument_list|,
 name|end
 argument_list|)
@@ -7697,7 +7697,7 @@ name|anchors
 argument_list|,
 name|gimp_anchor_new
 argument_list|(
-name|GIMP_ANCHOR_ANCHOR
+name|GIMP_ANCHOR_CONTROL
 argument_list|,
 name|end
 argument_list|)
@@ -7798,7 +7798,7 @@ name|anchors
 argument_list|,
 name|gimp_anchor_new
 argument_list|(
-name|GIMP_ANCHOR_CONTROL
+name|GIMP_ANCHOR_ANCHOR
 argument_list|,
 name|end
 argument_list|)
@@ -7812,7 +7812,7 @@ name|anchors
 argument_list|,
 name|gimp_anchor_new
 argument_list|(
-name|GIMP_ANCHOR_ANCHOR
+name|GIMP_ANCHOR_CONTROL
 argument_list|,
 name|end
 argument_list|)
