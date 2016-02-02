@@ -218,17 +218,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_gegl_progress_notify (GObject * object,const GParamSpec * pspec,GimpProgress * progress)
+DECL|function|gimp_gegl_progress_notify (GObject * object,gdouble value,GimpProgress * progress)
 name|gimp_gegl_progress_notify
 parameter_list|(
 name|GObject
 modifier|*
 name|object
 parameter_list|,
-specifier|const
-name|GParamSpec
-modifier|*
-name|pspec
+name|gdouble
+name|value
 parameter_list|,
 name|GimpProgress
 modifier|*
@@ -240,21 +238,6 @@ name|gchar
 modifier|*
 name|text
 decl_stmt|;
-name|gdouble
-name|value
-decl_stmt|;
-name|g_object_get
-argument_list|(
-name|object
-argument_list|,
-literal|"progress"
-argument_list|,
-operator|&
-name|value
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|text
 operator|=
 name|g_object_get_data
@@ -379,7 +362,7 @@ name|g_signal_connect
 argument_list|(
 name|operation
 argument_list|,
-literal|"notify::progress"
+literal|"progress"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

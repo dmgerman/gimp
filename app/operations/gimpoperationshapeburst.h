@@ -116,10 +116,6 @@ DECL|member|normalize
 name|gboolean
 name|normalize
 decl_stmt|;
-DECL|member|progress
-name|gdouble
-name|progress
-decl_stmt|;
 block|}
 struct|;
 end_struct

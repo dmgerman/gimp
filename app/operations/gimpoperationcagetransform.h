@@ -133,11 +133,6 @@ name|Babl
 modifier|*
 name|format_coords
 decl_stmt|;
-DECL|member|progress
-name|gdouble
-name|progress
-decl_stmt|;
-comment|/* bad hack */
 block|}
 struct|;
 end_struct
