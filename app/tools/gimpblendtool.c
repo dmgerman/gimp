@@ -622,7 +622,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_blend_tool_update_preview_coords
+name|gimp_blend_tool_update_graph
 parameter_list|(
 name|GimpBlendTool
 modifier|*
@@ -1538,7 +1538,7 @@ operator|!=
 name|POINT_INIT_MODE
 condition|)
 block|{
-name|gimp_blend_tool_update_preview_coords
+name|gimp_blend_tool_update_graph
 argument_list|(
 name|blend_tool
 argument_list|)
@@ -1908,7 +1908,7 @@ argument_list|(
 name|blend_tool
 argument_list|)
 expr_stmt|;
-name|gimp_blend_tool_update_preview_coords
+name|gimp_blend_tool_update_graph
 argument_list|(
 name|blend_tool
 argument_list|)
@@ -2195,7 +2195,7 @@ argument_list|(
 name|blend_tool
 argument_list|)
 expr_stmt|;
-name|gimp_blend_tool_update_preview_coords
+name|gimp_blend_tool_update_graph
 argument_list|(
 name|blend_tool
 argument_list|)
@@ -2559,7 +2559,7 @@ argument_list|(
 name|blend_tool
 argument_list|)
 expr_stmt|;
-name|gimp_blend_tool_update_preview_coords
+name|gimp_blend_tool_update_graph
 argument_list|(
 name|blend_tool
 argument_list|)
@@ -4278,7 +4278,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_blend_tool_update_preview_coords
+name|gimp_blend_tool_update_graph
 argument_list|(
 name|blend_tool
 argument_list|)
@@ -4289,8 +4289,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_blend_tool_update_preview_coords (GimpBlendTool * blend_tool)
-name|gimp_blend_tool_update_preview_coords
+DECL|function|gimp_blend_tool_update_graph (GimpBlendTool * blend_tool)
+name|gimp_blend_tool_update_graph
 parameter_list|(
 name|GimpBlendTool
 modifier|*
