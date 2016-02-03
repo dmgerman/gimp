@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf371b10103
+DECL|enum|__anon2bbc58a10103
 block|{
 DECL|enumerator|STROKES_UPDATED
 name|STROKES_UPDATED
@@ -102,7 +102,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf371b10203
+DECL|enum|__anon2bbc58a10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -294,7 +294,7 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-comment|/* This signal should likely be emitted at the end of update_strokes()    * if stroke coordinates were changed. */
+comment|/* This signal should likely be emitted at the end of    * update_strokes() if stroke coordinates were changed.    */
 name|gimp_symmetry_signals
 index|[
 name|STROKES_UPDATED
@@ -326,7 +326,7 @@ argument_list|,
 name|GIMP_TYPE_IMAGE
 argument_list|)
 expr_stmt|;
-comment|/* This signal should be emitted when you request a change in    * the settings UI. For instance adding some settings (therefore having a    * dynamic UI), or changing scale min/max extremes, etc. */
+comment|/* This signal should be emitted when you request a change in the    * settings UI. For instance adding some settings (therefore having    * a dynamic UI), or changing scale min/max extremes, etc.    */
 name|gimp_symmetry_signals
 index|[
 name|UPDATE_UI
@@ -1229,14 +1229,12 @@ block|{
 name|GimpSymmetryClass
 modifier|*
 name|klass
-decl_stmt|;
-name|klass
-operator|=
+init|=
 name|g_type_class_ref
 argument_list|(
 name|type
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 return|return
 name|g_strconcat
 argument_list|(

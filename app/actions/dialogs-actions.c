@@ -190,7 +190,7 @@ name|NC_
 argument_list|(
 literal|"dialogs-action"
 argument_list|,
-literal|"_Symmetry painting"
+literal|"_Symmetry Painting"
 argument_list|)
 block|,
 name|NULL

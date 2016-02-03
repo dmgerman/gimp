@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2b995d0103
+DECL|enum|__anon2796d3600103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -158,10 +158,6 @@ name|iface
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* Signal handlers on the GObject. */
-end_comment
 
 begin_function_decl
 specifier|static
@@ -1438,10 +1434,7 @@ condition|)
 block|{
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|symmetry
-argument_list|)
 argument_list|,
 name|gimp_symmetry_editor_symmetry_updated
 argument_list|,
@@ -1459,10 +1452,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*  private functions  */
-end_comment
 
 begin_function
 specifier|static
@@ -1944,10 +1933,6 @@ modifier|*
 name|menu_factory
 parameter_list|)
 block|{
-name|GimpSymmetryEditor
-modifier|*
-name|editor
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
@@ -1982,8 +1967,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|editor
-operator|=
+return|return
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_SYMMETRY_EDITOR
@@ -1997,12 +1981,6 @@ argument_list|,
 name|menu_factory
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-return|return
-name|GTK_WIDGET
-argument_list|(
-name|editor
 argument_list|)
 return|;
 block|}

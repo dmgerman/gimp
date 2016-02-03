@@ -166,13 +166,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|type
-operator|!=
-name|G_TYPE_NONE
-condition|)
-block|{
 name|sym
 operator|=
 name|g_object_new
@@ -192,7 +185,6 @@ name|type
 operator|=
 name|type
 expr_stmt|;
-block|}
 return|return
 name|sym
 return|;
