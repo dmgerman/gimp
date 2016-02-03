@@ -984,7 +984,7 @@ name|C_
 argument_list|(
 literal|"undo-type"
 argument_list|,
-literal|"Flood Selection"
+literal|"Remove Holes"
 argument_list|)
 expr_stmt|;
 block|}

@@ -400,7 +400,7 @@ name|NC_
 argument_list|(
 literal|"select-action"
 argument_list|,
-literal|"F_lood"
+literal|"Re_move holes"
 argument_list|)
 block|,
 name|NULL
@@ -409,7 +409,7 @@ name|NC_
 argument_list|(
 literal|"select-action"
 argument_list|,
-literal|"Level the selection's interior"
+literal|"Remove holes from the selection"
 argument_list|)
 block|,
 name|G_CALLBACK
