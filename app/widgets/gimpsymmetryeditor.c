@@ -107,14 +107,14 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277e0e6f0103
+DECL|enum|__anon2b0b41040103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
 block|,
 DECL|enumerator|PROP_GIMP
 name|PROP_GIMP
-block|, }
+block|}
 enum|;
 end_enum
 
@@ -1191,7 +1191,7 @@ expr_stmt|;
 comment|/* Update the symmetry options. */
 name|symmetry
 operator|=
-name|gimp_image_symmetry_selected
+name|gimp_image_get_active_symmetry
 argument_list|(
 name|image
 argument_list|)
@@ -1342,7 +1342,7 @@ operator|&&
 operator|(
 name|symmetry
 operator|=
-name|gimp_image_symmetry_selected
+name|gimp_image_get_active_symmetry
 argument_list|(
 name|image
 argument_list|)
@@ -1426,7 +1426,7 @@ name|image
 operator|||
 name|symmetry
 operator|!=
-name|gimp_image_symmetry_selected
+name|gimp_image_get_active_symmetry
 argument_list|(
 name|image
 argument_list|)

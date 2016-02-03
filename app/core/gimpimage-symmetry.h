@@ -85,7 +85,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_image_symmetry_select
+name|gimp_image_set_active_symmetry
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -100,7 +100,7 @@ end_function_decl
 begin_function_decl
 name|GimpSymmetry
 modifier|*
-name|gimp_image_symmetry_selected
+name|gimp_image_get_active_symmetry
 parameter_list|(
 name|GimpImage
 modifier|*

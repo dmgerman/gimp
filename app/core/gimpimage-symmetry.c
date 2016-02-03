@@ -186,7 +186,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_symmetry_add:  * @image: the #GimpImage  * @type:  the #GType of the symmetry  *  * Add a symmetry of type @type to @image and make it the  * selected transformation.  **/
+comment|/**  * gimp_image_symmetry_add:  * @image: the #GimpImage  * @type:  the #GType of the symmetry  *  * Add a symmetry of type @type to @image and make it the  * active transformation.  **/
 end_comment
 
 begin_function
@@ -247,7 +247,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_symmetry_remove:  * @image:   the #GimpImage  * @sym: the #GimpSymmetry  *  * Remove @sym from the list of symmetries of @image.  * If it was the selected transformation, unselect it first.  **/
+comment|/**  * gimp_image_symmetry_remove:  * @image:   the #GimpImage  * @sym: the #GimpSymmetry  *  * Remove @sym from the list of symmetries of @image.  * If it was the active transformation, unselect it first.  **/
 end_comment
 
 begin_function
@@ -295,11 +295,11 @@ if|if
 condition|(
 name|private
 operator|->
-name|selected_symmetry
+name|active_symmetry
 operator|==
 name|sym
 condition|)
-name|gimp_image_symmetry_select
+name|gimp_image_set_active_symmetry
 argument_list|(
 name|image
 argument_list|,
@@ -372,13 +372,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_symmetry_select:  * @image: the #GimpImage  * @type:  the #GType of the symmetry  *  * Select the symmetry of type @type.  * Using the GType allows to select a transformation without  * knowing whether one of the same @type was already created.  *  * Returns TRUE on success, FALSE if no such symmetry was found.  **/
+comment|/**  * gimp_image_set_active_symmetry:  * @image: the #GimpImage  * @type:  the #GType of the symmetry  *  * Select the symmetry of type @type.  * Using the GType allows to select a transformation without  * knowing whether one of the same @type was already created.  *  * Returns TRUE on success, FALSE if no such symmetry was found.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_symmetry_select (GimpImage * image,GType type)
-name|gimp_image_symmetry_select
+DECL|function|gimp_image_set_active_symmetry (GimpImage * image,GType type)
+name|gimp_image_set_active_symmetry
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -416,14 +416,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_symmetry_selected:  * @image: the #GimpImage  *  * Returns the #GimpSymmetry transformation selected on @image.  **/
+comment|/**  * gimp_image_get_active_symmetry:  * @image: the #GimpImage  *  * Returns the #GimpSymmetry transformation active on @image.  **/
 end_comment
 
 begin_function
 name|GimpSymmetry
 modifier|*
-DECL|function|gimp_image_symmetry_selected (GimpImage * image)
-name|gimp_image_symmetry_selected
+DECL|function|gimp_image_get_active_symmetry (GimpImage * image)
+name|gimp_image_get_active_symmetry
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -454,7 +454,7 @@ expr_stmt|;
 return|return
 name|private
 operator|->
-name|selected_symmetry
+name|active_symmetry
 return|;
 block|}
 end_function

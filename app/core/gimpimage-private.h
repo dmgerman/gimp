@@ -295,12 +295,12 @@ modifier|*
 name|symmetries
 decl_stmt|;
 comment|/*  Painting symmetries          */
-DECL|member|selected_symmetry
+DECL|member|active_symmetry
 name|GimpSymmetry
 modifier|*
-name|selected_symmetry
+name|active_symmetry
 decl_stmt|;
-comment|/*  Selected symmetry            */
+comment|/*  Active symmetry              */
 DECL|member|guides
 name|GList
 modifier|*

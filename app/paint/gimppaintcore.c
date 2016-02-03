@@ -181,7 +181,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c47b25b0103
+DECL|enum|__anon297aacb90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1237,7 +1237,7 @@ name|sym
 operator|=
 name|g_object_ref
 argument_list|(
-name|gimp_image_symmetry_selected
+name|gimp_image_get_active_symmetry
 argument_list|(
 name|image
 argument_list|)
