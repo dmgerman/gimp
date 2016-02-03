@@ -12,18 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<cairo.h>
 end_include
 
@@ -37,24 +25,6 @@ begin_include
 include|#
 directive|include
 file|<gdk-pixbuf/gdk-pixbuf.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpbase/gimpbase.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpmath/gimpmath.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpcolor/gimpcolor.h"
 end_include
 
 begin_include
@@ -79,12 +49,6 @@ begin_include
 include|#
 directive|include
 file|"gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimp-utils.h"
 end_include
 
 begin_include
@@ -132,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0a44690108
+DECL|struct|__anon2c1e1a8a0108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -211,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0a44690208
+DECL|struct|__anon2c1e1a8a0208
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -313,6 +277,16 @@ decl_stmt|;
 name|GeglBuffer
 modifier|*
 name|buffer
+decl_stmt|;
+name|GeglBuffer
+modifier|*
+name|shapeburst
+init|=
+name|NULL
+decl_stmt|;
+name|GeglNode
+modifier|*
+name|render
 decl_stmt|;
 name|gint
 name|x
@@ -433,17 +407,6 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|{
-name|GeglBuffer
-modifier|*
-name|shapeburst
-init|=
-name|NULL
-decl_stmt|;
-name|GeglNode
-modifier|*
-name|render
-decl_stmt|;
 if|if
 condition|(
 name|gradient_type
@@ -585,7 +548,6 @@ argument_list|(
 name|shapeburst
 argument_list|)
 expr_stmt|;
-block|}
 name|gimp_drawable_apply_buffer
 argument_list|(
 name|drawable
@@ -623,7 +585,6 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
-comment|/*  update the image  */
 name|gimp_drawable_update
 argument_list|(
 name|drawable
@@ -637,7 +598,6 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
-comment|/*  free the temporary buffer  */
 name|g_object_unref
 argument_list|(
 name|buffer
@@ -770,7 +730,7 @@ literal|"Y float"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  allocate the selection mask copy    */
+comment|/*  allocate the selection mask copy  */
 name|temp_buffer
 operator|=
 name|gegl_buffer_new
