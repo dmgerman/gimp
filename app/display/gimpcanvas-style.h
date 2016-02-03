@@ -18,6 +18,27 @@ end_define
 
 begin_function_decl
 name|void
+name|gimp_canvas_set_guide_style
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|canvas
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
+name|GimpGuideStyle
+name|style
+parameter_list|,
+name|gboolean
+name|active
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_canvas_set_sample_point_style
 parameter_list|(
 name|GtkWidget
