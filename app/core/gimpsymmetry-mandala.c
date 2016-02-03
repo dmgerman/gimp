@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a879ee0103
+DECL|enum|__anon296c41b80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -489,7 +489,7 @@ literal|"center-x"
 argument_list|,
 name|_
 argument_list|(
-literal|"Center absisce"
+literal|"Center abscisse"
 argument_list|)
 argument_list|,
 literal|0.0
