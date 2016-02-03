@@ -179,12 +179,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|sym
-operator|->
-name|type
-operator|=
-name|type
-expr_stmt|;
 return|return
 name|sym
 return|;

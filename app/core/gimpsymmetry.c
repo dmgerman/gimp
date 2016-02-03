@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbc58a10103
+DECL|enum|__anon29c279cb0103
 block|{
 DECL|enumerator|STROKES_UPDATED
 name|STROKES_UPDATED
@@ -102,7 +102,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbc58a10203
+DECL|enum|__anon29c279cb0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -496,14 +496,7 @@ name|GimpSymmetry
 modifier|*
 name|sym
 parameter_list|)
-block|{
-name|sym
-operator|->
-name|type
-operator|=
-name|G_TYPE_NONE
-expr_stmt|;
-block|}
+block|{ }
 end_function
 
 begin_function
@@ -1309,9 +1302,10 @@ name|parasite_name
 operator|=
 name|gimp_symmetry_parasite_name
 argument_list|(
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
 name|sym
-operator|->
-name|type
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|parasite

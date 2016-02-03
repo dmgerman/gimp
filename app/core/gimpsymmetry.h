@@ -127,10 +127,6 @@ name|GList
 modifier|*
 name|strokes
 decl_stmt|;
-DECL|member|type
-name|GType
-name|type
-decl_stmt|;
 block|}
 struct|;
 end_struct

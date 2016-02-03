@@ -372,7 +372,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3cd2ab0103
+DECL|enum|__anon2af5435a0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -469,7 +469,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3cd2ab0203
+DECL|enum|__anon2af5435a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3942,9 +3942,10 @@ if|if
 condition|(
 name|type
 operator|==
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
 name|sym
-operator|->
-name|type
+argument_list|)
 condition|)
 name|private
 operator|->
@@ -4184,11 +4185,12 @@ name|private
 operator|->
 name|selected_symmetry
 condition|?
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
 name|private
 operator|->
 name|selected_symmetry
-operator|->
-name|type
+argument_list|)
 else|:
 name|GIMP_TYPE_SYMMETRY
 argument_list|)

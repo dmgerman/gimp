@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2796d3600103
+DECL|enum|__anon277e0e6f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1525,9 +1525,10 @@ condition|(
 operator|!
 name|symmetry
 operator|||
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
 name|symmetry
-operator|->
-name|type
+argument_list|)
 operator|==
 name|GIMP_TYPE_SYMMETRY
 condition|)
@@ -1536,9 +1537,10 @@ name|klass
 operator|=
 name|g_type_class_ref
 argument_list|(
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
 name|symmetry
-operator|->
-name|type
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_label
