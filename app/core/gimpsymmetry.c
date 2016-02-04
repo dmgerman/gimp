@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c7b68d0103
+DECL|enum|__anon29f6dd220103
 block|{
 DECL|enumerator|STROKES_UPDATED
 name|STROKES_UPDATED
@@ -102,7 +102,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c7b68d0203
+DECL|enum|__anon29f6dd220203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1219,15 +1219,6 @@ name|GType
 name|type
 parameter_list|)
 block|{
-name|GimpSymmetryClass
-modifier|*
-name|klass
-init|=
-name|g_type_class_ref
-argument_list|(
-name|type
-argument_list|)
-decl_stmt|;
 return|return
 name|g_strconcat
 argument_list|(
