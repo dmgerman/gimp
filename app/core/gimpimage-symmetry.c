@@ -240,7 +240,10 @@ name|private
 operator|->
 name|symmetries
 argument_list|,
+name|g_object_ref
+argument_list|(
 name|sym
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

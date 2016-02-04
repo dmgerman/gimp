@@ -372,7 +372,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a58001d0103
+DECL|enum|__anon28f05f180103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -469,7 +469,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a58001d0203
+DECL|enum|__anon28f05f180203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3986,6 +3986,11 @@ name|gimp_image_symmetry_add
 argument_list|(
 name|image
 argument_list|,
+name|sym
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|sym
 argument_list|)
 expr_stmt|;
