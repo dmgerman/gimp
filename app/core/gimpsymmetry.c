@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c279cb0103
+DECL|enum|__anon28c7b68d0103
 block|{
 DECL|enumerator|STROKES_UPDATED
 name|STROKES_UPDATED
@@ -102,7 +102,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c279cb0203
+DECL|enum|__anon28c7b68d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1233,9 +1233,10 @@ name|g_strconcat
 argument_list|(
 literal|"gimp-image-symmetry:"
 argument_list|,
-name|klass
-operator|->
-name|label
+name|g_type_name
+argument_list|(
+name|type
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
