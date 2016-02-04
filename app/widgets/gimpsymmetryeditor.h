@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpeditor.h"
+file|"gimpimageeditor.h"
 end_include
 
 begin_define
@@ -109,7 +109,7 @@ struct|struct
 name|_GimpSymmetryEditor
 block|{
 DECL|member|parent_instance
-name|GimpEditor
+name|GimpImageEditor
 name|parent_instance
 decl_stmt|;
 DECL|member|p
@@ -127,7 +127,7 @@ struct|struct
 name|_GimpSymmetryEditorClass
 block|{
 DECL|member|parent_class
-name|GimpEditorClass
+name|GimpImageEditorClass
 name|parent_class
 decl_stmt|;
 block|}
@@ -149,10 +149,6 @@ name|GtkWidget
 modifier|*
 name|gimp_symmetry_editor_new
 parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
 name|GimpImage
 modifier|*
 name|image

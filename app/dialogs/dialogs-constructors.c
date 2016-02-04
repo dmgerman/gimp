@@ -2694,10 +2694,6 @@ block|{
 return|return
 name|gimp_symmetry_editor_new
 argument_list|(
-name|context
-operator|->
-name|gimp
-argument_list|,
 name|gimp_context_get_image
 argument_list|(
 name|context
