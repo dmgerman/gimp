@@ -4024,6 +4024,10 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|NULL
 argument_list|,
 name|FALSE
@@ -4287,6 +4291,10 @@ name|fg_select
 operator|->
 name|trimap
 argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 operator|&
 name|color
 argument_list|,
@@ -4397,6 +4405,10 @@ argument_list|,
 name|fg_select
 operator|->
 name|mask
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 operator|&
 name|color

@@ -784,6 +784,14 @@ name|GeglBuffer
 modifier|*
 name|mask
 decl_stmt|;
+DECL|member|mask_offset_x
+name|gint
+name|mask_offset_x
+decl_stmt|;
+DECL|member|mask_offset_y
+name|gint
+name|mask_offset_y
+decl_stmt|;
 DECL|member|mask_color
 name|GimpRGB
 name|mask_color
@@ -1227,6 +1235,12 @@ parameter_list|,
 name|GeglBuffer
 modifier|*
 name|mask
+parameter_list|,
+name|gint
+name|offset_x
+parameter_list|,
+name|gint
+name|offset_y
 parameter_list|,
 specifier|const
 name|GimpRGB

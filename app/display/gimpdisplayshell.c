@@ -365,7 +365,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf6faeb0103
+DECL|enum|__anon27c7b7a90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -399,7 +399,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf6faeb0203
+DECL|enum|__anon27c7b7a90203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -7802,12 +7802,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_set_mask:  * @shell: a #GimpDisplayShell  * @mask:  a #GimpDrawable (1 byte per pixel)  * @color: the color to use for drawing the mask  * @inverted: #TRUE if the mask should be drawn inverted  *  * Previews an image-sized mask. Depending on @inverted, pixels that  * are selected or not selected are tinted with the given color.  **/
+comment|/**  * gimp_display_shell_set_mask:  * @shell: a #GimpDisplayShell  * @mask:  a #GimpDrawable (1 byte per pixel)  * @color: the color to use for drawing the mask  * @inverted: #TRUE if the mask should be drawn inverted  *  * Previews a mask originating at offset_x, offset_x. Depending on  * @inverted, pixels that are selected or not selected are tinted with  * the given color.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_mask (GimpDisplayShell * shell,GeglBuffer * mask,const GimpRGB * color,gboolean inverted)
+DECL|function|gimp_display_shell_set_mask (GimpDisplayShell * shell,GeglBuffer * mask,gint offset_x,gint offset_y,const GimpRGB * color,gboolean inverted)
 name|gimp_display_shell_set_mask
 parameter_list|(
 name|GimpDisplayShell
@@ -7817,6 +7817,12 @@ parameter_list|,
 name|GeglBuffer
 modifier|*
 name|mask
+parameter_list|,
+name|gint
+name|offset_x
+parameter_list|,
+name|gint
+name|offset_y
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -7885,6 +7891,18 @@ operator|->
 name|mask
 operator|=
 name|mask
+expr_stmt|;
+name|shell
+operator|->
+name|mask_offset_x
+operator|=
+name|offset_x
+expr_stmt|;
+name|shell
+operator|->
+name|mask_offset_y
+operator|=
+name|offset_y
 expr_stmt|;
 if|if
 condition|(

@@ -1190,8 +1190,16 @@ argument_list|,
 name|GEGL_RECTANGLE
 argument_list|(
 name|scaled_x
+operator|-
+name|shell
+operator|->
+name|mask_offset_x
 argument_list|,
 name|scaled_y
+operator|-
+name|shell
+operator|->
+name|mask_offset_y
 argument_list|,
 name|scaled_width
 argument_list|,
@@ -1209,7 +1217,7 @@ name|cairo_data
 argument_list|,
 name|cairo_stride
 argument_list|,
-name|GEGL_ABYSS_CLAMP
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 if|if
