@@ -22,6 +22,18 @@ directive|include
 file|"gimpobject.h"
 end_include
 
+begin_comment
+comment|/* shift one more than GIMP_CONFIG_PARAM_IGNORE */
+end_comment
+
+begin_define
+DECL|macro|GIMP_SYMMETRY_PARAM_GUI
+define|#
+directive|define
+name|GIMP_SYMMETRY_PARAM_GUI
+value|(1<< (6 + G_PARAM_USER_SHIFT))
+end_define
+
 begin_define
 DECL|macro|GIMP_TYPE_SYMMETRY
 define|#
@@ -189,24 +201,6 @@ name|gint
 name|paint_height
 parameter_list|)
 function_decl|;
-name|GParamSpec
-modifier|*
-modifier|*
-DECL|member|get_settings
-function_decl|(
-modifier|*
-name|get_settings
-function_decl|)
-parameter_list|(
-name|GimpSymmetry
-modifier|*
-name|symmetry
-parameter_list|,
-name|gint
-modifier|*
-name|n_properties
-parameter_list|)
-function_decl|;
 DECL|member|active_changed
 name|void
 function_decl|(
@@ -307,23 +301,6 @@ name|paint_width
 parameter_list|,
 name|gint
 name|paint_height
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GParamSpec
-modifier|*
-modifier|*
-name|gimp_symmetry_get_settings
-parameter_list|(
-name|GimpSymmetry
-modifier|*
-name|symmetry
-parameter_list|,
-name|gint
-modifier|*
-name|n_properties
 parameter_list|)
 function_decl|;
 end_function_decl
