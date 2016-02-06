@@ -6028,7 +6028,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28a026cb0108
+DECL|struct|__anon2a8bb6170108
 block|{
 DECL|member|label
 specifier|const
@@ -6810,25 +6810,6 @@ argument_list|,
 name|_
 argument_list|(
 literal|"_Seamless Clone tool"
-argument_list|)
-argument_list|,
-name|GTK_BOX
-argument_list|(
-name|vbox2
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|prefs_check_button_add
-argument_list|(
-name|object
-argument_list|,
-literal|"playground-symmetry"
-argument_list|,
-name|_
-argument_list|(
-literal|"_Symmetry Painting"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -11031,7 +11012,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon28a026cb0208
+DECL|struct|__anon2a8bb6170208
 block|{
 DECL|member|current_setting
 name|gchar
@@ -11891,7 +11872,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28a026cb0308
+DECL|struct|__anon2a8bb6170308
 block|{
 DECL|member|property_name
 specifier|const
@@ -12046,7 +12027,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28a026cb0408
+DECL|struct|__anon2a8bb6170408
 block|{
 DECL|member|tree_label
 specifier|const
