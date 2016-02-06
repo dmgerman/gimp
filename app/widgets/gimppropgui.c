@@ -1367,7 +1367,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c80d2af0108
+DECL|struct|__anon2a41dab40108
 block|{
 DECL|member|config_type
 specifier|const
@@ -1421,7 +1421,7 @@ end_struct
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_prop_gui_new (GObject * config,GType owner_type,GimpContext * context,GimpCreatePickerFunc create_picker_func,gpointer picker_creator)
+DECL|function|gimp_prop_gui_new (GObject * config,GType owner_type,GParamFlags flags,GimpContext * context,GimpCreatePickerFunc create_picker_func,gpointer picker_creator)
 name|gimp_prop_gui_new
 parameter_list|(
 name|GObject
@@ -1430,6 +1430,9 @@ name|config
 parameter_list|,
 name|GType
 name|owner_type
+parameter_list|,
+name|GParamFlags
+name|flags
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -1533,6 +1536,23 @@ name|owner_type
 argument_list|,
 name|owner_type
 argument_list|)
+condition|)
+continue|continue;
+if|if
+condition|(
+name|flags
+operator|&&
+operator|(
+operator|(
+name|pspec
+operator|->
+name|flags
+operator|&
+name|flags
+operator|)
+operator|!=
+name|flags
+operator|)
 condition|)
 continue|continue;
 if|if
@@ -1922,7 +1942,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2c80d2af0208
+DECL|struct|__anon2a41dab40208
 block|{
 DECL|member|kelvin
 name|gdouble

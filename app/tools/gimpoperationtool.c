@@ -3270,6 +3270,8 @@ operator|->
 name|config
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 name|GIMP_CONTEXT
 argument_list|(
 name|GIMP_TOOL_GET_OPTIONS

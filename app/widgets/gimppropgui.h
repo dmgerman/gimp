@@ -128,6 +128,9 @@ parameter_list|,
 name|GType
 name|owner_type
 parameter_list|,
+name|GParamFlags
+name|flags
+parameter_list|,
 name|GimpContext
 modifier|*
 name|context
