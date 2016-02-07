@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b15a15e0103
+DECL|enum|__anon2b5fc2420103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -850,7 +850,6 @@ name|val
 argument_list|)
 expr_stmt|;
 block|}
-elseif|else
 if|if
 condition|(
 name|sym
@@ -949,7 +948,6 @@ name|val
 argument_list|)
 expr_stmt|;
 block|}
-elseif|else
 if|if
 condition|(
 name|sym
