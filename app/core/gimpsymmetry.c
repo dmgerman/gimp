@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c78d670103
+DECL|enum|__anon2bb1f98f0103
 block|{
 DECL|enumerator|STROKES_UPDATED
 name|STROKES_UPDATED
@@ -102,7 +102,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c78d670203
+DECL|enum|__anon2bb1f98f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
