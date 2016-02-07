@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3173220103
+DECL|enum|__anon2bf48c270103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -87,7 +87,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3173220203
+DECL|enum|__anon2bf48c270203
 block|{
 DECL|enumerator|PROGRESS
 name|PROGRESS
@@ -420,7 +420,9 @@ name|gimp_marshal_VOID__DOUBLE
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
-literal|0
+literal|1
+argument_list|,
+name|G_TYPE_DOUBLE
 argument_list|)
 expr_stmt|;
 name|object_class
