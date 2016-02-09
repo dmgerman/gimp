@@ -2902,6 +2902,13 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
+literal|"filters-channel-mixer"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
 literal|"filters-checkerboard"
 argument_list|,
 name|writable
