@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf96fd40103
+DECL|enum|__anon2b09d58f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -245,14 +245,12 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_object_class_install_property
+name|GIMP_CONFIG_PROP_INT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_LEVELS
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"levels"
 argument_list|,
 name|_
@@ -268,8 +266,7 @@ literal|256
 argument_list|,
 literal|3
 argument_list|,
-name|GIMP_CONFIG_PARAM_FLAGS
-argument_list|)
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}

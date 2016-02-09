@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0e9b7e0103
+DECL|enum|__anon2c01574a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -263,14 +263,12 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_object_class_install_property
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_MODE
 argument_list|,
-name|g_param_spec_enum
-argument_list|(
 literal|"mode"
 argument_list|,
 name|_
@@ -287,8 +285,7 @@ name|GIMP_TYPE_DESATURATE_MODE
 argument_list|,
 name|GIMP_DESATURATE_LIGHTNESS
 argument_list|,
-name|GIMP_CONFIG_PARAM_FLAGS
-argument_list|)
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}

@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a969f610103
+DECL|enum|__anon294afb2d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -239,14 +239,12 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_object_class_install_property
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_LOW
 argument_list|,
-name|g_param_spec_double
-argument_list|(
 literal|"low"
 argument_list|,
 name|_
@@ -262,18 +260,15 @@ literal|1.0
 argument_list|,
 literal|0.5
 argument_list|,
-name|GIMP_CONFIG_PARAM_FLAGS
-argument_list|)
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|g_object_class_install_property
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_HIGH
 argument_list|,
-name|g_param_spec_double
-argument_list|(
 literal|"high"
 argument_list|,
 name|_
@@ -289,8 +284,7 @@ literal|1.0
 argument_list|,
 literal|1.0
 argument_list|,
-name|GIMP_CONFIG_PARAM_FLAGS
-argument_list|)
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}
