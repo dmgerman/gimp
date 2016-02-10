@@ -21,6 +21,23 @@ directive|include
 file|<gegl.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<windows.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -135,6 +152,35 @@ include|#
 directive|include
 file|"gimp-intl.h"
 end_include
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_allow_set_foreground_window (GimpPlugIn * plug_in)
+name|gimp_allow_set_foreground_window
+parameter_list|(
+name|GimpPlugIn
+modifier|*
+name|plug_in
+parameter_list|)
+block|{
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+name|AllowSetForegroundWindow
+argument_list|(
+name|GetProcessId
+argument_list|(
+name|plug_in
+operator|->
+name|pid
+argument_list|)
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+block|}
+end_function
 
 begin_comment
 comment|/*  public functions  */
@@ -1433,6 +1479,11 @@ return|return
 name|return_vals
 return|;
 block|}
+name|gimp_allow_set_foreground_window
+argument_list|(
+name|plug_in
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|proc_run
