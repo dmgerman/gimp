@@ -318,6 +318,10 @@ begin_comment
 comment|/*********************/
 end_comment
 
+begin_comment
+comment|/**  * gimp_prop_expanding_frame_new:  * @config:        #GimpConfig object to which property is attached.  * @property_name: Name of boolean property.  * @button_label:  Toggle widget title appearing as a frame title.  * @child:         Child #GtkWidget of the returned frame.  * @button:        Pointer to the #GtkCheckButton used as frame title  *                 if not #NULL.  *  * Creates a #GimpFrame containing @child, using a #GtkCheckButton as a  * title whose value is tied to the boolean @property_name.  * @child will be visible when @property_name is #TRUE, hidden otherwise.  * If @button_label is #NULL, the @property_name's nick will be used as  * label of the #GtkCheckButton title.  *  * Return value:  A new #GimpFrame widget.  *  * Since GIMP 2.4  */
+end_comment
+
 begin_function
 name|GtkWidget
 modifier|*
@@ -852,7 +856,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_color_button_new:  * @config:        #GimpConfig object to which property is attached.  * @property_name: Name of #GimpRGB property.  * @title:         Title of the #GimpColorPanel that is to be created  * @width:         Width of color button.  * @height:        Height of color button.  * @type:          How transparency is represented.  *  * Creates a #GimpColorPanel to set and display the value of a #GimpRGB  * property.  Pressing the button brings up a color selector dialog.  *  * Return value:  A new #GimpColorPanel widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_color_button_new:  * @config:        #GimpConfig object to which property is attached.  * @property_name: Name of #GimpRGB property.  * @title:         Title of the #GimpColorPanel that is to be created  * @width:         Width of color button.  * @height:        Height of color button.  * @type:          How transparency is represented.  *  * Creates a #GimpColorPanel to set and display the value of a #GimpRGB  * property.  Pressing the button brings up a color selector dialog.  * If @title is #NULL, the @property_name's nick will be used as label  * of the returned widget.  *  * Return value:  A new #GimpColorPanel widget.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
@@ -1537,7 +1541,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_spin_scale_new:  * @config:        #GimpConfig object to which property is attached.  * @property_name: Name of gdouble property  *  * Creates a #GimpSpinScale to set and display the value of a  * gdouble property in a very space-efficient way.  *  * Return value:  A new #GimpSpinScale widget.  *  * Since GIMP 2.8  */
+comment|/**  * gimp_prop_spin_scale_new:  * @config:        #GimpConfig object to which property is attached.  * @property_name: Name of gdouble property  * @label:         Label of the created #GimpSpinScale.  * @step_increment:  * @page_increment:  * @digits:  *  * Creates a #GimpSpinScale to set and display the value of a  * gdouble property in a very space-efficient way.  * If @label is #NULL, the @property_name's nick will be used as label  * of the returned widget.  *  * Return value:  A new #GimpSpinScale widget.  *  * Since GIMP 2.8  */
 end_comment
 
 begin_function
@@ -3932,7 +3936,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288228fc0108
+DECL|struct|__anon2b7e57330108
 block|{
 DECL|member|config
 name|GObject

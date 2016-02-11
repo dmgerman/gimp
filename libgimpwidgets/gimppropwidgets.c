@@ -347,7 +347,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_check_button_new:  * @config:        Object to which property is attached.  * @property_name: Name of boolean property controlled by checkbutton.  * @label:         Label to give checkbutton (including mnemonic).  *  * Creates a #GtkCheckButton that displays and sets the specified  * boolean property.  *  * Return value: The newly created #GtkCheckButton widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_check_button_new:  * @config:        Object to which property is attached.  * @property_name: Name of boolean property controlled by checkbutton.  * @label:         Label to give checkbutton (including mnemonic).  *  * Creates a #GtkCheckButton that displays and sets the specified  * boolean property.  * If @label is #NULL, the @property_name's nick will be used as label  * of the returned button.  *  * Return value: The newly created #GtkCheckButton widget.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
@@ -700,7 +700,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_enum_check_button_new:  * @config:        Object to which property is attached.  * @property_name: Name of enum property controlled by checkbutton.  * @label:         Label to give checkbutton (including mnemonic).  * @false_value:   Enum value corresponding to unchecked state.  * @true_value:    Enum value corresonding to checked state.  *  * Creates a #GtkCheckButton that displays and sets the specified  * property of type Enum.  Note that this widget only allows two values  * for the enum, one corresponding to the "checked" state and the  * other to the "unchecked" state.  *  * Return value: The newly created #GtkCheckButton widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_enum_check_button_new:  * @config:        Object to which property is attached.  * @property_name: Name of enum property controlled by checkbutton.  * @label:         Label to give checkbutton (including mnemonic).  * @false_value:   Enum value corresponding to unchecked state.  * @true_value:    Enum value corresonding to checked state.  *  * Creates a #GtkCheckButton that displays and sets the specified  * property of type Enum.  Note that this widget only allows two values  * for the enum, one corresponding to the "checked" state and the  * other to the "unchecked" state.  * If @label is #NULL, the @property_name's nick will be used as label  * of the returned button.  *  * Return value: The newly created #GtkCheckButton widget.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
@@ -2504,7 +2504,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_enum_radio_frame_new:  * @config:        Object to which property is attached.  * @property_name: Name of enum property controlled by the radio buttons.  * @title:         Label for the frame holding the buttons  * @minimum:       Smallest value of enum to be included.  * @maximum:       Largest value of enum to be included.  *  * Creates a group of radio buttons which function to set and display  * the specified enum property.  The @minimum and @maximum arguments  * allow only a subset of the enum to be used.  If the two arguments  * are equal (e.g., 0, 0), then the full range of the enum will be used.  *  * Return value: A #GimpFrame containing the radio buttons.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_enum_radio_frame_new:  * @config:        Object to which property is attached.  * @property_name: Name of enum property controlled by the radio buttons.  * @title:         Label for the frame holding the buttons  * @minimum:       Smallest value of enum to be included.  * @maximum:       Largest value of enum to be included.  *  * Creates a group of radio buttons which function to set and display  * the specified enum property.  The @minimum and @maximum arguments  * allow only a subset of the enum to be used.  If the two arguments  * are equal (e.g., 0, 0), then the full range of the enum will be used.  * If @title is #NULL, the @property_name's nick will be used as label  * of the returned frame.  *  * Return value: A #GimpFrame containing the radio buttons.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
@@ -3134,7 +3134,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_boolean_radio_frame_new:  * @config:        Object to which property is attached.  * @property_name: Name of boolean property controlled by the radio buttons.  * @title:         Label for the frame.  * @true_text:     Label for the button corresponding to %TRUE.  * @false_text:    Label for the button corresponding to %FALSE.  *  * Creates a pair of radio buttons which function to set and display  * the specified boolean property.  *  * Return value: A #GimpFrame containing the radio buttons.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_boolean_radio_frame_new:  * @config:        Object to which property is attached.  * @property_name: Name of boolean property controlled by the radio buttons.  * @title:         Label for the frame.  * @true_text:     Label for the button corresponding to %TRUE.  * @false_text:    Label for the button corresponding to %FALSE.  *  * Creates a pair of radio buttons which function to set and display  * the specified boolean property.  * If @title is #NULL, the @property_name's nick will be used as label  * of the returned frame.  *  * Return value: A #GimpFrame containing the radio buttons.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
@@ -4126,7 +4126,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_scale_entry_new:  * @config:         Object to which property is attached.  * @property_name:  Name of double property controlled by the spin button.  * @table:          The #GtkTable the widgets will be attached to.  * @column:         The column to start with.  * @row:            The row to attach the widgets.  * @label:          The text for the #GtkLabel which will appear left of  *                  the #GtkHScale.  * @step_increment: Step size.  * @page_increment: Page size.  * @digits:         Number of digits after decimal point to display.  * @scale_limits:   %FALSE if the range of possible values of the  *                  GtkHScale should be the same as of the GtkSpinButton.  * @lower_limit:    The scale's lower boundary if @scale_limits is %TRUE.  * @upper_limit:    The scale's upper boundary if @scale_limits is %TRUE.  *  * Creates a #libgimpwidgets-gimpscaleentry (slider and spin button)  * to set and display the value of the specified double property.  See  * gimp_scale_entry_new() for more information.  *  * Note that the @scale_limits boolean is the inverse of  * gimp_scale_entry_new()'s "constrain" parameter.  *  * Return value: The #GtkSpinButton's #GtkAdjustment.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_scale_entry_new:  * @config:         Object to which property is attached.  * @property_name:  Name of double property controlled by the spin button.  * @table:          The #GtkTable the widgets will be attached to.  * @column:         The column to start with.  * @row:            The row to attach the widgets.  * @label:          The text for the #GtkLabel which will appear left of  *                  the #GtkHScale.  * @step_increment: Step size.  * @page_increment: Page size.  * @digits:         Number of digits after decimal point to display.  * @scale_limits:   %FALSE if the range of possible values of the  *                  GtkHScale should be the same as of the GtkSpinButton.  * @lower_limit:    The scale's lower boundary if @scale_limits is %TRUE.  * @upper_limit:    The scale's upper boundary if @scale_limits is %TRUE.  *  * Creates a #libgimpwidgets-gimpscaleentry (slider and spin button)  * to set and display the value of the specified double property.  See  * gimp_scale_entry_new() for more information.  * If @label is #NULL, the @property_name's nick will be used as label  * of the returned object.  *  * Note that the @scale_limits boolean is the inverse of  * gimp_scale_entry_new()'s "constrain" parameter.  *  * Return value: The #GtkSpinButton's #GtkAdjustment.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
@@ -13462,7 +13462,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_expander_new:  * @config:        Object to which property is attached.  * @property_name: Name of boolean property.  * @label:         Label for expander.  *  * Creates a #GtkExpander controlled by the specified boolean property.  * A value of %TRUE for the property corresponds to the expanded state  * for the widget.  *  * Return value:  A new #GtkExpander widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_expander_new:  * @config:        Object to which property is attached.  * @property_name: Name of boolean property.  * @label:         Label for expander.  *  * Creates a #GtkExpander controlled by the specified boolean property.  * A value of %TRUE for the property corresponds to the expanded state  * for the widget.  * If @label is #NULL, the @property_name's nick will be used as label  * of the returned widget.  *  * Return value:  A new #GtkExpander widget.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
