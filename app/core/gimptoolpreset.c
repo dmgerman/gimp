@@ -81,6 +81,10 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_comment
+comment|/*  The defaults are "everything except color", which is problematic  *  with gradients, which is why we special case the blend tool in  *  gimp_tool_preset_set_options().  */
+end_comment
+
 begin_define
 DECL|macro|DEFAULT_USE_FG_BG
 define|#
@@ -118,7 +122,7 @@ DECL|macro|DEFAULT_USE_GRADIENT
 define|#
 directive|define
 name|DEFAULT_USE_GRADIENT
-value|TRUE
+value|FALSE
 end_define
 
 begin_define
@@ -134,7 +138,7 @@ DECL|macro|DEFAULT_USE_PALETTE
 define|#
 directive|define
 name|DEFAULT_USE_PALETTE
-value|TRUE
+value|FALSE
 end_define
 
 begin_define
@@ -147,7 +151,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8055e40103
+DECL|enum|__anon2b1b72150103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1929,6 +1933,35 @@ argument_list|,
 literal|"use-font"
 argument_list|,
 name|FALSE
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+comment|/*  see comment above the DEFAULT defines at the top of the file  */
+if|if
+condition|(
+operator|!
+name|g_strcmp0
+argument_list|(
+literal|"gimp-blend-tool"
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|preset
+operator|->
+name|tool_options
+operator|->
+name|tool_info
+argument_list|)
+argument_list|)
+condition|)
+name|g_object_set
+argument_list|(
+name|preset
+argument_list|,
+literal|"use-gradient"
+argument_list|,
+name|TRUE
 argument_list|,
 name|NULL
 argument_list|)
