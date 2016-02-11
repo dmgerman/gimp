@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1870080103
+DECL|enum|__anon28d1fc110103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -589,12 +589,12 @@ literal|"horizontal-position"
 argument_list|,
 name|_
 argument_list|(
-literal|"Horizontal guide position"
+literal|"Horizontal axis position"
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Horizontal guide position"
+literal|"Horizontal axis position"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -623,12 +623,12 @@ literal|"vertical-position"
 argument_list|,
 name|_
 argument_list|(
-literal|"Vertical guide position"
+literal|"Vertical axis position"
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Vertical guide position"
+literal|"Vertical axis position"
 argument_list|)
 argument_list|,
 literal|0.0
