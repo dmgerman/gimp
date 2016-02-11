@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2bd3a40103
+DECL|enum|__anon2aa03e4f0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2bd3a40203
+DECL|enum|__anon2aa03e4f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -652,7 +652,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_guide_custom_new:  * @orientation:       the #GimpOrientationType  * @guide_ID:          the unique guide ID  * @guide_style:       the #GimpGuideStyle  *  * This function returns a new guide and will flag it as "custom".  * Custom guides are used for purpose "other" than the basic guides  * a user can create oneself, for instance as symmetry guides, to  * drive GEGL ops, etc.  * They are not saved in the XCF file. If an op, a symmetry or a plugin  * wishes to save its state, it has to do it internally.  *  * Returns: the custom #GimpGuide.  **/
+comment|/**  * gimp_guide_custom_new:  * @orientation:       the #GimpOrientationType  * @guide_ID:          the unique guide ID  * @guide_style:       the #GimpGuideStyle  *  * This function returns a new guide and will flag it as "custom".  * Custom guides are used for purpose "other" than the basic guides  * a user can create oneself, for instance as symmetry guides, to  * drive GEGL ops, etc.  * They are not saved in the XCF file. If an op, a symmetry or a plugin  * wishes to save its state, it has to do it internally.  * Moreover they don't follow guide snapping settings and never snap.  *  * Returns: the custom #GimpGuide.  **/
 end_comment
 
 begin_function
