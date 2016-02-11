@@ -306,7 +306,7 @@ name|gimp_image_set_active_symmetry
 argument_list|(
 name|image
 argument_list|,
-name|G_TYPE_NONE
+name|GIMP_TYPE_SYMMETRY
 argument_list|)
 expr_stmt|;
 name|private
