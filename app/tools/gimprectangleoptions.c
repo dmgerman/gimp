@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d3bb090103
+DECL|enum|__anon289e5e5e0103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -332,9 +332,12 @@ name|g_param_spec_boolean
 argument_list|(
 literal|"shrink-merged"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Shrink merged"
+argument_list|)
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Use all visible layers when shrinking "
 literal|"the selection"
@@ -927,9 +930,12 @@ name|g_param_spec_boolean
 argument_list|(
 literal|"fixed-center"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Expand from center"
+argument_list|)
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Expand selection from center outwards"
 argument_list|)
@@ -2821,10 +2827,7 @@ name|config
 argument_list|,
 literal|"fixed-center"
 argument_list|,
-name|_
-argument_list|(
-literal|"Expand from center"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2932,6 +2935,17 @@ argument_list|,
 literal|"fixed-rule-active"
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_widget_destroy
+argument_list|(
+name|gtk_bin_get_child
+argument_list|(
+name|GTK_BIN
+argument_list|(
+name|button
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3768,10 +3782,7 @@ name|config
 argument_list|,
 literal|"highlight"
 argument_list|,
-name|_
-argument_list|(
-literal|"Highlight"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3903,10 +3914,7 @@ name|config
 argument_list|,
 literal|"shrink-merged"
 argument_list|,
-name|_
-argument_list|(
-literal|"Shrink merged"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

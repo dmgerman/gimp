@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2735cc0103
+DECL|enum|__anon2b6688df0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -175,13 +175,18 @@ name|get_property
 operator|=
 name|gimp_vector_options_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_VECTORS_EDIT_MODE
 argument_list|,
 literal|"vectors-edit-mode"
+argument_list|,
+name|_
+argument_list|(
+literal|"Edit Mode"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -192,7 +197,7 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
@@ -200,7 +205,12 @@ name|PROP_VECTORS_POLYGONAL
 argument_list|,
 literal|"vectors-polygonal"
 argument_list|,
-name|N_
+name|_
+argument_list|(
+literal|"Polygonal"
+argument_list|)
+argument_list|,
+name|_
 argument_list|(
 literal|"Restrict editing to polygons"
 argument_list|)
@@ -494,10 +504,7 @@ name|config
 argument_list|,
 literal|"vectors-edit-mode"
 argument_list|,
-name|_
-argument_list|(
-literal|"Edit Mode"
-argument_list|)
+name|NULL
 argument_list|,
 literal|0
 argument_list|,
@@ -595,10 +602,7 @@ name|config
 argument_list|,
 literal|"vectors-polygonal"
 argument_list|,
-name|_
-argument_list|(
-literal|"Polygonal"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

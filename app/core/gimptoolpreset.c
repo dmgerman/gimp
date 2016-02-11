@@ -147,7 +147,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb6edbc0103
+DECL|enum|__anon2b8055e40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -484,13 +484,15 @@ name|get_extension
 operator|=
 name|gimp_tool_preset_get_extension
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_STRING
+name|GIMP_CONFIG_PROP_STRING
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_NAME
 argument_list|,
 literal|"name"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -521,7 +523,7 @@ name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_OBJECT
+name|GIMP_CONFIG_PROP_OBJECT
 argument_list|(
 name|object_class
 argument_list|,
@@ -531,18 +533,25 @@ literal|"tool-options"
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|GIMP_TYPE_TOOL_OPTIONS
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_USE_FG_BG
 argument_list|,
 literal|"use-fg-bg"
+argument_list|,
+name|_
+argument_list|(
+literal|"Apply stored FG/BG"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -551,13 +560,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_USE_BRUSH
 argument_list|,
 literal|"use-brush"
+argument_list|,
+name|_
+argument_list|(
+literal|"Apply stored brush"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -566,13 +580,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_USE_DYNAMICS
 argument_list|,
 literal|"use-dynamics"
+argument_list|,
+name|_
+argument_list|(
+literal|"Apply stored dynamics"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -581,13 +600,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_USE_MYBRUSH
 argument_list|,
 literal|"use-mypaint-brush"
+argument_list|,
+name|_
+argument_list|(
+literal|"Apply stored MyPaint brush"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -596,13 +620,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_USE_PATTERN
 argument_list|,
 literal|"use-pattern"
+argument_list|,
+name|_
+argument_list|(
+literal|"Apply stored pattern"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -611,13 +640,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_USE_PALETTE
 argument_list|,
 literal|"use-palette"
+argument_list|,
+name|_
+argument_list|(
+literal|"Apply stored palette"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -626,13 +660,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_USE_GRADIENT
 argument_list|,
 literal|"use-gradient"
+argument_list|,
+name|_
+argument_list|(
+literal|"Apply stored gradient"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -641,13 +680,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_USE_FONT
 argument_list|,
 literal|"use-font"
+argument_list|,
+name|_
+argument_list|(
+literal|"Apply stored font"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

@@ -706,10 +706,7 @@ argument_list|)
 argument_list|,
 literal|"use-fg-bg"
 argument_list|,
-name|_
-argument_list|(
-literal|"Apply stored FG/BG"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -750,10 +747,7 @@ argument_list|)
 argument_list|,
 literal|"use-brush"
 argument_list|,
-name|_
-argument_list|(
-literal|"Apply stored brush"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -794,10 +788,7 @@ argument_list|)
 argument_list|,
 literal|"use-dynamics"
 argument_list|,
-name|_
-argument_list|(
-literal|"Apply stored dynamics"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -838,10 +829,7 @@ argument_list|)
 argument_list|,
 literal|"use-mypaint-brush"
 argument_list|,
-name|_
-argument_list|(
-literal|"Apply stored MyPaint brush"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -882,10 +870,7 @@ argument_list|)
 argument_list|,
 literal|"use-gradient"
 argument_list|,
-name|_
-argument_list|(
-literal|"Apply stored gradient"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -926,10 +911,7 @@ argument_list|)
 argument_list|,
 literal|"use-pattern"
 argument_list|,
-name|_
-argument_list|(
-literal|"Apply stored pattern"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -970,10 +952,7 @@ argument_list|)
 argument_list|,
 literal|"use-palette"
 argument_list|,
-name|_
-argument_list|(
-literal|"Apply stored palette"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1014,10 +993,7 @@ argument_list|)
 argument_list|,
 literal|"use-font"
 argument_list|,
-name|_
-argument_list|(
-literal|"Apply stored font"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

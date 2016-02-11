@@ -45,9 +45,15 @@ directive|include
 file|"gimpcloneoptions.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon275802730103
+DECL|enum|__anon2bb09ae10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -156,13 +162,18 @@ name|get_property
 operator|=
 name|gimp_clone_options_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_CLONE_TYPE
 argument_list|,
 literal|"clone-type"
+argument_list|,
+name|_
+argument_list|(
+literal|"Source"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

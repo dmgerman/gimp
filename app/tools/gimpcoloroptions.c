@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a34042c0103
+DECL|enum|__anon28b040df0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -178,13 +178,18 @@ name|get_property
 operator|=
 name|gimp_color_options_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SAMPLE_MERGED
 argument_list|,
 literal|"sample-merged"
+argument_list|,
+name|_
+argument_list|(
+literal|"Sample merged"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -193,13 +198,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SAMPLE_AVERAGE
 argument_list|,
 literal|"sample-average"
+argument_list|,
+name|_
+argument_list|(
+literal|"Sample average"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -208,13 +218,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_AVERAGE_RADIUS
 argument_list|,
 literal|"average-radius"
+argument_list|,
+name|_
+argument_list|(
+literal|"Radius"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -522,10 +537,7 @@ name|config
 argument_list|,
 literal|"average-radius"
 argument_list|,
-name|_
-argument_list|(
-literal|"Radius"
-argument_list|)
+name|NULL
 argument_list|,
 literal|1.0
 argument_list|,
@@ -557,10 +569,7 @@ name|config
 argument_list|,
 literal|"sample-average"
 argument_list|,
-name|_
-argument_list|(
-literal|"Sample average"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_label_widget

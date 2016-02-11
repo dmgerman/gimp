@@ -93,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab180900103
+DECL|enum|__anon299273220103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -619,13 +619,15 @@ name|duplicate
 operator|=
 name|gimp_curve_duplicate
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_CURVE_TYPE
 argument_list|,
 literal|"curve-type"
+argument_list|,
+literal|"Curve Type"
 argument_list|,
 literal|"The curve type"
 argument_list|,
@@ -636,13 +638,15 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_INT
+name|GIMP_CONFIG_PROP_INT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_N_POINTS
 argument_list|,
 literal|"n-points"
+argument_list|,
+literal|"Number of Points"
 argument_list|,
 literal|"The number of points"
 argument_list|,
@@ -697,13 +701,15 @@ name|GIMP_CONFIG_PARAM_FLAGS
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_INT
+name|GIMP_CONFIG_PROP_INT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_N_SAMPLES
 argument_list|,
 literal|"n-samples"
+argument_list|,
+literal|"Number of Samples"
 argument_list|,
 literal|"The number of samples"
 argument_list|,

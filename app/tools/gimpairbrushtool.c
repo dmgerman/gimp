@@ -252,10 +252,7 @@ name|config
 argument_list|,
 literal|"motion-only"
 argument_list|,
-name|_
-argument_list|(
-literal|"Motion only"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -287,12 +284,7 @@ name|config
 argument_list|,
 literal|"rate"
 argument_list|,
-name|C_
-argument_list|(
-literal|"airbrush-tool"
-argument_list|,
-literal|"Rate"
-argument_list|)
+name|NULL
 argument_list|,
 literal|1.0
 argument_list|,
@@ -330,10 +322,7 @@ name|config
 argument_list|,
 literal|"flow"
 argument_list|,
-name|_
-argument_list|(
-literal|"Flow"
-argument_list|)
+name|NULL
 argument_list|,
 literal|1.0
 argument_list|,

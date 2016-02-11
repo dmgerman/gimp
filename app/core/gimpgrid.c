@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c5770c0103
+DECL|enum|__anon29c545cd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -238,7 +238,7 @@ argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
@@ -246,7 +246,12 @@ name|PROP_STYLE
 argument_list|,
 literal|"style"
 argument_list|,
-name|N_
+name|_
+argument_list|(
+literal|"Line style"
+argument_list|)
+argument_list|,
+name|_
 argument_list|(
 literal|"Line style used for the grid."
 argument_list|)
@@ -258,7 +263,7 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_RGB
+name|GIMP_CONFIG_PROP_RGB
 argument_list|(
 name|object_class
 argument_list|,
@@ -266,7 +271,12 @@ name|PROP_FGCOLOR
 argument_list|,
 literal|"fgcolor"
 argument_list|,
-name|N_
+name|_
+argument_list|(
+literal|"Foreground color"
+argument_list|)
+argument_list|,
+name|_
 argument_list|(
 literal|"The foreground color of the grid."
 argument_list|)
@@ -279,7 +289,7 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_RGB
+name|GIMP_CONFIG_PROP_RGB
 argument_list|(
 name|object_class
 argument_list|,
@@ -287,7 +297,12 @@ name|PROP_BGCOLOR
 argument_list|,
 literal|"bgcolor"
 argument_list|,
-name|N_
+name|_
+argument_list|(
+literal|"Background color"
+argument_list|)
+argument_list|,
+name|_
 argument_list|(
 literal|"The background color of the grid; "
 literal|"only used in double dashed line style."
@@ -301,7 +316,7 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
@@ -309,7 +324,12 @@ name|PROP_XSPACING
 argument_list|,
 literal|"xspacing"
 argument_list|,
-name|N_
+name|_
+argument_list|(
+literal|"Spacing X"
+argument_list|)
+argument_list|,
+name|_
 argument_list|(
 literal|"Horizontal spacing of grid lines."
 argument_list|)
@@ -323,7 +343,7 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
@@ -331,7 +351,12 @@ name|PROP_YSPACING
 argument_list|,
 literal|"yspacing"
 argument_list|,
-name|N_
+name|_
+argument_list|(
+literal|"Spacing Y"
+argument_list|)
+argument_list|,
+name|_
 argument_list|(
 literal|"Vertical spacing of grid lines."
 argument_list|)
@@ -345,13 +370,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_UNIT
+name|GIMP_CONFIG_PROP_UNIT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SPACING_UNIT
 argument_list|,
 literal|"spacing-unit"
+argument_list|,
+name|_
+argument_list|(
+literal|"Spacing unit"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -364,7 +394,7 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
@@ -372,7 +402,12 @@ name|PROP_XOFFSET
 argument_list|,
 literal|"xoffset"
 argument_list|,
-name|N_
+name|_
+argument_list|(
+literal|"Offset X"
+argument_list|)
+argument_list|,
+name|_
 argument_list|(
 literal|"Horizontal offset of the first grid "
 literal|"line; this may be a negative number."
@@ -388,7 +423,7 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
@@ -396,7 +431,12 @@ name|PROP_YOFFSET
 argument_list|,
 literal|"yoffset"
 argument_list|,
-name|N_
+name|_
+argument_list|(
+literal|"Offset Y"
+argument_list|)
+argument_list|,
+name|_
 argument_list|(
 literal|"Vertical offset of the first grid "
 literal|"line; this may be a negative number."
@@ -412,13 +452,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_UNIT
+name|GIMP_CONFIG_PROP_UNIT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_OFFSET_UNIT
 argument_list|,
 literal|"offset-unit"
+argument_list|,
+name|_
+argument_list|(
+literal|"Offset unit"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

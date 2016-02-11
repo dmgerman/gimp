@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e2e2750103
+DECL|enum|__anon29c58b7b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e2e2750203
+DECL|enum|__anon29c58b7b0203
 block|{
 DECL|enumerator|DASH_INFO_CHANGED
 name|DASH_INFO_CHANGED
@@ -451,13 +451,18 @@ argument_list|,
 name|GIMP_TYPE_DASH_PRESET
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_METHOD
 argument_list|,
 literal|"method"
+argument_list|,
+name|_
+argument_list|(
+literal|"Method"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -468,13 +473,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_WIDTH
 argument_list|,
 literal|"width"
+argument_list|,
+name|_
+argument_list|(
+literal|"Line width"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -487,13 +497,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_UNIT
+name|GIMP_CONFIG_PROP_UNIT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_UNIT
 argument_list|,
 literal|"unit"
+argument_list|,
+name|_
+argument_list|(
+literal|"Unit"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -506,13 +521,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_CAP_STYLE
 argument_list|,
 literal|"cap-style"
+argument_list|,
+name|_
+argument_list|(
+literal|"Cap style"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -523,13 +543,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_JOIN_STYLE
 argument_list|,
 literal|"join-style"
+argument_list|,
+name|_
+argument_list|(
+literal|"Join style"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -540,13 +565,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_MITER_LIMIT
 argument_list|,
 literal|"miter-limit"
+argument_list|,
+name|_
+argument_list|(
+literal|"Miter limit"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -565,13 +595,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DASH_OFFSET
 argument_list|,
 literal|"dash-offset"
+argument_list|,
+name|_
+argument_list|(
+literal|"Dash offset"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -625,7 +660,7 @@ name|GIMP_CONFIG_PARAM_FLAGS
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_OBJECT
+name|GIMP_CONFIG_PROP_OBJECT
 argument_list|(
 name|object_class
 argument_list|,
@@ -635,18 +670,25 @@ literal|"paint-options"
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|GIMP_TYPE_PAINT_OPTIONS
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_EMULATE_DYNAMICS
 argument_list|,
 literal|"emulate-brush-dynamics"
+argument_list|,
+name|_
+argument_list|(
+literal|"Emulate brush dynamics"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

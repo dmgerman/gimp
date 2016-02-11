@@ -123,7 +123,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d3ff4c0103
+DECL|enum|__anon276f312a0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -3566,7 +3566,7 @@ name|GtkWidget
 modifier|*
 name|mode
 decl_stmt|;
-comment|/* radio buttons to set if you are modifying perspe plane or painting */
+comment|/* radio buttons to set if you are modifying the perspective plane    * or painting    */
 name|mode
 operator|=
 name|gimp_prop_enum_radio_box_new

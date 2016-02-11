@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd2862f0103
+DECL|enum|__anon2c86d2670103
 block|{
 DECL|enumerator|PROP_LAYER_ONLY
 name|PROP_LAYER_ONLY
@@ -197,13 +197,18 @@ operator|=
 name|gimp_crop_options_get_property
 expr_stmt|;
 comment|/* The 'highlight' property is defined here because we want different    * default values for the Crop and the Rectangle Select tools.    */
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|GIMP_RECTANGLE_OPTIONS_PROP_HIGHLIGHT
 argument_list|,
 literal|"highlight"
+argument_list|,
+name|_
+argument_list|(
+literal|"Highlight"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -215,13 +220,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_LAYER_ONLY
 argument_list|,
 literal|"layer-only"
+argument_list|,
+name|_
+argument_list|(
+literal|"Current layer only"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -233,13 +243,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_ALLOW_GROWING
 argument_list|,
 literal|"allow-growing"
+argument_list|,
+name|_
+argument_list|(
+literal|"Allow growing"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -491,10 +506,7 @@ name|config
 argument_list|,
 literal|"layer-only"
 argument_list|,
-name|_
-argument_list|(
-literal|"Current layer only"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -527,10 +539,7 @@ name|config
 argument_list|,
 literal|"allow-growing"
 argument_list|,
-name|_
-argument_list|(
-literal|"Allow growing"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

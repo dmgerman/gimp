@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2871126e0103
+DECL|enum|__anon279491f60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -303,7 +303,7 @@ name|get_property
 operator|=
 name|gimp_pdb_context_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
@@ -311,7 +311,12 @@ name|PROP_ANTIALIAS
 argument_list|,
 literal|"antialias"
 argument_list|,
-name|N_
+name|_
+argument_list|(
+literal|"Antialiasing"
+argument_list|)
+argument_list|,
+name|_
 argument_list|(
 literal|"Smooth edges"
 argument_list|)
@@ -321,7 +326,7 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
@@ -329,6 +334,11 @@ name|PROP_FEATHER
 argument_list|,
 literal|"feather"
 argument_list|,
+name|_
+argument_list|(
+literal|"Feather"
+argument_list|)
+argument_list|,
 name|NULL
 argument_list|,
 name|FALSE
@@ -336,7 +346,7 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
@@ -344,6 +354,11 @@ name|PROP_FEATHER_RADIUS_X
 argument_list|,
 literal|"feather-radius-x"
 argument_list|,
+name|_
+argument_list|(
+literal|"Feather radius X"
+argument_list|)
+argument_list|,
 name|NULL
 argument_list|,
 literal|0.0
@@ -355,7 +370,7 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
@@ -363,6 +378,11 @@ name|PROP_FEATHER_RADIUS_Y
 argument_list|,
 literal|"feather-radius-y"
 argument_list|,
+name|_
+argument_list|(
+literal|"Feather radius Y"
+argument_list|)
+argument_list|,
 name|NULL
 argument_list|,
 literal|0.0
@@ -374,13 +394,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SAMPLE_MERGED
 argument_list|,
 literal|"sample-merged"
+argument_list|,
+name|_
+argument_list|(
+literal|"Sample merged"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -389,13 +414,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SAMPLE_CRITERION
 argument_list|,
 literal|"sample-criterion"
+argument_list|,
+name|_
+argument_list|(
+literal|"Sample criterion"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -406,13 +436,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SAMPLE_THRESHOLD
 argument_list|,
 literal|"sample-threshold"
+argument_list|,
+name|_
+argument_list|(
+literal|"Sample threshold"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -425,7 +460,7 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
@@ -433,6 +468,11 @@ name|PROP_SAMPLE_TRANSPARENT
 argument_list|,
 literal|"sample-transparent"
 argument_list|,
+name|_
+argument_list|(
+literal|"Sample transparent"
+argument_list|)
+argument_list|,
 name|NULL
 argument_list|,
 name|FALSE
@@ -440,7 +480,7 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
@@ -448,6 +488,11 @@ name|PROP_DIAGONAL_NEIGHBORS
 argument_list|,
 literal|"diagonal-neighbors"
 argument_list|,
+name|_
+argument_list|(
+literal|"Diagonal neighbors"
+argument_list|)
+argument_list|,
 name|NULL
 argument_list|,
 name|FALSE
@@ -455,13 +500,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_INTERPOLATION
 argument_list|,
 literal|"interpolation"
+argument_list|,
+name|_
+argument_list|(
+literal|"Interpolation"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -472,13 +522,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_TRANSFORM_DIRECTION
 argument_list|,
 literal|"transform-direction"
+argument_list|,
+name|_
+argument_list|(
+literal|"Transform direction"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -489,13 +544,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_TRANSFORM_RESIZE
 argument_list|,
 literal|"transform-resize"
+argument_list|,
+name|_
+argument_list|(
+literal|"Transform resize"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

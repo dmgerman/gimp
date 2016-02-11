@@ -39,9 +39,15 @@ directive|include
 file|"gimpsourceoptions.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon2b76fb250103
+DECL|enum|__anon29a2b1b60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -145,13 +151,18 @@ name|get_property
 operator|=
 name|gimp_source_options_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_ALIGN_MODE
 argument_list|,
 literal|"align-mode"
+argument_list|,
+name|_
+argument_list|(
+literal|"Alignment"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -162,13 +173,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SAMPLE_MERGED
 argument_list|,
 literal|"sample-merged"
+argument_list|,
+name|_
+argument_list|(
+literal|"Sample merged"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

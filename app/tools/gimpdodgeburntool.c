@@ -860,10 +860,7 @@ name|config
 argument_list|,
 literal|"mode"
 argument_list|,
-name|_
-argument_list|(
-literal|"Range"
-argument_list|)
+name|NULL
 argument_list|,
 literal|0
 argument_list|,
@@ -900,10 +897,7 @@ name|config
 argument_list|,
 literal|"exposure"
 argument_list|,
-name|_
-argument_list|(
-literal|"Exposure"
-argument_list|)
+name|NULL
 argument_list|,
 literal|1.0
 argument_list|,

@@ -335,10 +335,6 @@ name|prop_name
 parameter_list|,
 name|gchar
 modifier|*
-name|prop_descr
-parameter_list|,
-name|gchar
-modifier|*
 name|link_prop_name
 parameter_list|,
 name|gchar
@@ -540,10 +536,7 @@ name|config
 argument_list|,
 literal|"opacity"
 argument_list|,
-name|_
-argument_list|(
-literal|"Opacity"
-argument_list|)
+name|NULL
 argument_list|,
 literal|0.01
 argument_list|,
@@ -613,7 +606,7 @@ name|config
 argument_list|,
 literal|"use-applicator"
 argument_list|,
-literal|"Use GimpApplicator"
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -726,11 +719,6 @@ name|config
 argument_list|,
 literal|"brush-size"
 argument_list|,
-name|_
-argument_list|(
-literal|"Size"
-argument_list|)
-argument_list|,
 literal|"brush-link-size"
 argument_list|,
 name|_
@@ -788,11 +776,6 @@ argument_list|(
 name|config
 argument_list|,
 literal|"brush-aspect-ratio"
-argument_list|,
-name|_
-argument_list|(
-literal|"Aspect Ratio"
-argument_list|)
 argument_list|,
 literal|"brush-link-aspect-ratio"
 argument_list|,
@@ -853,11 +836,6 @@ name|config
 argument_list|,
 literal|"brush-angle"
 argument_list|,
-name|_
-argument_list|(
-literal|"Angle"
-argument_list|)
-argument_list|,
 literal|"brush-link-angle"
 argument_list|,
 name|_
@@ -917,11 +895,6 @@ name|config
 argument_list|,
 literal|"brush-spacing"
 argument_list|,
-name|_
-argument_list|(
-literal|"Spacing"
-argument_list|)
-argument_list|,
 literal|"brush-link-spacing"
 argument_list|,
 name|_
@@ -980,11 +953,6 @@ name|config
 argument_list|,
 literal|"brush-hardness"
 argument_list|,
-name|_
-argument_list|(
-literal|"Hardness"
-argument_list|)
-argument_list|,
 literal|"brush-link-hardness"
 argument_list|,
 name|_
@@ -1042,11 +1010,6 @@ argument_list|(
 name|config
 argument_list|,
 literal|"brush-force"
-argument_list|,
-name|_
-argument_list|(
-literal|"Force"
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1349,10 +1312,7 @@ name|config
 argument_list|,
 literal|"application-mode"
 argument_list|,
-name|_
-argument_list|(
-literal|"Incremental"
-argument_list|)
+name|NULL
 argument_list|,
 name|GIMP_PAINT_CONSTANT
 argument_list|,
@@ -1425,10 +1385,7 @@ name|config
 argument_list|,
 literal|"hard"
 argument_list|,
-name|_
-argument_list|(
-literal|"Hard edge"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1535,10 +1492,7 @@ name|config
 argument_list|,
 literal|"dynamics-expanded"
 argument_list|,
-name|_
-argument_list|(
-literal|"Dynamics Options"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|vbox
@@ -1659,10 +1613,7 @@ name|config
 argument_list|,
 literal|"fade-length"
 argument_list|,
-name|_
-argument_list|(
-literal|"Fade length"
-argument_list|)
+name|NULL
 argument_list|,
 literal|1.0
 argument_list|,
@@ -1808,10 +1759,7 @@ name|config
 argument_list|,
 literal|"fade-reverse"
 argument_list|,
-name|_
-argument_list|(
-literal|"Reverse"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1966,10 +1914,7 @@ name|config
 argument_list|,
 literal|"jitter-amount"
 argument_list|,
-name|_
-argument_list|(
-literal|"Amount"
-argument_list|)
+name|NULL
 argument_list|,
 literal|0.01
 argument_list|,
@@ -1986,10 +1931,7 @@ name|config
 argument_list|,
 literal|"use-jitter"
 argument_list|,
-name|_
-argument_list|(
-literal|"Apply Jitter"
-argument_list|)
+name|NULL
 argument_list|,
 name|scale
 argument_list|,
@@ -2055,10 +1997,7 @@ name|config
 argument_list|,
 literal|"use-smoothing"
 argument_list|,
-name|_
-argument_list|(
-literal|"Smooth stroke"
-argument_list|)
+name|NULL
 argument_list|,
 name|vbox
 argument_list|,
@@ -2073,10 +2012,7 @@ name|config
 argument_list|,
 literal|"smoothing-quality"
 argument_list|,
-name|_
-argument_list|(
-literal|"Quality"
-argument_list|)
+name|NULL
 argument_list|,
 literal|1
 argument_list|,
@@ -2114,10 +2050,7 @@ name|config
 argument_list|,
 literal|"smoothing-factor"
 argument_list|,
-name|_
-argument_list|(
-literal|"Weight"
-argument_list|)
+name|NULL
 argument_list|,
 literal|1
 argument_list|,
@@ -2473,7 +2406,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_paint_options_gui_scale_with_buttons (GObject * config,gchar * prop_name,gchar * prop_descr,gchar * link_prop_name,gchar * reset_tooltip,gdouble step_increment,gdouble page_increment,gint digits,gdouble scale_min,gdouble scale_max,gdouble factor,gdouble gamma,GCallback reset_callback,GtkSizeGroup * link_group)
+DECL|function|gimp_paint_options_gui_scale_with_buttons (GObject * config,gchar * prop_name,gchar * link_prop_name,gchar * reset_tooltip,gdouble step_increment,gdouble page_increment,gint digits,gdouble scale_min,gdouble scale_max,gdouble factor,gdouble gamma,GCallback reset_callback,GtkSizeGroup * link_group)
 name|gimp_paint_options_gui_scale_with_buttons
 parameter_list|(
 name|GObject
@@ -2483,10 +2416,6 @@ parameter_list|,
 name|gchar
 modifier|*
 name|prop_name
-parameter_list|,
-name|gchar
-modifier|*
-name|prop_descr
 parameter_list|,
 name|gchar
 modifier|*
@@ -2554,7 +2483,7 @@ name|config
 argument_list|,
 name|prop_name
 argument_list|,
-name|prop_descr
+name|NULL
 argument_list|,
 name|step_increment
 argument_list|,

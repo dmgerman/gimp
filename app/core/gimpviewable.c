@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2899ddb20103
+DECL|enum|__anon2b3a80c90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -118,7 +118,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2899ddb20203
+DECL|enum|__anon2b3a80c90203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -707,7 +707,7 @@ operator|=
 name|NULL
 expr_stmt|;
 comment|/* compat property */
-name|GIMP_CONFIG_INSTALL_PROP_STRING
+name|GIMP_CONFIG_PROP_STRING
 argument_list|(
 name|object_class
 argument_list|,
@@ -719,10 +719,12 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_STRING
+name|GIMP_CONFIG_PROP_STRING
 argument_list|(
 name|object_class
 argument_list|,
@@ -734,16 +736,20 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_OBJECT
+name|GIMP_CONFIG_PROP_OBJECT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_ICON_PIXBUF
 argument_list|,
 literal|"icon-pixbuf"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

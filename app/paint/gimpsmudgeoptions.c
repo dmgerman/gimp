@@ -39,6 +39,12 @@ directive|include
 file|"gimpsmudgeoptions.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_define
 DECL|macro|SMUDGE_DEFAULT_RATE
 define|#
@@ -49,7 +55,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b788f9d0103
+DECL|enum|__anon29ed18bb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -150,13 +156,20 @@ name|get_property
 operator|=
 name|gimp_smudge_options_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_RATE
 argument_list|,
 literal|"rate"
+argument_list|,
+name|C_
+argument_list|(
+literal|"smudge-tool"
+argument_list|,
+literal|"Rate"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

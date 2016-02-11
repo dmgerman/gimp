@@ -280,12 +280,7 @@ name|config
 argument_list|,
 literal|"rate"
 argument_list|,
-name|C_
-argument_list|(
-literal|"smudge-tool"
-argument_list|,
-literal|"Rate"
-argument_list|)
+name|NULL
 argument_list|,
 literal|1.0
 argument_list|,

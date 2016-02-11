@@ -1562,6 +1562,17 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gtk_widget_destroy
+argument_list|(
+name|gtk_bin_get_child
+argument_list|(
+name|GTK_BIN
+argument_list|(
+name|button
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gtk_table_attach
 argument_list|(
 name|table

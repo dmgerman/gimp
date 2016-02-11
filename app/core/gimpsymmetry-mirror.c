@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d1fc110103
+DECL|enum|__anon2c8283150103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -484,7 +484,6 @@ name|active_changed
 operator|=
 name|gimp_mirror_active_changed
 expr_stmt|;
-comment|/* Properties for user settings */
 name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
@@ -576,15 +575,12 @@ operator||
 name|GIMP_SYMMETRY_PARAM_GUI
 argument_list|)
 expr_stmt|;
-comment|/* Properties for XCF serialization only */
-name|g_object_class_install_property
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_HORIZONTAL_POSITION
 argument_list|,
-name|g_param_spec_double
-argument_list|(
 literal|"horizontal-position"
 argument_list|,
 name|_
@@ -592,10 +588,7 @@ argument_list|(
 literal|"Horizontal axis position"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Horizontal axis position"
-argument_list|)
+name|NULL
 argument_list|,
 literal|0.0
 argument_list|,
@@ -603,22 +596,17 @@ name|G_MAXDOUBLE
 argument_list|,
 literal|0.0
 argument_list|,
-name|GIMP_CONFIG_PARAM_FLAGS
-operator||
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
 name|GIMP_SYMMETRY_PARAM_GUI
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|g_object_class_install_property
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_VERTICAL_POSITION
 argument_list|,
-name|g_param_spec_double
-argument_list|(
 literal|"vertical-position"
 argument_list|,
 name|_
@@ -626,10 +614,7 @@ argument_list|(
 literal|"Vertical axis position"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Vertical axis position"
-argument_list|)
+name|NULL
 argument_list|,
 literal|0.0
 argument_list|,
@@ -637,12 +622,9 @@ name|G_MAXDOUBLE
 argument_list|,
 literal|0.0
 argument_list|,
-name|GIMP_CONFIG_PARAM_FLAGS
-operator||
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
 name|GIMP_SYMMETRY_PARAM_GUI
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

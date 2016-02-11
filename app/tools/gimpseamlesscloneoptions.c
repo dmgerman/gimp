@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0272bf0103
+DECL|enum|__anon2924e7a00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -180,7 +180,7 @@ name|get_property
 operator|=
 name|gimp_seamless_clone_options_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_INT
+name|GIMP_CONFIG_PROP_INT
 argument_list|(
 name|object_class
 argument_list|,
@@ -190,7 +190,13 @@ literal|"max-refine-scale"
 argument_list|,
 name|_
 argument_list|(
-literal|"Maximal scale of refinement points to be used for the interpolation mesh"
+literal|"Refinement scale"
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Maximal scale of refinement points to be "
+literal|"used for the interpolation mesh"
 argument_list|)
 argument_list|,
 literal|0
@@ -388,10 +394,7 @@ name|config
 argument_list|,
 literal|"max-refine-scale"
 argument_list|,
-name|_
-argument_list|(
-literal|"Refinement scale"
-argument_list|)
+name|NULL
 argument_list|,
 literal|1.0
 argument_list|,

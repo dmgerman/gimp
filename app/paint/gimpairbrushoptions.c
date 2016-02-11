@@ -39,6 +39,12 @@ directive|include
 file|"gimpairbrushoptions.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_define
 DECL|macro|AIRBRUSH_DEFAULT_RATE
 define|#
@@ -65,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f023a80103
+DECL|enum|__anon298f8ac30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -176,13 +182,20 @@ name|get_property
 operator|=
 name|gimp_airbrush_options_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_RATE
 argument_list|,
 literal|"rate"
+argument_list|,
+name|C_
+argument_list|(
+literal|"airbrush-tool"
+argument_list|,
+literal|"Rate"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -195,13 +208,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_MOTION_ONLY
 argument_list|,
 literal|"motion-only"
+argument_list|,
+name|_
+argument_list|(
+literal|"Motion only"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -210,13 +228,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_FLOW
 argument_list|,
 literal|"flow"
+argument_list|,
+name|_
+argument_list|(
+literal|"Flow"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -229,14 +252,16 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-comment|/*backwads-compadibility prop for flow fomerly known as pressure*/
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+comment|/* backwads-compadibility prop for flow fomerly known as pressure */
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_PRESSURE
 argument_list|,
 literal|"pressure"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c08d1290103
+DECL|enum|__anon2c1a0e960103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -168,13 +168,18 @@ operator|=
 name|gimp_color_picker_options_get_property
 expr_stmt|;
 comment|/* override a GimpColorOptions property to get a different default value */
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SAMPLE_AVERAGE
 argument_list|,
 literal|"sample-average"
+argument_list|,
+name|_
+argument_list|(
+literal|"Sample average"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -187,13 +192,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_PICK_MODE
 argument_list|,
 literal|"pick-mode"
+argument_list|,
+name|_
+argument_list|(
+literal|"Pick Mode"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -207,13 +217,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_USE_INFO_WINDOW
 argument_list|,
 literal|"use-info-window"
+argument_list|,
+name|_
+argument_list|(
+literal|"Use info window"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -491,10 +506,7 @@ name|config
 argument_list|,
 literal|"sample-merged"
 argument_list|,
-name|_
-argument_list|(
-literal|"Sample merged"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

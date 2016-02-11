@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa03e4f0103
+DECL|enum|__anon2a30e0c00103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa03e4f0203
+DECL|enum|__anon2a30e0c00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -299,13 +299,15 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_ORIENTATION
 argument_list|,
 literal|"orientation"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -316,13 +318,15 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_INT
+name|GIMP_CONFIG_PROP_INT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_POSITION
 argument_list|,
 literal|"position"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -335,13 +339,15 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_STYLE
 argument_list|,
 literal|"style"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

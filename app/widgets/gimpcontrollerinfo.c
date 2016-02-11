@@ -78,7 +78,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ae36e00103
+DECL|enum|__anon2aae2dde0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -100,7 +100,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ae36e00203
+DECL|enum|__anon2aae2dde0203
 block|{
 DECL|enumerator|EVENT_MAPPED
 name|EVENT_MAPPED
@@ -350,13 +350,18 @@ name|default_icon_name
 operator|=
 name|GIMP_STOCK_CONTROLLER
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_ENABLED
 argument_list|,
 literal|"enabled"
+argument_list|,
+name|_
+argument_list|(
+literal|"Enabled"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -365,13 +370,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DEBUG_EVENTS
 argument_list|,
 literal|"debug-events"
+argument_list|,
+name|_
+argument_list|(
+literal|"Debug events"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -380,13 +390,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_OBJECT
+name|GIMP_CONFIG_PROP_OBJECT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_CONTROLLER
 argument_list|,
 literal|"controller"
+argument_list|,
+literal|"Controller"
 argument_list|,
 name|NULL
 argument_list|,
@@ -395,13 +407,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOXED
+name|GIMP_CONFIG_PROP_BOXED
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_MAPPING
 argument_list|,
 literal|"mapping"
+argument_list|,
+literal|"Mapping"
 argument_list|,
 name|NULL
 argument_list|,

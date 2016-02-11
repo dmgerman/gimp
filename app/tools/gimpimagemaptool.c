@@ -1756,10 +1756,7 @@ argument_list|)
 argument_list|,
 literal|"preview"
 argument_list|,
-name|_
-argument_list|(
-literal|"_Preview"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end

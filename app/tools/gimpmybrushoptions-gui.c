@@ -184,10 +184,7 @@ name|config
 argument_list|,
 literal|"eraser"
 argument_list|,
-name|_
-argument_list|(
-literal|"Erase with this brush"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -220,10 +217,7 @@ name|config
 argument_list|,
 literal|"radius"
 argument_list|,
-name|_
-argument_list|(
-literal|"Radius"
-argument_list|)
+name|NULL
 argument_list|,
 literal|0.1
 argument_list|,
@@ -262,10 +256,7 @@ name|config
 argument_list|,
 literal|"opaque"
 argument_list|,
-name|_
-argument_list|(
-literal|"Base Opacity"
-argument_list|)
+name|NULL
 argument_list|,
 literal|0.1
 argument_list|,
@@ -304,10 +295,7 @@ name|config
 argument_list|,
 literal|"hardness"
 argument_list|,
-name|_
-argument_list|(
-literal|"Hardness"
-argument_list|)
+name|NULL
 argument_list|,
 literal|0.1
 argument_list|,

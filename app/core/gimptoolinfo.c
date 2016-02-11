@@ -87,9 +87,15 @@ directive|include
 file|"gimptoolpreset.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon2a4132a90103
+DECL|enum|__anon298e84f30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -267,13 +273,18 @@ name|get_description
 operator|=
 name|gimp_tool_info_get_description
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_VISIBLE
 argument_list|,
 literal|"visible"
+argument_list|,
+name|_
+argument_list|(
+literal|"Visible"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

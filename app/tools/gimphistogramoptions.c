@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba5848d0103
+DECL|enum|__anon287aec490103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -172,13 +172,18 @@ name|get_property
 operator|=
 name|gimp_histogram_options_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SCALE
 argument_list|,
 literal|"histogram-scale"
+argument_list|,
+name|_
+argument_list|(
+literal|"Histogram Scale"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -375,10 +380,7 @@ name|config
 argument_list|,
 literal|"histogram-scale"
 argument_list|,
-name|_
-argument_list|(
-literal|"Histogram Scale"
-argument_list|)
+name|NULL
 argument_list|,
 literal|0
 argument_list|,

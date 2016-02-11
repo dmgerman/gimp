@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2421330103
+DECL|enum|__anon27df94920103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -255,13 +255,18 @@ name|get_property
 operator|=
 name|gimp_region_select_options_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SELECT_TRANSPARENT
 argument_list|,
 literal|"select-transparent"
+argument_list|,
+name|_
+argument_list|(
+literal|"Select transparent areas"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -274,13 +279,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SAMPLE_MERGED
 argument_list|,
 literal|"sample-merged"
+argument_list|,
+name|_
+argument_list|(
+literal|"Sample merged"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -292,13 +302,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DIAGONAL_NEIGHBORS
 argument_list|,
 literal|"diagonal-neighbors"
+argument_list|,
+name|_
+argument_list|(
+literal|"Diagonal neighbors"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -311,13 +326,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_THRESHOLD
 argument_list|,
 literal|"threshold"
+argument_list|,
+name|_
+argument_list|(
+literal|"Threshold"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -333,13 +353,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SELECT_CRITERION
 argument_list|,
 literal|"select-criterion"
+argument_list|,
+name|_
+argument_list|(
+literal|"Select by"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -363,7 +388,10 @@ name|g_param_spec_boolean
 argument_list|(
 literal|"draw-mask"
 argument_list|,
+name|_
+argument_list|(
 literal|"Draw mask"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -808,10 +836,7 @@ name|config
 argument_list|,
 literal|"select-transparent"
 argument_list|,
-name|_
-argument_list|(
-literal|"Select transparent areas"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -844,10 +869,7 @@ name|config
 argument_list|,
 literal|"sample-merged"
 argument_list|,
-name|_
-argument_list|(
-literal|"Sample merged"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -887,10 +909,7 @@ name|config
 argument_list|,
 literal|"diagonal-neighbors"
 argument_list|,
-name|_
-argument_list|(
-literal|"Diagonal neighbors"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -924,10 +943,7 @@ name|config
 argument_list|,
 literal|"threshold"
 argument_list|,
-name|_
-argument_list|(
-literal|"Threshold"
-argument_list|)
+name|NULL
 argument_list|,
 literal|1.0
 argument_list|,
@@ -1014,10 +1030,7 @@ name|config
 argument_list|,
 literal|"draw-mask"
 argument_list|,
-name|_
-argument_list|(
-literal|"Draw Mask"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

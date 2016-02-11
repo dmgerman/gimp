@@ -49,7 +49,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2977b8300103
+DECL|enum|__anon28b3a4a00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -150,13 +150,15 @@ name|get_property
 operator|=
 name|gimp_pencil_options_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_HARD
 argument_list|,
 literal|"hard"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

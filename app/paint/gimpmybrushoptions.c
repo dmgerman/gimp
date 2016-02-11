@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc41ad20103
+DECL|enum|__anon2c91a25a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -248,7 +248,7 @@ name|mybrush_changed
 operator|=
 name|gimp_mybrush_options_mybrush_changed
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
@@ -261,6 +261,8 @@ argument_list|(
 literal|"Radius"
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 operator|-
 literal|2.0
 argument_list|,
@@ -271,7 +273,7 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
@@ -284,6 +286,8 @@ argument_list|(
 literal|"Base Opacity"
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 literal|0.0
 argument_list|,
 literal|2.0
@@ -293,13 +297,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_HARDNESS
 argument_list|,
 literal|"hardness"
+argument_list|,
+name|_
+argument_list|(
+literal|"Hardness"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -312,13 +321,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_ERASER
 argument_list|,
 literal|"eraser"
+argument_list|,
+name|_
+argument_list|(
+literal|"Erase with this brush"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

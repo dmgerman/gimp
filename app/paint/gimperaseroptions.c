@@ -39,6 +39,12 @@ directive|include
 file|"gimperaseroptions.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_define
 DECL|macro|ERASER_DEFAULT_ANTI_ERASE
 define|#
@@ -49,7 +55,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d939840103
+DECL|enum|__anon2c5512190103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -150,13 +156,18 @@ name|get_property
 operator|=
 name|gimp_eraser_options_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_ANTI_ERASE
 argument_list|,
 literal|"anti-erase"
+argument_list|,
+name|_
+argument_list|(
+literal|"Anti erase"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

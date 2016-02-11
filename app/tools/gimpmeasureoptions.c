@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1d47c40103
+DECL|enum|__anon2b41250f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -160,7 +160,7 @@ name|get_property
 operator|=
 name|gimp_measure_options_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
@@ -168,7 +168,12 @@ name|PROP_USE_INFO_WINDOW
 argument_list|,
 literal|"use-info-window"
 argument_list|,
-name|N_
+name|_
+argument_list|(
+literal|"Use info window"
+argument_list|)
+argument_list|,
+name|_
 argument_list|(
 literal|"Open a floating dialog to view details "
 literal|"about measurements"
@@ -366,10 +371,7 @@ name|config
 argument_list|,
 literal|"use-info-window"
 argument_list|,
-name|_
-argument_list|(
-literal|"Use info window"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

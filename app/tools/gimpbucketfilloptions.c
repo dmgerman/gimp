@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c414a010103
+DECL|enum|__anon2b7320c30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -270,13 +270,18 @@ name|get_property
 operator|=
 name|gimp_bucket_fill_options_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_FILL_MODE
 argument_list|,
 literal|"fill-mode"
+argument_list|,
+name|_
+argument_list|(
+literal|"Fill type"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -287,13 +292,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_FILL_SELECTION
 argument_list|,
 literal|"fill-selection"
+argument_list|,
+name|_
+argument_list|(
+literal|"Fill selection"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -305,13 +315,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_FILL_TRANSPARENT
 argument_list|,
 literal|"fill-transparent"
+argument_list|,
+name|_
+argument_list|(
+literal|"Fill transparent areas"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -324,7 +339,7 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
@@ -334,8 +349,12 @@ literal|"sample-merged"
 argument_list|,
 name|_
 argument_list|(
-literal|"Base filled area on all visible "
-literal|"layers"
+literal|"Sample merged"
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Base filled area on all visible layers"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -343,13 +362,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DIAGONAL_NEIGHBORS
 argument_list|,
 literal|"diagonal-neighbors"
+argument_list|,
+name|_
+argument_list|(
+literal|"Diagonal neighbors"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -362,13 +386,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_THRESHOLD
 argument_list|,
 literal|"threshold"
+argument_list|,
+name|_
+argument_list|(
+literal|"Threshold"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -384,13 +413,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_FILL_CRITERION
 argument_list|,
 literal|"fill-criterion"
+argument_list|,
+name|_
+argument_list|(
+literal|"Fill by"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -1127,10 +1161,7 @@ name|config
 argument_list|,
 literal|"fill-transparent"
 argument_list|,
-name|_
-argument_list|(
-literal|"Fill transparent areas"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1163,10 +1194,7 @@ name|config
 argument_list|,
 literal|"sample-merged"
 argument_list|,
-name|_
-argument_list|(
-literal|"Sample merged"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1199,10 +1227,7 @@ name|config
 argument_list|,
 literal|"diagonal-neighbors"
 argument_list|,
-name|_
-argument_list|(
-literal|"Diagonal neighbors"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1235,10 +1260,7 @@ name|config
 argument_list|,
 literal|"threshold"
 argument_list|,
-name|_
-argument_list|(
-literal|"Threshold"
-argument_list|)
+name|NULL
 argument_list|,
 literal|1.0
 argument_list|,

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a5206260103
+DECL|enum|__anon2c6ed3dc0103
 block|{
 DECL|enumerator|ALIGN_BUTTON_CLICKED
 name|ALIGN_BUTTON_CLICKED
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a5206260203
+DECL|enum|__anon2c6ed3dc0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -255,13 +255,18 @@ argument_list|,
 name|GIMP_TYPE_ALIGNMENT_TYPE
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_ALIGN_REFERENCE
 argument_list|,
 literal|"align-reference"
+argument_list|,
+name|_
+argument_list|(
+literal|"Relative to"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -275,13 +280,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_OFFSET_X
 argument_list|,
 literal|"offset-x"
+argument_list|,
+name|_
+argument_list|(
+literal|"Offset"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -298,13 +308,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_OFFSET_Y
 argument_list|,
 literal|"offset-y"
+argument_list|,
+name|_
+argument_list|(
+literal|"Offset"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(

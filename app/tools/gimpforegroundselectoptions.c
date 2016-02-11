@@ -93,7 +93,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bf16360103
+DECL|enum|__anon29bed07b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -213,13 +213,18 @@ operator|=
 name|gimp_foreground_select_options_get_property
 expr_stmt|;
 comment|/*  override the antialias default value from GimpSelectionOptions  */
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DRAW_MODE
 argument_list|,
 literal|"draw-mode"
+argument_list|,
+name|_
+argument_list|(
+literal|"Draw Mode"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -234,13 +239,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_INT
+name|GIMP_CONFIG_PROP_INT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_STROKE_WIDTH
 argument_list|,
 literal|"stroke-width"
+argument_list|,
+name|_
+argument_list|(
+literal|"Stroke width"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -256,13 +266,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_MASK_COLOR
 argument_list|,
 literal|"mask-color"
+argument_list|,
+name|_
+argument_list|(
+literal|"Preview color"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -276,13 +291,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_ENGINE
 argument_list|,
 literal|"engine"
+argument_list|,
+name|_
+argument_list|(
+literal|"Engine"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -296,13 +316,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_INT
+name|GIMP_CONFIG_PROP_INT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_LEVELS
 argument_list|,
 literal|"levels"
+argument_list|,
+name|_
+argument_list|(
+literal|"Levels"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -318,13 +343,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_INT
+name|GIMP_CONFIG_PROP_INT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_ACTIVE_LEVELS
 argument_list|,
 literal|"active-levels"
+argument_list|,
+name|_
+argument_list|(
+literal|"Active levels"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -340,13 +370,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_INT
+name|GIMP_CONFIG_PROP_INT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_ITERATIONS
 argument_list|,
 literal|"iterations"
+argument_list|,
+name|_
+argument_list|(
+literal|"Iterations"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -846,10 +881,7 @@ name|config
 argument_list|,
 literal|"draw-mode"
 argument_list|,
-name|_
-argument_list|(
-literal|"Draw Mode"
-argument_list|)
+name|NULL
 argument_list|,
 literal|0
 argument_list|,
@@ -916,10 +948,7 @@ name|config
 argument_list|,
 literal|"stroke-width"
 argument_list|,
-name|_
-argument_list|(
-literal|"Stroke width"
-argument_list|)
+name|NULL
 argument_list|,
 literal|1.0
 argument_list|,
@@ -1243,10 +1272,7 @@ name|config
 argument_list|,
 literal|"levels"
 argument_list|,
-name|_
-argument_list|(
-literal|"Levels"
-argument_list|)
+name|NULL
 argument_list|,
 literal|1.0
 argument_list|,
@@ -1303,10 +1329,7 @@ name|config
 argument_list|,
 literal|"active-levels"
 argument_list|,
-name|_
-argument_list|(
-literal|"Active levels"
-argument_list|)
+name|NULL
 argument_list|,
 literal|1.0
 argument_list|,
@@ -1363,10 +1386,7 @@ name|config
 argument_list|,
 literal|"iterations"
 argument_list|,
-name|_
-argument_list|(
-literal|"Iterations"
-argument_list|)
+name|NULL
 argument_list|,
 literal|1.0
 argument_list|,

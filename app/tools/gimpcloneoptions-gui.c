@@ -281,10 +281,7 @@ name|config
 argument_list|,
 literal|"sample-merged"
 argument_list|,
-name|_
-argument_list|(
-literal|"Sample merged"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afd228e0103
+DECL|enum|__anon2ac743cd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -195,13 +195,18 @@ name|get_property
 operator|=
 name|gimp_n_point_deformation_options_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SQUARE_SIZE
 argument_list|,
 literal|"square-size"
+argument_list|,
+name|_
+argument_list|(
+literal|"Density"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -217,13 +222,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_RIGIDITY
 argument_list|,
 literal|"rigidity"
+argument_list|,
+name|_
+argument_list|(
+literal|"Rigidity"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -239,7 +249,7 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
@@ -252,12 +262,17 @@ argument_list|(
 literal|"Deformation mode"
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
+literal|"Deformation mode"
+argument_list|)
+argument_list|,
 name|FALSE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
@@ -270,18 +285,28 @@ argument_list|(
 literal|"Use weights"
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
+literal|"Use weights"
+argument_list|)
+argument_list|,
 name|FALSE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_MLS_WEIGHTS_ALPHA
 argument_list|,
 literal|"mls-weights-alpha"
+argument_list|,
+name|_
+argument_list|(
+literal|"Control points influence"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -297,13 +322,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_MESH_VISIBLE
 argument_list|,
 literal|"mesh-visible"
+argument_list|,
+name|_
+argument_list|(
+literal|"Show lattice"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -646,10 +676,7 @@ name|config
 argument_list|,
 literal|"mesh-visible"
 argument_list|,
-name|_
-argument_list|(
-literal|"Show lattice"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|npd_options
@@ -694,10 +721,7 @@ name|config
 argument_list|,
 literal|"square-size"
 argument_list|,
-name|_
-argument_list|(
-literal|"Density"
-argument_list|)
+name|NULL
 argument_list|,
 literal|1.0
 argument_list|,
@@ -760,10 +784,7 @@ name|config
 argument_list|,
 literal|"rigidity"
 argument_list|,
-name|_
-argument_list|(
-literal|"Rigidity"
-argument_list|)
+name|NULL
 argument_list|,
 literal|1.0
 argument_list|,
@@ -820,10 +841,7 @@ name|config
 argument_list|,
 literal|"asap-deformation"
 argument_list|,
-name|_
-argument_list|(
-literal|"Deformation mode"
-argument_list|)
+name|NULL
 argument_list|,
 name|_
 argument_list|(
@@ -872,10 +890,7 @@ name|config
 argument_list|,
 literal|"mls-weights"
 argument_list|,
-name|_
-argument_list|(
-literal|"Use weights"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -914,10 +929,7 @@ name|config
 argument_list|,
 literal|"mls-weights-alpha"
 argument_list|,
-name|_
-argument_list|(
-literal|"Amount of control points' influence"
-argument_list|)
+name|NULL
 argument_list|,
 literal|0.1
 argument_list|,

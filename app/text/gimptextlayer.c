@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cc87790103
+DECL|enum|__anon293003a70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -661,7 +661,7 @@ name|push_undo
 operator|=
 name|gimp_text_layer_push_undo
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_OBJECT
+name|GIMP_CONFIG_PROP_OBJECT
 argument_list|(
 name|object_class
 argument_list|,
@@ -671,12 +671,14 @@ literal|"text"
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|GIMP_TYPE_TEXT
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
@@ -686,18 +688,22 @@ literal|"auto-rename"
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_MODIFIED
 argument_list|,
 literal|"modified"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

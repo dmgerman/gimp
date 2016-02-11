@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcf4a090103
+DECL|enum|__anon290acc500103
 block|{
 DECL|enumerator|PROP_ROUND_CORNERS
 name|PROP_ROUND_CORNERS
@@ -191,13 +191,18 @@ operator|=
 name|gimp_rectangle_select_options_get_property
 expr_stmt|;
 comment|/* The 'highlight' property is defined here because we want different    * default values for the Crop and the Rectangle Select tools.    */
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|GIMP_RECTANGLE_OPTIONS_PROP_HIGHLIGHT
 argument_list|,
 literal|"highlight"
+argument_list|,
+name|_
+argument_list|(
+literal|"Highlight"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -209,13 +214,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_ROUND_CORNERS
 argument_list|,
 literal|"round-corners"
+argument_list|,
+name|_
+argument_list|(
+literal|"Rounded corners"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -227,13 +237,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_CORNER_RADIUS
 argument_list|,
 literal|"corner-radius"
+argument_list|,
+name|_
+argument_list|(
+literal|"Radius"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -490,10 +505,7 @@ name|config
 argument_list|,
 literal|"corner-radius"
 argument_list|,
-name|_
-argument_list|(
-literal|"Radius"
-argument_list|)
+name|NULL
 argument_list|,
 literal|1.0
 argument_list|,
@@ -510,10 +522,7 @@ name|config
 argument_list|,
 literal|"round-corners"
 argument_list|,
-name|_
-argument_list|(
-literal|"Rounded corners"
-argument_list|)
+name|NULL
 argument_list|,
 name|scale
 argument_list|,

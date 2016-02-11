@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290173640103
+DECL|enum|__anon29a3333b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -156,13 +156,15 @@ name|get_property
 operator|=
 name|gimp_settings_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_UINT
+name|GIMP_CONFIG_PROP_UINT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_TIME
 argument_list|,
 literal|"time"
+argument_list|,
+literal|"Time"
 argument_list|,
 literal|"Time of settings creation"
 argument_list|,

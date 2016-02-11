@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29371da60103
+DECL|enum|__anon29aaa7850103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -174,7 +174,7 @@ name|get_property
 operator|=
 name|gimp_iscissors_options_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
@@ -182,7 +182,12 @@ name|PROP_INTERACTIVE
 argument_list|,
 literal|"interactive"
 argument_list|,
-name|N_
+name|_
+argument_list|(
+literal|"Interactive boundary"
+argument_list|)
+argument_list|,
+name|_
 argument_list|(
 literal|"Display future selection segment "
 literal|"as you drag a control node"
@@ -379,10 +384,7 @@ name|config
 argument_list|,
 literal|"interactive"
 argument_list|,
-name|_
-argument_list|(
-literal|"Interactive boundary"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

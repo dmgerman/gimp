@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be539640103
+DECL|enum|__anon2b68185b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -171,13 +171,15 @@ name|get_property
 operator|=
 name|gimp_cage_options_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_CAGE_MODE
 argument_list|,
 literal|"cage-mode"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -188,13 +190,19 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_FILL_PLAIN_COLOR
 argument_list|,
 literal|"fill-plain-color"
+argument_list|,
+name|_
+argument_list|(
+literal|"Fill the original position\n"
+literal|"of the cage with a color"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -453,11 +461,7 @@ name|config
 argument_list|,
 literal|"fill-plain-color"
 argument_list|,
-name|_
-argument_list|(
-literal|"Fill the original position\n"
-literal|"of the cage with a color"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

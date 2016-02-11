@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2774c0070103
+DECL|enum|__anon2c6f6bd50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -455,14 +455,12 @@ name|active_changed
 operator|=
 name|gimp_mandala_active_changed
 expr_stmt|;
-name|g_object_class_install_property
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_CENTER_X
 argument_list|,
-name|g_param_spec_double
-argument_list|(
 literal|"center-x"
 argument_list|,
 name|_
@@ -470,10 +468,7 @@ argument_list|(
 literal|"Center abscisse"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Center abscisse"
-argument_list|)
+name|NULL
 argument_list|,
 literal|0.0
 argument_list|,
@@ -481,22 +476,17 @@ literal|10000.0
 argument_list|,
 literal|0.0
 argument_list|,
-name|GIMP_CONFIG_PARAM_FLAGS
-operator||
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
 name|GIMP_SYMMETRY_PARAM_GUI
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|g_object_class_install_property
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_CENTER_Y
 argument_list|,
-name|g_param_spec_double
-argument_list|(
 literal|"center-y"
 argument_list|,
 name|_
@@ -504,10 +494,7 @@ argument_list|(
 literal|"Center ordinate"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Center ordinate"
-argument_list|)
+name|NULL
 argument_list|,
 literal|0.0
 argument_list|,
@@ -515,12 +502,9 @@ literal|10000.0
 argument_list|,
 literal|0.0
 argument_list|,
-name|GIMP_CONFIG_PARAM_FLAGS
-operator||
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
 name|GIMP_SYMMETRY_PARAM_GUI
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_PROP_INT
@@ -536,10 +520,7 @@ argument_list|(
 literal|"Number of points"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Number of points"
-argument_list|)
+name|NULL
 argument_list|,
 literal|1
 argument_list|,

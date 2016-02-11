@@ -39,9 +39,15 @@ directive|include
 file|"gimpperspectivecloneoptions.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon2baa3b060103
+DECL|enum|__anon27741e430103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -142,13 +148,15 @@ name|get_property
 operator|=
 name|gimp_perspective_clone_options_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_CLONE_MODE
 argument_list|,
 literal|"clone-mode"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

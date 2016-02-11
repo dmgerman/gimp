@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb1f98f0103
+DECL|enum|__anon2befee310103
 block|{
 DECL|enumerator|STROKES_UPDATED
 name|STROKES_UPDATED
@@ -102,7 +102,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb1f98f0203
+DECL|enum|__anon2befee310203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -441,13 +441,18 @@ name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_ACTIVE
 argument_list|,
 literal|"active"
+argument_list|,
+name|_
+argument_list|(
+literal|"Active"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
