@@ -1530,6 +1530,23 @@ argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
 expr_stmt|;
+comment|/* gimp_prop_check_button_new() adds the property nick as label of        * the button by default. */
+name|gtk_container_remove
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|toggle
+argument_list|)
+argument_list|,
+name|gtk_bin_get_child
+argument_list|(
+name|GTK_BIN
+argument_list|(
+name|toggle
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
