@@ -313,12 +313,12 @@ name|NULL
 block|,
 name|NC_
 argument_list|(
-literal|"mypaint-bruahes-action"
+literal|"mypaint-brushes-action"
 argument_list|,
 literal|"Edit MyPaint brush"
 argument_list|)
 block|,
-literal|"gimp-mypaint-bruah-editor"
+literal|"gimp-mybrush-editor"
 block|,
 name|GIMP_HELP_MYPAINT_BRUSH_EDIT
 block|}
