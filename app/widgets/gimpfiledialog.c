@@ -131,7 +131,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2accaf2d0103
+DECL|enum|__anon28ff863b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1900,7 +1900,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* The default folder is "Documents" for all file dialogs.        * Children can reimplement this. */
 name|file
 operator|=
 name|g_object_get_data
@@ -1912,7 +1911,7 @@ operator|->
 name|gimp
 argument_list|)
 argument_list|,
-literal|"gimp-documents-folder"
+literal|"gimp-default-folder"
 argument_list|)
 expr_stmt|;
 if|if
@@ -1925,7 +1924,29 @@ name|gchar
 modifier|*
 name|path
 decl_stmt|;
-comment|/* Make sure it ends in '/' */
+comment|/* Make sure the paths end with G_DIR_SEPARATOR_S */
+ifdef|#
+directive|ifdef
+name|PLATFORM_OSX
+comment|/* See bug 753683, "Desktop" is expected on OS X */
+name|path
+operator|=
+name|g_build_path
+argument_list|(
+name|G_DIR_SEPARATOR_S
+argument_list|,
+name|g_get_user_special_dir
+argument_list|(
+name|G_USER_DIRECTORY_DESKTOP
+argument_list|)
+argument_list|,
+name|G_DIR_SEPARATOR_S
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|path
 operator|=
 name|g_build_path
@@ -1942,6 +1963,8 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 comment|/* Paranoia fallback, see bug #722400 */
 if|if
 condition|(
@@ -1983,7 +2006,7 @@ operator|->
 name|gimp
 argument_list|)
 argument_list|,
-literal|"gimp-documents-folder"
+literal|"gimp-default-folder"
 argument_list|,
 name|file
 argument_list|,
