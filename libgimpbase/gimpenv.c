@@ -1928,6 +1928,9 @@ block|{
 return|return
 name|g_get_user_special_dir
 argument_list|(
+operator|(
+name|GUserDirectory
+operator|)
 name|type
 argument_list|)
 return|;

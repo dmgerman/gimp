@@ -105,7 +105,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon298c31a00103
+DECL|enum|__anon2aca3bf40103
 block|{
 DECL|enumerator|HORZ_OR_VERT
 name|HORZ_OR_VERT
@@ -816,14 +816,14 @@ condition|)
 block|{
 if|if
 condition|(
-name|abs
+name|ABS
 argument_list|(
 name|diffx
 argument_list|)
 operator|>
 name|MIN_MOVE
 operator|||
-name|abs
+name|ABS
 argument_list|(
 name|diffy
 argument_list|)
@@ -833,12 +833,12 @@ condition|)
 block|{
 if|if
 condition|(
-name|abs
+name|ABS
 argument_list|(
 name|diffx
 argument_list|)
 operator|>
-name|abs
+name|ABS
 argument_list|(
 name|diffy
 argument_list|)

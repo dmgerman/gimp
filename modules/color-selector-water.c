@@ -303,24 +303,6 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|targets
-specifier|static
-specifier|const
-name|GtkTargetEntry
-name|targets
-index|[]
-init|=
-block|{
-block|{
-literal|"application/x-color"
-block|,
-literal|0
-block|}
-block|}
-decl_stmt|;
-end_decl_stmt
-
 begin_macro
 DECL|function|G_DEFINE_DYNAMIC_TYPE (ColorselWater,colorsel_water,GIMP_TYPE_COLOR_SELECTOR)
 name|G_DEFINE_DYNAMIC_TYPE

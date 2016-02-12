@@ -1408,6 +1408,8 @@ name|base_type
 decl_stmt|;
 name|gboolean
 name|has_alpha
+init|=
+name|FALSE
 decl_stmt|;
 name|guint8
 modifier|*

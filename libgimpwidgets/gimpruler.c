@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be10af00103
+DECL|enum|__anon296e864c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -108,7 +108,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be10af00208
+DECL|struct|__anon296e864c0208
 block|{
 DECL|member|orientation
 name|GtkOrientation
@@ -192,7 +192,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2be10af00308
+DECL|struct|__anon296e864c0308
 block|{
 DECL|member|ruler_scale
 specifier|const
@@ -888,7 +888,7 @@ name|priv
 operator|->
 name|unit
 operator|=
-name|GIMP_PIXELS
+name|GIMP_UNIT_PIXEL
 expr_stmt|;
 name|priv
 operator|->

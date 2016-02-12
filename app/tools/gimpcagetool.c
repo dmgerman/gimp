@@ -171,7 +171,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon275681890103
+DECL|enum|__anon2b55908c0103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -2645,7 +2645,7 @@ name|ct
 operator|->
 name|offset_y
 block|,
-name|abs
+name|ABS
 argument_list|(
 name|ct
 operator|->
@@ -2656,7 +2656,7 @@ operator|->
 name|x
 argument_list|)
 block|,
-name|abs
+name|ABS
 argument_list|(
 argument|ct->selection_start_y - coords->y
 argument_list|)
@@ -2764,7 +2764,7 @@ name|ct
 operator|->
 name|offset_y
 block|,
-name|abs
+name|ABS
 argument_list|(
 name|ct
 operator|->
@@ -2775,7 +2775,7 @@ operator|->
 name|x
 argument_list|)
 block|,
-name|abs
+name|ABS
 argument_list|(
 argument|ct->selection_start_y - coords->y
 argument_list|)
@@ -3387,7 +3387,7 @@ operator|->
 name|cursor_y
 argument_list|)
 argument_list|,
-name|abs
+name|ABS
 argument_list|(
 name|ct
 operator|->
@@ -3398,7 +3398,7 @@ operator|->
 name|cursor_x
 argument_list|)
 argument_list|,
-name|abs
+name|ABS
 argument_list|(
 name|ct
 operator|->
@@ -4103,7 +4103,7 @@ literal|2
 operator|)
 operator|&&
 operator|(
-name|abs
+name|ABS
 argument_list|(
 name|SQR
 argument_list|(

@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6fd72e0103
+DECL|enum|__anon29073dbd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2535,7 +2535,7 @@ name|gboolean
 name|italic
 parameter_list|)
 block|{
-name|PangoAttrType
+name|PangoStyle
 name|attribute
 init|=
 name|italic

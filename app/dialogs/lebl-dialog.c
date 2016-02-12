@@ -53,36 +53,6 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_decl_stmt
-DECL|variable|goatpb2
-specifier|static
-specifier|const
-name|guint8
-name|goatpb2
-index|[]
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|goatpb
-specifier|static
-specifier|const
-name|guint8
-name|goatpb
-index|[]
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|wanda
-specifier|static
-specifier|const
-name|guint8
-name|wanda
-index|[]
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/* phish code */
 end_comment
@@ -366,7 +336,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2a28774d0108
+DECL|struct|__anon29d10b580108
 typedef|typedef
 struct|struct
 block|{
@@ -388,7 +358,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a28774d0208
+DECL|struct|__anon29d10b580208
 typedef|typedef
 struct|struct
 block|{
