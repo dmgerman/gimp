@@ -277,7 +277,10 @@ name|gboolean
 name|linear
 parameter_list|,
 name|gboolean
-name|use_cache
+name|use_preview_cache
+parameter_list|,
+name|gboolean
+name|use_result_cache
 parameter_list|)
 function_decl|;
 end_function_decl

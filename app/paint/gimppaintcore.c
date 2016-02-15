@@ -181,7 +181,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297aacb90103
+DECL|enum|__anon299eb1fc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1781,6 +1781,8 @@ argument_list|,
 name|core
 operator|->
 name|linear_mode
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|)

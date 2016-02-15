@@ -87,7 +87,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9d5ec70103
+DECL|enum|__anon2c937ed30103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1217,6 +1217,8 @@ name|image_map
 operator|->
 name|drawable
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|,
 name|TRUE
 argument_list|)
