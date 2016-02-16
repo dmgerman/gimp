@@ -179,6 +179,23 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_image_map_set_preview
+parameter_list|(
+name|GimpImageMap
+modifier|*
+name|image_map
+parameter_list|,
+name|GimpOrientationType
+name|orienatnios
+parameter_list|,
+name|gdouble
+name|percent_visible
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_image_map_set_mode
 parameter_list|(
 name|GimpImageMap
