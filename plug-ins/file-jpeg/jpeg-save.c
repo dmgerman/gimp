@@ -315,7 +315,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bff1b0d0108
+DECL|struct|__anon293f163b0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -386,13 +386,13 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/*le added : struct containing pointers to save dialog*/
+comment|/*le added : struct containing pointers to export dialog*/
 end_comment
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bff1b0d0208
+DECL|struct|__anon293f163b0208
 block|{
 DECL|member|run
 name|gboolean
@@ -1257,7 +1257,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'"
+literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8

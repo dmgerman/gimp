@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIF saving file filter for GIMP  *  *    Copyright  *    - Adam D. Moss  *    - Peter Mattis  *    - Spencer Kimball  *  *      Based around original GIF code by David Koblas.  *  *  * Version 4.1.0 - 2003-06-16  *                        Adam D. Moss -<adam@gimp.org><adam@foxbox.org>  */
+comment|/* GIF exporting file filter for GIMP  *  *    Copyright  *    - Adam D. Moss  *    - Peter Mattis  *    - Spencer Kimball  *  *      Based around original GIF code by David Koblas.  *  *  * Version 4.1.0 - 2003-06-16  *                        Adam D. Moss -<adam@gimp.org><adam@foxbox.org>  */
 end_comment
 
 begin_comment
@@ -115,7 +115,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cd40850103
+DECL|enum|__anon2c80dbab0103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -128,7 +128,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cd40850203
+DECL|enum|__anon2c80dbab0203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -145,7 +145,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd40850308
+DECL|struct|__anon2c80dbab0308
 block|{
 DECL|member|interlace
 name|gint
@@ -433,7 +433,7 @@ define|#
 directive|define
 name|COMMON_SAVE_ARGS
 define|\
-value|{ GIMP_PDB_INT32,    "run-mode",        "The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }" }, \     { GIMP_PDB_IMAGE,    "image",           "Image to save" }, \     { GIMP_PDB_DRAWABLE, "drawable",        "Drawable to save" }, \     { GIMP_PDB_STRING,   "filename",        "The name of the file to save the image in" }, \     { GIMP_PDB_STRING,   "raw-filename",    "The name entered" }, \     { GIMP_PDB_INT32,    "interlace",       "Try to save as interlaced" }, \     { GIMP_PDB_INT32,    "loop",            "(animated gif) loop infinitely" }, \     { GIMP_PDB_INT32,    "default-delay",   "(animated gif) Default delay between framese in milliseconds" }, \     { GIMP_PDB_INT32,    "default-dispose", "(animated gif) Default disposal type (0=`don't care`, 1=combine, 2=replace)" }
+value|{ GIMP_PDB_INT32,    "run-mode",        "The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }" }, \     { GIMP_PDB_IMAGE,    "image",           "Image to export" }, \     { GIMP_PDB_DRAWABLE, "drawable",        "Drawable to export" }, \     { GIMP_PDB_STRING,   "filename",        "The name of the file to export the image in" }, \     { GIMP_PDB_STRING,   "raw-filename",    "The name entered" }, \     { GIMP_PDB_INT32,    "interlace",       "Try to export as interlaced" }, \     { GIMP_PDB_INT32,    "loop",            "(animated gif) loop infinitely" }, \     { GIMP_PDB_INT32,    "default-delay",   "(animated gif) Default delay between framese in milliseconds" }, \     { GIMP_PDB_INT32,    "default-dispose", "(animated gif) Default disposal type (0=`don't care`, 1=combine, 2=replace)" }
 end_define
 
 begin_function
@@ -468,7 +468,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"as-animation"
 block|,
-literal|"Save GIF as animation?"
+literal|"Export GIF as animation?"
 block|}
 block|,
 block|{
@@ -492,11 +492,11 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE_PROC
 argument_list|,
-literal|"saves files in Compuserve GIF file format"
+literal|"exports files in Compuserve GIF file format"
 argument_list|,
-literal|"Save a file in Compuserve GIF format, with "
+literal|"Export a file in Compuserve GIF format, with "
 literal|"possible animation, transparency, and comment.  "
-literal|"To save an animation, operate on a multi-layer "
+literal|"To export an animation, operate on a multi-layer "
 literal|"file.  The plug-in will interpret<50% alpha as "
 literal|"transparent.  When run non-interactively, the "
 literal|"value for the comment is taken from the "
@@ -533,11 +533,11 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE2_PROC
 argument_list|,
-literal|"saves files in Compuserve GIF file format"
+literal|"exports files in Compuserve GIF file format"
 argument_list|,
-literal|"Save a file in Compuserve GIF format, with "
+literal|"Export a file in Compuserve GIF format, with "
 literal|"possible animation, transparency, and comment.  "
-literal|"To save an animation, operate on a multi-layer "
+literal|"To export an animation, operate on a multi-layer "
 literal|"file and give the 'as-animation' parameter "
 literal|"as TRUE.  The plug-in will interpret<50% "
 literal|"alpha as transparent.  When run "
@@ -1888,7 +1888,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Couldn't simply reduce colors further. Saving as opaque."
+literal|"Couldn't simply reduce colors further. Exporting as opaque."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2361,7 +2361,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Unable to save '%s'.  "
+literal|"Unable to export '%s'.  "
 literal|"The GIF file format does not support images that are "
 literal|"more than %d pixels wide or tall."
 argument_list|)
@@ -3027,7 +3027,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Cannot save RGB color images. Convert to "
+literal|"Cannot export RGB color images. Convert to "
 literal|"indexed color or grayscale first."
 argument_list|)
 argument_list|)
@@ -3138,7 +3138,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'"
+literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -3876,7 +3876,7 @@ name|GTK_BUTTONS_NONE
 argument_list|,
 name|_
 argument_list|(
-literal|"The image you are trying to save as a "
+literal|"The image you are trying to export as a "
 literal|"GIF contains layers which extend beyond "
 literal|"the actual borders of the image."
 argument_list|)
@@ -3936,7 +3936,7 @@ literal|"The GIF file format does not "
 literal|"allow this.  You may choose "
 literal|"whether to crop all of the "
 literal|"layers to the image borders, "
-literal|"or cancel this save."
+literal|"or cancel this export."
 argument_list|)
 argument_list|)
 expr_stmt|;

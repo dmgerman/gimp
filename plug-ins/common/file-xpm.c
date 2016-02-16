@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba7be5d0108
+DECL|struct|__anon2878ab580108
 block|{
 DECL|member|threshold
 name|gint
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba7be5d0208
+DECL|struct|__anon2878ab580208
 block|{
 DECL|member|r
 name|guchar
@@ -475,7 +475,7 @@ name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-literal|"Drawable to save"
+literal|"Drawable to export"
 block|}
 block|,
 block|{
@@ -483,7 +483,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name of the file to export the image in"
 block|}
 block|,
 block|{
@@ -491,7 +491,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"raw-filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name of the file to export the image in"
 block|}
 block|,
 block|{
@@ -569,9 +569,9 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE_PROC
 argument_list|,
-literal|"Save files in XPM (X11 Pixmap) format."
+literal|"Export files in XPM (X11 Pixmap) format."
 argument_list|,
-literal|"Save files in XPM (X11 Pixmap) format. "
+literal|"Export files in XPM (X11 Pixmap) format. "
 literal|"XPM is a portable image format designed to be "
 literal|"included in C source code. XLib provides utility "
 literal|"functions to read this format. Newer code should "
@@ -2523,7 +2523,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'"
+literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8

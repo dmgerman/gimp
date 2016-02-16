@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * X10 and X11 bitmap (XBM) loading and saving file filter for GIMP.  * XBM code Copyright (C) 1998 Gordon Matzigkeit  *  * The XBM reading and writing code was written from scratch by Gordon  * Matzigkeit<gord@gnu.org> based on the XReadBitmapFile(3X11) manual  * page distributed with X11R6 and by staring at valid XBM files.  It  * does not contain any code written for other XBM file loaders.  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * X10 and X11 bitmap (XBM) loading and exporting file filter for GIMP.  * XBM code Copyright (C) 1998 Gordon Matzigkeit  *  * The XBM reading and writing code was written from scratch by Gordon  * Matzigkeit<gord@gnu.org> based on the XReadBitmapFile(3X11) manual  * page distributed with X11R6 and by staring at valid XBM files.  It  * does not contain any code written for other XBM file loaders.  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_comment
@@ -138,7 +138,7 @@ value|64
 end_define
 
 begin_comment
-comment|/* Whether or not to save as X10 bitmap. */
+comment|/* Whether or not to export as X10 bitmap. */
 end_comment
 
 begin_define
@@ -561,7 +561,7 @@ name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-literal|"Drawable to save"
+literal|"Drawable to export"
 block|}
 block|,
 block|{
@@ -569,7 +569,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
-literal|"The name of the file to save"
+literal|"The name of the file to export"
 block|}
 block|,
 block|{
@@ -593,7 +593,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"x10"
 block|,
-literal|"Save in X10 format"
+literal|"Export in X10 format"
 block|}
 block|,
 block|{
@@ -695,9 +695,9 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE_PROC
 argument_list|,
-literal|"Save a file in X10 or X11 bitmap (XBM) file format"
+literal|"Export a file in X10 or X11 bitmap (XBM) file format"
 argument_list|,
-literal|"Save a file in X10 or X11 bitmap (XBM) file format.  XBM is a lossless format for flat black-and-white (two color indexed) images."
+literal|"Export a file in X10 or X11 bitmap (XBM) file format.  XBM is a lossless format for flat black-and-white (two color indexed) images."
 argument_list|,
 literal|"Gordon Matzigkeit"
 argument_list|,
@@ -3797,7 +3797,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"The image which you are trying to save as "
+literal|"The image which you are trying to export as "
 literal|"an XBM contains more than two colors.\n\n"
 literal|"Please convert it to a black and white "
 literal|"(1-bit) indexed image and try again."
@@ -3978,7 +3978,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'"
+literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
 name|gimp_file_get_utf8_name

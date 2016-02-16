@@ -4647,7 +4647,7 @@ decl_stmt|;
 name|D
 argument_list|(
 operator|(
-literal|"*** Saving Microsoft icon file %s\n"
+literal|"*** Exporting Microsoft icon file %s\n"
 operator|,
 name|filename
 operator|)
@@ -4688,7 +4688,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'"
+literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8

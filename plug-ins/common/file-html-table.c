@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * GTM plug-in --- GIMP Table Magic  * Allows images to be saved as HTML tables with different colored cells.  * It doesn't  have very much practical use other than being able to  * easily design a table by "painting" it in GIMP, or to make small HTML  * table images/icons.  *  * Copyright (C) 1997 Daniel Dunbar  * Email: ddunbar@diads.com  * WWW:   http://millennium.diads.com/gimp/  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * GTM plug-in --- GIMP Table Magic  * Allows images to be exported as HTML tables with different colored cells.  * It doesn't  have very much practical use other than being able to  * easily design a table by "painting" it in GIMP, or to make small HTML  * table images/icons.  *  * Copyright (C) 1997 Daniel Dunbar  * Email: ddunbar@diads.com  * WWW:   http://millennium.diads.com/gimp/  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_comment
@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29808d700108
+DECL|struct|__anon2954c0080108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -385,7 +385,7 @@ name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-literal|"Drawable to save"
+literal|"Drawable to export"
 block|}
 block|,
 block|{
@@ -393,7 +393,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name of the file to export the image in"
 block|}
 block|,
 block|{
@@ -401,7 +401,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"raw-filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name of the file to export the image in"
 block|}
 block|}
 decl_stmt|;
@@ -795,7 +795,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'"
+literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
 name|gimp_file_get_utf8_name
@@ -3322,7 +3322,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  Save interface functions  */
+comment|/*  Export interface functions  */
 end_comment
 
 begin_function

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * SGI image file plug-in for GIMP.  *  * Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  * This program is free software: you can redistribute it and/or modify it  * under the terms of the GNU General Public License as published by the Free  * Software Foundation; either version 3 of the License, or (at your option)  * any later version.  *  * This program is distributed in the hope that it will be useful, but  * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  * for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the plug-in...  *   load_image()                - Load a PNG image into a new image window.  *   save_image()                - Save the specified image to a PNG file.  *   save_ok_callback()          - Destroy the save dialog and save the image.  *   save_dialog()               - Pop up the save dialog.  *  */
+comment|/*  * SGI image file plug-in for GIMP.  *  * Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  * This program is free software: you can redistribute it and/or modify it  * under the terms of the GNU General Public License as published by the Free  * Software Foundation; either version 3 of the License, or (at your option)  * any later version.  *  * This program is distributed in the hope that it will be useful, but  * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  * for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the plug-in...  *   load_image()                - Load a PNG image into a new image window.  *   save_image()                - Export the specified image to a PNG file.  *   save_ok_callback()          - Destroy the export dialog and export the image.  *   save_dialog()               - Pop up the export dialog.  *  */
 end_comment
 
 begin_include
@@ -306,7 +306,7 @@ name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-literal|"Drawable to save"
+literal|"Drawable to export"
 block|}
 block|,
 block|{
@@ -314,7 +314,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name of the file to export the image in"
 block|}
 block|,
 block|{
@@ -322,7 +322,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"raw-filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name of the file to export the image in"
 block|}
 block|,
 block|{
@@ -394,9 +394,9 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE_PROC
 argument_list|,
-literal|"Saves files in SGI image file format"
+literal|"Exports files in SGI image file format"
 argument_list|,
-literal|"This plug-in saves SGI image files."
+literal|"This plug-in exports SGI image files."
 argument_list|,
 literal|"Michael Sweet<mike@easysw.com>"
 argument_list|,
@@ -2005,7 +2005,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'"
+literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8

@@ -12,7 +12,7 @@ comment|/* Event history:  * V 1.0, MT, 02-Jul-97: initial version of plug-in  *
 end_comment
 
 begin_comment
-comment|/* Features  *  - loads and saves  *    - 24-bit (.pix)  *    - 8-bit (.matte, .alpha, or .mask) images  *  * NOTE: pix and matte files do not support alpha channels or indexed  *       color, so neither does this plug-in  */
+comment|/* Features  *  - loads and exports  *    - 24-bit (.pix)  *    - 8-bit (.matte, .alpha, or .mask) images  *  * NOTE: pix and matte files do not support alpha channels or indexed  *       color, so neither does this plug-in  */
 end_comment
 
 begin_include
@@ -377,7 +377,7 @@ name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-literal|"Drawable to save"
+literal|"Drawable to export"
 block|}
 block|,
 block|{
@@ -385,7 +385,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name of the file to export the image in"
 block|}
 block|,
 block|{
@@ -393,7 +393,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"raw-filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name of the file to export the image in"
 block|}
 block|}
 decl_stmt|;
@@ -453,9 +453,9 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE_PROC
 argument_list|,
-literal|"save file in the Alias|Wavefront pix/matte file format"
+literal|"export file in the Alias|Wavefront pix/matte file format"
 argument_list|,
-literal|"save file in the Alias|Wavefront pix/matte file format"
+literal|"export file in the Alias|Wavefront pix/matte file format"
 argument_list|,
 literal|"Michael Taylor"
 argument_list|,
@@ -1868,7 +1868,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'"
+literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
 name|g_file_get_parse_name

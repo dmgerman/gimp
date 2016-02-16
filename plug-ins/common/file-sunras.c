@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af4ab470108
+DECL|struct|__anon27d4f1c00108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -224,7 +224,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af4ab470208
+DECL|struct|__anon27d4f1c00208
 block|{
 DECL|member|val
 name|gint
@@ -871,13 +871,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* Save info  */
+comment|/* Export info  */
 end_comment
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af4ab470308
+DECL|struct|__anon27d4f1c00308
 block|{
 DECL|member|rle
 name|gboolean
@@ -993,7 +993,7 @@ name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-literal|"Drawable to save"
+literal|"Drawable to export"
 block|}
 block|,
 block|{
@@ -1001,7 +1001,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name of the file to export the image in"
 block|}
 block|,
 block|{
@@ -1009,7 +1009,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"raw-filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name of the file to export the image in"
 block|}
 block|,
 block|{
@@ -1081,9 +1081,9 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE_PROC
 argument_list|,
-literal|"save file in the SunRaster file format"
+literal|"export file in the SunRaster file format"
 argument_list|,
-literal|"SUNRAS saving handles all image types except "
+literal|"SUNRAS exporting handles all image types except "
 literal|"those with alpha channels."
 argument_list|,
 literal|"Peter Kirchgessner"
@@ -2331,7 +2331,7 @@ argument_list|(
 name|drawable_ID
 argument_list|)
 expr_stmt|;
-comment|/*  Make sure we're not saving an image with an alpha channel  */
+comment|/*  Make sure we're not exporting an image with an alpha channel  */
 if|if
 condition|(
 name|gimp_drawable_has_alpha
@@ -2350,7 +2350,7 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"SUNRAS save cannot handle images with alpha channels"
+literal|"SUNRAS export cannot handle images with alpha channels"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2391,7 +2391,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'"
+literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8

@@ -357,13 +357,13 @@ struct|;
 end_struct
 
 begin_comment
-comment|/* Save info  */
+comment|/* Export info  */
 end_comment
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276868e30108
+DECL|struct|__anon2c64c0da0108
 block|{
 DECL|member|raw
 name|gint
@@ -846,7 +846,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon276868e30208
+DECL|struct|__anon2c64c0da0208
 block|{
 DECL|member|name
 name|gchar
@@ -1119,7 +1119,7 @@ name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-literal|"Drawable to save"
+literal|"Drawable to export"
 block|}
 block|,
 block|{
@@ -1127,7 +1127,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name of the file to export the image in"
 block|}
 block|,
 block|{
@@ -1135,7 +1135,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"raw-filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name of the file to export the image in"
 block|}
 block|,
 block|{
@@ -1175,7 +1175,7 @@ name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-literal|"Drawable to save"
+literal|"Drawable to export"
 block|}
 block|,
 block|{
@@ -1183,7 +1183,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name of the file to export the image in"
 block|}
 block|,
 block|{
@@ -1191,7 +1191,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"raw-filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name of the file to export the image in"
 block|}
 block|}
 decl_stmt|;
@@ -1262,9 +1262,9 @@ name|gimp_install_procedure
 argument_list|(
 name|PNM_SAVE_PROC
 argument_list|,
-literal|"Saves files in the PNM file format"
+literal|"Exports files in the PNM file format"
 argument_list|,
-literal|"PNM saving handles all image types without transparency."
+literal|"PNM exporting handles all image types without transparency."
 argument_list|,
 literal|"Erik Nygren"
 argument_list|,
@@ -1297,9 +1297,9 @@ name|gimp_install_procedure
 argument_list|(
 name|PBM_SAVE_PROC
 argument_list|,
-literal|"Saves files in the PBM file format"
+literal|"Exports files in the PBM file format"
 argument_list|,
-literal|"PBM saving produces mono images without transparency."
+literal|"PBM exporting produces mono images without transparency."
 argument_list|,
 literal|"Martin K Collins"
 argument_list|,
@@ -1332,9 +1332,9 @@ name|gimp_install_procedure
 argument_list|(
 name|PGM_SAVE_PROC
 argument_list|,
-literal|"Saves files in the PGM file format"
+literal|"Exports files in the PGM file format"
 argument_list|,
-literal|"PGM saving produces grayscale images without transparency."
+literal|"PGM exporting produces grayscale images without transparency."
 argument_list|,
 literal|"Erik Nygren"
 argument_list|,
@@ -1367,9 +1367,9 @@ name|gimp_install_procedure
 argument_list|(
 name|PPM_SAVE_PROC
 argument_list|,
-literal|"Saves files in the PPM file format"
+literal|"Exports files in the PPM file format"
 argument_list|,
-literal|"PPM saving handles RGB images without transparency."
+literal|"PPM exporting handles RGB images without transparency."
 argument_list|,
 literal|"Erik Nygren"
 argument_list|,
@@ -1402,9 +1402,9 @@ name|gimp_install_procedure
 argument_list|(
 name|PFM_SAVE_PROC
 argument_list|,
-literal|"Saves files in the PFM file format"
+literal|"Exports files in the PFM file format"
 argument_list|,
-literal|"PFM saving handles all images without transparency."
+literal|"PFM exporting handles all images without transparency."
 argument_list|,
 literal|"Mukund Sivaraman"
 argument_list|,
@@ -4651,7 +4651,7 @@ condition|(
 name|swap_byte_order
 condition|)
 block|{
-DECL|union|__anon276868e3030a
+DECL|union|__anon2c64c0da030a
 DECL|member|f
 DECL|member|i
 union|union
@@ -5775,7 +5775,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Cannot save images with alpha channel."
+literal|"Cannot export images with alpha channel."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5787,7 +5787,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'"
+literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
 name|g_file_get_parse_name
@@ -6358,7 +6358,7 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"Images saved as PBM should be black/white"
+literal|"Images exported as PBM should be black/white"
 argument_list|)
 expr_stmt|;
 break|break;

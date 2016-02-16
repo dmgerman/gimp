@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  *   Portable Network Graphics (PNG) plug-in  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com) and  *   Daniel Skarda (0rfelyus@atrey.karlin.mff.cuni.cz).  *   and 1999-2000 Nick Lamb (njl195@zepler.org.uk)  *  *   This program is free software: you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 3 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program.  If not, see<http://www.gnu.org/licenses/>.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the plug-in...  *   load_image()                - Load a PNG image into a new image window.  *   offsets_dialog()            - Asks the user about offsets when loading.  *   respin_cmap()               - Re-order a Gimp colormap for PNG tRNS  *   save_image()                - Save the specified image to a PNG file.  *   save_compression_callback() - Update the image compression level.  *   save_interlace_update()     - Update the interlacing option.  *   save_dialog()               - Pop up the save dialog.  *  * Revision History:  *  *   see ChangeLog  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  *   Portable Network Graphics (PNG) plug-in  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com) and  *   Daniel Skarda (0rfelyus@atrey.karlin.mff.cuni.cz).  *   and 1999-2000 Nick Lamb (njl195@zepler.org.uk)  *  *   This program is free software: you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 3 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program.  If not, see<http://www.gnu.org/licenses/>.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the plug-in...  *   load_image()                - Load a PNG image into a new image window.  *   offsets_dialog()            - Asks the user about offsets when loading.  *   respin_cmap()               - Re-order a Gimp colormap for PNG tRNS  *   save_image()                - Export the specified image to a PNG file.  *   save_compression_callback() - Update the image compression level.  *   save_interlace_update()     - Update the interlacing option.  *   save_dialog()               - Pop up the export dialog.  *  * Revision History:  *  *   see ChangeLog  */
 end_comment
 
 begin_include
@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28be76690108
+DECL|struct|__anon2b0987e50108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28be76690208
+DECL|struct|__anon2b0987e50208
 block|{
 DECL|member|run
 name|gboolean
@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28be76690308
+DECL|struct|__anon2b0987e50308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -721,7 +721,7 @@ define|#
 directive|define
 name|COMMON_SAVE_ARGS
 define|\
-value|{ GIMP_PDB_INT32,    "run-mode",     "The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }" }, \     { GIMP_PDB_IMAGE,    "image",        "Input image"                  }, \     { GIMP_PDB_DRAWABLE, "drawable",     "Drawable to save"             }, \     { GIMP_PDB_STRING,   "filename",     "The name of the file to save the image in"}, \     { GIMP_PDB_STRING,   "raw-filename", "The name of the file to save the image in"}
+value|{ GIMP_PDB_INT32,    "run-mode",     "The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }" }, \     { GIMP_PDB_IMAGE,    "image",        "Input image"                  }, \     { GIMP_PDB_DRAWABLE, "drawable",     "Drawable to export"           }, \     { GIMP_PDB_STRING,   "filename",     "The name of the file to export the image in"}, \     { GIMP_PDB_STRING,   "raw-filename", "The name of the file to export the image in"}
 DECL|macro|OLD_CONFIG_ARGS
 define|#
 directive|define
@@ -852,9 +852,9 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE_PROC
 argument_list|,
-literal|"Saves files in PNG file format"
+literal|"Exports files in PNG file format"
 argument_list|,
-literal|"This plug-in saves Portable Network Graphics "
+literal|"This plug-in exports Portable Network Graphics "
 literal|"(PNG) files."
 argument_list|,
 literal|"Michael Sweet<mike@easysw.com>, "
@@ -891,9 +891,9 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE2_PROC
 argument_list|,
-literal|"Saves files in PNG file format"
+literal|"Exports files in PNG file format"
 argument_list|,
-literal|"This plug-in saves Portable Network Graphics "
+literal|"This plug-in exports Portable Network Graphics "
 literal|"(PNG) files. "
 literal|"This procedure adds 2 extra parameters to "
 literal|"file-png-save that control whether "
@@ -934,9 +934,9 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE_DEFAULTS_PROC
 argument_list|,
-literal|"Saves files in PNG file format"
+literal|"Exports files in PNG file format"
 argument_list|,
-literal|"This plug-in saves Portable Network Graphics (PNG) "
+literal|"This plug-in exports Portable Network Graphics (PNG) "
 literal|"files, using the default settings stored as "
 literal|"a parasite."
 argument_list|,
@@ -991,11 +991,11 @@ argument_list|(
 name|GET_DEFAULTS_PROC
 argument_list|,
 literal|"Get the current set of defaults used by the "
-literal|"PNG file save plug-in"
+literal|"PNG file export plug-in"
 argument_list|,
 literal|"This procedure returns the current set of "
 literal|"defaults stored as a parasite for the PNG "
-literal|"save plug-in. "
+literal|"export plug-in. "
 literal|"These defaults are used to seed the UI, by the "
 literal|"file_png_save_defaults procedure, and by "
 literal|"gimp_file_save when it detects to use PNG."
@@ -1032,10 +1032,10 @@ argument_list|(
 name|SET_DEFAULTS_PROC
 argument_list|,
 literal|"Set the current set of defaults used by the "
-literal|"PNG file save plug-in"
+literal|"PNG file export plug-in"
 argument_list|,
 literal|"This procedure set the current set of defaults "
-literal|"stored as a parasite for the PNG save plug-in. "
+literal|"stored as a parasite for the PNG export plug-in. "
 literal|"These defaults are used to seed the UI, by the "
 literal|"file_png_save_defaults procedure, and by "
 literal|"gimp_file_save when it detects to use PNG."
@@ -2926,7 +2926,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Error creating PNG read struct while saving '%s'."
+literal|"Error creating PNG read struct while exporting '%s'."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -5033,7 +5033,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * 'save_image ()' - Save the specified image to a PNG file.  */
+comment|/*  * 'save_image ()' - Export the specified image to a PNG file.  */
 end_comment
 
 begin_function
@@ -5234,7 +5234,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Error creating PNG write struct while saving '%s'."
+literal|"Error creating PNG write struct while exporting '%s'."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -5275,7 +5275,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Error while saving '%s'. Could not save image."
+literal|"Error while exporting '%s'. Could not export image."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -5306,7 +5306,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'"
+literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -5628,7 +5628,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|"Image type can't be saved as PNG"
+literal|"Image type can't be exported as PNG"
 argument_list|)
 expr_stmt|;
 return|return
@@ -6607,7 +6607,7 @@ argument_list|(
 name|pp
 argument_list|)
 expr_stmt|;
-comment|/*    * Allocate memory for "tile_height" rows and save the image...    */
+comment|/*    * Allocate memory for "tile_height" rows and export the image...    */
 name|tile_height
 operator|=
 name|gimp_tile_height

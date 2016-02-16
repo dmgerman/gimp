@@ -219,7 +219,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3a6a260108
+DECL|struct|__anon2a296b140108
 block|{
 DECL|member|resolution
 name|guint
@@ -330,7 +330,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3a6a260208
+DECL|struct|__anon2a296b140208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1016,7 +1016,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3a6a260308
+DECL|struct|__anon2a296b140308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -1988,7 +1988,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3a6a260408
+DECL|struct|__anon2a296b140408
 block|{
 DECL|member|eol
 name|goffset
@@ -2471,7 +2471,7 @@ name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-literal|"Drawable to save"
+literal|"Drawable to export"
 block|}
 block|,
 block|{
@@ -2479,7 +2479,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name of the file to export the image in"
 block|}
 block|,
 block|{
@@ -2487,7 +2487,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"raw-filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name of the file to export the image in"
 block|}
 block|,
 block|{
@@ -2841,9 +2841,9 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE_PS_PROC
 argument_list|,
-literal|"save image as PostScript docuement"
+literal|"export image as PostScript document"
 argument_list|,
-literal|"PostScript saving handles all image types except "
+literal|"PostScript exporting handles all image types except "
 literal|"those with alpha channels."
 argument_list|,
 literal|"Peter Kirchgessner<peter@kirchgessner.net>"
@@ -2898,9 +2898,9 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE_EPS_PROC
 argument_list|,
-literal|"save image as Encapsulated PostScript image"
+literal|"export image as Encapsulated PostScript image"
 argument_list|,
-literal|"PostScript saving handles all image types except "
+literal|"PostScript exporting handles all image types except "
 literal|"those with alpha channels."
 argument_list|,
 literal|"Peter Kirchgessner<peter@kirchgessner.net>"
@@ -5083,7 +5083,7 @@ argument_list|(
 name|drawable_ID
 argument_list|)
 expr_stmt|;
-comment|/*  Make sure we're not saving an image with an alpha channel  */
+comment|/*  Make sure we're not exporting an image with an alpha channel  */
 if|if
 condition|(
 name|gimp_drawable_has_alpha
@@ -5102,7 +5102,7 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"PostScript save cannot handle images with alpha channels"
+literal|"PostScript export cannot handle images with alpha channels"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5149,7 +5149,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'"
+literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
 name|gimp_file_get_utf8_name

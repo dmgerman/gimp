@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*  * gbr plug-in version 1.00  * Loads/saves version 2 GIMP .gbr files, by Tim Newsome<drz@frody.bloke.com>  * Some bits stolen from the .99.7 source tree.  *  * Added in GBR version 1 support after learning that there wasn't a  * tool to read them.  * July 6, 1998 by Seth Burgess<sjburges@gimp.org>  *  * Dec 17, 2000  * Load and save GIMP brushes in GRAY or RGBA.  jtl + neo  *  *  * TODO: Give some better error reporting on not opening files/bad headers  *       etc.  */
+comment|/*  * gbr plug-in version 1.00  * Loads/exports version 2 GIMP .gbr files, by Tim Newsome<drz@frody.bloke.com>  * Some bits stolen from the .99.7 source tree.  *  * Added in GBR version 1 support after learning that there wasn't a  * tool to read them.  * July 6, 1998 by Seth Burgess<sjburges@gimp.org>  *  * Dec 17, 2000  * Load and save GIMP brushes in GRAY or RGBA.  jtl + neo  *  *  * TODO: Give some better error reporting on not opening files/bad headers  *       etc.  */
 end_comment
 
 begin_include
@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d1c5590108
+DECL|struct|__anon2b993fd00108
 block|{
 DECL|member|description
 name|gchar
@@ -337,7 +337,7 @@ name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-literal|"Drawable to save"
+literal|"Drawable to export"
 block|}
 block|,
 block|{
@@ -345,7 +345,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"uri"
 block|,
-literal|"The URI of the file to save the image in"
+literal|"The URI of the file to export the image in"
 block|}
 block|,
 block|{
@@ -353,7 +353,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"raw-uri"
 block|,
-literal|"The URI of the file to save the image in"
+literal|"The URI of the file to export the image in"
 block|}
 block|,
 block|{
@@ -452,9 +452,9 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE_PROC
 argument_list|,
-literal|"Saves files in the GIMP brush file format"
+literal|"Exports files in the GIMP brush file format"
 argument_list|,
-literal|"Saves files in the GIMP brush file format"
+literal|"Exports files in the GIMP brush file format"
 argument_list|,
 literal|"Tim Newsome, Jens Lautenbacher, Sven Neumann"
 argument_list|,
@@ -2342,7 +2342,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon28d1c559020a
+DECL|union|__anon2b993fd0020a
 block|{
 DECL|member|u
 name|guint16
@@ -2844,7 +2844,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'"
+literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
 name|g_file_get_parse_name

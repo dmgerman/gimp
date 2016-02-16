@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * pat plug-in version 1.01  * Loads/saves version 1 GIMP .pat files, by Tim Newsome<drz@frody.bloke.com>  *  * GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/*  * pat plug-in version 1.01  * Loads/exports version 1 GIMP .pat files, by Tim Newsome<drz@frody.bloke.com>  *  * GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -289,7 +289,7 @@ name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-literal|"Drawable to save"
+literal|"Drawable to export"
 block|}
 block|,
 block|{
@@ -297,7 +297,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"uri"
 block|,
-literal|"The URI of the file to save the image in"
+literal|"The URI of the file to export the image in"
 block|}
 block|,
 block|{
@@ -305,7 +305,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"raw-uri"
 block|,
-literal|"The URI of the file to save the image in"
+literal|"The URI of the file to export the image in"
 block|}
 block|,
 block|{
@@ -397,9 +397,9 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE_PROC
 argument_list|,
-literal|"Saves Gimp pattern file (.PAT)"
+literal|"Exports Gimp pattern file (.PAT)"
 argument_list|,
-literal|"New Gimp patterns can be created by saving them "
+literal|"New Gimp patterns can be created by exporting them "
 literal|"in the appropriate place with this plug-in."
 argument_list|,
 literal|"Tim Newsome"
@@ -2120,7 +2120,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'"
+literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
 name|g_file_get_parse_name

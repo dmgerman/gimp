@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* Plug-in to load and save .gih (GIMP Brush Pipe) files.  *  * Copyright (C) 1999 Tor Lillqvist  * Copyright (C) 2000 Jens Lautenbacher, Sven Neumann  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* Plug-in to load and export .gih (GIMP Brush Pipe) files.  *  * Copyright (C) 1999 Tor Lillqvist  * Copyright (C) 2000 Jens Lautenbacher, Sven Neumann  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_comment
@@ -88,13 +88,13 @@ value|"gimp-file-gih"
 end_define
 
 begin_comment
-comment|/* Parameters applicable each time we save a gih, saved in the  * main gimp application between invocations of this plug-in.  */
+comment|/* Parameters applicable each time we export a gih, exported in the  * main gimp application between invocations of this plug-in.  */
 end_comment
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c5c0ab0108
+DECL|struct|__anon289f1a9a0108
 block|{
 DECL|member|description
 name|gchar
@@ -116,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c5c0ab0208
+DECL|struct|__anon289f1a9a0208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -479,7 +479,7 @@ name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-literal|"Drawable to save"
+literal|"Drawable to export"
 block|}
 block|,
 block|{
@@ -487,7 +487,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"uri"
 block|,
-literal|"The URI of the file to save the brush pipe in"
+literal|"The URI of the file to export the brush pipe in"
 block|}
 block|,
 block|{
@@ -495,7 +495,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"raw-uri"
 block|,
-literal|"The URI of the file to save the brush pipe in"
+literal|"The URI of the file to export the brush pipe in"
 block|}
 block|,
 block|{
@@ -707,9 +707,9 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE_PROC
 argument_list|,
-literal|"saves images in GIMP brush pipe format"
+literal|"exports images in GIMP brush pipe format"
 argument_list|,
-literal|"This plug-in saves an image in the GIMP brush pipe "
+literal|"This plug-in exports an image in the GIMP brush pipe "
 literal|"format. For a colored brush pipe, RGBA layers are "
 literal|"used, otherwise the layers should be grayscale "
 literal|"masks. The image can be multi-layered, and "
@@ -6192,7 +6192,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'"
+literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
 name|g_file_get_parse_name

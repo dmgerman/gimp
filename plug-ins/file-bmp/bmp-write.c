@@ -82,7 +82,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e33bb60103
+DECL|enum|__anon28f4a5dc0103
 block|{
 DECL|enumerator|RGB_565
 name|RGB_565
@@ -110,7 +110,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29e33bb60208
+DECL|struct|__anon28f4a5dc0208
 block|{
 DECL|member|rgb_format
 name|RGBMode
@@ -741,7 +741,7 @@ name|warning_dialog
 argument_list|(
 name|_
 argument_list|(
-literal|"Cannot save indexed image with "
+literal|"Cannot export indexed image with "
 literal|"transparency in BMP file format."
 argument_list|)
 argument_list|,
@@ -852,7 +852,7 @@ name|warning_dialog
 argument_list|(
 name|_
 argument_list|(
-literal|"Cannot save indexed image with "
+literal|"Cannot export indexed image with "
 literal|"transparency in BMP file format."
 argument_list|)
 argument_list|,
@@ -1169,7 +1169,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'"
+literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8

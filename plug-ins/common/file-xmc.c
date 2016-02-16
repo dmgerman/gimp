@@ -308,7 +308,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a82dc10108
+DECL|struct|__anon287fea850108
 block|{
 DECL|member|crop
 name|gboolean
@@ -839,7 +839,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27a82dc10208
+DECL|struct|__anon287fea850208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -1066,7 +1066,7 @@ name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-literal|"Drawable to save"
+literal|"Drawable to export"
 block|}
 block|,
 block|{
@@ -1074,7 +1074,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name of the file to export the image in"
 block|}
 block|,
 block|{
@@ -1273,9 +1273,9 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE_PROC
 argument_list|,
-literal|"Saves files of X11 cursor file"
+literal|"Exports files of X11 cursor file"
 argument_list|,
-literal|"This plug-in saves X11 Mouse Cursor (XMC) files"
+literal|"This plug-in exports X11 Mouse Cursor (XMC) files"
 argument_list|,
 literal|"Takeshi Matsuyama<tksmashiw@gmail.com>"
 argument_list|,
@@ -1765,7 +1765,7 @@ condition|)
 block|{
 name|DM_XMC
 argument_list|(
-literal|"run: save %s\n"
+literal|"run: export %s\n"
 argument_list|,
 name|name
 argument_list|)
@@ -6826,10 +6826,10 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Cannot save the cursor because the hot spot "
+literal|"Cannot export the cursor because the hot spot "
 literal|"is not on frame '%s'.\n"
 literal|"Try to change the hot spot position, "
-literal|"layer geometry or save without auto-crop."
+literal|"layer geometry or export without auto-crop."
 argument_list|)
 argument_list|,
 name|gimp_any_to_utf8
@@ -7504,7 +7504,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Your cursor was successfully saved but it contains one or "
+literal|"Your cursor was successfully exported but it contains one or "
 literal|"more frames whose width or height is more than %ipx.\n"
 literal|"It will clutter the screen in some environments."
 argument_list|)
@@ -7522,11 +7522,11 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Your cursor was successfully saved but it contains one "
+literal|"Your cursor was successfully exported but it contains one "
 literal|"or more frames whose nominal size is not supported by "
 literal|"GNOME settings.\n"
 literal|"You can satisfy it by checking \"Replace the size of all "
-literal|"frames...\" in the save dialog, or your cursor may not "
+literal|"frames...\" in the export dialog, or your cursor may not "
 literal|"appear in GNOME settings."
 argument_list|)
 argument_list|)
@@ -9141,7 +9141,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon27a82dc10308
+DECL|struct|__anon287fea850308
 block|{
 DECL|member|size
 name|guint32

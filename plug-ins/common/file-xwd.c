@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b7d3b40108
+DECL|struct|__anon2b7560190108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -246,7 +246,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b7d3b40208
+DECL|struct|__anon2b7560190208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -304,7 +304,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b7d3b40308
+DECL|struct|__anon2b7560190308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -331,7 +331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b7d3b40408
+DECL|struct|__anon2b7560190408
 block|{
 DECL|member|npixel
 name|gint
@@ -1093,7 +1093,7 @@ name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-literal|"Drawable to save"
+literal|"Drawable to export"
 block|}
 block|,
 block|{
@@ -1101,7 +1101,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name of the file to export the image in"
 block|}
 block|,
 block|{
@@ -1109,7 +1109,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"raw-filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name of the file to export the image in"
 block|}
 block|}
 decl_stmt|;
@@ -1175,9 +1175,9 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE_PROC
 argument_list|,
-literal|"Saves files in the XWD (X Window Dump) format"
+literal|"Exports files in the XWD (X Window Dump) format"
 argument_list|,
-literal|"XWD saving handles all image types except "
+literal|"XWD exporting handles all image types except "
 literal|"those with alpha channels."
 argument_list|,
 literal|"Peter Kirchgessner"
@@ -2539,7 +2539,7 @@ argument_list|(
 name|drawable_ID
 argument_list|)
 expr_stmt|;
-comment|/*  Make sure we're not saving an image with an alpha channel  */
+comment|/*  Make sure we're not exporting an image with an alpha channel  */
 if|if
 condition|(
 name|gimp_drawable_has_alpha
@@ -2558,7 +2558,7 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"Cannot save images with alpha channels."
+literal|"Cannot export images with alpha channels."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2599,7 +2599,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'"
+literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
 name|gimp_file_get_utf8_name
@@ -2741,7 +2741,7 @@ name|error
 argument_list|,
 name|_
 argument_list|(
-literal|"Error saving '%s': "
+literal|"Error exporting '%s': "
 argument_list|)
 argument_list|,
 name|gimp_file_get_utf8_name

@@ -381,7 +381,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
-literal|"The name of the file to save"
+literal|"The name of the file to export"
 block|}
 block|,
 block|{
@@ -397,7 +397,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"from-frame"
 block|,
-literal|"Save beginning from this frame"
+literal|"Export beginning from this frame"
 block|}
 block|,
 block|{
@@ -405,7 +405,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"to-frame"
 block|,
-literal|"End saving with this frame"
+literal|"End exporting with this frame"
 block|}
 block|, }
 decl_stmt|;
@@ -497,7 +497,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-comment|/*    * Load/save procedures    */
+comment|/*    * Load/export procedures    */
 name|gimp_install_procedure
 argument_list|(
 name|LOAD_PROC
@@ -560,7 +560,7 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE_PROC
 argument_list|,
-literal|"save FLI-movies"
+literal|"export FLI-movies"
 argument_list|,
 literal|"This is an experimantal plug-in to handle FLI movies"
 argument_list|,
@@ -2885,7 +2885,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Sorry, I can save only INDEXED and GRAY images."
+literal|"Sorry, I can export only INDEXED and GRAY images."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2897,7 +2897,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'"
+literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8

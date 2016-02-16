@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be464d50108
+DECL|struct|__anon288130f10108
 block|{
 DECL|member|replace
 name|gint
@@ -483,7 +483,7 @@ name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-literal|"Drawable to save"
+literal|"Drawable to export"
 block|}
 block|,
 block|{
@@ -491,7 +491,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name of the file to export the image in"
 block|}
 block|,
 block|{
@@ -499,7 +499,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"raw-filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name of the file to export the image in"
 block|}
 block|,   }
 decl_stmt|;
@@ -564,9 +564,9 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE_PROC
 argument_list|,
-literal|"save file in the FITS file format"
+literal|"export file in the FITS file format"
 argument_list|,
-literal|"FITS saving handles all image types except "
+literal|"FITS exporting handles all image types except "
 literal|"those with alpha channels."
 argument_list|,
 literal|"Peter Kirchgessner"
@@ -1631,7 +1631,7 @@ argument_list|(
 name|drawable_ID
 argument_list|)
 expr_stmt|;
-comment|/*  Make sure we're not saving an image with an alpha channel  */
+comment|/*  Make sure we're not exporting an image with an alpha channel  */
 if|if
 condition|(
 name|gimp_drawable_has_alpha
@@ -1652,7 +1652,7 @@ literal|"%s"
 argument_list|,
 name|_
 argument_list|(
-literal|"FITS save cannot handle images with alpha channels"
+literal|"FITS export cannot handle images with alpha channels"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1704,7 +1704,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'"
+literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8

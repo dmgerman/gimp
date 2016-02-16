@@ -369,7 +369,7 @@ name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-literal|"Drawable to save"
+literal|"Drawable to export"
 block|}
 block|,
 block|{
@@ -377,7 +377,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
-literal|"Filename to save image to"
+literal|"Filename to export image to"
 block|}
 block|,
 block|{
@@ -450,9 +450,9 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE_PROC
 argument_list|,
-literal|"Saves files in KISS CEL file format"
+literal|"Exports files in KISS CEL file format"
 argument_list|,
-literal|"This plug-in saves individual KISS cell files."
+literal|"This plug-in exports individual KISS cell files."
 argument_list|,
 literal|"Nick Lamb"
 argument_list|,
@@ -3371,7 +3371,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'"
+literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
 name|gimp_file_get_utf8_name

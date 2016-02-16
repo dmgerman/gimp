@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * pcx.c GIMP plug-in for loading& saving PCX files  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/*  * pcx.c GIMP plug-in for loading& exporting PCX files  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_comment
@@ -465,7 +465,7 @@ name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-literal|"Drawable to save"
+literal|"Drawable to export"
 block|}
 block|,
 block|{
@@ -473,7 +473,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name of the file to export the image in"
 block|}
 block|,
 block|{
@@ -545,7 +545,7 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE_PROC
 argument_list|,
-literal|"Saves files in ZSoft PCX file format"
+literal|"Exports files in ZSoft PCX file format"
 argument_list|,
 literal|"FIXME: write help for pcx_save"
 argument_list|,
@@ -1040,7 +1040,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27efc7c10108
+DECL|struct|__anon287d3c1e0108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1117,7 +1117,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon27efc7c10208
+DECL|struct|__anon287d3c1e0208
 specifier|static
 struct|struct
 block|{
@@ -3103,7 +3103,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'"
+literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -3270,7 +3270,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Cannot save images with alpha channel."
+literal|"Cannot export images with alpha channel."
 argument_list|)
 argument_list|)
 expr_stmt|;

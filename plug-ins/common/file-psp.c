@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP plug-in to load and save Paint Shop Pro files (.PSP and .TUB)  *  * Copyright (C) 1999 Tor Lillqvist  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP plug-in to load and export Paint Shop Pro files (.PSP and .TUB)  *  * Copyright (C) 1999 Tor Lillqvist  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_comment
-comment|/*  *  * Work in progress! Doesn't handle saving yet.  *  * For a copy of the PSP file format documentation, surf to  * http://www.jasc.com.  *  */
+comment|/*  *  * Work in progress! Doesn't handle exporting yet.  *  * For a copy of the PSP file format documentation, surf to  * http://www.jasc.com.  *  */
 end_comment
 
 begin_define
@@ -129,7 +129,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464320103
+DECL|enum|__anon2c298c580103
 typedef|typedef
 enum|enum
 block|{
@@ -258,7 +258,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464320203
+DECL|enum|__anon2c298c580203
 typedef|typedef
 enum|enum
 block|{
@@ -327,7 +327,7 @@ comment|/* Type of image in the composite image bank block. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464320303
+DECL|enum|__anon2c298c580303
 typedef|typedef
 enum|enum
 block|{
@@ -352,7 +352,7 @@ comment|/* Graphic contents flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464320403
+DECL|enum|__anon2c298c580403
 typedef|typedef
 enum|enum
 block|{
@@ -435,7 +435,7 @@ comment|/* Character style flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464320503
+DECL|enum|__anon2c298c580503
 typedef|typedef
 enum|enum
 block|{
@@ -480,7 +480,7 @@ comment|/* Table type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464320603
+DECL|enum|__anon2c298c580603
 typedef|typedef
 enum|enum
 block|{
@@ -512,7 +512,7 @@ comment|/* Layer flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464320703
+DECL|enum|__anon2c298c580703
 typedef|typedef
 enum|enum
 block|{
@@ -539,7 +539,7 @@ comment|/* Shape property flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464320803
+DECL|enum|__anon2c298c580803
 typedef|typedef
 enum|enum
 block|{
@@ -572,7 +572,7 @@ comment|/* Polyline node type flags. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464320903
+DECL|enum|__anon2c298c580903
 typedef|typedef
 enum|enum
 block|{
@@ -666,7 +666,7 @@ comment|/* Blend modes. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464320a03
+DECL|enum|__anon2c298c580a03
 typedef|typedef
 enum|enum
 block|{
@@ -752,7 +752,7 @@ comment|/* Adjustment layer types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464320b03
+DECL|enum|__anon2c298c580b03
 typedef|typedef
 enum|enum
 block|{
@@ -808,7 +808,7 @@ comment|/* Vector shape types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464320c03
+DECL|enum|__anon2c298c580c03
 typedef|typedef
 enum|enum
 block|{
@@ -849,7 +849,7 @@ comment|/* Text element types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464320d03
+DECL|enum|__anon2c298c580d03
 typedef|typedef
 enum|enum
 block|{
@@ -881,7 +881,7 @@ comment|/* Text alignment types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464320e03
+DECL|enum|__anon2c298c580e03
 typedef|typedef
 enum|enum
 block|{
@@ -909,7 +909,7 @@ comment|/* Paint style types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464320f03
+DECL|enum|__anon2c298c580f03
 typedef|typedef
 enum|enum
 block|{
@@ -960,7 +960,7 @@ comment|/* Gradient type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464321003
+DECL|enum|__anon2c298c581003
 typedef|typedef
 enum|enum
 block|{
@@ -992,7 +992,7 @@ comment|/* Paint Style Cap Type (Start& End). (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464321103
+DECL|enum|__anon2c298c581103
 typedef|typedef
 enum|enum
 block|{
@@ -1064,7 +1064,7 @@ comment|/* Paint Style Join Type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464321203
+DECL|enum|__anon2c298c581203
 typedef|typedef
 enum|enum
 block|{
@@ -1089,7 +1089,7 @@ comment|/* Organic pen type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464321303
+DECL|enum|__anon2c298c581303
 typedef|typedef
 enum|enum
 block|{
@@ -1137,7 +1137,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464321403
+DECL|enum|__anon2c298c581403
 typedef|typedef
 enum|enum
 block|{
@@ -1169,7 +1169,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464321503
+DECL|enum|__anon2c298c581503
 typedef|typedef
 enum|enum
 block|{
@@ -1197,7 +1197,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464321603
+DECL|enum|__anon2c298c581603
 typedef|typedef
 enum|enum
 block|{
@@ -1229,7 +1229,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464321703
+DECL|enum|__anon2c298c581703
 typedef|typedef
 enum|enum
 block|{
@@ -1251,7 +1251,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464321803
+DECL|enum|__anon2c298c581803
 typedef|typedef
 enum|enum
 block|{
@@ -1287,7 +1287,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464321903
+DECL|enum|__anon2c298c581903
 typedef|typedef
 enum|enum
 block|{
@@ -1320,7 +1320,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464321a03
+DECL|enum|__anon2c298c581a03
 typedef|typedef
 enum|enum
 block|{
@@ -1368,7 +1368,7 @@ comment|/* Grid units type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464321b03
+DECL|enum|__anon2c298c581b03
 typedef|typedef
 enum|enum
 block|{
@@ -1396,7 +1396,7 @@ comment|/* Guide orientation type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464321c03
+DECL|enum|__anon2c298c581c03
 typedef|typedef
 enum|enum
 block|{
@@ -1418,7 +1418,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464321d03
+DECL|enum|__anon2c298c581d03
 typedef|typedef
 enum|enum
 block|{
@@ -1442,7 +1442,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464321e03
+DECL|enum|__anon2c298c581e03
 typedef|typedef
 enum|enum
 block|{
@@ -1466,7 +1466,7 @@ comment|/* Layer types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon277464321f03
+DECL|enum|__anon2c298c581f03
 typedef|typedef
 enum|enum
 block|{
@@ -1545,7 +1545,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277464322008
+DECL|struct|__anon2c298c582008
 block|{
 DECL|member|width
 DECL|member|height
@@ -1708,7 +1708,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277464322108
+DECL|struct|__anon2c298c582108
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -1808,7 +1808,7 @@ decl_stmt|;
 if|#
 directive|if
 literal|0
-block|static const GimpParamDef save_args[] =   {     { GIMP_PDB_INT32,    "run-mode",     "The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }" },     { GIMP_PDB_IMAGE,    "image",        "Input image" },     { GIMP_PDB_DRAWABLE, "drawable",     "Drawable to save" },     { GIMP_PDB_STRING,   "filename",     "The name of the file to save the image in" },     { GIMP_PDB_STRING,   "raw-filename", "The name of the file to save the image in" },     { GIMP_PDB_INT32,    "compression",  "Specify 0 for no compression, 1 for RLE, and 2 for LZ77" }   };
+block|static const GimpParamDef save_args[] =   {     { GIMP_PDB_INT32,    "run-mode",     "The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }" },     { GIMP_PDB_IMAGE,    "image",        "Input image" },     { GIMP_PDB_DRAWABLE, "drawable",     "Drawable to export" },     { GIMP_PDB_STRING,   "filename",     "The name of the file to export the image in" },     { GIMP_PDB_STRING,   "raw-filename", "The name of the file to export the image in" },     { GIMP_PDB_INT32,    "compression",  "Specify 0 for no compression, 1 for RLE, and 2 for LZ77" }   };
 endif|#
 directive|endif
 name|gimp_install_procedure
@@ -1817,9 +1817,9 @@ name|LOAD_PROC
 argument_list|,
 literal|"loads images from the Paint Shop Pro PSP file format"
 argument_list|,
-literal|"This plug-in loads and saves images in "
+literal|"This plug-in loads and exports images in "
 literal|"Paint Shop Pro's native PSP format. "
-literal|"Vector layers aren't handled. Saving isn't "
+literal|"Vector layers aren't handled. Exporting isn't "
 literal|"yet implemented."
 argument_list|,
 literal|"Tor Lillqvist"
@@ -1870,11 +1870,11 @@ argument_list|,
 literal|"0,string,Paint\\040Shop\\040Pro\\040Image\\040File\n\032"
 argument_list|)
 expr_stmt|;
-comment|/* commented out until saving is implemented */
+comment|/* commented out until exporting is implemented */
 if|#
 directive|if
 literal|0
-block|gimp_install_procedure (SAVE_PROC,                           "saves images in the Paint Shop Pro PSP file format",                           "This plug-in loads and saves images in "                           "Paint Shop Pro's native PSP format. "                           "Vector layers aren't handled. Saving isn't "                           "yet implemented.",                           "Tor Lillqvist",                           "Tor Lillqvist",                           "1999",                           N_("Paint Shop Pro image"),                           "RGB*, GRAY*, INDEXED*",                           GIMP_PLUGIN,                           G_N_ELEMENTS (save_args), 0,                           save_args, NULL);    gimp_register_save_handler (SAVE_PROC, "psp,tub", "");
+block|gimp_install_procedure (SAVE_PROC,                           "exports images in the Paint Shop Pro PSP file format",                           "This plug-in loads and exports images in "                           "Paint Shop Pro's native PSP format. "                           "Vector layers aren't handled. Exporting isn't "                           "yet implemented.",                           "Tor Lillqvist",                           "Tor Lillqvist",                           "1999",                           N_("Paint Shop Pro image"),                           "RGB*, GRAY*, INDEXED*",                           GIMP_PLUGIN,                           G_N_ELEMENTS (save_args), 0,                           save_args, NULL);    gimp_register_save_handler (SAVE_PROC, "psp,tub", "");
 endif|#
 directive|endif
 block|}
@@ -6749,7 +6749,7 @@ operator|.
 name|rows
 argument_list|)
 expr_stmt|;
-comment|/* We use a parasite to pass in the tube (pipe) parameters in    * case we will have any use of those, for instance in the gpb    * plug-in that saves a GIMP image pipe.    */
+comment|/* We use a parasite to pass in the tube (pipe) parameters in    * case we will have any use of those, for instance in the gpb    * plug-in that exports a GIMP image pipe.    */
 name|params
 operator|.
 name|dim
@@ -7714,7 +7714,7 @@ parameter_list|)
 block|{
 name|g_message
 argument_list|(
-literal|"Saving not implemented yet"
+literal|"Exporting not implemented yet"
 argument_list|)
 expr_stmt|;
 return|return

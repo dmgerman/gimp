@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * PSD Save Plugin version 1.0 (BETA)  * This GIMP plug-in is designed to save Adobe Photoshop(tm) files (.PSD)  *  * Monigotes  *  *     If this plug-in fails to save a file which you think it should,  *     please tell me what seemed to go wrong, and anything you know  *     about the image you tried to save.  Please don't send big PSD  *     files to me without asking first.  *  *          Copyright (C) 2000 Monigotes  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/*  * PSD Export Plugin version 1.0 (BETA)  * This GIMP plug-in is designed to export Adobe Photoshop(tm) files (.PSD)  *  * Monigotes  *  *     If this plug-in fails to export a file which you think it should,  *     please tell me what seemed to go wrong, and anything you know  *     about the image you tried to export.  Please don't send big PSD  *     files to me without asking first.  *  *          Copyright (C) 2000 Monigotes  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_comment
@@ -12,7 +12,7 @@ comment|/*  * Revision history:  *  *  2000.02 / v1.0 / Monigotes  *       First
 end_comment
 
 begin_comment
-comment|/*  * TODO:  *       Save preview  */
+comment|/*  * TODO:  *       Export preview  */
 end_comment
 
 begin_comment
@@ -777,8 +777,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Unable to save layer with mode '%s'.  Either the PSD "
-literal|"file format or the save plug-in does not support that, "
+literal|"Unable to export layer with mode '%s'.  Either the PSD "
+literal|"file format or the export plug-in does not support that, "
 literal|"using normal mode instead."
 argument_list|)
 argument_list|,
@@ -1842,7 +1842,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"PSD Save: gimpBaseType value is %d, "
+literal|"PSD Export: gimpBaseType value is %d, "
 literal|"can't convert to PSD mode"
 argument_list|,
 name|gimpBaseType
@@ -2233,7 +2233,7 @@ argument_list|,
 literal|"depth"
 argument_list|)
 expr_stmt|;
-comment|/* Saving can only be done in 8 bits at the moment. */
+comment|/* Exporting can only be done in 8 bits at the moment. */
 name|write_gint16
 argument_list|(
 name|fd
@@ -6622,7 +6622,7 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"Unable to save '%s'.  The PSD file format does not "
+literal|"Unable to export '%s'.  The PSD file format does not "
 literal|"support images that are more than 30,000 pixels wide "
 literal|"or tall."
 argument_list|)
@@ -6699,7 +6699,7 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"Unable to save '%s'.  The PSD file format does not "
+literal|"Unable to export '%s'.  The PSD file format does not "
 literal|"support images with layers that are more than 30,000 "
 literal|"pixels wide or tall."
 argument_list|)
@@ -6734,7 +6734,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'"
+literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
