@@ -527,6 +527,25 @@ condition|(
 name|applicator
 condition|)
 block|{
+comment|/*  disable the preview crop, this will force-process the            *  cached result from the preview cache into the result            *  cache, involving only the layer and affect nodes            */
+name|gimp_applicator_set_preview
+argument_list|(
+name|applicator
+argument_list|,
+name|FALSE
+argument_list|,
+name|GEGL_RECTANGLE
+argument_list|(
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  the apply_buffer will make a copy of the region that is            *  actually processed in gimp_gegl_apply_cached_operation()            *  below.            */
 name|apply_buffer
 operator|=
