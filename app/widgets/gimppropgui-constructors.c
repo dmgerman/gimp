@@ -1355,7 +1355,10 @@ name|invert_button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Invert Range"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1383,7 +1386,10 @@ name|all_button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Select All"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3373,7 +3379,10 @@ name|vbox
 argument_list|,
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Frequencies"
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3421,10 +3430,13 @@ argument_list|,
 name|vbox
 argument_list|,
 name|gtk_label_new
+argument_list|(
+name|_
 argument_list|(
 literal|"Contours"
 argument_list|)
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
@@ -3471,7 +3483,10 @@ name|vbox
 argument_list|,
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Sharp Edges"
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3520,7 +3535,10 @@ name|vbox
 argument_list|,
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Other Options"
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
