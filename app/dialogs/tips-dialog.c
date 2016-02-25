@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aac5b220103
+DECL|enum|__anon2c3d6c520103
 block|{
 DECL|enumerator|RESPONSE_PREVIOUS
 name|RESPONSE_PREVIOUS
@@ -137,7 +137,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|more_button_clicked
 parameter_list|(
 name|GtkWidget
@@ -911,7 +911,7 @@ name|g_signal_connect
 argument_list|(
 name|more_button
 argument_list|,
-literal|"clicked"
+literal|"activate-link"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1117,7 +1117,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|more_button_clicked (GtkWidget * button,Gimp * gimp)
 name|more_button_clicked
 parameter_list|(
@@ -1157,6 +1157,10 @@ operator|->
 name|help_id
 argument_list|)
 expr_stmt|;
+comment|/* Do not run the link set at construction. */
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
