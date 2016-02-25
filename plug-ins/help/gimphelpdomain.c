@@ -658,8 +658,8 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Please install the additional help package "
-literal|"or use the online user manual at "
-literal|"http://docs.gimp.org/."
+literal|"or use the online user manual at: "
+literal|"http://docs.gimp.org/"
 argument_list|)
 argument_list|)
 expr_stmt|;
