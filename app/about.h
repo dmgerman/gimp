@@ -47,6 +47,10 @@ define|\
 value|_("Copyright Â© 1995-%s\n" \     "Spencer Kimball, Peter Mattis and the GIMP Development Team")
 end_define
 
+begin_comment
+comment|/* TRANSLATORS: do not end the license URL with a dot, because it would  * be in the link. Because of technical limitations, make sure the URL  * ends with a space, a newline or is end of text.  * Cf. bug 762282.  */
+end_comment
+
 begin_define
 DECL|macro|GIMP_LICENSE
 define|#

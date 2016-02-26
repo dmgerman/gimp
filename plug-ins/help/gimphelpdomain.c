@@ -655,6 +655,7 @@ argument_list|(
 literal|"The GIMP user manual is not available."
 argument_list|)
 argument_list|,
+comment|/* TRANSLATORS: do not end the URL with a dot,                               * it would be in the link. Because of                               * technical limitations, make sure the URL                               * ends with a space, a newline or is end of text.                               * Cf. bug 762282.                               */
 name|_
 argument_list|(
 literal|"Please install the additional help package "
