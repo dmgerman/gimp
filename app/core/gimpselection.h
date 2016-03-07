@@ -103,9 +103,9 @@ DECL|member|parent_instance
 name|GimpChannel
 name|parent_instance
 decl_stmt|;
-DECL|member|stroking_count
+DECL|member|suspend_count
 name|gint
-name|stroking_count
+name|suspend_count
 decl_stmt|;
 block|}
 struct|;
@@ -154,7 +154,7 @@ end_function_decl
 
 begin_function_decl
 name|gint
-name|gimp_selection_push_stroking
+name|gimp_selection_suspend
 parameter_list|(
 name|GimpSelection
 modifier|*
@@ -165,7 +165,7 @@ end_function_decl
 
 begin_function_decl
 name|gint
-name|gimp_selection_pop_stroking
+name|gimp_selection_resume
 parameter_list|(
 name|GimpSelection
 modifier|*

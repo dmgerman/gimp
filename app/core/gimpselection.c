@@ -951,14 +951,7 @@ name|GimpSelection
 modifier|*
 name|selection
 parameter_list|)
-block|{
-name|selection
-operator|->
-name|stroking_count
-operator|=
-literal|0
-expr_stmt|;
-block|}
+block|{ }
 end_function
 
 begin_function
@@ -1384,7 +1377,7 @@ return|return
 name|FALSE
 return|;
 block|}
-name|gimp_selection_push_stroking
+name|gimp_selection_suspend
 argument_list|(
 name|selection
 argument_list|)
@@ -1411,7 +1404,7 @@ argument_list|,
 name|error
 argument_list|)
 expr_stmt|;
-name|gimp_selection_pop_stroking
+name|gimp_selection_resume
 argument_list|(
 name|selection
 argument_list|)
@@ -1966,7 +1959,7 @@ if|if
 condition|(
 name|selection
 operator|->
-name|stroking_count
+name|suspend_count
 operator|>
 literal|0
 condition|)
@@ -2435,8 +2428,8 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_selection_push_stroking (GimpSelection * selection)
-name|gimp_selection_push_stroking
+DECL|function|gimp_selection_suspend (GimpSelection * selection)
+name|gimp_selection_suspend
 parameter_list|(
 name|GimpSelection
 modifier|*
@@ -2455,21 +2448,21 @@ argument_list|)
 expr_stmt|;
 name|selection
 operator|->
-name|stroking_count
+name|suspend_count
 operator|++
 expr_stmt|;
 return|return
 name|selection
 operator|->
-name|stroking_count
+name|suspend_count
 return|;
 block|}
 end_function
 
 begin_function
 name|gint
-DECL|function|gimp_selection_pop_stroking (GimpSelection * selection)
-name|gimp_selection_pop_stroking
+DECL|function|gimp_selection_resume (GimpSelection * selection)
+name|gimp_selection_resume
 parameter_list|(
 name|GimpSelection
 modifier|*
@@ -2490,7 +2483,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|selection
 operator|->
-name|stroking_count
+name|suspend_count
 operator|>
 literal|0
 argument_list|,
@@ -2499,13 +2492,13 @@ argument_list|)
 expr_stmt|;
 name|selection
 operator|->
-name|stroking_count
+name|suspend_count
 operator|--
 expr_stmt|;
 return|return
 name|selection
 operator|->
-name|stroking_count
+name|suspend_count
 return|;
 block|}
 end_function
