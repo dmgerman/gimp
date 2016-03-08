@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdrawable-fill.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 

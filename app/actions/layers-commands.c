@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdrawable-fill.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpgrouplayer.h"
 end_include
 

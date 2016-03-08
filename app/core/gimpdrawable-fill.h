@@ -16,6 +16,32 @@ directive|define
 name|__GIMP_DRAWABLE_FILL_H__
 end_define
 
+begin_comment
+comment|/*  Lowlevel API that is used for initializing the entire drawable  *  before it is added to the image, doesn't even push an undo.  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_drawable_fill
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|GimpFillType
+name|fill_type
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  Proper API that is used for actual editing (not just initializing)  */
+end_comment
+
 begin_function_decl
 name|void
 name|gimp_drawable_fill_boundary

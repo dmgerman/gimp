@@ -58,6 +58,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdrawable-fill.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable-foreground-extract.h"
 end_include
 
