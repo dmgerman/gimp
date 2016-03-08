@@ -2672,9 +2672,11 @@ name|context
 argument_list|,
 name|fill_type
 argument_list|,
-name|GIMP_OPACITY_OPAQUE
+name|opacity
+operator|/
+literal|100.0
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|paint_mode
 argument_list|,
 name|error
 argument_list|)
