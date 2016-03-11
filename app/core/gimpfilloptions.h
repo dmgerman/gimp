@@ -215,6 +215,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|const
+name|gchar
+modifier|*
+name|gimp_fill_options_get_undo_desc
+parameter_list|(
+name|GimpFillOptions
+modifier|*
+name|options
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
