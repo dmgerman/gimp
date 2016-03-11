@@ -215,7 +215,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|void
 name|gimp_edit_clear
 parameter_list|(
 name|GimpImage
@@ -234,7 +234,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|void
 name|gimp_edit_fill
 parameter_list|(
 name|GimpImage

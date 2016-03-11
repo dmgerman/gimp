@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimppickable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -674,9 +668,6 @@ name|GimpFillOptions
 modifier|*
 name|fill_options
 decl_stmt|;
-name|gboolean
-name|success
-decl_stmt|;
 name|GError
 modifier|*
 name|error
@@ -692,8 +683,8 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
-name|success
-operator|=
+if|if
+condition|(
 name|gimp_fill_options_set_by_fill_mode
 argument_list|(
 name|fill_options
@@ -707,10 +698,6 @@ argument_list|,
 operator|&
 name|error
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|success
 condition|)
 block|{
 name|gimp_context_set_opacity
@@ -746,8 +733,6 @@ operator|->
 name|fill_selection
 condition|)
 block|{
-name|success
-operator|=
 name|gimp_edit_fill
 argument_list|(
 name|image
@@ -846,17 +831,6 @@ name|y
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-name|g_object_unref
-argument_list|(
-name|fill_options
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|success
-condition|)
-block|{
 name|gimp_image_flush
 argument_list|(
 name|image
@@ -890,6 +864,11 @@ name|error
 argument_list|)
 expr_stmt|;
 block|}
+name|g_object_unref
+argument_list|(
+name|fill_options
+argument_list|)
+expr_stmt|;
 block|}
 name|GIMP_TOOL_CLASS
 argument_list|(

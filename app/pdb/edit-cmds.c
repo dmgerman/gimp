@@ -2193,8 +2193,6 @@ name|drawable
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|success
-operator|=
 name|gimp_edit_clear
 argument_list|(
 name|image
@@ -2354,8 +2352,8 @@ argument_list|(
 name|gimp
 argument_list|)
 decl_stmt|;
-name|success
-operator|=
+if|if
+condition|(
 name|gimp_fill_options_set_by_fill_type
 argument_list|(
 name|options
@@ -2366,13 +2364,8 @@ name|fill_type
 argument_list|,
 name|error
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|success
 condition|)
-name|success
-operator|=
+block|{
 name|gimp_edit_fill
 argument_list|(
 name|image
@@ -2383,6 +2376,12 @@ name|options
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+block|}
+else|else
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
 name|g_object_unref
 argument_list|(
@@ -2687,8 +2686,6 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|success
-operator|=
 name|gimp_edit_fill
 argument_list|(
 name|image
@@ -3068,8 +3065,6 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|success
-operator|=
 name|gimp_edit_fill
 argument_list|(
 name|image
