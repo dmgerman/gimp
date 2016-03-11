@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<cairo.h>
 end_include
 
@@ -79,24 +73,6 @@ begin_include
 include|#
 directive|include
 file|"gimp-palettes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimp-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpchannel-combine.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcontext.h"
 end_include
 
 begin_include
