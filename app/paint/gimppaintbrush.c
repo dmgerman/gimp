@@ -323,17 +323,12 @@ decl_stmt|;
 name|GimpDynamics
 modifier|*
 name|dynamics
-decl_stmt|;
-name|dynamics
-operator|=
+init|=
 name|gimp_context_get_dynamics
 argument_list|(
-name|GIMP_CONTEXT
-argument_list|(
-name|paint_options
+name|context
 argument_list|)
-argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -360,7 +355,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-comment|/* We don't save gradient color history and                * pixmap brushes have no color to save.                */
+comment|/* We don't save gradient color history and pixmap brushes              * have no color to save.              */
 name|GimpRGB
 name|foreground
 decl_stmt|;
