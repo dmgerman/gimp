@@ -422,6 +422,14 @@ value|"gimp-selection-flood"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_SELECTION_FILL
+define|#
+directive|define
+name|GIMP_HELP_SELECTION_FILL
+value|"gimp-selection-fill"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_SELECTION_STROKE
 define|#
 directive|define
@@ -1811,6 +1819,14 @@ define|#
 directive|define
 name|GIMP_HELP_PATH_SELECTION_INTERSECT
 value|"gimp-path-selection-intersect"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PATH_FILL
+define|#
+directive|define
+name|GIMP_HELP_PATH_FILL
+value|"gimp-path-fill"
 end_define
 
 begin_define
