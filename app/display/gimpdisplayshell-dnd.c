@@ -1604,6 +1604,10 @@ operator|->
 name|display
 operator|->
 name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 decl_stmt|;
 name|GIMP_LOG
@@ -1700,6 +1704,10 @@ operator|->
 name|display
 operator|->
 name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 decl_stmt|;
 name|GIMP_LOG

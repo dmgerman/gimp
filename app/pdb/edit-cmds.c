@@ -2350,6 +2350,10 @@ init|=
 name|gimp_fill_options_new
 argument_list|(
 name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 decl_stmt|;
 if|if
@@ -2626,6 +2630,10 @@ init|=
 name|gimp_fill_options_new
 argument_list|(
 name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 decl_stmt|;
 if|if
@@ -3005,6 +3013,10 @@ init|=
 name|gimp_fill_options_new
 argument_list|(
 name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 decl_stmt|;
 if|if

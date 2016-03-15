@@ -1781,6 +1781,10 @@ argument_list|(
 name|context
 operator|->
 name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if

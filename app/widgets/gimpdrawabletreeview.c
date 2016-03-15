@@ -863,6 +863,10 @@ argument_list|(
 name|image
 operator|->
 name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 decl_stmt|;
 name|gimp_fill_options_set_style
@@ -984,6 +988,10 @@ argument_list|(
 name|image
 operator|->
 name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 decl_stmt|;
 name|gimp_fill_options_set_style
@@ -1305,6 +1313,10 @@ argument_list|(
 name|image
 operator|->
 name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 decl_stmt|;
 name|gimp_fill_options_set_style
@@ -1401,6 +1413,10 @@ argument_list|(
 name|image
 operator|->
 name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 decl_stmt|;
 name|gimp_fill_options_set_style
