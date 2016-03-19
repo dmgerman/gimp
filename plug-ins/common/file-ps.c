@@ -219,7 +219,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a296b140108
+DECL|struct|__anon29f4b1500108
 block|{
 DECL|member|resolution
 name|guint
@@ -302,7 +302,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* Widgets for width and height of postscript image to *  be loaded, so that they can be updated when desired resolution is *  changed */
+comment|/* Widgets for width and height of PostScript image to *  be loaded, so that they can be updated when desired resolution is *  changed */
 end_comment
 
 begin_decl_stmt
@@ -330,7 +330,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a296b140208
+DECL|struct|__anon29f4b1500208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1016,7 +1016,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a296b140308
+DECL|struct|__anon29f4b1500308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -1988,7 +1988,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a296b140408
+DECL|struct|__anon29f4b1500408
 block|{
 DECL|member|eol
 name|goffset
@@ -4523,7 +4523,7 @@ name|G_FILE_ERROR
 argument_list|,
 name|_
 argument_list|(
-literal|"Could not interpret Postscript file '%s'"
+literal|"Could not interpret PostScript file '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8

@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288c7aab0108
+DECL|struct|__anon28d283c70108
 block|{
 DECL|member|name
 specifier|const
@@ -619,7 +619,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288c7aab0208
+DECL|struct|__anon28d283c70208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -692,7 +692,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288c7aab0308
+DECL|struct|__anon28d283c70308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -722,7 +722,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288c7aab0408
+DECL|struct|__anon28d283c70408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -829,7 +829,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288c7aab0508
+DECL|struct|__anon28d283c70508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -994,7 +994,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288c7aab0608
+DECL|struct|__anon28d283c70608
 block|{
 DECL|member|name
 specifier|const
@@ -6875,7 +6875,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* The following two functions are implementations of algorithms  * described in "Postscript Screening: Adobe Accurate Screens"  * (Adobe Press, 1992) by Peter Fink.  */
+comment|/* The following two functions are implementations of algorithms  * described in "PostScript Screening: Adobe Accurate Screens"  * (Adobe Press, 1992) by Peter Fink.  */
 end_comment
 
 begin_comment
@@ -7092,7 +7092,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288c7aab0708
+DECL|struct|__anon28d283c70708
 block|{
 DECL|member|index
 name|gint
