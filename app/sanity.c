@@ -1420,7 +1420,7 @@ DECL|macro|GEGL_REQUIRED_MICRO
 define|#
 directive|define
 name|GEGL_REQUIRED_MICRO
-value|5
+value|6
 name|gegl_get_version
 argument_list|(
 operator|&
