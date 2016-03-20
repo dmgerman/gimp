@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e240a00103
+DECL|enum|__anon291b1ab90103
 block|{
 DECL|enumerator|RESPONSE_PREVIOUS
 name|RESPONSE_PREVIOUS
@@ -91,6 +91,46 @@ literal|2
 block|}
 enum|;
 end_enum
+
+begin_comment
+comment|/* eek, see bug 762279 */
+end_comment
+
+begin_function_decl
+name|GtkLinkButtonUriFunc
+name|gtk_link_button_set_uri_hook
+parameter_list|(
+name|GtkLinkButtonUriFunc
+name|func
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|,
+name|GDestroyNotify
+name|destroy
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|tips_uri_hook
+parameter_list|(
+name|GtkLinkButton
+modifier|*
+name|button
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|link_
+parameter_list|,
+name|gpointer
+name|user_data
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -909,6 +949,16 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+comment|/* this is deprecated but better than showing two URIs, see bug #762279 */
+name|gtk_link_button_set_uri_hook
+argument_list|(
+name|tips_uri_hook
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|more_button
@@ -1092,15 +1142,14 @@ operator|->
 name|text
 argument_list|)
 expr_stmt|;
-comment|/*  set the URI to unset the "visited" state  */
-name|gtk_link_button_set_uri
+name|gtk_link_button_set_visited
 argument_list|(
 name|GTK_LINK_BUTTON
 argument_list|(
 name|more_button
 argument_list|)
 argument_list|,
-literal|"http://docs.gimp.org/"
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -1140,6 +1189,13 @@ name|current_tip
 operator|->
 name|data
 decl_stmt|;
+name|g_signal_stop_emission_by_name
+argument_list|(
+name|button
+argument_list|,
+literal|"clicked"
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|tip
@@ -1159,6 +1215,29 @@ operator|->
 name|help_id
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|tips_uri_hook (GtkLinkButton * button,const gchar * link_,gpointer user_data)
+name|tips_uri_hook
+parameter_list|(
+name|GtkLinkButton
+modifier|*
+name|button
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|link_
+parameter_list|,
+name|gpointer
+name|user_data
+parameter_list|)
+block|{
+comment|/* do nothing */
 block|}
 end_function
 
