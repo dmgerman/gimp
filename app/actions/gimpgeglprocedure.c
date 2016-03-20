@@ -1081,6 +1081,24 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+comment|/*  only use the settings if they are automatically created "last used"    *  values, not if they were saved explicitly and have a zero timestamp    */
+if|if
+condition|(
+name|settings
+operator|&&
+name|GIMP_SETTINGS
+argument_list|(
+name|settings
+argument_list|)
+operator|->
+name|time
+operator|==
+literal|0
+condition|)
+name|settings
+operator|=
+name|NULL
+expr_stmt|;
 if|if
 condition|(
 name|run_mode
