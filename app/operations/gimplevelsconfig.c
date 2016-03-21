@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c425a450103
+DECL|enum|__anon27d5eb5c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2764,7 +2764,7 @@ operator|!=
 literal|1.0
 condition|)
 block|{
-comment|/* The Levels tool performs gamma correction, which is a            * power law, while the Curves tool uses cubic BÃ©zier            * curves. Here we try to approximate this gamma correction            * with a BÃ©zier curve with 5 control points. Two of them            * must be (low_input, low_output) and (high_input,            * high_output), so we need to add 3 more control points in            * the middle.            */
+comment|/* The Levels tool performs gamma adjustment, which is a            * power law, while the Curves tool uses cubic BÃ©zier            * curves. Here we try to approximate this gamma adjustment            * with a BÃ©zier curve with 5 control points. Two of them            * must be (low_input, low_output) and (high_input,            * high_output), so we need to add 3 more control points in            * the middle.            */
 name|gint
 name|i
 decl_stmt|;

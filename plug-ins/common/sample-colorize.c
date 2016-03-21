@@ -349,7 +349,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fbda9e0108
+DECL|struct|__anon2be44e300108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -418,7 +418,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fbda9e0208
+DECL|struct|__anon2be44e300208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -526,7 +526,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fbda9e0308
+DECL|struct|__anon2be44e300308
 block|{
 DECL|member|color
 name|guchar
@@ -555,7 +555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fbda9e0408
+DECL|struct|__anon2be44e300408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -582,7 +582,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fbda9e0508
+DECL|struct|__anon2be44e300508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -1271,7 +1271,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"gamma"
 block|,
-literal|"gamma correction factor (0.1<= gamma<= 10) where 1.0 is linear"
+literal|"gamma adjustment factor (0.1<= gamma<= 10) where 1.0 is linear"
 block|}
 block|,
 block|{

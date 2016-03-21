@@ -3796,7 +3796,7 @@ literal|"gamma"
 argument_list|,
 literal|"gamma"
 argument_list|,
-literal|"Gamma correction factor"
+literal|"Gamma adjustment factor"
 argument_list|,
 literal|0.1
 argument_list|,

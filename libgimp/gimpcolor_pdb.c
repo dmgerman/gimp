@@ -105,7 +105,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_levels:  * @drawable_ID: The drawable.  * @channel: The channel to modify.  * @low_input: Intensity of lowest input.  * @high_input: Intensity of highest input.  * @gamma: Gamma correction factor.  * @low_output: Intensity of lowest output.  * @high_output: Intensity of highest output.  *  * Deprecated: Use gimp_drawable_levels() instead.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_levels:  * @drawable_ID: The drawable.  * @channel: The channel to modify.  * @low_input: Intensity of lowest input.  * @high_input: Intensity of highest input.  * @gamma: Gamma adjustment factor.  * @low_output: Intensity of lowest output.  * @high_output: Intensity of highest output.  *  * Deprecated: Use gimp_drawable_levels() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
