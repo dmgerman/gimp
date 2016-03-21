@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29646d090103
+DECL|enum|__anon2b06c4360103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -359,9 +359,9 @@ argument_list|,
 name|NULL
 argument_list|,
 operator|-
-literal|90.0
+name|G_PI
 argument_list|,
-literal|90.0
+name|G_PI
 argument_list|,
 literal|0.0
 argument_list|,

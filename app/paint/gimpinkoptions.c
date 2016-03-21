@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0b04b30103
+DECL|enum|__anon276747320103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -385,9 +385,9 @@ literal|"Ink Blob Angle"
 argument_list|)
 argument_list|,
 operator|-
-literal|90.0
+name|G_PI
 argument_list|,
-literal|90.0
+name|G_PI
 argument_list|,
 literal|0.0
 argument_list|,
