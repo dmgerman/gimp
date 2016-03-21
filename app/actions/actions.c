@@ -2489,9 +2489,9 @@ operator|=
 name|min
 operator|+
 operator|(
-name|max
-operator|-
 name|value
+operator|-
+name|max
 operator|)
 expr_stmt|;
 block|}
