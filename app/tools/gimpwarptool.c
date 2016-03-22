@@ -867,6 +867,15 @@ argument_list|,
 literal|"tools/tools-warp-effect-size-set"
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_action_hardness
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+literal|"tools/tools-warp-effect-hardness-set"
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

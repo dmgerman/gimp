@@ -314,6 +314,15 @@ argument_list|,
 literal|"tools/tools-mypaint-brush-radius-set"
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_action_hardness
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+literal|"tools/tools-mypaint-brush-hardness-set"
+argument_list|)
+expr_stmt|;
 name|gimp_paint_tool_enable_color_picker
 argument_list|(
 name|GIMP_PAINT_TOOL

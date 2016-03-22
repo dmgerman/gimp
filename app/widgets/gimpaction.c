@@ -105,7 +105,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a90f2c0103
+DECL|enum|__anon2be282fb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1190,9 +1190,15 @@ literal|"tools-color-average-radius-"
 block|,
 literal|"tools-paintbrush-size-"
 block|,
+literal|"tools-paintbrush-aspect-ratio-"
+block|,
 literal|"tools-paintbrush-angle-"
 block|,
-literal|"tools-paintbrush-aspect-ratio-"
+literal|"tools-paintbrush-spacing-"
+block|,
+literal|"tools-paintbrush-hardness-"
+block|,
+literal|"tools-paintbrush-force-"
 block|,
 literal|"tools-ink-blob-size-"
 block|,
@@ -1202,11 +1208,14 @@ literal|"tools-ink-blob-angle-"
 block|,
 literal|"tools-mypaint-brush-radius-"
 block|,
+literal|"tools-mypaint-brush-hardness-"
+block|,
 literal|"tools-foreground-select-brush-size-"
 block|,
 literal|"tools-transform-preview-opacity-"
 block|,
 literal|"tools-warp-effect-size-"
+literal|"tools-warp-effect-hardness-"
 block|}
 decl_stmt|;
 name|gint
