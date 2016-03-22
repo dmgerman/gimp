@@ -27,7 +27,7 @@ DECL|macro|GIMP_CONFIG_DEFAULT_THEME
 define|#
 directive|define
 name|GIMP_CONFIG_DEFAULT_THEME
-value|"Default"
+value|"System"
 end_define
 
 begin_define

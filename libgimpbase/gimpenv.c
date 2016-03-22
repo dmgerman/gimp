@@ -2002,7 +2002,7 @@ argument_list|()
 argument_list|,
 literal|"themes"
 argument_list|,
-literal|"Default"
+literal|"System"
 argument_list|,
 literal|"gtkrc"
 argument_list|,
