@@ -218,8 +218,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_gegl_progress_notify (GObject * object,gdouble value,GimpProgress * progress)
-name|gimp_gegl_progress_notify
+DECL|function|gimp_gegl_progress_callback (GObject * object,gdouble value,GimpProgress * progress)
+name|gimp_gegl_progress_callback
 parameter_list|(
 name|GObject
 modifier|*
@@ -259,6 +259,23 @@ operator|==
 literal|0.0
 condition|)
 block|{
+if|if
+condition|(
+name|gimp_progress_is_active
+argument_list|(
+name|progress
+argument_list|)
+condition|)
+name|gimp_progress_set_text
+argument_list|(
+name|progress
+argument_list|,
+literal|"%s"
+argument_list|,
+name|text
+argument_list|)
+expr_stmt|;
+else|else
 name|gimp_progress_start
 argument_list|(
 name|progress
@@ -366,7 +383,7 @@ literal|"progress"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_gegl_progress_notify
+name|gimp_gegl_progress_callback
 argument_list|)
 argument_list|,
 name|progress
