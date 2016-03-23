@@ -171,7 +171,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b55908c0103
+DECL|enum|__anon29416a820103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -1256,6 +1256,18 @@ name|GIMP_CAGE_MODE_DEFORM
 condition|)
 block|{
 comment|/* switch to deform mode */
+if|if
+condition|(
+name|gimp_cage_config_get_n_points
+argument_list|(
+name|ct
+operator|->
+name|config
+argument_list|)
+operator|>
+literal|2
+condition|)
+block|{
 name|gimp_cage_config_reset_displacement
 argument_list|(
 name|ct
@@ -1366,7 +1378,29 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|g_object_set
+argument_list|(
+name|options
+argument_list|,
+literal|"cage-mode"
+argument_list|,
+name|GIMP_CAGE_MODE_CAGE_CHANGE
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
 comment|/* switch to edit mode */
+if|if
+condition|(
+name|ct
+operator|->
+name|image_map
+condition|)
+block|{
 name|gimp_image_map_abort
 argument_list|(
 name|ct
@@ -1391,6 +1425,7 @@ name|CAGE_STATE_WAIT
 expr_stmt|;
 block|}
 block|}
+block|}
 elseif|else
 if|if
 condition|(
@@ -1406,6 +1441,15 @@ operator|==
 literal|0
 condition|)
 block|{
+if|if
+condition|(
+name|ct
+operator|->
+name|tool_state
+operator|==
+name|DEFORM_STATE_WAIT
+condition|)
+block|{
 name|gimp_cage_tool_render_node_update
 argument_list|(
 name|ct
@@ -1416,6 +1460,7 @@ argument_list|(
 name|ct
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|gimp_draw_tool_resume
 argument_list|(
@@ -2720,6 +2765,21 @@ operator|->
 name|config
 argument_list|)
 expr_stmt|;
+name|gegl_node_set
+argument_list|(
+name|ct
+operator|->
+name|cage_node
+argument_list|,
+literal|"config"
+argument_list|,
+name|ct
+operator|->
+name|config
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_cage_tool_image_map_update
 argument_list|(
 name|ct
@@ -3603,6 +3663,13 @@ modifier|*
 name|ct
 parameter_list|)
 block|{
+if|if
+condition|(
+name|ct
+operator|->
+name|image_map
+condition|)
+block|{
 name|GimpTool
 modifier|*
 name|tool
@@ -3665,6 +3732,7 @@ name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
