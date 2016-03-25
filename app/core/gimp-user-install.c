@@ -191,7 +191,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1e95030103
+DECL|enum|__anon2c6166dc0103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -210,7 +210,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a1e95030208
+DECL|struct|__anon2c6166dc0208
 block|{
 DECL|member|name
 specifier|const
@@ -2111,6 +2111,40 @@ return|;
 block|}
 end_function
 
+begin_define
+DECL|macro|GIMPRC_UPDATE_PATTERN
+define|#
+directive|define
+name|GIMPRC_UPDATE_PATTERN
+value|"\\(theme [^)]*\\)"
+end_define
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|user_update_gimprc (const GMatchInfo * matched_value,GString * new_value,gpointer data)
+name|user_update_gimprc
+parameter_list|(
+specifier|const
+name|GMatchInfo
+modifier|*
+name|matched_value
+parameter_list|,
+name|GString
+modifier|*
+name|new_value
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+comment|/* Do not migrate themes from GIMP< 2.10. */
+return|return
+name|FALSE
+return|;
+block|}
+end_function
+
 begin_function
 specifier|static
 name|gboolean
@@ -2823,6 +2857,28 @@ expr_stmt|;
 name|update_callback
 operator|=
 name|user_update_controllerrc
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|basename
+argument_list|,
+literal|"gimprc"
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|update_pattern
+operator|=
+name|GIMPRC_UPDATE_PATTERN
+expr_stmt|;
+name|update_callback
+operator|=
+name|user_update_gimprc
 expr_stmt|;
 block|}
 name|g_snprintf
