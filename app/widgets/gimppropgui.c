@@ -1000,6 +1000,15 @@ name|pspec
 argument_list|,
 name|multiline_quark
 argument_list|)
+operator|||
+name|HAS_KEY
+argument_list|(
+name|pspec
+argument_list|,
+literal|"multiline"
+argument_list|,
+literal|"true"
+argument_list|)
 condition|)
 block|{
 name|GtkTextBuffer
@@ -1367,7 +1376,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a41dab40108
+DECL|struct|__anon2a52a2080108
 block|{
 DECL|member|config_type
 specifier|const
@@ -1942,7 +1951,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2a41dab40208
+DECL|struct|__anon2a52a2080208
 block|{
 DECL|member|kelvin
 name|gdouble
