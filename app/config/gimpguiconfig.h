@@ -27,7 +27,7 @@ DECL|macro|GIMP_CONFIG_DEFAULT_THEME
 define|#
 directive|define
 name|GIMP_CONFIG_DEFAULT_THEME
-value|"System"
+value|"03-Dark"
 end_define
 
 begin_define
@@ -35,7 +35,7 @@ DECL|macro|GIMP_CONFIG_DEFAULT_ICON_THEME
 define|#
 directive|define
 name|GIMP_CONFIG_DEFAULT_ICON_THEME
-value|"Color"
+value|"Symbolic"
 end_define
 
 begin_define
