@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6397df0103
+DECL|enum|__anon2c735bcc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -956,6 +956,15 @@ operator|!=
 name|GIMP_GUIDE_STYLE_NONE
 condition|)
 block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+init|=
+name|gimp_canvas_item_get_shell
+argument_list|(
+name|item
+argument_list|)
+decl_stmt|;
 name|gimp_canvas_set_guide_style
 argument_list|(
 name|gimp_canvas_item_get_canvas
@@ -973,6 +982,14 @@ name|gimp_canvas_item_get_highlight
 argument_list|(
 name|item
 argument_list|)
+argument_list|,
+name|shell
+operator|->
+name|offset_x
+argument_list|,
+name|shell
+operator|->
+name|offset_y
 argument_list|)
 expr_stmt|;
 name|cairo_stroke

@@ -33,6 +33,12 @@ name|bg
 parameter_list|,
 name|gint
 name|index
+parameter_list|,
+name|gdouble
+name|offset_x
+parameter_list|,
+name|gdouble
+name|offset_y
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28abe89e0103
+DECL|enum|__anon2c4d0a790103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1614,6 +1614,15 @@ operator|->
 name|grid_style
 condition|)
 block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+init|=
+name|gimp_canvas_item_get_shell
+argument_list|(
+name|item
+argument_list|)
+decl_stmt|;
 name|gimp_canvas_set_grid_style
 argument_list|(
 name|gimp_canvas_item_get_canvas
@@ -1626,6 +1635,14 @@ argument_list|,
 name|private
 operator|->
 name|grid
+argument_list|,
+name|shell
+operator|->
+name|offset_x
+argument_list|,
+name|shell
+operator|->
+name|offset_y
 argument_list|)
 expr_stmt|;
 name|cairo_stroke

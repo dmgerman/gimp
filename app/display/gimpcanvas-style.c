@@ -723,7 +723,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_canvas_set_guide_style (GtkWidget * canvas,cairo_t * cr,GimpGuideStyle style,gboolean active)
+DECL|function|gimp_canvas_set_guide_style (GtkWidget * canvas,cairo_t * cr,GimpGuideStyle style,gboolean active,gdouble offset_x,gdouble offset_y)
 name|gimp_canvas_set_guide_style
 parameter_list|(
 name|GtkWidget
@@ -739,6 +739,12 @@ name|style
 parameter_list|,
 name|gboolean
 name|active
+parameter_list|,
+name|gdouble
+name|offset_x
+parameter_list|,
+name|gdouble
+name|offset_y
 parameter_list|)
 block|{
 name|cairo_pattern_t
@@ -881,6 +887,10 @@ operator|&
 name|active_bg
 argument_list|,
 literal|0
+argument_list|,
+name|offset_x
+argument_list|,
+name|offset_y
 argument_list|)
 expr_stmt|;
 else|else
@@ -895,6 +905,10 @@ operator|&
 name|normal_bg
 argument_list|,
 literal|0
+argument_list|,
+name|offset_x
+argument_list|,
+name|offset_y
 argument_list|)
 expr_stmt|;
 name|cairo_set_source
@@ -977,7 +991,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_canvas_set_grid_style (GtkWidget * canvas,cairo_t * cr,GimpGrid * grid)
+DECL|function|gimp_canvas_set_grid_style (GtkWidget * canvas,cairo_t * cr,GimpGrid * grid,gdouble offset_x,gdouble offset_y)
 name|gimp_canvas_set_grid_style
 parameter_list|(
 name|GtkWidget
@@ -991,6 +1005,12 @@ parameter_list|,
 name|GimpGrid
 modifier|*
 name|grid
+parameter_list|,
+name|gdouble
+name|offset_x
+parameter_list|,
+name|gdouble
+name|offset_y
 parameter_list|)
 block|{
 name|GimpRGB
@@ -1083,6 +1103,10 @@ operator|&
 name|bg
 argument_list|,
 literal|0
+argument_list|,
+name|offset_x
+argument_list|,
+name|offset_y
 argument_list|)
 expr_stmt|;
 block|}
@@ -1113,6 +1137,10 @@ operator|&
 name|bg
 argument_list|,
 literal|0
+argument_list|,
+name|offset_x
+argument_list|,
+name|offset_y
 argument_list|)
 expr_stmt|;
 block|}
@@ -1235,7 +1263,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_canvas_set_layer_style (GtkWidget * canvas,cairo_t * cr,GimpLayer * layer)
+DECL|function|gimp_canvas_set_layer_style (GtkWidget * canvas,cairo_t * cr,GimpLayer * layer,gdouble offset_x,gdouble offset_y)
 name|gimp_canvas_set_layer_style
 parameter_list|(
 name|GtkWidget
@@ -1249,6 +1277,12 @@ parameter_list|,
 name|GimpLayer
 modifier|*
 name|layer
+parameter_list|,
+name|gdouble
+name|offset_x
+parameter_list|,
+name|gdouble
+name|offset_y
 parameter_list|)
 block|{
 name|cairo_pattern_t
@@ -1316,6 +1350,10 @@ operator|&
 name|layer_mask_bg
 argument_list|,
 literal|0
+argument_list|,
+name|offset_x
+argument_list|,
+name|offset_y
 argument_list|)
 expr_stmt|;
 block|}
@@ -1342,6 +1380,10 @@ operator|&
 name|layer_group_bg
 argument_list|,
 literal|0
+argument_list|,
+name|offset_x
+argument_list|,
+name|offset_y
 argument_list|)
 expr_stmt|;
 block|}
@@ -1358,6 +1400,10 @@ operator|&
 name|layer_bg
 argument_list|,
 literal|0
+argument_list|,
+name|offset_x
+argument_list|,
+name|offset_y
 argument_list|)
 expr_stmt|;
 block|}
@@ -1378,7 +1424,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_canvas_set_selection_out_style (GtkWidget * canvas,cairo_t * cr)
+DECL|function|gimp_canvas_set_selection_out_style (GtkWidget * canvas,cairo_t * cr,gdouble offset_x,gdouble offset_y)
 name|gimp_canvas_set_selection_out_style
 parameter_list|(
 name|GtkWidget
@@ -1388,6 +1434,12 @@ parameter_list|,
 name|cairo_t
 modifier|*
 name|cr
+parameter_list|,
+name|gdouble
+name|offset_x
+parameter_list|,
+name|gdouble
+name|offset_y
 parameter_list|)
 block|{
 name|cairo_pattern_t
@@ -1434,6 +1486,10 @@ operator|&
 name|selection_out_bg
 argument_list|,
 literal|0
+argument_list|,
+name|offset_x
+argument_list|,
+name|offset_y
 argument_list|)
 expr_stmt|;
 name|cairo_set_source
@@ -1453,7 +1509,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_canvas_set_selection_in_style (GtkWidget * canvas,cairo_t * cr,gint index)
+DECL|function|gimp_canvas_set_selection_in_style (GtkWidget * canvas,cairo_t * cr,gint index,gdouble offset_x,gdouble offset_y)
 name|gimp_canvas_set_selection_in_style
 parameter_list|(
 name|GtkWidget
@@ -1466,6 +1522,12 @@ name|cr
 parameter_list|,
 name|gint
 name|index
+parameter_list|,
+name|gdouble
+name|offset_x
+parameter_list|,
+name|gdouble
+name|offset_y
 parameter_list|)
 block|{
 name|cairo_pattern_t
@@ -1512,6 +1574,10 @@ operator|&
 name|selection_in_bg
 argument_list|,
 name|index
+argument_list|,
+name|offset_x
+argument_list|,
+name|offset_y
 argument_list|)
 expr_stmt|;
 name|cairo_set_source
