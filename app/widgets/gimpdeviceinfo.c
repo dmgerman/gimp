@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2256870103
+DECL|enum|__anon2991307f0103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -140,7 +140,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2256870203
+DECL|enum|__anon2991307f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1531,9 +1531,7 @@ decl_stmt|;
 name|GValue
 name|enum_value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|gint
 name|n_axes
@@ -1625,9 +1623,7 @@ decl_stmt|;
 name|GValue
 name|string_value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|gint
 name|n_keys

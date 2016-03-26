@@ -77,16 +77,12 @@ block|{
 name|GValue
 name|a_value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|GValue
 name|b_value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|gboolean
 name|retval
@@ -741,9 +737,7 @@ block|{
 name|GValue
 name|value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|g_value_init
 argument_list|(
@@ -832,9 +826,7 @@ decl_stmt|;
 name|GValue
 name|value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|guint
 name|n_property_specs
@@ -1142,9 +1134,7 @@ block|{
 name|GValue
 name|value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 if|if
 condition|(

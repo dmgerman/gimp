@@ -271,9 +271,7 @@ decl_stmt|;
 name|GValue
 name|value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -453,9 +451,7 @@ decl_stmt|;
 name|GValue
 name|value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|gboolean
 name|success
@@ -1508,9 +1504,7 @@ block|{
 name|GValue
 name|tmp_value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|g_value_init
 argument_list|(

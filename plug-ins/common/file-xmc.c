@@ -308,7 +308,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287fea850108
+DECL|struct|__anon2be691c30108
 block|{
 DECL|member|crop
 name|gboolean
@@ -839,7 +839,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon287fea850208
+DECL|struct|__anon2be691c30208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -4255,9 +4255,7 @@ decl_stmt|;
 name|GValue
 name|val
 init|=
-block|{
-literal|0
-block|,}
+name|G_VALUE_INIT
 decl_stmt|;
 name|gint
 name|x1
@@ -9141,7 +9139,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon287fea850308
+DECL|struct|__anon2be691c30308
 block|{
 DECL|member|size
 name|guint32

@@ -6107,9 +6107,7 @@ block|{
 name|GValue
 name|value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|g_value_init
 argument_list|(
@@ -6173,9 +6171,7 @@ block|{
 name|GValue
 name|str_value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 specifier|const
 name|gchar
@@ -9280,9 +9276,7 @@ block|{
 name|GValue
 name|value
 init|=
-block|{
-literal|0
-block|}
+name|G_VALUE_INIT
 decl_stmt|;
 name|unit_param_spec
 operator|=
@@ -12395,9 +12389,7 @@ decl_stmt|;
 name|GValue
 name|value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|gboolean
 name|show_pixels
@@ -12827,9 +12819,7 @@ decl_stmt|;
 name|GValue
 name|value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|gboolean
 name|show_pixels

@@ -9786,9 +9786,7 @@ decl_stmt|;
 name|GValue
 name|value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|GimpAnchor
 name|anchor

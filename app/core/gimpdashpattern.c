@@ -977,9 +977,7 @@ decl_stmt|;
 name|GValue
 name|item
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|gint
 name|i

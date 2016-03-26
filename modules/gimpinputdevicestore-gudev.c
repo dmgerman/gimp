@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e2c74d0103
+DECL|enum|__anon28a191c30103
 block|{
 DECL|enumerator|COLUMN_IDENTIFIER
 name|COLUMN_IDENTIFIER
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e2c74d0203
+DECL|enum|__anon28a191c30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -79,7 +79,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e2c74d0303
+DECL|enum|__anon28a191c30303
 block|{
 DECL|enumerator|DEVICE_ADDED
 name|DEVICE_ADDED
@@ -656,9 +656,7 @@ decl_stmt|;
 name|GValue
 name|value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|gboolean
 name|iter_valid
@@ -789,9 +787,7 @@ decl_stmt|;
 name|GValue
 name|value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|gint
 name|pos

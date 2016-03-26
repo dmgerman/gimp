@@ -97,7 +97,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon291725010103
+DECL|enum|__anon2baa7bd60103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -110,7 +110,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291725010203
+DECL|enum|__anon2baa7bd60203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -1623,9 +1623,7 @@ block|{
 name|GValue
 name|val
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|GimpUnit
 name|unit

@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29934a3e0103
+DECL|enum|__anon2b5ffad30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -61,7 +61,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29934a3e0208
+DECL|struct|__anon2b5ffad30208
 block|{
 DECL|member|num_values
 name|gint
@@ -3169,9 +3169,7 @@ decl_stmt|;
 name|GValue
 name|value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(

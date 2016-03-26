@@ -93,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299273220103
+DECL|enum|__anon276db1c60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1296,9 +1296,7 @@ decl_stmt|;
 name|GValue
 name|v
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|gint
 name|i
@@ -1420,9 +1418,7 @@ decl_stmt|;
 name|GValue
 name|v
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|gint
 name|i

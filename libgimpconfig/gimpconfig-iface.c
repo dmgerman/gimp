@@ -724,16 +724,12 @@ decl_stmt|;
 name|GValue
 name|a_value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|GValue
 name|b_value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|prop_spec
 operator|=

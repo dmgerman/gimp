@@ -394,16 +394,12 @@ block|{
 name|GValue
 name|avalue
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|GValue
 name|bvalue
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|gint
 name|cmp

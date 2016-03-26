@@ -81,7 +81,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac58b1d0103
+DECL|enum|__anon2c7196520103
 block|{
 DECL|enumerator|SRC_COLUMN_NAME
 name|SRC_COLUMN_NAME
@@ -100,7 +100,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac58b1d0203
+DECL|enum|__anon2c7196520203
 block|{
 DECL|enumerator|DEST_COLUMN_ENABLED
 name|DEST_COLUMN_ENABLED
@@ -2401,9 +2401,7 @@ block|{
 name|GValue
 name|val
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|gtk_tree_model_get_value
 argument_list|(
@@ -2558,9 +2556,7 @@ block|{
 name|GValue
 name|val
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|gtk_tree_model_get_value
 argument_list|(

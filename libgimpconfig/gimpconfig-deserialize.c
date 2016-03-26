@@ -762,9 +762,7 @@ decl_stmt|;
 name|GValue
 name|value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|guint
 name|old_scope_id
@@ -2510,9 +2508,7 @@ decl_stmt|;
 name|GValue
 name|array_value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|gint
 name|n_values

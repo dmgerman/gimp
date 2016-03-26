@@ -100,7 +100,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1c79f20103
+DECL|enum|__anon2a8c4a730103
 block|{
 DECL|enumerator|COLUMN_GUID
 name|COLUMN_GUID
@@ -119,7 +119,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1c79f20203
+DECL|enum|__anon2a8c4a730203
 block|{
 DECL|enumerator|DEVICE_ADDED
 name|DEVICE_ADDED
@@ -1020,9 +1020,7 @@ decl_stmt|;
 name|GValue
 name|value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|gboolean
 name|iter_valid
@@ -1151,9 +1149,7 @@ decl_stmt|;
 name|GValue
 name|value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|gint
 name|pos
@@ -1615,9 +1611,7 @@ decl_stmt|;
 name|GValue
 name|value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(

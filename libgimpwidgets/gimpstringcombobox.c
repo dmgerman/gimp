@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdd5bab0103
+DECL|enum|__anon27cf60d30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -59,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdd5bab0208
+DECL|struct|__anon27cf60d30208
 block|{
 DECL|member|id_column
 name|gint
@@ -622,9 +622,7 @@ block|{
 name|GValue
 name|value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|gboolean
 name|iter_valid

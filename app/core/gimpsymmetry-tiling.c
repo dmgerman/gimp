@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2951e0400103
+DECL|enum|__anon2926cbe80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -791,9 +791,7 @@ block|{
 name|GValue
 name|val
 init|=
-block|{
-literal|0
-block|,}
+name|G_VALUE_INIT
 decl_stmt|;
 name|g_value_init
 argument_list|(
@@ -889,9 +887,7 @@ block|{
 name|GValue
 name|val
 init|=
-block|{
-literal|0
-block|,}
+name|G_VALUE_INIT
 decl_stmt|;
 name|g_value_init
 argument_list|(

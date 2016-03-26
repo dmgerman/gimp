@@ -829,16 +829,12 @@ block|{
 name|GValue
 name|global_value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|GValue
 name|copy_value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|g_value_init
 argument_list|(
@@ -966,16 +962,12 @@ block|{
 name|GValue
 name|copy_value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|GValue
 name|global_value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|g_value_init
 argument_list|(
@@ -1382,9 +1374,7 @@ decl_stmt|;
 name|GValue
 name|value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|g_value_init
 argument_list|(
@@ -1670,9 +1660,7 @@ decl_stmt|;
 name|GValue
 name|value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|g_value_init
 argument_list|(
@@ -2815,9 +2803,7 @@ block|{
 name|GValue
 name|val
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|gtk_tree_model_get_value
 argument_list|(
@@ -2892,9 +2878,7 @@ block|{
 name|GValue
 name|val
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|gtk_tree_model_get_value
 argument_list|(
@@ -3003,9 +2987,7 @@ block|{
 name|GValue
 name|val
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|gtk_tree_model_get_value
 argument_list|(
@@ -6028,7 +6010,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a8bb6170108
+DECL|struct|__anon2c3e7b050108
 block|{
 DECL|member|label
 specifier|const
@@ -11012,7 +10994,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2a8bb6170208
+DECL|struct|__anon2c3e7b050208
 block|{
 DECL|member|current_setting
 name|gchar
@@ -11872,7 +11854,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a8bb6170308
+DECL|struct|__anon2c3e7b050308
 block|{
 DECL|member|property_name
 specifier|const
@@ -12027,7 +12009,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a8bb6170408
+DECL|struct|__anon2c3e7b050408
 block|{
 DECL|member|tree_label
 specifier|const

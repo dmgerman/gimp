@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289e5e5e0103
+DECL|enum|__anon2ad3f1e70103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -4179,9 +4179,7 @@ block|{
 name|GValue
 name|value
 init|=
-block|{
-literal|0
-block|, }
+name|G_VALUE_INIT
 decl_stmt|;
 name|GtkTreeIter
 name|iter
