@@ -186,7 +186,7 @@ modifier|*
 name|image_map
 parameter_list|,
 name|GimpOrientationType
-name|orienatnios
+name|orientation
 parameter_list|,
 name|gdouble
 name|percent_visible
