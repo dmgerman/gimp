@@ -1888,6 +1888,16 @@ argument_list|(
 name|box
 argument_list|)
 expr_stmt|;
+comment|/* bug 761118 */
+if|if
+condition|(
+operator|!
+name|gtk_widget_get_realized
+argument_list|(
+name|widget
+argument_list|)
+condition|)
+return|return;
 name|window
 operator|=
 name|gtk_widget_get_window
