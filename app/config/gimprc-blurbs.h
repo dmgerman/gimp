@@ -351,27 +351,6 @@ value|"Where to search for fractals used by the Fractal Explorer plug-in."
 end_define
 
 begin_define
-DECL|macro|GAMMA_CORRECTION_BLURB
-define|#
-directive|define
-name|GAMMA_CORRECTION_BLURB
-define|\
-value|"This setting is ignored."
-end_define
-
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_endif
-unit|"Sets the gamma correction value for the display. 1.0 corresponds to no " \ "gamma correction.  For most displays, gamma correction should be set " \ "to between 2.0 and 2.6. One important thing to keep in mind: Many images " \ "that you might get from outside sources will in all likelihood already " \ "be gamma-corrected.  In these cases, the image will look washed-out if " \ "GIMP has gamma-correction turned on.  If you are going to work with " \ "images of this sort, turn gamma correction off by setting the value to 1.0."
-endif|#
-directive|endif
-end_endif
-
-begin_define
 DECL|macro|GFIG_PATH_BLURB
 define|#
 directive|define
