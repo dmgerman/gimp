@@ -338,6 +338,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|gboolean
+name|shoot_delay_timeout
+parameter_list|(
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* Global Variables */
 end_comment
@@ -541,16 +552,12 @@ literal|"may grab the root window or use the window-id "
 literal|"passed as a parameter.  The last four parameters "
 literal|"are optional and can be used to specify the corners "
 literal|"of the region to be grabbed."
-ifdef|#
-directive|ifdef
-name|PLATFORM_OSX
-literal|"On Mac OS X, when called non-interactively, the plugin"
+literal|"On Mac OS X or on gnome-shell, "
+literal|"when called non-interactively, the plugin"
 literal|"only can take screenshots of the entire root window."
 literal|"Grabbing a window or a region is not supported"
 literal|"non-interactively. To grab a region or a particular"
 literal|"window, you need to use the interactive mode."
-endif|#
-directive|endif
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>, "
 literal|"Henrik Brix Andersen<brix@gimp.org>,"
@@ -2490,6 +2497,73 @@ expr_stmt|;
 return|return
 name|FALSE
 return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|shoot_delay_timeout (gpointer data)
+name|shoot_delay_timeout
+parameter_list|(
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|gint
+modifier|*
+name|seconds_left
+init|=
+name|data
+decl_stmt|;
+operator|(
+operator|*
+name|seconds_left
+operator|)
+operator|--
+expr_stmt|;
+if|if
+condition|(
+operator|!
+operator|*
+name|seconds_left
+condition|)
+name|gtk_main_quit
+argument_list|()
+expr_stmt|;
+return|return
+operator|*
+name|seconds_left
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/*  public functions  */
+end_comment
+
+begin_function
+name|void
+DECL|function|screenshot_delay (gint seconds)
+name|screenshot_delay
+parameter_list|(
+name|gint
+name|seconds
+parameter_list|)
+block|{
+name|g_timeout_add
+argument_list|(
+literal|1000
+argument_list|,
+name|shoot_delay_timeout
+argument_list|,
+operator|&
+name|seconds
+argument_list|)
+expr_stmt|;
+name|gtk_main
+argument_list|()
+expr_stmt|;
 block|}
 end_function
 

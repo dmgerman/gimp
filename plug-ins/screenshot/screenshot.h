@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27baabb10103
+DECL|enum|__anon27c944f40103
 block|{
 DECL|enumerator|SCREENSHOT_BACKEND_NONE
 name|SCREENSHOT_BACKEND_NONE
@@ -41,7 +41,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27baabb10203
+DECL|enum|__anon27c944f40203
 block|{
 DECL|enumerator|SCREENSHOT_CAN_SHOOT_DECORATIONS
 name|SCREENSHOT_CAN_SHOOT_DECORATIONS
@@ -72,7 +72,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27baabb10303
+DECL|enum|__anon27c944f40303
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -91,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27baabb10408
+DECL|struct|__anon27c944f40408
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -134,6 +134,16 @@ block|}
 name|ScreenshotValues
 typedef|;
 end_typedef
+
+begin_function_decl
+name|void
+name|screenshot_delay
+parameter_list|(
+name|gint
+name|seconds
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#
