@@ -2459,6 +2459,20 @@ comment|/* The main Screenshot function */
 end_comment
 
 begin_function
+name|gboolean
+DECL|function|screenshot_x11_available (void)
+name|screenshot_x11_available
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|TRUE
+return|;
+block|}
+end_function
+
+begin_function
 name|ScreenshotCapabilities
 DECL|function|screenshot_x11_get_capabilities (void)
 name|screenshot_x11_get_capabilities
@@ -2469,7 +2483,7 @@ block|{
 name|ScreenshotCapabilities
 name|capabilities
 init|=
-literal|0
+name|SCREENSHOT_CAN_PICK_NONINTERACTIVELY
 decl_stmt|;
 ifdef|#
 directive|ifdef

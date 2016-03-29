@@ -6,25 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__SCREENSHOT_X11_H__
+name|__SCREENSHOT_GNOME_SHELL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__SCREENSHOT_X11_H__
+DECL|macro|__SCREENSHOT_GNOME_SHELL_H__
 define|#
 directive|define
-name|__SCREENSHOT_X11_H__
+name|__SCREENSHOT_GNOME_SHELL_H__
 end_define
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|GDK_WINDOWING_X11
-end_ifdef
 
 begin_function_decl
 name|gboolean
-name|screenshot_x11_available
+name|screenshot_gnome_shell_available
 parameter_list|(
 name|void
 parameter_list|)
@@ -33,7 +27,7 @@ end_function_decl
 
 begin_function_decl
 name|ScreenshotCapabilities
-name|screenshot_x11_get_capabilities
+name|screenshot_gnome_shell_get_capabilities
 parameter_list|(
 name|void
 parameter_list|)
@@ -42,7 +36,7 @@ end_function_decl
 
 begin_function_decl
 name|GimpPDBStatusType
-name|screenshot_x11_shoot
+name|screenshot_gnome_shell_shoot
 parameter_list|(
 name|ScreenshotValues
 modifier|*
@@ -65,16 +59,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* GDK_WINDOWING_X11 */
-end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __SCREENSHOT_X11_H__ */
+comment|/* __SCREENSHOT_GNOME_SHELL_H__ */
 end_comment
 
 end_unit

@@ -60,6 +60,20 @@ comment|/*  * Mac OS X uses a rootless X server. This won't let us use  * gdk_pi
 end_comment
 
 begin_function
+name|gboolean
+DECL|function|screenshot_osx_available (void)
+name|screenshot_osx_available
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|TRUE
+return|;
+block|}
+end_function
+
+begin_function
 name|ScreenshotCapabilities
 DECL|function|screenshot_osx_get_capabilities (void)
 name|screenshot_osx_get_capabilities

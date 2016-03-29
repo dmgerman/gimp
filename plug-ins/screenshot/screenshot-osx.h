@@ -23,6 +23,15 @@ name|PLATFORM_OSX
 end_ifdef
 
 begin_function_decl
+name|gboolean
+name|screenshot_osx_available
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|ScreenshotCapabilities
 name|screenshot_osx_get_capabilities
 parameter_list|(
