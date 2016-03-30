@@ -12,6 +12,22 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
+end_include
+
+begin_comment
+comment|/* g_unlink() */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -158,9 +174,9 @@ argument_list|)
 expr_stmt|;
 name|filename
 operator|=
-name|g_strdup
+name|gimp_temp_name
 argument_list|(
-literal|"/tmp/gimp-screenshot.png"
+literal|"png"
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -405,6 +421,11 @@ argument_list|,
 literal|"screenshot.png"
 argument_list|)
 expr_stmt|;
+name|g_unlink
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|filename
@@ -414,6 +435,11 @@ return|return
 name|GIMP_PDB_SUCCESS
 return|;
 block|}
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 return|return
 name|GIMP_PDB_EXECUTION_ERROR
 return|;

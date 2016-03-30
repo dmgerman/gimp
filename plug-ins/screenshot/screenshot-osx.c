@@ -34,6 +34,22 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
+end_include
+
+begin_comment
+comment|/* g_unlink() */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -56,7 +72,7 @@ file|"screenshot-osx.h"
 end_include
 
 begin_comment
-comment|/*  * Mac OS X uses a rootless X server. This won't let us use  * gdk_pixbuf_get_from_drawable() and similar function on the root  * window to get the entire screen contents. With a nytive OS X build  * we have to do this without X as well.  *  * Since Mac OS X 10.2 a system utility for screencapturing is  * included. We can safely use this, since it's available on every OS  * X version GIMP is running on.  *  * The main drawbacks are that it's not possible to shoot windows or  * regions in scripts in noninteractive mode, and that windows always  * include decorations, since decorations are different between X11  * windows and native OS X app windows. But we can use this switch  * to capture the shadow of a window, which is indeed very Mac-ish.  *  * This routines works well with X11 and as a navtive build  */
+comment|/*  * Mac OS X uses a rootless X server. This won't let us use  * gdk_pixbuf_get_from_drawable() and similar function on the root  * window to get the entire screen contents. With a native OS X build  * we have to do this without X as well.  *  * Since Mac OS X 10.2 a system utility for screencapturing is  * included. We can safely use this, since it's available on every OS  * X version GIMP is running on.  *  * The main drawbacks are that it's not possible to shoot windows or  * regions in scripts in noninteractive mode, and that windows always  * include decorations, since decorations are different between X11  * windows and native OS X app windows. But we can use this switch  * to capture the shadow of a window, which is indeed very Mac-ish.  *  * This routines works well with X11 and as a navtive build  */
 end_comment
 
 begin_function
@@ -109,9 +125,17 @@ modifier|*
 name|image_ID
 parameter_list|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|mode
+init|=
+literal|" "
+decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|cursor
 init|=
 literal|" "
 decl_stmt|;
@@ -123,9 +147,7 @@ name|NULL
 decl_stmt|;
 name|gchar
 modifier|*
-name|cursor
-init|=
-literal|" "
+name|filename
 decl_stmt|;
 name|gchar
 modifier|*
@@ -198,6 +220,13 @@ name|cursor
 operator|=
 literal|"-C"
 expr_stmt|;
+name|filename
+operator|=
+name|gimp_temp_name
+argument_list|(
+literal|"png"
+argument_list|)
+expr_stmt|;
 name|command
 operator|=
 name|g_strjoin
@@ -212,11 +241,18 @@ name|cursor
 argument_list|,
 name|delay
 argument_list|,
-literal|"/tmp/screenshot.png"
+name|filename
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|delay
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
 name|system
 argument_list|(
 operator|(
@@ -226,17 +262,10 @@ operator|*
 operator|)
 name|command
 argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|command
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|delay
-argument_list|)
-expr_stmt|;
+operator|==
+name|EXIT_SUCCESS
+condition|)
+block|{
 operator|*
 name|image_ID
 operator|=
@@ -244,9 +273,9 @@ name|gimp_file_load
 argument_list|(
 name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
-literal|"/tmp/screenshot.png"
+name|filename
 argument_list|,
-literal|"/tmp/screenshot.png"
+name|filename
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_filename
@@ -257,8 +286,37 @@ argument_list|,
 literal|"screenshot.png"
 argument_list|)
 expr_stmt|;
+name|g_unlink
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|command
+argument_list|)
+expr_stmt|;
 return|return
 name|GIMP_PDB_SUCCESS
+return|;
+block|}
+name|g_free
+argument_list|(
+name|command
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+return|return
+name|GIMP_PDB_EXECUTION_ERROR
 return|;
 block|}
 end_function
