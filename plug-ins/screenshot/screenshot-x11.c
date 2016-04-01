@@ -2489,7 +2489,7 @@ end_function
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|screenshot_x11_shoot (ScreenshotValues * shootvals,GdkScreen * screen,gint32 * image_ID)
+DECL|function|screenshot_x11_shoot (ScreenshotValues * shootvals,GdkScreen * screen,gint32 * image_ID,GError ** error)
 name|screenshot_x11_shoot
 parameter_list|(
 name|ScreenshotValues
@@ -2503,6 +2503,11 @@ parameter_list|,
 name|gint32
 modifier|*
 name|image_ID
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GdkDisplay
@@ -2759,8 +2764,14 @@ operator|!
 name|window
 condition|)
 block|{
-name|g_message
+name|g_set_error_literal
 argument_list|(
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Specified window not found"

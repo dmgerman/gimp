@@ -49,6 +49,11 @@ parameter_list|,
 name|gint32
 modifier|*
 name|image_ID
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl

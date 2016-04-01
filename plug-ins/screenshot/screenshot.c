@@ -310,6 +310,11 @@ parameter_list|,
 name|gint32
 modifier|*
 name|image_ID
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -662,6 +667,12 @@ name|NULL
 decl_stmt|;
 name|gint32
 name|image_ID
+decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -1040,6 +1051,9 @@ name|screen
 argument_list|,
 operator|&
 name|image_ID
+argument_list|,
+operator|&
+name|error
 argument_list|)
 expr_stmt|;
 block|}
@@ -1100,7 +1114,6 @@ expr_stmt|;
 comment|/* flush so the beep makes it to the server */
 block|}
 block|}
-comment|/* set return values */
 operator|*
 name|nreturn_vals
 operator|=
@@ -1127,6 +1140,43 @@ operator|=
 name|image_ID
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|status
+operator|!=
+name|GIMP_PDB_SUCCESS
+operator|&&
+name|error
+condition|)
+block|{
+operator|*
+name|nreturn_vals
+operator|=
+literal|2
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_STRING
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+operator|=
+name|error
+operator|->
+name|message
+expr_stmt|;
+block|}
 name|values
 index|[
 literal|0
@@ -1148,7 +1198,7 @@ end_comment
 begin_function
 specifier|static
 name|GimpPDBStatusType
-DECL|function|shoot (GdkScreen * screen,gint32 * image_ID)
+DECL|function|shoot (GdkScreen * screen,gint32 * image_ID,GError ** error)
 name|shoot
 parameter_list|(
 name|GdkScreen
@@ -1158,6 +1208,11 @@ parameter_list|,
 name|gint32
 modifier|*
 name|image_ID
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 ifdef|#
@@ -1178,6 +1233,8 @@ argument_list|,
 name|screen
 argument_list|,
 name|image_ID
+argument_list|,
+name|error
 argument_list|)
 return|;
 endif|#
@@ -1197,6 +1254,8 @@ argument_list|,
 name|screen
 argument_list|,
 name|image_ID
+argument_list|,
+name|error
 argument_list|)
 return|;
 ifdef|#
@@ -1217,6 +1276,8 @@ argument_list|,
 name|screen
 argument_list|,
 name|image_ID
+argument_list|,
+name|error
 argument_list|)
 return|;
 endif|#
