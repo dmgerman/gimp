@@ -19,13 +19,16 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c944f40103
+DECL|enum|__anon27a85c830103
 block|{
 DECL|enumerator|SCREENSHOT_BACKEND_NONE
 name|SCREENSHOT_BACKEND_NONE
 block|,
 DECL|enumerator|SCREENSHOT_BACKEND_OSX
 name|SCREENSHOT_BACKEND_OSX
+block|,
+DECL|enumerator|SCREENSHOT_BACKEND_WIN32
+name|SCREENSHOT_BACKEND_WIN32
 block|,
 DECL|enumerator|SCREENSHOT_BACKEND_GNOME_SHELL
 name|SCREENSHOT_BACKEND_GNOME_SHELL
@@ -41,7 +44,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c944f40203
+DECL|enum|__anon27a85c830203
 block|{
 DECL|enumerator|SCREENSHOT_CAN_SHOOT_DECORATIONS
 name|SCREENSHOT_CAN_SHOOT_DECORATIONS
@@ -72,7 +75,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c944f40303
+DECL|enum|__anon27a85c830303
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -91,7 +94,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c944f40408
+DECL|struct|__anon27a85c830408
 block|{
 DECL|member|shoot_type
 name|ShootType
