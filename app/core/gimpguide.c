@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a30e0c00103
+DECL|enum|__anon2c18b2ef0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a30e0c00203
+DECL|enum|__anon2c18b2ef0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -925,6 +925,16 @@ modifier|*
 name|guide
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GUIDE
+argument_list|(
+name|guide
+argument_list|)
+argument_list|,
+name|GIMP_GUIDE_STYLE_NONE
+argument_list|)
+expr_stmt|;
 return|return
 name|guide
 operator|->
@@ -945,8 +955,17 @@ modifier|*
 name|guide
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GUIDE
+argument_list|(
+name|guide
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 return|return
-operator|(
 name|guide
 operator|->
 name|priv
@@ -954,7 +973,6 @@ operator|->
 name|style
 operator|!=
 name|GIMP_GUIDE_STYLE_NORMAL
-operator|)
 return|;
 block|}
 end_function
