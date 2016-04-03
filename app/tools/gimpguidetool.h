@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_MOVE_TOOL_H__
+name|__GIMP_GUIDE_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_MOVE_TOOL_H__
+DECL|macro|__GIMP_GUIDE_TOOL_H__
 define|#
 directive|define
-name|__GIMP_MOVE_TOOL_H__
+name|__GIMP_GUIDE_TOOL_H__
 end_define
 
 begin_include
@@ -23,138 +23,116 @@ file|"gimpdrawtool.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_MOVE_TOOL
+DECL|macro|GIMP_TYPE_GUIDE_TOOL
 define|#
 directive|define
-name|GIMP_TYPE_MOVE_TOOL
-value|(gimp_move_tool_get_type ())
+name|GIMP_TYPE_GUIDE_TOOL
+value|(gimp_guide_tool_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_MOVE_TOOL (obj)
+DECL|macro|GIMP_GUIDE_TOOL (obj)
 define|#
 directive|define
-name|GIMP_MOVE_TOOL
+name|GIMP_GUIDE_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_MOVE_TOOL, GimpMoveTool))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_GUIDE_TOOL, GimpGuideTool))
 end_define
 
 begin_define
-DECL|macro|GIMP_MOVE_TOOL_CLASS (klass)
+DECL|macro|GIMP_GUIDE_TOOL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_MOVE_TOOL_CLASS
+name|GIMP_GUIDE_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_MOVE_TOOL, GimpMoveToolClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_GUIDE_TOOL, GimpGuideToolClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_MOVE_TOOL (obj)
+DECL|macro|GIMP_IS_GUIDE_TOOL (obj)
 define|#
 directive|define
-name|GIMP_IS_MOVE_TOOL
+name|GIMP_IS_GUIDE_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_MOVE_TOOL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_GUIDE_TOOL))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_MOVE_TOOL_CLASS (klass)
+DECL|macro|GIMP_IS_GUIDE_TOOL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_MOVE_TOOL_CLASS
+name|GIMP_IS_GUIDE_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_MOVE_TOOL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_GUIDE_TOOL))
 end_define
 
 begin_define
-DECL|macro|GIMP_MOVE_TOOL_GET_CLASS (obj)
+DECL|macro|GIMP_GUIDE_TOOL_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_MOVE_TOOL_GET_CLASS
+name|GIMP_GUIDE_TOOL_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_MOVE_TOOL, GimpMoveToolClass))
-end_define
-
-begin_define
-DECL|macro|GIMP_MOVE_TOOL_GET_OPTIONS (t)
-define|#
-directive|define
-name|GIMP_MOVE_TOOL_GET_OPTIONS
-parameter_list|(
-name|t
-parameter_list|)
-value|(GIMP_MOVE_OPTIONS (gimp_tool_get_options (GIMP_TOOL (t))))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_GUIDE_TOOL, GimpGuideToolClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpMoveTool
+DECL|typedef|GimpGuideTool
 typedef|typedef
 name|struct
-name|_GimpMoveTool
-name|GimpMoveTool
+name|_GimpGuideTool
+name|GimpGuideTool
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpMoveToolClass
+DECL|typedef|GimpGuideToolClass
 typedef|typedef
 name|struct
-name|_GimpMoveToolClass
-name|GimpMoveToolClass
+name|_GimpGuideToolClass
+name|GimpGuideToolClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpMoveTool
+DECL|struct|_GimpGuideTool
 struct|struct
-name|_GimpMoveTool
+name|_GimpGuideTool
 block|{
 DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
-decl_stmt|;
-DECL|member|floating_layer
-name|GimpLayer
-modifier|*
-name|floating_layer
 decl_stmt|;
 DECL|member|guide
 name|GimpGuide
 modifier|*
 name|guide
 decl_stmt|;
-DECL|member|saved_type
-name|GimpTransformType
-name|saved_type
+DECL|member|guide_position
+name|gint
+name|guide_position
 decl_stmt|;
-DECL|member|old_active_layer
-name|GimpLayer
-modifier|*
-name|old_active_layer
-decl_stmt|;
-DECL|member|old_active_vectors
-name|GimpVectors
-modifier|*
-name|old_active_vectors
+DECL|member|guide_orientation
+name|GimpOrientationType
+name|guide_orientation
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpMoveToolClass
+DECL|struct|_GimpGuideToolClass
 struct|struct
-name|_GimpMoveToolClass
+name|_GimpGuideToolClass
 block|{
 DECL|member|parent_class
 name|GimpDrawToolClass
@@ -164,22 +142,9 @@ block|}
 struct|;
 end_struct
 
-begin_function_decl
-name|void
-name|gimp_move_tool_register
-parameter_list|(
-name|GimpToolRegisterCallback
-name|callback
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 name|GType
-name|gimp_move_tool_get_type
+name|gimp_guide_tool_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -189,30 +154,37 @@ end_decl_stmt
 
 begin_function_decl
 name|void
-name|gimp_move_tool_start_hguide
+name|gimp_guide_tool_start_new
 parameter_list|(
 name|GimpTool
 modifier|*
-name|tool
+name|parent_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|,
+name|GimpOrientationType
+name|orientation
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_move_tool_start_vguide
+name|gimp_guide_tool_start_edit
 parameter_list|(
 name|GimpTool
 modifier|*
-name|tool
+name|parent_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|,
+name|GimpGuide
+modifier|*
+name|guide
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -223,7 +195,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_MOVE_TOOL_H__  */
+comment|/*  __GIMP_GUIDE_TOOL_H__  */
 end_comment
 
 end_unit

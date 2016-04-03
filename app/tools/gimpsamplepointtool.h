@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_MOVE_TOOL_H__
+name|__GIMP_SAMPLE_POINT_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_MOVE_TOOL_H__
+DECL|macro|__GIMP_SAMPLE_POINT_TOOL_H__
 define|#
 directive|define
-name|__GIMP_MOVE_TOOL_H__
+name|__GIMP_SAMPLE_POINT_TOOL_H__
 end_define
 
 begin_include
@@ -23,138 +23,116 @@ file|"gimpdrawtool.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_MOVE_TOOL
+DECL|macro|GIMP_TYPE_SAMPLE_POINT_TOOL
 define|#
 directive|define
-name|GIMP_TYPE_MOVE_TOOL
-value|(gimp_move_tool_get_type ())
+name|GIMP_TYPE_SAMPLE_POINT_TOOL
+value|(gimp_sample_point_tool_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_MOVE_TOOL (obj)
+DECL|macro|GIMP_SAMPLE_POINT_TOOL (obj)
 define|#
 directive|define
-name|GIMP_MOVE_TOOL
+name|GIMP_SAMPLE_POINT_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_MOVE_TOOL, GimpMoveTool))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_SAMPLE_POINT_TOOL, GimpSamplePointTool))
 end_define
 
 begin_define
-DECL|macro|GIMP_MOVE_TOOL_CLASS (klass)
+DECL|macro|GIMP_SAMPLE_POINT_TOOL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_MOVE_TOOL_CLASS
+name|GIMP_SAMPLE_POINT_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_MOVE_TOOL, GimpMoveToolClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_SAMPLE_POINT_TOOL, GimpSamplePointToolClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_MOVE_TOOL (obj)
+DECL|macro|GIMP_IS_SAMPLE_POINT_TOOL (obj)
 define|#
 directive|define
-name|GIMP_IS_MOVE_TOOL
+name|GIMP_IS_SAMPLE_POINT_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_MOVE_TOOL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_SAMPLE_POINT_TOOL))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_MOVE_TOOL_CLASS (klass)
+DECL|macro|GIMP_IS_SAMPLE_POINT_TOOL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_MOVE_TOOL_CLASS
+name|GIMP_IS_SAMPLE_POINT_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_MOVE_TOOL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_SAMPLE_POINT_TOOL))
 end_define
 
 begin_define
-DECL|macro|GIMP_MOVE_TOOL_GET_CLASS (obj)
+DECL|macro|GIMP_SAMPLE_POINT_TOOL_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_MOVE_TOOL_GET_CLASS
+name|GIMP_SAMPLE_POINT_TOOL_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_MOVE_TOOL, GimpMoveToolClass))
-end_define
-
-begin_define
-DECL|macro|GIMP_MOVE_TOOL_GET_OPTIONS (t)
-define|#
-directive|define
-name|GIMP_MOVE_TOOL_GET_OPTIONS
-parameter_list|(
-name|t
-parameter_list|)
-value|(GIMP_MOVE_OPTIONS (gimp_tool_get_options (GIMP_TOOL (t))))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_SAMPLE_POINT_TOOL, GimpSamplePointToolClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpMoveTool
+DECL|typedef|GimpSamplePointTool
 typedef|typedef
 name|struct
-name|_GimpMoveTool
-name|GimpMoveTool
+name|_GimpSamplePointTool
+name|GimpSamplePointTool
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpMoveToolClass
+DECL|typedef|GimpSamplePointToolClass
 typedef|typedef
 name|struct
-name|_GimpMoveToolClass
-name|GimpMoveToolClass
+name|_GimpSamplePointToolClass
+name|GimpSamplePointToolClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpMoveTool
+DECL|struct|_GimpSamplePointTool
 struct|struct
-name|_GimpMoveTool
+name|_GimpSamplePointTool
 block|{
 DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
-DECL|member|floating_layer
-name|GimpLayer
+DECL|member|sample_point
+name|GimpSamplePoint
 modifier|*
-name|floating_layer
+name|sample_point
 decl_stmt|;
-DECL|member|guide
-name|GimpGuide
-modifier|*
-name|guide
+DECL|member|sample_point_x
+name|gint
+name|sample_point_x
 decl_stmt|;
-DECL|member|saved_type
-name|GimpTransformType
-name|saved_type
-decl_stmt|;
-DECL|member|old_active_layer
-name|GimpLayer
-modifier|*
-name|old_active_layer
-decl_stmt|;
-DECL|member|old_active_vectors
-name|GimpVectors
-modifier|*
-name|old_active_vectors
+DECL|member|sample_point_y
+name|gint
+name|sample_point_y
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpMoveToolClass
+DECL|struct|_GimpSamplePointToolClass
 struct|struct
-name|_GimpMoveToolClass
+name|_GimpSamplePointToolClass
 block|{
 DECL|member|parent_class
 name|GimpDrawToolClass
@@ -164,22 +142,9 @@ block|}
 struct|;
 end_struct
 
-begin_function_decl
-name|void
-name|gimp_move_tool_register
-parameter_list|(
-name|GimpToolRegisterCallback
-name|callback
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 name|GType
-name|gimp_move_tool_get_type
+name|gimp_sample_point_tool_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -189,11 +154,11 @@ end_decl_stmt
 
 begin_function_decl
 name|void
-name|gimp_move_tool_start_hguide
+name|gimp_sample_point_tool_start_new
 parameter_list|(
 name|GimpTool
 modifier|*
-name|tool
+name|parent_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -204,15 +169,19 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_move_tool_start_vguide
+name|gimp_sample_point_tool_start_edit
 parameter_list|(
 name|GimpTool
 modifier|*
-name|tool
+name|parent_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|,
+name|GimpSamplePoint
+modifier|*
+name|sample_point
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -223,7 +192,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_MOVE_TOOL_H__  */
+comment|/*  __GIMP_SAMPLE_POINT_TOOL_H__  */
 end_comment
 
 end_unit
