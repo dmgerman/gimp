@@ -3754,9 +3754,10 @@ name|procedure
 argument_list|,
 literal|"gimp-selection-flood"
 argument_list|,
-literal|"Flood the image's selection"
+literal|"Remove holes from the image's selection"
 argument_list|,
-literal|"This procedure floods the selection. Flooding assigns to each pixel of the selection mask the minimum of the maxima of all paths from that pixel to the outside, as if the selection mask were a height map of a terrain flooded with water."
+literal|"This procedure removes holes from the selection, that can come from selecting a patchy area with the Fuzzy Select Tool. "
+literal|"In technical terms this procedure floods the selection. See the Algorithms page in the developer wiki for details."
 argument_list|,
 literal|"Ell"
 argument_list|,
