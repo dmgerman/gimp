@@ -231,8 +231,8 @@ parameter_list|,
 name|gint
 name|radius_y
 parameter_list|,
-name|gboolean
-name|feather
+name|GimpChannelBorderStyle
+name|style
 parameter_list|,
 name|gboolean
 name|edge_lock

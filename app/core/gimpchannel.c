@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e8c68d0103
+DECL|enum|__anon2ae720a30103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -6667,7 +6667,12 @@ name|radius_x
 argument_list|,
 name|radius_y
 argument_list|,
+operator|!
 name|feather
+condition|?
+name|GIMP_CHANNEL_BORDER_STYLE_HARD
+else|:
+name|GIMP_CHANNEL_BORDER_STYLE_FEATHERED
 argument_list|,
 name|edge_lock
 argument_list|)
