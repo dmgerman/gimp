@@ -278,12 +278,12 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|select_border_feather
+DECL|variable|select_border_style
 specifier|static
-name|gboolean
-name|select_border_feather
+name|GimpChannelBorderStyle
+name|select_border_style
 init|=
-name|FALSE
+name|GIMP_CHANNEL_BORDER_STYLE_SMOOTH
 decl_stmt|;
 end_decl_stmt
 
@@ -1060,6 +1060,10 @@ name|dialog
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|combo
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|button
 decl_stmt|;
 name|gdouble
@@ -1155,14 +1159,24 @@ argument_list|,
 name|image
 argument_list|)
 expr_stmt|;
-comment|/* Feather button */
-name|button
+comment|/* Border style combo */
+name|combo
 operator|=
-name|gtk_check_button_new_with_mnemonic
+name|gimp_enum_combo_box_new
 argument_list|(
+name|GIMP_TYPE_CHANNEL_BORDER_STYLE
+argument_list|)
+expr_stmt|;
+name|gimp_int_combo_box_set_label
+argument_list|(
+name|GIMP_INT_COMBO_BOX
+argument_list|(
+name|combo
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
-literal|"_Feather border"
+literal|"Border style"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1176,7 +1190,7 @@ name|dialog
 argument_list|)
 argument_list|)
 argument_list|,
-name|button
+name|combo
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1192,24 +1206,24 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-literal|"border-feather-toggle"
+literal|"border-style-combo"
 argument_list|,
-name|button
+name|combo
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_active
+name|gimp_int_combo_box_set_active
 argument_list|(
-name|GTK_TOGGLE_BUTTON
+name|GIMP_INT_COMBO_BOX
 argument_list|(
-name|button
+name|combo
 argument_list|)
 argument_list|,
-name|select_border_feather
+name|select_border_style
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|button
+name|combo
 argument_list|)
 expr_stmt|;
 comment|/* Edge lock button */
@@ -2204,7 +2218,7 @@ argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|feather_button
+name|style_combo
 init|=
 name|g_object_get_data
 argument_list|(
@@ -2213,7 +2227,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"border-feather-toggle"
+literal|"border-style-combo"
 argument_list|)
 decl_stmt|;
 name|GtkWidget
@@ -2236,6 +2250,9 @@ decl_stmt|;
 name|gdouble
 name|radius_y
 decl_stmt|;
+name|gint
+name|border_style
+decl_stmt|;
 name|radius_x
 operator|=
 name|radius_y
@@ -2247,15 +2264,25 @@ argument_list|(
 name|size
 argument_list|)
 expr_stmt|;
-name|select_border_feather
+if|if
+condition|(
+name|gimp_int_combo_box_get_active
+argument_list|(
+name|GIMP_INT_COMBO_BOX
+argument_list|(
+name|style_combo
+argument_list|)
+argument_list|,
+operator|&
+name|border_style
+argument_list|)
+condition|)
+name|select_border_style
 operator|=
-name|gtk_toggle_button_get_active
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|feather_button
-argument_list|)
-argument_list|)
+operator|(
+name|GimpChannelBorderStyle
+operator|)
+name|border_style
 expr_stmt|;
 name|select_border_edge_lock
 operator|=
@@ -2344,12 +2371,7 @@ name|radius_x
 argument_list|,
 name|radius_y
 argument_list|,
-operator|!
-name|select_border_feather
-condition|?
-name|GIMP_CHANNEL_BORDER_STYLE_HARD
-else|:
-name|GIMP_CHANNEL_BORDER_STYLE_FEATHERED
+name|select_border_style
 argument_list|,
 name|select_border_edge_lock
 argument_list|,
