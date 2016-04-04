@@ -125,6 +125,15 @@ DECL|member|guide_orientation
 name|GimpOrientationType
 name|guide_orientation
 decl_stmt|;
+comment|/* for live-moving custom guides */
+DECL|member|guide_custom
+name|gboolean
+name|guide_custom
+decl_stmt|;
+DECL|member|guide_old_position
+name|gint
+name|guide_old_position
+decl_stmt|;
 block|}
 struct|;
 end_struct
