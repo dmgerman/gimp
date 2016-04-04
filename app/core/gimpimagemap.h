@@ -185,6 +185,9 @@ name|GimpImageMap
 modifier|*
 name|image_map
 parameter_list|,
+name|gboolean
+name|enabled
+parameter_list|,
 name|GimpOrientationType
 name|orientation
 parameter_list|,

@@ -164,6 +164,11 @@ name|GimpImageMap
 modifier|*
 name|image_map
 decl_stmt|;
+DECL|member|percent_guide
+name|GimpGuide
+modifier|*
+name|percent_guide
+decl_stmt|;
 comment|/* dialog */
 DECL|member|overlay
 name|gboolean

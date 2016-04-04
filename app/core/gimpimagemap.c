@@ -93,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c0f1cf0103
+DECL|enum|__anon2a29740e0103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -136,6 +136,10 @@ decl_stmt|;
 DECL|member|region
 name|GimpImageMapRegion
 name|region
+decl_stmt|;
+DECL|member|preview_enabled
+name|gboolean
+name|preview_enabled
 decl_stmt|;
 DECL|member|preview_orientation
 name|GimpOrientationType
@@ -239,6 +243,9 @@ parameter_list|(
 name|GimpImageMap
 modifier|*
 name|image_map
+parameter_list|,
+name|gboolean
+name|old_enabled
 parameter_list|,
 name|GimpOrientationType
 name|old_orientation
@@ -898,12 +905,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_map_set_preview (GimpImageMap * image_map,GimpOrientationType orientation,gdouble percent)
+DECL|function|gimp_image_map_set_preview (GimpImageMap * image_map,gboolean enabled,GimpOrientationType orientation,gdouble percent)
 name|gimp_image_map_set_preview
 parameter_list|(
 name|GimpImageMap
 modifier|*
 name|image_map
+parameter_list|,
+name|gboolean
+name|enabled
 parameter_list|,
 name|GimpOrientationType
 name|orientation
@@ -933,6 +943,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|enabled
+operator|!=
+name|image_map
+operator|->
+name|preview_enabled
+operator|||
 name|orientation
 operator|!=
 name|image_map
@@ -946,6 +962,13 @@ operator|->
 name|preview_percent
 condition|)
 block|{
+name|gboolean
+name|old_enabled
+init|=
+name|image_map
+operator|->
+name|preview_enabled
+decl_stmt|;
 name|GimpOrientationType
 name|old_orientation
 init|=
@@ -962,6 +985,12 @@ name|preview_percent
 decl_stmt|;
 name|image_map
 operator|->
+name|preview_enabled
+operator|=
+name|enabled
+expr_stmt|;
+name|image_map
+operator|->
 name|preview_orientation
 operator|=
 name|orientation
@@ -975,6 +1004,8 @@ expr_stmt|;
 name|gimp_image_map_sync_preview
 argument_list|(
 name|image_map
+argument_list|,
+name|old_enabled
 argument_list|,
 name|old_orientation
 argument_list|,
@@ -1435,6 +1466,10 @@ expr_stmt|;
 name|gimp_image_map_sync_preview
 argument_list|(
 name|image_map
+argument_list|,
+name|image_map
+operator|->
+name|preview_enabled
 argument_list|,
 name|image_map
 operator|->
@@ -1989,12 +2024,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_map_get_preview_rect (GimpImageMap * image_map,GimpOrientationType orientation,gdouble percent,GeglRectangle * rect)
+DECL|function|gimp_image_map_get_preview_rect (GimpImageMap * image_map,gboolean enabled,GimpOrientationType orientation,gdouble percent,GeglRectangle * rect)
 name|gimp_image_map_get_preview_rect
 parameter_list|(
 name|GimpImageMap
 modifier|*
 name|image_map
+parameter_list|,
+name|gboolean
+name|enabled
 parameter_list|,
 name|GimpOrientationType
 name|orientation
@@ -2049,6 +2087,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|enabled
+condition|)
+block|{
+if|if
+condition|(
 name|orientation
 operator|==
 name|GIMP_ORIENTATION_HORIZONTAL
@@ -2067,17 +2110,21 @@ operator|*=
 name|percent
 expr_stmt|;
 block|}
+block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_map_sync_preview (GimpImageMap * image_map,GimpOrientationType old_orientation,gdouble old_percent)
+DECL|function|gimp_image_map_sync_preview (GimpImageMap * image_map,gboolean old_enabled,GimpOrientationType old_orientation,gdouble old_percent)
 name|gimp_image_map_sync_preview
 parameter_list|(
 name|GimpImageMap
 modifier|*
 name|image_map
+parameter_list|,
+name|gboolean
+name|old_enabled
 parameter_list|,
 name|GimpOrientationType
 name|old_orientation
@@ -2103,6 +2150,8 @@ name|gimp_image_map_get_preview_rect
 argument_list|(
 name|image_map
 argument_list|,
+name|old_enabled
+argument_list|,
 name|old_orientation
 argument_list|,
 name|old_percent
@@ -2114,6 +2163,10 @@ expr_stmt|;
 name|gimp_image_map_get_preview_rect
 argument_list|(
 name|image_map
+argument_list|,
+name|image_map
+operator|->
+name|preview_enabled
 argument_list|,
 name|image_map
 operator|->
@@ -2133,7 +2186,9 @@ name|image_map
 operator|->
 name|applicator
 argument_list|,
-name|TRUE
+name|image_map
+operator|->
+name|preview_enabled
 argument_list|,
 operator|&
 name|new_rect

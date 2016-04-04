@@ -107,6 +107,14 @@ DECL|member|preview
 name|gboolean
 name|preview
 decl_stmt|;
+DECL|member|preview_split
+name|gboolean
+name|preview_split
+decl_stmt|;
+DECL|member|preview_percent
+name|gdouble
+name|preview_percent
+decl_stmt|;
 DECL|member|region
 name|GimpImageMapRegion
 name|region
