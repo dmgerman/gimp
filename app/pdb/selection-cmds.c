@@ -1546,7 +1546,7 @@ condition|(
 name|success
 condition|)
 block|{
-comment|/* FIXME: "style" and "edge-lock" hardcoded to FEATHERED and TRUE, respectively. */
+comment|/* FIXME: "style" and "edge-lock" hardcoded to SMOOTH and TRUE, respectively. */
 name|gimp_channel_border
 argument_list|(
 name|gimp_image_get_mask
@@ -1558,7 +1558,7 @@ name|radius
 argument_list|,
 name|radius
 argument_list|,
-name|GIMP_CHANNEL_BORDER_STYLE_FEATHERED
+name|GIMP_CHANNEL_BORDER_STYLE_SMOOTH
 argument_list|,
 name|TRUE
 argument_list|,
