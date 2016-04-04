@@ -577,8 +577,8 @@ parameter_list|,
 name|gint
 name|radius_y
 parameter_list|,
-name|gboolean
-name|feather
+name|GimpChannelBorderStyle
+name|style
 parameter_list|,
 name|gboolean
 name|edge_lock
@@ -2349,7 +2349,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_selection_border (GimpChannel * channel,gint radius_x,gint radius_y,gboolean feather,gboolean edge_lock,gboolean push_undo)
+DECL|function|gimp_selection_border (GimpChannel * channel,gint radius_x,gint radius_y,GimpChannelBorderStyle style,gboolean edge_lock,gboolean push_undo)
 name|gimp_selection_border
 parameter_list|(
 name|GimpChannel
@@ -2362,8 +2362,8 @@ parameter_list|,
 name|gint
 name|radius_y
 parameter_list|,
-name|gboolean
-name|feather
+name|GimpChannelBorderStyle
+name|style
 parameter_list|,
 name|gboolean
 name|edge_lock
@@ -2385,7 +2385,7 @@ name|radius_x
 argument_list|,
 name|radius_y
 argument_list|,
-name|feather
+name|style
 argument_list|,
 name|edge_lock
 argument_list|,

@@ -2344,7 +2344,12 @@ name|radius_x
 argument_list|,
 name|radius_y
 argument_list|,
+operator|!
 name|select_border_feather
+condition|?
+name|GIMP_CHANNEL_BORDER_STYLE_HARD
+else|:
+name|GIMP_CHANNEL_BORDER_STYLE_FEATHERED
 argument_list|,
 name|select_border_edge_lock
 argument_list|,
