@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b38164b0103
+DECL|enum|__anon27ccbcfc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -429,7 +429,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Affect:"
+literal|"Transform:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -497,7 +497,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Flip Type  (%s)"
+literal|"Direction  (%s)"
 argument_list|)
 argument_list|,
 name|gimp_get_mod_string
