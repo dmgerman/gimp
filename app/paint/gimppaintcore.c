@@ -187,7 +187,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b94f8cb0103
+DECL|enum|__anon2b681cae0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3838,6 +3838,20 @@ name|paint_opacity
 argument_list|)
 expr_stmt|;
 comment|/* dest_buffer -> paint_buf -> dest_buffer */
+if|if
+condition|(
+name|core
+operator|->
+name|comp_buffer
+condition|)
+name|src_buffer
+operator|=
+name|gimp_drawable_get_buffer
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
+else|else
 name|src_buffer
 operator|=
 name|dest_buffer
