@@ -115,6 +115,10 @@ DECL|member|preview_percent
 name|gdouble
 name|preview_percent
 decl_stmt|;
+DECL|member|preview_orientation
+name|GimpOrientationType
+name|preview_orientation
+decl_stmt|;
 DECL|member|region
 name|GimpImageMapRegion
 name|region
