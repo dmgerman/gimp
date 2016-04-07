@@ -2094,7 +2094,7 @@ name|NC_
 argument_list|(
 literal|"view-padding-color"
 argument_list|,
-literal|"Select _Custom Color..."
+literal|"_Custom Color..."
 argument_list|)
 block|,
 name|NULL
