@@ -3997,7 +3997,7 @@ name|profile
 argument_list|,
 name|cmsSigProfileDescriptionTag
 argument_list|,
-literal|"GIMP built-in Grayscale with sRGB TRC"
+literal|"GIMP built-in D65 Grayscale with sRGB TRC"
 argument_list|)
 expr_stmt|;
 name|gimp_color_profile_set_tag
@@ -4015,7 +4015,7 @@ name|profile
 argument_list|,
 name|cmsSigDeviceModelDescTag
 argument_list|,
-literal|"Grayscale with sRGB TRC"
+literal|"D65 Grayscale with sRGB TRC"
 argument_list|)
 expr_stmt|;
 name|gimp_color_profile_set_tag
@@ -4171,7 +4171,7 @@ name|profile
 argument_list|,
 name|cmsSigProfileDescriptionTag
 argument_list|,
-literal|"GIMP built-in Linear Grayscale"
+literal|"GIMP built-in D65 Linear Grayscale"
 argument_list|)
 expr_stmt|;
 name|gimp_color_profile_set_tag
@@ -4189,7 +4189,7 @@ name|profile
 argument_list|,
 name|cmsSigDeviceModelDescTag
 argument_list|,
-literal|"Linear Grayscale"
+literal|"D65 Linear Grayscale"
 argument_list|)
 expr_stmt|;
 name|gimp_color_profile_set_tag
