@@ -3142,12 +3142,12 @@ argument_list|()
 expr_stmt|;
 name|gray_profile
 operator|=
-name|gimp_color_profile_new_gray_srgb
+name|gimp_color_profile_new_d65_gray_srgb_trc
 argument_list|()
 expr_stmt|;
 name|gray_linear_profile
 operator|=
-name|gimp_color_profile_new_gray_srgb_linear
+name|gimp_color_profile_new_d65_gray_linear
 argument_list|()
 expr_stmt|;
 block|}
@@ -3213,9 +3213,11 @@ name|gray_linear_profile
 argument_list|)
 operator|)
 condition|)
+block|{
 return|return
 name|TRUE
 return|;
+block|}
 return|return
 name|FALSE
 return|;

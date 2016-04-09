@@ -247,7 +247,7 @@ end_function_decl
 begin_function_decl
 name|GimpColorProfile
 modifier|*
-name|gimp_color_profile_new_gray_srgb
+name|gimp_color_profile_new_d65_gray_srgb_trc
 parameter_list|(
 name|void
 parameter_list|)
@@ -257,7 +257,7 @@ end_function_decl
 begin_function_decl
 name|GimpColorProfile
 modifier|*
-name|gimp_color_profile_new_gray_srgb_linear
+name|gimp_color_profile_new_d65_gray_linear
 parameter_list|(
 name|void
 parameter_list|)
@@ -267,7 +267,7 @@ end_function_decl
 begin_function_decl
 name|GimpColorProfile
 modifier|*
-name|gimp_color_profile_new_srgb_gamma_from_color_profile
+name|gimp_color_profile_new_srgb_trc_from_color_profile
 parameter_list|(
 name|GimpColorProfile
 modifier|*
@@ -279,7 +279,7 @@ end_function_decl
 begin_function_decl
 name|GimpColorProfile
 modifier|*
-name|gimp_color_profile_new_linear_gamma_from_color_profile
+name|gimp_color_profile_new_linear_from_color_profile
 parameter_list|(
 name|GimpColorProfile
 modifier|*

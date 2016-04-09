@@ -3115,14 +3115,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_new_srgb_gamma_from_color_profile:  * @profile: a #GimpColorProfile  *  * This function creates a new RGB #GimpColorProfile with a sRGB gamma  * TRC and @profile's RGB chromacities and whitepoint.  *  * Return value: the new #GimpColorProfile, or %NULL if @profile is not  *               an RGB profile or not matrix-based.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_new_srgb_trc_from_color_profile:  * @profile: a #GimpColorProfile  *  * This function creates a new RGB #GimpColorProfile with a sRGB gamma  * TRC and @profile's RGB chromacities and whitepoint.  *  * Return value: the new #GimpColorProfile, or %NULL if @profile is not  *               an RGB profile or not matrix-based.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|GimpColorProfile
 modifier|*
-DECL|function|gimp_color_profile_new_srgb_gamma_from_color_profile (GimpColorProfile * profile)
-name|gimp_color_profile_new_srgb_gamma_from_color_profile
+DECL|function|gimp_color_profile_new_srgb_trc_from_color_profile (GimpColorProfile * profile)
+name|gimp_color_profile_new_srgb_trc_from_color_profile
 parameter_list|(
 name|GimpColorProfile
 modifier|*
@@ -3151,14 +3151,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_new_linear_gamma_from_color_profile:  * @profile: a #GimpColorProfile  *  * This function creates a new RGB #GimpColorProfile with a linear TRC  * and @profile's RGB chromacities and whitepoint.  *  * Return value: the new #GimpColorProfile, or %NULL if @profile is not  *               an RGB profile or not matrix-based.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_new_linear_from_color_profile:  * @profile: a #GimpColorProfile  *  * This function creates a new RGB #GimpColorProfile with a linear TRC  * and @profile's RGB chromacities and whitepoint.  *  * Return value: the new #GimpColorProfile, or %NULL if @profile is not  *               an RGB profile or not matrix-based.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|GimpColorProfile
 modifier|*
-DECL|function|gimp_color_profile_new_linear_gamma_from_color_profile (GimpColorProfile * profile)
-name|gimp_color_profile_new_linear_gamma_from_color_profile
+DECL|function|gimp_color_profile_new_linear_from_color_profile (GimpColorProfile * profile)
+name|gimp_color_profile_new_linear_from_color_profile
 parameter_list|(
 name|GimpColorProfile
 modifier|*
@@ -3918,8 +3918,8 @@ begin_function
 specifier|static
 name|cmsHPROFILE
 modifier|*
-DECL|function|gimp_color_profile_new_gray_srgb_internal (void)
-name|gimp_color_profile_new_gray_srgb_internal
+DECL|function|gimp_color_profile_new_d65_gray_srgb_trc_internal (void)
+name|gimp_color_profile_new_d65_gray_srgb_trc_internal
 parameter_list|(
 name|void
 parameter_list|)
@@ -4034,14 +4034,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_new_gray_srgb  *  * This function creates a grayscale #GimpColorProfile with an  * sRGB TRC. See gimp_color_profile_new_srgb().  *  * Return value: the sRGB-gamma grayscale #GimpColorProfile.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_new_d65_gray_srgb_trc  *  * This function creates a grayscale #GimpColorProfile with an  * sRGB TRC. See gimp_color_profile_new_srgb().  *  * Return value: the sRGB-gamma grayscale #GimpColorProfile.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|GimpColorProfile
 modifier|*
-DECL|function|gimp_color_profile_new_gray_srgb (void)
-name|gimp_color_profile_new_gray_srgb
+DECL|function|gimp_color_profile_new_d65_gray_srgb_trc (void)
+name|gimp_color_profile_new_d65_gray_srgb_trc
 parameter_list|(
 name|void
 parameter_list|)
@@ -4074,7 +4074,7 @@ block|{
 name|cmsHPROFILE
 name|lcms_profile
 init|=
-name|gimp_color_profile_new_gray_srgb_internal
+name|gimp_color_profile_new_d65_gray_srgb_trc_internal
 argument_list|()
 decl_stmt|;
 name|profile
@@ -4118,8 +4118,8 @@ end_function
 begin_function
 specifier|static
 name|cmsHPROFILE
-DECL|function|gimp_color_profile_new_gray_srgb_linear_internal (void)
-name|gimp_color_profile_new_gray_srgb_linear_internal
+DECL|function|gimp_color_profile_new_d65_gray_linear_internal (void)
+name|gimp_color_profile_new_d65_gray_linear_internal
 parameter_list|(
 name|void
 parameter_list|)
@@ -4208,14 +4208,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_new_gray_srgb_linear_gray:  *  * This function creates a profile for babl_model("Y"). Please  * somebody write someting smarter here.  *  * Return value: the linear grayscale #GimpColorProfile.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_new_d65_gray_srgb_gray:  *  * This function creates a profile for babl_model("Y"). Please  * somebody write someting smarter here.  *  * Return value: the linear grayscale #GimpColorProfile.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|GimpColorProfile
 modifier|*
-DECL|function|gimp_color_profile_new_gray_srgb_linear (void)
-name|gimp_color_profile_new_gray_srgb_linear
+DECL|function|gimp_color_profile_new_d65_gray_linear (void)
+name|gimp_color_profile_new_d65_gray_linear
 parameter_list|(
 name|void
 parameter_list|)
@@ -4248,7 +4248,7 @@ block|{
 name|cmsHPROFILE
 name|lcms_profile
 init|=
-name|gimp_color_profile_new_gray_srgb_linear_internal
+name|gimp_color_profile_new_d65_gray_linear_internal
 argument_list|()
 decl_stmt|;
 name|profile

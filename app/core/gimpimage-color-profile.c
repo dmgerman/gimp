@@ -1216,7 +1216,7 @@ condition|)
 block|{
 name|linear_gray_profile
 operator|=
-name|gimp_color_profile_new_gray_srgb_linear
+name|gimp_color_profile_new_d65_gray_linear
 argument_list|()
 expr_stmt|;
 name|g_object_add_weak_pointer
@@ -1248,7 +1248,7 @@ condition|)
 block|{
 name|gray_profile
 operator|=
-name|gimp_color_profile_new_gray_srgb
+name|gimp_color_profile_new_d65_gray_srgb_trc
 argument_list|()
 expr_stmt|;
 name|g_object_add_weak_pointer
