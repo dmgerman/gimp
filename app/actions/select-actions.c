@@ -400,7 +400,7 @@ name|NC_
 argument_list|(
 literal|"select-action"
 argument_list|,
-literal|"Re_move holes"
+literal|"Re_move Holes"
 argument_list|)
 block|,
 name|NULL
