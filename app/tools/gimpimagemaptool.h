@@ -422,7 +422,7 @@ end_decl_stmt
 
 begin_function_decl
 name|void
-name|gimp_image_map_tool_preview
+name|gimp_image_map_tool_get_operation
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
@@ -433,7 +433,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_map_tool_get_operation
+name|gimp_image_map_tool_preview
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
@@ -462,9 +462,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* accessors for derived classes */
-end_comment
+begin_function_decl
+name|gboolean
+name|gimp_image_map_tool_on_guide
+parameter_list|(
+name|GimpImageMapTool
+modifier|*
+name|im_tool
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|display
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|GtkWidget
