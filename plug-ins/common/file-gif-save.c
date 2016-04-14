@@ -115,7 +115,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c80dbab0103
+DECL|enum|__anon2c0bf4840103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -128,7 +128,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c80dbab0203
+DECL|enum|__anon2c0bf4840203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -145,7 +145,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c80dbab0308
+DECL|struct|__anon2c0bf4840308
 block|{
 DECL|member|interlace
 name|gint
@@ -270,6 +270,9 @@ name|gint32
 modifier|*
 name|image_ID
 parameter_list|,
+name|GimpRunMode
+name|run_mode
+parameter_list|,
 name|GError
 modifier|*
 modifier|*
@@ -310,25 +313,6 @@ name|buffer
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_decl_stmt
-DECL|variable|run_mode
-specifier|static
-name|GimpRunMode
-name|run_mode
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|comment_parasite
-specifier|static
-name|GimpParasite
-modifier|*
-name|comment_parasite
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|comment_was_edited
@@ -626,6 +610,9 @@ index|[
 literal|2
 index|]
 decl_stmt|;
+name|GimpRunMode
+name|run_mode
+decl_stmt|;
 name|GimpPDBStatusType
 name|status
 init|=
@@ -721,16 +708,17 @@ name|filename
 decl_stmt|;
 name|gint32
 name|image_ID
-decl_stmt|,
+decl_stmt|;
+name|gint32
+name|orig_image_ID
+decl_stmt|;
+name|gint32
 name|sanitized_image_ID
 init|=
 literal|0
 decl_stmt|;
 name|gint32
 name|drawable_ID
-decl_stmt|;
-name|gint32
-name|orig_image_ID
 decl_stmt|;
 name|image_ID
 operator|=
@@ -793,6 +781,8 @@ argument_list|,
 operator|&
 name|image_ID
 argument_list|,
+name|run_mode
+argument_list|,
 operator|&
 name|error
 argument_list|)
@@ -805,7 +795,7 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-comment|/* If the sanity check succeeded, the image_ID will point to            * a duplicate image to delete later. */
+comment|/* If the sanity check succeeded, the image_ID will point to            * a duplicate image to delete later.            */
 name|sanitized_image_ID
 operator|=
 name|image_ID
@@ -1248,15 +1238,17 @@ end_comment
 begin_typedef
 DECL|typedef|ifunptr
 typedef|typedef
-name|int
+name|gint
 function_decl|(
 modifier|*
 name|ifunptr
 function_decl|)
 parameter_list|(
-name|int
+name|gint
+name|x
 parameter_list|,
-name|int
+name|gint
+name|y
 parameter_list|)
 function_decl|;
 end_typedef
@@ -1307,7 +1299,7 @@ specifier|static
 name|gint
 name|colors_to_bpp
 parameter_list|(
-name|int
+name|gint
 name|colors
 parameter_list|)
 function_decl|;
@@ -1318,7 +1310,7 @@ specifier|static
 name|gint
 name|bpp_to_colors
 parameter_list|(
-name|int
+name|gint
 name|bpp
 parameter_list|)
 function_decl|;
@@ -1329,10 +1321,10 @@ specifier|static
 name|gint
 name|get_pixel
 parameter_list|(
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|)
 function_decl|;
@@ -1371,29 +1363,29 @@ parameter_list|,
 name|gboolean
 name|gif89
 parameter_list|,
-name|int
-name|GWidth
+name|gint
+name|width
 parameter_list|,
-name|int
-name|GHeight
+name|gint
+name|height
 parameter_list|,
-name|int
-name|Background
+name|gint
+name|background
 parameter_list|,
-name|int
-name|BitsPerPixel
+name|gint
+name|bpp
 parameter_list|,
-name|int
-name|Red
-index|[]
+name|gint
+modifier|*
+name|red
 parameter_list|,
-name|int
-name|Green
-index|[]
+name|gint
+modifier|*
+name|green
 parameter_list|,
-name|int
-name|Blue
-index|[]
+name|gint
+modifier|*
+name|blue
 parameter_list|,
 name|ifunptr
 name|get_pixel
@@ -1410,26 +1402,26 @@ name|FILE
 modifier|*
 name|fp
 parameter_list|,
-name|int
-name|Disposal
+name|gint
+name|disposal
 parameter_list|,
-name|int
-name|Delay89
+name|gint
+name|delay89
 parameter_list|,
-name|int
-name|NumFramesInImage
+name|gint
+name|n_frames
 parameter_list|,
-name|int
-name|GWidth
+name|gint
+name|width
 parameter_list|,
-name|int
-name|GHeight
+name|gint
+name|height
 parameter_list|,
-name|int
-name|Transparent
+name|gint
+name|transparent
 parameter_list|,
-name|int
-name|BitsPerPixel
+name|gint
+name|bpp
 parameter_list|,
 name|ifunptr
 name|get_pixel
@@ -1446,17 +1438,17 @@ name|FILE
 modifier|*
 name|fp
 parameter_list|,
-name|int
-name|GWidth
+name|gint
+name|width
 parameter_list|,
-name|int
-name|GHeight
+name|gint
+name|height
 parameter_list|,
-name|int
-name|GInterlace
+name|gint
+name|interlace
 parameter_list|,
-name|int
-name|BitsPerPixel
+name|gint
+name|bpp
 parameter_list|,
 name|ifunptr
 name|get_pixel
@@ -1492,7 +1484,7 @@ modifier|*
 name|fp
 parameter_list|,
 name|guint
-name|num_loops
+name|n_loops
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1552,7 +1544,7 @@ specifier|static
 name|void
 name|compress
 parameter_list|(
-name|int
+name|gint
 name|init_bits
 parameter_list|,
 name|FILE
@@ -1570,7 +1562,7 @@ specifier|static
 name|void
 name|no_compress
 parameter_list|(
-name|int
+name|gint
 name|init_bits
 parameter_list|,
 name|FILE
@@ -1588,7 +1580,7 @@ specifier|static
 name|void
 name|rle_compress
 parameter_list|(
-name|int
+name|gint
 name|init_bits
 parameter_list|,
 name|FILE
@@ -1606,7 +1598,7 @@ specifier|static
 name|void
 name|normal_compress
 parameter_list|(
-name|int
+name|gint
 name|init_bits
 parameter_list|,
 name|FILE
@@ -1624,12 +1616,12 @@ specifier|static
 name|void
 name|put_word
 parameter_list|(
-name|int
+name|gint
 name|w
 parameter_list|,
 name|FILE
 modifier|*
-name|fp
+name|outfile
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1639,6 +1631,10 @@ specifier|static
 name|void
 name|output
 parameter_list|(
+name|FILE
+modifier|*
+name|outfile
+parameter_list|,
 name|gint
 name|code
 parameter_list|)
@@ -1650,7 +1646,9 @@ specifier|static
 name|void
 name|cl_block
 parameter_list|(
-name|void
+name|FILE
+modifier|*
+name|outfile
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1681,7 +1679,11 @@ specifier|static
 name|void
 name|char_out
 parameter_list|(
-name|int
+name|FILE
+modifier|*
+name|outfile
+parameter_list|,
+name|gint
 name|c
 parameter_list|)
 function_decl|;
@@ -1692,7 +1694,9 @@ specifier|static
 name|void
 name|flush_char
 parameter_list|(
-name|void
+name|FILE
+modifier|*
+name|outfile
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1847,7 +1851,7 @@ name|i
 return|;
 block|}
 block|}
-comment|/* Couldn't find an unused color index within the number of      bits per pixel we wanted.  Will have to increment the number      of colors in the image and assign a transparent pixel there. */
+comment|/* Couldn't find an unused color index within the number of bits per    * pixel we wanted.  Will have to increment the number of colors in    * the image and assign a transparent pixel there.    */
 if|if
 condition|(
 operator|*
@@ -1919,7 +1923,7 @@ block|{
 name|guint32
 name|i
 decl_stmt|;
-comment|/* Each transparent pixel in the image is mapped to a uniform value for      encoding, if image already has<=255 colors */
+comment|/* Each transparent pixel in the image is mapped to a uniform value    * for encoding, if image already has<=255 colors    */
 if|if
 condition|(
 name|transparent
@@ -2247,9 +2251,7 @@ operator|==
 literal|0
 condition|)
 return|return
-operator|(
 literal|0x01
-operator|)
 return|;
 if|if
 condition|(
@@ -2269,20 +2271,16 @@ operator|==
 literal|0
 condition|)
 return|return
-operator|(
 literal|0x02
-operator|)
 return|;
 name|offset
 operator|++
 expr_stmt|;
 block|}
 return|return
-operator|(
 name|gsvals
 operator|.
 name|default_dispose
-operator|)
 return|;
 block|}
 end_function
@@ -2290,7 +2288,7 @@ end_function
 begin_function
 specifier|static
 name|GimpPDBStatusType
-DECL|function|sanity_check (const gchar * filename,gint32 * image_ID,GError ** error)
+DECL|function|sanity_check (const gchar * filename,gint32 * image_ID,GimpRunMode run_mode,GError ** error)
 name|sanity_check
 parameter_list|(
 specifier|const
@@ -2301,6 +2299,9 @@ parameter_list|,
 name|gint32
 modifier|*
 name|image_ID
+parameter_list|,
+name|GimpRunMode
+name|run_mode
 parameter_list|,
 name|GError
 modifier|*
@@ -2604,11 +2605,13 @@ name|cols
 decl_stmt|;
 name|gint
 name|BitsPerPixel
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|liberalBPP
 init|=
 literal|0
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|useBPP
 init|=
 literal|0
@@ -2679,7 +2682,11 @@ operator|&&
 name|comment_was_edited
 condition|)
 block|{
-name|comment_parasite
+name|GimpParasite
+modifier|*
+name|parasite
+decl_stmt|;
+name|parasite
 operator|=
 name|gimp_parasite_new
 argument_list|(
@@ -2705,17 +2712,13 @@ name|gimp_image_attach_parasite
 argument_list|(
 name|orig_image_ID
 argument_list|,
-name|comment_parasite
+name|parasite
 argument_list|)
 expr_stmt|;
 name|gimp_parasite_free
 argument_list|(
-name|comment_parasite
+name|parasite
 argument_list|)
-expr_stmt|;
-name|comment_parasite
-operator|=
-name|NULL
 expr_stmt|;
 block|}
 comment|/* The GIF spec says 7bit ASCII for the comment block. */
@@ -2810,7 +2813,7 @@ literal|0
 index|]
 argument_list|)
 expr_stmt|;
-comment|/* If the image has multiple layers (i.e. will be animated), a comment,      or transparency, then it must be encoded as a GIF89a file, not a vanilla      GIF87a. */
+comment|/* If the image has multiple layers (i.e. will be animated), a    * comment, or transparency, then it must be encoded as a GIF89a    * file, not a vanilla GIF87a.    */
 if|if
 condition|(
 name|nlayers
@@ -3036,7 +3039,7 @@ return|return
 name|FALSE
 return|;
 block|}
-comment|/* find earliest index in palette which is closest to the background      color, and ATTEMPT to use that as the GIF's default background color. */
+comment|/* find earliest index in palette which is closest to the background    * color, and ATTEMPT to use that as the GIF's default background    * color.    */
 for|for
 control|(
 name|i
@@ -3202,7 +3205,7 @@ operator|<
 literal|256
 condition|)
 block|{
-comment|/* we keep track of how many bits we promised to have in liberalBPP,          so that we don't accidentally come under this when doing          clever transparency stuff where we can re-use wasted indices. */
+comment|/* we keep track of how many bits we promised to have in        * liberalBPP, so that we don't accidentally come under this        * when doing clever transparency stuff where we can re-use        * wasted indices.        */
 name|liberalBPP
 operator|=
 name|BitsPerPixel
@@ -3293,7 +3296,7 @@ argument_list|,
 name|get_pixel
 argument_list|)
 expr_stmt|;
-comment|/* If the image has multiple layers it'll be made into an      animated GIF, so write out the infinite-looping extension */
+comment|/* If the image has multiple layers it'll be made into an animated    * GIF, so write out the infinite-looping extension    */
 if|if
 condition|(
 operator|(
@@ -3504,7 +3507,7 @@ name|GIMP_GRAYA_IMAGE
 operator|)
 condition|)
 block|{
-comment|/* Try to find an entry which isn't actually used in the              image, for a transparency index. */
+comment|/* Try to find an entry which isn't actually used in the            * image, for a transparency index.            */
 name|transparent
 operator|=
 name|find_unused_ia_color
@@ -3561,7 +3564,7 @@ operator|!=
 name|liberalBPP
 condition|)
 block|{
-comment|/* We were able to re-use an index within the existing bitspace,              whereas the estimate in the header was pessimistic but still              needs to be upheld... */
+comment|/* We were able to re-use an index within the existing            * bitspace, whereas the estimate in the header was            * pessimistic but still needs to be upheld...            */
 ifdef|#
 directive|ifdef
 name|GIFDEBUG
@@ -4404,7 +4407,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|save_dialog (gint32 image_ID)
 name|save_dialog
 parameter_list|(
@@ -4933,10 +4936,10 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|colors_to_bpp (int colors)
+DECL|function|colors_to_bpp (gint colors)
 name|colors_to_bpp
 parameter_list|(
-name|int
+name|gint
 name|colors
 parameter_list|)
 block|{
@@ -5052,10 +5055,10 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|bpp_to_colors (int bpp)
+DECL|function|bpp_to_colors (gint bpp)
 name|bpp_to_colors
 parameter_list|(
-name|int
+name|gint
 name|bpp
 parameter_list|)
 block|{
@@ -5094,14 +5097,14 @@ end_function
 
 begin_function
 specifier|static
-name|int
-DECL|function|get_pixel (int x,int y)
+name|gint
+DECL|function|get_pixel (gint x,gint y)
 name|get_pixel
 parameter_list|(
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|)
 block|{
@@ -5331,7 +5334,7 @@ end_comment
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|gif_next_pixel (ifunptr getpixel)
 name|gif_next_pixel
 parameter_list|(
@@ -5339,7 +5342,7 @@ name|ifunptr
 name|getpixel
 parameter_list|)
 block|{
-name|int
+name|gint
 name|r
 decl_stmt|;
 if|if
@@ -5382,7 +5385,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gif_encode_header (FILE * fp,gboolean gif89,int GWidth,int GHeight,int Background,int BitsPerPixel,int Red[],int Green[],int Blue[],ifunptr get_pixel)
+DECL|function|gif_encode_header (FILE * fp,gboolean gif89,gint GWidth,gint GHeight,gint Background,gint BitsPerPixel,gint Red[],gint Green[],gint Blue[],ifunptr get_pixel)
 name|gif_encode_header
 parameter_list|(
 name|FILE
@@ -5392,27 +5395,27 @@ parameter_list|,
 name|gboolean
 name|gif89
 parameter_list|,
-name|int
+name|gint
 name|GWidth
 parameter_list|,
-name|int
+name|gint
 name|GHeight
 parameter_list|,
-name|int
+name|gint
 name|Background
 parameter_list|,
-name|int
+name|gint
 name|BitsPerPixel
 parameter_list|,
-name|int
+name|gint
 name|Red
 index|[]
 parameter_list|,
-name|int
+name|gint
 name|Green
 index|[]
 parameter_list|,
-name|int
+name|gint
 name|Blue
 index|[]
 parameter_list|,
@@ -5420,21 +5423,21 @@ name|ifunptr
 name|get_pixel
 parameter_list|)
 block|{
-name|int
+name|gint
 name|B
 decl_stmt|;
-name|int
+name|gint
 name|RWidth
 decl_stmt|,
 name|RHeight
 decl_stmt|;
-name|int
+name|gint
 name|Resolution
 decl_stmt|;
-name|int
+name|gint
 name|ColorMapSize
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|ColorMapSize
@@ -6525,15 +6528,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|g_outfile
-specifier|static
-name|FILE
-modifier|*
-name|g_outfile
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|ClearCode
 specifier|static
 name|int
@@ -6670,10 +6664,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|no_compress (int init_bits,FILE * outfile,ifunptr ReadValue)
+DECL|function|no_compress (gint init_bits,FILE * outfile,ifunptr ReadValue)
 name|no_compress
 parameter_list|(
-name|int
+name|gint
 name|init_bits
 parameter_list|,
 name|FILE
@@ -6684,14 +6678,14 @@ name|ifunptr
 name|ReadValue
 parameter_list|)
 block|{
-name|long
+name|glong
 name|fcode
 decl_stmt|;
 name|gint
 name|i
 comment|/* = 0 */
 decl_stmt|;
-name|int
+name|gint
 name|c
 decl_stmt|;
 name|gint
@@ -6700,17 +6694,13 @@ decl_stmt|;
 name|gint
 name|hsize_reg
 decl_stmt|;
-name|int
+name|gint
 name|hshift
 decl_stmt|;
-comment|/*    * Set up the globals:  g_init_bits - initial number of bits    *                      g_outfile   - pointer to output file    */
+comment|/*    * Set up the globals:  g_init_bits - initial number of bits    */
 name|g_init_bits
 operator|=
 name|init_bits
-expr_stmt|;
-name|g_outfile
-operator|=
-name|outfile
 expr_stmt|;
 name|cur_bits
 operator|=
@@ -6829,6 +6819,8 @@ expr_stmt|;
 comment|/* clear hash table */
 name|output
 argument_list|(
+name|outfile
+argument_list|,
 operator|(
 name|gint
 operator|)
@@ -6888,6 +6880,8 @@ expr_stmt|;
 comment|/* xor hashing */
 name|output
 argument_list|(
+name|outfile
+argument_list|,
 operator|(
 name|gint
 operator|)
@@ -6927,12 +6921,16 @@ expr_stmt|;
 block|}
 else|else
 name|cl_block
-argument_list|()
+argument_list|(
+name|outfile
+argument_list|)
 expr_stmt|;
 block|}
 comment|/*    * Put out the final code.    */
 name|output
 argument_list|(
+name|outfile
+argument_list|,
 operator|(
 name|gint
 operator|)
@@ -6944,6 +6942,8 @@ name|out_count
 expr_stmt|;
 name|output
 argument_list|(
+name|outfile
+argument_list|,
 operator|(
 name|gint
 operator|)
@@ -6994,14 +6994,10 @@ decl_stmt|;
 name|int
 name|hshift
 decl_stmt|;
-comment|/*    * Set up the globals:  g_init_bits - initial number of bits    *                      g_outfile   - pointer to output file    */
+comment|/*    * Set up the globals:  g_init_bits - initial number of bits    */
 name|g_init_bits
 operator|=
 name|init_bits
-expr_stmt|;
-name|g_outfile
-operator|=
-name|outfile
 expr_stmt|;
 name|cur_bits
 operator|=
@@ -7122,6 +7118,8 @@ expr_stmt|;
 comment|/* clear hash table */
 name|output
 argument_list|(
+name|outfile
+argument_list|,
 operator|(
 name|gint
 operator|)
@@ -7294,6 +7292,8 @@ name|nomatch
 label|:
 name|output
 argument_list|(
+name|outfile
+argument_list|,
 operator|(
 name|gint
 operator|)
@@ -7335,12 +7335,16 @@ expr_stmt|;
 block|}
 else|else
 name|cl_block
-argument_list|()
+argument_list|(
+name|outfile
+argument_list|)
 expr_stmt|;
 block|}
 comment|/*    * Put out the final code.    */
 name|output
 argument_list|(
+name|outfile
+argument_list|,
 operator|(
 name|gint
 operator|)
@@ -7352,6 +7356,8 @@ name|out_count
 expr_stmt|;
 name|output
 argument_list|(
+name|outfile
+argument_list|,
 operator|(
 name|gint
 operator|)
@@ -7400,14 +7406,10 @@ decl_stmt|;
 name|int
 name|hshift
 decl_stmt|;
-comment|/*    * Set up the globals:  g_init_bits - initial number of bits    *                      g_outfile   - pointer to output file    */
+comment|/*    * Set up the globals:  g_init_bits - initial number of bits    */
 name|g_init_bits
 operator|=
 name|init_bits
-expr_stmt|;
-name|g_outfile
-operator|=
-name|outfile
 expr_stmt|;
 name|cur_bits
 operator|=
@@ -7526,6 +7528,8 @@ expr_stmt|;
 comment|/* clear hash table */
 name|output
 argument_list|(
+name|outfile
+argument_list|,
 operator|(
 name|gint
 operator|)
@@ -7690,6 +7694,8 @@ name|nomatch
 label|:
 name|output
 argument_list|(
+name|outfile
+argument_list|,
 operator|(
 name|gint
 operator|)
@@ -7729,12 +7735,16 @@ expr_stmt|;
 block|}
 else|else
 name|cl_block
-argument_list|()
+argument_list|(
+name|outfile
+argument_list|)
 expr_stmt|;
 block|}
 comment|/*    * Put out the final code.    */
 name|output
 argument_list|(
+name|outfile
+argument_list|,
 operator|(
 name|gint
 operator|)
@@ -7746,6 +7756,8 @@ name|out_count
 expr_stmt|;
 name|output
 argument_list|(
+name|outfile
+argument_list|,
 operator|(
 name|gint
 operator|)
@@ -7762,9 +7774,13 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|output (gint code)
+DECL|function|output (FILE * outfile,gint code)
 name|output
 parameter_list|(
+name|FILE
+modifier|*
+name|outfile
+parameter_list|,
 name|gint
 name|code
 parameter_list|)
@@ -7811,9 +7827,10 @@ condition|)
 block|{
 name|char_out
 argument_list|(
+name|outfile
+argument_list|,
 call|(
-name|unsigned
-name|int
+name|guint
 call|)
 argument_list|(
 name|cur_accum
@@ -7902,9 +7919,10 @@ condition|)
 block|{
 name|char_out
 argument_list|(
+name|outfile
+argument_list|,
 call|(
-name|unsigned
-name|int
+name|guint
 call|)
 argument_list|(
 name|cur_accum
@@ -7923,18 +7941,20 @@ literal|8
 expr_stmt|;
 block|}
 name|flush_char
-argument_list|()
+argument_list|(
+name|outfile
+argument_list|)
 expr_stmt|;
 name|fflush
 argument_list|(
-name|g_outfile
+name|outfile
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|ferror
 argument_list|(
-name|g_outfile
+name|outfile
 argument_list|)
 condition|)
 name|g_message
@@ -7956,10 +7976,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|cl_block (void)
+DECL|function|cl_block (FILE * outfile)
 name|cl_block
 parameter_list|(
-name|void
+name|FILE
+modifier|*
+name|outfile
 parameter_list|)
 comment|/* table clear for block compress */
 block|{
@@ -7983,6 +8005,8 @@ literal|1
 expr_stmt|;
 name|output
 argument_list|(
+name|outfile
+argument_list|,
 operator|(
 name|gint
 operator|)
@@ -8269,10 +8293,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|char_out (int c)
+DECL|function|char_out (FILE * outfile,gint c)
 name|char_out
 parameter_list|(
-name|int
+name|FILE
+modifier|*
+name|outfile
+parameter_list|,
+name|gint
 name|c
 parameter_list|)
 block|{
@@ -8291,7 +8319,9 @@ operator|>=
 literal|254
 condition|)
 name|flush_char
-argument_list|()
+argument_list|(
+name|outfile
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -8303,10 +8333,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|flush_char (void)
+DECL|function|flush_char (FILE * outfile)
 name|flush_char
 parameter_list|(
-name|void
+name|FILE
+modifier|*
+name|outfile
 parameter_list|)
 block|{
 if|if
@@ -8320,7 +8352,7 @@ name|fputc
 argument_list|(
 name|a_count
 argument_list|,
-name|g_outfile
+name|outfile
 argument_list|)
 expr_stmt|;
 name|fwrite
@@ -8331,7 +8363,7 @@ literal|1
 argument_list|,
 name|a_count
 argument_list|,
-name|g_outfile
+name|outfile
 argument_list|)
 expr_stmt|;
 name|a_count
