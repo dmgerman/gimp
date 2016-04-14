@@ -56,6 +56,24 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_display_shell_canvas_grab_notify
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gboolean
+name|was_grabbed
+parameter_list|,
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_display_shell_buffer_stroke
 parameter_list|(
 name|GimpMotionBuffer

@@ -365,7 +365,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c7b7a90103
+DECL|enum|__anon2bdd4ec80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -399,7 +399,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c7b7a90203
+DECL|enum|__anon2bdd4ec80203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2365,6 +2365,22 @@ argument_list|,
 name|shell
 operator|->
 name|vrule
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|shell
+operator|->
+name|canvas
+argument_list|,
+literal|"grab-notify"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_display_shell_canvas_grab_notify
+argument_list|)
+argument_list|,
+name|shell
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
