@@ -188,11 +188,11 @@ parameter_list|,
 name|gboolean
 name|enabled
 parameter_list|,
-name|GimpOrientationType
-name|orientation
+name|GimpAlignmentType
+name|alignment
 parameter_list|,
 name|gdouble
-name|percent_visible
+name|split_position
 parameter_list|)
 function_decl|;
 end_function_decl
