@@ -372,7 +372,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f05f180103
+DECL|enum|__anon2c19d1030103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -469,7 +469,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f05f180203
+DECL|enum|__anon2c19d1030203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2316,6 +2316,12 @@ operator|->
 name|get_new_preview
 operator|=
 name|gimp_image_get_new_preview
+expr_stmt|;
+name|viewable_class
+operator|->
+name|get_new_pixbuf
+operator|=
+name|gimp_image_get_new_pixbuf
 expr_stmt|;
 name|viewable_class
 operator|->

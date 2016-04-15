@@ -207,7 +207,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b533e3d0103
+DECL|enum|__anon27d836ff0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -223,7 +223,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b533e3d0203
+DECL|enum|__anon27d836ff0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1076,6 +1076,12 @@ operator|->
 name|get_new_preview
 operator|=
 name|gimp_drawable_get_new_preview
+expr_stmt|;
+name|viewable_class
+operator|->
+name|get_new_pixbuf
+operator|=
+name|gimp_drawable_get_new_pixbuf
 expr_stmt|;
 name|filter_class
 operator|->
