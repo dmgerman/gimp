@@ -171,30 +171,42 @@ modifier|*
 name|color_profile
 decl_stmt|;
 comment|/*  image's color profile        */
-DECL|member|transform_to_srgb
+comment|/*  Cached color transforms: from layer to sRGB u8 and double, and back    */
+DECL|member|transform_to_srgb_u8
 name|GimpColorTransform
-name|transform_to_srgb
+name|transform_to_srgb_u8
 decl_stmt|;
-comment|/*  from layer pixels to sRGB    */
-DECL|member|transform_from_srgb
+DECL|member|transform_from_srgb_u8
 name|GimpColorTransform
-name|transform_from_srgb
+name|transform_from_srgb_u8
 decl_stmt|;
-comment|/*  from sRGB to layer pixels    */
+DECL|member|transform_to_srgb_double
+name|GimpColorTransform
+name|transform_to_srgb_double
+decl_stmt|;
+DECL|member|transform_from_srgb_double
+name|GimpColorTransform
+name|transform_from_srgb_double
+decl_stmt|;
+comment|/*  Babl formats for above transforms: layer, sRGB u8, sRGB double         */
 DECL|member|transform_layer_format
 specifier|const
 name|Babl
 modifier|*
 name|transform_layer_format
 decl_stmt|;
-comment|/*  layer format for transforms  */
-DECL|member|transform_srgb_format
+DECL|member|transform_srgb_u8_format
 specifier|const
 name|Babl
 modifier|*
-name|transform_srgb_format
+name|transform_srgb_u8_format
 decl_stmt|;
-comment|/*  sRGB format for transforms   */
+DECL|member|transform_srgb_double_format
+specifier|const
+name|Babl
+modifier|*
+name|transform_srgb_double_format
+decl_stmt|;
 DECL|member|metadata
 name|GimpMetadata
 modifier|*
