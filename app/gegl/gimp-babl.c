@@ -1056,7 +1056,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c36dd000108
+DECL|struct|__anon2af7e8820108
 block|{
 DECL|member|name
 specifier|const
@@ -1904,8 +1904,8 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_babl_get_description (const Babl * babl)
-name|gimp_babl_get_description
+DECL|function|gimp_babl_format_get_description (const Babl * babl)
+name|gimp_babl_format_get_description
 parameter_list|(
 specifier|const
 name|Babl

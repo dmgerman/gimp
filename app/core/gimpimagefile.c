@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a2ceae0103
+DECL|enum|__anon2af474600103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -4027,7 +4027,7 @@ argument_list|)
 argument_list|,
 literal|"image-type"
 argument_list|,
-name|gimp_babl_get_description
+name|gimp_babl_format_get_description
 argument_list|(
 name|format
 argument_list|)
@@ -4114,7 +4114,7 @@ name|thumbnail
 argument_list|,
 literal|"image-type"
 argument_list|,
-name|gimp_babl_get_description
+name|gimp_babl_format_get_description
 argument_list|(
 name|format
 argument_list|)

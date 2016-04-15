@@ -895,7 +895,7 @@ name|i
 argument_list|,
 literal|"%s"
 argument_list|,
-name|gimp_babl_get_description
+name|gimp_babl_format_get_description
 argument_list|(
 name|format
 argument_list|)

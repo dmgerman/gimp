@@ -29,7 +29,7 @@ begin_function_decl
 specifier|const
 name|gchar
 modifier|*
-name|gimp_babl_get_description
+name|gimp_babl_format_get_description
 parameter_list|(
 specifier|const
 name|Babl
