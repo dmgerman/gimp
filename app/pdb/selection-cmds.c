@@ -3756,8 +3756,7 @@ literal|"gimp-selection-flood"
 argument_list|,
 literal|"Remove holes from the image's selection"
 argument_list|,
-literal|"This procedure removes holes from the selection, that can come from selecting a patchy area with the Fuzzy Select Tool. "
-literal|"In technical terms this procedure floods the selection. See the Algorithms page in the developer wiki for details."
+literal|"This procedure removes holes from the selection, that can come from selecting a patchy area with the Fuzzy Select Tool. In technical terms this procedure floods the selection. See the Algorithms page in the developer wiki for details."
 argument_list|,
 literal|"Ell"
 argument_list|,

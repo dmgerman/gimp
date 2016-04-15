@@ -1110,7 +1110,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_flood:  * @image_ID: The image.  *  * Flood the image's selection  *  * This procedure floods the selection. Flooding assigns to each pixel  * of the selection mask the minimum of the maxima of all paths from  * that pixel to the outside, as if the selection mask were a height  * map of a terrain flooded with water.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_selection_flood:  * @image_ID: The image.  *  * Remove holes from the image's selection  *  * This procedure removes holes from the selection, that can come from  * selecting a patchy area with the Fuzzy Select Tool. In technical  * terms this procedure floods the selection. See the Algorithms page  * in the developer wiki for details.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
