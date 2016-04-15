@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298a3c270103
+DECL|enum|__anon296d47870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2546,6 +2546,16 @@ name|new_name
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* We must block the edited callback at this point, because either        * the call to gimp_object_take_name() or gtk_tree_store_set() below        * will trigger a re-ordering and emission of the rows_reordered signal.        * This in turn will stop the editing operation and cause a call to this        * very callback function again. Because the order of the rows has        * changed by then, "path_str" will point at another item and cause the        * name of this item to be changed as well.        */
+name|g_signal_handlers_block_by_func
+argument_list|(
+name|cell
+argument_list|,
+name|gimp_data_factory_view_tree_name_edited
+argument_list|,
+name|view
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp_data_is_writable
@@ -2624,6 +2634,15 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
+name|g_signal_handlers_unblock_by_func
+argument_list|(
+name|cell
+argument_list|,
+name|gimp_data_factory_view_tree_name_edited
+argument_list|,
+name|view
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|renderer
