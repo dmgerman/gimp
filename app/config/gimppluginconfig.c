@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0bee9a0103
+DECL|enum|__anon297902e90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -203,9 +203,9 @@ name|object_class
 argument_list|,
 name|PROP_FRACTALEXPLORER_PATH
 argument_list|,
-literal|"Fractal Explorer path"
-argument_list|,
 literal|"fractalexplorer-path"
+argument_list|,
+literal|"Fractal Explorer path"
 argument_list|,
 name|FRACTALEXPLORER_PATH_BLURB
 argument_list|,
