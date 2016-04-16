@@ -1067,6 +1067,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_size_request
+argument_list|(
+name|widget
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+literal|150
+argument_list|)
+expr_stmt|;
 name|gtk_scrolled_window_set_shadow_type
 argument_list|(
 name|GTK_SCROLLED_WINDOW
@@ -1486,7 +1496,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27e55b650108
+DECL|struct|__anon27dca6020108
 block|{
 DECL|member|config_type
 specifier|const
@@ -2061,7 +2071,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon27e55b650208
+DECL|struct|__anon27dca6020208
 block|{
 DECL|member|kelvin
 name|gdouble
