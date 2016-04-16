@@ -363,7 +363,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b15dc90103
+DECL|enum|__anon2ad129d70103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -391,7 +391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b15dc90203
+DECL|enum|__anon2ad129d70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5045,6 +5045,11 @@ operator|&
 name|handled
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|handled
+condition|)
+return|return;
 comment|/* Get rid of images without display. We do this *after* handling the    * usual exit callbacks, because the things that are torn down there    * might have references to these images (for instance GimpActions    * in the UI manager).    */
 while|while
 condition|(
