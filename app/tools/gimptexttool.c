@@ -3057,7 +3057,7 @@ operator|->
 name|text
 condition|)
 block|{
-name|gimp_text_tool_editor_update_im_rect
+name|gimp_text_tool_editor_update_im_cursor
 argument_list|(
 name|text_tool
 argument_list|)
@@ -3179,7 +3179,7 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_text_tool_editor_update_im_rect
+name|gimp_text_tool_editor_update_im_cursor
 argument_list|(
 name|text_tool
 argument_list|)

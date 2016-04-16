@@ -180,7 +180,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_text_tool_editor_update_im_rect
+name|gimp_text_tool_editor_update_im_cursor
 parameter_list|(
 name|GimpTextTool
 modifier|*
