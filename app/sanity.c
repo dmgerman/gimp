@@ -1583,6 +1583,8 @@ literal|"gegl:gaussian-blur"
 block|,
 literal|"gegl:gaussian-blur-selective"
 block|,
+literal|"gegl:gegl"
+block|,
 literal|"gegl:grid"
 block|,
 literal|"gegl:high-pass"

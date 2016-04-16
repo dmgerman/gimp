@@ -1143,6 +1143,28 @@ comment|/* FIXME GIMP_HELP_FILTER_GAUSSIAN_BLUR_SELECTIVE */
 block|}
 block|,
 block|{
+literal|"filters-gegl-graph"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_GEGL graph..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:gegl"
+block|,
+name|NULL
+comment|/* FIXME GIMP_HELP_FILTER_GEGL_GRAPH */
+block|}
+block|,
+block|{
 literal|"filters-grid"
 block|,
 name|GIMP_STOCK_GRID
@@ -3094,6 +3116,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"filters-gaussian-blur-selective"
+argument_list|,
+name|writable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"filters-gegl-graph"
 argument_list|,
 name|writable
 argument_list|)
