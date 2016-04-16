@@ -109,7 +109,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2f6a150103
+DECL|enum|__anon296c55f00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -526,23 +526,6 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_PROP_BOOLEAN
-argument_list|(
-name|object_class
-argument_list|,
-name|PROP_PERFECT_MOUSE
-argument_list|,
-literal|"perfect-mouse"
-argument_list|,
-literal|"Perfect mouse"
-argument_list|,
-name|PERFECT_MOUSE_BLURB
-argument_list|,
-name|TRUE
-argument_list|,
-name|GIMP_PARAM_STATIC_STRINGS
-argument_list|)
-expr_stmt|;
 name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
@@ -945,6 +928,23 @@ operator||
 name|GIMP_CONFIG_PARAM_IGNORE
 argument_list|)
 expr_stmt|;
+name|GIMP_CONFIG_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_PERFECT_MOUSE
+argument_list|,
+literal|"perfect-mouse"
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1231,19 +1231,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_PERFECT_MOUSE
-case|:
-name|display_config
-operator|->
-name|perfect_mouse
-operator|=
-name|g_value_get_boolean
-argument_list|(
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
 name|PROP_CURSOR_MODE
 case|:
 name|display_config
@@ -1512,6 +1499,9 @@ name|PROP_CONFIRM_ON_CLOSE
 case|:
 case|case
 name|PROP_XOR_COLOR
+case|:
+case|case
+name|PROP_PERFECT_MOUSE
 case|:
 comment|/* ignored */
 break|break;
@@ -1671,19 +1661,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_PERFECT_MOUSE
-case|:
-name|g_value_set_boolean
-argument_list|(
-name|value
-argument_list|,
-name|display_config
-operator|->
-name|perfect_mouse
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
 name|PROP_CURSOR_MODE
 case|:
 name|g_value_set_enum
@@ -1908,6 +1885,9 @@ name|PROP_CONFIRM_ON_CLOSE
 case|:
 case|case
 name|PROP_XOR_COLOR
+case|:
+case|case
+name|PROP_PERFECT_MOUSE
 case|:
 comment|/* ignored */
 break|break;

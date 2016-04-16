@@ -117,15 +117,6 @@ value|_("How to handle embedded color profiles when opening a file.")
 end_define
 
 begin_define
-DECL|macro|CURSOR_FORMAT_BLURB
-define|#
-directive|define
-name|CURSOR_FORMAT_BLURB
-define|\
-value|_("Sets the pixel format to use for mouse pointers.")
-end_define
-
-begin_define
 DECL|macro|CURSOR_MODE_BLURB
 define|#
 directive|define
@@ -677,15 +668,6 @@ define|#
 directive|define
 name|PATTERN_PATH_WRITABLE_BLURB
 value|""
-end_define
-
-begin_define
-DECL|macro|PERFECT_MOUSE_BLURB
-define|#
-directive|define
-name|PERFECT_MOUSE_BLURB
-define|\
-value|_("When enabled, the X server is queried for the mouse's current position " \   "on each motion event, rather than relying on the position hint.  This " \   "means painting with large brushes should be more accurate, but it may " \   "be slower.  Conversely, on some X servers enabling this option results " \   "in faster painting.")
 end_define
 
 begin_define

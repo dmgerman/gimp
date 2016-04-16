@@ -140,10 +140,6 @@ DECL|member|initial_zoom_to_fit
 name|gboolean
 name|initial_zoom_to_fit
 decl_stmt|;
-DECL|member|perfect_mouse
-name|gboolean
-name|perfect_mouse
-decl_stmt|;
 DECL|member|cursor_mode
 name|GimpCursorMode
 name|cursor_mode

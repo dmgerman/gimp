@@ -221,20 +221,6 @@ DECL|member|help_browser
 name|GimpHelpBrowserType
 name|help_browser
 decl_stmt|;
-comment|/* action search preferences */
-DECL|member|search_show_unavailable
-name|gboolean
-name|search_show_unavailable
-decl_stmt|;
-DECL|member|action_history_size
-name|gint
-name|action_history_size
-decl_stmt|;
-DECL|member|web_browser
-name|gchar
-modifier|*
-name|web_browser
-decl_stmt|;
 DECL|member|user_manual_online
 name|gboolean
 name|user_manual_online
@@ -243,6 +229,14 @@ DECL|member|user_manual_online_uri
 name|gchar
 modifier|*
 name|user_manual_online_uri
+decl_stmt|;
+DECL|member|search_show_unavailable
+name|gboolean
+name|search_show_unavailable
+decl_stmt|;
+DECL|member|action_history_size
+name|gint
+name|action_history_size
 decl_stmt|;
 DECL|member|dock_window_hint
 name|GimpWindowHint
