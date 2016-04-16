@@ -66,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be3e6f00103
+DECL|enum|__anon2ad6dc6d0103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_PROTANOPIA
 name|COLORBLIND_DEFICIENCY_PROTANOPIA
@@ -341,7 +341,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be3e6f00203
+DECL|enum|__anon2ad6dc6d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -742,13 +742,18 @@ name|set_property
 operator|=
 name|cdisplay_colorblind_set_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DEFICIENCY
 argument_list|,
 literal|"deficiency"
+argument_list|,
+name|_
+argument_list|(
+literal|"Deficiency"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

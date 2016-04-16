@@ -167,7 +167,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b73d8b10103
+DECL|enum|__anon2c39ece10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -403,13 +403,18 @@ name|set_property
 operator|=
 name|cdisplay_gamma_set_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_GAMMA
 argument_list|,
 literal|"gamma"
+argument_list|,
+name|_
+argument_list|(
+literal|"Gamma"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
