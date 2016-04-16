@@ -363,7 +363,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e19af80103
+DECL|enum|__anon28b15dc90103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -391,7 +391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e19af80203
+DECL|enum|__anon28b15dc90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3508,10 +3508,6 @@ name|gboolean
 name|force
 parameter_list|)
 block|{
-name|GList
-modifier|*
-name|image_iter
-decl_stmt|;
 if|if
 condition|(
 name|gimp
@@ -3525,33 +3521,6 @@ argument_list|,
 name|G_STRFUNC
 argument_list|)
 expr_stmt|;
-comment|/* get rid of images without display */
-while|while
-condition|(
-operator|(
-name|image_iter
-operator|=
-name|gimp_get_image_iter
-argument_list|(
-name|gimp
-argument_list|)
-operator|)
-condition|)
-block|{
-name|GimpImage
-modifier|*
-name|image
-init|=
-name|image_iter
-operator|->
-name|data
-decl_stmt|;
-name|g_object_unref
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
-block|}
 name|gimp_plug_in_manager_exit
 argument_list|(
 name|gimp
@@ -5030,6 +4999,10 @@ block|{
 name|gboolean
 name|handled
 decl_stmt|;
+name|GList
+modifier|*
+name|image_iter
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
@@ -5072,6 +5045,33 @@ operator|&
 name|handled
 argument_list|)
 expr_stmt|;
+comment|/* Get rid of images without display. We do this *after* handling the    * usual exit callbacks, because the things that are torn down there    * might have references to these images (for instance GimpActions    * in the UI manager).    */
+while|while
+condition|(
+operator|(
+name|image_iter
+operator|=
+name|gimp_get_image_iter
+argument_list|(
+name|gimp
+argument_list|)
+operator|)
+condition|)
+block|{
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|image_iter
+operator|->
+name|data
+decl_stmt|;
+name|g_object_unref
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
