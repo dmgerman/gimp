@@ -210,7 +210,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c70e1eb0103
+DECL|enum|__anon2b42c92c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -507,13 +507,18 @@ name|get_property
 operator|=
 name|gimp_color_config_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_MODE
 argument_list|,
 literal|"mode"
+argument_list|,
+name|_
+argument_list|(
+literal|"Mode of operation"
+argument_list|)
 argument_list|,
 name|COLOR_MANAGEMENT_MODE_BLURB
 argument_list|,
@@ -524,13 +529,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_RGB_PROFILE
 argument_list|,
 literal|"rgb-profile"
+argument_list|,
+name|_
+argument_list|(
+literal|"Preferred RGB profile"
+argument_list|)
 argument_list|,
 name|RGB_PROFILE_BLURB
 argument_list|,
@@ -541,13 +551,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_GRAY_PROFILE
 argument_list|,
 literal|"gray-profile"
+argument_list|,
+name|_
+argument_list|(
+literal|"Preferred grayscale profile"
+argument_list|)
 argument_list|,
 name|GRAY_PROFILE_BLURB
 argument_list|,
@@ -558,13 +573,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_CMYK_PROFILE
 argument_list|,
 literal|"cmyk-profile"
+argument_list|,
+name|_
+argument_list|(
+literal|"CMYK profile"
+argument_list|)
 argument_list|,
 name|CMYK_PROFILE_BLURB
 argument_list|,
@@ -575,13 +595,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DISPLAY_PROFILE
 argument_list|,
 literal|"display-profile"
+argument_list|,
+name|_
+argument_list|(
+literal|"Monitor profile"
+argument_list|)
 argument_list|,
 name|DISPLAY_PROFILE_BLURB
 argument_list|,
@@ -592,13 +617,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DISPLAY_PROFILE_FROM_GDK
 argument_list|,
 literal|"display-profile-from-gdk"
+argument_list|,
+name|_
+argument_list|(
+literal|"Use the system monitor profile"
+argument_list|)
 argument_list|,
 name|DISPLAY_PROFILE_FROM_GDK_BLURB
 argument_list|,
@@ -607,13 +637,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_PRINTER_PROFILE
 argument_list|,
 literal|"printer-profile"
+argument_list|,
+name|_
+argument_list|(
+literal|"Print simulation profile"
+argument_list|)
 argument_list|,
 name|PRINTER_PROFILE_BLURB
 argument_list|,
@@ -624,13 +659,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DISPLAY_RENDERING_INTENT
 argument_list|,
 literal|"display-rendering-intent"
+argument_list|,
+name|_
+argument_list|(
+literal|"Display rendering intent"
+argument_list|)
 argument_list|,
 name|DISPLAY_RENDERING_INTENT_BLURB
 argument_list|,
@@ -641,13 +681,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DISPLAY_USE_BPC
 argument_list|,
 literal|"display-use-black-point-compensation"
+argument_list|,
+name|_
+argument_list|(
+literal|"Use black point compensation for the display"
+argument_list|)
 argument_list|,
 name|DISPLAY_USE_BPC_BLURB
 argument_list|,
@@ -656,13 +701,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SIMULATION_RENDERING_INTENT
 argument_list|,
 literal|"simulation-rendering-intent"
+argument_list|,
+name|_
+argument_list|(
+literal|"Softproof rendering intent"
+argument_list|)
 argument_list|,
 name|SIMULATION_RENDERING_INTENT_BLURB
 argument_list|,
@@ -673,13 +723,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SIMULATION_USE_BPC
 argument_list|,
 literal|"simulation-use-black-point-compensation"
+argument_list|,
+name|_
+argument_list|(
+literal|"Use black point compensation for softproofing"
+argument_list|)
 argument_list|,
 name|SIMULATION_USE_BPC_BLURB
 argument_list|,
@@ -688,13 +743,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SIMULATION_GAMUT_CHECK
 argument_list|,
 literal|"simulation-gamut-check"
+argument_list|,
+name|_
+argument_list|(
+literal|"Mark out of gamut colors"
+argument_list|)
 argument_list|,
 name|SIMULATION_GAMUT_CHECK_BLURB
 argument_list|,
@@ -703,13 +763,18 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_RGB
+name|GIMP_CONFIG_PROP_RGB
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_OUT_OF_GAMUT_COLOR
 argument_list|,
 literal|"out-of-gamut-color"
+argument_list|,
+name|_
+argument_list|(
+literal|"Out of gammut warning color"
+argument_list|)
 argument_list|,
 name|OUT_OF_GAMUT_COLOR_BLURB
 argument_list|,
@@ -721,13 +786,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_STRING
+name|GIMP_CONFIG_PROP_STRING
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DISPLAY_MODULE
 argument_list|,
 literal|"display-module"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
