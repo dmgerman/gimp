@@ -451,6 +451,12 @@ begin_comment
 comment|/*  deprecated macros, they all lack the "nick" parameter  */
 end_comment
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
+
 begin_define
 DECL|macro|GIMP_CONFIG_INSTALL_PROP_BOOLEAN (class,id,name,blurb,default,flags)
 define|#
@@ -744,6 +750,15 @@ parameter_list|)
 define|\
 value|GIMP_CONFIG_PROP_POINTER(class, id, name, NULL, blurb, flags)
 end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DISABLE_DEPRECATED */
+end_comment
 
 begin_endif
 unit|G_END_DECLS
