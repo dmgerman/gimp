@@ -94,7 +94,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a40a02d0103
+DECL|enum|__anon2af8e41d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -367,13 +367,15 @@ name|get_property
 operator|=
 name|gimp_gui_config_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_MOVE_TOOL_CHANGES_ACTIVE
 argument_list|,
 literal|"move-tool-changes-active"
+argument_list|,
+literal|"Move tool changes active layer"
 argument_list|,
 name|MOVE_TOOL_CHANGES_ACTIVE_BLURB
 argument_list|,
@@ -382,13 +384,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_INT
+name|GIMP_CONFIG_PROP_INT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_IMAGE_MAP_TOOL_MAX_RECENT
 argument_list|,
 literal|"image-map-tool-max-recent"
+argument_list|,
+literal|"Max recent settings to keep in filters"
 argument_list|,
 name|IMAGE_MAP_TOOL_MAX_RECENT_BLURB
 argument_list|,
@@ -401,13 +405,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_TRUST_DIRTY_FLAG
 argument_list|,
 literal|"trust-dirty-flag"
+argument_list|,
+literal|"Trust dirty flag"
 argument_list|,
 name|TRUST_DIRTY_FLAG_BLURB
 argument_list|,
@@ -416,13 +422,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SAVE_DEVICE_STATUS
 argument_list|,
 literal|"save-device-status"
+argument_list|,
+literal|"Save device status"
 argument_list|,
 name|SAVE_DEVICE_STATUS_BLURB
 argument_list|,
@@ -431,13 +439,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SAVE_SESSION_INFO
 argument_list|,
 literal|"save-session-info"
+argument_list|,
+literal|"Save session"
 argument_list|,
 name|SAVE_SESSION_INFO_BLURB
 argument_list|,
@@ -446,13 +456,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_RESTORE_SESSION
 argument_list|,
 literal|"restore-session"
+argument_list|,
+literal|"Restore session"
 argument_list|,
 name|RESTORE_SESSION_BLURB
 argument_list|,
@@ -461,13 +473,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_RESTORE_MONITOR
 argument_list|,
 literal|"restore-monitor"
+argument_list|,
+literal|"Restore monitor"
 argument_list|,
 name|RESTORE_MONITOR_BLURB
 argument_list|,
@@ -476,13 +490,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SAVE_TOOL_OPTIONS
 argument_list|,
 literal|"save-tool-options"
+argument_list|,
+literal|"Save tool options"
 argument_list|,
 name|SAVE_TOOL_OPTIONS_BLURB
 argument_list|,
@@ -491,13 +507,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_TOOLTIPS
 argument_list|,
 literal|"show-tooltips"
+argument_list|,
+literal|"Show tooltips"
 argument_list|,
 name|SHOW_TOOLTIPS_BLURB
 argument_list|,
@@ -508,13 +526,15 @@ operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_TEAROFF_MENUS
 argument_list|,
 literal|"tearoff-menus"
+argument_list|,
+literal|"Tearoff menus"
 argument_list|,
 name|TEAROFF_MENUS_BLURB
 argument_list|,
@@ -523,13 +543,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_CAN_CHANGE_ACCELS
 argument_list|,
 literal|"can-change-accels"
+argument_list|,
+literal|"Can change accelerators"
 argument_list|,
 name|CAN_CHANGE_ACCELS_BLURB
 argument_list|,
@@ -538,13 +560,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SAVE_ACCELS
 argument_list|,
 literal|"save-accels"
+argument_list|,
+literal|"Save accelerators"
 argument_list|,
 name|SAVE_ACCELS_BLURB
 argument_list|,
@@ -553,13 +577,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_RESTORE_ACCELS
 argument_list|,
 literal|"restore-accels"
+argument_list|,
+literal|"Restore acclerator"
 argument_list|,
 name|RESTORE_ACCELS_BLURB
 argument_list|,
@@ -568,13 +594,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_INT
+name|GIMP_CONFIG_PROP_INT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_LAST_OPENED_SIZE
 argument_list|,
 literal|"last-opened-size"
+argument_list|,
+literal|"Size of recently used menu"
 argument_list|,
 name|LAST_OPENED_SIZE_BLURB
 argument_list|,
@@ -589,13 +617,15 @@ operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_MEMSIZE
+name|GIMP_CONFIG_PROP_MEMSIZE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_MAX_NEW_IMAGE_SIZE
 argument_list|,
 literal|"max-new-image-size"
+argument_list|,
+literal|"Maximum new image size"
 argument_list|,
 name|MAX_NEW_IMAGE_SIZE_BLURB
 argument_list|,
@@ -611,13 +641,15 @@ comment|/* 128MB */
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_TOOLBOX_COLOR_AREA
 argument_list|,
 literal|"toolbox-color-area"
+argument_list|,
+literal|"Show toolbox color area"
 argument_list|,
 name|TOOLBOX_COLOR_AREA_BLURB
 argument_list|,
@@ -626,13 +658,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_TOOLBOX_FOO_AREA
 argument_list|,
 literal|"toolbox-foo-area"
+argument_list|,
+literal|"Show toolbox foo area"
 argument_list|,
 name|TOOLBOX_FOO_AREA_BLURB
 argument_list|,
@@ -641,13 +675,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_TOOLBOX_IMAGE_AREA
 argument_list|,
 literal|"toolbox-image-area"
+argument_list|,
+literal|"Show toolbox image area"
 argument_list|,
 name|TOOLBOX_IMAGE_AREA_BLURB
 argument_list|,
@@ -656,13 +692,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_TOOLBOX_WILBER
 argument_list|,
 literal|"toolbox-wilber"
+argument_list|,
+literal|"Show toolbox wilber"
 argument_list|,
 name|TOOLBOX_WILBER_BLURB
 argument_list|,
@@ -678,13 +716,15 @@ argument_list|(
 literal|"themes"
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_THEME_PATH
 argument_list|,
 literal|"theme-path"
+argument_list|,
+literal|"Theme path"
 argument_list|,
 name|THEME_PATH_BLURB
 argument_list|,
@@ -702,13 +742,15 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_STRING
+name|GIMP_CONFIG_PROP_STRING
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_THEME
 argument_list|,
 literal|"theme"
+argument_list|,
+literal|"Theme"
 argument_list|,
 name|THEME_BLURB
 argument_list|,
@@ -724,13 +766,15 @@ argument_list|(
 literal|"icons"
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_ICON_THEME_PATH
 argument_list|,
 literal|"icon-theme-path"
+argument_list|,
+literal|"Icon theme path"
 argument_list|,
 name|ICON_THEME_PATH_BLURB
 argument_list|,
@@ -748,13 +792,15 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_STRING
+name|GIMP_CONFIG_PROP_STRING
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_ICON_THEME
 argument_list|,
 literal|"icon-theme"
+argument_list|,
+literal|"Icon theme"
 argument_list|,
 name|ICON_THEME_BLURB
 argument_list|,
@@ -763,13 +809,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_USE_HELP
 argument_list|,
 literal|"use-help"
+argument_list|,
+literal|"Use help"
 argument_list|,
 name|USE_HELP_BLURB
 argument_list|,
@@ -778,13 +826,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_HELP_BUTTON
 argument_list|,
 literal|"show-help-button"
+argument_list|,
+literal|"Show help button"
 argument_list|,
 name|SHOW_HELP_BUTTON_BLURB
 argument_list|,
@@ -793,13 +843,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_STRING
+name|GIMP_CONFIG_PROP_STRING
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_HELP_LOCALES
 argument_list|,
 literal|"help-locales"
+argument_list|,
+literal|"Help locales"
 argument_list|,
 name|HELP_LOCALES_BLURB
 argument_list|,
@@ -808,13 +860,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_HELP_BROWSER
 argument_list|,
 literal|"help-browser"
+argument_list|,
+literal|"Help browser"
 argument_list|,
 name|HELP_BROWSER_BLURB
 argument_list|,
@@ -826,13 +880,15 @@ name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 comment|/* As a default, we hide unavailable actions. */
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SEARCH_SHOW_UNAVAILABLE_ACTIONS
 argument_list|,
 literal|"search-show-unavailable-actions"
+argument_list|,
+literal|"Show unavailable actions"
 argument_list|,
 name|SEARCH_SHOW_UNAVAILABLE_BLURB
 argument_list|,
@@ -841,13 +897,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_INT
+name|GIMP_CONFIG_PROP_INT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_ACTION_HISTORY_SIZE
 argument_list|,
 literal|"action-history-size"
+argument_list|,
+literal|"Action history size"
 argument_list|,
 name|ACTION_HISTORY_SIZE_BLURB
 argument_list|,
@@ -860,13 +918,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_USER_MANUAL_ONLINE
 argument_list|,
 literal|"user-manual-online"
+argument_list|,
+literal|"User manual online"
 argument_list|,
 name|USER_MANUAL_ONLINE_BLURB
 argument_list|,
@@ -875,13 +935,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_STRING
+name|GIMP_CONFIG_PROP_STRING
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_USER_MANUAL_ONLINE_URI
 argument_list|,
 literal|"user-manual-online-uri"
+argument_list|,
+literal|"User manual online URI"
 argument_list|,
 name|USER_MANUAL_ONLINE_URI_BLURB
 argument_list|,
@@ -890,13 +952,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DOCK_WINDOW_HINT
 argument_list|,
 literal|"dock-window-hint"
+argument_list|,
+literal|"Dock window hint"
 argument_list|,
 name|DOCK_WINDOW_HINT_BLURB
 argument_list|,
@@ -909,13 +973,15 @@ operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_CURSOR_HANDEDNESS
 argument_list|,
 literal|"cursor-handedness"
+argument_list|,
+literal|"Cursor handedness"
 argument_list|,
 name|CURSOR_HANDEDNESS_BLURB
 argument_list|,
@@ -926,13 +992,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_PLAYGROUND_NPD_TOOL
 argument_list|,
 literal|"playground-npd-tool"
+argument_list|,
+literal|"Playground N-Point Deformation tool"
 argument_list|,
 name|PLAYGROUND_NPD_TOOL_BLURB
 argument_list|,
@@ -943,13 +1011,15 @@ operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_PLAYGROUND_HANDLE_TRANSFORM_TOOL
 argument_list|,
 literal|"playground-handle-transform-tool"
+argument_list|,
+literal|"Playground Handle Transform tool"
 argument_list|,
 name|PLAYGROUND_HANDLE_TRANSFORM_TOOL_BLURB
 argument_list|,
@@ -960,13 +1030,15 @@ operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_PLAYGROUND_SEAMLESS_CLONE_TOOL
 argument_list|,
 literal|"playground-seamless-clone-tool"
+argument_list|,
+literal|"Playground Seamless Clone tool"
 argument_list|,
 name|PLAYGROUND_SEAMLESS_CLONE_TOOL_BLURB
 argument_list|,
@@ -1080,13 +1152,15 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  only for backward compatibility:  */
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_CURSOR_FORMAT
 argument_list|,
 literal|"cursor-format"
+argument_list|,
+name|NULL
 argument_list|,
 name|CURSOR_FORMAT_BLURB
 argument_list|,
@@ -1099,13 +1173,15 @@ operator||
 name|GIMP_CONFIG_PARAM_IGNORE
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_INFO_WINDOW_PER_DISPLAY
 argument_list|,
 literal|"info-window-per-display"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -1116,13 +1192,15 @@ operator||
 name|GIMP_CONFIG_PARAM_IGNORE
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_MENU_MNEMONICS
 argument_list|,
 literal|"menu-mnemonics"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -1133,7 +1211,7 @@ operator||
 name|GIMP_CONFIG_PARAM_IGNORE
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
@@ -1143,6 +1221,8 @@ literal|"show-tool-tips"
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
@@ -1150,13 +1230,15 @@ operator||
 name|GIMP_CONFIG_PARAM_IGNORE
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_TIPS
 argument_list|,
 literal|"show-tips"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -1167,13 +1249,15 @@ operator||
 name|GIMP_CONFIG_PARAM_IGNORE
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_TOOLBOX_WINDOW_HINT
 argument_list|,
 literal|"toolbox-window-hint"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -1186,13 +1270,15 @@ operator||
 name|GIMP_CONFIG_PARAM_IGNORE
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_TRANSIENT_DOCKS
 argument_list|,
 literal|"transient-docks"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -1203,13 +1289,15 @@ operator||
 name|GIMP_CONFIG_PARAM_IGNORE
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_WEB_BROWSER
 argument_list|,
 literal|"web-browser"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

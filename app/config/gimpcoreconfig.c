@@ -167,7 +167,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ca17950103
+DECL|enum|__anon291cdc6b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -537,13 +537,15 @@ name|get_property
 operator|=
 name|gimp_core_config_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_STRING
+name|GIMP_CONFIG_PROP_STRING
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_LANGUAGE
 argument_list|,
 literal|"language"
+argument_list|,
+literal|"Language"
 argument_list|,
 name|LANGUAGE_BLURB
 argument_list|,
@@ -555,13 +557,15 @@ operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_INTERPOLATION_TYPE
 argument_list|,
 literal|"interpolation-type"
+argument_list|,
+literal|"Interpolation"
 argument_list|,
 name|INTERPOLATION_TYPE_BLURB
 argument_list|,
@@ -572,13 +576,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_INT
+name|GIMP_CONFIG_PROP_INT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DEFAULT_THRESHOLD
 argument_list|,
 literal|"default-threshold"
+argument_list|,
+literal|"Default threshold"
 argument_list|,
 name|DEFAULT_THRESHOLD_BLURB
 argument_list|,
@@ -598,13 +604,15 @@ argument_list|(
 literal|"plug-ins"
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_PLUG_IN_PATH
 argument_list|,
 literal|"plug-in-path"
+argument_list|,
+literal|"Plug-In path"
 argument_list|,
 name|PLUG_IN_PATH_BLURB
 argument_list|,
@@ -629,13 +637,15 @@ argument_list|(
 literal|"modules"
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_MODULE_PATH
 argument_list|,
 literal|"module-path"
+argument_list|,
+literal|"Module path"
 argument_list|,
 name|MODULE_PATH_BLURB
 argument_list|,
@@ -660,13 +670,15 @@ argument_list|(
 literal|"interpreters"
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_INTERPRETER_PATH
 argument_list|,
 literal|"interpreter-path"
+argument_list|,
+literal|"Interpreter path"
 argument_list|,
 name|INTERPRETER_PATH_BLURB
 argument_list|,
@@ -691,13 +703,15 @@ argument_list|(
 literal|"environ"
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_ENVIRON_PATH
 argument_list|,
 literal|"environ-path"
+argument_list|,
+literal|"Environment path"
 argument_list|,
 name|ENVIRON_PATH_BLURB
 argument_list|,
@@ -722,13 +736,15 @@ argument_list|(
 literal|"brushes"
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_BRUSH_PATH
 argument_list|,
 literal|"brush-path"
+argument_list|,
+literal|"Brush path"
 argument_list|,
 name|BRUSH_PATH_BLURB
 argument_list|,
@@ -753,13 +769,15 @@ argument_list|(
 literal|"brushes"
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_BRUSH_PATH_WRITABLE
 argument_list|,
 literal|"brush-path-writable"
+argument_list|,
+literal|"Writable brush path"
 argument_list|,
 name|BRUSH_PATH_WRITABLE_BLURB
 argument_list|,
@@ -784,7 +802,7 @@ argument_list|(
 literal|"dynamics"
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
@@ -792,7 +810,42 @@ name|PROP_DYNAMICS_PATH
 argument_list|,
 literal|"dynamics-path"
 argument_list|,
+literal|"Dynamics path"
+argument_list|,
 name|DYNAMICS_PATH_BLURB
+argument_list|,
+name|GIMP_CONFIG_PATH_DIR_LIST
+argument_list|,
+name|path
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
+name|GIMP_CONFIG_PARAM_RESTART
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
+name|path
+operator|=
+name|gimp_config_build_writable_path
+argument_list|(
+literal|"dynamics"
+argument_list|)
+expr_stmt|;
+name|GIMP_CONFIG_PROP_PATH
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_DYNAMICS_PATH_WRITABLE
+argument_list|,
+literal|"dynamics-path-writable"
+argument_list|,
+literal|"Writable dynamics path"
+argument_list|,
+name|DYNAMICS_PATH_WRITABLE_BLURB
 argument_list|,
 name|GIMP_CONFIG_PATH_DIR_LIST
 argument_list|,
@@ -836,13 +889,15 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_MYPAINT_BRUSH_PATH
 argument_list|,
 literal|"mypaint-brush-path"
+argument_list|,
+literal|"MyPaint brush path"
 argument_list|,
 name|MYPAINT_BRUSH_PATH_BLURB
 argument_list|,
@@ -884,13 +939,15 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_MYPAINT_BRUSH_PATH_WRITABLE
 argument_list|,
 literal|"mypaint-brush-path-writable"
+argument_list|,
+literal|"Writable MyPaint brush path"
 argument_list|,
 name|MYPAINT_BRUSH_PATH_WRITABLE_BLURB
 argument_list|,
@@ -916,49 +973,20 @@ endif|#
 directive|endif
 name|path
 operator|=
-name|gimp_config_build_writable_path
-argument_list|(
-literal|"dynamics"
-argument_list|)
-expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
-argument_list|(
-name|object_class
-argument_list|,
-name|PROP_DYNAMICS_PATH_WRITABLE
-argument_list|,
-literal|"dynamics-path-writable"
-argument_list|,
-name|DYNAMICS_PATH_WRITABLE_BLURB
-argument_list|,
-name|GIMP_CONFIG_PATH_DIR_LIST
-argument_list|,
-name|path
-argument_list|,
-name|GIMP_PARAM_STATIC_STRINGS
-operator||
-name|GIMP_CONFIG_PARAM_RESTART
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
-argument_list|)
-expr_stmt|;
-name|path
-operator|=
 name|gimp_config_build_data_path
 argument_list|(
 literal|"patterns"
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_PATTERN_PATH
 argument_list|,
 literal|"pattern-path"
+argument_list|,
+literal|"Pattern path"
 argument_list|,
 name|PATTERN_PATH_BLURB
 argument_list|,
@@ -983,13 +1011,15 @@ argument_list|(
 literal|"patterns"
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_PATTERN_PATH_WRITABLE
 argument_list|,
 literal|"pattern-path-writable"
+argument_list|,
+literal|"Writable pattern path"
 argument_list|,
 name|PATTERN_PATH_WRITABLE_BLURB
 argument_list|,
@@ -1014,13 +1044,15 @@ argument_list|(
 literal|"palettes"
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_PALETTE_PATH
 argument_list|,
 literal|"palette-path"
+argument_list|,
+literal|"Palette path"
 argument_list|,
 name|PALETTE_PATH_BLURB
 argument_list|,
@@ -1045,13 +1077,15 @@ argument_list|(
 literal|"palettes"
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_PALETTE_PATH_WRITABLE
 argument_list|,
 literal|"palette-path-writable"
+argument_list|,
+literal|"Writable palette path"
 argument_list|,
 name|PALETTE_PATH_WRITABLE_BLURB
 argument_list|,
@@ -1076,13 +1110,15 @@ argument_list|(
 literal|"gradients"
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_GRADIENT_PATH
 argument_list|,
 literal|"gradient-path"
+argument_list|,
+literal|"Gradient path"
 argument_list|,
 name|GRADIENT_PATH_BLURB
 argument_list|,
@@ -1107,13 +1143,15 @@ argument_list|(
 literal|"gradients"
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_GRADIENT_PATH_WRITABLE
 argument_list|,
 literal|"gradient-path-writable"
+argument_list|,
+literal|"Writable gradient path"
 argument_list|,
 name|GRADIENT_PATH_WRITABLE_BLURB
 argument_list|,
@@ -1138,13 +1176,15 @@ argument_list|(
 literal|"tool-presets"
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_TOOL_PRESET_PATH
 argument_list|,
 literal|"tool-preset-path"
+argument_list|,
+literal|"Tool preset path"
 argument_list|,
 name|TOOL_PRESET_PATH_BLURB
 argument_list|,
@@ -1169,13 +1209,15 @@ argument_list|(
 literal|"tool-presets"
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_TOOL_PRESET_PATH_WRITABLE
 argument_list|,
 literal|"tool-preset-path-writable"
+argument_list|,
+literal|"Writable tool preset path"
 argument_list|,
 name|TOOL_PRESET_PATH_WRITABLE_BLURB
 argument_list|,
@@ -1200,13 +1242,15 @@ argument_list|(
 literal|"fonts"
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_FONT_PATH
 argument_list|,
 literal|"font-path"
+argument_list|,
+literal|"Font path"
 argument_list|,
 name|FONT_PATH_BLURB
 argument_list|,
@@ -1224,13 +1268,15 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_FONT_PATH_WRITABLE
 argument_list|,
 literal|"font-path-writable"
+argument_list|,
+literal|"Writable font path"
 argument_list|,
 name|NULL
 argument_list|,
@@ -1243,13 +1289,15 @@ operator||
 name|GIMP_CONFIG_PARAM_IGNORE
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_STRING
+name|GIMP_CONFIG_PROP_STRING
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DEFAULT_BRUSH
 argument_list|,
 literal|"default-brush"
+argument_list|,
+literal|"Default brush"
 argument_list|,
 name|DEFAULT_BRUSH_BLURB
 argument_list|,
@@ -1258,13 +1306,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_STRING
+name|GIMP_CONFIG_PROP_STRING
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DEFAULT_DYNAMICS
 argument_list|,
 literal|"default-dynamics"
+argument_list|,
+literal|"Default dynamics"
 argument_list|,
 name|DEFAULT_DYNAMICS_BLURB
 argument_list|,
@@ -1273,13 +1323,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_STRING
+name|GIMP_CONFIG_PROP_STRING
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DEFAULT_MYPAINT_BRUSH
 argument_list|,
 literal|"default-mypaint-brush"
+argument_list|,
+literal|"Default MyPaint brush"
 argument_list|,
 name|DEFAULT_MYPAINT_BRUSH_BLURB
 argument_list|,
@@ -1288,13 +1340,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_STRING
+name|GIMP_CONFIG_PROP_STRING
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DEFAULT_PATTERN
 argument_list|,
 literal|"default-pattern"
+argument_list|,
+literal|"Default pattern"
 argument_list|,
 name|DEFAULT_PATTERN_BLURB
 argument_list|,
@@ -1303,13 +1357,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_STRING
+name|GIMP_CONFIG_PROP_STRING
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DEFAULT_PALETTE
 argument_list|,
 literal|"default-palette"
+argument_list|,
+literal|"Default palette"
 argument_list|,
 name|DEFAULT_PALETTE_BLURB
 argument_list|,
@@ -1318,13 +1374,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_STRING
+name|GIMP_CONFIG_PROP_STRING
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DEFAULT_GRADIENT
 argument_list|,
 literal|"default-gradient"
+argument_list|,
+literal|"Default gradient"
 argument_list|,
 name|DEFAULT_GRADIENT_BLURB
 argument_list|,
@@ -1333,13 +1391,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_STRING
+name|GIMP_CONFIG_PROP_STRING
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DEFAULT_TOOL_PRESET
 argument_list|,
 literal|"default-tool-preset"
+argument_list|,
+literal|"Default tool preset"
 argument_list|,
 name|DEFAULT_TOOL_PRESET_BLURB
 argument_list|,
@@ -1348,13 +1408,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_STRING
+name|GIMP_CONFIG_PROP_STRING
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DEFAULT_FONT
 argument_list|,
 literal|"default-font"
+argument_list|,
+literal|"Default font"
 argument_list|,
 name|DEFAULT_FONT_BLURB
 argument_list|,
@@ -1363,13 +1425,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_GLOBAL_BRUSH
 argument_list|,
 literal|"global-brush"
+argument_list|,
+literal|"Global brush"
 argument_list|,
 name|GLOBAL_BRUSH_BLURB
 argument_list|,
@@ -1378,13 +1442,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_GLOBAL_DYNAMICS
 argument_list|,
 literal|"global-dynamics"
+argument_list|,
+literal|"Global dynamics"
 argument_list|,
 name|GLOBAL_DYNAMICS_BLURB
 argument_list|,
@@ -1393,13 +1459,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_GLOBAL_PATTERN
 argument_list|,
 literal|"global-pattern"
+argument_list|,
+literal|"Global pattern"
 argument_list|,
 name|GLOBAL_PATTERN_BLURB
 argument_list|,
@@ -1408,13 +1476,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_GLOBAL_PALETTE
 argument_list|,
 literal|"global-palette"
+argument_list|,
+literal|"Global palette"
 argument_list|,
 name|GLOBAL_PALETTE_BLURB
 argument_list|,
@@ -1423,13 +1493,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_GLOBAL_GRADIENT
 argument_list|,
 literal|"global-gradient"
+argument_list|,
+literal|"Global gradient"
 argument_list|,
 name|GLOBAL_GRADIENT_BLURB
 argument_list|,
@@ -1438,13 +1510,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_GLOBAL_FONT
 argument_list|,
 literal|"global-font"
+argument_list|,
+literal|"Global font"
 argument_list|,
 name|GLOBAL_FONT_BLURB
 argument_list|,
@@ -1453,13 +1527,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_OBJECT
+name|GIMP_CONFIG_PROP_OBJECT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DEFAULT_IMAGE
 argument_list|,
 literal|"default-image"
+argument_list|,
+literal|"Default image"
 argument_list|,
 name|DEFAULT_IMAGE_BLURB
 argument_list|,
@@ -1470,13 +1546,15 @@ operator||
 name|GIMP_CONFIG_PARAM_AGGREGATE
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_OBJECT
+name|GIMP_CONFIG_PROP_OBJECT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DEFAULT_GRID
 argument_list|,
 literal|"default-grid"
+argument_list|,
+literal|"Default grid"
 argument_list|,
 name|DEFAULT_GRID_BLURB
 argument_list|,
@@ -1487,13 +1565,15 @@ operator||
 name|GIMP_CONFIG_PARAM_AGGREGATE
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_INT
+name|GIMP_CONFIG_PROP_INT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_UNDO_LEVELS
 argument_list|,
 literal|"undo-levels"
+argument_list|,
+literal|"Undo levels"
 argument_list|,
 name|UNDO_LEVELS_BLURB
 argument_list|,
@@ -1536,13 +1616,15 @@ operator|<<
 literal|26
 expr_stmt|;
 comment|/* 64GB */
-name|GIMP_CONFIG_INSTALL_PROP_MEMSIZE
+name|GIMP_CONFIG_PROP_MEMSIZE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_UNDO_SIZE
 argument_list|,
 literal|"undo-size"
+argument_list|,
+literal|"Undo size"
 argument_list|,
 name|UNDO_SIZE_BLURB
 argument_list|,
@@ -1557,13 +1639,15 @@ operator||
 name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_UNDO_PREVIEW_SIZE
 argument_list|,
 literal|"undo-preview-size"
+argument_list|,
+literal|"Undo preview size"
 argument_list|,
 name|UNDO_PREVIEW_SIZE_BLURB
 argument_list|,
@@ -1576,7 +1660,7 @@ operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_INT
+name|GIMP_CONFIG_PROP_INT
 argument_list|(
 name|object_class
 argument_list|,
@@ -1585,6 +1669,8 @@ argument_list|,
 literal|"plug-in-history-size"
 argument_list|,
 comment|/* compat name */
+literal|"Filter history size"
+argument_list|,
 name|FILTER_HISTORY_SIZE_BLURB
 argument_list|,
 literal|0
@@ -1598,13 +1684,15 @@ operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_PLUGINRC_PATH
 argument_list|,
 literal|"pluginrc-path"
+argument_list|,
+literal|"plugninrc path"
 argument_list|,
 name|PLUGINRC_PATH_BLURB
 argument_list|,
@@ -1619,13 +1707,15 @@ operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_LAYER_PREVIEWS
 argument_list|,
 literal|"layer-previews"
+argument_list|,
+literal|"Layer previews"
 argument_list|,
 name|LAYER_PREVIEWS_BLURB
 argument_list|,
@@ -1634,13 +1724,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_LAYER_PREVIEW_SIZE
 argument_list|,
 literal|"layer-preview-size"
+argument_list|,
+literal|"Layer preview size"
 argument_list|,
 name|LAYER_PREVIEW_SIZE_BLURB
 argument_list|,
@@ -1651,13 +1743,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_THUMBNAIL_SIZE
 argument_list|,
 literal|"thumbnail-size"
+argument_list|,
+literal|"Thumbnail size"
 argument_list|,
 name|THUMBNAIL_SIZE_BLURB
 argument_list|,
@@ -1668,13 +1762,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_MEMSIZE
+name|GIMP_CONFIG_PROP_MEMSIZE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_THUMBNAIL_FILESIZE_LIMIT
 argument_list|,
 literal|"thumbnail-filesize-limit"
+argument_list|,
+literal|"Thumbnail file size limie"
 argument_list|,
 name|THUMBNAIL_FILESIZE_LIMIT_BLURB
 argument_list|,
@@ -1689,13 +1785,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_OBJECT
+name|GIMP_CONFIG_PROP_OBJECT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_COLOR_MANAGEMENT
 argument_list|,
 literal|"color-management"
+argument_list|,
+literal|"Color management"
 argument_list|,
 name|COLOR_MANAGEMENT_BLURB
 argument_list|,
@@ -1706,13 +1804,15 @@ operator||
 name|GIMP_CONFIG_PARAM_AGGREGATE
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_COLOR_PROFILE_POLICY
 argument_list|,
 literal|"color-profile-policy"
+argument_list|,
+literal|"Color profile policy"
 argument_list|,
 name|COLOR_PROFILE_POLICY_BLURB
 argument_list|,
@@ -1723,13 +1823,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SAVE_DOCUMENT_HISTORY
 argument_list|,
 literal|"save-document-history"
+argument_list|,
+literal|"Save document history"
 argument_list|,
 name|SAVE_DOCUMENT_HISTORY_BLURB
 argument_list|,
@@ -1738,13 +1840,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_RGB
+name|GIMP_CONFIG_PROP_RGB
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_QUICK_MASK_COLOR
 argument_list|,
 literal|"quick-mask-color"
+argument_list|,
+literal|"Quick mask color"
 argument_list|,
 name|QUICK_MASK_COLOR_BLURB
 argument_list|,
@@ -1757,13 +1861,15 @@ name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 comment|/*  only for backward compatibility:  */
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_INSTALL_COLORMAP
 argument_list|,
 literal|"install-colormap"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -1774,13 +1880,15 @@ operator||
 name|GIMP_CONFIG_PARAM_IGNORE
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_INT
+name|GIMP_CONFIG_PROP_INT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_MIN_COLORS
 argument_list|,
 literal|"min-colors"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

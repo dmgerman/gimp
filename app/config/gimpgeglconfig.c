@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon288c29f20103
+DECL|enum|__anon28dcbd0c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -353,13 +353,15 @@ name|get_property
 operator|=
 name|gimp_gegl_config_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_TEMP_PATH
 argument_list|,
 literal|"temp-path"
+argument_list|,
+literal|"Temp path"
 argument_list|,
 name|TEMP_PATH_BLURB
 argument_list|,
@@ -374,13 +376,15 @@ operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SWAP_PATH
 argument_list|,
 literal|"swap-path"
+argument_list|,
+literal|"Swap path"
 argument_list|,
 name|SWAP_PATH_BLURB
 argument_list|,
@@ -418,13 +422,15 @@ argument_list|,
 name|GIMP_MAX_NUM_THREADS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_UINT
+name|GIMP_CONFIG_PROP_UINT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_NUM_PROCESSORS
 argument_list|,
 literal|"num-processors"
+argument_list|,
+literal|"Number of processors to use"
 argument_list|,
 name|NUM_PROCESSORS_BLURB
 argument_list|,
@@ -473,13 +479,15 @@ operator|<<
 literal|30
 expr_stmt|;
 comment|/* 1GB */
-name|GIMP_CONFIG_INSTALL_PROP_MEMSIZE
+name|GIMP_CONFIG_PROP_MEMSIZE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_TILE_CACHE_SIZE
 argument_list|,
 literal|"tile-cache-size"
+argument_list|,
+literal|"Tile cach size"
 argument_list|,
 name|TILE_CACHE_SIZE_BLURB
 argument_list|,
@@ -494,13 +502,15 @@ operator||
 name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_USE_OPENCL
 argument_list|,
 literal|"use-opencl"
+argument_list|,
+literal|"Use OpenCL"
 argument_list|,
 name|USE_OPENCL_BLURB
 argument_list|,
@@ -510,13 +520,15 @@ name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 comment|/*  only for backward compatibility:  */
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_STINGY_MEMORY_USE
 argument_list|,
 literal|"stingy-memory-use"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

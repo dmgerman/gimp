@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b38e6e0103
+DECL|enum|__anon2ac122290103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -317,13 +317,15 @@ name|get_property
 operator|=
 name|gimp_display_options_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_MENUBAR
 argument_list|,
 literal|"show-menubar"
+argument_list|,
+literal|"Show menubar"
 argument_list|,
 name|SHOW_MENUBAR_BLURB
 argument_list|,
@@ -332,13 +334,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_STATUSBAR
 argument_list|,
 literal|"show-statusbar"
+argument_list|,
+literal|"Show statusbar"
 argument_list|,
 name|SHOW_STATUSBAR_BLURB
 argument_list|,
@@ -347,13 +351,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_RULERS
 argument_list|,
 literal|"show-rulers"
+argument_list|,
+literal|"Show rulers"
 argument_list|,
 name|SHOW_RULERS_BLURB
 argument_list|,
@@ -362,13 +368,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_SCROLLBARS
 argument_list|,
 literal|"show-scrollbars"
+argument_list|,
+literal|"Show scrollbars"
 argument_list|,
 name|SHOW_SCROLLBARS_BLURB
 argument_list|,
@@ -377,13 +385,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_SELECTION
 argument_list|,
 literal|"show-selection"
+argument_list|,
+literal|"Show selection"
 argument_list|,
 name|SHOW_SELECTION_BLURB
 argument_list|,
@@ -392,13 +402,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_LAYER_BOUNDARY
 argument_list|,
 literal|"show-layer-boundary"
+argument_list|,
+literal|"Show layer boundary"
 argument_list|,
 name|SHOW_LAYER_BOUNDARY_BLURB
 argument_list|,
@@ -407,13 +419,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_GUIDES
 argument_list|,
 literal|"show-guides"
+argument_list|,
+literal|"Show guides"
 argument_list|,
 name|SHOW_GUIDES_BLURB
 argument_list|,
@@ -422,13 +436,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_GRID
 argument_list|,
 literal|"show-grid"
+argument_list|,
+literal|"Show grid"
 argument_list|,
 name|SHOW_GRID_BLURB
 argument_list|,
@@ -437,13 +453,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_SAMPLE_POINTS
 argument_list|,
 literal|"show-sample-points"
+argument_list|,
+literal|"Show sample points"
 argument_list|,
 name|SHOW_SAMPLE_POINTS_BLURB
 argument_list|,
@@ -452,13 +470,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SNAP_TO_GUIDES
 argument_list|,
 literal|"snap-to-guides"
+argument_list|,
+literal|"Snap to guides"
 argument_list|,
 name|SNAP_TO_GUIDES_BLURB
 argument_list|,
@@ -467,13 +487,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SNAP_TO_GRID
 argument_list|,
 literal|"snap-to-grid"
+argument_list|,
+literal|"Snap to grid"
 argument_list|,
 name|SNAP_TO_GRID_BLURB
 argument_list|,
@@ -482,13 +504,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SNAP_TO_CANVAS
 argument_list|,
 literal|"snap-to-canvas"
+argument_list|,
+literal|"Snap to canvas"
 argument_list|,
 name|SNAP_TO_CANVAS_BLURB
 argument_list|,
@@ -497,13 +521,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SNAP_TO_PATH
 argument_list|,
 literal|"snap-to-path"
+argument_list|,
+literal|"Snap to path"
 argument_list|,
 name|SNAP_TO_PATH_BLURB
 argument_list|,
@@ -512,13 +538,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_PADDING_MODE
 argument_list|,
 literal|"padding-mode"
+argument_list|,
+literal|"Padding mode"
 argument_list|,
 name|CANVAS_PADDING_MODE_BLURB
 argument_list|,
@@ -529,13 +557,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_RGB
+name|GIMP_CONFIG_PROP_RGB
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_PADDING_COLOR
 argument_list|,
 literal|"padding-color"
+argument_list|,
+literal|"Padding color"
 argument_list|,
 name|CANVAS_PADDING_COLOR_BLURB
 argument_list|,
@@ -599,13 +629,15 @@ name|get_property
 operator|=
 name|gimp_display_options_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_MENUBAR
 argument_list|,
 literal|"show-menubar"
+argument_list|,
+literal|"Show menubar"
 argument_list|,
 name|SHOW_MENUBAR_BLURB
 argument_list|,
@@ -614,13 +646,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_STATUSBAR
 argument_list|,
 literal|"show-statusbar"
+argument_list|,
+literal|"Show statusbar"
 argument_list|,
 name|SHOW_STATUSBAR_BLURB
 argument_list|,
@@ -629,13 +663,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_RULERS
 argument_list|,
 literal|"show-rulers"
+argument_list|,
+literal|"Show rulers"
 argument_list|,
 name|SHOW_RULERS_BLURB
 argument_list|,
@@ -644,13 +680,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_SCROLLBARS
 argument_list|,
 literal|"show-scrollbars"
+argument_list|,
+literal|"Show scrollbars"
 argument_list|,
 name|SHOW_SCROLLBARS_BLURB
 argument_list|,
@@ -659,13 +697,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_SELECTION
 argument_list|,
 literal|"show-selection"
+argument_list|,
+literal|"Show selection"
 argument_list|,
 name|SHOW_SELECTION_BLURB
 argument_list|,
@@ -674,13 +714,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_LAYER_BOUNDARY
 argument_list|,
 literal|"show-layer-boundary"
+argument_list|,
+literal|"Show layer boundary"
 argument_list|,
 name|SHOW_LAYER_BOUNDARY_BLURB
 argument_list|,
@@ -689,13 +731,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_GUIDES
 argument_list|,
 literal|"show-guides"
+argument_list|,
+literal|"Show guides"
 argument_list|,
 name|SHOW_GUIDES_BLURB
 argument_list|,
@@ -704,13 +748,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_GRID
 argument_list|,
 literal|"show-grid"
+argument_list|,
+literal|"Show grid"
 argument_list|,
 name|SHOW_GRID_BLURB
 argument_list|,
@@ -719,13 +765,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_SAMPLE_POINTS
 argument_list|,
 literal|"show-sample-points"
+argument_list|,
+literal|"Show sample points"
 argument_list|,
 name|SHOW_SAMPLE_POINTS_BLURB
 argument_list|,
@@ -734,13 +782,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SNAP_TO_GUIDES
 argument_list|,
 literal|"snap-to-guides"
+argument_list|,
+literal|"Snap to guides"
 argument_list|,
 name|SNAP_TO_GUIDES_BLURB
 argument_list|,
@@ -749,13 +799,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SNAP_TO_GRID
 argument_list|,
 literal|"snap-to-grid"
+argument_list|,
+literal|"Snap to grid"
 argument_list|,
 name|SHOW_SCROLLBARS_BLURB
 argument_list|,
@@ -764,13 +816,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SNAP_TO_CANVAS
 argument_list|,
 literal|"snap-to-canvas"
+argument_list|,
+literal|"Snap to canvas"
 argument_list|,
 name|SNAP_TO_CANVAS_BLURB
 argument_list|,
@@ -779,13 +833,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SNAP_TO_PATH
 argument_list|,
 literal|"snap-to-path"
+argument_list|,
+literal|"Snap to path"
 argument_list|,
 name|SNAP_TO_PATH_BLURB
 argument_list|,
@@ -794,13 +850,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_PADDING_MODE
 argument_list|,
 literal|"padding-mode"
+argument_list|,
+literal|"Padding mode"
 argument_list|,
 name|CANVAS_PADDING_MODE_BLURB
 argument_list|,
@@ -811,13 +869,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_RGB
+name|GIMP_CONFIG_PROP_RGB
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_PADDING_COLOR
 argument_list|,
 literal|"padding-color"
+argument_list|,
+literal|"Padding color"
 argument_list|,
 name|CANVAS_PADDING_COLOR_BLURB
 argument_list|,
@@ -864,13 +924,15 @@ name|get_property
 operator|=
 name|gimp_display_options_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_RULERS
 argument_list|,
 literal|"show-rulers"
+argument_list|,
+literal|"Show rulers"
 argument_list|,
 name|SHOW_RULERS_BLURB
 argument_list|,
@@ -879,13 +941,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_SCROLLBARS
 argument_list|,
 literal|"show-scrollbars"
+argument_list|,
+literal|"Show scrollbars"
 argument_list|,
 name|SHOW_SCROLLBARS_BLURB
 argument_list|,
@@ -894,13 +958,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_SELECTION
 argument_list|,
 literal|"show-selection"
+argument_list|,
+literal|"Show selection"
 argument_list|,
 name|SHOW_SELECTION_BLURB
 argument_list|,
@@ -909,13 +975,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_LAYER_BOUNDARY
 argument_list|,
 literal|"show-layer-boundary"
+argument_list|,
+literal|"Show layer boundary"
 argument_list|,
 name|SHOW_LAYER_BOUNDARY_BLURB
 argument_list|,
@@ -924,13 +992,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_GUIDES
 argument_list|,
 literal|"show-guides"
+argument_list|,
+literal|"Show guides"
 argument_list|,
 name|SHOW_GUIDES_BLURB
 argument_list|,
@@ -939,13 +1009,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_GRID
 argument_list|,
 literal|"show-grid"
+argument_list|,
+literal|"Show grid"
 argument_list|,
 name|SHOW_GRID_BLURB
 argument_list|,
@@ -954,13 +1026,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_SAMPLE_POINTS
 argument_list|,
 literal|"show-sample-points"
+argument_list|,
+literal|"Show sample points"
 argument_list|,
 name|SHOW_SAMPLE_POINTS_BLURB
 argument_list|,
@@ -969,13 +1043,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SNAP_TO_GUIDES
 argument_list|,
 literal|"snap-to-guides"
+argument_list|,
+literal|"Snap to guides"
 argument_list|,
 name|SNAP_TO_GUIDES_BLURB
 argument_list|,
@@ -984,13 +1060,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SNAP_TO_GRID
 argument_list|,
 literal|"snap-to-grid"
+argument_list|,
+literal|"Snap to grid"
 argument_list|,
 name|SHOW_SCROLLBARS_BLURB
 argument_list|,
@@ -999,13 +1077,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SNAP_TO_CANVAS
 argument_list|,
 literal|"snap-to-canvas"
+argument_list|,
+literal|"Snap to canvas"
 argument_list|,
 name|SNAP_TO_CANVAS_BLURB
 argument_list|,
@@ -1014,13 +1094,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SNAP_TO_PATH
 argument_list|,
 literal|"snap-to-path"
+argument_list|,
+literal|"Snap tp path"
 argument_list|,
 name|SNAP_TO_PATH_BLURB
 argument_list|,

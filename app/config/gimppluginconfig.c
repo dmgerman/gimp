@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292594bc0103
+DECL|enum|__anon2a0bee9a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -197,11 +197,13 @@ argument_list|(
 literal|"fractalexplorer"
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_FRACTALEXPLORER_PATH
+argument_list|,
+literal|"Fractal Explorer path"
 argument_list|,
 literal|"fractalexplorer-path"
 argument_list|,
@@ -226,13 +228,15 @@ argument_list|(
 literal|"gfig"
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_GFIG_PATH
 argument_list|,
 literal|"gfig-path"
+argument_list|,
+literal|"GFig path"
 argument_list|,
 name|GFIG_PATH_BLURB
 argument_list|,
@@ -255,13 +259,15 @@ argument_list|(
 literal|"gflare"
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_GFLARE_PATH
 argument_list|,
 literal|"gflare-path"
+argument_list|,
+literal|"GFlare path"
 argument_list|,
 name|GFLARE_PATH_BLURB
 argument_list|,
@@ -284,13 +290,15 @@ argument_list|(
 literal|"gimpressionist"
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_GIMPRESSIONIST_PATH
 argument_list|,
 literal|"gimpressionist-path"
+argument_list|,
+literal|"GIMPressionist path"
 argument_list|,
 name|GIMPRESSIONIST_PATH_BLURB
 argument_list|,
@@ -313,13 +321,15 @@ argument_list|(
 literal|"scripts"
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
+name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SCRIPT_FU_PATH
 argument_list|,
 literal|"script-fu-path"
+argument_list|,
+literal|"Script-Fu path"
 argument_list|,
 name|SCRIPT_FU_PATH_BLURB
 argument_list|,

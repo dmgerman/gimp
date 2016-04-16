@@ -109,7 +109,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb04fe50103
+DECL|enum|__anon2b2f6a150103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -378,13 +378,15 @@ name|get_property
 operator|=
 name|gimp_display_config_get_property
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_TRANSPARENCY_SIZE
 argument_list|,
 literal|"transparency-size"
+argument_list|,
+literal|"Transparency size"
 argument_list|,
 name|TRANSPARENCY_SIZE_BLURB
 argument_list|,
@@ -395,13 +397,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_TRANSPARENCY_TYPE
 argument_list|,
 literal|"transparency-type"
+argument_list|,
+literal|"Transparency type"
 argument_list|,
 name|TRANSPARENCY_TYPE_BLURB
 argument_list|,
@@ -412,13 +416,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_INT
+name|GIMP_CONFIG_PROP_INT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SNAP_DISTANCE
 argument_list|,
 literal|"snap-distance"
+argument_list|,
+literal|"Snap distance"
 argument_list|,
 name|DEFAULT_SNAP_DISTANCE_BLURB
 argument_list|,
@@ -431,13 +437,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_INT
+name|GIMP_CONFIG_PROP_INT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_MARCHING_ANTS_SPEED
 argument_list|,
 literal|"marching-ants-speed"
+argument_list|,
+literal|"Marching ants speed"
 argument_list|,
 name|MARCHING_ANTS_SPEED_BLURB
 argument_list|,
@@ -450,13 +458,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_RESIZE_WINDOWS_ON_ZOOM
 argument_list|,
 literal|"resize-windows-on-zoom"
+argument_list|,
+literal|"Resize windows on zoom"
 argument_list|,
 name|RESIZE_WINDOWS_ON_ZOOM_BLURB
 argument_list|,
@@ -465,13 +475,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_RESIZE_WINDOWS_ON_RESIZE
 argument_list|,
 literal|"resize-windows-on-resize"
+argument_list|,
+literal|"Resize windows on resize"
 argument_list|,
 name|RESIZE_WINDOWS_ON_RESIZE_BLURB
 argument_list|,
@@ -480,13 +492,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DEFAULT_DOT_FOR_DOT
 argument_list|,
 literal|"default-dot-for-dot"
+argument_list|,
+literal|"Default dot-for-dot"
 argument_list|,
 name|DEFAULT_DOT_FOR_DOT_BLURB
 argument_list|,
@@ -495,13 +509,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_INITIAL_ZOOM_TO_FIT
 argument_list|,
 literal|"initial-zoom-to-fit"
+argument_list|,
+literal|"Initial zoom-to-fit"
 argument_list|,
 name|INITIAL_ZOOM_TO_FIT_BLURB
 argument_list|,
@@ -510,13 +526,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_PERFECT_MOUSE
 argument_list|,
 literal|"perfect-mouse"
+argument_list|,
+literal|"Perfect mouse"
 argument_list|,
 name|PERFECT_MOUSE_BLURB
 argument_list|,
@@ -525,13 +543,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_CURSOR_MODE
 argument_list|,
 literal|"cursor-mode"
+argument_list|,
+literal|"Cursor mode"
 argument_list|,
 name|CURSOR_MODE_BLURB
 argument_list|,
@@ -542,13 +562,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_CURSOR_UPDATING
 argument_list|,
 literal|"cursor-updating"
+argument_list|,
+literal|"Cursor updating"
 argument_list|,
 name|CURSOR_UPDATING_BLURB
 argument_list|,
@@ -557,13 +579,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_BRUSH_OUTLINE
 argument_list|,
 literal|"show-brush-outline"
+argument_list|,
+literal|"Show brush outline"
 argument_list|,
 name|SHOW_BRUSH_OUTLINE_BLURB
 argument_list|,
@@ -572,13 +596,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SHOW_PAINT_TOOL_CURSOR
 argument_list|,
 literal|"show-paint-tool-cursor"
+argument_list|,
+literal|"Show paint tool cursor"
 argument_list|,
 name|SHOW_PAINT_TOOL_CURSOR_BLURB
 argument_list|,
@@ -587,13 +613,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_STRING
+name|GIMP_CONFIG_PROP_STRING
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_IMAGE_TITLE_FORMAT
 argument_list|,
 literal|"image-title-format"
+argument_list|,
+literal|"Image title format"
 argument_list|,
 name|IMAGE_TITLE_FORMAT_BLURB
 argument_list|,
@@ -602,13 +630,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_STRING
+name|GIMP_CONFIG_PROP_STRING
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_IMAGE_STATUS_FORMAT
 argument_list|,
 literal|"image-status-format"
+argument_list|,
+literal|"Image statusbar format"
 argument_list|,
 name|IMAGE_STATUS_FORMAT_BLURB
 argument_list|,
@@ -617,13 +647,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_RESOLUTION
+name|GIMP_CONFIG_PROP_RESOLUTION
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_MONITOR_XRESOLUTION
 argument_list|,
 literal|"monitor-xresolution"
+argument_list|,
+literal|"Monitor resolution X"
 argument_list|,
 name|MONITOR_XRESOLUTION_BLURB
 argument_list|,
@@ -632,13 +664,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_RESOLUTION
+name|GIMP_CONFIG_PROP_RESOLUTION
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_MONITOR_YRESOLUTION
 argument_list|,
 literal|"monitor-yresolution"
+argument_list|,
+literal|"Monitor resolution Y"
 argument_list|,
 name|MONITOR_YRESOLUTION_BLURB
 argument_list|,
@@ -647,13 +681,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_MONITOR_RES_FROM_GDK
 argument_list|,
 literal|"monitor-resolution-from-windowing-system"
+argument_list|,
+literal|"Monitor resolution from windowing system"
 argument_list|,
 name|MONITOR_RES_FROM_GDK_BLURB
 argument_list|,
@@ -662,13 +698,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_NAV_PREVIEW_SIZE
 argument_list|,
 literal|"navigation-preview-size"
+argument_list|,
+literal|"Navigation preview size"
 argument_list|,
 name|NAVIGATION_PREVIEW_SIZE_BLURB
 argument_list|,
@@ -679,13 +717,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_OBJECT
+name|GIMP_CONFIG_PROP_OBJECT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DEFAULT_VIEW
 argument_list|,
 literal|"default-view"
+argument_list|,
+literal|"Default view options"
 argument_list|,
 name|DEFAULT_VIEW_BLURB
 argument_list|,
@@ -696,13 +736,15 @@ operator||
 name|GIMP_CONFIG_PARAM_AGGREGATE
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_OBJECT
+name|GIMP_CONFIG_PROP_OBJECT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DEFAULT_FULLSCREEN_VIEW
 argument_list|,
 literal|"default-fullscreen-view"
+argument_list|,
+literal|"Default fullscreen view options"
 argument_list|,
 name|DEFAULT_FULLSCREEN_VIEW_BLURB
 argument_list|,
@@ -713,13 +755,15 @@ operator||
 name|GIMP_CONFIG_PARAM_AGGREGATE
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_ACTIVATE_ON_FOCUS
 argument_list|,
 literal|"activate-on-focus"
+argument_list|,
+literal|"Activate on focus"
 argument_list|,
 name|ACTIVATE_ON_FOCUS_BLURB
 argument_list|,
@@ -728,13 +772,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_SPACE_BAR_ACTION
 argument_list|,
 literal|"space-bar-action"
+argument_list|,
+literal|"Space bar action"
 argument_list|,
 name|SPACE_BAR_ACTION_BLURB
 argument_list|,
@@ -745,13 +791,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
+name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_ZOOM_QUALITY
 argument_list|,
 literal|"zoom-quality"
+argument_list|,
+literal|"Zoom quality"
 argument_list|,
 name|ZOOM_QUALITY_BLURB
 argument_list|,
@@ -762,13 +810,15 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_USE_EVENT_HISTORY
 argument_list|,
 literal|"use-event-history"
+argument_list|,
+literal|"Use event history"
 argument_list|,
 name|DEFAULT_USE_EVENT_HISTORY_BLURB
 argument_list|,
@@ -778,7 +828,7 @@ name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 comment|/*  only for backward compatibility:  */
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
@@ -788,6 +838,8 @@ literal|"default-snap-to-guides"
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
@@ -795,7 +847,7 @@ operator||
 name|GIMP_CONFIG_PARAM_IGNORE
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
@@ -805,6 +857,8 @@ literal|"default-snap-to-grid"
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
@@ -812,7 +866,7 @@ operator||
 name|GIMP_CONFIG_PARAM_IGNORE
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
@@ -822,6 +876,8 @@ literal|"default-snap-to-canvas"
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
@@ -829,13 +885,15 @@ operator||
 name|GIMP_CONFIG_PARAM_IGNORE
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DEFAULT_SNAP_TO_PATH
 argument_list|,
 literal|"default-snap-to-path"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -846,13 +904,15 @@ operator||
 name|GIMP_CONFIG_PARAM_IGNORE
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_CONFIRM_ON_CLOSE
 argument_list|,
 literal|"confirm-on-close"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -863,13 +923,15 @@ operator||
 name|GIMP_CONFIG_PARAM_IGNORE
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_RGB
+name|GIMP_CONFIG_PROP_RGB
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_XOR_COLOR
 argument_list|,
 literal|"xor-color"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
