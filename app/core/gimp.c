@@ -363,7 +363,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad129d70103
+DECL|enum|__anon2b0305350103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -391,7 +391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad129d70203
+DECL|enum|__anon2b0305350203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4678,9 +4678,11 @@ name|gimp
 operator|->
 name|no_fonts
 condition|)
-name|gimp_fonts_load
+name|gimp_fonts_load_with_status
 argument_list|(
 name|gimp
+argument_list|,
+name|status_callback
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the color history   */

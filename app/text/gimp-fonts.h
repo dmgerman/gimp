@@ -40,6 +40,20 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_fonts_load_with_status
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GimpInitStatusFunc
+name|status_callback
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_fonts_reset
 parameter_list|(
 name|Gimp
