@@ -16,6 +16,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -23,6 +29,12 @@ begin_include
 include|#
 directive|include
 file|<gdk/gdkkeysyms.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimpcolor/gimpcolor.h>
 end_include
 
 begin_include
@@ -80,7 +92,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d6b6f60103
+DECL|enum|__anon2ba61b6d0103
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -103,7 +115,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d6b6f60208
+DECL|struct|__anon2ba61b6d0208
 block|{
 comment|/* Color value */
 DECL|member|h
@@ -157,7 +169,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d6b6f60303
+DECL|enum|__anon2ba61b6d0303
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -1391,21 +1403,6 @@ end_function
 begin_comment
 comment|/* Utility functions */
 end_comment
-
-begin_define
-DECL|macro|INTENSITY (r,g,b)
-define|#
-directive|define
-name|INTENSITY
-parameter_list|(
-name|r
-parameter_list|,
-name|g
-parameter_list|,
-name|b
-parameter_list|)
-value|((r) * 0.30 + (g) * 0.59 + (b) * 0.11)
-end_define
 
 begin_comment
 comment|/* Converts from HSV to RGB */
@@ -4148,7 +4145,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|INTENSITY
+name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|r
 argument_list|,
@@ -5564,7 +5561,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|INTENSITY
+name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|r
 argument_list|,
