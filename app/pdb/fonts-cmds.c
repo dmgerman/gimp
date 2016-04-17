@@ -122,6 +122,8 @@ block|{
 name|gimp_fonts_load
 argument_list|(
 name|gimp
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -323,7 +325,7 @@ literal|"gimp-fonts-refresh"
 argument_list|,
 literal|"Refresh current fonts. This function always succeeds."
 argument_list|,
-literal|"This procedure retrieves all fonts currently in the user's font path and updates the font dialogs accordingly."
+literal|"This procedure retrieves all fonts currently in the user's font path and updates the font dialogs accordingly. Depending on the amount of fonts on the system, this can take considerable time."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,

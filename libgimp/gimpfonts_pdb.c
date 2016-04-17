@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpfonts  * @title: gimpfonts  * @short_description: Op
 end_comment
 
 begin_comment
-comment|/**  * gimp_fonts_refresh:  *  * Refresh current fonts. This function always succeeds.  *  * This procedure retrieves all fonts currently in the user's font path  * and updates the font dialogs accordingly.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_fonts_refresh:  *  * Refresh current fonts. This function always succeeds.  *  * This procedure retrieves all fonts currently in the user's font path  * and updates the font dialogs accordingly. Depending on the amount of  * fonts on the system, this can take considerable time.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function

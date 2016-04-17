@@ -166,7 +166,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8a25870108
+DECL|struct|__anon28b768ad0108
 block|{
 DECL|member|config
 name|FcConfig
@@ -284,8 +284,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_fonts_load_with_status (Gimp * gimp,GimpInitStatusFunc status_callback)
-name|gimp_fonts_load_with_status
+DECL|function|gimp_fonts_load (Gimp * gimp,GimpInitStatusFunc status_callback)
+name|gimp_fonts_load
 parameter_list|(
 name|Gimp
 modifier|*
@@ -574,11 +574,13 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|gimp_fonts_load_func
 argument_list|(
 name|config
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_font_list_restore
 argument_list|(
 name|GIMP_FONT_LIST
@@ -604,26 +606,6 @@ expr_stmt|;
 name|gimp_unset_busy
 argument_list|(
 name|gimp
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|gimp_fonts_load (Gimp * gimp)
-name|gimp_fonts_load
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|)
-block|{
-name|gimp_fonts_load_with_status
-argument_list|(
-name|gimp
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}

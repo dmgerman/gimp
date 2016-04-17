@@ -363,7 +363,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0305350103
+DECL|enum|__anon2ae9b80a0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -391,7 +391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0305350203
+DECL|enum|__anon2ae9b80a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4678,7 +4678,7 @@ name|gimp
 operator|->
 name|no_fonts
 condition|)
-name|gimp_fonts_load_with_status
+name|gimp_fonts_load
 argument_list|(
 name|gimp
 argument_list|,
