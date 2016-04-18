@@ -59,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad1496c0103
+DECL|enum|__anon2c5b0f6f0103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -77,7 +77,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad1496c0208
+DECL|struct|__anon2c5b0f6f0208
 block|{
 DECL|member|azimuth
 name|gdouble
@@ -1523,7 +1523,7 @@ operator|&
 name|height
 argument_list|)
 condition|)
-return|return
+return|return;
 comment|/* expand the bounds a little */
 name|x1
 operator|=
@@ -1537,7 +1537,7 @@ name|evals
 operator|.
 name|depth
 argument_list|)
-return|;
+expr_stmt|;
 name|y1
 operator|=
 name|MAX
