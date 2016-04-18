@@ -251,32 +251,6 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"NEF image"
-argument_list|)
-block|,
-literal|"image/x-nikon-nef"
-block|,
-literal|"nef"
-block|,
-literal|""
-block|,
-literal|"file-nef-load"
-block|,
-literal|"Loads NEF images using GEGL"
-block|,
-literal|"This procedure loads images in NEF format, using gegl:load"
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-comment|/* no NEF saving */
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
 literal|"WebP image"
 argument_list|)
 block|,
