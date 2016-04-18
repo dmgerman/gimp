@@ -1530,6 +1530,7 @@ name|NULL
 argument_list|,
 literal|"color"
 argument_list|,
+operator|&
 name|color
 argument_list|,
 name|NULL
