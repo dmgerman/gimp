@@ -799,7 +799,7 @@ name|lua_cmd
 block|,
 literal|"--conf"
 block|,
-literal|"plugins/lighttable/export/iccprofile=linear_rec709_rgb"
+literal|"plugins/lighttable/export/icctype=3"
 block|,
 literal|"--conf"
 block|,
