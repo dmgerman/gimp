@@ -350,6 +350,11 @@ argument_list|,
 literal|"image/tiff"
 argument_list|)
 expr_stmt|;
+name|gimp_register_file_handler_uri
+argument_list|(
+name|LOAD_PROC
+argument_list|)
+expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
 name|LOAD_PROC
@@ -403,6 +408,11 @@ argument_list|(
 name|SAVE_PROC
 argument_list|,
 literal|"image/tiff"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_uri
+argument_list|(
+name|SAVE_PROC
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
@@ -571,7 +581,7 @@ name|GFile
 modifier|*
 name|file
 init|=
-name|g_file_new_for_path
+name|g_file_new_for_uri
 argument_list|(
 name|param
 index|[
@@ -1541,7 +1551,7 @@ name|saved_bpp
 decl_stmt|;
 name|file
 operator|=
-name|g_file_new_for_path
+name|g_file_new_for_uri
 argument_list|(
 name|param
 index|[
