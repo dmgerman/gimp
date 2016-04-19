@@ -108,13 +108,12 @@ end_empty_stmt
 begin_function
 name|TIFF
 modifier|*
-DECL|function|tiff_open (const gchar * filename,const gchar * mode,GError ** error)
+DECL|function|tiff_open (GFile * file,const gchar * mode,GError ** error)
 name|tiff_open
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 specifier|const
 name|gchar
@@ -127,6 +126,15 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|filename
+init|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
+decl_stmt|;
 name|TIFFSetWarningHandler
 argument_list|(
 name|tiff_warning

@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ab68390108
+DECL|struct|__anon29af40690108
 block|{
 DECL|member|compression
 name|gint
@@ -59,10 +59,9 @@ begin_function_decl
 name|gboolean
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|TiffSaveVals
 modifier|*

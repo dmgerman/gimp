@@ -21,10 +21,9 @@ name|TIFF
 modifier|*
 name|tiff_open
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 specifier|const
 name|gchar

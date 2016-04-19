@@ -1063,13 +1063,12 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|save_image (const gchar * filename,TiffSaveVals * tsvals,gint32 image,gint32 layer,gint32 orig_image,const gchar * image_comment,gint * saved_bpp,GError ** error)
+DECL|function|save_image (GFile * file,TiffSaveVals * tsvals,gint32 image,gint32 layer,gint32 orig_image,const gchar * image_comment,gint * saved_bpp,GError ** error)
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|TiffSaveVals
 modifier|*
@@ -1316,9 +1315,9 @@ argument_list|(
 literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2078,7 +2077,7 @@ name|tif
 operator|=
 name|tiff_open
 argument_list|(
-name|filename
+name|file
 argument_list|,
 literal|"w"
 argument_list|,
@@ -2112,9 +2111,9 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -2284,7 +2283,10 @@ name|tif
 argument_list|,
 name|TIFFTAG_DOCUMENTNAME
 argument_list|,
-name|filename
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|TIFFSetField
@@ -3143,7 +3145,6 @@ name|thumb_pixels
 operator|++
 expr_stmt|;
 comment|/* b */
-operator|*
 name|thumb_pixels
 operator|++
 expr_stmt|;

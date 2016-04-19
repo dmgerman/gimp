@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2785875e0108
+DECL|struct|__anon2b93f93e0108
 block|{
 DECL|member|compression
 name|gint
@@ -89,7 +89,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2785875e0208
+DECL|struct|__anon2b93f93e0208
 block|{
 DECL|member|ID
 name|gint32
@@ -702,13 +702,12 @@ end_function
 
 begin_function
 name|gint32
-DECL|function|load_image (const gchar * filename,TIFF * tif,TiffSelectedPages * pages,gboolean * resolution_loaded,GError ** error)
+DECL|function|load_image (GFile * file,TIFF * tif,TiffSelectedPages * pages,gboolean * resolution_loaded,GError ** error)
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|TIFF
 modifier|*
@@ -774,9 +773,9 @@ argument_list|(
 literal|"Opening '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1252,9 +1251,9 @@ name|g_message
 argument_list|(
 literal|"Could not get image width from '%s'"
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1281,9 +1280,9 @@ name|g_message
 argument_list|(
 literal|"Could not get image length from '%s'"
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1345,7 +1344,10 @@ argument_list|(
 literal|"Could not get photometric from '%s'. "
 literal|"Image is CCITT compressed, assuming min-is-white"
 argument_list|,
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|photomet
@@ -1360,7 +1362,10 @@ argument_list|(
 literal|"Could not get photometric from '%s'. "
 literal|"Assuming min-is-black"
 argument_list|,
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* old AppleScan software misses out the photometric tag                * (and incidentally assumes min-is-white, but xv                * assumes min-is-black, so we follow xv's lead.  It's                * not much hardship to invert the image later).                */
@@ -1455,9 +1460,9 @@ argument_list|(
 literal|"alpha channel type not defined for file %s. "
 literal|"Assuming alpha is not premultiplied"
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2333,7 +2338,10 @@ name|g_strdup_printf
 argument_list|(
 literal|"%s-%d"
 argument_list|,
-name|filename
+name|g_file_get_uri
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 name|ilayer
 argument_list|)
@@ -2386,7 +2394,10 @@ argument_list|(
 literal|"%s-%d-of-%d-pages"
 argument_list|)
 argument_list|,
-name|filename
+name|g_file_get_uri
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 name|pages
 operator|->
@@ -2416,7 +2427,10 @@ name|gimp_image_set_filename
 argument_list|(
 name|image
 argument_list|,
-name|filename
+name|g_file_get_uri
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2905,9 +2919,9 @@ name|g_message
 argument_list|(
 literal|"Could not get colormaps from '%s'"
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
