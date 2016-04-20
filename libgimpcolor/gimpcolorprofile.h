@@ -267,6 +267,16 @@ end_function_decl
 begin_function_decl
 name|GimpColorProfile
 modifier|*
+name|gimp_color_profile_new_d50_gray_lab_trc
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpColorProfile
+modifier|*
 name|gimp_color_profile_new_srgb_trc_from_color_profile
 parameter_list|(
 name|GimpColorProfile
