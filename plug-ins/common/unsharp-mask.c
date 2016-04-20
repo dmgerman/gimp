@@ -84,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a06e900108
+DECL|struct|__anon290b8beb0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a06e900208
+DECL|struct|__anon290b8beb0208
 block|{
 DECL|member|run
 name|gboolean
@@ -2175,7 +2175,7 @@ name|y1
 argument_list|,
 name|y1
 operator|+
-name|width
+name|height
 argument_list|,
 name|TRUE
 argument_list|)
