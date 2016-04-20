@@ -6106,6 +6106,17 @@ name|message
 argument_list|)
 operator|==
 literal|0
+operator|&&
+name|g_strcmp0
+argument_list|(
+name|msg
+operator|->
+name|icon_name
+argument_list|,
+name|icon_name
+argument_list|)
+operator|==
+literal|0
 condition|)
 block|{
 name|g_free
