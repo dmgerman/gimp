@@ -50,6 +50,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"bmp-load.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -122,6 +128,11 @@ name|FILE
 modifier|*
 name|fd
 parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|filename
+parameter_list|,
 name|gint
 name|width
 parameter_list|,
@@ -150,7 +161,7 @@ name|gint
 name|rowbytes
 parameter_list|,
 name|gboolean
-name|grey
+name|gray
 parameter_list|,
 specifier|const
 name|Bitmap_Channel
@@ -164,6 +175,22 @@ name|error
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_decl_stmt
+DECL|variable|bitmap_file_head
+specifier|static
+name|Bitmap_File_Head
+name|bitmap_file_head
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|bitmap_head
+specifier|static
+name|Bitmap_Head
+name|bitmap_head
+decl_stmt|;
+end_decl_stmt
 
 begin_function
 specifier|static
@@ -565,37 +592,37 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|ToL (const guchar * puffer)
+DECL|function|ToL (const guchar * buffer)
 name|ToL
 parameter_list|(
 specifier|const
 name|guchar
 modifier|*
-name|puffer
+name|buffer
 parameter_list|)
 block|{
 return|return
 operator|(
-name|puffer
+name|buffer
 index|[
 literal|0
 index|]
 operator||
-name|puffer
+name|buffer
 index|[
 literal|1
 index|]
 operator|<<
 literal|8
 operator||
-name|puffer
+name|buffer
 index|[
 literal|2
 index|]
 operator|<<
 literal|16
 operator||
-name|puffer
+name|buffer
 index|[
 literal|3
 index|]
@@ -609,23 +636,23 @@ end_function
 begin_function
 specifier|static
 name|gint16
-DECL|function|ToS (const guchar * puffer)
+DECL|function|ToS (const guchar * buffer)
 name|ToS
 parameter_list|(
 specifier|const
 name|guchar
 modifier|*
-name|puffer
+name|buffer
 parameter_list|)
 block|{
 return|return
 operator|(
-name|puffer
+name|buffer
 index|[
 literal|0
 index|]
 operator||
-name|puffer
+name|buffer
 index|[
 literal|1
 index|]
@@ -639,7 +666,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|ReadColorMap (FILE * fd,guchar buffer[256][3],gint number,gint size,gboolean * grey)
+DECL|function|ReadColorMap (FILE * fd,guchar buffer[256][3],gint number,gint size,gboolean * gray)
 name|ReadColorMap
 parameter_list|(
 name|FILE
@@ -663,7 +690,7 @@ name|size
 parameter_list|,
 name|gboolean
 modifier|*
-name|grey
+name|gray
 parameter_list|)
 block|{
 name|gint
@@ -676,7 +703,7 @@ literal|4
 index|]
 decl_stmt|;
 operator|*
-name|grey
+name|gray
 operator|=
 operator|(
 name|number
@@ -764,12 +791,12 @@ literal|0
 index|]
 expr_stmt|;
 operator|*
-name|grey
+name|gray
 operator|=
 operator|(
 operator|(
 operator|*
-name|grey
+name|gray
 operator|)
 operator|&&
 operator|(
@@ -992,13 +1019,13 @@ end_function
 
 begin_function
 name|gint32
-DECL|function|ReadBMP (const gchar * name,GError ** error)
-name|ReadBMP
+DECL|function|load_image (const gchar * filename,GError ** error)
+name|load_image
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|name
+name|filename
 parameter_list|,
 name|GError
 modifier|*
@@ -1024,7 +1051,7 @@ decl_stmt|,
 name|Maps
 decl_stmt|;
 name|gboolean
-name|Grey
+name|gray
 init|=
 name|FALSE
 decl_stmt|;
@@ -1064,13 +1091,9 @@ argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|name
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|filename
-operator|=
-name|name
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|fd
 operator|=
@@ -1341,7 +1364,7 @@ name|out
 goto|;
 block|}
 comment|/* bring them to the right byteorder. Not too nice, but it should work */
-name|Bitmap_File_Head
+name|bitmap_file_head
 operator|.
 name|bfSize
 operator|=
@@ -1354,7 +1377,7 @@ literal|0x00
 index|]
 argument_list|)
 expr_stmt|;
-name|Bitmap_File_Head
+name|bitmap_file_head
 operator|.
 name|zzHotX
 operator|=
@@ -1367,7 +1390,7 @@ literal|0x04
 index|]
 argument_list|)
 expr_stmt|;
-name|Bitmap_File_Head
+name|bitmap_file_head
 operator|.
 name|zzHotY
 operator|=
@@ -1380,7 +1403,7 @@ literal|0x06
 index|]
 argument_list|)
 expr_stmt|;
-name|Bitmap_File_Head
+name|bitmap_file_head
 operator|.
 name|bfOffs
 operator|=
@@ -1429,7 +1452,7 @@ goto|goto
 name|out
 goto|;
 block|}
-name|Bitmap_File_Head
+name|bitmap_file_head
 operator|.
 name|biSize
 operator|=
@@ -1445,7 +1468,7 @@ expr_stmt|;
 comment|/* What kind of bitmap is it? */
 if|if
 condition|(
-name|Bitmap_File_Head
+name|bitmap_file_head
 operator|.
 name|biSize
 operator|==
@@ -1489,7 +1512,7 @@ goto|goto
 name|out
 goto|;
 block|}
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biWidth
 operator|=
@@ -1503,7 +1526,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 12 */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biHeight
 operator|=
@@ -1517,7 +1540,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 14 */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biPlanes
 operator|=
@@ -1531,7 +1554,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 16 */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biBitCnt
 operator|=
@@ -1545,41 +1568,41 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 18 */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biCompr
 operator|=
 literal|0
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biSizeIm
 operator|=
 literal|0
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biXPels
 operator|=
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biYPels
 operator|=
 literal|0
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biClrUsed
 operator|=
 literal|0
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biClrImp
 operator|=
 literal|0
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|masks
 index|[
@@ -1588,7 +1611,7 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|masks
 index|[
@@ -1597,7 +1620,7 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|masks
 index|[
@@ -1606,7 +1629,7 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|masks
 index|[
@@ -1635,7 +1658,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|Bitmap_File_Head
+name|bitmap_file_head
 operator|.
 name|biSize
 operator|==
@@ -1679,7 +1702,7 @@ goto|goto
 name|out
 goto|;
 block|}
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biWidth
 operator|=
@@ -1693,7 +1716,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 12 */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biHeight
 operator|=
@@ -1707,7 +1730,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 16 */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biPlanes
 operator|=
@@ -1721,7 +1744,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 1A */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biBitCnt
 operator|=
@@ -1735,7 +1758,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 1C */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biCompr
 operator|=
@@ -1749,7 +1772,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 1E */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biSizeIm
 operator|=
@@ -1763,7 +1786,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 22 */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biXPels
 operator|=
@@ -1777,7 +1800,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 26 */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biYPels
 operator|=
@@ -1791,7 +1814,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 2A */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biClrUsed
 operator|=
@@ -1805,7 +1828,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 2E */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biClrImp
 operator|=
@@ -1819,7 +1842,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 32 */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|masks
 index|[
@@ -1828,7 +1851,7 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|masks
 index|[
@@ -1837,7 +1860,7 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|masks
 index|[
@@ -1846,7 +1869,7 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|masks
 index|[
@@ -1873,7 +1896,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biCompr
 operator|==
@@ -1931,7 +1954,7 @@ goto|goto
 name|out
 goto|;
 block|}
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|masks
 index|[
@@ -1947,7 +1970,7 @@ literal|0x00
 index|]
 argument_list|)
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|masks
 index|[
@@ -1963,7 +1986,7 @@ literal|0x04
 index|]
 argument_list|)
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|masks
 index|[
@@ -1982,7 +2005,7 @@ expr_stmt|;
 name|ReadChannelMasks
 argument_list|(
 operator|&
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|masks
 index|[
@@ -1998,7 +2021,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biCompr
 operator|==
@@ -2017,7 +2040,7 @@ endif|#
 directive|endif
 name|setMasksDefault
 argument_list|(
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biBitCnt
 argument_list|,
@@ -2029,7 +2052,7 @@ elseif|else
 if|if
 condition|(
 operator|(
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biCompr
 operator|!=
@@ -2037,7 +2060,7 @@ name|BI_RLE4
 operator|)
 operator|&&
 operator|(
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biCompr
 operator|!=
@@ -2059,7 +2082,7 @@ argument_list|(
 literal|"Unsupported compression (%lu) in BMP file from '%s'"
 argument_list|)
 argument_list|,
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biCompr
 argument_list|,
@@ -2084,20 +2107,20 @@ block|}
 elseif|else
 if|if
 condition|(
-name|Bitmap_File_Head
+name|bitmap_file_head
 operator|.
 name|biSize
 operator|>=
 literal|56
 operator|&&
-name|Bitmap_File_Head
+name|bitmap_file_head
 operator|.
 name|biSize
 operator|<=
 literal|64
 condition|)
-comment|/* enhanced Windows format with bit masks */
 block|{
+comment|/* enhanced Windows format with bit masks */
 if|if
 condition|(
 operator|!
@@ -2107,7 +2130,7 @@ name|fd
 argument_list|,
 name|buffer
 argument_list|,
-name|Bitmap_File_Head
+name|bitmap_file_head
 operator|.
 name|biSize
 operator|-
@@ -2138,7 +2161,7 @@ goto|goto
 name|out
 goto|;
 block|}
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biWidth
 operator|=
@@ -2152,7 +2175,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 12 */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biHeight
 operator|=
@@ -2166,7 +2189,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 16 */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biPlanes
 operator|=
@@ -2180,7 +2203,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 1A */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biBitCnt
 operator|=
@@ -2194,7 +2217,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 1C */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biCompr
 operator|=
@@ -2208,7 +2231,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 1E */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biSizeIm
 operator|=
@@ -2222,7 +2245,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 22 */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biXPels
 operator|=
@@ -2236,7 +2259,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 26 */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biYPels
 operator|=
@@ -2250,7 +2273,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 2A */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biClrUsed
 operator|=
@@ -2264,7 +2287,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 2E */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biClrImp
 operator|=
@@ -2278,7 +2301,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 32 */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|masks
 index|[
@@ -2295,7 +2318,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 36 */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|masks
 index|[
@@ -2312,7 +2335,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 3A */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|masks
 index|[
@@ -2329,7 +2352,7 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* 3E */
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|masks
 index|[
@@ -2353,7 +2376,7 @@ expr_stmt|;
 name|ReadChannelMasks
 argument_list|(
 operator|&
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|masks
 index|[
@@ -2369,20 +2392,20 @@ block|}
 elseif|else
 if|if
 condition|(
-name|Bitmap_File_Head
+name|bitmap_file_head
 operator|.
 name|biSize
 operator|==
 literal|108
 operator|||
-name|Bitmap_File_Head
+name|bitmap_file_head
 operator|.
 name|biSize
 operator|==
 literal|124
 condition|)
-comment|/* BMP Version 4 or 5 */
 block|{
+comment|/* BMP Version 4 or 5 */
 if|if
 condition|(
 operator|!
@@ -2392,7 +2415,7 @@ name|fd
 argument_list|,
 name|buffer
 argument_list|,
-name|Bitmap_File_Head
+name|bitmap_file_head
 operator|.
 name|biSize
 operator|-
@@ -2423,7 +2446,7 @@ goto|goto
 name|out
 goto|;
 block|}
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biWidth
 operator|=
@@ -2436,7 +2459,7 @@ literal|0x00
 index|]
 argument_list|)
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biHeight
 operator|=
@@ -2449,7 +2472,7 @@ literal|0x04
 index|]
 argument_list|)
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biPlanes
 operator|=
@@ -2462,7 +2485,7 @@ literal|0x08
 index|]
 argument_list|)
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biBitCnt
 operator|=
@@ -2475,7 +2498,7 @@ literal|0x0A
 index|]
 argument_list|)
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biCompr
 operator|=
@@ -2488,7 +2511,7 @@ literal|0x0C
 index|]
 argument_list|)
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biSizeIm
 operator|=
@@ -2501,7 +2524,7 @@ literal|0x10
 index|]
 argument_list|)
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biXPels
 operator|=
@@ -2514,7 +2537,7 @@ literal|0x14
 index|]
 argument_list|)
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biYPels
 operator|=
@@ -2527,7 +2550,7 @@ literal|0x18
 index|]
 argument_list|)
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biClrUsed
 operator|=
@@ -2540,7 +2563,7 @@ literal|0x1C
 index|]
 argument_list|)
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biClrImp
 operator|=
@@ -2553,7 +2576,7 @@ literal|0x20
 index|]
 argument_list|)
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|masks
 index|[
@@ -2569,7 +2592,7 @@ literal|0x24
 index|]
 argument_list|)
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|masks
 index|[
@@ -2585,7 +2608,7 @@ literal|0x28
 index|]
 argument_list|)
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|masks
 index|[
@@ -2601,7 +2624,7 @@ literal|0x2C
 index|]
 argument_list|)
 expr_stmt|;
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|masks
 index|[
@@ -2623,7 +2646,7 @@ literal|4
 expr_stmt|;
 if|if
 condition|(
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biCompr
 operator|==
@@ -2643,7 +2666,7 @@ directive|endif
 name|ReadChannelMasks
 argument_list|(
 operator|&
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|masks
 index|[
@@ -2659,7 +2682,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biCompr
 operator|==
@@ -2678,7 +2701,7 @@ endif|#
 directive|endif
 name|setMasksDefault
 argument_list|(
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biBitCnt
 argument_list|,
@@ -2716,7 +2739,7 @@ comment|/* Valid bit depth is 1, 4, 8, 16, 24, 32 */
 comment|/* 16 is awful, we should probably shoot whoever invented it */
 switch|switch
 condition|(
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biBitCnt
 condition|)
@@ -2771,11 +2794,11 @@ comment|/* There should be some colors used! */
 name|ColormapSize
 operator|=
 operator|(
-name|Bitmap_File_Head
+name|bitmap_file_head
 operator|.
 name|bfOffs
 operator|-
-name|Bitmap_File_Head
+name|bitmap_file_head
 operator|.
 name|biSize
 operator|-
@@ -2787,7 +2810,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biClrUsed
 operator|==
@@ -2795,25 +2818,27 @@ literal|0
 operator|)
 operator|&&
 operator|(
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biBitCnt
 operator|<=
 literal|8
 operator|)
 condition|)
+block|{
 name|ColormapSize
 operator|=
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biClrUsed
 operator|=
 literal|1
 operator|<<
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biBitCnt
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|ColormapSize
@@ -2827,13 +2852,13 @@ expr_stmt|;
 comment|/* Sanity checks */
 if|if
 condition|(
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biHeight
 operator|==
 literal|0
 operator|||
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biWidth
 operator|==
@@ -2866,13 +2891,13 @@ block|}
 comment|/* biHeight may be negative, but G_MININT32 is dangerous because:      G_MININT32 == -(G_MININT32) */
 if|if
 condition|(
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biWidth
 operator|<
 literal|0
 operator|||
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biHeight
 operator|==
@@ -2904,7 +2929,7 @@ goto|;
 block|}
 if|if
 condition|(
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biPlanes
 operator|!=
@@ -2936,13 +2961,13 @@ goto|;
 block|}
 if|if
 condition|(
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biClrUsed
 operator|>
 literal|256
 operator|&&
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biBitCnt
 operator|<=
@@ -2980,14 +3005,14 @@ operator|(
 operator|(
 name|guint64
 operator|)
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biWidth
 operator|)
 operator|>
 name|G_MAXINT32
 operator|/
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biBitCnt
 operator|||
@@ -2995,7 +3020,7 @@ operator|(
 operator|(
 name|guint64
 operator|)
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biWidth
 operator|)
@@ -3005,7 +3030,7 @@ name|G_MAXINT32
 operator|/
 name|ABS
 argument_list|(
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biHeight
 argument_list|)
@@ -3042,11 +3067,11 @@ name|rowbytes
 operator|=
 operator|(
 operator|(
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biWidth
 operator|*
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biBitCnt
 operator|-
@@ -3068,27 +3093,27 @@ argument_list|(
 literal|"\nSize: %lu, Colors: %lu, Bits: %hu, Width: %ld, Height: %ld, "
 literal|"Comp: %lu, Zeile: %d\n"
 argument_list|,
-name|Bitmap_File_Head
+name|bitmap_file_head
 operator|.
 name|bfSize
 argument_list|,
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biClrUsed
 argument_list|,
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biBitCnt
 argument_list|,
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biWidth
 argument_list|,
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biHeight
 argument_list|,
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biCompr
 argument_list|,
@@ -3099,7 +3124,7 @@ endif|#
 directive|endif
 if|if
 condition|(
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biBitCnt
 operator|<=
@@ -3131,7 +3156,7 @@ argument_list|,
 name|Maps
 argument_list|,
 operator|&
-name|Grey
+name|gray
 argument_list|)
 condition|)
 goto|goto
@@ -3142,7 +3167,7 @@ name|fseek
 argument_list|(
 name|fd
 argument_list|,
-name|Bitmap_File_Head
+name|bitmap_file_head
 operator|.
 name|bfOffs
 argument_list|,
@@ -3156,34 +3181,36 @@ name|ReadImage
 argument_list|(
 name|fd
 argument_list|,
-name|Bitmap_Head
+name|filename
+argument_list|,
+name|bitmap_head
 operator|.
 name|biWidth
 argument_list|,
 name|ABS
 argument_list|(
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biHeight
 argument_list|)
 argument_list|,
 name|ColorMap
 argument_list|,
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biClrUsed
 argument_list|,
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biBitCnt
 argument_list|,
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biCompr
 argument_list|,
 name|rowbytes
 argument_list|,
-name|Grey
+name|gray
 argument_list|,
 name|masks
 argument_list|,
@@ -3201,13 +3228,13 @@ name|out
 goto|;
 if|if
 condition|(
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biXPels
 operator|>
 literal|0
 operator|&&
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biYPels
 operator|>
@@ -3221,10 +3248,10 @@ decl_stmt|;
 name|gdouble
 name|yresolution
 decl_stmt|;
-comment|/* I don't agree with scott's feeling that Gimp should be        * trying to "fix" metric resolution translations, in the        * long term Gimp should be SI (metric) anyway, but we        * haven't told the Americans that yet  */
+comment|/* I don't agree with scott's feeling that Gimp should be trying        * to "fix" metric resolution translations, in the long term        * Gimp should be SI (metric) anyway, but we haven't told the        * Americans that yet        */
 name|xresolution
 operator|=
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biXPels
 operator|*
@@ -3232,7 +3259,7 @@ literal|0.0254
 expr_stmt|;
 name|yresolution
 operator|=
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biYPels
 operator|*
@@ -3250,7 +3277,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|Bitmap_Head
+name|bitmap_head
 operator|.
 name|biHeight
 operator|<
@@ -3283,12 +3310,17 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|ReadImage (FILE * fd,gint width,gint height,guchar cmap[256][3],gint ncols,gint bpp,gint compression,gint rowbytes,gboolean grey,const Bitmap_Channel * masks,GError ** error)
+DECL|function|ReadImage (FILE * fd,const gchar * filename,gint width,gint height,guchar cmap[256][3],gint ncols,gint bpp,gint compression,gint rowbytes,gboolean gray,const Bitmap_Channel * masks,GError ** error)
 name|ReadImage
 parameter_list|(
 name|FILE
 modifier|*
 name|fd
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|filename
 parameter_list|,
 name|gint
 name|width
@@ -3318,7 +3350,7 @@ name|gint
 name|rowbytes
 parameter_list|,
 name|gboolean
-name|grey
+name|gray
 parameter_list|,
 specifier|const
 name|Bitmap_Channel
@@ -3537,7 +3569,7 @@ literal|1
 case|:
 if|if
 condition|(
-name|grey
+name|gray
 condition|)
 block|{
 name|base_type
@@ -4473,7 +4505,7 @@ operator|)
 expr_stmt|;
 if|if
 condition|(
-name|grey
+name|gray
 condition|)
 operator|*
 name|temp
@@ -4764,7 +4796,7 @@ operator|)
 expr_stmt|;
 if|if
 condition|(
-name|grey
+name|gray
 condition|)
 operator|*
 name|temp
@@ -4948,7 +4980,7 @@ operator|)
 expr_stmt|;
 if|if
 condition|(
-name|grey
+name|gray
 condition|)
 operator|*
 name|temp
@@ -5253,7 +5285,7 @@ if|if
 condition|(
 operator|(
 operator|!
-name|grey
+name|gray
 operator|)
 operator|&&
 operator|(
