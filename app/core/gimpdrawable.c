@@ -207,7 +207,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d836ff0103
+DECL|enum|__anon2c1b65a40103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -223,7 +223,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d836ff0203
+DECL|enum|__anon2c1b65a40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3275,7 +3275,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_real_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean convert_type,gboolean push_undo,GimpProgress * progress)
+DECL|function|gimp_drawable_real_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean convert_profile,gboolean push_undo,GimpProgress * progress)
 name|gimp_drawable_real_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -3304,7 +3304,7 @@ name|gint
 name|mask_dither_type
 parameter_list|,
 name|gboolean
-name|convert_type
+name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo
