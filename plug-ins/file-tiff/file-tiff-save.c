@@ -2127,6 +2127,12 @@ name|out
 goto|;
 block|}
 comment|/* Set TIFF parameters. */
+if|if
+condition|(
+name|tsvals
+operator|->
+name|save_thumbnail
+condition|)
 name|TIFFSetField
 argument_list|(
 name|tif
