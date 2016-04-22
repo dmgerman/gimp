@@ -115,10 +115,9 @@ value|(Write(buffer, len, file) != 0)
 end_define
 
 begin_typedef
-DECL|struct|_Bitmap_File_Head
 typedef|typedef
 struct|struct
-name|_Bitmap_File_Head
+DECL|struct|__anon2a33e1560108
 block|{
 DECL|member|zzMagic
 name|gchar
@@ -129,89 +128,88 @@ index|]
 decl_stmt|;
 comment|/* 00 "BM" */
 DECL|member|bfSize
-name|gulong
+name|guint32
 name|bfSize
 decl_stmt|;
 comment|/* 02 */
 DECL|member|zzHotX
-name|gushort
+name|guint16
 name|zzHotX
 decl_stmt|;
 comment|/* 06 */
 DECL|member|zzHotY
-name|gushort
+name|guint16
 name|zzHotY
 decl_stmt|;
 comment|/* 08 */
 DECL|member|bfOffs
-name|gulong
+name|guint32
 name|bfOffs
 decl_stmt|;
 comment|/* 0A */
 DECL|member|biSize
-name|gulong
+name|guint32
 name|biSize
 decl_stmt|;
 comment|/* 0E */
-DECL|typedef|Bitmap_File_Head
+DECL|typedef|BitmapFileHead
 block|}
-name|Bitmap_File_Head
+name|BitmapFileHead
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|_Bitmap_Head
 typedef|typedef
 struct|struct
-name|_Bitmap_Head
+DECL|struct|__anon2a33e1560208
 block|{
 DECL|member|biWidth
-name|glong
+name|gint32
 name|biWidth
 decl_stmt|;
 comment|/* 12 */
 DECL|member|biHeight
-name|glong
+name|gint32
 name|biHeight
 decl_stmt|;
 comment|/* 16 */
 DECL|member|biPlanes
-name|gushort
+name|guint16
 name|biPlanes
 decl_stmt|;
 comment|/* 1A */
 DECL|member|biBitCnt
-name|gushort
+name|guint16
 name|biBitCnt
 decl_stmt|;
 comment|/* 1C */
 DECL|member|biCompr
-name|gulong
+name|guint32
 name|biCompr
 decl_stmt|;
 comment|/* 1E */
 DECL|member|biSizeIm
-name|gulong
+name|guint32
 name|biSizeIm
 decl_stmt|;
 comment|/* 22 */
 DECL|member|biXPels
-name|gulong
+name|guint32
 name|biXPels
 decl_stmt|;
 comment|/* 26 */
 DECL|member|biYPels
-name|gulong
+name|guint32
 name|biYPels
 decl_stmt|;
 comment|/* 2A */
 DECL|member|biClrUsed
-name|gulong
+name|guint32
 name|biClrUsed
 decl_stmt|;
 comment|/* 2E */
 DECL|member|biClrImp
-name|gulong
+name|guint32
 name|biClrImp
 decl_stmt|;
 comment|/* 32 */
@@ -223,17 +221,16 @@ literal|4
 index|]
 decl_stmt|;
 comment|/* 36 */
-DECL|typedef|Bitmap_Head
+DECL|typedef|BitmapHead
 block|}
-name|Bitmap_Head
+name|BitmapHead
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|_Bitmap_Channel
 typedef|typedef
 struct|struct
-name|_Bitmap_Channel
+DECL|struct|__anon2a33e1560308
 block|{
 DECL|member|mask
 name|guint32
@@ -247,9 +244,9 @@ DECL|member|max_value
 name|gfloat
 name|max_value
 decl_stmt|;
-DECL|typedef|Bitmap_Channel
+DECL|typedef|BitmapChannel
 block|}
-name|Bitmap_Channel
+name|BitmapChannel
 typedef|;
 end_typedef
 

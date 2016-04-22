@@ -164,7 +164,7 @@ name|gboolean
 name|gray
 parameter_list|,
 specifier|const
-name|Bitmap_Channel
+name|BitmapChannel
 modifier|*
 name|masks
 parameter_list|,
@@ -176,32 +176,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|bitmap_file_head
-specifier|static
-name|Bitmap_File_Head
-name|bitmap_file_head
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|bitmap_head
-specifier|static
-name|Bitmap_Head
-name|bitmap_head
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 specifier|static
 name|void
-DECL|function|setMasksDefault (gushort biBitCnt,Bitmap_Channel * masks)
+DECL|function|setMasksDefault (gushort biBitCnt,BitmapChannel * masks)
 name|setMasksDefault
 parameter_list|(
 name|gushort
 name|biBitCnt
 parameter_list|,
-name|Bitmap_Channel
+name|BitmapChannel
 modifier|*
 name|masks
 parameter_list|)
@@ -696,12 +680,6 @@ block|{
 name|gint
 name|i
 decl_stmt|;
-name|guchar
-name|rgb
-index|[
-literal|4
-index|]
-decl_stmt|;
 operator|*
 name|gray
 operator|=
@@ -725,6 +703,12 @@ name|i
 operator|++
 control|)
 block|{
+name|guchar
+name|rgb
+index|[
+literal|4
+index|]
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -834,14 +818,14 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|ReadChannelMasks (guint32 * tmp,Bitmap_Channel * masks,guint channels)
+DECL|function|ReadChannelMasks (guint32 * tmp,BitmapChannel * masks,guint channels)
 name|ReadChannelMasks
 parameter_list|(
 name|guint32
 modifier|*
 name|tmp
 parameter_list|,
-name|Bitmap_Channel
+name|BitmapChannel
 modifier|*
 name|masks
 parameter_list|,
@@ -849,17 +833,8 @@ name|guint
 name|channels
 parameter_list|)
 block|{
-name|guint32
-name|mask
-decl_stmt|;
 name|gint
 name|i
-decl_stmt|,
-name|nbits
-decl_stmt|,
-name|offset
-decl_stmt|,
-name|bit
 decl_stmt|;
 for|for
 control|(
@@ -875,6 +850,16 @@ name|i
 operator|++
 control|)
 block|{
+name|guint32
+name|mask
+decl_stmt|;
+name|gint
+name|nbits
+decl_stmt|,
+name|offset
+decl_stmt|,
+name|bit
+decl_stmt|;
 name|mask
 operator|=
 name|tmp
@@ -966,9 +951,7 @@ argument_list|(
 operator|(
 literal|1
 operator|<<
-operator|(
 name|nbits
-operator|)
 operator|)
 operator|-
 literal|1
@@ -1037,6 +1020,12 @@ name|FILE
 modifier|*
 name|fd
 decl_stmt|;
+name|BitmapFileHead
+name|bitmap_file_head
+decl_stmt|;
+name|BitmapHead
+name|bitmap_head
+decl_stmt|;
 name|guchar
 name|buffer
 index|[
@@ -1076,7 +1065,7 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-name|Bitmap_Channel
+name|BitmapChannel
 name|masks
 index|[
 literal|4
@@ -2079,7 +2068,7 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"Unsupported compression (%lu) in BMP file from '%s'"
+literal|"Unsupported compression (%u) in BMP file from '%s'"
 argument_list|)
 argument_list|,
 name|bitmap_head
@@ -3310,7 +3299,7 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|ReadImage (FILE * fd,const gchar * filename,gint width,gint height,guchar cmap[256][3],gint ncols,gint bpp,gint compression,gint rowbytes,gboolean gray,const Bitmap_Channel * masks,GError ** error)
+DECL|function|ReadImage (FILE * fd,const gchar * filename,gint width,gint height,guchar cmap[256][3],gint ncols,gint bpp,gint compression,gint rowbytes,gboolean gray,const BitmapChannel * masks,GError ** error)
 name|ReadImage
 parameter_list|(
 name|FILE
@@ -3353,7 +3342,7 @@ name|gboolean
 name|gray
 parameter_list|,
 specifier|const
-name|Bitmap_Channel
+name|BitmapChannel
 modifier|*
 name|masks
 parameter_list|,
@@ -4649,7 +4638,7 @@ literal|0
 condition|)
 comment|/* Count + Color - record */
 block|{
-comment|/* encoded mode run -                          row_buf[0] == run_length                          row_buf[1] == pixel data                     */
+comment|/* encoded mode run -                      *   row_buf[0] == run_length                      *   row_buf[1] == pixel data                      */
 for|for
 control|(
 name|j
