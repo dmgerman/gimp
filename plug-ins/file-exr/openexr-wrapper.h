@@ -38,7 +38,7 @@ name|struct
 name|_EXRLoader
 name|EXRLoader
 typedef|;
-DECL|enum|__anon2b2910f80103
+DECL|enum|__anon2a05684b0103
 typedef|typedef
 enum|enum
 block|{
@@ -54,7 +54,7 @@ DECL|typedef|EXRPrecision
 block|}
 name|EXRPrecision
 typedef|;
-DECL|enum|__anon2b2910f80203
+DECL|enum|__anon2a05684b0203
 typedef|typedef
 enum|enum
 block|{
@@ -154,6 +154,19 @@ function_decl|;
 name|guchar
 modifier|*
 name|exr_loader_get_exif
+parameter_list|(
+name|EXRLoader
+modifier|*
+name|loader
+parameter_list|,
+name|guint
+modifier|*
+name|size
+parameter_list|)
+function_decl|;
+name|guchar
+modifier|*
+name|exr_loader_get_xmp
 parameter_list|(
 name|EXRLoader
 modifier|*
