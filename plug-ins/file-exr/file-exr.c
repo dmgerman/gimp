@@ -1337,9 +1337,6 @@ condition|(
 name|xmp_data
 condition|)
 block|{
-comment|// FIXME:
-comment|// gimp_metadata_set_from_xmp skips the first 10 bytes.
-comment|// working around that like this might not be the right thing to do!
 if|if
 condition|(
 name|gimp_metadata_set_from_xmp
@@ -1347,12 +1344,8 @@ argument_list|(
 name|metadata
 argument_list|,
 name|xmp_data
-operator|-
-literal|10
 argument_list|,
 name|xmp_size
-operator|+
-literal|10
 argument_list|,
 name|NULL
 argument_list|)

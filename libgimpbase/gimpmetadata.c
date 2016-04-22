@@ -1069,7 +1069,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c04a3c50108
+DECL|struct|__anon2bf2ddc30108
 block|{
 DECL|member|name
 name|gchar
@@ -2840,14 +2840,6 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|)
-expr_stmt|;
-name|xmp_data
-operator|+=
-literal|10
-expr_stmt|;
-name|xmp_data_length
-operator|-=
-literal|10
 expr_stmt|;
 name|xmp_metadata
 operator|=
