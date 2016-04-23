@@ -418,7 +418,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b0b2f950103
+DECL|enum|__anon2ba281e40103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1514,7 +1514,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b2f950208
+DECL|struct|__anon2ba281e40208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1750,7 +1750,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b2f950308
+DECL|struct|__anon2ba281e40308
 block|{
 DECL|member|used_count
 name|glong
@@ -3051,9 +3051,6 @@ operator|==
 name|GIMP_INDEXED
 condition|)
 block|{
-name|gint
-name|i
-decl_stmt|;
 name|rgb_to_lab_fish
 operator|=
 name|babl_fish
@@ -3266,7 +3263,10 @@ operator|==
 name|GIMP_MAKE_PALETTE
 condition|)
 block|{
-comment|/* If this is an RGB image, and the user wanted a custom-built            *  generated palette, and this image has no more colors than            *  the user asked for, we don't need the first pass (quantization).            *            * There's also no point in dithering, since there's no error to            *  spread.  So we destroy the old quantobj and make a new one            *  with the remapping function set to a special LUT-based            *  no-dither remapper.            */
+name|gint
+name|i
+decl_stmt|;
+comment|/*  If this is an RGB image, and the user wanted a            *  custom-built generated palette, and this image has no            *  more colors than the user asked for, we don't need the            *  first pass (quantization).            *            *  There's also no point in dithering, since there's no            *  error to spread.  So we destroy the old quantobj and            *  make a new one with the remapping function set to a            *  special LUT-based no-dither remapper.            */
 name|quantobj
 operator|->
 name|delete_func
@@ -3401,7 +3401,6 @@ argument_list|,
 name|color_quicksort
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|progress
@@ -3417,14 +3416,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Initialise data which must persist across indexed layer iterations */
-switch|switch
-condition|(
-name|new_type
-condition|)
-block|{
-case|case
-name|GIMP_INDEXED
-case|:
 if|if
 condition|(
 name|quantobj
@@ -3438,26 +3429,7 @@ argument_list|(
 name|quantobj
 argument_list|)
 expr_stmt|;
-break|break;
-default|default:
-break|break;
-block|}
-comment|/*  Set the generated palette on the image, we need it to convert    *  the layers. We optionally remove duplicate entries after the    *  layer conversion.    */
-switch|switch
-condition|(
-name|new_type
-condition|)
-block|{
-case|case
-name|GIMP_RGB
-case|:
-case|case
-name|GIMP_GRAY
-case|:
-break|break;
-case|case
-name|GIMP_INDEXED
-case|:
+comment|/*  Set the generated palette on the image, we need it to        *  convert the layers. We optionally remove duplicate entries        *  after the layer conversion.        */
 block|{
 name|guchar
 name|colormap
@@ -3550,7 +3522,6 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
-break|break;
 block|}
 comment|/*  Convert all layers  */
 if|if
