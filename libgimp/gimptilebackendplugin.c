@@ -59,7 +59,7 @@ DECL|macro|TILE_HEIGHT
 define|#
 directive|define
 name|TILE_HEIGHT
-value|gimp_tile_width()
+value|gimp_tile_height()
 end_define
 
 begin_struct
