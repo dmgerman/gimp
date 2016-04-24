@@ -72,7 +72,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2e69a50103
+DECL|enum|__anon299df7c80103
 block|{
 comment|/*  positive values indicate the lenght of a matching magic  */
 DECL|enumerator|FILE_MATCH_NONE
@@ -2602,6 +2602,11 @@ operator|)
 expr_stmt|;
 if|if
 condition|(
+name|found
+condition|)
+block|{
+if|if
+condition|(
 name|match_val
 operator|==
 name|FILE_MATCH_NONE
@@ -2621,7 +2626,7 @@ operator|!=
 name|FILE_MATCH_NONE
 condition|)
 block|{
-comment|/* else if we have a match on this one, combine it with the            * existing return value            */
+comment|/* else if we have a match on this one, combine it with the                * existing return value                */
 if|if
 condition|(
 name|single_match_val
@@ -2629,7 +2634,7 @@ operator|==
 name|FILE_MATCH_SIZE
 condition|)
 block|{
-comment|/* if we already have a magic match, simply increase                * that by one to indicate "better match", not perfect                * but better than losing the additional size match                * entirely                */
+comment|/* if we already have a magic match, simply increase                    * that by one to indicate "better match", not perfect                    * but better than losing the additional size match                    * entirely                    */
 if|if
 condition|(
 name|match_val
@@ -2643,7 +2648,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* if we already have a magic match, simply add to its                * length; otherwise if we already have a size match,                * combine it with this match, see comment above                */
+comment|/* if we already have a magic match, simply add to its                    * length; otherwise if we already have a size match,                    * combine it with this match, see comment above                    */
 if|if
 condition|(
 name|match_val
@@ -2663,6 +2668,34 @@ literal|1
 expr_stmt|;
 block|}
 block|}
+block|}
+else|else
+block|{
+name|match_val
+operator|=
+name|FILE_MATCH_NONE
+expr_stmt|;
+block|}
+name|and
+operator|=
+operator|(
+name|strchr
+argument_list|(
+name|offset
+argument_list|,
+literal|'&'
+argument_list|)
+operator|!=
+name|NULL
+operator|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|and
+condition|)
+block|{
+comment|/* when done with this 'and' list, update best_match_val */
 if|if
 condition|(
 name|best_match_val
@@ -2684,7 +2717,7 @@ operator|!=
 name|FILE_MATCH_NONE
 condition|)
 block|{
-comment|/* otherwise if this was a match, update the best match, note            * that by using MAX we will not overwrite a magic match            * with a size match            */
+comment|/* otherwise if this was a match, update the best match, note                * that by using MAX we will not overwrite a magic match                * with a size match                */
 name|best_match_val
 operator|=
 name|MAX
@@ -2695,28 +2728,11 @@ name|match_val
 argument_list|)
 expr_stmt|;
 block|}
-name|and
-operator|=
-operator|(
-name|strchr
-argument_list|(
-name|offset
-argument_list|,
-literal|'&'
-argument_list|)
-operator|!=
-name|NULL
-operator|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|and
-condition|)
 name|match_val
 operator|=
 name|FILE_MATCH_NONE
 expr_stmt|;
+block|}
 block|}
 return|return
 name|best_match_val
