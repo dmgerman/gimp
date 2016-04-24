@@ -125,7 +125,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|exr_load_sanitize_comment
+name|sanitize_comment
 parameter_list|(
 name|gchar
 modifier|*
@@ -278,7 +278,7 @@ literal|"exr"
 argument_list|,
 literal|""
 argument_list|,
-literal|"0,lelong,20000630"
+literal|"0,long,0x762f3101"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1217,7 +1217,7 @@ name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
-name|exr_load_sanitize_comment
+name|sanitize_comment
 argument_list|(
 name|comment
 argument_list|)
@@ -1449,8 +1449,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|exr_load_sanitize_comment (gchar * comment)
-name|exr_load_sanitize_comment
+DECL|function|sanitize_comment (gchar * comment)
+name|sanitize_comment
 parameter_list|(
 name|gchar
 modifier|*
