@@ -260,6 +260,13 @@ block|{
 case|case
 name|GIMP_EXTENSION
 case|:
+name|args
+operator|=
+name|procedure_commands_get_run_mode_arg
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 break|break;
 case|case
 name|GIMP_PLUGIN
