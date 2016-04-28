@@ -24,16 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gegl-plugin.h>
-end_include
-
-begin_comment
-comment|/* gegl_operation_invalidate() */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
@@ -207,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1b65a40103
+DECL|enum|__anon2a0536610103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -223,7 +213,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1b65a40203
+DECL|enum|__anon2a0536610203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -652,14 +642,15 @@ parameter_list|,
 name|GimpPrecision
 name|new_precision
 parameter_list|,
+name|GimpColorProfile
+modifier|*
+name|dest_profile
+parameter_list|,
 name|gint
 name|layer_dither_type
 parameter_list|,
 name|gint
 name|mask_dither_type
-parameter_list|,
-name|gboolean
-name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -3269,13 +3260,13 @@ block|}
 end_function
 
 begin_comment
-comment|/* FIXME: this default impl is currently unused because no subclass  * chins up. the goal is to handle the almost identical subclass code  * here again.  */
+comment|/* FIXME: this default impl is currently unused because no subclass  * chains up. the goal is to handle the almost identical subclass code  * here again.  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_real_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean convert_profile,gboolean push_undo,GimpProgress * progress)
+DECL|function|gimp_drawable_real_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,GimpColorProfile * dest_profile,gint layer_dither_type,gint mask_dither_type,gboolean push_undo,GimpProgress * progress)
 name|gimp_drawable_real_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -3297,14 +3288,15 @@ parameter_list|,
 name|GimpPrecision
 name|new_precision
 parameter_list|,
+name|GimpColorProfile
+modifier|*
+name|dest_profile
+parameter_list|,
 name|gint
 name|layer_dither_type
 parameter_list|,
 name|gint
 name|mask_dither_type
-parameter_list|,
-name|gboolean
-name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -5297,7 +5289,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean convert_profile,gboolean push_undo,GimpProgress * progress)
+DECL|function|gimp_drawable_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type,GimpPrecision new_precision,GimpColorProfile * dest_profile,gint layer_dither_type,gint mask_dither_type,gboolean push_undo,GimpProgress * progress)
 name|gimp_drawable_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -5314,14 +5306,15 @@ parameter_list|,
 name|GimpPrecision
 name|new_precision
 parameter_list|,
+name|GimpColorProfile
+modifier|*
+name|dest_profile
+parameter_list|,
 name|gint
 name|layer_dither_type
 parameter_list|,
 name|gint
 name|mask_dither_type
-parameter_list|,
-name|gboolean
-name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -5368,7 +5361,19 @@ argument_list|(
 name|drawable
 argument_list|)
 operator|||
-name|convert_profile
+name|dest_profile
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|dest_profile
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_COLOR_PROFILE
+argument_list|(
+name|dest_profile
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -5431,11 +5436,11 @@ name|new_base_type
 argument_list|,
 name|new_precision
 argument_list|,
+name|dest_profile
+argument_list|,
 name|layer_dither_type
 argument_list|,
 name|mask_dither_type
-argument_list|,
-name|convert_profile
 argument_list|,
 name|push_undo
 argument_list|,

@@ -206,14 +206,15 @@ parameter_list|,
 name|GimpPrecision
 name|new_precision
 parameter_list|,
+name|GimpColorProfile
+modifier|*
+name|dest_profile
+parameter_list|,
 name|gint
 name|layer_dither_type
 parameter_list|,
 name|gint
 name|mask_dither_type
-parameter_list|,
-name|gboolean
-name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -656,7 +657,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_mask_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,gint layer_dither_type,gint mask_dither_type,gboolean convert_profile,gboolean push_undo,GimpProgress * progress)
+DECL|function|gimp_layer_mask_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,GimpColorProfile * dest_profile,gint layer_dither_type,gint mask_dither_type,gboolean push_undo,GimpProgress * progress)
 name|gimp_layer_mask_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -678,14 +679,15 @@ parameter_list|,
 name|GimpPrecision
 name|new_precision
 parameter_list|,
+name|GimpColorProfile
+modifier|*
+name|dest_profile
+parameter_list|,
 name|gint
 name|layer_dither_type
 parameter_list|,
 name|gint
 name|mask_dither_type
-parameter_list|,
-name|gboolean
-name|convert_profile
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -719,11 +721,11 @@ name|new_base_type
 argument_list|,
 name|new_precision
 argument_list|,
+name|dest_profile
+argument_list|,
 name|layer_dither_type
 argument_list|,
 name|mask_dither_type
-argument_list|,
-name|convert_profile
 argument_list|,
 name|push_undo
 argument_list|,

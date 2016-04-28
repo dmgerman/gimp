@@ -418,7 +418,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2ba281e40103
+DECL|enum|__anon2b8593510103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1514,7 +1514,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba281e40208
+DECL|struct|__anon2b8593510208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1750,7 +1750,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba281e40308
+DECL|struct|__anon2b8593510308
 block|{
 DECL|member|used_count
 name|glong
@@ -2802,6 +2802,12 @@ name|undo_desc
 init|=
 name|NULL
 decl_stmt|;
+name|GimpColorProfile
+modifier|*
+name|dest_profile
+init|=
+name|NULL
+decl_stmt|;
 name|gint
 name|nth_layer
 decl_stmt|;
@@ -3043,6 +3049,35 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_image_get_color_profile
+argument_list|(
+name|image
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|old_type
+operator|==
+name|GIMP_GRAY
+operator|||
+name|new_type
+operator|==
+name|GIMP_GRAY
+condition|)
+block|{
+comment|/* when converting to/from GRAY, convert to the new            * type's builtin profile.            */
+name|dest_profile
+operator|=
+name|gimp_image_get_builtin_color_profile
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 comment|/*  Convert to indexed?  Build histogram if necessary.  */
 if|if
 condition|(
@@ -3727,11 +3762,11 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-literal|0
+name|dest_profile
 argument_list|,
 literal|0
 argument_list|,
-name|TRUE
+literal|0
 argument_list|,
 name|TRUE
 argument_list|,
@@ -4006,7 +4041,7 @@ expr_stmt|;
 block|}
 break|break;
 block|}
-comment|/*  When converting to/from GRAY, remove the profile.    *  gimp_layer_convert_type() has converted the layers to    *  new_type's builtin profile.    */
+comment|/*  When converting to/from GRAY, set the new profile.    */
 switch|switch
 condition|(
 name|new_type
@@ -4036,7 +4071,7 @@ name|gimp_image_set_color_profile
 argument_list|(
 name|image
 argument_list|,
-name|NULL
+name|dest_profile
 argument_list|,
 name|NULL
 argument_list|)
@@ -4066,7 +4101,7 @@ name|gimp_image_set_color_profile
 argument_list|(
 name|image
 argument_list|,
-name|NULL
+name|dest_profile
 argument_list|,
 name|NULL
 argument_list|)
