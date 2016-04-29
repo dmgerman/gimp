@@ -790,6 +790,7 @@ expr_stmt|;
 name|nth_drawable
 operator|++
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|sub_progress
@@ -801,7 +802,6 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-block|}
 name|gimp_image_undo_group_end
 argument_list|(
 name|image
