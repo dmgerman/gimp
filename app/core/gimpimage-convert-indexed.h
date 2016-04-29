@@ -6,26 +6,53 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_IMAGE_CONVERT_TYPE_H__
+name|__GIMP_IMAGE_CONVERT_INDEXED_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_IMAGE_CONVERT_TYPE_H__
+DECL|macro|__GIMP_IMAGE_CONVERT_INDEXED_H__
 define|#
 directive|define
-name|__GIMP_IMAGE_CONVERT_TYPE_H__
+name|__GIMP_IMAGE_CONVERT_INDEXED_H__
+end_define
+
+begin_define
+DECL|macro|MAXNUMCOLORS
+define|#
+directive|define
+name|MAXNUMCOLORS
+value|256
 end_define
 
 begin_function_decl
 name|gboolean
-name|gimp_image_convert_type
+name|gimp_image_convert_indexed
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|GimpImageBaseType
-name|new_type
+name|gint
+name|num_cols
+parameter_list|,
+name|GimpConvertDitherType
+name|dither
+parameter_list|,
+name|gboolean
+name|alpha_dither
+parameter_list|,
+name|gboolean
+name|text_layer_dither
+parameter_list|,
+name|gboolean
+name|remove_dups
+parameter_list|,
+name|GimpConvertPaletteType
+name|palette_type
+parameter_list|,
+name|GimpPalette
+modifier|*
+name|custom_palette
 parameter_list|,
 name|GimpProgress
 modifier|*
@@ -39,13 +66,31 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_image_convert_indexed_set_dither_matrix
+parameter_list|(
+specifier|const
+name|guchar
+modifier|*
+name|matrix
+parameter_list|,
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|height
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_IMAGE_CONVERT_TYPE_H__  */
+comment|/*  __GIMP_IMAGE_CONVERT_INDEXED_H__  */
 end_comment
 
 end_unit
