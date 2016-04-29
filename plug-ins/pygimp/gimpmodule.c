@@ -7477,7 +7477,7 @@ argument_list|,
 literal|"the \"capabilities\" (4th) parameter must be set with "
 literal|"a combination of the "
 literal|"EXPORT_CAN_HANDLE_*/EXPORT_NEEDS_ALPHA values. "
-literal|"(check develeloper documentation on the C function "
+literal|"(check developer documentation on the C function "
 literal|"gimp_export_image for details)"
 argument_list|)
 expr_stmt|;
