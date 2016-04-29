@@ -38,7 +38,7 @@ name|struct
 name|_EXRLoader
 name|EXRLoader
 typedef|;
-DECL|enum|__anon2a05684b0103
+DECL|enum|__anon29e8b8ff0103
 typedef|typedef
 enum|enum
 block|{
@@ -54,7 +54,7 @@ DECL|typedef|EXRPrecision
 block|}
 name|EXRPrecision
 typedef|;
-DECL|enum|__anon2a05684b0203
+DECL|enum|__anon29e8b8ff0203
 typedef|typedef
 enum|enum
 block|{
@@ -134,8 +134,9 @@ modifier|*
 name|loader
 parameter_list|)
 function_decl|;
-name|cmsHPROFILE
-name|exr_loader_get_icc_profile
+name|GimpColorProfile
+modifier|*
+name|exr_loader_get_profile
 parameter_list|(
 name|EXRLoader
 modifier|*
