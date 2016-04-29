@@ -308,7 +308,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275dc4eb0108
+DECL|struct|__anon27a5487b0108
 block|{
 DECL|member|context
 name|GimpContext
@@ -1281,8 +1281,10 @@ condition|)
 block|{
 name|dialog
 operator|=
-name|color_profile_assign_dialog_new
+name|color_profile_dialog_new
 argument_list|(
+name|COLOR_PROFILE_DIALOG_ASSIGN_PROFILE
+argument_list|,
 name|image
 argument_list|,
 name|action_data_get_context
@@ -1434,8 +1436,10 @@ condition|)
 block|{
 name|dialog
 operator|=
-name|color_profile_convert_dialog_new
+name|color_profile_dialog_new
 argument_list|(
+name|COLOR_PROFILE_DIALOG_CONVERT_TO_PROFILE
+argument_list|,
 name|image
 argument_list|,
 name|action_data_get_context
