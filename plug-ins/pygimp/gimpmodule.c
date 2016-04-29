@@ -6147,10 +6147,14 @@ condition|)
 return|return
 name|NULL
 return|;
+comment|/* GimpUserDirectory and GUserDirectory are compatible */
 name|user_dir
 operator|=
 name|g_get_user_special_dir
 argument_list|(
+operator|(
+name|GUserDirectory
+operator|)
 name|type
 argument_list|)
 expr_stmt|;
@@ -7395,7 +7399,7 @@ init|=
 operator|-
 literal|1
 decl_stmt|;
-name|GimpExportCapabilities
+name|GimpExportReturn
 name|result
 decl_stmt|;
 name|gint32
