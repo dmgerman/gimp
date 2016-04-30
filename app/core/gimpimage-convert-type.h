@@ -27,6 +27,10 @@ parameter_list|,
 name|GimpImageBaseType
 name|new_type
 parameter_list|,
+name|GimpColorProfile
+modifier|*
+name|dest_profile
+parameter_list|,
 name|GimpProgress
 modifier|*
 name|progress

@@ -217,6 +217,8 @@ name|GIMP_RGB
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|error
 argument_list|)
 expr_stmt|;
@@ -328,6 +330,8 @@ argument_list|(
 name|image
 argument_list|,
 name|GIMP_GRAY
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -1129,9 +1133,9 @@ name|procedure
 argument_list|,
 literal|"gimp-image-convert-grayscale"
 argument_list|,
-literal|"Convert specified image to grayscale (256 intensity levels)"
+literal|"Convert specified image to grayscale"
 argument_list|,
-literal|"This procedure converts the specified image to grayscale with 8 bits per pixel (256 intensity levels). This process requires an image in RGB or Indexed color mode."
+literal|"This procedure converts the specified image to grayscale. This process requires an image in RGB or Indexed color mode."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,

@@ -91,7 +91,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_convert_grayscale:  * @image_ID: The image.  *  * Convert specified image to grayscale (256 intensity levels)  *  * This procedure converts the specified image to grayscale with 8 bits  * per pixel (256 intensity levels). This process requires an image in  * RGB or Indexed color mode.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_convert_grayscale:  * @image_ID: The image.  *  * Convert specified image to grayscale  *  * This procedure converts the specified image to grayscale. This  * process requires an image in RGB or Indexed color mode.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
