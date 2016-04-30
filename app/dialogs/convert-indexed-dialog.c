@@ -114,7 +114,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"convert-type-dialog.h"
+file|"convert-indexed-dialog.h"
 end_include
 
 begin_include
@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c8ba7e0108
+DECL|struct|__anon294199ff0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -350,8 +350,8 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|convert_type_dialog_new (GimpImage * image,GimpContext * context,GtkWidget * parent,GimpProgress * progress)
-name|convert_type_dialog_new
+DECL|function|convert_indexed_dialog_new (GimpImage * image,GimpContext * context,GtkWidget * parent,GimpProgress * progress)
+name|convert_indexed_dialog_new
 parameter_list|(
 name|GimpImage
 modifier|*

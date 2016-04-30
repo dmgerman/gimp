@@ -6,20 +6,20 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__CONVERT_TYPE_DIALOG_H__
+name|__CONVERT_INDEXED_DIALOG_H__
 end_ifndef
 
 begin_define
-DECL|macro|__CONVERT_TYPE_DIALOG_H__
+DECL|macro|__CONVERT_INDEXED_DIALOG_H__
 define|#
 directive|define
-name|__CONVERT_TYPE_DIALOG_H__
+name|__CONVERT_INDEXED_DIALOG_H__
 end_define
 
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|convert_type_dialog_new
+name|convert_indexed_dialog_new
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -46,7 +46,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __CONVERT_TYPE_DIALOG_H__  */
+comment|/*  __CONVERT_INDEXED_DIALOG_H__  */
 end_comment
 
 end_unit

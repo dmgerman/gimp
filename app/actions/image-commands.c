@@ -204,13 +204,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs/convert-precision-dialog.h"
+file|"dialogs/convert-indexed-dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"dialogs/convert-type-dialog.h"
+file|"dialogs/convert-precision-dialog.h"
 end_include
 
 begin_include
@@ -308,7 +308,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0d44d10108
+DECL|struct|__anon29e3e1fc0108
 block|{
 DECL|member|context
 name|GimpContext
@@ -874,7 +874,7 @@ name|GIMP_INDEXED
 case|:
 name|dialog
 operator|=
-name|convert_type_dialog_new
+name|convert_indexed_dialog_new
 argument_list|(
 name|image
 argument_list|,
