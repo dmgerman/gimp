@@ -257,7 +257,7 @@ literal|" image/x-nikon-nef "
 block|,
 literal|"nef"
 block|,
-literal|"0,string,MM\\0*\\0\\0\\0\\010,0,string,II*\\0\\010\\0\\0\\0"
+name|NULL
 block|,
 literal|"file-nef-load"
 block|,
