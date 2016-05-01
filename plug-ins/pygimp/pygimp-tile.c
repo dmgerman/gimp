@@ -20,6 +20,13 @@ endif|#
 directive|endif
 end_endif
 
+begin_define
+DECL|macro|GIMP_DISABLE_DEPRECATION_WARNINGS
+define|#
+directive|define
+name|GIMP_DISABLE_DEPRECATION_WARNINGS
+end_define
+
 begin_include
 include|#
 directive|include
