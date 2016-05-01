@@ -363,7 +363,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ef3b0f0103
+DECL|enum|__anon2b30d8ef0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -391,7 +391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ef3b0f0203
+DECL|enum|__anon2b30d8ef0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1145,11 +1145,19 @@ name|gimp
 operator|->
 name|tool_info_list
 operator|=
-name|gimp_list_new
+name|g_object_new
 argument_list|(
+name|GIMP_TYPE_LIST
+argument_list|,
+literal|"children-type"
+argument_list|,
 name|GIMP_TYPE_TOOL_INFO
 argument_list|,
-name|FALSE
+literal|"append"
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
