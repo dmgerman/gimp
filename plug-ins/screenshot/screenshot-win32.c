@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"resource.h"
+file|"screenshot-win32-resource.h"
 end_include
 
 begin_include
@@ -335,7 +335,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bb072a30108
+DECL|struct|__anon2ac37e920108
 typedef|typedef
 struct|struct
 block|{
@@ -382,7 +382,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bb072a30208
+DECL|struct|__anon2ac37e920208
 typedef|typedef
 struct|struct
 block|{
