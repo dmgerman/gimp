@@ -72,7 +72,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299df7c80103
+DECL|enum|__anon2bf711380103
 block|{
 comment|/*  positive values indicate the lenght of a matching magic  */
 DECL|enumerator|FILE_MATCH_NONE
@@ -131,9 +131,6 @@ name|file
 parameter_list|,
 name|gboolean
 name|skip_magic
-parameter_list|,
-name|gboolean
-name|uri_procs_only
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -321,26 +318,10 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* First, check magicless prefixes/suffixes: */
-if|if
-condition|(
-operator|!
-name|file_proc_find_by_extension
-argument_list|(
-name|procs
-argument_list|,
-name|file
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|)
-condition|)
-block|{
-comment|/* If there is not any (with or without magic) file proc that        * can load the file by extension directly, try to find a proc        * that can load the prefix        */
+comment|/* First, check magicless prefixes/suffixes */
 name|file_proc
 operator|=
-name|file_proc_find_by_prefix
+name|file_proc_find_by_name
 argument_list|(
 name|procs
 argument_list|,
@@ -349,24 +330,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-comment|/* Otherwise try to find a magicless file proc that handles the        * extension        */
-name|file_proc
-operator|=
-name|file_proc_find_by_extension
-argument_list|(
-name|procs
-argument_list|,
-name|file
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|file_proc
@@ -794,8 +757,6 @@ argument_list|,
 name|file
 argument_list|,
 name|FALSE
-argument_list|,
-name|FALSE
 argument_list|)
 return|;
 block|}
@@ -1009,7 +970,7 @@ begin_function
 specifier|static
 name|GimpPlugInProcedure
 modifier|*
-DECL|function|file_proc_find_by_extension (GSList * procs,GFile * file,gboolean skip_magic,gboolean uri_procs_only)
+DECL|function|file_proc_find_by_extension (GSList * procs,GFile * file,gboolean skip_magic)
 name|file_proc_find_by_extension
 parameter_list|(
 name|GSList
@@ -1022,9 +983,6 @@ name|file
 parameter_list|,
 name|gboolean
 name|skip_magic
-parameter_list|,
-name|gboolean
-name|uri_procs_only
 parameter_list|)
 block|{
 name|gchar
@@ -1069,16 +1027,6 @@ name|p
 operator|->
 name|data
 decl_stmt|;
-if|if
-condition|(
-name|uri_procs_only
-operator|&&
-operator|!
-name|proc
-operator|->
-name|handles_uri
-condition|)
-continue|continue;
 if|if
 condition|(
 name|skip_magic
@@ -1154,24 +1102,6 @@ name|proc
 decl_stmt|;
 name|proc
 operator|=
-name|file_proc_find_by_extension
-argument_list|(
-name|procs
-argument_list|,
-name|file
-argument_list|,
-name|skip_magic
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|proc
-condition|)
-name|proc
-operator|=
 name|file_proc_find_by_prefix
 argument_list|(
 name|procs
@@ -1195,8 +1125,6 @@ argument_list|,
 name|file
 argument_list|,
 name|skip_magic
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
