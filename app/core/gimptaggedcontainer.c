@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fa547d0103
+DECL|enum|__anon2baaf7910103
 block|{
 DECL|enumerator|TAG_COUNT_CHANGED
 name|TAG_COUNT_CHANGED
@@ -621,7 +621,9 @@ operator|->
 name|src_container
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -952,7 +954,9 @@ operator|->
 name|src_container
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 init|;
 name|list
 condition|;

@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279491f60103
+DECL|enum|__anon277399fb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1391,7 +1391,9 @@ operator|->
 name|paint_options_list
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -1604,7 +1606,9 @@ operator|->
 name|paint_options_list
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -1796,7 +1800,9 @@ operator|->
 name|paint_options_list
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 init|;
 name|list
 condition|;

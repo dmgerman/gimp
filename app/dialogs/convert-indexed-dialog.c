@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294199ff0108
+DECL|struct|__anon295855800108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1617,10 +1617,6 @@ name|list
 decl_stmt|;
 name|GimpPalette
 modifier|*
-name|palette
-decl_stmt|;
-name|GimpPalette
-modifier|*
 name|web_palette
 init|=
 name|NULL
@@ -1738,7 +1734,9 @@ operator|->
 name|container
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -1750,12 +1748,14 @@ name|list
 argument_list|)
 control|)
 block|{
+name|GimpPalette
+modifier|*
 name|palette
-operator|=
+init|=
 name|list
 operator|->
 name|data
-expr_stmt|;
+decl_stmt|;
 comment|/* Preferentially, the initial default is 'Web' if available */
 if|if
 condition|(
@@ -1828,7 +1828,9 @@ operator|->
 name|container
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 operator|->
 name|data
 expr_stmt|;

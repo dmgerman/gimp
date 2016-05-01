@@ -1653,7 +1653,9 @@ argument_list|(
 name|children
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 operator|,
 name|i
 operator|=

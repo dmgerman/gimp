@@ -168,7 +168,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2990cfd20103
+DECL|enum|__anon2ae40eec0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -644,7 +644,9 @@ argument_list|(
 name|devices
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 init|;
 name|list
 condition|;

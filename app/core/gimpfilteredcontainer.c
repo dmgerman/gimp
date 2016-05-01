@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcd039c0103
+DECL|enum|__anon274f31410103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1037,7 +1037,9 @@ operator|->
 name|src_container
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 init|;
 name|list
 condition|;

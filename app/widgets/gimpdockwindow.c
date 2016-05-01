@@ -233,7 +233,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1a8a040103
+DECL|enum|__anon2a310a920103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4305,7 +4305,9 @@ argument_list|(
 name|display_container
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 init|;
 name|list
 condition|;

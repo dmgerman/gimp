@@ -1314,7 +1314,9 @@ operator|->
 name|container
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 decl_stmt|;
 if|if
 condition|(
@@ -1730,7 +1732,9 @@ operator|->
 name|container
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 init|;
 name|list
 condition|;

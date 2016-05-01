@@ -610,7 +610,9 @@ argument_list|(
 name|global_recent_docks
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 argument_list|)
 init|;
 name|list

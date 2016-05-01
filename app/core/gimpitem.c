@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ac44c60103
+DECL|enum|__anon27ec52b80103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -183,7 +183,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ac44c60203
+DECL|enum|__anon27ec52b80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3260,7 +3260,9 @@ argument_list|(
 name|container
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 return|;
 return|return
 name|NULL

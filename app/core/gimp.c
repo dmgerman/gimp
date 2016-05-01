@@ -363,7 +363,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae9b80a0103
+DECL|enum|__anon27ef3b0f0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -391,7 +391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae9b80a0203
+DECL|enum|__anon27ef3b0f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5111,7 +5111,9 @@ operator|->
 name|images
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 return|;
 block|}
 end_function
@@ -5145,7 +5147,9 @@ operator|->
 name|displays
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 return|;
 block|}
 end_function
@@ -5211,7 +5215,9 @@ operator|->
 name|paint_info_list
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 return|;
 block|}
 end_function
@@ -5245,7 +5251,9 @@ operator|->
 name|tool_info_list
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 return|;
 block|}
 end_function

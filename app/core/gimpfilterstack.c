@@ -895,7 +895,9 @@ argument_list|(
 name|stack
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 init|;
 name|list
 condition|;

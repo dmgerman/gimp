@@ -393,7 +393,9 @@ argument_list|(
 name|stack
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -484,7 +486,9 @@ argument_list|(
 name|stack
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -548,7 +552,9 @@ argument_list|(
 name|stack
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 return|;
 block|}
 end_function
@@ -593,7 +599,9 @@ argument_list|(
 name|stack
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -728,7 +736,9 @@ argument_list|(
 name|stack
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 init|;
 name|list
 condition|;

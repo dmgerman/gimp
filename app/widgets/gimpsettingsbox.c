@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cac3c90103
+DECL|enum|__anon279108060103
 block|{
 DECL|enumerator|FILE_DIALOG_SETUP
 name|FILE_DIALOG_SETUP
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cac3c90203
+DECL|enum|__anon279108060203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3797,7 +3797,9 @@ operator|->
 name|container
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 expr_stmt|;
 while|while
 condition|(
@@ -4144,7 +4146,9 @@ operator|->
 name|container
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 init|;
 name|list
 condition|;

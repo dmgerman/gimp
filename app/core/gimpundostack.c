@@ -379,7 +379,9 @@ operator|->
 name|undos
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 init|;
 name|list
 condition|;
@@ -450,7 +452,9 @@ operator|->
 name|undos
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 init|;
 name|list
 condition|;

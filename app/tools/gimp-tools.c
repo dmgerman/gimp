@@ -986,7 +986,9 @@ argument_list|(
 name|gimp_list
 argument_list|)
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 operator|,
 name|i
 operator|=

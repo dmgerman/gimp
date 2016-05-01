@@ -441,7 +441,9 @@ name|glist
 operator|=
 name|list
 operator|->
-name|list
+name|queue
+operator|->
+name|head
 init|;
 name|glist
 condition|;
