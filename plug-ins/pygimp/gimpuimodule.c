@@ -41,6 +41,20 @@ end_include
 begin_include
 include|#
 directive|include
+file|<pycairo.h>
+end_include
+
+begin_decl_stmt
+DECL|variable|Pycairo_CAPI
+name|Pycairo_CAPI_t
+modifier|*
+name|Pycairo_CAPI
+decl_stmt|;
+end_decl_stmt
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -122,6 +136,32 @@ name|void
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|init_pycairo (void)
+name|init_pycairo
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|Pycairo_IMPORT
+expr_stmt|;
+if|if
+condition|(
+name|Pycairo_CAPI
+operator|==
+name|NULL
+condition|)
+return|return
+name|FALSE
+return|;
+return|return
+name|TRUE
+return|;
+block|}
+end_function
 
 begin_function
 name|PyMODINIT_FUNC
@@ -220,6 +260,13 @@ expr_stmt|;
 name|init_pygtk
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|init_pycairo
+argument_list|()
+condition|)
+return|return;
 name|init_pygimpcolor
 argument_list|()
 expr_stmt|;
