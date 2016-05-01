@@ -1593,7 +1593,7 @@ condition|(
 name|metadata
 condition|)
 block|{
-comment|/* See bug 758909: clear TIFFTAG_MIN/MAXSAMPLEVALUE because                    * exiv2 saves them with wrong type and the original values                    * could be invalid                    */
+comment|/* See bug 758909: clear TIFFTAG_MIN/MAXSAMPLEVALUE because                    * exiv2 saves them with wrong type and the original values                    * could be invalid, see also bug 761823                    */
 name|gexiv2_metadata_clear_tag
 argument_list|(
 name|metadata
@@ -1606,6 +1606,13 @@ argument_list|(
 name|metadata
 argument_list|,
 literal|"Exif.Image.0x0119"
+argument_list|)
+expr_stmt|;
+name|gexiv2_metadata_clear_tag
+argument_list|(
+name|metadata
+argument_list|,
+literal|"Exif.Image.PageNumber"
 argument_list|)
 expr_stmt|;
 name|gimp_metadata_set_bits_per_sample
