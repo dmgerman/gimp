@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b42468b0103
+DECL|enum|__anon27db55820103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -977,7 +977,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  the list prepends its items, so first add the redo items...  */
+comment|/*  the list prepends its items, so first add the redo items in    *  reverse (ascending) order...    */
 for|for
 control|(
 name|list
@@ -991,13 +991,13 @@ argument_list|)
 operator|->
 name|queue
 operator|->
-name|head
+name|tail
 init|;
 name|list
 condition|;
 name|list
 operator|=
-name|g_list_next
+name|g_list_previous
 argument_list|(
 name|list
 argument_list|)
@@ -1018,17 +1018,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  ...reverse the list so the redo items are in ascending order...  */
-name|gimp_list_reverse
-argument_list|(
-name|GIMP_LIST
-argument_list|(
-name|editor
-operator|->
-name|container
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/*  ...then add the undo items in descending order...  */
 for|for
 control|(
