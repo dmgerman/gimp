@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpcolor/gimpcolor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -1360,6 +1366,10 @@ name|GimpPickable
 modifier|*
 name|pickable
 decl_stmt|;
+name|GimpColorProfile
+modifier|*
+name|profile
+decl_stmt|;
 name|return_if_no_image
 argument_list|(
 name|image
@@ -1377,6 +1387,16 @@ expr_stmt|;
 name|gimp_pickable_flush
 argument_list|(
 name|pickable
+argument_list|)
+expr_stmt|;
+name|profile
+operator|=
+name|gimp_color_managed_get_color_profile
+argument_list|(
+name|GIMP_COLOR_MANAGED
+argument_list|(
+name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|layer
@@ -1406,8 +1426,7 @@ name|GIMP_OPACITY_OPAQUE
 argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|,
-name|NULL
-comment|/* same image */
+name|profile
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_layer
