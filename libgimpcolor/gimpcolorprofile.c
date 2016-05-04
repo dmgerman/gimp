@@ -574,6 +574,11 @@ argument_list|,
 name|error
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1567,7 +1572,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_get_label:  * @profile: a #GimpColorProfile  *  * This function returns a string containing @profile's "title", a  * string that can be used to label the profile in a user interface.  *  * Unlike gimp_color_profile_get_description(), this function always  * returns a string (as a fallback, it returns "(unnamed profile)".  *  * Return value: the @profile's label. The returned value belongs to  *               @profile and must not be modified or freed.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_get_label:  * @profile: a #GimpColorProfile  *  * This function returns a string containing @profile's "title", a  * string that can be used to label the profile in a user interface.  *  * Unlike gimp_color_profile_get_description(), this function always  * returns a string (as a fallback, it returns "(unnamed profile)").  *  * Return value: the @profile's label. The returned value belongs to  *               @profile and must not be modified or freed.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
