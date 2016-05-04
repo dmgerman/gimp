@@ -353,6 +353,26 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_color_profile_save_to_file
+parameter_list|(
+name|GimpColorProfile
+modifier|*
+name|profile
+parameter_list|,
+name|GFile
+modifier|*
+name|file
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 specifier|const
 name|guint8
 modifier|*
