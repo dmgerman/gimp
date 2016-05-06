@@ -192,6 +192,13 @@ specifier|const
 name|gchar
 modifier|*
 name|title
+parameter_list|,
+name|GtkWindow
+modifier|*
+name|parent
+parameter_list|,
+name|GtkFileChooserAction
+name|action
 parameter_list|)
 function_decl|;
 end_function_decl

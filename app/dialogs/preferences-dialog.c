@@ -3540,11 +3540,6 @@ block|{
 name|GtkWidget
 modifier|*
 name|dialog
-init|=
-name|gimp_color_profile_chooser_dialog_new
-argument_list|(
-name|label
-argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -3564,6 +3559,17 @@ name|file
 init|=
 name|NULL
 decl_stmt|;
+name|dialog
+operator|=
+name|gimp_color_profile_chooser_dialog_new
+argument_list|(
+name|label
+argument_list|,
+name|NULL
+argument_list|,
+name|GTK_FILE_CHOOSER_ACTION_OPEN
+argument_list|)
+expr_stmt|;
 name|g_object_get
 argument_list|(
 name|config
@@ -6010,7 +6016,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c3e7b050108
+DECL|struct|__anon27bf816f0108
 block|{
 DECL|member|label
 specifier|const
@@ -10994,7 +11000,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c3e7b050208
+DECL|struct|__anon27bf816f0208
 block|{
 DECL|member|current_setting
 name|gchar
@@ -11854,7 +11860,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c3e7b050308
+DECL|struct|__anon27bf816f0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -12009,7 +12015,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c3e7b050408
+DECL|struct|__anon27bf816f0408
 block|{
 DECL|member|tree_label
 specifier|const

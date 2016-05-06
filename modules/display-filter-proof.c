@@ -184,7 +184,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c997b1c0103
+DECL|enum|__anon2c0854dd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1107,6 +1107,10 @@ name|_
 argument_list|(
 literal|"Choose an ICC Color Profile"
 argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|GTK_FILE_CHOOSER_ACTION_OPEN
 argument_list|)
 expr_stmt|;
 name|history
