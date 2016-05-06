@@ -183,6 +183,19 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_color_profile_chooser_dialog_new
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|title
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro

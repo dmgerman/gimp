@@ -476,6 +476,33 @@ expr_stmt|;
 block|}
 end_function
 
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|gimp_color_profile_chooser_dialog_new (const gchar * title)
+name|gimp_color_profile_chooser_dialog_new
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|title
+parameter_list|)
+block|{
+return|return
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_COLOR_PROFILE_CHOOSER_DIALOG
+argument_list|,
+literal|"title"
+argument_list|,
+name|title
+argument_list|,
+name|NULL
+argument_list|)
+return|;
+block|}
+end_function
+
 begin_comment
 comment|/* Add shortcuts for default ICC profile locations */
 end_comment

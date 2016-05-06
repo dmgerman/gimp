@@ -138,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278d0d3a0108
+DECL|struct|__anon2baf28640108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1399,18 +1399,12 @@ name|NULL
 decl_stmt|;
 name|chooser
 operator|=
-name|g_object_new
+name|gimp_color_profile_chooser_dialog_new
 argument_list|(
-name|GIMP_TYPE_COLOR_PROFILE_CHOOSER_DIALOG
-argument_list|,
-literal|"title"
-argument_list|,
 name|_
 argument_list|(
-literal|"Select Destination Profile"
+literal|"Select destination profile"
 argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|history

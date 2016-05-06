@@ -184,7 +184,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ec5d280103
+DECL|enum|__anon2c997b1c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1101,18 +1101,12 @@ argument_list|)
 expr_stmt|;
 name|dialog
 operator|=
-name|g_object_new
+name|gimp_color_profile_chooser_dialog_new
 argument_list|(
-name|GIMP_TYPE_COLOR_PROFILE_CHOOSER_DIALOG
-argument_list|,
-literal|"title"
-argument_list|,
 name|_
 argument_list|(
 literal|"Choose an ICC Color Profile"
 argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|history
