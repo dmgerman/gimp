@@ -1394,7 +1394,7 @@ name|profile
 operator|=
 name|gimp_color_profile_new_from_icc_profile
 argument_list|(
-name|data
+name|buffer
 argument_list|,
 name|CFDataGetLength
 argument_list|(
