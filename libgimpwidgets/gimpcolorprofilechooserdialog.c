@@ -822,7 +822,7 @@ argument_list|,
 argument|NULL
 argument_list|)
 expr_stmt|;
-name|foldet_set
+name|folder_set
 operator|=
 name|add_shortcut
 argument_list|(
