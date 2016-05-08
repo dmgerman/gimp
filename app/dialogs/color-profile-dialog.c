@@ -138,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292587870108
+DECL|struct|__anon27603d550108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1865,11 +1865,23 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
-comment|/*  omg...  */
 if|if
 condition|(
 name|success
 condition|)
+block|{
+name|gimp_image_set_is_color_managed
+argument_list|(
+name|dialog
+operator|->
+name|image
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+comment|/*  omg...  */
 name|gimp_image_parasite_detach
 argument_list|(
 name|dialog
@@ -1879,6 +1891,7 @@ argument_list|,
 literal|"icc-profile-name"
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_image_undo_group_end
 argument_list|(
 name|dialog
