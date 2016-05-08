@@ -1586,6 +1586,15 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+name|gimp_image_set_is_color_managed
+argument_list|(
+name|image
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gimp_image_set_color_profile
 argument_list|(
 name|image
