@@ -99,7 +99,7 @@ block|{
 block|{
 literal|"selection-popup"
 block|,
-name|GIMP_STOCK_TOOL_RECT_SELECT
+name|GIMP_STOCK_SELECTION
 block|,
 name|NC_
 argument_list|(

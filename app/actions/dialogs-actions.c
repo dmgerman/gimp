@@ -340,7 +340,7 @@ block|,
 block|{
 literal|"dialogs-selection-editor"
 block|,
-name|GIMP_STOCK_TOOL_RECT_SELECT
+name|GIMP_STOCK_SELECTION
 block|,
 name|NC_
 argument_list|(
