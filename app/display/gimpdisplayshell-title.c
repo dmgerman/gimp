@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-color-profile.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpitem.h"
 end_include
 
@@ -1932,6 +1938,13 @@ case|case
 literal|'o'
 case|:
 comment|/* image's color profile name */
+if|if
+condition|(
+name|gimp_image_get_is_color_managed
+argument_list|(
+name|image
+argument_list|)
+condition|)
 block|{
 name|GimpColorManaged
 modifier|*
@@ -1953,10 +1966,6 @@ argument_list|(
 name|managed
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|profile
-condition|)
 name|i
 operator|+=
 name|print
@@ -1972,6 +1981,27 @@ argument_list|,
 name|gimp_color_profile_get_label
 argument_list|(
 name|profile
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|i
+operator|+=
+name|print
+argument_list|(
+name|title
+argument_list|,
+name|title_len
+argument_list|,
+name|i
+argument_list|,
+literal|"%s"
+argument_list|,
+name|_
+argument_list|(
+literal|"not color managed"
 argument_list|)
 argument_list|)
 expr_stmt|;
