@@ -65,6 +65,14 @@ name|GIMP_TEXT_PROP_NAME_COLOR
 value|"foreground-gdk"
 end_define
 
+begin_define
+DECL|macro|GIMP_TEXT_PROP_NAME_BG_COLOR
+define|#
+directive|define
+name|GIMP_TEXT_PROP_NAME_BG_COLOR
+value|"background-gdk"
+end_define
+
 begin_function_decl
 name|gint
 name|gimp_text_tag_get_size
@@ -113,6 +121,21 @@ end_function_decl
 begin_function_decl
 name|void
 name|gimp_text_tag_get_color
+parameter_list|(
+name|GtkTextTag
+modifier|*
+name|tag
+parameter_list|,
+name|GimpRGB
+modifier|*
+name|color
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_text_tag_get_bg_color
 parameter_list|(
 name|GtkTextTag
 modifier|*
