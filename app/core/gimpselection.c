@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
+file|<cairo.h>
 end_include
 
 begin_include
@@ -25,6 +25,12 @@ begin_include
 include|#
 directive|include
 file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpcolor/gimpcolor.h"
 end_include
 
 begin_include
@@ -3599,6 +3605,10 @@ name|GeglBuffer
 modifier|*
 name|buffer
 decl_stmt|;
+name|GimpColorProfile
+modifier|*
+name|profile
+decl_stmt|;
 name|gint
 name|x1
 decl_stmt|,
@@ -3774,6 +3784,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|profile
+operator|=
+name|gimp_color_managed_get_color_profile
+argument_list|(
+name|GIMP_COLOR_MANAGED
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  Clear the selection  */
 name|gimp_channel_clear
 argument_list|(
@@ -3810,8 +3830,7 @@ name|GIMP_OPACITY_OPAQUE
 argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|,
-name|NULL
-comment|/* same image */
+name|profile
 argument_list|)
 expr_stmt|;
 comment|/*  Set the offsets  */
