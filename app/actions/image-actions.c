@@ -821,6 +821,49 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|image_toggle_actions
+specifier|static
+specifier|const
+name|GimpToggleActionEntry
+name|image_toggle_actions
+index|[]
+init|=
+block|{
+block|{
+literal|"image-color-management-enabled"
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"image-action"
+argument_list|,
+literal|"_Enable Color Management"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"image-action"
+argument_list|,
+literal|"Whether the image is color managed"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|image_color_management_enabled_cmd_callback
+argument_list|)
+block|,
+name|TRUE
+block|,
+name|GIMP_HELP_IMAGE_COLOR_MANAGEMENT_ENABLED
+block|}
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|image_convert_base_type_actions
 specifier|static
 specifier|const
@@ -1330,6 +1373,20 @@ name|image_actions
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_action_group_add_toggle_actions
+argument_list|(
+name|group
+argument_list|,
+literal|"image-action"
+argument_list|,
+name|image_toggle_actions
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|image_toggle_actions
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_action_group_add_radio_actions
 argument_list|(
 name|group
@@ -1524,6 +1581,11 @@ name|FALSE
 decl_stmt|;
 name|gboolean
 name|groups
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
+name|color_managed
 init|=
 name|FALSE
 decl_stmt|;
@@ -1772,6 +1834,13 @@ name|layers
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|color_managed
+operator|=
+name|gimp_image_get_is_color_managed
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 name|profile
 operator|=
 operator|(
@@ -1806,6 +1875,17 @@ name|condition
 parameter_list|)
 define|\
 value|gimp_action_group_set_action_sensitive (group, action, (condition) != 0)
+DECL|macro|SET_ACTIVE (action,condition)
+define|#
+directive|define
+name|SET_ACTIVE
+parameter_list|(
+name|action
+parameter_list|,
+name|condition
+parameter_list|)
+define|\
+value|gimp_action_group_set_action_active (group, action, (condition) != 0)
 if|if
 condition|(
 name|profile
@@ -1961,6 +2041,22 @@ name|image
 operator|&&
 operator|!
 name|is_indexed
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"image-color-management-enabled"
+argument_list|,
+name|image
+argument_list|)
+expr_stmt|;
+name|SET_ACTIVE
+argument_list|(
+literal|"image-color-management-enabled"
+argument_list|,
+name|image
+operator|&&
+name|color_managed
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -2132,6 +2228,9 @@ name|SET_LABEL
 undef|#
 directive|undef
 name|SET_SENSITIVE
+undef|#
+directive|undef
+name|SET_ACTIVE
 block|}
 end_function
 

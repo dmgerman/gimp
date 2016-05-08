@@ -1006,6 +1006,14 @@ value|"gimp-image-flatten"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_IMAGE_COLOR_MANAGEMENT_ENABLED
+define|#
+directive|define
+name|GIMP_HELP_IMAGE_COLOR_MANAGEMENT_ENABLED
+value|"gimp-image-color-management-enabled"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_IMAGE_COLOR_PROFILE_ASSIGN
 define|#
 directive|define
