@@ -222,6 +222,16 @@ DECL|member|preedit_cursor
 name|gint
 name|preedit_cursor
 decl_stmt|;
+DECL|member|preedit_start
+name|GtkTextMark
+modifier|*
+name|preedit_start
+decl_stmt|;
+DECL|member|preedit_end
+name|GtkTextMark
+modifier|*
+name|preedit_end
+decl_stmt|;
 DECL|member|overwrite_mode
 name|gboolean
 name|overwrite_mode
