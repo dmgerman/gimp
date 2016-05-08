@@ -1674,6 +1674,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimp_image_get_is_color_managed
+argument_list|(
+name|image
+argument_list|)
+operator|&&
 name|gimp_image_get_color_profile
 argument_list|(
 name|image
