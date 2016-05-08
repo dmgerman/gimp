@@ -72,16 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpcoreconfig.h"
-end_include
-
-begin_comment
-comment|/* FIXME profile convert config */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|"gegl/gimp-babl.h"
 end_include
 
@@ -102,16 +92,6 @@ include|#
 directive|include
 file|"gegl/gimp-gegl-nodes.h"
 end_include
-
-begin_include
-include|#
-directive|include
-file|"gimp.h"
-end_include
-
-begin_comment
-comment|/* FIXME profile convert config */
-end_comment
 
 begin_include
 include|#
@@ -205,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29923dde0103
+DECL|enum|__anon2b6707dc0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -236,7 +216,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29923dde0203
+DECL|enum|__anon2b6707dc0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3438,30 +3418,6 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-name|GimpImage
-modifier|*
-name|image
-init|=
-name|gimp_item_get_image
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
-decl_stmt|;
-name|GimpColorConfig
-modifier|*
-name|config
-init|=
-name|image
-operator|->
-name|gimp
-operator|->
-name|config
-operator|->
-name|color_management
-decl_stmt|;
 name|GimpImageBaseType
 name|old_base_type
 decl_stmt|;
@@ -3517,14 +3473,10 @@ argument_list|,
 name|GIMP_TYPE_LAYER
 argument_list|)
 operator|&&
-comment|/*  FIXME: this is the wrong check, need        *  something like file import conversion config        */
-operator|(
-name|config
-operator|->
-name|mode
-operator|!=
-name|GIMP_COLOR_MANAGEMENT_OFF
-operator|)
+name|gimp_image_get_is_color_managed
+argument_list|(
+name|dest_image
+argument_list|)
 condition|)
 block|{
 name|dest_profile
