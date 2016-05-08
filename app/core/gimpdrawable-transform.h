@@ -53,6 +53,11 @@ parameter_list|,
 name|GimpTransformResize
 name|clip_result
 parameter_list|,
+name|GimpColorProfile
+modifier|*
+modifier|*
+name|buffer_profile
+parameter_list|,
 name|gint
 modifier|*
 name|new_offset_x
@@ -100,6 +105,11 @@ parameter_list|,
 name|gboolean
 name|clip_result
 parameter_list|,
+name|GimpColorProfile
+modifier|*
+modifier|*
+name|buffer_profile
+parameter_list|,
 name|gint
 modifier|*
 name|new_offset_x
@@ -145,6 +155,11 @@ name|center_y
 parameter_list|,
 name|gboolean
 name|clip_result
+parameter_list|,
+name|GimpColorProfile
+modifier|*
+modifier|*
+name|buffer_profile
 parameter_list|,
 name|gint
 modifier|*
@@ -284,6 +299,10 @@ parameter_list|,
 name|GeglBuffer
 modifier|*
 name|buffer
+parameter_list|,
+name|GimpColorProfile
+modifier|*
+name|buffer_profile
 parameter_list|,
 name|gint
 name|offset_x

@@ -625,6 +625,11 @@ parameter_list|,
 name|gint
 name|orig_offset_y
 parameter_list|,
+name|GimpColorProfile
+modifier|*
+modifier|*
+name|buffer_profile
+parameter_list|,
 name|gint
 modifier|*
 name|new_offset_x
@@ -5383,7 +5388,7 @@ begin_function
 specifier|static
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_transform_tool_real_transform (GimpTransformTool * tr_tool,GimpItem * active_item,GeglBuffer * orig_buffer,gint orig_offset_x,gint orig_offset_y,gint * new_offset_x,gint * new_offset_y)
+DECL|function|gimp_transform_tool_real_transform (GimpTransformTool * tr_tool,GimpItem * active_item,GeglBuffer * orig_buffer,gint orig_offset_x,gint orig_offset_y,GimpColorProfile ** buffer_profile,gint * new_offset_x,gint * new_offset_y)
 name|gimp_transform_tool_real_transform
 parameter_list|(
 name|GimpTransformTool
@@ -5403,6 +5408,11 @@ name|orig_offset_x
 parameter_list|,
 name|gint
 name|orig_offset_y
+parameter_list|,
+name|GimpColorProfile
+modifier|*
+modifier|*
+name|buffer_profile
 parameter_list|,
 name|gint
 modifier|*
@@ -5533,6 +5543,8 @@ operator|->
 name|interpolation
 argument_list|,
 name|clip
+argument_list|,
+name|buffer_profile
 argument_list|,
 name|new_offset_x
 argument_list|,
@@ -5713,6 +5725,10 @@ name|new_offset_x
 decl_stmt|;
 name|gint
 name|new_offset_y
+decl_stmt|;
+name|GimpColorProfile
+modifier|*
+name|buffer_profile
 decl_stmt|;
 name|gchar
 modifier|*
@@ -5933,6 +5949,9 @@ argument_list|,
 name|orig_offset_y
 argument_list|,
 operator|&
+name|buffer_profile
+argument_list|,
+operator|&
 name|new_offset_x
 argument_list|,
 operator|&
@@ -5971,6 +5990,8 @@ operator|->
 name|drawable
 argument_list|,
 name|new_buffer
+argument_list|,
+name|buffer_profile
 argument_list|,
 name|new_offset_x
 argument_list|,

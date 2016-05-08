@@ -248,7 +248,7 @@ end_comment
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_drawable_transform_buffer_affine (GimpDrawable * drawable,GimpContext * context,GeglBuffer * orig_buffer,gint orig_offset_x,gint orig_offset_y,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,GimpTransformResize clip_result,gint * new_offset_x,gint * new_offset_y,GimpProgress * progress)
+DECL|function|gimp_drawable_transform_buffer_affine (GimpDrawable * drawable,GimpContext * context,GeglBuffer * orig_buffer,gint orig_offset_x,gint orig_offset_y,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,GimpTransformResize clip_result,GimpColorProfile ** buffer_profile,gint * new_offset_x,gint * new_offset_y,GimpProgress * progress)
 name|gimp_drawable_transform_buffer_affine
 parameter_list|(
 name|GimpDrawable
@@ -282,6 +282,11 @@ name|interpolation_type
 parameter_list|,
 name|GimpTransformResize
 name|clip_result
+parameter_list|,
+name|GimpColorProfile
+modifier|*
+modifier|*
+name|buffer_profile
 parameter_list|,
 name|gint
 modifier|*
@@ -588,6 +593,17 @@ name|gegl_matrix
 argument_list|)
 expr_stmt|;
 operator|*
+name|buffer_profile
+operator|=
+name|gimp_color_managed_get_color_profile
+argument_list|(
+name|GIMP_COLOR_MANAGED
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
+operator|*
 name|new_offset_x
 operator|=
 name|x1
@@ -606,7 +622,7 @@ end_function
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_drawable_transform_buffer_flip (GimpDrawable * drawable,GimpContext * context,GeglBuffer * orig_buffer,gint orig_offset_x,gint orig_offset_y,GimpOrientationType flip_type,gdouble axis,gboolean clip_result,gint * new_offset_x,gint * new_offset_y)
+DECL|function|gimp_drawable_transform_buffer_flip (GimpDrawable * drawable,GimpContext * context,GeglBuffer * orig_buffer,gint orig_offset_x,gint orig_offset_y,GimpOrientationType flip_type,gdouble axis,gboolean clip_result,GimpColorProfile ** buffer_profile,gint * new_offset_x,gint * new_offset_y)
 name|gimp_drawable_transform_buffer_flip
 parameter_list|(
 name|GimpDrawable
@@ -635,6 +651,11 @@ name|axis
 parameter_list|,
 name|gboolean
 name|clip_result
+parameter_list|,
+name|GimpColorProfile
+modifier|*
+modifier|*
+name|buffer_profile
 parameter_list|,
 name|gint
 modifier|*
@@ -1270,6 +1291,17 @@ name|GIMP_ORIENTATION_UNKNOWN
 case|:
 break|break;
 block|}
+operator|*
+name|buffer_profile
+operator|=
+name|gimp_color_managed_get_color_profile
+argument_list|(
+name|GIMP_COLOR_MANAGED
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
 name|new_buffer
 return|;
@@ -1442,7 +1474,7 @@ end_function
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_drawable_transform_buffer_rotate (GimpDrawable * drawable,GimpContext * context,GeglBuffer * orig_buffer,gint orig_offset_x,gint orig_offset_y,GimpRotationType rotate_type,gdouble center_x,gdouble center_y,gboolean clip_result,gint * new_offset_x,gint * new_offset_y)
+DECL|function|gimp_drawable_transform_buffer_rotate (GimpDrawable * drawable,GimpContext * context,GeglBuffer * orig_buffer,gint orig_offset_x,gint orig_offset_y,GimpRotationType rotate_type,gdouble center_x,gdouble center_y,gboolean clip_result,GimpColorProfile ** buffer_profile,gint * new_offset_x,gint * new_offset_y)
 name|gimp_drawable_transform_buffer_rotate
 parameter_list|(
 name|GimpDrawable
@@ -1474,6 +1506,11 @@ name|center_y
 parameter_list|,
 name|gboolean
 name|clip_result
+parameter_list|,
+name|GimpColorProfile
+modifier|*
+modifier|*
+name|buffer_profile
 parameter_list|,
 name|gint
 modifier|*
@@ -2616,6 +2653,17 @@ expr_stmt|;
 block|}
 break|break;
 block|}
+operator|*
+name|buffer_profile
+operator|=
+name|gimp_color_managed_get_color_profile
+argument_list|(
+name|GIMP_COLOR_MANAGED
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
 name|new_buffer
 return|;
@@ -2793,6 +2841,10 @@ decl_stmt|;
 name|gint
 name|new_offset_y
 decl_stmt|;
+name|GimpColorProfile
+modifier|*
+name|profile
+decl_stmt|;
 comment|/*  always clip unfloated buffers so they keep their size  */
 if|if
 condition|(
@@ -2896,6 +2948,9 @@ argument_list|,
 name|clip_result
 argument_list|,
 operator|&
+name|profile
+argument_list|,
+operator|&
 name|new_offset_x
 argument_list|,
 operator|&
@@ -2922,6 +2977,8 @@ argument_list|(
 name|drawable
 argument_list|,
 name|new_buffer
+argument_list|,
+name|profile
 argument_list|,
 name|new_offset_x
 argument_list|,
@@ -3081,14 +3138,16 @@ block|{
 name|GeglBuffer
 modifier|*
 name|new_buffer
-init|=
-name|NULL
 decl_stmt|;
 name|gint
 name|new_offset_x
 decl_stmt|;
 name|gint
 name|new_offset_y
+decl_stmt|;
+name|GimpColorProfile
+modifier|*
+name|profile
 decl_stmt|;
 comment|/*  always clip unfloated buffers so they keep their size  */
 if|if
@@ -3166,11 +3225,6 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* transform the buffer */
-if|if
-condition|(
-name|orig_buffer
-condition|)
-block|{
 name|new_buffer
 operator|=
 name|gimp_drawable_transform_buffer_flip
@@ -3192,6 +3246,9 @@ argument_list|,
 name|clip_result
 argument_list|,
 operator|&
+name|profile
+argument_list|,
+operator|&
 name|new_offset_x
 argument_list|,
 operator|&
@@ -3204,7 +3261,6 @@ argument_list|(
 name|orig_buffer
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|new_buffer
@@ -3217,6 +3273,8 @@ argument_list|(
 name|drawable
 argument_list|,
 name|new_buffer
+argument_list|,
+name|profile
 argument_list|,
 name|new_offset_x
 argument_list|,
@@ -3386,6 +3444,10 @@ decl_stmt|;
 name|gint
 name|new_offset_y
 decl_stmt|;
+name|GimpColorProfile
+modifier|*
+name|profile
+decl_stmt|;
 comment|/*  always clip unfloated buffers so they keep their size  */
 if|if
 condition|(
@@ -3487,6 +3549,9 @@ argument_list|,
 name|clip_result
 argument_list|,
 operator|&
+name|profile
+argument_list|,
+operator|&
 name|new_offset_x
 argument_list|,
 operator|&
@@ -3511,6 +3576,8 @@ argument_list|(
 name|drawable
 argument_list|,
 name|new_buffer
+argument_list|,
+name|profile
 argument_list|,
 name|new_offset_x
 argument_list|,
@@ -3806,7 +3873,7 @@ end_function
 begin_function
 name|GimpDrawable
 modifier|*
-DECL|function|gimp_drawable_transform_paste (GimpDrawable * drawable,GeglBuffer * buffer,gint offset_x,gint offset_y,gboolean new_layer)
+DECL|function|gimp_drawable_transform_paste (GimpDrawable * drawable,GeglBuffer * buffer,GimpColorProfile * buffer_profile,gint offset_x,gint offset_y,gboolean new_layer)
 name|gimp_drawable_transform_paste
 parameter_list|(
 name|GimpDrawable
@@ -3816,6 +3883,10 @@ parameter_list|,
 name|GeglBuffer
 modifier|*
 name|buffer
+parameter_list|,
+name|GimpColorProfile
+modifier|*
+name|buffer_profile
 parameter_list|,
 name|gint
 name|offset_x
@@ -3872,6 +3943,16 @@ argument_list|(
 name|GEGL_IS_BUFFER
 argument_list|(
 name|buffer
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_COLOR_PROFILE
+argument_list|(
+name|buffer_profile
 argument_list|)
 argument_list|,
 name|NULL
@@ -3960,8 +4041,7 @@ name|GIMP_OPACITY_OPAQUE
 argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|,
-name|NULL
-comment|/* same image */
+name|buffer_profile
 argument_list|)
 expr_stmt|;
 name|gimp_item_set_offset

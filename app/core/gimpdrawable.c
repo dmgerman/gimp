@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fb79280103
+DECL|enum|__anon2b9af8670103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -213,7 +213,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fb79280203
+DECL|enum|__anon2b9af8670203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2776,6 +2776,10 @@ name|GeglBuffer
 modifier|*
 name|buffer
 decl_stmt|;
+name|GimpColorProfile
+modifier|*
+name|buffer_profile
+decl_stmt|;
 name|gint
 name|off_x
 decl_stmt|,
@@ -2821,6 +2825,9 @@ argument_list|,
 name|clip_result
 argument_list|,
 operator|&
+name|buffer_profile
+argument_list|,
+operator|&
 name|new_off_x
 argument_list|,
 operator|&
@@ -2837,6 +2844,8 @@ argument_list|(
 name|drawable
 argument_list|,
 name|buffer
+argument_list|,
+name|buffer_profile
 argument_list|,
 name|new_off_x
 argument_list|,
@@ -2894,6 +2903,10 @@ name|GeglBuffer
 modifier|*
 name|buffer
 decl_stmt|;
+name|GimpColorProfile
+modifier|*
+name|buffer_profile
+decl_stmt|;
 name|gint
 name|off_x
 decl_stmt|,
@@ -2941,6 +2954,9 @@ argument_list|,
 name|clip_result
 argument_list|,
 operator|&
+name|buffer_profile
+argument_list|,
+operator|&
 name|new_off_x
 argument_list|,
 operator|&
@@ -2957,6 +2973,8 @@ argument_list|(
 name|drawable
 argument_list|,
 name|buffer
+argument_list|,
+name|buffer_profile
 argument_list|,
 name|new_off_x
 argument_list|,
@@ -3020,6 +3038,10 @@ name|GeglBuffer
 modifier|*
 name|buffer
 decl_stmt|;
+name|GimpColorProfile
+modifier|*
+name|buffer_profile
+decl_stmt|;
 name|gint
 name|off_x
 decl_stmt|,
@@ -3067,6 +3089,9 @@ argument_list|,
 name|clip_result
 argument_list|,
 operator|&
+name|buffer_profile
+argument_list|,
+operator|&
 name|new_off_x
 argument_list|,
 operator|&
@@ -3085,6 +3110,8 @@ argument_list|(
 name|drawable
 argument_list|,
 name|buffer
+argument_list|,
+name|buffer_profile
 argument_list|,
 name|new_off_x
 argument_list|,

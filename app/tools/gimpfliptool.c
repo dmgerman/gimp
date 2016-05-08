@@ -207,6 +207,11 @@ parameter_list|,
 name|gint
 name|orig_offset_y
 parameter_list|,
+name|GimpColorProfile
+modifier|*
+modifier|*
+name|buffer_profile
+parameter_list|,
 name|gint
 modifier|*
 name|new_offset_x
@@ -704,7 +709,7 @@ begin_function
 specifier|static
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_flip_tool_transform (GimpTransformTool * trans_tool,GimpItem * active_item,GeglBuffer * orig_buffer,gint orig_offset_x,gint orig_offset_y,gint * new_offset_x,gint * new_offset_y)
+DECL|function|gimp_flip_tool_transform (GimpTransformTool * trans_tool,GimpItem * active_item,GeglBuffer * orig_buffer,gint orig_offset_x,gint orig_offset_y,GimpColorProfile ** buffer_profile,gint * new_offset_x,gint * new_offset_y)
 name|gimp_flip_tool_transform
 parameter_list|(
 name|GimpTransformTool
@@ -724,6 +729,11 @@ name|orig_offset_x
 parameter_list|,
 name|gint
 name|orig_offset_y
+parameter_list|,
+name|GimpColorProfile
+modifier|*
+modifier|*
+name|buffer_profile
 parameter_list|,
 name|gint
 modifier|*
@@ -863,6 +873,8 @@ argument_list|,
 name|axis
 argument_list|,
 name|FALSE
+argument_list|,
+name|buffer_profile
 argument_list|,
 name|new_offset_x
 argument_list|,

@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2794b86b0103
+DECL|enum|__anon28f070930103
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -609,6 +609,11 @@ name|orig_offset_x
 parameter_list|,
 name|gint
 name|orig_offset_y
+parameter_list|,
+name|GimpColorProfile
+modifier|*
+modifier|*
+name|buffer_profile
 parameter_list|,
 name|gint
 modifier|*
