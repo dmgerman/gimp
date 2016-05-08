@@ -4661,6 +4661,14 @@ literal|"image-colormap"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_IMAGE_COLOR_MANAGED
+block|,
+literal|"GIMP_UNDO_IMAGE_COLOR_MANAGED"
+block|,
+literal|"image-color-managed"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_GUIDE
 block|,
 literal|"GIMP_UNDO_GUIDE"
@@ -5584,6 +5592,19 @@ argument_list|(
 literal|"undo-type"
 argument_list|,
 literal|"Change indexed palette"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_UNDO_IMAGE_COLOR_MANAGED
+block|,
+name|NC_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Change color managed state"
 argument_list|)
 block|,
 name|NULL

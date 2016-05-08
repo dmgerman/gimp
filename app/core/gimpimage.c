@@ -372,7 +372,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c19d1030103
+DECL|enum|__anon2c8402f20103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -469,7 +469,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c19d1030203
+DECL|enum|__anon2c8402f20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3018,6 +3018,12 @@ operator|->
 name|palette
 operator|=
 name|NULL
+expr_stmt|;
+name|private
+operator|->
+name|is_color_managed
+operator|=
+name|TRUE
 expr_stmt|;
 name|private
 operator|->

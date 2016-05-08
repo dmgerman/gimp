@@ -161,6 +161,10 @@ name|guchar
 modifier|*
 name|colormap
 decl_stmt|;
+DECL|member|is_color_managed
+name|gboolean
+name|is_color_managed
+decl_stmt|;
 DECL|member|metadata
 name|GimpMetadata
 modifier|*
