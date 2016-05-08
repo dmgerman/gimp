@@ -203,6 +203,16 @@ DECL|struct|_AuxInput
 struct|struct
 name|_AuxInput
 block|{
+DECL|member|tool
+name|GimpOperationTool
+modifier|*
+name|tool
+decl_stmt|;
+DECL|member|pad
+name|gchar
+modifier|*
+name|pad
+decl_stmt|;
 DECL|member|node
 name|GeglNode
 modifier|*
@@ -2459,7 +2469,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_tool_aux_input_notify (GimpBufferSourceBox * box,const GParamSpec * pspec,GimpOperationTool * tool)
+DECL|function|gimp_operation_tool_aux_input_notify (GimpBufferSourceBox * box,const GParamSpec * pspec,AuxInput * input)
 name|gimp_operation_tool_aux_input_notify
 parameter_list|(
 name|GimpBufferSourceBox
@@ -2471,17 +2481,26 @@ name|GParamSpec
 modifier|*
 name|pspec
 parameter_list|,
-name|GimpOperationTool
+name|AuxInput
 modifier|*
-name|tool
+name|input
 parameter_list|)
 block|{
-name|gimp_image_map_tool_preview
+comment|/* emit "notify" so GimpImageMapTool will update its preview    *    * FIXME: this is a bad hack that should go away once GimpImageMap    * and GimpImageMapTool are refactored to be more filter-ish.    */
+name|g_signal_emit_by_name
 argument_list|(
 name|GIMP_IMAGE_MAP_TOOL
 argument_list|(
+name|input
+operator|->
 name|tool
 argument_list|)
+operator|->
+name|config
+argument_list|,
+literal|"notify"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -2526,6 +2545,21 @@ name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
+name|input
+operator|->
+name|tool
+operator|=
+name|tool
+expr_stmt|;
+name|input
+operator|->
+name|pad
+operator|=
+name|g_strdup
+argument_list|(
+name|input_pad
+argument_list|)
+expr_stmt|;
 name|input
 operator|->
 name|node
@@ -2592,7 +2626,7 @@ argument_list|(
 name|gimp_operation_tool_aux_input_notify
 argument_list|)
 argument_list|,
-name|tool
+name|input
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -2608,7 +2642,7 @@ argument_list|(
 name|gimp_operation_tool_aux_input_notify
 argument_list|)
 argument_list|,
-name|tool
+name|input
 argument_list|)
 expr_stmt|;
 return|return
@@ -2655,6 +2689,13 @@ modifier|*
 name|input
 parameter_list|)
 block|{
+name|g_free
+argument_list|(
+name|input
+operator|->
+name|pad
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|input
@@ -3023,6 +3064,7 @@ argument_list|,
 literal|"aux"
 argument_list|)
 expr_stmt|;
+comment|/* don't translate "Aux" */
 name|g_snprintf
 argument_list|(
 name|label
@@ -3055,6 +3097,7 @@ argument_list|,
 name|aux
 argument_list|)
 expr_stmt|;
+comment|/* don't translate "Aux" */
 name|g_snprintf
 argument_list|(
 name|label
