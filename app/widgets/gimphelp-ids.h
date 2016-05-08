@@ -798,6 +798,14 @@ value|"gimp-image-dialog"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_IMAGE_DUPLICATE
+define|#
+directive|define
+name|GIMP_HELP_IMAGE_DUPLICATE
+value|"gimp-image-duplicate"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_IMAGE_CONVERT_RGB
 define|#
 directive|define
@@ -979,14 +987,6 @@ define|#
 directive|define
 name|GIMP_HELP_IMAGE_CROP
 value|"gimp-image-crop"
-end_define
-
-begin_define
-DECL|macro|GIMP_HELP_IMAGE_DUPLICATE
-define|#
-directive|define
-name|GIMP_HELP_IMAGE_DUPLICATE
-value|"gimp-image-duplicate"
 end_define
 
 begin_define
