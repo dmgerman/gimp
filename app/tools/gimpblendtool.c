@@ -2622,15 +2622,6 @@ name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_image_map_apply
-argument_list|(
-name|blend_tool
-operator|->
-name|image_map
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 end_function
