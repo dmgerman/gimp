@@ -740,11 +740,6 @@ argument_list|(
 name|input
 argument_list|)
 expr_stmt|;
-name|gimp_image_map_tool_preview
-argument_list|(
-name|im_tool
-argument_list|)
-expr_stmt|;
 name|g_object_set
 argument_list|(
 name|GIMP_TOOL_GET_OPTIONS

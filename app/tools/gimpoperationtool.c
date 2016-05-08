@@ -3335,7 +3335,6 @@ argument_list|)
 operator|->
 name|drawable
 condition|)
-block|{
 name|gimp_operation_tool_sync_op
 argument_list|(
 name|tool
@@ -3348,12 +3347,6 @@ operator|->
 name|drawable
 argument_list|)
 expr_stmt|;
-name|gimp_image_map_tool_preview
-argument_list|(
-name|im_tool
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 
