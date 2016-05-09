@@ -210,7 +210,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b42c92c0103
+DECL|enum|__anon2c62c8420103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -773,7 +773,7 @@ literal|"out-of-gamut-color"
 argument_list|,
 name|_
 argument_list|(
-literal|"Out of gammut warning color"
+literal|"Out of gamut warning color"
 argument_list|)
 argument_list|,
 name|OUT_OF_GAMUT_COLOR_BLURB
