@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpobject.h"
+file|"gimpfilter.h"
 end_include
 
 begin_define
@@ -100,7 +100,7 @@ struct|struct
 name|_GimpImageMapClass
 block|{
 DECL|member|parent_class
-name|GimpObjectClass
+name|GimpFilterClass
 name|parent_class
 decl_stmt|;
 DECL|member|flush
