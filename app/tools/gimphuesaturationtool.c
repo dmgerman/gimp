@@ -102,13 +102,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimphuesaturationtool.h"
+file|"gimpfilteroptions.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpimagemapoptions.h"
+file|"gimphuesaturationtool.h"
 end_include
 
 begin_include
@@ -176,9 +176,9 @@ name|gchar
 modifier|*
 name|gimp_hue_saturation_tool_get_operation
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|gchar
 modifier|*
@@ -213,9 +213,9 @@ specifier|static
 name|void
 name|gimp_hue_saturation_tool_dialog
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -225,9 +225,9 @@ specifier|static
 name|void
 name|gimp_hue_saturation_tool_reset
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -273,9 +273,9 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -289,7 +289,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
 name|hs_tool
 parameter_list|)
@@ -297,14 +297,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpHueSaturationTool,gimp_hue_saturation_tool,GIMP_TYPE_IMAGE_MAP_TOOL)
+DECL|function|G_DEFINE_TYPE (GimpHueSaturationTool,gimp_hue_saturation_tool,GIMP_TYPE_FILTER_TOOL)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpHueSaturationTool
 argument_list|,
 argument|gimp_hue_saturation_tool
 argument_list|,
-argument|GIMP_TYPE_IMAGE_MAP_TOOL
+argument|GIMP_TYPE_FILTER_TOOL
 argument_list|)
 end_macro
 
@@ -334,7 +334,7 @@ call|)
 argument_list|(
 name|GIMP_TYPE_HUE_SATURATION_TOOL
 argument_list|,
-name|GIMP_TYPE_IMAGE_MAP_OPTIONS
+name|GIMP_TYPE_FILTER_OPTIONS
 argument_list|,
 name|NULL
 argument_list|,
@@ -400,11 +400,11 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|GimpImageMapToolClass
+name|GimpFilterToolClass
 modifier|*
-name|im_tool_class
+name|filter_tool_class
 init|=
-name|GIMP_IMAGE_MAP_TOOL_CLASS
+name|GIMP_FILTER_TOOL_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -421,13 +421,13 @@ name|initialize
 operator|=
 name|gimp_hue_saturation_tool_initialize
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|settings_name
 operator|=
 literal|"hue-saturation"
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|import_dialog_title
 operator|=
@@ -436,7 +436,7 @@ argument_list|(
 literal|"Import Hue-Saturation Settings"
 argument_list|)
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|export_dialog_title
 operator|=
@@ -445,19 +445,19 @@ argument_list|(
 literal|"Export Hue-Saturation Settings"
 argument_list|)
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|get_operation
 operator|=
 name|gimp_hue_saturation_tool_get_operation
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|dialog
 operator|=
 name|gimp_hue_saturation_tool_dialog
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|reset
 operator|=
@@ -502,7 +502,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|GIMP_IMAGE_MAP_TOOL
+name|GIMP_FILTER_TOOL
 argument_list|(
 name|object
 argument_list|)
@@ -619,12 +619,12 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_hue_saturation_tool_get_operation (GimpImageMapTool * im_tool,gchar ** title,gchar ** description,gchar ** undo_desc,gchar ** icon_name,gchar ** help_id)
+DECL|function|gimp_hue_saturation_tool_get_operation (GimpFilterTool * filter_tool,gchar ** title,gchar ** description,gchar ** undo_desc,gchar ** icon_name,gchar ** help_id)
 name|gimp_hue_saturation_tool_get_operation
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|gchar
 modifier|*
@@ -687,12 +687,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_hue_saturation_tool_dialog (GimpImageMapTool * im_tool)
+DECL|function|gimp_hue_saturation_tool_dialog (GimpFilterTool * filter_tool)
 name|gimp_hue_saturation_tool_dialog
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 block|{
 name|GimpHueSaturationTool
@@ -701,7 +701,7 @@ name|hs_tool
 init|=
 name|GIMP_HUE_SATURATION_TOOL
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 decl_stmt|;
 name|GimpHueSaturationConfig
@@ -710,7 +710,7 @@ name|config
 init|=
 name|GIMP_HUE_SATURATION_CONFIG
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)
@@ -758,7 +758,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2b82767b0108
+DECL|struct|__anon27985ac70108
 block|{
 DECL|member|label
 specifier|const
@@ -936,9 +936,9 @@ block|}
 struct|;
 name|main_vbox
 operator|=
-name|gimp_image_map_tool_dialog_get_vbox
+name|gimp_filter_tool_dialog_get_vbox
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 expr_stmt|;
 name|frame
@@ -1440,7 +1440,7 @@ name|scale
 operator|=
 name|gimp_prop_spin_scale_new
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -1552,7 +1552,7 @@ name|scale
 operator|=
 name|gimp_prop_spin_scale_new
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -1613,7 +1613,7 @@ name|scale
 operator|=
 name|gimp_prop_spin_scale_new
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -1670,7 +1670,7 @@ name|scale
 operator|=
 name|gimp_prop_spin_scale_new
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -1822,12 +1822,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_hue_saturation_tool_reset (GimpImageMapTool * im_tool)
+DECL|function|gimp_hue_saturation_tool_reset (GimpFilterTool * filter_tool)
 name|gimp_hue_saturation_tool_reset
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 block|{
 name|GimpHueRange
@@ -1835,14 +1835,14 @@ name|range
 decl_stmt|;
 name|g_object_freeze_notify
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)
 expr_stmt|;
 name|g_object_get
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -1856,7 +1856,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|im_tool
+name|filter_tool
 operator|->
 name|default_config
 condition|)
@@ -1865,14 +1865,14 @@ name|gimp_config_copy
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|default_config
 argument_list|)
 argument_list|,
 name|GIMP_CONFIG
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)
@@ -1887,7 +1887,7 @@ name|gimp_config_reset
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)
@@ -1896,7 +1896,7 @@ expr_stmt|;
 block|}
 name|g_object_set
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -1909,7 +1909,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_thaw_notify
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)
@@ -2057,11 +2057,11 @@ literal|1.0
 block|, }
 block|}
 decl_stmt|;
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 init|=
-name|GIMP_IMAGE_MAP_TOOL
+name|GIMP_FILTER_TOOL
 argument_list|(
 name|hs_tool
 argument_list|)
@@ -2072,7 +2072,7 @@ name|config
 init|=
 name|GIMP_HUE_SATURATION_CONFIG
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)
@@ -2140,16 +2140,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|hue_saturation_range_callback (GtkWidget * widget,GimpImageMapTool * im_tool)
+DECL|function|hue_saturation_range_callback (GtkWidget * widget,GimpFilterTool * filter_tool)
 name|hue_saturation_range_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 block|{
 if|if
@@ -2176,7 +2176,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -2194,23 +2194,23 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|hue_saturation_range_reset_callback (GtkWidget * widget,GimpImageMapTool * im_tool)
+DECL|function|hue_saturation_range_reset_callback (GtkWidget * widget,GimpFilterTool * filter_tool)
 name|hue_saturation_range_reset_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 block|{
 name|gimp_hue_saturation_config_reset_range
 argument_list|(
 name|GIMP_HUE_SATURATION_CONFIG
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)

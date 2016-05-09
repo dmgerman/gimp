@@ -84,20 +84,20 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpFilterTool
+typedef|typedef
+name|struct
+name|_GimpFilterTool
+name|GimpFilterTool
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpForegroundSelectToolUndo
 typedef|typedef
 name|struct
 name|_GimpForegroundSelectToolUndo
 name|GimpForegroundSelectToolUndo
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpImageMapTool
-typedef|typedef
-name|struct
-name|_GimpImageMapTool
-name|GimpImageMapTool
 typedef|;
 end_typedef
 
@@ -138,11 +138,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpImageMapOptions
+DECL|typedef|GimpFilterOptions
 typedef|typedef
 name|struct
-name|_GimpImageMapOptions
-name|GimpImageMapOptions
+name|_GimpFilterOptions
+name|GimpFilterOptions
 typedef|;
 end_typedef
 

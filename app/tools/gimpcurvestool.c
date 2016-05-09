@@ -349,9 +349,9 @@ name|gchar
 modifier|*
 name|gimp_curves_tool_get_operation
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|gchar
 modifier|*
@@ -386,9 +386,9 @@ specifier|static
 name|void
 name|gimp_curves_tool_dialog
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -398,9 +398,9 @@ specifier|static
 name|void
 name|gimp_curves_tool_reset
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -410,9 +410,9 @@ specifier|static
 name|gboolean
 name|gimp_curves_tool_settings_import
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|GInputStream
 modifier|*
@@ -431,9 +431,9 @@ specifier|static
 name|gboolean
 name|gimp_curves_tool_settings_export
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|GOutputStream
 modifier|*
@@ -578,14 +578,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpCurvesTool,gimp_curves_tool,GIMP_TYPE_IMAGE_MAP_TOOL)
+DECL|function|G_DEFINE_TYPE (GimpCurvesTool,gimp_curves_tool,GIMP_TYPE_FILTER_TOOL)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpCurvesTool
 argument_list|,
 argument|gimp_curves_tool
 argument_list|,
-argument|GIMP_TYPE_IMAGE_MAP_TOOL
+argument|GIMP_TYPE_FILTER_TOOL
 argument_list|)
 end_macro
 
@@ -698,11 +698,11 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|GimpImageMapToolClass
+name|GimpFilterToolClass
 modifier|*
-name|im_tool_class
+name|filter_tool_class
 init|=
-name|GIMP_IMAGE_MAP_TOOL_CLASS
+name|GIMP_FILTER_TOOL_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -743,13 +743,13 @@ name|picked
 operator|=
 name|gimp_curves_tool_color_picked
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|settings_name
 operator|=
 literal|"curves"
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|import_dialog_title
 operator|=
@@ -758,7 +758,7 @@ argument_list|(
 literal|"Import Curves"
 argument_list|)
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|export_dialog_title
 operator|=
@@ -767,31 +767,31 @@ argument_list|(
 literal|"Export Curves"
 argument_list|)
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|get_operation
 operator|=
 name|gimp_curves_tool_get_operation
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|dialog
 operator|=
 name|gimp_curves_tool_dialog
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|reset
 operator|=
 name|gimp_curves_tool_reset
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|settings_import
 operator|=
 name|gimp_curves_tool_settings_import
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|settings_export
 operator|=
@@ -868,7 +868,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|GIMP_IMAGE_MAP_TOOL
+name|GIMP_FILTER_TOOL
 argument_list|(
 name|object
 argument_list|)
@@ -1138,11 +1138,11 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 init|=
-name|GIMP_IMAGE_MAP_TOOL
+name|GIMP_FILTER_TOOL
 argument_list|(
 name|tool
 argument_list|)
@@ -1153,7 +1153,7 @@ name|config
 init|=
 name|GIMP_CURVES_CONFIG
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)
@@ -1458,9 +1458,9 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|gimp_image_map_tool_on_guide
+name|gimp_filter_tool_on_guide
 argument_list|(
-name|GIMP_IMAGE_MAP_TOOL
+name|GIMP_FILTER_TOOL
 argument_list|(
 name|tool
 argument_list|)
@@ -1678,11 +1678,11 @@ argument_list|(
 name|color_tool
 argument_list|)
 decl_stmt|;
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 init|=
-name|GIMP_IMAGE_MAP_TOOL
+name|GIMP_FILTER_TOOL
 argument_list|(
 name|color_tool
 argument_list|)
@@ -1693,7 +1693,7 @@ name|config
 init|=
 name|GIMP_CURVES_CONFIG
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)
@@ -1704,7 +1704,7 @@ name|drawable
 decl_stmt|;
 name|drawable
 operator|=
-name|GIMP_IMAGE_MAP_TOOL
+name|GIMP_FILTER_TOOL
 argument_list|(
 name|tool
 argument_list|)
@@ -1824,12 +1824,12 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_curves_tool_get_operation (GimpImageMapTool * im_tool,gchar ** title,gchar ** description,gchar ** undo_desc,gchar ** icon_name,gchar ** help_id)
+DECL|function|gimp_curves_tool_get_operation (GimpFilterTool * filter_tool,gchar ** title,gchar ** description,gchar ** undo_desc,gchar ** icon_name,gchar ** help_id)
 name|gimp_curves_tool_get_operation
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|gchar
 modifier|*
@@ -1892,12 +1892,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_curves_tool_dialog (GimpImageMapTool * im_tool)
+DECL|function|gimp_curves_tool_dialog (GimpFilterTool * filter_tool)
 name|gimp_curves_tool_dialog
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 block|{
 name|GimpCurvesTool
@@ -1906,7 +1906,7 @@ name|tool
 init|=
 name|GIMP_CURVES_TOOL
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 decl_stmt|;
 name|GimpToolOptions
@@ -1915,7 +1915,7 @@ name|tool_options
 init|=
 name|GIMP_TOOL_GET_OPTIONS
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 decl_stmt|;
 name|GimpCurvesConfig
@@ -1924,7 +1924,7 @@ name|config
 init|=
 name|GIMP_CURVES_CONFIG
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)
@@ -1983,7 +1983,7 @@ name|combo
 decl_stmt|;
 name|g_signal_connect
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|settings_box
 argument_list|,
@@ -1994,14 +1994,14 @@ argument_list|(
 name|gimp_curves_tool_export_setup
 argument_list|)
 argument_list|,
-name|im_tool
+name|filter_tool
 argument_list|)
 expr_stmt|;
 name|main_vbox
 operator|=
-name|gimp_image_map_tool_dialog_get_vbox
+name|gimp_filter_tool_dialog_get_vbox
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 expr_stmt|;
 comment|/*  The combo box for selecting channels  */
@@ -2983,12 +2983,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_curves_tool_reset (GimpImageMapTool * im_tool)
+DECL|function|gimp_curves_tool_reset (GimpFilterTool * filter_tool)
 name|gimp_curves_tool_reset
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 block|{
 name|GimpCurvesConfig
@@ -2997,7 +2997,7 @@ name|config
 init|=
 name|GIMP_CURVES_CONFIG
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)
@@ -3013,7 +3013,7 @@ name|default_config
 operator|=
 name|GIMP_CURVES_CONFIG
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|default_config
 argument_list|)
@@ -3139,12 +3139,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_curves_tool_settings_import (GimpImageMapTool * im_tool,GInputStream * input,GError ** error)
+DECL|function|gimp_curves_tool_settings_import (GimpFilterTool * filter_tool,GInputStream * input,GError ** error)
 name|gimp_curves_tool_settings_import
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|GInputStream
 modifier|*
@@ -3162,7 +3162,7 @@ name|config
 init|=
 name|GIMP_CURVES_CONFIG
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)
@@ -3256,14 +3256,14 @@ name|error
 argument_list|)
 return|;
 return|return
-name|GIMP_IMAGE_MAP_TOOL_CLASS
+name|GIMP_FILTER_TOOL_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
 name|settings_import
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|,
 name|input
 argument_list|,
@@ -3276,12 +3276,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_curves_tool_settings_export (GimpImageMapTool * im_tool,GOutputStream * output,GError ** error)
+DECL|function|gimp_curves_tool_settings_export (GimpFilterTool * filter_tool,GOutputStream * output,GError ** error)
 name|gimp_curves_tool_settings_export
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|GOutputStream
 modifier|*
@@ -3299,7 +3299,7 @@ name|tool
 init|=
 name|GIMP_CURVES_TOOL
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 decl_stmt|;
 name|GimpCurvesConfig
@@ -3308,7 +3308,7 @@ name|config
 init|=
 name|GIMP_CURVES_CONFIG
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)
@@ -3330,14 +3330,14 @@ name|error
 argument_list|)
 return|;
 return|return
-name|GIMP_IMAGE_MAP_TOOL_CLASS
+name|GIMP_FILTER_TOOL_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
 name|settings_export
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|,
 name|output
 argument_list|,
@@ -3447,11 +3447,11 @@ modifier|*
 name|tool
 parameter_list|)
 block|{
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 init|=
-name|GIMP_IMAGE_MAP_TOOL
+name|GIMP_FILTER_TOOL
 argument_list|(
 name|tool
 argument_list|)
@@ -3462,7 +3462,7 @@ name|config
 init|=
 name|GIMP_CURVES_CONFIG
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)
@@ -3900,11 +3900,11 @@ modifier|*
 name|tool
 parameter_list|)
 block|{
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 init|=
-name|GIMP_IMAGE_MAP_TOOL
+name|GIMP_FILTER_TOOL
 argument_list|(
 name|tool
 argument_list|)
@@ -3915,7 +3915,7 @@ name|config
 init|=
 name|GIMP_CURVES_CONFIG
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)
@@ -3973,11 +3973,11 @@ modifier|*
 name|tool
 parameter_list|)
 block|{
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 init|=
-name|GIMP_IMAGE_MAP_TOOL
+name|GIMP_FILTER_TOOL
 argument_list|(
 name|tool
 argument_list|)
@@ -3988,7 +3988,7 @@ name|config
 init|=
 name|GIMP_CURVES_CONFIG
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)
@@ -4123,11 +4123,11 @@ name|value
 argument_list|)
 condition|)
 block|{
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 init|=
-name|GIMP_IMAGE_MAP_TOOL
+name|GIMP_FILTER_TOOL
 argument_list|(
 name|tool
 argument_list|)
@@ -4138,7 +4138,7 @@ name|config
 init|=
 name|GIMP_CURVES_CONFIG
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)

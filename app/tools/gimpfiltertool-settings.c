@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpimagemaptool-settings.c  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpfiltertool-settings.c  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -96,19 +96,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimagemapoptions.h"
+file|"gimpfilteroptions.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpimagemaptool.h"
+file|"gimpfiltertool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpimagemaptool-settings.h"
+file|"gimpfiltertool-settings.h"
 end_include
 
 begin_include
@@ -124,7 +124,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_image_map_tool_settings_import
+name|gimp_filter_tool_settings_import
 parameter_list|(
 name|GimpSettingsBox
 modifier|*
@@ -134,9 +134,9 @@ name|GFile
 modifier|*
 name|file
 parameter_list|,
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -144,7 +144,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_image_map_tool_settings_export
+name|gimp_filter_tool_settings_export
 parameter_list|(
 name|GimpSettingsBox
 modifier|*
@@ -154,9 +154,9 @@ name|GFile
 modifier|*
 name|file
 parameter_list|,
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -168,12 +168,12 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_image_map_tool_real_get_settings_ui (GimpImageMapTool * im_tool,GimpContainer * settings,GFile * settings_file,const gchar * import_dialog_title,const gchar * export_dialog_title,const gchar * file_dialog_help_id,GFile * default_folder,GtkWidget ** settings_box)
-name|gimp_image_map_tool_real_get_settings_ui
+DECL|function|gimp_filter_tool_real_get_settings_ui (GimpFilterTool * filter_tool,GimpContainer * settings,GFile * settings_file,const gchar * import_dialog_title,const gchar * export_dialog_title,const gchar * file_dialog_help_id,GFile * default_folder,GtkWidget ** settings_box)
+name|gimp_filter_tool_real_get_settings_ui
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|GimpContainer
 modifier|*
@@ -228,7 +228,7 @@ name|tool_info
 operator|=
 name|GIMP_TOOL
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 operator|->
 name|tool_info
@@ -282,7 +282,7 @@ name|tool_info
 operator|->
 name|gimp
 argument_list|,
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -347,7 +347,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|settings_box
 argument_list|,
@@ -355,15 +355,15 @@ literal|"import"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_image_map_tool_settings_import
+name|gimp_filter_tool_settings_import
 argument_list|)
 argument_list|,
-name|im_tool
+name|filter_tool
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|settings_box
 argument_list|,
@@ -371,10 +371,10 @@ literal|"export"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_image_map_tool_settings_export
+name|gimp_filter_tool_settings_export
 argument_list|)
 argument_list|,
-name|im_tool
+name|filter_tool
 argument_list|)
 expr_stmt|;
 return|return
@@ -385,12 +385,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_map_tool_real_settings_import (GimpImageMapTool * im_tool,GInputStream * input,GError ** error)
-name|gimp_image_map_tool_real_settings_import
+DECL|function|gimp_filter_tool_real_settings_import (GimpFilterTool * filter_tool,GInputStream * input,GError ** error)
+name|gimp_filter_tool_real_settings_import
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|GInputStream
 modifier|*
@@ -407,7 +407,7 @@ name|gimp_config_deserialize_stream
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)
@@ -424,12 +424,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_map_tool_real_settings_export (GimpImageMapTool * im_tool,GOutputStream * output,GError ** error)
-name|gimp_image_map_tool_real_settings_export
+DECL|function|gimp_filter_tool_real_settings_export (GimpFilterTool * filter_tool,GOutputStream * output,GError ** error)
+name|gimp_filter_tool_real_settings_export
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|GOutputStream
 modifier|*
@@ -441,13 +441,13 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GimpImageMapToolClass
+name|GimpFilterToolClass
 modifier|*
 name|klass
 init|=
-name|GIMP_IMAGE_MAP_TOOL_GET_CLASS
+name|GIMP_FILTER_TOOL_GET_CLASS
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 decl_stmt|;
 name|gchar
@@ -489,7 +489,7 @@ name|gimp_config_serialize_to_stream
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)
@@ -528,8 +528,8 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_image_map_tool_settings_import (GimpSettingsBox * box,GFile * file,GimpImageMapTool * im_tool)
-name|gimp_image_map_tool_settings_import
+DECL|function|gimp_filter_tool_settings_import (GimpSettingsBox * box,GFile * file,GimpFilterTool * filter_tool)
+name|gimp_filter_tool_settings_import
 parameter_list|(
 name|GimpSettingsBox
 modifier|*
@@ -539,18 +539,18 @@ name|GFile
 modifier|*
 name|file
 parameter_list|,
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 block|{
-name|GimpImageMapToolClass
+name|GimpFilterToolClass
 modifier|*
 name|tool_class
 init|=
-name|GIMP_IMAGE_MAP_TOOL_GET_CLASS
+name|GIMP_FILTER_TOOL_GET_CLASS
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 decl_stmt|;
 name|GInputStream
@@ -578,7 +578,7 @@ if|if
 condition|(
 name|GIMP_TOOL
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 operator|->
 name|tool_info
@@ -622,7 +622,7 @@ name|gimp_message
 argument_list|(
 name|GIMP_TOOL
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 operator|->
 name|tool_info
@@ -633,7 +633,7 @@ name|G_OBJECT
 argument_list|(
 name|gimp_tool_gui_get_dialog
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|gui
 argument_list|)
@@ -673,7 +673,7 @@ name|tool_class
 operator|->
 name|settings_import
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|,
 name|input
 argument_list|,
@@ -686,7 +686,7 @@ name|gimp_message
 argument_list|(
 name|GIMP_TOOL
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 operator|->
 name|tool_info
@@ -697,7 +697,7 @@ name|G_OBJECT
 argument_list|(
 name|gimp_tool_gui_get_dialog
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|gui
 argument_list|)
@@ -744,7 +744,7 @@ name|g_object_set
 argument_list|(
 name|GIMP_TOOL_GET_OPTIONS
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 argument_list|,
 literal|"settings"
@@ -763,8 +763,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_image_map_tool_settings_export (GimpSettingsBox * box,GFile * file,GimpImageMapTool * im_tool)
-name|gimp_image_map_tool_settings_export
+DECL|function|gimp_filter_tool_settings_export (GimpSettingsBox * box,GFile * file,GimpFilterTool * filter_tool)
+name|gimp_filter_tool_settings_export
 parameter_list|(
 name|GimpSettingsBox
 modifier|*
@@ -774,18 +774,18 @@ name|GFile
 modifier|*
 name|file
 parameter_list|,
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 block|{
-name|GimpImageMapToolClass
+name|GimpFilterToolClass
 modifier|*
 name|tool_class
 init|=
-name|GIMP_IMAGE_MAP_TOOL_GET_CLASS
+name|GIMP_FILTER_TOOL_GET_CLASS
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 decl_stmt|;
 name|GOutputStream
@@ -813,7 +813,7 @@ if|if
 condition|(
 name|GIMP_TOOL
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 operator|->
 name|tool_info
@@ -863,7 +863,7 @@ name|gimp_message_literal
 argument_list|(
 name|GIMP_TOOL
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 operator|->
 name|tool_info
@@ -874,7 +874,7 @@ name|G_OBJECT
 argument_list|(
 name|gimp_tool_gui_get_dialog
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|gui
 argument_list|)
@@ -904,7 +904,7 @@ name|tool_class
 operator|->
 name|settings_export
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|,
 name|output
 argument_list|,
@@ -917,7 +917,7 @@ name|gimp_message
 argument_list|(
 name|GIMP_TOOL
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 operator|->
 name|tool_info
@@ -928,7 +928,7 @@ name|G_OBJECT
 argument_list|(
 name|gimp_tool_gui_get_dialog
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|gui
 argument_list|)
@@ -975,7 +975,7 @@ name|gimp_message
 argument_list|(
 name|GIMP_TOOL
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 operator|->
 name|tool_info
@@ -986,7 +986,7 @@ name|G_OBJECT
 argument_list|(
 name|GIMP_TOOL
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 operator|->
 name|display
@@ -1009,7 +1009,7 @@ name|g_object_set
 argument_list|(
 name|GIMP_TOOL_GET_OPTIONS
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 argument_list|,
 literal|"settings"

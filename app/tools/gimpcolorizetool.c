@@ -142,9 +142,9 @@ name|gchar
 modifier|*
 name|gimp_colorize_tool_get_operation
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|gchar
 modifier|*
@@ -179,9 +179,9 @@ specifier|static
 name|void
 name|gimp_colorize_tool_dialog
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -191,9 +191,9 @@ specifier|static
 name|void
 name|gimp_colorize_tool_color_picked
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|gpointer
 name|identifier
@@ -218,14 +218,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpColorizeTool,gimp_colorize_tool,GIMP_TYPE_IMAGE_MAP_TOOL)
+DECL|function|G_DEFINE_TYPE (GimpColorizeTool,gimp_colorize_tool,GIMP_TYPE_FILTER_TOOL)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpColorizeTool
 argument_list|,
 argument|gimp_colorize_tool
 argument_list|,
-argument|GIMP_TYPE_IMAGE_MAP_TOOL
+argument|GIMP_TYPE_FILTER_TOOL
 argument_list|)
 end_macro
 
@@ -312,11 +312,11 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|GimpImageMapToolClass
+name|GimpFilterToolClass
 modifier|*
-name|im_tool_class
+name|filter_tool_class
 init|=
-name|GIMP_IMAGE_MAP_TOOL_CLASS
+name|GIMP_FILTER_TOOL_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -327,13 +327,13 @@ name|initialize
 operator|=
 name|gimp_colorize_tool_initialize
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|settings_name
 operator|=
 literal|"colorize"
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|import_dialog_title
 operator|=
@@ -342,7 +342,7 @@ argument_list|(
 literal|"Import Colorize Settings"
 argument_list|)
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|export_dialog_title
 operator|=
@@ -351,19 +351,19 @@ argument_list|(
 literal|"Export Colorize Settings"
 argument_list|)
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|get_operation
 operator|=
 name|gimp_colorize_tool_get_operation
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|dialog
 operator|=
 name|gimp_colorize_tool_dialog
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|color_picked
 operator|=
@@ -479,12 +479,12 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_colorize_tool_get_operation (GimpImageMapTool * im_tool,gchar ** title,gchar ** description,gchar ** undo_desc,gchar ** icon_name,gchar ** help_id)
+DECL|function|gimp_colorize_tool_get_operation (GimpFilterTool * filter_tool,gchar ** title,gchar ** description,gchar ** undo_desc,gchar ** icon_name,gchar ** help_id)
 name|gimp_colorize_tool_get_operation
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|gchar
 modifier|*
@@ -547,12 +547,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_colorize_tool_dialog (GimpImageMapTool * im_tool)
+DECL|function|gimp_colorize_tool_dialog (GimpFilterTool * filter_tool)
 name|gimp_colorize_tool_dialog
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 block|{
 name|GimpColorizeTool
@@ -561,7 +561,7 @@ name|col_tool
 init|=
 name|GIMP_COLORIZE_TOOL
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 decl_stmt|;
 name|GtkWidget
@@ -590,9 +590,9 @@ name|button
 decl_stmt|;
 name|main_vbox
 operator|=
-name|gimp_image_map_tool_dialog_get_vbox
+name|gimp_filter_tool_dialog_get_vbox
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 expr_stmt|;
 name|frame
@@ -655,7 +655,7 @@ name|scale
 operator|=
 name|gimp_prop_spin_scale_new
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -716,7 +716,7 @@ name|scale
 operator|=
 name|gimp_prop_spin_scale_new
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -773,7 +773,7 @@ name|scale
 operator|=
 name|gimp_prop_spin_scale_new
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -860,7 +860,7 @@ name|button
 operator|=
 name|gimp_prop_color_button_new
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -927,9 +927,9 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gimp_image_map_tool_add_color_picker
+name|gimp_filter_tool_add_color_picker
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|,
 literal|"colorize"
 argument_list|,
@@ -968,12 +968,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_colorize_tool_color_picked (GimpImageMapTool * im_tool,gpointer identifier,gdouble x,gdouble y,const Babl * sample_format,const GimpRGB * color)
+DECL|function|gimp_colorize_tool_color_picked (GimpFilterTool * filter_tool,gpointer identifier,gdouble x,gdouble y,const Babl * sample_format,const GimpRGB * color)
 name|gimp_colorize_tool_color_picked
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|gpointer
 name|identifier
@@ -997,7 +997,7 @@ parameter_list|)
 block|{
 name|g_object_set
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,

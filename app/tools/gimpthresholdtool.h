@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpimagemaptool.h"
+file|"gimpfiltertool.h"
 end_include
 
 begin_define
@@ -109,7 +109,7 @@ struct|struct
 name|_GimpThresholdTool
 block|{
 DECL|member|parent_instance
-name|GimpImageMapTool
+name|GimpFilterTool
 name|parent_instance
 decl_stmt|;
 comment|/*  dialog  */
@@ -133,7 +133,7 @@ struct|struct
 name|_GimpThresholdToolClass
 block|{
 DECL|member|parent_class
-name|GimpImageMapToolClass
+name|GimpFilterToolClass
 name|parent_class
 decl_stmt|;
 block|}

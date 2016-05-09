@@ -166,9 +166,9 @@ name|gchar
 modifier|*
 name|gimp_threshold_tool_get_operation
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|gchar
 modifier|*
@@ -203,9 +203,9 @@ specifier|static
 name|void
 name|gimp_threshold_tool_dialog
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -269,14 +269,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpThresholdTool,gimp_threshold_tool,GIMP_TYPE_IMAGE_MAP_TOOL)
+DECL|function|G_DEFINE_TYPE (GimpThresholdTool,gimp_threshold_tool,GIMP_TYPE_FILTER_TOOL)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpThresholdTool
 argument_list|,
 argument|gimp_threshold_tool
 argument_list|,
-argument|GIMP_TYPE_IMAGE_MAP_TOOL
+argument|GIMP_TYPE_FILTER_TOOL
 argument_list|)
 end_macro
 
@@ -372,11 +372,11 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|GimpImageMapToolClass
+name|GimpFilterToolClass
 modifier|*
-name|im_tool_class
+name|filter_tool_class
 init|=
-name|GIMP_IMAGE_MAP_TOOL_CLASS
+name|GIMP_FILTER_TOOL_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -399,13 +399,13 @@ name|initialize
 operator|=
 name|gimp_threshold_tool_initialize
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|settings_name
 operator|=
 literal|"threshold"
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|import_dialog_title
 operator|=
@@ -414,7 +414,7 @@ argument_list|(
 literal|"Import Threshold Settings"
 argument_list|)
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|export_dialog_title
 operator|=
@@ -423,13 +423,13 @@ argument_list|(
 literal|"Export Threshold Settings"
 argument_list|)
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|get_operation
 operator|=
 name|gimp_threshold_tool_get_operation
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|dialog
 operator|=
@@ -484,7 +484,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|GIMP_IMAGE_MAP_TOOL
+name|GIMP_FILTER_TOOL
 argument_list|(
 name|object
 argument_list|)
@@ -661,12 +661,12 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_threshold_tool_get_operation (GimpImageMapTool * im_tool,gchar ** title,gchar ** description,gchar ** undo_desc,gchar ** icon_name,gchar ** help_id)
+DECL|function|gimp_threshold_tool_get_operation (GimpFilterTool * filter_tool,gchar ** title,gchar ** description,gchar ** undo_desc,gchar ** icon_name,gchar ** help_id)
 name|gimp_threshold_tool_get_operation
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|gchar
 modifier|*
@@ -729,12 +729,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_threshold_tool_dialog (GimpImageMapTool * im_tool)
+DECL|function|gimp_threshold_tool_dialog (GimpFilterTool * filter_tool)
 name|gimp_threshold_tool_dialog
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 block|{
 name|GimpThresholdTool
@@ -743,7 +743,7 @@ name|t_tool
 init|=
 name|GIMP_THRESHOLD_TOOL
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 decl_stmt|;
 name|GimpToolOptions
@@ -752,7 +752,7 @@ name|tool_options
 init|=
 name|GIMP_TOOL_GET_OPTIONS
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 decl_stmt|;
 name|GtkWidget
@@ -786,9 +786,9 @@ name|n_bins
 decl_stmt|;
 name|main_vbox
 operator|=
-name|gimp_image_map_tool_dialog_get_vbox
+name|gimp_filter_tool_dialog_get_vbox
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 expr_stmt|;
 name|hbox
@@ -897,7 +897,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_get
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -1182,11 +1182,11 @@ modifier|*
 name|t_tool
 parameter_list|)
 block|{
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 init|=
-name|GIMP_IMAGE_MAP_TOOL
+name|GIMP_FILTER_TOOL
 argument_list|(
 name|t_tool
 argument_list|)
@@ -1237,7 +1237,7 @@ name|config_high
 decl_stmt|;
 name|g_object_get
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -1267,7 +1267,7 @@ condition|)
 block|{
 name|g_object_set
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -1305,7 +1305,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 init|=
-name|GIMP_IMAGE_MAP_TOOL
+name|GIMP_FILTER_TOOL
 argument_list|(
 name|t_tool
 argument_list|)

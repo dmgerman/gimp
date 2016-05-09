@@ -1356,7 +1356,7 @@ name|GObject
 modifier|*
 name|tool_config
 init|=
-name|GIMP_IMAGE_MAP_TOOL
+name|GIMP_FILTER_TOOL
 argument_list|(
 name|active_tool
 argument_list|)

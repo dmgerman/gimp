@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2c16300103
+DECL|enum|__anon2c50ade70103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -115,9 +115,9 @@ specifier|static
 name|void
 name|gimp_gegl_tool_dialog
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -224,16 +224,16 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
-name|GimpImageMapToolClass
+name|GimpFilterToolClass
 modifier|*
-name|im_tool_class
+name|filter_tool_class
 init|=
-name|GIMP_IMAGE_MAP_TOOL_CLASS
+name|GIMP_FILTER_TOOL_CLASS
 argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|dialog
 operator|=
@@ -959,12 +959,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_gegl_tool_dialog (GimpImageMapTool * image_map_tool)
+DECL|function|gimp_gegl_tool_dialog (GimpFilterTool * filter_tool)
 name|gimp_gegl_tool_dialog
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|image_map_tool
+name|filter_tool
 parameter_list|)
 block|{
 name|GimpGeglTool
@@ -973,7 +973,7 @@ name|tool
 init|=
 name|GIMP_GEGL_TOOL
 argument_list|(
-name|image_map_tool
+name|filter_tool
 argument_list|)
 decl_stmt|;
 name|GimpOperationTool
@@ -982,7 +982,7 @@ name|o_tool
 init|=
 name|GIMP_OPERATION_TOOL
 argument_list|(
-name|image_map_tool
+name|filter_tool
 argument_list|)
 decl_stmt|;
 name|GtkListStore
@@ -1013,21 +1013,21 @@ name|GList
 modifier|*
 name|iter
 decl_stmt|;
-name|GIMP_IMAGE_MAP_TOOL_CLASS
+name|GIMP_FILTER_TOOL_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
 name|dialog
 argument_list|(
-name|image_map_tool
+name|filter_tool
 argument_list|)
 expr_stmt|;
 name|main_vbox
 operator|=
-name|gimp_image_map_tool_dialog_get_vbox
+name|gimp_filter_tool_dialog_get_vbox
 argument_list|(
-name|image_map_tool
+name|filter_tool
 argument_list|)
 expr_stmt|;
 comment|/*  The operation combo box  */

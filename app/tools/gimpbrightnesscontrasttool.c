@@ -108,7 +108,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimagemapoptions.h"
+file|"gimpfilteroptions.h"
 end_include
 
 begin_include
@@ -245,9 +245,9 @@ name|gchar
 modifier|*
 name|gimp_brightness_contrast_tool_get_operation
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|image_map_tool
+name|filter_tool
 parameter_list|,
 name|gchar
 modifier|*
@@ -282,9 +282,9 @@ specifier|static
 name|void
 name|gimp_brightness_contrast_tool_dialog
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|image_map_tool
+name|filter_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -298,22 +298,22 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|image_map_tool
+name|filter_tool
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpBrightnessContrastTool,gimp_brightness_contrast_tool,GIMP_TYPE_IMAGE_MAP_TOOL)
+DECL|function|G_DEFINE_TYPE (GimpBrightnessContrastTool,gimp_brightness_contrast_tool,GIMP_TYPE_FILTER_TOOL)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpBrightnessContrastTool
 argument_list|,
 argument|gimp_brightness_contrast_tool
 argument_list|,
-argument|GIMP_TYPE_IMAGE_MAP_TOOL
+argument|GIMP_TYPE_FILTER_TOOL
 argument_list|)
 end_macro
 
@@ -343,7 +343,7 @@ call|)
 argument_list|(
 name|GIMP_TYPE_BRIGHTNESS_CONTRAST_TOOL
 argument_list|,
-name|GIMP_TYPE_IMAGE_MAP_OPTIONS
+name|GIMP_TYPE_FILTER_OPTIONS
 argument_list|,
 name|NULL
 argument_list|,
@@ -400,11 +400,11 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|GimpImageMapToolClass
+name|GimpFilterToolClass
 modifier|*
-name|im_tool_class
+name|filter_tool_class
 init|=
-name|GIMP_IMAGE_MAP_TOOL_CLASS
+name|GIMP_FILTER_TOOL_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -433,13 +433,13 @@ name|motion
 operator|=
 name|gimp_brightness_contrast_tool_motion
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|settings_name
 operator|=
 literal|"brightness-contrast"
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|import_dialog_title
 operator|=
@@ -448,7 +448,7 @@ argument_list|(
 literal|"Import Brightness-Contrast settings"
 argument_list|)
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|export_dialog_title
 operator|=
@@ -457,13 +457,13 @@ argument_list|(
 literal|"Export Brightness-Contrast settings"
 argument_list|)
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|get_operation
 operator|=
 name|gimp_brightness_contrast_tool_get_operation
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|dialog
 operator|=
@@ -638,12 +638,12 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_brightness_contrast_tool_get_operation (GimpImageMapTool * im_tool,gchar ** title,gchar ** description,gchar ** undo_desc,gchar ** icon_name,gchar ** help_id)
+DECL|function|gimp_brightness_contrast_tool_get_operation (GimpFilterTool * filter_tool,gchar ** title,gchar ** description,gchar ** undo_desc,gchar ** icon_name,gchar ** help_id)
 name|gimp_brightness_contrast_tool_get_operation
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|gchar
 modifier|*
@@ -737,7 +737,7 @@ name|contrast
 decl_stmt|;
 name|g_object_get
 argument_list|(
-name|GIMP_IMAGE_MAP_TOOL
+name|GIMP_FILTER_TOOL
 argument_list|(
 name|tool
 argument_list|)
@@ -884,7 +884,7 @@ name|gimp_config_reset
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
-name|GIMP_IMAGE_MAP_TOOL
+name|GIMP_FILTER_TOOL
 argument_list|(
 name|tool
 argument_list|)
@@ -962,7 +962,7 @@ operator|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|GIMP_IMAGE_MAP_TOOL
+name|GIMP_FILTER_TOOL
 argument_list|(
 name|tool
 argument_list|)
@@ -1022,12 +1022,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brightness_contrast_tool_dialog (GimpImageMapTool * image_map_tool)
+DECL|function|gimp_brightness_contrast_tool_dialog (GimpFilterTool * filter_tool)
 name|gimp_brightness_contrast_tool_dialog
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|image_map_tool
+name|filter_tool
 parameter_list|)
 block|{
 name|GimpBrightnessContrastTool
@@ -1036,7 +1036,7 @@ name|bc_tool
 init|=
 name|GIMP_BRIGHTNESS_CONTRAST_TOOL
 argument_list|(
-name|image_map_tool
+name|filter_tool
 argument_list|)
 decl_stmt|;
 name|GtkWidget
@@ -1053,9 +1053,9 @@ name|button
 decl_stmt|;
 name|main_vbox
 operator|=
-name|gimp_image_map_tool_dialog_get_vbox
+name|gimp_filter_tool_dialog_get_vbox
 argument_list|(
-name|image_map_tool
+name|filter_tool
 argument_list|)
 expr_stmt|;
 comment|/*  Create the brightness scale widget  */
@@ -1063,7 +1063,7 @@ name|scale
 operator|=
 name|gimp_prop_spin_scale_new
 argument_list|(
-name|image_map_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -1113,7 +1113,7 @@ name|scale
 operator|=
 name|gimp_prop_spin_scale_new
 argument_list|(
-name|image_map_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -1202,7 +1202,7 @@ argument_list|(
 name|brightness_contrast_to_levels_callback
 argument_list|)
 argument_list|,
-name|image_map_tool
+name|filter_tool
 argument_list|)
 expr_stmt|;
 block|}
@@ -1211,16 +1211,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brightness_contrast_to_levels_callback (GtkWidget * widget,GimpImageMapTool * image_map_tool)
+DECL|function|brightness_contrast_to_levels_callback (GtkWidget * widget,GimpFilterTool * filter_tool)
 name|brightness_contrast_to_levels_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|image_map_tool
+name|filter_tool
 parameter_list|)
 block|{
 name|GimpLevelsConfig
@@ -1233,15 +1233,15 @@ name|gimp_brightness_contrast_config_to_levels_config
 argument_list|(
 name|GIMP_BRIGHTNESS_CONTRAST_CONFIG
 argument_list|(
-name|image_map_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_image_map_tool_edit_as
+name|gimp_filter_tool_edit_as
 argument_list|(
-name|image_map_tool
+name|filter_tool
 argument_list|,
 literal|"gimp-levels-tool"
 argument_list|,

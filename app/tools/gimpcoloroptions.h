@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpimagemapoptions.h"
+file|"gimpfilteroptions.h"
 end_include
 
 begin_define
@@ -88,7 +88,8 @@ end_define
 begin_typedef
 DECL|typedef|GimpColorOptionsClass
 typedef|typedef
-name|GimpImageMapOptionsClass
+name|struct
+name|_GimpColorOptionsClass
 name|GimpColorOptionsClass
 typedef|;
 end_typedef
@@ -99,7 +100,7 @@ struct|struct
 name|_GimpColorOptions
 block|{
 DECL|member|parent_instance
-name|GimpImageMapOptions
+name|GimpFilterOptions
 name|parent_instance
 decl_stmt|;
 DECL|member|sample_merged
@@ -113,6 +114,19 @@ decl_stmt|;
 DECL|member|average_radius
 name|gdouble
 name|average_radius
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpColorOptionsClass
+struct|struct
+name|_GimpColorOptionsClass
+block|{
+DECL|member|parent_instance
+name|GimpFilterOptionsClass
+name|parent_instance
 decl_stmt|;
 block|}
 struct|;

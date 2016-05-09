@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_IMAGE_MAP_TOOL_H__
+name|__GIMP_FILTER_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_IMAGE_MAP_TOOL_H__
+DECL|macro|__GIMP_FILTER_TOOL_H__
 define|#
 directive|define
-name|__GIMP_IMAGE_MAP_TOOL_H__
+name|__GIMP_FILTER_TOOL_H__
 end_define
 
 begin_include
@@ -23,92 +23,92 @@ file|"gimpcolortool.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_IMAGE_MAP_TOOL
+DECL|macro|GIMP_TYPE_FILTER_TOOL
 define|#
 directive|define
-name|GIMP_TYPE_IMAGE_MAP_TOOL
-value|(gimp_image_map_tool_get_type ())
+name|GIMP_TYPE_FILTER_TOOL
+value|(gimp_filter_tool_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_IMAGE_MAP_TOOL (obj)
+DECL|macro|GIMP_FILTER_TOOL (obj)
 define|#
 directive|define
-name|GIMP_IMAGE_MAP_TOOL
+name|GIMP_FILTER_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_IMAGE_MAP_TOOL, GimpImageMapTool))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_FILTER_TOOL, GimpFilterTool))
 end_define
 
 begin_define
-DECL|macro|GIMP_IMAGE_MAP_TOOL_CLASS (klass)
+DECL|macro|GIMP_FILTER_TOOL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IMAGE_MAP_TOOL_CLASS
+name|GIMP_FILTER_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_IMAGE_MAP_TOOL, GimpImageMapToolClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_FILTER_TOOL, GimpFilterToolClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_IMAGE_MAP_TOOL (obj)
+DECL|macro|GIMP_IS_FILTER_TOOL (obj)
 define|#
 directive|define
-name|GIMP_IS_IMAGE_MAP_TOOL
+name|GIMP_IS_FILTER_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_IMAGE_MAP_TOOL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_FILTER_TOOL))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_IMAGE_MAP_TOOL_CLASS (klass)
+DECL|macro|GIMP_IS_FILTER_TOOL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_IMAGE_MAP_TOOL_CLASS
+name|GIMP_IS_FILTER_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_IMAGE_MAP_TOOL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_FILTER_TOOL))
 end_define
 
 begin_define
-DECL|macro|GIMP_IMAGE_MAP_TOOL_GET_CLASS (obj)
+DECL|macro|GIMP_FILTER_TOOL_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_IMAGE_MAP_TOOL_GET_CLASS
+name|GIMP_FILTER_TOOL_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_IMAGE_MAP_TOOL, GimpImageMapToolClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_FILTER_TOOL, GimpFilterToolClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IMAGE_MAP_TOOL_GET_OPTIONS (t)
+DECL|macro|GIMP_FILTER_TOOL_GET_OPTIONS (t)
 define|#
 directive|define
-name|GIMP_IMAGE_MAP_TOOL_GET_OPTIONS
+name|GIMP_FILTER_TOOL_GET_OPTIONS
 parameter_list|(
 name|t
 parameter_list|)
-value|(GIMP_IMAGE_MAP_OPTIONS (gimp_tool_get_options (GIMP_TOOL (t))))
+value|(GIMP_FILTER_OPTIONS (gimp_tool_get_options (GIMP_TOOL (t))))
 end_define
 
 begin_typedef
-DECL|typedef|GimpImageMapToolClass
+DECL|typedef|GimpFilterToolClass
 typedef|typedef
 name|struct
-name|_GimpImageMapToolClass
-name|GimpImageMapToolClass
+name|_GimpFilterToolClass
+name|GimpFilterToolClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpImageMapTool
+DECL|struct|_GimpFilterTool
 struct|struct
-name|_GimpImageMapTool
+name|_GimpFilterTool
 block|{
 DECL|member|parent_instance
 name|GimpColorTool
@@ -199,9 +199,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpImageMapToolClass
+DECL|struct|_GimpFilterToolClass
 struct|struct
-name|_GimpImageMapToolClass
+name|_GimpFilterToolClass
 block|{
 DECL|member|parent_class
 name|GimpColorToolClass
@@ -234,9 +234,9 @@ modifier|*
 name|get_operation
 function_decl|)
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|gchar
 modifier|*
@@ -271,9 +271,9 @@ modifier|*
 name|dialog
 function_decl|)
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|image_map_tool
+name|filter_tool
 parameter_list|)
 function_decl|;
 DECL|member|reset
@@ -283,9 +283,9 @@ modifier|*
 name|reset
 function_decl|)
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|image_map_tool
+name|filter_tool
 parameter_list|)
 function_decl|;
 DECL|member|get_settings_ui
@@ -296,9 +296,9 @@ modifier|*
 name|get_settings_ui
 function_decl|)
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|GimpContainer
 modifier|*
@@ -340,9 +340,9 @@ modifier|*
 name|settings_import
 function_decl|)
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|GInputStream
 modifier|*
@@ -361,9 +361,9 @@ modifier|*
 name|settings_export
 function_decl|)
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|GOutputStream
 modifier|*
@@ -382,9 +382,9 @@ modifier|*
 name|color_picked
 function_decl|)
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|gpointer
 name|identifier
@@ -412,7 +412,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_image_map_tool_get_type
+name|gimp_filter_tool_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -422,22 +422,22 @@ end_decl_stmt
 
 begin_function_decl
 name|void
-name|gimp_image_map_tool_get_operation
+name|gimp_filter_tool_get_operation
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_map_tool_edit_as
+name|gimp_filter_tool_edit_as
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 specifier|const
 name|gchar
@@ -453,11 +453,11 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_image_map_tool_on_guide
+name|gimp_filter_tool_on_guide
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 specifier|const
 name|GimpCoords
@@ -474,11 +474,11 @@ end_function_decl
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_image_map_tool_dialog_get_vbox
+name|gimp_filter_tool_dialog_get_vbox
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -486,11 +486,11 @@ end_function_decl
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_image_map_tool_add_color_picker
+name|gimp_filter_tool_add_color_picker
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|gpointer
 name|identifier
@@ -514,7 +514,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_IMAGE_MAP_TOOL_H__  */
+comment|/* __GIMP_FILTER_TOOL_H__ */
 end_comment
 
 end_unit

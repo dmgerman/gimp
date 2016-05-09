@@ -102,7 +102,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimagemapoptions.h"
+file|"gimpfilteroptions.h"
 end_include
 
 begin_include
@@ -142,9 +142,9 @@ name|gchar
 modifier|*
 name|gimp_color_balance_tool_get_operation
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|gchar
 modifier|*
@@ -179,9 +179,9 @@ specifier|static
 name|void
 name|gimp_color_balance_tool_dialog
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -191,9 +191,9 @@ specifier|static
 name|void
 name|gimp_color_balance_tool_reset
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -207,22 +207,22 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpColorBalanceTool,gimp_color_balance_tool,GIMP_TYPE_IMAGE_MAP_TOOL)
+DECL|function|G_DEFINE_TYPE (GimpColorBalanceTool,gimp_color_balance_tool,GIMP_TYPE_FILTER_TOOL)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpColorBalanceTool
 argument_list|,
 argument|gimp_color_balance_tool
 argument_list|,
-argument|GIMP_TYPE_IMAGE_MAP_TOOL
+argument|GIMP_TYPE_FILTER_TOOL
 argument_list|)
 end_macro
 
@@ -252,7 +252,7 @@ call|)
 argument_list|(
 name|GIMP_TYPE_COLOR_BALANCE_TOOL
 argument_list|,
-name|GIMP_TYPE_IMAGE_MAP_OPTIONS
+name|GIMP_TYPE_FILTER_OPTIONS
 argument_list|,
 name|NULL
 argument_list|,
@@ -309,11 +309,11 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|GimpImageMapToolClass
+name|GimpFilterToolClass
 modifier|*
-name|im_tool_class
+name|filter_tool_class
 init|=
-name|GIMP_IMAGE_MAP_TOOL_CLASS
+name|GIMP_FILTER_TOOL_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -324,13 +324,13 @@ name|initialize
 operator|=
 name|gimp_color_balance_tool_initialize
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|settings_name
 operator|=
 literal|"color-balance"
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|import_dialog_title
 operator|=
@@ -339,7 +339,7 @@ argument_list|(
 literal|"Import Color Balance Settings"
 argument_list|)
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|export_dialog_title
 operator|=
@@ -348,19 +348,19 @@ argument_list|(
 literal|"Export Color Balance Settings"
 argument_list|)
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|get_operation
 operator|=
 name|gimp_color_balance_tool_get_operation
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|dialog
 operator|=
 name|gimp_color_balance_tool_dialog
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|reset
 operator|=
@@ -477,12 +477,12 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_color_balance_tool_get_operation (GimpImageMapTool * im_tool,gchar ** title,gchar ** description,gchar ** undo_desc,gchar ** icon_name,gchar ** help_id)
+DECL|function|gimp_color_balance_tool_get_operation (GimpFilterTool * filter_tool,gchar ** title,gchar ** description,gchar ** undo_desc,gchar ** icon_name,gchar ** help_id)
 name|gimp_color_balance_tool_get_operation
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|gchar
 modifier|*
@@ -766,12 +766,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_balance_tool_dialog (GimpImageMapTool * image_map_tool)
+DECL|function|gimp_color_balance_tool_dialog (GimpFilterTool * filter_tool)
 name|gimp_color_balance_tool_dialog
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|image_map_tool
+name|filter_tool
 parameter_list|)
 block|{
 name|GimpColorBalanceTool
@@ -780,7 +780,7 @@ name|cb_tool
 init|=
 name|GIMP_COLOR_BALANCE_TOOL
 argument_list|(
-name|image_map_tool
+name|filter_tool
 argument_list|)
 decl_stmt|;
 name|GtkWidget
@@ -809,16 +809,16 @@ name|frame
 decl_stmt|;
 name|main_vbox
 operator|=
-name|gimp_image_map_tool_dialog_get_vbox
+name|gimp_filter_tool_dialog_get_vbox
 argument_list|(
-name|image_map_tool
+name|filter_tool
 argument_list|)
 expr_stmt|;
 name|frame
 operator|=
 name|gimp_prop_enum_radio_frame_new
 argument_list|(
-name|image_map_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -965,7 +965,7 @@ argument_list|)
 expr_stmt|;
 name|create_levels_scale
 argument_list|(
-name|image_map_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -988,7 +988,7 @@ argument_list|)
 expr_stmt|;
 name|create_levels_scale
 argument_list|(
-name|image_map_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -1011,7 +1011,7 @@ argument_list|)
 expr_stmt|;
 name|create_levels_scale
 argument_list|(
-name|image_map_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -1111,7 +1111,7 @@ name|button
 operator|=
 name|gimp_prop_check_button_new
 argument_list|(
-name|image_map_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -1150,12 +1150,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_balance_tool_reset (GimpImageMapTool * im_tool)
+DECL|function|gimp_color_balance_tool_reset (GimpFilterTool * filter_tool)
 name|gimp_color_balance_tool_reset
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 block|{
 name|GimpTransferMode
@@ -1163,7 +1163,7 @@ name|range
 decl_stmt|;
 name|g_object_get
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -1175,19 +1175,19 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|GIMP_IMAGE_MAP_TOOL_CLASS
+name|GIMP_FILTER_TOOL_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
 name|reset
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -1204,23 +1204,23 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_balance_range_reset_callback (GtkWidget * widget,GimpImageMapTool * im_tool)
+DECL|function|color_balance_range_reset_callback (GtkWidget * widget,GimpFilterTool * filter_tool)
 name|color_balance_range_reset_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 block|{
 name|gimp_color_balance_config_reset_range
 argument_list|(
 name|GIMP_COLOR_BALANCE_CONFIG
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)

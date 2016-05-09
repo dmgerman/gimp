@@ -289,9 +289,9 @@ name|gchar
 modifier|*
 name|gimp_operation_tool_get_operation
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|gchar
 modifier|*
@@ -326,9 +326,9 @@ specifier|static
 name|void
 name|gimp_operation_tool_dialog
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -338,9 +338,9 @@ specifier|static
 name|void
 name|gimp_operation_tool_reset
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -351,9 +351,9 @@ name|GtkWidget
 modifier|*
 name|gimp_operation_tool_get_settings_ui
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|GimpContainer
 modifier|*
@@ -395,9 +395,9 @@ specifier|static
 name|void
 name|gimp_operation_tool_color_picked
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|gpointer
 name|identifier
@@ -489,14 +489,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationTool,gimp_operation_tool,GIMP_TYPE_IMAGE_MAP_TOOL)
+DECL|function|G_DEFINE_TYPE (GimpOperationTool,gimp_operation_tool,GIMP_TYPE_FILTER_TOOL)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpOperationTool
 argument_list|,
 argument|gimp_operation_tool
 argument_list|,
-argument|GIMP_TYPE_IMAGE_MAP_TOOL
+argument|GIMP_TYPE_FILTER_TOOL
 argument_list|)
 end_macro
 
@@ -594,11 +594,11 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|GimpImageMapToolClass
+name|GimpFilterToolClass
 modifier|*
-name|im_tool_class
+name|filter_tool_class
 init|=
-name|GIMP_IMAGE_MAP_TOOL_CLASS
+name|GIMP_FILTER_TOOL_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -621,31 +621,31 @@ name|control
 operator|=
 name|gimp_operation_tool_control
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|get_operation
 operator|=
 name|gimp_operation_tool_get_operation
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|dialog
 operator|=
 name|gimp_operation_tool_dialog
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|reset
 operator|=
 name|gimp_operation_tool_reset
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|get_settings_ui
 operator|=
 name|gimp_operation_tool_get_settings_ui
 expr_stmt|;
-name|im_tool_class
+name|filter_tool_class
 operator|->
 name|color_picked
 operator|=
@@ -665,7 +665,7 @@ modifier|*
 name|tool
 parameter_list|)
 block|{
-name|GIMP_IMAGE_MAP_TOOL_GET_CLASS
+name|GIMP_FILTER_TOOL_GET_CLASS
 argument_list|(
 name|tool
 argument_list|)
@@ -892,11 +892,11 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 init|=
-name|GIMP_IMAGE_MAP_TOOL
+name|GIMP_FILTER_TOOL
 argument_list|(
 name|tool
 argument_list|)
@@ -930,7 +930,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 condition|)
@@ -1034,12 +1034,12 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_operation_tool_get_operation (GimpImageMapTool * im_tool,gchar ** title,gchar ** description,gchar ** undo_desc,gchar ** icon_name,gchar ** help_id)
+DECL|function|gimp_operation_tool_get_operation (GimpFilterTool * filter_tool,gchar ** title,gchar ** description,gchar ** undo_desc,gchar ** icon_name,gchar ** help_id)
 name|gimp_operation_tool_get_operation
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|gchar
 modifier|*
@@ -1073,7 +1073,7 @@ name|tool
 init|=
 name|GIMP_OPERATION_TOOL
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 decl_stmt|;
 operator|*
@@ -1140,12 +1140,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_tool_dialog (GimpImageMapTool * im_tool)
+DECL|function|gimp_operation_tool_dialog (GimpFilterTool * filter_tool)
 name|gimp_operation_tool_dialog
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 block|{
 name|GimpOperationTool
@@ -1154,7 +1154,7 @@ name|tool
 init|=
 name|GIMP_OPERATION_TOOL
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 decl_stmt|;
 name|GtkWidget
@@ -1167,9 +1167,9 @@ name|list
 decl_stmt|;
 name|main_vbox
 operator|=
-name|gimp_image_map_tool_dialog_get_vbox
+name|gimp_filter_tool_dialog_get_vbox
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 expr_stmt|;
 comment|/*  The options vbox  */
@@ -1304,12 +1304,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_tool_reset (GimpImageMapTool * im_tool)
+DECL|function|gimp_operation_tool_reset (GimpFilterTool * filter_tool)
 name|gimp_operation_tool_reset
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|)
 block|{
 name|GimpOperationTool
@@ -1318,22 +1318,22 @@ name|tool
 init|=
 name|GIMP_OPERATION_TOOL
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 decl_stmt|;
-name|GIMP_IMAGE_MAP_TOOL_CLASS
+name|GIMP_FILTER_TOOL_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
 name|reset
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 operator|&&
@@ -1363,12 +1363,12 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_operation_tool_get_settings_ui (GimpImageMapTool * im_tool,GimpContainer * settings,GFile * settings_file,const gchar * import_dialog_title,const gchar * export_dialog_title,const gchar * file_dialog_help_id,GFile * default_folder,GtkWidget ** settings_box)
+DECL|function|gimp_operation_tool_get_settings_ui (GimpFilterTool * filter_tool,GimpContainer * settings,GFile * settings_file,const gchar * import_dialog_title,const gchar * export_dialog_title,const gchar * file_dialog_help_id,GFile * default_folder,GtkWidget ** settings_box)
 name|gimp_operation_tool_get_settings_ui
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|GimpContainer
 modifier|*
@@ -1409,7 +1409,7 @@ name|tool
 init|=
 name|GIMP_OPERATION_TOOL
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 decl_stmt|;
 name|GtkWidget
@@ -1438,7 +1438,7 @@ name|g_strconcat
 argument_list|(
 name|G_OBJECT_TYPE_NAME
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)
@@ -1494,14 +1494,14 @@ argument_list|)
 expr_stmt|;
 name|widget
 operator|=
-name|GIMP_IMAGE_MAP_TOOL_CLASS
+name|GIMP_FILTER_TOOL_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
 name|get_settings_ui
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|,
 name|settings
 argument_list|,
@@ -1543,12 +1543,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_tool_color_picked (GimpImageMapTool * im_tool,gpointer identifier,gdouble x,gdouble y,const Babl * sample_format,const GimpRGB * color)
+DECL|function|gimp_operation_tool_color_picked (GimpFilterTool * filter_tool,gpointer identifier,gdouble x,gdouble y,const Babl * sample_format,const GimpRGB * color)
 name|gimp_operation_tool_color_picked
 parameter_list|(
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 parameter_list|,
 name|gpointer
 name|identifier
@@ -1576,7 +1576,7 @@ name|tool
 init|=
 name|GIMP_OPERATION_TOOL
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 decl_stmt|;
 name|gchar
@@ -1603,11 +1603,11 @@ literal|1
 index|]
 condition|)
 block|{
-name|GimpImageMapOptions
+name|GimpFilterOptions
 modifier|*
 name|options
 init|=
-name|GIMP_IMAGE_MAP_TOOL_GET_OPTIONS
+name|GIMP_FILTER_TOOL_GET_OPTIONS
 argument_list|(
 name|tool
 argument_list|)
@@ -1618,7 +1618,7 @@ name|drawable
 init|=
 name|GIMP_TOOL
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 operator|->
 name|drawable
@@ -1629,7 +1629,7 @@ name|object_class
 init|=
 name|G_OBJECT_GET_CLASS
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)
@@ -1916,7 +1916,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -1989,7 +1989,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -2052,7 +2052,7 @@ else|else
 block|{
 name|g_object_set
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -2090,11 +2090,11 @@ modifier|*
 name|drawable
 parameter_list|)
 block|{
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 init|=
-name|GIMP_IMAGE_MAP_TOOL
+name|GIMP_FILTER_TOOL
 argument_list|(
 name|op_tool
 argument_list|)
@@ -2157,7 +2157,7 @@ name|g_object_class_list_properties
 argument_list|(
 name|G_OBJECT_GET_CLASS
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)
@@ -2236,7 +2236,7 @@ condition|)
 block|{
 name|g_object_set
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -2274,7 +2274,7 @@ condition|)
 block|{
 name|g_object_set
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -2312,7 +2312,7 @@ condition|)
 block|{
 name|g_object_set
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -2350,7 +2350,7 @@ condition|)
 block|{
 name|g_object_set
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -2394,7 +2394,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -2438,7 +2438,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|,
@@ -2486,10 +2486,10 @@ modifier|*
 name|input
 parameter_list|)
 block|{
-comment|/* emit "notify" so GimpImageMapTool will update its preview    *    * FIXME: this is a bad hack that should go away once GimpImageMap    * and GimpImageMapTool are refactored to be more filter-ish.    */
+comment|/* emit "notify" so GimpFilterTool will update its preview    *    * FIXME: this is a bad hack that should go away once GimpImageMap    * and GimpFilterTool are refactored to be more filter-ish.    */
 name|g_signal_emit_by_name
 argument_list|(
-name|GIMP_IMAGE_MAP_TOOL
+name|GIMP_FILTER_TOOL
 argument_list|(
 name|input
 operator|->
@@ -2764,9 +2764,9 @@ modifier|*
 name|help_id
 parameter_list|)
 block|{
-name|GimpImageMapTool
+name|GimpFilterTool
 modifier|*
-name|im_tool
+name|filter_tool
 decl_stmt|;
 name|GtkSizeGroup
 modifier|*
@@ -2792,9 +2792,9 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|im_tool
+name|filter_tool
 operator|=
-name|GIMP_IMAGE_MAP_TOOL
+name|GIMP_FILTER_TOOL
 argument_list|(
 name|tool
 argument_list|)
@@ -2949,16 +2949,16 @@ name|aux_inputs
 operator|=
 name|NULL
 expr_stmt|;
-name|gimp_image_map_tool_get_operation
+name|gimp_filter_tool_get_operation
 argument_list|(
-name|im_tool
+name|filter_tool
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|undo_desc
 condition|)
-name|GIMP_IMAGE_MAP_TOOL_GET_CLASS
+name|GIMP_FILTER_TOOL_GET_CLASS
 argument_list|(
 name|tool
 argument_list|)
@@ -2969,7 +2969,7 @@ literal|"yes"
 expr_stmt|;
 comment|/* XXX hack */
 else|else
-name|GIMP_IMAGE_MAP_TOOL_GET_CLASS
+name|GIMP_FILTER_TOOL_GET_CLASS
 argument_list|(
 name|tool
 argument_list|)
@@ -3001,12 +3001,12 @@ name|NULL
 expr_stmt|;
 if|if
 condition|(
-name|im_tool
+name|filter_tool
 operator|->
 name|active_picker
 condition|)
 block|{
-name|im_tool
+name|filter_tool
 operator|->
 name|active_picker
 operator|=
@@ -3120,7 +3120,7 @@ if|if
 condition|(
 name|gegl_node_has_pad
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|operation
 argument_list|,
@@ -3154,7 +3154,7 @@ name|gimp_operation_tool_aux_input_new
 argument_list|(
 name|tool
 argument_list|,
-name|im_tool
+name|filter_tool
 operator|->
 name|operation
 argument_list|,
@@ -3247,7 +3247,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 condition|)
@@ -3260,14 +3260,14 @@ name|gimp_prop_gui_new
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)
 argument_list|,
 name|G_TYPE_FROM_INSTANCE
 argument_list|(
-name|im_tool
+name|filter_tool
 operator|->
 name|config
 argument_list|)
@@ -3285,7 +3285,7 @@ argument_list|,
 operator|(
 name|GimpCreatePickerFunc
 operator|)
-name|gimp_image_map_tool_add_color_picker
+name|gimp_filter_tool_add_color_picker
 argument_list|,
 name|tool
 argument_list|)

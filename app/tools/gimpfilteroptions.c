@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimagemapoptions.h"
+file|"gimpfilteroptions.h"
 end_include
 
 begin_include
@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2921b4d00103
+DECL|enum|__anon28e939050103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -76,7 +76,7 @@ end_enum
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_map_options_finalize
+name|gimp_filter_options_finalize
 parameter_list|(
 name|GObject
 modifier|*
@@ -88,7 +88,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_map_options_set_property
+name|gimp_filter_options_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -112,7 +112,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_map_options_get_property
+name|gimp_filter_options_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -133,12 +133,12 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpImageMapOptions,gimp_image_map_options,GIMP_TYPE_TOOL_OPTIONS)
+DECL|function|G_DEFINE_TYPE (GimpFilterOptions,gimp_filter_options,GIMP_TYPE_TOOL_OPTIONS)
 name|G_DEFINE_TYPE
 argument_list|(
-argument|GimpImageMapOptions
+argument|GimpFilterOptions
 argument_list|,
-argument|gimp_image_map_options
+argument|gimp_filter_options
 argument_list|,
 argument|GIMP_TYPE_TOOL_OPTIONS
 argument_list|)
@@ -149,15 +149,15 @@ DECL|macro|parent_class
 define|#
 directive|define
 name|parent_class
-value|gimp_image_map_options_parent_class
+value|gimp_filter_options_parent_class
 end_define
 
 begin_function
 specifier|static
 name|void
-name|gimp_image_map_options_class_init
+name|gimp_filter_options_class_init
 parameter_list|(
-name|GimpImageMapOptionsClass
+name|GimpFilterOptionsClass
 modifier|*
 name|klass
 parameter_list|)
@@ -175,19 +175,19 @@ name|object_class
 operator|->
 name|finalize
 operator|=
-name|gimp_image_map_options_finalize
+name|gimp_filter_options_finalize
 expr_stmt|;
 name|object_class
 operator|->
 name|set_property
 operator|=
-name|gimp_image_map_options_set_property
+name|gimp_filter_options_set_property
 expr_stmt|;
 name|object_class
 operator|->
 name|get_property
 operator|=
-name|gimp_image_map_options_get_property
+name|gimp_filter_options_get_property
 expr_stmt|;
 name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
@@ -334,10 +334,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_map_options_init (GimpImageMapOptions * options)
-name|gimp_image_map_options_init
+DECL|function|gimp_filter_options_init (GimpFilterOptions * options)
+name|gimp_filter_options_init
 parameter_list|(
-name|GimpImageMapOptions
+name|GimpFilterOptions
 modifier|*
 name|options
 parameter_list|)
@@ -347,19 +347,19 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_map_options_finalize (GObject * object)
-name|gimp_image_map_options_finalize
+DECL|function|gimp_filter_options_finalize (GObject * object)
+name|gimp_filter_options_finalize
 parameter_list|(
 name|GObject
 modifier|*
 name|object
 parameter_list|)
 block|{
-name|GimpImageMapOptions
+name|GimpFilterOptions
 modifier|*
 name|options
 init|=
-name|GIMP_IMAGE_MAP_OPTIONS
+name|GIMP_FILTER_OPTIONS
 argument_list|(
 name|object
 argument_list|)
@@ -401,8 +401,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_map_options_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
-name|gimp_image_map_options_set_property
+DECL|function|gimp_filter_options_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
+name|gimp_filter_options_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -421,11 +421,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpImageMapOptions
+name|GimpFilterOptions
 modifier|*
 name|options
 init|=
-name|GIMP_IMAGE_MAP_OPTIONS
+name|GIMP_FILTER_OPTIONS
 argument_list|(
 name|object
 argument_list|)
@@ -544,8 +544,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_map_options_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
-name|gimp_image_map_options_get_property
+DECL|function|gimp_filter_options_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
+name|gimp_filter_options_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -563,11 +563,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpImageMapOptions
+name|GimpFilterOptions
 modifier|*
 name|options
 init|=
-name|GIMP_IMAGE_MAP_OPTIONS
+name|GIMP_FILTER_OPTIONS
 argument_list|(
 name|object
 argument_list|)

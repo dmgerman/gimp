@@ -2056,7 +2056,7 @@ name|g_type_is_a
 argument_list|(
 name|tool_type
 argument_list|,
-name|GIMP_TYPE_IMAGE_MAP_TOOL
+name|GIMP_TYPE_FILTER_TOOL
 argument_list|)
 operator|)
 expr_stmt|;

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b040df0103
+DECL|enum|__anon2785c6ed0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -136,14 +136,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpColorOptions,gimp_color_options,GIMP_TYPE_IMAGE_MAP_OPTIONS)
+DECL|function|G_DEFINE_TYPE (GimpColorOptions,gimp_color_options,GIMP_TYPE_FILTER_OPTIONS)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpColorOptions
 argument_list|,
 argument|gimp_color_options
 argument_list|,
-argument|GIMP_TYPE_IMAGE_MAP_OPTIONS
+argument|GIMP_TYPE_FILTER_OPTIONS
 argument_list|)
 end_macro
 
