@@ -112,9 +112,9 @@ DECL|member|move_tool_changes_active
 name|gboolean
 name|move_tool_changes_active
 decl_stmt|;
-DECL|member|image_map_tool_max_recent
+DECL|member|filter_tool_max_recent
 name|gint
-name|image_map_tool_max_recent
+name|filter_tool_max_recent
 decl_stmt|;
 DECL|member|trust_dirty_flag
 name|gboolean

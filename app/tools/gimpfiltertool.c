@@ -3884,7 +3884,7 @@ argument_list|)
 argument_list|,
 name|config
 operator|->
-name|image_map_tool_max_recent
+name|filter_tool_max_recent
 argument_list|)
 expr_stmt|;
 block|}

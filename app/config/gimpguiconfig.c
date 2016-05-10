@@ -94,7 +94,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2e09a50103
+DECL|enum|__anon29d4db960103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -102,8 +102,8 @@ block|,
 DECL|enumerator|PROP_MOVE_TOOL_CHANGES_ACTIVE
 name|PROP_MOVE_TOOL_CHANGES_ACTIVE
 block|,
-DECL|enumerator|PROP_IMAGE_MAP_TOOL_MAX_RECENT
-name|PROP_IMAGE_MAP_TOOL_MAX_RECENT
+DECL|enumerator|PROP_FILTER_TOOL_MAX_RECENT
+name|PROP_FILTER_TOOL_MAX_RECENT
 block|,
 DECL|enumerator|PROP_TRUST_DIRTY_FLAG
 name|PROP_TRUST_DIRTY_FLAG
@@ -222,6 +222,9 @@ block|,
 comment|/* ignored, only for backward compatibility: */
 DECL|enumerator|PROP_CURSOR_FORMAT
 name|PROP_CURSOR_FORMAT
+block|,
+DECL|enumerator|PROP_IMAGE_MAP_TOOL_MAX_RECENT
+name|PROP_IMAGE_MAP_TOOL_MAX_RECENT
 block|,
 DECL|enumerator|PROP_INFO_WINDOW_PER_DISPLAY
 name|PROP_INFO_WINDOW_PER_DISPLAY
@@ -388,13 +391,13 @@ name|GIMP_CONFIG_PROP_INT
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_IMAGE_MAP_TOOL_MAX_RECENT
+name|PROP_FILTER_TOOL_MAX_RECENT
 argument_list|,
-literal|"image-map-tool-max-recent"
+literal|"filter-tool-max-recent"
 argument_list|,
 literal|"Max recent settings to keep in filters"
 argument_list|,
-name|IMAGE_MAP_TOOL_MAX_RECENT_BLURB
+name|FILTER_TOOL_MAX_RECENT_BLURB
 argument_list|,
 literal|0
 argument_list|,
@@ -1172,6 +1175,29 @@ operator||
 name|GIMP_CONFIG_PARAM_IGNORE
 argument_list|)
 expr_stmt|;
+name|GIMP_CONFIG_PROP_INT
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_IMAGE_MAP_TOOL_MAX_RECENT
+argument_list|,
+literal|"image-map-tool-max-recent"
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+literal|0
+argument_list|,
+literal|255
+argument_list|,
+literal|10
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
+name|GIMP_CONFIG_PARAM_IGNORE
+argument_list|)
+expr_stmt|;
 name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
@@ -1451,11 +1477,14 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|PROP_FILTER_TOOL_MAX_RECENT
+case|:
+case|case
 name|PROP_IMAGE_MAP_TOOL_MAX_RECENT
 case|:
 name|gui_config
 operator|->
-name|image_map_tool_max_recent
+name|filter_tool_max_recent
 operator|=
 name|g_value_get_int
 argument_list|(
@@ -2090,6 +2119,9 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|PROP_FILTER_TOOL_MAX_RECENT
+case|:
+case|case
 name|PROP_IMAGE_MAP_TOOL_MAX_RECENT
 case|:
 name|g_value_set_int
@@ -2098,7 +2130,7 @@ name|value
 argument_list|,
 name|gui_config
 operator|->
-name|image_map_tool_max_recent
+name|filter_tool_max_recent
 argument_list|)
 expr_stmt|;
 break|break;

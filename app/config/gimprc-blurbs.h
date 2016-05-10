@@ -467,12 +467,12 @@ value|"Specifies the language preferences used by the help system. This is a " \
 end_define
 
 begin_define
-DECL|macro|IMAGE_MAP_TOOL_MAX_RECENT_BLURB
+DECL|macro|FILTER_TOOL_MAX_RECENT_BLURB
 define|#
 directive|define
-name|IMAGE_MAP_TOOL_MAX_RECENT_BLURB
+name|FILTER_TOOL_MAX_RECENT_BLURB
 define|\
-value|"How many recent settings to keep around in color correction tools"
+value|"How many recent settings to keep around in filter tools"
 end_define
 
 begin_define
