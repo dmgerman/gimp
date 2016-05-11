@@ -159,10 +159,10 @@ name|gchar
 modifier|*
 name|help_id
 decl_stmt|;
-DECL|member|image_map
+DECL|member|filter
 name|GimpImageMap
 modifier|*
-name|image_map
+name|filter
 decl_stmt|;
 DECL|member|percent_guide
 name|GimpGuide
