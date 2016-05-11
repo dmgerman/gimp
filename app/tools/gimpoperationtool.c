@@ -1511,7 +1511,7 @@ name|import_title
 argument_list|,
 name|export_title
 argument_list|,
-literal|"help-foo"
+name|file_dialog_help_id
 argument_list|,
 name|NULL
 argument_list|,
