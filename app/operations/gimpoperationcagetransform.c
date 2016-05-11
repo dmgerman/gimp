@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpmarshal.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpoperationcagetransform.h"
 end_include
 
@@ -71,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf48c270103
+DECL|enum|__anon2be87f2f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -82,19 +76,6 @@ block|,
 DECL|enumerator|PROP_FILL
 name|PROP_FILL
 block|, }
-enum|;
-end_enum
-
-begin_enum
-enum|enum
-DECL|enum|__anon2bf48c270203
-block|{
-DECL|enumerator|PROGRESS
-name|PROGRESS
-block|,
-DECL|enumerator|LAST_SIGNAL
-name|LAST_SIGNAL
-block|}
 enum|;
 end_enum
 
@@ -324,6 +305,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
+DECL|function|G_DEFINE_TYPE (GimpOperationCageTransform,gimp_operation_cage_transform,GEGL_TYPE_OPERATION_COMPOSER)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpOperationCageTransform
@@ -342,24 +324,9 @@ name|parent_class
 value|gimp_operation_cage_transform_parent_class
 end_define
 
-begin_decl_stmt
-specifier|static
-name|guint
-name|cage_transform_signals
-index|[
-name|LAST_SIGNAL
-index|]
-init|=
-block|{
-literal|0
-block|}
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_cage_transform_class_init (GimpOperationCageTransformClass * klass)
 name|gimp_operation_cage_transform_class_init
 parameter_list|(
 name|GimpOperationCageTransformClass
@@ -394,37 +361,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|cage_transform_signals
-index|[
-name|PROGRESS
-index|]
-operator|=
-name|g_signal_new
-argument_list|(
-literal|"progress"
-argument_list|,
-name|G_TYPE_FROM_CLASS
-argument_list|(
-name|klass
-argument_list|)
-argument_list|,
-name|G_SIGNAL_RUN_LAST
-argument_list|,
-literal|0
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|gimp_marshal_VOID__DOUBLE
-argument_list|,
-name|G_TYPE_NONE
-argument_list|,
-literal|1
-argument_list|,
-name|G_TYPE_DOUBLE
-argument_list|)
-expr_stmt|;
 name|object_class
 operator|->
 name|get_property
@@ -877,36 +813,6 @@ end_function
 
 begin_function
 specifier|static
-name|void
-DECL|function|gimp_operation_cage_transform_notify_progress (gpointer instance,gdouble progress)
-name|gimp_operation_cage_transform_notify_progress
-parameter_list|(
-name|gpointer
-name|instance
-parameter_list|,
-name|gdouble
-name|progress
-parameter_list|)
-block|{
-name|g_signal_emit
-argument_list|(
-name|instance
-argument_list|,
-name|cage_transform_signals
-index|[
-name|PROGRESS
-index|]
-argument_list|,
-literal|0
-argument_list|,
-name|progress
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
 name|gboolean
 DECL|function|gimp_operation_cage_transform_process (GeglOperation * operation,GeglBuffer * in_buf,GeglBuffer * aux_buf,GeglBuffer * out_buf,const GeglRectangle * roi,gint level)
 name|gimp_operation_cage_transform_process
@@ -1264,11 +1170,13 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|gimp_operation_cage_transform_notify_progress
+name|gegl_operation_progress
 argument_list|(
-name|oct
+name|operation
 argument_list|,
 literal|0.0
+argument_list|,
+literal|""
 argument_list|)
 expr_stmt|;
 comment|/* pre-allocate memory outside of the loop */
@@ -1631,11 +1539,13 @@ operator|<
 literal|1.0
 condition|)
 block|{
-name|gimp_operation_cage_transform_notify_progress
+name|gegl_operation_progress
 argument_list|(
-name|oct
+name|operation
 argument_list|,
 name|fraction
+argument_list|,
+literal|""
 argument_list|)
 expr_stmt|;
 block|}
@@ -1658,11 +1568,13 @@ argument_list|,
 name|coords
 argument_list|)
 expr_stmt|;
-name|gimp_operation_cage_transform_notify_progress
+name|gegl_operation_progress
 argument_list|(
-name|oct
+name|operation
 argument_list|,
 literal|1.0
+argument_list|,
+literal|""
 argument_list|)
 expr_stmt|;
 return|return
